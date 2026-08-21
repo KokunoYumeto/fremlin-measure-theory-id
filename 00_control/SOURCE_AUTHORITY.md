@@ -30,7 +30,18 @@ exact per-member byte/hash ledger.
 `authority/fremlin/source/mt1.2011/mt111.tex` is 24,584 bytes and 586 lines,
 SHA-256 `40857003cc5e0d5580e2db104e980e34f11f813cbdb2dc4ad444f34fa01e78a2`.
 It declares source section 111, “Sigma-algebras”, and corresponds to official
-Volume 1 pages 10–13.
+Volume 1 pages 10–14. This range was read back from the frozen official
+Volume 1 baseline: Section 112 begins on printed page 15. The earlier
+handoff-only range 10–13 is retained in the historical handoff but is not used
+for progress accounting.
+
+## Second unit receipt
+
+authority/fremlin/source/mt1.2011/mt112.tex is 22,823 bytes and 550 lines,
+SHA-256 3c6037e1fb81449cd9ba0bd3bc9b3eae8b5c807ecc758b1b661e8bc8db53ec5e.
+It declares source section 112, “Measure spaces”, and corresponds to printed
+Volume 1 pages 15–18. Section 113 begins on printed page 19 in the same frozen
+baseline.
 
 ## Selection authority
 

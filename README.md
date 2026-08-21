@@ -11,33 +11,37 @@ Korpus terpilih berjumlah 672 halaman resmi. Cakupannya tidak memasukkan Jilid
 
 ## Status produksi
 
-Bagian 111, **Aljabar sigma**, merupakan unit pertama yang telah diterjemahkan
-dan diterima. Unit lengkap ini mempertahankan 34 jangkar sumber eksplisit, 446
-rumus, 11 latihan, 3 petunjuk, seluruh bukti, dan seluruh rujukan sumbernya.
-Backend modularnya memuat ID stabil, peta segmen, rumus, istilah, latihan,
-petunjuk, bukti, relasi, hak, artefak, dan kejadian QA dalam JSONL serta CSV.
+Bagian 111, **Aljabar sigma**, dan Bagian 112, **Ruang ukur**, telah
+diterjemahkan lengkap dan diterima. Batas kumulatif ini mencakup halaman cetak
+sumber 10–18, mempertahankan 926 rumus backend, 23 latihan, empat petunjuk,
+seluruh bukti, dan seluruh rujukan sumber. Backend modular memuat 1.293 rekaman
+unit-lokal dalam JSONL kanonis beserta proyeksi CSV deterministik.
 
-Kursor berikutnya adalah `O007-FREMLIN-V1-S112`. Sasaran dua jilid masih aktif;
-rilis unit pertama bukan pernyataan bahwa keseluruhan 672 halaman telah selesai.
+Kursor berikutnya adalah `O007-FREMLIN-V1-S113`, **Ukuran luar dan
+konstruksi Carathéodory**. Sasaran dua jilid masih aktif; batas Bagian 112 bukan
+pernyataan bahwa keseluruhan 672 halaman telah selesai.
 
 Repo publik: <https://github.com/KokunoYumeto/fremlin-measure-theory-id>
 
 Prarilis Bagian 111: <https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.1.0-s111>
 
-## Membangun unit pertama
+Prarilis kumulatif Bagian 111–112:
+<https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.2.0-s112>
+
+## Membangun batas kumulatif Bagian 111–112
 
 Prasyarat lokal: Python 3 dengan `jsonschema` dan `pypdf`, TeX, serta
 `dvipdfmx`. Dari akar repositori:
 
 ```text
-python scripts/qa_mt111.py authority/fremlin/source/mt1.2011/mt111.tex source/id-ID/mt111.tex --json-out qa/mt111-structural-qa.json
-python backend/generate_mt111.py
-python scripts/validate_backend.py --json-out qa/mt111-backend-validation.json
-python scripts/build_mt111.py
-python scripts/qa_reader_mt111.py --json-out qa/mt111-reader-qa.json
+python scripts/qa_fremlin_unit.py authority/fremlin/source/mt1.2011/mt112.tex source/id-ID/mt112.tex --unit-id O007-FREMLIN-V1-S112 --expected-source-sha256 3c6037e1fb81449cd9ba0bd3bc9b3eae8b5c807ecc758b1b661e8bc8db53ec5e --allow-math-delta 233:745fb7a4fa131cd7f4552a5bc5347cb5a5d10a66bec03801d3020693c90c1679:afe4bbaaedba5158924d3a0bd77f0304472650e71de5aed22515cc3a0a8e1bd2 --allow-math-delta 387:36ab0354bb763d6a570aa9b77f90b0ffc6257e709f49972b30b7546fd1d39d8c:160f84a6b319f2d8d695c69bda2206b3b55b33a8c1bbde572224a73ff057a905 --json-out qa/mt112-structural-qa.json
+python backend/generate_mt112.py
+python backend/validate_mt112.py --json-out qa/mt112-backend-validation.json
+python scripts/build_mt112.py
+python scripts/qa_reader_mt112.py --json-out qa/mt112-reader-qa.json
 ```
 
-Hasil siap baca dibuat di `output/fondasi-teori-ukur-v1-s111-id/` sebagai PDF,
+Hasil siap baca dibuat di `output/fondasi-teori-ukur-v1-s111-s112-id/` sebagai PDF,
 HTML luring dengan MathJax lokal, sumber yang dapat diedit, backend, lisensi,
 dan manifes hash. Arsip ZIP dibuat di sebelah direktori itu.
 

@@ -80,8 +80,19 @@ def normalize_formula(tex: str) -> str:
 
 
 class Renderer:
-    def __init__(self, known_ids: set[str]) -> None:
+    def __init__(
+        self,
+        known_ids: set[str],
+        implicit_ids: dict[str, str] | None = None,
+        unit_number: str = "111",
+        xref_map: dict[str, str] | None = None,
+    ) -> None:
         self.known_ids = known_ids
+        self.implicit_ids = IMPLICIT_IDS if implicit_ids is None else implicit_ids
+        self.unit_number = unit_number
+        self.xref_map = {source_id: f"#{source_id}" for source_id in known_ids}
+        if xref_map:
+            self.xref_map.update(xref_map)
         self.blocks: dict[str, tuple[str, dict[str, str]]] = {}
         self.inline: dict[str, str] = {}
         self.block_counter = 0
@@ -143,6 +154,11 @@ class Renderer:
                 out.append(self.inline_token(fragment))
                 i = end
                 continue
+            if command == "proof":
+                arg, end = read_group(text, j)
+                out.append(self.block_token("proof", body=self.transform(arg)))
+                i = end
+                continue
             if command in {"leader", "header"}:
                 source_id, after_id = read_group(text, j)
                 title, end = read_group(text, after_id)
@@ -178,7 +194,7 @@ class Renderer:
                     self.block_token(
                         "heading",
                         source_id=source_id.strip() + "-notes",
-                        title="Catatan penutup untuk Bagian 111",
+                        title=f"Catatan penutup untuk Bagian {self.unit_number}",
                         level="2",
                         important="false",
                     )
@@ -347,10 +363,10 @@ class Renderer:
             chunk = chunk.replace("{", "").replace("}", "")
             escaped = html.escape(chunk, quote=False)
             # Add local links only in prose; formula source stays untouched.
-            for source_id in sorted(self.known_ids, key=len, reverse=True):
+            for source_id in sorted(self.xref_map, key=len, reverse=True):
                 escaped = re.sub(
                     rf"(?<![A-Za-z0-9]){re.escape(source_id)}(?![A-Za-z0-9])",
-                    f'<a class="xref" href="#{source_id}">{source_id}</a>',
+                    f'<a class="xref" href="{html.escape(self.xref_map[source_id], quote=True)}">{source_id}</a>',
                     escaped,
                 )
             rendered.append(escaped)
@@ -371,7 +387,7 @@ class Renderer:
                     if section_open:
                         output.append("</section>")
                     source_id = values["source_id"]
-                    implicit = IMPLICIT_IDS.get(source_id)
+                    implicit = self.implicit_ids.get(source_id)
                     alias = f'<span class="anchor" id="{implicit}"></span>' if implicit else ""
                     important = (
                         '<span class="importance" title="Sangat penting">penting</span>'
@@ -393,6 +409,17 @@ class Renderer:
                     )
                 elif kind == "center":
                     output.append(f'<div class="centerline">{values["body"]}</div>')
+                elif kind == "anchor":
+                    output.append(
+                        f'<span class="anchor" id="{html.escape(values["source_id"], quote=True)}"></span>'
+                    )
+                elif kind == "proof":
+                    proof_body = self.render_body(values["body"])
+                    output.append(
+                        '<aside class="proof-block" aria-label="Bukti">'
+                        '<h3 class="proof-heading">Bukti</h3>'
+                        f"{proof_body}</aside>"
+                    )
                 continue
 
             paragraphs = re.split(r"\n\s*\n", chunk)
@@ -408,13 +435,44 @@ class Renderer:
         return "\n".join(output)
 
 
-def discover_ids(text: str) -> set[str]:
+def discover_ids(text: str, implicit_ids: dict[str, str] | None = None) -> set[str]:
+    implicit_ids = IMPLICIT_IDS if implicit_ids is None else implicit_ids
     ids = set(re.findall(r"\\(?:leader|header)\{([^{}]+)\}", text))
     ids.update(re.findall(r"\\vleader\{[^{}]*\}\{([^{}]+)\}", text))
     ids.update(re.findall(r"\\(?:spheader|sqheader)\s+([0-9A-Za-z]{5})", text))
-    ids.update(IMPLICIT_IDS.values())
-    ids.update(IMPLICIT_IDS.keys())
+    ids.update(implicit_ids.values())
+    ids.update(implicit_ids.keys())
     return ids
+
+
+def parse_implicit_ids(values: list[str] | None) -> dict[str, str]:
+    if not values:
+        return dict(IMPLICIT_IDS)
+    result: dict[str, str] = {}
+    for value in values:
+        if value.count("=") != 1:
+            raise ValueError(f"invalid --implicit-id value: {value!r}")
+        source_id, target_id = value.split("=", 1)
+        if not re.fullmatch(r"[0-9A-Za-z-]+", source_id) or not re.fullmatch(r"[0-9A-Za-z-]+", target_id):
+            raise ValueError(f"invalid --implicit-id identifiers: {value!r}")
+        if source_id in result:
+            raise ValueError(f"duplicate --implicit-id source: {source_id}")
+        result[source_id] = target_id
+    return result
+
+
+def parse_key_values(values: list[str] | None, option: str) -> dict[str, str]:
+    result: dict[str, str] = {}
+    for value in values or []:
+        if "=" not in value:
+            raise ValueError(f"invalid {option} value: {value!r}")
+        key, payload = value.split("=", 1)
+        if not re.fullmatch(r"[0-9A-Za-z-]+", key) or not payload:
+            raise ValueError(f"invalid {option} value: {value!r}")
+        if key in result:
+            raise ValueError(f"duplicate {option} key: {key}")
+        result[key] = payload
+    return result
 
 
 def main() -> int:
@@ -423,30 +481,72 @@ def main() -> int:
     parser.add_argument("output", type=Path)
     parser.add_argument("--css", default="_static/reader.css")
     parser.add_argument("--mathjax", default="_static/mathjax/tex-chtml.js")
+    parser.add_argument("--unit-id", default="O007-FREMLIN-V1-S111")
+    parser.add_argument("--source-member", default="mt1.2011/mt111.tex")
+    parser.add_argument("--unit-number", default="111")
+    parser.add_argument("--title", default="Aljabar sigma")
+    parser.add_argument("--volume-number", default="1")
+    parser.add_argument("--volume-source-title", default="The Irreducible Minimum")
+    parser.add_argument("--implicit-id", action="append")
+    parser.add_argument("--inline-anchor", action="append")
+    parser.add_argument("--xref", action="append")
     args = parser.parse_args()
 
     source_bytes = args.source.read_bytes()
     source = source_bytes.decode("utf-8")
     clean = strip_comments(source)
-    renderer = Renderer(discover_ids(clean))
+    implicit_ids = parse_implicit_ids(args.implicit_id)
+    inline_anchors = parse_key_values(args.inline_anchor, "--inline-anchor")
+    xref_map = parse_key_values(args.xref, "--xref")
+    renderer = Renderer(
+        discover_ids(clean, implicit_ids),
+        implicit_ids=implicit_ids,
+        unit_number=args.unit_number,
+        xref_map=xref_map,
+    )
     transformed = renderer.transform(clean)
+    for source_id, marker in inline_anchors.items():
+        if source_id in renderer.known_ids:
+            raise ValueError(f"inline anchor duplicates a known ID: {source_id}")
+        occurrences = transformed.count(marker)
+        if occurrences != 1:
+            raise ValueError(
+                f"inline anchor marker {source_id} occurs {occurrences} times"
+            )
+        token = renderer.block_token("anchor", source_id=source_id)
+        transformed = transformed.replace(marker, token + marker, 1)
+        renderer.known_ids.add(source_id)
+        renderer.xref_map[source_id] = f"#{source_id}"
     body = renderer.render_body(transformed)
 
     metadata = {
         "schema": "o007-semantic-reader-v1",
-        "unit_id": "O007-FREMLIN-V1-S111",
-        "source_member": "mt1.2011/mt111.tex",
+        "unit_id": args.unit_id,
+        "source_member": args.source_member,
         "target_bytes": len(source_bytes),
         "target_sha256": sha256(source_bytes),
         "source_ids": sorted(renderer.known_ids),
     }
+    extra_mathjax_macros = ""
+    if args.unit_number != "111":
+        extra_mathjax_macros = """,
+        coint: ['\\\\left[#1\\\\right[', 1],
+        dom: '\\\\operatorname{{dom}}',
+        eae: '=_{\\\\text{{a.e.}}}',
+        eusm: ['\\\\underline{{\\\\mathcal{{#1}}}}', 1],
+        geae: '\\\\ge_{{\\\\text{{a.e.}}}}',
+        leae: '\\\\le_{{\\\\text{{a.e.}}}}',
+        Nu: '\\\\mathrm{{N}}',
+        nuprime: '\\\\nu^{{\\\\prime}}',
+        roibr: '\\\\mathopen{{[}}',
+        sequencen: ['\\\\langle #1\\\\rangle_{{n\\\\in\\\\mathbb{{N}}}}', 1]"""
     document = f'''<!doctype html>
 <html lang="id-ID">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="O007 source-preserving reader v1">
-  <title>Aljabar sigma — Fondasi Teori Ukur</title>
+  <title>{html.escape(args.title)} — Fondasi Teori Ukur</title>
   <link rel="stylesheet" href="{html.escape(args.css, quote=True)}">
   <script>
   window.MathJax = {{
@@ -461,7 +561,7 @@ def main() -> int:
         Forall: '\\\\;\\\\forall\\\\;', Bover: ['\\\\frac{{#1}}{{#2}}', 2],
         enskip: '\\\\;', Tau: '\\\\mathrm{{T}}',
         ooint: ['\\\\left]#1\\\\right[', 1],
-        symmdiff: '\\\\mathbin{{\\\\triangle}}'
+        symmdiff: '\\\\mathbin{{\\\\triangle}}'{extra_mathjax_macros}
       }}
     }},
     options: {{enableAssistiveMml: true}}
@@ -472,15 +572,15 @@ def main() -> int:
 <body>
 <a class="skip-link" href="#isi">Lewati ke isi utama</a>
 <header class="book-header">
-  <p class="eyebrow">O007 · Volume 1 · Bagian 111</p>
-  <h1>Aljabar sigma</h1>
+  <p class="eyebrow">O007 · Volume {html.escape(args.volume_number)} · Bagian {html.escape(args.unit_number)}</p>
+  <h1>{html.escape(args.title)}</h1>
   <p><em>Fondasi Teori Ukur — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
 </header>
 <main id="isi">
 {body}
 </main>
 <footer>
-  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 1: The Irreducible Minimum</cite>, Bagian 111.</p>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume {html.escape(args.volume_number)}: {html.escape(args.volume_source_title)}</cite>, Bagian {html.escape(args.unit_number)}.</p>
   <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 21 Agustus 2026. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
   <details><summary>Metadata mesin untuk unit ini</summary><pre>{html.escape(json.dumps(metadata, ensure_ascii=False, indent=2))}</pre></details>
 </footer>

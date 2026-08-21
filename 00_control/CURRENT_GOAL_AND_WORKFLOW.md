@@ -3,7 +3,7 @@
 Date established: 2026-08-21 (Europe/Berlin)  
 Owner task: `01a01f45-9d00-7f42-9071-4f932b45512a`  
 Role: `O007` — Measure and Integration  
-Status: production commissioned; first unit in progress
+Status: production active; Sections 111–112 admitted; cursor Section 113
 
 ## Durable goal
 
@@ -52,10 +52,11 @@ accessibility, build, and visual QA; record corrections/hashes; update cursor;
 then commit and push the substantial verified boundary. Translation dominates;
 QA must not become an indefinite loop.
 
-The cursor is complete `mt111.tex`, `O007-FREMLIN-V1-S111` (“Sigma-algebras” /
-“Aljabar sigma”), including all prose, results, proofs, notes, eleven exercises,
-three source hints, and references. It is `in_progress`; these controls claim no
-completed translation. After admission advance to `O007-FREMLIN-V1-S112`.
+The admitted contiguous boundary is complete `mt111.tex` through
+`mt112.tex`, `O007-FREMLIN-V1-S111`–`S112`, including all prose,
+results, proofs, notes, 23 exercises, four source hints, and references. The
+active source-order cursor is `O007-FREMLIN-V1-S113`, not a new selection or
+planning pass.
 
 Maintain the corpus's own narrow repository and push verified boundaries under
 standing authorization; never run workspace-wide Git scans. No upstream

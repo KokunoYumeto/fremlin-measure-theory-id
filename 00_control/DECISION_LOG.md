@@ -70,3 +70,16 @@ machine backend, editable source, licenses, and deterministic package pass the
 recorded admission gates. No source correction or invented solution/mastery
 material was added. The production cursor therefore advances to complete
 `mt112.tex`; the full Volumes 1–2 goal remains active.
+
+## 2026-08-21 — D011: Admit complete Section 112 and advance in source order
+
+The complete `mt112.tex` translation is admitted as
+`O007-FREMLIN-V1-S112`. Structural replay preserves every source structure
+and all 480 formula spans, apart from two exact formula corrections separately
+bound in `SOURCE_CORRECTIONS.csv`. A third ledgered source correction removes
+a typographical defect. The cumulative PDF and offline HTML localize generated
+proof/hint chrome, reflow without page overflow, resolve the cross-unit 111Dc
+reference, and pass deterministic package/ZIP admission. Source replay also
+corrects progress accounting: Sections 111 and 112 occupy printed pages 10–18.
+The production cursor advances to complete `mt113.tex`; the 672-page goal
+remains active.
