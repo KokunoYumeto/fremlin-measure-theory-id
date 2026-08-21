@@ -1,0 +1,61 @@
+# Current State — O007 Fremlin Volumes 1–2
+
+Updated: 2026-08-21 (Europe/Berlin)
+
+## State summary
+
+- Corpus selection is resolved: complete D. H. Fremlin, *Measure Theory*,
+  Volumes 1–2, 672 official pages.
+- The earlier missing-selection diagnosis remains preserved in
+  `TASK_RECONSTRUCTION_20260821.md` as history; its pause condition is now
+  resolved by the root handoff.
+- Authority archives, expanded source closures, source manifest, DSL text,
+  build-support manifest, and `mt111.tex` were locally read/hash-verified on
+  2026-08-21. Exact receipts are in `SOURCE_AUTHORITY.md` and `backend/`.
+- Corrected corpus census: 1,094 unique active exercise/problem IDs (198 in
+  Volume 1; 896 in Volume 2) and 276 explicit hint macros (55; 221).
+- Initial schema-versioned locale-neutral corpus, volume, unit, rights, and
+  resource records now exist as JSONL with deterministic CSV projections.
+- The final corrected root handoff and Floris's canonical instructions are
+  retained byte-for-byte under `00_control/` and bound by backend resources.
+- First admitted unit: `O007-FREMLIN-V1-S111`, complete source section
+  `mt111.tex`. The natural `id-ID` target is 26,931 bytes with SHA-256
+  `e0897b3b44d947c89e7b666b8bdee7e9e9bc098a6680ba09e96eb27c97a8d296`.
+- Unit 111 preserves 446/446 formula atoms, 34 explicit source anchors, six
+  exact implicit subanchors, 11 exercises, three hints, and 11 prooflets. Its
+  backend contains 621 unit records and passes schema/reference/CSV replay.
+- The deterministic reader boundary contains a seven-page A4 PDF and an
+  offline semantic HTML reader with 445 active formula renderings; the one
+  remaining source formula is the localized section-title `\sigma` atom and is
+  retained in the 446-record backend. Desktop, mobile, and all-page PDF visual
+  inspection passed.
+- Package: 160 manifested files / 6,450,842 bytes, manifest SHA-256
+  `c8f74cdf1b662e887c8078b6756dd351d86f4c9c26dd2b3cc9fc72c283d2398d`.
+  Deterministic ZIP: 2,423,351 bytes, SHA-256
+  `d3c0683692969cdea7e09323b43aba12d9466d30b44c68309504fa26544999b1`.
+- Publication has not yet been claimed in this state record. The active
+  production cursor has advanced to `O007-FREMLIN-V1-S112`.
+
+## Authority versus inherited evidence
+
+The local authority hashes and expanded file/byte counts were independently
+verified. The root handoff also reports successful bounded legacy-source PDF
+replays and selected visual checks. Those baseline build facts are retained as
+handoff evidence but were not rerun by this scaffolding pass; they do not admit
+the Indonesian target build.
+
+## Immediate production actions
+
+1. Commit and push the admitted Section 111 boundary using narrow corpus-local
+   Git scope, publish its exact PDF/ZIP release assets, and read them back.
+2. Translate complete `mt112.tex` in source order as
+   `O007-FREMLIN-V1-S112`, then repeat the bounded admission workflow.
+3. Continue through every source unit in Volumes 1–2; the 672-page corpus goal
+   remains active and is not completed by the Section 111 release.
+
+## Scope guard
+
+Do not translate Fremlin Volumes 3–5 or merge Cabral, Erdman, Random, RFA,
+Axler, or Stacks material into this corpus. Any separately authored mastery
+support must have original provenance and an explicit component-license
+boundary.
