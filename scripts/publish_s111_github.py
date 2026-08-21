@@ -544,12 +544,20 @@ def anonymous_verify(commit_sha: str, tree_sha: str) -> tuple[dict, dict]:
     if commit.get("sha") != commit_sha or commit.get("commit", {}).get("tree", {}).get("sha") != tree_sha:
         raise PublicationError("anonymous main commit/tree readback mismatch")
     _, tree, _ = request_json("GET", f"/repos/{FULL_REPO}/git/trees/{tree_sha}?recursive=1")
-    if tree.get("truncated") is not False:
+    if tree.get("sha") != tree_sha or tree.get("truncated") is not False:
         raise PublicationError("anonymous recursive tree is truncated")
     entries = tree.get("tree")
     if not isinstance(entries, list):
         raise PublicationError("anonymous tree entries are malformed")
-    paths = {entry.get("path") for entry in entries if isinstance(entry, dict)}
+    if any(
+        not isinstance(entry, dict) or entry.get("type") not in {"blob", "tree"}
+        for entry in entries
+    ):
+        raise PublicationError("anonymous tree contains a malformed entry or gitlink")
+    blob_entries = [entry for entry in entries if entry.get("type") == "blob"]
+    paths = {entry.get("path") for entry in blob_entries}
+    if len(paths) != len(blob_entries):
+        raise PublicationError("anonymous tree contains duplicate blob paths")
     expected_paths = set(release_tree_manifest()) | {TREE_MANIFEST_RELATIVE}
     if paths != expected_paths:
         raise PublicationError("anonymous tree path set differs from the frozen release manifest")
