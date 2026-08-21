@@ -39,7 +39,26 @@ Updated: 2026-08-21 (Europe/Berlin)
   `v0.1.0-s111` contains the PDF, deterministic ZIP, and checksum file; all
   three assets were downloaded anonymously and matched their local SHA-256.
   Durable IDs and URLs are recorded in `qa/PUBLICATION_RECEIPT_S111.json`.
-- The active production cursor has advanced to `O007-FREMLIN-V1-S112`.
+- Second admitted unit: `O007-FREMLIN-V1-S112`, complete source section
+  `mt112.tex`. The natural `id-ID` target is 24,549 bytes with SHA-256
+  `9e2600fe79f0cc7c42d7bde3312111954740e4d38cc7ad4410cede9097e12256`.
+- Section 112 preserves 480 formula spans, 38 semantic segments, 12 exercises,
+  one source hint, seven proof records, and three explicit source corrections.
+  Its 672 unit-local backend records pass schema, reference, CSV, formula-map,
+  correction-ledger, and deterministic-manifest validation.
+- The cumulative Sections 111–112 reader has 925 rendered HTML formula
+  sources, responsive desktop/mobile reflow, working cross-unit anchors, and a
+  12-page A4 PDF. Every PDF page was rendered and inspected; all four generated
+  hint labels and the generated proof label are localized.
+- The cumulative build, package manifest, and ZIP reproduce exactly over two
+  clean passes. Reader/package admission is recorded in
+  `qa/mt112-reader-qa.json` and visual admission in
+  `qa/mt112-visual-browser-qa.json`.
+- Source-page accounting was corrected from inherited handoff shorthand:
+  Section 111 occupies printed pages 10–14 and Section 112 pages 15–18 in the
+  frozen official baseline, so the contiguous translated boundary is nine
+  official pages.
+- The active production cursor has advanced to `O007-FREMLIN-V1-S113`.
 
 ## Authority versus inherited evidence
 
@@ -51,8 +70,8 @@ the Indonesian target build.
 
 ## Immediate production actions
 
-1. Translate complete `mt112.tex` in source order as
-   `O007-FREMLIN-V1-S112`, then repeat the bounded admission workflow.
+1. Translate complete `mt113.tex` in source order as
+   `O007-FREMLIN-V1-S113`, then repeat the bounded admission workflow.
 2. Continue through every source unit in Volumes 1–2; the 672-page corpus goal
    remains active and is not completed by the Section 111 release.
 

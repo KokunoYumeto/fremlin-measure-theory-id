@@ -8,25 +8,26 @@ Updated: 2026-08-21 (Europe/Berlin)
 |---|---|
 | Corpus | `O007-FREMLIN-MT-V1-V2` |
 | Volume | `O007-FREMLIN-V1` — *The Irreducible Minimum* |
-| Unit | `O007-FREMLIN-V1-S112` |
-| Source anchor | `112` |
-| Source title | `Measure spaces` |
-| Indonesian working title | `Ruang ukur` |
-| Authority member | `authority/fremlin/source/mt1.2011/mt112.tex` |
-| Source receipt | 22,823 bytes; 550 lines; SHA-256 `3c6037e1fb81449cd9ba0bd3bc9b3eae8b5c807ecc758b1b661e8bc8db53ec5e` |
-| Intended target | `source/id-ID/mt112.tex` |
+| Unit | `O007-FREMLIN-V1-S113` |
+| Source anchor | `113` |
+| Source title | `Outer measures and Caratheodory's construction` |
+| Indonesian working title | `Ukuran luar dan konstruksi Carathéodory` |
+| Authority member | `authority/fremlin/source/mt1.2011/mt113.tex` |
+| Source receipt | 16,692 bytes; 443 lines; SHA-256 `34a400f9b01faa39330a22f712d885a272e09134dc4ae3ee4d6dc10d09ffd7b3` |
+| Intended target | `source/id-ID/mt113.tex` |
 | Production status | `queued_next_in_source_order` |
 | Target admitted | `false` |
 
 ## Last admitted boundary
 
-`O007-FREMLIN-V1-S111` / `mt111.tex` is complete and admitted. Target:
-26,931 bytes, 607 lines, SHA-256
-`e0897b3b44d947c89e7b666b8bdee7e9e9bc098a6680ba09e96eb27c97a8d296`.
-Its exact admission evidence is in `CP0001_MT111_ADMISSION.md`, the backend
-record streams, and the `qa/mt111-*` receipts.
+`O007-FREMLIN-V1-S112` / `mt112.tex` is complete and admitted. Target:
+24,549 bytes, 575 lines, SHA-256
+`9e2600fe79f0cc7c42d7bde3312111954740e4d38cc7ad4410cede9097e12256`.
+It preserves 480 formula spans, 38 semantic segments, 12 exercises, one source
+hint, seven proof records, and three explicit source corrections. Exact
+evidence is in `CP0002_MT112_ADMISSION.md`, the backend record streams, and
+the `qa/mt112-*` receipts.
 
-Advance again only after the complete Section 112 introduction, definitions,
-results, proofs, examples, notes, exercises, hints, formulas, and references
-have passed source-to-target, language, mathematical, backend, build,
-accessibility, and visual admission.
+Advance again only after complete Section 113 has passed the same
+source-to-target, language, mathematical, backend, build, accessibility, and
+visual admission gates.
