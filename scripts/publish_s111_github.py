@@ -31,6 +31,17 @@ API = "https://api.github.com"
 REMOTE = f"https://github.com/{FULL_REPO}.git"
 TAG = "v0.1.0-s111"
 USER_AGENT = "O007-Fremlin-id-publisher/1"
+TREE_MANIFEST_PATH = ROOT / "qa" / "S111_RELEASE_TREE.tsv"
+TREE_MANIFEST_RELATIVE = "qa/S111_RELEASE_TREE.tsv"
+RELEASE_NAME = "Bagian 111 — Aljabar sigma"
+RELEASE_BODY = (
+    "Batas publik terverifikasi pertama untuk adaptasi Bahasa Indonesia "
+    "Measure Theory Volume 1–2 karya D. H. Fremlin. Rilis ini memuat "
+    "Bagian 111 lengkap (prosa, bukti, latihan, petunjuk), pembaca HTML "
+    "luring, PDF, backend semantik, sumber yang dapat disunting, lisensi, "
+    "dan bukti QA. Sasaran lengkap tetap 672 halaman; rilis ini adalah "
+    "prarilis kemajuan, bukan edisi dua volume yang selesai."
+)
 
 SOURCE_PATH = ROOT / "source" / "id-ID" / "mt111.tex"
 AUTHORITY_PATH = ROOT / "authority" / "fremlin" / "source" / "mt1.2011" / "mt111.tex"
@@ -58,6 +69,7 @@ ASSETS = {
 
 SOURCE_SHA256 = "e0897b3b44d947c89e7b666b8bdee7e9e9bc098a6680ba09e96eb27c97a8d296"
 AUTHORITY_SHA256 = "40857003cc5e0d5580e2db104e980e34f11f813cbdb2dc4ad444f34fa01e78a2"
+SHA256SUMS_SHA256 = "0b5d31183c37a10f69be337f4acd24faad436a18c0c25ba54de16356cc7aa9f2"
 
 
 class PublicationError(RuntimeError):
@@ -94,8 +106,10 @@ def run_git(*args: str, env: dict[str, str] | None = None) -> str:
         errors="replace",
     )
     if process.returncode:
-        safe_error = process.stderr.replace("Authorization", "[authorization]")
-        raise PublicationError(f"git {' '.join(args)} failed: {safe_error.strip()}")
+        # Never echo Git stderr here: inherited tracing or a helper can place a
+        # complete Authorization value in it.  Exit status and the safe argv
+        # are sufficient for this bounded driver.
+        raise PublicationError(f"git {' '.join(args)} failed with exit code {process.returncode}")
     return process.stdout.strip()
 
 
@@ -180,13 +194,71 @@ def request_json(
 
 def select_token() -> str:
     for candidate in token_candidates():
-        try:
-            _, profile, _ = request_json("GET", "/user", token=candidate)
-        except PublicationError:
+        status, _, body = request(
+            "GET", f"{API}/user", token=candidate, expected=(200, 401)
+        )
+        if status == 401:
             continue
+        profile = json.loads(body.decode("utf-8"))
+        if not isinstance(profile, dict):
+            raise PublicationError("authenticated GitHub profile has an unexpected shape")
         if profile.get("login") == OWNER:
             return candidate
     raise PublicationError(f"no credential candidate authenticates as {OWNER}")
+
+
+def head_blob(path: str) -> bytes:
+    process = subprocess.run(
+        ["git", "show", f"HEAD:{path}"],
+        cwd=ROOT,
+        check=False,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.DEVNULL,
+    )
+    if process.returncode:
+        raise PublicationError(f"release-tree path is not readable from HEAD: {path}")
+    return process.stdout
+
+
+def release_tree_manifest() -> dict[str, tuple[int, str]]:
+    if not TREE_MANIFEST_PATH.is_file():
+        raise PublicationError(f"release-tree manifest is absent: {TREE_MANIFEST_PATH}")
+    rows: dict[str, tuple[int, str]] = {}
+    previous = ""
+    for line_number, line in enumerate(TREE_MANIFEST_PATH.read_text(encoding="utf-8").splitlines(), 1):
+        parts = line.split("\t")
+        if len(parts) != 3:
+            raise PublicationError(f"malformed release-tree manifest row {line_number}")
+        path, raw_size, digest = parts
+        if not path or path == TREE_MANIFEST_RELATIVE or path in rows or path <= previous:
+            raise PublicationError(f"invalid or unsorted release-tree path at row {line_number}")
+        if not re.fullmatch(r"[0-9a-f]{64}", digest):
+            raise PublicationError(f"invalid release-tree digest at row {line_number}")
+        try:
+            size = int(raw_size)
+        except ValueError as exc:
+            raise PublicationError(f"invalid release-tree size at row {line_number}") from exc
+        if size < 0:
+            raise PublicationError(f"negative release-tree size at row {line_number}")
+        rows[path] = (size, digest)
+        previous = path
+    if not rows:
+        raise PublicationError("release-tree manifest is empty")
+    return rows
+
+
+def verify_head_tree() -> None:
+    rows = release_tree_manifest()
+    head_paths = set(run_git("ls-tree", "-r", "--name-only", "HEAD").splitlines())
+    expected_paths = set(rows) | {TREE_MANIFEST_RELATIVE}
+    if head_paths != expected_paths:
+        missing = sorted(expected_paths - head_paths)
+        extra = sorted(head_paths - expected_paths)
+        raise PublicationError(f"HEAD path set differs from frozen release tree; missing={missing}, extra={extra}")
+    for path, (expected_size, expected_hash) in rows.items():
+        data = head_blob(path)
+        if len(data) != expected_size or sha256_bytes(data) != expected_hash:
+            raise PublicationError(f"HEAD blob differs from frozen release-tree manifest: {path}")
 
 
 def check_local_inputs() -> None:
@@ -199,8 +271,16 @@ def check_local_inputs() -> None:
             raise PublicationError(f"local input does not match frozen bytes: {path}")
     sums_path, _, _, _ = ASSETS["SHA256SUMS.txt"]
     sums_hash = sha256_file(sums_path)
+    if sums_hash != SHA256SUMS_SHA256:
+        raise PublicationError("SHA256SUMS.txt differs from the frozen checksum file")
+    expected_lines = [
+        f"{ASSETS[name][2]}  {name}"
+        for name in ("fondasi-teori-ukur-v1-s111-id.pdf", "fondasi-teori-ukur-v1-s111-id.zip")
+    ]
+    if sums_path.read_text(encoding="ascii").splitlines() != expected_lines:
+        raise PublicationError("SHA256SUMS.txt does not contain the exact two release records")
     path, expected_size, _, media = ASSETS["SHA256SUMS.txt"]
-    ASSETS["SHA256SUMS.txt"] = (path, expected_size, sums_hash, media)
+    ASSETS["SHA256SUMS.txt"] = (path, expected_size, SHA256SUMS_SHA256, media)
     for name, (path, expected_size, expected_hash, _) in ASSETS.items():
         if not path.is_file():
             raise PublicationError(f"release asset is absent: {name}")
@@ -208,10 +288,21 @@ def check_local_inputs() -> None:
             raise PublicationError(f"release asset does not match frozen bytes: {name}")
     if run_git("status", "--porcelain", "--untracked-files=no"):
         raise PublicationError("tracked worktree changes exist; commit the bounded source state first")
+    verify_head_tree()
 
 
 def authenticated_git_env(token: str) -> dict[str, str]:
     env = os.environ.copy()
+    for key in list(env):
+        upper = key.upper()
+        if (
+            upper.startswith("GIT_TRACE")
+            or upper in {"GIT_CURL_VERBOSE", "GIT_REDIRECT_STDERR"}
+            or upper == "GIT_CONFIG_COUNT"
+            or upper.startswith("GIT_CONFIG_KEY_")
+            or upper.startswith("GIT_CONFIG_VALUE_")
+        ):
+            env.pop(key, None)
     basic = base64.b64encode(f"x-access-token:{token}".encode("utf-8")).decode("ascii")
     env["GIT_CONFIG_COUNT"] = "1"
     env["GIT_CONFIG_KEY_0"] = "http.https://github.com/.extraheader"
@@ -240,8 +331,23 @@ def ensure_repository(token: str) -> dict:
             },
             expected=(201,),
         )
-    if repo.get("full_name") != FULL_REPO or repo.get("private") is not False:
+    expected_description = "Adaptasi Bahasa Indonesia dari Measure Theory Volumes 1–2 karya D. H. Fremlin"
+    if (
+        repo.get("full_name") != FULL_REPO
+        or repo.get("private") is not False
+        or repo.get("fork") is not False
+        or repo.get("archived") is not False
+        or repo.get("disabled") is not False
+        or repo.get("html_url") != f"https://github.com/{FULL_REPO}"
+        or repo.get("description") != expected_description
+        or repo.get("owner", {}).get("login") != OWNER
+    ):
         raise PublicationError("repository identity/profile does not match the public O007 lane")
+    receipt_path = ROOT / "qa" / "PUBLICATION_RECEIPT_S111.json"
+    if receipt_path.is_file():
+        receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+        if not isinstance(receipt, dict) or receipt.get("repository_id") != repo.get("id"):
+            raise PublicationError("repository ID differs from the durable publication receipt")
     return repo
 
 
@@ -253,8 +359,6 @@ def ensure_remote_and_push(token: str) -> tuple[str, str]:
         run_git("remote", "add", "origin", REMOTE)
     elif run_git("remote", "get-url", "origin") != REMOTE:
         raise PublicationError("origin exists but does not match the exact O007 repository")
-    env = authenticated_git_env(token)
-    run_git("push", "--set-upstream", "origin", f"HEAD:refs/heads/main", env=env)
     tag_state = subprocess.run(
         ["git", "rev-parse", "--verify", f"refs/tags/{TAG}"],
         cwd=ROOT,
@@ -267,11 +371,39 @@ def ensure_remote_and_push(token: str) -> tuple[str, str]:
         run_git("tag", TAG, head)
     elif tag_state.stdout.strip() != head:
         raise PublicationError("local release tag exists at a different commit")
-    run_git("push", "origin", f"refs/tags/{TAG}:refs/tags/{TAG}", env=env)
+    env = authenticated_git_env(token)
+    remote_rows = run_git("ls-remote", "origin", env=env).splitlines()
+    remote_refs: dict[str, str] = {}
+    for row in remote_rows:
+        parts = row.split("\t")
+        if len(parts) != 2 or parts[1] in remote_refs:
+            raise PublicationError("remote Git reference listing is malformed or duplicated")
+        remote_refs[parts[1]] = parts[0]
+    permitted_refs = {"HEAD", "refs/heads/main", f"refs/tags/{TAG}"}
+    if set(remote_refs) - permitted_refs:
+        raise PublicationError(f"repository contains unrelated refs: {sorted(set(remote_refs) - permitted_refs)}")
+    for ref in ("HEAD", "refs/heads/main", f"refs/tags/{TAG}"):
+        if ref in remote_refs and remote_refs[ref] != head:
+            raise PublicationError(f"remote {ref} is not the exact bounded source commit")
+    run_git(
+        "push",
+        "--atomic",
+        "--set-upstream",
+        "origin",
+        "HEAD:refs/heads/main",
+        f"refs/tags/{TAG}:refs/tags/{TAG}",
+        env=env,
+    )
     return head, tree
 
 
 def ensure_release(token: str, commit_sha: str) -> dict:
+    _, tag_ref, _ = request_json(
+        "GET", f"/repos/{FULL_REPO}/git/ref/tags/{TAG}", token=token
+    )
+    tag_object = tag_ref.get("object")
+    if not isinstance(tag_object, dict) or tag_object.get("type") != "commit" or tag_object.get("sha") != commit_sha:
+        raise PublicationError("remote lightweight tag does not resolve to the bounded source commit")
     status, release, _ = request_json(
         "GET", f"/repos/{FULL_REPO}/releases/tags/{TAG}", token=token, expected=(200, 404)
     )
@@ -283,27 +415,52 @@ def ensure_release(token: str, commit_sha: str) -> dict:
             payload={
                 "tag_name": TAG,
                 "target_commitish": commit_sha,
-                "name": "Bagian 111 — Aljabar sigma",
-                "body": (
-                    "Batas publik terverifikasi pertama untuk adaptasi Bahasa Indonesia "
-                    "Measure Theory Volume 1–2 karya D. H. Fremlin. Rilis ini memuat "
-                    "Bagian 111 lengkap (prosa, bukti, latihan, petunjuk), pembaca HTML "
-                    "luring, PDF, backend semantik, sumber yang dapat disunting, lisensi, "
-                    "dan bukti QA. Sasaran lengkap tetap 672 halaman; rilis ini adalah "
-                    "prarilis kemajuan, bukan edisi dua volume yang selesai."
-                ),
+                "name": RELEASE_NAME,
+                "body": RELEASE_BODY,
                 "draft": False,
                 "prerelease": True,
             },
             expected=(201,),
         )
-    if release.get("tag_name") != TAG or release.get("draft") is not False or release.get("prerelease") is not True:
+    if (
+        release.get("tag_name") != TAG
+        or release.get("target_commitish") != commit_sha
+        or release.get("name") != RELEASE_NAME
+        or release.get("body") != RELEASE_BODY
+        or release.get("draft") is not False
+        or release.get("prerelease") is not True
+        or release.get("author", {}).get("login") != OWNER
+    ):
         raise PublicationError("existing release does not match the bounded prerelease profile")
     return release
 
 
-def verify_public_asset(url: str, expected_size: int, expected_hash: str) -> None:
-    _, _, data = request("GET", url, expected=(200,), anonymous_redirects=True)
+def validate_public_asset_url(name: str, url: object) -> str:
+    if not isinstance(url, str):
+        raise PublicationError(f"public asset has no string download URL: {name}")
+    parsed = urllib.parse.urlsplit(url)
+    expected_path = f"/{FULL_REPO}/releases/download/{TAG}/{urllib.parse.quote(name, safe='')}"
+    try:
+        port = parsed.port
+    except ValueError as exc:
+        raise PublicationError(f"public asset URL has a malformed port: {name}") from exc
+    if (
+        parsed.scheme != "https"
+        or parsed.hostname != "github.com"
+        or port not in (None, 443)
+        or parsed.username is not None
+        or parsed.password is not None
+        or parsed.path != expected_path
+        or parsed.query
+        or parsed.fragment
+    ):
+        raise PublicationError(f"public asset URL is outside the exact GitHub release path: {name}")
+    return url
+
+
+def verify_public_asset(name: str, url: object, expected_size: int, expected_hash: str) -> None:
+    checked_url = validate_public_asset_url(name, url)
+    _, _, data = request("GET", checked_url, expected=(200,), anonymous_redirects=True)
     if len(data) != expected_size or sha256_bytes(data) != expected_hash:
         raise PublicationError("public release asset byte readback does not match local bytes")
 
@@ -330,12 +487,10 @@ def ensure_assets(token: str, release: dict) -> dict[str, dict]:
     for name, (path, expected_size, expected_hash, media_type) in ASSETS.items():
         existing = by_name.get(name)
         if existing is not None:
-            if existing.get("state") != "uploaded" or existing.get("size") != expected_size:
-                raise PublicationError(f"existing public asset is incomplete or wrong-sized: {name}")
-            url = existing.get("browser_download_url")
-            if not isinstance(url, str):
-                raise PublicationError(f"existing public asset has no download URL: {name}")
-            verify_public_asset(url, expected_size, expected_hash)
+            if existing.get("size") != expected_size:
+                raise PublicationError(f"existing public asset is wrong-sized: {name}")
+            if existing.get("state") == "uploaded":
+                verify_public_asset(name, existing.get("browser_download_url"), expected_size, expected_hash)
             continue
         encoded = urllib.parse.quote(name, safe="")
         upload_url = f"https://uploads.github.com/repos/{FULL_REPO}/releases/{release_id}/assets?name={encoded}"
@@ -352,24 +507,38 @@ def ensure_assets(token: str, release: dict) -> dict[str, dict]:
             raise PublicationError(f"malformed upload response for {name}")
         by_name[name] = asset
 
-    _, final_release, _ = request_json("GET", f"/repos/{FULL_REPO}/releases/{release_id}", token=token)
-    final_assets = final_release.get("assets")
-    if not isinstance(final_assets, list) or len(final_assets) != len(ASSETS):
-        raise PublicationError("final release asset count is not exact")
-    final_map = {item.get("name"): item for item in final_assets if isinstance(item, dict)}
-    if set(final_map) != set(ASSETS):
-        raise PublicationError("final release asset names are not exact")
+    final_map: dict[str, dict] = {}
+    for attempt in range(16):
+        _, final_release, _ = request_json("GET", f"/repos/{FULL_REPO}/releases/{release_id}", token=token)
+        final_assets = final_release.get("assets")
+        if not isinstance(final_assets, list) or len(final_assets) != len(ASSETS):
+            raise PublicationError("final release asset count is not exact")
+        final_map = {item.get("name"): item for item in final_assets if isinstance(item, dict)}
+        if set(final_map) != set(ASSETS):
+            raise PublicationError("final release asset names are not exact")
+        if all(item.get("state") == "uploaded" for item in final_map.values()):
+            break
+        if attempt == 15:
+            raise PublicationError("release assets did not reach uploaded state within the bounded poll")
+        time.sleep(2)
     for name, (_, expected_size, expected_hash, _) in ASSETS.items():
         item = final_map[name]
-        if item.get("state") != "uploaded" or item.get("size") != expected_size:
+        if item.get("size") != expected_size:
             raise PublicationError(f"final release asset metadata mismatch: {name}")
-        verify_public_asset(item["browser_download_url"], expected_size, expected_hash)
+        verify_public_asset(name, item.get("browser_download_url"), expected_size, expected_hash)
     return final_map
 
 
 def anonymous_verify(commit_sha: str, tree_sha: str) -> tuple[dict, dict]:
     _, repo, _ = request_json("GET", f"/repos/{FULL_REPO}")
-    if repo.get("private") is not False or repo.get("default_branch") != "main":
+    if (
+        repo.get("private") is not False
+        or repo.get("default_branch") != "main"
+        or repo.get("full_name") != FULL_REPO
+        or repo.get("owner", {}).get("login") != OWNER
+        or repo.get("archived") is not False
+        or repo.get("disabled") is not False
+    ):
         raise PublicationError("anonymous repository readback is not public main")
     _, commit, _ = request_json("GET", f"/repos/{FULL_REPO}/commits/main")
     if commit.get("sha") != commit_sha or commit.get("commit", {}).get("tree", {}).get("sha") != tree_sha:
@@ -381,6 +550,9 @@ def anonymous_verify(commit_sha: str, tree_sha: str) -> tuple[dict, dict]:
     if not isinstance(entries, list):
         raise PublicationError("anonymous tree entries are malformed")
     paths = {entry.get("path") for entry in entries if isinstance(entry, dict)}
+    expected_paths = set(release_tree_manifest()) | {TREE_MANIFEST_RELATIVE}
+    if paths != expected_paths:
+        raise PublicationError("anonymous tree path set differs from the frozen release manifest")
     if "source/id-ID/mt111.tex" not in paths or "authority/fremlin/source/mt1.2011/mt111.tex" not in paths:
         raise PublicationError("anonymous source closure is incomplete")
     forbidden = ("cabral", "erdman", "random-site", "Measurable.html")
@@ -395,9 +567,31 @@ def anonymous_verify(commit_sha: str, tree_sha: str) -> tuple[dict, dict]:
         _, _, data = request("GET", raw_url, expected=(200,), anonymous_redirects=True)
         if sha256_bytes(data) != expected_hash:
             raise PublicationError(f"anonymous raw readback mismatch: {relative}")
+    _, tag_ref, _ = request_json("GET", f"/repos/{FULL_REPO}/git/ref/tags/{TAG}")
+    tag_object = tag_ref.get("object")
+    if not isinstance(tag_object, dict) or tag_object.get("type") != "commit" or tag_object.get("sha") != commit_sha:
+        raise PublicationError("anonymous tag reference does not resolve to the bounded commit")
     _, release, _ = request_json("GET", f"/repos/{FULL_REPO}/releases/tags/{TAG}")
-    if release.get("draft") is not False or release.get("prerelease") is not True:
+    if (
+        release.get("tag_name") != TAG
+        or release.get("target_commitish") != commit_sha
+        or release.get("name") != RELEASE_NAME
+        or release.get("body") != RELEASE_BODY
+        or release.get("draft") is not False
+        or release.get("prerelease") is not True
+    ):
         raise PublicationError("anonymous release profile mismatch")
+    public_assets = release.get("assets")
+    if not isinstance(public_assets, list) or len(public_assets) != len(ASSETS):
+        raise PublicationError("anonymous release asset count is not exact")
+    public_asset_map = {item.get("name"): item for item in public_assets if isinstance(item, dict)}
+    if set(public_asset_map) != set(ASSETS):
+        raise PublicationError("anonymous release asset names are not exact")
+    for name, (_, expected_size, _, _) in ASSETS.items():
+        item = public_asset_map[name]
+        if item.get("state") != "uploaded" or item.get("size") != expected_size:
+            raise PublicationError(f"anonymous release asset metadata mismatch: {name}")
+        validate_public_asset_url(name, item.get("browser_download_url"))
     return repo, release
 
 
