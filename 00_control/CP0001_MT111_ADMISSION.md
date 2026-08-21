@@ -53,3 +53,14 @@ solution expression, source correction, or new mastery item entered the unit.
 
 `O007-FREMLIN-V1-S111` is admitted. The active cursor is
 `O007-FREMLIN-V1-S112`; the 672-page Volumes 1–2 production goal remains active.
+
+## Public boundary
+
+The exact admitted source tree is public at commit
+`3a98bac5f12bd66fa8edad09eb06fc7adeb93a41` in
+`https://github.com/KokunoYumeto/fremlin-measure-theory-id`. Lightweight tag
+`v0.1.0-s111` resolves to that commit. The public prerelease contains exactly
+the PDF, deterministic ZIP, and `SHA256SUMS.txt`; each was downloaded again
+without credentials and matched its frozen size and SHA-256. The exact remote
+IDs, URLs, release tree, and readback time are bound in
+`qa/PUBLICATION_RECEIPT_S111.json`.

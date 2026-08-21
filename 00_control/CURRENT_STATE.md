@@ -33,8 +33,13 @@ Updated: 2026-08-21 (Europe/Berlin)
   `c8f74cdf1b662e887c8078b6756dd351d86f4c9c26dd2b3cc9fc72c283d2398d`.
   Deterministic ZIP: 2,423,351 bytes, SHA-256
   `d3c0683692969cdea7e09323b43aba12d9466d30b44c68309504fa26544999b1`.
-- Publication has not yet been claimed in this state record. The active
-  production cursor has advanced to `O007-FREMLIN-V1-S112`.
+- The exact Section 111 tree is public at
+  `https://github.com/KokunoYumeto/fremlin-measure-theory-id`, commit
+  `3a98bac5f12bd66fa8edad09eb06fc7adeb93a41`. Prerelease
+  `v0.1.0-s111` contains the PDF, deterministic ZIP, and checksum file; all
+  three assets were downloaded anonymously and matched their local SHA-256.
+  Durable IDs and URLs are recorded in `qa/PUBLICATION_RECEIPT_S111.json`.
+- The active production cursor has advanced to `O007-FREMLIN-V1-S112`.
 
 ## Authority versus inherited evidence
 
@@ -46,11 +51,9 @@ the Indonesian target build.
 
 ## Immediate production actions
 
-1. Commit and push the admitted Section 111 boundary using narrow corpus-local
-   Git scope, publish its exact PDF/ZIP release assets, and read them back.
-2. Translate complete `mt112.tex` in source order as
+1. Translate complete `mt112.tex` in source order as
    `O007-FREMLIN-V1-S112`, then repeat the bounded admission workflow.
-3. Continue through every source unit in Volumes 1–2; the 672-page corpus goal
+2. Continue through every source unit in Volumes 1–2; the 672-page corpus goal
    remains active and is not completed by the Section 111 release.
 
 ## Scope guard

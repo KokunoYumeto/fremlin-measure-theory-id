@@ -20,6 +20,9 @@ petunjuk, bukti, relasi, hak, artefak, dan kejadian QA dalam JSONL serta CSV.
 Kursor berikutnya adalah `O007-FREMLIN-V1-S112`. Sasaran dua jilid masih aktif;
 rilis unit pertama bukan pernyataan bahwa keseluruhan 672 halaman telah selesai.
 
+Repo publik: <https://github.com/KokunoYumeto/fremlin-measure-theory-id>  
+Prarilis Bagian 111: <https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.1.0-s111>
+
 ## Membangun unit pertama
 
 Prasyarat lokal: Python 3 dengan `jsonschema` dan `pypdf`, TeX, serta
