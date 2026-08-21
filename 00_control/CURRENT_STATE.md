@@ -58,6 +58,15 @@ Updated: 2026-08-21 (Europe/Berlin)
   Section 111 occupies printed pages 10–14 and Section 112 pages 15–18 in the
   frozen official baseline, so the contiguous translated boundary is nine
   official pages.
+- The exact cumulative Sections 111–112 tree is public at commit
+  `5e78a38174e80a6dd6d4f44efe40b54377c30ae9`, lightweight tag
+  `v0.2.0-s112`, and
+  `https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.2.0-s112`.
+  The 105,289-byte PDF, 2,762,489-byte deterministic ZIP, and checksum file
+  were downloaded anonymously and matched their bound SHA-256 values. Exact
+  release/asset IDs and hashes are in `qa/PUBLICATION_RECEIPT_S112.json`
+  (SHA-256
+  `c8f71084326a5bd4699890ae0cb3bbed74be0887bd6d976100d3dfa6c236bd43`).
 - The active production cursor has advanced to `O007-FREMLIN-V1-S113`.
 
 ## Authority versus inherited evidence
@@ -73,7 +82,7 @@ the Indonesian target build.
 1. Translate complete `mt113.tex` in source order as
    `O007-FREMLIN-V1-S113`, then repeat the bounded admission workflow.
 2. Continue through every source unit in Volumes 1–2; the 672-page corpus goal
-   remains active and is not completed by the Section 111 release.
+   remains active and is not completed by the cumulative Section 112 release.
 
 ## Scope guard
 
