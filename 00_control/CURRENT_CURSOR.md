@@ -8,55 +8,72 @@ Updated: 2026-08-22 (Europe/Berlin)
 |---|---|
 | Corpus | `O007-FREMLIN-MT-V1-V2` |
 | Volume | `O007-FREMLIN-V1` — *The Irreducible Minimum* |
-| Chapter | `O007-FREMLIN-V1-C12` — *Integration* |
-| Unit | `O007-FREMLIN-V1-S122` |
-| Source anchor | `122` |
-| Source title | `Definition of the integral` |
-| Indonesian working title | `Definisi integral` |
-| Authority member | `authority/fremlin/source/mt1.2011/mt122.tex` |
-| Source receipt | 40,114 bytes; 1,071 lines; SHA-256 `e187da4ddc39d7ed101b8bb6b6ee1af4b1ac6655672f772a3aa5e874feeed701` |
-| Target | `source/id-ID/mt122.tex` |
-| Target receipt | 44,853 bytes; 1,055 lines; SHA-256 `898783f7dc36acb07721f891525c215a53788ae7974dacd27590f51449b847f7` |
-| Production status | `translation_complete_structural_semantic_pass_backend_reader_pending` |
+| Chapter | `O007-FREMLIN-V1-C13` — *The indefinite integral* |
+| Unit | `O007-FREMLIN-V1-S131` |
+| Source anchor | `131` |
+| Source title | `Upper integrals` |
+| Indonesian working title | `Integral atas` |
+| Authority member | `authority/fremlin/source/mt1.2011/mt131.tex` |
+| Source receipt | 11,811 bytes; 294 lines; SHA-256 `94ebff73a9a8820a85e852df30088830cfee57e8cfed0fa8244f915e0b88f105` |
+| Target | `source/id-ID/mt131.tex` |
+| Target receipt | not yet created |
+| Production status | `authority_intake_next` |
 | Target admitted | `false` |
 
-Section 121 is admitted. Source order now continues with complete
-`mt122.tex`, which introduces the integral for real-valued functions on an
-arbitrary measure space and its basic properties. The source begins on printed
-page 43, shared with Section 121; its final source-native page and complete
-source structure are now frozen in `qa/mt122-intake-census.json`. S122 spans
-printed pages 43–52, sharing page 43 with S121 and page 52 with S123. It has 42
-explicit plus 29 implicit anchors, 840 mathematical atoms, 19 exercises, six
-source hint macros, 11 formal results/proofs, 96 printed reference expressions
-expanding to 134 edges, 13 reader-facing comment blocks, and no source-local
-asset. Its complete natural Indonesian target is translated and has passed a
-three-part source-aware semantic reread and structural replay. All counts and
-topology match; the only two mathematical deltas are explicit source
-corrections at formula ordinals 95 and 256, with four total S122 corrections
-recorded as `O007-CORR-0013`–`0016`. Structural evidence is
-`qa/mt122-structural-qa.json` (2,756 bytes; SHA-256
-`0580383c01bb6b0ffe109663e238e28508761cbedcff65093cbf9509380a99eb`);
-semantic evidence is `qa/mt122-semantic-review.json` (7,197 bytes; SHA-256
-`8319046053de3bfa5f9b4ce1f1d2ef23ff8067695b1e59bab46306f52a2eef29`).
-Backend generation/validation and cumulative reader/build/visual admission
-remain pending, so S122 is not yet admitted.
+Section 123 is complete and admitted. Its cumulative S111–S123 reader has
+passed deterministic backend/build replay, complete source-aware semantic QA,
+all-page PDF inspection, and actual desktop/mobile browser testing. Exact
+admission evidence is `00_control/CP0008_MT123_ADMISSION.md`; the next
+executable production action is bounded intake and complete translation of
+`mt131.tex` in source order. Publication of the admitted S123 checkpoint is a
+separate preservation action and does not change the translation cursor.
 
 ## Last admitted boundary
 
-`O007-FREMLIN-V1-S121` / `mt121.tex` is complete and admitted. Target: 43,931
-bytes / 1,103 lines / SHA-256
-`76a5d90e6a647d158d2aecd32eaeaa4384063ef0d09f105c40c49205555a9f53`.
-It preserves 957 mathematical atoms, 56 semantic segments, 11 exercises, two
-typed hints, 39 proofs, 80 typed cross-reference edges, and five explicit
-source corrections. Exact evidence is in `CP0006_MT121_ADMISSION.md` and the
-`qa/mt121-*` receipts.
+`O007-FREMLIN-V1-S123` / `mt123.tex`, `The convergence theorems` →
+`Teorema-teorema konvergensi`, is complete and admitted. Authority: 17,868
+bytes / 458 lines / SHA-256
+`5a1abb103efce40f702cc375e57c7e76387e78c7def15a64fb627d428900d742`.
+Target: 19,410 bytes / 485 lines / SHA-256
+`0dbed47213a2ba03ff3f55226aa2f9e141742234313ad45762742df9542fc985`.
 
-The cumulative reader has a 40-page PDF, 3,095 visible HTML formula sources,
-82 exercises, 24 typed hints, one accessible S121 footnote, and the four
-retained S113 diagrams. PDF and actual desktop/mobile browser replay pass the
-fail-closed visual gate. The boundary is public at commit
-`04e353955782a63386a38e90441ea71376bf0529`, tree
-`83ed67eef8cd766198e769ae24a92e18998379be`, and tag `v0.6.0-s121`; all 302
-manifest members and all three assets passed anonymous byte-for-byte readback.
-The exact receipt is `qa/PUBLICATION_RECEIPT_S121.json` (4,639 bytes; SHA-256
-`d4e2c1089966cb604d82c5dcdd32ff6bb923d73d9d248289cb79b2e9d0cf2882`).
+It preserves 337 mathematical atoms, 22 semantic segments, ten exercises,
+three source hints, four results/proofs, one accessible source footnote, and 34
+typed cross-reference edges. Its 453-record backend and eight-unit catalog
+validate deterministically. The cumulative official-page union is pages 10–56,
+47 unique pages of the selected 672-page corpus.
+
+The cumulative reader has a 55-page A4 PDF, 4,272 visible HTML formula sources,
+111 exercises, 33 typed hints, two accessible footnotes, and all four S113
+diagrams. Every PDF page and every HTML unit at 1,280×900 and 390×844 passed
+actual visual replay with complete local-link closure, no page-level overflow,
+and no MathJax/error/raw-control residue. Exact admission evidence is
+`00_control/CP0008_MT123_ADMISSION.md` and the `qa/mt123-*` receipts.
+
+This admitted boundary is public as Zenodo version `0.8.0-s123`, DOI
+`10.5281/zenodo.22060237`, under the unchanged concept DOI
+`10.5281/zenodo.22059798`. The PDF, deterministic ZIP, and checksum file all
+passed anonymous byte-for-byte readback, and the S122 predecessor was
+reverified unchanged. Exact token-free evidence is
+`qa/ZENODO_PUBLICATION_RECEIPT_S123.json`.
+
+The exact S122 release tree is frozen locally in `qa/S122_RELEASE_TREE.tsv`
+(377 rows; 37,408 bytes; SHA-256
+`5374e5885b25afcd7e8bff5820626c15433ac4a6352c3c775b372325186fcebd`).
+It is preserved as exact local commit
+`9d4cdfdaf0aeeeb16520538076b4334dc521f36f`, tree
+`db242899cf5a4fb90e886da3a8c4b9d0183bb985`, and tag `v0.7.0-s122`.
+The allowlisted publisher passed its no-Git/no-network preflight, but the live
+transaction stopped before remote mutation because GitHub reports the primary
+`KokunoYumeto` account as suspended and the backup credential as invalid.
+Sanitized evidence is `qa/S122_GITHUB_PUBLICATION_BLOCKER_20260822.json`.
+Push that same frozen local boundary when repository authorization works; do
+not claim a public GitHub tag/release or GitHub receipt before anonymous byte
+readback.
+
+The same admitted S122 reader boundary is now independently public on Zenodo
+as version `0.7.0-s122`, DOI `10.5281/zenodo.22059799`, under concept DOI
+`10.5281/zenodo.22059798`. All three public assets passed anonymous byte and
+SHA-256 readback; exact sanitized evidence is
+`qa/ZENODO_PUBLICATION_RECEIPT_S122.json`. Future admitted cumulative versions
+must extend this concept lineage rather than create duplicate O007 deposits.

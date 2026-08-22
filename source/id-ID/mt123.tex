@@ -1,0 +1,485 @@
+\frfilename{mt123.tex}
+\versiondate{18.11.04}
+\copyrightdate{1994}
+
+\def\chaptername{Integrasi}
+\def\sectionname{Teorema-teorema konvergensi}
+
+\newsection{123}
+
+Jerih payah besar yang telah kita curahkan sejauh ini belum juga mendapat
+pembenaran dari teorema mana pun yang cukup ampuh untuk membuatnya layak. Kini kita
+sampai pada jantung teori integrasi modern, `teorema-teorema
+konvergensi', yang menguraikan syarat-syarat yang memungkinkan kita
+mengintegralkan limit suatu barisan fungsi terintegralkan.
+
+\leader{123A}{Teorema B. Levi} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur
+dan $\langle f_n\rangle_{n\in\Bbb N}$ suatu barisan fungsi bernilai
+real, semuanya terintegralkan pada $X$, sedemikian sehingga (i)
+$f_n\leae f_{n+1}$ untuk setiap $n\in\Bbb N$ (ii)
+$\sup_{n\in\Bbb N}\int f_n<\infty$. Maka
+$f=\lim_{n\to\infty}f_n$ terintegralkan, dan
+$\int f=\lim_{n\to\infty}\int f_n$.
+
+\medskip
+
+\noindent{\bf Catatan}\cmmnt{ Perlu segera saya ulangi
+kesepakatan-kesepakatan yang saya gunakan di sini. Setiap fungsi $f_n$
+dianggap didefinisikan pada suatu himpunan koterabaikan
+$\dom f_n\subseteq X$, seperti dalam 122Nc, dan fungsi limit $f$
+dianggap mempunyai domain
+
+\Centerline{$\{x:x\in\bigcup_{n\in\Bbb N}\bigcap_{m\ge n}\dom f_m$,
+$\lim_{n\to\infty}f_n(x)$ ada di $\Bbb R\}$,}
+
+\noindent seperti dalam 121Fa.} \dvro{Pernyataan}{Anda tidak akan
+kehilangan gagasan penting apa pun jika mengandaikan bahwa setiap
+$f_n$ didefinisikan di seluruh $X$; tetapi pernyataan}
+`$f$ terintegralkan' mencakup pernyataan `$f$ didefinisikan, sebagai
+bilangan real, hampir di mana-mana'\cmmnt{, dan ini merupakan bagian
+hakiki dari teorema tersebut}.
+
+\proof{{\bf (a)} Mula-mula kita tangani kasus ketika
+$f_0=0$ a.e.
+Tetapkan $c=\sup_{n\in\Bbb N}\int f_n=\lim_{n\to\infty}\int f_n$
+(dengan memperhatikan bahwa, menurut 122Od,
+$\sequencen{\int f_n}$ merupakan barisan tak-menurun).
+
+\medskip
+
+\quad{\bf (i)} Semua himpunan $\dom f_n$, $\{x:f_0(x)=0\}$,
+$\{x:f_n(x)
+\le f_{n+1}(x)\}$ bersifat koterabaikan, sehingga irisannya, $F$, juga
+koterabaikan. Untuk setiap $n\in\Bbb N$ terdapat himpunan
+koterabaikan $E_n$ sedemikian sehingga $f_n\restr E_n$ terukur (122P);
+misalkan $E^*$ suatu himpunan terukur koterabaikan yang termuat dalam
+himpunan koterabaikan $F\cap\bigcap_{n\in\Bbb N}E_n$.
+
+\medskip
+
+\quad{\bf (ii)} Untuk $a>0$ dan $n\in\Bbb N$, tetapkan
+$H_n(a)=\{x:x\in E^*$, $f_n(x)\ge a\}$;
+maka $H_n(a)$ terukur karena $f_n\restr E_n$ terukur dan $E^*$
+merupakan subhimpunan terukur dari $E_n$. Selain itu, $a\chi
+H_n(a)
+\le f_n$ di setiap titik pada $E^*$, sehingga
+
+\Centerline{$a\mu H_n(a)=\int a\chi H_n(a)\le\int f_n\le c$.}
+
+\noindent Karena $f_n(x)\le f_{n+1}(x)$ untuk setiap $x\in E^*$,
+$H_n(a)\subseteq H_{n+1}(a)$ untuk setiap $n\in\Bbb N$, dan dengan
+menuliskan $H(a)=\bigcup_{n\in\Bbb N}H_n(a)$, kita mempunyai
+
+\Centerline{$\mu H(a)=\lim_{n\to\infty}\mu H_n(a)\le\Bover{c}{a}$}
+
+\noindent (112Ce). Khususnya, $\mu H(a)<\infty$ untuk setiap $a$.
+Selain itu,
+
+\Centerline{$\mu(\bigcap_{k\ge 1}H(k))\le\inf_{k\ge 1}\mu H(k)
+\le\inf_{k\ge 1}\Bover{c}{k}=0$.}
+
+\noindent Tetapkan $E=E^*\setminus\bigcap_{k\ge 1}H(k)$; maka $E$
+bersifat koterabaikan.
+
+\medskip
+
+\quad{\bf (iii)} Jika $x\in E$, terdapat suatu $k$ sedemikian sehingga
+$x\notin H(k)$, yakni $x\notin\bigcup_{n\in\Bbb N}H_n(k)$, yakni
+$f_n(x)<k$ untuk setiap $n$; selain itu,
+$\langle f_n(x)\rangle_{n\in\Bbb N}$ merupakan barisan tak-menurun,
+sehingga
+$f(x)=\lim_{n\to\infty}f_n(x)=\sup_{n\in\Bbb N}f_n(x)$ ada di
+$\Bbb R$. Dengan demikian, fungsi
+limit $f$ didefinisikan hampir di mana-mana.
+Karena setiap $f_n\restr E$ terukur (121Eh), demikian pula
+$f\restr E=\lim_{n\to\infty}f_n\restr E$ (121Fa).
+Jika $\epsilon>0$, maka $\{x:x\in E,\,f(x)\ge\epsilon\}$ termuat dalam
+$H({1\over 2}\epsilon)$, sehingga mempunyai ukuran berhingga.
+
+\medskip
+
+\quad{\bf (iv)}
+Sekarang andaikan bahwa $g$ suatu fungsi sederhana dan $g\leae f$.
+Seperti dalam bukti 122G, $H=\{x:g(x)\ne 0\}$ mempunyai ukuran
+berhingga, dan $g$ dibatasi di atas oleh suatu $M$.
+
+Misalkan $\epsilon>0$. Untuk setiap $n\in\Bbb N$, tetapkan
+$G_n=\{x:x\in E,\,(g-f_n) (x)\ge\epsilon\}$.
+Maka setiap $G_n$ terukur, dan $\langle G_n \rangle_{n\in\Bbb N}$
+merupakan barisan tak-menaik dengan irisan
+
+\Centerline{$\{x:x\in E,\,g(x)\ge\epsilon +\sup_{n\in\Bbb N}f_n(x)\}
+\subseteq\{x:g(x)>f(x)\}$,}
+
+\noindent yang terabaikan.
+Selain itu, $\mu G_0<\infty$ karena $G_0\subseteq H$.
+Akibatnya, $\lim_{n\to\infty}\mu G_n=0$ (112Cf).
+Ambil $n$ sedemikian sehingga $\mu G_n\le\epsilon$. Maka, untuk setiap
+$x\in E$,
+
+\Centerline{$g(x)\le f_n(x)+\epsilon\chi H(x)+M\chi G_n(x)$,}
+
+\noindent sehingga
+
+\Centerline{$g\leae f_n+M\chi G_n+\epsilon\chi H$}
+
+\noindent dan
+
+\Centerline{$\int g\le\int f_n+M\mu G_n+\epsilon\mu H
+\le c+\epsilon(M+\mu H)$.\footnote{Saya berterima kasih kepada
+P. Wallace Thompson karena telah menemukan kekeliruan pada tahap ini
+dalam edisi-edisi sebelumnya.}}
+
+\noindent Karena $\epsilon$ sebarang, $\int g\le c$.
+
+\medskip
+
+\quad{\bf (v)} Dengan demikian, $f\restr E$ (yang tak-negatif)
+memenuhi syarat-syarat Lema 122Ja, dan terintegralkan. Selain itu,
+integralnya paling besar $c$, menurut Definisi 122K. Karena
+$f\eae f\restr E$, $f$ juga terintegralkan, dengan integral yang sama
+(122Rb). Di pihak lain, $f\geae f_n$ untuk setiap $n$, sehingga
+$\int f\ge\sup_{n\in\Bbb N}\int f_n=c$, menurut 122Od.
+
+Dengan ini kasus $f_0=0$ a.e.\ selesai dibuktikan.
+
+\medskip
+
+{\bf (b)} Untuk kasus umum, tinjau barisan
+$\langle f'_n\rangle_{n\in\Bbb N}=\langle f_n-f_0\rangle_{n\in\Bbb N}$.
+Menurut (a), $f'=\lim_{n\to\infty}f'_n$ terintegralkan, dan
+$\int f'=\lim_{n\to\infty}
+\int f'_n$; sekarang
+$\lim_{n\to\infty}f_n\eae f'+f_0$, sehingga fungsi itu terintegralkan,
+dengan integral
+$\int f'+\int f_0=\lim_{n\to\infty}\int f_n$.
+
+\medskip
+
+\noindent{\bf Catatan} Mungkin Anda telah memperhatikan, tanpa merasa
+heran, bahwa argumen (a-iv) dalam bukti ini mengulangi argumen yang
+digunakan untuk kasus khusus 122G.
+}%end of proof of 123A
+
+\leader{123B}{Lema Fatou} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur,
+dan $\langle f_n\rangle_{n\in\Bbb N}$ suatu barisan fungsi bernilai
+real, semuanya terintegralkan pada $X$. Andaikan setiap $f_n$
+tak-negatif a.e., dan
+$\liminf_{n\to\infty}\int f_n<\infty$. Maka
+$\liminf_{n\to\infty}
+f_n$ terintegralkan, dan
+$\int\liminf_{n\to\infty}f_n\le\liminf_{n\to\infty}\int f_n$.
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Sekali lagi, teorema ini mencakup pernyataan
+bahwa $\liminf_{n\to\infty}f_n(x)$ ada di $\Bbb R$ untuk hampir setiap
+$x\in X$.}
+
+\proof{ Tetapkan $c=\liminf_{n\to\infty}\int f_n$ dan
+$f=\liminf_{n\to\infty}f_n$.
+Untuk setiap $n\in\Bbb N$, misalkan $E_n$ suatu himpunan koterabaikan
+sedemikian sehingga $f_n'=f_n\restr E_n$ terukur dan tak-negatif.
+Tetapkan $g_n=\inf_{m\ge n}f'_m$; maka setiap $g_n$ terukur (121Fc),
+tak-negatif, dan didefinisikan pada himpunan koterabaikan
+$\bigcap_{m\ge n}E_m$, serta $g_n\leae f_n$, sehingga $g_n$
+terintegralkan (122P) dengan
+$\int g_n\le\inf_{m\ge n}\int f_m\le c$.
+Selanjutnya, $g_n(x)\le g_{n+1}(x)$ untuk setiap
+$x\in\dom g_n$, sehingga $\langle g_n\rangle_{n\in\Bbb N}$ memenuhi
+syarat-syarat teorema B. Levi (123A), dan
+$g=\lim_{n\to\infty}g_n$ terintegralkan, dengan
+$\int g=\lim_{n\to\infty}\int g_n\le c$.
+Akhirnya, karena setiap $f'_n$ sama dengan $f_n$ hampir di mana-mana,
+$g=\liminf_{n\to\infty}f'_n\eae f$, dan $\int f$ ada, sama dengan
+$\int g\le c$.
+}%end of proof of 123B
+
+\leader{123C}{Teorema Konvergensi Terdominasi Lebesgue} Misalkan
+$(X,\Sigma,\mu)$ suatu ruang ukur dan
+$\langle f_n\rangle_{n\in\Bbb N}$ suatu barisan fungsi bernilai real,
+semuanya terintegralkan pada $X$, sedemikian sehingga
+$f(x)=\lim_{n\to\infty}f_n(x)$ ada di $\Bbb R$ untuk hampir setiap
+$x\in X$. Andaikan pula bahwa terdapat suatu fungsi terintegralkan $g$
+sedemikian sehingga $|f_n|\leae g$ untuk setiap $n$.
+Maka $f$ terintegralkan, dan $\lim_{n\to\infty}\int f_n$ ada serta
+sama dengan $\int f$.
+
+\proof{ Tinjau $\tilde f_n=f_n+g$ untuk setiap $n\in\Bbb N$.
+Maka $0\le\tilde f_n\le 2g$ a.e.\ untuk setiap $n$, sehingga
+$\tilde c=\liminf_{n\to\infty}\int \tilde f_n$
+ada di $\Bbb R$, dan $\tilde f=\liminf_{n\to\infty}\tilde f_n$
+terintegralkan, dengan $\int \tilde f\le \tilde c$, menurut Lema Fatou
+(123B).
+Namun, perhatikan bahwa $f\eae\tilde f-g$, karena
+$f(x)=\tilde f(x)-g(x)$ setidaknya setiap kali $f(x)$ dan $g(x)$
+keduanya terdefinisi, sehingga $f$ terintegralkan, dengan
+
+\Centerline{$\int f=\int \tilde f-\int g
+\le\liminf_{n\to\infty}\int \tilde f_n-\int g
+=\liminf_{n\to\infty}\int f_n$.}
+
+\noindent Demikian pula, dengan meninjau
+$\langle -f_n\rangle_{n\in\Bbb N}$,
+
+\Centerline{$\int(-f)\le\liminf_{n\to\infty}\int(-f_n)$,}
+
+\noindent yakni,
+
+\Centerline{$\int f\ge\limsup_{n\to\infty}\int f_n$.}
+
+\noindent Jadi $\lim_{n\to\infty}\int f_n$ ada dan sama dengan
+$\int f$.
+}%end of proof of 123C
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Akhirnya kita telah sampai pada tahap ketika
+masalah-masalah teknis yang berkaitan dengan fungsi-fungsi terdefinisi
+sebagian mulai berkurang, atau lebih tepatnya, tertangani secara
+efisien oleh kesepakatan-kesepakatan yang saya gunakan mengenai
+penafsiran rumus-rumus seperti `$\limsup$'.
+}%end of comment
+
+\leader{123D}{}\cmmnt{ Sebagai gambaran tentang kekuatan
+teorema-teorema ini, saya berikan di sini suatu hasil yang merupakan
+salah satu penerapan standar teori tersebut.
+
+\medskip
+
+\noindent}{\bf Korolari} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur dan
+$\ooint{a,b}$ suatu interval terbuka tak kosong di dalam $\Bbb R$.
+Misalkan $f:X\times\ooint{a,b}\to\Bbb R$ suatu fungsi sedemikian
+sehingga
+
+\inset{(i) integral $F(t)=\int f(x,t)dx$ terdefinisi untuk setiap
+$t\in\ooint{a,b}$;}
+
+\inset{(ii) turunan parsial $\pd{f}{t}$ dari $f$ terhadap variabel
+kedua terdefinisi di setiap titik dalam $X\times\ooint{a,b}$;}
+
+\inset{(iii) terdapat fungsi terintegralkan
+$g:X\to\coint{0,\infty}$ sedemikian sehingga
+$|\pd{f}{t}(x,t)|\le g(x)$ untuk setiap $x\in X$ dan
+$t\in\ooint{a,b}$.}
+
+\noindent Maka turunan $F'(t)$ dan integral
+$\biggerint\pd{f}{t}(x,t)dx$ ada untuk setiap $t\in\ooint{a,b}$,
+dan keduanya sama.
+
+\proof{{\bf (a)} Misalkan $t$ sembarang titik dalam $\ooint{a,b}$, dan
+$\sequencen{t_n}$ sembarang barisan dalam
+$\ooint{a,b}\setminus\{t\}$ yang konvergen ke $t$. Tinjau
+
+\Centerline{$\Bover{F(t_n)-F(t)}{t_n-t}
+=\int\Bover{f(x,t_n)-f(x,t)}{t_n-t}\mu(dx)$}
+
+\noindent untuk setiap $n$. (Langkah ini menggunakan 122O.) Jika kita
+menetapkan
+
+\Centerline{$f_n(x)=\Bover{f(x,t_n)-f(x,t)}{t_n-t}$,}
+
+\noindent untuk $x\in X$, maka dari Teorema Nilai Rata-Rata kita
+melihat bahwa terdapat suatu $\tau$ (yang tentu saja bergantung pada
+$n$ maupun $x$), yang terletak di antara $t_n$ dan $t$, sedemikian
+sehingga $f_n(x)=\pd{f}{t}(x,\tau)$, sehingga $|f_n(x)|\le g(x)$.
+Pada saat yang sama,
+$\lim_{n\to\infty}f_n(x)=\pd{f}{t}(x,t)$ untuk setiap $x$.
+Jadi Teorema Konvergensi Terdominasi Lebesgue menunjukkan bahwa
+$\biggerint\pd{f}{t}(x,t)dx$ ada dan sama dengan
+
+\Centerline{$\lim_{n\to\infty}\int f_n(x)dx
+=\lim_{n\to\infty}\Bover{F(t_n)-F(t)}{t_n-t}$.}
+
+\wheader{123D}{6}{2}{2}{12pt}
+
+{\bf (b)} Karena $\sequencen{t_n}$ sebarang,
+
+\Centerline{$\lim_{s\to t}\Bover{F(s)-F(t)}{s-t}
+=\int\Pd{f}{t}(x,t)dx$,}
+
+\noindent sebagaimana dinyatakan.
+}%end of proof of 123D
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Dalam jilid berikutnya saya menawarkan suatu
+variasi teorema ini, dengan hipotesis maupun kesimpulannya diperlemah
+(252Ye).
+}%end of comment
+
+\exercises{
+\leader{123X}{Latihan dasar $\pmb{>}$(a)}
+%\spheader 123Xa
+Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur, dan $\sequencen{f_n}$ suatu
+barisan fungsi bernilai real, semuanya terintegralkan pada $X$,
+sedemikian sehingga $\sum_{n=0}^{\infty}\int|f_n|$ berhingga.
+Tunjukkan bahwa $f(x)=\sum_{n=0}^{\infty}f_n(x)$ ada di $\Bbb R$
+untuk hampir setiap $x\in X$, dan bahwa
+$\int f=\sum_{n=0}^{\infty}\int f_n$.
+\Hint{tinjau terlebih dahulu kasus ketika setiap $f_n$ tak-negatif.}
+
+\spheader 123Xb Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur.
+Andaikan $T$ sembarang subhimpunan $\Bbb R$, dan
+$\langle f_t\rangle_{t\in T}$ suatu keluarga fungsi, semuanya
+terintegralkan pada $X$, sedemikian sehingga, untuk setiap $t\in T$,
+
+\Centerline{$f_t(x)=\lim_{s\in T,s\to t}f_s(x)$}
+
+\noindent untuk hampir setiap $x\in X$. Andaikan pula bahwa terdapat
+suatu fungsi terintegralkan $g$ sedemikian sehingga $|f_t|\leae g$
+untuk setiap $t\in T$.
+Tunjukkan bahwa $t\mapsto\int f_t:T\to\Bbb R$ kontinu.
+
+\sqheader 123Xc Misalkan $f$ suatu fungsi bernilai real yang
+didefinisikan di setiap titik pada $\coint{0,\infty}$, dan lengkapi
+interval ini dengan ukuran Lebesgue. {\bf Transformasi Laplace} (real)
+darinya ialah fungsi $F$ yang didefinisikan oleh
+
+\Centerline{$F(s)=\int_0^{\infty}e^{-sx}f(x)dx$}
+
+\noindent untuk semua bilangan real $s$ yang membuat integral tersebut
+terdefinisi.
+
+\quad(i) Tunjukkan bahwa jika $s\in\dom F$ dan $s'\ge s$, maka
+$s'\in\dom F$ (karena $e^{-s'x}e^{sx}\le 1$ untuk setiap $x$).
+(Bagaimana Anda mengetahui bahwa $x\mapsto e^{-s'x}e^{sx}$ terukur?)
+
+\quad(ii) Tunjukkan bahwa $F$ dapat didiferensialkan pada bagian dalam
+domainnya.
+\Hint{perhatikan bahwa jika $a_0\in\dom F$ dan $a_0<a<b$, maka
+terdapat suatu $M$ sedemikian sehingga
+$xe^{-sx}|f(x)|\le Me^{-a_0x}|f(x)|$ setiap kali
+$x\in\coint{0,\infty}$, $s\in[a,b]$.}
+
+\quad(iii) Tunjukkan bahwa jika $F$ terdefinisi untuk setidaknya satu
+nilai, maka
+$\lim_{s\to\infty}F(s)=0$. \Hint{gunakan Teorema Konvergensi
+Terdominasi Lebesgue untuk menunjukkan bahwa
+$\lim_{n\to\infty}F(s_n)=0$ setiap kali
+$\lim_{n\to\infty}s_n=\infty$.}
+
+\quad(iv) Tunjukkan bahwa jika $f$, $g$ mempunyai transformasi Laplace
+$F$, $G$, maka transformasi Laplace dari $f+g$ adalah $F+G$,
+setidaknya pada $\dom F\cap \dom
+G$.
+
+\spheader 123Xd Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur
+dan $\langle f_n\rangle_{n\in\Bbb N}$ suatu barisan fungsi bernilai
+real, semuanya terintegralkan pada $X$, sedemikian sehingga terdapat
+suatu fungsi terintegralkan $g$ dengan $|f_n|\leae g$ untuk setiap $n$.
+Tunjukkan bahwa $\limsup_{n\to\infty}f_n$ terintegralkan dan bahwa
+$\int\limsup_{n\to\infty}f_n\ge\limsup_{n\to\infty}\int f_n$.
+%123C
+
+\leader{123Y}{Latihan lanjutan (a)}
+%\spheader 123Ya also in \S235
+Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur, $Y$ sembarang himpunan dan
+$\phi:X\to Y$ sembarang fungsi; misalkan $\mu\phi^{-1}$ ukuran citra
+pada $Y$ (112Xf). Tunjukkan bahwa jika $h:Y\to\Bbb R$ sembarang
+fungsi, maka $h$ terintegralkan terhadap $\mu\phi^{-1}$ jika dan hanya
+jika $h\phi$ terintegralkan terhadap $\mu$; dalam hal itu kedua integral
+tersebut sama.
+
+\header{123Yb}{\bf (b)} Jelaskan cara menyesuaikan 123Xc dengan kasus
+ketika $f$ tidak didefinisikan pada suatu subhimpunan terabaikan dari
+$\Bbb R$.
+
+\header{123Yc}{\bf (c)} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur dan
+$a<b$ dalam $\Bbb R$. Misalkan
+$f:X\times\ooint{a,b}\to\coint{0,\infty}$ suatu fungsi sedemikian
+sehingga $\int f(x,t)dx$ terdefinisi untuk setiap $t\in\ooint{a,b}$
+dan $t\mapsto f(x,t)$ kontinu untuk setiap $x\in X$. Andaikan bahwa
+$c\in\ooint{a,b}$ sedemikian sehingga
+$\liminf_{t\to c}\int f(x,t)dx<\infty$.
+Tunjukkan bahwa $\int\liminf_{t\to c}f(x,t)dx$ terdefinisi dan kurang
+dari atau sama dengan $\liminf_{t\to c}\int f(x,t)dx$.
+
+\header{123Yd}{\bf (d)} Tunjukkan bahwa terdapat suatu fungsi
+$f:\BbbR^2\to\{0,1\}$ sedemikian sehingga (i) integral Lebesgue
+$\int f(x,t)dx$ terdefinisi dan sama dengan $1$ untuk setiap $t\ne 0$
+(ii) fungsi $x\mapsto\liminf_{t\to 0}f(x,t)$ tidak terukur Lebesgue.
+({\it Catatan\/}: tentu saja Anda harus memulai konstruksi dari suatu
+subhimpunan tak-terukur dari $\Bbb R$; lihat 134B untuk himpunan
+semacam itu.)
+
+\spheader 123Ye Misalkan $(Y,\Tau,\nu)$ suatu ruang ukur. Misalkan $X$
+suatu himpunan, $\Sigma$ suatu aljabar-$\sigma$ atas
+subhimpunan-subhimpunan $X$, dan
+$\langle\mu_y\rangle_{y\in Y}$ suatu keluarga ukuran pada $X$
+sedemikian sehingga $\mu_yX$ berhingga untuk setiap $y$ dan
+$\mu E=\int\mu_yE\,\nu(dy)$ terdefinisi untuk setiap $E\in\Sigma$.
+(i) Tunjukkan bahwa $\mu:\Sigma\to\coint{0,\infty}$ merupakan suatu
+ukuran. (ii) Tunjukkan bahwa jika
+$f:X\to\coint{0,\infty}$ suatu fungsi $\Sigma$-terukur, maka $f$
+terintegralkan terhadap $\mu$ jika dan hanya jika fungsi itu
+terintegralkan terhadap $\mu_y$ untuk hampir setiap $y\in Y$ dan
+$\int\bigl(\int fd\mu_y\bigr)\nu(dy)$ terdefinisi, serta bahwa nilai
+ini dalam hal itu sama dengan $\int fd\mu$.
+
+\spheader 123Yf Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur, dan
+$\sequencen{f_n}$ suatu barisan fungsi bernilai real yang terukur
+secara virtual dan semuanya didefinisikan hampir di mana-mana dalam
+$X$. Andaikan bahwa
+$\sum_{n=0}^{\infty}\int|f_n(x)-1|\mu(dx)<\infty$.
+Tunjukkan bahwa $\prod_{n=0}^{\infty}f_n(x)$ ada di $\Bbb R$ untuk
+hampir setiap $x\in X$.
+%123A
+
+}%end of exercises
+
+\endnotes{
+\Notesheader{123} Saya berharap 123D dan kasus khususnya, 123Xc, akan
+membantu meyakinkan Anda bahwa teori di sini mempunyai penerapan yang
+berguna.
+
+Semua teorema dalam bagian ini dapat dipandang sebagai teorema
+`pertukaran limit', yang menetapkan syarat-syarat yang memungkinkan
+
+$$\lim_{n\to\infty}\int f_n=\int\lim_{n\to\infty}f_n,$$
+
+\noindent atau
+
+$$\Bover{\partial}{\partial t}{\int}f\,dx=\int\Bover{\partial
+f}{\partial
+t}dx.$$
+
+\noindent Bahkan untuk fungsi-fungsi yang dapat ditangani dengan metode
+integrasi yang jauh lebih elementer (misalnya, integral Riemann),
+teorema-teorema jenis ini dapat menuntut verifikasi
+pertidaksamaan-pertidaksamaan yang melelahkan. Kekuatan integral
+Lebesgue terletak pada teorema-teorema umum yang diberikannya, yang
+mencakup bagian yang cukup besar dari kasus-kasus penting yang
+muncul dalam praktik. (Namun harus saya akui bahwa tidak ada yang lebih
+khas dalam analisis terapan daripada kebutuhannya akan hasil-hasil
+khusus yang berkaitan dengan, tetapi tidak dapat diturunkan dari,
+teorema-teorema umum yang standar.) Sebagai contoh, dalam 123Xc, fakta
+bahwa daerah integrasinya merupakan interval tak terbatas
+$\coint{0,\infty}$ tidak menambah kesulitan. Tentu saja, ini berkaitan
+dengan fakta bahwa kita hanya meninjau integral fungsi-fungsi yang
+nilai mutlaknya terintegralkan.
+
+Limit-limit yang digunakan dalam 123A-123C semuanya merupakan limit
+barisan; tentu saja, bagian dari hakikat teori ukur ialah bahwa kita
+berharap dapat menangani keluarga terhitung dari himpunan atau fungsi,
+tetapi keluarga yang lebih besar dari itu menimbulkan kekhawatiran. Meskipun
+demikian, terdapat banyak konteks yang memungkinkan kita mengambil
+jenis limit lain. Saya menguraikan beberapa di antaranya dalam 123D,
+123Xb, dan 123Xc(iii). Intinya ialah bahwa dalam limit seperti
+$\lim_{t\to u}\phi(t)$, dengan $u\in[-\infty,\infty]$, kita akan
+mempunyai $\lim_{t\to u}\phi(t)=a$ jika dan hanya jika
+$\lim_{n\to\infty}\phi(t_n)=a$ setiap kali $\sequencen{t_n}$ konvergen
+ke $u$; sehingga ketika mencari suatu limit
+$\lim_{t\to u}\int f_t$, untuk suatu keluarga fungsi
+$\langle f_t\rangle_{t\in T}$, cukuplah jika kita dapat menentukan
+$\lim_{n\to\infty}\int f_{t_n}$ untuk cukup banyak barisan
+$\sequencen{t_n}$. Argumen jenis ini akan efektif bagi setiap limit
+standar $\lim_{t\uparrow a}$, $\lim_{t\downarrow a}$,
+$\lim_{t\to a}$, $\lim_{t\to\infty}$, $\lim_{t\to-\infty}$ dari
+kalkulus dasar, dan dapat digunakan bersama dengan teorema B. Levi
+ataupun teorema Lebesgue. Barangkali perlu saya catat bahwa suatu
+kesulitan muncul dalam perluasan serupa dari lema Fatou
+(123Yc-123Yd).
+}%end of notes
+
+\frnewpage

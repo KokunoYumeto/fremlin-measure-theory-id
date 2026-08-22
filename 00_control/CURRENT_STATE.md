@@ -275,8 +275,95 @@ Updated: 2026-08-22 (Europe/Berlin)
   `0580383c01bb6b0ffe109663e238e28508761cbedcff65093cbf9509380a99eb`)
   and `qa/mt122-semantic-review.json` (7,197 bytes / SHA-256
   `8319046053de3bfa5f9b4ce1f1d2ef23ff8067695b1e59bab46306f52a2eef29`).
-  S122 is not yet admitted: backend, cumulative reader/build, accessibility,
-  and visual gates remain open.
+  S122 is admitted under `CP0007_MT122_ADMISSION.md`. Its 1,199-record backend
+  and the seven-unit catalog validate deterministically. The cumulative reader
+  has 3,935 visible formulas, 101 exercises, 30 typed hints, and a 50-page A4
+  PDF. All 50 PDF pages passed independent 120-dpi visual inspection. Actual
+  desktop/mobile browser replay rejected a print-only `\penalty-100` control
+  exposed as red MathJax text; the final reader preserves the exact source
+  record while removing the control only from the visible rendering surface.
+  The repaired candidate has exact formula/assistive parity, zero error/raw
+  residue, complete local-link closure, and no page-level overflow.
+- Section `O007-FREMLIN-V1-S123`, `The convergence theorems` →
+  `Teorema-teorema konvergensi`, is now complete and admitted. Its frozen authority member is
+  17,868 bytes / 458 lines / SHA-256
+  `5a1abb103efce40f702cc375e57c7e76387e78c7def15a64fb627d428900d742`.
+  Its complete Indonesian target is 19,410 bytes / 485 lines / SHA-256
+  `0dbed47213a2ba03ff3f55226aa2f9e141742234313ad45762742df9542fc985`.
+  Exact structural replay preserves all 337 math atoms, 15 explicit stable IDs,
+  48 protected reference tokens, and three source hints, with only the recorded
+  formula-ordinal-262 correction. A complete independent bilingual reread found
+  no omission or meaning-changing mistranslation and applied five bounded
+  language findings. Exact evidence is `qa/mt123-intake-census.json`,
+  `qa/mt123-structural-qa.json`, and `qa/mt123-semantic-review.json`. Its
+  453-record deterministic backend contains 22 segments (15 explicit, six
+  implicit, one introduction), 337 formula records, ten exercises, three
+  hints, four results/proofs, 34 typed cross-reference edges, and the exact
+  `O007-CORR-0017` link at formula ordinal 262. The eight-unit catalog covers
+  official pages 10–56 (47 unique pages). Schema, JSONL/CSV, locator, reference,
+  correction, catalog, historical-manifest, and determinism replay pass in
+  `qa/mt123-backend-validation.json`.
+- The admitted cumulative S111–S123 reader contains 4,272 visible HTML formula
+  sources, 111 exercises, 33 typed hints, two accessible footnotes, all four
+  S113 diagrams, and a 55-page A4 PDF. All PDF pages passed 120-dpi visual
+  inspection. Root plus all eight HTML units passed actual 1,280×900 desktop
+  and 390×844 mobile browser replay with exact formula/assistive parity,
+  complete link and asset closure, no page-level overflow, and zero visible
+  MathJax/error/raw-control residue. The deterministic two-pass final package
+  has 602 files; its 601-row manifest is 62,472 bytes / SHA-256
+  `68a67a1f12ed471be28e08da8d7ef82075a15522733ebb1a9de7bbda2d418cae`.
+  The PDF is 474,209 bytes / SHA-256
+  `aff8b9cc0a5f5b4995ba1ab54e12ddefda607a4cb175b074d51580f0f7320306`;
+  the deterministic ZIP is 5,518,761 bytes / SHA-256
+  `67a6f431d8938e59d1553bde468a8047a9087affc10f907002c79434ab42e157`.
+  Exact admission is `00_control/CP0008_MT123_ADMISSION.md`; final reader QA is
+  `pass: true`, `publication_ready: true`, `admission_issued: true`.
+- The production cursor has advanced in source order to
+  `O007-FREMLIN-V1-S131`, `Upper integrals` → `Integral atas`. Its authority
+  member is 11,811 bytes / 294 lines / SHA-256
+  `94ebff73a9a8820a85e852df30088830cfee57e8cfed0fa8244f915e0b88f105`.
+- The exact S122 GitHub boundary is release-ready and frozen at
+  `qa/S122_RELEASE_TREE.tsv`: 377 rows / 37,408 bytes / SHA-256
+  `5374e5885b25afcd7e8bff5820626c15433ac4a6352c3c775b372325186fcebd`.
+  Exact local commit `9d4cdfdaf0aeeeb16520538076b4334dc521f36f`, tree
+  `db242899cf5a4fb90e886da3a8c4b9d0183bb985`, and tag `v0.7.0-s122` now
+  preserve that boundary without altering the live S123 worktree. GitHub
+  rejected the live credential probe before any remote mutation: the primary
+  account is reported suspended and the backup token invalid. GitHub transport
+  itself is reachable. Exact sanitized evidence and the bounded retry action are in
+  `qa/S122_GITHUB_PUBLICATION_BLOCKER_20260822.json`; no public S122 receipt is
+  claimed yet.
+- The admitted S122 boundary is public independently on Zenodo as version
+  `0.7.0-s122`: DOI `10.5281/zenodo.22059799`, concept DOI
+  `10.5281/zenodo.22059798`. The public record is explicitly partial, uses the
+  native Zenodo `dsl` license identifier, and scopes bundled MathJax separately
+  under Apache-2.0. The 447,958-byte PDF, 5,137,329-byte deterministic ZIP,
+  and 260-byte checksum file were downloaded anonymously and matched their
+  local SHA-256 identities. Exact token-free evidence is
+  `qa/ZENODO_PUBLICATION_RECEIPT_S122.json`; future admitted boundaries must be
+  new versions of this concept, not duplicate concepts.
+- The admitted S123 boundary is now the current public Zenodo version
+  `0.8.0-s123`: DOI `10.5281/zenodo.22060237`, unchanged concept DOI
+  `10.5281/zenodo.22059798`. Its public metadata explicitly states partial
+  coverage of 47 unique official pages 10–56 and a 55-page reflow within the
+  incomplete 672-page target. Zenodo applies its native `dsl` identifier to the
+  Fremlin derivative and separately scopes bundled MathJax under Apache-2.0.
+  The 474,209-byte PDF, 5,518,761-byte deterministic ZIP, and 270-byte checksum
+  file were downloaded anonymously and matched the admitted local SHA-256
+  identities. The S122 predecessor and all its assets were also reverified
+  unchanged. Exact token-free evidence is
+  `qa/ZENODO_PUBLICATION_RECEIPT_S123.json`.
+- The requested reader-first Figshare mirror was evaluated once and stopped
+  before any draft, upload, item, or collection mutation. Free figshare.com
+  requires a machine-readable license for every public item, but this account
+  offers only CC BY 4.0, CC0, MIT, GPL variants, and Apache-2.0; it offers no
+  Design Science License or truthful custom/no-license public option. DSL
+  sections 4(a), 5, and 6 prohibit publishing the derivative under an
+  incompatible replacement license. Assigning one of Figshare's available
+  licenses to the PDF/source package would therefore be false. Exact sanitized
+  evidence is `qa/FIGSHARE_PUBLICATION_BLOCKER_S123.json` (3,426 bytes /
+  SHA-256
+  `1b796db6c808f5874184b98e26f96ea2e3bbf4c58f274f699e1cebb94e7871eb`).
 
 ## Authority versus inherited evidence
 
@@ -288,10 +375,12 @@ the Indonesian target build.
 
 ## Immediate production actions
 
-1. Generate and independently validate the S122 locale-neutral backend, then
-   build and visually admit the cumulative S111–S122 reader and PDF.
-2. Continue through every source unit in Volumes 1–2; the 672-page corpus goal
-   remains active and is not completed by the cumulative Section 121 boundary.
+1. Keep GitHub paused while the account is suspended. Do not retry a Figshare
+   file publication unless Figshare exposes DSL/custom-license support or a
+   compatible legal basis is established.
+2. Perform bounded intake and complete id-ID translation of `mt131.tex`, then
+   continue through every source unit in Volumes 1–2. The 672-page corpus goal
+   remains active and is not completed by the cumulative Section 123 boundary.
 
 ## Scope guard
 
