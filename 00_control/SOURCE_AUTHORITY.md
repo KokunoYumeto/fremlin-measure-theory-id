@@ -103,11 +103,28 @@ pages are counted once.
 `authority/fremlin/source/mt1.2011/mt121.tex` is 43,014 bytes and 1,057 lines,
 SHA-256 `f2b93bf474cccafc75cc2bc76dadbc26e5456e620d21f092cf5fae35e6776484`.
 It declares Chapter 12, “Integration”, and Section 121, “Measurable
-functions”. The Indonesian working title is `Fungsi terukur`. There is no
-`mt116.tex` in the frozen Volume 1 source closure: Section 115 closes Chapter
-11 and source order continues with `mt12.tex` / `mt121.tex`. Exercise, hint,
-semantic-topology, and exact pagination censuses remain pending the bounded
-S121 production pass and are not inferred here.
+functions”. The Indonesian title is `Fungsi terukur`. There is no `mt116.tex`
+in the frozen Volume 1 source closure: Section 115 closes Chapter 11 and source
+order continues with `mt12.tex` / `mt121.tex`.
+
+The exact source-native replay places S121 on printed pages 35–43; page 43 is
+shared with S122. The unit contains 957 top-level mathematical atoms, 23
+explicit plus 20 source-implied anchors, nine formal results and nine source
+proof macros, 11 exercises (six basic and five further), one active `\Hint`
+macro plus one inline textual hint, 76 printed reference expressions expanding
+to 80 atomic targets, and no active source-local asset. Exact methods and
+inventories are in `qa/mt121-intake-census.json` (52,521 bytes / SHA-256
+`73e7be68030c6f629c7ceacdee8fd8de89388ccbe348e7082ca4933b95230382`).
+
+## Seventh unit intake
+
+`authority/fremlin/source/mt1.2011/mt122.tex` is 40,114 bytes and 1,071 lines,
+SHA-256 `e187da4ddc39d7ed101b8bb6b6ee1af4b1ac6655672f772a3aa5e874feeed701`.
+It declares Section 122, “Definition of the integral”; the Indonesian working
+title is `Definisi integral`. Section 122 begins on printed page 43, shared
+with the end of Section 121. Its final printed page, complete structural
+census, and exercise/hint topology remain pending bounded intake; no target
+translation or admission is claimed yet.
 
 ## Selection authority
 

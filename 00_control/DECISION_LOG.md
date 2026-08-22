@@ -152,3 +152,26 @@ suppressed tracks. Desktop and 390-pixel mobile documents, all links and
 anchors, MathJax/assistive parity, and all 30 PDF pages pass. Because the
 frozen source has no `mt116.tex`, the production cursor advances directly to
 complete `mt121.tex`; the 672-page goal remains active.
+
+## 2026-08-22 — D016: Admit complete Section 121 and advance to Section 122
+
+The complete `mt121.tex` translation is admitted as
+`O007-FREMLIN-V1-S121`. Its exact target is 43,931 bytes / 1,103 lines /
+SHA-256
+`76a5d90e6a647d158d2aecd32eaeaa4384063ef0d09f105c40c49205555a9f53`.
+Structural and independent semantic replay preserve all 957 top-level
+mathematical atoms, 11 exercises, two typed hints, 39 proof records, and 80
+typed cross-reference edges, subject only to five explicit, evidenced source
+corrections. The 1,368-record unit backend and six-unit catalog validate
+deterministically. Source-native pagination is pages 35–43, yielding 34 unique
+cumulative pages 10–43.
+
+Reader admission rejected visible raw footnote-control text, then rejected a
+PDF candidate whose long S115 interval formula touched the right trim edge on
+page 28. The final renderer emits one exact accessible footnote with reference
+and backlink; the PDF build applies one staging-only layout reflow without
+changing canonical source or mathematical text. All 3,095 formula sources
+render with matching assistive MathML, all 212 local link instances resolve,
+wide mobile formulas remain container-local without visible scrollbar tracks,
+and all 40 PDF pages pass independent visual inspection. The production cursor
+advances to complete `mt122.tex`; the 672-page Volumes 1–2 goal remains active.

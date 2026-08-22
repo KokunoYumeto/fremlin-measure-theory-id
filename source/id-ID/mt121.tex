@@ -1,0 +1,1103 @@
+\frfilename{mt121.tex}
+\versiondate{21.12.03}
+\copyrightdate{1994}
+
+\def\chaptername{Integrasi}
+\def\sectionname{Fungsi terukur}
+
+\newsection{121}
+
+Dalam bagian ini, saya mundur sejenak untuk mengembangkan gagasan-gagasan
+yang berkaitan dengan aljabar-$\sigma$ himpunan, melanjutkan \S111; di
+sini tidak akan disebutkan `ukuran', kecuali dalam latihan. Tujuannya
+adalah menetapkan konsep `fungsi terukur' (121C) dan berbagai teknik
+yang terkait dengannya.
+Contoh tunggal terbaik tentang aljabar-$\sigma$ yang patut diingat ketika
+membaca bab ini barangkali adalah aljabar-$\sigma$ subhimpunan Borel dari
+$\Bbb R$\cmmnt{ (111G)}; aljabar-$\sigma$ subhimpunan terukur Lebesgue
+dari $\Bbb R$\cmmnt{ (114E)} merupakan contoh kedua yang baik.
+
+Sepanjang uraian di sini (mulai dari 121A), saya berusaha menangani
+fungsi-fungsi yang tidak didefinisikan pada seluruh ruang $X$ yang
+sedang ditinjau. Saya percaya bahwa ada alasan-alasan kuat untuk
+menghadapi fungsi semacam itu sejak awal\cmmnt{ (lihat 121G)}; tetapi
+tidak dapat disangkal bahwa fungsi-fungsi tersebut menambah kesulitan
+teknis. Karena itu, wajar saja bila Anda membaca bab ini sekali dengan
+anggapan sementara bahwa semua fungsi terdefinisi di mana-mana, sebelum
+kembali untuk menangani kasus umum.
+
+
+\leader{121A}{Lema} Misalkan $X$ suatu himpunan dan $\Sigma$ suatu
+aljabar-$\sigma$ atas subhimpunan-subhimpunan $X$. Misalkan $D$
+sembarang subhimpunan $X$ dan tuliskan
+
+\Centerline{$\Sigma_D=\{E\cap D:E\in\Sigma\}$.}
+
+\noindent Maka $\Sigma_D$ adalah aljabar-$\sigma$ atas
+subhimpunan-subhimpunan $D$.
+
+\proof{{\bf (i)} $\emptyset=\emptyset\cap D\in\Sigma_D$ karena
+$\emptyset\in\Sigma$.
+
+\medskip
+
+{\bf (ii)} Jika $F\in\Sigma_D$, terdapat $E\in\Sigma$ sedemikian
+sehingga $F=E\cap D$; sekarang
+$D\setminus F=(X\setminus E)\cap D\in\Sigma_D$ karena
+$X\setminus E\in\Sigma$.
+
+\medskip
+
+{\bf (iii)} Jika $\langle F_n\rangle_{n\in\Bbb N}$ adalah sembarang
+barisan di dalam $\Sigma_D$, maka untuk setiap $n\in\Bbb N$ kita dapat
+memilih $E_n\in\Sigma$ sedemikian sehingga $F_n=E_n\cap D$; sekarang
+$\bigcup_{n\in\Bbb N}F_n=(\bigcup_{n\in\Bbb N}E_n)\cap D\in\Sigma_D$
+karena $\bigcup_{n\in\Bbb N}E_n\in\Sigma$.
+}%end of proof of 121A
+
+\medskip
+
+\noindent{\bf Notasi} Saya akan menyebut $\Sigma_D$ sebagai
+{\bf aljabar-$\sigma$ subruang} atas subhimpunan-subhimpunan $D$, dan
+saya akan mengatakan bahwa anggota-anggotanya {\bf terukur relatif}
+di $D$.
+$\Sigma_D$ juga kadang-kadang disebut {\bf jejak} $\Sigma$ pada $D$.
+
+\leader{121B}{Proposisi} Misalkan $X$ suatu himpunan, $\Sigma$ suatu
+aljabar-$\sigma$ atas subhimpunan-subhimpunan $X$, dan $D$ suatu
+subhimpunan $X$. Tuliskan $\Sigma_D$ untuk aljabar-$\sigma$ subruang
+atas subhimpunan-subhimpunan $D$. Maka, untuk setiap fungsi
+$f:D\to\Bbb R$, pernyataan-pernyataan berikut ekuivalen\cmmnt{, yakni,
+jika salah satunya benar maka semuanya benar}:
+
+\quad(i) $\{x:f(x)<a\}\in\Sigma_D$ untuk setiap $a\in\Bbb R$;
+
+\quad(ii) $\{x:f(x)\le a\}\in\Sigma_D$ untuk setiap $a\in\Bbb R$;
+
+\quad(iii) $\{x:f(x)>a\}\in\Sigma_D$ untuk setiap $a\in\Bbb R$;
+
+\quad(iv) $\{x:f(x)\ge a\}\in\Sigma_D$ untuk setiap $a\in\Bbb R$.
+
+\proof{{\bf (i)$\Rightarrow$(ii)} Andaikan (i), dan misalkan
+$a\in\Bbb R$. Maka
+
+\Centerline{$\{x:f(x)\le a\}
+=\bigcap_{n\in\Bbb N}\{x:f(x)<a+2^{-n}\}\in\Sigma_D$}
+
+\noindent karena $\{x:f(x)<a+2^{-n}\}\in\Sigma_D$ untuk setiap $n$
+dan $\Sigma_D$ tertutup terhadap irisan terhitung (111Dd).
+Karena $a$ sebarang, (ii) benar.
+
+\wheader{121B}{4}{2}{2}{72pt}
+
+{\bf (ii)$\Rightarrow$(iii)} Andaikan (ii), dan misalkan
+$a\in\Bbb R$. Maka
+
+\Centerline{$\{x:f(x)>a\}=D\setminus\{x:f(x)\le a\}\in\Sigma_D$}
+
+\noindent karena $\{x:f(x)\le a\}\in\Sigma_D$ dan $\Sigma_D$
+tertutup terhadap pengambilan komplemen. Karena $a$ sebarang, (iii)
+benar.
+
+\medskip
+
+{\bf (iii)$\Rightarrow$(iv)} Andaikan (iii), dan misalkan
+$a\in\Bbb R$. Maka
+
+\Centerline{$\{x:f(x)\ge a\}
+=\bigcap_{n\in\Bbb N}\{x:f(x)>a-2^{-n}\}\in\Sigma_D$}
+
+\noindent karena $\{x:f(x)>a-2^{-n}\}\in\Sigma_D$ untuk setiap $n$
+dan $\Sigma_D$ tertutup terhadap irisan terhitung.
+Karena $a$ sebarang, (iv) benar.
+
+\medskip
+
+{\bf (iv)$\Rightarrow$(i)} Andaikan (iv), dan misalkan
+$a\in\Bbb R$. Maka
+
+\Centerline{$\{x:f(x)<a\}=D\setminus\{x:f(x)\ge a\}\in\Sigma_D$}
+
+\noindent karena $\{x:f(x)\ge a\}\in\Sigma_D$ dan $\Sigma_D$
+tertutup terhadap pengambilan komplemen. Karena $a$ sebarang, (i)
+benar.
+}%end of proof of 121B
+
+\leader{121C}{Definisi} Misalkan $X$ suatu himpunan, $\Sigma$ suatu
+aljabar-$\sigma$ atas subhimpunan-subhimpunan $X$, dan $D$ suatu
+subhimpunan $X$. Sebuah fungsi $f:D\to\Bbb R$ disebut {\bf terukur}
+(atau {\bf $\Sigma$-terukur}) jika memenuhi salah satu, atau secara
+ekuivalen semua, syarat (i)-(iv) dalam 121B.
+
+Jika $X$ adalah $\Bbb R$ atau $\BbbR^r$, dan $\Sigma$ adalah
+aljabar-$\sigma$ Borel-nya\cmmnt{ (111G)}, suatu fungsi $\Sigma$-terukur
+disebut {\bf terukur Borel}. Jika $X$ adalah $\Bbb R$ atau $\BbbR^r$,
+dan $\Sigma$ adalah aljabar-$\sigma$ himpunan-himpunan terukur
+Lebesgue\cmmnt{ (114E, 115E)}, suatu fungsi $\Sigma$-terukur disebut
+{\bf terukur Lebesgue}.
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Tentu saja, kasus utama di sini ialah ketika
+$D=X$. Namun, fungsi-fungsi yang terdefinisi sebagian begitu umum, dan
+begitu penting, dalam analisis (tinjau, misalnya, fungsi real
+$\ln\sin$) sehingga tampaknya layak untuk sejak awal menetapkan
+teknik-teknik yang dapat menanganinya secara efisien.
+
+Banyak penulis mengembangkan teori `bilangan real diperluas' pada titik
+ini, dengan bekerja pada
+$[-\infty,\infty]=\Bbb R\cup\{-\infty,\infty\}$, dan mendefinisikan
+keterukuran bagi fungsi-fungsi yang mengambil nilai dalam himpunan ini.
+Saya menguraikan garis besar teori semacam itu dalam \S135 di bawah.
+}%end of comment
+
+\leader{121D}{Proposisi} Misalkan $X$ adalah $\BbbR^r$ untuk suatu
+$r\ge 1$, $D$ suatu subhimpunan $X$, dan $g:D\to\Bbb R$ suatu fungsi.
+
+(a) Jika $g$ terukur Borel, maka fungsi tersebut terukur Lebesgue.
+
+(b) Jika $g$ kontinu, maka fungsi tersebut terukur Borel.
+
+(c) Jika $r=1$ dan $g$ monoton, maka fungsi tersebut terukur Borel.
+
+\proof{{\bf (a)} Hal ini langsung mengikuti definisi dalam 121C,
+jika kita mengingat bahwa aljabar-$\sigma$ Borel termuat dalam
+aljabar-$\sigma$ Lebesgue (114G, 115G).
+
+\medskip
+
+{\bf (b)} Ambil $a\in\Bbb R$. Tetapkan
+
+\Centerline{$\Cal G=\{G:G\subseteq\BbbR^r\text{ terbuka},
+\,g(x)<a\Forall x\in G\cap D\}$,}
+
+\Centerline{$G_0=\bigcup\Cal G
+=\{x:\exists\enskip G\in\Cal G,\,x\in G\}$.}
+
+\noindent Maka $G_0$ adalah gabungan himpunan-himpunan terbuka, sehingga
+terbuka (1A2Bd). Selanjutnya,
+
+\Centerline{$\{x:g(x)<a\}=G_0\cap D$.}
+
+\noindent\Prf\ {\bf (i)} Jika $g(x)<a$, maka (karena $g$ kontinu)
+terdapat $\delta>0$ sedemikian sehingga $|g(y)-g(x)|<a-g(x)$ setiap
+kali $y\in D$ dan $\|y-x\|<\delta$. Tetapi
+$\{y:\|y-x\|<\delta\}$ terbuka (1A2D), sehingga termasuk dalam
+$\Cal G$ dan termuat dalam $G_0$, serta $x\in G_0\cap D$.
+{\bf (ii)} Jika $x\in G_0\cap D$, terdapat $G\in\Cal G$ sedemikian
+sehingga $x\in G$; sekarang $g(y)<a$ untuk setiap $y\in G\cap D$,
+sehingga, khususnya, $g(x)<a$.\ \Qed
+
+Akhirnya, $G_0$, karena terbuka, merupakan himpunan Borel. Karena $a$
+sebarang, $g$ terukur Borel.
+
+\medskip
+
+{\bf (c)} Andaikan terlebih dahulu bahwa $g$ tak-menurun. Misalkan
+$a\in\Bbb R$ dan tuliskan $E=\{x:g(x)<a\}$. Jika $E=D$ atau
+$E=\emptyset$, maka tentu saja himpunan tersebut adalah irisan $D$
+dengan suatu himpunan Borel. Jika tidak, $E$ tak kosong dan berbatas atas dalam
+$\Bbb R$, sehingga mempunyai supremum $c\in\Bbb R$. Sekarang $E$
+haruslah $D\cap\ocint{-\infty,c}$ atau $D\cap\ooint{-\infty,c}$;
+bentuk pertama berlaku jika $c\in E$, dan bentuk kedua jika tidak.
+Dalam kedua kasus, himpunan tersebut merupakan irisan $D$ dengan suatu
+himpunan Borel (lihat 114G).
+
+Demikian pula, jika $g$ tak-menaik, $\{x:g(x)>a\}$ kembali akan menjadi
+irisan $D$ dengan salah satu dari $\emptyset$, $\Bbb R$,
+$\ocint{-\infty,c}$, atau $\ooint{-\infty,c}$ untuk suatu $c$. Jadi,
+dalam kasus ini 121B(iii) akan terpenuhi.
+
+\medskip
+
+\noindent{\bf Catatan} Saya melihat bahwa dalam bagian (b) dari bukti
+di atas saya menggunakan beberapa fakta dasar tentang himpunan terbuka
+dalam $\BbbR^r$. Fakta-fakta ini dibahas secara terperinci dalam
+\S1A2. Jika fakta-fakta tersebut baru bagi Anda, barangkali bijaksana
+untuk mengulang argumennya dengan $r=1$, sehingga $D\subseteq\Bbb R$,
+sebelum beralih ke kasus umum.
+}%end of proof of 121D
+
+
+\vleader{108pt}{121E}{Teorema}
+Misalkan $X$ suatu himpunan dan $\Sigma$ suatu aljabar-$\sigma$
+atas subhimpunan-subhimpunan $X$. Misalkan $f$ dan $g$ fungsi bernilai
+real yang didefinisikan pada domain $\dom f$, $\dom g\subseteq X$.
+
+(a) Jika $f$ konstan, maka fungsi tersebut terukur.
+
+(b) Jika $f$ dan $g$ terukur, maka $f+g$ juga terukur, dengan
+$(f+g)(x)=f(x)+g(x)$ untuk $x\in\dom f\cap\dom g$.
+
+(c) Jika $f$ terukur dan $c\in\Bbb R$, maka $cf$ terukur, dengan
+$(cf)(x)=c\cdot f(x)$ untuk $x\in \dom f$.
+
+(d) Jika $f$ dan $g$ terukur, maka $f\times g$ juga terukur, dengan
+$(f\times g)(x)=f(x)\times g(x)$ untuk
+$x\in \dom f\cap\dom g$.
+
+(e) Jika $f$ dan $g$ terukur, maka $f/g$ juga terukur, dengan
+$(f/g)(x)=f(x)/g(x)$ ketika $x\in \dom f\cap\dom g$ dan $g(x)\ne 0$.
+
+(f) Jika $f$ terukur dan $E\subseteq\Bbb R$ suatu himpunan Borel, maka
+terdapat $F\in\Sigma$ sedemikian sehingga
+$f^{-1}[E]=\{x:f(x)\in E\}$ sama dengan $F\cap\dom f$.
+
+(g) Jika $f$ terukur dan $h$ suatu fungsi terukur Borel dari suatu
+subhimpunan $\dom h$ dari $\Bbb R$ ke $\Bbb R$, maka $hf$ terukur,
+dengan $(hf)(x)=h(f(x))$ untuk
+$x\in\dom(hf)=\{y:y\in\dom f,\,f(y)\in\dom h\}$.
+
+(h) Jika $f$ terukur dan $A$ sembarang himpunan, maka $f\restr A$
+terukur, dengan $\dom(f\restr A)=A\cap\dom f$ dan
+$(f\restr A)(x)=f(x)$ untuk $x\in A\cap\dom f$.
+
+\proof{ Untuk setiap $D\subseteq X$, tuliskan $\Sigma_D$ untuk
+aljabar-$\sigma$ subruang atas subhimpunan-subhimpunan $D$.
+
+\medskip
+
+{\bf (a)} Jika $f(x)=c$ untuk setiap $x\in \dom f$, maka
+$\{x:f(x)<a\}=\dom f$ jika $c<a$, dan $\emptyset$ jika tidak; dalam
+kedua kasus himpunan tersebut termasuk dalam $\Sigma_{\dom f}$.
+
+\medskip
+
+{\bf (b)} Tuliskan $D=\dom(f+g)=\dom f\cap\dom g$. Jika $a\in\Bbb R$,
+tetapkan $K=\{(q,q'):q,\,q'\in\Bbb Q,\,q+q'\le a\}$. Maka $K$ adalah
+subhimpunan $\Bbb Q\times\Bbb Q$, sehingga terhitung (111Fb, 1A1E).
+Untuk $q\in\Bbb Q$, pilih himpunan-himpunan $F_q$,
+$G_q\in\Sigma$ sedemikian sehingga
+
+\Centerline{$\{x:f(x)<q\}=F_q\cap\dom f$,
+\quad$\{x:g(x)<q\}=G_q\cap\dom g$.}
+
+\noindent Untuk setiap $(q,q')\in K$, himpunan
+
+\Centerline{$E_{qq'}
+=\{x:f(x)<q,\,g(x)<q'\}=F_q\cap G_{q'}\cap D$}
+
+\noindent termasuk dalam $\Sigma_D$.
+Akhirnya, jika $(f+g)(x)<a$, kita dapat menemukan
+$q\in\ooint{f(x),a-g(x)}$, $q'\in\ocint{g(x),a-q}$, sehingga
+$(q,q')\in K$ dan $x\in E_{qq'}$; sedangkan jika $(q,q')\in K$ dan
+$x\in E_{qq'}$, maka $(f+g)(x)<q+q'\le a$. Jadi
+
+\Centerline{$\{x:(f+g)(x)<a\}
+=\bigcup_{(q,q')\in K}E_{qq'}\in\Sigma_D$}
+
+\noindent menurut 111Fa. Karena $a$ sebarang, $f+g$ terukur.
+
+\medskip
+
+{\bf (c)} Tuliskan $D=\dom f$. Misalkan $a\in\Bbb R$. Jika $c>0$,
+maka
+
+\Centerline{$\{x:cf(x)<a\}=\{x:f(x)<\Bover{a}{c}\}\in\Sigma_D$.}
+
+\noindent Jika $c<0$, maka
+
+\Centerline{$\{x:cf(x)<a\}=\{x:f(x)>\Bover{a}{c}\}\in\Sigma_D$.}
+
+\noindent Sedangkan jika $c=0$, maka $\{x:cf(x)<a\}$ adalah $D$ atau
+$\emptyset$, seperti dalam (a) di atas, sehingga termasuk dalam
+$\Sigma_D$. Karena $a$ sebarang, $cf$ terukur.
+
+\medskip
+
+{\bf (d)} Tuliskan $D=\dom(f\times g)=\dom f\cap\dom g$. Misalkan
+$a\in\Bbb R$. Misalkan $K$ adalah
+
+\Centerline{$\{(q_1,q_2,q_3,q_4):q_1,\ldots,q_4\in\Bbb Q,\,uv<a
+\text{ setiap kali }u\in\ooint{q_1,q_2},\,v\in\ooint{q_3,q_4}\}$.}
+
+\noindent Maka $K$ terhitung. Untuk $q\in\Bbb Q$, pilih
+himpunan-himpunan $F_q$, $F'_q$, $G_q$, $G'_q\in\Sigma$ sedemikian
+sehingga
+
+\Centerline{$\{x:f(x)<q\}=F_q\cap\dom f$,
+\quad$\{x:f(x)>q\}=F'_q\cap\dom f$,}
+
+\Centerline{$\{x:g(x)<q\}=G_q\cap\dom g$,
+\quad$\{x:g(x)>q\}=G'_q\cap\dom g$.}
+
+\noindent Untuk $(q_1,q_2,q_3,q_4)\in K$, tetapkan
+
+$$\eqalign{E_{q_1q_2q_3q_4}
+&=\{x:f(x)\in\ooint{q_1,q_2},\,g(x)\in\ooint{q_3,q_4}\}\cr
+&=D\cap F'_{q_1}\cap F_{q_2}\cap G'_{q_3}\cap G_{q_4}
+\in\Sigma_D;\cr}$$
+
+\noindent maka $E=\bigcup_{(q_1,q_2,q_3,q_4)\in
+K}E_{q_1q_2q_3q_4}\in\Sigma_D$.
+
+Sekarang $E=\{x:(f\times g)(x)<a\}$. \Prf\ {\bf (i)} Jika
+$(f\times g)(x)<a$, tetapkan $u=f(x)$, $v=g(x)$. Tetapkan
+
+\Centerline{$\eta=\min(1,\Bover{a-uv}{1+|u|+|v|})>0$.}
+
+\noindent Ambil $q_1,\ldots,q_4\in\Bbb Q$ sedemikian sehingga
+
+\Centerline{$u-\eta\le q_1<u<q_2\le u+\eta$,
+\quad$v-\eta\le q_3<v<q_4\le v+\eta$.}
+
+\noindent Jika $u'\in\ooint{q_1,q_2}$,
+$v'\in\ooint{q_3,q_4}$, maka $|u'-u|<\eta$ dan $|v'-v|<\eta$, sehingga
+
+$$\eqalign{u'v'-uv
+&=(u'-u)(v'-v)+(u'-u)v+u(v'-v)\cr
+&<\eta^2+\eta|v|+|u|\eta
+\le\eta(1+|u|+|v|)
+\le a-uv,\cr}$$
+
+\noindent dan $u'v'<a$. Dengan demikian $(q_1,q_2,q_3,q_4)\in K$.
+Selain itu, $x\in E_{q_1q_2q_3q_4}$, sehingga $x\in E$. Jadi
+$\{x:(f\times g)(x)<a\}\subseteq E$. {\bf (ii)} Di pihak lain, jika
+$x\in E$, terdapat $q_1,\ldots,q_4$ sedemikian sehingga
+$(q_1,q_2,q_3,q_4)\in K$ dan $x\in E_{q_1q_2q_3q_4}$, sehingga
+$f(x)\in\ooint{q_1,q_2}$ dan $g(x)\in\ooint{q_3,q_4}$ serta
+$f(x)g(x)<a$. Jadi $E\subseteq\{x:(f\times g)(x)<a\}$.\ \Qed
+
+Dengan demikian $\{x:(f\times g)(x)<a\}\in\Sigma_D$. Karena $a$
+sebarang, $f\times g$ terukur.
+
+\medskip
+
+{\bf (e)} Berdasarkan (d), cukup ditunjukkan bahwa $1/g$ terukur.
+Sekarang, jika $a>0$,
+$\{x:1/g(x)<a\}=\{x:g(x)>1/a\}\cup\{x:g(x)<0\}$; jika $a<0$, maka
+$\{x:1/g(x)<a\}=\{x:1/a<g(x)<0\}$; dan jika $a=0$, maka
+$\{x:1/g(x)<a\}=\{x:g(x)<0\}$. Semua himpunan ini termasuk dalam
+$\Sigma_{\dom 1/g}$.
+
+\medskip
+
+{\bf (f)} Tuliskan $D=\dom f$ dan tinjau himpunan
+
+\Centerline{$\Tau=\{E:E\subseteq\Bbb R,\,f^{-1}[E]\in\Sigma_D\}$.}
+
+\noindent Maka $\Tau$ adalah aljabar-$\sigma$ atas
+subhimpunan-subhimpunan $\Bbb R$.
+\Prf\ {(i)} $f^{-1}[\emptyset]=\emptyset\in\Sigma_D$, sehingga
+$\emptyset\in\Tau$. {(ii)} Jika $E\in\Tau$, maka
+$f^{-1}[\Bbb R\setminus E]=D\setminus f^{-1}[E]\in\Sigma_D$,
+sehingga $\Bbb R\setminus E\in\Tau$.
+{(iii)} Jika $\langle E_n\rangle_{n\in\Bbb N}$ adalah suatu barisan
+di dalam $\Tau$, maka
+$f^{-1}[\bigcup_{n\in\Bbb N}E_n]
+=\bigcup_{n\in\Bbb N}f^{-1}[E_n]\in\Sigma_D$ karena $\Sigma_D$
+adalah aljabar-$\sigma$, sehingga $\bigcup_{n\in\Bbb N}E_n\in\Tau$.\ \Qed
+
+Selanjutnya, $\Tau$ memuat semua himpunan berbentuk
+$H_a=\ooint{-\infty,a}$ untuk $a\in\Bbb R$, menurut definisi
+keterukuran $f$. Hasilnya mengikuti dari argumen yang sudah digunakan
+dalam 114G di atas. Pertama, semua subhimpunan terbuka dari $\Bbb R$
+termasuk dalam $\Tau$. \Prf\ Misalkan $G\subseteq\Bbb R$ terbuka.
+Misalkan $K\subseteq\Bbb Q\times\Bbb Q$ adalah himpunan pasangan
+$(q,q')$ bilangan rasional sedemikian sehingga
+$\coint{q,q'}\subseteq G$. $K$ terhitung. Selain itu, setiap
+$\coint{q,q'}$ termasuk dalam $\Tau$, karena merupakan
+$H_{q'}\setminus H_q$. Jadi
+$G'=\bigcup_{(q,q')\in K}\coint{q,q'}\in\Tau$.
+
+Menurut definisi $K$, $G'\subseteq G$. Di pihak lain, jika $x\in G$,
+terdapat $\delta>0$ sedemikian sehingga
+$\ooint{x-\delta,x+\delta}\subseteq G$. Sekarang terdapat bilangan
+rasional $q\in\ocint{x-\delta,x}$ dan
+$q'\in\ocint{x,x+\delta}$, sehingga $(q,q')\in K$ dan
+$x\in\coint{q,q'}\subseteq G'$. Karena $x$ sebarang, $G=G'$ dan
+$G\in\Tau$.\ \Qed
+
+Akhirnya, $\Tau$ adalah aljabar-$\sigma$ atas subhimpunan-subhimpunan
+$\Bbb R$ yang memuat keluarga himpunan terbuka, sehingga harus memuat
+setiap himpunan Borel, menurut definisi himpunan Borel (111G).
+
+\medskip
+
+{\bf (g)} Jika $a\in\Bbb R$, maka $\{y:h(y)<a\}$ berbentuk
+$E\cap\dom h$, dengan $E$ suatu subhimpunan Borel dari $\Bbb R$.
+Selanjutnya, $f^{-1}[E]$ berbentuk $F\cap\dom f$, dengan $F\in\Sigma$,
+menurut (f) di atas. Jadi
+
+\Centerline{$\{x:(hf)(x)<a\}=F\cap\dom hf\in\Sigma_{\dom hf}$.}
+
+\noindent Karena $a$ sebarang, $hf$ terukur.
+
+\medskip
+
+{\bf (h)} Intinya ialah bahwa
+$\Sigma_{A\cap\dom f}=\{E\cap A:E\in\Sigma_{\dom f}\}$. Jadi, jika
+$a\in\Bbb R$,
+
+\Centerline{$\{x:(f\restr
+A)(x)<a\}=A\cap\{x:f(x)<a\}\in\Sigma_{\dom(f\restr A)}$.}
+}%end of proof of 121E
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Tentu saja, bagian (c) dari teorema ini hanya
+merupakan hasil menggabungkan (a) dan (d), sedangkan (e) merupakan
+akibat dari (d), (g), dan fakta bahwa fungsi kontinu terukur Borel
+(121Db).
+
+Saya harap Anda mengenali teknik dalam bukti bagian (d) sebagai suatu
+versi argumen yang dapat digunakan untuk membuktikan bahwa limit hasil
+kali adalah hasil kali limit, atau bahwa hasil kali fungsi-fungsi
+kontinu bersifat kontinu. Sebenarnya, (b) dan (d) di sini, bersama
+dengan teorema-teorema tentang jumlah dan hasil kali limit, merupakan
+akibat dari fakta bahwa penjumlahan dan perkalian adalah fungsi
+kontinu. Dalam 121K saya memberikan suatu hasil umum yang dapat
+digunakan untuk memanfaatkan fakta-fakta semacam itu.
+
+Sesungguhnya, bagian (f) di sini merupakan inti konsep fungsi bernilai
+real yang `terukur'. Inti definisi dalam 121B-121C ialah bahwa
+aljabar-$\sigma$ Borel pada $\Bbb R$ dapat dibangkitkan oleh salah satu
+di antara keluarga-keluarga
+$\{\ooint{-\infty,a}:a\in\Bbb R\}$,
+$\{\ocint{-\infty,a}:a\in\Bbb R\},\ldots$. (Lihat 121Yc(ii).)
+Ada banyak cara membahas pokok ini dengan jauh lebih ringkas daripada
+yang saya lakukan, dengan konsekuensi tingkat abstraksi yang sedikit
+lebih tinggi.
+}%end of comment
+
+
+\leader{121F}{Teorema} Misalkan $X$ suatu himpunan dan $\Sigma$ suatu
+aljabar-$\sigma$ atas subhimpunan-subhimpunan $X$. Misalkan
+$\langle f_n\rangle_{n\in\Bbb N}$ suatu barisan fungsi bernilai real
+yang $\Sigma$-terukur, dengan domain-domain yang termuat dalam $X$.
+
+(a) Definisikan suatu fungsi $\lim_{n\to\infty}f_n$ dengan menuliskan
+
+\Centerline{$(\lim_{n\to\infty}f_n)(x)=\lim_{n\to\infty}f_n(x)$}
+
+\noindent untuk semua
+$x\in\bigcup_{n\in\Bbb N}\bigcap_{m\ge n}\dom f_m$ yang limitnya ada
+dalam $\Bbb R$. Maka $\lim_{n\to\infty}f_n$ merupakan fungsi
+$\Sigma$-terukur.
+
+
+(b) Definisikan suatu fungsi $\sup_{n\in\Bbb N}f_n$ dengan menuliskan
+
+\Centerline{$(\sup_{n\in\Bbb N}f_n)(x)=\sup_{n\in\Bbb N}f_n(x)$}
+
+\noindent untuk semua $x\in\bigcap_{n\in\Bbb N}\dom f_n$ yang
+supremumnya ada dalam $\Bbb R$. Maka $\sup_{n\in\Bbb N}f_n$ merupakan
+fungsi $\Sigma$-terukur.
+
+(c) Definisikan suatu fungsi $\inf_{n\in\Bbb N}f_n$ dengan menuliskan
+
+\Centerline{$(\inf_{n\in\Bbb N}f_n)(x)=\inf_{n\in\Bbb N}f_n(x)$}
+
+\noindent untuk semua $x\in\bigcap_{n\in\Bbb N}\dom f_n$ yang
+infimumnya ada dalam $\Bbb R$. Maka $\inf_{n\in\Bbb N}f_n$ merupakan
+fungsi $\Sigma$-terukur.
+
+(d) Definisikan suatu fungsi $\limsup_{n\to\infty}f_n$ dengan
+menuliskan
+
+\Centerline{$(\limsup_{n\to\infty}f_n)(x)
+=\limsup_{n\to\infty}f_n(x)$}
+
+\noindent untuk semua
+$x\in\bigcup_{n\in\Bbb N}\bigcap_{m\ge n}\dom f_m$ yang $\limsup$-nya
+ada dalam $\Bbb R$. Maka $\limsup_{n\to\infty}f_n$ merupakan fungsi
+$\Sigma$-terukur.
+
+(e) Definisikan suatu fungsi $\liminf_{n\to\infty}f_n$ dengan
+menuliskan
+
+\Centerline{$(\liminf_{n\to\infty}f_n)(x)
+=\liminf_{n\to\infty}f_n(x)$}
+
+\noindent untuk semua
+$x\in\bigcup_{n\in\Bbb N}\bigcap_{m\ge n}\dom f_m$ yang $\liminf$-nya
+ada dalam $\Bbb R$. Maka $\liminf_{n\to\infty}f_n$ merupakan fungsi
+$\Sigma$-terukur.
+
+\proof{ Untuk $n\in\Bbb N$, $a\in\Bbb R$, pilih
+$H_n(a)\in\Sigma$ sedemikian sehingga
+$\{x:f_n(x)\le a\}=H_n(a)\cap \dom f_n$. Sekarang, bukti-buktinya
+cukup dengan mengamati fakta-fakta berikut:
+
+\medskip
+
+{\bf (a)}
+$\{x:(\lim_{n\to\infty}f_n)(x)\le a\}
+=\dom(\lim_{n\to\infty}f_n)
+  \cap\bigcap_{k\in\Bbb N}\bigcup_{n\in\Bbb N}
+    \bigcap_{m\ge n}H_m(a+2^{-k})$;
+
+\medskip
+
+
+{\bf (b)} $\{x:(\sup_{n\in\Bbb N}f_n)(x)\le a\}
+=\dom(\sup_{n\in\Bbb N}f_n)\cap\bigcap_{n\in\Bbb N}H_n(a)$;
+
+\medskip
+
+{\bf (c)} $\inf_{n\in\Bbb N}f_n=-\sup_{n\in\Bbb N}(-f_n)$;
+
+\medskip
+
+{\bf (d)} $\limsup_{n\to\infty}f_n
+=\lim_{n\to\infty}\sup_{m\in\Bbb N}f_{m+n}$;
+
+\medskip
+
+{\bf (e)} $\liminf_{n\to\infty}f_n
+=-\limsup_{n\to\infty}(-f_n)$.
+}%end of proof of 121F
+
+
+\cmmnt{
+\leader{121G}{Catatan} Pada titik inilah kita untuk pertama kalinya
+berhadapan secara nyata dengan persoalan fungsi yang tidak terdefinisi
+di seluruh ruang. (Hasil bagi $f/g$ dalam 121Ee juga tidak harus
+terdefinisi di seluruh domain bersama $f$ dan $g$, tetapi hal ini kurang
+penting dan lebih mudah ditangani.) Sejak Lebesgue, inti teori ukuran
+dan integrasi ialah bahwa kita dapat menangani limit barisan fungsi;
+dan himpunan tempat $\lim_{n\to\infty}f_n(x)$ ada dapat sangat tidak
+teratur, bahkan bagi fungsi-fungsi $f_n$ yang tampaknya berperilaku
+baik. (Jika Anda pernah menjumpai teori deret Fourier, contoh yang tepat
+untuk dipikirkan ialah barisan jumlah parsial
+$f_n(x)={1\over 2}a_0+\sum_{k=1}^n(a_k\cos kx+b_k\sin kx)$ dari suatu
+deret Fourier dengan $\sum_{k=1}^{\infty}(|a_k|+|b_k|)=\infty$, sehingga
+deret tersebut tidak dapat dijumlahkan mutlak secara seragam, tetapi
+mungkin dapat dijumlahkan secara bersyarat pada titik-titik tertentu.)
+
+Saya telah berusaha menjelaskan domain mana yang saya maksud bagi
+fungsi-fungsi $\sup_{n\in\Bbb N}f_n$,
+$\lim_{n\to\infty}f_n$, dan seterusnya. Asas penuntunnya ialah bahwa
+domain-domain itu harus menjadi himpunan semua $x\in X$ yang untuknya
+rumus pendefinisi $\sup_{n\in\Bbb N}f_n(x)$,
+$\lim_{n\to\infty}f_n(x)$ dapat ditafsirkan sebagai bilangan real.
+(Seperti saya catat dalam 121C, untuk sementara saya menghindari
+`$\infty$' sebagai nilai fungsi, walaupun hal itu hanya menimbulkan
+sedikit kesulitan dan beberapa rumus lebih alami ditafsirkan dengan
+mengizinkannya.) Namun, dalam kasus $\lim$, $\limsup$, $\liminf$,
+perlu dicatat bahwa saya menggunakan definisi yang membatasi, yakni
+$\lim_{n\to\infty}a_n$ dapat dianggap ada hanya jika terdapat suatu
+$n\in\Bbb N$ sedemikian sehingga $a_m$ terdefinisi untuk setiap
+$m\ge n$. Ada kalanya lebih alami untuk menerima limit ketika kita
+hanya tahu bahwa $a_m$ terdefinisi untuk tak hingga banyak nilai $m$;
+tetapi kesepakatan semacam itu dapat membuat 121Fa salah, kecuali jika
+diterapkan dengan hati-hati.
+
+Seperti dalam 111E-111F, kita dapat menggunakan gagasan pada bagian (b),
+(c) di sini untuk membahas fungsi berbentuk $\sup_{k\in K}f_k$,
+$\inf_{k\in K}f_k$ bagi sembarang keluarga
+$\langle f_k\rangle_{k\in K}$ fungsi terukur yang diindeks oleh
+himpunan terhitung tak kosong $K$.
+
+Dalam teorema ini dan teorema sebelumnya, fungsi-fungsi $f$, $g$,
+$f_n$ diizinkan mempunyai domain sembarang, sehingga tidak ada yang
+dapat dikatakan tentang domain fungsi-fungsi yang dikonstruksi. Namun,
+tentu saja, jika fungsi-fungsi semula mempunyai domain terukur, maka
+demikian pula fungsi-fungsi yang dikonstruksi darinya menurut aturan
+yang saya usulkan. Saya menjabarkan rinciannya dalam proposisi berikut.
+}%end of comment
+
+\leader{121H}{Proposisi} Misalkan $X$ suatu himpunan dan $\Sigma$
+suatu aljabar-$\sigma$ atas subhimpunan-subhimpunan $X$; misalkan
+$f$, $g$, dan $f_n$, untuk $n\in\Bbb N$, adalah fungsi-fungsi bernilai
+real yang $\Sigma$-terukur dan domainnya termasuk dalam $\Sigma$. Maka
+semua fungsi
+
+\Centerline{$f+g$, \quad$f\times g$, \quad$f/g$,}
+
+\Centerline{$\sup_{n\in\Bbb N}f_n$, \quad$\inf_{n\in\Bbb N}f_n$,
+\quad$\lim_{n\to\infty}f_n$, \quad$\limsup_{n\to\infty}f_n$,
+\quad$\liminf_{n\to\infty}f_n$}
+
+\noindent mempunyai domain yang termasuk dalam $\Sigma$. Selain itu,
+jika $h$ adalah fungsi bernilai real terukur Borel yang didefinisikan
+pada suatu subhimpunan Borel dari $\Bbb R$, maka $\dom hf\in\Sigma$.
+
+\proof{ Untuk dua fungsi pertama, kita mempunyai
+$\dom(f+g)=\dom(f\times g)=\dom f\cap \dom g$. Selanjutnya, jika $E$
+adalah suatu subhimpunan Borel dari $\Bbb R$, terdapat $H\in\Sigma$
+sedemikian sehingga $f^{-1}[E]=H\cap\dom f$; jadi
+$f^{-1}[E]\in\Sigma$. Dengan demikian
+
+\Centerline{$\dom hf=f^{-1}[\dom h]\in\Sigma$.}
+
+\noindent Dengan menetapkan $h(a)=1/a$ untuk
+$a\in\Bbb R\setminus\{0\}$, kita melihat bahwa
+$\dom(1/f)\in\Sigma$. ($\dom h=\Bbb R\setminus\{0\}$ adalah himpunan
+Borel karena terbuka.) Demikian pula, $\dom(1/g)$ dan
+$\dom(f/g)=\dom f\cap\dom(1/g)$ termasuk dalam $\Sigma$.
+
+Sekarang tinjau kombinasi-kombinasi tak hingga. Tetapkan
+$H_n(a)=\{x:x\in\dom f_n,\,f_n(x)<a\}$ untuk
+$n\in\Bbb N$, $a\in\Bbb R$; seperti baru saja dijelaskan, setiap
+$H_n(a)$ termasuk dalam $\Sigma$. Sekarang
+
+\Centerline{$\dom(\sup_{n\in\Bbb N}f_n)
+=\bigcup_{m\in\Bbb N}\bigcap_{n\in\Bbb N}H_n(m)\in\Sigma$.}
+
+\noindent Selanjutnya, $|f_m-f_n|$ terukur, dengan domain yang termasuk
+dalam $\Sigma$, untuk semua $m$, $n\in\Bbb N$ (dengan menerapkan
+hasil-hasil di atas pada $-f_n=-1\cdot f_n$,
+$f_m-f_n=f_m+(-f_n)$, dan $|f_m-f_n|=|\,\,|\circ(f_m-f_n)$), sehingga
+
+\Centerline{$G_{mnk}
+=\{x:x\in\dom f_m\cap\dom f_n,\,|f_m(x)-f_n(x)|\le 2^{-k}\}\in\Sigma$}
+
+\noindent untuk semua $m$, $n$, $k\in\Bbb N$. Dengan demikian
+
+\Centerline{$\dom(\lim_{n\to\infty}f_n)
+=\{x:\Exists n,\,\langle f_m(x)\rangle_{m\ge n}$ merupakan barisan Cauchy$\}
+=\bigcap_{k\in\Bbb N}\bigcup_{n\in\Bbb N}\bigcap_{m\ge n}G_{mnk}
+\in\Sigma$.}
+
+Dengan memanipulasi hasil-hasil di atas seperti dalam (c), (d), dan (e)
+dari bukti 121F, kita dengan mudah menyelesaikan bukti.
+}%end of proof of 121H
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Perhatikan penggunaan Asas Umum Konvergensi
+dalam bukti di atas. Saya tidak yakin apakah hal ini akan terasa
+`alami' bagi Anda, dan ada metode-metode alternatif; tetapi rumus
+
+\Centerline{$\{x:\lim_{n\to\infty}f_n(x)$ ada dalam $\Bbb R\}
+=\{x:\sequencen{f_n(x)}$ merupakan barisan Cauchy$\}$}
+
+\noindent patut disimpan dalam ingatan jangka panjang Anda.
+}%end of comment
+
+\leader{*121I}{}\cmmnt{ Saya mengakhiri bagian ini dengan dua hasil
+yang dapat dilewati dengan aman pada pembacaan pertama, tetapi yang pada
+suatu saat perlu Anda kuasai jika ingin melangkah lebih jauh dalam teori
+ukuran daripada bab ini, karena keduanya merupakan bagian-bagian hakiki
+dari konsep `fungsi terukur'.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $X$ suatu himpunan dan $\Sigma$
+suatu aljabar-$\sigma$ atas subhimpunan-subhimpunan $X$. Misalkan $D$
+suatu subhimpunan $X$ dan $f:D\to\Bbb R$ suatu fungsi. Maka $f$ terukur
+jika dan hanya jika terdapat fungsi terukur $h:X\to\Bbb R$ yang
+memperluas $f$.
+
+\proof{{\bf (a)} Jika $h:X\to\Bbb R$ terukur dan $f=h\restr D$, maka
+$f$ terukur menurut 121Eh.
+
+\medskip
+
+{\bf (b)} Sekarang andaikan bahwa $f$ terukur.
+
+\medskip
+
+\quad{\bf (i)} Untuk setiap $q\in\Bbb Q$, himpunan
+$D_q=\{x:x\in D,\,f(x)\le q\}$ termasuk dalam aljabar-$\sigma$
+subruang $\Sigma_D$, yakni, terdapat $E_q\in\Sigma$ sedemikian sehingga
+$D_q=E_q\cap D$. Tetapkan
+
+\Centerline{$F=X\setminus\bigcup_{q\in\Bbb Q}E_q$,}
+
+\Centerline{$G=\bigcap_{n\in\Bbb N}\bigcup_{q\in\Bbb Q,q\le -n}E_q$;}
+
+\noindent maka $F$ dan $G$ keduanya termasuk dalam $\Sigma$ dan saling
+lepas dari $D$. \Prf\ Jika $x\in D$, terdapat $q\in\Bbb Q$ sedemikian
+sehingga $f(x)\le q$, sehingga $x\in E_q$ dan $x\notin F$. Selain itu,
+terdapat $n\in\Bbb N$ sedemikian sehingga $f(x)>-n$, sehingga
+$x\notin E_{q'}$ untuk $q'\le-n$ dan $x\notin G$.\ \Qed
+
+Tetapkan $H=X\setminus(F\cup G)\in\Sigma$. Untuk $x\in H$,
+
+\Centerline{$\{q:q\in\Bbb Q,\,x\in E_q\}$}
+
+\noindent tak kosong dan berbatas bawah, sehingga kita dapat menetapkan
+
+\Centerline{$h(x)=\inf\{q:x\in E_q\}$;}
+
+\noindent untuk $x\in F\cup G$, tetapkan $h(x)=0$. Ini mendefinisikan
+$h:X\to\Bbb R$.
+
+\medskip
+
+\quad{\bf (ii)} $h(x)=f(x)$ untuk $x\in D$. \Prf\ Seperti telah
+dicatat di atas, $x\in H$. Jika $q\in\Bbb Q$ dan $x\in E_q$, maka
+$f(x)\le q$; akibatnya $h(x)\ge f(x)$. Di pihak lain, untuk setiap
+$\epsilon>0$, terdapat $q\in\Bbb Q\cap[f(x),f(x)+\epsilon]$, dan
+sekarang $x\in E_q$, sehingga $h(x)\le q\le f(x)+\epsilon$; karena
+$\epsilon$ sebarang, $h(x)\le f(x)$.\ \Qed
+
+\medskip
+
+\quad{\bf (iii)} $h$ terukur. \Prf\ Jika $a>0$, maka
+
+\Centerline{$\{x:h(x)<a\}=(H\cap\bigcup_{q<a}E_q)\cup(F\cup
+G)\in\Sigma$,}
+
+\noindent sedangkan jika $a\le 0$,
+
+\Centerline{$\{x:h(x)<a\}=H\cap\bigcup_{q<a}E_q\in\Sigma$.\ \Qed}
+
+\noindent Ini menyelesaikan bukti.
+}%end of proof of 121I
+
+\leader{*121J}{}\cmmnt{ Proposisi berikut dapat memperjelas 121E,
+sekaligus sangat diperlukan bagi pekerjaan dalam Jilid 2. Saya mulai
+dengan suatu deskripsi berguna tentang himpunan-himpunan Borel dalam
+$\BbbR^r$.
+
+\medskip
+
+\noindent}{\bf Lema} Misalkan $r\ge 1$ suatu bilangan bulat, dan
+tuliskan $\Cal J$ untuk keluarga subhimpunan-subhimpunan $\BbbR^r$
+yang berbentuk $\{x:\xi_i\le\alpha\}$, dengan $i\le r$,
+$\alpha\in\Bbb R$, serta $x=(\xi_1,\ldots,\xi_r)$, seperti dalam
+\S115. Maka aljabar-$\sigma$ atas subhimpunan-subhimpunan $\BbbR^r$
+yang dibangkitkan oleh $\Cal J$ tepat sama dengan aljabar-$\sigma$
+$\Cal B$ dari subhimpunan-subhimpunan Borel $\BbbR^r$.
+
+\proof{{\bf (a)} Semua himpunan dalam $\Cal J$ tertutup, sehingga
+harus termasuk dalam $\Cal B$; dengan menuliskan $\Sigma$ untuk
+aljabar-$\sigma$ yang dibangkitkan oleh $\Cal J$, kita harus mempunyai
+$\Sigma\subseteq\Cal B$.
+
+\medskip
+
+
+{\bf (b)} Langkah berikutnya ialah mengamati bahwa semua interval
+setengah terbuka berbentuk
+
+\Centerline{$\ocint{a,b}
+=\{x:\alpha_i<\xi_i\le\beta_i\Forall i\le r\}$}
+
+\noindent termasuk dalam $\Sigma$; hal ini karena
+
+\Centerline{$\ocint{a,b}=\bigcap_{i\le
+r}(\{x:\xi_i\le\beta_i\}\setminus\{x:\xi_i\le\alpha_i\})$.}
+
+\noindent Akibatnya, semua himpunan terbuka termasuk dalam $\Sigma$.
+\Prf\ (Bandingkan bukti 121Ef.) Misalkan $G\subseteq\BbbR^r$ suatu
+himpunan terbuka. Misalkan $\Cal I$ adalah himpunan semua interval
+berbentuk $\ocint{q,q'}$ yang termuat dalam $G$, dengan
+$q$, $q'\in\BbbQ^r$. Maka $\Cal I$ adalah subhimpunan terhitung dari
+$\Sigma$, sehingga (karena $\Sigma$ adalah aljabar-$\sigma$)
+$\bigcup\Cal I\in\Sigma$. Menurut definisi $\Cal I$,
+$\bigcup\Cal I\subseteq G$. Namun, jika $x\in G$, terdapat
+$\delta>0$ sedemikian sehingga bola terbuka $U(x,\delta)$ yang berpusat
+di $x$ dan berjari-jari $\delta$ termuat dalam $G$ (1A2A).
+Sekarang, untuk setiap $i\le r$, kita dapat menemukan bilangan-bilangan
+rasional $\alpha_i$, $\beta_i$ sedemikian sehingga
+
+\Centerline{$\xi_i-\Bover{\delta}r
+\le\alpha_i<\xi_i\le\beta_i<\xi_i+\Bover{\delta}r$,}
+
+\noindent sehingga
+
+\Centerline{$x\in\ocint{a,b}\subseteq U(x,\delta)\subseteq G$}
+
+\noindent dan $x\in\ocint{a,b}\in\Cal I$. Jadi
+$x\in\bigcup\Cal I$. Karena $x$ sebarang,
+$G\subseteq\bigcup\Cal I$ dan $G=\bigcup\Cal I\in\Sigma$.\ \Qed
+
+\medskip
+
+{\bf (c)} Dengan demikian, $\Sigma$ adalah aljabar-$\sigma$ himpunan
+yang memuat setiap himpunan terbuka, dan harus memuat $\Cal B$,
+aljabar-$\sigma$ terkecil semacam itu.
+}%end of proof of 121J
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Bandingkan bukti 115G.
+}%end of comment
+
+\leader{*121K}{Proposisi} Misalkan $X$ suatu himpunan dan $\Sigma$
+suatu aljabar-$\sigma$ atas subhimpunan-subhimpunan $X$. Misalkan
+$r\ge 1$ suatu bilangan bulat, dan $f_1,\ldots,f_r$ fungsi-fungsi
+terukur yang didefinisikan pada subhimpunan-subhimpunan $X$. Tetapkan
+$D=\bigcap_{i\le r}\dom f_i$, dan untuk $x\in D$ tetapkan
+$f(x)=(f_1(x),\ldots,f_r(x))\in\BbbR^r$. Maka
+
+(a) untuk setiap himpunan Borel $E\subseteq\BbbR^r$, $f^{-1}[E]$
+termasuk dalam aljabar-$\sigma$ subruang $\Sigma_D$;
+
+(b) jika $h$ adalah suatu fungsi terukur Borel dari suatu subhimpunan
+$\dom h$ dari $\BbbR^r$ ke $\Bbb R$, maka komposisi $hf$ terukur.
+
+\proof{{\bf (a)(i)} Tinjau himpunan
+
+\Centerline{$\Tau=\{E:E\subseteq\BbbR^r,\,f^{-1}[E]\in\Sigma_D\}$.}
+
+\noindent Maka $\Tau$ adalah aljabar-$\sigma$ atas
+subhimpunan-subhimpunan $\BbbR^r$.
+\Prf\ (Bandingkan 121Ef.) {\bf ($\pmb{\alpha}$)}
+$f^{-1}[\emptyset]=\emptyset\in\Sigma_D$, sehingga
+$\emptyset\in\Tau$. {\bf ($\pmb{\beta}$)} Jika $E\in\Tau$, maka
+$f^{-1}[\BbbR^r\setminus E]=D\setminus f^{-1}[E]\in\Sigma_D$,
+sehingga $\BbbR^r\setminus E\in\Tau$.
+{\bf ($\pmb{\gamma}$)} Jika $\langle E_n\rangle_{n\in\Bbb N}$ adalah
+suatu barisan di dalam $\Tau$, maka
+$f^{-1}[\bigcup_{n\in\Bbb N}E_n]
+=\bigcup_{n\in\Bbb N}f^{-1}[E_n]\in\Sigma_D$ karena $\Sigma_D$
+adalah aljabar-$\sigma$, sehingga $\bigcup_{n\in\Bbb N}E_n\in\Tau$.\ \Qed
+
+\medskip
+
+\quad{\bf (ii)} Selanjutnya, untuk setiap $i\le r$ dan
+$\alpha\in\Bbb R$, $J=\{x:\xi_i\le\alpha\}$ termasuk dalam $\Tau$,
+karena
+
+\Centerline{$f^{-1}[J]
+=\{x:x\in D,\, f_i(x)\le \alpha\}\in\Sigma_D$.}
+
+\noindent Jadi $\Tau$ memuat keluarga $\Cal J$ dari 121J, dan karena
+itu memuat aljabar-$\sigma$ $\Cal B$ yang dibangkitkan oleh $\Cal J$,
+yakni, memuat setiap subhimpunan Borel dari $\BbbR^r$.
+
+\medskip
+
+{\bf (b)} Sekarang sisanya mengikuti dari argumen 121Eg. Jika
+$a\in\Bbb R$, maka $\{y:y\in\dom h,\,h(y)<a\}$ berbentuk
+$E\cap\dom h$, dengan $E$ suatu subhimpunan Borel dari $\BbbR^r$,
+sehingga $\{x:x\in\dom(hf),\,(hf)(x)<a\}
+=f^{-1}[E]\cap\dom(hf)$ termasuk dalam $\Sigma_{\dom hf}$.
+}%end of proof of 121K
+
+\exercises{
+\leader{121X}{Latihan dasar $\pmb{>}$(a)}
+%\spheader 121Xa
+Misalkan $X$ suatu himpunan, $\Sigma$ suatu aljabar-$\sigma$ atas
+subhimpunan-subhimpunan $X$, dan $D\subseteq X$. Misalkan
+$\sequencen{D_n}$ suatu partisi $D$ menjadi himpunan-himpunan yang
+terukur relatif, dan $\sequencen{f_n}$ suatu barisan fungsi bernilai
+real terukur sedemikian sehingga $D_n\subseteq\dom f_n$ untuk setiap
+$n$. Definisikan $f:D\to\Bbb R$ dengan menetapkan $f(x)=f_n(x)$ setiap
+kali $n\in\Bbb N$, $x\in D_n$. Tunjukkan bahwa $f$ terukur.
+%121C
+
+\spheader 121Xb Misalkan $X$ suatu himpunan dan $\Sigma$ suatu
+aljabar-$\sigma$ atas subhimpunan-subhimpunan $X$. Jika $f$ dan $g$
+adalah fungsi-fungsi bernilai real terukur yang didefinisikan pada
+subhimpunan-subhimpunan $X$, tunjukkan bahwa $f^+$, $f^-$,
+$f\wedge g$, dan $f\vee g$ terukur, dengan
+
+\Centerline{$f^+(x)=\max(f(x),0)$ untuk $x\in\dom f$,}
+
+\Centerline{$f^-(x)=\max(-f(x),0)$ untuk $x\in\dom f$,}
+
+\Centerline{$(f\vee g)(x)=\max(f(x),g(x))$ untuk
+$x\in\dom f\cap\dom g$,}
+
+\Centerline{$(f\wedge g)(x)=\min(f(x),g(x))$ untuk
+$x\in\dom f\cap\dom g$.}
+%121E
+
+\sqheader 121Xc Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur. Tuliskan
+$\eusm L^0$ untuk himpunan fungsi bernilai real $f$ sedemikian sehingga
+($\alpha$) $\dom f$ adalah subhimpunan koterabaikan dari $X$
+($\beta$) terdapat himpunan koterabaikan $E\subseteq X$ sedemikian
+sehingga $f\restr E$ terukur.
+(i) Tunjukkan bahwa himpunan $E$ pada klausa ($\beta$) dalam kalimat
+terakhir dapat diambil termasuk dalam $\Sigma$ dan termuat dalam
+$\dom f$. (ii) Tunjukkan bahwa jika $f$, $g\in\eusm L^0$ dan
+$c\in\Bbb R$, maka $f+g$, $cf$, $f\times g$, $|f|$, $f^+$, $f^-$,
+$f\wedge g$, $f\vee g$ semuanya termasuk dalam $\eusm L^0$.
+(iii) Tunjukkan bahwa jika $f$, $g\in\eusm L^0$ dan $g\ne 0$ a.e.,
+maka $f/g\in\eusm L^0$. (iv) Tunjukkan bahwa jika
+$\sequencen{f_n}$ adalah suatu barisan di dalam $\eusm L^0$, maka
+fungsi-fungsi
+
+\Centerline{$\lim_{n\to\infty}f_n$,\quad$\sup_{n\in\Bbb N}f_n$,
+\quad$\inf_{n\in\Bbb N}f_n$,\quad $\limsup_{n\to\infty}f_n$,
+\quad$\liminf_{n\to\infty}f_n$}
+
+\noindent termasuk dalam $\eusm L^0$ setiap kali fungsi-fungsi itu
+terdefinisi hampir di mana-mana sebagai fungsi bernilai real.
+(v) Tunjukkan bahwa jika $f\in\eusm L^0$ dan
+$h:\Bbb R\to\Bbb R$ terukur Borel, maka $hf\in\eusm L^0$.
+%121F
+
+\sqheader 121Xd Tinjau empat keluarga subhimpunan $\Bbb R$ berikut:
+
+\Centerline{$\Cal A_1=\{\ooint{-\infty,a}:a\in\Bbb R\}$,
+\quad$\Cal A_2=\{\ocint{-\infty,a}:a\in\Bbb R\}$,}
+
+\Centerline{$\Cal A_3=\{\ooint{a,\infty}:a\in\Bbb R\}$,
+\quad$\Cal A_4=\{\coint{a,\infty}:a\in\Bbb R\}$.}
+
+\noindent Tunjukkan bahwa untuk setiap $j$, aljabar-$\sigma$ atas
+subhimpunan-subhimpunan $\Bbb R$ yang dibangkitkan oleh $\Cal A_j$
+adalah aljabar-$\sigma$ himpunan-himpunan Borel.
+%121J
+
+\spheader 121Xe Misalkan $D$ sembarang subhimpunan $\BbbR^r$, dengan
+$r\ge 1$. Tuliskan $\frak T_D$ untuk himpunan
+$\{G\cap D:G\subseteq\BbbR^r$ merupakan himpunan terbuka$\}$.
+(i) Tunjukkan bahwa $\frak T_D$ memenuhi sifat-sifat himpunan terbuka
+yang tercantum dalam 1A2B. (ii) Misalkan $\Cal B$ aljabar-$\sigma$
+himpunan-himpunan Borel dalam $\BbbR^r$, dan $\Cal B(D)$
+aljabar-$\sigma$ subruang pada $D$. Tunjukkan bahwa $\Cal B(D)$ tepat
+sama dengan aljabar-$\sigma$ atas subhimpunan-subhimpunan $D$ yang
+dibangkitkan oleh $\frak T_D$. \Hint{($\alpha$) amati bahwa
+$\frak T_D\subseteq\Cal B(D)$ ($\beta$) tinjau
+$\{E:E\subseteq\BbbR^r,\,E\cap D$ termasuk dalam aljabar-$\sigma$
+yang dibangkitkan oleh $\frak T_D\}$.}
+%121K
+
+\spheader 121Xf Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur dan
+definisikan $\eusm L^0$ seperti dalam 121Xc. Tunjukkan bahwa jika
+$f_1,\ldots,f_r$ termasuk dalam $\eusm L^0$ dan
+$h:\BbbR^r\to\Bbb R$ terukur Borel, maka $h(f_1,\ldots,f_r)$
+termasuk dalam $\eusm L^0$.
+%121Xc 121K
+
+\leader{121Y}{Latihan lanjutan (a)}
+%\spheader 121Ya
+Misalkan $X$ dan $Y$ himpunan-himpunan, $\Sigma$ suatu
+aljabar-$\sigma$ atas subhimpunan-subhimpunan $X$, $\phi:X\to Y$ suatu
+fungsi, dan $g$ suatu fungsi bernilai real yang didefinisikan pada suatu
+subhimpunan $Y$. Tetapkan
+$\Tau=\{F:F\subseteq Y,\,\phi^{-1}[F]\in\Sigma\}$; maka $\Tau$ adalah
+aljabar-$\sigma$ atas subhimpunan-subhimpunan $Y$ (lihat 111Xc).
+(i) Tunjukkan bahwa jika $g$ $\Tau$-terukur, maka $g\phi$
+$\Sigma$-terukur.
+(ii) Berikan suatu contoh ketika $g\phi$ $\Sigma$-terukur, tetapi $g$
+tidak $\Tau$-terukur.
+(iii) Tunjukkan bahwa jika $g\phi$ $\Sigma$-terukur dan
+{\it salah satu} dari syarat berikut berlaku: $\phi$ injektif,
+{\it atau} $\dom(g\phi)\in\Sigma$, {\it atau}
+$\phi[X]\subseteq\dom g$, maka $g$ $\Tau$-terukur.\footnote{Saya
+berterima kasih kepada P. Wallace Thompson karena telah menunjukkan
+kekeliruan dalam versi asli latihan ini.}
+%121C
+
+\spheader 121Yb Misalkan $X$ dan $Y$ himpunan-himpunan, $\Tau$ suatu
+aljabar-$\sigma$ atas subhimpunan-subhimpunan $Y$, dan $\phi:X\to Y$
+suatu fungsi. Tetapkan $\Sigma=\{\phi^{-1}[F]:F\in\Tau\}$, seperti
+dalam 111Xd. Tunjukkan bahwa suatu fungsi $f:X\to\Bbb R$
+$\Sigma$-terukur jika dan hanya jika terdapat fungsi $\Tau$-terukur
+$g:Y\to\Bbb R$ sedemikian sehingga $f=g\phi$.
+%121I
+
+\spheader 121Yc Misalkan $X$ dan $Y$ himpunan-himpunan, dan $\Sigma$,
+$\Tau$ masing-masing aljabar-$\sigma$ atas subhimpunan-subhimpunan
+$X$, $Y$. Suatu fungsi $\phi:X\to Y$ disebut
+{\bf $(\Sigma,\Tau)$-terukur} jika $\phi^{-1}[F]\in\Sigma$ untuk
+setiap $F\in\Tau$.
+(i) Tunjukkan bahwa jika $\Sigma$, $\Tau$, $\Upsilon$ masing-masing
+adalah aljabar-$\sigma$ atas subhimpunan-subhimpunan $X$, $Y$, $Z$,
+dan $\phi:X\to Y$ $(\Sigma,\Tau)$-terukur,
+$\psi:Y\to Z$ $(\Tau,\Upsilon)$-terukur, maka $\psi\phi:X\to Z$
+$(\Sigma,\Upsilon)$-terukur.
+(ii) Andaikan $\Cal A\subseteq\Tau$ sedemikian sehingga $\Tau$
+merupakan aljabar-$\sigma$ atas subhimpunan-subhimpunan $Y$ yang
+dibangkitkan oleh $\Cal A$ (111Gb). Tunjukkan bahwa $\phi:X\to Y$
+$(\Sigma,\Tau)$-terukur jika dan hanya jika
+$\phi^{-1}[A]\in\Sigma$ untuk setiap $A\in\Cal A$.
+(iii) Untuk $r\ge 1$, tuliskan $\Cal B_r$ untuk aljabar-$\sigma$
+subhimpunan-subhimpunan Borel dari $\BbbR^r$. Tunjukkan bahwa jika $X$
+sembarang himpunan dan $\Sigma$ suatu aljabar-$\sigma$ atas
+subhimpunan-subhimpunan $X$, maka suatu fungsi $f:X\to\BbbR^r$
+$(\Sigma,\Cal B_r)$-terukur jika dan hanya jika
+$\pi_if:X\to\Bbb R$ $(\Sigma,\Cal B_1)$-terukur untuk setiap
+$i\le r$, dengan $\pi_i(x)=\xi_i$ untuk $i\le r$,
+$x=(\xi_1,\ldots,\xi_r)\in\BbbR^r$.
+(iv) Rumuskan kembali gagasan-gagasan ini untuk fungsi-fungsi yang
+terdefinisi sebagian.
+%121+
+
+\spheader 121Yd Misalkan $X$ suatu himpunan dan $\Sigma$ suatu
+aljabar-$\sigma$ atas subhimpunan-subhimpunan $X$. Untuk $r\ge 1$,
+$D\subseteq X$, katakan bahwa suatu fungsi $\phi:D\to\BbbR^r$
+{\bf terukur} jika $\phi^{-1}[G]$ terukur relatif dalam $D$ untuk
+setiap himpunan terbuka $G\subseteq\BbbR^r$. Jika $X=\BbbR^s$ dan
+$\Sigma$ adalah aljabar-$\sigma$ $\Cal B_s$ dari subhimpunan-subhimpunan
+Borel $\BbbR^s$, katakan bahwa $\phi$ {\bf terukur Borel}.
+(i) Tunjukkan bahwa $\phi$ terukur dalam pengertian ini jika dan hanya
+jika semua fungsi koordinatnya $\phi_i:D\to\Bbb R$ terukur dalam
+pengertian 121C, dengan $\phi(x)=(\phi_1(x),\ldots,\phi_r(x))$ untuk
+$x\in D$. (Khususnya, definisi ini sesuai dengan 121C ketika $r=1$.)
+(ii) Tunjukkan bahwa $\phi:D\to\BbbR^r$ terukur jika dan hanya jika
+$(\Sigma,\Cal B_r)$-terukur dalam pengertian 121Yc.
+(iii) Tunjukkan bahwa jika $\phi:D\to\BbbR^r$ terukur dan
+$\psi:E\to\BbbR^s$ terukur Borel, dengan $E\subseteq\BbbR^r$, maka
+$\psi\phi:\phi^{-1}[E]\to\BbbR^s$ terukur.
+(iv) Tunjukkan bahwa setiap fungsi kontinu dari suatu subhimpunan
+$\BbbR^s$ ke $\BbbR^r$ terukur Borel.
+%121Yc
+
+\spheader 121Ye Misalkan $X$ suatu himpunan dan $\theta$ suatu ukuran
+luar pada $X$; misalkan $\mu$ ukuran yang didefinisikan dari $\theta$
+dengan metode \Caratheodory, dan $\Sigma$ domainnya. Andaikan bahwa
+$f:X\to\Bbb R$ adalah suatu fungsi sedemikian sehingga
+
+\Centerline{$\theta\{x:x\in A,\,f(x)\le a\}
+  +\theta\{x:x\in A,\,f(x)\ge b\}\le\theta A$}
+
+\noindent setiap kali $A\subseteq X$ dan $a<b$ dalam $\Bbb R$.
+Tunjukkan bahwa $f$ $\Sigma$-terukur. ({\it Petunjuk\/}: andaikan
+$a\in\Bbb R$ dan $\theta A<\infty$. Tetapkan
+
+\Centerline{$B_k=\{x:x\in A,\,
+ a+\Bover1{2k+2}\le f(x)\le a+\Bover1{2k+1}\}$,}
+
+\Centerline{$B'_k=\{x:x\in A,\,
+  a+\Bover1{2k+3}\le f(x)\le a+\Bover1{2k+2}\}$}
+
+\noindent untuk $k\in\Bbb N$. Tunjukkan bahwa
+$\sum_{k=0}^{\infty}\theta B_k\le\theta A$, dan periksa hasil serupa
+untuk $B'_k$. Dari sini, tunjukkan bahwa
+
+\Centerline{$\theta\{x:x\in A,\,f(x)>a\}
+=\lim_{k\to\infty}\theta\{x:x\in A,\,f(x)\ge a+\Bover1k\}$.)}
+%121+
+}%end of exercises
+
+\endnotes{
+\Notesheader{121} Dalam bagian ini saya telah memberikan tidak kurang
+dari tiga definisi `fungsi terukur', dalam 121C, 121Yc, dan 121Yd.
+Sebenarnya, definisi terakhir barangkali yang terpenting dan menjadi
+panduan terbaik menuju gagasan-gagasan selanjutnya. Meskipun demikian,
+sebagian
+besar penerapan merujuk pada fungsi bernilai real, dan empat syarat
+ekuivalen dalam 121B adalah yang paling alami dan paling mudah
+digunakan. Fakta bahwa semuanya berimpit dengan syarat dalam 121Yd
+bersesuaian dengan fakta bahwa semuanya berbentuk
+
+\Centerline{$f^{-1}[E]\in\Sigma_D$ untuk setiap $E\in\Cal A$}
+
+\noindent dengan $\Cal A$ suatu keluarga subhimpunan $\Bbb R$ yang
+membangkitkan aljabar-$\sigma$ Borel (121Xd, 121Yc(ii)).
+
+Kelas fungsi terukur mungkin merupakan kelas terluas yang sejauh ini
+pernah Anda lihat, jika kita tidak menghitung keluarga semua fungsi
+bernilai real; semua fungsi yang mudah dideskripsikan antara
+subhimpunan-subhimpunan $\Bbb R$ bersifat terukur. Ruang fungsi
+terukur bukan hanya tertutup terhadap penjumlahan, perkalian, dan
+komposisi dengan fungsi kontinu (121E), tetapi setiap operasi alami
+yang bekerja pada suatu barisan fungsi terukur akan menghasilkan fungsi
+terukur (121F, 121Xb, 121Xa). Namun, {\it tidak} selalu benar bahwa
+komposisi dua fungsi terukur Lebesgue dari $\Bbb R$ ke dirinya sendiri
+terukur Lebesgue; saya memberikan contoh tandingan dalam 134Ib.
+Intinya di sini ialah bahwa suatu fungsi disebut `terukur' jika fungsi
+tersebut $(\Sigma,\Cal B)$-terukur, dalam bahasa 121Yc, dengan
+$\Cal B$ aljabar-$\sigma$ himpunan-himpunan Borel. Fungsi semacam itu
+dapat saja gagal menjadi $(\Sigma,\Sigma)$-terukur jika $\Sigma$
+memuat $\Cal B$ secara sejati, sehingga argumen alami untuk komposisi
+(121Yc(i)) gagal. Meskipun demikian, karena alasan-alasan yang akan
+saya singgung dalam \S134, fungsi yang tidak terukur Lebesgue sulit
+ditemukan, dan hanya muncul secara alami dalam jenis-jenis analisis real
+yang sangat terspesialisasi. Karena itu, Anda dapat mendekati pertanyaan
+apakah suatu fungsi tertentu terukur Lebesgue dengan keyakinan yang
+wajar bahwa fungsi tersebut memang terukur, dan bahwa buktinya sekadar
+menjadi tantangan bagi teknik Anda.
+
+Anda akan mengamati bahwa hasil-hasil 121E sebagian besar tercakup oleh
+121I-121K, yang juga mencakup sebagian besar 114G dan 115G; dan bahwa
+121Kb tercakup oleh 121Yd(iii). Anda dapat menganggap diri telah
+menguasai bagian pokok bahasan ini ketika pemaparan saya terasa
+membosankan karena berulang-ulang. Tentu saja, untuk menurunkan 121Ed
+dari 121K, misalnya, Anda harus mengetahui bahwa perkalian, dipandang
+sebagai fungsi dari $\BbbR^2$ ke $\Bbb R$, bersifat kontinu, sehingga
+terukur Borel; buktinya tertanam dalam bukti yang saya berikan untuk
+121Ed (lihat rumus untuk $\eta$ di pertengahan bukti).
+}%end of notes
+
+\discrpage
