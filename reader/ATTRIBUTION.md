@@ -3,8 +3,9 @@
 ## Karya sumber
 
 D. H. Fremlin, *Measure Theory, Volume 1: The Irreducible Minimum*,
-Bagian 111, “Sigma-algebras”, dan Bagian 112, “Measure spaces”. Sumber resmi dibekukan dari arsip
-`mt1.2011.tar.gz` yang diterbitkan melalui situs University of Essex.
+Bagian 111, “Sigma-algebras”, Bagian 112, “Measure spaces”, dan Bagian 113,
+“Outer measures and Caratheodory's construction”. Sumber resmi dibekukan dari
+arsip `mt1.2011.tar.gz` yang diterbitkan melalui situs University of Essex.
 
 Materi turunan Fremlin didistribusikan berdasarkan **Design Science
 License**. Teks lisensi lengkap disertakan sebagai
@@ -13,8 +14,7 @@ dikenakan pada materi tersebut.
 
 ## Modifikasi
 
-- 21 Agustus 2026: seluruh Bagian 111 dan 112 diterjemahkan ke Bahasa
-  Indonesia.
+- 21 Agustus 2026: seluruh Bagian 111–113 diterjemahkan ke Bahasa Indonesia.
 - Struktur Plain/AMS-TeX, matematika, urutan, bukti, latihan, petunjuk, dan
   rujukan sumber dipertahankan.
 - Ditambahkan pembaca HTML semantik, metadata bahasa `id-ID`, pemetaan ID
@@ -25,6 +25,10 @@ dikenakan pada materi tersebut.
 - Tiga koreksi sumber yang terlokalisasi pada Bagian 112 dicatat secara
   eksplisit dalam 00_control/SOURCE_CORRECTIONS.csv: satu galat tipe
   matematis, satu galat tipografis, dan satu definisi notasi yang hilang.
+- Empat diagram sumber Bagian 113 (`mt113c1.ps`–`mt113c4.ps`) dikonversi
+  secara deterministik menjadi PNG responsif untuk pembaca HTML. Diagram itu
+  tetap merupakan materi turunan Fremlin berdasarkan Design Science License;
+  konversi formatnya bukan karya seni pengganti.
 
 Adaptasi ini diproduksi oleh Codex atas arahan Floris. D. H. Fremlin tidak
 diminta untuk dan tidak menyatakan dukungan terhadap terjemahan ini.

@@ -83,3 +83,27 @@ reference, and pass deterministic package/ZIP admission. Source replay also
 corrects progress accounting: Sections 111 and 112 occupy printed pages 10–18.
 The production cursor advances to complete `mt113.tex`; the 672-page goal
 remains active.
+
+## 2026-08-21 — D012: Supersede Section 112 pagination without rewriting its release
+
+A clean replay of the complete frozen Volume 1 source establishes that Section
+112 continues onto printed page 19, where Section 113 also begins. The current
+authority and progress records therefore use Section 111 pages 10–14, Section
+112 pages 15–19, and a ten-page unique cumulative span of pages 10–19. The
+already published S112 receipt/tag remains immutable historical evidence of
+what was released; this decision and the next cumulative release carry the
+corrected accounting forward.
+
+## 2026-08-21 — D013: Admit complete Section 113 and advance in source order
+
+The complete `mt113.tex` translation is admitted as
+`O007-FREMLIN-V1-S113`. Structural replay preserves all 352 formula atoms, 26
+explicit source anchors, eight additive implicit source anchors, 19 exercises,
+two hints, proofs, references, and all four source diagrams. The sole allowed
+mathematical replay delta is a language-only `\noalign` text localization; it
+does not alter mathematical content. The versioned backend contains 519
+unit-local records, while the cumulative PDF, offline HTML, responsive figure
+layout, cross-unit links, and 1,280/390-pixel browser views pass admission.
+Source pagination is recorded as pages 19–23, yielding 14 unique cumulative
+pages 10–23. The production cursor advances to complete `mt114.tex`; the
+672-page Volumes 1–2 goal remains active.

@@ -40,8 +40,44 @@ for progress accounting.
 authority/fremlin/source/mt1.2011/mt112.tex is 22,823 bytes and 550 lines,
 SHA-256 3c6037e1fb81449cd9ba0bd3bc9b3eae8b5c807ecc758b1b661e8bc8db53ec5e.
 It declares source section 112, “Measure spaces”, and corresponds to printed
-Volume 1 pages 15–18. Section 113 begins on printed page 19 in the same frozen
-baseline.
+Volume 1 pages 15–19. Section 113 begins partway through printed page 19 in the
+same frozen baseline, so adjacent section spans overlap and must not be added
+naively. The earlier 15–18 record is superseded by the complete frozen-source
+replay used for the Section 113 census.
+
+## Third unit receipt
+
+`authority/fremlin/source/mt1.2011/mt113.tex` is 16,692 bytes and 443 lines,
+SHA-256 `34a400f9b01faa39330a22f712d885a272e09134dc4ae3ee4d6dc10d09ffd7b3`.
+It declares source section 113, “Outer measures and Caratheodory's
+construction”, and occupies printed Volume 1 pages 19–23; page 19 also contains
+the end of Section 112, while page 23 also contains the beginning of Section
+114. The unique cumulative Section 111–113 span is therefore pages 10–23, or
+14 official pages.
+
+Section 113 uses four unique PostScript diagrams. Their frozen identities are:
+
+| Resource | Bytes | SHA-256 |
+|---|---:|---|
+| `mt113c1.ps` | 18,252 | `05008550dc6ec69c1a81a7f49690db636f74a7d676c80597a5a5c7a68cd6b247` |
+| `mt113c2.ps` | 18,011 | `453bdd8bdf47855be6a9409a350a54509001e86745d9a292d2afeb63a63347f4` |
+| `mt113c3.ps` | 18,011 | `ed139a714ecb9a7298305d31469202e44b35f63bc015a5c31204acee5ac96439` |
+| `mt113c4.ps` | 23,151 | `f814fa8153a7419e48edbc0d1ca8c47fef8d2334aa89334d088ff915d4e4ffd4` |
+
+The legacy `psfig`/`dvipdfmx` route leaves these diagrams blank. The Indonesian
+reader therefore preserves the PostScript authority bytes and uses separately
+reproducible, cropped derivatives for PDF and HTML inclusion.
+
+## Fourth unit intake
+
+`authority/fremlin/source/mt1.2011/mt114.tex` is 25,717 bytes and 612 lines,
+SHA-256 `206488ff5ba2960f4e130d162cca6df7af2935968754d77bc18b53ab084b8f97`.
+It declares source section 114, “Lebesgue measure on $\Bbb R$”, and begins
+partway through printed page 23, which it shares with the end of Section 113.
+The ending page is not proved by current lane evidence and is intentionally
+recorded as `23–?` pending a bounded frozen-baseline replay. The source contains
+19 active exercises, eight active hint macros, and no active source-local figure
+or image references.
 
 ## Selection authority
 

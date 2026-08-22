@@ -70,12 +70,35 @@ def read_group(text: str, start: int) -> tuple[str, int]:
 def normalize_formula(tex: str) -> str:
     """Map only legacy presentation macros that MathJax cannot parse."""
     out = tex
-    needle = "\\eqalign"
+    for needle in ("\\eqalignno", "\\eqalign"):
+        while needle in out:
+            pos = out.find(needle)
+            arg, end = read_group(out, pos + len(needle))
+            if needle == "\\eqalignno":
+                arg = normalize_noalign_rows(arg)
+            arg = arg.replace("\\cr", r"\\")
+            out = out[:pos] + r"\begin{aligned}" + arg + r"\end{aligned}" + out[end:]
+    return out
+
+
+def normalize_noalign_rows(tex: str) -> str:
+    r"""Turn Plain-TeX ``\noalign`` prose into rows accepted by MathJax."""
+    out = tex
+    needle = "\\noalign"
     while needle in out:
         pos = out.find(needle)
         arg, end = read_group(out, pos + len(needle))
-        arg = arg.replace("\\cr", r"\\")
-        out = out[:pos] + r"\begin{aligned}" + arg + r"\end{aligned}" + out[end:]
+        arg = re.sub(r"^\s*\\noindent\s*", "", arg).strip()
+        pieces = re.split(r"(\$[^$]*\$)", arg)
+        row: list[str] = []
+        for piece in pieces:
+            if not piece:
+                continue
+            if piece.startswith("$") and piece.endswith("$"):
+                row.append(piece[1:-1])
+            else:
+                row.append(r"\text{" + piece + "}")
+        out = out[:pos] + "&" + "".join(row) + r"\cr" + out[end:]
     return out
 
 
@@ -139,6 +162,19 @@ class Renderer:
                 _brief, after_brief = read_group(text, j)
                 full, end = read_group(text, after_brief)
                 out.append(self.transform(full))
+                i = end
+                continue
+            if command == "dvrocolon":
+                full, end = read_group(text, j)
+                out.append(self.transform(full))
+                i = end
+                continue
+            if command == "Caratheodory":
+                out.append("Carathéodory")
+                i = j
+                continue
+            if command == "dvAnew":
+                _arg, end = read_group(text, j)
                 i = end
                 continue
             if command in {"prooflet", "Hint"}:
@@ -229,6 +265,11 @@ class Renderer:
                         body=self.render_inline(self.transform(arg)),
                     )
                 )
+                i = end
+                continue
+            if command == "inset":
+                arg, end = read_group(text, j)
+                out.append(self.block_token("inset", body=self.transform(arg)))
                 i = end
                 continue
             if command in {
@@ -409,9 +450,32 @@ class Renderer:
                     )
                 elif kind == "center":
                     output.append(f'<div class="centerline">{values["body"]}</div>')
+                elif kind == "inset":
+                    output.append(
+                        f'<div class="inset-block">{self.render_body(values["body"])}</div>'
+                    )
                 elif kind == "anchor":
                     output.append(
                         f'<span class="anchor" id="{html.escape(values["source_id"], quote=True)}"></span>'
+                    )
+                elif kind == "figure-strip":
+                    figures = json.loads(values["figures"])
+                    panels: list[str] = []
+                    for figure in figures:
+                        panels.append(
+                            '<figure class="figure-panel">'
+                            f'<img src="{html.escape(figure["src"], quote=True)}" '
+                            f'alt="{html.escape(figure["alt"], quote=True)}" '
+                            'loading="lazy" decoding="async">'
+                            f'<figcaption>{html.escape(figure["caption"])}</figcaption>'
+                            '</figure>'
+                        )
+                    output.append(
+                        '<figure class="figure-strip" role="group" '
+                        f'aria-label="{html.escape(values["label"], quote=True)}">'
+                        '<div class="figure-strip-grid">'
+                        + "".join(panels)
+                        + '</div></figure>'
                     )
                 elif kind == "proof":
                     proof_body = self.render_body(values["body"])
@@ -475,6 +539,129 @@ def parse_key_values(values: list[str] | None, option: str) -> dict[str, str]:
     return result
 
 
+def parse_figure_specs(values: list[str] | None) -> list[dict[str, str]]:
+    """Parse ID=SRC|CAPTION|ALT records in their declared display order."""
+    result: list[dict[str, str]] = []
+    seen_ids: set[str] = set()
+    seen_sources: set[str] = set()
+    for value in values or []:
+        if "=" not in value:
+            raise ValueError(f"invalid --figure-strip-image value: {value!r}")
+        source_id, payload = value.split("=", 1)
+        fields = payload.split("|", 2)
+        if (
+            not re.fullmatch(r"[0-9A-Za-z_-]+", source_id)
+            or len(fields) != 3
+            or not all(fields)
+        ):
+            raise ValueError(f"invalid --figure-strip-image value: {value!r}")
+        src, caption, alt = fields
+        if source_id in seen_ids:
+            raise ValueError(f"duplicate figure source ID: {source_id}")
+        if src in seen_sources:
+            raise ValueError(f"duplicate figure image path: {src}")
+        seen_ids.add(source_id)
+        seen_sources.add(src)
+        result.append(
+            {"source_id": source_id, "src": src, "caption": caption, "alt": alt}
+        )
+    return result
+
+
+def collapse_sideshiftedpicture_strip(
+    text: str,
+    figures: list[dict[str, str]],
+    replacement: str,
+) -> str:
+    """Collapse the two print-layout branches into one semantic figure strip."""
+    starts = list(re.finditer(r"(?m)^\\ifdim\\pagewidth<[^\n]*$", text))
+    if len(starts) != 1:
+        raise ValueError(
+            "figure-strip mode requires exactly one narrow-page conditional"
+        )
+    start = starts[0].start()
+    else_match = re.search(r"(?m)^\\else[ \t]*$", text[starts[0].end() :])
+    if else_match is None:
+        raise ValueError("figure-strip conditional has no \\else branch")
+    else_start = starts[0].end() + else_match.start()
+    else_end = starts[0].end() + else_match.end()
+    fi_match = re.search(r"(?m)^\\fi[ \t]*$", text[else_end:])
+    if fi_match is None:
+        raise ValueError("figure-strip conditional has no closing \\fi")
+    fi_start = else_end + fi_match.start()
+    end = else_end + fi_match.end()
+
+    picture_pattern = re.compile(
+        r"\\sideshiftedpicture\{([^{}]+)\}"
+        r"\{[^{}\n]+\}\{[^{}\n]+\}\{[^{}\n]+\}"
+    )
+    expected = [figure["source_id"] for figure in figures]
+    narrow_ids = picture_pattern.findall(text[start:else_start])
+    wide_ids = picture_pattern.findall(text[else_end:fi_start])
+    if not expected or narrow_ids != expected or wide_ids != expected:
+        raise ValueError(
+            "figure-strip branches do not contain the same declared images: "
+            f"expected={expected!r}, narrow={narrow_ids!r}, wide={wide_ids!r}"
+        )
+    if text[start:end].count("\\startsideshiftedpicture") != 2:
+        raise ValueError("figure-strip conditional must contain two layout branches")
+
+    tail_count = 0
+    while True:
+        tail_match = re.match(
+            r"(?:[ \t]*\n)*[ \t]*\\ifdim\\pagewidth(?:=|>)[^\n]*\\fi[ \t]*",
+            text[end:],
+        )
+        if tail_match is None:
+            break
+        end += tail_match.end()
+        tail_count += 1
+    if tail_count != 2:
+        raise ValueError(
+            f"expected two page-width spacing conditionals, found {tail_count}"
+        )
+
+    collapsed = text[:start] + replacement + text[end:]
+    raw_layout = (
+        "\\startsideshiftedpicture",
+        "\\sideshiftedpicture",
+        "\\ifdim\\pagewidth",
+    )
+    residue = [command for command in raw_layout if command in collapsed]
+    if residue:
+        raise ValueError(f"unhandled figure-layout commands remain: {residue!r}")
+    return collapsed
+
+
+def add_inline_proof_anchor(
+    renderer: Renderer,
+    source_id: str,
+    marker: str,
+) -> None:
+    """Insert an anchor at a unique marker inside a proof block."""
+    if source_id in renderer.known_ids:
+        raise ValueError(f"inline proof anchor duplicates a known ID: {source_id}")
+    matches: list[dict[str, str]] = []
+    occurrences = 0
+    for kind, values in renderer.blocks.values():
+        if kind != "proof":
+            continue
+        count = values["body"].count(marker)
+        occurrences += count
+        if count:
+            matches.append(values)
+    if occurrences != 1 or len(matches) != 1:
+        raise ValueError(
+            f"inline proof anchor marker {source_id} occurs {occurrences} times"
+        )
+    anchor = renderer.inline_token(
+        f'<span class="anchor" id="{html.escape(source_id, quote=True)}"></span>'
+    )
+    matches[0]["body"] = matches[0]["body"].replace(marker, anchor + marker, 1)
+    renderer.known_ids.add(source_id)
+    renderer.xref_map[source_id] = f"#{source_id}"
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("source", type=Path)
@@ -489,7 +676,13 @@ def main() -> int:
     parser.add_argument("--volume-source-title", default="The Irreducible Minimum")
     parser.add_argument("--implicit-id", action="append")
     parser.add_argument("--inline-anchor", action="append")
+    parser.add_argument("--inline-proof-anchor", action="append")
     parser.add_argument("--xref", action="append")
+    parser.add_argument("--figure-strip-image", action="append")
+    parser.add_argument(
+        "--figure-strip-label",
+        default="Rangkaian diagram himpunan dari sumber",
+    )
     args = parser.parse_args()
 
     source_bytes = args.source.read_bytes()
@@ -497,13 +690,24 @@ def main() -> int:
     clean = strip_comments(source)
     implicit_ids = parse_implicit_ids(args.implicit_id)
     inline_anchors = parse_key_values(args.inline_anchor, "--inline-anchor")
+    inline_proof_anchors = parse_key_values(
+        args.inline_proof_anchor, "--inline-proof-anchor"
+    )
     xref_map = parse_key_values(args.xref, "--xref")
+    figure_specs = parse_figure_specs(args.figure_strip_image)
     renderer = Renderer(
         discover_ids(clean, implicit_ids),
         implicit_ids=implicit_ids,
         unit_number=args.unit_number,
         xref_map=xref_map,
     )
+    if figure_specs:
+        figure_token = renderer.block_token(
+            "figure-strip",
+            figures=json.dumps(figure_specs, ensure_ascii=False, separators=(",", ":")),
+            label=args.figure_strip_label,
+        )
+        clean = collapse_sideshiftedpicture_strip(clean, figure_specs, figure_token)
     transformed = renderer.transform(clean)
     for source_id, marker in inline_anchors.items():
         if source_id in renderer.known_ids:
@@ -517,6 +721,8 @@ def main() -> int:
         transformed = transformed.replace(marker, token + marker, 1)
         renderer.known_ids.add(source_id)
         renderer.xref_map[source_id] = f"#{source_id}"
+    for source_id, marker in inline_proof_anchors.items():
+        add_inline_proof_anchor(renderer, source_id, marker)
     body = renderer.render_body(transformed)
 
     metadata = {
@@ -527,6 +733,8 @@ def main() -> int:
         "target_sha256": sha256(source_bytes),
         "source_ids": sorted(renderer.known_ids),
     }
+    if figure_specs:
+        metadata["figure_ids"] = [figure["source_id"] for figure in figure_specs]
     extra_mathjax_macros = ""
     if args.unit_number != "111":
         extra_mathjax_macros = """,
@@ -540,6 +748,10 @@ def main() -> int:
         nuprime: '\\\\nu^{{\\\\prime}}',
         roibr: '\\\\mathopen{{[}}',
         sequencen: ['\\\\langle #1\\\\rangle_{{n\\\\in\\\\mathbb{{N}}}}', 1]"""
+    if args.unit_number == "113":
+        extra_mathjax_macros += """,
+        restr: '\\\\mathord{{\\\\upharpoonright}}',
+        restrp: '\\\\mathord{{\\\\upharpoonright}}'"""
     document = f'''<!doctype html>
 <html lang="id-ID">
 <head>

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "O007 Fremlin semantic backend record schema 1.1",
-  "description": "Additive S112-era extension of the frozen 1.0 schema: cross-unit resolution, explicit source-correction records, and formula-to-correction links.",
+  "description": "Additive S112-S113 extension of the frozen 1.0 schema: cross-unit resolution, explicit source-correction records, formula links, and first-class source figure assets.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -34,7 +34,8 @@
         "artifact",
         "qa_event",
         "build_event",
-        "source_correction"
+        "source_correction",
+        "asset"
       ]
     },
     "id": {
@@ -499,6 +500,61 @@
     "target_normalized_sha256": {
       "type": "string",
       "pattern": "^[0-9a-f]{64}$"
+    },
+    "source_page_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "admitted_unit_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "admitted_source_page_span": {
+      "type": "string"
+    },
+    "admitted_unique_source_page_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "asset_kind": {
+      "type": "string"
+    },
+    "mime_type": {
+      "type": "string"
+    },
+    "source_use_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "target_use_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "source_use_lines": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "uniqueItems": true
+    },
+    "target_use_lines": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "uniqueItems": true
+    },
+    "layout_variants": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
     }
   },
   "oneOf": [
@@ -846,6 +902,30 @@
         "classification",
         "rationale",
         "correction_applied",
+        "rights_id"
+      ]
+    },
+    {
+      "properties": {
+        "record_type": {
+          "const": "asset"
+        }
+      },
+      "required": [
+        "unit_id",
+        "segment_id",
+        "source_anchor",
+        "asset_kind",
+        "mime_type",
+        "local_path",
+        "bytes",
+        "sha256",
+        "source_use_count",
+        "target_use_count",
+        "source_use_lines",
+        "target_use_lines",
+        "layout_variants",
+        "verification_status",
         "rights_id"
       ]
     }

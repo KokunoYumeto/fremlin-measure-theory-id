@@ -67,3 +67,12 @@ prerelease tag `v0.2.0-s112`. The release must contain exactly the cumulative
 PDF, deterministic ZIP, and checksum file. Public IDs, URLs, tree identity, and
 anonymous byte readback belong in `qa/PUBLICATION_RECEIPT_S112.json` after
 the transaction; no upstream issue or message is part of this boundary.
+
+## Pagination supersession recorded at the S113 census
+
+This checkpoint preserves the page claim made at S112 admission, but that
+claim is superseded for current accounting. A later complete frozen-source
+replay established that Section 112 continues through page 19 and Section 113
+begins partway through the same page. Current records therefore use Section 112
+pages 15–19 and the unique cumulative Sections 111–112 span pages 10–19 (ten
+official pages). The immutable `v0.2.0-s112` release is not rewritten.
