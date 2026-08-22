@@ -1,6 +1,6 @@
 # Current Cursor
 
-Updated: 2026-08-21 (Europe/Berlin)
+Updated: 2026-08-22 (Europe/Berlin)
 
 ## Active production cursor
 
@@ -8,41 +8,47 @@ Updated: 2026-08-21 (Europe/Berlin)
 |---|---|
 | Corpus | `O007-FREMLIN-MT-V1-V2` |
 | Volume | `O007-FREMLIN-V1` — *The Irreducible Minimum* |
-| Unit | `O007-FREMLIN-V1-S114` |
-| Source anchor | `114` |
-| Source title | `Lebesgue measure on $\Bbb R$` |
-| Indonesian working title | `Ukuran Lebesgue pada $\mathbb R$` |
-| Authority member | `authority/fremlin/source/mt1.2011/mt114.tex` |
-| Source receipt | 25,717 bytes; 612 lines; SHA-256 `206488ff5ba2960f4e130d162cca6df7af2935968754d77bc18b53ab084b8f97` |
-| Intended target | `source/id-ID/mt114.tex` |
+| Unit | `O007-FREMLIN-V1-S115` |
+| Source anchor | `115` |
+| Source title | `Lebesgue measure on $\BbbR^r$` |
+| Indonesian working title | `Ukuran Lebesgue pada $\mathbb R^r$` |
+| Authority member | `authority/fremlin/source/mt1.2011/mt115.tex` |
+| Source receipt | 27,681 bytes; 675 lines; SHA-256 `2d6714f1b022932a90c38bc05c11f2f3c25d6fd84e5b51050c331fcbd6367739` |
+| Intended target | `source/id-ID/mt115.tex` |
 | Production status | `not_started` |
 | Target admitted | `false` |
 
-Section 114 begins partway through printed page 23, overlapping the end of
-Section 113. Its ending page is not yet proved by the lane's frozen-baseline
-evidence and is recorded as `23–?`, not guessed. The authority contains main
-IDs `114A`–`114G`, explicit subordinate ID `114Ab`, 19 active exercises
-(`114Xa`–`114Xg`, `114Ya`–`114Yl`), eight active hint macros, and no active
-source-local figure or image references. The next executable action is to
-translate the complete `mt114.tex` file into natural `id-ID` in source order,
-then construct its stable backend and cumulative reader boundary.
+Section 115 generalizes Lebesgue measure from the real line to
+`$\BbbR^r$`. Its authority begins with main IDs `115A`–`115G`, continues
+through basic and further exercises, and contains source hints but no intake
+census has yet been admitted. Do not infer its final pagination, topology, or
+exercise/hint counts from a partial scan. The next source-production action is
+the bounded full S115 census and complete natural `id-ID` translation in
+source order.
+
+The immediate preservation action preceding new source production is the
+already authorized `v0.4.0-s114` publication and anonymous byte readback. It
+does not change the source-order cursor and must not reopen S114 translation.
 
 ## Last admitted boundary
 
-`O007-FREMLIN-V1-S113` / `mt113.tex` is complete and admitted. Target: 18,215
-bytes, 446 lines, SHA-256
-`d0153a75bc626ceaca05ddd96c682dd0a9cbec9cf4a95265f267ac1f57e8ecaf`.
-It preserves 352 formula atoms, 35 semantic segments, 19 exercises, two source
-hints, five proof records, every reference, and four source diagrams. Exact
-evidence is in `CP0003_MT113_ADMISSION.md`, the backend record streams, and the
-`qa/mt113-*` receipts.
+`O007-FREMLIN-V1-S114` / `mt114.tex` is complete and admitted. Target: 28,148
+bytes / 650 lines / SHA-256
+`3d29f5c0dea66737852e085632cbf51d77c1bb391fe59916b39c5c9ab9db2030`.
+It preserves 438 mathematical atoms, 45 semantic segments, 19 exercises,
+eight source hints, 17 proofs, 51 printed cross-reference edges, and every
+optional-comment boundary. Exact source/semantic/backend evidence is in
+`CP0004_MT114_ADMISSION.md`, `qa/mt114-structural-qa.json`,
+`qa/mt114-semantic-review.json`, and `qa/mt114-backend-validation.json`.
 
-The immutable public boundary is lightweight tag `v0.3.0-s113` at commit
-`6d1ae47e9f96ae07fbc0b9c17724d5c7a1207db0`; all three release assets passed
-anonymous byte-for-byte readback. The sanitized receipt is
-`qa/PUBLICATION_RECEIPT_S113.json`, SHA-256
-`efa243fd0d37e90e523a5e9d3a48adf3005de6d0ce57831a6a30e740ccb923f9`.
+The cumulative reader has a 23-page PDF, 1,713 visible HTML formula sources,
+61 exercises, 14 hints, and the four retained S113 diagrams. All PDF pages and
+desktop/mobile HTML units passed visual, accessibility, link, overflow, and
+MathJax inspection; all four units have zero MathJax error nodes. The visual
+receipt is `qa/mt114-visual-browser-qa.json`, 10,951 bytes / SHA-256
+`fdc3cb6bb2f3047a81d86fc72ffb5102446a615196b535b0fba273b8085fc510`.
 
-Advance again only after complete Section 114 has passed the same
-source-to-target, language, mathematical, backend, build, accessibility, and
-visual admission gates.
+The public S114 commit/tag/release and anonymous asset identities are pending
+the authorized publication transaction. Record them in
+`qa/PUBLICATION_RECEIPT_S114.json` after public readback; do not claim that
+transaction from the presence of local release files.

@@ -1,6 +1,6 @@
 # Current State — O007 Fremlin Volumes 1–2
 
-Updated: 2026-08-21 (Europe/Berlin)
+Updated: 2026-08-22 (Europe/Berlin)
 
 ## State summary
 
@@ -99,7 +99,40 @@ Updated: 2026-08-21 (Europe/Berlin)
 - The publication-receipt commit is
   `180f10af371641b1acd564d4ca5f0fbfcf339a7e`; remote `main` and the local
   branch read back at that exact identity immediately after publication.
-- The active production cursor is `O007-FREMLIN-V1-S114`.
+- Fourth admitted unit: `O007-FREMLIN-V1-S114`, complete source section
+  `mt114.tex`. The final natural `id-ID` target is 28,148 bytes / 650 lines /
+  SHA-256
+  `3d29f5c0dea66737852e085632cbf51d77c1bb391fe59916b39c5c9ab9db2030`.
+- Section 114 preserves all 438 mathematical atoms, 45 semantic segments, 19
+  exercises, eight source hints, 17 proof records, six definitions, five
+  results, 51 printed cross-reference edges, and three separately typed route
+  edges. Its 686 unit-local backend records pass schema, reference, CSV,
+  formula-map, catalog, and deterministic-manifest validation. Unit manifest
+  SHA-256:
+  `94af0c5ec39954d1ce44e4f9ecf7cdf6d533f0893d079de0590f415dad15c15b`.
+- The source-native 102-page replay places Section 114 on printed pages 23–28;
+  page 23 overlaps Section 113 and page 28 overlaps Section 115. The unique
+  cumulative Sections 111–114 span is therefore pages 10–28, 19 of the 672
+  official pages.
+- The cumulative Sections 111–114 reader has 1,713 visible HTML formula
+  renderings (445 + 480 + 352 + 436), 61 exercises, 14 source hints, all four
+  Section 113 diagrams, and a 23-page A4 PDF. PDF identity: 309,253 bytes /
+  SHA-256
+  `b88d09f2efdc2a73d1e06fee44b118b0e99330ed1e46c080024e4d0aaa74218a`.
+  Every page was rendered and inspected; all 22 fonts are embedded.
+- Actual desktop and 390-pixel browser replay passes for all four HTML units.
+  Source/rendered/assistive MathJax counts agree at 445, 480, 352, and 436;
+  all units have zero MathJax error nodes and zero visible red error text. All
+  21 unique cross-unit targets resolve, long mathematics remains locally
+  scrollable without page overflow, and the S113 diagrams reflow with specific
+  Indonesian alternative text. Exact evidence is in
+  `qa/mt114-visual-browser-qa.json` (10,951 bytes; SHA-256
+  `fdc3cb6bb2f3047a81d86fc72ffb5102446a615196b535b0fba273b8085fc510`).
+- `CP0004_MT114_ADMISSION.md`'s fail-closed reader and visual predicates now
+  pass. The authorized immutable `v0.4.0-s114` release is the immediate
+  preservation action; it must still be published and anonymously read back
+  before public completion is claimed.
+- The active production cursor has advanced to `O007-FREMLIN-V1-S115`.
 
 ## Authority versus inherited evidence
 
@@ -111,10 +144,10 @@ the Indonesian target build.
 
 ## Immediate production actions
 
-1. Translate complete `O007-FREMLIN-V1-S114` in source order.
-2. Construct and validate its stable backend and cumulative reader boundary.
+1. Publish and anonymously verify the admitted cumulative S114 boundary.
+2. Translate complete `O007-FREMLIN-V1-S115` in source order.
 3. Continue through every source unit in Volumes 1–2; the 672-page corpus goal
-   remains active and is not completed by the cumulative Section 113 boundary.
+   remains active and is not completed by the cumulative Section 114 boundary.
 
 ## Scope guard
 
