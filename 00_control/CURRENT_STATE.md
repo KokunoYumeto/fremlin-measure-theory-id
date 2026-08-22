@@ -353,6 +353,10 @@ Updated: 2026-08-22 (Europe/Berlin)
   identities. The S122 predecessor and all its assets were also reverified
   unchanged. Exact token-free evidence is
   `qa/ZENODO_PUBLICATION_RECEIPT_S123.json`.
+- The exact local S123 boundary is commit
+  `7e4ad7e5a9101210201f74c93cbabc028d9f9825`, tree
+  `e557311566cc3494ab23ba4aae72a18319d6dc28`, and tag `v0.8.0-s123`.
+  GitHub has not been retried because the account suspension remains active.
 - The requested reader-first Figshare mirror was evaluated once and stopped
   before any draft, upload, item, or collection mutation. Free figshare.com
   requires a machine-readable license for every public item, but this account

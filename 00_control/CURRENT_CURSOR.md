@@ -57,6 +57,11 @@ passed anonymous byte-for-byte readback, and the S122 predecessor was
 reverified unchanged. Exact token-free evidence is
 `qa/ZENODO_PUBLICATION_RECEIPT_S123.json`.
 
+The exact S123 source/backend/evidence boundary is also preserved locally as
+commit `7e4ad7e5a9101210201f74c93cbabc028d9f9825`, tree
+`e557311566cc3494ab23ba4aae72a18319d6dc28`, and tag `v0.8.0-s123`. It has
+not been pushed to GitHub because the account remains suspended.
+
 The exact S122 release tree is frozen locally in `qa/S122_RELEASE_TREE.tsv`
 (377 rows; 37,408 bytes; SHA-256
 `5374e5885b25afcd7e8bff5820626c15433ac4a6352c3c775b372325186fcebd`).

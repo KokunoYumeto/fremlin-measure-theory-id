@@ -86,6 +86,11 @@ GitHub rejected publication because the account is suspended; Floris reports
 that a support ticket is open. Do not retry GitHub until the account state is
 restored. Zenodo maintenance is independent of that blocker.
 
+The admitted S123 source/backend/evidence boundary is frozen locally as commit
+`7e4ad7e5a9101210201f74c93cbabc028d9f9825`, tree
+`e557311566cc3494ab23ba4aae72a18319d6dc28`, and tag `v0.8.0-s123`. No GitHub
+push was attempted while the suspension remained active.
+
 The requested Figshare reader-file mirror is also paused for a different,
 rights-specific reason: free figshare.com requires one of its enumerated public
 licenses, but this account does not offer the Design Science License or a
