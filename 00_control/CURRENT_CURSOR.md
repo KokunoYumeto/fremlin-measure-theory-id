@@ -8,52 +8,46 @@ Updated: 2026-08-22 (Europe/Berlin)
 |---|---|
 | Corpus | `O007-FREMLIN-MT-V1-V2` |
 | Volume | `O007-FREMLIN-V1` — *The Irreducible Minimum* |
-| Unit | `O007-FREMLIN-V1-S115` |
-| Source anchor | `115` |
-| Source title | `Lebesgue measure on $\BbbR^r$` |
-| Indonesian working title | `Ukuran Lebesgue pada $\mathbb R^r$` |
-| Authority member | `authority/fremlin/source/mt1.2011/mt115.tex` |
-| Source receipt | 27,681 bytes; 675 lines; SHA-256 `2d6714f1b022932a90c38bc05c11f2f3c25d6fd84e5b51050c331fcbd6367739` |
-| Intended target | `source/id-ID/mt115.tex` |
+| Chapter | `O007-FREMLIN-V1-C12` — *Integration* |
+| Unit | `O007-FREMLIN-V1-S121` |
+| Source anchor | `121` |
+| Source title | `Measurable functions` |
+| Indonesian working title | `Fungsi terukur` |
+| Authority member | `authority/fremlin/source/mt1.2011/mt121.tex` |
+| Source receipt | 43,014 bytes; 1,057 lines; SHA-256 `f2b93bf474cccafc75cc2bc76dadbc26e5456e620d21f092cf5fae35e6776484` |
+| Intended target | `source/id-ID/mt121.tex` |
 | Production status | `not_started` |
 | Target admitted | `false` |
 
-Section 115 generalizes Lebesgue measure from the real line to
-`$\BbbR^r$`. Its authority begins with main IDs `115A`–`115G`, continues
-through basic and further exercises, and contains source hints but no intake
-census has yet been admitted. Do not infer its final pagination, topology, or
-exercise/hint counts from a partial scan. The next source-production action is
-the bounded full S115 census and complete natural `id-ID` translation in
-source order.
-
-The immediate preservation action preceding new source production is the
-already authorized `v0.4.0-s114` publication and anonymous byte readback. It
-does not change the source-order cursor and must not reopen S114 translation.
+There is no `mt116.tex` in the frozen Volume 1 authority. Section 115 closes
+Chapter 11; source order continues with the Chapter 12 driver and complete
+Section 121. The next production action is a bounded full S121
+structure/exercise/hint/pagination census followed immediately by complete
+natural `id-ID` translation in source order.
 
 ## Last admitted boundary
 
-`O007-FREMLIN-V1-S114` / `mt114.tex` is complete and admitted. Target: 28,148
-bytes / 650 lines / SHA-256
-`3d29f5c0dea66737852e085632cbf51d77c1bb391fe59916b39c5c9ab9db2030`.
-It preserves 438 mathematical atoms, 45 semantic segments, 19 exercises,
-eight source hints, 17 proofs, 51 printed cross-reference edges, and every
-optional-comment boundary. Exact source/semantic/backend evidence is in
-`CP0004_MT114_ADMISSION.md`, `qa/mt114-structural-qa.json`,
-`qa/mt114-semantic-review.json`, and `qa/mt114-backend-validation.json`.
+`O007-FREMLIN-V1-S115` / `mt115.tex` is complete and admitted. Target: 30,520
+bytes / 717 lines / SHA-256
+`0cadff37a61d891231702b6dac5ab978285d3e55094659f30dd740f656f730a7`.
+It preserves all 427 top-level mathematical atoms, 38 semantic segments, ten
+exercises, eight source hints, 17 proofs, 62 typed cross-reference edges, and
+four explicit source corrections. Exact source, semantic, pagination, and
+backend evidence is in `CP0005_MT115_ADMISSION.md` and the `qa/mt115-*`
+receipts.
 
-The cumulative reader has a 23-page PDF, 1,713 visible HTML formula sources,
-61 exercises, 14 hints, and the four retained S113 diagrams. All PDF pages and
-desktop/mobile HTML units passed visual, accessibility, link, overflow, and
-MathJax inspection; all four units have zero MathJax error nodes. The visual
-receipt is `qa/mt114-visual-browser-qa.json`, 10,951 bytes / SHA-256
-`fdc3cb6bb2f3047a81d86fc72ffb5102446a615196b535b0fba273b8085fc510`.
+The cumulative reader has a 30-page PDF, 2,138 visible HTML formula sources,
+71 exercises, 22 hints, and the four retained S113 diagrams. PDF and actual
+desktop/mobile browser replay pass the fail-closed visual gate, including
+responsive containment of genuinely wide mathematics without page-level
+overflow.
 
-The exact S114 boundary is public at commit
-`e2803bab3435c6ac333a69d7ac52998818affa52`, tree
-`a4cbb01366dc11c1209a25acb898f47f58956487`, lightweight tag
-`v0.4.0-s114`, and GitHub release ID `374766022`. Its 309,253-byte PDF,
-3,759,809-byte ZIP, 230-byte checksum file, and all 177 boundary files passed
+The exact S115 boundary is public at commit
+`9844adcbc55aa553b5740de4358a1053d7a9df3f`, tree
+`c2bde0b717cc9ccdfb48fb7ed66f28134e5c05fd`, lightweight tag
+`v0.5.0-s115`, and GitHub release ID `374784964`. Its 345,708-byte PDF,
+4,107,889-byte ZIP, 240-byte checksum file, and all 239 boundary files passed
 anonymous byte-for-byte readback. The sanitized receipt is
-`qa/PUBLICATION_RECEIPT_S114.json`, SHA-256
-`516339bb9dd20c9df9677f16ee08f7dc4bfbac6e7936d2e1b8c961a778b4e255`.
+`qa/PUBLICATION_RECEIPT_S115.json`, SHA-256
+`60b86b7c4fd9f931a52d36b0c778db46f324fb383f6012d3ed1f9914abd4b6f6`.
 No upstream issue or message was sent.

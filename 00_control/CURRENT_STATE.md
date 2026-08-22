@@ -142,7 +142,49 @@ Updated: 2026-08-22 (Europe/Berlin)
   `qa/PUBLICATION_RECEIPT_S114.json` (SHA-256
   `516339bb9dd20c9df9677f16ee08f7dc4bfbac6e7936d2e1b8c961a778b4e255`).
   No upstream issue or message was sent.
-- The active production cursor has advanced to `O007-FREMLIN-V1-S115`.
+- Fifth admitted unit: `O007-FREMLIN-V1-S115`, complete source section
+  `mt115.tex`. The final natural `id-ID` target is 30,520 bytes / 717 lines /
+  SHA-256
+  `0cadff37a61d891231702b6dac5ab978285d3e55094659f30dd740f656f730a7`.
+- Section 115 preserves all 427 top-level mathematical atoms, 38 semantic
+  segments, ten exercises, eight source hints, 17 proofs, seven definitions,
+  five results, 62 typed cross-reference edges, and four separately ledgered
+  source corrections. Its 668 unit-local backend records and the five-unit
+  catalog validate deterministically; prior unit manifests remain exact.
+- Source-native pagination is pages 28–34. The unique cumulative Sections
+  111–115 span is therefore pages 10–34, 25 of the selected 672 official
+  pages; page 28 is counted once despite the S114/S115 overlap.
+- The cumulative reader has 2,138 visible HTML formula sources, 71 exercises,
+  22 hints, four diagrams, and a 30-page A4 PDF. PDF identity: 345,708 bytes /
+  SHA-256
+  `e4b2950098894756b3faa5161ff9a26269fde02d638630844e577d2a02008508`.
+  All pages passed visual inspection; all 22 fonts are embedded and subset.
+- Real desktop/mobile browser replay rejected two intermediate candidates and
+  admitted the responsive correction. Ordinary inline mathematics has no
+  desktop scrollbar widgets; genuinely wide mobile formulas are locally
+  scrollable with suppressed tracks and never widen the document. Formula,
+  assistive-MathML, link, anchor, figure-alt, and rendered proof-ending checks
+  all pass. Exact evidence is in `qa/mt115-visual-browser-qa.json` (16,223
+  bytes; SHA-256
+  `bce7178551b89e8bce84eb0e2e48d4b0577e4a812e2955d07f8eb00486e76d6a`).
+- `CP0005_MT115_ADMISSION.md`'s fail-closed build, reader, and visual predicate
+  passes. The exact cumulative tree is public at boundary commit
+  `9844adcbc55aa553b5740de4358a1053d7a9df3f`, tree
+  `c2bde0b717cc9ccdfb48fb7ed66f28134e5c05fd`, lightweight tag
+  `v0.5.0-s115`, and
+  `https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.5.0-s115`.
+  GitHub release ID `374784964` contains exactly the 345,708-byte PDF,
+  4,107,889-byte deterministic ZIP, and 240-byte checksum file. All 239 public
+  boundary files and all three assets passed anonymous byte-for-byte readback;
+  the prior S111–S114 releases were also reverified. Exact asset IDs, URLs,
+  hashes, and preserved-release identities are in
+  `qa/PUBLICATION_RECEIPT_S115.json` (4,042 bytes; SHA-256
+  `60b86b7c4fd9f931a52d36b0c778db46f324fb383f6012d3ed1f9914abd4b6f6`).
+  No upstream issue or message was sent.
+- The active production cursor has advanced to `O007-FREMLIN-V1-S121`,
+  “Measurable functions” / `Fungsi terukur`. The frozen authority member is
+  43,014 bytes / 1,057 lines / SHA-256
+  `f2b93bf474cccafc75cc2bc76dadbc26e5456e620d21f092cf5fae35e6776484`.
 
 ## Authority versus inherited evidence
 
@@ -154,10 +196,10 @@ the Indonesian target build.
 
 ## Immediate production actions
 
-1. Publish and anonymously verify the admitted cumulative S114 boundary.
-2. Translate complete `O007-FREMLIN-V1-S115` in source order.
+1. Publish and anonymously verify the admitted cumulative S115 boundary.
+2. Translate complete `O007-FREMLIN-V1-S121` in source order.
 3. Continue through every source unit in Volumes 1–2; the 672-page corpus goal
-   remains active and is not completed by the cumulative Section 114 boundary.
+   remains active and is not completed by the cumulative Section 115 boundary.
 
 ## Scope guard
 
