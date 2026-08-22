@@ -54,10 +54,11 @@ Updated: 2026-08-21 (Europe/Berlin)
   clean passes. Reader/package admission is recorded in
   `qa/mt112-reader-qa.json` and visual admission in
   `qa/mt112-visual-browser-qa.json`.
-- Source-page accounting was corrected from inherited handoff shorthand:
-  Section 111 occupies printed pages 10–14 and Section 112 pages 15–18 in the
-  frozen official baseline, so the contiguous translated boundary is nine
-  official pages.
+- A complete frozen-source replay supersedes the earlier Section 112 page
+  shorthand: Section 111 occupies printed pages 10–14 and Section 112 pages
+  15–19. The admitted Sections 111–112 boundary therefore spans the ten unique
+  official pages 10–19. Section 113 starts partway through page 19, so adjacent
+  section ranges overlap and are never added naively.
 - The exact cumulative Sections 111–112 tree is public at commit
   `5e78a38174e80a6dd6d4f44efe40b54377c30ae9`, lightweight tag
   `v0.2.0-s112`, and
@@ -68,6 +69,37 @@ Updated: 2026-08-21 (Europe/Berlin)
   (SHA-256
   `c8f71084326a5bd4699890ae0cb3bbed74be0887bd6d976100d3dfa6c236bd43`).
 - The active production cursor has advanced to `O007-FREMLIN-V1-S113`.
+- Third admitted unit: `O007-FREMLIN-V1-S113`, complete source section
+  `mt113.tex`. The natural `id-ID` target is 18,215 bytes with SHA-256
+  `d0153a75bc626ceaca05ddd96c682dd0a9cbec9cf4a95265f267ac1f57e8ecaf`.
+- Section 113 preserves 352 formula atoms, 35 semantic segments, 19 exercises,
+  two source hints, five proof records, three definitions, one result, 25
+  printed cross-references, 13 semantic shorthand relations, and all four
+  source diagrams. Its 519 unit-local backend records pass schema, reference,
+  CSV, formula-map, asset, and deterministic-manifest validation.
+- The cumulative Sections 111–113 reader has 1,277 rendered HTML formulas, a
+  17-page A4 PDF, four exact figure images, and 42 exercises. All 17 PDF pages
+  were rendered and inspected. Browser replay at 1,280-pixel desktop and
+  390-pixel mobile widths confirms centered responsive reflow, localized
+  `Bukti` and `Petunjuk` labels, no page-level horizontal overflow, and exact
+  cross-unit anchor resolution into Sections 111 and 112.
+- Complete source replay places Section 113 on printed pages 19–23. The unique
+  cumulative Sections 111–113 span is pages 10–23, 14 of the selected 672
+  official pages; page 19 is counted once despite the Section 112/113 overlap.
+- The exact cumulative Sections 111–113 tree is public at boundary commit
+  `6d1ae47e9f96ae07fbc0b9c17724d5c7a1207db0`, tree
+  `d40c1d0a0fb0d2d70294d01f015b0aed4185c528`, lightweight tag
+  `v0.3.0-s113`, and
+  `https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.3.0-s113`.
+  The 275,937-byte PDF, 3,449,189-byte deterministic ZIP, and 220-byte
+  checksum file were downloaded anonymously and matched their bound SHA-256
+  values. Exact release/asset IDs and hashes are in
+  `qa/PUBLICATION_RECEIPT_S113.json` (3,196 bytes; SHA-256
+  `efa243fd0d37e90e523a5e9d3a48adf3005de6d0ce57831a6a30e740ccb923f9`).
+- The publication-receipt commit is
+  `180f10af371641b1acd564d4ca5f0fbfcf339a7e`; remote `main` and the local
+  branch read back at that exact identity immediately after publication.
+- The active production cursor is `O007-FREMLIN-V1-S114`.
 
 ## Authority versus inherited evidence
 
@@ -79,10 +111,10 @@ the Indonesian target build.
 
 ## Immediate production actions
 
-1. Translate complete `mt113.tex` in source order as
-   `O007-FREMLIN-V1-S113`, then repeat the bounded admission workflow.
-2. Continue through every source unit in Volumes 1–2; the 672-page corpus goal
-   remains active and is not completed by the cumulative Section 112 release.
+1. Translate complete `O007-FREMLIN-V1-S114` in source order.
+2. Construct and validate its stable backend and cumulative reader boundary.
+3. Continue through every source unit in Volumes 1–2; the 672-page corpus goal
+   remains active and is not completed by the cumulative Section 113 boundary.
 
 ## Scope guard
 

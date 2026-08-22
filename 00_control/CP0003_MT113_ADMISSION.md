@@ -69,3 +69,15 @@ prerelease tag `v0.3.0-s113`. The release contains exactly the cumulative PDF,
 deterministic ZIP, and checksum file. Public IDs, URLs, tree identity, and
 anonymous byte readback belong in `qa/PUBLICATION_RECEIPT_S113.json` after the
 transaction; no upstream issue or message is part of this boundary.
+
+## Publication receipt
+
+Published and anonymously verified on 2026-08-22. Immutable lightweight tag
+`v0.3.0-s113` points to commit
+`6d1ae47e9f96ae07fbc0b9c17724d5c7a1207db0`, tree
+`d40c1d0a0fb0d2d70294d01f015b0aed4185c528`. GitHub release ID `374750237`
+contains exactly the 275,937-byte PDF, 3,449,189-byte deterministic ZIP, and
+220-byte checksum file; all were downloaded anonymously and matched their
+local SHA-256. The sanitized receipt is 3,196 bytes with SHA-256
+`efa243fd0d37e90e523a5e9d3a48adf3005de6d0ce57831a6a30e740ccb923f9`.
+No upstream issue or message was sent.
