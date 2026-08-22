@@ -181,10 +181,83 @@ Updated: 2026-08-22 (Europe/Berlin)
   `qa/PUBLICATION_RECEIPT_S115.json` (4,042 bytes; SHA-256
   `60b86b7c4fd9f931a52d36b0c778db46f324fb383f6012d3ed1f9914abd4b6f6`).
   No upstream issue or message was sent.
-- The active production cursor has advanced to `O007-FREMLIN-V1-S121`,
+- The production cursor previously advanced to `O007-FREMLIN-V1-S121`,
   “Measurable functions” / `Fungsi terukur`. The frozen authority member is
   43,014 bytes / 1,057 lines / SHA-256
   `f2b93bf474cccafc75cc2bc76dadbc26e5456e620d21f092cf5fae35e6776484`.
+- The complete admitted S121 translation is frozen at 43,931 bytes /
+  1,103 lines / SHA-256
+  `76a5d90e6a647d158d2aecd32eaeaa4384063ef0d09f105c40c49205555a9f53`.
+  Structural replay passes with 957/957 mathematical atoms, 23 explicit
+  source IDs, 92 protected references, 11 exercises, one source `\Hint`
+  macro, and exact outside-math command topology. Six declared formula deltas
+  implement five explicit correction records (`O007-CORR-0008`–`0012`). An
+  independent semantic reread identified 28 reversed measurability qualifiers;
+  all are now normalized to the natural prefix form (for example,
+  `$\Sigma$-terukur`) without changing mathematical or source topology, and
+  the post-correction semantic replay passes with zero remaining defects.
+  Its final receipt is `qa/mt121-semantic-review.json` (12,433 bytes /
+  SHA-256
+  `29b6aa7a4270f080636eed984874f6de2017cbd97e962f1a99563899ebdfe67f`).
+- Exact intake places S121 on printed pages 35–43, with page 43 shared with
+  S122. It has 23 explicit plus 20 source-implied anchors, nine formal results
+  with nine source proof macros, 11 exercises (six basic, five further), one
+  macro hint plus one inline textual hint, 76 printed reference expressions
+  expanding to 80 targets, and no source asset. Evidence is in
+  `qa/mt121-intake-census.json`.
+- S121's deterministic backend is complete: 1,368 records including 56
+  segments, 957 formulas, 11 exercises, two hints, 80 cross-references, and
+  five source corrections. Its strengthened validator resolves all 2,319
+  source/target line-or-locator fields against the bound bytes and rejects an
+  injected stale locator; exact evidence is in
+  `qa/mt121-backend-validation.json` (10,489 bytes / SHA-256
+  `e508c1a01a53d8202647b2bc762bf2decda09ff5c7dffc833f7bf07585c5a007`).
+- S121 is admitted under `CP0006_MT121_ADMISSION.md`. The cumulative reader
+  has 3,095 visible formula sources, 82 exercises, 24 typed hints, one exact
+  accessible S121 footnote, four retained diagrams, and a 40-page A4 PDF.
+  PDF identity: 400,069 bytes / SHA-256
+  `c49566ac4f1004860f15a5e612be1e64f2d714d61aaa03219e31bd0b97e2763c`.
+- Independent 120-dpi inspection of all 40 pages rejected a clipped page-28
+  formula and then passed its staging-only display reflow. The final PDF has
+  24 embedded/subset fonts and no observed clipping, overlap, malformed
+  formula, missing glyph, broken figure, or unintended blank page.
+- Actual 1,280×900 desktop and 390×844 mobile browser replay passes for all six
+  units: all 3,095 MathJax containers match their source and assistive-MathML
+  records, all 212 local link instances resolve, all diagrams load at 876×906,
+  no error/raw-control residue is visible, and no document widens. Wide mobile
+  inline and display mathematics remains container-local with hidden tracks.
+  Exact evidence is in `qa/mt121-visual-browser-qa.json` (19,646 bytes /
+  SHA-256
+  `4819e83c7c566cd1ea756999e12e5f147115876376830c5cde5cbc001882af32`).
+- The deterministic package and ZIP reproduce exactly across two passes.
+  Their post-control identities are frozen by the build receipt and S121
+  release-tree manifest instead of being embedded into a packaged control file.
+  Final fail-closed reader QA has `pass: true` and `publication_ready: true`.
+- The exact cumulative S111–S115/S121 boundary is public at commit
+  `04e353955782a63386a38e90441ea71376bf0529`, tree
+  `83ed67eef8cd766198e769ae24a92e18998379be`, lightweight tag
+  `v0.6.0-s121`, and
+  `https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.6.0-s121`.
+  GitHub release ID `374818572` contains exactly the 400,069-byte PDF,
+  4,630,587-byte deterministic ZIP, and 250-byte checksum file. All 302 public
+  manifest members and all three release assets passed anonymous byte-for-byte
+  readback; the prior S111–S115 releases were also reverified. Exact asset IDs,
+  URLs, hashes, and preserved-release identities are in
+  `qa/PUBLICATION_RECEIPT_S121.json` (4,639 bytes; SHA-256
+  `d4e2c1089966cb604d82c5dcdd32ff6bb923d73d9d248289cb79b2e9d0cf2882`).
+  The receipt is public on `main` at commit
+  `1f6370ba86dbd5a9bcdf76e63532e81b5c33b352`. No upstream issue or message was
+  sent.
+- The cursor is now `O007-FREMLIN-V1-S122`, “Definition of the integral” /
+  `Definisi integral`. Its frozen authority member is 40,114 bytes / 1,071
+  lines / SHA-256
+  `e187da4ddc39d7ed101b8bb6b6ee1af4b1ac6655672f772a3aa5e874feeed701`.
+  Its bounded intake is complete: printed pages 43–52; 42 explicit plus 29
+  implicit anchors; 840 mathematical atoms; 19 exercises; six source hints;
+  11 formal results/proofs; 96 printed reference expressions expanding to 134
+  edges; 13 reader-facing comment blocks; and no source-local asset. Exact
+  evidence and five correction/parser candidates are in
+  `qa/mt122-intake-census.json`. No S122 target exists yet.
 
 ## Authority versus inherited evidence
 
@@ -196,10 +269,10 @@ the Indonesian target build.
 
 ## Immediate production actions
 
-1. Publish and anonymously verify the admitted cumulative S115 boundary.
-2. Translate complete `O007-FREMLIN-V1-S121` in source order.
-3. Continue through every source unit in Volumes 1–2; the 672-page corpus goal
-   remains active and is not completed by the cumulative Section 115 boundary.
+1. Begin bounded S122 intake and complete natural `id-ID` translation in
+   source order.
+2. Continue through every source unit in Volumes 1–2; the 672-page corpus goal
+   remains active and is not completed by the cumulative Section 121 boundary.
 
 ## Scope guard
 

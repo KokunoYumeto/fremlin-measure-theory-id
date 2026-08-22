@@ -45,6 +45,11 @@ Prarilis kumulatif Bagian 111–115:
 Prarilis kumulatif Bagian 111–115 dan 121:
 <https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.6.0-s121>
 
+Batas ini diterbitkan dari commit `04e353955782a63386a38e90441ea71376bf0529`.
+PDF, ZIP deterministik, berkas checksum, dan seluruh 302 anggota manifes publik
+telah dibaca kembali secara anonim dan cocok byte demi byte; rincian tersanitasi
+berada di `qa/PUBLICATION_RECEIPT_S121.json`.
+
 ## Membangun batas kumulatif Bagian 111–115 dan 121
 
 Prasyarat lokal: Python 3 dengan `jsonschema` dan `pypdf`, TeX, serta

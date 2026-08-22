@@ -9,45 +9,44 @@ Updated: 2026-08-22 (Europe/Berlin)
 | Corpus | `O007-FREMLIN-MT-V1-V2` |
 | Volume | `O007-FREMLIN-V1` — *The Irreducible Minimum* |
 | Chapter | `O007-FREMLIN-V1-C12` — *Integration* |
-| Unit | `O007-FREMLIN-V1-S121` |
-| Source anchor | `121` |
-| Source title | `Measurable functions` |
-| Indonesian working title | `Fungsi terukur` |
-| Authority member | `authority/fremlin/source/mt1.2011/mt121.tex` |
-| Source receipt | 43,014 bytes; 1,057 lines; SHA-256 `f2b93bf474cccafc75cc2bc76dadbc26e5456e620d21f092cf5fae35e6776484` |
-| Intended target | `source/id-ID/mt121.tex` |
-| Production status | `not_started` |
+| Unit | `O007-FREMLIN-V1-S122` |
+| Source anchor | `122` |
+| Source title | `Definition of the integral` |
+| Indonesian working title | `Definisi integral` |
+| Authority member | `authority/fremlin/source/mt1.2011/mt122.tex` |
+| Source receipt | 40,114 bytes; 1,071 lines; SHA-256 `e187da4ddc39d7ed101b8bb6b6ee1af4b1ac6655672f772a3aa5e874feeed701` |
+| Intended target | `source/id-ID/mt122.tex` |
+| Production status | `intake_complete_translation_not_started` |
 | Target admitted | `false` |
 
-There is no `mt116.tex` in the frozen Volume 1 authority. Section 115 closes
-Chapter 11; source order continues with the Chapter 12 driver and complete
-Section 121. The next production action is a bounded full S121
-structure/exercise/hint/pagination census followed immediately by complete
-natural `id-ID` translation in source order.
+Section 121 is admitted. Source order now continues with complete
+`mt122.tex`, which introduces the integral for real-valued functions on an
+arbitrary measure space and its basic properties. The source begins on printed
+page 43, shared with Section 121; its final source-native page and complete
+source structure are now frozen in `qa/mt122-intake-census.json`. S122 spans
+printed pages 43–52, sharing page 43 with S121 and page 52 with S123. It has 42
+explicit plus 29 implicit anchors, 840 mathematical atoms, 19 exercises, six
+source hint macros, 11 formal results/proofs, 96 printed reference expressions
+expanding to 134 edges, 13 reader-facing comment blocks, and no source-local
+asset. No target file has yet been created, so no translation progress is
+claimed for S122.
 
 ## Last admitted boundary
 
-`O007-FREMLIN-V1-S115` / `mt115.tex` is complete and admitted. Target: 30,520
-bytes / 717 lines / SHA-256
-`0cadff37a61d891231702b6dac5ab978285d3e55094659f30dd740f656f730a7`.
-It preserves all 427 top-level mathematical atoms, 38 semantic segments, ten
-exercises, eight source hints, 17 proofs, 62 typed cross-reference edges, and
-four explicit source corrections. Exact source, semantic, pagination, and
-backend evidence is in `CP0005_MT115_ADMISSION.md` and the `qa/mt115-*`
-receipts.
+`O007-FREMLIN-V1-S121` / `mt121.tex` is complete and admitted. Target: 43,931
+bytes / 1,103 lines / SHA-256
+`76a5d90e6a647d158d2aecd32eaeaa4384063ef0d09f105c40c49205555a9f53`.
+It preserves 957 mathematical atoms, 56 semantic segments, 11 exercises, two
+typed hints, 39 proofs, 80 typed cross-reference edges, and five explicit
+source corrections. Exact evidence is in `CP0006_MT121_ADMISSION.md` and the
+`qa/mt121-*` receipts.
 
-The cumulative reader has a 30-page PDF, 2,138 visible HTML formula sources,
-71 exercises, 22 hints, and the four retained S113 diagrams. PDF and actual
-desktop/mobile browser replay pass the fail-closed visual gate, including
-responsive containment of genuinely wide mathematics without page-level
-overflow.
-
-The exact S115 boundary is public at commit
-`9844adcbc55aa553b5740de4358a1053d7a9df3f`, tree
-`c2bde0b717cc9ccdfb48fb7ed66f28134e5c05fd`, lightweight tag
-`v0.5.0-s115`, and GitHub release ID `374784964`. Its 345,708-byte PDF,
-4,107,889-byte ZIP, 240-byte checksum file, and all 239 boundary files passed
-anonymous byte-for-byte readback. The sanitized receipt is
-`qa/PUBLICATION_RECEIPT_S115.json`, SHA-256
-`60b86b7c4fd9f931a52d36b0c778db46f324fb383f6012d3ed1f9914abd4b6f6`.
-No upstream issue or message was sent.
+The cumulative reader has a 40-page PDF, 3,095 visible HTML formula sources,
+82 exercises, 24 typed hints, one accessible S121 footnote, and the four
+retained S113 diagrams. PDF and actual desktop/mobile browser replay pass the
+fail-closed visual gate. The boundary is public at commit
+`04e353955782a63386a38e90441ea71376bf0529`, tree
+`83ed67eef8cd766198e769ae24a92e18998379be`, and tag `v0.6.0-s121`; all 302
+manifest members and all three assets passed anonymous byte-for-byte readback.
+The exact receipt is `qa/PUBLICATION_RECEIPT_S121.json` (4,639 bytes; SHA-256
+`d4e2c1089966cb604d82c5dcdd32ff6bb923d73d9d248289cb79b2e9d0cf2882`).
