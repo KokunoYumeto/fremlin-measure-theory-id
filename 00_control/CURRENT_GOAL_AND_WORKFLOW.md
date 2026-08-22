@@ -3,7 +3,8 @@
 Date established: 2026-08-21 (Europe/Berlin)  
 Owner task: `01a01f45-9d00-7f42-9071-4f932b45512a`  
 Role: `O007` — Measure and Integration  
-Status: production active; Sections 111–115 and 121 admitted; cursor Section 122
+Status: production active; Sections 111–115 and 121 admitted; Section 122
+translation/semantic replay complete, backend and reader admission pending
 
 ## Durable goal
 
@@ -58,8 +59,10 @@ through `mt115.tex` and `mt121.tex`, `O007-FREMLIN-V1-S111`–`S115` plus
 hints, references, the accessible S121 footnote, and the four Section 113
 diagrams. `CP0006_MT121_ADMISSION.md` supplies the fail-closed reader/visual
 predicate for the exact S121 target hash. The active source-order cursor is
-`O007-FREMLIN-V1-S122`, complete `mt122.tex`; no `mt116.tex` exists in the
-frozen authority.
+`O007-FREMLIN-V1-S122`, complete `mt122.tex`; its complete 44,853-byte natural
+Indonesian target has passed structural and semantic replay but remains
+unadmitted until its backend and cumulative reader/build/visual gates pass. No
+`mt116.tex` exists in the frozen authority.
 
 Maintain the corpus's own narrow repository and push verified boundaries under
 standing authorization; never run workspace-wide Git scans. No upstream

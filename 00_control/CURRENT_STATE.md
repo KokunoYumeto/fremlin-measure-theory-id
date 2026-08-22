@@ -257,7 +257,26 @@ Updated: 2026-08-22 (Europe/Berlin)
   11 formal results/proofs; 96 printed reference expressions expanding to 134
   edges; 13 reader-facing comment blocks; and no source-local asset. Exact
   evidence and five correction/parser candidates are in
-  `qa/mt122-intake-census.json`. No S122 target exists yet.
+  `qa/mt122-intake-census.json`.
+- The complete S122 Indonesian target now exists at `source/id-ID/mt122.tex`:
+  44,853 bytes / 1,055 lines / SHA-256
+  `898783f7dc36acb07721f891525c215a53788ae7974dacd27590f51449b847f7`.
+  Structural replay preserves 840/840 mathematical atoms, 42/42 explicit
+  anchors, 136/136 protected reference tokens, 19 exercises, six source hints,
+  and exact symbolic command topology, with no active English residue. The two
+  mathematical deltas are the explicit corrections at formula ordinals 95 and
+  256; four total S122 correction treatments are recorded as
+  `O007-CORR-0013`–`0016`.
+- Three independent, source-aware partition reviews cover all of S122. They
+  found no mathematical, structural, or omission defect; 13 bounded language
+  polish findings were applied and reread, and terminology was normalized
+  across the unit. Exact final evidence is
+  `qa/mt122-structural-qa.json` (2,756 bytes / SHA-256
+  `0580383c01bb6b0ffe109663e238e28508761cbedcff65093cbf9509380a99eb`)
+  and `qa/mt122-semantic-review.json` (7,197 bytes / SHA-256
+  `8319046053de3bfa5f9b4ce1f1d2ef23ff8067695b1e59bab46306f52a2eef29`).
+  S122 is not yet admitted: backend, cumulative reader/build, accessibility,
+  and visual gates remain open.
 
 ## Authority versus inherited evidence
 
@@ -269,8 +288,8 @@ the Indonesian target build.
 
 ## Immediate production actions
 
-1. Begin bounded S122 intake and complete natural `id-ID` translation in
-   source order.
+1. Generate and independently validate the S122 locale-neutral backend, then
+   build and visually admit the cumulative S111–S122 reader and PDF.
 2. Continue through every source unit in Volumes 1–2; the 672-page corpus goal
    remains active and is not completed by the cumulative Section 121 boundary.
 

@@ -15,8 +15,9 @@ Updated: 2026-08-22 (Europe/Berlin)
 | Indonesian working title | `Definisi integral` |
 | Authority member | `authority/fremlin/source/mt1.2011/mt122.tex` |
 | Source receipt | 40,114 bytes; 1,071 lines; SHA-256 `e187da4ddc39d7ed101b8bb6b6ee1af4b1ac6655672f772a3aa5e874feeed701` |
-| Intended target | `source/id-ID/mt122.tex` |
-| Production status | `intake_complete_translation_not_started` |
+| Target | `source/id-ID/mt122.tex` |
+| Target receipt | 44,853 bytes; 1,055 lines; SHA-256 `898783f7dc36acb07721f891525c215a53788ae7974dacd27590f51449b847f7` |
+| Production status | `translation_complete_structural_semantic_pass_backend_reader_pending` |
 | Target admitted | `false` |
 
 Section 121 is admitted. Source order now continues with complete
@@ -28,8 +29,17 @@ printed pages 43–52, sharing page 43 with S121 and page 52 with S123. It has 4
 explicit plus 29 implicit anchors, 840 mathematical atoms, 19 exercises, six
 source hint macros, 11 formal results/proofs, 96 printed reference expressions
 expanding to 134 edges, 13 reader-facing comment blocks, and no source-local
-asset. No target file has yet been created, so no translation progress is
-claimed for S122.
+asset. Its complete natural Indonesian target is translated and has passed a
+three-part source-aware semantic reread and structural replay. All counts and
+topology match; the only two mathematical deltas are explicit source
+corrections at formula ordinals 95 and 256, with four total S122 corrections
+recorded as `O007-CORR-0013`–`0016`. Structural evidence is
+`qa/mt122-structural-qa.json` (2,756 bytes; SHA-256
+`0580383c01bb6b0ffe109663e238e28508761cbedcff65093cbf9509380a99eb`);
+semantic evidence is `qa/mt122-semantic-review.json` (7,197 bytes; SHA-256
+`8319046053de3bfa5f9b4ce1f1d2ef23ff8067695b1e59bab46306f52a2eef29`).
+Backend generation/validation and cumulative reader/build/visual admission
+remain pending, so S122 is not yet admitted.
 
 ## Last admitted boundary
 

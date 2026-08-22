@@ -1,0 +1,1055 @@
+\frfilename{mt122.tex}
+\versiondate{4.1.04}
+\copyrightdate{1994}
+
+\def\chaptername{Integrasi}
+\def\sectionname{Definisi integral}
+
+\newsection{122}
+
+Saya menguraikan definisi integrasi biasa untuk fungsi bernilai real
+yang didefinisikan pada suatu ruang ukur sebarang, beserta sifat-sifat
+paling dasarnya.
+
+\leader{122A}{Definisi}  Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur.
+
+\header{122Aa}{\bf (a)} Untuk setiap himpunan $A\subseteq X$, saya menuliskan
+$\chi A$ untuk
+{\bf fungsi karakteristik} dari $A$, yaitu fungsi
+dari $X$ ke $\{0,1\}$ yang ditentukan dengan menetapkan $\chi A(x)=1$ jika $x\in A$, dan $0$
+jika
+$x\in X\setminus A$.   \cmmnt{(Tentu saja, notasi ini bergantung pada
+dipahaminya himpunan `semesta' $X$ mana yang sedang ditinjau;
+barangkali saya seharusnya menyebutnya `fungsi karakteristik dari $A$ sebagai
+subhimpunan dari $X$'.)}
+\cmmnt{Perhatikan bahwa} $\chi A$ bersifat $\Sigma$-terukur\cmmnt{, dalam
+pengertian
+121C di atas,} jika dan hanya jika $A\in\Sigma$\cmmnt{ (karena
+$A=\{x:\chi A(x)>0\}$)}.
+
+\header{122Ab}{\bf (b)} Sekarang, sebuah fungsi {\bf sederhana} pada $X$ adalah
+fungsi
+berbentuk
+$\sum_{i=0}^n a_i\chi E_i$, dengan $E_0,\ldots,E_n$ merupakan himpunan
+terukur yang mempunyai ukuran berhingga dan $a_0,\ldots, a_n$ termasuk dalam
+$\Bbb R$.   \cmmnt{{\bf Peringatan!} Sebagian penulis memperbolehkan sembarang
+himpunan $E_i$, sehingga sebuah fungsi sederhana pada $X$ adalah sembarang fungsi yang hanya
+mengambil berhingga banyak nilai.}
+
+\leader{122B}{Lema} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur.
+
+(a) Setiap fungsi sederhana pada $X$ bersifat terukur.
+
+(b) Jika $f$, $g:X\to\Bbb R$ adalah fungsi sederhana, maka $f+g$ juga
+merupakan fungsi sederhana.
+
+(c) Jika $f:X\to \Bbb R$ adalah fungsi sederhana dan $c\in\Bbb R$, maka
+$cf:X\to\Bbb R$ merupakan fungsi sederhana.
+
+(d) Fungsi nol konstan merupakan fungsi sederhana.
+
+\proof{ (a) mengikuti fakta bahwa $\chi E$
+terukur untuk setiap $E$ terukur, dan bahwa jumlah serta kelipatan skalar dari
+fungsi-fungsi terukur bersifat terukur (121Eb-121Ec).  (b)-(d)
+jelas.
+}%end of proof of 122B
+
+\vleader{42pt}{122C}{Lema} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur.
+
+(a) Jika $E_0,\ldots,E_n$ merupakan himpunan terukur yang mempunyai ukuran berhingga,
+terdapat himpunan terukur saling lepas $G_0,\ldots,G_m$ yang mempunyai ukuran berhingga
+sedemikian sehingga setiap $E_i$ dapat dinyatakan sebagai gabungan dari beberapa $G_j$.
+
+(b) Jika $f:X\to\Bbb R$ adalah fungsi sederhana, fungsi tersebut dapat dinyatakan dalam
+bentuk $\sum_{j=0}^mb_j\chi G_j$, dengan $G_0,\ldots,G_m$ merupakan himpunan
+terukur saling lepas yang mempunyai ukuran berhingga.
+
+(c) Jika $E_0,\ldots,E_n$ merupakan himpunan terukur yang mempunyai ukuran berhingga, dan
+$a_0,\ldots,a_n\in\Bbb R$ sedemikian sehingga $\sum_{i=0}^na_i\chi E_i(x)\ge
+0$ untuk setiap $x\in X$, maka $\sum_{i=0}^na_i\mu E_i\ge 0$.
+
+\proof{{\bf (a)} Tetapkan $m=2^{n+1}-2$, dan daftarkan
+subhimpunan-subhimpunan tak kosong dari $\{0,\ldots,n\}$ sebagai $I_0,\ldots,I_m$. Untuk setiap
+$j\le m$, tetapkan
+
+\Centerline{$G_j
+=\bigcap_{i\in I_j}E_i\setminus\bigcup_{i\le n,i\notin I_j}E_i$.}
+
+\noindent   Maka setiap $G_j$ merupakan himpunan terukur, karena diperoleh dari
+berhingga banyak himpunan terukur melalui operasi $\cup$, $\cap$, dan
+$\setminus$, serta mempunyai ukuran berhingga, karena $I_j\ne\emptyset$ dan
+$G_j\subseteq E_i$ jika $i\in I_j$. Selain itu, himpunan-himpunan $G_j$ saling lepas,
+sebab jika $i\in I_j\setminus I_k$, maka $G_j\subseteq E_i$ dan $G_k\cap
+E_i=\emptyset$. Akhirnya, jika $k\le n$ dan $x\in E_k$, terdapat
+$j\le
+m$ sedemikian sehingga $I_j=\{i:i\le n,\,x\in E_i\}$, dan dalam hal ini $x\in
+G_j\subseteq E_k$; dengan demikian, $E_k$ merupakan gabungan dari semua $G_j$ yang
+termuat di dalamnya.
+
+\medskip
+
+{\bf (b)} Nyatakan $f$ sebagai $\sum_{i=0}^na_i\chi E_i$, dengan
+$E_0,\ldots,E_n$ merupakan himpunan terukur yang mempunyai ukuran berhingga dan
+$a_0,\ldots,a_n$ merupakan bilangan real. Misalkan $G_0,\ldots,G_m$ adalah himpunan
+terukur saling lepas yang mempunyai ukuran berhingga sedemikian sehingga setiap $E_i$ dapat dinyatakan
+sebagai gabungan dari $G_j$ yang sesuai. Tetapkan $c_{ij}=1$ jika $G_j\subseteq
+E_i$,
+dan $0$ jika tidak, sehingga, karena himpunan-himpunan $G_j$ saling lepas, $\chi
+E_i=\sum_{j=0}^mc_{ij}\chi G_j$ untuk setiap $i$. Maka
+
+\Centerline{$f=\sum_{i=0}^na_i\chi E_i
+=\sum_{i=0}^n\sum_{j=0}^ma_ic_{ij}\chi G_j
+=\sum_{j=0}^mb_j\chi G_j$,}
+
+\noindent dengan menetapkan $b_j=\sum_{i=0}^na_ic_{ij}$ untuk setiap $j\le m$.
+
+\medskip
+
+{\bf (c)} Tetapkan $f=\sum_{i=0}^na_i\chi E_i$, dan ambil $G_j$, $c_{ij}$,
+$b_j$ seperti dalam (b). Maka $b_j\mu G_j\ge 0$ untuk setiap $j$. \Prf\ Jika
+$G_j=\emptyset$, hal ini jelas. Jika tidak, ambil $x\in G_j$; maka
+
+\Centerline{$0\le f(x)=\sum_{i=0}^mb_i\chi G_i(x)=b_j\chi
+G_j(x)=b_j$,}
+
+\noindent maka $b_j\mu G_j\ge 0$ pula.\ \Qed\ Selanjutnya, karena
+himpunan-himpunan $G_j$
+saling lepas,
+
+\Centerline{$\mu E_i=\sum_{j=0}^mc_{ij}\mu G_j$}
+
+\noindent untuk setiap $i$, sehingga
+
+\Centerline{$\sum_{i=0}^na_i\mu E_i
+=\sum_{i=0}^n\sum_{j=0}^ma_ic_{ij}\mu G_j
+=\sum_{j=0}^mb_j\mu G_j
+\ge 0$,}
+
+\noindent sebagaimana dikehendaki.
+}%end of proof of 122C
+
+\leader{122D}{Korolari} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur. Jika
+
+\Centerline{$\sum_{i=0}^m a_i\chi E_i
+=\sum_{j=0}^n b_j\chi F_j$,}
+
+\noindent dengan semua $E_i$ dan $F_j$ merupakan
+himpunan terukur yang mempunyai ukuran berhingga dan semua $ a_i$, $ b_j$ merupakan bilangan
+real, maka
+
+\Centerline{$\sum_{i=0}^m a_i\mu E_i=\sum_{j=0}^n b_j\mu F_j$.}
+
+\proof{ Terapkan 122Cc pada
+$\sum_{i=0}^m a_i\chi E_i+\sum_{j=0}^n(-b_j)\chi F_j$ untuk melihat bahwa
+$\sum_{i=0}^ma_i\mu E_i-\sum_{j=0}^nb_j\mu F_j\ge 0$; sekarang pertukarkan
+peran
+kedua jumlah tersebut untuk memperoleh pertidaksamaan yang berlawanan.
+}%end of proof of 122D
+
+
+\leader{122E}{Definisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur.
+Dengan demikian, kita
+dapat mendefinisikan {\bf integral} $\int f$ dari $f$, untuk fungsi sederhana
+$f:X\to\Bbb R$, melalui ketentuan bahwa
+$\int f=\sum_{i=0}^m a_i\mu E_i$ setiap kali $f=\sum_{i=0}^m a_i\chi
+E_i$ dan setiap $E_i$ merupakan himpunan terukur yang mempunyai ukuran berhingga\cmmnt{;
+122D menjamin bahwa representasi $f$ yang kita pilih
+untuk perhitungan tidak akan memengaruhi hasilnya}.
+
+\leader{122F}{Proposisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur.
+
+(a) Jika $f$, $g:X\to\Bbb R$ adalah fungsi sederhana, maka $f+g$ merupakan
+fungsi
+sederhana dan $\int f+g=\int f+\int g$.
+
+(b) Jika $f$ merupakan fungsi sederhana dan $c\in\Bbb R$, maka $cf$ merupakan
+fungsi
+sederhana dan $\int cf=c\int f$.
+
+(c) Jika $f$, $g$ merupakan fungsi sederhana dan $f(x)\le g(x)$ untuk setiap
+$x\in
+X$, maka $\int f\le \int g$.
+
+\proof{ (a) dan (b) langsung mengikuti rumus yang diberikan
+untuk $\int f$ dalam 122E. Untuk (c), perhatikan bahwa $g-f$ merupakan fungsi
+sederhana tak-negatif, sehingga $\int g-f\ge 0$, menurut 122Cc; tetapi hal ini berarti
+bahwa
+$\int g-\int f\ge 0$.
+}%end of proof of 122F
+
+
+\vleader{72pt}{122G}{Lema} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur.
+Jika $\langle f_n\rangle_{n\in\Bbb N}$ merupakan barisan fungsi sederhana
+yang tak-menurun (dalam arti bahwa $f_n(x)\le f_{n+1}(x)$ untuk
+setiap $n\in\Bbb N$, $x\in X$) dan $f$ merupakan fungsi sederhana sedemikian sehingga
+$f(x)\le\sup_{n\in\Bbb N}f_n(x)$ untuk hampir setiap $x\in X$ (dengan memperbolehkan
+$\sup_{n\in\Bbb N}f_n(x)=\infty$ dalam rumus ini), maka
+$\int f\le\sup_{n\in\Bbb N}\int f_n$.
+
+\proof{ Perhatikan bahwa $f-f_0$ merupakan fungsi sederhana, sehingga
+$H=\{x:(f-f_0)(x)\ne 0\}$ adalah gabungan berhingga dari himpunan-himpunan yang mempunyai ukuran berhingga,
+dan $\mu H<\infty$; selain itu, $f-f_0$ terbatas, sehingga terdapat $M\ge 0$
+sedemikian sehingga $(f-f_0)(x)\le M$ untuk setiap $x\in X$.
+
+Misalkan $\epsilon>0$. Untuk setiap $n\in\Bbb N$, tetapkan
+$H_n=\{x:(f-f_n)(x)\ge\epsilon\}$. Maka setiap $H_n$ terukur (menurut
+121E), dan $\langle H_n\rangle_{n\in\Bbb N}$ merupakan barisan
+himpunan yang tak-menaik dengan irisan
+
+\Centerline{$\bigcap_{n\in\Bbb N}H_n
+=\{x:f(x)\ge\epsilon+\sup_{n\in\Bbb N}f_n(x)\}
+\subseteq\{x:f(x)>\sup_{n\in\Bbb N}f_n(x)\}$.}
+
+\noindent Karena $f(x)\le\sup_{n\in\Bbb N}f_n(x)$ untuk hampir setiap
+$x$,
+$\{x:f(x)>\sup_{n\in\Bbb N}f_n(x)\}$ dan $\bigcap_{n\in\Bbb N}H_n$
+terabaikan. Selain itu, $\mu H_0<\infty$, karena
+$H_0\subseteq H$.
+Akibatnya,
+
+\Centerline{$\lim_{n\to\infty}\mu H_n=\mu(\bigcap_{n\in\Bbb N}H_n)=0$}
+
+\noindent (112Cf). Ambil $n$ cukup besar sehingga $\mu H_n\le\epsilon$.
+
+Tinjau fungsi sederhana $g=f_n+\epsilon\chi H+M\chi H_n$. Maka
+$f\le g$, sehingga
+
+\Centerline{$\int f\le\int g=\int f_n+\epsilon\mu H+M\mu H_n
+\le\int f_n+\epsilon(M+\mu H)$.}
+
+\noindent Karena $\epsilon$ sebarang,
+$\int f\le\sup_{n\in\Bbb N}\int f_n$.
+}%end of proof of 122G
+
+ 
+\leader{122H}{Definisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur.
+Untuk sisa bagian ini, saya akan menuliskan $U$ untuk himpunan
+fungsi $f$ sedemikian sehingga
+
+\quad(i) domain $f$ merupakan subhimpunan koterabaikan dari $X$ dan
+$f(x)\in\coint{0,\infty}$ untuk setiap $x\in\dom f$,
+
+\quad(ii) terdapat barisan tak-menurun $\sequencen{f_n}$ dari
+fungsi sederhana tak-negatif sedemikian sehingga
+$\sup_{n\in\Bbb N}\int f_n<\infty$ dan
+$\lim_{n\to\infty}f_n(x)\penalty-100=f(x)$ untuk hampir
+setiap $x\in X$.
+
+\leader{122I}{Lema} Jika $f$ dan $\langle f_n\rangle_{n\in\Bbb N}$
+seperti dalam 122H, maka
+
+\Centerline{$\sup_{n\in\Bbb N}\int f_n
+=\sup\{\int g:g$ adalah fungsi sederhana dan $g\leae f\}$.}
+
+\proof{ Tentu saja
+
+\Centerline{$\sup_{n\in\Bbb N}\int f_n
+\le \sup\{\int g:g$ adalah fungsi sederhana dan $g\leae f\}$}
+
+\noindent karena $f_n\leae f$ untuk setiap $n$. Di pihak lain, jika
+$g$ adalah fungsi sederhana dan $g\leae f$, maka
+$g(x)\le\sup_{n\in\Bbb N}f_n(x)$ untuk hampir setiap $x$, sehingga
+$\int g\le\sup_{n\in\Bbb N}\int f_n$ menurut 122G. Dengan demikian
+
+\Centerline{$\sup_{n\in\Bbb N}\int f_n
+\ge \sup\{\int g:g$ adalah fungsi sederhana dan $g\leae f\}$,}
+
+\noindent sebagaimana diperlukan.
+}%end of proof of 122I
+
+
+\leader{122J}{Lema} Misalkan $(X,\Sigma,\mu)$ suatu ruang
+ukur\cmmnt{, dan definisikan $U$ seperti dalam 122H}.
+
+(a) Jika $f$ adalah fungsi yang didefinisikan pada subhimpunan
+koterabaikan dari $X$ dan mengambil nilai dalam $\coint{0,\infty}$,
+maka $f\in U$ jika dan hanya jika terdapat himpunan terukur
+koterabaikan $E\subseteq\dom f$ sedemikian sehingga
+
+\inset{($\alpha$)
+$f\restr E$ terukur,
+
+($\beta$) untuk setiap $\epsilon>0$,
+$\mu\{x:x\in E,\,f(x)\ge\epsilon\}<\infty$,
+
+($\gamma$)
+$\sup\{\int g:g$ adalah fungsi sederhana, $g\leae f\}<\infty$.}
+
+(b) Andaikan bahwa $f\in U$ dan bahwa $h$ adalah fungsi yang
+didefinisikan pada subhimpunan koterabaikan dari $X$ dan mengambil
+nilai dalam $\coint{0,\infty}$. Andaikan bahwa $h\leae f$ dan terdapat
+himpunan koterabaikan $F\subseteq X$ sedemikian sehingga $h\restr F$
+terukur. Maka $h\in U$.
+
+\proof{{\bf (a)(i)} Andaikan bahwa $f\in U$. Maka terdapat barisan
+tak-menurun $\langle f_n\rangle_{n\in\Bbb N}$ dari fungsi sederhana
+tak-negatif sedemikian sehingga $f\eae\lim_{n\to\infty}f_n$ dan
+$\sup_{n\in\Bbb N}\int f_n=c<\infty$. Himpunan
+$\{x:f(x)=\lim_{n\to\infty}f_n(x)\}$ koterabaikan, sehingga memuat
+suatu himpunan terukur koterabaikan, sebut saja $E$. Sekarang
+$f\restr E=(\lim_{n\to\infty}f_n)\restr E$ terukur, menurut 121Fa
+dan 121Eh; dengan demikian ($\alpha$) terpenuhi. Selanjutnya, untuk
+$\epsilon>0$, tetapkan
+$H_n=\{x:x\in E,\,f_n(x)\ge{1\over 2}\epsilon\}$; maka
+$f_n\ge{1\over 2}\epsilon\chi H_n$, sehingga
+
+\Centerline{$\Bover12\epsilon\mu H_n
+=\int\bover12\epsilon\chi H_n\le\int f_n\le c$,}
+
+\noindent untuk setiap $n$. Sekarang $\langle H_n\rangle_{n\in\Bbb N}$
+merupakan barisan tak-menurun, sehingga
+
+\Centerline{$\mu(\bigcup_{n\in\Bbb N}H_n)
+=\sup_{n\in\Bbb N}\mu H_n\le 2c/\epsilon$,}
+
+\noindent menurut 112Ce. Oleh karena itu
+
+\Centerline{$\mu\{x:x\in E,\,f(x)\ge\epsilon\}
+\le\mu(\bigcup_{n\in\Bbb N}H_n)\le 2c/\epsilon<\infty$.}
+
+\noindent Karena $\epsilon$ sebarang, ($\beta$) terpenuhi.
+Terakhir, ($\gamma$) terpenuhi menurut 122I.
+
+\medskip
+
+\quad{\bf (ii)} Sekarang andaikan bahwa syarat-syarat
+($\alpha$)-($\gamma$) terpenuhi. Ambil himpunan koterabaikan
+$E\in\Sigma$ yang sesuai, dan untuk setiap $n\in\Bbb N$ definisikan
+$f_n:X\to\Bbb R$ dengan menetapkan
+
+$$\eqalign{f_n(x)&=2^{-n}k\text{ jika }x\in E,\, 0\le k<4^n,\,
+2^{-n}k\le f(x)<2^{-n}(k+1),\cr
+&=0\text{ jika }x\in X\setminus E,\cr
+&=2^n\text{ jika }x\in E\text{ dan }f(x)\ge 2^n.\cr}$$
+
+\noindent Maka $f_n$ merupakan fungsi sederhana tak-negatif, karena
+dapat dinyatakan sebagai
+
+\Centerline{$f_n
+=\sum_{k=1}^{4^n}2^{-n}\chi\{x:x\in E,\,f(x)\ge 2^{-n}k\}$;}
+
+\noindent semua himpunan $\{x:x\in E,\,f(x)\ge 2^{-n}k\}$ terukur
+(karena $f\restr E$ terukur) dan mempunyai ukuran berhingga, menurut
+($\beta$).
+Juga mudah dilihat bahwa $\langle f_n\rangle_{n\in\Bbb N}$ merupakan
+barisan tak-menurun yang konvergen ke $f$ pada setiap titik di $E$,
+sehingga $f\eae\lim_{n\to\infty}f_n$. Terakhir,
+
+\Centerline{$\lim_{n\to\infty}\int f_n
+=\sup_{n\in\Bbb N}\int f_n
+\le\sup\{\int g:g\text{ adalah fungsi sederhana},\,g\leae f\}
+<\infty$,}
+
+\noindent menurut ($\gamma$). Jadi $f\in U$.
+
+\medskip
+
+{\bf (b)} Misalkan $E$ suatu himpunan seperti dalam (a). Himpunan
+$E$, $F$, dan $\{x:h(x)\le f(x)\}$ semuanya koterabaikan, sehingga
+terdapat himpunan terukur koterabaikan $E'$ yang termuat dalam irisan
+ketiganya. Sekarang $E'\subseteq\dom h$, $h\restr E'$ terukur,
+
+\Centerline{$\mu\{x:x\in E',\,h(x)\ge\epsilon\}
+\le\mu\{x:x\in E,\,f(x)\ge\epsilon\}<\infty$}
+
+\noindent untuk setiap $\epsilon>0$, dan
+
+\Centerline{$\sup\{\int g:g\text{ adalah fungsi sederhana},\, g\leae h\}
+\le\sup\{\int g:g\text{ adalah fungsi sederhana},\,g\leae f\}<\infty$.}
+
+\noindent Jadi $h\in U$.
+}%end of proof of 122J
+
+\leader{122K}{Definisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang
+ukur\cmmnt{, dan definisikan $U$ seperti dalam 122H}. Untuk $f\in U$,
+tetapkan
+
+\Centerline{$\int f
+=\sup\{\int g:g$ adalah fungsi sederhana dan $g\leae f\}$.}
+
+\cmmnt{\noindent Menurut 122I, kita melihat bahwa
+$\int f=\lim_{n\to\infty}\int f_n$ setiap kali $\sequencen{f_n}$
+merupakan barisan tak-menurun dari fungsi sederhana yang konvergen ke
+$f$ hampir di mana-mana; khususnya, jika $f\in U$ sendiri merupakan
+fungsi sederhana, maka $\int f$, sebagaimana didefinisikan di sini,
+sesuai dengan definisi semula untuk $\int f$ dalam 122E, karena kita
+dapat mengambil $f_n=f$ untuk setiap $n$.}
+
+
+
+\leader{122L}{Lema} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur.
+
+(a) Jika $f$, $g\in U$, maka $f+g\in U$ dan
+$\int f+g=\int f+\int g$.
+
+(b) Jika $f\in U$ dan $c\ge 0$, maka $cf\in U$ dan
+$\int cf=c\int f$.
+
+(c) Jika $f$, $g\in U$ dan $f\leae g$, maka $\int f\le \int g$.
+
+(d) Jika $f\in U$ dan $g$ adalah fungsi dengan domain berupa
+subhimpunan koterabaikan dari $X$, mengambil nilai dalam
+$\coint{0,\infty}$, dan sama dengan $f$ hampir di mana-mana, maka
+$g\in U$ dan $\int g=\int f$.
+
+(e) Jika $f_1$, $g_1$, $f_2$, $g_2\in U$ dan
+$f_1-f_2=g_1-g_2$, maka
+$\int f_1-\int f_2=\int g_1-\int g_2$.
+
+\proof{{\bf (a)} Kita tahu bahwa terdapat barisan-barisan tak-menurun
+$\langle f_n\rangle_{n\in\Bbb N}$,
+$\langle g_n\rangle_{n\in\Bbb N}$ dari fungsi sederhana tak-negatif
+sedemikian sehingga $f\eae\lim_{n\to\infty}f_n$,
+$g\eae\lim_{n\to\infty}g_n$, $\sup_{n\in\Bbb N}\int f_n<\infty$,
+dan $\sup_{n\in\Bbb N}\int g_n<\infty$. Sekarang
+$\langle f_n+g_n\rangle_{n\in\Bbb N}$ merupakan barisan tak-menurun
+dari fungsi sederhana yang konvergen ke $f+g$ hampir di mana-mana, dan
+
+\Centerline{$\sup_{n\in\Bbb N}\int f_n+g_n
+=\lim_{n\to\infty}\int f_n+g_n
+=\lim_{n\to\infty}\int f_n+\lim_{n\to\infty}\int g_n=\int f+\int g$.}
+
+\noindent Oleh karena itu $f+g\in U$, dan juga, sebagaimana dicatat
+dalam 122K,
+
+\Centerline{$\int f+g=\lim_{n\to\infty}\int f_n+g_n=\int f+\int g$.}
+
+\medskip
+
+{\bf (b)} Kita tahu bahwa terdapat barisan tak-menurun
+$\langle f_n\rangle_{n\in\Bbb N}$ dari fungsi sederhana tak-negatif
+sedemikian sehingga $f\eae\lim_{n\to\infty}f_n$ dan
+$\sup_{n\in\Bbb N}\int f_n<\infty$. Sekarang
+$\langle cf_n\rangle_{n\in\Bbb N}$ merupakan barisan tak-menurun dari
+fungsi sederhana yang konvergen ke $cf$ hampir di mana-mana, dan
+
+\Centerline{$\sup_{n\in\Bbb N}\int cf_n
+=\lim_{n\to\infty}\int cf_n=c\lim_{n\to\infty}\int f_n=c\int f$.}
+
+\noindent Oleh karena itu $cf\in U$, dan juga, sebagaimana dicatat
+dalam 122K,
+
+\Centerline{$\int cf=\lim_{n\to\infty}\int cf_n=c\int f$.}
+
+\medskip
+
+{\bf (c)} Hal ini langsung dari 122K.
+
+\medskip
+
+{\bf (d)} Jika $\langle f_n\rangle_{n\in\Bbb N}$ merupakan barisan
+tak-menurun dari fungsi sederhana yang konvergen ke $f$ hampir di
+mana-mana, maka barisan itu juga konvergen ke $g$ hampir di mana-mana;
+jadi $g\in U$ dan
+
+\Centerline{$\int g=\lim_{n\to\infty}\int f_n=\int f$.}
+
+\medskip
+
+{\bf (e)} Menurut (a), $f_1+g_2$ dan $f_2+g_1$ keduanya termasuk
+dalam $U$. Selain itu, keduanya sama pada setiap titik tempat keempat
+fungsi terdefinisi, dan ini berlaku hampir di mana-mana. Jadi
+
+\Centerline{$\int f_1+\int g_2=\int f_1+g_2
+=\int f_2+g_1=\int f_2+\int g_1$,}
+
+\noindent dengan menggunakan (a) dan (d). Dengan memindahkan
+$\int g_2$ dan $\int f_2$ ke ruas lain persamaan, kita memperoleh
+hasilnya.
+}%end of proof of 122L
+\leader{122M}{Definisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur.
+\cmmnt{Definisikan $U$ seperti dalam 122H.} Fungsi bernilai real $f$ disebut {\bf
+terintegralkan}, atau {\bf terintegralkan pada
+$X$}, atau {\bf $\mu$-terintegralkan pada $X$}, jika dapat dinyatakan sebagai
+$f_1-f_2$ dengan $f_1$, $f_2\in U$, dan dalam hal ini {\bf integralnya}
+adalah
+
+\Centerline{$\int f=\int f_1-\int f_2$.}
+
+\cmmnt{
+\leader{122N}{Catatan (a)} Dari 122Le kita melihat bahwa
+integral
+$\int f$ didefinisikan secara tunggal oleh
+rumus dalam 122M. Kedua, jika $f\in U$, maka $f=f-\tbf{0}$
+terintegralkan, dan
+integralnya di sini sama dengan integral yang didefinisikan dalam 122K. Terakhir, jika $f$
+adalah fungsi sederhana, maka fungsi tersebut dapat dinyatakan sebagai $f_1-f_2$ dengan $f_1$,
+$f_2$ fungsi sederhana tak-negatif (jika $f=\sum_{i=0}^na_i\chi
+E_i$, dengan setiap $E_i$ terukur dan berukuran berhingga, tetapkan
+
+\Centerline{$f_1=\sum_{i=0}^na_i^+\chi E_i$,
+\quad$f_2=\sum_{i=0}^na_i^-\chi E_i$,}
+
+\noindent dengan menuliskan $a_i^+=\max(a_i,0)$, $a_i^-=\max(-a_i,0)$); sehingga
+
+\Centerline{$\int f=\int f_1-\int f_2=$$\sum_{i=0}^na_i\mu E_i$,}
+
+\noindent dan definisi dalam 122M selaras dengan definisi
+dalam 122E.
+
+
+\header{122Nb}{\bf (b)} Notasi-notasi alternatif yang akan saya gunakan untuk
+$\int
+f$ ialah $\int_Xf$,
+$\int fd\mu$, $\int f(x)\mu(dx)$, $\int f(x)dx$, $\int_Xf(x)\mu(dx)$,
+dan sebagainya, bergantung pada aspek konteks mana yang tampaknya perlu ditekankan.
+
+Jika $\mu$ adalah ukuran Lebesgue pada $\Bbb R$ atau $\BbbR^r$, kita mengatakan bahwa
+$\int f$ adalah {\bf integral Lebesgue} dari $f$, dan bahwa $f$ {\bf
+terintegralkan secara Lebesgue} jika integral ini terdefinisi.
+
+\header{122Nc}{\bf (c)} Perhatikan bahwa ketika saya mengatakan, dalam 122M, bahwa `$f$ dapat
+dinyatakan
+sebagai $f_1-f_2$', yang saya maksud ialah
+menafsirkan $f_1-f_2$ menurut aturan-aturan yang ditetapkan dalam 121E, sehingga
+$\dom f$ harus sama dengan $\dom(f_1-f_2)=\dom f_1\cap\dom f_2$, dan tentu saja
+koterabaikan.
+}%end of comment
+
+\leader{122O}{Teorema} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur.
+
+(a) Jika $f$ dan $g$ terintegralkan pada $X$,
+maka $f+g$ terintegralkan dan $\int f+g=\int f+\int g$.
+
+(b) Jika $f$ terintegralkan pada $X$ dan $c\in\Bbb R$, maka $cf$
+terintegralkan dan $\int cf=c\int f$.
+
+(c) Jika $f$ terintegralkan pada $X$ dan $f\ge 0$ a.e.\ maka
+$\int f\ge 0$.
+
+(d) Jika $f$ dan $g$ terintegralkan pada $X$ dan $f\leae g$,
+maka $\int f\le\int g$.
+
+\proof{{\bf (a)} Nyatakan $f$ sebagai $f_1-f_2$ dan $g$ sebagai $g_1-g_2$
+dengan $f_1$, $f_2$, $g_1$, dan $g_2$ termasuk dalam $U$, sebagaimana didefinisikan dalam 122H.
+Maka $f+g=(f_1+g_1)-(f_2+g_2)$ terintegralkan karena $U$ tertutup
+terhadap penjumlahan (122La), dan
+
+\Centerline{$\int f+g=\int f_1+g_1-\int f_2+g_2
+=\int f_1+\int g_1-\int f_2-\int g_2=\int f+\int g$.}
+
+\medskip
+
+{\bf (b)} Nyatakan $f$ sebagai $f_1-f_2$ dengan $f_1$, $f_2$ termasuk dalam $U$.
+Jika $c\ge 0$, maka $cf=cf_1-cf_2$ terintegralkan karena $U$ tertutup
+terhadap perkalian dengan skalar tak-negatif (122Lb), dan
+
+\Centerline{$\int cf=\int cf_1-\int cf_2=c\int f_1-c\int f_2=c\int
+f$.}
+
+\noindent Jika $c=-1$, maka $-f=f_2-f_1$ terintegralkan dan
+
+\Centerline{$\int (-f)=\int f_2-\int f_1=-\int f$.}
+
+\noindent Dengan menggabungkan
+kedua hal ini, kita memperoleh hasil untuk $c<0$.
+
+\medskip
+
+{\bf (c)} Nyatakan $f$ sebagai $f_1-f_2$ dengan $f_1$, $f_2\in U$. Maka
+$f_2\leae f_1$, sehingga $\int f_2\le\int f_1$ (122Lc), dan $\int f\ge 0$.
+
+\medskip
+
+{\bf (d)} Terapkan (c) pada $g-f$.
+}%end of proof of 122O
+
+
+\leader{122P}{Teorema} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur dan
+$f$ suatu
+fungsi bernilai real yang didefinisikan pada subhimpunan koterabaikan dari $X$. Maka
+syarat-syarat berikut ekuivalen:
+
+\quad(i) $f$ terintegralkan;
+
+\quad(ii) $|f|\in U$\cmmnt{, sebagaimana didefinisikan dalam 122H,} dan terdapat
+himpunan koterabaikan $E\subseteq X$ sedemikian sehingga $f\restr E$ terukur;
+
+\quad(iii) terdapat $g\in U$ dan
+himpunan koterabaikan $E\subseteq X$ sedemikian sehingga $|f|\leae g$
+dan $f\restr E$ terukur.
+
+\proof{{\bf (i)$\Rightarrow$(iii)} Andaikan bahwa $f$
+terintegralkan. Misalkan $f_1$,
+$f_2\in U$ sedemikian sehingga $f=f_1-f_2$. Maka terdapat himpunan-himpunan koterabaikan
+$E_1$, $E_2$ sedemikian sehingga $f_1\restr E_1$ dan $f_2\restr
+E_2$ terukur; tetapkan $E=E_1\cap E_2$, sehingga $E$ juga merupakan
+himpunan koterabaikan. Sekarang $f\restr E=f_1\restr E-f_2\restr E$
+terukur. Selanjutnya, $f_1+f_2\in U$ (122La) dan $|f|(x)\le
+f_1(x)+f_2(x)$ untuk setiap $x\in\dom f$, sehingga kita dapat mengambil $g=f_1+f_2$.
+
+\medskip
+
+{\bf (iii)$\Rightarrow$(ii)} Jika $f\restr E$ terukur, maka
+$|f|\restr E=|f\restr E|$ juga terukur (121Eg); jadi, jika $g\in U$ dan
+$|f|\leae g$, maka $|f|\in U$ menurut 122Jb.
+
+\medskip
+
+{\bf (ii)$\Rightarrow$(i)} Andaikan bahwa $f$ memenuhi syarat-syarat
+dalam
+(ii). Tetapkan
+$f^+={1\over 2}(|f|+f)$ dan $f^-={1\over 2}(|f|-f)$. Tentu saja,
+$|f|\restr E$, $f^+\restr E$, dan $f^-\restr E$ semuanya terukur.
+Selain itu, $0\le f^+(x)\le |f|(x)$ dan $0\le f^-(x)\le |f|(x)$ untuk setiap
+$x\in\dom f$, sedangkan $|f|\in U$ menurut hipotesis, sehingga $f^+$ dan $f^-$
+termasuk
+dalam $U$ menurut 122Jb. Akhirnya, $f=f^+-f^-$, sehingga $f$ terintegralkan.
+}%end of proof of 122P
+
+\leader{122Q}{Catatan} Syarat `terdapat himpunan koterabaikan $E$
+sedemikian sehingga $f\restr E$ terukur' muncul begitu sering sehingga menurut saya
+patut diberi sebuah istilah; fungsi-fungsi demikian akan saya sebut {\bf
+terukur secara
+virtual}, atau {\bf $\mu$-terukur secara virtual} jika ukuran yang dimaksud
+tampaknya perlu dinyatakan.
+
+\leader{122R}{Korolari} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur.
+
+(a) Suatu fungsi bernilai real tak-negatif, yang didefinisikan pada subhimpunan $X$,
+terintegralkan jika dan hanya jika fungsi itu termasuk dalam $U$\cmmnt{, sebagaimana didefinisikan dalam 122H}.
+
+(b) Jika $f$ terintegralkan pada $X$ dan $h$ suatu fungsi bernilai real
+yang didefinisikan pada subhimpunan koterabaikan dari $X$ dan sama dengan $f$ hampir
+di mana-mana, maka $h$ terintegralkan, dengan $\int h=\int f$.
+
+(c) Jika $f$ terintegralkan pada $X$, $f\ge 0$ a.e.\ dan $\int f\le 0$,
+maka $f=0$ a.e.
+
+(d) Jika $f$ dan $g$ terintegralkan pada $X$, $f\leae g$, dan
+$\int g\le\int f$, maka $f\eae g$.
+
+(e) Jika $f$ terintegralkan pada $X$, maka $|f|$ juga terintegralkan, dan
+$|\int f|\le\int|f|$.
+
+\proof{{\bf (a)} Jika $f$ terintegralkan, maka $f=|f|\in U$, menurut
+122P(ii). Jika $f\in U$, maka $f=f-\tbf{0}$ terintegralkan, menurut 122M.
+
+\medskip
+
+{\bf (b)} Misalkan $E$, $F$ himpunan-himpunan koterabaikan sedemikian sehingga $f\restr E$
+terukur dan $h\restr F=f\restr F$; maka $E\cap F$ koterabaikan
+dan $h\restr(E\cap F)=(f\restr E)\restr F$ terukur. Selanjutnya,
+terdapat
+$g\in U$ sedemikian sehingga $|f|\leae g$, dan tentu saja $|h|\leae g$.
+Jadi, $h$ terintegralkan menurut 122P(iii). Dengan menerapkan 122Od pada $f$ dan $h$,
+lalu pada $h$ dan $f$, diperoleh $\int h=\int f$.
+
+\medskip
+
+{\bf (c)} \Quer\ Andaikan, jika mungkin, bahwa yang sebaliknya berlaku. Misalkan $E\subseteq X$
+himpunan koterabaikan sedemikian sehingga $f\restr E$ terukur (122P(ii)),
+dan ambil $E'\subseteq E\cap\dom f$ suatu himpunan terukur koterabaikan. Maka
+$F=\{x:x\in E',\,f(x)>0\}$ pasti tidak terabaikan. Tetapkan
+$F_k=\{x:x\in
+E',\,f(x)\ge 2^{-k}\}$ untuk setiap $k\in\Bbb N$, sehingga
+$F=\bigcup_{k\in\Bbb N}F_k$ dan terdapat $k$ sedemikian sehingga $\mu F_k>0$.
+Namun, tinjau $g=2^{-k}\chi F_k$. Karena $f\ge 0$ a.e.\ dan
+$f\ge 2^{-k}$ pada $F_k$, berlaku $f\geae g$, sehingga
+
+\Centerline{$ 0<2^{-k}\mu F_k=\int g\le\int f$,}
+
+\noindent menurut 122Od; hal ini mustahil. \Bang
+
+\medskip
+
+{\bf (d)} Terapkan (c) pada $g-f$.
+
+\medskip
+
+{\bf (e)} Menurut (i)$\Rightarrow$(ii) dalam 122P, $|f|$ terintegralkan. Sekarang
+$f^+={1\over 2}(|f|+f)$ dan $f^-={1\over 2}(|f|-f)$ keduanya
+terintegralkan
+dan tak-negatif, sehingga integralnya tak-negatif, dan
+
+\Centerline{$|\int f|=|\int f^+-\int f^-|\le\int f^++\int
+f^-=\int|f|$.}
+}%end of proof of 122R
+ 
+\exercises{
+\leader{122X}{Latihan dasar (a)} Misalkan $(X,\Sigma,\mu)$ suatu ruang
+ukur. (i) Tunjukkan bahwa jika $f:X\to\Bbb R$ adalah fungsi sederhana,
+maka $|f|$ juga sederhana, dengan menetapkan $|f|(x)=|f(x)|$ untuk
+$x\in\dom f=X$. (ii) Tunjukkan bahwa jika $f$, $g:X\to\Bbb R$ adalah
+fungsi-fungsi sederhana, maka $f\vee g$ dan $f\wedge g$, sebagaimana
+didefinisikan dalam 121Xb, juga sederhana.
+%122D
+
+\sqheader 122Xb Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur dan $f$
+suatu fungsi bernilai real yang terintegralkan pada $X$. Tunjukkan bahwa
+untuk setiap $\epsilon>0$ terdapat fungsi sederhana $g:X\to\Bbb R$
+sedemikian sehingga $\int|f-g|\le\epsilon$. \Hint{tinjau terlebih dahulu
+$f$ yang tak-negatif.}
+%122O
+
+\spheader 122Xc Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur, dan tuliskan
+$\eusm L^1$ untuk himpunan semua fungsi bernilai real yang terintegralkan
+atas $X$. Misalkan $\Phi\subseteq\eusm L^1$ sedemikian sehingga
+
+\inset{(i) $\chi E\in\Phi$ setiap kali $E\in\Sigma$ dan
+$\mu E<\infty$;
+
+(ii) $f+g\in\Phi$ untuk semua $f$, $g\in\Phi$;
+
+(iii) $cf\in\Phi$ setiap kali $c\in\Bbb R$, $f\in\Phi$;
+
+(iv) $f\in\Phi$ setiap kali $f\in\eusm L^1$ sedemikian sehingga terdapat
+barisan tak-menurun $\sequencen{f_n}$ di dalam $\Phi$ dengan
+$\lim_{n\to\infty}f_n=f$ hampir di mana-mana.}
+
+\noindent Tunjukkan bahwa $\Phi=\eusm L^1$.
+%122O
+
+\sqheader 122Xd Misalkan $\mu$ ukuran cacah pada $\Bbb N$ (112Bd).
+Tunjukkan bahwa suatu fungsi $f:\Bbb N\to\Bbb R$ (yakni, suatu barisan
+$\sequencen{f(n)}$) terintegralkan terhadap $\mu$ jika dan hanya jika
+barisan itu dapat dijumlahkan secara absolut, dan dalam hal ini
+
+\Centerline{$\int fd\mu=\int_{\Bbb N}f(n)\mu(dn)
+=\sum_{n=0}^{\infty}f(n)$.}
+%122O
+
+\sqheader 122Xe Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur dan $f$, $g$
+dua fungsi bernilai real yang terukur secara virtual dan didefinisikan
+pada subhimpunan-subhimpunan $X$. (i) Tunjukkan bahwa $f+g$, $f\times g$
+dan $f/g$, yang didefinisikan sebagaimana dalam 121E, semuanya terukur
+secara virtual. (ii) Tunjukkan bahwa jika $h$ suatu fungsi bernilai real
+terukur Borel yang didefinisikan pada sembarang subhimpunan $\Bbb R$,
+maka komposisi $hf$ terukur secara virtual.
+%122Q
+
+\sqheader 122Xf Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur dan
+$\sequencen{f_n}$ suatu barisan fungsi bernilai real yang terukur secara
+virtual dan didefinisikan pada subhimpunan-subhimpunan $X$. Tunjukkan
+bahwa $\lim_{n\to\infty}f_n$, $\sup_{n\in\Bbb N}f_n$,
+$\inf_{n\in\Bbb N}f_n$, $\limsup_{n\to\infty}f_n$ dan
+$\liminf_{n\to\infty}f_n$, yang didefinisikan sebagaimana dalam 121F,
+terukur secara virtual.
+%122Q
+
+\sqheader 122Xg Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur dan $f$, $g$
+fungsi-fungsi bernilai real yang terintegralkan pada $X$. Tunjukkan bahwa
+$f\wedge g$ dan $f\vee g$, yang didefinisikan sebagaimana dalam 121Xb,
+terintegralkan.
+%122R
+
+\sqheader 122Xh Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur, $f$ suatu
+fungsi bernilai real yang terintegralkan pada $X$, dan $g$ suatu fungsi
+bernilai real terbatas yang terukur secara virtual serta didefinisikan
+pada subhimpunan koterabaikan dari $X$. Tunjukkan bahwa $f\times g$,
+yang didefinisikan sebagaimana dalam 121Ed, terintegralkan.
+%122R
+
+%maybe better in 122Y?
+\spheader 122Xi Misalkan $X$ suatu himpunan, $\Sigma$ suatu
+aljabar-$\sigma$ atas subhimpunan-subhimpunan $X$, dan $\mu_1$, $\mu_2$
+dua ukuran dengan domain $\Sigma$. Tetapkan
+$\mu E=\mu_1E+\mu_2E$ untuk $E\in\Sigma$. Tunjukkan bahwa untuk setiap
+fungsi bernilai real $f$ yang didefinisikan pada suatu subhimpunan $X$,
+$\int fd\mu=\int fd\mu_1+\int fd\mu_2$ dalam arti bahwa jika salah satu
+ruas terdefinisi sebagai bilangan real, maka ruas lainnya juga demikian,
+dan keduanya kemudian sama. \Hint{($\alpha$) Periksa bahwa suatu
+subhimpunan $X$ bersifat $\mu$-koterabaikan jika dan hanya jika ia
+bersifat $\mu_i$-koterabaikan untuk kedua nilai $i$. ($\beta$) Periksa hasil
+tersebut untuk fungsi sederhana $f$. ($\gamma$) Sekarang tinjau $f$
+tak-negatif yang umum.}
+
+\leader{122Y}{Latihan lanjutan (a)} Misalkan $(X,\Sigma,\mu)$ suatu
+ruang ukur `lengkap', yakni ruang yang semua himpunan terabaikannya
+terukur (lihat, misalnya, 113Xa). Tunjukkan bahwa jika $f$ suatu fungsi
+bernilai real yang terukur secara virtual dan didefinisikan pada suatu
+subhimpunan $X$, maka $f$ terukur. Gunakan fakta ini untuk menemukan
+penyederhanaan yang sesuai bagi 122J dan 122P untuk ruang-ruang
+$(X,\Sigma,\mu)$ semacam itu.
+%122P
+
+\spheader 122Yb Tuliskan $\eusm L^1$ untuk himpunan semua fungsi
+bernilai real yang terintegralkan secara Lebesgue pada $\Bbb R$. Misalkan
+$\Phi\subseteq\eusm L^1$ sedemikian sehingga
+
+\inset{(i) $\chi I\in\Phi$ setiap kali $I$ suatu interval setengah
+terbuka terbatas di $\Bbb R$;
+
+(ii) $f+g\in\Phi$ untuk semua $f$, $g\in\Phi$;
+
+(iii) $cf\in\Phi$ setiap kali $c\in\Bbb R$, $f\in\Phi$;
+
+(iv) $f\in\Phi$ setiap kali $f\in\eusm L^1$ sedemikian sehingga terdapat
+barisan tak-menurun $\sequencen{f_n}$ di dalam $\Phi$ dengan
+$\lim_{n\to\infty}f_n=f$ hampir di mana-mana.}
+
+\noindent Tunjukkan bahwa $\Phi=\eusm L^1$. \Hint{tunjukkan bahwa
+($\alpha$) $\chi E\in\Phi$ setiap kali $E$ dapat dinyatakan sebagai
+gabungan sejumlah berhingga interval setengah terbuka ($\beta$)
+$\chi E\in\Phi$ setiap kali $E$ mempunyai ukuran hingga dan dapat dinyatakan
+sebagai gabungan suatu barisan interval setengah terbuka ($\gamma$)
+$\chi E\in\Phi$ setiap kali $E$ terukur dan mempunyai ukuran hingga.}
+%122O, 122Xc
+
+\spheader 122Yc Misalkan $X$ sembarang himpunan, dan misalkan $\mu$
+ukuran cacah pada $X$. Misalkan $f:X\to\Bbb R$ suatu fungsi; tetapkan
+$f^+(x)=\max(0,f(x))$, $f^-(x)=\max(0,-f(x))$ untuk $x\in X$.
+Tunjukkan bahwa pernyataan-pernyataan berikut ekuivalen: (i)
+$\int fd\mu$ ada di $\Bbb R$, dan sama dengan $s$; (ii) untuk setiap
+$\epsilon>0$ terdapat $K\subseteq X$ yang berhingga sedemikian sehingga
+$|s-\sum_{i\in I}f(i)|\le\epsilon$ setiap kali $I\subseteq X$ adalah
+himpunan berhingga yang memuat $K$; (iii) $\sum_{x\in X}f^+(x)$ dan
+$\sum_{x\in X}f^-(x)$, yang didefinisikan sebagaimana dalam 112Bd,
+berhingga, dan
+$s=\sum_{x\in X}f^+(x)-\sum_{x\in X}f^-(x)$.
+%122Xd, 122O
+
+\spheader 122Yd Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur. Kita katakan
+bahwa suatu fungsi $g:X\to\Bbb R$ bersifat {\bf kuasi-sederhana} jika
+dapat dinyatakan sebagai $\sum_{i=0}^{\infty}a_i\chi G_i$, dengan
+$\sequence{i}{G_i}$ suatu partisi $X$ menjadi himpunan-himpunan terukur,
+$\sequence{i}{a_i}$ suatu barisan di $\Bbb R$, dan
+$\sum_{i=0}^{\infty}|a_i|\mu G_i<\infty$, dengan menetapkan
+$0\cdot\infty$ sebagai $0$, sehingga boleh terdapat $G_i$ berukuran tak
+hingga asalkan $a_i$ yang bersesuaian bernilai nol.
+
+\quad(i) Tunjukkan bahwa jika $g$ dan $h$ adalah fungsi-fungsi
+kuasi-sederhana, maka $g+h$, $|g|$ dan $cg$, untuk sembarang
+$c\in \Bbb R$, juga kuasi-sederhana. \Hint{untuk $g+h$ Anda akan
+memerlukan 111F(b-ii) atau suatu pernyataan yang ekuivalen.}
+
+\quad(ii) Tunjukkan dari prinsip-prinsip pertama (maksud saya, tanpa
+menggunakan apa pun yang muncul sesudah 122F dalam bab ini) bahwa jika
+$g=\sum_{i=0}^{\infty}a_i\chi G_i$ dan
+$h=\sum_{i=0}^{\infty}b_i\chi H_i$ adalah fungsi-fungsi kuasi-sederhana,
+dan $g\leae h$, maka
+$\sum_{i=0}^{\infty}a_i\mu G_i\le\sum_{i=0}^{\infty}b_i\mu H_i$.
+
+\quad{(iii)} Selanjutnya tunjukkan bahwa kita mempunyai suatu
+fungsional $I$ yang didefinisikan dengan menetapkan
+$I(g)=\sum_{i=0}^{\infty}a_i\mu G_i$ setiap kali $g$ suatu fungsi
+kuasi-sederhana yang direpresentasikan sebagai
+$\sum_{i=0}^{\infty}a_i\chi G_i$.
+
+\quad{(iv)} Tunjukkan bahwa jika $g$ dan $h$ adalah fungsi-fungsi
+kuasi-sederhana dan $c\in\Bbb R$, maka $I(g+h)=I(g)+I(h)$ dan
+$I(cg)=cI(g)$, serta $I(g)\le I(h)$ jika $g\leae h$.
+
+\quad{(v)} Tunjukkan bahwa jika $g$ suatu fungsi kuasi-sederhana, maka
+$g$ terintegralkan dan $\int g=I(g)$. (Sekarang saya mengizinkan Anda
+menggunakan 122G-122R.)
+
+\quad{(vi)} Tunjukkan bahwa suatu fungsi bernilai real $f$, yang
+didefinisikan pada subhimpunan koterabaikan dari $X$, terintegralkan jika
+dan hanya jika untuk setiap $\epsilon>0$ terdapat fungsi-fungsi
+kuasi-sederhana $g$, $h$ sedemikian sehingga $g\leae f\leae h$ dan
+$I(h)-I(g)\le\epsilon$.
+%122R
+
+\spheader 122Ye Misalkan $\mu$ ukuran Lebesgue pada $\Bbb R$. Kita
+katakan (hanya untuk latihan ini) bahwa suatu fungsi bernilai real $g$
+dengan $\dom g\subseteq\Bbb R$ bersifat `pseudo-sederhana' jika dapat
+dinyatakan sebagai $\sum_{i=0}^{\infty}a_i\chi J_i$, dengan
+$\sequence{i}{J_i}$ suatu barisan interval setengah terbuka terbatas
+({\it tidak} harus saling lepas) dan
+$\sum_{i=0}^{\infty}|a_i|\mu J_i<\infty$. (Tafsirkan jumlah tak hingga
+$\sum_{i=0}^{\infty}a_i\chi J_i$ sebagaimana dalam 121F, sehingga
+
+\Centerline{$\dom(\sum_{i=0}^{\infty}a_i\chi J_i)
+=\{x:\lim_{n\to\infty}\sum_{i=0}^na_i(\chi J_i)(x)
+  \text{ ada di }\Bbb R\}$.)}
+
+\quad(i) Tunjukkan bahwa jika $g$, $h$ adalah fungsi-fungsi
+pseudo-sederhana, maka $g+h$ dan $cg$, untuk sembarang $c\in \Bbb R$,
+juga pseudo-sederhana.
+
+\quad(ii) Tunjukkan bahwa jika $g$ suatu fungsi pseudo-sederhana, maka
+$g$ terintegralkan.
+
+\quad(iii) Tunjukkan bahwa suatu fungsi bernilai real $f$, yang
+didefinisikan pada subhimpunan koterabaikan dari $\Bbb R$,
+terintegralkan jika dan hanya jika untuk setiap $\epsilon>0$ terdapat
+fungsi-fungsi pseudo-sederhana $g$, $h$ sedemikian sehingga
+$g\leae f\leae h$ dan $\int h-g\,d\mu\le\epsilon$. \Hint{Ambil $\Phi$
+sebagai himpunan fungsi-fungsi terintegralkan yang mempunyai sifat ini,
+dan tunjukkan bahwa himpunan tersebut memenuhi syarat-syarat 122Yb.}
+%122Yd, 122R
+
+\spheader 122Yf Ulangi 122Yb dan 122Ye untuk ukuran Lebesgue pada
+$\BbbR^r$, dengan $r>1$.
+%122Yd, 122Yb, 122Ye, 122R
+
+\spheader 122Yg Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur, dan andaikan
+bahwa terdapat sekurang-kurangnya satu partisi $X$ menjadi tak hingga
+banyak himpunan terukur tak-kosong. Misalkan $f$ suatu fungsi bernilai
+real yang didefinisikan pada subhimpunan koterabaikan dari $X$, dan
+$a\in\Bbb R$. Tunjukkan bahwa pernyataan-pernyataan berikut ekuivalen:
+
+\quad (i) $f$ terintegralkan, dengan $\int f=a$;
+
+\quad (ii) untuk setiap $\epsilon>0$ terdapat suatu partisi
+$\sequencen{E_n}$ dari $X$ menjadi himpunan-himpunan terukur tak-kosong
+sedemikian sehingga
+
+\Centerline{$\sum_{n=0}^{\infty}|f(t_n)|\mu E_n<\infty$,
+\quad$|a-\sum_{n=0}^{\infty}f(t_n)\mu E_n|\le\epsilon$}
+
+\noindent setiap kali $\sequencen{t_n}$ suatu barisan sedemikian sehingga
+$t_n\in E_n\cap\dom f$ untuk setiap $n$. (Seperti biasa, tetapkan
+$0\cdot\infty=0$ dalam rumus-rumus ini.) \Hint{gunakan 122Yd.}
+%122Yd, 122R
+
+\spheader 122Yh Temukan suatu rumusan kembali (g) yang mencakup
+kasus ruang-ruang ukur yang {\it tidak} dapat dipartisi menjadi barisan
+himpunan terukur tak-kosong.
+%122Yg, 122Yd, 122R
+
+\spheader 122Yi Misalkan $X$ suatu himpunan, $\Sigma$ suatu
+aljabar-$\sigma$ atas subhimpunan-subhimpunan $X$, dan
+$\sequencen{\mu_n}$ suatu barisan ukuran dengan domain $\Sigma$.
+Tetapkan $\mu E=\sum_{n=0}^{\infty}\mu_nE$ untuk $E\in\Sigma$.
+(i) Tunjukkan bahwa $\mu$ adalah suatu ukuran. (ii) Tunjukkan bahwa
+untuk sembarang fungsi bernilai real $f$ yang didefinisikan pada suatu
+subhimpunan $X$, $f$ terintegralkan terhadap $\mu$ jika dan hanya jika
+ia terintegralkan terhadap $\mu_n$ untuk setiap $n$ dan
+$\sum_{n=0}^{\infty}\int|f|d\mu_n$ berhingga, serta bahwa dalam hal itu
+$\int fd\mu=\sum_{n=0}^{\infty}\int fd\mu_n$.
+%122Xi
+
+\spheader 122Yj Misalkan $X$ suatu himpunan, $\Sigma$ suatu
+aljabar-$\sigma$ atas subhimpunan-subhimpunan $X$, dan
+$\langle\mu_i\rangle_{i\in I}$ suatu keluarga ukuran dengan domain
+$\Sigma$. Tetapkan $\mu E=\sum_{i\in I}\mu_iE$ untuk $E\in\Sigma$.
+(i) Tunjukkan bahwa $\mu$ adalah suatu ukuran. (ii) Tunjukkan bahwa
+untuk sembarang fungsi $\Sigma$-terukur $f:X\to\Bbb R$, $f$
+terintegralkan terhadap $\mu$ jika dan hanya jika ia terintegralkan
+terhadap $\mu_i$ untuk setiap $i$ dan
+$\sum_{i\in I}\int|f|d\mu_i$ berhingga.
+%122Yi, 122Xi
+}%end of exercises
+
+\endnotes{
+\Notesheader{122} Seperti dalam \S121, beberapa masalah teknis tambahan
+timbul karena saya bersikeras mencoba mengintegralkan (i) fungsi-fungsi
+yang tidak didefinisikan pada seluruh ruang ukur yang sedang ditinjau;
+(ii) fungsi-fungsi yang, dalam arti formal, tidak terukur, tetapi hanya
+terukur pada suatu himpunan koterabaikan. Tidak ada sesuatu pun dalam
+bagian ini yang membenarkan salah satu dari kedua perluasan tersebut.
+Namun, dalam bagian berikutnya kita akan meninjau limit barisan fungsi,
+dan limit-limit ini tidak harus terdefinisi di setiap titik; contoh yang
+limitnya tidak terdefinisi pada semua titik sama sekali tidak bersifat
+patologis, melainkan justru sentral bagi penerapan-penerapan teori yang
+paling penting.
+
+Persoalan mengintegralkan fungsi yang tidak sepenuhnya terukur lebih
+terbuka untuk diperdebatkan. Saya akan membahas hal ini lebih lanjut
+setelah memperkenalkan secara formal ruang ukur `lengkap' dalam Bab 21.
+Untuk saat ini, saya hanya akan mengatakan bahwa menurut saya upaya
+menyusun formalisasi yang, sejauh wajar, mengintegralkan sebanyak mungkin
+fungsi memang layak dilakukan; salah satu tujuan semula integral Lebesgue
+adalah memungkinkan kita mengintegralkan lebih banyak fungsi daripada
+pendahulu-pendahulunya.
+
+Definisi `integrasi' di sini berjalan melalui tiga tahap yang dapat
+dibedakan: (i) integrasi fungsi sederhana (122A-122G); (ii) integrasi
+fungsi tak-negatif (122H-122L); (iii) integrasi fungsi bernilai real yang
+umum (122M-122R). Saya menempuh setiap tahap secara perlahan; misalnya,
+saya baru beralih ke fungsi tak-negatif yang terintegralkan setelah
+mempunyai perangkat lengkap lema yang diperlukan mengenai fungsi
+sederhana. Tentu saja ada banyak sekali rute alternatif; lihat,
+misalnya, 122Yd, yang menawarkan definisi dengan dua langkah alih-alih
+tiga. Saya memilih pendakian yang lebih panjang dan landai ini sebagian
+karena (menurut pandangan saya) ia memberi gambaran gagasan yang lebih
+jelas, dan sebagian karena ia bersesuaian dengan metode yang hampir
+kanonis untuk membuktikan sifat-sifat fungsi terintegralkan: kita
+membuktikannya terlebih dahulu untuk fungsi sederhana, kemudian untuk
+fungsi tak-negatif yang terintegralkan, lalu untuk fungsi terintegralkan
+yang umum. (Petunjuk yang saya berikan untuk 122Yb mengikuti filosofi
+ini. Lihat juga 122Xc; tetapi saya tidak menyatakannya sebagai teorema
+formal, karena urutan pembuktiannya yang tepat berbeda dari satu kasus
+ke kasus lain, dan menurut saya sebaiknya hal itu diingat sebagai metode
+pendekatan, bukan sebagai suatu hasil khusus untuk diterapkan.)
+
+Anda berhak merasa bahwa bagian ini sangat abstrak dan hampir tidak
+memberi gambaran tentang fungsi-fungsi favorit Anda mana yang kemungkinan
+terintegralkan, apalagi tentang nilai integralnya. Saya berharap Bab 13
+akan sedikit membantu dalam hal ini, meskipun harus saya katakan bahwa
+untuk metode yang benar-benar berguna dalam menghitung integral, kita
+harus menunggu Bab 22, 25, dan 26 dalam jilid berikutnya. Jika Anda ingin
+mengetahui pusat sejati argumen-argumen bagian ini, saya sendiri akan
+menempatkannya pada 122G, 122H, dan 122K. Intinya, gagasan-gagasan
+122A-122F berlaku bagi kelas struktur $(X,\Sigma,\mu)$ yang jauh lebih
+luas, karena hanya melibatkan operasi pada sejumlah berhingga anggota
+$\Sigma$ sekaligus; barisan himpunan sama sekali tidak muncul. Kunci
+yang memungkinkan segala sesuatu sesudahnya adalah 122G, yang bertumpu
+pada 112Cf. Dan setelah 122G-122K, bagian selebihnya, meskipun sama sekali
+tidak elementer, sesungguhnya hanyalah serangkaian pemeriksaan cermat
+untuk memastikan bahwa fungsional yang didefinisikan dalam 122K
+berperilaku seperti yang kita harapkan.
+
+Banyak hasil dalam bagian ini (termasuk hasil kunci, 122G) akan digantikan
+oleh hasil yang lebih kuat dalam bagian berikutnya. Namun, saya perlu
+menyebut Lema 122Ja, yang dari waktu ke waktu akan muncul kembali sebagai
+kriteria yang sangat berguna bagi keterintegralan fungsi tak-negatif
+(lihat 122Ra).
+
+Ada satu hal lain mengenai integral standar sebagaimana didefinisikan di
+sini. Integral ini merupakan integral `absolut', dalam arti bahwa jika
+$f$ terintegralkan, maka $|f|$ juga terintegralkan (122P). Ini berarti
+bahwa walaupun integral Lebesgue memperluas integral Riemann `wajar'
+(lihat 134K di bawah), terdapat fungsi-fungsi dengan integral Riemann
+`tak wajar' berhingga yang tidak terintegralkan secara Lebesgue; contoh lazimnya
+ialah $f(x)=\bover{\sin x}x$, dengan
+$\lim_{a\to\infty}\int_0^af$ ada di $\Bbb R$, sedangkan
+$\lim_{a\to\infty}\int_0^a|f|=\infty$, sehingga $f$ tidak terintegralkan,
+dalam arti yang didefinisikan di sini, pada seluruh interval
+$\ooint{0,\infty}$. (Untuk pembuktian lengkap atas pernyataan-pernyataan
+ini, lihat 283D dan 282Xm dalam Jilid 2.) Jika Anda pernah menjumpai teori
+deret yang dapat dijumlahkan secara `absolut' dan `bersyarat', Anda tentu
+mengetahui bahwa jenis yang kedua dapat memperlihatkan perilaku yang
+sangat membingungkan, dan akan memahami bahwa membatasi pengertian
+`terintegralkan' sehingga berarti `terintegralkan secara absolut' sangat
+memudahkan.
+
+Sesungguhnya, ini lebih dari sekadar kemudahan; pembatasan tersebut perlu
+agar definisi dapat bekerja pada tingkat abstraksi yang digunakan dalam
+bab ini. Tinjau contoh ukuran cacah $\mu$ pada $\Bbb N$ (112Bd, 122Xd).
+Struktur $(\Bbb N,\Cal P\Bbb N,\mu)$ invarian terhadap permutasi; yakni,
+$\mu(\pi[A])=\mu A$ untuk setiap $A\subseteq\Bbb N$ dan setiap permutasi
+$\pi:\Bbb N\to\Bbb N$. Akibatnya, {\it setiap} definisi integrasi yang
+hanya bergantung pada struktur $(\Bbb N,\Cal P\Bbb N,\mu)$ juga harus
+invarian terhadap permutasi, yakni,
+
+\Centerline{$\int f(\pi(n))\mu(dn)=\int f(n)\mu(dn)$}
+
+\noindent untuk setiap fungsi terintegralkan $f$ dan setiap permutasi
+$\pi$. Tetapi tentu saja (sebagaimana saya harap telah diberitahukan
+kepada Anda) suatu deret $\sequencen{f(n)}$ sedemikian sehingga
+$\sum_{n=0}^{\infty}f(\pi(n))=\sum_{n=0}^{\infty}f(n)\in\Bbb R$ untuk
+setiap permutasi $\pi$ harus dapat dijumlahkan secara absolut. Jadi, jika
+kita hendak mendefinisikan integral pada ruang ukur abstrak
+$(X,\Sigma,\mu)$ dengan cara yang hanya bergantung pada $\Sigma$ dan
+$\mu$, kita hampir tak terelakkan dipaksa mendefinisikan integral
+absolut.
+
+Tentu saja ada konteks-konteks penting tempat pembatasan ini mengganggu,
+dan tempat suatu bentuk integral `tak wajar' tampak tepat. Contoh lazimnya
+adalah teori transformasi Fourier, tempat kita meninjau
+$\lim_{a\to\infty}\int_{-a}^af$ sebagai pengganti
+$\int_{-\infty}^{\infty}f$ (lihat \S283). Sangat banyak bentuk integral
+tak wajar yang lebih atau kurang abstrak telah diajukan; banyak yang menarik
+dan beberapa penting; tetapi tidak satu pun menandingi integral `standar'
+sebagaimana diuraikan dalam bab ini. (Untuk suatu upaya pemeriksaan
+sistematis atas kelas tertentu integral tak wajar semacam itu, lihat Bab
+48 dalam Jilid 4.)
+
+Jauh lebih sedikit kajian yang telah dilakukan tentang integrasi
+fungsi tak-terukur -- atau, lebih tepatnya, fungsi yang tidak sama hampir
+di mana-mana dengan suatu fungsi terukur yang terintegralkan. Saya yakin
+hal ini semata-mata karena terlalu sedikit masalah penting yang dapat
+menunjukkan arah yang harus ditempuh. Dalam 134C di bawah, saya menyebut
+pertanyaan apakah ada {\it suatu} fungsi bernilai real
+tak-terukur pada $\Bbb R$. Jawaban standarnya adalah `ya', tetapi fungsi
+semacam itu mustahil muncul sebagai hasil konstruksi biasa. Akibatnya,
+sebagian besar pertanyaan mengenai fungsi tak-terukur muncul dalam
+konteks-konteks yang sangat khusus, dan sejauh ini saya belum melihat
+satu pun yang memberi petunjuk berguna tentang seperti apa perluasan yang
+secara umum sesuai bagi pengertian `keterintegralan'.
+}%end of notes
+
+\discrpage
