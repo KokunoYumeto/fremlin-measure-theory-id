@@ -72,12 +72,15 @@ reproducible, cropped derivatives for PDF and HTML inclusion.
 
 `authority/fremlin/source/mt1.2011/mt114.tex` is 25,717 bytes and 612 lines,
 SHA-256 `206488ff5ba2960f4e130d162cca6df7af2935968754d77bc18b53ab084b8f97`.
-It declares source section 114, “Lebesgue measure on $\Bbb R$”, and begins
-partway through printed page 23, which it shares with the end of Section 113.
-The ending page is not proved by current lane evidence and is intentionally
-recorded as `23–?` pending a bounded frozen-baseline replay. The source contains
-19 active exercises, eight active hint macros, and no active source-local figure
-or image references.
+It declares source section 114, “Lebesgue measure on $\Bbb R$”, and occupies
+official printed pages 23–28. Page 23 also contains the end of Section 113; the
+final Section 114 notes end on page 28, before Section 115 begins later on the
+same page. Both boundary pages therefore overlap adjacent sections. This
+range was read back from the exact source-native 102-page Volume 1 replay recorded in
+`qa/mt114-pagination-evidence.json`. The source contains 19 active exercises,
+eight active hint macros, and no active source-local figure or image references.
+The unique cumulative Section 111–114 union is printed pages 10–28, or 19
+official pages.
 
 ## Selection authority
 

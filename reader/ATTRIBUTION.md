@@ -3,9 +3,10 @@
 ## Karya sumber
 
 D. H. Fremlin, *Measure Theory, Volume 1: The Irreducible Minimum*,
-Bagian 111, “Sigma-algebras”, Bagian 112, “Measure spaces”, dan Bagian 113,
-“Outer measures and Caratheodory's construction”. Sumber resmi dibekukan dari
-arsip `mt1.2011.tar.gz` yang diterbitkan melalui situs University of Essex.
+Bagian 111, “Sigma-algebras”, Bagian 112, “Measure spaces”, Bagian 113,
+“Outer measures and Caratheodory's construction”, dan Bagian 114, “Lebesgue
+measure on R”. Sumber resmi dibekukan dari arsip `mt1.2011.tar.gz` yang
+diterbitkan melalui situs University of Essex.
 
 Materi turunan Fremlin didistribusikan berdasarkan **Design Science
 License**. Teks lisensi lengkap disertakan sebagai
@@ -15,6 +16,8 @@ dikenakan pada materi tersebut.
 ## Modifikasi
 
 - 21 Agustus 2026: seluruh Bagian 111–113 diterjemahkan ke Bahasa Indonesia.
+- 22 Agustus 2026: seluruh Bagian 114 diterjemahkan ke Bahasa Indonesia dan
+  ditambahkan ke pembaca kumulatif.
 - Struktur Plain/AMS-TeX, matematika, urutan, bukti, latihan, petunjuk, dan
   rujukan sumber dipertahankan.
 - Ditambahkan pembaca HTML semantik, metadata bahasa `id-ID`, pemetaan ID

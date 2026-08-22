@@ -52,11 +52,13 @@ accessibility, build, and visual QA; record corrections/hashes; update cursor;
 then commit and push the substantial verified boundary. Translation dominates;
 QA must not become an indefinite loop.
 
-The admitted contiguous boundary is complete `mt111.tex` through
-`mt112.tex`, `O007-FREMLIN-V1-S111`–`S112`, including all prose,
-results, proofs, notes, 23 exercises, four source hints, and references. The
-active source-order cursor is `O007-FREMLIN-V1-S113`, not a new selection or
-planning pass.
+The translated contiguous boundary is complete `mt111.tex` through
+`mt114.tex`, `O007-FREMLIN-V1-S111`–`S114`, including all prose, results,
+proofs, notes, 61 exercises, 14 source hints, references, and the four Section
+113 diagrams. `CP0004_MT114_ADMISSION.md` supplies the fail-closed final
+reader/visual predicate for the exact S114 target hash. Once that predicate
+passes, the active source-order cursor is `O007-FREMLIN-V1-S115`, not a new
+selection or planning pass.
 
 Maintain the corpus's own narrow repository and push verified boundaries under
 standing authorization; never run workspace-wide Git scans. No upstream

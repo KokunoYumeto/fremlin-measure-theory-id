@@ -107,3 +107,25 @@ layout, cross-unit links, and 1,280/390-pixel browser views pass admission.
 Source pagination is recorded as pages 19–23, yielding 14 unique cumulative
 pages 10–23. The production cursor advances to complete `mt114.tex`; the
 672-page Volumes 1–2 goal remains active.
+
+## 2026-08-22 — D014: Admit complete Section 114 and advance in source order
+
+The complete `mt114.tex` translation is admitted as
+`O007-FREMLIN-V1-S114`. Its exact target is 28,148 bytes / 650 lines / SHA-256
+`3d29f5c0dea66737852e085632cbf51d77c1bb391fe59916b39c5c9ab9db2030`.
+Structural and independent semantic replay preserve all 438 mathematical
+atoms, 19 exercises, eight hints, 17 proofs, optional-comment topology, and 51
+printed cross-reference edges. No source correction or source asset is
+asserted. The 686-record unit backend and four-unit catalog validate
+deterministically. Source-native pagination is pages 23–28, yielding 19 unique
+cumulative pages 10–28.
+
+Actual browser replay rejected the first HTML candidate despite matching
+formula-container counts: legacy `\sp`, `\bover`, `\sequence`, `\ocint`, and
+`\Prf` controls produced visible MathJax error nodes in Sections 113–114. The
+reader now supplies exact lossless MathJax definitions for those macros.
+Desktop and 390-pixel mobile replay subsequently show exact
+source/rendered/assistive parity and zero MathJax error nodes across all four
+units. The 23-page PDF and every page-level visual gate also pass. The
+production cursor advances to complete `mt115.tex`; the 672-page Volumes 1–2
+goal remains active.
