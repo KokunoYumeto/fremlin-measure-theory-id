@@ -21,6 +21,7 @@ from qa_mt111 import (
     math_segments,
     normalize_math,
     protected_references,
+    reader_text_group_end,
     reader_text_atoms,
     sha256,
     stable_ids,
@@ -51,6 +52,10 @@ def mask_math(text: str) -> str:
         delimiter = "$$" if clean.startswith("$$", i) else "$"
         j = i + len(delimiter)
         while j < len(clean):
+            group_end = reader_text_group_end(clean, j)
+            if group_end is not None:
+                j = group_end
+                continue
             if clean.startswith(delimiter, j) and clean[j - 1] != "\\":
                 out.append("<MATH>")
                 i = j + len(delimiter)

@@ -82,6 +82,33 @@ eight active hint macros, and no active source-local figure or image references.
 The unique cumulative Section 111–114 union is printed pages 10–28, or 19
 official pages.
 
+## Fifth unit intake
+
+`authority/fremlin/source/mt1.2011/mt115.tex` is 27,681 bytes and 675 lines,
+SHA-256 `2d6714f1b022932a90c38bc05c11f2f3c25d6fd84e5b51050c331fcbd6367739`.
+It declares source section 115, “Lebesgue measure on $\Bbb R^r$”, and occupies
+official printed pages 28–34. Page 28 also contains the end of Section 114;
+page 34 ends the Section 115 notes, and page 35 begins Chapter 12 and Section
+121. The exact source-native 102-page replay, boundary text extraction, and
+visual inspection are recorded in `qa/mt115-pagination-evidence.json`.
+
+The source contains ten active exercises (`115Xa`–`115Xe` and
+`115Ya`–`115Ye`), eight active hint macros, 427 top-level mathematical atoms,
+and no active source-local asset. The unique cumulative Section 111–115 union
+is printed pages 10–34, or 25 official pages; overlapping section boundary
+pages are counted once.
+
+## Sixth unit intake
+
+`authority/fremlin/source/mt1.2011/mt121.tex` is 43,014 bytes and 1,057 lines,
+SHA-256 `f2b93bf474cccafc75cc2bc76dadbc26e5456e620d21f092cf5fae35e6776484`.
+It declares Chapter 12, “Integration”, and Section 121, “Measurable
+functions”. The Indonesian working title is `Fungsi terukur`. There is no
+`mt116.tex` in the frozen Volume 1 source closure: Section 115 closes Chapter
+11 and source order continues with `mt12.tex` / `mt121.tex`. Exercise, hint,
+semantic-topology, and exact pagination censuses remain pending the bounded
+S121 production pass and are not inferred here.
+
 ## Selection authority
 
 The root selection handoff is

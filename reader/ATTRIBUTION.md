@@ -5,8 +5,9 @@
 D. H. Fremlin, *Measure Theory, Volume 1: The Irreducible Minimum*,
 Bagian 111, “Sigma-algebras”, Bagian 112, “Measure spaces”, Bagian 113,
 “Outer measures and Caratheodory's construction”, dan Bagian 114, “Lebesgue
-measure on R”. Sumber resmi dibekukan dari arsip `mt1.2011.tar.gz` yang
-diterbitkan melalui situs University of Essex.
+measure on R”, serta Bagian 115, “Lebesgue measure on R^r”. Sumber resmi
+dibekukan dari arsip `mt1.2011.tar.gz` yang diterbitkan melalui situs
+University of Essex.
 
 Materi turunan Fremlin didistribusikan berdasarkan **Design Science
 License**. Teks lisensi lengkap disertakan sebagai
@@ -16,8 +17,8 @@ dikenakan pada materi tersebut.
 ## Modifikasi
 
 - 21 Agustus 2026: seluruh Bagian 111–113 diterjemahkan ke Bahasa Indonesia.
-- 22 Agustus 2026: seluruh Bagian 114 diterjemahkan ke Bahasa Indonesia dan
-  ditambahkan ke pembaca kumulatif.
+- 22 Agustus 2026: seluruh Bagian 114–115 diterjemahkan ke Bahasa Indonesia
+  dan ditambahkan ke pembaca kumulatif.
 - Struktur Plain/AMS-TeX, matematika, urutan, bukti, latihan, petunjuk, dan
   rujukan sumber dipertahankan.
 - Ditambahkan pembaca HTML semantik, metadata bahasa `id-ID`, pemetaan ID
@@ -25,9 +26,10 @@ dikenakan pada materi tersebut.
   edisi turunan.
 - Judul edisi turunan dibuat berbeda agar tidak dapat disalahartikan sebagai
   edisi asli Fremlin.
-- Tiga koreksi sumber yang terlokalisasi pada Bagian 112 dicatat secara
-  eksplisit dalam 00_control/SOURCE_CORRECTIONS.csv: satu galat tipe
-  matematis, satu galat tipografis, dan satu definisi notasi yang hilang.
+- Tujuh koreksi sumber yang terlokalisasi pada Bagian 112 dan 115 dicatat
+  secara eksplisit dalam `00_control/SOURCE_CORRECTIONS.csv`. Empat koreksi
+  Bagian 115 terdiri atas dua indeks matematis dan dua salah ketik; bukti
+  pembanding resminya dicatat terpisah tanpa mengubah sumber beku.
 - Empat diagram sumber Bagian 113 (`mt113c1.ps`–`mt113c4.ps`) dikonversi
   secara deterministik menjadi PNG responsif untuk pembaca HTML. Diagram itu
   tetap merupakan materi turunan Fremlin berdasarkan Design Science License;

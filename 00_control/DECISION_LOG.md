@@ -129,3 +129,26 @@ source/rendered/assistive parity and zero MathJax error nodes across all four
 units. The 23-page PDF and every page-level visual gate also pass. The
 production cursor advances to complete `mt115.tex`; the 672-page Volumes 1–2
 goal remains active.
+
+## 2026-08-22 — D015: Admit complete Section 115 and advance to Section 121
+
+The complete `mt115.tex` translation is admitted as
+`O007-FREMLIN-V1-S115`. Its exact target is 30,520 bytes / 717 lines / SHA-256
+`0cadff37a61d891231702b6dac5ab978285d3e55094659f30dd740f656f730a7`.
+Structural and independent semantic replay preserve all 427 top-level
+mathematical atoms, ten exercises, eight hints, 17 proofs, and the complete
+note/reference topology, subject only to four explicit, evidenced source
+corrections. The 668-record unit backend and five-unit catalog validate
+deterministically. Source-native pagination is pages 28–34, yielding 25 unique
+cumulative pages 10–34.
+
+Live browser replay rejected the first candidate because ordinary inline
+formulae displayed scrollbar widgets and three proof-ending formulae rendered
+literal `\Qed`; a second candidate removed those widgets but allowed long
+inline formulae to widen mobile documents. The admitted reader preserves exact
+formula source records, renders proof endings correctly, and confines only
+genuinely wide mobile mathematics to locally scrollable containers with
+suppressed tracks. Desktop and 390-pixel mobile documents, all links and
+anchors, MathJax/assistive parity, and all 30 PDF pages pass. Because the
+frozen source has no `mt116.tex`, the production cursor advances directly to
+complete `mt121.tex`; the 672-page goal remains active.

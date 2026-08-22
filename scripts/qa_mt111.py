@@ -42,8 +42,43 @@ def strip_comments(text: str) -> str:
     return "\n".join(lines)
 
 
+def reader_text_group_end(text: str, index: int) -> int | None:
+    """Return the end of a balanced ``\\hbox``/``\\text`` group.
+
+    Plain/AMS-TeX can legitimately reopen math inside an ``\\hbox`` while the
+    surrounding expression is already in math mode, for example
+    ``$\\hbox{$[ $}x\\hbox{$ ]$}$``.  A flat dollar scanner would mistake the
+    inner delimiters for the end of the outer atom.  Treat the complete reader-
+    text group as opaque while locating the outer delimiter; normalization
+    still handles its contents separately.
+    """
+    for command in ("\\hbox", "\\text"):
+        if not text.startswith(command, index):
+            continue
+        after = index + len(command)
+        if after < len(text) and text[after].isalpha():
+            continue
+        while after < len(text) and text[after].isspace():
+            after += 1
+        if after >= len(text) or text[after] != "{":
+            return None
+        depth = 0
+        cursor = after
+        while cursor < len(text):
+            escaped = cursor > 0 and text[cursor - 1] == "\\"
+            if text[cursor] == "{" and not escaped:
+                depth += 1
+            elif text[cursor] == "}" and not escaped:
+                depth -= 1
+                if depth == 0:
+                    return cursor + 1
+            cursor += 1
+        raise ValueError(f"unbalanced argument for {command} at character {index}")
+    return None
+
+
 def math_segments(text: str) -> list[str]:
-    """Extract ordered $...$ and $$...$$ segments without interpreting TeX."""
+    """Extract ordered top-level $...$ and $$...$$ TeX math atoms."""
     out: list[str] = []
     i = 0
     while i < len(text):
@@ -54,6 +89,10 @@ def math_segments(text: str) -> list[str]:
         start = i + len(delim)
         j = start
         while j < len(text):
+            group_end = reader_text_group_end(text, j)
+            if group_end is not None:
+                j = group_end
+                continue
             if text.startswith(delim, j) and (j == 0 or text[j - 1] != "\\"):
                 out.append(text[start:j])
                 i = j + len(delim)
