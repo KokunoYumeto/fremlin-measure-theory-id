@@ -128,10 +128,20 @@ Updated: 2026-08-22 (Europe/Berlin)
   Indonesian alternative text. Exact evidence is in
   `qa/mt114-visual-browser-qa.json` (10,951 bytes; SHA-256
   `fdc3cb6bb2f3047a81d86fc72ffb5102446a615196b535b0fba273b8085fc510`).
-- `CP0004_MT114_ADMISSION.md`'s fail-closed reader and visual predicates now
-  pass. The authorized immutable `v0.4.0-s114` release is the immediate
-  preservation action; it must still be published and anonymously read back
-  before public completion is claimed.
+- `CP0004_MT114_ADMISSION.md`'s fail-closed reader and visual predicates pass.
+  The exact cumulative tree is public at boundary commit
+  `e2803bab3435c6ac333a69d7ac52998818affa52`, tree
+  `a4cbb01366dc11c1209a25acb898f47f58956487`, lightweight tag
+  `v0.4.0-s114`, and
+  `https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.4.0-s114`.
+  GitHub release ID `374766022` contains exactly the 309,253-byte PDF,
+  3,759,809-byte deterministic ZIP, and 230-byte checksum file. All 177 public
+  boundary files and all three assets passed anonymous byte-for-byte readback;
+  the prior S111–S113 releases were also reverified. Exact asset IDs, URLs,
+  hashes, and preserved-release identities are in
+  `qa/PUBLICATION_RECEIPT_S114.json` (SHA-256
+  `516339bb9dd20c9df9677f16ee08f7dc4bfbac6e7936d2e1b8c961a778b4e255`).
+  No upstream issue or message was sent.
 - The active production cursor has advanced to `O007-FREMLIN-V1-S115`.
 
 ## Authority versus inherited evidence
