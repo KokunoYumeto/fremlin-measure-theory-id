@@ -13,17 +13,17 @@ Korpus terpilih berjumlah 672 halaman resmi. Cakupannya tidak memasukkan Jilid
 
 Bagian 111, **Aljabar sigma**, Bagian 112, **Ruang ukur**, Bagian 113,
 **Ukuran luar dan konstruksi Carathéodory**, Bagian 114, **Ukuran Lebesgue
-pada ℝ**, Bagian 115, **Ukuran Lebesgue pada ℝ^r**, dan Bagian 121,
-**Fungsi terukur**, telah diterjemahkan lengkap dan diterima. Batas kumulatif
-ini mencakup 34 halaman cetak sumber yang unik, halaman 10–43; halaman batas
-yang dipakai bersama dihitung satu kali. Batas tersebut mempertahankan 3.100
-rumus backend, 82 latihan, 24 petunjuk bertipe, seluruh bukti dan rujukan
-sumber, satu catatan kaki aksesibel, serta empat diagram Bagian 113. Backend
-modular memuat 4.534 rekaman unit-lokal dalam JSONL kanonis beserta proyeksi
-CSV deterministik.
+pada ℝ**, Bagian 115, **Ukuran Lebesgue pada ℝ^r**, Bagian 121,
+**Fungsi terukur**, dan Bagian 122, **Definisi integral**, telah diterjemahkan
+lengkap dan diterima. Batas kumulatif ini mencakup 43 halaman cetak sumber yang
+unik, halaman 10–52; halaman batas yang dipakai bersama dihitung satu kali.
+Batas tersebut mempertahankan 3.940 rumus backend, 101 latihan, 30 petunjuk
+bertipe, seluruh bukti dan rujukan sumber, satu catatan kaki aksesibel, serta
+empat diagram Bagian 113. Backend modular memuat 5.733 rekaman unit-lokal dalam
+JSONL kanonis beserta proyeksi CSV deterministik.
 
-Kursor berikutnya adalah `O007-FREMLIN-V1-S122`, **Definisi integral**.
-Sasaran dua jilid masih aktif; batas Bagian 121 bukan pernyataan bahwa
+Kursor berikutnya adalah `O007-FREMLIN-V1-S123`, **Teorema-teorema
+konvergensi**. Sasaran dua jilid masih aktif; batas Bagian 122 bukan pernyataan bahwa
 keseluruhan 672 halaman telah selesai.
 
 Repo publik: <https://github.com/KokunoYumeto/fremlin-measure-theory-id>
@@ -45,26 +45,24 @@ Prarilis kumulatif Bagian 111–115:
 Prarilis kumulatif Bagian 111–115 dan 121:
 <https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.6.0-s121>
 
-Batas ini diterbitkan dari commit `04e353955782a63386a38e90441ea71376bf0529`.
-PDF, ZIP deterministik, berkas checksum, dan seluruh 302 anggota manifes publik
-telah dibaca kembali secara anonim dan cocok byte demi byte; rincian tersanitasi
-berada di `qa/PUBLICATION_RECEIPT_S121.json`.
+Prarilis kumulatif Bagian 111–115 dan 121–122:
+<https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.7.0-s122>
 
-## Membangun batas kumulatif Bagian 111–115 dan 121
+## Membangun batas kumulatif Bagian 111–115 dan 121–122
 
 Prasyarat lokal: Python 3 dengan `jsonschema` dan `pypdf`, TeX, serta
 `dvipdfmx`. Dari akar repositori:
 
 ```text
-python scripts/qa_fremlin_unit.py authority/fremlin/source/mt1.2011/mt121.tex source/id-ID/mt121.tex --unit-id O007-FREMLIN-V1-S121 --expected-source-sha256 f2b93bf474cccafc75cc2bc76dadbc26e5456e620d21f092cf5fae35e6776484 --json-out qa/mt121-structural-qa.json
-python backend/generate_mt121.py
-python backend/validate_mt121.py --json-out qa/mt121-backend-validation.json
-python scripts/build_mt121.py
-python scripts/qa_reader_mt121.py --require-visual --json-out qa/mt121-reader-qa.json
+python scripts/qa_fremlin_unit.py authority/fremlin/source/mt1.2011/mt122.tex source/id-ID/mt122.tex --unit-id O007-FREMLIN-V1-S122 --expected-source-sha256 e187da4ddc39d7ed101b8bb6b6ee1af4b1ac6655672f772a3aa5e874feeed701 --json-out qa/mt122-structural-qa.json
+python backend/generate_mt122.py
+python backend/validate_mt122.py --json-out qa/mt122-backend-validation.json
+python scripts/build_mt122.py
+python scripts/qa_reader_mt122.py --require-visual --json-out qa/mt122-reader-qa.json
 ```
 
 Hasil siap baca dibuat di
-`output/fondasi-teori-ukur-v1-s111-s112-s113-s114-s115-s121-id/` sebagai PDF, HTML luring
+`output/fondasi-teori-ukur-v1-s111-s112-s113-s114-s115-s121-s122-id/` sebagai PDF, HTML luring
 dengan MathJax lokal, sumber yang dapat diedit, backend, lisensi, diagram, dan
 manifes hash. Arsip ZIP dibuat di sebelah direktori itu.
 

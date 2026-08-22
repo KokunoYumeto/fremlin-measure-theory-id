@@ -4,8 +4,9 @@
 
 D. H. Fremlin, *Measure Theory, Volume 1: The Irreducible Minimum*,
 Bagian 111, “Sigma-algebras”, Bagian 112, “Measure spaces”, Bagian 113,
-“Outer measures and Caratheodory's construction”, dan Bagian 114, “Lebesgue
-measure on R”, serta Bagian 115, “Lebesgue measure on R^r”. Sumber resmi
+“Outer measures and Caratheodory's construction”, Bagian 114, “Lebesgue
+measure on R”, Bagian 115, “Lebesgue measure on R^r”, Bagian 121, “Measurable
+functions”, dan Bagian 122, “Definition of the integral”. Sumber resmi
 dibekukan dari arsip `mt1.2011.tar.gz` yang diterbitkan melalui situs
 University of Essex.
 
@@ -19,6 +20,8 @@ dikenakan pada materi tersebut.
 - 21 Agustus 2026: seluruh Bagian 111–113 diterjemahkan ke Bahasa Indonesia.
 - 22 Agustus 2026: seluruh Bagian 114–115 diterjemahkan ke Bahasa Indonesia
   dan ditambahkan ke pembaca kumulatif.
+- 22 Agustus 2026: seluruh Bagian 121–122 diterjemahkan ke Bahasa Indonesia
+  dan ditambahkan ke pembaca kumulatif.
 - Struktur Plain/AMS-TeX, matematika, urutan, bukti, latihan, petunjuk, dan
   rujukan sumber dipertahankan.
 - Ditambahkan pembaca HTML semantik, metadata bahasa `id-ID`, pemetaan ID
@@ -26,7 +29,8 @@ dikenakan pada materi tersebut.
   edisi turunan.
 - Judul edisi turunan dibuat berbeda agar tidak dapat disalahartikan sebagai
   edisi asli Fremlin.
-- Tujuh koreksi sumber yang terlokalisasi pada Bagian 112 dan 115 dicatat
+- Enam belas koreksi sumber yang terlokalisasi pada Bagian 112, 115, 121, dan
+  122 dicatat
   secara eksplisit dalam `00_control/SOURCE_CORRECTIONS.csv`. Empat koreksi
   Bagian 115 terdiri atas dua indeks matematis dan dua salah ketik; bukti
   pembanding resminya dicatat terpisah tanpa mengubah sumber beku.

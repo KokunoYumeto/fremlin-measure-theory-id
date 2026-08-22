@@ -175,3 +175,26 @@ render with matching assistive MathML, all 212 local link instances resolve,
 wide mobile formulas remain container-local without visible scrollbar tracks,
 and all 40 PDF pages pass independent visual inspection. The production cursor
 advances to complete `mt122.tex`; the 672-page Volumes 1–2 goal remains active.
+
+## 2026-08-22 — D017: Admit complete Section 122 and advance to Section 123
+
+The complete `mt122.tex` translation is admitted as
+`O007-FREMLIN-V1-S122`. Its exact target is 44,853 bytes / 1,055 lines /
+SHA-256
+`898783f7dc36acb07721f891525c215a53788ae7974dacd27590f51449b847f7`.
+Structural and complete semantic replay preserve all 840 mathematical atoms,
+19 exercises, six source hints, 11 results/proofs, and 134 typed
+cross-reference edges, subject only to four explicit source-correction
+treatments. The 1,199-record unit backend and seven-unit catalog validate
+deterministically. Source-native pagination is pages 43–52, yielding 43 unique
+cumulative pages 10–52.
+
+Live browser replay rejected the first candidate because the print-only Plain
+TeX control `\penalty-100` in 122H appeared as visible red MathJax text. The
+admitted renderer preserves the exact source/backend formula record and removes
+only that non-mathematical line-breaking control from the visible MathJax
+input. All 3,935 reader formulas then match their assistive MathML, every local
+link resolves, wide mobile mathematics remains locally scrollable without page
+overflow, and the 50-page PDF passes complete visual inspection. The production
+cursor advances to complete `mt123.tex`; the 672-page Volumes 1–2 goal remains
+active.

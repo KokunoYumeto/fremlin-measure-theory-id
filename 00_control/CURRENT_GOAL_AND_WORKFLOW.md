@@ -3,8 +3,8 @@
 Date established: 2026-08-21 (Europe/Berlin)  
 Owner task: `01a01f45-9d00-7f42-9071-4f932b45512a`  
 Role: `O007` — Measure and Integration  
-Status: production active; Sections 111–115 and 121 admitted; Section 122
-translation/semantic replay complete, backend and reader admission pending
+Status: production active; Sections 111–115 and 121–122 admitted; Section 123
+is the active source-order cursor
 
 ## Durable goal
 
@@ -54,15 +54,13 @@ then commit and push the substantial verified boundary. Translation dominates;
 QA must not become an indefinite loop.
 
 The translated contiguous source-order boundary is complete `mt111.tex`
-through `mt115.tex` and `mt121.tex`, `O007-FREMLIN-V1-S111`–`S115` plus
-`S121`, including all prose, results, proofs, notes, 82 exercises, 24 typed
-hints, references, the accessible S121 footnote, and the four Section 113
-diagrams. `CP0006_MT121_ADMISSION.md` supplies the fail-closed reader/visual
-predicate for the exact S121 target hash. The active source-order cursor is
-`O007-FREMLIN-V1-S122`, complete `mt122.tex`; its complete 44,853-byte natural
-Indonesian target has passed structural and semantic replay but remains
-unadmitted until its backend and cumulative reader/build/visual gates pass. No
-`mt116.tex` exists in the frozen authority.
+through `mt115.tex` and `mt121.tex`–`mt122.tex`, including all prose, results,
+proofs, notes, 101 exercises, 30 typed hints, references, the accessible S121
+footnote, and the four Section 113 diagrams. `CP0007_MT122_ADMISSION.md`
+supplies the fail-closed backend/reader/visual predicate for the exact S122
+target hash. The active source-order cursor is `O007-FREMLIN-V1-S123`, complete
+`mt123.tex`; no Indonesian S123 target is yet claimed. No `mt116.tex` exists in
+the frozen authority.
 
 Maintain the corpus's own narrow repository and push verified boundaries under
 standing authorization; never run workspace-wide Git scans. No upstream
