@@ -418,8 +418,8 @@ the three assets passed anonymous byte/hash readback. Receipt:
 GitHub published tag `v0.9.0-s131` at
 `https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.9.0-s131`,
 boundary commit `d7d31a87569650c7653aaacd8759cbf48a3f25da`, tree
-`38a0a26b76cd632cd095c6f103c2266ab254217b`, and receipt commit
-`a34b765eefaae1fbf800fa2235eb1d97ba9229f5`. Receipt:
+`38a0a26b76cd632cd095c6f103c2266ab254217b`. The post-release cursor/state
+files are also anonymously read back from the current `main` ref. Receipt:
 `qa/PUBLICATION_RECEIPT_S131.json`, SHA-256
 `c29e50113698a51461304b0a8eebb6a2fdc7351d28b80deed998b9717c294378`.
 The release description records the required provenance
