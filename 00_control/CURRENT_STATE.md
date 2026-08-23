@@ -319,20 +319,39 @@ Updated: 2026-08-22 (Europe/Berlin)
   Exact admission is `00_control/CP0008_MT123_ADMISSION.md`; final reader QA is
   `pass: true`, `publication_ready: true`, `admission_issued: true`.
 - The production cursor has advanced in source order to
-  `O007-FREMLIN-V1-S131`, `Upper integrals` → `Integral atas`. Its authority
+  `O007-FREMLIN-V1-S131`, `Measurable subspaces` → `Subruang terukur`. Its authority
   member is 11,811 bytes / 294 lines / SHA-256
   `94ebff73a9a8820a85e852df30088830cfee57e8cfed0fa8244f915e0b88f105`.
+  Direct replay of `mt13.tex`/`mt131.tex` supersedes the earlier incorrect
+  cursor labels `The indefinite integral` / `Upper integrals`; Chapter 13 is
+  `Complements` and Section 131 is `Measurable subspaces`.
+- The complete S131 id-ID target is now 13,516 bytes / 329 lines / SHA-256
+  `0b05d13299cc5a94530fb56b366fe22cb2d43d1fe711383d2320b1dbf6bbbe64`.
+  Independent source-aware semantic review passes, and structural replay
+  preserves all 257 mathematical atoms, 13 explicit anchors, four exercises,
+  four source hints, five proofs, the source footnote, endnotes, and protected
+  references. The only symbolic differences are two explicit ledger rows:
+  `O007-CORR-0018` restores the missing open-interval integral in 131Xb(i),
+  and `O007-CORR-0019` makes the intended restriction to `E` intersect `H`
+  unambiguous. Exact evidence is `qa/mt131-intake-census.json`,
+  `qa/mt131-pagination-evidence.json`, `qa/mt131-structural-qa.json`, and
+  `qa/mt131-semantic-review.json`.
+- Bounded official-source PDF replay places S131 on printed pages 56–58;
+  page 56 shares the Chapter 13 introduction and page 58 also begins S132.
+  The cumulative S111–S131 union is therefore pages 10–58, 49 unique pages
+  of the selected 672-page corpus. Backend/reader/build/visual admission is
+  still in progress; S131 is not yet admitted or published.
 - The exact S122 GitHub boundary is release-ready and frozen at
   `qa/S122_RELEASE_TREE.tsv`: 377 rows / 37,408 bytes / SHA-256
   `5374e5885b25afcd7e8bff5820626c15433ac4a6352c3c775b372325186fcebd`.
   Exact local commit `9d4cdfdaf0aeeeb16520538076b4334dc521f36f`, tree
   `db242899cf5a4fb90e886da3a8c4b9d0183bb985`, and tag `v0.7.0-s122` now
-  preserve that boundary without altering the live S123 worktree. GitHub
-  rejected the live credential probe before any remote mutation: the primary
-  account is reported suspended and the backup token invalid. GitHub transport
-  itself is reachable. Exact sanitized evidence and the bounded retry action are in
-  `qa/S122_GITHUB_PUBLICATION_BLOCKER_20260822.json`; no public S122 receipt is
-  claimed yet.
+  preserve that boundary without altering the live S123 worktree. The earlier
+  suspended-account rejection remains historical evidence in
+  `qa/S122_GITHUB_PUBLICATION_BLOCKER_20260822.json`. After reinstatement, the
+  exact tag was pushed and anonymously read back at
+  `9d4cdfdaf0aeeeb16520538076b4334dc521f36f`. No redundant S122 GitHub binary
+  release was created; its reader artifacts remain public on Zenodo.
 - The admitted S122 boundary is public independently on Zenodo as version
   `0.7.0-s122`: DOI `10.5281/zenodo.22059799`, concept DOI
   `10.5281/zenodo.22059798`. The public record is explicitly partial, uses the
@@ -356,7 +375,12 @@ Updated: 2026-08-22 (Europe/Berlin)
 - The exact local S123 boundary is commit
   `7e4ad7e5a9101210201f74c93cbabc028d9f9825`, tree
   `e557311566cc3494ab23ba4aae72a18319d6dc28`, and tag `v0.8.0-s123`.
-  GitHub has not been retried because the account suspension remains active.
+  GitHub is reinstated. Remote `main` now resolves to durable-record commit
+  `7547ee071898cef35defcb55259678bd5828fe9f`; public tags `v0.7.0-s122` and
+  `v0.8.0-s123` resolve to their exact local commits. Anonymous raw readback of
+  `source/id-ID/mt123.tex` matched 19,410 bytes and SHA-256
+  `0dbed47213a2ba03ff3f55226aa2f9e141742234313ad45762742df9542fc985`.
+  Exact sanitized evidence is `qa/GITHUB_PUBLICATION_RECEIPT_S123_SYNC.json`.
 - The requested reader-first Figshare mirror was evaluated once and stopped
   before any draft, upload, item, or collection mutation. Free figshare.com
   requires a machine-readable license for every public item, but this account
@@ -379,12 +403,15 @@ the Indonesian target build.
 
 ## Immediate production actions
 
-1. Keep GitHub paused while the account is suspended. Do not retry a Figshare
-   file publication unless Figshare exposes DSL/custom-license support or a
+1. Keep GitHub synchronized at each admitted boundary now that the account is
+   reinstated, with anonymous byte/hash readback. Do not retry a Figshare file
+   publication unless Figshare exposes DSL/custom-license support or a
    compatible legal basis is established.
-2. Perform bounded intake and complete id-ID translation of `mt131.tex`, then
-   continue through every source unit in Volumes 1–2. The 672-page corpus goal
-   remains active and is not completed by the cumulative Section 123 boundary.
+2. Complete the S131 stable-ID backend and cumulative S111–S131 reader,
+   deterministic build, full visual/accessibility QA, admission record, and
+   preservation checkpoint. Then advance directly to `mt132.tex` and continue
+   through every source unit in Volumes 1–2. The 672-page corpus goal remains
+   active and is not completed by the cumulative Section 123 boundary.
 
 ## Scope guard
 
