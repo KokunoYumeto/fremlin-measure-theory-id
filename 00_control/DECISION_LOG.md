@@ -258,3 +258,14 @@ component attributions, and required edition provenance
 `authority/fremlin/source/mt1.2011/mt133.tex`; the complete 672-page goal
 remains active. Publication to the existing Zenodo concept and GitHub lineage
 is the next authorized action.
+
+The GitHub half of this boundary is now complete. Tag `v0.10.0-s132` and its
+reader-first prerelease are public at
+`https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.10.0-s132`.
+The boundary commit is `8e43f115f070e6eb5cc19c5f5f7a53d0b8b88bed`, tree
+`9caa588992ae143be36f20ac6624d575e7a56e1f`; anonymous asset and source
+readback passed. Sanitized evidence is
+`qa/PUBLICATION_RECEIPT_S132.json` (SHA-256
+`efc73077e2c3001b0a7932f2a12da418e2c6e423123be011a7cc9381736c6452`). Zenodo
+publication is still pending the authenticated API's 504 recovery; no
+duplicate concept or upstream contact was made.

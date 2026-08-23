@@ -452,6 +452,18 @@ the admitted reader receipt is `qa/mt132-reader-qa.json`, `pass: true`,
 cursor is `authority/fremlin/source/mt1.2011/mt133.tex`; the global goal
 remains active.
 
+GitHub publication is complete for this boundary. Release `v0.10.0-s132` is
+public at
+`https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.10.0-s132`,
+with boundary commit `8e43f115f070e6eb5cc19c5f5f7a53d0b8b88bed` and tree
+`9caa588992ae143be36f20ac6624d575e7a56e1f`. The reader-first PDF, deterministic
+ZIP, and checksum asset were anonymously downloaded and matched their local
+SHA-256 values. The receipt is `qa/PUBLICATION_RECEIPT_S132.json`, 1,974 bytes /
+SHA-256 `efc73077e2c3001b0a7932f2a12da418e2c6e423123be011a7cc9381736c6452`.
+Zenodo remains to be completed when its authenticated deposition endpoint
+recovers from the current 504 gateway failure; no duplicate concept was
+created.
+
 ## Authority versus inherited evidence
 
 The local authority hashes and expanded file/byte counts were independently

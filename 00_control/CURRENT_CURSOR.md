@@ -55,6 +55,16 @@ unchanged and are recorded in `qa/TERMINOLOGY_QA_INDONESIAN_FIELD.md` and
 `00_control/TERMINOLOGY_DECISIONS.md`; edition provenance states
 `OpenAI Codex gpt-5.6-sol, Ultra.`
 
+The S132 boundary is now public on GitHub at
+`https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.10.0-s132`.
+The exact boundary commit is `8e43f115f070e6eb5cc19c5f5f7a53d0b8b88bed`,
+tree `9caa588992ae143be36f20ac6624d575e7a56e1f`; the PDF, ZIP, and checksum
+assets passed anonymous byte/hash readback. The sanitized receipt is
+`qa/PUBLICATION_RECEIPT_S132.json` (1,974 bytes / SHA-256
+`efc73077e2c3001b0a7932f2a12da418e2c6e423123be011a7cc9381736c6452`). Zenodo
+publication remains the next preservation action; the 672-page goal remains
+active and the next source cursor is `mt133.tex`.
+
 ## Latest admitted boundary — S131
 
 `O007-FREMLIN-V1-S131`, `Measurable subspaces` → `Subruang terukur`, is
