@@ -9,29 +9,51 @@ Updated: 2026-08-23 (Europe/Berlin)
 | Corpus | `O007-FREMLIN-MT-V1-V2` |
 | Volume | `O007-FREMLIN-V1` — *The Irreducible Minimum* |
 | Chapter | `O007-FREMLIN-V1-C13` — *Complements* |
-| Unit | `O007-FREMLIN-V1-S132` |
+| Unit | `O007-FREMLIN-V1-S133` |
 | Source anchor | `132` |
-| Source title | `Outer measures from measures` |
-| Indonesian working title | `Ukuran luar dari ukuran` (working) |
-| Authority member | `authority/fremlin/source/mt1.2011/mt132.tex` |
-| Source receipt | 17,074 bytes; 437 lines; SHA-256 `5bb8e80daa8d659ba21fd24c1c123eb17c3f76ac57d4102438acbb2622659ed6` |
-| Target | `source/id-ID/mt132.tex` |
-| Target receipt | not yet produced |
-| Production status | `next_source_unit_ready` |
-| Target admitted | `false` |
+| Source title | `Outer measures from measures` (S132 admitted; S133 next) |
+| Indonesian working title | `Ukuran luar dari ukuran` (S132 admitted) |
+| Authority member | `authority/fremlin/source/mt1.2011/mt133.tex` (next) |
+| Source receipt | S132: 17,074 bytes; 437 lines; SHA-256 `5bb8e80daa8d659ba21fd24c1c123eb17c3f76ac57d4102438acbb2622659ed6` |
+| Target | `source/id-ID/mt133.tex` (next) |
+| Target receipt | S132 admitted in `00_control/CP0010_MT132_ADMISSION.md` |
+| Production status | `admitted_boundary_next_source_unit_ready` |
+| Target admitted | S132 `true`; S133 `false` |
 
-Section 131 is complete, admitted, and preserved as the current cumulative
-boundary. Its complete natural id-ID target, stable-ID backend, deterministic
-reader/PDF, full visual/browser QA, and admission evidence pass. The frozen
-source replay proves printed pages 56–58 and raises the cumulative unique
-official span to pages 10–58, or 49 of 672 pages. The next executable action is
-to translate `mt132.tex` in source order; the complete 672-page Volumes 1–2
-goal remains active.
+Section 132 is complete and admitted as the current cumulative boundary. Its
+complete natural id-ID target, stable-ID backend, deterministic reader/PDF,
+full visual/browser QA, and admission evidence pass. The frozen source replay
+proves printed pages 59–62 and raises the cumulative unique official span to
+pages 10–62, or 53 of 672 pages. The next executable action is to translate
+`mt133.tex` in source order; the complete 672-page Volumes 1–2 goal remains
+active.
 
 The earlier cursor labels `The indefinite integral` / `Upper integrals` were
 rejected on direct authority replay. Frozen `mt13.tex` and `mt131.tex` identify
 Chapter 13 as `Complements` and Section 131 as `Measurable subspaces`. This
 correction changes only the task cursor, not source content or corpus scope.
+
+## Latest admitted boundary — S132
+
+`O007-FREMLIN-V1-S132`, `Outer measures from measures` → `Ukuran luar dari
+ukuran`, is complete and admitted. Authority: 17,074 bytes / 437 lines /
+SHA-256 `5bb8e80daa8d659ba21fd24c1c123eb17c3f76ac57d4102438acbb2622659ed6`.
+Target: 18,431 bytes / 432 lines / SHA-256
+`84da1785a751ab999a41dbbfffab37a91cdd0ae83948d1c341162eae48fbc814`.
+
+The admitted cumulative reader covers sections 111–115, 121–123, 131, and
+132: 53 unique official pages (10–62) of the selected 672-page corpus, with a
+62-page A4 reflow PDF. The final PDF is 509,565 bytes,
+`62da29efbc6083c3db90be3afd7205b31ee3b0ba71efdfcabab024146c4724f3`; the
+deterministic ZIP is 6,032,906 bytes,
+`d5da98930dccc42e228b4098ddca4a26cb5563f1ba2c9312bc4ba13e0ab42316`.
+Admission evidence is `00_control/CP0010_MT132_ADMISSION.md` and the
+`qa/mt132-*` receipts. The next source-order cursor is `mt133.tex`.
+
+The one-time Indonesian terminology QA and its fallback evidence remain
+unchanged and are recorded in `qa/TERMINOLOGY_QA_INDONESIAN_FIELD.md` and
+`00_control/TERMINOLOGY_DECISIONS.md`; edition provenance states
+`OpenAI Codex gpt-5.6-sol, Ultra.`
 
 ## Latest admitted boundary — S131
 

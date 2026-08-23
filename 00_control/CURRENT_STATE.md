@@ -428,6 +428,30 @@ preserved. The GitHub publisher uses a NUL-delimited pathspec file and
 explicit `-f` only for the finite allowlist, avoiding Windows argv limits
 without broadening the publication scope.
 
+## Current admitted boundary — S132
+
+Section `O007-FREMLIN-V1-S132`, `Outer measures from measures` → `Ukuran luar
+dari ukuran`, is complete and admitted. The frozen authority member is 17,074
+bytes / 437 lines / SHA-256
+`5bb8e80daa8d659ba21fd24c1c123eb17c3f76ac57d4102438acbb2622659ed6`; the
+complete target is 18,431 bytes / 432 lines / SHA-256
+`84da1785a751ab999a41dbbfffab37a91cdd0ae83948d1c341162eae48fbc814`.
+Frozen pagination places S132 on printed pages 59–62, raising the cumulative
+unique official span to pages 10–62, or 53 of 672 pages. Complete structural,
+semantic, backend, PDF, and browser evidence is recorded in
+`00_control/CP0010_MT132_ADMISSION.md` and the `qa/mt132-*` receipts.
+
+The final cumulative reader is a 62-page A4 PDF, 509,565 bytes / SHA-256
+`62da29efbc6083c3db90be3afd7205b31ee3b0ba71efdfcabab024146c4724f3`; its
+deterministic ZIP is 6,032,906 bytes / SHA-256
+`d5da98930dccc42e228b4098ddca4a26cb5563f1ba2c9312bc4ba13e0ab42316`. The
+package manifest is 73,442 bytes / SHA-256
+`23a91c4c7ce037e0c8ee0b41f0734a7cd310779ca64bb9f7d702bba022dbcd48`, and
+the admitted reader receipt is `qa/mt132-reader-qa.json`, `pass: true`,
+`publication_ready: true`, `admission_issued: true`. The next source-order
+cursor is `authority/fremlin/source/mt1.2011/mt133.tex`; the global goal
+remains active.
+
 ## Authority versus inherited evidence
 
 The local authority hashes and expanded file/byte counts were independently
@@ -438,14 +462,15 @@ the Indonesian target build.
 
 ## Immediate production actions
 
-1. Continue source order at `mt132.tex` (17,074 bytes; SHA-256
-   `5bb8e80daa8d659ba21fd24c1c123eb17c3f76ac57d4102438acbb2622659ed6`),
-   preserving the admitted S131 boundary and terminology decisions.
+1. Publish the admitted S132 boundary to the existing Zenodo concept and
+   GitHub repository with anonymous byte/hash readback, then continue source
+   order at `mt133.tex`. Preserve the admitted S132 boundary and terminology
+   decisions.
 2. Publish each substantial verified cumulative boundary to the existing
    Zenodo concept and GitHub repository with anonymous byte/hash readback. Do
    not retry a Figshare file publication unless it exposes DSL/custom-license
    support or a compatible legal basis is established. The 672-page corpus
-   goal remains active and is not completed by S131.
+   goal remains active and is not completed by S132.
 
 ## Scope guard
 

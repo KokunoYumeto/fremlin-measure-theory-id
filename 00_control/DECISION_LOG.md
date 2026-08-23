@@ -198,3 +198,63 @@ link resolves, wide mobile mathematics remains locally scrollable without page
 overflow, and the 50-page PDF passes complete visual inspection. The production
 cursor advances to complete `mt123.tex`; the 672-page Volumes 1–2 goal remains
 active.
+
+## 2026-08-23 — D018: S132 terminology gate and verified pagination
+
+The one-time Indonesian field-terminology QA was completed before S132 reader
+admission. A bounded arXiv search found no suitable Indonesian-language
+measure-theory source with downloadable TeX; the exact Indonesian BAREKENG
+Lebesgue-integral PDF witness was therefore inspected directly and its terms
+were compared against the live glossary. The accepted decisions retain
+`ukuran luar`, `ruang ukur`, `ruang terukur`, `aljabar-sigma`, and
+`selubung terukur`, use `nonnegatif`, and keep `ukuran citra` as the internal
+image-measure preference. Evidence is frozen in
+`qa/mt132-terminology-gate.json`, `qa/TERMINOLOGY_QA_INDONESIAN_FIELD.md`,
+and `00_control/TERMINOLOGY_DECISIONS.md`; the edition metadata already states
+`OpenAI Codex gpt-5.6-sol, Ultra.` while preserving Fremlin and contributor
+credits.
+
+An independent replay of the frozen Volume 1 baseline corrects S132's printed
+pagination to pages 59–62 (four pages), with S131 ending on page 58 and S133
+beginning on page 63. The cumulative unique official span after S132 will
+therefore be pages 10–62, or 53 of the selected 672 pages. The receipt is
+`qa/mt132-pagination-evidence.json`; the earlier 58–60 estimate is superseded
+for accounting only.
+
+## 2026-08-23 — D019: Admit complete Section 132 and advance to Section 133
+
+The complete `mt132.tex` translation is admitted as
+`O007-FREMLIN-V1-S132`, `Outer measures from measures` → `Ukuran luar dari
+ukuran`. The frozen authority is 17,074 bytes / 437 lines / SHA-256
+`5bb8e80daa8d659ba21fd24c1c123eb17c3f76ac57d4102438acbb2622659ed6`; the
+target is 18,431 bytes / 432 lines / SHA-256
+`84da1785a751ab999a41dbbfffab37a91cdd0ae83948d1c341162eae48fbc814`.
+
+Structural and semantic replay preserve 381 mathematical atoms, 17 logical
+exercises, five hints, three proofs, six comments, 11 Centerline displays,
+and 55 protected cross-reference edges. The admitted unit backend has 515
+records and manifest SHA-256
+`871b1648f52ac4bf695811cd4c8d1ac7886324a84c62697e223b5fe31ea32541`; the
+admitted validator is `qa/mt132-backend-validation.json` (SHA-256
+`d3370acf1983499b44838b70f63066376e4739e6ec918cc66ed35a1ecbe6443d`).
+
+Independent PDF replay places S132 on printed pages 59–62 and raises the
+cumulative unique official span to pages 10–62, or 53 of 672 pages. All 62
+PDF pages and all 11 desktop/mobile HTML routes pass visual/browser QA with
+no clipping, page-level overflow, MathJax errors, raw delimiters, or console
+errors. The final PDF is 509,565 bytes / SHA-256
+`62da29efbc6083c3db90be3afd7205b31ee3b0ba71efdfcabab024146c4724f3`; the
+deterministic ZIP is 5,978,042 bytes / SHA-256
+`d5da98930dccc42e228b4098ddca4a26cb5563f1ba2c9312bc4ba13e0ab42316`; the
+package manifest is 73,442 bytes / SHA-256
+`23a91c4c7ce037e0c8ee0b41f0734a7cd310779ca64bb9f7d702bba022dbcd48`.
+The final build and reader receipts pass and issue admission; immutable visual
+receipts are `qa/mt132-pdf-visual-qa-r3.json` and
+`qa/mt132-browser-visual-qa-r3.json`.
+
+No upstream contact occurred. The existing Design Science License boundary,
+component attributions, and required edition provenance
+`OpenAI Codex gpt-5.6-sol, Ultra.` are retained. The next executable cursor is
+`authority/fremlin/source/mt1.2011/mt133.tex`; the complete 672-page goal
+remains active. Publication to the existing Zenodo concept and GitHub lineage
+is the next authorized action.

@@ -1,0 +1,650 @@
+\frfilename{mt114.tex}
+\versiondate{14.6.05}
+\copyrightdate{1994}
+
+\def\chaptername{Ruang ukur}
+\def\sectionname{Ukuran Lebesgue pada $\Bbb R$}
+
+\newsection{114}
+\def\headlinesectionname{Ukuran Lebesgue pada ${\eightBbb R}$}
+
+Sesudah gagasan-gagasan yang sangat abstrak dalam \S\S111-113, kita
+sangat memerlukan sebuah contoh ruang ukur yang taktrivial. Contoh yang
+jauh lebih penting daripada contoh-contoh lain adalah garis real dengan
+ukuran Lebesgue, dan
+sekarang saya akan menguraikan ukuran ini (114A-114E), beserta beberapa
+sifat dasarnya.
+
+Gagasan-gagasan utama dalam bagian ini diulangi dalam \S115, dan jika
+Anda pernah menjumpai ukuran Lebesgue sebelumnya, atau merasa yakin
+dapat menangani ruang berdimensi dua dan tiga sekaligus melakukan
+analisis yang cukup sulit, Anda dapat langsung menuju bagian tersebut
+dan kembali ke bagian ini hanya ketika diberikan rujukan khusus.
+
+\leader{114A}{Definisi (a)} Untuk keperluan bagian ini, sebuah {\bf
+interval setengah terbuka} dalam $\Bbb R$ adalah himpunan berbentuk
+$\coint{a,b}=\{x:a\le x<b\}$, dengan $a$, $b\in\Bbb R$.
+
+\cmmnt{Perhatikan bahwa saya mengizinkan $b\le a$ dalam rumus ini;
+dalam hal ini $\coint{a,b}=\emptyset$ (lihat 1A1A).}
+
+\header{114Ab}{\bf (b)}\cmmnt{ Jika $I\subseteq \Bbb R$ adalah interval
+setengah terbuka, maka
+$I=\emptyset$ atau $I=\coint{\inf I,\sup I}$, sehingga titik-titik
+ujungnya terdefinisi dengan baik.} Kita\cmmnt{ karena itu dapat}
+mendefinisikan {\bf panjang} $\lambda I$ dari interval setengah terbuka
+$I$ dengan menetapkan
+
+\Centerline{$\lambda\emptyset = 0$,
+\quad $\lambda\coint{a,b}=b-a$ jika $a<b$.}
+
+\leader{114B}{Lema} Jika $I\subseteq\Bbb R$ adalah interval setengah
+terbuka dan $\langle I_j\rangle_{j\in\Bbb N}$ adalah barisan interval
+setengah terbuka yang menutupi $I$, maka
+$\lambda I\le\sum_{j=0}^{\infty}\lambda I_j$.
+
+\proof{{\bf (a)}
+Jika $I=\emptyset$, tentu saja
+$\lambda I=0\le\sum_{j=0}^{\infty}\lambda I_j$. Jika tidak, ambil
+$I=\coint{a,b}$, dengan $a<b$. Untuk setiap $x\in \Bbb R$, misalkan
+$H_x$ adalah setengah garis $\ooint{-\infty,x}$, dan tinjau himpunan
+
+\Centerline{$A=\{x:a\le x\le b,\,
+x-a\le\sum_{j=0}\sp{\infty}\lambda(I_j\cap
+H_x)\}$.}
+
+\noindent (Perhatikan bahwa jika $I_j=\coint{c_j,d_j}$, maka $I_j\cap
+H_x=\coint{c_j,\min(d_j,x)}$, sehingga $\lambda(I_j\cap H_x)$ selalu
+terdefinisi.) Kita mempunyai $a\in A$ (karena
+$a-a=0\le\sum_{j=0}\sp{\infty}\lambda(I_j\cap
+H_a)$) dan tentu saja $A\subseteq[a,b]$, sehingga $c=\sup A$
+terdefinisi dan termasuk dalam $[a,b]$.
+
+\medskip
+
+{\bf (b)} Sekarang kita dapati bahwa $c\in A$.
+
+\prooflet{
+
+$$\eqalign{\Prf\ c-a&=\sup_{x\in A}x-a\cr
+&\le\sup_{x\in A}\sum_{j=0}^{\infty}\lambda(I_j\cap H_x)
+\le\sum_{j=0}^{\infty}\lambda(I_j\cap H_c). \text{ \Qed}\cr}$$
+}
+
+\medskip
+
+{\bf (c)} \Quer\ Andaikan, jika mungkin, bahwa $c<b$. Maka $c\in
+\coint{a,b}$, sehingga terdapat suatu $k\in\Bbb N$ sedemikian sehingga
+$c\in I_k$. Nyatakan $I_k$ sebagai $\coint{c_k,d_k}$; maka
+$x=\min(d_k,b)>c$. Untuk setiap $j$,
+$\lambda(I_j\cap H_x)\ge\lambda(I_j\cap H_c)$, sedangkan
+
+\Centerline{$\lambda(I_k\cap H_x)=\lambda(I_k\cap H_c)+x-c$.}
+
+\noindent Jadi
+
+$$\eqalign{\sum_{j=0}^{\infty}\lambda(I_j\cap H_x)
+&\ge\sum_{j=0}^{\infty}\lambda(I_j\cap H_c)+x-c\cr
+&\ge c-a+x-c
+=x-a,\cr}$$
+
+\noindent sehingga $x\in A$; tetapi $x>c$ dan $c=\sup A$. \Bang
+
+\medskip
+
+{\bf (d)} Kita menyimpulkan bahwa $c=b$, sehingga $b\in A$ dan
+
+\Centerline{$b-a\le\sum_{j=0}^{\infty}\lambda(I_j\cap
+H_b)\le\sum_{j=0}^{\infty}\lambda I_j$,}
+
+\noindent sebagaimana diklaim.
+}%end of proof of 114B
+
+
+\vleader{36pt}{114C}{Definisi} Sekarang\cmmnt{, dan untuk seluruh sisa
+bagian ini,} definisikan $\theta:\Cal P\Bbb R\to[0,\infty]$ dengan
+menetapkan
+
+$$\eqalign{\theta A=\inf\{\sum_{j=0}\sp{\infty}\lambda I_j:\langle
+I_j\rangle_{j\in\Bbb N}
+\text{ adalah barisan }&\text{interval setengah terbuka}\cr
+&\text{sedemikian sehingga }
+A\subseteq\bigcup_{j\in\Bbb N}I_j\}.\cr}$$
+
+\noindent\cmmnt{Perhatikan bahwa setiap $A$ dapat ditutupi oleh suatu
+barisan interval setengah terbuka --- misalnya,
+$A\subseteq\bigcup_{n\in\Bbb N}\coint{-n,n}$; sehingga jika kita
+menafsirkan jumlah-jumlahnya dalam $[0,\infty]$, seperti dalam 112Bc di
+atas, kita selalu mempunyai himpunan tak kosong yang infimumnya dapat
+diambil, dan $\theta A$ selalu terdefinisi dalam $[0,\infty]$.
+Fungsi ini} $\theta$ disebut {\bf ukuran luar Lebesgue} pada
+$\Bbb R$\cmmnt{; frasa ini dibenarkan oleh (a) dari proposisi
+berikutnya}.
+
+
+
+\leader{114D}{Proposisi} (a) $\theta$ adalah ukuran luar pada $\Bbb R$.
+
+(b) $\theta I=\lambda I$ untuk setiap interval setengah terbuka
+$I\subseteq\Bbb R$.
+
+\proof{{\bf (a)(i)} $\theta$ mengambil nilai dalam $[0,\infty]$
+karena setiap $\theta A$ merupakan infimum suatu subhimpunan tak kosong
+dari $[0,\infty]$.
+
+\medskip
+
+\quad{\bf (ii)} $\theta\emptyset=0$ karena (misalnya) jika kita
+menetapkan $I_j=\emptyset$ untuk setiap $j$, maka setiap $I_j$ adalah
+interval setengah terbuka (menurut kesepakatan yang saya gunakan) dan
+$\emptyset\subseteq\bigcup_{j\in\Bbb N}I_j$,
+$\sum_{j=0}\sp{\infty}\lambda I_j=0$.
+
+\medskip
+
+\quad{\bf (iii)} Jika $A\subseteq B$, maka setiap kali
+$B\subseteq\bigcup_{j\in\Bbb N}I_j$ kita mempunyai
+$A\subseteq\bigcup_{j\in\Bbb N}I_j$, sehingga $\theta A$ adalah
+infimum suatu himpunan yang sekurang-kurangnya sama besar dengan
+himpunan yang terlibat dalam definisi $\theta B$, dan
+$\theta A\le\theta B$.
+
+\medskip
+
+\quad{\bf (iv)} Sekarang andaikan bahwa
+$\langle A_n\rangle_{n\in\Bbb N}$ adalah barisan subhimpunan
+$\Bbb R$, dengan gabungan $A$. Untuk setiap $\epsilon>0$, kita dapat
+memilih, bagi setiap $n\in\Bbb N$, suatu barisan
+$\langle I_{nj}\rangle_{j\in\Bbb N}$ yang terdiri atas interval
+setengah terbuka sedemikian sehingga
+$A_n\subseteq\bigcup_{j\in\Bbb N}I_{nj}$ dan
+$\sum_{j=0}\sp{\infty}\lambda I_{nj}\le\theta A_n+2^{-n}\epsilon$.
+(Anda mungkin perlu memeriksa bahwa perumusan ini sah, baik ketika
+$\theta A_n$ berhingga maupun tak hingga.) Menurut 111F(b-ii), terdapat
+bijeksi dari $\Bbb N$ ke $\Bbb N\times\Bbb N$; nyatakan bijeksi ini
+dalam bentuk $m\mapsto(k_m,l_m)$. Maka
+$\sequence{m}{I_{k_m,l_m}}$ adalah barisan interval setengah terbuka,
+dan
+
+\Centerline{$A\subseteq\bigcup_{m\in\Bbb N}I_{k_m,l_m}$.}
+
+\noindent \Prf\ Jika $x\in A=\bigcup_{n\in\Bbb N}A_n$, harus ada
+$n\in\Bbb N$ sedemikian sehingga
+$x\in A_n\subseteq\bigcup_{j\in\Bbb N}I_{nj}$, sehingga terdapat
+$j\in\Bbb N$ sedemikian sehingga $x\in I_{nj}$. Karena
+$m\mapsto(k_m,l_m)$ surjektif, terdapat $m\in\Bbb N$ sedemikian sehingga
+$k_m=n$ dan $l_m=j$; dalam hal ini $x\in I_{k_m,l_m}$.\ \Qed
+
+Selanjutnya,
+
+\Centerline{$\sum_{m=0}\sp{\infty}\lambda I_{k_m,l_m}
+\le\sum_{n=0}\sp{\infty}\sum_{j=0}\sp{\infty}\lambda I_{nj}$.}
+
+\noindent \Prf\ Jika $M\in\Bbb N$, maka
+$N=\max(k_0,k_1,\ldots,k_M,l_0,l_1,\ldots,l_M)$ berhingga; karena
+setiap $\lambda I_{nj}$ lebih besar daripada atau sama dengan $0$, dan
+setiap pasangan $(n,j)$ dapat muncul paling banyak sekali sebagai suatu
+$(k_m,l_m)$,
+
+\Centerline{$\sum_{m=0}^M\lambda I_{k_m,l_m}
+\le\sum_{n=0}^N\sum_{j=0}^N\lambda I_{nj}
+\le\sum_{n=0}^N\sum_{j=0}^{\infty}\lambda I_{nj}
+\le\sum_{n=0}^{\infty}\sum_{j=0}^{\infty}\lambda I_{nj}$.}
+
+\noindent Jadi
+
+\Centerline{$\sum_{m=0}^{\infty}\lambda I_{k_m,l_m}
+=\lim_{M\to\infty}\sum_{m=0}^M\lambda I_{k_m,l_m}
+\le\sum_{n=0}^{\infty}\sum_{j=0}^{\infty}\lambda I_{nj}$. \Qed}
+
+Dengan demikian
+
+$$\eqalign{\theta A
+&\le\sum_{m=0}\sp{\infty}\lambda I_{k_m,l_m}\cr
+&\le\sum_{n=0}\sp{\infty}\sum_{j=0}\sp{\infty}\lambda I_{nj}\cr
+&\le\sum_{n=0}\sp{\infty}(\theta A_n+2^{-n}\epsilon)\cr
+&=\sum_{n=0}\sp{\infty}\theta A_n+\sum_{n=0}\sp{\infty}2^{-n}\epsilon\cr
+&=\sum_{n=0}\sp{\infty}\theta A_n+2\epsilon.\cr}$$
+
+\noindent Karena $\epsilon$ sebarang,
+$\theta A\le\sum_{n=0}\sp{\infty}\theta A_n$ (sekali lagi, Anda
+sebaiknya memeriksa bahwa ini sah, baik
+$\sum_{n=0}\sp{\infty}\theta A_n$ berhingga maupun tidak).
+Karena $\langle A_n\rangle_{n\in\Bbb N}$ sebarang, $\theta$ adalah
+ukuran luar.
+
+\medskip
+
+{\bf (b)} Karena kita selalu dapat mengambil $I_0=I$ dan
+$I_j=\emptyset$ untuk $j\ge 1$, untuk memperoleh barisan interval
+setengah terbuka yang menutupi $I$ dengan
+$\sum_{j=0}\sp{\infty}\lambda I_j=\lambda I$, kita tentu mempunyai
+$\theta I\le\lambda I$. Untuk ketaksamaan sebaliknya, gunakan 114B:
+jika $I\subseteq\bigcup_{j\in\Bbb N}I_j$, maka
+$\lambda I\le\sum_{j=0}^{\infty}\lambda I_j$; karena
+$\langle I_j\rangle_{j\in\Bbb N}$ sebarang,
+$\theta I\ge\lambda I$ dan $\theta I=\lambda I$, sebagaimana
+diperlukan.
+}%end of proof of 114D
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Terdapat suatu peralihan yang kurang luwes dalam
+argumen (a-iv) di atas, pada tahap
+
+\Centerline{`$\theta A\le\sum_{m=0}^{\infty}\lambda
+I_{k_m,l_m}\le\sum_{n=0}^{\infty}\sum_{j=0}^{\infty}\lambda I_{nj}$'.}
+
+\noindent Saya kira Anda akan memercayai saya seandainya saya
+menghilangkan $k_m$, $l_m$ sama sekali dan sekadar menulis
+`karena $A\subseteq\bigcup_{n,j\in\Bbb N}I_{nj}$, maka
+$\theta A\le\sum_{n=0}^{\infty}\sum_{j=0}^{\infty}\lambda I_{nj}$'.
+Saya harap Anda tidak terlalu berkecil hati jika saya mengatakan bahwa
+lompatan semacam itu tidak sepenuhnya aman. Alasan saya menyisipkan nama
+untuk suatu bijeksi antara $\Bbb N$ dan $\Bbb N\times\Bbb N$, serta
+mengambil beberapa baris untuk menyatakan secara eksplisit bahwa
+$\sum_{m=0}^{\infty}\lambda
+I_{k_m,l_m}\le\sum_{n=0}^{\infty}\sum_{j=0}^{\infty}\lambda I_{nj}$,
+adalah sebagai berikut. Pertama-tama, ada persoalan formal bahwa
+definisi 114C menuntut suatu barisan tunggal, bukan barisan ganda.
+Benarkah jelas bahwa hal itu tidak berpengaruh di sini? Jika demikian,
+mengapa? Tidak mungkin ada cara untuk membenarkan peralihan itu tanpa
+bergantung pada fakta bahwa $\Bbb N\times\Bbb N$ terhitung dan setiap
+$\lambda I_{nj}$ nonnegatif.
+Jika salah satu fakta tersebut tidak benar, metode ini akan sangat
+berisiko gagal.
+
+Pada suatu saat kita tentu perlu membahas jumlah atas himpunan indeks
+tak hingga selain $\Bbb N$, termasuk himpunan indeks tak terhitung. Saya
+telah menyinggungnya dalam 112Bd, dan akan kembali membahasnya dalam
+226A di Jilid 2.
+Untuk saat ini, saya merasa kita sudah mempunyai cukup banyak gagasan
+baru untuk ditangani, dan yang kita perlukan di sini adalah siasat yang
+cukup jujur untuk menangani persoalan yang langsung berada di hadapan
+kita.
+
+Anda mungkin telah memperhatikan, atau menduga, bahwa beberapa
+ketaksamaan `$\le$' di sini sebenarnya harus merupakan kesamaan;
+jika demikian, periksa dugaan Anda dalam 114Ya.
+}%end of comment
+
+\leader{114E}{Definisi} Karena ukuran luar Lebesgue\cmmnt{ (114C)}
+adalah\cmmnt{ memang} ukuran luar\cmmnt{ (114Da)}, kita dapat
+menggunakannya untuk mengonstruksi suatu ukuran $\mu$, dengan metode
+\Caratheodory\cmmnt{ (113C)}.
+Ukuran ini adalah {\bf ukuran Lebesgue pada $\Bbb R$}.
+Himpunan-himpunan $E$ yang diukur oleh $\mu$\cmmnt{ (yakni, yang
+memenuhi $\theta(A\cap E)+\theta(A\setminus E)=\theta A$ untuk setiap
+$A\subseteq\Bbb R$)} disebut {\bf terukur Lebesgue}.
+
+Himpunan-himpunan yang terabaikan untuk $\mu$ disebut {\bf terabaikan
+Lebesgue}\cmmnt{; perhatikan bahwa himpunan-himpunan ini tepatlah
+himpunan $A$ yang memenuhi $\theta A=0$, dan semuanya terukur Lebesgue
+(113Xa)}.
+
+
+
+\leader{114F}{Lema} Misalkan $x\in\Bbb R$. Maka
+$H_x=\ooint{-\infty,x}$ terukur Lebesgue untuk setiap $x\in\Bbb R$.
+
+\proof{{\bf (a)} Intinya adalah bahwa
+$\lambda I=\lambda(I\cap H_x)+\lambda(I\setminus H_x)$ untuk setiap
+interval setengah terbuka $I\subseteq\Bbb R$. \Prf\ Jika
+$I\subseteq H_x$ atau $I\cap H_x=\emptyset$, hal ini langsung jelas.
+Jika tidak, $I$ harus berbentuk $\coint{a,b}$, dengan $a<x<b$.
+Sekarang $I\cap H_x=\coint{a,x}$ dan
+$I\setminus H_x=\coint{x,b}$ keduanya merupakan interval setengah
+terbuka, dan
+
+\Centerline{$\lambda(I\cap H_x)+\lambda(I\setminus H_x)=(x-a)+(b-x)
+=b-a=\lambda I$. \Qed}
+
+\medskip
+
+{\bf (b)} Sekarang andaikan bahwa $A$ adalah sembarang subhimpunan
+$\Bbb R$, dan $\epsilon>0$. Maka kita dapat menemukan barisan
+$\langle I_j\rangle_{j\in\Bbb N}$ yang terdiri atas interval setengah
+terbuka sedemikian sehingga
+$A\subseteq\bigcup_{j\in\Bbb N}I_j$ dan
+$\sum_{j=0}^{\infty}\lambda I_j\le\theta A+\epsilon$. Sekarang
+$\langle I_j\cap H_x\rangle_{j\in\Bbb N}$ dan
+$\langle I_j\setminus H_x\rangle_{j\in\Bbb N}$ adalah barisan
+interval setengah terbuka, serta
+$A\cap H_x\subseteq\bigcup_{j\in\Bbb N}(I_j\cap H_x)$,
+$A\setminus H_x\subseteq\bigcup_{j\in\Bbb N}(I_j\setminus H_x)$.
+Jadi
+
+$$\eqalign{\theta(A\cap H_x)+\theta(A\setminus H_x)
+&\le\sum_{j=0}^{\infty}\lambda(I_j\cap
+H_x)+\sum_{j=0}^{\infty}\lambda(I_j\setminus H_x) \cr
+&=\sum_{j=0}^{\infty}\lambda I_j
+\le\theta A+\epsilon.\cr}$$
+
+\noindent Karena $\epsilon$ sebarang,
+$\theta(A\cap H_x)+\theta(A\setminus H_x)\le\theta A$;
+karena $A$ sebarang, $H_x$ terukur, sebagaimana dicatat dalam 113D.
+}%end of proof of 114F
+
+\leader{114G}{Proposisi} Semua subhimpunan Borel dari $\Bbb R$ terukur
+Lebesgue; khususnya, semua himpunan terbuka dan semua himpunan dari
+kelas-kelas berikut, beserta gabungan terhitung dari himpunan-himpunan
+tersebut:
+
+(i) interval terbuka $\left]a,b\right[$,
+$\left]-\infty,b\right[$, $\left]a,\infty\right[$,
+$\left]-\infty,\infty\right[$, dengan $a<b\in\Bbb R$;
+
+(ii) interval tertutup $[a,b]$, dengan $a\le b\in\Bbb R$;
+
+(iii) interval setengah terbuka $\left[a,b\right[$,
+$\left]a,b\right]$, $\left]-\infty,b\right]$,
+$\left[a,\infty\right[$, dengan $a<b$ dalam $\Bbb R$.
+
+\noindent Kita\cmmnt{ juga} mempunyai rumus berikut untuk ukuran
+himpunan-himpunan tersebut, dengan $\mu$ menyatakan ukuran Lebesgue:
+
+\Centerline{$\mu\left]a,b\right[=\mu[a,b]
+=\mu\left[a,b\right[=\mu\left]a,b\right]=b-a$}
+
+\noindent setiap kali $a\le b$ dalam $\Bbb R$, sedangkan semua interval
+tak berbatas mempunyai ukuran tak hingga. Akibatnya, setiap subhimpunan
+terhitung dari $\Bbb R$ terukur dan berukuran nol.
+
+
+\proof{{\bf (a)} Pertama-tama saya tunjukkan bahwa semua subhimpunan
+terbuka dari $\Bbb R$ terukur. \Prf\ Misalkan
+$G\subseteq\Bbb R$ terbuka. Misalkan $K\subseteq\Bbb Q\times\Bbb Q$
+adalah himpunan pasangan $(q,q')$ bilangan rasional sedemikian sehingga
+$\coint{q,q'}\subseteq G$. Sekarang, menurut catatan dalam 111E-111F
+--- khususnya, 111Eb, yang menunjukkan bahwa $\Bbb Q$ terhitung,
+111F(b-iii), yang menunjukkan bahwa produk himpunan-himpunan terhitung
+adalah terhitung, dan 111F(b-i), yang menunjukkan bahwa subhimpunan dari
+himpunan terhitung adalah terhitung --- kita melihat bahwa $K$
+terhitung. Selain itu, setiap $\coint{q,q'}$ terukur, karena merupakan
+$H_{q'}\setminus H_q$ dalam notasi 114F. Jadi, menurut 111Fa,
+$G'=\bigcup_{(q,q')\in K}\coint{q,q'}$ terukur.
+
+Menurut definisi $K$, $G'\subseteq G$. Di pihak lain, jika $x\in G$,
+terdapat $\epsilon>0$ sedemikian sehingga
+$\ooint{x-\epsilon,x+\epsilon}\subseteq G$.
+Sekarang terdapat bilangan-bilangan rasional
+$q\in\ocint{x-\epsilon,x}$ dan $q'\in\ocint{x,x+\epsilon}$, sehingga
+$(q,q')\in K$ dan $x\in\coint{q,q'}\subseteq G'$.
+Karena $x$ sebarang, $G=G'$ dan $G$ terukur.\ \Qed
+
+\medskip
+
+{\bf (b)} Sekarang keluarga $\Sigma$ dari himpunan-himpunan terukur
+Lebesgue adalah aljabar-$\sigma$ atas subhimpunan-subhimpunan $\Bbb R$
+yang memuat keluarga himpunan terbuka, sehingga harus memuat setiap
+himpunan Borel, menurut definisi himpunan Borel (111G).
+\medskip
+
+{\bf (c)} Di antara jenis-jenis interval yang ditinjau, semua interval
+terbuka memang merupakan himpunan terbuka, sehingga tentu merupakan
+himpunan Borel. Komplemen suatu interval tertutup dapat dinyatakan
+sebagai gabungan paling banyak dua interval terbuka, sehingga merupakan
+himpunan Borel, dan interval tertutup itu sendiri, sebagai komplemen
+suatu himpunan Borel, juga merupakan himpunan Borel. Interval setengah
+terbuka yang berbatas dapat dinyatakan sebagai irisan suatu interval
+terbuka dengan suatu interval tertutup, sehingga merupakan himpunan
+Borel; akhirnya, interval tak berbatas yang berbentuk
+$\left]-\infty,b\right]$ atau $\left[a,\infty\right[$ adalah komplemen
+suatu interval terbuka, sehingga juga merupakan himpunan Borel.
+
+\medskip
+
+{\bf (d)} Untuk menghitung ukurannya, dari 114Db kita sudah mengetahui
+bahwa
+
+\Centerline{$\mu\coint{a,b}=\theta\coint{a,b}=b-a$}
+
+\noindent jika $a\le b$. Untuk jenis-jenis interval berbatas lainnya,
+cukup diperhatikan bahwa $\mu\{a\}=0$ untuk setiap $a\in\Bbb R$, sebab
+interval-interval tersebut hanya berbeda pada satu atau dua titik; dan
+ini benar karena $\{a\}\subseteq\coint{a,a+\epsilon}$,
+sehingga $\mu\{a\}\le\epsilon$, untuk setiap $\epsilon>0$.
+
+Adapun interval-interval tak berbatas, interval-interval itu memuat
+interval setengah terbuka yang panjangnya sebesar apa pun, sehingga
+harus mempunyai ukuran tak hingga.
+
+\medskip
+
+{\bf (e)} Sebagaimana baru saja dicatat, $\mu\{a\}=0$ untuk setiap
+$a$. Jika $A\subseteq\Bbb R$ terhitung, maka himpunan tersebut kosong
+atau dapat dinyatakan sebagai $\{a_n:n\in\Bbb N\}$. Dalam kasus pertama,
+$\mu A=\mu\emptyset=0$; dalam kasus kedua,
+$A=\bigcup_{n\in\Bbb N}\{a_n\}$ adalah himpunan Borel dan
+$\mu A\le\sum_{n=0}^{\infty}\mu\{a_n\}=0$.
+}%end of proof of 114G
+
+\exercises{
+\leader{114X}{Latihan dasar $\pmb{>}$(a)} Misalkan
+$g:\Bbb R\to\Bbb R$ sembarang fungsi tak-menurun. Untuk interval
+setengah terbuka $I\subseteq\Bbb R$, definisikan $\lambda_gI$ dengan
+menetapkan
+
+\Centerline{$\lambda_g\emptyset=0$,\quad
+$\lambda_g\coint{a,b}
+=\lim_{x\uparrow b}g(x)-\lim_{x\uparrow a}g(x)$}
+
+\noindent jika $a<b$. Untuk setiap himpunan $A\subseteq\Bbb R$,
+tetapkan
+
+$$\eqalign{\theta_gA=\inf\{\sum_{j=0}\sp{\infty}\lambda_gI_j:\langle
+I_j\rangle_{j\in\Bbb N}
+\text{ adalah barisan }&\text{interval setengah terbuka}\cr
+&\text{sedemikian sehingga }
+A\subseteq\bigcup_{j\in\Bbb N}I_j\}.\cr}$$
+
+\noindent Tunjukkan bahwa $\theta_g$ adalah ukuran luar pada $\Bbb R$.
+Misalkan $\mu_g$ ukuran yang didefinisikan dari $\theta_g$ dengan metode
+\Caratheodory; tunjukkan bahwa $\mu_gI$ terdefinisi dan sama dengan
+$\lambda_gI$ untuk setiap interval setengah terbuka
+$I\subseteq\Bbb R$, dan bahwa setiap subhimpunan Borel dari $\Bbb R$
+termasuk dalam domain $\mu_g$.
+
+($\mu_g$ adalah ukuran {\bf Lebesgue-Stieltjes} yang terkait dengan
+$g$.)
+
+\spheader 114Xb Pada titik mana argumen 114Xa akan gagal jika kita
+menuliskan $\lambda_g\coint{a,b}=g(b)-g(a)$ alih-alih menggunakan rumus
+yang diberikan?
+
+\sqheader 114Xc Tuliskan $\theta$ untuk ukuran luar Lebesgue dan $\mu$
+untuk ukuran Lebesgue pada $\Bbb R$. Tunjukkan bahwa
+$\theta A=\inf\{\mu E:E$ terukur Lebesgue, $A\subseteq E\}$ untuk
+setiap $A\subseteq\Bbb R$.
+\Hint{Tinjau himpunan-himpunan $E$ berbentuk
+$\bigcup_{j\in\Bbb N}I_j$, dengan $\sequence{j}{I_j}$ suatu barisan
+interval setengah terbuka.}
+
+\spheader 114Xd Misalkan $X$ suatu himpunan, $\Cal I$ suatu keluarga
+subhimpunan $X$ sedemikian sehingga $\emptyset\in\Cal I$, dan
+$\lambda:\Cal I\to\coint{0,\infty}$ suatu fungsi sedemikian sehingga
+$\lambda\emptyset=0$. Definisikan $\theta:\Cal PX\to[0,\infty]$ dengan
+menetapkan
+
+\Centerline{$\theta A=\inf\{\sum_{j=0}\sp{\infty}\lambda I_j:\langle
+I_j\rangle_{j\in\Bbb N}
+\text{ adalah barisan di dalam }\Cal I\text{ sedemikian sehingga }
+A\subseteq\bigcup_{j\in\Bbb N}I_j\}$,}
+
+\noindent dengan menafsirkan $\inf\emptyset$ sebagai $\infty$, sehingga
+$\theta A=\infty$ jika $A$ tidak ditutupi oleh barisan mana pun di
+dalam $\Cal I$. Tunjukkan bahwa $\theta$ adalah ukuran luar pada $X$.
+
+\spheader 114Xe Misalkan $E\subseteq\Bbb R$ suatu himpunan yang
+mempunyai ukuran berhingga menurut ukuran Lebesgue $\mu$. Tunjukkan
+bahwa untuk setiap
+$\epsilon>0$ terdapat keluarga saling lepas $I_0,\ldots,I_n$ yang
+terdiri atas interval setengah terbuka sedemikian sehingga
+$\mu(E\symmdiff\bigcup_{j\le n}I_j)\le\epsilon$. \Hint{misalkan
+$\langle J_j\rangle_{j\in\Bbb N}$ suatu barisan interval setengah
+terbuka sedemikian sehingga
+$E\subseteq\bigcup_{j\in\Bbb N}J_j$ dan
+$\sum_{j=0}^{\infty}\mu J_j\le\mu E+\bover{1}{2}\epsilon$. Sekarang
+ambil $m$ yang cukup besar dan nyatakan $\bigcup_{j\le m}J_j$ sebagai
+gabungan saling lepas interval-interval setengah terbuka.}
+
+\sqheader 114Xf Tuliskan $\theta$ untuk ukuran luar Lebesgue dan $\mu$
+untuk ukuran Lebesgue pada $\Bbb R$. Andaikan $c\in\Bbb R$. Tunjukkan
+bahwa $\theta(A+c)=\theta A$ untuk setiap $A\subseteq\Bbb R$, dengan
+$A+c=\{x+c:x\in A\}$. Tunjukkan bahwa jika
+$E\subseteq \Bbb R$ terukur, maka $E+c$ juga terukur, dan dalam hal ini
+$\mu(E+c)=\mu E$.
+
+\spheader 114Xg Tuliskan $\theta$ untuk ukuran luar Lebesgue dan $\mu$
+untuk ukuran Lebesgue pada $\Bbb R$. Andaikan $c>0$. Tunjukkan bahwa
+$\theta(cA)=c\theta(A)$ untuk setiap $A\subseteq\Bbb R$, dengan
+$cA=\{cx:x\in A\}$.
+Tunjukkan bahwa jika $E\subseteq \Bbb R$ terukur, maka $cE$ juga
+terukur, dan dalam hal ini $\mu(cE)=c\mu E$.
+
+\leader{114Y}{Latihan lanjutan (a)}
+%\spheader 114Ya
+Dalam (a-iv) dari bukti 114D, tunjukkan bahwa
+$\sum_{m=0}^{\infty}\lambda I_{k_m,l_m}$ sebenarnya sama dengan
+$\sum_{n=0}^{\infty}\sum_{j=0}^{\infty}\lambda I_{nj}$.
+
+\spheader 114Yb Misalkan $g$, $h:\Bbb R\to\Bbb R$ dua fungsi
+tak-menurun, dengan jumlah $g+h$; misalkan
+$\mu_g$, $\mu_h$, $\mu_{g+h}$ ukuran-ukuran Lebesgue-Stieltjes yang
+bersesuaian (114Xa). Tunjukkan bahwa
+
+\Centerline{$\dom\mu_{g+h}=\dom\mu_g\cap\dom\mu_h$,
+\quad$\mu_{g+h}E=\mu_gE+\mu_hE$ untuk setiap $E\in\dom\mu_{g+h}$.}
+\spheader 114Yc Misalkan $\sequencen{g_n}$ suatu barisan fungsi
+tak-menurun dari $\Bbb R$ ke $\Bbb R$, dan andaikan bahwa
+$g(x)=\sum_{n=0}^{\infty}g_n(x)$ terdefinisi dan berhingga untuk setiap
+$x\in\Bbb R$. Misalkan $\mu_{g_n}$, $\mu_g$ ukuran-ukuran
+Lebesgue-Stieltjes yang bersesuaian. Tunjukkan bahwa
+
+\Centerline{$\dom\mu_g=\bigcap_{n\in\Bbb N}\dom\mu_{g_n}$,
+\quad$\mu_gE=\sum_{n=0}^{\infty}\mu_{g_n}E$ untuk setiap $E\in\dom\mu_g$.}
+
+\spheader 114Yd(i) Tunjukkan bahwa jika $A\subseteq\Bbb R$ dan
+$\epsilon>0$, terdapat himpunan terbuka $G\supseteq A$ sedemikian
+sehingga $\theta G\le\theta A+\epsilon$, dengan $\theta$ ukuran luar
+Lebesgue. (ii) Tunjukkan bahwa jika $E\subseteq\Bbb R$ terukur Lebesgue
+dan $\epsilon>0$, terdapat himpunan terbuka $G\supseteq E$ sedemikian
+sehingga $\mu(G\setminus E)\le\epsilon$, dengan $\mu$ ukuran Lebesgue.
+\Hint{tinjau terlebih dahulu kasus $E$ berbatas.} (iii) Tunjukkan bahwa
+jika $E\subseteq\Bbb R$ terukur Lebesgue, terdapat himpunan-himpunan
+Borel $H_1$, $H_2$ sedemikian sehingga $H_1\subseteq E\subseteq H_2$
+dan $\mu(H_2\setminus E)=\mu(E\setminus H_1)=0$.
+\Hint{gunakan (ii) untuk menemukan $H_2$, lalu tinjau komplemen $E$.}
+
+\spheader 114Ye Tuliskan $\theta$ untuk ukuran luar Lebesgue pada
+$\Bbb R$. Tunjukkan bahwa suatu himpunan $E\subseteq\Bbb R$ terukur
+Lebesgue jika dan hanya jika
+$\theta([-n,n]\cap E)+\theta([-n,n]\setminus E)=2n$ untuk setiap
+$n\in\Bbb N$. \Hint{Gunakan 114Yd untuk menunjukkan bahwa bagi setiap
+$n$ terdapat himpunan-himpunan terukur $F_n$, $H_n$ sedemikian sehingga
+$F_n\subseteq[-n,n]\cap E\subseteq H_n$ dan $H_n\setminus F_n$
+terabaikan.}
+
+\spheader 114Yf Ulangi 114Xc dan 114Yd-114Ye untuk ukuran-ukuran
+Lebesgue-Stieltjes dari 114Xa.
+
+\spheader 114Yg Tuliskan $\Cal B$ untuk aljabar-$\sigma$ yang terdiri
+atas subhimpunan-subhimpunan Borel dari $\Bbb R$, dan misalkan
+$\nu:\Cal B\to[0,\infty]$ suatu ukuran. Misalkan
+$g$, $\lambda_g$, $\theta_g$, dan $\mu_g$ seperti dalam 114Xa.
+Tunjukkan bahwa jika $\nu I=\lambda_gI$ untuk setiap interval setengah
+terbuka $I$, maka $\nu E=\mu_gE$ untuk setiap $E\in\Cal B$.
+\Hint{tinjau terlebih dahulu himpunan-himpunan terbuka $E$, kemudian
+gunakan 114Yd(i) sebagaimana diperluas dalam 114Yf.}
+
+\spheader 114Yh Tuliskan $\Cal B$ untuk aljabar-$\sigma$ yang terdiri
+atas subhimpunan-subhimpunan Borel dari $\Bbb R$, dan misalkan
+$\nu:\Cal B\to[0,\infty]$ suatu ukuran sedemikian sehingga
+$\nu[-n,n]<\infty$ untuk setiap $n\in\Bbb N$. Tunjukkan bahwa terdapat
+fungsi $g:\Bbb R\to\Bbb R$ yang tak-menurun, kontinu dari kiri, dan
+sedemikian sehingga $\nu E=\mu_gE$ untuk setiap $E\in\Cal B$, dengan
+$\mu_g$ didefinisikan seperti dalam 114Xa. Apakah $g$ unik?
+
+\spheader 114Yi Tuliskan $\Cal B$ untuk aljabar-$\sigma$ yang terdiri
+atas subhimpunan-subhimpunan Borel dari $\Bbb R$, dan misalkan $\nu_1$, $\nu_2$
+ukuran-ukuran dengan domain $\Cal B$ sedemikian sehingga
+$\nu_1 I=\nu_2I<\infty$ untuk setiap interval setengah terbuka
+$I\subseteq\Bbb R$. Tunjukkan bahwa $\nu_1E=\nu_2E$ untuk setiap
+$E\in\Cal B$.
+
+\spheader 114Yj Misalkan $\Cal E$ sembarang keluarga interval setengah
+terbuka dalam $\Bbb R$. Tunjukkan bahwa (i) terdapat
+$\Cal C\subseteq\Cal E$ yang terhitung sedemikian sehingga
+$\bigcup\Cal E=\bigcup\Cal C$ (definisi:
+1A1F) (ii) bahwa $\bigcup\Cal E$ adalah himpunan Borel, sehingga
+terukur Lebesgue (iii) bahwa terdapat barisan saling lepas
+$\sequencen{I_n}$ yang terdiri atas interval setengah terbuka dalam
+$\Bbb R$ sedemikian sehingga
+$\bigcup\Cal E=\bigcup_{n\in\Bbb N}I_n$.
+
+\spheader 114Yk Tunjukkan bahwa untuk hampir setiap $x\in\Bbb R$
+(menurut ukuran Lebesgue), himpunan
+
+\Centerline{$\{(m,n):m\in\Bbb Z,\,n\in\Bbb N\setminus\{0\},
+\,|x-\Bover{m}{n}|\le\Bover{1}{n^3}\}$}
+
+\noindent berhingga. \Hint{taksir ukuran luar dari
+$\bigcup_{n\ge n_0}\bigcup_{|m|\le kn}
+[\bover{m}{n}-\bover1{n^3},\bover{m}{n}+\bover1{n^3}]$ untuk $n_0$,
+$k\ge 1$.} Ulangi dengan $2+\epsilon$ menggantikan $3$.
+
+\spheader 114Yl Tuliskan $\mu$ untuk ukuran Lebesgue pada $\Bbb R$.
+Tunjukkan bahwa terdapat keluarga terhitung $\Cal F$ yang terdiri atas
+subhimpunan-subhimpunan terukur Lebesgue dari $\Bbb R$ sedemikian
+sehingga setiap kali $\mu E$ terdefinisi dan berhingga, serta
+$\epsilon>0$, terdapat $F\in\Cal F$ sedemikian sehingga
+$\mu(E\symmdiff F)\le\epsilon$. \Hint{dalam 114Xe, tunjukkan bahwa kita
+dapat mengambil $I_j$ yang titik-titik ujungnya rasional.}
+%114Xe
+}%end of exercises
+
+\endnotes{
+\Notesheader{114} Minat saya sendiri terletak pada teori ukuran
+\lq abstrak', dan dari sudut pandang struktur karya ini, tujuan utama
+bagian ini adalah menguraikan suatu ruang ukur taktrivial untuk menjadi
+titik pusat bagi teorema-teorema umum yang menyusul. Izinkan saya
+merinci metode-metode untuk mengonstruksi ruang ukur yang sudah tersedia
+bagi kita. (a) Kita mempunyai ukuran bertumpu pada titik dari 112Bd;
+dalam beberapa hal, ukuran-ukuran ini trivial; tetapi ukuran tersebut
+memang muncul dalam penerapan, dan justru karena pada umumnya mudah
+ditangani, sering kali tepat untuk menguji gagasan baru apa pun pada
+ukuran-ukuran tersebut. (b) Kita mempunyai ukuran Lebesgue pada
+$\Bbb R$; perumuman langsung dari konstruksi ini menghasilkan
+ukuran-ukuran Lebesgue-Stieltjes (114Xa). (c) Selanjutnya, kita
+mempunyai cara-cara membangun ukuran baru dari ukuran lama, dimulai
+dengan ukuran subruang (113Yb), ukuran citra (112Xf), dan jumlah
+ukuran (112Yf). Barangkali yang terpenting di antaranya ialah
+`ukuran Lebesgue pada $[0,1]$', yang untuk sementara saya sebut
+$\mu_1$, dengan domain $\mu_1$ berupa
+$\{E:E\subseteq[0,1]$ terukur Lebesgue$\}
+=\{E\cap[0,1]:E\subseteq\Bbb R$ terukur Lebesgue$\}$, dan
+$\mu_1E$ tidak lain adalah ukuran Lebesgue dari $E$ untuk setiap
+$E\in\dom\mu_1$. Sebenarnya, ukuran-ukuran citra dari ukuran Lebesgue
+pada $[0,1]$ mencakup proporsi yang sangat besar dari ukuran-ukuran
+peluang (yakni, ukuran yang memberi ukuran $1$ kepada seluruh ruang)
+yang penting dalam penerapan biasa.
+
+Tentu saja ukuran Lebesgue bukan hanya contoh penuntun yang dominan bagi
+teori ukuran umum, tetapi juga merupakan ukuran individual yang paling
+penting bagi penerapan. Karena alasan ini, kita mungkin saja --- meski
+menurut saya berpandangan sempit --- membaca Bab 12-13 dalam jilid ini
+dan sebagian besar Jilid 2 seolah-olah semuanya hanya berlaku bagi
+ukuran Lebesgue pada $\Bbb R$. Sesungguhnya, dalam konteks inilah
+sebagian besar hasil tersebut pertama kali dikembangkan. Namun, saya
+percaya bahwa dalam matematika sering kali pemahaman seseorang atas
+suatu konstruksi tertentu diperdalam dan diperkuat oleh pengenalan
+terhadap objek-objek terkait, dan bahwa salah satu jalan untuk
+menghayati hakikat ukuran Lebesgue adalah melalui kajian sifat-sifatnya
+dalam konteks teori ukuran umum yang lebih abstrak.
+
+Untuk setiap penyelidikan yang layak mengenai penerapan teori ukuran
+Lebesgue, kita harus menunggu hingga Jilid 2. Namun, saya menyertakan
+114Yk sebagai petunjuk mengenai salah satu cara teori ini dapat
+digunakan.
+}%end of notes
+\discrpage

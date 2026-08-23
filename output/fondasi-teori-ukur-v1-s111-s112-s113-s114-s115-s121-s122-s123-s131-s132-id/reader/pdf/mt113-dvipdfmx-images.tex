@@ -1,0 +1,22 @@
+% Deterministic dvipdfmx image inclusion for the four Section 113 diagrams.
+%
+% The frozen Fremlin sources and their PostScript figures remain unchanged in
+% authority/.  The build stages validated PNG derivatives beside this file and
+% uses this macro override only for reader PDF production.  Explicit TeX box
+% dimensions keep the original horizontal layout while pdf:image avoids the
+% blank legacy psfig/PostScript route in dvipdfmx.
+\def\mtDvipdfmxImage#1#2#3{%
+  \hbox to #2{%
+    \vbox to #3{%
+      \vss
+      \hbox to #2{%
+        \special{pdf:image width #2 height #3 (#1.png)}%
+        \hss}}%
+    \hss}}
+
+\def\startsideshiftedpicture{}
+\def\sideshiftedpicture#1#2#3#4{%
+  \immediate\write0{importing reader diagram #1.png at height #4
+       and width #3 with dvipdfmx pdf:image}%
+  \mtDvipdfmxImage{#1}{#3}{#4}%
+  \hskip #2 plus 0pt minus 0pt}
