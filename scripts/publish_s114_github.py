@@ -34,7 +34,7 @@ ROOT = Path(__file__).resolve().parents[1]
 AUDITED_S113_PATH = ROOT / "scripts" / "publish_s113_github.py"
 AUDITED_S113_BYTES = 73_214
 AUDITED_S113_SHA256 = (
-    "70033926c3af6f407d7aee132fb5a6480ab70eda36834c00baa286dc4b77f67a"
+    "01f6c190c43c8ce69ae945bb89e97c4a9d79e62b750dc082a9ef8e419065dff5"
 )
 
 

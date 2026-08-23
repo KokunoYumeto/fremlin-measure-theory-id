@@ -1,0 +1,323 @@
+{
+  "schema": "o007-source-review-v1",
+  "unit_id": "O007-FREMLIN-V1-S121",
+  "review_date": "2026-08-22",
+  "review_outcome": "proceed_with_listed_treatments",
+  "scope": {
+    "authority_read_complete": true,
+    "authority_lines_reviewed": 1057,
+    "comparison_bound": "The frozen mt121 authority was compared only with Fremlin's current official Chapter 12 TeX and official Volume 1 errata. Prior local correction and terminology records were read only for consistency.",
+    "target_translation_read_or_edited": false,
+    "backend_reader_controls_or_publication_edited": false,
+    "upstream_contact_performed": false
+  },
+  "frozen_authority": {
+    "path": "authority/fremlin/source/mt1.2011/mt121.tex",
+    "archive_member": "mt1.2011/mt121.tex",
+    "bytes": 43014,
+    "lines": 1057,
+    "sha256": "f2b93bf474cccafc75cc2bc76dadbc26e5456e620d21f092cf5fae35e6776484",
+    "versiondate": "21.12.03",
+    "source_title": "Measurable functions",
+    "authority_modified": false
+  },
+  "official_evidence": {
+    "current_chapter_source": {
+      "url": "https://www1.essex.ac.uk/maths/people/fremlin/chap12.tex",
+      "retrieved_utc_date": "2026-08-22",
+      "bytes": 165894,
+      "sha256": "88f4e29a9bfb3468a811f1bfe2585d61e857c29821a412b60f06d743ad047552",
+      "mt121_section": {
+        "start_line": 1636,
+        "end_line": 2692,
+        "bytes": 43015,
+        "lines": 1057,
+        "sha256": "f630f12f40f4b9059e9b9828f78e9d9c4baa40e21ea4cc8b07661bb1b328fafe",
+        "versiondate": "21.12.03"
+      }
+    },
+    "volume_1_errata": {
+      "url": "https://www1.essex.ac.uk/maths/people/fremlin/mterr1.00.pdf",
+      "retrieved_utc_date": "2026-08-22",
+      "bytes": 132981,
+      "pages": 7,
+      "sha256": "3217c00135d3e0a1a0473cb8b609efe51c3824ec52a276b359a8d60b8e2dc3de",
+      "pdf_creation_date": "2025-05-01",
+      "relevant_entry": "p. 44 l. 13, part (a-i) of the proof of 121K: replace the one-dimensional complement by the r-dimensional complement"
+    },
+    "interval_macro_evidence": {
+      "path": "authority/fremlin/source/mt1.2011/fremtex.tex",
+      "bytes": 25849,
+      "lines": 717,
+      "sha256": "1aa72e294bfaebc2daf24f1a2bf382aaedd905fbc60d64835abad28fc0ae9ba4",
+      "definitions": {
+        "ocint": "line 531: open at the left endpoint and closed at the right endpoint",
+        "ooint": "line 536: open at both endpoints"
+      }
+    }
+  },
+  "comparison_summary": {
+    "aligned_local_lines": 1057,
+    "aligned_current_lines": 1057,
+    "different_aligned_lines": 1,
+    "difference": {
+      "authority_line": 803,
+      "current_chapter_line": 2438,
+      "authority_text": "E]=D\\setminus f^{-1}[E]\\in\\Sigma_D$ so $\\Bbb R\\setminus E\\in\\Tau$.",
+      "current_text": "E]=D\\setminus f^{-1}[E]\\in\\Sigma_D$ so $\\BbbR^r\\setminus E\\in\\Tau$."
+    },
+    "interpretation": "The current official mt121 text is otherwise line-for-line identical to the frozen authority. Consequently, the remaining suspected defects below are still present in the current source and are not claimed to be official corrections."
+  },
+  "corroborated_defects": [
+    {
+      "review_id": "O007-S121-SRC-001",
+      "authority_lines": [802, 803],
+      "anchor": "121K(a)(i), closure of Tau under complements",
+      "classification": "mathematical-ambient-space-type-error",
+      "confidence": "confirmed",
+      "authority_context": "E is a subset of R^r, but the conclusion uses R setminus E.",
+      "correct_form": "\\BbbR^r\\setminus E\\in\\Tau",
+      "corroboration": {
+        "current_official_source": "corrected at current chap12.tex line 2438",
+        "official_errata": "listed at p. 44 l. 13"
+      },
+      "proposed_translation_treatment": "Use the dimension-correct R^r complement, preserve the proof structure, and ledger the derivative change as a source mathematical correction.",
+      "upstream_candidate": false,
+      "upstream_reason": "Already fixed in the current official source and explicitly listed in the official errata."
+    }
+  ],
+  "suspected_high_confidence_defects": [
+    {
+      "review_id": "O007-S121-SRC-002",
+      "authority_lines": [186, 197],
+      "anchor": "121D(c), monotone functions",
+      "classification": "conditional-case-order-error",
+      "confidence": "high",
+      "authority_context": "For non-decreasing g, E={x:g(x)<a} is said to be D intersection ]-infinity,c[ or D intersection ]-infinity,c], according to whether c is in E or not. The positional pairing is reversed: membership of c requires the right-closed interval.",
+      "mathematical_check": "If c is in E, monotonicity gives E=D intersection ]-infinity,c]; if c is not in E, E=D intersection ]-infinity,c[.",
+      "current_official_status": "unchanged in current chap12.tex",
+      "official_errata_status": "not found among the Section 121 entries",
+      "proposed_translation_treatment": "State the two cases explicitly in the mathematically correct order rather than reproducing the ambiguous/reversed positional clause.",
+      "upstream_candidate": true,
+      "upstream_report_priority": "high"
+    },
+    {
+      "review_id": "O007-S121-SRC-003",
+      "authority_lines": [494, 501],
+      "anchor": "121F(e), limit inferior",
+      "classification": "limit-subscript-notation-inconsistency",
+      "confidence": "medium-high",
+      "authority_context": "The function is defined throughout the clause as liminf with n tending to infinity, but the concluding sentence alone writes liminf with n in N.",
+      "internal_evidence": "All neighboring definitions, conclusions, proof formulae, 121H, and 121Xc use n tending to infinity for limsup/liminf.",
+      "current_official_status": "unchanged in current chap12.tex",
+      "official_errata_status": "not found among the Section 121 entries",
+      "proposed_translation_treatment": "Normalize the concluding display to n tending to infinity; this changes no mathematical content and removes a local notation discontinuity.",
+      "upstream_candidate": true,
+      "upstream_report_priority": "low"
+    },
+    {
+      "review_id": "O007-S121-SRC-004",
+      "authority_lines": [546, 551],
+      "anchor": "121G, Fourier-series example",
+      "classification": "summation-scope-ambiguity",
+      "confidence": "high",
+      "authority_context": "The source writes sum from k=1 to infinity of |a_k| + |b_k| = infinity without parentheses, leaving b_k visually outside the explicit scope of the summation and its k free under a strict parse.",
+      "intended_form": "sum from k=1 to infinity of (|a_k|+|b_k|) = infinity",
+      "current_official_status": "unchanged in current chap12.tex",
+      "official_errata_status": "not found among the Section 121 entries",
+      "proposed_translation_treatment": "Add grouping parentheses around |a_k|+|b_k| while preserving the intended non-absolute-summability statement.",
+      "upstream_candidate": true,
+      "upstream_report_priority": "medium"
+    },
+    {
+      "review_id": "O007-S121-SRC-005",
+      "authority_lines": [960, 970],
+      "anchor": "121Yd(i), coordinate functions",
+      "classification": "mathematical-index-error",
+      "confidence": "high",
+      "authority_context": "The coordinate expansion begins with phi_i and ends with phi_r, although i is the running coordinate index in the preceding phrase and the full vector must begin with phi_1.",
+      "correct_form": "phi(x)=(phi_1(x),...,phi_r(x))",
+      "current_official_status": "unchanged in current chap12.tex",
+      "official_errata_status": "not found among the Section 121 entries",
+      "proposed_translation_treatment": "Use phi_1 as the first coordinate and ledger the derivative change as a mathematical index correction.",
+      "upstream_candidate": true,
+      "upstream_report_priority": "high"
+    }
+  ],
+  "deliberate_house_notation_and_nondefects": [
+    {
+      "surface": "partially defined functions and dom f",
+      "assessment": "deliberate and central to Section 121",
+      "treatment": "Do not silently totalize functions. Preserve every stated domain, intersection of domains, and the restrictive eventually-defined convention for limits."
+    },
+    {
+      "surface": "hf",
+      "assessment": "juxtaposition denotes composition h after f, not multiplication",
+      "treatment": "Translate as composition and retain the source-defined domain of hf."
+    },
+    {
+      "surface": "f times g",
+      "assessment": "denotes pointwise multiplication of real-valued functions, not a Cartesian product",
+      "treatment": "Use pointwise-product language where prose could otherwise be ambiguous."
+    },
+    {
+      "surface": "ooint and ocint interval macros",
+      "assessment": "ooint is open-open and ocint is open-closed by fremtex.tex",
+      "treatment": "Preserve endpoint topology exactly. This macro evidence is also what exposes O007-S121-SRC-002."
+    },
+    {
+      "surface": "unions indexed only by q<a in 121I",
+      "assessment": "q is implicitly rational because E_q was defined only for q in Q",
+      "treatment": "Preserve the mathematics; natural prose may restate the rational index to prevent a free-index reading."
+    },
+    {
+      "surface": "the one-anchor Cauchy coding with G_mnk in 121H",
+      "assessment": "equivalent to the usual pairwise Cauchy criterion after a harmless epsilon rescaling",
+      "treatment": "Do not report or alter it as a source defect."
+    },
+    {
+      "surface": "equiveridical",
+      "assessment": "idiosyncratic source diction immediately glossed by the author",
+      "treatment": "Translate naturally as equivalent, keeping the explanatory gloss rather than inventing an Indonesian cognate."
+    },
+    {
+      "surface": "N",
+      "assessment": "Fremlin's indexing includes 0 in this corpus",
+      "treatment": "Retain N and ensure any reader-facing glossary says that 0 is included; avoid relying on the ambiguous Indonesian convention for bilangan asli."
+    }
+  ],
+  "terminology_evidence": {
+    "correction_ledger": {
+      "path": "00_control/SOURCE_CORRECTIONS.csv",
+      "bytes": 2962,
+      "rows": 7,
+      "sha256": "27d6e1a53de6b6f1e37a6d1a41c3d202d7cd6c2a21897d0399ba215364ced967"
+    },
+    "prior_term_files": [
+      {
+        "path": "backend/mt111/terms.jsonl",
+        "bytes": 5989,
+        "rows": 14,
+        "sha256": "f6a5fc641df133bde4c77105be981746ca8a62c16f628bffa2882ded03a8265f"
+      },
+      {
+        "path": "backend/mt112/terms.jsonl",
+        "bytes": 14214,
+        "rows": 31,
+        "sha256": "6fc52371c1bc73709b947aac7752cd1ba7bebe2b46c627c264bcb78fea379eef"
+      },
+      {
+        "path": "backend/mt113/terms.jsonl",
+        "bytes": 6390,
+        "rows": 15,
+        "sha256": "765fe05dc9b206526b132e73ba5d73ce0c180c424f497693e054efd5370a4cd3"
+      },
+      {
+        "path": "backend/mt114/terms.jsonl",
+        "bytes": 6941,
+        "rows": 16,
+        "sha256": "77ca53a1d70c64432cb8384965c56ccbc50eed197c80cbf2fdff5fb0970b6ebb"
+      },
+      {
+        "path": "backend/mt115/terms.jsonl",
+        "bytes": 10064,
+        "rows": 20,
+        "sha256": "40add1e457e65909d9cff69994483aa2251d6a04ad40477e2b048e7ecc2bc65d"
+      }
+    ]
+  },
+  "terminology_recommendations": [
+    {
+      "source_term": "measurable function",
+      "target_term": "fungsi terukur",
+      "status": "recommended"
+    },
+    {
+      "source_term": "Sigma-measurable",
+      "target_term": "terukur terhadap Sigma",
+      "status": "recommended",
+      "hazard": "Do not confuse the predicate with measurable space (ruang terukur) or measurable set (himpunan terukur)."
+    },
+    {
+      "source_term": "subspace sigma-algebra",
+      "target_term": "aljabar-sigma subruang",
+      "status": "recommended",
+      "basis": "Extends the established aljabar-sigma and ukuran subruang pattern."
+    },
+    {
+      "source_term": "relatively measurable",
+      "target_term": "terukur relatif",
+      "status": "recommended"
+    },
+    {
+      "source_term": "trace of Sigma on D",
+      "target_term": "jejak Sigma pada D",
+      "status": "recommended-source-variant"
+    },
+    {
+      "source_term": "Borel measurable",
+      "target_term": "terukur Borel",
+      "status": "recommended",
+      "basis": "Parallel to the established terukur Lebesgue."
+    },
+    {
+      "source_term": "Lebesgue measurable",
+      "target_term": "terukur Lebesgue",
+      "status": "frozen-prior-term"
+    },
+    {
+      "source_term": "non-decreasing / non-increasing",
+      "target_term": "tak-menurun / tak-menaik",
+      "status": "frozen-prior-pattern"
+    },
+    {
+      "source_term": "inverse image",
+      "target_term": "prapeta",
+      "status": "recommended",
+      "hazard": "f^{-1}[E] is a set preimage, not an inverse function."
+    },
+    {
+      "source_term": "restriction / extension",
+      "target_term": "pembatasan / perluasan",
+      "status": "recommended"
+    },
+    {
+      "source_term": "composition",
+      "target_term": "komposisi",
+      "status": "recommended",
+      "hazard": "The source often writes hf rather than h circle f."
+    },
+    {
+      "source_term": "supremum / infimum / limit superior / limit inferior",
+      "target_term": "supremum / infimum / limit superior / limit inferior",
+      "status": "recommended",
+      "hazard": "Keep sup, inf, limsup, and liminf distinct and preserve their partially-defined domains."
+    },
+    {
+      "source_term": "Cauchy sequence",
+      "target_term": "barisan Cauchy",
+      "status": "recommended"
+    },
+    {
+      "source_term": "coordinate function",
+      "target_term": "fungsi koordinat",
+      "status": "recommended"
+    },
+    {
+      "source_term": "conegligible set / almost everywhere",
+      "target_term": "himpunan koterabaikan / hampir di mana-mana",
+      "status": "frozen-prior-terms"
+    },
+    {
+      "source_term": "outer measure / Caratheodory's method",
+      "target_term": "ukuran luar / metode Caratheodory",
+      "status": "frozen-prior-terms"
+    }
+  ],
+  "release_and_upstream_policy": {
+    "source_review_only": true,
+    "correction_ledger_not_modified": true,
+    "current_upstream_contact": "none",
+    "future_report": "After the complete assigned corpus and separate authorization, retain only the unresolved high-confidence items for one concise deduplicated report; omit O007-S121-SRC-001 because upstream has already corrected it."
+  }
+}

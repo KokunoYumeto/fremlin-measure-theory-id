@@ -25,9 +25,9 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 AUDITED_S115_PATH = ROOT / "scripts" / "publish_s115_github.py"
-AUDITED_S115_BYTES = 68_839
+AUDITED_S115_BYTES = 68_843
 AUDITED_S115_SHA256 = (
-    "97825f5ce4bf4bdc5a3b5a83bf544afdad4109e961fd902a0f1a339e7f866849"
+    "5238dfce38994321e53da1460f115fa047fa60c0bac135a96c1fffbd695d5471"
 )
 
 

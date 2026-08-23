@@ -38,9 +38,9 @@ import urllib.parse
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE_PUBLISHER_PATH = ROOT / "scripts" / "publish_s112_github.py"
-BASE_PUBLISHER_BYTES = 69_313
+BASE_PUBLISHER_BYTES = 69_419
 BASE_PUBLISHER_SHA256 = (
-    "b4a373ee902e216bc1dded36e19d7bfb411b9c23220d2a39ae5923bb937a0815"
+    "09718d95f44fb5a80774cde99ea57a41ed2d914e99ec06cdfbf1d311da26ff06"
 )
 
 

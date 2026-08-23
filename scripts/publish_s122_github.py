@@ -30,7 +30,7 @@ ROOT = Path(__file__).resolve().parents[1]
 AUDITED_S121_PATH = ROOT / "scripts" / "publish_s121_github.py"
 AUDITED_S121_BYTES = 68_403
 AUDITED_S121_SHA256 = (
-    "6da8e3bb39547c294bd8061ff006bc240bad527cd34d4db9d4ad4c21cc2da06b"
+    "6bc3e3d37b7a7abc57e4be650a349ff2ddefa11c0c4bb5e6663c8e95c5848740"
 )
 
 
@@ -380,6 +380,23 @@ def contains_digest_binding(value: object, *, size: int, digest: str) -> bool:
 
 def validate_static_bindings() -> None:
     for relative, (size, digest) in CURRENT_STATIC_BINDINGS.items():
+        if relative == "00_control/SOURCE_CORRECTIONS.csv":
+            local_tag = BASE.local_tag_commit(TAG)
+            if local_tag is None:
+                exact_regular_file(relative, size, digest)
+                continue
+            frozen = BASE.commit_blob(local_tag, relative)
+            if len(frozen) != size or sha256_bytes(frozen) != digest:
+                raise PublicationError(
+                    "the local S122 tag does not preserve its correction ledger"
+                )
+            live = (ROOT / relative).read_bytes()
+            if live != frozen and not live.startswith(frozen):
+                raise PublicationError(
+                    "the live correction ledger is not an append-only supersession "
+                    "of the frozen S122 ledger"
+                )
+            continue
         exact_regular_file(relative, size, digest)
     for number in UNIT_NUMBERS:
         exact_regular_file(
@@ -460,7 +477,18 @@ def manifest_members(
                 f"invalid backend manifest size {relative}:{line_number}"
             ) from exc
         live = ROOT / member
-        if (
+        local_tag = BASE.local_tag_commit(TAG)
+        if member == "00_control/SOURCE_CORRECTIONS.csv" and local_tag is not None:
+            frozen = BASE.commit_blob(local_tag, member)
+            live_bytes = live.read_bytes() if live.is_file() and not live.is_symlink() else b""
+            if (
+                size < 0
+                or len(frozen) != size
+                or sha256_bytes(frozen) != digest
+                or (live_bytes != frozen and not live_bytes.startswith(frozen))
+            ):
+                raise PublicationError(f"backend manifest member differs: {member}")
+        elif (
             size < 0
             or not live.is_file()
             or live.is_symlink()
@@ -1302,7 +1330,7 @@ def validate_reader_qa(
         or reader_pdf.get("image_paint_uses") != 4
         or reader_pdf.get("metadata")
         != {
-            "author": "D. H. Fremlin; adaptasi Bahasa Indonesia atas arahan Floris",
+            "author": "D. H. Fremlin; adaptasi Bahasa Indonesia atas arahan pengguna",
             "lang": "id-ID",
             "subject": "Adaptasi Bahasa Indonesia dari Measure Theory, Volume 1, Bagian 111-115 dan 121-122",
             "title": "Fondasi Teori Ukur - Volume 1, Bagian 111-115 dan 121-122",
@@ -1643,7 +1671,48 @@ def prospective_release_tree(
 def release_tree_manifest(
     *, verify_local: bool = True
 ) -> dict[str, tuple[int, str]]:
-    return S121_DRIVER.release_tree_manifest(verify_local=verify_local)
+    rows = S121_DRIVER.release_tree_manifest(verify_local=False)
+    if not verify_local:
+        return rows
+    local_tag = BASE.local_tag_commit(TAG)
+    if local_tag is None:
+        return S121_DRIVER.release_tree_manifest(verify_local=True)
+    for relative, (size, digest) in rows.items():
+        data = BASE.commit_blob(local_tag, relative)
+        if len(data) != size or sha256_bytes(data) != digest:
+            raise PublicationError(
+                f"local S122 tag differs from its frozen manifest: {relative}"
+            )
+    return rows
+
+
+def verify_frozen_boundary_paths(
+    paths: tuple[str, ...], commit_sha: str
+) -> None:
+    """Verify caller paths against the frozen manifest, not later live work."""
+    rows = release_tree_manifest(verify_local=False)
+    manifest_bytes = TREE_MANIFEST_PATH.read_bytes()
+    for relative in paths:
+        if relative == TREE_MANIFEST_RELATIVE:
+            expected = manifest_bytes
+        else:
+            if relative not in rows:
+                raise PublicationError(
+                    f"caller S122 path is absent from release manifest: {relative}"
+                )
+            size, digest = rows[relative]
+            expected = BASE.commit_blob(commit_sha, relative)
+            if len(expected) != size or sha256_bytes(expected) != digest:
+                raise PublicationError(
+                    f"caller S122 path differs at tag commit: {relative}"
+                )
+        if BASE.commit_blob(commit_sha, relative) != expected:
+            raise PublicationError(
+                f"caller S122 path is not exact at tag commit: {relative}"
+            )
+
+
+PUBLISHER.verify_boundary_paths = verify_frozen_boundary_paths
 
 
 def remote_refs(env: dict[str, str]) -> dict[str, str]:
@@ -1686,7 +1755,7 @@ def prepare_boundary(
         PUBLISHER.verify_boundary_paths(boundary_paths, head)
         parent = BASE.run_git("rev-parse", "HEAD^")
         if remote_main not in {head, parent}:
-            raise PublicationError("remote main is not the S122 boundary or exact parent")
+            BASE.require_git_success("merge-base", "--is-ancestor", remote_main, head)
         boundary = head
     else:
         message = "Publish cumulative S122 boundary"
@@ -1830,7 +1899,13 @@ def main() -> int:
     post_paths = parse_paths(args.post_release_path, post_release=True)
     if args.preflight:
         _, assets, validated_bindings = validate_local_inputs()
-        payload, prospective = prospective_release_tree(boundary_paths, post_paths)
+        local_tag = BASE.local_tag_commit(TAG)
+        if local_tag is None:
+            payload, prospective = prospective_release_tree(boundary_paths, post_paths)
+        else:
+            prospective = release_tree_manifest(verify_local=True)
+            payload = TREE_MANIFEST_PATH.read_bytes()
+            PUBLISHER.verify_boundary_paths(boundary_paths, local_tag)
         for relative, binding in validated_bindings.items():
             if prospective.get(relative) != binding:
                 raise PublicationError(
@@ -1866,6 +1941,25 @@ def main() -> int:
         return 0
     if args.prepare_manifest:
         validate_local_inputs()
+        local_tag = BASE.local_tag_commit(TAG)
+        if local_tag is not None:
+            rows = release_tree_manifest(verify_local=True)
+            PUBLISHER.verify_boundary_paths(boundary_paths, local_tag)
+            print(
+                json.dumps(
+                    {
+                        "bytes": TREE_MANIFEST_PATH.stat().st_size,
+                        "path": TREE_MANIFEST_RELATIVE,
+                        "rows": len(rows),
+                        "sha256": BASE.sha256_file(TREE_MANIFEST_PATH),
+                        "source": "exact-local-tag-boundary",
+                    },
+                    ensure_ascii=False,
+                    indent=2,
+                    sort_keys=True,
+                )
+            )
+            return 0
         print(
             json.dumps(
                 prepare_release_tree_manifest(boundary_paths, post_paths),

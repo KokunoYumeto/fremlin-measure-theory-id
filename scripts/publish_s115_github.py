@@ -27,7 +27,7 @@ ROOT = Path(__file__).resolve().parents[1]
 AUDITED_S114_PATH = ROOT / "scripts" / "publish_s114_github.py"
 AUDITED_S114_BYTES = 54_870
 AUDITED_S114_SHA256 = (
-    "e266fb363b3e6a1d2c92c164b3f893f920e70650bff50840fa17142418f9611f"
+    "ed21e063b6d87f1a9ed2da8a8d986227ef630ad32c6146a1b65efea5872f2ac1"
 )
 
 
@@ -782,7 +782,7 @@ def validate_reader_qa(
         or reader_pdf.get("image_paint_uses") != 4
         or reader_pdf.get("metadata")
         != {
-            "author": "D. H. Fremlin; adaptasi Bahasa Indonesia atas arahan Floris",
+            "author": "D. H. Fremlin; adaptasi Bahasa Indonesia atas arahan pengguna",
             "lang": "id-ID",
             "subject": "Adaptasi Bahasa Indonesia dari Measure Theory, Volume 1, Bagian 111-115",
             "title": "Fondasi Teori Ukur - Volume 1, Bagian 111-115",
@@ -899,7 +899,7 @@ def validate_visual_qa(receipt: dict, *, pdf_size: int, pdf_hash: str) -> None:
         or pdf.get("lang") != "id-ID"
         or pdf.get("title") != "Fondasi Teori Ukur - Volume 1, Bagian 111-115"
         or pdf.get("subject") != "Adaptasi Bahasa Indonesia dari Measure Theory, Volume 1, Bagian 111-115"
-        or pdf.get("author") != "D. H. Fremlin; adaptasi Bahasa Indonesia atas arahan Floris"
+        or pdf.get("author") != "D. H. Fremlin; adaptasi Bahasa Indonesia atas arahan pengguna"
         or pdf.get("creation_date") != "D:20260822000000Z"
         or pdf.get("all_fonts_embedded") is not True
         or pdf.get("all_fonts_subset") is not True
