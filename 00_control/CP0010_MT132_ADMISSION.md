@@ -76,7 +76,9 @@ Two clean admitted-state builds reproduce exactly. The package manifest is
 `output/.../PACKAGE_MANIFEST.tsv`, 73,442 bytes / SHA-256
 `23a91c4c7ce037e0c8ee0b41f0734a7cd310779ca64bb9f7d702bba022dbcd48`; the
 checksum witness is `output/.../SHA256SUMS.txt`, 3,690 bytes / SHA-256
-`01081249d767a88f1be0a8ee5e7822dae657aff0d25ba84d52f12c4057f23baa`; and
+`7218cad912a6835f4913a1fd96a62203dfe346892eaf271c5a60de1a353f63eb`; the
+Zenodo upload checksum witness `qa/zenodo-s132-SHA256SUMS.txt` is 290 bytes /
+SHA-256 `01081249d767a88f1be0a8ee5e7822dae657aff0d25ba84d52f12c4057f23baa`; and
 the deterministic resumable ZIP is 6,032,906 bytes / SHA-256
 `d5da98930dccc42e228b4098ddca4a26cb5563f1ba2c9312bc4ba13e0ab42316`.
 The full package tree is 711 files / 22,743,378 bytes excluding its manifest,
