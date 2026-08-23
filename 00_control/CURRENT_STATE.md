@@ -1,6 +1,6 @@
 # Current State — O007 Fremlin Volumes 1–2
 
-Updated: 2026-08-22 (Europe/Berlin)
+Updated: 2026-08-23 (Europe/Berlin)
 
 ## State summary
 
@@ -339,8 +339,10 @@ Updated: 2026-08-22 (Europe/Berlin)
 - Bounded official-source PDF replay places S131 on printed pages 56–58;
   page 56 shares the Chapter 13 introduction and page 58 also begins S132.
   The cumulative S111–S131 union is therefore pages 10–58, 49 unique pages
-  of the selected 672-page corpus. Backend/reader/build/visual admission is
-  still in progress; S131 is not yet admitted or published.
+  of the selected 672-page corpus. S131 backend, reader, deterministic build,
+  full PDF/browser QA, and admission now pass; the boundary is public as
+  Zenodo `0.9.0-s131` and GitHub `v0.9.0-s131`. The next source-order cursor is
+  `authority/fremlin/source/mt1.2011/mt132.tex`.
 - The exact S122 GitHub boundary is release-ready and frozen at
   `qa/S122_RELEASE_TREE.tsv`: 377 rows / 37,408 bytes / SHA-256
   `5374e5885b25afcd7e8bff5820626c15433ac4a6352c3c775b372325186fcebd`.
@@ -393,6 +395,39 @@ Updated: 2026-08-22 (Europe/Berlin)
   SHA-256
   `1b796db6c808f5874184b98e26f96ea2e3bbf4c58f274f699e1cebb94e7871eb`).
 
+## Current admitted/public boundary — S131
+
+Section `O007-FREMLIN-V1-S131`, `Measurable subspaces` → `Subruang terukur`,
+is the current complete admitted unit. The authority is 11,811 bytes / 294
+lines / SHA-256
+`94ebff73a9a8820a85e852df30088830cfee57e8cfed0fa8244f915e0b88f105`; the
+natural id-ID target is 13,512 bytes / 329 lines / SHA-256
+`eb486850c0a7908beaf6954bdc030a654ea2a4a4864411bb15117a2529bff470`.
+The cumulative reader covers sections 111–115, 121–123, and 131: 49 unique
+official pages (10–58) of the selected 672 pages, with a 58-page A4 reflow.
+The final PDF is 490,296 bytes
+(`ea46ce188e4454a7f68a35a192c0aea79d3864e7d7c7423b12cc2a8634a35b7b`), and
+the deterministic ZIP is 5,726,148 bytes
+(`c61ad611e8b221d714d5e68654561a43898c5b62fc4b56a6cf7ad033c2e9372b`).
+
+Zenodo published the boundary as version `0.9.0-s131`, DOI
+`10.5281/zenodo.22070417`, under concept DOI `10.5281/zenodo.22059798`;
+the three assets passed anonymous byte/hash readback. Receipt:
+`qa/ZENODO_PUBLICATION_RECEIPT_S131.json`, 5,712 bytes, SHA-256
+`a026e4d3d96f8896f98c4d205203402ff75b616aaa637b84bdb7d42399fac0b2`.
+GitHub published tag `v0.9.0-s131` at
+`https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.9.0-s131`,
+boundary commit `d7d31a87569650c7653aaacd8759cbf48a3f25da`, tree
+`38a0a26b76cd632cd095c6f103c2266ab254217b`, and receipt commit
+`371e3d99e5d4ad641a24ed01a95ff7f6e3177230`. Receipt:
+`qa/PUBLICATION_RECEIPT_S131.json`, SHA-256
+`c29e50113698a51461304b0a8eebb6a2fdc7351d28b80deed998b9717c294378`.
+The release description records the required provenance
+`OpenAI Codex gpt-5.6-sol, Ultra`; Fremlin and component-license credits are
+preserved. The GitHub publisher uses a NUL-delimited pathspec file and
+explicit `-f` only for the finite allowlist, avoiding Windows argv limits
+without broadening the publication scope.
+
 ## Authority versus inherited evidence
 
 The local authority hashes and expanded file/byte counts were independently
@@ -403,15 +438,14 @@ the Indonesian target build.
 
 ## Immediate production actions
 
-1. Keep GitHub synchronized at each admitted boundary now that the account is
-   reinstated, with anonymous byte/hash readback. Do not retry a Figshare file
-   publication unless Figshare exposes DSL/custom-license support or a
-   compatible legal basis is established.
-2. Complete the S131 stable-ID backend and cumulative S111–S131 reader,
-   deterministic build, full visual/accessibility QA, admission record, and
-   preservation checkpoint. Then advance directly to `mt132.tex` and continue
-   through every source unit in Volumes 1–2. The 672-page corpus goal remains
-   active and is not completed by the cumulative Section 123 boundary.
+1. Continue source order at `mt132.tex` (17,074 bytes; SHA-256
+   `5bb8e80daa8d659ba21fd24c1c123eb17c3f76ac57d4102438acbb2622659ed6`),
+   preserving the admitted S131 boundary and terminology decisions.
+2. Publish each substantial verified cumulative boundary to the existing
+   Zenodo concept and GitHub repository with anonymous byte/hash readback. Do
+   not retry a Figshare file publication unless it exposes DSL/custom-license
+   support or a compatible legal basis is established. The 672-page corpus
+   goal remains active and is not completed by S131.
 
 ## Scope guard
 

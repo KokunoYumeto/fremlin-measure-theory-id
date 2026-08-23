@@ -1,6 +1,6 @@
 # Current Cursor
 
-Updated: 2026-08-22 (Europe/Berlin)
+Updated: 2026-08-23 (Europe/Berlin)
 
 ## Active production cursor
 
@@ -9,31 +9,62 @@ Updated: 2026-08-22 (Europe/Berlin)
 | Corpus | `O007-FREMLIN-MT-V1-V2` |
 | Volume | `O007-FREMLIN-V1` — *The Irreducible Minimum* |
 | Chapter | `O007-FREMLIN-V1-C13` — *Complements* |
-| Unit | `O007-FREMLIN-V1-S131` |
-| Source anchor | `131` |
-| Source title | `Measurable subspaces` |
-| Indonesian working title | `Subruang terukur` |
-| Authority member | `authority/fremlin/source/mt1.2011/mt131.tex` |
-| Source receipt | 11,811 bytes; 294 lines; SHA-256 `94ebff73a9a8820a85e852df30088830cfee57e8cfed0fa8244f915e0b88f105` |
-| Target | `source/id-ID/mt131.tex` |
-| Target receipt | 13,516 bytes; 329 lines; SHA-256 `0b05d13299cc5a94530fb56b366fe22cb2d43d1fe711383d2320b1dbf6bbbe64` |
-| Production status | `translation_reviewed_backend_and_reader_in_progress` |
+| Unit | `O007-FREMLIN-V1-S132` |
+| Source anchor | `132` |
+| Source title | `Outer measures from measures` |
+| Indonesian working title | `Ukuran luar dari ukuran` (working) |
+| Authority member | `authority/fremlin/source/mt1.2011/mt132.tex` |
+| Source receipt | 17,074 bytes; 437 lines; SHA-256 `5bb8e80daa8d659ba21fd24c1c123eb17c3f76ac57d4102438acbb2622659ed6` |
+| Target | `source/id-ID/mt132.tex` |
+| Target receipt | not yet produced |
+| Production status | `next_source_unit_ready` |
 | Target admitted | `false` |
 
-Section 123 is complete and admitted. Section 131 now has a complete natural
-id-ID target whose independent semantic review and exact structural replay
-pass: all 257 mathematical atoms are present, with only the two explicit
-ledgered corrections `O007-CORR-0018` and `O007-CORR-0019`. Its frozen-source
-replay proves printed pages 56–58 and raises the cumulative unique official
-span to pages 10–58, or 49 of 672 pages. The target is not yet admitted because
-its stable-ID backend and cumulative reader/build/visual gates are still in
-progress. The next executable action is to complete those gates, issue the
-S131 admission record, and only then advance in source order to `mt132.tex`.
+Section 131 is complete, admitted, and preserved as the current cumulative
+boundary. Its complete natural id-ID target, stable-ID backend, deterministic
+reader/PDF, full visual/browser QA, and admission evidence pass. The frozen
+source replay proves printed pages 56–58 and raises the cumulative unique
+official span to pages 10–58, or 49 of 672 pages. The next executable action is
+to translate `mt132.tex` in source order; the complete 672-page Volumes 1–2
+goal remains active.
 
 The earlier cursor labels `The indefinite integral` / `Upper integrals` were
 rejected on direct authority replay. Frozen `mt13.tex` and `mt131.tex` identify
 Chapter 13 as `Complements` and Section 131 as `Measurable subspaces`. This
 correction changes only the task cursor, not source content or corpus scope.
+
+## Latest admitted boundary — S131
+
+`O007-FREMLIN-V1-S131`, `Measurable subspaces` → `Subruang terukur`, is
+complete and admitted. Authority: 11,811 bytes / 294 lines / SHA-256
+`94ebff73a9a8820a85e852df30088830cfee57e8cfed0fa8244f915e0b88f105`.
+Target: 13,512 bytes / 329 lines / SHA-256
+`eb486850c0a7908beaf6954bdc030a654ea2a4a4864411bb15117a2529bff470`.
+
+The admitted cumulative reader covers sections 111–115, 121–123, and 131:
+49 unique official pages (10–58) of the selected 672-page corpus, with a
+58-page A4 reflow PDF. The final package PDF is 490,296 bytes,
+`ea46ce188e4454a7f68a35a192c0aea79d3864e7d7c7423b12cc2a8634a35b7b`; the
+deterministic ZIP is 5,726,148 bytes,
+`c61ad611e8b221d714d5e68654561a43898c5b62fc4b56a6cf7ad033c2e9372b`.
+Admission evidence is `00_control/CP0009_MT131_ADMISSION.md` and the
+`qa/mt131-*` receipts; the Indonesian terminology QA fallback and its decision
+ledger are recorded in `qa/TERMINOLOGY_QA_INDONESIAN_FIELD.md` and
+`00_control/TERMINOLOGY_DECISIONS.md`.
+
+This boundary is public in the existing Zenodo concept as version `0.9.0-s131`,
+DOI `10.5281/zenodo.22070417`, concept DOI
+`10.5281/zenodo.22059798`; anonymous byte/hash readback passed for the PDF,
+ZIP, and checksum witness. Exact token-free evidence is
+`qa/ZENODO_PUBLICATION_RECEIPT_S131.json` (5,712 bytes; SHA-256
+`a026e4d3d96f8896f98c4d205203402ff75b616aaa637b84bdb7d42399fac0b2`).
+The same boundary is public on GitHub at
+`https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.9.0-s131`;
+boundary commit `d7d31a87569650c7653aaacd8759cbf48a3f25da`, tree
+`38a0a26b76cd632cd095c6f103c2266ab254217b`, receipt commit
+`371e3d99e5d4ad641a24ed01a95ff7f6e3177230`. Exact token-free evidence is
+`qa/PUBLICATION_RECEIPT_S131.json` (SHA-256
+`c29e50113698a51461304b0a8eebb6a2fdc7351d28b80deed998b9717c294378`).
 
 ## Last admitted boundary
 
