@@ -1,0 +1,1131 @@
+\frfilename{mt225.tex}
+\versiondate{16.8.15}
+\copyrightdate{1996}
+
+\def\chaptername{Teorema Dasar Kalkulus}
+\def\sectionname{Fungsi kontinu mutlak}
+
+\newsection{225}
+
+Sekarang kita siap memberikan pencirian lengkap fungsi-fungsi yang dapat
+muncul sebagai integral tak tentu (225E, 225Xf). Gagasan pokoknya ialah
+`kontinuitas mutlak' (225B). Pada paruh kedua bagian ini (225G-225N), saya
+menguraikan beberapa hubungan antara konsep tersebut dan konsep-konsep yang
+telah kita jumpai.
+
+\leader{225A}{Kontinuitas mutlak integral tak
+\dvrocolon{tentu}}\cmmnt{ Saya memulai dengan suatu hasil dasar yang mudah dari teori
+ukuran umum.
+
+\medskip
+
+\noindent}{\bf Teorema} Misalkan $(X,\Sigma,\mu)$ sembarang ruang ukur dan
+$f$ suatu fungsi bernilai real terintegralkan yang didefinisikan pada suatu
+subhimpunan koterabaikan dari $X$. Maka untuk setiap $\epsilon>0$ terdapat
+suatu himpunan terukur $E$ berukuran berhingga dan suatu bilangan real
+$\delta>0$ sedemikian sehingga $\int_F|f|\le\epsilon$ kapan pun
+$F\in\Sigma$ dan $\mu(F\cap E)\le\delta$.
+
+\proof{ Terdapat suatu barisan tak-menurun $\sequencen{g_n}$ dari fungsi
+sederhana nonnegatif sedemikian sehingga
+$|f|\eae\lim_{n\to\infty}g_n$ dan
+$\int|f|=\lim_{n\to\infty}\int g_n$. Ambil $n\in\Bbb N$ sedemikian sehingga
+$\int g_n\ge\int|f|-\bover12\epsilon$.
+Ambil $M>0$ dan $E\in\Sigma$ sedemikian sehingga $\mu E<\infty$ dan
+$g_n\le M\chi E$; tetapkan $\delta=\epsilon/2M$.
+Jika $F\in\Sigma$ dan $\mu(F\cap E)\le\delta$, maka
+
+\Centerline{$\int_Fg_n=\int g_n\times\chi F
+\le M\mu(F\cap E)\le\Bover12\epsilon$;}
+
+\noindent akibatnya
+
+\Centerline{$\int_F|f|
+=\int_Fg_n+\int_F|f|-g_n\le\Bover12\epsilon+\int|f|-g_n\le\epsilon$.}
+}%end of proof of 225A
+
+\leader{225B}{Fungsi kontinu mutlak pada $\Bbb R$: Definisi}
+Jika $[a,b]$ suatu interval tertutup tak kosong dalam $\Bbb R$ dan
+$f:[a,b]\to\Bbb R$ suatu fungsi, kita mengatakan bahwa $f$ {\bf kontinu
+mutlak} jika untuk setiap $\epsilon>0$ terdapat $\delta>0$ sedemikian sehingga
+$\sum_{i=1}^n|f(b_i)-f(a_i)|\le\epsilon$ kapan pun
+$a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b$ dan
+$\sum_{i=1}^nb_i-a_i\le\delta$.
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Ungkapan `kontinu mutlak' digunakan dalam berbagai
+pengertian dalam teori ukuran. Pengertian-pengertian itu berkaitan erat (jika
+dilihat dengan cara yang tepat), tetapi tidak identik; Anda perlu senantiasa
+mencermati konteks setiap definisi.
+}%end of comment
+
+\leader{225C}{Proposisi} Misalkan $[a,b]$ suatu interval tertutup tak kosong
+dalam $\Bbb R$.
+
+(a) Jika $f:[a,b]\to\Bbb R$ kontinu mutlak, maka fungsi tersebut kontinu seragam.
+
+(b) Jika $f:[a,b]\to\Bbb R$ kontinu mutlak, maka fungsi tersebut bervariasi terbatas
+pada $[a,b]$, sehingga terdiferensialkan hampir di mana-mana dalam
+$[a,b]$, dan turunannya terintegralkan pada $[a,b]$.
+
+(c) Jika $f$, $g:[a,b]\to\Bbb R$ kontinu mutlak, maka demikian pula $f+g$
+dan $cf$, untuk setiap $c\in\Bbb R$.
+
+(d) Jika $f$, $g:[a,b]\to\Bbb R$ kontinu mutlak, maka demikian pula
+$f\times g$.
+
+(e) Jika $g:[a,b]\to [c,d]$ dan $f:[c,d]\to\Bbb R$ kontinu mutlak, serta
+$g$ tak-menurun, maka komposisi $fg:[a,b]\to\Bbb R$ kontinu mutlak.
+
+\proof{{\bf (a)} Misalkan $\epsilon>0$. Maka terdapat $\delta>0$ sedemikian
+sehingga $\sum_{i=1}^n|f(b_i)-f(a_i)|\le\epsilon$ kapan pun
+$a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b$ dan
+$\sum_{i=1}^nb_i-a_i\le\delta$; tetapi tentu saja sekarang
+$|f(y)-f(x)|\le\epsilon$ kapan pun $x$, $y\in[a,b]$ dan
+$|x-y|\le\delta$. Karena $\epsilon$ sebarang, $f$ kontinu seragam.
+
+
+
+\medskip
+
+{\bf (b)} Misalkan $\delta>0$ sedemikian sehingga
+$\sum_{i=1}^n|f(b_i)-f(a_i)|\le 1$ kapan pun
+$a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b$ dan
+$\sum_{i=1}^nb_i-a_i\le\delta$. Jika
+$a\le c=c_0\le c_1\le\ldots\le c_n\le d\le\min(b,c+\delta)$, maka
+$\sum_{i=1}^n|f(c_i)-f(c_{i-1})|\le 1$, sehingga
+$\Var_{[c,d]}(f)\le 1$; oleh karena itu (dengan induksi terhadap $k$ dan
+menggunakan 224Cc untuk langkah induksi),
+$\Var_{[a,\min(a+k\delta,b)]}(f)\le k$ untuk setiap $k$, dan
+
+\Centerline{$\Var_{[a,b]}(f)\le\lceil(b-a)/\delta\rceil<\infty$.}
+
+Karena itu, menurut 224I, $f'$ terintegralkan.
+
+\medskip
+
+{\bf (c)(i)} Misalkan $\epsilon>0$. Maka terdapat $\delta_1$,
+$\delta_2>0$ sedemikian sehingga
+
+\Centerline{$\sum_{i=1}^n|f(b_i)-f(a_i)|\le\Bover12\epsilon$}
+
+\noindent kapan pun
+$a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b$ dan
+$\sum_{i=1}^nb_i-a_i\le\delta_1$,
+
+\Centerline{$\sum_{i=1}^n|g(b_i)-g(a_i)|\le\Bover12\epsilon$}
+
+\noindent kapan pun $a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le
+b_n\le b$ dan
+$\sum_{i=1}^nb_i-a_i\le\delta_2$. Tetapkan
+$\delta=\min(\delta_1,\delta_2)>0$, dan andaikan bahwa
+$a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b$ dan
+$\sum_{i=1}^nb_i-a_i\le\delta$. Maka
+
+
+\Centerline{$\sum_{i=1}^n|(f+g)(b_i)-(f+g)(a_i)|\le
+\sum_{i=1}^n|f(b_i)-f(a_i)|+\sum_{i=1}^n|g(b_i)-g(a_i)|\le\epsilon$.}
+
+\noindent Karena $\epsilon$ sebarang, $f+g$ kontinu mutlak.
+
+\medskip
+
+\quad{\bf (ii)} Misalkan $\epsilon>0$. Maka terdapat $\delta>0$ sedemikian
+sehingga
+
+\Centerline{$\sum_{i=1}^n|f(b_i)-f(a_i)|\le\Bover{\epsilon}{1+|c|}$}
+
+\noindent kapan pun
+$a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b$ dan
+$\sum_{i=1}^nb_i-a_i\le\delta$. Sekarang
+
+\Centerline{$\sum_{i=1}^n|(cf)(b_i)-(cf)(a_i)|\le\epsilon$}
+
+\noindent kapan pun
+$a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b$ dan
+$\sum_{i=1}^nb_i-a_i\le\delta$. Karena $\epsilon$ sebarang, $cf$ kontinu
+mutlak.
+
+\medskip
+
+{\bf (d)} Baik menurut (a) maupun menurut (b), $f$ dan $g$ terbatas; tetapkan
+$M=\sup_{x\in[a,b]}|f(x)|$, $M'=\sup_{x\in[a,b]}|g(x)|$. Misalkan
+$\epsilon>0$. Maka terdapat $\delta_1$, $\delta_2>0$ sedemikian sehingga
+
+\inset{$\sum_{i=1}^n|f(b_i)-f(a_i)|\le\epsilon$
+kapan pun $a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b$ dan
+$\sum_{i=1}^nb_i-a_i\le\delta_1$,}
+
+\inset{$\sum_{i=1}^n|g(b_i)-g(a_i)|\le\epsilon$
+kapan pun $a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b$ dan
+$\sum_{i=1}^nb_i-a_i\le\delta_2$.}
+
+\noindent Tetapkan $\delta=\min(\delta_1,\delta_2)>0$ dan andaikan bahwa
+$a\le a_1\le b_1\le\ldots\le b_n\le b$ serta
+$\sum_{i=1}^nb_i-a_i\le\delta$. Maka
+
+$$\eqalign{\sum_{i=1}^n|f(b_i)g(b_i)-f(a_i)g(a_i)|
+&=\sum_{i=1}^n|(f(b_i)-f(a_i))g(b_i)+f(a_i)(g(b_i)-g(a_i))|\cr
+&\le\sum_{i=1}^n|f(b_i)-f(a_i)||g(b_i)|+|f(a_i)||g(b_i)-g(a_i)|\cr
+&\le\sum_{i=1}^n|f(b_i)-f(a_i)|M'+M|g(b_i)-g(a_i)|\cr
+&\le\epsilon M'+M\epsilon
+=\epsilon(M+M').\cr}$$
+
+\noindent Karena $\epsilon$ sebarang, $f\times g$ kontinu mutlak.
+
+\medskip
+
+{\bf (e)} Misalkan $\epsilon>0$. Maka terdapat $\delta>0$ sedemikian sehingga
+$\sum_{i=1}^n|f(d_i)-f(c_i)|\le\epsilon$ kapan pun
+$c\le c_1\le d_1\le\ldots\le c_n\le d_n\le d$ dan
+$\sum_{i=1}^nd_i-c_i\le\delta$; dan terdapat $\eta>0$ sedemikian sehingga
+$\sum_{i=1}^n|g(b_i)-g(a_i)|\le\delta$ kapan pun
+$a\le a_1\le b_1\le\ldots\le a_n\le b_n\le b$ dan
+$\sum_{i=1}^nb_i-a_i\le\eta$. Sekarang andaikan bahwa
+$a\le a_1\le b_1\le\ldots\le a_n\le b_n\le b$ dan
+$\sum_{i=1}^nb_i-a_i\le\eta$. Karena $g$ tak-menurun, kita mempunyai
+$c\le g(a_1)\le\ldots\le g(b_n)\le d$ dan
+$\sum_{i=1}^ng(b_i)-g(a_i)\le\delta$, sehingga
+$\sum_{i=1}^n|f(g(b_i))-f(g(a_i))|\le\epsilon$; karena $\epsilon$ sebarang,
+$fg$ kontinu mutlak.
+}%end of proof of 225C
+\leader{225D}{Lemma} Misalkan $[a,b]$ suatu interval tertutup tak kosong
+dalam $\Bbb R$ dan $f:[a,b]\to\Bbb R$ suatu fungsi kontinu mutlak yang
+turunannya nol hampir di mana-mana dalam $[a,b]$.
+Maka $f$ konstan pada $[a,b]$.
+
+\proof{ Misalkan $x\in[a,b]$, $\epsilon>0$. Misalkan $\delta>0$
+sedemikian sehingga $\sum_{i=1}^n|f(b_i)-f(a_i)|\le\epsilon$
+kapan pun $a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b$ dan
+$\sum_{i=1}^nb_i-a_i\le\delta$. Tetapkan
+$A=\{t:a<t<x,\,f'(t)$ terdefinisi dan nilainya $=0\}$; maka
+$\mu A=x-a$, dengan $\mu$
+menyatakan ukuran Lebesgue.
+Misalkan $\Cal I$ himpunan interval tertutup tak kosong dan bukan singleton
+$[c,d]\subseteq[a,x]$ sedemikian sehingga
+$|f(d)-f(c)|\le\epsilon (d-c)$; maka setiap anggota $A$ termasuk dalam
+anggota-anggota $\Cal I$ yang sependek apa pun.
+Menurut teorema Vitali (221A), terdapat suatu subkeluarga terhitung dan
+saling lepas $\Cal I_0\subseteq\Cal I$ sedemikian sehingga
+$\mu(A\setminus\bigcup\Cal I_0)=0$, yakni,
+
+\Centerline{$x-a=\mu(\bigcup\Cal I_0)=\sum_{I\in\Cal I_0}\mu I$.}
+
+\noindent Sekarang terdapat suatu $\Cal I_1\subseteq\Cal I_0$ berhingga
+sedemikian sehingga
+
+\Centerline{$\mu(\bigcup\Cal I_1)
+=\sum_{I\in\Cal I_1}\mu I\ge x-a-\delta$.}
+
+\noindent Jika $\Cal I_1=\emptyset$, maka $x\le a+\delta$ dan
+$|f(x)-f(a)|\le\epsilon$. Jika tidak, nyatakan $\Cal I_1$ sebagai
+$\{[c_0,d_0],\ldots,[c_n,d_n]\}$, dengan
+$a\le c_0<d_0<c_1<d_1<\ldots<c_n<d_n\le x$. Maka
+
+\Centerline{$(c_0-a)+\sum_{i=1}^n(c_i-d_{i-1})
++(x-d_n)=\mu([a,x]\setminus\bigcup\Cal I_1)\le\delta$,}
+
+\noindent sehingga
+
+\Centerline{$|f(c_0)-f(a)|+\sum_{i=1}^n|f(c_i)-f(d_{i-1})|+|f(x)-f(d_n)|
+\le\epsilon$.}
+
+\noindent Di sisi lain, $|f(d_i)-f(c_i)|\le\epsilon(d_i-c_i)$ untuk
+setiap $i$, sehingga
+
+\Centerline{$\sum_{i=0}^n|f(d_i)-f(c_i)|\le\epsilon\sum_{i=0}^nd_i-c_i
+\le\epsilon(x-a)$.}
+
+\noindent Dengan menggabungkan kedua hal ini,
+
+$$\eqalign{|f(x)-f(a)|
+&\le|f(c_0)-f(a)|+|f(d_0)-f(c_0)|+|f(c_1)-f(d_0)|+\ldots\cr
+&\hskip10em+|f(d_n)-f(c_n)|+|f(x)-f(d_n)|\cr
+&=|f(c_0)-f(a)|+\sum_{i=1}^n|f(c_i)-f(d_{i-1})|\cr
+&\hskip10em+|f(x)-f(d_n)|+\sum_{i=0}^n|f(d_i)-f(c_i)|\cr
+&\le\epsilon+\epsilon(x-a)
+=\epsilon(1+x-a).\cr}$$
+
+\noindent Karena $\epsilon$ sebarang, $f(x)=f(a)$. Karena $x$ sebarang,
+$f$ konstan.
+}%end of proof of 225D
+
+\leader{225E}{Teorema} Misalkan $[a,b]$ suatu interval tertutup tak kosong
+dalam $\Bbb R$ dan $F:[a,b]\to\Bbb R$ suatu fungsi. Maka pernyataan-pernyataan
+berikut ekuivalen:
+
+(i) terdapat suatu fungsi bernilai real terintegralkan $f$ sedemikian sehingga
+$F(x)=F(a)+\int_a^xf$ untuk setiap $x\in[a,b]$;
+
+(ii) $\int_a^xF'$ ada dan sama dengan $F(x)-F(a)$ untuk setiap
+$x\in[a,b]$;
+
+(iii) $F$ kontinu mutlak.
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Di sini dan dalam bagian selebihnya (kecuali
+dalam 225Oa), integral diambil terhadap ukuran Lebesgue pada $\Bbb R$.
+}
+
+\proof{{\bf (i)$\Rightarrow$(iii)} Andaikan (i).
+Misalkan $\epsilon>0$. Menurut 225A, terdapat $\delta>0$ sedemikian sehingga
+$\int_H|f|\le\epsilon$ kapan pun $H\subseteq[a,b]$ dan
+$\mu H\le\delta$, dengan $\mu$ seperti biasa menyatakan ukuran Lebesgue.
+Sekarang andaikan bahwa
+$a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b$ dan
+$\sum_{i=1}^nb_i-a_i\le\delta$. Tinjau
+$H=\bigcup_{1\le i\le n}\coint{a_i,b_i}$. Maka $\mu H\le\delta$ dan
+
+\Centerline{$\sum_{i=1}^n|F(b_i)-F(a_i)|
+=\sum_{i=1}^n|\int_{\coint{a_i,b_i}}f|
+\le\sum_{i=1}^n\int_{\coint{a_i,b_i}}|f|
+=\int_H|f|\le\epsilon$.}
+
+\noindent Karena $\epsilon$ sebarang, $F$ kontinu mutlak.
+
+\medskip
+
+{\bf (iii)$\Rightarrow$(ii)} Jika $F$ kontinu mutlak, maka fungsi tersebut bervariasi
+terbatas (225Cb), sehingga $\int_a^bF'$ ada (224I). Tetapkan
+$G(x)=\int_a^xF'$ untuk $x\in [a,b]$; maka $G'\eae F'$ (222E) dan $G$
+kontinu mutlak (menurut (i)$\Rightarrow$(iii) yang baru saja dibuktikan).
+Dengan demikian $G-F$ kontinu mutlak (225Cc) dan terdiferensialkan hampir
+di mana-mana, dengan turunan nol. Menurut 225D, $G-F$ harus konstan. Tetapi
+karena $G(a)=0$, $G=F-F(a)$; tepat seperti yang disyaratkan oleh (ii).
+
+\medskip
+
+{\bf (ii)$\Rightarrow$(i)} langsung.
+}%end of proof of 225E
+
+\leader{225F}{Integrasi \dvrocolon{parsial}}\cmmnt{ Sebagai suatu
+penerapan hasil ini, saya memberikan pembenaran bagi suatu rumus yang sudah
+dikenal.
+
+\medskip
+
+\noindent}{\bf Teorema} Misalkan $f$ suatu fungsi bernilai real yang
+terintegralkan pada suatu interval $[a,b]\subseteq\Bbb R$, dan
+$g:[a,b]\to\Bbb R$ suatu fungsi kontinu mutlak. Andaikan $F$ suatu integral
+tak tentu dari $f$, sehingga $F(x)-F(a)=\int_a^xf$ untuk $x\in[a,b]$. Maka
+
+\Centerline{$\int_a^bf\times g
+=F(b)g(b) - F(a)g(a) -\int_a^bF\times g'$.}
+
+\proof{ Tetapkan $h=F\times g$. Karena $F$ kontinu mutlak (225E), demikian
+pula $h$ (225Cd). Akibatnya $h(b)-h(a)=\int_a^bh'$, menurut
+(iii)$\Rightarrow$(ii) dari 225E. Tetapi
+$h'=F'\times g+F\times g'$ di setiap tempat di mana $F'$ dan $g'$
+terdefinisi, yakni hampir di mana-mana, dan $F'\eae f$, sekali lagi menurut
+222E; jadi $h'\eae f\times g+F\times g'$. Akhirnya, $g$ dan $F$ kontinu,
+sehingga terukur dan terbatas, sedangkan $f$ dan $g'$ terintegralkan (dengan
+kembali menggunakan 225E); jadi $f\times g$ dan $F\times g'$ terintegralkan,
+dan
+
+\Centerline{$F(b)g(b)-F(a)g(a)
+=h(b)-h(a)
+=\int_a^bh'
+=\int_a^bf\times g+\int_a^bF\times g'$,}
+
+\noindent seperti yang diperlukan.
+}%end of proof of 225F
+\leader{225G}{}\cmmnt{ Sekarang saya beralih ke sekelompok hasil pada
+tingkat yang agak lebih dalam daripada sebagian besar pembahasan bab ini,
+yang lebih dekat dengan gagasan-gagasan Bab 26.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $[a,b]$ suatu interval tertutup tak kosong
+dalam $\Bbb R$ dan $f:[a,b]\to\Bbb R$ suatu fungsi kontinu mutlak.
+
+(a) $f[A]$ terabaikan untuk setiap himpunan terabaikan
+$A\subseteq\Bbb R$.
+
+(b)\dvAnew{2013}
+$f[E]$ terukur untuk setiap himpunan terukur $E\subseteq\Bbb R$.
+
+\proof{{\bf (a)} Misalkan $\epsilon>0$. Maka terdapat $\delta>0$ sedemikian
+sehingga $\sum_{i=1}^n|f(b_i)-f(a_i)|\le\epsilon$ kapan pun
+$a\le a_1\le b_1\le\ldots\le a_n\le b_n\le b$ dan
+$\sum_{i=1}^nb_i-a_i\le\delta$. Sekarang terdapat suatu barisan
+$\sequence{k}{I_k}$ dari interval tertutup yang menutupi $A$, dengan
+$\sum_{k=0}^{\infty}\mu I_k\le\delta$. Untuk setiap $m\in\Bbb N$, misalkan
+$F_m$ adalah $[a,b]\cap\bigcup_{k\le m}I_k$. Maka
+$\mu f[F_m]\le\epsilon$. \Prf\ $F_m$ harus dapat dinyatakan sebagai
+$\bigcup_{i\le n}[c_i,d_i]$, dengan $n\le m$ dan
+$a\le c_0\le d_0\le\ldots\le c_n\le d_n\le b$.
+Untuk setiap $i\le n$, pilih $x_i$, $y_i$ sedemikian sehingga
+$c_i\le x_i$, $y_i\le d_i$ dan
+
+\Centerline{$f(x_i)=\min_{x\in[c_i,d_i]}f(x)$,\quad
+$f(y_i)=\max_{x\in[c_i,d_i]}f(x)$;}
+
+\noindent titik-titik seperti itu ada karena $f$ kontinu (225Ca), sehingga
+terbatas dan mencapai batas-batasnya pada $[c_i,d_i]$. Tetapkan
+$a_i=\min(x_i,y_i)$, $b_i=\max(x_i,y_i)$, sehingga
+$c_i\le a_i\le b_i\le d_i$. Maka
+
+\Centerline{$\sum_{i=0}^nb_i-a_i\le\sum_{i=0}^nd_i-c_i=\mu F_m
+\le\mu(\bigcup_{k\in\Bbb N}I_k)\le\delta$,}
+
+\noindent sehingga
+
+$$\eqalign{\mu f[F_m]
+&=\mu(\bigcup_{i\le n}f[\,[c_i,d_i]\,])
+\le\sum_{i=0}^n\mu(f[\,[c_i,d_i]\,])\cr
+&=\sum_{i=0}^n\mu[f(x_i),f(y_i)]
+=\sum_{i=0}^n|f(b_i)-f(a_i)|
+\le\epsilon.  \text{ \Qed}\cr}$$
+
+\noindent Tetapi $\sequence{m}{f[F_m]}$ merupakan barisan tak-menurun yang
+menutupi $f[A]$, sehingga
+
+\Centerline{$\mu^*f[A]\le\mu(\bigcup_{m\in\Bbb N}f[F_m])
+=\sup_{m\in\Bbb N}\mu f[F_m]\le\epsilon$.}
+
+\noindent Karena $\epsilon$ sebarang, $f[A]$ terabaikan, seperti yang
+dinyatakan.
+
+\medskip
+
+{\bf (b)} Menurut 134Fb, terdapat suatu barisan $\sequencen{F_n}$ dari
+subhimpunan tertutup $E\cap[a,b]$ sedemikian sehingga
+$\lim_{n\to\infty}\mu F_n=\mu(E\cap[a,b])$.
+Untuk setiap $n$, $F_n$ tertutup dan terbatas, jadi kompak (2A2F); karena
+$f$ kontinu, $f[F_n]$ kompak (2A2Eb), jadi tertutup (2A2F, dalam arah
+sebaliknya) dan terukur (114G). Selanjutnya, dengan menetapkan
+$A=E\cap[a,b]\setminus\bigcup_{n\in\Bbb N}F_n$, himpunan $A$ terabaikan,
+sehingga $f[A]$ terabaikan menurut (a) di sini, dan karenanya terukur.
+Akibatnya
+
+\Centerline{$f[E]=f[E\cap[a,b]]=f[\bigcup_{n\in\Bbb N}F_n\cup A]
+=\bigcup_{n\in\Bbb N}f[F_n]\cup f[A]$}
+
+\noindent terukur, seperti yang dinyatakan.
+}%end of proof of 225G
+
+\leader{225H}{Fungsi semikontinu}\cmmnt{ Sebagai persiapan bagi hasil utama
+terakhir dalam bagian ini, saya memberikan suatu hasil umum mengenai fungsi
+bernilai real terukur pada subhimpunan $\Bbb R$. Untuk sekali ini, akan
+memudahkan jika kita meninjau fungsi-fungsi yang mengambil nilai dalam
+$[-\infty,\infty]$.} Jika $D\subseteq\BbbR^r$, suatu fungsi
+$g:D\to[-\infty,\infty]$ disebut {\bf semikontinu bawah} jika
+$\{x:g(x)>u\}$ merupakan subhimpunan terbuka dari $D$\cmmnt{ (untuk topologi
+subruang, lihat 2A3C)} untuk setiap $u\in[-\infty,\infty]$. Setiap fungsi
+semikontinu bawah terukur Borel, dan karenanya terukur
+Lebesgue\cmmnt{ (121B-121D)}. %121B 121C 121D
+\cmmnt{Sekarang kita mempunyai hasil berikut.}
+
+\leader{225I}{Proposisi} Andaikan $r\ge 1$ dan $f$ suatu fungsi bernilai real
+yang didefinisikan pada suatu subhimpunan $D$ dari $\BbbR^r$ dan
+terintegralkan pada $D$. Maka untuk setiap $\epsilon>0$ terdapat suatu fungsi
+semikontinu bawah $g:\BbbR^r\to[-\infty,\infty]$ sedemikian sehingga
+$g(x)\ge f(x)$ untuk setiap $x\in D$ dan $\int_Dg$ terdefinisi serta tidak
+lebih besar daripada $\epsilon+\int_Df$.
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Ini merupakan hasil yang sangat penting secara umum,
+jadi saya menyatakannya dalam bentuk yang cukup umum; tetapi untuk bab ini
+kita hanya memerlukan kasus $r=1$, $D=[a,b]$, dengan $a\le b$.
+}%end of comment
+
+\proof{{\bf (a)} Kita dapat mengenumerasi $\Bbb Q$ sebagai
+$\sequencen{q_n}$. Menurut 225A, terdapat $\delta>0$ sedemikian sehingga
+$\int_F|f|\le\bover12{\epsilon}$ kapan pun $\mu_DF\le\delta$, dengan
+$\mu_D$ ukuran subruang pada $D$, sehingga $\mu_DF=\mu^*F$, yaitu ukuran
+luar Lebesgue dari $F$, untuk setiap $F\in\Sigma_D$, ranah $\mu_D$
+(214A-214B). Untuk setiap $n\in\Bbb N$, tetapkan
+
+\Centerline{$\delta_n=2^{-n-1}\min(\Bover{\epsilon}{1+2|q_n|},\delta)$,}
+
+\noindent sehingga
+$\sum_{n=0}^{\infty}\delta_n|q_n|\le\bover12{\epsilon}$ dan
+$\sum_{n=0}^{\infty}\delta_n\le\delta$. Untuk setiap $n\in\Bbb N$,
+misalkan $E_n\subseteq\BbbR^r$ suatu himpunan terukur Lebesgue sedemikian
+sehingga $\{x:f(x)\ge q_n\}=D\cap E_n$, dan pilih suatu himpunan terbuka
+$G_n\supseteq E_n\cap B(\tbf{0},n)$ sedemikian sehingga
+$\mu G_n\le\mu(E_n\cap B(\tbf{0},n))+\delta_n$ (134Fa), dengan
+$B(\tbf{0},n)$ menyatakan bola $\{x:\|x\|\le n\}$. Untuk
+$x\in\BbbR^r$, tetapkan
+
+\Centerline{$g(x)=\sup\{q_n:x\in G_n\}$,}
+
+\noindent dengan mengizinkan $-\infty$ sebagai $\sup\emptyset$ dan
+$\infty$ sebagai supremum suatu himpunan yang tidak berbatas atas dalam
+$\Bbb R$.
+
+\medskip
+
+{\bf (b)} Sekarang periksa sifat-sifat $g$.
+
+\medskip
+
+\quad{\bf (i)} $g$ semikontinu bawah. \Prf\ Jika
+$u\in[-\infty,\infty]$, maka
+
+\Centerline{$\{x:g(x)>u\}=\bigcup\{G_n:q_n>u\}$}
+
+\noindent merupakan gabungan himpunan-himpunan terbuka, jadi terbuka.\ \Qed
+
+\medskip
+
+\quad{\bf (ii)} $g(x)\ge f(x)$ untuk setiap $x\in D$. \Prf\ Jika
+$x\in D$ dan $\eta>0$, terdapat $n\in\Bbb N$ sedemikian sehingga
+$\|x\|\le n$ dan $f(x)-\eta\le q_n\le f(x)$; sekarang
+$x\in E_n\subseteq G_n$, sehingga $g(x)\ge q_n\ge f(x)-\eta$. Karena
+$\eta$ sebarang, $g(x)\ge f(x)$.\ \Qed
+
+\medskip
+
+\quad{\bf (iii)} Tinjau fungsi-fungsi
+$h_1$, $h_2:D\to\ocint{-\infty,\infty}$ yang didefinisikan dengan menetapkan
+
+$$\eqalign{h_1(x)
+&=|f(x)|\text{ jika }x\in D\cap\bigcup_{n\in\Bbb N}(G_n\setminus E_n),\cr
+&=0\text{ untuk }x\in D\text{ lainnya},\cr
+h_2(x)&=\sum_{n=0}^{\infty}|q_n|\chi(G_n\setminus E_n)(x)
+\text{ untuk setiap }x\in D.\cr}$$
+
+\noindent Dengan menetapkan $F=\bigcup_{n\in\Bbb N}G_n\setminus E_n$,
+
+\Centerline{$\mu F\le\sum_{n=0}^{\infty}\mu(G_n\setminus E_n)
+\le\delta$,}
+
+\noindent sehingga
+
+\Centerline{$\int_Dh_1
+=\int_{D\cap F}|f|\le\Bover12\epsilon$}
+
+\noindent menurut pemilihan $\delta$. Adapun untuk $h_2$, kita mempunyai
+(menurut teorema B. Levi)
+
+\Centerline{$\int_Dh_2
+=\sum_{n=0}^{\infty}|q_n|\mu_D(D\cap G_n\setminus E_n)
+\le\sum_{n=0}^{\infty}|q_n|\mu(G_n\setminus E_n)
+\le\Bover12\epsilon$}
+
+\noindent --- karena nilai ini berhingga, $h_2(x)<\infty$ untuk hampir setiap
+$x\in D$. Jadi $\int_Dh_1+h_2\le\epsilon$.
+
+\medskip
+
+\quad{\bf (iv)} Pokoknya ialah bahwa $g\le f+h_1+h_2$ di setiap titik dalam
+$D$. \Prf\ Ambil sembarang $x\in D$. Jika $n\in\Bbb N$ dan $x\in G_n$,
+maka entah $x\in E_n$, dalam hal ini
+
+\Centerline{$f(x)+h_1(x)+h_2(x)\ge f(x)\ge q_n$,}
+
+\noindent atau $x\in G_n\setminus E_n$, dalam hal ini
+
+\Centerline{$f(x)+h_1(x)+h_2(x)\ge f(x)+|f(x)|+|q_n|\ge q_n$.}
+
+\noindent Dengan demikian
+
+\Centerline{$f(x)+h_1(x)+h_2(x)\ge\sup\{q_n:x\in G_n\}\ge g(x)$.   \Qed}
+
+\noindent Jadi $g\le f+h_1+h_2$ di setiap titik dalam $D$.
+
+\medskip
+
+\quad{\bf (v)} Dengan menggabungkan (iii) dan (iv),
+
+\Centerline{$\int_Dg\le\int_Df+h_1+h_2\le\epsilon+\int_Df$,}
+
+\noindent seperti yang diperlukan.
+}%end of proof of 225I
+
+\leader{225J}{}\cmmnt{ Kita memerlukan beberapa hasil mengenai himpunan dan
+fungsi terukur Borel yang juga menarik secara tersendiri.
+
+\medskip
+
+\noindent}{\bf Teorema} Misalkan $D$ suatu subhimpunan $\Bbb R$ dan
+$f:D\to\Bbb R$ sembarang fungsi. Maka
+
+\Centerline{$E=\{x:x\in D,\,f$ kontinu di $x\}$}
+
+\noindent terukur Borel relatif dalam $D$, dan
+
+\Centerline{$F=\{x:x\in D,\,f$ terdiferensialkan di $x\}$}
+
+\noindent terukur Borel dalam $\Bbb R$; selain itu, $f':F\to\Bbb R$
+terukur Borel.
+
+\wheader{225J}{0}{0}{0}{36pt}
+
+\proof{{\bf (a)} Untuk $k\in\Bbb N$, tetapkan
+
+\Centerline{$\Cal G_k=\{\ooint{a,b}:a,\,b\in\Bbb R,\,
+|f(x)-f(y)|\le 2^{-k}$ untuk semua $x$, $y\in D\cap\ooint{a,b}\}$.}
+
+\noindent Maka $G_k=\bigcup\Cal G_k$ suatu himpunan terbuka, sehingga
+$E_0=\bigcap_{k\in\Bbb N}G_k$ suatu himpunan Borel. Tetapi
+$E=D\cap E_0$, jadi $E$ suatu subhimpunan Borel relatif dari $D$.
+
+\medskip
+
+{\bf (b)(i)} Barangkali perlu segera saya katakan bahwa ketika menafsirkan
+rumus $f'(x)=\lim_{h\to 0}(f(x+h)-f(x))/h$, saya bersikeras menggunakan
+definisi ketat
+
+\Centerline{$a=\lim_{h\to 0}\bover{f(x+h)-f(x)}{h}$}
+
+\noindent jika
+
+\qquad\quad untuk setiap $\epsilon>0$ terdapat $\delta>0$ sedemikian sehingga
+$\Bover{f(x+h)-f(x)}{h}$ terdefinisi dan
+
+\hfill$|\Bover{f(x+h)-f(x)}{h}-a|\le\epsilon$ kapan pun
+$0<|h|\le\delta$.\qquad\qquad\quad
+
+\noindent Jadi $f'(x)$ dapat terdefinisi hanya jika terdapat
+$\delta>0$ sedemikian sehingga seluruh interval
+$[x-\delta,x+\delta]$ terletak dalam ranah $D$ dari $f$.
+
+\medskip
+
+\quad{\bf (ii)} Untuk $p$, $q$, $q'\in\Bbb Q$ dan $k\in\Bbb N$, tetapkan
+
+$$\eqalign{H(k,p,q,q')
+&=\{x:x\in E\cap\ooint{q,q'},\,|f(y)-f(x)-p(y-x)|\le 2^{-k}|y-x|
+\text{ untuk setiap }y\in\ooint{q,q'}\}\cr&
+\mskip300mu\text{ jika }\ooint{q,q'}\subseteq D\cr
+&=\emptyset\text{ jika tidak}.\cr}$$
+%display works in smallprint version
+
+\noindent Maka
+$H(k,p,q,q')=E\cap\ooint{q,q'}\cap\overline{H(k,p,q,q')}$.
+\Prf\ Jika
+$x\in E\cap\ooint{q,q'}\cap\overline{H(k,p,q,q')}$, terdapat suatu barisan
+$\sequencen{x_n}$ dalam $H(k,p,q,q')$ yang konvergen ke $x$.
+Karena $f$ kontinu di $x$,
+
+$$\eqalign{|f(y)-f(x)-p(y-x)|
+&=\lim_{n\to\infty}|f(y)-f(x_n)-p(y-x_n)|\cr&
+\le 2^{-k}\lim_{n\to\infty}|y-x_n|
+=2^{-k}|y-x|\cr}$$
+
+\noindent untuk setiap $y\in\ooint{q,q'}$, sehingga
+$x\in H(k,p,q,q')$.\ \QeD\ Dengan demikian $H(k,p,q,q')$ suatu himpunan
+Borel. \Prf\ Menurut (a), terdapat suatu himpunan Borel $E_0$ sedemikian
+sehingga $E=E_0\cap D$, sehingga jika $\ooint{q,q'}\subseteq D$, maka
+
+\Centerline{$H(k,p,q,q')=E\cap\ooint{q,q'}\cap\overline{H(k,p,q,q')}
+=E_0\cap\ooint{q,q'}\cap\overline{H(k,p,q,q')}$}
+
+\noindent merupakan himpunan Borel. Jika tidak, tentu saja
+$H(k,p,q,q')$ Borel karena kosong.\ \Qed
+
+\medskip
+
+\quad{\bf (iii)} Sekarang
+
+\Centerline{$F
+=\bigcap_{k\in\Bbb N}\bigcup_{p,q,q'\in\Bbb Q}H(k,p,q,q')$.}
+
+\noindent \Prf\ ($\alpha$) Andaikan $x\in F$, yakni $f'(x)$ terdefinisi;
+katakanlah $f'(x)=a$. Ambil sembarang $k\in\Bbb N$. Maka terdapat
+$p\in\Bbb Q$, $\delta>0$ sedemikian sehingga
+$|p-a|\le 2^{-k-1}$ dan $[x-\delta,x+\delta]\subseteq D$ serta
+$|\bover{f(x+h)-f(x)}{h}-a|\le 2^{-k-1}$ kapan pun
+$0<|h|\le\delta$; sekarang ambil
+$q\in\Bbb Q\cap\coint{x-\delta,x}$,
+$q'\in\Bbb Q\cap\ocint{x,x+\delta}$ dan lihat bahwa
+$x\in H(k,p,q,q')$. Karena $x$ sebarang,
+$F\subseteq\bigcap_{k\in\Bbb N}\bigcup_{p,q,q'\in\Bbb Q}H(k,p,q,q')$.
+($\beta$) Jika
+$x\in\bigcap_{k\in\Bbb N}\bigcup_{p,q,q'\in\Bbb Q}H(k,p,q,q')$, maka untuk
+setiap $k\in\Bbb N$ pilih $p_k$, $q_k$, $q'_k\in\Bbb Q$ sedemikian sehingga
+$x\in H(k,p_k,q_k,q'_k)$. Jika $h\ne 0$ dan
+$x+h\in\ooint{q_k,q'_k}$, maka
+$|\bover{f(x+h)-f(x)}{h}-p_k|\le 2^{-k}$.
+Tetapi ini berarti, pertama, bahwa $|p_k-p_l|\le 2^{-k}+2^{-l}$ untuk setiap
+$k$, $l$ (karena tentu terdapat suatu $h\ne 0$ sedemikian sehingga
+$x+h\in\ooint{q_k,q'_k}\cap\ooint{q_l,q'_l}$), sehingga
+$\sequence{k}{p_k}$ merupakan barisan Cauchy, katakanlah dengan limit $a$;
+dan, kedua, bahwa
+$|\bover{f(x+h)-f(x)}{h}-a|\le 2^{-k}+|a-p_k|$ kapan pun
+$h\ne 0$ dan $x+h\in\ooint{q_k,q'_k}$, sehingga $f'(x)$ terdefinisi dan
+sama dengan $a$.\ \Qed
+
+\medskip
+
+\quad{\bf (iv)} Karena $\Bbb Q$ terhitung, semua gabungan
+$\bigcup_{p,q,q'\in\Bbb Q}H(k,p,q,q')$ merupakan himpunan Borel, sehingga
+$F$ juga demikian.
+
+\medskip
+
+\quad{\bf (v)} Sekarang enumerasikan $\BbbQ^3$ sebagai
+$\sequence{i}{(p_i,q_i,q'_i)}$, dan tetapkan
+$H'_{ki}=H(k,p_i,q_i,q'_i)\setminus\bigcup_{j<i}H(k,p_j,q_j,q'_j)$ untuk
+setiap $k$, $i\in\Bbb N$. Setiap $H'_{ki}$ terukur Borel,
+$\sequence{i}{H'_{ki}}$ saling lepas, dan
+
+\Centerline{$\bigcup_{i\in\Bbb N}H'_{ki}
+=\bigcup_{i\in\Bbb N}H(k,p_i,q_i,q'_i)\supseteq F$}
+
+\noindent untuk setiap $k$. Perhatikan bahwa
+$|f'(x)-p|\le 2^{-k}$ kapan pun $x\in F\cap H(k,p,q,q')$, jadi jika kita
+menetapkan $f_k(x)=p_i$ untuk setiap $x\in H'_{ki}$, kita memperoleh suatu
+fungsi terukur Borel $f_k$ sedemikian sehingga
+$|f'(x)-f_k(x)|\le 2^{-k}$ untuk setiap $x\in F$.
+Dengan demikian $f'=\lim_{k\to\infty}f_k\restr F$ terukur Borel.
+}%end of proof of 225J
+
+\leader{225K}{Proposisi} Misalkan $[a,b]$ suatu interval tertutup tak kosong dalam
+$\Bbb R$, dan $f:[a,b]\to\Bbb R$ suatu fungsi. Tetapkan
+$F=\{x:x\in\ooint{a,b},\,f'(x)$ terdefinisi$\}$. Maka $f$ kontinu
+mutlak jika dan hanya jika (i) $f$ kontinu (ii) $f'$ terintegralkan pada $F$
+(iii) $f[\,[a,b]\setminus F]$ terabaikan.
+
+\proof{{\bf (a)} Mula-mula andaikan $f$ kontinu mutlak. Maka
+$f$ tentu kontinu (225Ca) dan $f'$ terintegralkan pada $[a,b]$,
+karena itu juga pada $F$ (225E); selain itu, $[a,b]\setminus F$ terabaikan, sehingga
+$f[\,[a,b]\setminus F]$ terabaikan, menurut 225G.
+
+\medskip
+
+{\bf (b)} Sekarang andaikan $f$ memenuhi syarat-syarat tersebut. Tetapkan
+$f^*(x)=|f'(x)|$ untuk $x\in F$, dan $0$ untuk
+$x\in[a,b]\setminus F$. Maka $f(b)\le f(a)+\int_a^bf^*$.
+
+\medskip
+
+\Prf\ {\bf (i)} Karena $F$ suatu himpunan Borel dan $f'$ suatu fungsi
+terukur Borel (225J), $f^*$ terukur. Ambil $\epsilon>0$.
+Ambil suatu subhimpunan terbuka $G$ dari
+$\Bbb R$ sedemikian sehingga $f[\,[a,b]\setminus F]\subseteq G$ dan
+$\mu G\le\epsilon$ (134Fa sekali lagi). Ambil suatu fungsi semikontinu bawah
+$g:\Bbb R\to[0,\infty]$ sedemikian sehingga $f^*(x)\le g(x)$ untuk setiap
+$x\in[a,b]$ dan $\int_a^bg\le\int_a^bf^*+\epsilon$ (225I). Perhatikan
+
+\Centerline{$A=\{x:a\le x\le b,\,\mu([f(a),f(x)]\setminus G)
+  \le 2\epsilon(x-a)+\int_a^xg\}$,}
+
+\noindent dengan menafsirkan $[f(a),f(x)]$ sebagai $\emptyset$ jika $f(x)<f(a)$.
+Maka $a\in A\subseteq[a,b]$, sehingga $c=\sup A$ terdefinisi dan termasuk dalam
+$[a,b]$.
+
+Karena $f$ kontinu, fungsi
+$x\mapsto\mu([f(a),f(x)]\setminus G)$ kontinu; selain itu,
+$x\mapsto 2\epsilon(x-a)+\int_a^xg$ jelas kontinu, sehingga
+$c\in A$.
+
+\medskip
+
+\quad{\bf (ii)} \Quer\ Jika $c\in F$, sehingga $f^*(c)=|f'(c)|$, maka terdapat
+suatu $\delta>0$ sedemikian sehingga
+
+\Centerline{$a\le c-\delta\le c+\delta\le b$,}
+
+\Centerline{$g(x)\ge g(c)-\epsilon\ge|f'(c)|-\epsilon$ kapan pun
+$|x-c|\le\delta$,}
+
+\Centerline{$|\Bover{f(x)-f(c)}{x-c}-f'(c)|\le\epsilon$ kapan pun
+$0<|x-c|\le\delta$.}
+
+\noindent Perhatikan $x=c+\delta$. Maka $c<x\le b$ dan
+
+$$\eqalignno{\mu([f(a),f(x)]\setminus G)
+&\le\mu([f(a),f(c)]\setminus G)+|f(x)-f(c)|\cr
+&\le2\epsilon(c-a)+\int_a^cg+\epsilon(x-c)+|f'(c)|(x-c)\cr
+&\le2\epsilon(c-a)+\int_a^cg
+         +\epsilon(x-c)+\int_c^x(g+\epsilon)\cr
+\noalign{\noindent (karena $g(t)\ge |f'(c)|-\epsilon$ kapan pun
+$c\le t\le x$)}
+&=2\epsilon(x-a)+\int_a^xg,\cr}$$
+
+\noindent sehingga $x\in A$; tetapi $c$ seharusnya merupakan batas atas dari
+$A$.\ \Bang
+
+Jadi $c\in[a,b]\setminus F$.
+
+\medskip
+
+\quad{\bf (iii)} \Quer\ Sekarang andaikan, jika mungkin, bahwa
+$c<b$. Kita tahu bahwa $f(c)\in G$, sehingga terdapat suatu $\eta>0$ sedemikian sehingga
+$[f(c)-\eta,f(c)+\eta]\subseteq G$; sekarang terdapat suatu $\delta>0$
+sedemikian sehingga $|f(x)-f(c)|\le\eta$ kapan pun $x\in[a,b]$ dan
+$|x-c|\le\delta$. Tetapkan $x=\min(c+\delta,b)$; maka $c<x\le b$ dan
+$[f(c),f(x)]\subseteq G$, sehingga
+
+\Centerline{$\mu([f(a),f(x)]\setminus G)
+=\mu([f(a),f(c)]\setminus G)
+\le 2\epsilon(c-a)+\int_a^cg
+\le 2\epsilon(x-a)+\int_a^xg$}
+
+\noindent dan sekali lagi $x\in A$, meskipun $x>\sup A$.\ \Bang
+
+\medskip
+
+\quad{\bf (iv)} Kita menyimpulkan bahwa $c=b$, sehingga $b\in A$. Tetapi ini
+berarti bahwa
+
+$$\eqalign{f(b)-f(a)
+&\le\mu([f(a),f(b)])
+\le\mu([f(a),f(b)]\setminus G)+\mu G\cr
+&\le 2\epsilon(b-a)+\int_a^bg+\epsilon
+\le 2\epsilon(b-a)+\int_a^bf^*+\epsilon+\epsilon\cr
+&=2\epsilon(1+b-a)+\int_a^bf^*.\cr}$$
+
+\noindent Karena $\epsilon$ sebarang, $f(b)-f(a)\le\int_a^bf^*$, seperti
+yang dinyatakan.\ \Qed
+
+\medskip
+
+{\bf (c)} Dengan cara yang sama, atau dengan menerapkan (b) pada $-f$,
+$f(a)-f(b)\le\int_a^bf^*$, sehingga $|f(b)-f(a)|\le\int_a^bf^*$.
+
+Tentu saja argumen tersebut berlaku pula pada setiap subinterval dari $[a,b]$, sehingga
+$|f(d)-f(c)|\le\int_c^df^*$ kapan pun
+$a\le c\le d\le b$. Sekarang ambil $\epsilon>0$. Menurut 225A sekali lagi, terdapat
+suatu $\delta>0$ sedemikian sehingga $\int_Ef^*\le\epsilon$ kapan pun
+$E\subseteq[a,b]$ dan $\mu E\le\delta$. Andaikan bahwa
+$a\le a_1\le b_1\le\ldots\le a_n\le b_n\le b$ dan
+$\sum_{i=1}^nb_i-a_i\le\delta$. Maka
+
+\Centerline{$\sum_{i=1}^n|f(b_i)-f(a_i)|
+\le\sum_{i=1}^n\int_{a_i}^{b_i}f^*
+=\int_{\bigcupop_{i\le n}[a_i,b_i]}f^*
+\le\epsilon$.}
+
+\noindent Jadi $f$ kontinu mutlak, seperti yang dinyatakan.
+}%end of proof of 225K
+
+\leader{225L}{Korolari} Misalkan $[a,b]$ suatu interval tertutup tak kosong dalam
+$\Bbb R$. Misalkan $f:[a,b]\to\Bbb R$ suatu fungsi kontinu yang
+terdiferensialkan pada interval terbuka $\ooint{a,b}$. Jika turunannya
+$f'$ terintegralkan pada $[a,b]$, maka $f$ kontinu mutlak, dan
+$f(b)-f(a)=\int_a^bf'$.
+
+\proof{ $f[\,[a,b]\setminus F]=\{f(a),f(b)\}$ tentu terabaikan, sehingga
+$f$ kontinu mutlak, menurut 225K; akibatnya
+$f(b)-f(a)=\int_a^bf'$, menurut 225E.
+}%end of proof of 225L
+
+\leader{225M}{Korolari} Misalkan $[a,b]$ suatu interval tertutup tak kosong dalam
+$\Bbb R$, dan $f:[a,b]\to\Bbb R$ suatu fungsi kontinu. Maka $f$
+kontinu mutlak jika dan hanya jika fungsi tersebut kontinu dan bervariasi terbatas serta
+$f[A]$ terabaikan untuk setiap himpunan terabaikan $A\subseteq[a,b]$.
+
+\proof{{\bf (a)} Andaikan bahwa $f$ kontinu mutlak. Menurut
+225C(a-b), fungsi tersebut kontinu dan bervariasi terbatas, dan menurut 225G kita mempunyai
+$f[A]$ terabaikan untuk setiap himpunan terabaikan $A\subseteq [a,b]$.
+
+\medskip
+
+{\bf (b)} Sekarang andaikan $f$ memenuhi syarat-syarat tersebut. Tetapkan
+$F=\{x:x\in\ooint{a,b},\,f'(x)$ terdefinisi$\}$. Menurut 224I sekali lagi,
+$[a,b]\setminus F$ terabaikan, sehingga $f[\,[a,b]\setminus F]$
+terabaikan. Selain itu, juga menurut 224I, $f'$ terintegralkan pada $[a,b]$
+atau $F$. Jadi syarat-syarat 225K terpenuhi dan $f$ kontinu
+mutlak.
+}%end of proof of 225M
+
+\leader{225N}{Fungsi Cantor}\cmmnt{ Saya perlu menyebutkan
+contoh baku suatu fungsi kontinu yang bervariasi terbatas tetapi
+tidak kontinu mutlak.} Misalkan $C\subseteq[0,1]$ himpunan
+Cantor\cmmnt{ (134G)}.
+Ingat bahwa `fungsi Cantor' adalah suatu fungsi kontinu tak-menurun
+$f:[0,1]\to[0,1]$ sedemikian sehingga $f'(x)$ terdefinisi dan sama dengan
+nol untuk setiap $x\in[0,1]\setminus C$,
+tetapi $f(0)=0<1=f(1)$\cmmnt{ (134H)}. \cmmnt{Tentu
+saja} $f$ bervariasi terbatas dan tidak kontinu mutlak. $C$
+terabaikan sedangkan $f[C]=[0,1]$ tidak. Jika $x\in C$, maka untuk setiap
+$n\in\Bbb N$ terdapat suatu interval dengan panjang $3^{-n}$, yang memuat $x$, dan yang
+padanya $f$ meningkat sebesar $2^{-n}$; jadi $f$ tidak mungkin terdiferensialkan di
+$x$, dan himpunan $F=\dom f'$ dari 225K tepat sama dengan $[0,1]\setminus C$, sehingga
+$f[\,[0,1]\setminus F]=[0,1]$.
+
+\vleader{48pt}{225O}{Fungsi bernilai kompleks}\cmmnt{ Seperti biasa, saya
+jabarkan
+hasil-hasil di atas dalam bentuk yang berlaku bagi fungsi bernilai kompleks.
+
+\medskip
+
+} {\bf (a)} Misalkan
+$(X,\Sigma,\mu)$ sembarang ruang ukur dan $f$ suatu fungsi
+bernilai kompleks terintegralkan
+yang didefinisikan pada suatu subhimpunan koterabaikan dari $X$.
+Maka untuk setiap $\epsilon>0$ terdapat suatu himpunan terukur
+$E$ berukuran hingga dan suatu bilangan real
+$\delta>0$ sedemikian sehingga $\int_F|f|\le\epsilon$ kapan pun $F\in\Sigma$ dan
+$\mu(F\cap E)\le\delta$. \prooflet{(Terapkan 225A pada $|f|$.)}
+
+\spheader 225Ob Jika $[a,b]$ suatu interval tertutup
+tak kosong dalam $\Bbb R$ dan $f:[a,b]\to\Bbb C$ suatu fungsi, kita katakan
+bahwa $f$ {\bf kontinu mutlak} jika untuk setiap $\epsilon>0$ terdapat
+suatu $\delta>0$ sedemikian sehingga $\sum_{i=1}^n|f(b_i)-f(a_i)|\le\epsilon$
+kapan pun $a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b$ dan
+$\sum_{i=1}^nb_i-a_i\le\delta$. Perhatikan bahwa $f$ kontinu
+mutlak jika dan hanya jika bagian real dan bagian imajinernya sama-sama
+kontinu mutlak.
+
+\spheader 225Oc Misalkan $[a,b]$ suatu interval tertutup tak kosong dalam
+$\Bbb R$.
+
+\quad(i) Jika $f:[a,b]\to\Bbb C$ kontinu mutlak, maka fungsi tersebut bervariasi
+terbatas pada $[a,b]$, sehingga terdiferensialkan hampir di mana-mana dalam $[a,b]$,
+dan turunannya terintegralkan pada $[a,b]$.
+
+\quad(ii) Jika $f$, $g:[a,b]\to\Bbb C$ kontinu mutlak, maka demikian pula
+$f+g$ dan $\zeta f$, untuk setiap $\zeta\in\Bbb C$, serta $f\times g$.
+
+\quad(iii) Jika $g:[a,b]\to[c,d]$ monoton dan kontinu mutlak,
+dan
+$f:[c,d]\to\Bbb C$ kontinu mutlak, maka $fg:[a,b]\to\Bbb C$
+kontinu mutlak.
+
+\spheader 225Od Misalkan $[a,b]$ suatu interval tertutup tak kosong dalam
+$\Bbb R$ dan $F:[a,b]\to\Bbb C$ suatu fungsi. Maka pernyataan-pernyataan berikut
+ekuivalen:
+
+\quad(i) terdapat suatu fungsi bernilai kompleks terintegralkan $f$ sedemikian sehingga
+$F(x)=F(a)+\int_a^xf$ untuk setiap $x\in[a,b]$;
+
+\quad(ii) $\int_a^xF'$ ada dan sama dengan
+$F(x)-F(a)$ untuk setiap $x\in[a,b]$;
+
+\quad(iii) $F$ kontinu mutlak.
+
+\cmmnt{\noindent (Terapkan 225E pada bagian real dan bagian imajiner dari $F$.)}
+
+\spheader 225Oe Misalkan $f$ suatu fungsi bernilai kompleks terintegralkan
+pada suatu interval $[a,b]\subseteq\Bbb R$, dan $g:[a,b]\to\Bbb C$ suatu fungsi
+kontinu mutlak. Tetapkan $F(x)=\int_a^xf$ untuk $x\in[a,b]$.
+Maka
+
+\Centerline{$\int_a^bf\times g
+=F(b)g(b) - F(a)g(a) -\int_a^bF\times g'$.}
+
+\cmmnt{\noindent (Terapkan 225F pada bagian real dan bagian imajiner dari $f$
+dan $g$.)}
+
+\spheader 225Of Misalkan $f$ suatu fungsi kontinu bernilai kompleks
+pada suatu interval tertutup $[a,b]\subseteq\Bbb R$, dan andaikan $f$
+terdiferensialkan di setiap titik dari interval terbuka $\ooint{a,b}$, dengan
+$f'$ terintegralkan pada $[a,b]$. Maka $f$ kontinu mutlak.
+\cmmnt{(Terapkan 225L pada bagian real dan bagian imajiner dari $f$.)}
+
+\cmmnt{\spheader 225Og Untuk hasil yang bersesuaian dengan 225M, lihat 264Yp.}
+
+\exercises{
+\leader{225X}{Latihan dasar (a)}
+%\spheader 225Xa
+Tunjukkan langsung dari definisi dalam
+225B (tanpa menggunakan
+225E) bahwa setiap fungsi bernilai real yang kontinu mutlak pada suatu interval
+tertutup $[a,b]$ dapat dinyatakan sebagai selisih fungsi-fungsi kontinu mutlak
+yang tak-menurun.
+%225B
+
+\spheader 225Xb Tunjukkan langsung dari definisi dalam 225B dan
+Teorema Nilai Rata-Rata (tanpa menggunakan 225K) bahwa jika suatu fungsi
+$f$ kontinu pada interval tertutup $[a,b]$, terdiferensialkan pada interval
+terbuka $\ooint{a,b}$, dan turunannya terbatas pada
+$\ooint{a,b}$, maka $f$ kontinu mutlak, sehingga
+$f(x)=f(a)+\int_a^xf'$ untuk setiap $x\in[a,b]$.
+%225E
+
+\spheader 225Xc Tunjukkan bahwa jika $f:[a,b]\to\Bbb R$ kontinu
+mutlak, maka $\Var f=\int_a^b|f'|$.   \Hint{gabungkan 224I dan
+225E.}
+%225E
+
+\spheader 225Xd Misalkan $g:\Bbb R\to\Bbb R$ suatu fungsi
+tak-menurun yang kontinu mutlak pada setiap interval terbatas;
+misalkan $\mu_g$ ukuran Lebesgue-Stieltjes yang bersesuaian
+(114Xa), dan $\Sigma_g$ domainnya.   Tunjukkan bahwa $\int_Eg'=\mu_gE$ untuk
+setiap $E\in\Sigma_g$, jika kita mengizinkan $\infty$ sebagai nilai
+integral.   \Hint{mulailah dengan interval $E$.}
+%225E
+
+\spheader 225Xe Misalkan $g:[a,b]\to\Bbb R$ suatu fungsi kontinu
+mutlak yang tak-menurun, dan $f:[g(a),g(b)]\to\Bbb R$ suatu fungsi
+kontinu.   Tunjukkan bahwa $\int_{g(a)}^{g(b)}f(t)dt=
+\int_a^bf(g(t))g'(t)dt$.   \Hint{tetapkan $F(x)=\int_{g(a)}^xf$,
+$G=Fg$ dan tinjau $\int_a^bG'(t)dt$.   Lihat juga 263J.}
+%225E
+
+\spheader 225Xf Andaikan bahwa $I\subseteq\Bbb R$ sembarang
+interval tak-sepele (terbatas atau tak terbatas, terbuka, tertutup, atau
+setengah terbuka, tetapi bukan himpunan kosong ataupun himpunan satu anggota),
+dan $f:I\to\Bbb R$ suatu fungsi.   Tunjukkan bahwa
+$f$ kontinu mutlak pada setiap subinterval tertutup dan terbatas dari $I$
+jika dan hanya jika terdapat fungsi $g$ sedemikian sehingga
+$\int_a^bg=f(b)-f(a)$ setiap kali
+$a\le b$ dalam $I$, dan dalam hal ini $g$ terintegralkan jika dan hanya jika
+$f$ mempunyai variasi terbatas pada $I$.
+%225E
+
+\spheader 225Xg Tunjukkan bahwa
+$\biggerint_0^1\Bover{\ln x}{x-1}dx=\sum_{n=1}^{\infty}\Bover1{n^2}$.
+\Hint{gunakan 225F untuk menentukan $\int_0^1x^n\ln x\,dx$, dan ingat bahwa
+$\bover1{1-x}=\sum_{n=0}^{\infty}x^n$ untuk $0\le x<1$.}
+%225F
+
+\spheader 225Xh(i) Tunjukkan bahwa $\int_0^1t^adt$ berhingga untuk
+setiap $a>-1$.   (ii) Tunjukkan bahwa $\int_1^{\infty}t^ae^{-t}dt$ berhingga
+untuk setiap $a\in\Bbb R$.   \Hint{tunjukkan bahwa terdapat $M$
+sedemikian sehingga $t^a\le Me^{t/2}$ untuk $t\ge 1$.}   (iii) Tunjukkan bahwa
+$\Gamma(a)=\int_0^{\infty}t^{a-1}e^{-t}dt$ terdefinisi untuk setiap $a>0$.
+(iv) Tunjukkan bahwa $\Gamma(a+1)=a\Gamma(a)$ untuk setiap $a>0$.   (v) Tunjukkan bahwa
+$\Gamma(n+1)=n!$ untuk setiap $n\in\Bbb N$.
+
+($\Gamma$ tentu saja merupakan {\bf fungsi gama}.)
+%225F
+
+\spheader 225Xi Tunjukkan bahwa jika $b>0$, maka
+$\int_0^{\infty}u^{b-1}e^{-u^2/2}du=2^{(b-2)/2}\Gamma(\bover{b}2)$.
+\Hint{tinjau $f(t)=t^{(b-2)/2}e^{-t}$, $g(u)=u^2/2$ dalam 225Xe.}
+%225Xe, 225Xh, 225F
+
+\spheader 225Xj Andaikan bahwa $f$, $g$ adalah
+fungsi-fungsi semikontinu bawah yang didefinisikan pada subhimpunan-subhimpunan $\BbbR^r$,
+dan bernilai dalam $\ocint{-\infty,\infty}$.   (i) Tunjukkan bahwa $f+g$,
+$f\wedge g$ dan $f\vee g$ semikontinu bawah, dan bahwa
+$\alpha f$ semikontinu
+bawah untuk setiap $\alpha\ge 0$.   (ii) Tunjukkan bahwa jika $f$ dan $g$
+nonnegatif, maka $f\times g$ semikontinu bawah.
+(iii) Tunjukkan bahwa jika $f$ nonnegatif dan $g$ kontinu, maka
+$f\times g$ semikontinu bawah.   (iv) Tunjukkan bahwa jika $f$
+tak-menurun, maka komposisi $fg$ semikontinu bawah.
+%225H
+
+\spheader 225Xk Misalkan $A$ suatu keluarga tak kosong dari fungsi-fungsi
+semikontinu bawah yang didefinisikan pada subhimpunan-subhimpunan $\BbbR^r$ dan bernilai
+dalam $[-\infty,\infty]$.   Tetapkan $g(x)=\sup\{f(x):f\in A,\,x\in\dom
+f\}$ untuk $x\in
+D=\bigcup_{f\in A}\dom f$.   Tunjukkan bahwa $g$ semikontinu
+bawah.
+%225H
+
+\spheader 225Xl Misalkan $f:[a,b]\to\Bbb R$ suatu fungsi kontinu mutlak,
+dengan $a\le b$.   (i) Tunjukkan bahwa $|f|:[a,b]\to\Bbb R$ kontinu
+mutlak.   (ii) Tunjukkan bahwa $gf$ kontinu mutlak
+setiap kali $g:f[\,[a,b]\,]\to\Bbb R$ kontinu mutlak dan
+$g'$ terbatas.   (iii) Tunjukkan bahwa jika $g:[a,b]\to\Bbb R$ kontinu
+mutlak dan $\inf_{x\in[a,b]}|g(x)|>0$, maka
+$f/g$ kontinu mutlak.
+%225K
+
+\spheader 225Xm Andaikan bahwa $f:[a,b]\to\Bbb R$ kontinu, dan
+terdiferensialkan pada semua kecuali terhitung banyak
+titik dari $[a,b]$. Tunjukkan bahwa $f$ kontinu mutlak jika dan hanya jika
+fungsi tersebut mempunyai variasi terbatas.
+%225K
+
+\spheader 225Xn Misalkan $f:\coint{0,\infty}\to\Bbb C$ suatu fungsi
+yang kontinu mutlak pada $[0,a]$ untuk setiap
+$a\in\coint{0,\infty}$ dan mempunyai transformasi Laplace
+$F(s)=\int_0^{\infty}e^{-sx}f(x)dx$ yang terdefinisi pada $\{s:\Real s>S\}$.
+Andaikan pula bahwa $\lim_{x\to\infty}e^{-Sx}f(x)=0$.   Tunjukkan
+bahwa $f'$ mempunyai transformasi Laplace $sF(s)-f(0)$ yang terdefinisi setiap kali $\Real
+s>S$.   ({\it Petunjuk\/}:  tunjukkan bahwa
+
+\Centerline{$f(x)e^{-sx}-f(0)
+=\int_0^x\Bover{d}{dt}(f(t)e^{-st})dt$}
+
+\noindent untuk setiap $x\ge 0$.)
+%225O 225F
+
+\leader{225Y}{Latihan lanjutan (a)}
+%\spheader 225Ya
+Tunjukkan bahwa komposisi dua fungsi kontinu
+mutlak tidak harus kontinu mutlak.   \Hint{224Xb.}
+%225B
+
+\spheader 225Yb Misalkan $f:[a,b]\to\Bbb R$ suatu fungsi kontinu, dengan
+$a<b$.   Tetapkan $G=\{x:x\in\ooint{a,b},\,\exists\,y\in\ocint{x,b}$ sedemikian
+sehingga $f(x)<f(y)\}$.   Tunjukkan bahwa $G$ terbuka dan dapat dinyatakan sebagai
+gabungan saling lepas dari interval-interval $\ooint{c,d}$ dengan $f(c)\le f(d)$.   Gunakan
+hal ini untuk membuktikan 225D tanpa menggunakan Teorema Vitali.
+%225D 2A2I
+
+\spheader 225Yc Misalkan $f:[a,b]\to\Bbb R$ suatu fungsi dengan variasi
+terbatas dan $\gamma>0$.   Tunjukkan bahwa terdapat fungsi kontinu mutlak
+$g:[a,b]\to\Bbb R$ sedemikian sehingga $|g'(x)|\le\gamma$ di setiap titik tempat
+turunannya ada dan $\{x:x\in[a,b],\,f(x)\ne g(x)\}$ mempunyai ukuran
+paling besar $\bover1{\gamma}\Var f$.   \Hint{cukup buktikan kasus
+$f$ tak-menurun.   Terapkan 225Yb pada fungsi
+$x\mapsto f(x)-\gamma x$ dan tunjukkan bahwa $\gamma\mu G\le\Var f$.
+Tetapkan $g(x)=f(x)$ untuk $x\in\ooint{a,b}\setminus G$.}
+%225Yb 225D
+
+\spheader 225Yd\dvAnew{2013}
+Misalkan $f:\Bbb R\to\Bbb R$ suatu fungsi yang kontinu
+mutlak pada setiap interval terbatas.   Tunjukkan bahwa
+$\Var f\le\bover12\Var f'+\int|f|$.
+%225E mt22bits
+
+\spheader 225Ye Misalkan $f$ suatu fungsi bernilai real terukur dan
+nonnegatif yang didefinisikan pada suatu subhimpunan $D$ dari $\BbbR^r$, dengan $r\ge 1$.   Tunjukkan
+bahwa untuk setiap $\epsilon>0$ terdapat fungsi semikontinu bawah
+$g:\BbbR^r\to[-\infty,\infty]$ sedemikian sehingga $g(x)\ge f(x)$ untuk
+setiap $x\in D$ dan $\int_Dg-f\le\epsilon$.
+%225I
+
+\spheader 225Yf Misalkan $f$ suatu fungsi bernilai real terukur
+yang didefinisikan pada suatu subhimpunan $D$ dari $\BbbR^r$, dengan $r\ge 1$.   Tunjukkan bahwa untuk
+setiap $\epsilon>0$ terdapat fungsi semikontinu bawah
+$g:\BbbR^r\to[-\infty,\infty]$ sedemikian sehingga $g(x)\ge f(x)$ untuk setiap
+$x\in D$ dan
+$\mu^*\{x:x\in D,\,g(x)>f(x)\}\le\epsilon$.   \Hint{134Yd, 134Fb.}
+%225I
+
+\spheader 225Yg(i) Tunjukkan bahwa jika $f$ suatu fungsi real terukur Lebesgue,
+maka semua turunan Dini-nya terukur Lebesgue.
+(ii) Tunjukkan bahwa jika $f$ suatu fungsi real terukur Borel,
+maka semua turunan Dini-nya terukur Borel.
+%225J mt22bits
+}%end of exercises
+
+\endnotes{
+\Notesheader{225} Masih banyak yang dapat dikatakan tentang fungsi-fungsi kontinu
+mutlak; saya akan kembali ke topik ini dalam bagian berikutnya
+dan dalam Bab 26.   Saya jarang akan menggunakan secara langsung hasil-hasil
+mulai 225H dalam bentuknya yang paling kuat,
+tetapi menurut saya penyelidikan semacam ini
+diperlukan untuk memperoleh gambaran yang jelas mengenai hubungan antara
+konsep-konsep seperti kontinuitas mutlak dan variasi terbatas. Tentu saja,
+untuk menerapkan hasil-hasil ini, kita memang memerlukan bekal kelas-kelas
+sederhana fungsi kontinu mutlak; fungsi-fungsi terdiferensialkan dengan
+turunan terbatas membentuk kelas terpenting (225Xb).   Keluarga yang lebih
+besar dari jenis yang sama adalah kelas fungsi `Lipschitz'
+(262Bc).
+
+Definisi `fungsi kontinu mutlak' biasanya diberikan
+untuk interval tertutup dan terbatas, seperti dalam 225B.   Pokoknya ialah bahwa untuk
+interval lain, generalisasi paling sederhana dari perumusan ini tidak
+tampak sepenuhnya tepat.   Dalam 225Xf saya mencoba menunjukkan jenis persyaratan
+yang mungkin dikenakan pada fungsi-fungsi yang didefinisikan pada jenis interval lain.
+
+Perlu saya katakan bahwa sasaran sesungguhnya masih belum sepenuhnya dalam jangkauan kita.
+Saya telah dapat memberikan perumusan yang cukup memuaskan mengenai integrasi
+parsial sederhana (225F), setidaknya untuk interval terbatas -- suatu proses
+limit lebih lanjut diperlukan untuk menangani interval tak terbatas.   Namun suatu
+metode pendamping dari kalkulus lanjut, integrasi dengan substitusi,
+masih sukar dicapai.   Hasil terbaik yang menurut saya dapat kita peroleh pada tahap ini adalah 225Xe,
+yang mensyaratkan integran $f$ kontinu.   Memang benar bahwa
+hasil tersebut berlaku untuk setiap $f$ yang terintegralkan, tetapi masih ada beberapa
+kehalusan lebih lanjut yang harus dikuasai dalam prosesnya; gagasan-gagasan yang diperlukan diberikan dalam
+hasil-hasil yang jauh lebih umum 235A dan 263D di bawah, dan diterapkan pada
+kasus satu dimensi dalam 263J.
+
+Dalam perjalanan menuju karakterisasi fungsi-fungsi kontinu mutlak dalam
+225K, saya mendapati diri saya menggunakan salah satu hubungan mendasar
+antara ukuran Lebesgue dan topologi $\BbbR^r$ (225I).   Teknik
+di sini dapat diadaptasi untuk memberikan banyak variasi hasil tersebut;
+lihat 225Ye-225Yf.   Jika Anda belum pernah menjumpai fungsi-fungsi semikontinu
+sebelumnya, 225Xj-225Xk memberikan sebagian gambaran tentang sifat-sifatnya.   Dalam 225J
+saya memberikan sebuah fragmen `teori himpunan deskriptif', yakni kajian tentang jenis-jenis
+himpunan yang dapat muncul dari rumus-rumus analisis.   Gagasan-gagasan ini juga
+akan muncul kembali di tempat lain (bandingkan 225Yg dan juga pembuktian 262M
+di bawah) dan akan sangat penting dalam Jilid 4 dan 5.
+}%end of notes
+
+\discrpage

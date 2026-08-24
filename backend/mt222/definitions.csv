@@ -1,0 +1,414 @@
+schema_version,record_type,id,unit_id,rights_id,segment_id,source_anchor,source_term,target_term,source_text,target_text,source_raw_tex_sha256,target_raw_tex_sha256,provenance
+1.1.0,definition,O007-FREMLIN-V2-S222-DEF-222A,O007-FREMLIN-V2-S222,O007-RIGHTS-FREMLIN-DSL,O007-FREMLIN-V2-S222-SEG-222A,222A,upper and lower two-sided difference-quotient limits,limit atas dan bawah kuosien selisih dua-sisi,"\leader{222A}{Theorem} Let $I\subseteq\Bbb R$ be an interval and
+$f:I\to\Bbb R$ a monotonic function.   Then $f$ is differentiable almost 
+everywhere in $I$.
+     
+\cmmnt{\medskip
+     
+\noindent{\bf Remark} If I seem to be speaking of a measure on
+$\Bbb R$ without naming it, as here, I mean Lebesgue measure.
+}%end of comment
+     
+\proof{ As usual, write $\mu^*$ for Lebesgue outer measure
+on $\Bbb R$, $\mu$ for Lebesgue measure.
+     
+\medskip
+     
+{\bf (a)} To begin with (down to the end of (c) below), let us suppose that $f$ is non-decreasing and $I$ is a bounded open interval
+on which $f$ is bounded;  say $|f(x)|\le M$ for $x\in I$.
+For any closed subinterval $J=[a,b]$ of $I$, write
+$f^*(J)$ for the open interval $\ooint{f(a),f(b)}$.   For $x\in I$, write
+     
+\Centerline{$\DiniD f(x)=\limsup_{h\to 0}{1\over h}(f(x+h)-f(x))$,
+\quad$\Dinid f(x)=\liminf_{h\to 0}{1\over h}(f(x+h)-f(x))$,}
+     
+\noindent allowing the value $\infty$ in both cases.   Then $f$ is
+differentiable at $x$ iff $\DiniD f(x)=\Dinid f(x)\in\Bbb R$.
+Because surely $\DiniD f(x)\ge \Dinid f(x)\ge 0$,  $f$ will be
+differentiable at $x$ iff $\DiniD f(x)$ is finite and $\DiniD f(x)\le \Dinid f(x)$.
+     
+I therefore have to show that the sets
+     
+\Centerline{$\{x:x\in I,\,\DiniD f(x)=\infty\}$,
+\quad$\{x:x\in I,\,\DiniD f(x)>\Dinid f(x)\}$}
+     
+\noindent are negligible.
+     
+\medskip
+     
+{\bf (b)} Let us take $A=\{x:x\in I,\,\DiniD f(x)=\infty\}$ first.   Fix an
+integer $m\ge 1$ for the moment, and set
+     
+\Centerline{$A_m=\{x:x\in I,\,\DiniD f(x)>m\}\supseteq A$.}
+     
+\noindent Let $\Cal I$ be the family of non-trivial closed intervals
+$[a,b]\subseteq I$ such that $f(b)-f(a)\ge m(b-a)$;   then
+$\mu f^*(J)\ge m\mu J$ for every $J\in\Cal I$.   If $x\in A_m$,
+then for any $\delta>0$ we have an $h$ with $0<|h|\le\delta$ and
+${1\over h}(f(x+h)-f(x))>m$, so that
+     
+\Centerline{$[x,x+h]\in\Cal I$ if $h>0$,
+\quad$[x+h,x]\in\Cal I$ if $h<0$;}
+     
+\noindent
+thus every member of $A_m$ belongs to arbitrarily small intervals in $\Cal I$.   By Vitali's theorem (221A), there is a countable disjoint set $\Cal I_0\subseteq\Cal I$ such that
+$\mu(A\setminus\bigcup\Cal I_0)=0$.
+Now, because $f$ is non-decreasing,
+$\langle f^*(J)\rangle_{J\in\Cal I_0}$ is disjoint, and all the $f^*(J)$ are included in $[-M,M]$, so $\sum_{J\in\Cal I_0}\mu f^*(J)\le 2M$
+and $\sum_{J\in\Cal I_0}\mu J\le 2M/m$.   Because
+$A_m\setminus\bigcup\Cal I_0$ is negligible,
+     
+     
+\Centerline{$\mu^*A\le\mu^*A_m\le\Bover{2M}{m}$.}
+     
+\noindent As $m$ is arbitrary, $\mu^*A=0$ and $A$ is negligible.
+     
+\medskip
+     
+{\bf (c)} Now consider $B=\{x:x\in I,\,\DiniD f(x)>\Dinid f(x)\}$.   For $q$, $q'\in\Bbb Q$ with $0\le q<q'$, set
+     
+     
+\Centerline{$B_{qq'}=\{x:x\in I,\,\Dinid f(x)< q,\,\DiniD f(x)>q'\}$.}
+     
+\noindent  Fix such $q$, $q'$ for the moment, and write
+$\gamma=\mu^*B_{qq'}$.  Take any $\epsilon>0$, and let $G$ be an open
+set including $B_{qq'}$ such that $\mu G\le\gamma+\epsilon$ (134Fa).
+Let $\Cal J$ be the set of non-trivial closed intervals
+$[a,b]\subseteq I\cap G$ such that $f(b)-f(a)\le q(b-a)$;  this time  $\mu f^*(J)\le q\mu J$ for $J\in\Cal J$.   Then every member of $B_{qq'}$ is included
+in arbitrarily small members of $\Cal J$, so there is a countable
+disjoint $\Cal J_0\subseteq\Cal J$ such that $B_{qq'}\setminus\bigcup\Cal
+J_0$ is
+negligible.   Let $L$ be the set of endpoints of members of $\Cal J_0$;
+then $L$ is a countable union of doubleton sets, so is countable, therefore
+negligible.  Set
+     
+\Centerline{$C=B_{qq'}\cap\bigcup\Cal J_0\setminus L$;}
+     
+\noindent  then
+$\mu^*C=\gamma$.   Let $\Cal I$ be the set of non-trivial closed
+intervals $J=[a,b]$ such that (i) $J$ is
+included in one of the members of $\Cal J_0$ (ii)
+$f(b)-f(a)\ge q'(b-a)$;  now $\mu f^*(J)\ge q'\mu J$ for every $J\in\Cal
+I$.   Once again, because every member of $C$ is an interior point of
+some member of $\Cal J_0$, every point of $C$ belongs to arbitrarily
+small members of $\Cal I$;  so there is a countable disjoint $\Cal
+I_0\subseteq\Cal I$ such that $\mu(C\setminus\bigcup\Cal I_0)=0$.
+     
+As in (b) above,
+     
+\Centerline{$\gamma q'\le q'\mu(\bigcup\Cal I_0)
+=\sum_{I\in\Cal I_0}q'\mu I
+\le\sum_{I\in\Cal I_0}\mu f^*(I)
+=\mu(\bigcup_{I\in\Cal I_0}f^*(I))$.}
+     
+\noindent   On the other hand,
+     
+$$\eqalign{\mu(\bigcup_{J\in\Cal J_0}f^*(J))
+&=\sum_{J\in\Cal J_0}\mu f^*(J)
+\le q\sum_{J\in\Cal J_0}\mu J
+=q\mu(\bigcup\Cal J_0)\cr
+&\le q\mu(\bigcup\Cal J)
+\le q\mu G
+\le q(\gamma+\epsilon).\cr}$$
+     
+     
+\noindent But $\bigcup_{I\in\Cal I_0}f^*(I)\subseteq\bigcup_{J\in\Cal
+J_0}f^*(J)$, because every member of $\Cal I_0$ is included in a member
+of $\Cal J_0$, so $\gamma q'\le q(\gamma+\epsilon)$ and
+$\gamma\le \epsilon q/(q'-q)$.
+As $\epsilon$ is arbitrary, $\gamma=0$.
+     
+Thus every $B_{qq'}$ is negligible.   Consequently $B=\bigcup_{q,q'
+\in\Bbb Q,0\le q<q'}B_{qq'}$ is negligible.
+     
+\medskip
+     
+{\bf (d)} This deals with the case of a bounded open interval on which
+$f$ is bounded and non-decreasing.
+Still for non-decreasing $f$, but for an arbitrary interval $I$, observe
+that $K=\{(q,q'):q,\,q'\in I\cap\Bbb Q,\,q<q'\}$ is countable and that
+$I\setminus\bigcup_{(q,q')\in K}\ooint{q,q'}$ has at most two points
+(the endpoints of $I$, if any), so is negligible.   If
+we write $S$ for the set of points of $I$ at which $f$ is not
+differentiable, then from (a)-(c) we see that $S\cap\ooint{q,q'}$ is
+negligible for every
+$(q,q')\in K$, so that $S\cap\bigcup_{(q,q')\in K}\ooint{q,q'}$ is
+negligible and $S$ is negligible.
+     
+\medskip
+     
+{\bf (e)} Thus we are done if $f$ is non-decreasing.   For
+non-increasing
+$f$, apply the above to $-f$, which is differentiable at exactly the
+same points as $f$.
+}%end of proof of 222A
+     
+","\leader{222A}{Teorema} Misalkan $I\subseteq\Bbb R$ suatu interval dan
+$f:I\to\Bbb R$ suatu fungsi monoton. Maka $f$ terdiferensialkan hampir
+di mana-mana dalam $I$.
+     
+\cmmnt{\medskip
+     
+\noindent{\bf Catatan} Jika saya tampak membicarakan suatu ukuran pada
+$\Bbb R$ tanpa menyebut namanya, seperti di sini, yang saya maksud ialah
+ukuran Lebesgue.
+}%end of comment
+     
+\proof{ Seperti biasa, tuliskan $\mu^*$ untuk ukuran luar Lebesgue
+pada $\Bbb R$, dan $\mu$ untuk ukuran Lebesgue.
+     
+\medskip
+     
+{\bf (a)} Sebagai permulaan (sampai akhir (c) di bawah), andaikan bahwa
+$f$ tak-menurun dan $I$ merupakan interval terbuka terbatas tempat $f$
+terbatas; katakanlah $|f(x)|\le M$ untuk $x\in I$. Untuk setiap
+subinterval tertutup $J=[a,b]$ dari $I$, tuliskan $f^*(J)$ untuk interval
+terbuka $\ooint{f(a),f(b)}$. Untuk $x\in I$, tuliskan
+     
+\Centerline{$\DiniD f(x)=\limsup_{h\to 0}{1\over h}(f(x+h)-f(x))$,
+\quad$\Dinid f(x)=\liminf_{h\to 0}{1\over h}(f(x+h)-f(x))$,}
+     
+\noindent dengan membolehkan nilai $\infty$ dalam kedua kasus. Maka $f$
+terdiferensialkan di $x$ jika dan hanya jika
+$\DiniD f(x)=\Dinid f(x)\in\Bbb R$. Karena tentu saja
+$\DiniD f(x)\ge \Dinid f(x)\ge 0$, $f$ akan terdiferensialkan di $x$
+jika dan hanya jika $\DiniD f(x)$ berhingga dan
+$\DiniD f(x)\le \Dinid f(x)$.
+     
+Oleh karena itu saya harus menunjukkan bahwa himpunan-himpunan
+     
+\Centerline{$\{x:x\in I,\,\DiniD f(x)=\infty\}$,
+\quad$\{x:x\in I,\,\DiniD f(x)>\Dinid f(x)\}$}
+     
+\noindent terabaikan.
+     
+\medskip
+     
+{\bf (b)} Mula-mula ambil
+$A=\{x:x\in I,\,\DiniD f(x)=\infty\}$. Untuk sementara, tetapkan suatu
+bilangan bulat $m\ge 1$, dan tetapkan
+     
+\Centerline{$A_m=\{x:x\in I,\,\DiniD f(x)>m\}\supseteq A$.}
+     
+\noindent Misalkan $\Cal I$ keluarga interval tertutup tak-sepele
+$[a,b]\subseteq I$ sedemikian sehingga $f(b)-f(a)\ge m(b-a)$; maka
+$\mu f^*(J)\ge m\mu J$ untuk setiap $J\in\Cal I$. Jika $x\in A_m$,
+maka untuk setiap $\delta>0$ terdapat $h$ dengan $0<|h|\le\delta$ dan
+${1\over h}(f(x+h)-f(x))>m$, sehingga
+     
+\Centerline{$[x,x+h]\in\Cal I$ jika $h>0$,
+\quad$[x+h,x]\in\Cal I$ jika $h<0$;}
+     
+\noindent
+dengan demikian setiap anggota $A_m$ termasuk dalam interval-interval
+yang sekecil apa pun dalam $\Cal I$. Menurut teorema Vitali (221A),
+terdapat suatu subkeluarga terhitung dan saling lepas
+$\Cal I_0\subseteq\Cal I$
+sedemikian sehingga $\mu(A_m\setminus\bigcup\Cal I_0)=0$.
+Sekarang, karena $f$ tak-menurun,
+$\langle f^*(J)\rangle_{J\in\Cal I_0}$ saling lepas, dan semua $f^*(J)$
+termasuk dalam $[-M,M]$, sehingga
+$\sum_{J\in\Cal I_0}\mu f^*(J)\le 2M$ dan
+$\sum_{J\in\Cal I_0}\mu J\le 2M/m$. Karena
+$A_m\setminus\bigcup\Cal I_0$ terabaikan,
+     
+     
+\Centerline{$\mu^*A\le\mu^*A_m\le\Bover{2M}{m}$.}
+     
+\noindent Karena $m$ sembarang, $\mu^*A=0$ dan $A$ terabaikan.
+     
+\medskip
+     
+{\bf (c)} Sekarang tinjau
+$B=\{x:x\in I,\,\DiniD f(x)>\Dinid f(x)\}$. Untuk $q$, $q'\in\Bbb Q$
+dengan $0\le q<q'$, tetapkan
+     
+     
+\Centerline{$B_{qq'}=\{x:x\in I,\,\Dinid f(x)< q,\,\DiniD f(x)>q'\}$.}
+     
+\noindent Untuk sementara tetapkan $q$, $q'$ seperti itu, dan tuliskan
+$\gamma=\mu^*B_{qq'}$. Ambil sembarang $\epsilon>0$, dan misalkan $G$
+suatu himpunan terbuka yang memuat $B_{qq'}$ sedemikian sehingga
+$\mu G\le\gamma+\epsilon$ (134Fa). Misalkan $\Cal J$ keluarga interval
+tertutup tak-sepele $[a,b]\subseteq I\cap G$ sedemikian sehingga
+$f(b)-f(a)\le q(b-a)$; kali ini $\mu f^*(J)\le q\mu J$ untuk
+$J\in\Cal J$. Maka setiap anggota $B_{qq'}$ termasuk dalam anggota-anggota
+$\Cal J$ yang sekecil apa pun, sehingga terdapat suatu subkeluarga
+terhitung dan saling lepas $\Cal J_0\subseteq\Cal J$ sedemikian sehingga
+$B_{qq'}\setminus\bigcup\Cal J_0$ terabaikan. Misalkan $L$ himpunan
+titik-titik ujung anggota $\Cal J_0$; maka $L$ merupakan gabungan terhitung
+dari himpunan-himpunan beranggota dua, jadi terhitung, dan karenanya
+terabaikan. Tetapkan
+     
+\Centerline{$C=B_{qq'}\cap\bigcup\Cal J_0\setminus L$;}
+     
+\noindent maka $\mu^*C=\gamma$. Misalkan $\Cal I$ keluarga interval
+tertutup tak-sepele $J=[a,b]$ sedemikian sehingga (i) $J$ termasuk
+dalam salah satu anggota $\Cal J_0$ (ii) $f(b)-f(a)\ge q'(b-a)$;
+sekarang $\mu f^*(J)\ge q'\mu J$ untuk setiap $J\in\Cal I$. Sekali lagi,
+karena setiap anggota $C$ merupakan titik interior dari suatu anggota
+$\Cal J_0$, setiap titik $C$ termasuk dalam anggota-anggota $\Cal I$
+yang sekecil apa pun; jadi terdapat suatu subkeluarga terhitung dan
+saling lepas $\Cal I_0\subseteq\Cal I$ sedemikian sehingga
+$\mu(C\setminus\bigcup\Cal I_0)=0$.
+     
+Seperti dalam (b) di atas,
+     
+\Centerline{$\gamma q'\le q'\mu(\bigcup\Cal I_0)
+=\sum_{I\in\Cal I_0}q'\mu I
+\le\sum_{I\in\Cal I_0}\mu f^*(I)
+=\mu(\bigcup_{I\in\Cal I_0}f^*(I))$.}
+     
+\noindent Di sisi lain,
+     
+$$\eqalign{\mu(\bigcup_{J\in\Cal J_0}f^*(J))
+&=\sum_{J\in\Cal J_0}\mu f^*(J)
+\le q\sum_{J\in\Cal J_0}\mu J
+=q\mu(\bigcup\Cal J_0)\cr
+&\le q\mu(\bigcup\Cal J)
+\le q\mu G
+\le q(\gamma+\epsilon).\cr}$$
+     
+     
+\noindent Tetapi
+$\bigcup_{I\in\Cal I_0}f^*(I)\subseteq\bigcup_{J\in\Cal J_0}f^*(J)$,
+karena setiap anggota $\Cal I_0$ termasuk dalam suatu anggota
+$\Cal J_0$, sehingga $\gamma q'\le q(\gamma+\epsilon)$ dan
+$\gamma\le \epsilon q/(q'-q)$. Karena $\epsilon$ sembarang, $\gamma=0$.
+     
+Jadi setiap $B_{qq'}$ terabaikan. Akibatnya
+$B=\bigcup_{q,q'\in\Bbb Q,0\le q<q'}B_{qq'}$ terabaikan.
+     
+\medskip
+     
+{\bf (d)} Ini menangani kasus interval terbuka terbatas tempat $f$
+terbatas dan tak-menurun. Masih untuk $f$ yang tak-menurun, tetapi untuk
+sembarang interval $I$, perhatikan bahwa
+$K=\{(q,q'):q,\,q'\in I\cap\Bbb Q,\,q<q'\}$ terhitung dan bahwa
+$I\setminus\bigcup_{(q,q')\in K}\ooint{q,q'}$ mempunyai paling banyak
+dua titik (titik-titik ujung $I$, jika ada), sehingga terabaikan. Jika
+kita menuliskan $S$ untuk himpunan titik-titik $I$ tempat $f$ tidak
+terdiferensialkan, maka dari (a)-(c) kita melihat bahwa
+$S\cap\ooint{q,q'}$ terabaikan untuk setiap $(q,q')\in K$, sehingga
+$S\cap\bigcup_{(q,q')\in K}\ooint{q,q'}$ terabaikan dan $S$ terabaikan.
+     
+\medskip
+     
+{\bf (e)} Jadi kita selesai jika $f$ tak-menurun. Untuk $f$ yang
+tak-menaik, terapkan hasil di atas pada $-f$, yang terdiferensialkan
+tepat di titik-titik yang sama seperti $f$.
+}%end of proof of 222A
+     
+",1bfa1050e72dff2eac5811132cefe383ddb3bc97c3e94dfc9b1476d90a841720,04046c3f0a991739fd167524f8e33b1e7060ce5518992150b223fd1ba6fabb9c,"{""basis"":""definition-bearing source segment"",""kind"":""source-derived-definition-map""}"
+1.1.0,definition,O007-FREMLIN-V2-S222-DEF-222J,O007-FREMLIN-V2-S222,O007-RIGHTS-FREMLIN-DSL,O007-FREMLIN-V2-S222-SEG-222J,*222J,four Dini derivatives,keempat turunan Dini,"\leader{*222J}{The Denjoy-Young-Saks \dvrocolon{theorem}}\cmmnt{ The 
+next result 
+will not be used, on present plans, anywhere in this treatise.   It
+is however central to parts of real analysis for which this volume is
+supposed to be a foundation, and while the argument
+requires a certain sophistication it is not really a large step from
+Lebesgue's theorem 222A.   I must begin with some notation.
+     
+\medskip
+
+\noindent}{\bf Definition} Let $f$ be any real function, and
+$A\subseteq\Bbb R$ its domain.   Write  
+
+\Centerline{$\tilde A^+
+=\{x:x\in A$, $\ocint{x,x+\delta}\cap A\ne\emptyset$ 
+for every $\delta>0\}$,}
+
+\Centerline{$\tilde A^-
+=\{x:x\in A$, $\coint{x-\delta,x}\cap A\ne\emptyset$ 
+for every $\delta>0\}$.}
+     
+\noindent Set
+
+\Centerline{$\DiniD^+(x)
+=\limsup_{y\in A,y\downarrow x}\Bover{f(y)-f(x)}{y-x}
+=\inf_{\delta>0}\sup_{y\in A,x<y\le x+\delta}\Bover{f(y)-f(x)}{y-x}$,}
+
+\Centerline{$\Dinid^+(x)
+=\liminf_{y\in A,y\downarrow x}\Bover{f(y)-f(x)}{y-x}
+=\sup_{\delta>0}\inf_{y\in A,x<y\le x+\delta}\Bover{f(y)-f(x)}{y-x}$}
+
+\noindent for $x\in\tilde A^+$, and
+
+\Centerline{$\DiniD^-(x)
+=\limsup_{y\in A,y\uparrow x}\Bover{f(y)-f(x)}{y-x}
+=\inf_{\delta>0}\sup_{y\in A,x-\delta\le y<x}\Bover{f(y)-f(x)}{y-x}$,}
+
+\Centerline{$\Dinid^-(x)
+=\liminf_{y\in A,y\uparrow x}\Bover{f(y)-f(x)}{y-x}
+=\sup_{\delta>0}\inf_{y\in A,x-\delta\le y<x}\Bover{f(y)-f(x)}{y-x}$}
+
+\noindent for $x\in\tilde A^-$, all defined in $[-\infty,\infty]$.   
+(These are the four {\bf Dini derivates} of $f$.\cmmnt{ You will also
+see $D^+$, $d^+$, $D^-$, $d^-$ used in place of my $\DiniD^+$, 
+$\Dinid^+$, $\DiniD^-$ and $\Dinid^-$.})
+
+Note that we surely have $(\Dinid^+f)(x)\le(\DiniD^+f)(x)$
+for every $x\in\tilde A^+$, while 
+$(\Dinid^-f)(x)\le(\DiniD^-f)(x)$
+for every $x\in\tilde A^-$.   The ordinary derivative
+$f'(x)$ is defined and equal to $c\in\Bbb R$ iff 
+($\alpha$) $x$ belongs to some open interval included in $A$ ($\beta$)
+$(\DiniD^+f)(x)=(\Dinid^+f)(x)=(\DiniD^-f)(x)
+=(\Dinid^+f)(x)=c$.
+
+","\leader{*222J}{Teorema \dvrocolon{Denjoy-Young-Saks}}\cmmnt{ Hasil
+berikutnya, menurut rencana saat ini, tidak akan digunakan di bagian mana pun
+dalam risalah ini. Namun hasil ini bersifat sentral bagi bagian-bagian
+analisis real yang hendak diberi fondasi oleh jilid ini, dan meskipun
+argumennya memerlukan kecanggihan tertentu, sebenarnya argumen itu
+tidak jauh melampaui teorema Lebesgue 222A. Saya harus memulai dengan
+beberapa notasi.
+     
+\medskip
+
+\noindent}{\bf Definisi} Misalkan $f$ sembarang fungsi bernilai real, dan
+$A\subseteq\Bbb R$ domainnya. Tuliskan
+
+\Centerline{$\tilde A^+
+=\{x:x\in A$, $\ocint{x,x+\delta}\cap A\ne\emptyset$
+untuk setiap $\delta>0\}$,}
+
+\Centerline{$\tilde A^-
+=\{x:x\in A$, $\coint{x-\delta,x}\cap A\ne\emptyset$
+untuk setiap $\delta>0\}$.}
+     
+\noindent Tetapkan
+
+\Centerline{$\DiniD^+(x)
+=\limsup_{y\in A,y\downarrow x}\Bover{f(y)-f(x)}{y-x}
+=\inf_{\delta>0}\sup_{y\in A,x<y\le x+\delta}\Bover{f(y)-f(x)}{y-x}$,}
+
+\Centerline{$\Dinid^+(x)
+=\liminf_{y\in A,y\downarrow x}\Bover{f(y)-f(x)}{y-x}
+=\sup_{\delta>0}\inf_{y\in A,x<y\le x+\delta}\Bover{f(y)-f(x)}{y-x}$}
+
+\noindent untuk $x\in\tilde A^+$, dan
+
+\Centerline{$\DiniD^-(x)
+=\limsup_{y\in A,y\uparrow x}\Bover{f(y)-f(x)}{y-x}
+=\inf_{\delta>0}\sup_{y\in A,x-\delta\le y<x}\Bover{f(y)-f(x)}{y-x}$,}
+
+\Centerline{$\Dinid^-(x)
+=\liminf_{y\in A,y\uparrow x}\Bover{f(y)-f(x)}{y-x}
+=\sup_{\delta>0}\inf_{y\in A,x-\delta\le y<x}\Bover{f(y)-f(x)}{y-x}$}
+
+\noindent untuk $x\in\tilde A^-$, semuanya terdefinisi dalam
+$[-\infty,\infty]$. (Inilah keempat {\bf turunan Dini} dari
+$f$.\cmmnt{ Anda juga akan menjumpai $D^+$, $d^+$, $D^-$, $d^-$ yang
+digunakan sebagai pengganti $\DiniD^+$, $\Dinid^+$, $\DiniD^-$, dan
+$\Dinid^-$.})
+
+Perhatikan bahwa tentu saja kita mempunyai
+$(\Dinid^+f)(x)\le(\DiniD^+f)(x)$ untuk setiap $x\in\tilde A^+$,
+sedangkan $(\Dinid^-f)(x)\le(\DiniD^-f)(x)$ untuk setiap
+$x\in\tilde A^-$. Turunan biasa $f'(x)$ terdefinisi dan sama dengan
+$c\in\Bbb R$ jika dan hanya jika ($\alpha$) $x$ termasuk dalam suatu
+interval terbuka yang termuat dalam $A$ ($\beta$)
+$(\DiniD^+f)(x)=(\Dinid^+f)(x)=(\DiniD^-f)(x)
+=(\Dinid^-f)(x)=c$.
+
+",591ee0148f0b0842b95462887d5c4113e4b71cd63d3473d98a7c1f89e240a909,d2267aadbc185b370619fbe5f4318decc731a2c07bafc825d948496ffc2f3968,"{""basis"":""definition-bearing source segment"",""kind"":""source-derived-definition-map""}"

@@ -1,0 +1,230 @@
+schema_version,record_type,id,unit_id,rights_id,segment_id,source_anchor,association_locator,source_line_start,target_line_start,source_text,target_text,source_raw_tex_sha256,target_raw_tex_sha256,provenance
+1.1.0,proof,O007-FREMLIN-V2-S221-PROOF-221A,O007-FREMLIN-V2-S221,O007-RIGHTS-FREMLIN-DSL,O007-FREMLIN-V2-S221-SEG-221A,221A,complete proof macro for 221A,27,28,"{\bf (a)} If there is a finite disjoint
+set $\Cal I_0\subseteq\Cal I$
+such that $A\subseteq\bigcup\Cal I_0$ (including the
+possibility that $A=\Cal I_0=\emptyset$), we can stop.   So let us
+suppose henceforth that there is no such $\Cal I_0$.
+
+Let $\mu\sp*$ be Lebesgue outer
+measure on $\Bbb R$.   Suppose that $|x|<M$ for every $x\in A$, and set
+
+\Centerline{$\Cal I'=\{I:I\in\Cal I,\,I\subseteq[-M,M]\}$.}
+
+\medskip
+
+{\bf (b)} In this case, if $\Cal I_0$ is any finite disjoint subset of
+$\Cal I'$, there is a $J\in\Cal I'$ which is disjoint from any member of
+$\Cal I_0$.   \Prf\ Take $x\in A\setminus\bigcup\Cal I_0$.   Now there
+is a $\delta>0$ such that
+$[x-\delta,x+\delta]$ does not meet any member of $\Cal I_0$, and as
+$|x|<M$ we can suppose that $[x-\delta,x+\delta]\subseteq[-M,M]$.   Let
+$J$ be a member of $\Cal I$, containing $x$, and of length at most
+$\delta$;  then $J\in\Cal I'$ and $J\cap\bigcup\Cal I_0=\emptyset$.\
+\Qed
+
+\medskip
+
+
+{\bf (c)} We can now choose a sequence $\sequencen{\gamma_n}$ of real
+numbers and a disjoint sequence $\sequencen{I_n}$ in $\Cal I'$
+inductively, as follows.   Given $\langle I_j\rangle_{j<n}$ (if $n=0$,
+this is the empty sequence, with no members), with $I_j\in\Cal I'$ for
+each $j<n$, and $I_j\cap I_k=\emptyset$ for $j<k<n$, set
+
+\Centerline{$\Cal J_n=\{I:I\in\Cal I',\,I\cap I_j=\emptyset$ for every
+$j<n\}$.}
+
+\noindent   We know from (b) that $\Cal J_n\ne\emptyset$.   Set
+
+\Centerline{$\gamma_n=\sup\{\mu I:I\in\Cal J_n\}$;}
+
+\noindent then $0<\gamma_n\le 2M$.   We may therefore choose a set
+$I_n\in\Cal J_n$ such that $\mu I_n\ge{1\over 2}\gamma_n$, and this
+continues the induction.
+
+\medskip
+
+{\bf (e)} Because the $I_n$ are disjoint Lebesgue measurable subsets of
+$[-M,M]$, we have
+
+\Centerline{$\sum_{n=0}^{\infty}\gamma_n
+\le 2\sum_{n=0}^{\infty}\mu I_n\le 4M<\infty$,}
+
+\noindent and $\lim_{n\to\infty}\gamma_n=0$.   Now define $I'_n$ to be
+the closed
+interval with the same midpoint as $I_n$ but five times the length, so
+that it projects past each end of $I_n$ by at least $\gamma_n$.   I
+claim that, for any $n$,
+
+\Centerline{$A\subseteq\bigcup_{j<n}{I}_j\cup\bigcup_{j\ge n}I_j'$.}
+
+\noindent\Prf\Quer\ Suppose, if possible, otherwise.   Take
+any $x$ belonging to
+$A\setminus(\bigcup_{j<n}{I}_j\cup\bigcup_{j\ge n}I'_j)$.   Let
+$\delta>0$ be such that
+
+
+\Centerline{$[x-\delta,x+\delta]
+\subseteq[-M,M]\setminus\bigcup_{j<n}I_j$,}
+
+\noindent and let $J\in\Cal I$ be such that
+
+\Centerline{$x\in J\subseteq[x-\delta,x+\delta]$.}
+
+\noindent   Then
+
+\Centerline{$\mu J>0=\lim_{m\to\infty}\gamma_m$;}
+
+\noindent  let $m$ be the least integer
+greater than or equal to $n$ such that $\gamma_m<\mu J$.   In this case
+$J$ cannot belong to $\Cal J_m$, so there must be some $k<m$ such that
+$J\cap I_k\ne\emptyset$, because certainly $J\in\Cal I'$.   By the
+choice of $\delta$, $k$ cannot be less than $n$, so $n\le k<m$, and
+$\gamma_k\ge\mu J$.   In this case, the distance from $x$ to the nearest
+endpoint of $I_k$ is at most $\mu J\le \gamma_k$.   But the ends of
+$I'_k$ project beyond the ends of $I_k$ by at least $\gamma_k$, so $x\in
+I'_k$;  which contradicts the choice of $x$. \Bang \Qed
+
+\medskip
+
+{\bf (f)} It follows that
+
+\Centerline{$\mu\sp*(A\setminus\bigcup_{j<n}I_j)
+\le\mu(\bigcup_{j\ge n}I'_j)\le\sum_{j=n}^{\infty}\mu I'_j
+\le 5\sum_{j=n}^{\infty}\mu I_j$.}
+
+\noindent As
+
+\Centerline{$\sum_{j=0}^{\infty}\mu I_j\le 2M<\infty$,}
+
+\noindent we must have
+
+\Centerline{$\lim_{n\to\infty}\mu\sp*(A\setminus\bigcup_{j<n}I_j)=0,$}
+
+\noindent and
+
+\Centerline{$\mu(A\setminus\bigcup_{j\in\Bbb N}I_j)
+=\mu\sp*(A\setminus\bigcup_{j\in\Bbb N}I_j)
+\le\inf_{n\in\Bbb N}\mu^*(A\setminus\bigcup_{j<n}I_j)
+=0$.}
+
+Thus in this case we may set $\Cal I_0=\{I_n:n\in\Bbb N\}$ to obtain
+a countable disjoint family in $\Cal I$ with
+$\mu(A\setminus\bigcup\Cal I_0)=0$.
+","{\bf (a)} Jika terdapat suatu himpunan berhingga yang saling lepas
+$\Cal I_0\subseteq\Cal I$ sedemikian sehingga
+$A\subseteq\bigcup\Cal I_0$ (termasuk kemungkinan bahwa
+$A=\Cal I_0=\emptyset$), kita selesai. Jadi, mulai sekarang andaikan
+bahwa tidak ada $\Cal I_0$ semacam itu.
+
+Misalkan $\mu\sp*$ adalah ukuran luar Lebesgue pada $\Bbb R$. Andaikan
+bahwa $|x|<M$ untuk setiap $x\in A$, dan tetapkan
+
+\Centerline{$\Cal I'=\{I:I\in\Cal I,\,I\subseteq[-M,M]\}$.}
+
+\medskip
+
+{\bf (b)} Dalam hal ini, jika $\Cal I_0$ adalah sembarang subhimpunan
+berhingga dari $\Cal I'$ yang saling lepas, terdapat suatu $J\in\Cal I'$
+yang tidak beririsan dengan anggota mana pun dari $\Cal I_0$. \Prf\ Ambil
+$x\in A\setminus\bigcup\Cal I_0$. Sekarang terdapat $\delta>0$ sedemikian
+sehingga $[x-\delta,x+\delta]$ tidak bertemu dengan anggota mana pun dari
+$\Cal I_0$, dan karena $|x|<M$ kita dapat mengandaikan bahwa
+$[x-\delta,x+\delta]\subseteq[-M,M]$. Misalkan $J$ suatu anggota
+$\Cal I$ yang memuat $x$ dan panjangnya paling besar $\delta$; maka
+$J\in\Cal I'$ dan $J\cap\bigcup\Cal I_0=\emptyset$.\
+\Qed
+
+\medskip
+
+
+{\bf (c)} Sekarang kita dapat memilih suatu barisan
+$\sequencen{\gamma_n}$ dari bilangan real dan suatu barisan saling lepas
+$\sequencen{I_n}$ di dalam $\Cal I'$ secara induktif sebagai berikut.
+Diberikan $\langle I_j\rangle_{j<n}$ (jika $n=0$, ini adalah barisan
+kosong, tanpa anggota), dengan $I_j\in\Cal I'$ untuk setiap $j<n$, dan
+$I_j\cap I_k=\emptyset$ untuk $j<k<n$, tetapkan
+
+\Centerline{$\Cal J_n=\{I:I\in\Cal I',\,I\cap I_j=\emptyset$ untuk setiap
+$j<n\}$.}
+
+\noindent Kita tahu dari (b) bahwa $\Cal J_n\ne\emptyset$. Tetapkan
+
+\Centerline{$\gamma_n=\sup\{\mu I:I\in\Cal J_n\}$;}
+
+\noindent maka $0<\gamma_n\le 2M$. Karena itu, kita dapat memilih suatu
+$I_n\in\Cal J_n$ sedemikian sehingga $\mu I_n\ge{1\over 2}\gamma_n$, dan
+ini melanjutkan induksi.
+
+\medskip
+
+{\bf (e)} Karena himpunan-himpunan $I_n$ saling lepas, terukur Lebesgue,
+dan termuat dalam $[-M,M]$, kita mempunyai
+
+\Centerline{$\sum_{n=0}^{\infty}\gamma_n
+\le 2\sum_{n=0}^{\infty}\mu I_n\le 4M<\infty$,}
+
+\noindent dan $\lim_{n\to\infty}\gamma_n=0$. Sekarang definisikan
+$I'_n$ sebagai interval tertutup yang berbagi titik tengah dengan
+$I_n$ tetapi panjangnya lima kali panjang interval semula, sehingga
+interval tersebut menjulur melampaui setiap ujung $I_n$ setidak-tidaknya sejauh
+$\gamma_n$. Saya menyatakan bahwa, untuk setiap $n$,
+
+\Centerline{$A\subseteq\bigcup_{j<n}{I}_j\cup\bigcup_{j\ge n}I_j'$.}
+
+\noindent\Prf\Quer\ Andaikan, jika mungkin, bahwa pernyataan ini salah.
+Ambil sembarang $x$ yang termasuk dalam
+$A\setminus(\bigcup_{j<n}{I}_j\cup\bigcup_{j\ge n}I'_j)$. Misalkan
+$\delta>0$ sedemikian sehingga
+
+
+\Centerline{$[x-\delta,x+\delta]
+\subseteq[-M,M]\setminus\bigcup_{j<n}I_j$,}
+
+\noindent dan misalkan $J\in\Cal I$ sedemikian sehingga
+
+\Centerline{$x\in J\subseteq[x-\delta,x+\delta]$.}
+
+\noindent Maka
+
+\Centerline{$\mu J>0=\lim_{m\to\infty}\gamma_m$;}
+
+\noindent misalkan $m$ bilangan bulat terkecil yang lebih besar daripada
+atau sama dengan $n$ sedemikian sehingga $\gamma_m<\mu J$. Dalam hal ini,
+$J$ tidak mungkin termasuk dalam $\Cal J_m$, sehingga pasti terdapat
+suatu $k<m$ sedemikian sehingga $J\cap I_k\ne\emptyset$, sebab tentu saja
+$J\in\Cal I'$. Berdasarkan pemilihan $\delta$, $k$ tidak mungkin lebih
+kecil daripada $n$, sehingga $n\le k<m$, dan $\gamma_k\ge\mu J$. Dalam
+hal ini, jarak dari $x$ ke titik ujung $I_k$ yang terdekat paling besar
+$\mu J\le \gamma_k$. Namun, ujung-ujung $I'_k$ menjulur melampaui
+ujung-ujung $I_k$ setidak-tidaknya sejauh $\gamma_k$, sehingga
+$x\in I'_k$; ini bertentangan dengan pemilihan $x$. \Bang \Qed
+
+\medskip
+
+{\bf (f)} Akibatnya,
+
+\Centerline{$\mu\sp*(A\setminus\bigcup_{j<n}I_j)
+\le\mu(\bigcup_{j\ge n}I'_j)\le\sum_{j=n}^{\infty}\mu I'_j
+\le 5\sum_{j=n}^{\infty}\mu I_j$.}
+
+\noindent Karena
+
+\Centerline{$\sum_{j=0}^{\infty}\mu I_j\le 2M<\infty$,}
+
+\noindent kita harus mempunyai
+
+\Centerline{$\lim_{n\to\infty}\mu\sp*(A\setminus\bigcup_{j<n}I_j)=0,$}
+
+\noindent dan
+
+\Centerline{$\mu(A\setminus\bigcup_{j\in\Bbb N}I_j)
+=\mu\sp*(A\setminus\bigcup_{j\in\Bbb N}I_j)
+\le\inf_{n\in\Bbb N}\mu^*(A\setminus\bigcup_{j<n}I_j)
+=0$.}
+
+Jadi, dalam hal ini kita dapat menetapkan
+$\Cal I_0=\{I_n:n\in\Bbb N\}$ untuk memperoleh suatu keluarga terhitung
+yang saling lepas di dalam $\Cal I$ dengan
+$\mu(A\setminus\bigcup\Cal I_0)=0$.
+",db325f1595344e14c21bc97fc123f8af18290a3ad70d6466915fd6be76c5b6bd,d1cbebd3c1b8d15b3f9120db3929a0256ee29cd17f0d4c791059ad230a1f8219,"{""basis"":""complete proof macro argument retained"",""kind"":""source-derived-proof-map""}"

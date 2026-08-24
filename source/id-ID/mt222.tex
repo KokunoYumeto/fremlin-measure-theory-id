@@ -1,0 +1,926 @@
+\frfilename{mt222.tex}
+\versiondate{20.11.03/18.10.04}
+\copyrightdate{2004}
+
+
+%$(\DiniD^+f)(x)=(\DiniD^-f)(x)
+%=(\Dinid^+f)(x)=(\Dinid^-f)(x)$
+
+\def\chaptername{Teorema Dasar Kalkulus}
+\def\sectionname{Mendiferensialkan integral tak tentu}
+     
+\newsection{222}
+     
+Sekarang saya sampai pada pertanyaan pertama dari dua pertanyaan yang
+disebutkan dalam pengantar bab ini:  jika $f$ merupakan fungsi yang
+terintegralkan pada $[a,b]$, berapakah $\bover{d}{dx}\int_a^xf$? Ternyata
+turunan ini ada dan sama dengan $f$ hampir di mana-mana (222E). Argumennya
+didasarkan pada suatu sifat mencolok dari fungsi monoton: fungsi-fungsi
+tersebut terdiferensialkan hampir di mana-mana (222A), dan kita dapat
+membatasi integral turunannya (222C).
+     
+\leader{222A}{Teorema} Misalkan $I\subseteq\Bbb R$ suatu interval dan
+$f:I\to\Bbb R$ suatu fungsi monoton. Maka $f$ terdiferensialkan hampir
+di mana-mana dalam $I$.
+     
+\cmmnt{\medskip
+     
+\noindent{\bf Catatan} Jika saya tampak membicarakan suatu ukuran pada
+$\Bbb R$ tanpa menyebut namanya, seperti di sini, yang saya maksud ialah
+ukuran Lebesgue.
+}%end of comment
+     
+\proof{ Seperti biasa, tuliskan $\mu^*$ untuk ukuran luar Lebesgue
+pada $\Bbb R$, dan $\mu$ untuk ukuran Lebesgue.
+     
+\medskip
+     
+{\bf (a)} Sebagai permulaan (sampai akhir (c) di bawah), andaikan bahwa
+$f$ tak-menurun dan $I$ merupakan interval terbuka terbatas tempat $f$
+terbatas; katakanlah $|f(x)|\le M$ untuk $x\in I$. Untuk setiap
+subinterval tertutup $J=[a,b]$ dari $I$, tuliskan $f^*(J)$ untuk interval
+terbuka $\ooint{f(a),f(b)}$. Untuk $x\in I$, tuliskan
+     
+\Centerline{$\DiniD f(x)=\limsup_{h\to 0}{1\over h}(f(x+h)-f(x))$,
+\quad$\Dinid f(x)=\liminf_{h\to 0}{1\over h}(f(x+h)-f(x))$,}
+     
+\noindent dengan membolehkan nilai $\infty$ dalam kedua kasus. Maka $f$
+terdiferensialkan di $x$ jika dan hanya jika
+$\DiniD f(x)=\Dinid f(x)\in\Bbb R$. Karena tentu saja
+$\DiniD f(x)\ge \Dinid f(x)\ge 0$, $f$ akan terdiferensialkan di $x$
+jika dan hanya jika $\DiniD f(x)$ berhingga dan
+$\DiniD f(x)\le \Dinid f(x)$.
+     
+Oleh karena itu saya harus menunjukkan bahwa himpunan-himpunan
+     
+\Centerline{$\{x:x\in I,\,\DiniD f(x)=\infty\}$,
+\quad$\{x:x\in I,\,\DiniD f(x)>\Dinid f(x)\}$}
+     
+\noindent terabaikan.
+     
+\medskip
+     
+{\bf (b)} Mula-mula ambil
+$A=\{x:x\in I,\,\DiniD f(x)=\infty\}$. Untuk sementara, tetapkan suatu
+bilangan bulat $m\ge 1$, dan tetapkan
+     
+\Centerline{$A_m=\{x:x\in I,\,\DiniD f(x)>m\}\supseteq A$.}
+     
+\noindent Misalkan $\Cal I$ keluarga interval tertutup tak-sepele
+$[a,b]\subseteq I$ sedemikian sehingga $f(b)-f(a)\ge m(b-a)$; maka
+$\mu f^*(J)\ge m\mu J$ untuk setiap $J\in\Cal I$. Jika $x\in A_m$,
+maka untuk setiap $\delta>0$ terdapat $h$ dengan $0<|h|\le\delta$ dan
+${1\over h}(f(x+h)-f(x))>m$, sehingga
+     
+\Centerline{$[x,x+h]\in\Cal I$ jika $h>0$,
+\quad$[x+h,x]\in\Cal I$ jika $h<0$;}
+     
+\noindent
+dengan demikian setiap anggota $A_m$ termasuk dalam interval-interval
+yang sekecil apa pun dalam $\Cal I$. Menurut teorema Vitali (221A),
+terdapat suatu subkeluarga terhitung dan saling lepas
+$\Cal I_0\subseteq\Cal I$
+sedemikian sehingga $\mu(A_m\setminus\bigcup\Cal I_0)=0$.
+Sekarang, karena $f$ tak-menurun,
+$\langle f^*(J)\rangle_{J\in\Cal I_0}$ saling lepas, dan semua $f^*(J)$
+termasuk dalam $[-M,M]$, sehingga
+$\sum_{J\in\Cal I_0}\mu f^*(J)\le 2M$ dan
+$\sum_{J\in\Cal I_0}\mu J\le 2M/m$. Karena
+$A_m\setminus\bigcup\Cal I_0$ terabaikan,
+     
+     
+\Centerline{$\mu^*A\le\mu^*A_m\le\Bover{2M}{m}$.}
+     
+\noindent Karena $m$ sembarang, $\mu^*A=0$ dan $A$ terabaikan.
+     
+\medskip
+     
+{\bf (c)} Sekarang tinjau
+$B=\{x:x\in I,\,\DiniD f(x)>\Dinid f(x)\}$. Untuk $q$, $q'\in\Bbb Q$
+dengan $0\le q<q'$, tetapkan
+     
+     
+\Centerline{$B_{qq'}=\{x:x\in I,\,\Dinid f(x)< q,\,\DiniD f(x)>q'\}$.}
+     
+\noindent Untuk sementara tetapkan $q$, $q'$ seperti itu, dan tuliskan
+$\gamma=\mu^*B_{qq'}$. Ambil sembarang $\epsilon>0$, dan misalkan $G$
+suatu himpunan terbuka yang memuat $B_{qq'}$ sedemikian sehingga
+$\mu G\le\gamma+\epsilon$ (134Fa). Misalkan $\Cal J$ keluarga interval
+tertutup tak-sepele $[a,b]\subseteq I\cap G$ sedemikian sehingga
+$f(b)-f(a)\le q(b-a)$; kali ini $\mu f^*(J)\le q\mu J$ untuk
+$J\in\Cal J$. Maka setiap anggota $B_{qq'}$ termasuk dalam anggota-anggota
+$\Cal J$ yang sekecil apa pun, sehingga terdapat suatu subkeluarga
+terhitung dan saling lepas $\Cal J_0\subseteq\Cal J$ sedemikian sehingga
+$B_{qq'}\setminus\bigcup\Cal J_0$ terabaikan. Misalkan $L$ himpunan
+titik-titik ujung anggota $\Cal J_0$; maka $L$ merupakan gabungan terhitung
+dari himpunan-himpunan beranggota dua, jadi terhitung, dan karenanya
+terabaikan. Tetapkan
+     
+\Centerline{$C=B_{qq'}\cap\bigcup\Cal J_0\setminus L$;}
+     
+\noindent maka $\mu^*C=\gamma$. Misalkan $\Cal I$ keluarga interval
+tertutup tak-sepele $J=[a,b]$ sedemikian sehingga (i) $J$ termasuk
+dalam salah satu anggota $\Cal J_0$ (ii) $f(b)-f(a)\ge q'(b-a)$;
+sekarang $\mu f^*(J)\ge q'\mu J$ untuk setiap $J\in\Cal I$. Sekali lagi,
+karena setiap anggota $C$ merupakan titik interior dari suatu anggota
+$\Cal J_0$, setiap titik $C$ termasuk dalam anggota-anggota $\Cal I$
+yang sekecil apa pun; jadi terdapat suatu subkeluarga terhitung dan
+saling lepas $\Cal I_0\subseteq\Cal I$ sedemikian sehingga
+$\mu(C\setminus\bigcup\Cal I_0)=0$.
+     
+Seperti dalam (b) di atas,
+     
+\Centerline{$\gamma q'\le q'\mu(\bigcup\Cal I_0)
+=\sum_{I\in\Cal I_0}q'\mu I
+\le\sum_{I\in\Cal I_0}\mu f^*(I)
+=\mu(\bigcup_{I\in\Cal I_0}f^*(I))$.}
+     
+\noindent Di sisi lain,
+     
+$$\eqalign{\mu(\bigcup_{J\in\Cal J_0}f^*(J))
+&=\sum_{J\in\Cal J_0}\mu f^*(J)
+\le q\sum_{J\in\Cal J_0}\mu J
+=q\mu(\bigcup\Cal J_0)\cr
+&\le q\mu(\bigcup\Cal J)
+\le q\mu G
+\le q(\gamma+\epsilon).\cr}$$
+     
+     
+\noindent Tetapi
+$\bigcup_{I\in\Cal I_0}f^*(I)\subseteq\bigcup_{J\in\Cal J_0}f^*(J)$,
+karena setiap anggota $\Cal I_0$ termasuk dalam suatu anggota
+$\Cal J_0$, sehingga $\gamma q'\le q(\gamma+\epsilon)$ dan
+$\gamma\le \epsilon q/(q'-q)$. Karena $\epsilon$ sembarang, $\gamma=0$.
+     
+Jadi setiap $B_{qq'}$ terabaikan. Akibatnya
+$B=\bigcup_{q,q'\in\Bbb Q,0\le q<q'}B_{qq'}$ terabaikan.
+     
+\medskip
+     
+{\bf (d)} Ini menangani kasus interval terbuka terbatas tempat $f$
+terbatas dan tak-menurun. Masih untuk $f$ yang tak-menurun, tetapi untuk
+sembarang interval $I$, perhatikan bahwa
+$K=\{(q,q'):q,\,q'\in I\cap\Bbb Q,\,q<q'\}$ terhitung dan bahwa
+$I\setminus\bigcup_{(q,q')\in K}\ooint{q,q'}$ mempunyai paling banyak
+dua titik (titik-titik ujung $I$, jika ada), sehingga terabaikan. Jika
+kita menuliskan $S$ untuk himpunan titik-titik $I$ tempat $f$ tidak
+terdiferensialkan, maka dari (a)-(c) kita melihat bahwa
+$S\cap\ooint{q,q'}$ terabaikan untuk setiap $(q,q')\in K$, sehingga
+$S\cap\bigcup_{(q,q')\in K}\ooint{q,q'}$ terabaikan dan $S$ terabaikan.
+     
+\medskip
+     
+{\bf (e)} Jadi kita selesai jika $f$ tak-menurun. Untuk $f$ yang
+tak-menaik, terapkan hasil di atas pada $-f$, yang terdiferensialkan
+tepat di titik-titik yang sama seperti $f$.
+}%end of proof of 222A
+     
+\leader{222B}{Catatan-catatan}\dvro{ Jika}{ {\bf (a)} Saya mencatat bahwa
+dalam argumen di atas saya menggunakan rumus-rumus seperti
+$\sum_{J\in\Cal I_0}\mu f^*(J)$. Ini karena teorema Vitali tidak menentukan
+apakah keluarga $\Cal I_0$ akan berhingga atau tak berhingga. Jumlah
+tersebut harus ditafsirkan menurut cara yang ditetapkan dalam 112Bd di
+Jilid 1; secara umum, $\sum_{k\in K}a_k$, dengan $K$ suatu himpunan
+sembarang dan setiap $a_k\ge 0$, dimaksudkan sebagai
+$\sup_{L\subseteq K\text{ berhingga}}\sum_{k\in L}a_k$, dengan konvensi
+bahwa $\sum_{k\in\emptyset}a_k=0$. Sekarang, dalam konteks ini, jika}
+$(X,\Sigma,\mu)$ merupakan ruang ukur, $K$ suatu himpunan terhitung,
+dan $\family{k}{K}{E_k}$ suatu keluarga dalam $\Sigma$,
+     
+\Centerline{$\mu(\bigcup_{k\in K}E_k)\le\sum_{k\in K}\mu E_k$,}
+     
+\noindent dengan kesamaan jika $\family{k}{K}{E_k}$ saling lepas.
+\prooflet{\Prf\ Jika $K=\emptyset$, hal ini sepele. Jika tidak, misalkan
+$n\mapsto k_n:\Bbb N\to K$ suatu surjeksi, dan tetapkan
+     
+\Centerline{$K_n=\{k_i:i\le n\}$, \quad$G_n=\bigcup_{i\le n}E_{k_i}
+=\bigcup_{k\in K_n}E_k$}
+     
+\noindent untuk setiap $n\in\Bbb N$. Maka $\sequencen{G_n}$ merupakan
+barisan tak-menurun dengan gabungan $E=\bigcup_{k\in K}E_k$, sehingga
+     
+\Centerline{$\mu E=\lim_{n\to\infty}\mu G_n=\sup_{n\in\Bbb N}\mu G_n$;}
+     
+\noindent dan
+     
+\Centerline{$\mu G_n\le\sum_{k\in K_n}\mu E_k\le\sum_{k\in K}\mu E_k$}
+     
+\noindent untuk setiap $n$, sehingga
+$\mu E\le\sum_{k\in K}\mu E_k$. Jika $E_k$ saling lepas, maka $\mu G_n$
+tepat sama dengan $\sum_{k\in K_n}\mu E_k$ untuk setiap $n$; tetapi
+karena $\sequencen{K_n}$ merupakan barisan tak-menurun dari himpunan-himpunan
+dengan gabungan $K$, setiap subhimpunan berhingga dari $K$ termasuk dalam
+suatu $K_n$, dan
+     
+\Centerline{$\sum_{k\in K}\mu E_k=\sup_{n\in\Bbb N}\sum_{k\in K_n}
+\mu E_k=\sup_{n\in\Bbb N}\mu G_n=\mu E$,}
+     
+\noindent sebagaimana diperlukan.\ \Qed}
+     
+\cmmnt{
+\spheader 222Bb Sebagian pembaca akan lebih menyukai pengindeksan ulang
+himpunan-himpunan secara teratur, sehingga semua jumlah yang perlu mereka
+perhatikan berbentuk $\sum_{i=0}^n$ atau $\sum_{i=0}^{\infty}$. Pada
+hakikatnya, itulah yang saya lakukan dalam Jilid 1, dalam bukti
+114Da/115Da, ketika menunjukkan bahwa ukuran luar Lebesgue memang
+merupakan ukuran luar. Kerugian prosedur ini dalam konteks 222A ialah
+bahwa kita harus terus-menerus memeriksa bahwa tidak menjadi soal apakah
+pada suatu saat tertentu kita mempunyai jumlah berhingga atau tak
+berhingga. Saya percaya bahwa teknik yang diuraikan di sini layak
+dipelajari dengan sungguh-sungguh, karena sangat sering kita hendak
+meninjau gabungan himpunan-himpunan yang diindeks oleh himpunan selain
+$\Bbb N$ dan $\{0,\ldots,n\}$.
+     
+\spheader 222Bc Tentu saja argumen di atas dapat dipersingkat jika Anda
+mengetahui sedikit lebih banyak tentang himpunan terhitung daripada yang
+telah saya nyatakan secara eksplisit sejauh ini. Tetapi perhatikan bahwa
+nilai yang diberikan kepada $\sum_{k\in K}a_k$ tidak boleh bergantung
+pada enumerasi $\sequencen{k_n}$ yang kita pilih.
+}%end of comment
+     
+     
+\leader{222C}{Lema} Andaikan bahwa $a\le b$ dalam $\Bbb R$, dan bahwa
+$F:[a,b]\to\Bbb R$ merupakan fungsi tak-menurun. Maka $\int_a^bF'$ ada
+dan paling besar $F(b)-F(a)$.
+     
+\medskip
+     
+\def\tmpins{}
+     
+\noindent{\bf Catatan}\cmmnt{ Saya membahas integrasi atas subhimpunan
+secara panjang lebar dalam \S131 dan \S214. Untuk subhimpunan terukur,
+yang sudah cukup bagi keperluan kita dalam bab ini, kita mempunyai
+deskripsi sederhana: jika $(X,\Sigma,\mu)$ suatu ruang ukur, $E\in\Sigma$
+dan $f$ suatu fungsi bernilai real, maka $\int_Ef=\int\tilde f$ jika
+integral yang terakhir ada, dengan
+$\dom\tilde f=(E\cap\dom f)\cup(X\setminus E)$ dan $\tilde f(x)=f(x)$
+jika $x\in E\cap\dom f$, serta $0$ jika $x\in X\setminus E$ (terapkan
+131Fa pada $\tilde f$). Segera diperoleh bahwa jika sekarang $F\in\Sigma$
+dan $F\subseteq E$, maka $\int_Ff=\int_Ef\times\chi F$.
+     
+} Saya menuliskan $\int_a^xf$ untuk mengartikan
+$\int_{\coint{a,x}}f$\cmmnt{, yang (karena $\coint{a,x}$ terukur) dapat
+ditangani sebagaimana diuraikan di atas}.
+\cmmnt{Perhatikan bahwa selama kita menangani ukuran Lebesgue, sehingga
+$[a,x]\setminus\ooint{a,x}=\{a,x\}$ terabaikan, kita tidak perlu
+membedakan $\int_{[a,x]}$, $\int_{\ooint{a,x}}$,
+$\int_{\coint{a,x}}$, dan $\int_{\ocint{a,x}}$; untuk ukuran lain pada
+$\Bbb R$ kita mungkin harus lebih berhati-hati. Saya menggunakan interval
+setengah terbuka agar jelas bahwa
+$\int_a^xf+\int_x^yf=\int_a^yf$ jika $a\le x\le y$, karena
+     
+\Centerline{$f\times\chi\coint{a,y}
+=f\times\chi\coint{a,x}\,+\,f\times\chi\coint{x,y}$.}
+}%end of comment
+     
+\proof{{\bf (a)} Hasil ini sepele jika $a=b$; andaikan bahwa $a<b$.
+Menurut 222A, $F'$ terdefinisi hampir di mana-mana dalam $[a,b]$.
+     
+\medskip
+     
+{\bf (b)} Untuk setiap $n\in\Bbb N$, definisikan fungsi sederhana
+$g_n:\coint{a,b}\to\Bbb R$ sebagai berikut. Untuk $0\le k<2^n$, tetapkan
+$a_{nk}=a+2^{-n}k(b-a)$, $b_{nk}=a+2^{-n}(k+1)(b-a)$,
+$I_{nk}=\coint{a_{nk},b_{nk}}$. Untuk setiap $x\in\coint{a,b}$, ambil
+$k<2^n$ sedemikian sehingga $x\in I_{nk}$, dan tetapkan
+     
+\Centerline{$g_n(x)=\Bover{2^n}{b-a}(F(b_{nk})-F(a_{nk}))$}
+     
+\noindent untuk $x\in I_{nk}$, sehingga $g_n$ memberikan kemiringan tali
+busur grafik $F$ yang ditentukan oleh titik-titik ujung $I_{nk}$. Maka
+     
+\Centerline{$\int_a^b g_n=\sum_{k=0}^{2^n-1}F(b_{nk})-F(a_{nk})
+=F(b)-F(a)$.}
+     
+\medskip
+     
+{\bf (c)} Di sisi lain, jika kita tetapkan
+     
+\Centerline{$C=\{x:x\in\ooint{a,b},\,F'(x)$ ada$\}$,}
+     
+\noindent maka $[a,b]\setminus C$ terabaikan, menurut 222A, dan
+$F'(x)=\lim_{n\to\infty}g_n(x)$ untuk setiap $x\in C$. \Prf\ Misalkan
+$\epsilon>0$. Maka terdapat $\delta>0$ sedemikian sehingga $x+h\in[a,b]$
+dan $|F(x+h)-F(x)-hF'(x)|\le\epsilon|h|$ kapan pun
+$|h|\le\delta$. Misalkan $n\in\Bbb N$ sedemikian sehingga
+$2^{-n}(b-a)\le\delta$. Misalkan $k<2^n$ sedemikian sehingga
+$x\in I_{nk}$. Maka
+     
+\Centerline{$x-\delta\le a_{nk}\le x<b_{nk}\le x+\delta$,
+\quad$g_n(x)=\Bover{2^n}{b-a}(F(b_{nk})-F(a_{nk}))$.}
+     
+\noindent Sekarang kita mempunyai
+     
+$$\eqalign{|g_n(x)-F'(x)|
+&=|\Bover{2^n}{b-a}(F(b_{nk})-F(a_{nk}))-F'(x)|\cr
+&=\Bover{2^n}{b-a}|F(b_{nk})-F(a_{nk})-(b_{nk}-a_{nk})F'(x)|\cr
+&\le\Bover{2^n}{b-a}\bigl(|F(b_{nk})-F(x)-(b_{nk}-x)F'(x)|\cr
+&\qquad\qquad\qquad\qquad   +|F(x)-F(a_{nk})-(x-a_{nk})F'(x)|\bigr)\cr
+&\le \Bover{2^n}{b-a}(\epsilon|b_{nk}-x|+\epsilon|x-a_{nk}|)
+=\epsilon.\cr}$$
+     
+\noindent Dan ini benar kapan pun $2^{-n}(b-a)\le\delta$, yakni untuk semua
+$n$ yang cukup besar. Karena $\epsilon$ sembarang,
+$F'(x)=\lim_{n\to\infty}g_n(x)$.\ \Qed
+     
+\medskip
+     
+{\bf (d)} Jadi $g_n\to F'$ hampir di mana-mana dalam $[a,b]$. Menurut
+Lema Fatou,
+     
+\Centerline{$\int_a^bF'
+=\int_a^b\liminf_{n\to\infty}g_n
+\le\liminf_{n\to\infty}\int_a^bg_n
+=\lim_{n\to\infty}\int_a^b g_n
+=F(b)-F(a)$,}
+     
+\noindent sebagaimana diperlukan.
+}%end of proof of 222C
+     
+\cmmnt{
+\medskip
+     
+\noindent{\bf Catatan} Terdapat suatu generalisasi hasil ini dalam 224I.
+}
+     
+\leader{222D}{Lema} Andaikan bahwa $a<b$ dalam $\Bbb R$, dan bahwa $f$,
+$g$ merupakan fungsi bernilai real, keduanya terintegralkan pada $[a,b]$,
+sedemikian sehingga $\int_a^xf=\int_a^xg$ untuk setiap $x\in[a,b]$.
+Maka $f=g$ hampir di mana-mana dalam $[a,b]$.
+     
+\proof{ Intinya ialah bahwa
+     
+\Centerline{$\int_Ef=\int_a^bf\times\chi E
+=\int_a^bg\times\chi E=\int_Eg$}
+     
+\noindent untuk setiap himpunan terukur $E\subseteq\coint{a,b}$.
+     
+\Prf\ {\bf (i)} Jika $E=\coint{c,d}$ dengan $a\le c\le d\le b$, maka
+     
+\Centerline{$\int_Ef=\int_a^df-\int_a^cf
+=\int_a^dg-\int_a^cg=\int_Eg$.}
+     
+\medskip
+     
+\quad{\bf (ii)} Jika $E=\coint{a,b}\cap G$ untuk suatu himpunan terbuka
+$G\subseteq\Bbb R$, maka untuk setiap $n\in\Bbb N$ tetapkan
+     
+\Centerline{$K_n
+=\{k:k\in\Bbb Z,\,|k|\le 4^n,\,\coint{2^{-n}k,2^{-n}(k+1)}\subseteq
+G\}$,}
+     
+\Centerline{$H_n
+=\bigcup_{k\in K_n}\coint{2^{-n}k,2^{-n}(k+1)}\cap\coint{a,b}$;}
+     
+\noindent maka $\sequencen{H_n}$ merupakan barisan tak-menurun dari
+himpunan-himpunan terukur dengan gabungan $E$, sehingga
+$f\times\chi E=\lim_{n\to\infty}f\times\chi H_n$, dan (menurut Teorema
+Konvergensi Terdominasi Lebesgue, karena $|f\times\chi H_n|\le|f|$
+hampir di mana-mana untuk setiap $n$, dan $|f|$ terintegralkan)
+     
+\Centerline{$\int_Ef=\lim_{n\to\infty}\int_{H_n}f$.}
+     
+\noindent Pada saat yang sama, setiap $H_n$ merupakan gabungan berhingga
+yang saling lepas dari interval-interval setengah terbuka dalam
+$\coint{a,b}$, sehingga
+     
+\Centerline{$\int_{H_n}f
+=\sum_{k\in K_n}\int_{\coint{2^{-n}k,2^{-n}(k+1)}\cap\coint{a,b}}f
+=\sum_{k\in K_n}\int_{\coint{2^{-n}k,2^{-n}(k+1)}\cap\coint{a,b}}g
+=\int_{H_n}g$,}
+     
+\noindent dan
+     
+\Centerline{$\int_Eg=\lim_{n\to\infty}\int_{H_n}g
+=\lim_{n\to\infty}\int_{H_n}f=\int_Ef$.}
+     
+\medskip
+     
+\quad{\bf (iii)} Untuk himpunan terukur umum $E\subseteq\coint{a,b}$,
+kita dapat memilih untuk setiap $n\in\Bbb N$ suatu himpunan terbuka
+$G_n\supseteq E$ sedemikian sehingga $\mu G_n\le\mu E+2^{-n}$ (134Fa).
+Tetapkan $G_n'=\bigcap_{m\le n}G_m$,
+$E_n=\coint{a,b}\cap G'_n$ untuk setiap $n$,
+     
+\Centerline{$F=\coint{a,b}\cap\bigcap_{n\in\Bbb N}G_n
+=\bigcap_{n\in\Bbb N}\coint{a,b}\cap G_n'=\bigcap_{n\in\Bbb N}E_n$.}
+     
+\noindent Maka $E\subseteq F$ dan
+     
+\Centerline{$\mu F\le\inf_{n\in\Bbb N}\mu G_n=\mu E$,}
+     
+\noindent sehingga $F\setminus E$ terabaikan dan
+$f\times\chi(F\setminus E)$ bernilai nol hampir di mana-mana; akibatnya
+$\int_{F\setminus E}f=0$ dan $\int_Ff=\int_Ef$. Di sisi lain,
+     
+\Centerline{$f\times\chi F=\lim_{n\to\infty}f\times\chi E_n$,}
+     
+\noindent sehingga, sekali lagi menurut Teorema Konvergensi Terdominasi
+Lebesgue,
+     
+\Centerline{$\int_Ef=\int_Ff=\lim_{n\to\infty}\int_{E_n}f$.}
+     
+\noindent Demikian pula,
+     
+\Centerline{$\int_Eg=\lim_{n\to\infty}\int_{E_n}g$.}
+     
+\noindent Tetapi menurut bagian (ii) kita mempunyai
+$\int_{E_n}g=\int_{E_n}f$ untuk setiap $n$, sehingga
+$\int_Eg=\int_Ef$, sebagaimana diperlukan.\ \Qed
+     
+Menurut 131Hb, $f=g$ hampir di mana-mana dalam $\coint{a,b}$, dan
+karena itu hampir di mana-mana dalam $[a,b]$.
+}%end of proof of 222D
+     
+\leader{222E}{Teorema} Andaikan bahwa $a\le b$ dalam $\Bbb R$ dan $f$
+merupakan fungsi bernilai real yang terintegralkan pada $[a,b]$. Maka
+$F(x)=\int_a^xf$ ada dalam $\Bbb R$ untuk setiap $x\in[a,b]$, dan
+turunan $F'(x)$ ada serta sama dengan $f(x)$ untuk hampir setiap
+$x\in[a,b]$.
+     
+\proof{{\bf (a)} Dalam sebagian besar bukti ini (sampai akhir (c) di
+bawah) saya mengandaikan bahwa $f$ nonnegatif. Dalam hal ini,
+     
+     
+\Centerline{$F(y)=F(x)+\int_x^yf\ge F(x)$}
+     
+\noindent kapan pun $a\le x\le y\le b$; jadi $F$ tak-menurun dan karena
+itu terdiferensialkan hampir di mana-mana dalam $[a,b]$, menurut 222A.
+     
+Menurut 222C kita juga mengetahui bahwa $\int_a^xF'$ ada dan kurang dari
+atau sama dengan $F(x)-F(a)=F(x)$ untuk setiap $x\in[a,b]$.
+     
+\medskip
+     
+{\bf (b)} Sekarang andaikan, sebagai tambahan, bahwa $f$ terbatas;
+katakanlah $0\le f(t)\le M$ untuk setiap $t\in\dom f$. Maka $M-f$
+terintegralkan pada $[a,b]$; misalkan $G$ integral tak tentunya, sehingga
+$G(x)=M(x-a)-F(x)$ untuk setiap $x\in[a,b]$. Dengan menerapkan (a) pada
+$M-f$ dan $G$, kita memperoleh $\int_a^xG'\le G(x)$ untuk setiap
+$x\in[a,b]$; tetapi tentu saja $G'=M-F'$, sehingga
+$M(x-a)-\int_a^xF'\le M(x-a)-F(x)$, yakni $\int_a^xF'\ge F(x)$ untuk
+setiap $x\in[a,b]$. Jadi $\int_a^xF'=\int_a^xf$ untuk setiap
+$x\in[a,b]$. Sekarang 222D memberi tahu kita bahwa $F'=f$ hampir di
+mana-mana dalam $[a,b]$.
+     
+\medskip
+     
+{\bf (c)} Jadi kita selesai untuk $f$ yang terbatas dan nonnegatif.
+Untuk $f$ yang tak terbatas, misalkan $\sequencen{f_n}$ suatu barisan
+tak-menurun dari fungsi sederhana nonnegatif yang konvergen ke $f$
+hampir di mana-mana dalam $[a,b]$, dan misalkan $\sequencen{F_n}$
+integral-integral tak tentu yang bersesuaian. Maka untuk setiap $n$ dan
+setiap $x$, $y$ dengan $a\le x\le y\le b$, kita mempunyai
+     
+\Centerline{$F(y)-F(x)=\int_x^yf\ge\int_x^yf_n=F_n(y)-F_n(x)$,}
+     
+\noindent sehingga $F'(x)\ge F_n'(x)$ untuk setiap
+$x\in\ooint{a,b}$ tempat keduanya terdefinisi, dan
+$F'(x)\ge f_n(x)$ untuk hampir setiap $x\in[a,b]$. Ini benar untuk
+setiap $n$, sehingga $F'\ge f$ hampir di mana-mana, dan $F'-f\ge 0$
+hampir di mana-mana. Di sisi lain, sebagaimana dicatat dalam (a),
+     
+\Centerline{$\int_a^bF'\le F(b)-F(a)=\int_a^bf$,}
+     
+\noindent sehingga $\int_a^bF'-f\le 0$. Akibatnya $F'\eae f$ (yakni,
+$F'=f$ hampir di mana-mana dalam $[a,b]$)(122Rd).
+     
+\medskip
+     
+{\bf (d)} Ini menyelesaikan bukti untuk $f$ nonnegatif. Untuk $f$
+umum, kita dapat menyatakan $f$ sebagai $f_1-f_2$ dengan $f_1$, $f_2$
+fungsi terintegralkan nonnegatif; sekarang $F=F_1-F_2$ dengan $F_1$,
+$F_2$ integral-integral tak tentu yang bersesuaian, sehingga
+$F'\eae F_1'-F_2'\eae f_1-f_2$, dan $F'\eae f$.
+}%end of proof of 222E
+     
+\leader{222F}{Korolari} Andaikan bahwa $f$ sembarang fungsi bernilai real
+yang terintegralkan pada $\Bbb R$, dan tetapkan
+$F(x)=\int_{-\infty}^xf$ untuk setiap $x\in\Bbb R$. Maka $F'(x)$ ada
+dan sama dengan $f(x)$ untuk hampir setiap $x\in\Bbb R$.
+     
+\proof{ Untuk setiap $n\in\Bbb N$, tetapkan
+     
+\Centerline{$F_n(x)=\int_{-n}^xf$}
+     
+\noindent untuk $x\in[-n,n]$. Maka $F_n'(x)=f(x)$ untuk hampir setiap
+$x\in[-n,n]$. Tetapi $F(x)=F(-n)+F_n(x)$ untuk setiap $x\in[-n,n]$,
+sehingga $F'(x)$ ada dan sama dengan $F'_n(x)$ untuk setiap
+$x\in\ooint{-n,n}$ tempat $F'_n(x)$ terdefinisi; dan $F'(x)=f(x)$
+untuk hampir setiap $x\in[-n,n]$. Karena $n$ sembarang, $F'\eae f$.
+}%end of proof of 222F
+     
+\leader{222G}{Korolari} Andaikan bahwa $E\subseteq\Bbb R$ suatu himpunan
+terukur dan $f$ suatu fungsi bernilai real yang terintegralkan pada $E$.
+Tetapkan $F(x)=\int_{E\cap\ooint{-\infty,x}}f$ untuk $x\in\Bbb R$.
+Maka $F'(x)=f(x)$ untuk hampir setiap $x\in E$, dan $F'(x)=0$ untuk
+hampir setiap $x\in\Bbb R\setminus E$.
+     
+\proof{ Terapkan 222F pada $\tilde f$, dengan $\tilde f(x)=f(x)$ untuk
+$x\in E\cap\dom f$ dan $\tilde f(x)=0$ untuk
+$x\in\Bbb R\setminus E$, sehingga $F(x)=\int_{-\infty}^x\tilde f$
+untuk setiap $x\in\Bbb R$.
+}%end of proof of 222G
+     
+\leader{222H}{}\cmmnt{ Hasil bahwa $\bover{d}{dx}\int_a^xf=f(x)$ untuk
+hampir setiap $x$ memang memuaskan, tetapi tidak menggantikan hasil yang
+lebih elementer bahwa kesamaan ini berlaku di setiap titik tempat $f$
+kontinu.
+     
+\medskip
+     
+\noindent}{\bf Proposisi} Andaikan bahwa $a\le b$ dalam $\Bbb R$ dan
+$f$ merupakan fungsi bernilai real yang terintegralkan pada $[a,b]$.
+Tetapkan $F(x)=\int_a^xf$ untuk $x\in[a,b]$. Maka $F'(x)$ ada dan sama
+dengan $f(x)$ di setiap titik $x\in\dom(f)\cap\ooint{a,b}$ tempat $f$
+kontinu.
+     
+\proof{ Tetapkan $c=f(x)$. Misalkan $\epsilon>0$. Misalkan $\delta>0$
+sedemikian sehingga $\delta\le\min(b-x,x-a)$ dan
+$|f(t)-c|\le\epsilon$ kapan pun $t\in\dom f$ dan $|t-x|\le\delta$.
+Jika $x<y\le x+\delta$, maka
+     
+\Centerline{$|\Bover{F(y)-F(x)}{y-x}-c|
+=\Bover1{y-x}|\int_x^yf-c|
+\le\Bover1{y-x}\int_x^y|f-c|
+\le\epsilon$.}
+     
+\noindent Demikian pula, jika $x-\delta\le y<x$,
+     
+\Centerline{$|\Bover{F(y)-F(x)}{y-x}-f(x)|
+=\Bover1{x-y}|\int_y^xf-c|
+\le\Bover1{x-y}\int_y^x|f-c|
+\le\epsilon$.}
+     
+\noindent Karena $\epsilon$ sembarang,
+     
+\Centerline{$F'(x)=\lim_{y\to x}\Bover{F(y)-F(x)}{y-x}=c$,}
+     
+\noindent sebagaimana diperlukan.
+}%end of proof of 222H
+     
+     
+\leader{222I}{Fungsi bernilai kompleks} \cmmnt{Sejauh ini dalam bagian
+ini, saya mengambil setiap $f$ bernilai real. Perluasannya ke $f$
+bernilai kompleks cukup dilakukan dengan menerapkan hasil-hasil di atas
+pada bagian real dan bagian imajiner $f$. Secara khusus, kita memperoleh
+yang berikut.
+
+\medskip
+
+}{\bf (a)} Jika $a\le b$ dalam $\Bbb R$ dan $f$ merupakan fungsi
+bernilai kompleks yang terintegralkan pada $[a,b]$, maka
+$F(x)=\int_a^xf$ terdefinisi dalam $\Bbb C$ untuk setiap $x\in[a,b]$,
+dan turunannya $F'(x)$ ada serta sama dengan $f(x)$ untuk hampir setiap
+$x\in[a,b]$; selain itu, $F'(x)=f(x)$ kapan pun
+$x\in\dom(f)\cap\ooint{a,b}$ dan $f$ kontinu di $x$.
+     
+\spheader 222Ib Jika $f$ merupakan fungsi bernilai kompleks yang
+terintegralkan pada $\Bbb R$, dan $F(x)=\int_{-\infty}^xf$ untuk setiap
+$x\in\Bbb R$, maka $F'$ ada dan sama dengan $f$ hampir di mana-mana
+dalam $\Bbb R$.
+     
+\spheader 222Ic Jika $E\subseteq\Bbb R$ suatu himpunan terukur dan $f$
+merupakan fungsi bernilai kompleks yang terintegralkan pada $E$, dan
+$F(x)=\int_{E\cap\ooint{-\infty,x}}f$ untuk setiap $x\in\Bbb R$, maka
+$F'(x)=f(x)$ untuk hampir setiap $x\in E$ dan $F'(x)=0$ untuk hampir
+setiap $x\in\Bbb R\setminus E$.
+     
+\leader{*222J}{Teorema \dvrocolon{Denjoy-Young-Saks}}\cmmnt{ Hasil
+berikutnya, menurut rencana saat ini, tidak akan digunakan di bagian mana pun
+dalam risalah ini. Namun hasil ini bersifat sentral bagi bagian-bagian
+analisis real yang hendak diberi fondasi oleh jilid ini, dan meskipun
+argumennya memerlukan kecanggihan tertentu, sebenarnya argumen itu
+tidak jauh melampaui teorema Lebesgue 222A. Saya harus memulai dengan
+beberapa notasi.
+     
+\medskip
+
+\noindent}{\bf Definisi} Misalkan $f$ sembarang fungsi bernilai real, dan
+$A\subseteq\Bbb R$ domainnya. Tuliskan
+
+\Centerline{$\tilde A^+
+=\{x:x\in A$, $\ocint{x,x+\delta}\cap A\ne\emptyset$
+untuk setiap $\delta>0\}$,}
+
+\Centerline{$\tilde A^-
+=\{x:x\in A$, $\coint{x-\delta,x}\cap A\ne\emptyset$
+untuk setiap $\delta>0\}$.}
+     
+\noindent Tetapkan
+
+\Centerline{$\DiniD^+(x)
+=\limsup_{y\in A,y\downarrow x}\Bover{f(y)-f(x)}{y-x}
+=\inf_{\delta>0}\sup_{y\in A,x<y\le x+\delta}\Bover{f(y)-f(x)}{y-x}$,}
+
+\Centerline{$\Dinid^+(x)
+=\liminf_{y\in A,y\downarrow x}\Bover{f(y)-f(x)}{y-x}
+=\sup_{\delta>0}\inf_{y\in A,x<y\le x+\delta}\Bover{f(y)-f(x)}{y-x}$}
+
+\noindent untuk $x\in\tilde A^+$, dan
+
+\Centerline{$\DiniD^-(x)
+=\limsup_{y\in A,y\uparrow x}\Bover{f(y)-f(x)}{y-x}
+=\inf_{\delta>0}\sup_{y\in A,x-\delta\le y<x}\Bover{f(y)-f(x)}{y-x}$,}
+
+\Centerline{$\Dinid^-(x)
+=\liminf_{y\in A,y\uparrow x}\Bover{f(y)-f(x)}{y-x}
+=\sup_{\delta>0}\inf_{y\in A,x-\delta\le y<x}\Bover{f(y)-f(x)}{y-x}$}
+
+\noindent untuk $x\in\tilde A^-$, semuanya terdefinisi dalam
+$[-\infty,\infty]$. (Inilah keempat {\bf turunan Dini} dari
+$f$.\cmmnt{ Anda juga akan menjumpai $D^+$, $d^+$, $D^-$, $d^-$ yang
+digunakan sebagai pengganti $\DiniD^+$, $\Dinid^+$, $\DiniD^-$, dan
+$\Dinid^-$.})
+
+Perhatikan bahwa tentu saja kita mempunyai
+$(\Dinid^+f)(x)\le(\DiniD^+f)(x)$ untuk setiap $x\in\tilde A^+$,
+sedangkan $(\Dinid^-f)(x)\le(\DiniD^-f)(x)$ untuk setiap
+$x\in\tilde A^-$. Turunan biasa $f'(x)$ terdefinisi dan sama dengan
+$c\in\Bbb R$ jika dan hanya jika ($\alpha$) $x$ termasuk dalam suatu
+interval terbuka yang termuat dalam $A$ ($\beta$)
+$(\DiniD^+f)(x)=(\Dinid^+f)(x)=(\DiniD^-f)(x)
+=(\Dinid^-f)(x)=c$.
+
+\leader{*222K}{Lema} Misalkan $A$ sembarang subhimpunan $\Bbb R$, dan
+definisikan $\tilde A^+$ dan $\tilde A^-$ seperti dalam 222J. Maka
+$A\setminus\tilde A^+$ dan $A\setminus\tilde A^-$ terhitung, dan karena
+itu terabaikan.
+
+\proof{ Kita mempunyai
+
+\Centerline{$A\setminus\tilde A^+
+=\bigcup_{q\in\Bbb Q}\{x:x\in A$, $x<q$, $A\cap\ocint{x,q}=\emptyset\}$.}
+
+\noindent Tetapi untuk setiap $q\in\Bbb Q$ dapat ada paling banyak satu
+$x\in A$ sedemikian sehingga $x<q$ dan $\ocint{x,q}$ tidak bertemu $A$,
+sehingga $A\setminus\tilde A^+$ merupakan gabungan terhitung dari
+himpunan-himpunan berhingga dan bersifat terhitung. Demikian pula,
+
+\Centerline{$A\setminus\tilde A^-
+=\bigcup_{q\in\Bbb Q}\{x:x\in A$, $q<x$, $A\cap\coint{q,x}=\emptyset\}$}
+
+\noindent terhitung.
+}%end of proof of 222K
+
+\leader{*222L}{Teorema} Misalkan $f$ sembarang fungsi bernilai real, dan $A$
+domainnya. Maka untuk hampir setiap $x\in A$
+
+\qquad{\it entah} keempat turunan Dini dari $f$ di $x$ terdefinisi,
+berhingga, dan sama
+
+\qquad{\it atau} $(\DiniD^+f)(x)=(\Dinid^-f)(x)$ berhingga,
+$(\Dinid^+f)(x)=-\infty$ dan $(\DiniD^-f)(x)=\infty$
+
+\qquad{\it atau} $(\Dinid^+f)(x)=(\DiniD^-f)(x)$ berhingga,
+$(\DiniD^+f)(x)=\infty$ dan $(\Dinid^-f)(x)=-\infty$
+
+\qquad{\it atau} $(\DiniD^+f)(x)=(\DiniD^-f)(x)=\infty$ dan
+$(\Dinid^+f)(x)=(\Dinid^-f)(x)=-\infty$.
+
+\proof{{\bf (a)} Tetapkan $\tilde A=\tilde A^+\cap\tilde A^-$, dengan
+mendefinisikan $\tilde A^+$ dan $\tilde A^-$ seperti dalam 222J,
+sehingga komplemen $\tilde A$ dalam $A$ terhitung dan keempat turunan Dini
+terdefinisi pada $\tilde A$. Untuk $n\in\Bbb N$, $q\in\Bbb Q$
+tetapkan
+
+\Centerline{$E_{qn}=\{x:x\in\tilde A$, $x<q$, $f(y)\ge f(x)-n(y-x)\}$
+untuk setiap $y\in A\cap[x,q]\}$.}
+
+\noindent Perhatikan bahwa
+
+\Centerline{$\bigcup_{n\in\Bbb N,q\in\Bbb Q}E_{qn}=\{x:x\in\tilde A$,
+$(\Dinid^+f)(x)>-\infty\}$.}
+
+\noindent Untuk $q\in\Bbb Q$, $n\in\Bbb N$ sedemikian sehingga
+$E_{qn}$ tidak kosong, tetapkan
+$\beta_{qn}=\sup E_{qn}\in\ocint{-\infty,q}$,
+$\alpha_{qn}=\inf E_{qn}\in[-\infty,\beta_{qn}]$, dan untuk
+$x\in\ooint{\alpha_{qn},\beta_{qn}}$ tetapkan
+$g_{qn}(x)=\inf\{f(y)+ny:y\in A\cap[x,q]\}$. Perhatikan bahwa jika
+$x\in E_{qn}\setminus\{\alpha_{qn},\beta_{qn}\}$, maka
+$g_{qn}(x)=f(x)+nx$ berhingga; juga $g_{qn}$ monoton, sehingga berhingga di
+setiap titik dalam $\ooint{\alpha_{qn},\beta_{qn}}$, dan tentu saja
+$g_{qn}(x)\le f(x)+nx$ untuk setiap
+$x\in A\cap\ooint{\alpha_{qn},\beta_{qn}}$.
+
+Menurut 222A, hampir setiap titik $\ooint{\alpha_{qn},\beta_{qn}}$
+termasuk dalam $F_{qn}=\dom g'_{qn}$; khususnya,
+$E_{qn}\setminus F_{qn}$ terabaikan. Tetapkan
+$h_{qn}(x)=g_{qn}(x)-nx$ untuk
+$x\in\ooint{\alpha_{qn},\beta_{qn}}$; maka $h_{qn}$ terdiferensialkan di
+setiap titik $F_{qn}$. Sekarang jika $x\in E_{qn}\cap F_{qn}$, kita
+mempunyai $h_{qn}(x)=f(x)$, sedangkan $h_{qn}(x)\le f(x)$ untuk
+$x\in A\cap\ooint{\alpha_{qn},\beta_{qn}}$; akibatnya
+
+$$\eqalign{(\Dinid^+f)(x)
+&=\sup_{\delta>0}\inf_{y\in A\cap\ocint{x,x+\delta}}
+  \Bover{f(y)-f(x)}{y-x}\cr
+&\ge\sup_{\delta>0}\inf_{y\in A\cap\ocint{x,x+\delta}}
+  \Bover{h_{qn}(y)-h_{qn}(x)}{y-x}\cr
+&\ge\sup_{0<\delta<\beta_{qn}-x}\inf_{y\in\ocint{x,x+\delta}}
+  \Bover{h_{qn}(y)-h_{qn}(x)}{y-x}
+=h_{qn}'(x),\cr}$$
+  
+\noindent dan demikian pula
+$(\DiniD^-f)(x)\le h'_{qn}(x)$. Di sisi lain, jika
+$x\in\tilde E_{qn}^+$, maka
+
+$$\eqalign{(\Dinid^+f)(x)
+&=\sup_{\delta>0}\inf_{y\in A\cap\ocint{x,x+\delta}}
+    \Bover{f(y)-f(x)}{y-x}\cr
+&\le\sup_{\delta>0}\inf_{y\in E_{qn}\cap\ocint{x,x+\delta}}
+    \Bover{f(y)-f(x)}{y-x}\cr
+&=\sup_{\delta>0}\inf_{y\in E_{qn}\cap\ocint{x,x+\delta}}
+    \Bover{h_{qn}(y)-h_{qn}(x)}{y-x}\cr
+&\le\inf_{\delta>0}\sup_{y\in E_{qn}\cap\ocint{x,x+\delta}}
+    \Bover{h_{qn}(y)-h_{qn}(x)}{y-x}\cr
+&\le\inf_{0<\delta<\beta_{qn}-x}\sup_{y\in\ocint{x,x+\delta}}
+    \Bover{h_{qn}(y)-h_{qn}(x)}{y-x}
+=h'_{qn}(x).\cr}$$
+
+\noindent Dengan menggabungkan semua ini, kita melihat bahwa jika
+$x\in F_{qn}\cap\tilde E_{qn}^+$, maka
+$(\Dinid^+f)(x)=h'_{qn}(x)\ge(\DiniD^-f)(x)$.
+
+Dengan konvensi $F_{qn}=\emptyset$ jika $E_{qn}$
+kosong, kalimat terakhir benar untuk semua $q\in\Bbb Q$ dan
+$n\in\Bbb N$, sedangkan $A\setminus\tilde A$ dan
+$\bigcup_{q\in\Bbb Q,n\in\Bbb N}E_{qn}\setminus(F_{qn}\cap\tilde E_{qn}^+)$
+terabaikan, dan $(\Dinid^+f)(x)=-\infty$ untuk setiap
+$x\in\tilde A\setminus\bigcup_{q\in\Bbb Q,n\in\Bbb N}E_{qn}$. Jadi kita
+melihat bahwa, untuk hampir setiap $x\in A$, entah
+$(\Dinid^+f)(x)=-\infty$ atau
+$\infty>(\Dinid^+f)(x)\ge(\DiniD^-f)(x)$.
+
+\medskip
+
+{\bf (b)} Dengan mencerminkan argumen di atas dari kiri ke kanan atau
+dari atas ke bawah, kita melihat bahwa, untuk hampir setiap $x\in A$,
+
+\Centerline{entah $(\Dinid^-f)(x)=-\infty$ atau
+$\infty>(\Dinid^-f)(x)\ge(\DiniD^+f)(x)$,}
+
+\Centerline{entah $(\DiniD^+f)(x)=\infty$ atau
+$-\infty<(\DiniD^+f)(x)\le(\Dinid^-f)(x)$,}
+
+\Centerline{entah $(\DiniD^-f)(x)=\infty$ atau
+$-\infty<(\DiniD^-f)(x)\le(\Dinid^+f)(x)$,}
+
+\noindent dan juga
+
+\Centerline{$(\Dinid^+f)(x)\le(\DiniD^+f)(x)$,
+\quad$(\Dinid^-f)(x)\le(\DiniD^-f)(x)$.}
+
+\noindent Oleh karena itu, untuk $x$ seperti itu,
+
+\Centerline{$(\Dinid^+f)(x)>-\infty
+\Longrightarrow (\DiniD^-f)(x)\le(\Dinid^+f)(x)<\infty
+\Longrightarrow (\Dinid^+f)(x)=(\DiniD^-f)(x)\in\Bbb R$,}
+
+\noindent dan demikian pula
+
+\Centerline{$(\Dinid^-f)(x)>-\infty
+\Longrightarrow(\Dinid^-f)(x)=(\DiniD^+f)(x)\in\Bbb R$,}
+
+\Centerline{$(\DiniD^+f)(x)<\infty
+\Longrightarrow(\DiniD^+f)(x)=(\Dinid^-f)(x)\in\Bbb R$,}
+
+\Centerline{$(\DiniD^-f)(x)<\infty
+\Longrightarrow(\DiniD^-f)(x)=(\Dinid^+f)(x)\in\Bbb R$.}
+
+\noindent Jadi kita mempunyai
+
+\Centerline{entah $(\Dinid^+f)(x)=(\DiniD^-f)(x)$ berhingga
+atau $(\Dinid^+f)(x)=-\infty$ dan
+$(\DiniD^-f)(x)=\infty$,}
+
+\Centerline{entah $(\Dinid^-f)(x)=(\DiniD^+f)(x)$ berhingga
+atau $(\Dinid^-f)(x)=-\infty$ dan
+$(\DiniD^+f)(x)=\infty$.}
+
+\noindent Kedua dikotomi ini menghasilkan empat kemungkinan; dan karena
+
+\Centerline{$(\Dinid^+f)(x)=(\DiniD^-f)(x)$ berhingga,
+\quad$(\Dinid^-f)(x)=(\DiniD^+f)(x)$ berhingga}
+
+\noindent dapat benar bersamaan hanya ketika keempat turunan Dini sama dan
+berhingga, kita memperoleh empat kasus yang dicantumkan dalam pernyataan
+teorema.
+}%end of proof of 222L
+
+
+\exercises{
+\leader{222X}{Latihan dasar $\pmb{>}$(a)}
+%\sqheader 222Xa
+Misalkan $F:[0,1]\to[0,1]$ fungsi Cantor (134H).
+Tunjukkan bahwa $\int_0^1F'=0<F(1)-F(0)$.
+%222C
+     
+\sqheader 222Xb Andaikan bahwa $a<b$ dalam $\Bbb R$ dan $h$ suatu
+fungsi bernilai real sedemikian sehingga $\int_x^yh$ ada dan nonnegatif
+kapan pun $a\le x\le y\le b$. Tunjukkan bahwa $h\ge 0$ hampir di
+mana-mana dalam $[a,b]$.
+%222D
+     
+\sqheader 222Xc Andaikan bahwa $a<b$ dalam $\Bbb R$ dan $f$, $g$
+merupakan fungsi bernilai kompleks yang terintegralkan pada $[a,b]$
+sedemikian sehingga $\int_a^xf=\int_a^xg$ untuk setiap $x\in[a,b]$.
+Tunjukkan bahwa $f=g$ hampir di mana-mana dalam $[a,b]$.
+%222I
+     
+\sqheader 222Xd Andaikan bahwa $a<b$ dalam $\Bbb R$ dan $f$ suatu
+fungsi bernilai real yang terintegralkan pada $[a,b]$. Tunjukkan bahwa
+integral tak tentu $x\mapsto\int_a^xf$ kontinu.
+%222+
+     
+\leader{222Y}{Latihan lanjutan (a)}
+%\spheader 222Ya
+Misalkan $\sequencen{F_n}$ suatu barisan fungsi nonnegatif dan tak-menurun
+pada $[0,1]$ sedemikian sehingga
+$F(x)=\sum_{n=0}^{\infty}F_n(x)$ berhingga untuk setiap $x\in[0,1]$.
+Tunjukkan bahwa $\sum_{n=0}^{\infty}F'_n(x)=F'(x)$ untuk hampir setiap
+$x\in[0,1]$. ({\it Petunjuk\/}: ambil $\sequence{k}{n_k}$ sedemikian
+sehingga $\sum_{k=0}^{\infty}F(1)-G_k(1)<\infty$, dengan
+$G_k=\sum_{j=0}^{n_k}F_j$, dan tetapkan
+$H(x)=\sum_{k=0}^{\infty}F(x)-G_k(x)$. Perhatikan bahwa
+$\sum_{k=0}^{\infty}F'(x)-G'_k(x)\le H'(x)$ kapan pun semua turunannya
+terdefinisi, sehingga $F'=\lim_{k\to\infty}G'_k$ hampir di mana-mana.)
+%222A
+     
+\spheader 222Yb Misalkan $F:[0,1]\to\Bbb R$ suatu fungsi kontinu
+tak-menurun. (i) Tunjukkan bahwa jika $c\in\Bbb R$, maka
+$C=\{(x,y):x,\,y\in[0,1],\,F(y)-F(x)=c\}$ terhubung.
+({\it Petunjuk\/}: Suatu himpunan $A\subseteq\BbbR^r$ disebut
+{\bf terhubung} jika tidak ada surjeksi kontinu $h:A\to\{0,1\}$.
+Tunjukkan bahwa jika $h:C\to\{0,1\}$ kontinu, maka fungsi itu berbentuk
+$(x,y)\mapsto h_1(x)$ untuk suatu fungsi kontinu $h_1$.) (ii) Sekarang
+andaikan bahwa $F(0)=0$, $F(1)=1$ dan bahwa $G:[0,1]\to[0,1]$ merupakan
+fungsi kontinu tak-menurun kedua dengan $G(0)=0$, $G(1)=1$. Tunjukkan
+bahwa untuk setiap $n\ge 1$ terdapat $x$, $y\in[0,1]$ sedemikian sehingga
+$F(y)-F(x)=G(y)-G(x)=\bover1n$.
+%222+
+     
+\spheader 222Yc Misalkan $f$, $g$ fungsi terintegralkan nonnegatif pada
+$\Bbb R$, dan $n\ge 1$. Tunjukkan bahwa terdapat $u<v$ dalam
+$[-\infty,\infty]$ sedemikian sehingga
+$\int_u^vf=\bover1n\int f$ dan $\int_u^vg=\bover1n\int g$.
+%222Yb 222+
+     
+\spheader 222Yd Misalkan $f:\Bbb R\to\Bbb R$ terukur. Tunjukkan bahwa
+$H=\dom f'$ merupakan himpunan terukur dan bahwa $f'$ merupakan fungsi
+terukur.
+%222+
+
+\spheader 222Ye Bangun suatu fungsi terukur Borel
+$f:[0,1]\to\{-1,0,1\}$ sedemikian sehingga masing-masing dari empat
+kemungkinan yang diuraikan dalam Teorema 222L terjadi pada suatu himpunan
+berukuran $\bover14$.
+%222L
+}%end of exercises
+     
+\endnotes{
+\Notesheader{222} Saya menyerahkan fakta mendasar bahwa suatu integral
+tak tentu $x\mapsto\int_a^xf$ selalu kontinu sebagai latihan (222Xd);
+sebenarnya fakta ini tidak diperlukan dalam bagian ini, dan suatu hasil yang
+jauh lebih kuat diberikan dalam 225E. Masih banyak pula yang harus
+dikatakan tentang fungsi monoton, yang akan saya bahas kembali dalam
+\S224. Yang kita perlukan di sini ialah fakta bahwa fungsi-fungsi itu
+terdiferensialkan hampir di mana-mana (222A), yang saya buktikan dengan
+menerapkan teorema Vitali tiga kali, satu kali dalam bagian (b) dari
+bukti dan dua kali dalam bagian (c). Setelah ini, argumen-argumen
+222C-222E membentuk suatu rangkaian latihan yang bagus tentang gagasan
+sentral Jilid 1, dengan menggunakan konsep integrasi atas suatu
+subhimpunan (terukur), Lema Fatou (bagian (d) dari bukti 222C), Teorema
+Konvergensi Terdominasi Lebesgue (bagian (ii) dan (iii) dari bukti 222D),
+dan hampiran himpunan terukur Lebesgue oleh himpunan terbuka (bagian
+(iii) dari bukti 222D). Tentu saja, mengetahui bahwa
+$\bover{d}{dx}\int_a^xf=f(x)$ hampir di mana-mana sama sekali tidak sama
+dengan mengetahui bahwa hal ini berlaku untuk suatu $x$ tertentu, dan
+ketika hendak mendiferensialkan suatu integral tak tentu tertentu kita
+biasanya terlebih dahulu menggunakan 222H; inti 222E ialah bahwa hasil
+itu berlaku pada fungsi yang sangat tidak kontinu, yang sama sekali
+tidak dapat ditangani oleh metode yang lebih elementer.
+
+Teorema Denjoy-Young-Saks (222L) merupakan salah satu titik awal suatu
+teori subur tentang fenomena `tipikal' dalam analisis real. Mudah untuk
+membangun suatu fungsi $f$ dengan sembarang himpunan nilai yang ditentukan
+sebelumnya untuk $(\DiniD^+f)(0)$, $(\Dinid^+f)(0)$,
+$(\DiniD^-f)(0)$, dan $(\Dinid^-f)(0)$ (tentu saja dengan tunduk pada
+syarat $(\Dinid^+f)(0)\le(\DiniD^+f)(0)$ dan
+$(\Dinid^-f)(0)\le(\DiniD^-f)(0)$). Tetapi 222L memberi tahu kita bahwa
+kombinasi seperti $(\Dinid^-f)(x)=(\Dinid^+f)(x)=\infty$ (yang dapat
+kita sebut `$f'(x)=\infty$') hanya dapat terjadi pada himpunan
+terabaikan. Empat kemungkinan dalam 222L yang mudah diwujudkan (lihat
+222Ye) merupakan satu-satunya yang dapat muncul di titik-titik yang
+`tipikal' bagi fungsi yang diberikan, dari sudut pandang ukuran Lebesgue.
+Untuk fungsi monoton, 222A memberi tahu kita lebih banyak: pada
+titik-titik yang `tipikal' bagi suatu fungsi monoton, fungsi tersebut
+benar-benar terdiferensialkan. Dalam bagian berikutnya kita akan melihat
+beberapa cara lain untuk menghasilkan himpunan terabaikan dan
+koterabaikan dari suatu himpunan atau fungsi yang diberikan, yang
+membawa pada penyempurnaan lebih lanjut atas gagasan ini.
+}%end of comment
+     
+\discrpage
+     

@@ -1,0 +1,894 @@
+\frfilename{mt224.tex}
+\versiondate{29.9.04}
+\copyrightdate{1997}
+
+\def\chaptername{Teorema Dasar Kalkulus}
+\def\sectionname{Fungsi bervariasi terbatas}
+
+\newsection{224}
+
+Sekarang saya beralih ke masalah kedua dari dua masalah yang dibahas dalam
+bab ini: mengidentifikasi fungsi-fungsi real yang merupakan integral tak
+tentu. Saya menggunakan kesempatan ini untuk memberikan pengantar singkat
+tentang teori fungsi bervariasi terbatas, yang juga menarik sebagai objek kajian tersendiri
+dan akan penting dalam Bab 28. Saya memberikan pencirian dasar fungsi-fungsi
+ini sebagai selisih fungsi-fungsi monoton (224D), bersama contoh yang
+mewakili sifat-sifat elementernya.
+
+\leader{224A}{Definisi} Misalkan $f$ suatu fungsi bernilai real dan $D$
+suatu subhimpunan $\Bbb R$. Saya mendefinisikan $\Var_D(f)$, yakni
+{\bf variasi (total) dari $f$ pada $D$}, sebagai berikut. Jika
+$D\cap\dom f=\emptyset$, maka $\Var_D(f)=0$. Jika tidak, $\Var_D(f)$ ialah
+
+\Centerline{$\sup\{\sum_{i=1}^n|f(a_i)-f(a_{i-1})|:
+  a_0,a_1,\ldots,a_n\in D\cap\dom f,\,a_0\le a_1\le\ldots\le a_n\}$,}
+
+\noindent dengan membolehkan $\Var_{D}(f)=\infty$.
+Jika $\Var_{D}(f)$ berhingga, kita mengatakan bahwa $f$ {\bf bervariasi
+terbatas} pada $D$. \cmmnt{Jika konteksnya tampak jelas,} saya dapat
+menuliskan $\Var f$ untuk $\Var_{\dom f}(f)$, dan mengatakan bahwa $f$
+sekadar `{\bf bervariasi terbatas}' jika nilai ini berhingga.
+
+\leader{224B}{Catatan-catatan}\cmmnt{ {\bf (a)} Dalam bab ini, perhatian
+kita hampir seluruhnya tertuju pada kasus ketika $D$ suatu interval tertutup terbatas
+yang termuat dalam $\dom f$. Rumusan umum tersebut akan berguna untuk beberapa
+pertanyaan teknis yang muncul dalam Bab 28; tetapi jika itu membuat Anda lebih
+nyaman, untuk sementara tidak ada yang hilang jika Anda mengandaikan bahwa
+$D$ suatu interval.
+
+\spheader 224Bb Jelas bahwa}
+
+\Centerline{$\Var_D(f)=\Var_{D\cap\dom f}(f)=\Var(f\restr D)$}
+
+\noindent untuk semua $D$, $f$.
+
+\leader{224C}{Proposisi} (a) Jika $f$, $g$ dua fungsi bernilai real dan
+$D\subseteq\Bbb R$, maka
+
+\Centerline{$\Var_{D}(f+g)\le\Var_{D}(f)+\Var_{D}(g)$.}
+
+(b) Jika $f$ suatu fungsi bernilai real, $D\subseteq\Bbb R$, dan
+$c\in\Bbb R$, maka $\Var_{D}(cf)=|c|\Var_{D}(f)$.
+
+(c) Jika $f$ suatu fungsi bernilai real, $D\subseteq\Bbb R$, dan
+$x\in \Bbb R$, maka
+
+\Centerline{$\Var_{D}(f)
+\ge\Var_{D\cap\ocint{-\infty,x}}(f)+\Var_{D\cap\coint{x,\infty}}(f)$,}
+
+\noindent dengan kesamaan jika $x\in D\cap\dom f$.
+
+(d) Jika $f$ suatu fungsi bernilai real dan
+$D\subseteq D'\subseteq\Bbb R$, maka $\Var_D(f)\le\Var_{D'}(f)$.
+
+(e) Jika $f$ suatu fungsi bernilai real dan $D\subseteq\Bbb R$, maka
+$|f(x)-f(y)|\le\Var_D(f)$ untuk semua $x$, $y\in D\cap\dom f$; jadi jika
+$f$ bervariasi terbatas pada $D$, maka $f$ terbatas pada $D\cap\dom f$ dan
+(jika $D\cap\dom f\ne\emptyset$)
+
+\Centerline{$\sup_{y\in D\cap\dom f}|f(y)|\le |f(x)|+\Var_D(f)$}
+
+\noindent untuk setiap $x\in D\cap\dom f$.
+
+(f) Jika $f$ suatu fungsi bernilai real monoton dan $D\subseteq\Bbb R$
+beririsan dengan $\dom f$, maka
+\discrcenter{468pt}
+{$\Var_D(f)=\sup_{x\in D\cap\dom f}f(x)-\inf_{x\in D\cap\dom f}f(x)$.}
+
+\proof{{\bf (a)} Jika $D\cap\dom(f+g)=\emptyset$, pernyataan ini sepele,
+karena $\Var_D(f)$ dan $\Var_D(g)$ tentu nonnegatif. Jika tidak, apabila
+$a_0\le\ldots\le a_n$ dalam $D\cap\dom(f+g)$, maka
+
+$$\eqalign{\sum_{i=1}^n|(f+g)(a_i)-(f+g)(a_{i-1})|
+&\le \sum_{i=1}^n|f(a_i)-f(a_{i-1})|
++\sum_{i=1}^n|g(a_i)-g(a_{i-1})|\cr
+&\le\Var_{D}(f)+\Var_{D}(g);\cr}$$
+
+\noindent karena $a_0,\ldots,a_n$ sebarang,
+$\Var_{D}(f+g)\le\Var_{D}(f)+\Var_{D}(g)$.
+
+\medskip
+
+{\bf (b)}
+
+\Centerline{$\sum_{i=1}^n|(cf)(a_i)-(cf)(a_{i-1})|
+=|c|\sum_{i=1}^n|f(a_i)-f(a_{i-1})|$}
+
+\noindent kapan pun
+$a_0\le\ldots\le a_n$ dalam $D\cap\dom f$.
+
+\medskip
+
+{\bf (c)(i)} Jika salah satu dari
+$D\cap\ocint{-\infty,x}\cap\dom f$ dan
+$D\cap\coint{x,\infty}\cap\dom f$ kosong, pernyataan ini sepele. Jika
+$a_0\le\ldots\le a_m$ dalam $D\cap\ocint{-\infty,x}\cap\dom f$ dan
+$b_0\le\ldots\le b_n$ dalam $D\cap\coint{x,\infty}\cap\dom f$, maka
+
+$$\eqalign{\sum_{i=1}^m|f(a_i)-f(a_{i-1})|
++\sum_{j=1}^n|f(b_j)-f(b_{j-1})|
+&\le\sum_{i=1}^{m+n+1}|f(a_i)-f(a_{i-1})|\cr
+&\le\Var_{D}(f),\cr}$$
+
+\noindent jika kita menuliskan $a_i=b_{i-m-1}$ untuk
+$m+1\le i\le m+n+1$. Jadi
+
+\Centerline{$\Var_{D\cap\ocint{-\infty,x}}(f)
++\Var_{D\cap\coint{x,\infty}}(f)
+\le\Var_D(f)$.}
+
+\medskip
+
+\quad{\bf (ii)} Sekarang andaikan bahwa $x\in D\cap\dom f$.
+Jika $a_0\le\ldots\le a_n$ dalam $D\cap\dom f$, dan
+$a_0\le x\le a_n$, misalkan $k$ sedemikian sehingga
+$x\in [a_{k-1},a_k]$; maka
+
+$$\eqalign{\sum_{i=1}^n|f(a_i)-f(a_{i-1})|
+&\le\sum_{i=1}^{k-1}|f(a_i)-f(a_{i-1})|
++|f(x)-f(a_{k-1})|\cr
+&\mskip150mu +|f(a_k)-f(x)|+\sum_{i=k+1}^n|f(a_i)-f(a_{i-1})|\cr
+&\le\Var_{D\cap\ocint{-\infty,x}}(f)
++\Var_{D\cap\coint{x,\infty}}(f)
+\cr}$$
+
+\noindent (dengan menghitung jumlah kosong $\sum_{i=1}^0$ dan
+$\sum_{i=n+1}^n$ sebagai $0$). Jika $x\le a_0$, maka
+$\sum_{i=1}^n|f(a_i)-f(a_{i-1})|\le\Var_{D\cap\coint{x,\infty}}(f)$;
+jika $x\ge a_n$, maka
+$\sum_{i=1}^n|f(a_i)-f(a_{i-1})|\le\Var_{D\cap\ocint{-\infty,x}}(f)$.
+Jadi
+
+\Centerline{$\sum_{i=1}^n|f(a_i)-f(a_{i-1})|
+\le\Var_{D\cap\ocint{-\infty,x}}(f)
++\Var_{D\cap\coint{x,\infty}}(f)
+$}
+
+\noindent dalam semua kasus; karena $a_0,\ldots,a_n$ sebarang,
+
+\Centerline{$\Var_D(f)
+\le\Var_{D\cap\ocint{-\infty,x}}(f)
++\Var_{D\cap\coint{x,\infty}}(f)$.}
+
+\noindent Jadi kedua ruas sama.
+
+\medskip
+
+{\bf (d)} sepele.
+
+\medskip
+
+{\bf (e)} Jika $x$, $y\in D\cap\dom f$ dan $x\le y$, maka
+
+\Centerline{$|f(x)-f(y)|=|f(y)-f(x)|\le \Var_D(f)$}
+
+\noindent menurut definisi $\Var_D$; dan hal yang sama benar jika
+$y\le x$. Jadi tentu saja $|f(y)|\le|f(x)|+\Var_D(f)$.
+
+\medskip
+
+{\bf (f)} Jika $f$ tak-menurun, maka
+
+$$\eqalign{\Var_D(f)
+&=\sup\{\sum_{i=1}^n|f(a_i)-f(a_{i-1})|:a_0,a_1,\ldots,a_n\in
+D\cap\dom f,\,a_0\le
+a_1\le\ldots\le a_n\}\cr
+&=\sup\{\sum_{i=1}^nf(a_i)-f(a_{i-1}):a_0,a_1,\ldots,a_n\in
+D\cap\dom f,\,a_0\le
+a_1\le\ldots\le a_n\}\cr
+&=\sup\{f(b)-f(a):a,\,b\in D\cap\dom f,\,a\le b\}\cr
+&=\sup_{b\in D\cap\dom f}f(b)-\inf_{a\in D\cap\dom f}f(a).\cr}$$
+
+\noindent Jika $f$ tak-menaik, maka
+
+$$\eqalign{\Var_D(f)
+&=\sup\{\sum_{i=1}^n|f(a_i)-f(a_{i-1})|:a_0,a_1,\ldots,a_n\in
+D\cap\dom f,\,a_0\le
+a_1\le\ldots\le a_n\}\cr
+&=\sup\{\sum_{i=1}^nf(a_{i-1})-f(a_i):a_0,a_1,\ldots,a_n\in
+D\cap\dom f,\,a_0\le
+a_1\le\ldots\le a_n\}\cr
+&=\sup\{f(a)-f(b):a,\,b\in D\cap\dom f,\,a\le b\}\cr
+&=\sup_{a\in D\cap\dom f}f(a)-\inf_{b\in D\cap\dom f}f(b).\cr}$$
+}%end of proof of 224C
+\leader{224D}{Teorema} Untuk setiap fungsi bernilai real $f$ dan setiap
+himpunan $D\subseteq \Bbb R$, pernyataan-pernyataan berikut ekuivalen:
+
+\quad (i) terdapat dua fungsi terbatas dan tak-menurun $f_1$,
+$f_2:\Bbb R\to\Bbb R$ sedemikian sehingga
+$f=f_1-f_2$ pada $D\cap\dom f$;
+
+\quad (ii) $f$ bervariasi terbatas pada $D$;
+
+\quad (iii) terdapat fungsi terbatas dan tak-menurun $f_1$,
+$f_2:\Bbb R\to\Bbb R$ sedemikian sehingga
+$f=f_1-f_2$ pada $D\cap\dom f$ dan $\Var_D(f)=\Var f_1+\Var f_2$.
+
+\proof{{\bf (i)$\Rightarrow$(ii)} Jika $f:\Bbb R\to\Bbb R$ terbatas
+dan tak-menurun, maka
+$\Var f=\sup_{x\in\Bbb R}f(x)-\inf_{x\in\Bbb R}f(x)$ berhingga. Jadi,
+jika $f$ pada $D\cap\dom f$ berimpit dengan $f_1-f_2$, dengan $f_1$ dan
+$f_2$ terbatas dan tak-menurun, maka
+
+$$\eqalign{\Var_D(f)
+&=\Var_{D\cap\dom f}(f)
+\le\Var_{D\cap\dom f}(f_1)+\Var_{D\cap\dom f}(f_2)\cr
+&\le\Var f_1+\Var f_2
+<\infty,}$$
+
+\noindent dengan menggunakan (a), (b), dan (d) dari 224C.
+
+\medskip
+
+{\bf(ii)$\Rightarrow$(iii)} Andaikan bahwa $f$ bervariasi terbatas pada
+$D$. Tetapkan $D'=D\cap\dom f$. Jika $D'=\emptyset$, kita dapat mengambil
+kedua $f_j$ sebagai fungsi nol; jadi, mulai sekarang andaikan bahwa
+$D'\ne\emptyset$. Tuliskan
+
+\Centerline{$g(x)=\Var_{D\cap\ocint{-\infty,x}}(f)$}
+
+\noindent untuk $x\in D'$. Maka $g_1=g+f$ dan $g_2=g-f$ keduanya
+tak-menurun. \Prf\ Jika $a$, $b\in D'$ dan $a\le b$, maka
+
+\Centerline{$g(b)=g(a)+\Var_{D\cap[a,b]}(f)\ge g(a)+|f(b)-f(a)|$.}
+
+\noindent Jadi
+
+\Centerline{$g_1(b)-g_1(a)=g(b)-g(a)+f(b)-f(a)$,
+\quad$g_2(b)-g_2(a)=g(b)-g(a)-f(b)+f(a)$}
+
+\noindent keduanya nonnegatif.\ \Qed
+
+Sekarang terdapat fungsi-fungsi tak-menurun
+$h_1$, $h_2:\Bbb R\to\Bbb R$ yang masing-masing memperluas $g_1$, $g_2$,
+sedemikian sehingga $\Var h_j=\Var g_j$ untuk masing-masing $j$. \Prf\ $f$
+terbatas pada $D$, menurut 224Ce, dan $g$ terbatas semata-mata karena
+$\Var_D(f)<\infty$, sehingga $g_j$ terbatas. Tetapkan
+$c_j=\inf_{x\in D'}g_j(x)$ dan
+
+\Centerline{$h_j(x)=\sup(\{c_j\}\cup\{g_j(y):y\in D',\,y\le x\})$}
+
+\noindent untuk setiap $x\in\Bbb R$; definisi ini memenuhi syarat.\ \QeD\
+Perhatikan bahwa untuk $x\in D'$,
+
+\Centerline{$h_1(x)+h_2(x)=g_1(x)+g_2(x)=g(x)+f(x)+g(x)-f(x)=2g(x)$,}
+
+\Centerline{$h_1(x)-h_2(x)=2f(x)$.}
+
+Sekarang, karena $g_1$ dan $g_2$ tak-menurun,
+
+\Centerline{$\sup_{x\in D'}g_1(x)+\sup_{x\in D'}g_2(x)=\sup_{x\in
+D'}g_1(x)+g_2(x)=2\sup_{x\in D'}g(x)$,}
+
+\Centerline{$\inf_{x\in D'}g_1(x)+\inf_{x\in D'}g_2(x)=\inf_{x\in
+D'}g_1(x)+g_2(x)=2\inf_{x\in D'}g(x)\ge 0$.}
+
+\noindent Namun, ini berarti bahwa
+
+\Centerline{$\Var h_1+\Var h_2
+=\Var g_1+\Var g_2
+=2\Var g
+\le 2\Var_D(f)$,}
+
+\noindent dengan menggunakan 224Cf tiga kali. Jadi, jika kita menetapkan
+$f_j(x)=\bover12h_j(x)$
+untuk $j\in\{1,2\}$ dan $x\in\Bbb R$, kita akan memperoleh fungsi-fungsi
+tak-menurun sedemikian sehingga
+
+\Centerline{$f_1(x)-f_2(x)=f(x)$ untuk $x\in D'$,
+\quad$\Var f_1+\Var f_2=\Bover12\Var h_1+\Bover12\Var h_2\le\Var_D(f)$.}
+
+\noindent Karena tentu kita juga mempunyai
+
+\Centerline{$\Var_D(f)\le\Var_D(f_1)+\Var_D(f_2)\le\Var f_1+\Var f_2$,}
+
+\noindent kita melihat bahwa $\Var_D(f)=\Var f_1+\Var f_2$, dan (iii)
+benar.
+
+\medskip
+
+{\bf (iii)$\Rightarrow$(i)} langsung.
+}%end of proof of 224D
+
+\leader{224E}{Korolari} Misalkan $f$ suatu fungsi bernilai real dan $D$
+sembarang subhimpunan dari $\Bbb R$. Jika $f$ bervariasi terbatas pada $D$,
+maka
+
+\Centerline{$\lim_{x\downarrow a}\Var_{D\cap\ocint{a,x}}(f)
+=\lim_{x\uparrow a}\Var_{D\cap\coint{x,a}}(f)=0$}
+\noindent untuk setiap $a\in\Bbb R$, dan
+
+\Centerline{$\lim_{a\to-\infty}\Var_{D\cap\ocint{-\infty,a}}(f)
+=\lim_{a\to\infty}\Var_{D\cap\coint{a,\infty}}(f)=0$.}
+
+\proof{{\bf (a)} Tinjau terlebih dahulu kasus ketika
+$D=\dom f=\Bbb R$ dan $f$ merupakan fungsi terbatas dan tak-menurun. Maka
+
+\Centerline{$\Var_{D\cap\ocint{a,x}}(f)
+=\sup_{y\in\ocint{a,x}}f(x)-f(y)
+=f(x)-\inf_{y>a}f(y)
+=f(x)-\lim_{y\downarrow a}f(y)$,}
+
+\noindent sehingga tentu saja
+
+\Centerline{$\lim_{x\downarrow a}\Var_{D\cap\ocint{a,x}}(f)
+=\lim_{x\downarrow a}f(x)-\lim_{y\downarrow a}f(y)=0$.}
+
+\noindent Dengan cara yang sama,
+
+\Centerline{$\lim_{x\uparrow a}\Var_{D\cap\coint{x,a}}(f)
+=\lim_{y\uparrow a}f(y)-\lim_{x\uparrow a}f(x)=0$,}
+
+\Centerline{$\lim_{a\to-\infty}\Var_{D\cap\ocint{-\infty,a}}(f)
+=\lim_{a\to-\infty}f(a)-\lim_{y\to-\infty}f(y)=0$,}
+
+\Centerline{$\lim_{a\to\infty}\Var_{D\cap\coint{a,\infty}}(f)
+=\lim_{y\to\infty}f(y)-\lim_{a\to\infty}f(a)=0$.}
+
+\medskip
+
+{\bf (b)} Untuk kasus umum, definisikan $f_1$, $f_2$ dari $f$ dan $D$
+seperti dalam 224D. Maka, untuk setiap interval $I$, kita mempunyai
+
+\Centerline{$\Var_{D\cap I}(f)\le\Var_I(f_1)+\Var_I(f_2)$,}
+
+\noindent sehingga hasil-hasil untuk $f$ mengikuti hasil-hasil untuk
+$f_1$ dan $f_2$ yang telah dibuktikan dalam bagian (a).
+}%end of proof of 224E
+
+\leader{224F}{Korolari} Misalkan $f$ suatu fungsi bernilai real yang
+bervariasi terbatas pada $[a,b]$, dengan $a<b$. Jika $\dom f$ beririsan
+dengan setiap interval $\ocint{a,a+\delta}$ untuk $\delta>0$, maka
+
+\Centerline{$\lim_{t\in\dom f,t\downarrow a}f(t)$}
+
+\noindent ada dalam $\Bbb R$. Jika $\dom f$ beririsan dengan
+$\coint{b-\delta,b}$ untuk setiap $\delta>0$, maka
+
+\Centerline{$\lim_{t\in\dom f,t\uparrow b}f(t)$}
+
+\noindent ada dalam $\Bbb R$.
+
+\wheader{224F}{0}{0}{0}{36pt}
+
+\proof{ Misalkan $f_1$, $f_2:\Bbb R\to\Bbb R$ fungsi-fungsi tak-menurun
+sedemikian sehingga $f=f_1-f_2$ pada $[a,b]\cap\dom f$. Maka
+
+\Centerline{$\lim_{t\in\dom f,t\downarrow a}f(t)
+=\lim_{t\downarrow a}f_1(t)-\lim_{t\downarrow a}f_2(t)
+=\inf_{t>a}f_1(t)-\inf_{t>a}f_2(t)$,}
+
+\Centerline{$\lim_{t\in\dom f,t\uparrow b}f(t)
+=\lim_{t\uparrow b}f_1(t)-\lim_{t\uparrow b}f_2(t)
+=\sup_{t<b}f_1(t)-\sup_{t<b}f_2(t)$.}
+}%end of proof of 224F
+
+\leader{224G}{Korolari} Misalkan $f$, $g$ fungsi-fungsi bernilai real dan
+$D$ suatu subhimpunan dari $\Bbb R$. Jika $f$ dan $g$ bervariasi terbatas
+pada $D$, demikian pula $f\times g$.
+
+\proof{{\bf (a)} Pokoknya adalah bahwa terdapat fungsi-fungsi terbatas,
+tak-menurun, dan {\it nonnegatif} $f_1$, $f_2:\Bbb R\to\Bbb R$ sedemikian
+sehingga $f=f_1-f_2$ pada $D\cap\dom f$. \Prf\ Kita tahu bahwa terdapat
+fungsi terbatas dan tak-menurun $h_1$, $h_2$ sedemikian sehingga
+$f=h_1-h_2$ pada $D\cap\dom f$. Tetapkan
+$\gamma_i=\inf_{x\in\Bbb R}h_i(x)$ untuk $i=1$, $2$,
+
+\Centerline{$\beta_1=\max(\gamma_1-\gamma_2,0)$,
+\quad$\beta_2=\max(\gamma_2-\gamma_1,0)$,}
+
+\Centerline{$f_1=h_1-\gamma_1+\beta_1$,
+\quad$f_2=h_2-\gamma_2+\beta_2$;}
+
+\noindent definisi ini memenuhi syarat.\ \Qed
+
+\medskip
+
+{\bf (b)} Sekarang, dengan mengambil fungsi-fungsi serupa $g_1$, $g_2$
+sedemikian sehingga $g=g_1-g_2$ pada $D\cap\dom g$, kita mempunyai
+
+\Centerline{$f\times g=f_1\times g_1-f_2\times g_1-f_1\times g_2
++f_2\times g_2$}
+
+\noindent di setiap titik dalam
+$D\cap\dom(f\times g)=D\cap\dom f\cap\dom g$; tetapi semua
+$f_i\times g_j$ merupakan fungsi terbatas dan tak-menurun, sehingga
+bervariasi terbatas, dan $f\times g$ pasti bervariasi terbatas pada $D$.
+}%end of proof of 224G
+
+\leader{224H}{Proposisi} Misalkan $f:D\to\Bbb R$ suatu fungsi bervariasi
+terbatas, dengan $D\subseteq\Bbb R$. Maka $f$ kontinu pada $D$, kecuali
+pada terhitung banyak titik.
+
+\proof{ Untuk $n\ge 1$, tetapkan
+
+$$\eqalign{A_n
+&=\{x:x\in D,\text{ untuk setiap }\delta>0\text{ terdapat }y\in
+D\cap[x-\delta,x+\delta]\cr
+&\qquad\qquad\qquad\qquad\text{ sedemikian sehingga }|f(y)-f(x)|
+  \ge\Bover1n\}.\cr}$$
+
+\noindent Maka $\#(A_n)\le n\Var f$. \Prf\Quer\ Jika tidak, kita dapat
+menemukan $x_0,\ldots,x_k\in A_n$ yang berbeda-beda dengan
+$k+1>n\Var f$. Urutkan titik-titik ini sedemikian sehingga
+$x_0<x_1<\ldots<x_k$. Tetapkan
+$\delta=\bover12\min_{1\le i\le k}x_i-x_{i-1}>0$. Untuk setiap $i$,
+terdapat $y_i\in D\cap[x_i-\delta,x_i+\delta]$ sedemikian sehingga
+$|f(y_i)-f(x_i)|\ge\bover1n$. Ambil $x'_i$, $y'_i$ sebagai $x_i$, $y_i$
+menurut urutan besarnya, sehingga $x'_i<y'_i$. Sekarang
+
+\Centerline{$x'_0\le y'_0\le x'_1\le y'_1\le\ldots\le x'_k\le y'_k$,}
+\noindent dan
+
+\Centerline{$\Var f
+\ge\sum_{i=0}^k|f(y'_i)-f(x'_i)|
+=\sum_{i=0}^k|f(y_i)-f(x_i)|
+\ge \Bover1n(k+1)
+>\Var f$,}
+
+\noindent yang mustahil.\ \Bang\Qed
+
+Akibatnya, $A=\bigcup_{n\ge 1}A_n$ terhitung, karena merupakan
+gabungan terhitung dari himpunan-himpunan berhingga. Namun, $A$ tepat
+merupakan himpunan titik-titik dalam $D$ tempat $f$ tidak kontinu.
+}%end of proof of 224H
+
+\leader{224I}{Teorema} Misalkan $I\subseteq\Bbb R$ suatu interval, dan
+$f:I\to\Bbb R$ suatu fungsi bervariasi terbatas. Maka $f$ dapat
+didiferensialkan hampir di mana-mana dalam $I$, dan $f'$ terintegralkan
+pada $I$, dengan
+
+\Centerline{$\int_I|f'|\le\Var_I(f)$.}
+
+\proof{{\bf (a)} Misalkan $f_1$ dan $f_2$ fungsi-fungsi tak-menurun
+sedemikian sehingga $f=f_1-f_2$ di setiap titik dalam $I$ (224D). Maka
+$f_1$ dan $f_2$ terdiferensialkan hampir di mana-mana (222A). Pada
+setiap titik dalam $I$ selain mungkin titik-titik ujungnya, jika ada, $f$
+terdiferensialkan jika $f_1$ dan $f_2$ terdiferensialkan, sehingga
+$f'(x)$ terdefinisi untuk hampir setiap $x\in I$.
+
+\medskip
+
+{\bf (b)} Tetapkan $F(x)=\Var_{I\cap\ocint{-\infty,x}}f$ untuk
+$x\in\Bbb R$. Jika $x$, $y\in I$ dan $x\le y$, maka
+
+\Centerline{$F(y)-F(x)=\Var_{[x,y]}f\ge|f(y)-f(x)|$,}
+
+\noindent menurut 224Cc; sehingga $F'(x)\ge|f'(x)|$ kapan pun $x$
+merupakan titik interior dari $I$ dan kedua turunan itu ada, yang berlaku
+hampir di mana-mana. Jadi $\int_I|f'|\le\int_IF'$. Namun, jika $a$,
+$b\in I$ dan $a\le b$,
+
+\Centerline{$\int_a^bF'\le F(b)-F(a)\le F(b)\le\Var f$.}
+
+\noindent Sekarang $I$ dapat dinyatakan sebagai
+$\bigcup_{n\in\Bbb N}[a_n,b_n]$, dengan
+$a_{n+1}\le a_n\le b_n\le b_{n+1}$ untuk setiap $n$. Jadi
+
+$$\eqalignno{\int_I|f'|
+&\le\int_IF'
+=\int F'\times\chi I\cr
+&=\int\sup_{n\in\Bbb N}F'\times\chi[a_n,b_n]
+=\sup_{n\in\Bbb N}\int F'\times\chi[a_n,b_n]\cr
+\noalign{\noindent (menurut teorema B. Levi)}
+&=\sup_{n\in\Bbb N}\int_{a_n}^{b_n}F'
+\le\Var_I(f).\cr}$$
+}%end of proof of 224I
+
+\leader{224J}{}\cmmnt{ Hasil berikut tidak diperlukan dalam bab ini,
+tetapi merupakan salah satu sifat yang paling berguna dari fungsi
+bervariasi terbatas, dan akan digunakan berulang kali dalam Bab 28.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $f$, $g$ fungsi-fungsi bernilai real
+yang didefinisikan pada subhimpunan-subhimpunan $\Bbb R$, dan andaikan
+bahwa $g$ terintegralkan pada interval $[a,b]$, dengan $a<b$, sedangkan
+$f$ bervariasi terbatas pada $\ooint{a,b}$ dan didefinisikan hampir di
+mana-mana dalam $\ooint{a,b}$. Maka $f\times g$ terintegralkan pada
+$[a,b]$, dan
+
+$$\bigl|\int_a^bf\times g\bigr|
+\le\bigl(\lim_{x\in\dom f,x\uparrow b}|f(x)|+\Var_{\ooint{a,b}}(f)\bigr)
+  \sup_{c\in[a,b]}\bigl|\int_a^cg\bigr|.$$
+
+\proof{{\bf (a)} Menurut 224F,
+$l=\lim_{x\in\dom f,x\uparrow b}f(x)$ terdefinisi. Tuliskan
+$M=|l|+\Var_{\ooint{a,b}}(f)$. Perhatikan bahwa jika $y$ adalah sembarang
+titik dari $\dom f\cap\ooint{a,b}$,
+
+\Centerline{$|f(y)|\le|f(x)|+|f(x)-f(y)|
+\le|f(x)|+\Var_{\ooint{a,b}}(f)\to M$}
+
+\noindent ketika $x\uparrow b$ di dalam $\dom f$, sehingga
+$|f(y)|\le M$. Selain itu, $f$ terukur pada $\ooint{a,b}$, karena
+terdapat fungsi-fungsi monoton terbatas
+$f_1$, $f_2:\Bbb R\to\Bbb R$ sedemikian sehingga $f=f_1-f_2$
+di setiap titik dalam $\ooint{a,b}\cap\dom f$. Jadi $f\times g$ terukur,
+didominasi oleh $M|g|$, dan terintegralkan pada $\ooint{a,b}$ maupun
+$[a,b]$.
+
+\medskip
+
+{\bf (b)} Untuk $n\in\Bbb N$, $k\le 2^n$, tetapkan
+$a_{nk}=a+2^{-n}k(b-a)$, dan untuk $1\le k\le 2^n$, pilih
+$x_{nk}\in\dom f\cap\ooint{a_{n,k-1},a_{nk}}$. Definisikan
+$f_n:\ocint{a,b}\to\Bbb R$ dengan menetapkan $f_n(x)=f(x_{nk})$ jika
+$1\le k\le 2^n$ dan $x\in\ocint{a_{n,k-1},a_{nk}}$. Maka
+$f(x)=\lim_{n\to\infty}f_n(x)$ kapan pun
+$x\in\ooint{a,b}\cap\dom f$ dan $f$ kontinu di $x$, yang pasti berlaku
+hampir di mana-mana (224H). Selanjutnya, perhatikan bahwa semua $f_n$
+terukur, dan nilai mutlaknya dibatasi secara seragam oleh $M$. Jadi
+$\{f_n\times g:n\in\Bbb N\}$ didominasi oleh fungsi terintegralkan
+$M|g|$, dan Teorema Konvergensi Terdominasi Lebesgue menyatakan bahwa
+
+\Centerline{$\int_a^bf\times g=\lim_{n\to\infty}\int_a^bf_n\times g$.}
+
+\medskip
+
+{\bf (c)} Untuk sementara, tetapkan $n\in\Bbb N$. Tetapkan
+$K=\sup_{c\in[a,b]}|\int_a^cg|$. (Perhatikan bahwa $K$ berhingga karena
+$c\mapsto\int_a^cg$ kontinu.) Maka
+
+$$\eqalignno{\bigl|\int_a^bf_n\times g\bigr|
+&=\bigl|\sum_{k=1}^{2^n}\int_{a_{n,k-1}}^{a_{nk}}f_n\times g\bigr|\cr
+&=\bigl|\sum_{k=1}^{2^n}
+    f(x_{nk})(\int_a^{a_{nk}}g-\int_a^{a_{n,k-1}}g)\bigr|\cr
+&=\bigl|\sum_{k=1}^{2^n-1}
+   (f(x_{nk})-f(x_{n,k+1}))\int_a^{a_{nk}}g
+   +f(x_{n,2^n})\int_a^bg\bigr|\cr
+&\le\bigl|f(x_{n,2^n})\bigr|\bigl|\int_a^bg\bigr|+\sum_{k=1}^{2^n-1}
+   \bigl|f(x_{n,k+1})-f(x_{nk})\bigr|\bigl|\int_a^{a_{nk}}g\bigr|\cr
+&\le(|f(x_{n,2^n})|+\Var_{\ooint{a,b}}(f))K
+\to MK\cr}$$
+
+\noindent ketika $n\to\infty$.
+
+\medskip
+
+{\bf (d)} Sekarang
+
+\Centerline{$|\int_a^bf\times g|
+=\lim_{n\to\infty}|\int_a^bf_n\times g|\le MK$,}
+
+\noindent sebagaimana diperlukan.
+}%end of proof of 224J
+
+\leader{224K}{Fungsi bernilai kompleks}\cmmnt{ Sejauh ini saya telah
+menganggap semua fungsi bernilai real. Ini memadai bagi keperluan bab ini,
+tetapi dalam Bab 28 kita perlu meninjau fungsi bernilai kompleks yang
+bervariasi terbatas, dan barangkali saya perlu menguraikan penyesuaian
+(elementer) yang terlibat dalam perluasan ke kasus kompleks.
+}
+
+\spheader 224Ka Misalkan $D$ suatu subhimpunan dari $\Bbb R$ dan $f$
+suatu fungsi bernilai kompleks. {\bf Variasi} $f$ pada $D$, $\Var_D(f)$,
+adalah nol jika $D\cap\dom f=\emptyset$, dan jika tidak, variasi tersebut
+adalah
+
+\Centerline{$\sup\{\sum_{j=1}^n|f(a_j)-f(a_{j-1})|:
+ a_0\le a_1\le\ldots\le a_n$ dalam $D\cap\dom f\}$,}
+
+\noindent dengan mengizinkan nilai $\infty$.
+Jika $\Var_{D}(f)$ berhingga, kita mengatakan bahwa $f$ {\bf bervariasi
+terbatas} pada $D$.
+
+\spheader 224Kb \dvro{Suatu}{Seperti dalam kasus real, suatu} fungsi
+bernilai kompleks yang bervariasi terbatas pasti terbatas, dan
+\Centerline{$\Var_{D}(f+g)\le\Var_{D}(f)+\Var_{D}(g)$,}
+
+\Centerline{$\Var_{D}(cf)=|c|\Var_{D}(f)$,}
+
+\Centerline{$\Var_{D}(f)\ge\Var_{D\cap\ocint{-\infty,x}}(f)
++\Var_{D\cap\coint{x,\infty}}(f)$}
+
+\noindent untuk setiap
+$x\in\Bbb R$, dengan kesamaan jika $x\in D\cap\dom f$,
+
+\Centerline{$\Var_D(f)\le\Var_{D'}(f)$ kapan pun $D\subseteq
+D'$\dvro{.}{;}}
+
+\cmmnt{\noindent argumen-argumen 224C berlaku tanpa perubahan.}
+
+\spheader 224Kc Suatu fungsi bernilai kompleks bervariasi terbatas jika
+dan hanya jika bagian real dan bagian imajinernya sama-sama bervariasi
+terbatas\dvro{. }{ (karena
+
+\Centerline{$\max(\Var_{D}(\Real f),\Var_{D}(\Imag f))
+\le\Var_{D}(f)\le\Var_{D}(\Real f)+\Var_{D}(\Imag f)$.)}
+
+\noindent}Jadi, suatu fungsi bernilai kompleks $f$ bervariasi terbatas
+pada $D$ jika dan hanya jika terdapat fungsi-fungsi terbatas dan
+tak-menurun $f_1,\ldots,f_4:\Bbb R\to\Bbb R$ sedemikian sehingga
+$f=f_1-f_2+if_3-if_4$ pada $D\cap\dom f$\cmmnt{ (224D)}.
+
+\spheader 224Kd Misalkan $f$ suatu fungsi bernilai kompleks dan $D$
+sembarang subhimpunan dari $\Bbb R$. Jika $f$ bervariasi terbatas pada
+$D$, maka
+
+\Centerline{$\lim_{x\downarrow a}\Var_{D\cap\ocint{a,x}}(f)
+=\lim_{x\uparrow a}\Var_{D\cap\coint{x,a}}(f)=0$}
+
+\noindent untuk setiap $a\in\Bbb R$, dan
+
+\Centerline{$\lim_{a\to-\infty}\Var_{D\cap\ocint{-\infty,a}}(f)
+=\lim_{a\to\infty}\Var_{D\cap\coint{a,\infty}}(f)=0$.}
+
+\prooflet{\noindent (Terapkan 224E pada bagian real dan bagian imajiner
+dari $f$.)}
+
+\spheader 224Ke Misalkan $f$ suatu fungsi bernilai kompleks yang
+bervariasi terbatas pada $[a,b]$, dengan $a<b$. Jika $\dom f$ beririsan
+dengan setiap interval $\ocint{a,a+\delta}$ untuk $\delta>0$, maka
+ $\lim_{t\in\dom f,t\downarrow a}f(t)$
+ada dalam $\Bbb C$. Jika $\dom f$ beririsan dengan
+$\coint{b-\delta,b}$ untuk setiap $\delta>0$, maka
+$\lim_{t\in\dom f,t\uparrow b}f(t)$
+ada dalam $\Bbb C$. \prooflet{(Terapkan 224F pada bagian real
+dan bagian imajiner dari $f$.)}
+
+\spheader 224Kf Misalkan $f$, $g$ fungsi-fungsi bernilai kompleks dan $D$ suatu
+subhimpunan dari $\Bbb R$. Jika $f$ dan $g$ bervariasi terbatas pada $D$,
+demikian pula $f\times g$. \prooflet{(Sebab $f\times g$ dapat dinyatakan
+sebagai kombinasi linear dari keempat hasil kali
+$\Real f\times\Real g,\ldots,\Imag f\times\Imag g$,
+dan 224G dapat diterapkan pada masing-masing hasil kali tersebut.)}
+
+\spheader 224Kg Misalkan $I\subseteq\Bbb R$ suatu interval, dan
+$f:I\to\Bbb C$ suatu fungsi bervariasi terbatas. Maka $f$ dapat
+didiferensialkan hampir di mana-mana dalam $I$, dan
+$\int_I|f'|\le\Var_I(f)$.
+\prooflet{(Seperti 224I.)}
+
+\spheader 224Kh Misalkan $f$ dan $g$ fungsi-fungsi bernilai kompleks yang
+didefinisikan pada subhimpunan-subhimpunan $\Bbb R$, dan andaikan bahwa
+$g$ terintegralkan pada interval $[a,b]$, dengan $a<b$, sedangkan $f$
+bervariasi terbatas pada $\ooint{a,b}$ dan didefinisikan hampir di
+mana-mana dalam $\ooint{a,b}$. Maka $f\times g$ terintegralkan pada
+$[a,b]$, dan
+
+$$\bigl|\int_a^bf\times g\bigr|
+\le\bigl(\lim_{x\in\dom f,x\uparrow b}|f(x)|+\Var_{\ooint{a,b}}(f)\bigr)
+  \sup_{c\in[a,b]}\bigl|\int_a^cg\bigr|.$$
+
+\prooflet{\noindent (Argumen 224J berlaku nyaris tanpa perubahan.)}
+
+\exercises{
+\leader{224X}{Latihan dasar $\pmb{>}$(a)}
+%\spheader 224Xa
+Tetapkan $f(x)=x^2\sin\Bover1{x^2}$ untuk $x\ne 0$, $f(0)=0$. Tunjukkan
+bahwa $f:\Bbb R\to\Bbb R$ terdiferensialkan di setiap titik dan
+kontinu seragam, tetapi tidak bervariasi terbatas pada interval tak-sepele
+mana pun yang memuat $0$.
+%224A
+
+\spheader 224Xb Berikan contoh suatu fungsi nonnegatif
+$g:[0,1]\to[0,1]$ yang bervariasi terbatas, tetapi $\sqrt{g}$ tidak
+bervariasi terbatas.
+%224A
+
+\spheader 224Xc Tunjukkan bahwa jika $f$ sembarang fungsi bernilai real
+yang didefinisikan pada suatu subhimpunan dari $\Bbb R$, terdapat fungsi
+$\tilde f:\Bbb R\to\Bbb R$ yang memperluas $f$ sedemikian sehingga
+$\Var\tilde f=\Var f$. Dalam keadaan apa $\tilde f$ tunggal?
+%224D
+
+\spheader 224Xd Misalkan $f:D\to\Bbb R$ suatu fungsi bervariasi terbatas,
+dengan $D\subseteq\Bbb R$ suatu himpunan tak kosong. Tunjukkan bahwa jika
+$\inf_{x\in
+D}|f(x)|>0$, maka $1/f$ bervariasi terbatas.
+%224C
+
+\spheader 224Xe Misalkan $f:[a,b]\to\Bbb R$ suatu fungsi kontinu, dengan
+$a\le b$ dalam $\Bbb R$. Tunjukkan bahwa jika $c<\Var f$, terdapat
+$\delta>0$
+sedemikian sehingga $\sum_{i=1}^n|f(a_i)-f(a_{i-1})|\ge c$ kapan pun
+$a=a_0\le a_1\le\ldots\le a_n=b$ dan
+$\max_{1\le i\le n}a_i-a_{i-1}\le\delta$.
+%224C
+
+\spheader 224Xf Misalkan $\sequencen{f_n}$ suatu barisan fungsi bernilai
+real, dan tetapkan $f(x)=\lim_{n\to\infty}f_n(x)$ kapan pun limit tersebut
+terdefinisi. Tunjukkan bahwa $\Var f\le\liminf_{n\to\infty}\Var f_n$.
+%224A
+
+\spheader 224Xg Misalkan $f$ suatu fungsi bernilai real yang
+terintegralkan pada interval $[a,b]\subseteq\Bbb R$. Tetapkan
+$F(x)=\int_a^xf$ untuk $x\in[a,b]$.
+Tunjukkan bahwa $\Var F=\int_a^b|f|$. ({\it Petunjuk\/}: mulailah dengan
+memeriksa bahwa $\Var F\le\int|f|$; untuk ketaksamaan sebaliknya, tinjau
+terlebih dahulu kasus $f\ge 0$.)
+%224D
+
+\spheader 224Xh Tunjukkan bahwa jika $f$ suatu fungsi bernilai real yang
+didefinisikan pada himpunan tak kosong $D\subseteq\Bbb R$, maka
+
+\Centerline{$\Var f=\sup\{|\sum_{i=1}^n(-1)^i(f(a_i)-f(a_{i-1}))|:
+  a_0\le a_1\le\ldots\le a_n$ dalam $D\}$.}
+%224A
+
+\spheader 224Xi Misalkan $f$ suatu fungsi bernilai real yang
+terintegralkan pada interval terbatas $[a,b]\subseteq\Bbb R$. Tunjukkan
+bahwa
+
+\Centerline{$\int_a^b|f|
+=$$\sup\{|\sum_{i=1}^n(-1)^i\int_{a_{i-1}}^{a_i}f|:
+  a=a_0\le a_1\le a_2\le\ldots\le a_n=b\}$.}
+
+\noindent({\it Petunjuk\/}: gabungkan 224Xg dan 224Xh.)
+%224Xg, 224Xh, 224D
+
+\spheader 224Xj Misalkan $f$ dan $g$ fungsi-fungsi bernilai real yang
+didefinisikan pada subhimpunan-subhimpunan $\Bbb R$, dan andaikan bahwa
+$g$ terintegralkan pada interval $[a,b]$, dengan $a<b$, sedangkan $f$
+bervariasi terbatas pada $\ooint{a,b}$ dan didefinisikan hampir di
+mana-mana dalam $\ooint{a,b}$. Tunjukkan bahwa
+
+\Centerline{$|\int_a^bf\times g|
+\le(\lim_{x\in\dom f,x\downarrow a}|f(x)|
+  +\Var_{\ooint{a,b}}(f))\sup_{c\in[a,b]}|\int_c^bg|$.}
+%224J
+
+\spheader 224Xk\dvAnew{2012} Andaikan bahwa $D\subseteq\Bbb R$ dan
+$f:D\to\Bbb R$ suatu fungsi. Tunjukkan bahwa $f$ dapat dinyatakan sebagai
+selisih dua fungsi tak-menurun jika dan hanya jika
+$\Var_{D\cap[a,b]}(f)$ berhingga kapan pun $a\le b$ dalam $D$.
+%224D out of order query
+
+\spheader 224Xl\dvAnew{2012}
+Andaikan bahwa $D\subseteq\Bbb R$ dan bahwa $f:D\to\Bbb R$ suatu fungsi
+kontinu yang bervariasi terbatas. Tunjukkan bahwa $f$ dapat dinyatakan
+sebagai selisih dua fungsi kontinu dan tak-menurun.
+%224E out of order query
+
+\spheader 224Xm\dvAnew{2013}
+Andaikan bahwa $D\subseteq\Bbb R$ dan bahwa $f:D\to\Bbb R$ suatu fungsi
+bervariasi terbatas yang kontinu dari kanan, yakni kapan pun $x\in D$ dan
+$\epsilon>0$, terdapat $\delta>0$ sedemikian sehingga
+$|f(t)-f(x)|\le\epsilon$ untuk setiap $t\in D\cap[x,x+\delta]$.
+Tunjukkan bahwa $f$ dapat dinyatakan sebagai selisih dua fungsi
+tak-menurun yang kontinu dari kanan.
+%224E out of order query
+
+\leader{224Y}{Latihan lanjutan (a)}
+%\spheader 224Ya
+Tunjukkan bahwa jika $f$ sembarang fungsi bernilai kompleks yang
+didefinisikan pada suatu subhimpunan dari $\Bbb R$, terdapat fungsi
+$\tilde f:\Bbb R\to\Bbb C$ yang memperluas $f$ sedemikian sehingga
+$\Var\tilde f=\Var f$. Dalam keadaan apa $\tilde f$ tunggal?
+
+\spheader 224Yb Misalkan $D$ sembarang subhimpunan tak kosong dari
+$\Bbb R$, dan misalkan $\eusm V$ suatu ruang fungsi-fungsi
+$f:D\to\Bbb R$ yang bervariasi terbatas. Untuk $f\in\eusm V$, tetapkan
+
+\Centerline{$\|f\|=\sup\{|f(t_0)|+\sum_{i=1}^n|f(t_i)-f(t_{i-1})|:
+t_0\le\ldots\le t_n\in D\}$.}
+
+\noindent Tunjukkan bahwa (i) $\|\,\|$ merupakan norma pada $\eusm V$
+(ii) $\eusm V$ lengkap terhadap $\|\,\|$ (iii)
+$\|f\times g\|\le\|f\|\|g\|$ untuk semua $f$, $g\in\eusm V$, sehingga
+$\eusm V$ merupakan suatu aljabar Banach.
+
+\spheader 224Yc Misalkan $f:\Bbb R\to\Bbb R$ suatu fungsi bervariasi
+terbatas.
+Tunjukkan bahwa terdapat suatu barisan $\sequencen{f_n}$ dari fungsi-fungsi
+yang terdiferensialkan
+sedemikian sehingga $\lim_{n\to\infty}f_n(x)=f(x)$ untuk setiap
+$x\in\Bbb R$, $\lim_{n\to\infty}\int|f_n-f|=0$, dan
+$\Var(f_n)\le\Var(f)$ untuk setiap $n\in\Bbb N$. \Hint{mulailah dengan
+$f$ yang tak-menurun.}
+
+\spheader 224Yd Untuk setiap himpunan terurut parsial $X$ dan setiap
+fungsi $f:X\to\Bbb R$, katakan bahwa $\Var_X(f)=0$ jika $X=\emptyset$,
+dan jika tidak,
+
+\Centerline{$\Var_X(f)
+=\sup\{\sum_{i=1}^n|f(a_i)-f(a_{i-1})|:a_0,a_1,\ldots,a_n\in X,\,a_0\le
+a_1\le\ldots\le a_n\}$.}
+
+\noindent Nyatakan dan buktikan hasil-hasil dalam kerangka ini yang
+memperumum 224D dan 224Yb. ({\it Petunjuk-petunjuk\/}: $f$ disebut
+`tak-menurun' jika $f(x)\le f(y)$ kapan pun $x\le y$; tafsirkan
+$\ocint{-\infty,x}$ sebagai $\{y:y\le x\}$.)
+
+\spheader 224Ye Misalkan $(X,\rho)$ suatu ruang metrik dan
+$f:[a,b]\to X$ suatu fungsi, dengan $a\le b$ dalam $\Bbb R$. Tetapkan
+\ifnum\stylenumber=12
+
+\Centerline{$\Var_{[a,b]}(f)
+=\sup\{\sum_{i=1}^n\rho(f(a_i),f(a_{i-1})):
+a\le a_0\le\ldots\le a_n\le b\}$.}
+
+\noindent\else
+$\Var_{[a,b]}(f)
+=\sup\{\sum_{i=1}^n\rho(f(a_i),f(a_{i-1})):
+a\le a_0\le\ldots\le a_n\le b\}$. \fi
+(i) Tunjukkan bahwa
+$\Var_{[a,b]}(f)=\Var_{[a,c]}(f)+\Var_{[c,b]}(f)$ untuk setiap
+$c\in[a,b]$.
+(ii) Tunjukkan bahwa jika $\Var_{[a,b]}(f)$ berhingga, maka $f$ kontinu
+pada $[a,b]$, kecuali pada terhitung banyak titik.
+(iii) Tunjukkan bahwa jika $X$ lengkap dan $\Var_{[a,b]}(f)<\infty$, maka
+$\lim_{t\uparrow x}f(t)$ ada untuk setiap $x\in\ocint{a,b}$.
+(iv) Tunjukkan bahwa jika $X$ lengkap, maka $\Var_{[a,b]}(f)$ berhingga
+jika dan hanya jika $f$ dapat dinyatakan sebagai komposisi $gh$, dengan
+$h:[a,b]\to\Bbb R$ tak-menurun dan $g:\Bbb R\to X$ bersifat
+$1$-Lipschitz, yakni $\rho(g(c),g(d))\le|c-d|$ untuk semua $c$,
+$d\in\Bbb R$.
+
+\spheader 224Yf Misalkan $U$ suatu ruang bernorma dan $a\le b$ dalam
+$\Bbb R$. Untuk fungsi-fungsi $f:[a,b]\to U$, definisikan
+$\Var_{[a,b]}(f)$ seperti dalam 224Ye, dengan menggunakan metrik baku
+$\rho(x,y)=\|x-y\|$ untuk $x$, $y\in U$. (i) Tunjukkan bahwa
+$\Var_{[a,b]}(f+g)\le\Var_{[a,b]}(f)+\Var_{[a,b]}(g)$,
+$\Var_{[a,b]}(cf)=|c|\Var_{[a,b]}(f)$ untuk semua $f$, $g:[a,b]\to U$
+dan semua $c\in\Bbb R$. (ii) Tunjukkan bahwa jika $V$ ruang bernorma lain
+dan $T:U\to V$ suatu operator linear terbatas, maka
+$\Var_{[a,b]}(Tf)\le\|T\|\Var_{[a,b]}(f)$ untuk setiap $f:[a,b]\to U$.
+
+\spheader 224Yg Misalkan $f:[0,1]\to\Bbb R$ suatu fungsi kontinu. Untuk
+$y\in\Bbb R$, tetapkan $h(y)=\#(f^{-1}[\{y\}])$ jika nilai ini berhingga,
+dan $\infty$ jika tidak. Tunjukkan bahwa (jika kita mengizinkan $\infty$
+sebagai nilai integral) $\Var_{[0,1]}(f)=\int h$. ({\it Petunjuk\/}:
+untuk $n\in\Bbb N$, $i<2^n$, tetapkan
+$c_{ni}=\sup\{f(x)-f(y):x,y\in[2^{-n}i,2^{-n}(i+1)]\}$,
+$h_{ni}(y)=1$ jika $y\in f[\,\coint{2^{-n}i,2^{-n}(i+1)}\,]$, dan $0$
+jika tidak. Tunjukkan bahwa $c_{ni}=\int h_{ni}$,
+$\lim_{n\to\infty}\sum_{i=0}^{2^n-1}c_{ni}=\Var f$,
+$\lim_{n\to\infty}\sum_{i=0}^{2^n-1}h_{ni}=h$.)
+(Lihat juga 226Yc.)
+
+\spheader 224Yh Misalkan $\nu$ sembarang ukuran Lebesgue-Stieltjes pada
+$\Bbb R$, $I\subseteq \Bbb R$ suatu interval (yang dapat terbuka atau
+tertutup, terbatas atau tak terbatas), dan $D\subseteq I$ suatu himpunan
+tak kosong. Misalkan $\eusm V$ ruang fungsi-fungsi bervariasi terbatas
+dari $D$ ke $\Bbb R$, dan $\|\,\|$ norma 224Yb pada $\eusm V$. Misalkan
+$g:D\to\Bbb R$ suatu fungsi sedemikian sehingga
+$\int_{[a,b]\cap D}g\,d\nu$ ada kapan pun $a\le b$ dalam $I$, dan
+$K=\sup_{a,b\in I,a\le  b}|\int_{[a,b]\cap D}g\,d\nu|$.
+Tunjukkan bahwa $|\int_Df\times g\,d\nu|\le K\|f\|$ untuk setiap
+$f\in\eusm V$.
+%224K
+
+\spheader 224Yi Jelaskan cara menerapkan 224Yh dengan $D=\Bbb N$ untuk
+memperoleh Teorema Abel bahwa jika suatu barisan monoton konvergen ke $0$
+dan suatu deret mempunyai barisan jumlah parsial yang terbatas, maka deret
+hasil kali suku demi suku keduanya dapat dijumlahkan.
+%224Yh 224K
+
+\spheader 224Yj Andaikan bahwa $I\subseteq\Bbb R$ suatu interval, dan
+bahwa $\sequencen{A_n}$ suatu barisan himpunan yang menutupi $I$.
+Misalkan $f:I\to\Bbb R$ kontinu. Tunjukkan bahwa
+$\Var f\le\sum_{n=0}^{\infty}\Var_{A_n}f$.
+\Hint{cukup buktikan untuk kasus himpunan-himpunan tertutup $A_n$;
+gunakan Teorema Baire (4A2Ma).}
+}%end of exercises
+
+\endnotes{
+\Notesheader{224} Saya telah mengembangkan gagasan-gagasan di atas agak
+lebih jauh daripada yang segera kita perlukan; untuk bab ini, cukup meninjau
+kasus ketika $D=\dom f=[a,b]$ untuk suatu interval
+$[a,b]\subseteq\Bbb R$. Perluasan ke fungsi-fungsi dengan domain tak
+beraturan akan berguna dalam Bab 28, dan perluasan ke himpunan tak
+beraturan $D$, meskipun tidak penting bagi kita di sini, cukup menarik
+-- misalnya, dengan mengambil $D=\Bbb N$, kita memperoleh konsep `barisan
+bervariasi terbatas', yang tentu relevan bagi persoalan konvergensi dan
+keterjumlahan.
+
+Hasil utama bagian ini tentu saja adalah fakta bahwa suatu fungsi
+bervariasi terbatas dapat dinyatakan sebagai selisih fungsi-fungsi
+monoton (224D); bahkan, salah satu tujuan konsep ini adalah mencirikan
+rentang linear fungsi-fungsi monoton. Hampir semua hasil lain di sini
+dapat diperoleh sebagai konsekuensi mudah dari fakta tersebut, seperti
+dalam 224E-224G. Dalam 224I dan 224Xg kita melangkah sedikit lebih dalam,
+dan bahkan mulai muncul unsur-unsur teori ukuran; di sinilah gagasan-gagasan ini
+mulai terhubung dengan pokok sesungguhnya dari bab ini, yang akan
+dilanjutkan dalam bagian berikutnya. Hasil lain yang pada dasarnya cukup
+mudah, tetapi mengandung benih gagasan-gagasan penting, adalah 224Yg.
+
+Dalam 224Yb saya menyebutkan suatu pengembangan alami dalam analisis
+fungsional, dan dalam 224Yd-224Yf %224Yd 224Ye 224Yf
+saya mengusulkan generalisasi lebih lanjut yang berjangkauan luas.
+}%end of notes
+
+\discrpage

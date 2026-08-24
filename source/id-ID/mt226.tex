@@ -1,0 +1,725 @@
+\frfilename{mt226.tex}
+\versiondate{16.11.13}
+\copyrightdate{2000}
+
+\def\chaptername{Teorema Dasar Kalkulus}
+\def\sectionname{Dekomposisi Lebesgue suatu fungsi bervariasi
+terbatas}
+
+\newsection{226}
+
+Saya menutup bab ini dengan beberapa catatan mengenai suatu metode untuk
+menganalisis fungsi umum yang bervariasi terbatas. Metode ini dapat membantu
+memberikan gambaran tentang seperti apa fungsi-fungsi tersebut, walaupun
+(selain 226A) hampir tidak diperlukan dalam jilid ini.
+
+\leader{226A}{Jumlah atas himpunan indeks sembarang} \cmmnt{Untuk
+memperoleh gambaran lengkap mengenai bagian analisis real ini, sedikit persiapan
+akan berguna. Persiapan ini menyangkut konsep jumlah atas himpunan
+indeks sembarang, yang sejauh ini cenderung saya hindari.
+
+\header{226Aa}}{\bf (a)} Jika $I$ sembarang himpunan dan
+$\langle a_i\rangle_{i\in I}$ sembarang keluarga dalam $[0,\infty]$, kita
+tetapkan
+
+\Centerline{$\sum_{i\in I}a_i
+=\sup\{\sum_{i\in K}a_i:K\text{ suatu subhimpunan berhingga dari }I\}$,}
+
+\noindent dengan kaidah bahwa $\sum_{i\in\emptyset}a_i=0$.
+\cmmnt{(Lihat 112Bd, 222Ba.)} Untuk $a_i\in[-\infty,\infty]$ umum, kita
+dapat menetapkan
+
+\Centerline{$\sum_{i\in I}a_i=\sum_{i\in I}a_i^+-\sum_{i\in I}a_i^-$}
+
+\noindent jika ruas ini terdefinisi dalam $[-\infty,\infty]$\cmmnt{, yakni
+sekurang-kurangnya salah satu dari $\sum_{i\in I}a_i^+$,
+$\sum_{i\in I}a_i^-$ berhingga}, dengan $a^+=\max(a,0)$ dan
+$a^-=\max(-a,0)$ untuk setiap $a$. Jika $\sum_{i\in I}a_i$ terdefinisi
+dan berhingga, kita mengatakan bahwa $\familyiI{a_i}$ {\bf dapat
+dijumlahkan}.
+
+\header{226Ab}{\bf (b)}\cmmnt{ Karena buku ini membahas teori ukuran,
+saya akan langsung menguraikan hubungan antara dapat dijumlahkannya keluarga
+semacam ini dan konsep integrasi yang sesuai.} Untuk setiap himpunan $I$,
+kita mempunyai `ukuran cacah' $\mu$ pada $I$ yang bersesuaian\cmmnt{
+(112Bd)}. Setiap\cmmnt{ subhimpunan dari $I$ terukur, sehingga setiap}
+keluarga $\langle a_i\rangle_{i\in I}$ bilangan real merupakan fungsi
+bernilai real terukur pada $I$. Suatu\cmmnt{ subhimpunan dari $I$
+berukuran berhingga jika dan hanya jika subhimpunan itu berhingga; jadi}
+fungsi bernilai real $f$ pada $I$ disebut `sederhana' jika
+$K=\{i:f(i)\ne 0\}$ berhingga. \cmmnt{Dalam hal ini,
+
+\Centerline{$\int fd\mu=\sum_{i\in K}f(i)=\sum_{i\in I}f(i)$}
+
+\noindent sebagaimana didefinisikan dalam bagian (a). Ukuran $\mu$
+semifinit (211Nc), sehingga fungsi nonnegatif $f$ terintegralkan jika dan
+hanya jika $\int f=\sup_{\mu K<\infty}\int_Kf$ berhingga (213B); tetapi
+tentu saja supremum ini tidak lain adalah
+
+\Centerline{$\sup\{\sum_{i\in K}f(i):K\subseteq I\text{ berhingga}\}
+=\sum_{i\in I}f(i)$.}
+
+
+\noindent}%end of comment
+Sekarang suatu fungsi sembarang $f:I\to\Bbb R$ terintegralkan\cmmnt{ jika dan
+hanya jika fungsi itu terukur dan $\int|f|d\mu<\infty$, yakni,} jika dan
+hanya jika $\sum_{i\in I}|f(i)|<\infty$, dan dalam hal ini
+
+\dvro{\Centerline{$\int fd\mu=\sum_{i\in I}f(i)$,}}
+{\Centerline{$\int fd\mu
+=\int f^+d\mu-\int f^-d\mu
+=\sum_{i\in I}f(i)^+-\sum_{i\in I}f(i)^-
+=\sum_{i\in I}f(i)$,}}
+
+\noindent\cmmnt{dengan menuliskan $f^{\pm}(i)=f(i)^{\pm}$ untuk setiap
+$i$. }Jadi kita mempunyai
+
+\Centerline{$\sum_{i\in I}a_i=\int_Ia_i\mu(di)$,}
+
+\noindent dan aturan baku yang memperbolehkan $\infty$ sebagai nilai suatu
+integral\cmmnt{ (133A, 135F)} sangat selaras\cmmnt{ dengan} penafsiran
+dalam (a) di atas.
+
+\header{226Ac}{\bf (c)}\cmmnt{ Dengan demikian, dan seperti yang dapat
+diduga, operasi penjumlahan merupakan operasi linear pada ruang linear
+keluarga bilangan real yang dapat dijumlahkan.
+
+} Saya mencatat di sini bahwa konsep keterjumlahan ini bersifat
+`mutlak'; suatu keluarga $\langle a_i\rangle_{i\in I}$ dapat dijumlahkan
+jika dan hanya jika keluarga itu dapat dijumlahkan mutlak.
+\cmmnt{Hal ini diperlukan karena penjumlahannya juga harus
+`tak bersyarat'; kita tidak mempunyai struktur pada himpunan sembarang $I$
+yang dapat mengarahkan kita untuk mengambil jumlah dalam suatu urutan tertentu.
+Lihat 226Xa. Secara khusus, saya membedakan
+`$\sum_{n\in\Bbb N}a_n$', yang dalam buku ini selalu akan ditafsirkan
+seperti dalam 226A di atas, dari `$\sum_{n=0}^{\infty}a_n$', yang
+(jika pembedaan ini berpengaruh) harus ditafsirkan sebagai
+$\lim_{m\to\infty}\sum_{n=0}^ma_n$. Jadi, misalnya,
+$\sum_{n=0}^{\infty}\Bover{(-1)^n}{n+1}=\ln 2$, sedangkan
+$\sum_{n\in\Bbb N}\Bover{(-1)^n}{n+1}$ tidak terdefinisi. Tentu saja
+$\sum_{n=0}^{\infty}a_n=\sum_{n\in\Bbb N}a_n$ kapan pun jumlah yang
+terakhir terdefinisi dalam $[-\infty,\infty]$.}
+
+\header{226Ad}{\bf (d)}\cmmnt{ Ada pendekatan lain yang sangat penting
+terhadap jumlah yang diuraikan di sini.} Jika
+$\langle a_i\rangle_{i\in I}$ merupakan suatu keluarga bilangan real yang
+(secara mutlak) dapat dijumlahkan, maka untuk setiap $\epsilon>0$ terdapat suatu
+$K\subseteq I$ berhingga sedemikian sehingga
+$\sum_{i\in I\setminus K}|a_i|\le\epsilon$. \prooflet{\Prf\ Ini tidak
+lain daripada kasus khusus 225A; terdapat suatu himpunan $K$ dengan
+$\mu K<\infty$ sedemikian sehingga
+$\int_{I\setminus K}|a_i|\mu(di)\le\epsilon$, tetapi
+
+\Centerline{$\int_{I\setminus K}|a_i|\mu(di)
+=\sum_{i\in I\setminus K}|a_i|$. \Qed}
+
+\noindent}\cmmnt{(Tentu saja ada pembuktian `langsung' atas hasil ini
+dari definisi dalam (a), tanpa menyebut ukuran atau integral. Namun saya
+rasa Anda akan melihat bahwa pembuktian tersebut bertumpu pada gagasan yang
+sama dengan pembuktian 225A.) }Akibatnya, untuk sembarang keluarga
+$\langle a_i\rangle_{i\in I}$ bilangan real dan sembarang $s\in\Bbb R$,
+pernyataan-pernyataan berikut ekuivalen:
+
+\inset{(i) $\sum_{i\in I}a_i=s$;}
+
+\inset{(ii) untuk setiap $\epsilon>0$ terdapat suatu $K\subseteq I$ berhingga
+sedemikian sehingga $|s-\sum_{i\in J}a_i|\le\epsilon$ kapan pun $J$
+berhingga dan $K\subseteq J\subseteq I$.}
+
+\noindent\prooflet{\Prf\ {\bf (i)$\Rightarrow$(ii)} Ambil $K$ sedemikian
+sehingga $\sum_{i\in
+I\setminus K}|a_i|\le\epsilon$. Jika $K\subseteq J\subseteq I$, maka
+
+\Centerline{$|s-\sum_{i\in J}a_i|=|\sum_{i\in I\setminus J}a_i|
+\le\sum_{i\in I\setminus K}|a_i|\le\epsilon$.}
+
+{\bf (ii)$\Rightarrow$(i)} Misalkan $\epsilon>0$, dan misalkan
+$K\subseteq I$ seperti yang diuraikan dalam (ii). Jika
+$J\subseteq I\setminus K$ sembarang himpunan berhingga, tetapkan
+$J_1=\{i:i\in J,\,a_i\ge 0\}$, $J_2=J\setminus J_1$. Kita mempunyai
+
+$$\eqalign{\sum_{i\in J}|a_i|
+&=|\sum_{i\in J_1\cup K}a_i-\sum_{i\in J_2\cup K}a_i|\cr
+&\le|s-\sum_{i\in J_1\cup K}a_i|+|s-\sum_{i\in J_2\cup K}a_i|
+\le 2\epsilon.\cr}$$
+
+\noindent Karena $J$ sembarang, $\sum_{i\in I\setminus K}|a_i|\le
+2\epsilon$ dan
+
+\Centerline{$\sum_{i\in I}|a_i|\le\sum_{i\in K}|a_i|+2\epsilon<\infty$.}
+
+\noindent Oleh karena itu, $\sum_{i\in I}a_i$ terdefinisi dengan baik dalam
+$\Bbb R$. Selain itu,
+
+\Centerline{$|s-\sum_{i\in I}a_i|
+\le|s-\sum_{i\in K}a_i|+|\sum_{i\in I\setminus K}a_i|
+\le\epsilon+\sum_{i\in I\setminus K}|a_i|
+\le 3\epsilon$.}
+
+\noindent Karena $\epsilon$ sembarang, $\sum_{i\in I}a_i=s$, sebagaimana
+diperlukan. \Qed}
+
+\cmmnt{Dengan cara ini kita menyatakan $\sum_{i\in I}a_i$ secara langsung
+sebagai suatu limit; kita dapat menuliskannya sebagai
+
+\Centerline{$\sum_{i\in I}a_i=\lim_{K\uparrow I}\sum_{i\in K}a_i$,}
+
+\noindent dengan pengertian bahwa dalam rumus di ruas kanan kita hanya
+memperhatikan himpunan berhingga $K$.
+}%end of comment
+
+\header{226Ae}{\bf (e)}\cmmnt{ Pendekatan lain lagi adalah melalui fakta
+berikut.} Jika $\sum_{i\in I}|a_i|<\infty$, maka\cmmnt{ untuk sembarang
+$\delta>0$ himpunan $\{i:|a_i|\ge\delta\}$ berhingga, bahkan dapat
+mempunyai paling banyak ${1\over{\delta}}\sum_{i\in I}|a_i|$ anggota;
+akibatnya}
+
+\Centerline{$J=\{i:a_i\ne 0\}
+=\bigcup_{n\in\Bbb N}\{i:|a_i|\ge 2^{-n}\}$}
+
+\noindent terhitung\cmmnt{ (1A1F)}. Jika $J$ berhingga, maka\cmmnt{ tentu
+saja} $\sum_{i\in I}a_i=\sum_{i\in J}a_i$ menjadi suatu jumlah berhingga.
+Jika tidak, kita dapat mengenumerasi $J$ sebagai $\sequencen{j_n}$, dan
+kita akan mempunyai
+
+\Centerline{$\sum_{i\in I}a_i=\sum_{i\in
+J}a_i=\lim_{n\to\infty}\sum_{k=0}^na_{j_k}=\sum_{n=0}^{\infty}a_{j_n}$
+\dvro{.}{}}
+
+\noindent\cmmnt{(menggunakan (d) untuk mereduksi jumlah
+$\sum_{i\in J}a_i$ menjadi limit jumlah-jumlah berhingga). }Sebaliknya,
+jika $\langle a_i\rangle_{i\in I}$ sedemikian sehingga terdapat suatu
+$J=\{i:a_i\ne 0\}$ tak hingga terhitung yang dienumerasi sebagai
+$\sequencen{j_n}$, dan jika $\sum_{n=0}^{\infty}|a_{j_n}|<\infty$, maka
+$\sum_{i\in I}a_i$ akan sama dengan $\sum_{n=0}^{\infty}a_{j_n}$.
+
+\spheader 226Af
+%new 2008
+\cmmnt{Kelak akan berguna untuk mempunyai suatu fragmen teori umum.}
+Misalkan $I$ dan $J$ adalah himpunan, dan
+$\langle a_{ij}\rangle_{i\in I,j\in J}$ suatu keluarga dalam
+$[0,\infty]$. Maka
+
+\Centerline{$\sum_{(i,j)\in I\times J}a_{ij}
+=\sum_{i\in I}(\sum_{j\in J}a_{ij})
+=\sum_{j\in J}(\sum_{i\in I}a_{ij})$.}
+
+\prooflet{\noindent\Prf\ (i) Jika
+$\sum_{(i,j)\in I\times J}a_{ij}>u$, maka terdapat suatu himpunan
+$M\subseteq I\times J$ berhingga sedemikian sehingga
+$\sum_{(i,j)\in M}a_{ij}>u$. Sekarang $K=\{i:\exists j\ (i,j)\in M\}$ dan
+$L=\{j:\exists i\ (i,j)\in M\}$ berhingga, sehingga
+
+$$\eqalignno{\sum_{i\in I}\sum_{j\in J}a_{ij}
+&\ge\sum_{i\in K}\sum_{j\in J}a_{ij}
+\ge\sum_{i\in K}\sum_{j\in L}a_{ij}\cr
+\displaycause{karena $\sum_{j\in J}a_{ij}\ge\sum_{j\in L}a_{ij}$ untuk setiap
+$i$}
+&=\sum_{(i,j)\in K\times L}a_{ij}
+\ge\sum_{(i,j)\in M}a_{ij}
+>u.\cr}$$
+
+\noindent Karena $u$ sembarang,
+$\sum_{i\in I}\sum_{j\in J}a_{ij}\ge\sum_{(i,j)\in I\times J}a_{ij}$.
+(ii) Jika $\sum_{i\in I}\sum_{j\in J}a_{ij}>u\ge 0$, terdapat suatu
+himpunan $K\subseteq I$ tak kosong dan berhingga sedemikian sehingga
+$\sum_{i\in K}\sum_{j\in J}a_{ij}>u$.
+Misalkan $\epsilon\in\ooint{0,1}$ sedemikian sehingga
+$\sum_{i\in K}\sum_{j\in J}a_{ij}>u+\epsilon$, dan tetapkan
+$\delta=\Bover{\epsilon}{\#(K)}$. Untuk setiap $i\in K$, tetapkan
+$\gamma_i=\min(u+1,\sum_{j\in J}a_{ij})-\delta$;
+maka
+
+\Centerline{$\epsilon+\sum_{i\in K}\gamma_i
+=\sum_{i\in K}\min(u+1,\sum_{j\in J}a_{ij})
+\ge\min(u+1,\sum_{i\in K}\sum_{j\in J}a_{ij})
+>u+\epsilon$,}
+
+\noindent sehingga $\sum_{i\in K}\gamma_i>u$. Untuk setiap $i\in K$,
+$\gamma_i<\sum_{j\in J}a_{ij}$, sehingga terdapat suatu
+$L_i\subseteq J$ berhingga sedemikian sehingga
+$\sum_{j\in L_i}a_{ij}\ge\gamma_i$.
+Tetapkan $M=\{(i,j):i\in K$, $j\in L_i\}$, sehingga $M$ merupakan
+subhimpunan berhingga dari $I\times J$; maka
+
+\Centerline{$\sum_{(i,j)\in I\times J}a_{ij}
+\ge\sum_{(i,j)\in M}a_{ij}
+=\sum_{i\in K}\sum_{j\in L_i}a_{ij}
+\ge\sum_{i\in K}\gamma_i
+>u$.}
+
+\noindent Karena $u$ sembarang,
+$\sum_{(i,j)\in I\times J}a_{ij}\ge\sum_{i\in I}\sum_{j\in J}a_{ij}$ dan
+kedua jumlah ini sama. (iii) Demikian pula,
+$\sum_{(i,j)\in I\times J}a_{ij}=\sum_{j\in J}\sum_{i\in I}a_{ij}$.\ \Qed}
+
+\leader{226B}{Fungsi saltus}\cmmnt{ Sekarang kita siap membahas suatu
+jenis khusus fungsi bervariasi terbatas pada $\Bbb R$.} Misalkan $a<b$
+dalam $\Bbb R$.
+
+\header{226Ba}{\bf (a)} Suatu {\bf fungsi saltus} (bernilai real) pada $[a,b]$
+adalah fungsi $F:[a,b]\to\Bbb R$ yang dapat dinyatakan dalam bentuk
+
+\Centerline{$F(x)=\sum_{t\in\coint{a,x}}u_t+\sum_{t\in[a,x]}v_t$}
+
+\noindent untuk $x\in [a,b]$, dengan $\langle
+u_t\rangle_{t\in\coint{a,b}}$ dan
+$\langle v_t\rangle_{t\in[a,b]}$ keluarga-keluarga bernilai real
+sedemikian sehingga $\sum_{t\in\coint{a,b}}|u_t|$ dan
+$\sum_{t\in[a,b]}|v_t|$ berhingga.
+
+\header{226Bb}{\bf (b)} Untuk setiap fungsi $F:[a,b]\to\Bbb R$, kita
+dapat menuliskan
+
+\Centerline{$F(x^+)=\lim_{y\downarrow x}F(y)$ jika $x\in\coint{a,b}$ dan
+limit tersebut ada,}
+
+\Centerline{$F(x^-)=\lim_{y\uparrow x}F(y)$ jika $x\in\ocint{a,b}$ dan
+limit tersebut ada.}
+
+\noindent\cmmnt{(Saya harap hal ini tidak menimbulkan kebingungan dengan
+penafsiran lain atas $x^+$ sebagai $\max(x,0)$.) }Perhatikan bahwa jika
+$F$ suatu fungsi saltus, sebagaimana didefinisikan dalam (a), dengan
+keluarga-keluarga terkait $\langle u_t\rangle_{t\in\coint{a,b}}$ dan
+$\langle v_t\rangle_{t\in[a,b]}$, maka $v_a=F(a)$,
+$v_x=F(x)-F(x^-)$ untuk $x\in\ocint{a,b}$ dan
+$u_x=F(x^+)-F(x)$ untuk $x\in\coint{a,b}$.
+\prooflet{\Prf\ Misalkan
+$\epsilon>0$. Sebagaimana dicatat dalam 226Ad, terdapat suatu
+$K\subseteq[a,b]$ berhingga sedemikian sehingga
+
+\Centerline{$\sum_{t\in\coint{a,b}\setminus
+K}|u_t|+\sum_{t\in[a,b]\setminus K}|v_t|\le\epsilon$.}
+
+\noindent Untuk $x\in[a,b]$ yang diberikan, misalkan $\delta>0$ sedemikian
+sehingga $[x-\delta,x+\delta]$ tidak memuat titik $K$ selain mungkin $x$.
+Dalam hal ini, jika $\max(a,x-\delta)\le y<x$, kita pasti mempunyai
+
+$$\eqalign{|F(y)-(F(x)-v_x)|
+&=|\sum_{t\in\coint{y,x}}u_t+\sum_{t\in\ooint{y,x}}v_t|\cr
+&\le\sum_{t\in\coint{a,b}\setminus K}|u_t|
+  +\sum_{t\in[a,b]\setminus K}|v_t|
+\le\epsilon,\cr}$$
+
+\noindent sedangkan jika $x<y\le\min(b,x+\delta)$, kita akan mempunyai
+
+$$\eqalign{|F(y)-(F(x)+u_x)|
+&=|\sum_{t\in\ooint{x,y}}u_t+\sum_{t\in\ocint{x,y}}v_t|\cr
+&\le\sum_{t\in\coint{a,b}\setminus K}|u_t|
+  +\sum_{t\in[a,b]\setminus K}|v_t|
+\le\epsilon.\cr}$$
+
+\noindent Karena $\epsilon$ sembarang, kita memperoleh
+$F(x^-)=F(x)-v_x$ (jika $x>a$) dan $F(x^+)=F(x)+u_x$ (jika $x<b$). \Qed}
+
+\cmmnt{Akibatnya, }$F$ kontinu di $x\in\ooint{a,b}$
+jika dan hanya jika $u_x=v_x=0$,
+sedangkan $F$ kontinu di $a$ jika dan hanya jika $u_a=0$, dan $F$ kontinu
+di $b$ jika dan hanya jika $v_b=0$. Secara khusus,
+$\{x:x\in[a,b],\,F\text{ tidak kontinu di }x\}$ terhitung\cmmnt{
+(lihat 226Ae)}.
+
+\header{226Bc}{\bf (c)} Jika $F$ suatu fungsi saltus yang didefinisikan
+pada $[a,b]$, dengan keluarga-keluarga terkait
+$\langle u_t\rangle_{t\in\coint{a,b}}$ dan
+$\langle v_t\rangle_{t\in[a,b]}$, maka $F$ bervariasi terbatas pada
+$[a,b]$, dan
+
+\Centerline{$\Var_{[a,b]}(F)
+\le\sum_{t\in\coint{a,b}}|u_t|+\sum_{t\in\ocint{a,b}}|v_t|$.}
+
+\noindent\prooflet{\Prf\ Jika $a\le x<y\le b$, maka
+
+\Centerline{$F(y)-F(x)=u_x+\sum_{t\in\ooint{x,y}}(u_t+v_t)+v_y$,}
+
+\noindent sehingga
+
+\Centerline{$|F(y)-F(x)|
+\le\sum_{t\in\coint{x,y}}|u_t|+\sum_{t\in\ocint{x,y}}|v_t|$.}
+
+\noindent Jika $a\le a_0\le a_1\le\ldots\le a_n\le b$, maka
+
+$$\eqalign{\sum_{i=1}^n|F(a_i)-F(a_{i-1})|
+&\le\sum_{i=1}^n\bigl(\sum_{t\in\coint{a_{i-1},a_i}}|u_t|
+   +\sum_{t\in\ocint{a_{i-1},a_i}}|v_t|\bigr)\cr
+&\le\sum_{t\in\coint{a,b}}|u_t|+\sum_{t\in\ocint{a,b}}|v_t|.\cr}$$
+
+\noindent Akibatnya,
+
+\Centerline{$\Var_{[a,b]}(F)
+\le\sum_{t\in\coint{a,b}}|u_t|+\sum_{t\in\ocint{a,b}}|v_t|<\infty$. \Qed}}
+
+\header{226Bd}{\bf (d)} Ketaksamaan dalam (c) sebenarnya merupakan
+kesamaan. \prooflet{Untuk melihatnya, perhatikan terlebih dahulu bahwa
+jika $a\le x<y\le b$, maka
+$\Var_{[x,y]}(F)\ge|u_x|+|v_y|$. \Prf\ Saya mencatat dalam (b) bahwa
+$u_x=\lim_{t\downarrow x}F(t)-F(x)$ dan
+$v_y=F(y)-\lim_{t\uparrow y}F(t)$.
+Jadi, untuk $\epsilon>0$ yang diberikan, kita dapat menemukan $t_1$,
+$t_2$ sedemikian sehingga $x<t_1\le t_2<y$ dan
+
+\Centerline{$|F(t_1)-F(x)|\ge|u_x|-\epsilon$,
+\quad$|F(y)-F(t_2)|\ge|v_y|-\epsilon$.}
+
+\noindent Sekarang
+
+\Centerline{$\Var_{[x,y]}(F)
+\ge|F(t_1)-F(x)|+|F(t_2)-F(t_1)|+|F(y)-F(t_2)|
+\ge|u_x|+|v_y|-2\epsilon$.}
+
+\noindent Karena $\epsilon$ sembarang, kita memperoleh hasil tersebut.
+\Qed
+
+Sekarang, untuk $a\le t_0<t_1<\ldots<t_n\le b$ yang diberikan, kita pasti
+mempunyai
+
+$$\eqalignno{\Var_{[a,b]}(F)
+&\ge\sum_{i=1}^n\Var_{[t_{i-1},t_i]}(F)\cr
+\noalign{\noindent(menggunakan 224Cc)}
+&\ge\sum_{i=1}^n|u_{t_{i-1}}|+|v_{t_i}|.\cr}$$
+
+\noindent Karena $t_0,\ldots,t_n$ sembarang,
+
+\Centerline{$\Var_{[a,b]}(F)
+\ge\sum_{t\in\coint{a,b}}|u_t|+\sum_{t\in\ocint{a,b}}|v_t|$,}
+
+\noindent sebagaimana diperlukan.}
+
+\header{226Be}{\bf (e)} Karena suatu fungsi saltus bervariasi
+terbatas\cmmnt{ ((c) di atas)}, fungsi itu terdiferensialkan hampir di
+mana-mana\cmmnt{ (224I)}.
+Sebenarnya turunannya nol hampir di mana-mana. \prooflet{\Prf\ Misalkan
+$F:[a,b]\to\Bbb R$ suatu fungsi saltus, dengan keluarga-keluarga terkait
+$\langle u_t\rangle_{t\in\coint{a,b}}$ dan
+$\langle v_t\rangle_{t\in[a,b]}$.
+Misalkan $\epsilon>0$. Misalkan $K\subseteq[a,b]$ suatu himpunan berhingga
+sedemikian sehingga
+
+\Centerline{$\sum_{t\in\coint{a,b}\setminus
+K}|u_t|+\sum_{t\in[a,b]\setminus K}|v_t|\le\epsilon$.}
+
+\noindent Tetapkan
+
+$$\eqalign{u'_t
+&=u_t\text{ jika }t\in\coint{a,b}\cap K,\cr
+&=0\text{ jika }t\in\coint{a,b}\setminus K,\cr
+v'_t&=v_t\text{ jika }t\in K,\cr
+&=0\text{ jika }t\in[a,b]\setminus K,\cr
+u''_t&=u_t-u'_t\text{ untuk }t\in\coint{a,b},\cr
+v''_t&=v_t-v'_t\text{ untuk }t\in[a,b].\cr}$$
+
+\noindent Misalkan $G$ dan $H$ adalah fungsi-fungsi saltus yang bersesuaian dengan
+$\langle u'_t\rangle_{t\in\coint{a,b}}$,
+$\langle v'_t\rangle_{t\in[a,b]}$,
+$\langle u''_t\rangle_{t\in\coint{a,b}}$ dan
+$\langle v''_t\rangle_{t\in[a,b]}$, sehingga $F=G+H$. Maka $G'(t)=0$
+untuk setiap $t\in\ooint{a,b}\setminus K$, karena
+$\ooint{a,b}\setminus K$ merupakan gabungan berhingga interval-interval
+terbuka, dan $G$ konstan pada setiap interval tersebut. Jadi $G'=0$ hampir di
+mana-mana dan
+$F'\eae H'$. Di sisi lain,
+
+\Centerline{$\int_a^b|H'|\le\Var_{[a,b]}(H)
+=\sum_{t\in\coint{a,b}\setminus K}|u_t|
+  +\sum_{t\in\ocint{a,b}\setminus K}|v_t|
+\le\epsilon$,}
+
+\noindent dengan menggunakan 224I dan (d) di atas. Jadi
+
+\Centerline{$\int_a^b|F'|=\int_a^b|H'|\le\epsilon$.}
+
+\noindent Karena $\epsilon$ sembarang, $\int_a^b|F'|=0$ dan $F'=0$
+hampir di mana-mana, sebagaimana diklaim. \Qed}
+
+\leader{226C}{Dekomposisi Lebesgue bagi fungsi bervariasi
+terbatas}  Ambil $a$, $b\in\Bbb R$ dengan $a<b$.
+
+\header{226Ca}{\bf (a)} Jika $F:[a,b]\to\Bbb R$ tak-menurun, tetapkan
+$v_a=0$, $v_t=F(t)-F(t^-)$ untuk $t\in\ocint{a,b}$, $u_t=F(t^+)-F(t)$ untuk
+$t\in\coint{a,b}$\cmmnt{, dengan mendefinisikan $F(t^+)$, $F(t^-)$ seperti dalam 226Bb}.
+Maka semua $v_t$, $u_t$
+nonnegatif, dan\cmmnt{ jika $a<t_0<t_1<\ldots<t_n< b$, maka
+
+\Centerline{$\sum_{i=0}^n(u_{t_i}+v_{t_i})
+=\sum_{i=0}^n(F(t_i^+)-F(t_i^-))\le F(b)-F(a)$.}
+
+\noindent Oleh karena itu,}
+$\sum_{t\in\coint{a,b}}u_t$ dan $\sum_{t\in[a,b]}v_t$ keduanya berhingga.
+Misalkan $F_p$ adalah fungsi saltus yang bersesuaian\cmmnt{, sebagaimana didefinisikan dalam
+226Ba, sehingga
+
+\Centerline{$F_p(x)
+=F(a^+)-F(a)+\sum_{t\in\ooint{a,x}}(F(t^+)-F(t^-))+F(x)
+-F(x^-)$}
+
+\noindent jika $a<x\le b$}.   \cmmnt{Jika $a\le x<y\le b$, maka
+
+$$\eqalign{F_p(y)-F_p(x)
+&=F(x^+)-F(x)+\sum_{t\in\ooint{x,y}}(F(t^+)-F(t^-))+F(y)-F(y^-)
+\cr
+&\le F(y)-F(x)\cr}$$
+
+\noindent sebab jika $x=t_0<t_1<\ldots<t_n<t_{n+1}=y$, maka
+
+$$\eqalign{F(x^+)-F(x)
+&+\sum_{i=1}^{n}(F(t_i^+)-F(t_i^-))+F(y)-F(y^-)\cr
+&=F(y)-F(x)-\sum_{i=1}^{n+1}(F(t_i^-)-F(t_{i-1}^+))
+\le F(y)-F(x).\cr}$$
+
+\noindent Oleh karena itu, baik }$F_p$ maupun $F_c=F-F_p$
+tak-menurun.   \cmmnt{Selain itu, karena
+
+\Centerline{$F_p(a)=0=v_a$,}
+
+\Centerline{$F_p(t)-F_p(t^-)=v_t=F(t)-F(t^-)$ untuk
+$t\in\ocint{a,b}$,}
+
+\Centerline{$F_p(t^+)-F_p(t)=u_t=F(t^+)-F(t)$ untuk
+$t\in\coint{a,b}$,}
+
+\noindent kita akan mempunyai
+
+\Centerline{$F_c(a)=F(a)$,}
+
+\Centerline{$F_c(t)=F_c(t^-)$ untuk
+$t\in\ocint{a,b}$,}
+
+\Centerline{$F_c(t)=F_c(t^+)$ untuk $t\in\coint{a,b}$,}
+
+\noindent dan }$F_c$ kontinu.
+
+Jelaslah bahwa penyajian $F=F_p+F_c$ ini sebagai jumlah suatu fungsi saltus
+dan suatu fungsi kontinu adalah unik, kecuali bahwa kita bebas menambahkan
+suatu konstanta pada salah satunya jika konstanta itu dikurangkan dari yang lain.
+
+\header{226Cb}{\bf (b)}\cmmnt{ Dengan tetap menganggap $F:[a,b]\to\Bbb R$
+tak-menurun, kita tahu bahwa $F'$ terintegralkan (222C); terlebih lagi,
+$F'\eae F'_c$, menurut 226Be.}   Tetapkan $F_{ac}(x)=F(a)+\int_a^xF'$
+untuk setiap $x\in[a,b]$.   \cmmnt{Kita mempunyai
+
+\Centerline{$F_{ac}(y)-F_{ac}(x)=\int_x^yF_c'\le F_c(y)-F_c(x)$}
+
+\noindent untuk $a\le x\le y\le b$ (sekali lagi menurut 222C), sehingga} $F_{cs}=F_c-F_{ac}$
+masih tak-menurun;  \cmmnt{$F_{ac}$ kontinu (225A),
+sehingga }$F_{cs}$
+kontinu;  \cmmnt{$F_{ac}'\eae F'\eae F_c'$ (222E),
+sehingga }$F_{cs}'=0$ hampir di mana-mana.
+
+Sekali lagi, penyajian $F_c=F_{ac}+F_{cs}$ sebagai jumlah suatu fungsi kontinu
+mutlak dan suatu fungsi dengan turunan nol hampir di mana-mana adalah unik,
+kecuali untuk kemungkinan memindahkan suatu konstanta dari yang satu ke yang
+lain\cmmnt{, karena dua fungsi kontinu mutlak yang
+turunannya sama hampir di mana-mana hanya dapat berbeda dengan suatu konstanta
+(225D)}.
+
+\header{226Cc}{\bf (c)} Dengan merangkum\cmmnt{ semua} hal ini:  jika
+$F:[a,b]\to\Bbb R$ adalah sembarang
+fungsi tak-menurun, fungsi tersebut dapat diuraikan sebagai $F_p+F_{ac}+F_{cs}$, dengan
+$F_p$ fungsi saltus, $F_{ac}$ kontinu mutlak, dan
+$F_{cs}$ kontinu dan turunannya ada serta bernilai nol hampir di
+mana-mana;  ketiga komponennya tak-menurun;  dan penguraian itu
+unik jika kita menetapkan bahwa $F_{ac}(a)=F(a)$ dan
+$F_p(a)=F_{cs}(a)=0$.
+
+Fungsi Cantor $f:[0,1]\to[0,1]$\cmmnt{ (134H)} kontinu dan
+$f'=0$ hampir di mana-mana\cmmnt{ (134Hb)}, sehingga $f_p=f_{ac}=0$ dan $f=f_{cs}$.
+Dengan menetapkan $g(x)=\bover12(x+f(x))$ untuk $x\in[0,1]$\cmmnt{, seperti dalam 134I},
+kita memperoleh $g_p(x)=0$, $g_{ac}(x)={x\over 2}$ dan
+$g_{cs}(x)={1\over 2}f(x)$.
+
+\header{226Cd}{\bf (d)} Sekarang andaikan bahwa $F:[a,b]\to\Bbb R$
+bervariasi terbatas.
+Maka fungsi tersebut dapat dinyatakan sebagai selisih $G-H$ antara
+fungsi-fungsi tak-menurun\cmmnt{ (224D)}.   Jadi, dengan menuliskan $F_p=G_p-H_p$,
+dan seterusnya, kita dapat menyatakan $F$ sebagai jumlah $F_p+F_{cs}+F_{ac}$, dengan $F_p$
+fungsi saltus, $F_{ac}$ kontinu mutlak, $F_{cs}$
+kontinu, $F_{cs}'=0$ hampir di mana-mana, $F_{ac}(a)=F(a)$ dan $F_{cs}(a)=F_{p}(a)=0$.
+Di bawah syarat-syarat ini penyajian tersebut unik\dvro{.}{, karena (sebagai
+contoh) $F_p(t^+)-F_p(t)=F(t^+)-F(t)$ untuk $t\in\coint{a,b}$, sedangkan
+$F_{ac}'\eae(F-F_p)'\eae F'$.}
+
+Ini adalah suatu {\bf dekomposisi Lebesgue} dari fungsi $F$.
+\cmmnt{(Saya harus mengatakan `suatu' dekomposisi Lebesgue karena tentu saja
+penetapan $F_{ac}(a)=F(a)$, $F_{p}(a)=F_{cs}(a)=0$ bersifat sebarang.)}   Saya akan menyebut $F_p$ sebagai {\bf bagian saltus} dari $F$.
+
+\leader{226D}{Fungsi kompleks} \cmmnt{Modifikasi yang diperlukan untuk
+menangani fungsi kompleks bersifat elementer.
+
+\medskip
+
+}{\bf (a)} Jika $I$ sembarang himpunan dan
+$\langle a_j\rangle_{j\in I}$ suatu keluarga bilangan kompleks, maka
+pernyataan-pernyataan berikut ekuivalen:
+
+\inset{(i) $\sum_{j\in I}|a_j|<\infty$;}
+
+\inset{(ii) terdapat $s\in\Bbb C$ sedemikian sehingga untuk setiap $\epsilon>0$
+terdapat suatu himpunan berhingga $K\subseteq I$ sedemikian sehingga
+$|s-\sum_{j\in J}a_j|\le\epsilon$ kapan pun $J$ berhingga dan
+$K\subseteq J\subseteq I$.}
+
+\noindent Dalam hal ini
+
+\Centerline{$s=\sum_{j\in I}\Real(a_j)+i\sum_{j\in
+I}\Imag(a_j)=\int_Ia_j\mu(dj)$,}
+
+\noindent dengan $\mu$ ukuran cacah pada $I$, dan kita menulis
+$s=\sum_{j\in I}a_j$.
+
+\header{226Db}{\bf (b)} Jika $a<b$ dalam $\Bbb R$, suatu {\bf fungsi
+saltus} kompleks pada $[a,b]$ adalah fungsi $F:[a,b]\to\Bbb C$ yang dapat dinyatakan dalam
+bentuk
+
+\Centerline{$F(x)=\sum_{t\in\coint{a,x}}u_t+\sum_{t\in[a,x]}v_t$}
+
+\noindent untuk $x\in [a,b]$, dengan $\langle
+u_t\rangle_{t\in\coint{a,b}}$,
+$\langle v_t\rangle_{t\in[a,b]}$ keluarga-keluarga bernilai kompleks sedemikian sehingga
+$\sum_{t\in\coint{a,b}}|u_t|$ dan
+$\sum_{t\in[a,b]}|v_t|$ berhingga\cmmnt{;  yakni, jika bagian real dan
+bagian imajiner dari $F$ adalah fungsi saltus}.   Dalam hal ini $F$
+kontinu kecuali pada terhitung banyak titik, dan turunannya ada serta bernilai
+nol hampir di mana-mana dalam $[a,b]$, serta
+
+\Centerline{$u_x=\lim_{t\downarrow x}F(t)-F(x)$ untuk setiap
+$x\in\coint{a,b}$,}
+
+\Centerline{$v_x=\lim_{t\uparrow x}F(x)-F(t)$ untuk setiap
+$x\in\ocint{a,b}$\dvro{.}{}}
+
+\noindent\cmmnt{(terapkan hasil-hasil 226B pada bagian real dan imajiner
+dari $F$).   }$F$ bervariasi terbatas, dan variasinya adalah
+
+\Centerline{$\Var_{[a,b]}(F)
+=\sum_{t\in\coint{a,b}}|u_t|+\sum_{t\in\ocint{a,b}}|v_t|$\dvro{.}{}}
+
+\cmmnt{\noindent (ulangi argumen-argumen 226Bc-d).}
+
+\header{226Dc}{\bf (c)} Jika $F:[a,b]\to\Bbb C$ adalah fungsi bervariasi
+terbatas, dengan $a<b$ dalam $\Bbb R$, maka fungsi tersebut secara unik dapat dinyatakan sebagai
+$F=F_p+F_{cs}+F_{ac}$, dengan $F_p$ fungsi saltus, $F_{ac}$
+kontinu mutlak, $F_{cs}$ kontinu dan turunannya bernilai nol
+hampir di mana-mana, serta $F_{ac}(a)=F(a)$, $F_p(a)=F_{cs}(a)=0$.
+\cmmnt{(Terapkan
+226C pada bagian real dan imajiner dari $F$.)}
+
+\leader{226E}{}\cmmnt{ Sebagai suatu latihan elementer dalam bahasa
+226A, saya sisipkan sebuah versi dari suatu teorema B. Levi
+%Levi 1906
+yang kadang-kadang berguna.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur, $I$
+suatu himpunan {\it terhitung}, dan $\familyiI{f_i}$ suatu keluarga fungsi
+bernilai real atau kompleks yang $\mu$-terintegralkan sedemikian sehingga $\sum_{i\in I}\int|f_i|d\mu$
+berhingga.   Maka
+$f(x)=\sum_{i\in I}f_i(x)$ terdefinisi hampir di mana-mana dan
+$\int fd\mu=\sum_{i\in I}\int f_id\mu$.
+
+\proof{ Jika $I$ berhingga, hal ini elementer.   Jika tidak, karena harus
+terdapat suatu bijeksi antara $I$ dan $\Bbb N$, kita boleh menganggap
+$I=\Bbb N$.   Dengan menetapkan $g_n=\sum_{i=0}^n|f_i|$ untuk setiap $n$, kita mempunyai
+suatu barisan tak-menurun $\sequencen{g_n}$ dari fungsi-fungsi terintegralkan sedemikian
+sehingga $\int g_n\le\sum_{i\in\Bbb N}\int|f_i|$ untuk setiap $n$, sehingga
+$g=\sup_{n\in\Bbb N}g_n$ terintegralkan, menurut teorema B. Levi sebagaimana dinyatakan dalam
+123A.   Khususnya, $g$ berhingga hampir di mana-mana.   Sekarang, jika
+$x\in X$ sedemikian sehingga $g(x)$ terdefinisi dan berhingga,
+$\sum_{i\in J}|f_i(x)|\le g(x)$ untuk setiap $J\subseteq\Bbb N$ yang berhingga, sehingga
+$\sum_{i\in\Bbb N}|f_i(x)|$ dan $\sum_{i\in\Bbb N}f_i(x)$ terdefinisi.
+Dalam hal ini, tentu saja,
+$\sum_{i\in\Bbb N}f_i(x)=\lim_{n\to\infty}\sum_{i=0}^nf_i(x)$.   Tetapi
+$|\sum_{i=0}^nf_i|\leae g$ untuk setiap $n$, sehingga Teorema Konvergensi
+Terdominasi Lebesgue menunjukkan bahwa
+
+\Centerline{$\int\sum_{i\in\Bbb N}f_i
+=\lim_{n\to\infty}\int\sum_{i=0}^nf_i
+=\lim_{n\to\infty}\sum_{i=0}^n\int f_i
+=\sum_{i\in\Bbb N}\int f_i$.}
+}%end of proof of 226E
+
+\exercises{
+\leader{226X}{Latihan dasar $\pmb{>}$(a)}
+%\sqheader 226Xa
+Andaikan $I$ dan $J$ himpunan-himpunan dan
+$\familyiI{a_i}$ suatu keluarga bilangan real yang dapat dijumlahkan.   (i) Tunjukkan bahwa
+jika $f:J\to I$ injektif, maka $\family{j}{J}{a_{f(j)}}$ dapat dijumlahkan.
+(ii) Tunjukkan bahwa jika $g:I\to J$ sembarang fungsi, maka
+$\sum_{j\in J}\sum_{i\in g^{-1}[\{j\}]}a_i$ terdefinisi dan sama dengan
+$\sum_{i\in I}a_i$.
+%226A
+
+\sqheader 226Xb Suatu {\bf fungsi tangga} pada
+interval $[a,b]$ adalah fungsi $F$
+sedemikian sehingga, untuk suatu pilihan $t_0,\ldots,t_n$ dengan $a=t_0\le\ldots\le t_n=b$,
+$F$ konstan pada setiap interval $\ooint{t_{i-1},t_i}$.   Tunjukkan bahwa
+$F:[a,b]\to\Bbb R$ merupakan fungsi saltus jika dan hanya jika untuk setiap $\epsilon>0$ terdapat
+fungsi tangga $G:[a,b]\to\Bbb R$ sedemikian sehingga
+$\Var_{[a,b]}(F-G)\le\epsilon$.
+%226B
+
+\spheader 226Xc Misalkan $F$, $G$ fungsi-fungsi bernilai real yang bervariasi
+terbatas dan didefinisikan pada interval $[a,b]\subseteq\Bbb R$.   Tunjukkan bahwa, dalam
+bahasa 226C,
+
+\Centerline{$(F+G)_p=F_p+G_p$,\quad $(F+G)_c=F_c+G_c$,}
+
+\Centerline{$(F+G)_{cs}=F_{cs}+G_{cs}$,
+\quad$(F+G)_{ac}=F_{ac}+G_{ac}$.}
+%226C
+
+\sqheader 226Xd Misalkan $F$ suatu fungsi bernilai real yang bervariasi
+terbatas pada interval $[a,b]\subseteq\Bbb R$.   Tunjukkan bahwa, dalam
+bahasa 226C,
+
+\Centerline{$\Var_{[a,b]}(F)
+=\Var_{[a,b]}(F_p)+\Var_{[a,b]}(F_c)
+=\Var_{[a,b]}(F_p)+\Var_{[a,b]}(F_{cs})+\Var_{[a,b]}(F_{ac})$.}
+%226C
+
+\spheader 226Xe Misalkan $F$ suatu fungsi bernilai real yang bervariasi
+terbatas pada interval $[a,b]\subseteq\Bbb R$.   Tunjukkan bahwa $F$
+kontinu mutlak jika dan hanya jika $\Var_{[a,b]}(F)=\int_a^b|F'|$.
+%226Xd
+
+\spheader 226Xf Tinjau fungsi $g$ dari 134I/226Cc.   Tunjukkan
+bahwa $g^{-1}:[0,1]\to[0,1]$ terdiferensialkan hampir di mana-mana dalam
+$[0,1]$, dan tentukan $\mu\{x:(g^{-1})'(x)\le a\}$ untuk setiap $a\in\Bbb R$.
+%226C
+
+\leader{226Y}{Latihan lanjutan (a)}
+%\spheader 226Ya
+Tunjukkan bahwa suatu himpunan $I$ terhitung jika dan hanya jika terdapat suatu keluarga
+$\familyiI{a_i}$ dari bilangan-bilangan real tak nol yang dapat dijumlahkan.
+%226A
+
+\spheader 226Yb
+Jelaskan modifikasi yang mungkin sesuai dalam deskripsi
+dekomposisi Lebesgue dari suatu fungsi bervariasi terbatas
+jika kita ingin meninjau fungsi pada interval terbuka atau
+setengah terbuka, termasuk interval tak terbatas.
+%226C
+
+\spheader 226Yc Andaikan $F:[a,b]\to\Bbb R$ suatu fungsi bervariasi
+terbatas, dan tetapkan $h(y)=\#(F^{-1}[\{y\}])$ untuk $y\in\Bbb R$.   Tunjukkan
+bahwa $\int h=\Var_{[a,b]}(F_c)$, dengan $F_c$ `bagian kontinu'
+dari $F$ sebagaimana didefinisikan dalam 226Ca/226Cd.
+%226C
+
+\spheader 226Yd Andaikan $a<b$ dalam $\Bbb R$, dan
+$F:[a,b]\to\Bbb R$ suatu fungsi bervariasi terbatas;  misalkan $F_p$ bagian saltusnya.   Tunjukkan bahwa
+$|F(b)-F(a)|\le\mu F[\,[a,b]\,]+\Var_{[a,b]}F_p$, dengan $\mu$ ukuran Lebesgue pada $\Bbb R$.
+%226C
+}%end of exercises
+
+
+\endnotes{
+\Notesheader{226} Dalam 232I dan 232Yb di bawah ini saya akan meninjau kembali gagasan-gagasan ini,
+dengan mengaitkannya dengan suatu dekomposisi ukuran Lebesgue--Stieltjes
+yang bersesuaian dengan suatu fungsi real tak-menurun, dan selanjutnya dengan ukuran-ukuran yang lebih
+umum.   Seluruh pembahasan ini bersifat sampingan terhadap pokok perhatian
+volume ini, tetapi menurut saya pembahasan tersebut mencerahkan, dan tentu saja merupakan bagian dari
+pengetahuan dasar yang dianggap dimiliki oleh siapa pun yang bekerja dalam analisis real.
+}%end of notes
+
+\frnewpage

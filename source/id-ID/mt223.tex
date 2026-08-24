@@ -1,0 +1,427 @@
+\frfilename{mt223.tex}
+\versiondate{9.9.04}
+\copyrightdate{1995}
+
+\def\chaptername{Teorema Dasar Kalkulus}
+\def\sectionname{Teorema-teorema kerapatan Lebesgue}
+\def\undpsi{\underline{\psi}}
+
+\newsection{223}
+
+Sekarang saya beralih ke sekelompok hasil yang dapat dipandang sebagai
+korolari dari Teorema 222E, tetapi juga berkembang pesat sebagai hasil-hasil tersendiri,
+termasuk kemungkinan generalisasi penting yang akan dibahas dalam Bab 26.
+Gagasannya ialah bahwa setiap fungsi terukur $f$ pada $\Bbb R$ bersifat
+`kontinu' hampir di mana-mana dalam berbagai pengertian yang sangat lemah;
+untuk hampir setiap $x$, nilai $f(x)$ ditentukan oleh perilaku $f$ di dekat
+$x$, dalam arti bahwa $f(y)\bumpeq f(x)$ untuk `sebagian besar' $y$ di dekat
+$x$. Mungkin perlu saya katakan bahwa, walaupun saya menyarankan bagian ini
+sebagai persiapan untuk Bab 26 dan juga mengandalkannya dalam Bab 28, saya
+tidak akan merujuknya lagi dalam bab ini. Karena itu, pembaca yang ingin
+segera mencirikan integral tak tentu dapat langsung menuju \S224.
+
+\leader{223A}{Teorema Kerapatan Lebesgue: bentuk integral} Misalkan $I$
+suatu interval dalam $\Bbb R$, dan $f$ suatu fungsi bernilai real yang
+terintegralkan pada $I$. Maka
+
+$$\eqalign{f(x)
+&=\lim_{h\downarrow 0}\Bover1{h}\int_{x}^{x+h}f
+=\lim_{h\downarrow 0}\Bover1h\int_{x-h}^xf
+=\lim_{h\downarrow 0}\Bover1{2h}\int_{x-h}^{x+h}f\cr}$$
+
+\noindent untuk hampir setiap $x\in I$.
+
+
+\proof{ Tetapkan $F(x)=\int_{I\cap\ooint{-\infty,x}}f$. Dari 222G kita
+mengetahui bahwa
+
+$$\eqalign{f(x)=F'(x)
+&=\lim_{h\downarrow 0}\Bover1{h}(F(x+h)-F(x))
+   =\lim_{h\downarrow 0}\Bover1{h}\int_{x}^{x+h}f\cr
+&=\lim_{h\downarrow 0}\Bover1h(F(x)-F(x-h))
+   =\lim_{h\downarrow 0}\Bover1h\int_{x-h}^xf\cr
+&=\lim_{h\downarrow 0}\Bover1{2h}(F(x+h)-F(x-h))
+   =\lim_{h\downarrow 0}\Bover1{2h}\int_{x-h}^{x+h}f\cr}$$
+
+\noindent untuk hampir setiap $x\in I$.
+}%end of proof of 223A
+
+\leader{223B}{Korolari} Misalkan $E\subseteq\Bbb R$ suatu himpunan terukur.
+Maka
+
+\Centerline{$\lim_{h\downarrow 0}\Bover1{2h}\mu(E\cap[x-h,x+h])=1$
+untuk hampir setiap $x\in E$,}
+
+\Centerline{$\lim_{h\downarrow 0}\Bover1{2h}\mu(E\cap[x-h,x+h])=0$
+untuk hampir setiap $x\in \Bbb R\setminus E$.}
+
+
+\proof{ Ambil $n\in \Bbb N$. Dengan menerapkan 223A pada
+$f=\chi(E\cap[-n,n])$, kita melihat bahwa
+
+\Centerline{$\lim_{h\downarrow 0}\Bover1{2h}\int_{x-h}^{x+h}f
+=\lim_{h\downarrow 0}\Bover1{2h}\mu(E\cap[x-h,x+h])$}
+
+\noindent kapan pun $x\in\ooint{-n,n}$ dan salah satu limit tersebut ada,
+sehingga
+
+\Centerline{$\lim_{h\downarrow 0}\Bover1{2h}\mu(E\cap[x-h,x+h])=1$
+untuk hampir setiap $x\in E\cap[-n,n]$,}
+
+\Centerline{$\lim_{h\downarrow 0}\Bover1{2h}\mu(E\cap[x-h,x+h])=0$
+untuk hampir setiap $x\in [-n,n]\setminus E$.}
+
+\noindent Karena $n$ sebarang, hasilnya terbukti.
+}%end of proof of 223B
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Untuk suatu himpunan terukur $E\subseteq\Bbb R$,
+suatu titik $x$ sedemikian sehingga
+$\lim_{h\downarrow 0}\Bover1{2h}\mu(E\cap[x-h,x+h])=1$ kadang-kadang
+disebut suatu {\bf titik kerapatan} dari $E$.
+}%end of comment
+
+\leader{223C}{Korolari} Misalkan $f$ suatu fungsi bernilai real terukur yang
+didefinisikan hampir di mana-mana dalam $\Bbb R$. Maka, untuk hampir setiap
+$x\in\Bbb R$,
+
+\Centerline{$\lim_{h\downarrow 0}\Bover1{2h}\mu\{y:y\in\dom f,\,|y-x|\le
+h,\,|f(y)-f(x)|\le\epsilon\}=1$,}
+
+\Centerline{$\lim_{h\downarrow 0}\Bover1{2h}\mu\{y:y\in\dom f,\,|y-x|\le
+h,\,|f(y)-f(x)|\ge\epsilon\}=0$}
+
+\noindent untuk setiap $\epsilon>0$.
+
+\proof{ Untuk $q$, $q'\in\Bbb Q$, tetapkan
+
+\Centerline{$D_{qq'}=\{x:x\in\dom f,\,q\le f(x)<q'\}$,}
+
+\noindent sehingga $D_{qq'}$ terukur, dan tetapkan
+
+\Centerline{$C_{qq'}=\{x:x\in D_{qq'},\,\lim_{h\downarrow 0}
+\Bover1{2h}\mu(D_{qq'}\cap [x-h,x+h])=1\}$,}
+
+
+\noindent sehingga $D_{qq'}\setminus C_{qq'}$ terabaikan, menurut 223B;
+sekarang tetapkan
+
+\Centerline{$C=\dom f\setminus\bigcup_{q,q'\in\Bbb Q}(D_{qq'}\setminus
+C_{qq'})$,}
+
+\noindent sehingga $C$ koterabaikan. Jika $x\in C$ dan $\epsilon>0$, maka
+terdapat $q$, $q'\in \Bbb Q$ sedemikian sehingga
+$f(x)-\epsilon\le q\le f(x)<q'\le f(x)+\epsilon$. Jadi $x$ termasuk dalam
+$D_{qq'}$ dan karena itu dalam $C_{qq'}$, dan sekarang
+
+$$\eqalign{\liminf_{h\downarrow 0}\Bover1{2h}
+&\mu\{y:y\in \dom f\cap [x-h,x+h],\,|f(y)-f(x)|\le\epsilon\}\cr
+&\ge\liminf_{h\downarrow 0}
+\Bover1{2h}\mu(D_{qq'}\cap [x-h,x+h])
+=1,\cr}$$
+
+\noindent sehingga
+
+\Centerline{$\lim_{h\downarrow 0}
+\Bover1{2h}\mu\{y:y\in \dom f\cap [x-h,x+h],\,|f(y)-f(x)|\le\epsilon\}
+=1$.}
+
+Dengan segera diperoleh bahwa
+
+\Centerline{$\lim_{h\downarrow 0}
+\Bover1{2h}\mu\{y:y\in \dom f\cap [x-h,x+h],\,|f(y)-f(x)|>\epsilon\}
+=0$}
+
+\noindent untuk hampir setiap $x$; tetapi karena $\epsilon$ sebarang, hal ini
+juga benar untuk $\bover12\epsilon$, sehingga sebenarnya
+
+\Centerline{$\lim_{h\downarrow 0}
+\Bover1{2h}\mu\{y:y\in \dom f\cap [x-h,x+h],\,|f(y)-f(x)|\ge\epsilon\}
+=0$}
+
+\noindent untuk hampir setiap $x$.
+}%end of proof of 223C
+
+\leader{223D}{Teorema} Misalkan $I$ suatu interval dalam $\Bbb R$, dan $f$
+suatu fungsi bernilai real yang terintegralkan pada $I$. Maka
+
+\Centerline{$\lim_{h\downarrow 0}\Bover1{2h}
+\int_{x-h}^{x+h}|f(y)-f(x)|dy=0$}
+
+\noindent untuk hampir setiap $x\in I$.
+
+\proof{{\bf (a)} Mula-mula andaikan bahwa $I$ suatu interval terbuka
+terbatas $\ooint{a,b}$. Untuk setiap $q\in\Bbb Q$, tetapkan
+$g_q(x)=|f(x)-q|$ untuk $x\in I\cap\dom f$; maka $g_q$ terintegralkan pada
+$I$, dan
+
+\Centerline{$\lim_{h\downarrow 0}\Bover1{2h}
+\int_{x-h}^{x+h}g_q=g_q(x)$}
+
+\noindent untuk hampir setiap $x\in I$, menurut 223A. Dengan menetapkan
+
+\Centerline{$E_q=\{x:x\in I\cap\dom f,\,\lim_{h\downarrow 0}
+\Bover1{2h}\int_{x-h}^{x+h}g_q=g_q(x)\}$,}
+
+\noindent kita memperoleh bahwa $I\setminus E_q$ terabaikan, sehingga
+$I\setminus E$ terabaikan, dengan $E=\bigcap_{q\in\Bbb Q}E_q$. Sekarang
+
+\Centerline{$\lim_{h\downarrow 0}\Bover1{2h}
+\int_{x-h}^{x+h}|f(y)-f(x)|dy=0$}
+
+\noindent untuk setiap $x\in E$. \Prf\ Ambil $x\in E$ dan $\epsilon>0$.
+Maka terdapat $q\in\Bbb Q$ sedemikian sehingga
+$|f(x)-q|\le\epsilon$, sehingga
+
+\Centerline{$|f(y)-f(x)|\le|f(y)-q|+\epsilon=g_q(y)+\epsilon$}
+
+\noindent untuk setiap $y\in I\cap\dom f$, dan
+
+$$\eqalign{\limsup_{h\downarrow 0}\Bover1{2h}
+\int_{x-h}^{x+h}|f(y)-f(x)|dy
+&\le\limsup_{h\downarrow 0}\Bover1{2h}
+\int_{x-h}^{x+h}g_q(y)+\epsilon\,dy\cr
+&=\epsilon+g_q(x)
+\le 2\epsilon.\cr}$$
+
+\noindent Karena $\epsilon$ sebarang,
+
+\Centerline{$\lim_{h\downarrow 0}\Bover1{2h}
+\int_{x-h}^{x+h}|f(y)-f(x)|dy=0$,}
+
+\noindent sebagaimana diperlukan.\ \Qed
+
+\medskip
+
+{\bf (b)} Jika $I$ suatu interval terbuka tak terbatas, terapkan (a) pada
+interval-interval $I_n=I\cap\ooint{-n,n}$ untuk melihat bahwa limit tersebut
+nol hampir di mana-mana dalam setiap $I_n$, dan karena itu pada $I$. Jika $I$
+suatu interval sebarang, perhatikan bahwa interval itu berbeda dari suatu
+interval terbuka pada paling banyak dua titik. Karena kita hanya mencari sifat
+yang berlaku hampir di mana-mana, titik-titik ini dapat diabaikan.
+}%end of proof of 223D
+
+\medskip
+
+\noindent{\bf Catatan} Himpunan
+
+\Centerline{$\{x:x\in\dom f,\,\lim_{h\downarrow 0}\Bover1{2h}
+\int_{x-h}^{x+h}|f(y)-f(x)|dy=0\}$}
+
+\noindent kadang-kadang disebut {\bf himpunan Lebesgue} dari $f$.
+
+\leader{223E}{Fungsi bernilai kompleks}\cmmnt{ Hasil-hasil di atas telah
+saya nyatakan dalam bahasa fungsi bernilai real, karena itulah wahana yang
+paling alami bagi gagasan-gagasannya. Namun terdapat penerapan yang sangat
+penting dengan fungsi-fungsi bernilai kompleks, jadi saya tuliskan secara
+eksplisit pernyataan-pernyataan yang bersangkutan di sini. Dalam setiap kasus,
+buktinya elementer: cukup menerapkan hasil yang bersesuaian (223A, 223C, atau
+223D) pada bagian real dan bagian imajiner fungsi $f$.}
+
+\header{223Ea}{\bf (a)} Misalkan $I$ suatu interval dalam $\Bbb R$, dan $f$
+suatu fungsi bernilai kompleks yang terintegralkan pada $I$. Maka
+
+$$\eqalign{f(x)
+=\lim_{h\downarrow 0}\Bover1{h}\int_{x}^{x+h}f
+=\lim_{h\downarrow 0}\Bover1h\int_{x-h}^xf
+=\lim_{h\downarrow 0}\Bover1{2h}\int_{x-h}^{x+h}f\cr}$$
+
+\noindent untuk hampir setiap $x\in I$.
+
+\header{223Eb}{\bf (b)} Misalkan $f$ suatu fungsi bernilai kompleks terukur
+yang didefinisikan hampir di mana-mana dalam $\Bbb R$. Maka, untuk hampir
+setiap $x\in\Bbb R$,
+
+\Centerline{$\lim_{h\downarrow 0}\Bover1{2h}\mu\{y:y\in\dom f,\,|y-x|\le
+h,\,|f(y)-f(x)|\ge\epsilon\}=0$}
+
+\noindent untuk setiap $\epsilon>0$.
+
+\header{223Ec}{\bf (c)} Misalkan $I$ suatu interval dalam $\Bbb R$, dan $f$
+suatu fungsi bernilai kompleks yang terintegralkan pada $I$. Maka
+
+\Centerline{$\lim_{h\downarrow 0}\Bover1{2h}
+\int_{x-h}^{x+h}|f(y)-f(x)|dy=0$}
+
+\noindent untuk hampir setiap $x\in I$.
+
+\exercises{
+\leader{223X}{Latihan dasar $\pmb{>}$(a)} Misalkan $E\subseteq[0,1]$ suatu
+himpunan terukur sedemikian sehingga terdapat $\alpha>0$ dengan
+$\mu(E\cap[a,b])\ge\alpha(b-a)$ kapan pun $0\le a\le b\le 1$.
+Tunjukkan bahwa $\mu E=1$.
+%223B
+
+\spheader 223Xb Misalkan $A\subseteq\Bbb R$ sembarang himpunan. Tunjukkan
+bahwa $\lim_{h\downarrow 0}\Bover1{2h}\mu^*(A\cap[x-h,x+h])=1$ untuk
+hampir setiap $x\in A$. \Hint{terapkan 223B pada suatu selubung terukur
+$E$ dari $A$.}
+%223B
+
+\spheader 223Xc Misalkan $E$, $F\subseteq\Bbb R$ himpunan-himpunan terukur,
+dan misalkan $x\in\Bbb R$ merupakan titik kerapatan dari keduanya.
+Tunjukkan bahwa $x$ merupakan titik kerapatan dari $E\cap F$.
+%223B
+
+\spheader 223Xd Misalkan $E\subseteq\Bbb R$ suatu himpunan terukur tak
+terabaikan. Tunjukkan bahwa untuk setiap $n\in\Bbb N$ terdapat
+$\delta>0$ sedemikian sehingga $\bigcap_{i\le n}E+x_i$ tak kosong kapan pun
+$x_0,\ldots,x_n\in\Bbb R$ memenuhi $|x_i-x_j|\le\delta$ untuk semua $i$,
+$j\le n$. \Hint{carilah suatu interval tak-sepele $I$ sedemikian sehingga
+$\mu(E\cap I)>\bover{n}{n+1}\mu I$.}
+%223B
+
+\spheader 223Xe Misalkan $f$ sembarang fungsi bernilai real yang didefinisikan
+hampir di mana-mana dalam $\Bbb R$. Tunjukkan bahwa $\lim_{h\downarrow
+0}\Bover1{2h}\mu^*\{y:y\in\dom f,\,|y-x|\le
+h,\,|f(y)-f(x)|\le\epsilon\}=1$ untuk hampir setiap $x\in\Bbb R$.
+\Hint{gunakan argumen 223C, tetapi dengan 223Xb sebagai pengganti 223B.}
+%223C
+
+\sqheader 223Xf Misalkan $I$ suatu interval dalam $\Bbb R$, dan $f$
+suatu fungsi bernilai real yang terintegralkan pada $I$. Tunjukkan bahwa
+$\lim_{h\downarrow 0}\bover1{h}
+\int_{x}^{x+h}|f(y)-f(x)|dy=0$ untuk hampir setiap $x\in I$.
+%223D
+
+\spheader 223Xg Misalkan $E$, $F\subseteq\Bbb R$ himpunan-himpunan terukur,
+dan andaikan bahwa $F$ terbatas serta berukuran tak nol. Misalkan
+$x\in\Bbb R$ sedemikian sehingga
+$\lim_{h\downarrow 0}\Bover1{2h}\mu(E\cap[x-h,x+h])=1$. Tunjukkan bahwa
+$\lim_{h\downarrow 0}\Bover{\mu(E\cap(x+hF))}{h\,\mu F}=1$.
+({\it Petunjuk:\/} berguna untuk mengetahui bahwa $\mu(hF)=h\mu F$
+(134Ya, 263A). Tunjukkan bahwa jika $F\subseteq[-M,M]$, maka
+
+\Centerline{$\Bover1{2hM}\mu(E\cap[x-hM,x+hM])
+\le 1-\Bover{\mu F}{2M}
+  \bigl(1-\Bover{\mu(E\cap(x+hF))}{h\,\mu F}\bigr)$.)}
+
+\noindent (Bandingkan 223Ya.)
+%223B
+
+\spheader 223Xh Misalkan $f$ suatu fungsi bernilai real yang terintegralkan
+pada $\Bbb R$, dan $E$ himpunan Lebesgue dari $f$. Tunjukkan bahwa
+$\lim_{h\downarrow 0}\bover1{2h}\int_{x-h}^{x+h}|f(t)-c|dt=|f(x)-c|$
+untuk setiap $x\in E$ dan $c\in\Bbb R$.
+%223D
+
+\spheader 223Xi Misalkan $f$ suatu fungsi bernilai real terintegralkan yang
+didefinisikan hampir di mana-mana dalam $\Bbb R$. Misalkan $x\in\dom f$
+sedemikian sehingga
+$\lim_{n\to\infty}\Bover{n}2\int^{x+1/n}_{x-1/n}|f(y)-f(x)|=0$.
+Tunjukkan bahwa $x$ termasuk dalam himpunan Lebesgue dari $f$.
+%223D
+
+\spheader 223Xj Misalkan $f$ suatu fungsi bernilai real terintegralkan yang
+didefinisikan hampir di mana-mana dalam $\Bbb R$, dan $x$ sembarang titik
+dari himpunan Lebesgue dari $f$. Tunjukkan bahwa untuk setiap $\epsilon>0$
+terdapat $\delta>0$ sedemikian sehingga, kapan pun $I$ suatu interval
+tak-sepele dan $x\in I\subseteq[x-\delta,x+\delta]$, berlaku
+$|f(x)-\Bover1{\mu I}\int_If|\le\epsilon$.
+%223D
+
+\leader{223Y}{Latihan lanjutan (a)} Misalkan $E$, $F\subseteq\Bbb R$
+himpunan-himpunan terukur, dan andaikan bahwa $0<\mu F<\infty$. Misalkan
+$x\in\Bbb R$ sedemikian sehingga
+$\lim_{h\downarrow 0}\Bover1{2h}\mu(E\cap[x-h,x+h])=1$. Tunjukkan bahwa
+
+\Centerline{$\lim_{h\downarrow 0}\Bover{\mu(E\cap(x+hF))}{h\,\mu F}=1$.}
+
+\noindent \Hint{terapkan 223Xg pada himpunan-himpunan berbentuk
+$F\cap[-M,M]$.}
+%223Xg 223B
+
+\header{223Yb}{\bf (b)} Misalkan $\frak T$ keluarga himpunan-himpunan
+terukur $G\subseteq\Bbb R$ sedemikian sehingga setiap titik dari $G$ merupakan
+titik kerapatan dari $G$. {(i)} Tunjukkan bahwa $\frak T$ suatu topologi
+pada $\Bbb R$. ({\it Petunjuk\/}: ambil $\Cal G\subseteq\frak T$. Menurut
+215B(iv), terdapat suatu $\Cal G_0\subseteq\Cal G$ yang terhitung sedemikian
+sehingga $\mu(G\setminus\bigcup\Cal G_0)=0$ untuk setiap $G\in\Cal G$.
+Tunjukkan bahwa
+
+\Centerline{$\bigcup\Cal G\subseteq\{x:\limsup_{h\downarrow 0}
+  \Bover1{2h}\mu(\bigcup\Cal G_0\cap[x-h,x+h])>0\}$,}
+
+\noindent sehingga
+$\mu(\bigcup\Cal G\setminus\bigcup\Cal G_0)=0$.) {(ii)} Tunjukkan bahwa
+suatu fungsi $f:\Bbb R\to\Bbb R$ terukur jika dan hanya jika fungsi itu
+$\frak T$-kontinu pada hampir setiap $x\in\Bbb R$. ($\frak T$ adalah
+{\bf topologi kerapatan} pada $\Bbb R$. Lihat 414P dalam Jilid 4.)
+%223B
+
+\spheader 223Yc Tunjukkan bahwa jika $f:[a,b]\to\Bbb R$ terbatas dan
+kontinu terhadap topologi kerapatan pada $\Bbb R$, maka
+$f(x)=\bover{d}{dx}\int_a^xf$ untuk setiap $x\in\ooint{a,b}$.
+%223Yb 223B
+
+\spheader 223Yd Tunjukkan bahwa suatu fungsi $f:\Bbb R\to\Bbb R$ kontinu
+terhadap topologi kerapatan di $x\in\Bbb R$ jika dan hanya jika
+$\lim_{h\downarrow 0}\bover1{2h}
+  \mu^*\{y:y\in[x-h,x+h],\,|f(y)-f(x)|\ge\epsilon\}=0$ untuk
+setiap $\epsilon>0$.
+%223Yb 223B
+
+\spheader 223Ye Suatu himpunan $A\subseteq\Bbb R$ disebut {\bf berpori}
+di suatu titik $x\in\Bbb R$ jika
+$\limsup_{y\to x}\Bover{\rho(y,A)}{|y-x|}>0$, dengan
+$\rho(y,A)=\inf_{a\in A}|y-a|$. (Ambil $\rho(y,\emptyset)=\infty$.)
+Tunjukkan bahwa jika $A$ berpori di setiap $x\in A$, maka $A$ terabaikan.
+%223B
+
+\spheader 223Yf Untuk suatu himpunan terukur $E\subseteq\Bbb R$, tuliskan
+$\intstar E$ untuk himpunan titik-titik kerapatannya. Tunjukkan bahwa jika
+$E$, $F\subseteq\Bbb R$ terukur, maka (i)
+$\intstar(E\cap F)=\intstar E\cap\intstar F$
+(ii) $\intstar E\subseteq\intstar F$ jika dan hanya jika
+$\mu(E\setminus F)=0$ (iii) $\mu(E\symmdiff\intstar E)=0$ (iv)
+$\intstar(\intstar E)=\intstar E$ (v) untuk setiap himpunan kompak
+$K\subseteq\intstar E$, terdapat suatu himpunan kompak
+$L\subseteq K\cup E$ sedemikian sehingga $K\subseteq\intstar L$.
+%223B
+
+\spheader 223Yg Misalkan $f$ suatu fungsi bernilai real terintegralkan yang
+didefinisikan hampir di mana-mana dalam $\Bbb R$, dan $x$ sembarang titik
+dari himpunan Lebesgue dari $f$. Tunjukkan bahwa untuk setiap $\epsilon>0$
+terdapat $\delta>0$ sedemikian sehingga
+$|f(x)\int g-\int f\times g|\le\epsilon\int g$ kapan pun
+$g:\Bbb R\to\coint{0,\infty}$ sedemikian sehingga $g$ tak-menurun pada
+$\ocint{-\infty,x}$, tak-menaik pada $\coint{x,\infty}$, dan nol di luar
+$[x-\delta,x+\delta]$. \Hint{nyatakan $g$ sebagai limit hampir di mana-mana
+dari fungsi-fungsi berbentuk
+$\Bover{g(x)}{n+1}\sum_{i=0}^n\chi\ooint{a_i,b_i}$, dengan
+$x-\delta\le a_0\le\ldots\le a_n\le x\le b_n\le\ldots\le b_0
+\le x+\delta$.}
+%223D
+
+\spheader 223Yh Untuk setiap fungsi bernilai real terintegralkan $f$ yang
+didefinisikan hampir di mana-mana dalam $\Bbb R$, misalkan $E_f$ adalah himpunan
+Lebesgue dari $f$. Tunjukkan bahwa $E_f\cap E_g\subseteq E_{f+g}$ dan
+$E_f\subseteq E_{|f|}$ untuk semua fungsi terintegralkan $f$, $g$.
+%223D
+
+\spheader 223Yi\dvAnew{2014}
+Misalkan $E\subseteq\Bbb R$ suatu himpunan terukur tak terabaikan.
+Tunjukkan bahwa $0$ termasuk dalam interior
+$E-E=\{x-y:x$, $y\in E\}$.
+%223B
+}%end of exercises
+
+\endnotes{
+\Notesheader{223} Hasil-hasil dalam bagian ini dapat dipandang sebagai
+pernyataan bahwa suatu fungsi terukur, dalam arti tertentu, `hampir kontinu';
+bahkan 223Yb merupakan suatu upaya untuk memperjelas gagasan ini. Untuk fungsi
+terintegralkan, kita mempunyai hasil-hasil yang lebih kuat, dan yang tampaknya
+menjangkau paling jauh ialah 223D/223Ec.
+
+Terdapat versi berdimensi $r$ dari semua teorema ini, dengan bola yang berpusat
+di $x$ menggantikan interval $[x-h,x+h]$; saya memberikannya dalam 261C-261E.
+%261C 261D 261E
+Suatu gagasan baru diperlukan untuk versi berdimensi $r$ Teorema Kerapatan
+Lebesgue (261C), tetapi selebihnya dapat digeneralisasi secara langsung. Suatu
+perluasan yang kurang alami dan kurang penting, juga dalam \S261, melibatkan
+fungsi-fungsi yang didefinisikan pada himpunan tak-terukur (bandingkan
+223Xb-223Xe).
+}%end of comment
+
+\discrpage
