@@ -4,6 +4,17 @@ Updated: 2026-08-24 (Europe/Berlin)
 
 ## State summary
 
+- Complete Volume I is translated, backend-indexed, independently checked, and
+  admitted at 102/672 official pages. The complete 27-unit source, 731-unit
+  index projection, 2,367-record backend, 198 exercises, and 55 source hints
+  validate. `source/id-ID/mti.tex` is 36,790 bytes / SHA-256
+  `3ef6caa5a23f5d279bec80cae8742385a19c242b54fc3b93f6b4944359724ad0`;
+  `backend/index/mti-volume1-translations-id.jsonl` is 1,155,992 bytes /
+  `0dab35df4b544ef93df2d06a0ea4d0e6e5abbe4182400cc00df2ab0f26856f3a`.
+  The final 110-page A4 PDF, all-page raster audit, 28-route offline HTML,
+  desktop/mobile replay, and deterministic package all pass. Exact admission
+  evidence is `00_control/CP0012_VOLUME1_ADMISSION.md`; publication as
+  `v0.12.0-v1` / `0.12.0-v1` is the current operation.
 - Corpus selection is resolved: complete D. H. Fremlin, *Measure Theory*,
   Volumes 1–2, 672 official pages.
 - The earlier missing-selection diagnosis remains preserved in
@@ -18,11 +29,11 @@ Updated: 2026-08-24 (Europe/Berlin)
   resource records now exist as JSONL with deterministic CSV projections.
 - The final corrected root handoff and the user's canonical instructions are
   retained byte-for-byte under `00_control/` and bound by backend resources.
-- Current admitted boundary: complete Chapter 13 through S136. The missing
-  chapter introduction plus `mt133.tex`–`mt136.tex` are translated, indexed,
-  reproducibly built, and admitted with the prior S111–S132 reader preserved.
-  The cumulative official union is pages 10–90, 81 of 672 pages. Exact
-  admission evidence is `00_control/CP0011_MT136_ADMISSION.md`.
+- Current admitted boundary: complete Volume I, 102 of 672 official pages.
+  The next owner-production block is complete Volume II Chapter 22
+  (`mt22.tex`, `mt221.tex`–`mt226.tex`). Helper packet `HP-D10-001` has the
+  disjoint Chapter 21 reservation and cannot enter the canonical lane except
+  through a schema-clean packet plus owner-side three-way stable-ID QA.
 - S136 is public as GitHub prerelease `v0.11.0-s136` and Zenodo DOI
   `10.5281/zenodo.22071390` in the unchanged concept DOI
   `10.5281/zenodo.22059798`. Both destinations anonymously returned the exact

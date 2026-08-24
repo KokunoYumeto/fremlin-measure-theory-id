@@ -1,0 +1,1261 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Lebih lanjut tentang ukuran Lebesgue — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        bigcupop: '\\bigcup',
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        roibr: '\\mathopen{{[}}',
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1]
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 1 · Bagian 134</p>
+  <h1>Lebih lanjut tentang ukuran Lebesgue</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi Volume 1</a></nav>
+<main id="isi">
+<p>Sifat-sifat khusus ukuran Lebesgue akan mengisi bagian yang cukup besar dari
+risalah ini.
+Dalam bagian ini saya menyajikan aneka hasil dasar yang relatif mudah. Dalam
+<a class="xref" href="#134A">134A</a>-<a class="xref" href="#134F">134F</a>, 
+<span class="math inline" data-source-tex="r">\(r\)</span> akan merupakan suatu bilangan bulat tetap yang lebih besar daripada atau
+sama dengan <span class="math inline" data-source-tex="1">\(1\)</span>, <span class="math inline" data-source-tex="\mu">\(\mu\)</span> akan merupakan ukuran Lebesgue pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dan
+<span class="math inline" data-source-tex="\mu^*">\(\mu^*\)</span> akan merupakan ukuran luar Lebesgue (lihat <a class="xref" href="../132/index.html#132C">132C</a>); ketika saya
+mengatakan bahwa suatu himpunan atau fungsi ‘terukur’, hendaknya dipahami
+bahwa (kecuali dinyatakan lain) artinya ‘terukur terhadap aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>
+himpunan-himpunan terukur Lebesgue’, sedangkan ‘terabaikan’ berarti
+‘terabaikan untuk ukuran Lebesgue’. Sebagian besar hasil akan dinyatakan
+dalam istilah yang disesuaikan dengan kasus multidimensi; tetapi jika minat
+utama Anda adalah garis bilangan real, Anda tidak akan kehilangan satu pun
+gagasan apabila membaca seluruh bagian ini seolah-olah <span class="math inline" data-source-tex="r=1">\(r=1\)</span>.</p>
+<section class="source-unit" id="134A" data-source-id="134A"><h2><span class="source-label">134A</span> Proposisi </h2>
+<p>Baik ukuran luar Lebesgue maupun ukuran Lebesgue
+invarian terhadap translasi; yaitu, dengan menetapkan
+<span class="math inline" data-source-tex="A+x=\{a+x:a\in A\}">\(A+x=\{a+x:a\in A\}\)</span> untuk <span class="math inline" data-source-tex="A\subseteq\BbbR^r">\(A\subseteq\BbbR^r\)</span>, <span class="math inline" data-source-tex="x\in\BbbR^r">\(x\in\BbbR^r\)</span>, kita
+memiliki</p>
+<p>(a) <span class="math inline" data-source-tex="\mu^*(A+x)=\mu^* A">\(\mu^*(A+x)=\mu^* A\)</span> untuk setiap <span class="math inline" data-source-tex="A\subseteq\BbbR^r">\(A\subseteq\BbbR^r\)</span>,
+<span class="math inline" data-source-tex="x\in\BbbR^r">\(x\in\BbbR^r\)</span>;</p>
+<p>(b) jika <span class="math inline" data-source-tex="E\subseteq\BbbR^r">\(E\subseteq\BbbR^r\)</span> terukur dan <span class="math inline" data-source-tex="x\in\BbbR^r">\(x\in\BbbR^r\)</span>, maka <span class="math inline" data-source-tex="E+x">\(E+x\)</span>
+terukur, dengan <span class="math inline" data-source-tex="\mu(E+x)=\mu E">\(\mu(E+x)=\mu E\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Intinya adalah bahwa jika <span class="math inline" data-source-tex="I\subseteq\BbbR^r">\(I\subseteq\BbbR^r\)</span> merupakan interval
+setengah terbuka, sebagaimana didefinisikan dalam <a class="xref" href="../114/index.html#114Aa">114Aa</a>/<a class="xref" href="../115/index.html#115Ab">115Ab</a>, maka <span class="math inline" data-source-tex="I+x">\(I+x\)</span>
+juga demikian, dan <span class="math inline" data-source-tex="\lambda(I+x)=\lambda I">\(\lambda(I+x)=\lambda I\)</span> untuk setiap <span class="math inline" data-source-tex="x\in\BbbR^r">\(x\in\BbbR^r\)</span>,
+dengan <span class="math inline" data-source-tex="\lambda">\(\lambda\)</span> didefinisikan seperti dalam <a class="xref" href="../114/index.html#114Ab">114Ab</a>/<a class="xref" href="../115/index.html#115Ac">115Ac</a>; hal ini langsung
+mengikuti definisi, karena
+<span class="math inline" data-source-tex="\coint{a,b}+x=\coint{a+x,b+x}">\(\coint{a,b}+x=\coint{a+x,b+x}\)</span>.</p>
+<p> </p>
+<p><strong>(a)</strong> Jika <span class="math inline" data-source-tex="A\subseteq\BbbR^r">\(A\subseteq\BbbR^r\)</span>, <span class="math inline" data-source-tex="x\in\BbbR^r">\(x\in\BbbR^r\)</span>, dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>,
+kita dapat menemukan barisan <span class="math inline" data-source-tex="\langle I_j\rangle_{j\in\Bbb N}">\(\langle I_j\rangle_{j\in\Bbb N}\)</span> interval
+setengah terbuka sedemikian sehingga <span class="math inline" data-source-tex="A\subseteq\bigcup_{j\in\Bbb N}I_j">\(A\subseteq\bigcup_{j\in\Bbb N}I_j\)</span>
+dan <span class="math inline" data-source-tex="\sum_{j=0}^{\infty}\lambda I_j\le\mu^* A+\epsilon">\(\sum_{j=0}^{\infty}\lambda I_j\le\mu^* A+\epsilon\)</span>. Sekarang
+<span class="math inline" data-source-tex="A+x\subseteq\bigcup_{j\in\Bbb N}(I_j+x)">\(A+x\subseteq\bigcup_{j\in\Bbb N}(I_j+x)\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu^*(A+x)\le\sum_{j=0}^{\infty}\lambda
+(I_j+x)=\sum_{j=0}^{\infty}\lambda I_j\le\mu^* A+\epsilon">\(\mu^*(A+x)\le\sum_{j=0}^{\infty}\lambda
+(I_j+x)=\sum_{j=0}^{\infty}\lambda I_j\le\mu^* A+\epsilon\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sembarang,
+<span class="math inline" data-source-tex="\mu^* (A+x)\le\mu^* A">\(\mu^* (A+x)\le\mu^* A\)</span>. Demikian pula,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu^*A=\mu^*((A+x)+(-x))\le\mu^*(A+x)">\(\mu^*A=\mu^*((A+x)+(-x))\le\mu^*(A+x)\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="\mu^*(A+x)=\mu^* A">\(\mu^*(A+x)=\mu^* A\)</span>, seperti yang dinyatakan.</p>
+
+<p><strong>(b)</strong> Sekarang andaikan <span class="math inline" data-source-tex="E\subseteq\BbbR^r">\(E\subseteq\BbbR^r\)</span> terukur,
+<span class="math inline" data-source-tex="x\in\BbbR^r">\(x\in\BbbR^r\)</span>, dan <span class="math inline" data-source-tex="A\subseteq\BbbR^r">\(A\subseteq\BbbR^r\)</span>. Maka, dengan menggunakan (a)
+berulang kali,</p>
+<p><span class="math display" data-source-tex="\eqalign{\mu^*(A\cap(E+x))+\mu^*(A\setminus(E+x))
+&amp;=\mu^*(((A-x)\cap E)+x)+\mu^*(((A-x)\setminus E)+x)\cr
+&amp;=\mu^*((A-x)\cap E)+\mu^*((A-x)\setminus E)\cr
+&amp;=\mu^*(A-x)
+=\mu^* A,\cr}">\[\begin{aligned}\mu^*(A\cap(E+x))+\mu^*(A\setminus(E+x))
+&amp;=\mu^*(((A-x)\cap E)+x)+\mu^*(((A-x)\setminus E)+x)\\
+&amp;=\mu^*((A-x)\cap E)+\mu^*((A-x)\setminus E)\\
+&amp;=\mu^*(A-x)
+=\mu^* A,\\\end{aligned}\]</span></p>
+<p>dengan menuliskan <span class="math inline" data-source-tex="A-x">\(A-x\)</span> untuk
+<span class="math inline" data-source-tex="A+(-x)=\{a-x:a\in A\}">\(A+(-x)=\{a-x:a\in A\}\)</span>. Karena <span class="math inline" data-source-tex="A">\(A\)</span> sembarang, <span class="math inline" data-source-tex="E+x">\(E+x\)</span> terukur. Sekarang</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu(E+x)=\mu^*(E+x)=\mu^* E=\mu
+E">\(\mu(E+x)=\mu^*(E+x)=\mu^* E=\mu
+E\)</span>.</div></aside>
+</section>
+<section class="source-unit" id="134B" data-source-id="134B"><h2><span class="source-label">134B</span> Teorema </h2>
+<p>Tidak setiap subhimpunan dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> terukur
+Lebesgue.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Tetapkan <span class="math inline" data-source-tex="\tbf{0}=(0,\ldots,0)">\(\tbf{0}=(0,\ldots,0)\)</span>,
+<span class="math inline" data-source-tex="\tbf{1}=(1,\ldots,1)\in\BbbR^r">\(\tbf{1}=(1,\ldots,1)\in\BbbR^r\)</span>. Pada</p>
+<div class="centerline"><span class="math inline" data-source-tex="\coint{\tbf{0},\tbf{1}}
+=\{(\xi_1,\ldots,\xi_r):\xi_i\in\coint{0,1}">\(\coint{\tbf{0},\tbf{1}}
+=\{(\xi_1,\ldots,\xi_r):\xi_i\in\coint{0,1}\)</span> untuk setiap <span class="math inline" data-source-tex="i\le r\}">\(i\le r\}\)</span>,</div>
+<p>tinjau relasi <span class="math inline" data-source-tex="\sim">\(\sim\)</span>, yang didefinisikan dengan mengatakan bahwa
+<span class="math inline" data-source-tex="x\sim y">\(x\sim y\)</span> jika dan hanya jika <span class="math inline" data-source-tex="y-x\in\BbbQ^r">\(y-x\in\BbbQ^r\)</span>. Mudah dilihat bahwa ini
+merupakan relasi ekuivalensi, sehingga membagi
+<span class="math inline" data-source-tex="\coint{\tbf{0},\tbf{1}}">\(\coint{\tbf{0},\tbf{1}}\)</span> menjadi kelas-kelas ekuivalensi. Pilih satu
+titik dari setiap kelas ekuivalensi ini, dan misalkan <span class="math inline" data-source-tex="A">\(A\)</span> adalah himpunan
+titik-titik yang diperoleh dengan cara tersebut. Maka
+<span class="math inline" data-source-tex="\mu^* A\le\mu^*\coint{\tbf{0},\tbf{1}}=1">\(\mu^* A\le\mu^*\coint{\tbf{0},\tbf{1}}=1\)</span>.</p>
+<p>Tinjau <span class="math inline" data-source-tex="A+\BbbQ^r=\{a+q:a\in A,\,q\in\BbbQ^r\}
+=\bigcup_{q\in\BbbQ^r}A+q">\(A+\BbbQ^r=\{a+q:a\in A,\,q\in\BbbQ^r\}
+=\bigcup_{q\in\BbbQ^r}A+q\)</span>. Himpunan ini sama dengan <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>.
+Bukti. Jika <span class="math inline" data-source-tex="x\in\BbbR^r">\(x\in\BbbR^r\)</span>, terdapat <span class="math inline" data-source-tex="e\in\BbbZ^r">\(e\in\BbbZ^r\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="x-e\in\coint{\tbf{0},\tbf{1}}">\(x-e\in\coint{\tbf{0},\tbf{1}}\)</span>; terdapat <span class="math inline" data-source-tex="a\in A">\(a\in A\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="a\sim x-e">\(a\sim x-e\)</span>, yaitu <span class="math inline" data-source-tex="x-e-a\in\BbbQ^r">\(x-e-a\in\BbbQ^r\)</span>; sekarang
+<span class="math inline" data-source-tex="x=a+(e+x-e-a)\in A+\BbbQ^r">\(x=a+(e+x-e-a)\in A+\BbbQ^r\)</span>. ∎ Selanjutnya, <span class="math inline" data-source-tex="\BbbQ^r">\(\BbbQ^r\)</span>
+terhitung (<a class="xref" href="../111/index.html#111F">111F</a>(b-iv)), sehingga kita memiliki</p>
+<div class="centerline"><span class="math inline" data-source-tex="\infty=\mu \BbbR^r\le\sum_{q\in\BbbQ^r}\mu^*(A+q)">\(\infty=\mu \BbbR^r\le\sum_{q\in\BbbQ^r}\mu^*(A+q)\)</span>,</div>
+<p>dan pasti terdapat suatu <span class="math inline" data-source-tex="q\in\BbbQ^r">\(q\in\BbbQ^r\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu^*(A+q)&gt;0">\(\mu^*(A+q)&gt;0\)</span>; tetapi karena <span class="math inline" data-source-tex="\mu^*">\(\mu^*\)</span> invarian terhadap translasi (<a class="xref" href="#134A">134A</a>),
+<span class="math inline" data-source-tex="\mu^* A&gt;0">\(\mu^* A&gt;0\)</span>.</p>
+<p>Ambil <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> sedemikian sehingga <span class="math inline" data-source-tex="n&gt;2^r/\mu^* A">\(n&gt;2^r/\mu^* A\)</span>, dan ambil
+<span class="math inline" data-source-tex="q_1,\ldots,q_n\in\coint{\tbf{0},\tbf{1}}\cap\BbbQ^r">\(q_1,\ldots,q_n\in\coint{\tbf{0},\tbf{1}}\cap\BbbQ^r\)</span> yang berbeda-beda.
+Jika <span class="math inline" data-source-tex="a">\(a\)</span>, <span class="math inline" data-source-tex="b\in A">\(b\in A\)</span> dan <span class="math inline" data-source-tex="1\le i&lt;j\le n">\(1\le i&lt;j\le n\)</span>, maka
+<span class="math inline" data-source-tex="a+q_i\ne b+q_j">\(a+q_i\ne b+q_j\)</span>; sebab jika <span class="math inline" data-source-tex="a=b">\(a=b\)</span>, maka <span class="math inline" data-source-tex="q_i\ne q_j">\(q_i\ne q_j\)</span>, sedangkan jika
+<span class="math inline" data-source-tex="a\ne b">\(a\ne b\)</span>, maka <span class="math inline" data-source-tex="a\not\sim b">\(a\not\sim b\)</span>, sehingga <span class="math inline" data-source-tex="b-a\ne q_i-q_j">\(b-a\ne q_i-q_j\)</span>. Dengan demikian
+<span class="math inline" data-source-tex="A+q_1,\ldots,A+q_n">\(A+q_1,\ldots,A+q_n\)</span> saling lepas. Di sisi lain, semuanya merupakan
+subhimpunan <span class="math inline" data-source-tex="\coint{\tbf{0},\tbf{2}}">\(\coint{\tbf{0},\tbf{2}}\)</span>. Jadi kita memiliki</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{i=1}^n\mu^*(A+q_i)
+=n\mu^* A&gt;2^r=\mu\coint{\tbf{0},\tbf{2}}\ge\mu^*(\bigcup_{1\le i\le
+n}(A+q_i))">\(\sum_{i=1}^n\mu^*(A+q_i)
+=n\mu^* A&gt;2^r=\mu\coint{\tbf{0},\tbf{2}}\ge\mu^*(\bigcup_{1\le i\le
+n}(A+q_i))\)</span>.</div>
+<p>Akibatnya, tidak semua <span class="math inline" data-source-tex="A+q_i">\(A+q_i\)</span> dapat terukur; karena ukuran
+Lebesgue invarian terhadap translasi, kita melihat bahwa <span class="math inline" data-source-tex="A">\(A\)</span> sendiri tidak
+terukur. Bagaimanapun, kita telah menemukan suatu himpunan tak-terukur.</p></aside>
+</section>
+<section class="source-unit" id="134C" data-source-id="134C"><h2><span class="source-label">134C</span> Catatan </h2>
+<p><a class="xref" href="#134B">134B</a> dikenal sebagai ‘konstruksi Vitali’.</p>
+<p>Perhatikan bahwa pada awal pembuktian saya meminta Anda <em>memilih</em> satu
+anggota dari setiap kelas ekuivalensi untuk <span class="math inline" data-source-tex="\sim">\(\sim\)</span>. Tentu saja ini merupakan
+penggunaan Aksioma Pilihan. Sejauh ini saya agak jarang menggunakan aksioma
+pilihan. Salah satunya terdapat dalam (a-iv) pada pembuktian <a class="xref" href="../114/index.html#114D">114D</a>/<a class="xref" href="../115/index.html#115D">115D</a>;
+penggunaan yang lebih awal terdapat dalam <a class="xref" href="../112/index.html#112Db">112Db</a>; dan satu lagi dalam <a class="xref" href="../121/index.html#121A">121A</a>.
+Lihat juga 1A1F. Dalam semua kasus tersebut, yang terlibat hanya ‘pilihan
+terhitung’; yaitu, saya perlu memilih secara serentak satu anggota dari setiap
+himpunan dalam suatu barisan yang telah ditentukan. Karena pasti terdapat tak
+terhitung banyak kelas ekuivalensi untuk <span class="math inline" data-source-tex="\sim">\(\sim\)</span>, bentuk pilihan yang diperlukan
+untuk contoh di atas pada hakikatnya lebih kuat daripada yang diperlukan untuk
+hasil-hasil positif sejauh ini. Bahkan, bagian yang sangat besar dari teori
+ukuran dapat dikembangkan tanpa menggunakan kekuatan penuh aksioma pilihan.</p>
+<p>Arti penting hal ini ialah bahwa mungkin terdapat suatu sistem matematika
+konsisten yang mengakui bentuk Aksioma Pilihan yang cukup kuat untuk
+memungkinkan teori ukuran, tetapi tidak cukup kuat untuk membangun suatu
+himpunan tak-terukur Lebesgue. Sistem semacam itu memang telah dikembangkan oleh
+R.M.Solovay (Solovay 70). (Dalam arti formal masih terdapat ruang untuk
+keraguan tersisa mengenai konsistensinya. Menurut saya, ini tidak penting.)
+Dalam Jilid 5 saya akan kembali ke pertanyaan mengenai seperti apa ukuran
+Lebesgue dengan aksioma pilihan yang lemah, atau tanpa aksioma pilihan sama
+sekali. Untuk saat ini, saya harus mengatakan bahwa hampir seluruh teori
+ukuran terus berjalan dalam arah yang setidaknya konsisten dengan aksioma
+pilihan penuh, sehingga himpunan-himpunan tak-terukur senantiasa hadir,
+setidaknya secara potensial; dan itulah sikap normal saya dalam risalah ini.
+Namun saya menyebutkan pokok ini pada tahap awal karena saya percaya bahwa
+sewaktu-waktu pusat perhatian dapat beralih ke sistem-sistem tempat aksioma
+pilihan tidak berlaku; dalam hal itu teori ukuran tanpa himpunan tak-terukur
+dapat menjadi penting bagi banyak matematikawan murni, bahkan matematikawan
+terapan, yang tidak mempunyai alasan untuk setia pada aksioma pilihan selain
+kemudahan dapat mengutip hasil dari buku-buku seperti ini.</p>
+<p>Perlu saya catat bahwa meskipun kita memerlukan bentuk aksioma pilihan yang
+cukup kuat untuk membangun himpunan tak-terukur Lebesgue, suatu himpunan
+non-Borel dapat dibangun dalam teori-teori himpunan yang jauh lebih lemah.
+Salah satu konstruksi yang mungkin diuraikan dalam §423 di Jilid 4.</p>
+<p>Tentu saja terdapat subhimpunan tak-terukur Lebesgue dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> jika dan
+hanya jika terdapat fungsi tak-terukur Lebesgue dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> ke <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>;
+sebab jika setiap himpunan terukur, definisi <a class="xref" href="../121/index.html#121C">121C</a> memperjelas bahwa setiap
+fungsi bernilai real pada sembarang subhimpunan dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> terukur; sedangkan
+jika <span class="math inline" data-source-tex="A\subseteq\Bbb R">\(A\subseteq\Bbb R\)</span> tidak terukur, maka
+<span class="math inline" data-source-tex="\chi A:\Bbb R\to\Bbb R">\(\chi A:\Bbb R\to\Bbb R\)</span> tidak terukur.</p>
+</section>
+<section class="source-unit" id="134D" data-source-id="134D"><h2><span class="source-label">134D</span>  </h2>
+<p>Sebenarnya terdapat hasil-hasil yang jauh lebih kuat
+daripada <a class="xref" href="#134B">134B</a> mengenai keberadaan himpunan tak-terukur (tentu saja, asalkan
+kita memperbolehkan diri menggunakan aksioma pilihan). Di sini saya memberikan
+satu hasil yang dapat dicapai melalui sedikit penyempurnaan metode-metode <a class="xref" href="#134B">134B</a>.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Terdapat himpunan <span class="math inline" data-source-tex="C\subseteq\BbbR^r">\(C\subseteq\BbbR^r\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="F\cap C">\(F\cap C\)</span> tidak terukur untuk setiap himpunan terukur <span class="math inline" data-source-tex="F">\(F\)</span> yang
+ukurannya tak nol; dengan demikian, baik <span class="math inline" data-source-tex="C">\(C\)</span> maupun komplemennya berukuran
+luar penuh dalam <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Mulailah dengan suatu himpunan
+<span class="math inline" data-source-tex="A\subseteq\coint{\tbf{0},\tbf{1}}\subseteq\BbbR^r">\(A\subseteq\coint{\tbf{0},\tbf{1}}\subseteq\BbbR^r\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\langle A+q\rangle_{q\in\BbbQ^r}">\(\langle A+q\rangle_{q\in\BbbQ^r}\)</span> merupakan partisi atas <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>,
+sebagaimana dibangun dalam pembuktian <a class="xref" href="#134B">134B</a>. Seperti dalam <a class="xref" href="#134B">134B</a>, ukuran luar
+<span class="math inline" data-source-tex="\mu^*A">\(\mu^*A\)</span> dari <span class="math inline" data-source-tex="A">\(A\)</span> harus lebih besar daripada <span class="math inline" data-source-tex="0">\(0\)</span>. Argumen di sana sebenarnya
+menunjukkan bahwa <span class="math inline" data-source-tex="\mu F=0">\(\mu F=0\)</span> untuk setiap himpunan terukur <span class="math inline" data-source-tex="F\subseteq A">\(F\subseteq A\)</span>.
+Bukti. Untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span> kita dapat menemukan
+<span class="math inline" data-source-tex="q_1,\ldots,q_n\in\coint{\tbf{0},\tbf{1}}\cap\BbbQ^r">\(q_1,\ldots,q_n\in\coint{\tbf{0},\tbf{1}}\cap\BbbQ^r\)</span> yang berbeda-beda,
+dan sekarang</p>
+<div class="centerline"><span class="math inline" data-source-tex="n\mu F=\mu(\bigcup_{1\le i\le
+n}F+q_i)\le\mu\coint{\tbf{0},\tbf{2}}=2^r">\(n\mu F=\mu(\bigcup_{1\le i\le
+n}F+q_i)\le\mu\coint{\tbf{0},\tbf{2}}=2^r\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="\mu F\le 2^r/n">\(\mu F\le 2^r/n\)</span>; karena <span class="math inline" data-source-tex="n">\(n\)</span> sembarang, <span class="math inline" data-source-tex="\mu F=0">\(\mu F=0\)</span>.
+∎</p>
+<p> </p>
+<p><strong>(b)</strong> Sekarang misalkan <span class="math inline" data-source-tex="E\subseteq\coint{\tbf{0},\tbf{1}}">\(E\subseteq\coint{\tbf{0},\tbf{1}}\)</span>
+merupakan selubung terukur dari <span class="math inline" data-source-tex="A">\(A\)</span> (132Ef). Maka <span class="math inline" data-source-tex="E+q">\(E+q\)</span> merupakan selubung
+terukur dari <span class="math inline" data-source-tex="A+q">\(A+q\)</span> untuk setiap <span class="math inline" data-source-tex="q">\(q\)</span>. Bukti. Saya harap hal ini akan segera
+menjadi ‘konsekuensi jelas dari invariansi ukuran Lebesgue terhadap translasi’.
+Secara terperinci: <span class="math inline" data-source-tex="A+q\subseteq E+q">\(A+q\subseteq E+q\)</span>, <span class="math inline" data-source-tex="E+q">\(E+q\)</span> terukur dan, untuk setiap <span class="math inline" data-source-tex="F">\(F\)</span>
+terukur,</p>
+<p><span class="math display" data-source-tex="\eqalign{\mu(F\cap(E+q))
+&amp;=\mu(((F-q)\cap E)+q)
+=\mu((F-q)\cap E)\cr
+&amp;=\mu^*((F-q)\cap A)
+=\mu^*(((F-q)\cap A)+q)
+=\mu^*(F\cap(A+q)),\cr}">\[\begin{aligned}\mu(F\cap(E+q))
+&amp;=\mu(((F-q)\cap E)+q)
+=\mu((F-q)\cap E)\\
+&amp;=\mu^*((F-q)\cap A)
+=\mu^*(((F-q)\cap A)+q)
+=\mu^*(F\cap(A+q)),\\\end{aligned}\]</span></p>
+<p>dengan menggunakan <a class="xref" href="#134A">134A</a> berulang kali. ∎ Selain itu, <span class="math inline" data-source-tex="E">\(E\)</span>
+merupakan selubung terukur dari <span class="math inline" data-source-tex="A&#x27;=E\setminus A">\(A&#x27;=E\setminus A\)</span>.
+Bukti. Tentu saja <span class="math inline" data-source-tex="E">\(E\)</span> merupakan himpunan terukur yang memuat <span class="math inline" data-source-tex="A&#x27;">\(A&#x27;\)</span>. Jika
+<span class="math inline" data-source-tex="F\subseteq E\setminus A&#x27;">\(F\subseteq E\setminus A&#x27;\)</span> terukur, maka <span class="math inline" data-source-tex="F\subseteq A">\(F\subseteq A\)</span>, sehingga
+<span class="math inline" data-source-tex="\mu F=0">\(\mu F=0\)</span>, menurut (a); sekarang 132Ea memberi tahu kita bahwa <span class="math inline" data-source-tex="E">\(E\)</span> merupakan
+selubung terukur dari <span class="math inline" data-source-tex="A&#x27;">\(A&#x27;\)</span>. ∎ Akibatnya, <span class="math inline" data-source-tex="E+q">\(E+q\)</span> merupakan selubung
+terukur dari <span class="math inline" data-source-tex="A&#x27;+q">\(A&#x27;+q\)</span> untuk setiap <span class="math inline" data-source-tex="q">\(q\)</span>.</p>
+<p> </p>
+<p><strong>(c)</strong> Misalkan <span class="math inline" data-source-tex="\sequencen{q_n}">\(\sequencen{q_n}\)</span> suatu barisan yang menjangkau
+<span class="math inline" data-source-tex="\BbbQ^r">\(\BbbQ^r\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}E+q_n
+\supseteq\bigcup_{n\in\Bbb N}A+q_n=\BbbR^r">\(\bigcup_{n\in\Bbb N}E+q_n
+\supseteq\bigcup_{n\in\Bbb N}A+q_n=\BbbR^r\)</span>.</div>
+<p>Tuliskan <span class="math inline" data-source-tex="E_n">\(E_n\)</span> untuk
+<span class="math inline" data-source-tex="E+q_n\setminus\bigcup_{i&lt;n}E+q_i">\(E+q_n\setminus\bigcup_{i&lt;n}E+q_i\)</span> bagi <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, sehingga
+<span class="math inline" data-source-tex="\sequencen{E_n}">\(\sequencen{E_n}\)</span> saling lepas dan
+<span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}E_n=\BbbR^r">\(\bigcup_{n\in\Bbb N}E_n=\BbbR^r\)</span>.</p>
+<p>Sekarang tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="C=\bigcup_{n\in\Bbb N}E_n\cap(A+q_n)">\(C=\bigcup_{n\in\Bbb N}E_n\cap(A+q_n)\)</span>.</div>
+<p>Inilah himpunan dengan sifat-sifat yang diperlukan.</p>
+<p>Bukti. <strong>(i)</strong> Misalkan <span class="math inline" data-source-tex="F\subseteq\BbbR^r">\(F\subseteq\BbbR^r\)</span> sembarang himpunan terukur
+tak-terabaikan. Maka pasti terdapat suatu <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu(F\cap E_n)&gt;0">\(\mu(F\cap E_n)&gt;0\)</span>. Namun ini berarti bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu^*(F\cap E_n\cap C)\ge\mu^*(F\cap E_n\cap(A+q_n))
+=\mu(F\cap E_n\cap(E+q_n))=\mu(F\cap E_n)">\(\mu^*(F\cap E_n\cap C)\ge\mu^*(F\cap E_n\cap(A+q_n))
+=\mu(F\cap E_n\cap(E+q_n))=\mu(F\cap E_n)\)</span>,</div>
+<p><span class="math display" data-source-tex="\eqalign{\mu^*(F\cap E_n\setminus C)
+&amp;\ge\mu^*(F\cap E_n\cap((E+q_n)\setminus(A+q_n)))\cr
+&amp;=\mu(F\cap E_n\cap(E+q_n))
+=\mu(F\cap E_n).\cr}">\[\begin{aligned}\mu^*(F\cap E_n\setminus C)
+&amp;\ge\mu^*(F\cap E_n\cap((E+q_n)\setminus(A+q_n)))\\
+&amp;=\mu(F\cap E_n\cap(E+q_n))
+=\mu(F\cap E_n).\\\end{aligned}\]</span></p>
+<p>Karena</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu(F\cap E_n)\le\mu(E+q_n)=\mu E\le 1">\(\mu(F\cap E_n)\le\mu(E+q_n)=\mu E\le 1\)</span>,</div>
+<p><span class="math inline" data-source-tex="\mu^*(F\cap E_n\cap C)+\mu^*(F\cap E_n\setminus C)&gt;\mu(F\cap E_n)">\(\mu^*(F\cap E_n\cap C)+\mu^*(F\cap E_n\setminus C)&gt;\mu(F\cap E_n)\)</span>,
+dan <span class="math inline" data-source-tex="F\cap C">\(F\cap C\)</span> tidak mungkin terukur.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Khususnya, tidak ada subhimpunan terukur dari
+<span class="math inline" data-source-tex="\BbbR^r\setminus C">\(\BbbR^r\setminus C\)</span> yang dapat memiliki ukuran tak nol, dan <span class="math inline" data-source-tex="C">\(C\)</span> berukuran
+luar penuh; demikian pula, <span class="math inline" data-source-tex="C">\(C\)</span> tidak memiliki subhimpunan terukur berukuran
+tak nol, dan <span class="math inline" data-source-tex="\BbbR^r\setminus C">\(\BbbR^r\setminus C\)</span> berukuran luar penuh. ∎</p></aside>
+<p> </p>
+<p><strong>Catatan</strong> Sebenarnya, untuk setiap barisan
+<span class="math inline" data-source-tex="\sequencen{D_n}">\(\sequencen{D_n}\)</span> yang terdiri atas subhimpunan-subhimpunan dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>,
+terdapat himpunan
+<span class="math inline" data-source-tex="C\subseteq\BbbR^r">\(C\subseteq\BbbR^r\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu^*(E\cap D_n\cap C)=\mu^*(E\cap D_n\setminus C)
+=\mu^*(E\cap D_n)">\(\mu^*(E\cap D_n\cap C)=\mu^*(E\cap D_n\setminus C)
+=\mu^*(E\cap D_n)\)</span></div>
+<p>untuk setiap himpunan terukur <span class="math inline" data-source-tex="E\subseteq\BbbR^r">\(E\subseteq\BbbR^r\)</span> dan setiap
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>. Namun pembuktian hasil ini harus menunggu Jilid 5.</p>
+</section>
+<section class="source-unit" id="134E" data-source-id="134E"><h2><span class="source-label">134E</span> Himpunan Borel dan ukuran Lebesgue pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> </h2>
+<p>Ingat dari <a class="xref" href="../111/index.html#111G">111G</a> bahwa keluarga <span class="math inline" data-source-tex="\Cal B">\(\Cal B\)</span> himpunan-himpunan Borel dalam
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> adalah aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> yang dibangkitkan oleh keluarga
+himpunan-himpunan terbuka. Dalam <a class="xref" href="../114/index.html#114G">114G</a>/<a class="xref" href="../115/index.html#115G">115G</a> saya menunjukkan bahwa setiap
+himpunan Borel dalam <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> terukur Lebesgue. Sudah waktunya kita kembali
+ke topik ini dan melihat lebih dekat hubungan yang sangat erat antara
+himpunan Borel dan himpunan terukur.</p>
+<p>Ingat bahwa suatu himpunan <span class="math inline" data-source-tex="A\subseteq\BbbR^r">\(A\subseteq\BbbR^r\)</span> disebut <strong>berbatas</strong> jika
+terdapat suatu <span class="math inline" data-source-tex="M">\(M\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="A\subseteq B(\tbf{0},M)=\{x:\|x\|\le M\}">\(A\subseteq B(\tbf{0},M)=\{x:\|x\|\le M\}\)</span>; secara ekuivalen, jika
+<span class="math inline" data-source-tex="\sup_{x\in A}|\xi_j|&lt;\infty">\(\sup_{x\in A}|\xi_j|&lt;\infty\)</span> untuk setiap <span class="math inline" data-source-tex="j\le r">\(j\le r\)</span> (dengan menuliskan
+<span class="math inline" data-source-tex="x=(\xi_1,\ldots,\xi_r)">\(x=(\xi_1,\ldots,\xi_r)\)</span>, seperti dalam §<a class="xref" href="../115/index.html#115">115</a>).</p>
+</section>
+<section class="source-unit" id="134F" data-source-id="134F"><h2><span class="source-label">134F</span> Proposisi </h2>
+<p>(a) Jika <span class="math inline" data-source-tex="A\subseteq\BbbR^r">\(A\subseteq\BbbR^r\)</span> sembarang
+himpunan, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu^*A
+=\inf\{\mu G:G\text{ terbuka},\,G\supseteq A\}
+=\min\{\mu H:H\text{ Borel},\,H\supseteq A\}">\(\mu^*A
+=\inf\{\mu G:G\text{ terbuka},\,G\supseteq A\}
+=\min\{\mu H:H\text{ Borel},\,H\supseteq A\}\)</span>.</div>
+<p>(b) Jika <span class="math inline" data-source-tex="E\subseteq\BbbR^r">\(E\subseteq\BbbR^r\)</span> terukur, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu E=\sup\{\mu F:F
+\text{ tertutup dan berbatas},\,F\subseteq E\}">\(\mu E=\sup\{\mu F:F
+\text{ tertutup dan berbatas},\,F\subseteq E\}\)</span>,</div>
+<p>dan terdapat himpunan-himpunan Borel <span class="math inline" data-source-tex="H_1">\(H_1\)</span>, <span class="math inline" data-source-tex="H_2">\(H_2\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="H_1\subseteq E\subseteq H_2">\(H_1\subseteq E\subseteq H_2\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu(H_2\setminus H_1)=\mu(H_2\setminus
+E)=\mu(E\setminus H_1)=0">\(\mu(H_2\setminus H_1)=\mu(H_2\setminus
+E)=\mu(E\setminus H_1)=0\)</span>.</div>
+<p>(c) Jika <span class="math inline" data-source-tex="A\subseteq\BbbR^r">\(A\subseteq\BbbR^r\)</span> sembarang himpunan, maka <span class="math inline" data-source-tex="A">\(A\)</span> memiliki suatu
+selubung terukur yang merupakan himpunan Borel.</p>
+<p>(d) Jika <span class="math inline" data-source-tex="f">\(f\)</span> adalah fungsi bernilai real terukur Lebesgue yang didefinisikan
+pada suatu subhimpunan dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, maka terdapat himpunan Borel koterabaikan
+<span class="math inline" data-source-tex="H\subseteq\BbbR^r">\(H\subseteq\BbbR^r\)</span> sedemikian sehingga <span class="math inline" data-source-tex="f\restr H">\(f\restr H\)</span> terukur Borel.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)(i)</strong> Pertama-tama perhatikan bahwa jika
+<span class="math inline" data-source-tex="I\subseteq\BbbR^r">\(I\subseteq\BbbR^r\)</span> merupakan interval setengah terbuka dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>,
+maka <span class="math inline" data-source-tex="I=\emptyset">\(I=\emptyset\)</span> sudah terbuka, atau <span class="math inline" data-source-tex="I">\(I\)</span> dapat dinyatakan sebagai
+<span class="math inline" data-source-tex="\coint{a,b}">\(\coint{a,b}\)</span>, dengan <span class="math inline" data-source-tex="a=(\alpha_1,\ldots,\alpha_r)">\(a=(\alpha_1,\ldots,\alpha_r)\)</span>,
+<span class="math inline" data-source-tex="b=(\beta_1,\ldots,\beta_r)">\(b=(\beta_1,\ldots,\beta_r)\)</span> dan <span class="math inline" data-source-tex="\alpha_i&lt;\beta_i">\(\alpha_i&lt;\beta_i\)</span> untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>.
+Dalam kasus kedua, <span class="math inline" data-source-tex="G=\ooint{a-\epsilon(b-a),b}">\(G=\ooint{a-\epsilon(b-a),b}\)</span> merupakan himpunan terbuka
+yang memuat <span class="math inline" data-source-tex="I">\(I\)</span>, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu G=\prod_{i=1}^r(1+\epsilon)(\beta_i-\alpha_i)
+=(1+\epsilon)^r\mu I">\(\mu G=\prod_{i=1}^r(1+\epsilon)(\beta_i-\alpha_i)
+=(1+\epsilon)^r\mu I\)</span>,</div>
+<p>menurut rumus dalam <a class="xref" href="../114/index.html#114G">114G</a>/<a class="xref" href="../115/index.html#115G">115G</a>.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Sekarang, jika diberikan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, terdapat barisan
+<span class="math inline" data-source-tex="\sequencen{I_n}">\(\sequencen{I_n}\)</span> interval setengah terbuka yang mencakup <span class="math inline" data-source-tex="A">\(A\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\mu I_n\le\mu^*A+\epsilon">\(\sum_{n=0}^{\infty}\mu I_n\le\mu^*A+\epsilon\)</span>. Untuk setiap
+<span class="math inline" data-source-tex="n">\(n\)</span>, misalkan <span class="math inline" data-source-tex="G_n\supseteq I_n">\(G_n\supseteq I_n\)</span> suatu himpunan terbuka dengan ukuran paling
+besar <span class="math inline" data-source-tex="(1+\epsilon)^r\mu I_n">\((1+\epsilon)^r\mu I_n\)</span>. Maka
+<span class="math inline" data-source-tex="G=\bigcup_{n\in\Bbb N}G_n">\(G=\bigcup_{n\in\Bbb N}G_n\)</span> terbuka (1A2Bd), dan <span class="math inline" data-source-tex="A\subseteq G">\(A\subseteq G\)</span>; selain
+itu,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu G\le\sum_{n=0}^{\infty}\mu G_n
+\le(1+\epsilon)^r\sum_{n=0}^{\infty}\mu I_n
+\le(1+\epsilon)^r(\mu^*A+\epsilon)">\(\mu G\le\sum_{n=0}^{\infty}\mu G_n
+\le(1+\epsilon)^r\sum_{n=0}^{\infty}\mu I_n
+\le(1+\epsilon)^r(\mu^*A+\epsilon)\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sembarang,
+<span class="math inline" data-source-tex="\mu^*A\ge\inf\{\mu G:G">\(\mu^*A\ge\inf\{\mu G:G\)</span> terbuka, <span class="math inline" data-source-tex="G\supseteq A\}">\(G\supseteq A\}\)</span>.</p>
+<p> </p>
+<p>  <strong>(iii)</strong> Selanjutnya, dengan menggunakan (ii), untuk setiap
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> kita dapat memilih himpunan terbuka <span class="math inline" data-source-tex="G_n\supseteq A">\(G_n\supseteq A\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\mu G_n\le\mu^*A+2^{-n}">\(\mu G_n\le\mu^*A+2^{-n}\)</span>. Tetapkan
+<span class="math inline" data-source-tex="H_0=\bigcap_{n\in\Bbb N}G_n">\(H_0=\bigcap_{n\in\Bbb N}G_n\)</span>; maka <span class="math inline" data-source-tex="H_0">\(H_0\)</span> merupakan himpunan Borel,
+<span class="math inline" data-source-tex="A\subseteq H_0">\(A\subseteq H_0\)</span>, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu H_0\le\inf_{n\in\Bbb N}\mu G_n\le\mu^*A">\(\mu H_0\le\inf_{n\in\Bbb N}\mu G_n\le\mu^*A\)</span>.</div>
+<p> </p>
+<p>  <strong>(iv)</strong> Di sisi lain, kita tentu memiliki
+<span class="math inline" data-source-tex="\mu^*A\le\mu^*H=\mu H">\(\mu^*A\le\mu^*H=\mu H\)</span> untuk setiap himpunan Borel <span class="math inline" data-source-tex="H\supseteq A">\(H\supseteq A\)</span>. Jadi
+kita harus memiliki</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu^*A\le\inf\{\mu G:G\text{ terbuka},\,G\supseteq A\}">\(\mu^*A\le\inf\{\mu G:G\text{ terbuka},\,G\supseteq A\}\)</span>,</div>
+<p>dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu^*A=\mu H_0
+=\min\{\mu H:H\text{ Borel},\,H\supseteq A\}">\(\mu^*A=\mu H_0
+=\min\{\mu H:H\text{ Borel},\,H\supseteq A\}\)</span>.</div>
+<p> </p>
+<p><strong>(b)(i)</strong> Untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, tetapkan
+<span class="math inline" data-source-tex="E_n=E\cap B(\tbf{0},n)">\(E_n=E\cap B(\tbf{0},n)\)</span>. Misalkan <span class="math inline" data-source-tex="G_n\supseteq E_n">\(G_n\supseteq E_n\)</span> suatu himpunan
+terbuka dengan ukuran paling besar <span class="math inline" data-source-tex="\mu E_n+2^{-n}">\(\mu E_n+2^{-n}\)</span>; maka (karena
+<span class="math inline" data-source-tex="\mu B(\tbf{0},n)&lt;\infty">\(\mu B(\tbf{0},n)&lt;\infty\)</span>) <span class="math inline" data-source-tex="\mu(G_n\setminus E_n)\le 2^{-n}">\(\mu(G_n\setminus E_n)\le 2^{-n}\)</span>.
+Sekarang, untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, tetapkan <span class="math inline" data-source-tex="G&#x27;_n=\bigcup_{m\ge n}G_m">\(G&#x27;_n=\bigcup_{m\ge n}G_m\)</span>; maka
+<span class="math inline" data-source-tex="G&#x27;_n">\(G&#x27;_n\)</span> terbuka, <span class="math inline" data-source-tex="E=\bigcup_{m\ge n}E_m\subseteq G&#x27;_n">\(E=\bigcup_{m\ge n}E_m\subseteq G&#x27;_n\)</span>, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu(G&#x27;_n\setminus E)\le\sum_{m=n}^{\infty}\mu(G_m\setminus
+E)\le\sum_{m=n}^{\infty}\mu(G_m\setminus E_m)
+\le\sum_{m=n}^{\infty}2^{-m}=2^{-n+1}">\(\mu(G&#x27;_n\setminus E)\le\sum_{m=n}^{\infty}\mu(G_m\setminus
+E)\le\sum_{m=n}^{\infty}\mu(G_m\setminus E_m)
+\le\sum_{m=n}^{\infty}2^{-m}=2^{-n+1}\)</span>.</div>
+<p>Dengan menetapkan <span class="math inline" data-source-tex="H_2=\bigcap_{n\in\Bbb N}G&#x27;_n">\(H_2=\bigcap_{n\in\Bbb N}G&#x27;_n\)</span>, kita melihat
+bahwa <span class="math inline" data-source-tex="H_2">\(H_2\)</span> merupakan himpunan Borel yang memuat <span class="math inline" data-source-tex="E">\(E\)</span> dan bahwa
+<span class="math inline" data-source-tex="\mu(H_2\setminus E)=0">\(\mu(H_2\setminus E)=0\)</span>.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Dengan mengulangi argumen (i) menggunakan
+<span class="math inline" data-source-tex="\BbbR^r\setminus E">\(\BbbR^r\setminus E\)</span> sebagai pengganti <span class="math inline" data-source-tex="E">\(E\)</span>, kita memperoleh suatu himpunan
+Borel <span class="math inline" data-source-tex="\tilde H_2\supseteq\BbbR^r\setminus E">\(\tilde H_2\supseteq\BbbR^r\setminus E\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu(\tilde H_2\setminus(\BbbR^r\setminus E))=0">\(\mu(\tilde H_2\setminus(\BbbR^r\setminus E))=0\)</span>; sekarang
+<span class="math inline" data-source-tex="H_1=\BbbR^r\setminus \tilde H_2">\(H_1=\BbbR^r\setminus \tilde H_2\)</span> merupakan himpunan Borel yang termuat
+dalam <span class="math inline" data-source-tex="E">\(E\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu(E\setminus H_1)
+=\mu(\tilde H_2\setminus(\BbbR^r\setminus E))=0">\(\mu(E\setminus H_1)
+=\mu(\tilde H_2\setminus(\BbbR^r\setminus E))=0\)</span>.</div>
+<p>Tentu saja sekarang kita juga memiliki</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu(H_2\setminus H_1)=\mu(H_2\setminus E)+\mu(E\setminus
+H_1)=0">\(\mu(H_2\setminus H_1)=\mu(H_2\setminus E)+\mu(E\setminus
+H_1)=0\)</span>.</div>
+<p> </p>
+<p>  <strong>(iii)</strong> Dengan kembali menggunakan gagasan (i), untuk setiap
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> terdapat himpunan terbuka
+<span class="math inline" data-source-tex="\tilde G_n\supseteq B(\tbf{0},n)\setminus E">\(\tilde G_n\supseteq B(\tbf{0},n)\setminus E\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu(\tilde G_n\cap E_n)\le\mu(\tilde
+G_n\setminus(B(\tbf{0},n)\setminus E))\le 2^{-n}">\(\mu(\tilde G_n\cap E_n)\le\mu(\tilde
+G_n\setminus(B(\tbf{0},n)\setminus E))\le 2^{-n}\)</span>.</div>
+<p>Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="F_n=B(\tbf{0},n)\setminus\tilde G_n
+=B(\tbf{0},n)\cap(\BbbR^r\setminus\tilde G_n)">\(F_n=B(\tbf{0},n)\setminus\tilde G_n
+=B(\tbf{0},n)\cap(\BbbR^r\setminus\tilde G_n)\)</span>;</div>
+<p>maka <span class="math inline" data-source-tex="F_n">\(F_n\)</span> tertutup (1A2Fd) dan berbatas, serta
+<span class="math inline" data-source-tex="F_n\subseteq E_n\subseteq E">\(F_n\subseteq E_n\subseteq E\)</span>. Selain itu,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu E_n=\mu F_n+\mu(E_n\setminus F_n)
+=\mu F_n+\mu(\tilde G_n\cap E_n)
+\le\mu F_n+2^{-n}">\(\mu E_n=\mu F_n+\mu(E_n\setminus F_n)
+=\mu F_n+\mu(\tilde G_n\cap E_n)
+\le\mu F_n+2^{-n}\)</span>.</div>
+<p>Jadi</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu E=\lim_{n\to\infty}\mu E_n
+\le\sup_{n\in\Bbb N}\mu F_n\le
+\sup\{\mu F:F\text{ tertutup dan berbatas},\,F\subseteq E\}">\(\mu E=\lim_{n\to\infty}\mu E_n
+\le\sup_{n\in\Bbb N}\mu F_n\le
+\sup\{\mu F:F\text{ tertutup dan berbatas},\,F\subseteq E\}\)</span>,</div>
+<p>dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu E
+=\sup\{\mu F:F\text{ tertutup dan berbatas},\,F\subseteq E\}">\(\mu E
+=\sup\{\mu F:F\text{ tertutup dan berbatas},\,F\subseteq E\}\)</span>.</div>
+<p> </p>
+<p><strong>(c)</strong> Misalkan <span class="math inline" data-source-tex="E">\(E\)</span> sembarang selubung terukur dari <span class="math inline" data-source-tex="A">\(A\)</span> (132Ef), dan
+<span class="math inline" data-source-tex="H\supseteq E">\(H\supseteq E\)</span> suatu himpunan Borel sedemikian sehingga
+<span class="math inline" data-source-tex="\mu(H\setminus E)=0">\(\mu(H\setminus E)=0\)</span>; maka
+<span class="math inline" data-source-tex="\mu^*(F\cap A)=\mu(F\cap E)=\mu(F\cap H)">\(\mu^*(F\cap A)=\mu(F\cap E)=\mu(F\cap H)\)</span> untuk setiap himpunan terukur
+<span class="math inline" data-source-tex="F">\(F\)</span>, sehingga <span class="math inline" data-source-tex="H">\(H\)</span> merupakan selubung terukur dari <span class="math inline" data-source-tex="A">\(A\)</span>.</p>
+<p> </p>
+<p><strong>(d)</strong> Tetapkan <span class="math inline" data-source-tex="D=\dom f">\(D=\dom f\)</span> dan tuliskan <span class="math inline" data-source-tex="\Cal B">\(\Cal B\)</span> untuk
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> himpunan-himpunan Borel. Untuk setiap bilangan rasional
+<span class="math inline" data-source-tex="q">\(q\)</span>, misalkan <span class="math inline" data-source-tex="E_q">\(E_q\)</span> suatu himpunan terukur sedemikian sehingga
+<span class="math inline" data-source-tex="\{x:f(x)\le q\}=E_q\cap D">\(\{x:f(x)\le q\}=E_q\cap D\)</span>. Misalkan <span class="math inline" data-source-tex="H_q">\(H_q\)</span>, <span class="math inline" data-source-tex="H_q&#x27;\in\Cal B">\(H_q&#x27;\in\Cal B\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="H_q\subseteq E_q\subseteq H&#x27;_q">\(H_q\subseteq E_q\subseteq H&#x27;_q\)</span> dan
+<span class="math inline" data-source-tex="\mu(H&#x27;_q\setminus H_q)=0">\(\mu(H&#x27;_q\setminus H_q)=0\)</span>. Misalkan <span class="math inline" data-source-tex="H">\(H\)</span> adalah himpunan Borel
+koterabaikan <span class="math inline" data-source-tex="\BbbR^r\setminus\bigcup(H&#x27;_q\setminus H_q)">\(\BbbR^r\setminus\bigcup(H&#x27;_q\setminus H_q)\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:(f\restr H)(x)\le q\}=H\cap E_q\cap D=H_q\cap D\cap H">\(\{x:(f\restr H)(x)\le q\}=H\cap E_q\cap D=H_q\cap D\cap H\)</span></div>
+<p>termasuk dalam aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> subruang <span class="math inline" data-source-tex="\Cal B(D)">\(\Cal B(D)\)</span> untuk
+setiap <span class="math inline" data-source-tex="q\in\Bbb Q">\(q\in\Bbb Q\)</span>. Untuk <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span> irasional, tetapkan
+<span class="math inline" data-source-tex="H_a=\bigcap_{q\in\Bbb Q,q\ge a}H_q">\(H_a=\bigcap_{q\in\Bbb Q,q\ge a}H_q\)</span>; maka <span class="math inline" data-source-tex="H_a\in\Cal B">\(H_a\in\Cal B\)</span>, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:(f\restr H)(x)\le a\}=H_a\cap\dom(f\restr H)">\(\{x:(f\restr H)(x)\le a\}=H_a\cap\dom(f\restr H)\)</span>.</div>
+<p>Dengan demikian, <span class="math inline" data-source-tex="f\restr H">\(f\restr H\)</span> terukur Borel.</p></aside>
+<p> </p>
+<p><strong>Catatan</strong> Penekanan pada himpunan tertutup <em>berbatas</em>
+dalam bagian (b) proposisi ini disebabkan oleh sifat-sifat topologisnya yang
+penting, khususnya fakta bahwa himpunan-himpunan tersebut ‘kompak’. Ini
+merupakan salah satu fakta terpenting tentang ukuran Lebesgue, sebagaimana
+akan tampak dalam Jilid 4. Saya akan membahas ‘kekompakan’ secara singkat
+dalam §2A2 di Jilid 2.</p>
+</section>
+<section class="source-unit" id="134G" data-source-id="134G"><span class="anchor" id="134Ga"></span><h2><span class="source-label">134G</span> Himpunan Cantor </h2>
+<p>Salah satu tujuan teori ukuran
+dan integral Lebesgue adalah mempelajari himpunan dan fungsi yang lebih tak
+beraturan daripada yang dapat ditangani dengan metode-metode yang lebih
+primitif. Dalam beberapa paragraf berikut saya membahas himpunan dan fungsi
+<em>terukur</em> yang, dari sudut pandang teori saat ini, dapat ditangani tanpa
+menjadi sepele. Mulai sekarang, <span class="math inline" data-source-tex="\mu">\(\mu\)</span> akan merupakan ukuran Lebesgue pada
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.</p>
+<p> </p>
+<p><strong>(a)</strong> ‘Himpunan Cantor’ <span class="math inline" data-source-tex="C\subseteq[0,1]">\(C\subseteq[0,1]\)</span> didefinisikan sebagai irisan
+barisan himpunan <span class="math inline" data-source-tex="\sequencen{C_n}">\(\sequencen{C_n}\)</span>, yang dibangun sebagai
+berikut. <span class="math inline" data-source-tex="C_0=[0,1]">\(C_0=[0,1]\)</span>. Andaikan <span class="math inline" data-source-tex="C_n">\(C_n\)</span> terdiri atas <span class="math inline" data-source-tex="2^n">\(2^n\)</span> interval tertutup
+yang saling lepas, masing-masing panjangnya <span class="math inline" data-source-tex="3^{-n}">\(3^{-n}\)</span>; ambil setiap interval
+ini dan hapus sepertiga tengahnya sehingga menghasilkan dua interval tertutup
+yang masing-masing panjangnya <span class="math inline" data-source-tex="3^{-n-1}">\(3^{-n-1}\)</span>; ambil <span class="math inline" data-source-tex="C_{n+1}">\(C_{n+1}\)</span> sebagai gabungan
+<span class="math inline" data-source-tex="2^{n+1}">\(2^{n+1}\)</span> interval tertutup yang terbentuk demikian, lalu lanjutkan.
+Perhatikan bahwa <span class="math inline" data-source-tex="\mu C_n=({2\over 3})^n">\(\mu C_n=({2\over 3})^n\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>.</p>
+<p> </p>
+<figure class="figure-panel source-diagram" data-source-asset="mt134g.ps"><img src="_assets/mt134g.png" alt="Mendekati himpunan Cantor" loading="lazy" decoding="async"><figcaption>Mendekati himpunan Cantor</figcaption></figure>
+<p><strong>Himpunan Cantor</strong> adalah
+<span class="math inline" data-source-tex="C=\bigcap_{n\in\Bbb N}C_n">\(C=\bigcap_{n\in\Bbb N}C_n\)</span>. Ukurannya adalah</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu C=\lim_{n\to\infty}\mu C_n
+=\lim_{n\to\infty}(\Bover23)^n=0">\(\mu C=\lim_{n\to\infty}\mu C_n
+=\lim_{n\to\infty}(\Bover23)^n=0\)</span>.</div>
+</section>
+<section class="source-unit" id="134Gb" data-source-id="134Gb"><h3><span class="source-label">134Gb</span> <strong>(b)</strong> </h3>
+<p>Setiap <span class="math inline" data-source-tex="C_n">\(C_n\)</span> juga dapat digambarkan sebagai
+himpunan bilangan real yang dapat dinyatakan sebagai
+<span class="math inline" data-source-tex="\sum_{j=1}^{\infty}3^{-j}\epsilon_j">\(\sum_{j=1}^{\infty}3^{-j}\epsilon_j\)</span>, dengan setiap <span class="math inline" data-source-tex="\epsilon_j">\(\epsilon_j\)</span> bernilai
+<span class="math inline" data-source-tex="0">\(0\)</span>, <span class="math inline" data-source-tex="1">\(1\)</span>, atau <span class="math inline" data-source-tex="2">\(2\)</span>, dan <span class="math inline" data-source-tex="\epsilon_j\ne 1">\(\epsilon_j\ne 1\)</span> untuk <span class="math inline" data-source-tex="j\le n">\(j\le n\)</span>. Akibatnya, <span class="math inline" data-source-tex="C">\(C\)</span>
+sendiri adalah himpunan bilangan yang dapat dinyatakan sebagai
+<span class="math inline" data-source-tex="\sum_{j=1}^{\infty}3^{-j}\epsilon_j">\(\sum_{j=1}^{\infty}3^{-j}\epsilon_j\)</span>, dengan setiap <span class="math inline" data-source-tex="\epsilon_j">\(\epsilon_j\)</span> bernilai
+<span class="math inline" data-source-tex="0">\(0\)</span> atau <span class="math inline" data-source-tex="2">\(2\)</span>; yaitu, himpunan bilangan antara <span class="math inline" data-source-tex="0">\(0\)</span> dan <span class="math inline" data-source-tex="1">\(1\)</span> yang dapat
+dinyatakan dalam bentuk terner tanpa angka 1. Representasi dalam setiap kasus
+bersifat unik, sehingga kita memiliki bijeksi
+<span class="math inline" data-source-tex="\phi:\{0,1\}^{\Bbb N}\to C">\(\phi:\{0,1\}^{\Bbb N}\to C\)</span> yang didefinisikan dengan menuliskan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\phi(z)=\Bover23\sum_{j=0}^{\infty}3^{-j}z(j)">\(\phi(z)=\Bover23\sum_{j=0}^{\infty}3^{-j}z(j)\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="z\in\{0,1\}^{\Bbb N}">\(z\in\{0,1\}^{\Bbb N}\)</span>.</p>
+</section>
+<section class="source-unit" id="134H" data-source-id="134H"><span class="anchor" id="134Ha"></span><h2><span class="source-label">134H</span> Fungsi Cantor </h2>
+<p>Melanjutkan dari <a class="xref" href="#134G">134G</a>, kita memperoleh
+konstruksi berikut.</p>
+<p> </p>
+<p><strong>(a)</strong> Untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> kita mendefinisikan fungsi
+<span class="math inline" data-source-tex="f_n:[0,1]\to[0,1]">\(f_n:[0,1]\to[0,1]\)</span> dengan menetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="f_n(x)=(\Bover32)^n\mu(C_n\cap[0,x])">\(f_n(x)=(\Bover32)^n\mu(C_n\cap[0,x])\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="x\in [0,1]">\(x\in [0,1]\)</span>. Karena <span class="math inline" data-source-tex="C_n">\(C_n\)</span> hanyalah suatu
+gabungan berhingga interval, <span class="math inline" data-source-tex="f_n">\(f_n\)</span> merupakan fungsi poligonal, dengan
+<span class="math inline" data-source-tex="f_n(0)=0">\(f_n(0)=0\)</span>, <span class="math inline" data-source-tex="f_n(1)=1">\(f_n(1)=1\)</span>; <span class="math inline" data-source-tex="f_n">\(f_n\)</span> konstan pada masing-masing dari <span class="math inline" data-source-tex="2^n-1">\(2^n-1\)</span> interval
+terbuka penyusun <span class="math inline" data-source-tex="[0,1]\setminus C_n">\([0,1]\setminus C_n\)</span>, dan naik dengan kemiringan
+<span class="math inline" data-source-tex="({3\over 2})^n">\(({3\over 2})^n\)</span> pada masing-masing dari <span class="math inline" data-source-tex="2^n">\(2^n\)</span> interval tertutup penyusun <span class="math inline" data-source-tex="C_n">\(C_n\)</span>.</p>
+<figure class="figure-panel source-diagram" data-source-asset="mt134ha1.ps"><img src="_assets/mt134ha1.png" alt="Mendekati fungsi Cantor" loading="lazy" decoding="async"><figcaption>Mendekati fungsi Cantor: fungsi-fungsi <span class="math inline" data-source-tex="f_0">\(f_0\)</span>, <span class="math inline" data-source-tex="f_1">\(f_1\)</span>, <span class="math inline" data-source-tex="f_2">\(f_2\)</span>, <span class="math inline" data-source-tex="\pmb{f_3}">\(\pmb{f_3}\)</span></figcaption></figure>
+<p>Jika interval ke-<span class="math inline" data-source-tex="j">\(j\)</span> dari <span class="math inline" data-source-tex="C_n">\(C_n\)</span>, dihitung dari kiri, adalah
+<span class="math inline" data-source-tex="[a_{nj},b_{nj}]">\([a_{nj},b_{nj}]\)</span>, maka <span class="math inline" data-source-tex="f_n(a_{nj})=2^{-n}(j-1)">\(f_n(a_{nj})=2^{-n}(j-1)\)</span> dan
+<span class="math inline" data-source-tex="f_n(b_{nj})=2^{-n}j">\(f_n(b_{nj})=2^{-n}j\)</span>. Selain itu, <span class="math inline" data-source-tex="a_{nj}=a_{n+1,2j-1}">\(a_{nj}=a_{n+1,2j-1}\)</span> dan
+<span class="math inline" data-source-tex="b_{nj}=b_{n+1,2j}">\(b_{nj}=b_{n+1,2j}\)</span>; dengan demikian, atau melalui cara lain,
+<span class="math inline" data-source-tex="f_{n+1}(a_{nj})=f_n(a_{nj})">\(f_{n+1}(a_{nj})=f_n(a_{nj})\)</span> dan
+<span class="math inline" data-source-tex="f_{n+1}(b_{nj})=f_{n}(b_{nj})">\(f_{n+1}(b_{nj})=f_{n}(b_{nj})\)</span>, dan <span class="math inline" data-source-tex="f_{n+1}">\(f_{n+1}\)</span> berimpit dengan <span class="math inline" data-source-tex="f_n">\(f_n\)</span>
+pada semua titik ujung interval-interval <span class="math inline" data-source-tex="C_n">\(C_n\)</span>, dan karenanya pada
+<span class="math inline" data-source-tex="[0,1]\setminus C_n">\([0,1]\setminus C_n\)</span>.</p>
+<p>Di dalam setiap interval tertentu <span class="math inline" data-source-tex="[a_{nj},b_{nj}]">\([a_{nj},b_{nj}]\)</span> dari <span class="math inline" data-source-tex="C_n">\(C_n\)</span>, selisih
+terbesar antara <span class="math inline" data-source-tex="f_n(x)">\(f_n(x)\)</span> dan <span class="math inline" data-source-tex="f_{n+1}(x)">\(f_{n+1}(x)\)</span> terjadi pada titik-titik ujung
+baru di dalam interval tersebut, yaitu <span class="math inline" data-source-tex="b_{n+1,2j-1}">\(b_{n+1,2j-1}\)</span> dan <span class="math inline" data-source-tex="a_{n+1,2j}">\(a_{n+1,2j}\)</span>;
+dan besar selisihnya adalah <span class="math inline" data-source-tex="{1\over 6}2^{-n}">\({1\over 6}2^{-n}\)</span> (sebab, misalnya,
+<span class="math inline" data-source-tex="f_n(b_{n+1,2j-1})={2\over 3}f_n(a_{nj})+{1\over 3}f_n(b_{nj})">\(f_n(b_{n+1,2j-1})={2\over 3}f_n(a_{nj})+{1\over 3}f_n(b_{nj})\)</span>, sedangkan
+<span class="math inline" data-source-tex="f_{n+1}(b_{n+1,2j-1})={1\over 2}f_n(a_{nj})+{1\over 2}f_n(b_{nj})">\(f_{n+1}(b_{n+1,2j-1})={1\over 2}f_n(a_{nj})+{1\over 2}f_n(b_{nj})\)</span>).
+Dengan demikian kita memiliki
+<span class="math inline" data-source-tex="|f_{n+1}(x)-f_n(x)|\le{1\over 6}2^{-n}">\(|f_{n+1}(x)-f_n(x)|\le{1\over 6}2^{-n}\)</span> untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>,
+<span class="math inline" data-source-tex="x\in[0,1]">\(x\in[0,1]\)</span>. Karena <span class="math inline" data-source-tex="\sum_{n=0}^{\infty}{1\over 6}2^{-n}&lt;\infty">\(\sum_{n=0}^{\infty}{1\over 6}2^{-n}&lt;\infty\)</span>,</p>
+<p><span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> konvergen seragam menuju suatu fungsi
+<span class="math inline" data-source-tex="f:[0,1]\to[0,1]">\(f:[0,1]\to[0,1]\)</span>, dan <span class="math inline" data-source-tex="f">\(f\)</span> kontinu. <span class="math inline" data-source-tex="f">\(f\)</span> adalah <strong>fungsi Cantor</strong> atau
+<strong>Tangga Setan</strong>.</p>
+<figure class="figure-panel source-diagram" data-source-asset="mt134ha2.ps"><img src="_assets/mt134ha2.png" alt="Fungsi Cantor" loading="lazy" decoding="async"><figcaption>Fungsi Cantor</figcaption></figure>
+</section>
+<section class="source-unit" id="134Hb" data-source-id="134Hb"><h3><span class="source-label">134Hb</span> <strong>(b)</strong> </h3>
+<p>Karena setiap <span class="math inline" data-source-tex="f_n">\(f_n\)</span> tak-menurun, <span class="math inline" data-source-tex="f">\(f\)</span> juga
+demikian. Jika <span class="math inline" data-source-tex="x\in[0,1]\setminus C">\(x\in[0,1]\setminus C\)</span>, terdapat suatu <span class="math inline" data-source-tex="n">\(n\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="x\in[0,1]\setminus C_n">\(x\in[0,1]\setminus C_n\)</span>; misalkan <span class="math inline" data-source-tex="I">\(I\)</span> interval terbuka dari
+<span class="math inline" data-source-tex="[0,1]\setminus C_n">\([0,1]\setminus C_n\)</span> yang memuat <span class="math inline" data-source-tex="x">\(x\)</span>; maka <span class="math inline" data-source-tex="f_{m+1}">\(f_{m+1}\)</span> berimpit pada <span class="math inline" data-source-tex="I">\(I\)</span>
+dengan <span class="math inline" data-source-tex="f_m">\(f_m\)</span> untuk setiap <span class="math inline" data-source-tex="m\ge n">\(m\ge n\)</span>, sehingga <span class="math inline" data-source-tex="f">\(f\)</span> berimpit pada <span class="math inline" data-source-tex="I">\(I\)</span> dengan
+<span class="math inline" data-source-tex="f_n">\(f_n\)</span>, dan <span class="math inline" data-source-tex="f">\(f\)</span> konstan pada <span class="math inline" data-source-tex="I">\(I\)</span>. Dengan demikian, khususnya, turunan <span class="math inline" data-source-tex="f&#x27;(x)">\(f&#x27;(x)\)</span>
+ada dan bernilai <span class="math inline" data-source-tex="0">\(0\)</span> untuk setiap <span class="math inline" data-source-tex="x\in[0,1]\setminus C">\(x\in[0,1]\setminus C\)</span>; sehingga
+<span class="math inline" data-source-tex="f&#x27;">\(f&#x27;\)</span> bernilai nol hampir di mana-mana dalam <span class="math inline" data-source-tex="[0,1]">\([0,1]\)</span>. Tentu saja,
+<span class="math inline" data-source-tex="f(0)=0">\(f(0)=0\)</span> dan <span class="math inline" data-source-tex="f(1)=1">\(f(1)=1\)</span>, karena <span class="math inline" data-source-tex="f_n(0)=0">\(f_n(0)=0\)</span>, <span class="math inline" data-source-tex="f_n(1)=1">\(f_n(1)=1\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>.
+Akibatnya, <span class="math inline" data-source-tex="f:[0,1]\to[0,1]">\(f:[0,1]\to[0,1]\)</span> surjektif (menurut Teorema Nilai
+Antara).</p>
+</section>
+<section class="source-unit" id="134Hc" data-source-id="134Hc"><h3><span class="source-label">134Hc</span> <strong>(c)</strong> </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\phi:\{0,1\}^{\Bbb N}\to C">\(\phi:\{0,1\}^{\Bbb N}\to C\)</span> adalah
+fungsi yang dijelaskan dalam <a class="xref" href="#134Gb">134Gb</a>. Maka
+<span class="math inline" data-source-tex="f(\phi(z))=\bover12\sum_{j=0}^{\infty}2^{-j}z(j)">\(f(\phi(z))=\bover12\sum_{j=0}^{\infty}2^{-j}z(j)\)</span> untuk setiap
+<span class="math inline" data-source-tex="z\in\{0,1\}^{\Bbb N}">\(z\in\{0,1\}^{\Bbb N}\)</span>. <span class="proof-fragment">Bukti. Tetapkan
+<span class="math inline" data-source-tex="z=(\zeta_0,\zeta_1,\zeta_2,\ldots)">\(z=(\zeta_0,\zeta_1,\zeta_2,\ldots)\)</span> dalam <span class="math inline" data-source-tex="\{0,1\}^{\Bbb N}">\(\{0,1\}^{\Bbb N}\)</span>, dan untuk
+setiap <span class="math inline" data-source-tex="n">\(n\)</span> ambil <span class="math inline" data-source-tex="I_n">\(I_n\)</span> sebagai interval komponen <span class="math inline" data-source-tex="C_n">\(C_n\)</span> yang memuat
+<span class="math inline" data-source-tex="\phi(z)">\(\phi(z)\)</span>. Maka <span class="math inline" data-source-tex="I_{n+1}">\(I_{n+1}\)</span> merupakan sepertiga kiri <span class="math inline" data-source-tex="I_n">\(I_n\)</span> jika
+<span class="math inline" data-source-tex="\zeta_n=0">\(\zeta_n=0\)</span>, dan sepertiga kanannya jika <span class="math inline" data-source-tex="\zeta_n=1">\(\zeta_n=1\)</span>. Dengan mengambil
+<span class="math inline" data-source-tex="a_n">\(a_n\)</span> sebagai titik ujung kiri <span class="math inline" data-source-tex="I_n">\(I_n\)</span>, kita melihat bahwa
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="a_{n+1}=a_n+\Bover233^{-n}\zeta_n">\(a_{n+1}=a_n+\Bover233^{-n}\zeta_n\)</span>,
+  <span class="math inline" data-source-tex="f_{n+1}(a_{n+1})=f_n(a_n)+\Bover122^{-n}\zeta_n">\(f_{n+1}(a_{n+1})=f_n(a_n)+\Bover122^{-n}\zeta_n\)</span></span>
+
+
+
+  untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>. Sekarang
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\phi(z)=\lim_{n\to\infty}a_n">\(\phi(z)=\lim_{n\to\infty}a_n\)</span>,
+  <span class="math inline" data-source-tex="f(\phi(z))=\lim_{n\to\infty}f(a_n)=\lim_{n\to\infty}f_n(a_n)
+=\Bover12\sum_{j=0}^{\infty}2^{-j}\zeta_j">\(f(\phi(z))=\lim_{n\to\infty}f(a_n)=\lim_{n\to\infty}f_n(a_n)
+=\Bover12\sum_{j=0}^{\infty}2^{-j}\zeta_j\)</span>,</span>
+
+
+
+  seperti yang dinyatakan. ∎</span></p>
+<p>Khususnya, <span class="math inline" data-source-tex="f[C]=[0,1]">\(f[C]=[0,1]\)</span>. <span class="proof-fragment">Bukti. Setiap <span class="math inline" data-source-tex="x\in[0,1]">\(x\in[0,1]\)</span> dapat
+dinyatakan sebagai <span class="math inline" data-source-tex="\sum_{j=0}^{\infty}2^{-j-1}z(j)=f(\phi(z))">\(\sum_{j=0}^{\infty}2^{-j-1}z(j)=f(\phi(z))\)</span> untuk
+suatu <span class="math inline" data-source-tex="z\in\{0,1\}^{\Bbb N}">\(z\in\{0,1\}^{\Bbb N}\)</span>. ∎</span></p>
+</section>
+<section class="source-unit" id="134I" data-source-id="134I"><span class="anchor" id="134Ia"></span><h2><span class="source-label">134I</span> Fungsi Cantor yang dimodifikasi </h2>
+<p>Saya melanjutkan
+argumen <a class="xref" href="#134G">134G</a>-<a class="xref" href="#134H">134H</a>.</p>
+<p> </p>
+<p><strong>(a)</strong> Tinjau rumus</p>
+<div class="centerline"><span class="math inline" data-source-tex="g(x)=\Bover12(x+f(x))">\(g(x)=\Bover12(x+f(x))\)</span>,</div>
+<p>dengan <span class="math inline" data-source-tex="f">\(f\)</span> fungsi Cantor, sebagaimana didefinisikan dalam <a class="xref" href="#134H">134H</a>;
+rumus ini mendefinisikan suatu fungsi kontinu <span class="math inline" data-source-tex="g:[0,1]\to[0,1]">\(g:[0,1]\to[0,1]\)</span> yang naik
+ketat (karena <span class="math inline" data-source-tex="f">\(f\)</span> tak-menurun) serta memenuhi <span class="math inline" data-source-tex="g(0)=0">\(g(0)=0\)</span>, <span class="math inline" data-source-tex="g(1)=1">\(g(1)=1\)</span>;
+akibatnya, menurut Teorema Nilai Antara, <span class="math inline" data-source-tex="g">\(g\)</span> bijektif, dan inversnya
+<span class="math inline" data-source-tex="g^{-1}:[0,1]\to[0,1]">\(g^{-1}:[0,1]\to[0,1]\)</span> kontinu.</p>
+<p>Sekarang <span class="math inline" data-source-tex="g[C]">\(g[C]\)</span> merupakan himpunan tertutup dan
+<span class="math inline" data-source-tex="\mu g[C]=\bover12">\(\mu g[C]=\bover12\)</span>. <span class="proof-fragment">Bukti. Karena <span class="math inline" data-source-tex="g">\(g\)</span> merupakan permutasi
+titik-titik <span class="math inline" data-source-tex="[0,1]">\([0,1]\)</span>,
+<span class="math inline" data-source-tex="[0,1]\setminus g[C]=g[\,[0,1]\setminus C]">\([0,1]\setminus g[C]=g[\,[0,1]\setminus C]\)</span>.
+Untuk setiap interval terbuka <span class="math inline" data-source-tex="I_{nj}=\ooint{b_{nj},a_{n,j+1}}">\(I_{nj}=\ooint{b_{nj},a_{n,j+1}}\)</span> yang
+menyusun <span class="math inline" data-source-tex="[0,1]\setminus C_n">\([0,1]\setminus C_n\)</span>, kita melihat bahwa
+<span class="math inline" data-source-tex="g[I_{nj}]=\ooint{g(b_{nj}),g(a_{n,j+1})}">\(g[I_{nj}]=\ooint{g(b_{nj}),g(a_{n,j+1})}\)</span> memiliki panjang tepat separuh
+panjang <span class="math inline" data-source-tex="I_{nj}">\(I_{nj}\)</span>. Akibatnya
+<span class="math inline" data-source-tex="g[\,[0,1]\setminus C]=\bigcup_{n\ge
+1,1\le j&lt;2^n}g[I_{nj}]">\(g[\,[0,1]\setminus C]=\bigcup_{n\ge
+1,1\le j&lt;2^n}g[I_{nj}]\)</span> terbuka, dan
+
+<span class="math display" data-source-tex="\eqalign{\mu(g[\,[0,1]\setminus C_n])
+&amp;=\sum_{j=1}^{2^n-1}g(a_{n,j+1})-g(b_{nj})
+=\Bover12\sum_{j=1}^{2^n-1}a_{n,j+1}-b_{nj}\cr
+&amp;=\Bover12\mu([0,1]\setminus C_n)
+=\Bover12(1-(\Bover23)^n)\cr}">\[\begin{aligned}\mu(g[\,[0,1]\setminus C_n])
+&amp;=\sum_{j=1}^{2^n-1}g(a_{n,j+1})-g(b_{nj})
+=\Bover12\sum_{j=1}^{2^n-1}a_{n,j+1}-b_{nj}\\
+&amp;=\Bover12\mu([0,1]\setminus C_n)
+=\Bover12(1-(\Bover23)^n)\\\end{aligned}\]</span>
+
+  (<a class="xref" href="#134Ga">134Ga</a>). Karena <span class="math inline" data-source-tex="\sequencen{[0,1]\setminus C_n}">\(\sequencen{[0,1]\setminus C_n}\)</span> merupakan
+barisan himpunan menaik dengan gabungan <span class="math inline" data-source-tex="[0,1]\setminus C">\([0,1]\setminus C\)</span>,
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\mu g([\,[0,1]\setminus C])
+=\lim_{n\to\infty}\mu g([\,[0,1]\setminus C_n])
+=\Bover12">\(\mu g([\,[0,1]\setminus C])
+=\lim_{n\to\infty}\mu g([\,[0,1]\setminus C_n])
+=\Bover12\)</span>.</span>
+
+
+
+  Jadi <span class="math inline" data-source-tex="g[C]=[0,1]\setminus g[\,[0,1]\setminus C]">\(g[C]=[0,1]\setminus g[\,[0,1]\setminus C]\)</span> tertutup dan
+<span class="math inline" data-source-tex="\mu g[C]=\bover12">\(\mu g[C]=\bover12\)</span>. ∎</span></p>
+</section>
+<section class="source-unit" id="134Ib" data-source-id="134Ib"><h3><span class="source-label">134Ib</span> <strong>(b)</strong> </h3>
+<p>Menurut <a class="xref" href="#134D">134D</a> terdapat suatu himpunan
+<span class="math inline" data-source-tex="D\subseteq\Bbb R">\(D\subseteq\Bbb R\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu^*(g[C]\cap D)=\mu^*(g[C]\setminus D)
+=\mu g[C]=\Bover12">\(\mu^*(g[C]\cap D)=\mu^*(g[C]\setminus D)
+=\mu g[C]=\Bover12\)</span>;</div>
+<p>tetapkan <span class="math inline" data-source-tex="A=g[C]\cap D">\(A=g[C]\cap D\)</span>. Tentu saja <span class="math inline" data-source-tex="A">\(A\)</span> tidak mungkin
+terukur, karena <span class="math inline" data-source-tex="\mu^*A+\mu^*(g[C]\setminus A)&gt;\mu g[C]">\(\mu^*A+\mu^*(g[C]\setminus A)&gt;\mu g[C]\)</span>.
+Namun, <span class="math inline" data-source-tex="g^{-1}[A]\subseteq C">\(g^{-1}[A]\subseteq C\)</span> harus terukur, karena <span class="math inline" data-source-tex="\mu^*C=0">\(\mu^*C=0\)</span>.
+Ini berarti bahwa jika kita menetapkan
+<span class="math inline" data-source-tex="h=\chi(g^{-1}[A]):[0,1]\to\Bbb R">\(h=\chi(g^{-1}[A]):[0,1]\to\Bbb R\)</span>, maka <span class="math inline" data-source-tex="h">\(h\)</span> terukur; tetapi
+<span class="math inline" data-source-tex="hg^{-1}\cmmnt{\mskip5mu =\chi A:[0,1]\to\Bbb R}">\(hg^{-1}\mskip5mu =\chi A:[0,1]\to\Bbb R\)</span> tidak terukur.</p>
+<p>Jadi, <strong>komposisi suatu fungsi terukur dengan fungsi kontinu tidak harus
+terukur</strong>. Bandingkan ini dengan 121Eg.</p>
+</section>
+<section class="source-unit" id="134J" data-source-id="134J"><span class="anchor" id="134Ja"></span><h2><span class="source-label">134J</span> Contoh-contoh lain </h2>
+<p>Menurut saya, ada baiknya
+menyediakan ruang untuk menguraikan secara terperinci dua contoh dasar lain
+mengenai himpunan-himpunan terukur Lebesgue.</p>
+<p> </p>
+<p><strong>(a)</strong> Sebagaimana telah diamati dalam <a class="xref" href="../114/index.html#114G">114G</a>, setiap subhimpunan
+terhitung dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> terabaikan. Khususnya, <span class="math inline" data-source-tex="\Bbb Q">\(\Bbb Q\)</span> terabaikan (<a class="xref" href="../111/index.html#111Eb">111Eb</a>).
+Kita dapat mengatakan lebih jauh. Misalkan <span class="math inline" data-source-tex="\sequencen{q_n}">\(\sequencen{q_n}\)</span> suatu barisan
+yang menjangkau <span class="math inline" data-source-tex="\Bbb Q">\(\Bbb Q\)</span>, dan untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="I_n=\ooint{q_n-2^{-n},q_n+2^{-n}}">\(I_n=\ooint{q_n-2^{-n},q_n+2^{-n}}\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="G_n=\bigcup_{k\ge n}I_k">\(G_n=\bigcup_{k\ge n}I_k\)</span>.</div>
+<p>Maka <span class="math inline" data-source-tex="G_n">\(G_n\)</span> merupakan himpunan terbuka berukuran paling besar
+<span class="math inline" data-source-tex="\sum_{k=n}^{\infty}2\cdot 2^{-k}=4\cdot 2^{-n}">\(\sum_{k=n}^{\infty}2\cdot 2^{-k}=4\cdot 2^{-n}\)</span>, dan memuat semua titik
+<span class="math inline" data-source-tex="\Bbb Q">\(\Bbb Q\)</span> kecuali sejumlah berhingga, sehingga rapat (yaitu, beririsan
+dengan setiap interval tak-sepele). Tetapkan <span class="math inline" data-source-tex="F_n=\Bbb R\setminus G_n">\(F_n=\Bbb R\setminus G_n\)</span>;
+maka <span class="math inline" data-source-tex="F_n">\(F_n\)</span> tertutup, <span class="math inline" data-source-tex="\mu(\Bbb R\setminus F_n)\le 4/2^n">\(\mu(\Bbb R\setminus F_n)\le 4/2^n\)</span>, tetapi <span class="math inline" data-source-tex="F_n">\(F_n\)</span>
+tidak memuat satu pun <span class="math inline" data-source-tex="q_k">\(q_k\)</span> dengan <span class="math inline" data-source-tex="k\ge n">\(k\ge n\)</span>, sehingga <span class="math inline" data-source-tex="F_n">\(F_n\)</span> tidak
+mungkin memuat interval tak-sepele apa pun.
+Perhatikan bahwa <span class="math inline" data-source-tex="\sequencen{G_n}">\(\sequencen{G_n}\)</span> tak-menaik, sehingga
+<span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> tak-menurun.</p>
+</section>
+<section class="source-unit" id="134Jb" data-source-id="134Jb"><h3><span class="source-label">134Jb</span> <strong>(b)</strong> </h3>
+<p>Kita dapat mengembangkan konstruksi di atas
+sebagai berikut. Terdapat suatu himpunan terukur <span class="math inline" data-source-tex="E\subseteq\Bbb R">\(E\subseteq\Bbb R\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\mu(I\cap E)&gt;0">\(\mu(I\cap E)&gt;0\)</span> dan <span class="math inline" data-source-tex="\mu(I\setminus E)&gt;0">\(\mu(I\setminus E)&gt;0\)</span> untuk setiap
+interval tak-sepele <span class="math inline" data-source-tex="I\subseteq\Bbb R">\(I\subseteq\Bbb R\)</span>. <span class="proof-fragment">Bukti. Pertama-tama
+perhatikan bahwa jika <span class="math inline" data-source-tex="k">\(k\)</span>, <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, terdapat <span class="math inline" data-source-tex="j\ge n">\(j\ge n\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="q_j\in I_k">\(q_j\in I_k\)</span>, sehingga <span class="math inline" data-source-tex="I_k\cap I_j\ne\emptyset">\(I_k\cap I_j\ne\emptyset\)</span> dan
+<span class="math inline" data-source-tex="\mu(I_k\setminus F_n)&gt;0">\(\mu(I_k\setminus F_n)&gt;0\)</span>. Sekarang pasti terdapat suatu <span class="math inline" data-source-tex="l&gt;n">\(l&gt;n\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\mu G_l&lt;\mu(I_k\setminus F_n)">\(\mu G_l&lt;\mu(I_k\setminus F_n)\)</span>, sehingga
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\mu(I_k\cap F_l\setminus F_n)
+=\mu((I_k\setminus F_n)\setminus G_l)&gt;0">\(\mu(I_k\cap F_l\setminus F_n)
+=\mu((I_k\setminus F_n)\setminus G_l)&gt;0\)</span>.</span>
+
+
+
+Pilih <span class="math inline" data-source-tex="n_0&lt;n_1&lt;n_2&lt;\ldots">\(n_0&lt;n_1&lt;n_2&lt;\ldots\)</span> sebagai berikut. Mulailah dengan <span class="math inline" data-source-tex="n_0=0">\(n_0=0\)</span>.
+Jika <span class="math inline" data-source-tex="n_{2k}">\(n_{2k}\)</span> telah diberikan, dengan <span class="math inline" data-source-tex="k\in\Bbb N">\(k\in\Bbb N\)</span>, pilih <span class="math inline" data-source-tex="n_{2k+1}">\(n_{2k+1}\)</span>,
+<span class="math inline" data-source-tex="n_{2k+2}">\(n_{2k+2}\)</span> sedemikian sehingga
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\mu(I_k\cap F_{n_{2k+1}}\setminus F_{n_{2k}})&gt;0,\quad
+\mu(I_k\cap F_{n_{2k+2}}\setminus F_{n_{2k+1}})&gt;0">\(\mu(I_k\cap F_{n_{2k+1}}\setminus F_{n_{2k}})&gt;0,\quad
+\mu(I_k\cap F_{n_{2k+2}}\setminus F_{n_{2k+1}})&gt;0\)</span>.</span>
+
+
+
+  Lanjutkan.
+
+Setelah induksi selesai, tetapkan
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="E=\bigcup_{k\in\Bbb N}F_{n_{2k+1}}\setminus F_{n_{2k}}">\(E=\bigcup_{k\in\Bbb N}F_{n_{2k+1}}\setminus F_{n_{2k}}\)</span>,
+  <span class="math inline" data-source-tex="H=\bigcup_{k\in\Bbb N}F_{n_{2k+2}}\setminus F_{n_{2k+1}}">\(H=\bigcup_{k\in\Bbb N}F_{n_{2k+2}}\setminus F_{n_{2k+1}}\)</span>.</span>
+
+
+
+  Karena <span class="math inline" data-source-tex="\sequence{k}{F_k}">\(\sequence{k}{F_k}\)</span> tak-menurun,
+<span class="math inline" data-source-tex="E\cap H=\emptyset">\(E\cap H=\emptyset\)</span>. Jika <span class="math inline" data-source-tex="k\in\Bbb N">\(k\in\Bbb N\)</span>, <span class="math inline" data-source-tex="E\cap I_k">\(E\cap I_k\)</span> dan <span class="math inline" data-source-tex="H\cap I_k">\(H\cap I_k\)</span>
+keduanya mempunyai ukuran positif.
+
+Sekarang andaikan <span class="math inline" data-source-tex="I\subseteq\Bbb R">\(I\subseteq\Bbb R\)</span> suatu interval dengan lebih dari satu
+titik; andaikan <span class="math inline" data-source-tex="a">\(a\)</span>, <span class="math inline" data-source-tex="b\in I">\(b\in I\)</span> dan <span class="math inline" data-source-tex="a&lt;b">\(a&lt;b\)</span>. Maka terdapat <span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="4\cdot 2^{-m}\le b-a">\(4\cdot 2^{-m}\le b-a\)</span>; sekarang terdapat suatu
+<span class="math inline" data-source-tex="k\ge m">\(k\ge m\)</span> sedemikian sehingga <span class="math inline" data-source-tex="q_k\in[a+2^{-m},b-2^{-m}]">\(q_k\in[a+2^{-m},b-2^{-m}]\)</span>, sehingga
+<span class="math inline" data-source-tex="I_k\subseteq I">\(I_k\subseteq I\)</span> dan
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\mu(I\cap E)\ge\mu(E\cap I_k)&gt;0">\(\mu(I\cap E)\ge\mu(E\cap I_k)&gt;0\)</span>,
+  <span class="math inline" data-source-tex="\mu(I\setminus E)\ge\mu(H\cap I_k)&gt;0">\(\mu(I\setminus E)\ge\mu(H\cap I_k)&gt;0\)</span>.  ∎</span>
+
+</span></p>
+</section>
+<section class="source-unit" id="134Jc" data-source-id="134Jc"><h3><span class="source-label">134Jc</span> <strong>(c)</strong> </h3>
+<p>Ini menunjukkan bahwa <span class="math inline" data-source-tex="E">\(E\)</span> dan komplemennya adalah himpunan-himpunan
+terukur yang bukan sekadar sama-sama rapat (seperti <span class="math inline" data-source-tex="\Bbb Q">\(\Bbb Q\)</span> dan
+<span class="math inline" data-source-tex="\Bbb R\setminus\Bbb Q">\(\Bbb R\setminus\Bbb Q\)</span>), melainkan rapat ‘secara esensial’ dalam arti
+bahwa keduanya beririsan dengan setiap interval terbuka tak-kosong dalam
+suatu himpunan berukuran positif, sehingga (misalnya) <span class="math inline" data-source-tex="E\setminus A">\(E\setminus A\)</span>
+rapat untuk setiap himpunan terabaikan <span class="math inline" data-source-tex="A">\(A\)</span>.</p>
+</section>
+<section class="source-unit" id="134K" data-source-id="134K"><span class="anchor" id="134Ka"></span><h2><span class="source-label">134K</span> Integral Riemann </h2>
+<p>Dalam menulis buku ini, saya telah
+berusaha mengandaikan sesedikit mungkin pengetahuan sebelumnya. Khususnya,
+Anda tidak perlu telah mempelajari integral Riemann. Namun demikian, jika
+Anda telah mempelajari teori dasar integral Riemann — yang sesungguhnya
+bukan hanya latihan sangat baik dalam teknik analisis <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span>-<span class="math inline" data-source-tex="\delta">\(\delta\)</span>,
+melainkan juga sumber gagasan yang terus-menerus bagi bidang ini — saya
+harap Anda ingin menghubungkannya dengan materi yang sedang kita pelajari;
+baik karena Anda tidak ingin merasa bahwa jerih payah Anda sia-sia, maupun
+karena Anda barangkali telah mengembangkan sejumlah intuisi yang akan tetap
+berharga apabila disesuaikan dengan tepat pada konteks baru. Oleh karena itu,
+saya memberikan uraian singkat mengenai hubungan antara metode integral
+Riemann dan Lebesgue pada garis bilangan real.</p>
+<p> </p>
+<p><strong>(a)</strong> Ada banyak cara untuk menggambarkan integral Riemann; saya memilih
+salah satu yang populer. Jika <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span> adalah interval tertutup tak-sepele
+dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, saya mengatakan bahwa suatu <strong>pembagian</strong> atas <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>
+adalah daftar berhingga <span class="math inline" data-source-tex="D=(a_0,a_1,\ldots,a_n)">\(D=(a_0,a_1,\ldots,a_n)\)</span>, dengan <span class="math inline" data-source-tex="n\ge 1">\(n\ge 1\)</span>,
+sedemikian sehingga <span class="math inline" data-source-tex="a=a_0&lt;a_1&lt;\ldots&lt; a_n=b">\(a=a_0&lt;a_1&lt;\ldots&lt; a_n=b\)</span>. Jika sekarang <span class="math inline" data-source-tex="f">\(f\)</span> merupakan
+fungsi bernilai real yang didefinisikan (setidaknya) pada <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span> dan
+berbatas pada <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>, <strong>jumlah atas</strong> dan <strong>jumlah bawah</strong> dari <span class="math inline" data-source-tex="f">\(f\)</span>
+pada <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span> yang diturunkan dari <span class="math inline" data-source-tex="D">\(D\)</span> adalah</p>
+<div class="centerline"><span class="math inline" data-source-tex="S_D(f)
+=\sum_{i=1}^n(a_i-a_{i-1})\sup_{x\in\ooint{a_{i-1},a_i}}f(x)">\(S_D(f)
+=\sum_{i=1}^n(a_i-a_{i-1})\sup_{x\in\ooint{a_{i-1},a_i}}f(x)\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="s_D(f)
+=\sum_{i=1}^n(a_i-a_{i-1})\inf_{x\in\ooint{a_{i-1},a_i}}f(x)">\(s_D(f)
+=\sum_{i=1}^n(a_i-a_{i-1})\inf_{x\in\ooint{a_{i-1},a_i}}f(x)\)</span>.</div>
+<p>Anda perlu membuktikan bahwa jika <span class="math inline" data-source-tex="D">\(D\)</span> dan <span class="math inline" data-source-tex="D&#x27;">\(D&#x27;\)</span> merupakan dua
+pembagian atas <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>, maka <span class="math inline" data-source-tex="s_D(f)\le S_{D&#x27;}(f)">\(s_D(f)\le S_{D&#x27;}(f)\)</span>. Sekarang definisikan
+<strong>integral Riemann atas</strong> dan <strong>integral Riemann bawah</strong> dari <span class="math inline" data-source-tex="f">\(f\)</span>
+sebagai</p>
+<div class="centerline"><span class="math inline" data-source-tex="U_{[a,b]}(f)=\inf\{S_D(f):D">\(U_{[a,b]}(f)=\inf\{S_D(f):D\)</span> pembagian atas <span class="math inline" data-source-tex="[a,b]\}">\([a,b]\}\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="L_{[a,b]}(f)=\sup\{s_D(f):D">\(L_{[a,b]}(f)=\sup\{s_D(f):D\)</span> pembagian atas <span class="math inline" data-source-tex="[a,b]\}">\([a,b]\}\)</span>.</div>
+<p>Periksa bahwa <span class="math inline" data-source-tex="L_{[a,b]}(f)">\(L_{[a,b]}(f)\)</span> pasti lebih kecil daripada atau sama
+dengan <span class="math inline" data-source-tex="U_{[a,b]}(f)">\(U_{[a,b]}(f)\)</span>. Akhirnya, nyatakan <span class="math inline" data-source-tex="f">\(f\)</span> <strong>terintegralkan Riemann
+pada</strong> <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span> jika <span class="math inline" data-source-tex="U_{[a,b]}(f)=L_{[a,b]}(f)">\(U_{[a,b]}(f)=L_{[a,b]}(f)\)</span>, dan dalam kasus ini ambil
+nilai bersama tersebut sebagai <strong>integral Riemann</strong> <span class="math inline" data-source-tex="\Rint_a^bf">\(\Rint_a^bf\)</span> dari
+<span class="math inline" data-source-tex="f">\(f\)</span> pada <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>.</p>
+</section>
+<section class="source-unit" id="134Kb" data-source-id="134Kb"><h3><span class="source-label">134Kb</span> (b) </h3>
+<p>Jika <span class="math inline" data-source-tex="f:[a,b]\to\Bbb R">\(f:[a,b]\to\Bbb R\)</span> terintegralkan Riemann, maka fungsi tersebut terintegralkan
+Lebesgue, dengan integral yang sama. <span class="proof-fragment">Bukti. Untuk setiap pembagian
+<span class="math inline" data-source-tex="D=(a_0,\ldots,a_n)">\(D=(a_0,\ldots,a_n)\)</span> atas <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>, definisikan
+<span class="math inline" data-source-tex="g_D">\(g_D\)</span>, <span class="math inline" data-source-tex="h_D:[a,b]\to\Bbb R">\(h_D:[a,b]\to\Bbb R\)</span> dengan menetapkan
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="g_D(x)=\inf\{f(y):y\in\ooint{a_{i-1},a_i}\}">\(g_D(x)=\inf\{f(y):y\in\ooint{a_{i-1},a_i}\}\)</span> jika
+<span class="math inline" data-source-tex="a_{i-1}&lt;x&lt;a_i">\(a_{i-1}&lt;x&lt;a_i\)</span>,    <span class="math inline" data-source-tex="g_D(a_i)=f(a_i)">\(g_D(a_i)=f(a_i)\)</span> untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>,</span>
+
+
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="h_D(x)=\sup\{f(y):y\in\ooint{a_{i-1},a_i}\}">\(h_D(x)=\sup\{f(y):y\in\ooint{a_{i-1},a_i}\}\)</span> jika
+<span class="math inline" data-source-tex="a_{i-1}&lt;x&lt;a_i">\(a_{i-1}&lt;x&lt;a_i\)</span>,    <span class="math inline" data-source-tex="h_D(a_i)=f(a_i)">\(h_D(a_i)=f(a_i)\)</span> untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>.</span>
+
+
+
+  Maka <span class="math inline" data-source-tex="g_D">\(g_D\)</span> dan <span class="math inline" data-source-tex="h_D">\(h_D\)</span> konstan pada setiap interval
+<span class="math inline" data-source-tex="\ooint{a_{i-1},a_i}">\(\ooint{a_{i-1},a_i}\)</span>, sehingga semua himpunan <span class="math inline" data-source-tex="\{x:g_D(x)\le c\}">\(\{x:g_D(x)\le c\}\)</span>,
+<span class="math inline" data-source-tex="\{x:h_D(x)\le c\}">\(\{x:h_D(x)\le c\}\)</span> merupakan gabungan berhingga interval-interval, dan
+<span class="math inline" data-source-tex="g_D">\(g_D\)</span> serta <span class="math inline" data-source-tex="h_D">\(h_D\)</span> terukur; selain itu,
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\int g_Dd\mu
+=s_D(f)">\(\int g_Dd\mu
+=s_D(f)\)</span>,   <span class="math inline" data-source-tex="\int h_Dd\mu=S_D(f)">\(\int h_Dd\mu=S_D(f)\)</span>.</span>
+
+
+
+  Akibatnya,
+
+<span class="math display" data-source-tex="\eqalign{\Rint_a^bf=L_{[a,b]}(f)&amp;=\sup_D\int g_Dd\mu
+\le\underline{\int}fd\mu\cr
+&amp;\le\overline{\int}fd\mu
+\le\inf_D\int h_Dd\mu=U_{[a,b]}(f)=\Rint_a^bf,\cr}">\[\begin{aligned}\Rint_a^bf=L_{[a,b]}(f)&amp;=\sup_D\int g_Dd\mu
+\le\underline{\int}fd\mu\\
+&amp;\le\overline{\int}fd\mu
+\le\inf_D\int h_Dd\mu=U_{[a,b]}(f)=\Rint_a^bf,\\\end{aligned}\]</span>
+
+  dan <span class="math inline" data-source-tex="\overline{\int}fd\mu=\underline{\int}fd\mu=\Rint_a^bf">\(\overline{\int}fd\mu=\underline{\int}fd\mu=\Rint_a^bf\)</span>,
+sehingga <span class="math inline" data-source-tex="\int fd\mu">\(\int fd\mu\)</span> ada dan sama dengan <span class="math inline" data-source-tex="\Rint_a^bf">\(\Rint_a^bf\)</span> (133Jd). ∎
+</span></p>
+</section>
+<section class="source-unit" id="134Kc" data-source-id="134Kc"><h3><span class="source-label">134Kc</span> <strong>(c)</strong> </h3>
+<p>Pembahasan di atas menyangkut integral
+Riemann ‘wajar’, untuk fungsi berbatas pada interval berbatas. Untuk fungsi
+tak-berbatas dan interval tak-berbatas, digunakan berbagai bentuk integral
+‘tak wajar’; misalnya, integral Riemann tak wajar
+<span class="math inline" data-source-tex="\int_0^{\infty}\bover{\sin x}{x}dx">\(\int_0^{\infty}\bover{\sin x}{x}dx\)</span> diambil sebagai
+<span class="math inline" data-source-tex="\lim_{a\to\infty}\int_0^a\bover{\sin x}{x}dx">\(\lim_{a\to\infty}\int_0^a\bover{\sin x}{x}dx\)</span>, sedangkan
+<span class="math inline" data-source-tex="\int_0^1\ln x\,dx">\(\int_0^1\ln x\,dx\)</span> diambil sebagai
+<span class="math inline" data-source-tex="\lim_{a\downarrow 0}\int_a^1\ln x\,dx">\(\lim_{a\downarrow 0}\int_a^1\ln x\,dx\)</span>.
+Di antara keduanya, integral kedua ada sebagai integral Lebesgue, tetapi yang
+pertama tidak, karena <span class="math inline" data-source-tex="\int_0^{\infty}|\bover{\sin x}{x}|dx=\infty">\(\int_0^{\infty}|\bover{\sin x}{x}|dx=\infty\)</span>.
+Kemampuan integral Lebesgue untuk menangani secara langsung fungsi
+tak-berbatas ‘terintegralkan secara mutlak’ pada domain tak-berbatas berarti
+bahwa fungsi yang dapat disebut ‘terintegralkan secara bersyarat’ terdorong
+ke latar belakang teori. Dalam Bab 48 Jilid 4 saya akan membahas teori umum
+fungsi-fungsi semacam itu, tetapi untuk sementara waktu saya akan
+menanganinya satu per satu pada kesempatan langka ketika fungsi tersebut
+muncul.</p>
+</section>
+<section class="source-unit" id="134L" data-source-id="134L"><h2><span class="source-label">134L</span>  </h2>
+<p>Sebenarnya terdapat suatu karakterisasi indah bagi
+fungsi-fungsi terintegralkan Riemann, sebagai berikut.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Jika <span class="math inline" data-source-tex="a&lt;b">\(a&lt;b\)</span> dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, suatu fungsi berbatas
+<span class="math inline" data-source-tex="f:[a,b]\to\Bbb R">\(f:[a,b]\to\Bbb R\)</span> terintegralkan Riemann jika dan hanya jika kontinu
+hampir di mana-mana dalam <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Andaikan <span class="math inline" data-source-tex="f">\(f\)</span> terintegralkan Riemann. Untuk setiap
+<span class="math inline" data-source-tex="x\in[a,b]">\(x\in[a,b]\)</span>, tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="g(x)
+=\sup_{\delta&gt;0}\inf_{y\in[a,b],|y-x|\le\delta}f(y)">\(g(x)
+=\sup_{\delta&gt;0}\inf_{y\in[a,b],|y-x|\le\delta}f(y)\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="h(x)
+=\inf_{\delta&gt;0}\sup_{y\in[a,b],|y-x|\le\delta}f(y)">\(h(x)
+=\inf_{\delta&gt;0}\sup_{y\in[a,b],|y-x|\le\delta}f(y)\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="f">\(f\)</span> kontinu di <span class="math inline" data-source-tex="x">\(x\)</span> jika dan hanya jika <span class="math inline" data-source-tex="g(x)=h(x)">\(g(x)=h(x)\)</span>.
+Kita memiliki <span class="math inline" data-source-tex="g\le f\le h">\(g\le f\le h\)</span>, sehingga jika <span class="math inline" data-source-tex="D">\(D\)</span> sembarang pembagian atas
+<span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>, maka <span class="math inline" data-source-tex="S_D(g)\le S_D(f)\le S_D(h)">\(S_D(g)\le S_D(f)\le S_D(h)\)</span> dan
+<span class="math inline" data-source-tex="s_D(g)\le s_D(f)\le s_D(h)">\(s_D(g)\le s_D(f)\le s_D(h)\)</span>. Namun sebenarnya <span class="math inline" data-source-tex="S_D(f)=S_D(h)">\(S_D(f)=S_D(h)\)</span> dan
+<span class="math inline" data-source-tex="s_D(g)=s_D(f)">\(s_D(g)=s_D(f)\)</span>, karena pada setiap interval terbuka
+<span class="math inline" data-source-tex="\ooint{c,d}\subseteq[a,b]">\(\ooint{c,d}\subseteq[a,b]\)</span> kita harus memiliki</p>
+<div class="centerline"><span class="math inline" data-source-tex="\inf_{x\in\ooint{c,d}}g(x)=\inf_{x\in\ooint{c,d}}f(x)">\(\inf_{x\in\ooint{c,d}}g(x)=\inf_{x\in\ooint{c,d}}f(x)\)</span>,
+  
+<span class="math inline" data-source-tex="\sup_{x\in\ooint{c,d}}f(x)=\sup_{x\in\ooint{c,d}}h(x)">\(\sup_{x\in\ooint{c,d}}f(x)=\sup_{x\in\ooint{c,d}}h(x)\)</span>.</div>
+<p>Akibatnya,</p>
+<div class="centerline"><span class="math inline" data-source-tex="L_{[a,b]}(f)=L_{[a,b]}(g)\le U_{[a,b]}(g)\le
+U_{[a,b]}(f)">\(L_{[a,b]}(f)=L_{[a,b]}(g)\le U_{[a,b]}(g)\le
+U_{[a,b]}(f)\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="L_{[a,b]}(f)\le L_{[a,b]}(h)\le U_{[a,b]}(h)=
+U_{[a,b]}(f)">\(L_{[a,b]}(f)\le L_{[a,b]}(h)\le U_{[a,b]}(h)=
+U_{[a,b]}(f)\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="f">\(f\)</span> terintegralkan Riemann, <span class="math inline" data-source-tex="g">\(g\)</span> dan <span class="math inline" data-source-tex="h">\(h\)</span> keduanya harus terintegralkan
+Riemann, dengan integral sama dengan <span class="math inline" data-source-tex="\Rint_a^bf">\(\Rint_a^bf\)</span>. Menurut <a class="xref" href="#134Kb">134Kb</a>, keduanya
+terintegralkan Lebesgue, dengan integral yang sama. Namun <span class="math inline" data-source-tex="g\le h">\(g\le h\)</span>, sehingga
+<span class="math inline" data-source-tex="g\eae h">\(g\eae h\)</span>, menurut 122Rd. Sekarang <span class="math inline" data-source-tex="f">\(f\)</span> kontinu di setiap titik tempat <span class="math inline" data-source-tex="g">\(g\)</span>
+dan <span class="math inline" data-source-tex="h">\(h\)</span> berimpit, sehingga <span class="math inline" data-source-tex="f">\(f\)</span> kontinu hampir di mana-mana.</p>
+<p> </p>
+<p><strong>(b)</strong> Sekarang andaikan <span class="math inline" data-source-tex="f">\(f\)</span> kontinu hampir di mana-mana. Untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>,
+misalkan <span class="math inline" data-source-tex="D_n">\(D_n\)</span> pembagian atas <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span> menjadi <span class="math inline" data-source-tex="2^n">\(2^n\)</span> bagian sama panjang.
+Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="h_n(x)=\sup_{y\in\ooint{c,d}}f(y)">\(h_n(x)=\sup_{y\in\ooint{c,d}}f(y)\)</span>,
+  <span class="math inline" data-source-tex="g_n(x)=\inf_{y\in\ooint{c,d}}f(y)">\(g_n(x)=\inf_{y\in\ooint{c,d}}f(y)\)</span></div>
+<p>jika <span class="math inline" data-source-tex="\ooint{c,d}">\(\ooint{c,d}\)</span> merupakan interval terbuka dari <span class="math inline" data-source-tex="D_n">\(D_n\)</span> yang
+memuat <span class="math inline" data-source-tex="x">\(x\)</span>; sebagai konvensi, tetapkan <span class="math inline" data-source-tex="h_n(x)=g_n(x)=f(x)">\(h_n(x)=g_n(x)=f(x)\)</span> jika <span class="math inline" data-source-tex="x">\(x\)</span>
+merupakan salah satu titik dalam daftar <span class="math inline" data-source-tex="D_n">\(D_n\)</span>. Maka <span class="math inline" data-source-tex="\sequencen{g_n}">\(\sequencen{g_n}\)</span>
+merupakan barisan fungsi menaik, sedangkan <span class="math inline" data-source-tex="\sequencen{h_n}">\(\sequencen{h_n}\)</span> merupakan
+barisan fungsi menurun; setiap fungsinya konstan pada masing-masing anggota suatu keluarga
+berhingga interval yang mencakup <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>; dan
+<span class="math inline" data-source-tex="s_{D_n}(f)=\int g_nd\mu">\(s_{D_n}(f)=\int g_nd\mu\)</span>, <span class="math inline" data-source-tex="S_{D_n}(f)=\int h_nd\mu">\(S_{D_n}(f)=\int h_nd\mu\)</span>. Selanjutnya,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{n\to\infty}g_n(x)=\lim_{n\to\infty}h_n(x)=f(x)">\(\lim_{n\to\infty}g_n(x)=\lim_{n\to\infty}h_n(x)=f(x)\)</span></div>
+<p>pada setiap titik <span class="math inline" data-source-tex="x">\(x\)</span> tempat <span class="math inline" data-source-tex="f">\(f\)</span> kontinu; sehingga
+<span class="math inline" data-source-tex="f\eae\lim_{n\to\infty}g_n\eae\lim_{n\to\infty}h_n">\(f\eae\lim_{n\to\infty}g_n\eae\lim_{n\to\infty}h_n\)</span>. Menurut Teorema
+Konvergensi Terdominasi Lebesgue (<a class="xref" href="../123/index.html#123C">123C</a>),</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{n\to\infty}\int g_nd\mu
+=\int fd\mu=\lim_{n\to\infty}\int h_nd\mu">\(\lim_{n\to\infty}\int g_nd\mu
+=\int fd\mu=\lim_{n\to\infty}\int h_nd\mu\)</span>;</div>
+<p>tetapi ini berarti bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="L_{[a,b]}(f)\ge\int fd\mu\ge U_{[a,b]}(f)">\(L_{[a,b]}(f)\ge\int fd\mu\ge U_{[a,b]}(f)\)</span>,</div>
+<p>sehingga semua ini sama dan <span class="math inline" data-source-tex="f">\(f\)</span> terintegralkan Riemann.</p></aside>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="134X" data-source-id="134X"><span class="anchor" id="134Xa"></span><h2><span class="source-label">134X</span> Latihan dasar <span class="math inline" data-source-tex="\pmb{&gt;}">\(\pmb{&gt;}\)</span>(a) <span class="importance" title="Sangat penting">penting</span></h2>
+<p>Tunjukkan bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span> merupakan fungsi bernilai real terintegralkan pada
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, maka <span class="math inline" data-source-tex="\int f(x+a)dx">\(\int f(x+a)dx\)</span> ada dan sama dengan <span class="math inline" data-source-tex="\int f">\(\int f\)</span> untuk setiap
+<span class="math inline" data-source-tex="a\in\BbbR^r">\(a\in\BbbR^r\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> mulailah dengan fungsi sederhana <span class="math inline" data-source-tex="f">\(f\)</span>.</span></p>
+</section>
+<section class="source-unit" id="134Xb" data-source-id="134Xb"><h3><span class="source-label">134Xb</span> (b) </h3>
+<p>Secara lebih umum, tunjukkan bahwa jika
+<span class="math inline" data-source-tex="E\subseteq\BbbR^r">\(E\subseteq\BbbR^r\)</span> terukur dan <span class="math inline" data-source-tex="f">\(f\)</span> merupakan fungsi bernilai real yang
+terintegralkan pada <span class="math inline" data-source-tex="E">\(E\)</span> dalam arti <a class="xref" href="../131/index.html#131D">131D</a>, maka
+<span class="math inline" data-source-tex="\int_{E-a}f(x+a)dx">\(\int_{E-a}f(x+a)dx\)</span> ada dan sama dengan <span class="math inline" data-source-tex="\int_Ef">\(\int_Ef\)</span> untuk setiap
+<span class="math inline" data-source-tex="a\in\BbbR^r">\(a\in\BbbR^r\)</span>.</p>
+</section>
+<section class="source-unit" id="134Xc" data-source-id="134Xc"><h3><span class="source-label">134Xc</span> (c) </h3>
+<p>Tunjukkan bahwa jika <span class="math inline" data-source-tex="C\subseteq\Bbb R">\(C\subseteq\Bbb R\)</span> sembarang himpunan
+tak-terabaikan, maka himpunan tersebut memiliki suatu subhimpunan tak-terukur.
+<span class="hint" role="note"><strong>Petunjuk:</strong> gunakan metode <a class="xref" href="#134B">134B</a>, dengan mengambil relasi <span class="math inline" data-source-tex="\sim">\(\sim\)</span> pada subhimpunan
+berbatas yang sesuai dari <span class="math inline" data-source-tex="C">\(C\)</span> sebagai pengganti
+<span class="math inline" data-source-tex="\coint{\tbf{0},\tbf{1}}">\(\coint{\tbf{0},\tbf{1}}\)</span>.</span></p>
+</section>
+<section class="source-unit" id="134Xd" data-source-id="134Xd"><h3><span class="source-label">134Xd</span> (&gt;d) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="\nu_g">\(\nu_g\)</span> suatu ukuran Lebesgue–Stieltjes pada
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, yang dibangun seperti dalam <a class="xref" href="../114/index.html#114Xa">114Xa</a> dari fungsi tak-menurun
+<span class="math inline" data-source-tex="g:\Bbb R\to\Bbb R">\(g:\Bbb R\to\Bbb R\)</span>, dan <span class="math inline" data-source-tex="\Sigma_g">\(\Sigma_g\)</span> domainnya. (Lihat juga <a class="xref" href="../132/index.html#132Xg">132Xg</a>.)
+Tunjukkan bahwa</p>
+<p>  (i) jika <span class="math inline" data-source-tex="A\subseteq\Bbb R">\(A\subseteq\Bbb R\)</span> sembarang himpunan, maka</p>
+<p><span class="math display" data-source-tex="\eqalign{\nu_g^*A&amp;=\inf\{\nu_g G:G\text{ terbuka},\,G\supseteq A\}\cr
+&amp;=\min\{\nu_g H:H\text{ Borel},\,H\supseteq A\};\cr}">\[\begin{aligned}\nu_g^*A&amp;=\inf\{\nu_g G:G\text{ terbuka},\,G\supseteq A\}\\
+&amp;=\min\{\nu_g H:H\text{ Borel},\,H\supseteq A\};\\\end{aligned}\]</span></p>
+<p>  (ii) jika <span class="math inline" data-source-tex="E\in\Sigma_g">\(E\in\Sigma_g\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu_g E=\sup\{\nu_g F:F
+\text{ tertutup dan berbatas},\,F\subseteq E\}">\(\nu_g E=\sup\{\nu_g F:F
+\text{ tertutup dan berbatas},\,F\subseteq E\}\)</span>,</div>
+<p>dan terdapat himpunan-himpunan Borel <span class="math inline" data-source-tex="H_1">\(H_1\)</span>, <span class="math inline" data-source-tex="H_2">\(H_2\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="H_1\subseteq E\subseteq H_2">\(H_1\subseteq E\subseteq H_2\)</span> dan
+<span class="math inline" data-source-tex="\nu_g(H_2\setminus H_1)=\nu_g(H_2\setminus E)=\nu_g(E\setminus H_1)=0">\(\nu_g(H_2\setminus H_1)=\nu_g(H_2\setminus E)=\nu_g(E\setminus H_1)=0\)</span>;</p>
+<p>  (iii) jika <span class="math inline" data-source-tex="A\subseteq\Bbb R">\(A\subseteq\Bbb R\)</span> sembarang himpunan, maka <span class="math inline" data-source-tex="A">\(A\)</span> memiliki
+suatu selubung terukur yang merupakan himpunan Borel;</p>
+<p>  (iv) jika <span class="math inline" data-source-tex="f">\(f\)</span> adalah fungsi bernilai real <span class="math inline" data-source-tex="\Sigma_g">\(\Sigma_g\)</span>-terukur yang
+didefinisikan pada suatu subhimpunan dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, maka terdapat himpunan Borel
+<span class="math inline" data-source-tex="\nu_g">\(\nu_g\)</span>-koterabaikan <span class="math inline" data-source-tex="H\subseteq\Bbb R">\(H\subseteq\Bbb R\)</span> sedemikian sehingga <span class="math inline" data-source-tex="f\restr H">\(f\restr H\)</span>
+terukur Borel.</p>
+</section>
+<section class="source-unit" id="134Xe" data-source-id="134Xe"><h3><span class="source-label">134Xe</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="E\subseteq\BbbR^r">\(E\subseteq\BbbR^r\)</span> suatu himpunan terukur, dan
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. (i) Tunjukkan bahwa terdapat suatu himpunan terbuka
+<span class="math inline" data-source-tex="G\supseteq E">\(G\supseteq E\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\mu(G\setminus E)\le\epsilon">\(\mu(G\setminus E)\le\epsilon\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> terapkan 134Fa pada setiap himpunan <span class="math inline" data-source-tex="E\cap B(\tbf{0},n)">\(E\cap B(\tbf{0},n)\)</span>.</span>
+(ii) Tunjukkan bahwa terdapat suatu himpunan tertutup <span class="math inline" data-source-tex="F\subseteq E">\(F\subseteq E\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\mu(E\setminus F)\le\epsilon">\(\mu(E\setminus F)\le\epsilon\)</span>.</p>
+</section>
+<section class="source-unit" id="134Xf" data-source-id="134Xf"><h3><span class="source-label">134Xf</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="C\subseteq[0,1]">\(C\subseteq[0,1]\)</span> himpunan Cantor. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\{x+y:x">\(\{x+y:x\)</span>, <span class="math inline" data-source-tex="y\in C\}=[0,2]">\(y\in C\}=[0,2]\)</span> dan <span class="math inline" data-source-tex="\{x-y:x">\(\{x-y:x\)</span>, <span class="math inline" data-source-tex="y\in C\}=[-1,1]">\(y\in C\}=[-1,1]\)</span>.</p>
+</section>
+<section class="source-unit" id="134Xg" data-source-id="134Xg"><h3><span class="source-label">134Xg</span> (g) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g">\(g\)</span> fungsi-fungsi dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> ke dirinya
+sendiri. Tunjukkan bahwa (i) jika <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span> keduanya terukur Borel, maka
+komposisinya <span class="math inline" data-source-tex="fg">\(fg\)</span> juga demikian (ii) jika <span class="math inline" data-source-tex="f">\(f\)</span> terukur Borel dan <span class="math inline" data-source-tex="g">\(g\)</span> terukur
+Lebesgue, maka <span class="math inline" data-source-tex="fg">\(fg\)</span> terukur Lebesgue (iii) jika <span class="math inline" data-source-tex="f">\(f\)</span> terukur Lebesgue dan <span class="math inline" data-source-tex="g">\(g\)</span>
+terukur Borel, maka <span class="math inline" data-source-tex="fg">\(fg\)</span> tidak harus terukur Lebesgue.</p>
+</section>
+<section class="source-unit" id="134Xh" data-source-id="134Xh"><h3><span class="source-label">134Xh</span> (h) </h3>
+<p>Tunjukkan bahwa untuk setiap bilangan bulat <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span>
+terdapat suatu himpunan terukur <span class="math inline" data-source-tex="E\subseteq\BbbR^r">\(E\subseteq\BbbR^r\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="E">\(E\)</span> dan <span class="math inline" data-source-tex="\BbbR^r\setminus E">\(\BbbR^r\setminus E\)</span> keduanya beririsan dengan setiap interval
+terbuka tak-kosong dalam suatu himpunan berukuran positif.</p>
+</section>
+<section class="source-unit" id="134Xi" data-source-id="134Xi"><h3><span class="source-label">134Xi</span> (i) </h3>
+<p>Bekali <span class="math inline" data-source-tex="[0,1]">\([0,1]\)</span> dengan ukuran subruangnya. (i) Tunjukkan bahwa
+terdapat suatu barisan saling lepas <span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> yang terdiri atas
+subhimpunan-subhimpunan dari <span class="math inline" data-source-tex="[0,1]">\([0,1]\)</span> yang semuanya berukuran luar <span class="math inline" data-source-tex="1">\(1\)</span>.
+(ii) Tunjukkan bahwa terdapat suatu fungsi <span class="math inline" data-source-tex="f:[0,1]\to\ooint{0,1}">\(f:[0,1]\to\ooint{0,1}\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\underline{\int}f=0">\(\underline{\int}f=0\)</span> dan <span class="math inline" data-source-tex="\overline{\int}f=1">\(\overline{\int}f=1\)</span>.</p>
+</section>
+<section class="source-unit" id="134Xj" data-source-id="134Xj"><h3><span class="source-label">134Xj</span> (j) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi real terukur dan <span class="math inline" data-source-tex="g">\(g\)</span> suatu fungsi
+real sedemikian sehingga <span class="math inline" data-source-tex="\dom g\setminus\dom f">\(\dom g\setminus\dom f\)</span> dan
+<span class="math inline" data-source-tex="\{x:x\in\dom g\cap\dom f">\(\{x:x\in\dom g\cap\dom f\)</span>, <span class="math inline" data-source-tex="g(x)\ne f(x)\}">\(g(x)\ne f(x)\}\)</span> keduanya terabaikan.
+Tunjukkan bahwa <span class="math inline" data-source-tex="g">\(g\)</span> terukur.</p>
+</section>
+<section class="source-unit" id="134Y" data-source-id="134Y"><span class="anchor" id="134Ya"></span><h2><span class="source-label">134Y</span> Latihan lanjutan (a) </h2>
+<p>Tetapkan <span class="math inline" data-source-tex="c&gt;0">\(c&gt;0\)</span>. Untuk <span class="math inline" data-source-tex="A\subseteq\BbbR^r">\(A\subseteq\BbbR^r\)</span> tetapkan
+<span class="math inline" data-source-tex="cA=\{cx:x\in A\}">\(cA=\{cx:x\in A\}\)</span>. (i) Tunjukkan bahwa <span class="math inline" data-source-tex="\mu^*(cA)=c^r\mu^*A">\(\mu^*(cA)=c^r\mu^*A\)</span> untuk setiap
+<span class="math inline" data-source-tex="A\subseteq\BbbR^r">\(A\subseteq\BbbR^r\)</span>. (ii) Tunjukkan bahwa <span class="math inline" data-source-tex="cE">\(cE\)</span> terukur untuk setiap
+<span class="math inline" data-source-tex="E\subseteq\BbbR^r">\(E\subseteq\BbbR^r\)</span> terukur.</p>
+</section>
+<section class="source-unit" id="134Yb" data-source-id="134Yb"><h3><span class="source-label">134Yb</span> (b) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\langle f_{mn}\rangle_{m,n\in\Bbb N}">\(\langle f_{mn}\rangle_{m,n\in\Bbb N}\)</span>,
+<span class="math inline" data-source-tex="\sequence{m}{f_m}">\(\sequence{m}{f_m}\)</span>, <span class="math inline" data-source-tex="f">\(f\)</span> merupakan fungsi-fungsi terukur bernilai real yang
+didefinisikan hampir di mana-mana dalam <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> dan sedemikian sehingga
+<span class="math inline" data-source-tex="f_m\eae\lim_{n\to\infty}f_{mn}">\(f_m\eae\lim_{n\to\infty}f_{mn}\)</span> untuk setiap <span class="math inline" data-source-tex="m">\(m\)</span> dan
+<span class="math inline" data-source-tex="f\eae\lim_{m\to\infty}f_m">\(f\eae\lim_{m\to\infty}f_m\)</span>. Tunjukkan bahwa terdapat suatu barisan
+<span class="math inline" data-source-tex="\sequence{k}{n_k}">\(\sequence{k}{n_k}\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="f\eae\lim_{k\to\infty}f_{k,n_k}">\(f\eae\lim_{k\to\infty}f_{k,n_k}\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> ambil <span class="math inline" data-source-tex="n_k">\(n_k\)</span> sedemikian sehingga ukuran
+<span class="math inline" data-source-tex="\{x:\|x\|\le k,\,|f_k(x)-f_{k,n_k}(x)|\ge 2^{-k}\}">\(\{x:\|x\|\le k,\,|f_k(x)-f_{k,n_k}(x)|\ge 2^{-k}\}\)</span> paling besar <span class="math inline" data-source-tex="2^{-k}">\(2^{-k}\)</span>
+untuk setiap <span class="math inline" data-source-tex="k">\(k\)</span>.</span></p>
+</section>
+<section class="source-unit" id="134Yc" data-source-id="134Yc"><h3><span class="source-label">134Yc</span> (c) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real terukur yang
+didefinisikan hampir di mana-mana dalam <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>. Tunjukkan bahwa terdapat
+suatu barisan <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> fungsi-fungsi kontinu yang konvergen menuju
+<span class="math inline" data-source-tex="f">\(f\)</span> hampir di mana-mana. <span class="hint" role="note"><strong>Petunjuk:</strong> Tangani secara berturut-turut kasus-kasus
+(i) <span class="math inline" data-source-tex="f=\chi I">\(f=\chi I\)</span> dengan <span class="math inline" data-source-tex="I">\(I\)</span> suatu interval setengah terbuka
+(ii) <span class="math inline" data-source-tex="f=\chi(\bigcup_{j\le n}I_j)">\(f=\chi(\bigcup_{j\le n}I_j)\)</span> dengan <span class="math inline" data-source-tex="I_0,\ldots,I_n">\(I_0,\ldots,I_n\)</span> interval-interval
+setengah terbuka yang saling lepas (iii) <span class="math inline" data-source-tex="f=\chi E">\(f=\chi E\)</span> dengan <span class="math inline" data-source-tex="E">\(E\)</span> suatu
+himpunan terukur berukuran berhingga (iv) <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi sederhana
+(v) <span class="math inline" data-source-tex="f">\(f\)</span> umum, dengan menggunakan <a class="xref" href="#134Yb">134Yb</a> pada langkah (iii) dan (v).</span></p>
+</section>
+<section class="source-unit" id="134Yd" data-source-id="134Yd"><h3><span class="source-label">134Yd</span> (d) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real yang didefinisikan
+pada suatu subhimpunan dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>. Tunjukkan bahwa pernyataan-pernyataan
+berikut ekuivalen: (i) <span class="math inline" data-source-tex="f">\(f\)</span> terukur (ii) jika <span class="math inline" data-source-tex="E\subseteq\BbbR^r">\(E\subseteq\BbbR^r\)</span> terukur
+dan <span class="math inline" data-source-tex="\mu E&gt;0">\(\mu E&gt;0\)</span>, terdapat himpunan terukur <span class="math inline" data-source-tex="F\subseteq E">\(F\subseteq E\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu F&gt;0">\(\mu F&gt;0\)</span> dan <span class="math inline" data-source-tex="f\restr F">\(f\restr F\)</span> kontinu (iii) jika <span class="math inline" data-source-tex="E\subseteq\BbbR^r">\(E\subseteq\BbbR^r\)</span> terukur
+dan <span class="math inline" data-source-tex="\gamma&lt;\mu E">\(\gamma&lt;\mu E\)</span>, terdapat suatu <span class="math inline" data-source-tex="F\subseteq E">\(F\subseteq E\)</span> terukur sedemikian
+sehingga <span class="math inline" data-source-tex="\mu F\ge\gamma">\(\mu F\ge\gamma\)</span> dan <span class="math inline" data-source-tex="f\restr F">\(f\restr F\)</span> kontinu. <span class="hint" role="note"><strong>Petunjuk:</strong> untuk
+(i)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(iii), gunakan <a class="xref" href="#134Yc">134Yc</a> dan 131Ya; untuk (ii)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(i)
+gunakan <a class="xref" href="../121/index.html#121D">121D</a>.
+Ini merupakan suatu versi <strong>teorema Lusin</strong>.</span></p>
+</section>
+<section class="source-unit" id="134Ye" data-source-id="134Ye"><h3><span class="source-label">134Ye</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> suatu ukuran pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> yang invarian
+terhadap translasi dalam arti 134Ab, dan sedemikian sehingga <span class="math inline" data-source-tex="\nu[0,1]">\(\nu[0,1]\)</span>
+terdefinisi dan sama dengan <span class="math inline" data-source-tex="1">\(1\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\nu">\(\nu\)</span> berimpit dengan
+ukuran Lebesgue pada himpunan-himpunan Borel dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> Tunjukkan
+terlebih dahulu bahwa <span class="math inline" data-source-tex="[a,1]">\([a,1]\)</span> termasuk dalam domain <span class="math inline" data-source-tex="\nu">\(\nu\)</span> untuk setiap
+<span class="math inline" data-source-tex="a\in[0,1]">\(a\in[0,1]\)</span>, dan karenanya bahwa setiap interval setengah terbuka dengan
+panjang paling besar <span class="math inline" data-source-tex="1">\(1\)</span> termasuk dalam domain <span class="math inline" data-source-tex="\nu">\(\nu\)</span>; tunjukkan bahwa
+<span class="math inline" data-source-tex="\nu\coint{a,a+2^{-n}}=2^{-n}">\(\nu\coint{a,a+2^{-n}}=2^{-n}\)</span> untuk setiap <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>,
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, dan karenanya bahwa <span class="math inline" data-source-tex="\nu\coint{a,b}=b-a">\(\nu\coint{a,b}=b-a\)</span> setiap kali <span class="math inline" data-source-tex="a&lt;b">\(a&lt;b\)</span>.</span></p>
+</section>
+<section class="source-unit" id="134Yf" data-source-id="134Yf"><h3><span class="source-label">134Yf</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> suatu ukuran pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> yang invarian
+terhadap translasi dalam arti 134Ab, dengan <span class="math inline" data-source-tex="r&gt;1">\(r&gt;1\)</span>, dan sedemikian sehingga
+<span class="math inline" data-source-tex="\nu[\tbf{0},\tbf{1}]">\(\nu[\tbf{0},\tbf{1}]\)</span> terdefinisi dan sama dengan <span class="math inline" data-source-tex="1">\(1\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\nu">\(\nu\)</span> berimpit dengan ukuran Lebesgue pada himpunan-himpunan Borel dalam
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>.</p>
+</section>
+<section class="source-unit" id="134Yg" data-source-id="134Yg"><h3><span class="source-label">134Yg</span> (g) </h3>
+<p>Tunjukkan bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span> sembarang fungsi bernilai real yang
+terintegralkan pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, terdapat suatu fungsi
+kontinu <span class="math inline" data-source-tex="g:\Bbb R\to\Bbb R">\(g:\Bbb R\to\Bbb R\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\{x:g(x)\ne 0\}">\(\{x:g(x)\ne 0\}\)</span> berbatas
+dan <span class="math inline" data-source-tex="\int|f-g|\le\epsilon">\(\int|f-g|\le\epsilon\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> tunjukkan bahwa himpunan <span class="math inline" data-source-tex="\Phi">\(\Phi\)</span> dari
+fungsi-fungsi <span class="math inline" data-source-tex="f">\(f\)</span> dengan sifat ini memenuhi syarat-syarat <a class="xref" href="../122/index.html#122Yb">122Yb</a>.</span></p>
+</section>
+<section class="source-unit" id="134Yh" data-source-id="134Yh"><h3><span class="source-label">134Yh</span> (h) </h3>
+<p>Ulangi <a class="xref" href="#134Yg">134Yg</a> untuk fungsi-fungsi bernilai real yang
+terintegralkan pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dengan <span class="math inline" data-source-tex="r&gt;1">\(r&gt;1\)</span>.</p>
+</section>
+<section class="source-unit" id="134Yi" data-source-id="134Yi"><h3><span class="source-label">134Yi</span> (i) </h3>
+<p>Ulangi 134Fd, <a class="xref" href="#134Xa">134Xa</a>, <a class="xref" href="#134Xb">134Xb</a>, <a class="xref" href="#134Yb">134Yb</a>, <a class="xref" href="#134Yc">134Yc</a>, <a class="xref" href="#134Yd">134Yd</a>, <a class="xref" href="#134Yg">134Yg</a>
+dan <a class="xref" href="#134Yh">134Yh</a> untuk fungsi-fungsi bernilai kompleks.</p>
+</section>
+<section class="source-unit" id="134Yj" data-source-id="134Yj"><h3><span class="source-label">134Yj</span> (j) </h3>
+<p>Tunjukkan bahwa jika <span class="math inline" data-source-tex="G\subseteq\BbbR^r">\(G\subseteq\BbbR^r\)</span> terbuka dan
+tak-kosong, maka himpunan tersebut dapat dinyatakan sebagai gabungan saling lepas suatu
+barisan interval setengah terbuka yang masing-masing berbentuk
+<span class="math inline" data-source-tex="\{x:2^{-m}n_i\le\xi_i&lt;2^{-m}(n_i+1)">\(\{x:2^{-m}n_i\le\xi_i&lt;2^{-m}(n_i+1)\)</span> untuk setiap <span class="math inline" data-source-tex="i\le r\}">\(i\le r\}\)</span>, dengan
+<span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span>, <span class="math inline" data-source-tex="n_1,\ldots,n_r\in\Bbb Z">\(n_1,\ldots,n_r\in\Bbb Z\)</span>.</p>
+</section>
+<section class="source-unit" id="134Yk" data-source-id="134Yk"><h3><span class="source-label">134Yk</span> (k) </h3>
+<p>Tunjukkan bahwa suatu himpunan <span class="math inline" data-source-tex="E\subseteq\BbbR^r">\(E\subseteq\BbbR^r\)</span>
+terabaikan Lebesgue jika dan hanya jika terdapat suatu barisan
+<span class="math inline" data-source-tex="\sequencen{C_n}">\(\sequencen{C_n}\)</span> hiperkubus-hiperkubus dalam <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="E\subseteq\bigcap_{n\in\Bbb N}\bigcup_{k\ge n}C_k">\(E\subseteq\bigcap_{n\in\Bbb N}\bigcup_{k\ge n}C_k\)</span> dan
+<span class="math inline" data-source-tex="\sum_{k=0}^{\infty}(\diam C_k)^r&lt;\infty">\(\sum_{k=0}^{\infty}(\diam C_k)^r&lt;\infty\)</span>, dengan menuliskan <span class="math inline" data-source-tex="\diam C_k">\(\diam C_k\)</span>
+untuk diameter <span class="math inline" data-source-tex="C_k">\(C_k\)</span>.</p>
+</section>
+<section class="source-unit" id="134Yl" data-source-id="134Yl"><h3><span class="source-label">134Yl</span> (l) </h3>
+<p>Tunjukkan bahwa terdapat suatu fungsi kontinu
+<span class="math inline" data-source-tex="f:[0,1]\to[0,1]^2">\(f:[0,1]\to[0,1]^2\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\mu_1f^{-1}[E]=\mu_2E">\(\mu_1f^{-1}[E]=\mu_2E\)</span> untuk
+setiap <span class="math inline" data-source-tex="E\subseteq[0,1]^2">\(E\subseteq[0,1]^2\)</span> terukur, dengan menuliskan <span class="math inline" data-source-tex="\mu_1">\(\mu_1\)</span>, <span class="math inline" data-source-tex="\mu_2">\(\mu_2\)</span>
+untuk ukuran Lebesgue masing-masing pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, <span class="math inline" data-source-tex="\BbbR^2">\(\BbbR^2\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> untuk
+setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, nyatakan <span class="math inline" data-source-tex="[0,1]^2">\([0,1]^2\)</span> sebagai gabungan <span class="math inline" data-source-tex="4^n">\(4^n\)</span> persegi
+tertutup yang panjang sisinya <span class="math inline" data-source-tex="2^{-n}">\(2^{-n}\)</span>; sebut himpunan persegi-persegi ini
+<span class="math inline" data-source-tex="\Cal D_n">\(\Cal D_n\)</span>. Bangun fungsi-fungsi kontinu <span class="math inline" data-source-tex="f_n:[0,1]\to[0,1]^2">\(f_n:[0,1]\to[0,1]^2\)</span> dan
+keluarga-keluarga <span class="math inline" data-source-tex="\langle I_D\rangle_{D\in\Cal D_n}">\(\langle I_D\rangle_{D\in\Cal D_n}\)</span> secara induktif
+sedemikian sehingga setiap <span class="math inline" data-source-tex="I_D">\(I_D\)</span> merupakan interval tertutup yang panjangnya
+<span class="math inline" data-source-tex="4^{-n}">\(4^{-n}\)</span> dan <span class="math inline" data-source-tex="f_m[I_D]\subseteq D">\(f_m[I_D]\subseteq D\)</span> setiap kali <span class="math inline" data-source-tex="D\in\Cal D_n">\(D\in\Cal D_n\)</span> dan
+<span class="math inline" data-source-tex="m\ge n">\(m\ge n\)</span>. Induksi akan berjalan lebih lancar jika Anda mengandaikan bahwa
+lintasan <span class="math inline" data-source-tex="f_n">\(f_n\)</span> memasuki setiap persegi dalam <span class="math inline" data-source-tex="\Cal D_n">\(\Cal D_n\)</span> pada salah satu
+sudut dan keluar pada sudut yang bersebelahan. Ambil
+<span class="math inline" data-source-tex="f=\lim_{n\to\infty}f_n">\(f=\lim_{n\to\infty}f_n\)</span>. Ini merupakan jenis khusus kurva <strong>Peano</strong> atau
+kurva <strong>pengisi ruang</strong>.</span></p>
+</section>
+<section class="source-unit" id="134Ym" data-source-id="134Ym"><h3><span class="source-label">134Ym</span> (m) </h3>
+<p>Tunjukkan bahwa jika <span class="math inline" data-source-tex="r\le s">\(r\le s\)</span>, terdapat suatu fungsi kontinu
+<span class="math inline" data-source-tex="f:[0,1]^r\to[0,1]^s">\(f:[0,1]^r\to[0,1]^s\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\mu_rf^{-1}[E]=\mu_sE">\(\mu_rf^{-1}[E]=\mu_sE\)</span> untuk
+setiap <span class="math inline" data-source-tex="E\subseteq[0,1]^s">\(E\subseteq[0,1]^s\)</span> terukur, dengan menuliskan <span class="math inline" data-source-tex="\mu_r">\(\mu_r\)</span>, <span class="math inline" data-source-tex="\mu_s">\(\mu_s\)</span>
+untuk ukuran Lebesgue masing-masing pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>.</p>
+</section>
+<section class="source-unit" id="134Yn" data-source-id="134Yn"><h3><span class="source-label">134Yn</span> (n) </h3>
+<p>Tunjukkan bahwa terdapat suatu fungsi kontinu
+<span class="math inline" data-source-tex="f:\Bbb R\to\BbbR^2">\(f:\Bbb R\to\BbbR^2\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\mu_1f^{-1}[E]=\mu_2E">\(\mu_1f^{-1}[E]=\mu_2E\)</span> untuk
+setiap <span class="math inline" data-source-tex="E\subseteq\BbbR^2">\(E\subseteq\BbbR^2\)</span> terukur, dengan menuliskan <span class="math inline" data-source-tex="\mu_1">\(\mu_1\)</span>, <span class="math inline" data-source-tex="\mu_2">\(\mu_2\)</span>
+untuk ukuran Lebesgue masing-masing pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, <span class="math inline" data-source-tex="\BbbR^2">\(\BbbR^2\)</span>.</p>
+</section>
+<section class="source-unit" id="134Yo" data-source-id="134Yo"><h3><span class="source-label">134Yo</span> (o) </h3>
+<p>Tunjukkan bahwa fungsi <span class="math inline" data-source-tex="f:[0,1]\to[0,1]^2">\(f:[0,1]\to[0,1]^2\)</span> dari <a class="xref" href="#134Yl">134Yl</a> dapat
+dipilih sedemikian sehingga <span class="math inline" data-source-tex="\mu_2f[E]=\mu_1E">\(\mu_2f[E]=\mu_1E\)</span> untuk setiap himpunan terukur
+Lebesgue <span class="math inline" data-source-tex="E\subseteq[0,1]">\(E\subseteq[0,1]\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> dengan menggunakan konstruksi yang
+disarankan dalam <a class="xref" href="#134Yl">134Yl</a>, dan menetapkan
+<span class="math inline" data-source-tex="H=f^{-1}[([0,1]\setminus\Bbb Q)^2]">\(H=f^{-1}[([0,1]\setminus\Bbb Q)^2]\)</span>, <span class="math inline" data-source-tex="f\restr H">\(f\restr H\)</span> akan merupakan isomorfisme
+antara <span class="math inline" data-source-tex="(H,\mu_{1,H})">\((H,\mu_{1,H})\)</span> dan <span class="math inline" data-source-tex="(f[H],\mu_{2,f[H]})">\((f[H],\mu_{2,f[H]})\)</span>, dengan menuliskan
+<span class="math inline" data-source-tex="\mu_{1,H}">\(\mu_{1,H}\)</span> dan <span class="math inline" data-source-tex="\mu_{2,f[H]}">\(\mu_{2,f[H]}\)</span> untuk ukuran-ukuran subruang.</span></p>
+</section>
+<section class="source-unit" id="134Yp" data-source-id="134Yp"><h3><span class="source-label">134Yp</span> (p) </h3>
+<p>Tunjukkan bahwa <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> dapat dinyatakan sebagai gabungan
+suatu barisan saling lepas <span class="math inline" data-source-tex="\sequencen{E_n}">\(\sequencen{E_n}\)</span> himpunan-himpunan berukuran
+berhingga sedemikian sehingga <span class="math inline" data-source-tex="\mu(I\cap E_n)&gt;0">\(\mu(I\cap E_n)&gt;0\)</span> untuk setiap interval
+terbuka tak-kosong <span class="math inline" data-source-tex="I\subseteq\Bbb R">\(I\subseteq\Bbb R\)</span> dan setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>.</p>
+</section>
+<section class="source-unit" id="134Yq" data-source-id="134Yq"><h3><span class="source-label">134Yq</span> (q) </h3>
+<p>Tunjukkan bahwa untuk setiap <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span>, <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> dapat
+dinyatakan sebagai gabungan suatu barisan saling lepas <span class="math inline" data-source-tex="\sequencen{E_n}">\(\sequencen{E_n}\)</span>
+himpunan-himpunan berukuran berhingga sedemikian sehingga
+<span class="math inline" data-source-tex="\mu(G\cap E_n)&gt;0">\(\mu(G\cap E_n)&gt;0\)</span> untuk setiap himpunan terbuka tak-kosong
+<span class="math inline" data-source-tex="G\subseteq\BbbR^r">\(G\subseteq\BbbR^r\)</span> dan setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>.</p>
+</section>
+<section class="source-unit" id="134Yr" data-source-id="134Yr"><h3><span class="source-label">134Yr</span> (r) </h3>
+<p>Tunjukkan bahwa terdapat suatu barisan saling lepas
+<span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> yang terdiri atas subhimpunan-subhimpunan dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>
+sedemikian sehingga
+<span class="math inline" data-source-tex="\mu^*(A_n\cap E)=\mu E">\(\mu^*(A_n\cap E)=\mu E\)</span> untuk setiap himpunan terukur <span class="math inline" data-source-tex="E">\(E\)</span> dan setiap
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>.
+(<em>Catatan\/</em>: sebenarnya terdapat suatu keluarga saling lepas
+<span class="math inline" data-source-tex="\langle A_t\rangle_{t\in\Bbb R}">\(\langle A_t\rangle_{t\in\Bbb R}\)</span> dengan sifat ini, tetapi menurut saya
+diperlukan suatu gagasan baru untuk perluasan tersebut. Lihat 419I dalam
+Jilid 4.)</p>
+</section>
+<section class="source-unit" id="134Ys" data-source-id="134Ys"><h3><span class="source-label">134Ys</span> (s) </h3>
+<p>Ulangi <a class="xref" href="#134Yr">134Yr</a> untuk <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dengan <span class="math inline" data-source-tex="r&gt;1">\(r&gt;1\)</span>.</p>
+</section>
+<section class="source-unit" id="134Yt" data-source-id="134Yt"><h3><span class="source-label">134Yt</span> (t) </h3>
+<p>Uraikan suatu fungsi terukur Borel
+<span class="math inline" data-source-tex="f:[0,1]\to[0,1]">\(f:[0,1]\to[0,1]\)</span> sedemikian sehingga <span class="math inline" data-source-tex="f\restr A">\(f\restr A\)</span> diskontinu pada setiap titik
+dari <span class="math inline" data-source-tex="A">\(A\)</span> setiap kali <span class="math inline" data-source-tex="A\subseteq[0,1]">\(A\subseteq[0,1]\)</span> merupakan himpunan berukuran luar penuh.</p>
+</section>
+<section class="source-unit" id="134Yu" data-source-id="134Yu"><h3><span class="source-label">134Yu</span> (u) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\sequencen{E_n}">\(\sequencen{E_n}\)</span> suatu barisan subhimpunan
+terukur tak-terabaikan dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>. Tunjukkan bahwa terdapat suatu
+himpunan terukur <span class="math inline" data-source-tex="E\subseteq\BbbR^r">\(E\subseteq\BbbR^r\)</span> sedemikian sehingga semua himpunan
+<span class="math inline" data-source-tex="E_n\cap E">\(E_n\cap E\)</span>, <span class="math inline" data-source-tex="E_n\setminus E">\(E_n\setminus E\)</span> tak-terabaikan.</p>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<section class="source-unit" id="134" data-source-id="134"><h2><span class="source-label">134</span> Catatan penutup untuk Bagian 134 </h2>
+<p>Ukuran Lebesgue memiliki ragam sifat khusus yang sangat
+luas, sesuai dengan kekayaan garis bilangan real beserta struktur aljabar,
+topologi, dan keterurutannya. Di sini saya hanya dapat memberi gambaran
+sekilas mengenai apa yang mungkin dilakukan.</p>
+<p>Ada banyak metode untuk membangun himpunan tak-terukur, dan semuanya
+bermakna; metode yang saya berikan dalam <a class="xref" href="#134B">134B</a> mungkin paling mudah diakses,
+dan menunjukkan bahwa invariansi terhadap translasi (dengan mengandaikan
+aksioma pilihan) merupakan penghalang yang tak-teratasi untuk mengukur setiap
+subhimpunan dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.</p>
+<p>Dalam <a class="xref" href="#134F">134F</a> saya mencantumkan beberapa hubungan dasar antara ukuran dan
+topologi ruang Euklides. Hubungan lain terdapat dalam <a class="xref" href="#134Yc">134Yc</a>, <a class="xref" href="#134Yd">134Yd</a>, dan <a class="xref" href="#134Yg">134Yg</a>;
+lihat juga <a class="xref" href="#134Xd">134Xd</a>. Analisis sistematis atas hubungan-hubungan tersebut akan
+mengisi sebagian besar Jilid 4.</p>
+<p>Himpunan dan fungsi Cantor (<a class="xref" href="#134G">134G</a>-<a class="xref" href="#134I">134I</a>) membentuk salah satu contoh dasar dalam
+teori. Di sini saya menyajikannya sekadar sebagai rancangan menarik dan
+sebagai contoh tandingan terhadap suatu dugaan yang wajar. Namun keduanya akan
+muncul kembali dalam tiga bab berbeda di Jilid 2 sebagai ilustrasi bagi tiga
+fenomena yang sangat berbeda.</p>
+<p>Hubungan antara integral Lebesgue dan Riemann jauh lebih dalam daripada yang
+ingin saya jelajahi saat ini; fakta bahwa integral Lebesgue memperluas
+integral Riemann (<a class="xref" href="#134Kb">134Kb</a>) hanyalah bagian kecil dari ceritanya, dan saya akan
+menyesal jika Anda mendapat kesan bahwa integral Lebesgue dengan demikian
+menjadikan integral Riemann usang. Tanpa membahas perinciannya di sini, saya
+harap <a class="xref" href="#134F">134F</a> dan <a class="xref" href="#134Yg">134Yg</a> memperjelas bahwa integral Lebesgue dalam arti tertentu
+merupakan perluasan kanonik dari integral Riemann. (Setidaknya, saya akan
+kembali ke hal ini dalam Bab 43.) Cara lain untuk melihat hal ini adalah
+<a class="xref" href="#134Yf">134Yf</a>; integral Lebesgue merupakan integral dasar yang invarian terhadap
+translasi pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>.</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 1: The Irreducible Minimum</cite>, Bagian 134.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 23 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-semantic-reader-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V1-S134&quot;,
+  &quot;source_member&quot;: &quot;mt1.2011/mt134.tex&quot;,
+  &quot;target_bytes&quot;: 52580,
+  &quot;target_sha256&quot;: &quot;18b99df4efc21ea4e1c6b31e561021fa8d5fac730772a3acad96f2dc5923c367&quot;,
+  &quot;source_ids&quot;: [
+    &quot;134&quot;,
+    &quot;134A&quot;,
+    &quot;134B&quot;,
+    &quot;134C&quot;,
+    &quot;134D&quot;,
+    &quot;134E&quot;,
+    &quot;134F&quot;,
+    &quot;134G&quot;,
+    &quot;134Ga&quot;,
+    &quot;134Gb&quot;,
+    &quot;134H&quot;,
+    &quot;134Ha&quot;,
+    &quot;134Hb&quot;,
+    &quot;134Hc&quot;,
+    &quot;134I&quot;,
+    &quot;134Ia&quot;,
+    &quot;134Ib&quot;,
+    &quot;134J&quot;,
+    &quot;134Ja&quot;,
+    &quot;134Jb&quot;,
+    &quot;134Jc&quot;,
+    &quot;134K&quot;,
+    &quot;134Ka&quot;,
+    &quot;134Kb&quot;,
+    &quot;134Kc&quot;,
+    &quot;134L&quot;,
+    &quot;134X&quot;,
+    &quot;134Xa&quot;,
+    &quot;134Xb&quot;,
+    &quot;134Xc&quot;,
+    &quot;134Xd&quot;,
+    &quot;134Xe&quot;,
+    &quot;134Xf&quot;,
+    &quot;134Xg&quot;,
+    &quot;134Xh&quot;,
+    &quot;134Xi&quot;,
+    &quot;134Xj&quot;,
+    &quot;134Y&quot;,
+    &quot;134Ya&quot;,
+    &quot;134Yb&quot;,
+    &quot;134Yc&quot;,
+    &quot;134Yd&quot;,
+    &quot;134Ye&quot;,
+    &quot;134Yf&quot;,
+    &quot;134Yg&quot;,
+    &quot;134Yh&quot;,
+    &quot;134Yi&quot;,
+    &quot;134Yj&quot;,
+    &quot;134Yk&quot;,
+    &quot;134Yl&quot;,
+    &quot;134Ym&quot;,
+    &quot;134Yn&quot;,
+    &quot;134Yo&quot;,
+    &quot;134Yp&quot;,
+    &quot;134Yq&quot;,
+    &quot;134Yr&quot;,
+    &quot;134Ys&quot;,
+    &quot;134Yt&quot;,
+    &quot;134Yu&quot;
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

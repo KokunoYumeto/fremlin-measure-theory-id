@@ -350,6 +350,57 @@ frozen SHA-256 values. Sanitized evidence is
 `6f3e257bbba455f97677ff6f30b48c34e676afad8352076a5282d9ba2d043ce7`.
 
 No duplicate Zenodo concept, standalone deposition, Figshare transaction, or
-upstream contact occurred. The next executable action is source-aware review
-of `mt1a.tex` and the remaining Volume 1 appendix/conclusion/reference members
-as one substantial translation boundary; the 672-page goal remains active.
+upstream contact occurred.
+
+## 2026-08-24 — D023: Close the complete Volume I translation and freeze its index
+
+Source-aware review of the Volume I front matter, appendix introduction,
+Appendices 1A1–1A3, conclusion, and references is complete. The shared source
+index was projected to Volume I through a lossless 731-unit skeleton: 95
+principal-index units, 312 general-index A units, and 324 general-index B
+units. Two independent language passes produced bounded natural-id-ID
+refinements while preserving formula, control-sequence, reference, and source
+interval identity. The final target is `source/id-ID/mti.tex`, 36,758 bytes,
+SHA-256 `75264072c24261e41babfca0bb8a583f9cf239b24b4a8fb469b4a4bfb4fc9371`;
+the translation map is 1,155,963 bytes, SHA-256
+`de8480da1850bfd0e76ee3fef74d676b43874fd2e8f179ab5a6fbeaec5736c27`.
+Twenty projector/renderer tests pass and repeated rendering is deterministic.
+
+Five authority defects caused only by inactive later-volume index branches are
+kept as exact, reviewable projection overlays and are now also recorded as
+`O007-CORR-0038`–`O007-CORR-0042`. The 42-row correction ledger is 20,991
+bytes, SHA-256
+`98f9a6d8dee1b76ca73db40ef822c572dfe986858277cace9fd5f0e97cf5babf`.
+This decision completes Volume I translation content but does not admit or
+publish it prematurely. Backend closure, complete PDF/offline HTML, package
+reproduction, all-page visual inspection, and desktop/mobile browser replay
+must still pass. The admitted/public boundary remains S136 at 81/672 official
+pages until then; the next checkpoint will truthfully cover all 102 official
+Volume I pages. The 672-page goal remains active through complete Volume II.
+
+## 2026-08-24 — D024: Admit complete Volume I and reserve disjoint Volume II ownership
+
+Complete Volume I is admitted by `00_control/CP0012_VOLUME1_ADMISSION.md`.
+Its 27 source units, 102 official pages, 198 exercises, 55 hints, 2,367-record
+backend, 110-page A4 PDF, and 28-route offline HTML reader pass deterministic
+source, math, structure, schema, all-page visual, desktop/mobile, link, and
+independent artifact checks. The byte-final PDF is 807,217 bytes / SHA-256
+`340af91eb1a31cbfaba20f578209b6e3dd0eacd7ea05f6e23183be9e9fee486f`.
+The package is generated twice from a finite allowlist with fixed ZIP metadata
+and exact entry replay; its external receipt avoids self-reference.
+
+The immediate preservation boundary is GitHub `v0.12.0-v1` and Zenodo
+`0.12.0-v1` in the existing concept DOI `10.5281/zenodo.22059798`. The
+two-volume goal is not complete and remains active after publication.
+
+The frozen Volume II driver, 1,634 bytes / SHA-256
+`086d77d88c381d8876af78d766bccef7cb8ed5a844a111f8784364becaf52614`,
+places Chapter 21 before Chapter 22. External helper packet `HP-D10-001`
+reserves only `mt21.tex` and `mt211.tex`–`mt216.tex`. It does not transfer
+canonical ownership or publication authority. Raw helper files are rejected;
+only a schema-clean HANDOFF/checksums/README/issues packet may be considered,
+and owner-side source/terminology/backend/reader/license three-way QA is still
+required. The owner therefore continues without overlap at complete Chapter
+22 (`mt22.tex`, `mt221.tex`–`mt226.tex`). If the packet never becomes
+admissible, Chapter 21 returns to owner production after the disjoint block;
+no human/helper wait is a release gate.

@@ -57,39 +57,40 @@ ADMISSION_EVIDENCE_MEMBERS = {
 EXPECTED_SOURCE_BYTES = 17868
 EXPECTED_SOURCE_LINES = 458
 EXPECTED_SOURCE_SHA256 = "5a1abb103efce40f702cc375e57c7e76387e78c7def15a64fb627d428900d742"
-EXPECTED_TARGET_BYTES = 19410
+EXPECTED_TARGET_BYTES = 19405
 EXPECTED_TARGET_LINES = 485
-EXPECTED_TARGET_SHA256 = "0dbed47213a2ba03ff3f55226aa2f9e141742234313ad45762742df9542fc985"
+EXPECTED_TARGET_SHA256 = "b3077760e581ef8c6781f311ad846497bb9af6d1361767cf2b88fce63667b58c"
 EXPECTED_SCHEMA_SHA256 = "47f7d80f021110c5facdfccc97f9ded4c79f48c4b7b5da2f3807e8cf97b2d6e6"
 EXPECTED_CORE_SHA256 = "b7d5ae95847d717938d55b3f80e6a6499c3b75d3e901bd74032f3ca4836113f1"
 EXPECTED_NESTED_MATH_SHA256 = "90d8bccbc7b98f5e618194394500490c9205e339cc27d95a048d41ee4d346a9a"
-EXPECTED_CORRECTIONS_BYTES = 7879
-EXPECTED_CORRECTIONS_SHA256 = "1379c600a256106284e328a7730b459dbb30d15b7f941867eb20360f1a802cb3"
+EXPECTED_CORRECTIONS_BYTES = 9154
+EXPECTED_CORRECTIONS_ROWS = 19
+EXPECTED_CORRECTIONS_SHA256 = "75557a97ab2347bfb033c7bd2ac2f6672eaa20ae59bdcad7c87b750151c27665"
 EXPECTED_INTAKE_SHA256 = "5c1e6e50b5ab29c1ad2fe8a1f2545a9de81d54f2fa226454d1a9eb8826a8c3ba"
-EXPECTED_STRUCTURAL_QA_SHA256 = "813963f43cd07657a18af18ce10afd743fa9e50c8dad1b8f06423d8f55eb6349"
-EXPECTED_SEMANTIC_REVIEW_SHA256 = "2e63f64ac8f143e1e4455598693f7c50efa3876d5146088f8277b427ebde1133"
+EXPECTED_STRUCTURAL_QA_SHA256 = "bfb96859a048fa8a1adea4426a5b3c6b8000bf36b8c666102b3289b269f3c947"
+EXPECTED_SEMANTIC_REVIEW_SHA256 = "fe1a1eba19e2f3e1b53a9ee266a37991ff6c5fa2cb73eafeb9fba2000581a8a8"
 
 EXPECTED_PRIOR_MANIFESTS = {
     "mt111": "048376684666d61d40fe00d055a208f20e4364601fa7bf2f305d1d68087736ea",
-    "mt112": "8e0f230f0244c6eebd51416fb2921405897bedbfc5b60adbd026086d4521160e",
-    "mt113": "e1f6f50b28c5376aa0ffa2d8d0de0fcf5f1376c26da0000a416e2b09d6727ea7",
-    "mt114": "94af0c5ec39954d1ce44e4f9ecf7cdf6d533f0893d079de0590f415dad15c15b",
-    "mt115": "231a5422b8ec18e0c80e0af38828cb4ebed3bec109c060c712f4856b6b0c3b9a",
-    "mt121": "d5d919fd9095771f676d05dc57c195ba4fe677b8ab3261466fa16f637a5ce626",
-    "mt122": "cdf5b391c9112ed4c1a7d757face0a4431898d09baf5b571f7fb1e9800108cd6",
+    "mt112": "16345dc507c2e22c183595d2153b47d2edc35b9e2ce0299fcbdf3e5d1aa5fe8a",
+    "mt113": "eacce18d3dfc81094c4c8021cdcfefd84627dc1038e6de9f04794ad015fa712e",
+    "mt114": "b5226682619499ebc5342ec045ebd6f3f3074a5917573c87a5c46979d0739c06",
+    "mt115": "b9016ae1625e6a69e219be19e2df8971c99f230bf3fbc1da68459d172e724d06",
+    "mt121": "e38f52c97c2600d8e6498f63a256a25035e3824649136d01e1fa51aee880a6ff",
+    "mt122": "ffaee759e5096d5f7eb898de0f9fce3de93c4abfb49664e96c2902fb661d5da6",
 }
 EXPECTED_PRIOR_CATALOG_MANIFESTS = {
-    "catalog-v1.1": "3c233dfd969256524fbd267c9ab3c581798807d4bceb57e296d731c23acbd3c6",
-    "catalog-v1.2": "da966c7e1cb4c3178918818d2504a9db0849a08bb32ca3f9cdd68f9af7895bf3",
+    "catalog-v1.1": "4c9da7d052f7e5cabf3e908be57c85e9d9cbfe12e0971c6e0052826b1fd3367d",
+    "catalog-v1.2": "c4c16f9c9a0add857e15f931a54d9a112a2198e45ee2e06ad149e01c214abe93",
 }
 EXPECTED_PRIOR_UNIT_FINGERPRINTS = {
     "O007-FREMLIN-V1-S111": "d597c7b52574769c9214fdb754ab51d2eb637ca2aafd0f45ebe5c984cbeece43",
-    "O007-FREMLIN-V1-S112": "0a798cd04ec181a95962f63cc9674c9d44f0aca49ea7ba515d7acb55ba39ac1a",
+    "O007-FREMLIN-V1-S112": "343f7264c61a5bdaf995ac4fbe8bce5aae4a08f1055fbd20c9d3f5fecf1178c9",
     "O007-FREMLIN-V1-S113": "e865c7ab4b8be16c9260c7ddec2cf3ce664073a69fcf62bb4d17c32f7a3f37f1",
-    "O007-FREMLIN-V1-S114": "6fac7840c2b181f712504563fb3f9193266799d67d723b3b3ec9e0f8a3282fcd",
+    "O007-FREMLIN-V1-S114": "8a560e24e5e6498b86acc9ddcd7453cc55ebd5bd9250ee22d4130c5a0c627965",
     "O007-FREMLIN-V1-S115": "99ba9f9629d7d5579c0044ad90bb67dc452ab331eb58ddfc0ddf722db07591d2",
     "O007-FREMLIN-V1-S121": "a60b9a37822867f42fa2d20e46b6233c89d88a26b07947d1d267e56665f9bd65",
-    "O007-FREMLIN-V1-S122": "d32e2038e43f190b17c7a779e0e63c17e009a3d1bd3692fe726608ca0a2bf1e9",
+    "O007-FREMLIN-V1-S122": "01e918a830b80d60a3609e5acba9a724e0a5970e71e892ead58241038f1a6454",
 }
 
 EXPECTED_EXPLICIT = [
@@ -456,7 +457,11 @@ def normalized_lines(text: str, lines: list[int]) -> str:
 
 def read_correction_rows() -> list[dict[str, str]]:
     with CORRECTIONS_PATH.open(encoding="utf-8", newline="") as handle:
-        return [row for row in csv.DictReader(handle) if row["unit_id"] == UNIT_ID]
+        all_rows = list(csv.DictReader(handle))
+    expected_prefix = [f"O007-CORR-{ordinal:04d}" for ordinal in range(1, 18)]
+    if len(all_rows) != EXPECTED_CORRECTIONS_ROWS or [row["correction_id"] for row in all_rows[:17]] != expected_prefix:
+        raise ValueError("live cumulative correction ledger does not preserve the exact S112-S123 prefix")
+    return [row for row in all_rows if row["unit_id"] == UNIT_ID]
 
 
 def validate_corrections(unit_sets, source: str, target: str) -> dict[str, object]:
@@ -524,7 +529,7 @@ def validate_corrections(unit_sets, source: str, target: str) -> dict[str, objec
             "path": "00_control/SOURCE_CORRECTIONS.csv",
             "bytes": CORRECTIONS_PATH.stat().st_size,
             "sha256": sha256(CORRECTIONS_PATH),
-            "total_rows": 17,
+            "total_rows": 19,
         },
         "all_locators_replayed": True,
     }
@@ -902,7 +907,7 @@ def validate_catalog(catalog_sets, expect_admitted: bool) -> dict[str, object]:
             raise ValueError("S123 pending target resource overclaims reader/package admission")
         if "separate pending gate" not in unit_basis:
             raise ValueError("S123 pending unit provenance does not preserve the reader boundary")
-    if resources["O007-RESOURCE-SOURCE-CORRECTIONS"].get("rows") != 17:
+    if resources["O007-RESOURCE-SOURCE-CORRECTIONS"].get("rows") != 19:
         raise ValueError("cumulative correction-ledger row count differs")
     return {
         "counts": counts,
@@ -1244,8 +1249,8 @@ def validate_authority_target_and_receipts() -> dict[str, object]:
         raise ValueError("correction ledger byte count differs")
     with CORRECTIONS_PATH.open(encoding="utf-8", newline="") as handle:
         correction_rows = list(csv.DictReader(handle))
-    if len(correction_rows) != 17:
-        raise ValueError("correction ledger must contain exactly seventeen cumulative rows")
+    if len(correction_rows) != EXPECTED_CORRECTIONS_ROWS:
+        raise ValueError("correction ledger must contain exactly nineteen cumulative rows")
     intake = json.loads(INTAKE_PATH.read_text(encoding="utf-8"))
     candidate = intake.get("source_correction_candidates", [{}])[0]
     if (
@@ -1320,7 +1325,7 @@ def validate_authority_target_and_receipts() -> dict[str, object]:
         "schema": {"path": SCHEMA_PATH.relative_to(ROOT).as_posix(), "bytes": SCHEMA_PATH.stat().st_size, "sha256": EXPECTED_SCHEMA_SHA256},
         "core": {"path": "backend/o007_backend_core.py", "bytes": (BACKEND / "o007_backend_core.py").stat().st_size, "sha256": EXPECTED_CORE_SHA256},
         "nested_math": {"path": "backend/o007_nested_math.py", "bytes": (BACKEND / "o007_nested_math.py").stat().st_size, "sha256": EXPECTED_NESTED_MATH_SHA256},
-        "correction_ledger": {"path": "00_control/SOURCE_CORRECTIONS.csv", "bytes": EXPECTED_CORRECTIONS_BYTES, "sha256": EXPECTED_CORRECTIONS_SHA256, "rows": 17},
+        "correction_ledger": {"path": "00_control/SOURCE_CORRECTIONS.csv", "bytes": EXPECTED_CORRECTIONS_BYTES, "sha256": EXPECTED_CORRECTIONS_SHA256, "rows": EXPECTED_CORRECTIONS_ROWS},
         "receipts": {
             "intake": {"path": INTAKE_PATH.relative_to(ROOT).as_posix(), "bytes": INTAKE_PATH.stat().st_size, "sha256": EXPECTED_INTAKE_SHA256},
             "structural_qa": {"path": STRUCTURAL_QA_PATH.relative_to(ROOT).as_posix(), "bytes": STRUCTURAL_QA_PATH.stat().st_size, "sha256": EXPECTED_STRUCTURAL_QA_SHA256},

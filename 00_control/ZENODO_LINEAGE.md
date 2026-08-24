@@ -1,6 +1,6 @@
 # Zenodo Version Lineage — O007 Fremlin Volumes 1–2
 
-Updated: 2026-08-22 (Europe/Berlin)
+Updated: 2026-08-24 (Europe/Berlin)
 
 ## Canonical concept
 
@@ -77,19 +77,41 @@ It contains no credential material. The lineage-safe publisher is
 created no standalone concept, reverified all predecessor bytes, and performs
 anonymous byte readback of the new PDF, ZIP, and checksum file.
 
+## Published version 0.9.0-s131
+
+- Record: `22070417`
+- DOI: `10.5281/zenodo.22070417`
+- Public URL: <https://zenodo.org/records/22070417>
+- Status: public, admitted cumulative S131 boundary; all three assets passed
+  anonymous byte and SHA-256 readback.
+- Sanitized receipt: `qa/ZENODO_PUBLICATION_RECEIPT_S131.json`.
+
+## Published version 0.11.0-s136
+
+- Record: `22071390`
+- DOI: `10.5281/zenodo.22071390`
+- Public URL: <https://zenodo.org/records/22071390>
+- Status: public, admitted cumulative S136 boundary; all three assets passed
+  anonymous byte and SHA-256 readback.
+- Coverage: complete Chapters 11–13 through Section 136, 81/672 official
+  pages; the two-volume corpus remains incomplete.
+- Sanitized receipt: `qa/ZENODO_PUBLICATION_RECEIPT_S136.json`.
+
+This is the latest completed public Zenodo version. The next transaction must
+create exactly one new version from record `22071390`; do not publish the
+superseded S132 boundary separately or create another concept.
+
 ## External mirror state
 
-The exact S122 Git boundary remains preserved locally as commit
-`9d4cdfdaf0aeeeb16520538076b4334dc521f36f`, tree
-`db242899cf5a4fb90e886da3a8c4b9d0183bb985`, and tag `v0.7.0-s122`.
-GitHub rejected publication because the account is suspended; Floris reports
-that a support ticket is open. Do not retry GitHub until the account state is
-restored. Zenodo maintenance is independent of that blocker.
+GitHub access is restored. The latest public boundary is prerelease
+`v0.11.0-s136` at commit
+`a0a8802398e06d004ec926260c7e5f96e3e92891`, tree
+`2f2ebfe956cd52ccb3f1854dd9d375c1751c49c6`. Its three assets passed
+anonymous readback; evidence is `qa/PUBLICATION_RECEIPT_S136.json`.
 
-The admitted S123 source/backend/evidence boundary is frozen locally as commit
-`7e4ad7e5a9101210201f74c93cbabc028d9f9825`, tree
-`e557311566cc3494ab23ba4aae72a18319d6dc28`, and tag `v0.8.0-s123`. No GitHub
-push was attempted while the suspension remained active.
+The earlier S122 and S123 boundaries remain preserved by their public tags and
+their independently verified Zenodo versions. GitHub and Zenodo maintenance
+remain separate preservation routes.
 
 The requested Figshare reader-file mirror is also paused for a different,
 rights-specific reason: free figshare.com requires one of its enumerated public
@@ -99,8 +121,9 @@ license. Exact evidence is `qa/FIGSHARE_PUBLICATION_BLOCKER_S123.json`.
 
 ## Next version
 
-S123 is public as the current version of concept `22059798`. Create another
-version only after the next substantial cumulative source-order boundary passes
-backend, deterministic build, all-page PDF inspection, desktop/mobile browser
-replay, and final admission. Do not create a fresh concept or overwrite S122 or
-S123.
+Complete Volume I is admitted and publication-ready as version `0.12.0-v1`.
+Create exactly one new version from record `22071390`, upload only the
+reader-first PDF, resumable ZIP, and checksum witness, publish, then anonymously
+read every public asset back. Preserve the concept DOI, metadata license `dsl`,
+component license distinction, and explicit 102/672 partial-corpus status. Do
+not create a fresh concept or overwrite a predecessor.

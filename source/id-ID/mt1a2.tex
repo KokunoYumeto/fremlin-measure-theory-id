@@ -1,0 +1,162 @@
+\frfilename{mt1a2.tex}
+\versiondate{21.11.03}
+\copyrightdate{1994}
+
+\def\chaptername{Lampiran}
+\def\sectionname{Himpunan terbuka dan tertutup dalam $\BbbR^r$}
+
+\newsection{1A2}
+
+\def\headlinesectionname{Himpunan terbuka dan tertutup dalam $\eightBbb R^r$}
+
+Dalam 111G saya memberikan definisi himpunan terbuka dalam $\Bbb R$ atau
+$\BbbR^r$, dan dalam 121D saya menggunakan secara sepintas beberapa sifat
+dasar himpunan-himpunan ini; barangkali akan membantu jika saya memaparkan
+sedikit saja teori elementernya.
+
+\leader{1A2A}{Himpunan terbuka} Ingat bahwa suatu himpunan
+$G\subseteq\Bbb R$ disebut {\bf terbuka} jika untuk setiap $x\in G$ terdapat
+suatu $\delta>0$ sedemikian sehingga
+$\ooint{x-\delta,x+\delta}\subseteq G$; demikian pula, suatu himpunan
+$G\subseteq\BbbR^r$ disebut {\bf terbuka} jika untuk setiap $x\in G$ terdapat
+suatu $\delta>0$ sedemikian sehingga $U(x,\delta)\subseteq G$, dengan
+$U(x,\delta)=\{y:\|y-x\|<\delta\}$, dan kita menulis $\|z\|$ untuk
+$\sqrt{\zeta_1^2+\ldots+\zeta_r^2}$ jika
+$z=(\zeta_1,\ldots,\zeta_r)$. \cmmnt{Selanjutnya saya memberikan argumen
+untuk $r$ umum; jika saat ini Anda hanya tertarik pada kasus satu dimensi,
+Anda seharusnya tidak mengalami kesulitan membacanya seolah-olah $r=1$
+sepanjang uraian.}
+
+\vleader{36pt}{1A2B}{Keluarga semua himpunan terbuka}
+Misalkan $\frak T$ adalah keluarga himpunan-himpunan terbuka dalam $\BbbR^r$.
+\cmmnt{Maka $\frak T$ mempunyai sifat-sifat berikut.}
+
+(a) $\emptyset\in\frak T$\cmmnt{, yaitu himpunan kosong terbuka}.
+\prooflet{\Prf\ Karena definisi `$\emptyset$ terbuka' dimulai dengan `untuk
+setiap $x\in\emptyset$, $\ldots$', definisi itu pasti terpenuhi secara vakum
+untuk himpunan kosong.\ \Qed}
+
+(b) $\BbbR^r\in\frak T$\cmmnt{, yaitu seluruh ruang yang sedang ditinjau
+merupakan himpunan terbuka}. \prooflet{\Prf\
+$U(x,1)\subseteq\BbbR^r$ untuk setiap $x\in\BbbR^r$.\ \Qed}
+
+(c) Jika $G$, $H\in\frak T$ maka $G\cap H\in\frak T$\cmmnt{; yaitu irisan
+dua himpunan terbuka selalu merupakan himpunan terbuka}.
+\prooflet{\Prf\
+Misalkan $x\in G\cap H$. Maka terdapat $\delta_1$, $\delta_2>0$ sedemikian
+sehingga $U(x,\delta_1)\subseteq G$ dan $U(x,\delta_2)\subseteq H$. Tetapkan
+$\delta=\min(\delta_1,\delta_2)>0$; maka
+
+\Centerline{$U(x,\delta)=\{y:\|y-x\|<\min(\delta_1,\delta_2)\}
+=U(x,\delta_1)\cap U(x,\delta_2)\subseteq G\cap H$.}
+
+\noindent Karena $x$ sembarang, $G\cap H$ terbuka.\ \Qed}
+
+(d) Jika $\Cal G\subseteq\frak T$, maka
+
+\Centerline{$\bigcup\Cal G=\{x:\,\exists\, G\in\Cal G,\,x\in G\}
+\in\frak T$\dvro{.}{;}}
+
+\noindent\cmmnt{yaitu, gabungan sebarang keluarga himpunan terbuka adalah
+terbuka.} \prooflet{\Prf\ Misalkan $x\in\bigcup\Cal G$. Maka terdapat suatu
+$G\in\Cal G$ sedemikian sehingga $x\in G$. Karena $G\in\frak T$, terdapat
+suatu $\delta>0$ sedemikian sehingga
+
+
+\Centerline{$U(x,\delta)\subseteq G\subseteq\bigcup\Cal G$.}
+
+\noindent Karena $x$ sembarang, $\bigcup\Cal G\in\frak T$.\ \Qed}
+
+\leader{1A2C}{Ketaksamaan Cauchy: Proposisi} Untuk semua
+$x$, $y\in\BbbR^r$,
+$\|x+y\|\le\|x\|+\|y\|$.
+
+\proof{ Nyatakan $x$ sebagai $(\xi_1,\ldots,\xi_r)$ dan $y$ sebagai
+$(\eta_1,\ldots,\eta_r)$;
+tetapkan $\alpha=\|x\|$, $\beta=\|y\|$. Maka $\alpha$ dan $\beta$ keduanya
+nonnegatif. Jika $\alpha=0$ maka $\sum_{j=1}^r\xi_j^2=0$, sehingga setiap
+$\xi_j=0$ dan $x=\tbf{0}$, jadi
+$\|x+y\|=\|y\|=\|x\|+\|y\|$; jika $\beta=0$, maka $y=\tbf{0}$ dan
+$\|x+y\|=\|x\|=\|x\|+\|y\|$. Jika keduanya positif, tinjau
+
+$$\eqalign{\alpha\beta\|x+y\|^2
+&\le\alpha\beta\|x+y\|^2+\|\alpha y-\beta x\|^2\cr
+&=\alpha\beta\sum_{j=1}^r(\xi_j+\eta_j)^2
++\sum_{j=1}^r(\alpha\eta_j-\beta\xi_j)^2\cr
+&=\sum_{j=1}^r(\alpha\beta\xi_j^2+\alpha\beta\eta_j^2
++\alpha^2\eta_j^2+\beta^2\xi_j^2)\cr
+&=\alpha^3\beta+\alpha\beta^3+\alpha^2\beta^2+\beta^2\alpha^2\cr
+&=\alpha\beta(\alpha+\beta)^2
+=\alpha\beta(\|x\|+\|y\|)^2.\cr}$$
+
+\noindent Dengan membagi kedua ruas oleh $\alpha\beta$ dan mengambil akar
+kuadrat, kita memperoleh hasil yang dinyatakan.
+}%end of proof of 1A2C
+
+\leader{1A2D}{Akibat} $U(x,\delta)$\cmmnt{, sebagaimana didefinisikan dalam
+1A2A,} terbuka untuk setiap $x\in\BbbR^r$ dan $\delta>0$.
+
+\proof{ Jika $y\in U(x,\delta)$, maka $\eta=\delta-\|y-x\|>0$. Sekarang,
+jika $z\in U(y,\eta)$,
+
+\Centerline{$\|z-x\|=\|(z-y)+(y-x)\|
+\le\|z-y\|+\|y-x\|<\eta+\|y-x\|=\delta$,}
+
+\noindent dan $z\in U(x,\delta)$; dengan demikian
+$U(y,\eta)\subseteq U(x,\delta)$. Karena $y$ sembarang,
+$U(x,\delta)$ terbuka.
+}%end of proof of 1A2D
+
+\leader{1A2E}{Himpunan tertutup: Definisi} Suatu himpunan
+$F\subseteq\BbbR^r$ disebut {\bf tertutup} jika $\BbbR^r\setminus F$
+terbuka. \cmmnt{({\it Peringatan!} `Sebagian besar' subhimpunan dari
+$\BbbR^r$ tidak terbuka maupun tertutup; dua subhimpunan dari $\BbbR^r$,
+yaitu $\emptyset$ dan $\BbbR^r$, sekaligus terbuka dan tertutup.) Sejalan
+dengan daftar dalam 1A2B, kita mempunyai sifat-sifat berikut dari keluarga
+$\Cal F$ yang terdiri atas subhimpunan-subhimpunan tertutup dari $\BbbR^r$.}
+
+\leader{1A2F}{Proposisi} Misalkan $\Cal F$ keluarga subhimpunan-subhimpunan
+tertutup dari $\BbbR^r$.
+
+ (a) $\emptyset\in\Cal F$\prooflet{ (karena
+$\BbbR^r\in\frak T$)}.
+
+(b) $\BbbR^r\in\Cal F$\prooflet{ (karena $\emptyset\in\frak T$)}.
+
+(c) Jika $E$, $F\in\Cal F$ maka $E\cup F\in\Cal F$\dvro{.}{, karena
+
+\Centerline{$\BbbR^r\setminus(E\cup F)
+=(\BbbR^r\setminus E)\cap(\BbbR^r\setminus F)\in\frak T$.}}
+
+(d) Jika $\Cal E\subseteq\Cal F$ merupakan keluarga {\it tak kosong} dari
+himpunan-himpunan tertutup, maka
+
+\Centerline{$\bigcap\Cal E
+=\{x:x\in F\Forall F\in\Cal E\}\cmmnt{\mskip5mu =\BbbR^r\setminus\bigcupop_{F\in\Cal E}(\BbbR^r\setminus F)}\in\Cal F$.}
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Dalam (d), kita perlu mengasumsikan bahwa
+$\Cal E\ne\emptyset$ untuk memastikan bahwa $\bigcap\Cal E\subseteq\BbbR^r$.
+}%end of comment
+
+\leader{1A2G}{}\cmmnt{ Sejalan dengan 1A2D, kita memperoleh fakta berikut:
+
+\medskip
+
+\noindent}{\bf Lema} Jika $x\in\BbbR^r$ dan $\delta\ge 0$, maka
+$B(x,\delta)=\{y:\|y-x\|\le\delta\}$ tertutup.
+
+\proof{ Tetapkan $G=\BbbR^r\setminus B(x,\delta)$. Jika $y\in G$, maka
+$\eta=\|y-x\|-\delta>0$; jika $z\in U(y,\eta)$, maka
+
+\Centerline{$\delta+\eta=\|y-x\|\le\|y-z\|+\|z-x\|<\eta+\|z-x\|$,}
+
+\noindent sehingga $\|z-x\|>\delta$ dan $z\in G$. Jadi,
+$U(y,\eta)\subseteq G$. Karena $y$ sembarang, $G$ terbuka dan
+$B(x,\delta)$ tertutup.
+}%end of proof of 1A2G
+
+\exercises{}
+
+\discrpage

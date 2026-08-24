@@ -25,8 +25,10 @@ TARGET_PATH = ROOT / "source/id-ID/mt112.tex"
 CORRECTIONS_PATH = ROOT / "00_control/SOURCE_CORRECTIONS.csv"
 UNIT_ID = "O007-FREMLIN-V1-S112"
 EXPECTED_SOURCE_SHA256 = "3c6037e1fb81449cd9ba0bd3bc9b3eae8b5c807ecc758b1b661e8bc8db53ec5e"
-EXPECTED_TARGET_SHA256 = "9e2600fe79f0cc7c42d7bde3312111954740e4d38cc7ad4410cede9097e12256"
-EXPECTED_CORRECTIONS_SHA256 = "6c0cc22c380c8a69f4c629873df128f4b7e1e334fcc47e5a054c4071e283ae8a"
+EXPECTED_TARGET_SHA256 = "2d8429eeb70c591f425350de5497acea9d7f552d063e08e81c3db05816283133"
+EXPECTED_CORRECTIONS_BYTES = 9154
+EXPECTED_CORRECTIONS_ROWS = 19
+EXPECTED_CORRECTIONS_SHA256 = "75557a97ab2347bfb033c7bd2ac2f6672eaa20ae59bdcad7c87b750151c27665"
 EXPECTED_COUNTS = {
     "artifacts": 3, "corrections": 3, "definitions": 16, "events": 1,
     "exercises": 12, "formulas": 480, "hints": 1, "proofs": 7,
@@ -240,8 +242,17 @@ def validate_formulas_and_corrections(unit_sets: dict[str, list[dict[str, object
         raise ValueError("source SHA-256 differs")
     if sha256_bytes(target_bytes) != EXPECTED_TARGET_SHA256:
         raise ValueError("target SHA-256 differs")
-    if sha256(CORRECTIONS_PATH) != EXPECTED_CORRECTIONS_SHA256:
-        raise ValueError("correction ledger SHA-256 differs")
+    if CORRECTIONS_PATH.stat().st_size != EXPECTED_CORRECTIONS_BYTES or sha256(CORRECTIONS_PATH) != EXPECTED_CORRECTIONS_SHA256:
+        raise ValueError("correction ledger byte/hash identity differs")
+    with CORRECTIONS_PATH.open(encoding="utf-8", newline="") as handle:
+        ledger_rows = list(csv.DictReader(handle))
+    expected_correction_ids = ["O007-CORR-0001", "O007-CORR-0002", "O007-CORR-0003"]
+    if (
+        len(ledger_rows) != EXPECTED_CORRECTIONS_ROWS
+        or [row["correction_id"] for row in ledger_rows[:3]] != expected_correction_ids
+        or [row["correction_id"] for row in ledger_rows if row["unit_id"] == UNIT_ID] != expected_correction_ids
+    ):
+        raise ValueError("live correction ledger does not preserve the exact S112 prefix/subset")
     source, target = source_bytes.decode("utf-8"), target_bytes.decode("utf-8")
     source_math, target_math = math_occurrences(source), math_occurrences(target)
     if len(source_math) != 480 or len(target_math) != 480:
@@ -287,7 +298,7 @@ def validate_formulas_and_corrections(unit_sets: dict[str, list[dict[str, object
         "source": {"bytes": len(source_bytes), "sha256": sha256_bytes(source_bytes), "lines": len(source.splitlines())},
         "target": {"bytes": len(target_bytes), "sha256": sha256_bytes(target_bytes), "lines": len(target.splitlines())},
         "formula_count": 480, "corrected_formula_ordinals": sorted(mismatches),
-        "correction_ledger": {"bytes": CORRECTIONS_PATH.stat().st_size, "sha256": sha256(CORRECTIONS_PATH), "rows": 3},
+        "correction_ledger": {"bytes": EXPECTED_CORRECTIONS_BYTES, "sha256": EXPECTED_CORRECTIONS_SHA256, "rows": EXPECTED_CORRECTIONS_ROWS},
     }
 
 

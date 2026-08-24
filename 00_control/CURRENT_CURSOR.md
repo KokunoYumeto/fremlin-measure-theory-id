@@ -8,26 +8,33 @@ Updated: 2026-08-24 (Europe/Berlin)
 |---|---|
 | Corpus | `O007-FREMLIN-MT-V1-V2` |
 | Volume | `O007-FREMLIN-V1` — *The Irreducible Minimum* |
-| Chapter | Volume 1 appendix — *Useful Facts* |
-| Unit | `mt1a.tex` appendix introduction (next; stable backend ID to be frozen at intake) |
-| Source anchor | after complete Section 136 |
-| Source title | `Appendix to Volume 1` / `Useful Facts` |
-| Indonesian working title | `Lampiran untuk Jilid 1` / `Fakta-Fakta Berguna` |
-| Authority member | `authority/fremlin/source/mt1.2011/mt1a.tex` |
-| Source receipt | 1,102 bytes; 32 lines; SHA-256 `4ebe7dc511763be44d670bb6cbd1c40eb84f8c895057c756422826ea83bf1f37` |
-| Target | `source/id-ID/mt1a.tex` (existing unadmitted draft; review next) |
-| Target receipt | 1,231 bytes; SHA-256 `16df29d01336a11db01d99895a80aa102b0707299d36efa3ad705627227d7a08` |
-| Production status | `s136_public_appendix_review_next` |
-| Target admitted | S136 `true`; `mt1a.tex` `false` |
+| Boundary | Complete Volume I admitted; GitHub/Zenodo preservation transaction in progress |
+| Unit | `CP0012_VOLUME1_ADMISSION.md` — all 27 Volume I units |
+| Source anchor | end of the complete Volume I driver; next disjoint owner block is Volume II Chapter 22 |
+| Authority member | `authority/fremlin/source/mt1.2011/mti.tex` |
+| Authority receipt | 473,311 bytes; SHA-256 `f331588e3b9fd97a04754a15bd667b6ec62c73e21946efa8ed7a39083b140070` |
+| Target | `source/id-ID/mti.tex` |
+| Target receipt | 36,790 bytes; SHA-256 `3ef6caa5a23f5d279bec80cae8742385a19c242b54fc3b93f6b4944359724ad0` |
+| Backend translation map | `backend/index/mti-volume1-translations-id.jsonl`; 1,155,992 bytes; SHA-256 `0dab35df4b544ef93df2d06a0ea4d0e6e5abbe4182400cc00df2ab0f26856f3a` |
+| Production status | `volume1_complete_admitted_publication_in_progress` |
+| Target admitted | complete Volume I `true`; complete two-volume corpus `false` |
 
-The complete Chapter 13 closure batch—missing `mt13.tex` introduction plus
-`mt133.tex`–`mt136.tex`—is translated, admitted, and public in the existing
-GitHub and Zenodo lineages. Its stable-ID backend, deterministic reader/PDF,
-all-page PDF inspection, desktop/mobile browser QA, admission evidence, and
-anonymous public asset readbacks pass. The cumulative unique official span is
-pages 10–90, or 81 of 672 pages. Review and admit the already-present Volume 1
-appendix drafts in source order beginning with `mt1a.tex`; the complete
-672-page goal remains active.
+Complete Volume I is translated, backend-indexed, reproducibly built, and
+admitted. The final index covers all 731 units once in source order. The backend
+passes with 27 units, 2,367 schema records, 198 exercises, 55 source hints, and
+102 official pages. The reader-first PDF is 807,217 bytes / SHA-256
+`340af91eb1a31cbfaba20f578209b6e3dd0eacd7ea05f6e23183be9e9fee486f`,
+110 A4 reflow pages. All-page PDF QA, 28-route desktop/mobile HTML QA, exact
+link/fragment closure, and independent artifact replay pass. Admission evidence
+is `00_control/CP0012_VOLUME1_ADMISSION.md`; exact package identity is in
+`qa/volume1-release-package.json`.
+
+The next executable action is to publish this 102/672-page checkpoint as
+GitHub `v0.12.0-v1` and Zenodo `0.12.0-v1`, anonymously read back all public
+bytes, then begin the disjoint owner block `mt22.tex`, `mt221.tex`–`mt226.tex`.
+Helper packet `HP-D10-001` reserves only Chapter 21 (`mt21.tex`,
+`mt211.tex`–`mt216.tex`) and may enter the owner lane only through a schema-clean
+packet and three-way stable-ID integration. The 672-page goal remains active.
 
 The earlier cursor labels `The indefinite integral` / `Upper integrals` were
 rejected on direct authority replay. Frozen `mt13.tex` and `mt131.tex` identify

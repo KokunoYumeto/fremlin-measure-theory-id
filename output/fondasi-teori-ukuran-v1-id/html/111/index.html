@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Aljabar sigma — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        bigcupop: '\\bigcup',
+        eae: '=_{\\mathrm{a.e.}}',
+        leae: '\\le_{\\mathrm{a.e.}}',
+        geae: '\\ge_{\\mathrm{a.e.}}',
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}'
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 1 · Bagian 111</p>
+  <h1>Aljabar sigma</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi Volume 1</a></nav>
+<main id="isi">
+<p>Dalam pengantar bab ini saya menyatakan bahwa ruang ukur adalah
+‘suatu himpunan yang beberapa (biasanya tidak semua) subhimpunannya
+dapat diberi ukuran’. Semua konsep biasa tentang ‘panjang’, ‘luas’,
+atau ‘volume’ hanya berlaku pada himpunan yang cukup teratur. Teori
+ukuran modern luar biasa kuat karena begitu beragam himpunan ternyata
+cukup teratur untuk dapat diukur; tetapi kita tetap
+harus mengharapkan adanya batasan, dan ketika mempelajari suatu ukuran,
+pemahaman yang tepat tentang kelas himpunan yang diukurnya akan menjadi
+pokok pekerjaan kita. Definisi dasarnya di sini ialah ‘aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>
+atas himpunan’; semua ukuran dalam teori standar didefinisikan pada
+koleksi semacam itu. Karena itu, saya mulai dengan menyatakan definisi
+tersebut dan membahas secara singkat sifat-sifat kelas ini.</p>
+<section class="source-unit" id="111A" data-source-id="111A"><h2><span class="source-label">111A</span> Definisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan. Sebuah
+<strong>aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span></strong> (kadang
+disebut <strong>medan-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span></strong>) adalah keluarga <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> yang terdiri
+atas subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span> sedemikian sehingga</p>
+<p>  (i) <span class="math inline" data-source-tex="\emptyset\in\Sigma">\(\emptyset\in\Sigma\)</span>;</p>
+<p>  (ii) untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>, komplemennya <span class="math inline" data-source-tex="X\setminus E">\(X\setminus E\)</span> dalam
+<span class="math inline" data-source-tex="X">\(X\)</span> termasuk dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>;</p>
+<p>  (iii) untuk setiap barisan <span class="math inline" data-source-tex="\langle E_n\rangle_{n\in\Bbb N}">\(\langle E_n\rangle_{n\in\Bbb N}\)</span> di
+dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, gabungannya <span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}E_n">\(\bigcup_{n\in\Bbb N}E_n\)</span> termasuk dalam
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>.</p>
+</section>
+<section class="source-unit" id="111B" data-source-id="111B"><span class="anchor" id="111Ba"></span><h2><span class="source-label">111B</span> Catatan (a) </h2>
+<p>Hampir setiap bidang baru dalam matematika
+murni kemungkinan besar diawali dengan definisi. Pada tahap ini, tidak
+ada pengganti untuk menghafalkannya. Definisi-definisi ini merangkum
+pemikiran banyak orang selama bertahun-tahun, kadang berabad-abad; Anda
+tidak dapat mengharapkan semuanya selalu sesuai dengan gagasan yang
+sudah akrab.</p>
+</section>
+<section class="source-unit" id="111Bb" data-source-id="111Bb"><h3><span class="source-label">111Bb</span> <strong>(b)</strong> </h3>
+<p>Meskipun demikian, Anda hendaknya selalu segera
+mencari cara untuk membuat definisi baru menjadi lebih konkret dengan
+menemukan contoh-contoh dari pengalaman matematika Anda sebelumnya.
+Dalam hal ‘aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>’, contoh-contoh yang benar-benar penting,
+yang akan dijelaskan di bawah, pada dasarnya akan merupakan hal baru
+— andaikan, tentu saja, Anda memang perlu membaca bab ini. Namun, dua
+contoh semestinya langsung dapat Anda pahami, dan mulai sekarang
+hendaknya Anda selalu mengingatnya:</p>
+<p>  (i) untuk setiap <span class="math inline" data-source-tex="X">\(X\)</span>, <span class="math inline" data-source-tex="\Sigma=\{\emptyset,X\}">\(\Sigma=\{\emptyset,X\}\)</span> adalah
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span>;</p>
+<p>  (ii) untuk setiap <span class="math inline" data-source-tex="X">\(X\)</span>, <span class="math inline" data-source-tex="\Cal PX">\(\Cal PX\)</span>, yaitu himpunan semua subhimpunan
+<span class="math inline" data-source-tex="X">\(X\)</span>, adalah aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span>.</p>
+<p>Tentu saja, keduanya masing-masing merupakan
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> terkecil dan terbesar atas subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>.
+Meskipun kita hanya akan mencurahkan sedikit waktu untuk keduanya,
+sebenarnya keduanya sama-sama penting.</p>
+</section>
+<section class="source-unit" id="111Bc" data-source-id="111Bc"><h3><span class="source-label">111Bc</span> <strong>*(c)</strong> </h3>
+<p>Istilah <strong>ruang terukur</strong> sering digunakan
+untuk menyatakan pasangan <span class="math inline" data-source-tex="(X,\Sigma)">\((X,\Sigma)\)</span>, dengan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan dan
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> suatu aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span>; tetapi
+saya sendiri lebih suka menghindari istilah ini, kecuali ketika sangat
+terdesak oleh waktu, sebab banyak di antara contoh paling menarik dari
+objek semacam itu sebenarnya tidak mempunyai ukuran berguna yang
+terkait dengannya.</p>
+</section>
+<section class="source-unit" id="111C" data-source-id="111C"><h2><span class="source-label">111C</span> Gabungan dan irisan tak hingga </h2>
+<p>Jika Anda belum pernah
+menjumpai gabungan tak hingga, ada baiknya berhenti sejenak untuk
+mencermati rumus <span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}E_n">\(\bigcup_{n\in\Bbb N}E_n\)</span>. Ini adalah himpunan titik
+yang termasuk dalam satu atau lebih di antara himpunan-himpunan <span class="math inline" data-source-tex="E_n">\(E_n\)</span>;
+kita dapat menuliskannya sebagai</p>
+<p><span class="math display" data-source-tex="\eqalign{\bigcup_{n\in\Bbb N}E_n
+&amp;=\{x:\exists\enskip n\in\Bbb N,\,x\in E_n\}\cr
+&amp;=E_0\cup E_1\cup E_2\cup\ldots.\cr}">\[\begin{aligned}\bigcup_{n\in\Bbb N}E_n
+&amp;=\{x:\exists\enskip n\in\Bbb N,\,x\in E_n\}\\
+&amp;=E_0\cup E_1\cup E_2\cup\ldots.\\\end{aligned}\]</span></p>
+<p>(Saya menggunakan <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span> untuk himpunan bilangan asli
+<span class="math inline" data-source-tex="\{0,1,2,3,\ldots\}">\(\{0,1,2,3,\ldots\}\)</span>.) Dengan cara yang sama,</p>
+<p><span class="math display" data-source-tex="\eqalign{\bigcap_{n\in\Bbb N}E_n
+&amp;=\{x:x\in E_n\Forall n\in\Bbb N\}\cr
+&amp;=E_0\cap E_1\cap E_2\cap\ldots.\cr}">\[\begin{aligned}\bigcap_{n\in\Bbb N}E_n
+&amp;=\{x:x\in E_n\Forall n\in\Bbb N\}\\
+&amp;=E_0\cap E_1\cap E_2\cap\ldots.\\\end{aligned}\]</span></p>
+<p>Salah satu ciri teori dasar ruang ukur ialah bahwa teori ini
+menuntut kemahiran lebih besar dalam operasi himpunan <span class="math inline" data-source-tex="\cup">\(\cup\)</span>, <span class="math inline" data-source-tex="\cap">\(\cap\)</span>,
+<span class="math inline" data-source-tex="\setminus">\(\setminus\)</span> (‘selisih himpunan’: <span class="math inline" data-source-tex="E\setminus F=\{x:x\in
+E,\,x\notin F\}">\(E\setminus F=\{x:x\in
+E,\,x\notin F\}\)</span>), <span class="math inline" data-source-tex="\symmdiff">\(\symmdiff\)</span> (‘selisih simetris’: <span class="math inline" data-source-tex="E\symmdiff
+F=(E\setminus F)\cup(F\setminus E)=(E\cup F)\setminus(E\cap F)">\(E\symmdiff
+F=(E\setminus F)\cup(F\setminus E)=(E\cup F)\setminus(E\cap F)\)</span>)
+daripada yang mungkin pernah Anda perlukan sebelumnya, ditambah lagi
+dengan kerumitan gabungan dan irisan tak hingga. Saya sangat
+menyarankan agar pada suatu saat Anda meluangkan setidaknya sedikit
+waktu untuk Latihan <a class="xref" href="#111Xa">111Xa</a>.</p>
+</section>
+<section class="source-unit" id="111D" data-source-id="111D"><h2><span class="source-label">111D</span> Sifat-sifat dasar aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> </h2>
+<p>Jika <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> adalah
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span>, maka aljabar tersebut
+mempunyai sifat-sifat berikut.</p>
+</section>
+<section class="source-unit" id="111Da" data-source-id="111Da"><h3><span class="source-label">111Da</span> <strong>(a)</strong> </h3>
+<p><span class="math inline" data-source-tex="E\cup F\in\Sigma">\(E\cup F\in\Sigma\)</span> untuk semua <span class="math inline" data-source-tex="E">\(E\)</span>,
+<span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>.
+<span class="proof-fragment">Bukti. Sebab, jika <span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>, tetapkan <span class="math inline" data-source-tex="E_0=E">\(E_0=E\)</span>,
+<span class="math inline" data-source-tex="E_n=F">\(E_n=F\)</span> untuk <span class="math inline" data-source-tex="n\ge 1">\(n\ge 1\)</span>; maka <span class="math inline" data-source-tex="\langle E_n\rangle_{n\in\Bbb N}">\(\langle E_n\rangle_{n\in\Bbb N}\)</span> adalah
+barisan di dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dan <span class="math inline" data-source-tex="E\cup
+F=\bigcup_{n\in\Bbb N}E_n\in\Sigma">\(E\cup
+F=\bigcup_{n\in\Bbb N}E_n\in\Sigma\)</span>. ∎</span></p>
+</section>
+<section class="source-unit" id="111Db" data-source-id="111Db"><h3><span class="source-label">111Db</span> <strong>(b)</strong> </h3>
+<p><span class="math inline" data-source-tex="E\cap F\in\Sigma">\(E\cap F\in\Sigma\)</span> untuk semua <span class="math inline" data-source-tex="E">\(E\)</span>,
+<span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>.
+<span class="proof-fragment">Bukti. Menurut (ii) dalam definisi <a class="xref" href="#111A">111A</a>, <span class="math inline" data-source-tex="X\setminus E">\(X\setminus E\)</span> dan
+<span class="math inline" data-source-tex="X\setminus F\in\Sigma">\(X\setminus F\in\Sigma\)</span>; menurut (a) pada paragraf ini,
+<span class="math inline" data-source-tex="(X\setminus E)\cup(X\setminus F)\in\Sigma">\((X\setminus E)\cup(X\setminus F)\in\Sigma\)</span>; kembali menurut <a class="xref" href="#111A">111A</a>(ii),
+<span class="math inline" data-source-tex="X\setminus((X\setminus E)\cup(X\setminus F))\in\Sigma">\(X\setminus((X\setminus E)\cup(X\setminus F))\in\Sigma\)</span>; tetapi
+himpunan terakhir ini tidak lain adalah <span class="math inline" data-source-tex="E\cap F">\(E\cap F\)</span>. ∎</span></p>
+</section>
+<section class="source-unit" id="111Dc" data-source-id="111Dc"><h3><span class="source-label">111Dc</span> <strong>(c)</strong> </h3>
+<p><span class="math inline" data-source-tex="E\setminus F\in\Sigma">\(E\setminus F\in\Sigma\)</span> untuk semua <span class="math inline" data-source-tex="E">\(E\)</span>,
+<span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>.
+<span class="proof-fragment">Bukti. <span class="math inline" data-source-tex="E\setminus F=E\cap(X\setminus F)">\(E\setminus F=E\cap(X\setminus F)\)</span>. ∎</span></p>
+</section>
+<section class="source-unit" id="111Dd" data-source-id="111Dd"><h3><span class="source-label">111Dd</span> <strong>(d)</strong> </h3>
+<p>Sekarang, misalkan
+<span class="math inline" data-source-tex="\langle E_n\rangle_{n\in\Bbb N}">\(\langle E_n\rangle_{n\in\Bbb N}\)</span> adalah barisan di dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, dan
+perhatikan bahwa</p>
+<p><span class="math display" data-source-tex="\eqalign{\bigcap_{n\in\Bbb N}E_n
+&amp;=\{x:x\in E_n\Forall n\in\Bbb N\}\cr
+&amp;=E_0\cap E_1\cap E_2\cap\ldots\cr
+&amp;=X\setminus\bigcup_{n\in\Bbb N}(X\setminus E_n);\cr}">\[\begin{aligned}\bigcap_{n\in\Bbb N}E_n
+&amp;=\{x:x\in E_n\Forall n\in\Bbb N\}\\
+&amp;=E_0\cap E_1\cap E_2\cap\ldots\\
+&amp;=X\setminus\bigcup_{n\in\Bbb N}(X\setminus E_n);\\\end{aligned}\]</span></p>
+<p>himpunan ini juga termasuk dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>.</p>
+</section>
+<section class="source-unit" id="111E" data-source-id="111E"><span class="anchor" id="111Ea"></span><h2><span class="source-label">111E</span> Lebih lanjut tentang gabungan dan irisan tak hingga (a) </h2>
+<p>Sejauh ini, saya baru membahas gabungan dan irisan tak hingga dalam
+konteks barisan <span class="math inline" data-source-tex="\langle E_n\rangle_{n\in\Bbb N}">\(\langle E_n\rangle_{n\in\Bbb N}\)</span> yang diindeks oleh
+himpunan bilangan asli <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span> itu sendiri. Banyak bentuk lain akan
+muncul secara kurang lebih alami pada halaman-halaman berikutnya.
+Sebagai contoh, perhatikan himpunan-himpunan berbentuk</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bigcup_{n\ge 4}E_n=E_4\cup E_5\cup E_6\cup\ldots">\(\bigcup_{n\ge 4}E_n=E_4\cup E_5\cup E_6\cup\ldots\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\bigcup_{n\in\Bbb Z}E_n
+=\{x:\exists\enskip n\in\Bbb Z,\,x\in E_n\}
+=\ldots\cup E_{-2}\cup E_{-1}\cup E_0\cup E_1\cup E_2\cup\ldots">\(\bigcup_{n\in\Bbb Z}E_n
+=\{x:\exists\enskip n\in\Bbb Z,\,x\in E_n\}
+=\ldots\cup E_{-2}\cup E_{-1}\cup E_0\cup E_1\cup E_2\cup\ldots\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\bigcup_{q\in\Bbb Q}E_q
+=\{x:\exists\enskip q\in\Bbb Q,\,x\in E_q\}">\(\bigcup_{q\in\Bbb Q}E_q
+=\{x:\exists\enskip q\in\Bbb Q,\,x\in E_q\}\)</span>,</div>
+<p>di sini saya menggunakan <span class="math inline" data-source-tex="\Bbb Z">\(\Bbb Z\)</span> untuk himpunan semua
+bilangan bulat dan <span class="math inline" data-source-tex="\Bbb Q">\(\Bbb Q\)</span> untuk himpunan bilangan rasional. Jika
+setiap <span class="math inline" data-source-tex="E_n">\(E_n\)</span>, <span class="math inline" data-source-tex="E_q">\(E_q\)</span> termasuk dalam suatu aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>,
+gabungan-gabungan ini pun termasuk di dalamnya. Sebaliknya,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bigcup_{t\in[0,1]}E_t
+=\{x:\exists\enskip t\in [0,1],\,x\in E_t\}">\(\bigcup_{t\in[0,1]}E_t
+=\{x:\exists\enskip t\in [0,1],\,x\in E_t\}\)</span></div>
+<p>mungkin tidak termasuk dalam suatu aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> yang
+memuat setiap <span class="math inline" data-source-tex="E_t">\(E_t\)</span>. Karena itu, sangatlah penting untuk membangun
+intuisi mengenai himpunan indeks yang ‘aman’ dalam konteks ini, seperti
+<span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span>, <span class="math inline" data-source-tex="\Bbb Z">\(\Bbb Z\)</span>, dan <span class="math inline" data-source-tex="\Bbb Q">\(\Bbb Q\)</span>, serta himpunan indeks yang tidak aman.</p>
+</section>
+<section class="source-unit" id="111Eb" data-source-id="111Eb"><h3><span class="source-label">111Eb</span> (b) </h3>
+<p>Saya sangat berharap bahwa Anda telah mempelajari teori
+Cantor tentang himpunan tak hingga secukupnya sehingga catatan berikut
+hanya mengungkapkan kembali hal-hal yang sudah akrab; tetapi jika belum,
+saya berharap catatan ini dapat menjadi pengantar pertama, meskipun
+sangat terbatas, untuk gagasan-gagasan tersebut. Inti dari tiga contoh
+pertama ialah bahwa kita dapat mengindeks ulang keluarga-keluarga
+himpunan yang terlibat sebagai barisan himpunan biasa. Untuk contoh
+pertama, caranya sederhana; tuliskan <span class="math inline" data-source-tex="E&#x27;_n=E_{n+4}">\(E&#x27;_n=E_{n+4}\)</span> untuk
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, lalu perhatikan bahwa
+<span class="math inline" data-source-tex="\bigcup_{n\ge 4}E_n=\bigcup_{n\in\Bbb N}E&#x27;_n\in\Sigma">\(\bigcup_{n\ge 4}E_n=\bigcup_{n\in\Bbb N}E&#x27;_n\in\Sigma\)</span>.
+Untuk dua contoh lainnya, kita perlu mengetahui sesuatu tentang
+himpunan <span class="math inline" data-source-tex="\Bbb Z">\(\Bbb Z\)</span> dan <span class="math inline" data-source-tex="\Bbb Q">\(\Bbb Q\)</span>. Kita dapat menemukan barisan bilangan
+bulat <span class="math inline" data-source-tex="\langle k_n\rangle_{n\in\Bbb N}">\(\langle k_n\rangle_{n\in\Bbb N}\)</span> dan barisan bilangan rasional
+<span class="math inline" data-source-tex="\langle q_n\rangle_{n\in\Bbb N}">\(\langle q_n\rangle_{n\in\Bbb N}\)</span> sedemikian sehingga setiap bilangan
+bulat muncul (sekurang-kurangnya sekali) sebagai suatu <span class="math inline" data-source-tex="k_n">\(k_n\)</span>, dan setiap
+bilangan rasional muncul (sekurang-kurangnya sekali) sebagai suatu
+<span class="math inline" data-source-tex="q_n">\(q_n\)</span>; artinya, fungsi <span class="math inline" data-source-tex="n\mapsto k_n:\Bbb N\to\Bbb Z">\(n\mapsto k_n:\Bbb N\to\Bbb Z\)</span> dan
+<span class="math inline" data-source-tex="n\mapsto q_n:\Bbb N\to\Bbb Q">\(n\mapsto q_n:\Bbb N\to\Bbb Q\)</span> bersifat surjektif.
+<span class="proof-fragment">Bukti. Ada banyak cara untuk melakukannya; salah satunya ialah
+menetapkan
+
+<span class="math display" data-source-tex="\eqalign{k_n&amp;=\Bover{n}2\text{ untuk }n\text{ genap},\cr
+&amp;=-\Bover{n+1}2\text{ untuk }n\text{ ganjil},\cr
+q_n&amp;=\Bover{n-m^3-m^2}{m+1}
+  \text{ jika }m\in\Bbb N\text{ dan }m^3\le n&lt;(m+1)^3.\cr}">\[\begin{aligned}k_n&amp;=\Bover{n}2\text{ untuk }n\text{ genap},\\
+&amp;=-\Bover{n+1}2\text{ untuk }n\text{ ganjil},\\
+q_n&amp;=\Bover{n-m^3-m^2}{m+1}
+  \text{ jika }m\in\Bbb N\text{ dan }m^3\le n&lt;(m+1)^3.\\\end{aligned}\]</span>
+
+  (Anda sebaiknya memeriksa dengan saksama bahwa rumus-rumus ini
+benar-benar bekerja seperti yang saya nyatakan.) ∎</span>
+Sekarang, untuk menangani <span class="math inline" data-source-tex="\bigcup_{n\in\Bbb Z}E_n">\(\bigcup_{n\in\Bbb Z}E_n\)</span>, kita dapat
+menetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="E&#x27;_n=E_{k_n}\in\Sigma">\(E&#x27;_n=E_{k_n}\in\Sigma\)</span></div>
+<p>untuk <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bigcup_{n\in\Bbb Z}E_n=\bigcup_{n\in\Bbb N}E_{k_n}
+=\bigcup_{n\in\Bbb N}E&#x27;_n\in\Sigma">\(\bigcup_{n\in\Bbb Z}E_n=\bigcup_{n\in\Bbb N}E_{k_n}
+=\bigcup_{n\in\Bbb N}E&#x27;_n\in\Sigma\)</span>,</div>
+<p>sedangkan untuk kasus yang lain kita mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bigcup_{q\in\Bbb Q}E_q
+=\bigcup_{n\in\Bbb N}E_{q_n}\in\Sigma">\(\bigcup_{q\in\Bbb Q}E_q
+=\bigcup_{n\in\Bbb N}E_{q_n}\in\Sigma\)</span>.</div>
+<p>Perhatikan bahwa kasus pertama <span class="math inline" data-source-tex="\bigcup_{n\ge 4}E_n">\(\bigcup_{n\ge 4}E_n\)</span> dapat dipandang
+sebagai penerapan asas yang sama; pemetaan <span class="math inline" data-source-tex="n\mapsto n+4">\(n\mapsto n+4\)</span> adalah
+surjeksi dari <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span> ke <span class="math inline" data-source-tex="\{4,5,6,7,\ldots\}">\(\{4,5,6,7,\ldots\}\)</span>.</p>
+</section>
+<section class="source-unit" id="111F" data-source-id="111F"><span class="anchor" id="111Fa"></span><h2><span class="source-label">111F</span> Himpunan terhitung (a) </h2>
+<p>Ciri yang sama pada
+himpunan-himpunan <span class="math inline" data-source-tex="\{n:n\ge 4\}">\(\{n:n\ge 4\}\)</span>, <span class="math inline" data-source-tex="\Bbb Z">\(\Bbb Z\)</span>, dan <span class="math inline" data-source-tex="\Bbb Q">\(\Bbb Q\)</span> yang
+memungkinkan prosedur ini ialah bahwa semuanya ‘terhitung’. Untuk
+keperluan kita di sini, definisi keterhitungan yang paling alami adalah
+sebagai berikut: suatu himpunan <span class="math inline" data-source-tex="K">\(K\)</span> disebut <strong>terhitung</strong>
+jika himpunan tersebut kosong atau terdapat suatu surjeksi dari <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span> ke <span class="math inline" data-source-tex="K">\(K\)</span>. Dalam
+hal ini, jika <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> adalah suatu aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>
+dan <span class="math inline" data-source-tex="\langle E_k\rangle_{k\in K}">\(\langle E_k\rangle_{k\in K}\)</span> adalah keluarga di dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>
+yang diindeks oleh <span class="math inline" data-source-tex="K">\(K\)</span>, maka <span class="math inline" data-source-tex="\bigcup_{k\in K}E_k\in\Sigma">\(\bigcup_{k\in K}E_k\in\Sigma\)</span>.
+<span class="proof-fragment">Bukti. Sebab, jika <span class="math inline" data-source-tex="n\mapsto k_n:\Bbb N\to K">\(n\mapsto k_n:\Bbb N\to K\)</span> adalah suatu
+surjeksi, maka <span class="math inline" data-source-tex="E&#x27;_n=E_{k_n}\in\Sigma">\(E&#x27;_n=E_{k_n}\in\Sigma\)</span> untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, dan
+<span class="math inline" data-source-tex="\bigcup_{k\in K}E_k=\bigcup_{n\in\Bbb N}E&#x27;_n\in\Sigma">\(\bigcup_{k\in K}E_k=\bigcup_{n\in\Bbb N}E&#x27;_n\in\Sigma\)</span>. Ini belum
+mencakup kasus <span class="math inline" data-source-tex="K=\emptyset">\(K=\emptyset\)</span>; tetapi dalam kasus ini, penafsiran alami
+untuk <span class="math inline" data-source-tex="\bigcup_{k\in K}E_k">\(\bigcup_{k\in K}E_k\)</span> ialah
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\{x:\exists\enskip k\in \emptyset,\,x\in E_k\}">\(\{x:\exists\enskip k\in \emptyset,\,x\in E_k\}\)</span></span>
+
+
+
+  yang juga merupakan <span class="math inline" data-source-tex="\emptyset">\(\emptyset\)</span>, dan karenanya termasuk dalam
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> menurut syarat (i) dari <a class="xref" href="#111A">111A</a>. ∎</span> (Dalam arti
+tertentu, perlakuan terhadap <span class="math inline" data-source-tex="\emptyset">\(\emptyset\)</span> ini merupakan masalah
+kesepakatan; tetapi ada berbagai konteks tempat kita ingin membahas
+<span class="math inline" data-source-tex="\bigcup_{k\in K}E_k">\(\bigcup_{k\in K}E_k\)</span> tanpa memeriksa apakah <span class="math inline" data-source-tex="K">\(K\)</span> benar-benar mempunyai
+anggota, sehingga kita perlu memperjelas apa yang akan kita lakukan
+dalam kasus seperti itu.)</p>
+</section>
+<section class="source-unit" id="111Fb" data-source-id="111Fb"><h3><span class="source-label">111Fb</span> <strong>(b)</strong> </h3>
+<p>Terdapat teori yang luas dan sangat
+penting mengenai himpunan terhitung. Bagian-bagian yang menurut saya
+harus dinyatakan secara eksplisit pada tahap ini hanyalah yang berikut.
+(Dalam §1A1 saya menambahkan beberapa kata untuk menghubungkan
+penyajian ini dengan pendekatan-pendekatan yang lazim.)</p>
+<p> </p>
+<p>  <strong>(i)</strong> Jika <span class="math inline" data-source-tex="K">\(K\)</span> terhitung dan <span class="math inline" data-source-tex="L\subseteq K">\(L\subseteq K\)</span>, maka <span class="math inline" data-source-tex="L">\(L\)</span>
+terhitung. <span class="proof-fragment">Bukti. Jika <span class="math inline" data-source-tex="L=\emptyset">\(L=\emptyset\)</span>, hal ini langsung jelas.
+Jika tidak, ambil sembarang <span class="math inline" data-source-tex="l^*\in L">\(l^*\in L\)</span> dan suatu surjeksi
+<span class="math inline" data-source-tex="n\mapsto k_n:\Bbb N\to K">\(n\mapsto k_n:\Bbb N\to K\)</span> (tentu saja <span class="math inline" data-source-tex="K">\(K\)</span> juga tidak kosong, sebab
+<span class="math inline" data-source-tex="l^*\in K">\(l^*\in K\)</span>); tetapkan <span class="math inline" data-source-tex="l_n=k_n">\(l_n=k_n\)</span> jika <span class="math inline" data-source-tex="k_n\in L">\(k_n\in L\)</span>, dan <span class="math inline" data-source-tex="l^*">\(l^*\)</span> jika tidak;
+maka <span class="math inline" data-source-tex="n\mapsto l_n:\Bbb N\to L">\(n\mapsto l_n:\Bbb N\to L\)</span> adalah suatu surjeksi. ∎</span></p>
+<p> </p>
+<p>  <strong>(ii)</strong> Produk Kartesius <span class="math inline" data-source-tex="\Bbb N\times\Bbb N=\{(m,n):m">\(\Bbb N\times\Bbb N=\{(m,n):m\)</span>,
+<span class="math inline" data-source-tex="n\in\Bbb N\}">\(n\in\Bbb N\}\)</span> terhitung. <span class="proof-fragment">Bukti. Untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>,
+misalkan <span class="math inline" data-source-tex="k_n">\(k_n\)</span>, <span class="math inline" data-source-tex="l_n\in\Bbb N">\(l_n\in\Bbb N\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="n+1=2^{k_n}(2l_n+1)">\(n+1=2^{k_n}(2l_n+1)\)</span>; artinya, <span class="math inline" data-source-tex="k_n">\(k_n\)</span> adalah pangkat <span class="math inline" data-source-tex="2">\(2\)</span> dalam
+faktorisasi prima <span class="math inline" data-source-tex="n+1">\(n+1\)</span>, dan <span class="math inline" data-source-tex="2l_n+1">\(2l_n+1\)</span> adalah bilangan (yang pasti ganjil)
+<span class="math inline" data-source-tex="(n+1)/2^{k_n}">\((n+1)/2^{k_n}\)</span>. Sekarang, <span class="math inline" data-source-tex="n\mapsto(k_n,l_n)">\(n\mapsto(k_n,l_n)\)</span> adalah suatu surjeksi
+dari <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span> ke <span class="math inline" data-source-tex="\Bbb N\times\Bbb N">\(\Bbb N\times\Bbb N\)</span>. ∎</span>\
+Kelak penting bagi kita untuk mengetahui bahwa
+<span class="math inline" data-source-tex="n\mapsto(k_n,l_n)">\(n\mapsto(k_n,l_n)\)</span> sebenarnya merupakan bijeksi, sebagaimana mudah
+diperiksa.</p>
+<p> </p>
+<p>  <strong>(iii)</strong> Akibatnya, jika <span class="math inline" data-source-tex="K">\(K\)</span> dan <span class="math inline" data-source-tex="L">\(L\)</span> adalah himpunan terhitung,
+maka <span class="math inline" data-source-tex="K\times L">\(K\times L\)</span> juga terhitung. <span class="proof-fragment">Bukti. Jika <span class="math inline" data-source-tex="K">\(K\)</span> atau <span class="math inline" data-source-tex="L">\(L\)</span>
+kosong, maka <span class="math inline" data-source-tex="K\times L">\(K\times L\)</span> kosong, sehingga dalam kasus ini <span class="math inline" data-source-tex="K\times L">\(K\times L\)</span>
+tentu terhitung. Jika tidak, misalkan <span class="math inline" data-source-tex="\phi:\Bbb N\to K">\(\phi:\Bbb N\to K\)</span> dan
+<span class="math inline" data-source-tex="\psi:\Bbb N\to L">\(\psi:\Bbb N\to L\)</span> adalah surjeksi; maka kita mempunyai surjeksi
+<span class="math inline" data-source-tex="\theta:\Bbb N\times\Bbb N\to K\times L">\(\theta:\Bbb N\times\Bbb N\to K\times L\)</span> yang didefinisikan dengan
+menetapkan <span class="math inline" data-source-tex="\theta(m,n)=(\phi(m),\psi(n))">\(\theta(m,n)=(\phi(m),\psi(n))\)</span> untuk semua <span class="math inline" data-source-tex="m">\(m\)</span>,
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>. Dari (ii) tepat di atas, kita tahu bahwa ada pula
+surjeksi <span class="math inline" data-source-tex="\chi:\Bbb N\to\Bbb N\times\Bbb N">\(\chi:\Bbb N\to\Bbb N\times\Bbb N\)</span>, sehingga
+<span class="math inline" data-source-tex="\theta\chi:\Bbb N\to K\times L">\(\theta\chi:\Bbb N\to K\times L\)</span> adalah suatu surjeksi, dan
+<span class="math inline" data-source-tex="K\times L">\(K\times L\)</span> pasti terhitung. ∎</span></p>
+<p> </p>
+<p>  <strong>(iv)</strong> Sekarang, induksi pada <span class="math inline" data-source-tex="r">\(r\)</span> menunjukkan
+bahwa jika <span class="math inline" data-source-tex="K_1">\(K_1\)</span>, <span class="math inline" data-source-tex="K_2,\ldots,K_r">\(K_2,\ldots,K_r\)</span> adalah himpunan-himpunan terhitung,
+maka <span class="math inline" data-source-tex="K_1\times\ldots\times K_r">\(K_1\times\ldots\times K_r\)</span> juga terhitung. Secara khusus,
+himpunan-himpunan seperti <span class="math inline" data-source-tex="\Bbb Q^r\times\Bbb Q^r">\(\Bbb Q^r\times\Bbb Q^r\)</span> akan terhitung,
+untuk setiap bilangan bulat <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span>.</p>
+</section>
+<section class="source-unit" id="111Fc" data-source-id="111Fc"><h3><span class="source-label">111Fc</span> <strong>(c)</strong> </h3>
+<p>Dengan menggabungkan <a class="xref" href="#111Dd">111Dd</a> di atas
+dengan gagasan-gagasan ini, kita melihat bahwa jika <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> adalah
+suatu aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>, <span class="math inline" data-source-tex="K">\(K\)</span> adalah himpunan terhitung
+yang tidak kosong, dan <span class="math inline" data-source-tex="\langle E_k\rangle_{k\in K}">\(\langle E_k\rangle_{k\in K}\)</span> adalah keluarga di
+dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bigcap_{k\in K}E_k=\{x:x\in E_k\Forall k\in
+K\}">\(\bigcap_{k\in K}E_k=\{x:x\in E_k\Forall k\in
+K\}\)</span></div>
+<p>termasuk dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. <span class="proof-fragment">Bukti. Misalkan
+<span class="math inline" data-source-tex="n\mapsto k_n:\Bbb N\to K">\(n\mapsto k_n:\Bbb N\to K\)</span> adalah suatu surjeksi; maka
+<span class="math inline" data-source-tex="\bigcap_{k\in K}E_k=\bigcap_{n\in\Bbb N}E_{k_n}\in\Sigma">\(\bigcap_{k\in K}E_k=\bigcap_{n\in\Bbb N}E_{k_n}\in\Sigma\)</span>, seperti
+pada <a class="xref" href="#111Dd">111Dd</a>. ∎</span></p>
+<p>Perhatikan bahwa terdapat kesulitan pada pengertian
+<span class="math inline" data-source-tex="\bigcap_{k\in K}E_k">\(\bigcap_{k\in K}E_k\)</span> jika <span class="math inline" data-source-tex="K=\emptyset">\(K=\emptyset\)</span>; penafsiran alami rumus ini
+ialah membacanya sebagai kelas semesta. Jadi, biasanya, jika ada
+kemungkinan bahwa <span class="math inline" data-source-tex="K">\(K\)</span> kosong, kita memerlukan perumusan seperti
+<span class="math inline" data-source-tex="X\cap\bigcap_{k\in K}E_k">\(X\cap\bigcap_{k\in K}E_k\)</span>.</p>
+</section>
+<section class="source-unit" id="111Fd" data-source-id="111Fd"><h3><span class="source-label">111Fd</span> <strong>(d)</strong> </h3>
+<p>Sebagai contoh cara menggunakan
+gagasan-gagasan ini, perhatikan hal berikut. Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu
+himpunan, <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> suatu aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span>, dan
+<span class="math inline" data-source-tex="\langle E_{qn}\rangle_{q\in\Bbb Q,n\in\Bbb N}">\(\langle E_{qn}\rangle_{q\in\Bbb Q,n\in\Bbb N}\)</span> suatu
+keluarga di dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="E
+=\bigcap_{q\in\Bbb Q,q&lt;\sqrt{2}}\bigcup_{m\in\Bbb N}\bigcap_{n\ge m}E_{qn}
+=\bigcap_{q\in\Bbb Q,q&lt;\sqrt{2}}(\bigcup_{m\in\Bbb N}(\bigcap_{n\ge m}E_{qn}))
+\in\Sigma">\(E
+=\bigcap_{q\in\Bbb Q,q&lt;\sqrt{2}}\bigcup_{m\in\Bbb N}\bigcap_{n\ge m}E_{qn}
+=\bigcap_{q\in\Bbb Q,q&lt;\sqrt{2}}(\bigcup_{m\in\Bbb N}(\bigcap_{n\ge m}E_{qn}))
+\in\Sigma\)</span>.</div>
+<p><span class="proof-fragment">Bukti. Tetapkan
+<span class="math inline" data-source-tex="F_{qm}=\bigcap_{n\ge m}E_{qn}=\bigcap_{n\in\Bbb N}E_{q,m+n}">\(F_{qm}=\bigcap_{n\ge m}E_{qn}=\bigcap_{n\in\Bbb N}E_{q,m+n}\)</span> untuk
+<span class="math inline" data-source-tex="q\in\Bbb Q">\(q\in\Bbb Q\)</span> dan <span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span>; maka setiap <span class="math inline" data-source-tex="F_{qm}">\(F_{qm}\)</span> termasuk dalam
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, menurut <a class="xref" href="#111Dd">111Dd</a> atau (c) di atas. Tetapkan
+<span class="math inline" data-source-tex="G_q=\bigcup_{m\in\Bbb N}F_{qm}">\(G_q=\bigcup_{m\in\Bbb N}F_{qm}\)</span> untuk <span class="math inline" data-source-tex="q\in\Bbb Q">\(q\in\Bbb Q\)</span>; maka setiap <span class="math inline" data-source-tex="G_q">\(G_q\)</span>
+termasuk dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, menurut <a class="xref" href="#111A">111A</a>(iii). Tetapkan
+<span class="math inline" data-source-tex="K=\{q:q\in\Bbb Q,\,q&lt;\sqrt{2}\}">\(K=\{q:q\in\Bbb Q,\,q&lt;\sqrt{2}\}\)</span>; maka <span class="math inline" data-source-tex="K">\(K\)</span> terhitung, menurut <a class="xref" href="#111E">111E</a> dan
+(b-i) pada paragraf ini. Jadi, <span class="math inline" data-source-tex="\bigcap_{q\in K}G_q">\(\bigcap_{q\in K}G_q\)</span> termasuk dalam
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, menurut (c). Tetapi <span class="math inline" data-source-tex="E=\bigcap_{q\in K}G_q">\(E=\bigcap_{q\in K}G_q\)</span>. ∎</span></p>
+</section>
+<section class="source-unit" id="111Fe" data-source-id="111Fe"><h3><span class="source-label">111Fe</span> <strong>(e)</strong> </h3>
+<p>Dan satu catatan terakhir, yang saya
+berikan di sini tanpa bukti — walaupun banyak bukti akan tersirat
+dalam pembahasan di bawah, dan satu di antaranya saya uraikan dalam
+1A1Ha —</p>
+<p> </p>
+<div class="centerline"><strong>Himpunan <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> dari semua bilangan real tidak
+terhitung.</strong></div>
+<p> </p>
+<p>Jadi, Anda harus menahan godaan untuk mencari suatu daftar
+<span class="math inline" data-source-tex="a_0">\(a_0\)</span>, <span class="math inline" data-source-tex="a_1,\ldots">\(a_1,\ldots\)</span> yang mencakup seluruh himpunan bilangan real.</p>
+</section>
+<section class="source-unit" id="111G" data-source-id="111G"><span class="anchor" id="111Ga"></span><h2><span class="source-label">111G</span> Himpunan Borel  </h2>
+<p>Di sini saya dapat menjelaskan
+salah satu jenis aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> taktrivial; perumusannya cukup
+abstrak, tetapi tekniknya penting dan istilahnya merupakan bagian dari
+kosakata dasar teori ukuran.</p>
+<p> </p>
+<p><strong>(a)</strong> Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan, dan misalkan <span class="math inline" data-source-tex="\frak S">\(\frak S\)</span> sembarang
+keluarga tak kosong yang terdiri atas aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span>.
+(Jadi, suatu <em>anggota</em>
+<span class="math inline" data-source-tex="\frak S">\(\frak S\)</span> sendiri merupakan suatu <em>keluarga</em> himpunan;
+<span class="math inline" data-source-tex="\frak S\subseteq\Cal P(\Cal PX)">\(\frak S\subseteq\Cal P(\Cal PX)\)</span>.) Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bigcap\frak S=\{E:E\in\Sigma">\(\bigcap\frak S=\{E:E\in\Sigma\)</span> untuk setiap <span class="math inline" data-source-tex="\Sigma\in\frak
+S\}">\(\Sigma\in\frak
+S\}\)</span>,</div>
+<p>yaitu irisan semua aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> yang termasuk dalam
+<span class="math inline" data-source-tex="\frak S">\(\frak S\)</span>, merupakan aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span>.
+<span class="proof-fragment">Bukti.\
+(i) Menurut hipotesis, <span class="math inline" data-source-tex="\frak S">\(\frak S\)</span> tidak kosong; ambil
+<span class="math inline" data-source-tex="\Sigma_0\in\frak S">\(\Sigma_0\in\frak S\)</span>; maka
+<span class="math inline" data-source-tex="\bigcap\frak S\subseteq\Sigma_0\subseteq\Cal PX">\(\bigcap\frak S\subseteq\Sigma_0\subseteq\Cal PX\)</span>, sehingga setiap
+anggota <span class="math inline" data-source-tex="\bigcap\frak S">\(\bigcap\frak S\)</span> merupakan subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>. (ii)
+<span class="math inline" data-source-tex="\emptyset\in\Sigma">\(\emptyset\in\Sigma\)</span> untuk setiap <span class="math inline" data-source-tex="\Sigma\in\frak S">\(\Sigma\in\frak S\)</span>, sehingga
+<span class="math inline" data-source-tex="\emptyset\in\bigcap\frak S">\(\emptyset\in\bigcap\frak S\)</span>. (iii) Jika <span class="math inline" data-source-tex="E\in\bigcap\frak S">\(E\in\bigcap\frak S\)</span>, maka
+<span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> untuk setiap <span class="math inline" data-source-tex="\Sigma\in\frak S">\(\Sigma\in\frak S\)</span>, sehingga
+<span class="math inline" data-source-tex="X\setminus E\in\Sigma">\(X\setminus E\in\Sigma\)</span> untuk setiap <span class="math inline" data-source-tex="\Sigma\in\frak S">\(\Sigma\in\frak S\)</span> dan
+<span class="math inline" data-source-tex="X\setminus E\in\bigcap\frak S">\(X\setminus E\in\bigcap\frak S\)</span>. (iv) Misalkan
+<span class="math inline" data-source-tex="\langle E_n\rangle_{n\in\Bbb N}">\(\langle E_n\rangle_{n\in\Bbb N}\)</span> sembarang barisan di dalam
+<span class="math inline" data-source-tex="\bigcap\frak S">\(\bigcap\frak S\)</span>. Maka, untuk setiap <span class="math inline" data-source-tex="\Sigma\in\frak S">\(\Sigma\in\frak S\)</span>,
+<span class="math inline" data-source-tex="\langle E_n\rangle_{n\in\Bbb N}">\(\langle E_n\rangle_{n\in\Bbb N}\)</span> adalah barisan di dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>,
+sehingga <span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}E_n\in\Sigma">\(\bigcup_{n\in\Bbb N}E_n\in\Sigma\)</span>; karena <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dipilih sembarang,
+<span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}E_n\in\bigcap\frak S">\(\bigcup_{n\in\Bbb N}E_n\in\bigcap\frak S\)</span>. ∎</span></p>
+</section>
+<section class="source-unit" id="111Gb" data-source-id="111Gb"><h3><span class="source-label">111Gb</span> <strong>(b)</strong> </h3>
+<p>Sekarang, misalkan <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> sembarang keluarga
+subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>. Perhatikan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\frak S=\{\Sigma:\Sigma">\(\frak S=\{\Sigma:\Sigma\)</span> adalah suatu aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas
+subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>, <span class="math inline" data-source-tex="\Cal A\subseteq\Sigma\}">\(\Cal A\subseteq\Sigma\}\)</span>.</div>
+<p>Menurut definisi, <span class="math inline" data-source-tex="\frak S">\(\frak S\)</span> adalah suatu keluarga yang
+terdiri atas aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span>; selain
+itu, keluarga tersebut tidak kosong, karena <span class="math inline" data-source-tex="\Cal PX\in\frak S">\(\Cal PX\in\frak S\)</span>. Jadi
+<span class="math inline" data-source-tex="\Sigma_{\Cal A}=\bigcap\frak S">\(\Sigma_{\Cal A}=\bigcap\frak S\)</span> adalah aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> pada
+<span class="math inline" data-source-tex="X">\(X\)</span>. Karena <span class="math inline" data-source-tex="\Cal A\subseteq\Sigma">\(\Cal A\subseteq\Sigma\)</span>
+untuk setiap <span class="math inline" data-source-tex="\Sigma\in\frak S">\(\Sigma\in\frak S\)</span>, maka
+<span class="math inline" data-source-tex="\Cal A\subseteq\Sigma_{\Cal A}">\(\Cal A\subseteq\Sigma_{\Cal A}\)</span>; dengan demikian,
+<span class="math inline" data-source-tex="\Sigma_{\Cal A}">\(\Sigma_{\Cal A}\)</span> sendiri termasuk dalam <span class="math inline" data-source-tex="\frak S">\(\frak S\)</span>; ini adalah
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> terkecil atas subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span> yang memuat
+<span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>.</p>
+<p>Kita mengatakan bahwa <span class="math inline" data-source-tex="\Sigma_{\Cal A}">\(\Sigma_{\Cal A}\)</span> adalah aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> pada
+<span class="math inline" data-source-tex="X">\(X\)</span> yang <strong>dibangkitkan oleh</strong> <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>.</p>
+<p> </p>
+<p><strong>Contoh (i)</strong> Untuk setiap <span class="math inline" data-source-tex="X">\(X\)</span>, aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span>
+yang dibangkitkan oleh <span class="math inline" data-source-tex="\emptyset">\(\emptyset\)</span> adalah
+<span class="math inline" data-source-tex="\{\emptyset,X\}">\(\{\emptyset,X\}\)</span>.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> pada <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span>
+yang dibangkitkan oleh <span class="math inline" data-source-tex="\{\{n\}:n\in\Bbb N\}">\(\{\{n\}:n\in\Bbb N\}\)</span> adalah <span class="math inline" data-source-tex="\Cal P\Bbb N">\(\Cal P\Bbb N\)</span>.</p>
+</section>
+<section class="source-unit" id="111Gc" data-source-id="111Gc"><h3><span class="source-label">111Gc</span> <strong>(c)(i)</strong> </h3>
+<p>Kita mengatakan bahwa suatu himpunan
+<span class="math inline" data-source-tex="G\subseteq\Bbb R">\(G\subseteq\Bbb R\)</span> <strong>terbuka</strong> jika untuk setiap <span class="math inline" data-source-tex="x\in G">\(x\in G\)</span> terdapat
+<span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga interval terbuka
+<span class="math inline" data-source-tex="\ooint{x-\delta,x+\delta}">\(\ooint{x-\delta,x+\delta}\)</span> termuat dalam <span class="math inline" data-source-tex="G">\(G\)</span>.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Demikian pula, untuk setiap <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span>, kita mengatakan
+bahwa suatu himpunan <span class="math inline" data-source-tex="G\subseteq\BbbR^r">\(G\subseteq\BbbR^r\)</span> <strong>terbuka</strong> dalam
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> jika untuk setiap <span class="math inline" data-source-tex="x\in G">\(x\in G\)</span> terdapat <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\{y:\|y-x\|&lt;\delta\}\subseteq G">\(\{y:\|y-x\|&lt;\delta\}\subseteq G\)</span>, dengan, untuk
+<span class="math inline" data-source-tex="z=(\zeta_1,\ldots,\zeta_r)\in\BbbR^r">\(z=(\zeta_1,\ldots,\zeta_r)\in\BbbR^r\)</span>, saya menuliskan
+<span class="math inline" data-source-tex="\|z\|=\sqrt{\sum_{i=1}^r|\zeta_i|^2}">\(\|z\|=\sqrt{\sum_{i=1}^r|\zeta_i|^2}\)</span>; jadi <span class="math inline" data-source-tex="\|y-x\|">\(\|y-x\|\)</span> tidak
+lain adalah jarak Euklides biasa dari <span class="math inline" data-source-tex="y">\(y\)</span> ke <span class="math inline" data-source-tex="x">\(x\)</span>.</p>
+</section>
+<section class="source-unit" id="111Gd" data-source-id="111Gd"><h3><span class="source-label">111Gd</span> <strong>(d)</strong> </h3>
+<p>Sekarang, <strong>himpunan-himpunan Borel</strong> dalam
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, atau dalam <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, tidak lain adalah anggota
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> atau <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> yang dibangkitkan oleh
+keluarga himpunan terbuka dalam
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> atau <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>; aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> itu sendiri dalam masing-masing
+kasus disebut <strong>aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> Borel</strong>.</p>
+</section>
+<section class="source-unit" id="111Ge" data-source-id="111Ge"><h3><span class="source-label">111Ge</span> <strong>(e)</strong> </h3>
+<p>Sebagian pembaca akan merasa, dengan
+tepat, bahwa pengembangan di sini hanya memberi sedikit gambaran
+tentang seperti apa ‘sebenarnya’ suatu himpunan Borel. (Himpunan terbuka
+jauh lebih mudah; lihat <a class="xref" href="#111Ye">111Ye</a>.) Sebenarnya, pentingnya konsep ini
+sebagian besar berasal dari adanya cara-cara alternatif yang lebih
+eksplisit dan, dalam suatu arti, lebih konkret untuk menjelaskan
+himpunan Borel. Saya akan kembali ke topik ini dalam Bab 42 di Jilid 4.</p>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="111X" data-source-id="111X"><span class="anchor" id="111Xa"></span><h2><span class="source-label">111X</span> Latihan dasar <span class="math inline" data-source-tex="\pmb{&gt;}">\(\pmb{&gt;}\)</span>(a) <span class="importance" title="Sangat penting">penting</span></h2>
+<p>Berlatihlah menggunakan
+aljabar gabungan dan irisan tak hingga sampai Anda dapat dengan yakin
+menafsirkan rumus-rumus seperti</p>
+<div class="centerline"><span class="math inline" data-source-tex="E\cap(\bigcup_{n\in\Bbb N}F_n)">\(E\cap(\bigcup_{n\in\Bbb N}F_n)\)</span>,
+    <span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}(E_n\setminus F)">\(\bigcup_{n\in\Bbb N}(E_n\setminus F)\)</span>,
+    <span class="math inline" data-source-tex="E\cup(\bigcap_{n\in\Bbb N}F_n)">\(E\cup(\bigcap_{n\in\Bbb N}F_n)\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}(E\setminus F_n)">\(\bigcup_{n\in\Bbb N}(E\setminus F_n)\)</span>,
+    <span class="math inline" data-source-tex="E\setminus(\bigcup_{n\in\Bbb N}F_n)">\(E\setminus(\bigcup_{n\in\Bbb N}F_n)\)</span>,
+    <span class="math inline" data-source-tex="\bigcap_{n\in\Bbb N}(E_n\setminus F)">\(\bigcap_{n\in\Bbb N}(E_n\setminus F)\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="E\setminus(\bigcap_{n\in\Bbb N}F_n)">\(E\setminus(\bigcap_{n\in\Bbb N}F_n)\)</span>,
+    <span class="math inline" data-source-tex="\bigcap_{n\in\Bbb N}(E\cup F_n)">\(\bigcap_{n\in\Bbb N}(E\cup F_n)\)</span>,
+    <span class="math inline" data-source-tex="(\bigcup_{n\in\Bbb N}E_n)\setminus F">\((\bigcup_{n\in\Bbb N}E_n)\setminus F\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}(E\cap F_n)">\(\bigcup_{n\in\Bbb N}(E\cap F_n)\)</span>,
+    <span class="math inline" data-source-tex="(\bigcap_{n\in\Bbb N}E_n)\setminus F">\((\bigcap_{n\in\Bbb N}E_n)\setminus F\)</span>,
+    <span class="math inline" data-source-tex="\bigcap_{n\in\Bbb N}(E\setminus F_n)">\(\bigcap_{n\in\Bbb N}(E\setminus F_n)\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="(\bigcup_{n\in\Bbb N}E_n)\cap(\bigcup_{n\in\Bbb N}F_n)">\((\bigcup_{n\in\Bbb N}E_n)\cap(\bigcup_{n\in\Bbb N}F_n)\)</span>,
+    <span class="math inline" data-source-tex="\bigcap_{m,n\in\Bbb N}(E_m\setminus F_n)">\(\bigcap_{m,n\in\Bbb N}(E_m\setminus F_n)\)</span>,
+    <span class="math inline" data-source-tex="(\bigcap_{n\in\Bbb N}E_n)\cup(\bigcap_{n\in\Bbb N}F_n)">\((\bigcap_{n\in\Bbb N}E_n)\cup(\bigcap_{n\in\Bbb N}F_n)\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\bigcap_{m,n\in\Bbb N}(E_m\cup F_n)">\(\bigcap_{m,n\in\Bbb N}(E_m\cup F_n)\)</span>,
+    <span class="math inline" data-source-tex="(\bigcap_{n\in\Bbb N}E_n)\setminus(\bigcup_{n\in\Bbb N}F_n)">\((\bigcap_{n\in\Bbb N}E_n)\setminus(\bigcup_{n\in\Bbb N}F_n)\)</span>,
+    <span class="math inline" data-source-tex="\bigcup_{m,n\in\Bbb N}(E_m\cap F_n)">\(\bigcup_{m,n\in\Bbb N}(E_m\cap F_n)\)</span>,</div>
+<p>dan, khususnya, dapat mengenali sembilan pasangan alami yang
+dibentuk oleh rumus-rumus tersebut.</p>
+</section>
+<section class="source-unit" id="111Xb" data-source-id="111Xb"><h3><span class="source-label">111Xb</span> (&gt;b) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, tunjukkan bahwa semua ‘interval
+terbuka’ <span class="math inline" data-source-tex="\ooint{a,b}">\(\ooint{a,b}\)</span>, <span class="math inline" data-source-tex="\ooint{-\infty,b}">\(\ooint{-\infty,b}\)</span>, <span class="math inline" data-source-tex="\ooint{a,\infty}">\(\ooint{a,\infty}\)</span> adalah
+himpunan terbuka, dan bahwa semua interval (terbatas ataupun tak
+terbatas, terbuka, tertutup, ataupun setengah terbuka) merupakan
+himpunan Borel.</p>
+</section>
+<section class="source-unit" id="111Xc" data-source-id="111Xc"><h3><span class="source-label">111Xc</span> (&gt;c) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> dan <span class="math inline" data-source-tex="Y">\(Y\)</span> adalah himpunan dan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>
+suatu aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span>. Misalkan
+<span class="math inline" data-source-tex="\phi:X\to Y">\(\phi:X\to Y\)</span> suatu fungsi. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\{F:F\subseteq Y,\,\phi^{-1}[F]\in\Sigma\}">\(\{F:F\subseteq Y,\,\phi^{-1}[F]\in\Sigma\}\)</span> adalah aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>
+pada <span class="math inline" data-source-tex="Y">\(Y\)</span>. (Lihat 1A1B untuk notasi yang
+digunakan di sini.)</p>
+</section>
+<section class="source-unit" id="111Xd" data-source-id="111Xd"><h3><span class="source-label">111Xd</span> (&gt;d) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> dan <span class="math inline" data-source-tex="Y">\(Y\)</span> adalah himpunan dan <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> suatu
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> pada <span class="math inline" data-source-tex="Y">\(Y\)</span>. Misalkan
+<span class="math inline" data-source-tex="\phi:X\to Y">\(\phi:X\to Y\)</span> suatu fungsi. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\{\phi^{-1}[F]:F\in\Tau\}">\(\{\phi^{-1}[F]:F\in\Tau\}\)</span> adalah aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span>.</p>
+</section>
+<section class="source-unit" id="111Xe" data-source-id="111Xe"><h3><span class="source-label">111Xe</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan, <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> suatu keluarga
+subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>, dan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span> yang
+dibangkitkan oleh <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>. Misalkan
+<span class="math inline" data-source-tex="Y">\(Y\)</span> suatu himpunan lain dan <span class="math inline" data-source-tex="\phi:Y\to X">\(\phi:Y\to X\)</span> suatu fungsi. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\{\phi^{-1}[E]:E\in\Sigma\}">\(\{\phi^{-1}[E]:E\in\Sigma\}\)</span> adalah aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> pada <span class="math inline" data-source-tex="Y">\(Y\)</span> yang
+dibangkitkan oleh
+<span class="math inline" data-source-tex="\{\phi^{-1}[A]:A\in\Cal A\}">\(\{\phi^{-1}[A]:A\in\Cal A\}\)</span>.</p>
+</section>
+<section class="source-unit" id="111Xf" data-source-id="111Xf"><h3><span class="source-label">111Xf</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan, <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> suatu keluarga
+subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>, dan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span> yang
+dibangkitkan oleh <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>. Misalkan
+<span class="math inline" data-source-tex="Y\subseteq X">\(Y\subseteq X\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\{E\cap Y:E\in\Sigma\}">\(\{E\cap Y:E\in\Sigma\}\)</span> adalah
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> pada <span class="math inline" data-source-tex="Y">\(Y\)</span> yang dibangkitkan oleh
+<span class="math inline" data-source-tex="\{A\cap Y:A\in\Cal A\}">\(\{A\cap Y:A\in\Cal A\}\)</span>.</p>
+</section>
+<section class="source-unit" id="111Y" data-source-id="111Y"><span class="anchor" id="111Ya"></span><h2><span class="source-label">111Y</span> Latihan lanjutan (a) </h2>
+<p>Dalam <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dengan <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span>,
+tunjukkan bahwa <span class="math inline" data-source-tex="G+a=\{x+a:x\in G\}">\(G+a=\{x+a:x\in G\}\)</span> terbuka setiap kali
+<span class="math inline" data-source-tex="G\subseteq\BbbR^r">\(G\subseteq\BbbR^r\)</span> terbuka dan <span class="math inline" data-source-tex="a\in\BbbR^r">\(a\in\BbbR^r\)</span>. Selanjutnya, tunjukkan
+bahwa <span class="math inline" data-source-tex="E+a">\(E+a\)</span> adalah himpunan Borel setiap kali <span class="math inline" data-source-tex="E\subseteq\BbbR^r">\(E\subseteq\BbbR^r\)</span>
+adalah himpunan Borel dan <span class="math inline" data-source-tex="a\in\BbbR^r">\(a\in\BbbR^r\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> tunjukkan bahwa
+<span class="math inline" data-source-tex="\{E:E+a\text{ adalah himpunan Borel}\}">\(\{E:E+a\text{ adalah himpunan Borel}\}\)</span> adalah aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> yang memuat
+semua himpunan terbuka.</span></p>
+</section>
+<section class="source-unit" id="111Yb" data-source-id="111Yb"><h3><span class="source-label">111Yb</span> <strong>(b)</strong> </h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan, <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> suatu
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span>, dan <span class="math inline" data-source-tex="A">\(A\)</span> sembarang
+subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\{(E\cap
+A)\cup(F\setminus A):E,\,F\in\Sigma\}">\(\{(E\cap
+A)\cup(F\setminus A):E,\,F\in\Sigma\}\)</span> adalah aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> pada
+<span class="math inline" data-source-tex="X">\(X\)</span>, yaitu aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> yang dibangkitkan
+oleh <span class="math inline" data-source-tex="\Sigma\cup\{A\}">\(\Sigma\cup\{A\}\)</span>.</p>
+</section>
+<section class="source-unit" id="111Yc" data-source-id="111Yc"><h3><span class="source-label">111Yc</span> <strong>(c)</strong> </h3>
+<p>Misalkan <span class="math inline" data-source-tex="G\subseteq\BbbR^2">\(G\subseteq\BbbR^2\)</span> suatu himpunan
+terbuka. Tunjukkan bahwa semua penampang horizontal dan vertikal</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{\xi:(\xi,\eta)\in G\}">\(\{\xi:(\xi,\eta)\in G\}\)</span>,
+  <span class="math inline" data-source-tex="\{\xi:(\eta,\xi)\in G\}">\(\{\xi:(\eta,\xi)\in G\}\)</span></div>
+<p>dari <span class="math inline" data-source-tex="G">\(G\)</span> merupakan subhimpunan terbuka dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.</p>
+</section>
+<section class="source-unit" id="111Yd" data-source-id="111Yd"><h3><span class="source-label">111Yd</span> <strong>(d)</strong> </h3>
+<p>Misalkan <span class="math inline" data-source-tex="E\subseteq\BbbR^2">\(E\subseteq\BbbR^2\)</span> suatu himpunan
+Borel. Tunjukkan bahwa semua penampang horizontal dan vertikal</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{\xi:(\xi,\eta)\in E\}">\(\{\xi:(\xi,\eta)\in E\}\)</span>,
+  <span class="math inline" data-source-tex="\{\xi:(\eta,\xi)\in E\}">\(\{\xi:(\eta,\xi)\in E\}\)</span></div>
+<p>dari <span class="math inline" data-source-tex="E">\(E\)</span> merupakan subhimpunan Borel dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> tunjukkan bahwa keluarga subhimpunan-subhimpunan <span class="math inline" data-source-tex="\BbbR^2">\(\BbbR^2\)</span> yang
+semua penampangnya merupakan himpunan Borel adalah aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> pada
+<span class="math inline" data-source-tex="\BbbR^2">\(\BbbR^2\)</span> yang memuat semua himpunan terbuka.</span></p>
+</section>
+<section class="source-unit" id="111Ye" data-source-id="111Ye"><h3><span class="source-label">111Ye</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="G\subseteq\Bbb R">\(G\subseteq\Bbb R\)</span> suatu himpunan terbuka.
+Tunjukkan bahwa <span class="math inline" data-source-tex="G">\(G\)</span> dapat dinyatakan secara unik sebagai gabungan suatu
+keluarga terhitung <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> (yang mungkin kosong) yang terdiri atas
+interval-interval terbuka (‘komponen-komponen’ <span class="math inline" data-source-tex="G">\(G\)</span>), dengan tidak ada
+dua interval yang mempunyai titik bersama. <span class="hint" role="note"><strong>Petunjuk:</strong> untuk <span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="y\in G">\(y\in G\)</span>,
+nyatakan <span class="math inline" data-source-tex="x\sim y">\(x\sim y\)</span> jika setiap titik di antara <span class="math inline" data-source-tex="x">\(x\)</span> dan <span class="math inline" data-source-tex="y">\(y\)</span> termasuk
+dalam <span class="math inline" data-source-tex="G">\(G\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\sim">\(\sim\)</span> merupakan relasi ekuivalensi.
+Misalkan <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> adalah himpunan kelas-kelas ekuivalensinya.</span></p>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<span class="anchor" id="111"></span>
+<section class="source-unit" id="111-notes" data-source-id="111-notes"><h2><span class="source-label">111-notes</span> Catatan penutup untuk Bagian 111 </h2>
+<p>Menurut saya, konsep terpenting dalam bagian ini
+adalah konsep yang diperkenalkan sambil lalu dalam <a class="xref" href="#111E">111E</a>–<a class="xref" href="#111F">111F</a>,
+yaitu gagasan tentang himpunan ‘terhitung’. Walaupun untuk sementara
+sebagian besar teori formal himpunan tak hingga dapat dihindari, menurut
+saya mustahil memahami bab ini tanpa pemahaman yang kokoh mengenai
+perbedaan antara ‘hingga’ dan ‘tak hingga’, serta intuisi tertentu
+mengenai ‘keterhitungan’. Secara khusus, Anda harus mengingat bahwa
+himpunan tak hingga pada umumnya tidak terhitung, dan bahwa
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> pada umumnya tidak tertutup terhadap gabungan sembarang.</p>
+<p>Hal berikutnya yang perlu Anda pastikan ialah bahwa Anda dapat menangani
+manipulasi teori himpunan di sini, sehingga rumus seperti
+<span class="math inline" data-source-tex="\bigcap_{n\in\Bbb N}E_n=X\setminus\bigcup_{n\in\Bbb N}(X\setminus E_n)">\(\bigcap_{n\in\Bbb N}E_n=X\setminus\bigcup_{n\in\Bbb N}(X\setminus E_n)\)</span>
+(<a class="xref" href="#111Dd">111Dd</a>), meskipun belum transparan, setidaknya tidak lagi terasa
+menggentarkan. Sebagian besar isi volume ini akan dinyatakan dalam
+bahasa tersebut, sehingga kefasihan yang memadai sangatlah penting.</p>
+<p>Terakhir, bagi mereka yang mencari sebuah gagasan nyata untuk segera
+digarap, saya menawarkan konsep aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> yang ‘dibangkitkan’
+oleh suatu koleksi <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> (<a class="xref" href="#111G">111G</a>). Inti definisi di sini ialah bahwa
+definisi tersebut melibatkan pembahasan suatu keluarga
+<span class="math inline" data-source-tex="\frak S\in\Cal P(\Cal P(\Cal PX))">\(\frak S\in\Cal P(\Cal P(\Cal PX))\)</span>, meskipun <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> dan
+<span class="math inline" data-source-tex="\Sigma_{\Cal A}">\(\Sigma_{\Cal A}\)</span> keduanya merupakan subhimpunan <span class="math inline" data-source-tex="\Cal PX">\(\Cal PX\)</span>; kita perlu
+bekerja satu atau dua lapis lebih tinggi dalam hierarki himpunan kuasa.
+Sebagai contoh, Anda mungkin pernah menjumpai konsep ‘subruang linear
+<span class="math inline" data-source-tex="U">\(U\)</span> yang dibangkitkan oleh vektor-vektor <span class="math inline" data-source-tex="u_1,\ldots,u_n">\(u_1,\ldots,u_n\)</span>’. Konsep ini
+dapat didefinisikan sebagai irisan semua subruang linear yang memuat
+vektor-vektor <span class="math inline" data-source-tex="u_1,\ldots,u_n">\(u_1,\ldots,u_n\)</span>, yaitu metode yang bersesuaian dengan
+metode <a class="xref" href="#111Ga">111Ga</a>–b; tetapi konsep tersebut juga mempunyai definisi
+‘internal’, yakni sebagai himpunan vektor yang dapat dinyatakan dalam
+bentuk <span class="math inline" data-source-tex="\alpha_1u_1+\ldots+\alpha_nu_n">\(\alpha_1u_1+\ldots+\alpha_nu_n\)</span> untuk skalar-skalar <span class="math inline" data-source-tex="\alpha_i">\(\alpha_i\)</span>.
+Namun, untuk aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>, tidak tersedia definisi ‘internal’
+sesederhana itu (walaupun ada banyak hal yang dapat dikatakan mengenai
+arah ini yang menurut saya belum siap kita bahas; beberapa gagasan
+dapat ditemukan dalam §136). Penyebab utamanya ialah (iii) dalam
+definisi <a class="xref" href="#111A">111A</a>; suatu aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> harus tertutup terhadap suatu
+operasi infinitari, yakni operasi gabungan yang diterapkan pada barisan
+himpunan tak hingga. Sebaliknya, subruang linear dari suatu ruang vektor
+hanya perlu tertutup terhadap operasi finitari perkalian skalar dan
+penjumlahan, yang masing-masing melibatkan paling banyak dua vektor pada
+suatu waktu.</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 1: The Irreducible Minimum</cite>, Bagian 111.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 21 Agustus 2026. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-semantic-reader-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V1-S111&quot;,
+  &quot;source_member&quot;: &quot;mt1.2011/mt111.tex&quot;,
+  &quot;target_bytes&quot;: 26931,
+  &quot;target_sha256&quot;: &quot;e0897b3b44d947c89e7b666b8bdee7e9e9bc098a6680ba09e96eb27c97a8d296&quot;,
+  &quot;source_ids&quot;: [
+    &quot;111-notes&quot;,
+    &quot;111A&quot;,
+    &quot;111B&quot;,
+    &quot;111Ba&quot;,
+    &quot;111Bb&quot;,
+    &quot;111Bc&quot;,
+    &quot;111C&quot;,
+    &quot;111D&quot;,
+    &quot;111Da&quot;,
+    &quot;111Db&quot;,
+    &quot;111Dc&quot;,
+    &quot;111Dd&quot;,
+    &quot;111E&quot;,
+    &quot;111Ea&quot;,
+    &quot;111Eb&quot;,
+    &quot;111F&quot;,
+    &quot;111Fa&quot;,
+    &quot;111Fb&quot;,
+    &quot;111Fc&quot;,
+    &quot;111Fd&quot;,
+    &quot;111Fe&quot;,
+    &quot;111G&quot;,
+    &quot;111Ga&quot;,
+    &quot;111Gb&quot;,
+    &quot;111Gc&quot;,
+    &quot;111Gd&quot;,
+    &quot;111Ge&quot;,
+    &quot;111X&quot;,
+    &quot;111Xa&quot;,
+    &quot;111Xb&quot;,
+    &quot;111Xc&quot;,
+    &quot;111Xd&quot;,
+    &quot;111Xe&quot;,
+    &quot;111Xf&quot;,
+    &quot;111Y&quot;,
+    &quot;111Ya&quot;,
+    &quot;111Yb&quot;,
+    &quot;111Yc&quot;,
+    &quot;111Yd&quot;,
+    &quot;111Ye&quot;
+  ]
+}</pre></details>
+</footer>
+</body>
+</html>

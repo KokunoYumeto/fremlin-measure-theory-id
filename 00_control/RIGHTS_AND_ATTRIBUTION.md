@@ -10,7 +10,7 @@ Design Science License.
 
 Original author: D. H. Fremlin  
 Original work: *Measure Theory*, Volumes 1–2  
-Target working title: *Fondasi Teori Ukur — Adaptasi Bahasa Indonesia dari
+Target working title: *Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari
 Measure Theory karya D. H. Fremlin*  
 License identifier used by this backend: `LicenseRef-Design-Science-License`
 

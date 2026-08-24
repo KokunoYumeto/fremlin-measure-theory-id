@@ -1,0 +1,32 @@
+{
+  "schema": "o007-volume1-closure-smoke-build-v1",
+  "created": "2026-08-24",
+  "status": "smoke_pass_index_localization_pending",
+  "scope": "All Volume 1 source members use current id-ID targets except mti.tex, which remains the frozen English authority solely for integration smoke testing.",
+  "driver": {"path":"source/id-ID/vol1-id.tex","bytes":615,"sha256":"8d4daf1259a36e8e22f44730e662ba7ded57040d45a979ba0cf3a60c8b3fba0e"},
+  "locale_macro_overlay": {"path":"source/id-ID/id-overrides.tex","bytes":1710,"sha256":"68cf2dd31fa4aaf318755ba2ba0fb0622a8a2445ab23431d6352997b570485cf"},
+  "commands": [
+    "tex --disable-installer --interaction=nonstopmode vol1-id.tex",
+    "dvipdfmx -o vol1-id.pdf vol1-id.dvi",
+    "pdftotext -layout vol1-id.pdf vol1-id.txt"
+  ],
+  "checks": {
+    "tex_exit_zero": true,
+    "tex_bang_error_count": 0,
+    "dvipdfmx_exit_zero": true,
+    "pdftotext_exit_zero": true,
+    "pages": 110,
+    "localized_generated_proof_hint_chapter_introduction_notes_labels": true,
+    "pages_1_through_105_common_english_label_hit_count_excluding_protected_index_url": 0,
+    "index_translation_complete": false,
+    "admission_issued": false,
+    "publication_ready": false
+  },
+  "artifacts": [
+    {"kind":"dvi","bytes":708488,"sha256":"5aca509bbd985d33750abd191ef153be9899d0a58cdf75217f3ebe319d1fa8f2"},
+    {"kind":"pdf","bytes":657060,"sha256":"fa752ff730f618d88355d21578ac5d47c5f8620c4e1a0007991e5cc52863d4ae"},
+    {"kind":"tex_log","bytes":24235,"sha256":"be121948b6504c9fc3292f6013fad4b773e387d83894309f6070bdf16c8cfc26"},
+    {"kind":"extracted_text","bytes":516852,"sha256":"75d039ded36246eb15b98a474568d82b8f13142637b025b830f0b495008a9367"}
+  ],
+  "next_action": "Complete the source-anchored Volume 1 index localization, rebuild, and run full reader/backend/visual admission gates once for the complete volume."
+}

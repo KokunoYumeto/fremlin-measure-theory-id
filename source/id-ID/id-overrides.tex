@@ -1,0 +1,55 @@
+% Lapisan lokalisasi untuk makro pembaca Fremlin.
+% Muat setelah volwp.aux; tidak mengubah byte sumber otoritatif.
+
+% Beri pemutus baris sedikit ruang darurat untuk kata majemuk Bahasa Indonesia
+% dan rumus sebaris yang lebih panjang; ini hanya mereflow tata letak A4.
+\emergencystretch=3em
+
+\long\def\proof#1{\ifwithproofs{\medskip
+
+     \noindent{\bf Bukti} #1}\else\fi}
+\def\Hint#1{({\it Petunjuk\/}: #1)}
+
+\def\Notesheader#1{\immediate\write0{#1 Catatan dan komentar}
+     \wheader{#1 Catatan}{16}{8}{5}{48pt}
+     \noindent{\bf #1 Catatan dan komentar}}
+\def\vNotesheader#1#2{\immediate\write0{#2 Catatan dan komentar}
+     \wheader{#2 Catatan}{16}{8}{5}{#1}
+     \noindent{\bf #2 Catatan dan komentar}}
+
+% Jangan perluas judul bermatematika di dalam \write; judul tercetak tetap utuh.
+\def\leader#1#2{\immediate\write0{#1}
+     \wheader{#1}{14}{7}{5}{24pt}
+     {\bf #1 #2}}
+\def\vleader#1#2#3{\immediate\write0{#2}
+     \wheader{#2}{14}{7}{5}{#1}
+     {\bf #2 #3}}
+
+\def\newchapter#1{\gdef\topparagraph{}
+   \gdef\bottomparagraph{Bab\ #1 {\it pengantar}}
+   \gdef\newparagraph{Bab\ #1 {\it pengantar}}
+   \footmarkcount=0
+   \gdef\sectionname{Pendahuluan}
+   \gdef\headlinesectionname{Pendahuluan}
+   \centerline{\bf Bab #1}
+   \medskip
+   \centerline{\bf \chaptername}
+   \medskip
+   }
+\def\newsection#1{\gdef\bottomparagraph{\S#1 {\it pengantar}}
+   \noindent{\bf #1 \sectionname}
+   \smallskip
+   \let\headlinesectionname=\sectionname}
+\def\newvolume#1{\gdef\topparagraph{}
+   \gdef\bottomparagraph{Jilid\ #1 {\it pengantar}}
+   \Loadfont{\twelvebf=cmbx12}
+   \def\chaptername{Jilid #1}
+   \def\sectionname{\volumename}
+   \def\headlinesectionname{\volumename}
+   \centerline{\twelvebf Jilid #1:  \volumename}
+   \bigskip
+   }
+
+\def\leftfootline{\ifwithproofs{\eightsmc Fondasi Teori Ukuran\hfill}
+    \else{\eightsmc Fondasi Teori Ukuran \eightit (versi ringkas)\hfill}
+    \fi}

@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>1A3 — Limit superior dan limit inferior — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        bigcupop: '\\bigcup',
+        eae: '=_{\\mathrm{a.e.}}',
+        leae: '\\le_{\\mathrm{a.e.}}',
+        geae: '\\ge_{\\mathrm{a.e.}}',
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        roibr: '\\mathopen{{[}}',
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1]
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 1 · Bagian 1A3</p>
+  <h1>1A3 — Limit superior dan limit inferior</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi Volume 1</a></nav>
+<main id="isi">
+<p>©date1994</p>
+<p>Tidak semua mata kuliah pengantar analisis real memiliki cukup waktu untuk
+membahas konsep <span class="math inline" data-source-tex="\limsup">\(\limsup\)</span> dan <span class="math inline" data-source-tex="\liminf">\(\liminf\)</span>.</p>
+<section class="source-unit" id="1A3A" data-source-id="1A3A"><span class="anchor" id="1A3Aa"></span><h2><span class="source-label">1A3A</span> Definisi (a) </h2>
+<p>Untuk suatu barisan bilangan real <span class="math inline" data-source-tex="\sequencen{a_n}">\(\sequencen{a_n}\)</span>,
+tuliskan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\limsup_{n\to\infty}a_n=\lim_{n\to\infty}\sup_{m\ge n}a_m
+=\inf_{n\in\Bbb N}\sup_{m\ge n}a_m">\(\limsup_{n\to\infty}a_n=\lim_{n\to\infty}\sup_{m\ge n}a_m
+=\inf_{n\in\Bbb N}\sup_{m\ge n}a_m\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\liminf_{n\to\infty}a_n=\lim_{n\to\infty}\inf_{m\ge n}a_m
+=\sup_{n\in\Bbb N}\inf_{m\ge n}a_m">\(\liminf_{n\to\infty}a_n=\lim_{n\to\infty}\inf_{m\ge n}a_m
+=\sup_{n\in\Bbb N}\inf_{m\ge n}a_m\)</span>;</div>
+<p>jika kita mengizinkan nilai <span class="math inline" data-source-tex="\pm \infty">\(\pm \infty\)</span>, baik ketika membentuk
+supremum dan infimum maupun ketika mengambil limit (lihat <a class="xref" href="../112/index.html#112Ba">112Ba</a>),
+keduanya akan selalu terdefinisi, karena barisan-barisan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sequencen{\sup_{m\ge n}a_m}">\(\sequencen{\sup_{m\ge n}a_m}\)</span>,
+  <span class="math inline" data-source-tex="\sequencen{\inf_{m\ge n}a_m}">\(\sequencen{\inf_{m\ge n}a_m}\)</span></div>
+<p>bersifat monoton.</p>
+</section>
+<section class="source-unit" id="1A3Ab" data-source-id="1A3Ab"><h3><span class="source-label">1A3Ab</span> <strong>(b)</strong> </h3>
+<p>Secara eksplisit:</p>
+<div class="centerline"><span class="math inline" data-source-tex="\limsup_{n\to\infty}a_n=\infty\,\iff\,\{a_n:n\in\Bbb N\}">\(\limsup_{n\to\infty}a_n=\infty\,\iff\,\{a_n:n\in\Bbb N\}\)</span>
+tidak terbatas di atas,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\limsup_{n\to\infty}a_n=-\infty\,\iff\,\lim_{n\to\infty}a_n
+=-\infty">\(\limsup_{n\to\infty}a_n=-\infty\,\iff\,\lim_{n\to\infty}a_n
+=-\infty\)</span>,</div>
+<p>yakni, jika dan hanya jika untuk setiap <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span> terdapat
+<span class="math inline" data-source-tex="n_0\in\Bbb N">\(n_0\in\Bbb N\)</span> sedemikian sehingga <span class="math inline" data-source-tex="a_n\le a">\(a_n\le a\)</span> untuk setiap <span class="math inline" data-source-tex="n\ge n_0">\(n\ge n_0\)</span>;</p>
+<div class="centerline"><span class="math inline" data-source-tex="\liminf_{n\to\infty}a_n=-\infty\, \iff\,\{a_n:n\in\Bbb N\}">\(\liminf_{n\to\infty}a_n=-\infty\, \iff\,\{a_n:n\in\Bbb N\}\)</span>
+tidak terbatas di bawah,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\liminf_{n\to\infty}a_n=\infty\, \iff
+\,\lim_{n\to\infty}a_n
+=\infty">\(\liminf_{n\to\infty}a_n=\infty\, \iff
+\,\lim_{n\to\infty}a_n
+=\infty\)</span>,</div>
+<p>yakni, jika dan hanya jika untuk setiap <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span> terdapat
+<span class="math inline" data-source-tex="n_0\in\Bbb N">\(n_0\in\Bbb N\)</span> sedemikian sehingga <span class="math inline" data-source-tex="a_n\ge a">\(a_n\ge a\)</span> untuk setiap <span class="math inline" data-source-tex="n\ge n_0">\(n\ge n_0\)</span>.</p>
+</section>
+<section class="source-unit" id="1A3Ac" data-source-id="1A3Ac"><h3><span class="source-label">1A3Ac</span> <strong>(c)</strong> </h3>
+<p>Untuk <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span> berhingga, kita mempunyai</p>
+<p><span class="math inline" data-source-tex="\limsup_{n\to\infty}a_n=a">\(\limsup_{n\to\infty}a_n=a\)</span> jika dan hanya jika (i) untuk
+setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat <span class="math inline" data-source-tex="n_0\in\Bbb N">\(n_0\in\Bbb N\)</span> sedemikian sehingga <span class="math inline" data-source-tex="a_n\le
+a+\epsilon">\(a_n\le
+a+\epsilon\)</span> untuk setiap <span class="math inline" data-source-tex="n\ge n_0">\(n\ge n_0\)</span> (ii) untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> dan setiap
+<span class="math inline" data-source-tex="n_0\in\Bbb N">\(n_0\in\Bbb N\)</span> terdapat <span class="math inline" data-source-tex="n\ge n_0">\(n\ge n_0\)</span> sedemikian sehingga <span class="math inline" data-source-tex="a_n\ge a-\epsilon">\(a_n\ge a-\epsilon\)</span>,</p>
+<p>sedangkan</p>
+<p><span class="math inline" data-source-tex="\liminf_{n\to\infty}a_n=a">\(\liminf_{n\to\infty}a_n=a\)</span> jika dan hanya jika (i) untuk
+setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat <span class="math inline" data-source-tex="n_0\in\Bbb N">\(n_0\in\Bbb N\)</span> sedemikian sehingga <span class="math inline" data-source-tex="a_n\ge
+a-\epsilon">\(a_n\ge
+a-\epsilon\)</span> untuk setiap <span class="math inline" data-source-tex="n\ge n_0">\(n\ge n_0\)</span> (ii) untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> dan setiap
+<span class="math inline" data-source-tex="n_0\in\Bbb N">\(n_0\in\Bbb N\)</span> terdapat <span class="math inline" data-source-tex="n\ge n_0">\(n\ge n_0\)</span> sedemikian sehingga <span class="math inline" data-source-tex="a_n\le a+\epsilon">\(a_n\le a+\epsilon\)</span>.</p>
+<p>Secara umum, untuk 
+<span class="math inline" data-source-tex="u\in[-\infty,\infty]">\(u\in[-\infty,\infty]\)</span>, kita dapat mengatakan bahwa</p>
+<p><span class="math inline" data-source-tex="\limsup_{n\to\infty}a_n=u">\(\limsup_{n\to\infty}a_n=u\)</span> jika dan hanya jika (i) untuk setiap
+<span class="math inline" data-source-tex="v&gt;u">\(v&gt;u\)</span> (jika memang ada) terdapat <span class="math inline" data-source-tex="n_0\in\Bbb N">\(n_0\in\Bbb N\)</span> sedemikian sehingga <span class="math inline" data-source-tex="a_n\le v">\(a_n\le v\)</span>
+untuk setiap <span class="math inline" data-source-tex="n\ge n_0">\(n\ge n_0\)</span> (ii) untuk setiap <span class="math inline" data-source-tex="v&lt;u">\(v&lt;u\)</span> dan setiap <span class="math inline" data-source-tex="n_0\in\Bbb N">\(n_0\in\Bbb N\)</span>
+terdapat <span class="math inline" data-source-tex="n\ge n_0">\(n\ge n_0\)</span> sedemikian sehingga <span class="math inline" data-source-tex="a_n\ge v">\(a_n\ge v\)</span>,</p>
+<p><span class="math inline" data-source-tex="\liminf_{n\to\infty}a_n=u">\(\liminf_{n\to\infty}a_n=u\)</span> jika dan hanya jika (i) untuk setiap
+<span class="math inline" data-source-tex="v&lt;u">\(v&lt;u\)</span> terdapat <span class="math inline" data-source-tex="n_0\in\Bbb N">\(n_0\in\Bbb N\)</span> sedemikian sehingga <span class="math inline" data-source-tex="a_n\ge v">\(a_n\ge v\)</span> untuk setiap
+<span class="math inline" data-source-tex="n\ge n_0">\(n\ge n_0\)</span> (ii) untuk setiap <span class="math inline" data-source-tex="v&gt;u">\(v&gt;u\)</span> dan setiap <span class="math inline" data-source-tex="n_0\in\Bbb N">\(n_0\in\Bbb N\)</span> terdapat
+<span class="math inline" data-source-tex="n\ge n_0">\(n\ge n_0\)</span> sedemikian sehingga <span class="math inline" data-source-tex="a_n\le v">\(a_n\le v\)</span>.</p>
+</section>
+<section class="source-unit" id="1A3B" data-source-id="1A3B"><h2><span class="source-label">1A3B</span>  </h2>
+<p>Kita mempunyai hasil-hasil dasar berikut.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Untuk sembarang barisan <span class="math inline" data-source-tex="\sequencen{a_n}">\(\sequencen{a_n}\)</span>,
+<span class="math inline" data-source-tex="\sequencen{b_n}">\(\sequencen{b_n}\)</span> dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>,</p>
+<p>(a) <span class="math inline" data-source-tex="\liminf_{n\to\infty}a_n\le\limsup_{n\to\infty}a_n">\(\liminf_{n\to\infty}a_n\le\limsup_{n\to\infty}a_n\)</span>,</p>
+<p>(b) <span class="math inline" data-source-tex="\lim_{n\to\infty}a_n=u\in[-\infty,\infty]">\(\lim_{n\to\infty}a_n=u\in[-\infty,\infty]\)</span> jika dan hanya jika
+<span class="math inline" data-source-tex="\limsup_{n\to\infty}a_n=\liminf_{n\to\infty}a_n=u">\(\limsup_{n\to\infty}a_n=\liminf_{n\to\infty}a_n=u\)</span>,</p>
+<p>(c) <span class="math inline" data-source-tex="\liminf_{n\to\infty}a_n=-\limsup_{n\to\infty}(-a_n)">\(\liminf_{n\to\infty}a_n=-\limsup_{n\to\infty}(-a_n)\)</span>,</p>
+<p>(d) <span class="math inline" data-source-tex="\limsup_{n\to\infty}(a_n+b_n)
+\le\limsup_{n\to\infty}a_n+\limsup_{n\to\infty}b_n">\(\limsup_{n\to\infty}(a_n+b_n)
+\le\limsup_{n\to\infty}a_n+\limsup_{n\to\infty}b_n\)</span>,</p>
+<p>(e) <span class="math inline" data-source-tex="\liminf_{n\to\infty}(a_n+b_n)
+\ge\liminf_{n\to\infty}a_n+\liminf_{n\to\infty}b_n">\(\liminf_{n\to\infty}(a_n+b_n)
+\ge\liminf_{n\to\infty}a_n+\liminf_{n\to\infty}b_n\)</span>,</p>
+<p>(f) <span class="math inline" data-source-tex="\limsup_{n\to\infty}ca_n=c\limsup_{n\to\infty}a_n">\(\limsup_{n\to\infty}ca_n=c\limsup_{n\to\infty}a_n\)</span> jika <span class="math inline" data-source-tex="c\ge 0">\(c\ge 0\)</span>,</p>
+<p>(g) <span class="math inline" data-source-tex="\liminf_{n\to\infty}ca_n=c\liminf_{n\to\infty}a_n">\(\liminf_{n\to\infty}ca_n=c\liminf_{n\to\infty}a_n\)</span> jika <span class="math inline" data-source-tex="c\ge 0">\(c\ge 0\)</span>,</p>
+<p>dengan ketentuan bahwa dalam (d) dan (e) kita harus dapat
+menafsirkan ruas kanan pertidaksamaan menurut aturan dalam <a class="xref" href="../135/index.html#135A">135A</a>, sedangkan
+dalam (f) dan (g) kita mengambil <span class="math inline" data-source-tex="0\cdot\infty=0\cdot(-\infty)=0">\(0\cdot\infty=0\cdot(-\infty)=0\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> <span class="math inline" data-source-tex="\sup_{m\ge n}a_m\ge\inf_{m\ge n}a_m">\(\sup_{m\ge n}a_m\ge\inf_{m\ge n}a_m\)</span> untuk setiap
+<span class="math inline" data-source-tex="n">\(n\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\limsup_{n\to\infty}a_n=\lim_{n\to\infty}\sup_{m\ge
+n}a_m\ge\lim_{n\to\infty}\inf_{m\ge n}a_m=\liminf_{n\to\infty}a_n">\(\limsup_{n\to\infty}a_n=\lim_{n\to\infty}\sup_{m\ge
+n}a_m\ge\lim_{n\to\infty}\inf_{m\ge n}a_m=\liminf_{n\to\infty}a_n\)</span>.</div>
+<p> </p>
+<p><strong>(b)</strong> Dengan menggunakan uraian terakhir mengenai
+<span class="math inline" data-source-tex="\limsup_{n\to\infty}">\(\limsup_{n\to\infty}\)</span> dan <span class="math inline" data-source-tex="\liminf_{n\to\infty}">\(\liminf_{n\to\infty}\)</span> dalam <a class="xref" href="#1A3Ac">1A3Ac</a>, serta
+uraian yang bersesuaian mengenai <span class="math inline" data-source-tex="\lim_{n\to\infty}">\(\lim_{n\to\infty}\)</span>, kita mempunyai</p>
+<p><span class="math display" data-source-tex="\eqalign{\lim_{n\to\infty}&amp;a_n=u\cr
+&amp;\iff\text{ untuk setiap }v&gt;u\text{ terdapat }n_1\in\Bbb N
+    \text{ sedemikian sehingga }a_n\le v\text{ untuk setiap }n\ge n_1\cr
+&amp;\qquad\text{ dan untuk setiap }v&lt;u\text{ terdapat }n_2\in\Bbb N
+    \text{ sedemikian sehingga }a_n\ge v\text{ untuk setiap }n\ge n_2\cr
+&amp;\iff\text{ untuk setiap }v&gt;u\text{ terdapat }n_1\in\Bbb N
+    \text{ sedemikian sehingga }a_n\le v\text{ untuk setiap }n\ge n_1\cr
+  &amp;\qquad\text{ dan untuk setiap }v&lt;u,\,\text{serta setiap }n_0\in\Bbb N
+    \text{ terdapat }n\ge n_0\text{ sedemikian sehingga }a_n\ge v\cr
+&amp;\qquad\text{ dan untuk setiap }v&lt;u\text{ terdapat }n_2\in\Bbb N
+    \text{ sedemikian sehingga }a_n\ge v\text{ untuk setiap }n\ge n_2\cr
+  &amp;\qquad\text{ dan untuk setiap }v&gt;u,\,\text{serta setiap }n_0\in\Bbb N
+    \text{ terdapat }n\ge n_0\text{ sedemikian sehingga }a_n\le v\cr
+&amp;\iff\limsup_{n\to\infty}a_n=\liminf_{n\to\infty}a_n=u.\cr}">\[\begin{aligned}\lim_{n\to\infty}&amp;a_n=u\\
+&amp;\iff\text{ untuk setiap }v&gt;u\text{ terdapat }n_1\in\Bbb N
+    \text{ sedemikian sehingga }a_n\le v\text{ untuk setiap }n\ge n_1\\
+&amp;\qquad\text{ dan untuk setiap }v&lt;u\text{ terdapat }n_2\in\Bbb N
+    \text{ sedemikian sehingga }a_n\ge v\text{ untuk setiap }n\ge n_2\\
+&amp;\iff\text{ untuk setiap }v&gt;u\text{ terdapat }n_1\in\Bbb N
+    \text{ sedemikian sehingga }a_n\le v\text{ untuk setiap }n\ge n_1\\
+  &amp;\qquad\text{ dan untuk setiap }v&lt;u,\,\text{serta setiap }n_0\in\Bbb N
+    \text{ terdapat }n\ge n_0\text{ sedemikian sehingga }a_n\ge v\\
+&amp;\qquad\text{ dan untuk setiap }v&lt;u\text{ terdapat }n_2\in\Bbb N
+    \text{ sedemikian sehingga }a_n\ge v\text{ untuk setiap }n\ge n_2\\
+  &amp;\qquad\text{ dan untuk setiap }v&gt;u,\,\text{serta setiap }n_0\in\Bbb N
+    \text{ terdapat }n\ge n_0\text{ sedemikian sehingga }a_n\le v\\
+&amp;\iff\limsup_{n\to\infty}a_n=\liminf_{n\to\infty}a_n=u.\\\end{aligned}\]</span></p>
+<p> </p>
+<p><strong>(c)</strong> Ini sekadar soal membalik tanda dan menukar supremum dengan
+infimum dalam rumus-rumus tersebut:</p>
+<p><span class="math display" data-source-tex="\eqalign{\liminf_{n\to\infty}a_n
+&amp;=\sup_{n\in\Bbb N}\inf_{\lower 0.4ex\hbox{$\scriptstyle m\ge n$}}a_m
+=\sup_{n\in\Bbb N}(-\sup_{m\ge n}(-a_m))\cr
+&amp;=-\inf_{\lower 0.4ex\hbox{$\scriptstyle n\in\Bbb N$}}
+     \sup_{m\ge n}(-a_m)
+=-\limsup_{n\to\infty}(-a_n).\cr}">\[\begin{aligned}\liminf_{n\to\infty}a_n
+&amp;=\sup_{n\in\Bbb N}\inf_{\lower 0.4ex\hbox{$\scriptstyle m\ge n$}}a_m
+=\sup_{n\in\Bbb N}(-\sup_{m\ge n}(-a_m))\\
+&amp;=-\inf_{\lower 0.4ex\hbox{$\scriptstyle n\in\Bbb N$}}
+     \sup_{m\ge n}(-a_m)
+=-\limsup_{n\to\infty}(-a_n).\\\end{aligned}\]</span></p>
+<p> </p>
+<p><strong>(d)</strong> Jika <span class="math inline" data-source-tex="v&gt;\limsup_{n\to\infty}a_n+\limsup_{n\to\infty}b_n">\(v&gt;\limsup_{n\to\infty}a_n+\limsup_{n\to\infty}b_n\)</span>,
+terdapat <span class="math inline" data-source-tex="v_1">\(v_1\)</span>, <span class="math inline" data-source-tex="v_2">\(v_2\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="v_1&gt;\limsup_{n\to\infty}a_n">\(v_1&gt;\limsup_{n\to\infty}a_n\)</span>, <span class="math inline" data-source-tex="v_2&gt;\limsup_{n\to\infty}b_n">\(v_2&gt;\limsup_{n\to\infty}b_n\)</span> dan
+<span class="math inline" data-source-tex="v_1+v_2=v">\(v_1+v_2=v\)</span>. Sekarang terdapat <span class="math inline" data-source-tex="n_1">\(n_1\)</span>, <span class="math inline" data-source-tex="n_2\in\Bbb N">\(n_2\in\Bbb N\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\sup_{m\ge n_1}a_m\le v_1">\(\sup_{m\ge n_1}a_m\le v_1\)</span> dan <span class="math inline" data-source-tex="\sup_{m\ge n_2}b_m\le v_2">\(\sup_{m\ge n_2}b_m\le v_2\)</span>; sehingga</p>
+<p><span class="math display" data-source-tex="\eqalign{\sup_{m\ge\max(n_1,n_2)}(a_m+b_m)
+&amp;\le\sup_{m\ge\max(n_1,n_2)}a_m+\sup_{m\ge\max(n_1,n_2)}b_m\cr
+&amp;\le\sup_{m\ge n_1}a_m+\sup_{m\ge n_2}b_m
+\le v_1+v_2
+= v.\cr}">\[\begin{aligned}\sup_{m\ge\max(n_1,n_2)}(a_m+b_m)
+&amp;\le\sup_{m\ge\max(n_1,n_2)}a_m+\sup_{m\ge\max(n_1,n_2)}b_m\\
+&amp;\le\sup_{m\ge n_1}a_m+\sup_{m\ge n_2}b_m
+\le v_1+v_2
+= v.\\\end{aligned}\]</span></p>
+<p>Karena <span class="math inline" data-source-tex="v">\(v\)</span> sembarang,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\limsup_{n\to\infty}(a_n+b_n)=\inf_{n\in\Bbb N}\sup_{m\ge
+n}(a_m+b_m)\le\limsup_{n\to\infty}a_n+\limsup_{n\to\infty}b_n">\(\limsup_{n\to\infty}(a_n+b_n)=\inf_{n\in\Bbb N}\sup_{m\ge
+n}(a_m+b_m)\le\limsup_{n\to\infty}a_n+\limsup_{n\to\infty}b_n\)</span>.</div>
+<p> </p>
+<p><strong>(e)</strong> Dengan menggabungkan (c) dan (d),</p>
+<p><span class="math display" data-source-tex="\eqalign{\liminf_{n\to\infty}(a_n+b_n)
+&amp;=-\limsup_{n\to\infty}((-a_n)+(-b_n))\cr
+&amp;\ge-\limsup_{n\to\infty}(-a_n)-\limsup_{n\to\infty}(-b_n)
+=\liminf_{n\to\infty}a_n+\liminf_{n\to\infty}b_n.\cr}">\[\begin{aligned}\liminf_{n\to\infty}(a_n+b_n)
+&amp;=-\limsup_{n\to\infty}((-a_n)+(-b_n))\\
+&amp;\ge-\limsup_{n\to\infty}(-a_n)-\limsup_{n\to\infty}(-b_n)
+=\liminf_{n\to\infty}a_n+\liminf_{n\to\infty}b_n.\\\end{aligned}\]</span></p>
+<p> </p>
+<p><strong>(f)</strong> Karena <span class="math inline" data-source-tex="c\ge 0">\(c\ge 0\)</span>,</p>
+<p><span class="math display" data-source-tex="\eqalign{\limsup_{n\to\infty}ca_n
+&amp;=\inf_{n\in\Bbb N}\sup_{m\ge n}ca_m
+=\inf_{n\in\Bbb N}c\sup_{m\ge n}a_m\cr
+&amp;=c\inf_{n\in\Bbb N}\sup_{m\ge n}a_m
+=c\limsup_{n\to\infty}a_n.\cr}">\[\begin{aligned}\limsup_{n\to\infty}ca_n
+&amp;=\inf_{n\in\Bbb N}\sup_{m\ge n}ca_m
+=\inf_{n\in\Bbb N}c\sup_{m\ge n}a_m\\
+&amp;=c\inf_{n\in\Bbb N}\sup_{m\ge n}a_m
+=c\limsup_{n\to\infty}a_n.\\\end{aligned}\]</span></p>
+<p> </p>
+<p><strong>(g)</strong> Terakhir,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\liminf_{n\to\infty}ca_n
+=-\limsup_{n\to\infty}c(-a_n)
+=-c\limsup_{n\to\infty}(-a_n)
+=c\liminf_{n\to\infty}a_n">\(\liminf_{n\to\infty}ca_n
+=-\limsup_{n\to\infty}c(-a_n)
+=-c\limsup_{n\to\infty}(-a_n)
+=c\liminf_{n\to\infty}a_n\)</span>.</div></aside>
+</section>
+<section class="source-unit" id="1A3C" data-source-id="1A3C"><h2><span class="source-label">1A3C</span> Catatan </h2>
+<p>Tentu saja hasil-hasil yang lazim, yakni bahwa
+<span class="math inline" data-source-tex="\lim_{n\to\infty}(a_n+b_n)=\lim_{n\to\infty}a_n+\lim_{n\to\infty}b_n">\(\lim_{n\to\infty}(a_n+b_n)=\lim_{n\to\infty}a_n+\lim_{n\to\infty}b_n\)</span>,
+<span class="math inline" data-source-tex="\lim_{n\to\infty}ca_n=c\lim_{n\to\infty}a_n">\(\lim_{n\to\infty}ca_n=c\lim_{n\to\infty}a_n\)</span>, merupakan akibat langsung
+dari <a class="xref" href="#1A3B">1A3B</a>.</p>
+</section>
+<section class="source-unit" id="1A3D" data-source-id="1A3D"><h2><span class="source-label">1A3D</span> Bentuk lain dari gagasan yang sama </h2>
+<p>Konsep <span class="math inline" data-source-tex="\limsup">\(\limsup\)</span> dan <span class="math inline" data-source-tex="\liminf">\(\liminf\)</span> dapat diterapkan dalam konteks apa pun yang
+memungkinkan kita meninjau limit fungsi bernilai real. Sebagai contoh, jika <span class="math inline" data-source-tex="f">\(f\)</span>
+adalah fungsi bernilai real yang didefinisikan (sekurang-kurangnya) pada
+suatu interval berlubang berbentuk <span class="math inline" data-source-tex="\{x:0&lt;|c-x|\le\epsilon\}">\(\{x:0&lt;|c-x|\le\epsilon\}\)</span>, dengan
+<span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span> dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\limsup_{t\to c}f(t)
+=\lim_{\delta\downarrow 0}\sup_{0&lt;|t-c|\le\delta}f(t)
+=\inf_{0&lt;\delta\le\epsilon}\sup_{0&lt;|t-c|\le\delta}f(t)">\(\limsup_{t\to c}f(t)
+=\lim_{\delta\downarrow 0}\sup_{0&lt;|t-c|\le\delta}f(t)
+=\inf_{0&lt;\delta\le\epsilon}\sup_{0&lt;|t-c|\le\delta}f(t)\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\liminf_{t\to c}f(t)
+=\lim_{\delta\downarrow 0}\inf_{0&lt;|t-c|\le\delta}f(t)
+=\sup_{0&lt;\delta\le\epsilon}\inf_{0&lt;|t-c|\le\delta}f(t)">\(\liminf_{t\to c}f(t)
+=\lim_{\delta\downarrow 0}\inf_{0&lt;|t-c|\le\delta}f(t)
+=\sup_{0&lt;\delta\le\epsilon}\inf_{0&lt;|t-c|\le\delta}f(t)\)</span>,</div>
+<p>dengan mengizinkan <span class="math inline" data-source-tex="\infty">\(\infty\)</span> dan <span class="math inline" data-source-tex="-\infty">\(-\infty\)</span> sesuai kebutuhan.
+Atau, jika <span class="math inline" data-source-tex="f">\(f\)</span> didefinisikan pada interval setengah-terbuka
+<span class="math inline" data-source-tex="\ocint{c,c+\epsilon}">\(\ocint{c,c+\epsilon}\)</span>, kita dapat mengatakan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\limsup_{t\downarrow c}f(t)
+=\lim_{\delta\downarrow 0}\sup_{c&lt;t\le c+\delta}f(t)
+=\inf_{0&lt;\delta\le\epsilon}\sup_{c&lt;t\le c+\delta}f(t)">\(\limsup_{t\downarrow c}f(t)
+=\lim_{\delta\downarrow 0}\sup_{c&lt;t\le c+\delta}f(t)
+=\inf_{0&lt;\delta\le\epsilon}\sup_{c&lt;t\le c+\delta}f(t)\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\liminf_{t\downarrow c}f(t)
+=\lim_{\delta\downarrow 0}\inf_{c&lt;t\le c+\delta}f(t)
+=\sup_{0&lt;\delta\le\epsilon}\inf_{c&lt;t\le c+\delta}f(t)">\(\liminf_{t\downarrow c}f(t)
+=\lim_{\delta\downarrow 0}\inf_{c&lt;t\le c+\delta}f(t)
+=\sup_{0&lt;\delta\le\epsilon}\inf_{c&lt;t\le c+\delta}f(t)\)</span>.</div>
+<p>Demikian pula, jika <span class="math inline" data-source-tex="f">\(f\)</span> didefinisikan pada <span class="math inline" data-source-tex="\coint{M,\infty}">\(\coint{M,\infty}\)</span>
+untuk suatu <span class="math inline" data-source-tex="M\in\Bbb R">\(M\in\Bbb R\)</span>, kita mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\limsup_{t\to\infty}f(t)
+=\lim_{a\to\infty}\sup_{t\ge a}f(t)
+=\inf_{a\ge M}\sup_{t\ge a}f(t)">\(\limsup_{t\to\infty}f(t)
+=\lim_{a\to\infty}\sup_{t\ge a}f(t)
+=\inf_{a\ge M}\sup_{t\ge a}f(t)\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\liminf_{t\to\infty}f(t)
+=\lim_{a\to\infty}\inf_{t\ge a}f(t)
+=\sup_{a\ge M}\inf_{t\ge a}f(t)">\(\liminf_{t\to\infty}f(t)
+=\lim_{a\to\infty}\inf_{t\ge a}f(t)
+=\sup_{a\ge M}\inf_{t\ge a}f(t)\)</span>.</div>
+<p>Perluasan lebih lanjut dari gagasan ini dibahas secara
+singkat dalam 2A3S di Jilid 2.</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 1: The Irreducible Minimum</cite>, Bagian 1A3.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 24 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-semantic-reader-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V1-S1A3&quot;,
+  &quot;source_member&quot;: &quot;mt1.2011/mt1a3.tex&quot;,
+  &quot;target_bytes&quot;: 8793,
+  &quot;target_sha256&quot;: &quot;3527e2d0db414e9dae1253b53c8e7cc20a4652c6c877f6c10ee5aaf95a15ee63&quot;,
+  &quot;source_ids&quot;: [
+    &quot;1A3A&quot;,
+    &quot;1A3Aa&quot;,
+    &quot;1A3Ab&quot;,
+    &quot;1A3Ac&quot;,
+    &quot;1A3B&quot;,
+    &quot;1A3C&quot;,
+    &quot;1A3D&quot;
+  ],
+  &quot;canonical_target_bytes&quot;: 8844,
+  &quot;canonical_target_sha256&quot;: &quot;78d66b4dea48daa794dd9c7e9fce385b203f59a6034468431f5d97c969a7287c&quot;,
+  &quot;route&quot;: &quot;1A3&quot;,
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>
