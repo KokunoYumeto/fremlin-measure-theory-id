@@ -140,7 +140,13 @@ def checked_url(url: str, *, api_only: bool, token: str | None = None) -> str:
 
 
 def assert_credential_free(value: object, *, token: str | None) -> None:
-    """Recursively guard every API result, durable receipt, and final result."""
+    """Recursively guard every API result, durable receipt, and final result.
+
+    Zenodo record metadata lawfully contains public off-origin identifiers and
+    source links (for example doi.org and the author's Essex site).  Those
+    strings are data, not request targets.  Request destinations remain
+    same-origin-gated by :func:`request` and every explicit link traversal.
+    """
     encoded_token = urllib.parse.quote(token, safe="") if token else None
 
     def visit(item: object) -> None:
@@ -152,7 +158,23 @@ def assert_credential_free(value: object, *, token: str | None) -> None:
                 fail("credential material reached Zenodo publication output")
             parsed = urllib.parse.urlsplit(item)
             if parsed.scheme.casefold() in {"http", "https"} and parsed.netloc:
-                checked_url(item, api_only=False, token=token)
+                if parsed.username or parsed.password:
+                    fail("credential-bearing URL reached Zenodo publication output")
+                if parsed.fragment:
+                    fail("URL fragment reached Zenodo publication output")
+                for key, _value in urllib.parse.parse_qsl(
+                    parsed.query, keep_blank_values=True
+                ):
+                    folded = re.sub(r"[^a-z0-9]", "", key.casefold())
+                    if folded in SENSITIVE_URL_KEYS or any(
+                        marker in folded
+                        for marker in (
+                            "credential", "password", "secret", "signature", "token"
+                        )
+                    ):
+                        fail(
+                            "credential-like URL query reached Zenodo publication output"
+                        )
         elif isinstance(item, dict):
             for key, nested_value in item.items():
                 if isinstance(key, str):
@@ -201,6 +223,15 @@ def request(
             expected=expected,
             timeout=timeout,
         )
+    except transport.PublicationError as exc:
+        # The pinned transport reports only method/status and a bounded server
+        # message, and already redacts the supplied token.  Preserve that
+        # diagnostic so an API contract failure can be repaired without blind
+        # publication retries.
+        diagnostic = str(exc).replace(token or "\0", "[redacted]")[:320]
+        raise RuntimeError(
+            f"Zenodo {method} request failed closed: {diagnostic}"
+        ) from exc
     except Exception as exc:
         raise RuntimeError(f"Zenodo {method} request failed closed") from exc
     status, body, headers = result
@@ -378,7 +409,17 @@ def normalize_file(item: object) -> tuple[str, int, str] | None:
     links = item.get("links")
     url = None
     if isinstance(links, dict):
-        url = links.get("content") if isinstance(links.get("content"), str) else links.get("download")
+        if isinstance(links.get("content"), str):
+            url = links["content"]
+        elif isinstance(links.get("download"), str):
+            url = links["download"]
+        elif isinstance(links.get("self"), str):
+            # The current public-record API exposes the downloadable content
+            # URL as ``links.self``; draft-deposition ``self`` links identify
+            # the file resource instead and therefore do not pass this test.
+            candidate = links["self"]
+            if urllib.parse.urlsplit(candidate).path.endswith("/content"):
+                url = candidate
     if isinstance(name, str) and isinstance(size, int) and isinstance(url, str):
         checked_url(url, api_only=False)
         return name, size, url
@@ -701,14 +742,16 @@ def sync_files(
     checked_url(bucket, api_only=True, token=token)
     existing = {normalize_file(row)[0] for row in files(draft)}  # type: ignore[index]
     # Dict insertion order is deliberate: the visible reader PDF is uploaded first.
-    for name, (path, _size, _digest, media_type) in expected.items():
+    for name, (path, _size, _digest, _media_type) in expected.items():
         if name in existing:
             continue
         target = bucket.rstrip("/") + "/" + urllib.parse.quote(name, safe="")
         checked_url(target, api_only=True, token=token)
         request(
             "PUT", target, token=token, data=path.read_bytes(),
-            content_type=media_type, expected=(200, 201), timeout=900.0,
+            # Zenodo's current bucket API requires the raw upload transport
+            # type regardless of the asset's eventual downloadable MIME type.
+            content_type="application/octet-stream", expected=(200, 201), timeout=900.0,
         )
     draft = refresh(token, deposition_id)
     rows = files(draft)

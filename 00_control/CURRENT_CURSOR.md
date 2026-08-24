@@ -17,17 +17,17 @@ Updated: 2026-08-24 (Europe/Berlin)
 | Source receipt | 1,102 bytes; 32 lines; SHA-256 `4ebe7dc511763be44d670bb6cbd1c40eb84f8c895057c756422826ea83bf1f37` |
 | Target | `source/id-ID/mt1a.tex` (existing unadmitted draft; review next) |
 | Target receipt | 1,231 bytes; SHA-256 `16df29d01336a11db01d99895a80aa102b0707299d36efa3ad705627227d7a08` |
-| Production status | `s136_admitted_publication_then_appendix_review` |
+| Production status | `s136_public_appendix_review_next` |
 | Target admitted | S136 `true`; `mt1a.tex` `false` |
 
 The complete Chapter 13 closure batch—missing `mt13.tex` introduction plus
-`mt133.tex`–`mt136.tex`—is translated and admitted. Its stable-ID backend,
-deterministic reader/PDF, all-page PDF inspection, desktop/mobile browser QA,
-and admission evidence pass. The cumulative unique official span is pages
-10–90, or 81 of 672 pages. Publish this one substantial S136 boundary to the
-existing GitHub and Zenodo lineages, anonymously verify it, then review and
-admit the already-present Volume 1 appendix drafts in source order beginning
-with `mt1a.tex`; the complete 672-page goal remains active.
+`mt133.tex`–`mt136.tex`—is translated, admitted, and public in the existing
+GitHub and Zenodo lineages. Its stable-ID backend, deterministic reader/PDF,
+all-page PDF inspection, desktop/mobile browser QA, admission evidence, and
+anonymous public asset readbacks pass. The cumulative unique official span is
+pages 10–90, or 81 of 672 pages. Review and admit the already-present Volume 1
+appendix drafts in source order beginning with `mt1a.tex`; the complete
+672-page goal remains active.
 
 The earlier cursor labels `The indefinite integral` / `Upper integrals` were
 rejected on direct authority replay. Frozen `mt13.tex` and `mt131.tex` identify
@@ -48,8 +48,17 @@ Final package/ZIP identities are deliberately recorded outside this packaged
 cursor snapshot in `00_control/CP0011_MT136_ADMISSION.md` and the final build
 and reader receipts, avoiding a self-referential package hash. Those receipts
 are admitted, passing, and publication ready. Publication tag/version is
-`v0.11.0-s136` / `0.11.0-s136`; public identities are not claimed until the
-authorized transactions and anonymous readback complete.
+`v0.11.0-s136` / `0.11.0-s136`. The GitHub release is public at
+`https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.11.0-s136`,
+boundary commit `a0a8802398e06d004ec926260c7e5f96e3e92891`, tree
+`2f2ebfe956cd52ccb3f1854dd9d375c1751c49c6`; exact evidence is
+`qa/PUBLICATION_RECEIPT_S136.json` (3,177 bytes / SHA-256
+`c2baed1217c4a89fd197721c3e3eead4bb86ce46b3d8b0fcea7b18a76566b718`).
+The same boundary is public in the existing Zenodo concept as DOI
+`10.5281/zenodo.22071390`, concept DOI `10.5281/zenodo.22059798`; exact evidence
+is `qa/ZENODO_PUBLICATION_RECEIPT_S136.json` (4,940 bytes / SHA-256
+`6f3e257bbba455f97677ff6f30b48c34e676afad8352076a5282d9ba2d043ce7`).
+Both destinations passed anonymous byte/hash readback for all three assets.
 
 The frozen Volume 1 driver proves there is no `mt137.tex`. After `mt136.tex`,
 source order is `mt1a.tex`, `mt1a1.tex`, `mt1a2.tex`, `mt1a3.tex`,

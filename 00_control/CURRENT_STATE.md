@@ -23,6 +23,12 @@ Updated: 2026-08-24 (Europe/Berlin)
   reproducibly built, and admitted with the prior S111–S132 reader preserved.
   The cumulative official union is pages 10–90, 81 of 672 pages. Exact
   admission evidence is `00_control/CP0011_MT136_ADMISSION.md`.
+- S136 is public as GitHub prerelease `v0.11.0-s136` and Zenodo DOI
+  `10.5281/zenodo.22071390` in the unchanged concept DOI
+  `10.5281/zenodo.22059798`. Both destinations anonymously returned the exact
+  704,002-byte PDF, 7,178,218-byte ZIP, and 217-byte checksum witness. Durable
+  token-free evidence is `qa/PUBLICATION_RECEIPT_S136.json` and
+  `qa/ZENODO_PUBLICATION_RECEIPT_S136.json`.
 - First admitted unit: `O007-FREMLIN-V1-S111`, complete source section
   `mt111.tex`. The natural `id-ID` target is 26,931 bytes with SHA-256
   `e0897b3b44d947c89e7b666b8bdee7e9e9bc098a6680ba09e96eb27c97a8d296`.
@@ -454,9 +460,16 @@ Independent inspection passed all 93 PDF pages and sequential folios 1–92,
 including the corrected S134 axes and labels. All 16 offline HTML routes passed
 actual desktop/mobile browser replay with 7,547 exact MathJax containers, no
 document overflow, and all diagrams loaded. The admitted backend validates
-3,461 records. This S136 boundary is ready for the one authorized
-`v0.11.0-s136` GitHub/Zenodo publication transaction; public identity is not
-claimed until anonymous readback passes.
+3,461 records. This S136 boundary is public as GitHub prerelease
+`v0.11.0-s136`, boundary commit
+`a0a8802398e06d004ec926260c7e5f96e3e92891`, and Zenodo DOI
+`10.5281/zenodo.22071390` under the unchanged concept DOI
+`10.5281/zenodo.22059798`. Both destinations passed anonymous inventory and
+byte/hash readback for all three release assets. Exact sanitized receipts are
+`qa/PUBLICATION_RECEIPT_S136.json` (3,177 bytes / SHA-256
+`c2baed1217c4a89fd197721c3e3eead4bb86ce46b3d8b0fcea7b18a76566b718`) and
+`qa/ZENODO_PUBLICATION_RECEIPT_S136.json` (4,940 bytes / SHA-256
+`6f3e257bbba455f97677ff6f30b48c34e676afad8352076a5282d9ba2d043ce7`).
 
 The Volume 1 driver has no `mt137.tex`. Its next source member after S136 is
 the appendix introduction `mt1a.tex`, followed by `mt1a1.tex`–`mt1a3.tex`,
@@ -509,15 +522,14 @@ the Indonesian target build.
 
 ## Immediate production actions
 
-1. Publish the admitted cumulative S136 boundary to the existing GitHub
-   lineage and the existing Zenodo concept, then anonymously verify refs and
-   every release asset. Do not retry S132 separately, create a duplicate Zenodo
-   concept, or retry Figshare unless its external license/account state changes.
-2. After preservation, review the existing Volume 1 appendix drafts in exact
+1. Review the existing Volume 1 appendix drafts in exact
    driver order beginning at `mt1a.tex`; freeze stable IDs and pagination, apply
    only ledgered source corrections, then admit the appendix/conclusion/
    references/index as the next substantial boundary. The 672-page goal remains
    active.
+2. Preserve the established GitHub and Zenodo lineages at the next substantial
+   admitted boundary. Do not retry S132 separately, create a duplicate Zenodo
+   concept, or retry Figshare unless its external license/account state changes.
 
 ## Scope guard
 

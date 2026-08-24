@@ -326,3 +326,30 @@ introduction `mt1a.tex`. Existing Indonesian drafts for the six Volume 1-local
 members remain unadmitted and will receive source-aware review before the next
 substantial admission boundary. This correction changes only the workflow
 cursor; it does not alter the admitted corpus or source content.
+
+## 2026-08-24 — D022: Preserve the admitted S136 boundary on GitHub and Zenodo
+
+The cumulative S136 boundary is public on the established GitHub lineage as
+prerelease `v0.11.0-s136`. Its boundary commit is
+`a0a8802398e06d004ec926260c7e5f96e3e92891`, tree
+`2f2ebfe956cd52ccb3f1854dd9d375c1751c49c6`, and release URL is
+`https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.11.0-s136`.
+Independent anonymous replay confirmed the public release page and exact PDF,
+ZIP, and checksum bytes. Sanitized evidence is
+`qa/PUBLICATION_RECEIPT_S136.json`, 3,177 bytes / SHA-256
+`c2baed1217c4a89fd197721c3e3eead4bb86ce46b3d8b0fcea7b18a76566b718`.
+
+The identical reader-first boundary is also public as a direct new version in
+the established Zenodo concept: record `22071390`, DOI
+`10.5281/zenodo.22071390`, concept DOI `10.5281/zenodo.22059798`. The exact S131
+predecessor and all of its public assets were revalidated unchanged before the
+single S136 draft was resumed. Zenodo then anonymously returned the intended
+704,002-byte PDF, 7,178,218-byte ZIP, and 217-byte checksum witness with their
+frozen SHA-256 values. Sanitized evidence is
+`qa/ZENODO_PUBLICATION_RECEIPT_S136.json`, 4,940 bytes / SHA-256
+`6f3e257bbba455f97677ff6f30b48c34e676afad8352076a5282d9ba2d043ce7`.
+
+No duplicate Zenodo concept, standalone deposition, Figshare transaction, or
+upstream contact occurred. The next executable action is source-aware review
+of `mt1a.tex` and the remaining Volume 1 appendix/conclusion/reference members
+as one substantial translation boundary; the 672-page goal remains active.
