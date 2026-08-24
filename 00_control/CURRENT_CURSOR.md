@@ -8,16 +8,16 @@ Updated: 2026-08-24 (Europe/Berlin)
 |---|---|
 | Corpus | `O007-FREMLIN-MT-V1-V2` |
 | Volume | `O007-FREMLIN-V2` — *Broad Foundations* |
-| Boundary | Complete Volume I public; disjoint Volume II Chapter 22 owner batch active |
-| Unit | `O007-FREMLIN-V2-CH22-INTRO` / `mt22.tex` |
-| Source anchor | start of Chapter 22, *The Fundamental Theorem of Calculus* |
-| Authority member | `authority/fremlin/source/mt2.2016/mt22.tex` |
-| Authority receipt | 2,902 bytes; SHA-256 `1406376c53ac5dd2def9f7f676b09ff79af61a46cfba0cd0d2b50b3b84993a1d` |
-| Target | `source/id-ID/mt22.tex` (not yet admitted) |
-| Target receipt | pending source-aware owner integration |
-| Backend translation map | pending Chapter 22 consolidated boundary |
-| Production status | `volume1_public_verified_volume2_chapter22_translation_active` |
-| Target admitted | complete Volume I `true`; Chapter 22 `false`; complete corpus `false` |
+| Boundary | Complete Volume I plus complete Volume II Chapter 22 public and anonymously verified: 143/672 official pages |
+| Unit | Next: owner validation/integration of `HP-D10-001`, complete Chapter 21 (`mt21.tex`, `mt211.tex`–`mt216.tex`) |
+| Source anchor | Chapter 21, *Taxonomy of measure spaces*, preceding admitted Chapter 22 in frozen Volume II source order |
+| Authority member | `authority/fremlin/source/mt2.2016/mt21.tex`, `mt211.tex`–`mt216.tex` |
+| Alternate packet | `outputs/01a01ec1-e685-70d0-b022-211396334723/curriculum_logbook/helper_packets/HP-D10-001` (outside owner tree; read-only input) |
+| Owner gate | accept only a schema-clean handoff after source/terminology/stable-ID/backend/reader/license three-way replay; otherwise owner-produce |
+| Latest admission | `00_control/CP0013_CHAPTER22_ADMISSION.md` and `qa/chapter22-final-admission.json` |
+| Latest public receipts | `qa/PUBLICATION_RECEIPT_V0130_V2_CH22.json`; `qa/ZENODO_PUBLICATION_RECEIPT_V0130_V2_CH22.json` |
+| Production status | `chapter22_public_verified_chapter21_packet_owner_validation_active` |
+| Target admitted | complete Volume I `true`; Chapter 22 `true`; Chapter 21 `false`; complete corpus `false` |
 
 Complete Volume I is translated, backend-indexed, reproducibly built, and
 admitted. The final index covers all 731 units once in source order. The backend
@@ -29,17 +29,24 @@ link/fragment closure, and independent artifact replay pass. Admission evidence
 is `00_control/CP0012_VOLUME1_ADMISSION.md`; exact package identity is in
 `qa/volume1-release-package.json`.
 
-The 102/672-page checkpoint is public as GitHub `v0.12.0-v1` and Zenodo DOI
-`10.5281/zenodo.22083292`; every PDF/ZIP/checksum asset was anonymously read
-back at its exact local byte/hash identity. Evidence is
-`qa/PUBLICATION_RECEIPT_V0120_V1.json` and
-`qa/ZENODO_PUBLICATION_RECEIPT_V0120_V1.json`.
+The cumulative 143/672-page checkpoint is public as GitHub
+`v0.13.0-v2-ch22` (boundary commit
+`7490ca25551451d089b625fb31383e53a3c5b313`) and Zenodo DOI
+`10.5281/zenodo.22086976` in concept DOI `10.5281/zenodo.22059798`. Both
+destinations expose exactly the same reader-first PDF, deterministic ZIP, and
+checksum witness; every asset was anonymously read back at its exact local
+byte/SHA-256 identity. Evidence is
+`qa/PUBLICATION_RECEIPT_V0130_V2_CH22.json` and
+`qa/ZENODO_PUBLICATION_RECEIPT_V0130_V2_CH22.json`.
 
-The next executable action is complete source-aware translation of the
-disjoint owner block `mt22.tex`, `mt221.tex`–`mt226.tex`, followed by its
-consolidated backend/reader boundary. Helper packet `HP-D10-001` reserves only
-Chapter 21 and may enter only through a schema-clean packet and owner-side
-three-way stable-ID integration. The 672-page goal remains active.
+The seven Chapter 22 unit backends and catalog-v1.8 validate. The 154-page
+cumulative PDF passes all-page raster QA, and the repaired 35-route offline
+HTML passes deterministic configuration plus desktop/verified-mobile browser
+QA; the rejected pre-repair HTML remains historical evidence only. This
+boundary is complete Volume I (102) plus Volume II pages 55–95 (41), with
+Chapter 21 explicitly absent. The next executable action is bounded owner-side
+validation of helper packet `HP-D10-001`, followed by integration if admissible
+or direct owner production if not. The 672-page goal remains active.
 
 The earlier cursor labels `The indefinite integral` / `Upper integrals` were
 rejected on direct authority replay. Frozen `mt13.tex` and `mt131.tex` identify

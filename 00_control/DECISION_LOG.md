@@ -437,3 +437,135 @@ checksum witness 210 bytes /
 `3672208fe20e39c8a6b2a051dc7dadec2a085f5317e11eb8be0410b4c081c8cf`.
 No upstream contact occurred. The next owner cursor is Volume II Chapter 22;
 the complete 672-page goal remains active.
+
+## 2026-08-24 — D026: Freeze Chapter 22 source and use rendered official-page evidence
+
+The complete Chapter 22 introduction and Sections 221–226 are translated and
+semantically frozen. The seven targets preserve 3,119 math atoms, 185 stable
+IDs, 421 protected references, 20 explicit hints, all exercises/endnotes, and
+26 reviewable source corrections. The consolidated receipt is
+`qa/chapter22-semantic-review.json`, 5,013 bytes / SHA-256
+`91a6202ee6f2753d4c610a6c0f5d4793693ea981e16acabf03f6eb8e65431a49`.
+Chapter 22 is not admitted until its backend and cumulative reader gates pass.
+
+The `vol2.tex` standalone reset before `mt22.tex` is not page-accounting
+authority by itself. Exact replay of the frozen 570-page Volume II PDF and log
+shows the reader-facing chapter beginning on printed page 55 and Section 226
+ending on page 95. Unit spans are 55; 55–57; 58–66; 66–70; 70–78; 79–89; and
+89–95, with shared boundary pages 55, 66, 70, and 89. Their union is therefore
+Volume II pages 55–95, 41 unique official pages. Together with complete Volume
+I this makes the next checkpoint 143/672 official pages. The standalone
+Indonesian driver starts at page 55 and explicitly excludes Chapter 21.
+
+## 2026-08-24 — D027: Reject the first Chapter 22 HTML candidate; preserve the PDF build
+
+The cumulative Volume I plus Volume II Chapter 22 PDF passed two clean,
+byte-identical TeX/DVI/PDF builds and deterministic pypdf assembly. The
+candidate is 154 A4 reflow pages, 1,194,525 bytes, SHA-256
+`5d91feb7b14c60ac104c0bfe2089f3577b68d02ecf856d78e042820474915694`.
+All 110 frozen Volume I pages have exact content-stream, extracted-text, and
+geometry fingerprints in the combined reader. Its build receipt is
+`qa/chapter22-complete-build.json`, 17,547 bytes, SHA-256
+`99b38f23092503ae6956182ca6a064f77704fa0cd23d0a08e174c81d7c449521`.
+It remains pending all-page raster admission.
+
+Actual browser replay rejected the first cumulative HTML candidate before
+admission: `221/index.html` emitted `SyntaxError: Invalid Unicode escape
+sequence`, and custom MathJax controls such as `\Cal` remained visibly red.
+Static source-count and link checks had not exercised the inline JavaScript
+configuration. The generator and every derived HTML page must therefore be
+rebuilt with syntactically valid escaped TeX macro strings, plus a fail-closed
+JavaScript/config gate, before desktop/mobile replay restarts. No HTML
+candidate from the rejected build is admissible or publishable. This defect
+does not alter the frozen translation, backend, PDF, official page accounting,
+or complete Volume I boundary.
+
+The independent all-page PDF audit subsequently passed pending owner
+admission. All 154 pages render at 96 dpi; the first 110 pixel hashes exactly
+match the immutable Volume I audit, and the 44 new pages have zero blank,
+edge-touching, duplicate, or red-error renders. All 56 fonts are embedded and
+subset, extraction has no NUL/replacement/build-error residue, and owner
+inspection of all five Chapter 22 contact sheets found no visual defect. Exact
+evidence is `qa/chapter22-pdf-visual-qa.json`, 95,281 bytes, SHA-256
+`53add0800fdd499a6a171d74a1a1b46f436d52c9349826dea73ff0b46d8a499c`.
+The PDF remains unadmitted until the repaired HTML and aggregate reader gates
+also pass.
+
+## 2026-08-24 — D028: Accept the repaired Chapter 22 HTML candidate for aggregate admission
+
+The repaired generator emits valid JavaScript lexical escapes for every TeX
+macro and fail-closes by parsing/evaluating all 34 inline scripts plus 175
+literal macro-prefix assertions. Its deterministic 74-file tree is 4,415,245
+bytes with manifest SHA-256
+`4e5304bd82b560d3f734231ff8732e969585444862d94bf7b74cfc23a5b76203`;
+the build receipt is `qa/chapter22-html-build.json`, 5,985 bytes / SHA-256
+`0eb17aa0f05287515a423f9e8f04aa6dc8e96fd96b5b78a47513579c1c0d419d`.
+
+Actual browser replay passed on the superseded root, all seven new Chapter 22
+routes, and preserved route 136 at 1280×900 and a directly probed 390×844
+viewport. Each of the 3,116 new formula sources per viewport has exact
+rendered/assistive parity; there are no console warnings/errors, MathJax error
+surfaces, visible custom controls, broken images, duplicate IDs, or page-level
+horizontal overflow. Wide mobile formulas remain locally scrollable with
+`overflow-x: auto`. The 27 other predecessor routes and their support assets
+are byte-identical and retain their admitted two-viewport evidence, so all 35
+current routes are covered. The first unverified purported mobile run was
+explicitly discarded after a width probe exposed a desktop viewport; only the
+subsequent asserted 390×844 run counts. Exact evidence is
+`qa/chapter22-html-browser-qa.json`, 8,157 bytes / SHA-256
+`a84086a90260b955199c982a69bd27aa09b55f39d9a6cbf96eb1424c6d522459`.
+The HTML candidate may now enter aggregate owner admission; it is not yet a
+publication claim by itself.
+
+## 2026-08-24 — D029: Admit and deterministically package complete Chapter 22
+
+Independent aggregate replay bound the complete Chapter 22 translation,
+source corrections, seven backend datasets, cumulative PDF, repaired offline
+HTML, complete-Volume-I predecessor, page accounting, rights, and provenance
+without changing any of the 327 replay inputs. Its receipt is
+`qa/chapter22-aggregate-replay.json`, 19,978 bytes / SHA-256
+`c121c6de316a24e3dc47f23b14de5d7d19f022fd93c6c515a0cf442e97351ecd`.
+Owner admission is `00_control/CP0013_CHAPTER22_ADMISSION.md`, 6,268 bytes /
+`5d434a1db653817d060e50d5243259bfdb53c903de0df0bc4ed78c24213885e9`,
+and `qa/chapter22-final-admission.json`, 5,364 bytes /
+`26b6c94c31d4fcc87ff584d5b199063ac68516037d8228b1ca666b31b90323f4`.
+
+The truthful admitted boundary is 143/672 official pages: complete Volume I
+plus complete Volume II Chapter 22, printed pages 55–95 (41 unique). Chapter 21
+is explicitly absent. The cumulative reader is a 154-page A4 PDF, 1,194,525
+bytes / SHA-256
+`5d91feb7b14c60ac104c0bfe2089f3577b68d02ecf856d78e042820474915694`,
+and a 35-route offline HTML tree. The deterministic package replayed two clean
+ZIP builds byte-for-byte, verified all 912 entries and CRCs, and retained the
+two frozen authority archives. Its ZIP is 9,374,002 bytes / SHA-256
+`9ed8327509740c3edbdd84e73d9335dfb7628662793734175050b61fe2f95ebe`;
+the package receipt is `qa/chapter22-release-package.json`, 41,372 bytes /
+`f198c2424856e02ba8ee520a174ed02922f1933e458137314374db80f7ae6db8`.
+
+## 2026-08-24 — D030: Preserve the 143/672 checkpoint on GitHub and Zenodo
+
+The admitted checkpoint is public in the existing GitHub repository as
+prerelease `v0.13.0-v2-ch22` at
+`https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.13.0-v2-ch22`.
+The tag resolves to boundary commit
+`7490ca25551451d089b625fb31383e53a3c5b313`, tree
+`75a3753255878e2f4d6ec9cefd6f3e6a48ec445f`. Exact evidence is
+`qa/PUBLICATION_RECEIPT_V0130_V2_CH22.json`, 3,575 bytes / SHA-256
+`c7b458c38848c73d4676f5ee7e4ad6bd64aac0f56d8c14f6d74a4f26b5924911`.
+
+The same three assets are public as exactly one new version of the established
+Zenodo concept: record `22086976`, DOI `10.5281/zenodo.22086976`, concept DOI
+`10.5281/zenodo.22059798`, version `0.13.0-v2-ch22`. It derives from predecessor
+record `22083292`; no standalone deposition or competing concept was created.
+Exact evidence is `qa/ZENODO_PUBLICATION_RECEIPT_V0130_V2_CH22.json`, 3,619
+bytes / SHA-256
+`eeab39a61f330dcbbce1ddaad3a5b7c41c79bf61ca64d5eec26f431b410590ff`.
+
+Both public inventories contain exactly the reader-first PDF, deterministic
+ZIP, and 240-byte checksum witness. Independent anonymous replay downloaded
+every asset from both destinations and matched all local byte counts and
+SHA-256 identities; metadata truthfully states 143/672, Chapter 21 absent,
+corpus incomplete, DSL, Fremlin authorship, and
+`OpenAI Codex gpt-5.6-sol, Ultra.` No upstream contact occurred. The next
+owner cursor is Chapter 21 packet validation/integration or direct owner
+production; the 672-page goal remains active.

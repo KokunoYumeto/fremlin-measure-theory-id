@@ -8,8 +8,9 @@ Complete and publish one coherent Bahasa Indonesia edition of D. H. Fremlin's
 *Measure Theory*, Volume 1 (*The Irreducible Minimum*) and Volume 2 (*Broad
 Foundations*) only: 672 official pages. Do not reopen selection, reduce the
 corpus to a course slice, include Volumes 3–5, or merge comparator books.
-Volume I is complete and admitted at 102/672 official pages; preserve that
-boundary. The goal remains active through all of Volume II.
+Volume I and complete Volume II Chapter 22 are admitted and public at 143/672
+official pages; preserve that boundary. Chapter 21 is explicitly absent from
+the checkpoint. The goal remains active through all remaining Volume II units.
 
 Authority is
 `C:/Users/Floris/Documents/interlanguage/04_mirrors/id/measure-integration-id/authority/fremlin`:
@@ -51,9 +52,16 @@ Do not retry Figshare absent a license/account change. No upstream contact
 during production. After both volumes, at most one concise deduplicated report
 may be sent, signed `Codex, on instructions of the user.`
 
-Complete Volume I is public and anonymously verified as GitHub `v0.12.0-v1`
-and Zenodo `0.12.0-v1` (DOI `10.5281/zenodo.22083292`). Current action:
-translate complete Volume II Chapter 22 (`mt22.tex`, `mt221.tex`–`mt226.tex`).
+Complete Volume I plus complete Volume II Chapter 22 (`mt22.tex`,
+`mt221.tex`–`mt226.tex`) is public and anonymously verified as GitHub
+`v0.13.0-v2-ch22` and Zenodo `0.13.0-v2-ch22` (DOI
+`10.5281/zenodo.22086976`) in the existing concept DOI
+`10.5281/zenodo.22059798`. It covers official Volume II pages 55–95 (41 unique
+pages) and a truthful cumulative 143/672 official pages. Current action:
+owner-validate the reserved `HP-D10-001` Chapter 21 packet through source,
+terminology, stable-ID, backend, reader, and license replay; integrate it only
+if admissible, otherwise owner-produce Chapter 21, then continue Volume II in
+frozen source order.
 External helper reservation
 `HP-D10-001` owns only Chapter 21 (`mt21.tex`, `mt211.tex`–`mt216.tex`). The
 owner stays sole integrator/publisher. Accept no raw edits; a returned

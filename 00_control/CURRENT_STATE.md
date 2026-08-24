@@ -32,11 +32,44 @@ Updated: 2026-08-24 (Europe/Berlin)
   resource records now exist as JSONL with deterministic CSV projections.
 - The final corrected root handoff and the user's canonical instructions are
   retained byte-for-byte under `00_control/` and bound by backend resources.
-- Current admitted boundary: complete Volume I, 102 of 672 official pages.
-  The active owner-production block is complete Volume II Chapter 22
-  (`mt22.tex`, `mt221.tex`–`mt226.tex`). Helper packet `HP-D10-001` has the
-  disjoint Chapter 21 reservation and cannot enter the canonical lane except
-  through a schema-clean packet plus owner-side three-way stable-ID QA.
+- Current admitted and public boundary: complete Volume I plus complete Volume
+  II Chapter 22, 143 of 672 official pages. Chapter 22 consists of `mt22.tex`
+  and `mt221.tex`–`mt226.tex`, covering the 41-page union of Volume II printed
+  pages 55–95. Its seven targets preserve 3,119 math atoms, 185 stable IDs, 421
+  protected references, 88 exercises/problems, 20 explicit hints, and 26
+  ledgered authority corrections. Chapter 21 remains explicitly absent. Exact
+  owner admission is `00_control/CP0013_CHAPTER22_ADMISSION.md` plus
+  `qa/chapter22-final-admission.json`; the independent aggregate replay is
+  `qa/chapter22-aggregate-replay.json` (19,978 bytes / SHA-256
+  `c121c6de316a24e3dc47f23b14de5d7d19f022fd93c6c515a0cf442e97351ecd`).
+- The admitted cumulative PDF is 154 A4 reflow pages, 1,194,525 bytes, SHA-256
+  `5d91feb7b14c60ac104c0bfe2089f3577b68d02ecf856d78e042820474915694`.
+  Two clean builds agree byte-for-byte. All 154 pages passed raster, extraction,
+  font, geometry, and visual checks, with the first 110 Volume I page identities
+  preserved exactly. The repaired 74-file, 35-route offline HTML tree has
+  manifest SHA-256
+  `4e5304bd82b560d3f734231ff8732e969585444862d94bf7b74cfc23a5b76203`
+  and passes deterministic static, desktop, and verified 390×844 mobile QA.
+  The rejected pre-repair HTML remains historical evidence only and is absent
+  from the release.
+- The deterministic reader-first release contains exactly three assets: PDF
+  1,194,525 bytes / SHA-256
+  `5d91feb7b14c60ac104c0bfe2089f3577b68d02ecf856d78e042820474915694`;
+  resumable ZIP 9,374,002 bytes /
+  `9ed8327509740c3edbdd84e73d9335dfb7628662793734175050b61fe2f95ebe`;
+  checksum witness 240 bytes /
+  `6672d4b01c853393b0a8c69da8221da0b662da5caf55bd009a5c5e2f876c28b9`.
+  It is public and anonymously byte-verified as GitHub
+  `v0.13.0-v2-ch22` (boundary commit
+  `7490ca25551451d089b625fb31383e53a3c5b313`) and Zenodo DOI
+  `10.5281/zenodo.22086976` in concept DOI `10.5281/zenodo.22059798`.
+  Sanitized evidence is `qa/PUBLICATION_RECEIPT_V0130_V2_CH22.json` and
+  `qa/ZENODO_PUBLICATION_RECEIPT_V0130_V2_CH22.json`.
+- Helper packet `HP-D10-001` remains an alternate input for complete Chapter
+  21 only. It cannot enter the canonical lane except through a schema-clean
+  handoff and owner-side source, terminology, stable-ID, backend, reader, and
+  license replay. If it fails that gate, Chapter 21 returns immediately to
+  direct owner production; no helper or human response is a hold.
 - S136 is public as GitHub prerelease `v0.11.0-s136` and Zenodo DOI
   `10.5281/zenodo.22071390` in the unchanged concept DOI
   `10.5281/zenodo.22059798`. Both destinations anonymously returned the exact
@@ -536,14 +569,13 @@ the Indonesian target build.
 
 ## Immediate production actions
 
-1. Review the existing Volume 1 appendix drafts in exact
-   driver order beginning at `mt1a.tex`; freeze stable IDs and pagination, apply
-   only ledgered source corrections, then admit the appendix/conclusion/
-   references/index as the next substantial boundary. The 672-page goal remains
-   active.
-2. Preserve the established GitHub and Zenodo lineages at the next substantial
-   admitted boundary. Do not retry S132 separately, create a duplicate Zenodo
-   concept, or retry Figshare unless its external license/account state changes.
+1. Validate helper packet `HP-D10-001` for complete Chapter 21 against the
+   frozen authority and current owner terminology/stable-ID/backend/reader
+   contracts. Accept only schema-clean, checksum-bound alternate inputs through
+   owner-side three-way replay; otherwise produce Chapter 21 directly.
+2. Integrate and admit complete Chapter 21, rebuild the cumulative reader and
+   backend at a substantial boundary, then continue Volume II in frozen source
+   order. The 672-page goal remains active.
 
 ## Scope guard
 

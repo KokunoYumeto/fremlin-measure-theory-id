@@ -25,6 +25,7 @@ PDF kumulatif adalah berkas utama:
 Lokasi publik menggunakan satu garis keturunan yang sama:
 
 - [GitHub release v0.13.0-v2-ch22](https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.13.0-v2-ch22)
+- [Zenodo version 0.13.0-v2-ch22](https://doi.org/10.5281/zenodo.22086976)
 - [Zenodo concept untuk seluruh riwayat versi](https://doi.org/10.5281/zenodo.22059798)
 - [Checkpoint Jilid 1 sebelumnya](https://doi.org/10.5281/zenodo.22083292)
 
