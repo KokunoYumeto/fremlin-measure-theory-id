@@ -81,6 +81,26 @@ def parse_allowed_math_deltas(values: list[str]) -> dict[int, tuple[str, str]]:
     return allowed
 
 
+def parse_allowed_target_math_insertions(values: list[str]) -> dict[int, str]:
+    """Parse exact target-only math atoms introduced by a correction.
+
+    The ordinal is one-based in the target math stream before filtering.  This
+    keeps a mathematically necessary declaration visible while making the
+    structural exception finite, hash-bound, and reviewable.
+    """
+    allowed: dict[int, str] = {}
+    for value in values:
+        parts = value.split(":")
+        if len(parts) != 2 or not parts[0].isdigit():
+            raise ValueError(f"invalid --allow-target-math-insertion value: {value!r}")
+        ordinal = int(parts[0])
+        digest = parts[1]
+        if ordinal < 1 or ordinal in allowed or not re.fullmatch(r"[0-9a-f]{64}", digest):
+            raise ValueError(f"invalid/duplicate target math insertion: {value!r}")
+        allowed[ordinal] = digest
+    return allowed
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("source", type=Path)
@@ -92,6 +112,13 @@ def main() -> int:
         action="append",
         default=[],
         metavar="ORDINAL:SOURCE_SHA256:TARGET_SHA256",
+    )
+    parser.add_argument(
+        "--allow-target-math-insertion",
+        action="append",
+        default=[],
+        metavar="TARGET_ORDINAL:TARGET_SHA256",
+        help="ledger an exact target-only math atom added by a documented source correction",
     )
     parser.add_argument("--json-out", type=Path)
     args = parser.parse_args()
@@ -110,9 +137,22 @@ def main() -> int:
     source_math = math_segments(source_clean)
     target_math = math_segments(target_clean)
     allowed_math = parse_allowed_math_deltas(args.allow_math_delta)
+    allowed_insertions = parse_allowed_target_math_insertions(args.allow_target_math_insertion)
+    insertion_checks: dict[int, str] = {}
+    for ordinal, digest in sorted(allowed_insertions.items()):
+        if ordinal > len(target_math):
+            raise ValueError(f"target math insertion ordinal is out of range: {ordinal}")
+        actual = hashlib.sha256(normalize_math(target_math[ordinal - 1]).encode("utf-8")).hexdigest()
+        if actual != digest:
+            raise ValueError(f"target math insertion hash differs at ordinal {ordinal}")
+        insertion_checks[ordinal] = actual
+    aligned_target_math = [
+        atom for ordinal, atom in enumerate(target_math, 1)
+        if ordinal not in allowed_insertions
+    ]
     actual_math_deltas: dict[int, tuple[str, str]] = {}
-    if len(source_math) == len(target_math):
-        for ordinal, (source_atom, target_atom) in enumerate(zip(source_math, target_math), 1):
+    if len(source_math) == len(aligned_target_math):
+        for ordinal, (source_atom, target_atom) in enumerate(zip(source_math, aligned_target_math), 1):
             source_norm = normalize_math(source_atom)
             target_norm = normalize_math(target_atom)
             if source_norm == target_norm:
@@ -140,7 +180,11 @@ def main() -> int:
         "symbolic_command_sequence_outside_math_exact": symbolic_command_sequence(mask_math(source)) == symbolic_command_sequence(mask_math(target)),
         "stable_id_sequence_exact": source_ids == target_ids,
         "protected_reference_sequence_exact": source_refs == target_refs,
-        "math_segment_count_exact": len(source_math) == len(target_math),
+        "math_segment_topology_exact_or_ledgered": (
+            len(source_math) == len(aligned_target_math)
+            and len(target_math) == len(source_math) + len(allowed_insertions)
+            and insertion_checks == allowed_insertions
+        ),
         "math_normalized_sequence_exact_or_allowed": actual_math_deltas == allowed_math,
         "hint_count_exact": source.count("\\Hint{") == target.count("\\Hint{"),
         "no_active_english_residue": not residue,
@@ -170,6 +214,10 @@ def main() -> int:
         "allowed_math_deltas": {
             str(ordinal): {"source_sha256": pair[0], "target_sha256": pair[1]}
             for ordinal, pair in sorted(allowed_math.items())
+        },
+        "allowed_target_math_insertions": {
+            str(ordinal): {"target_sha256": digest}
+            for ordinal, digest in sorted(allowed_insertions.items())
         },
         "actual_math_deltas": {
             str(ordinal): {"source_sha256": pair[0], "target_sha256": pair[1]}

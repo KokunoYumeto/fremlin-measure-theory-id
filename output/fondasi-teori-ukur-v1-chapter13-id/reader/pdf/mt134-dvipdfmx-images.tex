@@ -1,0 +1,16 @@
+% Reader-only dvipdfmx adapter for the three Section 134 source diagrams.
+% The frozen PostScript authorities remain unchanged.  The cumulative builder
+% creates deterministic PNG derivatives beside the staged TeX files and this
+% override preserves the requested source height and caption surface.
+\def\picture#1#2{\bigskip
+  \immediate\write0{importing reader diagram #1.png at height #2
+       with dvipdfmx pdf:image}%
+  \vbox{\hsize\pagewidth
+    \vbox to #2{\vss
+      \hbox to \pagewidth{\hss
+        \special{pdf:image height #2 (#1.png)}%
+        \hss}}%
+    \medskip
+    \Centerline{\Caption}}%
+  \medskip
+  \def\Caption{}}

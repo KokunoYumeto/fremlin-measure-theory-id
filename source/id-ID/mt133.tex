@@ -1,0 +1,742 @@
+\frfilename{mt133.tex}
+\versiondate{29.3.10}
+\copyrightdate{1994}
+
+\def\chaptername{Pelengkap}
+\def\sectionname{Konsep integrasi yang lebih luas}
+
+\newsection{133}
+
+Ada berbagai konteks yang membuat pemberian nilai kepada integral suatu
+fungsi yang tidak sepenuhnya tercakup oleh definisi dasar dalam 122M menjadi
+berguna. Dalam bagian ini saya menawarkan beberapa cara untuk menetapkan nilai
+$\pm\infty$ kepada integral fungsi bernilai real (133A), mengintegralkan
+fungsi bernilai kompleks (133C–133H), serta mendefinisikan integral atas dan
+integral bawah (133I–133L). Dalam \S135 di bawah saya akan membahas
+pengembangan lebih lanjut dari gagasan-gagasan Bab 12.
+
+\leader{133A}{Integral tak hingga} Lazimnya frasa `$f$ terintegralkan'
+dibatasi pada fungsi $f$ yang dapat diberi integral berhingga $\int f$
+\cmmnt{ (sama seperti suatu deret disebut `dapat dijumlahkan' hanya jika
+deret itu dapat diberi jumlah berhingga)}. Namun, untuk fungsi nonnegatif
+kadang-kadang lebih mudah menuliskan `$\int f=\infty$' jika, dalam suatu
+pengertian, satu-satunya alasan $f$ gagal terintegralkan adalah bahwa
+integralnya terlalu besar; yaitu, $f$ didefinisikan hampir di mana-mana,
+terukur secara virtual terhadap $\mu$, dan salah satu dari hal berikut berlaku:
+
+\Centerline{$\{x:x\in\dom f,\,f(x)\ge\epsilon\}$}
+
+\noindent memuat suatu himpunan berukuran tak hingga untuk suatu
+$\epsilon>0$, atau
+
+\Centerline{$\sup\{\int h:h\text{ sederhana},\,h\leae f\}=\infty$.}
+
+\noindent\cmmnt{(Bandingkan 122J.) }Dengan kaidah ini,\cmmnt{ kita tetap
+akan memperoleh}
+
+\Centerline{$\int f_1+f_2=\int f_1+\int f_2$,
+\quad$\int cf=c\int f$}
+
+\noindent kapan pun $c\in\coint{0,\infty}$ dan $f_1$, $f_2$, $f$ merupakan
+fungsi nonnegatif yang masing-masing memiliki $\int f_1$, $\int f_2$,
+$\int f$ terdefinisi dalam $[0,\infty]$.
+
+Karena itu kita dapat\cmmnt{ mengulangi definisi 122M dan} mengatakan bahwa
+
+\Centerline{$\int f_1-f_2=\int f_1-\int f_2$}
+
+\noindent kapan pun $f_1$, $f_2$ merupakan fungsi bernilai real sedemikian
+sehingga $\int f_1$, $\int f_2$ terdefinisi dalam $[0,\infty]$ dan tidak
+keduanya tak hingga\cmmnt{; syarat terakhir diberlakukan untuk menghindari
+keharusan menghitung $\infty-\infty$}.
+
+Kita tetap memiliki kaidah-kaidah
+
+\Centerline{$\int f+g=\int f+\int g$,
+\quad$\int(cf)=c\int f$,
+\quad$\int|f|\ge|\int f|$}
+
+\noindent setidaknya ketika ruas kanan dapat ditafsirkan, dengan mengizinkan
+$0\cdot\infty=0$, tetapi tanpa mengizinkan tafsiran apa pun bagi
+$\infty-\infty$; dan $\int f\le\int g$ kapan pun kedua integral terdefinisi
+dan $f\leae g$. \cmmnt{(Namun, tentu saja sekarang mungkin terdapat
+$f\le g$ dan $\int f=\int g=\pm\infty$ tanpa $f$ dan $g$ sama hampir di
+mana-mana.)}
+
+Tetapkan $f^+(x)=\max(f(x),0)$, $f^-(x)=\max(-f(x),0)$ untuk $x\in\dom f$;
+maka
+
+\Centerline{$\int f=\infty\,\iff\,\int f^+=\infty$ dan $f^-$
+terintegralkan,}
+
+\Centerline{$\int f=-\infty\,\iff\,f^+$ terintegralkan dan
+$\int f^-=\infty$.}
+
+\cmmnt{Untuk gagasan lebih lanjut dalam arah ini, lihat \S135 di bawah.}
+
+\leader{133B}{Fungsi dengan nilai eksepsional} Juga lebih mudah jika kita
+mengizinkan sebagai fungsi `terintegralkan' fungsi-fungsi $f$ yang sesekali
+mengambil nilai bukan real\cmmnt{ -- biasanya ketika suatu rumus untuk
+$f(x)$ mengizinkan nilai `$\infty$' berdasarkan suatu konvensi}. Untuk fungsi
+seperti itu saya akan menuliskan $\int f=\int\tilde f$ jika
+$\int\tilde f$ terdefinisi, dengan
+
+\Centerline{$\dom\tilde f=\{x:x\in\dom f,\,f(x)\in\Bbb R\}$,
+\quad$\tilde f(x)=f(x)$ untuk $x\in\dom\tilde f$.}
+
+\cmmnt{\noindent Karena dalam konvensi ini saya tetap mengharuskan
+$\tilde f$ didefinisikan hampir di mana-mana dalam $X$, himpunan
+$\{x:x\in\dom f,\,f(x)\notin\Bbb R\}$ harus terabaikan.}
+
+\cmmnt{
+\leader{133C}{Fungsi bernilai kompleks} Seluruh teori fungsi terukur dan
+terintegralkan yang dikembangkan sejauh ini dikhususkan bagi fungsi bernilai
+real. Tidak diperlukan gagasan baru yang berarti untuk menangani fungsi
+bernilai kompleks, tetapi barangkali sebaiknya saya menguraikan beberapa
+rinciannya, karena ada banyak penerapan di mana fungsi bernilai kompleks
+merupakan konteks kerja yang paling alami.
+}%end of comment
+
+\leader{133D}{Definisi (a)} Misalkan $X$ suatu himpunan dan $\Sigma$ suatu
+aljabar-$\sigma$ subhimpunan-subhimpunan $X$. Jika $D\subseteq X$ dan
+$f:D\to\Bbb C$ suatu fungsi, kita mengatakan bahwa $f$ {\bf terukur} jika
+bagian real dan bagian imajinernya $\Real f$, $\Imag f$ terukur\cmmnt{ dalam
+pengertian 121B–121C}.
+
+\medskip
+
+{\bf (b)} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur. Jika $f$ suatu fungsi
+bernilai kompleks yang didefinisikan pada subhimpunan koterabaikan dari $X$,
+kita mengatakan bahwa $f$ {\bf terintegralkan} jika bagian real dan bagian
+imajinernya terintegralkan, dan kemudian
+
+\Centerline{$\int f=\int\Real f+i\int\Imag f$.}
+
+\medskip
+
+{\bf (c)} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur, $H\in\Sigma$, dan $f$
+suatu fungsi bernilai kompleks yang didefinisikan pada subhimpunan $X$. Maka
+$\int_Hf$ adalah $\int(f\restr H)d\mu_H$ jika ini terdefinisi dalam
+pengertian (b), dengan mengambil ukuran subruang $\mu_H$ sebagaimana dalam
+131A–131B.
+
+\ifnum\stylenumber=11\ifresultsonly\eject\fi\fi
+
+\leader{133E}{Lema} (a) Jika $X$ suatu himpunan, $\Sigma$ suatu
+aljabar-$\sigma$ subhimpunan-subhimpunan $X$, dan $f$ serta $g$ merupakan
+fungsi terukur bernilai kompleks dengan domain $\dom f$, $\dom g\subseteq X$,
+maka
+
+\quad(i) $f+g:\dom f\cap\dom g\to\Bbb C$ terukur;
+
+\quad(ii) $cf:\dom f\to\Bbb C$ terukur, untuk setiap $c\in\Bbb C$;
+
+\quad(iii) $f\times g:\dom f\cap\dom g\to\Bbb C$ terukur;
+
+\quad(iv) $f/g:\{x:x\in\dom f\cap\dom g,\,g(x)\ne 0\}\to\Bbb C$ terukur;
+
+\quad(v) $|f|:\dom f\to\Bbb R$ terukur.
+
+{(b)} Jika $\sequencen{f_n}$ suatu barisan fungsi terukur bernilai kompleks
+yang didefinisikan pada subhimpunan-subhimpunan $X$, maka
+$f=\lim_{n\to\infty}f_n$ terukur, jika kita mengambil $\dom f$ sebagai
+
+$$\eqalign{\{x:x\in\bigcup_{n\in\Bbb N}&\bigcap_{m\ge n}\dom f_m,
+  \,\lim_{n\to\infty}f_n(x)\text{ ada dalam }\Bbb C\}\cr
+&=\dom(\lim_{n\to\infty}\Real f_n)
+  \cap\dom(\lim_{n\to\infty}\Imag f_n).\cr}$$
+
+\proof{{\bf (a)} Semuanya langsung diperoleh dari 121E, jika Anda menuliskan
+rumus untuk bagian real dan bagian imajiner dari $f+g,\ldots,|f|$ dalam
+hubungannya dengan bagian real dan bagian imajiner dari $f$ dan $g$.
+
+\medskip
+
+{\bf (b)} Gunakan 121Fa.
+}%end of proof of 133E
+
+\leader{133F}{Proposisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur.
+
+(a) Jika $f$ dan $g$ merupakan fungsi terintegralkan bernilai kompleks yang
+didefinisikan pada subhimpunan-subhimpunan koterabaikan dari $X$, maka $f+g$
+dan $cf$ terintegralkan, $\int f+g=\int f+\int g$ dan
+$\int cf=c\int f$, untuk setiap $c\in\Bbb C$.
+
+{(b)} Jika $f$ suatu fungsi bernilai kompleks yang didefinisikan pada
+subhimpunan koterabaikan dari $X$, maka $f$ terintegralkan jika dan hanya jika
+$|f|$ terintegralkan dan $f$ terukur secara virtual terhadap $\mu$
+\cmmnt{, yaitu, $\Real f$ dan $\Imag f$ terukur secara virtual terhadap
+$\mu$}.
+
+\proof{{\bf (a)} Gunakan 122Oa–122Ob.
+
+\medskip
+
+{\bf (b)} Pokoknya adalah bahwa $|\Real f|$,
+$|\Imag f|\le|f|\le|\Real f|+|\Imag f|$; sekarang kita hanya perlu
+menerapkan 122P sebanyak yang diperlukan.
+}%end of proof of 133F
+
+\leader{133G}{Teorema Konvergensi Terdominasi Lebesgue} Misalkan
+$(X,\Sigma,\mu)$ suatu ruang ukur dan $\langle f_n\rangle_{n\in\Bbb N}$ suatu
+barisan fungsi terintegralkan bernilai kompleks pada $X$ sedemikian sehingga
+$f(x)=\lim_{n\to\infty}f_n(x)$ ada dalam $\Bbb C$ untuk hampir setiap
+$x\in X$. Andaikan pula terdapat fungsi terintegralkan bernilai real $g$
+pada $X$ sedemikian sehingga $|f_n|\leae g$ untuk setiap $n$. Maka $f$
+terintegralkan dan $\lim_{n\to\infty}\int f_n$ ada serta sama dengan
+$\int f$.
+
+\proof{Terapkan 123C pada barisan-barisan $\sequencen{\Real f_n}$ dan
+$\sequencen{\Imag f_n}$.
+}%end of proof of 133G
+
+\leader{133H}{Korolari} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur dan
+$\ooint{a,b}$ suatu interval terbuka tak-kosong dalam $\Bbb R$. Misalkan
+$f:X\times\ooint{a,b}\to\Bbb C$ suatu fungsi sedemikian sehingga
+
+\inset{(i) integral $F(t)=\int f(x,t)dx$ terdefinisi untuk setiap
+$t\in\ooint{a,b}$;}
+
+\inset{(ii) turunan parsial $\pd{f}{t}$ dari $f$ terhadap variabel kedua
+terdefinisi di setiap titik dalam $X\times\ooint{a,b}$;}
+
+\inset{(iii) terdapat fungsi terintegralkan $g:X\to\coint{0,\infty}$
+sedemikian sehingga $|\pd{f}{t}(x,t)|\le g(x)$ untuk setiap $x\in X$,
+$t\in\ooint{a,b}$.}
+
+\noindent Maka turunan $F'(t)$ dan integral
+$\biggerint\pd{f}{t}(x,t)dx$ ada untuk setiap $t\in\ooint{a,b}$, dan
+keduanya sama.
+
+\proof{Terapkan 123D pada $\Real f$ dan $\Imag f$.}
+
+
+\leader{133I}{Integral atas dan integral bawah}\dvArevised{2007}\cmmnt{
+Sekarang saya kembali ke fungsi bernilai real.} Misalkan $(X,\Sigma,\mu)$
+suatu ruang ukur dan $f$ suatu fungsi bernilai real yang didefinisikan hampir
+di mana-mana dalam $X$. {\bf Integral atasnya} adalah
+
+\Centerline{$\overlineint f
+=\inf\{\int g:\int g$ terdefinisi dalam pengertian 133A dan $f\leae g\}$,}
+
+\noindent dengan mengizinkan $\infty$ untuk $\inf\{\infty\}$ atau
+$\inf\emptyset$ dan $-\infty$ untuk $\inf\Bbb R$. Demikian pula,
+{\bf integral bawah} dari $f$ adalah
+
+\Centerline{$\underlineint f
+=\sup\{\int g:\int g$ terdefinisi, $f\geae g\}$,}
+
+\noindent dengan mengizinkan $-\infty$ untuk $\sup\{-\infty\}$ atau
+$\sup\emptyset$ dan $\infty$ untuk $\sup\Bbb R$.
+
+\leader{133J}{Proposisi}\dvArevised{2007} Misalkan $(X,\Sigma,\mu)$ suatu
+ruang ukur.
+
+(a) Misalkan $f$ suatu fungsi bernilai real yang didefinisikan hampir di
+mana-mana dalam $X$.
+
+\quad (i) Jika $\overline{\int}f$ berhingga, terdapat fungsi terintegralkan
+$g$ sedemikian sehingga $f\leae g$ dan $\int g=\overline{\int}f$. Dalam
+hal ini,
+
+\Centerline{$\{x:x\in\dom f\cap\dom g$, $g(x)\le f(x)+g_0(x)\}$}
+
+\noindent berukuran luar penuh untuk setiap fungsi terukur
+$g_0:X\to\ooint{0,\infty}$.
+
+\quad (ii) Jika $\underline{\int}f$ berhingga, terdapat fungsi
+terintegralkan $h$ sedemikian sehingga $h\leae f$ dan
+$\int h=\underline{\int}f$. Dalam hal ini,
+
+\Centerline{$\{x:x\in\dom f\cap\dom h$, $f(x)\le h(x)+h_0(x)\}$}
+
+\noindent berukuran luar penuh untuk setiap fungsi terukur
+$h_0:X\to\ooint{0,\infty}$.
+
+{(b)} Untuk sembarang fungsi bernilai real $f$, $g$ yang didefinisikan pada
+subhimpunan-subhimpunan koterabaikan dari $X$ dan sembarang $c\ge 0$,
+
+\vskip 2pt
+
+\quad(i) $\underline{\int}f\le\overline{\int}f$,
+
+\vskip2pt
+
+\quad (ii) $\overline{\int}f+g\le\overline{\int}f+\overline{\int}g$,
+
+\vskip2pt
+
+\quad (iii) $\overline{\int}cf=c\overline{\int}f$,
+
+\vskip2pt
+
+\quad (iv) $\underline{\int}(-f)=-\overline{\int}f$,
+
+\vskip2pt
+
+\quad (v) $\underline{\int}f+g\ge\underline{\int}f+\underline{\int}g$,
+
+\vskip2pt
+
+\quad (vi) $\underline{\int}cf=c\underline{\int}f$
+
+\vskip2pt
+
+\noindent kapan pun ruas kanan tidak melibatkan penjumlahan $\infty$ dengan
+$-\infty$.
+
+(c) Jika $f\leae g$ maka $\overline{\int}f\le\overline{\int}g$ dan
+$\underline{\int}f\le\underline{\int}g$.
+
+(d) Suatu fungsi bernilai real $f$ yang didefinisikan hampir di mana-mana
+dalam $X$ terintegralkan jika dan hanya jika
+
+\Centerline{$\overlineint f=\underlineint f=a\in\Bbb R$,}
+
+\noindent dan dalam hal ini $\int f=a$.
+
+(e) $\mu^*A=\overline{\int}\chi A$ untuk setiap $A\subseteq X$.
+
+\proof{{\bf (a)(i)} Untuk setiap $n\in\Bbb N$, pilih fungsi $g_n$
+sedemikian sehingga $f\leae g_n$ dan $\int g_n$ terdefinisi serta paling
+besar $2^{-n}+\overline{\int}f$; karena
+$\overline{\int}f\le\int g_n$, $\int g_n$ berhingga, sehingga $g_n$
+terintegralkan. Tetapkan $h_n=\inf_{i\le n}g_i$ untuk setiap $n$; maka $h_n$
+terintegralkan (karena
+$|h_n-g_0|\le\sum_{i=0}^n|g_i-g_0|$ pada
+$\bigcap_{i\le n}\dom g_i$), dan $f\leae h_n$, sehingga
+
+\Centerline{$\overlineint f\le\int h_n
+\le\int g_n\le 2^{-n}+\overlineint f$.}
+
+\noindent Menurut teorema B. Levi (123A), yang diterapkan pada
+$\sequencen{-h_n}$, $g(x)=\inf_{n\in\Bbb N}h_n(x)\in\Bbb R$ untuk hampir
+setiap $x$, dan
+$\int g=\inf_{n\in\Bbb N}\int h_n=\overline{\int}f$; juga, tentu saja,
+$f\leae g$.
+
+Sekarang ambil fungsi terukur $g_0:X\to\ooint{0,\infty}$, dan tinjau
+himpunan
+
+\Centerline{$A=\{x:x\in\dom f\cap\dom g$, $g(x)\le f(x)+g_0(x)\}$.}
+
+\noindent\Quer\ Jika $A$ tidak berukuran luar penuh, terdapat himpunan
+terukur tak-terabaikan $F\subseteq X\setminus A$. Karena $g_0$ positif tegas,
+$F=\bigcup_{n\in\Bbb N}F_n$ dengan
+$F_n=\{x:x\in F$, $g_0(x)\ge 2^{-n}\}$,
+dan terdapat $n\in\Bbb N$ sedemikian sehingga $\mu F_n>0$. Tinjau fungsi
+$g_1=g-2^{-n}\chi F_n$. Maka $f\leae g_1$. Selain itu,
+$\int g_1=\int g-2^{-n}\mu F_n$ lebih kecil secara tegas daripada
+$\int g$, sehingga $\overline{\int}f<\int g$.\ \Bang
+
+\medskip
+
+\quad{\bf (ii)} Gunakan argumen serupa, atau gunakan (b-iv).
+
+\medskip
+
+{\bf (b)(i)} Jika $\underline{\int}f=-\infty$ atau
+$\overline{\int}f=\infty$, hal ini langsung. Jika tidak, hasilnya segera
+mengikuti fakta bahwa apabila $g\leae f\leae h$, maka
+$\int g\le\int h$ jika integral-integralnya terdefinisi (dalam arti luas).
+
+\medskip
+
+\quad{\bf (ii)} Jika $a>\overline{\int}f+\overline{\int}g$, baik
+$\overline{\int}f$ maupun $\overline{\int}g$ tidak mungkin $\infty$, sehingga
+harus ada fungsi $f_1$, $g_1$ sedemikian sehingga $f\leae f_1$,
+$g\leae g_1$ dan $\int f_1+\int g_1\le a$. Sekarang
+$f+g\leae f_1+g_1$, sehingga
+
+\Centerline{$
+\overlineint f+g\le\int f_1+g_1\le a$.}
+
+\noindent Karena $a$ sembarang, kita memperoleh hasilnya.
+
+\medskip
+
+\quad{\bf (iii)($\pmb{\alpha}$)} Jika $c=0$, hal ini langsung. {\bf
+($\pmb{\beta}$)} Jika $c>0$ dan $a>c\overline{\int}f$, harus terdapat
+$f_1$ sedemikian sehingga $f\leae f_1$ dan $c\int f_1\le a$. Sekarang
+$cf\leae cf_1$ dan $\int cf_1\le a$, sehingga $\overline{\int}cf\le a$.
+Karena $a$ sembarang, $\overline{\int}cf\le c\overline{\int}f$.
+{\bf($\pmb{\gamma}$)} Masih dengan mengandaikan $c>0$, kita juga memiliki
+
+\Centerline{$c\overlineint f=c\overlineint c^{-1}cf
+\le cc^{-1}\overlineint cf=\overlineint cf$,}
+
+\noindent sehingga diperoleh kesamaan.
+
+\medskip
+
+\quad{\bf (iv)} Ini hanya karena $\int(-f_1)=-\int f_1$ bagi setiap fungsi
+$f_1$ yang salah satu integralnya terdefinisi.
+
+\medskip
+
+\quad{\bf (v)-(vi)} Gunakan (iv) untuk mengubah $\underline{\int}$ menjadi
+$\overline{\int}$, lalu terapkan (ii) atau (iii).
+
+\medskip
+
+{\bf (c)} Pernyataan-pernyataan ini langsung dari definisi, karena
+(misalnya) jika $g\leae h$ maka $f\leae h$.
+
+\medskip
+
+{\bf (d)} Jika $f$ terintegralkan, maka
+
+\Centerline{$\overlineint f=\int f=\underlineint f$}
+
+\noindent menurut 122Od. Jika
+$\overline{\int}f=\underline{\int}f=a\in\Bbb R$, maka, menurut (a), terdapat
+fungsi terintegralkan $g$, $h$ sedemikian sehingga $g\leae f\leae h$ dan
+$\int g=\int h=a$, sehingga $g\eae h$, menurut 122Rc, $g\eae f\eae h$,
+dan $f$ terintegralkan, menurut 122Rb.
+
+\medskip
+
+{\bf (e)} Jika $E\supseteq A$ terukur, maka
+
+\Centerline{$\mu E=\int\chi E\ge\overlineint\chi A$;}
+
+\noindent karena $E$ sembarang, $\mu^*A\ge\overline{\int}\chi A$.
+Jika $\int g$ terdefinisi dan $\chi A\leae g$, misalkan $E\subseteq\dom g$
+suatu himpunan terukur koterabaikan sedemikian sehingga $g\restr E$ terukur,
+dan tetapkan $F=\{x:x\in E$, $g(x)\ge 1\}$. Maka $A\setminus F$
+terabaikan, sehingga $\mu^*A\le\mu F\le\int g$; karena $g$ sembarang,
+$\mu^*A\le\overline{\int}\chi A$.
+}%end of proof of 133J
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Saya harap rumus-rumus di sini mengingatkan Anda
+pada $\limsup$, $\liminf$.}
+
+\leader{133K}{Teorema konvergensi untuk integral
+\dvrocolon{atas}}\cmmnt{ Kita memiliki versi-versi berikut dari teorema
+B. Levi dan Lema Fatou.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur, dan
+$\sequencen{f_n}$ suatu barisan fungsi bernilai real yang didefinisikan
+hampir di mana-mana dalam $X$.
+
+(a) Jika, untuk setiap $n$, $f_n\leae f_{n+1}$, dan
+$-\infty<\sup_{n\in\Bbb N}\overline{\int}f_n<\infty$, maka
+$f(x)=\sup_{n\in\Bbb N}f_n(x)$ terdefinisi dalam $\Bbb R$ untuk hampir
+setiap $x\in X$, dan
+$\overline{\int}f=\sup_{n\in\Bbb N}\overline{\int}f_n$.
+
+(b) Jika, untuk setiap $n$, $f_n\ge 0$ hampir di mana-mana, dan
+$\liminf_{n\to\infty}\overline{\int}f_n<\infty$, maka
+$f(x)=\liminf_{n\to\infty}f_n(x)$ terdefinisi dalam $\Bbb R$ untuk hampir
+setiap $x\in X$, dan
+$\overline{\int}f\le\liminf_{n\to\infty}\overline{\int}f_n$.
+
+\proof{{\bf (a)} Tetapkan
+$c=\sup_{n\in\Bbb N}\overline{\int}f_n$. Untuk setiap $n$, terdapat fungsi
+terintegralkan $g_n$ sedemikian sehingga $f_n\leae g_n$ dan
+$\int g_n=\overline{\int}f_n$ (133J(a-i)).
+Tetapkan $g'_n=\min(g_n,g_{n+1})$; maka $g'_n$ terintegralkan dan
+$f_n\leae g'_n\leae g_n$, sehingga
+
+\Centerline{$\overlineint f_n\le\int g'_n
+\le\int g_n=\overlineint f_n$}
+
+\noindent dan $g'_n$ harus sama dengan $g_n$ hampir di mana-mana.
+Akibatnya $g_n\leae g_{n+1}$ untuk setiap $n$, sementara
+$\sup_{n\in\Bbb N}\int g_n=c<\infty$.
+Menurut teorema B. Levi, $g=\sup_{n\in\Bbb N}g_n$ terdefinisi sebagai
+fungsi bernilai real hampir di mana-mana dalam $X$, dan $\int g=c$. Sekarang
+tentu saja $f(x)$ terdefinisi, dan tidak lebih besar daripada $g(x)$, untuk
+setiap $x\in\dom g\cap\bigcap_{n\in\Bbb N}\dom f_n$ sedemikian sehingga
+$f_n(x)\le g_n(x)$ untuk setiap $n$, yaitu untuk hampir setiap $x$; sehingga
+$\overline{\int}f\le\int g=c$. Di sisi lain, $f_n\leae f$, sehingga
+$\overline{\int}f_n\le\overline{\int}f$ untuk setiap $n\in\Bbb N$;
+akibatnya $\overline{\int}f$ sekurang-kurangnya $c$, dan karena itu sama
+dengan $c$, sebagaimana diperlukan.
+
+\medskip
+
+{\bf (b)} Argumennya mengikuti argumen 123B. Tetapkan
+$c=\liminf_{n\to\infty}\overline{\int}f_n$. Untuk setiap $n$, tetapkan
+$g_n=\inf_{m\ge n}f_m$; maka
+$\overline{\int}g_n\le\inf_{m\ge n}\overline{\int}f_m\le c$.
+Kita memiliki $g_n(x)\le g_{n+1}(x)$ untuk setiap $x\in\dom g_n$, yaitu
+hampir di mana-mana, untuk setiap $n$; sehingga, menurut (a),
+
+\Centerline{$\overlineint g
+=\sup_{n\in\Bbb N}\overlineint g_n\le c$,}
+
+\noindent dengan
+
+\Centerline{$g=\sup_{n\in\Bbb N}g_n\eae\liminf_{n\to\infty}f_n$,}
+
+\noindent dan $\overline{\int}\liminf_{n\to\infty}f_n\le c$, sebagaimana
+diklaim.
+}%end of proof of 133K
+
+\leader{*133L}{}\dvAnew{2007}\cmmnt{ Hasil berikut berada pada tingkat yang
+kurang mendasar daripada hasil-hasil dalam 133J, tetapi tetap penting.
+
+\medskip
+
+\noindent}{\bf Proposisi}
+Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur dan $f$ suatu fungsi bernilai real
+yang didefinisikan hampir di mana-mana dalam $X$. Andaikan $h_1$, $h_2$
+merupakan fungsi nonnegatif yang terukur secara virtual dan didefinisikan
+hampir di mana-mana dalam $X$. Maka
+
+\Centerline{$\overlineint f\times(h_1+h_2)
+=\overlineint f\times h_1+\overlineint f\times h_2$,}
+
+\noindent dengan catatan bahwa di sini, untuk kali ini saja, kita dapat
+menafsirkan $\infty+(-\infty)$ atau $(-\infty)+\infty$ sebagai $\infty$
+jika hal itu diperlukan pada ruas kanan.
+
+\proof{{\bf (a)} Jika $\overline{\int}f\times h_1=\infty$ atau
+$\overline{\int}f\times h_2=\infty$, maka
+$\overline{\int}f\times(h_1+h_2)=\infty$. \Prf\Quer\ Jika tidak, terdapat
+$g$ sedemikian sehingga $f\times(h_1+h_2)\leae g$ dan $\int g<\infty$.
+Dalam hal ini,
+
+\Centerline{$f\times h_1
+\leae f^+\times h_1
+\leae f^+\times(h_1+h_2)
+=(f\times(h_1+h_2))^+
+\leae g^+$}
+
+\noindent sehingga $\overline{\int}f\times h_1\le\int g^+<\infty$.
+Demikian pula, $\overline{\int}f\times h_2<\infty$; bertentangan dengan
+hipotesis kita.\ \Bang\QeD\ Jadi dalam kasus ini, berdasarkan kaidah lokal
+$\infty+(-\infty)=(-\infty)+\infty=\infty$, kita memperoleh hasilnya.
+
+\medskip
+
+{\bf (b)} Sekarang andaikan integral atas $\overline{\int}f\times h_1$ dan
+$\overline{\int}f\times h_2$ keduanya lebih kecil daripada $\infty$,
+sehingga jumlah keduanya dapat ditafsirkan menurut kaidah biasa.
+Menurut 133J(b-ii),
+$\overline{\int}f\times(h_1+h_2)
+\le\overline{\int}f\times h_1+\overline{\int}f\times h_2<\infty$.
+Untuk arah sebaliknya, andaikan bahwa $g\geae f\times(h_1+h_2)$ dan
+$\int g<\infty$. Untuk $i=1$, $2$, tetapkan
+
+$$\eqalign{g_i(x)
+&=\Bover{g(x)h_i(x)}{h_1(x)+h_2(x)}
+  \text{ jika }x\in\dom g\cap\dom h_1\cap\dom h_2
+  \text{ dan }h_1(x)+h_2(x)>0,\cr
+&=0\text{ untuk titik-titik lain }x\in X.\cr}$$
+
+\noindent Maka, untuk kedua $i$, $g_i$ terukur secara virtual,
+$g_i^+\leae g^+$ dan $g_i\geae f\times h_i$; sementara $g\geae g_1+g_2$.
+\Prf\ Himpunan
+
+\Centerline{$H=\{x:x\in\dom f\cap\dom g\cap\dom h_1\cap\dom h_2$,
+$g(x)\ge f(x)(h_1(x)+h_2(x))\}$}
+
+\noindent bersifat koterabaikan, dan untuk $x\in H$
+
+$$\eqalign{g(x)
+&=g_1(x)+g_2(x)\text{ jika }h_1(x)+h_2(x)>0,\cr
+&\ge 0=g_1(x)+g_2(x)\text{ jika }h_1(x)+h_2(x)=0.  \text{ \Qed}\cr}$$
+
+\noindent Jadi
+
+\Centerline{$\overlineint f\times h_1+\overlineint f\times h_2
+\le\int g_1+\int g_2
+=\int g_1+g_2
+\le\int g$}
+
+\noindent (karena $\int g_1$ dan $\int g_2$ keduanya paling besar
+$\int g^+<\infty$, sehingga kita dapat menjumlahkannya menurut kaidah biasa).
+Karena $g$ sembarang,
+$\overline{\int}f\times h_1+\overline{\int}f\times h_2
+\le\overline{\int}f\times(h_1+h_2)$ dan harus berlaku kesamaan.
+}%end of proof of 133L
+
+\exercises{
+\leader{133X}{Latihan dasar $\pmb{>}$(a)}
+%\spheader 133Xa
+Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur, dan
+$f:X\to\coint{0,\infty}$ suatu fungsi terukur. Tunjukkan bahwa
+
+$$\eqalign{\int fd\mu
+&=\sup_{n\in\Bbb N}2^{-n}\sum_{k=1}^{4^n}\mu\{x:f(x)\ge 2^{-n}k\}\cr
+&=\lim_{n\to\infty}2^{-n}\sum_{k=1}^{4^n}\mu\{x:f(x)\ge 2^{-n}k\}\cr}$$
+
+\noindent dalam $[0,\infty]$.
+%133A
+
+\spheader 133Xb
+Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur dan $f$ suatu fungsi bernilai
+kompleks yang didefinisikan pada subhimpunan $X$. (i) Tunjukkan bahwa jika
+$E\in\Sigma$, maka $f\restr E$ terintegralkan terhadap $\mu_E$ jika dan hanya
+jika $\tilde f$ terintegralkan terhadap $\mu$, dengan menuliskan $\mu_E$
+untuk ukuran subruang pada $E$ dan $\tilde f(x)=f(x)$ jika
+$x\in E\cap\dom f$, $0$ jika $x\in X\setminus E$; dan dalam hal ini
+$\int_Efd\mu_E=\int \tilde fd\mu$. (ii) Tunjukkan bahwa jika $E\in\Sigma$
+dan $f$ didefinisikan hampir di mana-mana terhadap $\mu$, maka
+$f\restr E$ terintegralkan terhadap $\mu_E$ jika dan hanya jika
+$f\times\chi E$ terintegralkan terhadap $\mu$, dan dalam hal ini
+$\int_Ef=\int f\times\chi E$. (iii) Tunjukkan bahwa jika $\int_Ef=0$ untuk
+setiap $E\in\Sigma$, maka $f=0$ hampir di mana-mana.
+%133E
+
+\spheader 133Xc Andaikan $(X,\Sigma,\mu)$ suatu ruang ukur dan $G$ suatu
+subhimpunan terbuka dari $\Bbb C$, yaitu himpunan sedemikian sehingga untuk
+setiap $w\in G$ terdapat $\delta>0$ sedemikian sehingga
+$\{z:|z-w|<\delta\}\subseteq G$. Misalkan $f:X\times G\to\Bbb C$ suatu
+fungsi, dan andaikan bahwa turunan $\pd{f}{z}$ dari $f$ terhadap variabel
+kedua ada untuk semua $x\in X$, $z\in G$. Andaikan pula bahwa
+(i) $F(z)=\int f(x,z)dx$ ada untuk setiap $z\in G$ (ii) terdapat fungsi
+terintegralkan $g$ sedemikian sehingga $|\pd{f}{z}(x,z)|\le g(x)$ untuk
+setiap $x\in X$, $z\in G$. Tunjukkan bahwa turunan $F'$ dari $F$ ada di
+setiap titik dalam $G$, dan
+$F'(z)=\biggerint\pd{f}{z}(x,z)dx$ untuk setiap $z\in G$.
+({\it Petunjuk\/}: Anda perlu memeriksa bahwa
+$|f(x,z)-f(x,w)|\le|z-w|g(x)$ kapan pun $x\in X$, $z\in G$, dan $w$ dekat
+dengan $z$.)
+%133F
+
+\sqheader 133Xd Misalkan $f$ suatu fungsi bernilai kompleks yang
+didefinisikan hampir di mana-mana pada $\coint{0,\infty}$, yang seperti biasa
+dilengkapi dengan ukuran Lebesgue. {\bf Transformasi Laplace}-nya adalah
+fungsi $F$ yang didefinisikan dengan menuliskan
+
+\Centerline{$F(s)=\int_0^{\infty}e^{-sx}f(x)dx$}
+
+\noindent untuk semua bilangan kompleks $s$ yang integralnya terdefinisi
+dalam $\Bbb C$.
+
+\quad(i) Tunjukkan bahwa jika $s\in\dom F$ dan $\Real s'\ge\Real s$, maka
+$s'\in\dom F$ (karena $|e^{-s'x}e^{sx}|\le 1$ untuk semua $x$).
+
+\quad(ii) Tunjukkan bahwa $F$ analitik (yaitu, terdiferensialkan sebagai
+fungsi variabel kompleks) pada interior domainnya. \Hint{133Xc.}
+
+\quad(iii) Tunjukkan bahwa jika $F$ terdefinisi di suatu titik, maka
+$\lim_{\Real s\to\infty}F(s)=0$.
+
+\quad(iv) Tunjukkan bahwa jika $f$, $g$ memiliki transformasi Laplace $F$,
+$G$, maka transformasi Laplace dari $f+g$ adalah $F+G$, setidaknya pada
+$\dom F\cap \dom G$.
+%133Xc 133F
+
+\sqheader 133Xe Misalkan $f$ suatu fungsi terintegralkan bernilai kompleks
+yang didefinisikan hampir di mana-mana dalam $\Bbb R$, yang seperti biasa
+dilengkapi dengan ukuran Lebesgue. {\bf Transformasi Fourier}-nya adalah
+fungsi $\varhatf$ yang didefinisikan dengan
+
+\Centerline{$\varhatf(s)=\Bover{1}{\sqrt{2\pi}}
+\int_{-\infty}^{\infty}e^{-isx}f(x)dx$}
+
+\noindent untuk semua $s$ real.
+
+\quad(i) Tunjukkan bahwa $\varhatf$ kontinu. \Hint{gunakan Teorema
+Konvergensi Terdominasi Lebesgue pada barisan-barisan berbentuk
+$f_n(x)=e^{-is_nx}f(x)$.}
+
+\quad(ii) Tunjukkan bahwa jika $f$, $g$ memiliki transformasi Fourier
+$\varhatf$, $\varhat g$, maka transformasi Fourier dari $f+g$ adalah
+$\varhatf+\varhat g$.
+
+\quad(iii) Tunjukkan bahwa jika $\int xf(x)dx$ ada, maka $\varhatf$
+terdiferensialkan, dengan
+$\varhatf\vthsp'(s)=-\Bover{i}{\sqrt{2\pi}}\int xe^{-isx}f(x)dx$ untuk
+setiap $s$.
+%133Xc 133F
+
+\spheader 133Xf Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur dan
+$\sequencen{f_n}$ suatu barisan fungsi bernilai real yang masing-masing
+didefinisikan hampir di mana-mana dalam $X$. Andaikan terdapat fungsi
+terintegralkan bernilai real $g$ sedemikian sehingga $|f_n|\leae g$ untuk
+setiap $n$. Tunjukkan bahwa
+
+\Centerline{$\overlineint\liminf_{n\to\infty}f_n
+\le\liminf_{n\to\infty}\overlineint f_n$,\quad
+$\underlineint\limsup_{n\to\infty}f_n
+\ge\limsup_{n\to\infty}\underlineint f_n$.}
+%133K
+
+
+\leader{133Y}{Latihan lanjutan (a)}
+%\spheader 133Ya
+Gunakan gagasan-gagasan 133C–133H untuk mengembangkan teori fungsi terukur
+dan terintegralkan yang mengambil nilai dalam $\BbbR^r$, dengan $r\ge 2$.
+%133H
+
+\spheader 133Yb Misalkan $X$ suatu himpunan dan $\Sigma$ suatu
+aljabar-$\sigma$ subhimpunan-subhimpunan $X$. Misalkan $Y$ suatu subhimpunan
+$X$ dan $f:Y\to\Bbb C$ suatu fungsi $\Sigma_Y$-terukur, dengan
+$\Sigma_Y=\{E\cap Y:E\in\Sigma\}$. Tunjukkan bahwa terdapat fungsi
+$\Sigma$-terukur $\tilde f:X\to\Bbb C$ yang memperluas $f$. \Hint{121I.}
+%133F
+
+\spheader 133Yc Misalkan $f$ suatu fungsi terintegralkan bernilai kompleks
+yang didefinisikan hampir di mana-mana dalam $\BbbR^r$, yang seperti biasa
+dilengkapi dengan ukuran Lebesgue, dengan $r\ge 1$. {\bf Transformasi
+Fourier}-nya adalah fungsi $\varhatf$ yang didefinisikan dengan
+
+\Centerline{$\varhatf(s)=\Bover{1}{{(\sqrt{2\pi})}^r}
+\int e^{-is\dotproduct x}f(x)dx$}
+
+\noindent untuk semua $s\in\BbbR^r$, dengan menuliskan $s\dotproduct x$
+untuk $\sigma_1\xi_1+\ldots+\sigma_r\xi_r$ jika
+$s=(\sigma_1,\ldots,\sigma_r)$,
+$x=(\xi_1,\ldots,\xi_r)\in\BbbR^r$.
+
+\quad(i) Tunjukkan bahwa $\varhatf$ kontinu.
+
+\quad(ii) Tunjukkan bahwa jika $f$, $g$ memiliki transformasi Fourier
+$\varhatf$, $\varhat g$, maka transformasi Fourier dari $f+g$ adalah
+$\varhatf+\varhat g$.
+
+\quad (iii) Tunjukkan bahwa jika $\int\|x\||f(x)|dx$ berhingga
+(dengan mengambil $\|x\|=\sqrt{\xi_1^2+\ldots+\xi_r^2}$ jika
+$x=(\xi_1,\dots,\xi_r)$), maka $\varhatf$ terdiferensialkan, dengan
+
+\Centerline{$\Pd{\varhatf}{\sigma_k}(s)
+=-\Bover{i}{{(\sqrt{2\pi})}^r}\int\xi_ke^{-is\dotproduct x}f(x)dx$}
+
+\noindent untuk setiap $s\in\BbbR^r$, $k\le r$.
+%133Xe 133F
+
+\spheader 133Yd Ingat kembali definisi fungsi `kuasi-sederhana' dari 122Yd.
+Tunjukkan bahwa untuk sembarang ruang ukur $(X,\Sigma,\mu)$ dan sembarang
+fungsi bernilai real $f$ yang didefinisikan hampir di mana-mana dalam $X$,
+
+\Centerline{$
+\overlineint f=\inf\{\int g:g$ kuasi-sederhana, $f\leae g\}$,}
+
+\Centerline{$
+\underlineint f=\sup\{\int g:g$ kuasi-sederhana, $f\geae g\}$,}
+
+\noindent dengan mengizinkan $\infty$ untuk $\inf\emptyset$ dan
+$\sup\Bbb R$, serta $-\infty$ untuk $\inf\Bbb R$ dan $\sup\emptyset$.
+%133J
+
+\spheader 133Ye Nyatakan dan buktikan hasil serupa mengenai fungsi-fungsi
+`pseudo-sederhana' dari 122Ye.
+%133Yd 133J
+}%end of exercises
+
+\endnotes{
+\Notesheader{133} Saya telah menguraikan bagian ini secara terperinci,
+meskipun di dalamnya tidak ada sesuatu yang sungguh-sungguh dapat disebut
+gagasan baru, karena bagian ini memberi kita kesempatan untuk meninjau kembali
+pekerjaan sebelumnya, dan karena manipulasi-manipulasi yang sekarang, saya
+harap, mulai tampak `jelas' bagi Anda sebenarnya hanya dapat dibenarkan
+melalui teorema-teorema yang sulit; saya percaya bahwa setidaknya sesekali
+kita patut melihat kembali titik-titik tepat tempat pembenaran itu dituliskan.
+
+Anda mungkin telah memperhatikan kemiripan antara hasil-hasil yang melibatkan
+`integral atas', sebagaimana diuraikan di sini, dan hasil-hasil dalam \S132
+mengenai `ukuran luar' (misalnya 132Ae dan 133Ka, atau 132Xe dan 133Kb).
+Kemiripan ini bukan kebetulan; semacam penjelasan dapat ditemukan dalam 252Ym
+di Jilid 2.
+}%end of notes
+
+\discrpage

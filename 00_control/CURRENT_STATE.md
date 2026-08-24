@@ -1,6 +1,6 @@
 # Current State — O007 Fremlin Volumes 1–2
 
-Updated: 2026-08-23 (Europe/Berlin)
+Updated: 2026-08-24 (Europe/Berlin)
 
 ## State summary
 
@@ -16,8 +16,13 @@ Updated: 2026-08-23 (Europe/Berlin)
   Volume 1; 896 in Volume 2) and 276 explicit hint macros (55; 221).
 - Initial schema-versioned locale-neutral corpus, volume, unit, rights, and
   resource records now exist as JSONL with deterministic CSV projections.
-- The final corrected root handoff and Floris's canonical instructions are
+- The final corrected root handoff and the user's canonical instructions are
   retained byte-for-byte under `00_control/` and bound by backend resources.
+- Current admitted boundary: complete Chapter 13 through S136. The missing
+  chapter introduction plus `mt133.tex`–`mt136.tex` are translated, indexed,
+  reproducibly built, and admitted with the prior S111–S132 reader preserved.
+  The cumulative official union is pages 10–90, 81 of 672 pages. Exact
+  admission evidence is `00_control/CP0011_MT136_ADMISSION.md`.
 - First admitted unit: `O007-FREMLIN-V1-S111`, complete source section
   `mt111.tex`. The natural `id-ID` target is 26,931 bytes with SHA-256
   `e0897b3b44d947c89e7b666b8bdee7e9e9bc098a6680ba09e96eb27c97a8d296`.
@@ -428,7 +433,37 @@ preserved. The GitHub publisher uses a NUL-delimited pathspec file and
 explicit `-f` only for the finite allowlist, avoiding Windows argv limits
 without broadening the publication scope.
 
-## Current admitted boundary — S132
+## Current admitted boundary — complete Chapter 13 through S136
+
+The complete Chapter 13 introduction and Sections 133–136 are now admitted
+with every earlier unit preserved. The cumulative reader spans official pages
+10–90, 81 unique pages of the selected 672-page corpus, and reflows to 93 A4
+pages. Exact admission evidence is `00_control/CP0011_MT136_ADMISSION.md`.
+
+The reader-first PDF is 704,002 bytes / SHA-256
+`9afb9bca0bf6e1116ac4aae673392478a191198c9a3f75dd591493ac3e7d3adf`.
+The deterministic ZIP is 7,178,218 bytes / SHA-256
+`e458a848ae97648a959768fec12dec079789d8d85905e8130943f5135687c4a0`;
+the 902-file package tree is 29,708,960 bytes / SHA-256
+`e68b1bc7238f8fa52aa64bc65c63834901fe9108bc78d469f9bda8d015c4c541`.
+Final build and reader receipts are `qa/chapter13-build-receipt.json` and
+`qa/chapter13-reader-qa.json`; both have `status: admitted`, `pass: true`,
+`publication_ready: true`, and `admission_issued: true`.
+
+Independent inspection passed all 93 PDF pages and sequential folios 1–92,
+including the corrected S134 axes and labels. All 16 offline HTML routes passed
+actual desktop/mobile browser replay with 7,547 exact MathJax containers, no
+document overflow, and all diagrams loaded. The admitted backend validates
+3,461 records. This S136 boundary is ready for the one authorized
+`v0.11.0-s136` GitHub/Zenodo publication transaction; public identity is not
+claimed until anonymous readback passes.
+
+The Volume 1 driver has no `mt137.tex`. Its next source member after S136 is
+the appendix introduction `mt1a.tex`, followed by `mt1a1.tex`–`mt1a3.tex`,
+`mt1conc.tex`, `mt1r.tex`, and `mti.tex`. Existing unadmitted Indonesian drafts
+for the six Volume 1-local members are preserved for source-aware review.
+
+## Previous admitted boundary — S132
 
 Section `O007-FREMLIN-V1-S132`, `Outer measures from measures` → `Ukuran luar
 dari ukuran`, is complete and admitted. The frozen authority member is 17,074
@@ -474,15 +509,15 @@ the Indonesian target build.
 
 ## Immediate production actions
 
-1. Publish the admitted S132 boundary to the existing Zenodo concept and
-   GitHub repository with anonymous byte/hash readback, then continue source
-   order at `mt133.tex`. Preserve the admitted S132 boundary and terminology
-   decisions.
-2. Publish each substantial verified cumulative boundary to the existing
-   Zenodo concept and GitHub repository with anonymous byte/hash readback. Do
-   not retry a Figshare file publication unless it exposes DSL/custom-license
-   support or a compatible legal basis is established. The 672-page corpus
-   goal remains active and is not completed by S132.
+1. Publish the admitted cumulative S136 boundary to the existing GitHub
+   lineage and the existing Zenodo concept, then anonymously verify refs and
+   every release asset. Do not retry S132 separately, create a duplicate Zenodo
+   concept, or retry Figshare unless its external license/account state changes.
+2. After preservation, review the existing Volume 1 appendix drafts in exact
+   driver order beginning at `mt1a.tex`; freeze stable IDs and pagination, apply
+   only ledgered source corrections, then admit the appendix/conclusion/
+   references/index as the next substantial boundary. The 672-page goal remains
+   active.
 
 ## Scope guard
 

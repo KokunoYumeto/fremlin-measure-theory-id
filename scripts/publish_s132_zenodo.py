@@ -228,9 +228,15 @@ def normalize_file(item: object) -> tuple[str, int, str] | None:
     if not isinstance(item, dict):
         return None
     name = item.get("key") if isinstance(item.get("key"), str) else item.get("filename")
-    size = item.get("size")
+    # Zenodo's deposition API uses ``filename``/``filesize`` and a
+    # ``links.download`` URL, while some record responses use
+    # ``key``/``size`` and ``links.content``.  Normalize both schemas so a
+    # resumed draft can be inspected and repaired idempotently.
+    size = item.get("size") if isinstance(item.get("size"), int) else item.get("filesize")
     links = item.get("links")
-    url = links.get("content") if isinstance(links, dict) else None
+    url = None
+    if isinstance(links, dict):
+        url = links.get("content") if isinstance(links.get("content"), str) else links.get("download")
     if isinstance(name, str) and isinstance(size, int) and isinstance(url, str):
         return name, size, url
     return None
