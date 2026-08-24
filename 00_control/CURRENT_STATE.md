@@ -13,8 +13,11 @@ Updated: 2026-08-24 (Europe/Berlin)
   `0dab35df4b544ef93df2d06a0ea4d0e6e5abbe4182400cc00df2ab0f26856f3a`.
   The final 110-page A4 PDF, all-page raster audit, 28-route offline HTML,
   desktop/mobile replay, and deterministic package all pass. Exact admission
-  evidence is `00_control/CP0012_VOLUME1_ADMISSION.md`; publication as
-  `v0.12.0-v1` / `0.12.0-v1` is the current operation.
+  evidence is `00_control/CP0012_VOLUME1_ADMISSION.md`. It is public as GitHub
+  `v0.12.0-v1` and Zenodo DOI `10.5281/zenodo.22083292`; all three assets at
+  both destinations passed anonymous byte/SHA-256 readback. Sanitized receipts
+  are `qa/PUBLICATION_RECEIPT_V0120_V1.json` and
+  `qa/ZENODO_PUBLICATION_RECEIPT_V0120_V1.json`.
 - Corpus selection is resolved: complete D. H. Fremlin, *Measure Theory*,
   Volumes 1–2, 672 official pages.
 - The earlier missing-selection diagnosis remains preserved in
@@ -30,7 +33,7 @@ Updated: 2026-08-24 (Europe/Berlin)
 - The final corrected root handoff and the user's canonical instructions are
   retained byte-for-byte under `00_control/` and bound by backend resources.
 - Current admitted boundary: complete Volume I, 102 of 672 official pages.
-  The next owner-production block is complete Volume II Chapter 22
+  The active owner-production block is complete Volume II Chapter 22
   (`mt22.tex`, `mt221.tex`–`mt226.tex`). Helper packet `HP-D10-001` has the
   disjoint Chapter 21 reservation and cannot enter the canonical lane except
   through a schema-clean packet plus owner-side three-way stable-ID QA.

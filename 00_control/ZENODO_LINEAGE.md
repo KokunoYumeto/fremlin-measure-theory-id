@@ -97,17 +97,45 @@ anonymous byte readback of the new PDF, ZIP, and checksum file.
   pages; the two-volume corpus remains incomplete.
 - Sanitized receipt: `qa/ZENODO_PUBLICATION_RECEIPT_S136.json`.
 
-This is the latest completed public Zenodo version. The next transaction must
-create exactly one new version from record `22071390`; do not publish the
-superseded S132 boundary separately or create another concept.
+## Published version 0.12.0-v1
+
+- Record: `22083292`
+- DOI: `10.5281/zenodo.22083292`
+- Public URL: <https://zenodo.org/records/22083292>
+- Version: `0.12.0-v1`
+- Status: public, admitted complete-Volume-I boundary; every public asset
+  passed anonymous byte and SHA-256 readback.
+- Coverage: all 27 Volume I source units, 102/672 official pages, 198
+  exercises, 55 source hints, a 2,367-record backend, a 110-page A4 reflow
+  PDF, and a 28-route offline HTML reader. Volume II and therefore the complete
+  two-volume corpus remain in progress.
+- License metadata: Zenodo `dsl` (Design Science License), with bundled
+  MathJax 3.2.2 separately scoped under Apache-2.0.
+
+Exact public assets:
+
+| Asset | Bytes | SHA-256 |
+|---|---:|---|
+| `00_READ_FIRST_FONDASI_TEORI_UKURAN_JILID_1.pdf` | 807,217 | `340af91eb1a31cbfaba20f578209b6e3dd0eacd7ea05f6e23183be9e9fee486f` |
+| `fondasi-teori-ukuran-v1-id.zip` | 13,013,174 | `7f3fecc5148c354504cd1632ebbb8bd800f9f72e5829120f76b45c614aadd336` |
+| `SHA256SUMS.txt` | 210 | `3672208fe20e39c8a6b2a051dc7dadec2a085f5317e11eb8be0410b4c081c8cf` |
+
+Sanitized evidence:
+`qa/ZENODO_PUBLICATION_RECEIPT_V0120_V1.json`, 2,333 bytes, SHA-256
+`c24d13a4f9769b9f9d554a69e2a160b26a121a91dc10c51811de634b4a37aa63`.
+The transaction created exactly one new version from record `22071390`, not a
+standalone deposit or duplicate concept.
+
+This is the latest completed public Zenodo version.
 
 ## External mirror state
 
 GitHub access is restored. The latest public boundary is prerelease
-`v0.11.0-s136` at commit
-`a0a8802398e06d004ec926260c7e5f96e3e92891`, tree
-`2f2ebfe956cd52ccb3f1854dd9d375c1751c49c6`. Its three assets passed
-anonymous readback; evidence is `qa/PUBLICATION_RECEIPT_S136.json`.
+`v0.12.0-v1` at boundary commit
+`fb9630136c530ef122bc728fbe5e196fdfc881ac`, tree
+`044d001846c2c747843cb885c22ee526de29ed0b`; the receipt-only commit is
+`1da0c142995d7d4213959535f9a2c4122a85aa47`. Its three assets passed
+anonymous readback; evidence is `qa/PUBLICATION_RECEIPT_V0120_V1.json`.
 
 The earlier S122 and S123 boundaries remain preserved by their public tags and
 their independently verified Zenodo versions. GitHub and Zenodo maintenance
@@ -121,9 +149,10 @@ license. Exact evidence is `qa/FIGSHARE_PUBLICATION_BLOCKER_S123.json`.
 
 ## Next version
 
-Complete Volume I is admitted and publication-ready as version `0.12.0-v1`.
-Create exactly one new version from record `22071390`, upload only the
-reader-first PDF, resumable ZIP, and checksum witness, publish, then anonymously
-read every public asset back. Preserve the concept DOI, metadata license `dsl`,
-component license distinction, and explicit 102/672 partial-corpus status. Do
-not create a fresh concept or overwrite a predecessor.
+At the next substantial admitted Volume II boundary, create exactly one new
+version from record `22083292`. Upload only the reader-first PDF, one compact
+resumable source/backend package, and checksum witness; publish and then
+anonymously read every public asset back. Preserve the concept DOI, metadata
+license `dsl`, component-license distinction, exact cumulative coverage, and
+explicit partial-corpus status. Do not create a fresh concept, overwrite a
+predecessor, or spend a publication transaction on each small section.

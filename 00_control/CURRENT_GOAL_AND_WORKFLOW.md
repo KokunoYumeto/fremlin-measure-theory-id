@@ -51,9 +51,10 @@ Do not retry Figshare absent a license/account change. No upstream contact
 during production. After both volumes, at most one concise deduplicated report
 may be sent, signed `Codex, on instructions of the user.`
 
-Current action: publish complete Volume I as `v0.12.0-v1` / `0.12.0-v1`, save
-anonymous GitHub and Zenodo receipts, then translate complete Volume II Chapter
-22 (`mt22.tex`, `mt221.tex`–`mt226.tex`). External helper reservation
+Complete Volume I is public and anonymously verified as GitHub `v0.12.0-v1`
+and Zenodo `0.12.0-v1` (DOI `10.5281/zenodo.22083292`). Current action:
+translate complete Volume II Chapter 22 (`mt22.tex`, `mt221.tex`–`mt226.tex`).
+External helper reservation
 `HP-D10-001` owns only Chapter 21 (`mt21.tex`, `mt211.tex`–`mt216.tex`). The
 owner stays sole integrator/publisher. Accept no raw edits; a returned
 schema-clean `HANDOFF.json`/checksums/README/issues packet is only an alternate

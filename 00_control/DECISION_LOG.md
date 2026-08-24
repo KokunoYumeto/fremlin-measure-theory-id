@@ -404,3 +404,36 @@ required. The owner therefore continues without overlap at complete Chapter
 22 (`mt22.tex`, `mt221.tex`–`mt226.tex`). If the packet never becomes
 admissible, Chapter 21 returns to owner production after the disjoint block;
 no human/helper wait is a release gate.
+
+## 2026-08-24 — D025: Preserve complete Volume I on GitHub and Zenodo
+
+The admitted complete-Volume-I boundary is public on GitHub as prerelease
+`v0.12.0-v1` at
+`https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.12.0-v1`.
+The frozen boundary commit is
+`fb9630136c530ef122bc728fbe5e196fdfc881ac`, tree
+`044d001846c2c747843cb885c22ee526de29ed0b`; the sanitized receipt commit is
+`1da0c142995d7d4213959535f9a2c4122a85aa47`. The tag, selected raw files, and
+all three release assets passed anonymous readback. Evidence:
+`qa/PUBLICATION_RECEIPT_V0120_V1.json`, 2,272 bytes, SHA-256
+`f23f6e68cc6db631cfb6df1eaf12d5b6ff91b4493f29e4b053f9b61ae58b950a`.
+
+The identical boundary is also public as exactly one new version of the
+existing Zenodo concept: record `22083292`, DOI
+`10.5281/zenodo.22083292`, concept DOI `10.5281/zenodo.22059798`, version
+`0.12.0-v1`. The public metadata retains license `dsl`, explicit 102/672
+partial-corpus status, source and model credits, and the MathJax component
+boundary. The predecessor record `22071390` and its assets were reverified;
+no standalone concept or duplicate record was created. Evidence:
+`qa/ZENODO_PUBLICATION_RECEIPT_V0120_V1.json`, 2,333 bytes, SHA-256
+`c24d13a4f9769b9f9d554a69e2a160b26a121a91dc10c51811de634b4a37aa63`.
+
+At both destinations the exact public assets are: reader-first PDF 807,217
+bytes / SHA-256
+`340af91eb1a31cbfaba20f578209b6e3dd0eacd7ea05f6e23183be9e9fee486f`;
+resumable ZIP 13,013,174 bytes /
+`7f3fecc5148c354504cd1632ebbb8bd800f9f72e5829120f76b45c614aadd336`;
+checksum witness 210 bytes /
+`3672208fe20e39c8a6b2a051dc7dadec2a085f5317e11eb8be0410b4c081c8cf`.
+No upstream contact occurred. The next owner cursor is Volume II Chapter 22;
+the complete 672-page goal remains active.

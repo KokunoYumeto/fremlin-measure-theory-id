@@ -7,17 +7,17 @@ Updated: 2026-08-24 (Europe/Berlin)
 | Field | Value |
 |---|---|
 | Corpus | `O007-FREMLIN-MT-V1-V2` |
-| Volume | `O007-FREMLIN-V1` — *The Irreducible Minimum* |
-| Boundary | Complete Volume I admitted; GitHub/Zenodo preservation transaction in progress |
-| Unit | `CP0012_VOLUME1_ADMISSION.md` — all 27 Volume I units |
-| Source anchor | end of the complete Volume I driver; next disjoint owner block is Volume II Chapter 22 |
-| Authority member | `authority/fremlin/source/mt1.2011/mti.tex` |
-| Authority receipt | 473,311 bytes; SHA-256 `f331588e3b9fd97a04754a15bd667b6ec62c73e21946efa8ed7a39083b140070` |
-| Target | `source/id-ID/mti.tex` |
-| Target receipt | 36,790 bytes; SHA-256 `3ef6caa5a23f5d279bec80cae8742385a19c242b54fc3b93f6b4944359724ad0` |
-| Backend translation map | `backend/index/mti-volume1-translations-id.jsonl`; 1,155,992 bytes; SHA-256 `0dab35df4b544ef93df2d06a0ea4d0e6e5abbe4182400cc00df2ab0f26856f3a` |
-| Production status | `volume1_complete_admitted_publication_in_progress` |
-| Target admitted | complete Volume I `true`; complete two-volume corpus `false` |
+| Volume | `O007-FREMLIN-V2` — *Broad Foundations* |
+| Boundary | Complete Volume I public; disjoint Volume II Chapter 22 owner batch active |
+| Unit | `O007-FREMLIN-V2-CH22-INTRO` / `mt22.tex` |
+| Source anchor | start of Chapter 22, *The Fundamental Theorem of Calculus* |
+| Authority member | `authority/fremlin/source/mt2.2016/mt22.tex` |
+| Authority receipt | 2,902 bytes; SHA-256 `1406376c53ac5dd2def9f7f676b09ff79af61a46cfba0cd0d2b50b3b84993a1d` |
+| Target | `source/id-ID/mt22.tex` (not yet admitted) |
+| Target receipt | pending source-aware owner integration |
+| Backend translation map | pending Chapter 22 consolidated boundary |
+| Production status | `volume1_public_verified_volume2_chapter22_translation_active` |
+| Target admitted | complete Volume I `true`; Chapter 22 `false`; complete corpus `false` |
 
 Complete Volume I is translated, backend-indexed, reproducibly built, and
 admitted. The final index covers all 731 units once in source order. The backend
@@ -29,12 +29,17 @@ link/fragment closure, and independent artifact replay pass. Admission evidence
 is `00_control/CP0012_VOLUME1_ADMISSION.md`; exact package identity is in
 `qa/volume1-release-package.json`.
 
-The next executable action is to publish this 102/672-page checkpoint as
-GitHub `v0.12.0-v1` and Zenodo `0.12.0-v1`, anonymously read back all public
-bytes, then begin the disjoint owner block `mt22.tex`, `mt221.tex`–`mt226.tex`.
-Helper packet `HP-D10-001` reserves only Chapter 21 (`mt21.tex`,
-`mt211.tex`–`mt216.tex`) and may enter the owner lane only through a schema-clean
-packet and three-way stable-ID integration. The 672-page goal remains active.
+The 102/672-page checkpoint is public as GitHub `v0.12.0-v1` and Zenodo DOI
+`10.5281/zenodo.22083292`; every PDF/ZIP/checksum asset was anonymously read
+back at its exact local byte/hash identity. Evidence is
+`qa/PUBLICATION_RECEIPT_V0120_V1.json` and
+`qa/ZENODO_PUBLICATION_RECEIPT_V0120_V1.json`.
+
+The next executable action is complete source-aware translation of the
+disjoint owner block `mt22.tex`, `mt221.tex`–`mt226.tex`, followed by its
+consolidated backend/reader boundary. Helper packet `HP-D10-001` reserves only
+Chapter 21 and may enter only through a schema-clean packet and owner-side
+three-way stable-ID integration. The 672-page goal remains active.
 
 The earlier cursor labels `The indefinite integral` / `Upper integrals` were
 rejected on direct authority replay. Frozen `mt13.tex` and `mt131.tex` identify
