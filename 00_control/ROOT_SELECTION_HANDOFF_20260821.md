@@ -11,7 +11,7 @@ task.
 - Existing title/role: `Bahasa Indonesia — Measure & Integration (O007)`.
 - Coordinator: `01a01ec1-e685-70d0-b022-211396334723`; it selects and freezes
   the corpus but does not become the book lane.
-- Floris explicitly directed the coordinator to use the existing Indonesian
+- [USER] explicitly directed the coordinator to use the existing Indonesian
   tasks and stop creating new tasks. No replacement O007 task is authorized.
 - The O007 lane's reconstruction-only pause was correct when written: none of
   Cabral, Random Foundations, or Erdman had been selected. This record supplies
@@ -57,7 +57,7 @@ Official archives:
 - `https://www1.essex.ac.uk/maths/people/fremlin/mt2.2016/mt2.2016.tar.gz`.
 
 Frozen local authority:
-`C:/Users/Floris/Documents/interlanguage/04_mirrors/id/measure-integration-id/authority/fremlin`.
+`[USER_HOME]/Documents/interlanguage/04_mirrors/id/measure-integration-id/authority/fremlin`.
 
 | Component | Bytes | SHA-256 | Expanded closure |
 |---|---:|---|---|
@@ -236,19 +236,19 @@ The task must retain:
   assets, code/data, typed QA/build events, and artifact hashes;
 - deterministic schema-versioned JSON/CSV exports and round-trip checks.
 
-The exact Floris-authored canonical instructions are:
+The exact [USER]-authored canonical instructions are:
 
-- `C:/Users/Floris/Documents/Obsidian notes/Untitled 1693.md`;
+- `[USER_HOME]/Documents/Obsidian notes/Untitled 1693.md`;
 - 10,476 bytes;
 - SHA-256
   `cf913e8cb4d487f4c6958c079b372ccbb2fb5929dd483068441e80cefd6794f2`.
 
 They must be read in full, retained verbatim in the lane, and treated as
-Floris's instructions rather than coordinator paraphrase. Translation is the
+[USER]'s instructions rather than coordinator paraphrase. Translation is the
 dominant activity; freeze/build/QA work supports production and must not become
 another loop.
 
-Floris has already authorized bounded corpus-local commits and pushes at
+[USER] has already authorized bounded corpus-local commits and pushes at
 substantial verified boundaries; do not ask again. Keep Git operations narrow.
 Maintain the corpus's own mirror/repository and public receipts. Never start a
 chatbot exchange with Fremlin or another author. Only after the complete

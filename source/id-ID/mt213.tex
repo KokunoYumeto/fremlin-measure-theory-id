@@ -1,0 +1,1311 @@
+\frfilename{mt213.tex}
+\versiondate{13.9.13}
+
+\copyrightdate{2000}
+\def\chaptername{Taksonomi ruang ukur}
+\def\sectionname{Ruang semihingga, ditentukan secara lokal, dan dapat dilokalkan}
+
+\newsection{213}
+
+Pada bagian ini saya menghimpun berbagai fakta berguna tentang jenis-jenis
+ruang ukur tersebut.   Saya mulai dengan sifat-sifat khas ruang semihingga
+(213A-213B), lalu beralih ke ruang lengkap yang ditentukan secara lokal
+(213C) dan konsep `versi c.l.d.' (213D-213H),
+%213D 213E 213F 213G 213H
+yakni metode paling ampuh di antara metode yang selalu tersedia untuk
+memodifikasi suatu ruang ukur agar sifat-sifatnya lebih baik.   Saya kemudian
+membahas secara singkat `himpunan terabaikan yang ditentukan secara lokal'
+(213I-213L),
+%213I 213J 213K 213L
+dan selubung terukur (213L-213M), lalu menutup bagian ini dengan hasil-hasil
+tentang ruang yang dapat dilokalkan (213N) dan ruang yang dapat dilokalkan
+secara ketat (213O).
+
+\leader{213A}{Lema} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur semihingga.
+Maka
+
+\Centerline{$\mu E
+=\sup\{\mu F:F\in\Sigma,\,F\subseteq E,\,\mu F<\infty\}$}
+
+\noindent untuk setiap $E\in\Sigma$.
+
+\proof{ Tetapkan
+$c=\sup\{\mu F:F\in\Sigma,\,F\subseteq E,\,\mu F<\infty\}$.   Jelas
+$c\le\mu E$, sehingga jika
+$c=\infty$ tidak ada lagi yang perlu dibuktikan.   Jika $c<\infty$, ambil
+barisan $\sequencen{F_n}$ yang terdiri atas subhimpunan terukur dari $E$
+dengan ukuran berhingga, sedemikian sehingga
+$\lim_{n\to\infty}\mu F_n=c$;  tetapkan $F=\bigcup_{n\in\Bbb N}F_n$.
+Untuk setiap $n\in\Bbb N$, $\bigcup_{k\le n}F_k$ merupakan himpunan terukur
+berukuran berhingga yang termuat dalam $E$, sehingga
+$\mu(\bigcup_{k\le n}F_k)\le c$,
+dan
+
+\Centerline{$\mu F=\lim_{n\to\infty}\mu(\bigcup_{k\le n}F_k)\le c$.}
+
+\noindent Di pihak lain,
+
+
+\Centerline{$\mu F\ge\sup_{n\in\Bbb N}\mu F_n\ge c$,}
+
+\noindent jadi $\mu F=c$.
+
+Jika $F'$ merupakan subhimpunan terukur dari $E\setminus F$ dan
+$\mu F'<\infty$, maka $F\cup F'$ berukuran berhingga dan termuat dalam $E$,
+sehingga ukurannya paling besar $c=\mu F$;  akibatnya $\mu F'=0$.   Ini
+berarti bahwa $\mu(E\setminus F)$ tidak mungkin tak berhingga, sebab jika
+demikian, kesemihinggaan $(X,\Sigma,\mu)$ mengharuskan adanya suatu himpunan
+terukur dengan ukuran berhingga tak nol di dalamnya.   Jadi
+$E\setminus F$ berukuran berhingga, dan dengan demikian sebenarnya
+terabaikan;  maka $\mu E=c$, sebagaimana dinyatakan.
+}%end of proof of 213A
+
+\vleader{72pt}{213B}{Proposisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur
+semihingga.   Misalkan $f$ suatu fungsi terukur secara virtual terhadap $\mu$,
+bernilai $[0,\infty]$, dan terdefinisi hampir di mana-mana pada $X$.   Maka
+
+$$\eqalign{\int f
+&=\sup\{\int g:g\text{ adalah fungsi sederhana},\,g\leae f\}\cr
+&=\sup_{F\in\Sigma,\mu F<\infty}\int_Ff}$$
+
+\noindent di $[0,\infty]$.
+
+\proof{{\bf (a)} Pada sebarang ruang ukur $(X,\Sigma,\mu)$, suatu fungsi
+bernilai $[0,\infty]$ yang terdefinisi pada subhimpunan $X$ dapat
+diintegralkan jika dan hanya jika terdapat himpunan koterabaikan $E$ sehingga
+
+\inset{($\alpha$) $E\subseteq\dom f$ dan $f\restr E$ adalah terukur,}
+
+\inset{($\beta$)
+$\sup\{\int g:g$ adalah fungsi sederhana, $g\leae f\}$ berhingga,}
+
+\inset{($\gamma$) untuk setiap $\epsilon>0$,
+$\{x:x\in E,\,f(x)\ge\epsilon\}$ berukuran berhingga,}
+
+\inset{($\delta$) $f$ bernilai berhingga hampir di mana-mana}
+
+\noindent (lihat 122Ja, 133B).   Namun, jika $\mu$ semihingga, ($\gamma$)
+dan ($\delta$) mengikuti dari syarat-syarat lainnya.   \Prf\ Ambil
+$\epsilon>0$. Tetapkan
+
+\Centerline{$E_{\epsilon}=\{x:x\in E,\,f(x)\ge\epsilon\}$,}
+
+\Centerline{$c
+=\sup\{\int g:g$ adalah fungsi sederhana, $g\leae f\}$;}
+
+\noindent menurut asumsi, $c$ berhingga.   Jika
+$F\subseteq E_{\epsilon}$ adalah terukur dan $\mu F<\infty$, maka
+$\epsilon\chi F$ adalah
+fungsi sederhana dan $\epsilon\chi F\leae f$, jadi
+
+\Centerline{$\epsilon\mu F=\int\epsilon\chi F\le c$,
+\quad$\mu F\le\Bover{c}{\epsilon}$.}
+
+\noindent Karena $F$ sebarang, 213A menunjukkan bahwa
+$\mu E_{\epsilon}\le\bover{c}{\epsilon}$ berhingga.   Karena $\epsilon$
+sebarang, ($\gamma$) terpenuhi.
+
+Untuk ($\delta$), jika $F=\{x:x\in E,\,f(x)=\infty\}$, maka $\mu F$
+berhingga (oleh ($\gamma$)) dan $n\chi F\leae f$, sehingga $n\mu F\le c$
+untuk setiap $n\in\Bbb N$;  jadi $\mu F=0$.\ \Qed
+
+\medskip
+
+{\bf (b)} Sekarang misalkan $f:D\to[0,\infty]$ terukur secara virtual
+terhadap $\mu$, dengan $D\subseteq X$ koterabaikan, sehingga
+$\int f$ terdefinisi dalam $[0,\infty]$ (135F).   Menurut (a),
+
+\leaveitout{$$\eqalignno{\int f
+&=\sup_{g\text{ sederhana},g\le f\text{ hampir di mana-mana}}\int g\cr
+\displaycause{jika salah satunya berhingga, dan dengan demikian juga jika
+salah satunya tak berhingga}
+&=\sup_{g\text{ sederhana},g\le f\text{ hampir di mana-mana},\mu F<\infty}\int_Fg
+\le\sup_{\mu F<\infty}\int_Ff
+\le\int f,\cr}$$}
+
+$$\eqalignno{\int f
+&=\sup_{\Atop{g\text{ sederhana}}{g\le f\text{ hampir di mana-mana}}}\int g\cr
+\displaycause{jika salah satunya berhingga, dan dengan demikian juga jika
+salah satunya tak berhingga}
+&=\sup_{\Atop{g\text{ sederhana}}{\Atop{g\le f\text{ hampir di mana-mana}}
+{\mu F<\infty}}}\int_Fg
+\le\sup_{\mu F<\infty}\int_Ff
+\le\int f,\cr}$$
+
+\noindent sehingga kita memperoleh kesamaan yang dicari.
+}%end of proof of 213B
+
+\leader{*213C}{Proposisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur
+lengkap yang ditentukan secara lokal, dan misalkan $\mu^*$ ukuran luar yang
+diturunkan dari $\mu$\cmmnt{ (132A-132B)}.   Maka ukuran yang diperoleh dari
+$\mu^*$ dengan metode \Caratheodory adalah $\mu$ sendiri.
+
+\proof{ Nyatakan $\check\mu$ sebagai ukuran yang diperoleh dengan metode
+\Caratheodory dari $\mu^*$, dan domainnya sebagai $\check\Sigma$.
+
+\medskip
+
+{\bf (a)} Jika $E\in\Sigma$ dan $A\subseteq X$ maka
+$\mu^*(A\cap E)+\mu^*(A\setminus E)=\mu^*A$ (132Af), jadi
+$E\in\check\Sigma$.   Sekarang
+$\check\mu E=\mu^*E=\mu E$ (132Ac).   Jadi $\Sigma\subseteq\check\Sigma$
+dan $\mu=\check\mu\restr\Sigma$.
+
+\medskip
+
+{\bf (b)} Sekarang misalkan $H\in\check\Sigma$.   Ambil $E\in\Sigma$
+dengan $\mu E<\infty$.   Maka $H\cap E\in\Sigma$.   \Prf\ Misalkan $E_1$,
+$E_2\in\Sigma$ berturut-turut merupakan selubung terukur bagi $E\cap H$
+dan $E\setminus H$, keduanya termuat dalam $E$ (132Ee).   Karena
+$H\in\check\Sigma$,
+
+\Centerline{$\mu E_1+\mu E_2=\mu^*(E\cap H)+\mu^*(E\setminus H)
+=\mu^*E=\mu E$.}
+
+\noindent Karena $E_1\cup E_2=E$,
+
+\Centerline{$\mu(E_1\cap E_2)=\mu E_1+\mu E_2-\mu E=0$.}
+
+\noindent Sekarang $E_1\setminus(E\cap H)\subseteq E_1\cap E_2$;  karena
+$\mu$ lengkap, $E_1\setminus(E\cap H)$ dan $E\cap H$ termasuk dalam
+$\Sigma$.\ \Qed
+
+Karena $E$ sebarang dan $\mu$ ditentukan secara lokal, $H\in\Sigma$.
+Karena $H$ sebarang, $\check\Sigma=\Sigma$ dan $\check\mu=\mu$.
+}%end of proof of 213C
+
+\leader{213D}{Versi c.l.d.: Proposisi} Misalkan $(X,\Sigma,\mu)$ suatu
+ruang ukur.    Nyatakan $(X,\hat\Sigma,\hat\mu)$ sebagai
+kelengkapannya\cmmnt{ (212C)} dan nyatakan $\Sigma^f$ sebagai
+$\{E:E\in\Sigma,\,\mu E<\infty\}$.   Tetapkan
+
+\Centerline{$\tilde\Sigma=\{H:H\subseteq X,\,H\cap E\in\hat\Sigma$ untuk
+setiap $E\in\Sigma^f\}$,}
+
+\noindent dan, untuk $H\in\tilde\Sigma$, tetapkan
+
+\Centerline{$\tilde\mu H=\sup\{\hat\mu(H\cap E):E\in\Sigma^f\}$.}
+
+\noindent Maka $(X,\tilde\Sigma,\tilde\mu)$ merupakan ruang ukur lengkap
+yang ditentukan secara lokal.
+
+\proof{{\bf (a)} Pertama-tama kita periksa bahwa $\tilde\Sigma$ merupakan
+aljabar-sigma.   \Prf\ {(i)} $\emptyset\cap E=\emptyset\in\hat\Sigma$
+untuk setiap $E\in\Sigma^f$, jadi $\emptyset\in\tilde\Sigma$.   {(ii)} Jika
+$H\in\tilde\Sigma$, maka
+
+\Centerline{$(X\setminus H)\cap E
+=E\setminus(E\cap H)\in\hat\Sigma$}
+
+\noindent untuk setiap $E\in\Sigma^f$, jadi $X\setminus H\in\tilde\Sigma$.
+{(iii)} Jika $\sequencen{H_n}$ merupakan barisan dalam $\tilde\Sigma$
+dengan gabungan $H$, maka
+
+\Centerline{$H\cap E=\bigcup_{n\in\Bbb N}H_n\cap E\in\hat\Sigma$}
+
+\noindent untuk setiap
+$E\in\Sigma^f$, jadi $H\in\tilde\Sigma$.\ \Qed
+
+\medskip
+
+{\bf (b)} Jelas bahwa $\tilde\mu \emptyset=0$.   Jika
+$\sequencen{H_n}$ merupakan barisan saling lepas dalam $\tilde\Sigma$
+dengan gabungan $H$, maka
+
+$$\eqalign{\tilde\mu H
+&=\sup\{\hat\mu(H\cap E):E\in\Sigma^f\}\cr
+&=\sup\{\sum_{n=0}^{\infty}\hat\mu(H_n\cap E):E\in\Sigma^f\}
+\le\sum_{n=0}^{\infty}\tilde\mu H_n.\cr}$$
+
+\noindent Sebaliknya, diberikan $a<\sum_{n=0}^{\infty}\tilde\mu H_n$,
+terdapat $m\in\Bbb N$ sehingga $a<\sum_{n=0}^m\tilde\mu H_n$;  selanjutnya
+dapat dipilih $E_0,\ldots,E_m\in\Sigma^f$ sedemikian sehingga
+$a\le\sum_{n=0}^m\hat\mu(H_n\cap E_n)$.   Tetapkan $E=\bigcup_{n\le
+m}E_n\in\Sigma^f$;  maka
+
+\Centerline{$\tilde\mu H\ge\hat\mu(H\cap E)
+=\sum_{n=0}^{\infty}\hat\mu(H_n\cap E)
+\ge\sum_{n=0}^m\hat\mu(H_n\cap E_n)
+\ge a$.}
+
+\noindent Karena $a$ sebarang, $\tilde\mu
+H\ge\sum_{n=0}^{\infty}\tilde\mu H_n$ dan $\tilde\mu
+H=\sum_{n=0}^{\infty}\tilde\mu H_n$.
+
+\medskip
+
+{\bf (c)} Dengan demikian $(X,\tilde\Sigma,\tilde\mu)$ merupakan ruang
+ukur.   Untuk membuktikan bahwa ruang ini semihingga, pertama perhatikan bahwa
+$\hat\Sigma\subseteq\tilde\Sigma$ (karena jika $H\in\hat\Sigma$ maka
+pasti $H\cap E\in\hat\Sigma$ untuk setiap $E\in\Sigma^f$), dan bahwa
+$\tilde\mu H=\hat\mu H$ setiap kali $\hat\mu H<\infty$ (sebab menurut
+definisi dalam 212Ca terdapat $E\in\Sigma^f$ sehingga
+$H\subseteq E$, sehingga
+$\tilde\mu H=\hat\mu(H\cap E)=\hat\mu H$).   Sekarang misalkan
+$H\in\tilde\Sigma$ dan $\tilde\mu H=\infty$.   Tentu terdapat
+$E\in\Sigma^f$ sehingga $\hat\mu(H\cap E)>0$;  maka $0<\hat\mu(H\cap
+E)<\infty$, jadi $0<\tilde\mu(H\cap E)<\infty$.
+
+\medskip
+
+{\bf (d)} Jadi $(X,\tilde\Sigma,\tilde\mu)$ merupakan ruang ukur semihingga.
+Untuk membuktikan bahwa ruang ini ditentukan secara lokal, misalkan
+$H\subseteq X$ sedemikian sehingga
+$H\cap G\in\tilde\Sigma$ setiap kali $G\in\tilde\Sigma$ dan
+$\tilde\mu G<\infty$.   Secara khusus, harus berlaku
+$H\cap E\in\tilde\Sigma$
+untuk setiap $E\in\Sigma^f$.   Namun, ini justru berarti bahwa
+$H\cap E\in\hat\Sigma$ untuk setiap $E\in\Sigma^f$, sehingga
+$H\in\tilde\Sigma$.
+Karena $H$ sebarang, $(X,\tilde\Sigma,\tilde\mu)$ ditentukan secara lokal.
+
+\medskip
+
+{\bf (e)} Untuk membuktikan bahwa $(X,\tilde\Sigma,\tilde\mu)$ lengkap,
+misalkan $A\subseteq H\in\tilde\Sigma$ dan $\tilde\mu H=0$.
+Untuk setiap $E\in\Sigma^f$ berlaku $\hat\mu(H\cap E)=0$.
+Karena $(X,\hat\Sigma,\hat\mu)$ lengkap dan
+$A\cap E\subseteq H\cap E$, maka $A\cap E\in\hat\Sigma$.   Karena $E$
+sebarang, $A\in\tilde\Sigma$.
+}%end of proof of 213D
+
+\leader{213E}{Definisi} Untuk sebarang ruang ukur $(X,\Sigma,\mu)$,
+$(X,\tilde\Sigma,\tilde\mu)$ yang dikonstruksi dalam 213D akan disebut
+{\bf versi c.l.d.\ } (`versi lengkap yang ditentukan secara lokal') dari
+$(X,\Sigma,\mu)$;  dan $\tilde\mu$ disebut {\bf versi c.l.d.\ } dari $\mu$.
+
+\leader{213F}{}\cmmnt{ Dengan mengikuti pola yang sama seperti dalam
+212E-212G, %212E 212F 212G
+saya mulai dengan beberapa catatan elementer yang memudahkan penggunaan
+konstruksi ini.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur dan
+$(X,\tilde\Sigma,\tilde\mu)$ versi c.l.d.\ yang bersesuaian.
+
+(a) $\Sigma\subseteq\tilde\Sigma$ dan $\tilde\mu E=\mu E$ setiap kali
+$E\in\Sigma$ dan $\mu E<\infty$ -- sebenarnya, jika $(X,\hat\Sigma,\hat\mu)$
+adalah kelengkapan $(X,\Sigma,\mu)$, $\hat\Sigma\subseteq\tilde\Sigma$
+dan $\tilde\mu E=\hat\mu E$ setiap kali $\hat\mu E<\infty$.
+
+(b) Jika $\tilde\mu^*$ dan $\mu^*$ berturut-turut menyatakan ukuran luar
+yang ditentukan oleh $\tilde\mu$ dan $\mu$, maka
+$\tilde\mu^*A\le\mu^*A$ untuk setiap $A\subseteq X$, dengan kesamaan jika
+$\mu^*A$ berhingga.   Secara khusus, setiap himpunan yang terabaikan terhadap
+$\mu$ juga terabaikan terhadap $\tilde\mu$;  akibatnya, setiap himpunan yang
+koterabaikan terhadap $\mu$ juga koterabaikan terhadap $\tilde\mu$.
+
+(c) Jika $H\in\tilde\Sigma$,
+
+\quad (i) $\tilde\mu H=\sup\{\mu F:F\in\Sigma$, $\mu F<\infty$,
+$F\subseteq H\}$;
+
+\quad (ii) terdapat $E\in\Sigma$ sehingga
+$E\subseteq H$ dan $\mu E=\tilde\mu H$, sehingga
+jika $\tilde\mu H<\infty$ maka $\tilde\mu(H\setminus E)=0$.
+
+\proof{{\bf (a)} Pernyataan ini sudah tercakup dalam catatan pada bukti
+213D.
+
+\medskip
+
+{\bf (b)} Jika $\mu^*A=\infty$ maka pasti $\tilde\mu^*A\le\mu^*A$.   Jika
+$\mu^*A<\infty$, ambil $E\in\Sigma$ sedemikian rupa sehingga $A\subseteq E$ dan
+$\mu E=\mu^*A$ (132Aa).   Kemudian
+
+\Centerline{$\tilde\mu^*A\le\tilde\mu E=\mu E=\mu^*A$.}
+
+\noindent Sebaliknya, jika $A\subseteq H\in\tilde\Sigma$, maka
+
+\Centerline{$\tilde\mu H\ge\hat\mu(H\cap E)\ge\hat\mu^*A=\mu^*A$,}
+
+\noindent dengan menggunakan 212Ea.   Jadi $\mu^*A\le\tilde\mu^*A$ dan
+$\mu^*A=\tilde\mu^*A$.
+
+\medskip
+
+{\bf (c)} Nyatakan $\Sigma^f$ sebagai $\{E:E\in\Sigma,\,\mu E<\infty\}$;
+maka menurut definisi dalam 213D,
+$\tilde\mu H=\sup\{\hat\mu(H\cap E):E\in\Sigma^f\}$.   Ambil barisan
+$\sequencen{E_n}$ dalam $\Sigma^f$ sedemikian sehingga
+$\tilde\mu H=\sup_{n\in\Bbb N}\hat\mu(H\cap E_n)$.   Untuk setiap
+$n\in\Bbb N$ ada $F_n\in\Sigma$ sehingga
+$F_n\subseteq H\cap E_n$ dan
+$\mu F_n=\hat\mu(H\cap E_n)$ (212C).   Tetapkan $E=\bigcup_{n\in\Bbb N}F_n$.
+Maka $E\in\Sigma$, $E\subseteq H$ dan
+
+\Centerline{$\tilde\mu H
+=\sup_{n\in\Bbb N}\mu F_n
+\le\lim_{n\to\infty}\mu(\bigcup_{i\le n}F_i)
+=\mu E
+=\lim_{n\to\infty}\tilde\mu(\bigcup_{i\le n}F_i)
+\le\tilde\mu H,$}
+
+\noindent jadi $\mu E=\tilde\mu H$, dan jika $\tilde\mu H<\infty$ maka
+$\tilde\mu(H\setminus E)=0$.    Pada saat yang sama,
+
+$$\eqalignno{\tilde\mu H
+&=\sup_{n\in\Bbb N}\mu F_n
+\le\sup_{F\in\Sigma^f,F\subseteq H}\mu F
+=\sup_{F\in\Sigma^f,F\subseteq H}\tilde\mu F\cr
+\displaycause{sekali lagi menurut (a)}
+&\le\tilde\mu H,\cr}$$
+
+\noindent sehingga di sini pun berlaku kesamaan.
+}%end of proof of 213F
+
+\leader{213G}{}\cmmnt{ Langkah berikutnya ialah menelaah fungsi-fungsi yang
+terukur atau terintegralkan terhadap $\tilde\mu$.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur dan
+$(X,\tilde\Sigma,\tilde\mu)$ versi c.l.d.\ yang bersesuaian.
+
+(a) Jika fungsi bernilai riil $f$ yang terdefinisi pada suatu subhimpunan
+$X$ terukur secara virtual terhadap $\mu$, maka fungsi tersebut terukur terhadap
+$\tilde\Sigma$.
+%should we have $[-\infty,\infty]$-valued here?
+
+(b) Jika suatu fungsi bernilai riil dapat diintegralkan terhadap $\mu$, maka ia
+$\tilde\mu$-terintegralkan dengan integral yang sama.
+
+(c) Jika $f$ merupakan fungsi bernilai riil yang dapat diintegralkan terhadap
+$\tilde\mu$, maka terdapat fungsi bernilai riil yang dapat diintegralkan
+terhadap $\mu$ dan sama dengan
+$f\,\,\tilde\mu$-hampir di mana-mana.
+
+\proof{ Nyatakan $\Sigma^f$ sebagai $\{E:E\in\Sigma,\,\mu E<\infty\}$.
+Menurut 213Fa, $\tilde\mu$ dan $\mu$ berimpit pada $\Sigma^f$.
+
+\medskip
+
+{\bf (a)} Menurut 212Fa, $f$ terukur terhadap $\hat\Sigma$, dengan
+$\hat\Sigma$ domain kelengkapan $\mu$;  karena
+$\hat\Sigma\subseteq\tilde\Sigma$, $f$ adalah $\tilde\Sigma$-terukur.
+
+\medskip
+
+{\bf (b)(i)} Jika $f$ fungsi sederhana terhadap $\mu$, maka fungsi itu juga
+fungsi sederhana terhadap $\tilde\mu$,
+dan $\int fd\mu=\int fd\tilde\mu$, karena $\tilde\mu E=\mu E$ untuk setiap
+$E\in\Sigma^f$.
+
+\medskip
+
+\quad{\bf (ii)} Jika $f$ nonnegatif dan dapat diintegralkan terhadap $\mu$,
+terdapat barisan tak menurun $\sequencen{f_n}$ dari fungsi sederhana terhadap
+$\mu$ yang konvergen ke $f\,\,\mu$-hampir di mana-mana;  menurut
+213Fb, setiap himpunan yang terabaikan terhadap $\mu$ juga terabaikan terhadap
+$\tilde\mu$, sehingga $\sequencen{f_n}$ konvergen ke
+$f\,\,\tilde\mu$-hampir di mana-mana.   Berdasarkan teorema B.Levi (123A), $f$ dapat
+diintegralkan terhadap $\tilde\mu$, dengan
+
+\Centerline{$\int fd\tilde\mu=\lim_{n\to\infty}\int f_nd\tilde\mu
+=\lim_{n\to\infty}\int f_nd\mu=\int fd\mu$.}
+
+\medskip
+
+\quad{\bf (iii)} Secara umum, jika $\int fd\mu$ didefinisikan dalam
+$\Bbb R$, kita punya
+
+\Centerline{$\int fd\tilde\mu
+=\int f^+d\tilde\mu-\int f^-d\tilde\mu
+=\int f^+d\mu-\int f^-d\mu=\int fd\mu$,}
+
+\noindent dengan $f^+$ menyatakan $f\vee 0$ dan $f^-$ menyatakan
+$(-f)\vee 0$.
+
+\medskip
+
+{\bf (c)(i)} Misalkan $f$ fungsi sederhana terhadap $\tilde\mu$.   Nyatakan
+fungsi ini sebagai
+$\sum_{i=0}^na_i\chi H_i$ dengan $\tilde\mu H_i<\infty$ untuk setiap $i$.
+Pilih $E_0,\ldots,E_n\in\Sigma$ sehingga $E_i\subseteq H_i$ dan
+$\tilde\mu(H_i\setminus E_i)=0$ untuk setiap $i$ (menggunakan 213Fc di atas).
+Maka $g=\sum_{i=0}^na_i\chi E_i$ merupakan fungsi sederhana terhadap $\mu$,
+$g=f\,\,\tilde\mu$-hampir di mana-mana, dan
+$\int g\,d\mu=\int fd\tilde\mu$.
+
+\medskip
+
+\quad{\bf (ii)} Misalkan $f$ fungsi nonnegatif yang dapat diintegralkan
+terhadap $\tilde\mu$.   Ambil barisan tak menurun $\sequencen{f_n}$ dari
+fungsi-fungsi sederhana terhadap $\tilde\mu$ yang konvergen
+$\tilde\mu$-hampir di mana-mana ke $f$.   Untuk setiap $n$, pilih fungsi
+sederhana terhadap $\mu$, katakanlah $g_n$, yang sama $\tilde\mu$-hampir di mana-mana
+dengan $f_n$.   Maka $\{x:g_{n+1}(x)<g_n(x)\}$ termasuk dalam $\Sigma^f$ dan
+terabaikan terhadap $\tilde\mu$, sehingga juga terabaikan terhadap $\mu$.
+Jadi $\sequencen{g_n}$ tak menurun hampir di mana-mana terhadap $\mu$.   Karena
+
+\Centerline{$\lim_{n\to\infty}\int g_nd\mu
+=\lim_{n\to\infty}\int f_nd\tilde\mu=\int fd\tilde\mu$,}
+
+\noindent teorema B.Levi menunjukkan bahwa $\sequencen{g_n}$ konvergen
+$\mu$-hampir di mana-mana ke suatu fungsi yang dapat diintegralkan terhadap
+$\mu$, katakanlah $g$;  karena setiap himpunan yang terabaikan terhadap $\mu$ juga
+terabaikan terhadap $\tilde\mu$,
+
+$$\eqalign{(X\setminus\dom f)
+&\cup(X\setminus\dom g)\cr
+&\cup\bigcup_{n\in\Bbb N}\{x:f_n(x)\ne g_n(x)\}\cr
+&\cup\{x:x\in\dom
+f,\,f(x)\ne\sup_{n\in\Bbb N}f_n(x)\}\cr
+&\cup\{x:x\in\dom
+g,\,g(x)\ne\sup_{n\in\Bbb N}g_n(x)\}\cr}$$
+
+\noindent terabaikan terhadap $\tilde\mu$, dan
+$f=g\,\,\tilde\mu$-hampir di mana-mana.
+
+\medskip
+
+\quad{\bf (iii)} Jika $f$ dapat diintegralkan terhadap $\tilde\mu$, nyatakan
+fungsi ini sebagai $f_1-f_2$, dengan $f_1$ dan $f_2$ nonnegatif serta dapat
+diintegralkan terhadap $\tilde\mu$.   Terdapat fungsi yang dapat diintegralkan
+terhadap $\mu$, yaitu $g_1$, $g_2$, sedemikian sehingga $f_1=g_1$ dan
+$f_2=g_2\,\,\tilde\mu$-hampir di mana-mana;  jadi $g=g_1-g_2$ dapat
+diintegralkan terhadap $\mu$ dan sama dengan $f\,\,\tilde\mu$-hampir di
+mana-mana.
+}%end of proof of 213G
+
+\leader{213H}{}\cmmnt{ Ketiga, saya beralih ke pengaruh konstruksi ini
+terhadap sifat-sifat lain yang dibahas dalam bab ini.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur,
+$(X,\hat\Sigma,\hat\mu)$ kelengkapannya, dan $(X,\tilde\Sigma,\tilde\mu)$
+versi c.l.d.\ yang bersesuaian.
+
+(a) Jika $(X,\Sigma,\mu)$ merupakan ruang probabilitas, berhingga total,
+$\sigma$-hingga, atau dapat dilokalkan secara ketat, maka demikian pula
+$(X,\tilde\Sigma,\tilde\mu)$, dan dalam semua kasus ini
+$\tilde\mu=\hat\mu$;
+
+(b) jika $(X,\Sigma,\mu)$ dapat dilokalkan, maka demikian pula
+$(X,\tilde\Sigma,\tilde\mu)$, dan untuk setiap $H\in\tilde\Sigma$ ada
+suatu $E\in\Sigma$ sehingga $\tilde\mu(E\symmdiff H)=0$;
+
+(c) $(X,\Sigma,\mu)$ semihingga jika dan hanya jika
+$\tilde\mu F=\mu F$ untuk setiap $F\in\Sigma$;  dalam hal ini
+$\int fd\tilde\mu=\int fd\mu$ setiap kali integral yang terakhir terdefinisi
+dalam $[-\infty,\infty]$;
+
+(d) suatu himpunan $H\in\tilde\Sigma$ merupakan atom bagi $\tilde\mu$ jika
+dan hanya jika terdapat atom $E$ bagi $\mu$ sedemikian sehingga
+$\mu E<\infty$ dan
+$\tilde\mu(H\symmdiff E)=0$;
+
+(e) jika $(X,\Sigma,\mu)$ tanpa atom atau atomik murni, maka demikian pula
+$(X,\tilde\Sigma,\tilde\mu)$;
+
+(f) $(X,\Sigma,\mu)$ lengkap dan ditentukan secara lokal jika dan hanya jika
+$\tilde\mu=\mu$.
+
+
+\proof{{\bf (a)(i)} Pertama kita tunjukkan bahwa jika $(X,\Sigma,\mu)$
+dapat dilokalkan secara ketat, maka
+$\tilde\mu=\hat\mu$.   \Prf\ Misalkan $\langle X_i\rangle_{i\in I}$ suatu
+dekomposisi $X$ bagi $\mu$;  maka keluarga ini juga merupakan dekomposisi
+bagi $\hat\mu$ (212Gb).   Jika $H\in\tilde\Sigma$, berlaku
+$H\cap X_i\in\hat\Sigma$ untuk setiap $i$, dan karenanya $H\in\hat\Sigma$;
+lebih-lebih lagi,
+
+$$\eqalign{\hat\mu H
+&=\sum_{i\in I}\hat\mu(H\cap X_i)
+=\sup\{\sum_{i\in J}\hat\mu(H\cap X_i):J\subseteq I
+\text{ berhingga}\}\cr
+&\le\sup\{\hat\mu(H\cap E):E\in\Sigma,\,\mu E<\infty\}
+=\tilde\mu H
+\le\hat\mu H.\cr}$$
+
+\noindent Jadi $\hat\mu H=\tilde\mu H$ untuk setiap $H\in\tilde\Sigma$ dan
+$\hat\mu=\tilde\mu$.\ \Qed
+
+\medskip
+
+\quad{\bf (ii)} Akibatnya, jika $(X,\Sigma,\mu)$ merupakan ruang
+probabilitas, berhingga total, $\sigma$-hingga, atau dapat dilokalkan secara
+ketat, maka demikian pula $(X,\tilde\Sigma,\tilde\mu)$;  gunakan 212Ga-212Gb
+untuk melihat bahwa $(X,\hat\Sigma,\hat\mu)$ mempunyai sifat yang dimaksud.
+
+\medskip
+
+{\bf (b)} Jika $(X,\Sigma,\mu)$ dapat dilokalkan, ambil sebarang subhimpunan
+$\Cal H$ dari $\tilde\Sigma$.   Tetapkan
+
+\Centerline{$\Cal E=\{E:E\in\Sigma^f,\,\exists\enskip
+H\in\Cal H,\,E\subseteq H\}$}
+
+\noindent dengan $\Sigma^f=\{E:\mu E<\infty\}$ seperti biasa.
+Di dalam $(X,\Sigma,\mu)$, pilih $F\in\Sigma$ sebagai supremum esensial
+bagi $\Cal E$.
+
+\medskip
+
+\quad{\bf (i)} \Quer\ Andaikan, jika mungkin, terdapat
+$H\in\Cal H$ sehingga $\tilde\mu(H\setminus F)>0$.   Oleh 213F(c-i),
+ada
+$E\in\Sigma^f$ sehingga $E\subseteq H\setminus F$ dan $\mu E>0$.
+$E$ ini termasuk dalam $\Cal E$ dan $\mu(E\setminus F)=\mu E>0$;  hal ini
+mustahil karena $F$ merupakan supremum esensial bagi $\Cal E$.\ \Bang
+
+\medskip
+
+\quad{\bf (ii)} Jadi $\tilde\mu(H\setminus F)=0$ untuk setiap $H\in\Cal H$.
+Sekarang ambil sebarang $G\in\tilde\Sigma$ sedemikian sehingga
+$\tilde\mu(H\setminus G)=0$ untuk setiap $H\in\Cal H$.   \Quer\ Jika
+$\tilde\mu(F\setminus G)>0$, terdapat $E_0\in\Sigma^f$ sehingga
+$E_0\subseteq F\setminus G$ dan
+$\mu E_0>0$.   Jika $E\in\Cal E$, terdapat
+$H\in\Cal H$ sehingga $E\subseteq H$, sehingga
+$E\setminus(F\setminus E_0)\subseteq H\setminus(F\cap G)$, sedangkan
+$\mu(E\setminus(F\setminus E_0))<\infty$;  jadi
+
+\Centerline{$\mu(E\setminus(F\setminus E_0))
+\le\tilde\mu(H\setminus(F\cap G))
+\le\tilde\mu(H\setminus F)+\tilde\mu(H\setminus G)
+=0$.}
+
+\noindent Karena $F$ merupakan supremum esensial bagi $\Cal E$ dalam $\Sigma$,
+
+\Centerline{$0
+=\mu(F\setminus(F\setminus E_0))
+=\mu E_0$.  \Bang}
+
+\noindent Ini menunjukkan bahwa $F$ merupakan supremum esensial bagi $\Cal H$
+dalam $\tilde\Sigma$.   Karena $\Cal H$ sebarang,
+$(X,\tilde\Sigma,\tilde\mu)$ dapat dilokalkan.
+
+\medskip
+
+\quad{\bf (iii)} Argumen dalam (i)-(ii) sebenarnya menunjukkan bahwa jika
+$\Cal H\subseteq\tilde\Sigma$, maka $\Cal H$ memiliki supremum esensial $F$
+dalam $\tilde\Sigma$ sedemikian sehingga $F$ bahkan termasuk dalam $\Sigma$.
+Dengan mengambil
+$\Cal H=\{H\}$, kita melihat bahwa jika $H\in\tilde\Sigma$ terdapat
+$F\in\Sigma$ sehingga $\tilde\mu(H\symmdiff F)=0$.
+
+\medskip
+
+{\bf (c)} Dari 213Fa kita telah mengetahui bahwa
+$\tilde\mu E\le\mu E$ untuk setiap $E\in\Sigma$, dengan kesamaan jika
+$\mu E<\infty$.
+
+\medskip
+
+\quad{\bf (i)} Jika $(X,\Sigma,\mu)$ semihingga, maka 213A dan 213F(c-i)
+menunjukkan bahwa untuk sebarang $F\in\Sigma$ berlaku
+
+\Centerline{$\mu F
+=\sup\{\mu E:E\in\Sigma,\,E\subseteq F,\,\mu E<\infty\}
+=\tilde\mu F$.}
+
+\medskip
+
+\quad{\bf (ii)} Misalkan $\tilde\mu F=\mu F$ untuk setiap $F\in\Sigma$.
+Jika $\mu F=\infty$, maka $\tilde\mu F=\infty$, sehingga (sekali lagi oleh
+213F(c-i)) terdapat $E\in\Sigma^f$ dengan $E\subseteq F$ dan $\mu E>0$;
+karena $F$ sebarang, $(X,\Sigma,\mu)$ semihingga.
+
+\medskip
+
+\quad{\bf (iii)} Jika $f$ nonnegatif dan $\int fd\mu=\infty$, maka $f$
+terukur secara virtual terhadap $\mu$, sehingga terukur terhadap
+$\tilde\Sigma$ (213Ga), dan terdefinisi hampir di mana-mana terhadap $\mu$,
+sehingga juga terhadap $\tilde\mu$.   Sekarang
+
+$$\eqalign{\int fd\tilde\mu
+&=\sup\{\int g\,d\tilde\mu:g\text{ merupakan fungsi }\tilde\mu\text{-sederhana},\,
+   0\le g\le f\,\,\tilde\mu\text{-hampir di mana-mana}\}\cr
+&\ge\sup\{\int g\,d\mu:g\text{ merupakan fungsi }\mu\text{-sederhana},\,
+   0\le g\le f\,\,\mu\text{-hampir di mana-mana}\}=\infty\cr}$$
+
+\noindent menurut 213B.   Bersama 213Gb, ini menunjukkan bahwa
+$\int fd\tilde\mu=\int fd\mu$ setiap kali $f$ nonnegatif dan
+$\int fd\mu$ terdefinisi dalam $[0,\infty]$.   Dengan menerapkannya pada
+bagian positif dan negatif $f$, kita memperoleh
+$\int fd\tilde\mu=\int fd\mu$ setiap kali integral yang terakhir terdefinisi
+dalam $[-\infty,\infty]$.
+
+\medskip
+
+{\bf (d)(i)} Jika $H\in\tilde\Sigma$ merupakan atom bagi $\tilde\mu$, maka
+ada $E\in\Sigma^f$ sehingga $E\subseteq H$ dan $0<\mu E<\infty$.
+Dalam hal ini, $\tilde\mu E>0$, sehingga $\tilde\mu(H\setminus E)$ harus nol.
+Jika $F\in\Sigma$ dan $F\subseteq E$, maka
+$\mu F=\tilde\mu F=0$ atau $\mu(E\setminus F)=\tilde\mu(H\setminus F)=0$.
+Jadi $E\in\Sigma$ adalah atom untuk $\mu$ dengan
+$\tilde\mu(H\symmdiff E)=0$ dan $\mu E<\infty$.
+
+\medskip
+
+\quad{\bf (ii)} Jika $H\in\tilde\Sigma$ dan terdapat atom $E$ bagi $\mu$
+sedemikian sehingga $\mu E<\infty$ dan $\tilde\mu(H\symmdiff E)=0$, ambil
+$G\in\tilde\Sigma$ sebagai subhimpunan $H$ dengan $\tilde\mu G>0$.
+Kita mempunyai $\tilde\mu(E\cap G)=\tilde\mu(H\cap G)>0$, sehingga terdapat
+$F\in\Sigma$ sehingga $F\subseteq E\cap G$ dan $\mu F>0$.   Sekarang
+$\mu(E\setminus F)$ harus nol, jadi
+
+\Centerline{$\tilde\mu(H\setminus G)\le\tilde\mu(H\setminus F)
+=\tilde\mu(E\setminus F)=\mu(E\setminus F)=0$.}
+
+\noindent Karena $G$ sebarang, $H$ merupakan atom bagi $\tilde\mu$.
+
+\medskip
+
+{\bf (e)} Jika $(X,\Sigma,\mu)$ tanpa atom, maka
+$(X,\tilde\Sigma,\tilde\mu)$ juga tanpa atom, menurut (d).
+
+Jika $(X,\Sigma,\mu)$ atomik murni, $H\in\tilde\Sigma$ dan
+$\tilde\mu H>0$, maka terdapat $E\in\Sigma^f$ sehingga
+$E\subseteq H$ dan $\mu E>0$.
+Terdapat atom $F$ bagi $\mu$ dengan $F\subseteq E$;  karena $\mu F<\infty$,
+menurut (d), $F$ merupakan atom bagi $\tilde\mu$.   Selain itu $F\subseteq H$.
+Karena $H$ sebarang, $(X,\tilde\Sigma,\tilde\mu)$ atomik murni.
+
+\medskip
+
+{\bf (f)} Jika $\mu=\tilde\mu$, tentu $(X,\Sigma,\mu)$ harus
+lengkap dan ditentukan secara lokal, karena $(X,\tilde\Sigma,\tilde\mu)$
+lengkap dan ditentukan secara lokal.   Sebaliknya, jika $(X,\Sigma,\mu)$
+lengkap dan ditentukan secara lokal, maka $\hat\mu=\mu$, sehingga (dengan
+definisi dalam 213D) $\tilde\Sigma\subseteq\Sigma$ dan $\tilde\mu=\mu$,
+menurut (c) di atas.
+}%end of proof of 213H
+
+\leader{213I}{Himpunan terabaikan yang ditentukan secara
+lokal\dvrocolon{}}\cmmnt{ Gagasan sederhana berikut kadang-kadang berguna.
+
+\medskip
+
+\noindent}{\bf Definisi} Suatu ruang ukur $(X,\Sigma,\mu)$ dikatakan mempunyai
+{\bf himpunan terabaikan yang ditentukan secara lokal} jika untuk setiap
+$A\subseteq X$ yang tidak terabaikan terdapat $E\in\Sigma$ dengan
+$\mu E<\infty$ sedemikian sehingga $A\cap E$ tidak terabaikan.
+
+\leader{213J}{Proposisi} Jika suatu ruang ukur $(X,\Sigma,\mu)$ {\it entah}
+dapat dilokalkan secara ketat {\it atau} lengkap dan ditentukan secara lokal,
+maka ruang tersebut mempunyai himpunan terabaikan yang ditentukan secara lokal.
+
+\proof{ Misalkan $A\subseteq X$ sedemikian sehingga $A\cap E$ terabaikan
+setiap kali $\mu E<\infty$;  kita harus menunjukkan bahwa $A$ terabaikan.
+
+\medskip
+
+{\bf (i)} Jika $\mu$ dapat dilokalkan secara ketat, misalkan
+$\familyiI{X_i}$ suatu dekomposisi $X$.   Untuk setiap $i\in I$,
+$A\cap X_i$ terabaikan, sehingga dapat dipilih himpunan terabaikan
+$E_i\in\Sigma$ dengan $A\cap X_i\subseteq E_i$.   Tetapkan
+$E=\bigcup_{i\in I}E_i\cap X_i$.   Maka
+$\mu E=\sum_{i\in I}\mu(E_i\cap X_i)=0$ dan $A\subseteq E$, jadi $A$
+terabaikan.
+
+\medskip
+
+{\bf (ii)} Jika $\mu$ lengkap dan ditentukan secara lokal, ambil sebarang
+himpunan terukur $E$ berukuran berhingga.   Maka $A\cap E$ terabaikan dan
+karena itu terukur;  karena $E$ sebarang, $A$ terukur;  karena $\mu$
+semihingga, $A$ terabaikan.
+}%end of proof of 213J
+
+\leader{*213K}{Lema} Jika suatu ruang ukur $(X,\Sigma,\mu)$ mempunyai
+himpunan terabaikan yang ditentukan secara lokal, dan
+$\Cal E\subseteq\Sigma$ mempunyai supremum esensial
+$H\in\Sigma$\cmmnt{ dalam arti 211G}, maka
+$H\setminus\bigcup\Cal E$ terabaikan.
+
+\proof{ Tetapkan $A=H\setminus\bigcup\Cal E$.   Ambil sebarang
+$F\in\Sigma$ dengan $\mu F<\infty$.   Maka $F\cap A$ mempunyai suatu
+selubung terukur, katakanlah $V$ (sekali lagi menurut 132Ee).
+Jika $E\in\Cal E$, maka
+
+\Centerline{$\mu(E\setminus(X\setminus V))
+=\mu(E\cap V)=\mu^*(E\cap F\cap A)=0$,}
+
+\noindent sehingga $H\cap V=H\setminus(X\setminus V)$ terabaikan dan
+$F\cap A$ terabaikan.   Karena $F$ sebarang dan $\mu$ mempunyai himpunan
+terabaikan yang ditentukan secara lokal, $A$ terabaikan, sebagaimana dinyatakan.
+}%end of proof of 213K
+
+\leader{213L}{Proposisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur yang
+dapat dilokalkan dan mempunyai himpunan terabaikan yang ditentukan secara
+lokal. Maka setiap subhimpunan $A$ dari $X$ mempunyai selubung terukur.
+
+\proof{ Tetapkan
+
+\Centerline{$\Cal E=\{E:E\in\Sigma,\,\mu^*(A\cap E)=\mu E<\infty\}$.}
+
+\noindent Misalkan $G$ suatu supremum esensial bagi $\Cal E$ dalam $\Sigma$.
+
+\medskip
+
+\quad{\bf (i)} $A\setminus G$ terabaikan.   \Prf\ Ambil sebarang himpunan
+$F$ berukuran berhingga terhadap $\mu$.   Misalkan $E$ suatu selubung terukur
+bagi $A\cap F$.   Maka $E\in\Cal E$, sehingga $E\setminus G$ terabaikan.
+Karena $F\cap A\setminus G\subseteq E\setminus G$, maka
+$F\cap A\setminus G$ terabaikan.   Karena $\mu$ mempunyai himpunan terabaikan
+yang ditentukan secara lokal, ini cukup untuk menunjukkan bahwa
+$A\setminus G$ terabaikan.\ \Qed
+
+\medskip
+
+\quad{\bf (ii)} Ambil himpunan terukur terabaikan $E_0$ yang memuat
+$A\setminus G$, dan tetapkan $\tilde G=E_0\cup G$, sehingga
+$\tilde G\in\Sigma$,
+$A\subseteq\tilde G$ dan $\mu(\tilde G\setminus G)=0$.   \Quer\
+Andaikan, jika mungkin, terdapat $F\in\Sigma$ sedemikian sehingga
+$\mu^*(A\cap F)<\mu(\tilde G\cap F)$.   Misalkan $F_1\subseteq F$ suatu
+selubung terukur bagi $A\cap F$.   Tetapkan
+$H=X\setminus(F\setminus F_1)$;  maka $A\subseteq H$.   Jika
+$E\in\Cal E$, maka
+
+\Centerline{$\mu E=\mu^*(A\cap E)\le\mu(H\cap E)$,}
+
+\noindent sehingga $E\setminus H$ terabaikan;  karena $E$ sebarang,
+$G\setminus H$ dan $\tilde G\setminus H$ terabaikan.
+Namun $\tilde G\cap F\setminus F_1\subseteq\tilde G\setminus H$ dan
+
+\Centerline{$\mu(\tilde G\cap F\setminus F_1)
+=\mu(\tilde G\cap F)-\mu^*(A\cap F)>0$. \Bang}
+
+Ini menunjukkan bahwa $\tilde G$ merupakan selubung terukur bagi $A$,
+sebagaimana diperlukan.
+}%end of proof of 213L
+
+\leader{213M}{Akibat} (a) Jika $(X,\Sigma,\mu)$ $\sigma$-hingga, maka
+setiap subhimpunan dari $X$ mempunyai selubung terukur terhadap $\mu$.
+
+(b) Jika $(X,\Sigma,\mu)$ dapat dilokalkan, maka setiap subhimpunan dari $X$
+mempunyai selubung terukur terhadap versi c.l.d.\ dari $\mu$.
+
+\proof{{\bf (a)} Gunakan 132Ee, atau 213L, 211Lc dan 213J.
+
+\medskip
+
+{\bf (b)} Gunakan 213L dan fakta bahwa versi c.l.d.\ dari $\mu$ dapat
+dilokalkan, selain lengkap dan ditentukan secara lokal (213Hb).
+}%end of proof of 213M
+
+\leader{213N}{}\cmmnt{ Ketika kelak kita menggunakan konsep
+`keterlokalan', konsep itu sering muncul melalui sifat berikut, yang
+sesungguhnya mencirikan ruang yang dapat dilokalkan (213Xm).
+
+\medskip
+
+\noindent}{\bf Teorema} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur yang
+dapat dilokalkan.   Misalkan $\Phi$ keluarga fungsi terukur bernilai riil,
+yang semuanya terdefinisi pada subhimpunan terukur dari $X$, sedemikian
+sehingga untuk setiap $f$, $g\in\Phi$, berlaku $f=g$ hampir di mana-mana pada
+$\dom f\cap\dom g$. Maka terdapat fungsi terukur $h:X\to\Bbb R$ sedemikian
+sehingga setiap $f\in\Phi$ sama dengan $h$ hampir di mana-mana pada $\dom f$.
+
+\proof{ Untuk $q\in\Bbb Q$, $f\in\Phi$, tetapkan
+
+\Centerline{$E_{fq}=\{x:x\in\dom f,\,f(x)\ge q\}\in\Sigma$.}
+
+\noindent Untuk setiap $q\in\Bbb Q$, misalkan $E_q$ suatu supremum esensial
+bagi $\{E_{fq}:f\in\Phi\}$ dalam $\Sigma$.   Tetapkan
+
+\Centerline{$h^*(x)=\sup\{q:q\in\Bbb Q,\,x\in E_q\}\in[-\infty,\infty]$}
+
+\noindent untuk $x\in X$, dengan mengambil $\sup\emptyset=-\infty$ bila perlu.
+
+Jika $f$, $g\in\Phi$ dan $q\in\Bbb Q$, maka
+
+$$\eqalign{E_{fq}\setminus(X\setminus(\dom g\setminus E_{gq}))
+&=E_{fq}\cap\dom g\setminus E_{gq}\cr
+&\subseteq\{x:x\in\dom f\cap\dom g,\,f(x)\ne g(x)\}\cr}$$
+
+\noindent terabaikan;  karena $f$ sebarang,
+
+\Centerline{$E_q\cap\dom g\setminus E_{gq}=E_q\setminus(X\setminus(\dom
+g\setminus E_{gq}))$}
+
+\noindent terabaikan.   Selain itu $E_{gq}\setminus E_q$ terabaikan, sehingga
+$E_{gq}\symmdiff(E_q\cap\dom g)$ terabaikan.   Tetapkan
+$H_g=\bigcup_{q\in\Bbb Q}E_{gq}\symmdiff(E_q\cap\dom g)$;  maka $H_g$
+terabaikan.   Jika $x\in\dom g\setminus H_g$, maka untuk setiap
+$q\in\Bbb Q$, $x\in E_q\iff x\in E_{gq}$;  akibatnya, untuk $x$ demikian,
+$h^*(x)=g(x)$.   Jadi $h^*=g$ hampir di mana-mana pada $\dom g$;  dan ini
+berlaku untuk setiap $g\in\Phi$.
+
+Fungsi $h^*$ belum tentu bernilai riil.   Namun fungsi ini terukur, sebab
+\Centerline{$\{x:h^*(x)>a\}=\bigcup\{E_q:q\in\Bbb Q,\,q>a\}\in\Sigma$}
+
+\noindent untuk setiap bilangan riil $a$.   Jadi, jika kita memodifikasinya
+dengan menetapkan
+
+$$\eqalign{h(x)&=h^*(x)\text{ jika }h^*(x)\in\Bbb R,\cr
+&=0\text{ jika }h^*(x)\in\{-\infty,\infty\},\cr}$$
+
+\noindent kita memperoleh fungsi terukur bernilai riil $h:X\to\Bbb R$.
+Untuk sebarang $g\in\Phi$, $h(x)$ sama dengan $g(x)$ setidaknya setiap kali
+$h^*(x)=g(x)$, dan hal ini berlaku untuk hampir setiap $x\in\dom g$.   Jadi
+$h$ merupakan fungsi yang diminta.
+}%end of proof of 213N
+
+\leader{213O}{}\cmmnt{ Berikut adalah suatu kriteria menarik dan berguna
+agar sebuah ruang dapat dilokalkan secara ketat;  saya memperkenalkannya di
+sini, walaupun kriteria ini jarang digunakan dalam jilid ini.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang lengkap yang
+ditentukan secara lokal.
+
+(a) Misalkan terdapat keluarga saling lepas $\Cal E\subseteq\Sigma$
+sedemikian rupa sehingga ($\alpha$) $\mu E<\infty$ untuk setiap $E\in\Cal E$
+($\beta$) setiap kali $F\in\Sigma$ dan $\mu F>0$, terdapat $E\in\Cal E$
+sedemikian sehingga $\mu(E\cap F)>0$.   Maka $(X,\Sigma,\mu)$ dapat
+dilokalkan secara ketat, $\bigcup\Cal E$ koterabaikan, dan
+$\Cal E\cup\{X\setminus\bigcup\Cal E\}$ adalah
+dekomposisi $X$.
+
+(b) Misalkan $\langle X_i\rangle_{i\in I}$ suatu partisi $X$ menjadi
+himpunan-himpunan terukur berukuran berhingga sedemikian sehingga setiap kali
+$E\in\Sigma$ dan
+$\mu E>0$ terdapat $i\in I$ sehingga $\mu(E\cap X_i)>0$.   Lalu
+$(X,\Sigma,\mu)$ dapat dilokalkan secara ketat, dan
+$\langle X_i\rangle_{i\in I}$ merupakan dekomposisi $X$.
+
+\proof{{\bf (a)(i)}
+Pertama, jika $F\in\Sigma$ dan $\mu F<\infty$, terdapat subkeluarga
+terhitung $\Cal E'\subseteq\Cal E$ sedemikian sehingga
+$\mu(F\setminus\bigcup\Cal E')=0$.   \Prf\ Tetapkan
+
+\Centerline{$\Cal E'_n=\{E:E\in\Cal E,\,\mu(F\cap E)\ge 2^{-n}\}$ untuk
+setiap $n\in\Bbb N$,}
+
+\Centerline{$\Cal E'=\bigcup_{n\in\Bbb N}\Cal E'_n=\{E:E\in\Cal
+E,\,\mu(F\cap E)>0\}$.}
+
+\noindent Karena $\Cal E$ saling lepas, harus berlaku
+
+\Centerline{$\#(\Cal E'_n)\le 2^n\mu F$}
+
+\noindent untuk setiap $n\in\Bbb N$, sehingga setiap $\Cal E'_n$ berhingga,
+dan $\Cal E'$, sebagai gabungan suatu barisan himpunan terhitung, juga
+terhitung.   Tetapkan $E'=\bigcup\Cal E'$ dan $F'=F\setminus E'$, sehingga
+$E'$ dan $F'$ termasuk dalam $\Sigma$.   Jika $E\in\Cal E'$, maka
+$E\subseteq E'$, sehingga $\mu(E\cap F')=\mu\emptyset=0$;  jika $E\in\Cal
+E\setminus\Cal E'$, maka $\mu(E\cap F')=\mu(E\cap F)=0$.   Jadi
+$\mu(E\cap F')=0$ untuk setiap $E\in\Cal E$.   Berdasarkan hipotesis
+($\beta$) pada $\Cal E$, $\mu F'=0$, sehingga
+$\mu(F\setminus\bigcup\Cal E')=0$, sebagaimana diperlukan.\ \Qed
+
+\medskip
+
+\quad{\bf (ii)} Sekarang misalkan $H\subseteq X$ sedemikian sehingga
+$H\cap E\in\Sigma$ untuk setiap $E\in\Cal E$.   Dalam hal ini
+$H\in\Sigma$.   \Prf\ Ambil $F\in\Sigma$ dengan $\mu F<\infty$.   Misalkan
+$\Cal E'\subseteq\Cal E$ suatu subkeluarga terhitung sedemikian sehingga
+$\mu(F\setminus E')=0$, dengan $E'=\bigcup\Cal E'$.  Kemudian
+$H\cap(F\setminus E')\in\Sigma$, karena $(X,\Sigma,\mu)$ lengkap.   Selain itu,
+$H\cap
+E'=\bigcup_{E\in\Cal E'}H\cap E\in\Sigma$.   Jadi
+
+\Centerline{$H\cap F=(H\cap(F\setminus E'))\cup(F\cap(H\cap
+E'))\in\Sigma$.}
+
+\noindent Karena $F$ sebarang dan $(X,\Sigma,\mu)$ ditentukan secara lokal,
+$H\in\Sigma$.\ \Qed
+
+\medskip
+
+\quad{\bf (iii)} Kita juga memperoleh bahwa
+$\mu H=\sum_{E\in\Cal E}\mu(H\cap E)$ untuk setiap $H\in\Sigma$.
+\Prf\ {($\alpha$)} Karena $\Cal E$ saling lepas,
+$\sum_{E\in\Cal E'}\mu(H\cap E)\le\mu H$ untuk setiap subkeluarga berhingga
+$\Cal E'\subseteq\Cal E$, jadi
+
+\Centerline{$\sum_{E\in\Cal E}\mu(H\cap E)
+=\sup\{\sum_{E\in\Cal E'}
+  \mu(H\cap E):\Cal E'\subseteq\Cal E$ berhingga$\}\le\mu H$.}
+
+\noindent ($\beta$) Untuk ketaksamaan sebaliknya, pertama tinjau kasus
+$\mu H<\infty$.   Dengan (i), terdapat subkeluarga terhitung $\Cal E'\subseteq\Cal E$
+sedemikian rupa sehingga $\mu(H\setminus\bigcup\Cal E')=0$, sehingga
+
+\Centerline{$\mu H=\mu(H\cap\bigcup\Cal E')
+=\sum_{E\in\Cal E'}\mu(H\cap E)\le\sum_{E\in\Cal E}\mu(H\cap E)$.}
+
+\noindent{($\gamma$)} Secara umum, karena $(X,\Sigma,\mu)$ semihingga,
+
+$$\eqalign{\mu H
+&=\sup\{\mu F:F\subseteq H,\,\mu F<\infty\}\cr
+&\le\sup\{\sum_{E\in\Cal E}\mu(F\cap E):F\subseteq H,\,\mu F<\infty\}
+\le\sum_{E\in\Cal E}\mu(H\cap E).\cr}$$
+
+\noindent Jadi, dalam semua kasus,
+$\mu H\le\sum_{E\in\Cal E}\mu(H\cap E)$, dan kedua ruas sama.\ \Qed
+
+\medskip
+
+\quad{\bf (iv)} Secara khusus, dengan menetapkan $E_0=X\setminus\bigcup\Cal E$,
+$E_0\in\Sigma$ dan $\mu E_0=0$;  yaitu, $\bigcup\Cal E$ adalah
+koterabaikan.
+Pertimbangkan $\Cal E^*=\Cal E\cup\{E_0\}$.
+Keluarga ini merupakan partisi $X$ menjadi himpunan berukuran berhingga (kini menggunakan
+hipotesis ($\alpha$) pada $\Cal E$).   Jika $H\subseteq X$ sedemikian rupa sehingga
+$H\cap E\in\Sigma$ untuk setiap $E\in\Cal E^*$, maka $H\in\Sigma$ dan
+
+\Centerline{$\mu H=\sum_{E\in\Cal E}\mu(H\cap E)
+=\sum_{E\in\Cal E^*}\mu(H\cap E)$.}
+
+\noindent Jadi $\Cal E^*$ (atau, jika dikehendaki, keluarga berindeks
+$\langle E\rangle_{E\in\Cal E^*}$) merupakan dekomposisi yang membuktikan
+bahwa $(X,\Sigma,\mu)$ dapat dilokalkan secara ketat.
+
+\medskip
+
+{\bf (b)} Terapkan (a) dengan $\Cal E=\{X_i:i\in I\}$, sambil memperhatikan
+bahwa $E_0$ dalam (iv) kosong sehingga dapat dihilangkan.
+}%end of proof of 213O
+
+\exercises{
+\leader{213X}{Latihan dasar (a)}
+%\spheader 213Xa
+Misalkan $(X,\Sigma,\mu)$ sebarang ruang ukur, $\mu^*$ ukuran luar yang
+ditentukan oleh $\mu$, dan $\check\mu$ ukuran yang ditentukan dengan metode
+\Caratheodory dari $\mu^*$;  nyatakan $\check\Sigma$ sebagai domain
+$\check\mu$.   Tunjukkan bahwa
+(i) $\check\mu$ memperluas kelengkapan $\hat\mu$ dari $\mu$;
+(ii) jika $H\subseteq X$ sedemikian rupa sehingga
+$H\cap F\in\check\Sigma$ setiap kali $F\in\Sigma$ dan $\mu F<\infty$, maka
+$H\in\check\Sigma$;
+(iii) $(\check\mu)^*=\mu^*$, sehingga fungsi yang dapat diintegralkan terhadap
+$\check\mu$ dan $\mu$ sama (212Xb);  (iv) jika $\mu$ dapat dilokalkan secara
+ketat, maka $\check\mu=\hat\mu$;  (v) jika $\mu$ ditentukan dengan metode
+\Caratheodory dari suatu ukuran luar lain, maka $\mu=\check\mu$
+(lih.\ 132Xa).
+%213C
+
+\sqheader 213Xb
+Misalkan $\mu$ ukuran cacah yang dibatasi pada aljabar-sigma
+terhitung-koterhitung dari suatu himpunan $X$ (211R, 211Ye).
+(i) Tunjukkan bahwa versi c.l.d.\ $\tilde\mu$ dari $\mu$ tidak lain adalah
+ukuran cacah pada $X$.   (ii) Tunjukkan bahwa $\check\mu$, sebagaimana
+didefinisikan dalam 213Xa, sama dengan $\tilde\mu$, dan khususnya memperluas
+kelengkapan $\mu$ secara ketat jika $X$ tak terhitung.
+%213E
+
+\spheader 213Xc Misalkan $(X,\Sigma,\mu)$ sebarang ruang ukur.   Untuk
+$E\in\Sigma$, tetapkan
+
+\Centerline{$\mu_{\text{sf}}E
+=\sup\{\mu(E\cap F):F\in\Sigma,\,\mu F<\infty\}$.}
+
+\quad{(i)} Tunjukkan bahwa $(X,\Sigma,\mu_{\text{sf}})$ merupakan ruang ukur
+semihingga, dan sama dengan $(X,\Sigma,\mu)$ jika dan hanya jika
+$(X,\Sigma,\mu)$ semihingga.
+
+\quad{(ii)} Tunjukkan bahwa fungsi bernilai riil yang dapat diintegralkan
+terhadap $\mu$, katakanlah $f$, juga dapat diintegralkan terhadap
+$\mu_{\text{sf}}$, dengan
+integral yang sama.
+
+\quad(iii) Tunjukkan bahwa jika $E\in\Sigma$ maka $E$
+dapat dinyatakan sebagai $E_1\cup E_2$ dengan $E_1$, $E_2\in\Sigma$,
+$\mu E_1=\mu_{\text{sf}}E_1$ dan $\mu_{\text{sf}}E_2=0$.
+
+\quad{(iv)} Tunjukkan bahwa jika $f$ fungsi bernilai riil yang dapat
+diintegralkan terhadap $\mu_{\text{sf}}$ pada $X$, maka fungsi ini sama
+hampir di mana-mana terhadap $\mu_{\text{sf}}$ dengan suatu fungsi yang dapat diintegralkan
+terhadap $\mu$.
+
+\quad{(v)} Tunjukkan bahwa jika $(X,\Sigma,\mu_{\text{sf}})$ lengkap, maka
+$(X,\Sigma,\mu)$ juga lengkap.
+
+\quad{(vi)} Tunjukkan bahwa $\mu$ dan $\mu_{\text{sf}}$ mempunyai versi
+c.l.d.\ yang sama.
+%213F
+
+\spheader 213Xd Misalkan $(X,\Sigma,\mu)$ sebarang ruang ukur.   Definisikan
+$\check\mu$ seperti dalam 213Xa.   Tunjukkan bahwa
+$(\check\mu)_{\text{sf}}$, sebagaimana dikonstruksi dalam 213Xc, tepat
+merupakan versi c.l.d.\ $\tilde\mu$ dari $\mu$, sehingga
+$\check\mu=\tilde\mu$ jika dan hanya jika $\check\mu$ semihingga.
+%213F, 213Xa, 213Xc
+
+\spheader 213Xe Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur.   Untuk
+$A\subseteq X$, tetapkan
+$\mu_* A=\sup\{\mu E:E\in\Sigma,\,\mu E<\infty,\,E\subseteq A\}$, seperti pada
+113Yh.   (i) Tunjukkan bahwa ukuran yang dikonstruksi dari $\mu_*$ dengan
+metode 113Yg/212Ya tidak lain adalah versi c.l.d.\ $\tilde\mu$ dari $\mu$.
+(ii) Tunjukkan bahwa $\tilde\mu_*=\mu_*$.   (iii) Tunjukkan bahwa jika $\nu$
+suatu ukuran lain pada $X$, dengan domain $\Tau$, maka
+$\tilde\mu=\tilde\nu$ jika dan hanya jika
+$\mu_*=\nu_*$.
+%213F
+
+\spheader 213Xf Misalkan $X$ suatu himpunan dan $\theta$ suatu ukuran luar
+pada $X$. Tunjukkan bahwa $\theta_{\text{sf}}$, yang didefinisikan dengan
+
+\Centerline{$\theta_{\text{sf}}A=\sup\{\theta B:B\subseteq A,\,\theta
+B<\infty\}$}
+
+\noindent juga merupakan ukuran luar pada $X$.   Tunjukkan bahwa ukuran yang
+ditentukan dengan metode \Caratheodory dari $\theta$ dan
+$\theta_{\text{sf}}$ mempunyai domain yang sama.
+%213F
+
+\spheader 213Xg Misalkan $(X,\Sigma,\mu)$ sebarang ruang ukur.   Tetapkan
+
+\Centerline{$\mu^*_{\text{sf}}A
+=\sup\{\mu^*(A\cap E):E\in\Sigma,\,\mu E<\infty\}$}
+
+\noindent untuk setiap $A\subseteq X$.
+
+\quad{(i)} Tunjukkan bahwa
+
+\Centerline{$\mu^*_{\text{sf}}A=\sup\{\mu^*B:B\subseteq A,\,\mu^*B<\infty\}$}
+
+\noindent untuk setiap $A$.
+
+\quad{(ii)} Tunjukkan bahwa $\mu^*_{\text{sf}}$ adalah ukuran luar.
+
+\quad(iii) Tunjukkan bahwa jika $A\subseteq X$ dan
+$\mu^*_{\text{sf}}A<\infty$, terdapat $E\in\Sigma$ sehingga
+$\mu^*_{\text{sf}}A=\mu^*(A\cap E)=\mu E$ dan
+$\mu^*_{\text{sf}}(A\setminus E)=0$.   \Hint{ambil barisan tak menurun
+$\sequencen{E_n}$ dari himpunan terukur berukuran berhingga sedemikian sehingga
+$\mu^*_{\text{sf}}A=\lim_{n\to\infty}\mu^*(A\cap E_n)$, lalu ambil
+$E\subseteq\bigcup_{n\in\Bbb N}E_n$ sebagai selubung terukur bagi
+$A\cap\bigcup_{n\in\Bbb N}E_n$.}
+
+\quad{(iv)} Tunjukkan bahwa ukuran yang ditentukan dari
+$\mu^*_{\text{sf}}$ dengan metode \Caratheodory tepat merupakan versi
+c.l.d.\ $\tilde\mu$ dari $\mu$.
+
+\quad{(v)} Tunjukkan bahwa $\mu^*_{\text{sf}}=\tilde\mu^*$, sehingga jika
+$\mu$ lengkap dan ditentukan secara lokal, maka
+$\mu^*_{\text{sf}}=\mu^*$.
+%213F, 213Xc, 213Xf
+
+\sqheader 213Xh Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur dengan himpunan
+terabaikan yang ditentukan secara lokal.   Tunjukkan bahwa ruang ini semihingga.
+%213I
+
+\sqheader 213Xi Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur, $\hat\mu$
+kelengkapan $\mu$, $\tilde\mu$ versi c.l.d.\ dari $\mu$, dan $\check\mu$
+ukuran yang ditentukan dengan metode \Caratheodory dari $\mu^*$.   Tunjukkan
+bahwa pernyataan-pernyataan berikut ekuivalen:
+(i) $\mu$ mempunyai himpunan terabaikan yang ditentukan secara lokal;
+(ii) $\mu$ dan $\tilde\mu$ memiliki
+himpunan-himpunan terabaikan yang sama;
+(iii) $\check\mu=\tilde\mu$;
+(iv) $\hat\mu$ dan $\tilde\mu$ mempunyai himpunan berukuran berhingga yang sama;
+(v) $\mu$ dan $\tilde\mu$ mempunyai fungsi yang dapat diintegralkan yang sama;
+(vi) $\tilde\mu^*=\mu^*$;
+(vii) ukuran luar $\mu^*_{\text{sf}}$ dari 213Xg sama dengan $\mu^*$.
+%213J 213Xi
+
+\sqheader 213Xj Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur yang dapat
+dilokalkan secara ketat, dengan dekomposisi $\langle X_i\rangle_{i\in I}$.
+Tunjukkan bahwa
+$\mu^*A=\sum_{i\in I}\mu^*(A\cap X_i)$ untuk setiap $A\subseteq X$.
+%213L
+
+\sqheader 213Xk Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur lengkap yang
+ditentukan secara lokal, dan misalkan $A\subseteq X$ sedemikian sehingga
+$\min(\mu^*(E\cap A),\mu^*(E\setminus A))<\mu E$ setiap kali $E\in\Sigma$
+dan $0<\mu E<\infty$.
+Tunjukkan bahwa $A\in\Sigma$.   \Hint{diberikan $\mu F<\infty$, tinjau
+irisan $E$ dari selubung terukur bagi $F\cap A$ dan $F\setminus A$ untuk
+memperoleh $\mu^*(F\cap A)+\mu^*(F\setminus A)=\mu F$.}
+%213M
+
+\spheader 213Xl Kita katakan bahwa suatu ruang ukur $(X,\Sigma,\mu)$
+mempunyai {\bf sifat selubung terukur} jika setiap subhimpunan dari $X$ mempunyai
+selubung terukur.   (i) Tunjukkan bahwa ruang semihingga yang mempunyai sifat
+selubung terukur juga mempunyai himpunan terabaikan yang ditentukan secara lokal.
+(ii) Tunjukkan bahwa ruang semihingga lengkap yang mempunyai sifat selubung
+terukur ditentukan secara lokal.
+%213M
+
+\spheader 213Xm Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur semihingga, dan
+andaikan ruang ini memenuhi kesimpulan Teorema 213N.   Tunjukkan bahwa ruang
+tersebut dapat dilokalkan.   \Hint{diberikan $\Cal E\subseteq\Sigma$, tetapkan
+$\Cal F=\{F:F\in\Sigma,\,E\cap F$ terabaikan untuk setiap
+$E\in\Cal E\}$.
+Misalkan $\Phi$ himpunan fungsi $f$ dari subhimpunan $X$ ke $\{0,1\}$
+sedemikian sehingga $f^{-1}[\{1\}]\in \Cal E$ dan
+$f^{-1}[\{0\}]\in\Cal F$.}
+%213N
+
+\spheader 213Xn Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur.   Tunjukkan bahwa
+versi c.l.d.\ tersebut dapat dilokalkan secara ketat jika dan hanya jika terdapat
+keluarga saling lepas
+$\Cal E\subseteq\Sigma$ sehingga $\mu E<\infty$ untuk setiap $E\in\Cal E$
+dan setiap kali $F\in\Sigma$ dan $0<\mu F<\infty$ terdapat $E\in\Cal E$
+sedemikian rupa sehingga $\mu(E\cap F)>0$.
+%213O
+
+\spheader 213Xo Tunjukkan bahwa versi c.l.d.\ dari sebarang ukuran bertumpu
+titik juga bertumpu titik.
+
+\vleader{48pt}{213Y}{Latihan lanjutan (a)}
+%\spheader 213Ya
+Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur.   Tunjukkan bahwa $\mu$
+semihingga jika dan hanya jika terdapat keluarga $\Cal E\subseteq\Sigma$
+sedemikian sehingga
+$\mu E<\infty$ untuk setiap $E\in\Cal E$ dan
+$\mu F=\sum_{E\in\Cal E}\mu(F\cap E)$ untuk setiap $F\in\Sigma$.
+\Hint{ambil $\Cal E$ maksimal dengan syarat bahwa irisan sebarang dua
+anggotanya terabaikan.}
+%213A  would be useful in 552M, (i) => (iii)
+
+\spheader 213Yb
+Tetapkan $X=\Bbb N$, dan untuk $A\subseteq X$ tetapkan
+
+\Centerline{$\theta A=\sqrt{\#(A)}$ jika $A$ berhingga, $\infty$ jika $A$
+tak berhingga.}
+
+\noindent Tunjukkan bahwa $\theta$ adalah ukuran luar pada $X$, bahwa
+$\theta A=\sup\{\theta B:B\subseteq A,\,\theta B<\infty\}$ untuk setiap
+$A\subseteq X$, tetapi ukuran $\mu$ yang ditentukan dari $\theta$ dengan
+metode \Caratheodory tidak semihingga.   Tunjukkan bahwa jika $\check\mu$
+merupakan ukuran yang ditentukan dengan metode \Caratheodory dari $\mu^*$
+(213Xa), maka
+$\check\mu\ne\mu$.
+%213C
+
+\spheader 213Yc Tetapkan $X=[0,1]\times\{0,1\}$, dan misalkan $\Sigma$
+keluarga subhimpunan $E$ dari $X$ sedemikian sehingga
+
+\Centerline{$\{x:x\in[0,1],\,E[\{x\}]\ne\emptyset,\,E[\{x\}]\ne\{0,1\}\}
+$}
+
+\noindent terhitung, dengan $E[\{x\}]=\{y:(x,y)\in E\}$ untuk setiap
+$x\in[0,1]$.   Tunjukkan bahwa $\Sigma$ merupakan aljabar-sigma
+subhimpunan $X$.   Untuk $E\in\Sigma$, tetapkan
+$\mu E=\#(\{x:(x,1)\in E\})$ jika bilangan ini berhingga, dan $\infty$ jika
+tidak.   Tunjukkan bahwa $\mu$ merupakan ukuran lengkap semihingga.   Tunjukkan
+bahwa ukuran $\check\mu$ yang ditentukan dari $\mu^*$ dengan metode
+\Caratheodory (213Xa) tidak semihingga.   Tunjukkan bahwa domain versi c.l.d.\
+dari $\mu$ adalah seluruh $\Cal PX$.
+%213Xa, 213F
+
+\spheader 213Yd Tetapkan $X=\Bbb N$, dan untuk $A\subseteq X$ tetapkan
+
+\Centerline{$\phi A=\#(A)^2$ jika $A$ berhingga, $\infty$ jika $A$
+tak berhingga.}
+
+\noindent Tunjukkan bahwa $\phi$ memenuhi syarat-syarat 212Ya, tetapi ukuran
+yang ditentukan dari $\phi$ dengan metode tersebut tidak semihingga.
+%213Xe, 213F
+
+\spheader 213Ye Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur lengkap yang
+ditentukan secara lokal.   Misalkan $D\subseteq X$ dan $f:D\to\Bbb R$ suatu
+fungsi.   Tunjukkan bahwa pernyataan-pernyataan berikut ekuivalen:
+(i) $f$ adalah terukur;  (ii)
+
+\Centerline{$\mu^*\{x:x\in D\cap E,\,f(x)\le
+a\}+\mu^*\{x:x\in D\cap E,\,f(x)\ge b\}\le\mu E$}
+
+\noindent setiap kali $a<b$ dalam $\Bbb R$, $E\in\Sigma$, dan
+$\mu E<\infty$; (iii)
+
+\Centerline{$\min(\mu^*\{x:x\in D\cap E,\,f(x)\le
+a\},\mu^*\{x:x\in D\cap E,\,f(x)\ge b\})<\mu E$}
+
+\noindent setiap kali $a<b$ dalam $\Bbb R$ dan $0<\mu E<\infty$.  ({\it
+Petunjuk\/}:
+untuk (iii)$\Rightarrow$(i), tunjukkan bahwa jika $E\subseteq X$ maka
+
+\Centerline{$\mu^*\{x:x\in D\cap E,\,f(x)>a\}
+=\sup_{b>a}\mu^*\{x:x\in D\cap E,\,f(x)\ge b\}$,}
+
+\noindent dan gunakan 213Xk di atas.)
+%213Xk, 213M
+
+\spheader 213Yf Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur lengkap yang
+ditentukan secara lokal, dan misalkan $\Cal E\subseteq\Sigma$ sedemikian sehingga
+$\mu E<\infty$ untuk setiap $E\in\Cal E$ dan setiap kali $F\in\Sigma$ dan
+$\mu F<\infty$, terdapat subkeluarga terhitung $\Cal E_0\subseteq\Cal E$
+sedemikian sehingga
+$F\setminus\bigcup\Cal E_0$ dan $F\cap\bigcup(\Cal E\setminus\Cal E_0)$
+keduanya terabaikan.   Tunjukkan bahwa $(X,\Sigma,\mu)$ dapat dilokalkan secara ketat.
+%213O
+}%end of exercises
+
+\endnotes{
+\Notesheader{213} Menurut saya, dapat dikatakan bahwa apabila definisi
+`ruang ukur' ditulis ulang untuk mengecualikan semua ruang yang tidak
+semihingga, teori ini tidak akan kehilangan sesuatu yang berarti.   Akan
+tetapi, ada alasan kuat untuk tidak mengambil langkah sedrastis itu. Salah
+satunya ialah bahwa langkah tersebut akan membingungkan semua orang (jika
+Anda berkata kepada khalayak yang belum dipersiapkan, `misalkan
+$(X,\Sigma,\mu)$ suatu ruang ukur', ada bahaya bahwa sebagian orang mengira
+yang Anda maksud ialah `ruang ukur $\sigma$-hingga', tetapi sangat sedikit
+yang akan mengira bahwa yang dimaksud ialah `ruang ukur semihingga').
+Bagaimanapun, inti teori ukuran ialah membedakan himpunan berdasarkan
+ukurannya. Jika setiap subhimpunan dari $E$ tidak terukur, terabaikan, atau
+berukuran tak berhingga, klasifikasi tersebut terlalu kasar untuk menopang
+sebagian besar gagasan lazim, terutama integrasi biasa.
+
+Kita katakan bahwa suatu himpunan terukur $E$ {\bf murni tak berhingga} jika
+$E$ sendiri dan setiap subhimpunan terukurnya yang tak terabaikan berukuran
+tak berhingga.   Menurut definisi integral yang saya pilih dalam Jilid 1,
+setiap fungsi sederhana, dan karena itu setiap fungsi yang dapat diintegralkan,
+harus nol hampir di mana-mana pada $E$.   Ini berarti bahwa seluruh teori
+integrasi sama sekali mengabaikan $E$.   Dari definisi `versi c.l.d.'
+(213D-213E), terlihat bahwa versi c.l.d.\ dari ukuran tersebut menjadikan
+$E$ terabaikan;  demikian pula `versi semihingga' yang diuraikan dalam 213Xc.
+Namun, perubahan-perubahan ini tidak memengaruhi himpunan berukuran berhingga,
+dan akibatnya mempertahankan keterintegralan fungsi beserta nilai integralnya.
+
+Alasan terkuat yang sejauh ini kita jumpai untuk ikut mempertimbangkan ruang
+yang tidak semihingga ialah bahwa metode \Caratheodory tidak selalu
+menghasilkan ruang semihingga.   (Saya memberikan contoh dalam 213Yb-213Yc;
+contoh yang lebih penting adalah ukuran Hausdorff dalam \S\S264-265 di bawah.)
+Dalam praktik, langkah yang tepat sering kali ialah mengambil versi c.l.d.\
+dari ukuran yang dihasilkan oleh konstruksi \Caratheodory.
+
+Filosofi umum yang masuk akal dalam teori ukuran ialah bahwa kita hendak
+mengukur sebanyak mungkin himpunan dan mengintegralkan sebanyak mungkin fungsi
+secara kanonik -- maksudnya, tanpa membuat pilihan yang terang-terangan
+sewenang-wenang tentang nilai ukuran atau integral.   Penggantian ukuran
+$\mu$ dengan versi c.l.d.\ yang bersesuaian, $\tilde\mu$, kurang lebih merupakan batas
+terjauh yang dapat kita capai pada ruang ukur sebarang apabila tidak ada
+struktur lain yang membimbing pilihan kita.
+
+Perhatikan bahwa $\tilde\mu$ tidak sedekat $\mu$ sebagaimana kelengkapan
+$\hat\mu$ dari $\mu$;  hal ini wajar, sebab jika $E\in\Sigma$ murni tak berhingga terhadap
+$\mu$, kita harus memilih antara menetapkan $\tilde\mu E=0\ne\mu E$ dan
+mencari suatu cara untuk memasukkan banyak himpunan berukuran berhingga ke
+dalam $E$. Jika $E$ himpunan satu anggota, pilihan kedua bahkan mustahil; dan
+dalam keadaan apa pun proses itu akan bersifat sewenang-wenang.
+Meskipun fungsi yang dapat diintegralkan terhadap $\tilde\mu$ tidak selalu
+sama dengan yang dapat diintegralkan terhadap $\mu$ (karena $\tilde\mu$
+menjadikan himpunan murni tak berhingga terabaikan, sehingga fungsi indikatornya
+dapat diintegralkan), keduanya `hampir' sama. Tepatnya, setiap fungsi yang dapat
+diintegralkan terhadap $\tilde\mu$ dapat diubah menjadi fungsi yang dapat
+diintegralkan terhadap $\mu$ dengan menyesuaikan nilainya pada suatu himpunan
+yang terabaikan terhadap $\tilde\mu$.   Ini tentu bersesuaian dengan fakta
+bahwa setiap himpunan berukuran berhingga terhadap $\tilde\mu$ merupakan beda
+simetris antara suatu himpunan berukuran berhingga terhadap $\mu$ dan suatu
+himpunan yang terabaikan terhadap $\tilde\mu$.   Untuk himpunan berukuran tak
+berhingga, hal ini dapat gagal kecuali $\mu$ dapat dilokalkan (213Hb, 213Xb).
+
+Jika $(X,\Sigma,\mu)$ semihingga, dapat dilokalkan, atau dapat dilokalkan
+secara ketat, maka tentu ruang tersebut lebih dekat, dalam arti yang
+bersesuaian, dengan $(X,\tilde\Sigma,\tilde\mu)$, sebagaimana dirinci dalam
+213Ha-c.
+
+Patut dicatat bahwa ukuran $\check\mu$ yang diperoleh dengan metode
+\Caratheodory langsung dari ukuran luar $\mu^*$ yang ditentukan oleh $\mu$ dapat
+tidak semihingga, sekalipun $\mu$ semihingga (213Yc). Namun, modifikasi
+sederhana atas $\mu^*$ (213Xg) menghasilkan versi c.l.d.\ $\tilde\mu$ dari
+$\mu$, yang juga dapat diperoleh dari suatu ukuran dalam yang sesuai (213Xe).
+Tentu saja $\check\mu$ juga berkaitan dengan $\tilde\mu$ melalui cara-cara
+lain;  lihat 213Xd.
+}%end of notes
+
+\discrpage
+
+
+
+

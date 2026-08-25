@@ -1,0 +1,599 @@
+\frfilename{mt215.tex}
+\versiondate{13.11.13}
+\copyrightdate{2000}
+
+\def\chaptername{Taksonomi ruang ukur}
+\def\sectionname{Ruang $\sigma$-hingga dan prinsip penghabisan}
+
+\newsection{215}
+
+Saya menyisipkan bagian singkat ini untuk membahas beberapa fakta berguna
+yang mungkin luput jika ditempatkan dalam salah satu bagian yang lebih panjang
+di bab ini. Hampir semua penerapan teori ukuran melibatkan ruang
+$\sigma$-hingga, sampai-sampai banyak penulis hanya membahas sepintas ruang
+lainnya. Saya sendiri lebih suka menandai pentingnya konsep-konsep semacam itu
+dengan menyatakan secara tegas teorema mana yang hanya berlaku bagi kelas
+ruang yang lebih terbatas tersebut. Namun, beberapa fakta tentang ruang
+$\sigma$-hingga memang perlu dipahami sejak awal. Dalam 215B saya memberikan
+daftar sifat yang mencirikan ruang $\sigma$-hingga. Sebagian di antaranya lebih
+mudah dipahami melalui prinsip penghabisan (215A). Sekaligus, saya menyertakan
+sebuah fakta mendasar mengenai ruang ukur
+tanpa atom (215D).
+
+\leader{215A}{Prinsip \dvrocolon{penghabisan}}\cmmnt{ Pernyataan berikut
+merupakan contoh penggunaan salah satu metode terpenting dalam teori ukuran.
+
+\medskip
+
+\noindent}{\bf Lema} Misalkan $(X,\Sigma,\mu)$ sembarang ruang ukur dan
+$\Cal E\subseteq\Sigma$ suatu keluarga tak-kosong sedemikian sehingga
+$\sup_{n\in\Bbb N}\mu F_n$ berhingga untuk setiap barisan tak-menurun
+$\sequencen{F_n}$ dalam $\Cal E$.
+
+(a) Terdapat suatu barisan tak-menurun $\sequencen{F_n}$ dalam $\Cal E$
+sedemikian sehingga, untuk setiap $E\in\Sigma$, {\it salah satu} dari dua
+hal berikut berlaku: terdapat $n\in\Bbb N$ sedemikian sehingga $E\cup F_n$
+tidak termuat dalam satu pun anggota $\Cal E$; {\it atau}, dengan menetapkan
+$F=\bigcup_{n\in\Bbb N}F_n$,
+
+\Centerline{$\lim_{n\to\infty}\mu(E\setminus F_n)
+=\mu(E\setminus F)=0$.}
+
+\noindent Khususnya, jika $E\in\Cal E$ dan $E\supseteq F$, maka
+$E\setminus F$ terabaikan.
+
+(b) Jika $\Cal E$ terarah ke atas, maka terdapat suatu barisan tak-menurun
+$\sequencen{F_n}$ dalam $\Cal E$ sedemikian sehingga, dengan menetapkan
+$F=\bigcup_{n\in\Bbb N}F_n$, berlaku $\mu F=\sup_{E\in\Cal E}\mu E$ dan
+$E\setminus F$ terabaikan untuk setiap $E\in\Cal E$; dengan demikian $F$
+merupakan supremum esensial dari $\Cal E$ dalam $\Sigma$\cmmnt{ dalam
+pengertian 211G}.
+
+(c) Jika gabungan setiap barisan tak-menurun dalam $\Cal E$ merupakan anggota
+$\Cal E$, maka terdapat $F\in\Cal E$ sedemikian sehingga $E\setminus F$
+terabaikan untuk setiap $E\in\Cal E$ dengan $F\subseteq E$.
+
+\proof{{\bf (a)} Pilih $\sequencen{F_n}$, $\sequencen{\Cal E_n}$, dan
+$\sequencen{u_n}$ secara induktif sebagai berikut. Ambil $F_0$ sebagai
+sembarang anggota $\Cal E$. Setelah $F_n\in\Cal E$ dipilih, tetapkan
+$\Cal E_n=\{E:F_n\subseteq E\in\Cal E\}$ dan
+$u_n=\sup\{\mu E:E\in\Cal E_n\}$ dalam $[0,\infty]$, lalu pilih
+$F_{n+1}\in\Cal E_n$ sedemikian sehingga
+$\mu F_{n+1}\ge\min(n,u_n-2^{-n})$; lanjutkan proses ini.
+
+Perhatikan bahwa konstruksi ini menghasilkan suatu barisan tak-menurun
+$\sequencen{F_n}$ dalam $\Cal E$. Karena
+$\Cal E_{n+1}\subseteq\Cal E_n$ untuk setiap $n$, barisan
+$\sequencen{u_n}$ tak-menaik dan memiliki limit $u$ dalam $[0,\infty]$.
+Karena $\min(n,u-2^{-n})\le\mu F_{n+1}\le u_n$ untuk setiap $n$, berlaku
+$\lim_{n\to\infty}\mu F_n=u$. Hipotesis kita mengenai $\Cal E$ sekarang
+menunjukkan bahwa $u$ berhingga.
+
+Jika $E\in\Sigma$ sedemikian sehingga untuk setiap $n\in\Bbb N$ terdapat
+$E_n\in\Cal E$ dengan $E\cup F_n\subseteq E_n$, maka
+$E_n\in\Cal E_n$, sehingga
+
+\Centerline{$\mu F_n\le\mu(E\cup F_n)\le\mu E_n\le u_n$}
+
+\noindent untuk setiap $n$, dan
+$\lim_{n\to\infty}\mu(E\cup F_n)=u$. Ini berarti bahwa
+
+\Centerline{$\mu(E\setminus F)
+\le\lim_{n\to\infty}\mu(E\setminus F_n)
+=\lim_{n\to\infty}\mu(E\cup F_n)-\mu F_n
+=0$,}
+
+\noindent sebagaimana dinyatakan. Khususnya, kesimpulan ini berlaku jika
+$E\in\Cal E$ dan $E\supseteq F$.
+
+\medskip
+
+{\bf (b)} Ambil $\sequencen{F_n}$ dari (a). Jika $E\in\Cal E$, maka
+(karena $\Cal E$ terarah ke atas) $E\cup F_n$ termuat dalam suatu anggota
+$\Cal E$ untuk setiap $n\in\Bbb N$; oleh sebab itu alternatif kedua dalam
+(a) harus berlaku, dan $E\setminus F$ terabaikan. Akibatnya,
+
+\Centerline{$\sup_{E\in\Cal E}\mu E
+\le\mu F
+=\lim_{n\to\infty}\mu F_n
+\le\sup_{E\in\Cal E}\mu E$,}
+
+\noindent sehingga $\mu F=\sup_{E\in\Cal E}\mu E$.
+
+Jika $G$ sembarang himpunan terukur sedemikian sehingga $E\setminus G$
+terabaikan untuk setiap $E\in\Cal E$, maka $F_n\setminus G$ terabaikan
+untuk setiap $n$, sehingga $F\setminus G$ terabaikan; jadi $F$ merupakan
+supremum esensial bagi $\Cal E$.
+
+\medskip
+
+{\bf (c)} Ambil kembali $\sequencen{F_n}$ dari (a), dan tetapkan
+$F=\bigcup_{n\in\Bbb N}F_n$. Hipotesis kita sekarang menyatakan bahwa
+$F\in\Cal E$, sehingga kedua sifat yang dinyatakan terpenuhi.
+}%end of proof of 215A
+
+\leader{215B}{}\cmmnt{ Ruang $\sigma$-hingga begitu penting sehingga
+fakta-fakta berikut layak dinyatakan secara terperinci.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur
+semihingga. Tuliskan $\Cal N$ untuk keluarga himpunan $\mu$-terabaikan
+dan $\Sigma^f$ untuk keluarga himpunan terukur berukuran berhingga.
+Pernyataan-pernyataan berikut ekuivalen:
+
+(i) $(X,\Sigma,\mu)$ bersifat $\sigma$-hingga;
+
+(ii) setiap keluarga saling lepas dalam $\Sigma^f\setminus\Cal N$
+terhitung;
+
+(iii) setiap keluarga saling lepas dalam $\Sigma\setminus\Cal N$
+terhitung;
+
+(iv) untuk setiap $\Cal E\subseteq\Sigma$ terdapat himpunan terhitung
+$\Cal E_0\subseteq\Cal E$ sedemikian sehingga
+$E\setminus\bigcup\Cal E_0$ terabaikan untuk setiap $E\in\Cal E$;
+
+(v) untuk setiap $\Cal E\subseteq\Sigma$ yang tak-kosong dan terarah ke
+atas, terdapat suatu barisan tak-menurun $\sequencen{F_n}$ dalam
+$\Cal E$ sedemikian sehingga
+$E\setminus\bigcup_{n\in\Bbb N}F_n$ terabaikan untuk setiap
+$E\in\Cal E$;
+
+(vi) untuk setiap $\Cal E\subseteq\Sigma$ yang tak-kosong, terdapat suatu
+barisan tak-menurun $\sequencen{F_n}$ dalam $\Cal E$ sedemikian sehingga
+$E\setminus\bigcup_{n\in\Bbb N}F_n$ terabaikan untuk setiap $E\in\Cal E$
+yang memenuhi $E\supseteq F_n$ untuk setiap $n\in\Bbb N$;
+
+(vii) {\it $\mu X=0$}, {\it atau} terdapat suatu ukuran
+peluang $\nu$ pada $X$ dengan domain dan himpunan-himpunan terabaikan yang
+sama dengan $\mu$;
+
+(viii) terdapat suatu fungsi terukur dan terintegralkan
+$f:X\to\ocint{0,1}$;
+
+(ix) $\mu X=0$, atau terdapat suatu fungsi terukur
+$f:X\to\ooint{0,\infty}$ sedemikian sehingga $\int fd\mu=1$.
+
+\proof{{\bf (i)$\Rightarrow$(vii) dan (viii)} Jika $\mu X=0$, maka (vii)
+langsung berlaku dan kita dapat mengambil $f=\chi X$ dalam (viii). Jika
+tidak, misalkan $\sequencen{E_n}$ suatu barisan saling lepas dalam
+$\Sigma^f$ yang menutupi $X$. Mudah dilihat bahwa terdapat suatu barisan
+$\sequencen{\alpha_n}$ bilangan real yang semuanya positif sedemikian sehingga
+$\sum_{n=0}^{\infty}\alpha_n\mu E_n=1$. Tetapkan
+$\nu E=\sum_{n=0}^{\infty}\alpha_n\mu(E\cap E_n)$ untuk $E\in\Sigma$;
+maka $\nu$ merupakan ukuran peluang dengan domain $\Sigma$ dan
+himpunan-himpunan terabaikan yang sama dengan $\mu$. Selain itu,
+$f=\sum_{n=0}^{\infty}\min(1,\alpha_n)\chi E_n$ merupakan fungsi terukur
+dan terintegralkan yang bernilai positif di setiap titik.
+
+\medskip
+
+{\bf (vii)$\Rightarrow$(vi) dan (v)} Andaikan (vii), dan misalkan
+$\Cal E$ suatu keluarga tak-kosong yang terdiri atas himpunan terukur. Jika
+$\mu X=0$, maka (vi) dan (v) jelas benar. Jika tidak, misalkan $\nu$
+suatu ukuran peluang dengan domain $\Sigma$ dan himpunan-himpunan
+terabaikan yang sama dengan $\mu$. Karena
+$\sup_{E\in\Cal E}\nu E\le 1$ berhingga, kita dapat menerapkan 215Aa
+untuk memperoleh suatu barisan tak-menurun $\sequencen{F_n}$ dalam
+$\Cal E$ sedemikian sehingga
+$E\setminus\bigcup_{n\in\Bbb N}F_n$ terabaikan untuk setiap
+$E\in\Cal E$ yang
+memuat $\bigcup_{n\in\Bbb N}F_n$; dan jika $\Cal E$ terarah ke atas,
+$E\setminus\bigcup_{n\in\Bbb N}F_n$ terabaikan untuk setiap $E\in\Cal E$,
+sebagaimana dalam 215Ab.
+
+\medskip
+
+{\bf (vi)$\Rightarrow$(iv)} Andaikan (vi), dan misalkan $\Cal E$
+sembarang subhimpunan dari $\Sigma$. Tetapkan
+
+\Centerline{$\Cal H=\{\bigcup\Cal E_0:\Cal E_0\subseteq\Cal E$ terhitung$\}$.}
+
+\noindent Menurut (vi), terdapat suatu barisan $\sequencen{H_n}$ dalam
+$\Cal H$ sedemikian sehingga
+$H\setminus\bigcup_{n\in\Bbb N}H_n$ terabaikan untuk setiap $H\in\Cal H$
+yang memenuhi $H\supseteq H_n$ untuk setiap $n\in\Bbb N$. Sekarang setiap $H_n$
+dapat dinyatakan sebagai $\bigcup\Cal E'_n$, dengan
+$\Cal E'_n\subseteq\Cal E$ terhitung; dengan menetapkan
+$\Cal E_0=\bigcup_{n\in\Bbb N}\Cal E'_n$, himpunan $\Cal E_0$
+terhitung. Jika $E\in\Cal E$, maka
+$E\cup\bigcup_{n\in\Bbb N}H_n=\bigcup(\{E\}\cup\Cal E_0)$ termasuk
+dalam $\Cal H$ dan memuat setiap $H_n$, sehingga
+$E\setminus\bigcup\Cal E_0=E\setminus\bigcup_{n\in\Bbb N}H_n$
+terabaikan. Jadi $\Cal E_0$ mempunyai sifat yang diperlukan, dan (iv)
+benar.
+
+\medskip
+
+{\bf (iv)$\Rightarrow$(iii)} Andaikan (iv). Jika $\Cal E$ suatu keluarga
+saling lepas dalam $\Sigma\setminus\Cal N$, ambil suatu
+$\Cal E_0\subseteq\Cal E$ terhitung sedemikian sehingga
+$E\setminus\bigcup\Cal E_0$ terabaikan untuk setiap $E\in\Cal E$.
+Maka $E=E\setminus\bigcup\Cal E_0$ terabaikan untuk setiap
+$E\in\Cal E\setminus\Cal E_0$; tetapi ini berarti
+$\Cal E\setminus\Cal E_0$ kosong, sehingga $\Cal E=\Cal E_0$ terhitung.
+
+\medskip
+
+{\bf (iii)$\Rightarrow$(ii)} langsung.
+
+\medskip
+
+{\bf (ii)$\Rightarrow$(i)} Andaikan (ii). Misalkan $\frak P$ himpunan
+semua keluarga saling lepas yang merupakan subhimpunan
+$\Sigma^f\setminus\Cal N$, dengan urutan $\subseteq$. Maka $\frak P$
+merupakan himpunan terurut sebagian yang tak-kosong (karena
+$\emptyset\in \frak P$); dan setiap
+$\frak Q\subseteq \frak P$ yang tak-kosong dan terurut total mempunyai
+suatu batas atas dalam $\frak P$. \Prf\ Tetapkan
+$\Cal E=\bigcup \frak Q$, yakni gabungan semua keluarga saling lepas yang
+merupakan anggota $\frak Q$. Jika $E\in\Cal E$, maka $E\in\Cal C$ untuk
+suatu $\Cal C\in \frak Q$, sehingga $E\in\Sigma^f\setminus\Cal N$.
+Jika $E$, $F\in\Cal E$ dan $E\ne F$, maka terdapat
+$\Cal C$, $\Cal D\in \frak Q$ sedemikian sehingga $E\in\Cal C$ dan
+$F\in\Cal D$; karena $\frak Q$ terurut total, salah satu dari $\Cal C$,
+$\Cal D$ memuat yang lain, dan dalam kedua kasus
+$\Cal C\cup\Cal D$ merupakan anggota $\frak Q$ yang memuat $E$ dan $F$.
+Karena setiap anggota $\frak Q$ merupakan keluarga himpunan saling lepas,
+$E\cap F=\emptyset$. Karena $E$ dan $F$ sembarang, $\Cal E$ merupakan
+keluarga himpunan saling lepas, sehingga merupakan anggota $\frak P$.
+Tentu saja
+$\Cal C\subseteq\Cal E$ untuk setiap $\Cal C\in \frak Q$, sehingga
+$\Cal E$ merupakan batas atas bagi $\frak Q$ dalam $\frak P$.\ \Qed
+
+Menurut Lema Zorn (2A1M), $\frak P$ mempunyai suatu elemen maksimal,
+sebut $\Cal E$. Menurut (ii), $\Cal E$ harus terhitung, sehingga
+$\bigcup\Cal E\in\Sigma$. Sekarang
+$H=X\setminus\bigcup\Cal E$ terabaikan. \Prf\Quer\ Andaikan sebaliknya.
+Karena $(X,\Sigma,\mu)$ semihingga, terdapat suatu himpunan $G$ berukuran
+berhingga sedemikian sehingga $G\subseteq H$ dan $\mu G>0$, yakni
+$G\in\Sigma^f\setminus\Cal N$ dan $G\cap E=\emptyset$ untuk setiap
+$E\in\Cal E$. Namun ini berarti bahwa $\{G\}\cup\Cal E$ merupakan
+anggota $\frak P$ yang lebih besar daripada $\Cal E$, padahal hal itu
+mustahil.\ \Bang\Qed
+
+Misalkan $\sequencen{X_n}$ suatu barisan yang mencakup semua anggota
+$\Cal E\cup\{H\}$. Maka $\sequencen{X_n}$ merupakan penutup $X$ oleh
+suatu barisan himpunan terukur berukuran berhingga, sehingga
+$(X,\Sigma,\mu)$ bersifat $\sigma$-hingga.
+
+\medskip
+
+{\bf (v)$\Rightarrow$(i)} Jika (v) benar, maka terdapat suatu barisan
+$\sequencen{E_n}$ dalam $\Sigma^f$ sedemikian sehingga
+$E\setminus\bigcup_{n\in\Bbb N}E_n$ terabaikan untuk setiap
+$E\in\Sigma^f$. Karena $\mu$ semihingga,
+$X\setminus\bigcup_{n\in\Bbb N}E_n$ harus terabaikan; jadi $X$ ditutupi
+oleh suatu keluarga terhitung yang terdiri atas himpunan berukuran berhingga
+dan $\mu$ bersifat $\sigma$-hingga.
+
+\medskip
+
+{\bf (viii)$\Rightarrow$(ix)} Jika $\mu X=0$, pernyataan ini langsung.
+Jika tidak, apabila $f$ suatu fungsi terukur dan terintegralkan yang bernilai
+positif di setiap titik, maka $c=\int f>0$ (122Rc), sehingga $\Bover1cf$
+merupakan fungsi terukur yang bernilai positif di setiap titik dan berintegral
+$1$.
+
+{\bf (ix)$\Rightarrow$(i)} Jika $f:X\to\ooint{0,\infty}$ terukur dan
+terintegralkan, maka
+$\sequencen{\{x:f(x)\ge 2^{-n}\}}$ merupakan barisan himpunan berukuran
+berhingga yang menutupi $X$.
+}%end of proof of 215B
+
+\leader{215C}{Akibat} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur
+$\sigma$-hingga, dan andaikan $\Cal E\subseteq\Sigma$ sembarang keluarga
+tak-kosong.
+
+(a) Terdapat suatu barisan tak-menurun $\sequencen{F_n}$ dalam $\Cal E$
+sedemikian sehingga, untuk setiap $E\in\Sigma$, {\it salah satu} dari
+dua hal berikut berlaku: terdapat $n\in\Bbb N$ sedemikian sehingga
+$E\cup F_n$ tidak termuat dalam satu pun anggota $\Cal E$; {\it atau}
+$E\setminus\bigcup_{n\in\Bbb N}F_n$ terabaikan.
+
+(b) Jika $\Cal E$ terarah ke atas, maka terdapat suatu barisan tak-menurun
+$\sequencen{F_n}$ dalam $\Cal E$ sedemikian sehingga
+$\bigcup_{n\in\Bbb N}F_n$ merupakan supremum esensial dari $\Cal E$
+dalam $\Sigma$.
+
+(c) Jika gabungan setiap barisan tak-menurun dalam $\Cal E$ merupakan anggota
+$\Cal E$, maka terdapat $F\in\Cal E$ sedemikian sehingga
+$E\setminus F$ terabaikan untuk setiap $E\in\Cal E$ dengan $F\subseteq E$.
+
+\proof{ Menurut 215B, terdapat suatu ukuran berhingga total $\nu$ pada
+$X$ dengan himpunan-himpunan terukur dan himpunan-himpunan terabaikan yang
+sama dengan $\mu$. Karena $\sup_{E\in\Cal E}\nu E$ berhingga, kita dapat
+menerapkan 215A pada $\nu$ untuk memperoleh hasil-hasil tersebut.
+}%end of proof of 215C
+
+\leader{215D}{}\cmmnt{ Sebagai contoh lain penggunaan prinsip penghabisan,
+saya memberikan sebuah fakta mendasar mengenai ruang ukur tanpa atom.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur tanpa
+atom. Jika $E\in\Sigma$ dan $0\le\alpha\le\mu E<\infty$, maka terdapat
+$F\in\Sigma$ sedemikian sehingga $F\subseteq E$ dan $\mu F=\alpha$.
+
+\proof{{\bf (a)} Kita perlu mengetahui bahwa jika $G\in\Sigma$
+tak-terabaikan dan $n\in\Bbb N$, maka terdapat $H\subseteq G$ sedemikian
+sehingga $0<\mu H\le 2^{-n}\mu G$. \Prf\ Kita buktikan dengan induksi
+terhadap $n$. Untuk $n=0$ pernyataan ini langsung. Untuk langkah induksi
+ke $n+1$, gunakan
+hipotesis induksi untuk memperoleh $H\subseteq G$ sedemikian sehingga
+$0<\mu H\le 2^{-n}\mu G$. Karena $\mu$ tanpa atom, terdapat
+$H'\subseteq H$ sedemikian sehingga $\mu H'$ dan $\mu(H\setminus H')$
+keduanya terdefinisi dan bukan nol. Setidaknya salah satu di antaranya
+berukuran kurang dari atau sama dengan $\bover12\mu H$, sehingga
+memberikan suatu subhimpunan dari $G$ yang berukuran positif dan tidak lebih
+dari $2^{-n-1}\mu G$.\ \Qed
+
+Akibatnya, jika $G\in\Sigma$ berukuran positif dan berhingga serta
+$\epsilon>0$, maka terdapat suatu himpunan terukur $H\subseteq G$
+sedemikian sehingga $0<\mu H\le\epsilon$.
+
+\medskip
+
+{\bf (b)} Misalkan $\Cal H$ adalah keluarga semua $H\in\Sigma$ sedemikian
+sehingga $H\subseteq E$ dan $\mu H\le\alpha$. Jika $\sequencen{H_n}$
+sembarang barisan tak-menurun dalam $\Cal H$, maka
+$\mu(\bigcup_{n\in\Bbb N}H_n)=\lim_{n\to\infty}\mu H_n\le\alpha$,
+sehingga $\bigcup_{n\in\Bbb N}H_n\in\Cal H$. Jadi 215Ac menunjukkan
+bahwa terdapat $F\in\Cal H$ sedemikian sehingga $H\setminus F$
+terabaikan untuk setiap $H\in\Cal H$ dengan $F\subseteq H$.
+\Quer\ Andaikan sebaliknya bahwa $\mu F<\alpha$. Menurut (a),
+terdapat $H\subseteq E\setminus F$ sedemikian sehingga
+$0<\mu H\le\alpha-\mu F$. Namun dalam hal ini $H\cup F\in\Cal H$ dan
+$\mu((H\cup F)\setminus F)>0$, suatu kemustahilan.\ \Bang
+
+Dengan demikian kita telah menemukan himpunan $F$ yang sesuai.
+}%end of proof of 215D
+
+\leader{*215E}{}\cmmnt{ Salah satu sifat dasar ukuran Lebesgue ialah bahwa
+himpunan bagian beranggota tunggal (dan karenanya himpunan bagian terhitung)
+terabaikan.
+Hal ini tentu berkaitan dengan kenyataan bahwa ukuran Lebesgue bersifat tanpa atom
+(211Md). Mudah mengonstruksi ukuran yang membuat setiap himpunan beranggota
+tunggal terabaikan tetapi tetap memiliki atom (misalnya ukuran
+terhitung-koterhitung dalam 211R). Perlu sedikit siasat tambahan untuk
+mengonstruksi ukuran tanpa atom yang di dalamnya tidak semua himpunan
+beranggota tunggal terabaikan
+(216Ye). Hasil berikut memberikan syarat-syarat yang mencegah hal tersebut.
+
+\medskip
+
+\noindent}{\bf Proposisi}\dvAnew{2015}
+Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur tanpa atom dan $x\in X$.
+
+(a) Jika $\mu^*\{x\}$ berhingga, maka $\{x\}$ terabaikan.
+
+(b) Jika $\mu$ memiliki himpunan-himpunan terabaikan yang ditentukan
+secara lokal, maka $\{x\}$ terabaikan.
+
+(c) Jika $\mu$ dapat dilokalkan, maka $\{x\}$ terabaikan.
+
+\proof{{\bf (a)} \Quer\ Andaikan sebaliknya; maka
+$0<\mu^*\{x\}<\infty$. Misalkan $E$ suatu himpunan yang memuat $x$
+sedemikian sehingga $\mu E<2\mu^*\{x\}$. Menurut 215D, terdapat
+$F\subseteq E$ sedemikian sehingga
+
+\Centerline{$\mu F=\bover12\mu E=\mu(E\setminus F)<\mu^*\{x\}$.}
+
+\noindent Jadi baik $F$ maupun $E\setminus F$ tidak mungkin memuat $x$;
+padahal $x\in E$.\ \Bang
+
+\medskip
+
+{\bf (b)} Untuk setiap himpunan $E$ berukuran berhingga,
+$E\cap\{x\}$ terabaikan; sebab, jika himpunan ini tidak kosong, maka
+$x\in E$ dan kita dapat menerapkan (a). Karena $\mu$ memiliki
+himpunan-himpunan terabaikan yang ditentukan secara lokal, $\{x\}$
+terabaikan.
+
+\medskip
+
+{\bf (c)} Misalkan $\Cal E\subseteq\Sigma^f$ suatu keluarga maksimal
+sedemikian sehingga $\mu E<\infty$ untuk setiap $E\in\Cal E$ dan
+$\mu(E\cap F)=0$ setiap kali $E$, $F\in\Cal E$ berbeda. Untuk setiap
+$E\in\Cal E$ dan $n\in\Bbb N$, terapkan 215D sebanyak $n$ kali untuk
+memperoleh suatu partisi $E_{n0}$, $E_{n1},\ldots,E_{nn}$ dari $E$
+sedemikian sehingga $\mu E_{ni}=\bover1{n+1}\mu E$ untuk setiap $i\le n$.
+Selanjutnya, untuk $i\le n\in\Bbb N$, misalkan $H_{ni}$ suatu supremum
+esensial dari $\{E_{ni}:E\in\Cal E\}$. Untuk setiap $n\in\Bbb N$ dan
+$E\in\Cal E$,
+
+\Centerline{$\mu(E\setminus\bigcup_{i\le n}H_{ni})
+\le\sum_{i=0}^n\mu(E_{ni}\setminus H_{ni})=0$.}
+
+\noindent Jadi, jika $F\in\Sigma$, $\mu F<\infty$, dan
+$F\cap\bigcup_{i\le n}H_{ni}=\emptyset$, maka $\mu(E\cap F)=0$ untuk
+setiap $E\in\Cal E$; karena $\Cal E$ maksimal, $F$ harus terabaikan.
+Kita mengandaikan bahwa $\mu$ semihingga, sehingga
+$X\setminus\bigcup_{i\le n}H_{ni}$ terabaikan.
+
+Akibatnya, jika terdapat $n$ sedemikian sehingga
+$x\notin\bigcup_{i\le n}H_{ni}$, maka $\{x\}$ terabaikan dan pembuktian
+selesai. Tinjau
+$H=\bigcap\{H_{ni}:i\le n\in\Bbb N$, $x\in H_{ni}\}$.
+\Quer\ Jika $\mu H>0$, terdapat $F\subseteq H$ sedemikian sehingga
+$0<\mu F<\infty$. Karena kemaksimalan $\Cal E$, terdapat
+$E^*\in\Cal E$ sedemikian sehingga $\mu(F\cap E^*)>0$. Pilih $n$
+sedemikian sehingga
+$\mu(F\cap E^*)>\bover1{n+1}\mu E^*$. Terdapat $i\le n$ sedemikian
+sehingga $x\in H_{ni}$; dengan demikian $F\subseteq H_{ni}$, sedangkan
+$\mu(F\cap E^*_{ni})\le\bover1{n+1}\mu E^*$, sehingga
+$F'=F\cap E^*\setminus E^*_{ni}$ berukuran positif. Tinjau
+$G=H_{ni}\setminus F'$. Jika $E\in\Cal E$, maka salah satu dari dua hal
+berikut berlaku: $E=E^*$ dan
+
+\Centerline{$E_{ni}\setminus G=E^*_{ni}\setminus G
+=E^*_{ni}\setminus H_{ni}$}
+
+\noindent terabaikan; atau $E\ne E^*$ dan
+
+\Centerline{$E_{ni}\setminus G
+\subseteq(E_{ni}\setminus H_{ni})\cup(E\cap E^*)$}
+
+\noindent terabaikan. Karena $H_{ni}$ merupakan supremum esensial dari
+$\{E_{ni}:E\in\Cal E\}$, maka $H_{ni}\setminus G$ harus terabaikan dan
+$F'$ terabaikan; ini mustahil.\ \Qed
+
+Jadi $H$ merupakan himpunan terabaikan yang memuat $x$, dan dalam kasus
+ini pun $\{x\}$ terabaikan.
+}%end of proof of 215E
+
+\exercises{\leader{215X}{Latihan dasar (a)}
+%\spheader 215Xa
+Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur dan $\Phi$ suatu himpunan
+tak-kosong yang terdiri atas fungsi-fungsi bernilai real yang terintegralkan
+terhadap $\mu$, yang masing-masing memetakan $X$ ke $\Bbb R$. Andaikan
+$\sup_{n\in\Bbb N}\int f_n$ berhingga
+untuk setiap barisan $\sequencen{f_n}$ dalam $\Phi$ sedemikian sehingga
+$f_n\leae f_{n+1}$ untuk setiap $n$. Tunjukkan bahwa terdapat suatu
+barisan $\sequencen{f_n}$ dalam $\Phi$ sedemikian sehingga
+$f_n\leae f_{n+1}$ untuk setiap $n$ dan, untuk setiap fungsi bernilai
+real yang terintegralkan $f$ pada $X$, {\it salah satu}:
+$f\leae\sup_{n\in\Bbb N}f_n$ {\it atau} terdapat $n\in\Bbb N$ sedemikian
+sehingga tidak ada anggota $\Phi$ yang lebih besar atau sama
+dengan $\max(f,f_n)$ hampir di mana-mana.
+%215A
+
+\sqheader 215Xb Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur. (i) Andaikan
+$\Cal E$ suatu subhimpunan $\Sigma$ yang tak-kosong dan terarah ke atas
+sedemikian sehingga $c=\sup_{E\in\Cal E}\mu E$ berhingga. Tunjukkan
+bahwa $E\setminus\bigcup_{n\in\Bbb N}F_n$ terabaikan untuk setiap
+$E\in\Cal E$ dan setiap barisan $\sequencen{F_n}$ dalam $\Cal E$
+sedemikian sehingga $\lim_{n\to\infty}\mu F_n=c$. (ii) Misalkan $\Phi$
+suatu himpunan tak-kosong yang terdiri atas fungsi-fungsi terintegralkan
+pada $X$
+yang terarah ke atas dalam arti bahwa untuk setiap $f$, $g\in\Phi$
+terdapat $h\in\Phi$ sedemikian sehingga $\max(f,g)\leae h$, serta andaikan
+$c=\sup_{f\in\Phi}\int f$ berhingga. Tunjukkan bahwa
+$f\leae\sup_{n\in\Bbb N}f_n$ untuk setiap $f\in\Phi$ dan setiap barisan
+$\sequencen{f_n}$ dalam $\Phi$ sedemikian sehingga
+$\lim_{n\to\infty}\int f_n=c$.
+%215A
+
+\spheader 215Xc Gunakan 215A untuk mempersingkat bukti 211Ld.
+
+\spheader 215Xd Berikan contoh suatu ruang ukur (yang tidak semihingga)
+$(X,\Sigma,\mu)$ yang memenuhi syarat (ii)-(iv) dalam 215B, tetapi tidak
+memenuhi (i).
+%215B
+
+\sqheader 215Xe Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur $\sigma$-hingga
+tanpa atom. Tunjukkan bahwa untuk setiap $\epsilon>0$ terdapat suatu
+barisan saling lepas $\sequencen{E_n}$ dari himpunan-himpunan terukur
+yang masing-masing berukuran paling besar $\epsilon$ dan sedemikian
+sehingga $X=\bigcup_{n\in\Bbb N}E_n$.
+%215D
+
+\spheader 215Xf Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur tanpa atom
+yang dapat dilokalkan secara ketat. Tunjukkan bahwa untuk setiap
+$\epsilon>0$ terdapat suatu dekomposisi $\familyiI{X_i}$ dari $X$
+sedemikian sehingga $\mu X_i\le\epsilon$ untuk setiap $i\in I$.
+
+\leader{215Y}{Latihan lanjutan (a)}
+%\spheader 215Ya
+Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur $\sigma$-hingga dan
+$\langle f_{mn}\rangle_{m,n\in\Bbb N}$, $\sequence{m}{f_m}$, $f$
+fungsi-fungsi terukur bernilai real yang didefinisikan hampir di
+mana-mana dalam $X$ serta sedemikian sehingga
+$\sequencen{f_{mn}}\to f_m$ hampir di mana-mana untuk setiap $m$ dan
+$\sequence{m}{f_m}\to f$ hampir di mana-mana. Tunjukkan bahwa terdapat
+suatu barisan naik ketat $\sequence{m}{n_m}$ dalam $\Bbb N$ sedemikian sehingga
+$\sequence{m}{f_{m,n_m}}\to f$ hampir di mana-mana. (Bandingkan 134Yb.)
+%215B
+
+\spheader 215Yb Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur
+$\sigma$-hingga. Misalkan $\sequencen{f_n}$ suatu barisan fungsi terukur
+bernilai real sedemikian sehingga $f=\lim_{n\to\infty}f_n$ didefinisikan
+hampir di mana-mana dalam $X$. Tunjukkan bahwa terdapat suatu barisan
+tak-menurun $\sequence{k}{X_k}$ yang terdiri atas subhimpunan terukur dari
+$X$ sedemikian sehingga $\bigcup_{k\in\Bbb N}X_k$ koterabaikan dalam
+$X$ dan $\sequencen{f_n}\to f$ seragam pada setiap $X_k$, dalam arti
+bahwa untuk setiap $\epsilon>0$ terdapat $m\in\Bbb N$ sedemikian
+sehingga $|f_j(x)-f(x)|$ terdefinisi dan kurang dari atau sama dengan
+$\epsilon$ untuk setiap $j\ge m$ dan $x\in X_k$.
+
+(Ini merupakan suatu versi Teorema Egorov.)
+%215B
+
+\spheader 215Yc Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur berhingga
+total dan $\sequencen{f_n}$, $f$ fungsi-fungsi terukur bernilai real
+yang didefinisikan hampir di mana-mana dalam $X$. Tunjukkan bahwa
+$\sequencen{f_n}\to f$ hampir di mana-mana jika dan hanya jika terdapat
+suatu barisan $\sequencen{\epsilon_n}$ dari bilangan real yang semuanya
+positif dan konvergen ke $0$, sedemikian sehingga
+
+\Centerline{$\lim_{n\to\infty}\mu^*(\bigcup_{k\ge n}\{x:x\in\dom
+f_k\cap\dom f,\,|f_k(x)-f(x)|\ge\epsilon_n\})=0$.}
+%215B
+
+\spheader 215Yd Temukan bukti langsung untuk
+(v)$\Rightarrow$(vi) dalam 215B.
+\Hint{untuk $\Cal E\subseteq\Sigma$, gunakan Lema Zorn untuk
+memperoleh suatu $\Cal E'\subseteq\Cal E$ yang maksimal dan terurut total
+sedemikian sehingga $E\symmdiff F\notin\Cal N$ untuk setiap
+$E$, $F\in\Cal E'$ yang berbeda, lalu terapkan (v) pada $\Cal E'$.}
+
+}%end of exercises
+
+\endnotes{
+\Notesheader{215}
+Gagasan bersama yang mendasari 215A, 215B(vi), 215C, dan 215Xa
+sebenarnya merupakan salah satu gagasan paling mendasar dalam teori
+ukuran. Gagasan ini muncul dalam begitu banyak bentuk sehingga sering
+kali lebih mudah membuktikan suatu penerapan langsung berdasarkan asas-asas dasar
+daripada menjelaskan bagaimana penerapan tersebut dapat direduksi ke
+versi-versi di sini. Namun, mulai sekarang saya akan berusaha menandai
+penerapan semacam itu setiap kali muncul, dengan menyebut metode tersebut
+(bukti 215Aa atau 215Xa) sebagai "prinsip penghabisan". Salah satu hal
+yang mungkin patut dicatat di sini ialah konstruksi induktif barisan
+$\sequencen{F_n}$ dalam bukti 215Aa. Setiap $F_{n+1}$ dipilih {\it
+setelah} suku sebelumnya. Inilah yang memungkinkan kita, dalam bukti
+215B(vii)$\Rightarrow$(vi), memperoleh langsung suatu barisan yang
+sesuai $\sequencen{F_n}$. Dalam banyak penerapan (mulai dari penerapan yang
+tentu paling penting dalam teori elementer, yakni Teorema Radon-Nikod\'ym
+dalam \S232, ataupun bagian (i) dari bukti 211Ld),
+penghalusan ini tidak diperlukan; kita berhadapan dengan suatu himpunan
+yang terarah ke atas, seperti dalam 215B(v), dan dapat memilih seluruh
+barisan $\sequencen{F_n}$ sekaligus, tanpa interaksi antarsuku, seperti
+dalam 215Xb. Aksioma "pilihan bergantung", yang menyatakan bahwa kita
+dapat mengonstruksi barisan suku demi suku, diketahui lebih kuat daripada
+aksioma "pilihan terhitung", yang hanya menyatakan bahwa kita dapat
+memilih objek dalam jumlah terhitung secara serentak.
+
+Dalam 215B saya berusaha menunjukkan ciri-ciri utama sifat
+$\sigma$-hingga; khususnya, sifat-sifat yang membedakan ukuran
+$\sigma$-hingga dari ukuran lain yang dapat dilokalkan secara ketat.
+Hasil ini, dalam arti tertentu, lebih abstrak daripada uraian lain dalam
+bagian ini. Perhatikan bahwa hasil ini menggunakan
+aksioma pilihan secara esensial dalam bentuk Lema Zorn. Dalam 134C saya
+menulis satu paragraf untuk mengomentari perbedaan antara "pilihan
+terhitung", yang diperlukan untuk segala sesuatu yang menyerupai teori
+standar ukuran Lebesgue, dan aksioma pilihan penuh, yang relatif jarang
+digunakan dalam teori elementer. Implikasi (ii)$\Rightarrow$(i) dalam
+215B merupakan salah satu tempat kita benar-benar memerlukan
+sesuatu yang melampaui pilihan terhitung. (Perlu kiranya saya catat bahwa
+seluruh teori ruang ukur yang bukan $\sigma$-hingga tampak sangat ganjil
+tanpa aksioma pilihan umum.) Perhatikan pula bahwa dalam 215B, bukti
+(i)$\Rightarrow$(vii) dan (vii)$\Rightarrow$(vi) merupakan satu-satunya
+bagian yang memunculkan sesuatu yang seremeh bilangan. Syarat (iii), (iv),
+(v), dan (vi) saling terhubung dengan cara yang sama sekali tidak
+berkaitan dengan teori ukuran, dan hanya melibatkan struktur
+$(X,\Sigma,\Cal N)$. (Lihat 215Yd di sini, dan 316D-316E dalam Volume 3.)
+Terdapat syarat-syarat serupa yang berkaitan dengan fungsi terukur,
+bukan himpunan terukur; untuk suatu contoh yang cukup abstrak, lihat
+241Ye.
+
+Dalam 215Ya-215Yc terdapat tiga teorema standar lain mengenai barisan
+yang konvergen hampir di mana-mana dan bergantung pada sifat
+$\sigma$-hingga atau keberhinggaan total.
+}%end of notes
+
+\discrpage
+
+
+

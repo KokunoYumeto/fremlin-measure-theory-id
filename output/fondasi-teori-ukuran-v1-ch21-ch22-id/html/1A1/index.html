@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>1A1 — Teori himpunan — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        bigcupop: '\\bigcup',
+        eae: '=_{\\mathrm{a.e.}}',
+        leae: '\\le_{\\mathrm{a.e.}}',
+        geae: '\\ge_{\\mathrm{a.e.}}',
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        roibr: '\\mathopen{{[}}',
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1]
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 1 · Bagian 1A1</p>
+  <h1>1A1 — Teori himpunan</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi Volume 1</a></nav>
+<main id="isi">
+<p>©date1996</p>
+<p>Pada <a class="xref" href="../111/index.html#111E">111E</a>-<a class="xref" href="../111/index.html#111F">111F</a> saya membahas secara ringkas himpunan ‘terhitung’. Pendekatan
+di sana mengikuti jalur yang tampaknya paling singkat menuju fakta-fakta yang
+segera diperlukan, dan mungkin sudah selayaknya saya menunjukkan di sini jalur
+yang lebih lazim. Saya memanfaatkan kesempatan ini untuk mencantumkan beberapa
+notasi yang menurut saya praktis, tetapi tidak digunakan secara universal.</p>
+<section class="source-unit" id="1A1A" data-source-id="1A1A"><h2><span class="source-label">1A1A</span> Notasi kurung siku </h2>
+<p>Saya menggunakan kurung siku
+<span class="math inline" data-source-tex="[">\([\)</span> dan <span class="math inline" data-source-tex="]">\(]\)</span> dalam berbagai cara; saya berharap konteks selalu memperjelas
+penafsiran yang dimaksud.</p>
+</section>
+<section class="source-unit" id="1A1Aa" data-source-id="1A1Aa"><h3><span class="source-label">1A1Aa</span> <strong>(a)</strong> </h3>
+<p>Untuk <span class="math inline" data-source-tex="a">\(a\)</span>, <span class="math inline" data-source-tex="b\in\Bbb R">\(b\in\Bbb R\)</span>, saya menulis</p>
+<div class="centerline"><span class="math inline" data-source-tex="[a,b]=\{x:a\le x\le b\}">\([a,b]=\{x:a\le x\le b\}\)</span>,
+  <span class="math inline" data-source-tex="\ooint{a,b}=\{x:a&lt;x&lt;b\}">\(\ooint{a,b}=\{x:a&lt;x&lt;b\}\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\coint{a,b}=\{x:a\le x&lt;b\}">\(\coint{a,b}=\{x:a\le x&lt;b\}\)</span>,
+  <span class="math inline" data-source-tex="\ocint{a,b}=\{x:a&lt;x\le b\}">\(\ocint{a,b}=\{x:a&lt;x\le b\}\)</span>.</div>
+<p>Ketika rumus-rumus ini muncul, wajar jika kita langsung
+menyimpulkan bahwa <span class="math inline" data-source-tex="a&lt;b">\(a&lt;b\)</span>; tetapi sesekali berguna untuk menafsirkannya ketika
+<span class="math inline" data-source-tex="b\le a">\(b\le a\)</span>, dan dalam hal itu saya mengikuti rumus-rumus di atas secara
+harfiah, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="[a,a]=\{a\}">\([a,a]=\{a\}\)</span>,
+  <span class="math inline" data-source-tex="\ooint{a,a}=\coint{a,a}=\ocint{a,a}=\emptyset">\(\ooint{a,a}=\coint{a,a}=\ocint{a,a}=\emptyset\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="[a,b]=\ooint{a,b}=\coint{a,b}=\ocint{a,b}=\emptyset">\([a,b]=\ooint{a,b}=\coint{a,b}=\ocint{a,b}=\emptyset\)</span> jika
+<span class="math inline" data-source-tex="b&lt;a">\(b&lt;a\)</span>.</div>
+</section>
+<section class="source-unit" id="1A1Ab" data-source-id="1A1Ab"><h3><span class="source-label">1A1Ab</span> (b) </h3>
+<p>Kita dapat menafsirkan rumus-rumus tersebut dengan
+<span class="math inline" data-source-tex="a">\(a\)</span> atau <span class="math inline" data-source-tex="b">\(b\)</span> yang tak hingga;
+sebagai contoh,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\ooint{-\infty,b}=\{x:x&lt;b\}">\(\ooint{-\infty,b}=\{x:x&lt;b\}\)</span>,
+  <span class="math inline" data-source-tex="\ooint{a,\infty}=\{x:a&lt;x\}">\(\ooint{a,\infty}=\{x:a&lt;x\}\)</span>,
+  <span class="math inline" data-source-tex="\ooint{-\infty,\infty}=\Bbb R">\(\ooint{-\infty,\infty}=\Bbb R\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\coint{a,\infty}=\{x:x\ge a\}">\(\coint{a,\infty}=\{x:x\ge a\}\)</span>,
+  <span class="math inline" data-source-tex="\ocint{-\infty,b}=\{x:x\le b\}">\(\ocint{-\infty,b}=\{x:x\le b\}\)</span>,</div>
+<p>dan bahkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="[0,\infty]=\{x:x\in\Bbb R,\,x\ge 0\}\cup\{\infty\}">\([0,\infty]=\{x:x\in\Bbb R,\,x\ge 0\}\cup\{\infty\}\)</span>,
+  <span class="math inline" data-source-tex="[-\infty,\infty]=\Bbb R\cup\{-\infty,\infty\}">\([-\infty,\infty]=\Bbb R\cup\{-\infty,\infty\}\)</span>.</div>
+</section>
+<section class="source-unit" id="1A1Ac" data-source-id="1A1Ac"><h3><span class="source-label">1A1Ac</span> (c) </h3>
+<p>Dengan kehati-hatian tertentu — karena masih ada
+pilihan-pilihan yang harus dibuat, yang lebih aman dinyatakan secara eksplisit
+ketika diperlukan — kita dapat menggunakan rumus serupa untuk ‘interval’
+dalam ruang multidimensi <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>; lihat, misalnya, <a class="xref" href="../115/index.html#115A">115A</a> atau <a class="xref" href="../136/index.html#136D">136D</a>; dan bahkan
+dalam himpunan terurut parsial umum, walaupun himpunan-himpunan ini belum akan
+penting bagi kita sebelum Jilid 3.</p>
+</section>
+<section class="source-unit" id="1A1Ad" data-source-id="1A1Ad"><h3><span class="source-label">1A1Ad</span> (d) </h3>
+<p>Barangkali saya perlu menjelaskan pilihan saya untuk
+menggunakan <span class="math inline" data-source-tex="\ooint{a,b}">\(\ooint{a,b}\)</span>, <span class="math inline" data-source-tex="\coint{a,b}">\(\coint{a,b}\)</span> alih-alih <span class="math inline" data-source-tex="(a,b)">\((a,b)\)</span>, <span class="math inline" data-source-tex="[a,b)">\([a,b)\)</span>, yang
+keduanya lebih lazim dan lebih sedap dipandang. Alasan pertama hanyalah karena
+rumus</p>
+<div class="centerline"><span class="math inline" data-source-tex="(1,2)\in\ooint{0,2}\times\ooint{1,3}">\((1,2)\in\ooint{0,2}\times\ooint{1,3}\)</span></div>
+<p>lebih mudah dipahami daripada bentuk padanannya. Secara umum,
+pilihan ini menghasilkan keseimbangan yang sedikit lebih baik antara banyaknya
+kemunculan <span class="math inline" data-source-tex="(">\((\)</span> dan <span class="math inline" data-source-tex="[">\([\)</span>, bahkan dengan memperhitungkan penggunaan lebih lanjut
+dari <span class="math inline" data-source-tex="[\ldots]">\([\ldots]\)</span> yang akan segera saya jelaskan.</p>
+</section>
+<section class="source-unit" id="1A1B" data-source-id="1A1B"><h2><span class="source-label">1A1B</span> Citra langsung dan citra balik </h2>
+<p>Sekarang saya
+menjelaskan penggunaan kurung siku yang sama sekali berbeda, yang termasuk
+dalam teori himpunan abstrak, bukan teori sistem bilangan real.</p>
+</section>
+<section class="source-unit" id="1A1Ba" data-source-id="1A1Ba"><h3><span class="source-label">1A1Ba</span> <strong>(a)</strong> </h3>
+<p>Jika <span class="math inline" data-source-tex="f">\(f\)</span> adalah suatu fungsi dan <span class="math inline" data-source-tex="A">\(A\)</span> suatu himpunan,
+saya menulis</p>
+<div class="centerline"><span class="math inline" data-source-tex="f[A]=\{f(x):x\in A\cap\dom f\}">\(f[A]=\{f(x):x\in A\cap\dom f\}\)</span></div>
+<p>untuk <strong>citra langsung</strong> <span class="math inline" data-source-tex="A">\(A\)</span> oleh <span class="math inline" data-source-tex="f">\(f\)</span>. Perhatikan bahwa
+walaupun <span class="math inline" data-source-tex="A">\(A\)</span> sering kali merupakan subhimpunan dari domain <span class="math inline" data-source-tex="f">\(f\)</span>, hal ini tidak
+diasumsikan.</p>
+</section>
+<section class="source-unit" id="1A1Bb" data-source-id="1A1Bb"><h3><span class="source-label">1A1Bb</span> (b) </h3>
+<p>Jika <span class="math inline" data-source-tex="f">\(f\)</span> adalah suatu fungsi dan <span class="math inline" data-source-tex="B">\(B\)</span> suatu himpunan, saya
+menulis</p>
+<div class="centerline"><span class="math inline" data-source-tex="f^{-1}[B]=\{x:x\in\dom f,\,f(x)\in B\}">\(f^{-1}[B]=\{x:x\in\dom f,\,f(x)\in B\}\)</span></div>
+<p>untuk <strong>citra balik</strong> <span class="math inline" data-source-tex="B">\(B\)</span> oleh <span class="math inline" data-source-tex="f">\(f\)</span>. Kali ini penting untuk
+memperhatikan bahwa tidak ada anggapan bahwa <span class="math inline" data-source-tex="f">\(f\)</span> injektif, atau bahwa <span class="math inline" data-source-tex="f^{-1}">\(f^{-1}\)</span>
+merupakan suatu fungsi; rumus <span class="math inline" data-source-tex="f^{-1}[\,\,]">\(f^{-1}[\,\,]\)</span> diberi makna yang tidak bergantung
+pada makna apa pun dari ungkapan <span class="math inline" data-source-tex="f^{-1}">\(f^{-1}\)</span>. Namun, mudah dilihat bahwa ketika
+<span class="math inline" data-source-tex="f">\(f\)</span> injektif, sehingga kita mempunyai fungsi invers sejati <span class="math inline" data-source-tex="f^{-1}">\(f^{-1}\)</span> (yang
+didefinisikan pada himpunan nilai <span class="math inline" data-source-tex="f">\(f\)</span>, yaitu <span class="math inline" data-source-tex="f[\dom f]">\(f[\dom f]\)</span>), maka <span class="math inline" data-source-tex="f^{-1}[B]">\(f^{-1}[B]\)</span>,
+sebagaimana didefinisikan di sini, sama dengan penafsirannya menurut (a).</p>
+</section>
+<section class="source-unit" id="1A1Bc" data-source-id="1A1Bc"><h3><span class="source-label">1A1Bc</span> (c) </h3>
+<p>Sekarang andaikan bahwa <span class="math inline" data-source-tex="R">\(R\)</span> merupakan suatu relasi, yaitu
+suatu himpunan pasangan terurut, dan <span class="math inline" data-source-tex="A">\(A\)</span>, <span class="math inline" data-source-tex="B">\(B\)</span> adalah himpunan. Maka saya
+menulis</p>
+<div class="centerline"><span class="math inline" data-source-tex="R[A]=\{y:\,\exists\,x\in A">\(R[A]=\{y:\,\exists\,x\in A\)</span> sedemikian sehingga <span class="math inline" data-source-tex="(x,y)\in R\}">\((x,y)\in R\}\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="R^{-1}[B]=\{x:\,\exists\,y\in B">\(R^{-1}[B]=\{x:\,\exists\,y\in B\)</span> sedemikian sehingga <span class="math inline" data-source-tex="(x,y)\in R\}">\((x,y)\in R\}\)</span>.</div>
+<p>Jika kita menulis</p>
+<div class="centerline"><span class="math inline" data-source-tex="R^{-1}=\{(y,x):(x,y)\in R\}">\(R^{-1}=\{(y,x):(x,y)\in R\}\)</span>,</div>
+<p>maka kita memperoleh penafsiran lain untuk <span class="math inline" data-source-tex="R^{-1}[B]">\(R^{-1}[B]\)</span> yang sama
+dengan penafsiran yang baru diberikan. Selain itu, jika <span class="math inline" data-source-tex="R">\(R\)</span> merupakan grafik
+suatu fungsi <span class="math inline" data-source-tex="f">\(f\)</span>, yaitu jika untuk setiap <span class="math inline" data-source-tex="x">\(x\)</span> terdapat paling banyak satu <span class="math inline" data-source-tex="y">\(y\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="(x,y)\in R">\((x,y)\in R\)</span>, maka rumus-rumus di sini sama dengan
+rumus-rumus dalam (a)-(b) di atas.</p>
+</section>
+<section class="source-unit" id="1A1Bd" data-source-id="1A1Bd"><h3><span class="source-label">1A1Bd</span> (d) </h3>
+<p>(Bagian berikut ditujukan khusus kepada para pembaca
+yang telah diajari untuk membedakan kata ‘himpunan’ dan ‘kelas’.) Saya telah
+menggunakan kata ‘himpunan’ lebih dari sekali di atas. Namun, hal itu semata-
+mata demi keluwesan ungkapan. Rumus-rumus yang sama dapat digunakan dengan
+kelas-kelas sembarang, walaupun dalam beberapa teori himpunan ungkapan yang
+terlibat mungkin tidak diakui sebagai ‘suku’ dalam arti teknis.</p>
+</section>
+<section class="source-unit" id="1A1C" data-source-id="1A1C"><h2><span class="source-label">1A1C</span> Himpunan terhitung </h2>
+<p>Dalam <a class="xref" href="../111/index.html#111Fa">111Fa</a> saya mendefinisikan ‘himpunan
+terhitung’ sebagai berikut: suatu himpunan <span class="math inline" data-source-tex="K">\(K\)</span> terhitung jika himpunan itu
+kosong atau terdapat suatu fungsi surjektif dari <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span> ke <span class="math inline" data-source-tex="K">\(K\)</span>. Rumusan yang
+lebih lazim mengatakan bahwa suatu himpunan <span class="math inline" data-source-tex="K">\(K\)</span> terhitung jika dan hanya jika
+himpunan itu berhingga atau terdapat suatu bijeksi antara <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span> dan <span class="math inline" data-source-tex="K">\(K\)</span>.
+Jadi, saya perlu segera memeriksa bahwa kedua rumusan ini setara.</p>
+</section>
+<section class="source-unit" id="1A1D" data-source-id="1A1D"><h2><span class="source-label">1A1D</span> Proposisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="K">\(K\)</span> suatu himpunan. Maka pernyataan-
+pernyataan berikut ekuivalen:</p>
+<p>(i) <span class="math inline" data-source-tex="K">\(K\)</span> kosong atau terdapat suatu surjeksi dari <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span> ke <span class="math inline" data-source-tex="K">\(K\)</span>;</p>
+<p>(ii) <span class="math inline" data-source-tex="K">\(K\)</span> berhingga atau terdapat suatu bijeksi antara <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span> dan <span class="math inline" data-source-tex="K">\(K\)</span>;</p>
+<p>(iii) terdapat suatu injeksi dari <span class="math inline" data-source-tex="K">\(K\)</span> ke <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)(i)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(iii)</strong> Andaikan (i). Jika <span class="math inline" data-source-tex="K">\(K\)</span> kosong, maka
+fungsi kosong merupakan suatu injeksi dari <span class="math inline" data-source-tex="K">\(K\)</span> ke <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span>. Jika tidak,
+terdapat suatu surjeksi <span class="math inline" data-source-tex="\phi:\Bbb N\to K">\(\phi:\Bbb N\to K\)</span>.
+Sekarang, untuk setiap <span class="math inline" data-source-tex="k\in K">\(k\in K\)</span>, tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\psi(k)=\min\{n:n\in\Bbb N">\(\psi(k)=\min\{n:n\in\Bbb N\)</span>, <span class="math inline" data-source-tex="\phi(n)=k\}">\(\phi(n)=k\}\)</span>;</div>
+<p>nilai ini selalu terdefinisi dengan baik karena <span class="math inline" data-source-tex="\phi">\(\phi\)</span> surjektif,
+sehingga <span class="math inline" data-source-tex="\{n:\phi(n)=k\}">\(\{n:\phi(n)=k\}\)</span> tidak pernah kosong dan mesti mempunyai anggota
+terkecil. Karena <span class="math inline" data-source-tex="\phi\psi(k)=k">\(\phi\psi(k)=k\)</span> untuk setiap <span class="math inline" data-source-tex="k">\(k\)</span>, <span class="math inline" data-source-tex="\psi">\(\psi\)</span> mesti injektif, dan
+karena itu merupakan injeksi yang diperlukan dari <span class="math inline" data-source-tex="K">\(K\)</span> ke <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span>.</p>
+<p> </p>
+<p><strong>(b)(iii)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(ii)</strong> Andaikan (iii); misalkan
+<span class="math inline" data-source-tex="\psi:K\to\Bbb N">\(\psi:K\to\Bbb N\)</span> suatu injeksi, dan tetapkan
+<span class="math inline" data-source-tex="A=\psi[K]\subseteq\Bbb N">\(A=\psi[K]\subseteq\Bbb N\)</span>. Maka <span class="math inline" data-source-tex="\psi">\(\psi\)</span> merupakan suatu bijeksi antara <span class="math inline" data-source-tex="K">\(K\)</span>
+dan <span class="math inline" data-source-tex="A">\(A\)</span>. Jika <span class="math inline" data-source-tex="K">\(K\)</span> berhingga, tentu saja (ii) terpenuhi. Jika tidak, <span class="math inline" data-source-tex="A">\(A\)</span> juga
+mesti tak hingga. Definisikan <span class="math inline" data-source-tex="\phi:A\to\Bbb N">\(\phi:A\to\Bbb N\)</span> dengan menetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\phi(m)=\#(\{i:i\in A,\,i&lt;m\})">\(\phi(m)=\#(\{i:i\in A,\,i&lt;m\})\)</span>,</div>
+<p>yaitu banyaknya anggota <span class="math inline" data-source-tex="A">\(A\)</span> yang kurang dari <span class="math inline" data-source-tex="m">\(m\)</span>, untuk setiap
+<span class="math inline" data-source-tex="m\in A">\(m\in A\)</span>; dengan demikian, <span class="math inline" data-source-tex="\phi(m)">\(\phi(m)\)</span> adalah posisi <span class="math inline" data-source-tex="m">\(m\)</span> jika anggota-anggota
+<span class="math inline" data-source-tex="A">\(A\)</span> diurutkan dari yang terkecil, dimulai dengan <span class="math inline" data-source-tex="0">\(0\)</span> untuk anggota terkecil
+<span class="math inline" data-source-tex="A">\(A\)</span>. Maka <span class="math inline" data-source-tex="\phi:A\to\Bbb N">\(\phi:A\to\Bbb N\)</span> merupakan suatu bijeksi, karena <span class="math inline" data-source-tex="A">\(A\)</span> tak hingga,
+dan <span class="math inline" data-source-tex="\phi\psi:K\to\Bbb N">\(\phi\psi:K\to\Bbb N\)</span> merupakan suatu bijeksi.</p>
+<p> </p>
+<p><strong>(c)(ii)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(i)</strong> Jika <span class="math inline" data-source-tex="K">\(K\)</span> kosong, jelas himpunan itu memenuhi (i). Jika
+<span class="math inline" data-source-tex="K">\(K\)</span> berhingga dan tak kosong, daftarkan anggota-anggotanya sebagai
+<span class="math inline" data-source-tex="k_0,\ldots,k_n">\(k_0,\ldots,k_n\)</span>; sekarang tetapkan <span class="math inline" data-source-tex="\phi(i)=k_i">\(\phi(i)=k_i\)</span> untuk <span class="math inline" data-source-tex="i\le n">\(i\le n\)</span>, dan <span class="math inline" data-source-tex="k_0">\(k_0\)</span>
+untuk <span class="math inline" data-source-tex="i&gt;n">\(i&gt;n\)</span>, sehingga diperoleh suatu surjeksi <span class="math inline" data-source-tex="\phi:\Bbb N\to K">\(\phi:\Bbb N\to K\)</span>. Jika <span class="math inline" data-source-tex="K">\(K\)</span>
+tak hingga, terdapat suatu bijeksi dari <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span> ke <span class="math inline" data-source-tex="K">\(K\)</span>, yang tentu saja juga
+merupakan suatu surjeksi dari <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span> ke <span class="math inline" data-source-tex="K">\(K\)</span>. Jadi, (i) benar dalam semua
+kasus.</p></aside>
+<p> </p>
+<p><strong>Catatan</strong> Dalam bukti di atas saya menyebut ‘fungsi kosong’.
+Fungsi ini mempunyai domain <span class="math inline" data-source-tex="\emptyset">\(\emptyset\)</span>; setelah hal itu dinyatakan, aturan
+apa pun, atau tanpa aturan sama sekali, untuk menghitung fungsi tersebut akan
+memberikan hasil yang sama karena aturan itu tidak akan pernah diterapkan.
+Dengan menelaah perasaan Anda terhadap konstruksi ini, Anda dapat mengetahui
+sesuatu tentang sikap dasar Anda terhadap matematika. Anda mungkin merasa
+bahwa konstruksi ini merupakan sesuatu yang dibuat-buat dan tidak relevan,
+atau Anda mungkin merasa bahwa konstruksi ini sama perlunya dengan bilangan
+<span class="math inline" data-source-tex="0">\(0\)</span>. Kedua perasaan itu sepenuhnya sah, dan matematikawan yang matang akan
+berganti-ganti di antara keduanya; tetapi harus saya katakan bahwa saya
+sendiri lebih sering condong pada perasaan yang kedua daripada yang pertama,
+dan bahwa ketika saya mengatakan ‘fungsi’ dalam risalah ini, biasanya
+kemungkinan fungsi kosong tetap ada dalam benak saya.</p>
+</section>
+<section class="source-unit" id="1A1E" data-source-id="1A1E"><span class="anchor" id="1A1Ea"></span><h2><span class="source-label">1A1E</span> Sifat-sifat himpunan terhitung </h2>
+<p>Izinkan saya
+merangkum kembali sifat-sifat dasar himpunan terhitung:</p>
+<p> </p>
+<p><strong>(a)</strong> Jika <span class="math inline" data-source-tex="K">\(K\)</span> terhitung dan <span class="math inline" data-source-tex="\phi:K\to L">\(\phi:K\to L\)</span> merupakan suatu
+surjeksi, maka <span class="math inline" data-source-tex="L">\(L\)</span> terhitung. <span class="proof-fragment">Bukti. Jika <span class="math inline" data-source-tex="K">\(K\)</span> kosong maka <span class="math inline" data-source-tex="L">\(L\)</span> juga
+kosong. Jika tidak, terdapat suatu surjeksi <span class="math inline" data-source-tex="\psi:\Bbb N\to K">\(\psi:\Bbb N\to K\)</span>, sehingga
+<span class="math inline" data-source-tex="\phi\psi">\(\phi\psi\)</span> merupakan suatu surjeksi dari <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span> ke <span class="math inline" data-source-tex="L">\(L\)</span>, dan <span class="math inline" data-source-tex="L">\(L\)</span>
+terhitung. ∎</span></p>
+</section>
+<section class="source-unit" id="1A1Eb" data-source-id="1A1Eb"><h3><span class="source-label">1A1Eb</span> <strong>(b)</strong> </h3>
+<p>Jika <span class="math inline" data-source-tex="K">\(K\)</span> terhitung dan <span class="math inline" data-source-tex="\phi:L\to K">\(\phi:L\to K\)</span> merupakan
+suatu injeksi, maka <span class="math inline" data-source-tex="L">\(L\)</span> terhitung. <span class="proof-fragment">Bukti. Menurut <a class="xref" href="#1A1D">1A1D</a>(iii), terdapat
+suatu injeksi <span class="math inline" data-source-tex="\psi:K\to\Bbb N">\(\psi:K\to\Bbb N\)</span>; sekarang <span class="math inline" data-source-tex="\psi\phi:L\to\Bbb N">\(\psi\phi:L\to\Bbb N\)</span> injektif,
+sehingga <span class="math inline" data-source-tex="L">\(L\)</span> terhitung. ∎</span></p>
+</section>
+<section class="source-unit" id="1A1Ec" data-source-id="1A1Ec"><h3><span class="source-label">1A1Ec</span> <strong>(c)</strong> </h3>
+<p>Khususnya, setiap subhimpunan dari suatu himpunan
+terhitung adalah terhitung (seperti dalam <a class="xref" href="../111/index.html#111F">111F</a>(b-i)).</p>
+</section>
+<section class="source-unit" id="1A1Ed" data-source-id="1A1Ed"><h3><span class="source-label">1A1Ed</span> <strong>(d)</strong> </h3>
+<p>Hasil kali Kartesius dari sejumlah berhingga himpunan
+terhitung adalah terhitung (<a class="xref" href="../111/index.html#111Fb">111Fb</a>(iii)-(iv)).</p>
+</section>
+<section class="source-unit" id="1A1Ee" data-source-id="1A1Ee"><h3><span class="source-label">1A1Ee</span> <strong>(e)</strong> </h3>
+<p><span class="math inline" data-source-tex="\Bbb Z">\(\Bbb Z\)</span> terhitung. <span class="proof-fragment">Bukti. Pemetaan
+<span class="math inline" data-source-tex="(m,n)\mapsto m-n:\Bbb N\times\Bbb N\to\Bbb Z">\((m,n)\mapsto m-n:\Bbb N\times\Bbb N\to\Bbb Z\)</span> bersifat surjektif. ∎</span></p>
+</section>
+<section class="source-unit" id="1A1Ef" data-source-id="1A1Ef"><h3><span class="source-label">1A1Ef</span> <strong>(f)</strong> </h3>
+<p><span class="math inline" data-source-tex="\Bbb Q">\(\Bbb Q\)</span> terhitung. <span class="proof-fragment">Bukti. Pemetaan
+<span class="math inline" data-source-tex="(m,n)\mapsto \bover{m}{n+1}:\Bbb Z\times\Bbb N\to\Bbb Q">\((m,n)\mapsto \bover{m}{n+1}:\Bbb Z\times\Bbb N\to\Bbb Q\)</span> bersifat surjektif.
+∎</span></p>
+</section>
+<section class="source-unit" id="1A1F" data-source-id="1A1F"><h2><span class="source-label">1A1F</span>  </h2>
+<p>Ada satu lagi sifat mendasar yang patut dibedakan
+dari sifat-sifat ini karena sifat tersebut bergantung pada argumen yang
+sedikit lebih mendalam.</p>
+<p> </p>
+<p><strong>Teorema</strong> Jika <span class="math inline" data-source-tex="\Cal K">\(\Cal K\)</span> merupakan suatu keluarga terhitung yang
+terdiri atas himpunan-himpunan terhitung, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bigcup\Cal K=\{x:\,\exists\,K\in\Cal K,\, x\in K\}">\(\bigcup\Cal K=\{x:\,\exists\,K\in\Cal K,\, x\in K\}\)</span></div>
+<p>terhitung.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Cal K&#x27;=\Cal K\setminus\{\emptyset\}
+=\{K:K\in\Cal K,\,K\ne\emptyset\}">\(\Cal K&#x27;=\Cal K\setminus\{\emptyset\}
+=\{K:K\in\Cal K,\,K\ne\emptyset\}\)</span>;</div>
+<p>maka <span class="math inline" data-source-tex="\Cal K&#x27;\subseteq\Cal K">\(\Cal K&#x27;\subseteq\Cal K\)</span>, sehingga himpunan ini terhitung, dan
+<span class="math inline" data-source-tex="\bigcup\Cal K&#x27;=\bigcup\Cal K">\(\bigcup\Cal K&#x27;=\bigcup\Cal K\)</span>. Jika <span class="math inline" data-source-tex="\Cal K&#x27;=\emptyset">\(\Cal K&#x27;=\emptyset\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bigcup\Cal K=\bigcup\Cal K&#x27;=\emptyset">\(\bigcup\Cal K=\bigcup\Cal K&#x27;=\emptyset\)</span></div>
+<p>jelas terhitung. Jika tidak, misalkan
+<span class="math inline" data-source-tex="m\mapsto K_m:\Bbb N\to\Cal K&#x27;">\(m\mapsto K_m:\Bbb N\to\Cal K&#x27;\)</span> suatu surjeksi. Untuk setiap
+<span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span>, <span class="math inline" data-source-tex="K_m">\(K_m\)</span> merupakan suatu himpunan terhitung tak kosong, sehingga
+terdapat suatu surjeksi <span class="math inline" data-source-tex="n\mapsto k_{mn}:\Bbb N\to K_m">\(n\mapsto k_{mn}:\Bbb N\to K_m\)</span>. Sekarang
+<span class="math inline" data-source-tex="(m,n)\mapsto k_{mn}:\Bbb N\times\Bbb N\to\bigcup\Cal K">\((m,n)\mapsto k_{mn}:\Bbb N\times\Bbb N\to\bigcup\Cal K\)</span> merupakan suatu
+surjeksi (jika <span class="math inline" data-source-tex="k\in\bigcup\Cal K">\(k\in\bigcup\Cal K\)</span>, terdapat <span class="math inline" data-source-tex="K\in\Cal K&#x27;">\(K\in\Cal K&#x27;\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="k\in K">\(k\in K\)</span>; terdapat <span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span> sedemikian sehingga <span class="math inline" data-source-tex="K=K_m">\(K=K_m\)</span>; terdapat
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> sedemikian sehingga <span class="math inline" data-source-tex="k=k_{mn}">\(k=k_{mn}\)</span>). Jadi, <span class="math inline" data-source-tex="\bigcup\Cal K">\(\bigcup\Cal K\)</span>
+terhitung, sebagaimana diperlukan.</p></aside>
+</section>
+<section class="source-unit" id="1A1G" data-source-id="1A1G"><h2><span class="source-label">1A1G</span> Catatan </h2>
+<p>Saya memisahkan hasil ini dari fakta-fakta
+‘elementer’ dalam <a class="xref" href="#1A1E">1A1E</a>, antara lain karena hasil ini menggunakan asas argumen
+yang berbeda dari semua asas yang diperlukan untuk pembahasan sebelumnya. Di
+tengah bukti saya menulis ‘sehingga terdapat suatu surjeksi
+<span class="math inline" data-source-tex="n\mapsto k_{mn}:\Bbb N\to K_m">\(n\mapsto k_{mn}:\Bbb N\to K_m\)</span>’. Keberadaan suatu surjeksi dari <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span> ke
+<span class="math inline" data-source-tex="K_m">\(K_m\)</span> memang mengikuti pernyataan tepat sebelumnya, yaitu ‘<span class="math inline" data-source-tex="K_m">\(K_m\)</span> merupakan
+suatu himpunan terhitung tak kosong’. Langkah terselubungnya terletak pada
+pemberian nama secara langsung kepada surjeksi semacam itu sebagai
+‘<span class="math inline" data-source-tex="n\mapsto k_{mn}">\(n\mapsto k_{mn}\)</span>’. Tentu mungkin ada banyak surjeksi dari <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span> ke <span class="math inline" data-source-tex="K_m">\(K_m\)</span>
+— bahkan, pada umumnya, akan ada tak terhitung banyaknya — dan pada
+hakikatnya yang saya lakukan di sini ialah memilih salah satunya secara
+sembarang. Pilihan itu harus sembarang karena saya bekerja dalam konteks yang
+sepenuhnya abstrak, dan meskipun dalam setiap penerapan khusus teorema ini
+mungkin terdapat suatu surjeksi alami untuk digunakan, saya tidak mempunyai
+cara untuk meramalkan pendekatan apa, kalau pun ada, yang dapat menyediakan
+kriteria untuk menentukan satu fungsi tertentu di sini. Sejak setidaknya
+zaman Euklides, salah satu metode dasar argumen matematika ialah kesediaan kita
+untuk memberi nama kepada suatu objek, sebuah ‘titik umum’ atau ‘bilangan
+sembarang’, tanpa menentukan secara persis objek mana yang kita namai. Namun,
+di sini saya secara serentak memilih tak hingga banyak objek, masing-masing
+secara sembarang dari suatu himpunan tertentu. Ini merupakan
+penggunaan <strong>Aksioma Pilihan</strong>.</p>
+<p>Saya tidak ingat pernah mendapati mahasiswa yang mengkritik argumen berbentuk
+seperti argumen dalam <a class="xref" href="#1A1F">1A1F</a> dengan alasan bahwa argumen itu menggunakan suatu
+asas baru yang mungkin tidak sah; saya yakin tidak pernah terpikir oleh saya
+bahwa ada sesuatu yang patut dipersoalkan dalam kasus-kasus semacam ini sampai
+seseorang menunjukkannya. Jika Anda merasa bahwa pembahasan semacam ini tidak
+relevan dengan minat matematika Anda sendiri, Anda tentu dapat melewatinya,
+setidaknya sampai Anda mencapai Jilid 5. Sistem-sistem matematika yang di
+dalamnya aksioma pilihan tidak berlaku telah dipelajari; sistem-sistem itu
+sangat menarik, tetapi sejauh ini tetap berada di pinggiran bidang ini.
+Sistem-sistem yang di dalamnya aksioma pilihan gagal sedemikian rupa sehingga
+gabungan terhitung dari himpunan-himpunan terhitung kadang-kadang tidak
+terhitung mempunyai watak tersendiri, dan khususnya teori ukuran Lebesgue
+berubah secara mendasar; saya akan membahas kemungkinan ini dalam Bab 56
+Jilid 5.</p>
+<p>Untuk komentar singkat mengenai cara-cara lain menggunakan aksioma pilihan,
+lihat <a class="xref" href="../134/index.html#134C">134C</a>.</p>
+</section>
+<section class="source-unit" id="1A1H" data-source-id="1A1H"><span class="anchor" id="1A1Ha"></span><h2><span class="source-label">1A1H</span> Beberapa himpunan tak terhitung </h2>
+<p>Tentu saja tidak
+semua himpunan terhitung. Dalam <a class="xref" href="../114/index.html#114G">114G</a>/<a class="xref" href="../115/index.html#115G">115G</a> saya menyatakan bahwa semua
+subhimpunan terhitung dari ruang Euklides terabaikan terhadap ukuran Lebesgue;
+akibatnya, setiap himpunan yang tidak terabaikan — misalnya setiap interval
+tak-sepele — mesti tak terhitung. Namun, barangkali akan membantu jika saya
+menyajikan di sini argumen elementer yang menunjukkan bahwa <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> dan
+<span class="math inline" data-source-tex="\Cal P\Bbb N">\(\Cal P\Bbb N\)</span> tidak terhitung.</p>
+<p> </p>
+<p><strong>(a)</strong> Tidak ada surjeksi dari <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span> ke <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.
+<span class="proof-fragment">Bukti. Misalkan <span class="math inline" data-source-tex="n\mapsto a_n:\Bbb N\to\Bbb R">\(n\mapsto a_n:\Bbb N\to\Bbb R\)</span> suatu fungsi
+sembarang. Untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, nyatakan <span class="math inline" data-source-tex="a_n">\(a_n\)</span> dalam bentuk desimal
+sebagai
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="a_n=k_n + 0\cdot\epsilon_{n1}\epsilon_{n2}\ldots
+=k_n+\sum_{i=1}^{\infty}10^{-i}\epsilon_{ni}">\(a_n=k_n + 0\cdot\epsilon_{n1}\epsilon_{n2}\ldots
+=k_n+\sum_{i=1}^{\infty}10^{-i}\epsilon_{ni}\)</span>,</span>
+
+
+
+  dengan <span class="math inline" data-source-tex="k_n\in\Bbb Z">\(k_n\in\Bbb Z\)</span> bilangan bulat terbesar yang tidak melebihi
+<span class="math inline" data-source-tex="a_n">\(a_n\)</span>, dan setiap <span class="math inline" data-source-tex="\epsilon_{ni}">\(\epsilon_{ni}\)</span> suatu bilangan bulat antara <span class="math inline" data-source-tex="0">\(0\)</span> dan <span class="math inline" data-source-tex="9">\(9\)</span>;
+sebagai konvensi, jika <span class="math inline" data-source-tex="a_n">\(a_n\)</span> kebetulan mempunyai bentuk desimal berhingga,
+gunakan ekspansi berhingga tersebut, sehingga <span class="math inline" data-source-tex="\epsilon_{ni}">\(\epsilon_{ni}\)</span> akhirnya selalu <span class="math inline" data-source-tex="0">\(0\)</span>, bukan
+akhirnya selalu <span class="math inline" data-source-tex="9">\(9\)</span>.
+
+Sekarang definisikan <span class="math inline" data-source-tex="\epsilon_i">\(\epsilon_i\)</span>, untuk <span class="math inline" data-source-tex="i\ge 1">\(i\ge 1\)</span>, dengan menetapkan bahwa
+
+<span class="math display" data-source-tex="\eqalign{\epsilon_i&amp;=6\text{ jika }\epsilon_{ii}&lt;6,\cr
+&amp;=5\text{ jika }\epsilon_{ii}\ge 6.\cr}">\[\begin{aligned}\epsilon_i&amp;=6\text{ jika }\epsilon_{ii}&lt;6,\\
+&amp;=5\text{ jika }\epsilon_{ii}\ge 6.\\\end{aligned}\]</span>
+
+  Tinjau <span class="math inline" data-source-tex="a=k_0+1+\sum_{i=1}^{\infty}10^{-i}\epsilon_i">\(a=k_0+1+\sum_{i=1}^{\infty}10^{-i}\epsilon_i\)</span>, sehingga
+<span class="math inline" data-source-tex="a=k_0+1+0\cdot\epsilon_1\epsilon_2\ldots">\(a=k_0+1+0\cdot\epsilon_1\epsilon_2\ldots\)</span> dalam bentuk desimal. Saya
+menyatakan bahwa <span class="math inline" data-source-tex="a\ne a_n">\(a\ne a_n\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>. Tentu saja <span class="math inline" data-source-tex="a\ne a_0">\(a\ne a_0\)</span> karena
+<span class="math inline" data-source-tex="a_0&lt;k_0+1\le a">\(a_0&lt;k_0+1\le a\)</span>. Jika <span class="math inline" data-source-tex="n\ge 1">\(n\ge 1\)</span>, maka <span class="math inline" data-source-tex="\epsilon_n\ne\epsilon_{nn}">\(\epsilon_n\ne\epsilon_{nn}\)</span>; karena
+tidak ada <span class="math inline" data-source-tex="\epsilon_i">\(\epsilon_i\)</span> yang sama dengan <span class="math inline" data-source-tex="0">\(0\)</span> ataupun <span class="math inline" data-source-tex="9">\(9\)</span>, tidak terdapat
+ekspansi desimal lain untuk <span class="math inline" data-source-tex="a">\(a\)</span>, sehingga ekspansi
+<span class="math inline" data-source-tex="a_n=k_n+0\cdot\epsilon_{n1}\epsilon_{n2}\ldots">\(a_n=k_n+0\cdot\epsilon_{n1}\epsilon_{n2}\ldots\)</span> tidak dapat merepresentasikan
+<span class="math inline" data-source-tex="a">\(a\)</span>, dan <span class="math inline" data-source-tex="a\ne a_n">\(a\ne a_n\)</span>.
+
+Dengan demikian saya telah membangun suatu bilangan real yang tidak terdapat
+dalam daftar <span class="math inline" data-source-tex="a_0,a_1,\ldots">\(a_0,a_1,\ldots\)</span>. Karena <span class="math inline" data-source-tex="\sequencen{a_n}">\(\sequencen{a_n}\)</span> sembarang, tidak ada
+surjeksi dari <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span> ke <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. ∎</span></p>
+<p>Jadi, <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> tak terhitung.</p>
+</section>
+<section class="source-unit" id="1A1Hb" data-source-id="1A1Hb"><h3><span class="source-label">1A1Hb</span> <strong>(b)</strong> </h3>
+<p>Tidak ada surjeksi dari <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span> ke himpunan kuasanya
+<span class="math inline" data-source-tex="\Cal P\Bbb N">\(\Cal P\Bbb N\)</span>. <span class="proof-fragment">Bukti. Misalkan
+<span class="math inline" data-source-tex="n\mapsto A_n:\Bbb N\to\Cal P\Bbb N">\(n\mapsto A_n:\Bbb N\to\Cal P\Bbb N\)</span> suatu fungsi sembarang. Tetapkan
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="A=\{n:n\in\Bbb N,\,n\notin A_n\}">\(A=\{n:n\in\Bbb N,\,n\notin A_n\}\)</span>.</span>
+
+
+
+  Jika <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, maka
+
+<em>entah</em> <span class="math inline" data-source-tex="n\in A_n">\(n\in A_n\)</span>, yang mengakibatkan <span class="math inline" data-source-tex="n\notin A">\(n\notin A\)</span>,
+
+<em>atau</em> <span class="math inline" data-source-tex="n\notin A_n">\(n\notin A_n\)</span>, yang mengakibatkan <span class="math inline" data-source-tex="n\in A">\(n\in A\)</span>.
+
+  Jadi, dalam kedua kasus kita mempunyai <span class="math inline" data-source-tex="n\in A\symmdiff A_n">\(n\in A\symmdiff A_n\)</span>,
+sehingga <span class="math inline" data-source-tex="A\ne A_n">\(A\ne A_n\)</span>. Karena <span class="math inline" data-source-tex="n">\(n\)</span> sembarang,
+<span class="math inline" data-source-tex="A\notin\{A_n:n\in\Bbb N\}">\(A\notin\{A_n:n\in\Bbb N\}\)</span> dan <span class="math inline" data-source-tex="n\mapsto A_n">\(n\mapsto A_n\)</span> bukan suatu surjeksi. Karena
+<span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> sembarang, tidak ada surjeksi dari <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span> ke
+<span class="math inline" data-source-tex="\Cal P\Bbb N">\(\Cal P\Bbb N\)</span>. ∎</span></p>
+<p>Jadi, <span class="math inline" data-source-tex="\Cal P\Bbb N">\(\Cal P\Bbb N\)</span> juga tak terhitung.</p>
+</section>
+<section class="source-unit" id="1A1I" data-source-id="1A1I"><h2><span class="source-label">1A1I</span> Catatan </h2>
+<p>Sesungguhnya terdapat suatu bijeksi antara <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>
+dan <span class="math inline" data-source-tex="\Cal P\Bbb N">\(\Cal P\Bbb N\)</span> (2A1Ha); dengan demikian, ketakterhitungan keduanya dapat
+dibuktikan hanya dengan salah satu dari argumen di atas.</p>
+</section>
+<section class="source-unit" id="1A1J" data-source-id="1A1J"><h2><span class="source-label">1A1J</span> Notasi </h2>
+<p>Untuk memperjelas, saya nyatakan di sini bahwa
+Saya akan mengatakan bahwa suatu keluarga himpunan <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> merupakan suatu
+<strong>partisi</strong> dari suatu himpunan <span class="math inline" data-source-tex="X">\(X\)</span> jika <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> merupakan penutup
+saling lepas dari <span class="math inline" data-source-tex="X">\(X\)</span>, yaitu <span class="math inline" data-source-tex="X=\bigcup\Cal A">\(X=\bigcup\Cal A\)</span> dan
+<span class="math inline" data-source-tex="A\cap A&#x27;=\emptyset">\(A\cap A&#x27;=\emptyset\)</span> untuk semua <span class="math inline" data-source-tex="A">\(A\)</span>, <span class="math inline" data-source-tex="A&#x27;\in\Cal A">\(A&#x27;\in\Cal A\)</span> yang berlainan;
+khususnya, himpunan kosong boleh termasuk atau tidak termasuk dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>.
+Demikian pula, suatu keluarga berindeks <span class="math inline" data-source-tex="\familyiI{A_i}">\(\familyiI{A_i}\)</span> merupakan suatu
+<strong>partisi</strong> dari <span class="math inline" data-source-tex="X">\(X\)</span> jika <span class="math inline" data-source-tex="\bigcup_{i\in I}A_i=X">\(\bigcup_{i\in I}A_i=X\)</span> dan
+<span class="math inline" data-source-tex="A_i\cap A_j=\emptyset">\(A_i\cap A_j=\emptyset\)</span> untuk semua <span class="math inline" data-source-tex="i">\(i\)</span>, <span class="math inline" data-source-tex="j\in I">\(j\in I\)</span> yang berlainan;
+sekali lagi, satu atau beberapa <span class="math inline" data-source-tex="A_i">\(A_i\)</span> boleh kosong.</p>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="1A1-notes" data-source-id="1A1-notes"><h2><span class="source-label">1A1-notes</span> Catatan penutup untuk Bagian 1A1 </h2>
+<p>Gagasan-gagasan dalam
+<a class="xref" href="#1A1C">1A1C</a>-<a class="xref" href="#1A1I">1A1I</a> 
+pada dasarnya berasal dari G.F.Cantor. Konsep-konsep ini mendasar bagi teori
+himpunan modern, dan bahkan bagi bagian-bagian yang sangat luas dari
+matematika murni modern. Catatan-catatan di atas baru sedikit sekali
+menggambarkan kesuburan luar biasa dari gagasan-gagasan ini, yang memerlukan
+buku tersendiri agar dapat diuraikan secara semestinya; satu-satunya tujuan
+saya di sini ialah mencoba menjelaskan bagian-bagian kecil dari bidang ini
+yang diperlukan dalam jilid sekarang. Dalam jilid-jilid selanjutnya saya akan
+menyajikan hasil-hasil yang menggunakan gagasan-gagasan yang jauh lebih maju, yang
+akan saya bahas dalam <a class="xref" href="../lampiran/index.html#lampiran">lampiran</a>-<a class="xref" href="../lampiran/index.html#lampiran">lampiran</a> jilid tersebut.</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 1: The Irreducible Minimum</cite>, Bagian 1A1.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 24 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-semantic-reader-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V1-S1A1&quot;,
+  &quot;source_member&quot;: &quot;mt1.2011/mt1a1.tex&quot;,
+  &quot;target_bytes&quot;: 18505,
+  &quot;target_sha256&quot;: &quot;80c62f0fdbd57ad9ca843837619d5cd01441080a28029b825216921825d20a13&quot;,
+  &quot;source_ids&quot;: [
+    &quot;1A1-notes&quot;,
+    &quot;1A1A&quot;,
+    &quot;1A1Aa&quot;,
+    &quot;1A1Ab&quot;,
+    &quot;1A1Ac&quot;,
+    &quot;1A1Ad&quot;,
+    &quot;1A1B&quot;,
+    &quot;1A1Ba&quot;,
+    &quot;1A1Bb&quot;,
+    &quot;1A1Bc&quot;,
+    &quot;1A1Bd&quot;,
+    &quot;1A1C&quot;,
+    &quot;1A1D&quot;,
+    &quot;1A1E&quot;,
+    &quot;1A1Ea&quot;,
+    &quot;1A1Eb&quot;,
+    &quot;1A1Ec&quot;,
+    &quot;1A1Ed&quot;,
+    &quot;1A1Ee&quot;,
+    &quot;1A1Ef&quot;,
+    &quot;1A1F&quot;,
+    &quot;1A1G&quot;,
+    &quot;1A1H&quot;,
+    &quot;1A1Ha&quot;,
+    &quot;1A1Hb&quot;,
+    &quot;1A1I&quot;,
+    &quot;1A1J&quot;
+  ],
+  &quot;canonical_target_bytes&quot;: 18530,
+  &quot;canonical_target_sha256&quot;: &quot;30a70565223af10939c788ff16b864ad5b8b6f2dc9ccfa6a18e5af32d51b5ecd&quot;,
+  &quot;route&quot;: &quot;1A1&quot;,
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

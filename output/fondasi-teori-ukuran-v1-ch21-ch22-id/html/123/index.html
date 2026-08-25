@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Teorema-teorema konvergensi — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        bigcupop: '\\bigcup',
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        biggerint: '\\int',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\dfrac{\\partial #1}{\\partial #2}', 2],
+        restr: '\\mathord{\\upharpoonright}',
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        roibr: '\\mathopen{{[}}',
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1]
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 1 · Bagian 123</p>
+  <h1>Teorema-teorema konvergensi</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi Volume 1</a></nav>
+<main id="isi">
+<p>Jerih payah besar yang telah kita curahkan sejauh ini belum juga mendapat
+pembenaran dari teorema mana pun yang cukup ampuh untuk membuatnya layak. Kini kita
+sampai pada jantung teori integrasi modern, ‘teorema-teorema
+konvergensi’, yang menguraikan syarat-syarat yang memungkinkan kita
+mengintegralkan limit suatu barisan fungsi terintegralkan.</p>
+<section class="source-unit" id="123A" data-source-id="123A"><h2><span class="source-label">123A</span> Teorema B. Levi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur
+dan <span class="math inline" data-source-tex="\langle f_n\rangle_{n\in\Bbb N}">\(\langle f_n\rangle_{n\in\Bbb N}\)</span> suatu barisan fungsi bernilai
+real, semuanya terintegralkan pada <span class="math inline" data-source-tex="X">\(X\)</span>, sedemikian sehingga (i)
+<span class="math inline" data-source-tex="f_n\leae f_{n+1}">\(f_n\leae f_{n+1}\)</span> untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> (ii)
+<span class="math inline" data-source-tex="\sup_{n\in\Bbb N}\int f_n&lt;\infty">\(\sup_{n\in\Bbb N}\int f_n&lt;\infty\)</span>. Maka
+<span class="math inline" data-source-tex="f=\lim_{n\to\infty}f_n">\(f=\lim_{n\to\infty}f_n\)</span> terintegralkan, dan
+<span class="math inline" data-source-tex="\int f=\lim_{n\to\infty}\int f_n">\(\int f=\lim_{n\to\infty}\int f_n\)</span>.</p>
+<p> </p>
+<p><strong>Catatan</strong> Perlu segera saya ulangi
+kesepakatan-kesepakatan yang saya gunakan di sini. Setiap fungsi <span class="math inline" data-source-tex="f_n">\(f_n\)</span>
+dianggap didefinisikan pada suatu himpunan koterabaikan
+<span class="math inline" data-source-tex="\dom f_n\subseteq X">\(\dom f_n\subseteq X\)</span>, seperti dalam <a class="xref" href="../122/index.html#122Nc">122Nc</a>, dan fungsi limit <span class="math inline" data-source-tex="f">\(f\)</span>
+dianggap mempunyai domain</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:x\in\bigcup_{n\in\Bbb N}\bigcap_{m\ge n}\dom f_m">\(\{x:x\in\bigcup_{n\in\Bbb N}\bigcap_{m\ge n}\dom f_m\)</span>,
+<span class="math inline" data-source-tex="\lim_{n\to\infty}f_n(x)">\(\lim_{n\to\infty}f_n(x)\)</span> ada di <span class="math inline" data-source-tex="\Bbb R\}">\(\Bbb R\}\)</span>,</div>
+<p>seperti dalam <a class="xref" href="../121/index.html#121Fa">121Fa</a>. Anda tidak akan
+kehilangan gagasan penting apa pun jika mengandaikan bahwa setiap
+<span class="math inline" data-source-tex="f_n">\(f_n\)</span> didefinisikan di seluruh <span class="math inline" data-source-tex="X">\(X\)</span>; tetapi pernyataan
+‘<span class="math inline" data-source-tex="f">\(f\)</span> terintegralkan’ mencakup pernyataan ‘<span class="math inline" data-source-tex="f">\(f\)</span> didefinisikan, sebagai
+bilangan real, hampir di mana-mana’, dan ini merupakan bagian
+hakiki dari teorema tersebut.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><span class="anchor" id="123Aa"></span><strong>(a)</strong> Mula-mula kita tangani kasus ketika
+<span class="math inline" data-source-tex="f_0=0">\(f_0=0\)</span> a.e.
+Tetapkan <span class="math inline" data-source-tex="c=\sup_{n\in\Bbb N}\int f_n=\lim_{n\to\infty}\int f_n">\(c=\sup_{n\in\Bbb N}\int f_n=\lim_{n\to\infty}\int f_n\)</span>
+(dengan memperhatikan bahwa, menurut <a class="xref" href="../122/index.html#122Od">122Od</a>,
+<span class="math inline" data-source-tex="\sequencen{\int f_n}">\(\sequencen{\int f_n}\)</span> merupakan barisan tak-menurun).</p>
+<p> </p>
+<p>  <strong>(i)</strong> Semua himpunan <span class="math inline" data-source-tex="\dom f_n">\(\dom f_n\)</span>, <span class="math inline" data-source-tex="\{x:f_0(x)=0\}">\(\{x:f_0(x)=0\}\)</span>,
+<span class="math inline" data-source-tex="\{x:f_n(x)
+\le f_{n+1}(x)\}">\(\{x:f_n(x)
+\le f_{n+1}(x)\}\)</span> bersifat koterabaikan, sehingga irisannya, <span class="math inline" data-source-tex="F">\(F\)</span>, juga
+koterabaikan. Untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> terdapat himpunan
+koterabaikan <span class="math inline" data-source-tex="E_n">\(E_n\)</span> sedemikian sehingga <span class="math inline" data-source-tex="f_n\restr E_n">\(f_n\restr E_n\)</span> terukur (<a class="xref" href="../122/index.html#122P">122P</a>);
+misalkan <span class="math inline" data-source-tex="E^*">\(E^*\)</span> suatu himpunan terukur koterabaikan yang termuat dalam
+himpunan koterabaikan <span class="math inline" data-source-tex="F\cap\bigcap_{n\in\Bbb N}E_n">\(F\cap\bigcap_{n\in\Bbb N}E_n\)</span>.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Untuk <span class="math inline" data-source-tex="a&gt;0">\(a&gt;0\)</span> dan <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, tetapkan
+<span class="math inline" data-source-tex="H_n(a)=\{x:x\in E^*">\(H_n(a)=\{x:x\in E^*\)</span>, <span class="math inline" data-source-tex="f_n(x)\ge a\}">\(f_n(x)\ge a\}\)</span>;
+maka <span class="math inline" data-source-tex="H_n(a)">\(H_n(a)\)</span> terukur karena <span class="math inline" data-source-tex="f_n\restr E_n">\(f_n\restr E_n\)</span> terukur dan <span class="math inline" data-source-tex="E^*">\(E^*\)</span>
+merupakan subhimpunan terukur dari <span class="math inline" data-source-tex="E_n">\(E_n\)</span>. Selain itu, <span class="math inline" data-source-tex="a\chi
+H_n(a)
+\le f_n">\(a\chi
+H_n(a)
+\le f_n\)</span> di setiap titik pada <span class="math inline" data-source-tex="E^*">\(E^*\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="a\mu H_n(a)=\int a\chi H_n(a)\le\int f_n\le c">\(a\mu H_n(a)=\int a\chi H_n(a)\le\int f_n\le c\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="f_n(x)\le f_{n+1}(x)">\(f_n(x)\le f_{n+1}(x)\)</span> untuk setiap <span class="math inline" data-source-tex="x\in E^*">\(x\in E^*\)</span>,
+<span class="math inline" data-source-tex="H_n(a)\subseteq H_{n+1}(a)">\(H_n(a)\subseteq H_{n+1}(a)\)</span> untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, dan dengan
+menuliskan <span class="math inline" data-source-tex="H(a)=\bigcup_{n\in\Bbb N}H_n(a)">\(H(a)=\bigcup_{n\in\Bbb N}H_n(a)\)</span>, kita mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu H(a)=\lim_{n\to\infty}\mu H_n(a)\le\Bover{c}{a}">\(\mu H(a)=\lim_{n\to\infty}\mu H_n(a)\le\Bover{c}{a}\)</span></div>
+<p>(<a class="xref" href="../112/index.html#112Ce">112Ce</a>). Khususnya, <span class="math inline" data-source-tex="\mu H(a)&lt;\infty">\(\mu H(a)&lt;\infty\)</span> untuk setiap <span class="math inline" data-source-tex="a">\(a\)</span>.
+Selain itu,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu(\bigcap_{k\ge 1}H(k))\le\inf_{k\ge 1}\mu H(k)
+\le\inf_{k\ge 1}\Bover{c}{k}=0">\(\mu(\bigcap_{k\ge 1}H(k))\le\inf_{k\ge 1}\mu H(k)
+\le\inf_{k\ge 1}\Bover{c}{k}=0\)</span>.</div>
+<p>Tetapkan <span class="math inline" data-source-tex="E=E^*\setminus\bigcap_{k\ge 1}H(k)">\(E=E^*\setminus\bigcap_{k\ge 1}H(k)\)</span>; maka <span class="math inline" data-source-tex="E">\(E\)</span>
+bersifat koterabaikan.</p>
+<p> </p>
+<p>  <strong>(iii)</strong> Jika <span class="math inline" data-source-tex="x\in E">\(x\in E\)</span>, terdapat suatu <span class="math inline" data-source-tex="k">\(k\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="x\notin H(k)">\(x\notin H(k)\)</span>, yakni <span class="math inline" data-source-tex="x\notin\bigcup_{n\in\Bbb N}H_n(k)">\(x\notin\bigcup_{n\in\Bbb N}H_n(k)\)</span>, yakni
+<span class="math inline" data-source-tex="f_n(x)&lt;k">\(f_n(x)&lt;k\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>; selain itu,
+<span class="math inline" data-source-tex="\langle f_n(x)\rangle_{n\in\Bbb N}">\(\langle f_n(x)\rangle_{n\in\Bbb N}\)</span> merupakan barisan tak-menurun,
+sehingga
+<span class="math inline" data-source-tex="f(x)=\lim_{n\to\infty}f_n(x)=\sup_{n\in\Bbb N}f_n(x)">\(f(x)=\lim_{n\to\infty}f_n(x)=\sup_{n\in\Bbb N}f_n(x)\)</span> ada di
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Dengan demikian, fungsi
+limit <span class="math inline" data-source-tex="f">\(f\)</span> didefinisikan hampir di mana-mana.
+Karena setiap <span class="math inline" data-source-tex="f_n\restr E">\(f_n\restr E\)</span> terukur (<a class="xref" href="../121/index.html#121Eh">121Eh</a>), demikian pula
+<span class="math inline" data-source-tex="f\restr E=\lim_{n\to\infty}f_n\restr E">\(f\restr E=\lim_{n\to\infty}f_n\restr E\)</span> (<a class="xref" href="../121/index.html#121Fa">121Fa</a>).
+Jika <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, maka <span class="math inline" data-source-tex="\{x:x\in E,\,f(x)\ge\epsilon\}">\(\{x:x\in E,\,f(x)\ge\epsilon\}\)</span> termuat dalam
+<span class="math inline" data-source-tex="H({1\over 2}\epsilon)">\(H({1\over 2}\epsilon)\)</span>, sehingga mempunyai ukuran berhingga.</p>
+<p> </p>
+<p>  <strong>(iv)</strong>
+Sekarang andaikan bahwa <span class="math inline" data-source-tex="g">\(g\)</span> suatu fungsi sederhana dan <span class="math inline" data-source-tex="g\leae f">\(g\leae f\)</span>.
+Seperti dalam bukti <a class="xref" href="../122/index.html#122G">122G</a>, <span class="math inline" data-source-tex="H=\{x:g(x)\ne 0\}">\(H=\{x:g(x)\ne 0\}\)</span> mempunyai ukuran
+berhingga, dan <span class="math inline" data-source-tex="g">\(g\)</span> dibatasi di atas oleh suatu <span class="math inline" data-source-tex="M">\(M\)</span>.</p>
+<p>Misalkan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, tetapkan
+<span class="math inline" data-source-tex="G_n=\{x:x\in E,\,(g-f_n) (x)\ge\epsilon\}">\(G_n=\{x:x\in E,\,(g-f_n) (x)\ge\epsilon\}\)</span>.
+Maka setiap <span class="math inline" data-source-tex="G_n">\(G_n\)</span> terukur, dan <span class="math inline" data-source-tex="\langle G_n \rangle_{n\in\Bbb N}">\(\langle G_n \rangle_{n\in\Bbb N}\)</span>
+merupakan barisan tak-menaik dengan irisan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:x\in E,\,g(x)\ge\epsilon +\sup_{n\in\Bbb N}f_n(x)\}
+\subseteq\{x:g(x)&gt;f(x)\}">\(\{x:x\in E,\,g(x)\ge\epsilon +\sup_{n\in\Bbb N}f_n(x)\}
+\subseteq\{x:g(x)&gt;f(x)\}\)</span>,</div>
+<p>yang terabaikan.
+Selain itu, <span class="math inline" data-source-tex="\mu G_0&lt;\infty">\(\mu G_0&lt;\infty\)</span> karena <span class="math inline" data-source-tex="G_0\subseteq H">\(G_0\subseteq H\)</span>.
+Akibatnya, <span class="math inline" data-source-tex="\lim_{n\to\infty}\mu G_n=0">\(\lim_{n\to\infty}\mu G_n=0\)</span> (<a class="xref" href="../112/index.html#112Cf">112Cf</a>).
+Ambil <span class="math inline" data-source-tex="n">\(n\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\mu G_n\le\epsilon">\(\mu G_n\le\epsilon\)</span>. Maka, untuk setiap
+<span class="math inline" data-source-tex="x\in E">\(x\in E\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="g(x)\le f_n(x)+\epsilon\chi H(x)+M\chi G_n(x)">\(g(x)\le f_n(x)+\epsilon\chi H(x)+M\chi G_n(x)\)</span>,</div>
+<p>sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="g\leae f_n+M\chi G_n+\epsilon\chi H">\(g\leae f_n+M\chi G_n+\epsilon\chi H\)</span></div>
+<p>dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int g\le\int f_n+M\mu G_n+\epsilon\mu H
+\le c+\epsilon(M+\mu H)">\(\int g\le\int f_n+M\mu G_n+\epsilon\mu H
+\le c+\epsilon(M+\mu H)\)</span>.<sup class="footnote-ref" id="fnref-123A-1"><a href="#fn-123A-1" aria-label="Catatan kaki 1">1</a></sup></div>
+<aside class="footnote" id="fn-123A-1" role="note" aria-label="Catatan kaki 1"><p><strong>Catatan kaki 1.</strong> Saya berterima kasih kepada P. Wallace Thompson karena telah menemukan kekeliruan pada tahap ini dalam edisi-edisi sebelumnya. <a class="footnote-backref" href="#fnref-123A-1" aria-label="Kembali ke rujukan catatan kaki 1">↩</a></p></aside>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang, <span class="math inline" data-source-tex="\int g\le c">\(\int g\le c\)</span>.</p>
+<p> </p>
+<p>  <strong>(v)</strong> Dengan demikian, <span class="math inline" data-source-tex="f\restr E">\(f\restr E\)</span> (yang nonnegatif)
+memenuhi syarat-syarat Lema <a class="xref" href="../122/index.html#122Ja">122Ja</a>, dan terintegralkan. Selain itu,
+integralnya paling besar <span class="math inline" data-source-tex="c">\(c\)</span>, menurut Definisi <a class="xref" href="../122/index.html#122K">122K</a>. Karena
+<span class="math inline" data-source-tex="f\eae f\restr E">\(f\eae f\restr E\)</span>, <span class="math inline" data-source-tex="f">\(f\)</span> juga terintegralkan, dengan integral yang sama
+(<a class="xref" href="../122/index.html#122Rb">122Rb</a>). Di pihak lain, <span class="math inline" data-source-tex="f\geae f_n">\(f\geae f_n\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, sehingga
+<span class="math inline" data-source-tex="\int f\ge\sup_{n\in\Bbb N}\int f_n=c">\(\int f\ge\sup_{n\in\Bbb N}\int f_n=c\)</span>, menurut <a class="xref" href="../122/index.html#122Od">122Od</a>.</p>
+<p>Dengan ini kasus <span class="math inline" data-source-tex="f_0=0">\(f_0=0\)</span> a.e. selesai dibuktikan.</p>
+<p> </p>
+<p><span class="anchor" id="123Ab"></span><strong>(b)</strong> Untuk kasus umum, tinjau barisan
+<span class="math inline" data-source-tex="\langle f&#x27;_n\rangle_{n\in\Bbb N}=\langle f_n-f_0\rangle_{n\in\Bbb N}">\(\langle f&#x27;_n\rangle_{n\in\Bbb N}=\langle f_n-f_0\rangle_{n\in\Bbb N}\)</span>.
+Menurut (a), <span class="math inline" data-source-tex="f&#x27;=\lim_{n\to\infty}f&#x27;_n">\(f&#x27;=\lim_{n\to\infty}f&#x27;_n\)</span> terintegralkan, dan
+<span class="math inline" data-source-tex="\int f&#x27;=\lim_{n\to\infty}
+\int f&#x27;_n">\(\int f&#x27;=\lim_{n\to\infty}
+\int f&#x27;_n\)</span>; sekarang
+<span class="math inline" data-source-tex="\lim_{n\to\infty}f_n\eae f&#x27;+f_0">\(\lim_{n\to\infty}f_n\eae f&#x27;+f_0\)</span>, sehingga fungsi itu terintegralkan,
+dengan integral
+<span class="math inline" data-source-tex="\int f&#x27;+\int f_0=\lim_{n\to\infty}\int f_n">\(\int f&#x27;+\int f_0=\lim_{n\to\infty}\int f_n\)</span>.</p>
+<p> </p>
+<p><strong>Catatan</strong> Mungkin Anda telah memperhatikan, tanpa merasa
+heran, bahwa argumen (a-iv) dalam bukti ini mengulangi argumen yang
+digunakan untuk kasus khusus <a class="xref" href="../122/index.html#122G">122G</a>.</p></aside>
+</section>
+<section class="source-unit" id="123B" data-source-id="123B"><h2><span class="source-label">123B</span> Lema Fatou </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur,
+dan <span class="math inline" data-source-tex="\langle f_n\rangle_{n\in\Bbb N}">\(\langle f_n\rangle_{n\in\Bbb N}\)</span> suatu barisan fungsi bernilai
+real, semuanya terintegralkan pada <span class="math inline" data-source-tex="X">\(X\)</span>. Andaikan setiap <span class="math inline" data-source-tex="f_n">\(f_n\)</span>
+nonnegatif a.e., dan
+<span class="math inline" data-source-tex="\liminf_{n\to\infty}\int f_n&lt;\infty">\(\liminf_{n\to\infty}\int f_n&lt;\infty\)</span>. Maka
+<span class="math inline" data-source-tex="\liminf_{n\to\infty}
+f_n">\(\liminf_{n\to\infty}
+f_n\)</span> terintegralkan, dan
+<span class="math inline" data-source-tex="\int\liminf_{n\to\infty}f_n\le\liminf_{n\to\infty}\int f_n">\(\int\liminf_{n\to\infty}f_n\le\liminf_{n\to\infty}\int f_n\)</span>.</p>
+<p> </p>
+<p><strong>Catatan</strong> Sekali lagi, teorema ini mencakup pernyataan
+bahwa <span class="math inline" data-source-tex="\liminf_{n\to\infty}f_n(x)">\(\liminf_{n\to\infty}f_n(x)\)</span> ada di <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> untuk hampir setiap
+<span class="math inline" data-source-tex="x\in X">\(x\in X\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Tetapkan <span class="math inline" data-source-tex="c=\liminf_{n\to\infty}\int f_n">\(c=\liminf_{n\to\infty}\int f_n\)</span> dan
+<span class="math inline" data-source-tex="f=\liminf_{n\to\infty}f_n">\(f=\liminf_{n\to\infty}f_n\)</span>.
+Untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, misalkan <span class="math inline" data-source-tex="E_n">\(E_n\)</span> suatu himpunan koterabaikan
+sedemikian sehingga <span class="math inline" data-source-tex="f_n&#x27;=f_n\restr E_n">\(f_n&#x27;=f_n\restr E_n\)</span> terukur dan nonnegatif.
+Tetapkan <span class="math inline" data-source-tex="g_n=\inf_{m\ge n}f&#x27;_m">\(g_n=\inf_{m\ge n}f&#x27;_m\)</span>; maka setiap <span class="math inline" data-source-tex="g_n">\(g_n\)</span> terukur (<a class="xref" href="../121/index.html#121Fc">121Fc</a>),
+nonnegatif, dan didefinisikan pada himpunan koterabaikan
+<span class="math inline" data-source-tex="\bigcap_{m\ge n}E_m">\(\bigcap_{m\ge n}E_m\)</span>, serta <span class="math inline" data-source-tex="g_n\leae f_n">\(g_n\leae f_n\)</span>, sehingga <span class="math inline" data-source-tex="g_n">\(g_n\)</span>
+terintegralkan (<a class="xref" href="../122/index.html#122P">122P</a>) dengan
+<span class="math inline" data-source-tex="\int g_n\le\inf_{m\ge n}\int f_m\le c">\(\int g_n\le\inf_{m\ge n}\int f_m\le c\)</span>.
+Selanjutnya, <span class="math inline" data-source-tex="g_n(x)\le g_{n+1}(x)">\(g_n(x)\le g_{n+1}(x)\)</span> untuk setiap
+<span class="math inline" data-source-tex="x\in\dom g_n">\(x\in\dom g_n\)</span>, sehingga <span class="math inline" data-source-tex="\langle g_n\rangle_{n\in\Bbb N}">\(\langle g_n\rangle_{n\in\Bbb N}\)</span> memenuhi
+syarat-syarat teorema B. Levi (<a class="xref" href="#123A">123A</a>), dan
+<span class="math inline" data-source-tex="g=\lim_{n\to\infty}g_n">\(g=\lim_{n\to\infty}g_n\)</span> terintegralkan, dengan
+<span class="math inline" data-source-tex="\int g=\lim_{n\to\infty}\int g_n\le c">\(\int g=\lim_{n\to\infty}\int g_n\le c\)</span>.
+Akhirnya, karena setiap <span class="math inline" data-source-tex="f&#x27;_n">\(f&#x27;_n\)</span> sama dengan <span class="math inline" data-source-tex="f_n">\(f_n\)</span> hampir di mana-mana,
+<span class="math inline" data-source-tex="g=\liminf_{n\to\infty}f&#x27;_n\eae f">\(g=\liminf_{n\to\infty}f&#x27;_n\eae f\)</span>, dan <span class="math inline" data-source-tex="\int f">\(\int f\)</span> ada, sama dengan
+<span class="math inline" data-source-tex="\int g\le c">\(\int g\le c\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="123C" data-source-id="123C"><h2><span class="source-label">123C</span> Teorema Konvergensi Terdominasi Lebesgue </h2>
+<p>Misalkan
+<span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan
+<span class="math inline" data-source-tex="\langle f_n\rangle_{n\in\Bbb N}">\(\langle f_n\rangle_{n\in\Bbb N}\)</span> suatu barisan fungsi bernilai real,
+semuanya terintegralkan pada <span class="math inline" data-source-tex="X">\(X\)</span>, sedemikian sehingga
+<span class="math inline" data-source-tex="f(x)=\lim_{n\to\infty}f_n(x)">\(f(x)=\lim_{n\to\infty}f_n(x)\)</span> ada di <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> untuk hampir setiap
+<span class="math inline" data-source-tex="x\in X">\(x\in X\)</span>. Andaikan pula bahwa terdapat suatu fungsi terintegralkan <span class="math inline" data-source-tex="g">\(g\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="|f_n|\leae g">\(|f_n|\leae g\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>.
+Maka <span class="math inline" data-source-tex="f">\(f\)</span> terintegralkan, dan <span class="math inline" data-source-tex="\lim_{n\to\infty}\int f_n">\(\lim_{n\to\infty}\int f_n\)</span> ada serta
+sama dengan <span class="math inline" data-source-tex="\int f">\(\int f\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Tinjau <span class="math inline" data-source-tex="\tilde f_n=f_n+g">\(\tilde f_n=f_n+g\)</span> untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>.
+Maka <span class="math inline" data-source-tex="0\le\tilde f_n\le 2g">\(0\le\tilde f_n\le 2g\)</span> a.e. untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, sehingga
+<span class="math inline" data-source-tex="\tilde c=\liminf_{n\to\infty}\int \tilde f_n">\(\tilde c=\liminf_{n\to\infty}\int \tilde f_n\)</span>
+ada di <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan <span class="math inline" data-source-tex="\tilde f=\liminf_{n\to\infty}\tilde f_n">\(\tilde f=\liminf_{n\to\infty}\tilde f_n\)</span>
+terintegralkan, dengan <span class="math inline" data-source-tex="\int \tilde f\le \tilde c">\(\int \tilde f\le \tilde c\)</span>, menurut Lema Fatou
+(<a class="xref" href="#123B">123B</a>).
+Namun, perhatikan bahwa <span class="math inline" data-source-tex="f\eae\tilde f-g">\(f\eae\tilde f-g\)</span>, karena
+<span class="math inline" data-source-tex="f(x)=\tilde f(x)-g(x)">\(f(x)=\tilde f(x)-g(x)\)</span> setidaknya setiap kali <span class="math inline" data-source-tex="f(x)">\(f(x)\)</span> dan <span class="math inline" data-source-tex="g(x)">\(g(x)\)</span>
+keduanya terdefinisi, sehingga <span class="math inline" data-source-tex="f">\(f\)</span> terintegralkan, dengan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int f=\int \tilde f-\int g
+\le\liminf_{n\to\infty}\int \tilde f_n-\int g
+=\liminf_{n\to\infty}\int f_n">\(\int f=\int \tilde f-\int g
+\le\liminf_{n\to\infty}\int \tilde f_n-\int g
+=\liminf_{n\to\infty}\int f_n\)</span>.</div>
+<p>Demikian pula, dengan meninjau
+<span class="math inline" data-source-tex="\langle -f_n\rangle_{n\in\Bbb N}">\(\langle -f_n\rangle_{n\in\Bbb N}\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int(-f)\le\liminf_{n\to\infty}\int(-f_n)">\(\int(-f)\le\liminf_{n\to\infty}\int(-f_n)\)</span>,</div>
+<p>yakni,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int f\ge\limsup_{n\to\infty}\int f_n">\(\int f\ge\limsup_{n\to\infty}\int f_n\)</span>.</div>
+<p>Jadi <span class="math inline" data-source-tex="\lim_{n\to\infty}\int f_n">\(\lim_{n\to\infty}\int f_n\)</span> ada dan sama dengan
+<span class="math inline" data-source-tex="\int f">\(\int f\)</span>.</p></aside>
+<p> </p>
+<p><strong>Catatan</strong> Akhirnya kita telah sampai pada tahap ketika
+masalah-masalah teknis yang berkaitan dengan fungsi-fungsi terdefinisi
+sebagian mulai berkurang, atau lebih tepatnya, tertangani secara
+efisien oleh kesepakatan-kesepakatan yang saya gunakan mengenai
+penafsiran rumus-rumus seperti ‘<span class="math inline" data-source-tex="\limsup">\(\limsup\)</span>’.</p>
+</section>
+<section class="source-unit" id="123D" data-source-id="123D"><h2><span class="source-label">123D</span>  </h2>
+<p>Sebagai gambaran tentang kekuatan
+teorema-teorema ini, saya berikan di sini suatu hasil yang merupakan
+salah satu penerapan standar teori tersebut.</p>
+<p> </p>
+<p><strong>Korolari</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan
+<span class="math inline" data-source-tex="\ooint{a,b}">\(\ooint{a,b}\)</span> suatu interval terbuka tak kosong di dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.
+Misalkan <span class="math inline" data-source-tex="f:X\times\ooint{a,b}\to\Bbb R">\(f:X\times\ooint{a,b}\to\Bbb R\)</span> suatu fungsi sedemikian
+sehingga</p>
+<div class="inset-block"><p>(i) integral <span class="math inline" data-source-tex="F(t)=\int f(x,t)dx">\(F(t)=\int f(x,t)dx\)</span> terdefinisi untuk setiap
+<span class="math inline" data-source-tex="t\in\ooint{a,b}">\(t\in\ooint{a,b}\)</span>;</p></div>
+<div class="inset-block"><p>(ii) turunan parsial <span class="math inline" data-source-tex="\pd{f}{t}">\(\pd{f}{t}\)</span> dari <span class="math inline" data-source-tex="f">\(f\)</span> terhadap variabel
+kedua terdefinisi di setiap titik dalam <span class="math inline" data-source-tex="X\times\ooint{a,b}">\(X\times\ooint{a,b}\)</span>;</p></div>
+<div class="inset-block"><p>(iii) terdapat fungsi terintegralkan
+<span class="math inline" data-source-tex="g:X\to\coint{0,\infty}">\(g:X\to\coint{0,\infty}\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="|\pd{f}{t}(x,t)|\le g(x)">\(|\pd{f}{t}(x,t)|\le g(x)\)</span> untuk setiap <span class="math inline" data-source-tex="x\in X">\(x\in X\)</span> dan
+<span class="math inline" data-source-tex="t\in\ooint{a,b}">\(t\in\ooint{a,b}\)</span>.</p></div>
+<p>Maka turunan <span class="math inline" data-source-tex="F&#x27;(t)">\(F&#x27;(t)\)</span> dan integral
+<span class="math inline" data-source-tex="\biggerint\pd{f}{t}(x,t)dx">\(\biggerint\pd{f}{t}(x,t)dx\)</span> ada untuk setiap <span class="math inline" data-source-tex="t\in\ooint{a,b}">\(t\in\ooint{a,b}\)</span>,
+dan keduanya sama.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><span class="anchor" id="123Da"></span><strong>(a)</strong> Misalkan <span class="math inline" data-source-tex="t">\(t\)</span> sembarang titik dalam <span class="math inline" data-source-tex="\ooint{a,b}">\(\ooint{a,b}\)</span>, dan
+<span class="math inline" data-source-tex="\sequencen{t_n}">\(\sequencen{t_n}\)</span> sembarang barisan dalam
+<span class="math inline" data-source-tex="\ooint{a,b}\setminus\{t\}">\(\ooint{a,b}\setminus\{t\}\)</span> yang konvergen ke <span class="math inline" data-source-tex="t">\(t\)</span>. Tinjau</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Bover{F(t_n)-F(t)}{t_n-t}
+=\int\Bover{f(x,t_n)-f(x,t)}{t_n-t}\mu(dx)">\(\Bover{F(t_n)-F(t)}{t_n-t}
+=\int\Bover{f(x,t_n)-f(x,t)}{t_n-t}\mu(dx)\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>. (Langkah ini menggunakan <a class="xref" href="../122/index.html#122O">122O</a>.) Jika kita
+menetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="f_n(x)=\Bover{f(x,t_n)-f(x,t)}{t_n-t}">\(f_n(x)=\Bover{f(x,t_n)-f(x,t)}{t_n-t}\)</span>,</div>
+<p>untuk <span class="math inline" data-source-tex="x\in X">\(x\in X\)</span>, maka dari Teorema Nilai Rata-Rata kita
+melihat bahwa terdapat suatu <span class="math inline" data-source-tex="\tau">\(\tau\)</span> (yang tentu saja bergantung pada
+<span class="math inline" data-source-tex="n">\(n\)</span> maupun <span class="math inline" data-source-tex="x">\(x\)</span>), yang terletak di antara <span class="math inline" data-source-tex="t_n">\(t_n\)</span> dan <span class="math inline" data-source-tex="t">\(t\)</span>, sedemikian
+sehingga <span class="math inline" data-source-tex="f_n(x)=\pd{f}{t}(x,\tau)">\(f_n(x)=\pd{f}{t}(x,\tau)\)</span>, sehingga <span class="math inline" data-source-tex="|f_n(x)|\le g(x)">\(|f_n(x)|\le g(x)\)</span>.
+Pada saat yang sama,
+<span class="math inline" data-source-tex="\lim_{n\to\infty}f_n(x)=\pd{f}{t}(x,t)">\(\lim_{n\to\infty}f_n(x)=\pd{f}{t}(x,t)\)</span> untuk setiap <span class="math inline" data-source-tex="x">\(x\)</span>.
+Jadi Teorema Konvergensi Terdominasi Lebesgue menunjukkan bahwa
+<span class="math inline" data-source-tex="\biggerint\pd{f}{t}(x,t)dx">\(\biggerint\pd{f}{t}(x,t)dx\)</span> ada dan sama dengan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{n\to\infty}\int f_n(x)dx
+=\lim_{n\to\infty}\Bover{F(t_n)-F(t)}{t_n-t}">\(\lim_{n\to\infty}\int f_n(x)dx
+=\lim_{n\to\infty}\Bover{F(t_n)-F(t)}{t_n-t}\)</span>.</div>
+<p><span class="anchor" id="123Db"></span><strong>(b)</strong> Karena <span class="math inline" data-source-tex="\sequencen{t_n}">\(\sequencen{t_n}\)</span> sebarang,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{s\to t}\Bover{F(s)-F(t)}{s-t}
+=\int\Pd{f}{t}(x,t)dx">\(\lim_{s\to t}\Bover{F(s)-F(t)}{s-t}
+=\int\Pd{f}{t}(x,t)dx\)</span>,</div>
+<p>sebagaimana dinyatakan.</p></aside>
+<p> </p>
+<p><strong>Catatan</strong> Dalam jilid berikutnya saya menawarkan suatu
+variasi teorema ini, dengan hipotesis maupun kesimpulannya diperlemah
+(252Ye).</p>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="123X" data-source-id="123X"><span class="anchor" id="123Xa"></span><h2><span class="source-label">123X</span> Latihan dasar <span class="math inline" data-source-tex="\pmb{&gt;}">\(\pmb{&gt;}\)</span>(a) <span class="importance" title="Sangat penting">penting</span></h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur, dan <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> suatu
+barisan fungsi bernilai real, semuanya terintegralkan pada <span class="math inline" data-source-tex="X">\(X\)</span>,
+sedemikian sehingga <span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\int|f_n|">\(\sum_{n=0}^{\infty}\int|f_n|\)</span> berhingga.
+Tunjukkan bahwa <span class="math inline" data-source-tex="f(x)=\sum_{n=0}^{\infty}f_n(x)">\(f(x)=\sum_{n=0}^{\infty}f_n(x)\)</span> ada di <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>
+untuk hampir setiap <span class="math inline" data-source-tex="x\in X">\(x\in X\)</span>, dan bahwa
+<span class="math inline" data-source-tex="\int f=\sum_{n=0}^{\infty}\int f_n">\(\int f=\sum_{n=0}^{\infty}\int f_n\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> tinjau terlebih dahulu kasus ketika setiap <span class="math inline" data-source-tex="f_n">\(f_n\)</span> nonnegatif.</span></p>
+</section>
+<section class="source-unit" id="123Xb" data-source-id="123Xb"><h3><span class="source-label">123Xb</span> (b) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur.
+Andaikan <span class="math inline" data-source-tex="T">\(T\)</span> sembarang subhimpunan <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan
+<span class="math inline" data-source-tex="\langle f_t\rangle_{t\in T}">\(\langle f_t\rangle_{t\in T}\)</span> suatu keluarga fungsi, semuanya
+terintegralkan pada <span class="math inline" data-source-tex="X">\(X\)</span>, sedemikian sehingga, untuk setiap <span class="math inline" data-source-tex="t\in T">\(t\in T\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="f_t(x)=\lim_{s\in T,s\to t}f_s(x)">\(f_t(x)=\lim_{s\in T,s\to t}f_s(x)\)</span></div>
+<p>untuk hampir setiap <span class="math inline" data-source-tex="x\in X">\(x\in X\)</span>. Andaikan pula bahwa terdapat
+suatu fungsi terintegralkan <span class="math inline" data-source-tex="g">\(g\)</span> sedemikian sehingga <span class="math inline" data-source-tex="|f_t|\leae g">\(|f_t|\leae g\)</span>
+untuk setiap <span class="math inline" data-source-tex="t\in T">\(t\in T\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="t\mapsto\int f_t:T\to\Bbb R">\(t\mapsto\int f_t:T\to\Bbb R\)</span> kontinu.</p>
+</section>
+<section class="source-unit" id="123Xc" data-source-id="123Xc"><h3><span class="source-label">123Xc</span> (&gt;c) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real yang
+didefinisikan di setiap titik pada <span class="math inline" data-source-tex="\coint{0,\infty}">\(\coint{0,\infty}\)</span>, dan lengkapi
+interval ini dengan ukuran Lebesgue. <strong>Transformasi Laplace</strong> (real)
+darinya ialah fungsi <span class="math inline" data-source-tex="F">\(F\)</span> yang didefinisikan oleh</p>
+<div class="centerline"><span class="math inline" data-source-tex="F(s)=\int_0^{\infty}e^{-sx}f(x)dx">\(F(s)=\int_0^{\infty}e^{-sx}f(x)dx\)</span></div>
+<p>untuk semua bilangan real <span class="math inline" data-source-tex="s">\(s\)</span> yang membuat integral tersebut
+terdefinisi.</p>
+<p>  (i) Tunjukkan bahwa jika <span class="math inline" data-source-tex="s\in\dom F">\(s\in\dom F\)</span> dan <span class="math inline" data-source-tex="s&#x27;\ge s">\(s&#x27;\ge s\)</span>, maka
+<span class="math inline" data-source-tex="s&#x27;\in\dom F">\(s&#x27;\in\dom F\)</span> (karena <span class="math inline" data-source-tex="e^{-s&#x27;x}e^{sx}\le 1">\(e^{-s&#x27;x}e^{sx}\le 1\)</span> untuk setiap <span class="math inline" data-source-tex="x">\(x\)</span>).
+(Bagaimana Anda mengetahui bahwa <span class="math inline" data-source-tex="x\mapsto e^{-s&#x27;x}e^{sx}">\(x\mapsto e^{-s&#x27;x}e^{sx}\)</span> terukur?)</p>
+<p>  (ii) Tunjukkan bahwa <span class="math inline" data-source-tex="F">\(F\)</span> dapat didiferensialkan pada bagian dalam
+domainnya.
+<span class="hint" role="note"><strong>Petunjuk:</strong> perhatikan bahwa jika <span class="math inline" data-source-tex="a_0\in\dom F">\(a_0\in\dom F\)</span> dan <span class="math inline" data-source-tex="a_0&lt;a&lt;b">\(a_0&lt;a&lt;b\)</span>, maka
+terdapat suatu <span class="math inline" data-source-tex="M">\(M\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="xe^{-sx}|f(x)|\le Me^{-a_0x}|f(x)|">\(xe^{-sx}|f(x)|\le Me^{-a_0x}|f(x)|\)</span> setiap kali
+<span class="math inline" data-source-tex="x\in\coint{0,\infty}">\(x\in\coint{0,\infty}\)</span>, <span class="math inline" data-source-tex="s\in[a,b]">\(s\in[a,b]\)</span>.</span></p>
+<p>  (iii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="F">\(F\)</span> terdefinisi untuk setidaknya satu
+nilai, maka
+<span class="math inline" data-source-tex="\lim_{s\to\infty}F(s)=0">\(\lim_{s\to\infty}F(s)=0\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> gunakan Teorema Konvergensi
+Terdominasi Lebesgue untuk menunjukkan bahwa
+<span class="math inline" data-source-tex="\lim_{n\to\infty}F(s_n)=0">\(\lim_{n\to\infty}F(s_n)=0\)</span> setiap kali
+<span class="math inline" data-source-tex="\lim_{n\to\infty}s_n=\infty">\(\lim_{n\to\infty}s_n=\infty\)</span>.</span></p>
+<p>  (iv) Tunjukkan bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g">\(g\)</span> mempunyai transformasi Laplace
+<span class="math inline" data-source-tex="F">\(F\)</span>, <span class="math inline" data-source-tex="G">\(G\)</span>, maka transformasi Laplace dari <span class="math inline" data-source-tex="f+g">\(f+g\)</span> adalah <span class="math inline" data-source-tex="F+G">\(F+G\)</span>,
+setidaknya pada <span class="math inline" data-source-tex="\dom F\cap \dom
+G">\(\dom F\cap \dom
+G\)</span>.</p>
+</section>
+<section class="source-unit" id="123Xd" data-source-id="123Xd"><h3><span class="source-label">123Xd</span> (d) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur
+dan <span class="math inline" data-source-tex="\langle f_n\rangle_{n\in\Bbb N}">\(\langle f_n\rangle_{n\in\Bbb N}\)</span> suatu barisan fungsi bernilai
+real, semuanya terintegralkan pada <span class="math inline" data-source-tex="X">\(X\)</span>, sedemikian sehingga terdapat
+suatu fungsi terintegralkan <span class="math inline" data-source-tex="g">\(g\)</span> dengan <span class="math inline" data-source-tex="|f_n|\leae g">\(|f_n|\leae g\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="\limsup_{n\to\infty}f_n">\(\limsup_{n\to\infty}f_n\)</span> terintegralkan dan bahwa
+<span class="math inline" data-source-tex="\int\limsup_{n\to\infty}f_n\ge\limsup_{n\to\infty}\int f_n">\(\int\limsup_{n\to\infty}f_n\ge\limsup_{n\to\infty}\int f_n\)</span>.</p>
+</section>
+<section class="source-unit" id="123Y" data-source-id="123Y"><span class="anchor" id="123Ya"></span><h2><span class="source-label">123Y</span> Latihan lanjutan (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur, <span class="math inline" data-source-tex="Y">\(Y\)</span> sembarang himpunan dan
+<span class="math inline" data-source-tex="\phi:X\to Y">\(\phi:X\to Y\)</span> sembarang fungsi; misalkan <span class="math inline" data-source-tex="\mu\phi^{-1}">\(\mu\phi^{-1}\)</span> ukuran citra
+pada <span class="math inline" data-source-tex="Y">\(Y\)</span> (<a class="xref" href="../112/index.html#112Xf">112Xf</a>). Tunjukkan bahwa jika <span class="math inline" data-source-tex="h:Y\to\Bbb R">\(h:Y\to\Bbb R\)</span> sembarang
+fungsi, maka <span class="math inline" data-source-tex="h">\(h\)</span> terintegralkan terhadap <span class="math inline" data-source-tex="\mu\phi^{-1}">\(\mu\phi^{-1}\)</span> jika dan hanya
+jika <span class="math inline" data-source-tex="h\phi">\(h\phi\)</span> terintegralkan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>; dalam hal itu kedua integral
+tersebut sama.</p>
+</section>
+<section class="source-unit" id="123Yb" data-source-id="123Yb"><h3><span class="source-label">123Yb</span> <strong>(b)</strong> </h3>
+<p>Jelaskan cara menyesuaikan <a class="xref" href="#123Xc">123Xc</a> dengan kasus
+ketika <span class="math inline" data-source-tex="f">\(f\)</span> tidak didefinisikan pada suatu subhimpunan terabaikan dari
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.</p>
+</section>
+<section class="source-unit" id="123Yc" data-source-id="123Yc"><h3><span class="source-label">123Yc</span> <strong>(c)</strong> </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan
+<span class="math inline" data-source-tex="a&lt;b">\(a&lt;b\)</span> dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Misalkan
+<span class="math inline" data-source-tex="f:X\times\ooint{a,b}\to\coint{0,\infty}">\(f:X\times\ooint{a,b}\to\coint{0,\infty}\)</span> suatu fungsi sedemikian
+sehingga <span class="math inline" data-source-tex="\int f(x,t)dx">\(\int f(x,t)dx\)</span> terdefinisi untuk setiap <span class="math inline" data-source-tex="t\in\ooint{a,b}">\(t\in\ooint{a,b}\)</span>
+dan <span class="math inline" data-source-tex="t\mapsto f(x,t)">\(t\mapsto f(x,t)\)</span> kontinu untuk setiap <span class="math inline" data-source-tex="x\in X">\(x\in X\)</span>. Andaikan bahwa
+<span class="math inline" data-source-tex="c\in\ooint{a,b}">\(c\in\ooint{a,b}\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\liminf_{t\to c}\int f(x,t)dx&lt;\infty">\(\liminf_{t\to c}\int f(x,t)dx&lt;\infty\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="\int\liminf_{t\to c}f(x,t)dx">\(\int\liminf_{t\to c}f(x,t)dx\)</span> terdefinisi dan kurang
+dari atau sama dengan <span class="math inline" data-source-tex="\liminf_{t\to c}\int f(x,t)dx">\(\liminf_{t\to c}\int f(x,t)dx\)</span>.</p>
+</section>
+<section class="source-unit" id="123Yd" data-source-id="123Yd"><h3><span class="source-label">123Yd</span> <strong>(d)</strong> </h3>
+<p>Tunjukkan bahwa terdapat suatu fungsi
+<span class="math inline" data-source-tex="f:\BbbR^2\to\{0,1\}">\(f:\BbbR^2\to\{0,1\}\)</span> sedemikian sehingga (i) integral Lebesgue
+<span class="math inline" data-source-tex="\int f(x,t)dx">\(\int f(x,t)dx\)</span> terdefinisi dan sama dengan <span class="math inline" data-source-tex="1">\(1\)</span> untuk setiap <span class="math inline" data-source-tex="t\ne 0">\(t\ne 0\)</span>
+(ii) fungsi <span class="math inline" data-source-tex="x\mapsto\liminf_{t\to 0}f(x,t)">\(x\mapsto\liminf_{t\to 0}f(x,t)\)</span> tidak terukur Lebesgue.
+(<em>Catatan\/</em>: tentu saja Anda harus memulai konstruksi dari suatu
+subhimpunan tak-terukur dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>; lihat 134B untuk himpunan
+semacam itu.)</p>
+</section>
+<section class="source-unit" id="123Ye" data-source-id="123Ye"><h3><span class="source-label">123Ye</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(Y,\Tau,\nu)">\((Y,\Tau,\nu)\)</span> suatu ruang ukur. Misalkan <span class="math inline" data-source-tex="X">\(X\)</span>
+suatu himpunan, <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> suatu aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas
+subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>, dan
+<span class="math inline" data-source-tex="\langle\mu_y\rangle_{y\in Y}">\(\langle\mu_y\rangle_{y\in Y}\)</span> suatu keluarga ukuran pada <span class="math inline" data-source-tex="X">\(X\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\mu_yX">\(\mu_yX\)</span> berhingga untuk setiap <span class="math inline" data-source-tex="y">\(y\)</span> dan
+<span class="math inline" data-source-tex="\mu E=\int\mu_yE\,\nu(dy)">\(\mu E=\int\mu_yE\,\nu(dy)\)</span> terdefinisi untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>.
+(i) Tunjukkan bahwa <span class="math inline" data-source-tex="\mu:\Sigma\to\coint{0,\infty}">\(\mu:\Sigma\to\coint{0,\infty}\)</span> merupakan suatu
+ukuran. (ii) Tunjukkan bahwa jika
+<span class="math inline" data-source-tex="f:X\to\coint{0,\infty}">\(f:X\to\coint{0,\infty}\)</span> suatu fungsi <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>-terukur, maka <span class="math inline" data-source-tex="f">\(f\)</span>
+terintegralkan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> jika dan hanya jika fungsi itu
+terintegralkan terhadap <span class="math inline" data-source-tex="\mu_y">\(\mu_y\)</span> untuk hampir setiap <span class="math inline" data-source-tex="y\in Y">\(y\in Y\)</span> dan
+<span class="math inline" data-source-tex="\int\bigl(\int fd\mu_y\bigr)\nu(dy)">\(\int\bigl(\int fd\mu_y\bigr)\nu(dy)\)</span> terdefinisi, serta bahwa nilai
+ini dalam hal itu sama dengan <span class="math inline" data-source-tex="\int fd\mu">\(\int fd\mu\)</span>.</p>
+</section>
+<section class="source-unit" id="123Yf" data-source-id="123Yf"><h3><span class="source-label">123Yf</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur, dan
+<span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> suatu barisan fungsi bernilai real yang terukur
+secara virtual dan semuanya didefinisikan hampir di mana-mana dalam
+<span class="math inline" data-source-tex="X">\(X\)</span>. Andaikan bahwa
+<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\int|f_n(x)-1|\mu(dx)&lt;\infty">\(\sum_{n=0}^{\infty}\int|f_n(x)-1|\mu(dx)&lt;\infty\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="\prod_{n=0}^{\infty}f_n(x)">\(\prod_{n=0}^{\infty}f_n(x)\)</span> ada di <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> untuk
+hampir setiap <span class="math inline" data-source-tex="x\in X">\(x\in X\)</span>.</p>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<section class="source-unit" id="123" data-source-id="123"><h2><span class="source-label">123</span> Catatan penutup untuk Bagian 123 </h2>
+<p>Saya berharap <a class="xref" href="#123D">123D</a> dan kasus khususnya, <a class="xref" href="#123Xc">123Xc</a>, akan
+membantu meyakinkan Anda bahwa teori di sini mempunyai penerapan yang
+berguna.</p>
+<p>Semua teorema dalam bagian ini dapat dipandang sebagai teorema
+‘pertukaran limit’, yang menetapkan syarat-syarat yang memungkinkan</p>
+<p><span class="math display" data-source-tex="\lim_{n\to\infty}\int f_n=\int\lim_{n\to\infty}f_n,">\[\lim_{n\to\infty}\int f_n=\int\lim_{n\to\infty}f_n,\]</span></p>
+<p>atau</p>
+<p><span class="math display" data-source-tex="\Bover{\partial}{\partial t}{\int}f\,dx=\int\Bover{\partial
+f}{\partial
+t}dx.">\[\Bover{\partial}{\partial t}{\int}f\,dx=\int\Bover{\partial
+f}{\partial
+t}dx.\]</span></p>
+<p>Bahkan untuk fungsi-fungsi yang dapat ditangani dengan metode
+integrasi yang jauh lebih elementer (misalnya, integral Riemann),
+teorema-teorema jenis ini dapat menuntut verifikasi
+pertidaksamaan-pertidaksamaan yang melelahkan. Kekuatan integral
+Lebesgue terletak pada teorema-teorema umum yang diberikannya, yang
+mencakup bagian yang cukup besar dari kasus-kasus penting yang
+muncul dalam praktik. (Namun harus saya akui bahwa tidak ada yang lebih
+khas dalam analisis terapan daripada kebutuhannya akan hasil-hasil
+khusus yang berkaitan dengan, tetapi tidak dapat diturunkan dari,
+teorema-teorema umum yang standar.) Sebagai contoh, dalam <a class="xref" href="#123Xc">123Xc</a>, fakta
+bahwa daerah integrasinya merupakan interval tak terbatas
+<span class="math inline" data-source-tex="\coint{0,\infty}">\(\coint{0,\infty}\)</span> tidak menambah kesulitan. Tentu saja, ini berkaitan
+dengan fakta bahwa kita hanya meninjau integral fungsi-fungsi yang
+nilai mutlaknya terintegralkan.</p>
+<p>Limit-limit yang digunakan dalam <a class="xref" href="#123A">123A</a>-<a class="xref" href="#123C">123C</a> semuanya merupakan limit
+barisan; tentu saja, bagian dari hakikat teori ukur ialah bahwa kita
+berharap dapat menangani keluarga terhitung dari himpunan atau fungsi,
+tetapi keluarga yang lebih besar dari itu menimbulkan kekhawatiran. Meskipun
+demikian, terdapat banyak konteks yang memungkinkan kita mengambil
+jenis limit lain. Saya menguraikan beberapa di antaranya dalam <a class="xref" href="#123D">123D</a>,
+<a class="xref" href="#123Xb">123Xb</a>, dan <a class="xref" href="#123Xc">123Xc</a>(iii). Intinya ialah bahwa dalam limit seperti
+<span class="math inline" data-source-tex="\lim_{t\to u}\phi(t)">\(\lim_{t\to u}\phi(t)\)</span>, dengan <span class="math inline" data-source-tex="u\in[-\infty,\infty]">\(u\in[-\infty,\infty]\)</span>, kita akan
+mempunyai <span class="math inline" data-source-tex="\lim_{t\to u}\phi(t)=a">\(\lim_{t\to u}\phi(t)=a\)</span> jika dan hanya jika
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\phi(t_n)=a">\(\lim_{n\to\infty}\phi(t_n)=a\)</span> setiap kali <span class="math inline" data-source-tex="\sequencen{t_n}">\(\sequencen{t_n}\)</span> konvergen
+ke <span class="math inline" data-source-tex="u">\(u\)</span>; sehingga ketika mencari suatu limit
+<span class="math inline" data-source-tex="\lim_{t\to u}\int f_t">\(\lim_{t\to u}\int f_t\)</span>, untuk suatu keluarga fungsi
+<span class="math inline" data-source-tex="\langle f_t\rangle_{t\in T}">\(\langle f_t\rangle_{t\in T}\)</span>, cukuplah jika kita dapat menentukan
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\int f_{t_n}">\(\lim_{n\to\infty}\int f_{t_n}\)</span> untuk cukup banyak barisan
+<span class="math inline" data-source-tex="\sequencen{t_n}">\(\sequencen{t_n}\)</span>. Argumen jenis ini akan efektif bagi setiap limit
+standar <span class="math inline" data-source-tex="\lim_{t\uparrow a}">\(\lim_{t\uparrow a}\)</span>, <span class="math inline" data-source-tex="\lim_{t\downarrow a}">\(\lim_{t\downarrow a}\)</span>,
+<span class="math inline" data-source-tex="\lim_{t\to a}">\(\lim_{t\to a}\)</span>, <span class="math inline" data-source-tex="\lim_{t\to\infty}">\(\lim_{t\to\infty}\)</span>, <span class="math inline" data-source-tex="\lim_{t\to-\infty}">\(\lim_{t\to-\infty}\)</span> dari
+kalkulus dasar, dan dapat digunakan bersama dengan teorema B. Levi
+ataupun teorema Lebesgue. Barangkali perlu saya catat bahwa suatu
+kesulitan muncul dalam perluasan serupa dari lema Fatou
+(<a class="xref" href="#123Yc">123Yc</a>-<a class="xref" href="#123Yd">123Yd</a>).</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 1: The Irreducible Minimum</cite>, Bagian 123.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 21 Agustus 2026. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-semantic-reader-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V1-S123&quot;,
+  &quot;source_member&quot;: &quot;mt1.2011/mt123.tex&quot;,
+  &quot;target_bytes&quot;: 19405,
+  &quot;target_sha256&quot;: &quot;b3077760e581ef8c6781f311ad846497bb9af6d1361767cf2b88fce63667b58c&quot;,
+  &quot;source_ids&quot;: [
+    &quot;123&quot;,
+    &quot;123A&quot;,
+    &quot;123Aa&quot;,
+    &quot;123Ab&quot;,
+    &quot;123B&quot;,
+    &quot;123C&quot;,
+    &quot;123D&quot;,
+    &quot;123Da&quot;,
+    &quot;123Db&quot;,
+    &quot;123X&quot;,
+    &quot;123Xa&quot;,
+    &quot;123Xb&quot;,
+    &quot;123Xc&quot;,
+    &quot;123Xd&quot;,
+    &quot;123Y&quot;,
+    &quot;123Ya&quot;,
+    &quot;123Yb&quot;,
+    &quot;123Yc&quot;,
+    &quot;123Yd&quot;,
+    &quot;123Ye&quot;,
+    &quot;123Yf&quot;
+  ]
+}</pre></details>
+</footer>
+</body>
+</html>

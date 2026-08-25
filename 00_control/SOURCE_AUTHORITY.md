@@ -129,7 +129,7 @@ translation or admission is claimed yet.
 ## Selection authority
 
 The root selection handoff is
-`C:/Users/Floris/Documents/interlanguage/outputs/01a01ec1-e685-70d0-b022-211396334723/curriculum_logbook/19_O007_SELECTION_AND_EXISTING_TASK_HANDOFF_20260821.md`.
+`[USER_HOME]/Documents/interlanguage/outputs/01a01ec1-e685-70d0-b022-211396334723/curriculum_logbook/19_O007_SELECTION_AND_EXISTING_TASK_HANDOFF_20260821.md`.
 The dispatch receipt supplied to this task was 12,948 bytes, SHA-256
 `3566908fcb2bb1d4a4450881ad2bd4db71f728344c0d3b165951548966ef1b26`.
 A coordinator correction then reported 13,150 bytes, SHA-256

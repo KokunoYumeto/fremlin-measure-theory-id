@@ -51,3 +51,30 @@ The live source substitutions are deliberately lexical only:
 - `ukuran bayangan` / `ukuran-ukuran bayangan` → `ukuran citra` / `ukuran-ukuran citra`: one occurrence in S112 and two in S114.
 
 No formula, identifier, source anchor, topology, exercise/hint relation, or mathematical assertion is changed. Variants are recorded here rather than by inventing schema fields or inflating term-record counts. Unit backend records must be regenerated from the revised live sources; previously published packages and their historical hashes are not rewritten.
+
+## Chapter 21 terminology decisions
+
+Date admitted: 2026-08-25  
+Scope: `source/id-ID/mt21.tex` and `source/id-ID/mt211.tex`–`mt216.tex`
+
+| Concept or construction | Preferred O007 form | Decision and boundary |
+|---|---|---|
+| sigma-algebra in reader prose | `aljabar-sigma` | Use the spelled-out Indonesian compound in running prose. This is an intentional, lossless topology/localization exception: a source math atom `\sigma` used only as the lexical prefix in “sigma-algebra” may become text, while symbolic variables such as `\Sigma`, formulas, identifiers, and actual mathematical operators remain unchanged. Keep `aljabar-σ` as a search/display variant. |
+| sigma-finite | `$\sigma$-hingga` | Retain the conventional symbolic technical compound. Do not apply the `aljabar-sigma` prose exception to this established adjective. |
+| semi-finite | `semihingga` | Use one closed compound throughout Chapter 21; do not alternate with a literal “berhingga-sebagian” rendering. |
+| localizable | `dapat dilokalkan` | Use for Fremlin’s *localizable*. |
+| strictly localizable | `dapat dilokalkan secara ketat` | Preserve the strictness modifier explicitly and consistently. |
+| locally determined | `ditentukan secara lokal` | Reserve for the property of a measure space or measure. For *locally determined negligible sets*, use `himpunan terabaikan yang ditentukan secara lokal`; do not collapse the two concepts. |
+| measure-qualified predicates | `terukur terhadap μ`; `terabaikan terhadap μ`; `koterabaikan terhadap μ`; `dapat diintegralkan terhadap μ` | Put the qualifier after the predicate in natural Indonesian and retain the governing measure explicitly where needed for contrast. Avoid English-order calques such as “μ-terukur”. Unqualified forms remain appropriate where the measure is unambiguous. |
+| almost everywhere | `hampir di mana-mana` | Expand the abbreviation `h.d.` in reader-facing prose. Keep `h.d.` only as a lookup variant, not as the primary running form. |
+| purely atomic | `atomik murni` | Use consistently for *purely atomic*. |
+| essential supremum | `supremum esensial` | Preserve the standard mathematical noun phrase and its order-theoretic meaning. |
+| principle of exhaustion | `prinsip penghabisan` | Use as the section title and Chapter 21 term for *principle of exhaustion*. |
+
+The qualifier reordering and the expansion of `h.d.` are reader-language changes only. Across these seven Chapter 21 source units, the live Indonesian text contains 34 occurrences of `aljabar-sigma`, exactly matching the 34 active authority occurrences of the lexical `$\sigma$-algebra`/`$\sigma$-algebras` form. It contains no `h.d.` abbreviation and 48 occurrences of `hampir di mana-mana`. The `aljabar-sigma` exception accounts for the deliberate removal of lexical `\sigma` math atoms during structural comparison; it does not authorize deletion or rewriting of mathematical sigma symbols elsewhere.
+
+## Chapter 21 source anomalies preserved
+
+- In authority `mt211.tex:468-469`, exercise 211Xd says that a point-supported measure is always complete and is strictly localizable iff it is semi-finite; `mt211.tex:487-488`, exercise 211Xf, repeats the latter assertion. The Indonesian source preserves both separate stable exercise surfaces at `source/id-ID/mt211.tex:515-517` and `:538-539`; no exercise was deleted or silently merged.
+- Within 216D, the authority proceeds directly from part **(b)** at `mt216.tex:234-237` to part **(d)** at `mt216.tex:241`; no part **(c)** is present. The Indonesian source preserves the same label sequence at `source/id-ID/mt216.tex:236-243`. No missing mathematical content or replacement label was invented.
+- The authority’s orthographic typo `arbitary` at `mt212.tex:581` is naturally rendered as `sembarang` at `source/id-ID/mt212.tex:609`. This is an ordinary translation-level spelling normalization, not a mathematical source-correction row.

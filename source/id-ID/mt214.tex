@@ -1,0 +1,1299 @@
+\frfilename{mt214.tex}
+\versiondate{22.5.09}
+\copyrightdate{2009}
+
+\def\chaptername{Taksonomi ruang ukur}
+\def\sectionname{Subruang}
+
+\newsection{214}
+
+Dalam \S131 saya menjelaskan suatu konstruksi ukuran subruang pada
+himpunan bagian terukur.   Kini tiba waktunya memberikan generalisasi
+ukuran subruang
+pada sembarang himpunan bagian dari suatu ruang ukur.   Hubungan antara
+konstruksi ini dan sifat-sifat yang didaftar dalam \S211 tidaklah
+selangsung yang mungkin dibayangkan, dan dalam bagian ini saya berusaha
+memberikan uraian lengkap tentang apa yang secara umum dapat diharapkan
+dari subruang.   Menurut saya, untuk jilid ini hanya (i) subruang umum
+dari ruang $\sigma$-hingga dan
+(ii) subruang terukur dari ruang ukur umum yang akan benar-benar
+diperlukan, dan keduanya tidak menimbulkan kesulitan;  tetapi dalam
+jilid-jilid selanjutnya kita akan memerlukan teori lengkapnya.
+
+Saya mulai dengan suatu konstruksi umum untuk `ukuran subruang'
+(214A-214C), %214A 214B 214C
+beserta uraian tentang integrasi terhadap suatu ukuran subruang
+(214E-214G); %214E 214F 214G
+hasil-hasil ini (bersama 131E-131H) %131E 131F 131G 131H
+memberikan landasan yang kukuh bagi
+konsep `integrasi pada suatu himpunan bagian' (214D).   Saya menyajikan
+pekerjaan ini dalam keumuman alaminya yang penuh, yang kelak akan mutlak
+diperlukan, tetapi bahkan untuk ukuran Lebesgue saja penting untuk
+menyadari gagasan-gagasan di sini.    Saya lanjutkan dengan jawaban atas
+beberapa pertanyaan yang jelas mengenai ukuran subruang dan sifat-sifat
+ruang ukur yang sejauh ini telah dipertimbangkan, baik untuk subruang umum
+(214I) maupun subruang terukur (214K), dan saya menyebut suatu konstruksi
+dasar untuk menyusun ruang-ruang ukur berdampingan, yakni `jumlah langsung'
+dalam 214L-214M. Pada akhir bagian saya membahas suatu masalah perluasan
+ukuran (214O-214P).
+
+\leader{214A}{Proposisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur, dan
+$Y$ sembarang himpunan bagian dari $X$.   Misalkan $\mu^*$ ukuran luar
+yang didefinisikan dari $\mu$\cmmnt{ (132A-132B)}, dan tetapkan
+$\Sigma_Y=\{E\cap Y:E\in\Sigma\}$;  misalkan $\mu_Y$ restriksi dari
+$\mu^*$ pada $\Sigma_Y$.   Maka $(Y,\Sigma_Y,\mu_Y)$ merupakan ruang ukur.
+
+\proof{{\bf (a)} Telah saya catat dalam 121A bahwa $\Sigma_Y$ merupakan
+aljabar-sigma dari himpunan-himpunan bagian $Y$.
+
+\medskip
+
+{\bf (b)} Tentu saja $\mu_YF\in[0,\infty]$ untuk
+setiap $F\in\Sigma_Y$.
+
+\medskip
+
+{\bf (c)}  $\mu_Y\emptyset=\mu^*\emptyset=0$.
+
+
+\medskip
+
+{\bf (d)} Jika $\sequencen{F_n}$ suatu barisan saling lepas dalam
+$\Sigma_Y$ dengan gabungan $F$, pilih $E_n$, $E'_n$, $E\in\Sigma$
+sedemikian sehingga $F_n=Y\cap E_n$, $F_n\subseteq E'_n$ dan
+$\mu_YF_n=\mu E'_n$ untuk setiap $n$, $F\subseteq E$ dan
+$\mu_YF=\mu E$ (dengan menggunakan 132Aa berulang kali).   Tetapkan
+$G_n=E_n\cap E'_n\cap E\setminus\bigcup_{m<n}E_m$ untuk setiap
+$n\in\Bbb N$; maka $\sequencen{G_n}$ saling lepas dan
+$F_n\subseteq G_n\subseteq E'_n$ untuk setiap $n$, sehingga
+$\mu_YF_n=\mu G_n$.   Selain itu
+$F\subseteq\bigcup_{n\in\Bbb N}G_n\subseteq E$, sehingga
+
+\Centerline{$\mu_YF=\mu(\bigcup_{n\in\Bbb N}G_n)
+=\sum_{n=0}^{\infty}\mu G_n=\sum_{n=0}^{\infty}\mu_YF_n$.}
+
+\noindent Karena $\sequencen{F_n}$
+sembarang, $\mu_Y$ merupakan suatu ukuran.
+}%end of proof of 214A
+
+\leader{214B}{Definisi} Jika $(X,\Sigma,\mu)$ sembarang ruang ukur dan
+$Y$ sembarang himpunan bagian dari $X$, maka $\mu_Y$, yang didefinisikan
+seperti dalam 214A, adalah {\bf ukuran subruang} pada $Y$.
+
+\cmmnt{Patut dicatat hal berikut.}
+
+\leader{214C}{Lema} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur, $Y$ suatu
+himpunan bagian dari $X$, $\mu_Y$ ukuran subruang pada $Y$, dan
+$\Sigma_Y$ domainnya.  Maka
+
+(a) untuk setiap $F\in\Sigma_Y$, terdapat $E\in\Sigma$ sedemikian
+sehingga $F=E\cap Y$ dan $\mu E=\mu_YF$;
+
+(b) untuk setiap $A\subseteq Y$, $A$ terabaikan terhadap $\mu_Y$ jika dan hanya
+jika ia terabaikan terhadap $\mu$;
+
+(c)(i) jika $A\subseteq X$ koterabaikan terhadap $\mu$, maka $A\cap Y$
+koterabaikan terhadap $\mu_Y$;
+
+\quad (ii) jika $A\subseteq Y$
+koterabaikan terhadap $\mu_Y$, maka $A\cup(X\setminus Y)$ koterabaikan terhadap $\mu$;
+
+(d) $(\mu_Y)^*$\cmmnt{, ukuran luar pada $Y$ yang didefinisikan dari
+$\mu_Y$,} berimpit dengan $\mu^*$ pada $\Cal PY$;
+
+(e) jika $Z\subseteq Y\subseteq X$, maka
+$\Sigma_Z=(\Sigma_Y)_Z$, yakni aljabar-sigma subruang dari
+himpunan-himpunan bagian $Z$ yang dipandang sebagai subruang dari
+$(Y,\Sigma_Y)$, dan $\mu_Z=(\mu_Y)_Z$ adalah ukuran subruang pada $Z$
+yang dipandang sebagai subruang dari $(Y,\mu_Y)$;
+
+(f) jika $Y\in\Sigma$, maka $\mu_Y$, sebagaimana didefinisikan di sini,
+tepat merupakan ukuran subruang pada $Y$ yang didefinisikan dalam
+131A-131B\cmmnt{;  yaitu, $\Sigma_Y=\Sigma\cap\Cal PY$ dan
+$\mu_Y=\mu\restr\Sigma_Y$}.
+
+\proof{{\bf (a)} Berdasarkan definisi $\Sigma_Y$, terdapat
+$E_0\in\Sigma$ sedemikian sehingga $F=E_0\cap Y$.   Berdasarkan 132Aa,
+terdapat $E_1\in\Sigma$ sedemikian sehingga $F\subseteq E_1$ dan
+$\mu^*F=\mu E_1$.   Tetapkan $E=E_0\cap E_1$;  himpunan ini memenuhi
+keperluan.
+
+\medskip
+
+{\bf (b)}(i) Jika $A$ terabaikan terhadap $\mu_Y$, terdapat suatu himpunan
+$F\in\Sigma_Y$ sedemikian sehingga $A\subseteq F$ dan $\mu_YF=0$; kini
+$\mu^*A\le\mu^*F=0$ sehingga $A$ terabaikan terhadap $\mu$, berdasarkan 132Ad.
+(ii) Jika $A$
+terabaikan terhadap $\mu$, terdapat $E\in\Sigma$ sedemikian sehingga
+$A\subseteq E$ dan $\mu E=0$;  kini $A\subseteq E\cap Y\in\Sigma_Y$ dan
+$\mu_Y(E\cap Y)=0$, sehingga $A$ terabaikan terhadap $\mu_Y$.
+
+\medskip
+
+{\bf (c)} Jika $A\subseteq X$ koterabaikan terhadap $\mu$, maka $A\cap Y$
+koterabaikan terhadap $\mu_Y$, karena $Y\setminus A=Y\cap(X\setminus A)$
+terabaikan terhadap $\mu$, dan karena itu terabaikan terhadap $\mu_Y$.   Jika
+$A\subseteq Y$ koterabaikan terhadap $\mu_Y$, maka $A\cup(X\setminus Y)$
+koterabaikan terhadap $\mu$ karena $X\setminus(A\cup(X\setminus Y))=Y\setminus A$
+terabaikan terhadap $\mu_Y$, dan karena itu terabaikan terhadap $\mu$.
+
+\medskip
+
+{\bf (d)} Misalkan $A\subseteq Y$.   (i) Jika
+$A\subseteq E\in\Sigma$, maka $A\subseteq E\cap Y\in\Sigma_Y$, sehingga
+$\mu_Y^*A\le\mu_Y(E\cap Y)\le\mu E$;  karena $E$ sembarang,
+$\mu_Y^*A\le\mu^*A$.    (ii) Jika $A\subseteq F\in\Sigma_Y$, terdapat
+$E\in\Sigma$ sedemikian sehingga $F\subseteq E$ dan
+$\mu_YF=\mu^*F=\mu E$; kini $A\subseteq E$ sehingga
+$\mu^*A\le\mu E=\mu_YF$.   Karena $F$ sembarang,
+$\mu^*A\le\mu_Y^*A$.
+
+\medskip
+
+{\bf (e)} Kesamaan $\Sigma_Z=(\Sigma_Y)_Z$ langsung diperoleh dari
+definisi $\Sigma_Y$, dan seterusnya;   kini
+
+\Centerline{$(\mu_Y)_Z=
+\mu_Y^*\restr\Sigma_Z=\mu^*\restr\Sigma_Z=\mu_Z$}
+
+\noindent berdasarkan (d).
+
+\medskip
+
+{\bf (f)}  Ini elementer, karena $E\cap Y\in\Sigma$ dan
+$\mu^*(E\cap Y)=\mu(E\cap Y)$ untuk setiap $E\in\Sigma$.
+}%end of proof of 214C
+
+\leader{214D}{Integrasi pada himpunan bagian:  Definisi} Misalkan
+$(X,\Sigma,\mu)$ suatu ruang ukur, $Y$ suatu himpunan bagian dari $X$,
+dan $f$ suatu fungsi bernilai $[-\infty,\infty]$ yang didefinisikan pada
+suatu himpunan bagian dari $X$.   Dengan $\int_Y f$\cmmnt{ (atau
+$\int_Y f(x)\mu(dx)$, dan seterusnya)} saya maksudkan
+$\int(f\restrp Y)d\mu_Y$, jika ini ada dalam
+$[-\infty,\infty]$\cmmnt{, dengan mengikuti definisi 214A-214B, 133A,
+dan 135F, serta mengambil $\dom(f\restrp Y)=Y\cap\dom f$,
+$(f\restrp Y)(x)=f(x)$ untuk $x\in Y\cap\dom f$}.   \cmmnt{(Bandingkan
+131D.)}
+
+\leader{214E}{Proposisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur,
+$Y\subseteq X$, dan $f$ suatu fungsi bernilai $[-\infty,\infty]$ yang
+didefinisikan pada suatu himpunan bagian $\dom f$ dari $X$.
+
+(a) Jika $f$ dapat diintegralkan terhadap $\mu$ maka $f\restrp Y$ dapat diintegralkan terhadap $\mu_Y$,
+dan $\int_Y f\le\int f$ jika $f$ nonnegatif.
+
+(b) Jika $\dom f\subseteq Y$ dan $f$ dapat diintegralkan terhadap $\mu_Y$, maka terdapat
+suatu fungsi yang dapat diintegralkan terhadap $\mu$, yakni $\tilde f$ pada $X$, memperluas
+$f$, sedemikian sehingga $\int_F\tilde f=\int_{F\cap Y}f$ untuk setiap
+$F\in\Sigma$.
+
+\proof{{\bf (a)(i)} Jika $f$ sederhana terhadap $\mu$, ia dapat dinyatakan sebagai
+$\sum_{i=0}^na_i\chi E_i$, dengan $E_0,\ldots,E_n\in\Sigma$,
+$a_0,\ldots,a_n\in\Bbb R$ dan $\mu E_i<\infty$ untuk setiap $i$.   Kini
+$f\restrp Y=\sum_{i=0}^na_i\chi_Y(E_i\cap Y)$, dengan $\chi_Y(E_i\cap
+Y)=(\chi E_i)\restrp Y$ adalah fungsi indikator dari $E_i\cap Y$ yang
+dipandang sebagai himpunan bagian dari $Y$;  dan setiap $E_i\cap Y$
+termasuk dalam $\Sigma_Y$, dengan $\mu_Y(E_i\cap Y)\le\mu E_i<\infty$,
+sehingga $f\restr Y:Y\to\Bbb R$ sederhana terhadap $\mu_Y$.
+
+Jika $f:X\to \Bbb R$ suatu fungsi sederhana nonnegatif, ia dapat
+dinyatakan sebagai $\sum_{i=0}^na_i\chi E_i$ dengan
+$E_0,\ldots,E_n$ himpunan-himpunan saling lepas berukuran hingga (122Cb).
+Kini $f\restrp Y=\sum_{i=0}^na_i\chi_Y(E_i\cap Y)$ dan
+
+\Centerline{$\int (f\restrp Y)d\mu_Y
+=\sum_{i=0}^na_i\mu_Y(E_i\cap Y)\le\sum_{i=0}^na_i\mu E_i=\int fd\mu$}
+
+\noindent karena $a_i\ge 0$ setiap kali $E_i\ne\emptyset$, sehingga
+$a_i\mu_Y(E_i\cap Y)\le a_i\mu E_i$ untuk setiap $i$.
+
+\medskip
+
+\quad{\bf (ii)} Jika $f$ suatu fungsi nonnegatif yang dapat diintegralkan terhadap $\mu$,
+terdapat suatu barisan tak-menurun $\sequencen{f_n}$ dari fungsi-fungsi
+sederhana terhadap $\mu$ nonnegatif yang konvergen menuju $f\,\,\mu$-hampir di
+mana-mana;  kini $\sequencen{f_n\restrp Y}$ merupakan suatu barisan
+tak-menurun dari fungsi-fungsi sederhana terhadap $\mu_Y$ yang meningkat menuju
+$f\restrp Y\,\,\mu_Y$-hampir di mana-mana\ (berdasarkan 214Cb), dan
+
+\Centerline{$\sup_{n\in\Bbb N}\int(f_n\restrp Y)d\mu_Y
+\le\sup_{n\in\Bbb N}\int f_nd\mu
+=\int fd\mu<\infty$,}
+
+\noindent sehingga $\int(f\restrp Y)d\mu_Y$ ada dan tidak lebih dari
+$\int fd\mu$.
+
+\medskip
+
+\quad{\bf (iii)} Akhirnya, jika $f$ sembarang fungsi bernilai real yang
+dapat diintegralkan terhadap $\mu$, ia dapat dinyatakan sebagai $f_1-f_2$ dengan $f_1$
+dan $f_2$ fungsi-fungsi nonnegatif yang dapat diintegralkan terhadap $\mu$, sehingga
+$f\restrp Y=(f_1\restrp Y)-(f_2\restrp Y)$ dapat diintegralkan terhadap $\mu_Y$.
+
+\medskip
+
+{\bf (b)} Kita katakan bahwa jika $f$ suatu fungsi dapat diintegralkan terhadap $\mu_Y$,
+maka suatu `perluasan penyelubung' dari $f$ adalah fungsi
+dapat diintegralkan terhadap $\mu$, $\tilde f$, yang memperluas $f$, bernilai real pada
+$X\setminus Y$, sedemikian sehingga $\int_F\tilde f=\int_{F\cap Y}f$
+untuk setiap $F\in\Sigma$.
+
+\medskip
+
+\quad{\bf (i)} Jika $f$ berbentuk $\chi H$, dengan $H\in\Sigma_Y$ dan
+$\mu_YH<\infty$, ambil $E_0\in\Sigma$ sedemikian sehingga $H=Y\cap E_0$
+dan $E_1\in\Sigma$ suatu selubung terukur bagi $H$ (132Ee);   maka
+$E=E_0\cap E_1$ merupakan selubung terukur bagi $H$ dan $H=E\cap Y$.
+Tetapkan $\tilde f=\chi E$, yang dipandang sebagai fungsi dari $X$ ke
+$\{0,1\}$.   Maka $\tilde f\restrp Y=f$, dan untuk setiap $F\in\Sigma$
+kita mempunyai
+
+\Centerline{$\int_F\tilde f=\mu_F(E\cap F)=\mu(E\cap F)
+=\mu^*(H\cap F)=\mu_{Y\cap F}(H\cap F)=\int_{Y\cap F}f$.}
+
+\noindent Jadi $\tilde f$ merupakan perluasan penyelubung dari $f$.
+
+\medskip
+
+\quad{\bf (ii)} Jika $f$, $g$ fungsi-fungsi dapat diintegralkan terhadap $\mu_Y$
+dengan perluasan penyelubung $\tilde f$, $\tilde g$, dan $a$,
+$b\in\Bbb R$, maka $a\tilde f+b\tilde g$ memperluas $af+bg$ dan
+
+$$\eqalign{\int_Fa\tilde f+b\tilde g
+&=a\int_F\tilde f+b\int_F\tilde g\cr
+&=a\int_{F\cap Y}f+b\int_{F\cap Y}g
+=\int_{F\cap Y}af+bg\cr}$$
+
+\noindent untuk setiap $F\in\Sigma$, sehingga $a\tilde f+b\tilde g$
+merupakan perluasan penyelubung dari $af+bg$.
+
+\medskip
+
+\quad{\bf (iii)} Dengan menggabungkan (i) dan (ii), kita melihat bahwa
+setiap fungsi sederhana terhadap $\mu_Y$, $f$, mempunyai suatu perluasan
+penyelubung.
+
+\medskip
+
+\quad{\bf (iv)} Sekarang andaikan $\sequencen{f_n}$ suatu barisan
+tak-menurun dari fungsi-fungsi sederhana terhadap $\mu_Y$ nonnegatif yang konvergen
+$\mu_Y$-hampir di mana-mana menuju suatu fungsi yang
+dapat diintegralkan terhadap $\mu_Y$, yakni $f$.   Untuk setiap $n\in\Bbb N$ misalkan
+$\tilde f_n$ suatu perluasan penyelubung dari $f_n$. Maka
+$\tilde f_n\leae\tilde f_{n+1}$.   \Prf\ Jika $F\in\Sigma$ maka
+
+\Centerline{$\int_F\tilde f_n=\int_{F\cap Y}f_n
+\le\int_{F\cap Y}f_{n+1}=\int_F\tilde f_{n+1}$.}
+
+\noindent Jadi $\tilde f_n\leae\tilde f_{n+1}$, berdasarkan 131Ha.\
+\QeD\   Selain itu
+
+\Centerline{$\lim_{n\to\infty}\int_F\tilde f_n
+=\lim_{n\to\infty}\int_{F\cap Y}f_n
+=\int_{F\cap Y}f$}
+
+\noindent untuk setiap $F\in\Sigma$.   Dengan terlebih dahulu mengambil
+$F=X$, teorema B. Levi memberi tahu kita bahwa
+$h=\lim_{n\to\infty}\tilde f_n$ terdefinisi (sebagai fungsi bernilai
+real) $\mu$-hampir di mana-mana;  kini dengan membiarkan $F$ bervariasi,
+kita mempunyai $\int_Fh=\int_{F\cap Y}f$ untuk setiap $F\in\Sigma$,
+karena $h\restr F=\lim_{n\to\infty}\tilde f_n\restr F\,\,\mu_F$-hampir di mana-mana.
+(Tampaknya saya menggunakan 214Cb di sini.)   Kini
+$h\restrp Y=f\,\,\mu_Y$-hampir di mana-mana, sekali lagi berdasarkan 214Cb.   Jika kita
+mendefinisikan $\tilde f$ dengan menetapkan
+
+\Centerline{$\tilde f(x)=f(x)$ untuk $x\in\dom f$, $h(x)$ untuk
+$x\in\dom h\setminus\dom f$, $0$ untuk $x\in X$ lainnya,}
+
+\noindent maka $\tilde f$ terdefinisi di seluruh $X$ dan sama dengan
+$h\,\,\mu$-hampir di mana-mana;  sehingga jika $F\in\Sigma$,
+$\tilde f\restr F$ akan sama dengan $h\restr F\,\,\mu_F$-hampir di
+mana-mana, dan
+
+\Centerline{$\int_F\tilde f=\int_Fh=\int_{F\cap Y}f$.}
+
+\noindent Karena $F$ sembarang, $\tilde f$ merupakan perluasan
+penyelubung dari $f$.
+
+\medskip
+
+\quad{\bf (v)} Jadi setiap fungsi dapat diintegralkan terhadap $\mu_Y$ nonnegatif
+mempunyai suatu perluasan penyelubung.   Dengan kembali menggunakan (ii),
+setiap fungsi dapat diintegralkan terhadap $\mu_Y$ mempunyai suatu perluasan
+penyelubung, sebagaimana dinyatakan.
+}%end of proof of 214E
+
+\leader{214F}{Proposisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur, $Y$
+suatu himpunan bagian dari $X$, dan $f$ suatu fungsi bernilai
+$[-\infty,\infty]$ sedemikian sehingga $\int_Xf$ terdefinisi dalam
+$[-\infty,\infty]$.   Jika {\it salah satu} dari hal berikut berlaku: $Y$
+mempunyai ukuran luar penuh dalam $X$ {\it atau} $f$ bernilai nol hampir
+di mana-mana pada $X\setminus Y$, maka $\int_Yf$ terdefinisi dan sama
+dengan $\int_Xf$.
+
+\proof{{\bf (a)} Mula-mula andaikan $f$ nonnegatif,
+terukur terhadap $\Sigma$, dan terdefinisi di seluruh $X$.   Dalam hal ini
+$f\restrp Y$ terukur terhadap $\Sigma_Y$.   Tetapkan
+$F_{nk}=\{x:x\in X,\,f(x)\ge 2^{-n}k\}$ untuk $k$, $n\in\Bbb N$,
+$f_n=\sum_{k=1}^{4^n}2^{-n}\chi F_{nk}$ untuk $n\in\Bbb N$, sehingga
+$\sequencen{f_n}$ merupakan barisan tak-menurun dari fungsi-fungsi
+terukur bernilai real yang konvergen di setiap titik menuju $f$, dan
+$\int_Xf=\lim_{n\to\infty}\int_Xf_n$.   Untuk setiap $n\in\Bbb N$ dan $k\ge 1$,
+
+\Centerline{$\mu_Y(F_{nk}\cap Y)=\mu^*(F_{nk}\cap Y)=\mu F_{nk}$}
+
+\noindent entah karena $F_{nk}\setminus Y$ terabaikan atau karena
+$X$ merupakan selubung terukur bagi $Y$.   Jadi
+
+$$\eqalignno{\int_Yf
+&=\lim_{n\to\infty}\int_Yf_n
+=\lim_{n\to\infty}\sum_{k=1}^{4^n}2^{-n}\mu_Y(F_{nk}\cap Y)\cr
+&=\lim_{n\to\infty}\sum_{k=1}^{4^n}2^{-n}\mu F_{nk}
+=\lim_{n\to\infty}\int_Xf_n
+=\int_Xf.\cr}$$
+
+\medskip
+
+{\bf (b)} Sekarang andaikan $f$ nonnegatif, terdefinisi hampir
+di mana-mana dalam $X$, dan terukur secara virtual terhadap $\mu$.
+Dalam hal ini terdapat suatu himpunan terukur $E\subseteq\dom f$ yang
+koterabaikan terhadap $\mu$ sedemikian sehingga $f\restr E$ terukur. Tetapkan
+$\tilde f(x)=f(x)$ untuk $x\in E$, $0$ untuk $x\in X\setminus E$; maka
+$\tilde f$ memenuhi syarat-syarat (a) dan $f=\tilde f\,\,\mu$-hampir di mana-mana.
+Oleh karena itu $f\restrp Y=\tilde f\restrp Y\,\,\mu_Y$-hampir di mana-mana\ (214Cc), dan
+
+\Centerline{$\int_Yf=\int_Y\tilde f=\int_X\tilde f=\int_Xf$.}
+
+\medskip
+
+{\bf (c)} Akhirnya, untuk kasus umum, kita dapat menerapkan (b) pada
+bagian positif dan negatif $f^+$, $f^-$ dari $f$ untuk memperoleh
+
+\Centerline{$\int_Yf=\int_Yf^+-\int_Yf^-=\int_Xf^+-\int_Xf^-=\int_Xf$.}
+}%end of proof of 214F
+
+\leader{214G}{Korolari} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur, $Y$
+suatu himpunan bagian dari $X$, dan $E\in\Sigma$ suatu selubung terukur
+bagi $Y$.   Jika $f$ suatu fungsi bernilai $[-\infty,\infty]$ sedemikian
+sehingga $\int_Ef$ terdefinisi dalam $[-\infty,\infty]$, maka $\int_Yf$
+terdefinisi dan sama dengan $\int_Ef$.
+
+\proof{ Berdasarkan 214Ce, kita dapat mengidentifikasi ukuran subruang
+$\mu_Y$ dengan ukuran subruang $(\mu_E)_Y$ yang diinduksi oleh ukuran
+subruang pada $E$.   Kini, jika dipandang sebagai subruang dari $E$, $Y$
+mempunyai ukuran luar penuh, sehingga 214F memberikan hasilnya.
+}%end of proof of 214G
+
+\leader{214H}{Subruang dan \dvrocolon{metode} \Caratheodory}\cmmnt{
+Hasil-hasil teknis mudah berikut kadang-kadang akan berguna.
+
+\medskip
+
+\noindent}{\bf Lema} Misalkan $X$ suatu himpunan, $Y\subseteq X$ suatu
+himpunan bagian, dan $\theta$ suatu ukuran luar pada $X$.
+
+(a) $\theta_Y=\theta\restrp\Cal PY$ merupakan suatu ukuran luar pada $Y$.
+
+(b) Misalkan $\mu$, $\nu$ berturut-turut merupakan ukuran pada $X$, $Y$
+yang didefinisikan dengan metode \Caratheodory\ dari ukuran-ukuran luar
+$\theta$, $\theta_Y$, dan $\Sigma$, $\Tau$ domainnya; misalkan $\mu_Y$
+ukuran subruang pada $Y$ yang diinduksi oleh $\mu$, dan $\Sigma_Y$
+domainnya.   Maka
+
+\quad (i) $\Sigma_Y\subseteq\Tau$ dan $\nu F\le\mu_YF$ untuk setiap
+$F\in\Sigma_Y$;
+
+\quad(ii) jika $Y\in\Sigma$ maka $\nu=\mu_Y$;
+
+\quad(iii) jika $\theta=\mu^*$\cmmnt{ (yakni, $\theta$ bersifat
+`reguler')} maka $\nu$ memperluas $\mu_Y$;
+
+\quad(iv) jika $\theta=\mu^*$ dan $\theta Y<\infty$ maka $\nu=\mu_Y$.
+
+\proof{{\bf (a)} Anda hanya perlu membaca definisi `ukuran luar' (113A).
+
+\medskip
+
+{\bf (b)(i)} Andaikan $F\in\Sigma_Y$.   Maka himpunan ini berbentuk $E\cap Y$
+dengan $E\in\Sigma$.   Jika $A\subseteq Y$, maka
+
+\Centerline{$\theta_Y(A\cap F)+\theta_Y(A\setminus F)
+=\theta(A\cap F)+\theta(A\setminus F)
+=\theta(A\cap E)+\theta(A\setminus E)
+=\theta A=\theta_YA$,}
+
+\noindent sehingga $F\in\Tau$.   Kini
+
+\Centerline{$\nu F=\theta_YF=\theta F\le\mu^*F=\mu_YF$.}
+
+\medskip
+
+\quad{\bf (ii)} Andaikan $F\in\Tau$.   Jika $A\subseteq X$, maka
+
+$$\eqalign{\theta A
+&=\theta(A\cap Y)+\theta(A\setminus Y)
+=\theta_Y(A\cap Y)+\theta(A\setminus Y)\cr
+&=\theta_Y(A\cap Y\cap F)+\theta_Y(A\cap Y\setminus F)
+  +\theta(A\setminus Y)\cr
+&=\theta(A\cap F)+\theta(A\cap Y\setminus F)+\theta(A\setminus Y)\cr
+&=\theta(A\cap F)+\theta((A\setminus F)\cap Y)
+  +\theta((A\setminus F)\setminus Y)
+=\theta(A\cap F)+\theta(A\setminus F);\cr}$$
+
+\noindent karena $A$ sembarang, $F\in\Sigma$ dan karena itu
+$F\in\Sigma_Y$.   Selain itu
+
+\Centerline{$\mu_YF=\mu F=\theta F=\theta_YF=\nu F$.}
+\noindent Dengan menggabungkan hal ini dengan (i), kita melihat bahwa
+$\mu_Y$ dan $\nu$ identik.
+
+\medskip
+
+\quad{\bf (iii)} Misalkan $F\in\Sigma_Y$.   Maka $F\in\Tau$, berdasarkan
+(i). Kini $\nu F=\theta F=\mu^*F=\mu_YF$.   Karena $F$ sembarang,
+$\nu$ memperluas $\mu_Y$.
+
+\medskip
+
+\quad{\bf (iv)} Sekarang andaikan $F\in\Tau$.   Karena
+$\mu^*Y=\theta Y<\infty$, terdapat selubung-selubung terukur $E_1$, $E_2$
+bagi $F$ dan $Y\setminus F$ terhadap $\mu$ (132Ee).   Maka
+
+$$\eqalign{\theta Y
+&=\theta_YY
+=\theta_YF+\theta_Y(Y\setminus F)
+=\theta F+\theta(Y\setminus F)\cr
+&=\mu^*F+\mu^*(Y\setminus F)
+=\mu E_1+\mu E_2\ge\mu(E_1\cup E_2)
+=\theta(E_1\cup E_2)\ge\theta Y,\cr}$$
+
+\noindent sehingga $\mu E_1+\mu E_2=\mu(E_1\cup E_2)$ dan
+
+\Centerline{$\mu(E_1\cap E_2)=\mu E_1+\mu E_2-\mu(E_1\cup E_2)=0$.}
+
+\noindent Karena $\mu$ lengkap (212A) dan
+$E_1\cap Y\setminus F\subseteq E_1\cap E_2$ terabaikan terhadap $\mu$,
+himpunan tersebut termasuk dalam $\Sigma$; maka
+$F=Y\cap(E_1\setminus(E_1\cap Y\setminus F))$ termasuk dalam
+$\Sigma_Y$.   Jadi $\Tau\subseteq\Sigma_Y$; dengan menggabungkan hal ini
+dengan (iii), kita melihat bahwa $\nu=\mu_Y$.
+}%end of proof of 214H
+
+\leader{214I}{}\cmmnt{ Sekarang saya beralih ke hubungan antara
+ukuran subruang dan klasifikasi ruang ukur yang dikembangkan dalam bab ini.
+
+\medskip
+
+\noindent}{\bf Teorema} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur dan
+$Y$ suatu himpunan bagian dari $X$.   Misalkan $\mu_Y$ ukuran subruang
+pada $Y$ dan $\Sigma_Y$ domainnya.
+
+(a) Jika $(X,\Sigma,\mu)$ lengkap, atau berhingga total, atau
+$\sigma$-hingga, atau dapat dilokalkan secara ketat, maka
+$(Y,\Sigma_Y,\mu_Y)$ juga demikian. Jika
+$\langle X_i\rangle_{i\in I}$ suatu dekomposisi $X$ untuk $\mu$, maka
+$\langle X_i\cap Y\rangle_{i\in I}$ suatu dekomposisi $Y$ untuk $\mu_Y$.
+
+(b) Dengan menuliskan $\hat\mu$ untuk pelengkapan $\mu$, ukuran subruang
+$\hat\mu_Y=(\hat\mu)_Y$ merupakan pelengkapan $\mu_Y$.
+
+(c) Jika $(X,\Sigma,\mu)$ mempunyai himpunan-himpunan terabaikan yang
+ditentukan secara lokal, maka $\mu_Y$ semihingga.
+
+(d) Jika $(X,\Sigma,\mu)$ lengkap dan ditentukan secara lokal, maka
+$(Y,\Sigma_Y,\mu_Y)$ lengkap dan semihingga.
+
+(e) Jika $(X,\Sigma,\mu)$ lengkap, ditentukan secara lokal, dan dapat
+dapat dilokalkan, maka $(Y,\Sigma_Y,\mu_Y)$ juga demikian.
+
+\proof{{\bf (a)(i)} Andaikan $(X,\Sigma,\mu)$ lengkap. Jika
+$A\subseteq U\in\Sigma_Y$ dan $\mu_YU=0$, terdapat $E\in\Sigma$
+sedemikian sehingga $U=E\cap Y$ dan $\mu E=\mu_YU=0$; kini
+$A\subseteq E$, sehingga $A\in\Sigma$ dan $A=A\cap Y\in\Sigma_Y$.
+
+\medskip
+
+\quad{\bf (ii)}
+$\mu_YY=\mu^*Y\le\mu X$, sehingga $\mu_Y$ berhingga total jika $\mu$
+berhingga total.
+
+\medskip
+
+\quad{\bf (iii)} Jika $\sequencen{X_n}$ suatu barisan himpunan
+berukuran hingga terhadap $\mu$ yang menutupi $X$, maka
+$\sequencen{X_n\cap Y}$ suatu barisan himpunan berukuran hingga terhadap
+$\mu_Y$ yang menutupi $Y$.   Jadi $(Y,\Sigma_Y,\mu_Y)$ bersifat
+$\sigma$-hingga jika $(X,\Sigma,\mu)$ bersifat demikian.
+
+\medskip
+
+\quad{\bf (iv)} Andaikan $\langle X_i\rangle_{i\in I}$ suatu
+dekomposisi $X$ untuk $\mu$.   Maka $\langle X_i\cap
+Y\rangle_{i\in I}$ merupakan dekomposisi $Y$ untuk $\mu_Y$.   \Prf\
+Karena $\mu_Y(X_i\cap Y)\le\mu X_i<\infty$ untuk setiap $i$,
+$\langle X_i\cap Y\rangle_{i\in I}$ merupakan partisi $Y$ menjadi
+himpunan-himpunan berukuran hingga.   Andaikan $U\subseteq Y$ sedemikian
+sehingga $U_i=U\cap X_i\cap Y\in\Sigma_Y$ untuk setiap $i$.   Untuk setiap
+$i\in I$, pilih $E_i\in\Sigma$ sedemikian sehingga $U_i=E_i\cap Y$ dan
+$\mu E_i=\mu_YU_i$; tentu saja kita dapat mengandaikan
+$E_i\subseteq X_i$.   Tetapkan $E=\bigcup_{i\in I}E_i$.   Maka
+$E\cap X_i=E_i\in\Sigma$ untuk setiap $i$, sehingga $E\in\Sigma$ dan
+$\mu E=\sum_{i\in I}\mu E_i$.   Kini $U=E\cap Y$, sehingga
+$U\in\Sigma_Y$ dan
+
+\Centerline{$\mu_YU\le\mu E=\sum_{i\in I}\mu E_i
+=\sum_{i\in I}\mu_YU_i$.}
+
+\noindent Di pihak lain, $\mu_YU$ tentu lebih besar dari atau sama dengan
+$\sum_{i\in I}\mu_YU_i
+=\sup_{J\subseteq I\text{ berhingga}}\sum_{i\in J}\mu_YU_i$, sehingga
+keduanya sama.   Karena $U$ sembarang,
+$\langle X_i\cap Y\rangle_{i\in I}$ merupakan dekomposisi $Y$ untuk
+$\mu_Y$.\ \Qed
+
+Akibatnya $(Y,\Sigma_Y,\mu_Y)$ dapat dilokalkan secara ketat jika
+$(X,\Sigma,\mu)$ dapat dilokalkan secara ketat.
+
+\medskip
+
+{\bf (b)} Domain pelengkapan $(\mu_Y)\sphat\mskip5mu$ adalah
+
+$$\eqalignno{\hat\Sigma_Y
+&=\{F\symmdiff A:F\in\Sigma_Y,\,A\subseteq Y
+   \text{ bersifat }\mu_Y\text{-terabaikan}\}\cr
+&=\{(E\cap Y)\symmdiff(A\cap Y):E\in\Sigma,\,
+   A\subseteq X\text{ bersifat }\mu\text{-terabaikan}\}\cr
+\displaycause{214Cb}
+&=\{(E\symmdiff A)\cap Y:E\in\Sigma,\,
+   A\text{ bersifat }\mu\text{-terabaikan}\}
+=\dom\hat\mu_Y.\cr}$$
+
+\noindent Jika $H\in\hat\Sigma_Y$, maka
+
+\Centerline{$(\mu_Y)\sphat\mskip3mu(H)
+=\mu_Y^*H=\mu^*H=(\hat\mu)^*H=\hat\mu_YH$,}
+
+\noindent dengan menggunakan 214Cd untuk langkah kedua dan 212Ea untuk
+langkah ketiga.
+
+\medskip
+
+{\bf (c)} Ambil $U\in\Sigma_Y$ sedemikian sehingga $\mu_YU>0$.   Maka
+terdapat $E\in\Sigma$ sedemikian sehingga $\mu E<\infty$ dan
+$\mu^*(E\cap U)>0$.   \Prf\Quer\ Jika tidak, $E\cap U$ terabaikan
+terhadap $\mu$ setiap kali $\mu E<\infty$; karena $\mu$ mempunyai
+himpunan terabaikan yang ditentukan secara lokal, $U$ terabaikan terhadap
+$\mu$ dan $\mu_YU=\mu^*U=0$.\ \Bang\QeD   Kini
+$E\cap U\in\Sigma_Y$ dan
+
+\Centerline{$0<\mu^*(E\cap U)=\mu_Y(E\cap U)\le\mu E<\infty$.}
+
+\medskip
+
+{\bf (d)} Berdasarkan (a), $\mu_Y$ lengkap; berdasarkan 213J dan (c) di
+sini, ukuran tersebut semihingga.
+
+\medskip
+
+{\bf (e)} Berdasarkan (d), $\mu_Y$ lengkap dan semihingga. Untuk melihat
+bahwa ukuran tersebut ditentukan secara lokal, ambil sembarang $U\subseteq Y$
+sedemikian sehingga $U\cap V\in\Sigma_Y$ setiap kali $V\in\Sigma_Y$ dan
+$\mu_YV<\infty$.   Berdasarkan 213J dan 213L, terdapat selubung terukur
+$E$ bagi $U$ terhadap $\mu$; tentu saja $E\cap Y\in\Sigma_Y$.
+
+Saya menyatakan bahwa $\mu(E\cap Y\setminus U)=0$.   \Prf\ Ambil
+sembarang $F\in\Sigma$ dengan $\mu F<\infty$.   Maka
+$F\cap U\in\Sigma_Y$, sehingga
+\Centerline{$\mu_Y(F\cap E\cap Y)\le\mu(F\cap E)=\mu^*(F\cap
+U)=\mu_Y(F\cap U)\le\mu_Y(F\cap E\cap Y)$;}
+
+\noindent dengan demikian $\mu_Y(F\cap E\cap Y)=\mu_Y(F\cap U)$ dan
+
+\Centerline{$\mu^*(F\cap E\cap Y\setminus U)
+=\mu_Y(F\cap E\cap Y\setminus U)=0$.}
+
+\noindent Karena $\mu$ lengkap, $\mu(F\cap E\cap Y\setminus U)=0$;
+karena $\mu$ ditentukan secara lokal dan $F$ sembarang,
+$\mu(E\cap Y\setminus U)=0$.\ \QeD\  Tetapi ini berarti
+$E\cap Y\setminus U\in\Sigma_Y$ dan $U\in\Sigma_Y$.   Karena $U$
+sembarang, $\mu_Y$ ditentukan secara lokal.
+
+Untuk melihat bahwa $\mu_Y$ dapat dilokalkan, misalkan $\Cal U$
+sembarang keluarga dalam $\Sigma_Y$.   Tetapkan
+
+\Centerline{$\Cal E=\{E:E\in\Sigma,\,\mu E<\infty,\,
+  \mu E=\mu^*(E\cap U)$ untuk suatu $U\in\Cal U\}$,}
+
+\noindent dan misalkan $G\in\Sigma$ suatu supremum esensial bagi
+$\Cal E$ dalam $\Sigma$.   Saya menyatakan bahwa $G\cap Y$ merupakan
+supremum esensial bagi $\Cal U$ dalam $\Sigma_Y$.   \Prf\ (i) \Quer\
+Jika $U\in\Cal U$ dan $U\setminus(G\cap Y)$ tidak terabaikan, maka
+(karena $\mu_Y$ semihingga) terdapat $V\in\Sigma_Y$ sedemikian sehingga
+$V\subseteq U\setminus G$ dan $0<\mu_YV<\infty$.   Kini terdapat
+$E\in\Sigma$ sedemikian sehingga $V\subseteq E$ dan $\mu E=\mu^*V$.
+Kita mempunyai $\mu^*(E\cap U)\ge\mu^*V=\mu E$, sehingga $E\in\Cal E$
+dan $E\setminus G$ harus terabaikan; tetapi
+$V\subseteq E\setminus G$ tidak terabaikan.\ \BanG\   Jadi
+$U\setminus(G\cap Y)$ terabaikan untuk setiap $U\in\Cal U$.
+(ii) Jika $W\in\Sigma_Y$ sedemikian sehingga $U\setminus W$ terabaikan
+untuk setiap $U\in\Cal U$, nyatakan $W$ sebagai $H\cap Y$ dengan
+$H\in\Sigma$.   Jika $E\in\Cal E$, terdapat $U\in\Cal U$ sedemikian
+sehingga $\mu E=\mu^*(E\cap U)$; kini $\mu^*(E\cap U\setminus W)=0$,
+sehingga $\mu E=\mu^*(E\cap U\cap W)\le\mu(E\cap H)$ dan
+$E\setminus H$ terabaikan.   Karena $E$ sembarang, $H$ merupakan batas
+atas esensial bagi $\Cal E$ dan $G\setminus H$ terabaikan; tetapi ini
+berarti $G\cap Y\setminus W$ terabaikan.   Karena $W$ sembarang,
+$G\cap Y$ merupakan supremum esensial bagi $\Cal U$.\ \Qed
+
+Karena $\Cal U$ sembarang, $\mu_Y$ dapat dilokalkan.
+}%end of proof of 214I
+
+\leader{214J}{Integral \dvrocolon{atas dan bawah}}\cmmnt{ Fakta-fakta
+elementer berikut kadang-kadang berguna.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur,
+$A$ suatu himpunan bagian dari $X$, dan $f$ suatu fungsi bernilai real
+yang terdefinisi hampir di mana-mana dalam $X$.   Maka
+
+(a) jika {\it salah satu} dari hal berikut berlaku: $f$ nonnegatif
+{\it atau} $A$ mempunyai ukuran luar penuh dalam $X$,
+$\overline{\intop}(f\restr A)d\mu_A\le\overline{\intop}fd\mu$;
+
+(b) jika $A$ mempunyai ukuran luar penuh dalam $X$,
+$\underline{\int}fd\mu\le\underline{\int}(f\restr A)d\mu_A$.
+
+\proof{{\bf (a)(i)} Andaikan $f$ nonnegatif. Jika
+$\overline{\intop}fd\mu=\infty$, hasilnya sepele. Jika tidak, berdasarkan
+133J(a-i) terdapat suatu fungsi yang terintegralkan terhadap $\mu$, yakni $g$,
+sedemikian sehingga $f\le g\,\,\mu$-hampir di mana-mana\ dan
+$\overline{\intop}fd\mu=\int g\,d\mu$.   Kini
+$f\restr A\le g\restr A\,\,\mu_A$-hampir di mana-mana, berdasarkan 214Cb, dan
+$\int(g\restr A)\,d\mu_A$ terdefinisi serta tidak lebih dari
+$\int g\,d\mu$, berdasarkan 214Ea; jadi
+
+\Centerline{$\overlineint(f\restr A)d\mu_A\le\int(g\restr A)d\mu_A
+\le\int g\,d\mu=\overlineint fd\mu$.}
+
+\medskip
+
+\quad{\bf (ii)} Sekarang andaikan $A$ mempunyai ukuran luar penuh dalam
+$X$. Jika $g$ sedemikian sehingga $f\le g\,\,\mu$-hampir di mana-mana\ dan
+$\int g\,d\mu$ terdefinisi dalam $[-\infty,\infty]$, maka
+$f\restr A\le g\restr A\,\,\mu_A$-hampir di mana-mana\ dan
+$\int(g\restr A)d\mu_A=\int g\,d\mu$, berdasarkan 214F.   Jadi
+$\overline{\int}(f\restr A)d\mu_A\le\int g\,d\mu$.   Karena $g$
+sembarang, $\overline{\int}(f\restr A)d\mu_A\le\overline{\int}f\,d\mu$.
+
+\medskip
+
+{\bf (b)} Terapkan (a) pada $-f$, dan gunakan 133J(b-iv).
+}%end of proof of 214J
+
+\leader{214K}{Subruang terukur:  Proposisi}
+Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur.
+
+(a) Misalkan $E\in\Sigma$ dan $\mu_E$ ukuran subruang, dengan
+$\Sigma_E$ sebagai domainnya.   Jika $(X,\Sigma,\mu)$ lengkap, atau
+berhingga total, atau $\sigma$-hingga, atau dapat dilokalkan secara
+ketat, atau semihingga, atau dapat dilokalkan, atau ditentukan secara
+lokal, atau tanpa atom, atau atomik murni, maka
+$(E,\Sigma_E,\mu_E)$ juga demikian.
+
+(b) Andaikan $\langle X_i\rangle_{i\in I}$ suatu partisi $X$ menjadi
+himpunan-himpunan terukur\cmmnt{ (yang tidak harus berukuran hingga)}
+sedemikian sehingga
+
+\Centerline{$\Sigma=\{E:E\subseteq X,\,
+E\cap  X_i\in\Sigma$ untuk setiap $i\in I\}$,}
+
+\Centerline{$\mu E=\sum_{i\in I}\mu(E\cap X_i)$ untuk setiap $E\in\Sigma$.}
+\noindent Maka $(X,\Sigma,\mu)$ lengkap, atau dapat dilokalkan secara
+ketat, atau semihingga, atau dapat dilokalkan, atau ditentukan secara
+lokal, atau tanpa atom, atau atomik murni, jika dan hanya jika
+$(X_i,\Sigma_{X_i},\mu_{X_i})$ mempunyai sifat tersebut untuk setiap
+$i\in I$.
+
+\proof{ Saya sungguh berpendapat bahwa jika Anda telah membaca dengan
+saksama sampai titik ini, Anda semestinya menganggap hal ini mudah.
+Jika masih ragu, ini merupakan kumpulan enam belas latihan yang sangat
+cocok untuk dikerjakan.
+}%end of proof of 214K
+
+\leader{214L}{Jumlah langsung} Misalkan
+$\langle(X_i,\Sigma_i,\mu_i)\rangle_{i\in I}$ sembarang keluarga
+berindeks dari ruang-ruang ukur.   Tetapkan
+$X=\bigcup_{i\in I}(X_i\times\{i\})$; untuk $E\subseteq X$, $i\in I$
+tetapkan $E_i=\{x:(x,i)\in E\}$.   Tuliskan
+
+\Centerline{$\Sigma
+=\{E:E\subseteq X,\,E_i\in\Sigma_i$ untuk setiap $i \in I\}$,}
+
+\Centerline{$\mu E=\sum_{i\in I}\mu_iE_i$ untuk setiap $E\in\Sigma$.}
+
+\noindent Maka mudah diperiksa bahwa $(X,\Sigma,\mu)$ merupakan ruang
+ukur; saya akan menyebutnya {\bf jumlah langsung} dari keluarga
+$\familyiI{(X_i,\Sigma_i,\mu_i)}$.   Perhatikan bahwa jika
+$(X,\Sigma,\mu)$ sembarang ruang ukur yang dapat dilokalkan secara
+ketat, dengan dekomposisi $\familyiI{X_i}$, maka kita mempunyai isomorfisme
+alami antara $(X,\Sigma,\mu)$ dan jumlah langsung
+$(X',\Sigma',\mu')=\bigoplus_{i\in I}(X_i,\Sigma_{X_i},\mu_{X_i})$ dari
+ukuran-ukuran subruang, jika kita memasangkan $(x,i)\in X'$ dengan
+$x\in X$ untuk setiap $i\in I$ dan $x\in X_i$.
+
+\cmmnt{Untuk beberapa sifat elementer (terus terang, saya tidak
+mengetahui sifat apa pun yang tidak elementer) dari jumlah langsung,
+lihat 214M dan 214Xh-214Xk.}
+% 214Xh, 214Xi, 214Xj, 214Xk
+
+\leader{214M}{Proposisi}
+Misalkan $\familyiI{(X_i,\Sigma_i,\mu_i)}$ suatu keluarga ruang ukur,
+dengan jumlah langsung $(X,\Sigma,\mu)$.   Misalkan $f$ suatu fungsi
+bernilai real yang didefinisikan pada suatu himpunan bagian dari $X$.
+Untuk setiap $i\in I$, tetapkan $f_i(x)=f(x,i)$ kapan pun
+$(x,i)\in\dom f$.
+
+(a) $f$ terukur jika dan hanya jika $f_i$ terukur untuk setiap $i\in I$.
+
+(b) Jika $f$ nonnegatif, maka
+$\int fd\mu=\sum_{i\in I}\int f_id\mu_i$ apabila salah satu ruas
+terdefinisi dalam $[0,\infty]$.
+
+\proof{{\bf (a)} Untuk $a\in\Bbb R$, tetapkan
+$F_a=\{(x,i):(x,i)\in\dom f,\,f(x,i)\ge a\}$.   (i) Jika $f$ terukur,
+$i\in I$ dan $a\in\Bbb R$, maka terdapat $E\in\Sigma$ sedemikian sehingga
+$F_a=E\cap\dom f$; kini
+
+\Centerline{$\{x:f_i(x)\ge a\}
+=\dom f_i\cap\{x:(x,i)\in E\}$}
+
+\noindent termasuk dalam aljabar-sigma subruang pada $\dom f_i$ yang
+diinduksi oleh $\Sigma_i$.   Karena $a$ sembarang, $f_i$ terukur.
+(ii) Jika setiap $f_i$ terukur dan $a\in\Bbb R$, maka untuk setiap
+$i\in I$ terdapat $E_i\in\Sigma_i$ sedemikian sehingga
+$\{x:(x,i)\in F_a\}=E_i\cap\dom f_i$; dengan menetapkan
+$E=\{(x,i):i\in I,\,x\in E_i\}$, himpunan $F_a=\dom f\cap E$ termasuk
+dalam aljabar-sigma subruang pada $\dom f$.   Karena $a$ sembarang,
+$f$ terukur.
+
+\medskip
+
+{\bf (b)(i)} Mula-mula andaikan $f$ terukur dan terdefinisi di seluruh
+ruang.   Tetapkan
+$F_{nk}=\{(x,i):(x,i)\in X,\,f(x,i)\ge 2^{-n}k\}$ untuk $k$,
+$n\in\Bbb N$, $g_n=\sum_{k=1}^{4^n}2^{-n}\chi F_{nk}$ untuk
+$n\in\Bbb N$, $F_{nki}=\{x:(x,i)\in F_{nk}\}$ untuk $k$, $n\in\Bbb N$
+dan $i\in I$, serta $g_{ni}(x)=g_n(x,i)$ untuk $i\in I$, $x\in X_i$.
+Maka
+
+$$\eqalign{\int fd\mu
+&=\lim_{n\to\infty}\int g_nd\mu
+=\sup_{n\in\Bbb N}\sum_{k=1}^{4^n}2^{-n}\mu F_{nk}\cr
+&=\sup_{n\in\Bbb N}\sum_{k=1}^{4^n}\sum_{i\in I}2^{-n}\mu_i F_{nki}
+=\sum_{i\in I}\sup_{n\in\Bbb N}\sum_{k=1}^{4^n}2^{-n}\mu_i F_{nki}\cr
+&=\sum_{i\in I}\sup_{n\in\Bbb N}\int g_{ni}d\mu_i
+=\sum_{i\in I}\int f_id\mu_i.\cr}$$
+
+\medskip
+
+\quad{\bf (ii)} Secara umum, jika $\int fd\mu$ terdefinisi, terdapat
+suatu fungsi terukur $g:X\to\coint{0,\infty}$ dan suatu himpunan terukur
+koterabaikan $E\subseteq\dom f$ sedemikian sehingga $g=f$ pada $E$.
+Kini $E_i=\{x:(x,i)\in E\}$ termasuk dalam $\Sigma_i$ untuk setiap
+$i$, dan $\sum_{i\in I}\mu_i(X_i\setminus E_i)=\mu(X\setminus E)=0$,
+sehingga $E_i$ koterabaikan terhadap $\mu_i$ untuk setiap $i$.   Dengan
+menetapkan $g_i(x)=g(x,i)$ untuk $x\in X_i$, (i) memberi tahu kita bahwa
+
+\Centerline{$\sum_{i\in I}\int f_id\mu_i
+=\sum_{i\in I}\int g_id\mu_i=\int g\,d\mu=\int fd\mu$.}
+
+\medskip
+
+\quad{\bf (iii)} Sebaliknya, jika $\int f_id\mu_i$ terdefinisi untuk
+setiap $i\in I$, maka untuk setiap $i\in I$ kita dapat menemukan fungsi
+terukur $g_i:X_i\to\coint{0,\infty}$ dan himpunan terukur koterabaikan
+terhadap $\mu_i$, $E_i\subseteq\dom f_i$, sedemikian sehingga $g_i=f_i$
+pada $E_i$.   Dengan menetapkan $g(x,i)=g_i(x)$ untuk $i\in I$,
+$x\in X_i$, (a) memberi tahu kita bahwa $g$ terukur, sedangkan $g=f$
+pada $\{(x,i):i\in I,\,x\in E_i\}$, yang koterabaikan (berdasarkan
+perhitungan dalam (ii) tepat di atas); jadi
+
+\Centerline{$\int fd\mu=\int g\,d\mu
+=\sum_{i\in I}\int g_id\mu_i=\sum_{i\in I}\int f_id\mu_i$,}
+
+\noindent dengan kembali menggunakan (i) untuk langkah tengah.
+}%end of proof of 214M
+
+\leader{214N}{Korolari}
+Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur dengan dekomposisi
+$\familyiI{X_i}$.   Jika $f$ suatu fungsi bernilai real yang
+didefinisikan pada suatu himpunan bagian dari $X$, maka
+
+(a) $f$ terukur jika dan hanya jika $f\restr X_i$ terukur untuk setiap
+$i\in I$,
+
+(b) jika $f\ge 0$, maka $\int f=\sum_{i\in I}\int_{X_i}f$ apabila salah
+satu ruas terdefinisi dalam $[0,\infty]$.
+
+\proof{ Terapkan 214M pada jumlah langsung dari
+$\familyiI{(X_i,\Sigma_{X_i},\mu_{X_i})}$, yang diidentifikasi dengan
+$(X,\Sigma,\mu)$ sebagaimana dalam 214L.
+}%end of proof of 214N
+
+\leader{*214O}{}\cmmnt{ Saya menyediakan ruang di sini untuk suatu
+teorema umum yang menuntut cukup banyak dari pembaca.   Karena itu, saya
+perlu mengatakan bahwa saya menyarankan agar teorema ini dilewati pada
+pembacaan pertama.   Teorema ini tidak akan dikutip dalam jilid ini;
+dalam bentuk lengkapnya di sini, saya tidak memperkirakan akan
+menggunakannya di bagian mana pun dalam risalah ini; hanya kasus khusus
+214Xm yang cukup sering diterapkan; dan buktinya bergantung pada suatu
+konsep (`ideal himpunan') serta suatu teknik (`induksi transfinit', bagian
+(d) dari bukti 214P) yang tidak digunakan di tempat lain dalam jilid ini.
+Meskipun demikian, `perluasan ukuran' merupakan salah satu tema utama
+Jilid 4, dan hasil ini dapat membantu memperjelas beberapa pola yang akan
+muncul di sana.
+
+\medskip
+
+\noindent}{\bf Lema} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur, dan
+$\Cal I$ suatu ideal dari himpunan-himpunan bagian $X$, yakni suatu
+keluarga himpunan bagian $X$ sedemikian sehingga $\emptyset\in\Cal I$,
+$I\cup J\in\Cal I$ untuk semua $I$, $J\in\Cal I$, dan $I\in\Cal I$
+setiap kali $I\subseteq J\in\Cal I$.   Maka terdapat suatu ukuran
+$\lambda$ pada $X$ sedemikian sehingga
+$\Sigma\cup\Cal I\subseteq\dom\lambda$,
+$\mu E=\lambda E+\sup_{I\in\Cal I}\mu^*(E\cap I)$ untuk setiap
+$E\in\Sigma$, dan $\lambda I=0$ untuk setiap $I\in\Cal I$.
+
+\proof{{\bf (a)} Misalkan $\Lambda$ himpunan semua $F\subseteq X$
+sedemikian sehingga terdapat $E\in\Sigma$ dan suatu
+$\Cal J\subseteq\Cal I$ terhitung dengan
+$E\symmdiff F\subseteq\bigcup\Cal J$.   Maka $\Lambda$ merupakan suatu
+aljabar-sigma dari himpunan-himpunan bagian $X$ yang memuat
+$\Sigma\cup\Cal I$.   \Prf\ $\Sigma\subseteq\Lambda$ karena
+$E\symmdiff E\subseteq\bigcup\emptyset$ untuk setiap $E\in\Sigma$.
+$\Cal I\subseteq\Lambda$ karena
+$\emptyset\symmdiff I\subseteq\bigcup\{I\}$ untuk setiap $I\in\Cal I$.
+Khususnya, $\emptyset\in\Lambda$.   Jika $F\in\Lambda$, misalkan
+$E\in\Sigma$ dan $\Cal J\subseteq\Cal I$ sedemikian sehingga $\Cal J$
+terhitung dan $F\symmdiff E\subseteq\bigcup\Cal J$; maka
+$(X\setminus F)\symmdiff(X\setminus E)\subseteq\bigcup\Cal J$, sehingga
+$X\setminus F\in\Lambda$.   Jika $\sequencen{F_n}$ suatu barisan dalam
+$\Lambda$ dengan gabungan $F$, maka untuk setiap $n\in\Bbb N$ pilih
+$E_n\in\Sigma$, $\Cal J_n\subseteq\Cal I$ sedemikian sehingga
+$\Cal J_n$ terhitung dan
+$E_n\symmdiff F_n\subseteq\bigcup\Cal J_n$; maka
+$E=\bigcup_{n\in\Bbb N}E_n$ termasuk dalam $\Sigma$,
+$\Cal J=\bigcup_{n\in\Bbb N}\Cal J_n$ merupakan himpunan bagian
+terhitung dari $\Cal I$, dan $E\symmdiff F\subseteq\bigcup\Cal J$,
+sehingga $F\in\Lambda$.   Jadi $\Lambda$ suatu aljabar-sigma.\ \Qed
+
+\medskip
+
+{\bf (b)} Untuk $F\in\Lambda$ tetapkan
+
+\Centerline{$\lambda F=\sup\{\mu E:E\in\Sigma$,
+$E\subseteq F$, $\mu^*(E\cap I)=0$ untuk setiap $I\in\Cal I\}$.}
+
+\noindent Maka $\lambda$ suatu ukuran.   \Prf\ Satu-satunya himpunan
+bagian dari $\emptyset$ adalah $\emptyset$, sehingga
+$\lambda\emptyset=0$.   Misalkan $\sequencen{F_n}$ suatu barisan saling
+lepas dalam $\Lambda$ dengan gabungan $F$; tetapkan
+$u=\sum_{n=0}^{\infty}\lambda F_n$.
+(i) Jika $E\in\Sigma$, $E\subseteq F$, dan $\mu^*(E\cap I)=0$ untuk
+setiap $I\in\Cal I$, maka untuk setiap $n$ tetapkan $E_n=E\cap F_n$.
+Karena $\mu^*(E_n\cap I)=0$ untuk setiap $I\in\Cal I$,
+$\mu E_n\le\lambda F_n$ untuk setiap $n$.   Kini
+$\sequencen{E_n}$ saling lepas dan mempunyai gabungan $E$, sehingga
+
+\Centerline{$\mu E
+=\sum_{n=0}^{\infty}\mu E_n\le\sum_{n=0}^{\infty}\lambda F_n=u$.}
+
+\noindent Karena $E$ sembarang, $\lambda F\le u$.   (ii) Ambil sembarang
+$\gamma<u$.   Untuk $n\in\Bbb N$, tetapkan
+$\gamma_n=\lambda F_n-2^{-n-1}\min(1,u-\gamma)$ jika $\lambda F_n$
+berhingga, dan $\gamma$ jika tidak.   Untuk setiap $n$, kita dapat
+menemukan $E_n\in\Sigma$ sedemikian sehingga $E_n\subseteq F_n$,
+$\mu^*(E_n\cap I)=0$ untuk setiap $I\in\Cal I$, dan
+$\mu E_n\ge\gamma_n$.   Tetapkan $E=\bigcup_{n\in\Bbb N}E_n$; maka
+$E\subseteq F$ dan $E\cap I=\bigcup_{n\in\Bbb N}E_n\cap I$ terabaikan
+terhadap $\mu$ untuk setiap $I\in\Cal I$, sehingga
+$\lambda F\ge\mu E=\sum_{n=0}^{\infty}\mu E_n\ge\gamma$. Karena
+$\gamma$ sembarang, $\lambda F\ge u$.   (iii) Karena
+$\sequencen{F_n}$ sembarang, $\lambda$ suatu ukuran.\ \Qed
+
+\medskip
+
+{\bf (c)} Sekarang ambil sembarang $E\in\Sigma$ dan tetapkan
+$u=\sup_{I\in\Cal I}\mu^*(E\cap I)$.   Jika $u=\infty$, tentu saja kita
+mempunyai $\mu E=\infty=\lambda E+u$. Jika tidak, misalkan
+$\sequencen{I_n}$ suatu barisan dalam $\Cal I$ sedemikian sehingga
+$\lim_{n\to\infty}\mu^*(E\cap I_n)=u$; dengan mengganti $I_n$ oleh
+$\bigcup_{m\le n}I_m$ untuk setiap $n$ jika perlu, kita dapat mengandaikan
+$\sequencen{I_n}$ tak-menurun.   Tetapkan
+$A=E\cap\bigcup_{n\in\Bbb N}I_n$; karena $E\cap I_n$ mempunyai ukuran
+luar berhingga untuk setiap $n$, $A$ dapat ditutupi oleh suatu barisan
+himpunan berukuran hingga dan mempunyai selubung terukur $H$ terhadap
+$\mu$ yang termuat dalam $E$ (132Ee).   Perhatikan bahwa
+
+\Centerline{$\mu H=\mu^*A=\sup_{n\in\Bbb N}\mu^*(E\cap I_n)=u$}
+
+\noindent berdasarkan 132Ae.
+
+Tetapkan $G=E\setminus H$.   Maka $\mu^*(G\cap I)=0$ untuk setiap
+$I\in\Cal I$. \Prf\ Untuk sembarang $n\in\Bbb N$ terdapat
+$F\in\Sigma$ sedemikian sehingga $F\supseteq E\cap(I_n\cup I)$ dan
+$\mu F\le u$; dalam hal ini
+
+\Centerline{$\mu^*(G\cap I)+\mu^*(E\cap I_n)
+\le\mu(F\setminus H)+\mu(F\cap H)\le u$.}
+
+\noindent Karena $n$ sembarang, $\mu^*(G\cap I)=0$.\ \QeD\   Oleh karena itu
+
+\Centerline{$u+\lambda E\ge\mu H+\mu G=\mu E$.}
+
+\noindent Di pihak lain, jika $F\in\Sigma$ sedemikian sehingga
+$F\subseteq E$ dan $\mu^*(F\cap I)=0$ untuk setiap $I\in\Cal I$, maka
+
+\Centerline{$\mu^*(E\cap I_n)
+\le\mu(E\setminus F)+\mu^*(F\cap I_n)=\mu(E\setminus F)$}
+
+\noindent untuk setiap $n$, sehingga
+
+\Centerline{$u+\mu F\le\mu(E\setminus F)+\mu F=\mu E$;}
+
+\noindent karena $F$ sembarang, $u+\lambda E\le\mu E$.
+
+\medskip
+
+{\bf (d)} Jika $J\in\Cal I$, $F\in\Sigma$, $F\subseteq J$, dan
+$\mu^*(F\cap I)=0$ untuk setiap $I\in\Cal I$, maka
+$F\cap J=F$ terabaikan terhadap $\mu$; karena $F$ sembarang,
+$\lambda J=0$. Jadi $\lambda$ mempunyai semua sifat yang diperlukan.
+}%end of proof of 214O
+
+\leader{*214P}{Teorema}
+Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur, dan $\Cal A$ suatu keluarga
+himpunan bagian dari $X$ yang terurut baik oleh relasi $\subseteq$.
+Maka terdapat suatu perluasan $\mu$ menjadi suatu ukuran $\lambda$ pada
+$X$ sedemikian sehingga $\lambda(E\cap A)$ terdefinisi dan sama dengan
+$\mu^*(E\cap A)$ setiap kali $E\in\Sigma$ dan $A\in\Cal A$.
+
+\proof{{\bf (a)} Dengan menambahkan $\emptyset$ dan $X$ ke $\Cal A$ jika
+perlu, kita dapat mengandaikan bahwa $\Cal A$ mempunyai $\emptyset$
+sebagai anggota terkecil dan $X$ sebagai anggota terbesar.   Berdasarkan
+2A1Dg, $\Cal A$ isomorfik, sebagai himpunan terurut, dengan suatu
+ordinal; karena $\Cal A$ mempunyai anggota terbesar, ordinal ini
+merupakan ordinal penerus, yang dapat dinyatakan sebagai $\zeta+1$;
+misalkan $\xi\mapsto A_{\xi}:\zeta+1\to\Cal A$ isomorfisme urutannya,
+sehingga $\langle A_{\xi}\rangle_{\xi\le\zeta}$ merupakan keluarga
+himpunan bagian $X$ yang tak-menurun, $A_0=\emptyset$ dan $A_{\zeta}=X$.
+
+\medskip
+
+{\bf (b)} Untuk setiap ordinal $\xi\le\zeta$, tuliskan $\mu_{\xi}$ untuk
+ukuran subruang pada $A_{\xi}$, $\Sigma_{\xi}$ untuk domainnya, dan
+$\Cal I_{\xi}$ untuk $\bigcup_{\eta<\xi}\Cal PA_{\eta}$. Karena
+$A_{\eta}\cup A_{\eta'}=A_{\max(\eta,\eta')}$ untuk $\eta$,
+$\eta'<\xi$, $\Cal I_{\xi}$ merupakan ideal dari himpunan-himpunan bagian
+$A_{\xi}$.   Berdasarkan 214O, kita mempunyai suatu ukuran
+$\lambda_{\xi}$ pada $A_{\xi}$, dengan domain
+$\Lambda_{\xi}\supseteq\Sigma_{\xi}\cup\Cal I_{\xi}$, sedemikian sehingga
+$\mu_{\xi}E=\lambda_{\xi}E+\sup_{I\in\Cal I_{\xi}}\mu_{\xi}^*(E\cap I)$
+untuk setiap $E\in\Sigma_{\xi}$ dan $\lambda_{\xi}I=0$ untuk setiap
+$I\in\Cal I_{\xi}$.   Karena setiap anggota $\Cal I_{\xi}$ termuat dalam
+$A_{\eta}$ untuk suatu $\eta<\xi$, kita mempunyai
+
+\Centerline{$\mu^*(E\cap A_{\xi})
+=\lambda_{\xi}(E\cap A_{\xi})+\sup_{\eta<\xi}\mu_{\xi}^*(E\cap A_{\eta})
+=\lambda_{\xi}(E\cap A_{\xi})+\sup_{\eta<\xi}\mu^*(E\cap A_{\eta})$}
+
+\noindent (214Cd) untuk setiap $E\in\Sigma$.   Selain itu, tentu saja,
+$\lambda_{\xi}A_{\eta}=0$ untuk setiap $\eta<\xi$.
+
+\medskip
+
+{\bf (c)} Sekarang tetapkan
+
+\Centerline{$\Lambda=\{F:F\subseteq X$, $F\cap A_{\xi}\in\Lambda_{\xi}$ untuk
+setiap $\xi\le\zeta\}$,}
+
+\Centerline{$\lambda F=\sum_{\xi\le\zeta}\lambda_{\xi}(F\cap A_{\xi})$}
+
+\noindent untuk setiap $F\in\Lambda$.   Karena $\Lambda_{\xi}$ suatu
+aljabar-sigma dari himpunan-himpunan bagian $A_{\xi}$ untuk setiap
+$\xi$, $\Lambda$ suatu aljabar-sigma dari himpunan-himpunan bagian
+$X$; karena setiap $\lambda_{\xi}$ suatu ukuran, $\lambda$ juga demikian.
+Jika $E\in\Sigma$, maka
+
+\Centerline{$E\cap A_{\xi}\in\Sigma_{\xi}\subseteq\Lambda_{\xi}$}
+
+\noindent untuk setiap $\xi$, sehingga $E\in\Lambda$.   Jika
+$\eta\le\zeta$, maka untuk setiap $\xi\le\zeta$, berlaku salah satu dari
+dua hal: $\eta<\xi$ dan
+
+\Centerline{$A_{\eta}\cap A_{\xi}=A_{\eta}
+\in\Cal I_{\xi}\subseteq\Lambda_{\xi}$}
+
+\noindent atau $\eta\ge\xi$ dan $A_{\eta}\cap A_{\xi}=A_{\xi}$ termasuk
+dalam $\Lambda_{\xi}$.   Jadi $A_{\eta}\in\Lambda$ untuk setiap
+$\eta\le\zeta$.
+
+\medskip
+
+{\bf (d)} Akhirnya,
+$\lambda(E\cap A_{\xi})=\mu^*(E\cap A_{\xi})$ setiap kali $E\in\Sigma$
+dan $\xi\le\zeta$.   \Prf\Quer\ Jika tidak, karena ordinal $\zeta+1$
+terurut baik, terdapat $\xi$ terkecil sedemikian sehingga
+$\lambda(E\cap A_{\xi})\ne\mu^*(E\cap A_{\xi})$. Karena
+$A_0=\emptyset$, tentu kita mempunyai
+$\lambda(E\cap A_0)=\mu^*(E\cap A_0)$ dan $\xi>0$.
+Perhatikan bahwa jika $\eta>\xi$, maka
+$\lambda_{\eta}(E\cap A_{\xi})=0$; sehingga
+
+\Centerline{$\lambda(E\cap A_{\xi})
+=\sum_{\eta\le\xi}\lambda_{\eta}(E\cap A_{\xi}\cap A_{\eta})
+=\sum_{\eta\le\xi}\lambda_{\eta}(E\cap A_{\eta})$.}
+
+Kini
+
+$$\eqalignno{\mu^*(E\cap A_{\xi})
+&=\lambda_{\xi}(E\cap A_{\xi})+\sup_{\xi'<\xi}\mu^*(E\cap A_{\xi'})\cr
+\displaycause{(b) di atas}
+&=\lambda_{\xi}(E\cap A_{\xi})
+  +\sup_{\xi'<\xi}\sum_{\eta\le\xi'}\lambda_{\eta}(E\cap A_{\eta})\cr
+\displaycause{karena $\xi$ merupakan ordinal bermasalah pertama}
+&=\lambda_{\xi}(E\cap A_{\xi})
+  +\sup_{\xi'<\xi}\sup_{K\subseteq\xi'+1\text{ berhingga}}
+  \sum_{\eta\in K}\lambda_{\eta}(E\cap A_{\eta})\cr
+\displaycause{lihat definisi `jumlah' dalam 112Bd, atau 226A di bawah}
+&=\lambda_{\xi}(E\cap A_{\xi})
+  +\sup_{K\subseteq\xi\text{ berhingga}}
+  \sum_{\eta\in K}\lambda_{\eta}(E\cap A_{\eta})\cr
+&=\sup_{K\subseteq\xi+1\text{ berhingga}}
+  \sum_{\eta\in K}\lambda_{\eta}(E\cap A_{\eta})
+=\sum_{\eta\le\xi}\lambda_{\eta}(E\cap A_{\eta})
+\ne\mu^*(E\cap A_{\xi})\cr}$$
+
+\noindent menurut pemilihan $\xi$; tetapi ini mustahil.\ \Bang\Qed
+
+Khususnya,
+
+\Centerline{$\lambda E=\lambda(E\cap A_{\zeta})=\mu^*(E\cap A_{\zeta})
+=\mu E$}
+
+\noindent untuk setiap $E\in\Sigma$.
+Ini menyelesaikan bukti teorema.
+}%end of proof of 214P
+
+\leader{*214Q}{Proposisi}\dvAformerly{2{}14Xd}
+Andaikan $(X,\Sigma,\mu)$ suatu ruang ukur tanpa atom dan $Y$ suatu
+himpunan bagian dari $X$ sedemikian sehingga ukuran subruang $\mu_Y$
+semihingga.   Maka $\mu_Y$ tanpa atom.
+%for 548B 548C
+%\query what about general $Y$?
+
+\proof{ Misalkan $F\subseteq Y$ sedemikian sehingga $\mu_YF$ terdefinisi
+dan tidak sama dengan $0$. Karena $\mu_Y$ semihingga, terdapat
+$F'\subseteq F$ sedemikian sehingga $\mu_YF'$ terdefinisi, berhingga, dan
+tidak nol.   Dalam hal ini, $\mu^*F'=\mu_YF'$ berhingga, sehingga $F'$
+mempunyai suatu selubung terukur $E$, katakanlah, terhadap $\mu$.
+Karena $\mu$ tanpa atom, terdapat $E_1\in\Sigma$ sedemikian sehingga
+$E_1\subseteq E$ dan baik $E_1$ maupun $E\setminus E_1$ tidak
+terabaikan terhadap $\mu$.   Kini $F\cap E_1$ diukur oleh $\mu_Y$ dan
+
+\Centerline{$\mu_Y(F\cap E_1)\ge\mu^*(F'\cap E_1)=\mu(E\cap E_1)>0$,}
+
+\Centerline{$\mu_Y(F\setminus E_1)\ge\mu^*(F'\setminus E_1)
+=\mu(E\setminus E_1)>0$.}
+
+\noindent Karena $F$ sembarang, $\mu_Y$ tanpa atom.
+}%end of proof of 214Q
+
+\exercises{
+\leader{214X}{Latihan dasar (a)}
+%\spheader 214Xa
+Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur yang dapat dilokalkan.
+Tunjukkan bahwa terdapat $E\in\Sigma$ sedemikian sehingga ukuran subruang
+$\mu_E$ atomik murni dan $\mu_{X\setminus E}$ tanpa atom.
+%214/
+
+\spheader 214Xb Misalkan $X$ suatu himpunan, $\theta$ suatu ukuran luar
+reguler pada $X$, dan $Y$ suatu himpunan bagian dari $X$.   Misalkan
+$\mu$ ukuran pada $X$ yang didefinisikan dengan metode \Caratheodory\
+dari $\theta$, $\mu_Y$ ukuran subruang pada $Y$, dan $\nu$ ukuran pada
+$Y$ yang didefinisikan dengan metode \Caratheodory\ dari
+$\theta\restrp\Cal PY$.   Tunjukkan bahwa jika $\mu_Y$ ditentukan secara
+lokal (khususnya, jika $\mu$ ditentukan secara lokal dan dapat
+dapat dilokalkan), maka $\nu=\mu_Y$.
+%214I
+
+\spheader 214Xc Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur yang dapat
+dapat dilokalkan, dan $Y$ suatu himpunan bagian dari $X$ sedemikian sehingga
+ukuran subruang $\mu_Y$ semihingga.   Tunjukkan bahwa $\mu_Y$ dapat
+dapat dilokalkan.
+%214I
+
+\sqheader 214Xd Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur, dan $Y$
+suatu himpunan bagian dari $X$ sedemikian sehingga ukuran subruang
+$\mu_Y$ semihingga. (i) Tunjukkan bahwa suatu himpunan $F\subseteq Y$
+merupakan atom bagi $\mu_Y$ jika dan hanya jika berbentuk $E\cap Y$
+dengan $E$ suatu atom bagi $\mu$. (ii) Tunjukkan bahwa jika $\mu$ murni
+atomik, maka $\mu_Y$ juga demikian.
+%214I  used in 5x47A
+
+\spheader 214Xe Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur yang dapat
+dapat dilokalkan, dan $Y$ sembarang himpunan bagian dari $X$.   Tunjukkan
+bahwa versi c.l.d.\ dari ukuran subruang pada $Y$ dapat dilokalkan.
+%214I
+
+\spheader 214Xf Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur dengan
+himpunan-himpunan terabaikan yang ditentukan secara lokal, dan $Y$ suatu
+himpunan bagian dari $X$, dengan ukuran subruangnya $\mu_Y$. Tunjukkan
+bahwa $\mu_Y$ mempunyai himpunan-himpunan terabaikan yang ditentukan
+secara lokal.
+%214I
+
+\sqheader 214Xg Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur.   Tunjukkan
+bahwa $(X,\Sigma,\mu)$ mempunyai himpunan-himpunan terabaikan yang
+ditentukan secara lokal jika dan hanya jika ukuran subruang $\mu_Y$
+semihingga untuk setiap $Y\subseteq X$.
+%214I, 214Xf
+
+\sqheader 214Xh Misalkan $\langle (X_i,\Sigma_i,\mu_i)\rangle_{i\in I}$
+suatu keluarga ruang ukur, dengan jumlah langsung $(X,\Sigma,\mu)$
+(214L).   Tetapkan $X'_i=X_i\times\{i\}\subseteq X$ untuk setiap
+$i\in I$.   Tunjukkan bahwa $X'_i$, dengan ukuran subruangnya, isomorfik
+dengan $(X_i,\Sigma_i,\mu_i)$.   Dalam keadaan apa
+$\langle X'_i\rangle_{i\in I}$ merupakan dekomposisi $X$?   Tunjukkan
+bahwa $\mu$ lengkap, atau dapat dilokalkan secara ketat, atau dapat
+dilokalkan, atau ditentukan secara lokal, atau semihingga, atau tanpa
+atom, %used in 548C
+atau atomik murni, jika dan hanya jika setiap $\mu_i$ demikian.
+Tunjukkan bahwa suatu ruang ukur dapat dilokalkan secara ketat jika dan
+hanya jika ruang tersebut isomorfik dengan suatu jumlah langsung dari
+ruang-ruang berhingga total.
+%214L
+
+\sqheader 214Xi Misalkan
+$\langle(X_i,\Sigma_i,\mu_i)\rangle_{i\in I}$ suatu keluarga ruang ukur,
+dan $(X,\Sigma,\mu)$ jumlah langsungnya.   Tunjukkan bahwa pelengkapan
+$(X,\Sigma,\mu)$ dapat diidentifikasi dengan jumlah langsung dari
+pelengkapan ruang-ruang $(X_i,\Sigma_i,\mu_i)$, dan bahwa versi c.l.d.\
+dari $(X,\Sigma,\mu)$ dapat diidentifikasi dengan jumlah langsung dari
+versi-versi c.l.d.\ ruang $(X_i,\Sigma_i,\mu_i)$.
+%214L
+
+\spheader 214Xj Misalkan
+$\langle(X_i,\Sigma_i,\mu_i)\rangle_{i\in I}$ suatu keluarga ruang ukur.
+Tunjukkan bahwa jumlah langsungnya mempunyai himpunan-himpunan terabaikan
+yang ditentukan secara lokal jika dan hanya jika setiap $\mu_i$
+mempunyainya.
+%214L, 214Xf
+
+\spheader 214Xk
+Misalkan $\langle(X_i,\Sigma_i,\mu_i)\rangle_{i\in I}$ suatu keluarga
+ruang ukur, dan $(X,\Sigma,\mu)$ jumlah langsungnya.   Tunjukkan bahwa
+$(X,\Sigma,\mu)$ mempunyai sifat selubung terukur (213Xl) jika dan hanya
+jika setiap $(X_i,\Sigma_i,\mu_i)$ mempunyainya.
+%214L
+
+\spheader 214Xl
+Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur, $Y$ suatu himpunan bagian dari
+$X$, dan $f:X\to[0,\infty]$ suatu fungsi sedemikian sehingga $\int_Yf$
+terdefinisi dalam $[0,\infty]$. Tunjukkan bahwa
+$\int_Yf=\overline{\int}f\times\chi Y\,d\mu$.
+%214E
+
+\sqheader 214Xm\dvAnew{2009}
+Tuliskan bukti langsung untuk 214P dalam kasus khusus ketika
+$\Cal A=\{A\}$.   ({\it Petunjuk\/}: untuk $E$, $F\in\Sigma$,
+
+\Centerline{$\lambda((E\cap A)\cup(F\setminus A))
+=\mu^*(E\cap A)+\sup\{\mu G:G\in\Sigma$, $G\subseteq F\setminus A\}$.)}
+%214P
+
+\sqheader 214Xn\dvAnew{2009}
+Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur dan $\Cal A$ suatu keluarga
+berhingga dari himpunan-himpunan bagian $X$.   Tunjukkan bahwa terdapat
+suatu ukuran pada $X$, yang memperluas $\mu$, dan mengukur setiap anggota
+$\Cal A$.
+%214Xm 214P
+
+\leader{214Y}{Latihan lanjutan (a)}\dvAnew{2009}
+%\spheader 214Ya
+Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur dan $A$ suatu himpunan bagian
+dari $X$ sedemikian sehingga ukuran subruang pada $A$ semihingga.
+Tetapkan $\alpha=\sup\{\mu E:E\in\Sigma$, $E\subseteq A\}$.
+Tunjukkan bahwa jika $\alpha\le\gamma\le\mu^*A$, maka terdapat suatu
+ukuran $\lambda$ pada $X$, yang memperluas $\mu$, sedemikian sehingga
+$\lambda A=\gamma$.
+%214P 214Xm
+
+\spheader 214Yb\dvAnew{2009}
+Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur dan
+$\family{n}{\Bbb Z}{A_n}$ suatu barisan dua-arah dari himpunan-himpunan
+bagian $X$ sedemikian sehingga $A_m\subseteq A_n$ setiap kali $m\le n$
+dalam $\Bbb Z$.   Tunjukkan bahwa terdapat suatu ukuran pada $X$, yang
+memperluas $\mu$, dan mengukur setiap $A_n$.
+\Hint{gunakan 214P dua kali.}
+%214P
+
+\spheader 214Yc\dvAnew{2009}
+Misalkan $X$ suatu himpunan dan $\Cal A$ suatu keluarga himpunan bagian
+dari $X$. Tunjukkan bahwa pernyataan-pernyataan berikut ekuivalen:
+(i) untuk setiap ukuran $\mu$ pada $X$, terdapat suatu ukuran pada $X$
+yang memperluas $\mu$ dan mengukur setiap anggota $\Cal A$; (ii) untuk
+setiap ukuran berhingga total $\mu$ pada $X$, terdapat suatu ukuran pada
+$X$ yang memperluas $\mu$ dan mengukur setiap anggota $\Cal A$.
+\Hint{213Xa.}
+
+\spheader 214Yd\dvAnew{2015}
+Untuk latihan ini saja, saya akan mengatakan bahwa suatu ukuran $\mu$
+pada suatu himpunan $X$ bersifat {\bf tak pernah mengukur semua} jika,
+setiap kali $A\subseteq X$ tidak terabaikan terhadap $\mu$, terdapat
+suatu himpunan bagian dari $A$ yang tidak diukur oleh ukuran subruang
+pada $A$.   Tunjukkan bahwa jika $X$ suatu himpunan dan
+$\mu_0,\ldots,\mu_n$ merupakan ukuran lengkap berhingga total yang tak
+pernah mengukur semua pada $X$, maka terdapat himpunan-himpunan saling
+lepas $A_0,\ldots,A_n\subseteq X$ sedemikian sehingga
+$\mu_i^*A_i=\mu_iX$ untuk setiap $i\le n$.   \Hint{mulailah dengan kasus
+$n=1$, $\mu_0=\mu_1$.}
+%mt21bits
+}%end of exercises
+
+\endnotes{
+\Notesheader{214} Saya menguraikan bagian pertama dari bagian ini,
+hingga 214H, secara perlahan dan cermat, karena meskipun tidak satu pun
+argumennya mendalam (214Eb merupakan yang terpanjang), pola yang dibentuk
+oleh hasil-hasil tersebut tidak selalu mudah diperkirakan.   Terdapat
+contoh tandingan terhadap perluasan 214H/214Xb yang tampak menggiurkan
+dalam 216Xb.
+
+Pesan dari bagian kedua dari bagian ini (214I-214L, 214Q) adalah bahwa
+subruang mewarisi banyak, tetapi tidak semua, sifat suatu ruang ukur; dan
+khususnya dapat timbul kesulitan dengan sifat semihingga, kecuali jika kita
+mempunyai himpunan-himpunan terabaikan yang ditentukan secara lokal
+(214Xg).   (Saya memberikan contoh dalam 216Xa.)   Tentu saja 213Hb
+menunjukkan bahwa jika kita mulai dengan suatu ruang yang dapat
+dapat dilokalkan, kita dapat mengubahnya menjadi ruang yang lengkap,
+ditentukan secara lokal, dan dapat dilokalkan tanpa terlalu merusak
+struktur ruang tersebut, sehingga kesulitannya biasanya dapat diatasi.
+
+Kasus 214P yang paling penting adalah ketika $\Cal A=\{A\}$ suatu
+himpunan tunggal, sehingga argumennya menjadi jauh lebih sederhana (214Xm).
+Dalam \S439 dari Jilid 4 saya akan kembali pada masalah memperluas suatu
+ukuran ke aljabar-sigma lebih besar yang diberikan, tanpa adanya
+struktur bantu yang berguna.   Bagian tersebut terutama akan menawarkan
+contoh-contoh tandingan, khususnya menunjukkan bahwa tidak ada teorema
+umum yang memperluas 214Xn dari keluarga berhingga ke keluarga terhitung,
+dan bahwa syarat-syarat khusus dalam 214P dan 214Yb ada dengan alasan
+yang baik.   Namun, dalam Bab 54 dan \S552 dari Jilid 5 saya akan membahas
+sistem-sistem matematika yang memungkinkan teorema perluasan jauh lebih
+kuat, setidaknya jika kita mulai dari ukuran Lebesgue.
+}%end of notes
+
+\discrpage
+
+
