@@ -1,6 +1,6 @@
 # Current Cursor
 
-Updated: 2026-08-24 (Europe/Berlin)
+Updated: 2026-08-25 (Europe/Berlin)
 
 ## Active production cursor
 
@@ -8,16 +8,15 @@ Updated: 2026-08-24 (Europe/Berlin)
 |---|---|
 | Corpus | `O007-FREMLIN-MT-V1-V2` |
 | Volume | `O007-FREMLIN-V2` — *Broad Foundations* |
-| Boundary | Complete Volume I plus complete Volume II Chapter 22 public and anonymously verified: 143/672 official pages |
-| Unit | Next: owner validation/integration of `HP-D10-001`, complete Chapter 21 (`mt21.tex`, `mt211.tex`–`mt216.tex`) |
-| Source anchor | Chapter 21, *Taxonomy of measure spaces*, preceding admitted Chapter 22 in frozen Volume II source order |
-| Authority member | `authority/fremlin/source/mt2.2016/mt21.tex`, `mt211.tex`–`mt216.tex` |
-| Alternate packet | `outputs/01a01ec1-e685-70d0-b022-211396334723/curriculum_logbook/helper_packets/HP-D10-001` (outside owner tree; read-only input) |
-| Owner gate | accept only a schema-clean handoff after source/terminology/stable-ID/backend/reader/license three-way replay; otherwise owner-produce |
-| Latest admission | `00_control/CP0013_CHAPTER22_ADMISSION.md` and `qa/chapter22-final-admission.json` |
-| Latest public receipts | `qa/PUBLICATION_RECEIPT_V0130_V2_CH22.json`; `qa/ZENODO_PUBLICATION_RECEIPT_V0130_V2_CH22.json` |
-| Production status | `chapter22_public_verified_chapter21_packet_owner_validation_active` |
-| Target admitted | complete Volume I `true`; Chapter 22 `true`; Chapter 21 `false`; complete corpus `false` |
+| Boundary | Complete Volume I plus complete Volume II Chapters 21–22 public and verified: 186/672 official pages |
+| Coverage identity | Volume I 102 pages + Volume II pages 12–95 (84 pages); Volume II pages 1–11 remain absent |
+| Unit | Next: Volume II front matter/introductions `mt20.tex`, `mt02.tex`, `mt2.tex`; then Chapter 23 |
+| Source anchor | Frozen Volume II source order before admitted Chapter 21 |
+| Authority member | `authority/fremlin/source/mt2.2016/mt20.tex`, `mt02.tex`, `mt2.tex` |
+| Latest admission | `00_control/CP0014_CHAPTER21_ADMISSION.md` and `qa/chapters21-22-final-admission.json` |
+| Latest public receipts | `qa/PUBLICATION_RECEIPT_V0140_V2_CH21_CH22.json`; `qa/ZENODO_PUBLICATION_RECEIPT_V0140_V2_CH21_CH22.json` |
+| Production status | `chapters21_22_public_verified_volume2_front_matter_next` |
+| Target admitted | complete Volume I `true`; Chapter 21 `true`; Chapter 22 `true`; Volume II pages 1–11 `false`; complete corpus `false` |
 
 Complete Volume I is translated, backend-indexed, reproducibly built, and
 admitted. The final index covers all 731 units once in source order. The backend
@@ -29,24 +28,33 @@ link/fragment closure, and independent artifact replay pass. Admission evidence
 is `00_control/CP0012_VOLUME1_ADMISSION.md`; exact package identity is in
 `qa/volume1-release-package.json`.
 
-The cumulative 143/672-page checkpoint is public as GitHub
-`v0.13.0-v2-ch22` (boundary commit
-`7490ca25551451d089b625fb31383e53a3c5b313`) and Zenodo DOI
-`10.5281/zenodo.22086976` in concept DOI `10.5281/zenodo.22059798`. Both
-destinations expose exactly the same reader-first PDF, deterministic ZIP, and
-checksum witness; every asset was anonymously read back at its exact local
-byte/SHA-256 identity. Evidence is
-`qa/PUBLICATION_RECEIPT_V0130_V2_CH22.json` and
-`qa/ZENODO_PUBLICATION_RECEIPT_V0130_V2_CH22.json`.
+The cumulative 186/672-page checkpoint is public as GitHub tag
+`v0.14.0-v2-ch21-ch22`, boundary commit
+`d31490adfe313f92705e44985f93d09c7e70bdfc`, receipt-only main commit
+`663f41deb4daf29813de67a3098d6d1ab8730fda`, and release
+`https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.14.0-v2-ch21-ch22`.
+Exact evidence is `qa/PUBLICATION_RECEIPT_V0140_V2_CH21_CH22.json` (4,269
+bytes; SHA-256
+`4c130cce18421fe27fd56380c53dbc52310ce37023d5d159846681240c872eca`).
+The same boundary is public as Zenodo DOI `10.5281/zenodo.22088384` at
+`https://zenodo.org/records/22088384`, under concept DOI
+`10.5281/zenodo.22059798`; exact evidence is
+`qa/ZENODO_PUBLICATION_RECEIPT_V0140_V2_CH21_CH22.json` (3,890 bytes; SHA-256
+`8d9586b76803f1faa52370aee793d766ff0baaf1ce8788617189f0909a7026cb`).
 
-The seven Chapter 22 unit backends and catalog-v1.8 validate. The 154-page
-cumulative PDF passes all-page raster QA, and the repaired 35-route offline
-HTML passes deterministic configuration plus desktop/verified-mobile browser
-QA; the rejected pre-repair HTML remains historical evidence only. This
-boundary is complete Volume I (102) plus Volume II pages 55–95 (41), with
-Chapter 21 explicitly absent. The next executable action is bounded owner-side
-validation of helper packet `HP-D10-001`, followed by integration if admissible
-or direct owner production if not. The 672-page goal remains active.
+The cumulative reader has 200 physical A4 reflow pages. Official coverage is
+Volume I complete (102 pages) plus Volume II Chapters 21–22, pages 12–95 (84
+pages), not 200 official pages. A documented privacy overlay sanitizes only the
+public package while canonical evidence remains locally preserved. GitHub raw
+files and every release asset, and all Zenodo assets, passed anonymous
+byte/hash readback. GitHub release metadata used an authenticated API fallback
+because shared-IP anonymous API requests were rate-limited; the public release
+and asset verification are unaffected.
+
+Volume II pages 1–11 are not yet translated in the admitted checkpoint. The
+next executable action is to translate `mt20.tex`, `mt02.tex`, and `mt2.tex` in
+frozen source order, then continue with Chapter 23. The 672-page goal remains
+active.
 
 The earlier cursor labels `The indefinite integral` / `Upper integrals` were
 rejected on direct authority replay. Frozen `mt13.tex` and `mt131.tex` identify

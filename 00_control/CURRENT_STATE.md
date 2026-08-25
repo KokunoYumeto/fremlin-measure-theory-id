@@ -1,6 +1,6 @@
 # Current State — O007 Fremlin Volumes 1–2
 
-Updated: 2026-08-24 (Europe/Berlin)
+Updated: 2026-08-25 (Europe/Berlin)
 
 ## State summary
 
@@ -33,43 +33,43 @@ Updated: 2026-08-24 (Europe/Berlin)
 - The final corrected root handoff and the user's canonical instructions are
   retained byte-for-byte under `00_control/` and bound by backend resources.
 - Current admitted and public boundary: complete Volume I plus complete Volume
-  II Chapter 22, 143 of 672 official pages. Chapter 22 consists of `mt22.tex`
-  and `mt221.tex`–`mt226.tex`, covering the 41-page union of Volume II printed
-  pages 55–95. Its seven targets preserve 3,119 math atoms, 185 stable IDs, 421
-  protected references, 88 exercises/problems, 20 explicit hints, and 26
-  ledgered authority corrections. Chapter 21 remains explicitly absent. Exact
-  owner admission is `00_control/CP0013_CHAPTER22_ADMISSION.md` plus
-  `qa/chapter22-final-admission.json`; the independent aggregate replay is
-  `qa/chapter22-aggregate-replay.json` (19,978 bytes / SHA-256
-  `c121c6de316a24e3dc47f23b14de5d7d19f022fd93c6c515a0cf442e97351ecd`).
-- The admitted cumulative PDF is 154 A4 reflow pages, 1,194,525 bytes, SHA-256
-  `5d91feb7b14c60ac104c0bfe2089f3577b68d02ecf856d78e042820474915694`.
-  Two clean builds agree byte-for-byte. All 154 pages passed raster, extraction,
-  font, geometry, and visual checks, with the first 110 Volume I page identities
-  preserved exactly. The repaired 74-file, 35-route offline HTML tree has
-  manifest SHA-256
-  `4e5304bd82b560d3f734231ff8732e969585444862d94bf7b74cfc23a5b76203`
-  and passes deterministic static, desktop, and verified 390×844 mobile QA.
-  The rejected pre-repair HTML remains historical evidence only and is absent
-  from the release.
+  II Chapters 21–22, 186 of 672 official pages. Volume I contributes 102 pages;
+  Volume II Chapters 21–22 occupy the 84-page union of printed pages 12–95.
+  Volume II pages 1–11 remain absent. Exact owner admission is
+  `00_control/CP0014_CHAPTER21_ADMISSION.md` plus
+  `qa/chapters21-22-final-admission.json`; aggregate replay is
+  `qa/chapters21-22-aggregate-replay.json` (11,207 bytes / SHA-256
+  `a99829d55240e6699e516efcdcfa6e32505bd43a6023e7d213e288675398adb3`).
+- The admitted cumulative PDF is 200 physical A4 reflow pages, 1,450,056
+  bytes, SHA-256
+  `3c4a0355569da37bbcb9bd10c58ec97811bddb57b8b67d008dab23bde0da4e33`.
+  All 200 pages passed visual inspection. Official coverage remains 186 pages;
+  physical reflow pagination is not used for curriculum accounting.
 - The deterministic reader-first release contains exactly three assets: PDF
-  1,194,525 bytes / SHA-256
-  `5d91feb7b14c60ac104c0bfe2089f3577b68d02ecf856d78e042820474915694`;
-  resumable ZIP 9,374,002 bytes /
-  `9ed8327509740c3edbdd84e73d9335dfb7628662793734175050b61fe2f95ebe`;
-  checksum witness 240 bytes /
-  `6672d4b01c853393b0a8c69da8221da0b662da5caf55bd009a5c5e2f876c28b9`.
-  It is public and anonymously byte-verified as GitHub
-  `v0.13.0-v2-ch22` (boundary commit
-  `7490ca25551451d089b625fb31383e53a3c5b313`) and Zenodo DOI
-  `10.5281/zenodo.22086976` in concept DOI `10.5281/zenodo.22059798`.
-  Sanitized evidence is `qa/PUBLICATION_RECEIPT_V0130_V2_CH22.json` and
-  `qa/ZENODO_PUBLICATION_RECEIPT_V0130_V2_CH22.json`.
-- Helper packet `HP-D10-001` remains an alternate input for complete Chapter
-  21 only. It cannot enter the canonical lane except through a schema-clean
-  handoff and owner-side source, terminology, stable-ID, backend, reader, and
-  license replay. If it fails that gate, Chapter 21 returns immediately to
-  direct owner production; no helper or human response is a hold.
+  1,450,056 bytes / SHA-256
+  `3c4a0355569da37bbcb9bd10c58ec97811bddb57b8b67d008dab23bde0da4e33`;
+  resumable ZIP 11,627,392 bytes /
+  `fb5c011f32c293287f9181eb7dd92580f7f3d8fe955538cbc8a2d5d1f6620122`;
+  checksum witness 246 bytes /
+  `2762565c7c9bc3c2c0250971658048f74ab7c7204ca31e2727248c5cf57da2be`.
+  It is public as GitHub tag `v0.14.0-v2-ch21-ch22`, boundary commit
+  `d31490adfe313f92705e44985f93d09c7e70bdfc`, receipt-only main commit
+  `663f41deb4daf29813de67a3098d6d1ab8730fda`, and Zenodo DOI
+  `10.5281/zenodo.22088384` in concept DOI `10.5281/zenodo.22059798`.
+  Evidence is `qa/PUBLICATION_RECEIPT_V0140_V2_CH21_CH22.json` (4,269 bytes /
+  SHA-256
+  `4c130cce18421fe27fd56380c53dbc52310ce37023d5d159846681240c872eca`)
+  and `qa/ZENODO_PUBLICATION_RECEIPT_V0140_V2_CH21_CH22.json` (3,890 bytes /
+  SHA-256
+  `8d9586b76803f1faa52370aee793d766ff0baaf1ce8788617189f0909a7026cb`).
+- The release package applies a documented public privacy overlay while
+  preserving canonical evidence locally. Public GitHub raw files and release
+  assets, and all Zenodo assets, passed anonymous byte/hash readback. GitHub
+  release metadata used an authenticated API fallback because the shared-IP
+  anonymous API quota was rate-limited; this is not a publication defect.
+- The next cursor is the missing Volume II front matter and introductions in
+  frozen source order: `mt20.tex`, `mt02.tex`, and `mt2.tex` (official pages
+  1–11), followed by Chapter 23. The complete 672-page goal remains active.
 - S136 is public as GitHub prerelease `v0.11.0-s136` and Zenodo DOI
   `10.5281/zenodo.22071390` in the unchanged concept DOI
   `10.5281/zenodo.22059798`. Both destinations anonymously returned the exact

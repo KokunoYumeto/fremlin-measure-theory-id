@@ -569,3 +569,56 @@ corpus incomplete, DSL, Fremlin authorship, and
 `OpenAI Codex gpt-5.6-sol, Ultra.` No upstream contact occurred. The next
 owner cursor is Chapter 21 packet validation/integration or direct owner
 production; the 672-page goal remains active.
+
+## 2026-08-25 — D031: Admit Chapter 21 and correct cumulative coverage to 186/672
+
+Owner-side source, terminology, stable-ID, backend, reader, license, and
+three-way replay admitted complete Volume II Chapter 21 without transferring
+canonical ownership. Together with the already admitted complete Volume I and
+Chapter 22, the boundary covers Volume I's 102 official pages plus Volume II
+printed pages 12–95, an 84-page union, for 186/672 official pages. Volume II
+pages 1–11 remain absent. Admission is bound by
+`00_control/CP0014_CHAPTER21_ADMISSION.md`,
+`qa/chapters21-22-final-admission.json`, and
+`qa/chapters21-22-aggregate-replay.json` (11,207 bytes / SHA-256
+`a99829d55240e6699e516efcdcfa6e32505bd43a6023e7d213e288675398adb3`).
+The cumulative reader has 200 physical A4 pages; this reflow count does not
+replace official source-page accounting.
+
+## 2026-08-25 — D032: Preserve the 186/672 checkpoint and advance to Volume II front matter
+
+The admitted checkpoint is public as GitHub prerelease
+`v0.14.0-v2-ch21-ch22` at
+`https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.14.0-v2-ch21-ch22`.
+The frozen boundary commit is
+`d31490adfe313f92705e44985f93d09c7e70bdfc`; the receipt-only main commit is
+`663f41deb4daf29813de67a3098d6d1ab8730fda`. Exact evidence is
+`qa/PUBLICATION_RECEIPT_V0140_V2_CH21_CH22.json`, 4,269 bytes, SHA-256
+`4c130cce18421fe27fd56380c53dbc52310ce37023d5d159846681240c872eca`.
+
+The same checkpoint is public as one new version of the established Zenodo
+concept: DOI `10.5281/zenodo.22088384`, public URL
+`https://zenodo.org/records/22088384`, concept DOI
+`10.5281/zenodo.22059798`. Exact evidence is
+`qa/ZENODO_PUBLICATION_RECEIPT_V0140_V2_CH21_CH22.json`, 3,890 bytes, SHA-256
+`8d9586b76803f1faa52370aee793d766ff0baaf1ce8788617189f0909a7026cb`.
+The public package uses a documented privacy overlay while retaining canonical
+evidence locally. Public raw files and all release assets passed anonymous
+readback. Shared-IP rate limiting affected only anonymous GitHub API metadata;
+an authenticated metadata fallback verified the public release, so this is not
+a publication defect. The next source-order cursor is `mt20.tex`, `mt02.tex`,
+and `mt2.tex` for Volume II pages 1–11, followed by Chapter 23. The 672-page
+goal remains active.
+
+## 2026-08-25 — D033: Publish path-neutral post-release controls on `main`
+
+The post-release control sync preserves the canonical local
+`00_control/CURRENT_GOAL_AND_WORKFLOW.md` with its exact recovery root, but the
+public `main` object for that one path replaces the private user-home prefix
+with `<repository-root>`. This is a publication-only privacy overlay; it does
+not change the goal, cursor, evidence identities, or canonical local bytes.
+`CURRENT_CURSOR.md`, `CURRENT_STATE.md`, `DECISION_LOG.md`,
+`ZENODO_LINEAGE.md`, and the Zenodo publication receipt are published from
+their exact local bytes after a bounded private-path and credential-pattern
+scan. The existing `v0.14.0-v2-ch21-ch22` tag and release boundary remain
+immutable; only the post-release `main` documentation advances.

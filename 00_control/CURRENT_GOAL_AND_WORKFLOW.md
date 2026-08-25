@@ -1,6 +1,6 @@
 # Durable Production Goal and Externalized Workflow — O007
 
-Updated: 2026-08-24 (Europe/Berlin)  
+Updated: 2026-08-25 (Europe/Berlin)  
 Task: `01a01f45-9d00-7f42-9071-4f932b45512a`  
 Status: active until all 672 official pages are publicly verified
 
@@ -8,12 +8,14 @@ Complete and publish one coherent Bahasa Indonesia edition of D. H. Fremlin's
 *Measure Theory*, Volume 1 (*The Irreducible Minimum*) and Volume 2 (*Broad
 Foundations*) only: 672 official pages. Do not reopen selection, reduce the
 corpus to a course slice, include Volumes 3–5, or merge comparator books.
-Volume I and complete Volume II Chapter 22 are admitted and public at 143/672
-official pages; preserve that boundary. Chapter 21 is explicitly absent from
-the checkpoint. The goal remains active through all remaining Volume II units.
+Volume I and complete Volume II Chapters 21–22 are admitted and public at
+186/672 official pages: Volume I contributes 102 pages and Volume II pages
+12–95 contribute 84 pages. Preserve that boundary. Volume II front matter and
+introductions on pages 1–11 remain absent. The goal remains active through all
+remaining Volume II units.
 
 Authority is
-`C:/Users/Floris/Documents/interlanguage/04_mirrors/id/measure-integration-id/authority/fremlin`:
+`<repository-root>/authority/fremlin`:
 `mt1.2011.tar.gz` (421,854 bytes; SHA-256
 `1deabdecd72f2a2866eb70c4e2ab89f230083af155414023a0a8b441010a6ff2`),
 `mt2.2016.tar.gz` (897,116;
@@ -52,23 +54,30 @@ Do not retry Figshare absent a license/account change. No upstream contact
 during production. After both volumes, at most one concise deduplicated report
 may be sent, signed `Codex, on instructions of the user.`
 
-Complete Volume I plus complete Volume II Chapter 22 (`mt22.tex`,
-`mt221.tex`–`mt226.tex`) is public and anonymously verified as GitHub
-`v0.13.0-v2-ch22` and Zenodo `0.13.0-v2-ch22` (DOI
-`10.5281/zenodo.22086976`) in the existing concept DOI
-`10.5281/zenodo.22059798`. It covers official Volume II pages 55–95 (41 unique
-pages) and a truthful cumulative 143/672 official pages. Current action:
-owner-validate the reserved `HP-D10-001` Chapter 21 packet through source,
-terminology, stable-ID, backend, reader, and license replay; integrate it only
-if admissible, otherwise owner-produce Chapter 21, then continue Volume II in
-frozen source order.
-External helper reservation
-`HP-D10-001` owns only Chapter 21 (`mt21.tex`, `mt211.tex`–`mt216.tex`). The
-owner stays sole integrator/publisher. Accept no raw edits; a returned
-schema-clean `HANDOFF.json`/checksums/README/issues packet is only an alternate
-input and must pass owner-side three-way stable-ID, source, terminology,
-backend, reader, and license QA. If none arrives, complete Chapter 21 in the
-owner lane after Chapter 22; never make a human or helper a release gate.
+Complete Volume I plus complete Volume II Chapters 21–22 (`mt21.tex`,
+`mt211.tex`–`mt216.tex`, `mt22.tex`, and `mt221.tex`–`mt226.tex`) is public as
+GitHub tag `v0.14.0-v2-ch21-ch22`, boundary commit
+`d31490adfe313f92705e44985f93d09c7e70bdfc`, and receipt-only main commit
+`663f41deb4daf29813de67a3098d6d1ab8730fda`. Release:
+`https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.14.0-v2-ch21-ch22`.
+The GitHub receipt is `qa/PUBLICATION_RECEIPT_V0140_V2_CH21_CH22.json` (4,269
+bytes; SHA-256
+`4c130cce18421fe27fd56380c53dbc52310ce37023d5d159846681240c872eca`).
+The same checkpoint is public on Zenodo as DOI
+`10.5281/zenodo.22088384` at `https://zenodo.org/records/22088384`, under the
+unchanged concept DOI `10.5281/zenodo.22059798`; its receipt is
+`qa/ZENODO_PUBLICATION_RECEIPT_V0140_V2_CH21_CH22.json` (3,890 bytes; SHA-256
+`8d9586b76803f1faa52370aee793d766ff0baaf1ce8788617189f0909a7026cb`).
+The checkpoint has a 200-page A4 reflow reader. Its public package uses a
+documented privacy overlay while preserving canonical evidence locally. Public
+raw files and release assets passed anonymous readback. GitHub release metadata
+was verified through an authenticated API fallback because the shared-IP
+anonymous API quota was rate-limited; this is not a publication defect.
+
+Current action: translate the missing Volume II front matter and introductions
+in source order (`mt20.tex`, `mt02.tex`, then `mt2.tex`), covering official
+pages 1–11, and then continue with Chapter 23. Do not skip the front matter or
+count physical reflow pages as official coverage.
 
 Recovery state lives in `00_control/CURRENT_GOAL_AND_WORKFLOW.md`,
 `CURRENT_CURSOR.md`, `CURRENT_STATE.md`, `DECISION_LOG.md`,

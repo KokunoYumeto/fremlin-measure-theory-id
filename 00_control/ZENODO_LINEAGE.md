@@ -1,6 +1,6 @@
 # Zenodo Version Lineage — O007 Fremlin Volumes 1–2
 
-Updated: 2026-08-24 (Europe/Berlin)
+Updated: 2026-08-25 (Europe/Berlin)
 
 ## Canonical concept
 
@@ -156,16 +156,51 @@ Exact public assets:
 Sanitized evidence:
 `qa/ZENODO_PUBLICATION_RECEIPT_V0130_V2_CH22.json`, 3,619 bytes, SHA-256
 `eeab39a61f330dcbbce1ddaad3a5b7c41c79bf61ca64d5eec26f431b410590ff`.
+This is the direct predecessor of the latest completed public Zenodo version.
+
+## Published version 0.14.0-v2-ch21-ch22
+
+- Record: `22088384`
+- DOI: `10.5281/zenodo.22088384`
+- Public URL: <https://zenodo.org/records/22088384>
+- Version: `0.14.0-v2-ch21-ch22`
+- Status: public, admitted cumulative Volume I plus Volume II Chapters 21–22
+  checkpoint; every public asset passed anonymous byte and SHA-256 readback.
+- Coverage: complete Volume I (102 official pages) plus complete Volume II
+  Chapters 21–22, printed pages 12–95 (84 unique), for 186/672 official pages.
+  Volume II pages 1–11 remain absent and the two-volume corpus remains
+  incomplete. The reader has 200 physical A4 reflow pages.
+- License metadata: Zenodo `dsl` (Design Science License), with bundled
+  MathJax separately scoped under Apache-2.0.
+- Lineage: exactly one new version from record `22086976`; concept DOI remains
+  `10.5281/zenodo.22059798`; no standalone or competing concept was created.
+- Privacy: the public source package uses a documented privacy overlay while
+  canonical evidence remains preserved locally.
+
+Exact public assets:
+
+| Asset | Bytes | SHA-256 |
+|---|---:|---|
+| `00_READ_FIRST_FONDASI_TEORI_UKURAN_V1_DAN_V2_BAB_21_22.pdf` | 1,450,056 | `3c4a0355569da37bbcb9bd10c58ec97811bddb57b8b67d008dab23bde0da4e33` |
+| `fondasi-teori-ukuran-v1-dan-v2-bab21-22-id-v0.14.0.zip` | 11,627,392 | `fb5c011f32c293287f9181eb7dd92580f7f3d8fe955538cbc8a2d5d1f6620122` |
+| `SHA256SUMS-v0.14.0-v2-ch21-ch22.txt` | 246 | `2762565c7c9bc3c2c0250971658048f74ab7c7204ca31e2727248c5cf57da2be` |
+
+Sanitized evidence:
+`qa/ZENODO_PUBLICATION_RECEIPT_V0140_V2_CH21_CH22.json`, 3,890 bytes, SHA-256
+`8d9586b76803f1faa52370aee793d766ff0baaf1ce8788617189f0909a7026cb`.
 This is the latest completed public Zenodo version.
 
 ## External mirror state
 
 GitHub access is restored. The latest public boundary is prerelease
-`v0.13.0-v2-ch22` at boundary commit
-`7490ca25551451d089b625fb31383e53a3c5b313`, tree
-`75a3753255878e2f4d6ec9cefd6f3e6a48ec445f`; its first sanitized-receipt commit
-is `9ee6c291365620dc59822fa568486774a055ee22`. Its three assets passed anonymous
-readback; evidence is `qa/PUBLICATION_RECEIPT_V0130_V2_CH22.json`.
+`v0.14.0-v2-ch21-ch22` at boundary commit
+`d31490adfe313f92705e44985f93d09c7e70bdfc`; its receipt-only main commit is
+`663f41deb4daf29813de67a3098d6d1ab8730fda`. Its public raw files and three
+assets passed anonymous readback. GitHub release metadata used an authenticated
+API fallback because shared-IP anonymous API requests were rate-limited; this
+does not affect public-byte verification. Evidence is
+`qa/PUBLICATION_RECEIPT_V0140_V2_CH21_CH22.json` (4,269 bytes / SHA-256
+`4c130cce18421fe27fd56380c53dbc52310ce37023d5d159846681240c872eca`).
 
 The earlier S122 and S123 boundaries remain preserved by their public tags and
 their independently verified Zenodo versions. GitHub and Zenodo maintenance
@@ -180,7 +215,7 @@ license. Exact evidence is `qa/FIGSHARE_PUBLICATION_BLOCKER_S123.json`.
 ## Next version
 
 At the next substantial admitted Volume II boundary, create exactly one new
-version from record `22086976`. Upload only the reader-first PDF, one compact
+version from record `22088384`. Upload only the reader-first PDF, one compact
 resumable source/backend package, and checksum witness; publish and then
 anonymously read every public asset back. Preserve the concept DOI, metadata
 license `dsl`, component-license distinction, exact cumulative coverage, and
