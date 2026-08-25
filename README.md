@@ -4,72 +4,82 @@ Adaptasi Bahasa Indonesia dari dua jilid pengantar *Measure Theory* karya
 D. H. Fremlin:
 
 - Jilid 1, *The Irreducible Minimum* — lengkap, 102 halaman resmi;
-- Jilid 2, *Broad Foundations* — Bab 22 lengkap, halaman resmi 55–95;
-- Bab 21 belum termasuk dan tidak dinyatakan selesai.
+- Jilid 2, *Broad Foundations* — bagian awal dan Bab 21–23 lengkap, halaman
+  resmi 1–137.
 
 Korpus terpilih berjumlah 672 halaman resmi. Jilid 3–5 dan buku pembanding
-tidak digabungkan ke dalam korpus ini. Checkpoint `0.13.0-v2-ch22` mencakup
-143/672 halaman resmi: seluruh Jilid 1 ditambah 41 halaman unik Bab 22.
+tidak digabungkan ke dalam korpus ini. Checkpoint
+`0.15.0-v2-through-ch23` mencakup 239/672 halaman resmi: seluruh Jilid 1 dan
+137 halaman pertama Jilid 2 secara berurutan. Bab 24 dan sesudahnya belum
+termasuk dan tidak dinyatakan selesai.
 
 ## Mulai membaca
 
 PDF kumulatif adalah berkas utama:
 
-- PDF: `output/pdf/fondasi-teori-ukuran-jilid-1-dan-jilid-2-bab-22-id.pdf`
-- pembaca HTML luring: `output/fondasi-teori-ukuran-v1-ch22-id/html/index.html`
+- PDF: `output/pdf/fondasi-teori-ukuran-jilid-1-dan-jilid-2-hingga-bab-23-id.pdf`
+- pembaca HTML luring:
+  `output/fondasi-teori-ukuran-v1-through-chapter23-id/html/index.html`
 - sumber Bahasa Indonesia: `source/id-ID/`
-- backend semantik: `backend/volume1-closure/`, `backend/mt22/` sampai
-  `backend/mt226/`, dan `backend/catalog-v1.8/`
-- admission checkpoint: `00_control/CP0013_CHAPTER22_ADMISSION.md`
+- backend semantik: backend unit yang sudah diterima dan
+  `backend/catalog-v1.10/`
+- admission checkpoint: `00_control/CP0015_THROUGH_CHAPTER23_ADMISSION.md`
 
-Lokasi publik menggunakan satu garis keturunan yang sama:
+Garis keturunan publik tetap tunggal:
 
-- [GitHub release v0.13.0-v2-ch22](https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.13.0-v2-ch22)
-- [Zenodo version 0.13.0-v2-ch22](https://doi.org/10.5281/zenodo.22086976)
+- [GitHub release v0.15.0-v2-through-ch23](https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.15.0-v2-through-ch23)
 - [Zenodo concept untuk seluruh riwayat versi](https://doi.org/10.5281/zenodo.22059798)
-- [Checkpoint Jilid 1 sebelumnya](https://doi.org/10.5281/zenodo.22083292)
+- [Checkpoint publik sebelumnya](https://doi.org/10.5281/zenodo.22088384)
 
 Pada aset rilis, buka PDF bernama
-`00_READ_FIRST_FONDASI_TEORI_UKURAN_V1_DAN_V2_BAB_22.pdf` terlebih dahulu.
-Paket ZIP menyertakan pembaca HTML luring, sumber editabel, backend semantik,
-otoritas, lisensi, manifes, checksum, dan bukti QA yang diperlukan untuk
-membaca atau melanjutkan produksi.
+`00_READ_FIRST_FONDASI_TEORI_UKURAN_V1_DAN_V2_HINGGA_BAB_23.pdf` terlebih
+dahulu. Paket ZIP menyertakan pembaca HTML luring, sumber editabel, backend
+semantik, otoritas, lisensi, manifes, checksum, dan bukti QA yang diperlukan
+untuk membaca atau melanjutkan produksi.
 
 ## Status terverifikasi
 
-Jilid 1 tetap lengkap: 27 unit sumber, 198 latihan/soal, 55 petunjuk sumber,
-dan 2.367 rekaman backend tervalidasi. Bab 22 menambahkan tujuh unit utuh
-(`mt22.tex` dan `mt221.tex`–`mt226.tex`), 88 latihan/soal, 20 petunjuk, dan
-4.308 rekaman backend tervalidasi. Kumulatifnya adalah 34 unit, 286
-latihan/soal, dan 75 petunjuk sumber.
+Checkpoint ini memuat 464 latihan/soal dan 103 petunjuk sumber: 198/55 dari
+Jilid 1, 80/12 dari Bab 21, 88/20 dari Bab 22, dan 98/16 dari Bab 23. Backend
+baru untuk Bab 23 beserta katalog kumulatif memuat 5.718 rekaman unik yang
+lolos skema, 47 unit katalog, dan 184 ikatan sumber daya yang dibaca ulang
+berdasarkan byte dan SHA-256. Format JSONL/CSV, ID stabil, formula, relasi,
+koreksi, hak, dan pemetaan sumber–target berputar balik secara deterministik.
 
-PDF reflow kumulatif memiliki 154 halaman A4: 110 halaman Jilid 1 yang
-dipertahankan byte-identik dan 44 halaman reflow Bab 22. Angka reflow tidak
-menggantikan akuntansi 143 halaman resmi. Seluruh 154 halaman diraster dan
-diperiksa; font tertanam, ekstraksi teks bersih, dan tidak ditemukan halaman
-kosong, kliping tepi, duplikasi, atau artefak galat.
+PDF reflow kumulatif memiliki 258 halaman A4. Seluruh halaman diraster dan
+diperiksa; awalan Jilid 1 sebanyak 110 halaman dipertahankan pixel-identik,
+sedangkan seluruh 148 halaman Jilid 2 diperiksa kembali. Font, ekstraksi teks,
+margin, dan urutan halaman lolos; tidak ditemukan halaman kosong atau
+duplikat, kliping, tumpang-tindih, glif hilang, maupun artefak galat. Jumlah
+258 halaman reflow tidak menggantikan akuntansi 239 halaman resmi.
 
-Pembaca HTML kumulatif memiliki 35 rute. Semua rute lama Jilid 1 dan tujuh
-rute Bab 22 melewati pemeriksaan statis serta replay browser desktop dan
-seluler: rumus sumber/rendered/assistive konsisten, tautan dan fragmen menutup,
-tidak ada galat konsol, dan rumus lebar dapat digulir secara lokal pada layar
-sempit. Bab 21 tetap tidak ada di katalog maupun pembaca.
+Pembaca HTML kumulatif memiliki 51 rute dan 20.204 sumber rumus MathJax.
+Seluruh rute melewati pemeriksaan statis dan replay browser desktop serta
+seluler: sumber rumus, hasil render, dan permukaan bantu tetap terikat; tautan
+dan fragmen menutup; tidak ada galat konsol, aset hilang, ID ganda, atau
+overflow selebar dokumen. Rumus lebar dapat digulir secara lokal pada layar
+sempit. HTML bersifat reflow dan mengisi lebar baca yang nyaman, bukan kolom
+sempit yang terlepas dari pusat halaman.
 
 Sasaran dua jilid masih aktif. Checkpoint ini bukan edisi lengkap 672 halaman;
-produksi berikutnya mengintegrasikan Bab 21 melalui pemeriksaan pemilik lalu
-melanjutkan urutan sumber Jilid 2.
+produksi berikutnya melanjutkan Bab 24 dari `mt24.tex` dan `mt241.tex` dalam
+urutan sumber.
 
 ## Reproduksi
 
-Prasyarat lokal: Python 3, TeX/AMS-TeX, `dvipdfmx`, Ghostscript, Poppler, dan
-dependensi Python terbuka yang dipakai validator. Dari akar repositori:
+Prasyarat lokal: Python 3, TeX/AMS-TeX, `dvipdfmx`, Ghostscript, Poppler,
+Chromium/Playwright, dan dependensi Python terbuka yang dipakai validator. Dari
+akar repositori:
 
 ```text
-python backend/validate_volume1_chapter22_checkpoint.py
-python scripts/build_volume1_chapter22.py
-python scripts/qa_volume1_chapter22_pdf.py
-python scripts/render_volume1_chapter22_html.py
-python scripts/package_volume1_chapter22_release.py
+python backend/generate_through_chapter23_checkpoint.py --check
+python backend/validate_through_chapter23_checkpoint.py --receipt backend/chapter23-backend-validation.json
+python scripts/build_volume1_through_chapter23.py
+python scripts/qa_volume1_through_chapter23_pdf.py --finalize-visual-inspection-pass
+python scripts/render_volume1_through_chapter23_html.py --write
+python scripts/qa_volume1_through_chapter23_html.py
+python scripts/admit_volume1_through_chapter23.py
+python scripts/package_volume1_through_chapter23_release.py
 ```
 
 Identitas build, pembaca, paket, dan publikasi tersimpan di `qa/`. Kontrol

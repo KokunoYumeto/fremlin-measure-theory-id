@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Teorema-teorema kerapatan Lebesgue — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        BbbQ: '\\mathbb{Q}', BbbR: '\\mathbb{R}',
+        eightBbb: ['\\mathbb{#1}', 1],
+        DiniD: '\\overline{D}', Dinid: '\\underline{D}',
+        Var: '\\operatorname{Var}',
+        bumpeq: '=_{\\mathrm{approx}}',
+        intstar: '\\operatorname{int}^{*}',
+        family: ['\\langle #3\\rangle_{#1\\in #2}', 3],
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        displaycause: ['\\text{(#1)}', 1],
+        bigcupop: '\\bigcup', biggerint: '\\int',
+        eae: '=_{\\mathrm{a.e.}}', leae: '\\le_{\\mathrm{a.e.}}', geae: '\\ge_{\\mathrm{a.e.}}',
+        restr: '\\mathord{\\upharpoonright}', restrp: '\\mathord{\\upharpoonright}',
+        Real: '\\operatorname{Re}', Imag: '\\operatorname{Im}',
+        tbf: ['\\mathbf{#1}', 1], eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Qed: '\\square',
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        roibr: '\\mathopen{{[}}',
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1]
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 2 · Bagian 223</p>
+  <h1>Teorema-teorema kerapatan Lebesgue</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi kumulatif</a></nav>
+<main id="isi">
+<span class="anchor" id="223"></span>
+<p>Sekarang saya beralih ke sekelompok hasil yang dapat dipandang sebagai
+korolari dari Teorema <a class="xref" href="../222/index.html#222E">222E</a>, tetapi juga berkembang pesat sebagai hasil-hasil tersendiri,
+termasuk kemungkinan generalisasi penting yang akan dibahas dalam Bab 26.
+Gagasannya ialah bahwa setiap fungsi terukur <span class="math inline" data-source-tex="f">\(f\)</span> pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> bersifat
+‘kontinu’ hampir di mana-mana dalam berbagai pengertian yang sangat lemah;
+untuk hampir setiap <span class="math inline" data-source-tex="x">\(x\)</span>, nilai <span class="math inline" data-source-tex="f(x)">\(f(x)\)</span> ditentukan oleh perilaku <span class="math inline" data-source-tex="f">\(f\)</span> di dekat
+<span class="math inline" data-source-tex="x">\(x\)</span>, dalam arti bahwa <span class="math inline" data-source-tex="f(y)\bumpeq f(x)">\(f(y)\bumpeq f(x)\)</span> untuk ‘sebagian besar’ <span class="math inline" data-source-tex="y">\(y\)</span> di dekat
+<span class="math inline" data-source-tex="x">\(x\)</span>. Mungkin perlu saya katakan bahwa, walaupun saya menyarankan bagian ini
+sebagai persiapan untuk Bab 26 dan juga mengandalkannya dalam Bab 28, saya
+tidak akan merujuknya lagi dalam bab ini. Karena itu, pembaca yang ingin
+segera mencirikan integral tak tentu dapat langsung menuju §<a class="xref" href="../224/index.html#224">224</a>.</p>
+<section class="source-unit" id="223A" data-source-id="223A"><h2><span class="source-label">223A</span> Teorema Kerapatan Lebesgue: bentuk integral </h2>
+<p>Misalkan <span class="math inline" data-source-tex="I">\(I\)</span>
+suatu interval dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real yang
+terintegralkan pada <span class="math inline" data-source-tex="I">\(I\)</span>. Maka</p>
+<p><span class="math display" data-source-tex="\eqalign{f(x)
+&amp;=\lim_{h\downarrow 0}\Bover1{h}\int_{x}^{x+h}f
+=\lim_{h\downarrow 0}\Bover1h\int_{x-h}^xf
+=\lim_{h\downarrow 0}\Bover1{2h}\int_{x-h}^{x+h}f\cr}">\[\begin{aligned}f(x)
+&amp;=\lim_{h\downarrow 0}\Bover1{h}\int_{x}^{x+h}f
+=\lim_{h\downarrow 0}\Bover1h\int_{x-h}^xf
+=\lim_{h\downarrow 0}\Bover1{2h}\int_{x-h}^{x+h}f\\\end{aligned}\]</span></p>
+<p>untuk hampir setiap <span class="math inline" data-source-tex="x\in I">\(x\in I\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Tetapkan <span class="math inline" data-source-tex="F(x)=\int_{I\cap\ooint{-\infty,x}}f">\(F(x)=\int_{I\cap\ooint{-\infty,x}}f\)</span>. Dari <a class="xref" href="../222/index.html#222G">222G</a> kita
+mengetahui bahwa</p>
+<p><span class="math display" data-source-tex="\eqalign{f(x)=F&#x27;(x)
+&amp;=\lim_{h\downarrow 0}\Bover1{h}(F(x+h)-F(x))
+   =\lim_{h\downarrow 0}\Bover1{h}\int_{x}^{x+h}f\cr
+&amp;=\lim_{h\downarrow 0}\Bover1h(F(x)-F(x-h))
+   =\lim_{h\downarrow 0}\Bover1h\int_{x-h}^xf\cr
+&amp;=\lim_{h\downarrow 0}\Bover1{2h}(F(x+h)-F(x-h))
+   =\lim_{h\downarrow 0}\Bover1{2h}\int_{x-h}^{x+h}f\cr}">\[\begin{aligned}f(x)=F&#x27;(x)
+&amp;=\lim_{h\downarrow 0}\Bover1{h}(F(x+h)-F(x))
+   =\lim_{h\downarrow 0}\Bover1{h}\int_{x}^{x+h}f\\
+&amp;=\lim_{h\downarrow 0}\Bover1h(F(x)-F(x-h))
+   =\lim_{h\downarrow 0}\Bover1h\int_{x-h}^xf\\
+&amp;=\lim_{h\downarrow 0}\Bover1{2h}(F(x+h)-F(x-h))
+   =\lim_{h\downarrow 0}\Bover1{2h}\int_{x-h}^{x+h}f\\\end{aligned}\]</span></p>
+<p>untuk hampir setiap <span class="math inline" data-source-tex="x\in I">\(x\in I\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="223B" data-source-id="223B"><h2><span class="source-label">223B</span> Korolari </h2>
+<p>Misalkan <span class="math inline" data-source-tex="E\subseteq\Bbb R">\(E\subseteq\Bbb R\)</span> suatu himpunan terukur.
+Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{h\downarrow 0}\Bover1{2h}\mu(E\cap[x-h,x+h])=1">\(\lim_{h\downarrow 0}\Bover1{2h}\mu(E\cap[x-h,x+h])=1\)</span>
+untuk hampir setiap <span class="math inline" data-source-tex="x\in E">\(x\in E\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{h\downarrow 0}\Bover1{2h}\mu(E\cap[x-h,x+h])=0">\(\lim_{h\downarrow 0}\Bover1{2h}\mu(E\cap[x-h,x+h])=0\)</span>
+untuk hampir setiap <span class="math inline" data-source-tex="x\in \Bbb R\setminus E">\(x\in \Bbb R\setminus E\)</span>.</div>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Ambil <span class="math inline" data-source-tex="n\in \Bbb N">\(n\in \Bbb N\)</span>. Dengan menerapkan <a class="xref" href="#223A">223A</a> pada
+<span class="math inline" data-source-tex="f=\chi(E\cap[-n,n])">\(f=\chi(E\cap[-n,n])\)</span>, kita melihat bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{h\downarrow 0}\Bover1{2h}\int_{x-h}^{x+h}f
+=\lim_{h\downarrow 0}\Bover1{2h}\mu(E\cap[x-h,x+h])">\(\lim_{h\downarrow 0}\Bover1{2h}\int_{x-h}^{x+h}f
+=\lim_{h\downarrow 0}\Bover1{2h}\mu(E\cap[x-h,x+h])\)</span></div>
+<p>kapan pun <span class="math inline" data-source-tex="x\in\ooint{-n,n}">\(x\in\ooint{-n,n}\)</span> dan salah satu limit tersebut ada,
+sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{h\downarrow 0}\Bover1{2h}\mu(E\cap[x-h,x+h])=1">\(\lim_{h\downarrow 0}\Bover1{2h}\mu(E\cap[x-h,x+h])=1\)</span>
+untuk hampir setiap <span class="math inline" data-source-tex="x\in E\cap[-n,n]">\(x\in E\cap[-n,n]\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{h\downarrow 0}\Bover1{2h}\mu(E\cap[x-h,x+h])=0">\(\lim_{h\downarrow 0}\Bover1{2h}\mu(E\cap[x-h,x+h])=0\)</span>
+untuk hampir setiap <span class="math inline" data-source-tex="x\in [-n,n]\setminus E">\(x\in [-n,n]\setminus E\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="n">\(n\)</span> sebarang, hasilnya terbukti.</p></aside>
+<p> </p>
+<p><strong>Catatan</strong> Untuk suatu himpunan terukur <span class="math inline" data-source-tex="E\subseteq\Bbb R">\(E\subseteq\Bbb R\)</span>,
+suatu titik <span class="math inline" data-source-tex="x">\(x\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\lim_{h\downarrow 0}\Bover1{2h}\mu(E\cap[x-h,x+h])=1">\(\lim_{h\downarrow 0}\Bover1{2h}\mu(E\cap[x-h,x+h])=1\)</span> kadang-kadang
+disebut suatu <strong>titik kerapatan</strong> dari <span class="math inline" data-source-tex="E">\(E\)</span>.</p>
+</section>
+<section class="source-unit" id="223C" data-source-id="223C"><h2><span class="source-label">223C</span> Korolari </h2>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real terukur yang
+didefinisikan hampir di mana-mana dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Maka, untuk hampir setiap
+<span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{h\downarrow 0}\Bover1{2h}\mu\{y:y\in\dom f,\,|y-x|\le
+h,\,|f(y)-f(x)|\le\epsilon\}=1">\(\lim_{h\downarrow 0}\Bover1{2h}\mu\{y:y\in\dom f,\,|y-x|\le
+h,\,|f(y)-f(x)|\le\epsilon\}=1\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{h\downarrow 0}\Bover1{2h}\mu\{y:y\in\dom f,\,|y-x|\le
+h,\,|f(y)-f(x)|\ge\epsilon\}=0">\(\lim_{h\downarrow 0}\Bover1{2h}\mu\{y:y\in\dom f,\,|y-x|\le
+h,\,|f(y)-f(x)|\ge\epsilon\}=0\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Untuk <span class="math inline" data-source-tex="q">\(q\)</span>, <span class="math inline" data-source-tex="q&#x27;\in\Bbb Q">\(q&#x27;\in\Bbb Q\)</span>, tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="D_{qq&#x27;}=\{x:x\in\dom f,\,q\le f(x)&lt;q&#x27;\}">\(D_{qq&#x27;}=\{x:x\in\dom f,\,q\le f(x)&lt;q&#x27;\}\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="D_{qq&#x27;}">\(D_{qq&#x27;}\)</span> terukur, dan tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="C_{qq&#x27;}=\{x:x\in D_{qq&#x27;},\,\lim_{h\downarrow 0}
+\Bover1{2h}\mu(D_{qq&#x27;}\cap [x-h,x+h])=1\}">\(C_{qq&#x27;}=\{x:x\in D_{qq&#x27;},\,\lim_{h\downarrow 0}
+\Bover1{2h}\mu(D_{qq&#x27;}\cap [x-h,x+h])=1\}\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="D_{qq&#x27;}\setminus C_{qq&#x27;}">\(D_{qq&#x27;}\setminus C_{qq&#x27;}\)</span> terabaikan, menurut <a class="xref" href="#223B">223B</a>;
+sekarang tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="C=\dom f\setminus\bigcup_{q,q&#x27;\in\Bbb Q}(D_{qq&#x27;}\setminus
+C_{qq&#x27;})">\(C=\dom f\setminus\bigcup_{q,q&#x27;\in\Bbb Q}(D_{qq&#x27;}\setminus
+C_{qq&#x27;})\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="C">\(C\)</span> koterabaikan. Jika <span class="math inline" data-source-tex="x\in C">\(x\in C\)</span> dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, maka
+terdapat <span class="math inline" data-source-tex="q">\(q\)</span>, <span class="math inline" data-source-tex="q&#x27;\in \Bbb Q">\(q&#x27;\in \Bbb Q\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="f(x)-\epsilon\le q\le f(x)&lt;q&#x27;\le f(x)+\epsilon">\(f(x)-\epsilon\le q\le f(x)&lt;q&#x27;\le f(x)+\epsilon\)</span>. Jadi <span class="math inline" data-source-tex="x">\(x\)</span> termasuk dalam
+<span class="math inline" data-source-tex="D_{qq&#x27;}">\(D_{qq&#x27;}\)</span> dan karena itu dalam <span class="math inline" data-source-tex="C_{qq&#x27;}">\(C_{qq&#x27;}\)</span>, dan sekarang</p>
+<p><span class="math display" data-source-tex="\eqalign{\liminf_{h\downarrow 0}\Bover1{2h}
+&amp;\mu\{y:y\in \dom f\cap [x-h,x+h],\,|f(y)-f(x)|\le\epsilon\}\cr
+&amp;\ge\liminf_{h\downarrow 0}
+\Bover1{2h}\mu(D_{qq&#x27;}\cap [x-h,x+h])
+=1,\cr}">\[\begin{aligned}\liminf_{h\downarrow 0}\Bover1{2h}
+&amp;\mu\{y:y\in \dom f\cap [x-h,x+h],\,|f(y)-f(x)|\le\epsilon\}\\
+&amp;\ge\liminf_{h\downarrow 0}
+\Bover1{2h}\mu(D_{qq&#x27;}\cap [x-h,x+h])
+=1,\\\end{aligned}\]</span></p>
+<p>sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{h\downarrow 0}
+\Bover1{2h}\mu\{y:y\in \dom f\cap [x-h,x+h],\,|f(y)-f(x)|\le\epsilon\}
+=1">\(\lim_{h\downarrow 0}
+\Bover1{2h}\mu\{y:y\in \dom f\cap [x-h,x+h],\,|f(y)-f(x)|\le\epsilon\}
+=1\)</span>.</div>
+<p>Dengan segera diperoleh bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{h\downarrow 0}
+\Bover1{2h}\mu\{y:y\in \dom f\cap [x-h,x+h],\,|f(y)-f(x)|&gt;\epsilon\}
+=0">\(\lim_{h\downarrow 0}
+\Bover1{2h}\mu\{y:y\in \dom f\cap [x-h,x+h],\,|f(y)-f(x)|&gt;\epsilon\}
+=0\)</span></div>
+<p>untuk hampir setiap <span class="math inline" data-source-tex="x">\(x\)</span>; tetapi karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang, hal ini
+juga benar untuk <span class="math inline" data-source-tex="\bover12\epsilon">\(\bover12\epsilon\)</span>, sehingga sebenarnya</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{h\downarrow 0}
+\Bover1{2h}\mu\{y:y\in \dom f\cap [x-h,x+h],\,|f(y)-f(x)|\ge\epsilon\}
+=0">\(\lim_{h\downarrow 0}
+\Bover1{2h}\mu\{y:y\in \dom f\cap [x-h,x+h],\,|f(y)-f(x)|\ge\epsilon\}
+=0\)</span></div>
+<p>untuk hampir setiap <span class="math inline" data-source-tex="x">\(x\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="223D" data-source-id="223D"><h2><span class="source-label">223D</span> Teorema </h2>
+<p>Misalkan <span class="math inline" data-source-tex="I">\(I\)</span> suatu interval dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan <span class="math inline" data-source-tex="f">\(f\)</span>
+suatu fungsi bernilai real yang terintegralkan pada <span class="math inline" data-source-tex="I">\(I\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{h\downarrow 0}\Bover1{2h}
+\int_{x-h}^{x+h}|f(y)-f(x)|dy=0">\(\lim_{h\downarrow 0}\Bover1{2h}
+\int_{x-h}^{x+h}|f(y)-f(x)|dy=0\)</span></div>
+<p>untuk hampir setiap <span class="math inline" data-source-tex="x\in I">\(x\in I\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Mula-mula andaikan bahwa <span class="math inline" data-source-tex="I">\(I\)</span> suatu interval terbuka
+terbatas <span class="math inline" data-source-tex="\ooint{a,b}">\(\ooint{a,b}\)</span>. Untuk setiap <span class="math inline" data-source-tex="q\in\Bbb Q">\(q\in\Bbb Q\)</span>, tetapkan
+<span class="math inline" data-source-tex="g_q(x)=|f(x)-q|">\(g_q(x)=|f(x)-q|\)</span> untuk <span class="math inline" data-source-tex="x\in I\cap\dom f">\(x\in I\cap\dom f\)</span>; maka <span class="math inline" data-source-tex="g_q">\(g_q\)</span> terintegralkan pada
+<span class="math inline" data-source-tex="I">\(I\)</span>, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{h\downarrow 0}\Bover1{2h}
+\int_{x-h}^{x+h}g_q=g_q(x)">\(\lim_{h\downarrow 0}\Bover1{2h}
+\int_{x-h}^{x+h}g_q=g_q(x)\)</span></div>
+<p>untuk hampir setiap <span class="math inline" data-source-tex="x\in I">\(x\in I\)</span>, menurut <a class="xref" href="#223A">223A</a>. Dengan menetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="E_q=\{x:x\in I\cap\dom f,\,\lim_{h\downarrow 0}
+\Bover1{2h}\int_{x-h}^{x+h}g_q=g_q(x)\}">\(E_q=\{x:x\in I\cap\dom f,\,\lim_{h\downarrow 0}
+\Bover1{2h}\int_{x-h}^{x+h}g_q=g_q(x)\}\)</span>,</div>
+<p>kita memperoleh bahwa <span class="math inline" data-source-tex="I\setminus E_q">\(I\setminus E_q\)</span> terabaikan, sehingga
+<span class="math inline" data-source-tex="I\setminus E">\(I\setminus E\)</span> terabaikan, dengan <span class="math inline" data-source-tex="E=\bigcap_{q\in\Bbb Q}E_q">\(E=\bigcap_{q\in\Bbb Q}E_q\)</span>. Sekarang</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{h\downarrow 0}\Bover1{2h}
+\int_{x-h}^{x+h}|f(y)-f(x)|dy=0">\(\lim_{h\downarrow 0}\Bover1{2h}
+\int_{x-h}^{x+h}|f(y)-f(x)|dy=0\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="x\in E">\(x\in E\)</span>. Bukti. Ambil <span class="math inline" data-source-tex="x\in E">\(x\in E\)</span> dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>.
+Maka terdapat <span class="math inline" data-source-tex="q\in\Bbb Q">\(q\in\Bbb Q\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="|f(x)-q|\le\epsilon">\(|f(x)-q|\le\epsilon\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="|f(y)-f(x)|\le|f(y)-q|+\epsilon=g_q(y)+\epsilon">\(|f(y)-f(x)|\le|f(y)-q|+\epsilon=g_q(y)+\epsilon\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="y\in I\cap\dom f">\(y\in I\cap\dom f\)</span>, dan</p>
+<p><span class="math display" data-source-tex="\eqalign{\limsup_{h\downarrow 0}\Bover1{2h}
+\int_{x-h}^{x+h}|f(y)-f(x)|dy
+&amp;\le\limsup_{h\downarrow 0}\Bover1{2h}
+\int_{x-h}^{x+h}g_q(y)+\epsilon\,dy\cr
+&amp;=\epsilon+g_q(x)
+\le 2\epsilon.\cr}">\[\begin{aligned}\limsup_{h\downarrow 0}\Bover1{2h}
+\int_{x-h}^{x+h}|f(y)-f(x)|dy
+&amp;\le\limsup_{h\downarrow 0}\Bover1{2h}
+\int_{x-h}^{x+h}g_q(y)+\epsilon\,dy\\
+&amp;=\epsilon+g_q(x)
+\le 2\epsilon.\\\end{aligned}\]</span></p>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{h\downarrow 0}\Bover1{2h}
+\int_{x-h}^{x+h}|f(y)-f(x)|dy=0">\(\lim_{h\downarrow 0}\Bover1{2h}
+\int_{x-h}^{x+h}|f(y)-f(x)|dy=0\)</span>,</div>
+<p>sebagaimana diperlukan. ∎</p>
+<p> </p>
+<p><strong>(b)</strong> Jika <span class="math inline" data-source-tex="I">\(I\)</span> suatu interval terbuka tak terbatas, terapkan (a) pada
+interval-interval <span class="math inline" data-source-tex="I_n=I\cap\ooint{-n,n}">\(I_n=I\cap\ooint{-n,n}\)</span> untuk melihat bahwa limit tersebut
+nol hampir di mana-mana dalam setiap <span class="math inline" data-source-tex="I_n">\(I_n\)</span>, dan karena itu pada <span class="math inline" data-source-tex="I">\(I\)</span>. Jika <span class="math inline" data-source-tex="I">\(I\)</span>
+suatu interval sebarang, perhatikan bahwa interval itu berbeda dari suatu
+interval terbuka pada paling banyak dua titik. Karena kita hanya mencari sifat
+yang berlaku hampir di mana-mana, titik-titik ini dapat diabaikan.</p></aside>
+<p> </p>
+<p><strong>Catatan</strong> Himpunan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:x\in\dom f,\,\lim_{h\downarrow 0}\Bover1{2h}
+\int_{x-h}^{x+h}|f(y)-f(x)|dy=0\}">\(\{x:x\in\dom f,\,\lim_{h\downarrow 0}\Bover1{2h}
+\int_{x-h}^{x+h}|f(y)-f(x)|dy=0\}\)</span></div>
+<p>kadang-kadang disebut <strong>himpunan Lebesgue</strong> dari <span class="math inline" data-source-tex="f">\(f\)</span>.</p>
+</section>
+<section class="source-unit" id="223E" data-source-id="223E"><h2><span class="source-label">223E</span> Fungsi bernilai kompleks </h2>
+<p>Hasil-hasil di atas telah
+saya nyatakan dalam bahasa fungsi bernilai real, karena itulah wahana yang
+paling alami bagi gagasan-gagasannya. Namun terdapat penerapan yang sangat
+penting dengan fungsi-fungsi bernilai kompleks, jadi saya tuliskan secara
+eksplisit pernyataan-pernyataan yang bersangkutan di sini. Dalam setiap kasus,
+buktinya elementer: cukup menerapkan hasil yang bersesuaian (<a class="xref" href="#223A">223A</a>, <a class="xref" href="#223C">223C</a>, atau
+<a class="xref" href="#223D">223D</a>) pada bagian real dan bagian imajiner fungsi <span class="math inline" data-source-tex="f">\(f\)</span>.</p>
+</section>
+<section class="source-unit" id="223Ea" data-source-id="223Ea"><h3><span class="source-label">223Ea</span> <strong>(a)</strong> </h3>
+<p>Misalkan <span class="math inline" data-source-tex="I">\(I\)</span> suatu interval dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan <span class="math inline" data-source-tex="f">\(f\)</span>
+suatu fungsi bernilai kompleks yang terintegralkan pada <span class="math inline" data-source-tex="I">\(I\)</span>. Maka</p>
+<p><span class="math display" data-source-tex="\eqalign{f(x)
+=\lim_{h\downarrow 0}\Bover1{h}\int_{x}^{x+h}f
+=\lim_{h\downarrow 0}\Bover1h\int_{x-h}^xf
+=\lim_{h\downarrow 0}\Bover1{2h}\int_{x-h}^{x+h}f\cr}">\[\begin{aligned}f(x)
+=\lim_{h\downarrow 0}\Bover1{h}\int_{x}^{x+h}f
+=\lim_{h\downarrow 0}\Bover1h\int_{x-h}^xf
+=\lim_{h\downarrow 0}\Bover1{2h}\int_{x-h}^{x+h}f\\\end{aligned}\]</span></p>
+<p>untuk hampir setiap <span class="math inline" data-source-tex="x\in I">\(x\in I\)</span>.</p>
+</section>
+<section class="source-unit" id="223Eb" data-source-id="223Eb"><h3><span class="source-label">223Eb</span> <strong>(b)</strong> </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai kompleks terukur
+yang didefinisikan hampir di mana-mana dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Maka, untuk hampir
+setiap <span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{h\downarrow 0}\Bover1{2h}\mu\{y:y\in\dom f,\,|y-x|\le
+h,\,|f(y)-f(x)|\ge\epsilon\}=0">\(\lim_{h\downarrow 0}\Bover1{2h}\mu\{y:y\in\dom f,\,|y-x|\le
+h,\,|f(y)-f(x)|\ge\epsilon\}=0\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>.</p>
+</section>
+<section class="source-unit" id="223Ec" data-source-id="223Ec"><h3><span class="source-label">223Ec</span> <strong>(c)</strong> </h3>
+<p>Misalkan <span class="math inline" data-source-tex="I">\(I\)</span> suatu interval dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan <span class="math inline" data-source-tex="f">\(f\)</span>
+suatu fungsi bernilai kompleks yang terintegralkan pada <span class="math inline" data-source-tex="I">\(I\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{h\downarrow 0}\Bover1{2h}
+\int_{x-h}^{x+h}|f(y)-f(x)|dy=0">\(\lim_{h\downarrow 0}\Bover1{2h}
+\int_{x-h}^{x+h}|f(y)-f(x)|dy=0\)</span></div>
+<p>untuk hampir setiap <span class="math inline" data-source-tex="x\in I">\(x\in I\)</span>.</p>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="223X" data-source-id="223X"><span class="anchor" id="223Xa"></span><h2><span class="source-label">223X</span> Latihan dasar <span class="math inline" data-source-tex="\pmb{&gt;}">\(\pmb{&gt;}\)</span>(a) <span class="importance" title="Sangat penting">penting</span></h2>
+<p>Misalkan <span class="math inline" data-source-tex="E\subseteq[0,1]">\(E\subseteq[0,1]\)</span> suatu
+himpunan terukur sedemikian sehingga terdapat <span class="math inline" data-source-tex="\alpha&gt;0">\(\alpha&gt;0\)</span> dengan
+<span class="math inline" data-source-tex="\mu(E\cap[a,b])\ge\alpha(b-a)">\(\mu(E\cap[a,b])\ge\alpha(b-a)\)</span> kapan pun <span class="math inline" data-source-tex="0\le a\le b\le 1">\(0\le a\le b\le 1\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="\mu E=1">\(\mu E=1\)</span>.</p>
+</section>
+<section class="source-unit" id="223Xb" data-source-id="223Xb"><h3><span class="source-label">223Xb</span> (b) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="A\subseteq\Bbb R">\(A\subseteq\Bbb R\)</span> sembarang himpunan. Tunjukkan
+bahwa <span class="math inline" data-source-tex="\lim_{h\downarrow 0}\Bover1{2h}\mu^*(A\cap[x-h,x+h])=1">\(\lim_{h\downarrow 0}\Bover1{2h}\mu^*(A\cap[x-h,x+h])=1\)</span> untuk
+hampir setiap <span class="math inline" data-source-tex="x\in A">\(x\in A\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> terapkan <a class="xref" href="#223B">223B</a> pada suatu selubung terukur
+<span class="math inline" data-source-tex="E">\(E\)</span> dari <span class="math inline" data-source-tex="A">\(A\)</span>.</span></p>
+</section>
+<section class="source-unit" id="223Xc" data-source-id="223Xc"><h3><span class="source-label">223Xc</span> (c) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="F\subseteq\Bbb R">\(F\subseteq\Bbb R\)</span> himpunan-himpunan terukur,
+dan misalkan <span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span> merupakan titik kerapatan dari keduanya.
+Tunjukkan bahwa <span class="math inline" data-source-tex="x">\(x\)</span> merupakan titik kerapatan dari <span class="math inline" data-source-tex="E\cap F">\(E\cap F\)</span>.</p>
+</section>
+<section class="source-unit" id="223Xd" data-source-id="223Xd"><h3><span class="source-label">223Xd</span> (d) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="E\subseteq\Bbb R">\(E\subseteq\Bbb R\)</span> suatu himpunan terukur tak
+terabaikan. Tunjukkan bahwa untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> terdapat
+<span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\bigcap_{i\le n}E+x_i">\(\bigcap_{i\le n}E+x_i\)</span> tak kosong kapan pun
+<span class="math inline" data-source-tex="x_0,\ldots,x_n\in\Bbb R">\(x_0,\ldots,x_n\in\Bbb R\)</span> memenuhi <span class="math inline" data-source-tex="|x_i-x_j|\le\delta">\(|x_i-x_j|\le\delta\)</span> untuk semua <span class="math inline" data-source-tex="i">\(i\)</span>,
+<span class="math inline" data-source-tex="j\le n">\(j\le n\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> carilah suatu interval tak-sepele <span class="math inline" data-source-tex="I">\(I\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu(E\cap I)&gt;\bover{n}{n+1}\mu I">\(\mu(E\cap I)&gt;\bover{n}{n+1}\mu I\)</span>.</span></p>
+</section>
+<section class="source-unit" id="223Xe" data-source-id="223Xe"><h3><span class="source-label">223Xe</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> sembarang fungsi bernilai real yang didefinisikan
+hampir di mana-mana dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\lim_{h\downarrow
+0}\Bover1{2h}\mu^*\{y:y\in\dom f,\,|y-x|\le
+h,\,|f(y)-f(x)|\le\epsilon\}=1">\(\lim_{h\downarrow
+0}\Bover1{2h}\mu^*\{y:y\in\dom f,\,|y-x|\le
+h,\,|f(y)-f(x)|\le\epsilon\}=1\)</span> untuk hampir setiap <span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> gunakan argumen <a class="xref" href="#223C">223C</a>, tetapi dengan <a class="xref" href="#223Xb">223Xb</a> sebagai pengganti <a class="xref" href="#223B">223B</a>.</span></p>
+</section>
+<section class="source-unit" id="223Xf" data-source-id="223Xf"><h3><span class="source-label">223Xf</span> (&gt;f) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="I">\(I\)</span> suatu interval dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan <span class="math inline" data-source-tex="f">\(f\)</span>
+suatu fungsi bernilai real yang terintegralkan pada <span class="math inline" data-source-tex="I">\(I\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\lim_{h\downarrow 0}\bover1{h}
+\int_{x}^{x+h}|f(y)-f(x)|dy=0">\(\lim_{h\downarrow 0}\bover1{h}
+\int_{x}^{x+h}|f(y)-f(x)|dy=0\)</span> untuk hampir setiap <span class="math inline" data-source-tex="x\in I">\(x\in I\)</span>.</p>
+</section>
+<section class="source-unit" id="223Xg" data-source-id="223Xg"><h3><span class="source-label">223Xg</span> (g) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="F\subseteq\Bbb R">\(F\subseteq\Bbb R\)</span> himpunan-himpunan terukur,
+dan andaikan bahwa <span class="math inline" data-source-tex="F">\(F\)</span> terbatas serta berukuran tak nol. Misalkan
+<span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\lim_{h\downarrow 0}\Bover1{2h}\mu(E\cap[x-h,x+h])=1">\(\lim_{h\downarrow 0}\Bover1{2h}\mu(E\cap[x-h,x+h])=1\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\lim_{h\downarrow 0}\Bover{\mu(E\cap(x+hF))}{h\,\mu F}=1">\(\lim_{h\downarrow 0}\Bover{\mu(E\cap(x+hF))}{h\,\mu F}=1\)</span>.
+(<em>Petunjuk:\/</em> berguna untuk mengetahui bahwa <span class="math inline" data-source-tex="\mu(hF)=h\mu F">\(\mu(hF)=h\mu F\)</span>
+(<a class="xref" href="../134/index.html#134Ya">134Ya</a>, 263A). Tunjukkan bahwa jika <span class="math inline" data-source-tex="F\subseteq[-M,M]">\(F\subseteq[-M,M]\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Bover1{2hM}\mu(E\cap[x-hM,x+hM])
+\le 1-\Bover{\mu F}{2M}
+  \bigl(1-\Bover{\mu(E\cap(x+hF))}{h\,\mu F}\bigr)">\(\Bover1{2hM}\mu(E\cap[x-hM,x+hM])
+\le 1-\Bover{\mu F}{2M}
+  \bigl(1-\Bover{\mu(E\cap(x+hF))}{h\,\mu F}\bigr)\)</span>.)</div>
+<p>(Bandingkan <a class="xref" href="#223Ya">223Ya</a>.)</p>
+</section>
+<section class="source-unit" id="223Xh" data-source-id="223Xh"><h3><span class="source-label">223Xh</span> (h) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real yang terintegralkan
+pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan <span class="math inline" data-source-tex="E">\(E\)</span> himpunan Lebesgue dari <span class="math inline" data-source-tex="f">\(f\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\lim_{h\downarrow 0}\bover1{2h}\int_{x-h}^{x+h}|f(t)-c|dt=|f(x)-c|">\(\lim_{h\downarrow 0}\bover1{2h}\int_{x-h}^{x+h}|f(t)-c|dt=|f(x)-c|\)</span>
+untuk setiap <span class="math inline" data-source-tex="x\in E">\(x\in E\)</span> dan <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>.</p>
+</section>
+<section class="source-unit" id="223Xi" data-source-id="223Xi"><h3><span class="source-label">223Xi</span> (i) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real terintegralkan yang
+didefinisikan hampir di mana-mana dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Misalkan <span class="math inline" data-source-tex="x\in\dom f">\(x\in\dom f\)</span>
+sedemikian sehingga
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\Bover{n}2\int^{x+1/n}_{x-1/n}|f(y)-f(x)|=0">\(\lim_{n\to\infty}\Bover{n}2\int^{x+1/n}_{x-1/n}|f(y)-f(x)|=0\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="x">\(x\)</span> termasuk dalam himpunan Lebesgue dari <span class="math inline" data-source-tex="f">\(f\)</span>.</p>
+</section>
+<section class="source-unit" id="223Xj" data-source-id="223Xj"><h3><span class="source-label">223Xj</span> (j) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real terintegralkan yang
+didefinisikan hampir di mana-mana dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan <span class="math inline" data-source-tex="x">\(x\)</span> sembarang titik
+dari himpunan Lebesgue dari <span class="math inline" data-source-tex="f">\(f\)</span>. Tunjukkan bahwa untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>
+terdapat <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga, kapan pun <span class="math inline" data-source-tex="I">\(I\)</span> suatu interval
+tak-sepele dan <span class="math inline" data-source-tex="x\in I\subseteq[x-\delta,x+\delta]">\(x\in I\subseteq[x-\delta,x+\delta]\)</span>, berlaku
+<span class="math inline" data-source-tex="|f(x)-\Bover1{\mu I}\int_If|\le\epsilon">\(|f(x)-\Bover1{\mu I}\int_If|\le\epsilon\)</span>.</p>
+</section>
+<section class="source-unit" id="223Y" data-source-id="223Y"><span class="anchor" id="223Ya"></span><h2><span class="source-label">223Y</span> Latihan lanjutan (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="F\subseteq\Bbb R">\(F\subseteq\Bbb R\)</span>
+himpunan-himpunan terukur, dan andaikan bahwa <span class="math inline" data-source-tex="0&lt;\mu F&lt;\infty">\(0&lt;\mu F&lt;\infty\)</span>. Misalkan
+<span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\lim_{h\downarrow 0}\Bover1{2h}\mu(E\cap[x-h,x+h])=1">\(\lim_{h\downarrow 0}\Bover1{2h}\mu(E\cap[x-h,x+h])=1\)</span>. Tunjukkan bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{h\downarrow 0}\Bover{\mu(E\cap(x+hF))}{h\,\mu F}=1">\(\lim_{h\downarrow 0}\Bover{\mu(E\cap(x+hF))}{h\,\mu F}=1\)</span>.</div>
+<p><span class="hint" role="note"><strong>Petunjuk:</strong> terapkan <a class="xref" href="#223Xg">223Xg</a> pada himpunan-himpunan berbentuk
+<span class="math inline" data-source-tex="F\cap[-M,M]">\(F\cap[-M,M]\)</span>.</span></p>
+</section>
+<section class="source-unit" id="223Yb" data-source-id="223Yb"><h3><span class="source-label">223Yb</span> <strong>(b)</strong> </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> keluarga himpunan-himpunan
+terukur <span class="math inline" data-source-tex="G\subseteq\Bbb R">\(G\subseteq\Bbb R\)</span> sedemikian sehingga setiap titik dari <span class="math inline" data-source-tex="G">\(G\)</span> merupakan
+titik kerapatan dari <span class="math inline" data-source-tex="G">\(G\)</span>. (i) Tunjukkan bahwa <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> suatu topologi
+pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. (<em>Petunjuk\/</em>: ambil <span class="math inline" data-source-tex="\Cal G\subseteq\frak T">\(\Cal G\subseteq\frak T\)</span>. Menurut
+<a class="xref" href="../215/index.html#215B">215B</a>(iv), terdapat suatu <span class="math inline" data-source-tex="\Cal G_0\subseteq\Cal G">\(\Cal G_0\subseteq\Cal G\)</span> yang terhitung sedemikian
+sehingga <span class="math inline" data-source-tex="\mu(G\setminus\bigcup\Cal G_0)=0">\(\mu(G\setminus\bigcup\Cal G_0)=0\)</span> untuk setiap <span class="math inline" data-source-tex="G\in\Cal G">\(G\in\Cal G\)</span>.
+Tunjukkan bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bigcup\Cal G\subseteq\{x:\limsup_{h\downarrow 0}
+  \Bover1{2h}\mu(\bigcup\Cal G_0\cap[x-h,x+h])&gt;0\}">\(\bigcup\Cal G\subseteq\{x:\limsup_{h\downarrow 0}
+  \Bover1{2h}\mu(\bigcup\Cal G_0\cap[x-h,x+h])&gt;0\}\)</span>,</div>
+<p>sehingga
+<span class="math inline" data-source-tex="\mu(\bigcup\Cal G\setminus\bigcup\Cal G_0)=0">\(\mu(\bigcup\Cal G\setminus\bigcup\Cal G_0)=0\)</span>.) (ii) Tunjukkan bahwa
+suatu fungsi <span class="math inline" data-source-tex="f:\Bbb R\to\Bbb R">\(f:\Bbb R\to\Bbb R\)</span> terukur jika dan hanya jika fungsi itu
+<span class="math inline" data-source-tex="\frak T">\(\frak T\)</span>-kontinu pada hampir setiap <span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span>. (<span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> adalah
+<strong>topologi kerapatan</strong> pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Lihat 414P dalam Jilid 4.)</p>
+</section>
+<section class="source-unit" id="223Yc" data-source-id="223Yc"><h3><span class="source-label">223Yc</span> (c) </h3>
+<p>Tunjukkan bahwa jika <span class="math inline" data-source-tex="f:[a,b]\to\Bbb R">\(f:[a,b]\to\Bbb R\)</span> terbatas dan
+kontinu terhadap topologi kerapatan pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, maka
+<span class="math inline" data-source-tex="f(x)=\bover{d}{dx}\int_a^xf">\(f(x)=\bover{d}{dx}\int_a^xf\)</span> untuk setiap <span class="math inline" data-source-tex="x\in\ooint{a,b}">\(x\in\ooint{a,b}\)</span>.</p>
+</section>
+<section class="source-unit" id="223Yd" data-source-id="223Yd"><h3><span class="source-label">223Yd</span> (d) </h3>
+<p>Tunjukkan bahwa suatu fungsi <span class="math inline" data-source-tex="f:\Bbb R\to\Bbb R">\(f:\Bbb R\to\Bbb R\)</span> kontinu
+terhadap topologi kerapatan di <span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span> jika dan hanya jika
+<span class="math inline" data-source-tex="\lim_{h\downarrow 0}\bover1{2h}
+  \mu^*\{y:y\in[x-h,x+h],\,|f(y)-f(x)|\ge\epsilon\}=0">\(\lim_{h\downarrow 0}\bover1{2h}
+  \mu^*\{y:y\in[x-h,x+h],\,|f(y)-f(x)|\ge\epsilon\}=0\)</span> untuk
+setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>.</p>
+</section>
+<section class="source-unit" id="223Ye" data-source-id="223Ye"><h3><span class="source-label">223Ye</span> (e) </h3>
+<p>Suatu himpunan <span class="math inline" data-source-tex="A\subseteq\Bbb R">\(A\subseteq\Bbb R\)</span> disebut <strong>berpori</strong>
+di suatu titik <span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span> jika
+<span class="math inline" data-source-tex="\limsup_{y\to x}\Bover{\rho(y,A)}{|y-x|}&gt;0">\(\limsup_{y\to x}\Bover{\rho(y,A)}{|y-x|}&gt;0\)</span>, dengan
+<span class="math inline" data-source-tex="\rho(y,A)=\inf_{a\in A}|y-a|">\(\rho(y,A)=\inf_{a\in A}|y-a|\)</span>. (Ambil <span class="math inline" data-source-tex="\rho(y,\emptyset)=\infty">\(\rho(y,\emptyset)=\infty\)</span>.)
+Tunjukkan bahwa jika <span class="math inline" data-source-tex="A">\(A\)</span> berpori di setiap <span class="math inline" data-source-tex="x\in A">\(x\in A\)</span>, maka <span class="math inline" data-source-tex="A">\(A\)</span> terabaikan.</p>
+</section>
+<section class="source-unit" id="223Yf" data-source-id="223Yf"><h3><span class="source-label">223Yf</span> (f) </h3>
+<p>Untuk suatu himpunan terukur <span class="math inline" data-source-tex="E\subseteq\Bbb R">\(E\subseteq\Bbb R\)</span>, tuliskan
+<span class="math inline" data-source-tex="\intstar E">\(\intstar E\)</span> untuk himpunan titik-titik kerapatannya. Tunjukkan bahwa jika
+<span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="F\subseteq\Bbb R">\(F\subseteq\Bbb R\)</span> terukur, maka (i)
+<span class="math inline" data-source-tex="\intstar(E\cap F)=\intstar E\cap\intstar F">\(\intstar(E\cap F)=\intstar E\cap\intstar F\)</span>
+(ii) <span class="math inline" data-source-tex="\intstar E\subseteq\intstar F">\(\intstar E\subseteq\intstar F\)</span> jika dan hanya jika
+<span class="math inline" data-source-tex="\mu(E\setminus F)=0">\(\mu(E\setminus F)=0\)</span> (iii) <span class="math inline" data-source-tex="\mu(E\symmdiff\intstar E)=0">\(\mu(E\symmdiff\intstar E)=0\)</span> (iv)
+<span class="math inline" data-source-tex="\intstar(\intstar E)=\intstar E">\(\intstar(\intstar E)=\intstar E\)</span> (v) untuk setiap himpunan kompak
+<span class="math inline" data-source-tex="K\subseteq\intstar E">\(K\subseteq\intstar E\)</span>, terdapat suatu himpunan kompak
+<span class="math inline" data-source-tex="L\subseteq K\cup E">\(L\subseteq K\cup E\)</span> sedemikian sehingga <span class="math inline" data-source-tex="K\subseteq\intstar L">\(K\subseteq\intstar L\)</span>.</p>
+</section>
+<section class="source-unit" id="223Yg" data-source-id="223Yg"><h3><span class="source-label">223Yg</span> (g) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real terintegralkan yang
+didefinisikan hampir di mana-mana dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan <span class="math inline" data-source-tex="x">\(x\)</span> sembarang titik
+dari himpunan Lebesgue dari <span class="math inline" data-source-tex="f">\(f\)</span>. Tunjukkan bahwa untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>
+terdapat <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="|f(x)\int g-\int f\times g|\le\epsilon\int g">\(|f(x)\int g-\int f\times g|\le\epsilon\int g\)</span> kapan pun
+<span class="math inline" data-source-tex="g:\Bbb R\to\coint{0,\infty}">\(g:\Bbb R\to\coint{0,\infty}\)</span> sedemikian sehingga <span class="math inline" data-source-tex="g">\(g\)</span> tak-menurun pada
+<span class="math inline" data-source-tex="\ocint{-\infty,x}">\(\ocint{-\infty,x}\)</span>, tak-menaik pada <span class="math inline" data-source-tex="\coint{x,\infty}">\(\coint{x,\infty}\)</span>, dan nol di luar
+<span class="math inline" data-source-tex="[x-\delta,x+\delta]">\([x-\delta,x+\delta]\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> nyatakan <span class="math inline" data-source-tex="g">\(g\)</span> sebagai limit hampir di mana-mana
+dari fungsi-fungsi berbentuk
+<span class="math inline" data-source-tex="\Bover{g(x)}{n+1}\sum_{i=0}^n\chi\ooint{a_i,b_i}">\(\Bover{g(x)}{n+1}\sum_{i=0}^n\chi\ooint{a_i,b_i}\)</span>, dengan
+<span class="math inline" data-source-tex="x-\delta\le a_0\le\ldots\le a_n\le x\le b_n\le\ldots\le b_0
+\le x+\delta">\(x-\delta\le a_0\le\ldots\le a_n\le x\le b_n\le\ldots\le b_0
+\le x+\delta\)</span>.</span></p>
+</section>
+<section class="source-unit" id="223Yh" data-source-id="223Yh"><h3><span class="source-label">223Yh</span> (h) </h3>
+<p>Untuk setiap fungsi bernilai real terintegralkan <span class="math inline" data-source-tex="f">\(f\)</span> yang
+didefinisikan hampir di mana-mana dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, misalkan <span class="math inline" data-source-tex="E_f">\(E_f\)</span> adalah himpunan
+Lebesgue dari <span class="math inline" data-source-tex="f">\(f\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="E_f\cap E_g\subseteq E_{f+g}">\(E_f\cap E_g\subseteq E_{f+g}\)</span> dan
+<span class="math inline" data-source-tex="E_f\subseteq E_{|f|}">\(E_f\subseteq E_{|f|}\)</span> untuk semua fungsi terintegralkan <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g">\(g\)</span>.</p>
+</section>
+<section class="source-unit" id="223Yi" data-source-id="223Yi"><h3><span class="source-label">223Yi</span> (i) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="E\subseteq\Bbb R">\(E\subseteq\Bbb R\)</span> suatu himpunan terukur tak terabaikan.
+Tunjukkan bahwa <span class="math inline" data-source-tex="0">\(0\)</span> termasuk dalam interior
+<span class="math inline" data-source-tex="E-E=\{x-y:x">\(E-E=\{x-y:x\)</span>, <span class="math inline" data-source-tex="y\in E\}">\(y\in E\}\)</span>.</p>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<section class="source-unit" id="223-notes" data-source-id="223-notes"><h2><span class="source-label">223-notes</span> Catatan penutup untuk Bagian 223 </h2>
+<p>Hasil-hasil dalam bagian ini dapat dipandang sebagai
+pernyataan bahwa suatu fungsi terukur, dalam arti tertentu, ‘hampir kontinu’;
+bahkan <a class="xref" href="#223Yb">223Yb</a> merupakan suatu upaya untuk memperjelas gagasan ini. Untuk fungsi
+terintegralkan, kita mempunyai hasil-hasil yang lebih kuat, dan yang tampaknya
+menjangkau paling jauh ialah <a class="xref" href="#223D">223D</a>/<a class="xref" href="#223Ec">223Ec</a>.</p>
+<p>Terdapat versi berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> dari semua teorema ini, dengan bola yang berpusat
+di <span class="math inline" data-source-tex="x">\(x\)</span> menggantikan interval <span class="math inline" data-source-tex="[x-h,x+h]">\([x-h,x+h]\)</span>; saya memberikannya dalam 261C-261E.</p>
+<p>Suatu gagasan baru diperlukan untuk versi berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> Teorema Kerapatan
+Lebesgue (261C), tetapi selebihnya dapat digeneralisasi secara langsung. Suatu
+perluasan yang kurang alami dan kurang penting, juga dalam §261, melibatkan
+fungsi-fungsi yang didefinisikan pada himpunan tak-terukur (bandingkan
+<a class="xref" href="#223Xb">223Xb</a>-<a class="xref" href="#223Xe">223Xe</a>).</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 2: Broad Foundations</cite>, Bagian 223.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 25 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-cumulative-html-route-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V2-S223&quot;,
+  &quot;source_member&quot;: &quot;mt2.2016/mt223.tex&quot;,
+  &quot;target_bytes&quot;: 16570,
+  &quot;target_sha256&quot;: &quot;e512adcc6297db3fb52862eed42199929aa596d17d8a57ee9961c38d173b94ce&quot;,
+  &quot;source_ids&quot;: [
+    &quot;223&quot;,
+    &quot;223A&quot;,
+    &quot;223B&quot;,
+    &quot;223C&quot;,
+    &quot;223D&quot;,
+    &quot;223E&quot;,
+    &quot;223Ea&quot;,
+    &quot;223Eb&quot;,
+    &quot;223Ec&quot;,
+    &quot;223X&quot;,
+    &quot;223Xa&quot;,
+    &quot;223Xb&quot;,
+    &quot;223Xc&quot;,
+    &quot;223Xd&quot;,
+    &quot;223Xe&quot;,
+    &quot;223Xf&quot;,
+    &quot;223Xg&quot;,
+    &quot;223Xh&quot;,
+    &quot;223Xi&quot;,
+    &quot;223Xj&quot;,
+    &quot;223Y&quot;,
+    &quot;223Ya&quot;,
+    &quot;223Yb&quot;,
+    &quot;223Yc&quot;,
+    &quot;223Yd&quot;,
+    &quot;223Ye&quot;,
+    &quot;223Yf&quot;,
+    &quot;223Yg&quot;,
+    &quot;223Yh&quot;,
+    &quot;223Yi&quot;
+  ],
+  &quot;corpus_id&quot;: &quot;O007-FREMLIN&quot;,
+  &quot;volume_id&quot;: &quot;O007-FREMLIN-V2&quot;,
+  &quot;volume_source_title&quot;: &quot;Broad Foundations&quot;,
+  &quot;route&quot;: &quot;223&quot;,
+  &quot;official_source_page_start&quot;: 66,
+  &quot;chapter_official_source_pages&quot;: [
+    55,
+    95
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

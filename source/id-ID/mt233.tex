@@ -1,0 +1,926 @@
+\frfilename{mt233.tex}
+\versiondate{16.6.02}
+\copyrightdate{1994}
+
+\def\chaptername{Teorema Radon-Nikod\'ym}
+\def\sectionname{Ekspektasi bersyarat}
+
+\newsection{233}
+
+Saya menyediakan satu bagian untuk tinjauan pertama atas salah satu
+penerapan utama Teorema Radon-Nikod\'ym. Gagasan ini merupakan salah satu
+gagasan terpenting dalam teori ukuran, dan akan muncul berulang kali dalam
+berbagai bentuk. Di sini saya memberikan definisi dan sifat-sifat paling
+dasar ekspektasi bersyarat sebagaimana muncul dalam teori probabilitas
+abstrak, disertai catatan tentang fungsi konveks dan suatu versi
+Ketaksamaan Jensen (233I-233J).
+
+\leader{233A}{Subaljabar-$\sigma$} Misalkan $X$ suatu himpunan dan $\Sigma$
+suatu aljabar-$\sigma$ dari subhimpunan-subhimpunan $X$. Suatu
+{\bf subaljabar-$\sigma$} dari $\Sigma$ adalah aljabar-$\sigma$ $\Tau$
+dari subhimpunan-subhimpunan $X$ sedemikian sehingga
+$\Tau\subseteq\Sigma$. Jika $(X,\Sigma,\mu)$ suatu ruang ukur dan
+$\Tau$ suatu subaljabar-$\sigma$ dari $\Sigma$, maka
+$(X,\Tau,\mu\restrp\Tau)$ juga merupakan ruang ukur\cmmnt{; hal ini
+langsung mengikuti definisi (112A). Sekarang kita mempunyai lema
+sederhana berikut. Lema ini merupakan kasus khusus 235G di bawah,
+tetapi saya memberikan bukti tersendiri apabila Anda belum hendak
+memulai penyelidikan umum yang ditempuh dalam \S235}.
+
+\leader{233B}{Lema} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur dan $\Tau$
+suatu subaljabar-$\sigma$ dari $\Sigma$. Suatu fungsi bernilai real $f$
+yang didefinisikan pada suatu subhimpunan dari $X$
+bersifat $\mu\restrp\Tau$-terintegralkan jika dan hanya jika (i) fungsi
+tersebut $\mu$-terintegralkan (ii) $\dom f$ koterabaikan terhadap
+$\mu\restrp\Tau$ (iii) $f$ terukur secara virtual terhadap
+$\mu\restrp\Tau$; dan dalam hal ini
+$\int fd(\mu\restrp\Tau)=\int fd\mu$.
+
+\proof{{\bf (a)} Pertama-tama perhatikan bahwa jika $f$ suatu fungsi
+sederhana terhadap $\mu\restrp\Tau$, yakni dapat dinyatakan sebagai
+$\sum_{i=0}^na_i\chi E_i$ dengan $a_i\in\Bbb R$, $E_i\in\Tau$, dan
+$(\mu\restrp\Tau)E_i<\infty$ untuk setiap $i$, maka $f$ merupakan fungsi
+sederhana terhadap $\mu$ dan
+
+\Centerline{$\int f d\mu=\sum_{i=0}^na_i\mu E_i
+=\int f d(\mu\restrp\Tau)$.}
+
+\medskip
+
+{\bf (b)} Misalkan $U_{\mu}$ himpunan fungsi nonnegatif yang
+$\mu$-terintegralkan dan $U_{\mu\restrp\Tau}$ himpunan fungsi nonnegatif
+yang $\mu\restrp\Tau$-terintegralkan.
+
+Andaikan $f\in U_{\mu\restrp\Tau}$. Maka terdapat barisan tak menurun
+$\sequencen{f_n}$ dari fungsi-fungsi sederhana terhadap
+$\mu\restrp\Tau$ sedemikian sehingga
+$f(x)=\lim_{n\to\infty}f_n\,\mu\restrp\Tau$-hampir di mana-mana\ dan
+
+\Centerline{$\int fd(\mu\restrp\Tau)
+=\lim_{n\to\infty}\int f_nd(\mu\restrp\Tau)$.}
+
+\noindent Namun kini setiap $f_n$ juga sederhana terhadap $\mu$, dan
+$\int f_nd\mu=\int f_nd(\mu\restrp\Tau)$ untuk setiap $n$, serta
+$f=\lim_{n\to\infty}f_n\,\mu$-hampir di mana-mana. Jadi
+$f\in U_{\mu}$ dan $\int fd\mu=\int fd(\mu\restrp\Tau)$.
+
+\medskip
+
+{\bf (c)} Sekarang andaikan $f$ bersifat
+$\mu\restrp\Tau$-terintegralkan. Maka fungsi tersebut merupakan selisih dua anggota
+$U_{\mu\restrp\Tau}$, sehingga $\mu$-terintegralkan, dan
+$\int fd\mu=\int fd(\mu\restrp\Tau)$. Syarat (ii) dan (iii) juga
+terpenuhi, sesuai dengan konvensi yang ditetapkan dalam Jilid 1
+(122Nc, 122P-122Q).
+
+\medskip
+
+{\bf (d)} Andaikan $f$ memenuhi syarat (i)-(iii). Maka
+$|f|\in U_{\mu}$, dan terdapat himpunan koterabaikan
+$E\subseteq\dom f$ sedemikian sehingga $E\in\Tau$ dan $f\restr E$
+terukur terhadap $\Tau$. Oleh karena itu, $|f|\restr E$ terukur terhadap
+$\Tau$. Sekarang, jika $\epsilon>0$, maka
+
+\Centerline{$(\mu\restrp\Tau)\{x:x\in E,\,|f|(x)\ge\epsilon\}
+=\mu\{x:x\in E,\,|f|(x)\ge\epsilon\}
+\le{1\over\epsilon}\int|f|d\mu<\infty$;}
+
+\noindent selain itu,
+
+$$\eqalign{\sup\{\int g\,d(\mu\restrp\Tau):g&\text{ adalah suatu fungsi }
+  \mu\restrp\Tau\text{-sederhana},
+  \,g\le |f|\,\mu\restrp\Tau\text{-hampir di mana-mana}\}\cr
+&=\sup\{\int g\,d\mu:g\text{ adalah suatu fungsi }
+  \mu\restrp\Tau\text{-sederhana},
+  \,g\le |f|\,\mu\restrp\Tau\text{-hampir di mana-mana}\}\cr
+&\le\sup\{\int g\,d\mu:g\text{ adalah suatu fungsi }
+  \mu\text{-sederhana},\,g\le |f|\,\mu\text{-hampir di mana-mana}\}\cr
+&\le\int |f|d\mu<\infty.\cr}$$
+
+\noindent Menurut kriteria 122Ja, $|f|\in U_{\mu\restrp\Tau}$.
+Akibatnya, karena $f$ terukur secara virtual terhadap $\mu\restrp\Tau$
+sebagai fungsi yang terukur terhadap $\Tau$, fungsi tersebut
+$\mu\restrp\Tau$-terintegralkan menurut 122P. Ini menuntaskan bukti.
+}%end of proof of 233B
+
+\cmmnt{
+\leader{233C}{Catatan (a)} Argumen tepat di atas saya uraikan dengan
+sangat terperinci, bahkan hingga terkesan bertele-tele. Namun, walaupun
+saya dapat dituduh membuang-buang kertas dengan menuliskan semuanya,
+menurut saya setiap unsur argumen itu diperlukan bagi hasilnya. Memang,
+sebagian perincian diperlukan hanya karena saya menggunakan pengertian
+`fungsi terintegralkan` yang begitu luas; jika Anda membatasi pengertian
+`keterintegralan` pada fungsi terukur yang didefinisikan pada seluruh
+ruang ukur, pada tahap ini terdapat beberapa penyederhanaan, yang kelak
+harus dibayar ketika Anda mendapati bahwa banyak penerapan utama
+menyangkut fungsi yang didefinisikan oleh rumus-rumus yang tidak berlaku
+pada seluruh ruang yang mendasarinya.
+
+Pokok penting yang harus dipahami ialah bahwa meskipun himpunan yang
+terabaikan terhadap $\mu\restrp\Tau$ selalu terabaikan terhadap $\mu$,
+himpunan yang terabaikan terhadap $\mu$ belum tentu terabaikan terhadap
+$\mu\restrp\Tau$.
+
+\header{233Cb}{\bf (b)} Sebagai contoh sesederhana mungkin mengenai
+masalah yang dapat timbul, saya menawarkan contoh berikut. Misalkan
+$(X,\Sigma,\mu)$ adalah $[0,1]^2$ dengan ukuran Lebesgue. Misalkan
+$\Tau$ himpunan anggota $\Sigma$ yang dapat dinyatakan sebagai
+$F\times[0,1]$ untuk suatu $F\subseteq[0,1]$; mudah dilihat bahwa $\Tau$
+merupakan subaljabar-$\sigma$ dari $\Sigma$. Tinjau $f$,
+$g:X\to[0,1]$ yang didefinisikan dengan
+
+\Centerline{$f(t,u)=1$ jika $u>0$, $0$ selainnya,}
+
+\Centerline{$g(t,u)=1$ jika $t>0$, $0$ selainnya.}
+
+\noindent Maka $f$ dan $g$ keduanya $\mu$-terintegralkan karena konstan
+$\mu$-hampir di mana-mana. Namun, hanya $g$ yang
+$\mu\restrp\Tau$-terintegralkan, sebab setiap $E\in\Tau$ yang tidak
+terabaikan memuat suatu irisan vertikal lengkap
+$\{t\}\times[0,1]$, sehingga $f$ mengambil kedua nilai $0$ dan $1$ pada
+$E$. Jika kita menetapkan
+
+\Centerline{$h(t,u)=1$ jika $u>0$, tidak terdefinisi selainnya,}
+
+\noindent maka sekali lagi (menurut konvensi yang saya gunakan) $h$
+$\mu$-terintegralkan tetapi tidak $\mu\restrp\Tau$-terintegralkan, karena
+tidak ada anggota koterabaikan dari $\Tau$ yang termuat dalam domain $h$.
+
+\header{233Cc}{\bf (c)} Jika $f$ didefinisikan pada seluruh $X$ dan
+$\mu\restrp\Tau$ lengkap, maka tentu saja $f$
+$\mu\restrp\Tau$-terintegralkan jika dan hanya jika fungsi tersebut
+$\mu$-terintegralkan dan terukur terhadap $\Tau$. Namun, perhatikan bahwa
+dalam contoh tepat di atas, yang merupakan salah satu pola dasar topik
+ini, $\mu\restrp\Tau$ tidak lengkap, karena himpunan-himpunan satu titik
+terabaikan tetapi tidak terukur.
+}%end of comment
+
+\leader{233D}{Ekspektasi bersyarat} Misalkan $(X,\Sigma,\mu)$ suatu
+ruang probabilitas\cmmnt{, yakni ruang ukur dengan $\mu X=1$}.
+\cmmnt{(Hampir semua gagasan di sini berlaku dengan sempurna bagi
+sembarang ruang ukur berhingga total, tetapi tampaknya tidak ada manfaat
+yang diperoleh dari perluasan tersebut, dan ungkapan tradisional
+`ekspektasi bersyarat` menuntut ruang probabilitas.)}
+Misalkan $\Tau\subseteq\Sigma$ suatu subaljabar-$\sigma$.
+\dvro{ Jika $f$ suatu fungsi bernilai real yang $\mu$-terintegralkan,
+terdapat fungsi $\mu\restrp\Tau$-terintegralkan $g$ sedemikian
+sehingga $\int_Fg=\int_Ff$ untuk setiap $F\in\Tau$; fungsi semacam itu
+merupakan {\bf suatu ekspektasi bersyarat} dari $f$ pada $\Tau$.}{}
+
+\cmmnt{\header{233Da}{\bf (a)} Untuk setiap fungsi bernilai real yang
+$\mu$-terintegralkan, katakanlah $f$, dan didefinisikan pada suatu subhimpunan
+koterabaikan dari $X$, kita mempunyai integral tak tentu yang
+bersesuaian, $\nu_f:\Sigma\to\Bbb R$, yang diberikan oleh rumus
+$\nu_fE=\int_Ef$ untuk setiap $E\in\Sigma$. Kita tahu bahwa $\nu_f$
+aditif terhitung dan kontinu sejati terhadap $\mu$, yang dalam konteks
+sekarang sama dengan mengatakan bahwa fungsional itu kontinu mutlak
+(232Bc-232Bd). Sekarang tinjau pembatasan $\mu\restrp\Tau$ dan
+$\nu_f\restrp\Tau$ dari $\mu$ dan $\nu_f$ pada aljabar-$\sigma$ $\Tau$.
+Langsung dari definisi `aditif terhitung` dan `kontinu mutlak` diperoleh
+bahwa $\nu_f\restrp\Tau$ aditif terhitung dan kontinu mutlak terhadap
+$\mu\restrp\Tau$, sehingga kontinu sejati terhadap
+$\mu\restrp\Tau$. Akibatnya, Teorema Radon-Nikod\'ym (232E) menyatakan
+bahwa terdapat fungsi $\mu\restrp\Tau$-terintegralkan $g$ sedemikian
+sehingga $(\nu_f\restrp\Tau)F=\int_Fg\,d(\mu\restrp\Tau)$ untuk setiap
+$F\in\Tau$.
+}%end of comment
+
+\cmmnt{\header{233Db}{\bf (b)} Mari kita definisikan {\bf suatu
+ekspektasi bersyarat dari $f$ pada} $\Tau$ sebagai fungsi semacam itu;
+yakni, suatu fungsi $\mu\restrp\Tau$-terintegralkan $g$ sedemikian
+sehingga $\int_Fg\,d(\mu\restrp\Tau)=\int_Ffd\mu$ untuk setiap
+$F\in\Tau$. Dengan menengok kembali 233B, kita melihat bahwa untuk $g$
+semacam itu berlaku
+
+\Centerline{$\int_Fg\,d(\mu\restrp\Tau)
+=\int g\times\chi F\,d(\mu\restrp\Tau)
+=\int g\times\chi F\, d\mu=\int_Fg\,d\mu$}
+
+\noindent untuk setiap $F\in\Tau$; selain itu, $g$ hampir di mana-mana
+sama dengan suatu fungsi terukur terhadap $\Tau$ yang didefinisikan pada
+seluruh $X$ dan juga merupakan ekspektasi bersyarat dari $f$ pada
+$\Tau$ (232He).
+}%end of comment
+
+\cmmnt{\header{233Dc}{\bf (c)} Saya mencetak tebal kata `suatu` dalam
+ungkapan `suatu ekspektasi bersyarat` untuk menekankan bahwa fungsi $g$
+sama sekali tidak unik. Dalam 242J saya akan kembali ke pokok ini dan
+menjelaskan suatu objek yang dengan tepat dapat disebut `ekspektasi
+bersyarat` dari $f$ pada $\Tau$. $g$ `unik secara esensial` hanya dalam
+arti bahwa jika $g_1$ dan $g_2$ keduanya merupakan ekspektasi bersyarat
+dari $f$ pada $\Tau$, maka
+$g_1=g_2\,\,\mu\restrp\Tau$-hampir di mana-mana\
+(131Hb). Tentu saja,
+hal ini berarti bahwa sangat banyak sifatnya -- misalnya fungsi
+distribusi $G(a)=\hat\mu\{x:g(x)\le a\}$, dengan $\hat\mu$ pelengkapan
+$\mu$ (212C) -- tidak bergantung pada $g$ mana yang kita pilih.
+}%end of comment
+
+\cmmnt{\header{233Dd}{\bf (d)} Ungkapan `ekspektasi bersyarat` perlu
+dijelaskan. Ungkapan ini berasal dari identifikasi baku probabilitas
+dengan ukuran, berkat Kolmogorov, yang akan saya bahas lebih lengkap
+dalam Bab 27. Suatu peubah acak bernilai real dapat dipandang sebagai
+fungsi terukur, atau terukur secara virtual, $f$ pada ruang probabilitas
+$(X,\Sigma,\mu)$; `ekspektasinya` diidentifikasi dengan $\int f d\mu$,
+dengan mengandaikan integral ini ada. Jika $F\in\Sigma$ dan $\mu F>0$,
+maka `ekspektasi bersyarat dari $f$ apabila $F$ diketahui` adalah
+${1\over{\mu F}}\int_Ff$. Jika $F_0,\ldots,F_n$ merupakan partisi $X$
+menjadi himpunan-himpunan terukur yang berukuran tak nol, maka fungsi
+$g$ yang diberikan oleh
+
+\Centerline{$g(x)=\Bover1{\mu F_i}\int_{F_i}f$ jika $x\in F_i$}
+
+\noindent merupakan semacam ekspektasi bersyarat yang telah
+diantisipasi; jika kelak kita diberi tahu bahwa $x\in F_i$, maka $g(x)$
+akan menjadi taksiran kita selanjutnya atas ekspektasi $f$. Menurut
+definisi di atas, $g$ merupakan ekspektasi bersyarat dari $f$ pada
+aljabar hingga $\Tau$ yang dibangkitkan oleh
+$\{F_0,\ldots,F_n\}$. Intuisi yang sesuai bagi aljabar-$\sigma$ umum
+$\Tau$ ialah bahwa aljabar tersebut terdiri atas kejadian-kejadian yang
+akan dapat kita amati pada suatu waktu mendatang $t_0$ yang ditetapkan,
+sedangkan seluruh aljabar $\Sigma$ terdiri atas semua kejadian, termasuk
+yang baru dapat diamati setelah $t_0$, jika memang pernah dapat diamati.
+}%end of comment
+
+\leader{233E}{}\cmmnt{ Saya mencantumkan beberapa fakta elementer
+mengenai ekspektasi bersyarat.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang
+probabilitas dan $\Tau$ suatu subaljabar-$\sigma$ dari $\Sigma$.
+Misalkan $\sequencen{f_n}$ suatu barisan fungsi bernilai real yang
+$\mu$-terintegralkan, dan untuk setiap $n$ misalkan $g_n$ suatu
+ekspektasi bersyarat dari $f_n$ pada $\Tau$. Maka
+
+(a) $g_1+g_2$ merupakan ekspektasi bersyarat dari $f_1+f_2$ pada $\Tau$;
+
+(b) untuk setiap $c\in\Bbb R$, $cg_0$ merupakan ekspektasi bersyarat dari
+$cf_0$ pada $\Tau$;
+
+(c) jika $f_1\leae f_2$, maka $g_1\leae g_2$;
+
+(d) jika $\sequencen{f_n}$ tak menurun hampir di mana-mana\ dan
+$f=\lim_{n\to\infty}f_n$ bersifat $\mu$-terintegralkan, maka
+$\lim_{n\to\infty}g_n$ merupakan ekspektasi bersyarat dari $f$ pada
+$\Tau$;
+
+(e) jika $f=\lim_{n\to\infty}f_n$ terdefinisi hampir di mana-mana\ dan
+terdapat fungsi $\mu$-terintegralkan $h$ sedemikian sehingga
+$|f_n|\leae h$ untuk setiap $n$, maka $\lim_{n\to\infty}g_n$ merupakan
+ekspektasi bersyarat dari $f$ pada $\Tau$;
+
+(f) jika $F\in\Tau$, maka $g_0\times \chi F$ merupakan ekspektasi
+bersyarat dari $f_0\times\chi F$ pada $\Tau$;
+
+(g) jika $h$ suatu fungsi bernilai real berbatas yang terukur secara
+virtual terhadap $\mu\restrp\Tau$ dan didefinisikan
+$\mu\restrp\Tau$-hampir di mana-mana dalam $X$, maka $g_0\times h$
+merupakan ekspektasi bersyarat dari $f_0\times h$ pada $\Tau$;
+
+(h) jika $\Upsilon$ suatu subaljabar-$\sigma$ dari $\Tau$, maka suatu
+fungsi $h_0$ merupakan ekspektasi bersyarat dari $f_0$ pada $\Upsilon$
+jika dan hanya jika fungsi tersebut merupakan ekspektasi bersyarat dari
+$g_0$ pada $\Upsilon$.
+
+\proof{{\bf (a)-(b)} Kita hanya perlu mengamati bahwa
+
+\Centerline{$\int_Fg_1+g_2d(\mu\restrp\Tau)
+=\int_Fg_1d(\mu\restrp\Tau)+\int_Fg_2d(\mu\restrp\Tau)
+=\int_Ff_1d\mu+\int_Ff_2d\mu=\int_Ff_1+f_2d\mu$,}
+
+\Centerline{$\int_Fcg_0d(\mu\restrp\Tau)
+=c\int_Fg_0d(\mu\restrp\Tau)=c\int_Ff_0d\mu=\int_Fcf_0d\mu$}
+
+\noindent untuk setiap $F\in\Tau$.
+
+\medskip
+
+{\bf (c)} Jika $F\in\Tau$, maka
+
+\Centerline{$\int_Fg_1d(\mu\restrp\Tau)=\int_Ff_1d\mu\le\int_Ff_2d
+\mu
+=\int_Fg_2d(\mu\restrp\Tau)$}
+
+\noindent untuk setiap $F\in\Tau$; akibatnya
+$g_1\le g_2\,\mu\restrp\Tau$-hampir di mana-mana\ (131Ha).
+
+\medskip
+
+{\bf (d)} Menurut (c), $\sequencen{g_n}$ tak menurun
+$\mu\restrp\Tau$-hampir di mana-mana; selain itu,
+
+\Centerline{$\sup_{n\in\Bbb N}\int g_nd(\mu\restrp\Tau)
+=\sup_{n\in\Bbb N}\int f_nd\mu
+=\int fd\mu<\infty$.}
+
+\noindent Menurut Teorema B.Levi, $g=\lim_{n\to\infty}g_n$ terdefinisi
+$\mu\restrp\Tau$-hampir di mana-mana, dan
+
+\Centerline{$\int_Fg\,d(\mu\restrp\Tau)
+=\lim_{n\to\infty}\int_Fg_nd(\mu\restrp\Tau)
+=\lim_{n\to\infty}\int_Ff_nd\mu
+=\int_Ffd\mu$}
+
+\noindent untuk setiap $F\in\Tau$, sehingga $g$ merupakan ekspektasi
+bersyarat dari $f$ pada $\Tau$.
+
+\medskip
+
+{\bf (e)} Tetapkan $f'_n=\inf_{m\ge n}f_m$ dan
+$f''_n=\sup_{m\ge n}f_m$ untuk setiap $n\in\Bbb N$. Maka kita mempunyai
+
+\Centerline{$-h\leae f'_n\le f_n\le f''_n\leae h$,}
+
+\noindent dan $\sequencen{f'_n}$ serta $\sequencen{f''_n}$ merupakan
+barisan fungsi yang monoton hampir di mana-mana dan keduanya konvergen
+hampir di mana-mana ke $f$. Untuk setiap $n$, misalkan $g'_n$ dan
+$g''_n$ ekspektasi bersyarat dari $f'_n$ dan $f''_n$ pada $\Tau$.
+Menurut (c) dan (d), $\sequencen{g'_n}$ dan $\sequencen{g''_n}$
+merupakan barisan yang monoton hampir di mana-mana dan konvergen hampir
+di mana-mana ke ekspektasi bersyarat $g'$ dan $g''$ dari $f$. Tentu saja
+$g'=g''\,\,\mu\restrp\Tau$-hampir di mana-mana\ (233Dc). Selain itu,
+untuk setiap $n$, $g'_n\leae g_n\leae g''_n$, sehingga
+$\sequencen{g_n}$ konvergen ke
+$g'\,\,\mu\restrp\Tau$-hampir di mana-mana, dan
+$g=\lim_{n\to\infty}g_n$ terdefinisi hampir di mana-mana serta merupakan
+ekspektasi bersyarat dari $f$ pada $\Tau$.
+
+\medskip
+
+{\bf (f)} Untuk setiap $H\in\Tau$,
+
+\Centerline{$\int_Hg_0\times\chi F\,d(\mu\restrp\Tau)
+=\int_{H\cap F}g_0d(\mu\restrp\Tau)
+=\int_{H\cap F}f_0d\mu
+=\int_Hf_0\times\chi F\,d\mu$.}
+
+\medskip
+
+{\bf (g)}(i) Jika $h$ benar-benar sederhana terhadap
+$(\mu\restrp\Tau)$, katakanlah
+$h=\sum_{i=0}^na_i\chi F_i$ dengan $F_i\in\Tau$ untuk setiap $i$, maka
+
+\Centerline{$\int_Fg_0\times h\,d(\mu\restrp\Tau)
+=\sum_{i=0}^na_i\int_Fg_0\times\chi F_id(\mu\restrp\Tau)
+=\sum_{i=0}^na_i\int_Ff_0\times\chi F_i\,d\mu
+=\int_Ff_0\times h\,d\mu$}
+
+\noindent untuk setiap $F\in\Tau$. (ii) Untuk kasus umum, jika $h$
+terukur secara virtual terhadap $\mu\restrp\Tau$ dan
+$|h(x)|\le M\,\,\mu\restrp\Tau$-hampir di mana-mana, maka terdapat
+barisan $\sequencen{h_n}$ dari fungsi-fungsi sederhana terhadap
+$\mu\restrp\Tau$ yang konvergen ke $h$ hampir di mana-mana, dengan
+$|h_n(x)|\le M$ untuk setiap $x$ dan $n$. Sekarang
+$f_0\times h_n\to f_0\times h$ hampir di mana-mana\ dan
+$|f_0\times h_n|\leae M|f_0|$ untuk setiap $n$, sedangkan
+$g_0\times h_n$ merupakan ekspektasi bersyarat dari $f_0\times h_n$
+untuk setiap $n$. Jadi, menurut (e),
+$\lim_{n\to\infty}g_0\times h_n$ merupakan ekspektasi bersyarat dari
+$f_0\times h$; tetapi fungsi ini sama hampir di mana-mana dengan
+$g_0\times h$.
+
+\medskip
+
+{\bf (h)} Kita hanya perlu memperhatikan bahwa
+$\int_Hg_0d(\mu\restrp\Tau)=\int_Hf_0d\mu$ untuk setiap
+$H\in\Upsilon$, sehingga
+
+$$\eqalign{\int_Hh_0&d(\mu\restrp\Upsilon)=\int_Hg_0d(\mu\restrp\Tau)
+\text{ untuk setiap }H\in\Upsilon\cr
+&\iff\int_Hh_0d(\mu\restrp\Upsilon)=\int_Hf_0d\mu
+\text{ untuk setiap }H\in\Upsilon.\cr}$$
+}%end of proof of 233E
+
+\cmmnt{
+\leader{233F}{Catatan} Tentu saja, masing-masing hasil di atas hampir
+sepele (meskipun saya kira (e) dan (g) dapat membuat Anda berhenti
+sejenak untuk berpikir jika diberikan tanpa persiapan sebelumnya).
+Secara keseluruhan, hasil-hasil tersebut memberi sejumlah sifat yang
+cukup kuat. Dalam \S242 saya akan menyatakannya kembali dengan bahasa
+yang secara sintaksis lebih langsung, tetapi bertumpu pada tingkat
+abstraksi yang lebih dalam.
+
+Sebagai ilustrasi tentang daya ekspektasi bersyarat untuk mengejutkan
+kita, saya menawarkan proposisi berikut, yang bergantung pada konsep
+fungsi `konveks`.
+}%end of comment
+
+\leader{233G}{Fungsi konveks} Ingat bahwa suatu fungsi bernilai real
+$\phi$ yang didefinisikan pada selang $I\subseteq\Bbb R$ disebut
+{\bf konveks} jika
+
+\Centerline{$\phi(tb+(1-t)c)\le t\phi(b)+(1-t)\phi(c)$}
+
+\noindent setiap kali $b$, $c\in I$, dan $t\in[0,1]$.
+
+\cmmnt{\medskip
+
+\noindent{\bf Contoh} Rumus-rumus $|x|$, $x^2$, dan
+$e^{\pm x}\pm x$ mendefinisikan fungsi konveks pada $\Bbb R$; pada
+$\ooint{-1,1}$ kita mempunyai $1/(1-x^2)$; pada
+$\ooint{0,\infty}$ kita mempunyai $1/x$ dan $x\ln x$; pada $[0,1]$
+kita mempunyai fungsi yang bernilai nol pada $\ooint{0,1}$ dan $1$ pada
+$\{0,1\}$.
+}%end of comment
+
+\leader{233H}{}\cmmnt{ Teori umum fungsi konveks bersifat luas sekaligus
+penting; beberapa sifatnya yang lebih menonjol saya cantumkan dalam
+233Xe. Untuk saat ini, lema berikut mencakup apa yang kita perlukan.
+
+\medskip
+
+\noindent}{\bf Lema} Misalkan $I\subseteq\Bbb R$ suatu selang terbuka
+tak kosong\cmmnt{ (berbatas atau tak berbatas)} dan
+$\phi:I\to\Bbb R$ suatu fungsi konveks.
+
+(a) Untuk setiap $a\in I$ terdapat $b\in\Bbb R$ sedemikian sehingga
+$\phi(x)\ge\phi(a)+b(x-a)$ untuk setiap $x\in I$.
+
+(b) Jika untuk setiap $q\in I\cap\Bbb Q$ kita mengambil
+$b_q\in\Bbb R$ sedemikian sehingga
+$\phi(x)\ge\phi(q)+b_q(x-q)$ untuk setiap $x\in I$, maka
+
+\Centerline{$\phi(x)=\sup_{q\in I\cap\Bbb Q}\phi(q)+b_q(x-q)$}
+
+\noindent untuk setiap $x\in I$.
+
+(c) $\phi$ terukur Borel.
+
+\proof{{\bf (a)} Jika $c$, $c'\in I$, dan $c<a<c'$, maka $a$ dapat
+dinyatakan sebagai $dc+(1-d)c'$ untuk suatu $d\in\ooint{0,1}$, sehingga
+$\phi(a)\le d\phi(c)+(1-d)\phi(c')$ dan
+
+$$\eqalign{{\Bover{\phi(a)-\phi(c)}{a-c}}
+&\le{\Bover{d\phi(c)+(1-d)\phi(c')-\phi(c)}{dc+(1-d)c'-c}}
+={\Bover{(1-d)(\phi(c')-\phi(c))}{(1-d)(c'-c)}}\cr
+&={\Bover{d(\phi(c')-\phi(c))}{d(c'-c)}}
+={\Bover{\phi(c')-d\phi(c)-(1-d)\phi(c')}{c'-dc-(1-d)c'}}
+\le{\Bover{\phi(c')-\phi(a)}{c'-a}}.\cr}$$
+
+\noindent Ini berarti bahwa
+
+\Centerline{$b=\sup_{c<a,c\in I}\Bover{\phi(a)-\phi(c)}{a-c}$}
+
+\noindent berhingga, dan
+$b\le\Bover{\phi(c')-\phi(a)}{c'-a}$ setiap kali $a<c'\in I$; oleh
+karena itu, $\phi(x)\ge\phi(a)+b(x-a)$ untuk setiap $x\in I$.
+
+\medskip
+
+{\bf (b)} Berdasarkan pemilihan $b_q$,
+$\phi(x)\ge\sup_{q\in I\cap\Bbb Q}\phi_q(x)$.
+Di pihak lain, untuk $x\in I$ yang diberikan, pilih $y\in I$ sedemikian
+sehingga $x<y$, lalu ambil $b\in\Bbb R$ sedemikian sehingga
+$\phi(z)\ge\phi(x)+b(z-x)$ untuk setiap $z\in I$.
+Jika $q\in\Bbb Q$ dan $x<q<y$, kita mempunyai
+$\phi(y)\ge\phi(q)+b_q(y-q)$, sehingga
+$b_q\le\bover{\phi(y)-\phi(q)}{y-q}$ dan
+
+$$\eqalign{\phi(q)+b_q(x-q)
+&=\phi(q)-b_q(q-x)
+\ge\phi(q)-\Bover{\phi(y)-\phi(q)}{y-q}(q-x)\cr
+&=\Bover{y-x}{y-q}\phi(q)-\Bover{q-x}{y-q}\phi(y)
+\ge\Bover{y-x}{y-q}(\phi(x)+b(q-x))-\Bover{q-x}{y-q}\phi(y).\cr}$$
+
+\noindent Sekarang
+
+
+$$\eqalign{\phi(x)
+&=\lim_{q\downarrow x}
+   \Bover{y-x}{y-q}(\phi(x)+b(q-x))-\Bover{q-x}{y-q}\phi(y)\cr
+&\le\sup_{q\in\Bbb Q\cap\ooint{x,y}}
+   \Bover{y-x}{y-q}(\phi(x)+b(q-x))-\Bover{q-x}{y-q}\phi(y)\cr
+&\le\sup_{q\in\Bbb Q\cap\ooint{x,y}}\phi(q)+b_q(x-q)
+\le\sup_{q\in\Bbb Q\cap I}\phi(q)+b_q(x-q).\cr}$$
+
+\medskip
+
+{\bf (c)} Dengan menuliskan $\phi_q(x)=\phi(q)+b_q(x-q)$ untuk setiap
+$q\in\Bbb Q\cap I$, setiap $\phi_q$ merupakan fungsi terukur Borel, dan
+$\phi=\sup_{q\in I\cap\Bbb Q}\phi_q$ adalah supremum suatu keluarga
+terhitung dari fungsi-fungsi terukur Borel, sehingga terukur Borel.
+}%end of proof of 233H
+
+\leader{233I}{Ketaksamaan Jensen} Misalkan $(X,\Sigma,\mu)$ suatu ruang
+ukur dan $\phi:\Bbb R\to\Bbb R$ suatu fungsi konveks.
+
+(a) Andaikan $f$ dan $g$ fungsi bernilai real yang terukur secara virtual
+terhadap $\mu$ dan didefinisikan hampir di mana-mana dalam $X$, serta
+$g\ge 0$ hampir di mana-mana, $\int g=1$, dan $g\times f$
+terintegralkan. Maka $\phi(\int g\times f)\le\int g\times\phi f$, dengan
+integral di ruas kanan mungkin perlu ditafsirkan sebagai $\infty$.
+
+(b) Khususnya, jika $\mu X=1$ dan $f$ suatu fungsi bernilai real yang
+terintegralkan pada $X$, maka $\phi(\int f)\le\int\phi f$.
+
+\proof{{\bf (a)} Untuk setiap $q\in\Bbb Q$, ambil $b_q$ sedemikian
+sehingga $\phi(t)\ge\phi_q(t)=\phi(q)+b_q(t-q)$ untuk setiap
+$t\in\Bbb R$ (233Ha). Karena $\phi$ terukur Borel (233Hc), $\phi f$
+terukur secara virtual terhadap $\mu$ (121H), sehingga $g\times\phi f$
+juga demikian; karena $g\times\phi f$ terdefinisi hampir di mana-mana
+dan hampir di mana-mana lebih besar daripada atau sama dengan fungsi
+terintegralkan $g\times\phi_0f$, $\int g\times\phi f$ terdefinisi dalam
+$\ocint{-\infty,\infty}$. Sekarang
+
+$$\eqalign{\phi_q\bigl(\intop g\times f\bigr)
+&=\phi(q)+b_q\int g\times f-b_qq\cr
+&=\int g\times(b_qf+(\phi(q)-b_qq)\chi X)
+=\int g\times\phi_qf
+\le\int g\times\phi f,\cr}$$
+
+\noindent karena $\int g=1$ dan $g\ge 0$ hampir di mana-mana. Menurut
+233Hb,
+
+\Centerline{$\phi(\intop g\times f)
+=\sup_{q\in\Bbb Q}\phi_q(\intop g\times f)
+\le\int g\times\phi f$.}
+
+\medskip
+
+{\bf (b)} Ambil $g$ sebagai fungsi konstan bernilai $1$.
+}%end of proof of 233I
+
+\leader{233J}{}\cmmnt{ Bahkan kasus khusus 233Ib dari Ketaksamaan Jensen
+sudah sangat berguna. Kasus tersebut dapat diperluas sebagai berikut.
+
+\medskip
+
+\noindent}{\bf Teorema} Misalkan $(X,\Sigma,\mu)$ suatu ruang
+probabilitas dan $\Tau$ suatu subaljabar-$\sigma$ dari $\Sigma$.
+Misalkan $\phi:\Bbb R\to\Bbb R$ suatu fungsi konveks dan $f$ suatu
+fungsi bernilai real yang $\mu$-terintegralkan, didefinisikan hampir di
+mana-mana dalam $X$, sedemikian sehingga komposisi $\phi f$ juga
+terintegralkan. Jika $g$ dan $h$ masing-masing merupakan ekspektasi
+bersyarat pada $\Tau$ dari $f$ dan $\phi f$, maka $\phi g\leae h$.
+Akibatnya, $\int\phi g\le\int\phi f$.
+
+\proof{ Kita menggunakan gagasan yang sama seperti dalam 233I. Untuk
+setiap $q\in\Bbb Q$, ambil $b_q\in\Bbb R$ sedemikian sehingga
+$\phi(t)\ge\phi_q(t)=\phi(q)+b_q(t-q)$ untuk setiap $t\in\Bbb R$,
+sehingga $\phi(t)=\sup_{q\in\Bbb Q}\phi_q(t)$ untuk setiap
+$t\in\Bbb R$. Sekarang tetapkan
+
+\Centerline{$\psi_q(x)=\phi(q)+b_q(g(x)-q)$}
+
+\noindent untuk $x\in\dom g$. Kita melihat bahwa
+$\psi_q=\phi_q g$ merupakan ekspektasi bersyarat dari $\phi_q f$, dan
+karena $\phi_q f\leae\phi f$, mesti berlaku $\psi_q\leae h$. Tetapi
+$\phi g=\sup_{q\in\Bbb Q}\psi_q$ di mana pun $g$ terdefinisi,
+sehingga $\phi g\leae h$, sebagaimana dinyatakan.
+
+Langsung diperoleh bahwa $\int\phi g\le\int h=\int\phi f$.
+}%end of proof of 233J
+
+\leader{233K}{}\cmmnt{ Saya memberikan proposisi berikut, suatu
+pengembangan 233Eg, dalam bentuk yang sangat umum, sebab penerapannya
+dapat muncul di mana saja.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang
+probabilitas dan $\Tau$ suatu subaljabar-$\sigma$ dari $\Sigma$.
+Andaikan $f$ suatu fungsi yang $\mu$-terintegralkan dan $h$ suatu fungsi
+bernilai real yang terukur secara virtual terhadap
+$(\mu\restrp\Tau)$ dan didefinisikan
+$(\mu\restrp\Tau)$-hampir di mana-mana dalam $X$. Misalkan $g$ dan
+$g_0$ ekspektasi bersyarat dari $f$ dan $|f|$ pada $\Tau$. Maka
+$f\times h$ terintegralkan jika dan hanya jika $g_0\times h$
+terintegralkan, dan dalam hal ini $g\times h$ merupakan ekspektasi
+bersyarat dari $f\times h$ pada $\Tau$.
+
+\proof{{\bf (a)} Andaikan $h$ suatu fungsi sederhana terhadap
+$\mu\restrp\Tau$. Maka tentu $f\times h$ dan $g_0\times h$
+terintegralkan, dan $g\times h$ merupakan ekspektasi bersyarat dari
+$f\times h$ seperti dalam 233Eg.
+
+\medskip
+
+{\bf (b)} Sekarang andaikan $f$, $h\ge 0$. Maka $g=g_0\ge 0$ hampir di
+mana-mana (233Ec). Misalkan $\tilde h$ suatu fungsi nonnegatif yang
+terukur terhadap $\Tau$ dan didefinisikan pada seluruh $X$ sedemikian
+sehingga $h\eae\tilde h$. Untuk setiap $n\in\Bbb N$, tetapkan
+
+$$\eqalign{h_n(x)
+&=2^{-n}k\text{ jika }0\le k<4^n
+  \text{ dan }2^{-n}k\le\tilde h(x)<2^{-n}(k+1),\cr
+&=2^n\text{ jika }\tilde h(x)\ge 2^n.\cr}$$
+
+\noindent Maka $h_n$ suatu fungsi sederhana terhadap
+$(\mu\restrp\Tau)$, sehingga $g\times h_n$ merupakan ekspektasi
+bersyarat dari $f\times h_n$. Barisan $\sequencen{f\times h_n}$ dan
+$\sequencen{g\times h_n}$ keduanya merupakan barisan tak menurun hampir
+di mana-mana dari fungsi-fungsi terintegralkan, dengan limit masing-masing
+$f\times h$ dan $g\times h$. Menurut Teorema B.Levi,
+
+$$\eqalignno{f\times h\text{ terintegralkan}
+&\iff\,f\times\tilde h\text{ terintegralkan}\cr
+&\iff\,\sup_{n\in\Bbb N}\int f\times h_n<\infty
+\iff\,\sup_{n\in\Bbb N}\int g\times h_n<\infty\cr
+\noalign{\noindent (karena $\int g\times h_n=\int f\times h_n$ untuk
+setiap $n$)}
+&\iff\,g\times h\text{ terintegralkan}
+\iff\,g_0\times h\text{ terintegralkan}.\cr}$$
+
+\noindent Selain itu, dalam hal ini
+
+$$\eqalign{\int_Ef\times h
+&=\int_Ef\times\tilde h
+=\lim_{n\to\infty}\int_Ef\times h_n\cr
+&=\lim_{n\to\infty}\int_Eg\times h_n
+=\int_Eg\times\tilde h
+=\int_Eg\times h\cr}$$
+
+\noindent untuk setiap $E\in\Tau$, sedangkan $g\times h$ terukur secara
+virtual terhadap $(\mu\restrp\Tau)$, sehingga $g\times h$ merupakan
+ekspektasi bersyarat dari $f\times h$.
+
+\medskip
+
+{\bf (c)} Terakhir, tinjau kasus umum dengan $f$ terintegralkan dan $h$
+terukur secara virtual. Tetapkan $f^+=f\vee 0$ dan $f^-=(-f)\vee 0$,
+sehingga $f=f^+-f^-$ dan $0\le f^+,\,f^-\le|f|$; serupa dengan itu,
+tetapkan $h^+=h\vee 0$ dan $h^-=(-h)\vee 0$. Misalkan $g_1$ dan $g_2$
+ekspektasi bersyarat dari $f^+$ dan $f^-$ pada $\Tau$. Karena
+$0\le f^+$, $f^-\le|f|$, maka $0\le g_1$, $g_2\leae g_0$, sedangkan
+$g\eae g_1-g_2$.
+
+Kita melihat bahwa
+
+$$\eqalign{f\times h\text{ terintegralkan}
+&\iff\,|f|\times|h|=|f\times h|\text{ terintegralkan}\cr
+&\iff\,g_0\times |h|\text{ terintegralkan}\cr
+&\iff\,g_0\times h\text{ terintegralkan}.\cr}$$
+
+\noindent Dan dalam hal ini keempat fungsi
+$f^+\times h^+,\ldots,f^-\times h^-$ terintegralkan, sehingga
+
+\Centerline{$(g_1-g_2)\times h
+=g_1\times h^+-g_2\times h^+-g_1\times h^-+g_2\times h^-$}
+
+\noindent merupakan ekspektasi bersyarat dari
+
+\Centerline{$f^+\times h^+-f^-\times h^+-f^+\times h^-+f^-\times h^- %
+=f\times h$.}
+
+\noindent Karena $g\times h\eae(g_1-g_2)\times h$, fungsi ini juga
+merupakan ekspektasi bersyarat dari $f\times h$, dan selesailah bukti.
+}%end of proof of 233K
+
+\exercises{
+\leader{233X}{Latihan dasar (a)}
+%\spheader 233Xa
+Misalkan $(X,\Sigma,\mu)$ suatu ruang probabilitas dan $\Tau$ suatu
+subaljabar-$\sigma$ dari $\Sigma$. Misalkan $\sequencen{f_n}$ suatu
+barisan fungsi nonnegatif yang $\mu$-terintegralkan, dan andaikan $g_n$
+suatu ekspektasi bersyarat dari $f_n$ pada $\Tau$ untuk setiap $n$.
+Andaikan $f=\liminf_{n\to\infty}f_n$ terintegralkan dan mempunyai
+ekspektasi bersyarat $g$. Tunjukkan bahwa
+$g\leae\liminf_{n\to\infty}g_n$.
+%233E
+
+\spheader 233Xb Misalkan $I\subseteq\Bbb R$ suatu selang dan
+$\phi:I\to\Bbb R$ suatu fungsi. Tunjukkan bahwa $\phi$ konveks jika dan
+hanya jika $\{x:x\in I,\,\phi(x)+bx\le c\}$ merupakan selang untuk setiap
+$b$, $c\in\Bbb R$.
+%233G
+
+\sqheader 233Xc Misalkan $I\subseteq\Bbb R$ suatu selang terbuka dan
+$\phi:I\to\Bbb R$ suatu fungsi. (i) Tunjukkan bahwa jika $\phi$ dapat
+didiferensialkan, maka fungsi tersebut konveks jika dan hanya jika
+$\phi'$ tak menurun. (ii) Tunjukkan bahwa jika $\phi$ kontinu mutlak
+pada setiap subselang tertutup berbatas dari $I$, maka $\phi$ konveks
+jika dan hanya jika $\phi'$ tak menurun pada domainnya.
+
+\spheader 233Xd Untuk setiap $r\ge 1$, suatu subhimpunan $C$ dari
+$\BbbR^r$ disebut {\bf konveks} jika $tx + (1-t)y\in C$ untuk semua
+$x$, $y\in C$, dan $t\in[0,1]$. Jika $C\subseteq\BbbR^r$ konveks, maka
+suatu fungsi $\phi:C\to\Bbb R$ disebut {\bf konveks} jika
+$\phi(tx+(1-t)y)\le t\phi(x)+(1-t)\phi(y)$ untuk semua $x$, $y\in C$,
+dan $t\in[0,1]$.
+
+Misalkan $C\subseteq\BbbR^r$ suatu himpunan konveks dan
+$\phi:C\to\Bbb R$ suatu fungsi. Tunjukkan bahwa pernyataan-pernyataan
+berikut ekuivalen: (i) fungsi $\phi$ konveks; (ii) himpunan
+$\{(x,t):x\in C,\,t\in\Bbb R,\,t\ge\phi(x)\}$ konveks dalam
+$\BbbR^{r+1}$; (iii) himpunan
+$\{x:x\in C,\,\phi(x)+b\dotproduct x\le c\}$ konveks dalam $\BbbR^r$
+untuk setiap $b\in\BbbR^r$ dan $c\in\Bbb R$, dengan menuliskan
+$b\dotproduct x=\sum_{i=1}^r\beta_i\xi_i$ jika
+$b=(\beta_1,\ldots,\beta_r)$ dan $x=(\xi_1,\ldots,\xi_r)$.
+%233G
+
+\spheader 233Xe Misalkan $I\subseteq\Bbb R$ suatu selang dan
+$\phi:I\to\Bbb R$ suatu fungsi konveks.
+
+\quad (i) Tunjukkan bahwa jika $a$, $d\in I$, dan $a<b\le c<d$, maka
+
+\Centerline{$\Bover{\phi(b)-\phi(a)}{b-a}
+\le\Bover{\phi(d)-\phi(c)}{d-c}$.}
+
+\quad (ii) Tunjukkan bahwa $\phi$ kontinu pada setiap titik interior
+$I$.
+
+\quad (iii) Tunjukkan bahwa {\it salah satu} $\phi$ monoton pada $I$
+{\it atau} terdapat $c\in I$ sedemikian sehingga
+$\phi(c)=\min_{x\in I}\phi(x)$, dan $\phi$ tak menaik pada
+$I\cap\ocint{-\infty,c}$ serta monoton tak menurun pada
+$I\cap\coint{c,\infty}$.
+
+\quad (iv) Tunjukkan bahwa $\phi$ dapat didiferensialkan di semua titik
+$I$ kecuali pada suatu himpunan titik yang paling banyak terhitung, dan turunannya tak
+menurun dalam arti bahwa $\phi'(x)\le\phi'(y)$ setiap kali
+$x$, $y\in\dom\phi'$ dan $x\le y$.
+
+\quad (v) Tunjukkan bahwa jika $I$ tertutup dan berbatas serta $\phi$
+kontinu, maka $\phi$ kontinu mutlak.
+
+\quad (vi) Tunjukkan bahwa jika $I$ tertutup dan berbatas serta
+$\psi:I\to\Bbb R$ kontinu mutlak dengan turunan tak menurun, maka $\psi$
+konveks.
+%233H
+
+\spheader 233Xf Tunjukkan bahwa jika $I\subseteq\Bbb R$ suatu selang dan
+$\phi$, $\psi:I\to\Bbb R$ fungsi-fungsi konveks, maka
+$a\phi+b\psi$ juga konveks untuk setiap $a$, $b\ge 0$.
+%233H
+
+\spheader 233Xg Dalam konteks 233K, berikan contoh ketika $g\times h$
+terintegralkan tetapi $f\times h$ tidak terintegralkan.
+\Hint{ambil $X$, $\mu$, dan $\Tau$ seperti dalam 233Cb, lalu atur agar
+$g$ bernilai $0$.}
+%233K
+
+\spheader 233Xh Misalkan $I\subseteq\Bbb R$ suatu selang dan $\Phi$
+suatu keluarga tak kosong dari fungsi-fungsi konveks bernilai real pada
+$I$ sedemikian sehingga $\psi(x)=\sup_{\phi\in\Phi}\phi(x)$ berhingga
+untuk setiap $x\in I$. Tunjukkan bahwa $\psi$ konveks.
+%233H
+
+\leader{233Y}{Latihan lanjutan (a)} Jika $I\subseteq\Bbb R$ suatu
+selang, suatu fungsi $\phi:I\to\Bbb R$ disebut {\bf konveks-tengah} jika
+$\phi(\bover{x+y}2)\le\bover12(\phi(x)+\phi(y))$ untuk semua
+$x$, $y\in I$. Tunjukkan bahwa fungsi konveks-tengah yang berbatas pada
+suatu subselang tak trivial dari $I$ adalah konveks.
+%233G
+
+\spheader 233Yb Perumum 233Xd ke ruang bernorma sembarang sebagai
+pengganti $\BbbR^r$.
+%233G
+
+\spheader 233Yc Misalkan $(X,\Sigma,\mu)$ suatu ruang probabilitas dan
+$\Tau$ suatu subaljabar-$\sigma$ dari $\Sigma$. Misalkan $\phi$ suatu
+fungsi konveks bernilai real dengan domain suatu selang
+$I\subseteq\Bbb R$, dan $f$ suatu fungsi bernilai real yang terintegralkan
+pada $X$ sedemikian sehingga $f(x)\in I$ untuk hampir setiap $x\in X$
+dan $\phi f$ terintegralkan. Misalkan $g$ dan $h$ masing-masing
+ekspektasi bersyarat pada $\Tau$ dari $f$ dan $\phi f$. Tunjukkan bahwa
+$g(x)\in I$ untuk hampir setiap $x$ dan $\phi g\leae h$.
+%233J
+
+\spheader 233Yd(i) Tunjukkan bahwa jika $I\subseteq\Bbb R$ suatu selang
+berbatas, $E\subseteq I$ terukur Lebesgue, dan
+$\mu E>\bover23\mu I$ dengan $\mu$ ukuran Lebesgue, maka untuk setiap
+$x\in I$ terdapat $y$, $z\in E$ sedemikian sehingga
+$z=\bover{x+y}2$. \Hint{menurut 134Ya/263A,
+$\mu(x+E)+\mu(2E)>\mu(2I)$.} (ii) Tunjukkan bahwa jika
+$f:[0,1]\to\Bbb R$ suatu fungsi konveks-tengah terukur Lebesgue
+(definisi: 233Ya), $a>0$, dan
+$E=\{x:x\in[0,1]$, $a\le f(x)<2a\}$ tidak terabaikan, maka terdapat
+selang tak trivial $I\subseteq[0,1]$ sedemikian sehingga $f(x)>0$ untuk
+setiap $x\in I$. \Hint{223B.} (iii) Andaikan
+$f:[0,1]\to\Bbb R$ suatu fungsi konveks-tengah sedemikian sehingga
+$f\le 0$ hampir di mana-mana dalam $[0,1]$. Tunjukkan bahwa $f\le 0$ di
+setiap titik $\ooint{0,1}$. \Hint{untuk setiap $x\in\ooint{0,1}$,
+$\max(f(x-t),f(x+t))\le 0$ untuk hampir setiap
+$t\in[0,\min(x,1-x)]$.}
+(iv) Andaikan $f:[0,1]\to\Bbb R$ suatu fungsi konveks-tengah terukur
+Lebesgue sedemikian sehingga $f(0)=f(1)=0$. Tunjukkan bahwa $f(x)\le 0$
+untuk setiap $x\in[0,1]$.
+\Hint{tunjukkan bahwa $\{x:f(x)\le 0\}$ padat dalam $[0,1]$, gunakan
+(ii) untuk menunjukkan bahwa himpunan tersebut koterabaikan dalam
+$[0,1]$, lalu terapkan (iii).}
+(v) Tunjukkan bahwa jika $I\subseteq\Bbb R$ suatu selang dan
+$f:I\to\Bbb R$ suatu fungsi konveks-tengah terukur Lebesgue, maka fungsi
+tersebut konveks.
+%233Ya 233G not in 2001 edition
+
+\spheader 233Ye Misalkan $(X,\Sigma,\mu)$ suatu ruang probabilitas,
+$\Tau$ suatu subaljabar-$\sigma$ dari subhimpunan-subhimpunan $X$, dan
+$f:X\to[0,\infty]$ suatu fungsi terukur terhadap $\Sigma$. Tunjukkan
+bahwa (i) terdapat suatu fungsi yang terukur terhadap $\Tau$, yaitu
+$g:X\to[0,\infty]$, sedemikian sehingga $\int_Fg=\int_Ff$ untuk setiap
+$F\in\Tau$
+(ii) setiap dua fungsi semacam itu sama hampir di mana-mana.
+
+\spheader 233Yf Andaikan $r\ge 1$ dan
+$C\subseteq\BbbR^r\setminus\{0\}$ suatu himpunan konveks. Tunjukkan
+bahwa terdapat $b\in\BbbR^r$ tak nol sedemikian sehingga
+$\varinnerprod{b}{z}\ge 0$ untuk setiap $z\in C$.
+\Hint{jika $r=2$, identifikasikan $\BbbR^2$ dengan $\Bbb C$; reduksikan
+ke kasus ketika $C$ tidak memuat titik yang real dan negatif; tetapkan
+$\theta=\sup\{\arg z:z\in C\}$ dan $b=-ie^{i\theta}$. Lalu gunakan
+induksi pada $r$.}
+%233Xd
+
+\spheader 233Yg Andaikan $r\ge 1$, $C\subseteq\BbbR^r$ suatu himpunan
+konveks, dan $\phi:C\to\Bbb R$ suatu fungsi konveks. Tunjukkan bahwa
+terdapat fungsi $h:\BbbR^r\to\coint{-\infty,\infty}$ sedemikian sehingga
+$\phi(z)=\sup\{h(y)+\varinnerprod{z}{y}:y\in\BbbR^r\}$ untuk setiap
+$z\in C$.
+\Hint{coba $h(y)=\inf\{\phi(z)-\varinnerprod{z}{y}:z\in C\}$, lalu
+terapkan 233Yf pada suatu translasi dari
+$\{(z,t):\phi(z)\le t\}$.}
+%233Yf 233Xd 233H
+
+\spheader 233Yh Misalkan $(X,\Sigma,\mu)$ suatu ruang probabilitas,
+$r\ge 1$ suatu bilangan bulat, dan $C\subseteq\BbbR^r$ suatu himpunan
+konveks. Misalkan $f_1,\ldots,f_r$ fungsi-fungsi bernilai real yang
+$\mu$-terintegralkan dan andaikan
+$\{x:x\in\bigcap_{j\le r}\dom f_j$,
+$(f_1(x),\ldots,f_r(x))\in C\}$ merupakan subhimpunan koterabaikan dari
+$X$. Tunjukkan bahwa $(\int f_1,\ldots,\int f_r)\in C$.
+\Hint{gunakan induksi pada $r$.}
+%233Yg 233H
+
+\spheader 233Yi Misalkan $(X,\Sigma,\mu)$ suatu ruang probabilitas,
+$r\ge 1$ suatu bilangan bulat, $C\subseteq\BbbR^r$ suatu himpunan
+konveks, dan $\phi:C\to\Bbb R$ suatu fungsi konveks. Misalkan
+$f_1,\ldots,f_r$ fungsi-fungsi bernilai real yang
+$\mu$-terintegralkan dan andaikan
+$\{x:x\in\bigcap_{j\le r}\dom f_j$,
+$(f_1(x),\ldots,f_r(x))\in C\}$ merupakan subhimpunan koterabaikan dari
+$X$. Tunjukkan bahwa
+$\phi(\int f_1,\ldots,\int f_r)\le\int\phi(f_1,\ldots,f_r)$.
+%233Yg 233Yh 233H
+
+\spheader 233Yj Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur dengan
+$\mu X>0$, $r\ge 1$ suatu bilangan bulat, $C\subseteq\BbbR^r$ suatu
+himpunan konveks sedemikian sehingga $tz\in C$ setiap kali $z\in C$ dan
+$t>0$, dan $\phi:C\to\Bbb R$ suatu fungsi konveks. Misalkan
+$f_1,\ldots,f_r$ fungsi-fungsi bernilai real yang
+$\mu$-terintegralkan dan andaikan
+$\{x:x\in\bigcap_{j\le r}\dom f_j$,
+$(f_1(x),\ldots,f_r(x))\in C\}$ merupakan subhimpunan koterabaikan dari
+$X$. Tunjukkan bahwa $(\int f_1,\ldots,\int f_r)\in C$ dan
+$\phi(\int f_1,\ldots,\int f_r)\le\int\phi(f_1,\ldots,f_r)$.
+\Hint{dengan menggabungkan 215B(viii) dan 235K di bawah, tunjukkan bahwa
+terdapat suatu ukuran probabilitas $\nu$ pada $X$ dan suatu fungsi
+$h:X\to\coint{0,\infty}$ sedemikian sehingga
+$\int f_jd\mu=\int f_j\times h\,d\nu$ untuk setiap $j$.}
+%233Yh 233Yi 233H
+
+}%end of exercises
+
+\endnotes{
+\Notesheader{233} Konsep `ekspektasi bersyarat` bersifat fundamental
+dalam teori probabilitas dan akan muncul kembali dalam konteks
+alamiahnya pada Bab 27. Namun, bahkan sebagai latihan teknik, saya
+berharap konsep tersebut akan terasa patut diperhatikan.
+
+Saya memperkenalkan 233E sebagai `daftar fakta elementer`, dan
+fakta-fakta tersebut memang langsung. Namun, di bawah permukaan terdapat
+sejumlah gagasan luar biasa yang menunggu untuk diungkapkan. Jika Anda
+mengambil $\Tau$ sebagai aljabar trivial $\{\emptyset,X\}$, sehingga
+ekspektasi bersyarat (yang unik) dari suatu fungsi terintegralkan $f$
+adalah fungsi konstan $(\int f)\chi X$, maka 233Ed dan 233Ee menjadi
+versi-versi Teorema B.Levi dan Teorema Konvergensi Terdominasi Lebesgue.
+(Lema Fatou terdapat dalam 233Xa.) Bahkan 233Eg dapat dipandang sebagai
+perumuman hasil $\int cf=c\int f$, dengan konstanta $c$ diganti oleh
+fungsi berbatas yang terukur terhadap $\Tau$. Tema berulang dalam
+bagian-bagian selanjutnya risalah ini ialah pencarian versi `bersyarat`
+dari teorema-teorema. Bukti 233Ee merupakan contoh khas argumen yang
+diterjemahkan dari bukti hasil `tak bersyarat` semula.
+
+Saya mengemukakan bahwa 233I-233J mengejutkan, dan menurut saya sebagian
+besar dari kita memang merasakannya demikian, bahkan ketika hasil-hasil
+itu diterapkan pada daftar fungsi konveks yang diberikan dalam 233G.
+Namun, perlu saya nyatakan bahwa dalam satu segi 233J hanya sedikit
+berkaitan dengan ekspektasi bersyarat. Satu-satunya sifat ekspektasi
+bersyarat yang digunakan dalam bukti ialah (i) jika $g$ suatu ekspektasi
+bersyarat dari $f$, maka $a\chi X+bg$ merupakan ekspektasi bersyarat
+dari $a\chi X+bf$ untuk semua $a$, $b$ real (ii) jika $g_1$, $g_2$
+merupakan ekspektasi bersyarat dari $f_1$, $f_2$ dan $f_1\leae f_2$,
+maka $g_1\leae g_2$. Lihat 244Xm di bawah. Ketaksamaan Jensen mempunyai
+perluasan menarik ke kasus multidimensi, yang ditelaah dalam
+233Yf-233Yj.   %233Yf 233Yg 233Yh 233Yi 233Yj
+Jika Anda pernah menjumpai bentuk `geometris` Teorema Hahn-Banach (lihat
+3A5C dalam Jilid 3), Anda akan mendapati 233Yf dan 233Yg sangat alami,
+dan mungkin memperhatikan bahwa kasus berdimensi hingga agak berbeda
+dari kasus berdimensi tak hingga yang mungkin pernah diajarkan kepada
+Anda. Menurut saya, langkah yang sebenarnya paling pelik terdapat dalam
+233Yh.
+
+Perhatikan bahwa 233Ib dapat dipandang sebagai kasus khusus 233J ketika
+$\Tau=\{\emptyset,X\}$. Bahkan 233Ia dapat diturunkan dari 233Ib yang
+diterapkan pada ukuran $\nu$ dengan $\nu E=\int_Eg$ untuk setiap
+$E\in\Sigma$.
+
+Seperti 233B, argumen dalam 233K tampaknya memiliki cukup banyak
+perincian teknis. Pokok hasil ini ialah bahwa kita dapat menyimpulkan
+keterintegralan $f\times h$ dari keterintegralan $g_0\times h$ (tetapi
+tidak dari keterintegralan $g\times h$; lihat 233Xg).
+Selebihnya seharusnya rutin.
+}%end of notes
+
+\discrpage

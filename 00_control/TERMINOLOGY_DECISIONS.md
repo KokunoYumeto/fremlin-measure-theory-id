@@ -78,3 +78,30 @@ The qualifier reordering and the expansion of `h.d.` are reader-language changes
 - In authority `mt211.tex:468-469`, exercise 211Xd says that a point-supported measure is always complete and is strictly localizable iff it is semi-finite; `mt211.tex:487-488`, exercise 211Xf, repeats the latter assertion. The Indonesian source preserves both separate stable exercise surfaces at `source/id-ID/mt211.tex:515-517` and `:538-539`; no exercise was deleted or silently merged.
 - Within 216D, the authority proceeds directly from part **(b)** at `mt216.tex:234-237` to part **(d)** at `mt216.tex:241`; no part **(c)** is present. The Indonesian source preserves the same label sequence at `source/id-ID/mt216.tex:236-243`. No missing mathematical content or replacement label was invented.
 - The authority’s orthographic typo `arbitary` at `mt212.tex:581` is naturally rendered as `sembarang` at `source/id-ID/mt212.tex:609`. This is an ordinary translation-level spelling normalization, not a mathematical source-correction row.
+
+## Chapter 23 terminology decisions
+
+Date admitted: 2026-08-25  
+Scope: `source/id-ID/mt23.tex` and `source/id-ID/mt231.tex`–`mt235.tex`
+
+| Concept or construction | Preferred O007 form | Decision and boundary |
+|---|---|---|
+| finitely additive functional | `fungsional aditif hingga` | Preserve *functional* as `fungsional`, not `fungsi`, because the object acts on a family of sets. Keep the finite-additivity qualifier after the noun. |
+| countably additive functional | `fungsional aditif terhitung` | Use in parallel with `fungsional aditif hingga`; do not substitute the measure-specific noun `ukuran` before the measure construction is actually introduced. |
+| signed measure / signed functional | `ukuran bertanda`; `fungsional bertanda` | Use `bertanda` for the signed scalar-valued objects. Do not use `ukuran berarah`, which suggests a different geometric concept. |
+| Hahn decomposition | `dekomposisi Hahn` | Retain the proper name and use the established mathematical noun `dekomposisi`. |
+| Jordan decomposition | `dekomposisi Jordan` | Retain the proper name and keep it distinct from the Hahn set decomposition. |
+| Radon--Nikodým theorem / derivative | `teorema Radon--Nikodým`; `turunan Radon--Nikodým` | Preserve the named theorem and use `turunan` for the density/derivative object. TeX source retains Fremlin’s accent encoding. |
+| absolute continuity | `kontinu mutlak terhadap` | Always retain the reference measure after `terhadap`; do not collapse the relation into an unqualified adjective when two measures are in play. |
+| conditional expectation | `ekspektasi bersyarat` | Use the standard probability phrase and retain the conditioning algebra or subalgebra explicitly. |
+| convex function | `fungsi konveks` | Use `konveks`, with `konveks-tengah` reserved for *mid-convex*. |
+| image measure | `ukuran citra` | Reaffirm the corpus-wide decision above for every occurrence in 234; the inverse-image construction remains visible in formulas. |
+| inverse-measure-preserving function (`\imp`) | `fungsi pelestari ukuran melalui prapeta` | The source macro is retained in every unit for structural replay. `source/id-ID/id-overrides.tex` supplies this Indonesian reader expansion; the English macro expansion must never leak into the Indonesian PDF. |
+| indefinite-integral measure | `ukuran integral tak tentu` | Preserve the relation to an underlying measure with `terhadap`; do not shorten it to `ukuran integral` because that loses Fremlin’s construction. |
+| upper / lower integral | `integral atas`; `integral bawah` | Preserve the order relation and the overline/underline formulas exactly; the prose terms name those formula surfaces. |
+| preimage / pullback measure | `prapeta`; `ukuran tarik-balik` | Use `prapeta` for inverse images of sets and `tarik-balik` for the induced measure construction. |
+
+These choices are reader-language decisions. They do not authorize formula,
+identifier, exercise, proof, reference, or source-order changes. The `\imp`
+override is additive presentation metadata: the stable source token remains
+unchanged in each translated unit and expands only in the Indonesian build.

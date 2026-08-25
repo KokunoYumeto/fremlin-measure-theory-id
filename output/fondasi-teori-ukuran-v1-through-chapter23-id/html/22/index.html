@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Bab 22 — Teorema Dasar Kalkulus — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        BbbQ: '\\mathbb{Q}', BbbR: '\\mathbb{R}',
+        eightBbb: ['\\mathbb{#1}', 1],
+        DiniD: '\\overline{D}', Dinid: '\\underline{D}',
+        Var: '\\operatorname{Var}',
+        bumpeq: '=_{\\mathrm{approx}}',
+        intstar: '\\operatorname{int}^{*}',
+        family: ['\\langle #3\\rangle_{#1\\in #2}', 3],
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        displaycause: ['\\text{(#1)}', 1],
+        bigcupop: '\\bigcup', biggerint: '\\int',
+        eae: '=_{\\mathrm{a.e.}}', leae: '\\le_{\\mathrm{a.e.}}', geae: '\\ge_{\\mathrm{a.e.}}',
+        restr: '\\mathord{\\upharpoonright}', restrp: '\\mathord{\\upharpoonright}',
+        Real: '\\operatorname{Re}', Imag: '\\operatorname{Im}',
+        tbf: ['\\mathbf{#1}', 1], eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Qed: '\\square',
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        roibr: '\\mathopen{{[}}',
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1]
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 2 · Bagian 22</p>
+  <h1>Bab 22 — Teorema Dasar Kalkulus</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi kumulatif</a></nav>
+<main id="isi">
+<span class="anchor" id="22"></span>
+<p>Dalam bab ini saya membahas salah satu sifat terpenting integral
+Lebesgue. Diberikan suatu fungsi terintegralkan <span class="math inline" data-source-tex="f:[a,b]\to\Bbb R">\(f:[a,b]\to\Bbb R\)</span>, kita
+dapat membentuk integral tak tentunya <span class="math inline" data-source-tex="F(x)=\int_a^xf(t)dt">\(F(x)=\int_a^xf(t)dt\)</span> untuk
+<span class="math inline" data-source-tex="x\in[a,b]">\(x\in[a,b]\)</span>. Dua pertanyaan segera muncul. (i) Dapatkah kita mengharapkan
+turunan <span class="math inline" data-source-tex="F&#x27;">\(F&#x27;\)</span> dari <span class="math inline" data-source-tex="F">\(F\)</span> sama dengan <span class="math inline" data-source-tex="f">\(f\)</span>? (ii) Dapatkah kita mengenali
+fungsi <span class="math inline" data-source-tex="F">\(F\)</span> mana yang muncul sebagai integral tak tentu? Jawaban
+yang cukup memuaskan dapat ditemukan untuk kedua pertanyaan ini: <span class="math inline" data-source-tex="F&#x27;=f">\(F&#x27;=f\)</span>
+hampir di mana-mana (<a class="xref" href="../222/index.html#222E">222E</a>) dan integral-integral tak tentu adalah
+fungsi-fungsi kontinu mutlak (<a class="xref" href="../225/index.html#225E">225E</a>). Dalam menangani kedua pertanyaan
+tersebut, kita perlu mengembangkan berbagai teknik yang menghasilkan
+banyak hasil mengagumkan, baik dalam teori ukuran Lebesgue maupun dalam
+topik-topik analisis real lain yang tampaknya tidak berkaitan.</p>
+<p>Langkah pertama adalah ‘Teorema Vitali’ (§<a class="xref" href="../221/index.html#221">221</a>), suatu argumen yang
+luar biasa – argumen ini lebih merupakan metode daripada teorema –
+yang memanfaatkan sifat geometris garis bilangan real untuk mengambil
+subkeluarga-subkeluarga saling lepas dari koleksi interval. Teorema ini
+merupakan landasan utama bukan hanya bagi hasil-hasil dalam §<a class="xref" href="../222/index.html#222">222</a>,
+melainkan juga bagi seluruh teori ukuran geometrik, yakni teori ukuran
+pada ruang-ruang yang memiliki struktur geometris. Di sini saya
+menggunakannya untuk menunjukkan bahwa fungsi-fungsi monoton dapat
+didiferensialkan hampir di mana-mana (<a class="xref" href="../222/index.html#222A">222A</a>). Setelah itu, Lema Fatou dan
+Teorema Konvergensi Terdominasi Lebesgue sudah cukup untuk menunjukkan
+bahwa turunan suatu integral tak tentu hampir di mana-mana sama dengan
+integrannya. Kita mendapati bahwa beberapa manipulasi yang tampak tidak
+berbahaya terhadap fakta ini ternyata membawa kita sangat jauh; saya
+menyajikannya dalam §<a class="xref" href="../223/index.html#223">223</a>.</p>
+<p>Saya mengawali paruh kedua bab ini dengan pembahasan mengenai fungsi
+‘bervariasi terbatas’, yakni fungsi yang dapat dinyatakan sebagai
+selisih dua fungsi monoton berbatas (§<a class="xref" href="../224/index.html#224">224</a>). Bagian ini termasuk salah
+satu bagian yang paling sedikit melibatkan teori ukuran dalam jilid ini;
+hanya dalam <a class="xref" href="../224/index.html#224I">224I</a> dan <a class="xref" href="../224/index.html#224J">224J</a> ukuran dan integrasi bahkan disebut. Namun,
+materi ini diperlukan untuk Bab 28 maupun untuk bagian berikutnya, dan
+juga merupakan salah satu topik dasar analisis real abad kedua puluh.
+§<a class="xref" href="../225/index.html#225">225</a> membahas karakterisasi integral-integral tak tentu sebagai
+fungsi-fungsi ‘kontinu mutlak’. Sebenarnya hal ini sekarang cukup mudah;
+menggunakan kembali Teorema Vitali cukup membantu, tetapi selebihnya merupakan
+penerapan langsung metode-metode yang telah digunakan sebelumnya. Paruh
+kedua bagian tersebut memperkenalkan beberapa gagasan baru dalam upaya
+memberikan intuisi yang lebih mendalam mengenai hakikat fungsi
+kontinu mutlak. §<a class="xref" href="../226/index.html#226">226</a> kembali kepada fungsi bervariasi terbatas dan
+penguraiannya menjadi bagian ‘saltus’, ‘kontinu mutlak’, dan ‘singular’;
+dua bagian pertama relatif mudah ditangani, sedangkan yang terakhir agak
+menyerupai fungsi Cantor.</p>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 2: Broad Foundations</cite>, Bagian 22.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 25 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-cumulative-html-route-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V2-CH22-INTRO&quot;,
+  &quot;source_member&quot;: &quot;mt2.2016/mt22.tex&quot;,
+  &quot;target_bytes&quot;: 3077,
+  &quot;target_sha256&quot;: &quot;80d0796310e2808bf6f88aa5ba0934e74b963aa577421d08cf0d8df7de178bdb&quot;,
+  &quot;source_ids&quot;: [
+    &quot;22&quot;
+  ],
+  &quot;corpus_id&quot;: &quot;O007-FREMLIN&quot;,
+  &quot;volume_id&quot;: &quot;O007-FREMLIN-V2&quot;,
+  &quot;volume_source_title&quot;: &quot;Broad Foundations&quot;,
+  &quot;route&quot;: &quot;22&quot;,
+  &quot;official_source_page_start&quot;: 55,
+  &quot;chapter_official_source_pages&quot;: [
+    55,
+    95
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

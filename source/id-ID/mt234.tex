@@ -1,0 +1,1356 @@
+\frfilename{mt234.tex}
+\versiondate{11.4.09}
+\copyrightdate{2008}
+
+\def\chaptername{Teorema Radon-Nikod\'ym}
+\def\sectionname{Operasi pada ukuran}
+
+\newsection{234}
+
+Saya menggunakan beberapa halaman untuk menguraikan sejumlah konstruksi baku.
+Gagasan-gagasannya langsung, tetapi sejumlah perincian perlu dikerjakan
+agar dapat dipadukan secara kokoh ke dalam kerangka umum yang saya gunakan.
+Langkah pertama adalah memperkenalkan secara formal fungsi-fungsi \imp\ 
+(234A-234B), kelas transformasi terpenting di antara ruang-ruang ukur.
+Untuk membangun ukuran baru, kita memiliki konsep
+ukuran citra (234C-234E), %234C 234D 234E
+jumlah ukuran (234G-234H), dan ukuran integral tak tentu
+(234I-234O).  %234I 234J 234K 234L 234M 234N 234O
+Terakhir, saya menyebutkan suatu cara mengurutkan ukuran-ukuran pada suatu
+himpunan tertentu (234P-234Q).
+
+
+\leader{234A}{Fungsi pelestari ukuran melalui
+prapeta}\dvAformerly{2{}35G}\cmmnt{ Sudah tiba waktunya saya memperkenalkan
+hal yang paling mendekati suatu `morfisme' dalam teori ukuran.}
+Jika $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ adalah ruang ukur, suatu fungsi
+$\phi:X\to Y$ disebut {\bf \imp} jika
+$\phi^{-1}[F]\in\Sigma$ dan $\mu(\phi^{-1}[F])=\nu F$ untuk setiap
+$F\in\Tau$.
+
+\leader{234B}{Proposisi} Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+ruang ukur, dan $\phi:X\to Y$ suatu fungsi \imp.
+
+
+(a)\dvAformerly{2{}35Hc} Jika $\hat\mu$, $\hat\nu$ masing-masing adalah
+pelengkapan dari $\mu$, $\nu$, maka $\phi$ juga \imp\ untuk $\hat\mu$ dan
+$\hat\nu$.
+
+(b)\dvAformerly{2{}35Xe} $\mu$ adalah ukuran peluang jika dan hanya jika
+$\nu$ adalah ukuran peluang.
+
+(c)\dvAformerly{2{}35Xe}
+ $\mu$ berhingga total jika dan hanya jika $\nu$ berhingga total.
+
+(d)\dvAformerly{2{}35Xe}(i)
+Jika $\nu$ $\sigma$-hingga, maka $\mu$ $\sigma$-hingga.
+
+\quad(ii) Jika $\nu$ semihingga dan $\mu$ $\sigma$-hingga, maka $\nu$
+$\sigma$-hingga.
+
+(e)\dvAformerly{2{}35Xe}(i)
+Jika $\nu$ $\sigma$-hingga dan tanpa atom, maka $\mu$ tanpa atom.
+
+\quad(ii) Jika $\nu$ semihingga dan $\mu$ atomik murni, maka
+$\nu$ atomik murni.
+
+(f)\dvAnew{2008}(i) $\mu^*\phi^{-1}[B]\le\nu^*B$ untuk
+setiap $B\subseteq Y$.
+
+\quad(ii) $\mu^*A\le\nu^*\phi[A]$ untuk setiap $A\subseteq X$.
+
+(g)\dvAformerly{2{}35Hc}
+ Jika $(Z,\Lambda,\lambda)$ adalah ruang ukur lain, dan
+$\psi:Y\to Z$ bersifat \imp, maka $\psi\phi:X\to Z$ bersifat \imp.
+
+\proof{{\bf (a)} Jika $\hat\nu$ mengukur $F$, terdapat $F'$, $F''\in\Tau$
+sedemikian sehingga $F'\subseteq F\subseteq F''$ dan
+$\nu(F''\setminus F')=0$. Sekarang
+
+\Centerline{$\phi^{-1}[F']\subseteq\phi^{-1}[F]\subseteq\phi^{-1}[F'']$,
+\quad$\mu(\phi^{-1}[F'']\setminus\phi^{-1}[F'])=\nu(F''\setminus F')=0$,}
+
+\noindent sehingga $\hat\mu$ mengukur $\phi^{-1}[F]$ dan
+
+\Centerline{$\hat\mu(\phi^{-1}[F])=\mu\phi^{-1}[F']=\nu F'=\hat\nu F$.}
+
+\noindent Karena $F$ sembarang, $\phi$ bersifat \imp\ untuk $\hat\mu$ dan
+$\hat\nu$.
+
+\medskip
+
+{\bf (b)-(c)} tentu saja jelas.
+
+\medskip
+
+{\bf (d)(i)} Jika $\sequencen{F_n}$ adalah penutup $Y$ oleh
+himpunan-himpunan berukuran berhingga terhadap $\nu$, maka
+$\sequencen{\phi^{-1}[F_n]}$ adalah penutup $X$ oleh himpunan-himpunan
+berukuran berhingga terhadap $\mu$.
+
+\medskip
+
+\quad{\bf (ii)} Misalkan $\Cal F\subseteq\Tau$ suatu keluarga saling lepas
+dari himpunan-himpunan yang tidak terabaikan terhadap $\nu$. Maka
+$\family{F}{\Cal F}{\phi^{-1}[F]}$ adalah keluarga saling lepas dari
+himpunan-himpunan yang tidak terabaikan terhadap $\mu$. Menurut 215B(iii),
+$\Cal F$ terhitung. Dengan menggunakan 215B(iii) dalam arah sebaliknya,
+$\nu$ bersifat $\sigma$-hingga.
+
+\medskip
+
+{\bf (e)(i)} Andaikan $E\in\Sigma$ dan $\mu E>0$. Misalkan
+$\sequencen{F_n}$ suatu penutup $Y$ oleh himpunan-himpunan berukuran
+berhingga terhadap $\nu$. Karena $\nu$ tanpa atom, untuk setiap $n$ kita
+dapat menemukan suatu partisi berhingga $\family{i}{I_n}{F_{ni}}$
+dari $F_n$ sedemikian sehingga $\nu F_{ni}<\mu E$ untuk setiap $i\in I_n$
+(gunakan 215D berulang kali). Sekarang
+$X=\bigcup_{n\in\Bbb N,i\in I_n}\phi^{-1}[F_{ni}]$, sehingga terdapat
+$n\in\Bbb N$ dan $i\in I_n$ dengan
+
+\Centerline{$0<\mu(E\cap\phi^{-1}[F_{ni}])
+\le\mu\phi^{-1}[F_{ni}]=\nu F_{ni}<\mu E$,}
+
+\noindent dan $E$ bukan atom terhadap $\mu$. Karena $E$ sembarang, $\mu$
+tanpa atom.
+
+\medskip
+
+\quad{\bf (ii)} Andaikan $F\in\Tau$ dan $\nu F>0$. Karena $\nu$
+semihingga, terdapat suatu $F_1\subseteq F$ sedemikian sehingga
+$0<\nu F_1<\infty$. Sekarang $\mu\phi^{-1}[F_1]>0$; karena $\mu$
+atomik murni, terdapat suatu atom terhadap $\mu$,
+$E\subseteq\phi^{-1}[F_1]$.
+
+Misalkan $\Cal G$ adalah himpunan semua $G\in\Tau$ sedemikian sehingga
+$G\subseteq F_1$ dan $\mu(E\cap\phi^{-1}[G])=0$. Gabungan setiap barisan
+di dalam $\Cal G$ termasuk dalam $\Cal G$, sehingga menurut 215Ac terdapat
+suatu $H\in\Cal G$ sedemikian sehingga $\nu(G\setminus H)=0$ kapan pun
+$G\in\Cal G$. Tinjau $F_1\setminus H$. Kita mempunyai
+
+\Centerline{$\nu(F_1\setminus H)
+=\mu(\phi^{-1}[F_1]\setminus\phi^{-1}[H])
+\ge\mu(E\setminus\phi^{-1}[H])
+=\mu E>0$.}
+
+\noindent Jika $G\in\Tau$ dan $G\subseteq F_1\setminus H$,
+maka salah satu dari $E\cap\phi^{-1}[G]$ dan
+$E\setminus\phi^{-1}[G]$ terabaikan terhadap $\mu$.
+Dalam kasus pertama, $G\in\Cal G$ dan $G=G\setminus H$ terabaikan terhadap
+$\nu$. Dalam kasus kedua, $F_1\setminus G\in\Cal G$ dan
+$(F_1\setminus H)\setminus G$ terabaikan terhadap $\nu$. Karena $G$
+sembarang, $F_1\setminus H$ adalah atom terhadap $\nu$ yang termuat dalam
+$F$; karena $F$ sembarang, $\nu$ atomik murni.
+
+\medskip
+
+{\bf (f)(i)} Misalkan $F\in\Tau$ sedemikian sehingga $B\subseteq F$ dan
+$\nu^*B=\nu F$ (132Aa); maka $\phi^{-1}[B]\subseteq\phi^{-1}[F]$, sehingga
+
+\Centerline{$\mu^*\phi^{-1}[B]\le\mu\phi^{-1}[F]=\nu F=\nu^*B$.}
+
+\medskip
+
+\quad{\bf (ii)} $\mu^*A\le\mu^*(\phi^{-1}[\phi[A]])\le\nu^*\phi[A]$
+menurut (i).
+
+\medskip
+
+{\bf (g)} Untuk sembarang $W\in\Lambda$,
+
+\Centerline{$\mu(\psi\phi)^{-1}[W]=\mu\phi^{-1}[\psi^{-1}[W]]
+=\nu\psi^{-1}[W]=\lambda W$.}
+}%end of proof of 234B
+
+
+\leader{234C}{Ukuran \dvrocolon{citra}}\dvAformerly{1{}12E}\cmmnt{
+Konstruksi berikut adalah salah satu cara paling umum bagi ruang-ruang ukur
+baru untuk muncul.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur,
+$Y$ sembarang himpunan, dan $\phi:X\to Y$ suatu fungsi. Tetapkan
+
+\Centerline{$\Tau=\{F:F\subseteq Y,\,\phi^{-1}[F]\in\Sigma\}$,
+\quad$\nu F=\mu(\phi^{-1}[F])$ untuk setiap $F\in\Tau$.}
+
+\noindent Maka $(Y,\Tau,\nu)$ adalah ruang ukur.
+
+\proof{{\bf (a)} $\emptyset=\phi^{-1}[\emptyset]\in\Sigma$, sehingga
+$\emptyset\in\Tau$.
+
+\medskip
+
+{\bf (b)} Jika $F\in\Tau$, maka $\phi^{-1}[F]\in\Sigma$, sehingga
+$X\setminus\phi^{-1}[F]\in\Sigma$; tetapi
+$X\setminus\phi^{-1}[F]=\phi^{-1}[Y\setminus F]$, sehingga
+$Y\setminus F\in\Tau$.
+
+\medskip
+
+{\bf (c)} Jika $\sequencen{F_n}$ suatu barisan di dalam $\Tau$,
+maka $\phi^{-1}[F_n]\in\Sigma$ untuk setiap $n$, sehingga
+$\bigcup_{n\in\Bbb N}\phi^{-1}[F_n]\in\Sigma$; tetapi
+$\phi^{-1}[\bigcup_{n\in\Bbb N}F_n]=\bigcup_{n\in\Bbb N}\phi^{-1}[F_n]$,
+sehingga $\bigcup_{n\in\Bbb N}F_n\in\Tau$.
+
+Dengan demikian, $\Tau$ adalah aljabar-sigma.
+
+\medskip
+
+{\bf (d)} $\nu\emptyset=\mu\phi^{-1}[\emptyset]=\mu\emptyset=0$.
+
+\medskip
+
+{\bf (e)} Jika $\sequencen{F_n}$ suatu barisan saling lepas di dalam
+$\Tau$, maka $\sequencen{\phi^{-1}[F_n]}$ suatu barisan saling lepas
+di dalam $\Sigma$, sehingga
+
+\Centerline{$\nu(\bigcup_{n\in\Bbb N}F_n)
+=\mu\phi^{-1}[\bigcup_{n\in\Bbb N}F_n]
+=\mu(\bigcup_{n\in\Bbb N}\phi^{-1}[F_n])
+=\sum_{n=0}^{\infty}\mu\phi^{-1}[F_n]
+=\sum_{n=0}^{\infty}\nu F_n$.}
+
+\noindent Jadi, $\nu$ adalah ukuran.
+
+}%end of proof of 234C
+
+\leader{234D}{Definisi}\dvAformerly{1{}12F}
+ Dalam konteks 234C, $\nu$ disebut
+{\bf ukuran citra}\cmmnt{ atau {\bf ukuran dorong-maju}};
+saya akan menuliskannya sebagai $\mu\phi^{-1}$.
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Barangkali perlu saya katakan bahwa konstruksi ini
+tidak selalu menghasilkan secara persis ukuran yang `tepat' pada
+$Y$; terdapat keadaan ketika suatu modifikasi dari ukuran
+$\mu\phi^{-1}$ yang diuraikan di sini lebih berguna. Namun, saya akan
+mencatat keadaan tersebut secara eksplisit saat muncul; ketika saya
+menggunakan frasa tanpa hiasan `ukuran citra', yang saya maksud
+adalah ukuran yang dibangun di atas.
+}%end of comment
+
+\leader{234E}{Proposisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur,
+$Y$ suatu himpunan, dan $\phi:X\to Y$ suatu fungsi; misalkan
+$\mu\phi^{-1}$ ukuran citra pada $Y$.
+
+(a) $\phi$ bersifat \imp\ untuk $\mu$ dan $\mu\phi^{-1}$.
+
+(b)\dvAformerly{2{}12Bd} Jika $\mu$ lengkap, maka demikian pula
+$\mu\phi^{-1}$.
+
+(c)\dvAformerly{1{}12Xd} Jika $Z$ suatu himpunan lain, dan
+$\psi:Y\to Z$ suatu fungsi, maka ukuran-ukuran citra
+$\mu(\psi\phi)^{-1}$ dan $(\mu\phi^{-1})\psi^{-1}$ pada $Z$ adalah sama.
+
+\proof{{\bf (a)} Langsung dari definisi-definisi.
+
+\medskip
+
+{\bf (b)} Tuliskan $\nu$ untuk $\mu\phi^{-1}$ dan $\Tau$ untuk domainnya.
+Jika $\nu^*B=0$, maka $\mu^*\phi^{-1}[B]=0$, menurut 234B(f-i); karena
+$\mu$ lengkap, $\phi^{-1}[B]\in\Sigma$, sehingga $B\in\Tau$. Karena $B$
+sembarang, $\nu$ lengkap.
+
+\medskip
+
+{\bf (c)} Untuk $G\subseteq Z$ dan $u\in[0,\infty]$,
+
+$$\eqalign{(\mu(\psi\phi)^{-1})(G)&\text{ terdefinisi dan sama dengan }u\cr
+&\iff\mu((\psi\phi)^{-1}[G])\text{ terdefinisi dan sama dengan }u\cr
+&\iff\mu(\phi^{-1}[\psi^{-1}[G]])\text{ terdefinisi dan sama dengan }u\cr
+&\iff(\mu\phi^{-1})(\psi^{-1}[G])\text{ terdefinisi dan sama dengan }u\cr
+&\iff((\mu\phi^{-1})\psi^{-1})(G)\text{ terdefinisi dan sama dengan }u.\cr}$$
+
+}%end of proof of 234E
+
+
+\leader{*234F}{}\dvAformerly{1{}32G}\cmmnt{ Dalam arah sebaliknya,
+konstruksi ukuran tarik-balik berikut kadang-kadang berguna.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $X$ suatu himpunan, $(Y,\Tau,\nu)$
+suatu ruang ukur, dan $\phi:X\to Y$ suatu fungsi sedemikian sehingga
+$\phi [X]$ mempunyai ukuran luar penuh dalam $Y$. Maka terdapat suatu
+ukuran $\mu$ pada $X$, dengan domain
+$\Sigma=\{\phi^{-1}[F]:F\in\Tau\}$, sedemikian sehingga $\phi$ bersifat
+\imp\ untuk $\mu$ dan $\nu$.
+
+\proof{ Pemeriksaan bahwa $\Sigma$ adalah aljabar-sigma subhimpunan dari
+$X$ bersifat langsung; yang perlu kita ketahui hanyalah bahwa
+$\phi^{-1}[\emptyset]=\emptyset$,
+$X\setminus\phi^{-1}[F]=\phi^{-1}[Y\setminus F]$ untuk setiap
+$F\subseteq Y$, dan bahwa
+$\phi^{-1}[\bigcup_{n\in\Bbb N}F_n]=\bigcup_{n\in\Bbb N}\phi^{-1}[F_n]$
+untuk setiap barisan $\sequencen{F_n}$ dari subhimpunan-subhimpunan $Y$.
+Fakta kuncinya ialah bahwa jika $F_1$, $F_2\in\Tau$ dan
+$\phi^{-1}[F_1]=\phi^{-1}[F_2]$, maka $\phi[X]$ tidak bertemu dengan
+$F_1\symmdiff F_2$; karena $\phi[X]$ mempunyai ukuran luar penuh,
+$F_1\symmdiff F_2$ terabaikan terhadap $\nu$ dan $\nu F_1=\nu F_2$.
+Dengan demikian, rumus $\mu\phi^{-1}[F]=\nu F$ memang mendefinisikan
+suatu fungsi $\mu:\Sigma\to[0,\infty]$. Sekarang
+
+\Centerline{$\mu\emptyset=\mu\phi^{-1}[\emptyset]=\nu\emptyset=0$.}
+
+\noindent Selanjutnya, jika $\sequencen{E_n}$ suatu barisan saling lepas
+di dalam $\Sigma$, pilih $F_n\in\Tau$ sedemikian sehingga
+$E_n=\phi^{-1}[F_n]$ untuk setiap $n\in\Bbb N$. Barisan
+$\sequencen{F_n}$ belum tentu saling lepas, tetapi jika kita menetapkan
+$F'_n=F_n\setminus\bigcup_{i<n}F_i$ untuk setiap $n\in\Bbb N$, maka
+$\sequencen{F'_n}$ saling lepas dan
+
+\Centerline{$E_n=E_n\setminus\bigcup_{i<n}E_i=\phi^{-1}[F'_n]$}
+
+\noindent untuk setiap $n$; sehingga
+
+\Centerline{$\mu(\bigcup_{n\in\Bbb N}E_n)
+=\nu(\bigcup_{n\in\Bbb N}F'_n)
+=\sum_{n=0}^{\infty}\nu F'_n
+=\sum_{n=0}^{\infty}\mu E_n$.}
+
+\noindent Karena $\sequencen{E_n}$ sembarang, $\mu$ adalah ukuran pada
+$X$, sebagaimana diperlukan.
+}%end of proof of 234F
+
+
+\leader{234G}{Jumlah \dvrocolon{ukuran}}\dvAformerly{1{}12Ya;
+1{}12Xe untuk jumlah dua ukuran}\cmmnt{ Sekarang saya beralih ke cara
+yang sangat berbeda untuk membangun ukuran. Gagasannya jelas, tetapi
+perincian teknisnya, dalam kasus umum yang ingin saya kaji, perlu diperhatikan.
+
+\medskip
+
+\noindent}{\bf Proposisi}
+Misalkan $X$ suatu himpunan, dan $\familyiI{\mu_i}$ suatu keluarga ukuran
+pada $X$. Untuk setiap $i\in I$, misalkan $\Sigma_i$ domain dari $\mu_i$.
+Tetapkan $\Sigma=\Cal PX\cap\bigcap_{i\in I}\Sigma_i$ dan definisikan
+$\mu:\Sigma\to[0,\infty]$ dengan menetapkan
+$\mu E=\sum_{i\in I}\mu_iE$ untuk setiap $E\in\Sigma$. Maka $\mu$
+adalah ukuran pada $X$.
+
+\proof{ $\Sigma$ adalah aljabar-sigma subhimpunan dari $X$ karena setiap
+$\Sigma_i$ demikian. (Terapkan 111Ga dengan
+$\frak S=\{\Sigma_i:i\in I\}\cup\{\Cal PX\}$.)
+Tentu saja $\mu$ bernilai di dalam $[0,\infty]$ (226A).
+$\mu\emptyset=0$ karena $\mu_i\emptyset=0$ untuk setiap $i$. Jika
+$\sequencen{E_n}$ adalah barisan saling lepas di dalam $\Sigma$ dengan
+gabungan $E$, maka
+
+$$\eqalignno{\mu E
+&=\sum_{i\in I}\mu_iE
+=\sum_{i\in I}\sum_{n=0}^{\infty}\mu_iE_n
+=\sum_{n=0}^{\infty}\sum_{i\in I}\mu_iE_n\cr
+\displaycause{226Af}
+&=\sum_{n=0}^{\infty}\mu E_n.\cr}$$
+
+\noindent Jadi, $\mu$ adalah ukuran.
+}%end of proof of 234G
+
+\medskip
+
+\noindent{\bf Catatan} Dalam konteks ini, saya akan menyebut $\mu$
+{\bf jumlah} dari keluarga $\familyiI{\mu_i}$.
+
+\leader{234H}{Proposisi}\dvAnew{2008}
+ Misalkan $X$ suatu himpunan dan $\familyiI{\mu_i}$ suatu keluarga ukuran
+lengkap pada $X$ dengan jumlah $\mu$.
+
+(a) $\mu$ lengkap.
+
+(b)(i) Suatu subhimpunan dari $X$ terabaikan terhadap $\mu$ jika dan
+hanya jika subhimpunan tersebut terabaikan terhadap $\mu_i$ untuk setiap
+$i\in I$.
+
+\quad(ii) Suatu subhimpunan dari $X$ koterabaikan terhadap $\mu$ jika dan
+hanya jika subhimpunan tersebut koterabaikan terhadap $\mu_i$ untuk setiap
+$i\in I$.
+
+(c)\dvAformerly{2{}12Xh, untuk jumlah dua ukuran}
+ Misalkan $f$ suatu fungsi yang didefinisikan pada suatu subhimpunan dari
+$X$ dan bernilai dalam $[-\infty,\infty]$. Maka $\int fd\mu$ terdefinisi di
+$[-\infty,\infty]$ jika dan hanya jika $\int fd\mu_i$ terdefinisi di
+$[-\infty,\infty]$ untuk setiap $i$, dan salah satu dari
+$\sum_{i\in I}\int f^+d\mu_i$, $\sum_{i\in I}\int f^-d\mu_i$ berhingga; dalam hal
+ini $\int fd\mu=\sum_{i\in I}\int fd\mu_i$.
+
+\proof{ Tuliskan $\Sigma_i=\dom\mu_i$ untuk $i\in I$,
+$\Sigma=\Cal PX\cap\bigcap_{i\in I}\Sigma_i=\dom\mu$.
+
+\medskip
+
+{\bf (a)} Jika $E\subseteq F\in\Sigma$ dan $\mu F=0$, maka $\mu_iF=0$
+untuk setiap $i\in I$; karena $\mu_i$ lengkap, $E\in\Sigma_i$ untuk
+setiap $i\in I$, dan $E\in\Sigma$.
+
+\medskip
+
+{\bf (b)} Sekarang ini langsung mengikuti, karena suatu himpunan
+$A\subseteq X$ terabaikan terhadap $\mu$ jika dan hanya jika $\mu A=0$.
+
+\medskip
+
+{\bf (c)(i)} Pertama-tama perhatikan bahwa (b-ii) memberi tahu kita bahwa,
+di bawah salah satu hipotesis, $\dom f$ koterabaikan baik terhadap $\mu$
+maupun terhadap setiap $\mu_i$. Jadi, jika kita memperluas $f$ ke $X$
+dengan memberinya nilai $0$ pada $X\setminus\dom f$, baik $\int fd\mu$
+maupun $\sum_{i\in I}\int fd\mu_i$ tidak terpengaruh. Karena itu, mulai
+sekarang andaikan bahwa $f$ didefinisikan di seluruh $X$. Sekarang jelas
+bahwa salah satu hipotesis memastikan $f$ terukur terhadap $\Sigma$,
+yakni terukur terhadap $\Sigma_i$ untuk setiap $i\in I$.
+
+\medskip
+
+\quad{\bf (ii)} Andaikan $f$ nonnegatif.
+Untuk $n\in\Bbb N$, tetapkan
+$f_n(x)=\sum_{k=1}^{4^n}2^{-n}\chi\{x:f(x)\ge 2^{-n}k\}$, sehingga
+$\sequencen{f_n}$ adalah barisan tak-menurun dengan supremum $f$. Kita
+mempunyai
+
+$$\eqalign{\int f_nd\mu
+&=\sum_{k=1}^{4^n}2^{-n}\mu\{x:f(x)\ge 2^{-n}k\}
+=\sum_{k=1}^{4^n}\sum_{i\in I}2^{-n}\mu_i\{x:f(x)\ge 2^{-n}k\}\cr
+&=\sum_{i\in I}\sum_{k=1}^{4^n}2^{-n}\mu_i\{x:f(x)\ge 2^{-n}k\}
+=\sum_{i\in I}\int f_nd\mu_i\cr}$$
+
+\noindent untuk setiap $n$, sehingga
+
+$$\eqalign{\int fd\mu
+&=\sup_{n\in\Bbb N}\int f_nd\mu
+=\sup_{n\in\Bbb N}\sup_{J\subseteq I\text{ berhingga}}
+   \sum_{i\in J}\int f_nd\mu_i
+=\sup_{J\subseteq I\text{ berhingga}}\sup_{n\in\Bbb N}
+   \sum_{i\in J}\int f_nd\mu_i\cr
+&=\sup_{J\subseteq I\text{ berhingga}}
+   \lim_{n\to\infty}\sum_{i\in J}\int f_nd\mu_i
+=\sup_{J\subseteq I\text{ berhingga}}
+   \sum_{i\in J}\lim_{n\to\infty}\int f_nd\mu_i
+=\sum_{i\in I}\int fd\mu_i.\cr}$$
+
+\medskip
+
+\quad{\bf (iii)} Secara umum,
+
+$$\eqalign{\int fd\mu&\text{ terdefinisi di }[-\infty,\infty]\cr
+&\iff\int f^+d\mu\text{ dan }\int f^-d\mu
+  \text{ terdefinisi dan paling banyak salah satunya tak berhingga}\cr
+&\iff\sum_{i\in I}\int f^+d\mu_i\text{ dan }\sum_{i\in I}\int f^-d\mu_i
+  \text{ terdefinisi dan paling banyak salah satunya tak berhingga}\cr
+&\iff\int fd\mu_i\text{ terdefinisi untuk setiap }i
+  \text{ dan paling banyak salah satu dari }\sum_{i\in I}\int f^+d\mu_i,\cr
+&\mskip400mu
+  \sum_{i\in I}\int f^-d\mu_i\text{ tak berhingga},\cr}$$
+
+\noindent dan dalam hal ini
+
+\Centerline{$\int fd\mu
+=\int f^+d\mu-\int f^-d\mu
+=\sum_{i\in I}\int f^+d\mu_i-\sum_{i\in I}\int f^-d\mu_i
+=\sum_{i\in I}\int fd\mu_i$.}
+}%end of proof of 234H
+
+\leader{234I}{Ukuran
+\dvrocolon{integral tak tentu}}\dvAformerly{2{}34A}\cmmnt{ Dengan memperluas
+gagasan yang telah digunakan dalam 232D, kita sampai pada konstruksi berikut;
+sekali lagi, kita perlu berhati-hati terhadap perincian formal jika ingin
+memperoleh manfaat sepenuhnya.
+
+\medskip
+
+\noindent}{\bf Teorema} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur,
+dan $f$ suatu fungsi bernilai real nonnegatif yang terukur secara virtual
+terhadap $\mu$ dan didefinisikan pada suatu subhimpunan koterabaikan dari
+$X$. Tuliskan $\nu F=\int f\times\chi F\,d\mu$ kapan pun $F\subseteq X$
+sedemikian sehingga integral tersebut terdefinisi di
+$[0,\infty]$\cmmnt{ menurut konvensi 133A}.
+Maka $\nu$ adalah ukuran lengkap pada $X$, dan domainnya mencakup
+$\Sigma$.
+%the trouble with taking [0,\infty]-valued functions is that if
+%I allow  f=\infty  on a non-negligible set then  \nu  becomes
+%non-semi-finite for a silly reason
+
+\proof{{\bf (a)} Tuliskan $\Tau$ untuk domain $\nu$, yakni keluarga
+himpunan $F\subseteq X$ sedemikian sehingga
+$\int f\times\chi F\,d\mu$ terdefinisi di $[0,\infty]$, yakni
+$f\times\chi F$ terukur secara virtual terhadap $\mu$ (133A). Maka
+$\Tau$ adalah aljabar-sigma subhimpunan dari $X$. \Prf\
+Untuk setiap $F\in\Tau$, misalkan $H_F\subseteq X$ suatu himpunan
+koterabaikan terhadap $\mu$ sedemikian sehingga
+$f\times\chi F\restr H_F$ terukur terhadap $\Sigma$. Karena $f$ sendiri
+terukur secara virtual terhadap $\mu$, $X\in\Tau$. Jika $F\in\Tau$, maka
+
+\Centerline{$f\times\chi(X\setminus F)\restr(H_X\cap H_F)
+=f\restr(H_X\cap H_F)-(f\times\chi F)\restr(H_X\cap H_F)$}
+
+\noindent terukur terhadap $\Sigma$, sedangkan $H_X\cap H_F$
+koterabaikan terhadap $\mu$, sehingga $X\setminus F\in\Tau$. Jika
+$\sequencen{F_n}$ adalah barisan di dalam $\Tau$ dengan gabungan $F$,
+tetapkan $H=\bigcap_{n\in\Bbb N}H_{F_n}$; maka $H$ koterabaikan,
+$f\times\chi F_n\restr H$ terukur terhadap $\Sigma$ untuk setiap
+$n\in\Bbb N$, dan $f\times\chi F=\sup_{n\in\Bbb N}f\times\chi F_n$,
+sehingga $f\times\chi F\restr H$ terukur terhadap $\Sigma$, dan
+$F\in\Tau$. Dengan demikian, $\Tau$ adalah aljabar-sigma. Jika
+$F\in\Sigma$, maka $f\times\chi F\restr H_X$ terukur terhadap $\Sigma$,
+sehingga $F\in\Tau$.\ \Qed
+
+\medskip
+
+{\bf (b)} Selanjutnya, $\nu$ adalah ukuran. \Prf\ Tentu saja
+$\nu F\in[0,\infty]$ untuk setiap $F\in\Tau$.
+$f\times\chi\emptyset=0$ di mana pun fungsi tersebut didefinisikan,
+sehingga $\nu\emptyset=0$. Jika $\sequencen{F_n}$ adalah barisan saling
+lepas di dalam $\Tau$ dengan gabungan $F$, maka
+$f\times\chi F=\sum_{n=0}^{\infty}f\times\chi F_n$.
+Jika $\nu F_m=\infty$ untuk suatu $m$, maka tentu saja
+$\nu F=\infty=\sum_{n=0}^{\infty}\nu F_n$. Jika $\nu F_m<\infty$ untuk
+setiap $m$, tetapi $\sum_{n=0}^{\infty}\nu F_n=\infty$, maka
+
+\Centerline{$\int f\times\chi(\bigcup_{n\le m}F_n)
+=\sum_{n=0}^m\int f\times\chi F_n\to\infty$}
+
+\noindent ketika $m\to\infty$, sehingga sekali lagi
+$\nu F=\infty=\sum_{n=0}^{\infty}\nu F_n$. Jika
+$\sum_{n=0}^{\infty}\nu F_n<\infty$, maka menurut teorema B.Levi
+
+\Centerline{$\nu F=\int\sum_{n=0}^{\infty}f\times\chi F_n
+=\sum_{n=0}^{\infty}\int f\times\chi F_n
+=\sum_{n=0}^{\infty}\nu F_n$.
+\Qed}
+
+\medskip
+
+{\bf (c)} Terakhir, $\nu$ lengkap. \Prf\ Jika $A\subseteq F\in\Tau$
+dan $\nu F=0$, maka $f\times\chi F=0$ hampir di mana-mana, sehingga
+$f\times\chi A=0$ hampir di mana-mana dan $\nu A$ terdefinisi serta sama
+dengan nol.\ \Qed
+}%end of proof of 234I
+
+\leader{234J}{Definisi}\dvAformerly{2{}34B}
+Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur, dan
+$\nu$ ukuran lain pada $X$ dengan domain $\Tau$. Saya akan menyebut
+$\nu$ suatu {\bf ukuran integral tak tentu} terhadap $\mu$, atau
+kadang-kadang suatu {\bf ukuran integral tak tentu yang dilengkapi}, jika
+ukuran tersebut dapat diperoleh dengan metode 234I dari suatu fungsi
+nonnegatif $f$ yang terukur secara virtual dan didefinisikan hampir di
+mana-mana dalam $X$. Dalam hal ini, $f$ adalah suatu turunan
+Radon-Nikod\'ym dari $\nu$ terhadap $\mu$ dalam pengertian 232Hf.
+\cmmnt{Seperti dalam 232Hf, frasa {\bf fungsi kerapatan} juga digunakan
+dalam konteks ini.}
+
+\leader{234K}{Catatan-catatan}\dvAformerly{2{}34C}
+Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur, dan $f$ suatu fungsi bernilai
+real nonnegatif yang terukur secara virtual terhadap $\mu$ dan
+didefinisikan hampir di mana-mana dalam $X$; misalkan $\nu$ ukuran
+integral tak tentu yang bersesuaian.
+
+\spheader 234Ka\cmmnt{ Terdapat suatu fungsi yang terukur terhadap
+$\Sigma$, $g:X\to\coint{0,\infty}$, sedemikian sehingga
+$f=g\,\,\mu$-hampir di mana-mana. \Prf\ Misalkan
+$H\subseteq\dom f$ suatu himpunan terukur yang koterabaikan sedemikian
+sehingga $f\restr H$ terukur, dan tetapkan $g(x)=f(x)$ untuk $x\in H$,
+$g(x)=0$ untuk $x\in X\setminus H$.\ \QeD\ Dalam hal ini,
+$\int f\times\chi E\,d\mu=\int g\times\chi E\,d\mu$ jika salah satunya
+terdefinisi. Jadi, $g$ adalah suatu turunan Radon-Nikod\'ym dari $\nu$, dan}
+$\nu$ mempunyai suatu turunan Radon-Nikod\'ym yang terukur terhadap
+$\Sigma$ dan didefinisikan di mana-mana.
+
+%includes old 2{}34Ce
+\spheader 234Kb Jika $E$ terabaikan terhadap $\mu$,
+maka\cmmnt{ $f\times\chi E=0\,\,\mu$-hampir di mana-mana, sehingga}
+$\nu E=0$.
+\cmmnt{Banyak penulis bersedia mengatakan `$\nu$ kontinu mutlak
+terhadap $\mu$' dalam konteks ini. Namun, jika $\nu$ tidak berhingga total,
+ia belum tentu kontinu mutlak dalam pengertian
+$\epsilon$-$\delta$ pada 232Aa (234Xh), dan kesulitan lebih lanjut dapat
+muncul jika $\mu$ atau $\nu$ tidak $\sigma$-hingga (lihat 234Yk, 234Ym).
+}%end of comment
+
+\cmmnt{\spheader 234Kc Saya telah mendefinisikan `ukuran integral
+tak tentu' sedemikian rupa sehingga menghasilkan ukuran lengkap. Menurut
+saya, inilah yang paling masuk akal dalam kebanyakan penerapan. Ada
+kesempatan ketika tampaknya lebih tepat menggunakan ukuran
+$\nu_0:\Sigma\to[0,\infty]$ yang didefinisikan dengan menetapkan
+$\nu_0 E=\int_Efd\mu=\int f\times\chi E\,d\mu$ untuk $E\in\Sigma$.
+Saya kira saya akan menyebut ini {\bf ukuran integral tak tentu yang belum
+dilengkapi} terhadap $\mu$ yang didefinisikan oleh $f$. ($\nu$ selalu
+merupakan pelengkapan dari $\nu_0$; lihat 234Lb.)
+}%end of comment
+
+\spheader 234Kd\cmmnt{ Perhatikan cara saya merumuskan definisi $\nu$:
+`$\nu E=\int f\times\chi E\,d\mu$ jika integralnya terdefinisi',
+alih-alih `$\nu E=\int_Efd\mu$'. Pokoknya ialah bahwa rumus yang
+lebih panjang memberikan kaidah untuk menentukan domain $\nu$. Tentu saja
+memang benar bahwa} $\nu E=\int_Efd\mu$ untuk setiap
+$E\in\dom\nu$\cmmnt{ (terapkan 214F pada $f\times\chi E$)}.
+
+\spheader 234Ke\dvAnew{2008}
+\cmmnt{Karena }$\mu$ dan pelengkapannya mendefinisikan
+\cmmnt{fungsi-fungsi terukur secara virtual yang sama, ideal nol yang sama,
+dan integral-integral yang sama\cmmnt{ (212Eb, 212F)}, keduanya mendefinisikan} ukuran-ukuran
+integral tak tentu yang sama.
+
+\leader{234L}{Domain suatu ukuran
+\dvrocolon{integral tak tentu}}\dvAformerly{2{}34D}\cmmnt{ Kadang-kadang
+berguna untuk memiliki uraian eksplisit mengenai domain suatu ukuran yang
+dibangun dengan cara ini.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur,
+$f$ suatu fungsi nonnegatif yang terukur secara virtual terhadap $\mu$
+dan didefinisikan hampir di mana-mana dalam $X$, dan $\nu$ ukuran
+integral tak tentu yang bersesuaian. Tetapkan
+$G=\{x:x\in\dom f$, $f(x)>0\}$, dan misalkan $\hat\Sigma$ domain
+pelengkapan $\hat\mu$ dari $\mu$.
+
+(a) Domain $\Tau$ dari $\nu$ adalah
+$\{E:E\subseteq X,\,E\cap G\in\hat\Sigma\}$; \cmmnt{khususnya,}
+$\Tau\supseteq\hat\Sigma\supseteq\Sigma$.
+
+(b) $\nu$ adalah pelengkapan dari pembatasannya pada $\Sigma$.
+
+(c) Suatu himpunan $A\subseteq X$ terabaikan terhadap $\nu$ jika dan
+hanya jika $A\cap G$ terabaikan terhadap $\mu$.
+
+(d) Khususnya, jika $\mu$\cmmnt{ sendiri} lengkap, maka
+$\Tau=\{E:E\subseteq X,\,E\cap G\in\Sigma\}$ dan $\nu A=0$ jika dan
+hanya jika $\mu(A\cap G)=0$.
+
+\proof{{\bf (a)(i)} Jika $E\in\Tau$, maka $f\times\chi E$ terukur secara
+virtual, sehingga terdapat suatu himpunan terukur koterabaikan
+$H\subseteq\dom f$ sedemikian sehingga $f\times\chi E\restr H$ terukur.
+Sekarang $E\cap G\cap H=\{x:x\in H,\,(f\times\chi E)(x)>0\}$ harus
+termasuk dalam $\Sigma$, sedangkan $E\cap G\setminus H$ terabaikan,
+sehingga termasuk dalam $\hat\Sigma$, dan $E\cap G\in\hat\Sigma$.
+
+\medskip
+
+\quad{\bf (ii)} Jika $E\cap G\in\hat\Sigma$, misalkan
+$F_1$, $F_2\in\Sigma$ sedemikian sehingga
+$F_1\subseteq E\cap G\subseteq F_2$ dan $F_2\setminus F_1$ terabaikan.
+Misalkan $H\subseteq\dom f$ suatu himpunan koterabaikan sedemikian sehingga
+$f\restr H$ terukur. Maka $H'=H\setminus(F_2\setminus F_1)$ koterabaikan
+dan $f\times\chi E\restr H'=f\times\chi F_1\restr H'$ terukur, sehingga
+$f\times\chi E$ terukur secara virtual dan $E\in\Tau$.
+
+\medskip
+
+{\bf (b)} Jadi, rumus yang diberikan memang menguraikan $\Tau$. Jika
+$E\in\Tau$, misalkan $F_1$, $F_2\in\Sigma$ sedemikian sehingga
+$F_1\subseteq E\cap G\subseteq F_2$ dan $\mu(F_2\setminus F_1)=0$.
+Karena $G$ sendiri juga termasuk dalam $\hat\Sigma$, terdapat
+$G_1$, $G_2\in\Sigma$ sedemikian sehingga
+$G_1\subseteq G\subseteq G_2$ dan $\mu(G_2\setminus G_1)=0$. Tetapkan
+$F_2'=F_2\cup(X\setminus G_1)$. Maka $F_2'\in\Sigma$ dan
+$F_1\subseteq E\subseteq F'_2$. Tetapi
+$(F'_2\setminus F_1)\cap G
+\subseteq(G_2\setminus G_1)\cup(F_2\setminus F_1)$ terabaikan terhadap
+$\mu$, sehingga $\nu(F'_2\setminus F_1)=0$.
+
+Ini menunjukkan bahwa jika $\nuprime$ adalah pelengkapan dari
+$\nu\restr\Sigma$ dan $\Tau'$ domainnya, maka $\Tau\subseteq\Tau'$.
+Namun, karena $\nu$ lengkap, tentu saja ia memperluas $\nuprime$, sehingga
+$\nu=\nuprime$, sebagaimana dinyatakan.
+
+\medskip
+
+{\bf (c)} Sekarang ambil sembarang $A\subseteq X$. Karena $\nu$ lengkap,
+
+$$\eqalign{A\text{ terabaikan terhadap }\nu\text{}
+&\iff\nu A=0\cr
+&\iff\int f\times\chi A\,d\mu=0\cr
+&\iff f\times\chi A=0\,\,\mu\text{-hampir di mana-mana}\cr
+&\iff A\cap G\text{ terabaikan terhadap }\mu\text{.}\cr}$$
+
+\medskip
+
+{\bf (d)} Ini hanyalah pernyataan ulang dari (a) dan (c) ketika
+$\mu=\hat\mu$.
+}%end of proof of 234L
+
+\leader{234M}{Akibat}\dvAformerly{2{}34E}
+ Jika $(X,\Sigma,\mu)$ suatu ruang ukur lengkap dan $G\in\Sigma$, maka
+ukuran integral tak tentu terhadap $\mu$ yang didefinisikan oleh $\chi G$
+hanyalah ukuran $\mu\LLcorner G$ yang didefinisikan dengan menetapkan
+
+\Centerline{$(\mu\LLcorner G)(F)=\mu(F\cap G)$ kapan pun $F\subseteq X$
+dan $F\cap G\in\Sigma$.}
+
+\proof{ 234Ld.
+}%end of proof of 234M
+
+\leader{*234N}{}\cmmnt{ Dua hasil berikut tidak akan diandalkan dalam
+jilid ini, tetapi saya menyertakannya sebagai acuan di masa depan dan
+untuk memberikan gambaran mengenai jangkauan gagasan-gagasan ini.
+
+\medskip
+
+\noindent}{\bf Proposisi}\dvAformerly{2{}34F}
+Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur, dan
+$\nu$ suatu ukuran integral tak tentu terhadap $\mu$.
+
+(a) Jika $\mu$ semihingga, maka demikian pula $\nu$.
+
+(b) Jika $\mu$ lengkap dan ditentukan secara lokal, maka demikian pula
+$\nu$.
+
+(c) Jika $\mu$ dapat dilokalkan, maka demikian pula $\nu$.
+
+(d) Jika $\mu$ dapat dilokalkan secara ketat, maka demikian pula $\nu$.
+
+(e) Jika $\mu$ $\sigma$-hingga, maka demikian pula $\nu$.
+
+(f) Jika $\mu$ tanpa atom, maka demikian pula $\nu$.
+
+\proof{ Menurut 234Ka, kita dapat menyatakan $\nu$ sebagai integral tak
+tentu dari suatu fungsi yang terukur terhadap $\Sigma$,
+$f:X\to\coint{0,\infty}$. Misalkan $\Tau$ domain $\nu$, dan
+$\hat\Sigma$ domain pelengkapan $\hat\mu$ dari $\mu$; tetapkan
+$G=\{x:x\in X,\,f(x)>0\}\in\Sigma$.
+
+\medskip
+
+{\bf (a)} Andaikan $E\in\Tau$ dan $\nu E=\infty$. Maka $E\cap G$ tidak
+mungkin terabaikan terhadap $\mu$. Karena $\mu$ semihingga, terdapat
+suatu $F\in\Sigma$ yang tidak terabaikan sedemikian sehingga
+$F\subseteq E\cap G$ dan $\mu F<\infty$. Sekarang
+$F=\bigcup_{n\in\Bbb N}\{x:x\in F$, $2^{-n}\le f(x)\le n\}$, sehingga
+terdapat suatu $n\in\Bbb N$ sedemikian sehingga
+$F'=\{x:x\in F$, $2^{-n}\le f(x)\le n\}$ tidak terabaikan.
+Karena $f$ terukur, $F'\in\Sigma\subseteq\Tau$ dan
+$2^{-n}\mu F'\le\nu F'\le n\mu F'$. Dengan demikian, kita telah menemukan
+suatu $F'\subseteq E$ sedemikian sehingga $0<\nu F'<\infty$. Karena $E$
+sembarang, $\nu$ semihingga.
+
+\medskip
+
+{\bf (b)} Kita telah mengetahui bahwa $\nu$ lengkap (234Lb) dan
+semihingga. Sekarang andaikan $E\subseteq X$ sedemikian sehingga
+$E\cap F\in\Tau$, yakni $E\cap F\cap G\in\Sigma$ (234Ld), kapan pun
+$F\in\Tau$ dan $\nu F<\infty$. Maka $E\cap G\cap F\in\Sigma$ kapan pun
+$F\in\Sigma$ dan $\mu F<\infty$. \Prf\ Tetapkan
+$F_n=\{x:x\in F\cap G,\,f(x)\le n\}$. Maka
+$\nu F_n\le n\mu F<\infty$, sehingga $E\cap G\cap F_n\in\Sigma$ untuk
+setiap $n$. Namun, ini berarti
+$E\cap G\cap F=\bigcup_{n\in\Bbb N}E\cap G\cap F_n\in\Sigma$.\ \QeD\ 
+Karena $\mu$ ditentukan secara lokal, $E\cap G\in\Sigma$ dan $E\in\Tau$.
+Karena $E$ sembarang, $\nu$ ditentukan secara lokal.
+
+\medskip
+
+{\bf (c)} Misalkan $\Cal F\subseteq\Tau$ sembarang himpunan. Tetapkan
+$\Cal E=\{F\cap G:F\in\Cal F\}$, sehingga
+$\Cal E\subseteq\hat\Sigma$. Menurut 212Ga, $\hat\mu$ dapat dilokalkan,
+sehingga $\Cal E$ mempunyai suatu supremum esensial $H\in\hat\Sigma$.
+Namun sekarang, untuk sembarang $H'\in\Tau$,
+$H'\cup(X\setminus G)=(H'\cap G)\cup(X\setminus G)$ termasuk dalam
+$\hat\Sigma$, sehingga
+
+$$\eqalign{\nu(F\setminus H')&=0\text{ untuk setiap }F\in\Cal F\cr
+&\iff\hat\mu(F\cap G\setminus H')=0\text{ untuk setiap }F\in\Cal F\cr
+&\iff\hat\mu(E\setminus H')=0\text{ untuk setiap }E\in\Cal E\cr
+&\iff\hat\mu(E\setminus(H'\cup(X\setminus G)))=0
+  \text{ untuk setiap }E\in\Cal E\cr
+&\iff\hat\mu(H\setminus(H'\cup(X\setminus G)))=0\cr
+&\iff\hat\mu(H\cap G\setminus H')=0\cr
+&\iff\nu(H\setminus H')=0.\cr}$$
+
+\noindent Jadi, $H$ juga merupakan supremum esensial dari $\Cal F$
+di dalam $\Tau$. Karena $\Cal F$ sembarang, $\nu$ dapat dilokalkan.
+
+\medskip
+
+{\bf (d)} Misalkan $\langle X_i\rangle_{i\in I}$ suatu dekomposisi
+$X$ untuk $\mu$; maka keluarga tersebut juga merupakan dekomposisi untuk
+$\hat\mu$ (212Gb). Tetapkan $F_0=X\setminus G$,
+$F_n=\{x:x\in G,\,n-1<f(x)\le n\}$ untuk $n\ge 1$. Maka
+$\langle X_i\cap F_n\rangle_{i\in I,n\in\Bbb N}$ adalah dekomposisi
+untuk $\nu$. \Prf\ (i) $\langle X_i\rangle_{i\in I}$ dan
+$\langle F_n\rangle_{n\in\Bbb N}$ adalah partisi $X$ menjadi
+anggota-anggota $\Sigma\subseteq\Tau$, sehingga
+$\langle X_i\cap F_n\rangle_{i\in I,n\in\Bbb N}$ juga demikian.
+(ii) $\nu(X_i\cap F_0)=0$,
+$\nu(X_i\cap F_n)\le n\mu X_i<\infty$ untuk $i\in I$, $n\ge 1$.
+(iii) Jika $E\subseteq X$ dan $E\cap X_i\cap F_n\in\Tau$ untuk setiap
+$i\in I$ dan $n\in\Bbb N$, maka
+$E\cap X_i\cap G=\bigcup_{n\in\Bbb N}E\cap X_i\cap F_n\cap G$ termasuk
+dalam $\hat\Sigma$ untuk setiap $i$, sehingga
+$E\cap G\in\hat\Sigma$ dan $E\in\Tau$.
+(iv) Jika $E\in\Tau$, maka tentu saja
+
+\Centerline{$\sum_{i\in I,n\in\Bbb N}\nu(E\cap X_i\cap F_n)
+=\sup_{J\subseteq I\times\Bbb N\text{ berhingga}}
+  \sum_{(i,n)\in J}\nu(E\cap X_i\cap F_n)\le\nu E$.}
+
+\noindent Jadi, jika
+$\sum_{i\in I,n\in\Bbb N}\nu(E\cap X_i\cap F_n)=\infty$, jumlah tersebut
+tentu sama dengan $\nu E$. Jika jumlahnya berhingga, maka
+$K=\{i:i\in I,\,\nu(E\cap X_i)>0\}$ harus terhitung. Namun, untuk
+$i\in I\setminus K$, $\int_{E\cap X_i}fd\mu=0$, sehingga
+$f=0\,\,\mu$-hampir di mana-mana\ pada $E\cap X_i$, yakni
+$\hat\mu(E\cap G\cap X_i)=0$. Karena
+$\langle X_i\rangle_{i\in I}$ merupakan dekomposisi untuk $\hat\mu$,
+$\hat\mu(E\cap G\cap\bigcup_{i\in I\setminus K}X_i)=0$ dan
+$\nu(E\cap\bigcup_{i\in I\setminus K}X_i)=0$. Namun, ini berarti bahwa
+
+\Centerline{$\nu E=\sum_{i\in K}\nu(E\cap X_i)
+=\sum_{i\in K,n\in\Bbb N}\nu(E\cap X_i\cap F_n)
+=\sum_{i\in I,n\in\Bbb N}\nu(E\cap X_i\cap F_n)$.}
+
+\noindent Karena $E$ sembarang,
+$\langle X_i\cap F_n\rangle_{i\in I,n\in\Bbb N}$ adalah dekomposisi
+untuk $\nu$.\ \QeD\ Jadi, $\nu$ dapat dilokalkan secara ketat.
+
+\medskip
+
+{\bf (e)} Jika $\mu$ $\sigma$-hingga, maka dalam (d) kita dapat mengambil
+$I$ terhitung, sehingga $I\times\Bbb N$ juga terhitung, dan $\nu$ akan
+$\sigma$-hingga.
+
+\medskip
+
+{\bf (f)} Jika $\mu$ tanpa atom, demikian pula $\hat\mu$ (212Gd).
+Jika $E\in\Tau$ dan $\nu E>0$, maka $\hat\mu(E\cap G)>0$, sehingga
+terdapat suatu $F\in\hat\Sigma$ sedemikian sehingga
+$F\subseteq E\cap G$ dan baik $F$ maupun $E\cap G\setminus F$ tidak
+terabaikan terhadap $\hat\mu$. Namun, dalam hal ini, baik
+$\nu F=\int_Ffd\mu$ maupun
+$\nu(E\setminus F)=\int_{E\setminus F}fd\mu$ pasti lebih besar daripada
+$0$ (122Rc). Karena $E$ sembarang, $\nu$ tanpa atom.
+}%end of proof of 234N
+
+\leader{*234O}{}\cmmnt{ Untuk ukuran yang dapat dilokalkan, terdapat
+uraian langsung mengenai ukuran integral tak tentu yang bersesuaian.
+
+\medskip
+
+\noindent}{\bf Teorema}\dvAformerly{2{}34G}
+ Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur yang dapat dilokalkan. Maka
+suatu ukuran $\nu$, dengan domain $\Tau\supseteq\Sigma$, adalah ukuran
+integral tak tentu terhadap $\mu$ jika dan hanya jika
+($\alpha$) $\nu$ semihingga dan nol pada himpunan-himpunan yang terabaikan
+terhadap $\mu$
+($\beta$) $\nu$ adalah pelengkapan dari pembatasannya pada $\Sigma$
+($\gamma$) kapan pun $\nu E>0$, terdapat suatu $F\subseteq E$ sedemikian
+sehingga $F\in\Sigma$, $\mu F<\infty$, dan $\nu F>0$.
+
+\proof{{\bf (a)} Jika $\nu$ suatu ukuran integral tak tentu terhadap
+$\mu$, maka menurut 234Na, 234Kb, dan 234Lb, ukuran tersebut semihingga,
+nol pada himpunan-himpunan yang terabaikan terhadap $\mu$, dan merupakan
+pelengkapan dari pembatasannya pada $\Sigma$. Sekarang andaikan
+$E\in\Tau$ dan $\nu E>0$. Maka terdapat suatu
+$E_0\in\Sigma$ sedemikian sehingga $E_0\subseteq E$ dan
+$\nu E_0=\nu E$, menurut 234Lb. Jika $f:X\to\Bbb R$ adalah suatu fungsi
+yang terukur terhadap $\Sigma$ dan merupakan turunan Radon-Nikod\'ym dari
+$\nu$ (234Ka), dan
+$G=\{x:f(x)>0\}$, maka $\mu(G\cap E_0)>0$; karena $\mu$ semihingga,
+terdapat suatu $F\in\Sigma$ sedemikian sehingga
+$F\subseteq G\cap E_0$ dan $0<\mu F<\infty$, dan dalam hal ini
+$\nu F>0$.
+
+\medskip
+
+{\bf (b)} Jadi, sekarang andaikan $\nu$ memenuhi syarat-syarat tersebut.
+
+\medskip
+
+\quad{\bf (i)} Tetapkan
+$\Cal E=\{E:E\in\Sigma,\,\nu E<\infty\}$. Untuk setiap $E\in\Cal E$,
+tinjau $\nu_E:\Sigma\to\Bbb R$, dengan menetapkan
+$\nu_EG=\nu(G\cap E)$ untuk setiap $G\in\Sigma$. Maka $\nu_E$ aditif
+terhitung dan kontinu sejati terhadap $\mu$. \Prf\
+$\nu_E$ aditif terhitung, persis seperti dalam 231De. Karena $\nu$ nol
+pada himpunan-himpunan yang terabaikan terhadap $\mu$, $\nu_E$ harus
+kontinu mutlak terhadap $\mu$, menurut 232Ba. Karena $\nu_E$ jelas
+memenuhi syarat ($\gamma$) dari 232Bb, ia harus kontinu sejati.\ \Qed
+
+Menurut 232E, terdapat suatu fungsi yang terintegralkan terhadap $\mu$,
+$f_E$, sedemikian sehingga $\nu_EG=\int_Gf_Ed\mu$ untuk setiap
+$G\in\Sigma$, dan kita dapat mengandaikan bahwa $f_E$ terukur terhadap
+$\Sigma$ (232He). Karena $\nu_E$ nonnegatif,
+$f_E\ge 0\,\,\mu$-hampir di mana-mana.
+
+\medskip
+
+\quad{\bf (ii)} Jika $E$, $F\in\Cal E$, maka
+$f_E=f_F\,\,\mu$-hampir di mana-mana pada $E\cap F$, karena
+
+\Centerline{$\int_Gf_Ed\mu=\nu G=\int_Gf_Fd\mu$}
+
+\noindent kapan pun $G\in\Sigma$ dan $G\subseteq E\cap F$. Karena
+$(X,\Sigma,\mu)$ dapat dilokalkan, terdapat suatu fungsi terukur
+$f:X\to\Bbb R$ sedemikian sehingga $f_E=f\,\,\mu$-hampir di mana-mana\ 
+pada $E$ untuk setiap $E\in\Cal E$ (213N). Karena setiap $f_E$
+nonnegatif hampir di mana-mana, kita dapat mengandaikan bahwa $f$
+nonnegatif, sebab tentu saja $f_E=f\vee\tbf{0}\,\,\mu$-hampir di
+mana-mana pada $E$ untuk setiap $E\in\Cal E$.
+
+\medskip
+
+\quad{\bf (iii)} Misalkan $\nuprime$ ukuran integral tak tentu yang
+didefinisikan oleh $f$. Jika $E\in\Cal E$, maka
+
+\Centerline{$\nu E=\int_Ef_Ed\mu=\int_Efd\mu=\nuprime E$.}
+\noindent Untuk $E\in\Sigma\setminus\Cal E$, kita mempunyai
+
+\Centerline{$\nuprime E
+\ge\sup\{\nuprime F:F\in\Cal E,\,F\subseteq E\}
+=\sup\{\nu F:F\in\Cal E,\,F\subseteq E\}=\nu E=\infty$}
+
+\noindent karena $\nu$ semihingga. Jadi, $\nuprime$ dan $\nu$ berimpit
+pada $\Sigma$. Namun, karena masing-masing merupakan pelengkapan dari
+pembatasannya pada $\Sigma$, keduanya harus sama.
+}%end of proof of 234O
+
+\leader{234P}{Pengurutan \dvrocolon{ukuran}}\cmmnt{ Terdapat banyak cara
+suatu ukuran dapat mendominasi ukuran lain. Di sini saya akan menguraikan
+salah satu cara yang paling sederhana.
+
+\medskip
+
+\noindent}{\bf Definisi}\dvAnew{2008}
+Misalkan $\mu$, $\nu$ dua ukuran pada suatu himpunan $X$.
+Saya akan mengatakan bahwa $\mu\le\nu$ jika $\mu E$ terdefinisi dan
+$\mu E\le\nu E$ kapan pun $\nu$ mengukur $E$.
+
+\leader{234Q}{Proposisi}\dvAnew{2008}
+Misalkan $X$ suatu himpunan, dan tuliskan $\Mu$ untuk himpunan semua
+ukuran pada $X$.
+
+(a) Dengan mendefinisikan $\le$ seperti dalam 234P, $(\Mu,\le)$ adalah
+suatu himpunan terurut parsial.
+
+(b) Jika $\mu$, $\nu\in\Mu$, maka $\mu\le\nu$ jika dan hanya jika terdapat
+suatu $\lambda\in\Mu$ sedemikian sehingga $\mu+\lambda=\nu$.
+
+(c) Jika $\mu\le\nu$ dalam $\Mu$ dan $f$ adalah suatu fungsi bernilai
+$[-\infty,\infty]$ yang didefinisikan pada suatu subhimpunan dari $X$,
+sedemikian sehingga $\int fd\nu$ terdefinisi di $[-\infty,\infty]$, maka
+$\int fd\mu$ terdefinisi; jika $f$ nonnegatif,
+$\int fd\mu\le\int fd\nu$.
+
+\proof{{\bf (a)} Tentu saja $\mu\le\mu$ untuk setiap $\mu\in\Mu$.
+Jika $\mu\le\nu$ dan $\nu\le\lambda$ dalam $\Mu$, maka
+$\dom\lambda\subseteq\dom\nu\subseteq\dom\mu$, dan
+$\mu E\le\nu E\le\lambda E$ kapan pun $\lambda$ mengukur $E$.
+Jika $\mu\le\nu$ dan $\nu\le\mu$, maka
+$\dom\mu\subseteq\dom\nu\subseteq\dom\mu$ dan
+$\mu E\le\nu E\le\mu E$ untuk setiap $E$ dalam domain bersama keduanya,
+sehingga $\mu=\nu$.
+
+\medskip
+
+{\bf (b)(i)}
+Jika $\mu+\lambda=\nu$, maka definisi-definisi dalam 234G dan 234P
+langsung menunjukkan bahwa $\mu\le\nu$.
+
+\medskip
+
+\quad{\bf (ii)}\grheada\ Dalam arah sebaliknya, jika $\mu\le\nu$,
+tuliskan $\Tau$ untuk domain $\nu$.
+Definisikan $\lambda:\Tau\to[0,\infty]$ dengan menetapkan
+
+\Centerline{$\lambda G
+=\sup\{\nu F-\mu F:F\in\Tau,\,F\subseteq G,\,\mu F<\infty\}$}
+
+\noindent untuk $G\in\Tau$.
+Maka $\lambda\in\Mu$. \Prf\ Tentu saja $\dom\lambda=\Tau$ adalah
+aljabar-sigma, dan $\lambda\emptyset=0$. Andaikan
+$\sequencen{G_n}$ adalah suatu barisan saling lepas di dalam $\Tau$
+dengan gabungan $G$. Jika $F\in\Tau$, $F\subseteq G$, dan
+$\mu F<\infty$, maka
+
+$$\eqalign{\nu F-\mu F
+&=\sum_{n=0}^{\infty}\nu(F\cap G_n)-\sum_{n=0}^{\infty}\mu(F\cap G_n)\cr
+&=\sum_{n=0}^{\infty}(\nu(F\cap G_n)-\mu(F\cap G_n))
+\le\sum_{n=0}^{\infty}\lambda G_n;\cr}$$
+
+\noindent karena $F$ sembarang,
+$\lambda G\le\sum_{n=0}^{\infty}\lambda G_n$. Jika
+$\gamma<\sum_{n=0}^{\infty}\lambda G_n$, terdapat suatu $m\in\Bbb N$
+sedemikian sehingga $\gamma<\sum_{n=0}^m\lambda G_n$, dan terdapat
+$F_0,\ldots,F_m$ sedemikian sehingga $F_n\in\Tau$, $F_n\subseteq G_n$,
+dan $\mu F_n<\infty$ untuk setiap $n\le m$, sedangkan
+$\sum_{n=0}^m(\nu F_n-\mu F_n)\ge\gamma$. Tetapkan
+$F=\bigcup_{n\le m}F_n$; maka $F\in\Tau$, $F\subseteq G$, dan
+$\mu F<\infty$, sehingga
+
+\Centerline{$\lambda G\ge\nu F-\mu F
+=\sum_{n=0}^m(\nu F_n-\mu F_n)\ge\gamma$.}
+
+\noindent Karena $\gamma$ sembarang,
+$\lambda G\ge\sum_{n=0}^{\infty}\lambda G_n$; karena
+$\sequencen{G_n}$ sembarang, $\lambda$ aditif terhitung.\ \Qed
+
+\medskip
+
+\qquad\grheadb\ Sekarang $\mu+\lambda=\nu$. \Prf\ Domain dari
+$\mu+\lambda$ adalah
+$\dom\mu\cap\dom\lambda=\Tau=\dom\nu$. Ambil $G\in\Tau$. Jika
+$\mu G=\infty$, maka $\nu G=\infty=(\mu+\lambda)G$. Jika tidak,
+
+\Centerline{$(\mu+\lambda)G\ge\mu G+\nu G-\mu G=\nu G$.}
+
+\noindent Jadi, jika $\nu G=\infty$, kita tentu akan mempunyai
+$\nu G=(\mu+\lambda)G$. Terakhir, jika $\nu G<\infty$, maka
+
+$$\eqalign{(\mu+\lambda)G
+&=\mu G+\sup\{\nu F-\mu F:F\in\Tau,\,F\subseteq G\}\cr
+&=\sup\{\nu F+\mu(G\setminus F):F\in\Tau,\,F\subseteq G\}\cr
+&\le\sup\{\nu F+\nu(G\setminus F):F\in\Tau,\,F\subseteq G\}
+=\nu G,\cr}$$
+
+\noindent sehingga sekali lagi kita memperoleh kesamaan.\ \Qed
+
+Dengan demikian, kita memperoleh penguraian $\nu$ yang diinginkan sebagai
+suatu jumlah ukuran.
+
+\medskip
+
+{\bf (c)(i)} Jika $f$ nonnegatif, gabungkan (b) dan 234Hc.
+
+\medskip
+
+\quad{\bf (ii)} Secara umum, jika $\int fd\nu$ terdefinisi, demikian pula
+$\int f^+d\nu$ dan $\int f^-d\nu$, dan paling banyak salah satunya
+tak berhingga; sehingga $\int f^+d\mu$ dan $\int f^-d\mu$ terdefinisi
+dan paling banyak salah satunya tak berhingga.
+}%end of proof of 234Q
+
+\exercises{
+\leader{234X}{Latihan dasar (a)}
+%\spheader 234Xa
+\dvAformerly{1{}32Xk, 2{}14Xp}
+Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ ruang-ruang ukur, dan
+$\phi:X\to Y$ suatu fungsi \imp. Misalkan $A\subseteq X$ suatu himpunan
+dengan ukuran luar penuh dalam $X$. Tunjukkan bahwa $\phi[A]$ mempunyai
+ukuran luar penuh dalam $Y$, dan bahwa $\phi\restr A$ bersifat \imp\ 
+untuk ukuran-ukuran subruang pada $A$ dan $\phi[A]$.
+%234B
+
+\spheader 234Xb\dvAformerly{1{}12Xg}
+Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur, $Y$ suatu himpunan, dan
+$\phi:X\to Y$ suatu fungsi. Tunjukkan bahwa jika $\mu$ bertumpu pada
+titik, maka demikian pula ukuran citra $\mu\phi^{-1}$.
+%234D
+
+\spheader 234Xc\dvAnew{2008}
+Berikan suatu contoh ruang peluang $(X,\Sigma,\mu)$, suatu himpunan
+$Y$, dan suatu fungsi $\phi:X\to Y$ sedemikian sehingga pelengkapan
+ukuran citra $\mu\phi^{-1}$ bukan citra dari pelengkapan $\mu$.
+\Hint{$\#(X)=3$.}
+%234E
+
+\spheader 234Xd\dvAnew{2008}
+ Misalkan $X$, $Y$ himpunan-himpunan, $\phi:X\to Y$ suatu fungsi, dan
+$\familyiI{\mu_i}$ suatu keluarga ukuran pada $X$ dengan jumlah $\mu$.
+Dengan menuliskan $\mu_i\phi^{-1}$, $\mu\phi^{-1}$ untuk ukuran-ukuran
+citra pada $Y$, tunjukkan bahwa
+$\mu\phi^{-1}=\sum_{i\in I}\mu_i\phi^{-1}$.
+%234G
+
+\spheader 234Xe\dvAnew{2008}
+Misalkan $X$ suatu himpunan.
+(i) Tunjukkan bahwa jika $\familyiI{\mu_i}$ suatu keluarga terhitung dari
+ukuran-ukuran $\sigma$-hingga pada $X$, dan
+$\mu=\sum_{i\in I}\mu_i$ semihingga, maka $\mu$ $\sigma$-hingga.
+(ii) Tunjukkan bahwa jika $\familyiI{\mu_i}$ suatu keluarga ukuran
+atomik murni pada $X$, dan $\mu=\sum_{i\in I}\mu_i$ semihingga, maka
+$\mu$ atomik murni.
+(iii) Tunjukkan bahwa jika $\familyiI{\mu_i}$ sembarang keluarga ukuran
+yang bertumpu pada titik pada $X$, maka $\sum_{i\in I}\mu_i$ bertumpu
+pada titik.
+%234G
+
+\sqheader 234Xf\dvAnew{2008; lihat 1{}12Xe}
+Misalkan $X$ suatu himpunan, dan tuliskan $\Mu$ untuk himpunan semua
+ukuran pada $X$. Untuk $\mu\in\Mu$ dan
+$\alpha\in\coint{0,\infty}$, definisikan $\alpha\mu$ dengan mengatakan
+bahwa jika $\alpha>0$, maka
+$(\alpha\mu)(E)=\alpha\mu E$ untuk $E\in\dom\mu$, sedangkan jika
+$\alpha=0$, maka $(\alpha\mu)(E)=0$ untuk setiap $E\subseteq X$.
+(i) Tunjukkan bahwa $\alpha\mu\in\Mu$ untuk semua
+$\alpha\in\coint{0,\infty}$ dan $\mu\in\Mu$.
+(ii) Tunjukkan bahwa $(\alpha+\beta)\mu=\alpha\mu+\beta\mu$,
+$\alpha(\beta\mu)=(\alpha\beta)\mu$,
+$\alpha(\mu+\nu)=\alpha\mu+\alpha\nu$ untuk semua $\alpha$,
+$\beta\in\coint{0,\infty}$ dan $\mu$, $\nu\in\Mu$.
+%234G
+
+\spheader 234Xg\dvAformerly{2{}12Xj}
+ Misalkan $X$ suatu himpunan, dan $\familyiI{\mu_i}$ suatu keluarga
+ukuran lengkap pada $X$ dengan jumlah $\mu$.
+Tunjukkan bahwa suatu fungsi bernilai $[-\infty,\infty]$ yang dinotasikan
+dengan $f$ dan didefinisikan pada suatu subhimpunan dari $X$ terintegralkan terhadap $\mu$
+jika dan hanya jika fungsi tersebut terintegralkan terhadap $\mu_i$ untuk
+setiap $i\in I$ dan $\sum_{i\in I}\int|f|d\mu_i$ berhingga.
+%234H
+
+\spheader 234Xh\dvAformerly{2{}34Xa}
+Misalkan $\mu$ ukuran Lebesgue pada $[0,1]$, dan tetapkan
+$f(x)=\bover1x$ untuk $x>0$. Misalkan $\nu$ ukuran integral tak tentu
+yang bersesuaian. Tunjukkan bahwa domain $\nu$ sama dengan domain $\mu$.
+Tunjukkan bahwa untuk setiap $\delta\in\ocint{0,\bover12}$ terdapat
+suatu himpunan terukur $E$ sedemikian sehingga
+$\mu E=\delta$, tetapi $\nu E=\bover1{\delta}$.
+%234K
+
+\spheader 234Xi\dvAnew{2008}
+ Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur. (i) Tunjukkan bahwa jika
+$\nu_1$ dan $\nu_2$ adalah ukuran integral tak tentu terhadap $\mu$,
+maka demikian pula $\nu_1+\nu_2$. (ii) Tunjukkan bahwa jika
+$\familyiI{\nu_i}$ suatu keluarga terhitung dari ukuran-ukuran integral
+tak tentu terhadap $\mu$, dan $\nu=\sum_{i\in I}\nu_i$ semihingga, maka
+$\nu$ adalah ukuran integral tak tentu terhadap $\mu$.
+%234L
+
+\spheader 234Xj\dvAformerly{2{}34Xb}
+ Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur, dan $\nu$ suatu ukuran
+integral tak tentu terhadap $\mu$. Tunjukkan bahwa jika $\mu$ atomik
+murni, maka demikian pula $\nu$.
+%234N
+
+\spheader 234Xk\dvAformerly{2{}34Xc}
+ Misalkan $\mu$ suatu ukuran yang bertumpu pada titik. Tunjukkan bahwa
+setiap ukuran integral tak tentu terhadap $\mu$ bertumpu pada titik.
+%234N
+
+\spheader 234Xl\dvAnew{2008}
+ Misalkan $X$ suatu himpunan, dan $\Mu$ himpunan ukuran pada $X$, dengan
+urutan parsial yang didefinisikan dalam 234P. Tunjukkan bahwa
+(i) $\Mu$ mempunyai anggota terbesar dan terkecil (yang harus diuraikan);
+(ii) jika $\familyiI{\mu_i}$ dan $\familyiI{\nu_i}$ adalah keluarga
+dalam $\Mu$ sedemikian sehingga $\mu_i\le\nu_i$ untuk setiap $i$, maka
+$\sum_{i\in I}\mu_i\le\sum_{i\in I}\nu_i$; (iii) jika kita mendefinisikan
+perkalian skalar seperti dalam 234Xf, maka $\alpha\mu\le\mu$ kapan pun
+$\mu\in\Mu$ dan $\alpha\in[0,1]$; (iv) dengan menuliskan $\hat\mu$ untuk
+pelengkapan $\mu$, $\hat\mu\le\mu$ dan $\hat\mu\le\hat\nu$ kapan pun
+$\mu$, $\nu\in\Mu$ dan $\mu\le\nu$; (v) dengan menuliskan $\tilde\mu$
+untuk versi c.l.d.\ dari $\mu$, $\tilde\mu\le\mu$ untuk setiap
+$\mu\in\Mu$; (vi) kapan pun $A\subseteq\Mu$ terarah ke atas, himpunan
+tersebut mempunyai batas atas terkecil dalam $\Mu$.
+%234Q
+
+\spheader 234Xm\dvAnew{2008}
+ Tuliskan pembuktian langsung elementer dari 234Qc yang tidak bergantung
+pada 234Qb.
+%234Q
+
+\spheader 234Xn\dvAformerly{211Xd(v)} Misalkan $(X,\Sigma,\mu)$ dan
+$(Y,\Tau,\nu)$ ruang-ruang ukur dan $\phi:X\to Y$ suatu fungsi \imp.
+Tunjukkan bahwa jika $\mu$ $\sigma$-hingga dan atomik murni, maka
+$\nu$ atomik murni.
+
+\leader{234Y}{Latihan lanjutan (a)}
+%\spheader 234Ya
+\dvAformerly{2{}35Ya}
+Tuliskan $\nu$ untuk ukuran Lebesgue pada $Y=[0,1]$, dan $\Tau$ untuk
+domainnya. Misalkan $A\subseteq[0,1]$ suatu himpunan sedemikian sehingga
+$\nu^*A=\nu^*([0,1]\setminus A)=1$, dan tetapkan
+$X=[0,1]\cup\{x+1:x\in A\}\cup\{x+2:x\in[0,1]\setminus A\}$. Misalkan
+$\mu_{LX}$ ukuran subruang yang diinduksi pada $X$ oleh ukuran Lebesgue,
+dan tetapkan $\mu E=\bover13\mu_{LX}E$ untuk
+$E\in\Sigma=\dom\mu_{LX}$. Definisikan $\phi:X\to Y$ dengan menuliskan
+$\phi(x)=x$ jika $x\in[0,1]$, $\phi(x)=x-1$ jika
+$x\in X\cap\ocint{1,2}$, dan $\phi(x)=x-2$ jika
+$x\in X\cap\ocint{2,3}$. Tunjukkan bahwa $\nu$ adalah ukuran citra
+$\mu\phi^{-1}$, tetapi $\nu^*A>\mu^*\phi^{-1}[A]$.
+%234B
+
+\spheader 234Yb\dvAnew{2008}
+Carilah contoh-contoh menarik ruang peluang $(X,\Sigma,\mu)$ dan
+$(Y,\Tau,\nu)$ yang mempunyai fungsi-fungsi $\phi:X\to Y$ sedemikian
+sehingga $\phi[E]\in\Tau$ dan $\nu\phi[E]=\mu E$ untuk setiap
+$E\in\Sigma$. \Hint{254K, 343J.}
+%234B
+
+\spheader 234Yc\dvAnew{2008}
+Misalkan $\mu$ ukuran Lebesgue dua dimensi pada persegi satuan
+$[0,1]^2$, dan misalkan $\phi:[0,1]^2\to[0,1]$ proyeksi pada koordinat
+pertama, sehingga $\phi(\xi_1,\xi_2)=\xi_1$ untuk
+$\xi_1$, $\xi_2\in[0,1]$. Tunjukkan bahwa ukuran citra
+$\mu\phi^{-1}$ adalah ukuran Lebesgue satu dimensi pada $[0,1]$.
+%234E
+
+\spheader 234Yd\dvAformerly{1{}32Yf}
+Dalam 234F, tunjukkan bahwa ukuran citra $\mu\phi^{-1}$ memperluas
+$\nu$, dan sama dengan $\nu$ jika dan hanya jika $F\in\Tau$ untuk
+setiap $F\subseteq Y\setminus\phi[X]$.
+%234F
+
+\spheader 234Ye\dvAnew{2008}
+ Misalkan $(Y,\Tau,\nu)$ suatu ruang ukur lengkap, $X$ suatu himpunan,
+dan $\phi:X\to Y$ suatu surjeksi. Tetapkan
+
+\Centerline{$\Sigma=\{E:E\subseteq X$, $\phi[E]\in\Tau$,
+$\nu(\phi[E]\cap\phi[X\setminus E])=0\}$,
+\quad$\mu E=\nu\phi[E]$ untuk $E\in\Sigma$.}
+
+\noindent Tunjukkan bahwa $\mu$ adalah pelengkapan dari ukuran yang
+dibangun melalui proses 234F.
+%234F
+
+\spheader 234Yf\dvAnew{2008}
+Misalkan $X$ suatu himpunan, dan $\Mu$ himpunan ukuran pada $X$.
+Tunjukkan bahwa $\Mu$, dengan penjumlahan sebagaimana didefinisikan untuk
+dua ukuran oleh rumus-rumus 234G, adalah semigrup komutatif dengan
+identitas; uraikan identitas tersebut.
+%234G
+
+\spheader 234Yg\dvAnew{2008}
+Berikan suatu contoh himpunan $X$, ukuran-ukuran peluang
+$\mu_1$, $\mu_2$ pada $X$, dan suatu himpunan $A\subseteq X$ sedemikian
+sehingga $A$ terabaikan terhadap $\mu_1$ maupun $\mu_2$, tetapi tidak
+terabaikan terhadap $\mu$, dengan $\mu=\mu_1+\mu_2$.
+%234G 
+
+\spheader 234Yh\dvAformerly{2{}14Ya}
+Dalam 214O, tunjukkan bahwa jika kita menetapkan
+$\nu E=\sup_{I\in\Cal I}\mu^*(E\cap I)$ untuk setiap $E\in\Sigma$, maka
+$\nu$ adalah ukuran, sedangkan $\mu=\nu+\lambda$.
+%234H
+
+\spheader 234Yi\dvAformerly{2{}34Yd}
+ Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur semihingga tanpa atom dan
+$\nu$ suatu ukuran integral tak tentu terhadap $\mu$. Tunjukkan bahwa
+pernyataan-pernyataan berikut ekuivalen: (i) untuk setiap $\epsilon>0$
+terdapat suatu $\delta>0$ sedemikian sehingga $\nu E\le\epsilon$ kapan
+pun $\mu E\le\delta$ (ii) $\nu$ mempunyai suatu turunan Radon-Nikod\'ym
+yang dapat dinyatakan sebagai jumlah dari suatu fungsi terbatas dan suatu
+fungsi terintegralkan.
+%234K
+
+\spheader 234Yj\dvAformerly{2{}34Yf}
+ Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur dan $\nu$ suatu ukuran
+integral tak tentu terhadap $\mu$, dengan turunan Radon-Nikod\'ym $f$.
+Tunjukkan bahwa versi c.l.d.\ dari $\nu$ adalah ukuran integral tak tentu
+yang didefinisikan oleh $f$ terhadap versi c.l.d.\ dari $\mu$.
+%234N
+
+\spheader 234Yk\dvAformerly{2{}34Ya}
+Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur semihingga yang tidak dapat
+dilokalkan. Tunjukkan bahwa terdapat suatu ukuran
+$\nu:\Sigma\to[0,\infty]$ sedemikian sehingga $\nu E\le\mu E$ untuk
+setiap $E\in\Sigma$, tetapi tidak terdapat fungsi terukur $f$ sedemikian
+sehingga $\nu E=\int_Efd\mu$ untuk setiap $E\in\Sigma$.
+%234O
+
+\spheader 234Yl\dvAformerly{2{}34Yb}
+Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur yang dapat dilokalkan dengan
+himpunan-himpunan terabaikan yang ditentukan secara lokal. Tunjukkan
+bahwa suatu ukuran $\nu$, dengan domain $\Tau\supseteq\Sigma$, adalah
+ukuran integral tak tentu terhadap $\mu$ jika dan hanya jika
+($\alpha$) $\nu$ lengkap dan semihingga serta nol pada
+himpunan-himpunan yang terabaikan terhadap $\mu$
+($\beta$) kapan pun $\nu E>0$, terdapat suatu $F\subseteq E$ sedemikian
+sehingga $F\in\Sigma$, $\mu F<\infty$, dan $\nu F>0$.
+%234O
+
+\spheader 234Ym\dvAformerly{2{}34Yc}
+ Berikan suatu contoh ruang ukur yang dapat dilokalkan
+$(X,\Sigma,\mu)$ dan suatu ukuran lengkap semihingga $\nu$ pada $X$,
+yang didefinisikan pada suatu aljabar-sigma
+$\Tau\supseteq\Sigma$, nol pada himpunan-himpunan yang terabaikan terhadap
+$\mu$, dan sedemikian sehingga kapan pun $\nu E>0$, terdapat suatu
+$F\subseteq E$ sedemikian sehingga $F\in\Sigma$, $\mu F<\infty$, dan
+$\nu F>0$, tetapi $\nu$ bukan ukuran integral tak tentu terhadap $\mu$.
+\Hint{216Yb.}
+%234O 23bits
+
+\spheader 234Yn\dvAformerly{2{}34Ye}
+ Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur yang dapat dilokalkan, dan
+$\nu$ suatu ukuran lengkap yang dapat dilokalkan pada $X$, dengan domain
+$\Tau\supseteq\Sigma$, yang merupakan pelengkapan dari pembatasannya pada
+$\Sigma$. Tunjukkan bahwa jika kita menetapkan
+$\nu_1F=\sup\{\nu(F\cap E):E\in\Sigma$, $\mu E<\infty\}$ untuk setiap
+$F\in\Tau$, maka $\nu_1$ adalah ukuran integral tak tentu terhadap $\mu$,
+dan terdapat suatu $H\in\Sigma$ sedemikian sehingga
+$\nu_1F=\nu(F\cap H)$ untuk setiap $F\in\Tau$.
+%234O
+
+\spheader 234Yo\dvAnew{2008}
+Misalkan $X$ suatu himpunan, dan $\Mu_{\text{sf}}$ himpunan ukuran
+semihingga pada $X$. Untuk $\mu$, $\nu\in\Mu_{\text{sf}}$, katakan bahwa
+$\mu\preccurlyeq\nu$ jika $\dom\nu\subseteq\dom\mu$,
+$\mu F\le\nu F$ untuk setiap $F\in\dom\nu$, dan kapan pun
+$E\in\dom\mu$ dan $\mu E>0$, terdapat suatu $F\in\dom\nu$ sedemikian
+sehingga $F\subseteq E$ dan $0<\mu F<\infty$. (i) Tunjukkan bahwa
+$(\Mu_{\text{sf}},\preccurlyeq)$ adalah suatu himpunan terurut parsial.
+(ii) Tunjukkan bahwa jika $A\subseteq\Mu_{\text{sf}}$ suatu himpunan
+tak kosong dengan batas atas dalam $\Mu_{\text{sf}}$, maka himpunan itu
+mempunyai batas atas terkecil $\lambda$ yang didefinisikan dengan
+mengatakan bahwa $\dom\lambda=\bigcap_{\mu\in A}\dom\mu$ dan, untuk
+$E\in\dom\lambda$,
+
+$$\eqalign{\lambda E
+&=\sup\{\sum_{i=0}^n\mu_iF_i:\mu_0,\ldots,\mu_n\in A,\,
+   \langle F_i\rangle_{i\le n}\text{ adalah partisi dari }E,\cr
+&\mskip200mu
+   F_i\in\dom\lambda\text{ untuk setiap }i\le n\}\cr
+&=\sup\{\sum_{i=0}^n\mu_iF_i:\mu_0,\ldots,\mu_n\in A,\,
+   F_0,\ldots,F_n\text{ saling lepas},\cr
+&\mskip200mu
+   F_i\in\dom\mu_i\text{ dan }F_i\subseteq E\text{ untuk setiap }i\le n\}.
+   \cr}$$
+
+\noindent(iii) Andaikan $\mu$, $\nu\in\Mu_{\text{sf}}$ mempunyai
+pelengkapan $\hat\mu$, $\hat\nu$ dan versi-versi c.l.d.\ 
+$\tilde\mu$, $\tilde\nu$.
+Tunjukkan bahwa $\tilde\mu\preccurlyeq\hat\mu\preccurlyeq\mu$.
+Tunjukkan bahwa jika $\mu\preccurlyeq\nu$, maka
+$\hat\mu\preccurlyeq\hat\nu$ dan
+$\tilde\mu\preccurlyeq\tilde\nu$.
+%234P
+}%end of exercises
+
+\endnotes{\Notesheader{234}
+Salah satu ciri mencolok teori ukuran, dibandingkan dengan cabang-cabang
+matematika murni lain yang tingkat keabstrakannya sebanding, ialah relatif
+tidak pentingnya konsep `morfisme' apa pun. Teori grup, misalnya,
+didominasi oleh konsep `homomorfisme', dan topologi umum memberikan
+tempat serupa kepada `fungsi kontinu'. Menurut saya, padanan yang
+paling dekat dalam teori ukuran adalah gagasan `fungsi \imp' (234A).
+Dalam Jilid 3 dan 4 saya bermaksud mengkaji konsep ini secara lebih
+mendalam. Dalam jilid ini saya akan berpuas diri dengan menandai
+fungsi-fungsi semacam itu ketika muncul dan dengan fakta-fakta dasar yang
+tercantum dalam 234B.
+
+Konstruksi `ukuran citra' (234C) secara alami terkait dengan
+gagasan fungsi \imp. Ukuran semacam ini muncul di mana-mana dalam bidang
+ini, dimulai dengan 234Yc yang tidak sepenuhnya elementer. Ukuran-ukuran
+ini begitu penting sehingga wajar untuk mengkaji variasi-variasinya, seperti
+dalam 234F dan 234Yb, tetapi menurut saya tidak satu pun memiliki arti
+penting yang sebanding.
+
+Hampir separuh bagian ini digunakan untuk `ukuran integral tak
+tentu'. Saya menangani bagian ini dengan sangat hati-hati karena
+gagasan-gagasan yang ingin saya nyatakan di sini, sejauh memperluas
+pekerjaan dalam \S232, sangat bergantung pada perincian perumusan dalam
+234I, dan mudah sekali mengambil langkah keliru setelah kita meninggalkan
+konteks ukuran lengkap $\sigma$-hingga yang relatif terlindung. Saya
+percaya bahwa jika kita bersedia mencurahkan sedikit usaha pada titik ini,
+kita dapat mengembangkan suatu teori
+(234K-234N) %234K 234L 234M 234N
+yang akan menyediakan jalan mulus menuju penerapan-penerapan berikutnya;
+untuk melihat maksud saya, Anda dapat merujuk pada entri-entri di bawah
+`ukuran integral tak tentu' dalam indeks. Untuk saat ini saya hanya
+menyebutkan suatu jenis teorema Radon-Nikod\'ym untuk ukuran-ukuran yang
+dapat dilokalkan (234O).
+
+Urutan parsial yang diuraikan dalam 234P-234Q hanyalah salah satu dari
+banyak urutan yang dapat dipertimbangkan, dan untuk beberapa tujuan
+tampaknya tidak memuaskan. Contoh-contoh terpenting akan muncul dalam
+Bab 41 Jilid 4, dan mempunyai beragam ciri khusus yang mungkin patut
+digunakan sebagai dasar bagi abstraksi lebih lanjut. Namun, versi di sini
+memiliki keunggulan berupa kesederhanaan dan mendukung setidak-tidaknya
+sebagian gagasan yang relevan (234Xl). Untuk konsep alternatif, lihat
+234Yo.
+
+}%end of notes
+
+%look for ideas to add to \S412
+
+\discrpage

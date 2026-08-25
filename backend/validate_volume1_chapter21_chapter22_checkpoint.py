@@ -111,10 +111,9 @@ def validate_replay_fixture() -> dict[str, Any]:
     )
     provenance = json.loads(provenance_path.read_text(encoding="utf-8"))
     if (
-        provenance.get("schema") != "o007-catalog-v1.8-public-replay-fixture-v1"
-        or provenance.get("status") != "self_contained_public_replay_input"
-        or provenance.get("canonical_content_redacted_for_publication") is not True
-        or provenance.get("public_redacted_resource_ids") != ["O007-RESOURCE-ROOT-HANDOFF"]
+        provenance.get("schema") != "o007-catalog-v1.8-replay-fixture-v1"
+        or provenance.get("status") != "self_contained_replay_input"
+        or provenance.get("content_fields_other_than_three_local_paths_changed") is not False
         or len(provenance.get("sanctioned_local_path_rewrites", [])) != 3
     ):
         raise ValueError("predecessor replay-fixture provenance differs")

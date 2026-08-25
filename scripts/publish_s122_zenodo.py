@@ -38,8 +38,10 @@ API_BASE = "https://zenodo.org/api"
 ZENODO_HOST = "zenodo.org"
 USER_AGENT = "O007-Fremlin-id-S122-Zenodo-publisher/1"
 
-CREDENTIAL_PATH = Path(
-    r"C:\Users\Floris\Documents\Obsidian notes\New zenodo token.md"
+CREDENTIAL_PATH = (
+    Path(os.environ["ZENODO_TOKEN_FILE"]).expanduser()
+    if os.environ.get("ZENODO_TOKEN_FILE")
+    else Path.home() / "Documents" / "Obsidian notes" / "New zenodo token.md"
 )
 RECEIPT_RELATIVE = "qa/ZENODO_PUBLICATION_RECEIPT_S122.json"
 RECEIPT_PATH = ROOT / RECEIPT_RELATIVE
@@ -88,7 +90,7 @@ DESCRIPTION = (
     "telah lulus.</p><p>Ini adalah adaptasi tidak resmi dan dimodifikasi. D. H. "
     "Fremlin adalah penulis karya sumber dan tidak diminta maupun menyatakan "
     "dukungan terhadap adaptasi ini. Terjemahan, rekayasa pembaca/backend, dan "
-    "QA dikerjakan dengan bantuan AI oleh Codex atas arahan Floris; seluruh "
+    "QA dikerjakan dengan bantuan AI oleh Codex atas arahan pengguna; seluruh "
     "rumus, bukti, latihan, petunjuk, urutan, dan rujukan sumber dipertahankan, "
     "sedangkan 16 koreksi sumber yang terlokalisasi dicatat secara eksplisit." 
     "</p><p>Materi turunan Fremlin serta komponen terjemahan, backend, dan "
@@ -114,7 +116,7 @@ EXPECTED_METADATA: dict[str, Any] = {
     ],
     "contributors": [
         {
-            "name": "Floris",
+            "name": "Pengguna",
             "type": "ProjectLeader",
         }
     ],
@@ -681,7 +683,7 @@ def validate_metadata(value: object, *, public: bool) -> None:
         "43 halaman resmi unik",
         "Design Science License",
         "MathJax 3.2.2",
-        "Codex atas arahan Floris",
+        "Codex atas arahan pengguna",
     )
     if not isinstance(description, str) or any(
         marker not in description for marker in required_description
@@ -702,7 +704,7 @@ def validate_metadata(value: object, *, public: bool) -> None:
         contributors = [contributors]
     if not isinstance(contributors, list) or not any(
         isinstance(item, dict)
-        and item.get("name") == "Floris"
+        and item.get("name") == "Pengguna"
         and item.get("type") == "ProjectLeader"
         for item in contributors
     ):

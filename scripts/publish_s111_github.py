@@ -23,7 +23,11 @@ import urllib.request
 
 
 ROOT = Path(__file__).resolve().parents[1]
-TOKEN_FILE = Path(r"C:\Users\Floris\Downloads\Github Tokens.md")
+TOKEN_FILE = (
+    Path(os.environ["GITHUB_TOKEN_FILE"]).expanduser()
+    if os.environ.get("GITHUB_TOKEN_FILE")
+    else Path.home() / "Downloads" / "Github Tokens.md"
+)
 OWNER = "KokunoYumeto"
 REPO = "fremlin-measure-theory-id"
 FULL_REPO = f"{OWNER}/{REPO}"
