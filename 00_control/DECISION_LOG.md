@@ -621,4 +621,6 @@ not change the goal, cursor, evidence identities, or canonical local bytes.
 `ZENODO_LINEAGE.md`, and the Zenodo publication receipt are published from
 their exact local bytes after a bounded private-path and credential-pattern
 scan. The existing `v0.14.0-v2-ch21-ch22` tag and release boundary remain
-immutable; only the post-release `main` documentation advances.
+immutable. The path-neutral public control boundary is commit
+`02c14ecc29a1d6d73c1ca8ac530175f21473aac5`; only the post-release `main`
+documentation advances.
