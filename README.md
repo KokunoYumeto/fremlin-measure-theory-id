@@ -28,6 +28,7 @@ PDF kumulatif adalah berkas utama:
 Garis keturunan publik tetap tunggal:
 
 - [GitHub release v0.15.0-v2-through-ch23](https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.15.0-v2-through-ch23)
+- [Zenodo checkpoint 0.15.0-v2-through-ch23](https://doi.org/10.5281/zenodo.22097858)
 - [Zenodo concept untuk seluruh riwayat versi](https://doi.org/10.5281/zenodo.22059798)
 - [Checkpoint publik sebelumnya](https://doi.org/10.5281/zenodo.22088384)
 
@@ -79,7 +80,7 @@ python scripts/qa_volume1_through_chapter23_pdf.py --finalize-visual-inspection-
 python scripts/render_volume1_through_chapter23_html.py --write
 python scripts/qa_volume1_through_chapter23_html.py
 python scripts/admit_volume1_through_chapter23.py
-python scripts/package_volume1_through_chapter23_release.py
+python scripts/package_volume1_through_chapter23_release.py --write
 ```
 
 Identitas build, pembaca, paket, dan publikasi tersimpan di `qa/`. Kontrol

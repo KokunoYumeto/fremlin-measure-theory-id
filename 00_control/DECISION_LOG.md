@@ -624,3 +624,66 @@ scan. The existing `v0.14.0-v2-ch21-ch22` tag and release boundary remain
 immutable. The path-neutral public control boundary is commit
 `02c14ecc29a1d6d73c1ca8ac530175f21473aac5`; only the post-release `main`
 documentation advances.
+
+## 2026-08-25 — D034: Freeze the front-matter and Chapter 23 translation candidate at 239/672
+
+The complete Volume II front matter (`mt20.tex`, `mt02.tex`, `mt2.tex`) and
+complete Chapter 23 (`mt23.tex`, `mt231.tex`–`mt235.tex`) are translated in
+source order. All nine unit receipts pass exact authority-hash, UTF-8, brace,
+symbolic-command, stable-ID, protected-reference, normalized-math, hint, and
+active-English-residue checks. The final Chapter 23 member,
+`source/id-ID/mt235.tex`, is 51,049 bytes / SHA-256
+`63d2c9f4c3231af7343358b47deea98ac82b77be598d4c6108010536370da415`.
+
+The 117-row source-correction ledger is schema-clean, has no duplicate IDs,
+and is 60,372 bytes / SHA-256
+`111fc2931c9ff8f7728448dc0c37efbf683610fde51500589e962712d22f4cae`.
+The aggregate receipt `qa/chapter23-aggregate-qa.json` passes at 10,843 bytes /
+SHA-256
+`7db44070759940667fb80260b090f7f8e209577373ca7c5a360322ff728b6329`.
+This establishes a frozen translation candidate covering complete Volume I
+(102 official pages) plus complete Volume II pages 1–137, or 239/672 official
+pages. It is not yet admitted: deterministic cumulative backend and reader,
+visual/browser QA, package validation, publication to the existing GitHub and
+Zenodo lineages, and anonymous readback remain mandatory.
+
+## 2026-08-25 — D035: Admit and preserve the contiguous 239/672 checkpoint
+
+Owner replay admitted complete Volume I and contiguous Volume II pages 1–137,
+including the front matter and complete Chapters 21–23. The final correction
+to `mt235.tex` removes three redundant repeated glosses without changing any
+formula, stable ID, reference, or source-order relationship. The cumulative
+backend validates 5,718 unique records, 47 units, 184 exact resources, and 188
+materialized files. Admission is
+`00_control/CP0015_THROUGH_CHAPTER23_ADMISSION.md` (3,870 bytes; SHA-256
+`5a2b484d1fec3cd620a9df2c7f9c1ed02d54240bd7bd9f54bf5df22278b170e3`).
+
+The admitted PDF is 1,771,034 bytes, 258 A4 reflow pages, SHA-256
+`10433d93a655731615020333b024ac7d53acb494a86d11b14d57908f8b38bed1`.
+The 51-route offline HTML reader passed 102 desktop/mobile observations with
+20,204 exact formulas per viewport and no MathJax, console, link, fragment,
+asset, or document-overflow failure. Visual browser replay found and closed an
+unhandled source `\prooflet` compatibility surface before admission; the
+canonical translation source was not altered by that reader fix.
+
+The deterministic release has exactly three assets: the reader-first PDF; a
+15,228,253-byte ZIP with SHA-256
+`5f5a4bbcb7c12084cb5a28570364a1e3f2a8dfb685f87b74f2536c004691ba55`;
+and a 254-byte checksum witness with SHA-256
+`65bd49cbcfe5f92fc1222a2f250503ab85d5ea3f467438e20bc969a5a61d83e0`.
+
+GitHub prerelease `v0.15.0-v2-through-ch23` is public at boundary commit
+`181bbb7ae28ac4e8850a005dfc428fe42f67a6b8`; its sanitized receipt is committed
+at `6dafc1575460f94f06db9b4c939058a7b97dbf7c`. Exact receipt:
+`qa/PUBLICATION_RECEIPT_V0150_V2_THROUGH_CH23.json`, 4,187 bytes, SHA-256
+`190972813010bb6f82b83ffd01e5175f857af2f211de5ef35a469040191b7354`.
+The identical assets are public as Zenodo record `22097858`, DOI
+`10.5281/zenodo.22097858`, within concept DOI `10.5281/zenodo.22059798`.
+Exact receipt: `qa/ZENODO_PUBLICATION_RECEIPT_V0150_V2_THROUGH_CH23.json`,
+3,965 bytes, SHA-256
+`93339b5ac1fde486151c0455a7cb674069ba48cabd133814ad3b6ed8336eb741`.
+Both destinations passed anonymous exact-byte readback; no duplicate concept or
+upstream contact was created.
+
+The 672-page goal remains active. The next cursor is complete Volume II Chapter
+24, beginning with frozen `mt24.tex` then `mt241.tex` at official page 138.

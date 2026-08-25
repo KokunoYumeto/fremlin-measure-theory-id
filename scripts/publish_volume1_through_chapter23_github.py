@@ -462,8 +462,72 @@ def resolve_or_stage_boundary(contract: ReleaseContract) -> tuple[str, str, int]
 def anonymous_boundary_verify(
     boundary: str, tree: str, contract: ReleaseContract,
 ) -> tuple[dict[str, Any], dict[str, Any], dict[str, dict[str, Any]]]:
-    # The proven verifier is entirely contract/global driven once configured.
-    return PROVEN_ANONYMOUS_BOUNDARY_VERIFY(boundary, tree, contract)
+    bundle = load_privacy_overlay(contract)
+    values = public_boundary_bytes(contract, bundle, True)
+    _, repo, _ = transport.request_json("GET", f"/repos/{FULL_REPO}")
+    require(
+        repo.get("private") is False
+        and repo.get("default_branch") == "main"
+        and repo.get("full_name") == FULL_REPO,
+        "repository is not the expected public repository",
+    )
+    _, tag, _ = transport.request_json("GET", f"/repos/{FULL_REPO}/git/ref/tags/{TAG}")
+    require(
+        tag.get("object", {}).get("type") == "commit"
+        and tag.get("object", {}).get("sha") == boundary,
+        "public through-Chapter-23 tag differs",
+    )
+    _, commit, _ = transport.request_json("GET", f"/repos/{FULL_REPO}/commits/{boundary}")
+    require(
+        commit.get("sha") == boundary
+        and commit.get("commit", {}).get("tree", {}).get("sha") == tree,
+        "public through-Chapter-23 commit/tree differs",
+    )
+    replay_readback = tuple(sorted(
+        path for path, row in bundle.manifest_rows.items()
+        if row.publication_class in {privacy.SANITIZED_CLASS, "public-replay-overlay"}
+    ))
+    readback_paths = tuple(dict.fromkeys((
+        TREE_RELATIVE,
+        PACKAGE_RELATIVE,
+        PUBLIC_VALIDATION_RELATIVE,
+        PUBLIC_MANIFEST_RELATIVE,
+        PUBLIC_MAP_RELATIVE,
+        *replay_readback,
+    )))
+    for relative in readback_paths:
+        require(relative in values, f"anonymous readback path is outside current boundary: {relative}")
+        url = f"https://raw.githubusercontent.com/{FULL_REPO}/{boundary}/{relative}"
+        _, _, data = transport.request("GET", url, expected=(200,), anonymous_redirects=True)
+        require(data == values[relative], f"anonymous public boundary bytes differ: {relative}")
+        try:
+            privacy.assert_public_bytes_private_token_free(relative, data)
+        except privacy.PublicOverlayError as exc:
+            raise PublicationError(f"anonymous public boundary privacy scan failed: {exc}") from exc
+    _, release, _ = transport.request_json("GET", f"/repos/{FULL_REPO}/releases/tags/{TAG}")
+    require(
+        release.get("tag_name") == TAG
+        and release.get("target_commitish") == boundary
+        and release.get("name") == release_name()
+        and release.get("body") == release_body(contract.assets[0].name)
+        and release.get("draft") is False
+        and release.get("prerelease") is True,
+        "anonymous GitHub release metadata differs",
+    )
+    asset_rows = release.get("assets")
+    require(isinstance(asset_rows, list) and len(asset_rows) == 3,
+            "anonymous GitHub release does not have exactly three assets")
+    assets = {row.get("name"): row for row in asset_rows if isinstance(row, dict)}
+    require(set(assets) == {binding.name for binding in contract.assets},
+            "anonymous GitHub asset inventory differs")
+    ordered = sorted(assets.values(), key=lambda row: int(row.get("id", 0)))
+    require(
+        [row.get("name") for row in ordered] == [binding.name for binding in contract.assets],
+        "anonymous GitHub asset order differs",
+    )
+    for binding in contract.assets:
+        engine.verify_asset(assets[binding.name], binding)
+    return repo, release, assets
 
 
 def write_receipt(

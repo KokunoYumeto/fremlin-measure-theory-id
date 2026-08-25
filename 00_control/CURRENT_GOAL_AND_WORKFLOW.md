@@ -8,11 +8,12 @@ Complete and publish one coherent Bahasa Indonesia edition of D. H. Fremlin's
 *Measure Theory*, Volume 1 (*The Irreducible Minimum*) and Volume 2 (*Broad
 Foundations*) only: 672 official pages. Do not reopen selection, reduce the
 corpus to a course slice, include Volumes 3–5, or merge comparator books.
-Volume I and complete Volume II Chapters 21–22 are admitted and public at
-186/672 official pages: Volume I contributes 102 pages and Volume II pages
-12–95 contribute 84 pages. Preserve that boundary. Volume II front matter and
-introductions on pages 1–11 remain absent. The goal remains active through all
-remaining Volume II units.
+Volume I and contiguous Volume II pages 1–137, including the front matter and
+complete Chapters 21–23, are admitted and public at 239/672 official pages.
+Volume I contributes 102 pages and Volume II contributes 137 pages. Preserve
+that boundary and continue at complete Chapter 24, beginning with `mt24.tex`
+and `mt241.tex` at official Volume II page 138. The goal remains active through
+all remaining Volume II units; 433 official pages remain.
 
 Authority is
 `<repository-root>/authority/fremlin`:
@@ -54,30 +55,27 @@ Do not retry Figshare absent a license/account change. No upstream contact
 during production. After both volumes, at most one concise deduplicated report
 may be sent, signed `Codex, on instructions of the user.`
 
-Complete Volume I plus complete Volume II Chapters 21–22 (`mt21.tex`,
-`mt211.tex`–`mt216.tex`, `mt22.tex`, and `mt221.tex`–`mt226.tex`) is public as
-GitHub tag `v0.14.0-v2-ch21-ch22`, boundary commit
-`d31490adfe313f92705e44985f93d09c7e70bdfc`, and receipt-only main commit
-`663f41deb4daf29813de67a3098d6d1ab8730fda`. Release:
-`https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.14.0-v2-ch21-ch22`.
-The GitHub receipt is `qa/PUBLICATION_RECEIPT_V0140_V2_CH21_CH22.json` (4,269
-bytes; SHA-256
-`4c130cce18421fe27fd56380c53dbc52310ce37023d5d159846681240c872eca`).
-The same checkpoint is public on Zenodo as DOI
-`10.5281/zenodo.22088384` at `https://zenodo.org/records/22088384`, under the
-unchanged concept DOI `10.5281/zenodo.22059798`; its receipt is
-`qa/ZENODO_PUBLICATION_RECEIPT_V0140_V2_CH21_CH22.json` (3,890 bytes; SHA-256
-`8d9586b76803f1faa52370aee793d766ff0baaf1ce8788617189f0909a7026cb`).
-The checkpoint has a 200-page A4 reflow reader. Its public package uses a
-documented privacy overlay while preserving canonical evidence locally. Public
-raw files and release assets passed anonymous readback. GitHub release metadata
-was verified through an authenticated API fallback because the shared-IP
-anonymous API quota was rate-limited; this is not a publication defect.
+The current boundary is public as GitHub tag `v0.15.0-v2-through-ch23`,
+boundary commit `181bbb7ae28ac4e8850a005dfc428fe42f67a6b8`, and receipt
+commit `6dafc1575460f94f06db9b4c939058a7b97dbf7c`. Release:
+`https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.15.0-v2-through-ch23`.
+Its GitHub receipt is `qa/PUBLICATION_RECEIPT_V0150_V2_THROUGH_CH23.json`
+(4,187 bytes; SHA-256
+`190972813010bb6f82b83ffd01e5175f857af2f211de5ef35a469040191b7354`).
+The identical checkpoint is public in the existing Zenodo concept as record
+`22097858`, DOI `10.5281/zenodo.22097858`, with receipt
+`qa/ZENODO_PUBLICATION_RECEIPT_V0150_V2_THROUGH_CH23.json` (3,965 bytes;
+SHA-256
+`93339b5ac1fde486151c0455a7cb674069ba48cabd133814ad3b6ed8336eb741`).
+Both destinations anonymously returned the exact reader-first PDF, resumable
+ZIP, and checksum witness. The cumulative PDF has 258 A4 reflow pages; that
+physical count does not replace the 239-page official coverage identity.
 
-Current action: translate the missing Volume II front matter and introductions
-in source order (`mt20.tex`, `mt02.tex`, then `mt2.tex`), covering official
-pages 1–11, and then continue with Chapter 23. Do not skip the front matter or
-count physical reflow pages as official coverage.
+Current action: translate complete Chapter 24 contiguously from the frozen
+authority in source order, starting with `mt24.tex` and `mt241.tex`; run light
+unit checks as each section closes, then consolidate backend/readers/admission
+and publish only at the next substantial page boundary. Do not spend a full
+publication transaction on each small section.
 
 Recovery state lives in `00_control/CURRENT_GOAL_AND_WORKFLOW.md`,
 `CURRENT_CURSOR.md`, `CURRENT_STATE.md`, `DECISION_LOG.md`,

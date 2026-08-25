@@ -2,7 +2,50 @@
 
 Updated: 2026-08-25 (Europe/Berlin)
 
-## State summary
+## Authoritative current state
+
+- Admitted and public coverage is 239/672 official pages: complete Volume I
+  (102 pages) plus contiguous Volume II pages 1–137, including front matter and
+  complete Chapters 21–23. The two-volume corpus is not complete; 433 official
+  pages remain.
+- Owner admission is `00_control/CP0015_THROUGH_CHAPTER23_ADMISSION.md`
+  (3,870 bytes; SHA-256
+  `5a2b484d1fec3cd620a9df2c7f9c1ed02d54240bd7bd9f54bf5df22278b170e3`).
+  The backend passes with 5,718 unique schema-valid records, 47 catalog units,
+  184 exact resources, and 188 materialized files. Exact receipt:
+  `backend/chapter23-backend-validation.json` (39,976 bytes; SHA-256
+  `b89b6525ec41a8904795ccbf3704237a4808448d8c09a62c42d6a45055ce97d0`).
+- The cumulative reader PDF is 1,771,034 bytes, 258 A4 reflow pages, SHA-256
+  `10433d93a655731615020333b024ac7d53acb494a86d11b14d57908f8b38bed1`.
+  Every page passed raster/visual QA. The offline HTML has 51 routes and 20,204
+  formulas; 102 desktop/mobile observations passed with zero MathJax, console,
+  asset, link, fragment, or document-overflow defects. Browser receipt:
+  `qa/through-chapter23-html-browser-qa.json` (21,092 bytes; SHA-256
+  `6a91f0894e45f7339f466addcbc66a99f5f02b6a9fa41f61033d99b142b7935f`).
+- The reader-first public assets are identical at both destinations: PDF
+  1,771,034 bytes / SHA-256
+  `10433d93a655731615020333b024ac7d53acb494a86d11b14d57908f8b38bed1`;
+  deterministic resumable ZIP 15,228,253 bytes / SHA-256
+  `5f5a4bbcb7c12084cb5a28570364a1e3f2a8dfb685f87b74f2536c004691ba55`;
+  checksum witness 254 bytes / SHA-256
+  `65bd49cbcfe5f92fc1222a2f250503ab85d5ea3f467438e20bc969a5a61d83e0`.
+- GitHub prerelease `v0.15.0-v2-through-ch23` is public at boundary commit
+  `181bbb7ae28ac4e8850a005dfc428fe42f67a6b8`, with receipt commit
+  `6dafc1575460f94f06db9b4c939058a7b97dbf7c`. All tag, selected raw, metadata,
+  and asset bytes passed anonymous readback. Evidence:
+  `qa/PUBLICATION_RECEIPT_V0150_V2_THROUGH_CH23.json` (4,187 bytes; SHA-256
+  `190972813010bb6f82b83ffd01e5175f857af2f211de5ef35a469040191b7354`).
+- Zenodo record `22097858`, DOI `10.5281/zenodo.22097858`, is public in the
+  unchanged concept DOI `10.5281/zenodo.22059798`. It is exactly one new
+  version from record `22088384`; every asset passed anonymous byte/hash
+  readback. Evidence: `qa/ZENODO_PUBLICATION_RECEIPT_V0150_V2_THROUGH_CH23.json`
+  (3,965 bytes; SHA-256
+  `93339b5ac1fde486151c0455a7cb674069ba48cabd133814ad3b6ed8336eb741`).
+- Active cursor: complete Volume II Chapter 24, starting with `mt24.tex` and
+  `mt241.tex` at official page 138. No upstream contact occurred. The full
+  672-page goal remains active.
+
+## Historical state detail retained for audit
 
 - Complete Volume I is translated, backend-indexed, independently checked, and
   admitted at 102/672 official pages. The complete 27-unit source, 731-unit
@@ -67,9 +110,23 @@ Updated: 2026-08-25 (Europe/Berlin)
   assets, and all Zenodo assets, passed anonymous byte/hash readback. GitHub
   release metadata used an authenticated API fallback because the shared-IP
   anonymous API quota was rate-limited; this is not a publication defect.
-- The next cursor is the missing Volume II front matter and introductions in
-  frozen source order: `mt20.tex`, `mt02.tex`, and `mt2.tex` (official pages
-  1–11), followed by Chapter 23. The complete 672-page goal remains active.
+- The next substantial candidate boundary is locally translated through
+  complete Volume II page 137: front matter `mt20.tex`, `mt02.tex`, `mt2.tex`
+  and Chapter 23 `mt23.tex`, `mt231.tex`–`mt235.tex`. Together with complete
+  Volume I this is 239/672 official pages. All nine unit receipts and the
+  chapter aggregate pass. Latest target `source/id-ID/mt235.tex` is 51,049
+  bytes / SHA-256
+  `63d2c9f4c3231af7343358b47deea98ac82b77be598d4c6108010536370da415`;
+  `qa/chapter23-aggregate-qa.json` is 10,843 bytes / SHA-256
+  `7db44070759940667fb80260b090f7f8e209577373ca7c5a360322ff728b6329`.
+  The 117-row source-correction ledger is schema-clean at 60,372 bytes /
+  SHA-256
+  `111fc2931c9ff8f7728448dc0c37efbf683610fde51500589e962712d22f4cae`.
+  This is a candidate, not an admission: backend, cumulative reader,
+  visual/browser QA, packaging, publication, and anonymous readback remain.
+- The active cursor is the 239/672 cumulative admission and publication gate.
+  After that checkpoint is publicly verified, continue in frozen source order
+  with Chapter 24. The complete 672-page goal remains active.
 - S136 is public as GitHub prerelease `v0.11.0-s136` and Zenodo DOI
   `10.5281/zenodo.22071390` in the unchanged concept DOI
   `10.5281/zenodo.22059798`. Both destinations anonymously returned the exact

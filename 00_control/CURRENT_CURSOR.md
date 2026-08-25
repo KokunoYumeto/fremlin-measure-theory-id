@@ -2,21 +2,52 @@
 
 Updated: 2026-08-25 (Europe/Berlin)
 
-## Active production cursor
+## Authoritative production cursor
 
 | Field | Value |
 |---|---|
 | Corpus | `O007-FREMLIN-MT-V1-V2` |
 | Volume | `O007-FREMLIN-V2` — *Broad Foundations* |
-| Boundary | Complete Volume I plus complete Volume II Chapters 21–22 public and verified: 186/672 official pages |
-| Coverage identity | Volume I 102 pages + Volume II pages 12–95 (84 pages); Volume II pages 1–11 remain absent |
-| Unit | Next: Volume II front matter/introductions `mt20.tex`, `mt02.tex`, `mt2.tex`; then Chapter 23 |
-| Source anchor | Frozen Volume II source order before admitted Chapter 21 |
-| Authority member | `authority/fremlin/source/mt2.2016/mt20.tex`, `mt02.tex`, `mt2.tex` |
-| Latest admission | `00_control/CP0014_CHAPTER21_ADMISSION.md` and `qa/chapters21-22-final-admission.json` |
+| Latest admitted/public boundary | Complete Volume I plus contiguous Volume II pages 1–137, including front matter and Chapters 21–23: 239/672 official pages |
+| Latest admission | `00_control/CP0015_THROUGH_CHAPTER23_ADMISSION.md`; `qa/through-chapter23-final-admission.json` |
+| GitHub | tag `v0.15.0-v2-through-ch23`; boundary `181bbb7ae28ac4e8850a005dfc428fe42f67a6b8`; receipt commit `6dafc1575460f94f06db9b4c939058a7b97dbf7c` |
+| Zenodo | record `22097858`; DOI `10.5281/zenodo.22097858`; concept DOI `10.5281/zenodo.22059798` |
+| Active chapter | Complete Volume II Chapter 24 |
+| Next source files | `authority/fremlin/source/mt2.2016/mt24.tex` then `mt241.tex` in frozen source order |
+| Next authority identities | `mt24.tex`: 2,859 bytes, SHA-256 `016a53e3c7640f049281e4b97659913bc9c6c53e3171a51610b7e5dce6c00120`; `mt241.tex`: 34,479 bytes, SHA-256 `33d1c976b96320f8b1745fe7db4688ae5351e6d0e8942d0d5f370429e1dea3b6` |
+| Official-page cursor | Volume II page 138 |
+| Remaining corpus | 433 official pages |
+| Production status | `chapter23_public_verified_chapter24_translation_next` |
+
+The next executable action is source-aware translation of complete `mt24.tex`
+and then `mt241.tex`, preserving every formula, identifier, proof, exercise,
+hint, cross-reference, and source-order relationship. Run bounded unit QA while
+translation advances; consolidate the backend, cumulative readers, full visual
+QA, package, and publication at a substantial Chapter 24 boundary. The complete
+672-page goal remains active. No upstream contact occurred.
+
+Exact current public evidence is
+`qa/PUBLICATION_RECEIPT_V0150_V2_THROUGH_CH23.json` (4,187 bytes; SHA-256
+`190972813010bb6f82b83ffd01e5175f857af2f211de5ef35a469040191b7354`) and
+`qa/ZENODO_PUBLICATION_RECEIPT_V0150_V2_THROUGH_CH23.json` (3,965 bytes;
+SHA-256
+`93339b5ac1fde486151c0455a7cb674069ba48cabd133814ad3b6ed8336eb741`).
+
+## Historical cursor detail retained for audit
+
+| Field | Value |
+|---|---|
+| Corpus | `O007-FREMLIN-MT-V1-V2` |
+| Volume | `O007-FREMLIN-V2` — *Broad Foundations* |
+| Boundary | Public verified predecessor 186/672; local unit-validated candidate through complete Chapter 23 is 239/672 official pages |
+| Coverage identity | Volume I 102 pages + complete Volume II pages 1–137 (137 pages) |
+| Unit | Completed candidate: `mt20.tex`, `mt02.tex`, `mt2.tex`, `mt23.tex`, and `mt231.tex`–`mt235.tex`; current gate is cumulative backend/reader/admission/release |
+| Source anchor | Frozen Volume II source order through `authority/fremlin/source/mt2.2016/mt235.tex` |
+| Authority member | Latest: `authority/fremlin/source/mt2.2016/mt235.tex`, 47,626 bytes, SHA-256 `1dbe8b3dd740032837a382d66c3d3e738a0702db7ae5d6980dbf75c156ae87da` |
+| Latest admission | Public predecessor: `00_control/CP0014_CHAPTER21_ADMISSION.md`; current candidate aggregate: `qa/chapter23-aggregate-qa.json` |
 | Latest public receipts | `qa/PUBLICATION_RECEIPT_V0140_V2_CH21_CH22.json`; `qa/ZENODO_PUBLICATION_RECEIPT_V0140_V2_CH21_CH22.json` |
-| Production status | `chapters21_22_public_verified_volume2_front_matter_next` |
-| Target admitted | complete Volume I `true`; Chapter 21 `true`; Chapter 22 `true`; Volume II pages 1–11 `false`; complete corpus `false` |
+| Production status | `front_matter_chapter23_unit_validated_cumulative_admission_in_progress` |
+| Target admitted | complete Volume I `true`; Chapters 21–22 `true`; front matter and Chapter 23 `candidate`; complete corpus `false` |
 
 Complete Volume I is translated, backend-indexed, reproducibly built, and
 admitted. The final index covers all 731 units once in source order. The backend
@@ -51,10 +82,15 @@ byte/hash readback. GitHub release metadata used an authenticated API fallback
 because shared-IP anonymous API requests were rate-limited; the public release
 and asset verification are unaffected.
 
-Volume II pages 1–11 are not yet translated in the admitted checkpoint. The
-next executable action is to translate `mt20.tex`, `mt02.tex`, and `mt2.tex` in
-frozen source order, then continue with Chapter 23. The 672-page goal remains
-active.
+Volume II pages 1–11 and complete Chapter 23, pages 96–137, are translated and
+unit-validated but not yet admitted. The latest target is `source/id-ID/mt235.tex`,
+51,049 bytes / SHA-256
+`63d2c9f4c3231af7343358b47deea98ac82b77be598d4c6108010536370da415`.
+All nine front/chapter unit receipts pass; `qa/chapter23-aggregate-qa.json`
+passes at 10,843 bytes / SHA-256
+`7db44070759940667fb80260b090f7f8e209577373ca7c5a360322ff728b6329`.
+The next executable action is cumulative backend and reader admission, package,
+publication, and anonymous readback at 239/672. The 672-page goal remains active.
 
 The earlier cursor labels `The indefinite integral` / `Upper integrals` were
 rejected on direct authority replay. Frozen `mt13.tex` and `mt131.tex` identify
