@@ -139,3 +139,15 @@ of mathematical symbols.
 These choices preserve formulae, stable identifiers, exercise and hint
 relations, cross-references, and source order. They are terminology decisions,
 not content substitutions.
+### Chapter 25 — Product measures (2026-08-26)
+
+For the Chapter 25 introduction and Section 251, retain the existing concise
+Indonesian mathematical compounds and use them consistently in prose, titles,
+backend terms, and future translations: *product measure* → **ukuran produk**;
+*product space* → **ruang produk**; *repeated integration* → **integrasi
+berulang**; *measure space* → **ruang ukur**; *probability space* → **ruang
+probabilitas**; *finite product* → **produk berhingga**; *rectangle* →
+**persegi panjang**; *convolution* → **konvolusi**; and *Radon measure* →
+**ukuran Radon**. These are provisional source-order decisions grounded in the
+existing lane glossary and mathematical meaning; they introduce no new
+component or license boundary.
