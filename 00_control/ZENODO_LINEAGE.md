@@ -241,12 +241,37 @@ licenses, but this account does not offer the Design Science License or a
 custom-license option. No draft or upload was created under an incompatible
 license. Exact evidence is `qa/FIGSHARE_PUBLICATION_BLOCKER_S123.json`.
 
+## Published version 0.16.0-v2-through-ch24
+
+- Record: `22103648`
+- DOI: `10.5281/zenodo.22103648`
+- Public URL: <https://zenodo.org/records/22103648>
+- Version: `0.16.0-v2-through-ch24`
+- Status: public, admitted cumulative checkpoint through complete Volume II
+  Chapter 24; 305/672 official pages, with Volume II pages 1–203 included.
+- Lineage: exactly one new version from record `22097858`; concept DOI remains
+  `10.5281/zenodo.22059798`; no standalone or competing concept was created.
+- License metadata: Zenodo `dsl` (Design Science License); MathJax 3.2.2 is a
+  separately scoped Apache-2.0 component.
+- Reader-first PDF: 2,176,212 bytes, SHA-256
+  `7c03fa2e673f0a3e617401e8894c6d2e56956d39cec4c14e60006f4ff26ec446`.
+- Deterministic ZIP: 20,013,268 bytes, SHA-256
+  `3e605f1700365ae0afb104cd335d2298bcbaa142f39de3d959bb92d40bc1952d`.
+- Checksum witness: 254 bytes, SHA-256
+  `7cc9045428c49de20800bac222de34d8bc078177e7e86c1d53fee62d1fdfbb8e`.
+- Sanitized receipt: `qa/ZENODO_PUBLICATION_RECEIPT_V0160_V2_THROUGH_CH24.json`,
+  4,130 bytes, SHA-256
+  `7b37dffbe97abd580a0e66b059e60ceb0f5ca2a00a1f1896a3d4b121024b1473`.
+  The public inventory, metadata, and all three assets passed anonymous exact
+  byte/SHA-256 readback. Next version starts at Volume II `mt25.tex` / `mt251.tex`.
+
 ## Next version
 
 At the next substantial admitted Volume II boundary, create exactly one new
-version from record `22097858`. Upload only the reader-first PDF, one compact
-resumable source/backend package, and checksum witness; publish and then
-anonymously read every public asset back. Preserve the concept DOI, metadata
-license `dsl`, component-license distinction, exact cumulative coverage, and
-explicit partial-corpus status. Do not create a fresh concept, overwrite a
-predecessor, or spend a publication transaction on each small section.
+version from record `22103648` (the same concept DOI). Upload only the
+reader-first PDF, one compact resumable source/backend package, and checksum
+witness; publish and then anonymously read every public asset back. Preserve
+the concept DOI, metadata license `dsl`, component-license distinction, exact
+cumulative coverage, and explicit partial-corpus status. Do not create a fresh
+concept, overwrite a predecessor, or spend a publication transaction on each
+small section.

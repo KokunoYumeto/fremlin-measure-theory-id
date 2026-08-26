@@ -4,6 +4,12 @@ Updated: 2026-08-25 (Europe/Berlin)
 Task: `01a01f45-9d00-7f42-9071-4f932b45512a`  
 Status: active until all 672 official pages are publicly verified
 
+> **Superseding checkpoint (2026-08-26):** the authoritative current state is
+> the Chapter 24 boundary recorded in the owner section at the end of this
+> file: 305/672 pages admitted and published; next cursor `mt25.tex` then
+> `mt251.tex` at official page 204. The older 239/672 text below is retained
+> as historical context only.
+
 Complete and publish one coherent Bahasa Indonesia edition of D. H. Fremlin's
 *Measure Theory*, Volume 1 (*The Irreducible Minimum*) and Volume 2 (*Broad
 Foundations*) only: 672 official pages. Do not reopen selection, reduce the
@@ -16,7 +22,7 @@ and `mt241.tex` at official Volume II page 138. The goal remains active through
 all remaining Volume II units; 433 official pages remain.
 
 Authority is
-`<repository-root>/authority/fremlin`:
+`C:/Users/Floris/Documents/interlanguage/04_mirrors/id/measure-integration-id/authority/fremlin`:
 `mt1.2011.tar.gz` (421,854 bytes; SHA-256
 `1deabdecd72f2a2866eb70c4e2ab89f230083af155414023a0a8b441010a6ff2`),
 `mt2.2016.tar.gz` (897,116;
@@ -85,3 +91,69 @@ and next action at each checkpoint; treat compaction as untrusted. Completion
 means all 672 pages are translated, backend-indexed, reproducibly built,
 validated, published in existing GitHub/Zenodo lineages, anonymously read
 back, and no required work remains.
+## CURRENT OWNER GOAL AND WORKFLOW — O007 / D10 (2026-08-26)
+
+Complete one coherent Indonesian reader of D. H. Fremlin, *Measure Theory*,
+Volumes 1 (*The Irreducible Minimum*) and 2 (*Broad Foundations*) only: all
+672 official source pages. Volumes 3–5, Cabral, Erdman, Random, RFA, Axler,
+and other comparators are outside this lane. The current admitted boundary is
+complete Volume 1 plus Volume 2 official pages 1–203, including front matter
+and Chapters 21–24: 305/672 pages, 367 remaining. The next executable source
+cursor is `authority/fremlin/source/mt2.2016/mt25.tex`, then `mt251.tex`, at
+official page 204. The goal stays active until every selected source unit is
+translated, indexed, built, published, and anonymously read back.
+
+Frozen authority is the exact local closure under
+`C:/Users/Floris/Documents/interlanguage/04_mirrors/id/measure-integration-id/authority/fremlin`:
+`mt1.2011.tar.gz` 421,854 bytes,
+SHA-256 `1deabdecd72f2a2866eb70c4e2ab89f230083af155414023a0a8b441010a6ff2`;
+`mt2.2016.tar.gz` 897,116 bytes,
+SHA-256 `77413c3c2f1a97f0e29b538d957d6dce59a23c0c8b8b287d20b023572e105145`;
+`SOURCE_MANIFEST.tsv` 11,879 bytes,
+SHA-256 `4aa1c1b17d932f0f2eb7b5373456e1f39451d775f446cb8aa72101b6f57e8490`;
+and `dsl.txt` 8,076 bytes,
+SHA-256 `4505ea3ff83882f83f4f5ea2088b51a89f90fa440f6a28c08cb126d7c29e70db`.
+Fremlin-derived text remains under the Design Science License; preserve
+attribution, modification notices, editable source, component notices, and
+the separate Apache-2.0 MathJax boundary. Never add restrictions or relabel
+original mastery/backend material as Fremlin text.
+
+Translation is the dominant operation. For each contiguous chapter or major
+section, read the frozen source in order and produce natural `id-ID` prose
+while preserving every formula, command, identifier, definition, theorem,
+proof, example, note, exercise, hint, index, asset, cross-reference, and
+source topology. Run bounded source/hash, UTF-8, protected-command,
+normalized-math, stable-ID, xref, hint, and residue checks; record only
+high-confidence source defects in `00_control/SOURCE_CORRECTIONS.csv` and
+terminology decisions in `00_control/TERMINOLOGY_DECISIONS.md`. Maintain the
+additive locale-neutral backend with stable unit/segment/result/exercise/
+hint/solution/asset IDs, source-target maps, formula/xref relations, route
+edges, rights, provenance, model identity, and deterministic JSON/JSONL/CSV
+round trips. A helper packet is evidence only: HP-D10-001 Chapter 21 was
+replayed through the corrected 17-entry seal and retained as an alternate;
+the stronger canonical owner text remains authoritative.
+
+At substantial boundaries, regenerate the cumulative reader and backend,
+then run deterministic two-build checks, extraction/metadata checks, all-page
+PDF raster/geometry inspection, offline HTML link/math checks, and desktop /
+mobile browser replay. Official page accounting is distinct from reflow page
+count. Admit only when all supporting receipts bind current bytes and hashes;
+package exactly the reader-first PDF, one compact resumable source/backend ZIP,
+and checksum witness with a finite privacy-scanned manifest. Publish directly
+to the existing GitHub repository and the existing Zenodo concept DOI
+`10.5281/zenodo.22059798`, never a duplicate; anonymously read every public
+asset and persist token-free receipts. Explicit publication authorization is
+standing, so do not ask again. Do not contact upstream during production; only
+after both volumes may one concise, deduplicated, high-confidence report be
+sent, signed `Codex, on instructions of the user.`
+
+Write only this lane and finite explicit pathspecs; never run a workspace-wide
+scan or repository-wide Git status/diff/add enumeration. Keep recovery state
+in this file, `CURRENT_CURSOR.md`, `CURRENT_STATE.md`, `DECISION_LOG.md`,
+`ZENODO_LINEAGE.md`, the correction/terminology ledgers, and typed `qa/`
+receipts. At every admission/publication, record exact cursor, coverage,
+paths, byte counts, SHA-256 values, public URLs/DOIs, readback result, and the
+next executable source unit. Terminal condition: Volumes 1–2 complete at
+672/672, backend and readers reproducibly validated, both public lineages
+current and anonymously verified, and no required source or release work
+remains.

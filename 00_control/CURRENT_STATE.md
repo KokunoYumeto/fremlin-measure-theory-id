@@ -1,6 +1,11 @@
 # Current State — O007 Fremlin Volumes 1–2
 
-Updated: 2026-08-25 (Europe/Berlin)
+Updated: 2026-08-26 (Europe/Berlin)
+
+> **Superseding checkpoint (2026-08-26):** the current owner state is the
+> Chapter 24 section at the end of this file: 305/672 official pages admitted
+> and publicly verified, with the next cursor `mt25.tex` then `mt251.tex`.
+> Earlier 239/672 statements are historical evidence only.
 
 ## Authoritative current state
 
@@ -640,3 +645,34 @@ Do not translate Fremlin Volumes 3–5 or merge Cabral, Erdman, Random, RFA,
 Axler, or Stacks material into this corpus. Any separately authored mastery
 support must have original provenance and an explicit component-license
 boundary.
+## Current owner state — 2026-08-26 (Chapter 24 admitted and published)
+
+The canonical owner has closed complete Volume II Chapter 24 and advanced the
+cumulative corpus to 305/672 official pages (367 remaining): complete Volume I,
+Volume II pages 1–11 front matter, and Chapters 21–24 on official pages 12–203.
+All eight Chapter 24 units are source-order complete; the corrected `mt243`
+legacy `243Xo` declaration is represented in the stable-ID backend. Aggregate
+QA is 318 stable IDs, 6,438/6,434 source/target math segments, and 40/40 hints.
+The backend replay passes at 8,379 unique/schema-valid records and 211 catalog
+resources. The cumulative PDF is 2,176,212 bytes, SHA-256
+`7c03fa2e673f0a3e617401e8894c6d2e56956d39cec4c14e60006f4ff26ec446`, with 327
+A4 reflow pages; all 25 saved contact sheets and the changed native-asset pages
+were inspected without clipping, missing graphics, or error surfaces.
+
+Owner admission is `00_control/CP0016_THROUGH_CHAPTER24_ADMISSION.md` (4,133
+bytes; SHA-256 `62bdc4c561824bd7f8799861f431732b982b1019dbce6502aa1d7000c514fb8a`)
+and `qa/through-chapter24-final-admission.json` (11,133 bytes; SHA-256
+`e2d007d177a70b09fc640366dd93e950e020f483f03c7df301ce1e0d18ecfff8`). The
+reader-first package is verified and public as GitHub `v0.16.0-v2-through-ch24`
+(boundary `0bd08492b9ed5c31c861dc5f6d45abef452bfbda`, receipt commit
+`1cfefad6e12922bf5b95a4a9551485851a2d64db`, release URL in `CURRENT_CURSOR.md`)
+and Zenodo record `22103648`, DOI `10.5281/zenodo.22103648`, under the existing
+concept DOI. Anonymous readback matched the PDF, deterministic ZIP, and
+checksum witness at their local byte/SHA-256 identities.
+
+The corrected HP-D10-001 17-entry seal and owner replay remain alternate
+evidence only; canonical Chapter 21 text was not replaced. No upstream contact
+occurred. The next executable cursor is frozen Volume II `mt25.tex`, then
+`mt251.tex`, at official page 204. Continue translation-first in contiguous
+Chapter 25 batches, run bounded unit checks, and defer another consolidated
+backend/reader/publication transaction until a substantial page boundary.

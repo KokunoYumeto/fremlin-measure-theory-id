@@ -1,6 +1,50 @@
 # Current Cursor
 
-Updated: 2026-08-25 (Europe/Berlin)
+## Canonical owner checkpoint — 2026-08-26
+
+The current admitted/public boundary is complete Volume I plus contiguous
+Volume II official pages 1–203, including front matter and Chapters 21–24:
+305/672 official pages; 367 remain. Chapter 24 covers pages 138–203 (66
+unique official pages) and all eight units `mt24`, `mt241`–`mt247` are admitted.
+The next source-order cursor is complete `authority/fremlin/source/mt2.2016/mt25.tex`,
+then `mt251.tex`, beginning at official page 204. No admitted unit is to be
+rolled back; continue in larger contiguous chapter/major-section batches.
+
+Admission and backend evidence:
+
+- `00_control/CP0016_THROUGH_CHAPTER24_ADMISSION.md`: 4,133 bytes,
+  SHA-256 `62bdc4c561824bd7f8799861f431732b982b1019dbce6502aa1d7000c514fb8a`.
+- `qa/through-chapter24-final-admission.json`: 11,133 bytes,
+  SHA-256 `e2d007d177a70b09fc640366dd93e950e020f483f03c7df301ce1e0d18ecfff8`.
+- `qa/chapter24-aggregate-qa.json`: 10,998 bytes,
+  SHA-256 `7fb54b06e75501b563c58e97b26059b54dcd7750b51538483cf43a1bb4987444`;
+  318 stable IDs, 6,438/6,434 source/target math segments, 40/40 hints.
+- `backend/chapter24-backend-validation.json`: 52,559 bytes,
+  SHA-256 `823846c7169959c0174bc8fa9f6fb8a4b8c3a45e9646aba62b34e71391d70a49`;
+  pass, 8,379 unique/schema-valid records, 211 resources, 55 units.
+- `qa/through-chapter24-pdf-visual-qa.json`: current all-page automated and
+  manual visual pass; 327 A4 reflow pages, no clipping or missing assets.
+- Cumulative PDF: 2,176,212 bytes, SHA-256
+  `7c03fa2e673f0a3e617401e8894c6d2e56956d39cec4c14e60006f4ff26ec446`.
+
+The reader-first release is `v0.16.0-v2-through-ch24`. GitHub is public at
+`https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.16.0-v2-through-ch24`;
+boundary commit `0bd08492b9ed5c31c861dc5f6d45abef452bfbda`, receipt commit
+`1cfefad6e12922bf5b95a4a9551485851a2d64db`, receipt
+`qa/PUBLICATION_RECEIPT_V0160_V2_THROUGH_CH24.json` (4,616 bytes; SHA-256
+`a1ca79817b26cb0df56c8de085de5c8ddf8e5eec97e89567d137a59bb0ae2dbb`). Zenodo
+record `22103648`, DOI `10.5281/zenodo.22103648`, remains in concept DOI
+`10.5281/zenodo.22059798`; receipt
+`qa/ZENODO_PUBLICATION_RECEIPT_V0160_V2_THROUGH_CH24.json` (4,130 bytes;
+SHA-256 `7b37dffbe97abd580a0e66b059e60ceb0f5ca2a00a1f1896a3d4b121024b1473`).
+Both receipts record anonymous byte/hash readback of the exact three assets.
+
+Next action: freeze Chapter 25 authority identities, translate `mt25.tex` and
+the contiguous `mt251.tex` onward, run light unit QA, then consolidate only at
+the next substantial boundary. Keep exact cursor/evidence updates here and in
+`CURRENT_STATE.md`, `DECISION_LOG.md`, and `ZENODO_LINEAGE.md`.
+
+Updated: 2026-08-26 (Europe/Berlin)
 
 ## Authoritative production cursor
 
@@ -8,22 +52,22 @@ Updated: 2026-08-25 (Europe/Berlin)
 |---|---|
 | Corpus | `O007-FREMLIN-MT-V1-V2` |
 | Volume | `O007-FREMLIN-V2` — *Broad Foundations* |
-| Latest admitted/public boundary | Complete Volume I plus contiguous Volume II pages 1–137, including front matter and Chapters 21–23: 239/672 official pages |
-| Latest admission | `00_control/CP0015_THROUGH_CHAPTER23_ADMISSION.md`; `qa/through-chapter23-final-admission.json` |
-| GitHub | tag `v0.15.0-v2-through-ch23`; boundary `181bbb7ae28ac4e8850a005dfc428fe42f67a6b8`; receipt commit `6dafc1575460f94f06db9b4c939058a7b97dbf7c` |
-| Zenodo | record `22097858`; DOI `10.5281/zenodo.22097858`; concept DOI `10.5281/zenodo.22059798` |
-| Active chapter | Complete Volume II Chapter 24 |
-| Next source files | `authority/fremlin/source/mt2.2016/mt24.tex` then `mt241.tex` in frozen source order |
-| Next authority identities | `mt24.tex`: 2,859 bytes, SHA-256 `016a53e3c7640f049281e4b97659913bc9c6c53e3171a51610b7e5dce6c00120`; `mt241.tex`: 34,479 bytes, SHA-256 `33d1c976b96320f8b1745fe7db4688ae5351e6d0e8942d0d5f370429e1dea3b6` |
-| Official-page cursor | Volume II page 138 |
-| Remaining corpus | 433 official pages |
-| Production status | `chapter23_public_verified_chapter24_translation_next` |
+| Latest admitted/public boundary | Complete Volume I plus contiguous Volume II pages 1–203, including front matter and Chapters 21–24: 305/672 official pages |
+| Latest admission | `00_control/CP0016_THROUGH_CHAPTER24_ADMISSION.md`; `qa/through-chapter24-final-admission.json` |
+| GitHub | tag `v0.16.0-v2-through-ch24`; boundary `0bd08492b9ed5c31c861dc5f6d45abef452bfbda`; receipt commit `1cfefad6e12922bf5b95a4a9551485851a2d64db` |
+| Zenodo | record `22103648`; DOI `10.5281/zenodo.22103648`; concept DOI `10.5281/zenodo.22059798` |
+| Active chapter | Volume II Chapter 25 |
+| Next source files | `authority/fremlin/source/mt2.2016/mt25.tex` then `mt251.tex` in frozen source order |
+| Next authority identities | Freeze and record exact `mt25.tex` and `mt251.tex` identities before translation |
+| Official-page cursor | Volume II page 204 |
+| Remaining corpus | 367 official pages |
+| Production status | `chapter24_public_verified_chapter25_translation_next` |
 
-The next executable action is source-aware translation of complete `mt24.tex`
-and then `mt241.tex`, preserving every formula, identifier, proof, exercise,
+The next executable action is source-aware translation of complete `mt25.tex`
+and then `mt251.tex`, preserving every formula, identifier, proof, exercise,
 hint, cross-reference, and source-order relationship. Run bounded unit QA while
 translation advances; consolidate the backend, cumulative readers, full visual
-QA, package, and publication at a substantial Chapter 24 boundary. The complete
+QA, package, and publication at a substantial Chapter 25 boundary. The complete
 672-page goal remains active. No upstream contact occurred.
 
 Exact current public evidence is

@@ -687,3 +687,61 @@ upstream contact was created.
 
 The 672-page goal remains active. The next cursor is complete Volume II Chapter
 24, beginning with frozen `mt24.tex` then `mt241.tex` at official page 138.
+
+## 2026-08-25 — D036: Close the corrected HP-D10-001 seal without replacing canonical Chapter 21
+
+The helper's corrected `checksums.sha256` is now 1,455 bytes, SHA-256
+`4b1ec834f4eee96bbece2a58c137de7b551e10fefca5d73982c9d4206ef8549b`,
+and names exactly 17 substantive packet files totaling 345,248 bytes. Owner
+replay recalculated every named hash from the current packet bytes; all 17
+match. The packet remains alternate evidence only.
+
+All 17 high-confidence, nonblocking helper issue rows were independently
+mapped to the already admitted owner corrections in
+`00_control/SOURCE_CORRECTIONS.csv`. The canonical owner review additionally
+contains four corrections not present in the helper issue ledger. Current
+canonical `mt21.tex` and `mt211.tex`–`mt216.tex` hashes still match their seven
+passing structural receipts. Accordingly, the three-way decision is to retain
+the stronger admitted owner text: accepting the raw helper translations would
+be a regression, and no canonical Chapter 21 text change is required.
+
+Exact supplemental evidence is
+`qa/chapter21-helper-corrected-seal-owner-replay.json` (7,120 bytes; SHA-256
+`3612996e7957297228a1101ef031d18bf7a301410f14ff52209652b5769f4efb`).
+No helper publication, neighboring-unit mutation, or upstream contact occurred.
+
+## 2026-08-26 — D037: Correct the Chapter 24 stable-ID and close owner QA
+
+The Chapter 24 unit replay exposed a legacy `\vspheader{48pt}243Xo` declaration
+that the prior scanner did not count. The bounded parser fix in
+`backend/o007_backend_core.py` and `backend/generate_chapter13.py` preserves
+that source ID and excludes its declaration span from xref prose. `mt243` now
+has 41 segments, 16 exercises, 49 relations, and 54 xrefs; the Chapter 24
+aggregate is 318 stable IDs, 6,438 source / 6,434 target math segments, and
+40/40 hints. Aggregate, materialized backend, validator, cumulative PDF,
+offline HTML, all-page raster, and desktop/mobile browser gates pass.
+
+## 2026-08-26 — D038: Admit and preserve the 305/672 Chapter 24 boundary
+
+Complete Chapter 24 (official pages 138–203, 66 unique pages) was admitted as
+`CP0016_THROUGH_CHAPTER24_ADMISSION.md` and packaged with the reader-first PDF,
+one deterministic resumable ZIP, and checksum witness. The package contains
+1,750 entries, 86,149,829 uncompressed bytes, and 20,013,268 compressed bytes;
+two clean ZIP builds are byte-identical and privacy/CRC/hash replay passes.
+The corrected HP-D10-001 seal is bound as alternate evidence only; canonical
+Chapter 21 text remains unchanged.
+
+## 2026-08-26 — D039: Publish the existing GitHub and Zenodo lineages
+
+GitHub release `v0.16.0-v2-through-ch24` is public at the existing repository;
+boundary commit `0bd08492b9ed5c31c861dc5f6d45abef452bfbda`, receipt commit
+`1cfefad6e12922bf5b95a4a9551485851a2d64db`, and owner receipt
+`qa/PUBLICATION_RECEIPT_V0160_V2_THROUGH_CH24.json` (4,616 bytes; SHA-256
+`a1ca79817b26cb0df56c8de085de5c8ddf8e5eec97e89567d137a59bb0ae2dbb`) are
+recorded. Zenodo record `22103648` / DOI `10.5281/zenodo.22103648` is one new
+version of concept `10.5281/zenodo.22059798`; its receipt is
+`qa/ZENODO_PUBLICATION_RECEIPT_V0160_V2_THROUGH_CH24.json` (4,130 bytes;
+SHA-256 `7b37dffbe97abd580a0e66b059e60ceb0f5ca2a00a1f1896a3d4b121024b1473`).
+Both public inventories and all three assets were anonymously read back at
+the local byte and SHA-256 identities. Next source cursor: `mt25.tex`, then
+`mt251.tex`, official page 204. No upstream report was sent.
