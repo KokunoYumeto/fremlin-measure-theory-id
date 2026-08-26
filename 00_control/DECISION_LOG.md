@@ -877,3 +877,10 @@ pages 248–265), then through mt255–mt257, and consolidate the next backend,
 PDF/offline reader, package, GitHub, and Zenodo transaction at complete Chapter
 25: 389/672 official pages. No upstream contact occurred; the full goal
 remains active.
+
+The complete validated unit was then pushed to repository `main` at commit
+`f536963bc03f94cb0ebc1bb3939695ca91d82db0`. Anonymous public raw readback
+matched four selected identities exactly; sanitized evidence is
+`qa/chapter25/mt253-github-push-receipt.json`. This ordinary preservation
+checkpoint does not change the 338-page admitted/public release boundary and
+does not create a release tag or Zenodo version.

@@ -29,6 +29,12 @@ Updated: 2026-08-26 (Europe/Berlin)
   formulas are present. Desktop 1280×720 and mobile 390×844 have zero
   document overflow, MathJax errors, broken fragments, raw TeX residue, or
   browser warnings/errors.
+- S253 is preserved on public repository `main` at commit
+  `f536963bc03f94cb0ebc1bb3939695ca91d82db0`; four selected public raw files
+  matched local bytes and hashes anonymously. Receipt:
+  `qa/chapter25/mt253-github-push-receipt.json`, 2,624 bytes / SHA-256
+  `0f98e8e7e673e79e32d5b06a853072a20eb9b7d59f9fbfa15ab83a6ad701cf3f`.
+  It is not an admission or a Zenodo/release transaction.
 - Authority remains immutable. Eight S253 corrections are ledgered as
   `O007-CORR-0170`–`0177`; three added mathematical atoms are individually
   hash-bound in the unit receipt. The terminology ledger now fixes `produk

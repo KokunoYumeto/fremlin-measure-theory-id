@@ -33,6 +33,16 @@ Exact S253 evidence:
   bytes, SHA-256
   `3a3c56d77e8b055a1fdc7857c3aacbc582f8d66151882f91b78af27bb1b96e1d`.
 
+This validated unit is publicly preserved on repository `main` at commit
+`f536963bc03f94cb0ebc1bb3939695ca91d82db0` (tree
+`68efe07406727f06d5b7bb23632a032dedeaa312`). Anonymous readback matched the
+exact translation, unit receipt, semantic receipt, and source-freeze bytes.
+Sanitized evidence is `qa/chapter25/mt253-github-push-receipt.json`, 2,624
+bytes / SHA-256
+`0f98e8e7e673e79e32d5b06a853072a20eb9b7d59f9fbfa15ab83a6ad701cf3f`.
+This is a preservation checkpoint, not a new admission, release tag, or Zenodo
+version.
+
 Eight high-confidence authority corrections are explicit as
 `O007-CORR-0170`–`O007-CORR-0177`; immutable authority bytes were not edited.
 They repair wrong tensor/product symbols, two undefined or misindexed sets, a
