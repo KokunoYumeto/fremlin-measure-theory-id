@@ -1,0 +1,1329 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>L¹ — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        BbbQ: '\\mathbb{Q}', BbbR: '\\mathbb{R}',
+        eightBbb: ['\\mathbb{#1}', 1],
+        DiniD: '\\overline{D}', Dinid: '\\underline{D}',
+        Var: '\\operatorname{Var}',
+        bumpeq: '=_{\\mathrm{approx}}',
+        intstar: '\\operatorname{int}^{*}',
+        family: ['\\langle #3\\rangle_{#1\\in #2}', 3],
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        displaycause: ['\\text{(#1)}', 1],
+        bigcupop: '\\bigcup', biggerint: '\\int',
+        eae: '=_{\\mathrm{a.e.}}', leae: '\\le_{\\mathrm{a.e.}}', geae: '\\ge_{\\mathrm{a.e.}}',
+        restr: '\\mathord{\\upharpoonright}', restrp: '\\mathord{\\upharpoonright}',
+        Real: '\\operatorname{Re}', Imag: '\\operatorname{Im}',
+        tbf: ['\\mathbf{#1}', 1], eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Qed: '\\square',
+        BbbN: '\\mathbb{N}', Expn: '\\mathbb{E}',
+        Cal: ['\\mathcal{#1}', 1], dom: '\\operatorname{dom}',
+        coint: ['\\left[#1\\right[', 1],
+        sequencen: ['\\langle #1_n\\rangle_{n\\in\\mathbb{N}}', 1],
+        imp: '\\mathop{\\text{pelestari ukuran melalui prapeta}}',
+        tildeTau: '\\widetilde{\\mathrm{T}}',
+        LLcorner: '\\mathbin{\\llcorner}',
+        prooflet: ['#1', 1],
+        halfarrow: '\\rightharpoonup',
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        roibr: '\\mathopen{{[}}',
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1]
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 2 · Bagian 242</p>
+  <h1><span class="math inline" data-source-tex="L^1">\(L^1\)</span></h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi kumulatif</a></nav>
+<main id="isi">
+<p>© 1997</p>
+<span class="anchor" id="242"></span>
+<p>Meskipun ruang <span class="math inline" data-source-tex="L^0">\(L^0\)</span> yang dibahas dalam bagian sebelumnya mempunyai daya
+tarik intrinsik yang sangat besar, kegunaan utamanya dalam teori elementer
+adalah sebagai ruang tempat beberapa ruang terpenting dalam analisis
+fungsional dibenamkan. Dalam beberapa bagian berikutnya saya memperkenalkan
+ruang-ruang tersebut satu demi satu.</p>
+<p>Yang pertama adalah ruang <span class="math inline" data-source-tex="L^1">\(L^1\)</span> dari kelas-kelas ekuivalensi fungsi
+terintegralkan. Pentingnya ruang ini tidak hanya karena ruang ini menawarkan
+bahasa untuk mengungkapkan banyak teorema mengenai fungsi terintegralkan yang
+tidak bergantung pada perbedaan antara dua fungsi yang sama hampir di
+mana-mana. Ruang ini juga dapat muncul sebagai ruang alami untuk mencari
+penyelesaian beragam persamaan integral, dan sebagai kelengkapan suatu ruang
+fungsi kontinu.</p>
+<section class="source-unit" id="242A" data-source-id="242A"><h2><span class="source-label">242A</span> Ruang <span class="math inline" data-source-tex="L^1">\(L^1\)</span> </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sebarang
+ruang ukur.</p>
+</section>
+<section class="source-unit" id="242Aa" data-source-id="242Aa"><h3><span class="source-label">242Aa</span> <strong>(a)</strong> </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\eusm L^1=\eusm L^1(\mu)">\(\eusm L^1=\eusm L^1(\mu)\)</span> himpunan
+fungsi-fungsi bernilai riil, yang didefinisikan pada subhimpunan-subhimpunan
+<span class="math inline" data-source-tex="X">\(X\)</span>, dan terintegralkan pada <span class="math inline" data-source-tex="X">\(X\)</span>. Maka
+<span class="math inline" data-source-tex="\eusm L^1\subseteq\eusm L^0=\eusm L^0(\mu)">\(\eusm L^1\subseteq\eusm L^0=\eusm L^0(\mu)\)</span>, sebagaimana
+didefinisikan dalam §<a class="xref" href="../241/index.html#241">241</a>, dan, untuk <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span>, kita mempunyai
+<span class="math inline" data-source-tex="f\in\eusm L^1">\(f\in\eusm L^1\)</span> jika dan hanya jika terdapat <span class="math inline" data-source-tex="g\in\eusm L^1">\(g\in\eusm L^1\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="|f|\leae g">\(|f|\leae g\)</span>; jika <span class="math inline" data-source-tex="f\in\eusm L^1">\(f\in\eusm L^1\)</span>, <span class="math inline" data-source-tex="g\in\eusm L^0">\(g\in\eusm L^0\)</span>, dan <span class="math inline" data-source-tex="f\eae g">\(f\eae g\)</span>,
+maka <span class="math inline" data-source-tex="g\in\eusm L^1">\(g\in\eusm L^1\)</span>. <span class="proof-fragment">(Lihat <a class="xref" href="../122/index.html#122P">122P</a>-<a class="xref" href="../122/index.html#122R">122R</a>.)</span></p>
+</section>
+<section class="source-unit" id="242Ab" data-source-id="242Ab"><h3><span class="source-label">242Ab</span> <strong>(b)</strong> </h3>
+<p>Misalkan <span class="math inline" data-source-tex="L^1=L^1(\mu)\subseteq L^0=L^0(\mu)">\(L^1=L^1(\mu)\subseteq L^0=L^0(\mu)\)</span>
+himpunan kelas ekuivalensi anggota-anggota <span class="math inline" data-source-tex="\eusm L^1">\(\eusm L^1\)</span>. Jika <span class="math inline" data-source-tex="f">\(f\)</span>,
+<span class="math inline" data-source-tex="g\in\eusm L^1">\(g\in\eusm L^1\)</span> dan <span class="math inline" data-source-tex="f\eae g">\(f\eae g\)</span>, maka <span class="math inline" data-source-tex="\int f=\int g">\(\int f=\int g\)</span> (<a class="xref" href="../122/index.html#122Rb">122Rb</a>).
+Oleh karena itu, kita dapat mendefinisikan fungsional <span class="math inline" data-source-tex="\int">\(\int\)</span> pada <span class="math inline" data-source-tex="L^1">\(L^1\)</span>
+dengan menuliskan <span class="math inline" data-source-tex="\int f^{\ssbullet}=\int f">\(\int f^{\ssbullet}=\int f\)</span> untuk setiap
+<span class="math inline" data-source-tex="f\in\eusm L^1">\(f\in\eusm L^1\)</span>.</p>
+</section>
+<section class="source-unit" id="242Ac" data-source-id="242Ac"><h3><span class="source-label">242Ac</span> <strong>(c)</strong> </h3>
+<p>Akan memudahkan jika kita dapat
+menuliskan <span class="math inline" data-source-tex="\int_Au">\(\int_Au\)</span> untuk <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span>, <span class="math inline" data-source-tex="A\subseteq X">\(A\subseteq X\)</span>. didefinisikan dengan mengatakan bahwa
+<span class="math inline" data-source-tex="\int_Af^{\ssbullet}=\int_Af">\(\int_Af^{\ssbullet}=\int_Af\)</span> untuk setiap <span class="math inline" data-source-tex="f\in\eusm L^1">\(f\in\eusm L^1\)</span>,
+dengan integral tersebut didefinisikan dalam <a class="xref" href="../214/index.html#214D">214D</a>.
+<span class="proof-fragment">Bukti. Saya hanya perlu memeriksa bahwa jika <span class="math inline" data-source-tex="f\eae g">\(f\eae g\)</span>, maka
+<span class="math inline" data-source-tex="\int_Af=\int_Ag">\(\int_Af=\int_Ag\)</span>; ini karena <span class="math inline" data-source-tex="f\restr A=g\restr A">\(f\restr A=g\restr A\)</span> hampir di mana-mana
+dalam <span class="math inline" data-source-tex="A">\(A\)</span>. ∎</span></p>
+<p>Jika <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> dan <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span>, maka
+<span class="math inline" data-source-tex="\int_Eu=\int u\times(\chi E)^{\ssbullet}">\(\int_Eu=\int u\times(\chi E)^{\ssbullet}\)</span><span class="proof-fragment">; ini karena
+<span class="math inline" data-source-tex="\int_Ef=\int f\times\chi E">\(\int_Ef=\int f\times\chi E\)</span> untuk setiap fungsi terintegralkan <span class="math inline" data-source-tex="f">\(f\)</span>
+(<a class="xref" href="../131/index.html#131Fa">131Fa</a>)</span>.</p>
+</section>
+<section class="source-unit" id="242Ad" data-source-id="242Ad"><h3><span class="source-label">242Ad</span> (d) </h3>
+<p>Jika <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span>, terdapat fungsi
+terukur terhadap <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dan terintegralkan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, yaitu <span class="math inline" data-source-tex="f:X\to\Bbb R">\(f:X\to\Bbb R\)</span>, sedemikian
+sehingga <span class="math inline" data-source-tex="f^{\ssbullet}=u">\(f^{\ssbullet}=u\)</span>. <span class="proof-fragment">Bukti. Sebagaimana dicatat dalam
+<a class="xref" href="../241/index.html#241Bk">241Bk</a>, terdapat fungsi terukur <span class="math inline" data-source-tex="f:X\to\Bbb R">\(f:X\to\Bbb R\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="f^{\ssbullet}=u">\(f^{\ssbullet}=u\)</span>; tetapi tentu saja <span class="math inline" data-source-tex="f">\(f\)</span> terintegralkan karena sama hampir
+di mana-mana dengan suatu fungsi terintegralkan. ∎</span></p>
+</section>
+<section class="source-unit" id="242B" data-source-id="242B"><h2><span class="source-label">242B</span> Teorema </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sebarang ruang ukur.
+Maka <span class="math inline" data-source-tex="L^1(\mu)">\(L^1(\mu)\)</span> merupakan subruang linear dari <span class="math inline" data-source-tex="L^0(\mu)">\(L^0(\mu)\)</span> dan
+<span class="math inline" data-source-tex="\int:L^1\to\Bbb R">\(\int:L^1\to\Bbb R\)</span> merupakan fungsional linear.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Jika <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^1=L^1(\mu)">\(v\in L^1=L^1(\mu)\)</span> dan <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>, ambil
+fungsi-fungsi terintegralkan <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g">\(g\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="u=f^{\ssbullet}">\(u=f^{\ssbullet}\)</span> dan <span class="math inline" data-source-tex="v=g^{\ssbullet}">\(v=g^{\ssbullet}\)</span>; maka <span class="math inline" data-source-tex="f+g">\(f+g\)</span> dan <span class="math inline" data-source-tex="cf">\(cf\)</span>
+terintegralkan, sehingga <span class="math inline" data-source-tex="u+v=(f+g)^{\ssbullet}">\(u+v=(f+g)^{\ssbullet}\)</span> dan
+<span class="math inline" data-source-tex="cu=(cf)^{\ssbullet}">\(cu=(cf)^{\ssbullet}\)</span> termasuk dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span>. Selain itu,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int u+v=\int f+g=\int f+\int g=\int u+\int v">\(\int u+v=\int f+g=\int f+\int g=\int u+\int v\)</span></div>
+<p>dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int cu=\int cf=c\int f=c\int u">\(\int cu=\int cf=c\int f=c\int u\)</span>.</div></aside>
+</section>
+<section class="source-unit" id="242C" data-source-id="242C"><h2><span class="source-label">242C</span> Struktur urutan <span class="math inline" data-source-tex="L^1">\(L^1\)</span> </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span>
+sebarang ruang ukur.</p>
+</section>
+<section class="source-unit" id="242Ca" data-source-id="242Ca"><h3><span class="source-label">242Ca</span> <strong>(a)</strong> </h3>
+<p><span class="math inline" data-source-tex="L^1=L^1(\mu)">\(L^1=L^1(\mu)\)</span> mempunyai struktur urutan yang
+diturunkan dari struktur urutan <span class="math inline" data-source-tex="L^0=L^0(\mu)">\(L^0=L^0(\mu)\)</span> (<a class="xref" href="../241/index.html#241E">241E</a>); yakni,
+<span class="math inline" data-source-tex="f^{\ssbullet}\le g^{\ssbullet}">\(f^{\ssbullet}\le g^{\ssbullet}\)</span> jika dan hanya jika <span class="math inline" data-source-tex="f\le g">\(f\le g\)</span> hampir di mana-mana.
+Sebagai subruang linear dari <span class="math inline" data-source-tex="L^0">\(L^0\)</span>, <span class="math inline" data-source-tex="L^1">\(L^1\)</span>
+merupakan ruang linear terurut parsial;
+kedua syarat dalam <a class="xref" href="../241/index.html#241Ec">241Ec</a> jelas diwarisi oleh subruang linear.</p>
+<p>Jika <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^1">\(v\in L^1\)</span> dan <span class="math inline" data-source-tex="u\le v">\(u\le v\)</span>,
+maka <span class="math inline" data-source-tex="\int u\le\int v">\(\int u\le\int v\)</span><span class="proof-fragment">, karena jika <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g">\(g\)</span> fungsi-fungsi
+terintegralkan dan <span class="math inline" data-source-tex="f\leae g">\(f\leae g\)</span>, maka <span class="math inline" data-source-tex="\int f\le\int g">\(\int f\le\int g\)</span> (<a class="xref" href="../122/index.html#122Od">122Od</a>)</span>.</p>
+</section>
+<section class="source-unit" id="242Cb" data-source-id="242Cb"><h3><span class="source-label">242Cb</span> <strong>(b)</strong> </h3>
+<p>Jika <span class="math inline" data-source-tex="u\in L^0">\(u\in L^0\)</span>, <span class="math inline" data-source-tex="v\in L^1">\(v\in L^1\)</span>, dan
+<span class="math inline" data-source-tex="|u|\le |v|">\(|u|\le |v|\)</span>, maka <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span>. <span class="proof-fragment">Bukti. Misalkan
+<span class="math inline" data-source-tex="f\in\eusm L^0=\eusm L^0(\mu)">\(f\in\eusm L^0=\eusm L^0(\mu)\)</span>, <span class="math inline" data-source-tex="g\in\eusm L^1=\eusm L^1(\mu)">\(g\in\eusm L^1=\eusm L^1(\mu)\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="u=f^{\ssbullet}">\(u=f^{\ssbullet}\)</span> dan <span class="math inline" data-source-tex="v=g^{\ssbullet}">\(v=g^{\ssbullet}\)</span>; maka <span class="math inline" data-source-tex="g">\(g\)</span>
+terintegralkan dan <span class="math inline" data-source-tex="|f|\leae |g|">\(|f|\leae |g|\)</span>, sehingga <span class="math inline" data-source-tex="f">\(f\)</span> terintegralkan dan
+<span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span>. ∎</span></p>
+</section>
+<section class="source-unit" id="242Cc" data-source-id="242Cc"><h3><span class="source-label">242Cc</span> <strong>(c)</strong> </h3>
+<p>Khususnya, <span class="math inline" data-source-tex="|u|\in L^1">\(|u|\in L^1\)</span> kapan pun <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span>,
+dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\int u|=\max(\int u,\int(-u))\le\int|u|">\(|\int u|=\max(\int u,\int(-u))\le\int|u|\)</span>.</div>
+<p>karena <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="-u\le|u|">\(-u\le|u|\)</span>.</p>
+</section>
+<section class="source-unit" id="242Cd" data-source-id="242Cd"><h3><span class="source-label">242Cd</span> <strong>(d)</strong> </h3>
+<p>Karena <span class="math inline" data-source-tex="|u|\in L^1">\(|u|\in L^1\)</span> untuk setiap
+<span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="u\vee v=\Bover12(u+v+|u-v|)">\(u\vee v=\Bover12(u+v+|u-v|)\)</span>,
+  <span class="math inline" data-source-tex="u\wedge v=\Bover12(u+v-|u-v|)">\(u\wedge v=\Bover12(u+v-|u-v|)\)</span></div>
+<p>termasuk dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span> untuk semua <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^1">\(v\in L^1\)</span>. Namun,
+jika <span class="math inline" data-source-tex="w\in L^1">\(w\in L^1\)</span>, kita tentu mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="w\le u\ \&amp;\ w\le v\iff w\le u\wedge v">\(w\le u\ \&amp;\ w\le v\iff w\le u\wedge v\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="w\ge u\ \&amp;\ w\ge v\iff w\ge u\vee v">\(w\ge u\ \&amp;\ w\ge v\iff w\ge u\vee v\)</span></div>
+<p>sebab pernyataan-pernyataan ini berlaku untuk semua <span class="math inline" data-source-tex="w\in L^0">\(w\in L^0\)</span>,
+sehingga <span class="math inline" data-source-tex="u\vee v=\sup\{u,v\}">\(u\vee v=\sup\{u,v\}\)</span> dan <span class="math inline" data-source-tex="u\wedge v=\inf\{u,v\}">\(u\wedge v=\inf\{u,v\}\)</span> dalam
+<span class="math inline" data-source-tex="L^1">\(L^1\)</span>. Jadi, <span class="math inline" data-source-tex="L^1">\(L^1\)</span> merupakan, dalam dirinya sendiri, ruang
+Riesz.</p>
+</section>
+<section class="source-unit" id="242Ce" data-source-id="242Ce"><h3><span class="source-label">242Ce</span> <strong>(e)</strong> </h3>
+<p>Perhatikan bahwa jika <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span>, maka
+<span class="math inline" data-source-tex="u\ge 0">\(u\ge 0\)</span> jika dan hanya jika <span class="math inline" data-source-tex="\int_Eu\ge 0">\(\int_Eu\ge 0\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>; ini
+karena jika <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi terintegralkan pada <span class="math inline" data-source-tex="X">\(X\)</span> dan <span class="math inline" data-source-tex="\int_Ef\ge 0">\(\int_Ef\ge 0\)</span>
+untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>, maka <span class="math inline" data-source-tex="f\ge 0">\(f\ge 0\)</span> hampir di mana-mana (<a class="xref" href="../131/index.html#131Fb">131Fb</a>).
+Jika <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^1">\(v\in L^1\)</span> dan
+<span class="math inline" data-source-tex="\int_Eu\le\int_Ev">\(\int_Eu\le\int_Ev\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>, maka <span class="math inline" data-source-tex="u\le v">\(u\le v\)</span>.
+Jika <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^1">\(v\in L^1\)</span> dan
+<span class="math inline" data-source-tex="\int_Eu=\int_Ev">\(\int_Eu=\int_Ev\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>, maka <span class="math inline" data-source-tex="u=v">\(u=v\)</span>
+(bandingkan <a class="xref" href="../131/index.html#131Fc">131Fc</a>).</p>
+</section>
+<section class="source-unit" id="242Cf" data-source-id="242Cf"><h3><span class="source-label">242Cf</span> (f) </h3>
+<p>Jika <span class="math inline" data-source-tex="u\ge 0">\(u\ge 0\)</span> dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span>, terdapat fungsi nonnegatif
+<span class="math inline" data-source-tex="f\in\eusm L^1">\(f\in\eusm L^1\)</span> sedemikian sehingga <span class="math inline" data-source-tex="f^{\ssbullet}=u">\(f^{\ssbullet}=u\)</span>
+(bandingkan <a class="xref" href="../241/index.html#241Eg">241Eg</a>).</p>
+</section>
+<section class="source-unit" id="242D" data-source-id="242D"><h2><span class="source-label">242D</span> Norma <span class="math inline" data-source-tex="L^1">\(L^1\)</span> </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sebarang ruang
+ukur.</p>
+</section>
+<section class="source-unit" id="242Da" data-source-id="242Da"><h3><span class="source-label">242Da</span> <strong>(a)</strong> </h3>
+<p>Untuk <span class="math inline" data-source-tex="f\in\eusm L^1=\eusm L^1(\mu)">\(f\in\eusm L^1=\eusm L^1(\mu)\)</span> saya
+menulis <span class="math inline" data-source-tex="\|f\|_1=\int|f|\in\coint{0,\infty}">\(\|f\|_1=\int|f|\in\coint{0,\infty}\)</span>. Untuk
+<span class="math inline" data-source-tex="u\in L^1=L^1(\mu)">\(u\in L^1=L^1(\mu)\)</span>, tetapkan <span class="math inline" data-source-tex="\|u\|_1=\int|u|">\(\|u\|_1=\int|u|\)</span>, sehingga
+<span class="math inline" data-source-tex="\|f^{\ssbullet}\|_1=\|f\|_1">\(\|f^{\ssbullet}\|_1=\|f\|_1\)</span> untuk setiap <span class="math inline" data-source-tex="f\in\eusm L^1">\(f\in\eusm L^1\)</span>. Maka
+<span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span> merupakan norma pada <span class="math inline" data-source-tex="L^1">\(L^1\)</span>. <span class="proof-fragment">Bukti. (i) Jika <span class="math inline" data-source-tex="u">\(u\)</span>,
+<span class="math inline" data-source-tex="v\in L^1">\(v\in L^1\)</span>, maka <span class="math inline" data-source-tex="|u+v|\le|u|+|v|">\(|u+v|\le|u|+|v|\)</span>, menurut <a class="xref" href="../241/index.html#241Ee">241Ee</a>, sehingga
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\|u+v\|_1=\int|u+v|
+\le\int|u|+|v|=\int|u|+\int|v|=\|u\|_1+\|v\|_1">\(\|u+v\|_1=\int|u+v|
+\le\int|u|+|v|=\int|u|+\int|v|=\|u\|_1+\|v\|_1\)</span>.</span>
+
+
+
+  (ii) Jika <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span> dan <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>, maka
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\|cu\|_1=\int|cu|=\int|c||u|=|c|\int|u|=|c|\|u\|_1">\(\|cu\|_1=\int|cu|=\int|c||u|=|c|\int|u|=|c|\|u\|_1\)</span>.</span>
+
+
+
+  (iii) Jika <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span> dan <span class="math inline" data-source-tex="\|u\|_1=0">\(\|u\|_1=0\)</span>, nyatakan <span class="math inline" data-source-tex="u">\(u\)</span>
+sebagai <span class="math inline" data-source-tex="f^{\ssbullet}">\(f^{\ssbullet}\)</span>, dengan <span class="math inline" data-source-tex="f\in\eusm L^1">\(f\in\eusm L^1\)</span>; maka
+<span class="math inline" data-source-tex="\int|f|=\int|u|=0">\(\int|f|=\int|u|=0\)</span>. Karena <span class="math inline" data-source-tex="|f|">\(|f|\)</span> nonnegatif, fungsi itu harus bernilai
+nol hampir di mana-mana (<a class="xref" href="../122/index.html#122Rc">122Rc</a>), sehingga <span class="math inline" data-source-tex="f=0">\(f=0\)</span> hampir di mana-mana dan
+<span class="math inline" data-source-tex="u=0">\(u=0\)</span> dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span>. ∎</span></p>
+</section>
+<section class="source-unit" id="242Db" data-source-id="242Db"><h3><span class="source-label">242Db</span> <strong>(b)</strong> </h3>
+<p>Jadi <span class="math inline" data-source-tex="L^1">\(L^1\)</span>, dengan <span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span>,
+merupakan ruang bernorma dan <span class="math inline" data-source-tex="\int:L^1\to\Bbb R">\(\int:L^1\to\Bbb R\)</span> merupakan operator
+linear; perhatikan bahwa <span class="math inline" data-source-tex="\|\int\|\le 1">\(\|\int\|\le 1\)</span><span class="proof-fragment">, karena
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="|\int u|\le\int|u|=\|u\|_1">\(|\int u|\le\int|u|=\|u\|_1\)</span></span>
+
+
+
+  untuk setiap <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span></span>.</p>
+</section>
+<section class="source-unit" id="242Dc" data-source-id="242Dc"><h3><span class="source-label">242Dc</span> <strong>(c)</strong> </h3>
+<p>Jika <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^1">\(v\in L^1\)</span> dan <span class="math inline" data-source-tex="|u|\le|v|">\(|u|\le|v|\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|u\|_1=\int|u|\le\int|v|=\|v\|_1">\(\|u\|_1=\int|u|\le\int|v|=\|v\|_1\)</span>.</div>
+<p>Khususnya, <span class="math inline" data-source-tex="\|u\|_1=\||u|\|_1">\(\|u\|_1=\||u|\|_1\)</span> untuk setiap <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span>.</p>
+</section>
+<section class="source-unit" id="242Dd" data-source-id="242Dd"><h3><span class="source-label">242Dd</span> <strong>(d)</strong> </h3>
+<p>Jika <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^1">\(v\in L^1\)</span> dan <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\ge 0">\(v\ge 0\)</span>,
+maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|u+v\|_1\prooflet{\mskip5mu=\intop
+u+v
+=\intop u+\intop v}=\|u\|_1+\|v\|_1">\(\|u+v\|_1\prooflet{\mskip5mu=\intop
+u+v
+=\intop u+\intop v}=\|u\|_1+\|v\|_1\)</span>.</div>
+</section>
+<section class="source-unit" id="242De" data-source-id="242De"><h3><span class="source-label">242De</span> (e) </h3>
+<p>Himpunan <span class="math inline" data-source-tex="(L^1)^+=\{u:u\ge 0\}">\((L^1)^+=\{u:u\ge 0\}\)</span> tertutup dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span>.
+<span class="proof-fragment">Bukti. Jika <span class="math inline" data-source-tex="v\in L^1">\(v\in L^1\)</span>, <span class="math inline" data-source-tex="u\in(L^1)^+">\(u\in(L^1)^+\)</span>, maka
+<span class="math inline" data-source-tex="\|u-v\|_1\ge\|v\wedge 0\|_1">\(\|u-v\|_1\ge\|v\wedge 0\|_1\)</span>; ini karena jika <span class="math inline" data-source-tex="f">\(f\)</span>,
+<span class="math inline" data-source-tex="g\in\eusm L^1">\(g\in\eusm L^1\)</span> dan <span class="math inline" data-source-tex="f\ge 0">\(f\ge 0\)</span> hampir di mana-mana,
+<span class="math inline" data-source-tex="|f(x)-g(x)|\ge|\min(g(x),0)|">\(|f(x)-g(x)|\ge|\min(g(x),0)|\)</span> kapan pun <span class="math inline" data-source-tex="f(x)">\(f(x)\)</span> dan <span class="math inline" data-source-tex="g(x)">\(g(x)\)</span> keduanya
+terdefinisi dan <span class="math inline" data-source-tex="f(x)\ge 0">\(f(x)\ge 0\)</span>, yang berlaku hampir di mana-mana, sehingga
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\|u-v\|_1=\int|f-g|\ge\int|g\wedge\tbf{0}|
+=\|v\wedge 0\|_1">\(\|u-v\|_1=\int|f-g|\ge\int|g\wedge\tbf{0}|
+=\|v\wedge 0\|_1\)</span>.</span>
+
+
+
+  Kini ini berarti bahwa jika <span class="math inline" data-source-tex="v\in L^1">\(v\in L^1\)</span> dan <span class="math inline" data-source-tex="v\not\ge 0">\(v\not\ge 0\)</span>,
+bola <span class="math inline" data-source-tex="\{w:\|w-v\|_1&lt;\delta\}">\(\{w:\|w-v\|_1&lt;\delta\}\)</span> tidak beririsan dengan <span class="math inline" data-source-tex="(L^1)^+">\((L^1)^+\)</span>, dengan
+<span class="math inline" data-source-tex="\delta=\|v\wedge 0\|_1&gt;0">\(\delta=\|v\wedge 0\|_1&gt;0\)</span> karena <span class="math inline" data-source-tex="v\wedge 0\ne 0">\(v\wedge 0\ne 0\)</span>. Jadi
+<span class="math inline" data-source-tex="L^1\setminus(L^1)^+">\(L^1\setminus(L^1)^+\)</span> terbuka dan <span class="math inline" data-source-tex="(L^1)^+">\((L^1)^+\)</span> tertutup. ∎</span></p>
+</section>
+<section class="source-unit" id="242E" data-source-id="242E"><h2><span class="source-label">242E</span>  </h2>
+<p>Untuk hasil berikutnya kita memerlukan suatu
+varian teorema B.Levi.</p>
+<p> </p>
+<p><strong>Lema</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan
+<span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> suatu barisan fungsi riil yang terintegralkan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\int|f_n|&lt;\infty">\(\sum_{n=0}^{\infty}\int|f_n|&lt;\infty\)</span>. Maka
+<span class="math inline" data-source-tex="f=\sum_{n=0}^{\infty}f_n">\(f=\sum_{n=0}^{\infty}f_n\)</span> terintegralkan dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int f=\sum_{n=0}^{\infty}\int f_n">\(\int f=\sum_{n=0}^{\infty}\int f_n\)</span>,
+  <span class="math inline" data-source-tex="\int|f|\le\sum_{n=0}^{\infty}\int|f_n|">\(\int|f|\le\sum_{n=0}^{\infty}\int|f_n|\)</span>.</div>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Andaikan terlebih dahulu bahwa setiap <span class="math inline" data-source-tex="f_n">\(f_n\)</span> tak
+negatif. Tetapkan <span class="math inline" data-source-tex="g_n=\sum_{k=0}^nf_k">\(g_n=\sum_{k=0}^nf_k\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>; maka
+<span class="math inline" data-source-tex="\sequencen{g_n}">\(\sequencen{g_n}\)</span> naik hampir di mana-mana dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{n\to\infty}\int g_n
+=\sum_{k=0}^{\infty}\int f_k">\(\lim_{n\to\infty}\int g_n
+=\sum_{k=0}^{\infty}\int f_k\)</span></div>
+<p>berhingga, sehingga menurut teorema B.Levi (<a class="xref" href="../123/index.html#123A">123A</a>),
+<span class="math inline" data-source-tex="f=\lim_{n\to\infty}g_n">\(f=\lim_{n\to\infty}g_n\)</span> terintegralkan dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int f=\lim_{n\to\infty}\int g_n
+=\sum_{k=0}^{\infty}\int f_k">\(\int f=\lim_{n\to\infty}\int g_n
+=\sum_{k=0}^{\infty}\int f_k\)</span>.</div>
+<p>Dalam kasus ini, tentu saja,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int|f|=\int f
+=\sum_{n=0}^{\infty}\int f_n
+=\sum_{n=0}^{\infty}\int|f_n|">\(\int|f|=\int f
+=\sum_{n=0}^{\infty}\int f_n
+=\sum_{n=0}^{\infty}\int|f_n|\)</span>.</div>
+<p> </p>
+<p><strong>(b)</strong> Untuk kasus umum, tetapkan
+<span class="math inline" data-source-tex="f_n^+={1\over 2}(|f_n|+f_n)">\(f_n^+={1\over 2}(|f_n|+f_n)\)</span>, <span class="math inline" data-source-tex="f_n^-={1\over2}(|f_n|-f_n)">\(f_n^-={1\over2}(|f_n|-f_n)\)</span>, seperti
+dalam <a class="xref" href="../241/index.html#241Ef">241Ef</a>; maka <span class="math inline" data-source-tex="f_n^+">\(f_n^+\)</span> dan <span class="math inline" data-source-tex="f_n^-">\(f_n^-\)</span> fungsi-fungsi terintegralkan tak
+negatif, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\int f_n^+
+  +\sum_{n=0}^{\infty}\int f_n^-
+=\sum_{n=0}^{\infty}\int|f_n|&lt;\infty">\(\sum_{n=0}^{\infty}\int f_n^+
+  +\sum_{n=0}^{\infty}\int f_n^-
+=\sum_{n=0}^{\infty}\int|f_n|&lt;\infty\)</span>.</div>
+<p>Jadi <span class="math inline" data-source-tex="h_1=\sum_{n=0}^{\infty}f_n^+">\(h_1=\sum_{n=0}^{\infty}f_n^+\)</span> dan
+<span class="math inline" data-source-tex="h_2=\sum_{n=0}^{\infty}f_n^-">\(h_2=\sum_{n=0}^{\infty}f_n^-\)</span> keduanya terintegralkan. Kini
+<span class="math inline" data-source-tex="f\eae h_1-h_2">\(f\eae h_1-h_2\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int f=\int h_1-\int h_2
+=\sum_{n=0}^{\infty}\int f_n^+
+  -\sum_{n=0}^{\infty}\int f_n^-
+=\sum_{n=0}^{\infty}\int f_n">\(\int f=\int h_1-\int h_2
+=\sum_{n=0}^{\infty}\int f_n^+
+  -\sum_{n=0}^{\infty}\int f_n^-
+=\sum_{n=0}^{\infty}\int f_n\)</span>.</div>
+<p>Akhirnya,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int|f|\le\int|h_1|+\int|h_2|
+=\sum_{n=0}^{\infty}\int f_n^+
+  +\sum_{n=0}^{\infty}\int f_n^-
+=\sum_{n=0}^{\infty}\int|f_n|">\(\int|f|\le\int|h_1|+\int|h_2|
+=\sum_{n=0}^{\infty}\int f_n^+
+  +\sum_{n=0}^{\infty}\int f_n^-
+=\sum_{n=0}^{\infty}\int|f_n|\)</span>.</div></aside>
+</section>
+<section class="source-unit" id="242F" data-source-id="242F"><h2><span class="source-label">242F</span> Teorema </h2>
+<p>Untuk sebarang ruang ukur <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span>,
+<span class="math inline" data-source-tex="L^1(\mu)">\(L^1(\mu)\)</span> lengkap terhadap normanya <span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Misalkan <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> suatu barisan dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\|u_{n+1}-u_n\|_1\le 4^{-n}">\(\|u_{n+1}-u_n\|_1\le 4^{-n}\)</span> untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>.
+Pilih fungsi-fungsi terintegralkan <span class="math inline" data-source-tex="f_n">\(f_n\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="f_0^{\ssbullet}=u_0">\(f_0^{\ssbullet}=u_0\)</span>, <span class="math inline" data-source-tex="f_{n+1}^{\ssbullet}=u_{n+1}-u_n">\(f_{n+1}^{\ssbullet}=u_{n+1}-u_n\)</span> untuk setiap
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\int|f_n|
+=\|u_0\|_1+\sum_{n=0}^{\infty}\|u_{n+1}-u_n\|_1&lt;\infty">\(\sum_{n=0}^{\infty}\int|f_n|
+=\|u_0\|_1+\sum_{n=0}^{\infty}\|u_{n+1}-u_n\|_1&lt;\infty\)</span>.</div>
+<p>Jadi <span class="math inline" data-source-tex="f=\sum_{n=0}^{\infty}f_n">\(f=\sum_{n=0}^{\infty}f_n\)</span> terintegralkan menurut <a class="xref" href="#242E">242E</a>,
+dan <span class="math inline" data-source-tex="u=f^{\ssbullet}\in L^1">\(u=f^{\ssbullet}\in L^1\)</span>. Tetapkan <span class="math inline" data-source-tex="g_n=\sum_{j=0}^nf_j">\(g_n=\sum_{j=0}^nf_j\)</span> untuk
+setiap <span class="math inline" data-source-tex="n">\(n\)</span>; maka <span class="math inline" data-source-tex="g_n^{\ssbullet}=u_n">\(g_n^{\ssbullet}=u_n\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|u-u_n\|_1
+=\int|f-g_n|
+\le\int\sum_{j=n+1}^{\infty}|f_j|
+\le\sum_{j=n+1}^{\infty}4^{-j}
+=4^{-n}/3">\(\|u-u_n\|_1
+=\int|f-g_n|
+\le\int\sum_{j=n+1}^{\infty}|f_j|
+\le\sum_{j=n+1}^{\infty}4^{-j}
+=4^{-n}/3\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>. Jadi <span class="math inline" data-source-tex="u=\lim_{n\to\infty}u_n">\(u=\lim_{n\to\infty}u_n\)</span> dalam
+<span class="math inline" data-source-tex="L^1">\(L^1\)</span>. Karena <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> sebarang, <span class="math inline" data-source-tex="L^1">\(L^1\)</span> lengkap (2A4E).</p></aside>
+</section>
+<section class="source-unit" id="242G" data-source-id="242G"><h2><span class="source-label">242G</span> Definisi </h2>
+<p>Untuk rujukan kelak, akan memudahkan
+jika kita memperkenalkan istilah berikut. Suatu <strong>kisi Banach</strong>
+adalah ruang Riesz <span class="math inline" data-source-tex="U">\(U\)</span> bersama suatu norma <span class="math inline" data-source-tex="\|\,\|">\(\|\,\|\)</span> pada <span class="math inline" data-source-tex="U">\(U\)</span> sedemikian
+sehingga (i) <span class="math inline" data-source-tex="\|u\|\le\|v\|">\(\|u\|\le\|v\|\)</span> kapan pun <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in U">\(v\in U\)</span> dan
+<span class="math inline" data-source-tex="|u|\le|v|">\(|u|\le|v|\)</span>, dengan <span class="math inline" data-source-tex="|u|">\(|u|\)</span> menyatakan <span class="math inline" data-source-tex="u\vee(-u)">\(u\vee(-u)\)</span>, seperti dalam
+<a class="xref" href="../241/index.html#241Ee">241Ee</a> (ii) <span class="math inline" data-source-tex="U">\(U\)</span> lengkap terhadap <span class="math inline" data-source-tex="\|\,\|">\(\|\,\|\)</span>. Jadi <a class="xref" href="#242Dc">242Dc</a> dan <a class="xref" href="#242F">242F</a>
+secara bersama-sama menyatakan bahwa ruang Riesz bernorma
+<span class="math inline" data-source-tex="(L^1,\|\,\|_1)">\((L^1,\|\,\|_1)\)</span> merupakan kisi Banach.</p>
+</section>
+<section class="source-unit" id="242H" data-source-id="242H"><h2><span class="source-label">242H</span> <span class="math inline" data-source-tex="L^1">\(L^1\)</span> sebagai ruang Riesz </h2>
+<p>Kita dapat
+membahas ruang linear terurut <span class="math inline" data-source-tex="L^1">\(L^1\)</span> dengan bahasa yang telah digunakan
+dalam <a class="xref" href="../241/index.html#241E">241E</a>-<a class="xref" href="../241/index.html#241G">241G</a> 
+untuk <span class="math inline" data-source-tex="L^0">\(L^0\)</span>.</p>
+<p> </p>
+<p><strong>Teorema</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sebarang ruang ukur.
+Maka <span class="math inline" data-source-tex="L^1=L^1(\mu)">\(L^1=L^1(\mu)\)</span> lengkap Dedekind.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Misalkan <span class="math inline" data-source-tex="A\subseteq L^1">\(A\subseteq L^1\)</span> sebarang himpunan tak kosong
+yang terbatas di atas dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span>. Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="A&#x27;=\{u_0\vee\ldots\vee u_n:u_0,\ldots, u_n\in A\}">\(A&#x27;=\{u_0\vee\ldots\vee u_n:u_0,\ldots, u_n\in A\}\)</span>.</div>
+<p>Maka <span class="math inline" data-source-tex="A\subseteq A&#x27;">\(A\subseteq A&#x27;\)</span>, <span class="math inline" data-source-tex="A&#x27;">\(A&#x27;\)</span> mempunyai batas-batas atas yang
+sama dengan <span class="math inline" data-source-tex="A">\(A\)</span>, dan <span class="math inline" data-source-tex="u\vee v\in A&#x27;">\(u\vee v\in A&#x27;\)</span> untuk semua <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in A&#x27;">\(v\in A&#x27;\)</span>.
+Dengan mengambil <span class="math inline" data-source-tex="w_0">\(w_0\)</span> sebagai sebarang batas atas <span class="math inline" data-source-tex="A">\(A\)</span> dan <span class="math inline" data-source-tex="A&#x27;">\(A&#x27;\)</span>, kita
+mempunyai <span class="math inline" data-source-tex="\int u\le\int w_0">\(\int u\le\int w_0\)</span> untuk setiap <span class="math inline" data-source-tex="u\in A&#x27;">\(u\in A&#x27;\)</span>, sehingga
+<span class="math inline" data-source-tex="\gamma=\sup_{u\in A&#x27;}\int u">\(\gamma=\sup_{u\in A&#x27;}\int u\)</span> terdefinisi dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Untuk setiap
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, pilih <span class="math inline" data-source-tex="u_n\in A&#x27;">\(u_n\in A&#x27;\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\int u_n\ge\gamma-2^{-n}">\(\int u_n\ge\gamma-2^{-n}\)</span>. Karena <span class="math inline" data-source-tex="L^0=L^0(\mu)">\(L^0=L^0(\mu)\)</span> lengkap-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>
+Dedekind (241Ga), <span class="math inline" data-source-tex="u^*=\sup_{n\in\Bbb N}u_n">\(u^*=\sup_{n\in\Bbb N}u_n\)</span> terdefinisi dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span>,
+dan <span class="math inline" data-source-tex="u_0\le u^*\le w_0">\(u_0\le u^*\le w_0\)</span> dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span>. Akibatnya,</p>
+<div class="centerline"><span class="math inline" data-source-tex="0\le u^*-u_0\le w_0-u_0">\(0\le u^*-u_0\le w_0-u_0\)</span></div>
+<p>dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span>. Namun <span class="math inline" data-source-tex="w_0-u_0\in L^1">\(w_0-u_0\in L^1\)</span>, sehingga
+<span class="math inline" data-source-tex="u^*-u_0\in L^1">\(u^*-u_0\in L^1\)</span> (<a class="xref" href="#242Cb">242Cb</a>) dan <span class="math inline" data-source-tex="u^*\in L^1">\(u^*\in L^1\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Pokoknya adalah bahwa <span class="math inline" data-source-tex="u^*">\(u^*\)</span> merupakan batas atas bagi <span class="math inline" data-source-tex="A">\(A\)</span>.
+Bukti. Jika <span class="math inline" data-source-tex="u\in A">\(u\in A\)</span>, maka <span class="math inline" data-source-tex="u\vee u_n\in A&#x27;">\(u\vee u_n\in A&#x27;\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, sehingga</p>
+<p><span class="math display" data-source-tex="\eqalignno{\|u-u\wedge u^*\|_1
+&amp;=\int u-u\wedge u^*
+\le \int u-u\wedge u_n\cr
+\noalign{  (karena $u\wedge u_n\le u_n\le u^*$, sehingga
+$u\wedge u_n\le u\wedge u^*$)}
+&amp;=\int u\vee u_n-u_n\cr
+\noalign{  (karena $u\vee u_n+u\wedge u_n=u+u_n$ -- lihat
+rumus-rumus dalam 242Cd)}
+&amp;=\int u\vee u_n-\int u_n
+\le\gamma-(\gamma-2^{-n})
+=2^{-n}\cr}">\[\begin{aligned}\|u-u\wedge u^*\|_1
+&amp;=\int u-u\wedge u^*
+\le \int u-u\wedge u_n\\
+&amp;\text{(karena }u\wedge u_n\le u_n\le u^*\text{, sehingga
+}u\wedge u_n\le u\wedge u^*\text{)}\\
+&amp;=\int u\vee u_n-u_n\\
+&amp;\text{(karena }u\vee u_n+u\wedge u_n=u+u_n\text{ -- lihat
+rumus-rumus dalam 242Cd)}\\
+&amp;=\int u\vee u_n-\int u_n
+\le\gamma-(\gamma-2^{-n})
+=2^{-n}\\\end{aligned}\]</span></p>
+<p>untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>; jadi <span class="math inline" data-source-tex="\|u-u\wedge u^*\|_1=0">\(\|u-u\wedge u^*\|_1=0\)</span>. Namun ini
+berarti bahwa <span class="math inline" data-source-tex="u=u\wedge u^*">\(u=u\wedge u^*\)</span>, yakni <span class="math inline" data-source-tex="u\le u^*">\(u\le u^*\)</span>. Karena <span class="math inline" data-source-tex="u">\(u\)</span> sebarang,
+<span class="math inline" data-source-tex="u^*">\(u^*\)</span> merupakan batas atas bagi <span class="math inline" data-source-tex="A">\(A\)</span>. ∎</p>
+<p> </p>
+<p><strong>(c)</strong> Di sisi lain, setiap batas atas bagi <span class="math inline" data-source-tex="A">\(A\)</span> tentu merupakan batas
+atas bagi <span class="math inline" data-source-tex="\{u_n:n\in\Bbb N\}">\(\{u_n:n\in\Bbb N\}\)</span>, sehingga lebih besar daripada atau sama
+dengan <span class="math inline" data-source-tex="u^*">\(u^*\)</span>. Jadi <span class="math inline" data-source-tex="u^*=\sup A">\(u^*=\sup A\)</span> dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span>. Karena <span class="math inline" data-source-tex="A">\(A\)</span> sebarang,
+<span class="math inline" data-source-tex="L^1">\(L^1\)</span> lengkap Dedekind.</p></aside>
+<p> </p>
+<p><strong>Catatan</strong> Perhatikan bahwa kelengkapan menurut urutan dari
+<span class="math inline" data-source-tex="L^1">\(L^1\)</span>, tidak seperti kelengkapan menurut urutan dari <span class="math inline" data-source-tex="L^0">\(L^0\)</span>, tidak bergantung
+pada sifat khusus apa pun dari ruang ukur <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span>.</p>
+</section>
+<section class="source-unit" id="242I" data-source-id="242I"><h2><span class="source-label">242I</span> Teorema Radon-Nikodým  </h2>
+<p>Menurut saya,
+teorema Radon-Nikodým (<a class="xref" href="../232/index.html#232E">232E</a>) layak dituliskan kembali dalam bahasa bab ini.</p>
+<p> </p>
+<p><strong>Teorema</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur.
+Maka terdapat bijeksi kanonik antara <span class="math inline" data-source-tex="L^1=L^1(\mu)">\(L^1=L^1(\mu)\)</span> dan himpunan fungsional
+aditif kontinu sejati <span class="math inline" data-source-tex="\nu:\Sigma\to\Bbb R">\(\nu:\Sigma\to\Bbb R\)</span>, yang diberikan oleh rumus</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu F=\int_Fu">\(\nu F=\int_Fu\)</span> untuk <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>, <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span>.</div>
+<p> </p>
+<p><strong>Catatan</strong> Ingat bahwa jika <span class="math inline" data-source-tex="\mu">\(\mu\)</span> <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga, maka
+fungsional aditif kontinu sejati tepat merupakan fungsional aditif terhitung
+yang kontinu mutlak; dan jika <span class="math inline" data-source-tex="\mu">\(\mu\)</span> hingga total, maka semua fungsional
+aditif (hingga) yang kontinu mutlak bersifat kontinu sejati (232Bd).</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Untuk <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span>, <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>, tetapkan
+<span class="math inline" data-source-tex="\nu_uF=\int_Fu">\(\nu_uF=\int_Fu\)</span>. Jika <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span>, terdapat fungsi terintegralkan <span class="math inline" data-source-tex="f">\(f\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="f^{\ssbullet}=u">\(f^{\ssbullet}=u\)</span>, dan dalam hal ini</p>
+<div class="centerline"><span class="math inline" data-source-tex="F\mapsto\nu_uF=\int_Ff:\Sigma\to\Bbb R">\(F\mapsto\nu_uF=\int_Ff:\Sigma\to\Bbb R\)</span></div>
+<p>bersifat aditif dan kontinu sejati menurut <a class="xref" href="../232/index.html#232D">232D</a>. Jika
+<span class="math inline" data-source-tex="\nu:\Sigma\to\Bbb R">\(\nu:\Sigma\to\Bbb R\)</span> aditif dan kontinu sejati, maka menurut <a class="xref" href="../232/index.html#232E">232E</a>
+terdapat fungsi terintegralkan <span class="math inline" data-source-tex="f">\(f\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\nu F=\int_Ff">\(\nu F=\int_Ff\)</span> untuk setiap <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>; dengan menetapkan
+<span class="math inline" data-source-tex="u=f^{\ssbullet}">\(u=f^{\ssbullet}\)</span> dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span>, diperoleh <span class="math inline" data-source-tex="\nu=\nu_u">\(\nu=\nu_u\)</span>. Akhirnya, jika
+<span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v">\(v\)</span> merupakan anggota berbeda dari <span class="math inline" data-source-tex="L^1">\(L^1\)</span>, terdapat <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\int_Fu\ne\int_Fv">\(\int_Fu\ne\int_Fv\)</span> (<a class="xref" href="#242Ce">242Ce</a>), sehingga
+<span class="math inline" data-source-tex="\nu_u\ne\nu_v">\(\nu_u\ne\nu_v\)</span>; jadi <span class="math inline" data-source-tex="u\mapsto\nu_u">\(u\mapsto\nu_u\)</span> injektif sekaligus surjektif.</p></aside>
+</section>
+<section class="source-unit" id="242J" data-source-id="242J"><span class="anchor" id="242Ja"></span><h2><span class="source-label">242J</span> Meninjau kembali ekspektasi bersyarat </h2>
+<p>Kini kita
+mempunyai perangkat yang diperlukan untuk memberikan penafsiran baru atas
+beberapa gagasan dalam §<a class="xref" href="../233/index.html#233">233</a>.</p>
+<p> </p>
+<p><strong>(a)</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur, dan <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> suatu
+subaljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, seperti dalam <a class="xref" href="../233/index.html#233A">233A</a>. Maka
+<span class="math inline" data-source-tex="(X,\Tau,\mu\restrp\Tau)">\((X,\Tau,\mu\restrp\Tau)\)</span> suatu ruang ukur, dan
+<span class="math inline" data-source-tex="\eusm L^0(\mu\restrp\Tau)\subseteq\eusm L^0(\mu)">\(\eusm L^0(\mu\restrp\Tau)\subseteq\eusm L^0(\mu)\)</span>; selain itu,
+jika <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in\eusm L^0(\mu\restrp\Tau)">\(g\in\eusm L^0(\mu\restrp\Tau)\)</span>, maka
+<span class="math inline" data-source-tex="f=g\,\,(\mu\restrp\Tau)">\(f=g\,\,(\mu\restrp\Tau)\)</span>-hampir di mana-mana jika dan hanya jika
+<span class="math inline" data-source-tex="f=g\,\,\mu">\(f=g\,\,\mu\)</span>-hampir di mana-mana. <span class="proof-fragment">Bukti. Terdapat himpunan-himpunan
+yang koterabaikan terhadap <span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span>, yaitu <span class="math inline" data-source-tex="F">\(F\)</span>, <span class="math inline" data-source-tex="G\in\Tau">\(G\in\Tau\)</span>, sedemikian
+sehingga <span class="math inline" data-source-tex="f\restr F">\(f\restr F\)</span> dan <span class="math inline" data-source-tex="g\restr G">\(g\restr G\)</span> terukur terhadap <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>; tetapkan
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="E=\{x:x\in F\cap G,\,f(x)\ne g(x)\}\in\Tau">\(E=\{x:x\in F\cap G,\,f(x)\ne g(x)\}\in\Tau\)</span>;</span>
+
+
+
+  maka
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="f=g\,\,(\mu\restrp\Tau)">\(f=g\,\,(\mu\restrp\Tau)\)</span>-hampir di mana-mana <span class="math inline" data-source-tex="\iff
+(\mu\restrp\Tau)(E)=0
+\iff \mu E=0 \iff f=g\,\,\mu">\(\iff
+(\mu\restrp\Tau)(E)=0
+\iff \mu E=0 \iff f=g\,\,\mu\)</span>-hampir di mana-mana. ∎</span>
+
+
+</span></p>
+<p>Oleh karena itu, kita mempunyai peta kanonik
+<span class="math inline" data-source-tex="S:L^0(\mu\restrp\Tau)\to L^0(\mu)">\(S:L^0(\mu\restrp\Tau)\to L^0(\mu)\)</span> yang didefinisikan dengan mengatakan
+bahwa jika <span class="math inline" data-source-tex="u\in L^0(\mu\restrp\Tau)">\(u\in L^0(\mu\restrp\Tau)\)</span> merupakan kelas ekuivalensi dari
+<span class="math inline" data-source-tex="f\in\eusm L^0(\mu\restrp\Tau)">\(f\in\eusm L^0(\mu\restrp\Tau)\)</span>, maka <span class="math inline" data-source-tex="Su">\(Su\)</span> merupakan kelas ekuivalensi
+dari <span class="math inline" data-source-tex="f">\(f\)</span> dalam <span class="math inline" data-source-tex="L^0(\mu)">\(L^0(\mu)\)</span>. Dengan menelusuri operasi-operasi yang
+dideskripsikan dalam <a class="xref" href="../241/index.html#241D">241D</a>, <a class="xref" href="../241/index.html#241E">241E</a>, dan <a class="xref" href="../241/index.html#241H">241H</a>, mudah diperiksa bahwa <span class="math inline" data-source-tex="S">\(S\)</span> linear,
+injektif, dan mempertahankan urutan, serta bahwa
+<span class="math inline" data-source-tex="|Su|=S|u|">\(|Su|=S|u|\)</span>, <span class="math inline" data-source-tex="S(u\vee v)=Su\vee Sv">\(S(u\vee v)=Su\vee Sv\)</span>, dan
+<span class="math inline" data-source-tex="S(u\times v)=Su\times Sv">\(S(u\times v)=Su\times Sv\)</span> untuk <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^0(\mu\restrp\Tau)">\(v\in L^0(\mu\restrp\Tau)\)</span>.</p>
+</section>
+<section class="source-unit" id="242Jb" data-source-id="242Jb"><h3><span class="source-label">242Jb</span> <strong>(b)</strong> </h3>
+<p>Selanjutnya, jika
+<span class="math inline" data-source-tex="f\in\eusm L^1(\mu\restrp\Tau)">\(f\in\eusm L^1(\mu\restrp\Tau)\)</span>, maka <span class="math inline" data-source-tex="f\in\eusm L^1(\mu)">\(f\in\eusm L^1(\mu)\)</span> dan
+<span class="math inline" data-source-tex="\int fd\mu=\int fd(\mu\restrp\Tau)">\(\int fd\mu=\int fd(\mu\restrp\Tau)\)</span><span class="proof-fragment"> (<a class="xref" href="../233/index.html#233B">233B</a>)</span>; jadi
+<span class="math inline" data-source-tex="Su\in L^1(\mu)">\(Su\in L^1(\mu)\)</span> dan <span class="math inline" data-source-tex="\|Su\|_1=\|u\|_1">\(\|Su\|_1=\|u\|_1\)</span> untuk setiap
+<span class="math inline" data-source-tex="u\in L^1(\mu\restrp\Tau)">\(u\in L^1(\mu\restrp\Tau)\)</span>.</p>
+<p>Perhatikan juga bahwa setiap anggota dari
+<span class="math inline" data-source-tex="L^1(\mu)\cap S[L^0(\mu\restrp\Tau)]">\(L^1(\mu)\cap S[L^0(\mu\restrp\Tau)]\)</span> sesungguhnya termasuk dalam
+<span class="math inline" data-source-tex="S[L^1(\mu\restrp\Tau)]">\(S[L^1(\mu\restrp\Tau)]\)</span>. <span class="proof-fragment">Bukti. Ambil
+<span class="math inline" data-source-tex="u\in L^1(\mu)\cap S[L^0(\mu\restrp\Tau)]">\(u\in L^1(\mu)\cap S[L^0(\mu\restrp\Tau)]\)</span>. Maka <span class="math inline" data-source-tex="u">\(u\)</span> dapat dinyatakan
+baik sebagai <span class="math inline" data-source-tex="f^{\ssbullet}">\(f^{\ssbullet}\)</span> dengan <span class="math inline" data-source-tex="f\in\eusm L^1(\mu)">\(f\in\eusm L^1(\mu)\)</span>, maupun sebagai
+<span class="math inline" data-source-tex="g^{\ssbullet}">\(g^{\ssbullet}\)</span> dengan <span class="math inline" data-source-tex="g\in\eusm L^0(\mu\restrp\Tau)">\(g\in\eusm L^0(\mu\restrp\Tau)\)</span>. Jadi
+<span class="math inline" data-source-tex="g\eae f">\(g\eae f\)</span>, dan <span class="math inline" data-source-tex="g">\(g\)</span> terintegralkan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, sehingga terintegralkan
+terhadap <span class="math inline" data-source-tex="(\mu\restrp\Tau)">\((\mu\restrp\Tau)\)</span> (sekali lagi menurut <a class="xref" href="../233/index.html#233B">233B</a>). ∎</span></p>
+<p>Ini berarti bahwa
+<span class="math inline" data-source-tex="S:L^1(\mu\restrp\Tau)\to L^1(\mu)\cap S[L^0(\mu\restrp\Tau)]">\(S:L^1(\mu\restrp\Tau)\to L^1(\mu)\cap S[L^0(\mu\restrp\Tau)]\)</span>
+merupakan bijeksi.</p>
+</section>
+<section class="source-unit" id="242Jc" data-source-id="242Jc"><h3><span class="source-label">242Jc</span> <strong>(c)</strong> </h3>
+<p>Kini andaikan <span class="math inline" data-source-tex="\mu X=1">\(\mu X=1\)</span>, sehingga
+<span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang probabilitas. Ingat bahwa <span class="math inline" data-source-tex="g">\(g\)</span>
+merupakan ekspektasi bersyarat dari <span class="math inline" data-source-tex="f">\(f\)</span> pada <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> jika <span class="math inline" data-source-tex="g">\(g\)</span>
+terintegralkan terhadap <span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span>, <span class="math inline" data-source-tex="f">\(f\)</span> terintegralkan terhadap
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span>, dan <span class="math inline" data-source-tex="\int_Fg=\int_Ff">\(\int_Fg=\int_Ff\)</span> untuk setiap <span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>; serta bahwa setiap
+fungsi yang terintegralkan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> mempunyai ekspektasi bersyarat semacam itu
+(<a class="xref" href="../233/index.html#233D">233D</a>). Jika <span class="math inline" data-source-tex="g">\(g\)</span> merupakan ekspektasi bersyarat dari <span class="math inline" data-source-tex="f">\(f\)</span> dan
+<span class="math inline" data-source-tex="f_1=f\,\,\mu">\(f_1=f\,\,\mu\)</span>-hampir di mana-mana, maka <span class="math inline" data-source-tex="g">\(g\)</span> merupakan ekspektasi
+bersyarat dari <span class="math inline" data-source-tex="f_1">\(f_1\)</span>, karena <span class="math inline" data-source-tex="\int_Ff_1=\int_Ff">\(\int_Ff_1=\int_Ff\)</span> untuk setiap
+<span class="math inline" data-source-tex="F">\(F\)</span>; dan saya telah mencatat dalam <a class="xref" href="../233/index.html#233Dc">233Dc</a> bahwa jika <span class="math inline" data-source-tex="g">\(g\)</span>,
+<span class="math inline" data-source-tex="g_1">\(g_1\)</span> merupakan ekspektasi bersyarat dari <span class="math inline" data-source-tex="f">\(f\)</span> pada <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>, maka
+<span class="math inline" data-source-tex="g=g_1\,\,\mu\restrp\Tau">\(g=g_1\,\,\mu\restrp\Tau\)</span>-hampir di mana-mana.</p>
+</section>
+<section class="source-unit" id="242Jd" data-source-id="242Jd"><h3><span class="source-label">242Jd</span> <strong>(d)</strong> </h3>
+<p>Ini berarti bahwa kita mempunyai operator
+<span class="math inline" data-source-tex="P:L^1(\mu)\to L^1(\mu\restrp\Tau)">\(P:L^1(\mu)\to L^1(\mu\restrp\Tau)\)</span> yang didefinisikan dengan mengatakan
+bahwa <span class="math inline" data-source-tex="P(f^{\ssbullet})=g^{\ssbullet}">\(P(f^{\ssbullet})=g^{\ssbullet}\)</span> kapan pun
+<span class="math inline" data-source-tex="g\in\eusm L^1(\mu\restrp\Tau)">\(g\in\eusm L^1(\mu\restrp\Tau)\)</span> merupakan ekspektasi bersyarat dari
+<span class="math inline" data-source-tex="f\in\eusm L^1(\mu)">\(f\in\eusm L^1(\mu)\)</span> pada <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>; yakni,
+<span class="math inline" data-source-tex="\int_FPu=\int_Fu">\(\int_FPu=\int_Fu\)</span> kapan pun <span class="math inline" data-source-tex="u\in L^1(\mu)">\(u\in L^1(\mu)\)</span> dan <span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>.
+Jika kita mengidentifikasi <span class="math inline" data-source-tex="L^1(\mu)">\(L^1(\mu)\)</span>,
+<span class="math inline" data-source-tex="L^1(\mu\restrp\Tau)">\(L^1(\mu\restrp\Tau)\)</span> dengan himpunan fungsional aditif kontinu mutlak
+yang didefinisikan pada <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dan <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>, seperti dalam <a class="xref" href="#242I">242I</a>, maka
+<span class="math inline" data-source-tex="P">\(P\)</span> bersesuaian dengan operasi <span class="math inline" data-source-tex="\nu\mapsto\nu\restrp\Tau">\(\nu\mapsto\nu\restrp\Tau\)</span>.</p>
+</section>
+<section class="source-unit" id="242Je" data-source-id="242Je"><h3><span class="source-label">242Je</span> <strong>(e)</strong> </h3>
+<p><span class="math inline" data-source-tex="P">\(P\)</span> linear dan mempertahankan urutan. <span class="proof-fragment">Bukti. Jika <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^1(\mu)">\(v\in L^1(\mu)\)</span> dan
+<span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>, maka
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\int_FPu+Pv=\int_FPu+\int_FPv=\int_Fu+\int_Fv
+=\int_Fu+v=\int_FP(u+v)">\(\int_FPu+Pv=\int_FPu+\int_FPv=\int_Fu+\int_Fv
+=\int_Fu+v=\int_FP(u+v)\)</span>,</span>
+
+
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\int_FP(cu)=\int_Fcu=c\int_Fu=c\int_FPu=\int_FcPu">\(\int_FP(cu)=\int_Fcu=c\int_Fu=c\int_FPu=\int_FcPu\)</span></span>
+
+
+
+  untuk setiap <span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>. ∎ Selain itu, jika <span class="math inline" data-source-tex="u\ge 0">\(u\ge 0\)</span>,
+maka <span class="math inline" data-source-tex="\int_FPu=\int_Fu\ge 0">\(\int_FPu=\int_Fu\ge 0\)</span> untuk setiap <span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>, sehingga
+<span class="math inline" data-source-tex="Pu\ge 0">\(Pu\ge 0\)</span> (sekali lagi menurut <a class="xref" href="#242Ce">242Ce</a>).
+
+Dengan segera diperoleh bahwa <span class="math inline" data-source-tex="P">\(P\)</span> mempertahankan urutan, yakni
+<span class="math inline" data-source-tex="Pu\le Pv">\(Pu\le Pv\)</span> kapan pun <span class="math inline" data-source-tex="u\le v">\(u\le v\)</span>.</span> Akibatnya,</p>
+<div class="centerline"><span class="math inline" data-source-tex="|Pu|=Pu\vee(-Pu)=Pu\vee P(-u)\le P|u|">\(|Pu|=Pu\vee(-Pu)=Pu\vee P(-u)\le P|u|\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="u\in L^1(\mu)">\(u\in L^1(\mu)\)</span><span class="proof-fragment">, karena
+<span class="math inline" data-source-tex="u\le|u|">\(u\le|u|\)</span> dan <span class="math inline" data-source-tex="-u\le|u|">\(-u\le|u|\)</span></span>. Akhirnya, <span class="math inline" data-source-tex="P">\(P\)</span> merupakan operator linear
+terbatas, dengan norma <span class="math inline" data-source-tex="1">\(1\)</span>. <span class="proof-fragment">Bukti. Rumus terakhir menyatakan
+bahwa
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\|Pu\|_1\le\|P|u|\|_1=\int P|u|=\int |u|=\|u\|_1">\(\|Pu\|_1\le\|P|u|\|_1=\int P|u|=\int |u|=\|u\|_1\)</span></span>
+
+
+
+  untuk setiap <span class="math inline" data-source-tex="u\in L^1(\mu)">\(u\in L^1(\mu)\)</span>, sehingga <span class="math inline" data-source-tex="\|P\|\le 1">\(\|P\|\le 1\)</span>. Di sisi
+lain, <span class="math inline" data-source-tex="P(\chi X^{\ssbullet})=\chi X^{\ssbullet}\ne 0">\(P(\chi X^{\ssbullet})=\chi X^{\ssbullet}\ne 0\)</span>, sehingga
+<span class="math inline" data-source-tex="\|P\|=1">\(\|P\|=1\)</span>. ∎</span></p>
+</section>
+<section class="source-unit" id="242Jf" data-source-id="242Jf"><h3><span class="source-label">242Jf</span> <strong>(f)</strong> </h3>
+<p>Kita dapat secara sah memandang
+<span class="math inline" data-source-tex="Pu\in L^1(\mu\restrp\Tau)">\(Pu\in L^1(\mu\restrp\Tau)\)</span> sebagai ekspektasi bersyarat ‘dari’
+<span class="math inline" data-source-tex="u\in L^1(\mu)">\(u\in L^1(\mu)\)</span> pada <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>; <span class="math inline" data-source-tex="P">\(P\)</span> merupakan <strong>operator ekspektasi
+bersyarat</strong>.</p>
+</section>
+<section class="source-unit" id="242Jg" data-source-id="242Jg"><h3><span class="source-label">242Jg</span> <strong>(g)</strong> </h3>
+<p>Jika <span class="math inline" data-source-tex="u\in L^1(\mu\restrp\Tau)">\(u\in L^1(\mu\restrp\Tau)\)</span>, maka
+kita mempunyai <span class="math inline" data-source-tex="Su\in L^1(\mu)">\(Su\in L^1(\mu)\)</span> yang bersesuaian, seperti dalam (b);
+kini <span class="math inline" data-source-tex="PSu=u">\(PSu=u\)</span>. <span class="proof-fragment">Bukti.
+<span class="math inline" data-source-tex="\int_FPSu=\int_FSu=\int_Fu">\(\int_FPSu=\int_FSu=\int_Fu\)</span> untuk setiap <span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>. ∎</span>
+Akibatnya, <span class="math inline" data-source-tex="SPSP=SP:L^1(\mu)\to L^1(\mu)">\(SPSP=SP:L^1(\mu)\to L^1(\mu)\)</span>.</p>
+</section>
+<section class="source-unit" id="242Jh" data-source-id="242Jh"><h3><span class="source-label">242Jh</span> <strong>(h)</strong> </h3>
+<p>Pembedaan yang dibuat di atas antara
+<span class="math inline" data-source-tex="u=f^{\ssbullet}\in L^0(\mu\restrp\Tau)">\(u=f^{\ssbullet}\in L^0(\mu\restrp\Tau)\)</span> dan
+<span class="math inline" data-source-tex="Su=f^{\ssbullet}\in L^0(\mu)">\(Su=f^{\ssbullet}\in L^0(\mu)\)</span> tentu saja sangat teliti. Saya percaya
+kita perlu menyadari pembedaan semacam itu, meskipun untuk hampir semua
+keperluan aman sekaligus mudah untuk memandang <span class="math inline" data-source-tex="L^0(\mu\restrp\Tau)">\(L^0(\mu\restrp\Tau)\)</span>
+sebagai subhimpunan aktual dari <span class="math inline" data-source-tex="L^0(\mu)">\(L^0(\mu)\)</span>. Jika kita melakukannya, maka
+(b) menyatakan bahwa kita dapat mengidentifikasi <span class="math inline" data-source-tex="L^1(\mu\restrp\Tau)">\(L^1(\mu\restrp\Tau)\)</span>
+dengan <span class="math inline" data-source-tex="L^1(\mu)\cap L^0(\mu\restrp\Tau)">\(L^1(\mu)\cap L^0(\mu\restrp\Tau)\)</span>, sedangkan (g) menjadi
+‘<span class="math inline" data-source-tex="P^2=P">\(P^2=P\)</span>’.</p>
+</section>
+<section class="source-unit" id="242K" data-source-id="242K"><h2><span class="source-label">242K</span>  </h2>
+<p>Bahasa yang baru diperkenalkan memungkinkan
+perumusan ulang <a class="xref" href="../233/index.html#233J">233J</a>-<a class="xref" href="../233/index.html#233K">233K</a> berikut.</p>
+<p> </p>
+<p><strong>Teorema</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang
+probabilitas dan <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> suatu subaljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>.
+Misalkan <span class="math inline" data-source-tex="\phi:\Bbb R\to\Bbb R">\(\phi:\Bbb R\to\Bbb R\)</span> suatu fungsi cembung dan
+<span class="math inline" data-source-tex="\bar\phi:L^0(\mu)\to L^0(\mu)">\(\bar\phi:L^0(\mu)\to L^0(\mu)\)</span> operator yang bersesuaian, yang
+didefinisikan dengan menetapkan
+<span class="math inline" data-source-tex="\bar\phi(f^{\ssbullet})=(\phi f)^{\ssbullet}">\(\bar\phi(f^{\ssbullet})=(\phi f)^{\ssbullet}\)</span> (<a class="xref" href="../241/index.html#241I">241I</a>). Jika
+<span class="math inline" data-source-tex="P:L^1(\mu)\to L^1(\mu\restrp\Tau)">\(P:L^1(\mu)\to L^1(\mu\restrp\Tau)\)</span> merupakan operator ekspektasi
+bersyarat, maka <span class="math inline" data-source-tex="\bar\phi(Pu)\le P(\bar\phi u)">\(\bar\phi(Pu)\le P(\bar\phi u)\)</span> kapan pun
+<span class="math inline" data-source-tex="u\in L^1(\mu)">\(u\in L^1(\mu)\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\bar\phi(u)\in L^1(\mu)">\(\bar\phi(u)\in L^1(\mu)\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Ini hanyalah pernyataan ulang <a class="xref" href="../233/index.html#233J">233J</a>.</p></aside>
+</section>
+<section class="source-unit" id="242L" data-source-id="242L"><h2><span class="source-label">242L</span> Proposisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang
+probabilitas, dan <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> suatu subaljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>.
+Misalkan <span class="math inline" data-source-tex="P:L^1(\mu)\to L^1(\mu\restrp\Tau)">\(P:L^1(\mu)\to L^1(\mu\restrp\Tau)\)</span> operator ekspektasi
+bersyarat yang bersesuaian. Jika <span class="math inline" data-source-tex="u\in L^1=L^1(\mu)">\(u\in L^1=L^1(\mu)\)</span> dan
+<span class="math inline" data-source-tex="v\in L^0(\mu\restrp\Tau)">\(v\in L^0(\mu\restrp\Tau)\)</span>, maka <span class="math inline" data-source-tex="u\times v\in L^1">\(u\times v\in L^1\)</span> jika dan hanya jika
+<span class="math inline" data-source-tex="P|u|\times v\in L^1">\(P|u|\times v\in L^1\)</span>, dan dalam hal ini
+<span class="math inline" data-source-tex="P(u\times v)=Pu\times v">\(P(u\times v)=Pu\times v\)</span>; khususnya,
+<span class="math inline" data-source-tex="\int u\times v=\int Pu\times v">\(\int u\times v=\int Pu\times v\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>(Di sini saya menggunakan identifikasi <span class="math inline" data-source-tex="L^0(\mu\restrp\Tau)">\(L^0(\mu\restrp\Tau)\)</span>
+sebagai subruang dari <span class="math inline" data-source-tex="L^0(\mu)">\(L^0(\mu)\)</span>, sebagaimana disarankan dalam <a class="xref" href="#242Jh">242Jh</a>.)
+Nyatakan <span class="math inline" data-source-tex="u">\(u\)</span> sebagai <span class="math inline" data-source-tex="f^{\ssbullet}">\(f^{\ssbullet}\)</span> dan <span class="math inline" data-source-tex="v">\(v\)</span> sebagai <span class="math inline" data-source-tex="h^{\ssbullet}">\(h^{\ssbullet}\)</span>,
+dengan <span class="math inline" data-source-tex="f\in\eusm L^1=\eusm L^1(\mu)">\(f\in\eusm L^1=\eusm L^1(\mu)\)</span> dan
+<span class="math inline" data-source-tex="h\in\eusm L^0(\mu\restrp\Tau)">\(h\in\eusm L^0(\mu\restrp\Tau)\)</span>. Misalkan
+<span class="math inline" data-source-tex="g">\(g\)</span>, <span class="math inline" data-source-tex="g_0\in\eusm L^1(\mu\restrp\Tau)">\(g_0\in\eusm L^1(\mu\restrp\Tau)\)</span> berturut-turut merupakan
+ekspektasi bersyarat dari <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="|f|">\(|f|\)</span>, sehingga <span class="math inline" data-source-tex="Pu=g^{\ssbullet}">\(Pu=g^{\ssbullet}\)</span> dan
+<span class="math inline" data-source-tex="P|u|=g_0^{\ssbullet}">\(P|u|=g_0^{\ssbullet}\)</span>. Kemudian, dengan menggunakan <a class="xref" href="../233/index.html#233K">233K</a>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="u\times v\in L^1\iff f\times h\in\eusm L^1
+\iff g_0\times h\in\eusm L^1\iff P|u|\times v\in L^1">\(u\times v\in L^1\iff f\times h\in\eusm L^1
+\iff g_0\times h\in\eusm L^1\iff P|u|\times v\in L^1\)</span>,</div>
+<p>dan dalam hal ini <span class="math inline" data-source-tex="g\times h">\(g\times h\)</span> merupakan ekspektasi bersyarat
+dari <span class="math inline" data-source-tex="f\times h">\(f\times h\)</span>, yakni <span class="math inline" data-source-tex="Pu\times v=P(u\times v)">\(Pu\times v=P(u\times v)\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="242M" data-source-id="242M"><h2><span class="source-label">242M</span> <span class="math inline" data-source-tex="L^1">\(L^1\)</span> sebagai kelengkapan: </h2>
+<p>Dalam pendahuluan bagian ini saya menyebutkan bahwa <span class="math inline" data-source-tex="L^1">\(L^1\)</span> muncul dalam
+analisis fungsional sebagai kelengkapan beberapa ruang penting; dengan kata
+lain, beberapa subruang padat dari <span class="math inline" data-source-tex="L^1">\(L^1\)</span> memiliki arti penting. Yang pertama
+bersifat elementer.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sebarang ruang ukur,
+dan tuliskan <span class="math inline" data-source-tex="\eusm S">\(\eusm S\)</span> untuk ruang fungsi-fungsi sederhana terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>
+pada <span class="math inline" data-source-tex="X">\(X\)</span>. Maka</p>
+<p>(a) kapan pun <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai riil yang terintegralkan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dan
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, terdapat <span class="math inline" data-source-tex="h\in\eusm S">\(h\in\eusm S\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\int|f-h|\le\epsilon">\(\int|f-h|\le\epsilon\)</span>;</p>
+<p>(b) <span class="math inline" data-source-tex="S=\{f^{\ssbullet}:f\in\eusm S\}">\(S=\{f^{\ssbullet}:f\in\eusm S\}\)</span> merupakan subruang linear padat
+dari <span class="math inline" data-source-tex="L^1=L^1(\mu)">\(L^1=L^1(\mu)\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong>(i) Jika <span class="math inline" data-source-tex="f">\(f\)</span> nonnegatif, terdapat fungsi sederhana <span class="math inline" data-source-tex="h">\(h\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="h\leae f">\(h\leae f\)</span> dan
+<span class="math inline" data-source-tex="\int h\ge\int f-\bover12\epsilon">\(\int h\ge\int f-\bover12\epsilon\)</span> (<a class="xref" href="../122/index.html#122K">122K</a>), dan dalam hal ini</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int|f-h|=\int f-h
+=\int f-\int h\le\Bover12\epsilon">\(\int|f-h|=\int f-h
+=\int f-\int h\le\Bover12\epsilon\)</span>.</div>
+<p>(ii) Dalam kasus umum, <span class="math inline" data-source-tex="f">\(f\)</span> dapat dinyatakan sebagai selisih
+<span class="math inline" data-source-tex="f_1-f_2">\(f_1-f_2\)</span> dari fungsi-fungsi terintegralkan nonnegatif. Kini terdapat
+<span class="math inline" data-source-tex="h_1">\(h_1\)</span>, <span class="math inline" data-source-tex="h_2\in\eusm S">\(h_2\in\eusm S\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\int|f_j-h_j|\le\bover12\epsilon">\(\int|f_j-h_j|\le\bover12\epsilon\)</span> untuk kedua nilai <span class="math inline" data-source-tex="j">\(j\)</span>, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int|f-h|\le\int|f_1-h_1|+\int|f_2-h_2|\le\epsilon">\(\int|f-h|\le\int|f_1-h_1|+\int|f_2-h_2|\le\epsilon\)</span>.</div>
+<p> </p>
+<p><strong>(b)</strong> Karena <span class="math inline" data-source-tex="\eusm S">\(\eusm S\)</span> merupakan subruang linear dari <span class="math inline" data-source-tex="\Bbb R^X">\(\Bbb R^X\)</span>
+yang termuat dalam <span class="math inline" data-source-tex="\eusm L^1=\eusm L^1(\mu)">\(\eusm L^1=\eusm L^1(\mu)\)</span>, <span class="math inline" data-source-tex="S">\(S\)</span> merupakan subruang
+linear dari <span class="math inline" data-source-tex="L^1">\(L^1\)</span>. Jika <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span> dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, terdapat
+<span class="math inline" data-source-tex="f\in\eusm L^1">\(f\in\eusm L^1\)</span> sedemikian sehingga <span class="math inline" data-source-tex="f^{\ssbullet}=u">\(f^{\ssbullet}=u\)</span> dan
+<span class="math inline" data-source-tex="h\in\eusm S">\(h\in\eusm S\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\int|f-h|\le\epsilon">\(\int|f-h|\le\epsilon\)</span>; kini
+<span class="math inline" data-source-tex="v=h^{\ssbullet}\in S">\(v=h^{\ssbullet}\in S\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|u-v\|_1=\int|f-h|\le\epsilon">\(\|u-v\|_1=\int|f-h|\le\epsilon\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="u">\(u\)</span> dan <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang, <span class="math inline" data-source-tex="S">\(S\)</span> padat dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="242N" data-source-id="242N"><h2><span class="source-label">242N</span>  </h2>
+<p>Seperti biasa, ukuran Lebesgue pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>
+dan subhimpunan-subhimpunannya sejauh ini merupakan contoh terpenting; dalam
+kasus ini kita mempunyai kelas-kelas lain dari subruang padat <span class="math inline" data-source-tex="L^1">\(L^1\)</span>. Jika
+Anda telah sampai di titik ini tanpa berusaha menguasai ukuran Lebesgue
+multidimensi, ambil saja <span class="math inline" data-source-tex="r=1">\(r=1\)</span>. Jika Anda kurang nyaman dengan ukuran
+subruang umum, ambil <span class="math inline" data-source-tex="X">\(X\)</span> sebagai <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> atau <span class="math inline" data-source-tex="[0,1]\subseteq\Bbb R">\([0,1]\subseteq\Bbb R\)</span>
+atau subhimpunan tertentu lain yang Anda anggap menarik. Istilah berikut
+akan berguna.</p>
+<p> </p>
+<p><strong>Definisi</strong> Jika <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai riil atau kompleks
+yang didefinisikan pada subhimpunan <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, katakan bahwa
+<strong>dukungan</strong> <span class="math inline" data-source-tex="f">\(f\)</span> adalah
+<span class="math inline" data-source-tex="\overline{\{x:x\in\dom f,\,f(x)\ne 0\}}">\(\overline{\{x:x\in\dom f,\,f(x)\ne 0\}}\)</span>.</p>
+</section>
+<section class="source-unit" id="242O" data-source-id="242O"><h2><span class="source-label">242O</span> Teorema </h2>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> sebarang subhimpunan <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>,
+dengan <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span>, dan misalkan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> ukuran Lebesgue pada <span class="math inline" data-source-tex="X">\(X\)</span>,
+yakni ukuran subruang pada <span class="math inline" data-source-tex="X">\(X\)</span> yang diimbaskan oleh ukuran Lebesgue pada
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>. Tuliskan <span class="math inline" data-source-tex="C_k">\(C_k\)</span> untuk ruang fungsi kontinu terbatas
+<span class="math inline" data-source-tex="f:\BbbR^r\to\Bbb R">\(f:\BbbR^r\to\Bbb R\)</span> yang mempunyai dukungan terbatas, dan <span class="math inline" data-source-tex="S_0">\(S_0\)</span> untuk
+ruang kombinasi linear fungsi-fungsi berbentuk <span class="math inline" data-source-tex="\chi I">\(\chi I\)</span>, dengan
+<span class="math inline" data-source-tex="I\subseteq\BbbR^r">\(I\subseteq\BbbR^r\)</span> suatu interval setengah terbuka terbatas. Maka</p>
+<p>(a) kapan pun <span class="math inline" data-source-tex="f\in\eusm L^1=\eusm L^1(\mu)">\(f\in\eusm L^1=\eusm L^1(\mu)\)</span> dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>,
+terdapat <span class="math inline" data-source-tex="g\in C_k">\(g\in C_k\)</span>, <span class="math inline" data-source-tex="h\in S_0">\(h\in S_0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\int_X|f-g|\le\epsilon">\(\int_X|f-g|\le\epsilon\)</span> dan <span class="math inline" data-source-tex="\int_X|f-h|\le\epsilon">\(\int_X|f-h|\le\epsilon\)</span>;</p>
+<p>(b) <span class="math inline" data-source-tex="\{(g\restr X)^{\ssbullet}:g\in C_k\}">\(\{(g\restr X)^{\ssbullet}:g\in C_k\}\)</span> dan
+<span class="math inline" data-source-tex="\{(h\restr X)^{\ssbullet}:h\in S_0\}">\(\{(h\restr X)^{\ssbullet}:h\in S_0\}\)</span> merupakan subruang-subruang
+linear padat dari <span class="math inline" data-source-tex="L^1=L^1(\mu)">\(L^1=L^1(\mu)\)</span>.</p>
+<p> </p>
+<p><strong>Catatan</strong> Tentu saja kata ‘terbatas’ dalam deskripsi <span class="math inline" data-source-tex="C_k">\(C_k\)</span>
+bersifat berlebih; lihat <a class="xref" href="#242Xh">242Xh</a>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Saya menunjukkan secara berturut-turut bahwa hasil ini
+berlaku bagi makin banyak anggota <span class="math inline" data-source-tex="f">\(f\)</span> dari
+<span class="math inline" data-source-tex="\eusm L^1=\eusm L^1(\mu)">\(\eusm L^1=\eusm L^1(\mu)\)</span>. Tuliskan <span class="math inline" data-source-tex="\mu_r">\(\mu_r\)</span> untuk ukuran Lebesgue pada
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, sehingga <span class="math inline" data-source-tex="\mu">\(\mu\)</span> merupakan ukuran subruang <span class="math inline" data-source-tex="(\mu_r)_X">\((\mu_r)_X\)</span>.</p>
+<p> </p>
+<p>  <strong>(i)</strong> Andaikan terlebih dahulu bahwa <span class="math inline" data-source-tex="f=\chi I\restr X">\(f=\chi I\restr X\)</span> dengan
+<span class="math inline" data-source-tex="I\subseteq\BbbR^r">\(I\subseteq\BbbR^r\)</span> suatu interval setengah terbuka terbatas. Tentu saja
+<span class="math inline" data-source-tex="\chi I">\(\chi I\)</span> sudah termasuk dalam <span class="math inline" data-source-tex="S_0">\(S_0\)</span>, sehingga saya hanya perlu menunjukkan
+bahwa fungsi itu dapat dihampiri oleh anggota-anggota <span class="math inline" data-source-tex="C_k">\(C_k\)</span>. Jika
+<span class="math inline" data-source-tex="I=\emptyset">\(I=\emptyset\)</span>, hasilnya sepele; kita dapat mengambil <span class="math inline" data-source-tex="g=0">\(g=0\)</span>. Jika tidak,
+nyatakan <span class="math inline" data-source-tex="I">\(I\)</span> sebagai <span class="math inline" data-source-tex="\coint{a-b,a+b}">\(\coint{a-b,a+b}\)</span>, dengan
+<span class="math inline" data-source-tex="a=(\alpha_1,\ldots,\alpha_r)">\(a=(\alpha_1,\ldots,\alpha_r)\)</span>, <span class="math inline" data-source-tex="b=(\beta_1,\ldots,\beta_r)">\(b=(\beta_1,\ldots,\beta_r)\)</span>, dan
+<span class="math inline" data-source-tex="\beta_j&gt;0">\(\beta_j&gt;0\)</span> untuk setiap <span class="math inline" data-source-tex="j">\(j\)</span>. Ambil <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="2^r\prod_{j=1}^r(\beta_j+\delta)
+\le\epsilon+2^r\prod_{j=1}^r\beta_j">\(2^r\prod_{j=1}^r(\beta_j+\delta)
+\le\epsilon+2^r\prod_{j=1}^r\beta_j\)</span>.</div>
+<p>Untuk <span class="math inline" data-source-tex="\xi\in\Bbb R">\(\xi\in\Bbb R\)</span>, tetapkan</p>
+<p><span class="math display" data-source-tex="\eqalign{g_j(\xi)
+&amp;=1\text{ jika }|\xi-\alpha_j|\le\beta_j,\cr
+&amp;=(\beta_j+\delta-|\xi-\alpha_j|)/\delta
+  \text{ jika }\beta_j\le|\xi-\alpha_j|\le\beta_j+\delta,\cr
+&amp;=0\text{ jika }|\xi-\alpha_j|\ge\beta_j+\delta.\cr}">\[\begin{aligned}g_j(\xi)
+&amp;=1\text{ jika }|\xi-\alpha_j|\le\beta_j,\\
+&amp;=(\beta_j+\delta-|\xi-\alpha_j|)/\delta
+  \text{ jika }\beta_j\le|\xi-\alpha_j|\le\beta_j+\delta,\\
+&amp;=0\text{ jika }|\xi-\alpha_j|\ge\beta_j+\delta.\\\end{aligned}\]</span></p>
+<figure class="source-figure" style="margin:1.5rem auto;text-align:center"><img src="../_static/mt242m.png" alt="Grafik fungsi trapesium g sub j" style="display:block;width:min(100%,36rem);height:auto;margin:0 auto;box-sizing:border-box;padding:.4rem;background:#fff;border-radius:.25rem"><figcaption>Fungsi <span class="math inline" data-source-tex="g_j">\(g_j\)</span></figcaption></figure>
+<p>Untuk <span class="math inline" data-source-tex="x=(\xi_1,\ldots,\xi_r)\in\BbbR^r">\(x=(\xi_1,\ldots,\xi_r)\in\BbbR^r\)</span>, tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="g(x)=\prod_{j=1}^rg_j(\xi_j)">\(g(x)=\prod_{j=1}^rg_j(\xi_j)\)</span>.</div>
+<p>Maka <span class="math inline" data-source-tex="g\in C_k">\(g\in C_k\)</span> dan <span class="math inline" data-source-tex="\chi I\le g\le\chi J">\(\chi I\le g\le\chi J\)</span>, dengan
+<span class="math inline" data-source-tex="J=[a-b-\delta \tbf{1},a+b+\delta\tbf{1}]">\(J=[a-b-\delta \tbf{1},a+b+\delta\tbf{1}]\)</span> (dengan menuliskan
+<span class="math inline" data-source-tex="\tbf{1}=(1,\ldots,1)">\(\tbf{1}=(1,\ldots,1)\)</span>), sehingga (berdasarkan pilihan <span class="math inline" data-source-tex="\delta">\(\delta\)</span>)
+<span class="math inline" data-source-tex="\mu_rJ\le\mu_rI+\epsilon">\(\mu_rJ\le\mu_rI+\epsilon\)</span>, dan</p>
+<p><span class="math display" data-source-tex="\eqalign{\int_X|g-f|
+&amp;\le\int(\chi(J\cap X)-\chi(I\cap X))d\mu
+=\mu((J\setminus I)\cap X)\cr
+&amp;\le\mu_r(J\setminus I)
+=\mu_rJ-\mu_rI
+\le\epsilon,\cr}">\[\begin{aligned}\int_X|g-f|
+&amp;\le\int(\chi(J\cap X)-\chi(I\cap X))d\mu
+=\mu((J\setminus I)\cap X)\\
+&amp;\le\mu_r(J\setminus I)
+=\mu_rJ-\mu_rI
+\le\epsilon,\\\end{aligned}\]</span></p>
+<p>sebagaimana diperlukan.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Kini andaikan <span class="math inline" data-source-tex="f=\chi(X\cap E)">\(f=\chi(X\cap E)\)</span> dengan
+<span class="math inline" data-source-tex="E\subseteq\BbbR^r">\(E\subseteq\BbbR^r\)</span> suatu himpunan berukuran hingga. Maka terdapat keluarga
+terpisah <span class="math inline" data-source-tex="I_0,\ldots,I_n">\(I_0,\ldots,I_n\)</span> dari interval-interval setengah terbuka sedemikian
+sehingga <span class="math inline" data-source-tex="\mu_r(E\symmdiff\bigcup_{j\le n}I_j)\le\bover12\epsilon">\(\mu_r(E\symmdiff\bigcup_{j\le n}I_j)\le\bover12\epsilon\)</span>.
+Bukti. Terdapat himpunan terbuka <span class="math inline" data-source-tex="G\supseteq E">\(G\supseteq E\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu_r(G\setminus E)\le\bover14\epsilon">\(\mu_r(G\setminus E)\le\bover14\epsilon\)</span> (134Fa). Untuk setiap
+<span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span>, misalkan <span class="math inline" data-source-tex="\Cal I_m">\(\Cal I_m\)</span> keluarga interval setengah terbuka dalam
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> berbentuk <span class="math inline" data-source-tex="\coint{a,b}">\(\coint{a,b}\)</span>, dengan
+<span class="math inline" data-source-tex="a=(2^{-m}k_1,\ldots,2^{-m}k_r)">\(a=(2^{-m}k_1,\ldots,2^{-m}k_r)\)</span>, <span class="math inline" data-source-tex="k_1,\ldots,k_r">\(k_1,\ldots,k_r\)</span> bilangan bulat, dan
+<span class="math inline" data-source-tex="b=a+2^{-m}\tbf{1}">\(b=a+2^{-m}\tbf{1}\)</span>; maka <span class="math inline" data-source-tex="\Cal I_m">\(\Cal I_m\)</span> merupakan keluarga terpisah.
+Tetapkan <span class="math inline" data-source-tex="H_m=\bigcup\{I:I\in\Cal I_m,\,I\subseteq G\}">\(H_m=\bigcup\{I:I\in\Cal I_m,\,I\subseteq G\}\)</span>; maka
+<span class="math inline" data-source-tex="\sequence{m}{H_m}">\(\sequence{m}{H_m}\)</span> merupakan keluarga tak menurun dengan gabungan <span class="math inline" data-source-tex="G">\(G\)</span>,
+sehingga terdapat <span class="math inline" data-source-tex="m">\(m\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu_r(G\setminus H_m)\le\bover14\epsilon">\(\mu_r(G\setminus H_m)\le\bover14\epsilon\)</span> dan
+<span class="math inline" data-source-tex="\mu_r(E\symmdiff H_m)\le\bover12\epsilon">\(\mu_r(E\symmdiff H_m)\le\bover12\epsilon\)</span>. Namun kini <span class="math inline" data-source-tex="H_m">\(H_m\)</span> dapat
+dinyatakan sebagai gabungan terpisah <span class="math inline" data-source-tex="\bigcup_{j\le n}I_j">\(\bigcup_{j\le n}I_j\)</span>, dengan
+<span class="math inline" data-source-tex="I_0,\ldots,I_n">\(I_0,\ldots,I_n\)</span> mencacah anggota-anggota <span class="math inline" data-source-tex="\Cal I_m">\(\Cal I_m\)</span> yang termuat dalam
+<span class="math inline" data-source-tex="H_m">\(H_m\)</span>. (Kalimat terakhir gagal jika <span class="math inline" data-source-tex="H_m">\(H_m\)</span> kosong. Namun jika
+<span class="math inline" data-source-tex="H_m=\emptyset">\(H_m=\emptyset\)</span>, kita dapat mengambil <span class="math inline" data-source-tex="n=0">\(n=0\)</span>, <span class="math inline" data-source-tex="I_0=\emptyset">\(I_0=\emptyset\)</span>.) ∎</p>
+<p>Oleh karena itu, <span class="math inline" data-source-tex="h=\sum_{j=0}^n\chi I_j\in S_0">\(h=\sum_{j=0}^n\chi I_j\in S_0\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_X|f-h|
+=\mu(X\cap(E\symmdiff\bigcup_{j\le n}I_j))\le\Bover12\epsilon">\(\int_X|f-h|
+=\mu(X\cap(E\symmdiff\bigcup_{j\le n}I_j))\le\Bover12\epsilon\)</span>.</div>
+<p>Untuk <span class="math inline" data-source-tex="C_k">\(C_k\)</span>, butir (i) menyatakan bahwa untuk setiap <span class="math inline" data-source-tex="j\le n">\(j\le n\)</span>
+terdapat <span class="math inline" data-source-tex="g_j\in C_k">\(g_j\in C_k\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\int_X|g_j-\chi I_j|\le\epsilon/2(n+1)">\(\int_X|g_j-\chi I_j|\le\epsilon/2(n+1)\)</span>, sehingga
+<span class="math inline" data-source-tex="g=\sum_{j=0}^ng_j\in C_k">\(g=\sum_{j=0}^ng_j\in C_k\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_X|f-g|\le\int_X|f-h|+\int_X|h-g|
+\le\Bover{\epsilon}2+\sum_{j=0}^n\int_X|g_j-\chi I_j|\le\epsilon">\(\int_X|f-g|\le\int_X|f-h|+\int_X|h-g|
+\le\Bover{\epsilon}2+\sum_{j=0}^n\int_X|g_j-\chi I_j|\le\epsilon\)</span>.</div>
+<p> </p>
+<p>  <strong>(iii)</strong> Jika <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi sederhana, nyatakan <span class="math inline" data-source-tex="f">\(f\)</span> sebagai
+<span class="math inline" data-source-tex="\sum_{k=0}^na_k\chi E_k">\(\sum_{k=0}^na_k\chi E_k\)</span>, dengan setiap <span class="math inline" data-source-tex="E_k">\(E_k\)</span> berukuran hingga terhadap
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Setiap <span class="math inline" data-source-tex="E_k">\(E_k\)</span> dapat dinyatakan sebagai <span class="math inline" data-source-tex="X\cap F_k">\(X\cap F_k\)</span>, dengan
+<span class="math inline" data-source-tex="\mu_rF_k=\mu E_k">\(\mu_rF_k=\mu E_k\)</span> (214Ca). Menurut (ii), kita dapat menemukan
+<span class="math inline" data-source-tex="g_k\in C_k">\(g_k\in C_k\)</span>, <span class="math inline" data-source-tex="h_k\in S_0">\(h_k\in S_0\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="|a_k|\int_X|g_k-\chi F_k|\le\Bover{\epsilon}{n+1}">\(|a_k|\int_X|g_k-\chi F_k|\le\Bover{\epsilon}{n+1}\)</span>,
+  <span class="math inline" data-source-tex="|a_k|\int_X|h_k-\chi F_k|\le\Bover{\epsilon}{n+1}">\(|a_k|\int_X|h_k-\chi F_k|\le\Bover{\epsilon}{n+1}\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="k">\(k\)</span>. Tetapkan <span class="math inline" data-source-tex="g=\sum_{k=0}^na_kg_k">\(g=\sum_{k=0}^na_kg_k\)</span> dan
+<span class="math inline" data-source-tex="h=\sum_{k=0}^na_kh_k">\(h=\sum_{k=0}^na_kh_k\)</span>; maka <span class="math inline" data-source-tex="g\in C_k">\(g\in C_k\)</span>, <span class="math inline" data-source-tex="h\in S_0">\(h\in S_0\)</span>, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_X|f-g|\le\int_X\sum_{k=0}^n|a_k||\chi F_k-g_k|
+=\sum_{k=0}^n|a_k|\int_X|\chi F_k-g_k|\le\epsilon">\(\int_X|f-g|\le\int_X\sum_{k=0}^n|a_k||\chi F_k-g_k|
+=\sum_{k=0}^n|a_k|\int_X|\chi F_k-g_k|\le\epsilon\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\int_X|f-h|
+\le\sum_{k=0}^n|a_k|\int_X|\chi F_k-h_k|\le\epsilon">\(\int_X|f-h|
+\le\sum_{k=0}^n|a_k|\int_X|\chi F_k-h_k|\le\epsilon\)</span>,</div>
+<p>sebagaimana diperlukan.</p>
+<p> </p>
+<p>  <strong>(iv)</strong> Jika <span class="math inline" data-source-tex="f">\(f\)</span> sebarang fungsi terintegralkan pada <span class="math inline" data-source-tex="X">\(X\)</span>, maka
+menurut 242Ma kita dapat menemukan fungsi sederhana <span class="math inline" data-source-tex="f_0">\(f_0\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\int|f-f_0|\le\bover12\epsilon">\(\int|f-f_0|\le\bover12\epsilon\)</span>, dan menurut (iii) terdapat
+<span class="math inline" data-source-tex="g\in C_k">\(g\in C_k\)</span>, <span class="math inline" data-source-tex="h\in S_0">\(h\in S_0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\int_X|f_0-g|\le\bover12\epsilon">\(\int_X|f_0-g|\le\bover12\epsilon\)</span>,
+<span class="math inline" data-source-tex="\int_X|f_0-h|\le\bover12\epsilon">\(\int_X|f_0-h|\le\bover12\epsilon\)</span>; sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_X|f-g|
+\le\int_X|f-f_0|+\int_X|f_0-g|\le\epsilon">\(\int_X|f-g|
+\le\int_X|f-f_0|+\int_X|f_0-g|\le\epsilon\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\int_X|f-h|
+\le\int_X|f-f_0|+\int_X|f_0-h|\le\epsilon">\(\int_X|f-h|
+\le\int_X|f-f_0|+\int_X|f_0-h|\le\epsilon\)</span>.</div>
+<p> </p>
+<p><strong>(b)(i)</strong> Pertama-tama kita harus memeriksa bahwa jika <span class="math inline" data-source-tex="g\in C_k">\(g\in C_k\)</span>,
+maka <span class="math inline" data-source-tex="g\restr X">\(g\restr X\)</span> memang terintegralkan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Pokoknya di sini adalah
+bahwa jika <span class="math inline" data-source-tex="g\in C_k">\(g\in C_k\)</span> dan <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:x\in X,\,g(x)&gt;a\}">\(\{x:x\in X,\,g(x)&gt;a\}\)</span></div>
+<p>merupakan irisan <span class="math inline" data-source-tex="X">\(X\)</span> dengan suatu subhimpunan terbuka dari
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dan karenanya terukur oleh <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, sebab semua himpunan terbuka
+terukur oleh <span class="math inline" data-source-tex="\mu_r">\(\mu_r\)</span> (<a class="xref" href="../115/index.html#115G">115G</a>). Selanjutnya, <span class="math inline" data-source-tex="g">\(g\)</span> terbatas dan himpunan
+<span class="math inline" data-source-tex="E=\{x:x\in X,\,g(x)\ne 0\}">\(E=\{x:x\in X,\,g(x)\ne 0\}\)</span> terbatas dalam <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, sehingga
+berukuran luar hingga terhadap <span class="math inline" data-source-tex="\mu_r">\(\mu_r\)</span> dan berukuran hingga terhadap
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Jadi, terdapat <span class="math inline" data-source-tex="M\ge 0">\(M\ge 0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="|g|\le M\chi E">\(|g|\le M\chi E\)</span>, yang terintegralkan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Oleh karena itu, <span class="math inline" data-source-tex="g">\(g\)</span>
+terintegralkan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>.</p>
+<p>Tentu saja <span class="math inline" data-source-tex="h\restr X">\(h\restr X\)</span> terintegralkan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> untuk setiap <span class="math inline" data-source-tex="h\in S_0">\(h\in S_0\)</span>,
+karena (berdasarkan definisi ukuran subruang) <span class="math inline" data-source-tex="\mu(I\cap X)">\(\mu(I\cap X)\)</span> terdefinisi
+dan berhingga untuk setiap interval setengah terbuka terbatas <span class="math inline" data-source-tex="I">\(I\)</span>.
+ </p>
+<p>  <strong>(ii)</strong> Kini sisanya mengikuti dengan argumen yang persis sama
+seperti dalam 242Mb. Karena <span class="math inline" data-source-tex="\{g\restr X:g\in C_k\}">\(\{g\restr X:g\in C_k\}\)</span> dan
+<span class="math inline" data-source-tex="\{h\restr X:h\in S_0\}">\(\{h\restr X:h\in S_0\}\)</span> merupakan subruang-subruang linear dari
+<span class="math inline" data-source-tex="\Bbb R^X">\(\Bbb R^X\)</span> yang termuat dalam <span class="math inline" data-source-tex="\eusm L^1(\mu)">\(\eusm L^1(\mu)\)</span>, citra-citranya
+<span class="math inline" data-source-tex="C_k^{\#}">\(C_k^{\#}\)</span> dan <span class="math inline" data-source-tex="S_0^{\#}">\(S_0^{\#}\)</span> merupakan subruang-subruang linear dari <span class="math inline" data-source-tex="L^1">\(L^1\)</span>.
+Jika <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span> dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, terdapat <span class="math inline" data-source-tex="f\in\eusm L^1">\(f\in\eusm L^1\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="f^{\ssbullet}=u">\(f^{\ssbullet}=u\)</span>, serta <span class="math inline" data-source-tex="g\in C_k">\(g\in C_k\)</span>, <span class="math inline" data-source-tex="h\in S_0">\(h\in S_0\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\int_X|f-g|">\(\int_X|f-g|\)</span>, <span class="math inline" data-source-tex="\int_X|f-h|\le\epsilon">\(\int_X|f-h|\le\epsilon\)</span>; kini
+<span class="math inline" data-source-tex="v=(g\restr X)^{\ssbullet}\in C_k^{\#}">\(v=(g\restr X)^{\ssbullet}\in C_k^{\#}\)</span> dan
+<span class="math inline" data-source-tex="w=(h\restr X)^{\ssbullet}\in S_0^{\#}">\(w=(h\restr X)^{\ssbullet}\in S_0^{\#}\)</span>, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|u-v\|_1=\int_X|f-g|\le\epsilon">\(\|u-v\|_1=\int_X|f-g|\le\epsilon\)</span>,
+  <span class="math inline" data-source-tex="\|u-w\|_1=\int_X|f-h|\le\epsilon">\(\|u-w\|_1=\int_X|f-h|\le\epsilon\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="u">\(u\)</span> dan <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang, <span class="math inline" data-source-tex="C_k^{\#}">\(C_k^{\#}\)</span> dan
+<span class="math inline" data-source-tex="S_0^{\#}">\(S_0^{\#}\)</span> padat dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="242P" data-source-id="242P"><span class="anchor" id="242Pa"></span><h2><span class="source-label">242P</span> <span class="math inline" data-source-tex="L^1">\(L^1\)</span> kompleks </h2>
+<p>Sebagaimana, saya harap, Anda
+duga, kita dapat mengulangi pekerjaan di atas dengan
+<span class="math inline" data-source-tex="\eusm L^1_{\Bbb C}">\(\eusm L^1_{\Bbb C}\)</span>, ruang fungsi-fungsi terintegralkan bernilai kompleks,
+sebagai pengganti <span class="math inline" data-source-tex="\eusm L^1">\(\eusm L^1\)</span>, untuk membangun ruang Banach kompleks
+<span class="math inline" data-source-tex="L^1_{\Bbb C}">\(L^1_{\Bbb C}\)</span>. Perubahan yang diperlukan, yang didasarkan pada
+gagasan-gagasan <a class="xref" href="../241/index.html#241J">241J</a>, hanya kecil.</p>
+<p> </p>
+<p><strong>(a)</strong> Untuk <span class="math inline" data-source-tex="f\in\eusm L^0_{\Bbb C}">\(f\in\eusm L^0_{\Bbb C}\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="f\in\eusm L^1_{\Bbb C}\iff |f|\in\eusm L^1\iff
+\Real(f),\,\Imag(f)\in\eusm L^1">\(f\in\eusm L^1_{\Bbb C}\iff |f|\in\eusm L^1\iff
+\Real(f),\,\Imag(f)\in\eusm L^1\)</span>.</div>
+<p>Akibatnya, untuk <span class="math inline" data-source-tex="u\in L^0_{\Bbb C}">\(u\in L^0_{\Bbb C}\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="u\in L^1_{\Bbb C}\iff |u|\in L^1\iff
+\Real(u),\,\Imag(u)\in
+L^1">\(u\in L^1_{\Bbb C}\iff |u|\in L^1\iff
+\Real(u),\,\Imag(u)\in
+L^1\)</span>.</div>
+</section>
+<section class="source-unit" id="242Pb" data-source-id="242Pb"><h3><span class="source-label">242Pb</span> <strong>(b)</strong> </h3>
+<p>Untuk membuktikan versi kompleks dari
+<a class="xref" href="#242E">242E</a>, perhatikan bahwa jika <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> suatu barisan dalam
+<span class="math inline" data-source-tex="\eusm L^1_{\Bbb C}">\(\eusm L^1_{\Bbb C}\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\int|f_n|&lt;\infty">\(\sum_{n=0}^{\infty}\int|f_n|&lt;\infty\)</span>, maka
+<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\int|\Real(f_n)|">\(\sum_{n=0}^{\infty}\int|\Real(f_n)|\)</span> dan
+<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\int|\Imag(f_n)|">\(\sum_{n=0}^{\infty}\int|\Imag(f_n)|\)</span> keduanya berhingga, sehingga kita
+dapat menerapkan <a class="xref" href="#242E">242E</a> dua kali dan melihat bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int(\sum_{n=0}^{\infty}f_n)
+=\int(\sum_{n=0}^{\infty}\Real(f_n))
+  +i\int(\sum_{n=0}^{\infty}\Imag(f_n))
+=\sum_{n=0}^{\infty}\int f_n">\(\int(\sum_{n=0}^{\infty}f_n)
+=\int(\sum_{n=0}^{\infty}\Real(f_n))
+  +i\int(\sum_{n=0}^{\infty}\Imag(f_n))
+=\sum_{n=0}^{\infty}\int f_n\)</span>.</div>
+<p>Oleh karena itu, dengan argumen <a class="xref" href="#242F">242F</a> kita dapat membuktikan
+bahwa <span class="math inline" data-source-tex="L^1_{\Bbb C}">\(L^1_{\Bbb C}\)</span> lengkap terhadap <span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span> .</p>
+</section>
+<section class="source-unit" id="242Pc" data-source-id="242Pc"><h3><span class="source-label">242Pc</span> <strong>(c)</strong> </h3>
+<p>Demikian pula, hanya sedikit perubahan
+diperlukan untuk menyesuaikan <a class="xref" href="#242J">242J</a> agar memberikan deskripsi operator
+ekspektasi bersyarat
+<span class="math inline" data-source-tex="P:L^1_{\Bbb C}(\mu)\to L^1_{\Bbb C}(\mu\restrp\Tau)">\(P:L^1_{\Bbb C}(\mu)\to L^1_{\Bbb C}(\mu\restrp\Tau)\)</span> ketika
+<span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang probabilitas dan <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> suatu
+subaljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. Dalam rumus</p>
+<div class="centerline"><span class="math inline" data-source-tex="|Pu|\le P|u|">\(|Pu|\le P|u|\)</span></div>
+<p>dari <a class="xref" href="#242Je">242Je</a>, kita perlu mengetahui bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="|Pu|=\sup_{|\zeta|=1}\Real(\zeta Pu)">\(|Pu|=\sup_{|\zeta|=1}\Real(\zeta Pu)\)</span></div>
+<p>dalam <span class="math inline" data-source-tex="L^0(\mu\restrp\Tau)">\(L^0(\mu\restrp\Tau)\)</span> (<a class="xref" href="../241/index.html#241Jc">241Jc</a>), sedangkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Real(\zeta Pu)=\Real(P(\zeta u))
+=P(\Real(\zeta u))\le P|u|">\(\Real(\zeta Pu)=\Real(P(\zeta u))
+=P(\Real(\zeta u))\le P|u|\)</span></div>
+<p>kapan pun <span class="math inline" data-source-tex="|\zeta|=1">\(|\zeta|=1\)</span>.</p>
+</section>
+<section class="source-unit" id="242Pd" data-source-id="242Pd"><h3><span class="source-label">242Pd</span> <strong>(d)</strong> </h3>
+<p>Dalam <a class="xref" href="#242M">242M</a>, kita perlu mengganti <span class="math inline" data-source-tex="\eusm S">\(\eusm S\)</span>
+dengan <span class="math inline" data-source-tex="\eusm S_{\Bbb C}">\(\eusm S_{\Bbb C}\)</span>, yaitu ruang ‘fungsi sederhana bernilai kompleks’
+berbentuk <span class="math inline" data-source-tex="\sum_{k=0}^na_k\chi E_k">\(\sum_{k=0}^na_k\chi E_k\)</span>, dengan setiap <span class="math inline" data-source-tex="a_k">\(a_k\)</span> bilangan kompleks
+dan setiap <span class="math inline" data-source-tex="E_k">\(E_k\)</span> himpunan terukur berukuran hingga; kemudian kita memperoleh
+subruang linear padat
+<span class="math inline" data-source-tex="S_{\Bbb C}=\{f^{\ssbullet}:f\in\eusm S_{\Bbb C}\}">\(S_{\Bbb C}=\{f^{\ssbullet}:f\in\eusm S_{\Bbb C}\}\)</span> dari
+<span class="math inline" data-source-tex="L^1_{\Bbb C}">\(L^1_{\Bbb C}\)</span>. Dalam <a class="xref" href="#242O">242O</a>, kita harus mengganti <span class="math inline" data-source-tex="C_k">\(C_k\)</span> dengan
+<span class="math inline" data-source-tex="C_k(\BbbR^r;\Bbb C)">\(C_k(\BbbR^r;\Bbb C)\)</span>, yaitu ruang fungsi kontinu terbatas bernilai
+kompleks yang mempunyai dukungan terbatas, dan <span class="math inline" data-source-tex="S_0">\(S_0\)</span> dengan rentang linear
+atas <span class="math inline" data-source-tex="\Bbb C">\(\Bbb C\)</span> dari
+<span class="math inline" data-source-tex="\{\chi I:I">\(\{\chi I:I\)</span> suatu interval setengah terbuka terbatas<span class="math inline" data-source-tex="\}">\(\}\)</span>.</p>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="242X" data-source-id="242X"><span class="anchor" id="242Xa"></span><h2><span class="source-label">242X</span> Latihan dasar <span class="math inline" data-source-tex="\pmb{&gt;}">\(\pmb{&gt;}\)</span>(a) <span class="importance" title="Sangat penting">penting</span></h2>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan,
+dan misalkan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> ukuran cacah pada <span class="math inline" data-source-tex="X">\(X\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="L^1(\mu)">\(L^1(\mu)\)</span>
+dapat diidentifikasi dengan ruang <span class="math inline" data-source-tex="\ell^1(X)">\(\ell^1(X)\)</span> dari fungsi-fungsi bernilai
+riil pada <span class="math inline" data-source-tex="X">\(X\)</span> yang dapat dijumlahkan secara mutlak (lihat <a class="xref" href="../226/index.html#226A">226A</a>). Khususnya,
+ruang <span class="math inline" data-source-tex="\ell^1=\ell^1(\Bbb N)">\(\ell^1=\ell^1(\Bbb N)\)</span> dari barisan bernilai riil yang dapat
+dijumlahkan secara mutlak merupakan suatu ruang <span class="math inline" data-source-tex="L^1">\(L^1\)</span>. Tuliskan bukti <a class="xref" href="#242F">242F</a>
+yang disesuaikan dengan kasus-kasus khusus ini.</p>
+</section>
+<section class="source-unit" id="242Xb" data-source-id="242Xb"><h3><span class="source-label">242Xb</span> (&gt;b) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sebarang ruang ukur, dan
+<span class="math inline" data-source-tex="\hat\mu">\(\hat\mu\)</span> kelengkapan dari <span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\eusm L^1(\hat\mu)=\eusm L^1(\mu)">\(\eusm L^1(\hat\mu)=\eusm L^1(\mu)\)</span> dan
+<span class="math inline" data-source-tex="L^1(\hat\mu)=L^1(\mu)">\(L^1(\hat\mu)=L^1(\mu)\)</span> (bandingkan <a class="xref" href="../241/index.html#241Xb">241Xb</a>).</p>
+</section>
+<section class="source-unit" id="242Xc" data-source-id="242Xc"><h3><span class="source-label">242Xc</span> (c) </h3>
+<p>Misalkan
+<span class="math inline" data-source-tex="\langle(X_i,\Sigma_i,\mu_i)\rangle_{i\in I}">\(\langle(X_i,\Sigma_i,\mu_i)\rangle_{i\in I}\)</span> suatu keluarga ruang ukur,
+dan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> jumlah langsungnya. Tunjukkan bahwa isomorfisme antara
+<span class="math inline" data-source-tex="L^0(\mu)">\(L^0(\mu)\)</span> dan <span class="math inline" data-source-tex="\prod_{i\in I}L^0(\mu_i)">\(\prod_{i\in I}L^0(\mu_i)\)</span> (<a class="xref" href="../241/index.html#241Xd">241Xd</a>) mengimbaskan suatu
+identifikasi antara <span class="math inline" data-source-tex="L^1(\mu)">\(L^1(\mu)\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{u:u\in\prod_{i\in I}L^1(\mu_i),\,
+  \|u\|=\sum_{i\in I}\|u(i)\|_1&lt;\infty\}
+\subseteq\prod_{i\in I}L^1(\mu_i)">\(\{u:u\in\prod_{i\in I}L^1(\mu_i),\,
+  \|u\|=\sum_{i\in I}\|u(i)\|_1&lt;\infty\}
+\subseteq\prod_{i\in I}L^1(\mu_i)\)</span>.</div>
+</section>
+<section class="source-unit" id="242Xd" data-source-id="242Xd"><h3><span class="source-label">242Xd</span> (d) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dan <span class="math inline" data-source-tex="(Y,\Tau,\nu)">\((Y,\Tau,\nu)\)</span>
+ruang-ruang ukur, dan <span class="math inline" data-source-tex="\phi:X\to Y">\(\phi:X\to Y\)</span> suatu pelestari ukuran melalui prapeta fungsi. Tunjukkan bahwa
+<span class="math inline" data-source-tex="g\mapsto g\phi:\eusm L^1(\nu)\to\eusm L^1(\mu)">\(g\mapsto g\phi:\eusm L^1(\nu)\to\eusm L^1(\mu)\)</span> (<a class="xref" href="../235/index.html#235G">235G</a>) mengimbaskan
+operator linear <span class="math inline" data-source-tex="T:L^1(\nu)\to L^1(\mu)">\(T:L^1(\nu)\to L^1(\mu)\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\|Tv\|_1=\|v\|_1">\(\|Tv\|_1=\|v\|_1\)</span> untuk setiap <span class="math inline" data-source-tex="v\in L^1(\nu)">\(v\in L^1(\nu)\)</span>.</p>
+</section>
+<section class="source-unit" id="242Xe" data-source-id="242Xe"><h3><span class="source-label">242Xe</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="U">\(U\)</span> suatu ruang Riesz (definisi: <a class="xref" href="../241/index.html#241Ed">241Ed</a>).
+Suatu <strong>norma Riesz</strong> pada <span class="math inline" data-source-tex="U">\(U\)</span> adalah norma <span class="math inline" data-source-tex="\|\,\|">\(\|\,\|\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\|u\|\le\|v\|">\(\|u\|\le\|v\|\)</span> kapan pun <span class="math inline" data-source-tex="|u|\le|v|">\(|u|\le|v|\)</span>. Tunjukkan bahwa jika
+<span class="math inline" data-source-tex="U">\(U\)</span> diberi topologi normanya (2A4Bb) untuk norma semacam itu, maka
+(i) <span class="math inline" data-source-tex="u\mapsto|u|:U\to U">\(u\mapsto|u|:U\to U\)</span>, <span class="math inline" data-source-tex="(u,v)\mapsto u\vee v:U\times U\to U">\((u,v)\mapsto u\vee v:U\times U\to U\)</span>
+kontinu (ii) <span class="math inline" data-source-tex="\{u:u\ge 0\}">\(\{u:u\ge 0\}\)</span> tertutup.</p>
+</section>
+<section class="source-unit" id="242Xf" data-source-id="242Xf"><h3><span class="source-label">242Xf</span> (f) </h3>
+<p>Tunjukkan bahwa setiap kisi Banach harus merupakan
+ruang Riesz Archimedes (<a class="xref" href="../241/index.html#241Fa">241Fa</a>).</p>
+</section>
+<section class="source-unit" id="242Xg" data-source-id="242Xg"><h3><span class="source-label">242Xg</span> (g) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang probabilitas,
+<span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> suatu subaljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, dan <span class="math inline" data-source-tex="\Upsilon">\(\Upsilon\)</span> suatu
+subaljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>. Misalkan
+<span class="math inline" data-source-tex="P_1:L^1(\mu)\to L^1(\mu\restrp\Tau)">\(P_1:L^1(\mu)\to L^1(\mu\restrp\Tau)\)</span>,
+<span class="math inline" data-source-tex="P_2:L^1(\mu\restrp\Tau)\to L^1(\mu\restrp\Upsilon)">\(P_2:L^1(\mu\restrp\Tau)\to L^1(\mu\restrp\Upsilon)\)</span>, dan
+<span class="math inline" data-source-tex="P:L^1(\mu)\to L^1(\mu\restrp\Upsilon)">\(P:L^1(\mu)\to L^1(\mu\restrp\Upsilon)\)</span> operator-operator ekspektasi
+bersyarat yang bersesuaian. Tunjukkan bahwa <span class="math inline" data-source-tex="P=P_2P_1">\(P=P_2P_1\)</span>.</p>
+</section>
+<section class="source-unit" id="242Xh" data-source-id="242Xh"><h3><span class="source-label">242Xh</span> (h) </h3>
+<p>Tunjukkan bahwa jika <span class="math inline" data-source-tex="g:\BbbR^r\to\Bbb R">\(g:\BbbR^r\to\Bbb R\)</span> kontinu dan
+mempunyai dukungan terbatas, maka fungsi itu terbatas dan mencapai batas-batasnya.
+<span class="hint" role="note"><strong>Petunjuk:</strong> 2A2F-2A2G.</span></p>
+</section>
+<section class="source-unit" id="242Xi" data-source-id="242Xi"><h3><span class="source-label">242Xi</span> (i) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> ukuran Lebesgue pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. (i) Ambil
+<span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>. Tunjukkan bahwa jika
+<span class="math inline" data-source-tex="\phi_{\delta}(x)=\exp(-\Bover{1}{\delta^2-x^2})">\(\phi_{\delta}(x)=\exp(-\Bover{1}{\delta^2-x^2})\)</span> untuk
+<span class="math inline" data-source-tex="|x|&lt;\delta">\(|x|&lt;\delta\)</span>, dan <span class="math inline" data-source-tex="0">\(0\)</span> untuk <span class="math inline" data-source-tex="|x|\ge\delta">\(|x|\ge\delta\)</span>, maka <span class="math inline" data-source-tex="\phi_{\delta}">\(\phi_{\delta}\)</span> <strong>mulus</strong>,
+yakni dapat didiferensialkan sebanyak kali yang diinginkan. (ii) Tunjukkan
+bahwa jika <span class="math inline" data-source-tex="F_{\delta}(x)=\int_{-\infty}^x\phi_{\delta}d\mu">\(F_{\delta}(x)=\int_{-\infty}^x\phi_{\delta}d\mu\)</span> untuk
+<span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span>, maka <span class="math inline" data-source-tex="F_{\delta}">\(F_{\delta}\)</span> mulus. (iii) Tunjukkan bahwa jika
+<span class="math inline" data-source-tex="a&lt;b&lt;c&lt;d">\(a&lt;b&lt;c&lt;d\)</span> dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, terdapat fungsi mulus <span class="math inline" data-source-tex="h">\(h\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\chi[b,c]\le h\le\chi[a,d]">\(\chi[b,c]\le h\le\chi[a,d]\)</span>. (iv) Tuliskan <span class="math inline" data-source-tex="\eusm D">\(\eusm D\)</span> untuk ruang
+fungsi-fungsi mulus <span class="math inline" data-source-tex="h:\Bbb R\to\Bbb R">\(h:\Bbb R\to\Bbb R\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\{x:h(x)\ne 0\}">\(\{x:h(x)\ne 0\}\)</span> terbatas. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\{h^{\ssbullet}:h\in\eusm D\}">\(\{h^{\ssbullet}:h\in\eusm D\}\)</span> padat dalam <span class="math inline" data-source-tex="L^1(\mu)">\(L^1(\mu)\)</span>.
+(v) Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai riil yang terintegralkan pada setiap
+subhimpunan terbatas dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="f\times h">\(f\times h\)</span>
+terintegralkan untuk setiap <span class="math inline" data-source-tex="h\in\eusm D">\(h\in\eusm D\)</span>, dan bahwa jika
+<span class="math inline" data-source-tex="\int f\times h=0">\(\int f\times h=0\)</span> untuk setiap <span class="math inline" data-source-tex="h\in\eusm D">\(h\in\eusm D\)</span>, maka <span class="math inline" data-source-tex="f=0">\(f=0\)</span> hampir di
+mana-mana. <span class="hint" role="note"><strong>Petunjuk:</strong> <a class="xref" href="../222/index.html#222D">222D</a>.</span></p>
+</section>
+<section class="source-unit" id="242Xj" data-source-id="242Xj"><h3><span class="source-label">242Xj</span> (j) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang probabilitas,
+<span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> suatu subaljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, dan
+<span class="math inline" data-source-tex="P:L^1(\mu)\to L^1(\mu\restrp\Tau)\subseteq L^1(\mu)">\(P:L^1(\mu)\to L^1(\mu\restrp\Tau)\subseteq L^1(\mu)\)</span> operator
+ekspektasi bersyarat yang bersesuaian. Tunjukkan bahwa jika <span class="math inline" data-source-tex="u">\(u\)</span>,
+<span class="math inline" data-source-tex="v\in L^1(\mu)">\(v\in L^1(\mu)\)</span> sedemikian sehingga <span class="math inline" data-source-tex="P|u|\times P|v|\in L^1(\mu)">\(P|u|\times P|v|\in L^1(\mu)\)</span>,
+maka <span class="math inline" data-source-tex="\int Pu\times v=\int Pu\times Pv=\int u\times Pv">\(\int Pu\times v=\int Pu\times Pv=\int u\times Pv\)</span>.</p>
+</section>
+<section class="source-unit" id="242Y" data-source-id="242Y"><span class="anchor" id="242Ya"></span><h2><span class="source-label">242Y</span> Latihan lanjutan (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur. Misalkan
+<span class="math inline" data-source-tex="A\subseteq L^1=L^1(\mu)">\(A\subseteq L^1=L^1(\mu)\)</span> suatu himpunan tak kosong yang terarah ke bawah,
+dan andaikan bahwa <span class="math inline" data-source-tex="\inf A=0">\(\inf A=0\)</span> dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span>. (i) Tunjukkan bahwa
+<span class="math inline" data-source-tex="\inf_{u\in A}\|u\|_1=0">\(\inf_{u\in A}\|u\|_1=0\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> tetapkan <span class="math inline" data-source-tex="\gamma=\inf_{u\in A}\|u\|_1">\(\gamma=\inf_{u\in A}\|u\|_1\)</span>; temukan suatu barisan tak
+menaik <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> dalam <span class="math inline" data-source-tex="A">\(A\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\|u_n\|_1=\gamma">\(\lim_{n\to\infty}\|u_n\|_1=\gamma\)</span>; tetapkan
+<span class="math inline" data-source-tex="v=\inf_{n\in\Bbb N}u_n">\(v=\inf_{n\in\Bbb N}u_n\)</span> dan tunjukkan bahwa <span class="math inline" data-source-tex="u\wedge v=v">\(u\wedge v=v\)</span> untuk setiap
+<span class="math inline" data-source-tex="u\in A">\(u\in A\)</span>, sehingga <span class="math inline" data-source-tex="v=0">\(v=0\)</span>.</span> (ii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="U">\(U\)</span> sebarang
+himpunan terbuka yang memuat <span class="math inline" data-source-tex="0">\(0\)</span>, terdapat <span class="math inline" data-source-tex="u\in A">\(u\in A\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="v\in U">\(v\in U\)</span> kapan pun <span class="math inline" data-source-tex="0\le v\le u">\(0\le v\le u\)</span>.</p>
+</section>
+<section class="source-unit" id="242Yb" data-source-id="242Yb"><h3><span class="source-label">242Yb</span> (b) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan <span class="math inline" data-source-tex="Y">\(Y\)</span>
+sebarang subhimpunan dari <span class="math inline" data-source-tex="X">\(X\)</span>; misalkan <span class="math inline" data-source-tex="\mu_Y">\(\mu_Y\)</span> ukuran subruang pada <span class="math inline" data-source-tex="Y">\(Y\)</span>
+dan <span class="math inline" data-source-tex="T:L^0(\mu)\to L^0(\mu_Y)">\(T:L^0(\mu)\to L^0(\mu_Y)\)</span> peta kanonik yang dideskripsikan dalam
+<a class="xref" href="../241/index.html#241Yg">241Yg</a>. (i) Tunjukkan bahwa <span class="math inline" data-source-tex="Tu\in L^1(\mu_Y)">\(Tu\in L^1(\mu_Y)\)</span> dan
+<span class="math inline" data-source-tex="\|Tu\|_1\le\|u\|_1">\(\|Tu\|_1\le\|u\|_1\)</span> untuk setiap <span class="math inline" data-source-tex="u\in L^1(\mu)">\(u\in L^1(\mu)\)</span>. (ii) Tunjukkan
+bahwa jika <span class="math inline" data-source-tex="u\in L^1(\mu)">\(u\in L^1(\mu)\)</span>, maka <span class="math inline" data-source-tex="\|Tu\|_1=\|u\|_1">\(\|Tu\|_1=\|u\|_1\)</span> jika dan hanya jika
+<span class="math inline" data-source-tex="\int_Eu=\int_{Y\cap E}Tu">\(\int_Eu=\int_{Y\cap E}Tu\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>. (iii) Tunjukkan
+bahwa <span class="math inline" data-source-tex="T">\(T\)</span> surjektif dan bahwa
+<span class="math inline" data-source-tex="\|v\|_1=\min\{\|u\|_1:u\in L^1(\mu),\,Tu=v\}">\(\|v\|_1=\min\{\|u\|_1:u\in L^1(\mu),\,Tu=v\}\)</span> untuk setiap
+<span class="math inline" data-source-tex="v\in L^1(\mu_Y)">\(v\in L^1(\mu_Y)\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> 214Eb.</span> (Lihat juga <a class="xref" href="../244/index.html#244Yd">244Yd</a> di bawah.)</p>
+</section>
+<section class="source-unit" id="242Yc" data-source-id="242Yc"><h3><span class="source-label">242Yc</span> (c) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur. Tuliskan
+<span class="math inline" data-source-tex="\eusm L^1_{\Sigma}">\(\eusm L^1_{\Sigma}\)</span> untuk ruang semua fungsi <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>-terukur yang
+terintegralkan dari <span class="math inline" data-source-tex="X">\(X\)</span> ke <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan <span class="math inline" data-source-tex="\eusm N">\(\eusm N\)</span> untuk subruang dari
+<span class="math inline" data-source-tex="\eusm L^1_{\Sigma}">\(\eusm L^1_{\Sigma}\)</span> yang terdiri atas fungsi-fungsi terukur yang bernilai
+nol hampir di mana-mana. (i) Tunjukkan bahwa <span class="math inline" data-source-tex="\eusm L^1_{\Sigma}">\(\eusm L^1_{\Sigma}\)</span>
+merupakan ruang Riesz lengkap-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> Dedekind. (ii) Tunjukkan bahwa
+<span class="math inline" data-source-tex="L^1(\mu)">\(L^1(\mu)\)</span> dapat diidentifikasi, sebagai ruang linear terurut, dengan hasil
+bagi <span class="math inline" data-source-tex="\eusm L^1_{\Sigma}/\eusm N">\(\eusm L^1_{\Sigma}/\eusm N\)</span> sebagaimana didefinisikan dalam <a class="xref" href="../241/index.html#241Yb">241Yb</a>.
+(iii) Tunjukkan bahwa <span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span> merupakan seminorma pada
+<span class="math inline" data-source-tex="\eusm L^1_{\Sigma}">\(\eusm L^1_{\Sigma}\)</span>. (iv) Tunjukkan bahwa
+<span class="math inline" data-source-tex="f\mapsto|f|:\eusm L^1_{\Sigma}\to\eusm L^1_{\Sigma}">\(f\mapsto|f|:\eusm L^1_{\Sigma}\to\eusm L^1_{\Sigma}\)</span> kontinu jika
+<span class="math inline" data-source-tex="\eusm L^1_{\Sigma}">\(\eusm L^1_{\Sigma}\)</span> diberi topologi yang didefinisikan dari
+<span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span>. (v) Tunjukkan bahwa <span class="math inline" data-source-tex="\{f:f=0">\(\{f:f=0\)</span> hampir di mana-mana<span class="math inline" data-source-tex="\}">\(\}\)</span>
+tertutup dalam <span class="math inline" data-source-tex="\eusm L^1_{\Sigma}">\(\eusm L^1_{\Sigma}\)</span>, tetapi <span class="math inline" data-source-tex="\{f:f\ge 0\}">\(\{f:f\ge 0\}\)</span> belum tentu
+tertutup.</p>
+</section>
+<section class="source-unit" id="242Yd" data-source-id="242Yd"><h3><span class="source-label">242Yd</span> (d) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur, dan
+<span class="math inline" data-source-tex="\tilde\mu">\(\tilde\mu\)</span> versi c.l.d. dari <span class="math inline" data-source-tex="\mu">\(\mu\)</span> (<a class="xref" href="../213/index.html#213E">213E</a>). Tunjukkan bahwa inklusi
+<span class="math inline" data-source-tex="\eusm L^1(\mu)\subseteq\eusm L^1(\tilde\mu)">\(\eusm L^1(\mu)\subseteq\eusm L^1(\tilde\mu)\)</span> mengimbaskan suatu
+isomorfisme, sebagai ruang linear bernorma terurut, antara
+<span class="math inline" data-source-tex="L^1(\tilde\mu)">\(L^1(\tilde\mu)\)</span> dan <span class="math inline" data-source-tex="L^1(\mu)">\(L^1(\mu)\)</span>.</p>
+</section>
+<section class="source-unit" id="242Ye" data-source-id="242Ye"><h3><span class="source-label">242Ye</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan
+<span class="math inline" data-source-tex="u_0,\ldots,u_n\in L^1(\mu)">\(u_0,\ldots,u_n\in L^1(\mu)\)</span>. (i) Andaikan <span class="math inline" data-source-tex="k_0,\ldots,k_n\in\Bbb Z">\(k_0,\ldots,k_n\in\Bbb Z\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\sum_{i=0}^nk_i=1">\(\sum_{i=0}^nk_i=1\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\sum_{i=0}^n\sum_{j=0}^nk_ik_j\|u_i-u_j\|_1\le 0">\(\sum_{i=0}^n\sum_{j=0}^nk_ik_j\|u_i-u_j\|_1\le 0\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> 
+<span class="math inline" data-source-tex="\sum_{i=0}^n\sum_{j=0}^n
+k_ik_j|\alpha_i-\alpha_j|\le 0">\(\sum_{i=0}^n\sum_{j=0}^n
+k_ik_j|\alpha_i-\alpha_j|\le 0\)</span> untuk semua
+<span class="math inline" data-source-tex="\alpha_0,\ldots,\alpha_n\in\Bbb R">\(\alpha_0,\ldots,\alpha_n\in\Bbb R\)</span>.</span> (ii) Andaikan
+<span class="math inline" data-source-tex="\gamma_0,\ldots,\gamma_n\in\Bbb R">\(\gamma_0,\ldots,\gamma_n\in\Bbb R\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\sum_{i=0}^n\gamma_i=0">\(\sum_{i=0}^n\gamma_i=0\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\sum_{i=0}^n\sum_{j=0}^n\gamma_i\gamma_j\|u_i-u_j\|_1\le 0">\(\sum_{i=0}^n\sum_{j=0}^n\gamma_i\gamma_j\|u_i-u_j\|_1\le 0\)</span>.</p>
+</section>
+<section class="source-unit" id="242Yf" data-source-id="242Yf"><h3><span class="source-label">242Yf</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur, dan
+<span class="math inline" data-source-tex="A\subseteq L^1=L^1(\mu)">\(A\subseteq L^1=L^1(\mu)\)</span> suatu himpunan tak kosong yang terarah ke atas.
+Andaikan bahwa <span class="math inline" data-source-tex="A">\(A\)</span> terbatas terhadap norma <span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span>. (i) Tunjukkan
+bahwa terdapat barisan tak menurun <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> dalam <span class="math inline" data-source-tex="A">\(A\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\lim_{n\to\infty}\int u_n=\sup_{u\in A}\int u">\(\lim_{n\to\infty}\int u_n=\sup_{u\in A}\int u\)</span>, dan bahwa
+<span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> merupakan barisan Cauchy. (ii) Tunjukkan bahwa
+<span class="math inline" data-source-tex="w=\sup A">\(w=\sup A\)</span> terdefinisi dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span> dan termasuk dalam penutupan menurut
+norma dari <span class="math inline" data-source-tex="A">\(A\)</span> dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span>, sehingga, khususnya,
+<span class="math inline" data-source-tex="\|w\|_1\le\sup_{u\in A}\|u\|_1">\(\|w\|_1\le\sup_{u\in A}\|u\|_1\)</span>.</p>
+</section>
+<section class="source-unit" id="242Yg" data-source-id="242Yg"><h3><span class="source-label">242Yg</span> (g) </h3>
+<p>Suatu norma Riesz (definisi: <a class="xref" href="#242Xe">242Xe</a>) pada ruang Riesz
+<span class="math inline" data-source-tex="U">\(U\)</span> disebut <strong>kontinu menurut urutan</strong> jika
+<span class="math inline" data-source-tex="\inf_{u\in A}\|u\|=0">\(\inf_{u\in A}\|u\|=0\)</span> kapan pun <span class="math inline" data-source-tex="A\subseteq U">\(A\subseteq U\)</span> suatu himpunan tak
+kosong yang terarah ke bawah dengan infimum <span class="math inline" data-source-tex="0">\(0\)</span>. (Jadi <a class="xref" href="#242Ya">242Ya</a> menyatakan
+bahwa semua norma <span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span> kontinu menurut urutan.) Tunjukkan bahwa
+dalam hal ini (i) setiap barisan tak menurun dalam <span class="math inline" data-source-tex="U">\(U\)</span> yang mempunyai batas
+atas dalam <span class="math inline" data-source-tex="U">\(U\)</span> harus merupakan barisan Cauchy (ii) jika <span class="math inline" data-source-tex="U">\(U\)</span> suatu kisi
+Banach, maka <span class="math inline" data-source-tex="U">\(U\)</span> lengkap Dedekind. (<em>Petunjuk untuk (i)\/</em>: jika
+<span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> suatu barisan tak menurun dengan batas atas dalam <span class="math inline" data-source-tex="U">\(U\)</span>,
+misalkan <span class="math inline" data-source-tex="B">\(B\)</span> himpunan batas atas dari <span class="math inline" data-source-tex="\{u_n:n\in\Bbb N\}">\(\{u_n:n\in\Bbb N\}\)</span> dan tunjukkan
+bahwa <span class="math inline" data-source-tex="A=\{v-u_n:v\in B,\,n\in\Bbb N\}">\(A=\{v-u_n:v\in B,\,n\in\Bbb N\}\)</span> mempunyai infimum <span class="math inline" data-source-tex="0">\(0\)</span> karena
+<span class="math inline" data-source-tex="U">\(U\)</span> bersifat Archimedes.)</p>
+</section>
+<section class="source-unit" id="242Yh" data-source-id="242Yh"><h3><span class="source-label">242Yh</span> (h) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sebarang ruang ukur.
+Tunjukkan bahwa <span class="math inline" data-source-tex="L^1(\mu)">\(L^1(\mu)\)</span> mempunyai sifat supremum terhitung (<a class="xref" href="../241/index.html#241Ye">241Ye</a>).</p>
+</section>
+<section class="source-unit" id="242Yi" data-source-id="242Yi"><h3><span class="source-label">242Yi</span> (i) </h3>
+<p>Secara lebih umum, tunjukkan bahwa setiap ruang Riesz
+dengan norma Riesz yang kontinu menurut urutan mempunyai sifat supremum
+terhitung.</p>
+</section>
+<section class="source-unit" id="242Yj" data-source-id="242Yj"><h3><span class="source-label">242Yj</span> (j) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dan <span class="math inline" data-source-tex="(Y,\Tau,\nu)">\((Y,\Tau,\nu)\)</span>
+ruang-ruang ukur dan <span class="math inline" data-source-tex="U\subseteq L^0(\mu)">\(U\subseteq L^0(\mu)\)</span> suatu subruang linear.
+Misalkan <span class="math inline" data-source-tex="T:U\to L^0(\nu)">\(T:U\to L^0(\nu)\)</span> suatu operator linear sedemikian sehingga
+<span class="math inline" data-source-tex="Tu\ge 0">\(Tu\ge 0\)</span> dalam <span class="math inline" data-source-tex="L^0(\nu)">\(L^0(\nu)\)</span> kapan pun <span class="math inline" data-source-tex="u\in U">\(u\in U\)</span> dan <span class="math inline" data-source-tex="u\ge 0">\(u\ge 0\)</span> dalam
+<span class="math inline" data-source-tex="L^0(\mu)">\(L^0(\mu)\)</span>. Andaikan <span class="math inline" data-source-tex="w\in U">\(w\in U\)</span> sedemikian sehingga <span class="math inline" data-source-tex="w\ge 0">\(w\ge 0\)</span> dan
+<span class="math inline" data-source-tex="Tw=(\chi Y)^{\ssbullet}">\(Tw=(\chi Y)^{\ssbullet}\)</span>. Tunjukkan bahwa kapan pun
+<span class="math inline" data-source-tex="\phi:\Bbb R\to\Bbb R">\(\phi:\Bbb R\to\Bbb R\)</span> suatu fungsi cembung dan <span class="math inline" data-source-tex="u\in L^0(\mu)">\(u\in L^0(\mu)\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="w\times u">\(w\times u\)</span> dan <span class="math inline" data-source-tex="w\times\bar\phi(u)\in U">\(w\times\bar\phi(u)\in U\)</span>, dengan
+mendefinisikan <span class="math inline" data-source-tex="\bar\phi:L^0(\mu)\to L^0(\mu)">\(\bar\phi:L^0(\mu)\to L^0(\mu)\)</span> seperti dalam <a class="xref" href="../241/index.html#241I">241I</a>,
+maka <span class="math inline" data-source-tex="\bar\phi T(w\times u)\le T(w\times\bar\phi u)">\(\bar\phi T(w\times u)\le T(w\times\bar\phi u)\)</span>. Jelaskan bagaimana
+hasil ini dapat dipandang sebagai perumuman bersama ketaksamaan Jensen,
+sebagaimana dinyatakan dalam <a class="xref" href="../233/index.html#233I">233I</a>, dan <a class="xref" href="#242K">242K</a> di atas. Lihat juga <a class="xref" href="../244/index.html#244M">244M</a> di
+bawah.</p>
+</section>
+<section class="source-unit" id="242Yk" data-source-id="242Yk"><h3><span class="source-label">242Yk</span> (k) </h3>
+<p>(i) Suatu fungsi <span class="math inline" data-source-tex="\phi:\Bbb C\to\Bbb R">\(\phi:\Bbb C\to\Bbb R\)</span> disebut
+<strong>cembung</strong> jika
+<span class="math inline" data-source-tex="\phi(ab+(1-a)c)\le a\phi(b)+(1-a)\phi(c)">\(\phi(ab+(1-a)c)\le a\phi(b)+(1-a)\phi(c)\)</span> untuk semua <span class="math inline" data-source-tex="b">\(b\)</span>,
+<span class="math inline" data-source-tex="c\in\Bbb C">\(c\in\Bbb C\)</span> dan <span class="math inline" data-source-tex="a\in [0,1]">\(a\in [0,1]\)</span>. (ii) Tunjukkan bahwa fungsi semacam itu
+harus terbatas pada setiap subhimpunan terbatas dari <span class="math inline" data-source-tex="\Bbb C">\(\Bbb C\)</span>. (iii) Jika
+<span class="math inline" data-source-tex="\phi:\Bbb C\to\Bbb R">\(\phi:\Bbb C\to\Bbb R\)</span> cembung dan <span class="math inline" data-source-tex="c\in\Bbb C">\(c\in\Bbb C\)</span>, tunjukkan bahwa
+terdapat <span class="math inline" data-source-tex="b\in\Bbb C">\(b\in\Bbb C\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\phi(x)\ge\phi(c)+\Real(b(x-c))">\(\phi(x)\ge\phi(c)+\Real(b(x-c))\)</span> untuk setiap <span class="math inline" data-source-tex="x\in\Bbb C">\(x\in\Bbb C\)</span>. (iv) Jika
+<span class="math inline" data-source-tex="\langle b_c\rangle_{c\in\Bbb C}">\(\langle b_c\rangle_{c\in\Bbb C}\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\phi(x)\ge\phi_c(x)=\phi(c)+\Real(b_c(x-c))">\(\phi(x)\ge\phi_c(x)=\phi(c)+\Real(b_c(x-c))\)</span> untuk semua
+<span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="c\in\Bbb C">\(c\in\Bbb C\)</span>, tunjukkan bahwa <span class="math inline" data-source-tex="\{b_c:c\in I\}">\(\{b_c:c\in I\}\)</span> terbatas untuk
+setiap <span class="math inline" data-source-tex="I\subseteq\Bbb C">\(I\subseteq\Bbb C\)</span> terbatas. (v) Tunjukkan bahwa jika
+<span class="math inline" data-source-tex="D\subseteq\Bbb C">\(D\subseteq\Bbb C\)</span> sebarang himpunan padat, maka
+<span class="math inline" data-source-tex="\phi(x)=\sup_{c\in D}\phi_c(x)">\(\phi(x)=\sup_{c\in D}\phi_c(x)\)</span> untuk setiap <span class="math inline" data-source-tex="x\in\Bbb C">\(x\in\Bbb C\)</span>.</p>
+</section>
+<section class="source-unit" id="242Yl" data-source-id="242Yl"><h3><span class="source-label">242Yl</span> (l) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang probabilitas dan
+<span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> suatu subaljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. Misalkan
+<span class="math inline" data-source-tex="P:L^1_{\Bbb C}(\mu)\to L^1_{\Bbb C}(\mu\restrp\Tau)">\(P:L^1_{\Bbb C}(\mu)\to L^1_{\Bbb C}(\mu\restrp\Tau)\)</span> operator
+ekspektasi bersyarat. Tunjukkan bahwa jika
+<span class="math inline" data-source-tex="\phi:\Bbb C\to\Bbb R">\(\phi:\Bbb C\to\Bbb R\)</span> sebarang fungsi cembung, dan kita mendefinisikan
+<span class="math inline" data-source-tex="\bar\phi(f^{\ssbullet})=(\phi f)^{\ssbullet}">\(\bar\phi(f^{\ssbullet})=(\phi f)^{\ssbullet}\)</span> untuk setiap
+<span class="math inline" data-source-tex="f\in\eusm L^0_{\Bbb C}(\mu)">\(f\in\eusm L^0_{\Bbb C}(\mu)\)</span>, maka
+<span class="math inline" data-source-tex="\bar\phi(Pu)\le P(\bar\phi(u))">\(\bar\phi(Pu)\le P(\bar\phi(u))\)</span> kapan pun
+<span class="math inline" data-source-tex="u\in L^1_{\Bbb C}(\mu)">\(u\in L^1_{\Bbb C}(\mu)\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\bar\phi(u)\in L^1(\mu)">\(\bar\phi(u)\in L^1(\mu)\)</span>.</p>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<section class="source-unit" id="242-notes" data-source-id="242-notes"><h2><span class="source-label">242-notes</span> Catatan penutup untuk Bagian 242 </h2>
+<p>Tentu saja ruang-ruang <span class="math inline" data-source-tex="L^1">\(L^1\)</span> membentuk salah satu kelas
+ruang Riesz terpenting, dan oleh karena itu sifat-sifatnya menempati kedudukan
+utama dalam teori umum; <a class="xref" href="#242Xe">242Xe</a>, <a class="xref" href="#242Xf">242Xf</a>, <a class="xref" href="#242Ya">242Ya</a>, dan <a class="xref" href="#242Yf">242Yf</a>-<a class="xref" href="#242Yi">242Yi</a> 
+menguraikan beberapa keterkaitan di antara sifat-sifat ini. Saya akan kembali
+ke pertanyaan-pertanyaan tersebut dalam Bab 35 di jilid berikutnya. Secara
+sepintas saya telah menyebutkan (<a class="xref" href="#242Dd">242Dd</a>) aditivitas norma <span class="math inline" data-source-tex="L^1">\(L^1\)</span> pada unsur-unsur
+positif. Fakta elementer ini sesungguhnya mencirikan ruang-ruang <span class="math inline" data-source-tex="L^1">\(L^1\)</span> di
+antara kisi-kisi Banach; lihat 369E di jilid berikutnya.</p>
+<p>Sebagaimana <span class="math inline" data-source-tex="L^0(\mu)">\(L^0(\mu)\)</span> dapat dipandang sebagai hasil bagi suatu ruang linear
+<span class="math inline" data-source-tex="\eusm L^0_{\Sigma}">\(\eusm L^0_{\Sigma}\)</span>, demikian pula <span class="math inline" data-source-tex="L^1(\mu)">\(L^1(\mu)\)</span> dapat dipandang sebagai
+hasil bagi suatu ruang linear <span class="math inline" data-source-tex="\eusm L^1_{\Sigma}">\(\eusm L^1_{\Sigma}\)</span> (<a class="xref" href="#242Yc">242Yc</a>). Saya telah
+membahas pertanyaan ini dalam catatan untuk §<a class="xref" href="../241/index.html#241">241</a>; yang saya upayakan di sini
+hanyalah bersikap konsisten.</p>
+<p>Kini kita mempunyai bahasa yang memungkinkan kita membicarakan ekspektasi
+bersyarat ‘dari’ suatu fungsi <span class="math inline" data-source-tex="f">\(f\)</span>, yaitu kelas ekuivalensi dalam
+<span class="math inline" data-source-tex="L^1(\mu\restrp\Tau)">\(L^1(\mu\restrp\Tau)\)</span> yang terdiri tepat atas semua ekspektasi bersyarat
+dari <span class="math inline" data-source-tex="f">\(f\)</span> pada <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>. Jika kita memandang <span class="math inline" data-source-tex="L^1(\mu\restrp\Tau)">\(L^1(\mu\restrp\Tau)\)</span> sebagai
+ruang yang diidentifikasi dengan citranya dalam <span class="math inline" data-source-tex="L^1(\mu)">\(L^1(\mu)\)</span>, maka operator
+ekspektasi bersyarat <span class="math inline" data-source-tex="P:L^1(\mu)\to L^1(\mu\restrp\Tau)">\(P:L^1(\mu)\to L^1(\mu\restrp\Tau)\)</span> menjadi suatu
+proyeksi (<a class="xref" href="#242Jh">242Jh</a>). Dengan demikian, kita mempunyai pernyataan ulang
+<a class="xref" href="../233/index.html#233J">233J</a>-<a class="xref" href="../233/index.html#233K">233K</a>, seperti dalam <a class="xref" href="#242K">242K</a>, <a class="xref" href="#242L">242L</a>, dan <a class="xref" href="#242Yj">242Yj</a>.</p>
+<p>Saya memberikan <a class="xref" href="#242O">242O</a> dalam bentuk yang cukup umum; tetapi arti pentingnya
+sudah tampak jika kita mengambil <span class="math inline" data-source-tex="X">\(X\)</span> sebagai <span class="math inline" data-source-tex="[0,1]">\([0,1]\)</span> dengan ukuran Lebesgue satu
+dimensi. Dalam kasus ini, kita mempunyai norma alami pada <span class="math inline" data-source-tex="C([0,1])">\(C([0,1])\)</span>, yaitu
+ruang semua fungsi kontinu bernilai riil pada <span class="math inline" data-source-tex="[0,1]">\([0,1]\)</span>, yang diberikan dengan
+menetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|f\|_1=\int_0^1|f(x)|dx">\(\|f\|_1=\int_0^1|f(x)|dx\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="f\in C([0,1])">\(f\in C([0,1])\)</span>. Integral di sini tentu saja dapat
+diambil sebagai integral Riemann; kita tidak memerlukan teori Lebesgue untuk
+menunjukkan bahwa <span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span> merupakan norma pada <span class="math inline" data-source-tex="C([0,1])">\(C([0,1])\)</span>. Mudah
+diperiksa bahwa <span class="math inline" data-source-tex="C([0,1])">\(C([0,1])\)</span> tidak lengkap terhadap norma ini (jika kita
+menetapkan <span class="math inline" data-source-tex="f_n(x)=\min(1,2^nx^n)">\(f_n(x)=\min(1,2^nx^n)\)</span> untuk <span class="math inline" data-source-tex="x\in[0,1]">\(x\in[0,1]\)</span>, maka
+<span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> merupakan barisan Cauchy terhadap <span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span> yang tidak
+mempunyai limit terhadap <span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span> dalam <span class="math inline" data-source-tex="C([0,1])">\(C([0,1])\)</span>). Kita dapat
+menggunakan teori abstrak ruang bernorma untuk membangun kelengkapan
+<span class="math inline" data-source-tex="C([0,1])">\(C([0,1])\)</span>; tetapi jauh lebih memuaskan jika kelengkapan ini dapat diberi
+bentuk yang relatif konkret, dan inilah yang dapat dilakukan oleh
+identifikasi <span class="math inline" data-source-tex="L^1">\(L^1\)</span> dengan kelengkapan <span class="math inline" data-source-tex="C([0,1])">\(C([0,1])\)</span>. (Perhatikan bahwa
+pernyataan bahwa <span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span> merupakan norma pada <span class="math inline" data-source-tex="C([0,1])">\(C([0,1])\)</span>, yakni bahwa
+<span class="math inline" data-source-tex="\|f\|_1\ne 0">\(\|f\|_1\ne 0\)</span> untuk setiap <span class="math inline" data-source-tex="f\in C([0,1])">\(f\in C([0,1])\)</span> yang tak nol, berarti tepat
+bahwa peta <span class="math inline" data-source-tex="f\mapsto f^{\ssbullet}:C([0,1])\to L^1">\(f\mapsto f^{\ssbullet}:C([0,1])\to L^1\)</span> bersifat injektif,
+sehingga <span class="math inline" data-source-tex="C([0,1])">\(C([0,1])\)</span> dapat diidentifikasi, sebagai ruang bernorma terurut,
+dengan citranya dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span>.) Akan lebih baik lagi jika kita dapat menemukan
+suatu realisasi kelengkapan <span class="math inline" data-source-tex="C([0,1])">\(C([0,1])\)</span> sebagai ruang fungsi pada suatu
+himpunan <span class="math inline" data-source-tex="Z">\(Z\)</span>, alih-alih sebagai ruang kelas ekuivalensi fungsi pada <span class="math inline" data-source-tex="[0,1]">\([0,1]\)</span>.
+Sayangnya hal ini tidak praktis; realisasi semacam itu memang ada, tetapi
+harus melibatkan entah suatu himpunan dasar <span class="math inline" data-source-tex="Z">\(Z\)</span> yang sama sekali tidak
+familier, atau suatu peta pembenaman dari <span class="math inline" data-source-tex="C([0,1])">\(C([0,1])\)</span> ke <span class="math inline" data-source-tex="\BbbR^Z">\(\BbbR^Z\)</span> yang
+terlampau sewenang-wenang.</p>
+<p>Anda dapat memperoleh gambaran tentang rintangan dalam merealisasikan
+kelengkapan <span class="math inline" data-source-tex="C([0,1])">\(C([0,1])\)</span> sebagai ruang fungsi pada <span class="math inline" data-source-tex="[0,1]">\([0,1]\)</span> itu sendiri dengan
+meninjau <span class="math inline" data-source-tex="f_n(x)=\bover1nx^n">\(f_n(x)=\bover1nx^n\)</span> untuk <span class="math inline" data-source-tex="n\ge 1">\(n\ge 1\)</span>. Perhitungan mudah menunjukkan
+bahwa <span class="math inline" data-source-tex="\sum_{n=1}^{\infty}\|f_n\|_1&lt;\infty">\(\sum_{n=1}^{\infty}\|f_n\|_1&lt;\infty\)</span>, sehingga
+<span class="math inline" data-source-tex="\sum_{n=1}^{\infty}f_n">\(\sum_{n=1}^{\infty}f_n\)</span> harus ada dalam kelengkapan <span class="math inline" data-source-tex="C([0,1])">\(C([0,1])\)</span>; tetapi tidak
+ada nilai alami yang dapat diberikan kepadanya pada titik <span class="math inline" data-source-tex="1">\(1\)</span>. Penyesuaian
+gagasan ini dapat menimbulkan gejala yang rumit tanpa batas – bahkan, <a class="xref" href="#242O">242O</a>
+menunjukkan bahwa setiap fungsi terintegralkan berhubungan dengan suatu
+barisan yang sesuai dari <span class="math inline" data-source-tex="C([0,1])">\(C([0,1])\)</span>. Dalam §<a class="xref" href="../245/index.html#245">245</a> saya akan membahas lebih
+lanjut seperti apa barisan yang konvergen terhadap <span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span>.</p>
+<p>Dari sudut pandang teori ukuran yang dipahami secara sempit, sebagian besar
+gagasan menarik tampak paling jelas dengan fungsi riil dan ruang linear riil.
+Namun, beberapa penerapan terpenting teori ukuran – penting bukan hanya bagi
+matematika secara umum, tetapi juga bagi pertanyaan teori-ukur yang
+diilhaminya – berkenaan dengan fungsi kompleks dan ruang linear kompleks.
+Oleh karena itu, saya terus menawarkan ikhtisar teori kompleks, seperti dalam
+<a class="xref" href="#242P">242P</a>. Saya mencatat bahwa pada selang yang tidak teratur kita memerlukan
+gagasan-gagasan yang belum dijabarkan dalam teori riil, seperti dalam <a class="xref" href="#242Pb">242Pb</a>
+dan <a class="xref" href="#242Yl">242Yl</a>.</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 2: Broad Foundations</cite>, Bagian 242.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 25 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-cumulative-html-route-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V2-S242&quot;,
+  &quot;source_member&quot;: &quot;mt2.2016/mt242.tex&quot;,
+  &quot;target_bytes&quot;: 51833,
+  &quot;target_sha256&quot;: &quot;310e90bf4cb2551bdb768681444c21bb3da6ac3764d3f7a3e59e31efeb49dcf8&quot;,
+  &quot;source_ids&quot;: [
+    &quot;242&quot;,
+    &quot;242A&quot;,
+    &quot;242Aa&quot;,
+    &quot;242Ab&quot;,
+    &quot;242Ac&quot;,
+    &quot;242Ad&quot;,
+    &quot;242B&quot;,
+    &quot;242C&quot;,
+    &quot;242Ca&quot;,
+    &quot;242Cb&quot;,
+    &quot;242Cc&quot;,
+    &quot;242Cd&quot;,
+    &quot;242Ce&quot;,
+    &quot;242Cf&quot;,
+    &quot;242D&quot;,
+    &quot;242Da&quot;,
+    &quot;242Db&quot;,
+    &quot;242Dc&quot;,
+    &quot;242Dd&quot;,
+    &quot;242De&quot;,
+    &quot;242E&quot;,
+    &quot;242F&quot;,
+    &quot;242G&quot;,
+    &quot;242H&quot;,
+    &quot;242I&quot;,
+    &quot;242J&quot;,
+    &quot;242Ja&quot;,
+    &quot;242Jb&quot;,
+    &quot;242Jc&quot;,
+    &quot;242Jd&quot;,
+    &quot;242Je&quot;,
+    &quot;242Jf&quot;,
+    &quot;242Jg&quot;,
+    &quot;242Jh&quot;,
+    &quot;242K&quot;,
+    &quot;242L&quot;,
+    &quot;242M&quot;,
+    &quot;242N&quot;,
+    &quot;242O&quot;,
+    &quot;242P&quot;,
+    &quot;242Pa&quot;,
+    &quot;242Pb&quot;,
+    &quot;242Pc&quot;,
+    &quot;242Pd&quot;,
+    &quot;242X&quot;,
+    &quot;242Xa&quot;,
+    &quot;242Xb&quot;,
+    &quot;242Xc&quot;,
+    &quot;242Xd&quot;,
+    &quot;242Xe&quot;,
+    &quot;242Xf&quot;,
+    &quot;242Xg&quot;,
+    &quot;242Xh&quot;,
+    &quot;242Xi&quot;,
+    &quot;242Xj&quot;,
+    &quot;242Y&quot;,
+    &quot;242Ya&quot;,
+    &quot;242Yb&quot;,
+    &quot;242Yc&quot;,
+    &quot;242Yd&quot;,
+    &quot;242Ye&quot;,
+    &quot;242Yf&quot;,
+    &quot;242Yg&quot;,
+    &quot;242Yh&quot;,
+    &quot;242Yi&quot;,
+    &quot;242Yj&quot;,
+    &quot;242Yk&quot;,
+    &quot;242Yl&quot;
+  ],
+  &quot;corpus_id&quot;: &quot;O007-FREMLIN&quot;,
+  &quot;volume_id&quot;: &quot;O007-FREMLIN-V2&quot;,
+  &quot;volume_source_title&quot;: &quot;Broad Foundations&quot;,
+  &quot;route&quot;: &quot;242&quot;,
+  &quot;official_source_page_start&quot;: 146,
+  &quot;chapter_official_source_pages&quot;: [
+    138,
+    203
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

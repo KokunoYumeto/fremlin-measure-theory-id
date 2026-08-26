@@ -1,0 +1,1136 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Fungsi kontinu mutlak — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        BbbQ: '\\mathbb{Q}', BbbR: '\\mathbb{R}',
+        eightBbb: ['\\mathbb{#1}', 1],
+        DiniD: '\\overline{D}', Dinid: '\\underline{D}',
+        Var: '\\operatorname{Var}',
+        bumpeq: '=_{\\mathrm{approx}}',
+        intstar: '\\operatorname{int}^{*}',
+        family: ['\\langle #3\\rangle_{#1\\in #2}', 3],
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        displaycause: ['\\text{(#1)}', 1],
+        bigcupop: '\\bigcup', biggerint: '\\int',
+        eae: '=_{\\mathrm{a.e.}}', leae: '\\le_{\\mathrm{a.e.}}', geae: '\\ge_{\\mathrm{a.e.}}',
+        restr: '\\mathord{\\upharpoonright}', restrp: '\\mathord{\\upharpoonright}',
+        Real: '\\operatorname{Re}', Imag: '\\operatorname{Im}',
+        tbf: ['\\mathbf{#1}', 1], eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Qed: '\\square',
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        roibr: '\\mathopen{{[}}',
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1]
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 2 · Bagian 225</p>
+  <h1>Fungsi kontinu mutlak</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi kumulatif</a></nav>
+<main id="isi">
+<span class="anchor" id="225"></span>
+<p>Sekarang kita siap memberikan pencirian lengkap fungsi-fungsi yang dapat
+muncul sebagai integral tak tentu (<a class="xref" href="#225E">225E</a>, <a class="xref" href="#225Xf">225Xf</a>). Gagasan pokoknya ialah
+‘kontinuitas mutlak’ (<a class="xref" href="#225B">225B</a>). Pada paruh kedua bagian ini (<a class="xref" href="#225G">225G</a>-<a class="xref" href="#225N">225N</a>), saya
+menguraikan beberapa hubungan antara konsep tersebut dan konsep-konsep yang
+telah kita jumpai.</p>
+<section class="source-unit" id="225A" data-source-id="225A"><h2><span class="source-label">225A</span> Kontinuitas mutlak integral tak
+tentu </h2>
+<p>Saya memulai dengan suatu hasil dasar yang mudah dari teori
+ukuran umum.</p>
+<p> </p>
+<p><strong>Teorema</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sembarang ruang ukur dan
+<span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real terintegralkan yang didefinisikan pada suatu
+subhimpunan koterabaikan dari <span class="math inline" data-source-tex="X">\(X\)</span>. Maka untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat
+suatu himpunan terukur <span class="math inline" data-source-tex="E">\(E\)</span> berukuran berhingga dan suatu bilangan real
+<span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\int_F|f|\le\epsilon">\(\int_F|f|\le\epsilon\)</span> kapan pun
+<span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dan <span class="math inline" data-source-tex="\mu(F\cap E)\le\delta">\(\mu(F\cap E)\le\delta\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Terdapat suatu barisan tak-menurun <span class="math inline" data-source-tex="\sequencen{g_n}">\(\sequencen{g_n}\)</span> dari fungsi
+sederhana nonnegatif sedemikian sehingga
+<span class="math inline" data-source-tex="|f|\eae\lim_{n\to\infty}g_n">\(|f|\eae\lim_{n\to\infty}g_n\)</span> dan
+<span class="math inline" data-source-tex="\int|f|=\lim_{n\to\infty}\int g_n">\(\int|f|=\lim_{n\to\infty}\int g_n\)</span>. Ambil <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\int g_n\ge\int|f|-\bover12\epsilon">\(\int g_n\ge\int|f|-\bover12\epsilon\)</span>.
+Ambil <span class="math inline" data-source-tex="M&gt;0">\(M&gt;0\)</span> dan <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\mu E&lt;\infty">\(\mu E&lt;\infty\)</span> dan
+<span class="math inline" data-source-tex="g_n\le M\chi E">\(g_n\le M\chi E\)</span>; tetapkan <span class="math inline" data-source-tex="\delta=\epsilon/2M">\(\delta=\epsilon/2M\)</span>.
+Jika <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dan <span class="math inline" data-source-tex="\mu(F\cap E)\le\delta">\(\mu(F\cap E)\le\delta\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_Fg_n=\int g_n\times\chi F
+\le M\mu(F\cap E)\le\Bover12\epsilon">\(\int_Fg_n=\int g_n\times\chi F
+\le M\mu(F\cap E)\le\Bover12\epsilon\)</span>;</div>
+<p>akibatnya</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_F|f|
+=\int_Fg_n+\int_F|f|-g_n\le\Bover12\epsilon+\int|f|-g_n\le\epsilon">\(\int_F|f|
+=\int_Fg_n+\int_F|f|-g_n\le\Bover12\epsilon+\int|f|-g_n\le\epsilon\)</span>.</div></aside>
+</section>
+<section class="source-unit" id="225B" data-source-id="225B"><h2><span class="source-label">225B</span> Fungsi kontinu mutlak pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>: Definisi </h2>
+<p>Jika <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span> suatu interval tertutup tak kosong dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> dan
+<span class="math inline" data-source-tex="f:[a,b]\to\Bbb R">\(f:[a,b]\to\Bbb R\)</span> suatu fungsi, kita mengatakan bahwa <span class="math inline" data-source-tex="f">\(f\)</span> <strong>kontinu
+mutlak</strong> jika untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\sum_{i=1}^n|f(b_i)-f(a_i)|\le\epsilon">\(\sum_{i=1}^n|f(b_i)-f(a_i)|\le\epsilon\)</span> kapan pun
+<span class="math inline" data-source-tex="a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b">\(a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b\)</span> dan
+<span class="math inline" data-source-tex="\sum_{i=1}^nb_i-a_i\le\delta">\(\sum_{i=1}^nb_i-a_i\le\delta\)</span>.</p>
+<p> </p>
+<p><strong>Catatan</strong> Ungkapan ‘kontinu mutlak’ digunakan dalam berbagai
+pengertian dalam teori ukuran. Pengertian-pengertian itu berkaitan erat (jika
+dilihat dengan cara yang tepat), tetapi tidak identik; Anda perlu senantiasa
+mencermati konteks setiap definisi.</p>
+</section>
+<section class="source-unit" id="225C" data-source-id="225C"><h2><span class="source-label">225C</span> Proposisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span> suatu interval tertutup tak kosong
+dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.</p>
+<p>(a) Jika <span class="math inline" data-source-tex="f:[a,b]\to\Bbb R">\(f:[a,b]\to\Bbb R\)</span> kontinu mutlak, maka fungsi tersebut kontinu seragam.</p>
+<p>(b) Jika <span class="math inline" data-source-tex="f:[a,b]\to\Bbb R">\(f:[a,b]\to\Bbb R\)</span> kontinu mutlak, maka fungsi tersebut bervariasi terbatas
+pada <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>, sehingga terdiferensialkan hampir di mana-mana dalam
+<span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>, dan turunannya terintegralkan pada <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>.</p>
+<p>(c) Jika <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g:[a,b]\to\Bbb R">\(g:[a,b]\to\Bbb R\)</span> kontinu mutlak, maka demikian pula <span class="math inline" data-source-tex="f+g">\(f+g\)</span>
+dan <span class="math inline" data-source-tex="cf">\(cf\)</span>, untuk setiap <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>.</p>
+<p>(d) Jika <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g:[a,b]\to\Bbb R">\(g:[a,b]\to\Bbb R\)</span> kontinu mutlak, maka demikian pula
+<span class="math inline" data-source-tex="f\times g">\(f\times g\)</span>.</p>
+<p>(e) Jika <span class="math inline" data-source-tex="g:[a,b]\to [c,d]">\(g:[a,b]\to [c,d]\)</span> dan <span class="math inline" data-source-tex="f:[c,d]\to\Bbb R">\(f:[c,d]\to\Bbb R\)</span> kontinu mutlak, serta
+<span class="math inline" data-source-tex="g">\(g\)</span> tak-menurun, maka komposisi <span class="math inline" data-source-tex="fg:[a,b]\to\Bbb R">\(fg:[a,b]\to\Bbb R\)</span> kontinu mutlak.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Misalkan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Maka terdapat <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\sum_{i=1}^n|f(b_i)-f(a_i)|\le\epsilon">\(\sum_{i=1}^n|f(b_i)-f(a_i)|\le\epsilon\)</span> kapan pun
+<span class="math inline" data-source-tex="a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b">\(a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b\)</span> dan
+<span class="math inline" data-source-tex="\sum_{i=1}^nb_i-a_i\le\delta">\(\sum_{i=1}^nb_i-a_i\le\delta\)</span>; tetapi tentu saja sekarang
+<span class="math inline" data-source-tex="|f(y)-f(x)|\le\epsilon">\(|f(y)-f(x)|\le\epsilon\)</span> kapan pun <span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="y\in[a,b]">\(y\in[a,b]\)</span> dan
+<span class="math inline" data-source-tex="|x-y|\le\delta">\(|x-y|\le\delta\)</span>. Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang, <span class="math inline" data-source-tex="f">\(f\)</span> kontinu seragam.</p>
+<p> </p>
+<p><strong>(b)</strong> Misalkan <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\sum_{i=1}^n|f(b_i)-f(a_i)|\le 1">\(\sum_{i=1}^n|f(b_i)-f(a_i)|\le 1\)</span> kapan pun
+<span class="math inline" data-source-tex="a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b">\(a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b\)</span> dan
+<span class="math inline" data-source-tex="\sum_{i=1}^nb_i-a_i\le\delta">\(\sum_{i=1}^nb_i-a_i\le\delta\)</span>. Jika
+<span class="math inline" data-source-tex="a\le c=c_0\le c_1\le\ldots\le c_n\le d\le\min(b,c+\delta)">\(a\le c=c_0\le c_1\le\ldots\le c_n\le d\le\min(b,c+\delta)\)</span>, maka
+<span class="math inline" data-source-tex="\sum_{i=1}^n|f(c_i)-f(c_{i-1})|\le 1">\(\sum_{i=1}^n|f(c_i)-f(c_{i-1})|\le 1\)</span>, sehingga
+<span class="math inline" data-source-tex="\Var_{[c,d]}(f)\le 1">\(\Var_{[c,d]}(f)\le 1\)</span>; oleh karena itu (dengan induksi terhadap <span class="math inline" data-source-tex="k">\(k\)</span> dan
+menggunakan 224Cc untuk langkah induksi),
+<span class="math inline" data-source-tex="\Var_{[a,\min(a+k\delta,b)]}(f)\le k">\(\Var_{[a,\min(a+k\delta,b)]}(f)\le k\)</span> untuk setiap <span class="math inline" data-source-tex="k">\(k\)</span>, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Var_{[a,b]}(f)\le\lceil(b-a)/\delta\rceil&lt;\infty">\(\Var_{[a,b]}(f)\le\lceil(b-a)/\delta\rceil&lt;\infty\)</span>.</div>
+<p>Karena itu, menurut <a class="xref" href="../224/index.html#224I">224I</a>, <span class="math inline" data-source-tex="f&#x27;">\(f&#x27;\)</span> terintegralkan.</p>
+<p> </p>
+<p><strong>(c)(i)</strong> Misalkan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Maka terdapat <span class="math inline" data-source-tex="\delta_1">\(\delta_1\)</span>,
+<span class="math inline" data-source-tex="\delta_2&gt;0">\(\delta_2&gt;0\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{i=1}^n|f(b_i)-f(a_i)|\le\Bover12\epsilon">\(\sum_{i=1}^n|f(b_i)-f(a_i)|\le\Bover12\epsilon\)</span></div>
+<p>kapan pun
+<span class="math inline" data-source-tex="a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b">\(a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b\)</span> dan
+<span class="math inline" data-source-tex="\sum_{i=1}^nb_i-a_i\le\delta_1">\(\sum_{i=1}^nb_i-a_i\le\delta_1\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{i=1}^n|g(b_i)-g(a_i)|\le\Bover12\epsilon">\(\sum_{i=1}^n|g(b_i)-g(a_i)|\le\Bover12\epsilon\)</span></div>
+<p>kapan pun <span class="math inline" data-source-tex="a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le
+b_n\le b">\(a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le
+b_n\le b\)</span> dan
+<span class="math inline" data-source-tex="\sum_{i=1}^nb_i-a_i\le\delta_2">\(\sum_{i=1}^nb_i-a_i\le\delta_2\)</span>. Tetapkan
+<span class="math inline" data-source-tex="\delta=\min(\delta_1,\delta_2)&gt;0">\(\delta=\min(\delta_1,\delta_2)&gt;0\)</span>, dan andaikan bahwa
+<span class="math inline" data-source-tex="a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b">\(a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b\)</span> dan
+<span class="math inline" data-source-tex="\sum_{i=1}^nb_i-a_i\le\delta">\(\sum_{i=1}^nb_i-a_i\le\delta\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{i=1}^n|(f+g)(b_i)-(f+g)(a_i)|\le
+\sum_{i=1}^n|f(b_i)-f(a_i)|+\sum_{i=1}^n|g(b_i)-g(a_i)|\le\epsilon">\(\sum_{i=1}^n|(f+g)(b_i)-(f+g)(a_i)|\le
+\sum_{i=1}^n|f(b_i)-f(a_i)|+\sum_{i=1}^n|g(b_i)-g(a_i)|\le\epsilon\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang, <span class="math inline" data-source-tex="f+g">\(f+g\)</span> kontinu mutlak.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Misalkan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Maka terdapat <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian
+sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{i=1}^n|f(b_i)-f(a_i)|\le\Bover{\epsilon}{1+|c|}">\(\sum_{i=1}^n|f(b_i)-f(a_i)|\le\Bover{\epsilon}{1+|c|}\)</span></div>
+<p>kapan pun
+<span class="math inline" data-source-tex="a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b">\(a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b\)</span> dan
+<span class="math inline" data-source-tex="\sum_{i=1}^nb_i-a_i\le\delta">\(\sum_{i=1}^nb_i-a_i\le\delta\)</span>. Sekarang</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{i=1}^n|(cf)(b_i)-(cf)(a_i)|\le\epsilon">\(\sum_{i=1}^n|(cf)(b_i)-(cf)(a_i)|\le\epsilon\)</span></div>
+<p>kapan pun
+<span class="math inline" data-source-tex="a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b">\(a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b\)</span> dan
+<span class="math inline" data-source-tex="\sum_{i=1}^nb_i-a_i\le\delta">\(\sum_{i=1}^nb_i-a_i\le\delta\)</span>. Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang, <span class="math inline" data-source-tex="cf">\(cf\)</span> kontinu
+mutlak.</p>
+<p> </p>
+<p><strong>(d)</strong> Baik menurut (a) maupun menurut (b), <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span> terbatas; tetapkan
+<span class="math inline" data-source-tex="M=\sup_{x\in[a,b]}|f(x)|">\(M=\sup_{x\in[a,b]}|f(x)|\)</span>, <span class="math inline" data-source-tex="M&#x27;=\sup_{x\in[a,b]}|g(x)|">\(M&#x27;=\sup_{x\in[a,b]}|g(x)|\)</span>. Misalkan
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Maka terdapat <span class="math inline" data-source-tex="\delta_1">\(\delta_1\)</span>, <span class="math inline" data-source-tex="\delta_2&gt;0">\(\delta_2&gt;0\)</span> sedemikian sehingga</p>
+<div class="inset-block"><p><span class="math inline" data-source-tex="\sum_{i=1}^n|f(b_i)-f(a_i)|\le\epsilon">\(\sum_{i=1}^n|f(b_i)-f(a_i)|\le\epsilon\)</span>
+kapan pun <span class="math inline" data-source-tex="a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b">\(a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b\)</span> dan
+<span class="math inline" data-source-tex="\sum_{i=1}^nb_i-a_i\le\delta_1">\(\sum_{i=1}^nb_i-a_i\le\delta_1\)</span>,</p></div>
+<div class="inset-block"><p><span class="math inline" data-source-tex="\sum_{i=1}^n|g(b_i)-g(a_i)|\le\epsilon">\(\sum_{i=1}^n|g(b_i)-g(a_i)|\le\epsilon\)</span>
+kapan pun <span class="math inline" data-source-tex="a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b">\(a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b\)</span> dan
+<span class="math inline" data-source-tex="\sum_{i=1}^nb_i-a_i\le\delta_2">\(\sum_{i=1}^nb_i-a_i\le\delta_2\)</span>.</p></div>
+<p>Tetapkan <span class="math inline" data-source-tex="\delta=\min(\delta_1,\delta_2)&gt;0">\(\delta=\min(\delta_1,\delta_2)&gt;0\)</span> dan andaikan bahwa
+<span class="math inline" data-source-tex="a\le a_1\le b_1\le\ldots\le b_n\le b">\(a\le a_1\le b_1\le\ldots\le b_n\le b\)</span> serta
+<span class="math inline" data-source-tex="\sum_{i=1}^nb_i-a_i\le\delta">\(\sum_{i=1}^nb_i-a_i\le\delta\)</span>. Maka</p>
+<p><span class="math display" data-source-tex="\eqalign{\sum_{i=1}^n|f(b_i)g(b_i)-f(a_i)g(a_i)|
+&amp;=\sum_{i=1}^n|(f(b_i)-f(a_i))g(b_i)+f(a_i)(g(b_i)-g(a_i))|\cr
+&amp;\le\sum_{i=1}^n|f(b_i)-f(a_i)||g(b_i)|+|f(a_i)||g(b_i)-g(a_i)|\cr
+&amp;\le\sum_{i=1}^n|f(b_i)-f(a_i)|M&#x27;+M|g(b_i)-g(a_i)|\cr
+&amp;\le\epsilon M&#x27;+M\epsilon
+=\epsilon(M+M&#x27;).\cr}">\[\begin{aligned}\sum_{i=1}^n|f(b_i)g(b_i)-f(a_i)g(a_i)|
+&amp;=\sum_{i=1}^n|(f(b_i)-f(a_i))g(b_i)+f(a_i)(g(b_i)-g(a_i))|\\
+&amp;\le\sum_{i=1}^n|f(b_i)-f(a_i)||g(b_i)|+|f(a_i)||g(b_i)-g(a_i)|\\
+&amp;\le\sum_{i=1}^n|f(b_i)-f(a_i)|M&#x27;+M|g(b_i)-g(a_i)|\\
+&amp;\le\epsilon M&#x27;+M\epsilon
+=\epsilon(M+M&#x27;).\\\end{aligned}\]</span></p>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang, <span class="math inline" data-source-tex="f\times g">\(f\times g\)</span> kontinu mutlak.</p>
+<p> </p>
+<p><strong>(e)</strong> Misalkan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Maka terdapat <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\sum_{i=1}^n|f(d_i)-f(c_i)|\le\epsilon">\(\sum_{i=1}^n|f(d_i)-f(c_i)|\le\epsilon\)</span> kapan pun
+<span class="math inline" data-source-tex="c\le c_1\le d_1\le\ldots\le c_n\le d_n\le d">\(c\le c_1\le d_1\le\ldots\le c_n\le d_n\le d\)</span> dan
+<span class="math inline" data-source-tex="\sum_{i=1}^nd_i-c_i\le\delta">\(\sum_{i=1}^nd_i-c_i\le\delta\)</span>; dan terdapat <span class="math inline" data-source-tex="\eta&gt;0">\(\eta&gt;0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\sum_{i=1}^n|g(b_i)-g(a_i)|\le\delta">\(\sum_{i=1}^n|g(b_i)-g(a_i)|\le\delta\)</span> kapan pun
+<span class="math inline" data-source-tex="a\le a_1\le b_1\le\ldots\le a_n\le b_n\le b">\(a\le a_1\le b_1\le\ldots\le a_n\le b_n\le b\)</span> dan
+<span class="math inline" data-source-tex="\sum_{i=1}^nb_i-a_i\le\eta">\(\sum_{i=1}^nb_i-a_i\le\eta\)</span>. Sekarang andaikan bahwa
+<span class="math inline" data-source-tex="a\le a_1\le b_1\le\ldots\le a_n\le b_n\le b">\(a\le a_1\le b_1\le\ldots\le a_n\le b_n\le b\)</span> dan
+<span class="math inline" data-source-tex="\sum_{i=1}^nb_i-a_i\le\eta">\(\sum_{i=1}^nb_i-a_i\le\eta\)</span>. Karena <span class="math inline" data-source-tex="g">\(g\)</span> tak-menurun, kita mempunyai
+<span class="math inline" data-source-tex="c\le g(a_1)\le\ldots\le g(b_n)\le d">\(c\le g(a_1)\le\ldots\le g(b_n)\le d\)</span> dan
+<span class="math inline" data-source-tex="\sum_{i=1}^ng(b_i)-g(a_i)\le\delta">\(\sum_{i=1}^ng(b_i)-g(a_i)\le\delta\)</span>, sehingga
+<span class="math inline" data-source-tex="\sum_{i=1}^n|f(g(b_i))-f(g(a_i))|\le\epsilon">\(\sum_{i=1}^n|f(g(b_i))-f(g(a_i))|\le\epsilon\)</span>; karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang,
+<span class="math inline" data-source-tex="fg">\(fg\)</span> kontinu mutlak.</p></aside>
+</section>
+<section class="source-unit" id="225D" data-source-id="225D"><h2><span class="source-label">225D</span> Lemma </h2>
+<p>Misalkan <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span> suatu interval tertutup tak kosong
+dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> dan <span class="math inline" data-source-tex="f:[a,b]\to\Bbb R">\(f:[a,b]\to\Bbb R\)</span> suatu fungsi kontinu mutlak yang
+turunannya nol hampir di mana-mana dalam <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>.
+Maka <span class="math inline" data-source-tex="f">\(f\)</span> konstan pada <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Misalkan <span class="math inline" data-source-tex="x\in[a,b]">\(x\in[a,b]\)</span>, <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Misalkan <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\sum_{i=1}^n|f(b_i)-f(a_i)|\le\epsilon">\(\sum_{i=1}^n|f(b_i)-f(a_i)|\le\epsilon\)</span>
+kapan pun <span class="math inline" data-source-tex="a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b">\(a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b\)</span> dan
+<span class="math inline" data-source-tex="\sum_{i=1}^nb_i-a_i\le\delta">\(\sum_{i=1}^nb_i-a_i\le\delta\)</span>. Tetapkan
+<span class="math inline" data-source-tex="A=\{t:a&lt;t&lt;x,\,f&#x27;(t)">\(A=\{t:a&lt;t&lt;x,\,f&#x27;(t)\)</span> terdefinisi dan nilainya <span class="math inline" data-source-tex="=0\}">\(=0\}\)</span>; maka
+<span class="math inline" data-source-tex="\mu A=x-a">\(\mu A=x-a\)</span>, dengan <span class="math inline" data-source-tex="\mu">\(\mu\)</span>
+menyatakan ukuran Lebesgue.
+Misalkan <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> himpunan interval tertutup tak kosong dan bukan singleton
+<span class="math inline" data-source-tex="[c,d]\subseteq[a,x]">\([c,d]\subseteq[a,x]\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="|f(d)-f(c)|\le\epsilon (d-c)">\(|f(d)-f(c)|\le\epsilon (d-c)\)</span>; maka setiap anggota <span class="math inline" data-source-tex="A">\(A\)</span> termasuk dalam
+anggota-anggota <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> yang sependek apa pun.
+Menurut teorema Vitali (<a class="xref" href="../221/index.html#221A">221A</a>), terdapat suatu subkeluarga terhitung dan
+saling lepas <span class="math inline" data-source-tex="\Cal I_0\subseteq\Cal I">\(\Cal I_0\subseteq\Cal I\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu(A\setminus\bigcup\Cal I_0)=0">\(\mu(A\setminus\bigcup\Cal I_0)=0\)</span>, yakni,</p>
+<div class="centerline"><span class="math inline" data-source-tex="x-a=\mu(\bigcup\Cal I_0)=\sum_{I\in\Cal I_0}\mu I">\(x-a=\mu(\bigcup\Cal I_0)=\sum_{I\in\Cal I_0}\mu I\)</span>.</div>
+<p>Sekarang terdapat suatu <span class="math inline" data-source-tex="\Cal I_1\subseteq\Cal I_0">\(\Cal I_1\subseteq\Cal I_0\)</span> berhingga
+sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu(\bigcup\Cal I_1)
+=\sum_{I\in\Cal I_1}\mu I\ge x-a-\delta">\(\mu(\bigcup\Cal I_1)
+=\sum_{I\in\Cal I_1}\mu I\ge x-a-\delta\)</span>.</div>
+<p>Jika <span class="math inline" data-source-tex="\Cal I_1=\emptyset">\(\Cal I_1=\emptyset\)</span>, maka <span class="math inline" data-source-tex="x\le a+\delta">\(x\le a+\delta\)</span> dan
+<span class="math inline" data-source-tex="|f(x)-f(a)|\le\epsilon">\(|f(x)-f(a)|\le\epsilon\)</span>. Jika tidak, nyatakan <span class="math inline" data-source-tex="\Cal I_1">\(\Cal I_1\)</span> sebagai
+<span class="math inline" data-source-tex="\{[c_0,d_0],\ldots,[c_n,d_n]\}">\(\{[c_0,d_0],\ldots,[c_n,d_n]\}\)</span>, dengan
+<span class="math inline" data-source-tex="a\le c_0&lt;d_0&lt;c_1&lt;d_1&lt;\ldots&lt;c_n&lt;d_n\le x">\(a\le c_0&lt;d_0&lt;c_1&lt;d_1&lt;\ldots&lt;c_n&lt;d_n\le x\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="(c_0-a)+\sum_{i=1}^n(c_i-d_{i-1})
++(x-d_n)=\mu([a,x]\setminus\bigcup\Cal I_1)\le\delta">\((c_0-a)+\sum_{i=1}^n(c_i-d_{i-1})
++(x-d_n)=\mu([a,x]\setminus\bigcup\Cal I_1)\le\delta\)</span>,</div>
+<p>sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="|f(c_0)-f(a)|+\sum_{i=1}^n|f(c_i)-f(d_{i-1})|+|f(x)-f(d_n)|
+\le\epsilon">\(|f(c_0)-f(a)|+\sum_{i=1}^n|f(c_i)-f(d_{i-1})|+|f(x)-f(d_n)|
+\le\epsilon\)</span>.</div>
+<p>Di sisi lain, <span class="math inline" data-source-tex="|f(d_i)-f(c_i)|\le\epsilon(d_i-c_i)">\(|f(d_i)-f(c_i)|\le\epsilon(d_i-c_i)\)</span> untuk
+setiap <span class="math inline" data-source-tex="i">\(i\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{i=0}^n|f(d_i)-f(c_i)|\le\epsilon\sum_{i=0}^nd_i-c_i
+\le\epsilon(x-a)">\(\sum_{i=0}^n|f(d_i)-f(c_i)|\le\epsilon\sum_{i=0}^nd_i-c_i
+\le\epsilon(x-a)\)</span>.</div>
+<p>Dengan menggabungkan kedua hal ini,</p>
+<p><span class="math display" data-source-tex="\eqalign{|f(x)-f(a)|
+&amp;\le|f(c_0)-f(a)|+|f(d_0)-f(c_0)|+|f(c_1)-f(d_0)|+\ldots\cr
+&amp;\hskip10em+|f(d_n)-f(c_n)|+|f(x)-f(d_n)|\cr
+&amp;=|f(c_0)-f(a)|+\sum_{i=1}^n|f(c_i)-f(d_{i-1})|\cr
+&amp;\hskip10em+|f(x)-f(d_n)|+\sum_{i=0}^n|f(d_i)-f(c_i)|\cr
+&amp;\le\epsilon+\epsilon(x-a)
+=\epsilon(1+x-a).\cr}">\[\begin{aligned}|f(x)-f(a)|
+&amp;\le|f(c_0)-f(a)|+|f(d_0)-f(c_0)|+|f(c_1)-f(d_0)|+\ldots\\
+&amp;\hskip10em+|f(d_n)-f(c_n)|+|f(x)-f(d_n)|\\
+&amp;=|f(c_0)-f(a)|+\sum_{i=1}^n|f(c_i)-f(d_{i-1})|\\
+&amp;\hskip10em+|f(x)-f(d_n)|+\sum_{i=0}^n|f(d_i)-f(c_i)|\\
+&amp;\le\epsilon+\epsilon(x-a)
+=\epsilon(1+x-a).\\\end{aligned}\]</span></p>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang, <span class="math inline" data-source-tex="f(x)=f(a)">\(f(x)=f(a)\)</span>. Karena <span class="math inline" data-source-tex="x">\(x\)</span> sebarang,
+<span class="math inline" data-source-tex="f">\(f\)</span> konstan.</p></aside>
+</section>
+<section class="source-unit" id="225E" data-source-id="225E"><h2><span class="source-label">225E</span> Teorema </h2>
+<p>Misalkan <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span> suatu interval tertutup tak kosong
+dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> dan <span class="math inline" data-source-tex="F:[a,b]\to\Bbb R">\(F:[a,b]\to\Bbb R\)</span> suatu fungsi. Maka pernyataan-pernyataan
+berikut ekuivalen:</p>
+<p>(i) terdapat suatu fungsi bernilai real terintegralkan <span class="math inline" data-source-tex="f">\(f\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="F(x)=F(a)+\int_a^xf">\(F(x)=F(a)+\int_a^xf\)</span> untuk setiap <span class="math inline" data-source-tex="x\in[a,b]">\(x\in[a,b]\)</span>;</p>
+<p>(ii) <span class="math inline" data-source-tex="\int_a^xF&#x27;">\(\int_a^xF&#x27;\)</span> ada dan sama dengan <span class="math inline" data-source-tex="F(x)-F(a)">\(F(x)-F(a)\)</span> untuk setiap
+<span class="math inline" data-source-tex="x\in[a,b]">\(x\in[a,b]\)</span>;</p>
+<p>(iii) <span class="math inline" data-source-tex="F">\(F\)</span> kontinu mutlak.</p>
+<p> </p>
+<p><strong>Catatan</strong> Di sini dan dalam bagian selebihnya (kecuali
+dalam <a class="xref" href="#225Oa">225Oa</a>), integral diambil terhadap ukuran Lebesgue pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(i)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(iii)</strong> Andaikan (i).
+Misalkan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Menurut <a class="xref" href="#225A">225A</a>, terdapat <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\int_H|f|\le\epsilon">\(\int_H|f|\le\epsilon\)</span> kapan pun <span class="math inline" data-source-tex="H\subseteq[a,b]">\(H\subseteq[a,b]\)</span> dan
+<span class="math inline" data-source-tex="\mu H\le\delta">\(\mu H\le\delta\)</span>, dengan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> seperti biasa menyatakan ukuran Lebesgue.
+Sekarang andaikan bahwa
+<span class="math inline" data-source-tex="a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b">\(a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b\)</span> dan
+<span class="math inline" data-source-tex="\sum_{i=1}^nb_i-a_i\le\delta">\(\sum_{i=1}^nb_i-a_i\le\delta\)</span>. Tinjau
+<span class="math inline" data-source-tex="H=\bigcup_{1\le i\le n}\coint{a_i,b_i}">\(H=\bigcup_{1\le i\le n}\coint{a_i,b_i}\)</span>. Maka <span class="math inline" data-source-tex="\mu H\le\delta">\(\mu H\le\delta\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{i=1}^n|F(b_i)-F(a_i)|
+=\sum_{i=1}^n|\int_{\coint{a_i,b_i}}f|
+\le\sum_{i=1}^n\int_{\coint{a_i,b_i}}|f|
+=\int_H|f|\le\epsilon">\(\sum_{i=1}^n|F(b_i)-F(a_i)|
+=\sum_{i=1}^n|\int_{\coint{a_i,b_i}}f|
+\le\sum_{i=1}^n\int_{\coint{a_i,b_i}}|f|
+=\int_H|f|\le\epsilon\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang, <span class="math inline" data-source-tex="F">\(F\)</span> kontinu mutlak.</p>
+<p> </p>
+<p><strong>(iii)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(ii)</strong> Jika <span class="math inline" data-source-tex="F">\(F\)</span> kontinu mutlak, maka fungsi tersebut bervariasi
+terbatas (225Cb), sehingga <span class="math inline" data-source-tex="\int_a^bF&#x27;">\(\int_a^bF&#x27;\)</span> ada (<a class="xref" href="../224/index.html#224I">224I</a>). Tetapkan
+<span class="math inline" data-source-tex="G(x)=\int_a^xF&#x27;">\(G(x)=\int_a^xF&#x27;\)</span> untuk <span class="math inline" data-source-tex="x\in [a,b]">\(x\in [a,b]\)</span>; maka <span class="math inline" data-source-tex="G&#x27;\eae F&#x27;">\(G&#x27;\eae F&#x27;\)</span> (<a class="xref" href="../222/index.html#222E">222E</a>) dan <span class="math inline" data-source-tex="G">\(G\)</span>
+kontinu mutlak (menurut (i)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(iii) yang baru saja dibuktikan).
+Dengan demikian <span class="math inline" data-source-tex="G-F">\(G-F\)</span> kontinu mutlak (225Cc) dan terdiferensialkan hampir
+di mana-mana, dengan turunan nol. Menurut <a class="xref" href="#225D">225D</a>, <span class="math inline" data-source-tex="G-F">\(G-F\)</span> harus konstan. Tetapi
+karena <span class="math inline" data-source-tex="G(a)=0">\(G(a)=0\)</span>, <span class="math inline" data-source-tex="G=F-F(a)">\(G=F-F(a)\)</span>; tepat seperti yang disyaratkan oleh (ii).</p>
+<p> </p>
+<p><strong>(ii)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(i)</strong> langsung.</p></aside>
+</section>
+<section class="source-unit" id="225F" data-source-id="225F"><h2><span class="source-label">225F</span> Integrasi parsial </h2>
+<p>Sebagai suatu
+penerapan hasil ini, saya memberikan pembenaran bagi suatu rumus yang sudah
+dikenal.</p>
+<p> </p>
+<p><strong>Teorema</strong> Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real yang
+terintegralkan pada suatu interval <span class="math inline" data-source-tex="[a,b]\subseteq\Bbb R">\([a,b]\subseteq\Bbb R\)</span>, dan
+<span class="math inline" data-source-tex="g:[a,b]\to\Bbb R">\(g:[a,b]\to\Bbb R\)</span> suatu fungsi kontinu mutlak. Andaikan <span class="math inline" data-source-tex="F">\(F\)</span> suatu integral
+tak tentu dari <span class="math inline" data-source-tex="f">\(f\)</span>, sehingga <span class="math inline" data-source-tex="F(x)-F(a)=\int_a^xf">\(F(x)-F(a)=\int_a^xf\)</span> untuk <span class="math inline" data-source-tex="x\in[a,b]">\(x\in[a,b]\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_a^bf\times g
+=F(b)g(b) - F(a)g(a) -\int_a^bF\times g&#x27;">\(\int_a^bf\times g
+=F(b)g(b) - F(a)g(a) -\int_a^bF\times g&#x27;\)</span>.</div>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Tetapkan <span class="math inline" data-source-tex="h=F\times g">\(h=F\times g\)</span>. Karena <span class="math inline" data-source-tex="F">\(F\)</span> kontinu mutlak (<a class="xref" href="#225E">225E</a>), demikian
+pula <span class="math inline" data-source-tex="h">\(h\)</span> (225Cd). Akibatnya <span class="math inline" data-source-tex="h(b)-h(a)=\int_a^bh&#x27;">\(h(b)-h(a)=\int_a^bh&#x27;\)</span>, menurut
+(iii)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(ii) dari <a class="xref" href="#225E">225E</a>. Tetapi
+<span class="math inline" data-source-tex="h&#x27;=F&#x27;\times g+F\times g&#x27;">\(h&#x27;=F&#x27;\times g+F\times g&#x27;\)</span> di setiap tempat di mana <span class="math inline" data-source-tex="F&#x27;">\(F&#x27;\)</span> dan <span class="math inline" data-source-tex="g&#x27;">\(g&#x27;\)</span>
+terdefinisi, yakni hampir di mana-mana, dan <span class="math inline" data-source-tex="F&#x27;\eae f">\(F&#x27;\eae f\)</span>, sekali lagi menurut
+<a class="xref" href="../222/index.html#222E">222E</a>; jadi <span class="math inline" data-source-tex="h&#x27;\eae f\times g+F\times g&#x27;">\(h&#x27;\eae f\times g+F\times g&#x27;\)</span>. Akhirnya, <span class="math inline" data-source-tex="g">\(g\)</span> dan <span class="math inline" data-source-tex="F">\(F\)</span> kontinu,
+sehingga terukur dan terbatas, sedangkan <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g&#x27;">\(g&#x27;\)</span> terintegralkan (dengan
+kembali menggunakan <a class="xref" href="#225E">225E</a>); jadi <span class="math inline" data-source-tex="f\times g">\(f\times g\)</span> dan <span class="math inline" data-source-tex="F\times g&#x27;">\(F\times g&#x27;\)</span> terintegralkan,
+dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="F(b)g(b)-F(a)g(a)
+=h(b)-h(a)
+=\int_a^bh&#x27;
+=\int_a^bf\times g+\int_a^bF\times g&#x27;">\(F(b)g(b)-F(a)g(a)
+=h(b)-h(a)
+=\int_a^bh&#x27;
+=\int_a^bf\times g+\int_a^bF\times g&#x27;\)</span>,</div>
+<p>seperti yang diperlukan.</p></aside>
+</section>
+<section class="source-unit" id="225G" data-source-id="225G"><h2><span class="source-label">225G</span>  </h2>
+<p>Sekarang saya beralih ke sekelompok hasil pada
+tingkat yang agak lebih dalam daripada sebagian besar pembahasan bab ini,
+yang lebih dekat dengan gagasan-gagasan Bab 26.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Misalkan <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span> suatu interval tertutup tak kosong
+dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> dan <span class="math inline" data-source-tex="f:[a,b]\to\Bbb R">\(f:[a,b]\to\Bbb R\)</span> suatu fungsi kontinu mutlak.</p>
+<p>(a) <span class="math inline" data-source-tex="f[A]">\(f[A]\)</span> terabaikan untuk setiap himpunan terabaikan
+<span class="math inline" data-source-tex="A\subseteq\Bbb R">\(A\subseteq\Bbb R\)</span>.</p>
+<p>(b)
+<span class="math inline" data-source-tex="f[E]">\(f[E]\)</span> terukur untuk setiap himpunan terukur <span class="math inline" data-source-tex="E\subseteq\Bbb R">\(E\subseteq\Bbb R\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Misalkan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Maka terdapat <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\sum_{i=1}^n|f(b_i)-f(a_i)|\le\epsilon">\(\sum_{i=1}^n|f(b_i)-f(a_i)|\le\epsilon\)</span> kapan pun
+<span class="math inline" data-source-tex="a\le a_1\le b_1\le\ldots\le a_n\le b_n\le b">\(a\le a_1\le b_1\le\ldots\le a_n\le b_n\le b\)</span> dan
+<span class="math inline" data-source-tex="\sum_{i=1}^nb_i-a_i\le\delta">\(\sum_{i=1}^nb_i-a_i\le\delta\)</span>. Sekarang terdapat suatu barisan
+<span class="math inline" data-source-tex="\sequence{k}{I_k}">\(\sequence{k}{I_k}\)</span> dari interval tertutup yang menutupi <span class="math inline" data-source-tex="A">\(A\)</span>, dengan
+<span class="math inline" data-source-tex="\sum_{k=0}^{\infty}\mu I_k\le\delta">\(\sum_{k=0}^{\infty}\mu I_k\le\delta\)</span>. Untuk setiap <span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span>, misalkan
+<span class="math inline" data-source-tex="F_m">\(F_m\)</span> adalah <span class="math inline" data-source-tex="[a,b]\cap\bigcup_{k\le m}I_k">\([a,b]\cap\bigcup_{k\le m}I_k\)</span>. Maka
+<span class="math inline" data-source-tex="\mu f[F_m]\le\epsilon">\(\mu f[F_m]\le\epsilon\)</span>. Bukti. <span class="math inline" data-source-tex="F_m">\(F_m\)</span> harus dapat dinyatakan sebagai
+<span class="math inline" data-source-tex="\bigcup_{i\le n}[c_i,d_i]">\(\bigcup_{i\le n}[c_i,d_i]\)</span>, dengan <span class="math inline" data-source-tex="n\le m">\(n\le m\)</span> dan
+<span class="math inline" data-source-tex="a\le c_0\le d_0\le\ldots\le c_n\le d_n\le b">\(a\le c_0\le d_0\le\ldots\le c_n\le d_n\le b\)</span>.
+Untuk setiap <span class="math inline" data-source-tex="i\le n">\(i\le n\)</span>, pilih <span class="math inline" data-source-tex="x_i">\(x_i\)</span>, <span class="math inline" data-source-tex="y_i">\(y_i\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="c_i\le x_i">\(c_i\le x_i\)</span>, <span class="math inline" data-source-tex="y_i\le d_i">\(y_i\le d_i\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="f(x_i)=\min_{x\in[c_i,d_i]}f(x)">\(f(x_i)=\min_{x\in[c_i,d_i]}f(x)\)</span>,  
+<span class="math inline" data-source-tex="f(y_i)=\max_{x\in[c_i,d_i]}f(x)">\(f(y_i)=\max_{x\in[c_i,d_i]}f(x)\)</span>;</div>
+<p>titik-titik seperti itu ada karena <span class="math inline" data-source-tex="f">\(f\)</span> kontinu (225Ca), sehingga
+terbatas dan mencapai batas-batasnya pada <span class="math inline" data-source-tex="[c_i,d_i]">\([c_i,d_i]\)</span>. Tetapkan
+<span class="math inline" data-source-tex="a_i=\min(x_i,y_i)">\(a_i=\min(x_i,y_i)\)</span>, <span class="math inline" data-source-tex="b_i=\max(x_i,y_i)">\(b_i=\max(x_i,y_i)\)</span>, sehingga
+<span class="math inline" data-source-tex="c_i\le a_i\le b_i\le d_i">\(c_i\le a_i\le b_i\le d_i\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{i=0}^nb_i-a_i\le\sum_{i=0}^nd_i-c_i=\mu F_m
+\le\mu(\bigcup_{k\in\Bbb N}I_k)\le\delta">\(\sum_{i=0}^nb_i-a_i\le\sum_{i=0}^nd_i-c_i=\mu F_m
+\le\mu(\bigcup_{k\in\Bbb N}I_k)\le\delta\)</span>,</div>
+<p>sehingga</p>
+<p><span class="math display" data-source-tex="\eqalign{\mu f[F_m]
+&amp;=\mu(\bigcup_{i\le n}f[\,[c_i,d_i]\,])
+\le\sum_{i=0}^n\mu(f[\,[c_i,d_i]\,])\cr
+&amp;=\sum_{i=0}^n\mu[f(x_i),f(y_i)]
+=\sum_{i=0}^n|f(b_i)-f(a_i)|
+\le\epsilon.  \text{ \Qed}\cr}">\[\begin{aligned}\mu f[F_m]
+&amp;=\mu(\bigcup_{i\le n}f[\,[c_i,d_i]\,])
+\le\sum_{i=0}^n\mu(f[\,[c_i,d_i]\,])\\
+&amp;=\sum_{i=0}^n\mu[f(x_i),f(y_i)]
+=\sum_{i=0}^n|f(b_i)-f(a_i)|
+\le\epsilon.  \text{ \Qed}\\\end{aligned}\]</span></p>
+<p>Tetapi <span class="math inline" data-source-tex="\sequence{m}{f[F_m]}">\(\sequence{m}{f[F_m]}\)</span> merupakan barisan tak-menurun yang
+menutupi <span class="math inline" data-source-tex="f[A]">\(f[A]\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu^*f[A]\le\mu(\bigcup_{m\in\Bbb N}f[F_m])
+=\sup_{m\in\Bbb N}\mu f[F_m]\le\epsilon">\(\mu^*f[A]\le\mu(\bigcup_{m\in\Bbb N}f[F_m])
+=\sup_{m\in\Bbb N}\mu f[F_m]\le\epsilon\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang, <span class="math inline" data-source-tex="f[A]">\(f[A]\)</span> terabaikan, seperti yang
+dinyatakan.</p>
+<p> </p>
+<p><strong>(b)</strong> Menurut 134Fb, terdapat suatu barisan <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> dari
+subhimpunan tertutup <span class="math inline" data-source-tex="E\cap[a,b]">\(E\cap[a,b]\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\mu F_n=\mu(E\cap[a,b])">\(\lim_{n\to\infty}\mu F_n=\mu(E\cap[a,b])\)</span>.
+Untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, <span class="math inline" data-source-tex="F_n">\(F_n\)</span> tertutup dan terbatas, jadi kompak (2A2F); karena
+<span class="math inline" data-source-tex="f">\(f\)</span> kontinu, <span class="math inline" data-source-tex="f[F_n]">\(f[F_n]\)</span> kompak (2A2Eb), jadi tertutup (2A2F, dalam arah
+sebaliknya) dan terukur (<a class="xref" href="../114/index.html#114G">114G</a>). Selanjutnya, dengan menetapkan
+<span class="math inline" data-source-tex="A=E\cap[a,b]\setminus\bigcup_{n\in\Bbb N}F_n">\(A=E\cap[a,b]\setminus\bigcup_{n\in\Bbb N}F_n\)</span>, himpunan <span class="math inline" data-source-tex="A">\(A\)</span> terabaikan,
+sehingga <span class="math inline" data-source-tex="f[A]">\(f[A]\)</span> terabaikan menurut (a) di sini, dan karenanya terukur.
+Akibatnya</p>
+<div class="centerline"><span class="math inline" data-source-tex="f[E]=f[E\cap[a,b]]=f[\bigcup_{n\in\Bbb N}F_n\cup A]
+=\bigcup_{n\in\Bbb N}f[F_n]\cup f[A]">\(f[E]=f[E\cap[a,b]]=f[\bigcup_{n\in\Bbb N}F_n\cup A]
+=\bigcup_{n\in\Bbb N}f[F_n]\cup f[A]\)</span></div>
+<p>terukur, seperti yang dinyatakan.</p></aside>
+</section>
+<section class="source-unit" id="225H" data-source-id="225H"><h2><span class="source-label">225H</span> Fungsi semikontinu </h2>
+<p>Sebagai persiapan bagi hasil utama
+terakhir dalam bagian ini, saya memberikan suatu hasil umum mengenai fungsi
+bernilai real terukur pada subhimpunan <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Untuk sekali ini, akan
+memudahkan jika kita meninjau fungsi-fungsi yang mengambil nilai dalam
+<span class="math inline" data-source-tex="[-\infty,\infty]">\([-\infty,\infty]\)</span>. Jika <span class="math inline" data-source-tex="D\subseteq\BbbR^r">\(D\subseteq\BbbR^r\)</span>, suatu fungsi
+<span class="math inline" data-source-tex="g:D\to[-\infty,\infty]">\(g:D\to[-\infty,\infty]\)</span> disebut <strong>semikontinu bawah</strong> jika
+<span class="math inline" data-source-tex="\{x:g(x)&gt;u\}">\(\{x:g(x)&gt;u\}\)</span> merupakan subhimpunan terbuka dari <span class="math inline" data-source-tex="D">\(D\)</span> (untuk topologi
+subruang, lihat 2A3C) untuk setiap <span class="math inline" data-source-tex="u\in[-\infty,\infty]">\(u\in[-\infty,\infty]\)</span>. Setiap fungsi
+semikontinu bawah terukur Borel, dan karenanya terukur
+Lebesgue (<a class="xref" href="../121/index.html#121B">121B</a>-<a class="xref" href="../121/index.html#121D">121D</a>). 
+Sekarang kita mempunyai hasil berikut.</p>
+</section>
+<section class="source-unit" id="225I" data-source-id="225I"><h2><span class="source-label">225I</span> Proposisi </h2>
+<p>Andaikan <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span> dan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real
+yang didefinisikan pada suatu subhimpunan <span class="math inline" data-source-tex="D">\(D\)</span> dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> dan
+terintegralkan pada <span class="math inline" data-source-tex="D">\(D\)</span>. Maka untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat suatu fungsi
+semikontinu bawah <span class="math inline" data-source-tex="g:\BbbR^r\to[-\infty,\infty]">\(g:\BbbR^r\to[-\infty,\infty]\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="g(x)\ge f(x)">\(g(x)\ge f(x)\)</span> untuk setiap <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span> dan <span class="math inline" data-source-tex="\int_Dg">\(\int_Dg\)</span> terdefinisi serta tidak
+lebih besar daripada <span class="math inline" data-source-tex="\epsilon+\int_Df">\(\epsilon+\int_Df\)</span>.</p>
+<p> </p>
+<p><strong>Catatan</strong> Ini merupakan hasil yang sangat penting secara umum,
+jadi saya menyatakannya dalam bentuk yang cukup umum; tetapi untuk bab ini
+kita hanya memerlukan kasus <span class="math inline" data-source-tex="r=1">\(r=1\)</span>, <span class="math inline" data-source-tex="D=[a,b]">\(D=[a,b]\)</span>, dengan <span class="math inline" data-source-tex="a\le b">\(a\le b\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Kita dapat mengenumerasi <span class="math inline" data-source-tex="\Bbb Q">\(\Bbb Q\)</span> sebagai
+<span class="math inline" data-source-tex="\sequencen{q_n}">\(\sequencen{q_n}\)</span>. Menurut <a class="xref" href="#225A">225A</a>, terdapat <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\int_F|f|\le\bover12{\epsilon}">\(\int_F|f|\le\bover12{\epsilon}\)</span> kapan pun <span class="math inline" data-source-tex="\mu_DF\le\delta">\(\mu_DF\le\delta\)</span>, dengan
+<span class="math inline" data-source-tex="\mu_D">\(\mu_D\)</span> ukuran subruang pada <span class="math inline" data-source-tex="D">\(D\)</span>, sehingga <span class="math inline" data-source-tex="\mu_DF=\mu^*F">\(\mu_DF=\mu^*F\)</span>, yaitu ukuran
+luar Lebesgue dari <span class="math inline" data-source-tex="F">\(F\)</span>, untuk setiap <span class="math inline" data-source-tex="F\in\Sigma_D">\(F\in\Sigma_D\)</span>, ranah <span class="math inline" data-source-tex="\mu_D">\(\mu_D\)</span>
+(<a class="xref" href="../214/index.html#214A">214A</a>-<a class="xref" href="../214/index.html#214B">214B</a>). Untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\delta_n=2^{-n-1}\min(\Bover{\epsilon}{1+2|q_n|},\delta)">\(\delta_n=2^{-n-1}\min(\Bover{\epsilon}{1+2|q_n|},\delta)\)</span>,</div>
+<p>sehingga
+<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\delta_n|q_n|\le\bover12{\epsilon}">\(\sum_{n=0}^{\infty}\delta_n|q_n|\le\bover12{\epsilon}\)</span> dan
+<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\delta_n\le\delta">\(\sum_{n=0}^{\infty}\delta_n\le\delta\)</span>. Untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>,
+misalkan <span class="math inline" data-source-tex="E_n\subseteq\BbbR^r">\(E_n\subseteq\BbbR^r\)</span> suatu himpunan terukur Lebesgue sedemikian
+sehingga <span class="math inline" data-source-tex="\{x:f(x)\ge q_n\}=D\cap E_n">\(\{x:f(x)\ge q_n\}=D\cap E_n\)</span>, dan pilih suatu himpunan terbuka
+<span class="math inline" data-source-tex="G_n\supseteq E_n\cap B(\tbf{0},n)">\(G_n\supseteq E_n\cap B(\tbf{0},n)\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu G_n\le\mu(E_n\cap B(\tbf{0},n))+\delta_n">\(\mu G_n\le\mu(E_n\cap B(\tbf{0},n))+\delta_n\)</span> (134Fa), dengan
+<span class="math inline" data-source-tex="B(\tbf{0},n)">\(B(\tbf{0},n)\)</span> menyatakan bola <span class="math inline" data-source-tex="\{x:\|x\|\le n\}">\(\{x:\|x\|\le n\}\)</span>. Untuk
+<span class="math inline" data-source-tex="x\in\BbbR^r">\(x\in\BbbR^r\)</span>, tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="g(x)=\sup\{q_n:x\in G_n\}">\(g(x)=\sup\{q_n:x\in G_n\}\)</span>,</div>
+<p>dengan mengizinkan <span class="math inline" data-source-tex="-\infty">\(-\infty\)</span> sebagai <span class="math inline" data-source-tex="\sup\emptyset">\(\sup\emptyset\)</span> dan
+<span class="math inline" data-source-tex="\infty">\(\infty\)</span> sebagai supremum suatu himpunan yang tidak berbatas atas dalam
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Sekarang periksa sifat-sifat <span class="math inline" data-source-tex="g">\(g\)</span>.</p>
+<p> </p>
+<p>  <strong>(i)</strong> <span class="math inline" data-source-tex="g">\(g\)</span> semikontinu bawah. Bukti. Jika
+<span class="math inline" data-source-tex="u\in[-\infty,\infty]">\(u\in[-\infty,\infty]\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:g(x)&gt;u\}=\bigcup\{G_n:q_n&gt;u\}">\(\{x:g(x)&gt;u\}=\bigcup\{G_n:q_n&gt;u\}\)</span></div>
+<p>merupakan gabungan himpunan-himpunan terbuka, jadi terbuka. ∎</p>
+<p> </p>
+<p>  <strong>(ii)</strong> <span class="math inline" data-source-tex="g(x)\ge f(x)">\(g(x)\ge f(x)\)</span> untuk setiap <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span>. Bukti. Jika
+<span class="math inline" data-source-tex="x\in D">\(x\in D\)</span> dan <span class="math inline" data-source-tex="\eta&gt;0">\(\eta&gt;0\)</span>, terdapat <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\|x\|\le n">\(\|x\|\le n\)</span> dan <span class="math inline" data-source-tex="f(x)-\eta\le q_n\le f(x)">\(f(x)-\eta\le q_n\le f(x)\)</span>; sekarang
+<span class="math inline" data-source-tex="x\in E_n\subseteq G_n">\(x\in E_n\subseteq G_n\)</span>, sehingga <span class="math inline" data-source-tex="g(x)\ge q_n\ge f(x)-\eta">\(g(x)\ge q_n\ge f(x)-\eta\)</span>. Karena
+<span class="math inline" data-source-tex="\eta">\(\eta\)</span> sebarang, <span class="math inline" data-source-tex="g(x)\ge f(x)">\(g(x)\ge f(x)\)</span>. ∎</p>
+<p> </p>
+<p>  <strong>(iii)</strong> Tinjau fungsi-fungsi
+<span class="math inline" data-source-tex="h_1">\(h_1\)</span>, <span class="math inline" data-source-tex="h_2:D\to\ocint{-\infty,\infty}">\(h_2:D\to\ocint{-\infty,\infty}\)</span> yang didefinisikan dengan menetapkan</p>
+<p><span class="math display" data-source-tex="\eqalign{h_1(x)
+&amp;=|f(x)|\text{ jika }x\in D\cap\bigcup_{n\in\Bbb N}(G_n\setminus E_n),\cr
+&amp;=0\text{ untuk }x\in D\text{ lainnya},\cr
+h_2(x)&amp;=\sum_{n=0}^{\infty}|q_n|\chi(G_n\setminus E_n)(x)
+\text{ untuk setiap }x\in D.\cr}">\[\begin{aligned}h_1(x)
+&amp;=|f(x)|\text{ jika }x\in D\cap\bigcup_{n\in\Bbb N}(G_n\setminus E_n),\\
+&amp;=0\text{ untuk }x\in D\text{ lainnya},\\
+h_2(x)&amp;=\sum_{n=0}^{\infty}|q_n|\chi(G_n\setminus E_n)(x)
+\text{ untuk setiap }x\in D.\\\end{aligned}\]</span></p>
+<p>Dengan menetapkan <span class="math inline" data-source-tex="F=\bigcup_{n\in\Bbb N}G_n\setminus E_n">\(F=\bigcup_{n\in\Bbb N}G_n\setminus E_n\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu F\le\sum_{n=0}^{\infty}\mu(G_n\setminus E_n)
+\le\delta">\(\mu F\le\sum_{n=0}^{\infty}\mu(G_n\setminus E_n)
+\le\delta\)</span>,</div>
+<p>sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_Dh_1
+=\int_{D\cap F}|f|\le\Bover12\epsilon">\(\int_Dh_1
+=\int_{D\cap F}|f|\le\Bover12\epsilon\)</span></div>
+<p>menurut pemilihan <span class="math inline" data-source-tex="\delta">\(\delta\)</span>. Adapun untuk <span class="math inline" data-source-tex="h_2">\(h_2\)</span>, kita mempunyai
+(menurut teorema B. Levi)</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_Dh_2
+=\sum_{n=0}^{\infty}|q_n|\mu_D(D\cap G_n\setminus E_n)
+\le\sum_{n=0}^{\infty}|q_n|\mu(G_n\setminus E_n)
+\le\Bover12\epsilon">\(\int_Dh_2
+=\sum_{n=0}^{\infty}|q_n|\mu_D(D\cap G_n\setminus E_n)
+\le\sum_{n=0}^{\infty}|q_n|\mu(G_n\setminus E_n)
+\le\Bover12\epsilon\)</span></div>
+<p>— karena nilai ini berhingga, <span class="math inline" data-source-tex="h_2(x)&lt;\infty">\(h_2(x)&lt;\infty\)</span> untuk hampir setiap
+<span class="math inline" data-source-tex="x\in D">\(x\in D\)</span>. Jadi <span class="math inline" data-source-tex="\int_Dh_1+h_2\le\epsilon">\(\int_Dh_1+h_2\le\epsilon\)</span>.</p>
+<p> </p>
+<p>  <strong>(iv)</strong> Pokoknya ialah bahwa <span class="math inline" data-source-tex="g\le f+h_1+h_2">\(g\le f+h_1+h_2\)</span> di setiap titik dalam
+<span class="math inline" data-source-tex="D">\(D\)</span>. Bukti. Ambil sembarang <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span>. Jika <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> dan <span class="math inline" data-source-tex="x\in G_n">\(x\in G_n\)</span>,
+maka entah <span class="math inline" data-source-tex="x\in E_n">\(x\in E_n\)</span>, dalam hal ini</p>
+<div class="centerline"><span class="math inline" data-source-tex="f(x)+h_1(x)+h_2(x)\ge f(x)\ge q_n">\(f(x)+h_1(x)+h_2(x)\ge f(x)\ge q_n\)</span>,</div>
+<p>atau <span class="math inline" data-source-tex="x\in G_n\setminus E_n">\(x\in G_n\setminus E_n\)</span>, dalam hal ini</p>
+<div class="centerline"><span class="math inline" data-source-tex="f(x)+h_1(x)+h_2(x)\ge f(x)+|f(x)|+|q_n|\ge q_n">\(f(x)+h_1(x)+h_2(x)\ge f(x)+|f(x)|+|q_n|\ge q_n\)</span>.</div>
+<p>Dengan demikian</p>
+<div class="centerline"><span class="math inline" data-source-tex="f(x)+h_1(x)+h_2(x)\ge\sup\{q_n:x\in G_n\}\ge g(x)">\(f(x)+h_1(x)+h_2(x)\ge\sup\{q_n:x\in G_n\}\ge g(x)\)</span>.   ∎</div>
+<p>Jadi <span class="math inline" data-source-tex="g\le f+h_1+h_2">\(g\le f+h_1+h_2\)</span> di setiap titik dalam <span class="math inline" data-source-tex="D">\(D\)</span>.</p>
+<p> </p>
+<p>  <strong>(v)</strong> Dengan menggabungkan (iii) dan (iv),</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_Dg\le\int_Df+h_1+h_2\le\epsilon+\int_Df">\(\int_Dg\le\int_Df+h_1+h_2\le\epsilon+\int_Df\)</span>,</div>
+<p>seperti yang diperlukan.</p></aside>
+</section>
+<section class="source-unit" id="225J" data-source-id="225J"><h2><span class="source-label">225J</span>  </h2>
+<p>Kita memerlukan beberapa hasil mengenai himpunan dan
+fungsi terukur Borel yang juga menarik secara tersendiri.</p>
+<p> </p>
+<p><strong>Teorema</strong> Misalkan <span class="math inline" data-source-tex="D">\(D\)</span> suatu subhimpunan <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> dan
+<span class="math inline" data-source-tex="f:D\to\Bbb R">\(f:D\to\Bbb R\)</span> sembarang fungsi. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="E=\{x:x\in D,\,f">\(E=\{x:x\in D,\,f\)</span> kontinu di <span class="math inline" data-source-tex="x\}">\(x\}\)</span></div>
+<p>terukur Borel relatif dalam <span class="math inline" data-source-tex="D">\(D\)</span>, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="F=\{x:x\in D,\,f">\(F=\{x:x\in D,\,f\)</span> terdiferensialkan di <span class="math inline" data-source-tex="x\}">\(x\}\)</span></div>
+<p>terukur Borel dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>; selain itu, <span class="math inline" data-source-tex="f&#x27;:F\to\Bbb R">\(f&#x27;:F\to\Bbb R\)</span>
+terukur Borel.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Untuk <span class="math inline" data-source-tex="k\in\Bbb N">\(k\in\Bbb N\)</span>, tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Cal G_k=\{\ooint{a,b}:a,\,b\in\Bbb R,\,
+|f(x)-f(y)|\le 2^{-k}">\(\Cal G_k=\{\ooint{a,b}:a,\,b\in\Bbb R,\,
+|f(x)-f(y)|\le 2^{-k}\)</span> untuk semua <span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="y\in D\cap\ooint{a,b}\}">\(y\in D\cap\ooint{a,b}\}\)</span>.</div>
+<p>Maka <span class="math inline" data-source-tex="G_k=\bigcup\Cal G_k">\(G_k=\bigcup\Cal G_k\)</span> suatu himpunan terbuka, sehingga
+<span class="math inline" data-source-tex="E_0=\bigcap_{k\in\Bbb N}G_k">\(E_0=\bigcap_{k\in\Bbb N}G_k\)</span> suatu himpunan Borel. Tetapi
+<span class="math inline" data-source-tex="E=D\cap E_0">\(E=D\cap E_0\)</span>, jadi <span class="math inline" data-source-tex="E">\(E\)</span> suatu subhimpunan Borel relatif dari <span class="math inline" data-source-tex="D">\(D\)</span>.</p>
+<p> </p>
+<p><strong>(b)(i)</strong> Barangkali perlu segera saya katakan bahwa ketika menafsirkan
+rumus <span class="math inline" data-source-tex="f&#x27;(x)=\lim_{h\to 0}(f(x+h)-f(x))/h">\(f&#x27;(x)=\lim_{h\to 0}(f(x+h)-f(x))/h\)</span>, saya bersikeras menggunakan
+definisi ketat</p>
+<div class="centerline"><span class="math inline" data-source-tex="a=\lim_{h\to 0}\bover{f(x+h)-f(x)}{h}">\(a=\lim_{h\to 0}\bover{f(x+h)-f(x)}{h}\)</span></div>
+<p>jika</p>
+<p>     untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\Bover{f(x+h)-f(x)}{h}">\(\Bover{f(x+h)-f(x)}{h}\)</span> terdefinisi dan</p>
+<p><span class="math inline" data-source-tex="|\Bover{f(x+h)-f(x)}{h}-a|\le\epsilon">\(|\Bover{f(x+h)-f(x)}{h}-a|\le\epsilon\)</span> kapan pun
+<span class="math inline" data-source-tex="0&lt;|h|\le\delta">\(0&lt;|h|\le\delta\)</span>.      </p>
+<p>Jadi <span class="math inline" data-source-tex="f&#x27;(x)">\(f&#x27;(x)\)</span> dapat terdefinisi hanya jika terdapat
+<span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga seluruh interval
+<span class="math inline" data-source-tex="[x-\delta,x+\delta]">\([x-\delta,x+\delta]\)</span> terletak dalam ranah <span class="math inline" data-source-tex="D">\(D\)</span> dari <span class="math inline" data-source-tex="f">\(f\)</span>.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Untuk <span class="math inline" data-source-tex="p">\(p\)</span>, <span class="math inline" data-source-tex="q">\(q\)</span>, <span class="math inline" data-source-tex="q&#x27;\in\Bbb Q">\(q&#x27;\in\Bbb Q\)</span> dan <span class="math inline" data-source-tex="k\in\Bbb N">\(k\in\Bbb N\)</span>, tetapkan</p>
+<p><span class="math display" data-source-tex="\eqalign{H(k,p,q,q&#x27;)
+&amp;=\{x:x\in E\cap\ooint{q,q&#x27;},\,|f(y)-f(x)-p(y-x)|\le 2^{-k}|y-x|
+\text{ untuk setiap }y\in\ooint{q,q&#x27;}\}\cr&amp;
+\mskip300mu\text{ jika }\ooint{q,q&#x27;}\subseteq D\cr
+&amp;=\emptyset\text{ jika tidak}.\cr}">\[\begin{aligned}H(k,p,q,q&#x27;)
+&amp;=\{x:x\in E\cap\ooint{q,q&#x27;},\,|f(y)-f(x)-p(y-x)|\le 2^{-k}|y-x|
+\text{ untuk setiap }y\in\ooint{q,q&#x27;}\}\\&amp;
+\mskip300mu\text{ jika }\ooint{q,q&#x27;}\subseteq D\\
+&amp;=\emptyset\text{ jika tidak}.\\\end{aligned}\]</span></p>
+<p>Maka
+<span class="math inline" data-source-tex="H(k,p,q,q&#x27;)=E\cap\ooint{q,q&#x27;}\cap\overline{H(k,p,q,q&#x27;)}">\(H(k,p,q,q&#x27;)=E\cap\ooint{q,q&#x27;}\cap\overline{H(k,p,q,q&#x27;)}\)</span>.
+Bukti. Jika
+<span class="math inline" data-source-tex="x\in E\cap\ooint{q,q&#x27;}\cap\overline{H(k,p,q,q&#x27;)}">\(x\in E\cap\ooint{q,q&#x27;}\cap\overline{H(k,p,q,q&#x27;)}\)</span>, terdapat suatu barisan
+<span class="math inline" data-source-tex="\sequencen{x_n}">\(\sequencen{x_n}\)</span> dalam <span class="math inline" data-source-tex="H(k,p,q,q&#x27;)">\(H(k,p,q,q&#x27;)\)</span> yang konvergen ke <span class="math inline" data-source-tex="x">\(x\)</span>.
+Karena <span class="math inline" data-source-tex="f">\(f\)</span> kontinu di <span class="math inline" data-source-tex="x">\(x\)</span>,</p>
+<p><span class="math display" data-source-tex="\eqalign{|f(y)-f(x)-p(y-x)|
+&amp;=\lim_{n\to\infty}|f(y)-f(x_n)-p(y-x_n)|\cr&amp;
+\le 2^{-k}\lim_{n\to\infty}|y-x_n|
+=2^{-k}|y-x|\cr}">\[\begin{aligned}|f(y)-f(x)-p(y-x)|
+&amp;=\lim_{n\to\infty}|f(y)-f(x_n)-p(y-x_n)|\\&amp;
+\le 2^{-k}\lim_{n\to\infty}|y-x_n|
+=2^{-k}|y-x|\\\end{aligned}\]</span></p>
+<p>untuk setiap <span class="math inline" data-source-tex="y\in\ooint{q,q&#x27;}">\(y\in\ooint{q,q&#x27;}\)</span>, sehingga
+<span class="math inline" data-source-tex="x\in H(k,p,q,q&#x27;)">\(x\in H(k,p,q,q&#x27;)\)</span>. ∎ Dengan demikian <span class="math inline" data-source-tex="H(k,p,q,q&#x27;)">\(H(k,p,q,q&#x27;)\)</span> suatu himpunan
+Borel. Bukti. Menurut (a), terdapat suatu himpunan Borel <span class="math inline" data-source-tex="E_0">\(E_0\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="E=E_0\cap D">\(E=E_0\cap D\)</span>, sehingga jika <span class="math inline" data-source-tex="\ooint{q,q&#x27;}\subseteq D">\(\ooint{q,q&#x27;}\subseteq D\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="H(k,p,q,q&#x27;)=E\cap\ooint{q,q&#x27;}\cap\overline{H(k,p,q,q&#x27;)}
+=E_0\cap\ooint{q,q&#x27;}\cap\overline{H(k,p,q,q&#x27;)}">\(H(k,p,q,q&#x27;)=E\cap\ooint{q,q&#x27;}\cap\overline{H(k,p,q,q&#x27;)}
+=E_0\cap\ooint{q,q&#x27;}\cap\overline{H(k,p,q,q&#x27;)}\)</span></div>
+<p>merupakan himpunan Borel. Jika tidak, tentu saja
+<span class="math inline" data-source-tex="H(k,p,q,q&#x27;)">\(H(k,p,q,q&#x27;)\)</span> Borel karena kosong. ∎</p>
+<p> </p>
+<p>  <strong>(iii)</strong> Sekarang</p>
+<div class="centerline"><span class="math inline" data-source-tex="F
+=\bigcap_{k\in\Bbb N}\bigcup_{p,q,q&#x27;\in\Bbb Q}H(k,p,q,q&#x27;)">\(F
+=\bigcap_{k\in\Bbb N}\bigcup_{p,q,q&#x27;\in\Bbb Q}H(k,p,q,q&#x27;)\)</span>.</div>
+<p>Bukti. (<span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>) Andaikan <span class="math inline" data-source-tex="x\in F">\(x\in F\)</span>, yakni <span class="math inline" data-source-tex="f&#x27;(x)">\(f&#x27;(x)\)</span> terdefinisi;
+katakanlah <span class="math inline" data-source-tex="f&#x27;(x)=a">\(f&#x27;(x)=a\)</span>. Ambil sembarang <span class="math inline" data-source-tex="k\in\Bbb N">\(k\in\Bbb N\)</span>. Maka terdapat
+<span class="math inline" data-source-tex="p\in\Bbb Q">\(p\in\Bbb Q\)</span>, <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="|p-a|\le 2^{-k-1}">\(|p-a|\le 2^{-k-1}\)</span> dan <span class="math inline" data-source-tex="[x-\delta,x+\delta]\subseteq D">\([x-\delta,x+\delta]\subseteq D\)</span> serta
+<span class="math inline" data-source-tex="|\bover{f(x+h)-f(x)}{h}-a|\le 2^{-k-1}">\(|\bover{f(x+h)-f(x)}{h}-a|\le 2^{-k-1}\)</span> kapan pun
+<span class="math inline" data-source-tex="0&lt;|h|\le\delta">\(0&lt;|h|\le\delta\)</span>; sekarang ambil
+<span class="math inline" data-source-tex="q\in\Bbb Q\cap\coint{x-\delta,x}">\(q\in\Bbb Q\cap\coint{x-\delta,x}\)</span>,
+<span class="math inline" data-source-tex="q&#x27;\in\Bbb Q\cap\ocint{x,x+\delta}">\(q&#x27;\in\Bbb Q\cap\ocint{x,x+\delta}\)</span> dan lihat bahwa
+<span class="math inline" data-source-tex="x\in H(k,p,q,q&#x27;)">\(x\in H(k,p,q,q&#x27;)\)</span>. Karena <span class="math inline" data-source-tex="x">\(x\)</span> sebarang,
+<span class="math inline" data-source-tex="F\subseteq\bigcap_{k\in\Bbb N}\bigcup_{p,q,q&#x27;\in\Bbb Q}H(k,p,q,q&#x27;)">\(F\subseteq\bigcap_{k\in\Bbb N}\bigcup_{p,q,q&#x27;\in\Bbb Q}H(k,p,q,q&#x27;)\)</span>.
+(<span class="math inline" data-source-tex="\beta">\(\beta\)</span>) Jika
+<span class="math inline" data-source-tex="x\in\bigcap_{k\in\Bbb N}\bigcup_{p,q,q&#x27;\in\Bbb Q}H(k,p,q,q&#x27;)">\(x\in\bigcap_{k\in\Bbb N}\bigcup_{p,q,q&#x27;\in\Bbb Q}H(k,p,q,q&#x27;)\)</span>, maka untuk
+setiap <span class="math inline" data-source-tex="k\in\Bbb N">\(k\in\Bbb N\)</span> pilih <span class="math inline" data-source-tex="p_k">\(p_k\)</span>, <span class="math inline" data-source-tex="q_k">\(q_k\)</span>, <span class="math inline" data-source-tex="q&#x27;_k\in\Bbb Q">\(q&#x27;_k\in\Bbb Q\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="x\in H(k,p_k,q_k,q&#x27;_k)">\(x\in H(k,p_k,q_k,q&#x27;_k)\)</span>. Jika <span class="math inline" data-source-tex="h\ne 0">\(h\ne 0\)</span> dan
+<span class="math inline" data-source-tex="x+h\in\ooint{q_k,q&#x27;_k}">\(x+h\in\ooint{q_k,q&#x27;_k}\)</span>, maka
+<span class="math inline" data-source-tex="|\bover{f(x+h)-f(x)}{h}-p_k|\le 2^{-k}">\(|\bover{f(x+h)-f(x)}{h}-p_k|\le 2^{-k}\)</span>.
+Tetapi ini berarti, pertama, bahwa <span class="math inline" data-source-tex="|p_k-p_l|\le 2^{-k}+2^{-l}">\(|p_k-p_l|\le 2^{-k}+2^{-l}\)</span> untuk setiap
+<span class="math inline" data-source-tex="k">\(k\)</span>, <span class="math inline" data-source-tex="l">\(l\)</span> (karena tentu terdapat suatu <span class="math inline" data-source-tex="h\ne 0">\(h\ne 0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="x+h\in\ooint{q_k,q&#x27;_k}\cap\ooint{q_l,q&#x27;_l}">\(x+h\in\ooint{q_k,q&#x27;_k}\cap\ooint{q_l,q&#x27;_l}\)</span>), sehingga
+<span class="math inline" data-source-tex="\sequence{k}{p_k}">\(\sequence{k}{p_k}\)</span> merupakan barisan Cauchy, katakanlah dengan limit <span class="math inline" data-source-tex="a">\(a\)</span>;
+dan, kedua, bahwa
+<span class="math inline" data-source-tex="|\bover{f(x+h)-f(x)}{h}-a|\le 2^{-k}+|a-p_k|">\(|\bover{f(x+h)-f(x)}{h}-a|\le 2^{-k}+|a-p_k|\)</span> kapan pun
+<span class="math inline" data-source-tex="h\ne 0">\(h\ne 0\)</span> dan <span class="math inline" data-source-tex="x+h\in\ooint{q_k,q&#x27;_k}">\(x+h\in\ooint{q_k,q&#x27;_k}\)</span>, sehingga <span class="math inline" data-source-tex="f&#x27;(x)">\(f&#x27;(x)\)</span> terdefinisi dan
+sama dengan <span class="math inline" data-source-tex="a">\(a\)</span>. ∎</p>
+<p> </p>
+<p>  <strong>(iv)</strong> Karena <span class="math inline" data-source-tex="\Bbb Q">\(\Bbb Q\)</span> terhitung, semua gabungan
+<span class="math inline" data-source-tex="\bigcup_{p,q,q&#x27;\in\Bbb Q}H(k,p,q,q&#x27;)">\(\bigcup_{p,q,q&#x27;\in\Bbb Q}H(k,p,q,q&#x27;)\)</span> merupakan himpunan Borel, sehingga
+<span class="math inline" data-source-tex="F">\(F\)</span> juga demikian.</p>
+<p> </p>
+<p>  <strong>(v)</strong> Sekarang enumerasikan <span class="math inline" data-source-tex="\BbbQ^3">\(\BbbQ^3\)</span> sebagai
+<span class="math inline" data-source-tex="\sequence{i}{(p_i,q_i,q&#x27;_i)}">\(\sequence{i}{(p_i,q_i,q&#x27;_i)}\)</span>, dan tetapkan
+<span class="math inline" data-source-tex="H&#x27;_{ki}=H(k,p_i,q_i,q&#x27;_i)\setminus\bigcup_{j&lt;i}H(k,p_j,q_j,q&#x27;_j)">\(H&#x27;_{ki}=H(k,p_i,q_i,q&#x27;_i)\setminus\bigcup_{j&lt;i}H(k,p_j,q_j,q&#x27;_j)\)</span> untuk
+setiap <span class="math inline" data-source-tex="k">\(k\)</span>, <span class="math inline" data-source-tex="i\in\Bbb N">\(i\in\Bbb N\)</span>. Setiap <span class="math inline" data-source-tex="H&#x27;_{ki}">\(H&#x27;_{ki}\)</span> terukur Borel,
+<span class="math inline" data-source-tex="\sequence{i}{H&#x27;_{ki}}">\(\sequence{i}{H&#x27;_{ki}}\)</span> saling lepas, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bigcup_{i\in\Bbb N}H&#x27;_{ki}
+=\bigcup_{i\in\Bbb N}H(k,p_i,q_i,q&#x27;_i)\supseteq F">\(\bigcup_{i\in\Bbb N}H&#x27;_{ki}
+=\bigcup_{i\in\Bbb N}H(k,p_i,q_i,q&#x27;_i)\supseteq F\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="k">\(k\)</span>. Perhatikan bahwa
+<span class="math inline" data-source-tex="|f&#x27;(x)-p|\le 2^{-k}">\(|f&#x27;(x)-p|\le 2^{-k}\)</span> kapan pun <span class="math inline" data-source-tex="x\in F\cap H(k,p,q,q&#x27;)">\(x\in F\cap H(k,p,q,q&#x27;)\)</span>, jadi jika kita
+menetapkan <span class="math inline" data-source-tex="f_k(x)=p_i">\(f_k(x)=p_i\)</span> untuk setiap <span class="math inline" data-source-tex="x\in H&#x27;_{ki}">\(x\in H&#x27;_{ki}\)</span>, kita memperoleh suatu
+fungsi terukur Borel <span class="math inline" data-source-tex="f_k">\(f_k\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="|f&#x27;(x)-f_k(x)|\le 2^{-k}">\(|f&#x27;(x)-f_k(x)|\le 2^{-k}\)</span> untuk setiap <span class="math inline" data-source-tex="x\in F">\(x\in F\)</span>.
+Dengan demikian <span class="math inline" data-source-tex="f&#x27;=\lim_{k\to\infty}f_k\restr F">\(f&#x27;=\lim_{k\to\infty}f_k\restr F\)</span> terukur Borel.</p></aside>
+</section>
+<section class="source-unit" id="225K" data-source-id="225K"><h2><span class="source-label">225K</span> Proposisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span> suatu interval tertutup tak kosong dalam
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan <span class="math inline" data-source-tex="f:[a,b]\to\Bbb R">\(f:[a,b]\to\Bbb R\)</span> suatu fungsi. Tetapkan
+<span class="math inline" data-source-tex="F=\{x:x\in\ooint{a,b},\,f&#x27;(x)">\(F=\{x:x\in\ooint{a,b},\,f&#x27;(x)\)</span> terdefinisi<span class="math inline" data-source-tex="\}">\(\}\)</span>. Maka <span class="math inline" data-source-tex="f">\(f\)</span> kontinu
+mutlak jika dan hanya jika (i) <span class="math inline" data-source-tex="f">\(f\)</span> kontinu (ii) <span class="math inline" data-source-tex="f&#x27;">\(f&#x27;\)</span> terintegralkan pada <span class="math inline" data-source-tex="F">\(F\)</span>
+(iii) <span class="math inline" data-source-tex="f[\,[a,b]\setminus F]">\(f[\,[a,b]\setminus F]\)</span> terabaikan.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Mula-mula andaikan <span class="math inline" data-source-tex="f">\(f\)</span> kontinu mutlak. Maka
+<span class="math inline" data-source-tex="f">\(f\)</span> tentu kontinu (225Ca) dan <span class="math inline" data-source-tex="f&#x27;">\(f&#x27;\)</span> terintegralkan pada <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>,
+karena itu juga pada <span class="math inline" data-source-tex="F">\(F\)</span> (<a class="xref" href="#225E">225E</a>); selain itu, <span class="math inline" data-source-tex="[a,b]\setminus F">\([a,b]\setminus F\)</span> terabaikan, sehingga
+<span class="math inline" data-source-tex="f[\,[a,b]\setminus F]">\(f[\,[a,b]\setminus F]\)</span> terabaikan, menurut <a class="xref" href="#225G">225G</a>.</p>
+<p> </p>
+<p><strong>(b)</strong> Sekarang andaikan <span class="math inline" data-source-tex="f">\(f\)</span> memenuhi syarat-syarat tersebut. Tetapkan
+<span class="math inline" data-source-tex="f^*(x)=|f&#x27;(x)|">\(f^*(x)=|f&#x27;(x)|\)</span> untuk <span class="math inline" data-source-tex="x\in F">\(x\in F\)</span>, dan <span class="math inline" data-source-tex="0">\(0\)</span> untuk
+<span class="math inline" data-source-tex="x\in[a,b]\setminus F">\(x\in[a,b]\setminus F\)</span>. Maka <span class="math inline" data-source-tex="f(b)\le f(a)+\int_a^bf^*">\(f(b)\le f(a)+\int_a^bf^*\)</span>.</p>
+<p> </p>
+<p>Bukti. <strong>(i)</strong> Karena <span class="math inline" data-source-tex="F">\(F\)</span> suatu himpunan Borel dan <span class="math inline" data-source-tex="f&#x27;">\(f&#x27;\)</span> suatu fungsi
+terukur Borel (<a class="xref" href="#225J">225J</a>), <span class="math inline" data-source-tex="f^*">\(f^*\)</span> terukur. Ambil <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>.
+Ambil suatu subhimpunan terbuka <span class="math inline" data-source-tex="G">\(G\)</span> dari
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> sedemikian sehingga <span class="math inline" data-source-tex="f[\,[a,b]\setminus F]\subseteq G">\(f[\,[a,b]\setminus F]\subseteq G\)</span> dan
+<span class="math inline" data-source-tex="\mu G\le\epsilon">\(\mu G\le\epsilon\)</span> (134Fa sekali lagi). Ambil suatu fungsi semikontinu bawah
+<span class="math inline" data-source-tex="g:\Bbb R\to[0,\infty]">\(g:\Bbb R\to[0,\infty]\)</span> sedemikian sehingga <span class="math inline" data-source-tex="f^*(x)\le g(x)">\(f^*(x)\le g(x)\)</span> untuk setiap
+<span class="math inline" data-source-tex="x\in[a,b]">\(x\in[a,b]\)</span> dan <span class="math inline" data-source-tex="\int_a^bg\le\int_a^bf^*+\epsilon">\(\int_a^bg\le\int_a^bf^*+\epsilon\)</span> (<a class="xref" href="#225I">225I</a>). Perhatikan</p>
+<div class="centerline"><span class="math inline" data-source-tex="A=\{x:a\le x\le b,\,\mu([f(a),f(x)]\setminus G)
+  \le 2\epsilon(x-a)+\int_a^xg\}">\(A=\{x:a\le x\le b,\,\mu([f(a),f(x)]\setminus G)
+  \le 2\epsilon(x-a)+\int_a^xg\}\)</span>,</div>
+<p>dengan menafsirkan <span class="math inline" data-source-tex="[f(a),f(x)]">\([f(a),f(x)]\)</span> sebagai <span class="math inline" data-source-tex="\emptyset">\(\emptyset\)</span> jika <span class="math inline" data-source-tex="f(x)&lt;f(a)">\(f(x)&lt;f(a)\)</span>.
+Maka <span class="math inline" data-source-tex="a\in A\subseteq[a,b]">\(a\in A\subseteq[a,b]\)</span>, sehingga <span class="math inline" data-source-tex="c=\sup A">\(c=\sup A\)</span> terdefinisi dan termasuk dalam
+<span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>.</p>
+<p>Karena <span class="math inline" data-source-tex="f">\(f\)</span> kontinu, fungsi
+<span class="math inline" data-source-tex="x\mapsto\mu([f(a),f(x)]\setminus G)">\(x\mapsto\mu([f(a),f(x)]\setminus G)\)</span> kontinu; selain itu,
+<span class="math inline" data-source-tex="x\mapsto 2\epsilon(x-a)+\int_a^xg">\(x\mapsto 2\epsilon(x-a)+\int_a^xg\)</span> jelas kontinu, sehingga
+<span class="math inline" data-source-tex="c\in A">\(c\in A\)</span>.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> <span class="fremlin-query" role="img" aria-label="andaikan untuk kontradiksi"></span> Jika <span class="math inline" data-source-tex="c\in F">\(c\in F\)</span>, sehingga <span class="math inline" data-source-tex="f^*(c)=|f&#x27;(c)|">\(f^*(c)=|f&#x27;(c)|\)</span>, maka terdapat
+suatu <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="a\le c-\delta\le c+\delta\le b">\(a\le c-\delta\le c+\delta\le b\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="g(x)\ge g(c)-\epsilon\ge|f&#x27;(c)|-\epsilon">\(g(x)\ge g(c)-\epsilon\ge|f&#x27;(c)|-\epsilon\)</span> kapan pun
+<span class="math inline" data-source-tex="|x-c|\le\delta">\(|x-c|\le\delta\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="|\Bover{f(x)-f(c)}{x-c}-f&#x27;(c)|\le\epsilon">\(|\Bover{f(x)-f(c)}{x-c}-f&#x27;(c)|\le\epsilon\)</span> kapan pun
+<span class="math inline" data-source-tex="0&lt;|x-c|\le\delta">\(0&lt;|x-c|\le\delta\)</span>.</div>
+<p>Perhatikan <span class="math inline" data-source-tex="x=c+\delta">\(x=c+\delta\)</span>. Maka <span class="math inline" data-source-tex="c&lt;x\le b">\(c&lt;x\le b\)</span> dan</p>
+<p><span class="math display" data-source-tex="\eqalignno{\mu([f(a),f(x)]\setminus G)
+&amp;\le\mu([f(a),f(c)]\setminus G)+|f(x)-f(c)|\cr
+&amp;\le2\epsilon(c-a)+\int_a^cg+\epsilon(x-c)+|f&#x27;(c)|(x-c)\cr
+&amp;\le2\epsilon(c-a)+\int_a^cg
+         +\epsilon(x-c)+\int_c^x(g+\epsilon)\cr
+\noalign{\noindent (karena $g(t)\ge |f&#x27;(c)|-\epsilon$ kapan pun
+$c\le t\le x$)}
+&amp;=2\epsilon(x-a)+\int_a^xg,\cr}">\[\begin{aligned}\mu([f(a),f(x)]\setminus G)
+&amp;\le\mu([f(a),f(c)]\setminus G)+|f(x)-f(c)|\\
+&amp;\le2\epsilon(c-a)+\int_a^cg+\epsilon(x-c)+|f&#x27;(c)|(x-c)\\
+&amp;\le2\epsilon(c-a)+\int_a^cg
+         +\epsilon(x-c)+\int_c^x(g+\epsilon)\\
+&amp;\text{(karena }g(t)\ge |f&#x27;(c)|-\epsilon\text{ kapan pun
+}c\le t\le x\text{)}\\
+&amp;=2\epsilon(x-a)+\int_a^xg,\\\end{aligned}\]</span></p>
+<p>sehingga <span class="math inline" data-source-tex="x\in A">\(x\in A\)</span>; tetapi <span class="math inline" data-source-tex="c">\(c\)</span> seharusnya merupakan batas atas dari
+<span class="math inline" data-source-tex="A">\(A\)</span>. <span class="fremlin-bang" role="img" aria-label="kontradiksi"></span></p>
+<p>Jadi <span class="math inline" data-source-tex="c\in[a,b]\setminus F">\(c\in[a,b]\setminus F\)</span>.</p>
+<p> </p>
+<p>  <strong>(iii)</strong> <span class="fremlin-query" role="img" aria-label="andaikan untuk kontradiksi"></span> Sekarang andaikan, jika mungkin, bahwa
+<span class="math inline" data-source-tex="c&lt;b">\(c&lt;b\)</span>. Kita tahu bahwa <span class="math inline" data-source-tex="f(c)\in G">\(f(c)\in G\)</span>, sehingga terdapat suatu <span class="math inline" data-source-tex="\eta&gt;0">\(\eta&gt;0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="[f(c)-\eta,f(c)+\eta]\subseteq G">\([f(c)-\eta,f(c)+\eta]\subseteq G\)</span>; sekarang terdapat suatu <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="|f(x)-f(c)|\le\eta">\(|f(x)-f(c)|\le\eta\)</span> kapan pun <span class="math inline" data-source-tex="x\in[a,b]">\(x\in[a,b]\)</span> dan
+<span class="math inline" data-source-tex="|x-c|\le\delta">\(|x-c|\le\delta\)</span>. Tetapkan <span class="math inline" data-source-tex="x=\min(c+\delta,b)">\(x=\min(c+\delta,b)\)</span>; maka <span class="math inline" data-source-tex="c&lt;x\le b">\(c&lt;x\le b\)</span> dan
+<span class="math inline" data-source-tex="[f(c),f(x)]\subseteq G">\([f(c),f(x)]\subseteq G\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu([f(a),f(x)]\setminus G)
+=\mu([f(a),f(c)]\setminus G)
+\le 2\epsilon(c-a)+\int_a^cg
+\le 2\epsilon(x-a)+\int_a^xg">\(\mu([f(a),f(x)]\setminus G)
+=\mu([f(a),f(c)]\setminus G)
+\le 2\epsilon(c-a)+\int_a^cg
+\le 2\epsilon(x-a)+\int_a^xg\)</span></div>
+<p>dan sekali lagi <span class="math inline" data-source-tex="x\in A">\(x\in A\)</span>, meskipun <span class="math inline" data-source-tex="x&gt;\sup A">\(x&gt;\sup A\)</span>. <span class="fremlin-bang" role="img" aria-label="kontradiksi"></span></p>
+<p> </p>
+<p>  <strong>(iv)</strong> Kita menyimpulkan bahwa <span class="math inline" data-source-tex="c=b">\(c=b\)</span>, sehingga <span class="math inline" data-source-tex="b\in A">\(b\in A\)</span>. Tetapi ini
+berarti bahwa</p>
+<p><span class="math display" data-source-tex="\eqalign{f(b)-f(a)
+&amp;\le\mu([f(a),f(b)])
+\le\mu([f(a),f(b)]\setminus G)+\mu G\cr
+&amp;\le 2\epsilon(b-a)+\int_a^bg+\epsilon
+\le 2\epsilon(b-a)+\int_a^bf^*+\epsilon+\epsilon\cr
+&amp;=2\epsilon(1+b-a)+\int_a^bf^*.\cr}">\[\begin{aligned}f(b)-f(a)
+&amp;\le\mu([f(a),f(b)])
+\le\mu([f(a),f(b)]\setminus G)+\mu G\\
+&amp;\le 2\epsilon(b-a)+\int_a^bg+\epsilon
+\le 2\epsilon(b-a)+\int_a^bf^*+\epsilon+\epsilon\\
+&amp;=2\epsilon(1+b-a)+\int_a^bf^*.\\\end{aligned}\]</span></p>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang, <span class="math inline" data-source-tex="f(b)-f(a)\le\int_a^bf^*">\(f(b)-f(a)\le\int_a^bf^*\)</span>, seperti
+yang dinyatakan. ∎</p>
+<p> </p>
+<p><strong>(c)</strong> Dengan cara yang sama, atau dengan menerapkan (b) pada <span class="math inline" data-source-tex="-f">\(-f\)</span>,
+<span class="math inline" data-source-tex="f(a)-f(b)\le\int_a^bf^*">\(f(a)-f(b)\le\int_a^bf^*\)</span>, sehingga <span class="math inline" data-source-tex="|f(b)-f(a)|\le\int_a^bf^*">\(|f(b)-f(a)|\le\int_a^bf^*\)</span>.</p>
+<p>Tentu saja argumen tersebut berlaku pula pada setiap subinterval dari <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>, sehingga
+<span class="math inline" data-source-tex="|f(d)-f(c)|\le\int_c^df^*">\(|f(d)-f(c)|\le\int_c^df^*\)</span> kapan pun
+<span class="math inline" data-source-tex="a\le c\le d\le b">\(a\le c\le d\le b\)</span>. Sekarang ambil <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Menurut <a class="xref" href="#225A">225A</a> sekali lagi, terdapat
+suatu <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\int_Ef^*\le\epsilon">\(\int_Ef^*\le\epsilon\)</span> kapan pun
+<span class="math inline" data-source-tex="E\subseteq[a,b]">\(E\subseteq[a,b]\)</span> dan <span class="math inline" data-source-tex="\mu E\le\delta">\(\mu E\le\delta\)</span>. Andaikan bahwa
+<span class="math inline" data-source-tex="a\le a_1\le b_1\le\ldots\le a_n\le b_n\le b">\(a\le a_1\le b_1\le\ldots\le a_n\le b_n\le b\)</span> dan
+<span class="math inline" data-source-tex="\sum_{i=1}^nb_i-a_i\le\delta">\(\sum_{i=1}^nb_i-a_i\le\delta\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{i=1}^n|f(b_i)-f(a_i)|
+\le\sum_{i=1}^n\int_{a_i}^{b_i}f^*
+=\int_{\bigcupop_{i\le n}[a_i,b_i]}f^*
+\le\epsilon">\(\sum_{i=1}^n|f(b_i)-f(a_i)|
+\le\sum_{i=1}^n\int_{a_i}^{b_i}f^*
+=\int_{\bigcupop_{i\le n}[a_i,b_i]}f^*
+\le\epsilon\)</span>.</div>
+<p>Jadi <span class="math inline" data-source-tex="f">\(f\)</span> kontinu mutlak, seperti yang dinyatakan.</p></aside>
+</section>
+<section class="source-unit" id="225L" data-source-id="225L"><h2><span class="source-label">225L</span> Korolari </h2>
+<p>Misalkan <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span> suatu interval tertutup tak kosong dalam
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Misalkan <span class="math inline" data-source-tex="f:[a,b]\to\Bbb R">\(f:[a,b]\to\Bbb R\)</span> suatu fungsi kontinu yang
+terdiferensialkan pada interval terbuka <span class="math inline" data-source-tex="\ooint{a,b}">\(\ooint{a,b}\)</span>. Jika turunannya
+<span class="math inline" data-source-tex="f&#x27;">\(f&#x27;\)</span> terintegralkan pada <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>, maka <span class="math inline" data-source-tex="f">\(f\)</span> kontinu mutlak, dan
+<span class="math inline" data-source-tex="f(b)-f(a)=\int_a^bf&#x27;">\(f(b)-f(a)=\int_a^bf&#x27;\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><span class="math inline" data-source-tex="f[\,[a,b]\setminus F]=\{f(a),f(b)\}">\(f[\,[a,b]\setminus F]=\{f(a),f(b)\}\)</span> tentu terabaikan, sehingga
+<span class="math inline" data-source-tex="f">\(f\)</span> kontinu mutlak, menurut <a class="xref" href="#225K">225K</a>; akibatnya
+<span class="math inline" data-source-tex="f(b)-f(a)=\int_a^bf&#x27;">\(f(b)-f(a)=\int_a^bf&#x27;\)</span>, menurut <a class="xref" href="#225E">225E</a>.</p></aside>
+</section>
+<section class="source-unit" id="225M" data-source-id="225M"><h2><span class="source-label">225M</span> Korolari </h2>
+<p>Misalkan <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span> suatu interval tertutup tak kosong dalam
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan <span class="math inline" data-source-tex="f:[a,b]\to\Bbb R">\(f:[a,b]\to\Bbb R\)</span> suatu fungsi kontinu. Maka <span class="math inline" data-source-tex="f">\(f\)</span>
+kontinu mutlak jika dan hanya jika fungsi tersebut kontinu dan bervariasi terbatas serta
+<span class="math inline" data-source-tex="f[A]">\(f[A]\)</span> terabaikan untuk setiap himpunan terabaikan <span class="math inline" data-source-tex="A\subseteq[a,b]">\(A\subseteq[a,b]\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Andaikan bahwa <span class="math inline" data-source-tex="f">\(f\)</span> kontinu mutlak. Menurut
+<a class="xref" href="#225C">225C</a>(a-b), fungsi tersebut kontinu dan bervariasi terbatas, dan menurut <a class="xref" href="#225G">225G</a> kita mempunyai
+<span class="math inline" data-source-tex="f[A]">\(f[A]\)</span> terabaikan untuk setiap himpunan terabaikan <span class="math inline" data-source-tex="A\subseteq [a,b]">\(A\subseteq [a,b]\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Sekarang andaikan <span class="math inline" data-source-tex="f">\(f\)</span> memenuhi syarat-syarat tersebut. Tetapkan
+<span class="math inline" data-source-tex="F=\{x:x\in\ooint{a,b},\,f&#x27;(x)">\(F=\{x:x\in\ooint{a,b},\,f&#x27;(x)\)</span> terdefinisi<span class="math inline" data-source-tex="\}">\(\}\)</span>. Menurut <a class="xref" href="../224/index.html#224I">224I</a> sekali lagi,
+<span class="math inline" data-source-tex="[a,b]\setminus F">\([a,b]\setminus F\)</span> terabaikan, sehingga <span class="math inline" data-source-tex="f[\,[a,b]\setminus F]">\(f[\,[a,b]\setminus F]\)</span>
+terabaikan. Selain itu, juga menurut <a class="xref" href="../224/index.html#224I">224I</a>, <span class="math inline" data-source-tex="f&#x27;">\(f&#x27;\)</span> terintegralkan pada <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>
+atau <span class="math inline" data-source-tex="F">\(F\)</span>. Jadi syarat-syarat <a class="xref" href="#225K">225K</a> terpenuhi dan <span class="math inline" data-source-tex="f">\(f\)</span> kontinu
+mutlak.</p></aside>
+</section>
+<section class="source-unit" id="225N" data-source-id="225N"><h2><span class="source-label">225N</span> Fungsi Cantor </h2>
+<p>Saya perlu menyebutkan
+contoh baku suatu fungsi kontinu yang bervariasi terbatas tetapi
+tidak kontinu mutlak. Misalkan <span class="math inline" data-source-tex="C\subseteq[0,1]">\(C\subseteq[0,1]\)</span> himpunan
+Cantor (<a class="xref" href="../134/index.html#134G">134G</a>).
+Ingat bahwa ‘fungsi Cantor’ adalah suatu fungsi kontinu tak-menurun
+<span class="math inline" data-source-tex="f:[0,1]\to[0,1]">\(f:[0,1]\to[0,1]\)</span> sedemikian sehingga <span class="math inline" data-source-tex="f&#x27;(x)">\(f&#x27;(x)\)</span> terdefinisi dan sama dengan
+nol untuk setiap <span class="math inline" data-source-tex="x\in[0,1]\setminus C">\(x\in[0,1]\setminus C\)</span>,
+tetapi <span class="math inline" data-source-tex="f(0)=0&lt;1=f(1)">\(f(0)=0&lt;1=f(1)\)</span> (<a class="xref" href="../134/index.html#134H">134H</a>). Tentu
+saja <span class="math inline" data-source-tex="f">\(f\)</span> bervariasi terbatas dan tidak kontinu mutlak. <span class="math inline" data-source-tex="C">\(C\)</span>
+terabaikan sedangkan <span class="math inline" data-source-tex="f[C]=[0,1]">\(f[C]=[0,1]\)</span> tidak. Jika <span class="math inline" data-source-tex="x\in C">\(x\in C\)</span>, maka untuk setiap
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> terdapat suatu interval dengan panjang <span class="math inline" data-source-tex="3^{-n}">\(3^{-n}\)</span>, yang memuat <span class="math inline" data-source-tex="x">\(x\)</span>, dan yang
+padanya <span class="math inline" data-source-tex="f">\(f\)</span> meningkat sebesar <span class="math inline" data-source-tex="2^{-n}">\(2^{-n}\)</span>; jadi <span class="math inline" data-source-tex="f">\(f\)</span> tidak mungkin terdiferensialkan di
+<span class="math inline" data-source-tex="x">\(x\)</span>, dan himpunan <span class="math inline" data-source-tex="F=\dom f&#x27;">\(F=\dom f&#x27;\)</span> dari <a class="xref" href="#225K">225K</a> tepat sama dengan <span class="math inline" data-source-tex="[0,1]\setminus C">\([0,1]\setminus C\)</span>, sehingga
+<span class="math inline" data-source-tex="f[\,[0,1]\setminus F]=[0,1]">\(f[\,[0,1]\setminus F]=[0,1]\)</span>.</p>
+</section>
+<section class="source-unit" id="225O" data-source-id="225O"><span class="anchor" id="225Oa"></span><h2><span class="source-label">225O</span> Fungsi bernilai kompleks </h2>
+<p>Seperti biasa, saya
+jabarkan
+hasil-hasil di atas dalam bentuk yang berlaku bagi fungsi bernilai kompleks.</p>
+<p> </p>
+<p><strong>(a)</strong> Misalkan
+<span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sembarang ruang ukur dan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi
+bernilai kompleks terintegralkan
+yang didefinisikan pada suatu subhimpunan koterabaikan dari <span class="math inline" data-source-tex="X">\(X\)</span>.
+Maka untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat suatu himpunan terukur
+<span class="math inline" data-source-tex="E">\(E\)</span> berukuran hingga dan suatu bilangan real
+<span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\int_F|f|\le\epsilon">\(\int_F|f|\le\epsilon\)</span> kapan pun <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dan
+<span class="math inline" data-source-tex="\mu(F\cap E)\le\delta">\(\mu(F\cap E)\le\delta\)</span>. <span class="proof-fragment">(Terapkan <a class="xref" href="#225A">225A</a> pada <span class="math inline" data-source-tex="|f|">\(|f|\)</span>.)</span></p>
+</section>
+<section class="source-unit" id="225Ob" data-source-id="225Ob"><h3><span class="source-label">225Ob</span> (b) </h3>
+<p>Jika <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span> suatu interval tertutup
+tak kosong dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> dan <span class="math inline" data-source-tex="f:[a,b]\to\Bbb C">\(f:[a,b]\to\Bbb C\)</span> suatu fungsi, kita katakan
+bahwa <span class="math inline" data-source-tex="f">\(f\)</span> <strong>kontinu mutlak</strong> jika untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat
+suatu <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\sum_{i=1}^n|f(b_i)-f(a_i)|\le\epsilon">\(\sum_{i=1}^n|f(b_i)-f(a_i)|\le\epsilon\)</span>
+kapan pun <span class="math inline" data-source-tex="a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b">\(a\le a_1\le b_1\le a_2\le b_2\le\ldots\le a_n\le b_n\le b\)</span> dan
+<span class="math inline" data-source-tex="\sum_{i=1}^nb_i-a_i\le\delta">\(\sum_{i=1}^nb_i-a_i\le\delta\)</span>. Perhatikan bahwa <span class="math inline" data-source-tex="f">\(f\)</span> kontinu
+mutlak jika dan hanya jika bagian real dan bagian imajinernya sama-sama
+kontinu mutlak.</p>
+</section>
+<section class="source-unit" id="225Oc" data-source-id="225Oc"><h3><span class="source-label">225Oc</span> (c) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span> suatu interval tertutup tak kosong dalam
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.</p>
+<p>  (i) Jika <span class="math inline" data-source-tex="f:[a,b]\to\Bbb C">\(f:[a,b]\to\Bbb C\)</span> kontinu mutlak, maka fungsi tersebut bervariasi
+terbatas pada <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>, sehingga terdiferensialkan hampir di mana-mana dalam <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>,
+dan turunannya terintegralkan pada <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>.</p>
+<p>  (ii) Jika <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g:[a,b]\to\Bbb C">\(g:[a,b]\to\Bbb C\)</span> kontinu mutlak, maka demikian pula
+<span class="math inline" data-source-tex="f+g">\(f+g\)</span> dan <span class="math inline" data-source-tex="\zeta f">\(\zeta f\)</span>, untuk setiap <span class="math inline" data-source-tex="\zeta\in\Bbb C">\(\zeta\in\Bbb C\)</span>, serta <span class="math inline" data-source-tex="f\times g">\(f\times g\)</span>.</p>
+<p>  (iii) Jika <span class="math inline" data-source-tex="g:[a,b]\to[c,d]">\(g:[a,b]\to[c,d]\)</span> monoton dan kontinu mutlak,
+dan
+<span class="math inline" data-source-tex="f:[c,d]\to\Bbb C">\(f:[c,d]\to\Bbb C\)</span> kontinu mutlak, maka <span class="math inline" data-source-tex="fg:[a,b]\to\Bbb C">\(fg:[a,b]\to\Bbb C\)</span>
+kontinu mutlak.</p>
+</section>
+<section class="source-unit" id="225Od" data-source-id="225Od"><h3><span class="source-label">225Od</span> (d) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span> suatu interval tertutup tak kosong dalam
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> dan <span class="math inline" data-source-tex="F:[a,b]\to\Bbb C">\(F:[a,b]\to\Bbb C\)</span> suatu fungsi. Maka pernyataan-pernyataan berikut
+ekuivalen:</p>
+<p>  (i) terdapat suatu fungsi bernilai kompleks terintegralkan <span class="math inline" data-source-tex="f">\(f\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="F(x)=F(a)+\int_a^xf">\(F(x)=F(a)+\int_a^xf\)</span> untuk setiap <span class="math inline" data-source-tex="x\in[a,b]">\(x\in[a,b]\)</span>;</p>
+<p>  (ii) <span class="math inline" data-source-tex="\int_a^xF&#x27;">\(\int_a^xF&#x27;\)</span> ada dan sama dengan
+<span class="math inline" data-source-tex="F(x)-F(a)">\(F(x)-F(a)\)</span> untuk setiap <span class="math inline" data-source-tex="x\in[a,b]">\(x\in[a,b]\)</span>;</p>
+<p>  (iii) <span class="math inline" data-source-tex="F">\(F\)</span> kontinu mutlak.</p>
+<p>(Terapkan <a class="xref" href="#225E">225E</a> pada bagian real dan bagian imajiner dari <span class="math inline" data-source-tex="F">\(F\)</span>.)</p>
+</section>
+<section class="source-unit" id="225Oe" data-source-id="225Oe"><h3><span class="source-label">225Oe</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai kompleks terintegralkan
+pada suatu interval <span class="math inline" data-source-tex="[a,b]\subseteq\Bbb R">\([a,b]\subseteq\Bbb R\)</span>, dan <span class="math inline" data-source-tex="g:[a,b]\to\Bbb C">\(g:[a,b]\to\Bbb C\)</span> suatu fungsi
+kontinu mutlak. Tetapkan <span class="math inline" data-source-tex="F(x)=\int_a^xf">\(F(x)=\int_a^xf\)</span> untuk <span class="math inline" data-source-tex="x\in[a,b]">\(x\in[a,b]\)</span>.
+Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_a^bf\times g
+=F(b)g(b) - F(a)g(a) -\int_a^bF\times g&#x27;">\(\int_a^bf\times g
+=F(b)g(b) - F(a)g(a) -\int_a^bF\times g&#x27;\)</span>.</div>
+<p>(Terapkan <a class="xref" href="#225F">225F</a> pada bagian real dan bagian imajiner dari <span class="math inline" data-source-tex="f">\(f\)</span>
+dan <span class="math inline" data-source-tex="g">\(g\)</span>.)</p>
+</section>
+<section class="source-unit" id="225Of" data-source-id="225Of"><h3><span class="source-label">225Of</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi kontinu bernilai kompleks
+pada suatu interval tertutup <span class="math inline" data-source-tex="[a,b]\subseteq\Bbb R">\([a,b]\subseteq\Bbb R\)</span>, dan andaikan <span class="math inline" data-source-tex="f">\(f\)</span>
+terdiferensialkan di setiap titik dari interval terbuka <span class="math inline" data-source-tex="\ooint{a,b}">\(\ooint{a,b}\)</span>, dengan
+<span class="math inline" data-source-tex="f&#x27;">\(f&#x27;\)</span> terintegralkan pada <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>. Maka <span class="math inline" data-source-tex="f">\(f\)</span> kontinu mutlak.
+(Terapkan <a class="xref" href="#225L">225L</a> pada bagian real dan bagian imajiner dari <span class="math inline" data-source-tex="f">\(f\)</span>.)</p>
+</section>
+<section class="source-unit" id="225Og" data-source-id="225Og"><h3><span class="source-label">225Og</span> (g) </h3>
+<p>Untuk hasil yang bersesuaian dengan <a class="xref" href="#225M">225M</a>, lihat 264Yp.</p>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="225X" data-source-id="225X"><span class="anchor" id="225Xa"></span><h2><span class="source-label">225X</span> Latihan dasar (a) </h2>
+<p>Tunjukkan langsung dari definisi dalam
+<a class="xref" href="#225B">225B</a> (tanpa menggunakan
+<a class="xref" href="#225E">225E</a>) bahwa setiap fungsi bernilai real yang kontinu mutlak pada suatu interval
+tertutup <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span> dapat dinyatakan sebagai selisih fungsi-fungsi kontinu mutlak
+yang tak-menurun.</p>
+</section>
+<section class="source-unit" id="225Xb" data-source-id="225Xb"><h3><span class="source-label">225Xb</span> (b) </h3>
+<p>Tunjukkan langsung dari definisi dalam <a class="xref" href="#225B">225B</a> dan
+Teorema Nilai Rata-Rata (tanpa menggunakan <a class="xref" href="#225K">225K</a>) bahwa jika suatu fungsi
+<span class="math inline" data-source-tex="f">\(f\)</span> kontinu pada interval tertutup <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>, terdiferensialkan pada interval
+terbuka <span class="math inline" data-source-tex="\ooint{a,b}">\(\ooint{a,b}\)</span>, dan turunannya terbatas pada
+<span class="math inline" data-source-tex="\ooint{a,b}">\(\ooint{a,b}\)</span>, maka <span class="math inline" data-source-tex="f">\(f\)</span> kontinu mutlak, sehingga
+<span class="math inline" data-source-tex="f(x)=f(a)+\int_a^xf&#x27;">\(f(x)=f(a)+\int_a^xf&#x27;\)</span> untuk setiap <span class="math inline" data-source-tex="x\in[a,b]">\(x\in[a,b]\)</span>.</p>
+</section>
+<section class="source-unit" id="225Xc" data-source-id="225Xc"><h3><span class="source-label">225Xc</span> (c) </h3>
+<p>Tunjukkan bahwa jika <span class="math inline" data-source-tex="f:[a,b]\to\Bbb R">\(f:[a,b]\to\Bbb R\)</span> kontinu
+mutlak, maka <span class="math inline" data-source-tex="\Var f=\int_a^b|f&#x27;|">\(\Var f=\int_a^b|f&#x27;|\)</span>.   <span class="hint" role="note"><strong>Petunjuk:</strong> gabungkan <a class="xref" href="../224/index.html#224I">224I</a> dan
+<a class="xref" href="#225E">225E</a>.</span></p>
+</section>
+<section class="source-unit" id="225Xd" data-source-id="225Xd"><h3><span class="source-label">225Xd</span> (d) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="g:\Bbb R\to\Bbb R">\(g:\Bbb R\to\Bbb R\)</span> suatu fungsi
+tak-menurun yang kontinu mutlak pada setiap interval terbatas;
+misalkan <span class="math inline" data-source-tex="\mu_g">\(\mu_g\)</span> ukuran Lebesgue-Stieltjes yang bersesuaian
+(<a class="xref" href="../114/index.html#114Xa">114Xa</a>), dan <span class="math inline" data-source-tex="\Sigma_g">\(\Sigma_g\)</span> domainnya.   Tunjukkan bahwa <span class="math inline" data-source-tex="\int_Eg&#x27;=\mu_gE">\(\int_Eg&#x27;=\mu_gE\)</span> untuk
+setiap <span class="math inline" data-source-tex="E\in\Sigma_g">\(E\in\Sigma_g\)</span>, jika kita mengizinkan <span class="math inline" data-source-tex="\infty">\(\infty\)</span> sebagai nilai
+integral.   <span class="hint" role="note"><strong>Petunjuk:</strong> mulailah dengan interval <span class="math inline" data-source-tex="E">\(E\)</span>.</span></p>
+</section>
+<section class="source-unit" id="225Xe" data-source-id="225Xe"><h3><span class="source-label">225Xe</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="g:[a,b]\to\Bbb R">\(g:[a,b]\to\Bbb R\)</span> suatu fungsi kontinu
+mutlak yang tak-menurun, dan <span class="math inline" data-source-tex="f:[g(a),g(b)]\to\Bbb R">\(f:[g(a),g(b)]\to\Bbb R\)</span> suatu fungsi
+kontinu.   Tunjukkan bahwa <span class="math inline" data-source-tex="\int_{g(a)}^{g(b)}f(t)dt=
+\int_a^bf(g(t))g&#x27;(t)dt">\(\int_{g(a)}^{g(b)}f(t)dt=
+\int_a^bf(g(t))g&#x27;(t)dt\)</span>.   <span class="hint" role="note"><strong>Petunjuk:</strong> tetapkan <span class="math inline" data-source-tex="F(x)=\int_{g(a)}^xf">\(F(x)=\int_{g(a)}^xf\)</span>,
+<span class="math inline" data-source-tex="G=Fg">\(G=Fg\)</span> dan tinjau <span class="math inline" data-source-tex="\int_a^bG&#x27;(t)dt">\(\int_a^bG&#x27;(t)dt\)</span>.   Lihat juga 263J.</span></p>
+</section>
+<section class="source-unit" id="225Xf" data-source-id="225Xf"><h3><span class="source-label">225Xf</span> (f) </h3>
+<p>Andaikan bahwa <span class="math inline" data-source-tex="I\subseteq\Bbb R">\(I\subseteq\Bbb R\)</span> sembarang
+interval tak-sepele (terbatas atau tak terbatas, terbuka, tertutup, atau
+setengah terbuka, tetapi bukan himpunan kosong ataupun himpunan satu anggota),
+dan <span class="math inline" data-source-tex="f:I\to\Bbb R">\(f:I\to\Bbb R\)</span> suatu fungsi.   Tunjukkan bahwa
+<span class="math inline" data-source-tex="f">\(f\)</span> kontinu mutlak pada setiap subinterval tertutup dan terbatas dari <span class="math inline" data-source-tex="I">\(I\)</span>
+jika dan hanya jika terdapat fungsi <span class="math inline" data-source-tex="g">\(g\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\int_a^bg=f(b)-f(a)">\(\int_a^bg=f(b)-f(a)\)</span> setiap kali
+<span class="math inline" data-source-tex="a\le b">\(a\le b\)</span> dalam <span class="math inline" data-source-tex="I">\(I\)</span>, dan dalam hal ini <span class="math inline" data-source-tex="g">\(g\)</span> terintegralkan jika dan hanya jika
+<span class="math inline" data-source-tex="f">\(f\)</span> mempunyai variasi terbatas pada <span class="math inline" data-source-tex="I">\(I\)</span>.</p>
+</section>
+<section class="source-unit" id="225Xg" data-source-id="225Xg"><h3><span class="source-label">225Xg</span> (g) </h3>
+<p>Tunjukkan bahwa
+<span class="math inline" data-source-tex="\biggerint_0^1\Bover{\ln x}{x-1}dx=\sum_{n=1}^{\infty}\Bover1{n^2}">\(\biggerint_0^1\Bover{\ln x}{x-1}dx=\sum_{n=1}^{\infty}\Bover1{n^2}\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> gunakan <a class="xref" href="#225F">225F</a> untuk menentukan <span class="math inline" data-source-tex="\int_0^1x^n\ln x\,dx">\(\int_0^1x^n\ln x\,dx\)</span>, dan ingat bahwa
+<span class="math inline" data-source-tex="\bover1{1-x}=\sum_{n=0}^{\infty}x^n">\(\bover1{1-x}=\sum_{n=0}^{\infty}x^n\)</span> untuk <span class="math inline" data-source-tex="0\le x&lt;1">\(0\le x&lt;1\)</span>.</span></p>
+</section>
+<section class="source-unit" id="225Xh" data-source-id="225Xh"><h3><span class="source-label">225Xh</span> (h) </h3>
+<p>(i) Tunjukkan bahwa <span class="math inline" data-source-tex="\int_0^1t^adt">\(\int_0^1t^adt\)</span> berhingga untuk
+setiap <span class="math inline" data-source-tex="a&gt;-1">\(a&gt;-1\)</span>.   (ii) Tunjukkan bahwa <span class="math inline" data-source-tex="\int_1^{\infty}t^ae^{-t}dt">\(\int_1^{\infty}t^ae^{-t}dt\)</span> berhingga
+untuk setiap <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>.   <span class="hint" role="note"><strong>Petunjuk:</strong> tunjukkan bahwa terdapat <span class="math inline" data-source-tex="M">\(M\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="t^a\le Me^{t/2}">\(t^a\le Me^{t/2}\)</span> untuk <span class="math inline" data-source-tex="t\ge 1">\(t\ge 1\)</span>.</span>   (iii) Tunjukkan bahwa
+<span class="math inline" data-source-tex="\Gamma(a)=\int_0^{\infty}t^{a-1}e^{-t}dt">\(\Gamma(a)=\int_0^{\infty}t^{a-1}e^{-t}dt\)</span> terdefinisi untuk setiap <span class="math inline" data-source-tex="a&gt;0">\(a&gt;0\)</span>.
+(iv) Tunjukkan bahwa <span class="math inline" data-source-tex="\Gamma(a+1)=a\Gamma(a)">\(\Gamma(a+1)=a\Gamma(a)\)</span> untuk setiap <span class="math inline" data-source-tex="a&gt;0">\(a&gt;0\)</span>.   (v) Tunjukkan bahwa
+<span class="math inline" data-source-tex="\Gamma(n+1)=n!">\(\Gamma(n+1)=n!\)</span> untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>.</p>
+<p>(<span class="math inline" data-source-tex="\Gamma">\(\Gamma\)</span> tentu saja merupakan <strong>fungsi gama</strong>.)</p>
+</section>
+<section class="source-unit" id="225Xi" data-source-id="225Xi"><h3><span class="source-label">225Xi</span> (i) </h3>
+<p>Tunjukkan bahwa jika <span class="math inline" data-source-tex="b&gt;0">\(b&gt;0\)</span>, maka
+<span class="math inline" data-source-tex="\int_0^{\infty}u^{b-1}e^{-u^2/2}du=2^{(b-2)/2}\Gamma(\bover{b}2)">\(\int_0^{\infty}u^{b-1}e^{-u^2/2}du=2^{(b-2)/2}\Gamma(\bover{b}2)\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> tinjau <span class="math inline" data-source-tex="f(t)=t^{(b-2)/2}e^{-t}">\(f(t)=t^{(b-2)/2}e^{-t}\)</span>, <span class="math inline" data-source-tex="g(u)=u^2/2">\(g(u)=u^2/2\)</span> dalam <a class="xref" href="#225Xe">225Xe</a>.</span></p>
+</section>
+<section class="source-unit" id="225Xj" data-source-id="225Xj"><h3><span class="source-label">225Xj</span> (j) </h3>
+<p>Andaikan bahwa <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g">\(g\)</span> adalah
+fungsi-fungsi semikontinu bawah yang didefinisikan pada subhimpunan-subhimpunan <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>,
+dan bernilai dalam <span class="math inline" data-source-tex="\ocint{-\infty,\infty}">\(\ocint{-\infty,\infty}\)</span>.   (i) Tunjukkan bahwa <span class="math inline" data-source-tex="f+g">\(f+g\)</span>,
+<span class="math inline" data-source-tex="f\wedge g">\(f\wedge g\)</span> dan <span class="math inline" data-source-tex="f\vee g">\(f\vee g\)</span> semikontinu bawah, dan bahwa
+<span class="math inline" data-source-tex="\alpha f">\(\alpha f\)</span> semikontinu
+bawah untuk setiap <span class="math inline" data-source-tex="\alpha\ge 0">\(\alpha\ge 0\)</span>.   (ii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span>
+nonnegatif, maka <span class="math inline" data-source-tex="f\times g">\(f\times g\)</span> semikontinu bawah.
+(iii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span> nonnegatif dan <span class="math inline" data-source-tex="g">\(g\)</span> kontinu, maka
+<span class="math inline" data-source-tex="f\times g">\(f\times g\)</span> semikontinu bawah.   (iv) Tunjukkan bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span>
+tak-menurun, maka komposisi <span class="math inline" data-source-tex="fg">\(fg\)</span> semikontinu bawah.</p>
+</section>
+<section class="source-unit" id="225Xk" data-source-id="225Xk"><h3><span class="source-label">225Xk</span> (k) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="A">\(A\)</span> suatu keluarga tak kosong dari fungsi-fungsi
+semikontinu bawah yang didefinisikan pada subhimpunan-subhimpunan <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> dan bernilai
+dalam <span class="math inline" data-source-tex="[-\infty,\infty]">\([-\infty,\infty]\)</span>.   Tetapkan <span class="math inline" data-source-tex="g(x)=\sup\{f(x):f\in A,\,x\in\dom
+f\}">\(g(x)=\sup\{f(x):f\in A,\,x\in\dom
+f\}\)</span> untuk <span class="math inline" data-source-tex="x\in
+D=\bigcup_{f\in A}\dom f">\(x\in
+D=\bigcup_{f\in A}\dom f\)</span>.   Tunjukkan bahwa <span class="math inline" data-source-tex="g">\(g\)</span> semikontinu
+bawah.</p>
+</section>
+<section class="source-unit" id="225Xl" data-source-id="225Xl"><h3><span class="source-label">225Xl</span> (l) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f:[a,b]\to\Bbb R">\(f:[a,b]\to\Bbb R\)</span> suatu fungsi kontinu mutlak,
+dengan <span class="math inline" data-source-tex="a\le b">\(a\le b\)</span>.   (i) Tunjukkan bahwa <span class="math inline" data-source-tex="|f|:[a,b]\to\Bbb R">\(|f|:[a,b]\to\Bbb R\)</span> kontinu
+mutlak.   (ii) Tunjukkan bahwa <span class="math inline" data-source-tex="gf">\(gf\)</span> kontinu mutlak
+setiap kali <span class="math inline" data-source-tex="g:f[\,[a,b]\,]\to\Bbb R">\(g:f[\,[a,b]\,]\to\Bbb R\)</span> kontinu mutlak dan
+<span class="math inline" data-source-tex="g&#x27;">\(g&#x27;\)</span> terbatas.   (iii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="g:[a,b]\to\Bbb R">\(g:[a,b]\to\Bbb R\)</span> kontinu
+mutlak dan <span class="math inline" data-source-tex="\inf_{x\in[a,b]}|g(x)|&gt;0">\(\inf_{x\in[a,b]}|g(x)|&gt;0\)</span>, maka
+<span class="math inline" data-source-tex="f/g">\(f/g\)</span> kontinu mutlak.</p>
+</section>
+<section class="source-unit" id="225Xm" data-source-id="225Xm"><h3><span class="source-label">225Xm</span> (m) </h3>
+<p>Andaikan bahwa <span class="math inline" data-source-tex="f:[a,b]\to\Bbb R">\(f:[a,b]\to\Bbb R\)</span> kontinu, dan
+terdiferensialkan pada semua kecuali terhitung banyak
+titik dari <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="f">\(f\)</span> kontinu mutlak jika dan hanya jika
+fungsi tersebut mempunyai variasi terbatas.</p>
+</section>
+<section class="source-unit" id="225Xn" data-source-id="225Xn"><h3><span class="source-label">225Xn</span> (n) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f:\coint{0,\infty}\to\Bbb C">\(f:\coint{0,\infty}\to\Bbb C\)</span> suatu fungsi
+yang kontinu mutlak pada <span class="math inline" data-source-tex="[0,a]">\([0,a]\)</span> untuk setiap
+<span class="math inline" data-source-tex="a\in\coint{0,\infty}">\(a\in\coint{0,\infty}\)</span> dan mempunyai transformasi Laplace
+<span class="math inline" data-source-tex="F(s)=\int_0^{\infty}e^{-sx}f(x)dx">\(F(s)=\int_0^{\infty}e^{-sx}f(x)dx\)</span> yang terdefinisi pada <span class="math inline" data-source-tex="\{s:\Real s&gt;S\}">\(\{s:\Real s&gt;S\}\)</span>.
+Andaikan pula bahwa <span class="math inline" data-source-tex="\lim_{x\to\infty}e^{-Sx}f(x)=0">\(\lim_{x\to\infty}e^{-Sx}f(x)=0\)</span>.   Tunjukkan
+bahwa <span class="math inline" data-source-tex="f&#x27;">\(f&#x27;\)</span> mempunyai transformasi Laplace <span class="math inline" data-source-tex="sF(s)-f(0)">\(sF(s)-f(0)\)</span> yang terdefinisi setiap kali <span class="math inline" data-source-tex="\Real
+s&gt;S">\(\Real
+s&gt;S\)</span>.   (<em>Petunjuk\/</em>:  tunjukkan bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="f(x)e^{-sx}-f(0)
+=\int_0^x\Bover{d}{dt}(f(t)e^{-st})dt">\(f(x)e^{-sx}-f(0)
+=\int_0^x\Bover{d}{dt}(f(t)e^{-st})dt\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="x\ge 0">\(x\ge 0\)</span>.)</p>
+</section>
+<section class="source-unit" id="225Y" data-source-id="225Y"><span class="anchor" id="225Ya"></span><h2><span class="source-label">225Y</span> Latihan lanjutan (a) </h2>
+<p>Tunjukkan bahwa komposisi dua fungsi kontinu
+mutlak tidak harus kontinu mutlak.   <span class="hint" role="note"><strong>Petunjuk:</strong> <a class="xref" href="../224/index.html#224Xb">224Xb</a>.</span></p>
+</section>
+<section class="source-unit" id="225Yb" data-source-id="225Yb"><h3><span class="source-label">225Yb</span> (b) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f:[a,b]\to\Bbb R">\(f:[a,b]\to\Bbb R\)</span> suatu fungsi kontinu, dengan
+<span class="math inline" data-source-tex="a&lt;b">\(a&lt;b\)</span>.   Tetapkan <span class="math inline" data-source-tex="G=\{x:x\in\ooint{a,b},\,\exists\,y\in\ocint{x,b}">\(G=\{x:x\in\ooint{a,b},\,\exists\,y\in\ocint{x,b}\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="f(x)&lt;f(y)\}">\(f(x)&lt;f(y)\}\)</span>.   Tunjukkan bahwa <span class="math inline" data-source-tex="G">\(G\)</span> terbuka dan dapat dinyatakan sebagai
+gabungan saling lepas dari interval-interval <span class="math inline" data-source-tex="\ooint{c,d}">\(\ooint{c,d}\)</span> dengan <span class="math inline" data-source-tex="f(c)\le f(d)">\(f(c)\le f(d)\)</span>.   Gunakan
+hal ini untuk membuktikan <a class="xref" href="#225D">225D</a> tanpa menggunakan Teorema Vitali.</p>
+</section>
+<section class="source-unit" id="225Yc" data-source-id="225Yc"><h3><span class="source-label">225Yc</span> (c) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f:[a,b]\to\Bbb R">\(f:[a,b]\to\Bbb R\)</span> suatu fungsi dengan variasi
+terbatas dan <span class="math inline" data-source-tex="\gamma&gt;0">\(\gamma&gt;0\)</span>.   Tunjukkan bahwa terdapat fungsi kontinu mutlak
+<span class="math inline" data-source-tex="g:[a,b]\to\Bbb R">\(g:[a,b]\to\Bbb R\)</span> sedemikian sehingga <span class="math inline" data-source-tex="|g&#x27;(x)|\le\gamma">\(|g&#x27;(x)|\le\gamma\)</span> di setiap titik tempat
+turunannya ada dan <span class="math inline" data-source-tex="\{x:x\in[a,b],\,f(x)\ne g(x)\}">\(\{x:x\in[a,b],\,f(x)\ne g(x)\}\)</span> mempunyai ukuran
+paling besar <span class="math inline" data-source-tex="\bover1{\gamma}\Var f">\(\bover1{\gamma}\Var f\)</span>.   <span class="hint" role="note"><strong>Petunjuk:</strong> cukup buktikan kasus
+<span class="math inline" data-source-tex="f">\(f\)</span> tak-menurun.   Terapkan <a class="xref" href="#225Yb">225Yb</a> pada fungsi
+<span class="math inline" data-source-tex="x\mapsto f(x)-\gamma x">\(x\mapsto f(x)-\gamma x\)</span> dan tunjukkan bahwa <span class="math inline" data-source-tex="\gamma\mu G\le\Var f">\(\gamma\mu G\le\Var f\)</span>.
+Tetapkan <span class="math inline" data-source-tex="g(x)=f(x)">\(g(x)=f(x)\)</span> untuk <span class="math inline" data-source-tex="x\in\ooint{a,b}\setminus G">\(x\in\ooint{a,b}\setminus G\)</span>.</span></p>
+</section>
+<section class="source-unit" id="225Yd" data-source-id="225Yd"><h3><span class="source-label">225Yd</span> (d) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f:\Bbb R\to\Bbb R">\(f:\Bbb R\to\Bbb R\)</span> suatu fungsi yang kontinu
+mutlak pada setiap interval terbatas.   Tunjukkan bahwa
+<span class="math inline" data-source-tex="\Var f\le\bover12\Var f&#x27;+\int|f|">\(\Var f\le\bover12\Var f&#x27;+\int|f|\)</span>.</p>
+</section>
+<section class="source-unit" id="225Ye" data-source-id="225Ye"><h3><span class="source-label">225Ye</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real terukur dan
+nonnegatif yang didefinisikan pada suatu subhimpunan <span class="math inline" data-source-tex="D">\(D\)</span> dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dengan <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span>.   Tunjukkan
+bahwa untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat fungsi semikontinu bawah
+<span class="math inline" data-source-tex="g:\BbbR^r\to[-\infty,\infty]">\(g:\BbbR^r\to[-\infty,\infty]\)</span> sedemikian sehingga <span class="math inline" data-source-tex="g(x)\ge f(x)">\(g(x)\ge f(x)\)</span> untuk
+setiap <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span> dan <span class="math inline" data-source-tex="\int_Dg-f\le\epsilon">\(\int_Dg-f\le\epsilon\)</span>.</p>
+</section>
+<section class="source-unit" id="225Yf" data-source-id="225Yf"><h3><span class="source-label">225Yf</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real terukur
+yang didefinisikan pada suatu subhimpunan <span class="math inline" data-source-tex="D">\(D\)</span> dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dengan <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span>.   Tunjukkan bahwa untuk
+setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat fungsi semikontinu bawah
+<span class="math inline" data-source-tex="g:\BbbR^r\to[-\infty,\infty]">\(g:\BbbR^r\to[-\infty,\infty]\)</span> sedemikian sehingga <span class="math inline" data-source-tex="g(x)\ge f(x)">\(g(x)\ge f(x)\)</span> untuk setiap
+<span class="math inline" data-source-tex="x\in D">\(x\in D\)</span> dan
+<span class="math inline" data-source-tex="\mu^*\{x:x\in D,\,g(x)&gt;f(x)\}\le\epsilon">\(\mu^*\{x:x\in D,\,g(x)&gt;f(x)\}\le\epsilon\)</span>.   <span class="hint" role="note"><strong>Petunjuk:</strong> <a class="xref" href="../134/index.html#134Yd">134Yd</a>, 134Fb.</span></p>
+</section>
+<section class="source-unit" id="225Yg" data-source-id="225Yg"><h3><span class="source-label">225Yg</span> (g) </h3>
+<p>(i) Tunjukkan bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi real terukur Lebesgue,
+maka semua turunan Dini-nya terukur Lebesgue.
+(ii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi real terukur Borel,
+maka semua turunan Dini-nya terukur Borel.</p>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<section class="source-unit" id="225-notes" data-source-id="225-notes"><h2><span class="source-label">225-notes</span> Catatan penutup untuk Bagian 225 </h2>
+<p>Masih banyak yang dapat dikatakan tentang fungsi-fungsi kontinu
+mutlak; saya akan kembali ke topik ini dalam bagian berikutnya
+dan dalam Bab 26.   Saya jarang akan menggunakan secara langsung hasil-hasil
+mulai <a class="xref" href="#225H">225H</a> dalam bentuknya yang paling kuat,
+tetapi menurut saya penyelidikan semacam ini
+diperlukan untuk memperoleh gambaran yang jelas mengenai hubungan antara
+konsep-konsep seperti kontinuitas mutlak dan variasi terbatas. Tentu saja,
+untuk menerapkan hasil-hasil ini, kita memang memerlukan bekal kelas-kelas
+sederhana fungsi kontinu mutlak; fungsi-fungsi terdiferensialkan dengan
+turunan terbatas membentuk kelas terpenting (<a class="xref" href="#225Xb">225Xb</a>).   Keluarga yang lebih
+besar dari jenis yang sama adalah kelas fungsi ‘Lipschitz’
+(262Bc).</p>
+<p>Definisi ‘fungsi kontinu mutlak’ biasanya diberikan
+untuk interval tertutup dan terbatas, seperti dalam <a class="xref" href="#225B">225B</a>.   Pokoknya ialah bahwa untuk
+interval lain, generalisasi paling sederhana dari perumusan ini tidak
+tampak sepenuhnya tepat.   Dalam <a class="xref" href="#225Xf">225Xf</a> saya mencoba menunjukkan jenis persyaratan
+yang mungkin dikenakan pada fungsi-fungsi yang didefinisikan pada jenis interval lain.</p>
+<p>Perlu saya katakan bahwa sasaran sesungguhnya masih belum sepenuhnya dalam jangkauan kita.
+Saya telah dapat memberikan perumusan yang cukup memuaskan mengenai integrasi
+parsial sederhana (<a class="xref" href="#225F">225F</a>), setidaknya untuk interval terbatas – suatu proses
+limit lebih lanjut diperlukan untuk menangani interval tak terbatas.   Namun suatu
+metode pendamping dari kalkulus lanjut, integrasi dengan substitusi,
+masih sukar dicapai.   Hasil terbaik yang menurut saya dapat kita peroleh pada tahap ini adalah <a class="xref" href="#225Xe">225Xe</a>,
+yang mensyaratkan integran <span class="math inline" data-source-tex="f">\(f\)</span> kontinu.   Memang benar bahwa
+hasil tersebut berlaku untuk setiap <span class="math inline" data-source-tex="f">\(f\)</span> yang terintegralkan, tetapi masih ada beberapa
+kehalusan lebih lanjut yang harus dikuasai dalam prosesnya; gagasan-gagasan yang diperlukan diberikan dalam
+hasil-hasil yang jauh lebih umum 235A dan 263D di bawah, dan diterapkan pada
+kasus satu dimensi dalam 263J.</p>
+<p>Dalam perjalanan menuju karakterisasi fungsi-fungsi kontinu mutlak dalam
+<a class="xref" href="#225K">225K</a>, saya mendapati diri saya menggunakan salah satu hubungan mendasar
+antara ukuran Lebesgue dan topologi <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> (<a class="xref" href="#225I">225I</a>).   Teknik
+di sini dapat diadaptasi untuk memberikan banyak variasi hasil tersebut;
+lihat <a class="xref" href="#225Ye">225Ye</a>-<a class="xref" href="#225Yf">225Yf</a>.   Jika Anda belum pernah menjumpai fungsi-fungsi semikontinu
+sebelumnya, <a class="xref" href="#225Xj">225Xj</a>-<a class="xref" href="#225Xk">225Xk</a> memberikan sebagian gambaran tentang sifat-sifatnya.   Dalam <a class="xref" href="#225J">225J</a>
+saya memberikan sebuah fragmen ‘teori himpunan deskriptif’, yakni kajian tentang jenis-jenis
+himpunan yang dapat muncul dari rumus-rumus analisis.   Gagasan-gagasan ini juga
+akan muncul kembali di tempat lain (bandingkan <a class="xref" href="#225Yg">225Yg</a> dan juga pembuktian 262M
+di bawah) dan akan sangat penting dalam Jilid 4 dan 5.</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 2: Broad Foundations</cite>, Bagian 225.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 25 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-cumulative-html-route-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V2-S225&quot;,
+  &quot;source_member&quot;: &quot;mt2.2016/mt225.tex&quot;,
+  &quot;target_bytes&quot;: 45150,
+  &quot;target_sha256&quot;: &quot;f52b0bc59447a580edbbea026a893c40cac080d3b7d8baea17d0a8608651855c&quot;,
+  &quot;source_ids&quot;: [
+    &quot;225&quot;,
+    &quot;225A&quot;,
+    &quot;225B&quot;,
+    &quot;225C&quot;,
+    &quot;225D&quot;,
+    &quot;225E&quot;,
+    &quot;225F&quot;,
+    &quot;225G&quot;,
+    &quot;225H&quot;,
+    &quot;225I&quot;,
+    &quot;225J&quot;,
+    &quot;225K&quot;,
+    &quot;225L&quot;,
+    &quot;225M&quot;,
+    &quot;225N&quot;,
+    &quot;225O&quot;,
+    &quot;225Oa&quot;,
+    &quot;225Ob&quot;,
+    &quot;225Oc&quot;,
+    &quot;225Od&quot;,
+    &quot;225Oe&quot;,
+    &quot;225Of&quot;,
+    &quot;225Og&quot;,
+    &quot;225X&quot;,
+    &quot;225Xa&quot;,
+    &quot;225Xb&quot;,
+    &quot;225Xc&quot;,
+    &quot;225Xd&quot;,
+    &quot;225Xe&quot;,
+    &quot;225Xf&quot;,
+    &quot;225Xg&quot;,
+    &quot;225Xh&quot;,
+    &quot;225Xi&quot;,
+    &quot;225Xj&quot;,
+    &quot;225Xk&quot;,
+    &quot;225Xl&quot;,
+    &quot;225Xm&quot;,
+    &quot;225Xn&quot;,
+    &quot;225Y&quot;,
+    &quot;225Ya&quot;,
+    &quot;225Yb&quot;,
+    &quot;225Yc&quot;,
+    &quot;225Yd&quot;,
+    &quot;225Ye&quot;,
+    &quot;225Yf&quot;,
+    &quot;225Yg&quot;
+  ],
+  &quot;corpus_id&quot;: &quot;O007-FREMLIN&quot;,
+  &quot;volume_id&quot;: &quot;O007-FREMLIN-V2&quot;,
+  &quot;volume_source_title&quot;: &quot;Broad Foundations&quot;,
+  &quot;route&quot;: &quot;225&quot;,
+  &quot;official_source_page_start&quot;: 79,
+  &quot;chapter_official_source_pages&quot;: [
+    55,
+    95
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

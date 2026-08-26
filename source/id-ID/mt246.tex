@@ -1,0 +1,948 @@
+\frfilename{mt246.tex} \versiondate{17.11.06} \loadeusm
+
+\def\chaptername{Ruang fungsi} \def\sectionname{Keterintegralan seragam}
+
+\newsection{246}
+
+Topik berikut cukup khusus. Namun, karena alasan yang berlainan, topik ini
+sangat penting baik dalam teori probabilitas maupun dalam analisis fungsional,
+sehingga layak dibahas secara tuntas sejak awal.
+
+\vleader{72pt}{246A}{Definisi} Misalkan $(X,\Sigma,\mu)$ adalah ruang ukur.
+
+\header{246Aa}(a) Himpunan $A\subseteq{\eusm L}^1(\mu)$ {\bf
+terintegralkan secara seragam} jika, untuk setiap $\epsilon>0$, terdapat
+himpunan $E\in\Sigma$ dengan ukuran berhingga dan bilangan
+$M\ge 0$ sedemikian sehingga
+
+\Centerline{$\int(|f|-M\chi E)^+\le\epsilon$ untuk setiap $f\in A$.}
+
+\header{246Ab}(b) Himpunan $A\subseteq L^1(\mu)$ {\bf
+terintegralkan secara seragam} jika, untuk setiap $\epsilon>0$, terdapat
+himpunan $E\in\Sigma$ dengan ukuran berhingga dan bilangan
+$M\ge 0$ sedemikian sehingga
+
+\Centerline{$\int(|u|-M\chi E^{\ssbullet})^+\le\epsilon$ untuk setiap $u\in
+A$.}
+
+\leader{246B}{Catatan} \cmmnt{{\bf (a)} Ingat rumus-rumus dari 241Ef:
+$u^+=u\vee 0$, jadi $(u-v)^+=u-u\wedge v$.
+
+\header{246Bb}{\bf (b)} Frasa `terintegralkan secara seragam' sendiri tidak
+terlalu membantu. Namun, untuk setiap fungsi terintegralkan $f$, terdapat
+fungsi-fungsi sederhana yang menghampiri $f$ dalam norma $\|\,\|_1$ (242M).
+Modulus fungsi sederhana tersebut dibatasi oleh fungsi berbentuk $M\chi E$,
+dengan $\mu E<\infty$; karena itu, setiap himpunan beranggota tunggal dalam
+$\eusm L^1$ atau $L^1$ terintegralkan secara seragam. Pada himpunan fungsi
+terintegralkan secara seragam yang umum, $M$ dan $E$ dapat dipilih sekaligus
+untuk seluruh anggota himpunan.
+
+\medskip
+
+}{\bf (c)}\cmmnt{ Dari definisi, semestinya jelas bahwa }
+$A\subseteq\eusm L^1$ terintegralkan secara seragam jika dan hanya
+jika $\{f^{\ssbullet}:f\in A\}\subseteq L^1$ terintegralkan secara seragam.
+
+\header{246Bd}{\bf (d)}\dvro{ Jika}{ Definisi dapat disederhanakan jika}
+$\mu X<\infty$\dvro{}{ (khususnya, jika $(X,\Sigma,\mu)$ adalah ruang
+probabilitas). Dalam hal ini,} himpunan $A\subseteq L^1(\mu)$
+terintegralkan secara seragam jika dan hanya jika
+
+\Centerline{$\inf_{M\ge 0}\sup_{u\in A}\int(|u|-Me)^+=0$}
+
+\noindent jika dan hanya jika
+
+\Centerline{$\lim_{M\to\infty}\sup_{u\in A}\int(|u|-Me)^+=0$,}
+
+\noindent dengan $e=\chi X^{\ssbullet}\in L^1(\mu)$.
+\prooflet{(Sebab jika
+$\sup_{u\in A}\int(|u|-M\chi E^{\ssbullet})^+\le\epsilon$, maka
+$\int(|u|-M'e)^+\le\epsilon$ untuk setiap $M'\ge M$.)} \cmmnt{Demikian pula,
+}$A\subseteq\eusm L^1(\mu)$ terintegralkan secara seragam jika dan hanya jika
+
+\Centerline{$\lim_{M\to\infty}\sup_{f\in A}\int(|f|-M\chi X)^+
+=0$}
+
+\noindent jika dan hanya jika
+
+\Centerline{$\inf_{M\ge 0}\sup_{f\in A}\int(|f|-M\chi X)^+=0$.}
+
+\cmmnt{\medskip
+
+\noindent{\bf Peringatan!} Beberapa penulis menggunakan frasa `terintegralkan
+secara seragam' bagi himpunan yang memenuhi syarat-syarat dalam
+(d), bahkan ketika $\mu$ tidak berhingga total.}
+
+\leader{246C}{}\cmmnt{ Kelas himpunan terintegralkan secara seragam dalam
+$L^1$ atau $\eusm L^1$ memiliki berbagai sifat kestabilan berikut.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $(X,\Sigma,\mu)$ ruang ukur dan $A$
+subhimpunan $L^1(\mu)$ yang terintegralkan secara seragam.
+
+(a) $A$ terbatas dalam norma $\|\,\|_1$.
+
+(b) Setiap subhimpunan dari $A$ terintegralkan secara seragam.
+
+(c) Untuk setiap $a\in\Bbb R$, $aA=\{au:u\in A\}$ terintegralkan secara seragam.
+
+(d) Terdapat $C\supseteq A$ yang terintegralkan secara seragam sedemikian
+sehingga $C$ konveks dan tertutup dalam norma $\|\,\|_1$, serta $v\in C$
+setiap kali $u\in C$ dan
+$|v|\le|u|$.
+
+(e) Jika $B$ adalah himpunan terintegralkan secara seragam lainnya dalam
+$L^1$, maka $A\cup B$ dan $A+B=\{u+v:u\in A,\,v\in B\}$ juga terintegralkan
+secara seragam.
+
+\proof{ Tuliskan $\Sigma^f$ untuk $\{E:E\in\Sigma,\,\mu E<\infty\}$.
+
+\medskip
+
+{\bf (a)} Harus ada $E\in\Sigma^f$, $M\ge 0$ sehingga $\int(|u|-M\chi
+E^{\ssbullet})^+\le 1$ untuk setiap $u\in A$; sekarang
+
+\Centerline{$\|u\|_1\le\int(|u|-M\chi E^{\ssbullet})^+
++\int M\chi
+E^{\ssbullet}\le 1+M\mu E$}
+
+\noindent untuk setiap $u\in A$, sehingga $A$ terbatas.
+
+\medskip
+
+{\bf (b)} Ini langsung dari definisi 246Ab.
+
+\medskip
+
+{\bf (c)} Untuk $\epsilon>0$, kita dapat memilih $E\in\Sigma^f$ dan $M\ge
+0$ sedemikian sehingga $|a|\int(|u|-M\chi E^{\ssbullet})^+\le\epsilon$
+untuk setiap $u\in A$. Karena itu,
+$\int(|v|-|a|M\chi E^{\ssbullet})^+\le\epsilon$ untuk setiap $v\in aA$.
+
+\medskip
+
+{\bf (d)} Jika $A$ kosong, ambil $C=A$. Jika tidak, ambil
+
+\Centerline{$C=\{v:v\in L^1,\,\int(|v|-w)^+
+\le\sup_{u\in A}\int(|u|-w)^+$
+untuk setiap $w\in L^1(\mu)\}$.}
+
+\noindent Jelas bahwa $A\subseteq C$, dan $C$ memenuhi definisi 246Ab karena
+$A$ memenuhinya: cukup tinjau $w$ berbentuk $M\chi E^{\ssbullet}$,
+dengan $E\in\Sigma^f$ dan $M\ge 0$. Setiap fungsional
+
+\Centerline{$v\mapsto\int(|v|-w)^+:L^1(\mu)\to\Bbb R$}
+
+\noindent kontinu dalam norma $\|\,\|_1$ (karena operator $v\mapsto|v|$,
+$v\mapsto v-w$, $v\mapsto v^+$, dan $v\mapsto\int v$ semuanya kontinu),
+sehingga $C$ tertutup.
+Jika $|v'|\le|v|$ dan $v\in C$, maka
+
+\Centerline{$\int(|v'|-w)^+\le\int(|v|-w)^+
+\le\sup_{u\in A}\int(|u|-w)^+$}
+
+\noindent untuk setiap $w$, dan $v'\in C$. Jika $v=av_1+bv_2$ di mana $v_1$,
+$v_2\in C$, $a\in[0,1]$ dan $b=1-a$, maka $|v|\le a|v_1|+b|v_2|$, jadi
+
+\Centerline{$|v|-w\le(a|v_1|-aw)+(b|v_2|-bw)
+\le(a|v_1|-aw)^++(b|v_2|-bw)^+$}
+
+\noindent dan
+
+\Centerline{$(|v|-w)^+\le a(|v_1|-w)^++b(|v_2|-w)^+$}
+
+\noindent untuk setiap $w$; oleh karena itu,
+
+$$\eqalign{\int(|v|-w)^+
+&\le a\int(|v_1|-w)^++b\int(|v_2|-w)^+\cr
+&\le(a+b)\sup_{u\in A}\int(|u|-w)^+
+=\sup_{u\in A}\int(|u|-w)^+\cr}$$
+
+\noindent untuk setiap $w$, sehingga $v\in C$.
+
+Jadi $C$ memiliki semua sifat yang disyaratkan.
+
+\medskip
+
+{\bf (e)} Pertama-tama akan ditunjukkan bahwa $A\cup B$ terintegralkan secara
+seragam. \Prf\ Untuk $\epsilon>0$, pilih $M_1$, $M_2\ge 0$ dan
+$E_1$, $E_2\in\Sigma^f$ sedemikian sehingga
+
+\Centerline{$\int(|u|-M_1\chi E_1^{\ssbullet})^+\le\epsilon$ untuk setiap
+$u\in A$,}
+
+\Centerline{$\int(|u|-M_2\chi E_2^{\ssbullet})^+\le\epsilon$ untuk setiap
+$u\in B$.}
+
+\noindent Tetapkan $M=\max(M_1,M_2)$ dan $E=E_1\cup E_2$; maka $\mu E<\infty$ dan
+
+\Centerline{$\int(|u|-M\chi E^{\ssbullet})^+\le\epsilon$ untuk setiap $u\in
+A\cup B$.}
+
+\noindent Karena $\epsilon$ sembarang, $A\cup B$ terintegralkan secara
+seragam. \Qed
+
+Menurut (d), terdapat himpunan konveks terintegralkan secara seragam $C$ yang
+memuat $A\cup B$. Dalam hal ini $A+B\subseteq 2C$, sehingga (b) dan (c)
+menunjukkan bahwa $A+B$ juga terintegralkan secara seragam.
+}%end of proof of 246C
+
+\leader{246D}{Proposisi} Misalkan $(X,\Sigma,\mu)$ ruang probabilitas dan
+$A\subseteq L^1(\mu)$ himpunan terintegralkan secara seragam. Maka terdapat
+himpunan konveks, tertutup dalam norma $\|\,\|_1$, dan terintegralkan secara
+seragam, yakni $C\subseteq L^1$,
+sedemikian sehingga $A\subseteq C$, $w\in C$ setiap kali $v\in C$ dan
+$|w|\le|v|$, dan $Pv\in C$ setiap kali $v\in C$ dan $P$ adalah operator
+ekspektasi bersyarat yang terkait dengan subaljabar-sigma dari $\Sigma$.
+
+\proof{ Tetapkan
+
+\Centerline{$C=\{v:v\in L^1(\mu),\,
+  \int(|v|-Me)^+\le\sup_{u\in
+A}\int(|u|-Me)^+$ untuk setiap $M\ge 0\}$,}
+
+\noindent dengan $e=\chi X^{\ssbullet}$ seperti biasa. Argumen dalam
+bukti 246Cd menunjukkan bahwa $C\supseteq A$ terintegralkan secara seragam,
+konveks, dan tertutup, serta bahwa $w\in C$ setiap kali $v\in C$ dan
+$|w|\le|v|$. Adapun operator ekspektasi bersyarat, jika $v\in C$, $\Tau$
+adalah subaljabar-sigma dari $\Sigma$, $P$ operator ekspektasi
+bersyarat yang terkait, dan $M\ge 0$, maka
+
+\Centerline{$|Pv|\le P|v|=P((|v|\wedge Me)+(|v|-Me)^+)
+\le Me+P((|v|-Me)^+)$,}
+
+\noindent jadi
+
+\Centerline{$(|Pv|-Me)^+\le P((|v|-Me)^+)$}
+
+\noindent dan
+
+\Centerline{$\int(|Pv|-Me)^+\le\int P(|v|-Me)^+=\int(|v|-Me)^+
+\le\sup_{u\in
+A}\int(|u|-Me)^+$;}
+
+\noindent karena $M$ sembarang, $Pv\in C$.
+}
+
+\cmmnt{ \leader{246E}{Catatan (a)} Tentu saja 246D dapat dirumuskan dengan
+$\eusm L^1$, bukan $L^1$: jika $(X,\Sigma,\mu)$ ruang probabilitas dan
+$A\subseteq\eusm L^1(\mu)$ terintegralkan secara seragam, maka terdapat
+himpunan terintegralkan secara seragam $C\supseteq A$ sedemikian
+sehingga (i) $af+(1-a)g\in C$ setiap kali $f$, $g\in C$ dan $a\in[0,1]$ (ii) $g\in
+C$ setiap kali $f\in C$, $g\in\eusm L^0(\mu)$ dan $|g|\leae|f|$ (iii) $f\in C$
+setiap kali terdapat suatu barisan $\sequencen{f_n}$ dalam $C$ sedemikian
+sehingga $\lim_{n\to\infty}\int|f-f_n|=0$ (iv) $g\in C$ setiap kali terdapat
+$f\in C$ sedemikian hingga $g$ merupakan ekspektasi bersyarat dari $f$
+terhadap suatu subaljabar-sigma dari $\Sigma$.
+
+\header{246Eb}{\bf (b)} Sebenarnya, 246D dapat diperluas dengan mudah;
+bukti di sana sudah menunjukkan bahwa $T[C]\subseteq C$ setiap kali
+$T:L^1(\mu)\to L^1(\mu)$ adalah operator linear yang melestarikan urutan,
+sehingga $\|Tu\|_1\le\|u\|_1$ untuk setiap $u\in L^1(\mu)$ dan
+$\|Tu\|_{\infty}\le\|u\|_{\infty}$ untuk setiap $u\in L^1(\mu)\cap
+L^{\infty}(\mu)$ (246Yc). Seandainya teori operator pada ruang Riesz telah
+dibahas lebih jauh, pembahasan ini pun dapat dikembangkan lebih lanjut;
+misalnya, operator $T$ dalam kalimat terakhir sebenarnya tidak perlu
+melestarikan urutan. Saya akan kembali ke masalah ini dalam Bab 37 pada volume
+berikutnya.
+
+\header{246Ec}{\bf (c)} Selain itu, teorema utama pada bagian berikut akan
+menunjukkan bahwa untuk setiap ruang ukur $(X,\Sigma,\mu)$, $(Y,\Tau,\nu)$,
+$T[A]$ terintegralkan secara seragam dalam $L^1(\nu)$ setiap kali
+$A\subseteq L^1(\mu)$ terintegralkan secara seragam dan $T:L^1(\mu)\to
+L^1(\nu)$ adalah operator linear kontinu (247D).
+}%end of comment
+
+\leader{246F}{}\cmmnt{ Kita memerlukan sebuah lema elementer yang belum
+dinyatakan sebelumnya.
+
+\medskip
+
+\noindent}{\bf Lema} Misalkan $(X,\Sigma,\mu)$ ruang ukur. Maka
+untuk setiap $u\in L^1(\mu)$,
+
+\Centerline{$\|u\|_1\le 2\sup_{E\in\Sigma}|\int_Eu|$.}
+
+\proof{ Nyatakan $u$ sebagai $f^{\ssbullet}$, dengan $f:X\to\Bbb R$ terukur.
+Tetapkan $F=\{x:f(x)\ge 0\}$. Maka
+
+\Centerline{$\|u\|_1=\int|f|=|\int_Ff|+|\int_{X\setminus F}f|
+\le
+2\sup_{E\in\Sigma}|\int_Ef|=2\sup_{E\in\Sigma}|\int_Eu|$.} }
+
+\leader{246G}{}\cmmnt{ Sekarang kita sampai pada beberapa pencirian alternatif
+yang mencolok bagi keterintegralan seragam.
+
+\medskip
+
+\noindent}{\bf Teorema} Misalkan $(X,\Sigma,\mu)$ ruang ukur sembarang dan
+$A$ subhimpunan tak kosong dari $L^1(\mu)$. Maka pernyataan-pernyataan berikut
+ekuivalen:
+
+\quad(i) $A$ terintegralkan secara seragam;
+
+\quad(ii) $\sup_{u\in A}|\int_Fu|<\infty$ untuk setiap $\mu$-atom
+$F\in\Sigma$, dan untuk setiap $\epsilon>0$ terdapat $E\in\Sigma$, $\delta>0$
+sedemikian rupa sehingga $\mu E<\infty$ dan $|\int_Fu|\le\epsilon$ setiap kali
+$u\in A$, $F\in\Sigma$ dan $\mu(F\cap E)\le\delta$;
+
+\quad(iii) $\sup_{u\in A}|\int_Fu|<\infty$ untuk setiap $\mu$-atom
+$F\in\Sigma$, dan $\lim_{n\to\infty}\sup_{u\in A}|\int_{F_n}u|=0$ setiap kali
+$\sequencen{F_n}$ barisan saling lepas dalam $\Sigma$;
+
+\quad(iv) $\sup_{u\in A}|\int_Fu|<\infty$ untuk setiap $\mu$-atom
+$F\in\Sigma$, dan $\lim_{n\to\infty}\sup_{u\in A}|\int_{F_n}u|=0$ setiap kali
+$\sequencen{F_n}$ barisan tak meningkat dalam $\Sigma$ dengan irisan
+kosong.
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Saya menggunakan frasa `$\mu$-atom' untuk menekankan
+bahwa saya maksud atom dalam arti ruang ukur (211I).}
+
+\proof{{\bf (a)(i)$\Rightarrow$(iv)} Misalkan $A$ terintegralkan secara
+seragam. Jelas bahwa jika $F\in\Sigma$ adalah sebuah $\mu$-atom,
+
+\Centerline{$\sup_{u\in A}|\int_Fu|
+\le\sup_{u\in A}\|u\|_1<\infty$,}
+
+\noindent menurut 246Ca. Misalkan $\sequencen{F_n}$ barisan tak
+meningkat dalam $\Sigma$ dengan irisan kosong, dan misalkan
+$\epsilon>0$. Ambil $E\in\Sigma$, $M\ge 0$ sedemikian rupa sehingga $\mu
+E<\infty$ dan $\int(|u|-M\chi E^{\ssbullet})^+\le\bover12\epsilon$ setiap kali
+$u\in A$. Untuk semua $n$ yang cukup besar berlaku $M\mu(F_n\cap
+E)\le\bover12\epsilon$, sehingga
+
+\Centerline{$|\int_{F_n}u|\le\int_{F_n}|u|
+\le\int(|u|-M\chi
+E^{\ssbullet})^++\int_{F_n}M\chi E^{\ssbullet}
+\le\Bover{\epsilon}2+M\mu(F_n\cap E)\le\epsilon$}
+
+\noindent untuk setiap $u\in A$. Karena $\epsilon$ sembarang,
+$\lim_{n\to\infty}\sup_{u\in A}|\int_{F_n}u|=0$, dan (iv) benar.
+
+\medskip
+
+{\bf (b)(iv)$\Rightarrow$(iii)} Misalkan (iv) benar. Maka tentu saja
+$\sup_{u\in A}|\int_Fu|<\infty$ untuk setiap $\mu$-atom $F\in\Sigma$. \Quer\
+Andaikan, jika mungkin, bahwa $\sequencen{F_n}$ barisan saling lepas dalam
+$\Sigma$ sehingga \discrcenter{468pt}{$\epsilon
+=\limsup_{n\to\infty}\sup_{u\in A}\min(1,\bover13|\int_{F_n}u|)
+>0$. }
+Tetapkan $H_n=\bigcup_{i\ge n}F_i$ untuk setiap $n$, sehingga
+$\sequencen{H_n}$ tak meningkat dan beririsan kosong, serta
+$\int_{H_n}u\to 0$ sebagai $n\to\infty$ untuk setiap $u\in L^1(\mu)$. Pilih
+$\sequence{i}{n_i}$, $\sequence{i}{m_i}$, $\sequence{i}{u_i}$ secara induktif
+sebagai berikut. Tetapkan $n_0=0$. Setelah $n_i\in\Bbb N$ dipilih, ambil
+$m_i\ge n_i$,
+$u_i\in A$ sedemikian sehingga $|\int_{F_{m_i}}u_i|\ge 2\epsilon$. Ambil
+$n_{i+1}>m_i$ sedemikian sehingga $\int_{H_{n_{i+1}}}|u_i|\le\epsilon$.
+Lanjutkan.
+
+Tetapkan $G_k=\bigcup_{i\ge k}F_{m_i}$ untuk setiap $k$. Maka
+$\sequence{k}{G_k}$ barisan tak meningkat dalam $\Sigma$ dengan
+irisan kosong. Tetapi $F_{m_i}\subseteq G_i\subseteq F_{m_i}\cup
+H_{n_{i+1}}$,
+jadi
+
+\Centerline{$|\int_{G_i}u_i|
+\ge|\int_{F_{m_i}}u_i|-|\int_{G_i\setminus
+F_{m_i}}u_i|
+\ge 2\epsilon-\int_{H_{n_{i+1}}}|u_i|
+\ge\epsilon$}
+
+\noindent untuk setiap $i$; ini bertentangan dengan hipotesis (iv). \Bang
+
+Ini berarti bahwa $\lim_{n\to\infty}\sup_{u\in A}|\int_{F_n}u|$ harus nol, dan
+(iii) berlaku.
+
+\medskip
+
+{\bf (c)(iii)$\Rightarrow$(ii)} Kita tetap mempunyai $\sup_{u\in
+A}|\int_Fu|<\infty$ untuk setiap $\mu$-atom $F$. \Quer\ Andaikan terdapat
+$\epsilon>0$ sedemikian sehingga untuk setiap
+himpunan terukur $E$ berukuran berhingga dan setiap $\delta>0$ terdapat
+$u\in A$,
+$F\in\Sigma$ sedemikian rupa sehingga $\mu(F\cap E)\le\delta$ dan
+$|\int_Fu|\ge\epsilon$. Pilih barisan $\sequencen{E_n}$ dari
+himpunan-himpunan berukuran berhingga, barisan $\sequencen{G_n}$ dalam
+$\Sigma$, barisan $\sequencen{\delta_n}$ bilangan real positif tegas, dan
+barisan $\sequencen{u_n}$ dalam $A$ sebagai berikut.
+Setelah $u_k$, $E_k$, $\delta_k$ dipilih untuk $k<n$, pilih $u_n\in A$ dan
+$G_n\in\Sigma$ sedemikian rupa sehingga $\mu(G_n\cap\bigcup_{k<n}E_k)\le
+2^{-n}\min(\{1\}\cup\{\delta_k:k<n\})$ dan $|\int_{G_n}u_n|\ge\epsilon$;
+lalu pilih himpunan $E_n$ berukuran berhingga dan $\delta_n>0$
+sedemikian sehingga $\int_F|u_n|\le\bover12\epsilon$ setiap kali $F\in\Sigma$
+dan $\mu(F\cap E_n)\le\delta_n$ (lihat 225A). Lanjutkan.
+
+Setelah induksi selesai, tetapkan $F_n=E_n\cap
+G_n\setminus\bigcup_{k>n}G_k$ untuk setiap $n$; maka $\sequencen{F_n}$
+merupakan barisan saling lepas dalam $\Sigma$. Berdasarkan pemilihan $G_k$,
+
+\Centerline{$\mu(E_n\cap\bigcup_{k>n}G_k)
+\le\sum_{k=n+1}^{\infty}2^{-k}\delta_n\le\delta_n$,}
+
+\noindent sehingga $\mu(E_n\cap(G_n\setminus F_n))\le\delta_n$ dan
+$\int_{G_n\setminus F_n}|u_n|\le \bover12\epsilon$. Ini berarti bahwa
+$|\int_{F_n}u_n|\ge|\int_{G_n}u_n|-\bover12\epsilon\ge\bover12\epsilon$.
+Tetapi ini bertentangan dengan hipotesis (iii). \Bang
+
+\medskip
+
+{\bf (d)(ii)$\Rightarrow$(i)}\grheada\ Misalkan (ii) berlaku dan $\epsilon>0$.
+Maka terdapat $E\in\Sigma$, $\delta>0$ sedemikian sehingga $\mu E<\infty$ dan
+$|\int_Fu|\le\epsilon$ setiap kali $u\in A$, $F\in\Sigma$ dan $\mu(F\cap
+E)\le\delta$. Sekarang $\sup_{u\in A}\int_E|u|<\infty$. \Prf\
+ Tuliskan $\Cal I$ sebagai keluarga semua $F\in\Sigma$ sedemikian sehingga
+$F\subseteq E$ dan $\sup_{u\in A}\int_F|u|$ berhingga. Jika $F\subseteq E$
+merupakan atom bagi $\mu$, maka
+$\sup_{u\in A}\int_F|u|=\sup_{u\in A}|\int_Fu|<\infty$,
+sehingga $F\in\Cal I$. (Intinya adalah bahwa jika $f:X\to\Bbb R$ adalah fungsi
+terukur sedemikian sehingga $f^{\ssbullet}=u$, maka salah satu dari
+$F'=\{x:x\in F,\,f(x)\ge 0\}$, $F''=\{x:x\in F,\,f(x)<0\}$ harus terabaikan,
+sehingga $\int_F|u|$ adalah $\int_{F'}u=\int_Fu$ atau
+$-\int_{F''}u=-\int_Fu$.) Jika $F\in\Sigma$, $F\subseteq E$ dan $\mu
+F\le\delta$ maka
+
+\Centerline{$\sup_{u\in A}\int_F|u|
+\le 2\sup_{u\in A,G\in\Sigma,G\subseteq
+F}|\int_Gu|
+\le 2\epsilon$}
+
+\noindent (menurut 246F), sehingga $F\in\Cal I$. Selanjutnya, jika
+$F$, $G\in\Cal I$, maka $\sup_{u\in A}\int_{F\cup G}|u|
+\le\sup_{u\in A}\int_F|u|+\sup_{u\in
+A}\int_G|u|$ berhingga, jadi $F\cup G\in \Cal I$. Akhirnya, jika
+$\sequencen{F_n}$ sembarang barisan dalam $\Cal I$, dan
+$F=\bigcup_{n\in\Bbb N}F_n$, terdapat $n\in\Bbb N$ sehingga
+$\mu(F\setminus\bigcup_{i\le n}F_i)\le\delta$; sekarang $\bigcup_{i\le n}F_i$
+dan $F\setminus\bigcup_{i\le n}F_i$ keduanya termasuk dalam $\Cal I$, jadi
+$F\in\Cal I$.
+
+Menurut 215Ab, terdapat $F\in\Cal I$ sedemikian sehingga $H\setminus F$
+terabaikan untuk setiap $H\in\Cal I$. Sekarang perhatikan bahwa
+$E\setminus F$ tidak dapat memuat anggota $\Cal I$ yang tidak terabaikan;
+khususnya, ia tidak dapat memuat atom ataupun himpunan tidak terabaikan yang
+berukuran kurang dari $\delta$. Dengan demikian, ukuran pada subruang
+$E\setminus F$ tak beratom, berhingga total, dan tidak mempunyai
+himpunan terukur yang tidak terabaikan dengan ukuran
+kurang dari $\delta$; berdasarkan 215D, $\mu(E\setminus F)=0$ dan baik
+$E\setminus F$ maupun $E$ termasuk dalam $\Cal I$, sebagaimana diperlukan.\ \Qed
+
+Karena $\int_{X\setminus E}|u|\le 2\epsilon$ untuk setiap $u\in A$,
+$\gamma=\sup_{u\in A}\int|u|$ berhingga.
+
+\medskip
+
+\quad\grheadb\
+Tetapkan $M=\gamma/\delta$. Jika $u\in A$, nyatakan $u$ sebagai
+$f^{\ssbullet}$, dengan $f:X\to\Bbb R$ terukur, dan pertimbangkan
+
+\Centerline{$F=\{x:f(x)\ge M\chi E(x)\}$.}
+
+\noindent Maka
+
+\Centerline{$M\mu(F\cap E)\le\int_Ff=\int_Fu\le\gamma$,}
+
+\noindent sehingga $\mu(F\cap E)\le\gamma/M=\delta$. Oleh karena itu
+$\int_Fu\le\epsilon$. Demikian pula, $\int_{F'}(-u)\le\epsilon$, dengan
+$F'=\{x:-f(x)\ge M\chi E(x)\}$. Ini berarti bahwa
+
+\Centerline{$\int(|u|-M\chi E^{\ssbullet})^+
+=\int(|f|-M\chi
+E)^+\le\int_{F\cup F'}|f|
+=\int_{F\cup F'}|u|\le 2\epsilon$}
+
+\noindent untuk setiap $u\in A$. Karena $\epsilon$ sembarang, $A$
+terintegralkan secara seragam.
+}%end of proof of 246G
+
+\cmmnt{ \leader{246H}{Catatan (a)} Seperti (i), syarat (ii)--(iv) dalam
+teorema ini tentu memiliki padanan langsung bagi anggota $\eusm L^1$.
+Dengan demikian, himpunan tak kosong $A\subseteq\eusm L^1$
+terintegralkan secara seragam jika dan hanya jika $\sup_{f\in A}|\int_Ff|$
+berhingga untuk setiap atom $F\in\Sigma$ dan
+
+\inset{{\it baik } untuk setiap $\epsilon>0$ terdapat
+$E\in\Sigma$, $\delta>0$ sehingga $\mu E<\infty$ dan $|\int_Ff|\le\epsilon$
+setiap kali $f\in A$, $F\in\Sigma$ dan $\mu(F\cap
+E)\le\delta$ }
+
+\inset{{\it atau } $\lim_{n\to\infty}\sup_{f\in A}|\int_{F_n}f|=0$ untuk
+setiap barisan saling lepas $\sequencen{F_n}$ dalam $\Sigma$}
+
+\inset{{\it atau } $\lim_{n\to\infty}\sup_{f\in A}|\int_{F_n}f|=0$ untuk
+setiap barisan tak meningkat $\sequencen{F_n}$ dalam $\Sigma$ dengan
+irisan kosong.}
+
+\header{246Hb}{\bf (b)} Masih ada tak terhitung banyaknya ungkapan ekuivalen
+yang mencirikan keterintegralan seragam; setiap penulis memiliki pilihannya
+sendiri. Banyak di antaranya merupakan variasi atas (i)--(iv) dalam teorema
+ini, seperti pada 246I dan 246Yd--246Yf. Untuk syarat yang sama sekali berbeda,
+lihat Teorema 247C.
+}%end of comment
+
+\leader{246I}{Akibat} Misalkan $(X,\Sigma,\mu)$ ruang probabilitas. Untuk
+$f\in\eusm L^0(\mu)$, $M\ge 0$, tetapkan
+$F(f,M)=\{x:x\in\dom f,\,|f(x)|\ge M\}$. Maka himpunan tak kosong
+$A\subseteq\eusm L^1(\mu)$
+terintegralkan secara seragam jika dan hanya jika
+\discrcenter{468pt}{$\lim_{M\to\infty}\sup_{f\in A}\int_{F(f,M)}|f|=0$.}
+
+\proof{{\bf (a)} Jika $A$ memenuhi syarat tersebut, maka
+
+\Centerline{$\inf_{M\ge 0}\sup_{f\in A}\int(|f|-M\chi X)^+
+\le\inf_{M\ge
+0}\sup_{f\in A}\int_{F(f,M)}|f|=0$,}
+
+\noindent sehingga $A$ terintegralkan secara seragam.
+
+\medskip
+
+{\bf (b)} Jika $A$ terintegralkan secara seragam dan $\epsilon>0$, terdapat
+$M_0\ge 0$ sedemikian sehingga $\int(|f|-M_0\chi X)^+\le\epsilon$ untuk setiap
+$f\in
+A$; selain itu, $\gamma=\sup_{f\in A}\int|f|$ berhingga (246Ca). Ambil sembarang
+$M\ge M_0\max(1,(1+\gamma)/\epsilon)$. Jika $f\in A$, maka
+
+\Centerline{$|f|\times\chi F(f,M)
+\le (|f|-M_0\chi X)^++M_0\chi F(f,M)
+\le
+(|f|-M_0\chi X)^++\Bover{\epsilon}{\gamma+1}|f|$}
+
+\noindent di seluruh $\dom f$, sehingga
+
+\Centerline{$\int_{F(f,M)}|f|
+\le\int(|f|-M_0\chi
+X)^++\Bover{\epsilon}{\gamma+1}\int|f|
+\le 2\epsilon$.}
+
+\noindent Karena $\epsilon$ sembarang,
+$\lim_{M\to\infty}\sup_{f\in
+A}\int_{F(f,M)}|f|=0$.
+}%end of proof of 246I
+
+\leader{246J}{}\cmmnt{ Langkah berikutnya ialah memaparkan beberapa kaitan
+penting antara keterintegralan seragam dan topologi konvergensi dalam
+ukuran yang dibahas dalam bagian sebelumnya.
+
+\medskip
+
+\noindent}{\bf Teorema} Misalkan $(X,\Sigma,\mu)$ ruang ukur.
+
+\ifdim\pagewidth>467pt\fontdimen4\tenrm=1.5pt\fi (a) Jika $\sequencen{f_n}$
+adalah barisan fungsi bernilai real pada $X$ yang terintegralkan secara
+seragam dan $f(x)=\lim_{n\to\infty}f_n(x)$ untuk hampir setiap $x\in X$, maka $f$
+terintegralkan dan $\lim_{n\to\infty}\int|f_n-f|=0$; akibatnya $\int
+f=\lim_{n\to\infty}\int f_n$. \fontdimen4\tenrm=1.11pt
+
+(b) Jika $A\subseteq L^1=L^1(\mu)$ terintegralkan secara seragam, maka
+topologi norma pada $L^1$ dan topologi konvergensi dalam ukuran pada
+$L^0=L^0(\mu)$ berimpit pada $A$.
+
+(c) Untuk setiap $u\in L^1$ dan setiap barisan $\sequencen{u_n}$ dalam $L^1$,
+pernyataan-pernyataan berikut ekuivalen:
+
+\qquad(i) $u=\lim_{n\to\infty}u_n$ dalam norma $\|\,\|_1$;
+
+\qquad(ii) $\{u_n:n\in\Bbb N\}$ terintegralkan secara seragam dan
+$\sequencen{u_n}$ konvergen ke $u$ dalam ukuran.
+
+(d) Jika $(X,\Sigma,\mu)$ semihingga dan $A\subseteq L^1$ terintegralkan secara
+seragam, maka penutupan $\overline{A}$ dari $A$ dalam $L^0$, untuk topologi
+konvergensi dalam ukuran, tetap merupakan subhimpunan $L^1$ yang terintegralkan
+secara seragam.
+
+\proof{{\bf (a)} Perhatikan dahulu bahwa karena $\sup_{n\in\Bbb
+N}\int|f_n|<\infty$ (246Ca) dan $|f|=\liminf_{n\to\infty}|f_n|$, Lemma Fatou
+memastikan bahwa $|f|$ terintegralkan, dengan
+$\int|f|\le\limsup_{n\to\infty}\int|f_n|$. Dengan segera diperoleh bahwa
+$\{f_n-f:n\in\Bbb N\}$ terintegralkan secara
+seragam, karena merupakan jumlah dua himpunan terintegralkan secara seragam
+(246Cc, 246Ce).
+
+Untuk $\epsilon>0$, terdapat $M\ge 0$, $E\in\Sigma$ sehingga $\mu
+E<\infty$ dan
+$\int(|f_n-f|-M\chi E)^+\le\epsilon$ untuk setiap $n\in\Bbb
+N$. Selain itu,
+$|f_n-f|\wedge M\chi E\to 0$ hampir di mana-mana, sehingga
+
+$$\eqalign{\limsup_{n\to\infty}\int|f_n-f|
+&\le\limsup_{n\to\infty}\int(|f_n-f|-M\chi E)^+\cr
+&\qquad\qquad+\limsup_{n\to\infty}\int|f_n-f|\wedge M\chi E\cr
+&\le\epsilon,\cr}$$
+
+\noindent menurut Teorema Konvergensi Terdominasi Lebesgue. Karena $\epsilon$
+sembarang, $\lim_{n\to\infty}\int|f_n-f|=0$ dan $\lim_{n\to\infty}\int
+f_n-f=0$.
+
+\medskip
+
+{\bf (b)} Misalkan $\frak T_A$ dan $\frak S_A$ berturut-turut adalah topologi
+pada $A$ yang diinduksi oleh topologi norma pada $L^1$ dan topologi
+konvergensi dalam ukuran pada $L^0$.
+
+\medskip
+
+\quad{\bf (i)} Untuk $\epsilon>0$, pilih $F\in\Sigma$ dan $M\ge 0$
+sedemikian sehingga $\mu F<\infty$ dan $\int(|v|-M\chi
+F^{\ssbullet})^+\le\epsilon$ untuk setiap $v\in A$, dan pertimbangkan
+$\bar\rho_F$, yang didefinisikan seperti di 245A. Kemudian untuk setiap $f$,
+$g\in\eusm L^0$,
+
+\Centerline{$|f-g|\le(|f|-M\chi F)^+
++(|g|-M\chi F)^++M(|f-g|\wedge \chi F)$}
+
+\noindent di seluruh $\dom f\cap \dom g$, sehingga
+
+\Centerline{$|u-v|\le(|u|-M\chi F^{\ssbullet})^+
++(|v|-M\chi
+F^{\ssbullet})^++M(|u-v|\wedge\chi F^{\ssbullet})$}
+
+\noindent untuk semua $u$, $v\in L^0$. Akibatnya
+
+\Centerline{$\|u-v\|_1\le 2\epsilon+M\bar\rho_F(u,v)$}
+
+\noindent untuk semua $u$, $v\in A$.
+
+Artinya, untuk $\epsilon>0$, kita dapat memilih $F$ dan $M$ sehingga, bagi
+$u$, $v\in A$,
+
+\Centerline{$\bar\rho_F(u,v)
+\le\Bover{\epsilon}{1+M}\Longrightarrow\|u-v\|_1\le 3\epsilon$.}
+
+\noindent Maka setiap subhimpunan dari $A$ yang terbuka dalam $\frak T_A$
+juga terbuka dalam $\frak S_A$ (2A3Ib).
+
+\medskip
+
+\quad{\bf (ii)} Sebaliknya, kita mempunyai $\bar\rho_F(u,v)\le\|u-v\|_1$
+untuk setiap $u\in L^1$ dan setiap himpunan $F$ berukuran berhingga,
+sehingga setiap subhimpunan dari $A$ yang terbuka dalam $\frak S_A$
+terbuka dalam $\frak T_A$.
+
+\medskip
+
+{\bf (c)} Jika $\sequencen{u_n}\to u$ dalam norma $\|\,\|_1$, maka
+$A=\{u_n:n\in\Bbb N\}$ terintegralkan secara seragam. \Prf\ Untuk
+$\epsilon>0$,
+pilih $m$ sedemikian rupa sehingga $\|u_n-u\|_1\le\epsilon$ setiap kali
+$n\ge m$. Tetapkan $v=|u|+\sum_{i\le m}|u_i|\in L^1$, dan pilih $M\ge 0$,
+$E\in\Sigma$ sedemikian sehingga $\mu E$ berhingga dan
+$\int(v-M\chi E^{\ssbullet})^+\le\epsilon$. Maka, untuk $w\in A$,
+
+\Centerline{$(|w|-M\chi E^{\ssbullet})^+
+\le(|w|-v)^++(v-M\chi
+E^{\ssbullet})^+$,}
+
+\noindent jadi
+
+\Centerline{$\int(|w|-M\chi E^{\ssbullet})^+
+\le\|(|w|-v)^+\|_1+\int(v-M\chi E^{\ssbullet})^+
+\le 2\epsilon$. \Qed}
+
+Jadi, di bawah salah satu hipotesis, $\{u_n:n\in\Bbb N\}$ dan
+$A=\{u\}\cup\{u_n:n\in\Bbb N\}$ terintegralkan secara seragam. Karena itu,
+kedua topologi berimpit pada $A$ (menurut (b)), dan
+$\sequencen{u_n}$ konvergen
+ke $u$ dalam satu topologi jika dan hanya jika ia konvergen ke $u$ dalam
+topologi yang lain.
+
+\medskip
+
+{\bf (d)} Karena $A$ terbatas dalam norma $\|\,\|_1$ (246Ca) dan $\mu$
+semihingga, $\overline{A}\subseteq L^1$ (245J(b-i)). Untuk
+$\epsilon>0$, pilih $M\ge 0$, $E\in\Sigma$ sedemikian sehingga $\mu
+E<\infty$ dan $\int(|u|-M\chi E^{\ssbullet})^+\le\epsilon$ untuk setiap $u\in
+A$.   Sekarang peta $u\mapsto|u|$, $u\mapsto u-M\chi E^{\ssbullet}$, $u\mapsto
+u^+:L^0\to L^0$ semuanya kontinu untuk topologi konvergensi dalam ukuran
+(245D), sementara $\{u:\|u\|_1\le\epsilon\}$ tertutup untuk topologi yang sama
+(245J lagi), sehingga $\{u:u\in L^0,\,\int(|u|-M\chi
+E^{\ssbullet})^+\le\epsilon\}$ tertutup dan harus mencakup $\overline{A}$.
+Dengan demikian $\int(|u|-M\chi E^{\ssbullet})^+\le\epsilon$ untuk setiap
+$u\in\overline{A}$. Karena $\epsilon$ sembarang, $\overline{A}$
+terintegralkan secara seragam.
+}%end of proof of 246J
+
+\leader{246K}{$\eusm L^1$ dan $L^1$ kompleks}\dvro{ Untuk}{ Definisi dan
+teorema di atas dapat diterapkan tanpa kesulitan pada ruang (kelas ekuivalensi
+dari) fungsi bernilai kompleks, dengan satu perubahan saja: konstanta pada
+padanan kompleks 246F harus diubah. Mudah dilihat bahwa, untuk} $u\in
+L^1_{\Bbb C}(\mu)$, \dvro{$\|u\|_1\le 4\sup_{F\in\Sigma}|\int_Fu|$.}{
+
+$$\eqalign{\|u\|_1
+&\le \|\Real(u)\|_1+\|\Imag(u)\|_1\cr
+&\le
+2\sup_{F\in\Sigma}|\int_F\Real(u)|
+   +2\sup_{F\in\Sigma}|\int_F\Imag(u)|
+\le
+4\sup_{F\in\Sigma}|\int_Fu|.\cr}$$ }
+
+\cmmnt{\noindent (Sebenarnya, $\|u\|_1\le\pi\sup_{F\in\Sigma}|\int_Fu|$; lihat
+246Yl dan 252Yt.) Akibatnya, beberapa argumen dalam 246G perlu ditulis dengan
+konstanta berbeda, tetapi hasil-hasil sebagaimana dinyatakan tetap berlaku.
+}%end of comment
+
+\exercises{ \leader{246X}{Latihan dasar (a)}
+%\spheader 246Xa
+Misalkan $(X,\Sigma,\mu)$ ruang ukur dan $A$ subhimpunan
+$L^1=L^1(\mu)$. Tunjukkan bahwa pernyataan-pernyataan berikut ekuivalen: (i) $A$
+terintegralkan secara seragam; (ii) untuk setiap $\epsilon>0$ terdapat $w\ge
+0$ di $L^1$ sedemikian sehingga $\int(|u|-w)^+\le\epsilon$ untuk setiap $u\in
+A$; (iii) $\sequencen{(|u_{n+1}|-\sup_{i\le n}|u_i|)^+}\to 0$ dalam $L^1$
+untuk setiap barisan $\sequencen{u_n}$ dalam $A$. \Hint{ untuk (ii) $\Rightarrow$
+(iii), tetapkan $v_n=\sup_{i\le n}|u_i|$ dan perhatikan bahwa
+$\sequencen{v_n\wedge w}$ konvergen dalam $L^1$ untuk setiap $w\ge 0$. }
+
+\sqheader 246Xb Misalkan $(X,\Sigma,\mu)$ ruang ukur berhingga total.
+Tunjukkan bahwa untuk setiap $p>1$ dan $M\ge 0$, himpunan
+$\{f:f\in{\eusm L}^p(\mu),\,\|f\|_p\le M\}$ terintegralkan secara
+seragam. \Hint{$\int(|f|-M\chi X)^+\le M^{1-p}\int|f|^p$.}
+%246B used in \zz5R query
+
+\sqheader 246Xc Misalkan $\mu$ ukuran hitung pada $\Bbb N$. Tunjukkan bahwa
+suatu himpunan $A\subseteq\eusm L^1(\mu)=\ell^1$ terintegralkan secara
+seragam jika dan hanya jika (i) $\sup_{f\in A}|f(n)|<\infty$ untuk
+setiap $n\in \Bbb N$ (ii) untuk setiap $\epsilon>0$ terdapat $m\in\Bbb N$ sehingga
+$\sum_{n=m}^{\infty}|f(n)|\le\epsilon$ untuk setiap $f\in A$.
+%246G
+
+\spheader 246Xd Misalkan $X$ suatu himpunan dan $\mu$ ukuran hitung pada $X$.
+Tunjukkan bahwa himpunan $A\subseteq\eusm L^1(\mu)=\ell^1(X)$
+terintegralkan secara seragam jika dan hanya
+jika (i) $\sup_{f\in A}|f(x)|<\infty$ untuk setiap $x\in X$ (ii) untuk setiap
+$\epsilon>0$ terdapat himpunan berhingga $I\subseteq
+X$ sehingga $\sum_{x\in
+X\setminus I}|f(x)|\le\epsilon$ untuk setiap $f\in
+A$. Tunjukkan bahwa dalam hal ini $A$ relatif kompak dalam topologi norma pada
+$\ell^1(X)$.
+%246G
+
+\spheader 246Xe Misalkan $(X,\Sigma,\mu)$ ruang ukur, $\delta>0$, dan
+$\Cal I\subseteq\Sigma$ suatu keluarga sedemikian sehingga (i) setiap
+atom termasuk dalam $\Cal I$ (ii) $E\in\Cal I$ setiap kali $E\in\Sigma$ dan
+$\mu E\le\delta$ (iii) $E\cup F\in\Cal I$ setiap kali $E$, $F\in\Cal I$ dan
+$E\cap
+F=\emptyset$. Tunjukkan bahwa setiap himpunan berukuran berhingga
+termasuk dalam $\Cal I$.
+%246G
+
+\spheader 246Xf Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ ruang ukur,
+serta $\phi:X\to Y$ fungsi \imp\ . Tunjukkan bahwa suatu himpunan
+$A\subseteq\eusm L^1(\nu)$ terintegralkan secara seragam jika dan hanya
+jika $\{g\phi:g\in A\}$ terintegralkan secara seragam dalam
+$\eusm L^1(\mu)$. \Hint{
+gunakan 246G untuk `jika', 246A untuk `hanya jika'.}
+%246G
+
+\sqheader 246Xg Misalkan $(X,\Sigma,\mu)$ ruang ukur dan
+$p\in\coint{1,\infty}$. Misalkan $\sequencen{f_n}$ suatu barisan dalam
+$\eusm L^p=\eusm L^p(\mu)$ sedemikian sehingga $\{|f_n|^p:n\in\Bbb N\}$
+terintegralkan secara seragam dan $f_n\to f$ hampir di mana-mana. Tunjukkan
+bahwa $f\in\eusm L^p$ dan $\lim_{n\to\infty}\int|f_n-f|^p=0$.
+%246J
+
+\spheader 246Xh Misalkan $(X,\Sigma,\mu)$ ruang ukur semihingga dan
+$p\in\coint{1,\infty}$. Misalkan $\sequencen{u_n}$ suatu barisan dalam
+$L^p=L^p(\mu)$ dan $u\in L^0(\mu)$. Tunjukkan bahwa pernyataan-pernyataan
+berikut ekuivalen: (i) $u\in L^p$ dan $\sequencen{u_n}$ konvergen ke $u$
+dalam norma $\|\,\|_p$
+(ii) $\sequencen{u_n}$ konvergen dalam ukuran ke $u$ dan $\{|u_n|^p:n\in\Bbb
+N\}$ terintegralkan secara seragam. \Hint{245Xl.}
+%246J
+
+\spheader 246Xi Misalkan $(X,\Sigma,\mu)$ ruang ukur berhingga total, dan
+$1\le p<r\le\infty$. Misalkan $\sequencen{u_n}$ barisan yang terbatas dalam
+norma $\|\,\|_r$ dalam $L^r(\mu)$ dan konvergen dalam ukuran ke $u\in
+L^0(\mu)$. Tunjukkan bahwa $\sequencen{u_n}$ konvergen ke $u$ dalam norma
+$\|\,\|_p$. \Hint{ tunjukkan bahwa $\{|u_n|^p:n\in\Bbb N\}$
+terintegralkan secara seragam. }
+%246J, 246Xh
+
+\leader{246Y}{Latihan lebih lanjut (a)}
+%\spheader 246Ya
+\ifdim\pagewidth>467pt\fontdimen4\tenrm=1.5pt\fi Misalkan $(X,\Sigma,\mu)$
+ruang ukur berhingga total. Tunjukkan bahwa $A\subseteq\eusm
+L^1(\mu)$ terintegralkan secara seragam jika dan hanya jika terdapat fungsi
+konveks $\phi:\coint{0,\infty}\to\Bbb R$ sedemikian sehingga
+$\lim_{a\to\infty}\phi(a)/a=\infty$ dan $\sup_{f\in A}\int\phi(|f|)<\infty$.
+\fontdimen4\tenrm=1.11pt
+%246B
+
+\spheader 246Yb Untuk setiap ruang metrik $(Z,\rho)$, misalkan $\Cal C_Z$
+keluarga subhimpunan tertutup dari $Z$. Untuk $F$,
+$F'\in\Cal C_Z\setminus\{\emptyset\}$ tetapkan
+$\tilde\rho(F,F')=\min(1,\max(\sup_{z\in F}\inf_{z'\in F'}\rho(z,z'),
+\sup_{z'\in F'}\inf_{z\in F}\rho(z,z')))$. Tunjukkan bahwa $\tilde\rho$
+merupakan metrik pada $\Cal C_Z\setminus\{\emptyset\}$ (inilah {\bf metrik
+Hausdorff}). Tunjukkan bahwa jika $(Z,\rho)$ lengkap, maka keluarga
+$\Cal K_Z\setminus\{\emptyset\}$ dari subhimpunan kompak tak kosong dalam $Z$
+tertutup dalam metrik $\tilde\rho$. Sekarang misalkan $(X,\Sigma,\mu)$ ruang ukur
+sembarang dan ambil $Z=L^1=L^1(\mu)$,
+$\rho(z,z')=\|z-z'\|_1$ untuk $z$, $z'\in Z$. Tunjukkan bahwa keluarga
+subhimpunan tertutup tak kosong dalam $L^1$ yang terintegralkan secara seragam
+merupakan subhimpunan tertutup dari
+$\Cal C_Z\setminus\{\emptyset\}$ yang memuat
+$\Cal K_Z\setminus\{\emptyset\}$.
+%246B
+
+\spheader 246Yc Misalkan $(X,\Sigma,\mu)$ ruang ukur berhingga total dan
+$A\subseteq L^1(\mu)$ himpunan terintegralkan secara seragam. Tunjukkan bahwa
+terdapat himpunan terintegralkan secara seragam $C\supseteq A$ sedemikian
+sehingga (i) $C$ konveks dan
+tertutup dalam $L^0(\mu)$ untuk topologi konvergensi dalam ukuran (ii) jika
+$u\in C$ dan $|v|\le|u|$ maka $v\in C$ (iii) jika $T$ termasuk dalam himpunan
+$\Cal T^+$ dari operator dari $L^1(\mu)=M^{1,\infty}(\mu)$ ke dirinya sendiri,
+seperti yang dijelaskan dalam 244Xm, maka $T[C]\subseteq C$.
+%246C
+
+%\ifdim\pagewidth>467pt\fontdimen4\tenrm=1.5pt\fi
+\spheader 246Yd Misalkan $\mu$ ukuran Lebesgue pada $\Bbb R$. Tunjukkan bahwa
+suatu himpunan $A\subseteq\eusm L^1(\mu)$ terintegralkan secara seragam
+jika dan hanya jika $\lim_{n\to\infty}\int_{F_n}f_n
+\ifdim\pagewidth>467pt\penalty-100\fi
+=0$ untuk setiap barisan saling lepas $\sequencen{F_n}$ dari himpunan kompak
+dalam $\Bbb R$ dan setiap barisan $\sequencen{f_n}$ dalam $A$.
+%246G
+%\fontdimen4\tenrm=1.11pt
+
+\spheader 246Ye Misalkan $\mu$ ukuran Lebesgue pada $\Bbb R$. Tunjukkan
+bahwa himpunan $A\subseteq\eusm L^1(\mu)$ terintegralkan
+secara seragam jika dan hanya jika $\lim_{n\to\infty}\int_{G_n}f_n
+\ifdim\pagewidth>467pt\penalty-100\fi
+=0$ untuk setiap barisan saling lepas $\sequencen{G_n}$ dari himpunan terbuka
+dalam $\Bbb R$ dan setiap barisan $\sequencen{f_n}$ dalam $A$.
+%246G, 246Yd
+
+\spheader 246Yf Ulangi 246Yd dan 246Ye untuk ukuran Lebesgue pada subhimpunan
+sembarang dari $\BbbR^r$.
+%246G, 246Yd, 246Ye
+
+\spheader 246Yg Misalkan $X$ suatu himpunan dan $\Sigma$ aljabar-sigma dari
+subhimpunan-subhimpunan $X$. Misalkan $\sequencen{\nu_n}$ barisan fungsional
+aditif terhitung pada $\Sigma$ sedemikian sehingga
+$\nu E=\lim_{n\to\infty}\nu_nE$ terdefinisi untuk setiap $E\in\Sigma$.
+Tunjukkan bahwa $\lim_{n\to\infty}\nu_nF_n=0$ setiap kali $\sequencen{F_n}$
+barisan saling lepas dalam $\Sigma$. \Hint{Andaikan sebaliknya. Dengan
+mengambil subbarisan yang sesuai, cukup tinjau kasus ketika $|\nu_nF_i-\nu
+F_i|\le 2^{-n}\epsilon$ untuk $i<n$, $|\nu_nF_n|\ge 3\epsilon$, $|\nu_nF_i|\le
+2^{-i}\epsilon$ untuk $i>n$. Tetapkan $F=\bigcup_{i\in\Bbb N}F_{2i+1}$ dan
+tunjukkan bahwa $|\nu_{2n+1}F-\nu_{2n}F|\ge\epsilon$ untuk setiap $n$.}
+%246G %231Xf
+
+\spheader 246Yh Misalkan $(X,\Sigma,\mu)$ adalah ruang ukur dan
+$\sequencen{u_n}$ suatu barisan dalam $L^1=L^1(\mu)$ sehingga
+$\lim_{n\to\infty}\int_Fu_n$ terdefinisi untuk setiap $F\in\Sigma$.
+Tunjukkan bahwa $\{u_n:n\in\Bbb N\}$ terintegralkan secara seragam.
+\Hint{Andaikan tidak. Maka terdapat barisan saling lepas
+$\sequencen{F_n}$ dalam $\Sigma$ dan subbarisan $\sequencen{u'_n}$ dari
+$\sequencen{u_n}$ sehingga $\inf_{n\in\Bbb N}|\int_{F_n}u'_n|=\epsilon>0$.
+Tetapi ini bertentangan dengan 246Yg.}
+%246G
+
+\spheader 246Yi Dalam 246Yg, tunjukkan bahwa $\nu$ bersifat aditif terhitung.
+\Hint{Tetapkan $\mu=\sum_{n=0}^{\infty}a_n|\nu_n|$ untuk suatu barisan
+$\sequencen{a_n}$ bilangan positif tegas yang sesuai. Untuk
+setiap $n$ pilih turunan Radon-Nikod\'ym $f_n$ dari $\nu_n$ terhadap $\mu$.
+Tunjukkan bahwa $\{f_n:n\in\Bbb N\}$ terintegralkan secara seragam, sehingga
+$\nu$ kontinu sejati.} (Ini adalah {\bf teorema
+Vitali-Hahn-Saks}.)
+%246G
+
+\spheader 246Yj Misalkan $(X,\Sigma,\mu)$ ruang ukur sembarang, dan
+$A\subseteq L^1(\mu)$. Tunjukkan bahwa pernyataan-pernyataan berikut
+ekuivalen: (i) $A$ terbatas dalam norma $\|\,\|_1$; (ii)
+$\sup_{u\in A}|\int_Fu|<\infty$ untuk setiap $\mu$-atom $F\in\Sigma$ dan
+$\limsup_{n\to\infty}\sup_{u\in A}|\int_{F_n}u|<\infty$ untuk setiap barisan
+saling lepas $\sequencen{F_n}$ dari himpunan-himpunan terukur berukuran
+berhingga; (iii) $\sup_{u\in
+A}|\int_Eu|<\infty$ untuk setiap $E\in\Sigma$. \Hint{ tunjukkan bahwa
+$\sequencen{a_nu_n}$ terintegralkan secara seragam bila
+$\lim_{n\to\infty}a_n=0$ dalam $\Bbb R$ dan $\sequencen{u_n}$ suatu barisan
+dalam $A$. }
+
+%246G
+
+\spheader 246Yk Misalkan $(X,\Sigma,\mu)$ adalah ruang ukur dan $A\subseteq
+L^1(\mu)$ himpunan tak kosong. Tunjukkan bahwa pernyataan-pernyataan berikut
+ekuivalen: (i) $A$ terintegralkan secara seragam; (ii) setiap kali
+$B\subseteq
+L^{\infty}(\mu)$ tidak kosong dan terarah ke bawah serta memiliki
+infimum $0$ dalam $L^{\infty}(\mu)$ maka $\inf_{v\in B}\sup_{u\in A}|\int u\times
+v|=0$. \Hint{Untuk (i)$\Rightarrow$(ii), catat bahwa $\inf_{v\in B}w\times
+v=0$ untuk setiap $w\ge 0$ dalam $L^0$. Untuk (ii)$\Rightarrow$(i), gunakan
+246G(iv).}
+%246G
+
+\spheader 246Yl Tetapkan $f(x)=e^{ix}$ untuk $x\in[-\pi,\pi]$. Tunjukkan bahwa
+$|\int_Ef|\le 2$ untuk setiap $E\subseteq[-\pi,\pi]$.
+%246K
+}%end of exercises
+
+\endnotes{\Notesheader{246} Sifat paling mencolok dari himpunan terintegralkan
+secara seragam saya tunda sampai bagian berikutnya: himpunan-himpunan itu
+relatif kompak secara lemah dalam $L^1$. Pembuktiannya memerlukan beberapa
+gagasan yang tidak sederhana dari analisis fungsional dan topologi umum.
+Bagian ini memuat hasil-hasil yang pada dasarnya berangkat dari teori ukuran.
+Konsep, atau teknik, baru yang terpenting ialah `teorema barisan saling lepas'.
+Contoh khas terdapat pada syarat (iii) dalam 246G, yang mengaitkan
+keterintegralan seragam dengan perilaku fungsional pada barisan himpunan yang
+saling lepas. Variasinya diberikan dalam 246Yd--246Yf, sedangkan
+246Yg--246Yj memuat hasil-hasil lain yang dapat dibuktikan dengan metode
+serupa. Hasil utama bagian berikutnya (247C) juga menggunakan barisan saling
+lepas dalam pembuktiannya; barisan demikian akan muncul beberapa kali lagi
+dalam Bab 35 pada volume berikutnya.
+
+Frasa `terintegralkan secara seragam' semestinya berarti kira-kira `dapat
+dihampiri secara seragam oleh fungsi sederhana'. Definisi 246A dapat diubah
+ke bentuk semacam itu, tetapi menurut saya bentuk tersebut tidak terlalu
+berguna. Sebaliknya, syarat (ii) dalam 246G kira-kira menyatakan sifat
+`kontinu sejati secara seragam', jika anggota $L^1$ dipandang sebagai
+fungsional kontinu sejati pada $\Sigma$, seperti dalam 242I. (Lihat 246Yi.)
+Perhatikan bahwa dalam setiap pernyataan (ii)--(iv) dari 246G, atom-atom ukuran
+harus ditangani secara khusus karena tidak dikendalikan oleh syarat utamanya.
+Pada ruang ukur tak beratom, tentu terdapat penyederhanaan sebagaimana dalam
+246Yd--246Yf.
+
+Cara lain untuk membenarkan kata `seragam' dalam `terintegralkan secara
+seragam' ialah dengan meninjau fungsional $\theta_w$, dengan $w\ge 0$ dalam
+$L^1$, yang didefinisikan oleh $\theta_w(u)=\int(|u|-w)^+$ untuk $u\in L^1$.
+Himpunan $A\subseteq L^1$ terintegralkan secara seragam jika dan hanya jika
+$\theta_w\to 0$ secara seragam pada $A$ ketika $w$ meningkat dalam $L^1$
+(246Xa). Jika sifat ini berlaku, kadang-kadang berguna bahwa sifat tersebut
+dapat diperlihatkan dengan unsur $w$ yang dibangun langsung dari bahan yang
+tersedia (lihat (iii) dalam 246Xa). Selanjutnya, himpunan
+$A_{w\epsilon}=\{u:\theta_w(u)\le\epsilon\}$ selalu konveks, tertutup dalam
+norma $\|\,\|_1$, dan `solid' (jika $u\in A_{w\epsilon}$ dan $|v|\le
+|u|$, maka $v\in A_{w\epsilon}$) (246Cd). Himpunan ini tertutup terhadap
+konvergensi titik demi titik dari barisan (246Ja), dan pada ruang ukur
+semihingga juga tertutup dalam topologi konvergensi dalam ukuran (246Jd).
+Pada ruang probabilitas, jika $w$ konstan, himpunan ini tertutup terhadap
+ekspektasi bersyarat (246D) dan operator serupa (246Yc). Karena itu, kita dapat
+mengharapkan bahwa setiap himpunan terintegralkan secara seragam termuat dalam
+himpunan terintegralkan secara seragam yang tertutup terhadap beberapa jenis
+operasi.
+
+Sifat `seragam' lainnya tercantum dalam 246Yk. Norma $\|\,\|_{\infty}$ tidak
+pernah kontinu terhadap urutan (dalam kasus-kasus yang menarik) sebagaimana
+norma $\|\,\|_p$ lainnya (244Ye). Namun, subhimpunan terintegralkan secara
+seragam dari $L^1$ menghasilkan seminorma-seminorma kontinu terhadap urutan
+yang menarik pada $L^{\infty}$.
+
+246J melengkapi hasil-hasil dari \S245. Dalam catatan untuk bagian itu saya
+mengajukan pertanyaan berikut: jika $\sequencen{f_n}\to f$ hampir di mana-mana,
+dengan cara apa $\sequencen{\int f_n}$ dapat gagal konvergen ke $\int f$?
+Di sini diperoleh bahwa $\sequencen{\int|f_n-f|}\to 0$ jika dan hanya jika
+$\{f_n:n\in\Bbb N\}$ terintegralkan secara seragam. Hal ini memperjelas
+ungkapan `tidak ada bobot barisan yang hilang di tak hingga'. Secara umum,
+untuk barisan, konvergensi dalam norma $\|\,\|_p$, dengan
+$p\in\coint{1,\infty}$, adalah konvergensi dalam ukuran bagi barisan yang pangkat-$p$-nya
+terintegralkan secara seragam (246Xh).
+
+
+
+
+}%end of notes
+
+\discrpage

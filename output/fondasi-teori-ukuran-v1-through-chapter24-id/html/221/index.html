@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Teorema Vitali di ℝ — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        BbbQ: '\\mathbb{Q}', BbbR: '\\mathbb{R}',
+        eightBbb: ['\\mathbb{#1}', 1],
+        DiniD: '\\overline{D}', Dinid: '\\underline{D}',
+        Var: '\\operatorname{Var}',
+        bumpeq: '=_{\\mathrm{approx}}',
+        intstar: '\\operatorname{int}^{*}',
+        family: ['\\langle #3\\rangle_{#1\\in #2}', 3],
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        displaycause: ['\\text{(#1)}', 1],
+        bigcupop: '\\bigcup', biggerint: '\\int',
+        eae: '=_{\\mathrm{a.e.}}', leae: '\\le_{\\mathrm{a.e.}}', geae: '\\ge_{\\mathrm{a.e.}}',
+        restr: '\\mathord{\\upharpoonright}', restrp: '\\mathord{\\upharpoonright}',
+        Real: '\\operatorname{Re}', Imag: '\\operatorname{Im}',
+        tbf: ['\\mathbf{#1}', 1], eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Qed: '\\square',
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        roibr: '\\mathopen{{[}}',
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1]
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 2 · Bagian 221</p>
+  <h1>Teorema Vitali di <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span></h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi kumulatif</a></nav>
+<main id="isi">
+<span class="anchor" id="221"></span>
+<p>Saya membahas teorema pertama bab ini dalam satu bagian tersendiri.
+Teorema tersebut menempati posisi di antara teori ukuran dan geometri
+(bahkan, teorema ini merupakan salah satu hasil dasar dalam ‘teori ukuran
+geometrik’), dan pembuktiannya melibatkan ukuran maupun
+geometri garis bilangan real.</p>
+<section class="source-unit" id="221A" data-source-id="221A"><h2><span class="source-label">221A</span> Teorema Vitali </h2>
+<p>Misalkan <span class="math inline" data-source-tex="A">\(A\)</span> suatu subhimpunan berbatas dari
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> dan <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> suatu keluarga interval tertutup dalam
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> yang masing-masing terdiri atas lebih dari satu titik, sedemikian
+sehingga setiap titik dari <span class="math inline" data-source-tex="A">\(A\)</span> termasuk dalam
+anggota-anggota <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> dengan panjang sekecil apa pun. Maka terdapat
+suatu himpunan terhitung <span class="math inline" data-source-tex="\Cal I_0\subseteq\Cal I">\(\Cal I_0\subseteq\Cal I\)</span> sedemikian sehingga (i)
+<span class="math inline" data-source-tex="\Cal I_0">\(\Cal I_0\)</span> saling lepas, yakni <span class="math inline" data-source-tex="I\cap I&#x27;=\emptyset">\(I\cap I&#x27;=\emptyset\)</span> untuk setiap pasangan
+berbeda <span class="math inline" data-source-tex="I">\(I\)</span>, <span class="math inline" data-source-tex="I&#x27;\in\Cal I_0">\(I&#x27;\in\Cal I_0\)</span>; (ii)
+<span class="math inline" data-source-tex="\mu(A\setminus\bigcup\Cal I_0)=0">\(\mu(A\setminus\bigcup\Cal I_0)=0\)</span>, dengan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> ukuran Lebesgue pada
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Jika terdapat suatu himpunan berhingga yang saling lepas
+<span class="math inline" data-source-tex="\Cal I_0\subseteq\Cal I">\(\Cal I_0\subseteq\Cal I\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="A\subseteq\bigcup\Cal I_0">\(A\subseteq\bigcup\Cal I_0\)</span> (termasuk kemungkinan bahwa
+<span class="math inline" data-source-tex="A=\Cal I_0=\emptyset">\(A=\Cal I_0=\emptyset\)</span>), kita selesai. Jadi, mulai sekarang andaikan
+bahwa tidak ada <span class="math inline" data-source-tex="\Cal I_0">\(\Cal I_0\)</span> semacam itu.</p>
+<p>Misalkan <span class="math inline" data-source-tex="\mu\sp*">\(\mu\sp*\)</span> adalah ukuran luar Lebesgue pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Andaikan
+bahwa <span class="math inline" data-source-tex="|x|&lt;M">\(|x|&lt;M\)</span> untuk setiap <span class="math inline" data-source-tex="x\in A">\(x\in A\)</span>, dan tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Cal I&#x27;=\{I:I\in\Cal I,\,I\subseteq[-M,M]\}">\(\Cal I&#x27;=\{I:I\in\Cal I,\,I\subseteq[-M,M]\}\)</span>.</div>
+<p> </p>
+<p><strong>(b)</strong> Dalam hal ini, jika <span class="math inline" data-source-tex="\Cal I_0">\(\Cal I_0\)</span> adalah sembarang subhimpunan
+berhingga dari <span class="math inline" data-source-tex="\Cal I&#x27;">\(\Cal I&#x27;\)</span> yang saling lepas, terdapat suatu <span class="math inline" data-source-tex="J\in\Cal I&#x27;">\(J\in\Cal I&#x27;\)</span>
+yang tidak beririsan dengan anggota mana pun dari <span class="math inline" data-source-tex="\Cal I_0">\(\Cal I_0\)</span>. Bukti. Ambil
+<span class="math inline" data-source-tex="x\in A\setminus\bigcup\Cal I_0">\(x\in A\setminus\bigcup\Cal I_0\)</span>. Sekarang terdapat <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="[x-\delta,x+\delta]">\([x-\delta,x+\delta]\)</span> tidak bertemu dengan anggota mana pun dari
+<span class="math inline" data-source-tex="\Cal I_0">\(\Cal I_0\)</span>, dan karena <span class="math inline" data-source-tex="|x|&lt;M">\(|x|&lt;M\)</span> kita dapat mengandaikan bahwa
+<span class="math inline" data-source-tex="[x-\delta,x+\delta]\subseteq[-M,M]">\([x-\delta,x+\delta]\subseteq[-M,M]\)</span>. Misalkan <span class="math inline" data-source-tex="J">\(J\)</span> suatu anggota
+<span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> yang memuat <span class="math inline" data-source-tex="x">\(x\)</span> dan panjangnya paling besar <span class="math inline" data-source-tex="\delta">\(\delta\)</span>; maka
+<span class="math inline" data-source-tex="J\in\Cal I&#x27;">\(J\in\Cal I&#x27;\)</span> dan <span class="math inline" data-source-tex="J\cap\bigcup\Cal I_0=\emptyset">\(J\cap\bigcup\Cal I_0=\emptyset\)</span>.\
+∎</p>
+<p> </p>
+<p><strong>(c)</strong> Sekarang kita dapat memilih suatu barisan
+<span class="math inline" data-source-tex="\sequencen{\gamma_n}">\(\sequencen{\gamma_n}\)</span> dari bilangan real dan suatu barisan saling lepas
+<span class="math inline" data-source-tex="\sequencen{I_n}">\(\sequencen{I_n}\)</span> di dalam <span class="math inline" data-source-tex="\Cal I&#x27;">\(\Cal I&#x27;\)</span> secara induktif sebagai berikut.
+Diberikan <span class="math inline" data-source-tex="\langle I_j\rangle_{j&lt;n}">\(\langle I_j\rangle_{j&lt;n}\)</span> (jika <span class="math inline" data-source-tex="n=0">\(n=0\)</span>, ini adalah barisan
+kosong, tanpa anggota), dengan <span class="math inline" data-source-tex="I_j\in\Cal I&#x27;">\(I_j\in\Cal I&#x27;\)</span> untuk setiap <span class="math inline" data-source-tex="j&lt;n">\(j&lt;n\)</span>, dan
+<span class="math inline" data-source-tex="I_j\cap I_k=\emptyset">\(I_j\cap I_k=\emptyset\)</span> untuk <span class="math inline" data-source-tex="j&lt;k&lt;n">\(j&lt;k&lt;n\)</span>, tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Cal J_n=\{I:I\in\Cal I&#x27;,\,I\cap I_j=\emptyset">\(\Cal J_n=\{I:I\in\Cal I&#x27;,\,I\cap I_j=\emptyset\)</span> untuk setiap
+<span class="math inline" data-source-tex="j&lt;n\}">\(j&lt;n\}\)</span>.</div>
+<p>Kita tahu dari (b) bahwa <span class="math inline" data-source-tex="\Cal J_n\ne\emptyset">\(\Cal J_n\ne\emptyset\)</span>. Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\gamma_n=\sup\{\mu I:I\in\Cal J_n\}">\(\gamma_n=\sup\{\mu I:I\in\Cal J_n\}\)</span>;</div>
+<p>maka <span class="math inline" data-source-tex="0&lt;\gamma_n\le 2M">\(0&lt;\gamma_n\le 2M\)</span>. Karena itu, kita dapat memilih suatu
+<span class="math inline" data-source-tex="I_n\in\Cal J_n">\(I_n\in\Cal J_n\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\mu I_n\ge{1\over 2}\gamma_n">\(\mu I_n\ge{1\over 2}\gamma_n\)</span>, dan
+ini melanjutkan induksi.</p>
+<p> </p>
+<p><strong>(e)</strong> Karena himpunan-himpunan <span class="math inline" data-source-tex="I_n">\(I_n\)</span> saling lepas, terukur Lebesgue,
+dan termuat dalam <span class="math inline" data-source-tex="[-M,M]">\([-M,M]\)</span>, kita mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\gamma_n
+\le 2\sum_{n=0}^{\infty}\mu I_n\le 4M&lt;\infty">\(\sum_{n=0}^{\infty}\gamma_n
+\le 2\sum_{n=0}^{\infty}\mu I_n\le 4M&lt;\infty\)</span>,</div>
+<p>dan <span class="math inline" data-source-tex="\lim_{n\to\infty}\gamma_n=0">\(\lim_{n\to\infty}\gamma_n=0\)</span>. Sekarang definisikan
+<span class="math inline" data-source-tex="I&#x27;_n">\(I&#x27;_n\)</span> sebagai interval tertutup yang berbagi titik tengah dengan
+<span class="math inline" data-source-tex="I_n">\(I_n\)</span> tetapi panjangnya lima kali panjang interval semula, sehingga
+interval tersebut menjulur melampaui setiap ujung <span class="math inline" data-source-tex="I_n">\(I_n\)</span> setidak-tidaknya sejauh
+<span class="math inline" data-source-tex="\gamma_n">\(\gamma_n\)</span>. Saya menyatakan bahwa, untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="A\subseteq\bigcup_{j&lt;n}{I}_j\cup\bigcup_{j\ge n}I_j&#x27;">\(A\subseteq\bigcup_{j&lt;n}{I}_j\cup\bigcup_{j\ge n}I_j&#x27;\)</span>.</div>
+<p>Bukti.<span class="fremlin-query" role="img" aria-label="andaikan untuk kontradiksi"></span> Andaikan, jika mungkin, bahwa pernyataan ini salah.
+Ambil sembarang <span class="math inline" data-source-tex="x">\(x\)</span> yang termasuk dalam
+<span class="math inline" data-source-tex="A\setminus(\bigcup_{j&lt;n}{I}_j\cup\bigcup_{j\ge n}I&#x27;_j)">\(A\setminus(\bigcup_{j&lt;n}{I}_j\cup\bigcup_{j\ge n}I&#x27;_j)\)</span>. Misalkan
+<span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="[x-\delta,x+\delta]
+\subseteq[-M,M]\setminus\bigcup_{j&lt;n}I_j">\([x-\delta,x+\delta]
+\subseteq[-M,M]\setminus\bigcup_{j&lt;n}I_j\)</span>,</div>
+<p>dan misalkan <span class="math inline" data-source-tex="J\in\Cal I">\(J\in\Cal I\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="x\in J\subseteq[x-\delta,x+\delta]">\(x\in J\subseteq[x-\delta,x+\delta]\)</span>.</div>
+<p>Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu J&gt;0=\lim_{m\to\infty}\gamma_m">\(\mu J&gt;0=\lim_{m\to\infty}\gamma_m\)</span>;</div>
+<p>misalkan <span class="math inline" data-source-tex="m">\(m\)</span> bilangan bulat terkecil yang lebih besar daripada
+atau sama dengan <span class="math inline" data-source-tex="n">\(n\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\gamma_m&lt;\mu J">\(\gamma_m&lt;\mu J\)</span>. Dalam hal ini,
+<span class="math inline" data-source-tex="J">\(J\)</span> tidak mungkin termasuk dalam <span class="math inline" data-source-tex="\Cal J_m">\(\Cal J_m\)</span>, sehingga pasti terdapat
+suatu <span class="math inline" data-source-tex="k&lt;m">\(k&lt;m\)</span> sedemikian sehingga <span class="math inline" data-source-tex="J\cap I_k\ne\emptyset">\(J\cap I_k\ne\emptyset\)</span>, sebab tentu saja
+<span class="math inline" data-source-tex="J\in\Cal I&#x27;">\(J\in\Cal I&#x27;\)</span>. Berdasarkan pemilihan <span class="math inline" data-source-tex="\delta">\(\delta\)</span>, <span class="math inline" data-source-tex="k">\(k\)</span> tidak mungkin lebih
+kecil daripada <span class="math inline" data-source-tex="n">\(n\)</span>, sehingga <span class="math inline" data-source-tex="n\le k&lt;m">\(n\le k&lt;m\)</span>, dan <span class="math inline" data-source-tex="\gamma_k\ge\mu J">\(\gamma_k\ge\mu J\)</span>. Dalam
+hal ini, jarak dari <span class="math inline" data-source-tex="x">\(x\)</span> ke titik ujung <span class="math inline" data-source-tex="I_k">\(I_k\)</span> yang terdekat paling besar
+<span class="math inline" data-source-tex="\mu J\le \gamma_k">\(\mu J\le \gamma_k\)</span>. Namun, ujung-ujung <span class="math inline" data-source-tex="I&#x27;_k">\(I&#x27;_k\)</span> menjulur melampaui
+ujung-ujung <span class="math inline" data-source-tex="I_k">\(I_k\)</span> setidak-tidaknya sejauh <span class="math inline" data-source-tex="\gamma_k">\(\gamma_k\)</span>, sehingga
+<span class="math inline" data-source-tex="x\in I&#x27;_k">\(x\in I&#x27;_k\)</span>; ini bertentangan dengan pemilihan <span class="math inline" data-source-tex="x">\(x\)</span>. <span class="fremlin-bang" role="img" aria-label="kontradiksi"></span> ∎</p>
+<p> </p>
+<p><strong>(f)</strong> Akibatnya,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu\sp*(A\setminus\bigcup_{j&lt;n}I_j)
+\le\mu(\bigcup_{j\ge n}I&#x27;_j)\le\sum_{j=n}^{\infty}\mu I&#x27;_j
+\le 5\sum_{j=n}^{\infty}\mu I_j">\(\mu\sp*(A\setminus\bigcup_{j&lt;n}I_j)
+\le\mu(\bigcup_{j\ge n}I&#x27;_j)\le\sum_{j=n}^{\infty}\mu I&#x27;_j
+\le 5\sum_{j=n}^{\infty}\mu I_j\)</span>.</div>
+<p>Karena</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{j=0}^{\infty}\mu I_j\le 2M&lt;\infty">\(\sum_{j=0}^{\infty}\mu I_j\le 2M&lt;\infty\)</span>,</div>
+<p>kita harus mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{n\to\infty}\mu\sp*(A\setminus\bigcup_{j&lt;n}I_j)=0,">\(\lim_{n\to\infty}\mu\sp*(A\setminus\bigcup_{j&lt;n}I_j)=0,\)</span></div>
+<p>dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu(A\setminus\bigcup_{j\in\Bbb N}I_j)
+=\mu\sp*(A\setminus\bigcup_{j\in\Bbb N}I_j)
+\le\inf_{n\in\Bbb N}\mu^*(A\setminus\bigcup_{j&lt;n}I_j)
+=0">\(\mu(A\setminus\bigcup_{j\in\Bbb N}I_j)
+=\mu\sp*(A\setminus\bigcup_{j\in\Bbb N}I_j)
+\le\inf_{n\in\Bbb N}\mu^*(A\setminus\bigcup_{j&lt;n}I_j)
+=0\)</span>.</div>
+<p>Jadi, dalam hal ini kita dapat menetapkan
+<span class="math inline" data-source-tex="\Cal I_0=\{I_n:n\in\Bbb N\}">\(\Cal I_0=\{I_n:n\in\Bbb N\}\)</span> untuk memperoleh suatu keluarga terhitung
+yang saling lepas di dalam <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> dengan
+<span class="math inline" data-source-tex="\mu(A\setminus\bigcup\Cal I_0)=0">\(\mu(A\setminus\bigcup\Cal I_0)=0\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="221B" data-source-id="221B"><span class="anchor" id="221Ba"></span><h2><span class="source-label">221B</span> Catatan (a) </h2>
+<p>Saya telah menyatakan teorema ini dalam bentuk
+‘terdapat suatu himpunan terhitung <span class="math inline" data-source-tex="\Cal I_0\subseteq\Cal I">\(\Cal I_0\subseteq\Cal I\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\ldots">\(\ldots\)</span>’ dalam upaya menemukan cara ringkas untuk menyatakan
+tiga kemungkinan</p>
+<div class="inset-block"><p>(i) <span class="math inline" data-source-tex="A=\Cal I=\emptyset">\(A=\Cal I=\emptyset\)</span>, sehingga kita harus mengambil
+<span class="math inline" data-source-tex="\Cal I_0=\emptyset">\(\Cal I_0=\emptyset\)</span>;</p></div>
+<div class="inset-block"><p>(ii) terdapat <span class="math inline" data-source-tex="I_0,\ldots,I_n\in\Cal I">\(I_0,\ldots,I_n\in\Cal I\)</span> yang saling lepas
+sedemikian sehingga <span class="math inline" data-source-tex="A\subseteq I_0\cup\ldots\cup I_n">\(A\subseteq I_0\cup\ldots\cup I_n\)</span>, sehingga kita dapat
+mengambil <span class="math inline" data-source-tex="\Cal I_0=\{I_0,\ldots,I_n\}">\(\Cal I_0=\{I_0,\ldots,I_n\}\)</span>;</p></div>
+<div class="inset-block"><p>(iii) terdapat suatu barisan saling lepas <span class="math inline" data-source-tex="\sequencen{I_n}">\(\sequencen{I_n}\)</span> di
+dalam <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu(A\setminus\bigcup_{n\in\Bbb N}I_n)=0">\(\mu(A\setminus\bigcup_{n\in\Bbb N}I_n)=0\)</span>, sehingga kita dapat mengambil
+<span class="math inline" data-source-tex="\Cal I_0=\{I_n:n\in\Bbb N\}">\(\Cal I_0=\{I_n:n\in\Bbb N\}\)</span>.</p></div>
+<p>Tentu saja banyak penerapan, seperti pembuktian <a class="xref" href="#221A">221A</a> sendiri,
+akan menggunakan bentuk-bentuk dari ketiga alternatif ini.</p>
+</section>
+<section class="source-unit" id="221Bb" data-source-id="221Bb"><h3><span class="source-label">221Bb</span> <strong>(b)</strong> </h3>
+<p>Teorema sebagaimana dinyatakan di sini akan
+digunakan dalam bagian berikutnya. Namun, prinsip pembuktiannya sama
+pentingnya dengan pernyataan teorema tersebut. Interval
+<span class="math inline" data-source-tex="I_n">\(I_n\)</span> dipilih ‘secara serakah’, yakni ketika tiba saatnya memilih <span class="math inline" data-source-tex="I_n">\(I_n\)</span>,
+kita melihat keluarga <span class="math inline" data-source-tex="\Cal J_n">\(\Cal J_n\)</span> dari interval-interval yang mungkin,
+dengan memperhitungkan pilihan <span class="math inline" data-source-tex="I_0,\ldots,I_{n-1}">\(I_0,\ldots,I_{n-1}\)</span> yang telah dibuat,
+dan memilih suatu <span class="math inline" data-source-tex="I_n\in\Cal J_n">\(I_n\in\Cal J_n\)</span> yang ‘kira-kira’ sebesar mungkin.
+Supremum dari kemungkinan-kemungkinan untuk <span class="math inline" data-source-tex="\mu I_n">\(\mu I_n\)</span> adalah <span class="math inline" data-source-tex="\gamma_n">\(\gamma_n\)</span>;
+tetapi karena kita tidak tahu apakah terdapat suatu <span class="math inline" data-source-tex="I\in\Cal J_n">\(I\in\Cal J_n\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\mu I=\gamma_n">\(\mu I=\gamma_n\)</span>, kita harus puas dengan sesuatu yang
+sedikit lebih kecil. Saya mengikuti rumus baku dengan mengambil
+<span class="math inline" data-source-tex="\mu I_n\ge\bover12\gamma_n">\(\mu I_n\ge\bover12\gamma_n\)</span>, tetapi tentu saja saya dapat mengambil
+<span class="math inline" data-source-tex="\mu I_n\ge\bover{99}{100}\gamma_n">\(\mu I_n\ge\bover{99}{100}\gamma_n\)</span>, atau
+<span class="math inline" data-source-tex="\mu I_n\ge(1-2^{-n})\gamma_n">\(\mu I_n\ge(1-2^{-n})\gamma_n\)</span>, jika hal itu membantu nantinya.
+Hal yang luar biasa ialah bahwa cara ini berhasil; kita dapat memilih
+<span class="math inline" data-source-tex="I_n">\(I_n\)</span> tanpa melihat ke depan dan tanpa meninjau hubungan timbal balik di
+antara interval-interval tersebut (bahkan, tanpa memeriksa himpunan <span class="math inline" data-source-tex="A">\(A\)</span>)
+selain persyaratan minimum bahwa <span class="math inline" data-source-tex="I_n\cap I_j=\emptyset">\(I_n\cap I_j=\emptyset\)</span> untuk <span class="math inline" data-source-tex="j&lt;n">\(j&lt;n\)</span>, dan
+bahkan prosedur yang sembarang dan sambil lalu ini menghasilkan barisan
+yang sesuai.</p>
+</section>
+<section class="source-unit" id="221Bc" data-source-id="221Bc"><h3><span class="source-label">221Bc</span> <strong>(c)</strong> </h3>
+<p>Saya telah menyatakan teorema ini untuk himpunan
+berbatas <span class="math inline" data-source-tex="A">\(A\)</span> dan interval tertutup, yang memadai bagi keperluan kita,
+tetapi perubahan sangat kecil pada pembuktiannya cukup untuk menangani
+interval sembarang (yang terdiri atas lebih dari satu titik), dan
+penyempurnaan lain menangani himpunan tak-berbatas <span class="math inline" data-source-tex="A">\(A\)</span>. (Lihat <a class="xref" href="#221Ya">221Ya</a>.)</p>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="221X" data-source-id="221X"><h2><span class="source-label">221X</span> Latihan dasar (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="\alpha\in\ooint{0,1}">\(\alpha\in\ooint{0,1}\)</span>.
+Andaikan, dalam bagian (c) dari pembuktian <a class="xref" href="#221A">221A</a>, kita mengambil
+<span class="math inline" data-source-tex="\mu I_n\ge\alpha\gamma_n">\(\mu I_n\ge\alpha\gamma_n\)</span> untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, alih-alih
+<span class="math inline" data-source-tex="\mu I_n\ge\bover12\gamma_n">\(\mu I_n\ge\bover12\gamma_n\)</span>. Konstanta berapakah yang tepat untuk
+menggantikan <span class="math inline" data-source-tex="5">\(5\)</span> ketika mendefinisikan himpunan-himpunan <span class="math inline" data-source-tex="I_j&#x27;">\(I_j&#x27;\)</span> dalam
+bagian (e)?</p>
+</section>
+<section class="source-unit" id="221Y" data-source-id="221Y"><span class="anchor" id="221Ya"></span><h2><span class="source-label">221Y</span> Latihan lanjutan (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="A">\(A\)</span> suatu subhimpunan dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> dan <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> suatu keluarga
+interval dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> yang masing-masing terdiri atas lebih dari satu
+titik, sedemikian sehingga setiap titik dari <span class="math inline" data-source-tex="A">\(A\)</span> termasuk dalam
+anggota-anggota <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> dengan panjang sekecil apa
+pun. Tunjukkan bahwa terdapat suatu himpunan terhitung yang saling lepas
+<span class="math inline" data-source-tex="\Cal I_0\subseteq\Cal I">\(\Cal I_0\subseteq\Cal I\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="A\setminus\bigcup\Cal I_0">\(A\setminus\bigcup\Cal I_0\)</span> terabaikan Lebesgue. <span class="hint" role="note"><strong>Petunjuk:</strong> terapkan <a class="xref" href="#221A">221A</a> pada
+himpunan <span class="math inline" data-source-tex="A\cap\ooint{n,n+1}">\(A\cap\ooint{n,n+1}\)</span> dan keluarga
+<span class="math inline" data-source-tex="\{\overline{I}:I\in\Cal I,\,\overline{I}\subseteq\ooint{n,n+1}\}">\(\{\overline{I}:I\in\Cal I,\,\overline{I}\subseteq\ooint{n,n+1}\}\)</span>,
+dengan menuliskan <span class="math inline" data-source-tex="\overline{I}">\(\overline{I}\)</span> untuk interval tertutup yang memiliki
+titik-titik ujung yang sama dengan <span class="math inline" data-source-tex="I">\(I\)</span>.</span></p>
+</section>
+<section class="source-unit" id="221Yb" data-source-id="221Yb"><h3><span class="source-label">221Yb</span> <strong>(b)</strong> </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\Cal J">\(\Cal J\)</span> sembarang keluarga interval
+dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> yang masing-masing terdiri atas lebih dari satu titik.
+Tunjukkan bahwa <span class="math inline" data-source-tex="\bigcup\Cal J">\(\bigcup\Cal J\)</span> terukur
+Lebesgue.
+<span class="hint" role="note"><strong>Petunjuk:</strong> terapkan (a) pada <span class="math inline" data-source-tex="A=\bigcup\Cal J">\(A=\bigcup\Cal J\)</span> dan keluarga <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> yang
+terdiri atas subinterval-subinterval dari anggota-anggota <span class="math inline" data-source-tex="\Cal J">\(\Cal J\)</span>,
+dengan setiap subinterval tersebut memuat lebih dari satu titik.</span></p>
+</section>
+<section class="source-unit" id="221Yc" data-source-id="221Yc"><h3><span class="source-label">221Yc</span> <strong>(c)</strong> </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\rho)">\((X,\rho)\)</span> suatu ruang metrik, <span class="math inline" data-source-tex="A">\(A\)</span> suatu
+subhimpunan dari <span class="math inline" data-source-tex="X">\(X\)</span>, dan <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> suatu keluarga bola tertutup berjari-jari
+positif dalam <span class="math inline" data-source-tex="X">\(X\)</span> sedemikian sehingga setiap titik dari <span class="math inline" data-source-tex="A">\(A\)</span> termasuk dalam
+anggota-anggota <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> yang sekecil apa pun.
+(Di sini saya mengatakan bahwa suatu himpunan adalah ‘bola tertutup
+berjari-jari positif’ jika himpunan tersebut dapat dinyatakan dalam bentuk
+<span class="math inline" data-source-tex="B(x,\delta)=\{y:\rho(y,x)\le\delta\}">\(B(x,\delta)=\{y:\rho(y,x)\le\delta\}\)</span> dengan <span class="math inline" data-source-tex="x\in X">\(x\in X\)</span> dan <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>.
+Tentu saja, bola semacam itu mungkin saja merupakan himpunan satu titik <span class="math inline" data-source-tex="\{x\}">\(\{x\}\)</span>.)
+Tunjukkan bahwa entah <span class="math inline" data-source-tex="A">\(A\)</span> dapat ditutupi oleh suatu keluarga berhingga
+yang saling lepas di dalam <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span>, atau terdapat suatu barisan saling
+lepas <span class="math inline" data-source-tex="\sequencen{B(x_n,\delta_n)}">\(\sequencen{B(x_n,\delta_n)}\)</span> di dalam <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="A\subseteq\bigcup_{m\le n}B(x_m,\delta_m)
+  \cup\bigcup_{m&gt;n}B(x_m,5\delta_m)">\(A\subseteq\bigcup_{m\le n}B(x_m,\delta_m)
+  \cup\bigcup_{m&gt;n}B(x_m,5\delta_m)\)</span> untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span></div>
+<p>atau terdapat suatu barisan saling lepas
+<span class="math inline" data-source-tex="\sequencen{B(x_n,\delta_n)}">\(\sequencen{B(x_n,\delta_n)}\)</span> di dalam <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\inf_{n\in\Bbb N}\delta_n&gt;0">\(\inf_{n\in\Bbb N}\delta_n&gt;0\)</span>.</p>
+</section>
+<section class="source-unit" id="221Yd" data-source-id="221Yd"><h3><span class="source-label">221Yd</span> (d) </h3>
+<p>Berikan contoh suatu keluarga <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> dari interval
+terbuka sedemikian sehingga setiap titik dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> termasuk dalam
+anggota-anggota <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> yang sekecil apa pun, tetapi jika
+<span class="math inline" data-source-tex="\sequencen{I_n}">\(\sequencen{I_n}\)</span> adalah sembarang barisan saling lepas di dalam <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span>,
+dan untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> kita menuliskan <span class="math inline" data-source-tex="I&#x27;_n">\(I&#x27;_n\)</span> untuk interval
+tertutup yang berbagi titik tengah dengan <span class="math inline" data-source-tex="I_n">\(I_n\)</span> dan panjangnya sepuluh kali
+panjang interval semula, maka terdapat suatu <span class="math inline" data-source-tex="n">\(n\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\ooint{0,1}\not\subseteq\bigcup_{m&lt;n}I_m\cup\bigcup_{m\ge n}I&#x27;_m">\(\ooint{0,1}\not\subseteq\bigcup_{m&lt;n}I_m\cup\bigcup_{m\ge n}I&#x27;_m\)</span>.</p>
+</section>
+<section class="source-unit" id="221Ye" data-source-id="221Ye"><h3><span class="source-label">221Ye</span> (e) </h3>
+<p>(i) Tunjukkan bahwa jika <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> adalah suatu keluarga
+<em>berhingga</em> dari interval-interval dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, terdapat
+<span class="math inline" data-source-tex="\Cal I_0">\(\Cal I_0\)</span>, <span class="math inline" data-source-tex="\Cal I_1\subseteq\Cal I">\(\Cal I_1\subseteq\Cal I\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\bigcup(\Cal I_0\cup\Cal I_1)=\bigcup\Cal I">\(\bigcup(\Cal I_0\cup\Cal I_1)=\bigcup\Cal I\)</span> dan <span class="math inline" data-source-tex="\Cal I_0">\(\Cal I_0\)</span> maupun
+<span class="math inline" data-source-tex="\Cal I_1">\(\Cal I_1\)</span> merupakan keluarga yang saling lepas. <span class="hint" role="note"><strong>Petunjuk:</strong> lakukan induksi
+pada <span class="math inline" data-source-tex="\#(\Cal I)">\(\#(\Cal I)\)</span>.</span> (ii) Andaikan <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> adalah suatu keluarga interval
+yang masing-masing terdiri atas lebih dari satu titik dan memiliki panjang
+paling besar <span class="math inline" data-source-tex="1">\(1\)</span>, yang menutupi suatu himpunan berbatas
+<span class="math inline" data-source-tex="A\subseteq\Bbb R">\(A\subseteq\Bbb R\)</span>, dan bahwa <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Tunjukkan bahwa
+terdapat suatu subkeluarga saling lepas <span class="math inline" data-source-tex="\Cal I_0">\(\Cal I_0\)</span> dari <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> sedemikian
+sehingga
+<span class="math inline" data-source-tex="\mu^*(A\setminus\bigcup\Cal I_0)\le\bover12\mu^*A+\epsilon">\(\mu^*(A\setminus\bigcup\Cal I_0)\le\bover12\mu^*A+\epsilon\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> dengan mengganti setiap anggota <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> dengan interval yang sedikit
+lebih panjang dan bertitik ujung rasional, reduksikan ke kasus ketika
+<span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> terhitung dan kemudian ke kasus ketika <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> berhingga;
+sekarang gunakan (i).</span>
+(iii) Gunakan (ii) untuk membuktikan Teorema Vitali. (Saya mempelajari
+argumen ini dari J.Aldaz.)</p>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<section class="source-unit" id="221-notes" data-source-id="221-notes"><h2><span class="source-label">221-notes</span> Catatan penutup untuk Bagian 221 </h2>
+<p>Saya memberi bagian ini judul ‘Teorema Vitali di
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>’ karena terdapat versi berdimensi <span class="math inline" data-source-tex="r">\(r\)</span>, yang akan muncul dalam
+Bab 26 di bawah.
+Terdapat suatu anomali pada posisi teorema ini. Teorema ini merupakan
+unsur yang sangat diperlukan dalam pembuktian beberapa teorema terpenting
+dalam teori ukuran; di sisi lain, gagasan-gagasan yang terlibat dalam
+pembuktiannya sendiri tidak digunakan di tempat lain dalam teori
+elementer. Karena itu, ketika mengajarkan materi ini saya sendiri kadang
+melewatkan pembuktiannya, dan saya tidak akan menyalahkan mahasiswa mana
+pun yang untuk sementara mengesampingkannya. Tentu saja, pada suatu tahap
+setiap ahli teori ukuran harus menguasai metodenya, bukan sekadar demi
+kelengkapan, melainkan juga untuk memperoleh intuisi mengenai
+variasi-variasi yang mungkin. Saya harus menekankan bahwa <em>prinsip</em>
+pembuktiannya, bukan perinciannya, yang penting, sebab terdapat tak
+terbilang banyak bentuk ‘Teorema Vitali’. (Saya menawarkan beberapa
+variasi dalam latihan-latihan di sini dan dalam §261 di bawah, dan
+terdapat banyak variasi lain yang penting dalam kajian lebih lanjut;
+salah satunya akan muncul dalam §472 di Jilid 4.) Saya kira prinsip ini
+adalah bahwa</p>
+<div class="inset-block"><p>(i) kita memilih <span class="math inline" data-source-tex="I_n">\(I_n\)</span> secara serakah, menurut suatu kriteria yang
+kurang lebih alami dan berlaku untuk setiap <span class="math inline" data-source-tex="I_n">\(I_n\)</span> ketika tiba saatnya
+memilih interval tersebut, tanpa berusaha melihat ke depan;</p></div>
+<div class="inset-block"><p>(ii) kita membuktikan bahwa ukuran interval-interval tersebut menuju nol, meskipun
+kita tampaknya tidak melakukan apa pun untuk memastikan bahwa hal itu
+akan terjadi (tetapi perhatikan peralihan dari <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> ke <span class="math inline" data-source-tex="\Cal I&#x27;">\(\Cal I&#x27;\)</span> dalam
+bagian (a) dari pembuktian <a class="xref" href="#221A">221A</a>, yang persis diperlukan agar langkah ini
+berhasil);</p></div>
+<div class="inset-block"><p>(iii) kita memeriksa bahwa untuk definisi <span class="math inline" data-source-tex="I_n&#x27;">\(I_n&#x27;\)</span> yang sesuai,
+dengan memperbesar <span class="math inline" data-source-tex="I_n">\(I_n\)</span>, kita akan mempunyai
+<span class="math inline" data-source-tex="A\subseteq\bigcup_{m&lt;n}I_m\cup\bigcup_{m\ge n}I&#x27;_m">\(A\subseteq\bigcup_{m&lt;n}I_m\cup\bigcup_{m\ge n}I&#x27;_m\)</span>
+untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, sedangkan <span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\mu I&#x27;_n&lt;\infty">\(\sum_{n=0}^{\infty}\mu I&#x27;_n&lt;\infty\)</span>.</p></div>
+<p>Dalam arti tertentu, kita harus menganggap diri kita beruntung
+setiap kali cara ini berhasil. Alasan mempelajari sebanyak mungkin variasi
+dari teknik semacam ini adalah agar kita belajar menebak kapan kita
+mungkin beruntung.</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 2: Broad Foundations</cite>, Bagian 221.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 25 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-cumulative-html-route-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V2-S221&quot;,
+  &quot;source_member&quot;: &quot;mt2.2016/mt221.tex&quot;,
+  &quot;target_bytes&quot;: 14500,
+  &quot;target_sha256&quot;: &quot;4cdb7083d2256342100a485330627827ebfdae3ab44a1aa75f89f6be2de2453b&quot;,
+  &quot;source_ids&quot;: [
+    &quot;221&quot;,
+    &quot;221A&quot;,
+    &quot;221B&quot;,
+    &quot;221Ba&quot;,
+    &quot;221Bb&quot;,
+    &quot;221Bc&quot;,
+    &quot;221X&quot;,
+    &quot;221Y&quot;,
+    &quot;221Ya&quot;,
+    &quot;221Yb&quot;,
+    &quot;221Yc&quot;,
+    &quot;221Yd&quot;,
+    &quot;221Ye&quot;
+  ],
+  &quot;corpus_id&quot;: &quot;O007-FREMLIN&quot;,
+  &quot;volume_id&quot;: &quot;O007-FREMLIN-V2&quot;,
+  &quot;volume_source_title&quot;: &quot;Broad Foundations&quot;,
+  &quot;route&quot;: &quot;221&quot;,
+  &quot;official_source_page_start&quot;: 55,
+  &quot;chapter_official_source_pages&quot;: [
+    55,
+    95
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

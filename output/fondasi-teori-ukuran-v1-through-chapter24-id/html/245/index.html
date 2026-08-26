@@ -1,0 +1,1388 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Konvergensi dalam ukuran — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        BbbQ: '\\mathbb{Q}', BbbR: '\\mathbb{R}',
+        eightBbb: ['\\mathbb{#1}', 1],
+        DiniD: '\\overline{D}', Dinid: '\\underline{D}',
+        Var: '\\operatorname{Var}',
+        bumpeq: '=_{\\mathrm{approx}}',
+        intstar: '\\operatorname{int}^{*}',
+        family: ['\\langle #3\\rangle_{#1\\in #2}', 3],
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        displaycause: ['\\text{(#1)}', 1],
+        bigcupop: '\\bigcup', biggerint: '\\int',
+        eae: '=_{\\mathrm{a.e.}}', leae: '\\le_{\\mathrm{a.e.}}', geae: '\\ge_{\\mathrm{a.e.}}',
+        restr: '\\mathord{\\upharpoonright}', restrp: '\\mathord{\\upharpoonright}',
+        Real: '\\operatorname{Re}', Imag: '\\operatorname{Im}',
+        tbf: ['\\mathbf{#1}', 1], eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Qed: '\\square',
+        BbbN: '\\mathbb{N}', Expn: '\\mathbb{E}',
+        Cal: ['\\mathcal{#1}', 1], dom: '\\operatorname{dom}',
+        coint: ['\\left[#1\\right[', 1],
+        sequencen: ['\\langle #1_n\\rangle_{n\\in\\mathbb{N}}', 1],
+        imp: '\\mathop{\\text{pelestari ukuran melalui prapeta}}',
+        tildeTau: '\\widetilde{\\mathrm{T}}',
+        LLcorner: '\\mathbin{\\llcorner}',
+        prooflet: ['#1', 1],
+        halfarrow: '\\rightharpoonup',
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        roibr: '\\mathopen{{[}}',
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1]
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 2 · Bagian 245</p>
+  <h1>Konvergensi dalam ukuran</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi kumulatif</a></nav>
+<main id="isi">
+<p>© 1995</p>
+<span class="anchor" id="245"></span>
+<p>Kini saya membahas suatu topologi penting dan menarik pada ruang
+<span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> dan <span class="math inline" data-source-tex="L^0">\(L^0\)</span>. Saya mulai dengan definisinya (<a class="xref" href="#245A">245A</a>), lalu meninjau
+sifat-sifat yang serupa dengan sifat ruang <span class="math inline" data-source-tex="L^p">\(L^p\)</span> untuk <span class="math inline" data-source-tex="p\ge 1">\(p\ge 1\)</span> (<a class="xref" href="#245D">245D</a>-<a class="xref" href="#245E">245E</a>).
+Dalam <a class="xref" href="#245G">245G</a>-<a class="xref" href="#245J">245J</a> saya menjelaskan hubungan-hubungan yang paling berguna antara
+topologi ini dan topologi norma pada ruang <span class="math inline" data-source-tex="L^p">\(L^p\)</span>. Untuk ruang
+<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga, topologi ini dapat dimetriskan (245Eb), dan konvergensi
+barisan dapat dicirikan melalui konvergensi titik demi titik suatu barisan
+fungsi (<a class="xref" href="#245K">245K</a>-<a class="xref" href="#245L">245L</a>).</p>
+<section class="source-unit" id="245A" data-source-id="245A"><h2><span class="source-label">245A</span> Definisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> adalah ruang ukur.</p>
+</section>
+<section class="source-unit" id="245Aa" data-source-id="245Aa"><h3><span class="source-label">245Aa</span> <strong>(a)</strong> </h3>
+<p>Untuk setiap himpunan terukur <span class="math inline" data-source-tex="F\subseteq X">\(F\subseteq X\)</span> yang
+berukuran berhingga, terdapat fungsional <span class="math inline" data-source-tex="\tau_F">\(\tau_F\)</span> pada
+<span class="math inline" data-source-tex="\eusm L^0=\eusm L^0(\mu)">\(\eusm L^0=\eusm L^0(\mu)\)</span> yang didefinisikan oleh</p>
+<div class="centerline"><span class="math inline" data-source-tex="\tau_F(f)=\int|f|\wedge\chi F">\(\tau_F(f)=\int|f|\wedge\chi F\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span>. (Integral ini ada di <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>
+karena <span class="math inline" data-source-tex="|f|\wedge\chi F">\(|f|\wedge\chi F\)</span> termasuk dalam <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> dan didominasi oleh
+fungsi terintegralkan <span class="math inline" data-source-tex="\chi F">\(\chi F\)</span>). Selain itu,
+<span class="math inline" data-source-tex="\tau_F(f+g)\le\tau_F(f)+\tau_F(g)">\(\tau_F(f+g)\le\tau_F(f)+\tau_F(g)\)</span> setiap kali <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in\eusm L^0">\(g\in\eusm L^0\)</span>.
+<span class="proof-fragment">Bukti. Cukup perhatikan bahwa
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\min(|(f+g)(x)|,\chi F(x))
+\le\min(|f(x)|,\chi
+F(x))+\min(|g(x)|,\chi F(x))">\(\min(|(f+g)(x)|,\chi F(x))
+\le\min(|f(x)|,\chi
+F(x))+\min(|g(x)|,\chi F(x))\)</span></span>
+
+
+
+  untuk setiap <span class="math inline" data-source-tex="x\in\dom f\cap\dom g">\(x\in\dom f\cap\dom g\)</span>, yang berlaku untuk hampir setiap <span class="math inline" data-source-tex="x\in X">\(x\in X\)</span>.
+∎</span> Akibatnya, dengan menetapkan <span class="math inline" data-source-tex="\rho_F(f,g)=\tau_F(f-g)">\(\rho_F(f,g)=\tau_F(f-g)\)</span>, kita
+mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\rho_F(f,h)=\tau_F((f-g)+(g-h))
+\le\tau_F(f-g)+\tau_F(g-h)=\rho_F(f,g)+\rho_F(g,h)">\(\rho_F(f,h)=\tau_F((f-g)+(g-h))
+\le\tau_F(f-g)+\tau_F(g-h)=\rho_F(f,g)+\rho_F(g,h)\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\rho_F(f,g)=\tau_F(f-g)\ge 0">\(\rho_F(f,g)=\tau_F(f-g)\ge 0\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\rho_F(f,g)=\tau_F(f-g)=\tau_F(g-f)=\rho_F(g,f)">\(\rho_F(f,g)=\tau_F(f-g)=\tau_F(g-f)=\rho_F(g,f)\)</span></div>
+<p>untuk semua <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g">\(g\)</span>, <span class="math inline" data-source-tex="h\in\eusm L^0">\(h\in\eusm L^0\)</span>; dengan kata lain,  <span class="math inline" data-source-tex="\rho_F">\(\rho_F\)</span> adalah
+pseudometrik pada <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span>.</p>
+</section>
+<section class="source-unit" id="245Ab" data-source-id="245Ab"><h3><span class="source-label">245Ab</span> <strong>(b)</strong> </h3>
+<p>Keluarga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{\rho_F:F\in\Sigma,\,\mu F&lt;\infty\}">\(\{\rho_F:F\in\Sigma,\,\mu F&lt;\infty\}\)</span></div>
+<p>mendefinisikan suatu topologi pada <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> (2A3F);
+saya akan menyebutnya topologi <strong>konvergensi dalam ukuran</strong> pada
+<span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span>.</p>
+</section>
+<section class="source-unit" id="245Ac" data-source-id="245Ac"><h3><span class="source-label">245Ac</span> <strong>(c)</strong> </h3>
+<p>Jika <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in\eusm L^0">\(g\in\eusm L^0\)</span> dan <span class="math inline" data-source-tex="f\eae g">\(f\eae g\)</span>, maka
+<span class="math inline" data-source-tex="|f|\wedge\chi F\eae|g|\wedge\chi F">\(|f|\wedge\chi F\eae|g|\wedge\chi F\)</span> dan <span class="math inline" data-source-tex="\tau_F(f)=\tau_F(g)">\(\tau_F(f)=\tau_F(g)\)</span>, untuk setiap
+himpunan <span class="math inline" data-source-tex="F">\(F\)</span> berukuran berhingga. Akibatnya kita mempunyai fungsional
+<span class="math inline" data-source-tex="\bar\tau_F">\(\bar\tau_F\)</span> pada <span class="math inline" data-source-tex="L^0=L^0(\mu)">\(L^0=L^0(\mu)\)</span> yang didefinisikan melalui</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bar\tau_F(f^{\ssbullet})=\tau_F(f)">\(\bar\tau_F(f^{\ssbullet})=\tau_F(f)\)</span></div>
+<p>setiap kali <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span>, <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dan <span class="math inline" data-source-tex="\mu F&lt;\infty">\(\mu F&lt;\infty\)</span>.
+Fungsional ini menghasilkan pseudometrik <span class="math inline" data-source-tex="\bar\rho_F">\(\bar\rho_F\)</span> yang dapat dinyatakan
+dengan salah satu rumus</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bar\rho_F(u,v)=\bar\tau_F(u-v)">\(\bar\rho_F(u,v)=\bar\tau_F(u-v)\)</span>,
+  <span class="math inline" data-source-tex="\bar\rho_F(f^{\ssbullet},g^{\ssbullet})=\rho_F(f,g)">\(\bar\rho_F(f^{\ssbullet},g^{\ssbullet})=\rho_F(f,g)\)</span></div>
+<p>untuk <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^0">\(v\in L^0\)</span>, <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in\eusm L^0">\(g\in\eusm L^0\)</span> dan <span class="math inline" data-source-tex="F">\(F\)</span> dengan ukuran
+berhingga. Keluarga pseudometrik ini mendefinisikan topologi
+<strong>konvergensi dalam ukuran</strong> pada <span class="math inline" data-source-tex="L^0">\(L^0\)</span>.</p>
+</section>
+<section class="source-unit" id="245Ad" data-source-id="245Ad"><h3><span class="source-label">245Ad</span> (d) </h3>
+<p>Selanjutnya, suatu barisan (dalam <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span>
+atau <span class="math inline" data-source-tex="L^0">\(L^0\)</span>) disebut <strong>konvergen dalam ukuran</strong> jika barisan itu konvergen dalam
+topologi konvergensi dalam ukuran (dalam arti 2A3M).</p>
+</section>
+<section class="source-unit" id="245B" data-source-id="245B"><span class="anchor" id="245Ba"></span><h2><span class="source-label">245B</span> Catatan (a) </h2>
+<p>Tentu saja topologi pada <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> dan
+<span class="math inline" data-source-tex="L^0">\(L^0\)</span> berkaitan seerat mungkin. Topologi pada <span class="math inline" data-source-tex="L^0">\(L^0\)</span> tidak hanya
+merupakan hasil bagi topologi pada <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> (yaitu, himpunan <span class="math inline" data-source-tex="G\subseteq
+L^0">\(G\subseteq
+L^0\)</span> terbuka jika <span class="math inline" data-source-tex="\{f:f^{\ssbullet}\in G\}">\(\{f:f^{\ssbullet}\in G\}\)</span> terbuka di <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span>), tetapi
+setiap himpunan terbuka di <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> juga merupakan prapeta, melalui peta
+hasil bagi, dari suatu himpunan terbuka di <span class="math inline" data-source-tex="L^0">\(L^0\)</span>.</p>
+</section>
+<section class="source-unit" id="245Bb" data-source-id="245Bb"><h3><span class="source-label">245Bb</span> <strong>(b)</strong> </h3>
+<p>Perhatikan pula bahwa jika <span class="math inline" data-source-tex="F_0,\ldots,F_n">\(F_0,\ldots,F_n\)</span>
+adalah himpunan terukur berukuran berhingga dengan gabungan <span class="math inline" data-source-tex="F">\(F\)</span>, maka, dalam
+notasi <a class="xref" href="#245A">245A</a>, <span class="math inline" data-source-tex="\tau_{F_i}\le\tau_{F}">\(\tau_{F_i}\le\tau_{F}\)</span> untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>;   ini berarti bahwa
+himpunan <span class="math inline" data-source-tex="G\subseteq \eusm L^0">\(G\subseteq \eusm L^0\)</span> terbuka untuk topologi konvergensi dalam
+ukuran jika dan hanya jika, untuk setiap <span class="math inline" data-source-tex="f\in G">\(f\in G\)</span>, terdapat himpunan <span class="math inline" data-source-tex="F">\(F\)</span>
+berukuran berhingga dan <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\rho_F(g,f)\le\delta\Longrightarrow g\in G">\(\rho_F(g,f)\le\delta\Longrightarrow g\in G\)</span>.</div>
+<p>Demikian pula, himpunan <span class="math inline" data-source-tex="G\subseteq L^0">\(G\subseteq L^0\)</span> terbuka untuk topologi
+konvergensi dalam ukuran jika dan hanya jika, untuk setiap <span class="math inline" data-source-tex="u\in G">\(u\in G\)</span>, terdapat
+himpunan <span class="math inline" data-source-tex="F">\(F\)</span> berukuran berhingga dan <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bar\rho_F(v,u)\le\delta\Longrightarrow v\in G">\(\bar\rho_F(v,u)\le\delta\Longrightarrow v\in G\)</span>.</div>
+</section>
+<section class="source-unit" id="245Bc" data-source-id="245Bc"><h3><span class="source-label">245Bc</span> <strong>(c)</strong> </h3>
+<p>Istilah ‘topologi konvergensi dalam ukuran’ cukup
+sesuai dengan penggunaan standar ketika <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> berhingga total.
+Namun <strong>hati-hati!</strong> Istilah ‘topologi konvergensi dalam ukuran’ juga
+digunakan untuk topologi yang ditentukan oleh metrik <a class="xref" href="#245Ye">245Ye</a> di bawah, bahkan
+ketika <span class="math inline" data-source-tex="\mu X=\infty">\(\mu X=\infty\)</span>. Saya juga pernah menjumpai istilah
+<strong>konvergensi lokal dalam ukuran</strong> untuk topologi <a class="xref" href="#245A">245A</a>. Kebanyakan penulis mengabaikan
+ruang yang tidak <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga dalam konteks ini. Namun saya berpendapat bahwa
+<a class="xref" href="#245D">245D</a>-<a class="xref" href="#245E">245E</a> di bawah cukup menarik sehingga perlu diperluas ke kasus tersebut.</p>
+</section>
+<section class="source-unit" id="245C" data-source-id="245C"><h2><span class="source-label">245C</span> Konvergensi titik demi titik </h2>
+<p>Topologi konvergensi dalam
+ukuran hampir dapat didefinisikan melalui ‘konvergensi titik demi titik’, yang
+merupakan salah satu akar teori ukuran. Kesesuaiannya paling erat pada ruang
+ukur <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga (lihat <a class="xref" href="#245K">245K</a>), tetapi dalam kasus umum pun masih ada
+hubungan yang sangat penting, sebagai berikut.  Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span>
+adalah ruang ukur, dan tulis <span class="math inline" data-source-tex="\eusm
+L^0=\eusm L^0(\mu)">\(\eusm
+L^0=\eusm L^0(\mu)\)</span>, <span class="math inline" data-source-tex="L^0=L^0(\mu)">\(L^0=L^0(\mu)\)</span>.</p>
+</section>
+<section class="source-unit" id="245Ca" data-source-id="245Ca"><h3><span class="source-label">245Ca</span> (a) </h3>
+<p>Jika <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> adalah barisan dalam <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> yang
+konvergen hampir di mana-mana ke <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span>, maka
+<span class="math inline" data-source-tex="\sequencen{f_n}\to f">\(\sequencen{f_n}\to f\)</span> dalam ukuran. <span class="proof-fragment">Bukti. Menurut 2A3Mc, cukup
+dibuktikan bahwa <span class="math inline" data-source-tex="\lim_{n\to\infty}\rho_F(f_n,f)=0">\(\lim_{n\to\infty}\rho_F(f_n,f)=0\)</span> setiap kali <span class="math inline" data-source-tex="\mu
+F&lt;\infty">\(\mu
+F&lt;\infty\)</span>. Tetapi <span class="math inline" data-source-tex="\sequencen{|f_n-f|\wedge\chi F}">\(\sequencen{|f_n-f|\wedge\chi F}\)</span> konvergen ke <span class="math inline" data-source-tex="0">\(0\)</span> hampir
+di mana-mana dan didominasi oleh fungsi terintegralkan <span class="math inline" data-source-tex="\chi F">\(\chi F\)</span>, sehingga,
+menurut Teorema Konvergensi Terdominasi Lebesgue,
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\lim_{n\to\infty}\rho_F(f_n,f)
+=\lim_{n\to\infty}\int|f_n-f|\wedge\chi F=0">\(\lim_{n\to\infty}\rho_F(f_n,f)
+=\lim_{n\to\infty}\int|f_n-f|\wedge\chi F=0\)</span>.   ∎</span>
+
+</span></p>
+</section>
+<section class="source-unit" id="245Cb" data-source-id="245Cb"><h3><span class="source-label">245Cb</span> (b) </h3>
+<p>Untuk merumuskan hasil terkait yang dapat diterapkan
+pada <span class="math inline" data-source-tex="L^0">\(L^0\)</span>, kita memerlukan konsep berikut.   Jika <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span>,
+<span class="math inline" data-source-tex="\sequencen{g_n}">\(\sequencen{g_n}\)</span> adalah barisan dalam <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> sehingga
+<span class="math inline" data-source-tex="f_n^{\ssbullet}=g_n^{\ssbullet}">\(f_n^{\ssbullet}=g_n^{\ssbullet}\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, sedangkan <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in\eusm L^0">\(g\in\eusm L^0\)</span>
+memenuhi <span class="math inline" data-source-tex="f^{\ssbullet}=g^{\ssbullet}">\(f^{\ssbullet}=g^{\ssbullet}\)</span>, dan
+<span class="math inline" data-source-tex="\sequencen{f_n}\to f">\(\sequencen{f_n}\to f\)</span> hampir di mana-mana, maka
+<span class="math inline" data-source-tex="\sequencen{g_n}\to g">\(\sequencen{g_n}\to g\)</span> hampir di mana-mana<span class="proof-fragment">, karena
+
+<span class="math display" data-source-tex="\eqalign{\{x:x\in\dom f&amp;\cap\dom g\cap\bigcap_{n\in\Bbb N}\dom
+f_n\cap\bigcap_{n\in\Bbb N}g_n,\cr
+&amp;g(x)=f(x)=\lim_{n\to\infty}f_n(x),\,f_n(x)
+=g_n(x)\Forall n\in \Bbb N\}\cr}">\[\begin{aligned}\{x:x\in\dom f&amp;\cap\dom g\cap\bigcap_{n\in\Bbb N}\dom
+f_n\cap\bigcap_{n\in\Bbb N}g_n,\\
+&amp;g(x)=f(x)=\lim_{n\to\infty}f_n(x),\,f_n(x)
+=g_n(x)\Forall n\in \Bbb N\}\\\end{aligned}\]</span>
+
+  koterabaikan</span>. Akibatnya diperoleh definisi bagi
+barisan dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span>; untuk Untuk
+<span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="f_n\in\eusm L^0">\(f_n\in\eusm L^0\)</span>, barisan <span class="math inline" data-source-tex="\sequencen{f_n^{\ssbullet}}">\(\sequencen{f_n^{\ssbullet}}\)</span> dikatakan <strong>konvergen secara ordo*</strong>, atau <strong>ordo*-konvergen</strong>, ke
+<span class="math inline" data-source-tex="f^{\ssbullet}">\(f^{\ssbullet}\)</span> jika dan hanya jika <span class="math inline" data-source-tex="f\eae\lim_{n\to\infty}f_n">\(f\eae\lim_{n\to\infty}f_n\)</span>.
+Dalam hal ini, tentu saja, <span class="math inline" data-source-tex="\sequencen{f_n}\to f">\(\sequencen{f_n}\to f\)</span> dalam ukuran.
+Jadi, dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span>, barisan <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> yang ordo*-konvergen ke
+<span class="math inline" data-source-tex="u\in L^0">\(u\in L^0\)</span> juga konvergen dalam ukuran ke <span class="math inline" data-source-tex="u">\(u\)</span>.</p>
+<p> </p>
+<p><strong>Catatan</strong> Uraian alternatif tentang konvergensi
+ordo diberikan dalam <a class="xref" href="#245Xc">245Xc</a>; kondisi (iii)-(vi) di sana disajikan dalam bentuk yang sesuai
+dengan struktur yang lebih umum.</p>
+</section>
+<section class="source-unit" id="245Cc" data-source-id="245Cc"><h3><span class="source-label">245Cc</span> (c) </h3>
+<p>Untuk contoh tipikal barisan yang konvergen dalam
+ukuran tanpa konvergen secara ordo, pertimbangkan contoh berikut.  Ambil
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span> sebagai ukuran Lebesgue pada <span class="math inline" data-source-tex="[0,1]">\([0,1]\)</span>, dan tetapkan <span class="math inline" data-source-tex="f_n(x)=2^m">\(f_n(x)=2^m\)</span> jika
+<span class="math inline" data-source-tex="x\in[2^{-m}k,2^{-m}(k+1)]">\(x\in[2^{-m}k,2^{-m}(k+1)]\)</span>, <span class="math inline" data-source-tex="0">\(0\)</span> sebaliknya, di mana <span class="math inline" data-source-tex="k=k(n)\in\Bbb N">\(k=k(n)\in\Bbb N\)</span>,
+<span class="math inline" data-source-tex="m=m(n)\in\Bbb N">\(m=m(n)\in\Bbb N\)</span> ditentukan oleh syarat <span class="math inline" data-source-tex="n+1=2^{m}+k">\(n+1=2^{m}+k\)</span> dan
+<span class="math inline" data-source-tex="0\le k&lt;2^m">\(0\le k&lt;2^m\)</span>. Maka <span class="math inline" data-source-tex="\sequencen{f_n}\to 0">\(\sequencen{f_n}\to 0\)</span> untuk topologi konvergensi
+dalam ukuran (karena <span class="math inline" data-source-tex="\rho_F(f_n,0)\le
+2^{-m}">\(\rho_F(f_n,0)\le
+2^{-m}\)</span> jika <span class="math inline" data-source-tex="F\subseteq[0,1]">\(F\subseteq[0,1]\)</span>
+terukur dan <span class="math inline" data-source-tex="2^m-1\le n">\(2^m-1\le n\)</span>), meskipun <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> tidak konvergen ke
+<span class="math inline" data-source-tex="0">\(0\)</span> hampir di mana-mana (memang, <span class="math inline" data-source-tex="\limsup_{n\to\infty}f_n=\infty">\(\limsup_{n\to\infty}f_n=\infty\)</span> di
+mana-mana).</p>
+</section>
+<section class="source-unit" id="245D" data-source-id="245D"><h2><span class="source-label">245D</span> Proposisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> adalah sebarang ruang ukur.</p>
+<p>(a) Topologi konvergensi dalam ukuran merupakan topologi ruang linier pada
+<span class="math inline" data-source-tex="L^0=L^0(\mu)">\(L^0=L^0(\mu)\)</span>.</p>
+<p>(b) Peta <span class="math inline" data-source-tex="\vee">\(\vee\)</span>, <span class="math inline" data-source-tex="\wedge:L^0\times L^0\to L^0">\(\wedge:L^0\times L^0\to L^0\)</span>, dan <span class="math inline" data-source-tex="u\mapsto|u|">\(u\mapsto|u|\)</span>, <span class="math inline" data-source-tex="u\mapsto
+u^+">\(u\mapsto
+u^+\)</span>, <span class="math inline" data-source-tex="u\mapsto u^-:L^0\to L^0">\(u\mapsto u^-:L^0\to L^0\)</span> semuanya kontinu.</p>
+<p>(c) Peta <span class="math inline" data-source-tex="\times:L^0\times L^0\to L^0">\(\times:L^0\times L^0\to L^0\)</span> kontinu.</p>
+<p>(d) Untuk setiap fungsi kontinu <span class="math inline" data-source-tex="h:\Bbb R\to\Bbb R">\(h:\Bbb R\to\Bbb R\)</span>, fungsi terkait <span class="math inline" data-source-tex="\bar
+h:L^0\to L^0">\(\bar
+h:L^0\to L^0\)</span> (<a class="xref" href="../241/index.html#241I">241I</a>) adalah kontinu.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Kuncinya ialah bahwa fungsional <span class="math inline" data-source-tex="\bar\tau_F">\(\bar\tau_F\)</span>,
+sebagaimana didefinisikan dalam <a class="xref" href="#245Ac">245Ac</a>, merupakan F-seminorma dalam arti 2A5B.
+Bukti. Ambil himpunan <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> berukuran berhingga. Dalam <a class="xref" href="#245Aa">245Aa</a> telah dicatat bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\tau_F(f+g)\le\tau_F(f)+\tau_F(g)">\(\tau_F(f+g)\le\tau_F(f)+\tau_F(g)\)</span> untuk semua <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in\eusm
+L^0">\(g\in\eusm
+L^0\)</span>,</div>
+<p>jadi</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bar\tau_F(u+v)\le\bar\tau_F(u)+\bar\tau_F(v)">\(\bar\tau_F(u+v)\le\bar\tau_F(u)+\bar\tau_F(v)\)</span> untuk semua <span class="math inline" data-source-tex="u">\(u\)</span>,
+<span class="math inline" data-source-tex="v\in L^0">\(v\in L^0\)</span>.</div>
+<p>Selanjutnya,</p>
+<p><span class="math display" data-source-tex="\eqalignno{\bar\tau_F(cu)&amp;\le\bar\tau_F(u)\text{ setiap kali }u\in L^0
+  \text{
+dan }|c|\le 1&amp;\text{(*)}\cr}">\[\begin{aligned}\bar\tau_F(cu)&amp;\le\bar\tau_F(u)\text{ setiap kali }u\in L^0
+  \text{
+dan }|c|\le 1&amp;\text{(*)}\\\end{aligned}\]</span></p>
+<p>karena <span class="math inline" data-source-tex="|cf|\wedge\chi F\leae|f|\wedge\chi F">\(|cf|\wedge\chi F\leae|f|\wedge\chi F\)</span> setiap kali <span class="math inline" data-source-tex="f\in\eusm
+L^0">\(f\in\eusm
+L^0\)</span> dan <span class="math inline" data-source-tex="|c|\le 1">\(|c|\le 1\)</span>. Terakhir, jika diberikan <span class="math inline" data-source-tex="u\in L^0">\(u\in L^0\)</span> dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>,
+ambil <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span> sedemikian sehingga <span class="math inline" data-source-tex="f^{\ssbullet}=u">\(f^{\ssbullet}=u\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{n\to\infty}|2^{-n}f|\wedge\chi F=0">\(\lim_{n\to\infty}|2^{-n}f|\wedge\chi F=0\)</span> hampir di mana-mana,</div>
+<p>sehingga, menurut Teorema Konvergensi Terdominasi Lebesgue,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{n\to\infty}\bar\tau_F(2^{-n}u)
+=\lim_{n\to\infty}\int|2^{-n}f|\wedge\chi F=0">\(\lim_{n\to\infty}\bar\tau_F(2^{-n}u)
+=\lim_{n\to\infty}\int|2^{-n}f|\wedge\chi F=0\)</span>,</div>
+<p>dan terdapat <span class="math inline" data-source-tex="n">\(n\)</span> sehingga <span class="math inline" data-source-tex="\bar\tau_F(2^{-n}u)\le\epsilon">\(\bar\tau_F(2^{-n}u)\le\epsilon\)</span>.
+Dari (*) di atas diperoleh bahwa <span class="math inline" data-source-tex="\bar\tau_F(cu)\le\epsilon">\(\bar\tau_F(cu)\le\epsilon\)</span> setiap
+kali <span class="math inline" data-source-tex="|c|\le 2^{-n}">\(|c|\le 2^{-n}\)</span>. Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sembarang, <span class="math inline" data-source-tex="\lim_{c\to
+0}\bar\tau_F(cu)=0">\(\lim_{c\to
+0}\bar\tau_F(cu)=0\)</span> untuk setiap <span class="math inline" data-source-tex="u\in L^0">\(u\in L^0\)</span>;  yang merupakan kondisi ketiga di
+2A5B. ∎</p>
+<p>Menurut 2A5B, topologi yang ditentukan oleh
+<span class="math inline" data-source-tex="\bar\tau_F">\(\bar\tau_F\)</span> merupakan topologi ruang linier.</p>
+<p> </p>
+<p><strong>(b)</strong> Untuk <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^0">\(v\in L^0\)</span>, <span class="math inline" data-source-tex="||u|-|v||\le|u-v|">\(||u|-|v||\le|u-v|\)</span>, jadi
+<span class="math inline" data-source-tex="\bar\rho_F(|u|,|v|)\le\bar\rho_F(u,v)">\(\bar\rho_F(|u|,|v|)\le\bar\rho_F(u,v)\)</span> untuk setiap himpunan <span class="math inline" data-source-tex="F">\(F\)</span> berukuran
+berhingga. Menurut 2A3H, <span class="math inline" data-source-tex="|\,\,|:L^0\to L^0">\(|\,\,|:L^0\to L^0\)</span> kontinu. Selanjutnya,</p>
+<div class="centerline"><span class="math inline" data-source-tex="u\vee v=\Bover12(u+v+|u-v|)">\(u\vee v=\Bover12(u+v+|u-v|)\)</span>,   <span class="math inline" data-source-tex="u\wedge
+v=\Bover12(u+v-|u-v|)">\(u\wedge
+v=\Bover12(u+v-|u-v|)\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="u^+=u\vee 0">\(u^+=u\vee 0\)</span>,   <span class="math inline" data-source-tex="u^-=(-u)\vee 0">\(u^-=(-u)\vee 0\)</span>.</div>
+<p>Karena penjumlahan dan pengurangan adalah kontinu, maka <span class="math inline" data-source-tex="\vee">\(\vee\)</span>,
+<span class="math inline" data-source-tex="\wedge">\(\wedge\)</span>, <span class="math inline" data-source-tex="^+">\(^+\)</span> dan <span class="math inline" data-source-tex="^-">\(^-\)</span> adalah kontinu.</p>
+<p> </p>
+<p><strong>(c)</strong> Ambil <span class="math inline" data-source-tex="u_0">\(u_0\)</span>, <span class="math inline" data-source-tex="v_0\in L^0">\(v_0\in L^0\)</span>, <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> suatu himpunan berukuran
+berhingga, dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Nyatakan <span class="math inline" data-source-tex="u_0">\(u_0\)</span> dan <span class="math inline" data-source-tex="v_0">\(v_0\)</span> masing-masing sebagai
+<span class="math inline" data-source-tex="f_0^{\ssbullet}">\(f_0^{\ssbullet}\)</span> dan <span class="math inline" data-source-tex="g_0^{\ssbullet}">\(g_0^{\ssbullet}\)</span>, dengan <span class="math inline" data-source-tex="f_0">\(f_0\)</span>, <span class="math inline" data-source-tex="g_0:X\to\Bbb R">\(g_0:X\to\Bbb R\)</span>
+terukur terhadap <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> (<a class="xref" href="../241/index.html#241Bk">241Bk</a>). Jika kita menetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="F_m=\{x:x\in F,\,|f_0(x)|+|g_0(x)|\le m\}">\(F_m=\{x:x\in F,\,|f_0(x)|+|g_0(x)|\le m\}\)</span>,</div>
+<p>maka <span class="math inline" data-source-tex="\sequence{m}{F_m}">\(\sequence{m}{F_m}\)</span> merupakan barisan himpunan tak menurun
+dengan gabungan <span class="math inline" data-source-tex="F">\(F\)</span>; karena itu terdapat <span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span> dengan <span class="math inline" data-source-tex="\mu(F\setminus
+F_m)\le\bover12\epsilon">\(\mu(F\setminus
+F_m)\le\bover12\epsilon\)</span>. Pilih <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="(2m+\mu F)\delta^2+2\delta\le\bover12\epsilon">\((2m+\mu F)\delta^2+2\delta\le\bover12\epsilon\)</span>.</p>
+<p>Sekarang andaikan <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^0">\(v\in L^0\)</span> memenuhi
+<span class="math inline" data-source-tex="\bar\rho_F(u,u_0)\le\delta^2">\(\bar\rho_F(u,u_0)\le\delta^2\)</span> dan <span class="math inline" data-source-tex="\bar\rho_F(v,v_0)\le\delta^2">\(\bar\rho_F(v,v_0)\le\delta^2\)</span>. Pilih
+<span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g:X\to\Bbb R">\(g:X\to\Bbb R\)</span> yang terukur dan memenuhi
+<span class="math inline" data-source-tex="f^{\ssbullet}=u">\(f^{\ssbullet}=u\)</span> dan <span class="math inline" data-source-tex="g^{\ssbullet}=v">\(g^{\ssbullet}=v\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu\{x:x\in F,\,|f(x)-f_0(x)|\ge\delta\}\le\delta">\(\mu\{x:x\in F,\,|f(x)-f_0(x)|\ge\delta\}\le\delta\)</span>,
+  <span class="math inline" data-source-tex="\mu\{x:x\in F,\,|g(x)-g_0(x)|\ge\delta\}\le\delta">\(\mu\{x:x\in F,\,|g(x)-g_0(x)|\ge\delta\}\le\delta\)</span>,</div>
+<p>sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu\{x:x\in F,\,|f(x)-f_0(x)||g(x)-g_0(x)|\ge\delta^2\}
+\le
+2\delta">\(\mu\{x:x\in F,\,|f(x)-f_0(x)||g(x)-g_0(x)|\ge\delta^2\}
+\le
+2\delta\)</span></div>
+<p>dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_F\min(1,|f-f_0|\times|g-g_0|)
+\le\delta^2\mu F+2\delta">\(\int_F\min(1,|f-f_0|\times|g-g_0|)
+\le\delta^2\mu F+2\delta\)</span>.</div>
+<p>Selain itu,</p>
+<div class="centerline"><span class="math inline" data-source-tex="|f\times g-f_0\times g_0|
+\le|f-f_0|\times|g-g_0| +
+|f_0|\times|g-g_0| + |f-f_0|\times|g_0|">\(|f\times g-f_0\times g_0|
+\le|f-f_0|\times|g-g_0| +
+|f_0|\times|g-g_0| + |f-f_0|\times|g_0|\)</span>,</div>
+<p>sehingga</p>
+<p><span class="math display" data-source-tex="\eqalignno{\bar\rho_F(u\times v,u_0\times v_0)
+&amp;=\int_F\min(1,|f\times
+g-f_0\times g_0|)\cr
+&amp;\le\Bover12\epsilon+\int_{F_m}\min(1,|f\times
+g-f_0\times g_0|)\cr
+&amp;\le\Bover12\epsilon+\int_{F_m}\min(1,|f-f_0|\times|g-g_0|
++m|g-g_0|+m|f-f_0|)\cr
+&amp;\le\Bover12\epsilon+\int_F\min(1,|f-f_0|\times|g-g_0|)\cr
+&amp;\qquad\qquad\qquad\qquad+m\int_F\min(1,|g-g_0|)
++m\int_F\min(1,|f-f_0|)\cr
+&amp;\le\Bover12\epsilon+\delta^2\mu
+F+2\delta+2m\delta^2
+\le\epsilon.\cr}">\[\begin{aligned}\bar\rho_F(u\times v,u_0\times v_0)
+&amp;=\int_F\min(1,|f\times
+g-f_0\times g_0|)\\
+&amp;\le\Bover12\epsilon+\int_{F_m}\min(1,|f\times
+g-f_0\times g_0|)\\
+&amp;\le\Bover12\epsilon+\int_{F_m}\min(1,|f-f_0|\times|g-g_0|
++m|g-g_0|+m|f-f_0|)\\
+&amp;\le\Bover12\epsilon+\int_F\min(1,|f-f_0|\times|g-g_0|)\\
+&amp;\qquad\qquad\qquad\qquad+m\int_F\min(1,|g-g_0|)
++m\int_F\min(1,|f-f_0|)\\
+&amp;\le\Bover12\epsilon+\delta^2\mu
+F+2\delta+2m\delta^2
+\le\epsilon.\\\end{aligned}\]</span></p>
+<p>Karena <span class="math inline" data-source-tex="F">\(F\)</span> dan <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sembarang, <span class="math inline" data-source-tex="\times">\(\times\)</span> kontinu di
+<span class="math inline" data-source-tex="(u_0,v_0)">\((u_0,v_0)\)</span>; karena <span class="math inline" data-source-tex="u_0">\(u_0\)</span> dan <span class="math inline" data-source-tex="v_0">\(v_0\)</span> sembarang, <span class="math inline" data-source-tex="\times">\(\times\)</span> kontinu.</p>
+<p> </p>
+<p><strong>(d)</strong> Ambil <span class="math inline" data-source-tex="u\in L^0">\(u\in L^0\)</span>, <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> berukuran berhingga, dan
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Maka terdapat <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sehingga
+<span class="math inline" data-source-tex="\bar\rho_F(\bar h(v),\bar h(u))\le\epsilon">\(\bar\rho_F(\bar h(v),\bar h(u))\le\epsilon\)</span> setiap
+kali <span class="math inline" data-source-tex="\bar\rho_F(v,u)\le\delta">\(\bar\rho_F(v,u)\le\delta\)</span>. Bukti.<span class="fremlin-query" role="img" aria-label="andaikan untuk kontradiksi"></span> Jika tidak, kita dapat menemukan,
+untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, suatu <span class="math inline" data-source-tex="v_n">\(v_n\)</span> sehingga <span class="math inline" data-source-tex="\bar\rho_F(v_n,u)\le 4^{-n}">\(\bar\rho_F(v_n,u)\le 4^{-n}\)</span>
+tetapi <span class="math inline" data-source-tex="\bar\rho_F(\bar h(v_n),\bar h(u))&gt;\epsilon">\(\bar\rho_F(\bar h(v_n),\bar h(u))&gt;\epsilon\)</span>. Nyatakan <span class="math inline" data-source-tex="u">\(u\)</span> sebagai
+<span class="math inline" data-source-tex="f^{\ssbullet}">\(f^{\ssbullet}\)</span> dan <span class="math inline" data-source-tex="v_n">\(v_n\)</span> sebagai <span class="math inline" data-source-tex="g_n^{\ssbullet}">\(g_n^{\ssbullet}\)</span> dengan <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g_n:X\to\Bbb
+R">\(g_n:X\to\Bbb
+R\)</span> terukur. Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="E_n=\{x:x\in F,\,|g_n(x)-f(x)|\ge 2^{-n}\}">\(E_n=\{x:x\in F,\,|g_n(x)-f(x)|\ge 2^{-n}\}\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>. Maka <span class="math inline" data-source-tex="\bar\rho_F(v_n,u)\ge 2^{-n}\mu E_n">\(\bar\rho_F(v_n,u)\ge 2^{-n}\mu E_n\)</span>,
+jadi <span class="math inline" data-source-tex="\mu E_n\le 2^{-n}">\(\mu E_n\le 2^{-n}\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, dan <span class="math inline" data-source-tex="E=\bigcap_{n\in\Bbb
+N}\bigcup_{m\ge n}E_m">\(E=\bigcap_{n\in\Bbb
+N}\bigcup_{m\ge n}E_m\)</span> terabaikan. Tetapi <span class="math inline" data-source-tex="\lim_{n\to\infty}g_n(x)=f(x)">\(\lim_{n\to\infty}g_n(x)=f(x)\)</span>
+untuk setiap <span class="math inline" data-source-tex="x\in F\setminus E">\(x\in F\setminus E\)</span>, jadi (karena <span class="math inline" data-source-tex="h">\(h\)</span> kontinu)
+<span class="math inline" data-source-tex="\lim_{n\to\infty}h(g_n(x))=h(f(x))">\(\lim_{n\to\infty}h(g_n(x))=h(f(x))\)</span> untuk setiap <span class="math inline" data-source-tex="x\in F\setminus E">\(x\in F\setminus E\)</span>.
+Akibatnya (seperti biasa, menurut Teorema Konvergensi Terdominasi Lebesgue)</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{n\to\infty}\bar\rho_F(\bar h(v_n),\bar h(u))
+=\lim_{n\to\infty}\int_F\min(1,|h(g_n(x))-h(f(x))|)\mu(dx)=0">\(\lim_{n\to\infty}\bar\rho_F(\bar h(v_n),\bar h(u))
+=\lim_{n\to\infty}\int_F\min(1,|h(g_n(x))-h(f(x))|)\mu(dx)=0\)</span>,</div>
+<p>yang tidak mungkin. <span class="fremlin-bang" role="img" aria-label="kontradiksi"></span>∎</p>
+<p>Menurut 2A3H, <span class="math inline" data-source-tex="\bar h">\(\bar h\)</span> kontinu.</p></aside>
+<p> </p>
+<p><strong>Catatan</strong> Saya tidak dapat mengatakan bahwa topologi
+konvergensi dalam ukuran pada <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> merupakan topologi ruang linier
+semata-mata karena (pada definisi yang saya pilih) <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> pada umumnya
+bukan ruang linier.</p>
+</section>
+<section class="source-unit" id="245E" data-source-id="245E"><h2><span class="source-label">245E</span>  </h2>
+<p>Kini saya beralih ke teorema utama yang
+menghubungkan sifat-sifat ruang linier topologis <span class="math inline" data-source-tex="L^0(\mu)">\(L^0(\mu)\)</span> dengan
+klasifikasi ruang ukur dalam Bab <a class="xref" href="../21/index.html#21">21</a>.</p>
+<p> </p>
+<p><strong>Teorema</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> adalah ruang ukur. Misalkan
+<span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> adalah topologi konvergensi dalam ukuran pada
+<span class="math inline" data-source-tex="L^0=L^0(\mu)">\(L^0=L^0(\mu)\)</span>, seperti yang dijelaskan dalam <a class="xref" href="#245A">245A</a>.</p>
+<p>(a) <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> semihingga jika dan hanya jika <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> Hausdorff.</p>
+<p>(b) <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga jika dan hanya jika <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> dapat
+dimetriskan.</p>
+<p>(c) <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dapat dilokalkan jika dan hanya jika <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> Hausdorff
+dan <span class="math inline" data-source-tex="L^0">\(L^0\)</span> lengkap terhadap <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Gunakan pseudometrik <span class="math inline" data-source-tex="\rho_F">\(\rho_F\)</span> pada
+<span class="math inline" data-source-tex="\eusm L^0=\eusm L^0(\mu)">\(\eusm L^0=\eusm L^0(\mu)\)</span> dan <span class="math inline" data-source-tex="\bar\rho_F">\(\bar\rho_F\)</span> pada <span class="math inline" data-source-tex="L^0">\(L^0\)</span> yang diuraikan dalam
+<a class="xref" href="#245A">245A</a>.</p>
+<p> </p>
+<p><strong>(a)(i)</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> semihingga dan <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v">\(v\)</span> dua anggota
+berbeda dari <span class="math inline" data-source-tex="L^0">\(L^0\)</span>. Nyatakan keduanya sebagai <span class="math inline" data-source-tex="f^{\ssbullet}">\(f^{\ssbullet}\)</span> dan
+<span class="math inline" data-source-tex="g^{\ssbullet}">\(g^{\ssbullet}\)</span>, dengan <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span> fungsi terukur dari <span class="math inline" data-source-tex="X">\(X\)</span> ke <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.
+Maka <span class="math inline" data-source-tex="\mu\{x:f(x)\ne g(x)\}&gt;0">\(\mu\{x:f(x)\ne g(x)\}&gt;0\)</span>; karena <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> semihingga, terdapat
+himpunan <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> yang berukuran berhingga
+sehingga <span class="math inline" data-source-tex="\mu\{x:x\in F,\,f(x)\ne g(x)\}&gt;0">\(\mu\{x:x\in F,\,f(x)\ne g(x)\}&gt;0\)</span>. Dengan demikian,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bar\rho_F(u,v)=\int_F\min(|f(x)-g(x)|,1)dx&gt;0">\(\bar\rho_F(u,v)=\int_F\min(|f(x)-g(x)|,1)dx&gt;0\)</span></div>
+<p>(lihat <a class="xref" href="../122/index.html#122Rc">122Rc</a>). Karena <span class="math inline" data-source-tex="u">\(u\)</span> dan <span class="math inline" data-source-tex="v">\(v\)</span> sembarang, <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span>
+adalah Hausdorff (2A3L).</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Misalkan <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> Hausdorff dan <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>, <span class="math inline" data-source-tex="\mu E&gt;0">\(\mu E&gt;0\)</span>.
+Maka <span class="math inline" data-source-tex="u=\chi E^{\ssbullet}\ne 0">\(u=\chi E^{\ssbullet}\ne 0\)</span>, sehingga terdapat <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dengan
+<span class="math inline" data-source-tex="\mu F&lt;\infty">\(\mu F&lt;\infty\)</span> dan <span class="math inline" data-source-tex="\bar\rho_F(u,0)\ne 0">\(\bar\rho_F(u,0)\ne 0\)</span>, yakni <span class="math inline" data-source-tex="\mu(E\cap F)&gt;0">\(\mu(E\cap F)&gt;0\)</span>. Dengan
+demikian <span class="math inline" data-source-tex="E\cap F">\(E\cap F\)</span> adalah himpunan berukuran berhingga yang tidak terabaikan
+dan termuat dalam <span class="math inline" data-source-tex="E">\(E\)</span>. Karena <span class="math inline" data-source-tex="E">\(E\)</span> sembarang, <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> semihingga.</p>
+<p> </p>
+<p><strong>(b)(i)</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga. Misalkan
+<span class="math inline" data-source-tex="\sequencen{E_n}">\(\sequencen{E_n}\)</span> barisan tak menurun dari himpunan-himpunan berukuran
+berhingga yang gabungannya adalah <span class="math inline" data-source-tex="X">\(X\)</span>. Tetapkan</p>
+<p><span class="math display" data-source-tex="\bar\rho(u,v)
+=\sum_{n=0}^{\infty}\bover{\bar\rho_{E_n}(u,v)}{1+2^n\mu
+E_n}">\[\bar\rho(u,v)
+=\sum_{n=0}^{\infty}\bover{\bar\rho_{E_n}(u,v)}{1+2^n\mu
+E_n}\]</span></p>
+<p>untuk <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^0">\(v\in L^0\)</span>.   Maka <span class="math inline" data-source-tex="\bar\rho">\(\bar\rho\)</span> adalah metrik pada <span class="math inline" data-source-tex="L^0">\(L^0\)</span>.
+Bukti. Karena setiap <span class="math inline" data-source-tex="\bar\rho_{E_n}">\(\bar\rho_{E_n}\)</span> merupakan pseudometrik, demikian pula
+<span class="math inline" data-source-tex="\bar\rho">\(\bar\rho\)</span>. Jika <span class="math inline" data-source-tex="\bar\rho(u,v)=0">\(\bar\rho(u,v)=0\)</span>, nyatakan <span class="math inline" data-source-tex="u">\(u\)</span> sebagai <span class="math inline" data-source-tex="f^{\ssbullet}">\(f^{\ssbullet}\)</span> dan
+<span class="math inline" data-source-tex="v">\(v\)</span> sebagai <span class="math inline" data-source-tex="g^{\ssbullet}">\(g^{\ssbullet}\)</span>, dengan <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in\eusm L^0(\mu)">\(g\in\eusm L^0(\mu)\)</span>; maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int|f-g|\wedge\chi E_n=\bar\rho_{E_n}(u,v)=0">\(\int|f-g|\wedge\chi E_n=\bar\rho_{E_n}(u,v)=0\)</span>,</div>
+<p>jadi <span class="math inline" data-source-tex="f=g">\(f=g\)</span> hampir di mana-mana di <span class="math inline" data-source-tex="E_n">\(E_n\)</span>, untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>. Karena
+<span class="math inline" data-source-tex="X=\bigcup_{n\in\Bbb N}E_n">\(X=\bigcup_{n\in\Bbb N}E_n\)</span>, <span class="math inline" data-source-tex="f\eae g">\(f\eae g\)</span> dan <span class="math inline" data-source-tex="u=v">\(u=v\)</span>. ∎</p>
+<p>Jika <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>, <span class="math inline" data-source-tex="\mu F&lt;\infty">\(\mu F&lt;\infty\)</span>, dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, ambil <span class="math inline" data-source-tex="n">\(n\)</span> sehingga
+<span class="math inline" data-source-tex="\mu(F\setminus E_n)\le\bover12\epsilon">\(\mu(F\setminus E_n)\le\bover12\epsilon\)</span>.   Jika <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^0">\(v\in L^0\)</span> dan
+<span class="math inline" data-source-tex="\bar\rho(u,v)\le\epsilon/2(1+2^n\mu E_n)">\(\bar\rho(u,v)\le\epsilon/2(1+2^n\mu E_n)\)</span>, maka <span class="math inline" data-source-tex="\bar\rho_F(u,v)\le\epsilon">\(\bar\rho_F(u,v)\le\epsilon\)</span>.
+Bukti. Nyatakan <span class="math inline" data-source-tex="u">\(u\)</span> sebagai <span class="math inline" data-source-tex="f^{\ssbullet}">\(f^{\ssbullet}\)</span> dan <span class="math inline" data-source-tex="v=g^{\ssbullet}">\(v=g^{\ssbullet}\)</span>,
+dengan <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in\eusm L^0">\(g\in\eusm L^0\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int|u-v|\wedge \chi E_n
+=\bar\rho_{E_n}(u,v)\le(1+2^n\mu
+E_n)\bar\rho(u,v)
+\le\Bover{\epsilon}2">\(\int|u-v|\wedge \chi E_n
+=\bar\rho_{E_n}(u,v)\le(1+2^n\mu
+E_n)\bar\rho(u,v)
+\le\Bover{\epsilon}2\)</span>,</div>
+<p>sementara</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int|f-g|\wedge \chi(F\setminus E_n)
+\le\mu(F\setminus
+E_n)\le\Bover{\epsilon}2">\(\int|f-g|\wedge \chi(F\setminus E_n)
+\le\mu(F\setminus
+E_n)\le\Bover{\epsilon}2\)</span>,</div>
+<p>jadi</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bar\rho_F(u,v)=\int|f-g|\wedge\chi F
+\le\int|f-g|\wedge\chi
+E_n+\int|f-g|\wedge\chi(F\setminus E_n)
+\le\Bover{\epsilon}2+\Bover{\epsilon}2
+=\epsilon">\(\bar\rho_F(u,v)=\int|f-g|\wedge\chi F
+\le\int|f-g|\wedge\chi
+E_n+\int|f-g|\wedge\chi(F\setminus E_n)
+\le\Bover{\epsilon}2+\Bover{\epsilon}2
+=\epsilon\)</span>.  ∎</div>
+<p>Sebaliknya, jika <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, ambil <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> sehingga
+<span class="math inline" data-source-tex="2^{-n}\le\bover12\epsilon">\(2^{-n}\le\bover12\epsilon\)</span>;  lalu <span class="math inline" data-source-tex="\bar\rho(u,v)\le\epsilon">\(\bar\rho(u,v)\le\epsilon\)</span> setiap kali
+<span class="math inline" data-source-tex="\bar\rho_{E_n}(u,v)\le\epsilon/2(n+1)">\(\bar\rho_{E_n}(u,v)\le\epsilon/2(n+1)\)</span>.</p>
+<p>Hal ini menunjukkan bahwa <span class="math inline" data-source-tex="\bar\rho">\(\bar\rho\)</span> mendefinisikan topologi yang sama dengan
+<span class="math inline" data-source-tex="\bar\rho_F">\(\bar\rho_F\)</span> (2A3Ib), sehingga <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span>, topologi yang ditentukan oleh
+<span class="math inline" data-source-tex="\bar\rho_F">\(\bar\rho_F\)</span>, dapat dimetriskan.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Misalkan <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> dapat dimetriskan. Misalkan <span class="math inline" data-source-tex="\bar\rho">\(\bar\rho\)</span>
+suatu metrik yang menentukan <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span>. Untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> harus
+terdapat himpunan terukur <span class="math inline" data-source-tex="F_n">\(F_n\)</span> berukuran berhingga dan <span class="math inline" data-source-tex="\delta_n&gt;0">\(\delta_n&gt;0\)</span> sedemikian
+rupa sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bar\rho_{F_n}(u,0)\le \delta_n\Longrightarrow\bar\rho(u,0)
+\le
+2^{-n}">\(\bar\rho_{F_n}(u,0)\le \delta_n\Longrightarrow\bar\rho(u,0)
+\le
+2^{-n}\)</span>.</div>
+<p>Tetapkan <span class="math inline" data-source-tex="E=X\setminus\bigcup_{n\in\Bbb N}F_n">\(E=X\setminus\bigcup_{n\in\Bbb N}F_n\)</span>. <span class="fremlin-query" role="img" aria-label="andaikan untuk kontradiksi"></span> Andaikan <span class="math inline" data-source-tex="E">\(E\)</span>
+tidak terabaikan, maka <span class="math inline" data-source-tex="u=\chi E^{\ssbullet}\ne 0">\(u=\chi E^{\ssbullet}\ne 0\)</span>; karena <span class="math inline" data-source-tex="\bar\rho">\(\bar\rho\)</span>
+adalah metrik, terdapat <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> sehingga <span class="math inline" data-source-tex="\bar\rho(u,0)&gt;2^{-n}">\(\bar\rho(u,0)&gt;2^{-n}\)</span>. Tetapi</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu(E\cap F_n)=\bar\rho_{F_n}(u,0)&gt;\delta_n">\(\mu(E\cap F_n)=\bar\rho_{F_n}(u,0)&gt;\delta_n\)</span>.</div>
+<p>ini bertentangan dengan <span class="math inline" data-source-tex="E\cap F_n=\emptyset">\(E\cap F_n=\emptyset\)</span>. <span class="fremlin-bang" role="img" aria-label="kontradiksi"></span></p>
+<p>Jadi <span class="math inline" data-source-tex="\mu E=0&lt;\infty">\(\mu E=0&lt;\infty\)</span>. Karena <span class="math inline" data-source-tex="X=E\cup\bigcup_{n\in\Bbb N}F_n">\(X=E\cup\bigcup_{n\in\Bbb N}F_n\)</span> merupakan
+gabungan terhitung dari himpunan-himpunan berukuran berhingga, <span class="math inline" data-source-tex="\mu">\(\mu\)</span> pun
+<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga.</p>
+<p> </p>
+<p><strong>(c)</strong> Menurut (a), masing-masing hipotesis menjamin bahwa <span class="math inline" data-source-tex="\mu">\(\mu\)</span> semihingga
+dan <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> Hausdorff.</p>
+<p> </p>
+<p>  <strong>(i)</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dapat dilokalkan, dan misalkan <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span>
+suatu filter Cauchy pada <span class="math inline" data-source-tex="L^0">\(L^0\)</span> (2A5F). Untuk setiap himpunan terukur <span class="math inline" data-source-tex="F">\(F\)</span>
+berukuran berhingga, pilih barisan <span class="math inline" data-source-tex="\sequencen{A_n(F)}">\(\sequencen{A_n(F)}\)</span> dalam
+<span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> sehingga <span class="math inline" data-source-tex="\bar\rho_F(u,v)\le 4^{-n}">\(\bar\rho_F(u,v)\le 4^{-n}\)</span> untuk setiap <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in A_n(F)">\(v\in A_n(F)\)</span>,
+dan setiap <span class="math inline" data-source-tex="n">\(n\)</span> (2A5G). Pilih <span class="math inline" data-source-tex="u_{Fn}\in\bigcap_{k\le n}A_k(F)">\(u_{Fn}\in\bigcap_{k\le n}A_k(F)\)</span> untuk setiap
+<span class="math inline" data-source-tex="n">\(n\)</span>;  lalu <span class="math inline" data-source-tex="\bar\rho_F(u_{F,n+1},u_{Fn})\le 2^{-n}">\(\bar\rho_F(u_{F,n+1},u_{Fn})\le 2^{-n}\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>.
+Nyatakan setiap <span class="math inline" data-source-tex="u_{Fn}">\(u_{Fn}\)</span> sebagai <span class="math inline" data-source-tex="f_{Fn}^{\ssbullet}">\(f_{Fn}^{\ssbullet}\)</span>, dengan <span class="math inline" data-source-tex="f_{Fn}">\(f_{Fn}\)</span>
+fungsi terukur dari <span class="math inline" data-source-tex="X">\(X\)</span> ke <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu\{x:x\in F,\,|f_{F,n+1}(x)-f_{Fn}(x)|\ge 2^{-n}\}
+\le
+2^n\bar\rho_F(u_{F,n+1},u_{Fn})\le 2^{-n}">\(\mu\{x:x\in F,\,|f_{F,n+1}(x)-f_{Fn}(x)|\ge 2^{-n}\}
+\le
+2^n\bar\rho_F(u_{F,n+1},u_{Fn})\le 2^{-n}\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>. Oleh karena itu, <span class="math inline" data-source-tex="\sequencen{f_{Fn}}">\(\sequencen{f_{Fn}}\)</span> harus
+konvergen hampir di mana-mana pada <span class="math inline" data-source-tex="F">\(F\)</span>. Bukti. Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="H_n=\{x:x\in F,\,|f_{F,n+1}(x)-f_{Fn}(x)|\ge 2^{-n}\}">\(H_n=\{x:x\in F,\,|f_{F,n+1}(x)-f_{Fn}(x)|\ge 2^{-n}\}\)</span>.</div>
+<p>Lalu <span class="math inline" data-source-tex="\mu H_n\le 2^{-n}">\(\mu H_n\le 2^{-n}\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, jadi</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu(\bigcap_{n\in\Bbb N}\bigcup_{m\ge n}H_m)
+\le\inf_{n\in\Bbb
+N}\sum_{m=n}^{\infty}2^{-m}
+=0">\(\mu(\bigcap_{n\in\Bbb N}\bigcup_{m\ge n}H_m)
+\le\inf_{n\in\Bbb
+N}\sum_{m=n}^{\infty}2^{-m}
+=0\)</span>.</div>
+<p>Jika <span class="math inline" data-source-tex="x\in F\setminus\bigcap_{n\in\Bbb N}\bigcup_{m\ge n}H_m">\(x\in F\setminus\bigcap_{n\in\Bbb N}\bigcup_{m\ge n}H_m\)</span>, maka
+terdapat <span class="math inline" data-source-tex="k">\(k\)</span> sehingga <span class="math inline" data-source-tex="x\in F\setminus\bigcup_{m\ge k}H_m">\(x\in F\setminus\bigcup_{m\ge k}H_m\)</span>, sehingga
+<span class="math inline" data-source-tex="|f_{F,m+1}(x)-f_{Fm}(x)|\le 2^{-m}">\(|f_{F,m+1}(x)-f_{Fm}(x)|\le 2^{-m}\)</span> untuk setiap <span class="math inline" data-source-tex="m\ge k">\(m\ge k\)</span>, dan
+<span class="math inline" data-source-tex="\sequencen{f_{Fn}(x)}">\(\sequencen{f_{Fn}(x)}\)</span> adalah Cauchy, oleh karena itu konvergen. ∎</p>
+<p>Tetapkan <span class="math inline" data-source-tex="f_F(x)=\lim_{n\to\infty}f_{Fn}(x)">\(f_F(x)=\lim_{n\to\infty}f_{Fn}(x)\)</span> untuk setiap <span class="math inline" data-source-tex="x\in F">\(x\in F\)</span> yang
+batasnya ada di <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>; dengan demikian <span class="math inline" data-source-tex="f_F">\(f_F\)</span> terukur dan terdefinisi
+hampir di mana-mana di <span class="math inline" data-source-tex="F">\(F\)</span>.</p>
+<p>Jika <span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="F">\(F\)</span> adalah dua himpunan berukuran berhingga dan <span class="math inline" data-source-tex="E\subseteq F">\(E\subseteq F\)</span>, maka
+<span class="math inline" data-source-tex="\bar\rho_E(u_{En},u_{Fn})\le 2\cdot 4^{-n}">\(\bar\rho_E(u_{En},u_{Fn})\le 2\cdot 4^{-n}\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>.   Bukti.
+<span class="math inline" data-source-tex="A_n(E)">\(A_n(E)\)</span> dan <span class="math inline" data-source-tex="A_n(F)">\(A_n(F)\)</span> keduanya milik <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span>, sehingga keduanya beririsan;
+ambil titik <span class="math inline" data-source-tex="w">\(w\)</span> dalam irisan tersebut. Maka</p>
+<p><span class="math display" data-source-tex="\eqalign{\bar\rho_E(u_{En},u_{Fn})
+&amp;\le\bar\rho_E(u_{En},w)+\bar\rho_E(w,u_{Fn})\cr
+&amp;\le\bar\rho_E(u_{En},w)+\bar\rho_F(w,u_{Fn})
+\le 4^{-n}+4^{-n}.  \text{
+\Qed}\cr}">\[\begin{aligned}\bar\rho_E(u_{En},u_{Fn})
+&amp;\le\bar\rho_E(u_{En},w)+\bar\rho_E(w,u_{Fn})\\
+&amp;\le\bar\rho_E(u_{En},w)+\bar\rho_F(w,u_{Fn})
+\le 4^{-n}+4^{-n}.  \text{
+\Qed}\\\end{aligned}\]</span></p>
+<p>Akibatnya</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu\{x:x\in E,\,|f_{Fn}(x)-f_{En}(x)|\ge 2^{-n}\}
+\le
+2^n\bar\rho_E(u_{Fn},u_{En})\le 2^{-n+1}">\(\mu\{x:x\in E,\,|f_{Fn}(x)-f_{En}(x)|\ge 2^{-n}\}
+\le
+2^n\bar\rho_E(u_{Fn},u_{En})\le 2^{-n+1}\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, dan <span class="math inline" data-source-tex="\lim_{n\to\infty}f_{Fn}-f_{En}=0">\(\lim_{n\to\infty}f_{Fn}-f_{En}=0\)</span> hampir di
+mana-mana pada <span class="math inline" data-source-tex="E">\(E\)</span>; sehingga <span class="math inline" data-source-tex="f_E=f_F">\(f_E=f_F\)</span> hampir di mana-mana pada <span class="math inline" data-source-tex="E">\(E\)</span>.</p>
+<p>Akibatnya, jika <span class="math inline" data-source-tex="E">\(E\)</span> dan <span class="math inline" data-source-tex="F">\(F\)</span> adalah dua himpunan berukuran berhingga,
+<span class="math inline" data-source-tex="f_E=f_F">\(f_E=f_F\)</span> hampir di mana-mana pada <span class="math inline" data-source-tex="E\cap F">\(E\cap F\)</span>, karena pada <span class="math inline" data-source-tex="E\cap F">\(E\cap F\)</span> keduanya
+sama hampir di mana-mana dengan <span class="math inline" data-source-tex="f_{E\cup F}">\(f_{E\cup F}\)</span>.</p>
+<p>Karena <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dapat dilokalkan, terdapat <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span> sehingga <span class="math inline" data-source-tex="f=f_E">\(f=f_E\)</span>
+hampir di mana-mana pada <span class="math inline" data-source-tex="E">\(E\)</span> untuk setiap himpunan terukur <span class="math inline" data-source-tex="E">\(E\)</span> berukuran
+berhingga (<a class="xref" href="../213/index.html#213N">213N</a>). Pertimbangkan <span class="math inline" data-source-tex="u=f^{\ssbullet}\in L^0">\(u=f^{\ssbullet}\in L^0\)</span>. Untuk setiap
+himpunan <span class="math inline" data-source-tex="E">\(E\)</span> berukuran berhingga,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bar\rho_E(u,u_{En})
+=\int_E\min(1,|f(x)-f_{En}(x)|)dx
+=\int_E\min(1,|f_E(x)-f_{En}(x)|)dx\to 0">\(\bar\rho_E(u,u_{En})
+=\int_E\min(1,|f(x)-f_{En}(x)|)dx
+=\int_E\min(1,|f_E(x)-f_{En}(x)|)dx\to 0\)</span></div>
+<p>ketika <span class="math inline" data-source-tex="n\to\infty">\(n\to\infty\)</span>, menurut Teorema Konvergensi Terdominasi
+Lebesgue. Selanjutnya,</p>
+<p><span class="math display" data-source-tex="\eqalign{\inf_{A\in\Cal F}\sup_{v\in A}\bar\rho_E(v,u)
+&amp;\le\inf_{n\in\Bbb
+N}\sup_{v\in A_{En}}\bar\rho_E(v,u)\cr
+&amp;\le\inf_{n\in\Bbb N}\sup_{v\in A_{En}}
+(\bar\rho_E(v,u_{En})+\bar\rho_E(u,u_{En}))\cr
+&amp;\le\inf_{n\in\Bbb
+N}(4^{-n}+\bar\rho_E(u,u_{En}))
+=0.\cr}">\[\begin{aligned}\inf_{A\in\Cal F}\sup_{v\in A}\bar\rho_E(v,u)
+&amp;\le\inf_{n\in\Bbb
+N}\sup_{v\in A_{En}}\bar\rho_E(v,u)\\
+&amp;\le\inf_{n\in\Bbb N}\sup_{v\in A_{En}}
+(\bar\rho_E(v,u_{En})+\bar\rho_E(u,u_{En}))\\
+&amp;\le\inf_{n\in\Bbb
+N}(4^{-n}+\bar\rho_E(u,u_{En}))
+=0.\\\end{aligned}\]</span></p>
+<p>Karena <span class="math inline" data-source-tex="E">\(E\)</span> sembarang, <span class="math inline" data-source-tex="\Cal F\to u">\(\Cal F\to u\)</span>. Karena <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> sembarang,
+<span class="math inline" data-source-tex="L^0">\(L^0\)</span> lengkap terhadap <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span>.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Misalkan <span class="math inline" data-source-tex="L^0">\(L^0\)</span> lengkap terhadap <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span>, dan
+ambil sebarang keluarga himpunan <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. Misalkan
+<span class="math inline" data-source-tex="\Cal E&#x27;">\(\Cal E&#x27;\)</span> adalah</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{\bigcup\Cal E_0:\Cal E_0">\(\{\bigcup\Cal E_0:\Cal E_0\)</span> adalah subhimpunan hingga dari <span class="math inline" data-source-tex="\Cal
+E\}">\(\Cal
+E\}\)</span>.</div>
+<p>Maka gabungan setiap dua anggota <span class="math inline" data-source-tex="\Cal E&#x27;">\(\Cal E&#x27;\)</span> termasuk dalam
+<span class="math inline" data-source-tex="\Cal E&#x27;">\(\Cal E&#x27;\)</span>. Misalkan <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> adalah himpunan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{A:A\subseteq L^0">\(\{A:A\subseteq L^0\)</span>, <span class="math inline" data-source-tex="A\supseteq A_E">\(A\supseteq A_E\)</span> untuk beberapa <span class="math inline" data-source-tex="E\in\Cal
+E&#x27;\}">\(E\in\Cal
+E&#x27;\}\)</span>,</div>
+<p>di mana untuk <span class="math inline" data-source-tex="E\in\Cal E&#x27;">\(E\in\Cal E&#x27;\)</span> saya tulis</p>
+<div class="centerline"><span class="math inline" data-source-tex="A_E=\{\chi F^{\ssbullet}:F\in\Cal E&#x27;">\(A_E=\{\chi F^{\ssbullet}:F\in\Cal E&#x27;\)</span>, <span class="math inline" data-source-tex="F\supseteq E\}">\(F\supseteq E\}\)</span>.</div>
+<p>Maka <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> merupakan filter pada <span class="math inline" data-source-tex="L^0">\(L^0\)</span>, karena <span class="math inline" data-source-tex="A_E\cap
+A_F=A_{E\cup
+F}">\(A_E\cap
+A_F=A_{E\cup
+F}\)</span> untuk semua <span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="F\in\Cal E&#x27;">\(F\in\Cal E&#x27;\)</span>.</p>
+<p>Sesungguhnya <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> merupakan filter Cauchy. Bukti. Misalkan <span class="math inline" data-source-tex="H">\(H\)</span> suatu
+himpunan berukuran berhingga dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Tetapkan <span class="math inline" data-source-tex="\gamma=\sup_{E\in\Cal
+E&#x27;}\mu(H\cap E)">\(\gamma=\sup_{E\in\Cal
+E&#x27;}\mu(H\cap E)\)</span> dan ambil <span class="math inline" data-source-tex="E\in\Cal E&#x27;">\(E\in\Cal E&#x27;\)</span> sehingga <span class="math inline" data-source-tex="\mu(H\cap E)\ge
+\gamma-\epsilon">\(\mu(H\cap E)\ge
+\gamma-\epsilon\)</span>.   Pertimbangkan <span class="math inline" data-source-tex="A_E\in \Cal F">\(A_E\in \Cal F\)</span>.   Jika <span class="math inline" data-source-tex="F">\(F\)</span>, <span class="math inline" data-source-tex="G\in\Cal E&#x27;">\(G\in\Cal E&#x27;\)</span>
+dan <span class="math inline" data-source-tex="F\supseteq E">\(F\supseteq E\)</span>, <span class="math inline" data-source-tex="G\supseteq E">\(G\supseteq E\)</span> maka</p>
+<p><span class="math display" data-source-tex="\eqalign{\bar\rho_H(\chi F^{\ssbullet},\chi G^{\ssbullet})
+&amp;=\mu(H\cap(F\symmdiff G))
+=\mu(H\cap(F\cup G))-\mu(H\cap F\cap G)\cr
+&amp;\le\gamma-\mu(H\cap E)
+\le\epsilon.\cr}">\[\begin{aligned}\bar\rho_H(\chi F^{\ssbullet},\chi G^{\ssbullet})
+&amp;=\mu(H\cap(F\symmdiff G))
+=\mu(H\cap(F\cup G))-\mu(H\cap F\cap G)\\
+&amp;\le\gamma-\mu(H\cap E)
+\le\epsilon.\\\end{aligned}\]</span></p>
+<p>Jadi <span class="math inline" data-source-tex="\bar\rho_H(u,v)\le\epsilon">\(\bar\rho_H(u,v)\le\epsilon\)</span> untuk semua <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in A_E">\(v\in A_E\)</span>.
+Karena <span class="math inline" data-source-tex="H">\(H\)</span> dan <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sembarang, <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> adalah Cauchy. ∎</p>
+<p>Karena <span class="math inline" data-source-tex="L^0">\(L^0\)</span> lengkap terhadap <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span>, filter <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> mempunyai limit
+<span class="math inline" data-source-tex="w">\(w\)</span>. Nyatakan <span class="math inline" data-source-tex="w">\(w\)</span> sebagai <span class="math inline" data-source-tex="h^{\ssbullet}">\(h^{\ssbullet}\)</span>, dengan
+<span class="math inline" data-source-tex="h:X\to\Bbb R">\(h:X\to\Bbb R\)</span> terukur, dan pertimbangkan <span class="math inline" data-source-tex="G=\{x:h(x)&gt;\bover12\}">\(G=\{x:h(x)&gt;\bover12\}\)</span>.</p>
+<p><span class="fremlin-query" role="img" aria-label="andaikan untuk kontradiksi"></span> Jika <span class="math inline" data-source-tex="E\in \Cal E">\(E\in \Cal E\)</span> dan <span class="math inline" data-source-tex="\mu(E\setminus G)&gt;0">\(\mu(E\setminus G)&gt;0\)</span>, misalkan
+<span class="math inline" data-source-tex="F\subseteq E\setminus G">\(F\subseteq E\setminus G\)</span> suatu himpunan berukuran positif dan berhingga.
+Maka <span class="math inline" data-source-tex="\{u:\bar\rho_F(u,w)&lt;\bover12\mu F\}">\(\{u:\bar\rho_F(u,w)&lt;\bover12\mu F\}\)</span> termasuk dalam <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span>,
+sehingga beririsan dengan <span class="math inline" data-source-tex="A_E">\(A_E\)</span>; pilih <span class="math inline" data-source-tex="H\in\Cal E&#x27;">\(H\in\Cal E&#x27;\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="E\subseteq H">\(E\subseteq H\)</span> dan
+<span class="math inline" data-source-tex="\bar\rho_F(\chi H^{\ssbullet},w)&lt;\bover12\mu F">\(\bar\rho_F(\chi H^{\ssbullet},w)&lt;\bover12\mu F\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_F\min(1,|1-h(x)|)
+=\bar\rho_F(\chi
+H^{\ssbullet},w)&lt;\Bover12\mu F">\(\int_F\min(1,|1-h(x)|)
+=\bar\rho_F(\chi
+H^{\ssbullet},w)&lt;\Bover12\mu F\)</span>;</div>
+<p>tetapi karena <span class="math inline" data-source-tex="F\cap G=\emptyset">\(F\cap G=\emptyset\)</span>, <span class="math inline" data-source-tex="1-h(x)\ge\bover12">\(1-h(x)\ge\bover12\)</span> untuk setiap
+<span class="math inline" data-source-tex="x\in F">\(x\in F\)</span>, jadi ini tidak mungkin. <span class="fremlin-bang" role="img" aria-label="kontradiksi"></span></p>
+<p>Jadi <span class="math inline" data-source-tex="E\setminus G">\(E\setminus G\)</span> terabaikan untuk setiap <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>.</p>
+<p>Selanjutnya, misalkan <span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span> dan <span class="math inline" data-source-tex="\mu(G\setminus H)&gt;0">\(\mu(G\setminus H)&gt;0\)</span>. Maka terdapat
+<span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span> sehingga <span class="math inline" data-source-tex="\mu(E\setminus H)&gt;0">\(\mu(E\setminus H)&gt;0\)</span>.   Bukti. Misalkan
+<span class="math inline" data-source-tex="F\subseteq G\setminus H">\(F\subseteq G\setminus H\)</span> suatu himpunan berukuran positif dan berhingga.
+Pilih <span class="math inline" data-source-tex="u\in A_{\emptyset}">\(u\in A_{\emptyset}\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\bar\rho_F(u,w)&lt;\bover12\mu F">\(\bar\rho_F(u,w)&lt;\bover12\mu F\)</span>. Maka <span class="math inline" data-source-tex="u">\(u\)</span> berbentuk
+<span class="math inline" data-source-tex="\chi C^{\ssbullet}">\(\chi C^{\ssbullet}\)</span> untuk beberapa <span class="math inline" data-source-tex="C\in\Cal E&#x27;">\(C\in\Cal E&#x27;\)</span>, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_F\min(1,|\chi C(x) - h(x)|)&lt;\Bover12\mu F">\(\int_F\min(1,|\chi C(x) - h(x)|)&lt;\Bover12\mu F\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="h(x)\ge\bover12">\(h(x)\ge\bover12\)</span> untuk setiap <span class="math inline" data-source-tex="x\in F">\(x\in F\)</span>, <span class="math inline" data-source-tex="\mu(C\cap F)&gt;0">\(\mu(C\cap F)&gt;0\)</span>.
+Tetapi <span class="math inline" data-source-tex="C">\(C\)</span> merupakan gabungan hingga dari anggota <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span>, jadi terdapat
+<span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>
+sehingga <span class="math inline" data-source-tex="\mu(E\cap F)&gt;0">\(\mu(E\cap F)&gt;0\)</span>, dan sekarang <span class="math inline" data-source-tex="\mu(E\setminus
+H)&gt;0">\(\mu(E\setminus
+H)&gt;0\)</span>. ∎</p>
+<p>Karena <span class="math inline" data-source-tex="H">\(H\)</span> sembarang, <span class="math inline" data-source-tex="G">\(G\)</span> merupakan supremum esensial dari <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> dalam
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. Karena <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> sembarang, <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dapat
+dilokalkan.</p></aside>
+</section>
+<section class="source-unit" id="245F" data-source-id="245F"><h2><span class="source-label">245F</span> Deskripsi alternatif topologi konvergensi dalam ukuran </h2>
+<p>Mari
+kita kembali ke sebarang ruang ukur <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span>.</p>
+</section>
+<section class="source-unit" id="245Fa" data-source-id="245Fa"><h3><span class="source-label">245Fa</span> <strong>(a)</strong> </h3>
+<p>Untuk setiap <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> berukuran berhingga dan
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, definisikan <span class="math inline" data-source-tex="\tau_{F\epsilon}:\eusm L^0\to\coint{0,\infty}">\(\tau_{F\epsilon}:\eusm L^0\to\coint{0,\infty}\)</span>
+melalui rumus</p>
+<div class="centerline"><span class="math inline" data-source-tex="\tau_{F\epsilon}(f)
+=\mu^*\{x:x\in F\cap\dom
+f,\,|f(x)|&gt;\epsilon\}">\(\tau_{F\epsilon}(f)
+=\mu^*\{x:x\in F\cap\dom
+f,\,|f(x)|&gt;\epsilon\}\)</span></div>
+<p>untuk <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span>, dengan <span class="math inline" data-source-tex="\mu^*">\(\mu^*\)</span> menyatakan ukuran luar
+yang ditentukan dari <span class="math inline" data-source-tex="\mu">\(\mu\)</span> (<a class="xref" href="../132/index.html#132B">132B</a>). Jika <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in\eusm L^0">\(g\in\eusm L^0\)</span>
+dan <span class="math inline" data-source-tex="f\eae g">\(f\eae g\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:x\in F\cap\dom f,\,|f(x)|&gt;\epsilon\}
+\symmdiff\{x:x\in
+F\cap\dom g,\,|g(x)|&gt;\epsilon\}">\(\{x:x\in F\cap\dom f,\,|f(x)|&gt;\epsilon\}
+\symmdiff\{x:x\in
+F\cap\dom g,\,|g(x)|&gt;\epsilon\}\)</span></div>
+<p>terabaikan, jadi <span class="math inline" data-source-tex="\tau_{F\epsilon}(f)=\tau_{F\epsilon}(g)">\(\tau_{F\epsilon}(f)=\tau_{F\epsilon}(g)\)</span>;
+oleh karena itu diperoleh fungsional dari <span class="math inline" data-source-tex="L^0">\(L^0\)</span> ke <span class="math inline" data-source-tex="\coint{0,\infty}">\(\coint{0,\infty}\)</span>
+yang diberikan oleh</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bar\tau_{F\epsilon}(u)=\tau_{F\epsilon}(f)">\(\bar\tau_{F\epsilon}(u)=\tau_{F\epsilon}(f)\)</span></div>
+<p>setiap kali <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span> dan <span class="math inline" data-source-tex="u=f^{\ssbullet}\in L^0">\(u=f^{\ssbullet}\in L^0\)</span>.</p>
+</section>
+<section class="source-unit" id="245Fb" data-source-id="245Fb"><h3><span class="source-label">245Fb</span> <strong>(b)</strong> </h3>
+<p>Fungsional <span class="math inline" data-source-tex="\tau_{F\epsilon}">\(\tau_{F\epsilon}\)</span> tidak subaditif
+(kecuali dalam kasus-kasus sepele), sehingga tidak menentukan pseudometrik
+pada <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> maupun <span class="math inline" data-source-tex="L^0">\(L^0\)</span>. Namun kita dapat mengatakan bahwa, untuk
+<span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\tau_F(f)\le\epsilon\min(1,\epsilon)
+\Longrightarrow\tau_{F\epsilon}(f)\le\epsilon
+\Longrightarrow\tau_F(f)\le\epsilon(1+\mu F)">\(\tau_F(f)\le\epsilon\min(1,\epsilon)
+\Longrightarrow\tau_{F\epsilon}(f)\le\epsilon
+\Longrightarrow\tau_F(f)\le\epsilon(1+\mu F)\)</span>.</div>
+<p><span class="proof-fragment">(Alasannya, jika <span class="math inline" data-source-tex="E\subseteq\dom f">\(E\subseteq\dom f\)</span> adalah
+himpunan terukur yang koterabaikan dan <span class="math inline" data-source-tex="f\restr E">\(f\restr E\)</span> terukur, maka
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\tau_F(f)=\int_{E\cap F}\min(|f(x)|,1)dx">\(\tau_F(f)=\int_{E\cap F}\min(|f(x)|,1)dx\)</span>,
+  <span class="math inline" data-source-tex="\tau_{F\epsilon}(f)=\mu\{x:x\in E\cap F,\,|f(x)|&gt;\epsilon\}">\(\tau_{F\epsilon}(f)=\mu\{x:x\in E\cap F,\,|f(x)|&gt;\epsilon\}\)</span>.)</span>
+
+ </span></p>
+<p>Ini berarti bahwa himpunan <span class="math inline" data-source-tex="G\subseteq\eusm L^0">\(G\subseteq\eusm L^0\)</span> terbuka untuk topologi
+konvergensi dalam ukuran jika dan hanya jika, untuk setiap <span class="math inline" data-source-tex="f\in G">\(f\in G\)</span>, terdapat
+himpunan <span class="math inline" data-source-tex="F">\(F\)</span> berukuran berhingga dan <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span>, <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian rupa
+sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\tau_{F\epsilon}(g-f)\le\delta\Longrightarrow g\in G">\(\tau_{F\epsilon}(g-f)\le\delta\Longrightarrow g\in G\)</span>.</div>
+<p>Tentu saja <span class="math inline" data-source-tex="\tau_{F\delta}(f)\ge\tau_{F\epsilon}(f)">\(\tau_{F\delta}(f)\ge\tau_{F\epsilon}(f)\)</span> setiap kali
+<span class="math inline" data-source-tex="\delta\le\epsilon">\(\delta\le\epsilon\)</span>, sehingga pernyataan itu dapat pula dirumuskan sebagai berikut: 
+<span class="math inline" data-source-tex="G\subseteq\eusm L^0">\(G\subseteq\eusm L^0\)</span> terbuka untuk topologi konvergensi dalam ukuran jika
+dan hanya jika, untuk setiap <span class="math inline" data-source-tex="f\in G">\(f\in G\)</span>, terdapat himpunan <span class="math inline" data-source-tex="F">\(F\)</span> berukuran berhingga dan
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> sedemikian rupa sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\tau_{F\epsilon}(g-f)\le\epsilon\Longrightarrow g\in G">\(\tau_{F\epsilon}(g-f)\le\epsilon\Longrightarrow g\in G\)</span>.</div>
+<p>Demikian pula, <span class="math inline" data-source-tex="G\subseteq L^0">\(G\subseteq L^0\)</span> terbuka untuk topologi
+konvergensi dalam ukuran pada <span class="math inline" data-source-tex="L^0">\(L^0\)</span> jika dan hanya jika, untuk setiap
+<span class="math inline" data-source-tex="u\in G">\(u\in G\)</span>, terdapat himpunan <span class="math inline" data-source-tex="F">\(F\)</span> berukuran berhingga dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> sedemikian rupa
+sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bar\tau_{F\epsilon}(v-u)\le\epsilon
+\Longrightarrow v\in G">\(\bar\tau_{F\epsilon}(v-u)\le\epsilon
+\Longrightarrow v\in G\)</span>.</div>
+</section>
+<section class="source-unit" id="245Fc" data-source-id="245Fc"><h3><span class="source-label">245Fc</span> <strong>(c)</strong> </h3>
+<p>Langsung diperoleh bahwa barisan <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span>
+dalam <span class="math inline" data-source-tex="\eusm L^0=\eusm L^0(\mu)">\(\eusm L^0=\eusm L^0(\mu)\)</span> konvergen dalam ukuran ke <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span>
+jika dan hanya jika</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{n\to\infty}
+  \mu^*\{x:x\in F\cap\dom f\cap\dom
+f_n,\,|f_n(x)-f(x)|&gt;\epsilon\}
+=0">\(\lim_{n\to\infty}
+  \mu^*\{x:x\in F\cap\dom f\cap\dom
+f_n,\,|f_n(x)-f(x)|&gt;\epsilon\}
+=0\)</span></div>
+<p>setiap kali <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>, <span class="math inline" data-source-tex="\mu F&lt;\infty">\(\mu F&lt;\infty\)</span> dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Demikian
+pula, barisan <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span> konvergen dalam ukuran ke <span class="math inline" data-source-tex="u">\(u\)</span> jika
+dan hanya jika
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\bar\tau_{F\epsilon}(u-u_n)=0">\(\lim_{n\to\infty}\bar\tau_{F\epsilon}(u-u_n)=0\)</span> setiap kali <span class="math inline" data-source-tex="\mu
+F&lt;\infty">\(\mu
+F&lt;\infty\)</span>
+dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>.</p>
+</section>
+<section class="source-unit" id="245Fd" data-source-id="245Fd"><h3><span class="source-label">245Fd</span> <strong>(d)</strong> </h3>
+<p>Secara khusus, jika <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> berhingga total,
+<span class="math inline" data-source-tex="\sequencen{f_n}\to f">\(\sequencen{f_n}\to f\)</span> dalam <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> jika dan hanya jika</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{n\to\infty}
+  \mu^*\{x:x\in \dom f\cap\dom
+f_n,\,|f(x)-f_n(x)|&gt;\epsilon\}
+=0">\(\lim_{n\to\infty}
+  \mu^*\{x:x\in \dom f\cap\dom
+f_n,\,|f(x)-f_n(x)|&gt;\epsilon\}
+=0\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, dan <span class="math inline" data-source-tex="\sequencen{u_n}\to u">\(\sequencen{u_n}\to u\)</span> dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span>
+jika dan hanya jika</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{n\to\infty}\bar\tau_{X\epsilon}(u-u_n)=0">\(\lim_{n\to\infty}\bar\tau_{X\epsilon}(u-u_n)=0\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>.</p>
+</section>
+<section class="source-unit" id="245G" data-source-id="245G"><h2><span class="source-label">245G</span> Penyematan <span class="math inline" data-source-tex="L^p">\(L^p\)</span> dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span>: Proposisi </h2>
+<p>Misalkan
+<span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sebarang ruang ukur. Maka, untuk setiap <span class="math inline" data-source-tex="p\in[1,\infty]">\(p\in[1,\infty]\)</span>,
+penyematan <span class="math inline" data-source-tex="L^p=L^p(\mu)">\(L^p=L^p(\mu)\)</span> dalam <span class="math inline" data-source-tex="L^0=L^0(\mu)">\(L^0=L^0(\mu)\)</span> kontinu untuk topologi norma
+<span class="math inline" data-source-tex="L^p">\(L^p\)</span> dan topologi konvergensi dalam ukuran pada <span class="math inline" data-source-tex="L^0">\(L^0\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Misalkan <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^p">\(v\in L^p\)</span> dan <span class="math inline" data-source-tex="\mu F&lt;\infty">\(\mu F&lt;\infty\)</span>. Maka <span class="math inline" data-source-tex="(\chi
+F)^{\ssbullet}">\((\chi
+F)^{\ssbullet}\)</span> merupakan anggota <span class="math inline" data-source-tex="L^q">\(L^q\)</span>, dengan <span class="math inline" data-source-tex="q=p/(p-1)">\(q=p/(p-1)\)</span> (ambil <span class="math inline" data-source-tex="q=1">\(q=1\)</span> jika
+<span class="math inline" data-source-tex="p=\infty">\(p=\infty\)</span>, <span class="math inline" data-source-tex="q=\infty">\(q=\infty\)</span> jika <span class="math inline" data-source-tex="p=1">\(p=1\)</span> seperti biasa), dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bar\rho_F(u,v)\le\int|u-v|\times(\chi F)^{\ssbullet}
+\le\|u-v\|_p\|\chi F^{\ssbullet}\|_q">\(\bar\rho_F(u,v)\le\int|u-v|\times(\chi F)^{\ssbullet}
+\le\|u-v\|_p\|\chi F^{\ssbullet}\|_q\)</span></div>
+<p>(244Eb). Menurut 2A3H, ini cukup untuk memastikan bahwa penyematan
+<span class="math inline" data-source-tex="L^p\embedsinto L^0">\(L^p\embedsinto L^0\)</span> kontinu.</p></aside>
+</section>
+<section class="source-unit" id="245H" data-source-id="245H"><h2><span class="source-label">245H</span>  </h2>
+<p>Kasus <span class="math inline" data-source-tex="L^1">\(L^1\)</span> begitu penting sehingga saya membahasnya
+lebih terperinci.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> adalah ruang ukur.</p>
+<p>(a)(i) Jika <span class="math inline" data-source-tex="f\in\eusm L^1=\eusm L^1(\mu)">\(f\in\eusm L^1=\eusm L^1(\mu)\)</span> dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, terdapat
+<span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> dan himpunan <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> berukuran berhingga sehingga
+<span class="math inline" data-source-tex="\int|f-g|\le\epsilon">\(\int|f-g|\le\epsilon\)</span> setiap kali <span class="math inline" data-source-tex="g\in\eusm L^1">\(g\in\eusm L^1\)</span>, <span class="math inline" data-source-tex="\int|g|\le\int|f|+\delta">\(\int|g|\le\int|f|+\delta\)</span>
+dan <span class="math inline" data-source-tex="\rho_F(f,g)\le\delta">\(\rho_F(f,g)\le\delta\)</span>.</p>
+<p>  (ii) Untuk setiap barisan <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> dalam <span class="math inline" data-source-tex="\eusm L^1">\(\eusm L^1\)</span> dan <span class="math inline" data-source-tex="f\in\eusm
+L^1">\(f\in\eusm
+L^1\)</span>, <span class="math inline" data-source-tex="\lim_{n\to\infty}\int|f-f_n|=0">\(\lim_{n\to\infty}\int|f-f_n|=0\)</span> jika dan hanya jika <span class="math inline" data-source-tex="\sequencen{f_n}\to f">\(\sequencen{f_n}\to f\)</span> dalam ukuran
+dan <span class="math inline" data-source-tex="\limsup_{n\to\infty}\int|f_n|\le\int|f|">\(\limsup_{n\to\infty}\int|f_n|\le\int|f|\)</span>.</p>
+<p>(b)(i) Jika <span class="math inline" data-source-tex="u\in L^1=L^1(\mu)">\(u\in L^1=L^1(\mu)\)</span> dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, terdapat <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> dan
+himpunan <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> berukuran berhingga sehingga <span class="math inline" data-source-tex="\|u-v\|_1\le\epsilon">\(\|u-v\|_1\le\epsilon\)</span>
+setiap kali <span class="math inline" data-source-tex="v\in L^1">\(v\in L^1\)</span>, <span class="math inline" data-source-tex="\|v\|_1\le\|u\|_1+\delta">\(\|v\|_1\le\|u\|_1+\delta\)</span> dan
+<span class="math inline" data-source-tex="\bar\rho_F(u,v)\le\delta">\(\bar\rho_F(u,v)\le\delta\)</span>.</p>
+<p>  (ii) Untuk setiap barisan <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span> dan setiap <span class="math inline" data-source-tex="u\in
+L^1">\(u\in
+L^1\)</span>, <span class="math inline" data-source-tex="\sequencen{u_n}\to u">\(\sequencen{u_n}\to u\)</span> untuk <span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span> jika dan hanya jika <span class="math inline" data-source-tex="\sequencen{u_n}\to u">\(\sequencen{u_n}\to u\)</span> dalam
+ukuran dan <span class="math inline" data-source-tex="\limsup_{n\to\infty}\|u_n\|_1\le\|u\|_1">\(\limsup_{n\to\infty}\|u_n\|_1\le\|u\|_1\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)(i)</strong> Menurut <a class="xref" href="../225/index.html#225A">225A</a>, terdapat himpunan <span class="math inline" data-source-tex="F">\(F\)</span> berukuran berhingga
+dan <span class="math inline" data-source-tex="\eta&gt;0">\(\eta&gt;0\)</span> sehingga <span class="math inline" data-source-tex="\int_E|f|\le\bover15\epsilon">\(\int_E|f|\le\bover15\epsilon\)</span> setiap kali <span class="math inline" data-source-tex="\mu(E\cap
+F)\le\eta">\(\mu(E\cap
+F)\le\eta\)</span>. Ambil <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sehingga <span class="math inline" data-source-tex="\delta(\epsilon+5\mu
+F)\le\epsilon\eta">\(\delta(\epsilon+5\mu
+F)\le\epsilon\eta\)</span> dan <span class="math inline" data-source-tex="\delta\le\bover15\epsilon">\(\delta\le\bover15\epsilon\)</span>. Lalu jika
+<span class="math inline" data-source-tex="\int|g|\le\int|f|+\delta">\(\int|g|\le\int|f|+\delta\)</span> dan <span class="math inline" data-source-tex="\rho_F(f,g)\le\delta">\(\rho_F(f,g)\le\delta\)</span>, misalkan
+<span class="math inline" data-source-tex="G\subseteq\dom f\cap\dom g">\(G\subseteq\dom f\cap\dom g\)</span> adalah himpunan terukur yang koterabaikan
+sehingga <span class="math inline" data-source-tex="f\restr G">\(f\restr G\)</span> dan <span class="math inline" data-source-tex="g\restr G">\(g\restr G\)</span> keduanya terukur. Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="E=\{x:x\in F\cap G,\,
+|f(x)-g(x)|\ge\Bover{\epsilon}{\epsilon+5\mu F}\}">\(E=\{x:x\in F\cap G,\,
+|f(x)-g(x)|\ge\Bover{\epsilon}{\epsilon+5\mu F}\}\)</span>;</div>
+<p>lalu</p>
+<div class="centerline"><span class="math inline" data-source-tex="\delta\ge\rho_F(f,g)
+\ge\Bover{\epsilon}{\epsilon+5\mu F}\mu E">\(\delta\ge\rho_F(f,g)
+\ge\Bover{\epsilon}{\epsilon+5\mu F}\mu E\)</span>,</div>
+<p>jadi <span class="math inline" data-source-tex="\mu E\le\eta">\(\mu E\le\eta\)</span>.   Tetapkan <span class="math inline" data-source-tex="H=F\setminus E">\(H=F\setminus E\)</span>, sehingga
+<span class="math inline" data-source-tex="\mu(F\setminus H)\le\eta">\(\mu(F\setminus H)\le\eta\)</span> dan <span class="math inline" data-source-tex="\int_{X\setminus
+H}|f|\le\bover15{\epsilon}">\(\int_{X\setminus
+H}|f|\le\bover15{\epsilon}\)</span>.
+Di sisi lain, untuk hampir setiap <span class="math inline" data-source-tex="x\in
+H">\(x\in
+H\)</span>,
+<span class="math inline" data-source-tex="|f(x)-g(x)|\le\bover{\epsilon}{\epsilon+5\mu F}">\(|f(x)-g(x)|\le\bover{\epsilon}{\epsilon+5\mu F}\)</span>, jadi
+<span class="math inline" data-source-tex="\int_H|f-g|\le\bover15\epsilon">\(\int_H|f-g|\le\bover15\epsilon\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_{H}|g|\ge\int_{H}|f|-\Bover15\epsilon
+\ge\int|f|-\int_{X\setminus H}|f|-\Bover15\epsilon
+\ge\int|f|-\Bover25\epsilon">\(\int_{H}|g|\ge\int_{H}|f|-\Bover15\epsilon
+\ge\int|f|-\int_{X\setminus H}|f|-\Bover15\epsilon
+\ge\int|f|-\Bover25\epsilon\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="\int|g|\le\int|f|+\bover15\epsilon">\(\int|g|\le\int|f|+\bover15\epsilon\)</span>, <span class="math inline" data-source-tex="\int_{X\setminus
+H}|g|\le\bover35{\epsilon}">\(\int_{X\setminus
+H}|g|\le\bover35{\epsilon}\)</span>. Dengan demikian,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int|g-f|
+\le\int_{X\setminus H}|g|+\int_{X\setminus
+H}|f|+\int_H|g-f|
+\le\Bover35\epsilon+\Bover15\epsilon+\Bover15\epsilon
+=\epsilon">\(\int|g-f|
+\le\int_{X\setminus H}|g|+\int_{X\setminus
+H}|f|+\int_H|g-f|
+\le\Bover35\epsilon+\Bover15\epsilon+\Bover15\epsilon
+=\epsilon\)</span>,</div>
+<p>sesuai kebutuhan.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Jika <span class="math inline" data-source-tex="\lim_{n\to\infty}\int|f-f_n|=0">\(\lim_{n\to\infty}\int|f-f_n|=0\)</span>, yakni
+<span class="math inline" data-source-tex="\lim_{n\to\infty}f_n^{\ssbullet}=f^{\ssbullet}">\(\lim_{n\to\infty}f_n^{\ssbullet}=f^{\ssbullet}\)</span> di <span class="math inline" data-source-tex="L^1">\(L^1\)</span>, maka menurut
+<a class="xref" href="#245G">245G</a> diperoleh <span class="math inline" data-source-tex="\sequencen{f_n^{\ssbullet}}\to f^{\ssbullet}">\(\sequencen{f_n^{\ssbullet}}\to f^{\ssbullet}\)</span> dalam
+<span class="math inline" data-source-tex="L^0">\(L^0\)</span>, yaitu, <span class="math inline" data-source-tex="\sequencen{f_n}\to f">\(\sequencen{f_n}\to f\)</span> untuk topologi konvergensi dalam ukuran.
+Selain itu, tentu saja, <span class="math inline" data-source-tex="\lim_{n\to\infty}\int|f_n|=\int|f|">\(\lim_{n\to\infty}\int|f_n|=\int|f|\)</span>.</p>
+<p>Sebaliknya, jika <span class="math inline" data-source-tex="\limsup_{n\to\infty}\int|f_n|\le\int|f|">\(\limsup_{n\to\infty}\int|f_n|\le\int|f|\)</span> dan
+<span class="math inline" data-source-tex="\sequencen{f_n}\to f">\(\sequencen{f_n}\to f\)</span> untuk topologi konvergensi dalam ukuran, maka untuk setiap
+<span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> dan <span class="math inline" data-source-tex="\mu F&lt;\infty">\(\mu F&lt;\infty\)</span> terdapat <span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\int|f_n|\le\int|f|+\delta">\(\int|f_n|\le\int|f|+\delta\)</span>, <span class="math inline" data-source-tex="\rho_F(f,f_n)\le\delta">\(\rho_F(f,f_n)\le\delta\)</span> untuk setiap <span class="math inline" data-source-tex="n\ge m">\(n\ge m\)</span>;
+jadi (i) menunjukkan bahwa <span class="math inline" data-source-tex="\lim_{n\to\infty}\int|f_n-f|=0">\(\lim_{n\to\infty}\int|f_n-f|=0\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Bagian ini langsung mengikuti jika kita menyatakan <span class="math inline" data-source-tex="u">\(u\)</span> sebagai
+<span class="math inline" data-source-tex="f^{\ssbullet}">\(f^{\ssbullet}\)</span>, <span class="math inline" data-source-tex="v">\(v\)</span> sebagai <span class="math inline" data-source-tex="g^{\ssbullet}">\(g^{\ssbullet}\)</span> dan <span class="math inline" data-source-tex="u_n">\(u_n\)</span> sebagai
+<span class="math inline" data-source-tex="f_n^{\ssbullet}">\(f_n^{\ssbullet}\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="245I" data-source-id="245I"><span class="anchor" id="245Ia"></span><h2><span class="source-label">245I</span> Catatan (a) </h2>
+<p>Fenomena ini begitu penting sehingga
+layak ditinjau melalui beberapa contoh dasar.</p>
+<p>(i) Jika <span class="math inline" data-source-tex="\mu">\(\mu\)</span> adalah ukuran hitung pada <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span>, dan kita menetapkan
+<span class="math inline" data-source-tex="f_n(n)=1">\(f_n(n)=1\)</span>, <span class="math inline" data-source-tex="f_n(i)=0">\(f_n(i)=0\)</span> untuk <span class="math inline" data-source-tex="i\ne n">\(i\ne n\)</span>, maka <span class="math inline" data-source-tex="\sequencen{f_n}\to 0">\(\sequencen{f_n}\to 0\)</span> dalam
+ukuran, sementara <span class="math inline" data-source-tex="\int|f_n|=1">\(\int|f_n|=1\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>.</p>
+<p>(ii) Jika <span class="math inline" data-source-tex="\mu">\(\mu\)</span> adalah ukuran Lebesgue pada <span class="math inline" data-source-tex="[0,1]">\([0,1]\)</span>, dan kita menetapkan
+<span class="math inline" data-source-tex="f_n(x)=2^n">\(f_n(x)=2^n\)</span> untuk <span class="math inline" data-source-tex="0&lt;x\le 2^{-n}">\(0&lt;x\le 2^{-n}\)</span>, <span class="math inline" data-source-tex="0">\(0\)</span> untuk <span class="math inline" data-source-tex="x">\(x\)</span> lainnya, maka sekali lagi
+<span class="math inline" data-source-tex="\sequencen{f_n}\to 0">\(\sequencen{f_n}\to 0\)</span> dalam ukuran, sementara <span class="math inline" data-source-tex="\int|f_n|=1">\(\int|f_n|=1\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>.</p>
+<p>(iii) Dalam <a class="xref" href="#245Cc">245Cc</a> kita mempunyai barisan lain <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> yang konvergen
+ke <span class="math inline" data-source-tex="0">\(0\)</span> dalam ukuran, sementara <span class="math inline" data-source-tex="\int|f_n|=1">\(\int|f_n|=1\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>. Dalam semua
+kasus ini (seperti yang disyaratkan oleh Lemma Fatou, setidaknya pada (i) dan
+(ii)) kita mempunyai <span class="math inline" data-source-tex="\int|f|\le\liminf_{n\to\infty}\int|f_n|">\(\int|f|\le\liminf_{n\to\infty}\int|f_n|\)</span>. (Proposisi
+berikut menunjukkan bahwa ini berlaku untuk setiap barisan yang konvergen dalam
+ukuran.)</p>
+<p>Kesamaan ketiga contoh ini ialah bahwa <span class="math inline" data-source-tex="f_n">\(f_n\)</span> seolah-olah lolos menuju tak
+hingga, baik secara lateral (dalam (i)) maupun secara
+vertikal (dalam (iii)) atau keduanya (dalam (ii)). Perlu dicatat bahwa dalam
+ketiga contoh tersebut kita dapat menetapkan <span class="math inline" data-source-tex="f&#x27;_n=2^nf_n">\(f&#x27;_n=2^nf_n\)</span> untuk memperoleh
+sebuah barisan yang masih konvergen ke <span class="math inline" data-source-tex="0">\(0\)</span> dalam ukuran, tetapi dengan
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\int|f&#x27;_n|=\infty">\(\lim_{n\to\infty}\int|f&#x27;_n|=\infty\)</span>.</p>
+</section>
+<section class="source-unit" id="245Ib" data-source-id="245Ib"><h3><span class="source-label">245Ib</span> (b) </h3>
+<p>Dalam <a class="xref" href="#245H">245H</a>, saya telah menggunakan rumusan eksplisit
+‘<span class="math inline" data-source-tex="\lim_{n\to\infty}\int|f_n-f|=0">\(\lim_{n\to\infty}\int|f_n-f|=0\)</span>’ (untuk barisan fungsi), ‘<span class="math inline" data-source-tex="\sequencen{u_n}\to
+u">\(\sequencen{u_n}\to
+u\)</span> untuk <span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span>’ (untuk barisan dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span>). Hal ini sering dirumuskan
+dengan menyebut <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> dan <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> masing-masing <strong>konvergen dalam rata-rata</strong> ke <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="u">\(u\)</span>.</p>
+</section>
+<section class="source-unit" id="245J" data-source-id="245J"><h2><span class="source-label">245J</span>  </h2>
+<p>Untuk ruang semihingga kita mempunyai hubungan lebih
+lanjut.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> adalah ruang ukur semihingga.
+Tulis <span class="math inline" data-source-tex="\eusm L^0=\eusm L^0(\mu)">\(\eusm L^0=\eusm L^0(\mu)\)</span>, dan seterusnya.</p>
+<p>(a)(i) Untuk setiap <span class="math inline" data-source-tex="a\ge 0">\(a\ge 0\)</span>, himpunan <span class="math inline" data-source-tex="\{f:f\in\eusm L^1,\,\int|f|\le a\}">\(\{f:f\in\eusm L^1,\,\int|f|\le a\}\)</span>
+tertutup di <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> untuk topologi konvergensi dalam ukuran.</p>
+<p>  (ii) Jika <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> suatu barisan dalam <span class="math inline" data-source-tex="\eusm L^1">\(\eusm L^1\)</span> yang
+konvergen dalam ukuran ke <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span>, dan
+<span class="math inline" data-source-tex="\liminf_{n\to\infty}\int|f_n|&lt;\infty">\(\liminf_{n\to\infty}\int|f_n|&lt;\infty\)</span>, maka <span class="math inline" data-source-tex="f">\(f\)</span> terintegralkan dan
+<span class="math inline" data-source-tex="\int|f|\le\liminf_{n\to\infty}\int|f_n|">\(\int|f|\le\liminf_{n\to\infty}\int|f_n|\)</span>.</p>
+<p>(b)(i) Untuk setiap <span class="math inline" data-source-tex="a\ge 0">\(a\ge 0\)</span>, himpunan <span class="math inline" data-source-tex="\{u:u\in L^1,\,\|u\|_1\le a\}">\(\{u:u\in L^1,\,\|u\|_1\le a\}\)</span>
+tertutup dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span> untuk topologi konvergensi dalam ukuran.</p>
+<p>  (ii) Jika <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> suatu barisan dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span> yang konvergen
+dalam ukuran ke <span class="math inline" data-source-tex="u\in L^0">\(u\in L^0\)</span>, dan <span class="math inline" data-source-tex="\liminf_{n\to\infty}\|u_n\|_1&lt;\infty">\(\liminf_{n\to\infty}\|u_n\|_1&lt;\infty\)</span>, maka
+<span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span> dan <span class="math inline" data-source-tex="\|u\|_1\le\liminf_{n\to\infty}\|u_n\|_1">\(\|u\|_1\le\liminf_{n\to\infty}\|u_n\|_1\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)(i)</strong> Tetapkan <span class="math inline" data-source-tex="A=\{f:f\in\eusm L^1,\,\int|f|\le a\}">\(A=\{f:f\in\eusm L^1,\,\int|f|\le a\}\)</span>, dan
+ambil <span class="math inline" data-source-tex="g">\(g\)</span> sebarang anggota penutupan <span class="math inline" data-source-tex="A">\(A\)</span> dalam <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span>. Misalkan <span class="math inline" data-source-tex="h">\(h\)</span>
+fungsi sederhana sedemikian sehingga <span class="math inline" data-source-tex="0\le h\leae|g|">\(0\le h\leae|g|\)</span>, dan
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>.   Jika <span class="math inline" data-source-tex="h=0">\(h=0\)</span> maka tentu saja <span class="math inline" data-source-tex="\int h\le a">\(\int h\le a\)</span>.   Jika tidak, dengan
+menetapkan <span class="math inline" data-source-tex="F=\{x:h(x)&gt;0\}">\(F=\{x:h(x)&gt;0\}\)</span> dan <span class="math inline" data-source-tex="M=\sup_{x\in X}h(x)">\(M=\sup_{x\in X}h(x)\)</span>, terdapat <span class="math inline" data-source-tex="f\in A">\(f\in A\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\mu^*\{x:x\in F\cap\dom f\cap\dom g,\,
+|f(x)-g(x)|\ge\epsilon\}\le\epsilon">\(\mu^*\{x:x\in F\cap\dom f\cap\dom g,\,
+|f(x)-g(x)|\ge\epsilon\}\le\epsilon\)</span> (<a class="xref" href="#245F">245F</a>); pilih himpunan terukur
+<span class="math inline" data-source-tex="E\supseteq\{x:x\in F\cap\dom f\cap\dom g,\,|f(x)-g(x)|\ge\epsilon\}">\(E\supseteq\{x:x\in F\cap\dom f\cap\dom g,\,|f(x)-g(x)|\ge\epsilon\}\)</span>
+yang berukuran paling besar <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span>. Maka <span class="math inline" data-source-tex="h\leae|f|+\epsilon\chi F+M\chi
+E">\(h\leae|f|+\epsilon\chi F+M\chi
+E\)</span>, sehingga <span class="math inline" data-source-tex="\int h\le a+\epsilon(M+\mu F)">\(\int h\le a+\epsilon(M+\mu F)\)</span>. Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sembarang,
+<span class="math inline" data-source-tex="\int h\le a">\(\int h\le a\)</span>. Karena <span class="math inline" data-source-tex="\mu">\(\mu\)</span> semihingga, hal ini
+cukup untuk memastikan bahwa <span class="math inline" data-source-tex="g">\(g\)</span> terintegralkan
+dan bahwa <span class="math inline" data-source-tex="\int|g|\le a">\(\int|g|\le a\)</span> (<a class="xref" href="../213/index.html#213B">213B</a>), yakni <span class="math inline" data-source-tex="g\in A">\(g\in A\)</span>. Karena <span class="math inline" data-source-tex="g">\(g\)</span> dipilih
+sembarang, <span class="math inline" data-source-tex="A">\(A\)</span> tertutup.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Jika <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> konvergen dalam ukuran ke <span class="math inline" data-source-tex="f">\(f\)</span>,
+dan <span class="math inline" data-source-tex="\liminf_{n\to\infty}\int|f_n|=a">\(\liminf_{n\to\infty}\int|f_n|=a\)</span>, maka untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat
+subbarisan <span class="math inline" data-source-tex="\sequence{k}{f_{n(k)}}">\(\sequence{k}{f_{n(k)}}\)</span> sedemikian rupa sehingga <span class="math inline" data-source-tex="\int|f_{n(k)}|\le
+a+\epsilon">\(\int|f_{n(k)}|\le
+a+\epsilon\)</span> untuk setiap <span class="math inline" data-source-tex="k">\(k\)</span>; karena <span class="math inline" data-source-tex="\sequence{k}{f_{n(k)}}">\(\sequence{k}{f_{n(k)}}\)</span> masih konvergen
+dalam ukuran ke <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="\int|f|\le a+\epsilon">\(\int|f|\le a+\epsilon\)</span>. Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sembarang,
+<span class="math inline" data-source-tex="\int|f|\le a">\(\int|f|\le a\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Seperti pada <a class="xref" href="#245H">245H</a>, ini hanyalah terjemahan dari bagian (a) ke dalam
+bahasa <span class="math inline" data-source-tex="L^1">\(L^1\)</span> dan <span class="math inline" data-source-tex="L^0">\(L^0\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="245K" data-source-id="245K"><h2><span class="source-label">245K</span>  </h2>
+<p>Untuk ruang ukur <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga, topologi konvergensi
+dalam ukuran pada <span class="math inline" data-source-tex="L^0">\(L^0\)</span> dapat dimetriskan, sehingga dapat dijelaskan secara
+efektif melalui barisan konvergen; karena itu, dalam kasus ini penting
+untuk mempunyai karakterisasi yang tepat bagi konvergensi barisan
+dalam ukuran.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> ruang ukur
+<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga. Maka</p>
+<p>(a) suatu barisan <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> dalam <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> konvergen dalam ukuran
+ke <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span> jika dan hanya jika setiap subbarisan dari <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span>
+mempunyai subsubbarisan yang konvergen ke <span class="math inline" data-source-tex="f">\(f\)</span> hampir di mana-mana;</p>
+<p>(b) suatu barisan <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span> konvergen dalam ukuran ke
+<span class="math inline" data-source-tex="u\in
+L^0">\(u\in
+L^0\)</span> jika dan hanya jika setiap subbarisan dari <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span>
+mempunyai subsubbarisan yang ordo*-konvergen ke <span class="math inline" data-source-tex="u">\(u\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)(i)</strong> Andaikan <span class="math inline" data-source-tex="\sequencen{f_n}\to f">\(\sequencen{f_n}\to f\)</span>, yaitu
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\int|f-f_n|\wedge \chi F=0">\(\lim_{n\to\infty}\int|f-f_n|\wedge \chi F=0\)</span> untuk setiap himpunan <span class="math inline" data-source-tex="F">\(F\)</span> dengan
+ukuran berhingga. Misalkan <span class="math inline" data-source-tex="\sequencen{E_k}">\(\sequencen{E_k}\)</span> barisan tak menurun dari himpunan
+berukuran berhingga yang menutupi <span class="math inline" data-source-tex="X">\(X\)</span>, dan misalkan
+<span class="math inline" data-source-tex="\sequence{k}{n(k)}">\(\sequence{k}{n(k)}\)</span> barisan naik tegas dalam <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span>
+sedemikian rupa sehingga <span class="math inline" data-source-tex="\int|f-f_{n(k)}|\wedge\chi E_k\le 4^{-k}">\(\int|f-f_{n(k)}|\wedge\chi E_k\le 4^{-k}\)</span> untuk
+setiap <span class="math inline" data-source-tex="k\in\Bbb N">\(k\in\Bbb N\)</span>. Maka <span class="math inline" data-source-tex="\sum_{k=0}^{\infty}|f-f_{n(k)}|\wedge\chi E_k">\(\sum_{k=0}^{\infty}|f-f_{n(k)}|\wedge\chi E_k\)</span>
+adalah hingga hampir di mana-mana (<a class="xref" href="../242/index.html#242E">242E</a>); tetapi
+<span class="math inline" data-source-tex="\lim_{k\to\infty}f_{n(k)}(x)=f(x)">\(\lim_{k\to\infty}f_{n(k)}(x)=f(x)\)</span> setiap kali
+<span class="math inline" data-source-tex="\sum_{k=0}^{\infty}\min(1,|f(x)-f_{n(k)}(x)|)&lt;\infty">\(\sum_{k=0}^{\infty}\min(1,|f(x)-f_{n(k)}(x)|)&lt;\infty\)</span>, jadi
+<span class="math inline" data-source-tex="\sequence{k}{f_{n(k)}}\to f">\(\sequence{k}{f_{n(k)}}\to f\)</span> hampir di mana-mana.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Hal yang sama berlaku bagi setiap subbarisan dari
+<span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span>, sehingga setiap subbarisan dari <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> mempunyai
+subsubbarisan yang konvergen ke <span class="math inline" data-source-tex="f">\(f\)</span> hampir di mana-mana.</p>
+<p> </p>
+<p>  <strong>(iii)</strong> Misalkan sekarang bahwa <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> tidak konvergen ke
+<span class="math inline" data-source-tex="f">\(f\)</span>. Maka ada himpunan terbuka <span class="math inline" data-source-tex="U">\(U\)</span> yang memuat <span class="math inline" data-source-tex="f">\(f\)</span> sehingga
+<span class="math inline" data-source-tex="\{n:f_n\notin U\}">\(\{n:f_n\notin U\}\)</span> tak hingga, yaitu, <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> mempunyai subbarisan
+<span class="math inline" data-source-tex="\sequencen{f&#x27;_n}">\(\sequencen{f&#x27;_n}\)</span> dengan <span class="math inline" data-source-tex="f&#x27;_n\notin U">\(f&#x27;_n\notin U\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>. Namun
+tidak ada subsubbarisan dari <span class="math inline" data-source-tex="\sequencen{f&#x27;_n}">\(\sequencen{f&#x27;_n}\)</span> yang konvergen ke <span class="math inline" data-source-tex="f">\(f\)</span> dalam
+ukuran, sehingga tidak ada subsubbarisan seperti itu yang dapat konvergen
+hampir di mana-mana, menurut <a class="xref" href="#245Ca">245Ca</a>.</p>
+<p> </p>
+<p><strong>(b)</strong> Ini langsung mengikuti (a) jika <span class="math inline" data-source-tex="u">\(u\)</span> dinyatakan sebagai
+<span class="math inline" data-source-tex="f^{\ssbullet}">\(f^{\ssbullet}\)</span> dan <span class="math inline" data-source-tex="u_n">\(u_n\)</span> sebagai <span class="math inline" data-source-tex="f_n^{\ssbullet}">\(f_n^{\ssbullet}\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="245L" data-source-id="245L"><h2><span class="source-label">245L</span> Akibat </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> ruang ukur <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga.</p>
+<p>(a) Suatu subhimpunan <span class="math inline" data-source-tex="A">\(A\)</span> dari <span class="math inline" data-source-tex="\eusm L^0=\eusm L^0(\mu)">\(\eusm L^0=\eusm L^0(\mu)\)</span> tertutup untuk
+topologi konvergensi dalam ukuran jika dan hanya jika <span class="math inline" data-source-tex="f\in A">\(f\in A\)</span> setiap kali
+<span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span> dan terdapat barisan <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> dalam <span class="math inline" data-source-tex="A">\(A\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="f\eae\lim_{n\to\infty}f_n">\(f\eae\lim_{n\to\infty}f_n\)</span>.</p>
+<p>(b) Suatu subhimpunan <span class="math inline" data-source-tex="A">\(A\)</span> dari <span class="math inline" data-source-tex="L^0=L^0(\mu)">\(L^0=L^0(\mu)\)</span> tertutup untuk topologi
+konvergensi dalam ukuran jika dan hanya jika <span class="math inline" data-source-tex="u\in A">\(u\in A\)</span> setiap kali <span class="math inline" data-source-tex="u\in L^0">\(u\in L^0\)</span>
+dan terdapat suatu barisan <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> dalam <span class="math inline" data-source-tex="A">\(A\)</span> yang ordo*-konvergen
+ke <span class="math inline" data-source-tex="u">\(u\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)(i)</strong> Jika <span class="math inline" data-source-tex="A">\(A\)</span> tertutup untuk topologi konvergensi dalam ukuran,
+dan <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> merupakan barisan dalam <span class="math inline" data-source-tex="A">\(A\)</span> yang konvergen ke <span class="math inline" data-source-tex="f">\(f\)</span>
+hampir di mana-mana, maka <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> konvergen ke <span class="math inline" data-source-tex="f">\(f\)</span> dalam ukuran,
+jadi tentu saja <span class="math inline" data-source-tex="f\in A">\(f\in A\)</span> (karena jika tidak, maka hampir semua
+<span class="math inline" data-source-tex="f_n">\(f_n\)</span> harus termasuk dalam himpunan terbuka <span class="math inline" data-source-tex="\eusm
+L^0\setminus A">\(\eusm
+L^0\setminus A\)</span>).</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Jika <span class="math inline" data-source-tex="A">\(A\)</span> tidak tertutup, ada <span class="math inline" data-source-tex="f\in\overline{A}\setminus A">\(f\in\overline{A}\setminus A\)</span>.
+Topologi dapat ditentukan oleh metrik <span class="math inline" data-source-tex="\rho">\(\rho\)</span> (245Eb), dan kita dapat
+memilih barisan <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> dalam <span class="math inline" data-source-tex="A">\(A\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\rho(f_n,f)\le 2^{-n}">\(\rho(f_n,f)\le 2^{-n}\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, sehingga <span class="math inline" data-source-tex="\sequencen{f_n}\to f">\(\sequencen{f_n}\to f\)</span>
+dalam ukuran. Menurut <a class="xref" href="#245K">245K</a>, <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> mempunyai subbarisan
+<span class="math inline" data-source-tex="\sequencen{f&#x27;_n}">\(\sequencen{f&#x27;_n}\)</span> yang konvergen hampir di mana-mana ke <span class="math inline" data-source-tex="f">\(f\)</span>, dan ini membuktikan bahwa <span class="math inline" data-source-tex="A">\(A\)</span>
+gagal memenuhi kondisi.</p>
+<p> </p>
+<p><strong>(b)</strong> Ini langsung mengikuti fakta bahwa <span class="math inline" data-source-tex="A\subseteq L^0">\(A\subseteq L^0\)</span> tertutup jika dan hanya
+jika <span class="math inline" data-source-tex="\{f:f^{\ssbullet}\in A\}">\(\{f:f^{\ssbullet}\in A\}\)</span> tertutup di <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="245M" data-source-id="245M"><h2><span class="source-label">245M</span> <span class="math inline" data-source-tex="L^0">\(L^0\)</span> kompleks </h2>
+<p>Dalam <a class="xref" href="../241/index.html#241J">241J</a> saya secara singkat
+membahas adaptasi yang diperlukan untuk membangun ruang linier kompleks
+<span class="math inline" data-source-tex="L^0_{\Bbb C}">\(L^0_{\Bbb C}\)</span>. Rumus-rumus dari <a class="xref" href="#245A">245A</a> dapat digunakan tanpa perubahan untuk
+mendefinisikan topologi konvergensi dalam ukuran pada <span class="math inline" data-source-tex="\eusm L^0_{\Bbb C}">\(\eusm L^0_{\Bbb C}\)</span> dan
+<span class="math inline" data-source-tex="L^0_{\Bbb C}">\(L^0_{\Bbb C}\)</span>. Tampaknya setiap pernyataan dalam <a class="xref" href="#245B">245B</a>-<a class="xref" href="#245L">245L</a> tetap berlaku jika kita
+mengganti setiap <span class="math inline" data-source-tex="L^0">\(L^0\)</span> atau <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> dengan <span class="math inline" data-source-tex="L^0_{\Bbb C}">\(L^0_{\Bbb C}\)</span> atau <span class="math inline" data-source-tex="\eusm
+L^0_{\Bbb C}">\(\eusm
+L^0_{\Bbb C}\)</span>. Sebagai alternatif, untuk menghubungkan bentuk ‘riil’
+dan ‘kompleks’ dari <a class="xref" href="#245E">245E</a>, misalnya, perhatikan bahwa</p>
+<p><span class="math display" data-source-tex="\eqalign{\max(\rho_F(\Real(u),\Real(v)),\rho_F(\Imag(u),\Imag(v)))
+&amp;\le\rho_F(u,v)\cr
+&amp;\le\rho_F(\Real(u),\Real(v))+\rho_F(\Imag(u),\Imag(v))\cr}">\[\begin{aligned}\max(\rho_F(\Real(u),\Real(v)),\rho_F(\Imag(u),\Imag(v)))
+&amp;\le\rho_F(u,v)\\
+&amp;\le\rho_F(\Real(u),\Real(v))+\rho_F(\Imag(u),\Imag(v))\\\end{aligned}\]</span></p>
+<p>untuk semua <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^0">\(v\in L^0\)</span> dan semua himpunan <span class="math inline" data-source-tex="F">\(F\)</span> berukuran
+berhingga, <span class="math inline" data-source-tex="L^0_{\Bbb C}">\(L^0_{\Bbb C}\)</span> dapat diidentifikasi, sebagai ruang seragam, dengan
+<span class="math inline" data-source-tex="L^0\times
+L^0">\(L^0\times
+L^0\)</span>, sehingga bersifat Hausdorff, dapat dimetriskan, atau lengkap jika
+dan hanya jika <span class="math inline" data-source-tex="L^0">\(L^0\)</span> demikian.</p>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="245X" data-source-id="245X"><span class="anchor" id="245Xa"></span><h2><span class="source-label">245X</span> Latihan dasar <span class="math inline" data-source-tex="\pmb{&gt;}">\(\pmb{&gt;}\)</span>(a) <span class="importance" title="Sangat penting">penting</span></h2>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> sebarang himpunan, dan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> ukuran hitung pada <span class="math inline" data-source-tex="X">\(X\)</span>.
+Tunjukkan bahwa topologi konvergensi dalam ukuran pada <span class="math inline" data-source-tex="\eusm L^0(\mu)=\Bbb
+R^X">\(\eusm L^0(\mu)=\Bbb
+R^X\)</span> hanyalah topologi produk pada <span class="math inline" data-source-tex="\Bbb R^X">\(\Bbb R^X\)</span> jika dianggap sebagai produk
+dari salinan <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.</p>
+</section>
+<section class="source-unit" id="245Xb" data-source-id="245Xb"><h3><span class="source-label">245Xb</span> (&gt;b) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> adalah ruang ukur sembarang, dan
+<span class="math inline" data-source-tex="(X,\hat\Sigma,\hat\mu)">\((X,\hat\Sigma,\hat\mu)\)</span> adalah kelengkapannya. Tunjukkan bahwa topologi
+konvergensi dalam ukuran pada <span class="math inline" data-source-tex="\eusm L^0(\mu)=\eusm L^0(\hat\mu)">\(\eusm L^0(\mu)=\eusm L^0(\hat\mu)\)</span> (<a class="xref" href="../241/index.html#241Xb">241Xb</a>),
+yang sesuai dengan keluarga <span class="math inline" data-source-tex="\{\rho_F:F\in\Sigma,\,\mu F&lt;\infty\}">\(\{\rho_F:F\in\Sigma,\,\mu F&lt;\infty\}\)</span>,
+<span class="math inline" data-source-tex="\{\rho_F:F\in\hat\Sigma,\,\hat\mu F&lt;\infty\}">\(\{\rho_F:F\in\hat\Sigma,\,\hat\mu F&lt;\infty\}\)</span> adalah sama.</p>
+</section>
+<section class="source-unit" id="245Xc" data-source-id="245Xc"><h3><span class="source-label">245Xc</span> (&gt;c) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> adalah sebarang ruang ukur; tetapkan
+<span class="math inline" data-source-tex="L^0=L^0(\mu)">\(L^0=L^0(\mu)\)</span>. Misalkan <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="u_n\in L^0">\(u_n\in L^0\)</span> untuk <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>. Tunjukkan bahwa
+pernyataan-pernyataan berikut ekuivalen:</p>
+<p>  (i) <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> ordo*-konvergen ke <span class="math inline" data-source-tex="u">\(u\)</span> dalam pengertian <a class="xref" href="#245C">245C</a>;</p>
+<p>   (ii) terdapat fungsi terukur <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="f_n:X\to\Bbb R">\(f_n:X\to\Bbb R\)</span> sehingga
+<span class="math inline" data-source-tex="f^{\ssbullet}=u">\(f^{\ssbullet}=u\)</span>, <span class="math inline" data-source-tex="f_n^{\ssbullet}=u_n">\(f_n^{\ssbullet}=u_n\)</span> untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, dan
+<span class="math inline" data-source-tex="f(x)=\lim_{n\to\infty}f_n(x)">\(f(x)=\lim_{n\to\infty}f_n(x)\)</span> untuk setiap <span class="math inline" data-source-tex="x\in X">\(x\in X\)</span>;</p>
+<p>   (iii) <span class="math inline" data-source-tex="u=\inf_{n\in\Bbb N}\sup_{m\ge n}u_m=\sup_{n\in\Bbb N}\inf_{m\ge
+n}u_m">\(u=\inf_{n\in\Bbb N}\sup_{m\ge n}u_m=\sup_{n\in\Bbb N}\inf_{m\ge
+n}u_m\)</span>, infima dan suprema diambil dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span>;</p>
+<p>   (iv) <span class="math inline" data-source-tex="\inf_{n\in\Bbb N}\sup_{m\ge n}|u-u_m|=0">\(\inf_{n\in\Bbb N}\sup_{m\ge n}|u-u_m|=0\)</span> dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span>;</p>
+<p>   (v) terdapat barisan tak meningkat <span class="math inline" data-source-tex="\sequencen{v_n}">\(\sequencen{v_n}\)</span> dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span>
+sehingga <span class="math inline" data-source-tex="\inf_{n\in\Bbb N}v_n=0">\(\inf_{n\in\Bbb N}v_n=0\)</span> dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span> dan <span class="math inline" data-source-tex="u-v_n\le u_n\le u+v_n">\(u-v_n\le u_n\le u+v_n\)</span>
+untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>;</p>
+<p>   (vi) terdapat barisan <span class="math inline" data-source-tex="\sequencen{v_n}">\(\sequencen{v_n}\)</span>, <span class="math inline" data-source-tex="\sequencen{w_n}">\(\sequencen{w_n}\)</span> dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span>
+sehingga <span class="math inline" data-source-tex="\sequencen{v_n}">\(\sequencen{v_n}\)</span> tak menurun, <span class="math inline" data-source-tex="\sequencen{w_n}">\(\sequencen{w_n}\)</span> tak meningkat,
+<span class="math inline" data-source-tex="\sup_{n\in\Bbb N}v_n=u=\inf_{n\in\Bbb N}w_n">\(\sup_{n\in\Bbb N}v_n=u=\inf_{n\in\Bbb N}w_n\)</span> dan <span class="math inline" data-source-tex="v_n\le u_n\le w_n">\(v_n\le u_n\le w_n\)</span> untuk
+setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>.</p>
+</section>
+<section class="source-unit" id="245Xd" data-source-id="245Xd"><h3><span class="source-label">245Xd</span> (d) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> ruang ukur semihingga.
+Tunjukkan bahwa barisan <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> dalam <span class="math inline" data-source-tex="L^0=L^0(\mu)">\(L^0=L^0(\mu)\)</span>
+ordo*-konvergen ke <span class="math inline" data-source-tex="u\in L^0">\(u\in L^0\)</span> jika dan hanya jika <span class="math inline" data-source-tex="\{|u_n|:n\in\Bbb
+N\}">\(\{|u_n|:n\in\Bbb
+N\}\)</span> dibatasi di atas dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span> dan <span class="math inline" data-source-tex="\sequencen{\sup_{m\ge n}|u_m-u|}\to 0">\(\sequencen{\sup_{m\ge n}|u_m-u|}\to 0\)</span>
+untuk topologi konvergensi dalam ukuran.</p>
+</section>
+<section class="source-unit" id="245Xe" data-source-id="245Xe"><h3><span class="source-label">245Xe</span> (e) </h3>
+<p>Tuliskan bukti bahwa <span class="math inline" data-source-tex="L^0(\mu)">\(L^0(\mu)\)</span> lengkap (sebagai ruang linier
+topologis), yang disesuaikan dengan kasus-kasus khusus (i) <span class="math inline" data-source-tex="\mu X=1">\(\mu X=1\)</span> (ii)
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span> <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga, dengan memanfaatkan setiap penyederhanaan yang dapat
+Anda temukan.</p>
+</section>
+<section class="source-unit" id="245Xf" data-source-id="245Xf"><h3><span class="source-label">245Xf</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> adalah ruang ukur dan <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span>;
+misalkan <span class="math inline" data-source-tex="h:\Bbb R^r\to\Bbb R">\(h:\Bbb R^r\to\Bbb R\)</span> fungsi kontinu. (i) Andaikan untuk
+<span class="math inline" data-source-tex="1\le k\le r">\(1\le k\le r\)</span> kita diberikan barisan <span class="math inline" data-source-tex="\sequencen{f_{kn}}">\(\sequencen{f_{kn}}\)</span> dalam <span class="math inline" data-source-tex="\eusm
+L^0={\eusm L}^0(\mu)">\(\eusm
+L^0={\eusm L}^0(\mu)\)</span> yang konvergen dalam ukuran ke <span class="math inline" data-source-tex="f_k\in{\eusm L}^0">\(f_k\in{\eusm L}^0\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="\sequencen{h(f_{1n},\ldots,f_{rn})}">\(\sequencen{h(f_{1n},\ldots,f_{rn})}\)</span> konvergen dalam ukuran
+ke <span class="math inline" data-source-tex="h(f_1,\ldots,f_r)">\(h(f_1,\ldots,f_r)\)</span>. (ii) Secara umum, tunjukkan bahwa
+<span class="math inline" data-source-tex="(f_1,\ldots,f_r)\mapsto h(f_1,\ldots,f_r):(\eusm L^0)^r\to\eusm L^0">\((f_1,\ldots,f_r)\mapsto h(f_1,\ldots,f_r):(\eusm L^0)^r\to\eusm L^0\)</span> adalah
+kontinu untuk topologi konvergensi dalam ukuran.   (iii) Tunjukkan bahwa
+fungsi yang bersesuaian <span class="math inline" data-source-tex="\bar h:(L^0)^r\to L^0">\(\bar h:(L^0)^r\to L^0\)</span> (<a class="xref" href="../241/index.html#241Xh">241Xh</a>) adalah kontinu untuk
+topologi konvergensi dalam ukuran.</p>
+</section>
+<section class="source-unit" id="245Xg" data-source-id="245Xg"><h3><span class="source-label">245Xg</span> (g) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> adalah ruang ukur dan <span class="math inline" data-source-tex="u\in
+L^1(\mu)">\(u\in
+L^1(\mu)\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="v\mapsto\int u\times v:L^{\infty}\to\Bbb R">\(v\mapsto\int u\times v:L^{\infty}\to\Bbb R\)</span> adalah
+kontinu untuk topologi konvergensi dalam ukuran pada bola satuan
+<span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span>, tetapi pada umumnya tidak kontinu pada seluruh <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span>.</p>
+</section>
+<section class="source-unit" id="245Xh" data-source-id="245Xh"><h3><span class="source-label">245Xh</span> (h) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> merupakan ruang ukur dan <span class="math inline" data-source-tex="v">\(v\)</span> adalah
+anggota nonnegatif dari <span class="math inline" data-source-tex="L^1=L^1(\mu)">\(L^1=L^1(\mu)\)</span>. Tunjukkan bahwa pada himpunan
+<span class="math inline" data-source-tex="A=\{u:u\in L^1,\,|u|\le v\}">\(A=\{u:u\in L^1,\,|u|\le v\}\)</span>, topologi subruang (2A3C) yang diturunkan oleh
+topologi norma pada <span class="math inline" data-source-tex="L^1">\(L^1\)</span> dan topologi konvergensi dalam ukuran adalah sama.
+<span class="hint" role="note"><strong>Petunjuk:</strong> Jika diberikan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, ambil <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> berukuran berhingga dan
+<span class="math inline" data-source-tex="M\ge 0">\(M\ge 0\)</span> sehingga <span class="math inline" data-source-tex="\int(|v|-M\chi F^{\ssbullet})^+\le\epsilon">\(\int(|v|-M\chi F^{\ssbullet})^+\le\epsilon\)</span>. Tunjukkan
+bahwa <span class="math inline" data-source-tex="\|u-u&#x27;\|_1\le\epsilon+M\bar\rho_F(u,u&#x27;)">\(\|u-u&#x27;\|_1\le\epsilon+M\bar\rho_F(u,u&#x27;)\)</span> untuk setiap <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="u&#x27;\in A">\(u&#x27;\in A\)</span>. </span></p>
+</section>
+<section class="source-unit" id="245Xi" data-source-id="245Xi"><h3><span class="source-label">245Xi</span> (i) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> adalah ruang ukur dan <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span>
+adalah filter pada <span class="math inline" data-source-tex="L^1=L^1(\mu)">\(L^1=L^1(\mu)\)</span> yang konvergen, untuk topologi konvergensi
+dalam ukuran, ke <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\Cal F\to u">\(\Cal F\to u\)</span> untuk topologi norma
+<span class="math inline" data-source-tex="L^1">\(L^1\)</span> jika dan hanya jika <span class="math inline" data-source-tex="\inf_{A\in\Cal F}\sup_{v\in
+A}\|v\|_1\le\|u\|_1">\(\inf_{A\in\Cal F}\sup_{v\in
+A}\|v\|_1\le\|u\|_1\)</span>.</p>
+</section>
+<section class="source-unit" id="245Xj" data-source-id="245Xj"><h3><span class="source-label">245Xj</span> (j) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> adalah ruang ukur dan
+<span class="math inline" data-source-tex="p\in\coint{1,\infty}">\(p\in\coint{1,\infty}\)</span>. Misalkan <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> barisan
+dalam <span class="math inline" data-source-tex="L^p(\mu)">\(L^p(\mu)\)</span> yang konvergen untuk <span class="math inline" data-source-tex="\|\,\|_p">\(\|\,\|_p\)</span> ke <span class="math inline" data-source-tex="u\in L^p(\mu)">\(u\in L^p(\mu)\)</span>. Tunjukkan
+bahwa <span class="math inline" data-source-tex="\sequencen{|u_n|^p}\to|u|^p">\(\sequencen{|u_n|^p}\to|u|^p\)</span> untuk <span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> <a class="xref" href="#245G">245G</a>, 245Dd,
+<a class="xref" href="#245H">245H</a>.</span></p>
+</section>
+<section class="source-unit" id="245Xk" data-source-id="245Xk"><h3><span class="source-label">245Xk</span> (&gt;k) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> ruang ukur semihingga dan
+<span class="math inline" data-source-tex="p\in[1,\infty]">\(p\in[1,\infty]\)</span>, <span class="math inline" data-source-tex="a\ge 0">\(a\ge 0\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\{u:u\in L^p(\mu),\,\|u\|_p\le
+a\}">\(\{u:u\in L^p(\mu),\,\|u\|_p\le
+a\}\)</span> tertutup di <span class="math inline" data-source-tex="L^0(\mu)">\(L^0(\mu)\)</span> untuk topologi konvergensi dalam ukuran.</p>
+</section>
+<section class="source-unit" id="245Xl" data-source-id="245Xl"><h3><span class="source-label">245Xl</span> (l) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> adalah ruang ukur, dan
+<span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> barisan dalam <span class="math inline" data-source-tex="L^p=L^p(\mu)">\(L^p=L^p(\mu)\)</span>, di mana <span class="math inline" data-source-tex="1\le
+p&lt;\infty">\(1\le
+p&lt;\infty\)</span>. Misalkan <span class="math inline" data-source-tex="u\in L^p">\(u\in L^p\)</span>. Tunjukkan bahwa hal-hal berikut ini adalah
+ekuivalen: (i) <span class="math inline" data-source-tex="u=\lim_{n\to\infty}u_n">\(u=\lim_{n\to\infty}u_n\)</span> untuk topologi norma <span class="math inline" data-source-tex="L^p">\(L^p\)</span> (ii)
+<span class="math inline" data-source-tex="\sequencen{u_n}\to u">\(\sequencen{u_n}\to u\)</span> untuk topologi konvergensi dalam ukuran dan
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\|u_n\|_p=\|u\|_p">\(\lim_{n\to\infty}\|u_n\|_p=\|u\|_p\)</span> (iii) <span class="math inline" data-source-tex="\sequencen{u_n}\to u">\(\sequencen{u_n}\to u\)</span> untuk
+topologi konvergensi dalam ukuran dan
+<span class="math inline" data-source-tex="\limsup_{n\to\infty}\|u_n\|_p\le\|u\|_p">\(\limsup_{n\to\infty}\|u_n\|_p\le\|u\|_p\)</span>.</p>
+</section>
+<section class="source-unit" id="245Xm" data-source-id="245Xm"><h3><span class="source-label">245Xm</span> (m) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan dan <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, <span class="math inline" data-source-tex="\nu">\(\nu\)</span> dua ukuran pada
+<span class="math inline" data-source-tex="X">\(X\)</span> dengan himpunan-himpunan terukur dan himpunan-himpunan terabaikan yang
+sama. (i) Tunjukkan bahwa <span class="math inline" data-source-tex="\eusm L^0(\mu)=\eusm L^0(\nu)">\(\eusm L^0(\mu)=\eusm L^0(\nu)\)</span> dan
+<span class="math inline" data-source-tex="L^0(\mu)=L^0(\nu)">\(L^0(\mu)=L^0(\nu)\)</span>. (ii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> sama-sama
+semihingga, maka keduanya menentukan topologi yang sama bagi
+konvergensi dalam ukuran pada <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> dan <span class="math inline" data-source-tex="L^0">\(L^0\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> Gunakan <a class="xref" href="../215/index.html#215A">215A</a>
+untuk menunjukkan bahwa jika <span class="math inline" data-source-tex="\mu E&lt;\infty">\(\mu E&lt;\infty\)</span> maka <span class="math inline" data-source-tex="\mu E=\sup\{\mu F:F\subseteq
+E,\,\nu F&lt;\infty\}">\(\mu E=\sup\{\mu F:F\subseteq
+E,\,\nu F&lt;\infty\}\)</span>. </span></p>
+</section>
+<section class="source-unit" id="245Y" data-source-id="245Y"><span class="anchor" id="245Ya"></span><h2><span class="source-label">245Y</span> Latihan lebih lanjut (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> adalah ruang ukur dan lengkapi <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dengan topologi
+yang dijelaskan dalam <a class="xref" href="../232/index.html#232Ya">232Ya</a>. Tunjukkan bahwa <span class="math inline" data-source-tex="\chi:\Sigma\to\eusm L^0(\mu)">\(\chi:\Sigma\to\eusm L^0(\mu)\)</span> adalah
+homeomorfisme antara <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dan citranya <span class="math inline" data-source-tex="\chi[\Sigma]">\(\chi[\Sigma]\)</span> di <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span>, jika
+<span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> diberi topologi konvergensi dalam ukuran dan <span class="math inline" data-source-tex="\chi[\Sigma]">\(\chi[\Sigma]\)</span>
+diberi topologi subruang.</p>
+</section>
+<section class="source-unit" id="245Yb" data-source-id="245Yb"><h3><span class="source-label">245Yb</span> (b) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> ruang ukur dan <span class="math inline" data-source-tex="Y">\(Y\)</span> sembarang
+subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>; misalkan <span class="math inline" data-source-tex="\mu_Y">\(\mu_Y\)</span> ukuran subruang pada <span class="math inline" data-source-tex="Y">\(Y\)</span>. Misalkan
+<span class="math inline" data-source-tex="T:L^0(\mu)\to L^0(\mu_Y)">\(T:L^0(\mu)\to L^0(\mu_Y)\)</span> peta kanonik yang
+didefinisikan dengan menetapkan <span class="math inline" data-source-tex="T(f^{\ssbullet})=(f\restrp Y)^{\ssbullet}">\(T(f^{\ssbullet})=(f\restrp Y)^{\ssbullet}\)</span>
+untuk setiap <span class="math inline" data-source-tex="f\in\eusm L^0(\mu)">\(f\in\eusm L^0(\mu)\)</span> (<a class="xref" href="../241/index.html#241Yg">241Yg</a>). Tunjukkan bahwa <span class="math inline" data-source-tex="T">\(T\)</span> bersifat
+kontinu untuk topologi konvergensi dalam ukuran pada <span class="math inline" data-source-tex="L^0(\mu)">\(L^0(\mu)\)</span> dan
+<span class="math inline" data-source-tex="L^0(\mu_Y)">\(L^0(\mu_Y)\)</span>.</p>
+</section>
+<section class="source-unit" id="245Yc" data-source-id="245Yc"><h3><span class="source-label">245Yc</span> (c) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> adalah ruang ukur, dan <span class="math inline" data-source-tex="\tilde\mu">\(\tilde\mu\)</span>
+adalah versi c.l.d.  dari <span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Tunjukkan bahwa peta <span class="math inline" data-source-tex="T:L^0(\mu)\to
+L^0(\tilde\mu)">\(T:L^0(\mu)\to
+L^0(\tilde\mu)\)</span> yang diinduksi oleh inklusi <span class="math inline" data-source-tex="\eusm L^0(\mu)\subseteq\eusm
+L^0(\tilde\mu)">\(\eusm L^0(\mu)\subseteq\eusm
+L^0(\tilde\mu)\)</span> (<a class="xref" href="../241/index.html#241Yf">241Yf</a>) bersifat kontinu untuk topologi konvergensi dalam ukuran.</p>
+</section>
+<section class="source-unit" id="245Yd" data-source-id="245Yd"><h3><span class="source-label">245Yd</span> (d) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> ruang ukur, dan berikan
+<span class="math inline" data-source-tex="L^0=L^0(\mu)">\(L^0=L^0(\mu)\)</span> topologi konvergensi dalam ukuran.  Misalkan <span class="math inline" data-source-tex="A\subseteq L^0">\(A\subseteq L^0\)</span>
+adalah himpunan tak kosong yang terarah ke bawah, dan andaikan bahwa
+<span class="math inline" data-source-tex="\inf A=0">\(\inf A=0\)</span> dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span>. (i) Misalkan <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> himpunan berukuran
+berhingga, dan definisikan <span class="math inline" data-source-tex="\bar\tau_F">\(\bar\tau_F\)</span> seperti dalam <a class="xref" href="#245A">245A</a>; tunjukkan bahwa
+<span class="math inline" data-source-tex="\inf_{u\in A}\bar\tau_F(u)=0">\(\inf_{u\in A}\bar\tau_F(u)=0\)</span>.  <span class="hint" role="note"><strong>Petunjuk:</strong> Tetapkan <span class="math inline" data-source-tex="\gamma=\inf_{u\in
+A}\bar\tau_F(u)">\(\gamma=\inf_{u\in
+A}\bar\tau_F(u)\)</span>; temukan barisan menurun <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> dalam <span class="math inline" data-source-tex="A">\(A\)</span>
+sehingga <span class="math inline" data-source-tex="\lim_{n\to\infty}\bar\tau_F(u_n)=\gamma">\(\lim_{n\to\infty}\bar\tau_F(u_n)=\gamma\)</span>; tetapkan <span class="math inline" data-source-tex="v=(\chi
+F)^{\ssbullet}\wedge\inf_{n\in\Bbb N}u_n">\(v=(\chi
+F)^{\ssbullet}\wedge\inf_{n\in\Bbb N}u_n\)</span> dan tunjukkan bahwa <span class="math inline" data-source-tex="u\wedge v=v">\(u\wedge v=v\)</span>
+untuk setiap <span class="math inline" data-source-tex="u\in A">\(u\in A\)</span>, sehingga <span class="math inline" data-source-tex="v=0">\(v=0\)</span>.</span>  (ii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="U">\(U\)</span> adalah
+himpunan terbuka yang memuat <span class="math inline" data-source-tex="0">\(0\)</span>, terdapat <span class="math inline" data-source-tex="u\in A">\(u\in A\)</span> sehingga <span class="math inline" data-source-tex="v\in U">\(v\in U\)</span> setiap
+kali <span class="math inline" data-source-tex="0\le v\le u">\(0\le v\le u\)</span>.</p>
+</section>
+<section class="source-unit" id="245Ye" data-source-id="245Ye"><h3><span class="source-label">245Ye</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> adalah ruang ukur. (i) Tunjukkan
+bahwa untuk <span class="math inline" data-source-tex="u\in L^0=L^0(\mu)">\(u\in L^0=L^0(\mu)\)</span> kita dapat mendefinisikan <span class="math inline" data-source-tex="\psi_a(u)">\(\psi_a(u)\)</span>, untuk
+<span class="math inline" data-source-tex="a\ge 0">\(a\ge 0\)</span>, dengan menetapkan <span class="math inline" data-source-tex="\psi_a(u)=\mu\{x:|f(x)|&gt;a\}">\(\psi_a(u)=\mu\{x:|f(x)|&gt;a\}\)</span> setiap kali
+<span class="math inline" data-source-tex="f:X\to\Bbb R">\(f:X\to\Bbb R\)</span> adalah fungsi terukur dan <span class="math inline" data-source-tex="f^{\ssbullet}=u">\(f^{\ssbullet}=u\)</span>. (ii) Definisikan
+<span class="math inline" data-source-tex="\rho:L^0\times
+L^0\to[0,1]">\(\rho:L^0\times
+L^0\to[0,1]\)</span> dengan menetapkan
+<span class="math inline" data-source-tex="\rho(u,v)=\min(\{1\}\cup\{a:a\ge 0,\,\psi_a(u-v)\le a\})">\(\rho(u,v)=\min(\{1\}\cup\{a:a\ge 0,\,\psi_a(u-v)\le a\})\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\rho">\(\rho\)</span> adalah metrik pada <span class="math inline" data-source-tex="L^0">\(L^0\)</span>, bahwa <span class="math inline" data-source-tex="L^0">\(L^0\)</span> lengkap terhadap <span class="math inline" data-source-tex="\rho">\(\rho\)</span>, dan
+bahwa <span class="math inline" data-source-tex="+">\(+\)</span>, <span class="math inline" data-source-tex="-">\(-\)</span>, <span class="math inline" data-source-tex="\wedge">\(\wedge\)</span>, <span class="math inline" data-source-tex="\vee:L^0\times L^0\to L^0">\(\vee:L^0\times L^0\to L^0\)</span> kontinu terhadap <span class="math inline" data-source-tex="\rho">\(\rho\)</span>.
+(iii) Tunjukkan bahwa <span class="math inline" data-source-tex="c\mapsto cu:\Bbb R\to L^0">\(c\mapsto cu:\Bbb R\to L^0\)</span> kontinu untuk setiap <span class="math inline" data-source-tex="u\in
+L^0">\(u\in
+L^0\)</span> jika dan hanya jika <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> berhingga total, dan bahwa dalam
+kasus ini <span class="math inline" data-source-tex="\rho">\(\rho\)</span> mendefinisikan topologi konvergensi dalam ukuran pada
+<span class="math inline" data-source-tex="L^0">\(L^0\)</span>.</p>
+</section>
+<section class="source-unit" id="245Yf" data-source-id="245Yf"><h3><span class="source-label">245Yf</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> ruang ukur yang dapat dilokalkan dan
+<span class="math inline" data-source-tex="A\subseteq L^0=L^0(\mu)">\(A\subseteq L^0=L^0(\mu)\)</span> himpunan tak kosong, terarah ke atas, dan terbatas
+dalam arti ruang linier topologis (yakni,
+sedemikian sehingga untuk setiap lingkungan <span class="math inline" data-source-tex="U">\(U\)</span> dari <span class="math inline" data-source-tex="0">\(0\)</span> di <span class="math inline" data-source-tex="L^0">\(L^0\)</span> terdapat
+<span class="math inline" data-source-tex="k\in\Bbb N">\(k\in\Bbb N\)</span> sedemikian sehingga <span class="math inline" data-source-tex="A\subseteq kU">\(A\subseteq kU\)</span>). Tunjukkan bahwa <span class="math inline" data-source-tex="A">\(A\)</span>
+terbatas di atas di <span class="math inline" data-source-tex="L^0">\(L^0\)</span>, dan bahwa supremumnya termasuk dalam penutupannya.</p>
+</section>
+<section class="source-unit" id="245Yg" data-source-id="245Yg"><h3><span class="source-label">245Yg</span> (g) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> adalah ruang ukur,
+<span class="math inline" data-source-tex="p\in\coint{1,\infty}">\(p\in\coint{1,\infty}\)</span> dan <span class="math inline" data-source-tex="v">\(v\)</span> anggota nonnegatif dari <span class="math inline" data-source-tex="L^p=L^p(\mu)">\(L^p=L^p(\mu)\)</span>.
+Tunjukkan bahwa pada himpunan <span class="math inline" data-source-tex="A=\{u:u\in L^p,\,|u|\le v\}">\(A=\{u:u\in L^p,\,|u|\le v\}\)</span> topologi subruang
+yang diinduksi oleh topologi norma <span class="math inline" data-source-tex="L^p">\(L^p\)</span> dan topologi konvergensi dalam
+ukuran adalah sama.</p>
+</section>
+<section class="source-unit" id="245Yh" data-source-id="245Yh"><h3><span class="source-label">245Yh</span> (h) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="S">\(S\)</span> adalah himpunan semua barisan <span class="math inline" data-source-tex="s:\Bbb
+N\to\Bbb N">\(s:\Bbb
+N\to\Bbb N\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\lim_{n\to\infty}s(n)=\infty">\(\lim_{n\to\infty}s(n)=\infty\)</span>. Untuk setiap
+<span class="math inline" data-source-tex="s\in S">\(s\in S\)</span>, misalkan <span class="math inline" data-source-tex="(X_s,\Sigma_s,\mu_s)">\((X_s,\Sigma_s,\mu_s)\)</span> adalah <span class="math inline" data-source-tex="[0,1]">\([0,1]\)</span> dengan ukuran
+Lebesgue, dan misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> jumlah langsung dari
+<span class="math inline" data-source-tex="\family{s}{S}{(X_s,\Sigma_s,\mu_s)}">\(\family{s}{S}{(X_s,\Sigma_s,\mu_s)}\)</span> (<a class="xref" href="../214/index.html#214L">214L</a>). Untuk <span class="math inline" data-source-tex="s\in S">\(s\in S\)</span>, <span class="math inline" data-source-tex="t\in[0,1]">\(t\in[0,1]\)</span>,
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> tetapkan <span class="math inline" data-source-tex="h_n(s,t)=f_{s(n)}(t)">\(h_n(s,t)=f_{s(n)}(t)\)</span>, di mana <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> adalah
+barisan dari <a class="xref" href="#245Cc">245Cc</a>. Tunjukkan bahwa <span class="math inline" data-source-tex="\sequencen{h_n}\to 0">\(\sequencen{h_n}\to 0\)</span> untuk topologi
+konvergensi dalam ukuran pada <span class="math inline" data-source-tex="\eusm L^0(\mu)">\(\eusm L^0(\mu)\)</span>, tetapi bahwa <span class="math inline" data-source-tex="\sequencen{h_n}">\(\sequencen{h_n}\)</span>
+tidak memiliki subbarisan yang konvergen ke <span class="math inline" data-source-tex="0">\(0\)</span> hampir di mana-mana.</p>
+</section>
+<section class="source-unit" id="245Yi" data-source-id="245Yi"><h3><span class="source-label">245Yi</span> (i) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan. Andaikan diberikan suatu
+relasi <span class="math inline" data-source-tex="\rightharpoonup">\(\rightharpoonup\)</span> antara barisan dalam <span class="math inline" data-source-tex="X">\(X\)</span> dan anggota
+<span class="math inline" data-source-tex="X">\(X\)</span> sedemikian sehingga (<span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>) jika <span class="math inline" data-source-tex="x_n=x">\(x_n=x\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span> maka
+<span class="math inline" data-source-tex="\sequencen{x_n}\rightharpoonup
+x">\(\sequencen{x_n}\rightharpoonup
+x\)</span> (<span class="math inline" data-source-tex="\beta">\(\beta\)</span>) <span class="math inline" data-source-tex="\sequencen{x&#x27;_n}\rightharpoonup
+x">\(\sequencen{x&#x27;_n}\rightharpoonup
+x\)</span> setiap kali <span class="math inline" data-source-tex="\sequencen{x_n}\rightharpoonup x">\(\sequencen{x_n}\rightharpoonup x\)</span> dan <span class="math inline" data-source-tex="\sequencen{x&#x27;_n}">\(\sequencen{x&#x27;_n}\)</span> adalah
+subbarisan dari <span class="math inline" data-source-tex="\sequencen{x_n}">\(\sequencen{x_n}\)</span>. Tunjukkan bahwa terdapat topologi
+<span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span> yang ditentukan sebagai berikut: suatu himpunan
+bagian <span class="math inline" data-source-tex="G">\(G\)</span> dari <span class="math inline" data-source-tex="X">\(X\)</span> termasuk dalam <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> jika dan hanya jika, setiap kali
+<span class="math inline" data-source-tex="\sequencen{x_n}">\(\sequencen{x_n}\)</span> barisan dalam <span class="math inline" data-source-tex="X">\(X\)</span> dan <span class="math inline" data-source-tex="\sequencen{x_n}\rightharpoonup
+x\in G">\(\sequencen{x_n}\rightharpoonup
+x\in G\)</span>, setidaknya satu <span class="math inline" data-source-tex="x_n">\(x_n\)</span> termasuk dalam <span class="math inline" data-source-tex="G">\(G\)</span>. Tunjukkan bahwa suatu barisan
+<span class="math inline" data-source-tex="\sequencen{x_n}">\(\sequencen{x_n}\)</span> dalam <span class="math inline" data-source-tex="X">\(X\)</span> <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span>-konvergen ke <span class="math inline" data-source-tex="x">\(x\)</span> jika dan hanya jika
+setiap subbarisan dari <span class="math inline" data-source-tex="\sequencen{x_n}">\(\sequencen{x_n}\)</span> mempunyai subsubbarisan
+<span class="math inline" data-source-tex="\sequencen{x&#x27;&#x27;_n}">\(\sequencen{x&#x27;&#x27;_n}\)</span> sedemikian rupa sehingga <span class="math inline" data-source-tex="\sequencen{x&#x27;&#x27;_n}\halfarrow x">\(\sequencen{x&#x27;&#x27;_n}\halfarrow x\)</span>.</p>
+</section>
+<section class="source-unit" id="245Yj" data-source-id="245Yj"><h3><span class="source-label">245Yj</span> (j) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> ukuran Lebesgue pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="L^0(\mu)">\(L^0(\mu)\)</span> separabel untuk topologi konvergensi dalam
+ukuran. <span class="hint" role="note"><strong>Petunjuk:</strong> <a class="xref" href="../244/index.html#244I">244I</a>.</span></p>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<section class="source-unit" id="245-notes" data-source-id="245-notes"><h2><span class="source-label">245-notes</span> Catatan penutup untuk Bagian 245 </h2>
+<p>Dalam bagian ini saya mengundang Anda untuk
+menganggap topologi konvergensi (lokal) dalam ukuran sebagai topologi standar
+pada <span class="math inline" data-source-tex="L^0">\(L^0\)</span>, sebagaimana norma menentukan topologi standar pada ruang <span class="math inline" data-source-tex="L^p">\(L^p\)</span>
+untuk <span class="math inline" data-source-tex="p\ge 1">\(p\ge 1\)</span>. Definisi yang saya pilih dirancang agar penjumlahan dan
+perkalian skalar serta operasi <span class="math inline" data-source-tex="\vee">\(\vee\)</span>, <span class="math inline" data-source-tex="\wedge">\(\wedge\)</span>, dan <span class="math inline" data-source-tex="\times">\(\times\)</span> bersifat kontinu
+(<a class="xref" href="#245D">245D</a>); lihat juga <a class="xref" href="#245Xf">245Xf</a>. Dari sudut pandang analisis fungsional, sifat-sifat
+ini lebih penting daripada metrizabilitas atau bahkan kelengkapan.</p>
+<p>Seperti halnya struktur aljabar dan struktur orde pada <span class="math inline" data-source-tex="L^0">\(L^0\)</span> dapat diuraikan
+dalam teori umum ruang Riesz, hasil-hasil yang lebih mendalam <a class="xref" href="../241/index.html#241G">241G</a> dan <a class="xref" href="#245E">245E</a> juga
+memiliki interpretasi dalam teori umum. Bukan kebetulan bahwa (untuk ruang
+ukur semihingga) <span class="math inline" data-source-tex="L^0">\(L^0\)</span> lengkap Dedekind jika dan hanya jika lengkap sebagai
+ruang seragam; Anda dapat menemukan generalisasi yang relevan dalam 23K
+dan 24E dari Fremlin 74. Tentu saja, justru karena kedua jenis
+kelengkapan ini saling terkait, saya merasa perlu menggunakan frasa
+‘kelengkapan Dedekind’ untuk membedakan jenis kelengkapan orde khusus ini dari
+kelengkapan seragam yang lebih lazim dan diuraikan dalam 2A5F.</p>
+<p>Manfaat dari topologi konvergensi dalam ukuran sebagian besar berasal dari
+<a class="xref" href="#245G">245G</a>-<a class="xref" href="#245J">245J</a> dan versi <span class="math inline" data-source-tex="L^p">\(L^p\)</span> <a class="xref" href="#245Xk">245Xk</a> dan <a class="xref" href="#245Xl">245Xl</a>. Beberapa ide di sini dapat
+dikaitkan dengan pertanyaan yang muncul dari teorema konvergensi dasar. Jika
+<span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> adalah suatu barisan fungsi terintegralkan yang
+konvergen titik demi titik ke suatu fungsi <span class="math inline" data-source-tex="f">\(f\)</span>, dengan cara apa <span class="math inline" data-source-tex="\int f">\(\int f\)</span> dapat
+gagal menjadi <span class="math inline" data-source-tex="\lim_{n\to\infty}\int f_n">\(\lim_{n\to\infty}\int f_n\)</span>? Dalam bahasa bagian ini, hal ini
+diterjemahkan menjadi: jika kita mempunyai suatu barisan (atau filter) dalam
+<span class="math inline" data-source-tex="L^1">\(L^1\)</span> yang konvergen untuk topologi konvergensi dalam ukuran, dengan cara apa
+barisan ini dapat gagal konvergen dalam topologi norma pada <span class="math inline" data-source-tex="L^1">\(L^1\)</span>? Jawaban
+pertama adalah Teorema Konvergensi Terdominasi Lebesgue: hal ini tidak dapat
+terjadi jika barisan tersebut didominasi, yaitu, terletak dalam suatu himpunan
+dari bentuk <span class="math inline" data-source-tex="\{u:|u|\le v\}">\(\{u:|u|\le v\}\)</span> di mana <span class="math inline" data-source-tex="v\in L^1">\(v\in L^1\)</span>. (Lihat <a class="xref" href="#245Xh">245Xh</a> dan <a class="xref" href="#245Yg">245Yg</a>.) Saya
+akan kembali ke hal ini di bagian berikutnya. Namun untuk saat ini, <a class="xref" href="#245H">245H</a>
+menunjukkan bahwa jika <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> konvergen dalam ukuran ke <span class="math inline" data-source-tex="u\in
+L^1">\(u\in
+L^1\)</span>, tetapi tidak untuk topologi norma pada <span class="math inline" data-source-tex="L^1">\(L^1\)</span>, hal itu terjadi karena
+<span class="math inline" data-source-tex="\limsup_{n\to\infty}\|u_n\|_1">\(\limsup_{n\to\infty}\|u_n\|_1\)</span> terlalu besar; sebagian bobotnya hilang di tak
+hingga, seperti dalam contoh-contoh <a class="xref" href="#245I">245I</a>. Jika <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> benar-benar
+ordo*-konvergen ke <span class="math inline" data-source-tex="u">\(u\)</span>, maka Lemma Fatou menunjukkan bahwa
+<span class="math inline" data-source-tex="\liminf_{n\to\infty}\|u_n\|_1\ge\|u\|_1">\(\liminf_{n\to\infty}\|u_n\|_1\ge\|u\|_1\)</span>, yaitu, bahwa fungsi limit tidak dapat
+memiliki bobot lebih besar (yang diukur oleh <span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span>) daripada bobot yang
+dibawa oleh barisan. <a class="xref" href="#245J">245J</a> dan <a class="xref" href="#245Xk">245Xk</a> merupakan generalisasi fakta ini ke
+konvergensi dalam ukuran. Jika Anda menginginkan generalisasi dari teorema
+B. Levi, <a class="xref" href="../242/index.html#242Yf">242Yf</a> tetap merupakan ungkapan terbaik dalam bahasa bab ini;
+tetapi <a class="xref" href="#245Yf">245Yf</a> adalah versi dalam istilah konsep-konsep bagian ini.</p>
+<p>Dalam kasus ruang <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga, kita mempunyai deskripsi alternatif dari
+topologi konvergensi dalam ukuran (<a class="xref" href="#245L">245L</a>) yang tidak menggunakan fungsional
+atau pseudometrik yang tampil dalam <a class="xref" href="#245A">245A</a>. Hal ini dapat diungkapkan, setidaknya
+dalam konteks <span class="math inline" data-source-tex="L^0">\(L^0\)</span>, dalam istilah hasil standar dari topologi umum (<a class="xref" href="#245Yi">245Yi</a>).
+Hasil tersebut memberikan cara membentuk topologi pada
+<span class="math inline" data-source-tex="L^0">\(L^0\)</span> yang berlaku pada ruang ukur mana pun. Hal yang menarik ialah bahwa
+untuk ruang <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga kita mendapatkan topologi ruang linier.</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 2: Broad Foundations</cite>, Bagian 245.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 25 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-cumulative-html-route-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V2-S245&quot;,
+  &quot;source_member&quot;: &quot;mt2.2016/mt245.tex&quot;,
+  &quot;target_bytes&quot;: 55808,
+  &quot;target_sha256&quot;: &quot;7e1320478eeccae15765f56182ecb9d29be8669f0cb7f396c1bdfb90a0776206&quot;,
+  &quot;source_ids&quot;: [
+    &quot;245&quot;,
+    &quot;245A&quot;,
+    &quot;245Aa&quot;,
+    &quot;245Ab&quot;,
+    &quot;245Ac&quot;,
+    &quot;245Ad&quot;,
+    &quot;245B&quot;,
+    &quot;245Ba&quot;,
+    &quot;245Bb&quot;,
+    &quot;245Bc&quot;,
+    &quot;245C&quot;,
+    &quot;245Ca&quot;,
+    &quot;245Cb&quot;,
+    &quot;245Cc&quot;,
+    &quot;245D&quot;,
+    &quot;245E&quot;,
+    &quot;245F&quot;,
+    &quot;245Fa&quot;,
+    &quot;245Fb&quot;,
+    &quot;245Fc&quot;,
+    &quot;245Fd&quot;,
+    &quot;245G&quot;,
+    &quot;245H&quot;,
+    &quot;245I&quot;,
+    &quot;245Ia&quot;,
+    &quot;245Ib&quot;,
+    &quot;245J&quot;,
+    &quot;245K&quot;,
+    &quot;245L&quot;,
+    &quot;245M&quot;,
+    &quot;245X&quot;,
+    &quot;245Xa&quot;,
+    &quot;245Xb&quot;,
+    &quot;245Xc&quot;,
+    &quot;245Xd&quot;,
+    &quot;245Xe&quot;,
+    &quot;245Xf&quot;,
+    &quot;245Xg&quot;,
+    &quot;245Xh&quot;,
+    &quot;245Xi&quot;,
+    &quot;245Xj&quot;,
+    &quot;245Xk&quot;,
+    &quot;245Xl&quot;,
+    &quot;245Xm&quot;,
+    &quot;245Y&quot;,
+    &quot;245Ya&quot;,
+    &quot;245Yb&quot;,
+    &quot;245Yc&quot;,
+    &quot;245Yd&quot;,
+    &quot;245Ye&quot;,
+    &quot;245Yf&quot;,
+    &quot;245Yg&quot;,
+    &quot;245Yh&quot;,
+    &quot;245Yi&quot;,
+    &quot;245Yj&quot;
+  ],
+  &quot;corpus_id&quot;: &quot;O007-FREMLIN&quot;,
+  &quot;volume_id&quot;: &quot;O007-FREMLIN-V2&quot;,
+  &quot;volume_source_title&quot;: &quot;Broad Foundations&quot;,
+  &quot;route&quot;: &quot;245&quot;,
+  &quot;official_source_page_start&quot;: 179,
+  &quot;chapter_official_source_pages&quot;: [
+    138,
+    203
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

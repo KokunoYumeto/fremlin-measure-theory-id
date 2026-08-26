@@ -758,6 +758,7 @@ def declaration_spans(text: str) -> list[tuple[int, int]]:
         re.compile(r"\\leader\{[^{}]+\}"),
         re.compile(r"\\header\{[^{}]+\}"),
         re.compile(r"\\vleader\{[^{}]*\}\{[^{}]+\}"),
+        re.compile(r"\\vspheader\{[^{}]*\}[0-9][0-9A-Za-z]+"),
         re.compile(r"\\Notesheader\{[^{}]+\}"),
         re.compile(r"\\(?:sqheader|spheader)\s+[0-9][0-9A-Za-z]+"),
     )

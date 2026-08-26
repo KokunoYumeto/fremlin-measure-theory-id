@@ -2,7 +2,7 @@
 
 - Source work: D. H. Fremlin, *Measure Theory*, Volume 1, *The Irreducible Minimum*, and Volume 2, *Broad Foundations*.
 - Indonesian derivative working title: *Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari Measure Theory karya D. H. Fremlin*.
-- Checkpoint scope: complete Volume I and contiguous Volume II front matter plus Chapters 21--23, official Volume II pages 1--137; 239 of 672 official corpus pages.
+- Checkpoint scope: complete Volume I and contiguous Volume II front matter plus Chapters 21--24, official Volume II pages 1--203; 305 of 672 official corpus pages.
 - Modifications: Bahasa Indonesia translation, reflowable cumulative PDF and offline HTML presentation, stable semantic IDs, backend exports, correction ledger, and deterministic QA/package evidence.
 - Modification date: 25 August 2026.
 - Production provenance: OpenAI Codex gpt-5.6-sol, Ultra.
