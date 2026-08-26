@@ -171,3 +171,22 @@ lexical prefix `\sigma` are therefore localized as prose; both raw source
 ordinals and hashes are bound in `qa/chapter25/mt252-unit-qa.json`. This does
 not authorize changing symbolic sigma variables or the conventional compound
 `$\sigma$-hingga`.
+
+For complete Section 253, use the following forms:
+
+| Concept or construction | Preferred O007 form | Decision and boundary |
+|---|---|---|
+| tensor product | `produk tensor` | Use for the section title, the universal construction, and the operation represented by `\otimes`; never substitute ordinary pointwise multiplication across distinct factor spaces. |
+| bilinear / multilinear operator | `operator bilinear`; `operator multilinear` | Keep linearity in each argument explicit and attach `terbatas` or `kontinu` only when the source does. |
+| Banach lattice | `kisi Banach` | Continue the established corpus form `kisi`; reject `kekisi`, which is not the selected technical noun in this edition. |
+| Bochner-integrable / Bochner integral | `terintegralkan menurut Bochner`; `integral Bochner` | Use the adverbial predicate for functions and the noun phrase for the resulting vector-valued integral. Preserve its codomain rather than conflating it with a scalar iterated integral. |
+| primitive product measure | `ukuran produk primitif` | Keep it distinct from the c.l.d. product measure and preserve the source measure symbol in every statement. |
+| universal mapping theorem / property | `teorema pemetaan universal`; `sifat pemetaan universal` | Use the theorem form for 253F and the property form in explanatory notes; retain the exact factorization and norm clauses. |
+| conditional expectation | `ekspektasi bersyarat` | Reaffirm the existing probability term and preserve the conditioning subalgebra and operator domains. |
+
+These Section 253 decisions were checked against the existing Indonesian
+terminology evidence and the already admitted O007 glossary. They preserve all
+source identifiers, exercise relations, formulas, and component-rights
+boundaries. The eight high-confidence authority corrections in this unit are
+separately recorded as `O007-CORR-0170`–`O007-CORR-0177`; terminology choices
+are not source corrections.

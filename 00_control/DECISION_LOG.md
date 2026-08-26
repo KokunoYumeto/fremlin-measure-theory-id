@@ -839,3 +839,41 @@ boundary commit `d7d35539f7b11274a7ff202ce24ee8aef26c5550`, with receipt commit
 destinations anonymously returned the exact three assets. The decision is to
 continue immediately at `mt253.tex` / official page 237; the goal remains
 active at 338/672, with 334 pages untranslated. No upstream contact occurred.
+
+## 2026-08-26 — D044: Validate S253 and retain the complete-Chapter-25 release cadence
+
+Complete Section 253, `Tensor products` → `Produk tensor`, is accepted as a
+contiguous local candidate on official Volume II pages 237–247. The target is
+`source/id-ID/mt253.tex`, 55,680 bytes / 1,277 lines / SHA-256
+`138b9d5a38b548af21ddc723a68cf43e71005d44281e67536fa9a497c0840156`.
+The unit validator passes exact source identity, 40/40 stable IDs, 122/122
+protected references, 1,170 authority math atoms and 1,173 target atoms, with
+all eight deltas and three additions explicitly hash-ledgered. There are zero
+lost hints or active English residues.
+
+Independent semantic review found three reader-language defects and eight
+high-confidence authority defects. The derivative now uses the established
+`kisi Banach`, correctly attaches boundedness in the final note, and
+normalizes `bernilai real`. Corrections `O007-CORR-0170`–`0177` repair the
+tensor operation, three set/index symbols, the missing norm in a multilinear
+operator bound, the ill-typed Bochner-integral exercise, a self-referential
+dependency comment, and the missing positivity hypothesis in 253Yl.
+Authority bytes remain unchanged.
+
+The generic semantic renderer was repaired rather than altering source TeX:
+visible punctuation and spacing controls no longer leak, escaped ampersands
+and italic-correction controls render correctly, important exercise labels
+remain ordinary labels with an accessible marker, and terminal notes retain
+the exact machine source ID `253` behind DOM alias `253-notes`. The durable
+reader has 40 source units, 41 valid local links, 1,173 MathJax containers,
+and zero duplicate IDs, missing fragments, raw controls, or English residue.
+Desktop and mobile replay both pass without overflow or console/MathJax
+errors. Exact evidence is `qa/chapter25/mt253-semantic-html-qa.json`.
+
+Local contiguous translation coverage is now 349/672, while admitted/public
+coverage remains 338/672. The decision is not to spend another release
+transaction on an 11-page section. Continue at frozen `mt254.tex` (official
+pages 248–265), then through mt255–mt257, and consolidate the next backend,
+PDF/offline reader, package, GitHub, and Zenodo transaction at complete Chapter
+25: 389/672 official pages. No upstream contact occurred; the full goal
+remains active.

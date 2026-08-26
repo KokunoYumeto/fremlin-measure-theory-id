@@ -240,6 +240,14 @@ class Renderer:
                 i = j
                 continue
 
+            if command in {"Quer", "Bang"}:
+                # Fremlin's proof prose uses these as visible punctuation
+                # macros.  Preserve the mark without leaking the TeX control
+                # sequence into the semantic reader.
+                out.append("?" if command == "Quer" else "!")
+                i = j
+                continue
+
             if command == "imp":
                 # Locale-specific expansion from source/id-ID/id-overrides.tex.
                 out.append("pelestari ukuran melalui prapeta")
@@ -342,7 +350,8 @@ class Renderer:
                 out.append(
                     self.block_token(
                         "heading",
-                        source_id=source_id.strip() + "-notes",
+                        source_id=source_id.strip(),
+                        dom_id=source_id.strip() + "-notes",
                         title=f"Catatan penutup untuk Bagian {self.unit_number}",
                         level="2",
                         important="false",
@@ -358,7 +367,10 @@ class Renderer:
                     raise ValueError(f"invalid token-form header after {command} at {j}")
                 source_id = id_match.group(0)
                 label = source_id[-1]
-                title = f"({'>' if command == 'sqheader' else ''}{label})"
+                # The importance marker is already exposed through the
+                # adjacent accessible pill; keep the exercise label itself
+                # in its ordinary source-readable form.
+                title = f"({label})"
                 out.append(
                     self.block_token(
                         "heading",
@@ -519,9 +531,11 @@ class Renderer:
             chunk = chunk.replace("\\Prf", "Bukti.")
             chunk = chunk.replace("\\Qed", "∎").replace("\\QeD", "∎")
             chunk = chunk.replace("\\S", "§")
+            chunk = chunk.replace("\\/", "").replace("\\&", "&")
             chunk = re.sub(r"\\(?:noindent|medskip|vthsp)\b", " ", chunk)
             chunk = re.sub(r"\\(?:qquad|quad)\b", "  ", chunk)
-            chunk = chunk.replace("\\ ", " ").replace("~", " ")
+            chunk = re.sub(r"\\(?=\s|$)", " ", chunk)
+            chunk = chunk.replace("~", " ")
             chunk = chunk.replace("{", "").replace("}", "")
             escaped = html.escape(chunk, quote=False)
             # Add all local links in one substitution pass.  Sequential
@@ -568,6 +582,7 @@ class Renderer:
                     if section_open:
                         output.append("</section>")
                     source_id = values["source_id"]
+                    dom_id = values.get("dom_id", source_id)
                     implicit = self.implicit_ids.get(source_id)
                     alias = f'<span class="anchor" id="{implicit}"></span>' if implicit else ""
                     important = (
@@ -576,7 +591,7 @@ class Renderer:
                         else ""
                     )
                     output.append(
-                        f'<section class="source-unit" id="{source_id}" data-source-id="{source_id}">'
+                        f'<section class="source-unit" id="{dom_id}" data-source-id="{source_id}">'
                         f"{alias}<h{values['level']}><span class=\"source-label\">{source_id}</span> "
                         f"{values['title']} {important}</h{values['level']}>"
                     )
@@ -644,6 +659,7 @@ def discover_ids(text: str, implicit_ids: dict[str, str] | None = None) -> set[s
     ids = set(re.findall(r"\\(?:leader|header)\{([^{}]+)\}", text))
     ids.update(re.findall(r"\\vleader\{[^{}]*\}\{([^{}]+)\}", text))
     ids.update(re.findall(r"\\(?:spheader|sqheader)\s+([0-9A-Za-z]{5})", text))
+    ids.update(re.findall(r"\\Notesheader\{([^{}]+)\}", text))
     ids.update(implicit_ids.values())
     ids.update(implicit_ids.keys())
     return ids
@@ -946,6 +962,9 @@ def main() -> int:
 </body>
 </html>
 '''
+    # Deterministic reader artifacts should not retain source-line padding in
+    # prose-only HTML lines.  Formula source remains exact in data-source-tex.
+    document = "\n".join(line.rstrip() for line in document.splitlines()) + "\n"
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(document, encoding="utf-8", newline="\n")
     print(json.dumps(metadata, ensure_ascii=False, sort_keys=True))

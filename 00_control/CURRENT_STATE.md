@@ -2,6 +2,46 @@
 
 Updated: 2026-08-26 (Europe/Berlin)
 
+> **Superseding owner state (2026-08-26):** 338/672 official pages are
+> admitted, published, and anonymously verified through S252. Complete S253
+> is additionally translated and unit-validated, so the local contiguous
+> candidate is 349/672; the next source is `mt254.tex` at Volume II page 248.
+> The earlier checkpoint notices below are retained only as historical audit
+> evidence.
+
+## Live owner state through complete S253
+
+- Public/admitted coverage: complete Volume I plus Volume II pages 1–236,
+  **338/672 official pages**. GitHub tag `v0.17.0-v2-through-s252` and Zenodo
+  DOI `10.5281/zenodo.22105474` have exact anonymous byte-readback receipts.
+- Local translated candidate: complete Volume I plus Volume II pages 1–247,
+  **349/672 official pages**. Section 253 adds 11 pages; 323 official pages
+  remain untranslated.
+- S253 target: `source/id-ID/mt253.tex`, 55,680 bytes / 1,277 lines / SHA-256
+  `138b9d5a38b548af21ddc723a68cf43e71005d44281e67536fa9a497c0840156`.
+  The passing structural receipt is `qa/chapter25/mt253-unit-qa.json`, 6,634
+  bytes / SHA-256
+  `69d9d0dd3c509c9c0b451b2f10594c9d6e625fbde3a957f5fcae61904b98aeb4`.
+- Independent semantic and browser replay passes in
+  `qa/chapter25/mt253-semantic-html-qa.json`, 5,608 bytes / SHA-256
+  `fe082b30c23b3ef072b0af2b3c67eeb0c8e3befb6d3e45ed42923f50d42a42f5`.
+  All 40 stable IDs, 122 protected references, 21 exercises, and 1,173 target
+  formulas are present. Desktop 1280×720 and mobile 390×844 have zero
+  document overflow, MathJax errors, broken fragments, raw TeX residue, or
+  browser warnings/errors.
+- Authority remains immutable. Eight S253 corrections are ledgered as
+  `O007-CORR-0170`–`0177`; three added mathematical atoms are individually
+  hash-bound in the unit receipt. The terminology ledger now fixes `produk
+  tensor`, `operator bilinear`, `kisi Banach`, and `terintegralkan menurut
+  Bochner` for this section.
+- Next exact source: `authority/fremlin/source/mt2.2016/mt254.tex`, 94,917
+  bytes / 2,267 lines / SHA-256
+  `b75916c2e3e75947c5ff6318498a673a7f3134161a5556c6b055e40f05501f16`,
+  official pages 248–265. Continue through mt254–mt257; the next cumulative
+  admission/publication transaction is complete Chapter 25 at 389/672.
+- No upstream contact occurred. The complete 672-page owner goal remains
+  active.
+
 > **Superseding checkpoint (2026-08-26):** the current owner state is the
 > Chapter 24 section at the end of this file: 305/672 official pages admitted
 > and publicly verified, with the next cursor `mt25.tex` then `mt251.tex`.

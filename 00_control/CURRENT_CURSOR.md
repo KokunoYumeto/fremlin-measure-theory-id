@@ -1,5 +1,56 @@
 # Current Cursor
 
+## Superseding local production cursor — complete S253 (2026-08-26)
+
+The admitted and publicly verified boundary remains complete Volume I plus
+contiguous Volume II pages 1–236 through S252: **338/672 official pages**.
+Complete Section 253, `Tensor products` → `Produk tensor`, is now a validated
+local source-order candidate on Volume II pages 237–247. Local translated
+coverage is therefore **349/672 official pages**; 323 pages remain
+untranslated. This 11-page unit does not trigger another publication
+transaction. The next substantial boundary is complete Chapter 25 through
+Volume II page 287, yielding 389/672 official pages.
+
+Exact S253 evidence:
+
+- authority `authority/fremlin/source/mt2.2016/mt253.tex`: 51,379 bytes,
+  1,238 lines, SHA-256
+  `f5c06beaff7bf4160070d254551dfc104b9a2a57494d56cbf139297945abf1e9`;
+- target `source/id-ID/mt253.tex`: 55,680 bytes, 1,277 lines, SHA-256
+  `138b9d5a38b548af21ddc723a68cf43e71005d44281e67536fa9a497c0840156`;
+- unit receipt `qa/chapter25/mt253-unit-qa.json`: 6,634 bytes, SHA-256
+  `69d9d0dd3c509c9c0b451b2f10594c9d6e625fbde3a957f5fcae61904b98aeb4`,
+  pass with 40/40 stable IDs, 122/122 protected references, 1,170/1,173
+  source/target math atoms, three exact target insertions, and no English
+  residue;
+- semantic/browser receipt `qa/chapter25/mt253-semantic-html-qa.json`: 5,608
+  bytes, SHA-256
+  `fe082b30c23b3ef072b0af2b3c67eeb0c8e3befb6d3e45ed42923f50d42a42f5`;
+- durable semantic reader `qa/chapter25/mt253-semantic-reader/index.html`:
+  153,029 bytes, SHA-256
+  `425bfed49e43e8b21e5d2e428394374ab5f7a9b97bebcce8890d09d9cff7d35c`;
+- Chapter 25 freeze/cursor `qa/chapter25/mt25-source-freeze.json`: 7,374
+  bytes, SHA-256
+  `3a3c56d77e8b055a1fdc7857c3aacbc582f8d66151882f91b78af27bb1b96e1d`.
+
+Eight high-confidence authority corrections are explicit as
+`O007-CORR-0170`–`O007-CORR-0177`; immutable authority bytes were not edited.
+They repair wrong tensor/product symbols, two undefined or misindexed sets, a
+wrong factor-set symbol, a missing codomain norm, an ill-typed Bochner
+integral, dependency metadata, and a missing positivity hypothesis. The
+correction ledger is 89,193 bytes / SHA-256
+`7335dc3f6ab596c237a332fb87a230b1017e3644d6483355d4fdf395f9600a52`.
+
+The next executable source is complete
+`authority/fremlin/source/mt2.2016/mt254.tex`, `Infinite products`, official
+pages 248–265: 94,917 bytes / 2,267 lines / SHA-256
+`b75916c2e3e75947c5ff6318498a673a7f3134161a5556c6b055e40f05501f16`.
+Translate it completely, run bounded unit gates, then continue contiguously
+through `mt255.tex`–`mt257.tex`. Consolidate backend, cumulative PDF/offline
+reader, package, GitHub, Zenodo, and anonymous readback only at the complete
+Chapter 25 boundary. The 672-page goal remains active; no upstream contact
+occurred.
+
 ## Superseding public cursor — through S252 (2026-08-26)
 
 The admitted and publicly verified boundary is complete Volume I plus

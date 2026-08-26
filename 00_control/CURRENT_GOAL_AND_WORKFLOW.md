@@ -5,21 +5,24 @@ Task: `01a01f45-9d00-7f42-9071-4f932b45512a`
 Status: active until all 672 official pages are publicly verified
 
 > **Superseding checkpoint (2026-08-26):** the authoritative current state is
-> the Chapter 24 boundary recorded in the owner section at the end of this
-> file: 305/672 pages admitted and published; next cursor `mt25.tex` then
-> `mt251.tex` at official page 204. The older 239/672 text below is retained
-> as historical context only.
+> 338/672 official pages admitted, published, and anonymously verified through
+> S252, plus complete S253 locally translated and validated for a contiguous
+> 349/672 candidate. The exact next cursor is `mt254.tex` at Volume II page
+> 248. Continue through mt254–mt257 and perform the next cumulative backend,
+> reader, package, GitHub, and Zenodo transaction at complete Chapter 25,
+> 389/672. All earlier cursor numbers retained later in this file are
+> historical evidence only and must not redirect production.
 
 Complete and publish one coherent Bahasa Indonesia edition of D. H. Fremlin's
 *Measure Theory*, Volume 1 (*The Irreducible Minimum*) and Volume 2 (*Broad
 Foundations*) only: 672 official pages. Do not reopen selection, reduce the
 corpus to a course slice, include Volumes 3–5, or merge comparator books.
-Volume I and contiguous Volume II pages 1–137, including the front matter and
-complete Chapters 21–23, are admitted and public at 239/672 official pages.
-Volume I contributes 102 pages and Volume II contributes 137 pages. Preserve
-that boundary and continue at complete Chapter 24, beginning with `mt24.tex`
-and `mt241.tex` at official Volume II page 138. The goal remains active through
-all remaining Volume II units; 433 official pages remain.
+Volume I and contiguous Volume II pages 1–236 are admitted and public at
+338/672 official pages. Complete S253, Volume II pages 237–247, is a validated
+local candidate, making 349/672 translated. Preserve the public boundary and
+the candidate; continue at complete `mt254.tex`, then mt255–mt257. The goal
+remains active through all remaining Volume II units; 323 official pages
+remain untranslated.
 
 Authority is
 `authority/fremlin` within this corpus repository:
@@ -61,27 +64,20 @@ Do not retry Figshare absent a license/account change. No upstream contact
 during production. After both volumes, at most one concise deduplicated report
 may be sent, signed `Codex, on instructions of the user.`
 
-The current boundary is public as GitHub tag `v0.15.0-v2-through-ch23`,
-boundary commit `181bbb7ae28ac4e8850a005dfc428fe42f67a6b8`, and receipt
-commit `6dafc1575460f94f06db9b4c939058a7b97dbf7c`. Release:
-`https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.15.0-v2-through-ch23`.
-Its GitHub receipt is `qa/PUBLICATION_RECEIPT_V0150_V2_THROUGH_CH23.json`
-(4,187 bytes; SHA-256
-`190972813010bb6f82b83ffd01e5175f857af2f211de5ef35a469040191b7354`).
-The identical checkpoint is public in the existing Zenodo concept as record
-`22097858`, DOI `10.5281/zenodo.22097858`, with receipt
-`qa/ZENODO_PUBLICATION_RECEIPT_V0150_V2_THROUGH_CH23.json` (3,965 bytes;
-SHA-256
-`93339b5ac1fde486151c0455a7cb674069ba48cabd133814ad3b6ed8336eb741`).
-Both destinations anonymously returned the exact reader-first PDF, resumable
-ZIP, and checksum witness. The cumulative PDF has 258 A4 reflow pages; that
-physical count does not replace the 239-page official coverage identity.
+The current public boundary is GitHub tag `v0.17.0-v2-through-s252`, boundary
+commit `d7d35539f7b11274a7ff202ce24ee8aef26c5550`, receipt commit
+`8b05306b63ec563a9953ad3e6d1407795eb4c53f`, and Zenodo record `22105474`,
+DOI `10.5281/zenodo.22105474`, in the existing concept DOI. Both destinations
+anonymously returned the exact reader-first PDF, resumable ZIP, and checksum
+witness. The cumulative PDF has 363 A4 reflow pages; that physical count does
+not replace the 338-page official coverage identity.
 
-Current action: translate complete Chapter 24 contiguously from the frozen
-authority in source order, starting with `mt24.tex` and `mt241.tex`; run light
-unit checks as each section closes, then consolidate backend/readers/admission
-and publish only at the next substantial page boundary. Do not spend a full
-publication transaction on each small section.
+Current action: translate complete `mt254.tex` from frozen authority (94,917
+bytes / 2,267 lines / SHA-256
+`b75916c2e3e75947c5ff6318498a673a7f3134161a5556c6b055e40f05501f16`),
+then continue mt255–mt257. Run light unit checks as each section closes, then
+consolidate backend/readers/admission and publish at complete Chapter 25,
+389/672. Do not spend a full publication transaction on each small section.
 
 Recovery state lives in `00_control/CURRENT_GOAL_AND_WORKFLOW.md`,
 `CURRENT_CURSOR.md`, `CURRENT_STATE.md`, `DECISION_LOG.md`,

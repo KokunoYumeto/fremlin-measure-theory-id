@@ -1,0 +1,1277 @@
+\frfilename{mt253.tex}
+\versiondate{18.4.08}
+
+\def\chaptername{Ukuran produk}
+\def\sectionname{Produk tensor}
+
+\newsection{253}
+
+Teorema-teorema pada bagian terakhir menunjukkan bahwa fungsi terintegralkan pada
+produk dua ruang ukur dapat dikaji secara efektif melalui
+integrasi pada setiap ruang faktor secara terpisah. Dalam bagian ini saya menyajikan
+hubungan yang sangat mencolok antara ruang $L^1$ dari suatu ukuran
+produk dan ruang-ruang $L^1$ dari faktor-faktornya, yang bahkan menentukan
+$L^1$ produk hingga isomorfisme sebagai kisi Banach. Saya memulai dengan
+catatan singkat tentang operator bilinear (253A) dan uraian tentang operator
+bilinear kanonik dari $L^1(\mu)\times L^1(\nu)$ ke $L^1(\mu\times\nu)$
+(253B-253E). Teorema utama bagian ini adalah 253F, yang menunjukkan bahwa
+peta kanonik ini bersifat universal bagi operator bilinear kontinu dari
+$L^1(\mu)\times L^1(\nu)$ ke ruang Banach; peta itu juga menentukan
+urutan pada $L^1(\mu\times\nu)$ (253G). Saya mengakhiri bagian ini dengan uraian tentang
+suatu jenis mendasar operator ekspektasi bersyarat (253H) dan catatan
+tentang produk ukuran integral tak tentu (253I) serta integral atas
+untuk jenis-jenis fungsi khusus (253J, 253K).
+
+\leader{253A}{Operator bilinear}\cmmnt{ Sebelum menelaah bagian mana pun dari
+teori ukuran dalam bagian ini, saya memperkenalkan suatu konsep dari teori
+ruang linear.
+
+\medskip
+
+} {\bf (a)} Misalkan $U$, $V$, dan $W$ adalah ruang linear atas
+$\Bbb  R$\cmmnt{ (atau, sesungguhnya, atas sebarang lapangan)}. Suatu peta
+$\phi:U\times V\to W$ disebut {\bf bilinear} jika linear dalam setiap variabel
+secara terpisah, yaitu,
+
+\Centerline{$\phi(u_1+u_2,v)=\phi(u_1,v)+\phi(u_2,v)$,}
+
+\Centerline{$\phi(u,v_1+v_2)=\phi(u,v_1)+\phi(u,v_2)$,}
+
+\Centerline{$\phi(\alpha u,v)=\alpha\phi(u,v)=\phi(u,\alpha v)$}
+
+\noindent untuk setiap $u$, $u_1$, $u_2\in U$, $v$, $v_1$, $v_2\in V$, dan
+skalar $\alpha$. Perhatikan bahwa $\phi$ semacam itu menghasilkan, dan pada
+gilirannya dapat didefinisikan oleh, suatu operator linear
+$T:U\to\eurm L(V;W)$\cmmnt{, dengan menuliskan
+$\eurm L(V;W)$ untuk ruang operator linear dari $V$ ke $W$}, dengan
+
+\Centerline{$(Tu)(v)=\phi(u,v)$}
+
+\noindent untuk setiap $u\in U$, $v\in V$. \cmmnt{Oleh karena itu, atau dengan cara lain, kita
+dapat melihat, misalnya, bahwa} $\phi(0,v)=\phi(u,0)=0$ kapan pun $u\in U$ dan
+$v\in V$.
+
+Jika $W'$ adalah ruang linear lain\cmmnt{ atas lapangan yang sama,} dan
+$S:W\to W'$ suatu operator linear, maka $S\phi:U\times V\to W'$ bersifat
+bilinear.
+
+\spheader 253Ab Sekarang andaikan $U$, $V$, dan $W$ adalah
+ruang bernorma, dan $\phi:U\times V\to W$ suatu operator bilinear.
+\cmmnt{Maka kita
+mengatakan bahwa} $\phi$ {\bf terbatas} jika
+$\sup\{\|\phi(u,v)\|:\|u\|\le 1,\,\|v\|\le 1\}$ berhingga, dan dalam hal ini
+kita menyebut supremum tersebut sebagai
+norma $\|\phi\|$ dari $\phi$. \cmmnt{Perhatikan bahwa}
+$\|\phi(u,v)\|\le\|\phi\|\|u\|\|v\|$ untuk setiap $u\in U$, $v\in
+V$\prooflet{ (karena
+
+\Centerline{$\|\phi(u,v)\|=\alpha\beta\|\phi(\alpha^{-1}u,\beta^{-1}v)\|
+\le\alpha\beta\|\phi\|$}
+
+\noindent kapan pun $\alpha>\|u\|$, $\beta>\|v\|$)}.
+
+Jika $W'$ adalah ruang bernorma lain dan $S:W\to W'$ suatu operator linear
+terbatas, maka $S\phi:U\times V\to W'$ adalah operator bilinear terbatas,
+dan $\|S\phi\|\le\|S\|\|\phi\|$.
+
+\leader{253B}{Definisi}\cmmnt{ Operator bilinear terpenting dalam
+bagian ini didasarkan pada gagasan berikut.} Misalkan $f$ dan $g$ adalah
+fungsi bernilai real. Saya akan menuliskan $f\otimes g$ untuk fungsi
+$(x,y)\mapsto f(x)g(y):\dom f\times\dom g\to\Bbb R$.
+
+\leader{253C}{Proposisi}
+(a) Misalkan $X$ dan $Y$ adalah himpunan, dan $\Sigma$, $\Tau$ masing-masing
+aljabar-sigma dari subhimpunan $X$, $Y$. Jika $f$ adalah fungsi bernilai real
+yang terukur terhadap $\Sigma$ dan didefinisikan pada suatu subhimpunan $X$,
+serta $g$ adalah fungsi bernilai real yang terukur terhadap $\Tau$ dan
+didefinisikan pada suatu subhimpunan $Y$, maka $f\otimes g$\cmmnt{, sebagaimana
+didefinisikan dalam 253B,} terukur terhadap $\Sigma\tensorhat\Tau$.
+
+(b) Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ adalah ruang ukur, dan
+$\lambda$ ukuran produk c.l.d.\ pada $X\times Y$. Jika
+$f\in\eusm L^0(\mu)$ dan $g\in\eusm L^0(\nu)$, maka
+$f\otimes g\in\eusm L^0(\lambda)$.
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Ingat dari 241A bahwa $\eusm L^0(\mu)$ adalah
+ruang fungsi bernilai real yang terukur secara virtual terhadap $\mu$ dan
+didefinisikan pada subhimpunan koterabaikan terhadap $\mu$ dari $X$.}
+
+\proof{{\bf (a)} Intinya ialah bahwa $f\otimes\chi Y$ terukur terhadap
+$\Sigma\tensorhat\Tau$, sebab untuk setiap $\alpha\in\Bbb R$
+terdapat $E\in\Sigma$ sedemikian sehingga
+
+\Centerline{$\{x:f(x)\ge\alpha\}=E\cap\dom f$,}
+
+\noindent sehingga
+
+\Centerline{$\{(x,y):(f\otimes\chi Y)(x,y)\ge\alpha\}
+=(E\cap\dom f)\times Y=(E\times Y)\cap\dom(f\otimes\chi Y)$,}
+
+\noindent dan tentu saja $E\times Y\in\Sigma\tensorhat\Tau$. Dengan cara yang sama,
+$\chi X\otimes g$ terukur terhadap $\Sigma\tensorhat\Tau$ dan
+$f\otimes g=(f\otimes\chi Y)\times(\chi X\otimes g)$ terukur terhadap
+$\Sigma\tensorhat\Tau$.
+
+\medskip
+
+{\bf (b)} Ambil subhimpunan koterabaikan $E\in\Sigma$, $F\in\Tau$ dari $X$,
+$Y$ berturut-turut, sedemikian sehingga $E\subseteq\dom f$, $F\subseteq\dom g$,
+$f\restr E$ terukur terhadap $\Sigma$ dan $g\restr F$ terukur terhadap $\Tau$.
+Tuliskan $\Lambda$ untuk domain $\lambda$. Maka
+$\Sigma\tensorhat\Tau\subseteq\Lambda$ (251Ia). Selain itu, $E\times F$
+koterabaikan terhadap $\lambda$, karena
+
+$$\eqalign{\lambda((X\times Y)\setminus(E\times F))
+&\le\lambda((X\setminus E)\times Y)+\lambda(X\times(Y\setminus F))\cr
+&=\mu(X\setminus E)\cdot\nu Y+\mu X\cdot\nu(Y\setminus F)
+=0\cr}$$
+
+\noindent (juga dari 251Ia). Jadi $\dom(f\otimes g)\supseteq E\times F$
+koterabaikan. Selain itu, menurut (a),
+$(f\otimes g)\restr(E\times F)
+=(f\restr E)\otimes(g\restr F)$ terukur terhadap $\Sigma\tensorhat\Tau$,
+dan karenanya terukur terhadap $\Lambda$, serta $f\otimes g$ terukur secara
+virtual. Jadi $f\otimes g\in\eusm L^0(\lambda)$, sebagaimana dinyatakan.
+}%end of proof of 253C
+
+\leader{253D}{}\cmmnt{ Sekarang kita dapat menerapkan gagasan 253B-253C pada
+fungsi terintegralkan.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $(X,\Sigma,\mu)$ dan
+$(Y,\Tau,\nu)$ adalah ruang ukur, dan tuliskan $\lambda$ untuk ukuran
+produk c.l.d.\ pada $X\times Y$. Jika $f\in\eusm L^1(\mu)$ dan
+$g\in\eusm L^1(\nu)$, maka $f\otimes g\in\eusm L^1(\lambda)$ dan
+$\int f\otimes g\,d\lambda=\int f\,d\mu\int g\,d\nu$.
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Saya mengikuti \S242 dengan menuliskan $\eusm L^1(\mu)$ untuk
+ruang fungsi bernilai real yang terintegralkan terhadap $\mu$.
+}
+
+\proof{{\bf (a)} Tinjau terlebih dahulu
+kasus $f=\chi E$, $g=\chi F$ dengan $E\in\Sigma$, $F\in\Tau$ berukuran
+berhingga; maka $f\otimes g=\chi(E\times F)$ terintegralkan terhadap $\lambda$ dengan
+integral
+
+\Centerline{$\lambda(E\times F)=\mu E\cdot\nu F
+=\int f\,d\mu\cdot\int g\,d\nu$,}
+
+\noindent menurut 251Ia.
+
+\medskip
+
+{\bf (b)} Segera diperoleh bahwa $f\otimes g$ adalah fungsi sederhana-$\lambda$,
+dengan $\int f\otimes g\,d\lambda=\int f\,d\mu\int g\,d\nu$, kapan pun $f$
+merupakan fungsi sederhana-$\mu$ dan $g$ merupakan fungsi sederhana-$\nu$.
+
+\medskip
+
+{\bf (c)} Jika $f$ dan $g$ adalah fungsi terintegralkan nonnegatif, terdapat
+barisan tak-menurun $\sequencen{f_n}$, $\sequencen{g_n}$ yang terdiri atas fungsi
+sederhana nonnegatif
+dan masing-masing konvergen hampir di mana-mana ke $f$, $g$; sekarang
+perhatikan bahwa jika $E\subseteq X$, $F\subseteq Y$ koterabaikan, $E\times
+F$ koterabaikan dalam $X\times Y$, sebagaimana dicatat dalam pembuktian 253C, sehingga
+barisan tak-menurun $\sequencen{f_n\otimes g_n}$ yang terdiri atas fungsi
+sederhana-$\lambda$ konvergen hampir di mana-mana ke $f\otimes g$,
+dan
+
+\Centerline{$\int f\otimes g\,d\lambda
+=\lim_{n\to\infty}\int f_n\otimes g_nd\lambda
+=\lim_{n\to\infty}\int f_nd\mu\int g_nd\nu
+=\int f\,d\mu\int g\,d\nu$}
+
+\noindent menurut teorema B.Levi.
+
+\medskip
+
+{\bf (d)} Akhirnya, untuk $f$ dan $g$ umum, kita dapat menyatakannya sebagai
+selisih $f^+-f^-$, $g^+-g^-$ dari fungsi-fungsi terintegralkan nonnegatif,
+dan melihat bahwa
+
+\Centerline{$\int f\otimes g\,d\lambda
+=\int f^+\otimes g^+-f^+\otimes g^--f^-\otimes g^+
++f^-\otimes g^-d\lambda
+=\int f\,d\mu\int g\,d\nu.$}
+}%end of proof of 253D
+
+\leader{253E}{Peta kanonik $L^1\times L^1\to L^1$}\cmmnt{ Saya
+melanjutkan argumen dari 253D. Karena $E\times F$ koterabaikan
+dalam $X\times Y$ kapan pun $E$ dan $F$ merupakan
+subhimpunan koterabaikan dari $X$ dan $Y$,
+$f_1\otimes g_1=f\otimes g\,\,\lambda$-hampir di mana-mana kapan pun $f=f_1\,\,\mu$-hampir di mana-mana
+dan $g=g_1\,\,\nu$-hampir di mana-mana.} Kita dapat\cmmnt{ karena itu} mendefinisikan
+$u\otimes v\in L^1(\lambda)$, untuk $u\in L^1(\mu)$ dan $v\in L^1(\nu)$,
+dengan menetapkan bahwa
+$u\otimes v=(f\otimes g)^{\ssbullet}$ kapan pun $u=f^{\ssbullet}$ dan
+$v=g^{\ssbullet}$. \dvro{P}{
+
+Sekarang jika $f$, $f_1$, $f_2\in\eusm L^1(\mu)$, $g$, $g_1$,
+$g_2\in\eusm L^1(\nu)$, dan $a\in\Bbb R$,
+
+\Centerline{$(f_1+f_2)\otimes g=(f_1\otimes g)+(f_2\otimes g)$,}
+
+\Centerline{$f\otimes(g_1+g_2)=(f\otimes g_1)+(f\otimes g_2)$,}
+
+\Centerline{$(af)\otimes g=a(f\otimes g)=f\otimes(ag)$.}
+
+\noindent Segera diperoleh bahwa p}eta $(u,v)\mapsto u\otimes v$ bersifat
+bilinear.
+
+\cmmnt{Selain itu, jika $f\in\eusm L^1(\mu)$ dan $g\in\eusm L^1(\nu)$,
+$|f|\otimes|g|=|f\otimes g|$, sehingga
+$\int|f\otimes g|d\lambda=\int|f|d\mu\int|g|d\nu$. Karena itu}
+
+\Centerline{$\|u\otimes v\|_1=\|u\|_1\|v\|_1$}
+
+\noindent untuk setiap $u\in L^1(\mu)$, $v\in L^1(\nu)$. Secara khusus,
+operator bilinear $\otimes$ terbatas, dengan norma $1$ (kecuali dalam kasus sepele
+ketika salah satu dari $L^1(\mu)$, $L^1(\nu)$ berdimensi $0$).
+
+\leader{253F}{}\cmmnt{ Sekarang kita siap untuk teorema utama
+bagian ini.
+
+\medskip
+
+\noindent}{\bf Teorema}
+Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ adalah ruang ukur, dan misalkan
+$\lambda$ adalah ukuran produk c.l.d.\ pada $X\times Y$. Misalkan $W$ suatu
+ruang Banach dan $\phi:L^1(\mu)\times L^1(\nu)\to W$ suatu operator bilinear
+terbatas. Maka terdapat tepat satu operator linear terbatas
+$T:L^1(\lambda)\to W$ sedemikian sehingga $T(u\otimes v)=\phi(u,v)$ untuk setiap
+$u\in L^1(\mu)$ dan $v\in L^1(\nu)$, serta $\|T\|=\|\phi\|$.
+
+\proof{{\bf (a)} Inti argumen ini adalah fakta
+berikut: jika $E_0,\ldots,E_n$ adalah himpunan terukur berukuran berhingga dalam
+$X$, $F_0,\ldots,F_n$ adalah himpunan terukur berukuran berhingga dalam $Y$,
+$a_0,\ldots,a_n\in\Bbb R$, dan
+$\sum_{i=0}^na_i\chi(E_i\times F_i)=0\,\,\lambda$-hampir di mana-mana, maka
+$\sum_{i=0}^na_i\phi(\chi E_i^{\ssbullet},\chi F_i^{\ssbullet})=0$ dalam $W$.
+\Prf\ Kita
+dapat menemukan keluarga saling lepas $\langle G_j\rangle_{j\le m}$ yang terdiri atas himpunan
+terukur berukuran berhingga dalam $X$ sedemikian sehingga setiap $E_i$ dapat dinyatakan sebagai
+gabungan suatu subkeluarga dari $G_j$; sehingga $\chi E_i$ dapat
+dinyatakan dalam bentuk $\sum_{j=0}^mb_{ij}\chi G_j$ (lihat 122Ca).
+Dengan cara yang sama, kita
+dapat menemukan keluarga saling lepas $\langle H_k\rangle_{k\le l}$ yang terdiri atas himpunan
+terukur berukuran berhingga dalam $Y$ sedemikian sehingga setiap $\chi F_i$ dapat dinyatakan
+sebagai $\sum_{k=0}^lc_{ik}\chi H_k$. Sekarang
+
+\Centerline{$\sum_{j=0}^m\sum_{k=0}^l
+\bigl(\sum_{i=0}^na_ib_{ij}c_{ik}\bigr)
+\chi(G_j\times H_k)
+=\sum_{i=0}^na_i\chi(E_i\times F_i)=0\,\,\lambda\text{-a.e.}$}
+
+\noindent Karena $G_j\times H_k$ saling lepas, dan
+$\lambda(G_j\times H_k)=\mu G_j\cdot\nu H_k$ untuk setiap $j$, $k$,
+diperoleh bahwa untuk
+setiap $j\le m$, $k\le l$, berlaku salah satu dari $\mu G_j=0$, $\nu H_k=0$, atau
+$\sum_{i=0}^na_ib_{ij}c_{ik}=0$. Dalam ketiga kasus ini,
+$\sum_{i=0}^na_ib_{ij}c_{ik}\phi(\chi G_j^{\ssbullet},\chi
+H_k^{\ssbullet})=0$ dalam $W$. Tetapi ini berarti bahwa
+
+\Centerline{$0=\sum_{j=0}^m\sum_{k=0}^l
+\bigl(\sum_{i=0}^na_ib_{ij}c_{ik}\bigr)
+\phi(\chi G_j^{\ssbullet},\chi H_k^{\ssbullet})
+=\sum_{i=0}^na_i\phi(\chi E_i^{\ssbullet},\chi F_i^{\ssbullet}),$}
+
+\noindent sebagaimana dinyatakan.\ \Qed
+
+\medskip
+
+{\bf (b)} Dengan demikian, jika $E_0,\ldots,E_n$, $E'_0,\ldots,E'_m$ adalah
+himpunan terukur berukuran berhingga dalam $X$, $F_0,\ldots,F_n$,
+$F'_0,\ldots,F'_m$ adalah himpunan terukur berukuran berhingga dalam $Y$,
+$a_0,\ldots,a_n,a'_0,\ldots,a'_m\in\Bbb R$, dan
+$\sum_{i=0}^na_i\chi(E_i\times F_i)=\sum_{i=0}^ma'_i\chi(E'_i\times
+F'_i)\,\,\lambda$-hampir di mana-mana, maka
+
+\Centerline{$\sum_{i=0}^na_i\phi(\chi
+E_i^{\ssbullet},\chi F_i^{\ssbullet})=\sum_{i=0}^ma'_i\phi(\chi
+{E'_i}^{\ssbullet},\chi {F'_i}^{\ssbullet})$}
+
+\noindent dalam $W$. Misalkan $M$ adalah subruang
+linear dari $L^1(\lambda)$ yang direntang oleh
+
+\Centerline{$\{\chi(E\times F)^{\ssbullet}:E\in\Sigma,\,\mu E<\infty,\,
+  F\in\Tau,\,\nu F<\infty\};$}
+
+\noindent maka terdapat tepat satu peta $T_0:M\to W$ sedemikian sehingga
+
+\Centerline{$T_0(\sum_{i=0}^na_i\chi(E_i\times F_i)^{\ssbullet})
+=\sum_{i=0}^na_i\phi(\chi E_i^{\ssbullet},\chi F_i^{\ssbullet})$}
+
+\noindent kapan pun $E_0,\ldots,E_n$ adalah himpunan terukur berukuran
+berhingga dalam $X$, $F_0,\ldots,F_n$ adalah himpunan terukur berukuran berhingga
+dalam $Y$, dan $a_0,\ldots,a_n\in\Bbb R$. Tentu saja $T_0$ linear.
+
+\medskip
+
+{\bf (c)} Sebagian perhitungan yang sama menunjukkan bahwa
+$\|T_0u\|\le\|\phi\|\|u\|_1$ untuk setiap $u\in M$. \Prf\ Jika $u\in M$,
+maka, menurut argumen dalam (a), kita dapat menyatakan $u$ sebagai
+$\sum_{j=0}^m\sum_{k=0}^la_{jk}\chi(G_j\times
+H_k)^{\ssbullet}$, dengan $\langle G_j\rangle_{j\le m}$ dan $\langle
+H_k\rangle_{k\le l}$ merupakan keluarga saling lepas dari himpunan berukuran berhingga.
+Sekarang
+
+$$\eqalign{\|T_0u\|
+&=\|\sum_{j=0}^m\sum_{k=0}^la_{jk}\phi(\chi G_j^{\ssbullet},\chi
+  H_k^{\ssbullet})\|
+\le\sum_{j=0}^m\sum_{k=0}^l|a_{jk}|\|\phi(\chi G_j^{\ssbullet},\chi
+  H_k^{\ssbullet})\|\cr
+&\le\sum_{j=0}^m\sum_{k=0}^l|a_{jk}|\|\phi\|\|\chi
+  G_j^{\ssbullet}\|_1\|\chi H_k^{\ssbullet}\|_1
+=\|\phi\|\sum_{j=0}^m\sum_{k=0}^l|a_{jk}|\mu G_j\cdot\nu H_k\cr
+&=\|\phi\|\sum_{j=0}^m\sum_{k=0}^l|a_{jk}|\lambda(G_j\times H_k)
+=\|\phi\|\|u\|_1,\cr}$$
+
+\noindent sebagaimana dinyatakan.\ \Qed
+
+\medskip
+
+{\bf (d)} Poin berikutnya ialah mengamati bahwa $M$ padat dalam
+$L^1(\lambda)$ untuk $\|\,\|_1$. \Prf\ Dengan mengulangi gagasan di atas sekali
+lagi, kita mengamati bahwa jika $E_0,\ldots,E_n$ adalah himpunan berukuran berhingga dalam
+$X$ dan $F_0,\ldots,F_n$ adalah himpunan berukuran berhingga dalam $Y$, maka
+$\chi(\bigcup_{i\le n}E_i\times F_i)^{\ssbullet}\in M$; ini
+karena, dengan
+menyatakan setiap $E_i$ sebagai gabungan $G_j$, dengan $G_j$ saling lepas,
+kita mempunyai
+
+\Centerline{$\bigcup_{i\le n}E_i\times F_i=\bigcup_{j\le m}G_j\times
+F'_j,$}
+
+\noindent dengan $F'_j=\bigcup\{F_i:G_j\subseteq E_i\}$ untuk setiap $j$;
+sekarang $\langle G_j\times F'_j\rangle_{j\le m}$ saling lepas, sehingga
+
+\Centerline{$\chi(\bigcup_{j\le m}G_j\times F'_j)^{\ssbullet}
+=\sum_{j=0}^m\chi(G_j\times F'_j)^{\ssbullet}\in M.$}
+
+\noindent Jadi 251Ie memberi tahu kita bahwa kapan pun $\lambda H<\infty$ dan
+$\epsilon>0$, terdapat $G$ sedemikian sehingga $\lambda(H\symmdiff G)\le\epsilon$
+dan $\chi G^{\ssbullet}\in M$; sekarang
+
+\Centerline{$\|\chi H^{\ssbullet}-\chi
+G^{\ssbullet}\|_1=\lambda(G\symmdiff H)\le\epsilon$,}
+
+\noindent sehingga $\chi H^{\ssbullet}$
+dapat dihampiri secara sebarang dekat oleh anggota $M$, dan termasuk dalam
+penutup $\overline{M}$ dari $M$ dalam $L^1(\lambda)$. Karena $M$ adalah
+subruang linear dari $L^1(\lambda)$, demikian pula $\overline{M}$ (2A4Cb);
+oleh karena itu $\overline{M}$ memuat kelas ekuivalensi dari semua
+fungsi sederhana-$\lambda$; tetapi semua ini padat dalam $L^1(\lambda)$
+(242Mb), sehingga $\overline{M}=L^1(\lambda)$, sebagaimana dinyatakan.\ \Qed
+
+\medskip
+
+{\bf (e)} Karena $W$ adalah ruang Banach, diperoleh suatu
+operator linear terbatas $T:L^1(\lambda)\to W$ yang memperluas $T_0$, dengan
+$\|T\|=\|T_0\|\le\|\phi\|$ (2A4I). Sekarang $T(u\otimes v)=\phi(u,v)$ untuk
+setiap $u\in L^1(\mu)$, $v\in L^1(\nu)$. \Prf\ Jika $u=\chi E^{\ssbullet}$ dan
+$v=\chi F^{\ssbullet}$, dengan $E$, $F$ himpunan terukur berukuran
+berhingga, maka
+
+\Centerline{$T(u\otimes v)=T(\chi(E\times F)^{\ssbullet})
+=T_0(\chi(E\times F)^{\ssbullet})
+=\phi(\chi E^{\ssbullet},\chi F^{\ssbullet})=\phi(u,v).$}
+
+\noindent Karena $\phi$ dan $\otimes$ bilinear dan $T$ linear,
+
+\Centerline{$T(f^{\ssbullet}\otimes g^{\ssbullet})
+=\phi(f^{\ssbullet},g^{\ssbullet})$}
+
+\noindent kapan pun $f$ dan $g$ merupakan fungsi sederhana. Sekarang, kapan pun
+$u\in L^1(\mu)$, $v\in L^1(\nu)$, dan $\epsilon>0$, terdapat fungsi sederhana
+$f$, $g$ sedemikian sehingga $\|u-f^{\ssbullet}\|_1\le\epsilon$,
+$\|v-g^{\ssbullet}\|_1\le\epsilon$ (242Mb lagi); sehingga
+
+$$\eqalign{\|\phi(u,v)-\phi(f^{\ssbullet},g^{\ssbullet})\|
+&\le\|\phi(u-f^{\ssbullet},v-g^{\ssbullet})\|
++\|\phi(u,g^{\ssbullet}-v)\|
++\|\phi(f^{\ssbullet}-u,v)\|\cr
+&\le\|\phi\|(\epsilon^2+\epsilon\|u\|_1+\epsilon\|v\|_1).}$$
+
+\noindent Demikian pula,
+
+\Centerline{$\|u\otimes v-f^{\ssbullet}\otimes g^{\ssbullet}\|_1
+\le\epsilon(\epsilon+\|u\|_1+\|v\|_1),$}
+
+\noindent sehingga
+
+\Centerline{$\|T(u\otimes v)-T(f^{\ssbullet}\otimes g^{\ssbullet})\|
+\le\epsilon\|T\|(\epsilon+\|u\|_1+\|v\|_1);$}
+
+\noindent karena $T(f^{\ssbullet}\otimes g^{\ssbullet})
+=\phi(f^{\ssbullet},g^{\ssbullet})$,
+
+\Centerline{$\|T(u\otimes v)-\phi(u,v)\|
+\le\epsilon(\|T\|+\|\phi\|)(\epsilon+\|u\|_1
++\|v\|_1).$}
+
+\noindent Karena $\epsilon$ sembarang, $T(u\otimes v)=\phi(u,v)$, sebagaimana
+diperlukan.\ \Qed
+
+\medskip
+
+{\bf (f)} Argumen dalam (e) memastikan bahwa $\|T\|\le\|\phi\|$.
+Karena $\|u\otimes v\|_1\le\|u\|_1\|v\|_1$ untuk setiap $u\in L^1(\mu)$ dan
+$v\in L^1(\nu)$, $\|\phi(u,v)\|\le\|T\|\|u\|_1\|v\|_1$ untuk setiap $u$, $v$,
+dan $\|\phi\|\le\|T\|$; jadi $\|T\|=\|\phi\|$.
+
+\medskip
+
+{\bf (g)} Jadi $T$ mempunyai sifat-sifat yang diperlukan. Untuk melihat bahwa operator ini
+tunggal, kita hanya perlu mengamati bahwa setiap operator linear terbatas
+$S:L^1(\lambda)\to W$ sedemikian sehingga $S(u\otimes v)=\phi(u,v)$ untuk setiap $u\in
+L^1(\mu)$, $v\in L^1(\nu)$ harus sama dengan $T$ pada objek berbentuk
+$\chi(E\times F)^{\ssbullet}$ dengan $E$ dan $F$ berukuran berhingga,
+dan
+karena itu pada setiap anggota $M$; karena $M$ padat dan $S$ maupun
+$T$ kontinu, keduanya sama di seluruh $L^1(\lambda)$.
+}
+
+
+\leader{253G}{Struktur urutan pada \dvrocolon{$L^1$}}\cmmnt{ Dalam
+253F saya memperlakukan ruang-ruang $L^1$ semata-mata sebagai
+ruang linear bernorma. Namun, secara umum, struktur urutan suatu
+ruang $L^1$ (lihat 242C) sama pentingnya dengan normanya. Pemetaan
+$\otimes:L^1(\mu)\times L^1(\nu)\to L^1(\lambda)$ menghormati struktur
+urutan ketiga ruang tersebut dalam pengertian kuat berikut.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+ruang-ruang ukur, dan $\lambda$ ukuran produk c.l.d.\ pada $X\times
+Y$. Maka
+
+(a) $u\otimes v\ge 0$ dalam
+$L^1(\lambda)$ bilamana $u\ge 0$ dalam $L^1(\mu)$ dan $v\ge 0$ dalam
+$L^1(\nu)$.
+
+(b) Kerucut positif $\{w:w\ge 0\}$ dari
+$L^1(\lambda)$ tepat merupakan selubung
+konveks tertutup $C$ dari $\{u\otimes v:u\ge 0,\,v\ge 0\}$ dalam $L^1(\lambda)$.
+
+*(c) Misalkan $W$ sebarang kisi Banach, dan $T:L^1(\lambda)\to W$
+suatu operator linear terbatas. Maka
+pernyataan-pernyataan berikut berekuivalen:
+
+\quad(i) $Tw\ge 0$ dalam $W$ bilamana $w\ge 0$ dalam
+$L^1(\lambda)$;
+
+\quad(ii) $T(u\otimes v)\ge 0$ dalam $W$ bilamana $u\ge 0$ dalam
+$L^1(\mu)$ dan $v\ge 0$ dalam $L^1(\nu)$.
+
+\proof{{\bf (a)} Jika $u$, $v\ge 0$, maka keduanya dapat dinyatakan sebagai
+$f^{\ssbullet}$, $g^{\ssbullet}$, dengan $f\in\eusm L^1(\mu)$,
+$g\in\eusm L^1(\nu)$, $f\ge 0$ dan $g\ge 0$.
+Karena $f\otimes g\ge 0$, maka $u\otimes v=(f\otimes g)^{\ssbullet}\ge 0$.
+
+\medskip
+
+{\bf (b)(i)} Tuliskan $L^1(\lambda)^+$ untuk $\{w:w\in L^1(\lambda),\,w\ge
+0\}$. Maka $L^1(\lambda)^+$ merupakan himpunan konveks tertutup dalam $L^1(\lambda)$
+(242De); menurut (a), himpunan itu memuat $u\otimes v$ bilamana $u\in L^1(\mu)^+$ dan
+$v\in L^1(\nu)^+$, sehingga harus memuat $C$.
+
+\medskip
+
+\quad{\bf (ii)}($\alpha$)
+Tentu saja $0=0\otimes 0\in C$. ($\beta$) Jika $u\in M$, sebagaimana didefinisikan dalam
+pembuktian 253F, dan $u>0$, maka $u$ dapat dinyatakan sebagai $\sum_{j\le
+m,k\le l}a_{jk}\chi(G_j\times H_k)^{\ssbullet}$, dengan $G_0,\ldots,G_m$
+dan $H_0,\ldots,H_l$ merupakan barisan saling lepas dari himpunan-himpunan berukuran berhingga,
+seperti dalam bagian (a) dari pembuktian 253F. Sekarang $a_{jk}$ hanya dapat negatif jika
+$\chi(G_j\times H_k)^{\ssbullet}=0$, sehingga, dengan mengganti setiap $a_{jk}$ dengan
+$\max(0,a_{jk})$ jika perlu, kita dapat mengandaikan bahwa $a_{jk}\ge 0$ untuk
+semua $j$, $k$. Tidak semua $a_{jk}$ dapat bernilai nol, sehingga $a=\sum_{j\le
+m,k\le l}a_{jk}>0$, dan
+
+\Centerline{$u
+=\sum_{j\le m,k\le l}
+  \Bover{a_{jk}}a\cdot a\chi(G_j\times H_k)^{\ssbullet}
+=\sum_{j\le m,k\le l}\Bover{a_{jk}}a
+  \cdot(a\chi G_j^{\ssbullet})\otimes\chi H_k^{\ssbullet}
+\in C$.}
+
+\noindent ($\gamma$) Jika $w\in L^1(\lambda)^+$ dan $\epsilon>0$, nyatakan
+$w$ sebagai $h^{\ssbullet}$, dengan $h\ge 0$ dalam $\eusm L^1(\lambda)$. Ada
+suatu fungsi sederhana $h_1\ge 0$ sedemikian sehingga $h_1\leae h$ dan
+$\int h\le\int h_1+\epsilon$. Nyatakan $h_1$ sebagai
+$\sum_{i=0}^na_i\chi H_i$,
+dengan $\lambda H_i<\infty$ dan $a_i\ge 0$ untuk setiap $i$, dan untuk setiap
+$i\le n$ pilih himpunan-himpunan $G_{i0},\ldots,G_{im_i}\in\Sigma$,
+$F_{i0},\ldots,F_{im_i}\in\Tau$, semuanya berukuran berhingga, sedemikian sehingga
+$G_{i0},\ldots,G_{im_i}$ saling lepas dan
+$\lambda(H_i\symmdiff\bigcup_{j\le m_i}G_{ij}\times
+F_{ij})\le\epsilon/(n+1)(a_i+1)$, seperti dalam bagian (d) dari pembuktian 253F. Tetapkan
+
+\Centerline{$w_0
+=\sum_{i=0}^na_i\sum_{j=0}^{m_i}\chi(G_{ij}\times F_{ij})^{\ssbullet}$.}
+
+\noindent Maka $w_0\in C$ karena $w_0\in M$ dan $w_0\ge 0$. Selain itu,
+
+$$\eqalign{\|w-w_0\|_1
+&\le\|w-h_1^{\ssbullet}\|_1+\|h_1^{\ssbullet}-w_0\|_1\cr
+&\le\int(h-h_1)d\lambda
+  +\sum_{i=0}^na_i\int|\chi H_i-\sum_{j=0}^{m_i}\chi(G_{ij}\times
+  F_{ij})|d\lambda\cr
+&\le\epsilon+\sum_{i=0}^na_i\lambda(H_i\symmdiff\bigcup_{j\le
+m_i}G_{ij}\times F_{ij})
+\le 2\epsilon.\cr}$$
+
+\noindent Karena $\epsilon$ sebarang dan $C$ tertutup, $w\in C$. Karena
+$w$ sebarang, $L^1(\lambda)^+\subseteq C$ dan $C=L^1(\lambda)^+$.
+
+\medskip
+
+{\bf (c)} Bagian (a) menyatakan bahwa (i)$\Rightarrow$(ii). Untuk implikasi
+sebaliknya, kita memerlukan suatu bagian dari teori kisi Banach:
+$W^+=\{w:w\in W,\,w\ge 0\}$ merupakan himpunan tertutup dalam $W$.
+\Prf\ Jika $w$, $w'\in W$, maka
+
+\Centerline{$w=(w-w')+w'\le|w-w'|+w'\le|w-w'|+|w'|$,}
+
+\Centerline{$-w=(w'-w)-w'\le|w-w'|-w'\le|w-w'|+|w'|$,}
+
+\Centerline{$|w|\le|w-w'|+|w'|$,
+\quad$|w|-|w'|\le|w-w'|$,}
+
+\noindent karena $|w|=w\vee(-w)$ dan urutan pada $W$ bersifat
+invarian terhadap translasi (241Ec). Demikian pula, $|w'|-|w|\le|w-w'|$ dan
+$||w|-|w'||\le|w-w'|$, sehingga $\||w|-|w'|\|\le\|w-w'\|$, menurut definisi
+kisi Banach (242G). Dengan menetapkan $\phi(w)=|w|-w$, kita melihat bahwa
+$\|\phi(w)-\phi(w')\|\le 2\|w-w'\|$ untuk semua $w$, $w'\in W$, sehingga
+$\phi$ kontinu.
+
+Sekarang, karena urutan invarian terhadap perkalian dengan skalar
+positif,
+
+\Centerline{$w\ge 0\iff 2w\ge 0\iff w\ge-w\iff w=|w|\iff\phi(w)=0$,}
+
+\noindent sehingga $W^+=\{w:\phi(w)=0\}$ tertutup.\ \Qed
+
+Sekarang andaikan bahwa (ii) benar, dan tetapkan
+$C_1=\{w:w\in L^1(\lambda),\,Tw\ge 0\}$. Maka $C_1$ memuat
+$u\otimes v$ bilamana $u$, $v\ge 0$; tetapi himpunan itu juga
+konveks, karena $T$ linear, dan tertutup, karena $T$
+kontinu dan $C_1=T^{-1}[W^+]$. Menurut (b), $C_1$ memuat
+$\{w:w\in L^1(\lambda),\,w\ge 0\}$, sebagaimana dituntut oleh (i).
+}%end of proof of 253G
+
+\leader{253H}{\dvrocolon{Ekspektasi} bersyarat}\cmmnt{ Gagasan-gagasan
+dalam bagian ini dan bagian sebelumnya memberi kita beberapa
+contoh ekspektasi bersyarat yang terpenting.
+
+\medskip
+
+\noindent}{\bf Teorema} Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+ruang-ruang probabilitas lengkap, dengan produk c.l.d.
+$(X\times Y,\Lambda,\lambda)$. Tetapkan $\Lambda_1=\{E\times Y:E\in\Sigma\}$.
+Maka $\Lambda_1$ merupakan subaljabar-$\sigma$ dari $\Lambda$. Diberikan suatu
+fungsi yang dapat diintegralkan terhadap $\lambda$ dan bernilai real, yakni $f$, tetapkan
+
+\Centerline{$g(x,y)=\int f(x,z)\nu(dz)$}
+
+\noindent bilamana $x\in X$, $y\in Y$ dan integral itu terdefinisi dalam
+$\Bbb R$. Maka $g$ merupakan ekspektasi bersyarat dari $f$ pada $\Lambda_1$.
+
+\proof{ Kita tahu bahwa $\Lambda_1\subseteq\Lambda$, menurut 251Ia, dan
+$\Lambda_1$ merupakan aljabar-$\sigma$ himpunan karena $\Sigma$ demikian.
+Teorema Fubini (252B, 252C)
+menyatakan bahwa $f_1(x)=\int f(x,z)\nu(dz)$ terdefinisi untuk hampir setiap
+$x$, dan oleh karena itu $g=f_1\otimes\chi Y$ terdefinisi hampir di mana-mana
+dalam $X\times Y$. $f_1$ terukur secara virtual terhadap $\mu$; karena $\mu$
+lengkap, $f_1$ terukur terhadap $\Sigma$, sehingga $g$ terukur terhadap $\Lambda_1$
+(karena $\{(x,y):g(x,y)\le\alpha\}=\{x:f_1(x)\le\alpha\}\times Y$ untuk
+setiap $\alpha\in\Bbb R$). Akhirnya, jika $W\in\Lambda_1$, maka
+$W=E\times Y$ untuk suatu $E\in\Sigma$, sehingga
+
+$$\eqalignno{\int_Wg\,d\lambda
+&=\int (f_1\otimes\chi Y)\times(\chi E\otimes\chi Y)d\lambda
+=\int f_1\times\chi E\,d\mu\int\chi Y\,d\nu\cr
+\noalign{\noindent (menurut 253D)}
+&=\iint\chi E(x)f(x,y)\nu(dy)\mu(dx)
+=\int f\times\chi(E\times Y)d\lambda\cr
+\noalign{\noindent (menurut teorema Fubini)}
+&=\int_Wf\,d\lambda.\cr}$$
+
+\noindent Jadi $g$ merupakan ekspektasi bersyarat dari $f$.
+}%end of proof of 253H
+
+\leader{253I}{}\cmmnt{ Inilah saat yang tepat untuk mengemukakan suatu
+hasil berguna tentang produk ukuran integral tak tentu.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ adalah
+ruang-ruang ukur, serta $f\in\eusm L^0(\mu)$, $g\in\eusm L^0(\nu)$
+fungsi-fungsi nonnegatif. Misalkan $\mu'$, $\nuprime$ merupakan ukuran
+integral tak tentu yang bersesuaian\cmmnt{ (lihat \S234)}. Misalkan $\lambda$
+merupakan produk c.l.d.\ dari $\mu$ dan $\nu$, serta $\lambda'$ merupakan ukuran
+integral tak tentu yang didefinisikan dari $\lambda$ dan
+$f\otimes g\in\eusm L^0(\lambda)$\cmmnt{ (253Cb)}. Maka $\lambda'$ merupakan
+produk c.l.d.\ dari $\mu'$ dan $\nuprime$.
+
+\proof{ Tuliskan $\theta$ untuk produk c.l.d.\ dari $\mu'$ dan $\nuprime$.
+
+\medskip
+
+{\bf (a)} Jika kita mengganti $\mu$ dengan pelengkapannya, kita tidak mengubah $\mu'$
+(234Ke); pada saat yang sama, kita tidak mengubah $\lambda$, menurut 251T.
+Hal yang sama berlaku untuk $\nu$. Jadi cukup membuktikan hasil tersebut dengan
+asumsi bahwa $\mu$ dan $\nu$ lengkap; dalam hal ini $f$ dan
+$g$ terukur serta mempunyai domain-domain yang terukur.
+
+Tetapkan $F=\{x:x\in\dom f,\,f(x)>0\}$ dan $G=\{y:y\in\dom g,\,g(y)>0\}$, sehingga
+$F\times G=\{w:w\in\dom(f\otimes g),\,(f\otimes g)(w)>0\}$. Maka
+$F$ koterabaikan terhadap $\mu'$ dan $G$ koterabaikan terhadap $\nuprime$, sehingga
+$F\times G$ koterabaikan terhadap $\theta$ maupun
+$\lambda'$. Karena $\theta$ dan $\lambda'$ keduanya
+lengkap (251Ic, 234I), cukup ditunjukkan bahwa ukuran-ukuran subruang
+$\theta_{F\times G}$, $\lambda'_{F\times G}$ pada $F\times G$ adalah
+sama. Namun, perhatikan bahwa $\theta_{F\times G}$ dapat diidentifikasi dengan
+produk dari $\mu_F'$ dan $\nu_G'$, dengan $\mu_F'$ dan $\nu_G'$ merupakan
+ukuran-ukuran subruang masing-masing pada $F$, $G$ (251Q(ii-$\alpha$)). Pada
+saat yang sama, $\mu_F'$ merupakan ukuran integral tak tentu yang didefinisikan dari
+ukuran subruang $\mu_F$ pada $F$ dan fungsi $f\restr F$,
+$\nu_G'$ merupakan ukuran integral tak tentu yang didefinisikan dari ukuran subruang
+$\nu_G$ pada $G$ dan $g\restr G$, serta $\lambda'_{F\times G}$
+didefinisikan dari ukuran subruang $\lambda_{F\times G}$ dan
+$(f\restr F)\otimes(g\restr G)$. Akhirnya, sekali lagi menurut 251Q,
+$\lambda_{F\times G}$ merupakan produk dari $\mu_F$ dan $\nu_G$.
+
+Arti semua ini ialah bahwa cukup menangani kasus
+di mana $F=X$ dan $G=Y$, yaitu, $f$ dan $g$ terdefinisi di setiap titik dan
+positif ketat; inilah yang saya andaikan mulai sekarang.
+
+\medskip
+
+{\bf (b)} Dalam hal ini $\dom\mu'=\Sigma$ dan $\dom\nuprime=\Tau$ (234La).
+Demikian pula, $\dom\lambda'=\Lambda$ tidak lain adalah domain dari $\lambda$. Tetapkan
+
+\Centerline{$F_n=\{x:x\in X,\,2^{-n}\le f(x)\le 2^n\}$,
+\quad$G_n=\{y:y\in Y,\,2^{-n}\le g(y)\le 2^n\}$}
+
+\noindent untuk $n\in\Bbb N$.
+
+\medskip
+
+{\bf (c)} Tetapkan
+
+\Centerline{$\Cal A=\{W:W\in\dom\theta\cap\dom\lambda'$,
+$\theta(W)=\lambda'(W)\}$.}
+
+\noindent Jika $\mu'E$ dan $\nuprime H$ terdefinisi dan berhingga, maka
+$f\times\chi E$ dan $g\times\chi H$ dapat diintegralkan, sehingga
+
+$$\eqalign{\lambda'(E\times H)
+&=\int(f\otimes g)\times\chi(E\times H)d\lambda
+=\int(f\times\chi E)\otimes(g\times\chi H)d\lambda\cr
+&=\int f\times\chi E\,d\mu\cdot\int g\times\chi H\,d\nu
+=\theta(E\times H)\cr}$$
+
+\noindent menurut 253D dan 251Ia, yaitu, $E\times H\in\Cal A$. Jika sekarang kita
+meninjau
+$\Cal A_{EH}=\{W:W\subseteq X\times Y$, $W\cap(E\times H)\in\Cal A\}$,
+maka kita melihat bahwa
+
+\inset{$\Cal A_{EH}$ memuat $E'\times H'$ untuk setiap $E'\in\Sigma$,
+$H'\in\Tau$,}
+
+\inset{jika $\sequencen{W_n}$ suatu barisan tak menurun dalam
+$\Cal A_{EH}$, maka $\bigcup_{n\in\Bbb N}W_n\in\Cal A_{EH}$,}
+
+\inset{jika $W$, $W'\in\Cal A_{EH}$ dan $W\subseteq W'$, maka
+$W'\setminus W\in\Cal A_{EH}$.}
+
+\noindent Dengan demikian, $\Cal A_{EH}$ merupakan kelas Dynkin dari subhimpunan-subhimpunan
+$X\times Y$, dan menurut Teorema Kelas Monoton (136B), memuat
+aljabar-$\sigma$ yang dibangkitkan oleh
+$\{E'\times H':E'\in\Sigma,\,H'\in\Tau\}$, yaitu
+$\Sigma\tensorhat\Tau$.
+
+\medskip
+
+{\bf (d)} Sekarang andaikan bahwa $W\in\Lambda$. Dalam hal ini
+$W\in\dom\theta$ dan $\theta W\le\lambda'W$. \Prf\ Ambil $n\in\Bbb N$,
+serta $E\in\Sigma$, $H\in\Tau$ sedemikian sehingga $\mu'E$ dan $\nuprime H$
+keduanya berhingga. Tetapkan $E'=E\cap F_n$, $H'=H\cap G_n$ dan $W'=W\cap(E'\times
+H')$. Maka $W'\in\Lambda$, sedangkan $\mu E'\le 2^n\mu'E$ dan $\nu H'\le
+2^n\nuprime H$ berhingga. Menurut 251Ib, terdapat $V\in\Sigma\tensorhat\Tau$
+sedemikian sehingga $V\subseteq W'$ dan $\lambda V=\lambda W'$. Demikian pula, terdapat
+$V'\in\Sigma\tensorhat\Tau$ sedemikian sehingga $V'\subseteq(E'\times
+H')\setminus W'$ dan $\lambda V'=\lambda((E'\times H')\setminus W')$.
+Ini berarti bahwa $\lambda((E'\times H')\setminus(V\cup V'))=0$, sehingga
+$\lambda'((E'\times H')\setminus(V\cup V'))=0$. Namun,
+$(E'\times H')\setminus(V\cup V')\in\Cal A$, menurut (c), sehingga $\theta((E'\times H')\setminus(V\cup V'))=0$ dan $W'\in\dom\theta$, sedangkan
+
+\Centerline{$\theta W'=\theta V=\lambda'V
+\le\lambda'W$.}
+
+Karena $E$ dan $H$ sebarang, $W\cap(F_n\times G_n)\in\dom\theta$
+(251H) dan $\theta(W\cap(F_n\times G_n))\le\lambda'W$. Karena
+$\sequencen{F_n}$, $\sequencen{G_n}$ merupakan barisan-barisan tak menurun dengan
+gabungan masing-masing $X$, $Y$,
+
+\Centerline{$\theta W=\sup_{n\in\Bbb N}\theta(W\cap(F_n\times G_n))
+\le\lambda'W$. \Qed}
+
+\medskip
+
+{\bf (e)} Dengan cara yang sama, $\lambda'W$ terdefinisi dan tidak lebih besar
+daripada $\theta W$ untuk setiap $W\in\dom\theta$. \Prf\ Argumen-argumennya sangat
+mirip, tetapi tampaknya diperlukan suatu penyempurnaan pada tahap terakhir.
+Ambil $n\in\Bbb N$, serta $E\in\Sigma$, $H\in\Tau$ sedemikian sehingga $\mu E$
+dan $\nu H$ keduanya berhingga. Tetapkan $E'=E\cap F_n$, $H'=H\cap G_n$ dan
+$W'=W\cap(E'\times H')$. Maka $W'\in\dom\theta$, sedangkan $\mu'E'\le
+2^n\mu E$ dan $\nuprime H'\le 2^n\nu H$ berhingga. Kali ini, terdapat
+$V$, $V'\in\Sigma\tensorhat\Tau$ sedemikian sehingga $V\subseteq W'$,
+$V'\subseteq(E'\times H')\setminus W'$, $\theta V=\theta W'$ dan
+$\theta V'=\theta((E'\times H')\setminus W')$. Dengan demikian,
+
+\Centerline{$\lambda'V+\lambda'V'=\theta V+\theta V'
+=\theta(E'\times H')=\lambda'(E'\times H')$,}
+
+\noindent sehingga $\lambda'W'$ terdefinisi dan sama dengan $\theta W'$.
+
+Ini berarti bahwa $W\cap(F_n\times G_n)\cap(E\times H)\in\Cal A$
+bilamana $\mu E$ dan $\nu H$ berhingga. Jadi
+$W\cap(F_n\times G_n)\in\Lambda$, menurut 251H;
+karena $n$ sebarang, $W\in\Lambda$ dan $\lambda'W$ terdefinisi.
+
+\Quer\ Andaikan, jika mungkin, bahwa $\lambda'W>\theta W$. Maka terdapat
+suatu $n\in\Bbb N$ sedemikian sehingga $\lambda'(W\cap(F_n\times G_n))>\theta W$.
+Karena $\lambda$ semihingga, 213B menyatakan bahwa terdapat suatu
+fungsi sederhana-$\lambda$ $h$ sedemikian sehingga
+$h\le(f\otimes g)\times\chi(W\cap(F_n\times G_n))$ dan
+$\int h\,d\lambda>\theta W$; dengan menetapkan $V=\{(x,y):h(x,y)>0\}$, kita melihat bahwa $V\subseteq W\cap(F_n\times G_n)$,
+$\lambda V$ terdefinisi dan berhingga, serta $\lambda'V>\theta W$. Sekarang pasti
+terdapat himpunan-himpunan $E\in\Sigma$, $H\in\Tau$ sedemikian sehingga $\mu E$ dan $\nu H$
+keduanya berhingga dan
+$\lambda(V\setminus(E\times H))<4^{-n}(\lambda'V-\theta W)$. Namun, dalam hal ini $V\in\Lambda\subseteq\dom\theta$ (menurut (d)), sehingga kita dapat menerapkan argumen tepat di atas pada $V$ dan menyimpulkan bahwa
+$V\cap(E\times H)=V\cap(F_n\times G_n)\cap(E\times H)$ termasuk dalam
+$\Cal A$. Sekarang,
+
+$$\eqalign{\lambda'V
+&=\lambda'(V\cap(E\times H))+\lambda'(V\setminus(E\times H))\cr
+&\le\theta(V\cap(E\times H))+4^n\lambda(V\setminus(E\times H))
+<\theta V+\lambda'V-\theta W
+\le\lambda'V,\cr}$$
+
+\noindent suatu kemustahilan.\ \Bang
+
+Jadi $\lambda'W$ terdefinisi dan tidak lebih besar daripada $\theta W$.\
+\Qed
+
+\medskip
+
+{\bf (f)} Dengan menggabungkan ini dengan (d), kita melihat bahwa $\lambda'=\theta$,
+sebagaimana diklaim.
+}%end of proof of 253I
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Jika $\mu'$ dan $\nuprime$ berhingga total, sehingga
+keduanya ‘benar-benar kontinu’ terhadap $\mu$ dan $\nu$ dalam pengertian
+232Ab, maka $f$ dan $g$ dapat diintegralkan, sehingga $f\otimes g$ dapat
+diintegralkan terhadap $\lambda$, dan $\theta=\lambda'$ benar-benar kontinu terhadap
+$\lambda$.
+
+Pembuktian di atas dapat disederhanakan dengan menggunakan bagian-bagian dari teori umum
+ruang lengkap yang ditentukan secara lokal, yang akan diberikan dalam \S412 %412J
+pada Jilid 4.}%end of comment
+
+
+\leader{*253J}{Integral \dvrocolon{atas}}\cmmnt{ Gagasan 253D
+dapat diulangi dalam istilah integral atas, sebagai berikut.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+ruang-ruang ukur $\sigma$-hingga, dengan ukuran produk c.l.d.\ $\lambda$.
+Maka untuk sebarang fungsi $f$ dan $g$, yang masing-masing didefinisikan
+pada subhimpunan koterabaikan dari $X$ dan $Y$, dan bernilai dalam
+$[0,\infty]$,
+
+\Centerline{$\overlineint f\otimes g\,d\lambda
+=\overlineint fd\mu\cdot\overlineint g\,d\nu$.}
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Di sini $(f\otimes g)(x,y)=f(x)g(y)$ untuk semua
+$x\in\dom f$ dan $y\in\dom g$, dengan menetapkan $0\cdot\infty=0$,
+seperti dalam \S135.
+}%end of comment
+
+\proof{{\bf (a)} Mula-mula saya tunjukkan bahwa
+$\overline{\int}f\otimes g\le\overline{\int}f\overline{\int}g$.   \Prf\
+Jika $\overline{\int}f=0$, maka $f=0$ hampir di mana-mana, sehingga
+$f\otimes g=0$ hampir di mana-mana.\ Dengan demikian, hasilnya langsung diperoleh.
+Argumen yang sama berlaku jika $\overline{\int}g=0$. Jika
+$\overline{\int}f$ dan $\overline{\int}g$ keduanya tidak nol, dan salah
+satunya tak hingga, hasilnya trivial. Jadi, andaikan keduanya
+berhingga. Dalam hal ini terdapat $f_0$, $g_0$ terintegralkan sedemikian
+sehingga $f\leae f_0$, $g\leae g_0$,
+$\overline{\int}f=\int f_0$ dan $\overline{\int}g=\int g_0$ (133Ja/135Ha).
+Jadi $f\otimes g\leae f_0\otimes g_0$, dan
+
+\Centerline{$
+\overlineint f\otimes g\le\int f_0\otimes g_0
+=\int f_0\int g_0=\overlineint f\overlineint g$,}
+
+\noindent menurut 253D.\ \Qed
+
+\medskip
+
+{\bf (b)} Untuk ketaksamaan sebaliknya, kita hanya perlu meninjau kasus
+ketika $\overline{\int}f\otimes g$ berhingga, sehingga terdapat suatu
+fungsi yang terintegralkan terhadap $\lambda$, yaitu $h$, sedemikian sehingga
+$f\otimes g\leae h$ dan
+$\overline{\int}f\otimes g=\int h$. Tetapkan
+
+\Centerline{$f_0(x)=\int h(x,y)\nu(dy)$}
+
+\noindent kapan pun nilai ini terdefinisi dalam $\Bbb R$, yaitu hampir
+di mana-mana, menurut teorema Fubini (252B-252C). Maka
+$f_0(x)\ge f(x)\overline{\int}g\,d\nu$ untuk setiap
+$x\in\dom f_0\cap\dom f$, yang merupakan himpunan koterabaikan dalam $X$; jadi
+
+\Centerline{$
+\overlineint f\otimes g=\int h\,d\lambda
+=\int f_0d\mu\ge\overlineint f\overlineint g$,}
+
+\noindent sebagaimana diperlukan.
+}%end of proof of 253J
+
+\leader{*253K}{}\cmmnt{ Argumen serupa berlaku untuk integral atas
+dari jumlah, sebagai berikut.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+ruang-ruang probabilitas, dengan ukuran produk c.l.d.\ $\lambda$. Maka
+untuk sebarang fungsi bernilai real $f$, $g$ yang masing-masing didefinisikan
+pada subhimpunan koterabaikan dari $X$, $Y$,
+
+\Centerline{$
+\overlineint f(x)+g(y)\,\lambda(d(x,y))
+=\overlineint f(x)\mu(dx)+\overlineint g(y)\nu(dy)$,}
+
+\noindent setidaknya ketika ruas kanan terdefinisi dalam
+$[-\infty,\infty]$.
+
+\proof{Tetapkan $h(x,y)=f(x)+g(y)$ untuk $x\in\dom f$ dan
+$y\in\dom g$, sehingga $\dom h$ koterabaikan terhadap $\lambda$.
+
+\medskip
+
+{\bf (a)} Seperti dalam 253J, saya mulai dengan menunjukkan bahwa
+$\overline{\int}h\le\overline{\int}f+\overline{\int}g$.   \Prf\ Jika
+salah satu dari $\overline{\int}f$ atau $\overline{\int}g$ adalah
+$\infty$, pernyataan ini trivial. Jika tidak, ambillah fungsi-fungsi
+terintegralkan $f_0$, $g_0$ sedemikian sehingga
+$f\leae f_0$ dan $g\leae g_0$. Tetapkan
+$h_0=(f_0\otimes\chi Y)+(\chi X\otimes g_0)$; maka
+$h\le h_0\,\,\lambda$-hampir di mana-mana, sehingga
+
+\Centerline{$
+\overlineint h\,d\lambda\le\int h_0d\lambda
+=\int f_0d\mu+\int g_0d\nu$.}
+
+\noindent Karena $f_0$, $g_0$ sebarang,
+$\overline{\int}h\le\overline{\int}f+\overline{\int}g$.\ \Qed
+
+\medskip
+
+{\bf (b)} Untuk ketaksamaan sebaliknya, andaikan bahwa $h\le h_0$ untuk
+$\lambda$-hampir setiap $(x,y)$, dengan $h_0$ terintegralkan terhadap
+$\lambda$. Tetapkan $f_0(x)=\int h_0(x,y)\nu(dy)$ kapan pun nilai ini
+terdefinisi dalam $\Bbb R$. Maka
+$f_0(x)\ge f(x)+\overline{\int}g\,d\nu$ kapan pun $x\in\dom
+f\cap\dom f_0$, sehingga
+
+\Centerline{$\int h_0\,d\lambda
+=\int f_0d\mu\ge\overlineint fd\mu+\overlineint g\,d\nu$.}
+
+\noindent Karena $h_0$ sebarang,
+$\overline{\int}h\ge\overline{\int}f+\overline{\int}g$, sebagaimana diperlukan.
+}%end of proof of 253K
+
+\leader{253L}{Ruang kompleks} Seperti biasa, gagasan-gagasan\cmmnt{ dari 253F
+dan 253H} berlaku pada dasarnya tanpa perubahan untuk ruang $L^1$
+kompleks. Dengan menuliskan $L^1_{\Bbb C}(\mu)$, dan seterusnya, untuk
+ruang-ruang $L^1$ kompleks yang bersangkutan, kita memperoleh
+hasil-hasil\cmmnt{ berikut}.
+Di seluruh bagian ini, misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+ruang-ruang ukur, dan $\lambda$ ukuran produk c.l.d.\ pada
+$X\times Y$.
+
+\spheader 253La Jika $f\in\eusm L^0_{\Bbb C}(\mu)$ dan
+$g\in\eusm L^0_{\Bbb C}(\nu)$ maka $f\otimes g$, yang didefinisikan oleh rumus
+$(f\otimes g)(x,y)=f(x)g(y)$ untuk $x\in\dom f$ dan $y\in\dom g$, termasuk
+dalam $\eusm L^0_{\Bbb C}(\lambda)$.
+
+\spheader 253Lb Jika $f\in\eusm L^1_{\Bbb C}(\mu)$ dan
+$g\in\eusm L^1_{\Bbb C}(\nu)$ maka
+$f\otimes g\in\eusm L^1_{\Bbb C}(\lambda)$ dan
+$\int f\otimes g\,d\lambda=\int fd\mu\int g\,d\nu$.
+
+\spheader 253Lc Kita mempunyai operator bilinear $(u,v)\mapsto u\otimes v:
+L^1_{\Bbb C}(\mu)\times L^1_{\Bbb C}(\nu)\to L^1_{\Bbb C}(\lambda)$
+yang didefinisikan dengan menuliskan $f^{\ssbullet}\otimes g^{\ssbullet}=(f\otimes
+g)^{\ssbullet}$ untuk semua
+$f\in\eusm L^1_{\Bbb C}(\mu)$, $g\in \eusm
+L^1_{\Bbb C}(\nu)$.
+
+\spheader 253Ld Jika $W$ sebarang ruang Banach kompleks dan
+$\phi:L^1_{\Bbb C}(\mu)\times L^1_{\Bbb C}(\nu)\to W$ sebarang operator
+bilinear terbatas, maka terdapat suatu operator linear terbatas yang unik
+$T:L^1_{\Bbb C}(\lambda)\to W$ sedemikian sehingga
+$T(u\otimes v)=\phi(u,v)$ untuk setiap $u\in L^1_{\Bbb C}(\mu)$ dan
+$v\in L^1_{\Bbb C}(\nu)$, dan $\|T\|=\|\phi\|$.
+
+\spheader 253Le Jika $\mu$ dan $\nu$ merupakan ukuran-ukuran probabilitas
+lengkap, dan $\Lambda_1=\{E\times Y:E\in\Sigma\}$, maka untuk sebarang
+$f\in\eusm
+L^1_{\Bbb C}(\lambda)$ kita mempunyai ekspektasi bersyarat
+$g$ dari $f$ pada $\Lambda_1$ yang diberikan dengan menetapkan
+$g(x,y)=\int f(x,z)\nu(dz)$ kapan pun nilai ini terdefinisi.
+
+\exercises{
+\leader{253X}{Latihan dasar $\pmb{>}$(a)}
+%\spheader 253Xa
+Misalkan $U$, $V$ dan $W$ ruang-ruang linear. Tunjukkan bahwa himpunan
+operator bilinear dari $U\times V$ ke $W$ mempunyai struktur linear alami
+yang bersesuaian dengan struktur pada $\eurm L(U;\eurm L(V;W))$ dan
+$\eurm L(V;\eurm
+L(U;W))$, dengan menuliskan $\eurm L(U;W)$
+untuk ruang linear semua operator linear dari $U$ ke $W$.
+
+\sqheader 253Xb Misalkan $U$, $V$ dan $W$ ruang-ruang bernorma. (i)
+Tunjukkan bahwa untuk suatu operator bilinear $\phi:U\times V\to W$
+pernyataan-pernyataan berikut ekuivalen:
+($\alpha$) $\phi$ terbatas dalam arti 253Ab; ($\beta$) $\phi$
+kontinu; ($\gamma$) $\phi$ kontinu di suatu titik pada $U\times
+V$. (ii) Tunjukkan bahwa ruang operator bilinear terbatas dari $U\times V$
+ke $W$ merupakan subruang linear dari ruang semua operator bilinear dari
+$U\times V$ ke $W$, dan bahwa fungsional $\|\,\|$ yang didefinisikan
+dalam 253Ab merupakan suatu norma, yang bersesuaian dengan norma-norma
+$\eurm B(U;\eurm B(V;W))$ dan $\eurm
+B(V;\eurm B(U;W))$, dengan menuliskan $\eurm B(U;W)$ untuk ruang bernorma
+semua operator linear terbatas dari $U$ ke $W$.
+
+\spheader 253Xc Misalkan
+$(X_1,\Sigma_1,\mu_1),\ldots,(X_n,\Sigma_n,\mu_n)$
+ruang-ruang ukur, dan $\lambda$ ukuran produk c.l.d.\ pada
+$X_1\times\ldots\times X_n$, sebagaimana dideskripsikan dalam 251W.
+Misalkan $W$ ruang Banach, dan andaikan bahwa
+$\phi:L^1(\mu_1)\times\ldots\times L^1(\mu_n)\to W$ bersifat
+{\bf multilinear} (yaitu linear dalam setiap variabel
+secara terpisah) dan {\bf terbatas} (yaitu,
+$\|\phi\|=\sup\{\|\phi(u_1,\ldots,u_n)\|:
+\|u_i\|_1\le 1\Forall i\le n\}<\infty$). Tunjukkan bahwa terdapat suatu
+operator linear terbatas yang unik
+$T:L^1(\lambda)\to W$ sedemikian sehingga $T\otimes=\phi$, dengan
+$\otimes:L^1(\mu_1)\times\ldots\times L^1(\mu_n)\to L^1(\lambda)$
+merupakan suatu operator multilinear kanonik (yang harus didefinisikan).
+
+\spheader 253Xd Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ ruang-ruang
+ukur, dan $\lambda$ ukuran produk c.l.d.\ pada $X\times Y$. Tunjukkan
+bahwa jika $A\subseteq L^1(\mu)$ dan $B\subseteq L^1(\nu)$ keduanya
+terintegralkan secara seragam, maka $\{u\otimes v:u\in A,\,v\in B\}$
+terintegralkan secara seragam dalam $L^1(\lambda)$.
+
+\sqheader 253Xe Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ ruang-ruang
+ukur dan $\lambda$ ukuran produk c.l.d.\ pada $X\times Y$.
+Tunjukkan bahwa
+
+\quad (i) kita mempunyai operator bilinear
+$(u,v)\mapsto u\otimes v:L^0(\mu)\times L^0(\nu)\to L^0(\lambda)$
+yang diberikan dengan menetapkan
+$f^{\ssbullet}\otimes g^{\ssbullet}=(f\otimes g)^{\ssbullet}$ untuk semua
+$f\in\eusm L^0(\mu)$ dan $g\in \eusm L^0(\nu)$;
+
+\quad (ii) jika $1\le p\le\infty$ maka $u\otimes v\in L^p(\lambda)$ dan
+$\|u\otimes v\|_p=\|u\|_p\|v\|_p$ untuk semua $u\in L^p(\mu)$ dan
+$v\in L^p(\nu)$;
+
+\quad (iii) jika $u$, $u'\in L^2(\mu)$ dan $v$, $v'\in L^2(\nu)$ maka
+hasil kali dalam $\innerprod{u\otimes v}{u'\otimes v'}$, yang diambil
+dalam $L^2(\lambda)$, sama dengan
+$\innerprod{u}{u'}\innerprod{v}{v'}$;
+
+\quad (iv) pemetaan
+$(u,v)\mapsto u\otimes v:L^0(\mu)\times L^0(\nu)\to L^0(\lambda)$
+kontinu jika $L^0(\mu)$, $L^0(\nu)$ dan $L^0(\lambda)$
+semuanya dilengkapi dengan topologi konvergensi dalam ukuran masing-masing.
+
+\spheader 253Xf Dalam 253Xe, andaikan bahwa $\mu$ dan $\nu$ semihingga.
+Tunjukkan bahwa jika $u_0,\ldots,u_n$ merupakan anggota-anggota yang bebas
+linear dari $L^0(\mu)$ dan $v_0,\ldots,v_n\in L^0(\nu)$ tidak semuanya
+$0$, maka $\sum_{i=0}^nu_i\otimes v_i\ne 0$ dalam $L^0(\lambda)$.
+({\it Petunjuk\/}: mulailah dengan mencari himpunan-himpunan
+$E\in\Sigma$, $F\in\Tau$ berukuran berhingga sedemikian sehingga
+$u_0\times\chi E^{\ssbullet},\ldots,u_n\times\chi E^{\ssbullet}$
+bebas linear dan
+$v_0\times\chi F^{\ssbullet},\ldots,v_n\times\chi F^{\ssbullet}$
+tidak semuanya $0$.)
+
+\spheader 253Xg Dalam 253Xe, andaikan bahwa $\mu$ dan $\nu$ semihingga.
+Jika $U$, $V$ masing-masing merupakan subruang linear dari $L^0(\mu)$
+dan $L^0(\nu)$, tuliskan $U\otimes V$ untuk subruang linear dari
+$L^0(\lambda)$ yang dibangkitkan oleh
+$\{u\otimes v:u\in U,\,v\in V\}$. Tunjukkan bahwa jika $W$ sebarang ruang
+linear dan $\phi:U\times V\to W$ suatu operator bilinear, terdapat suatu
+operator linear unik $T:U\otimes V\to W$
+sedemikian sehingga $T(u\otimes v)=\phi(u,v)$ untuk semua $u\in U$,
+$v\in V$. ({\it Petunjuk\/}: mulailah dengan menunjukkan bahwa jika
+$u_0,\ldots,u_n\in U$ dan $v_0,\ldots,v_n\in V$ sedemikian sehingga
+$\sum_{i=0}^nu_i\otimes v_i=0$, maka
+$\sum_{i=0}^n\phi(u_i,v_i)=0$ -- lakukan ini dengan menyatakan $u_i$
+sebagai kombinasi linear dari suatu keluarga bebas linear, lalu terapkan
+253Xf.)
+
+\sqheader 253Xh Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ ruang-ruang
+probabilitas lengkap, dengan ukuran produk c.l.d.\ $\lambda$. Andaikan
+bahwa $p\in[1,\infty]$ dan bahwa $f\in\eusm L^p(\lambda)$. Tetapkan
+$g(x)=\int f(x,y)\nu(dy)$ kapan pun nilai ini terdefinisi. Tunjukkan bahwa
+$g\in\eusm L^p(\mu)$ dan bahwa $\|g\|_p\le\|f\|_p$.
+({\it Petunjuk\/}: 253H, 244M.)
+
+\spheader 253Xi Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ ruang-ruang
+ukur, dengan ukuran produk c.l.d.\ $\lambda$, dan
+$p\in\coint{1,\infty}$. Tunjukkan bahwa
+$\{w:w\in L^p(\lambda),\,w\ge 0\}$ merupakan selubung konveks tertutup
+dalam $L^p(\lambda)$ dari
+$\{u\otimes v:u\in L^p(\mu),\,v\in L^p(\nu),\,u\ge 0,\,v\ge 0\}$
+(lihat 253Xe(ii) di atas).
+
+\leader{253Y}{Latihan lebih lanjut (a)}
+%\spheader 253Ya
+Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ ruang-ruang ukur, dan
+$\lambda_0$ ukuran produk primitif pada $X\times Y$. Tunjukkan bahwa jika
+$f\in\eusm L^0(\mu)$ dan $g\in\eusm L^0(\nu)$, maka
+$f\otimes g\in\eusm L^0(\lambda_0)$.
+%253C
+
+\spheader 253Yb Misalkan $(X,\Sigma,\mu)$ dan
+$(Y,\Tau,\nu)$ ruang-ruang ukur, dan $\lambda_0$ ukuran produk
+primitif pada $X\times Y$. Tunjukkan bahwa jika $f\in\eusm L^1(\mu)$ dan
+$g\in\eusm L^1(\nu)$, maka $f\otimes g\in\eusm L^1(\lambda_0)$ dan
+$\int f\otimes g\,d\lambda_0=\int f\,d\mu\int g\,d\nu$.
+%253Ya, 253C
+
+\spheader 253Yc Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+ruang-ruang ukur, dan $\lambda_0$, $\lambda$ masing-masing ukuran produk
+primitif dan c.l.d.\
+pada $X\times Y$. Tunjukkan bahwa pembenaman
+$\eusm L^1(\lambda_0)\embedsinto\eusm L^1(\lambda)$
+menginduksi isomorfisme kisi Banach antara $L^1(\lambda_0)$ dan
+$L^1(\lambda)$.
+%253D
+
+\spheader 253Yd Misalkan $(X,\Sigma,\mu)$, $(Y,\Tau,\nu)$ ruang-ruang
+ukur yang dapat dilokalkan secara ketat, dengan ukuran produk c.l.d.\ $\lambda$.
+Tunjukkan bahwa $L^{\infty}(\lambda)$ dapat diidentifikasi
+dengan $L^1(\lambda)^*$. Tunjukkan bahwa di bawah identifikasi ini
+$\{w:w\in L^{\infty}(\lambda),\,w\ge 0\}$ merupakan selubung konveks yang
+tertutup dalam topologi lemah* dari
+$\{u\otimes v:u\in L^{\infty}(\mu),\,v\in L^{\infty}(\nu),
+\,u\ge 0,\,v\ge 0\}$.
+%253G, 253Xe
+
+\spheader 253Ye Carilah suatu versi 253J yang berlaku ketika salah satu
+dari $\mu$, $\nu$ tidak $\sigma$-hingga.
+%253J
+
+\spheader 253Yf Misalkan $(X,\Sigma,\mu)$ sebarang ruang ukur dan $V$
+sebarang ruang Banach. Tuliskan $\eusm L^1_V=\eusm L^1_V(\mu)$ untuk
+himpunan fungsi-fungsi $f$
+sedemikian sehingga ($\alpha$) $\dom f$ merupakan subhimpunan koterabaikan
+dari $X$ ($\beta$) $f$ bernilai dalam $V$ ($\gamma$) terdapat suatu
+himpunan koterabaikan
+$D\subseteq\dom
+f$ sedemikian sehingga $f[D]$ separabel dan $D\cap f^{-1}[G]\in\Sigma$
+untuk setiap himpunan terbuka $G\subseteq V$ ($\delta$) integral
+$\int\|f(x)\|\mu(dx)$ berhingga. (Ini adalah fungsi-fungsi {\bf yang
+terintegralkan menurut Bochner} dari $X$ ke
+$V$.) Untuk $f$, $g\in\eusm L^1_V$ tuliskan $f\sim g$ jika
+$f=g\,\,\mu$-hampir di mana-mana; misalkan $L^1_V$ himpunan kelas-kelas
+ekuivalensi dalam $\eusm L^1_V$ terhadap $\sim$. Tunjukkan bahwa
+
+\quad (i) $f+g$, $cf\in\eusm L^1_V$ untuk semua $f$,
+$g\in\eusm L^1_V$, $c\in\Bbb R$;
+
+\quad (ii) $L^1_V$ mempunyai struktur ruang linear alami, yang didefinisikan
+dengan menuliskan $f^{\ssbullet}+g^{\ssbullet}=(f+g)^{\ssbullet}$,
+$cf^{\ssbullet}=(cf)^{\ssbullet}$ untuk $f$, $g\in\eusm L^1_V$ dan
+$c\in\Bbb R$;
+
+\quad (iii) $L^1_V$ mempunyai norma $\|\,\|$, yang didefinisikan dengan
+menuliskan $\|f^{\ssbullet}\|=\int\|f(x)\|\mu(dx)$ untuk
+$f\in\eusm L^1_V$;
+
+\quad (iv) $L^1_V$ merupakan ruang Banach dengan norma ini;
+
+\quad (v) terdapat suatu pemetaan alami
+$\otimes:\eusm L^1\times V\to\eusm L^1_V$ yang didefinisikan dengan
+menuliskan $(f\otimes v)(x)=f(x)v$ ketika
+$f\in\eusm L^1=\eusm L^1_{\Bbb R}(\mu)$,
+$v\in V$ dan $x\in\dom f$;
+
+\quad (vi) terdapat suatu operator bilinear kanonik
+$\otimes:L^1\times V\to L^1_V$ yang didefinisikan dengan menuliskan
+$f^{\ssbullet}\otimes v=(f\otimes v)^{\ssbullet}$ untuk
+$f\in\eusm L^1$ dan
+$v\in V$;
+
+\quad (vii) kapan pun $W$ suatu ruang Banach dan
+$\phi:L^1\times V\to W$ suatu operator bilinear terbatas,
+terdapat suatu operator linear terbatas yang unik
+$T:L^1_V\to W$ sedemikian sehingga $T(u\otimes v)=\phi(u,v)$
+untuk semua $u\in L^1$ dan $v\in V$, dan $\|T\|=\|\phi\|$.
+%new 2008
+(Ketika $W=V$ dan
+$\phi(u,v)=(\int u)v$ untuk $u\in L^1$ dan $v\in V$, $Tf^{\ssbullet}$
+disebut {\bf integral Bochner} dari $f$.)
+
+%253+
+
+\spheader 253Yg Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+ruang-ruang ukur, dan
+$\lambda_0$ ukuran produk primitif pada $X\times Y$. Jika $f$ suatu
+fungsi yang terintegralkan terhadap $\lambda_0$, tuliskan
+$f_x(y)=f(x,y)$ kapan pun nilai ini terdefinisi. Tunjukkan bahwa kita
+mempunyai suatu pemetaan $x\mapsto f_x^{\ssbullet}$ dari suatu subhimpunan
+koterabaikan
+$D_0$ dari $X$ ke $L^1(\nu)$. Tunjukkan bahwa pemetaan ini merupakan
+fungsi yang terintegralkan menurut Bochner, sebagaimana didefinisikan dalam 253Yf,
+%new 2008
+dan bahwa integral Bochner-nya adalah $g^{\ssbullet}$, dengan
+$g(y)=\int f(x,y)\mu(dx)$ kapan pun nilai ini terdefinisi; khususnya,
+$\int g\,d\nu=\int f\,d\lambda_0$.
+%253Yf, 253+
+
+\spheader 253Yh Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+ruang-ruang ukur, dan
+andaikan bahwa $\phi$ suatu fungsi dari $X$ ke suatu subhimpunan separabel
+dari $L^1(\nu)$ yang terukur dalam arti bahwa
+$\phi^{-1}[G]\in\Sigma$ untuk setiap himpunan terbuka
+$G\subseteq L^1(\nu)$. Tunjukkan bahwa
+terdapat suatu fungsi terukur terhadap $\Lambda$, $f$, dari $X\times Y$
+ke $\Bbb
+R$, dengan $\Lambda$ domain ukuran produk c.l.d.\ pada
+$X\times Y$, sedemikian sehingga $\phi(x)=f_x^{\ssbullet}$ untuk setiap
+$x\in X$, dengan menuliskan $f_x(y)=f(x,y)$ untuk $x\in X$, $y\in Y$.
+%253+
+
+\spheader 253Yi Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ ruang-ruang
+ukur, dan $\lambda$ ukuran produk c.l.d.\ pada $X\times Y$. Tunjukkan
+bahwa 253Yg memberikan identifikasi kanonik antara $L^1(\lambda)$
+dan $L^1_{L^1(\nu)}(\mu)$.
+%253Yg, 253Yh, 253+
+
+\spheader 253Yj Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ ruang-ruang
+ukur lengkap yang ditentukan secara lokal, dengan ukuran produk c.l.d.\ $\lambda$.
+(i) Andaikan bahwa $K\in\eusm L^2(\lambda)$,
+$f\in\eusm L^2(\mu)$. Tunjukkan bahwa
+$h(y)=\int K(x,y)f(x)dx$ terdefinisi untuk hampir setiap
+$y\in Y$ dan bahwa $h\in\eusm L^2(\nu)$. ({\it Petunjuk\/}: untuk
+melihat bahwa $h$ terdefinisi hampir di mana-mana, pertimbangkan
+$\int_{E\times F}K(x,y)f(x)d(x,y)$
+untuk $\mu E$, $\nu F<\infty$; untuk melihat bahwa
+$h\in\eusm L^2$, pertimbangkan
+$\int h\times g$ dengan $g\in\eusm L^2(\nu)$.) (ii) Tunjukkan bahwa
+pemetaan $f\mapsto h$ bersesuaian dengan suatu operator linear terbatas
+$T_K:L^2(\mu)\to L^2(\nu)$. (iii) Tunjukkan bahwa pemetaan $K\mapsto T_K$
+bersesuaian dengan suatu operator linear terbatas, bernorma paling besar
+$1$, dari $L^2(\lambda)$ ke $\eurm B(L^2(\mu);L^2(\nu))$.
+%253+
+
+\spheader 253Yk Andaikan bahwa $p$, $q\in[1,\infty]$ dan bahwa
+$\bover1p+\bover1q=1$, dengan menafsirkan $\bover1{\infty}$ sebagai $0$
+seperti biasa. Misalkan $(X,\Sigma,\mu)$, $(Y,\Tau,\nu)$ ruang-ruang ukur
+lengkap yang ditentukan secara lokal dengan ukuran produk c.l.d.\ $\lambda$.
+Tunjukkan bahwa gagasan-gagasan 253Yj dapat digunakan untuk mendefinisikan
+suatu operator linear terbatas, bernorma paling besar $1$, dari
+$L^p(\lambda)$ ke $\eurm B(L^q(\mu);L^p(\nu))$.
+%253Yj, 253+
+
+\spheader 253Yl Dalam 253Xc, andaikan bahwa $W$ suatu kisi Banach.
+Tunjukkan bahwa pernyataan-pernyataan berikut ekuivalen: (i) $Tu\ge 0$
+kapan pun $u\in L^1(\lambda)$ dan $u\ge0$; (ii)
+$\phi(u_1,\ldots,u_n)\ge 0$ kapan pun
+$u_i\ge 0$ dalam $L^1(\mu_i)$ untuk setiap $i\le n$.
+%253G, 253Xc
+}%end of exercises
+
+\endnotes{
+\Notesheader{253} Di seluruh argumen utama bagian ini, saya telah
+menuliskan hasil-hasilnya dalam istilah ukuran produk c.l.d.\ tersebut; tentu saja
+isomorfisme yang dicatat dalam 253Yc berarti bahwa hasil-hasil itu dapat
+pula dinyatakan dalam istilah ukuran produk primitif. Gagasan
+keterintegralan yang lebih terbatas terhadap ukuran produk primitif
+memang merupakan gagasan yang tepat bagi gagasan-gagasan 253Yg.
+
+Teorema 253F adalah suatu 'teorema pemetaan universal';
+teorema itu menyatakan bahwa setiap operator bilinear terbatas pada
+$L^1(\mu)\times
+L^1(\nu)$ terfaktorkan melalui
+$\otimes:L^1(\mu)\times L^1(\nu)\to
+L^1(\lambda)$, setidaknya jika ruang hasilnya suatu ruang Banach.
+Mudah dilihat bahwa sifat ini menentukan pasangan
+$(L^1(\lambda),\otimes)$ hingga isomorfisme ruang Banach, dalam arti
+berikut: jika $V$ suatu ruang Banach, dan
+$\psi:L^1(\mu)\times L^1(\nu)\to V$ suatu operator bilinear terbatas
+sedemikian sehingga untuk setiap operator bilinear terbatas $\phi$ dari
+$L^1(\mu)\times L^1(\nu)$ ke sebarang ruang Banach $W$ terdapat suatu
+operator linear terbatas yang unik $T:V\to W$ sedemikian sehingga
+$T\psi = \phi$ dan $\|T\|=\|\phi\|$, maka terdapat suatu isomorfisme
+isometrik ruang Banach $S:L^1(\lambda)\to V$ sedemikian sehingga
+$S\otimes=\psi$. Tentu saja terdapat suatu
+teori umum operator bilinear antara ruang-ruang Banach; dalam bahasa
+teori ini, $L^1(\lambda)$ adalah, atau isomorfik dengan,
+'produk tensor projektif' dari $L^1(\mu)$ dan $L^1(\nu)$. Untuk
+pengantar mengenai
+subjek ini, lihat {\smc Defant \& Floret 93}, \S I.3, atau
+{\smc Semadeni 71}, \S20.
+Barangkali perlu saya tekankan, demi mereka yang
+belum pernah menjumpai produk tensor, bahwa teorema ini
+khusus bagi ruang-ruang $L^1$. Meskipun beberapa gagasan yang sama dapat
+diterapkan pada ruang-ruang fungsi lain (lihat 253Xe-253Xg), tidak ada kelas
+lain tempat 253F berlaku.
+
+Terdapat pula teori produk tensor kisi Banach, tetapi saya rasa kita
+belum benar-benar siap untuk itu (teori ini memerlukan gagasan-gagasan
+umum tentang ruang linear terurut yang hendak saya tunda sampai Bab 35
+dalam jilid berikutnya). Namun demikian,
+253G menunjukkan bahwa pengurutan, dan karena itu struktur kisi Banach,
+dari
+$L^1(\lambda)$ ditentukan oleh pengurutan $L^1(\mu)$ dan
+$L^1(\nu)$ serta pemetaan
+$\otimes:L^1(\mu)\times L^1(\nu)\to L^1(\lambda)$.
+
+Operator-operator ekspektasi bersyarat yang dideskripsikan dalam 253H
+sangat penting, terutama karena dalam konteks khusus ini kita mempunyai
+realisasi operator ekspektasi bersyarat sebagai suatu fungsi $P_0$
+dari $\eusm L^1(\lambda)$ ke $\eusm L^1(\lambda\restr\Lambda_1)$, bukan
+sekadar sebagai suatu fungsi dari
+$L^1(\lambda)$ ke $L^1(\lambda\restr\Lambda_1)$, seperti dalam 242J.
+Sebagaimana dideskripsikan di sini, $P_0(f+f')$ tidak harus sama,
+dalam arti ketat, dengan $P_0f+P_0f'$; domainnya dapat lebih besar.
+Namun, dalam penerapan,
+kita mungkin bersedia membatasi perhatian pada ruang linear
+$\eusm U$ dari fungsi-fungsi terbatas yang terukur terhadap
+$\Sigma\tensorhat\Tau$ dan didefinisikan di mana-mana pada $X\times Y$,
+sehingga $P_0$ menjadi operator dari $\eusm U$ ke dirinya sendiri
+(lihat 252P).
+}%end of notes
+
+\discrpage
