@@ -265,13 +265,39 @@ license. Exact evidence is `qa/FIGSHARE_PUBLICATION_BLOCKER_S123.json`.
   The public inventory, metadata, and all three assets passed anonymous exact
   byte/SHA-256 readback. Next version starts at Volume II `mt25.tex` / `mt251.tex`.
 
+## Published version 0.17.0-v2-through-s252
+
+- Record: `22105474`
+- DOI: `10.5281/zenodo.22105474`
+- Public URL: <https://zenodo.org/records/22105474>
+- Version: `0.17.0-v2-through-s252`
+- Status: public, admitted cumulative checkpoint through complete Volume II
+  Section 252; 338/672 official pages, with Volume II pages 1–236 included.
+  Chapter 25 remains explicitly partial and the next cursor is Section 253.
+- Lineage: exactly one new version from record `22103648`; concept DOI remains
+  `10.5281/zenodo.22059798`; no standalone or competing concept was created.
+- License metadata: Zenodo `dsl` (Design Science License); MathJax 3.2.2 is a
+  separately scoped Apache-2.0 component.
+
+Exact public assets:
+
+| Asset | Bytes | SHA-256 |
+|---|---:|---|
+| `00_READ_FIRST_FONDASI_TEORI_UKURAN_V1_DAN_V2_HINGGA_BAGIAN_252.pdf` | 2,500,114 | `6ba03a3dd30f4172cd3f2a4949ac5ef37ac27931f7b302b961ae888c17b875f4` |
+| `fondasi-teori-ukuran-v1-dan-v2-hingga-s252-id-v0.17.0.zip` | 23,816,802 | `6648f0d797d2f70926bd6863ff1c61aeb6042b98e2a31d4227a4cd1aeb471943` |
+| `SHA256SUMS-v0.17.0-v2-through-s252.txt` | 257 | `fd8034128edfe802888f546197051521c918b5efe4cc567e95d359cb637bb7c5` |
+
+Sanitized evidence:
+`qa/ZENODO_PUBLICATION_RECEIPT_V0170_V2_THROUGH_S252.json`, 4,397 bytes,
+SHA-256
+`a5aef5c72f52c6a9e3c9aaf3890ec3eb0b46135e7d3518bd5e0f1d77b48033f2`.
+The public inventory, metadata, and all three assets passed anonymous exact
+byte/SHA-256 readback.
+
 ## Next version
 
 At the next substantial admitted Volume II boundary, create exactly one new
-version from record `22103648` (the same concept DOI). Upload only the
-reader-first PDF, one compact resumable source/backend package, and checksum
-witness; publish and then anonymously read every public asset back. Preserve
-the concept DOI, metadata license `dsl`, component-license distinction, exact
-cumulative coverage, and explicit partial-corpus status. Do not create a fresh
-concept, overwrite a predecessor, or spend a publication transaction on each
-small section.
+version from record `22105474` in the same concept. Continue source order from
+`mt253.tex`, preserve explicit partial-corpus status until 672/672, and do not
+create a duplicate concept or spend a publication transaction on each small
+section.

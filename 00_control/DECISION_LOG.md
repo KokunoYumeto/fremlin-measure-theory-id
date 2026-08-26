@@ -752,7 +752,7 @@ The next frozen authority members are `mt25.tex` (4,281 bytes, 80 lines,
 SHA-256 `c6acf50a3ae74c0dce17ad4e779224651e472bccca231179aa13a221de8cad3e`,
 Chapter 25 introduction, no exercises or hints) and `mt251.tex` (74,191 bytes,
 1,919 lines, SHA-256
-`8b40209abfa0f65a66741ea8eddffa7f5a3132b89633f0d0d96d84a811de2135e`, 23
+`8b40209abfa0f65a66741ea8eddfa7f5a3132b89633f0d0d96d84a811de2135e`, 23
 active exercises, no hints). The complete natural Indonesian `mt25.tex`
 target is 4,234 bytes, SHA-256
 `e51e511ed741437fc6f3f80e410c6cb73600bc99cecbbf512d738e211567866a`; its
@@ -760,3 +760,82 @@ bounded unit receipt `qa/chapter25/mt25-unit-qa.json` passes exact command and
 36/36 math topology checks. A semantic HTML unit render also passes. This
 small introduction is not separately admitted or published; translation now
 continues with `mt251.tex` at official page 204.
+
+## 2026-08-26 — D041: Validate complete Section 251 and advance to Section 252
+
+Complete Section 251, `Finite products` → `Produk berhingga`, is now a
+source-order local candidate on official Volume II pages 204–211. The target
+`source/id-ID/mt251.tex` is 78,131 bytes / 1,919 lines / SHA-256
+`2ef9995b60900bb0801256450e758c3f69c89ac84b930e2a2a8a4f93e3011cb5`.
+The structural receipt `qa/chapter25/mt251-unit-qa.json` (8,319 bytes;
+SHA-256 `cbe8aae96c1917648ee40f5ba2d5e10fb6d100fef0add419bf25575e634de38a`)
+passes all 64 stable IDs and 192 protected references, exact symbolic-command
+replay, four established lexical sigma localizations, ten exact hash-ledgered
+math differences, zero hint loss, and zero active English residue.
+
+Independent semantic replay found five high-confidence authority defects.
+Immutable source bytes remain unchanged; the derivative corrections are
+recorded individually as `O007-CORR-0154`–`0158`: the second projection in
+251M, the second-factor set in 251H, the interval-cover index in 251N, the
+proof-part reference in 251N, and the second-factor measure in 251O. Four
+additional reader-language attachment/scope defects were repaired without
+changing mathematical topology. A second semantic pass then accepted every
+stable block through the exercises and notes.
+
+The generic semantic renderer was corrected so non-S111 units no longer
+inherit S111 implicit anchors and so `\imp`, `\leaveitout`, `\query`, Greek
+subheads, and `\smc` follow their intended reader semantics. The resulting
+Section 251 HTML has 63 exact block IDs, 78 valid fragment links, zero broken
+fragments, and no raw instance of those controls in visible prose. This
+8-page unit is deliberately not a new admission/publication transaction.
+Local candidate coverage is 313/672; public coverage remains 305/672. The next
+frozen source is complete `mt252.tex` (75,782 bytes / 1,896 lines / SHA-256
+`b4bd9d2920d34292a75d569ee9b6601b93980d7baf628dc144054877935a324c`),
+starting at official page 212. No upstream contact occurred.
+
+## 2026-08-26 — D042: Validate complete Section 252 and open the 338-page consolidation
+
+Complete Section 252, `Fubini's theorem` → `Teorema Fubini`, is accepted as a
+source-order local candidate on official Volume II pages 212–236. Together
+with the Chapter 25 introduction and Section 251, this raises translated
+candidate coverage from 305 to 338 of 672 official pages. The target
+`source/id-ID/mt252.tex` is 82,128 bytes / 1,936 lines / SHA-256
+`56c9b7983b6c965daf0df370b058745e44d29646bf07ad2f46532efedc481d56`;
+its unit receipt passes at 10,696 bytes / SHA-256
+`9792282eab64642f0cf6259aa9c3cb2668d8dc586fb2970b6d78a61e5e36238d`.
+
+Two independent reviews drove eleven exact source corrections
+`O007-CORR-0159`–`0169` and bounded reader-language repairs. Notable repairs
+include second-factor measure symbols, a mislabeled third product space,
+missing set subscripts, wrong product-point variables, unmatched parentheses,
+and three malformed display/equality surfaces. Authority bytes remain
+immutable; every mathematical difference and absorbed source atom is
+hash-bound in the correction ledger and unit receipt. Two additional raw
+source math deletions are the established lexical `aljabar-sigma` /
+`subaljabar-sigma` localization, not content deletion.
+
+The 33-page increment is a substantial publication boundary. The decision is
+therefore to consolidate cumulative backend/readers and publish 338/672 before
+scaling translation past the frozen `mt253.tex` cursor. This is not described
+as complete Chapter 25: the scope label must be `through S252` and official
+Volume II coverage must stop at page 236. No upstream contact occurred.
+
+## 2026-08-26 — D043: Admit and publish the repaired 338/672 S252 boundary
+
+The consolidation audit found and corrected two metadata defects without
+changing reader content: inherited Volume-II units had lost their admitted
+state in catalog v1.12, and downstream PDF/HTML receipts still bound superseded
+build-receipt identities. The generator and validators now fail closed on the
+exact 28 inherited admitted units plus three new pre-admission units; PDF,
+visual, HTML, and browser receipts all bind the final bytes. CP0017 then admits
+the three new units.
+
+Independent final replay verified all 401 receipt identities and all 1,886 ZIP
+members, including CRC, fixed timestamps, package/source-tree manifests, and a
+zero-match privacy scan. GitHub tag `v0.17.0-v2-through-s252` is public at
+boundary commit `d7d35539f7b11274a7ff202ce24ee8aef26c5550`, with receipt commit
+`8b05306b63ec563a9953ad3e6d1407795eb4c53f`; Zenodo record `22105474`, DOI
+`10.5281/zenodo.22105474`, is the next version of the existing concept. Both
+destinations anonymously returned the exact three assets. The decision is to
+continue immediately at `mt253.tex` / official page 237; the goal remains
+active at 338/672, with 334 pages untranslated. No upstream contact occurred.

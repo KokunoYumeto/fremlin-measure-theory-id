@@ -1,14 +1,47 @@
 # Current Cursor
 
+## Superseding public cursor — through S252 (2026-08-26)
+
+The admitted and publicly verified boundary is complete Volume I plus
+contiguous Volume II official pages 1–236, including front matter, complete
+Chapters 21–24, and partial Chapter 25 through complete Section 252: 338/672
+official pages; 334 remain. CP0017 is
+`00_control/CP0017_THROUGH_S252_ADMISSION.md` (4,379 bytes; SHA-256
+`8c9dc14a7c73329bdbd30fa2d5e7f142b9043c0a3b8d0d0edc5f00b2cb732a92`),
+with `qa/through-s252-final-admission.json` (8,438 bytes; SHA-256
+`e5310e235943d1fd3b4cdfd964e18dbdd7f7a4a2bfc0bc351d630c7af5310fa2`).
+
+GitHub tag `v0.17.0-v2-through-s252` is public at
+`https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.17.0-v2-through-s252`;
+boundary commit `d7d35539f7b11274a7ff202ce24ee8aef26c5550`, receipt commit
+`8b05306b63ec563a9953ad3e6d1407795eb4c53f`, and receipt
+`qa/PUBLICATION_RECEIPT_V0170_V2_THROUGH_S252.json` (4,882 bytes; SHA-256
+`57720a0fa79edb64224cb9a23084c123657addd20af7c09845c06dd2923572c2`).
+Zenodo record `22105474`, DOI `10.5281/zenodo.22105474`, is public in concept
+DOI `10.5281/zenodo.22059798`; receipt
+`qa/ZENODO_PUBLICATION_RECEIPT_V0170_V2_THROUGH_S252.json` is 4,397 bytes /
+SHA-256 `a5aef5c72f52c6a9e3c9aaf3890ec3eb0b46135e7d3518bd5e0f1d77b48033f2`.
+Both destinations anonymously returned the exact PDF, ZIP, and checksum bytes.
+
+The next executable source is
+`authority/fremlin/source/mt2.2016/mt253.tex`, 51,379 bytes / 1,238 lines /
+SHA-256 `f5c06beaff7bf4160070d254551dfc104b9a2a57494d56cbf139297945abf1e9`,
+beginning at official Volume II page 237. Translate it completely in source
+order and continue the contiguous Chapter 25 batch. The goal remains active.
+
 ## Canonical owner checkpoint — 2026-08-26
 
 The current admitted/public boundary is complete Volume I plus contiguous
 Volume II official pages 1–203, including front matter and Chapters 21–24:
 305/672 official pages; 367 remain. Chapter 24 covers pages 138–203 (66
 unique official pages) and all eight units `mt24`, `mt241`–`mt247` are admitted.
-The next source-order cursor is complete `authority/fremlin/source/mt2.2016/mt25.tex`,
-then `mt251.tex`, beginning at official page 204. No admitted unit is to be
-rolled back; continue in larger contiguous chapter/major-section batches.
+The local translation candidate now also includes complete `mt25.tex`,
+`mt251.tex`, and `mt252.tex`, official Volume II pages 204–236: 338/672 pages
+translated, while the admitted/public boundary remains 305/672 during the
+current substantial-boundary consolidation. The next source-order cursor is
+complete `authority/fremlin/source/mt2.2016/mt253.tex`, beginning at official
+page 237; 334 pages remain untranslated. No admitted unit is to be rolled back;
+continue in larger contiguous chapter/major-section batches.
 
 Admission and backend evidence:
 
@@ -39,10 +72,17 @@ record `22103648`, DOI `10.5281/zenodo.22103648`, remains in concept DOI
 SHA-256 `7b37dffbe97abd580a0e66b059e60ceb0f5ca2a00a1f1896a3d4b121024b1473`).
 Both receipts record anonymous byte/hash readback of the exact three assets.
 
-Next action: the Chapter 25 authority identities are frozen and `mt25.tex` has
-passed local unit QA; translate and unit-QA `mt251.tex`, then continue its
-contiguous source order. Consolidate only at the next substantial boundary.
-Keep exact cursor/evidence updates here and in
+Sections 251–252 pass structural and independent semantic QA. Section 252 is
+`source/id-ID/mt252.tex` (82,128 bytes; SHA-256
+`56c9b7983b6c965daf0df370b058745e44d29646bf07ad2f46532efedc481d56`);
+`qa/chapter25/mt252-unit-qa.json` is 10,696 bytes / SHA-256
+`9792282eab64642f0cf6259aa9c3cb2668d8dc586fb2970b6d78a61e5e36238d`.
+Eleven high-confidence Section 252 source defects are separately ledgered as
+`O007-CORR-0159`–`0169`; authority bytes remain immutable. Exact Chapter 25
+freeze/cursor evidence is `qa/chapter25/mt25-source-freeze.json` (5,094 bytes;
+SHA-256 `ec4bc322870da4703faaeba92d162abcfd2c16e6b30d1dadbe0ca1ff9483f423`).
+Consolidate and publish this substantial 338/672 boundary, then translate
+complete `mt253.tex`. Keep exact cursor/evidence updates here and in
 `CURRENT_STATE.md`, `DECISION_LOG.md`, and `ZENODO_LINEAGE.md`.
 
 Updated: 2026-08-26 (Europe/Berlin)
@@ -58,25 +98,25 @@ Updated: 2026-08-26 (Europe/Berlin)
 | GitHub | tag `v0.16.0-v2-through-ch24`; boundary `0bd08492b9ed5c31c861dc5f6d45abef452bfbda`; receipt commit `1cfefad6e12922bf5b95a4a9551485851a2d64db` |
 | Zenodo | record `22103648`; DOI `10.5281/zenodo.22103648`; concept DOI `10.5281/zenodo.22059798` |
 | Active chapter | Volume II Chapter 25 |
-| Next source files | `authority/fremlin/source/mt2.2016/mt25.tex` then `mt251.tex` in frozen source order |
-| Next authority identities | Freeze and record exact `mt25.tex` and `mt251.tex` identities before translation |
-| Official-page cursor | Volume II page 204 |
-| Remaining corpus | 367 official pages |
-| Production status | `chapter24_public_verified_chapter25_translation_next` |
+| Local translated candidate | Complete `mt25.tex`, `mt251.tex`, and `mt252.tex`, Volume II pages 204–236; 338/672 official pages translated |
+| Next source file | `authority/fremlin/source/mt2.2016/mt253.tex` |
+| Next authority identity | 51,379 bytes; 1,238 lines; SHA-256 `f5c06beaff7bf4160070d254551dfc104b9a2a57494d56cbf139297945abf1e9` |
+| Official-page cursor | Volume II page 237 |
+| Remaining corpus | 334 untranslated official pages; 367 pages remain outside the admitted/public boundary until current admission |
+| Production status | `chapter24_public_verified_through_s252_candidate_validated_338_boundary_consolidation_in_progress` |
 
-The next executable action is source-aware translation of complete `mt25.tex`
-and then `mt251.tex`, preserving every formula, identifier, proof, exercise,
-hint, cross-reference, and source-order relationship. Run bounded unit QA while
-translation advances; consolidate the backend, cumulative readers, full visual
-QA, package, and publication at a substantial Chapter 25 boundary. The complete
-672-page goal remains active. No upstream contact occurred.
+The next executable action is cumulative backend and reader consolidation,
+full visual/browser QA, admission, packaging, GitHub release, Zenodo publication,
+and anonymous byte readback at 338/672. After that verified transaction,
+translate complete `mt253.tex` in source order. The complete 672-page goal
+remains active. No upstream contact occurred.
 
 Exact current public evidence is
-`qa/PUBLICATION_RECEIPT_V0150_V2_THROUGH_CH23.json` (4,187 bytes; SHA-256
-`190972813010bb6f82b83ffd01e5175f857af2f211de5ef35a469040191b7354`) and
-`qa/ZENODO_PUBLICATION_RECEIPT_V0150_V2_THROUGH_CH23.json` (3,965 bytes;
+`qa/PUBLICATION_RECEIPT_V0160_V2_THROUGH_CH24.json` (4,616 bytes; SHA-256
+`a1ca79817b26cb0df56c8de085de5c8ddf8e5eec97e89567d137a59bb0ae2dbb`)
+and `qa/ZENODO_PUBLICATION_RECEIPT_V0160_V2_THROUGH_CH24.json` (4,130 bytes;
 SHA-256
-`93339b5ac1fde486151c0455a7cb674069ba48cabd133814ad3b6ed8336eb741`).
+`7b37dffbe97abd580a0e66b059e60ceb0f5ca2a00a1f1896a3d4b121024b1473`).
 
 ## Historical cursor detail retained for audit
 

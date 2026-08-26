@@ -676,3 +676,105 @@ occurred. The next executable cursor is frozen Volume II `mt25.tex`, then
 `mt251.tex`, at official page 204. Continue translation-first in contiguous
 Chapter 25 batches, run bounded unit checks, and defer another consolidated
 backend/reader/publication transaction until a substantial page boundary.
+
+## Current local production state — Section 251 validated, Section 252 active
+
+The admitted and public boundary remains complete Chapter 24 at 305/672
+official pages. The local source-order translation candidate now additionally
+contains the complete Chapter 25 introduction and Section 251, covering
+official Volume II pages 204–211 and bringing translated candidate coverage to
+313/672 pages; 359 official pages remain untranslated. This small unit is not
+being misrepresented as a new admitted or published boundary.
+
+`source/id-ID/mt251.tex` is 78,131 bytes / 1,919 lines / SHA-256
+`2ef9995b60900bb0801256450e758c3f69c89ac84b930e2a2a8a4f93e3011cb5`.
+The unit receipt `qa/chapter25/mt251-unit-qa.json` is 8,319 bytes / SHA-256
+`cbe8aae96c1917648ee40f5ba2d5e10fb6d100fef0add419bf25575e634de38a`
+and passes with all 64 stable IDs, all 192 protected references, exact
+symbolic-command replay after four established lexical sigma localizations,
+zero active English residue, and ten precisely hash-ledgered math differences.
+Five high-confidence source defects are preserved in immutable authority bytes
+and corrected only in the derivative as `O007-CORR-0154`–`0158`. Independent
+semantic review passed after those corrections and four reader-language
+repairs.
+
+The bounded semantic reader is
+`tmp/chapter25-mt251-semantic/index.html` (211,542 bytes; SHA-256
+`85c680f047d58634bb2487e8913c0f55c3b01cb6357d7d860df3ac0b2ef39fb5`):
+63/63 stable block anchors, 78 fragment links, zero broken fragments, and no
+raw `\imp`, `\leaveitout`, `\query`, Greek-header, or small-caps control
+sequences in visible prose. The generic renderer no longer injects S111
+implicit IDs into later units and now honors those reader macros.
+
+The exact next authority is `mt252.tex`, 75,782 bytes / 1,896 lines / SHA-256
+`b4bd9d2920d34292a75d569ee9b6601b93980d7baf628dc144054877935a324c`,
+beginning at official Volume II page 212. Its complete translation is active
+in three disjoint source-bound fragments. Backend, cumulative PDF/browser QA,
+admission, release packaging, GitHub release, and Zenodo publication remain
+deferred to the next substantial Chapter 25 boundary. No upstream contact
+occurred.
+
+## Superseding local production state — Section 252 validated; 338 boundary active
+
+The source-order candidate now contains complete `mt25.tex`, `mt251.tex`, and
+`mt252.tex`, covering Volume II official pages 204–236. Candidate coverage is
+therefore 338/672 official pages, with 334 untranslated pages remaining. The
+public/admitted boundary remains 305/672 only until the cumulative 338-page
+backend, readers, package, and public-byte gates complete.
+
+Complete Section 252, `Fubini's theorem` → `Teorema Fubini`, is
+`source/id-ID/mt252.tex`: 82,128 bytes / 1,936 lines / SHA-256
+`56c9b7983b6c965daf0df370b058745e44d29646bf07ad2f46532efedc481d56`.
+Its bounded receipt `qa/chapter25/mt252-unit-qa.json` is 10,696 bytes / SHA-256
+`9792282eab64642f0cf6259aa9c3cb2668d8dc586fb2970b6d78a61e5e36238d`
+and passes: 60/60 stable IDs, 202/202 protected references, 6/6 hints, exact
+outside-math symbolic command order, 1,404/1,398 source/target math atoms with
+six exact source deletions and sixteen exact allowed deltas, and zero active
+English residue. The six deletions comprise two established lexical-sigma
+localizations and four formula repairs that absorb malformed source atoms.
+
+Independent semantic replay passed after reader-language repairs and eleven
+high-confidence authority corrections `O007-CORR-0159`–`0169`. Immutable
+authority bytes remain unchanged. The final semantic HTML witness is 200,061
+bytes / SHA-256
+`19a7b84e65e1a7f04f2a9c3857f694b455066fa5ab95dd325d789f590889260d`:
+59 stable block IDs, 78 fragment links, zero broken fragments, zero visible
+non-math controls, and metadata bound to the exact target hash. The Section 251
+receipt was also regenerated from relative path arguments to remove private
+filesystem strings; it remains passing at 8,149 bytes / SHA-256
+`7789ce411efd70466c09954af0bc376ec18004d3b2b737222484e27b81077122`.
+
+The current executable action is the consolidated 338/672 backend, cumulative
+PDF/offline HTML, visual and browser QA, admission, deterministic package,
+GitHub release, existing Zenodo-lineage publication, and anonymous byte
+readback. The frozen next translation unit is `mt253.tex`, 51,379 bytes / 1,238
+lines / SHA-256
+`f5c06beaff7bf4160070d254551dfc104b9a2a57494d56cbf139297945abf1e9`,
+official pages 237–247. No upstream contact occurred.
+
+## Superseding public state — through S252 admitted and published
+
+CP0017 admits the complete source-order candidate through Section 252 at
+338/672 official pages: complete Volume I plus contiguous Volume II pages
+1–236. The repaired backend preserves `admitted/true` for all 28 inherited
+Volume-II units and records the three new Chapter-25 units as the CP0017
+increment. The final backend receipt validates 3,968 schema-valid records,
+223 resources, 653 cumulative exercises, and 149 hints.
+
+The cumulative reader is 363 A4 pages, 2,500,114 bytes, SHA-256
+`6ba03a3dd30f4172cd3f2a4949ac5ef37ac27931f7b302b961ae888c17b875f4`.
+All build paths resolve, the predecessor's first 327 raster pages are
+pixel-exact, the 36 appended pages pass visual inspection, and 62 HTML routes
+pass 124 desktop/mobile observations. The final deterministic ZIP is
+23,816,802 bytes, SHA-256
+`6648f0d797d2f70926bd6863ff1c61aeb6042b98e2a31d4227a4cd1aeb471943`;
+all 1,886 members and all manifest rows passed independent hash/CRC/privacy
+replay.
+
+GitHub `v0.17.0-v2-through-s252` and Zenodo DOI
+`10.5281/zenodo.22105474` are public in the existing lineages. Anonymous
+readback matched all three assets at both destinations. Exact receipts are
+`qa/PUBLICATION_RECEIPT_V0170_V2_THROUGH_S252.json` and
+`qa/ZENODO_PUBLICATION_RECEIPT_V0170_V2_THROUGH_S252.json`. The next source
+cursor is complete `mt253.tex`, official pages 237–247; 334 pages remain.
+No upstream contact occurred, and the 672-page goal remains active.

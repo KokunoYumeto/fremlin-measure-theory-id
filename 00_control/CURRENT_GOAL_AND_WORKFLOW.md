@@ -22,7 +22,7 @@ and `mt241.tex` at official Volume II page 138. The goal remains active through
 all remaining Volume II units; 433 official pages remain.
 
 Authority is
-`C:/Users/Floris/Documents/interlanguage/04_mirrors/id/measure-integration-id/authority/fremlin`:
+`authority/fremlin` within this corpus repository:
 `mt1.2011.tar.gz` (421,854 bytes; SHA-256
 `1deabdecd72f2a2866eb70c4e2ab89f230083af155414023a0a8b441010a6ff2`),
 `mt2.2016.tar.gz` (897,116;
@@ -104,7 +104,7 @@ official page 204. The goal stays active until every selected source unit is
 translated, indexed, built, published, and anonymously read back.
 
 Frozen authority is the exact local closure under
-`C:/Users/Floris/Documents/interlanguage/04_mirrors/id/measure-integration-id/authority/fremlin`:
+`authority/fremlin` within this corpus repository:
 `mt1.2011.tar.gz` 421,854 bytes,
 SHA-256 `1deabdecd72f2a2866eb70c4e2ab89f230083af155414023a0a8b441010a6ff2`;
 `mt2.2016.tar.gz` 897,116 bytes,
@@ -157,3 +157,24 @@ next executable source unit. Terminal condition: Volumes 1–2 complete at
 672/672, backend and readers reproducibly validated, both public lineages
 current and anonymously verified, and no required source or release work
 remains.
+
+## Superseding owner checkpoint — through S252 public (2026-08-26)
+
+The admitted and publicly verified boundary is now 338/672 official pages:
+complete Volume I and contiguous Volume II pages 1–236, including front matter,
+complete Chapters 21–24, and partial Chapter 25 through complete Section 252.
+The cumulative reader has 363 A4 reflow pages. CP0017, all deterministic
+backend/PDF/HTML/browser gates, the 1,886-entry package, and the independent
+401-identity/ZIP replay pass. GitHub tag `v0.17.0-v2-through-s252` is public at
+boundary commit `d7d35539f7b11274a7ff202ce24ee8aef26c5550` with receipt
+commit `8b05306b63ec563a9953ad3e6d1407795eb4c53f`. Zenodo record `22105474`, DOI
+`10.5281/zenodo.22105474`, is the next version in concept DOI
+`10.5281/zenodo.22059798`. Both destinations anonymously returned all three
+assets at the exact local byte and SHA-256 identities.
+
+The goal remains active. The exact next source is
+`authority/fremlin/source/mt2.2016/mt253.tex`, 51,379 bytes / 1,238 lines /
+SHA-256 `f5c06beaff7bf4160070d254551dfc104b9a2a57494d56cbf139297945abf1e9`,
+beginning at official Volume II page 237. Translate it completely in source
+order, run bounded unit checks, and continue the contiguous Chapter 25 batch;
+334 official pages remain untranslated.
