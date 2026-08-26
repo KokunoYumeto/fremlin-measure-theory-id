@@ -1,6 +1,6 @@
 # Durable Production Goal and Externalized Workflow — O007
 
-Updated: 2026-08-25 (Europe/Berlin)  
+Updated: 2026-08-26 (Europe/Berlin)  
 Task: `01a01f45-9d00-7f42-9071-4f932b45512a`  
 Status: active until all 672 official pages are publicly verified
 
