@@ -149,6 +149,17 @@ class Renderer:
             command = match.group(1)
             j = i + len(match.group(0))
 
+            if command == "allowmorestretch":
+                # The legacy chapter introductions wrap prose in a stretch
+                # group whose first argument is a TeX layout hint.  The
+                # reader keeps the prose and discards only that presentational
+                # hint, just as the cumulative chapter renderers do.
+                _stretch, after_stretch = read_group(text, j)
+                body, end = read_group(text, after_stretch)
+                out.append(self.transform(body))
+                i = end
+                continue
+
             if command in {"cmmnt", "exercises", "endnotes"}:
                 arg, end = read_group(text, j)
                 if command == "exercises":
@@ -276,6 +287,7 @@ class Renderer:
                 "frfilename",
                 "versiondate",
                 "copyrightdate",
+                "newchapter",
                 "newsection",
             }:
                 _arg, end = read_group(text, j)
@@ -428,8 +440,14 @@ class Renderer:
         return f"<{whole_tag}>{result}</{whole_tag}>" if whole_tag else result
 
     def render_body(self, transformed: str) -> str:
-        block_pattern = "(" + "|".join(re.escape(x) for x in self.blocks) + ")"
-        chunks = re.split(block_pattern, transformed)
+        # With a chapter-introduction unit such as mt25 there may be no
+        # heading/block tokens at all.  An empty alternation would split the
+        # prose into one-character chunks and corrupt math delimiter pairing.
+        if self.blocks:
+            block_pattern = "(" + "|".join(re.escape(x) for x in self.blocks) + ")"
+            chunks = re.split(block_pattern, transformed)
+        else:
+            chunks = [transformed]
         output: list[str] = []
         section_open = False
         for chunk in chunks:

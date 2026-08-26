@@ -745,3 +745,18 @@ SHA-256 `7b37dffbe97abd580a0e66b059e60ceb0f5ca2a00a1f1896a3d4b121024b1473`).
 Both public inventories and all three assets were anonymously read back at
 the local byte and SHA-256 identities. Next source cursor: `mt25.tex`, then
 `mt251.tex`, official page 204. No upstream report was sent.
+
+## 2026-08-26 — D040: Freeze Chapter 25 and admit the introduction unit locally
+
+The next frozen authority members are `mt25.tex` (4,281 bytes, 80 lines,
+SHA-256 `c6acf50a3ae74c0dce17ad4e779224651e472bccca231179aa13a221de8cad3e`,
+Chapter 25 introduction, no exercises or hints) and `mt251.tex` (74,191 bytes,
+1,919 lines, SHA-256
+`8b40209abfa0f65a66741ea8eddffa7f5a3132b89633f0d0d96d84a811de2135e`, 23
+active exercises, no hints). The complete natural Indonesian `mt25.tex`
+target is 4,234 bytes, SHA-256
+`e51e511ed741437fc6f3f80e410c6cb73600bc99cecbbf512d738e211567866a`; its
+bounded unit receipt `qa/chapter25/mt25-unit-qa.json` passes exact command and
+36/36 math topology checks. A semantic HTML unit render also passes. This
+small introduction is not separately admitted or published; translation now
+continues with `mt251.tex` at official page 204.

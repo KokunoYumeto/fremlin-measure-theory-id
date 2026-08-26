@@ -39,9 +39,10 @@ record `22103648`, DOI `10.5281/zenodo.22103648`, remains in concept DOI
 SHA-256 `7b37dffbe97abd580a0e66b059e60ceb0f5ca2a00a1f1896a3d4b121024b1473`).
 Both receipts record anonymous byte/hash readback of the exact three assets.
 
-Next action: freeze Chapter 25 authority identities, translate `mt25.tex` and
-the contiguous `mt251.tex` onward, run light unit QA, then consolidate only at
-the next substantial boundary. Keep exact cursor/evidence updates here and in
+Next action: the Chapter 25 authority identities are frozen and `mt25.tex` has
+passed local unit QA; translate and unit-QA `mt251.tex`, then continue its
+contiguous source order. Consolidate only at the next substantial boundary.
+Keep exact cursor/evidence updates here and in
 `CURRENT_STATE.md`, `DECISION_LOG.md`, and `ZENODO_LINEAGE.md`.
 
 Updated: 2026-08-26 (Europe/Berlin)
