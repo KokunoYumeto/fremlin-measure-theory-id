@@ -1,0 +1,1919 @@
+\frfilename{mt251.tex}
+\versiondate{10.11.06}
+\copyrightdate{2000}
+
+\def\chaptername{Ukuran produk}
+\def\sectionname{Produk berhingga}
+
+\newsection{251}
+
+Konstruksi pertama yang perlu disusun adalah produk dari sepasang ruang
+ukur. Ternyata, bahkan untuk mencari metode kanonis yang dapat diterapkan
+secara universal, sudah terdapat kesulitan teknis yang cukup besar. Karena
+itu, saya perlu menguraikan dua konstruksi yang berkaitan tetapi berbeda,
+yaitu ukuran produk `primitif' dan `c.l.d.' (251C, 251F). Setelah
+mencantumkan sifat-sifat mendasar ukuran produk c.l.d\ (251I-251J), saya
+menguraikan identifikasi produk ukuran Lebesgue dengan dirinya sendiri
+(251N) dan pembahasan yang cukup menyeluruh tentang subruang (251O-251S).
+
+\vleader{48pt}{251A}{Definisi} Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+dua
+ruang ukur. Untuk $A\subseteq X\times Y$, tetapkan
+
+\Centerline{$\theta A=\inf\{\sum_{n=0}^{\infty}\mu E_n\cdot\nu F_n:
+  E_n\in\Sigma,\,F_n\in\Tau\,\Forall \,n\in\Bbb N,
+  \,A\subseteq\bigcup_{n\in\Bbb N}E_n\times F_n\}$.}
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Dalam hasil kali $\mu E_n\cdot\nu F_n$,
+$0\cdot\infty$ harus diartikan sebagai $0$, seperti dalam \S135.
+}
+
+\leader{251B}{Lema} Dalam konteks 251A, $\theta$ merupakan ukuran luar
+pada $X\times Y$.
+
+\proof{{\bf (a)} Dengan menetapkan $E_n=F_n=\emptyset$ untuk setiap
+$n\in\Bbb N$, kita melihat bahwa $\theta\emptyset = 0$.
+
+\medskip
+
+{\bf (b)} Jika $A\subseteq B\subseteq X\times Y$, maka setiap kali
+$B\subseteq\bigcup_{n\in\Bbb N}E_n\times F_n$, kita juga mempunyai
+$A\subseteq\bigcup_{n\in\Bbb N}E_n\times F_n$; jadi $\theta A\le\theta B$.
+
+\medskip
+
+{\bf (c)} Misalkan $\sequencen{A_n}$ suatu barisan subhimpunan $X\times Y$
+dengan gabungan $A$.
+Untuk setiap $\epsilon>0$, bagi tiap $n\in\Bbb N$ kita dapat memilih barisan
+$\sequence{m}{E_{nm}}$ dalam $\Sigma$ dan $\sequence{m}{F_{nm}}$ dalam $\Tau$
+sedemikian sehingga $A_n\subseteq\bigcup_{m\in\Bbb N}E_{nm}\times F_{nm}$ dan
+$\sum_{m=0}^{\infty}\mu E_{nm}\cdot\nu F_{nm}
+\le\theta A_n+2^{-n}\epsilon$.
+Karena $\Bbb N\times\Bbb N$ terhitung, terdapat bijeksi
+$k\mapsto(n_k,m_k):\Bbb N\to\Bbb N\times\Bbb N$, dan sekarang
+
+\Centerline{$A\subseteq\bigcup_{n,m\in\Bbb N}E_{nm}\times F_{nm}
+=\bigcup_{k\in\Bbb N}E_{n_km_k}\times F_{n_km_k}$,}
+
+\noindent sehingga
+
+$$\eqalign{\theta A&\le\sum_{k=0}^{\infty}
+  \mu E_{n_km_k}\cdot\nu F_{n_km_k}
+=\sum_{n=0}^{\infty}\sum_{m=0}^{\infty}\mu E_{nm}\cdot\nu F_{nm}\cr
+&\le\sum_{n=0}^{\infty}\theta A_n+2^{-n}\epsilon
+=2\epsilon+\sum_{n=0}^{\infty}\theta A_n.\cr}$$
+
+\noindent Karena $\epsilon$ sebarang, $\theta
+A\le\sum_{n=0}^{\infty}\theta A_n$.
+
+Karena $\sequencen{A_n}$ sebarang, $\theta$ merupakan ukuran luar.
+}
+
+\leader{251C}{Definisi} Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+ruang ukur. Yang saya maksud dengan {\bf ukuran produk primitif} pada
+$X\times Y$ adalah ukuran $\lambda_0$ yang diperoleh melalui metode
+\Caratheodory\cmmnt{ (113C)} dari ukuran luar $\theta$ yang didefinisikan
+dalam 251A.
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan}
+Perlu saya kemukakan bahwa tidak ada kesepakatan umum mengenai ukuran mana
+yang seharusnya disebut sebagai `ukuran produk' pada $X\times Y$. Bahkan, dalam
+251F di bawah ini saya akan memperkenalkan suatu ukuran alternatif, dan dalam
+catatan untuk bagian ini saya akan menyebutkan ukuran yang ketiga.
+}
+
+\leader{251D}{Definisi}\cmmnt{ Akan memudahkan jika suatu konstruksi alami
+bagi aljabar-$\sigma$ diberi nama.} Jika $X$ dan $Y$ adalah himpunan dengan
+aljabar-$\sigma$ $\Sigma\subseteq\Cal PX$ dan $\Tau\subseteq\Cal PY$, saya akan
+menuliskan $\Sigma\tensorhat\Tau$ untuk aljabar-$\sigma$ subhimpunan
+$X\times Y$ yang dibangkitkan oleh
+$\{E\times F:E\in\Sigma,\,F\in\Tau\}$.
+
+
+\leader{251E}{Proposisi} Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+ruang ukur; misalkan $\lambda_0$ ukuran produk primitif pada $X\times Y$,
+dan $\Lambda$ domainnya.
+Maka $\Sigma\tensorhat\Tau\subseteq\Lambda$ dan
+$\lambda_0(E\times F)=\mu E\cdot\nu F$ untuk semua $E\in\Sigma$
+dan $F\in\Tau$.
+
+\proof{{\bf (a)} Misalkan $E\in\Sigma$ dan $A\subseteq X\times Y$.
+Untuk setiap $\epsilon>0$, terdapat barisan $\sequencen{E_n}$ dalam $\Sigma$
+dan $\sequencen{F_n}$ dalam $\Tau$ sedemikian sehingga
+$A\subseteq\bigcup_{n\in\Bbb N}E_n\times F_n$ dan
+$\sum_{n=0}^{\infty}\mu E_n\cdot\nu F_n\le\theta A+\epsilon$. Sekarang
+
+\Centerline{$A\cap(E\times Y)
+\subseteq\bigcup_{n\in\Bbb N}(E_n\cap E)\times F_n$,
+\quad$A\setminus(E\times Y)
+\subseteq\bigcup_{n\in\Bbb N}(E_n\setminus E)\times F_n$,}
+
+\noindent sehingga
+
+$$\eqalign{\theta(A\cap(E\times Y))+\theta(A\setminus(E\times Y))
+&\le\sum_{n=0}^{\infty}\mu(E_n\cap E)\cdot\nu F_n
+  +\sum_{n=0}^{\infty}\mu(E_n\setminus E)\cdot\nu F_n\cr
+&=\sum_{n=0}^{\infty}\mu E_n\cdot\nu F_n
+\le\theta A+\epsilon.\cr}$$
+
+\noindent Karena $\epsilon$ sebarang,
+$\theta(A\cap(E\times Y))+\theta(A\setminus(E\times Y))\le\theta A$.
+Dan ini cukup untuk memastikan bahwa $E\times Y\in\Lambda$ (lihat 113D).
+
+\medskip
+
+{\bf (b)} Dengan cara serupa, $X\times F\in\Lambda$ untuk setiap $F\in\Tau$,
+sehingga $E\times F=(E\times Y)\cap(X\times F)\in\Lambda$ untuk setiap
+$E\in\Sigma$, $F\in\Tau$.
+
+Karena $\Lambda$ merupakan aljabar-$\sigma$, ia harus memuat aljabar-$\sigma$
+terkecil yang memuat semua produk $E\times F$, yaitu
+$\Lambda\supseteq\Sigma\tensorhat\Tau$.
+
+\medskip
+
+
+{\bf (c)} Ambil $E\in\Sigma$, $F\in\Tau$. Kita mengetahui bahwa $E\times
+F\in\Lambda$; dengan menetapkan $E_0=E$, $F_0=F$, $E_n=F_n=\emptyset$ untuk
+$n\ge 1$ dalam definisi $\theta$, kita memperoleh
+
+\Centerline{$\lambda_0(E\times F)
+=\theta(E\times F)\le\mu E\cdot\nu F$.}
+
+Kita telah sampai pada gagasan utama konstruksi ini. Sesungguhnya,
+$\theta(E\times F)=\mu E\cdot\nu F$. \Prf\ Misalkan
+$E\times F\subseteq\bigcup_{n\in\Bbb N}E_n\times F_n$, dengan
+$E_n\in\Sigma$ dan $F_n\in\Tau$ untuk setiap $n$. Tetapkan
+$u=\sum_{n=0}^{\infty}\mu E_n\cdot\nu F_n$. Jika $u=\infty$ atau $\mu E=0$
+atau $\nu F=0$, tentu saja $\mu E\cdot\nu F\le u$. Jika tidak, tetapkan
+
+\Centerline{$I=\{n:n\in\Bbb N,\,\mu E_n=0\}$,
+\quad$J=\{n:n\in\Bbb N,\,\nu F_n=0\}$,
+\quad$K=\Bbb N\setminus(I\cup J)$,}
+
+\Centerline{$E'=E\setminus\bigcup_{n\in I}E_n$,
+\quad$F'=F\setminus\bigcup_{n\in J}F_n$.}
+
+\noindent Maka $\mu E'=\mu E$ dan $\nu F'=\nu F$;
+$E'\times F'\subseteq\bigcup_{n\in K}E_n\times F_n$; dan untuk $n\in K$,
+$\mu E_n<\infty$ dan $\nu F_n<\infty$, karena
+$\mu E_n\cdot\nu F_n\le u<\infty$ dan
+baik $\mu E_n$ maupun $\nu F_n$ tidak nol. Tetapkan
+
+\Centerline{$f_n=\nu F_n\chi E_n:X\to\Bbb R$}
+
+\noindent jika $n\in K$, dan $f_n=\tbf{0}:X\to\Bbb R$ jika $n\in I\cup J$.
+Maka $f_n$ suatu fungsi sederhana dan
+$\int f_n=\nu F_n\mu E_n$ untuk $n\in K$, serta $0$ jika tidak, sehingga
+
+\Centerline{$\sum_{n=0}^{\infty}$
+$\textfont3=\twelveex\int f_n(x)\mu(dx)$
+$=\sum_{n=0}^{\infty}\mu E_n\cdot\nu F_n
+\le u$.}
+
+\noindent Menurut teorema B.Levi (123A), yang diterapkan pada
+$\sequencen{\sum_{k=0}^nf_k}$,
+$g=\sum_{n=0}^{\infty}f_n$ terintegralkan dan $\int g\,d\mu\le u$.
+Tuliskan $E''$ untuk $\{x:x\in E',\,g(x)<\infty\}$, sehingga
+$\mu E''=\mu E'=\mu E$. Sekarang ambil sebarang $x\in E''$ dan tetapkan
+$K_x=\{n:n\in K,\,x\in E_n\}$. Karena
+$E'\times F'\subseteq\bigcup_{n\in K}E_n\times F_n$,
+$F'\subseteq\bigcup_{n\in K_x}F_n$ dan
+
+\Centerline{$\nu F=\nu F'\le\sum_{n\in K_x}\nu F_n
+=\sum_{n=0}^{\infty}f_n(x)=g(x)$.}
+
+\noindent Jadi $g(x)\ge\nu F$ untuk setiap $x\in E''$. Kita
+mengasumsikan bahwa $0<\mu E=\mu E''$ dan $0<\nu F$, sehingga haruslah
+$\nu F<\infty$, $\mu E''<\infty$. Sekarang $g\ge\nu F\chi E''$, sehingga
+
+\Centerline{$\mu E\cdot\nu F=\mu E''\cdot\nu F
+=\int\nu F\chi E''\le\int g\le u$
+$=\sum_{n=0}^{\infty}\mu E_n\cdot\nu F_n$.}
+
+\noindent Karena $\sequencen{E_n}$, $\sequencen{F_n}$ sebarang,
+$\theta(E\times F)\ge\mu E\cdot\nu F$ dan
+$\theta(E\times F)=\mu E\cdot\nu F$.\ \Qed
+
+Jadi
+
+\Centerline{$\lambda_0(E\times F)=\theta(E\times F)=\mu E\cdot\nu F$}
+
+\noindent untuk semua $E\in\Sigma$, $F\in\Tau$.
+}%end of proof of 251E
+
+\leaveitout{untuk (c), M.Burke mengusulkan:
+
+$\chi E(x)\chi F(y)\le\sum_{n=0}^{\infty}\chi E_n(x)\chi F_n(y)$
+
+menurut 135F-135G, dengan mengintegralkan terhadap $y$, \query
+
+$\chi E(x)\nu F\le\sum_{n=0}^{\infty}\chi E_n(x)\nu F_n$
+
+dan sekarang
+
+$\mu E\cdot\nu F\le\sum_{n=0}^{\infty}\mu E_n\cdot\nu F_n$.}
+
+
+\leader{251F}{Definisi} Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+ruang ukur, dan $\lambda_0$ ukuran produk primitif
+\cmmnt{ yang didefinisikan dalam 251C}.
+Yang saya maksud dengan {\bf ukuran produk c.l.d.\ } pada $X\times Y$ adalah
+fungsi $\lambda:\dom\lambda_0\to[0,\infty]$ yang didefinisikan dengan
+
+\Centerline{$\lambda W=\sup\{\lambda_0(W\cap(E\times F)):E\in\Sigma,\,
+F\in\Tau,\,\mu E<\infty,\,\nu F<\infty\}$}
+
+\noindent untuk $W\in\dom\lambda_0$.
+
+\leader{251G}{Catatan}\cmmnt{ Sebaiknya segera saya tunjukkan
+bahwa} $\lambda$ merupakan suatu
+ukuran. \prooflet{\Prf\ Tentu saja domainnya $\Lambda=\dom\lambda_0$
+merupakan aljabar-$\sigma$,
+dan $\lambda\emptyset=\lambda_0\emptyset=0$. Jika $\sequencen{W_n}$ suatu
+barisan saling lepas dalam $\Lambda$, maka untuk setiap
+$E\in\Sigma$, $F\in\Tau$ yang berukuran hingga,
+
+\Centerline{$\lambda_0(\bigcup_{n\in\Bbb N}W_n\cap(E\times F))
+=\sum_{n=0}^{\infty}\lambda_0(W_n\cap(E\times F))
+\le\sum_{n=0}^{\infty}\lambda W_n$,}
+
+\noindent sehingga
+$\lambda(\bigcup_{n\in\Bbb N}W_n)\le\sum_{n=0}^{\infty}\lambda W_n$.
+Di pihak lain, jika
+$a<\sum_{n=0}^{\infty}\lambda W_n$, kita dapat menemukan $m\in\Bbb N$ dan
+$a_0,\ldots,a_m$ sedemikian sehingga $a\le\sum_{n=0}^ma_n$ dan
+$a_n<\lambda W_n$ untuk setiap $n\le m$; sekarang terdapat
+$E_0,\ldots,E_m\in\Sigma$ dan $F_0,\ldots,F_m\in\Tau$, semuanya berukuran
+hingga, sedemikian sehingga
+$a_n\le\lambda_0(W_n\cap(E_n\times F_n))$ untuk setiap $n$. Dengan menetapkan
+$E=\bigcup_{n\le m}E_n$ dan $F=\bigcup_{n\le m}F_n$, kita mempunyai
+$\mu E<\infty$ dan $\nu F<\infty$, sehingga
+$$\eqalign{\lambda(\bigcup_{n\in\Bbb N}W_n)
+&\ge\lambda_0(\bigcup_{n\in\Bbb N}W_n\cap(E\times F))
+=\sum_{n=0}^{\infty}\lambda_0(W_n\cap(E\times F))\cr
+&\ge\sum_{n=0}^m\lambda_0(W_n\cap(E_n\times F_n))
+\ge\sum_{n=0}^ma_n
+\ge a.\cr}$$
+
+\noindent Karena $a$ sebarang, $\lambda(\bigcup_{n\in\Bbb
+N}W_n)\ge\sum_{n=0}^{\infty}\lambda W_n$ dan $\lambda(\bigcup_{n\in\Bbb
+N}W_n)=\sum_{n=0}^{\infty}\lambda W_n$. Karena $\sequencen{W_n}$
+sebarang, $\lambda$ merupakan suatu ukuran.\ \Qed}
+
+\leader{251H}{}\cmmnt{ Kita memerlukan suatu sifat sederhana dari ukuran
+$\lambda_0$.
+
+\medskip
+
+\noindent}{\bf Lema} Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ dua
+ruang ukur; misalkan $\lambda_0$ ukuran produk primitif pada
+$X\times Y$, dan $\Lambda$ domainnya. Jika $H\subseteq X\times Y$ dan
+$H\cap(E\times F)\in\Lambda$ setiap kali
+$\mu E<\infty$ dan $\nu F<\infty$, maka $H\in\Lambda$.
+
+\proof{ Misalkan $\theta$ ukuran luar yang diuraikan dalam 251A. Misalkan
+$A\subseteq X\times Y$ dan $\theta A<\infty$. Ambil
+$\epsilon>0$. Misalkan $\sequencen{E_n}$, $\sequencen{F_n}$ berturut-turut
+barisan dalam $\Sigma$, $\Tau$ sedemikian sehingga
+$A\subseteq\bigcup_{n\in\Bbb N}E_n\times F_n$ dan
+$\sum_{n=0}^{\infty}\mu E_n\cdot\nu F_n\le\theta A+\epsilon$.
+Sekarang, untuk setiap $n$, hasil kali ukuran $\mu E_n$, $\nu F_n$
+berhingga, sehingga salah satunya nol atau
+keduanya berhingga. Jika $\mu E_n=0$ atau $\nu F_n=0$, tentu saja
+
+\Centerline{$\mu E_n\cdot\nu F_n=0
+=\theta((E_n\times F_n)\cap H)+\theta((E_n\times F_n)\setminus H)$.}
+
+\noindent Jika $\mu E_n<\infty$ dan $\nu F_n<\infty$, maka
+
+$$\eqalignno{\mu E_n\cdot\nu F_n
+&=\lambda_0(E_n\times F_n)\cr
+&=\lambda_0((E_n\times F_n)\cap H)+\lambda_0((E_n\times F_n)\setminus
+H)\cr
+&=\theta((E_n\times F_n)\cap H)+\theta((E_n\times F_n)\setminus H).\cr
+}$$
+
+\noindent Oleh karena itu, karena $\theta$ suatu ukuran luar,
+
+$$\eqalign{\theta(A\cap H)+\theta(A\setminus H)
+&\le\sum_{n=0}^{\infty}\theta((E_n\times F_n)\cap H)
+  +\sum_{n=0}^{\infty}\theta((E_n\times F_n)\setminus H)\cr
+&=\sum_{n=0}^{\infty}\mu E_n\cdot\nu F_n
+\le\theta A+\epsilon.\cr}$$
+
+\noindent Karena $\epsilon$ sebarang, $\theta(A\cap H)+\theta
+(A\setminus H)\le\theta A$. Karena $A$ sebarang, $H\in\Lambda$.
+}
+
+\leader{251I}{}\cmmnt{ Sekarang untuk sifat-sifat mendasar dari
+ukuran produk c.l.d.
+
+\medskip
+
+\noindent}{\bf Teorema} Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+ruang ukur; misalkan $\lambda$ ukuran produk c.l.d. pada
+$X\times Y$, dan $\Lambda$ domainnya. Maka
+
+(a) $\Sigma\tensorhat\Tau\subseteq\Lambda$ dan
+$\lambda(E\times F)=\mu E\cdot\nu F$ setiap kali $E\in\Sigma$, $F\in\Tau$
+dan $\mu E\cdot\nu F<\infty$;
+
+(b) untuk setiap $W\in\Lambda$ terdapat $V\in\Sigma\tensorhat\Tau$
+sedemikian sehingga $V\subseteq W$ dan $\lambda V=\lambda W$;
+
+(c) $(X\times Y,\Lambda,\lambda)$ lengkap dan ditentukan secara lokal,
+dan bahkan merupakan versi c.l.d. dari
+$(X\times Y,\Lambda,\lambda_0)$\cmmnt{ sebagaimana diuraikan dalam
+213D-213E}; khususnya, $\lambda W=\lambda_0W$ setiap kali
+$\lambda_0W<\infty$;
+
+(d) jika $W\in\Lambda$ dan $\lambda W>0$, maka terdapat $E\in\Sigma$,
+$F\in\Tau$ sedemikian sehingga $\mu E<\infty$, $\nu F<\infty$ dan
+$\lambda(W\cap(E\times F))>0$;
+
+(e) jika $W\in\Lambda$ dan $\lambda W<\infty$, maka untuk setiap
+$\epsilon>0$ terdapat $E_0,\ldots,E_n\in\Sigma$,
+$F_0,\ldots,F_n\in\Tau$, semuanya berukuran hingga, sedemikian sehingga
+$\lambda(W\symmdiff\bigcup_{i\le n}(E_i\times F_i))\le\epsilon$.
+
+\proof{ Ambil $\theta$ sebagai ukuran luar dari 251A dan
+$\lambda_0$ sebagai ukuran produk primitif dari 251C. Tetapkan
+$\Sigma^f=\{E:E\in\Sigma,\,\mu E<\infty\}$ dan
+$\Tau^f=\{F:F\in\Tau,\,\nu F<\infty\}$.
+
+\medskip
+
+{\bf (a)} Menurut 251E, $\Sigma\tensorhat\Tau\subseteq\Lambda$. Jika
+$E\in\Sigma$ dan $F\in\Tau$ serta $\mu E\cdot\nu F<\infty$, maka salah satu
+kemungkinan adalah $\mu E\cdot\nu F=0$ dan
+$\lambda(E\times F)=\lambda_0(E\times F)=0$, atau
+$\mu E$ dan $\nu F$ keduanya berhingga dan kembali
+$\lambda(E\times F)=\lambda_0(E\times F)=\mu E\cdot\nu F$.
+
+\medskip
+
+{\bf (b)(i)} Ambil sebarang $a<\lambda W$. Maka terdapat
+$E\in\Sigma^f$, $F\in\Tau^f$ sedemikian sehingga
+$\lambda_0(W\cap(E\times F))>a$ (251F); sekarang
+
+$$\eqalign{\theta((E\times F)\setminus W)
+&=\lambda_0((E\times F)\setminus W)\cr
+&=\lambda_0(E\times F)-\lambda_0(W\cap(E\times F))
+<\lambda_0(E\times F)-a.\cr}$$
+
+\noindent Misalkan $\sequencen{E_n}$, $\sequencen{F_n}$ berturut-turut
+barisan dalam $\Sigma$, $\Tau$ sedemikian sehingga
+$(E\times F)\setminus W\subseteq\bigcup_{n\in\Bbb N}E_n\times F_n$ dan
+$\sum_{n=0}^{\infty}\mu E_n\cdot\nu F_n
+\le\lambda_0(E\times F)-a$. Pertimbangkan
+
+\Centerline{$V=(E\times
+F)\setminus\bigcup_{n\in\Bbb N}E_n\times F_n\in\Sigma\tensorhat\Tau$;}
+
+\noindent maka $V\subseteq W$, dan
+
+$$\eqalignno{\lambda V=\lambda_0V
+&=\lambda_0(E\times F)-\lambda_0((E\times F)\setminus V)\cr
+&\ge\lambda_0(E\times F)-\lambda_0(\bigcup_{n\in\Bbb N}E_n\times F_n)\cr
+\noalign{\noindent (karena $(E\times F)\setminus
+V\subseteq\bigcup_{n\in\Bbb N}E_n\times F_n$)}
+&\ge\lambda_0(E\times F)-\sum_{n=0}^{\infty}\mu E_n\cdot\nu F_n
+\ge a\cr}$$
+
+\noindent (berdasarkan pemilihan $E_n$, $F_n$).
+
+\medskip
+
+\quad{\bf (ii)} Jadi, untuk setiap $a<\lambda W$ terdapat
+$V\in\Sigma\tensorhat\Tau$ sedemikian sehingga $V\subseteq W$ dan
+$\lambda V\ge a$. Sekarang pilih barisan $\sequencen{a_n}$ yang meningkat
+tegas menuju $\lambda W$, dan bagi setiap $a_n$ pilih $V_n$ yang
+bersesuaian; maka $V=\bigcup_{n\in\Bbb N}V_n$ termasuk dalam aljabar-$\sigma$
+$\Sigma\tensorhat\Tau$, termuat dalam $W$, dan mempunyai ukuran sekurang-
+kurangnya $\sup_{n\in\Bbb N}\lambda V_n$ dan paling banyak $\lambda W$;
+jadi $\lambda V=\lambda W$, sebagaimana diperlukan.
+
+\medskip
+
+{\bf (c)(i)} Jika $H\subseteq X\times Y$ terabaikan terhadap $\lambda$,
+terdapat $W\in\Lambda$ sedemikian sehingga $H\subseteq W$ dan
+$\lambda W=0$. Jika $E\in\Sigma$, $F\in\Tau$ berukuran hingga,
+$\lambda_0(W\cap(E\times F))=0$; tetapi karena $\lambda_0$ diperoleh dari
+ukuran luar $\theta$
+dengan metode \Caratheodory, ia lengkap (212A), sehingga
+$H\cap(E\times F)\in\Lambda$ dan $\lambda_0(H\cap(E\times F))=0$.
+Karena $E$ dan $F$
+sebarang, menurut 251H kita mempunyai $H\in\Lambda$. Karena $H$ sebarang,
+$\lambda$ lengkap.
+
+\medskip
+
+\quad{\bf (ii)} Jika $W\in\Lambda$ dan $\lambda W=\infty$, maka harus
+terdapat $E\in\Sigma$, $F\in\Tau$ sedemikian sehingga $\mu E<\infty$,
+$\nu F<\infty$ dan $\lambda_0(W\cap(E\times F))>0$; sekarang
+
+\Centerline{$0<\lambda(W\cap(E\times F))\le\mu E\cdot\nu F<\infty$.}
+
+\noindent Jadi $\lambda$ semihingga.
+
+\medskip
+
+\quad{\bf (iii)} Jika $H\subseteq X\times Y$ dan $H\cap W\in\Lambda$
+setiap kali $\lambda W<\infty$, maka, khususnya, $H\cap(E\times
+F)\in\Lambda$ setiap kali $\mu E<\infty$ dan $\nu F<\infty$; kembali
+menurut 251H, $H\in\Lambda$. Jadi $\lambda$ ditentukan secara lokal.
+
+\medskip
+
+\quad{\bf (iv)} Jika $W\in\Lambda$ dan $\lambda_0W<\infty$, terdapat
+barisan $\sequencen{E_n}$ dalam $\Sigma$, $\sequencen{F_n}$ dalam $\Tau$
+sedemikian
+sehingga $W\subseteq\bigcup_{n\in\Bbb N}(E_n\times F_n)$ dan
+$\sum_{n=0}^{\infty}\mu E_n\cdot\nu F_n<\infty$. Tetapkan
+
+\Centerline{$I=\{n:\mu E_n=\infty\}$,
+\quad$J=\{n:\nu F_n=\infty\}$,
+\quad$K=\Bbb N\setminus (I\cup J)$;}
+
+\noindent maka $\nu(\bigcup_{n\in I}F_n)=\mu(\bigcup_{n\in J}E_n)=0$,
+sehingga $\lambda_0(W\setminus W')=0$, dengan
+
+\Centerline{$W'=W\cap\bigcup_{n\in K}(E_n\times F_n)
+\supseteq W\setminus((\bigcup_{n\in J}E_n\times Y)
+  \cup(X\times\bigcup_{n\in I}F_n))$.}
+
+\noindent Sekarang tetapkan $E'_n=\bigcup_{i\in K,i\le n}E_i$,
+$F'_n=\bigcup_{i\in K,i\le n}F_i$ untuk setiap $n$. Kita mempunyai
+$W'=\bigcup_{n\in\Bbb N}W'\cap(E'_n\times F'_n)$, sehingga
+
+\Centerline{$\lambda
+W\le\lambda_0W=\lambda_0W'=\lim_{n\to\infty}\lambda_0(W'\cap(E'_n\times
+F'_n))
+\le \lambda W'
+\le\lambda W$,}
+
+\noindent dan $\lambda W=\lambda_0W$.
+
+\medskip
+
+\quad{\bf (v)} Mengikuti terminologi 213D, kita tuliskan
+
+\Centerline{$\tilde\Lambda=\{W:W\subseteq X\times Y,\,W\cap V\in\Lambda$
+setiap kali $V\in\Lambda$ dan $\lambda_0V<\infty\}$,}
+
+\Centerline{$\tilde\lambda W
+=\sup\{\lambda_0(W\cap V):V\in\Lambda$, $\lambda_0V<\infty\}$.}
+
+\noindent Karena $\lambda_0(E\times F)<\infty$ setiap kali
+$\mu E<\infty$ dan $\nu F<\infty$, $\tilde\Lambda\subseteq\Lambda$ dan
+$\tilde\Lambda=\Lambda$.
+
+
+Sekarang, untuk setiap $W\in\Lambda$ kita mempunyai
+
+$$\eqalignno{\tilde\lambda W
+&=\sup\{\lambda_0(W\cap V):V\in\Lambda,\,\lambda_0V<\infty\}\cr
+&\ge\sup\{\lambda_0(W\cap (E\times F)):E\in\Sigma^f,\,F\in\Tau^f\}\cr
+&=\lambda W\cr
+&\ge\sup\{\lambda(W\cap V):V\in\Lambda,\,\lambda_0V<\infty\}\cr
+&=\sup\{\lambda_0(W\cap V):V\in\Lambda,\,\lambda_0V<\infty\},\cr}$$
+
+\noindent dengan menggunakan (iv) tepat di atas, sehingga
+$\lambda=\tilde\lambda$ merupakan versi c.l.d. dari $\lambda_0$.
+
+\medskip
+
+{\bf (d)} Jika $W\in\Lambda$ dan $\lambda W>0$, terdapat
+$E\in\Sigma^f$ dan $F\in\Tau^f$ sedemikian sehingga
+$\lambda(W\cap(E\times F))=\lambda_0(W\cap(E\times F))>0$.
+
+\medskip
+
+{\bf (e)} Terdapat $E\in\Sigma^f$, $F\in\Tau^f$ sedemikian sehingga
+$\lambda_0(W\cap(E\times F))\ge\lambda W-\bover13\epsilon$; tetapkan
+$V_1=W\cap (E\times F)$; maka
+
+\Centerline{$\lambda(W\setminus V_1)=\lambda W-\lambda V_1
+=\lambda W-\lambda_0V_1\le\Bover13\epsilon$.}
+
+\noindent Terdapat
+barisan $\sequencen{E'_n}$ dalam $\Sigma$, $\sequencen{F'_n}$ dalam
+$\Tau$ sedemikian sehingga $V_1\subseteq\bigcup_{n\in\Bbb
+N}E'_n\times F'_n$ dan $\sum_{n=0}^{\infty}\mu E'_n\cdot\nu
+F'_n\le\lambda_0V_1+\bover13\epsilon$. Dengan mengganti $E'_n$, $F'_n$
+dengan $E'_n\cap E$, $F'_n\cap F$ jika perlu, kita dapat menganggap bahwa
+$E'_n\in\Sigma^f$ dan $F'_n\in\Tau^f$ untuk setiap $n$. Tetapkan
+$V_2=\bigcup_{n\in\Bbb N}E'_n\times F'_n$; maka
+
+\Centerline{$\lambda(V_2\setminus V_1)
+\le\lambda_0(V_2\setminus V_1)
+\le\sum_{n=0}^{\infty}\mu E'_n\cdot\nu F'_n-\lambda_0V_1
+\le\Bover13\epsilon$.}
+
+\noindent Misalkan $m\in\Bbb N$ sedemikian sehingga
+$\sum_{n=m+1}^{\infty}\mu E'_n\cdot\nu F'_n\le\bover13\epsilon$, dan
+tetapkan
+
+\Centerline{$V=\bigcup_{n=0}^mE'_n\times F'_n$.}
+
+\noindent Maka
+
+\Centerline{$\lambda(V_2\setminus V)
+\le\sum_{n=m+1}^{\infty}\mu E'_n\cdot\nu F'_n\le\Bover13\epsilon$.}
+
+Dengan menggabungkan semua ini, kita memperoleh
+$W\symmdiff V\subseteq(W\setminus V_1)\cup(V_2\setminus
+V_1)\cup(V_2\setminus V)$, sehingga
+
+\Centerline{$\lambda(W\symmdiff V)
+\le\lambda(W\setminus V_1)+\lambda(V_2\setminus
+V_1)+\lambda(V_2\setminus
+V)\le\Bover13\epsilon+\Bover13\epsilon+\Bover13\epsilon=\epsilon$.}
+
+\noindent Dan $V$ mempunyai bentuk yang disyaratkan.
+}
+
+\leader{251J}{Proposisi} Jika $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+ruang ukur semihingga dan $\lambda$ ukuran produk c.l.d. pada
+$X\times Y$, maka $\lambda(E\times F)=\mu E\cdot\nu F$ untuk semua
+$E\in\Sigma$, $F\in\Tau$.
+
+\proof{ Dengan menetapkan $\Sigma^f=\{E:E\in\Sigma,\,\mu E<\infty\}$,
+$\Tau^f=\{F:F\in\Tau,\,\nu F<\infty\}$, kita mempunyai
+
+$$\eqalign{\lambda(E\times F)
+&=\sup\{\lambda_0((E\cap E_0)\times(F\cap F_0)):
+  E_0\in\Sigma^f,\,F_0\in\Tau^f\}\cr
+&=\sup\{\mu(E\cap E_0)\cdot\nu(F\cap F_0)):
+  E_0\in\Sigma^f,\,F_0\in\Tau^f\}\cr
+&=\sup\{\mu(E\cap E_0):E_0\in\Sigma^f\}\cdot
+  \sup\{\nu(F\cap F_0):F_0\in\Tau^f\}
+=\mu E\cdot\nu F\cr}$$
+
+\noindent (dengan menggunakan 213A).
+}%end of proof of 251J
+\leader{251K}{$\sigma$-hingga \dvrocolon{ruang}}\cmmnt{ Tentu saja
+sebagian besar ruang ukur yang padanya hasil-hasil ini akan kita terapkan
+bersifat $\sigma$-hingga, dan dalam kasus ini terdapat beberapa penyederhanaan yang berguna.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+ruang ukur $\sigma$-hingga. Maka ukuran produk c.l.d.\ pada
+$X\times Y$ sama dengan ukuran produk primitif, dan merupakan
+kelengkapan dari pembatasannya pada $\Sigma\tensorhat\Tau$; selain itu, ukuran
+produk yang sama ini bersifat $\sigma$-hingga.
+
+\proof{ Tuliskan $\lambda_0$, $\lambda$ untuk ukuran produk primitif dan c.l.d.\
+seperti biasa, serta $\Lambda$ untuk domain keduanya. Misalkan
+$\sequencen{E_n}$, $\sequencen{F_n}$ barisan tak menurun dari himpunan-himpunan
+berukuran hingga yang masing-masing menutupi $X$, $Y$ (lihat 211D).
+
+\medskip
+
+{\bf (a)} Untuk setiap $n\in\Bbb N$, $\lambda(E_n\times F_n)=\mu E_n\cdot\nu
+F_n$ berhingga, menurut 251Ia. Karena $X\times Y=\bigcup_{n\in\Bbb
+N}E_n\times F_n$, $\lambda$ bersifat $\sigma$-hingga.
+
+\medskip
+
+{\bf (b)} Untuk sebarang $W\in\Lambda$,
+
+\Centerline{$\lambda_0W=\lim_{n\to\infty}\lambda_0(W\cap(E_n\times
+F_n))=\lim_{n\to\infty}\lambda(W\cap(E_n\times F_n))=\lambda W$.}
+
+\noindent Jadi $\lambda=\lambda_0$.
+
+\medskip
+
+{\bf (c)} Tuliskan $\lambda_{\Cal B}$ untuk pembatasan
+$\lambda=\lambda_0$ pada $\Sigma\tensorhat\Tau$, dan
+$\hat\lambda_{\Cal B}$ untuk kelengkapannya.
+
+\medskip
+
+\quad{\bf (i)} Misalkan $W\in\dom\hat\lambda_{\Cal B}$. Maka terdapat
+$W'$, $W''\in\Sigma\tensorhat\Tau$ sedemikian sehingga
+$W'\subseteq W\subseteq W''$ dan $\lambda_{\Cal B}(W''\setminus W')=0$
+(212C). Dalam hal ini,
+$\lambda(W''\setminus W')=0$; karena $\lambda$ lengkap, $W\in\Lambda$
+dan
+
+\Centerline{$\lambda W=\lambda W'=\lambda_{\Cal B}W'
+=\hat\lambda_{\Cal B}W$.}
+
+\noindent Jadi $\lambda$ memperluas $\hat\lambda_{\Cal B}$.
+
+\medskip
+
+\quad{\bf (ii)} Jika $W\in\Lambda$, maka terdapat
+$V\in\Sigma\tensorhat\Tau$ sedemikian sehingga $V\subseteq W$ dan
+$\lambda(W\setminus V)=0$. \Prf\ Untuk setiap $n\in\Bbb N$ terdapat
+$V_n\in\Sigma\tensorhat\Tau$ sedemikian sehingga
+$V_n\subseteq W\cap(E_n\times F_n)$ dan
+$\lambda V_n=\lambda(W\cap(E_n\times F_n))$ (251Ib). Tetapi karena
+$\lambda(E_n\times F_n)=\mu E_n\cdot\nu F_n$ berhingga, ini berarti
+$\lambda(W\cap(E_n\times F_n)\setminus V_n)=0$. Jadi jika kita menetapkan
+$V=\bigcup_{n\in\Bbb N}V_n$, kita memperoleh $V\in\Sigma\tensorhat\Tau$,
+$V\subseteq W$ dan
+
+\Centerline{$W\setminus V
+=\bigcup_{n\in\Bbb N}W\cap(E_n\times F_n)\setminus V
+\subseteq\bigcup_{n\in\Bbb N}W\cap(E_n\times F_n)\setminus V_n$}
+
+\noindent terabaikan terhadap $\lambda$.\ \Qed
+
+Demikian pula, terdapat $V'\in\Sigma\tensorhat\Tau$ sedemikian sehingga
+$V'\subseteq(X\times Y)\setminus W$ dan
+$\lambda(((X\times Y)\setminus W)\setminus V')=0$. Dengan menetapkan $V''=(X\times Y)\setminus V'$,
+$V''\in\Sigma\tensorhat\Tau$, $W\subseteq V''$ dan
+$\lambda(V''\setminus W)=0$. Jadi
+
+\Centerline{$\lambda_{\Cal B}(V''\setminus V)
+=\lambda(V''\setminus V)
+=\lambda(V''\setminus W)+\lambda(W\setminus V)=0$,}
+
+\noindent dan $W$ terukur terhadap $\hat\lambda_{\Cal B}$, dengan
+$\hat\lambda_{\Cal B}W=\lambda_{\Cal B}V=\lambda W$. Karena $W$
+sembarang, $\hat\lambda_{\Cal B}=\lambda$.
+}%end of proof of 251K
+
+\leader{*251L}{}\cmmnt{ Hasil berikut sesuai ditempatkan di sini;
+saya memberinya tanda bintang karena hasil ini jarang digunakan (terdapat versi yang lebih penting
+dari gagasan yang sama dalam 254G) dan buktinya
+dapat dilewati sampai Anda memerlukannya.
+
+\medskip
+
+\noindent}{\bf Proposisi}
+Misalkan $(X_1,\Sigma_1,\mu_1)$, $(X_2,\Sigma_2,\mu_2)$,
+$(Y_1,\Tau_1,\nu_1)$ dan $(Y_2,\Tau_2,\nu_2)$ ruang ukur
+$\sigma$-hingga; misalkan
+$\lambda_1$, $\lambda_2$ ukuran produk masing-masing pada $X_1\times Y_1$,
+$X_2\times Y_2$. Andaikan $f:X_1\to X_2$ dan
+$g:Y_1\to Y_2$ adalah fungsi-fungsi \imp, dan
+$h(x,y)=(f(x),g(y))$ untuk $x\in X_1$, $y\in Y_1$. Maka $h$ bersifat \imp.
+%251K
+
+\proof{ Tuliskan $\Lambda_1$, $\Lambda_2$ untuk domain dari $\lambda_1$,
+$\lambda_2$ masing-masing.
+
+\medskip
+
+{\bf (a)} Misalkan $E\in\Sigma_2$ dan $F\in\Tau_2$ berukuran hingga.
+Maka $\lambda_1h^{-1}[W\cap(E\times F)]$ terdefinisi dan sama dengan
+$\lambda_2(W\cap(E\times F))$ untuk setiap $W\in\Lambda_2$. \Prf\
+
+$$\eqalign{\lambda_1h^{-1}[E\times F]
+&=\lambda_1(f^{-1}[E]\times g^{-1}[F])
+=\mu_1f^{-1}[E]\cdot\nu_1g^{-1}[F]\cr
+&=\mu_2E\cdot\nu_2F
+=\lambda_2(E\times F)\cr}$$
+
+\noindent menurut 251E/251J.\ \Qed
+
+\medskip
+
+{\bf (b)} Ambil $E_0\in\Sigma_2$ dan $F_0\in\Tau_2$ berukuran hingga.
+Misalkan $\tilde\lambda_1$, $\tilde\lambda_2$ ukuran subruang masing-masing pada
+$f^{-1}[E_0]\times g^{-1}[F_0]$ dan $E_0\times F_0$.
+Tetapkan $\tilde h=h\restr f^{-1}[E_0]\times g^{-1}[F_0]$, dan tuliskan
+$\iota$ untuk pemetaan identitas dari $E_0\times F_0$ ke $X_2\times Y_2$; misalkan
+$\lambda=\tilde\lambda_1\tilde h^{-1}$ dan
+$\lambda'=\tilde\lambda_2\iota^{-1}$ merupakan
+ukuran citra pada $X_2\times Y_2$. Maka (a) memberi tahu kita bahwa
+
+$$\eqalign{\lambda(E\times F)
+&=\lambda_1(h^{-1}[(E\cap E_0)\times(F\cap F_0)])\cr
+&=\lambda_2((E\cap E_0)\times(F\cap F_0))
+=\lambda'(E\times F)\cr}$$
+
+\noindent setiap kali $E\in\Sigma_2$ dan $F\in\Tau_2$. Menurut Teorema Kelas
+Monoton (136C), $\lambda$ dan $\lambda'$ berimpit pada
+$\Sigma_2\tensorhat\Tau_2$, yaitu,
+$\lambda_1(h^{-1}[W\cap(E_0\times F_0)])=\lambda_2(W\cap(E_0\times F_0))$
+untuk setiap $W\in\Sigma_2\tensorhat\Tau_2$.
+
+Jika $W$ sebarang anggota $\Lambda_2$,
+terdapat $W'$, $W''\in\Sigma_2\tensorhat\Tau_2$ sedemikian
+sehingga $W'\subseteq W\subseteq W''$ dan $\lambda_2(W''\setminus W')=0$
+(251K). Sekarang haruslah
+
+\Centerline{$h^{-1}[W'\cap(E_0\times F_0)]
+\subseteq h^{-1}[W\cap(E_0\times F_0)]
+\subseteq h^{-1}[W''\cap(E_0\times F_0)]$,}
+
+\Centerline{$\lambda_1(h^{-1}[W''\cap(E_0\times F_0)]\setminus
+h^{-1}[W'\cap(E_0\times F_0)])
+=\lambda_2((W''\setminus W')\cap(E_0\times F_0))=0$;}
+
+\noindent karena $\lambda_1$ lengkap,
+$\lambda_1h^{-1}[W\cap(E_0\times F_0)]$ terdefinisi dan sama dengan
+
+\Centerline{$\lambda_1h^{-1}[W'\cap(E_0\times F_0)]
+=\lambda_2(W'\cap(E_0\times F_0))
+=\lambda_2(W\cap(E_0\times F_0))$.}
+
+\medskip
+
+{\bf (c)} Sekarang misalkan $\sequencen{E_n}$, $\sequencen{F_n}$ merupakan
+barisan tak menurun dari himpunan-himpunan berukuran hingga dengan gabungan masing-masing $X_2$, $Y_2$.
+Jika $W\in\Lambda_2$,
+
+\Centerline{$\lambda_1h^{-1}[W]
+=\sup_{n\in\Bbb N}\lambda_1h^{-1}[W\cap(E_n\times F_n)]
+=\sup_{n\in\Bbb N}\lambda_2(W\cap(E_n\times F_n))
+=\lambda_2W$.}
+
+\noindent Jadi $h$ bersifat \imp, sebagaimana dinyatakan.
+}%end of proof of 251L
+
+\leader{251M}{}\cmmnt{ Sudah waktunya saya memberikan beberapa contoh. Tentu saja contoh
+utamanya
+adalah ukuran Lebesgue. Dalam hal ini kita memperoleh satu-satunya hasil yang wajar.
+Saya berhenti sejenak untuk menguraikan contoh utama dari produk
+$\Sigma\tensorhat\Tau$ yang diperkenalkan dalam 251D.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $r$, $s\ge 1$ bilangan bulat. Maka kita
+mempunyai bijeksi alami $\phi:\BbbR^r\times\BbbR^s\to\BbbR^{r+s}$,
+yang didefinisikan dengan menetapkan
+
+\Centerline{$\phi((\xi_1,\ldots,\xi_r),(\eta_1,\ldots,\eta_s))
+=(\xi_1,\ldots,\xi_r,\eta_1,\ldots,\eta_s)$}
+
+\noindent untuk $\xi_1,\ldots,\xi_r,\eta_1,\ldots,\eta_s\in\Bbb R$. Jika
+kita tuliskan $\Cal B_r$, $\Cal B_s$ dan $\Cal B_{r+s}$ untuk aljabar-sigma Borel
+dari $\BbbR^r$, $\BbbR^s$ dan $\BbbR^{r+s}$
+masing-masing, maka $\phi$ mengidentifikasi
+$\Cal B_{r+s}$ dengan $\Cal B_r\tensorhat\Cal B_s$.
+
+\proof{{\bf (a)} Tuliskan $\Cal B$ untuk aljabar-sigma
+$\{\phi^{-1}[W]:W\in\Cal B_{r+s}\}$ yang disalin ke $\BbbR^r\times\BbbR^s$
+melalui bijeksi $\phi$; yang hendak kita buktikan adalah
+$\Cal B=\Cal B_r\tensorhat\Cal B_s$. Kita mempunyai pemetaan
+$\pi_1:\BbbR^{r+s}\to\BbbR^r$, $\pi_2:\BbbR^{r+s}\to\BbbR^s$ yang didefinisikan dengan
+menetapkan $\pi_1(\phi(x,y))=x$, $\pi_2(\phi(x,y))=y$. Setiap koordinat
+dari $\pi_1$ kontinu, sehingga terukur Borel (121Db), jadi
+$\pi_1^{-1}[E]\in\Cal B_{r+s}$ untuk setiap $E\in\Cal B_r$, menurut 121K.
+Demikian pula,
+$\pi_2^{-1}[F]\in\Cal B_{r+s}$ untuk setiap $F\in\Cal B_s$. Jadi
+$\phi[E\times F]=\pi_1^{-1}[E]\cap\pi_2^{-1}[F]$ termasuk dalam
+$\Cal B_{r+s}$, yakni, $E\times F\in\Cal B$, setiap kali $E\in\Cal B_r$
+dan $F\in\Cal B_s$. Karena $\Cal B$ merupakan
+aljabar-sigma, $\Cal B_r\tensorhat\Cal B_s\subseteq\Cal B$.
+
+\medskip
+
+{\bf (b)} Sekarang periksa himpunan-himpunan berbentuk
+
+\Centerline{$\{(x,y):\xi_i\le\alpha\}
+=\{x:\xi_i\le\alpha\}\times\BbbR^s$,}
+
+\Centerline{$\{(x,y):\eta_j\le\alpha\}
+=\BbbR^r\times\{y:\eta_j\le\alpha\}$}
+
+\noindent untuk $\alpha\in\Bbb R$, $i\le r$ dan $j\le s$, dengan mengambil
+$x=(\xi_1,\ldots,\xi_r)$ dan $y=(\eta_1,\ldots,\eta_s)$. Semua himpunan ini
+termasuk dalam $\Cal B_r\tensorhat\Cal B_s$. Tetapi aljabar-sigma yang dibangkitkannya
+tepat sama dengan $\Cal B$, menurut 121J. Jadi
+$\Cal B\subseteq\Cal B_r\tensorhat\Cal B_s$ dan
+$\Cal B=\Cal B_r\tensorhat\Cal B_s$.
+}%end of proof of 251M
+
+\leader{251N}{Teorema} Misalkan $r$, $s\ge 1$ bilangan bulat. Maka
+bijeksi $\phi:\BbbR^r\times\BbbR^s\to\BbbR^{r+s}$ yang diuraikan dalam 251M
+mengidentifikasi ukuran Lebesgue pada $\BbbR^{r+s}$ dengan
+produk c.l.d.\ $\lambda$
+dari ukuran Lebesgue pada $\BbbR^r$ dan ukuran Lebesgue pada $\BbbR^s$.
+
+\proof{ Tuliskan $\mu_r$,
+$\mu_s$, $\mu_{r+s}$ untuk ketiga versi ukuran Lebesgue,
+$\mu^*_r$, $\mu^*_s$ dan $\mu^*_{r+s}$ untuk ukuran luar yang bersesuaian,
+dan
+$\theta$ untuk ukuran luar pada $\BbbR^r\times\BbbR^s$ yang diperoleh dari
+$\mu_r$ dan $\mu_s$ melalui rumus dalam 251A.
+
+\medskip
+
+{\bf (a)} Jika $I\subseteq\BbbR^r$ dan $J\subseteq \BbbR^s$ merupakan
+interval setengah terbuka, maka
+$\phi[I\times J]\subseteq\BbbR^{r+s}$ juga merupakan interval setengah terbuka, dan
+
+\Centerline{$\mu_{r+s}(\phi[I\times J])=\mu_rI\cdot\mu_sJ$;}
+
+\noindent ini segera diperoleh dari definisi ukuran Lebesgue
+suatu interval. (Di sini saya berbicara tentang interval `setengah terbuka', yaitu
+interval berbentuk
+$\prod_{1\le j\le r}\coint{\alpha_j,\beta_j}$, karena saya menggunakannya dalam
+definisi ukuran Lebesgue dalam \S115. Jika Anda lebih suka
+bekerja dengan interval terbuka atau interval tertutup, tidak ada perbedaan.)
+Perhatikan pula bahwa setiap interval setengah terbuka dalam $\BbbR^{r+s}$ dapat dinyatakan
+sebagai $\phi[I\times J]$ untuk $I$, $J$ yang sesuai.
+
+\medskip
+
+{\bf (b)} Untuk sebarang $A\subseteq\BbbR^{r+s}$,
+$\theta(\phi^{-1}[A])\le\mu^*_{r+s}(A)$. \Prf\ Untuk sebarang $\epsilon>0$,
+terdapat barisan $\sequencen{K_n}$ dari interval setengah terbuka dalam $\Bbb
+R^{r+s}$ sedemikian sehingga $A\subseteq\bigcup_{n\in\Bbb N}K_n$ dan
+$\sum_{n=0}^{\infty}\mu_{r+s}(K_n)\le\mu^*_{r+s}(A)+\epsilon$.
+Nyatakan setiap $K_n$ sebagai $\phi[I_n\times J_n]$, dengan $I_n$ dan $J_n$
+interval setengah terbuka masing-masing dalam $\BbbR^r$ dan $\BbbR^s$; maka
+$\phi^{-1}[A]\subseteq\bigcup_{n\in\Bbb N}I_n\times J_n$, sehingga
+
+\Centerline{$\theta(\phi^{-1}[A])
+\le\sum_{n=0}^{\infty}\mu_rI_n\cdot\mu_sJ_n
+=\sum_{n=0}^{\infty}\mu_{r+s}(K_n)\le\mu^*_{r+s}(A)+\epsilon$.}
+
+\noindent Karena $\epsilon$ sembarang, kita memperoleh hasilnya.\ \Qed
+
+\medskip
+
+{\bf (c)} Jika $E\subseteq\BbbR^r$ dan $F\subseteq\BbbR^s$ terukur,
+maka $\mu^*_{r+s}(\phi[E\times F])\le\mu_rE\cdot\mu_sF$.
+
+\medskip
+
+\Prf\ {\bf (i)} Pertama-tama tinjau kasus $\mu_rE<\infty$, $\mu_sF<\infty$.
+Dalam hal ini, untuk $\epsilon>0$ yang diberikan, terdapat barisan $\sequencen{I_n}$,
+$\sequencen{J_n}$ dari interval setengah terbuka sedemikian sehingga
+$E\subseteq\bigcup_{n\in\Bbb N}I_n$,
+$F\subseteq\bigcup_{n\in\Bbb N}J_n$,
+
+\Centerline{$\sum_{n=0}^{\infty}\mu_rI_n\le\mu^*_rE+\epsilon
+=\mu_rE+\epsilon$,}
+
+\Centerline{$\sum_{n=0}^{\infty}\mu_sJ_n\le\mu^*_sF+\epsilon=\mu_sF
++\epsilon$.}
+
+\noindent Dengan demikian,
+$E\times F\subseteq\bigcup_{m,n\in\Bbb N}I_m\times J_n$ dan
+$\phi[E\times F]\subseteq\bigcup_{m,n\in\Bbb N}\phi[I_m\times J_n]$,
+sehingga
+
+$$\eqalign{\mu^*_{r+s}(\phi[E\times F])
+&\le\sum_{m,n=0}^{\infty}\mu_{r+s}(\phi[I_m\times J_n])
+=\sum_{m,n=0}^{\infty}\mu_rI_m\cdot\mu_sJ_n\cr
+&=\sum_{m=0}^{\infty}\mu_rI_m\cdot\sum_{n=0}^{\infty}\mu_sJ_n
+\le(\mu_rE+\epsilon)(\mu_sF+\epsilon).\cr}$$
+
+\noindent Karena $\epsilon$ sembarang,
+kita memperoleh hasilnya.
+
+\medskip
+
+\quad{\bf (ii)}
+Berikutnya, jika $\mu_rE=0$, terdapat barisan $\sequencen{F_n}$ dari himpunan
+berukuran hingga yang menutupi $\BbbR^s\supseteq F$, sehingga
+
+\Centerline{$\mu^*_{r+s}(\phi[E\times F])
+\le\sum_{n=0}^{\infty}\mu^*_{r+s}(\phi[E\times F_n])
+\le\sum_{n=0}^{\infty}\mu_rE\cdot\mu_sF_n
+=0
+=\mu_rE\cdot\mu_sF$.}
+
+\noindent Demikian pula,
+$\mu^*_{r+s}(\phi[E\times F])\le\mu_rE\cdot\mu_sF$ jika $\mu_sF=0$.
+Satu-satunya kasus yang tersisa adalah kasus ketika
+$\mu_rE$, $\mu_sF$ keduanya bernilai positif dan salah satunya
+tak hingga; tetapi dalam hal ini $\mu_rE\cdot\mu_sF=\infty$, sehingga jelas
+$\mu^*_{r+s}(\phi[E\times F])\le\mu_rE\cdot\mu_sF$.\ \Qed
+
+\medskip
+
+{\bf (d)} Jika $A\subseteq\BbbR^{r+s}$, maka
+$\mu^*_{r+s}(A)\le\theta(\phi^{-1}[A])$. \Prf\ Untuk $\epsilon>0$ yang diberikan,
+terdapat barisan $\sequencen{E_n}$, $\sequencen{F_n}$ dari himpunan terukur
+masing-masing dalam $\BbbR^r$, $\BbbR^s$ sedemikian sehingga
+$\phi^{-1}[A]\subseteq\bigcup_{n\in\Bbb N}E_n\times F_n$ dan
+$\sum_{n=0}^{\infty}\mu_rE_n\cdot\mu_sF_n
+\le\theta(\phi^{-1}[A])+\epsilon$.
+Sekarang $A\subseteq\bigcup_{n\in\Bbb N}\phi[E_n\times F_n]$, sehingga
+
+\Centerline{$\mu^*_{r+s}(A)
+\le\sum_{n=0}^{\infty}\mu^*_{r+s}(\phi[E_n\times F_n])
+\le\sum_{n=0}^{\infty}\mu_rE_n\cdot\mu_sF_n
+\le\theta(\phi^{-1}[A])+\epsilon$.}
+
+\noindent Karena $\epsilon$ sembarang, kita memperoleh hasilnya.\ \Qed
+
+\medskip
+
+{\bf (e)} Dengan menggabungkan (b) dan (d), kita memperoleh
+$\theta(\phi^{-1}[A])=\mu^*_{r+s}(A)$ untuk setiap $A\subseteq\Bbb
+R^{r+s}$. Jadi $\theta$ pada $\BbbR^r\times\BbbR^s$ berkorespondensi
+tepat dengan $\mu^*_{r+s}$ pada $\BbbR^{r+s}$. Maka ukuran-ukuran terkait
+$\lambda_0$, $\mu_{r+s}$ harus berkorespondensi dengan cara yang sama,
+dengan menuliskan $\lambda_0$ untuk ukuran produk primitif. Tetapi 251K memberi tahu
+kita bahwa $\lambda_0=\lambda$, sehingga kita memperoleh hasilnya.
+}%end of proof of 251N
+
+\vleader{48pt}{251O}{}\cmmnt{ Sebenarnya, sebagian besar
+penerapan
+konstruksi di sini adalah pada subruang dari ruang Euklides, bukan
+pada keseluruhan produk $\BbbR^r\times\BbbR^s$. Tidaklah terlalu
+sulit untuk menuliskan 251N agar menangani
+subruang sebarang, tetapi saya lebih memilih memberikan uraian yang lebih umum mengenai
+produk ukuran subruang, karena menurut saya uraian ini memperjelas
+metodenya. Saya mulai dengan hasil langsung tentang ruang yang dapat dilokalkan secara
+ketat.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+ruang ukur yang dapat dilokalkan secara ketat. Maka ukuran produk c.l.d.\ pada
+$X\times Y$ dapat dilokalkan secara ketat; selain itu, jika
+$\langle X_i\rangle_{i\in I}$ dan $\langle Y_j\rangle_{j\in J}$ merupakan
+dekomposisi dari $X$ dan $Y$ masing-masing,
+$\langle X_i\times Y_j\rangle_{(i,j)\in I\times J}$ merupakan dekomposisi dari
+$X\times Y$.
+
+\proof{ Misalkan $\langle X_i\rangle_{i\in I}$ dan
+$\langle Y_j\rangle_{j\in J}$ dekomposisi dari $X$, $Y$ masing-masing.
+Maka $\langle X_i\times Y_j\rangle_{(i,j)\in I\times J}$ merupakan partisi dari
+$X\times Y$ menjadi himpunan-himpunan terukur yang berukuran hingga. Jika
+$W\subseteq X\times Y$ dan $\lambda W>0$, terdapat himpunan $E\in\Sigma$,
+$F\in\Tau$ sedemikian sehingga $\mu E<\infty$, $\nu F<\infty$ dan
+$\lambda(W\cap(E\times F))>0$. Kita mengetahui bahwa
+$\mu E=\sum_{i\in I}\mu(E\cap X_i)$ dan
+$\nu F=\sum_{j\in J}\nu(F\cap Y_j)$, sehingga harus terdapat himpunan berhingga
+$I_0\subseteq I$, $J_0\subseteq J$ sedemikian sehingga
+
+\Centerline{$\mu E\cdot\nu F
+  -(\sum_{i\in I_0}\mu(E\cap X_i))(\sum_{j\in J_0}\nu(F\cap Y_j))
+<\lambda(W\cap(E\times F))$.}
+
+\noindent Dengan menetapkan $E'=\bigcup_{i\in I_0}X_i$ dan $F'=\bigcup_{j\in J_0}Y_j$
+kita mempunyai
+
+\Centerline{$\lambda((E\times F)\setminus(E'\times F'))
+=\lambda(E\times F)-\lambda((E\cap E')\times(F\cap
+F'))<\lambda(W\cap(E\times F))$,}
+
+\noindent sehingga $\lambda(W\cap(E'\times F'))>0$. Oleh karena itu harus
+terdapat $i\in I_0$, $j\in J_0$ sedemikian sehingga
+$\lambda(W\cap(X_i\times Y_j))>0$.
+
+Ini menunjukkan bahwa $\{X_i\times Y_j:i\in I,\,j\in J\}$ memenuhi
+kriteria 213O, sehingga $\lambda$, karena lengkap dan ditentukan secara
+lokal, harus dapat dilokalkan secara ketat. Karena
+$\langle X_i\times Y_j\rangle_{(i,j)\in I\times J}$ menutupi $X\times Y$,
+keluarga ini benar-benar merupakan dekomposisi dari $X\times Y$ (213Ob).
+}
+
+\leader{251P}{Lema} Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ ruang
+ukur, dan $\lambda$ ukuran produk c.l.d.\ pada
+$X\times Y$. Misalkan $\lambda^*$ merupakan
+ukuran luar yang bersesuaian\cmmnt{ (132B)}. Maka
+
+\Centerline{$\lambda^*C=\sup\{\theta(C\cap(E\times
+F)):E\in\Sigma,\,F\in\Tau,\,\mu E<\infty,\,\nu F<\infty\}$}
+
+\noindent untuk setiap
+$C\subseteq X\times Y$, dengan $\theta$ ukuran luar dari 251A.
+
+\proof{ Tuliskan $\Lambda$ untuk domain $\lambda$, $\Sigma^f$ untuk
+$\{E:E\in\Sigma,\,\mu E<\infty\}$, $\Tau^f$ untuk $\{F:F\in\Tau,\,\nu
+F<\infty\}$; tetapkan $u=\sup\{\theta(C\cap(E\times F)):E\in\Sigma^f$,
+$F\in\Tau^f\}$.
+
+\medskip
+
+{\bf (a)} Jika $C\subseteq W\in\Lambda$, $E\in\Sigma^f$ dan $F\in\Tau^f$,
+maka
+
+$$\eqalignno{\theta(C\cap(E\times F))
+&\le\theta(W\cap(E\times F))
+=\lambda_0(W\cap(E\times F))\cr
+\noalign{\noindent (dengan $\lambda_0$ ukuran produk primitif)}
+&\le\lambda W.\cr}$$
+
+\noindent Karena $E$ dan $F$ sembarang, $u\le\lambda W$; karena $W$
+sembarang, $u\le\lambda^*C$.
+
+\medskip
+
+{\bf (b)} Jika $u=\infty$, maka tentu saja $\lambda^*C=u$. Jika tidak, misalkan
+$\sequencen{E_n}$, $\sequencen{F_n}$ merupakan
+barisan masing-masing dalam $\Sigma^f$, $\Tau^f$ sedemikian sehingga
+
+\Centerline{$u=\sup_{n\in\Bbb N}\theta(C\cap(E_n\times F_n))$.}
+
+\noindent Tinjau $C'=C\setminus(\bigcup_{n\in\Bbb
+N}E_n\times\bigcup_{n\in\Bbb
+N}F_n)$. Jika $E\in\Sigma^f$ dan $F\in\Tau^f$, maka untuk setiap $n\in\Bbb
+N$ kita mempunyai
+
+$$\eqalignno{u
+&\ge\theta(C\cap((E\cup E_n)\times(F\cup F_n)))\cr
+&=\theta(C\cap((E\cup E_n)\times(F\cup F_n))\cap(E_n\times F_n))\cr
+&{\hskip 10em}+\theta(C\cap((E\cup E_n)\times(F\cup F_n))
+  \setminus(E_n\times F_n))\cr
+\noalign{\noindent (karena $E_n\times F_n\in\Lambda$, menurut 251E)}
+&\ge\theta(C\cap(E_n\times F_n))
+  +\theta(C'\cap(E\times F)).\cr}$$
+
+\noindent Dengan mengambil supremum dari ungkapan di ruas kanan ketika $n$
+bervariasi, kita memperoleh $u\ge u+\theta(C'\cap(E\times F))$, sehingga
+
+\Centerline{$\lambda(C'\cap(E\times F))=\theta(C'\cap(E\times F))=0$.}
+
+\noindent Karena $E$ dan $F$ sembarang, $\lambda C'=0$.
+
+Tetapi ini berarti bahwa
+
+$$\eqalignno{\lambda^*C
+&\le\lambda^*
+  (C\cap(\bigcup_{n\in\Bbb N}E_n\times\bigcup_{n\in\Bbb N}F_n))
+  +\lambda^*C'\cr
+&=\lim_{n\to\infty}
+  \lambda^*(C\cap(\bigcup_{i\le n}E_i\times\bigcup_{i\le n}F_i))\cr
+\noalign{\noindent (menggunakan 132Ae)}
+&\le u,\cr}$$
+
+\noindent sebagaimana diperlukan.
+}%end of proof of 251P
+
+\leader{251Q}{\bf Proposisi} Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+ruang ukur, serta $A\subseteq X$, $B\subseteq Y$ himpunan bagian; tuliskan
+$\mu_A$, $\nu_B$ untuk ukuran subruang masing-masing pada $A$, $B$.
+Misalkan $\lambda$ ukuran produk c.l.d.\ pada $X\times Y$, dan
+$\lambda^{\#}$
+ukuran subruang yang diinduksinya pada $A\times B$. Misalkan $\tilde\lambda$
+ukuran produk c.l.d.\ dari $\mu_A$ dan $\nu_B$ pada $A\times B$. Maka
+
+(i) $\tilde\lambda$ memperluas $\lambda^{\#}$.
+
+(ii) Jika
+
+\inset{{\it salah satu} ($\alpha$) $A\in\Sigma$ dan $B\in\Tau$}
+
+\inset{{\it atau} ($\beta$) $A$ dan $B$ keduanya dapat ditutupi oleh barisan
+himpunan berukuran hingga}
+
+\inset{{\it atau} ($\gamma$) $\mu$ dan $\nu$ keduanya dapat dilokalkan secara
+ketat,}
+
+\noindent maka $\tilde\lambda=\lambda^{\#}$.
+
+\proof{ Misalkan $\theta$ ukuran luar pada $X\times Y$ yang didefinisikan dari
+$\mu$ dan $\nu$ melalui rumus dalam 251A, dan $\tilde\theta$ ukuran luar
+pada $A\times B$ yang didefinisikan secara serupa dari $\mu_A$ dan $\nu_B$.
+Tuliskan $\Lambda$ untuk domain dari $\lambda$,
+$\tilde\Lambda$ untuk domain dari $\tilde\lambda$, dan
+$\Lambda^{\#}=\{W\cap(A\times B):W\in\Lambda\}$ untuk
+domain dari $\lambda^{\#}$.
+Tetapkan $\Sigma^f=\{E:\mu E<\infty\}$, $\Tau^f=\{F:\nu F<\infty\}$.
+
+\medskip
+
+{\bf (a)} Hal pertama yang perlu diperhatikan adalah bahwa $\tilde\theta C=\theta C$
+untuk setiap $C\subseteq A\times B$. \Prf\ (i) Jika $\sequencen{E_n}$
+dan $\sequencen{F_n}$ merupakan barisan masing-masing dalam $\Sigma$, $\Tau$
+sedemikian sehingga $C\subseteq\bigcup_{n\in\Bbb N}E_n\times F_n$, maka
+
+\Centerline{$C=C\cap(A\times B)\subseteq\bigcup_{n\in\Bbb N}(E_n\cap
+A)\times(F_n\cap B)$,}
+
+\noindent sehingga
+
+$$\eqalign{\tilde\theta C
+&\le\sum_{n=0}^{\infty}\mu_A(E_n\cap A)\cdot\nu_B(F_n\cap B)\cr
+&=\sum_{n=0}^{\infty}\mu^*(E_n\cap A)\cdot\nu^*(F_n\cap B)
+\le\sum_{n=0}^{\infty}\mu E_n\cdot\nu F_n.\cr}$$
+
+\noindent Karena $\sequencen{E_n}$ dan $\sequencen{F_n}$ sembarang,
+$\tilde\theta C\le\theta C$. (ii) Jika $\sequencen{\tilde E_n}$,
+$\sequencen{\tilde F_n}$ merupakan barisan masing-masing dalam $\Sigma_A=\dom\mu_A$,
+$\Tau_B=\dom\nu_B$ sedemikian sehingga
+$C\subseteq\bigcup_{n\in\Bbb N}\tilde E_n\times\tilde F_n$, maka untuk
+setiap $n\in\Bbb N$ kita dapat memilih
+$E_n\in\Sigma$, $F_n\in\Tau$ sedemikian sehingga
+
+\Centerline{$\tilde E_n\subseteq E_n$,\quad $\mu E_n
+=\mu^*\tilde E_n=\mu_A\tilde E_n$,}
+
+\Centerline{$\tilde F_n\subseteq F_n$,
+\quad $\nu F_n=\nu^*\tilde F_n=\nu_B\tilde F_n$,}
+
+\noindent dan sekarang
+
+\Centerline{$\theta C\le\sum_{n=0}^{\infty}\mu E_n\cdot\nu F_n
+=\sum_{n=0}^{\infty}\mu_A\tilde E_n\cdot\nu_B\tilde F_n$.}
+
+\noindent Karena $\sequencen{\tilde E_n}$, $\sequencen{\tilde F_n}$
+sembarang, $\theta C\le\tilde\theta C$.\ \Qed
+
+\medskip
+
+{\bf (b)} Karena itu, $\Lambda^{\#}\subseteq\tilde\Lambda$. \Prf\
+Misalkan $V\in\Lambda^{\#}$ dan $C\subseteq A\times B$.
+Dalam
+hal ini terdapat $W\in\Lambda$ sedemikian sehingga $V=W\cap(A\times B)$. Jadi
+
+\Centerline{$\tilde\theta(C\cap V)+\tilde\theta(C\setminus V)
+=\theta(C\cap W)+\theta(C\setminus W)
+=\theta C
+=\tilde\theta C$.}
+
+\noindent Karena $C$ sembarang, $V\in\tilde\Lambda$.\ \Qed
+
+Dengan demikian, untuk $V\in\Lambda^{\#}$,
+
+$$\eqalignno{\lambda^{\#}V
+&=\lambda^*V
+=\sup\{\theta(V\cap(E\times F)):E\in\Sigma^f,\,F\in\Tau^f\}\cr
+&=\sup\{\theta(V\cap(\tilde E\times\tilde F)):\tilde
+E\in\Sigma_A,\,\tilde F\in\Tau_B,\,\mu_A\tilde E<\infty,\,\nu_B\tilde
+F<\infty\}\cr
+&=\sup\{\tilde\theta(V\cap(\tilde E\times\tilde F)):\tilde
+E\in\Sigma_A,\,\tilde F\in\Tau_B,\,\mu_A\tilde E<\infty,\,\nu_B\tilde
+F<\infty\}
+=\tilde\lambda V,\cr}$$
+
+\noindent dengan menggunakan 251P dua kali.
+
+Ini membuktikan bagian (i) dari proposisi.
+
+\medskip
+
+{\bf (c)} Hal berikutnya yang perlu diperiksa adalah bahwa jika $V\in\tilde\Lambda$ dan
+$V\subseteq E\times F$ dengan $E\in\Sigma^f$ dan $F\in\Tau^f$, maka
+$V\in\Lambda^{\#}$. \Prf\ Misalkan $W\subseteq E\times F$ merupakan selubung
+terukur dari $V$ terhadap $\lambda$ (132Ee). Maka
+
+$$\eqalignno{\theta(W\cap(A\times B)\setminus V)
+&=\tilde\theta(W\cap(A\times B)\setminus V)
+=\tilde\lambda(W\cap(A\times B)\setminus V)\cr
+\noalign{\noindent (karena $W\cap(A\times
+B)\in\Lambda^{\#}\subseteq\tilde\Lambda$, $V\in\tilde\Lambda$)}
+&=\tilde\lambda(W\cap(A\times B))-\tilde\lambda V
+=\tilde\theta(W\cap(A\times B))-\tilde\theta V\cr
+&=\theta(W\cap(A\times B))-\theta V
+=\lambda^*(W\cap(A\times B))-\lambda^* V\cr
+&\le\lambda W-\lambda^* V
+=0.\cr}$$
+
+\noindent Tetapi ini berarti bahwa $W'=W\cap(A\times B)\setminus V\in\Lambda$
+dan $V=(A\times B)\cap(W\setminus W')$ termasuk dalam $\Lambda^{\#}$.\ \Qed
+
+\medskip
+
+{\bf (d)} Sekarang tetapkan sebarang $V\in\tilde\Lambda$, dan periksa syarat
+($\alpha$)-($\gamma$) dari bagian (ii) proposisi.
+
+\medskip
+
+\quad\grheada\ Jika $A\in\Sigma$ dan $B\in\Tau$, serta $C\subseteq X\times Y$,
+maka $A\times B\in\Lambda$ (251E), sehingga
+
+$$\eqalignno{\theta(C\cap V)+\theta(C\setminus V)
+&=\theta(C\cap V)+\theta((C\setminus V)\cap(A\times B))
+  +\theta((C\setminus V)\setminus(A\times B))\cr
+&=\tilde\theta(C\cap V)+\tilde\theta(C\cap(A\times B)\setminus V)
+  +\theta(C\setminus(A\times B))\cr
+&=\tilde\theta(C\cap(A\times B))
+  +\theta(C\setminus(A\times B))\cr
+&=\theta(C\cap(A\times B))
+  +\theta(C\setminus(A\times B))
+=\theta C.\cr}$$
+
+\noindent Karena $C$ sembarang, $V\in\Lambda$, sehingga
+$V=V\cap(A\times B)$ termasuk dalam $\Lambda^{\#}$.
+
+\medskip
+
+\quad\grheadb\ Jika $A\subseteq\bigcup_{n\in\Bbb N}E_n$ dan
+$B\subseteq\bigcup_{n\in\Bbb N}F_n$ dengan semua $E_n$, $F_n$ berukuran
+hingga, maka
+$V=\bigcup_{m,n\in\Bbb N}V\cap(E_m\times F_n)\in\Lambda^{\#}$, menurut (c).
+
+\medskip
+
+\quad\grheadc\ Jika $\familyiI{X_i}$, $\family{j}{J}{Y_j}$ merupakan
+dekomposisi
+dari $X$, $Y$ masing-masing, maka untuk setiap $i\in I$, $j\in J$ kita mempunyai
+$V\cap(X_i\times Y_j)\in\Lambda^{\#}$, yakni, terdapat
+$W_{ij}\in\Lambda$ sedemikian sehingga
+$V\cap(X_i\times Y_j)=W_{ij}\cap(A\times B)$.
+Sekarang $\family{(i,j)}{I\times J}{X_i\times Y_j}$ merupakan dekomposisi dari
+$X\times Y$ untuk $\lambda$ (251O), sehingga
+
+\Centerline{$W=\bigcup_{i\in I,j\in J}W_{ij}\cap(X_i\times Y_j)
+\in\Lambda$,}
+
+\noindent dan $V=W\cap(A\times B)\in\Lambda^{\#}$.
+
+\medskip
+
+{\bf (e)} Jadi masing-masing dari ketiga syarat itu cukup untuk memastikan bahwa
+$\tilde\Lambda=\Lambda^{\#}$, dan dalam hal ini (a) memberi tahu kita bahwa
+$\tilde\lambda=\lambda^{\#}$.
+}%end of proof of 251Q
+\leader{251R}{Akibat} Misalkan $r$, $s\ge 1$ bilangan bulat, dan
+$\phi:\Bbb R^r\times\BbbR^s\to\BbbR^{r+s}$ bijeksi alamiah. Jika
+$A\subseteq\BbbR^r$ dan $B\subseteq\BbbR^s$, maka pembatasan
+$\phi$ pada $A\times B$ mengidentifikasikan produk ukuran Lebesgue pada $A$
+dan ukuran Lebesgue pada $B$ dengan ukuran Lebesgue pada $\phi[A\times
+B]\subseteq\BbbR^{r+s}$.
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Perhatikan bahwa dengan `ukuran Lebesgue pada $A$' yang saya maksud
+adalah ukuran subruang $\mu_{rA}$ pada $A$ yang diinduksi oleh ukuran Lebesgue
+berdimensi $r$, $\mu_r$, pada $\BbbR^r$, terlepas dari apakah $A$ sendiri
+merupakan himpunan terukur atau bukan.
+}%end of comment
+
+\proof{ Menurut 251Q, dengan menggunakan salah satu syarat
+(ii-$\beta$) atau (ii-$\gamma$), ukuran produk $\tilde\lambda$ pada
+$A\times B$ tidak lain adalah ukuran subruang $\lambda^{\#}$ pada $A\times B$
+yang diinduksi oleh
+ukuran produk $\lambda$ pada $\BbbR^r\times\BbbR^s$. Namun, menurut 251N kita
+tahu bahwa $\phi$ merupakan isomorfisme antara $(\BbbR^r\times\Bbb
+R^s,\lambda)$ dan $(\BbbR^{r+s},\mu_{r+s})$; jadi ia juga harus
+mengidentifikasikan $\tilde\lambda$ dengan ukuran subruang pada $\phi[A\times B]$.
+}
+
+\leader{251S}{Akibat} Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+ruang ukur, dan $\lambda$ ukuran produk c.l.d.\
+pada $X\times Y$. Jika
+$A\subseteq X$ dan $B\subseteq Y$ dapat ditutupi oleh barisan-barisan himpunan
+berukuran hingga, maka $\lambda^*(A\times
+B)=\mu^*A\cdot\nu^*B$.
+
+\proof{ Dalam bahasa 251Q,
+
+$$\eqalignno{\lambda^*(A\times B)
+&=\lambda^{\#}(A\times B)
+=\tilde\lambda(A\times B)
+=\mu_AA\cdot\nu_BB\cr
+\noalign{\noindent (menurut 251K dan 251E)}
+&=\mu^*A\cdot\nu^*B.\cr}$$
+}%end of proof of 251S
+
+\leader{251T}{}\cmmnt{ Proposisi berikut memberikan gambaran tentang bagaimana
+definisi-definisi teknis di sini saling berpadu.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+ruang ukur. Tuliskan $(X,\hat\Sigma,\hat\mu)$ dan
+$(X,\tilde\Sigma,\tilde\mu)$ untuk pelengkapan dan versi c.l.d.\ dari
+$(X,\Sigma,\mu)$\cmmnt{ (212C, 213E)}. Misalkan $\lambda$, $\hat\lambda$
+dan $\tilde\lambda$ merupakan tiga ukuran produk c.l.d.\ pada $X\times Y$
+yang diperoleh dari ketiga pasangan ukuran faktor $(\mu,\nu)$,
+$(\hat\mu,\nu)$ dan $(\tilde\mu,\nu)$. Maka
+$\lambda=\hat\lambda=\tilde\lambda$.
+
+\proof{ Tuliskan $\Lambda$, $\hat\Lambda$ dan $\tilde\Lambda$ untuk
+domain
+$\lambda$, $\hat\lambda$, $\tilde\lambda$ secara berturut-turut; dan
+$\theta$,
+$\hat\theta$, $\tilde\theta$ untuk ukuran-ukuran luar pada $X\times Y$
+yang diperoleh
+dengan rumus 251A dari ketiga pasangan ukuran faktor tersebut.
+
+\medskip
+
+{\bf (a)} Jika $E\in\Sigma$ dan $\mu E<\infty$, maka $\theta$,
+$\hat\theta$
+dan $\tilde\theta$ bertepatan pada subhimpunan-subhimpunan $E\times Y$. \Prf\ Ambil
+$A\subseteq E\times Y$ dan $\epsilon>0$.
+
+\medskip
+
+\quad{\bf (i)} Terdapat barisan $\sequencen{E_n}$ dalam $\Sigma$,
+$\sequencen{F_n}$ dalam $\Tau$ sedemikian sehingga
+$A\subseteq\bigcup_{n\in\Bbb N}E_n\times F_n$ dan
+$\sum_{n=0}^{\infty}\mu E_n\cdot\nu F_n\le\theta A+\epsilon$. Sekarang
+$\tilde\mu E_n\le\mu E_n$ untuk setiap $n$ (213Fb), sehingga
+
+\Centerline{$\tilde\theta A
+\le\sum_{n=0}^{\infty}\tilde\mu E_n\cdot\nu F_n
+\le\sum_{n=0}^{\infty}\mu E_n\cdot\nu F_n\le\theta A+\epsilon$.}
+
+\medskip
+
+\quad{\bf (ii)} Terdapat barisan $\sequencen{\hat E_n}$ dalam
+$\hat\Sigma$, $\sequencen{\hat F_n}$ dalam $\Tau$ sedemikian sehingga
+$A\subseteq\bigcup_{n\in\Bbb N}\hat E_n\times\hat F_n$ dan
+$\sum_{n=0}^{\infty}\hat\mu\hat E_n\cdot\nu\hat F_n
+\le\hat\theta A+\epsilon$. Sekarang, untuk setiap $n$ terdapat
+$E'_n\in\Sigma$ sedemikian sehingga $\hat E_n\subseteq E'_n$ dan
+$\mu E'_n=\hat\mu\hat E_n$, sehingga
+
+\Centerline{$\theta A\le\sum_{n=0}^{\infty}\mu E'_n\cdot\nu\hat F_n
+=\sum_{n=0}^{\infty}\hat\mu\hat E_n\cdot\nu\hat F_n
+\le\hat\theta A+\epsilon$.}
+
+\medskip
+
+\quad{\bf (iii)} Terdapat barisan $\sequencen{\tilde E_n}$ dalam
+$\tilde\Sigma$, $\sequencen{\tilde F_n}$ dalam $\Tau$ sedemikian sehingga
+$A\subseteq\bigcup_{n\in\Bbb N}\tilde E_n\times\tilde F_n$ dan
+$\sum_{n=0}^{\infty}\tilde\mu\tilde E_n\cdot\nu\tilde F_n
+\le\tilde\theta A+\epsilon$. Sekarang, untuk setiap $n$,
+$\tilde E_n\cap E\in\hat\Sigma$, sehingga
+
+\Centerline{$\hat\theta A
+\le\sum_{n=0}^{\infty}\hat\mu(\tilde E_n\cap E)\cdot\nu\tilde F_n
+\le\sum_{n=0}^{\infty}\tilde\mu\tilde E_n\cdot\nu\tilde F_n
+\le\tilde\theta A+\epsilon$.}
+
+\medskip
+
+\quad{\bf (iv)} Karena $A$ dan $\epsilon$ sebarang,
+$\theta=\hat\theta=\tilde\theta$ pada $\Cal P(E\times Y)$.\ \Qed
+
+\medskip
+
+{\bf (b)} Akibatnya, ukuran-ukuran luar $\lambda^*$, $\hat\lambda^*$
+dan $\tilde\lambda^*$ identik. \Prf\ Gunakan 251P. Ambil
+$A\subseteq X\times Y$, $E\in\Sigma$, $\hat E\in\hat\Sigma$,
+$\tilde E\in\tilde\Sigma$,
+$F\in\Tau$ sedemikian sehingga $\mu E$, $\hat\mu\hat E$, $\tilde\mu\tilde E$ dan
+$\nu F$ semuanya hingga. Maka
+
+\medskip
+
+\quad{\bf (i)}
+
+\Centerline{$\theta(A\cap(E\times F))=\hat\theta(A\cap(E\times F))
+\le\hat\lambda^*A$,
+\quad$\theta(A\cap(E\times F))=\tilde\theta(A\cap(E\times F))
+\le\tilde\lambda^*A$}
+
+\noindent karena $\hat\mu E$ dan $\tilde\mu E$ keduanya hingga.
+
+\medskip
+
+\quad{\bf (ii)} Terdapat $E'\in\Sigma$ sedemikian sehingga $\hat E\subseteq E'$
+dan $\mu E'<\infty$, sehingga
+
+\Centerline{$\hat\theta(A\cap(\hat E\times F))
+\le\hat\theta(A\cap(E'\times F))
+=\theta(A\cap(E'\times F))
+\le\lambda^*A$.}
+
+\medskip
+
+\quad{\bf (iii)} Terdapat $E''\in\Sigma$ sedemikian sehingga
+$E''\subseteq\tilde E$ dan $\tilde\mu(\tilde E\setminus E'')=0$ (213Fc),
+sehingga
+$\tilde\theta((\tilde E\setminus E'')\times Y)=0$ dan $\mu E''<\infty$;
+dengan demikian
+
+\Centerline{$\tilde\theta(A\cap(\tilde E\times F))
+=\tilde\theta(A\cap(E''\times F))
+=\theta(A\cap(E''\times F))
+\le\lambda^*A$.}
+
+\medskip
+
+\quad{\bf (iv)} Dengan mengambil supremum atas $E$, $\hat E$, $\tilde E$ dan
+$F$,
+kita memperoleh
+
+\Centerline{$\lambda^*A\le\hat\lambda^*A$,
+\quad$\lambda^*A\le\tilde\lambda^*A$,
+\quad$\hat\lambda^*A\le\lambda^*A$,
+\quad$\tilde\lambda^*A\le\lambda^*A$.}
+
+\noindent Karena $A$ sebarang,
+$\lambda^*=\hat\lambda^*=\tilde\lambda^*$.\ \Qed
+
+\medskip
+
+{\bf (c)} Sekarang $\lambda$, $\hat\lambda$ dan $\tilde\lambda$ semuanya
+lengkap dan ditentukan secara lokal, sehingga menurut 213C ketiganya merupakan ukuran
+yang didefinisikan dengan metode
+\Caratheodory\ dari ukuran luar masing-masing, dan karena itu identik.
+}%end of proof of 251T
+
+\leader{251U}{}\cmmnt{ `Jelas', dan merupakan akibat mudah dari
+teorema-teorema yang telah dibuktikan sejauh ini, bahwa himpunan $\{(x,x):x\in\Bbb R\}$
+terabaikan terhadap ukuran Lebesgue pada $\BbbR^2$. Hasil yang bersesuaian
+berlaku pada kuadrat sebarang ruang ukur {\it tanpa atom}.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $(X,\Sigma,\mu)$ ruang ukur tanpa atom,
+dan misalkan $\lambda$ ukuran produk c.l.d.\ pada $X\times X$. Maka
+$\Delta=\{(x,x):x\in X\}$ terabaikan terhadap $\lambda$.
+
+\proof{ Misalkan $E$, $F\in\Sigma$ himpunan-himpunan berukuran hingga, dan
+$n\in\Bbb N$. Dengan menerapkan 215D berulang kali, kita dapat memperoleh keluarga
+saling lepas $\ofamily{i}{n}{F_i}$ dari subhimpunan-subhimpunan terukur dari $F$
+sedemikian sehingga $\mu F_i=\Bover{\mu F}{n+1}$ untuk setiap $i$; dengan menetapkan
+$F_n=F\setminus\bigcup_{i<n}F_i$, kita juga mempunyai
+$\mu F_n=\Bover{\mu F}{n+1}$. Sekarang
+
+\Centerline{$\Delta\cap(E\times F)
+\subseteq\bigcup_{i\le n}(E\cap F_i)\times F_i$,}
+
+\noindent sehingga
+
+\Centerline{$\lambda^*(\Delta\cap(E\times F))
+\le\sum_{i=0}^n\mu(E\cap F_i)\cdot\mu F_i
+=\Bover{\mu F}{n+1}\sum_{i=0}^n\mu(E\cap F_i)
+\le\Bover1{n+1}\mu E\cdot\mu F$.}
+
+\noindent Karena $n$ sebarang, $\lambda(\Delta\cap(E\times F))=0$; karena
+$E$ dan $F$ sebarang, $\lambda\Delta=0$.
+}%end of proof of 251U
+
+%\mu\times(\nu_1+\nu_2)=(\mu\times\nu_1)+(\mu\times\nu_2)
+%may need restrictions?
+
+\leader{*251W}{Produk lebih dari dua ruang}\cmmnt{ Seluruh
+bagian ini dapat diulangi untuk produk berhingga sebarang. Pekerjaannya
+cukup banyak, tetapi tidak diperlukan gagasan baru. Pada saat kita memerlukan
+konstruksi umum ini secara formal, konstruksi itu semestinya sudah terasa sangat wajar,
+dan saya kira halaman berikut tidak perlu dikerjakan sebelum melanjutkan,
+terutama karena produk ruang-ruang {\it probabilitas}
+dibahas dalam \S254. Namun, demi kelengkapan, dan untuk membantu
+menemukan hasil ketika penerapannya muncul, saya mencantumkannya di sini. Hasil-hasil ini
+tentu saja membentuk seperangkat latihan yang sangat mendidik. Bagian-bagian terpenting
+diulangi dalam 251Xe-251Xf.
+
+} Misalkan $\familyiI{(X_i,\Sigma_i,\mu_i)}$ keluarga berhingga ruang ukur,
+dan tetapkan $X=\prod_{i\in I}X_i$. Tuliskan
+$\Sigma_i^f=\{E:E\in\Sigma_i,\,\mu_iE<\infty\}$ untuk setiap $i\in I$.
+
+\spheader 251Wa Untuk $A\subseteq X$ tetapkan
+
+$$\theta A=\inf\{\sum_{n=0}^{\infty}\prod_{i\in I}\mu_iE_{ni}:
+E_{ni}\in\Sigma_i\Forall i\in I,\,n\in\Bbb N,\,
+A\subseteq\bigcup_{n\in\Bbb N}\prod_{i\in I}E_{ni}\}.$$
+
+\noindent Maka $\theta$ merupakan ukuran luar pada $X$. Misalkan $\lambda_0$
+ukuran pada $X$ yang diturunkan dengan metode \Caratheodory\ dari $\theta$, dan
+$\Lambda$ domainnya.
+
+\spheader 251Wb Jika $\familyiI{X_i}$ keluarga berhingga himpunan dan
+$\Sigma_i$ merupakan $\sigma$-aljabar subhimpunan $X_i$ untuk setiap $i\in I$,
+maka $\Tensorhat_{i\in I}\Sigma_i$ adalah $\sigma$-aljabar subhimpunan
+$X=\prod_{i\in I}X_i$ yang dibangkitkan oleh $\{\prod_{i\in I}E_i:E_i\in\Sigma_i$
+untuk setiap $i\in I\}$. \cmmnt{(Untuk konstruksi yang bersesuaian
+ketika $I$ tak hingga, lihat 254E.)}
+
+\spheader 251Wc $\lambda_0(\prod_{i\in I}E_i)$ terdefinisi dan sama dengan
+$\prod_{i\in I}\mu_iE_i$ kapan pun $E_i\in\Sigma_i$ untuk setiap $i\in I$.
+
+\spheader 251Wd {\bf ukuran produk c.l.d.\ } pada $X$ adalah ukuran
+$\lambda$ yang didefinisikan dengan menetapkan
+
+\Centerline{$\lambda W
+=\sup\{\lambda_0(W\cap\prod_{i\in I}E_i):
+  E_i\in\Sigma_i^f$ untuk setiap $i\in I\}$}
+
+\noindent untuk $W\in\Lambda$. Jika $I$ kosong, \cmmnt{sehingga
+$X=\{\emptyset\}$, maka konvensi yang sesuai ialah} menetapkan
+$\lambda X=1$.
+
+\spheader 251We Jika $H\subseteq X$, maka $H\in\Lambda$ jika dan hanya jika
+$H\cap\prod_{i\in I}E_i\in\Lambda$ kapan pun $E_i\in\Sigma_i^f$ untuk setiap
+$i\in I$.
+
+\spheader 251Wf(i) $\Tensorhat_{i\in I}\Sigma_i\subseteq\Lambda$ dan
+$\lambda(\prod_{i\in I}E_i)=\prod_{i\in I}\mu_iE_i$ kapan pun
+$E_i\in\Sigma_i^f$ untuk setiap $i$.
+
+\quad(ii) Untuk setiap $W\in\Lambda$ terdapat $V\in\Tensorhat_{i\in
+I}\Sigma_i$ sedemikian sehingga $V\subseteq W$ dan $\lambda V=\lambda W$.
+
+\quad(iii) $\lambda$ lengkap dan ditentukan secara lokal, serta merupakan
+versi c.l.d.\ dari $\lambda_0$.
+
+\quad(iv) Jika $W\in\Lambda$ dan $\lambda W>0$, maka terdapat
+$E_i\in\Sigma_i^f$, untuk $i\in I$, sedemikian sehingga
+$\lambda(W\cap\prod_{i\in I}E_i)>0$.
+
+\quad(v) Jika $W\in\Lambda$ dan $\lambda W<\infty$, maka untuk setiap
+$\epsilon>0$ terdapat $n\in\Bbb N$ dan
+$E_{0i},\ldots,E_{ni}\in\Sigma_i^f$, untuk setiap $i\in I$, sedemikian sehingga
+$\lambda(W\symmdiff\bigcup_{k\le n}\prod_{i\in I}E_{ki})\le\epsilon$.
+
+\spheader 251Wg Jika setiap $\mu_i$ $\sigma$-hingga, maka $\lambda$ juga demikian, dan
+$\lambda=\lambda_0$ merupakan pelengkapan dari pembatasannya pada
+$\Tensorhat_{i\in I}\Sigma_i$.
+
+\spheader 251Wh Jika $\family{j}{J}{I_j}$ sebarang partisi $I$, maka
+$\lambda$ dapat diidentifikasikan dengan produk c.l.d.\ dari
+$\family{j}{J}{\lambda_j}$, dengan $\lambda_j$ produk c.l.d.\ dari
+$\family{i}{I_j}{\mu_i}$. \cmmnt{(Lihat argumen dalam 251N dan juga
+dalam 254N di bawah.)}
+
+\spheader 251Wi Jika $I=\{1,\ldots,n\}$ dan setiap $\mu_i$ merupakan ukuran Lebesgue
+pada $\Bbb R$, maka $\lambda$ dapat diidentifikasikan dengan ukuran Lebesgue
+pada $\BbbR^n$.
+
+\spheader 251Wj Jika, untuk setiap $i\in I$, kita mempunyai dekomposisi
+$\family{j}{J_i}{X_{ij}}$ dari $X_i$, maka
+$\langle\prod_{i\in I}X_{i,f(i)}\rangle_{f\in\prod_{i\in I}J_i}$ merupakan
+dekomposisi $X$.
+
+\spheader 251Wk Untuk sebarang $C\subseteq X$,
+
+\Centerline{$\lambda^*C
+=\sup\{\theta(C\cap\prod_{i\in I}E_i):
+  E_i\in\Sigma_i^f$ untuk setiap $i\in I\}$.}
+
+\spheader 251Wl Misalkan $A_i\subseteq X_i$ untuk setiap $i\in I$.
+Tuliskan $\lambda^{\#}$ untuk ukuran subruang pada $A=\prod_{i\in I}A_i$,
+dan $\tilde\lambda$ untuk produk c.l.d.\ dari ukuran-ukuran subruang pada
+$A_i$. Maka $\tilde\lambda$ memperluas $\lambda^{\#}$, dan jika
+
+\quad{\it salah satu} $A_i\in\Sigma_i$ untuk setiap $i$
+
+\quad{\it atau} setiap $A_i$ dapat ditutupi oleh suatu barisan himpunan berukuran
+hingga
+
+\quad{\it atau} setiap $\mu_i$ dapat dilokalkan secara ketat,
+
+\noindent maka $\tilde\lambda=\lambda^{\#}$.
+
+\spheader 251Wm Jika $A_i\subseteq X_i$ dapat ditutupi oleh suatu barisan
+himpunan berukuran hingga untuk setiap $i\in I$, maka
+$\lambda^*(\prod_{i\in I}A_i)=\prod_{i\in I}\mu_i^*A_i$.
+
+\spheader 251Wn Dengan menuliskan $\hat\mu_i$, $\tilde\mu_i$ untuk pelengkapan
+dan versi c.l.d.\ dari setiap $\mu_i$, $\lambda$ merupakan produk c.l.d.\ dari
+$\familyiI{\hat\mu_i}$ dan juga dari $\familyiI{\tilde\mu_i}$.
+
+\spheader 251Wo Jika semua $(X_i,\Sigma_i,\mu_i)$ merupakan ruang ukur tanpa atom
+yang sama $(X,\Sigma,\mu)$, maka
+$\{x:x\in X$, $i\mapsto x(i)$ injektif$\}$ adalah
+koterabaikan terhadap $\lambda$.
+
+\spheader 251Wp Sekarang misalkan kita mempunyai keluarga lain
+$\familyiI{(Y_i,\Tau_i,\nu_i)}$ ruang ukur, dengan produk
+$(Y,\Lambda',\lambda')$, dan fungsi-fungsi \imp\ $f_i:X_i\to Y_i$ untuk setiap $i$;
+definisikan $f:X\to Y$ dengan menyatakan bahwa $f(x)(i)=f_i(x(i))$ untuk $x\in X$ dan
+$i\in I$. Jika semua $\nu_i$ $\sigma$-hingga, maka $f$ merupakan \imp\ bagi
+$\lambda$ dan $\lambda'$.
+
+\exercises{
+\leader{251X}{Latihan dasar (a)}
+%\spheader 251Xa
+Misalkan $X$ dan $Y$ himpunan, $\Cal A\subseteq\Cal PX$ dan
+$\Cal B\subseteq\Cal PY$. Misalkan $\Sigma$ $\sigma$-aljabar subhimpunan
+$X$ yang dibangkitkan oleh $\Cal A$ dan $\Tau$ $\sigma$-aljabar subhimpunan
+$Y$ yang dibangkitkan oleh $\Cal B$. Tunjukkan bahwa $\Sigma\tensorhat\Tau$ adalah
+$\sigma$-aljabar subhimpunan $X\times Y$ yang dibangkitkan oleh
+$\{A\times B:A\in\Cal A$, $B\in\Cal B\}$.
+%251D query out of order
+
+\spheader 251Xb Misalkan $(X,\Sigma,\mu)$ dan
+$(Y,\Tau,\nu)$
+ruang ukur; misalkan $\lambda_0$ ukuran produk primitif pada
+$X\times Y$, dan $\lambda$ ukuran produk c.l.d.\ Tunjukkan bahwa
+$\lambda_0W<\infty$ jika dan hanya jika $\lambda W<\infty$ dan $W$ termuat dalam suatu himpunan
+berbentuk
+
+\Centerline{$(E\times Y)\cup (X\times F)\cup\bigcup_{n\in\Bbb
+N}E_n\times F_n$}
+
+\noindent dengan $\mu E=\nu F=0$ dan $\mu E_n<\infty$, $\nu F_n<\infty$
+untuk setiap $n$.
+%251F
+
+\sqheader 251Xc Tunjukkan bahwa jika $X$ dan $Y$ sebarang himpunan, masing-masing
+dengan ukuran cacahnya, maka ukuran produk primitif dan c.l.d.\
+pada $X\times Y$ keduanya merupakan ukuran cacah pada $X\times
+Y$.
+%251F
+
+\spheader 251Xd Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+ruang ukur; misalkan $\lambda_0$ ukuran produk primitif pada
+$X\times Y$, dan $\lambda$ ukuran produk c.l.d.\ Tunjukkan bahwa
+
+$$\eqalign{\lambda_0&\text{ ditentukan secara lokal}\cr
+&\iff\,\lambda_0\text{ semihingga}\cr
+&\iff\,\lambda_0=\lambda\cr
+&\iff\,\lambda_0\text{ dan }\lambda
+  \text{ mempunyai himpunan terabaikan yang sama}.\cr}$$
+
+\sqheader 251Xe (Lihat 251W.) Misalkan
+$\langle(X_i,\Sigma_i,\mu_i)\rangle_{i\in
+I}$ keluarga ruang ukur, dengan $I$ himpunan berhingga tak kosong.
+Tetapkan $X=\prod_{i\in I}X_i$. Untuk $A\subseteq X$, tetapkan
+
+\Centerline{$\theta A
+=\inf\{\sum_{n=0}^{\infty}\prod_{i\in I}\mu_iE_{ni}:
+E_{ni}\in\Sigma_i\Forall n\in\Bbb N,\,i\in
+I,\,A\subseteq\bigcup_{n\in\Bbb N}\prod_{i\in I}E_{ni}\}$.}
+
+\noindent Tunjukkan bahwa $\theta$ merupakan ukuran luar pada $X$. Misalkan
+$\lambda_0$ ukuran yang didefinisikan dari $\theta$ dengan metode \Caratheodory,
+dan untuk $W\in\dom\lambda_0$ tetapkan
+
+\Centerline{$\lambda W=\sup\{\lambda_0(W\cap\prod_{i\in I}E_i):
+E_i\in\Sigma_i,\,\mu_iE_i<\infty$ untuk setiap $i\in I\}$.}
+
+\noindent Tunjukkan bahwa $\lambda$ merupakan ukuran pada $X$, dan merupakan versi c.l.d.\
+dari $\lambda_0$.
+%251I
+
+\sqheader 251Xf (Lihat 251W.) Misalkan $I$ himpunan berhingga tak kosong dan
+$\langle(X_i,\Sigma_i,\mu_i)\rangle_{i\in I}$ keluarga ruang
+ukur. Untuk $K\subseteq I$ tak kosong, tetapkan $X^{(K)}=\prod_{i\in K}X_i$
+dan misalkan $\lambda_0^{(K)}$, $\lambda^{(K)}$ ukuran-ukuran pada $X^{(K)}$
+yang dikonstruksi seperti dalam 251Xe. Tunjukkan bahwa jika $K$ subhimpunan sejati
+tak kosong dari $I$, maka bijeksi alamiah antara $X^{(I)}$ dan
+$X^{(K)}\times X^{(I\setminus K)}$ mengidentifikasikan $\lambda_0^{(I)}$ dengan
+ukuran produk primitif dari $\lambda_0^{(K)}$ dan
+$\lambda_0^{(I\setminus K)}$, serta $\lambda^{(I)}$ dengan ukuran produk
+c.l.d.\ dari $\lambda^{(K)}$ dan $\lambda^{(I\setminus K)}$.
+%251Xe, 251I
+
+\sqheader 251Xg Dengan menggunakan 251Xe-251Xf di atas, atau cara lain, tunjukkan bahwa jika
+$(X_1,\Sigma_1,\mu_1)$, $(X_2,\Sigma_2,\mu_2)$,
+$(X_3,\Sigma_3,\mu_3)$ ruang-ruang ukur, maka ukuran produk primitif dan c.l.d.\
+$\lambda_0$, $\lambda$ pada $(X_1\times X_2)\times X_3$, yang dikonstruksi dengan
+terlebih dahulu mengambil ukuran produk yang sesuai pada $X_1\times X_2$ lalu
+mengambil produknya dengan ukuran pada $X_3$, diidentifikasikan
+dengan ukuran-ukuran produk yang bersesuaian pada $X_1\times(X_2\times X_3)$ oleh
+bijeksi kanonik antara himpunan $(X_1\times X_2)\times X_3$ dan
+$X_1\times(X_2\times X_3)$.
+%251Xf, 251Xe, 251I
+
+\spheader 251Xh(i) Apa yang terjadi dalam 251Xe ketika $I$ merupakan
+himpunan satu anggota? (ii) Rancang konvensi yang sesuai agar 251Xe-251Xf
+tetap berlaku ketika satu atau lebih dari himpunan $I$, $K$, $I\setminus K$ di sana
+kosong.
+%251Xf, 251Xe, 251I
+
+\sqheader 251Xi Misalkan $(X,\Sigma,\mu)$ ruang ukur lengkap yang
+ditentukan secara lokal, dan $I$ sebarang himpunan tak kosong; misalkan $\nu$
+ukuran cacah pada $I$. Tunjukkan bahwa ukuran produk c.l.d.\ pada
+$X\times I$ sama dengan (atau setidaknya dapat diidentifikasikan dengan) ukuran
+jumlah langsung dari keluarga $\langle(X_i,\Sigma_i,\mu_i)\rangle_{i\in I}$,
+jika kita menetapkan $(X_i,\Sigma_i,\mu_i)=(X,\Sigma,\mu)$ untuk setiap $i$.
+%251I
+
+\sqheader 251Xj Misalkan
+$\langle(X_i,\Sigma_i,\mu_i)\rangle_{i\in I}$ keluarga ruang
+ukur, dengan jumlah langsung $(X,\Sigma,\mu)$
+(214L). Misalkan $(Y,\Tau,\nu)$ sebarang ruang ukur, dan berikan $X\times Y$,
+$X_i\times Y$ ukuran produk c.l.d.\ masing-masing. Tunjukkan bahwa bijeksi
+alamiah antara $X\times Y$ dan
+$Z=\bigcup_{i\in I}(X_i\times Y)\times\{i\}$
+merupakan isomorfisme antara ukuran pada $X\times Y$ dan
+ukuran jumlah langsung pada $Z$.
+%251Xi, 251I
+
+\sqheader 251Xk Misalkan $(X,\Sigma,\mu)$ sebarang ruang ukur, dan
+$Y$ himpunan satu anggota
+$\{y\}$; misalkan $\nu$ ukuran pada $Y$ sedemikian sehingga $\nu Y=1$.
+Tunjukkan bahwa bijeksi alamiah antara $X\times\{y\}$ dan $X$
+mengidentifikasikan ukuran produk primitif pada $X\times\{y\}$ dengan
+$\check\mu$ sebagaimana didefinisikan dalam 213Xa, dan ukuran produk c.l.d.\ dengan
+versi c.l.d.\
+dari $\mu$. Jelaskan bagaimana menggabungkan hal ini dengan 251Xg dan
+251Ic untuk membuktikan 251T.
+%251I
+
+\sqheader 251Xl Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ ruang
+ukur, dan $\lambda$ ukuran produk c.l.d.\ pada $X\times Y$. Tunjukkan
+bahwa $\lambda$ merupakan versi c.l.d.\ dari pembatasannya pada
+$\Sigma\tensorhat\Tau$.
+%251K
+
+\spheader 251Xm Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ ruang
+ukur, dengan ukuran produk primitif dan c.l.d.\ $\lambda_0$,
+$\lambda$. Misalkan
+$\lambda_1$ sebarang ukuran dengan domain $\Sigma\tensorhat\Tau$ sedemikian sehingga
+$\lambda_1(E\times F)=\mu E\cdot\nu F$ kapan pun $E\in\Sigma$ dan
+$F\in\Tau$. Tunjukkan bahwa $\lambda W\le\lambda_1W\le\lambda_0W$ untuk setiap
+$W\in\Sigma\tensorhat\Tau$.
+%251K
+
+\spheader 251Xn Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ dua ruang
+ukur, dan $\lambda_0$ ukuran produk primitif pada $X\times Y$.
+Tunjukkan bahwa ukuran luar $\lambda_0^*$ yang bersesuaian tidak lain adalah
+ukuran luar $\theta$ dari 251A.
+%251P
+
+\spheader 251Xo Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+ruang ukur, dan $A\subseteq X$, $B\subseteq
+Y$ subhimpunan; tuliskan $\mu_A$, $\nu_B$ untuk ukuran-ukuran
+subruang. Misalkan $\lambda_0$ ukuran produk primitif
+pada $X\times Y$, dan $\lambda_0^{\#}$
+ukuran subruang yang diinduksinya pada $A\times B$. Misalkan $\tilde\lambda_0$
+ukuran produk primitif dari
+$\mu_A$ dan $\nu_B$ pada $A\times B$. Tunjukkan bahwa $\tilde\lambda_0$
+memperluas $\lambda_0^{\#}$.
+Tunjukkan bahwa jika
+{\it salah satu} ($\alpha$) $A\in\Sigma$ dan $B\in\Tau$
+{\it atau} ($\beta$) $A$ dan $B$ keduanya dapat ditutupi oleh barisan himpunan
+berukuran hingga
+{\it atau} ($\gamma$) $\mu$ dan $\nu$ keduanya dapat dilokalkan secara ketat,
+maka $\tilde\lambda_0=\lambda_0^{\#}$.
+%251Q
+
+\spheader 251Xp Dalam 251Q, tunjukkan bahwa $\tilde\lambda$ dan $\lambda^{\#}$
+akan mempunyai ideal nol yang sama, sekalipun tidak satu pun syarat
+251Q(ii) dipenuhi.
+%251Q query out of order
+
+\spheader 251Xq Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ sebarang ruang
+ukur, dan $\lambda_0$ ukuran produk primitif pada $X\times Y$.
+Tunjukkan bahwa $\lambda_0^*(A\times B)=\mu^*A\cdot\nu^*B$ untuk sebarang
+$A\subseteq X$ dan $B\subseteq Y$.
+%251S
+
+\spheader 251Xr Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+ruang ukur, dan $\hat\mu$ pelengkapan dari $\mu$.
+Tunjukkan bahwa pasangan $\mu$, $\nu$ dan $\hat\mu$, $\nu$ mempunyai ukuran produk
+primitif yang sama.
+%251T
+
+\spheader 251Xs Misalkan $(X,\Sigma,\mu)$ ruang ukur semihingga.
+Tunjukkan bahwa $\mu$ tanpa atom jika dan hanya jika diagonal $\{(x,x):x\in X\}$
+terabaikan terhadap ukuran produk c.l.d.\ pada $X\times X$.
+%251U
+
+\spheader 251Xt Misalkan $(X,\Sigma,\mu)$ ruang ukur tanpa atom,
+dan $(Y,\Tau,\nu)$ sebarang ruang ukur. Tunjukkan bahwa ukuran produk c.l.d.\
+pada $X\times Y$ tanpa atom.
+%251+
+
+\sqheader 251Xu Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ ruang
+ukur, dan $\lambda$ ukuran produk c.l.d.\ pada $X\times Y$.
+(i) Tunjukkan bahwa jika $\mu$ dan $\nu$ atomik murni, maka $\lambda$ juga demikian.
+(ii) Tunjukkan bahwa jika $\mu$ dan $\nu$ bertumpu pada titik, maka $\lambda$ juga demikian.
+%251+  (ii) used in 491F
+
+\leader{251Y}{Latihan lanjutan (a)}
+%\spheader 251Ya
+Misalkan $X$, $Y$ himpunan dengan $\sigma$-aljabar subhimpunan $\Sigma$, $\Tau$.
+Andaikan $h:X\times Y\to\Bbb R$ terukur terhadap $\Sigma\tensorhat\Tau$
+dan $\phi:X\to Y$ terukur terhadap $(\Sigma,\Tau)$ (121Yc). Tunjukkan bahwa
+$x\mapsto h(x,\phi(x)):X\to\Bbb R$ terukur terhadap $\Sigma$.
+%251D
+
+\spheader 251Yb Tunjukkan bahwa terdapat
+ruang-ruang ukur $(X_1,\Sigma_1,\mu_1)$ dan $(X_2,\Sigma_2,\mu_2)$,
+ruang probabilitas $(Y,\Tau,\nu)$ dan fungsi \imp\ $f:X_1\to X_2$
+sedemikian sehingga $h:X_1\times Y\to X_2\times Y$ bukan \imp\ bagi ukuran produk
+c.l.d.\ pada $X_1\times Y$ dan $X_2\times Y$, dengan
+$h(x,y)=(f(x),y)$ untuk $x\in X_1$ dan $y\in Y$.
+%251L
+
+\spheader 251Yc Misalkan $(X,\Sigma,\mu)$ ruang ukur lengkap yang
+ditentukan secara lokal dengan subruang $A$ yang ukurannya tidak ditentukan secara lokal
+(lihat 216Xb). Tetapkan $Y=\{0\}$, $\nu Y=1$ dan
+pertimbangkan ukuran produk c.l.d.\ pada $X\times Y$ dan $A\times Y$;
+tuliskan $\Lambda$, $\tilde\Lambda$ untuk domain masing-masing. Tunjukkan bahwa
+$\tilde\Lambda$ memuat secara sejati $\{W\cap(A\times Y):W\in\Lambda\}$.
+%251P
+
+\spheader 251Yd Misalkan $(X,\Sigma,\mu)$ sebarang ruang ukur,
+$(Y,\Tau,\nu)$ ruang ukur tanpa atom, dan $f:X\to Y$ fungsi
+terukur terhadap $(\Sigma,\Tau)$. Tunjukkan bahwa $\{(x,f(x)):x\in X\}$
+terabaikan terhadap ukuran produk c.l.d.\ pada $X\times Y$.
+%251U
+}%end of exercises
+
+\endnotes{
+\Notesheader{251} Terdapat kesulitan nyata dalam memutuskan konstruksi mana
+yang harus dinyatakan sebagai produk `yang' baku dari dua ukuran sebarang.
+Frasa saya `ukuran produk primitif', dan
+notasi $\lambda_0$, mengungkapkan suatu kecenderungan; pilihan saya sendiri adalah
+produk c.l.d.\ $\lambda$, karena dua alasan utama. Pertama,
+$\lambda_0$ kemungkinan besar bersifat `buruk', khususnya,
+tidak semihingga, bahkan jika $\mu$ dan $\nu$ bersifat `baik' (251Xd, 252Yk),
+sedangkan
+$\lambda$ mewarisi beberapa sifat terpenting dari $\mu$ dan
+$\nu$ (misalnya, 251O); kedua, dalam hal ruang ukur topologis
+$X$ dan $Y$, sering kali terdapat ukuran topologis kanonik
+pada $X\times Y$, yang kemungkinan lebih erat berkaitan dengan
+$\lambda$ daripada dengan $\lambda_0$. Namun, untuk menjelaskan hal ini saya
+harus meminta Anda menunggu hingga \S417 dalam Jilid 4.
+
+Ukuran produk `primitif' dapat saja dihapus sama sekali
+dari uraian, atau setidaknya ditempatkan dalam latihan. Memang inilah
+yang saya harapkan akan saya lakukan dalam bagian selanjutnya dari risalah ini, sebab (menurut
+pandangan saya) semua ciri penting ukuran produk pada sejumlah berhingga
+faktor dapat dinyatakan dalam istilah ukuran produk c.l.d. Namun,
+untuk pengantar pertama mengenai ukuran produk, pendekatan langsung
+ke ukuran produk c.l.d.\ (melalui deskripsi $\lambda^*$
+dalam 251P, misalnya) terasa terlalu berat, dan saya memiliki semacam
+kewajiban untuk menyajikan pesaing paling alamiah dari ukuran produk c.l.d.\
+dengan cukup menonjol agar Anda dapat menilai sendiri apakah saya
+benar ketika mengesampingkannya. Tentu ada hasil-hasil yang berkaitan dengan
+ukuran produk primitif (251Xn, 251Xq, 252Yc) yang memiliki
+kesederhanaan yang menarik.
+
+Pertentangan itu tentu saja dapat dihindari sepenuhnya jika kita langsung mengkhususkan
+diri pada ruang $\sigma$-hingga, yang pada ruang-ruang tersebut kedua
+konstruksi bertepatan (251K). Namun, bahkan hal ini tidak menyelesaikan semua
+masalah. Ada ukuran alternatif yang lazim, sering disebut ukuran produk `yang' baku:
+pembatasan $\lambda_{0\Cal B}$ dari $\lambda_0$ pada
+$\sigma$-aljabar $\Sigma\tensorhat\Tau$. (Lihat, misalnya,
+{\smc Halmos 50}.) Keuntungannya ialah bahwa jika suatu fungsi $f$ pada
+$X\times Y$
+terukur terhadap $\Sigma\tensorhat\Tau$, maka $x\mapsto f(x,y)$ terukur terhadap
+$\Sigma$ untuk setiap $y\in Y$. (Hal ini karena
+
+$$\{W:W\subseteq X\times Y,\,\{x:(x,y)\in
+W\}\in\Sigma\,\Forall \,y\in Y\}$$
+
+\noindent merupakan $\sigma$-aljabar subhimpunan $X\times Y$ yang memuat
+$E\times F$ kapan pun $E\in\Sigma$ dan $F\in\Tau$, sehingga memuat
+$\Sigma\tensorhat\Tau$.) Keberatan utama, menurut saya, ialah bahwa
+ukuran Lebesgue pada $\BbbR^2$ tidak lagi merupakan produk `yang' baku dari ukuran Lebesgue
+pada $\Bbb R$ dengan dirinya sendiri. Secara umum, sudah selayaknya kita mencari
+ukuran yang mengukur sebanyak mungkin himpunan, dan saya lebih suka menghadapi
+masalah-masalah teknis (yang saya akui dapat menggentarkan) dengan
+mencari definisi-definisi yang sesuai ketika mendekati teorema-teorema utama,
+daripada mengandalkan perbaikan ad hoc ketika tiba saatnya menerapkannya.
+
+Untuk sementara saya tidak memberikan contoh ukuran produk lebih lanjut,
+karena penyelidikan contoh-contoh tertentu akan jauh
+lebih mudah dengan bantuan hasil-hasil dari bagian berikutnya. Tentu saja contoh
+utama, dan yang seharusnya selalu terlintas dalam pikiran ketika mendengar
+kata-kata `ukuran produk', adalah ukuran Lebesgue pada
+$\BbbR^2$, yaitu kasus $r=s=1$ dari 251N dan 251R. Untuk memperoleh gambaran
+tentang apa yang dapat terjadi ketika
+salah satu faktornya tidak $\sigma$-hingga, Anda dapat melihat lebih dahulu 252K.
+
+Saya berharap Anda akan melihat bahwa definisi ukuran luar
+$\theta$ dalam 251A bersesuaian dengan definisi baku ukuran luar Lebesgue,
+dengan `persegi panjang terukur' $E\times F$ menggantikan
+interval, dan fungsional $E\times F\mapsto\mu E\cdot\nu F$
+menggantikan `panjang' atau `volume' suatu interval;
+lebih jauh, jika $E$ dan $F$ dipandang sebagai interval, terdapat hubungan yang jelas
+antara ukuran Lebesgue pada $\BbbR^2$ dan ukuran produk
+pada $\Bbb R\times\Bbb R$. Tentu saja suatu `hubungan yang jelas' bukanlah
+hal yang sama dengan teorema yang benar-benar dirumuskan dengan hipotesis dan
+kesimpulan yang tepat, tetapi Teorema 251N jelas bersifat sentral. Namun, jauh sebelum itu,
+terdapat kesejajaran lain antara konstruksi 251A dan
+konstruksi ukuran Lebesgue. Dalam kedua kasus, bukti bahwa kita memperoleh
+ukuran luar langsung mengikuti rumus definisinya (dalam 113Yd saya memberikan
+sebagai latihan suatu hasil umum yang mencakup 251B), dan oleh karena itu suatu
+konstruksi yang sangat umum dapat menuntun kita kepada suatu ukuran. Namun ukuran itu
+akan jauh kurang menarik dan kurang bernilai kecuali jika ia membuat himpunan-himpunan
+dasar, yang dalam hal ini adalah persegi panjang terukur, menjadi terukur dan memberikan
+nilai ukuran yang benar kepada himpunan-himpunan tersebut.
+Jadi 251E bersesuaian dengan teorema bahwa interval terukur terhadap Lebesgue,
+dengan ukuran yang benar (114Db, 114G). Inilah kunci sesungguhnya
+bagi konstruksi tersebut, dan merupakan salah satu gagasan mendasar dalam teori ukur.
+
+Kesejajaran lain lagi terdapat dalam 251Xn; ukuran luar yang mendefinisikan
+ukuran produk primitif $\lambda_0$ tepat sama dengan ukuran luar
+yang didefinisikan dari $\lambda_0$. Saya menguraikan fenomena yang bersesuaian
+untuk ukuran Lebesgue dalam 132C.
+
+Setiap konstruksi yang mengklaim sebutan `kanonik' harus
+memenuhi berbagai persyaratan alamiah; misalnya, kita mengharapkan
+bijeksi kanonik antara $X\times Y$ dan $Y\times X$ merupakan suatu
+isomorfisme antara ruang-ruang ukuran produk yang bersesuaian.
+`Komutativitas' produk dalam pengertian ini, menurut saya, jelas dari
+definisi-definisi dalam 251A-251C. Jelas pula bahwa kita menginginkan -- meskipun, menurut
+saya, tidak jelas bahwa hal itu benar -- agar produk tersebut `asosiatif' dalam arti
+bahwa bijeksi kanonik antara $(X\times Y)\times Z$ dan
+$X\times(Y\times Z)$ juga merupakan suatu isomorfisme antara
+produk-produk ukuran produk yang bersesuaian. Hal ini memang berlaku bagi
+ukuran produk primitif maupun c.l.d.\ (251Wh, 251Xe-251Xg).
+
+Dengan menelusuri klasifikasi ruang ukur yang disajikan dalam
+\S211, kita mendapati bahwa ukuran produk primitif $\lambda_0$ lengkap
+untuk sebarang ukuran faktor $\mu$, $\nu$, sedangkan ukuran produk c.l.d.\
+$\lambda$ selalu lengkap dan ditentukan secara lokal.
+$\lambda_0$ mungkin tidak
+semihingga, bahkan jika $\mu$ dan $\nu$ dapat dilokalkan secara ketat
+(252Yk); tetapi $\lambda$ akan dapat dilokalkan secara ketat jika $\mu$ dan
+$\nu$ demikian (251O). Tentu saja hal ini berkaitan dengan kenyataan bahwa
+ukuran produk c.l.d.\ bersifat distributif terhadap jumlah langsung (251Xj). Jika
+$\mu$ atau $\nu$ tanpa atom, maka $\lambda$ juga demikian (251Xt). Baik
+$\lambda$ maupun $\lambda_0$ bersifat $\sigma$-hingga jika $\mu$
+dan $\nu$ demikian (251K). Mungkin saja $\mu$ dan $\nu$ keduanya
+dapat dilokalkan tetapi $\lambda$ tidak (254U).
+
+Setidaknya jika Anda telah mengerjakan Bab 21, kini Anda telah mempelajari cukup banyak
+teori ukur `murni' sehingga penyelidikan semacam ini, betapapun
+langsungnya, menimbulkan cukup banyak pertanyaan. Selain jumlah
+langsung, kita juga mempunyai konstruksi `pelengkapan', `subruang', `ukuran
+luar', dan (khususnya) `versi c.l.d.' untuk dipadukan dengan gagasan-gagasan
+baru ini; saya memberikan beberapa hasil dalam 251T dan 251Xk. Mengenai
+subruang, muncul beberapa kesulitan yang mungkin mengejutkan. Masalahnya ialah bahwa
+ukuran produk pada produk dua subruang dapat mempunyai domain yang lebih luas
+daripada yang mungkin diduga. Saya memberikan contoh sederhana dalam 251Yc dan contoh yang lebih
+rumit dalam 254Yg. Untuk ruang yang dapat dilokalkan secara ketat, tidak ada
+masalah (251Q); tetapi tampaknya tidak ada kriteria lain yang diambil dari daftar
+sifat yang dipertimbangkan dalam \S251 yang memadai untuk meniadakan
+kemungkinan munculnya fenomena yang meresahkan.
+
+}%end of notes
+
+\discrpage

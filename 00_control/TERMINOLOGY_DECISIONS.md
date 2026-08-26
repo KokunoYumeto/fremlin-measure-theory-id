@@ -151,3 +151,23 @@ probabilitas**; *finite product* → **produk berhingga**; *rectangle* →
 **ukuran Radon**. These are provisional source-order decisions grounded in the
 existing lane glossary and mathematical meaning; they introduce no new
 component or license boundary.
+
+For complete Section 252, use the following more specific forms:
+
+| Concept or construction | Preferred O007 form | Decision and boundary |
+|---|---|---|
+| Fubini's theorem / Tonelli's theorem | `teorema Fubini`; `teorema Tonelli` | Retain the proper names and distinguish the integrability and nonnegative-function forms in surrounding prose. |
+| repeated integral | `integral berulang` | Use for the iterated integral as an object; retain `integrasi berulang` for the process or topic. |
+| ordinate set / section | `himpunan ordinat`; `penampang` | Use `himpunan ordinat` for Fremlin's named construction in 252N and `penampang` for horizontal/vertical set sections elsewhere. |
+| counting measure | `ukuran cacah` | Prefer the established Indonesian mathematical term; do not use the literal but less conventional `ukuran hitung`. |
+| volume of a ball | `volume bola` | Use as the result title and preserve the dimension and normalization formulas exactly. |
+| complex-valued function | `fungsi bernilai kompleks` | Keep the codomain adjective attached to `bernilai`; do not suggest that the function itself is structurally complicated. |
+| measure-qualified almost-everywhere quantifier | `untuk $\mu$-hampir setiap $x$` | Attach the governing measure directly to the almost-everywhere quantifier. This prevents ambiguous readings such as “relative to μ, for almost every x,” especially inside nested Fubini quantifiers. |
+| lambda-simple function | `fungsi sederhana-$\lambda$` | Keep the measure qualifier attached to the simple-function construction and place `nonnegatif` after it when required. |
+
+The lexical compounds `aljabar-sigma` and `subaljabar-sigma` continue the
+Chapter 21 decision. In `mt252.tex`, two source math atoms containing only the
+lexical prefix `\sigma` are therefore localized as prose; both raw source
+ordinals and hashes are bound in `qa/chapter25/mt252-unit-qa.json`. This does
+not authorize changing symbolic sigma variables or the conventional compound
+`$\sigma$-hingga`.

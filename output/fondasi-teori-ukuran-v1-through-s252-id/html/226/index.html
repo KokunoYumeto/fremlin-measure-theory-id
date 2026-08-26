@@ -1,0 +1,932 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Dekomposisi Lebesgue suatu fungsi bervariasi terbatas — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        BbbQ: '\\mathbb{Q}', BbbR: '\\mathbb{R}',
+        eightBbb: ['\\mathbb{#1}', 1],
+        DiniD: '\\overline{D}', Dinid: '\\underline{D}',
+        Var: '\\operatorname{Var}',
+        bumpeq: '=_{\\mathrm{approx}}',
+        intstar: '\\operatorname{int}^{*}',
+        family: ['\\langle #3\\rangle_{#1\\in #2}', 3],
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        displaycause: ['\\text{(#1)}', 1],
+        bigcupop: '\\bigcup', biggerint: '\\int',
+        eae: '=_{\\mathrm{a.e.}}', leae: '\\le_{\\mathrm{a.e.}}', geae: '\\ge_{\\mathrm{a.e.}}',
+        restr: '\\mathord{\\upharpoonright}', restrp: '\\mathord{\\upharpoonright}',
+        Real: '\\operatorname{Re}', Imag: '\\operatorname{Im}',
+        tbf: ['\\mathbf{#1}', 1], eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Qed: '\\square',
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        roibr: '\\mathopen{{[}}',
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1]
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 2 · Bagian 226</p>
+  <h1>Dekomposisi Lebesgue suatu fungsi bervariasi terbatas</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi kumulatif</a></nav>
+<main id="isi">
+<span class="anchor" id="226"></span>
+<p>Saya menutup bab ini dengan beberapa catatan mengenai suatu metode untuk
+menganalisis fungsi umum yang bervariasi terbatas. Metode ini dapat membantu
+memberikan gambaran tentang seperti apa fungsi-fungsi tersebut, walaupun
+(selain <a class="xref" href="#226A">226A</a>) hampir tidak diperlukan dalam jilid ini.</p>
+<section class="source-unit" id="226A" data-source-id="226A"><h2><span class="source-label">226A</span> Jumlah atas himpunan indeks sembarang </h2>
+<p>Untuk
+memperoleh gambaran lengkap mengenai bagian analisis real ini, sedikit persiapan
+akan berguna. Persiapan ini menyangkut konsep jumlah atas himpunan
+indeks sembarang, yang sejauh ini cenderung saya hindari.</p>
+</section>
+<section class="source-unit" id="226Aa" data-source-id="226Aa"><h3><span class="source-label">226Aa</span> <strong>(a)</strong> </h3>
+<p>Jika <span class="math inline" data-source-tex="I">\(I\)</span> sembarang himpunan dan
+<span class="math inline" data-source-tex="\langle a_i\rangle_{i\in I}">\(\langle a_i\rangle_{i\in I}\)</span> sembarang keluarga dalam <span class="math inline" data-source-tex="[0,\infty]">\([0,\infty]\)</span>, kita
+tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{i\in I}a_i
+=\sup\{\sum_{i\in K}a_i:K\text{ suatu subhimpunan berhingga dari }I\}">\(\sum_{i\in I}a_i
+=\sup\{\sum_{i\in K}a_i:K\text{ suatu subhimpunan berhingga dari }I\}\)</span>,</div>
+<p>dengan kaidah bahwa <span class="math inline" data-source-tex="\sum_{i\in\emptyset}a_i=0">\(\sum_{i\in\emptyset}a_i=0\)</span>.
+(Lihat <a class="xref" href="../112/index.html#112Bd">112Bd</a>, <a class="xref" href="../222/index.html#222Ba">222Ba</a>.) Untuk <span class="math inline" data-source-tex="a_i\in[-\infty,\infty]">\(a_i\in[-\infty,\infty]\)</span> umum, kita
+dapat menetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{i\in I}a_i=\sum_{i\in I}a_i^+-\sum_{i\in I}a_i^-">\(\sum_{i\in I}a_i=\sum_{i\in I}a_i^+-\sum_{i\in I}a_i^-\)</span></div>
+<p>jika ruas ini terdefinisi dalam <span class="math inline" data-source-tex="[-\infty,\infty]">\([-\infty,\infty]\)</span>, yakni
+sekurang-kurangnya salah satu dari <span class="math inline" data-source-tex="\sum_{i\in I}a_i^+">\(\sum_{i\in I}a_i^+\)</span>,
+<span class="math inline" data-source-tex="\sum_{i\in I}a_i^-">\(\sum_{i\in I}a_i^-\)</span> berhingga, dengan <span class="math inline" data-source-tex="a^+=\max(a,0)">\(a^+=\max(a,0)\)</span> dan
+<span class="math inline" data-source-tex="a^-=\max(-a,0)">\(a^-=\max(-a,0)\)</span> untuk setiap <span class="math inline" data-source-tex="a">\(a\)</span>. Jika <span class="math inline" data-source-tex="\sum_{i\in I}a_i">\(\sum_{i\in I}a_i\)</span> terdefinisi
+dan berhingga, kita mengatakan bahwa <span class="math inline" data-source-tex="\familyiI{a_i}">\(\familyiI{a_i}\)</span> <strong>dapat
+dijumlahkan</strong>.</p>
+</section>
+<section class="source-unit" id="226Ab" data-source-id="226Ab"><h3><span class="source-label">226Ab</span> <strong>(b)</strong> </h3>
+<p>Karena buku ini membahas teori ukuran,
+saya akan langsung menguraikan hubungan antara dapat dijumlahkannya keluarga
+semacam ini dan konsep integrasi yang sesuai. Untuk setiap himpunan <span class="math inline" data-source-tex="I">\(I\)</span>,
+kita mempunyai ‘ukuran cacah’ <span class="math inline" data-source-tex="\mu">\(\mu\)</span> pada <span class="math inline" data-source-tex="I">\(I\)</span> yang bersesuaian
+(<a class="xref" href="../112/index.html#112Bd">112Bd</a>). Setiap subhimpunan dari <span class="math inline" data-source-tex="I">\(I\)</span> terukur, sehingga setiap
+keluarga <span class="math inline" data-source-tex="\langle a_i\rangle_{i\in I}">\(\langle a_i\rangle_{i\in I}\)</span> bilangan real merupakan fungsi
+bernilai real terukur pada <span class="math inline" data-source-tex="I">\(I\)</span>. Suatu subhimpunan dari <span class="math inline" data-source-tex="I">\(I\)</span>
+berukuran berhingga jika dan hanya jika subhimpunan itu berhingga; jadi
+fungsi bernilai real <span class="math inline" data-source-tex="f">\(f\)</span> pada <span class="math inline" data-source-tex="I">\(I\)</span> disebut ‘sederhana’ jika
+<span class="math inline" data-source-tex="K=\{i:f(i)\ne 0\}">\(K=\{i:f(i)\ne 0\}\)</span> berhingga. Dalam hal ini,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int fd\mu=\sum_{i\in K}f(i)=\sum_{i\in I}f(i)">\(\int fd\mu=\sum_{i\in K}f(i)=\sum_{i\in I}f(i)\)</span></div>
+<p>sebagaimana didefinisikan dalam bagian (a). Ukuran <span class="math inline" data-source-tex="\mu">\(\mu\)</span>
+semifinit (<a class="xref" href="../211/index.html#211Nc">211Nc</a>), sehingga fungsi nonnegatif <span class="math inline" data-source-tex="f">\(f\)</span> terintegralkan jika dan
+hanya jika <span class="math inline" data-source-tex="\int f=\sup_{\mu K&lt;\infty}\int_Kf">\(\int f=\sup_{\mu K&lt;\infty}\int_Kf\)</span> berhingga (<a class="xref" href="../213/index.html#213B">213B</a>); tetapi
+tentu saja supremum ini tidak lain adalah</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sup\{\sum_{i\in K}f(i):K\subseteq I\text{ berhingga}\}
+=\sum_{i\in I}f(i)">\(\sup\{\sum_{i\in K}f(i):K\subseteq I\text{ berhingga}\}
+=\sum_{i\in I}f(i)\)</span>.</div>
+<p>Sekarang suatu fungsi sembarang <span class="math inline" data-source-tex="f:I\to\Bbb R">\(f:I\to\Bbb R\)</span> terintegralkan jika dan
+hanya jika fungsi itu terukur dan <span class="math inline" data-source-tex="\int|f|d\mu&lt;\infty">\(\int|f|d\mu&lt;\infty\)</span>, yakni, jika dan
+hanya jika <span class="math inline" data-source-tex="\sum_{i\in I}|f(i)|&lt;\infty">\(\sum_{i\in I}|f(i)|&lt;\infty\)</span>, dan dalam hal ini</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int fd\mu
+=\int f^+d\mu-\int f^-d\mu
+=\sum_{i\in I}f(i)^+-\sum_{i\in I}f(i)^-
+=\sum_{i\in I}f(i)">\(\int fd\mu
+=\int f^+d\mu-\int f^-d\mu
+=\sum_{i\in I}f(i)^+-\sum_{i\in I}f(i)^-
+=\sum_{i\in I}f(i)\)</span>,</div>
+<p>dengan menuliskan <span class="math inline" data-source-tex="f^{\pm}(i)=f(i)^{\pm}">\(f^{\pm}(i)=f(i)^{\pm}\)</span> untuk setiap
+<span class="math inline" data-source-tex="i">\(i\)</span>. Jadi kita mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{i\in I}a_i=\int_Ia_i\mu(di)">\(\sum_{i\in I}a_i=\int_Ia_i\mu(di)\)</span>,</div>
+<p>dan aturan baku yang memperbolehkan <span class="math inline" data-source-tex="\infty">\(\infty\)</span> sebagai nilai suatu
+integral (<a class="xref" href="../133/index.html#133A">133A</a>, <a class="xref" href="../135/index.html#135F">135F</a>) sangat selaras dengan penafsiran
+dalam (a) di atas.</p>
+</section>
+<section class="source-unit" id="226Ac" data-source-id="226Ac"><h3><span class="source-label">226Ac</span> <strong>(c)</strong> </h3>
+<p>Dengan demikian, dan seperti yang dapat
+diduga, operasi penjumlahan merupakan operasi linear pada ruang linear
+keluarga bilangan real yang dapat dijumlahkan.</p>
+<p>Saya mencatat di sini bahwa konsep keterjumlahan ini bersifat
+‘mutlak’; suatu keluarga <span class="math inline" data-source-tex="\langle a_i\rangle_{i\in I}">\(\langle a_i\rangle_{i\in I}\)</span> dapat dijumlahkan
+jika dan hanya jika keluarga itu dapat dijumlahkan mutlak.
+Hal ini diperlukan karena penjumlahannya juga harus
+‘tak bersyarat’; kita tidak mempunyai struktur pada himpunan sembarang <span class="math inline" data-source-tex="I">\(I\)</span>
+yang dapat mengarahkan kita untuk mengambil jumlah dalam suatu urutan tertentu.
+Lihat <a class="xref" href="#226Xa">226Xa</a>. Secara khusus, saya membedakan
+‘<span class="math inline" data-source-tex="\sum_{n\in\Bbb N}a_n">\(\sum_{n\in\Bbb N}a_n\)</span>’, yang dalam buku ini selalu akan ditafsirkan
+seperti dalam <a class="xref" href="#226A">226A</a> di atas, dari ‘<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}a_n">\(\sum_{n=0}^{\infty}a_n\)</span>’, yang
+(jika pembedaan ini berpengaruh) harus ditafsirkan sebagai
+<span class="math inline" data-source-tex="\lim_{m\to\infty}\sum_{n=0}^ma_n">\(\lim_{m\to\infty}\sum_{n=0}^ma_n\)</span>. Jadi, misalnya,
+<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\Bover{(-1)^n}{n+1}=\ln 2">\(\sum_{n=0}^{\infty}\Bover{(-1)^n}{n+1}=\ln 2\)</span>, sedangkan
+<span class="math inline" data-source-tex="\sum_{n\in\Bbb N}\Bover{(-1)^n}{n+1}">\(\sum_{n\in\Bbb N}\Bover{(-1)^n}{n+1}\)</span> tidak terdefinisi. Tentu saja
+<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}a_n=\sum_{n\in\Bbb N}a_n">\(\sum_{n=0}^{\infty}a_n=\sum_{n\in\Bbb N}a_n\)</span> kapan pun jumlah yang
+terakhir terdefinisi dalam <span class="math inline" data-source-tex="[-\infty,\infty]">\([-\infty,\infty]\)</span>.</p>
+</section>
+<section class="source-unit" id="226Ad" data-source-id="226Ad"><h3><span class="source-label">226Ad</span> <strong>(d)</strong> </h3>
+<p>Ada pendekatan lain yang sangat penting
+terhadap jumlah yang diuraikan di sini. Jika
+<span class="math inline" data-source-tex="\langle a_i\rangle_{i\in I}">\(\langle a_i\rangle_{i\in I}\)</span> merupakan suatu keluarga bilangan real yang
+(secara mutlak) dapat dijumlahkan, maka untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat suatu
+<span class="math inline" data-source-tex="K\subseteq I">\(K\subseteq I\)</span> berhingga sedemikian sehingga
+<span class="math inline" data-source-tex="\sum_{i\in I\setminus K}|a_i|\le\epsilon">\(\sum_{i\in I\setminus K}|a_i|\le\epsilon\)</span>. <span class="proof-fragment">Bukti. Ini tidak
+lain daripada kasus khusus <a class="xref" href="../225/index.html#225A">225A</a>; terdapat suatu himpunan <span class="math inline" data-source-tex="K">\(K\)</span> dengan
+<span class="math inline" data-source-tex="\mu K&lt;\infty">\(\mu K&lt;\infty\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\int_{I\setminus K}|a_i|\mu(di)\le\epsilon">\(\int_{I\setminus K}|a_i|\mu(di)\le\epsilon\)</span>, tetapi
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\int_{I\setminus K}|a_i|\mu(di)
+=\sum_{i\in I\setminus K}|a_i|">\(\int_{I\setminus K}|a_i|\mu(di)
+=\sum_{i\in I\setminus K}|a_i|\)</span>. ∎</span>
+
+
+
+ </span>(Tentu saja ada pembuktian ‘langsung’ atas hasil ini
+dari definisi dalam (a), tanpa menyebut ukuran atau integral. Namun saya
+rasa Anda akan melihat bahwa pembuktian tersebut bertumpu pada gagasan yang
+sama dengan pembuktian <a class="xref" href="../225/index.html#225A">225A</a>.) Akibatnya, untuk sembarang keluarga
+<span class="math inline" data-source-tex="\langle a_i\rangle_{i\in I}">\(\langle a_i\rangle_{i\in I}\)</span> bilangan real dan sembarang <span class="math inline" data-source-tex="s\in\Bbb R">\(s\in\Bbb R\)</span>,
+pernyataan-pernyataan berikut ekuivalen:</p>
+<div class="inset-block"><p>(i) <span class="math inline" data-source-tex="\sum_{i\in I}a_i=s">\(\sum_{i\in I}a_i=s\)</span>;</p></div>
+<div class="inset-block"><p>(ii) untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat suatu <span class="math inline" data-source-tex="K\subseteq I">\(K\subseteq I\)</span> berhingga
+sedemikian sehingga <span class="math inline" data-source-tex="|s-\sum_{i\in J}a_i|\le\epsilon">\(|s-\sum_{i\in J}a_i|\le\epsilon\)</span> kapan pun <span class="math inline" data-source-tex="J">\(J\)</span>
+berhingga dan <span class="math inline" data-source-tex="K\subseteq J\subseteq I">\(K\subseteq J\subseteq I\)</span>.</p></div>
+<p><span class="proof-fragment">Bukti. <strong>(i)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(ii)</strong> Ambil <span class="math inline" data-source-tex="K">\(K\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\sum_{i\in
+I\setminus K}|a_i|\le\epsilon">\(\sum_{i\in
+I\setminus K}|a_i|\le\epsilon\)</span>. Jika <span class="math inline" data-source-tex="K\subseteq J\subseteq I">\(K\subseteq J\subseteq I\)</span>, maka
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="|s-\sum_{i\in J}a_i|=|\sum_{i\in I\setminus J}a_i|
+\le\sum_{i\in I\setminus K}|a_i|\le\epsilon">\(|s-\sum_{i\in J}a_i|=|\sum_{i\in I\setminus J}a_i|
+\le\sum_{i\in I\setminus K}|a_i|\le\epsilon\)</span>.</span>
+
+
+
+<strong>(ii)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(i)</strong> Misalkan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, dan misalkan
+<span class="math inline" data-source-tex="K\subseteq I">\(K\subseteq I\)</span> seperti yang diuraikan dalam (ii). Jika
+<span class="math inline" data-source-tex="J\subseteq I\setminus K">\(J\subseteq I\setminus K\)</span> sembarang himpunan berhingga, tetapkan
+<span class="math inline" data-source-tex="J_1=\{i:i\in J,\,a_i\ge 0\}">\(J_1=\{i:i\in J,\,a_i\ge 0\}\)</span>, <span class="math inline" data-source-tex="J_2=J\setminus J_1">\(J_2=J\setminus J_1\)</span>. Kita mempunyai
+
+<span class="math display" data-source-tex="\eqalign{\sum_{i\in J}|a_i|
+&amp;=|\sum_{i\in J_1\cup K}a_i-\sum_{i\in J_2\cup K}a_i|\cr
+&amp;\le|s-\sum_{i\in J_1\cup K}a_i|+|s-\sum_{i\in J_2\cup K}a_i|
+\le 2\epsilon.\cr}">\[\begin{aligned}\sum_{i\in J}|a_i|
+&amp;=|\sum_{i\in J_1\cup K}a_i-\sum_{i\in J_2\cup K}a_i|\\
+&amp;\le|s-\sum_{i\in J_1\cup K}a_i|+|s-\sum_{i\in J_2\cup K}a_i|
+\le 2\epsilon.\\\end{aligned}\]</span>
+
+  Karena <span class="math inline" data-source-tex="J">\(J\)</span> sembarang, <span class="math inline" data-source-tex="\sum_{i\in I\setminus K}|a_i|\le
+2\epsilon">\(\sum_{i\in I\setminus K}|a_i|\le
+2\epsilon\)</span> dan
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\sum_{i\in I}|a_i|\le\sum_{i\in K}|a_i|+2\epsilon&lt;\infty">\(\sum_{i\in I}|a_i|\le\sum_{i\in K}|a_i|+2\epsilon&lt;\infty\)</span>.</span>
+
+
+
+  Oleh karena itu, <span class="math inline" data-source-tex="\sum_{i\in I}a_i">\(\sum_{i\in I}a_i\)</span> terdefinisi dengan baik dalam
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Selain itu,
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="|s-\sum_{i\in I}a_i|
+\le|s-\sum_{i\in K}a_i|+|\sum_{i\in I\setminus K}a_i|
+\le\epsilon+\sum_{i\in I\setminus K}|a_i|
+\le 3\epsilon">\(|s-\sum_{i\in I}a_i|
+\le|s-\sum_{i\in K}a_i|+|\sum_{i\in I\setminus K}a_i|
+\le\epsilon+\sum_{i\in I\setminus K}|a_i|
+\le 3\epsilon\)</span>.</span>
+
+
+
+  Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sembarang, <span class="math inline" data-source-tex="\sum_{i\in I}a_i=s">\(\sum_{i\in I}a_i=s\)</span>, sebagaimana
+diperlukan. ∎</span></p>
+<p>Dengan cara ini kita menyatakan <span class="math inline" data-source-tex="\sum_{i\in I}a_i">\(\sum_{i\in I}a_i\)</span> secara langsung
+sebagai suatu limit; kita dapat menuliskannya sebagai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{i\in I}a_i=\lim_{K\uparrow I}\sum_{i\in K}a_i">\(\sum_{i\in I}a_i=\lim_{K\uparrow I}\sum_{i\in K}a_i\)</span>,</div>
+<p>dengan pengertian bahwa dalam rumus di ruas kanan kita hanya
+memperhatikan himpunan berhingga <span class="math inline" data-source-tex="K">\(K\)</span>.</p>
+</section>
+<section class="source-unit" id="226Ae" data-source-id="226Ae"><h3><span class="source-label">226Ae</span> <strong>(e)</strong> </h3>
+<p>Pendekatan lain lagi adalah melalui fakta
+berikut. Jika <span class="math inline" data-source-tex="\sum_{i\in I}|a_i|&lt;\infty">\(\sum_{i\in I}|a_i|&lt;\infty\)</span>, maka untuk sembarang
+<span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> himpunan <span class="math inline" data-source-tex="\{i:|a_i|\ge\delta\}">\(\{i:|a_i|\ge\delta\}\)</span> berhingga, bahkan dapat
+mempunyai paling banyak <span class="math inline" data-source-tex="{1\over{\delta}}\sum_{i\in I}|a_i|">\({1\over{\delta}}\sum_{i\in I}|a_i|\)</span> anggota;
+akibatnya</p>
+<div class="centerline"><span class="math inline" data-source-tex="J=\{i:a_i\ne 0\}
+=\bigcup_{n\in\Bbb N}\{i:|a_i|\ge 2^{-n}\}">\(J=\{i:a_i\ne 0\}
+=\bigcup_{n\in\Bbb N}\{i:|a_i|\ge 2^{-n}\}\)</span></div>
+<p>terhitung (<a class="xref" href="../1A1/index.html#1A1F">1A1F</a>). Jika <span class="math inline" data-source-tex="J">\(J\)</span> berhingga, maka tentu
+saja <span class="math inline" data-source-tex="\sum_{i\in I}a_i=\sum_{i\in J}a_i">\(\sum_{i\in I}a_i=\sum_{i\in J}a_i\)</span> menjadi suatu jumlah berhingga.
+Jika tidak, kita dapat mengenumerasi <span class="math inline" data-source-tex="J">\(J\)</span> sebagai <span class="math inline" data-source-tex="\sequencen{j_n}">\(\sequencen{j_n}\)</span>, dan
+kita akan mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{i\in I}a_i=\sum_{i\in
+J}a_i=\lim_{n\to\infty}\sum_{k=0}^na_{j_k}=\sum_{n=0}^{\infty}a_{j_n}">\(\sum_{i\in I}a_i=\sum_{i\in
+J}a_i=\lim_{n\to\infty}\sum_{k=0}^na_{j_k}=\sum_{n=0}^{\infty}a_{j_n}\)</span>
+</div>
+<p>(menggunakan (d) untuk mereduksi jumlah
+<span class="math inline" data-source-tex="\sum_{i\in J}a_i">\(\sum_{i\in J}a_i\)</span> menjadi limit jumlah-jumlah berhingga). Sebaliknya,
+jika <span class="math inline" data-source-tex="\langle a_i\rangle_{i\in I}">\(\langle a_i\rangle_{i\in I}\)</span> sedemikian sehingga terdapat suatu
+<span class="math inline" data-source-tex="J=\{i:a_i\ne 0\}">\(J=\{i:a_i\ne 0\}\)</span> tak hingga terhitung yang dienumerasi sebagai
+<span class="math inline" data-source-tex="\sequencen{j_n}">\(\sequencen{j_n}\)</span>, dan jika <span class="math inline" data-source-tex="\sum_{n=0}^{\infty}|a_{j_n}|&lt;\infty">\(\sum_{n=0}^{\infty}|a_{j_n}|&lt;\infty\)</span>, maka
+<span class="math inline" data-source-tex="\sum_{i\in I}a_i">\(\sum_{i\in I}a_i\)</span> akan sama dengan <span class="math inline" data-source-tex="\sum_{n=0}^{\infty}a_{j_n}">\(\sum_{n=0}^{\infty}a_{j_n}\)</span>.</p>
+</section>
+<section class="source-unit" id="226Af" data-source-id="226Af"><h3><span class="source-label">226Af</span> (f) </h3>
+<p>Kelak akan berguna untuk mempunyai suatu fragmen teori umum.
+Misalkan <span class="math inline" data-source-tex="I">\(I\)</span> dan <span class="math inline" data-source-tex="J">\(J\)</span> adalah himpunan, dan
+<span class="math inline" data-source-tex="\langle a_{ij}\rangle_{i\in I,j\in J}">\(\langle a_{ij}\rangle_{i\in I,j\in J}\)</span> suatu keluarga dalam
+<span class="math inline" data-source-tex="[0,\infty]">\([0,\infty]\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{(i,j)\in I\times J}a_{ij}
+=\sum_{i\in I}(\sum_{j\in J}a_{ij})
+=\sum_{j\in J}(\sum_{i\in I}a_{ij})">\(\sum_{(i,j)\in I\times J}a_{ij}
+=\sum_{i\in I}(\sum_{j\in J}a_{ij})
+=\sum_{j\in J}(\sum_{i\in I}a_{ij})\)</span>.</div>
+<p><span class="proof-fragment"> Bukti. (i) Jika
+<span class="math inline" data-source-tex="\sum_{(i,j)\in I\times J}a_{ij}&gt;u">\(\sum_{(i,j)\in I\times J}a_{ij}&gt;u\)</span>, maka terdapat suatu himpunan
+<span class="math inline" data-source-tex="M\subseteq I\times J">\(M\subseteq I\times J\)</span> berhingga sedemikian sehingga
+<span class="math inline" data-source-tex="\sum_{(i,j)\in M}a_{ij}&gt;u">\(\sum_{(i,j)\in M}a_{ij}&gt;u\)</span>. Sekarang <span class="math inline" data-source-tex="K=\{i:\exists j\ (i,j)\in M\}">\(K=\{i:\exists j\ (i,j)\in M\}\)</span> dan
+<span class="math inline" data-source-tex="L=\{j:\exists i\ (i,j)\in M\}">\(L=\{j:\exists i\ (i,j)\in M\}\)</span> berhingga, sehingga
+
+<span class="math display" data-source-tex="\eqalignno{\sum_{i\in I}\sum_{j\in J}a_{ij}
+&amp;\ge\sum_{i\in K}\sum_{j\in J}a_{ij}
+\ge\sum_{i\in K}\sum_{j\in L}a_{ij}\cr
+\displaycause{karena $\sum_{j\in J}a_{ij}\ge\sum_{j\in L}a_{ij}$ untuk setiap
+$i$}
+&amp;=\sum_{(i,j)\in K\times L}a_{ij}
+\ge\sum_{(i,j)\in M}a_{ij}
+&gt;u.\cr}">\[\begin{aligned}\sum_{i\in I}\sum_{j\in J}a_{ij}
+&amp;\ge\sum_{i\in K}\sum_{j\in J}a_{ij}
+\ge\sum_{i\in K}\sum_{j\in L}a_{ij}\\
+\displaycause{karena $\sum_{j\in J}a_{ij}\ge\sum_{j\in L}a_{ij}$ untuk setiap
+$i$}
+&amp;=\sum_{(i,j)\in K\times L}a_{ij}
+\ge\sum_{(i,j)\in M}a_{ij}
+&gt;u.\\\end{aligned}\]</span>
+
+  Karena <span class="math inline" data-source-tex="u">\(u\)</span> sembarang,
+<span class="math inline" data-source-tex="\sum_{i\in I}\sum_{j\in J}a_{ij}\ge\sum_{(i,j)\in I\times J}a_{ij}">\(\sum_{i\in I}\sum_{j\in J}a_{ij}\ge\sum_{(i,j)\in I\times J}a_{ij}\)</span>.
+(ii) Jika <span class="math inline" data-source-tex="\sum_{i\in I}\sum_{j\in J}a_{ij}&gt;u\ge 0">\(\sum_{i\in I}\sum_{j\in J}a_{ij}&gt;u\ge 0\)</span>, terdapat suatu
+himpunan <span class="math inline" data-source-tex="K\subseteq I">\(K\subseteq I\)</span> tak kosong dan berhingga sedemikian sehingga
+<span class="math inline" data-source-tex="\sum_{i\in K}\sum_{j\in J}a_{ij}&gt;u">\(\sum_{i\in K}\sum_{j\in J}a_{ij}&gt;u\)</span>.
+Misalkan <span class="math inline" data-source-tex="\epsilon\in\ooint{0,1}">\(\epsilon\in\ooint{0,1}\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\sum_{i\in K}\sum_{j\in J}a_{ij}&gt;u+\epsilon">\(\sum_{i\in K}\sum_{j\in J}a_{ij}&gt;u+\epsilon\)</span>, dan tetapkan
+<span class="math inline" data-source-tex="\delta=\Bover{\epsilon}{\#(K)}">\(\delta=\Bover{\epsilon}{\#(K)}\)</span>. Untuk setiap <span class="math inline" data-source-tex="i\in K">\(i\in K\)</span>, tetapkan
+<span class="math inline" data-source-tex="\gamma_i=\min(u+1,\sum_{j\in J}a_{ij})-\delta">\(\gamma_i=\min(u+1,\sum_{j\in J}a_{ij})-\delta\)</span>;
+maka
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\epsilon+\sum_{i\in K}\gamma_i
+=\sum_{i\in K}\min(u+1,\sum_{j\in J}a_{ij})
+\ge\min(u+1,\sum_{i\in K}\sum_{j\in J}a_{ij})
+&gt;u+\epsilon">\(\epsilon+\sum_{i\in K}\gamma_i
+=\sum_{i\in K}\min(u+1,\sum_{j\in J}a_{ij})
+\ge\min(u+1,\sum_{i\in K}\sum_{j\in J}a_{ij})
+&gt;u+\epsilon\)</span>,</span>
+
+
+
+  sehingga <span class="math inline" data-source-tex="\sum_{i\in K}\gamma_i&gt;u">\(\sum_{i\in K}\gamma_i&gt;u\)</span>. Untuk setiap <span class="math inline" data-source-tex="i\in K">\(i\in K\)</span>,
+<span class="math inline" data-source-tex="\gamma_i&lt;\sum_{j\in J}a_{ij}">\(\gamma_i&lt;\sum_{j\in J}a_{ij}\)</span>, sehingga terdapat suatu
+<span class="math inline" data-source-tex="L_i\subseteq J">\(L_i\subseteq J\)</span> berhingga sedemikian sehingga
+<span class="math inline" data-source-tex="\sum_{j\in L_i}a_{ij}\ge\gamma_i">\(\sum_{j\in L_i}a_{ij}\ge\gamma_i\)</span>.
+Tetapkan <span class="math inline" data-source-tex="M=\{(i,j):i\in K">\(M=\{(i,j):i\in K\)</span>, <span class="math inline" data-source-tex="j\in L_i\}">\(j\in L_i\}\)</span>, sehingga <span class="math inline" data-source-tex="M">\(M\)</span> merupakan
+subhimpunan berhingga dari <span class="math inline" data-source-tex="I\times J">\(I\times J\)</span>; maka
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\sum_{(i,j)\in I\times J}a_{ij}
+\ge\sum_{(i,j)\in M}a_{ij}
+=\sum_{i\in K}\sum_{j\in L_i}a_{ij}
+\ge\sum_{i\in K}\gamma_i
+&gt;u">\(\sum_{(i,j)\in I\times J}a_{ij}
+\ge\sum_{(i,j)\in M}a_{ij}
+=\sum_{i\in K}\sum_{j\in L_i}a_{ij}
+\ge\sum_{i\in K}\gamma_i
+&gt;u\)</span>.</span>
+
+
+
+  Karena <span class="math inline" data-source-tex="u">\(u\)</span> sembarang,
+<span class="math inline" data-source-tex="\sum_{(i,j)\in I\times J}a_{ij}\ge\sum_{i\in I}\sum_{j\in J}a_{ij}">\(\sum_{(i,j)\in I\times J}a_{ij}\ge\sum_{i\in I}\sum_{j\in J}a_{ij}\)</span> dan
+kedua jumlah ini sama. (iii) Demikian pula,
+<span class="math inline" data-source-tex="\sum_{(i,j)\in I\times J}a_{ij}=\sum_{j\in J}\sum_{i\in I}a_{ij}">\(\sum_{(i,j)\in I\times J}a_{ij}=\sum_{j\in J}\sum_{i\in I}a_{ij}\)</span>. ∎</span></p>
+</section>
+<section class="source-unit" id="226B" data-source-id="226B"><h2><span class="source-label">226B</span> Fungsi saltus </h2>
+<p>Sekarang kita siap membahas suatu
+jenis khusus fungsi bervariasi terbatas pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Misalkan <span class="math inline" data-source-tex="a&lt;b">\(a&lt;b\)</span>
+dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.</p>
+</section>
+<section class="source-unit" id="226Ba" data-source-id="226Ba"><h3><span class="source-label">226Ba</span> <strong>(a)</strong> </h3>
+<p>Suatu <strong>fungsi saltus</strong> (bernilai real) pada <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>
+adalah fungsi <span class="math inline" data-source-tex="F:[a,b]\to\Bbb R">\(F:[a,b]\to\Bbb R\)</span> yang dapat dinyatakan dalam bentuk</p>
+<div class="centerline"><span class="math inline" data-source-tex="F(x)=\sum_{t\in\coint{a,x}}u_t+\sum_{t\in[a,x]}v_t">\(F(x)=\sum_{t\in\coint{a,x}}u_t+\sum_{t\in[a,x]}v_t\)</span></div>
+<p>untuk <span class="math inline" data-source-tex="x\in [a,b]">\(x\in [a,b]\)</span>, dengan <span class="math inline" data-source-tex="\langle
+u_t\rangle_{t\in\coint{a,b}}">\(\langle
+u_t\rangle_{t\in\coint{a,b}}\)</span> dan
+<span class="math inline" data-source-tex="\langle v_t\rangle_{t\in[a,b]}">\(\langle v_t\rangle_{t\in[a,b]}\)</span> keluarga-keluarga bernilai real
+sedemikian sehingga <span class="math inline" data-source-tex="\sum_{t\in\coint{a,b}}|u_t|">\(\sum_{t\in\coint{a,b}}|u_t|\)</span> dan
+<span class="math inline" data-source-tex="\sum_{t\in[a,b]}|v_t|">\(\sum_{t\in[a,b]}|v_t|\)</span> berhingga.</p>
+</section>
+<section class="source-unit" id="226Bb" data-source-id="226Bb"><h3><span class="source-label">226Bb</span> <strong>(b)</strong> </h3>
+<p>Untuk setiap fungsi <span class="math inline" data-source-tex="F:[a,b]\to\Bbb R">\(F:[a,b]\to\Bbb R\)</span>, kita
+dapat menuliskan</p>
+<div class="centerline"><span class="math inline" data-source-tex="F(x^+)=\lim_{y\downarrow x}F(y)">\(F(x^+)=\lim_{y\downarrow x}F(y)\)</span> jika <span class="math inline" data-source-tex="x\in\coint{a,b}">\(x\in\coint{a,b}\)</span> dan
+limit tersebut ada,</div>
+<div class="centerline"><span class="math inline" data-source-tex="F(x^-)=\lim_{y\uparrow x}F(y)">\(F(x^-)=\lim_{y\uparrow x}F(y)\)</span> jika <span class="math inline" data-source-tex="x\in\ocint{a,b}">\(x\in\ocint{a,b}\)</span> dan
+limit tersebut ada.</div>
+<p>(Saya harap hal ini tidak menimbulkan kebingungan dengan
+penafsiran lain atas <span class="math inline" data-source-tex="x^+">\(x^+\)</span> sebagai <span class="math inline" data-source-tex="\max(x,0)">\(\max(x,0)\)</span>.) Perhatikan bahwa jika
+<span class="math inline" data-source-tex="F">\(F\)</span> suatu fungsi saltus, sebagaimana didefinisikan dalam (a), dengan
+keluarga-keluarga terkait <span class="math inline" data-source-tex="\langle u_t\rangle_{t\in\coint{a,b}}">\(\langle u_t\rangle_{t\in\coint{a,b}}\)</span> dan
+<span class="math inline" data-source-tex="\langle v_t\rangle_{t\in[a,b]}">\(\langle v_t\rangle_{t\in[a,b]}\)</span>, maka <span class="math inline" data-source-tex="v_a=F(a)">\(v_a=F(a)\)</span>,
+<span class="math inline" data-source-tex="v_x=F(x)-F(x^-)">\(v_x=F(x)-F(x^-)\)</span> untuk <span class="math inline" data-source-tex="x\in\ocint{a,b}">\(x\in\ocint{a,b}\)</span> dan
+<span class="math inline" data-source-tex="u_x=F(x^+)-F(x)">\(u_x=F(x^+)-F(x)\)</span> untuk <span class="math inline" data-source-tex="x\in\coint{a,b}">\(x\in\coint{a,b}\)</span>.
+<span class="proof-fragment">Bukti. Misalkan
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Sebagaimana dicatat dalam <a class="xref" href="#226Ad">226Ad</a>, terdapat suatu
+<span class="math inline" data-source-tex="K\subseteq[a,b]">\(K\subseteq[a,b]\)</span> berhingga sedemikian sehingga
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\sum_{t\in\coint{a,b}\setminus
+K}|u_t|+\sum_{t\in[a,b]\setminus K}|v_t|\le\epsilon">\(\sum_{t\in\coint{a,b}\setminus
+K}|u_t|+\sum_{t\in[a,b]\setminus K}|v_t|\le\epsilon\)</span>.</span>
+
+
+
+  Untuk <span class="math inline" data-source-tex="x\in[a,b]">\(x\in[a,b]\)</span> yang diberikan, misalkan <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="[x-\delta,x+\delta]">\([x-\delta,x+\delta]\)</span> tidak memuat titik <span class="math inline" data-source-tex="K">\(K\)</span> selain mungkin <span class="math inline" data-source-tex="x">\(x\)</span>.
+Dalam hal ini, jika <span class="math inline" data-source-tex="\max(a,x-\delta)\le y&lt;x">\(\max(a,x-\delta)\le y&lt;x\)</span>, kita pasti mempunyai
+
+<span class="math display" data-source-tex="\eqalign{|F(y)-(F(x)-v_x)|
+&amp;=|\sum_{t\in\coint{y,x}}u_t+\sum_{t\in\ooint{y,x}}v_t|\cr
+&amp;\le\sum_{t\in\coint{a,b}\setminus K}|u_t|
+  +\sum_{t\in[a,b]\setminus K}|v_t|
+\le\epsilon,\cr}">\[\begin{aligned}|F(y)-(F(x)-v_x)|
+&amp;=|\sum_{t\in\coint{y,x}}u_t+\sum_{t\in\ooint{y,x}}v_t|\\
+&amp;\le\sum_{t\in\coint{a,b}\setminus K}|u_t|
+  +\sum_{t\in[a,b]\setminus K}|v_t|
+\le\epsilon,\\\end{aligned}\]</span>
+
+  sedangkan jika <span class="math inline" data-source-tex="x&lt;y\le\min(b,x+\delta)">\(x&lt;y\le\min(b,x+\delta)\)</span>, kita akan mempunyai
+
+<span class="math display" data-source-tex="\eqalign{|F(y)-(F(x)+u_x)|
+&amp;=|\sum_{t\in\ooint{x,y}}u_t+\sum_{t\in\ocint{x,y}}v_t|\cr
+&amp;\le\sum_{t\in\coint{a,b}\setminus K}|u_t|
+  +\sum_{t\in[a,b]\setminus K}|v_t|
+\le\epsilon.\cr}">\[\begin{aligned}|F(y)-(F(x)+u_x)|
+&amp;=|\sum_{t\in\ooint{x,y}}u_t+\sum_{t\in\ocint{x,y}}v_t|\\
+&amp;\le\sum_{t\in\coint{a,b}\setminus K}|u_t|
+  +\sum_{t\in[a,b]\setminus K}|v_t|
+\le\epsilon.\\\end{aligned}\]</span>
+
+  Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sembarang, kita memperoleh
+<span class="math inline" data-source-tex="F(x^-)=F(x)-v_x">\(F(x^-)=F(x)-v_x\)</span> (jika <span class="math inline" data-source-tex="x&gt;a">\(x&gt;a\)</span>) dan <span class="math inline" data-source-tex="F(x^+)=F(x)+u_x">\(F(x^+)=F(x)+u_x\)</span> (jika <span class="math inline" data-source-tex="x&lt;b">\(x&lt;b\)</span>). ∎</span></p>
+<p>Akibatnya, <span class="math inline" data-source-tex="F">\(F\)</span> kontinu di <span class="math inline" data-source-tex="x\in\ooint{a,b}">\(x\in\ooint{a,b}\)</span>
+jika dan hanya jika <span class="math inline" data-source-tex="u_x=v_x=0">\(u_x=v_x=0\)</span>,
+sedangkan <span class="math inline" data-source-tex="F">\(F\)</span> kontinu di <span class="math inline" data-source-tex="a">\(a\)</span> jika dan hanya jika <span class="math inline" data-source-tex="u_a=0">\(u_a=0\)</span>, dan <span class="math inline" data-source-tex="F">\(F\)</span> kontinu
+di <span class="math inline" data-source-tex="b">\(b\)</span> jika dan hanya jika <span class="math inline" data-source-tex="v_b=0">\(v_b=0\)</span>. Secara khusus,
+<span class="math inline" data-source-tex="\{x:x\in[a,b],\,F\text{ tidak kontinu di }x\}">\(\{x:x\in[a,b],\,F\text{ tidak kontinu di }x\}\)</span> terhitung
+(lihat <a class="xref" href="#226Ae">226Ae</a>).</p>
+</section>
+<section class="source-unit" id="226Bc" data-source-id="226Bc"><h3><span class="source-label">226Bc</span> <strong>(c)</strong> </h3>
+<p>Jika <span class="math inline" data-source-tex="F">\(F\)</span> suatu fungsi saltus yang didefinisikan
+pada <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>, dengan keluarga-keluarga terkait
+<span class="math inline" data-source-tex="\langle u_t\rangle_{t\in\coint{a,b}}">\(\langle u_t\rangle_{t\in\coint{a,b}}\)</span> dan
+<span class="math inline" data-source-tex="\langle v_t\rangle_{t\in[a,b]}">\(\langle v_t\rangle_{t\in[a,b]}\)</span>, maka <span class="math inline" data-source-tex="F">\(F\)</span> bervariasi terbatas pada
+<span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Var_{[a,b]}(F)
+\le\sum_{t\in\coint{a,b}}|u_t|+\sum_{t\in\ocint{a,b}}|v_t|">\(\Var_{[a,b]}(F)
+\le\sum_{t\in\coint{a,b}}|u_t|+\sum_{t\in\ocint{a,b}}|v_t|\)</span>.</div>
+<p><span class="proof-fragment">Bukti. Jika <span class="math inline" data-source-tex="a\le x&lt;y\le b">\(a\le x&lt;y\le b\)</span>, maka
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="F(y)-F(x)=u_x+\sum_{t\in\ooint{x,y}}(u_t+v_t)+v_y">\(F(y)-F(x)=u_x+\sum_{t\in\ooint{x,y}}(u_t+v_t)+v_y\)</span>,</span>
+
+
+
+  sehingga
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="|F(y)-F(x)|
+\le\sum_{t\in\coint{x,y}}|u_t|+\sum_{t\in\ocint{x,y}}|v_t|">\(|F(y)-F(x)|
+\le\sum_{t\in\coint{x,y}}|u_t|+\sum_{t\in\ocint{x,y}}|v_t|\)</span>.</span>
+
+
+
+  Jika <span class="math inline" data-source-tex="a\le a_0\le a_1\le\ldots\le a_n\le b">\(a\le a_0\le a_1\le\ldots\le a_n\le b\)</span>, maka
+
+<span class="math display" data-source-tex="\eqalign{\sum_{i=1}^n|F(a_i)-F(a_{i-1})|
+&amp;\le\sum_{i=1}^n\bigl(\sum_{t\in\coint{a_{i-1},a_i}}|u_t|
+   +\sum_{t\in\ocint{a_{i-1},a_i}}|v_t|\bigr)\cr
+&amp;\le\sum_{t\in\coint{a,b}}|u_t|+\sum_{t\in\ocint{a,b}}|v_t|.\cr}">\[\begin{aligned}\sum_{i=1}^n|F(a_i)-F(a_{i-1})|
+&amp;\le\sum_{i=1}^n\bigl(\sum_{t\in\coint{a_{i-1},a_i}}|u_t|
+   +\sum_{t\in\ocint{a_{i-1},a_i}}|v_t|\bigr)\\
+&amp;\le\sum_{t\in\coint{a,b}}|u_t|+\sum_{t\in\ocint{a,b}}|v_t|.\\\end{aligned}\]</span>
+
+  Akibatnya,
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\Var_{[a,b]}(F)
+\le\sum_{t\in\coint{a,b}}|u_t|+\sum_{t\in\ocint{a,b}}|v_t|&lt;\infty">\(\Var_{[a,b]}(F)
+\le\sum_{t\in\coint{a,b}}|u_t|+\sum_{t\in\ocint{a,b}}|v_t|&lt;\infty\)</span>. ∎</span>
+
+</span></p>
+</section>
+<section class="source-unit" id="226Bd" data-source-id="226Bd"><h3><span class="source-label">226Bd</span> <strong>(d)</strong> </h3>
+<p>Ketaksamaan dalam (c) sebenarnya merupakan
+kesamaan. <span class="proof-fragment">Untuk melihatnya, perhatikan terlebih dahulu bahwa
+jika <span class="math inline" data-source-tex="a\le x&lt;y\le b">\(a\le x&lt;y\le b\)</span>, maka
+<span class="math inline" data-source-tex="\Var_{[x,y]}(F)\ge|u_x|+|v_y|">\(\Var_{[x,y]}(F)\ge|u_x|+|v_y|\)</span>. Bukti. Saya mencatat dalam (b) bahwa
+<span class="math inline" data-source-tex="u_x=\lim_{t\downarrow x}F(t)-F(x)">\(u_x=\lim_{t\downarrow x}F(t)-F(x)\)</span> dan
+<span class="math inline" data-source-tex="v_y=F(y)-\lim_{t\uparrow y}F(t)">\(v_y=F(y)-\lim_{t\uparrow y}F(t)\)</span>.
+Jadi, untuk <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> yang diberikan, kita dapat menemukan <span class="math inline" data-source-tex="t_1">\(t_1\)</span>,
+<span class="math inline" data-source-tex="t_2">\(t_2\)</span> sedemikian sehingga <span class="math inline" data-source-tex="x&lt;t_1\le t_2&lt;y">\(x&lt;t_1\le t_2&lt;y\)</span> dan
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="|F(t_1)-F(x)|\ge|u_x|-\epsilon">\(|F(t_1)-F(x)|\ge|u_x|-\epsilon\)</span>,
+  <span class="math inline" data-source-tex="|F(y)-F(t_2)|\ge|v_y|-\epsilon">\(|F(y)-F(t_2)|\ge|v_y|-\epsilon\)</span>.</span>
+
+
+
+  Sekarang
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\Var_{[x,y]}(F)
+\ge|F(t_1)-F(x)|+|F(t_2)-F(t_1)|+|F(y)-F(t_2)|
+\ge|u_x|+|v_y|-2\epsilon">\(\Var_{[x,y]}(F)
+\ge|F(t_1)-F(x)|+|F(t_2)-F(t_1)|+|F(y)-F(t_2)|
+\ge|u_x|+|v_y|-2\epsilon\)</span>.</span>
+
+
+
+  Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sembarang, kita memperoleh hasil tersebut.
+∎
+
+Sekarang, untuk <span class="math inline" data-source-tex="a\le t_0&lt;t_1&lt;\ldots&lt;t_n\le b">\(a\le t_0&lt;t_1&lt;\ldots&lt;t_n\le b\)</span> yang diberikan, kita pasti
+mempunyai
+
+<span class="math display" data-source-tex="\eqalignno{\Var_{[a,b]}(F)
+&amp;\ge\sum_{i=1}^n\Var_{[t_{i-1},t_i]}(F)\cr
+\noalign{\noindent(menggunakan 224Cc)}
+&amp;\ge\sum_{i=1}^n|u_{t_{i-1}}|+|v_{t_i}|.\cr}">\[\begin{aligned}\Var_{[a,b]}(F)
+&amp;\ge\sum_{i=1}^n\Var_{[t_{i-1},t_i]}(F)\\
+&amp;\text{(menggunakan 224Cc)}\\
+&amp;\ge\sum_{i=1}^n|u_{t_{i-1}}|+|v_{t_i}|.\\\end{aligned}\]</span>
+
+  Karena <span class="math inline" data-source-tex="t_0,\ldots,t_n">\(t_0,\ldots,t_n\)</span> sembarang,
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\Var_{[a,b]}(F)
+\ge\sum_{t\in\coint{a,b}}|u_t|+\sum_{t\in\ocint{a,b}}|v_t|">\(\Var_{[a,b]}(F)
+\ge\sum_{t\in\coint{a,b}}|u_t|+\sum_{t\in\ocint{a,b}}|v_t|\)</span>,</span>
+
+
+
+  sebagaimana diperlukan.</span></p>
+</section>
+<section class="source-unit" id="226Be" data-source-id="226Be"><h3><span class="source-label">226Be</span> <strong>(e)</strong> </h3>
+<p>Karena suatu fungsi saltus bervariasi
+terbatas ((c) di atas), fungsi itu terdiferensialkan hampir di
+mana-mana (<a class="xref" href="../224/index.html#224I">224I</a>).
+Sebenarnya turunannya nol hampir di mana-mana. <span class="proof-fragment">Bukti. Misalkan
+<span class="math inline" data-source-tex="F:[a,b]\to\Bbb R">\(F:[a,b]\to\Bbb R\)</span> suatu fungsi saltus, dengan keluarga-keluarga terkait
+<span class="math inline" data-source-tex="\langle u_t\rangle_{t\in\coint{a,b}}">\(\langle u_t\rangle_{t\in\coint{a,b}}\)</span> dan
+<span class="math inline" data-source-tex="\langle v_t\rangle_{t\in[a,b]}">\(\langle v_t\rangle_{t\in[a,b]}\)</span>.
+Misalkan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Misalkan <span class="math inline" data-source-tex="K\subseteq[a,b]">\(K\subseteq[a,b]\)</span> suatu himpunan berhingga
+sedemikian sehingga
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\sum_{t\in\coint{a,b}\setminus
+K}|u_t|+\sum_{t\in[a,b]\setminus K}|v_t|\le\epsilon">\(\sum_{t\in\coint{a,b}\setminus
+K}|u_t|+\sum_{t\in[a,b]\setminus K}|v_t|\le\epsilon\)</span>.</span>
+
+
+
+  Tetapkan
+
+<span class="math display" data-source-tex="\eqalign{u&#x27;_t
+&amp;=u_t\text{ jika }t\in\coint{a,b}\cap K,\cr
+&amp;=0\text{ jika }t\in\coint{a,b}\setminus K,\cr
+v&#x27;_t&amp;=v_t\text{ jika }t\in K,\cr
+&amp;=0\text{ jika }t\in[a,b]\setminus K,\cr
+u&#x27;&#x27;_t&amp;=u_t-u&#x27;_t\text{ untuk }t\in\coint{a,b},\cr
+v&#x27;&#x27;_t&amp;=v_t-v&#x27;_t\text{ untuk }t\in[a,b].\cr}">\[\begin{aligned}u&#x27;_t
+&amp;=u_t\text{ jika }t\in\coint{a,b}\cap K,\\
+&amp;=0\text{ jika }t\in\coint{a,b}\setminus K,\\
+v&#x27;_t&amp;=v_t\text{ jika }t\in K,\\
+&amp;=0\text{ jika }t\in[a,b]\setminus K,\\
+u&#x27;&#x27;_t&amp;=u_t-u&#x27;_t\text{ untuk }t\in\coint{a,b},\\
+v&#x27;&#x27;_t&amp;=v_t-v&#x27;_t\text{ untuk }t\in[a,b].\\\end{aligned}\]</span>
+
+  Misalkan <span class="math inline" data-source-tex="G">\(G\)</span> dan <span class="math inline" data-source-tex="H">\(H\)</span> adalah fungsi-fungsi saltus yang bersesuaian dengan
+<span class="math inline" data-source-tex="\langle u&#x27;_t\rangle_{t\in\coint{a,b}}">\(\langle u&#x27;_t\rangle_{t\in\coint{a,b}}\)</span>,
+<span class="math inline" data-source-tex="\langle v&#x27;_t\rangle_{t\in[a,b]}">\(\langle v&#x27;_t\rangle_{t\in[a,b]}\)</span>,
+<span class="math inline" data-source-tex="\langle u&#x27;&#x27;_t\rangle_{t\in\coint{a,b}}">\(\langle u&#x27;&#x27;_t\rangle_{t\in\coint{a,b}}\)</span> dan
+<span class="math inline" data-source-tex="\langle v&#x27;&#x27;_t\rangle_{t\in[a,b]}">\(\langle v&#x27;&#x27;_t\rangle_{t\in[a,b]}\)</span>, sehingga <span class="math inline" data-source-tex="F=G+H">\(F=G+H\)</span>. Maka <span class="math inline" data-source-tex="G&#x27;(t)=0">\(G&#x27;(t)=0\)</span>
+untuk setiap <span class="math inline" data-source-tex="t\in\ooint{a,b}\setminus K">\(t\in\ooint{a,b}\setminus K\)</span>, karena
+<span class="math inline" data-source-tex="\ooint{a,b}\setminus K">\(\ooint{a,b}\setminus K\)</span> merupakan gabungan berhingga interval-interval
+terbuka, dan <span class="math inline" data-source-tex="G">\(G\)</span> konstan pada setiap interval tersebut. Jadi <span class="math inline" data-source-tex="G&#x27;=0">\(G&#x27;=0\)</span> hampir di
+mana-mana dan
+<span class="math inline" data-source-tex="F&#x27;\eae H&#x27;">\(F&#x27;\eae H&#x27;\)</span>. Di sisi lain,
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\int_a^b|H&#x27;|\le\Var_{[a,b]}(H)
+=\sum_{t\in\coint{a,b}\setminus K}|u_t|
+  +\sum_{t\in\ocint{a,b}\setminus K}|v_t|
+\le\epsilon">\(\int_a^b|H&#x27;|\le\Var_{[a,b]}(H)
+=\sum_{t\in\coint{a,b}\setminus K}|u_t|
+  +\sum_{t\in\ocint{a,b}\setminus K}|v_t|
+\le\epsilon\)</span>,</span>
+
+
+
+  dengan menggunakan <a class="xref" href="../224/index.html#224I">224I</a> dan (d) di atas. Jadi
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\int_a^b|F&#x27;|=\int_a^b|H&#x27;|\le\epsilon">\(\int_a^b|F&#x27;|=\int_a^b|H&#x27;|\le\epsilon\)</span>.</span>
+
+
+
+  Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sembarang, <span class="math inline" data-source-tex="\int_a^b|F&#x27;|=0">\(\int_a^b|F&#x27;|=0\)</span> dan <span class="math inline" data-source-tex="F&#x27;=0">\(F&#x27;=0\)</span>
+hampir di mana-mana, sebagaimana diklaim. ∎</span></p>
+</section>
+<section class="source-unit" id="226C" data-source-id="226C"><h2><span class="source-label">226C</span> Dekomposisi Lebesgue bagi fungsi bervariasi
+terbatas </h2>
+<p>Ambil <span class="math inline" data-source-tex="a">\(a\)</span>, <span class="math inline" data-source-tex="b\in\Bbb R">\(b\in\Bbb R\)</span> dengan <span class="math inline" data-source-tex="a&lt;b">\(a&lt;b\)</span>.</p>
+</section>
+<section class="source-unit" id="226Ca" data-source-id="226Ca"><h3><span class="source-label">226Ca</span> <strong>(a)</strong> </h3>
+<p>Jika <span class="math inline" data-source-tex="F:[a,b]\to\Bbb R">\(F:[a,b]\to\Bbb R\)</span> tak-menurun, tetapkan
+<span class="math inline" data-source-tex="v_a=0">\(v_a=0\)</span>, <span class="math inline" data-source-tex="v_t=F(t)-F(t^-)">\(v_t=F(t)-F(t^-)\)</span> untuk <span class="math inline" data-source-tex="t\in\ocint{a,b}">\(t\in\ocint{a,b}\)</span>, <span class="math inline" data-source-tex="u_t=F(t^+)-F(t)">\(u_t=F(t^+)-F(t)\)</span> untuk
+<span class="math inline" data-source-tex="t\in\coint{a,b}">\(t\in\coint{a,b}\)</span>, dengan mendefinisikan <span class="math inline" data-source-tex="F(t^+)">\(F(t^+)\)</span>, <span class="math inline" data-source-tex="F(t^-)">\(F(t^-)\)</span> seperti dalam <a class="xref" href="#226Bb">226Bb</a>.
+Maka semua <span class="math inline" data-source-tex="v_t">\(v_t\)</span>, <span class="math inline" data-source-tex="u_t">\(u_t\)</span>
+nonnegatif, dan jika <span class="math inline" data-source-tex="a&lt;t_0&lt;t_1&lt;\ldots&lt;t_n&lt; b">\(a&lt;t_0&lt;t_1&lt;\ldots&lt;t_n&lt; b\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{i=0}^n(u_{t_i}+v_{t_i})
+=\sum_{i=0}^n(F(t_i^+)-F(t_i^-))\le F(b)-F(a)">\(\sum_{i=0}^n(u_{t_i}+v_{t_i})
+=\sum_{i=0}^n(F(t_i^+)-F(t_i^-))\le F(b)-F(a)\)</span>.</div>
+<p>Oleh karena itu,
+<span class="math inline" data-source-tex="\sum_{t\in\coint{a,b}}u_t">\(\sum_{t\in\coint{a,b}}u_t\)</span> dan <span class="math inline" data-source-tex="\sum_{t\in[a,b]}v_t">\(\sum_{t\in[a,b]}v_t\)</span> keduanya berhingga.
+Misalkan <span class="math inline" data-source-tex="F_p">\(F_p\)</span> adalah fungsi saltus yang bersesuaian, sebagaimana didefinisikan dalam
+<a class="xref" href="#226Ba">226Ba</a>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="F_p(x)
+=F(a^+)-F(a)+\sum_{t\in\ooint{a,x}}(F(t^+)-F(t^-))+F(x)
+-F(x^-)">\(F_p(x)
+=F(a^+)-F(a)+\sum_{t\in\ooint{a,x}}(F(t^+)-F(t^-))+F(x)
+-F(x^-)\)</span></div>
+<p>jika <span class="math inline" data-source-tex="a&lt;x\le b">\(a&lt;x\le b\)</span>.   Jika <span class="math inline" data-source-tex="a\le x&lt;y\le b">\(a\le x&lt;y\le b\)</span>, maka</p>
+<p><span class="math display" data-source-tex="\eqalign{F_p(y)-F_p(x)
+&amp;=F(x^+)-F(x)+\sum_{t\in\ooint{x,y}}(F(t^+)-F(t^-))+F(y)-F(y^-)
+\cr
+&amp;\le F(y)-F(x)\cr}">\[\begin{aligned}F_p(y)-F_p(x)
+&amp;=F(x^+)-F(x)+\sum_{t\in\ooint{x,y}}(F(t^+)-F(t^-))+F(y)-F(y^-)
+\\
+&amp;\le F(y)-F(x)\\\end{aligned}\]</span></p>
+<p>sebab jika <span class="math inline" data-source-tex="x=t_0&lt;t_1&lt;\ldots&lt;t_n&lt;t_{n+1}=y">\(x=t_0&lt;t_1&lt;\ldots&lt;t_n&lt;t_{n+1}=y\)</span>, maka</p>
+<p><span class="math display" data-source-tex="\eqalign{F(x^+)-F(x)
+&amp;+\sum_{i=1}^{n}(F(t_i^+)-F(t_i^-))+F(y)-F(y^-)\cr
+&amp;=F(y)-F(x)-\sum_{i=1}^{n+1}(F(t_i^-)-F(t_{i-1}^+))
+\le F(y)-F(x).\cr}">\[\begin{aligned}F(x^+)-F(x)
+&amp;+\sum_{i=1}^{n}(F(t_i^+)-F(t_i^-))+F(y)-F(y^-)\\
+&amp;=F(y)-F(x)-\sum_{i=1}^{n+1}(F(t_i^-)-F(t_{i-1}^+))
+\le F(y)-F(x).\\\end{aligned}\]</span></p>
+<p>Oleh karena itu, baik <span class="math inline" data-source-tex="F_p">\(F_p\)</span> maupun <span class="math inline" data-source-tex="F_c=F-F_p">\(F_c=F-F_p\)</span>
+tak-menurun.   Selain itu, karena</p>
+<div class="centerline"><span class="math inline" data-source-tex="F_p(a)=0=v_a">\(F_p(a)=0=v_a\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="F_p(t)-F_p(t^-)=v_t=F(t)-F(t^-)">\(F_p(t)-F_p(t^-)=v_t=F(t)-F(t^-)\)</span> untuk
+<span class="math inline" data-source-tex="t\in\ocint{a,b}">\(t\in\ocint{a,b}\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="F_p(t^+)-F_p(t)=u_t=F(t^+)-F(t)">\(F_p(t^+)-F_p(t)=u_t=F(t^+)-F(t)\)</span> untuk
+<span class="math inline" data-source-tex="t\in\coint{a,b}">\(t\in\coint{a,b}\)</span>,</div>
+<p>kita akan mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="F_c(a)=F(a)">\(F_c(a)=F(a)\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="F_c(t)=F_c(t^-)">\(F_c(t)=F_c(t^-)\)</span> untuk
+<span class="math inline" data-source-tex="t\in\ocint{a,b}">\(t\in\ocint{a,b}\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="F_c(t)=F_c(t^+)">\(F_c(t)=F_c(t^+)\)</span> untuk <span class="math inline" data-source-tex="t\in\coint{a,b}">\(t\in\coint{a,b}\)</span>,</div>
+<p>dan <span class="math inline" data-source-tex="F_c">\(F_c\)</span> kontinu.</p>
+<p>Jelaslah bahwa penyajian <span class="math inline" data-source-tex="F=F_p+F_c">\(F=F_p+F_c\)</span> ini sebagai jumlah suatu fungsi saltus
+dan suatu fungsi kontinu adalah unik, kecuali bahwa kita bebas menambahkan
+suatu konstanta pada salah satunya jika konstanta itu dikurangkan dari yang lain.</p>
+</section>
+<section class="source-unit" id="226Cb" data-source-id="226Cb"><h3><span class="source-label">226Cb</span> <strong>(b)</strong> </h3>
+<p>Dengan tetap menganggap <span class="math inline" data-source-tex="F:[a,b]\to\Bbb R">\(F:[a,b]\to\Bbb R\)</span>
+tak-menurun, kita tahu bahwa <span class="math inline" data-source-tex="F&#x27;">\(F&#x27;\)</span> terintegralkan (<a class="xref" href="../222/index.html#222C">222C</a>); terlebih lagi,
+<span class="math inline" data-source-tex="F&#x27;\eae F&#x27;_c">\(F&#x27;\eae F&#x27;_c\)</span>, menurut <a class="xref" href="#226Be">226Be</a>.   Tetapkan <span class="math inline" data-source-tex="F_{ac}(x)=F(a)+\int_a^xF&#x27;">\(F_{ac}(x)=F(a)+\int_a^xF&#x27;\)</span>
+untuk setiap <span class="math inline" data-source-tex="x\in[a,b]">\(x\in[a,b]\)</span>.   Kita mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="F_{ac}(y)-F_{ac}(x)=\int_x^yF_c&#x27;\le F_c(y)-F_c(x)">\(F_{ac}(y)-F_{ac}(x)=\int_x^yF_c&#x27;\le F_c(y)-F_c(x)\)</span></div>
+<p>untuk <span class="math inline" data-source-tex="a\le x\le y\le b">\(a\le x\le y\le b\)</span> (sekali lagi menurut <a class="xref" href="../222/index.html#222C">222C</a>), sehingga <span class="math inline" data-source-tex="F_{cs}=F_c-F_{ac}">\(F_{cs}=F_c-F_{ac}\)</span>
+masih tak-menurun;  <span class="math inline" data-source-tex="F_{ac}">\(F_{ac}\)</span> kontinu (<a class="xref" href="../225/index.html#225A">225A</a>),
+sehingga <span class="math inline" data-source-tex="F_{cs}">\(F_{cs}\)</span>
+kontinu;  <span class="math inline" data-source-tex="F_{ac}&#x27;\eae F&#x27;\eae F_c&#x27;">\(F_{ac}&#x27;\eae F&#x27;\eae F_c&#x27;\)</span> (<a class="xref" href="../222/index.html#222E">222E</a>),
+sehingga <span class="math inline" data-source-tex="F_{cs}&#x27;=0">\(F_{cs}&#x27;=0\)</span> hampir di mana-mana.</p>
+<p>Sekali lagi, penyajian <span class="math inline" data-source-tex="F_c=F_{ac}+F_{cs}">\(F_c=F_{ac}+F_{cs}\)</span> sebagai jumlah suatu fungsi kontinu
+mutlak dan suatu fungsi dengan turunan nol hampir di mana-mana adalah unik,
+kecuali untuk kemungkinan memindahkan suatu konstanta dari yang satu ke yang
+lain, karena dua fungsi kontinu mutlak yang
+turunannya sama hampir di mana-mana hanya dapat berbeda dengan suatu konstanta
+(<a class="xref" href="../225/index.html#225D">225D</a>).</p>
+</section>
+<section class="source-unit" id="226Cc" data-source-id="226Cc"><h3><span class="source-label">226Cc</span> <strong>(c)</strong> </h3>
+<p>Dengan merangkum semua hal ini:  jika
+<span class="math inline" data-source-tex="F:[a,b]\to\Bbb R">\(F:[a,b]\to\Bbb R\)</span> adalah sembarang
+fungsi tak-menurun, fungsi tersebut dapat diuraikan sebagai <span class="math inline" data-source-tex="F_p+F_{ac}+F_{cs}">\(F_p+F_{ac}+F_{cs}\)</span>, dengan
+<span class="math inline" data-source-tex="F_p">\(F_p\)</span> fungsi saltus, <span class="math inline" data-source-tex="F_{ac}">\(F_{ac}\)</span> kontinu mutlak, dan
+<span class="math inline" data-source-tex="F_{cs}">\(F_{cs}\)</span> kontinu dan turunannya ada serta bernilai nol hampir di
+mana-mana;  ketiga komponennya tak-menurun;  dan penguraian itu
+unik jika kita menetapkan bahwa <span class="math inline" data-source-tex="F_{ac}(a)=F(a)">\(F_{ac}(a)=F(a)\)</span> dan
+<span class="math inline" data-source-tex="F_p(a)=F_{cs}(a)=0">\(F_p(a)=F_{cs}(a)=0\)</span>.</p>
+<p>Fungsi Cantor <span class="math inline" data-source-tex="f:[0,1]\to[0,1]">\(f:[0,1]\to[0,1]\)</span> (<a class="xref" href="../134/index.html#134H">134H</a>) kontinu dan
+<span class="math inline" data-source-tex="f&#x27;=0">\(f&#x27;=0\)</span> hampir di mana-mana (<a class="xref" href="../134/index.html#134Hb">134Hb</a>), sehingga <span class="math inline" data-source-tex="f_p=f_{ac}=0">\(f_p=f_{ac}=0\)</span> dan <span class="math inline" data-source-tex="f=f_{cs}">\(f=f_{cs}\)</span>.
+Dengan menetapkan <span class="math inline" data-source-tex="g(x)=\bover12(x+f(x))">\(g(x)=\bover12(x+f(x))\)</span> untuk <span class="math inline" data-source-tex="x\in[0,1]">\(x\in[0,1]\)</span>, seperti dalam <a class="xref" href="../134/index.html#134I">134I</a>,
+kita memperoleh <span class="math inline" data-source-tex="g_p(x)=0">\(g_p(x)=0\)</span>, <span class="math inline" data-source-tex="g_{ac}(x)={x\over 2}">\(g_{ac}(x)={x\over 2}\)</span> dan
+<span class="math inline" data-source-tex="g_{cs}(x)={1\over 2}f(x)">\(g_{cs}(x)={1\over 2}f(x)\)</span>.</p>
+</section>
+<section class="source-unit" id="226Cd" data-source-id="226Cd"><h3><span class="source-label">226Cd</span> <strong>(d)</strong> </h3>
+<p>Sekarang andaikan bahwa <span class="math inline" data-source-tex="F:[a,b]\to\Bbb R">\(F:[a,b]\to\Bbb R\)</span>
+bervariasi terbatas.
+Maka fungsi tersebut dapat dinyatakan sebagai selisih <span class="math inline" data-source-tex="G-H">\(G-H\)</span> antara
+fungsi-fungsi tak-menurun (<a class="xref" href="../224/index.html#224D">224D</a>).   Jadi, dengan menuliskan <span class="math inline" data-source-tex="F_p=G_p-H_p">\(F_p=G_p-H_p\)</span>,
+dan seterusnya, kita dapat menyatakan <span class="math inline" data-source-tex="F">\(F\)</span> sebagai jumlah <span class="math inline" data-source-tex="F_p+F_{cs}+F_{ac}">\(F_p+F_{cs}+F_{ac}\)</span>, dengan <span class="math inline" data-source-tex="F_p">\(F_p\)</span>
+fungsi saltus, <span class="math inline" data-source-tex="F_{ac}">\(F_{ac}\)</span> kontinu mutlak, <span class="math inline" data-source-tex="F_{cs}">\(F_{cs}\)</span>
+kontinu, <span class="math inline" data-source-tex="F_{cs}&#x27;=0">\(F_{cs}&#x27;=0\)</span> hampir di mana-mana, <span class="math inline" data-source-tex="F_{ac}(a)=F(a)">\(F_{ac}(a)=F(a)\)</span> dan <span class="math inline" data-source-tex="F_{cs}(a)=F_{p}(a)=0">\(F_{cs}(a)=F_{p}(a)=0\)</span>.
+Di bawah syarat-syarat ini penyajian tersebut unik, karena (sebagai
+contoh) <span class="math inline" data-source-tex="F_p(t^+)-F_p(t)=F(t^+)-F(t)">\(F_p(t^+)-F_p(t)=F(t^+)-F(t)\)</span> untuk <span class="math inline" data-source-tex="t\in\coint{a,b}">\(t\in\coint{a,b}\)</span>, sedangkan
+<span class="math inline" data-source-tex="F_{ac}&#x27;\eae(F-F_p)&#x27;\eae F&#x27;">\(F_{ac}&#x27;\eae(F-F_p)&#x27;\eae F&#x27;\)</span>.</p>
+<p>Ini adalah suatu <strong>dekomposisi Lebesgue</strong> dari fungsi <span class="math inline" data-source-tex="F">\(F\)</span>.
+(Saya harus mengatakan ‘suatu’ dekomposisi Lebesgue karena tentu saja
+penetapan <span class="math inline" data-source-tex="F_{ac}(a)=F(a)">\(F_{ac}(a)=F(a)\)</span>, <span class="math inline" data-source-tex="F_{p}(a)=F_{cs}(a)=0">\(F_{p}(a)=F_{cs}(a)=0\)</span> bersifat sebarang.)   Saya akan menyebut <span class="math inline" data-source-tex="F_p">\(F_p\)</span> sebagai <strong>bagian saltus</strong> dari <span class="math inline" data-source-tex="F">\(F\)</span>.</p>
+</section>
+<section class="source-unit" id="226D" data-source-id="226D"><span class="anchor" id="226Da"></span><h2><span class="source-label">226D</span> Fungsi kompleks </h2>
+<p>Modifikasi yang diperlukan untuk
+menangani fungsi kompleks bersifat elementer.</p>
+<p> </p>
+<p><strong>(a)</strong> Jika <span class="math inline" data-source-tex="I">\(I\)</span> sembarang himpunan dan
+<span class="math inline" data-source-tex="\langle a_j\rangle_{j\in I}">\(\langle a_j\rangle_{j\in I}\)</span> suatu keluarga bilangan kompleks, maka
+pernyataan-pernyataan berikut ekuivalen:</p>
+<div class="inset-block"><p>(i) <span class="math inline" data-source-tex="\sum_{j\in I}|a_j|&lt;\infty">\(\sum_{j\in I}|a_j|&lt;\infty\)</span>;</p></div>
+<div class="inset-block"><p>(ii) terdapat <span class="math inline" data-source-tex="s\in\Bbb C">\(s\in\Bbb C\)</span> sedemikian sehingga untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>
+terdapat suatu himpunan berhingga <span class="math inline" data-source-tex="K\subseteq I">\(K\subseteq I\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="|s-\sum_{j\in J}a_j|\le\epsilon">\(|s-\sum_{j\in J}a_j|\le\epsilon\)</span> kapan pun <span class="math inline" data-source-tex="J">\(J\)</span> berhingga dan
+<span class="math inline" data-source-tex="K\subseteq J\subseteq I">\(K\subseteq J\subseteq I\)</span>.</p></div>
+<p>Dalam hal ini</p>
+<div class="centerline"><span class="math inline" data-source-tex="s=\sum_{j\in I}\Real(a_j)+i\sum_{j\in
+I}\Imag(a_j)=\int_Ia_j\mu(dj)">\(s=\sum_{j\in I}\Real(a_j)+i\sum_{j\in
+I}\Imag(a_j)=\int_Ia_j\mu(dj)\)</span>,</div>
+<p>dengan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> ukuran cacah pada <span class="math inline" data-source-tex="I">\(I\)</span>, dan kita menulis
+<span class="math inline" data-source-tex="s=\sum_{j\in I}a_j">\(s=\sum_{j\in I}a_j\)</span>.</p>
+</section>
+<section class="source-unit" id="226Db" data-source-id="226Db"><h3><span class="source-label">226Db</span> <strong>(b)</strong> </h3>
+<p>Jika <span class="math inline" data-source-tex="a&lt;b">\(a&lt;b\)</span> dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, suatu <strong>fungsi
+saltus</strong> kompleks pada <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span> adalah fungsi <span class="math inline" data-source-tex="F:[a,b]\to\Bbb C">\(F:[a,b]\to\Bbb C\)</span> yang dapat dinyatakan dalam
+bentuk</p>
+<div class="centerline"><span class="math inline" data-source-tex="F(x)=\sum_{t\in\coint{a,x}}u_t+\sum_{t\in[a,x]}v_t">\(F(x)=\sum_{t\in\coint{a,x}}u_t+\sum_{t\in[a,x]}v_t\)</span></div>
+<p>untuk <span class="math inline" data-source-tex="x\in [a,b]">\(x\in [a,b]\)</span>, dengan <span class="math inline" data-source-tex="\langle
+u_t\rangle_{t\in\coint{a,b}}">\(\langle
+u_t\rangle_{t\in\coint{a,b}}\)</span>,
+<span class="math inline" data-source-tex="\langle v_t\rangle_{t\in[a,b]}">\(\langle v_t\rangle_{t\in[a,b]}\)</span> keluarga-keluarga bernilai kompleks sedemikian sehingga
+<span class="math inline" data-source-tex="\sum_{t\in\coint{a,b}}|u_t|">\(\sum_{t\in\coint{a,b}}|u_t|\)</span> dan
+<span class="math inline" data-source-tex="\sum_{t\in[a,b]}|v_t|">\(\sum_{t\in[a,b]}|v_t|\)</span> berhingga;  yakni, jika bagian real dan
+bagian imajiner dari <span class="math inline" data-source-tex="F">\(F\)</span> adalah fungsi saltus.   Dalam hal ini <span class="math inline" data-source-tex="F">\(F\)</span>
+kontinu kecuali pada terhitung banyak titik, dan turunannya ada serta bernilai
+nol hampir di mana-mana dalam <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>, serta</p>
+<div class="centerline"><span class="math inline" data-source-tex="u_x=\lim_{t\downarrow x}F(t)-F(x)">\(u_x=\lim_{t\downarrow x}F(t)-F(x)\)</span> untuk setiap
+<span class="math inline" data-source-tex="x\in\coint{a,b}">\(x\in\coint{a,b}\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="v_x=\lim_{t\uparrow x}F(x)-F(t)">\(v_x=\lim_{t\uparrow x}F(x)-F(t)\)</span> untuk setiap
+<span class="math inline" data-source-tex="x\in\ocint{a,b}">\(x\in\ocint{a,b}\)</span></div>
+<p>(terapkan hasil-hasil <a class="xref" href="#226B">226B</a> pada bagian real dan imajiner
+dari <span class="math inline" data-source-tex="F">\(F\)</span>).   <span class="math inline" data-source-tex="F">\(F\)</span> bervariasi terbatas, dan variasinya adalah</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Var_{[a,b]}(F)
+=\sum_{t\in\coint{a,b}}|u_t|+\sum_{t\in\ocint{a,b}}|v_t|">\(\Var_{[a,b]}(F)
+=\sum_{t\in\coint{a,b}}|u_t|+\sum_{t\in\ocint{a,b}}|v_t|\)</span></div>
+<p>(ulangi argumen-argumen <a class="xref" href="#226Bc">226Bc</a>-d).</p>
+</section>
+<section class="source-unit" id="226Dc" data-source-id="226Dc"><h3><span class="source-label">226Dc</span> <strong>(c)</strong> </h3>
+<p>Jika <span class="math inline" data-source-tex="F:[a,b]\to\Bbb C">\(F:[a,b]\to\Bbb C\)</span> adalah fungsi bervariasi
+terbatas, dengan <span class="math inline" data-source-tex="a&lt;b">\(a&lt;b\)</span> dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, maka fungsi tersebut secara unik dapat dinyatakan sebagai
+<span class="math inline" data-source-tex="F=F_p+F_{cs}+F_{ac}">\(F=F_p+F_{cs}+F_{ac}\)</span>, dengan <span class="math inline" data-source-tex="F_p">\(F_p\)</span> fungsi saltus, <span class="math inline" data-source-tex="F_{ac}">\(F_{ac}\)</span>
+kontinu mutlak, <span class="math inline" data-source-tex="F_{cs}">\(F_{cs}\)</span> kontinu dan turunannya bernilai nol
+hampir di mana-mana, serta <span class="math inline" data-source-tex="F_{ac}(a)=F(a)">\(F_{ac}(a)=F(a)\)</span>, <span class="math inline" data-source-tex="F_p(a)=F_{cs}(a)=0">\(F_p(a)=F_{cs}(a)=0\)</span>.
+(Terapkan
+<a class="xref" href="#226C">226C</a> pada bagian real dan imajiner dari <span class="math inline" data-source-tex="F">\(F\)</span>.)</p>
+</section>
+<section class="source-unit" id="226E" data-source-id="226E"><h2><span class="source-label">226E</span>  </h2>
+<p>Sebagai suatu latihan elementer dalam bahasa
+<a class="xref" href="#226A">226A</a>, saya sisipkan sebuah versi dari suatu teorema B. Levi</p>
+<p>yang kadang-kadang berguna.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur, <span class="math inline" data-source-tex="I">\(I\)</span>
+suatu himpunan <em>terhitung</em>, dan <span class="math inline" data-source-tex="\familyiI{f_i}">\(\familyiI{f_i}\)</span> suatu keluarga fungsi
+bernilai real atau kompleks yang <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan sedemikian sehingga <span class="math inline" data-source-tex="\sum_{i\in I}\int|f_i|d\mu">\(\sum_{i\in I}\int|f_i|d\mu\)</span>
+berhingga.   Maka
+<span class="math inline" data-source-tex="f(x)=\sum_{i\in I}f_i(x)">\(f(x)=\sum_{i\in I}f_i(x)\)</span> terdefinisi hampir di mana-mana dan
+<span class="math inline" data-source-tex="\int fd\mu=\sum_{i\in I}\int f_id\mu">\(\int fd\mu=\sum_{i\in I}\int f_id\mu\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Jika <span class="math inline" data-source-tex="I">\(I\)</span> berhingga, hal ini elementer.   Jika tidak, karena harus
+terdapat suatu bijeksi antara <span class="math inline" data-source-tex="I">\(I\)</span> dan <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span>, kita boleh menganggap
+<span class="math inline" data-source-tex="I=\Bbb N">\(I=\Bbb N\)</span>.   Dengan menetapkan <span class="math inline" data-source-tex="g_n=\sum_{i=0}^n|f_i|">\(g_n=\sum_{i=0}^n|f_i|\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, kita mempunyai
+suatu barisan tak-menurun <span class="math inline" data-source-tex="\sequencen{g_n}">\(\sequencen{g_n}\)</span> dari fungsi-fungsi terintegralkan sedemikian
+sehingga <span class="math inline" data-source-tex="\int g_n\le\sum_{i\in\Bbb N}\int|f_i|">\(\int g_n\le\sum_{i\in\Bbb N}\int|f_i|\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, sehingga
+<span class="math inline" data-source-tex="g=\sup_{n\in\Bbb N}g_n">\(g=\sup_{n\in\Bbb N}g_n\)</span> terintegralkan, menurut teorema B. Levi sebagaimana dinyatakan dalam
+<a class="xref" href="../123/index.html#123A">123A</a>.   Khususnya, <span class="math inline" data-source-tex="g">\(g\)</span> berhingga hampir di mana-mana.   Sekarang, jika
+<span class="math inline" data-source-tex="x\in X">\(x\in X\)</span> sedemikian sehingga <span class="math inline" data-source-tex="g(x)">\(g(x)\)</span> terdefinisi dan berhingga,
+<span class="math inline" data-source-tex="\sum_{i\in J}|f_i(x)|\le g(x)">\(\sum_{i\in J}|f_i(x)|\le g(x)\)</span> untuk setiap <span class="math inline" data-source-tex="J\subseteq\Bbb N">\(J\subseteq\Bbb N\)</span> yang berhingga, sehingga
+<span class="math inline" data-source-tex="\sum_{i\in\Bbb N}|f_i(x)|">\(\sum_{i\in\Bbb N}|f_i(x)|\)</span> dan <span class="math inline" data-source-tex="\sum_{i\in\Bbb N}f_i(x)">\(\sum_{i\in\Bbb N}f_i(x)\)</span> terdefinisi.
+Dalam hal ini, tentu saja,
+<span class="math inline" data-source-tex="\sum_{i\in\Bbb N}f_i(x)=\lim_{n\to\infty}\sum_{i=0}^nf_i(x)">\(\sum_{i\in\Bbb N}f_i(x)=\lim_{n\to\infty}\sum_{i=0}^nf_i(x)\)</span>.   Tetapi
+<span class="math inline" data-source-tex="|\sum_{i=0}^nf_i|\leae g">\(|\sum_{i=0}^nf_i|\leae g\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, sehingga Teorema Konvergensi
+Terdominasi Lebesgue menunjukkan bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int\sum_{i\in\Bbb N}f_i
+=\lim_{n\to\infty}\int\sum_{i=0}^nf_i
+=\lim_{n\to\infty}\sum_{i=0}^n\int f_i
+=\sum_{i\in\Bbb N}\int f_i">\(\int\sum_{i\in\Bbb N}f_i
+=\lim_{n\to\infty}\int\sum_{i=0}^nf_i
+=\lim_{n\to\infty}\sum_{i=0}^n\int f_i
+=\sum_{i\in\Bbb N}\int f_i\)</span>.</div></aside>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="226X" data-source-id="226X"><span class="anchor" id="226Xa"></span><h2><span class="source-label">226X</span> Latihan dasar <span class="math inline" data-source-tex="\pmb{&gt;}">\(\pmb{&gt;}\)</span>(a) <span class="importance" title="Sangat penting">penting</span></h2>
+<p>Andaikan <span class="math inline" data-source-tex="I">\(I\)</span> dan <span class="math inline" data-source-tex="J">\(J\)</span> himpunan-himpunan dan
+<span class="math inline" data-source-tex="\familyiI{a_i}">\(\familyiI{a_i}\)</span> suatu keluarga bilangan real yang dapat dijumlahkan.   (i) Tunjukkan bahwa
+jika <span class="math inline" data-source-tex="f:J\to I">\(f:J\to I\)</span> injektif, maka <span class="math inline" data-source-tex="\family{j}{J}{a_{f(j)}}">\(\family{j}{J}{a_{f(j)}}\)</span> dapat dijumlahkan.
+(ii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="g:I\to J">\(g:I\to J\)</span> sembarang fungsi, maka
+<span class="math inline" data-source-tex="\sum_{j\in J}\sum_{i\in g^{-1}[\{j\}]}a_i">\(\sum_{j\in J}\sum_{i\in g^{-1}[\{j\}]}a_i\)</span> terdefinisi dan sama dengan
+<span class="math inline" data-source-tex="\sum_{i\in I}a_i">\(\sum_{i\in I}a_i\)</span>.</p>
+</section>
+<section class="source-unit" id="226Xb" data-source-id="226Xb"><h3><span class="source-label">226Xb</span> (&gt;b) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Suatu <strong>fungsi tangga</strong> pada
+interval <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span> adalah fungsi <span class="math inline" data-source-tex="F">\(F\)</span>
+sedemikian sehingga, untuk suatu pilihan <span class="math inline" data-source-tex="t_0,\ldots,t_n">\(t_0,\ldots,t_n\)</span> dengan <span class="math inline" data-source-tex="a=t_0\le\ldots\le t_n=b">\(a=t_0\le\ldots\le t_n=b\)</span>,
+<span class="math inline" data-source-tex="F">\(F\)</span> konstan pada setiap interval <span class="math inline" data-source-tex="\ooint{t_{i-1},t_i}">\(\ooint{t_{i-1},t_i}\)</span>.   Tunjukkan bahwa
+<span class="math inline" data-source-tex="F:[a,b]\to\Bbb R">\(F:[a,b]\to\Bbb R\)</span> merupakan fungsi saltus jika dan hanya jika untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat
+fungsi tangga <span class="math inline" data-source-tex="G:[a,b]\to\Bbb R">\(G:[a,b]\to\Bbb R\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\Var_{[a,b]}(F-G)\le\epsilon">\(\Var_{[a,b]}(F-G)\le\epsilon\)</span>.</p>
+</section>
+<section class="source-unit" id="226Xc" data-source-id="226Xc"><h3><span class="source-label">226Xc</span> (c) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="F">\(F\)</span>, <span class="math inline" data-source-tex="G">\(G\)</span> fungsi-fungsi bernilai real yang bervariasi
+terbatas dan didefinisikan pada interval <span class="math inline" data-source-tex="[a,b]\subseteq\Bbb R">\([a,b]\subseteq\Bbb R\)</span>.   Tunjukkan bahwa, dalam
+bahasa <a class="xref" href="#226C">226C</a>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="(F+G)_p=F_p+G_p">\((F+G)_p=F_p+G_p\)</span>,   <span class="math inline" data-source-tex="(F+G)_c=F_c+G_c">\((F+G)_c=F_c+G_c\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="(F+G)_{cs}=F_{cs}+G_{cs}">\((F+G)_{cs}=F_{cs}+G_{cs}\)</span>,
+  <span class="math inline" data-source-tex="(F+G)_{ac}=F_{ac}+G_{ac}">\((F+G)_{ac}=F_{ac}+G_{ac}\)</span>.</div>
+</section>
+<section class="source-unit" id="226Xd" data-source-id="226Xd"><h3><span class="source-label">226Xd</span> (&gt;d) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="F">\(F\)</span> suatu fungsi bernilai real yang bervariasi
+terbatas pada interval <span class="math inline" data-source-tex="[a,b]\subseteq\Bbb R">\([a,b]\subseteq\Bbb R\)</span>.   Tunjukkan bahwa, dalam
+bahasa <a class="xref" href="#226C">226C</a>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Var_{[a,b]}(F)
+=\Var_{[a,b]}(F_p)+\Var_{[a,b]}(F_c)
+=\Var_{[a,b]}(F_p)+\Var_{[a,b]}(F_{cs})+\Var_{[a,b]}(F_{ac})">\(\Var_{[a,b]}(F)
+=\Var_{[a,b]}(F_p)+\Var_{[a,b]}(F_c)
+=\Var_{[a,b]}(F_p)+\Var_{[a,b]}(F_{cs})+\Var_{[a,b]}(F_{ac})\)</span>.</div>
+</section>
+<section class="source-unit" id="226Xe" data-source-id="226Xe"><h3><span class="source-label">226Xe</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="F">\(F\)</span> suatu fungsi bernilai real yang bervariasi
+terbatas pada interval <span class="math inline" data-source-tex="[a,b]\subseteq\Bbb R">\([a,b]\subseteq\Bbb R\)</span>.   Tunjukkan bahwa <span class="math inline" data-source-tex="F">\(F\)</span>
+kontinu mutlak jika dan hanya jika <span class="math inline" data-source-tex="\Var_{[a,b]}(F)=\int_a^b|F&#x27;|">\(\Var_{[a,b]}(F)=\int_a^b|F&#x27;|\)</span>.</p>
+</section>
+<section class="source-unit" id="226Xf" data-source-id="226Xf"><h3><span class="source-label">226Xf</span> (f) </h3>
+<p>Tinjau fungsi <span class="math inline" data-source-tex="g">\(g\)</span> dari <a class="xref" href="../134/index.html#134I">134I</a>/<a class="xref" href="#226Cc">226Cc</a>.   Tunjukkan
+bahwa <span class="math inline" data-source-tex="g^{-1}:[0,1]\to[0,1]">\(g^{-1}:[0,1]\to[0,1]\)</span> terdiferensialkan hampir di mana-mana dalam
+<span class="math inline" data-source-tex="[0,1]">\([0,1]\)</span>, dan tentukan <span class="math inline" data-source-tex="\mu\{x:(g^{-1})&#x27;(x)\le a\}">\(\mu\{x:(g^{-1})&#x27;(x)\le a\}\)</span> untuk setiap <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>.</p>
+</section>
+<section class="source-unit" id="226Y" data-source-id="226Y"><span class="anchor" id="226Ya"></span><h2><span class="source-label">226Y</span> Latihan lanjutan (a) </h2>
+<p>Tunjukkan bahwa suatu himpunan <span class="math inline" data-source-tex="I">\(I\)</span> terhitung jika dan hanya jika terdapat suatu keluarga
+<span class="math inline" data-source-tex="\familyiI{a_i}">\(\familyiI{a_i}\)</span> dari bilangan-bilangan real tak nol yang dapat dijumlahkan.</p>
+</section>
+<section class="source-unit" id="226Yb" data-source-id="226Yb"><h3><span class="source-label">226Yb</span> (b) </h3>
+<p>Jelaskan modifikasi yang mungkin sesuai dalam deskripsi
+dekomposisi Lebesgue dari suatu fungsi bervariasi terbatas
+jika kita ingin meninjau fungsi pada interval terbuka atau
+setengah terbuka, termasuk interval tak terbatas.</p>
+</section>
+<section class="source-unit" id="226Yc" data-source-id="226Yc"><h3><span class="source-label">226Yc</span> (c) </h3>
+<p>Andaikan <span class="math inline" data-source-tex="F:[a,b]\to\Bbb R">\(F:[a,b]\to\Bbb R\)</span> suatu fungsi bervariasi
+terbatas, dan tetapkan <span class="math inline" data-source-tex="h(y)=\#(F^{-1}[\{y\}])">\(h(y)=\#(F^{-1}[\{y\}])\)</span> untuk <span class="math inline" data-source-tex="y\in\Bbb R">\(y\in\Bbb R\)</span>.   Tunjukkan
+bahwa <span class="math inline" data-source-tex="\int h=\Var_{[a,b]}(F_c)">\(\int h=\Var_{[a,b]}(F_c)\)</span>, dengan <span class="math inline" data-source-tex="F_c">\(F_c\)</span> ‘bagian kontinu’
+dari <span class="math inline" data-source-tex="F">\(F\)</span> sebagaimana didefinisikan dalam <a class="xref" href="#226Ca">226Ca</a>/<a class="xref" href="#226Cd">226Cd</a>.</p>
+</section>
+<section class="source-unit" id="226Yd" data-source-id="226Yd"><h3><span class="source-label">226Yd</span> (d) </h3>
+<p>Andaikan <span class="math inline" data-source-tex="a&lt;b">\(a&lt;b\)</span> dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan
+<span class="math inline" data-source-tex="F:[a,b]\to\Bbb R">\(F:[a,b]\to\Bbb R\)</span> suatu fungsi bervariasi terbatas;  misalkan <span class="math inline" data-source-tex="F_p">\(F_p\)</span> bagian saltusnya.   Tunjukkan bahwa
+<span class="math inline" data-source-tex="|F(b)-F(a)|\le\mu F[\,[a,b]\,]+\Var_{[a,b]}F_p">\(|F(b)-F(a)|\le\mu F[\,[a,b]\,]+\Var_{[a,b]}F_p\)</span>, dengan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> ukuran Lebesgue pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.</p>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<section class="source-unit" id="226-notes" data-source-id="226-notes"><h2><span class="source-label">226-notes</span> Catatan penutup untuk Bagian 226 </h2>
+<p>Dalam 232I dan 232Yb di bawah ini saya akan meninjau kembali gagasan-gagasan ini,
+dengan mengaitkannya dengan suatu dekomposisi ukuran Lebesgue–Stieltjes
+yang bersesuaian dengan suatu fungsi real tak-menurun, dan selanjutnya dengan ukuran-ukuran yang lebih
+umum.   Seluruh pembahasan ini bersifat sampingan terhadap pokok perhatian
+volume ini, tetapi menurut saya pembahasan tersebut mencerahkan, dan tentu saja merupakan bagian dari
+pengetahuan dasar yang dianggap dimiliki oleh siapa pun yang bekerja dalam analisis real.</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 2: Broad Foundations</cite>, Bagian 226.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 25 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-cumulative-html-route-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V2-S226&quot;,
+  &quot;source_member&quot;: &quot;mt2.2016/mt226.tex&quot;,
+  &quot;target_bytes&quot;: 29323,
+  &quot;target_sha256&quot;: &quot;1a3ee4ac2e0cdcd63d73172ec974ed5b3250dc4c65535a662b175a56e0fd23a8&quot;,
+  &quot;source_ids&quot;: [
+    &quot;226&quot;,
+    &quot;226A&quot;,
+    &quot;226Aa&quot;,
+    &quot;226Ab&quot;,
+    &quot;226Ac&quot;,
+    &quot;226Ad&quot;,
+    &quot;226Ae&quot;,
+    &quot;226Af&quot;,
+    &quot;226B&quot;,
+    &quot;226Ba&quot;,
+    &quot;226Bb&quot;,
+    &quot;226Bc&quot;,
+    &quot;226Bd&quot;,
+    &quot;226Be&quot;,
+    &quot;226C&quot;,
+    &quot;226Ca&quot;,
+    &quot;226Cb&quot;,
+    &quot;226Cc&quot;,
+    &quot;226Cd&quot;,
+    &quot;226D&quot;,
+    &quot;226Da&quot;,
+    &quot;226Db&quot;,
+    &quot;226Dc&quot;,
+    &quot;226E&quot;,
+    &quot;226X&quot;,
+    &quot;226Xa&quot;,
+    &quot;226Xb&quot;,
+    &quot;226Xc&quot;,
+    &quot;226Xd&quot;,
+    &quot;226Xe&quot;,
+    &quot;226Xf&quot;,
+    &quot;226Y&quot;,
+    &quot;226Ya&quot;,
+    &quot;226Yb&quot;,
+    &quot;226Yc&quot;,
+    &quot;226Yd&quot;
+  ],
+  &quot;corpus_id&quot;: &quot;O007-FREMLIN&quot;,
+  &quot;volume_id&quot;: &quot;O007-FREMLIN-V2&quot;,
+  &quot;volume_source_title&quot;: &quot;Broad Foundations&quot;,
+  &quot;route&quot;: &quot;226&quot;,
+  &quot;official_source_page_start&quot;: 89,
+  &quot;chapter_official_source_pages&quot;: [
+    55,
+    95
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

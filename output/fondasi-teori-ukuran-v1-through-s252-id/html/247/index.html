@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Kekompakan lemah dalam L¹ — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        BbbQ: '\\mathbb{Q}', BbbR: '\\mathbb{R}',
+        eightBbb: ['\\mathbb{#1}', 1],
+        DiniD: '\\overline{D}', Dinid: '\\underline{D}',
+        Var: '\\operatorname{Var}',
+        bumpeq: '=_{\\mathrm{approx}}',
+        intstar: '\\operatorname{int}^{*}',
+        family: ['\\langle #3\\rangle_{#1\\in #2}', 3],
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        displaycause: ['\\text{(#1)}', 1],
+        bigcupop: '\\bigcup', biggerint: '\\int',
+        eae: '=_{\\mathrm{a.e.}}', leae: '\\le_{\\mathrm{a.e.}}', geae: '\\ge_{\\mathrm{a.e.}}',
+        restr: '\\mathord{\\upharpoonright}', restrp: '\\mathord{\\upharpoonright}',
+        Real: '\\operatorname{Re}', Imag: '\\operatorname{Im}',
+        tbf: ['\\mathbf{#1}', 1], eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Qed: '\\square',
+        BbbN: '\\mathbb{N}', Expn: '\\mathbb{E}',
+        Cal: ['\\mathcal{#1}', 1], dom: '\\operatorname{dom}',
+        coint: ['\\left[#1\\right[', 1],
+        sequencen: ['\\langle #1_n\\rangle_{n\\in\\mathbb{N}}', 1],
+        imp: '\\mathop{\\text{pelestari ukuran melalui prapeta}}',
+        tildeTau: '\\widetilde{\\mathrm{T}}',
+        LLcorner: '\\mathbin{\\llcorner}',
+        prooflet: ['#1', 1],
+        halfarrow: '\\rightharpoonup',
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        roibr: '\\mathopen{{[}}',
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1]
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 2 · Bagian 247</p>
+  <h1>Kekompakan lemah dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span></h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi kumulatif</a></nav>
+<main id="isi">
+<p>© 1995</p>
+<p>Sekarang kita sampai pada</p>
+<span class="anchor" id="247"></span>
+<p>ciri keterintegralan seragam yang paling mencolok:
+sifat ini memberikan karakterisasi bagi subhimpunan <span class="math inline" data-source-tex="L^1">\(L^1\)</span> yang relatif kompak
+dalam topologi lemah (<a class="xref" href="#247C">247C</a>). Saya menempatkannya dalam bagian tersendiri karena
+pembahasannya memerlukan sedikit pengetahuan tentang analisis fungsional –
+khususnya, tentu saja, tentang topologi lemah pada ruang Banach. Saya akan
+berusaha menyajikannya dengan istilah yang dapat dipahami oleh pembaca yang
+baru mengenal teori ruang bernorma, sebab hasil ini pada hakikatnya merupakan
+hasil teori ukur dan sekaligus sangat penting bagi penerapan dalam teori
+peluang. Definisi-definisi pokoknya telah saya tuliskan dalam
+§§2A3-2A5.</p>
+<section class="source-unit" id="247A" data-source-id="247A"><h2><span class="source-label">247A</span>  </h2>
+<p>Sebagian argumen untuk teorema utama di bawah akan
+lebih lancar jika saya terlebih dahulu memisahkan sebuah gagasan yang pada
+dasarnya merupakan kasus khusus sederhana dari tema yang berulang dalam
+latihan-latihan bab ini (<a class="xref" href="../241/index.html#241Yg">241Yg</a>, <a class="xref" href="../242/index.html#242Yb">242Yb</a>, 243Ya, <a class="xref" href="../244/index.html#244Yd">244Yd</a>).</p>
+<p> </p>
+<p><strong>Lema</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan <span class="math inline" data-source-tex="G">\(G\)</span>
+sebarang anggota <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. Misalkan <span class="math inline" data-source-tex="\mu_G">\(\mu_G\)</span> ukuran subruang pada
+<span class="math inline" data-source-tex="G">\(G\)</span>, sehingga <span class="math inline" data-source-tex="\mu_GE=\mu E">\(\mu_GE=\mu E\)</span> apabila <span class="math inline" data-source-tex="E\subseteq G">\(E\subseteq G\)</span> dan
+<span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>. Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="U=\{u:u\in L^1(\mu),\,u\times\chi G^{\ssbullet}=u\} 
+\subseteq L^1(\mu)">\(U=\{u:u\in L^1(\mu),\,u\times\chi G^{\ssbullet}=u\} 
+\subseteq L^1(\mu)\)</span>.</div>
+<p>Maka terdapat suatu isomorfisme <span class="math inline" data-source-tex="S">\(S\)</span> antara ruang bernorma terurut
+<span class="math inline" data-source-tex="U">\(U\)</span> dan <span class="math inline" data-source-tex="L^1(\mu_G)">\(L^1(\mu_G)\)</span>, yang diberikan oleh</p>
+<div class="centerline"><span class="math inline" data-source-tex="S(f^{\ssbullet})=(f\restr G)^{\ssbullet}">\(S(f^{\ssbullet})=(f\restr G)^{\ssbullet}\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="f\in\eusm L^1(\mu)">\(f\in\eusm L^1(\mu)\)</span> dengan
+<span class="math inline" data-source-tex="f^{\ssbullet}\in U">\(f^{\ssbullet}\in U\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Pertama-tama perlu dinyatakan secara eksplisit bahwa <span class="math inline" data-source-tex="U">\(U\)</span> adalah
+subruang linear dari <span class="math inline" data-source-tex="L^1(\mu)">\(L^1(\mu)\)</span>. Integrasi pada subruang telah dibahas dalam
+§§<a class="xref" href="../131/index.html#131">131</a> dan <a class="xref" href="../214/index.html#214">214</a>; khususnya, telah dicatat bahwa <span class="math inline" data-source-tex="f\restr G">\(f\restr G\)</span> terintegralkan dan
+bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int|f\restr G|d\mu_G 
+=\int|f|\times\chi G\,d\mu\le\int|f|d\mu">\(\int|f\restr G|d\mu_G 
+=\int|f|\times\chi G\,d\mu\le\int|f|d\mu\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="f\in\eusm L^1(\mu)">\(f\in\eusm L^1(\mu)\)</span> (<a class="xref" href="../131/index.html#131Fa">131Fa</a>). Jika
+<span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in\eusm L^1(\mu)">\(g\in\eusm L^1(\mu)\)</span> dan <span class="math inline" data-source-tex="f=g\,\,\mu">\(f=g\,\,\mu\)</span>-hampir di mana-mana, maka
+<span class="math inline" data-source-tex="f\restr G=g\restr G\,\,\mu_G">\(f\restr G=g\restr G\,\,\mu_G\)</span>-hampir di mana-mana; jadi rumus yang diajukan
+untuk <span class="math inline" data-source-tex="S">\(S\)</span> memang mendefinisikan suatu peta dari <span class="math inline" data-source-tex="U">\(U\)</span> ke <span class="math inline" data-source-tex="L^1(\mu_G)">\(L^1(\mu_G)\)</span>.</p>
+<p>Karena</p>
+<div class="centerline"><span class="math inline" data-source-tex="(f+g)\restr G=(f\restr G)+(g\restr G)">\((f+g)\restr G=(f\restr G)+(g\restr G)\)</span>, 
+  <span class="math inline" data-source-tex="(cf)\restr G=c(f\restr G)">\((cf)\restr G=c(f\restr G)\)</span></div>
+<p>untuk semua <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in\eusm L^1(\mu)">\(g\in\eusm L^1(\mu)\)</span> dan semua <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>,
+<span class="math inline" data-source-tex="S">\(S\)</span> linear. Karena</p>
+<div class="centerline"><span class="math inline" data-source-tex="f\le g\,\,\mu">\(f\le g\,\,\mu\)</span>-hampir di mana-mana<span class="math inline" data-source-tex="\,\Longrightarrow\, 
+f\restr G\le g\restr G\,\,\mu_G">\(\,\Longrightarrow\, 
+f\restr G\le g\restr G\,\,\mu_G\)</span>-hampir di mana-mana,</div>
+<p><span class="math inline" data-source-tex="S">\(S\)</span> mempertahankan urutan. Karena
+<span class="math inline" data-source-tex="\int|f\restr G|d\mu_G\le\int|f|d\mu">\(\int|f\restr G|d\mu_G\le\int|f|d\mu\)</span> untuk setiap
+<span class="math inline" data-source-tex="f\in\eusm L^1(\mu)">\(f\in\eusm L^1(\mu)\)</span>, berlaku <span class="math inline" data-source-tex="\|Su\|_1\le\|u\|_1">\(\|Su\|_1\le\|u\|_1\)</span> untuk setiap <span class="math inline" data-source-tex="u\in U">\(u\in U\)</span>.</p>
+<p>Untuk melihat bahwa <span class="math inline" data-source-tex="S">\(S\)</span> surjektif, ambil sebarang <span class="math inline" data-source-tex="v\in L^1(\mu_G)">\(v\in L^1(\mu_G)\)</span>.
+Nyatakan <span class="math inline" data-source-tex="v">\(v\)</span> sebagai <span class="math inline" data-source-tex="g^{\ssbullet}">\(g^{\ssbullet}\)</span> dengan <span class="math inline" data-source-tex="g\in\eusm L^1(\mu_G)">\(g\in\eusm L^1(\mu_G)\)</span>.
+Menurut <a class="xref" href="../131/index.html#131E">131E</a>, <span class="math inline" data-source-tex="f\in\eusm L^1(\mu)">\(f\in\eusm L^1(\mu)\)</span>, dengan <span class="math inline" data-source-tex="f(x)=g(x)">\(f(x)=g(x)\)</span> untuk
+<span class="math inline" data-source-tex="x\in\dom g">\(x\in\dom g\)</span> dan <span class="math inline" data-source-tex="0">\(0\)</span> untuk <span class="math inline" data-source-tex="x\in X\setminus G">\(x\in X\setminus G\)</span>; akibatnya
+<span class="math inline" data-source-tex="f^{\ssbullet}\in U">\(f^{\ssbullet}\in U\)</span>, <span class="math inline" data-source-tex="f\restr G=g">\(f\restr G=g\)</span>, dan
+<span class="math inline" data-source-tex="v=S(f^{\ssbullet})\in S[U]">\(v=S(f^{\ssbullet})\in S[U]\)</span>.</p>
+<p>Untuk melihat bahwa <span class="math inline" data-source-tex="S">\(S\)</span> mempertahankan norma, perhatikan bahwa untuk setiap
+<span class="math inline" data-source-tex="f\in\eusm L^1(\mu)">\(f\in\eusm L^1(\mu)\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int|f\restr G|d\mu_G 
+=\int |f|\times\chi G\,d\mu">\(\int|f\restr G|d\mu_G 
+=\int |f|\times\chi G\,d\mu\)</span>,</div>
+<p>sehingga, jika <span class="math inline" data-source-tex="u=f^{\ssbullet}\in U">\(u=f^{\ssbullet}\in U\)</span>, diperoleh</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|Su\|_1 
+=\int|f\restr G|d\mu_G 
+=\int|f|\times\chi G\,d\mu 
+=\|u\times\chi G^{\ssbullet}\|_1 
+=\|u\|_1">\(\|Su\|_1 
+=\int|f\restr G|d\mu_G 
+=\int|f|\times\chi G\,d\mu 
+=\|u\times\chi G^{\ssbullet}\|_1 
+=\|u\|_1\)</span>.</div></aside>
+</section>
+<section class="source-unit" id="247B" data-source-id="247B"><h2><span class="source-label">247B</span> Akibat </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sebarang ruang ukur dan
+<span class="math inline" data-source-tex="G\in\Sigma">\(G\in\Sigma\)</span> suatu himpunan terukur yang dapat dinyatakan sebagai gabungan
+terhitung dari himpunan-himpunan berukuran hingga. Definisikan <span class="math inline" data-source-tex="U">\(U\)</span> seperti
+dalam <a class="xref" href="#247A">247A</a>, dan misalkan <span class="math inline" data-source-tex="h:L^1(\mu)\to\Bbb R">\(h:L^1(\mu)\to\Bbb R\)</span> sebarang fungsional linear
+kontinu. Maka terdapat <span class="math inline" data-source-tex="v\in L^{\infty}(\mu)">\(v\in L^{\infty}(\mu)\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="h(u)=\int u\times v\,d\mu">\(h(u)=\int u\times v\,d\mu\)</span> untuk setiap <span class="math inline" data-source-tex="u\in U">\(u\in U\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Misalkan <span class="math inline" data-source-tex="S:U\to L^1(\mu_G)">\(S:U\to L^1(\mu_G)\)</span> isomorfisme yang diuraikan dalam <a class="xref" href="#247A">247A</a>.
+Karena <span class="math inline" data-source-tex="S^{-1}:L^1(\mu_G)\to U">\(S^{-1}:L^1(\mu_G)\to U\)</span> linear dan kontinu, <span class="math inline" data-source-tex="h_1=hS^{-1}">\(h_1=hS^{-1}\)</span> merupakan
+anggota dual ruang bernorma <span class="math inline" data-source-tex="(L^1(\mu_G))^*">\((L^1(\mu_G))^*\)</span> dari <span class="math inline" data-source-tex="L^1(\mu_G)">\(L^1(\mu_G)\)</span>. Ukuran <span class="math inline" data-source-tex="\mu_G">\(\mu_G\)</span>
+tentu saja bersifat <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga, dan karena itu dapat dilokalkan (<a class="xref" href="../211/index.html#211L">211L</a>),
+sehingga menurut 243Gb terdapat <span class="math inline" data-source-tex="v_1\in L^{\infty}(\mu_G)">\(v_1\in L^{\infty}(\mu_G)\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="h_1(u)=\int u\times v_1d\mu_G">\(h_1(u)=\int u\times v_1d\mu_G\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="u\in L^1(\mu_G)">\(u\in L^1(\mu_G)\)</span>.</p>
+<p>Nyatakan <span class="math inline" data-source-tex="v_1">\(v_1\)</span> sebagai <span class="math inline" data-source-tex="g_1^{\ssbullet}">\(g_1^{\ssbullet}\)</span>, dengan <span class="math inline" data-source-tex="g_1:G\to\Bbb R">\(g_1:G\to\Bbb R\)</span> fungsi
+terukur terbatas. Tetapkan <span class="math inline" data-source-tex="g(x)=g_1(x)">\(g(x)=g_1(x)\)</span> untuk <span class="math inline" data-source-tex="x\in G">\(x\in G\)</span>, dan <span class="math inline" data-source-tex="0">\(0\)</span> untuk
+<span class="math inline" data-source-tex="x\in X\setminus G">\(x\in X\setminus G\)</span>; maka <span class="math inline" data-source-tex="g:X\to\Bbb R">\(g:X\to\Bbb R\)</span> adalah fungsi terukur terbatas dan
+<span class="math inline" data-source-tex="v=g^{\ssbullet}\in L^{\infty}(\mu)">\(v=g^{\ssbullet}\in L^{\infty}(\mu)\)</span>. Jika <span class="math inline" data-source-tex="u\in U">\(u\in U\)</span>, nyatakan <span class="math inline" data-source-tex="u">\(u\)</span> sebagai
+<span class="math inline" data-source-tex="f^{\ssbullet}">\(f^{\ssbullet}\)</span> dengan <span class="math inline" data-source-tex="f\in\eusm L^1(\mu)">\(f\in\eusm L^1(\mu)\)</span>; maka</p>
+<p><span class="math display" data-source-tex="\eqalignno{h(u) 
+&amp;=h(S^{-1}Su) 
+=h_1((f\restr G)^{\ssbullet}) 
+=\int(f\restr G)\times g_1d\mu_G\cr 
+&amp;=\int(f\times g)\restr G\,d\mu_G 
+=\int f\times g\times\chi G\,d\mu 
+=\int f\times g\,d\mu 
+=\int u\times v.\cr}">\[\begin{aligned}h(u) 
+&amp;=h(S^{-1}Su) 
+=h_1((f\restr G)^{\ssbullet}) 
+=\int(f\restr G)\times g_1d\mu_G\\ 
+&amp;=\int(f\times g)\restr G\,d\mu_G 
+=\int f\times g\times\chi G\,d\mu 
+=\int f\times g\,d\mu 
+=\int u\times v.\\\end{aligned}\]</span></p>
+<p>Karena <span class="math inline" data-source-tex="u">\(u\)</span> sebarang, hasilnya terbukti.</p></aside>
+</section>
+<section class="source-unit" id="247C" data-source-id="247C"><h2><span class="source-label">247C</span> Teorema </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sebarang ruang ukur dan
+<span class="math inline" data-source-tex="A">\(A\)</span> suatu subhimpunan dari <span class="math inline" data-source-tex="L^1={L}^1(\mu)">\(L^1={L}^1(\mu)\)</span>. Maka <span class="math inline" data-source-tex="A">\(A\)</span> dapat diintegralkan
+secara seragam jika dan hanya jika himpunan tersebut relatif kompak dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span> untuk
+topologi lemah pada <span class="math inline" data-source-tex="L^1">\(L^1\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Andaikan <span class="math inline" data-source-tex="A">\(A\)</span> relatif kompak dalam topologi lemah. Saya akan
+menunjukkan bahwa himpunan tersebut memenuhi syarat (iii) dalam <a class="xref" href="../246/index.html#246G">246G</a>.</p>
+<p> </p>
+<p>  <strong>(i)</strong> Jika <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>, tentu saja
+<span class="math inline" data-source-tex="\sup_{u\in A}|\int_Fu|&lt;\infty">\(\sup_{u\in A}|\int_Fu|&lt;\infty\)</span>, karena <span class="math inline" data-source-tex="u\mapsto\int_Fu">\(u\mapsto\int_Fu\)</span> termasuk dalam
+<span class="math inline" data-source-tex="(L^1)^*">\((L^1)^*\)</span>, dan untuk setiap <span class="math inline" data-source-tex="h\in (L^1)^*">\(h\in (L^1)^*\)</span> citra suatu himpunan yang relatif
+kompak dalam topologi lemah di bawah <span class="math inline" data-source-tex="h">\(h\)</span> harus terbatas (2A5Ie).</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Sekarang andaikan <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> suatu barisan himpunan
+yang saling lepas dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. <span class="fremlin-query" role="img" aria-label="andaikan untuk kontradiksi"></span> Andaikan, jika mungkin, bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sequencen{\sup_{u\in A}|\int_{F_n}u|}">\(\sequencen{\sup_{u\in A}|\int_{F_n}u|}\)</span> </div>
+<p>tidak konvergen ke <span class="math inline" data-source-tex="0">\(0\)</span>. 
+Maka terdapat suatu barisan naik tegas <span class="math inline" data-source-tex="\sequence{k}{n(k)}">\(\sequence{k}{n(k)}\)</span> dalam <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span>
+sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\gamma 
+=\Bover12\inf_{k\in\Bbb N}\sup_{u\in A}|\int_{F_{n(k)}}u|&gt;0">\(\gamma 
+=\Bover12\inf_{k\in\Bbb N}\sup_{u\in A}|\int_{F_{n(k)}}u|&gt;0\)</span>.</div>
+<p>Untuk setiap <span class="math inline" data-source-tex="k">\(k\)</span>, pilih <span class="math inline" data-source-tex="u_k\in A">\(u_k\in A\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="|\int_{F_{n(k)}}u_k|\ge\gamma">\(|\int_{F_{n(k)}}u_k|\ge\gamma\)</span>. Karena <span class="math inline" data-source-tex="A">\(A\)</span> relatif kompak dalam topologi
+lemah, terdapat suatu titik klaster <span class="math inline" data-source-tex="u">\(u\)</span> dari <span class="math inline" data-source-tex="\sequence{k}{u_{k}}">\(\sequence{k}{u_{k}}\)</span> dalam
+<span class="math inline" data-source-tex="L^1">\(L^1\)</span> untuk topologi lemah (2A3Ob). Tetapkan <span class="math inline" data-source-tex="\eta_j=2^{-j}\gamma/6&gt;0">\(\eta_j=2^{-j}\gamma/6&gt;0\)</span> untuk
+setiap <span class="math inline" data-source-tex="j\in\Bbb N">\(j\in\Bbb N\)</span>.</p>
+<p>Sekarang kita dapat memilih secara induktif suatu barisan naik tegas
+<span class="math inline" data-source-tex="\sequence{j}{k(j)}">\(\sequence{j}{k(j)}\)</span> sedemikian sehingga, untuk setiap <span class="math inline" data-source-tex="j">\(j\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_{F_{n(k(j))}}(|u|+\sum_{i=0}^{j-1}|u_{k(i)}|) 
+\le\eta_j">\(\int_{F_{n(k(j))}}(|u|+\sum_{i=0}^{j-1}|u_{k(i)}|) 
+\le\eta_j\)</span></div>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{i=0}^{j-1} 
+|\int_{F_{n(k(i))}}u-\int_{F_{n(k(i))}}u_{k(j)}|\le\eta_j">\(\sum_{i=0}^{j-1} 
+|\int_{F_{n(k(i))}}u-\int_{F_{n(k(i))}}u_{k(j)}|\le\eta_j\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="j">\(j\)</span>, dengan <span class="math inline" data-source-tex="\sum_{i=0}^{-1}">\(\sum_{i=0}^{-1}\)</span> ditafsirkan sebagai <span class="math inline" data-source-tex="0">\(0\)</span>.
+Bukti. Andaikan
+<span class="math inline" data-source-tex="\langle k(i)\rangle_{i&lt;j}">\(\langle k(i)\rangle_{i&lt;j}\)</span> telah dipilih, dan tetapkan
+<span class="math inline" data-source-tex="v^*=|u|+\sum_{i=0}^{j-1}|u_{k(i)}|">\(v^*=|u|+\sum_{i=0}^{j-1}|u_{k(i)}|\)</span>. Maka
+<span class="math inline" data-source-tex="\lim_{k\to\infty}\int_{F_{n(k)}}v^*=0">\(\lim_{k\to\infty}\int_{F_{n(k)}}v^*=0\)</span>, misalnya menurut Teorema
+Konvergensi Terdominasi Lebesgue. Karena itu terdapat <span class="math inline" data-source-tex="k^*">\(k^*\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="k^*&gt;k(i)">\(k^*&gt;k(i)\)</span> untuk setiap <span class="math inline" data-source-tex="i&lt;j">\(i&lt;j\)</span> dan <span class="math inline" data-source-tex="\int_{F_{n(k)}}v^*\le\eta_j">\(\int_{F_{n(k)}}v^*\le\eta_j\)</span> untuk setiap
+<span class="math inline" data-source-tex="k\ge k^*">\(k\ge k^*\)</span>. Selanjutnya, peta</p>
+<div class="centerline"><span class="math inline" data-source-tex="w\mapsto\sum_{i=0}^{j-1} 
+|\int_{F_{n(k(i))}}u-\int_{F_{n(k(i))}}w|:L^1\to\Bbb R">\(w\mapsto\sum_{i=0}^{j-1} 
+|\int_{F_{n(k(i))}}u-\int_{F_{n(k(i))}}w|:L^1\to\Bbb R\)</span></div>
+<p>kontinu dalam topologi lemah pada <span class="math inline" data-source-tex="L^1">\(L^1\)</span> dan bernilai nol di <span class="math inline" data-source-tex="u">\(u\)</span>.
+Karena <span class="math inline" data-source-tex="u">\(u\)</span> merupakan titik klaster dari setiap ekor
+<span class="math inline" data-source-tex="\{u_{k}:k\ge k^*\}">\(\{u_{k}:k\ge k^*\}\)</span>, terdapat <span class="math inline" data-source-tex="k(j)\ge k^*">\(k(j)\ge k^*\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\sum_{i=0}^{j-1}|\int_{F_{n(k(i))}}u-
+\int_{F_{n(k(i))}}u_{k(j)}|&lt;\eta_j">\(\sum_{i=0}^{j-1}|\int_{F_{n(k(i))}}u-
+\int_{F_{n(k(i))}}u_{k(j)}|&lt;\eta_j\)</span>. Ini melanjutkan konstruksi. ∎</p>
+<p>Misalkan <span class="math inline" data-source-tex="v">\(v\)</span> sebarang titik klaster dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span>, untuk topologi lemah, dari
+<span class="math inline" data-source-tex="\sequence{j}{u_{k(j)}}">\(\sequence{j}{u_{k(j)}}\)</span>. Dengan menetapkan <span class="math inline" data-source-tex="G_i=F_{n(k(i))}">\(G_i=F_{n(k(i))}\)</span>, kita mempunyai
+<span class="math inline" data-source-tex="|\int_{G_i}u-\int_{G_i}u_{k(j)}|\le\eta_j">\(|\int_{G_i}u-\int_{G_i}u_{k(j)}|\le\eta_j\)</span> apabila <span class="math inline" data-source-tex="i&lt;j">\(i&lt;j\)</span>. Jadi,
+<span class="math inline" data-source-tex="\lim_{j\to\infty}\int_{G_i}u_{k(j)}">\(\lim_{j\to\infty}\int_{G_i}u_{k(j)}\)</span> ada <span class="math inline" data-source-tex="=\int_{G_i}u">\(=\int_{G_i}u\)</span> untuk setiap
+<span class="math inline" data-source-tex="i">\(i\)</span>, serta <span class="math inline" data-source-tex="\int_{G_i}v=\int_{G_i}u">\(\int_{G_i}v=\int_{G_i}u\)</span> untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>; dengan menetapkan
+<span class="math inline" data-source-tex="G=\bigcup_{i\in\Bbb N}G_i">\(G=\bigcup_{i\in\Bbb N}G_i\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_Gv=\sum_{i=0}^{\infty}\int_{G_i}v 
+=\sum_{i=0}^{\infty}\int_{G_i}u=\int_Gu">\(\int_Gv=\sum_{i=0}^{\infty}\int_{G_i}v 
+=\sum_{i=0}^{\infty}\int_{G_i}u=\int_Gu\)</span>,</div>
+<p>berdasarkan <a class="xref" href="../232/index.html#232D">232D</a>, karena <span class="math inline" data-source-tex="\sequence{i}{G_i}">\(\sequence{i}{G_i}\)</span> saling lepas.</p>
+<p>Untuk setiap <span class="math inline" data-source-tex="j\in\Bbb N">\(j\in\Bbb N\)</span>,</p>
+<p><span class="math display" data-source-tex="\eqalignno{\sum_{i=0}^{j-1}|\int_{G_i}u_{k(j)}| 
+&amp;+\sum_{i=j+1}^{\infty}|\int_{G_i}u_{k(j)}|\cr 
+&amp;\le\sum_{i=0}^{j-1}\int_{G_i}|u| 
++\sum_{i=0}^{j-1}|\int_{G_i}u-\int_{G_i}u_{k(j)}| 
++\sum_{i=j+1}^{\infty}\int_{G_i}|u_{k(j)}|\cr 
+&amp;\le\sum_{i=0}^{j-1}\eta_i+\eta_j+\sum_{i=j+1}^{\infty}\eta_i 
+=\sum_{i=0}^{\infty}\eta_i 
+=\Bover{\gamma}{3}.\cr}">\[\begin{aligned}\sum_{i=0}^{j-1}|\int_{G_i}u_{k(j)}| 
+&amp;+\sum_{i=j+1}^{\infty}|\int_{G_i}u_{k(j)}|\\ 
+&amp;\le\sum_{i=0}^{j-1}\int_{G_i}|u| 
++\sum_{i=0}^{j-1}|\int_{G_i}u-\int_{G_i}u_{k(j)}| 
++\sum_{i=j+1}^{\infty}\int_{G_i}|u_{k(j)}|\\ 
+&amp;\le\sum_{i=0}^{j-1}\eta_i+\eta_j+\sum_{i=j+1}^{\infty}\eta_i 
+=\sum_{i=0}^{\infty}\eta_i 
+=\Bover{\gamma}{3}.\\\end{aligned}\]</span></p>
+<p>Di sisi lain, <span class="math inline" data-source-tex="|\int_{G_j}u_{k(j)}|\ge\gamma">\(|\int_{G_j}u_{k(j)}|\ge\gamma\)</span>. Karena itu</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\int_Gu_{k(j)}| 
+=|\sum_{i=0}^{\infty}\int_{G_i}u_{k(j)}| 
+\ge\Bover23\gamma">\(|\int_Gu_{k(j)}| 
+=|\sum_{i=0}^{\infty}\int_{G_i}u_{k(j)}| 
+\ge\Bover23\gamma\)</span>.</div>
+<p>Pernyataan ini berlaku untuk setiap <span class="math inline" data-source-tex="j">\(j\)</span>. Karena setiap himpunan terbuka lemah
+yang memuat <span class="math inline" data-source-tex="v">\(v\)</span> beririsan dengan <span class="math inline" data-source-tex="\{u_{k(j)}:j\in\Bbb N\}">\(\{u_{k(j)}:j\in\Bbb N\}\)</span>, kita memperoleh
+<span class="math inline" data-source-tex="|\int_Gv|\ge\bover23\gamma">\(|\int_Gv|\ge\bover23\gamma\)</span> dan <span class="math inline" data-source-tex="|\int_Gu|\ge\bover23\gamma">\(|\int_Gu|\ge\bover23\gamma\)</span>. Akan tetapi,</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\int_Gu| 
+=|\sum_{i=0}^{\infty}\int_{G_i}u| 
+\le\sum_{i=0}^{\infty}\int_{G_i}|u| 
+\le\sum_{i=0}^{\infty}\eta_i 
+=\Bover{\gamma}{3}">\(|\int_Gu| 
+=|\sum_{i=0}^{\infty}\int_{G_i}u| 
+\le\sum_{i=0}^{\infty}\int_{G_i}|u| 
+\le\sum_{i=0}^{\infty}\eta_i 
+=\Bover{\gamma}{3}\)</span>,</div>
+<p>suatu kemustahilan. <span class="fremlin-bang" role="img" aria-label="kontradiksi"></span></p>
+<p>Kontradiksi ini menunjukkan bahwa
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\sup_{u\in A}|\int_{F_n}u|=0">\(\lim_{n\to\infty}\sup_{u\in A}|\int_{F_n}u|=0\)</span>. Karena
+<span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> sebarang, <span class="math inline" data-source-tex="A">\(A\)</span> memenuhi syarat <a class="xref" href="../246/index.html#246G">246G</a>(iii), sehingga dapat
+diintegralkan secara seragam.</p>
+<p> </p>
+<p><strong>(b)</strong> Sekarang andaikan <span class="math inline" data-source-tex="A">\(A\)</span> dapat diintegralkan secara seragam. Saya akan
+mencari suatu himpunan <span class="math inline" data-source-tex="C\supseteq A">\(C\supseteq A\)</span> yang kompak secara lemah.</p>
+<p> </p>
+<p>  <strong>(i)</strong> Untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, pilih <span class="math inline" data-source-tex="E_n\in\Sigma">\(E_n\in\Sigma\)</span> dan <span class="math inline" data-source-tex="M_n\ge 0">\(M_n\ge 0\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\mu E_n&lt;\infty">\(\mu E_n&lt;\infty\)</span> dan
+<span class="math inline" data-source-tex="\int(|u|-M_n\chi E_n^{\ssbullet})^+\le 2^{-n}">\(\int(|u|-M_n\chi E_n^{\ssbullet})^+\le 2^{-n}\)</span> untuk setiap <span class="math inline" data-source-tex="u\in A">\(u\in A\)</span>.
+Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="C=\{v:v\in L^1,\,|\int_Fv|\le M_n\mu(F\cap E_n) 
+  +2^{-n}\Forall n\in\Bbb N,\,F\in\Sigma\}">\(C=\{v:v\in L^1,\,|\int_Fv|\le M_n\mu(F\cap E_n) 
+  +2^{-n}\Forall n\in\Bbb N,\,F\in\Sigma\}\)</span>,</div>
+<p>dan perhatikan bahwa <span class="math inline" data-source-tex="A\subseteq C">\(A\subseteq C\)</span>. Memang, jika <span class="math inline" data-source-tex="u\in A">\(u\in A\)</span> dan
+<span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\int_Fu| 
+\le\int_F(|u|-M_n\chi E_n^{\ssbullet})^++\int_FM_n\chi E_n^{\ssbullet} 
+\le 2^{-n}+M_n\mu(F\cap E_n)">\(|\int_Fu| 
+\le\int_F(|u|-M_n\chi E_n^{\ssbullet})^++\int_FM_n\chi E_n^{\ssbullet} 
+\le 2^{-n}+M_n\mu(F\cap E_n)\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>. Perhatikan pula bahwa <span class="math inline" data-source-tex="C">\(C\)</span> terbatas dalam norma
+<span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span>, karena</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|u\|_1\le 2\sup_{F\in\Sigma}|\int_Fu| 
+\le 2\sup_{F\in\Sigma}(1+M_0\mu(F\cap E_0))\le 2(1+M_0\mu E_0)">\(\|u\|_1\le 2\sup_{F\in\Sigma}|\int_Fu| 
+\le 2\sup_{F\in\Sigma}(1+M_0\mu(F\cap E_0))\le 2(1+M_0\mu E_0)\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="u\in C">\(u\in C\)</span> (menggunakan <a class="xref" href="../246/index.html#246F">246F</a>).</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Karena teorema ini hendak dibuktikan untuk ruang ukur
+sebarang <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span>, kita tidak dapat menggunakan <a class="xref" href="../243/index.html#243G">243G</a> untuk
+mengidentifikasi dual <span class="math inline" data-source-tex="L^1">\(L^1\)</span>. Meskipun demikian, <a class="xref" href="#247B">247B</a> di atas menunjukkan bahwa
+243Gb ‘hampir’ berlaku, dalam arti berikut: jika <span class="math inline" data-source-tex="h\in(L^1)^*">\(h\in(L^1)^*\)</span>, terdapat
+<span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span> sedemikian sehingga <span class="math inline" data-source-tex="h(u)=\int u\times v">\(h(u)=\int u\times v\)</span> untuk setiap
+<span class="math inline" data-source-tex="u\in C">\(u\in C\)</span>. Bukti. Tetapkan <span class="math inline" data-source-tex="G=\bigcup_{n\in\Bbb N}E_n\in\Sigma">\(G=\bigcup_{n\in\Bbb N}E_n\in\Sigma\)</span>, dan definisikan
+<span class="math inline" data-source-tex="U\subseteq L^1">\(U\subseteq L^1\)</span> seperti dalam <a class="xref" href="#247A">247A</a>-<a class="xref" href="#247B">247B</a>. Menurut <a class="xref" href="#247B">247B</a>, terdapat
+<span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span> sedemikian sehingga <span class="math inline" data-source-tex="h(u)=\int u\times v">\(h(u)=\int u\times v\)</span> untuk setiap
+<span class="math inline" data-source-tex="u\in U">\(u\in U\)</span>. Jika <span class="math inline" data-source-tex="u\in C">\(u\in C\)</span>, nyatakan <span class="math inline" data-source-tex="u">\(u\)</span> sebagai <span class="math inline" data-source-tex="f^{\ssbullet}">\(f^{\ssbullet}\)</span> dengan
+<span class="math inline" data-source-tex="f:X\to\Bbb R">\(f:X\to\Bbb R\)</span> terukur. Jika <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dan <span class="math inline" data-source-tex="F\cap G=\emptyset">\(F\cap G=\emptyset\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\int_Ff|=|\int_Fu|\le 2^{-n}+M_n\mu(F\cap E_n) 
+=2^{-n}">\(|\int_Ff|=|\int_Fu|\le 2^{-n}+M_n\mu(F\cap E_n) 
+=2^{-n}\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, sehingga <span class="math inline" data-source-tex="\int_Ff=0">\(\int_Ff=0\)</span>. Akibatnya,
+<span class="math inline" data-source-tex="f=0">\(f=0\)</span> hampir di mana-mana pada <span class="math inline" data-source-tex="X\setminus G">\(X\setminus G\)</span> (<a class="xref" href="../131/index.html#131Fc">131Fc</a>), jadi
+<span class="math inline" data-source-tex="f\times\chi G\eae f">\(f\times\chi G\eae f\)</span> dan <span class="math inline" data-source-tex="u=u\times\chi G^{\ssbullet}">\(u=u\times\chi G^{\ssbullet}\)</span>; dengan kata lain,
+<span class="math inline" data-source-tex="u\in U">\(u\in U\)</span>, dan <span class="math inline" data-source-tex="h(u)=\int u\times v">\(h(u)=\int u\times v\)</span>, seperti yang diperlukan.
+∎</p>
+<p> </p>
+<p>  <strong>(iii)</strong> Dengan demikian kita dapat melanjutkan dengan suatu deskripsi
+yang memadai, bukan tentang <span class="math inline" data-source-tex="(L^1(\mu))^*">\((L^1(\mu))^*\)</span> itu sendiri, melainkan tentang
+tindakannya pada <span class="math inline" data-source-tex="C">\(C\)</span>.</p>
+<p>Misalkan <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> sebarang ultrafilter pada <span class="math inline" data-source-tex="L^1">\(L^1\)</span> yang memuat <span class="math inline" data-source-tex="C">\(C\)</span> (lihat 2A3R).
+Untuk setiap <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>, tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu F=\lim_{u\to\Cal F}\int_Fu">\(\nu F=\lim_{u\to\Cal F}\int_Fu\)</span>;</div>
+<p>karena</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sup_{u\in C}|\int_Fu|\le\sup_{u\in C}\|u\|_1&lt;\infty">\(\sup_{u\in C}|\int_Fu|\le\sup_{u\in C}\|u\|_1&lt;\infty\)</span>,</div>
+<p>nilai ini terdefinisi dengan baik dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> (2A3S(e-ii)). Jika
+<span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="F">\(F\)</span> adalah anggota <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> yang saling lepas, maka
+<span class="math inline" data-source-tex="\int_{E\cup F}u=\int_Eu+\int_Fu">\(\int_{E\cup F}u=\int_Eu+\int_Fu\)</span> untuk setiap <span class="math inline" data-source-tex="u\in C">\(u\in C\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu(E\cup F) 
+=\lim_{u\to\Cal F}\int_{E\cup F}u 
+=\lim_{u\to\Cal F}\int_{E}u+\lim_{u\to\Cal F}\int_{F}u 
+=\nu E+\nu F">\(\nu(E\cup F) 
+=\lim_{u\to\Cal F}\int_{E\cup F}u 
+=\lim_{u\to\Cal F}\int_{E}u+\lim_{u\to\Cal F}\int_{F}u 
+=\nu E+\nu F\)</span></div>
+<p>(2A3Sf). Jadi <span class="math inline" data-source-tex="\nu:\Sigma\to\Bbb R">\(\nu:\Sigma\to\Bbb R\)</span> aditif. Selanjutnya, fungsional
+ini kontinu sejati terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Bukti. Diberikan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, ambil
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> sedemikian sehingga <span class="math inline" data-source-tex="2^{-n}\le\bover12\epsilon">\(2^{-n}\le\bover12\epsilon\)</span>, tetapkan
+<span class="math inline" data-source-tex="\delta=\epsilon/2(M_n+1)&gt;0">\(\delta=\epsilon/2(M_n+1)&gt;0\)</span>, dan perhatikan bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\nu F|\le\sup_{u\in C}|\int_Fu| 
+\le 2^{-n}+M_n\mu(F\cap E_n)\le\epsilon">\(|\nu F|\le\sup_{u\in C}|\int_Fu| 
+\le 2^{-n}+M_n\mu(F\cap E_n)\le\epsilon\)</span></div>
+<p>apabila <span class="math inline" data-source-tex="\mu(F\cap E_n)\le\delta">\(\mu(F\cap E_n)\le\delta\)</span>. ∎ Menurut Teorema
+Radon-Nikodým (<a class="xref" href="../232/index.html#232E">232E</a>), terdapat <span class="math inline" data-source-tex="f_0\in{\eusm L}^1">\(f_0\in{\eusm L}^1\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\int_Ff_0=\nu F">\(\int_Ff_0=\nu F\)</span> untuk setiap <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>. Tetapkan
+<span class="math inline" data-source-tex="u_0=f_0^{\ssbullet}\in L^1">\(u_0=f_0^{\ssbullet}\in L^1\)</span>. Jika <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> dan <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\int_Fu_0| 
+=|\nu F|\le\sup_{u\in C}|\int_Fu|\le 2^{-n}+M_n\mu(F\cap E_n)">\(|\int_Fu_0| 
+=|\nu F|\le\sup_{u\in C}|\int_Fu|\le 2^{-n}+M_n\mu(F\cap E_n)\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="u_0\in C">\(u_0\in C\)</span>.</p>
+<p> </p>
+<p>  <strong>(iv)</strong> Pokoknya ialah bahwa <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> konvergen ke <span class="math inline" data-source-tex="u_0">\(u_0\)</span>.
+Bukti. Misalkan <span class="math inline" data-source-tex="h\in(L^1)^*">\(h\in(L^1)^*\)</span>. Maka terdapat <span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="h(u)=\int u\times v">\(h(u)=\int u\times v\)</span> untuk setiap <span class="math inline" data-source-tex="u\in C">\(u\in C\)</span>. Nyatakan <span class="math inline" data-source-tex="v">\(v\)</span> sebagai
+<span class="math inline" data-source-tex="g^{\ssbullet}">\(g^{\ssbullet}\)</span>, dengan <span class="math inline" data-source-tex="g:X\to\Bbb R">\(g:X\to\Bbb R\)</span> suatu fungsi terbatas dan terukur
+terhadap <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. Ambil <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Pilih
+<span class="math inline" data-source-tex="a_0\le a_1\le\ldots\le a_n">\(a_0\le a_1\le\ldots\le a_n\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="a_{i+1}-a_i\le\epsilon">\(a_{i+1}-a_i\le\epsilon\)</span> untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>, sementara <span class="math inline" data-source-tex="a_0\le g(x)&lt;a_n">\(a_0\le g(x)&lt;a_n\)</span> untuk
+setiap <span class="math inline" data-source-tex="x\in X">\(x\in X\)</span>. Tetapkan <span class="math inline" data-source-tex="F_i=\{x:a_{i-1}\le g(x)&lt;a_i\}">\(F_i=\{x:a_{i-1}\le g(x)&lt;a_i\}\)</span> untuk
+<span class="math inline" data-source-tex="1\le i\le n">\(1\le i\le n\)</span>, serta tetapkan <span class="math inline" data-source-tex="\tilde g=\sum_{i=1}^na_i\chi F_i">\(\tilde g=\sum_{i=1}^na_i\chi F_i\)</span> dan
+<span class="math inline" data-source-tex="\tilde v=\tilde g^{\ssbullet}">\(\tilde v=\tilde g^{\ssbullet}\)</span>; maka <span class="math inline" data-source-tex="\|\tilde v-v\|_{\infty}\le\epsilon">\(\|\tilde v-v\|_{\infty}\le\epsilon\)</span>.
+Kita mempunyai</p>
+<p><span class="math display" data-source-tex="\eqalign{\int u_0\times\tilde v 
+&amp;=\sum_{i=1}^na_i\int_{F_i}u_0 
+=\sum_{i=1}^na_i\nu F_i\cr 
+&amp;=\sum_{i=1}^{n}a_i\lim_{u\to\Cal F}\int_{F_i}u 
+=\lim_{u\to\Cal F}\sum_{i=1}^na_i\int_{F_i}u 
+=\lim_{u\to\Cal F}\int u\times\tilde v.\cr}">\[\begin{aligned}\int u_0\times\tilde v 
+&amp;=\sum_{i=1}^na_i\int_{F_i}u_0 
+=\sum_{i=1}^na_i\nu F_i\\ 
+&amp;=\sum_{i=1}^{n}a_i\lim_{u\to\Cal F}\int_{F_i}u 
+=\lim_{u\to\Cal F}\sum_{i=1}^na_i\int_{F_i}u 
+=\lim_{u\to\Cal F}\int u\times\tilde v.\\\end{aligned}\]</span></p>
+<p>Akibatnya,</p>
+<p><span class="math display" data-source-tex="\eqalign{\limsup_{u\to\Cal F}|\int u\times v-\int u_0\times v| 
+&amp;\le|\int u_0\times v-\int u_0\times \tilde v| 
++\sup_{u\in C}|\int u\times v-\int u\times\tilde v|\cr 
+&amp;\le\|u_0\|_1\|v-\tilde v\|_{\infty} 
++\sup_{u\in C}\|u\|_1\|v-\tilde v\|_{\infty}\cr 
+&amp;\le2\epsilon\sup_{u\in C}\|u\|_1.\cr}">\[\begin{aligned}\limsup_{u\to\Cal F}|\int u\times v-\int u_0\times v| 
+&amp;\le|\int u_0\times v-\int u_0\times \tilde v| 
++\sup_{u\in C}|\int u\times v-\int u\times\tilde v|\\ 
+&amp;\le\|u_0\|_1\|v-\tilde v\|_{\infty} 
++\sup_{u\in C}\|u\|_1\|v-\tilde v\|_{\infty}\\ 
+&amp;\le2\epsilon\sup_{u\in C}\|u\|_1.\\\end{aligned}\]</span></p>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang,</p>
+<p><span class="math display" data-source-tex="\eqalign{\limsup_{u\to\Cal F}|h(u)-h(u_0)| 
+&amp;=\limsup_{u\to\Cal F}|\int u\times v-\int u_0\times v| 
+=0.\cr}">\[\begin{aligned}\limsup_{u\to\Cal F}|h(u)-h(u_0)| 
+&amp;=\limsup_{u\to\Cal F}|\int u\times v-\int u_0\times v| 
+=0.\\\end{aligned}\]</span></p>
+<p>Karena <span class="math inline" data-source-tex="h">\(h\)</span> sebarang, <span class="math inline" data-source-tex="u_0">\(u_0\)</span> merupakan limit <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> di <span class="math inline" data-source-tex="C">\(C\)</span> dalam
+topologi lemah pada <span class="math inline" data-source-tex="L^1">\(L^1\)</span>. ∎</p>
+<p>Karena <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> sebarang, <span class="math inline" data-source-tex="C">\(C\)</span> kompak secara lemah dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span>, dan bukti selesai.</p></aside>
+</section>
+<section class="source-unit" id="247D" data-source-id="247D"><h2><span class="source-label">247D</span> Akibat </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dan <span class="math inline" data-source-tex="(Y,\Tau,\nu)">\((Y,\Tau,\nu)\)</span> sebarang
+dua ruang ukur, dan <span class="math inline" data-source-tex="T:L^1(\mu)\to L^1(\nu)">\(T:L^1(\mu)\to L^1(\nu)\)</span> suatu operator linear kontinu.
+Maka <span class="math inline" data-source-tex="T[A]">\(T[A]\)</span> merupakan subhimpunan <span class="math inline" data-source-tex="L^1(\nu)">\(L^1(\nu)\)</span> yang dapat diintegralkan secara
+seragam setiap kali <span class="math inline" data-source-tex="A">\(A\)</span> merupakan subhimpunan <span class="math inline" data-source-tex="L^1(\mu)">\(L^1(\mu)\)</span> yang dapat
+diintegralkan secara seragam.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Pokoknya, <span class="math inline" data-source-tex="T">\(T\)</span> kontinu terhadap topologi lemah yang bersangkutan (2A5If).
+Jika <span class="math inline" data-source-tex="A\subseteq L^1(\mu)">\(A\subseteq L^1(\mu)\)</span> dapat diintegralkan secara seragam, menurut <a class="xref" href="#247C">247C</a>
+terdapat himpunan <span class="math inline" data-source-tex="C\supseteq A">\(C\supseteq A\)</span> yang kompak secara lemah. Karena merupakan
+citra suatu himpunan kompak di bawah peta kontinu, <span class="math inline" data-source-tex="T[C]">\(T[C]\)</span> harus kompak secara lemah
+(2A3N(b-ii)); jadi, menurut arah lain dalam <a class="xref" href="#247C">247C</a>, <span class="math inline" data-source-tex="T[C]">\(T[C]\)</span> dan <span class="math inline" data-source-tex="T[A]">\(T[A]\)</span> dapat
+diintegralkan secara seragam.</p></aside>
+</section>
+<section class="source-unit" id="247E" data-source-id="247E"><h2><span class="source-label">247E</span> <span class="math inline" data-source-tex="L^1">\(L^1\)</span> kompleks </h2>
+<p>Tidak ada kesulitan ataupun kejutan dalam
+membuktikan <a class="xref" href="#247C">247C</a> bagi <span class="math inline" data-source-tex="L^1_{\Bbb C}">\(L^1_{\Bbb C}\)</span>. Jika kita mengikuti bukti yang sama,
+semuanya tetap berlaku; tentu saja, kita harus ingat untuk mengubah konstanta
+ketika menerapkan <a class="xref" href="../246/index.html#246F">246F</a>, atau lebih tepatnya <a class="xref" href="../246/index.html#246K">246K</a>, pada bagian (b-i) dari bukti.</p>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="247X" data-source-id="247X"><span class="anchor" id="247Xa"></span><h2><span class="source-label">247X</span> Latihan dasar <span class="math inline" data-source-tex="\pmb{&gt;}">\(\pmb{&gt;}\)</span>(a) <span class="importance" title="Sangat penting">penting</span></h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sebarang
+ruang ukur. Tunjukkan bahwa jika <span class="math inline" data-source-tex="A\subseteq L^1=L^1(\mu)">\(A\subseteq L^1=L^1(\mu)\)</span> relatif kompak dalam
+topologi lemah, maka
+<span class="math inline" data-source-tex="\{v:v\in L^1,\,|v|\le |u|">\(\{v:v\in L^1,\,|v|\le |u|\)</span> untuk suatu <span class="math inline" data-source-tex="u\in A\}">\(u\in A\}\)</span> juga relatif kompak dalam
+topologi lemah.</p>
+</section>
+<section class="source-unit" id="247Xb" data-source-id="247Xb"><h3><span class="source-label">247Xb</span> (b) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur. Pada
+<span class="math inline" data-source-tex="L^1=L^1(\mu)">\(L^1=L^1(\mu)\)</span>, definisikan pseudometrik <span class="math inline" data-source-tex="\rho_F">\(\rho_F\)</span>, <span class="math inline" data-source-tex="\rho&#x27;_w">\(\rho&#x27;_w\)</span> untuk
+<span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>, <span class="math inline" data-source-tex="w\in L^{\infty}(\mu)">\(w\in L^{\infty}(\mu)\)</span> dengan menetapkan
+<span class="math inline" data-source-tex="\rho_F(u,v)=|\int_Fu-\int_Fv|">\(\rho_F(u,v)=|\int_Fu-\int_Fv|\)</span>, <span class="math inline" data-source-tex="\rho&#x27;_w(u,v)=|\int u\times w-\int 
+v\times w|">\(\rho&#x27;_w(u,v)=|\int u\times w-\int 
+v\times w|\)</span> untuk <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^1">\(v\in L^1\)</span>. Tunjukkan bahwa pada sebarang subhimpunan
+yang terbatas dalam norma <span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span> dari <span class="math inline" data-source-tex="L^1">\(L^1\)</span>, topologi yang didefinisikan oleh
+<span class="math inline" data-source-tex="\{\rho_F:F\in\Sigma\}">\(\{\rho_F:F\in\Sigma\}\)</span> sama dengan topologi yang dibangkitkan oleh
+<span class="math inline" data-source-tex="\{\rho&#x27;_w:w\in L^{\infty}\}">\(\{\rho&#x27;_w:w\in L^{\infty}\}\)</span>.</p>
+</section>
+<section class="source-unit" id="247Xc" data-source-id="247Xc"><h3><span class="source-label">247Xc</span> (&gt;c) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Tunjukkan bahwa untuk sebarang himpunan <span class="math inline" data-source-tex="X">\(X\)</span>, suatu subhimpunan
+dari <span class="math inline" data-source-tex="\ell^1=\ell^1(X)">\(\ell^1=\ell^1(X)\)</span> kompak dalam topologi lemah pada <span class="math inline" data-source-tex="\ell^1">\(\ell^1\)</span> jika dan
+hanya jika subhimpunan itu kompak dalam topologi norma pada <span class="math inline" data-source-tex="\ell^1">\(\ell^1\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> <a class="xref" href="../246/index.html#246Xd">246Xd</a>.</span></p>
+</section>
+<section class="source-unit" id="247Xd" data-source-id="247Xd"><h3><span class="source-label">247Xd</span> (d) </h3>
+<p>Gunakan argumen (a-ii) dalam bukti <a class="xref" href="#247C">247C</a> untuk menunjukkan
+secara langsung bahwa jika <span class="math inline" data-source-tex="A\subseteq\ell^1(\Bbb N)">\(A\subseteq\ell^1(\Bbb N)\)</span> kompak lemah, maka
+<span class="math inline" data-source-tex="\inf_{n\in\Bbb N}|u_n(n)|=0">\(\inf_{n\in\Bbb N}|u_n(n)|=0\)</span> bagi setiap barisan <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> dalam <span class="math inline" data-source-tex="A">\(A\)</span>.</p>
+</section>
+<section class="source-unit" id="247Xe" data-source-id="247Xe"><h3><span class="source-label">247Xe</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dan <span class="math inline" data-source-tex="(Y,\Tau,\nu)">\((Y,\Tau,\nu)\)</span> ruang ukur, dan
+<span class="math inline" data-source-tex="T:L^2(\nu)\to L^1(\mu)">\(T:L^2(\nu)\to L^1(\mu)\)</span> sebarang operator linear terbatas. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\{Tu:u\in L^2(\nu),\,\|u\|_2\le 1\}">\(\{Tu:u\in L^2(\nu),\,\|u\|_2\le 1\}\)</span> dapat diintegralkan secara seragam dalam
+<span class="math inline" data-source-tex="L^1(\mu)">\(L^1(\mu)\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> gunakan <a class="xref" href="../244/index.html#244K">244K</a> untuk melihat bahwa
+<span class="math inline" data-source-tex="\{u:\|u\|_2\le 1\}">\(\{u:\|u\|_2\le 1\}\)</span> kompak lemah dalam <span class="math inline" data-source-tex="L^2(\nu)">\(L^2(\nu)\)</span>.</span></p>
+</section>
+<section class="source-unit" id="247Y" data-source-id="247Y"><span class="anchor" id="247Ya"></span><h2><span class="source-label">247Y</span> Latihan lanjutan (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur. Ambil <span class="math inline" data-source-tex="1&lt;p&lt;\infty">\(1&lt;p&lt;\infty\)</span> dan
+<span class="math inline" data-source-tex="M\ge 0">\(M\ge 0\)</span>, lalu tetapkan <span class="math inline" data-source-tex="A=\{u:u\in L^p=L^p(\mu),\,\|u\|_p\le M\}">\(A=\{u:u\in L^p=L^p(\mu),\,\|u\|_p\le M\}\)</span>. Tuliskan
+<span class="math inline" data-source-tex="\frak S_A">\(\frak S_A\)</span> untuk topologi konvergensi dalam ukuran pada <span class="math inline" data-source-tex="A">\(A\)</span>, yakni topologi
+subruang yang diinduksi oleh topologi konvergensi dalam ukuran pada <span class="math inline" data-source-tex="L^0(\mu)">\(L^0(\mu)\)</span>.
+Tunjukkan bahwa jika <span class="math inline" data-source-tex="h\in(L^p)^*">\(h\in(L^p)^*\)</span>, maka <span class="math inline" data-source-tex="h\restr A">\(h\restr A\)</span> kontinu terhadap
+<span class="math inline" data-source-tex="\frak S_A">\(\frak S_A\)</span>; jadi, jika <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> adalah topologi lemah pada <span class="math inline" data-source-tex="L^p">\(L^p\)</span>, topologi
+subruang <span class="math inline" data-source-tex="\frak T_A">\(\frak T_A\)</span> termuat dalam <span class="math inline" data-source-tex="\frak S_A">\(\frak S_A\)</span>.</p>
+</section>
+<section class="source-unit" id="247Yb" data-source-id="247Yb"><h3><span class="source-label">247Yb</span> (b) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan
+<span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> suatu barisan dalam <span class="math inline" data-source-tex="L^1=L^1(\mu)">\(L^1=L^1(\mu)\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\int_Fu_n">\(\lim_{n\to\infty}\int_Fu_n\)</span> terdefinisi untuk setiap <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>. Tunjukkan
+bahwa <span class="math inline" data-source-tex="\{u_n:n\in\Bbb N\}">\(\{u_n:n\in\Bbb N\}\)</span> konvergen lemah. <span class="hint" role="note"><strong>Petunjuk:</strong> <a class="xref" href="../246/index.html#246Yh">246Yh</a>.</span></p>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<section class="source-unit" id="247-notes" data-source-id="247-notes"><h2><span class="source-label">247-notes</span> Catatan penutup untuk Bagian 247 </h2>
+<p>Dalam <a class="xref" href="#247D">247D</a> dan <a class="xref" href="#247Xa">247Xa</a> saya berusaha menunjukkan
+kekuatan identifikasi antara kekompakan lemah dan keterintegralan seragam.
+Bahwa citra kontinu suatu himpunan yang kompak secara lemah harus kompak secara lemah merupakan
+hal lumrah dalam analisis fungsional; bahwa selubung solid suatu himpunan yang
+dapat diintegralkan secara seragam juga dapat diintegralkan secara seragam
+langsung mengikuti definisi. Namun, saya tidak melihat argumen sederhana yang
+menunjukkan bahwa citra kontinu suatu himpunan yang dapat diintegralkan secara
+seragam harus dapat diintegralkan secara seragam, atau bahwa selubung solid
+suatu himpunan yang kompak secara lemah harus relatif kompak dalam topologi lemah.
+(Untuk pernyataan pertama memang ada cara lain; lihat 371Xf dalam jilid
+berikutnya.)</p>
+<p>Ada dua gagasan penting dalam bukti <a class="xref" href="#247C">247C</a>. Gagasan pertama, dalam bagian (a-ii)
+dari bukti, berupa manipulasi barisan secara cermat; inilah argumen yang
+diperlukan untuk menunjukkan bahwa suatu subhimpunan dari <span class="math inline" data-source-tex="\ell^1">\(\ell^1\)</span> yang kompak
+secara lemah juga kompak dalam norma. (Mungkin akan membantu jika Anda menuliskan
+penyelesaian <a class="xref" href="#247Xd">247Xd</a>.) Himpunan <span class="math inline" data-source-tex="F_{n(k)}">\(F_{n(k)}\)</span> dan vektor <span class="math inline" data-source-tex="u_k">\(u_k\)</span> dipilih untuk meniru
+keadaan ketika terdapat suatu barisan dalam <span class="math inline" data-source-tex="\ell^1">\(\ell^1\)</span> dengan <span class="math inline" data-source-tex="u_k(k)=1">\(u_k(k)=1\)</span> untuk
+setiap <span class="math inline" data-source-tex="k">\(k\)</span>. Indeks <span class="math inline" data-source-tex="k(i)">\(k(i)\)</span> dipilih agar ‘tonjolan’ itu bergerak cukup cepat,
+sehingga <span class="math inline" data-source-tex="u_{k(j)}(k(i))">\(u_{k(j)}(k(i))\)</span> sangat kecil apabila <span class="math inline" data-source-tex="i\ne j">\(i\ne j\)</span>. Akan tetapi, ini
+berarti <span class="math inline" data-source-tex="\sum_{i=0}^{\infty}u_{k(j)}(k(i))">\(\sum_{i=0}^{\infty}u_{k(j)}(k(i))\)</span> (yang bersesuaian dengan
+<span class="math inline" data-source-tex="\int_Gu_{k(j)}">\(\int_Gu_{k(j)}\)</span> dalam bukti) selalu cukup besar, sedangkan
+<span class="math inline" data-source-tex="\sum_{i=0}^{\infty}v(k(i))">\(\sum_{i=0}^{\infty}v(k(i))\)</span> akan kecil bagi setiap calon titik klaster <span class="math inline" data-source-tex="v">\(v\)</span>
+dari <span class="math inline" data-source-tex="\sequence{j}{u_{k(j)}}">\(\sequence{j}{u_{k(j)}}\)</span>. Saya menggunakan teknik serupa dalam §<a class="xref" href="../246/index.html#246">246</a>;
+bandingkan <a class="xref" href="../246/index.html#246Yg">246Yg</a>.</p>
+<p>Pada bagian lain dari bukti <a class="xref" href="#247C">247C</a>, strateginya lebih jelas. Anggota <span class="math inline" data-source-tex="L^1">\(L^1\)</span>
+bersesuaian dengan fungsional kontinu sejati pada <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>; keterintegralan
+seragam dari <span class="math inline" data-source-tex="C">\(C\)</span> membuat himpunan fungsional yang bersesuaian ‘kontinu sejati
+secara seragam’, sehingga setiap fungsional batas juga kontinu sejati dan,
+melalui Teorema Radon-Nikodým, memberikan suatu anggota <span class="math inline" data-source-tex="L^1">\(L^1\)</span>. Argumen
+aproksimasi langsung ((b-iv) dalam bukti, dan <a class="xref" href="#247Xb">247Xb</a>) menunjukkan bahwa
+<span class="math inline" data-source-tex="\lim_{u\in\Cal F}\int u\times w=\int v\times w">\(\lim_{u\in\Cal F}\int u\times w=\int v\times w\)</span> untuk setiap
+<span class="math inline" data-source-tex="w\in L^{\infty}">\(w\in L^{\infty}\)</span>. Bagi ukuran <span class="math inline" data-source-tex="\mu">\(\mu\)</span> yang dapat dilokalkan, ini akan
+menyelesaikan bukti. Dalam kasus umum kita memerlukan satu langkah lagi, yang
+di sini dilakukan dalam <a class="xref" href="#247A">247A</a>-<a class="xref" href="#247B">247B</a>; suatu subhimpunan <span class="math inline" data-source-tex="L^1">\(L^1\)</span> yang dapat
+diintegralkan secara seragam secara efektif hidup pada bagian <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga
+dari ruang ukur, sehingga kita dapat mengabaikan bagian lainnya dan
+mengandaikan bahwa ruang ukur tersebut dapat dilokalkan.</p>
+<p>Syarat (ii)-(iv) dalam <a class="xref" href="../246/index.html#246G">246G</a> memperlihatkan bahwa kekompakan lemah dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span>
+dapat dibahas secara efektif dengan barisan; lihat juga <a class="xref" href="../246/index.html#246Yh">246Yh</a>. Perlu dicatat
+bahwa ini merupakan ciri umum kekompakan lemah dalam ruang Banach (2A5J).
+Tentu saja, rumusan dengan barisan saling lepas dalam <a class="xref" href="../246/index.html#246G">246G</a> merupakan ciri khas
+<span class="math inline" data-source-tex="L^1">\(L^1\)</span> – maksud saya, meskipun ada hasil serupa yang berlaku di tempat lain
+(lihat Fremlin 74, bab. 8), gagasan-gagasannya tampak paling jelas dan
+paling kuat ketika diterapkan pada <span class="math inline" data-source-tex="L^1">\(L^1\)</span>.</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 2: Broad Foundations</cite>, Bagian 247.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 25 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-cumulative-html-route-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V2-S247&quot;,
+  &quot;source_member&quot;: &quot;mt2.2016/mt247.tex&quot;,
+  &quot;target_bytes&quot;: 21977,
+  &quot;target_sha256&quot;: &quot;cc041e9996927e2cc72b8264b2ccbb3c45543a0568b84bdd60c55d76c7ea7b6a&quot;,
+  &quot;source_ids&quot;: [
+    &quot;247&quot;,
+    &quot;247A&quot;,
+    &quot;247B&quot;,
+    &quot;247C&quot;,
+    &quot;247D&quot;,
+    &quot;247E&quot;,
+    &quot;247X&quot;,
+    &quot;247Xa&quot;,
+    &quot;247Xb&quot;,
+    &quot;247Xc&quot;,
+    &quot;247Xd&quot;,
+    &quot;247Xe&quot;,
+    &quot;247Y&quot;,
+    &quot;247Ya&quot;,
+    &quot;247Yb&quot;
+  ],
+  &quot;corpus_id&quot;: &quot;O007-FREMLIN&quot;,
+  &quot;volume_id&quot;: &quot;O007-FREMLIN-V2&quot;,
+  &quot;volume_source_title&quot;: &quot;Broad Foundations&quot;,
+  &quot;route&quot;: &quot;247&quot;,
+  &quot;official_source_page_start&quot;: 198,
+  &quot;chapter_official_source_pages&quot;: [
+    138,
+    203
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

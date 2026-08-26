@@ -67,6 +67,37 @@ def read_group(text: str, start: int) -> tuple[str, int]:
     raise ValueError(f"unterminated braced argument at character {start}")
 
 
+def read_conditional(
+    text: str, start: int
+) -> tuple[str, str | None, int]:
+    """Return the top-level true/false branches and end of a TeX conditional."""
+    depth = 1
+    true_end: int | None = None
+    false_start: int | None = None
+    pattern = re.compile(r"\\(if[A-Za-z]+|else|fi)\b")
+    for match in pattern.finditer(text, start):
+        command = match.group(1)
+        if command.startswith("if"):
+            depth += 1
+            continue
+        if command == "else":
+            if depth == 1 and false_start is None:
+                true_end = match.start()
+                false_start = match.end()
+            continue
+        depth -= 1
+        if depth == 0:
+            if false_start is None:
+                return text[start : match.start()], None, match.end()
+            assert true_end is not None
+            return (
+                text[start:true_end],
+                text[false_start : match.start()],
+                match.end(),
+            )
+    raise ValueError(f"unterminated TeX conditional at character {start}")
+
+
 def normalize_formula(tex: str) -> str:
     """Map only legacy presentation macros that MathJax cannot parse."""
     out = tex
@@ -157,6 +188,77 @@ class Renderer:
                 _stretch, after_stretch = read_group(text, j)
                 body, end = read_group(text, after_stretch)
                 out.append(self.transform(body))
+                i = end
+                continue
+
+            if command == "discrversionA":
+                _print_layout, after_print = read_group(text, j)
+                semantic_body, end = read_group(text, after_print)
+                out.append(self.transform(semantic_body))
+                i = end
+                continue
+
+            if command == "discrcenter":
+                _width, after_width = read_group(text, j)
+                body, end = read_group(text, after_width)
+                out.append(self.transform(body))
+                i = end
+                continue
+
+            if command == "ifwithproofs":
+                proof_branch, _brief_branch, end = read_conditional(text, j)
+                out.append(self.transform(proof_branch))
+                i = end
+                continue
+
+            if command == "ifdim":
+                condition = re.match(
+                    r"\s*\\pagewidth\s*(?:>|<|=)\s*\d+(?:\.\d+)?pt",
+                    text[j:],
+                )
+                if condition is None:
+                    raise ValueError(f"unsupported \\ifdim condition at {j}")
+                body_start = j + condition.end()
+                _wide_branch, narrow_branch, end = read_conditional(
+                    text, body_start
+                )
+                if narrow_branch is not None:
+                    out.append(self.transform(narrow_branch))
+                i = end
+                continue
+
+            if command == "leaveitout":
+                # Fremlin's print macro deliberately suppresses this branch.
+                # Consume the complete argument so neither the control word
+                # nor its excluded editorial text leaks into the reader.
+                _omitted, end = read_group(text, j)
+                i = end
+                continue
+
+            if command == "query":
+                # Editorial query counters have no reader-facing content.
+                i = j
+                continue
+
+            if command == "imp":
+                # Locale-specific expansion from source/id-ID/id-overrides.tex.
+                out.append("pelestari ukuran melalui prapeta")
+                i = j
+                continue
+
+            if command in {"grheada", "grheadb", "grheadc"}:
+                greek = {"grheada": "α", "grheadb": "β", "grheadc": "γ"}[command]
+                out.append(self.inline_token(f"<strong>({greek})</strong>"))
+                i = j
+                continue
+
+            if command == "smc":
+                # The macro is a font switch; surrounding group text remains.
+                i = j
+                continue
+
+            if command == "dvAformerly":
+                _former_id, end = read_group(text, j)
                 i = end
                 continue
 
@@ -293,16 +395,23 @@ class Renderer:
                 _arg, end = read_group(text, j)
                 i = end
                 continue
-            if command in {"noindent", "vthsp"}:
+            if command in {"noindent", "vthsp", "break"}:
                 out.append(" ")
                 i = j
                 continue
             if command == "def":
                 # Metadata definitions occupy complete source lines.  Skip the
-                # control-sequence name and its one braced replacement value.
+                # control-sequence name, any parameter signature such as #1,
+                # and its one braced replacement value.
                 name = re.match(r"\\[A-Za-z]+", text[j:])
                 if name:
                     j += len(name.group(0))
+                while j < len(text) and text[j] != "{":
+                    if text[j] == "\n":
+                        raise ValueError(
+                            "unsupported non-braced definition before newline"
+                        )
+                    j += 1
                 _arg, end = read_group(text, j)
                 i = end
                 continue
@@ -719,7 +828,14 @@ def main() -> int:
     source_bytes = args.source.read_bytes()
     source = source_bytes.decode("utf-8")
     clean = strip_comments(source)
-    implicit_ids = parse_implicit_ids(args.implicit_id)
+    # The historical defaults describe only S111.  Later units must not
+    # silently inherit those six unrelated anchors when no overrides are
+    # supplied; callers can still pass their own --implicit-id mappings.
+    implicit_ids = (
+        {}
+        if args.implicit_id is None and args.unit_number != "111"
+        else parse_implicit_ids(args.implicit_id)
+    )
     inline_anchors = parse_key_values(args.inline_anchor, "--inline-anchor")
     inline_proof_anchors = parse_key_values(
         args.inline_proof_anchor, "--inline-proof-anchor"

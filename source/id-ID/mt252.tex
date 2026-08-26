@@ -1,0 +1,1936 @@
+\frfilename{mt252.tex}
+\versiondate{6.12.07}
+\copyrightdate{2000}
+
+\def\displaycause#1{\noalign{\noindent (#1)}}
+
+\def\chaptername{Ukuran produk}
+\def\sectionname{Teorema Fubini}
+
+\newsection{252}
+
+Barangkali ciri terpenting dari konsep `ukuran produk' adalah bahwa kita
+dapat menggunakannya untuk membahas integral berulang. Dalam bagian ini
+saya memberikan versi teorema Fubini dan teorema Tonelli (252B, 252G)
+beserta berbagai akibatnya; yang paling berguna adalah versi untuk ruang
+$\sigma$-hingga (252C, 252H). Sebagai penerapan, saya menguraikan hubungan
+antara integrasi dan pengukuran himpunan ordinat (252N), serta menghitung
+volume berdimensi $r$ dari sebuah bola di $\BbbR^r$
+(252Q\cmmnt{, 252Xi}).
+Saya menyebutkan contoh-contoh tandingan yang menunjukkan kesulitan yang
+dapat timbul pada ukuran yang tidak $\sigma$-hingga dan fungsi yang tidak
+terintegralkan (252K-252L\cmmnt{, 252Xf-252Xg}).
+
+\leader{252A}{Integral berulang} Misalkan $(X,\Sigma,\mu)$ dan
+$(Y,\Tau,\nu)$ adalah ruang ukur, dan $f$ suatu fungsi bernilai real yang
+didefinisikan pada suatu himpunan $\dom f\subseteq X\times Y$. Kita dapat
+berusaha membentuk {\bf integral berulang}
+
+\Centerline{$\iint f(x,y)\nu(dy)\mu(dx)
+=\int\bigl(\int f(x,y)\nu(dy)\bigr)\mu(dx)$,}
+
+\noindent yang harus ditafsirkan sebagai berikut: tetapkan
+
+\Centerline{$D=\{x:x\in X,\,\int f(x,y)\nu(dy)$ terdefinisi dalam
+$[-\infty,\infty]\}$,}
+
+\Centerline{$g(x)=\int f(x,y)\nu(dy)$ untuk $x\in D$,}
+
+\noindent lalu tuliskan $\iint f(x,y)\nu(dy)\mu(dx)=\int g(x)\mu(dx)$
+jika integral terakhir ini terdefinisi. \cmmnt{Tentu saja, subhimpunan
+$Y$ tempat $y\mapsto f(x,y)$ didefinisikan dapat berubah menurut $x$,
+tetapi subhimpunan itu harus selalu koterabaikan, demikian pula $D$.
+
+Dengan cara yang sama, dengan menukar peran $X$ dan $Y$, kita dapat
+berusaha membentuk integral berulang
+
+\Centerline{$\iint f(x,y)\mu(dx)\nu(dy)
+=\int\bigl(\int f(x,y)\mu(dx)\bigr)\nu(dy)$.}
+
+\noindent Intinya ialah bahwa, dengan syarat yang sesuai pada $\mu$ dan
+$\nu$, kita dapat menghubungkan kedua integral berulang ini satu sama lain
+dengan menghubungkan keduanya dengan integral $f$ sendiri terhadap ukuran
+produk pada $X\times Y$.
+
+Sebagaimana akan segera tampak, di sini sangat penting untuk mengizinkan
+pembahasan integral suatu fungsi yang tidak didefinisikan di setiap titik.
+Tidak terlalu penting apakah integran dan integral diizinkan bernilai tak
+hingga, tetapi agar tegas, saya akan mengikuti aturan 135F; yaitu,
+$\int f=\int f^+-\int f^-$ asalkan $f$ didefinisikan hampir di mana-mana,
+bernilai dalam $[-\infty,\infty]$, terukur secara virtual, dan paling banyak
+salah satu dari $\int f^+$, $\int f^-$ bernilai tak hingga.
+}%end of comment
+
+\leader{252B}{Teorema} Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+adalah ruang ukur, dengan produk c.l.d.\ $(X\times Y,\Lambda,\lambda)$
+\cmmnt{ (251F)}. Andaikan $\nu$
+$\sigma$-hingga dan $\mu$ {\it dapat dilokalkan secara ketat} atau
+{\it lengkap dan ditentukan secara lokal}. Misalkan $f$ suatu fungsi
+bernilai $[-\infty,\infty]$ sedemikian sehingga $\int fd\lambda$
+terdefinisi dalam $[-\infty,\infty]$. Maka
+$\iint f(x,y)\nu(dy)\mu(dx)$ terdefinisi dan sama dengan
+$\int fd\lambda$.
+
+\proof{ Pembuktian hasil ini melibatkan kesulitan teknis yang cukup besar.
+Jika Anda belum pernah menjumpai gagasan-gagasan ini, hampir pasti Anda
+tidak sebaiknya langsung menghadapi seluruh keluasan versi yang dinyatakan
+di atas. Karena itu, saya akan memulai dengan menuliskan pembuktian untuk
+kasus ketika $\mu$ dan $\nu$ keduanya hingga total; kasus ini saja sudah
+cukup panjang. Saya akan menyajikannya sedemikian rupa sehingga hanya
+bagian tengah (bagian (b) di bawah) yang perlu diubah dalam kasus umum.
+Kemudian, setelah menyelesaikan pembuktian kasus khusus, saya akan
+memberikan versi alternatif dari (b) yang diperlukan untuk hasil lengkap.
+
+\medskip
+
+{\bf (a)} Tuliskan $\eusm L$ untuk keluarga semua fungsi bernilai
+$[0,\infty]$ yang, bila dilambangkan dengan $f$, membuat $\int fd\lambda$ dan
+\discrversionA{\break}{}$\iint f(x,y)\nu(dy)\mu(dx)$ terdefinisi dan
+sama. Tujuan saya mula-mula ialah menunjukkan bahwa $f\in\eusm L$ setiap
+kali $f$ nonnegatif dan $\int fd\lambda$ terdefinisi, lalu menelaah selisih
+fungsi-fungsi dalam $\eusm L$. Untuk membuktikan bahwa cukup banyak fungsi
+termasuk dalam $\eusm L$, strategi saya ialah memulai dengan fungsi
+`elementer' dan bergerak keluar melalui kelas-kelas yang makin besar.
+Cara yang paling efisien ialah memulai dengan menguraikan cara membangun
+anggota baru $\eusm L$ dari anggota lama, sebagai berikut.
+
+\medskip
+
+\quad{\bf (i)} $f_1+f_2\in\eusm L$ untuk semua $f_1$, $f_2\in\eusm L$,
+dan $cf\in\eusm L$ untuk semua $f\in\eusm L$,
+$c\in\coint{0,\infty}$; ini karena
+
+\Centerline{$\int(f_1+f_2)(x,y)\nu(dy)
+=\int f_1(x,y)\nu(dy)+\int f_2(x,y)\nu(dy)$,}
+
+\Centerline{$\int (cf)(x,y)\nu(dy)=c\int f(x,y)\nu(dy)$}
+
+\noindent setiap kali ruas-ruas kanan terdefinisi, yang menurut andaian
+berlaku untuk hampir setiap $x$, sehingga
+
+$$\eqalign{\iint(f_1+f_2)(x,y)\nu(dy)\mu(dx)
+&=\iint f_1(x,y)\nu(dy)\mu(dx)+\iint f_2(x,y)\nu(dy)\mu(dx)\cr
+&=\int f_1d\lambda+\int f_2d\lambda
+=\int(f_1+f_2)d\lambda,\cr}$$
+
+$$\iint(cf)(x,y)\nu(dy)\mu(dx)
+=c\int f(x,y)\nu(dy)\mu(dx)
+=c\int fd\lambda
+=\int(cf)d\lambda.$$
+
+\medskip
+
+\quad{\bf (ii)} Jika $\sequencen{f_n}$ adalah barisan dalam $\eusm L$
+sedemikian sehingga $f_n(x,y)\le f_{n+1}(x,y)$ setiap kali
+$n\in\Bbb N$ dan $(x,y)\in\dom f_n\cap\dom f_{n+1}$, maka
+$\sup_{n\in\Bbb N}f_n\in\eusm L$. \Prf\
+Tetapkan $f=\sup_{n\in\Bbb N}f_n$; untuk $x\in X$, $n\in\Bbb N$,
+tetapkan $g_n(x)=\int f_n(x,y)\nu(dy)$ apabila integral ini terdefinisi
+dalam $[0,\infty]$. Karena di sini saya mengizinkan $\infty$ sebagai nilai
+suatu fungsi, wajar untuk menganggap $f$ didefinisikan pada
+$\bigcap_{n\in\Bbb N}\dom f_n$. Menurut teorema B.Levi,
+$\int fd\lambda=\sup_{n\in\Bbb N}\int f_nd\lambda$; tuliskan $u$ untuk
+nilai bersama ini dalam $[0,\infty]$. Selanjutnya, karena
+$f_n\le f_{n+1}$ di setiap titik tempat keduanya didefinisikan,
+$g_n\le g_{n+1}$ di setiap titik tempat keduanya didefinisikan, untuk
+setiap $n$; menurut andaian $f_n\in\eusm L$, jadi $g_n$ didefinisikan
+$\mu$-hampir di mana-mana untuk setiap $n$, dan
+
+\Centerline{$\sup_{n\in\Bbb N}\int g_nd\mu
+=\sup_{n\in\Bbb N}\int f_nd\lambda=u$.}
+
+\noindent Dengan menerapkan teorema B.Levi lagi, $\int g\,d\mu=u$, dengan
+$g=\sup_{n\in\Bbb N}g_n$. Sekarang ambil sembarang
+$x\in\bigcap_{n\in\Bbb N}\dom g_n$, dan tinjau fungsi-fungsi $f_{xn}$
+pada $Y$, dengan menetapkan $f_{xn}(y)=f_n(x,y)$ setiap kali ruas kanan
+ini didefinisikan. Setiap $f_{xn}$ mempunyai integral dalam
+$[0,\infty]$, dan $f_{xn}(y)\le f_{x,n+1}(y)$ setiap kali keduanya
+didefinisikan, serta
+
+\Centerline{$\sup_{n\in\Bbb N}\int f_{xn}d\nu=g(x)$;}
+
+\noindent maka, dengan menggunakan teorema B.Levi untuk ketiga kalinya,
+$\int(\sup_{n\in\Bbb N}f_{xn})d\nu$ terdefinisi dan sama dengan $g(x)$,
+yakni
+
+\Centerline{$\int f(x,y)\nu(dy)=g(x)$.}
+
+\noindent Hal ini berlaku untuk hampir setiap $x$, sehingga
+
+\Centerline{$\iint f(x,y)\nu(dy)\mu(dx)
+=\int g\,d\mu=u=\int fd\lambda$.}
+
+\noindent Jadi $f\in\eusm L$, sebagaimana dinyatakan.\ \Qed
+
+\medskip
+
+\quad{\bf (iii)} Pengungkapan gagasan-gagasan pada bagian pembuktian
+berikutnya akan lebih lancar jika saya memperkenalkan istilah lain.
+Tuliskan $\Cal W$ untuk
+$\{W:W\subseteq X\times Y,\,\chi W\in\eusm L\}$. Maka
+
+\inset{($\alpha$) jika $W$, $W'\in\Cal W$ dan $W\cap W'=\emptyset$,
+$W\cup W'\in\Cal W$}
+
+\noindent menurut (i), karena $\chi(W\cup W')=\chi W+\chi W'$,
+
+\inset{($\beta$) $\bigcup_{n\in\Bbb N}W_n\in\Cal W$ setiap kali
+$\sequencen{W_n}$ merupakan barisan tak-menurun dalam $\Cal W$}
+
+\noindent karena $\sequencen{\chi W_n}\uparrow\chi W$, dan kita dapat
+menggunakan (ii).
+
+Perlu dicatat pula bahwa, untuk setiap $W\subseteq X\times Y$ dan setiap
+$x\in X$, $\int\chi W(x,y)\nu(dy)=\nu W[\{x\}]$, setidaknya apabila
+$W[\{x\}]=\{y:(x,y)\in W\}$ terukur oleh $\nu$. Selain itu, karena
+$\lambda$ lengkap, suatu himpunan $W\subseteq X\times Y$ termasuk dalam
+$\Lambda$ jika dan hanya jika $\chi W$ terukur secara virtual terhadap
+$\lambda$, jika dan hanya jika $\int\chi W\,d\lambda$ terdefinisi dalam
+$[0,\infty]$; dan dalam hal ini
+$\lambda W=\int\chi W\,d\lambda$.
+
+\medskip
+
+\quad{\bf (iv)} Akhirnya, kita perlu mengamati bahwa, dalam keadaan yang
+sesuai, selisih dua anggota $\Cal W$ akan termasuk dalam $\Cal W$: jika
+$W$, $W'\in\Cal W$, $W\subseteq W'$, dan $\lambda W'<\infty$, maka
+$W'\setminus W\in\Cal W$. \Prf\ Menurut andaian,
+$g(x)=\int\chi W(x,y)\nu(dy)$ dan
+$g'(x)=\int\chi W'(x,y)\nu(dy)$ terdefinisi untuk hampir setiap $x$,
+serta $\int g\,d\mu=\lambda W$, $\int g'd\mu=\lambda W'$. Karena
+$\lambda W'$ berhingga, $g'$ harus berhingga hampir di mana-mana, dan
+$D=\{x:x\in\dom g\cap\dom g',\,g'(x)<\infty\}$ koterabaikan. Sekarang,
+untuk setiap $x\in D$, $g(x)$ dan $g'(x)$ keduanya berhingga, sehingga
+
+\Centerline{$y\mapsto\chi(W'\setminus W)(x,y)=\chi W'(x,y)-\chi W(x,y)$}
+
+\noindent adalah selisih dua fungsi terintegralkan, dan
+
+$$\eqalign{\int\chi(W'\setminus W)(x,y)\nu(dy)
+&=\int\chi W'(x,y)-\chi W(x,y)\nu(dy)\cr
+&=\int\chi W'(x,y)\nu(dy)-\int\chi W(x,y)\nu(dy)
+=g'(x)-g(x).\cr}$$
+
+\noindent Dengan demikian
+
+\Centerline{$\iint\chi(W'\setminus W)(x,y)\nu(dy)\mu(dx)
+=\int g'(x)-g(x)\mu(dx)
+=\lambda W'-\lambda W
+=\lambda(W'\setminus W)$,}
+
+\noindent dan $W'\setminus W$ termasuk dalam $\Cal W$.\ \Qed
+
+(Tentu saja, argumen tepat di atas dapat dipersingkat beberapa kata jika
+kita mengizinkan diri untuk mengandaikan bahwa $\mu$ dan $\nu$ hingga
+total, sebab dalam hal itu $g(x)$ dan $g'(x)$ akan berhingga setiap kali
+keduanya didefinisikan; tetapi gagasan kuncinya, bahwa selisih fungsi-fungsi
+terintegralkan adalah terintegralkan, tidak berubah.)
+
+\medskip
+
+{\bf (b)} Sekarang mari kita telaah kelas $\Cal W$, dengan mengandaikan
+bahwa $\mu$ dan $\nu$ hingga total.
+
+\medskip
+
+\quad{\bf (i)} $E\times F\in\Cal W$ untuk semua $E\in\Sigma$,
+$F\in\Tau$. \Prf\ $\lambda(E\times F)=\mu E\cdot\nu F$ (251J), dan
+
+\Centerline{$\int\chi(E\times F)(x,y)\nu(dy)=\nu F\,\chi E(x)$}
+
+\noindent untuk setiap $x$, sehingga
+
+$$\eqalign{\iint\chi(E\times F)(x,y)\nu(dy)\mu(dx)
+&=\int(\nu F\,\chi E(x))\mu(dx)
+=\mu E\cdot\nu F\cr
+&=\lambda(E\times F)
+=\int\chi(E\times F)d\lambda. \text{ \Qed}\cr}$$
+
+\medskip
+
+\quad{\bf (ii)} Misalkan $\Cal C$ adalah
+$\{E\times F:E\in\Sigma,\,F\in\Tau\}$.
+Maka $\Cal C$ tertutup terhadap irisan berhingga (karena
+$(E\times F)\cap(E'\times F')=(E\cap E')\times(F\cap F')$)
+dan termuat dalam $\Cal W$. Khususnya, $X\times Y\in\Cal W$. Akan tetapi,
+hal ini, bersama dengan (a-iv) dan (a-iii-$\beta$) di atas, berarti bahwa
+$\Cal W$ merupakan kelas Dynkin (definisi: 136A), sehingga memuat
+aljabar-sigma subhimpunan $X\times Y$ yang dibangkitkan oleh $\Cal C$,
+menurut Teorema Kelas Monoton (136B); yaitu,
+$\Cal W\supseteq\Sigma\tensorhat\Tau$ (definisi: 251D).
+
+\medskip
+
+\quad{\bf (iii)} Selanjutnya, $W\in\Cal W$ setiap kali
+$W\subseteq X\times Y$ terabaikan terhadap $\lambda$. \Prf\ Menurut
+251Ib, terdapat $V\in\Sigma\tensorhat\Tau$ sedemikian sehingga
+$V\subseteq(X\times Y)\setminus W$ dan
+$\lambda V=\lambda((X\times Y)\setminus W)$. Karena
+$\lambda(X\times Y)=\mu X\cdot\nu Y$ berhingga,
+$V'=(X\times Y)\setminus V$ terabaikan terhadap $\lambda$, dan kita
+mempunyai $W\subseteq V'\in\Sigma\tensorhat\Tau$. Akibatnya
+
+\Centerline{$0=\lambda V'=\iint\chi V'(x,y)\nu(dy)\mu(dx)$.}
+
+\noindent Akan tetapi, ini berarti bahwa
+
+\Centerline{$D=\{x:\int\chi V'(x,y)\nu(dy)$ terdefinisi dan sama
+dengan $0\}$}
+
+\noindent koterabaikan. Jika $x\in D$, kita harus mempunyai
+$\chi V'(x,y)=0$ untuk $\nu$-hampir setiap $y$, yaitu $V'[\{x\}]$
+terabaikan; dalam hal ini $W[\{x\}]\subseteq V'[\{x\}]$ juga terabaikan,
+dan $\int\chi W(x,y)\nu(dy)=0$. Hal ini berlaku untuk setiap $x\in D$,
+jadi $\int\chi W(x,y)\nu(dy)$ terdefinisi dan sama dengan $0$ untuk
+hampir setiap $x$, dan
+
+\Centerline{$\iint\chi W(x,y)\nu(dy)\mu(dx)=0=\lambda W$,}
+
+\noindent sebagaimana diperlukan.\ \Qed
+
+\medskip
+
+\quad{\bf (iv)} Maka $\Lambda\subseteq\Cal W$. \Prf\ Jika
+$W\in\Lambda$, maka, sekali lagi menurut 251Ib, terdapat
+$V\in\Sigma\tensorhat\Tau$ sedemikian sehingga $V\subseteq W$ dan
+$\lambda V=\lambda W$, sehingga $\lambda(W\setminus V)=0$. Sekarang
+$V\in\Cal W$ menurut (ii) dan $W\setminus V\in\Cal W$ menurut (iii),
+jadi $W\in\Cal W$ menurut (a-iii-$\alpha$).\ \Qed
+
+\medskip
+
+{\bf (c)} Saya kembali ke kelas $\eusm L$.
+
+\medskip
+
+\quad{\bf (i)} Jika $f\in\eusm L$ dan $g$ adalah fungsi bernilai
+$[0,\infty]$ yang didefinisikan dan sama dengan $f\,\,\lambda$-hampir
+di mana-mana, maka $g\in\eusm L$. \Prf\ Tetapkan
+
+\Centerline{$W=(X\times Y)\setminus\{(x,y):(x,y)\in\dom f\cap\dom g$,
+$f(x,y)=g(x,y)\}$,}
+
+\noindent sehingga $\lambda W=0$. (Ingat bahwa $\lambda$ lengkap.)
+Menurut (b), $\iint\chi W(x,y)\nu(dy)\mu(dx)=0$, yaitu $W[\{x\}]$
+terabaikan terhadap $\nu$ untuk $\mu$-hampir setiap $x$. Misalkan $D$
+adalah $\{x:x\in X,\,W[\{x\}]$ terabaikan terhadap $\nu$ itu$\}$. Maka $D$
+koterabaikan terhadap $\mu$. Jika $x\in D$, maka
+
+\Centerline{$W[\{x\}]=Y\setminus\{y:(x,y)\in\dom f\cap\dom g$,
+$f(x,y)=g(x,y)\}$}
+
+\noindent terabaikan, sehingga
+$\int f(x,y)\nu(dy)=\int g(x,y)\nu(dy)$ jika salah satunya terdefinisi.
+Jadi fungsi-fungsi
+\discrcenter{468pt}{$x\mapsto\int f(x,y)\nu(dy)$,
+\ifdim\pagewidth>467pt\quad\fi
+$x\mapsto\int g(x,y)\nu(dy)$ }sama hampir di mana-mana, dan
+
+\Centerline{$\iint g(x,y)\nu(dy)\mu(dx)=\iint
+f(x,y)\nu(dy)\mu(dx)
+=\int fd\lambda=\int g\,d\lambda$,}
+
+\noindent sehingga $g\in\eusm L$.\ \Qed
+
+\medskip
+
+\quad{\bf (ii)} Sekarang misalkan $f$ sembarang fungsi nonnegatif
+sedemikian sehingga $\int fd\lambda$ terdefinisi dalam $[0,\infty]$.
+Maka $f\in\eusm L$. \Prf\ Untuk $k$, $n\in\Bbb N$, tetapkan
+
+\Centerline{$W_{nk}=\{(x,y):(x,y)\in\dom f,\,f(x,y)\ge 2^{-n}k\}$.}
+
+\noindent Karena $\lambda$ lengkap, $f$ terukur secara virtual terhadap
+$\lambda$, dan $\dom f$ koterabaikan, setiap $W_{nk}$ termasuk dalam
+$\Lambda$, jadi $\chi W_{nk}\in\eusm L$ menurut (b). Tetapkan
+$f_n=\sum_{k=1}^{4^n}2^{-n}\chi W_{nk}$, sehingga
+
+$$\eqalign{f_n(x,y)
+&=2^{-n}k\text{ jika }k\le 4^n\text{ dan }2^{-n}k
+                   \le f(x,y)<2^{-n}(k+1),\cr
+&=2^n\text{ jika }f(x,y)\ge 2^n,\cr
+&=0\text{ jika }(x,y)\in(X\times Y)\setminus\dom f.\cr}$$
+
+\noindent Menurut (a-i), $f_n\in\eusm L$ untuk setiap $n\in\Bbb N$,
+sedangkan $\sequencen{f_n}$ tak-menurun, jadi
+$f'=\sup_{n\in\Bbb N}f_n\in\eusm L$ menurut (a-ii). Namun
+$f\eae f'$, jadi $f\in\eusm L$ menurut (i) tepat di atas.\
+\Qed
+
+\medskip
+
+\quad{\bf (iii)} Akhirnya, misalkan $f$ sembarang fungsi bernilai
+$[-\infty,\infty]$ sedemikian sehingga $\int fd\lambda$ terdefinisi
+dalam $[-\infty,\infty]$. Maka $\int f^+d\lambda$ dan
+$\int f^-d\lambda$ keduanya terdefinisi dan paling banyak salah satunya
+bernilai tak hingga. Menurut (ii), $f^+$ dan $f^-$ keduanya termasuk dalam
+$\eusm L$. Tetapkan $g(x)=\int f^+(x,y)\nu(dy)$,
+$h(x)=\int f^-(x,y)\nu(dy)$ setiap kali ruas-ruas ini terdefinisi; maka
+$\int g\,d\mu=\int f^+d\lambda$ dan $\int h\,d\mu=\int f^-d\lambda$
+keduanya terdefinisi dalam $[0,\infty]$.
+
+Andaikan terlebih dahulu bahwa $\int f^-d\lambda$ berhingga. Maka
+$\int h\,d\mu$ berhingga, sehingga $h$ harus berhingga
+$\mu$-hampir di mana-mana; tetapkan
+
+\Centerline{$D=\{x:x\in\dom g\cap\dom h,\,h(x)<\infty\}$.}
+
+\noindent Untuk setiap $x\in D$, $\int f^+(x,y)\nu(dy)$ dan
+$\int f^-(x,y)\nu(dy)$ terdefinisi dalam $[0,\infty]$, dan yang terakhir
+berhingga; jadi
+
+\Centerline{$\int f(x,y)\nu(dy)
+=\int f^+(x,y)\nu(dy)-\int f^-(x,y)\nu(dy)
+=g(x)-h(x)$}
+
+\noindent terdefinisi dalam $\ocint{-\infty,\infty}$. Karena $D$
+koterabaikan,
+
+$$\eqalign{\iint f(x,y)\nu(dy)\mu(dx)
+&=\int g(x)-h(x)\mu(dx)
+=\int g\,d\mu-\int h\,d\mu\cr
+&=\int f^+d\lambda-\int f^-d\lambda
+=\int fd\lambda,\cr}$$
+
+\noindent sebagaimana diperlukan.
+
+Jadi kita telah memperoleh hasilnya apabila $\int f^-d\lambda$ berhingga.
+Dengan cara yang sama, atau dengan menerapkan argumen di atas pada $-f$,
+kita melihat bahwa $\iint f(x,y)\nu(dy)\mu(dx)=\int fd\lambda$
+apabila $\int f^+d\lambda$ berhingga.
+
+Dengan demikian teorema ini telah terbukti, setidaknya ketika $\mu$ dan
+$\nu$ hingga total.
+
+\medskip
+
+{\bf (b*)} Satu-satunya titik dalam argumen di atas tempat kita perlu
+mengetahui sesuatu yang khusus tentang ukuran $\mu$ dan $\nu$ adalah
+bagian (b), ketika menunjukkan bahwa $\Lambda\subseteq\Cal W$. Sekarang
+saya kembali ke titik ini di bawah hipotesis teorema sebagaimana dinyatakan,
+yaitu bahwa $\nu$ $\sigma$-hingga dan $\mu$ dapat dilokalkan secara ketat,
+atau lengkap dan ditentukan secara lokal.
+
+\medskip
+
+\quad{\bf (i)} Perlu dicatat bahwa pelengkapan $\hat\mu$ dari $\mu$
+(212C) identik dengan versi c.l.d.\ dari ukuran tersebut, yaitu
+$\tilde\mu$ (213E). \Prf\ Jika
+$\mu$ dapat dilokalkan secara ketat, maka $\hat\mu=\tilde\mu$ menurut
+213Ha. Jika $\mu$ lengkap dan ditentukan secara lokal, maka
+$\hat\mu=\mu=\tilde\mu$ (212D, 213Hf).\ \Qed
+
+\medskip
+
+\quad{\bf (ii)} Tuliskan
+$\Sigma^f=\{G:G\in\Sigma,\,\mu G<\infty\}$,
+$\Tau^f=\{H:H\in\Tau,\,\nu H<\infty\}$. Untuk $G\in\Sigma^f$,
+$H\in\Tau^f$, misalkan $\mu_G$, $\nu_H$, dan
+$\lambda_{G\times H}$ berturut-turut adalah ukuran subruang pada $G$,
+$H$, dan $G\times H$; maka $\lambda_{G\times H}$ adalah ukuran produk
+c.l.d.\ dari $\mu_G$ dan $\nu_H$ (251Q(ii-$\alpha$)). Sekarang
+$W\cap(G\times H)\in\Cal W$ untuk setiap $W\in\Lambda$. \Prf\ $W\cap(G\times H)$
+termasuk dalam domain $\lambda_{G\times H}$, jadi
+menurut (b) dalam pembuktian ini, yang diterapkan pada ukuran hingga total
+$\mu_G$ dan $\nu_H$,
+
+$$\eqalignno{\lambda(W\cap(G\times H))
+&=\lambda_{G\times H}(W\cap(G\times H))\cr
+&=\int_G\int_H\chi(W\cap(G\times H))(x,y)\nu_H(dy)\mu_G(dx)\cr
+&=\int_G\int_Y\chi(W\cap(G\times H))(x,y)\nu(dy)\mu_G(dx)\cr
+\displaycause{karena $\chi(W\cap(G\times H))(x,y)=0$ jika
+$y\in Y\setminus H$, sehingga kita dapat menggunakan 131E}
+&=\int_X\int_Y\chi(W\cap(G\times H))(x,y)\nu(dy)\mu(dx)\cr}$$
+
+\noindent menurut 131E lagi, karena
+$\int_Y\chi(W\cap(G\times H))(x,y)\nu(dy)=0$ jika
+$x\in X\setminus G$. Jadi $W\cap(G\times H)\in\Cal W$.\ \Qed
+
+\medskip
+
+\quad{\bf (iii)} Sesungguhnya, $W\in\Cal W$ untuk setiap
+$W\in\Lambda$. \Prf\
+Ingat bahwa kita mengandaikan $\nu$
+$\sigma$-hingga. Misalkan $\sequencen{Y_n}$ adalah barisan tak-menurun
+dalam $\Tau^f$ yang menutupi $Y$, dan untuk setiap $n\in\Bbb N$, tetapkan
+$W_n=W\cap(X\times Y_n)$,
+$g_n(x)=\int\chi W_n(x,y)\nu(dy)$ setiap kali integral ini terdefinisi.
+Untuk setiap $G\in\Sigma^f$,
+
+\Centerline{$\int_Gg_nd\mu
+=\iint\chi(W\cap(G\times Y_n))(x,y)\nu(dy)\mu(dx)$}
+
+\noindent terdefinisi dan sama dengan $\lambda(W\cap(G\times Y_n))$
+menurut (ii). Namun ini berarti, pertama, bahwa
+$G\setminus\dom g_n$ terabaikan, yaitu
+$\hat\mu(G\setminus\dom g_n)=0$. Karena hal ini berlaku setiap kali
+$\mu G$ berhingga, $\tilde\mu(X\setminus\dom g_n)=0$, dan $g_n$
+didefinisikan $\tilde\mu$-hampir di mana-mana; tetapi
+$\tilde\mu=\hat\mu$, sehingga $g_n$ didefinisikan
+$\hat\mu$-hampir di mana-mana, yaitu $\mu$-hampir di mana-mana\ (212Eb).
+Selanjutnya, jika kita menetapkan
+$E_{na}=\{x:x\in\dom g_n,\,g_n(x)\ge a\}$ untuk $a\in\Bbb R$, maka
+$E_{na}\cap G\in\hat\Sigma$ setiap kali $G\in\Sigma^f$, dengan
+$\hat\Sigma$ domain $\hat\mu$; menurut definisi dalam 213D, $E_{na}$
+terukur oleh $\tilde\mu=\hat\mu$. Karena $a$ sebarang, $g_n$ terukur
+secara virtual terhadap $\mu$ (212Fa).
+
+Dengan demikian, kita dapat membicarakan $\int g_nd\mu$. Sekarang
+
+$$\eqalignno{\iint\chi W_n(x,y)\nu(dy)\mu(dx)
+&=\int g_nd\mu
+=\sup_{G\in\Sigma^f}\int_Gg_n\cr
+\displaycause{213B, karena $\mu$ semihingga}
+&=\sup_{G\in\Sigma^f}\lambda(W\cap(G\times Y_n))
+=\lambda(W\cap(X\times Y_n))\cr}$$
+
+\noindent menurut definisi dalam 251F. Jadi
+$W\cap(X\times Y_n)\in\Cal W$.
+
+Hal ini berlaku untuk setiap $n\in\Bbb N$. Karena
+$\sequencen{Y_n}\uparrow Y$, $W\in\Cal W$ menurut (a-iii-$\beta$).\ \Qed
+
+\medskip
+
+\quad{\bf (iv)} Karena itu, kita dapat kembali ke bagian (c) dari
+argumen di atas dan menarik kesimpulan seperti sebelumnya.
+}%end of proof of 252B
+
+\leader{252C}{}\cmmnt{ Teorema di atas tentu saja asimetris, dalam arti
+bahwa hipotesis yang berbeda dikenakan pada kedua ukuran faktor $\mu$ dan
+$\nu$. Jika kita menginginkan teorema `simetris', kita harus mengandaikan
+bahwa keduanya $\sigma$-hingga, sebagai berikut.
+
+\medskip
+
+\noindent}{\bf Akibat} Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+adalah dua ruang ukur $\sigma$-hingga, dan $\lambda$ ukuran produk
+c.l.d.\ pada $X\times Y$. Jika $f$ terintegralkan terhadap $\lambda$, maka
+$\iint f(x,y)\nu(dy)\mu(dx)$ dan $\iint f(x,y)\mu(dx)\nu(dy)$
+terdefinisi, berhingga, dan sama.
+
+\proof{ Karena $\mu$ dan $\nu$ pasti dapat dilokalkan secara ketat
+(211Lc), kita dapat menerapkan 252B dari kedua sisi untuk menyimpulkan bahwa
+
+\Centerline{$\iint f(x,y)\nu(dy)\mu(dx)
+=\int f\,d\lambda
+=\iint f(x,y)\mu(dx)\nu(dy)$.}
+}%end of proof of 252C
+
+\leader{252D}{}\cmmnt{ Begitu banyak penerapan teorema Fubini menggunakan
+fungsi indikator, sehingga saya mengambil beberapa baris untuk menjabarkan
+bentuk 252B dalam kasus ini, seperti pada bagian (b)-(b*) pembuktiannya.
+
+\medskip
+
+\noindent}{\bf Akibat} Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+adalah ruang ukur dan $\lambda$ ukuran produk c.l.d.\ pada $X\times Y$.
+Andaikan $\nu$ $\sigma$-hingga dan $\mu$ dapat dilokalkan secara ketat,
+atau lengkap dan ditentukan secara lokal.
+
+(i) Jika $W\in\dom\lambda$, maka $\int\nu^*W[\{x\}]\mu(dx)$
+terdefinisi dalam $[0,\infty]$ dan sama dengan $\lambda W$.
+
+(ii) Jika $\nu$ lengkap, kita dapat menuliskan
+$\int\nu W[\{x\}]\mu(dx)$ sebagai pengganti
+$\int\nu^*W[\{x\}]\mu(dx)$.
+
+\proof{ Intinya hanyalah bahwa
+$\int\chi W(x,y)\nu(dy)=\hat\nu W[\{x\}]$ setiap kali salah satu ruas
+terdefinisi, dengan $\hat\nu$ pelengkapan $\nu$ (212F). Sekarang 252B
+memberi tahu kita bahwa
+
+\Centerline{$\lambda W=\iint\chi W(x,y)\nu(dy)\mu(dx)
+=\int\hat\nu W[\{x\}]\mu(dx)$.}
+
+\noindent Kita selalu mempunyai
+$\hat\nu W[\{x\}]=\nu^*W[\{x\}]$ menurut definisi $\hat\nu$ (212C);
+dan jika $\nu$ lengkap, maka $\hat\nu=\nu$, sehingga
+$\lambda W=\int\nu W[\{x\}]\mu(dx)$.
+}%end of proof of 252D
+
+\leader{252E}{Akibat} Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+adalah ruang ukur, dengan produk c.l.d.\ $(X\times Y,\Lambda,\lambda)$.
+Andaikan $\nu$ $\sigma$-hingga dan $\mu$
+mempunyai himpunan terabaikan yang ditentukan secara lokal\cmmnt{ (213I)}.
+Maka, jika $f$ adalah fungsi bernilai real yang terukur terhadap $\Lambda$
+dan didefinisikan pada suatu subhimpunan $X\times Y$, fungsi
+$y\mapsto f(x,y)$ terukur secara virtual terhadap $\nu$ untuk
+$\mu$-hampir setiap $x\in X$.
+
+\proof{ Misalkan $\tilde f$ adalah perluasan yang terukur terhadap
+$\Lambda$ dari $f$ menjadi fungsi bernilai real yang didefinisikan di seluruh
+$X\times Y$ (121I), dan tetapkan
+$\tilde f_x(y)=\tilde f(x,y)$ untuk semua $x\in X$, $y\in Y$,
+
+\Centerline{$D=\{x:x\in X,\,\tilde f_x$ terukur secara virtual terhadap
+$\nu$ itu$\}$.}
+
+Jika $G\in\Sigma$ dan $\mu G<\infty$, maka $G\setminus D$ terabaikan.
+\Prf\ Misalkan $\sequencen{Y_n}$ adalah barisan tak-menurun himpunan
+berukuran berhingga yang menutupi $Y$, dan tetapkan
+
+$$\eqalign{\tilde f_n(x,y)
+&=\tilde f(x,y)\text{ jika }x\in G,\,y\in Y_n
+  \text{ dan }|\tilde f(x,y)|\le n,\cr
+&=0\text{ di titik-titik lain }(x,y)\in X\times Y.\cr}$$
+
+\noindent Maka setiap $\tilde f_n$ terintegralkan terhadap $\lambda$,
+karena terbatas, terukur terhadap $\Lambda$, dan nol di luar
+$G\times Y_n$. Akibatnya, dengan menetapkan
+$\tilde f_{nx}(y)=\tilde f_n(x,y)$,
+
+\Centerline{$\int(\int\tilde f_{nx}d\nu)\mu(dx)$ terdefinisi dan sama dengan
+$\int\tilde f_nd\lambda$.}
+
+\noindent Namun ini tentu berarti bahwa $\tilde f_{nx}$ terintegralkan
+terhadap $\nu$, sehingga terukur secara virtual terhadap $\nu$, untuk
+hampir setiap $x\in X$. Tetapkan
+
+\Centerline{$D_n=\{x:x\in X,\,\tilde f_{nx}$ terukur secara virtual
+terhadap $\nu$ itu$\}$;}
+
+\noindent maka setiap $D_n$ koterabaikan terhadap $\mu$, sehingga
+$\bigcap_{n\in\Bbb N}D_n$ koterabaikan. Tetapi untuk setiap
+$x\in G\cap\bigcap_{n\in\Bbb N}D_n$,
+$\tilde f_x=\lim_{n\to\infty}\tilde f_{nx}$ terukur secara virtual
+terhadap $\nu$. Jadi
+$G\setminus D\subseteq X\setminus\bigcap_{n\in\Bbb N}D_n$ terabaikan.\ \Qed
+
+Hal ini berlaku setiap kali $\mu G<\infty$. Karena $G$ sebarang dan
+$\mu$ mempunyai himpunan terabaikan yang ditentukan secara lokal, $D$
+koterabaikan. Namun, untuk setiap $x\in D$, $y\mapsto f(x,y)$ merupakan
+pembatasan dari $\tilde f_x$ dan harus terukur secara virtual terhadap
+$\nu$.
+}%end of proof of 252E
+
+\leader{252F}{}\cmmnt{ Sebagai akibat lebih lanjut, kita dapat memperoleh
+beberapa informasi berguna tentang ukuran produk c.l.d.\ untuk ruang ukur
+sebarang.
+
+\medskip
+
+\noindent}{\bf Akibat} Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+adalah dua ruang ukur, $\lambda$ ukuran produk c.l.d.\ pada $X\times Y$,
+dan $\Lambda$ domainnya. Misalkan $W\in\Lambda$ sedemikian sehingga
+penampang vertikal $W[\{x\}]$ terabaikan terhadap $\nu$ untuk
+$\mu$-hampir setiap $x\in X$. Maka $\lambda W=0$.
+
+\proof{ Ambil $E\in\Sigma$, $F\in\Tau$ yang berukuran berhingga.
+Misalkan $\lambda_{E\times F}$ adalah ukuran subruang pada $E\times F$.
+Sekali lagi menurut 251Q(ii-$\alpha$), ukuran ini tepat merupakan produk
+dari ukuran-ukuran subruang $\mu_E$ dan $\nu_F$. Kita tahu bahwa
+$W\cap(E\times F)$ terukur oleh $\lambda_{E\times F}$. Pada saat yang
+sama, penampang vertikal
+$(W\cap(E\times F))[\{x\}]=W[\{x\}]\cap F$ terabaikan terhadap $\nu_F$
+untuk $\mu_E$-hampir setiap $x\in E$. Dengan menerapkan 252B pada
+$\mu_E$, $\nu_F$, dan $\chi(W\cap(E\times F))$,
+
+\Centerline{$\lambda(W\cap(E\times F))
+=\lambda_{E\times F}(W\cap(E\times F))
+=\int_E\nu_F(W[\{x\}]\cap F)\mu_E(dx)=0$.}
+
+\noindent Namun, dengan melihat definisi dalam 251F, kita melihat bahwa
+ini berarti $\lambda W=0$, sebagaimana dinyatakan.
+}%end of proof of 252F
+\leader{252G}{}\cmmnt{ Teorema 252B dan akibat-akibatnya bergantung pada
+ukuran faktor $\mu$ dan $\nu$ yang termasuk dalam kelas-kelas terbatas.
+Ada suatu hasil parsial yang berlaku bagi semua ukuran produk c.l.d., sebagai
+berikut.
+
+\medskip
+
+\noindent}{\bf Teorema Tonelli} Misalkan $(X,\Sigma,\mu)$ dan
+$(Y,\Tau,\nu)$ ruang ukur, dan $(X\times Y,\Lambda,\lambda)$ produk c.l.d.
+keduanya. Misalkan $f$ suatu fungsi yang terukur terhadap $\Lambda$, bernilai
+$[-\infty,\infty]$, dan didefinisikan pada suatu anggota $\Lambda$, serta
+andaikan bahwa salah satu dari
+$\iint|f(x,y)|\mu(dx)\nu(dy)$ atau $\iint|f(x,y)|\nu(dy)\mu(dx)$ ada dalam
+$\Bbb R$. Maka $f$ terintegralkan terhadap $\lambda$.
+
+\proof{ Karena konstruksi ukuran produk bersifat simetris terhadap kedua
+faktor, cukup kita tinjau kasus ketika $\iint
+|f(x,y)|\nu(dy)\mu(dx)$ terdefinisi dan berhingga, sebab gagasan yang sama
+tentu juga menangani kasus lainnya.
+
+\medskip
+
+{\bf (a)} Langkah pertama adalah memeriksa bahwa $f$ didefinisikan dan
+berhingga hampir di mana-mana terhadap $\lambda$. \Prf\ Tetapkan
+$W=\{(x,y):(x,y)\in\dom f,\,f(x,y)$ berhingga$\}$. Maka $W\in\Lambda$.
+Hipotesis
+
+\Centerline{$\iint|f(x,y)|\nu(dy)\mu(dx)$ terdefinisi dan berhingga}
+
+\noindent mencakup pernyataan bahwa
+
+\Centerline{$\int|f(x,y)|\nu(dy)$ terdefinisi dan berhingga
+untuk $\mu$-hampir setiap $x$,}
+
+\noindent yang menyiratkan bahwa
+
+\Centerline{untuk $\mu$-hampir setiap $x$, $f(x,y)$ didefinisikan dan
+berhingga untuk $\nu$-hampir setiap $y$;}
+
+\noindent yaitu, bahwa
+
+\Centerline{untuk $\mu$-hampir setiap $x$, $W[\{x\}]$
+koterabaikan terhadap $\nu$.}
+
+\noindent Tetapi menurut 252F hal ini menyiratkan bahwa
+$(X\times Y)\setminus W$ terabaikan terhadap $\lambda$, sebagaimana
+diperlukan.\ \Qed
+
+\medskip
+
+{\bf (b)} Misalkan $h$ sebarang fungsi sederhana-$\lambda$ yang nonnegatif
+sedemikian sehingga $h\le|f|\,\,\lambda$-hampir di mana-mana.
+Maka
+\ifdim\pagewidth>467pt$\int h$ tidak mungkin lebih besar daripada
+$\iint|f(x,y)|\nu(dy)\mu(dx)$.
+\else $\int h$ paling besar $\iint|f(x,y)|\nu(dy)\mu(dx)$.\fi
+\Prf\ Tetapkan
+
+\Centerline{$W=\{(x,y):(x,y)\in\dom f,\,h(x,y)\le|f(x,y)|\}$,
+\quad$h'=h\times\chi W$;}
+
+\noindent maka $h'$ suatu fungsi sederhana dan $h'\eae h$. Nyatakan $h'$
+sebagai $\sum_{i=0}^na_i\chi W_i$, dengan $a_i\ge 0$ dan
+$\lambda W_i<\infty$ untuk setiap $i$.
+Misalkan $\epsilon>0$. Untuk setiap $i\le n$ terdapat $E_i\in\Sigma$,
+$F_i\in\Tau$ sedemikian sehingga $\mu E_i<\infty$, $\nu F_i<\infty$ dan
+$\lambda(W_i\cap(E_i\times F_i))\ge\lambda W_i-\epsilon$. Tetapkan
+$E=\bigcup_{i\le n}E_i$ dan $F=\bigcup_{i\le n}F_i$. Tinjau ukuran-ukuran
+subruang $\mu_E$ dan $\nu_F$ serta produk keduanya
+$\lambda_{E\times F}$ pada $E\times F$; maka $\lambda_{E\times F}$ adalah
+ukuran subruang pada $E\times F$ yang didefinisikan dari $\lambda$
+(sekali lagi 251Q(ii-$\alpha$)).
+Karena itu, dengan menerapkan 252B pada produk $\mu_E\times\nu_F$,
+
+\Centerline{$\int_{E\times F}h'\,d\lambda
+=\int_{E\times F}h'\,d\lambda_{E\times F}
+=\int_E\int_Fh'(x,y)\nu_F(dy)\mu_E(dx)$.}
+
+Untuk sebarang $x$, kita mengetahui bahwa $h'(x,y)\le|f(x,y)|$ kapan pun
+$f(x,y)$ didefinisikan. Jadi kita dapat memastikan bahwa
+
+\Centerline{$\int_Fh'(x,y)\nu_F(dy)
+=\int h'(x,y)\chi F(y)\nu(dy)
+\le\int|f(x,y)|\nu(dy)$}
+
+\noindent setidaknya kapan pun $\int_Fh'(x,y)\nu_F(dy)$ dan
+$\int|f(x,y)|\nu(dy)$ keduanya terdefinisi, dan ini berlaku untuk hampir
+setiap $x\in E$. Akibatnya
+
+$$\eqalign{\int_{E\times F}h'\,d\lambda
+&=\int_E\int_Fh'(x,y)\nu_F(dy)\mu_E(dx)\cr
+&\le\int_E\int|f(x,y)|\nu(dy)\mu(dx)
+\le\iint|f(x,y)|\nu(dy)\mu(dx).\cr}$$
+
+Di sisi lain,
+
+$$\eqalign{\int h'\,d\lambda-\int_{E\times F}h'\,d\lambda
+&=\sum_{i=0}^na_i\lambda(W_i\setminus(E\times F))\cr
+&\le\sum_{i=0}^na_i\lambda(W_i\setminus(E_i\times F_i))
+\le\epsilon\sum_{i=0}^na_i.\cr}$$
+
+\noindent Jadi
+
+\Centerline{$\int h\,d\lambda
+=\int h'd\lambda
+\le\iint|f(x,y)|\nu(dy)\mu(dx)+\epsilon\sum_{i=0}^na_i$.}
+
+\noindent Karena $\epsilon$ sebarang,
+$\int h\,d\lambda
+\le\iint|f(x,y)|\nu(dy)\mu(dx)$, sebagaimana dinyatakan.\ \Qed
+
+\medskip
+
+{\bf (c)} Hal ini berlaku kapan pun $h$ merupakan fungsi sederhana
+terhadap $\lambda$ yang kurang dari atau sama dengan
+$|f|\,\,\lambda$-hampir di mana-mana. Tetapi $|f|$ terukur terhadap
+$\Lambda$ dan $\lambda$ semihingga (251Ic), sehingga ini cukup untuk
+memastikan bahwa $|f|$ terintegralkan terhadap $\lambda$ (213B), yang
+(karena $f$ diandaikan terukur terhadap $\Lambda$) pada gilirannya
+menyiratkan bahwa $f$ terintegralkan terhadap $\lambda$.
+}%end of proof of 252G
+
+\leader{252H}{\bf Akibat} Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+ruang ukur $\sigma$-hingga, $\lambda$ ukuran produk c.l.d. pada
+$X\times Y$, dan $\Lambda$ domainnya.
+
+(a) Misalkan $f$ suatu fungsi yang terukur terhadap $\Lambda$, bernilai
+$[-\infty,\infty]$, dan didefinisikan pada suatu anggota $\Lambda$. Maka
+jika salah satu dari
+
+\Centerline{$\int_{X\times Y}|f(x,y)|\lambda(d(x,y))$,
+\quad$\int_Y\int_X|f(x,y)|\mu(dx)\nu(dy)$,
+\quad$\int_X\int_Y|f(x,y)|\nu(dy)\mu(dx)$}
+
+\noindent ada dalam $\Bbb R$, demikian pula dua lainnya, dan dalam hal ini
+
+\Centerline{$\int_{X\times Y}f(x,y)\lambda(d(x,y))
+=\int_Y\int_Xf(x,y)\mu(dx)\nu(dy)
+=\int_X\int_Yf(x,y)\nu(dy)\mu(dx)$.}
+
+(b)\dvAnew{2013} Misalkan $f$ suatu fungsi yang terukur terhadap $\Lambda$,
+bernilai $[0,\infty]$, dan didefinisikan pada suatu anggota $\Lambda$.
+Maka
+
+\Centerline{$\int_{X\times Y}f(x,y)\lambda(d(x,y))
+=\int_Y\int_Xf(x,y)\mu(dx)\nu(dy)
+=\int_X\int_Yf(x,y)\nu(dy)\mu(dx)$}
+
+\noindent dalam arti bahwa jika salah satu integral terdefinisi dalam
+$[0,\infty]$, demikian pula dua lainnya, dan ketiganya kemudian sama.
+
+\proof{{\bf (a)(i)} Andaikan bahwa $\int|f|d\lambda$ berhingga.
+Karena $\mu$ dan $\nu$ keduanya $\sigma$-hingga, 252B memberi tahu kita
+bahwa
+
+\Centerline{$\iint|f(x,y)|\mu(dx)\nu(dy)$,
+\quad$\iint|f(x,y)|\nu(dy)\mu(dx)$}
+
+\noindent keduanya ada dan sama dengan $\int|f|d\lambda$, sedangkan
+
+\Centerline{$\iint f(x,y)\mu(dx)\nu(dy)$,
+\quad$\iint f(x,y)\nu(dy)\mu(dx)$}
+
+\noindent keduanya ada dan sama dengan $\int fd\lambda$.
+
+\medskip
+
+\quad{\bf (ii)} Sekarang andaikan bahwa
+$\iint|f(x,y)|\nu(dy)\mu(dx)$ ada dalam $\Bbb R$. Maka 252G memberi tahu
+kita bahwa $|f|$ terintegralkan terhadap $\lambda$, sehingga kita dapat
+menggunakan (i) untuk menyelesaikan argumen. Dengan menukar koordinat,
+argumen yang sama berlaku jika $\iint|f(x,y)|\mu(dx)\nu(dy)$ ada dalam
+$\Bbb R$.
+
+\medskip
+
+{\bf (b)(i)} Jika $\int fd\lambda$ terdefinisi, hasilnya langsung
+mengikuti dari 252B.
+
+\medskip
+
+\quad{\bf (ii)} Andaikan bahwa $\iint_Xf(x,y)\nu(dy)\mu(dx)$ terdefinisi.
+Seperti dalam bagian (a) bukti 252G, tetapi kali ini dengan menetapkan
+$W=\dom f$, kita melihat bahwa $W\in\Lambda$ dan $W[\{x\}]$
+koterabaikan terhadap $\nu$ untuk $\mu$-hampir setiap $x$,
+sehingga $W$ koterabaikan terhadap $\lambda$. Karena $f$ nonnegatif,
+terukur terhadap $\Lambda$, dan didefinisikan hampir di mana-mana,
+$\int fd\lambda$ terdefinisi dalam $[0,\infty]$ dan kita berada dalam
+kasus (i).
+}%end of proof of 252H
+
+\leader{252I}{Akibat} Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+ruang ukur, $\lambda$ ukuran produk c.l.d. pada $X\times
+Y$, dan $\Lambda$ domainnya. Ambil $W\in\Lambda$. Jika salah satu dari
+integral
+
+\Centerline{$\int\mu^*W^{-1}[\{y\}]\nu(dy)$,
+\quad$\int\nu^*W[\{x\}]\mu(dx)$}
+
+\noindent ada dan berhingga, maka $\lambda W<\infty$.
+
+\proof{ Terapkan 252G dengan $f=\chi W$, dengan mengingat bahwa
+
+\Centerline{$\mu^*W^{-1}[\{y\}]=\int\chi W(x,y)\mu(dx)$,
+\quad$\nu^*W[\{x\}]=\int\chi W(x,y)\nu(dy)$}
+
+\noindent kapan pun integral-integral tersebut terdefinisi, seperti dalam
+bukti 252D.
+}%end of proof of 252I
+
+\cmmnt{
+\leader{252J}{Catatan} 252H merupakan bentuk dasar teorema Fubini; bukan
+suatu kebetulan bahwa kebanyakan penulis menghindari ruang yang tidak
+$\sigma$-hingga dalam konteks ini. Dua contoh berikut memperlihatkan
+beberapa kesulitan yang dapat timbul jika kita meninggalkan wilayah yang
+lazim berupa fungsi-fungsi yang kurang lebih terukur Borel pada ruang
+$\sigma$-hingga. Contoh pertama bersifat klasik.
+}%end of comment
+
+\leader{252K}{Contoh} Misalkan $(X,\Sigma,\mu)$ adalah $[0,1]$ dengan
+ukuran Lebesgue, dan $(Y,\Tau,\nu)$ adalah $[0,1]$ dengan ukuran cacah.
+\cmmnt{
+
+\spheader 252Ka} Tinjau himpunan
+
+\Centerline{$W=\{(t,t):t\in[0,1]\}\subseteq X\times Y$.}
+
+\cmmnt{
+\noindent Kita mengamati bahwa $W$ dapat dinyatakan sebagai
+
+\Centerline{$\bigcap_{n\in\Bbb N}\bigcup_{k=0}^n
+[\Bover{k}{n+1},\Bover{k+1}{n+1}]\times[\Bover{k}{n+1},
+\Bover{k+1}{n+1}]\in\Sigma\tensorhat\Tau$.}
+
+\noindent Jika kita meninjau penampang-penampang
+
+\Centerline{$W^{-1}[\{t\}]=W[\{t\}]=\{t\}$}
+
+\noindent untuk $t\in [0,1]$, kita memperoleh
+}
+
+\ifwithproofs
+\Centerline{$\iint\chi W(x,y)\mu(dx)\nu(dy)
+=\int\mu W^{-1}[\{y\}]\nu(dy)=\int 0\,\nu(dy)=0$,}
+
+\Centerline{$\iint\chi W(x,y)\nu(dy)\mu(dx)
+=\int\nu W[\{x\}]\mu(dx)=\int 1\,\mu(dx)=1$,}
+\else
+\Centerline{$\iint\chi W(x,y)\mu(dx)\nu(dy)
+=0$,}
+
+\Centerline{$\iint\chi W(x,y)\nu(dy)\mu(dx)
+=1$,}
+\fi
+
+\noindent sehingga kedua integral berulang tersebut berbeda.
+\cmmnt{Oleh karena itu, secara umum urutan integrasi berulang tidak dapat
+dibalik, bahkan untuk suatu fungsi terukur nonnegatif ketika kedua integral
+berulang ada dan berhingga.
+}%end of comment
+
+\cmmnt{
+\spheader 252Kb Karena himpunan $W$ pada bagian (a) sebenarnya termasuk
+dalam $\Sigma\tensorhat\Tau$, kita mengetahui bahwa himpunan itu diukur oleh
+ukuran produk c.l.d.\ $\lambda$, dan 252F (yang diterapkan dengan koordinat
+dibalik) memberi tahu kita bahwa $\lambda W=0$.
+}%end of comment
+
+\cmmnt{
+\spheader 252Kc Sebenarnya mudah untuk memberikan uraian lengkap tentang
+$\lambda$.
+
+\medskip
+
+\quad{\bf (i)} Pokoknya adalah bahwa suatu himpunan
+$W\subseteq[0,1]\times[0,1]$ termasuk dalam domain $\Lambda$ dari
+$\lambda$ jika dan hanya jika setiap penampang mendatar
+$W^{-1}[\{y\}]$ terukur Lebesgue. \prooflet{\Prf\
+($\alpha$) Jika $W\in\Lambda$, maka, untuk setiap $b\in[0,1]$,
+$\lambda([0,1]\times\{b\})$ berhingga, sehingga
+$W\cap([0,1]\times\{b\})$ merupakan himpunan berukuran hingga, dan
+
+\Centerline{$\lambda(W\cap([0,1]\times\{b\}))
+=\int\mu(W\cap([0,1]\times\{b\}))^{-1}[\{y\}]\nu(dy)
+=\mu W^{-1}[\{b\}]$}
+
+\noindent menurut 252D, karena $\mu$ bersifat $\sigma$-hingga, $\nu$
+bersifat dapat dilokalkan secara ketat, lengkap, dan ditentukan secara
+lokal, serta
+
+$$\eqalign{(W\cap([0,1]\times\{b\}))^{-1}[\{y\}]
+&=W^{-1}[\{b\}]\text{ jika }y=b,\cr
+&=\emptyset\text{ selain itu.}\cr}$$
+
+\noindent Karena $b$ sebarang, setiap penampang mendatar dari $W$ terukur.
+($\beta$) Jika setiap penampang mendatar dari $W$ terukur, misalkan
+$F\subseteq[0,1]$ sebarang himpunan berukuran hingga terhadap $\nu$; maka
+$F$ berhingga, sehingga
+
+\Centerline{$W\cap([0,1]\times F)
+=\bigcup_{y\in F}W^{-1}[\{y\}]\times\{y\}
+\in\Sigma\tensorhat\Tau\subseteq\Lambda$.}
+
+\noindent Tetapi dari sini mengikuti bahwa $W$ sendiri termasuk dalam
+$\Lambda$, menurut 251H.\ \Qed
+}%end of prooflet
+
+\medskip
+
+\quad{\bf (ii)} Sekarang beberapa perhitungan yang sama menunjukkan bahwa
+untuk setiap $W\in\Lambda$,
+
+\Centerline{$\lambda W=\sum_{y\in [0,1]}\mu W^{-1}[\{y\}]$.}
+
+\prooflet{\noindent\Prf\ Untuk sebarang himpunan berhingga
+$F\subseteq[0,1]$,
+
+$$\eqalign{\lambda(W\cap([0,1]\times F))
+&=\int\mu(W\cap([0,1]\times F))^{-1}[\{y\}]\nu(dy)\cr
+&=\int_F\mu W^{-1}[\{y\}]\nu(dy)
+=\sum_{y\in F}\mu W^{-1}[\{y\}].\cr}$$
+
+\noindent Jadi
+
+\Centerline{$\lambda W=\sup_{F\subseteq[0,1]\text{ berhingga}}
+\sum_{y\in F}\mu W^{-1}[\{y\}]=\sum_{y\in [0,1]}\mu W^{-1}[\{y\}]$.
+\Qed}
+}%end of prooflet
+}%end of comment
+
+\cmmnt{
+\leader{252L}{Contoh} Untuk contoh kedua, saya beralih kepada suatu masalah
+yang dapat timbul jika kita lalai memeriksa bahwa suatu fungsi terukur
+sebagai fungsi dari dua variabel.
+
+Misalkan $(X,\Sigma,\mu)=(Y,\Tau,\nu)$ adalah $\omega_1$, ordinal tak
+terhitung pertama (2A1Fc), dengan ukuran terhitung-koterhitung (211R).
+Tetapkan
+
+\Centerline{$W=\{(\xi,\eta):\xi\le\eta<\omega_1\}\subseteq X\times Y$.}
+
+\noindent Maka semua penampang mendatar
+$W^{-1}[\{\eta\}]=\{\xi:\xi\le\eta\}$ terhitung, sehingga
+
+\Centerline{$\int\mu W^{-1}[\{\eta\}]\nu(d\eta)
+=\int 0\,\nu(d\eta)
+=0$,}
+
+\noindent sedangkan semua penampang tegak
+$W[\{\xi\}]=\{\eta:\xi\le\eta<\omega_1\}$ koterhitung, sehingga
+
+\Centerline{$\int\nu W[\{\xi\}]\mu(d\xi)
+=\int 1\,\mu(d\xi)
+=1$.}
+
+\noindent Karena kedua integral berulang tersebut berbeda, keduanya tidak
+mungkin sama dengan ukuran $W$, dan satu-satunya penyelesaian
+adalah mengatakan bahwa $W$ tidak diukur oleh ukuran produk.
+}%end of comment
+
+\cmmnt{
+\leader{252M}{Catatan} Jenis kesulitan ketiga dalam rumus
+
+\Centerline{$\iint f(x,y)dxdy=\iint f(x,y)dydx$}
+
+\noindent dapat timbul bahkan pada ruang probabilitas dengan fungsi
+bernilai real yang terukur terhadap $\Sigma\tensorhat\Tau$ dan didefinisikan
+di mana-mana jika kita lalai memeriksa bahwa $f$ terintegralkan terhadap
+ukuran produk. Dalam 252H, kita memang memerlukan hipotesis bahwa salah satu
+dari
+
+\Centerline{$\int_{X\times Y}|f(x,y)|\lambda(d(x,y))$,
+\quad$\int_Y\int_X|f(x,y)|\mu(dx)\nu(dy)$,
+\quad$\int_X\int_Y|f(x,y)|\nu(dy)\mu(dx)$}
+
+\noindent berhingga. Untuk contoh-contoh yang menunjukkan hal ini, lihat
+252Xf dan 252Xg.
+}%end of comment
+
+\leader{252N}{Integrasi melalui himpunan ordinat I: Proposisi} Misalkan
+$(X,\Sigma,\mu)$ suatu ruang ukur lengkap yang ditentukan secara lokal, dan
+$\lambda$ ukuran produk c.l.d. pada $X\times\Bbb R$, dengan $\Bbb R$
+diberi ukuran Lebesgue; tuliskan $\Lambda$ untuk domain $\lambda$.
+Untuk sebarang fungsi bernilai $[0,\infty]$ $f$ yang didefinisikan pada
+suatu subhimpunan koterabaikan dari $X$, tuliskan $\Omega_f$, $\Omega'_f$
+untuk {\bf himpunan ordinat}
+
+\Centerline{$\Omega_f=\{(x,a):x\in\dom f,\,0\le a\le f(x)\}
+\subseteq X\times\Bbb R$,}
+
+\Centerline{$\Omega'_f=\{(x,a):x\in\dom f,\,0\le a<f(x)\}
+\subseteq X\times\Bbb R$.}
+
+\noindent Maka
+
+\Centerline{$\lambda\Omega_f=\lambda\Omega'_f=\int fd\mu$}
+
+\noindent dalam arti bahwa jika salah satu di antaranya terdefinisi dalam
+$[0,\infty]$, demikian pula dua lainnya, dan ketiganya sama.
+
+\proof{{\bf (a)} Jika $\Omega_f\in\Lambda$, maka
+
+\Centerline{$\int f(x)\mu(dx)
+=\int\nu\{y:(x,y)\in\Omega_f\}\mu(dx)
+=\lambda\Omega_f$}
+
+\noindent menurut 252D, dengan menuliskan $\nu$ untuk ukuran Lebesgue,
+karena $f$ didefinisikan hampir di mana-mana. Demikian pula, jika
+$\Omega'_f\in\Lambda$,
+
+\Centerline{$\int f(x)\mu(dx)
+=\int\nu\{y:(x,y)\in\Omega'_f\}\mu(dx)
+=\lambda\Omega'_f$.}
+
+\medskip
+
+{\bf (b)} Jika $\int fd\mu$ terdefinisi, maka $f$ terukur secara virtual
+terhadap $\mu$, dan karenanya terukur (karena $\mu$ lengkap);
+sekali lagi karena $\mu$ lengkap, $\dom f\in\Sigma$. Jadi
+
+\Centerline{$\Omega'_f
+=\bigcup_{q\in\Bbb Q,q>0}\{x:x\in\dom f,\,f(x)>q\}\times[0,q]$,}
+
+\Centerline{$\Omega_f
+=\bigcap_{n\ge 1}\bigcup_{q\in\Bbb Q,q>0}
+  \{x:x\in\dom f,\,f(x)\ge q-\Bover1n\}\times[0,q]$}
+
+\noindent termasuk dalam $\Lambda$, sehingga $\lambda\Omega_f$ dan
+$\lambda\Omega'_f$ terdefinisi. Sekarang keduanya sama dengan
+$\int fd\mu$, menurut (a).
+}%end of proof of 252N
+
+\leader{252O}{Integrasi melalui himpunan ordinat II: Proposisi} Misalkan
+$(X,\Sigma,\mu)$ suatu ruang ukur, dan $f$ suatu fungsi nonnegatif yang
+terukur secara virtual terhadap $\mu$ dan didefinisikan pada suatu
+subhimpunan koterabaikan dari $X$. Maka
+
+\Centerline{$\int fd\mu
+=\int_0^{\infty}\mu^*\{x:x\in\dom f,\,f(x)\ge t\}dt
+=\int_0^{\infty}\mu^*\{x:x\in\dom f,\,f(x)>t\}dt$}
+
+\noindent dalam $[0,\infty]$, dengan integral-integral $\int\ldots dt$
+diambil terhadap ukuran Lebesgue.
+
+\proof{ Melengkapi $\mu$ tidak mengubah integral $f$ ataupun ukuran luar
+$\mu^*$ (212Fb, 212Ea), sehingga kita boleh mengandaikan bahwa $\mu$
+lengkap; dalam hal ini $\dom f$ dan $f$ akan terukur.
+Untuk $n$, $k\in\Bbb N$ tetapkan
+$E_{nk}=\{x:x\in\dom f,\,f(x)>2^{-n}k\}$,
+$g_n(x)=2^{-n}\sum_{k=1}^{4^n}\chi E_{nk}$. Maka $\sequencen{g_n}$ adalah
+barisan tak menurun dari fungsi-fungsi terukur yang konvergen ke $f$ pada
+setiap titik $\dom f$, sehingga
+$\int fd\mu=\lim_{n\to\infty}\int g_nd\mu$ dan
+$\mu\{x:f(x)>t\}=\lim_{n\to\infty}\mu\{x:g_n(x)>t\}$ untuk setiap
+$t\ge 0$; akibatnya
+
+\Centerline{$\int_0^{\infty}\mu\{x:f(x)>t\}dt
+=\lim_{n\to\infty}\int_0^{\infty}\mu\{x:g_n(x)>t\}dt$.}
+
+\noindent Di sisi lain,
+$\mu\{x:g_n(x)>t\}=\mu E_{nk}$ jika $1\le k\le 4^n$ dan
+$2^{-n}(k-1)\le t<2^{-n}k$, dan $0$ jika $t\ge 2^n$, sehingga
+
+\Centerline{$\int_0^{\infty}\mu\{x:g_n(x)>t\}dt$
+$=\sum_{k=1}^{4^n}2^{-n}\mu E_{nk}$
+$=\int g_n\,d\mu$,}
+
+\noindent untuk setiap $n\in\Bbb N$. Jadi
+$\int_0^{\infty}\mu\{x:f(x)>t\}dt=\int fd\mu$.
+
+Sekarang $\mu\{x:f(x)\ge t\}=\mu\{x:f(x)>t\}$ untuk hampir setiap $t$.
+\Prf\ Tetapkan $C=\{t:\mu\{x:f(x)>t\}<\infty\}$,
+$h(t)=\mu\{x:f(x)>t\}$ untuk $t\in C$. Jika $C$ tidak kosong,
+$h:C\to\coint{0,\infty}$ monoton, sehingga kontinu hampir di mana-mana
+dalam $C$ (222A). Tetapi pada setiap titik
+$C\setminus\{\inf C\}$ tempat $h$ kontinu,
+
+\Centerline{$\mu\{x:f(x)\ge t\}=\lim_{s\uparrow t}\mu\{x:f(x)>s\}
+=\mu\{x:f(x)>t\}$.}
+
+\noindent Jadi kita memperoleh hasilnya, karena
+$\mu\{x:f(x)\ge t\}=\mu\{x:f(x)>t\}=\infty$ untuk sebarang
+$t\in\coint{0,\infty}\setminus C$.\ \Qed
+
+Dengan demikian $\int_0^{\infty}\mu\{x:f(x)\ge t\}dt$ juga sama dengan
+$\int fd\mu$.
+}%end of proof of 252O
+
+\leader{*252P}{}\cmmnt{ Jika kita menerapkan gagasan-gagasan 252B secara
+lengkap pada fungsi-fungsi yang terukur terhadap
+$\Sigma\tensorhat\Tau$, kita memperoleh hasil berikut, yang kadang-kadang
+berguna.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $(X,\Sigma,\mu)$ suatu ruang ukur, dan
+$(Y,\Tau,\nu)$ suatu ruang ukur $\sigma$-hingga. Maka untuk sebarang fungsi
+yang terukur terhadap $\Sigma\tensorhat\Tau$ dengan bentuk
+$f:X\times Y\to[0,\infty]$,
+$x\mapsto\int f(x,y)\nu(dy):X\to[0,\infty]$ terukur terhadap $\Sigma$.
+Jika $\mu$ semihingga,
+$\iint f(x,y)\nu(dy)\mu(dx)\discretionary{}{}{}=\int fd\lambda$,
+dengan $\lambda$ ukuran produk c.l.d. pada $X\times Y$.
+
+\proof{{\bf (a)} Misalkan $\sequencen{Y_n}$ suatu barisan tak menurun dari
+subhimpunan-subhimpunan $Y$ yang berukuran hingga dan gabungannya adalah
+$Y$. Tetapkan
+
+$$\eqalign{\Cal A
+&=\{W:W\subseteq X\times Y,\,W[\{x\}]\in\Tau\text{ untuk setiap }x\in X,\cr
+&\qquad\qquad\qquad\qquad
+x\mapsto\nu(Y_n\cap W[\{x\}])\text{ terukur terhadap }\Sigma\text{ untuk
+setiap }n\in\Bbb N\}.\cr}$$
+
+\noindent Maka $\Cal A$ merupakan suatu kelas Dynkin dari subhimpunan
+$X\times Y$ yang mencakup $\{E\times F:E\in\Sigma,\,F\in\Tau\}$, sehingga
+mencakup $\Sigma\tensorhat\Tau$, sekali lagi menurut Teorema Kelas Monoton
+(136B).
+
+Ini berarti bahwa jika $W\in\Sigma\tensorhat\Tau$, maka
+
+\Centerline{$\nu W[\{x\}]=\sup_{n\in\Bbb N}\nu(Y_n\cap W[\{x\}])$}
+
+\noindent terdefinisi untuk setiap $x\in X$ dan terukur terhadap $\Sigma$
+sebagai fungsi dari $x$.
+
+\medskip
+
+{\bf (b)} Sekarang, untuk $n$, $k\in\Bbb N$, tetapkan
+
+\Centerline{$W_{nk}=\{(x,y):f(x,y)\ge 2^{-n}k\}$,
+\quad$g_n=\sum_{k=1}^{4^n}2^{-n}\chi W_{nk}$.}
+
+\noindent Lalu jika kita menetapkan
+
+\Centerline{$h_n(x)
+=\int g_n(x,y)\nu(dy)=\sum_{k=1}^{4^n}2^{-n}\nu W_{nk}[\{x\}]$}
+
+\noindent untuk $n\in\Bbb N$ dan $x\in X$,
+$h_n:X\to[0,\infty]$ terukur terhadap $\Sigma$, dan
+
+\Centerline{$\lim_{n\to\infty}h_n(x)
+=\int(\lim_{n\to\infty}g_n(x,y))\nu(dy)=\int f(x,y)\nu(dy)$}
+
+\noindent untuk setiap $x$, karena $\sequencen{g_n(x,y)}$ adalah suatu
+barisan tak menurun dengan limit $f(x,y)$ untuk semua $x\in X$, $y\in Y$.
+Jadi $x\mapsto\int f(x,y)\nu(dy)$ didefinisikan di seluruh $X$ dan terukur
+terhadap $\Sigma$.
+
+\medskip
+
+{\bf (c)} Jika $E\subseteq X$ terukur dan berukuran hingga, maka
+$\int_E\int f(x,y)\nu(dy)\mu(dx)=\int_{E\times Y}fd\lambda$, dengan
+menerapkan 252B pada produk ukuran subruang $\mu_E$ dan $\nu$ (dan
+menggunakan 251Q untuk memeriksa bahwa produk $\mu_E$ dan $\nu$ adalah
+ukuran subruang pada $E\times Y$). Sekarang jika $\lambda W$ terdefinisi
+dan berhingga, harus ada suatu barisan tak menurun $\sequencen{E_n}$ dari
+subhimpunan-subhimpunan $X$ yang berukuran hingga sedemikian sehingga
+$\lambda W=\sup_{n\in\Bbb N}\lambda(W\cap(E_n\times Y))$, sehingga
+$W\setminus\bigcup_{n\in\Bbb N}(E_n\times Y)$ terabaikan, dan
+
+$$\eqalignno{\int_Wfd\lambda
+&=\lim_{n\to\infty}\int_{W\cap(E_n\times Y)}fd\lambda\cr
+\displaycause{menurut teorema B.Levi yang diterapkan pada
+$\sequencen{f\times\chi(W\cap(E_n\times Y))}$}
+&\le\lim_{n\to\infty}\int_{E_n\times Y}fd\lambda
+=\lim_{n\to\infty}\int_{E_n}\int f(x,y)\nu(dy)\mu(dx)\cr
+&\le\iint f(x,y)\nu(dy)\mu(dx).\cr}$$
+
+\noindent Sekali lagi menurut 213B,
+
+\Centerline{$\int fd\lambda
+=\sup_{\lambda W<\infty}\int_Wfd\lambda
+\le\iint f(x,y)\nu(dy)\mu(dx)$.}
+
+\noindent Tetapi juga, jika $\mu$ semihingga,
+
+\Centerline{$\iint f(x,y)\nu(dy)\mu(dx)
+=\sup_{\mu E<\infty}\int_E\int f(x,y)\nu(dy)\mu(dx)
+\le\int fd\lambda$,}
+
+\noindent sehingga $\int fd\lambda=\iint f(x,y)\nu(dy)\mu(dx)$,
+sebagaimana dinyatakan.
+}%end of proof of 252P
+
+\leader{252Q}{Volume bola}\dvro{ Ukuran Lebesgue bola
+satuan di $\BbbR^r$ adalah}
+{ Sekarang kita telah memiliki semua
+perangkat pokok untuk melakukan sebuah perhitungan kecil yang, saya kira,
+layak diketahui sekadar sebagai pengetahuan umum: volume bola satuan
+$\{x:\|x\|\le 1\}=\{(\xi_1,\ldots,\xi_r):\sum_{i=1}^r\xi_i^2\le 1\}$ di
+$\BbbR^r$. Sebenarnya, dari sudut pandang teoretis,
+saya rasa kita hampir dapat menamainya saja $\beta_r$ dan berhenti
+sampai di situ; tetapi karena terdapat rumus umum yang dinyatakan dengan
+$\beta_2=\pi$ dan faktorial, rasanya memalukan jika tidak disajikan. Perhitungan
+ini sama sekali tidak berkaitan dengan integrasi Lebesgue, dan saya dapat
+menyingkirkannya sebagai sekadar kalkulus lanjut; tetapi karena kini hanya
+sebagian kecil matematikawan diajari kalkulus sampai taraf ini dengan ketelitian
+yang memadai sebelum diperkenalkan kepada integral Lebesgue, saya tidak ragu
+bahwa banyak pembaca, seperti saya sendiri, melewatkan beberapa seluk-beluk
+yang terlibat. Karena itu saya menyediakan ruang untuk menguraikan rinciannya
+dengan gaya yang digunakan di bagian lain jilid ini, seraya menyadari bahwa
+perangkat yang dipakai jauh lebih rumit daripada yang sungguh diperlukan untuk
+hasil ini.
+
+\header{252Qa}{\bf (a)} Fakta dasar pertama yang kita perlukan ialah bahwa,
+untuk setiap $n\ge 1$,
+
+$$\eqalign{I_n=\int_{-\pi/2}^{\pi/2}\cos^nt\,dt
+&=\Bover{(2k)!}{(2^kk!)^2}\pi\text{ jika }n=2k\text{ genap},\cr
+&=2\Bover{(2^kk!)^2}{(2k+1)!}\text{ jika }n=2k+1\text{ ganjil}.\cr}$$
+
+\prooflet{\noindent \Prf\  Untuk $n=0$, tentu saja,
+
+\Centerline{$I_0=\int_{-\pi/2}^{\pi/2}1\,dt=\pi
+=\Bover{0!}{(2^00!)^2}\pi$,}
+
+\noindent sedangkan untuk $n=1$ kita memperoleh
+
+\Centerline{$I_1=\sin\bover{\pi}2-\sin(-\bover{\pi}2)=2
+=2\Bover{(2^00!)^2}{1!}$,}
+
+\noindent dengan menggunakan Teorema Dasar Kalkulus (225L) dan fakta
+bahwa $\sin'=\cos$ terbatas. Untuk langkah induksi menuju $n+1\ge 2$, kita
+dapat menggunakan integrasi parsial (225F):
+
+$$\eqalign{I_{n+1}
+&=\int_{-\pi/2}^{\pi/2}\cos t\cos^nt\,dt\cr
+&=\sin\Bover{\pi}2\cos^n\Bover{\pi}2
+   -\sin(-\Bover{\pi}2)\cos^n(-\Bover{\pi}2)
+   +\int_{-\pi/2}^{\pi/2}\sin t\cdot n\cos^{n-1}t\cdot\sin t\,dt\cr
+&=n\int_{-\pi/2}^{\pi/2}(1-\cos^2t)\cos^{n-1}t\,dt
+=n(I_{n-1}-I_{n+1}),\cr}$$
+
+\noindent sehingga $I_{n+1}=\Bover{n}{n+1}I_{n-1}$.
+Sekarang rumus-rumus yang diberikan mengikuti melalui induksi sederhana.\ \Qed}
+
+\spheader 252Qb Hasil berikutnya ialah bahwa, untuk setiap $n\in\Bbb N$
+dan setiap $a\ge 0$,
+
+\Centerline{$\int_{-a}^a(a^2-s^2)^{n/2}ds=I_{n+1}a^{n+1}$.}
+
+\prooflet{\noindent\Prf\ Tentu saja ini merupakan integrasi dengan
+substitusi; tetapi singularitas integran di $s=\pm a$ sedikit
+memperumit persoalan. Saya kemukakan argumen berikut. Jika $a=0$, hasilnya
+sepele; ambil $a>0$. Untuk $-a\le b\le a$, tetapkan
+$F(b)=\int_{-a}^b(a^2-s^2)^{n/2}ds$. Karena integrannya kontinu,
+$F'(b)$ ada dan sama dengan $(a^2-b^2)^{n/2}$ untuk
+$-a<b<a$ (222H). Tetapkan $G(t)=F(a\sin t)$; maka $G$ kontinu dan
+
+\Centerline{$G'(t)=aF'(a\sin t)\cos t=a^{n+1}\cos^{n+1}t$}
+
+\noindent untuk
+$-\bover{\pi}2<t<\bover{\pi}2$. Akibatnya
+
+$$\eqalignno{\int_{-a}^a(a^2-s^2)^{n/2}ds
+&=F(a)-F(-a)
+=G(\Bover{\pi}2)-G(-\Bover{\pi}2)
+=\int_{-\pi/2}^{\pi/2}G'(t)dt\cr
+\noalign{\noindent (menurut 225L, seperti sebelumnya)}
+&=a^{n+1}I_{n+1},\cr}$$
+
+\noindent sebagaimana diperlukan.\ \Qed}
+
+\spheader 252Qc Akhirnya sekarang kita siap membahas bola-bola
+$B_r=\{x:x\in\BbbR^r,\,\|x\|\le 1\}$. Misalkan $\mu_r$ ukuran Lebesgue
+pada $\BbbR^r$, dan tetapkan $\beta_r=I_1I_2\ldots I_r$ untuk $r\ge 1$.
+Saya nyatakan bahwa, dengan menuliskan
+
+\Centerline{$B_r(a)=\{x:x\in\BbbR^r,\,\|x\|\le a\}$,}
+
+\noindent kita memperoleh $\mu_r(B_r(a))=\beta_ra^r$ untuk setiap $a\ge 0$.
+\prooflet{\Prf\ Lakukan induksi pada $r$. Untuk $r=1$ kita mempunyai
+$\beta_1=2$, $B_1(a)=[-a,a]$, sehingga hasilnya sepele. Untuk langkah
+induksi menuju $r+1$, kita memperoleh
+
+$$\eqalignno{\mu_{r+1}B_{r+1}(a)
+&=\int\mu_r\{x:(x,t)\in B_{r+1}(a)\}dt \cr
+\noalign{\noindent (dengan menggabungkan 251N dan 252D, serta menggunakan fakta
+bahwa $B_{r+1}(a)$ tertutup, sehingga terukur)}
+&=\int_{-a}^a\mu_rB_r(\sqrt{a^2-t^2})dt\cr
+\noalign{\noindent (karena $(x,t)\in B_{r+1}(a)$ jika dan hanya jika $|t|\le a$ dan
+$\|x\|\le\sqrt{a^2-t^2}$)}
+&=\int_{-a}^a\beta_r(a^2-t^2)^{r/2}dt\cr
+\noalign{\noindent (menurut hipotesis induksi)}
+&=\beta_ra^{r+1}I_{r+1}\cr
+\noalign{\noindent (menurut (b) di atas)}
+&=\beta_{r+1}a^{r+1}\cr}$$
+
+\noindent (menurut definisi $\beta_{r+1}$). Dengan demikian induksi
+berlanjut.\ \Qed}
+
+\spheader 252Qd Khususnya, ukuran Lebesgue berdimensi $r$ dari
+bola berdimensi $r$, $B_r=B_r(1)$, hanyalah
+$\beta_r=I_1\ldots I_r$. Sekarang induksi sederhana pada $k$ menunjukkan bahwa
+}%end of \dvro
+
+$$\eqalign{\beta_r
+&=\Bover{1}{k!}\pi^k\text{ jika }r=2k\text{ genap},\cr
+&=\Bover{2^{2k+1}k!}{(2k+1)!}\pi^k\text{ jika }r=2k+1\text{ ganjil}.\cr}$$
+
+\cmmnt{
+\spheader 252Qe Perhatikan bahwa pada bagian (c) dari pembuktian kita melihat bahwa
+$\{x:x\in\BbbR^r,\,\|x\|\le a\}$ mempunyai ukuran $\beta_ra^r$ untuk setiap
+$a\ge 0$.
+
+Rumus-rumus di sini konsisten dengan penetapan $\beta_0=1$;
+yang bersesuaian dengan pernyataan bahwa $\BbbR^0=\{\emptyset\}$, bahwa
+$\mu_0\BbbR^0=1$ dan bahwa $B_0=\{\emptyset\}$. Menetapkan $\mu_0\BbbR^0$
+sebagai $1$ juga konsisten dengan gagasan bahwa, mengikuti 251N, ukuran produk
+$\mu_0\times\mu_r$ semestinya sesuai dengan $\mu_{0+r}$ pada $\BbbR^{0+r}$.
+}%end of comment
+
+
+\leader{252R}{Fungsi bernilai kompleks}\cmmnt{ Hasil-hasil 252B--252I
+di atas mudah diterapkan pada fungsi bernilai kompleks, dengan
+mempertimbangkan bagian riil dan bagian imajinernya. Secara khusus:
+
+\medskip
+
+}{\bf (a)} Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ adalah
+ruang-ruang ukur, dan $\lambda$ ukuran produk c.l.d.\ pada $X\times
+Y$. Andaikan bahwa $\nu$ $\sigma$-hingga dan bahwa $\mu$ dapat
+dilokalkan secara ketat atau lengkap dan ditentukan secara lokal. Misalkan $f$
+fungsi bernilai kompleks yang dapat diintegralkan terhadap $\lambda$. Maka
+$\iint f(x,y)\nu(dy)\mu(dx)$ terdefinisi dan sama dengan $\int fd\lambda$.
+
+\spheader 252Rb Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$
+adalah ruang-ruang ukur, $\lambda$ ukuran produk c.l.d.\ pada $X\times
+Y$, dan $\Lambda$ domainnya.
+Misalkan $f$ fungsi bernilai kompleks terukur terhadap $\Lambda$ yang didefinisikan
+pada suatu anggota $\Lambda$, dan andaikan bahwa
+$\iint|f(x,y)|\mu(dx)\nu(dy)$ atau $\iint|f(x,y)|\nu(dy)\mu(dx)$
+terdefinisi dan berhingga. Maka $f$ dapat diintegralkan terhadap $\lambda$.
+
+\spheader 252Rc Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ adalah
+ruang-ruang ukur $\sigma$-hingga, $\lambda$ ukuran produk c.l.d.\
+pada $X\times Y$, dan $\Lambda$ domainnya. Misalkan $f$ fungsi bernilai
+kompleks terukur terhadap $\Lambda$ yang didefinisikan pada suatu anggota
+$\Lambda$. Maka jika salah satu dari
+
+\Centerline{$\int_{X\times Y}|f(x,y)|\lambda(d(x,y))$,
+\quad$\int_Y\int_X|f(x,y)|\mu(dx)\nu(dy)$,
+\quad$\int_X\int_Y|f(x,y)|\nu(dy)\mu(dx)$}
+
+\noindent ada dalam $\Bbb R$, demikian pula dua yang lain, dan dalam hal ini
+
+\Centerline{$\int_{X\times Y}f(x,y)\lambda(d(x,y))
+=\int_Y\int_Xf(x,y)\mu(dx)\nu(dy)
+=\int_X\int_Yf(x,y)\nu(dy)\mu(dx)$.}
+
+\exercises{
+\leader{252X}{Latihan dasar (a)}
+%\spheader 252Xa
+Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ adalah
+ruang-ruang ukur, dan
+$\lambda$ ukuran produk c.l.d.\ pada $X\times Y$. Misalkan $f$ fungsi
+bernilai riil yang dapat diintegralkan terhadap $\lambda$ sedemikian sehingga
+$\int_{E\times F}f=0$ bilamana $E\in\Sigma$, $F\in\Tau$, $\mu E<\infty$
+dan $\nu F<\infty$. Tunjukkan bahwa $f=0\,\,\lambda$-hampir di mana-mana.
+\Hint{gunakan 251Ie untuk menunjukkan bahwa $\int_Wf=0$ bilamana
+$\lambda W<\infty$.}
+%252B
+
+\spheader 252Xb Misalkan $f$, $g:\Bbb R\to\Bbb R$ adalah dua fungsi
+tak-menurun, dan $\mu_f$, $\mu_g$ ukuran-ukuran Lebesgue--Stieltjes yang
+bersesuaian (lihat 114Xa). Tetapkan
+
+\Centerline{$f(x^+)=\lim_{t\downarrow x}f(t)$,
+\quad$f(x^-)=\lim_{t\uparrow x}f(t)$}
+
+\noindent untuk setiap $x\in\Bbb R$, dan definisikan $g(x^+)$, $g(x^-)$
+dengan cara serupa. Tunjukkan bahwa bilamana $a\le b$ dalam $\Bbb R$,
+
+$$\eqalign{\int_{[a,b]}f(x^-)\mu_g(dx)&+\int_{[a,b]}g(x^+)\mu_f(dx)
+=g(b^+)f(b^+)-g(a^-)f(a^-)\cr
+&=\int_{[a,b]}\Bover12(f(x^-)+f(x^+))\mu_g(dx)
+  +\int_{[a,b]}\Bover12(g(x^-)+g(x^+))\mu_f(dx).\cr}$$
+
+\noindent \Hint{temukan dua ungkapan untuk
+$(\mu_f\times\mu_g)\{(x,y):a\le x<y\le b\}$.}
+%252C
+
+\sqheader 252Xc Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ adalah
+ruang-ruang ukur yang lengkap dan ditentukan secara lokal, $\lambda$ ukuran
+produk c.l.d.\ pada $X\times Y$, dan $\Lambda$ domainnya. Andaikan bahwa
+$A\subseteq X$ dan
+$B\subseteq Y$. Tunjukkan bahwa $A\times B\in\Lambda$ jika dan hanya jika
+$\mu A=0$ atau $\nu B=0$ atau $A\in\Sigma$ dan $B\in\Tau$.
+\Hint{jika $B$ tidak terabaikan dan $A\times B\in\Lambda$, ambil $H$ sedemikian
+sehingga $\nu H<\infty$ dan $B\cap H$ tidak terabaikan. Maka
+$W=A\times(B\cap H)$ diukur oleh $\mu\times\nu_H$, dengan $\nu_H$ merupakan
+ukuran subruang pada $H$. Sekarang terapkan 252D pada $\mu$, $\nu_H$ dan $W$
+untuk melihat bahwa $A\in\Sigma$.}
+%252D
+
+\sqheader 252Xd Misalkan $(X_1,\Sigma_1,\mu_1)$,
+$(X_2,\Sigma_2,\mu_2)$, $(X_3,\Sigma_3,\mu_3)$ adalah tiga ruang ukur
+$\sigma$-hingga, dan $f$ fungsi bernilai riil yang didefinisikan hampir di
+mana-mana pada $X_1\times X_2\times X_3$ dan terukur terhadap $\Lambda$,
+dengan $\Lambda$ merupakan domain ukuran produk yang dideskripsikan dalam
+251W atau 251Xg. Tunjukkan bahwa jika
+$\iiint |f(x_1,x_2,x_3)|dx_1dx_2dx_3$ terdefinisi dalam $\Bbb R$, maka
+$\iiint f(x_1,x_2,x_3)dx_2dx_3dx_1$ dan
+$\iiint f(x_1,x_2,x_3)dx_3dx_1dx_2$
+ada dan sama.
+%252H
+
+\spheader 252Xe Berikan contoh ruang-ruang ukur yang dapat dilokalkan secara
+ketat $(X,\Sigma,\mu)$, $(Y,\Tau,\nu)$ dan suatu $W\in\Sigma\tensorhat\Tau$
+sedemikian sehingga $x\mapsto\nu W[\{x\}]$ tidak terukur terhadap $\Sigma$.
+\Hint{dalam 252Kb, coba ambil $Y$ sebagai subhimpunan sejati dari $[0,1]$.}
+%252K
+
+\sqheader 252Xf Tetapkan $f(x,y)=\sin(x-y)$ jika $0\le y\le x\le y+2\pi$, dan
+$0$ di titik $(x,y)\in\BbbR^2$ lainnya. Tunjukkan bahwa
+$\iint f(x,y)dx\,dy=0$ dan
+$\iint f(x,y)dy\,dx=2\pi$, dengan semua integral diambil terhadap ukuran
+Lebesgue.
+%252M
+
+\sqheader 252Xg Tetapkan $f(x,y)=\Bover{x^2-y^2}{(x^2+y^2)^2}$ untuk $x$,
+$y\in\ocint{0,1}$. Tunjukkan bahwa
+$\int_0^1\int_0^1f(x,y)dydx=\Bover{\pi}4$,
+\discrversionA{\break}{}$\int_0^1\int_0^1f(x,y)dxdy=-\Bover{\pi}4$.
+%252M
+
+\sqheader 252Xh Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ adalah
+ruang-ruang ukur, dan $f$ fungsi terukur terhadap
+$\Sigma\tensorhat\Tau$ yang didefinisikan pada suatu subhimpunan
+$X\times Y$. Tunjukkan bahwa $y\mapsto f(x,y)$ terukur terhadap $\Tau$
+untuk setiap $x\in X$.
+%252P
+
+\spheader 252Xi Misalkan $r\ge 1$ bilangan bulat, dan tuliskan $\beta_r$ untuk
+ukuran Lebesgue bola satuan di $\BbbR^r$. Tetapkan
+$g_r(t)=r\beta_rt^{r-1}$ untuk $t\ge 0$, $\phi(x)=\|x\|$ untuk
+$x\in\BbbR^r$. (i) Dengan menuliskan $\mu_r$ untuk ukuran Lebesgue pada
+$\Bbb R^r$, tunjukkan bahwa
+$\mu_r\phi^{-1}[E]=\int_Er\beta_rt^{r-1}\mu_1(dt)$
+untuk setiap himpunan terukur Lebesgue $E\subseteq\coint{0,\infty}$. ({\it
+Petunjuk\/}: mulailah dengan interval $E$, dengan memperhatikan dari 115Xe bahwa
+$\mu_r\{x:\|x\|\le a\}=\beta_ra^r$ untuk $a\ge 0$, lalu lanjutkan ke himpunan
+terbuka, himpunan terabaikan, dan himpunan terukur umum.) (ii) Dengan
+menggunakan 235R, tunjukkan bahwa
+
+$$\eqalign{\int e^{-\|x\|^2/2}\mu_r(dx)
+&=r\beta_r\int_0^{\infty}t^{r-1}e^{-t^2/2}\mu_1(dt)
+=2^{(r-2)/2}r\beta_r\Gamma(\Bover{r}2)\cr
+&=2^{r/2}\beta_r\Gamma(1+\Bover{r}2)
+=(\sqrt{2}\Gamma(\Bover12))^r\cr}$$
+
+\noindent dengan $\Gamma$ merupakan fungsi-$\Gamma$ (225Xh). (iii) Tunjukkan
+bahwa
+
+\Centerline{$2\Gamma(\bover12)^2=2\beta_2\Gamma(2)
+=2\beta_2\int_0^{\infty}te^{-t^2/2}dt=2\pi$,}
+
+\noindent dan karena itu
+$\beta_r=\Bover{\pi^{r/2}}{\Gamma(1+\bover{r}2)}$ dan
+$\int_{-\infty}^{\infty}e^{-t^2/2}dt=\sqrt{2\pi}$.
+%252Q
+
+\leader{252Y}{Latihan lanjutan (a)}
+%\spheader 252Ya
+Misalkan $(X,\Sigma,\mu)$ ruang ukur. Tunjukkan bahwa
+pernyataan-pernyataan berikut ekuivalen: (i) pelengkapan $\mu$ ditentukan
+secara lokal; (ii) pelengkapan $\mu$ sama dengan versi c.l.d.\ dari
+$\mu$; (iii) bilamana $(Y,\Tau,\nu)$ ruang ukur $\sigma$-hingga dan
+$\lambda$ ukuran produk c.l.d.\ pada $X\times Y$, serta $f$ fungsi
+sedemikian sehingga $\int fd\lambda$ terdefinisi dalam
+$[-\infty,\infty]$, maka $\iint f(x,y)\nu(dy)\mu(dx)$ terdefinisi dan
+sama dengan $\int fd\lambda$.
+%252B
+
+\spheader 252Yb Misalkan $(X,\Sigma,\mu)$ ruang ukur. Tunjukkan bahwa
+pernyataan-pernyataan berikut ekuivalen: (i) $\mu$ memiliki himpunan-himpunan
+terabaikan yang ditentukan secara lokal; (ii) bilamana $(Y,\Tau,\nu)$ ruang
+ukur $\sigma$-hingga dan $\lambda$ ukuran produk c.l.d.\ pada
+$X\times Y$, maka $\iint f(x,y)\nu(dy)\mu(dx)$ terdefinisi dan sama dengan
+$\int fd\lambda$ untuk sebarang fungsi yang dapat diintegralkan terhadap
+$\lambda$, katakanlah $f$.
+%252Ya, 252B
+
+\spheader 252Yc Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ adalah ruang
+ukur, dan $\lambda_0$ ukuran produk primitif pada $X\times Y$ (251C).
+Misalkan $f$ sebarang fungsi bernilai riil yang dapat diintegralkan terhadap
+$\lambda_0$. Tunjukkan bahwa
+$\iint f(x,y)\nu(dy)\mu(dx)=\int fd\lambda_0$. \Hint{tunjukkan bahwa terdapat
+barisan-barisan $\sequencen{G_n}$, $\sequencen{H_n}$ dari himpunan-himpunan
+berukuran hingga sedemikian sehingga $f(x,y)$ terdefinisi dan sama dengan $0$
+untuk setiap
+$(x,y)\in(X\times Y)\setminus\bigcup_{n\in\Bbb N}G_n\times H_n$.}
+%252B
+
+\spheader 252Yd Misalkan $(X,\Sigma,\mu)$ dan
+$(Y,\Tau,\nu)$ adalah
+ruang-ruang ukur; misalkan $\lambda_0$ ukuran produk primitif pada
+$X\times Y$, dan $\lambda$ ukuran produk c.l.d. Tunjukkan bahwa jika
+$f$ fungsi bernilai riil yang dapat diintegralkan terhadap $\lambda_0$, maka
+fungsi tersebut dapat diintegralkan terhadap $\lambda$, dan
+$\int fd\lambda=\int fd\lambda_0$.
+%252B
+
+\spheader 252Ye\dvAformerly{252Yj}
+Misalkan $(X,\Sigma,\mu)$ ruang ukur yang lengkap dan ditentukan secara lokal,
+serta $a<b$ dalam
+$\Bbb R$, yang diperlengkapi dengan ukuran Lebesgue; misalkan $\Lambda$ domain
+ukuran produk c.l.d.\ $\lambda$ pada $X\times[a,b]$. Misalkan
+$f:X\times\ooint{a,b}\to\Bbb R$ fungsi terukur terhadap $\Lambda$ sedemikian
+sehingga $t\mapsto f(x,t):[a,b]\to\Bbb R$ kontinu pada $[a,b]$ dan
+terdiferensialkan pada $\ooint{a,b}$ untuk setiap $x\in X$. (i) Tunjukkan
+bahwa turunan parsial $\Pd{f}{t}$ terhadap variabel kedua terukur terhadap
+$\Lambda$. (ii) Sekarang andaikan bahwa $\Pd{f}{t}$ dapat diintegralkan
+terhadap $\lambda$ dan bahwa $\int f(x,t_0)\mu(dx)$ terdefinisi dan berhingga
+untuk suatu $t_0\in\ooint{a,b}$. Tunjukkan bahwa
+$F(t)=\int f(x,t)\mu(dx)$ terdefinisi dalam $\Bbb R$ untuk setiap $t\in[a,b]$,
+bahwa $F$ kontinu mutlak, dan bahwa
+$F'(t)=\int\Pd{f}{t}(x,t)\mu(dx)$
+untuk hampir setiap $t\in\ooint{a,b}$. ({\it Petunjuk\/}:
+$F(c)=F(a)+\int_{X\times[a,c]}\Pd{f}{t}d\lambda$ untuk setiap $c\in[a,b]$.)
+%252C %225L
+
+\spheader 252Yf Tunjukkan bahwa
+$\Bover{\Gamma(a)\Gamma(b)}{\Gamma(a+b)}=\int_0^1t^{a-1}(1-t)^{b-1}dt$
+untuk semua $a$, $b>0$. ({\it Petunjuk\/}: tunjukkan bahwa
+
+\Centerline{$\int_0^{\infty}t^{a-1}\int_t^{\infty}
+  e^{-x}(x-t)^{b-1}dxdt
+=\int_0^{\infty}e^{-x}\int_0^xt^{a-1}(x-t)^{b-1}dtdx$.)}
+%252C
+
+\spheader 252Yg Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ adalah
+ruang-ruang ukur $\sigma$-hingga dan $\lambda$ ukuran produk c.l.d.\ pada
+$X\times Y$. Andaikan bahwa
+$f\in\eusm L^0(\lambda)$ dan bahwa $1<p<\infty$. Tunjukkan bahwa
+$(\int|\int f(x,y)dx|^pdy)^{1/p}\le\int(\int|f(x,y)|^pdy)^{1/p}dx$.
+({\it Petunjuk\/}:
+tetapkan $q=\bover{p}{p-1}$ dan pertimbangkan integral
+$\int|f(x,y)g(y)|\lambda(d(x,y))$ untuk $g\in\eusm L^q(\nu)$, dengan menggunakan
+244K.)
+%252C
+
+\spheader 252Yh Misalkan $\nu$ ukuran Lebesgue pada $\coint{0,\infty}$;
+andaikan bahwa $f\in\eusm L^p(\nu)$ dengan $1<p<\infty$. Tetapkan
+$F(y)=\Bover1y\int_0^yf$ untuk $y>0$. Tunjukkan bahwa
+$\|F\|_p\le\Bover{p}{p-1}\|f\|_p$. ({\it Petunjuk\/}:
+$F(y)=\int_0^1f(xy)dx$; gunakan 252Yg dengan $X=[0,1]$,
+$Y=\coint{0,\infty}$.)
+%252Yg, 252C
+
+\spheader 252Yi Tunjukkan bahwa jika $p$ adalah sebarang polinom (riil) tak nol
+dalam $r$ variabel, maka $\{x:x\in\BbbR^r,\,p(x)=0\}$ terabaikan terhadap
+ukuran Lebesgue.
+%252D
+
+\spheader 252Yj Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ adalah ruang
+ukur, dengan produk c.l.d.\ $(X\times Y,\Lambda,\lambda)$. Misalkan $f$ fungsi
+bernilai riil nonnegatif yang terukur terhadap $\Lambda$ dan didefinisikan
+pada suatu himpunan koterabaikan terhadap $\lambda$, serta andaikan bahwa
+
+\Centerline{$
+\overline{\intop}\bigl(\overline{\intop}f(x,y)\mu(dx)\bigr)
+\nu(dy)$}
+
+\noindent berhingga. Tunjukkan bahwa $f$ dapat diintegralkan terhadap
+$\lambda$.
+%252G
+
+\spheader 252Yk Misalkan $(X,\Sigma,\mu)$ adalah interval satuan $[0,1]$
+dengan ukuran Lebesgue, dan $(Y,\Tau,\nu)$ interval tersebut dengan ukuran
+cacah, sebagaimana dalam 252K; misalkan $\lambda_0$ ukuran produk primitif pada
+$[0,1]^2$. (i) Dengan menetapkan $\Delta=\{(t,t):t\in[0,1]\}$, tunjukkan
+bahwa $\lambda_0\Delta=\infty$. (ii) Tunjukkan bahwa
+$\lambda_0$ tidak semihingga. (iii) Tunjukkan bahwa jika
+$W\in\dom\lambda_0$, maka
+$\lambda_0W=\sum_{y\in[0,1]}\mu W^{-1}[\{y\}]$
+jika terdapat himpunan terhitung $A\subseteq[0,1]$ dan himpunan terabaikan
+Lebesgue $E\subseteq[0,1]$ sedemikian sehingga
+$W\subseteq([0,1]\times A)\cup(E\times[0,1])$, dan bernilai $\infty$ jika tidak.
+%252K
+
+\spheader 252Yl Misalkan $(X,\Sigma,\mu)$ ruang ukur, dan
+$\lambda_0$ ukuran produk primitif pada
+$X\times\Bbb R$, dengan $\Bbb R$ diberi ukuran Lebesgue; tuliskan
+$\Lambda$ untuk domainnya. Untuk sebarang fungsi bernilai
+$[0,\infty]$, katakanlah $f$, yang didefinisikan pada subhimpunan koterabaikan dari
+$X$, tuliskan $\Omega_f$, $\Omega'_f$ untuk himpunan-himpunan ordinat yang
+bersesuaian, sebagaimana dalam 252N. Tunjukkan bahwa jika salah satu dari
+$\lambda_0\Omega_f$, $\lambda_0\Omega'_f$,
+$\int fd\mu$ terdefinisi dan berhingga, demikian pula yang lainnya, dan
+ketiganya sama.
+%252B, 252N
+
+\spheader 252Ym Misalkan $(X,\Sigma,\mu)$ ruang ukur yang lengkap dan
+ditentukan secara lokal, dan $f$ fungsi nonnegatif yang didefinisikan pada
+subhimpunan koterabaikan dari $X$. Tuliskan $\Omega_f$, $\Omega'_f$ untuk
+himpunan-himpunan ordinat yang bersesuaian, sebagaimana dalam 252N. Misalkan
+$\lambda$ ukuran produk c.l.d.\ pada $X\times\Bbb R$, dengan
+$\Bbb R$ diberi ukuran Lebesgue. Tunjukkan bahwa
+$\overline{\int}f\,d\mu=\lambda^*\Omega_f=\lambda^*\Omega'_f$.
+%252N, 252B
+
+\spheader 252Yn Misalkan $(X,\Sigma,\mu)$ ruang ukur dan
+$f:X\to\coint{0,\infty}$ fungsi. Tunjukkan bahwa
+$\overline{\int}fd\mu=\int_0^{\infty}\mu^*\{x:f(x)\ge t\}dt$.
+%252O
+
+\spheader 252Yo Misalkan $(X,\Sigma,\mu)$ ruang ukur lengkap dan
+tuliskan $\eusm M^{0,\infty}$ untuk himpunan
+$\{f:f\in\eusm L^0(\mu),\,\mu\{x:|f(x)|\ge a\}$ berhingga untuk suatu
+$a\in\coint{0,\infty}\}$. (i) Tunjukkan bahwa untuk setiap
+$f\in\eusm M^{0,\infty}$
+terdapat fungsi tak-naik $f^*:\ooint{0,\infty}\to\Bbb R$ sedemikian sehingga
+$\mu_L\{t:f^*(t)\ge\alpha\}=\mu\{x:|f(x)|\ge\alpha\}$ untuk
+setiap $\alpha>0$, dengan menuliskan $\mu_L$ untuk ukuran Lebesgue. (ii) Tunjukkan
+bahwa $\int_E|f|d\mu\le\int_0^{\mu E}f^*d\mu_L$ untuk setiap $E\in\Sigma$
+(dengan mengizinkan $\infty$). ({\it Petunjuk\/}: $(f\times\chi E)^*\le f^*$.)
+(iii) Tunjukkan bahwa $\|f^*\|_p=\|f\|_p$ untuk setiap $p\in[1,\infty]$,
+$f\in\eusm M^{0,\infty}$. ({\it
+Petunjuk\/}: $(|f|^p)^*=(f^*)^p$.) (iv) Tunjukkan bahwa jika $f$,
+$g\in\eusm M^{0,\infty}$ maka
+$\int|f\times g|d\mu\le\int f^*\times g^*d\mu_L$. ({\it
+Petunjuk\/}: tinjau fungsi-fungsi sederhana terlebih dahulu.) (v) Tunjukkan bahwa
+jika $\mu$ tanpa atom maka
+$\int_0^af^*d\mu_L=\sup_{E\in\Sigma,\mu E\le a}\int_E|f|$
+untuk setiap $a\ge 0$. ({\it Petunjuk\/}: 215D.) (vi) Tunjukkan bahwa
+$A\subseteq\eusm L^1(\mu)$ terintegralkan secara seragam jika dan hanya jika
+$\{f^*:f\in A\}$ terintegralkan secara seragam dalam $\eusm L^1(\mu_L)$.
+($f^*$ disebut {\bf penyusunan ulang menurun} dari $f$.)
+%252O
+
+\spheader 252Yp Misalkan $(X,\Sigma,\mu)$ ruang ukur yang lengkap dan
+ditentukan secara lokal, dan tuliskan $\nu$ untuk ukuran Lebesgue pada
+$[0,1]$. Tunjukkan bahwa ukuran produk c.l.d.\ $\lambda$ pada
+$X\times[0,1]$ dapat dilokalkan jika dan hanya jika $\mu$ dapat dilokalkan.
+({\it Petunjuk-petunjuk\/}: (i) jika
+$\Cal E\subseteq\Sigma$, tunjukkan bahwa $F\in\Sigma$ merupakan supremum
+esensial untuk $\Cal E$ dalam $\Sigma$ jika dan hanya jika $F\times[0,1]$
+merupakan supremum esensial untuk
+$\{E\times[0,1]:E\in\Cal E\}$ dalam $\Lambda=\dom\lambda$. (ii) Untuk
+$W\in\Lambda$, $n\in\Bbb N$, $k<2^n$ tetapkan
+
+\Centerline{$W_{nk}
+=\{x:x\in X,\,\nu^*\{t:(x,t)\in W,\,2^{-n}k\le t\le 2^{-n}(k+1)\}
+\ge 2^{-n-1}\}$.}
+
+\noindent Tunjukkan bahwa jika $\Cal W\subseteq\Lambda$ dan $F_{nk}$ merupakan
+supremum esensial untuk $\{W_{nk}:W\in\Cal W\}$ dalam $\Sigma$ untuk semua
+$n$, $k$, maka
+
+\Centerline{$\bigcup_{n\in\Bbb N}\bigcap_{m\ge n}
+\bigcup_{k<2^{m}}F_{mk}\times[2^{-m}k,2^{-m}(k+1)]$}
+
+\noindent merupakan supremum esensial untuk $\Cal W$ dalam $\Lambda$.)
+%252O
+
+\spheader 252Yq Misalkan $(X,\Sigma,\mu)$ adalah ruang dari Contoh
+216D, dan berikan ukuran Lebesgue pada $[0,1]$. Tunjukkan bahwa ukuran produk
+c.l.d.\ pada $X\times [0,1]$ lengkap, ditentukan secara lokal,
+tanpa atom, dan tidak dapat dilokalkan.
+%252Yp 252O
+
+\spheader 252Yr Misalkan $(X,\Sigma,\mu)$ ruang ukur yang lengkap dan
+ditentukan secara lokal dan $(Y,\Tau,\nu)$ ruang ukur semihingga dengan
+$\nu Y>0$. Tunjukkan bahwa jika ukuran produk c.l.d.\ pada
+$X\times Y$ dapat dilokalkan secara ketat, maka $\mu$ dapat dilokalkan secara
+ketat. ({\it Petunjuk\/}: ambil $F\in\Tau$, $0<\nu F<\infty$. Misalkan
+$\langle W_i\rangle_{i\in I}$ dekomposisi dari $X\times Y$. Untuk
+$i\in I$, $n\in\Bbb N$
+tetapkan $E_{in}=\{x:\nu^*\{y:y\in F,\,(x,y)\in W_i\}\ge 2^{-n}\}$. Terapkan
+213Yf pada $\{E_{in}:i\in I,\,n\in\Bbb N\}$.)
+%252Yq 252O
+
+\spheader 252Ys Misalkan $(X,\Sigma,\mu)$ adalah ruang dari Contoh
+216E, dan berikan ukuran Lebesgue pada $[0,1]$. Tunjukkan bahwa ukuran produk
+c.l.d.\ pada $X\times[0,1]$ lengkap, ditentukan secara lokal,
+tanpa atom dan dapat dilokalkan, tetapi tidak dapat dilokalkan secara ketat.
+%252Yr, 252O
+
+\spheader 252Yt Misalkan $(X,\Sigma,\mu)$ ruang ukur dan $f$ fungsi bernilai
+kompleks yang dapat diintegralkan terhadap $\mu$. Untuk
+$\alpha\in\ocint{-\pi,\pi}$
+tetapkan $H_{\alpha}=\{x:x\in\dom f,\,\Real(e^{-i\alpha}f(x))>0\}$. Tunjukkan
+bahwa $\int_{-\pi}^{\pi}\Real(e^{-i\alpha}\int_{H_{\alpha}}f)d\alpha
+\discrversionA{\break}{}=2\int|f|$, dan karena itu terdapat suatu
+$\alpha$ sedemikian sehingga
+$|\int_{H_{\alpha}}f|\ge\Bover1{\pi}\int|f|$. (Bandingkan 246F.)
+%246F, 252R
+
+\spheader 252Yu Tetapkan $f(t)=t-\ln(t+1)$ untuk $t>-1$. (i) Tunjukkan bahwa
+$\Gamma(a+1)=a^{a+1}e^{-a}\int_{-1}^{\infty}e^{-af(u)}du$ untuk setiap
+$a>0$. \Hint{substitusikan $u=\bover{t}{a}-1$ dalam 225Xh(iii).} (ii) Tunjukkan
+bahwa terdapat $\delta>0$ sedemikian sehingga $f(t)\ge\bover13t^2$ untuk
+$-1\le t\le\delta$. (iii)
+Dengan menetapkan $\alpha=\bover12f(\delta)$, tunjukkan bahwa (untuk $a\ge 1$)
+
+\Centerline{$\sqrt{a}\int_{\delta}^{\infty}e^{-af(t)}dt
+\le\sqrt{a}e^{-a\alpha}\int_0^{\infty}e^{-f(t)/2}dt\to 0$}
+
+\noindent ketika $a\to\infty$. (iv) Tetapkan
+$g_a(t)=e^{-af(t/\sqrt{a})}$ jika
+$-\sqrt{a}<t\le\delta\sqrt{a}$, dan $0$ jika tidak. Tunjukkan bahwa
+$g_a(t)\le e^{-t^2/3}$ untuk semua $a$, $t$ dan bahwa
+$\lim_{a\to\infty}g_a(t)=e^{-t^2/2}$ untuk semua $t$, sehingga
+
+$$\eqalign{\lim_{a\to\infty}\Bover{e^a\Gamma(a+1)}{a^{a+\bover12}}
+&=\lim_{a\to\infty}\sqrt{a}\int_{-1}^{\infty}e^{-af(t)}dt
+=\lim_{a\to\infty}\sqrt{a}\int_{-1}^{\delta}e^{-af(t)}dt\cr
+&=\lim_{a\to\infty}\int_{-\infty}^{\infty}g_a(t)dt
+=\int_{-\infty}^{\infty}e^{-t^2/2}dt=\sqrt{2\pi}.\cr}$$
+
+\noindent (v) Tunjukkan bahwa
+$\lim_{n\to\infty}\Bover{n!}{e^{-n}n^n\sqrt{n}}=\sqrt{2\pi}$.
+(Ini adalah {\bf rumus Stirling}.)
+%252+
+
+\spheader 252Yv Misalkan $(X,\Sigma,\mu)$ ruang ukur yang lengkap dan
+ditentukan secara lokal, serta $f$, $g$ dua fungsi bernilai riil yang terukur
+secara virtual terhadap $\mu$ dan didefinisikan hampir di mana-mana dalam $X$.
+(i) Misalkan $\lambda$ produk c.l.d.\ dari $\mu$ dan ukuran Lebesgue pada
+$\Bbb R$.
+Dengan menetapkan $\Omega^*_f=\{(x,a):x\in\dom f$, $a\in\Bbb R$, $a\le f(x)\}$ dan
+$\Omega^*_g=\{(x,a):x\in\dom g$, $a\in\Bbb R$, $a\le g(x)\}$, tunjukkan bahwa
+$\lambda(\Omega^*_f\setminus\Omega^*_g)=\int(f-g)^+d\mu$ dan
+$\lambda(\Omega^*_f\symmdiff\Omega^*_g)=\int|f-g|d\mu$.
+(ii) Andaikan bahwa $\mu$ $\sigma$-hingga. Tunjukkan bahwa
+
+\Centerline{$\int|f-g|d\mu
+=\int_{-\infty}^{\infty}
+\mu(\{x:x\in\dom f\cap\dom g,\,
+  (f(x)-a)(g(x)-a)<0\})\,da$.}
+
+\noindent(iii) Andaikan bahwa $\mu$ $\sigma$-hingga, bahwa $\Tau$ merupakan
+subaljabar-sigma dari $\Sigma$, bahwa $E\in\Sigma$ dan bahwa $g:X\to[0,1]$
+terukur terhadap $\Tau$. Tunjukkan bahwa terdapat $F\in\Tau$ sedemikian sehingga
+$\mu(E\symmdiff F)\le\int|\chi E-g|d\mu$.
+%252N
+}%end of exercises
+
+\endnotes{
+\Notesheader{252} Selama satu setengah jilid ini saya telah meminta Anda
+menerima gagasan mengintegralkan fungsi yang terdefinisi sebagian, dengan
+bersikeras bahwa cepat atau lambat fungsi-fungsi tersebut akan muncul di inti
+pokok bahasan ini. Saat itu kini telah tiba. Jika kita hendak menerapkan teorema
+Fubini dan Tonelli dalam kasus yang paling mendasar, dengan kedua faktor sama
+dengan ukuran Lebesgue pada interval satuan, tentulah wajar untuk meninjau
+semua fungsi yang dapat diintegralkan pada persegi terhadap ukuran Lebesgue
+berdimensi dua. Ukuran Lebesgue berdimensi dua adalah ukuran lengkap, sehingga,
+khususnya, memberikan ukuran nol kepada setiap himpunan berbentuk
+$\{(x,b):x\in A\}$ atau $\{(a,y):y\in A\}$, terlepas dari apakah himpunan
+$A$ diukur oleh ukuran berdimensi satu. Oleh sebab itu, jika $f$ merupakan
+fungsi dua variabel yang dapat diintegralkan terhadap ukuran Lebesgue
+berdimensi dua, tidak ada alasan mengapa sebarang penampang tertentu
+$x\mapsto f(x,b)$ atau $y\mapsto f(a,y)$ harus terukur, apalagi dapat
+diintegralkan. Akibatnya, sekalipun $f$ sendiri didefinisikan di mana-mana,
+integral luar dari $\iint f(x,y)dxdy$ mungkin diterapkan kepada suatu fungsi
+yang tidak didefinisikan untuk setiap $y$.
+Perlu saya tegaskan bahwa persoalannya bukanlah `$\infty$'; fungsi-fungsi
+yang menyulitkan ialah yang penampangnya begitu tak teratur sehingga integral
+sama sekali tidak dapat diberikan kepadanya.
+
+Saya telah melihat banyak pendekatan terhadap persoalan pelik khusus ini,
+yang pada umumnya kurang sepenuh hati daripada pendekatan yang saya tetapkan
+untuk risalah ini. Sebagian kesulitannya ialah bahwa teorema Fubini sungguh
+berada di pusat teori ukuran. Pada bagian-bagian luas dari pokok bahasan ini,
+dapat dikatakan bahwa suatu hasil tidak sepele jika dan hanya jika hasil itu
+bergantung pada teorema Fubini. Karena itu saya enggan memasukkan tambalan
+lokal apa pun dengan mengatakan bahwa `dalam bab ini, kita akan
+mengintegralkan fungsi yang tidak didefinisikan di mana-mana'; tak lama
+kemudian, ketentuan semacam itu harus disisipkan ke dalam pembukaan separuh
+teorema terbaik, atau harus diberikan penjelasan mengapa ketentuan itu tidak
+diperlukan dalam konteks masing-masing. Saya kira salah satu tanggapan yang
+paling umum ialah (seperti {\smc Halmos 50}) membatasi perhatian pada
+fungsi yang terukur terhadap $\Sigma\tensorhat\Tau$, yang untuk sementara
+menghilangkan masalah keterukuran (252Xh, 252P); tetapi sayangnya (atau,
+menurut saya, justru untungnya) terdapat penerapan-penerapan penting yang
+fungsinya sebenarnya tidak terukur terhadap $\Sigma\tensorhat\Tau$, melainkan
+termasuk dalam suatu kelas yang lebih luas, dan cepat atau lambat pembatasan
+ini menimbulkan akrobat yang tidak elok ketika kita terpaksa menyesuaikan hasil
+terbatas dengan konteks yang tidak terduga. Selain itu, pembatasan tersebut
+tidak menyatakan informasi yang sesungguhnya cukup penting, yakni bahwa jika
+$f$ fungsi terukur dari dua variabel, maka (di bawah syarat-syarat yang sesuai)
+hampir semua penampangnya terukur (252E).
+
+Dalam 252B dan akibat-akibatnya terdapat pembatasan yang canggung: kita
+mengandaikan bahwa salah satu ukuran $\sigma$-hingga dan ukuran yang lain dapat
+dilokalkan secara ketat atau lengkap dan ditentukan secara lokal. Pertanyaan
+yang jelas ialah apakah hipotesis-hipotesis ini diperlukan. Dari 252K kita
+melihat bahwa hipotesis `$\sigma$-hingga' pada faktor kedua tentu tidak dapat
+ditinggalkan, bahkan ketika faktor pertama merupakan ukuran probabilitas
+lengkap. Persyaratan `$\mu$ dapat dilokalkan secara ketat atau lengkap dan
+ditentukan secara lokal' sebenarnya sedikit lebih kuat daripada yang
+diperlukan, dan juga terlampau rumit. Hipotesis yang `tepat' ialah bahwa
+pelengkapan $\mu$ harus ditentukan secara lokal (lihat 252Ya). Intinya ialah
+bahwa, karena produk dua ukuran sama dengan produk versi c.l.d.\ masing-masing
+(251T), tidak ada teorema yang beranjak dari ukuran produk ke ukuran faktor
+yang dapat membedakan suatu ukuran dari versi c.l.d.-nya; sehingga, dalam
+252B, kita harus menduga bahwa $\mu$ dan versi c.l.d.-nya perlu menghasilkan
+integral yang sama. Pembuktian 252B akan lebih terarah jika hipotesisnya
+disederhanakan menjadi `$\nu$ $\sigma$-hingga dan $\mu$ lengkap serta
+ditentukan secara lokal'. Tetapi ini hanya akan memindahkan sebagian argumen
+ke dalam pembuktian 252C.
+
+Kita juga harus bekerja sedikit lebih keras dalam 252B agar mencakup fungsi
+dan integral yang mengambil nilai $\pm\infty$. Teorema Fubini begitu sentral
+bagi teori ukuran sehingga saya yakin sedikit upaya tambahan layak dilakukan
+untuk menyatakan hasil-hasilnya dengan keumuman maksimum. Hal ini terutama
+penting karena kita sering menerapkannya pada integral berulang majemuk, seperti
+dalam 252Xd, ketika kendali kita terhadap fungsi-fungsi antara yang harus
+diintegralkan bahkan lebih kecil daripada biasanya.
+
+Saya telah mengungkapkan semua hasil utama bagian ini dalam istilah ukuran
+produk `c.l.d.'. Dalam kasus ruang-ruang $\sigma$-hingga, tentu saja, tempat
+teorinya bekerja paling baik, kita dapat pula menggunakan ukuran produk
+`primitif'. Bahkan teorema Fubini sendiri mempunyai versi dalam istilah
+ukuran produk primitif yang agak lebih anggun daripada 252B sebagaimana
+dinyatakan (252Yc), dan mencakup sebagian besar penerapan. (Integral terhadap
+ukuran produk primitif dan c.l.d.\ tentu saja sangat erat hubungannya; lihat
+252Yd.) Namun kadang-kadang kita memang perlu meninjau ruang yang tidak
+$\sigma$-hingga, dan dalam kasus-kasus ini bentuk tak simetris dalam 252B
+mendekati bentuk terbaik yang dapat kita peroleh. Menggunakan ukuran produk
+primitif sama sekali tidak membantu mengatasi hambatan paling besar, yaitu
+fenomena dalam 252K (lihat 252Yk).
+
+Konsep prakalkulus tentang integral sebagai `luas di bawah kurva' diwujudkan
+dalam 252N: integral fungsi nonnegatif merupakan ukuran himpunan ordinatnya.
+Ini tidak memuaskan sebagai definisi integral, bukan hanya karena persyaratan
+bahwa ruang dasar harus lengkap dan ditentukan secara lokal (yang dapat
+ditangani dengan menggunakan ukuran produk primitif, seperti dalam 252Yl),
+melainkan juga karena konstruksi ukuran produk melibatkan integrasi (bagian
+(c) dari pembuktian 251E).
+Gagasan 252N ialah menghubungkan ukuran suatu himpunan ordinat dengan integral
+ukuran penampang-penampang vertikalnya. Anehnya, jika sebagai gantinya kita
+mengintegralkan ukuran penampang-penampang {\it horizontal}, seperti dalam
+252O, kita memperoleh hasil yang lebih luwes. (Memang hasil ini tidak
+melibatkan konsep `ukuran produk', dan dapat muncul pada sebarang titik setelah
+\S123.) Perhatikan bahwa integral $\int_0^{\infty}\ldots dt$ di sini
+diterapkan kepada fungsi monoton, sehingga dapat ditafsirkan sebagai integral
+Riemann tak wajar. Jika Anda merasa cukup memahami integral Riemann sehingga
+hal ini menjadi alternatif yang menggoda bagi konstruksi dalam \S122, bagian
+yang sulit sekarang ialah pembuktian bahwa integral tersebut aditif.
+
+Jalur argumen yang berbeda ialah menggunakan integrasi atas penampang untuk
+mendefinisikan ukuran produk. Kesulitan pendekatan ini ialah bahwa, kecuali
+kita sangat berhati-hati, kita mungkin mendapati konstruksi yang tak simetris.
+Menurut pandangan saya, ketaksimetrian semacam itu dapat diterima hanya jika
+tidak ada alternatif. Namun dalam Bab 43 Jilid 4 saya akan mendeskripsikan
+sepasang contoh.
+
+Dari dua contoh yang saya berikan di sini, 252K dimaksudkan untuk menunjukkan
+bahwa ketika saya mensyaratkan ruang-ruang $\sigma$-hingga, ruang-ruang itu
+memang benar-benar diperlukan, sedangkan 252L dimaksudkan untuk menunjukkan
+bahwa keterukuran bersama bersifat esensial dalam teorema Tonelli dan
+akibat-akibatnya. Ruang-ruang faktor dalam 252K, yaitu ukuran Lebesgue dan
+ukuran cacah, dipilih untuk menunjukkan bahwa hanya ketiadaan sifat
+$\sigma$-hingga yang dapat menjadi masalah; selain itu, keduanya seteratur
+yang secara wajar dapat diminta. Dalam 252L saya menggunakan ukuran
+terhitung-koterhitung pada $\omega_1$, yang mungkin Anda anggap hanya pantas
+untuk contoh tandingan; dan memang timbul pertanyaan apakah fenomena yang sama
+terjadi pada ukuran Lebesgue. Ini membawa kita ke persoalan yang mendalam, dan
+saya akan kembali kepadanya dalam Bab 53 Jilid 5.
+
+Barangkali perlu saya catat secara eksplisit bahwa dalam teorema Fubini, kita
+benar-benar memerlukan fungsi yang dapat diintegralkan terhadap ukuran produk.
+Saya menyertakan 252Xf dan 252Xg untuk mengingatkan Anda bahwa bahkan dalam
+keadaan yang paling teratur, integral berulang $\iint f\,dxdy$,
+$\iint f\,dydx$ dapat tidak sama jika $f$ tidak dapat diintegralkan sebagai
+fungsi dua variabel.
+
+Ada banyak cara untuk menghitung volume $\beta_r$ dari bola berdimensi $r$;
+cara yang saya gunakan dalam 252Q mengikuti jalur yang sudah terasa alami bagi
+saya sebelum pernah mendengar teori ukuran. Dalam 252Xi saya mengusulkan
+metode lain. Gagasan integrasi dengan substitusi, yang digunakan dalam bagian
+(b) dari argumen untuk 252Q, di sana ditopang oleh argumen ad hoc; saya akan
+menyajikan pendekatan lain yang dapat diterapkan lebih umum dalam Bab 26. Di
+tempat lain (252Xi, 252Yf, 252Yh, 252Yu) saya mendapati diri saya menerima
+begitu saja substitusi berbentuk $t\mapsto at$, $t\mapsto a+t$,
+$t\mapsto t^2$; untuk pembenaran sistematis, lihat \S263. Tentu saja sangat
+banyak rumus kalkulus lanjut lainnya juga didasarkan pada integrasi berulang
+dari satu jenis atau jenis lainnya, dan saya memberikan segelintir contoh
+hasil semacam itu (252Xb,
+252Ye-252Yh, %252Ye 252Yf 252Yg 252Yh
+252Yu).
+
+}%end of notes
+
+\discrpage
+
+\leaveitout{%\spheader 252Y?
+Misalkan $(X,\Sigma,\mu)$ dan $(Y,\Tau,\nu)$ adalah ruang-ruang ukur, dan
+$\lambda_0$
+ukuran produk primitif pada $X\times Y$. Misalkan $f$ fungsi bernilai riil
+yang didefinisikan $\lambda_0$-hampir di mana-mana pada $X\times Y$. Tunjukkan
+bahwa
+
+\Centerline{$
+\overline{\intop}\bigl(\overline{\intop}f(x,y)\mu(dx)\bigr)\nu(dy)
+\le\overline{\intop}f\,d\lambda_0$.}
+%252B
+}%end of leaveitout
