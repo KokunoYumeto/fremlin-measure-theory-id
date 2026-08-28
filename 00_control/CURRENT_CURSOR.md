@@ -37,6 +37,15 @@ Exact S254 evidence:
   bytes, SHA-256
   `09ee05b71a6881d11f43755befcf790223dc1d6666fdbb4895d54e3b43a8c63b`.
 
+The validated unit is preserved on public repository `main` at commit
+`61c1132b97cb7a166f27615ae3a444542fed774d` (tree
+`518e6a03d22218e906d772ed2b16f713733f8659`). Anonymous raw readback matched
+the target and four selected QA/control identities exactly. Sanitized evidence
+is `qa/chapter25/mt254-github-push-receipt.json`, 2,910 bytes / SHA-256
+`84fa35a8608607ebbe3f67e6a1a8094def626b6cab9048e5a87a111e417fff27`.
+This is a preservation checkpoint, not a release tag, Zenodo version, or new
+admission boundary.
+
 The next executable source is complete
 `authority/fremlin/source/mt2.2016/mt255.tex`, `Convolutions of functions`,
 official Volume II pages 266–276: 50,407 bytes / 1,275 lines / SHA-256

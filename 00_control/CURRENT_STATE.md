@@ -35,6 +35,12 @@ Updated: 2026-08-28 (Europe/Berlin)
   targeted regression tests pass. The deterministic fragment receipt remains
   explicitly identified as the pre-correction assembly base, while final unit
   receipts bind the corrected target.
+- The complete unit is publicly preserved on repository `main` at commit
+  `61c1132b97cb7a166f27615ae3a444542fed774d`. Anonymous readback matched the
+  exact target and selected receipt/control bytes; sanitized evidence is
+  `qa/chapter25/mt254-github-push-receipt.json`, 2,910 bytes / SHA-256
+  `84fa35a8608607ebbe3f67e6a1a8094def626b6cab9048e5a87a111e417fff27`.
+  This does not change the 338-page admitted/released boundary.
 - The next source is complete `mt255.tex`, `Convolutions of functions`, Volume
   II pages 266–276: 50,407 bytes / 1,275 lines / SHA-256
   `c837735d74f688178acc82b7f004669f2fe3352e5c0293d48442777a9d5bb5b6`.
