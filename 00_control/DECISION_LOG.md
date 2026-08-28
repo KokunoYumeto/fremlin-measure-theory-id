@@ -961,3 +961,12 @@ then translate complete `mt256.tex` from official pages 277–284 and continue
 through mt257. The next cumulative GitHub/Zenodo release remains complete
 Chapter 25 at 389/672. No upstream contact occurred; the 672-page goal stays
 active.
+
+The bounded unit was then pushed to public repository `main` at commit
+`c5f9d1759a4cf7197af7ec6cc16896986c98a04f` (tree
+`6e865eecf0c946ddbbf9a5202b812304638a28ef`). Anonymous readback matched the
+translation, unit receipt, anomaly receipt, semantic receipt, Chapter 25
+freeze, and durable reader bytes exactly. Sanitized evidence is
+`qa/chapter25/mt255-github-push-receipt.json`, 3,465 bytes / SHA-256
+`8b590ce512d9c1f6945e33ec07c9a6f9b97d11c948ff601aac4c05d8a726316d`.
+No tag or Zenodo version was created for this intermediate checkpoint.

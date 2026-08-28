@@ -7,9 +7,9 @@ Status: active until all 672 official pages are publicly verified
 > **Superseding checkpoint (2026-08-28):** the authoritative current state is
 > 338/672 official pages admitted, published, and anonymously verified through
 > S252, plus complete S253–S255 translated and validated for a contiguous
-> 378/672 candidate. Complete S254 is already preserved on repository `main`;
-> S255 has passed its bounded unit, independent semantic, and desktop/mobile
-> reader gates and is ready for the same narrow preservation checkpoint. The
+> 378/672 candidate. Complete S254 and S255 are preserved on public repository
+> `main`; S255 passed its bounded unit, independent semantic, desktop/mobile
+> reader, and anonymous byte-readback gates. The
 > exact next translation cursor is `mt256.tex` at Volume II page 277. Continue
 > through mt256–mt257 and perform the next cumulative backend, reader, package,
 > GitHub, and Zenodo transaction at complete Chapter 25, 389/672. All earlier
@@ -74,9 +74,8 @@ anonymously returned the exact reader-first PDF, resumable ZIP, and checksum
 witness. The cumulative PDF has 363 A4 reflow pages; that physical count does
 not replace the 338-page official coverage identity.
 
-Current action: preserve complete validated S255 as a narrow repository-main
-checkpoint with anonymous byte readback, then translate complete `mt256.tex`
-from frozen authority and continue through `mt257.tex`. Run light unit checks
+Current action: translate complete `mt256.tex` from frozen authority and
+continue through `mt257.tex`. Run light unit checks
 as each section closes, then consolidate backend/readers/admission and publish
 at complete Chapter 25, 389/672. Do not spend a full release or Zenodo
 transaction on each small section.

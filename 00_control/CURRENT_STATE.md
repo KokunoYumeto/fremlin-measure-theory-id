@@ -32,11 +32,17 @@ Updated: 2026-08-28 (Europe/Berlin)
   `f3fdd6596b4c007495f23b5fdf093f0a765fc68df741ebfd1834b811a4339856`.
   Desktop/mobile replay passes with no overflow, broken fragment, unresolved
   macro, missing dependency, or console warning/error.
+- The validated unit is preserved on public repository `main` at commit
+  `c5f9d1759a4cf7197af7ec6cc16896986c98a04f`, tree
+  `6e865eecf0c946ddbbf9a5202b812304638a28ef`. Six anonymous raw-file
+  readbacks match local bytes and hashes. Sanitized evidence is
+  `qa/chapter25/mt255-github-push-receipt.json`, 3,465 bytes / SHA-256
+  `8b590ce512d9c1f6945e33ec07c9a6f9b97d11c948ff601aac4c05d8a726316d`.
 - The next authority is `mt256.tex`, `Radon measures on R^r`, official pages
   277–284: 41,604 bytes / 1,003 lines / SHA-256
   `de4a178837df6915bbfb714622cb9a3a2d896fb7f00120d2348ccd0d4245d2cf`.
-  Preserve S255 narrowly on `main`, then translate S256–S257 and consolidate
-  the complete Chapter 25 boundary at 389/672. No upstream contact occurred.
+  Translate S256–S257 and consolidate the complete Chapter 25 boundary at
+  389/672. No upstream contact occurred.
 
 ## Live owner state through complete S254
 

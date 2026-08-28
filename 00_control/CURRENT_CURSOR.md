@@ -41,12 +41,20 @@ Exact S255 evidence:
 The semantic reader contains all 55 source units, 26 exercises, 10 hints, and
 934 executing formulas. Desktop 1280×720 and mobile 390×844 replay have zero
 document overflow, broken fragments, unresolved TeX/MathJax macros, console
-warnings/errors, or missing assets. The next executable source is complete
+warnings/errors, or missing assets. The bounded unit is preserved on public
+repository `main` at commit
+`c5f9d1759a4cf7197af7ec6cc16896986c98a04f` (tree
+`6e865eecf0c946ddbbf9a5202b812304638a28ef`). Anonymous raw readback matched
+the translation and five selected QA/control identities exactly. Sanitized
+evidence is `qa/chapter25/mt255-github-push-receipt.json`, 3,465 bytes / SHA-256
+`8b590ce512d9c1f6945e33ec07c9a6f9b97d11c948ff601aac4c05d8a726316d`.
+This is a preservation checkpoint, not a release tag, Zenodo version, or new
+admission boundary. The next executable source is complete
 `authority/fremlin/source/mt2.2016/mt256.tex`, `Radon measures on R^r`,
 official Volume II pages 277–284: 41,604 bytes / 1,003 lines / SHA-256
 `de4a178837df6915bbfb714622cb9a3a2d896fb7f00120d2348ccd0d4245d2cf`.
-Preserve S255 on repository `main` with anonymous byte readback, then translate
-complete S256 and continue through S257. No upstream contact occurred.
+Translate complete S256 and continue through S257. No upstream contact
+occurred.
 
 ## Superseding local production cursor — complete S254 (2026-08-28)
 
