@@ -31,6 +31,29 @@ MATH_SPAN_PATTERN = re.compile(
     flags=re.DOTALL,
 )
 VISIBLE_TEX_CONTROL_PATTERN = re.compile(r"\\[A-Za-z]+")
+PROSE_ACUTE_Y_PATTERN = re.compile(r"\\'(?:\{([yY])\}|([yY]))")
+
+
+def canonical_heading_id(raw_source_id: str) -> tuple[str, bool]:
+    """Return the stable heading ID and whether its source form was starred."""
+
+    source_id = raw_source_id.strip()
+    starred = source_id.startswith("*")
+    if starred:
+        source_id = source_id[1:]
+    if not source_id:
+        raise ValueError("empty heading source ID")
+    return source_id, starred
+
+
+def normalize_prose_tex_accents(text: str) -> str:
+    r"""Expand the Plain-TeX acute-y forms used in ``Nikod\'ym``."""
+
+    def replace(match: re.Match[str]) -> str:
+        letter = match.group(1) or match.group(2)
+        return "Ý" if letter == "Y" else "ý"
+
+    return PROSE_ACUTE_Y_PATTERN.sub(replace, text)
 
 
 def sha256(data: bytes) -> str:
@@ -379,30 +402,34 @@ class Renderer:
                 i = end
                 continue
             if command in {"leader", "header"}:
-                source_id, after_id = read_group(text, j)
+                raw_source_id, after_id = read_group(text, j)
+                source_id, starred = canonical_heading_id(raw_source_id)
                 title, end = read_group(text, after_id)
                 out.append(
                     self.block_token(
                         "heading",
-                        source_id=source_id.strip(),
+                        source_id=source_id,
                         title=self.render_inline(self.transform(title)),
                         level="2" if command == "leader" else "3",
-                        important="true" if "\\pmb{>}" in title else "false",
+                        important=(
+                            "true" if starred or "\\pmb{>}" in title else "false"
+                        ),
                     )
                 )
                 i = end
                 continue
             if command == "vleader":
                 _space, after_space = read_group(text, j)
-                source_id, after_id = read_group(text, after_space)
+                raw_source_id, after_id = read_group(text, after_space)
+                source_id, starred = canonical_heading_id(raw_source_id)
                 title, end = read_group(text, after_id)
                 out.append(
                     self.block_token(
                         "heading",
-                        source_id=source_id.strip(),
+                        source_id=source_id,
                         title=self.render_inline(self.transform(title)),
                         level="2",
-                        important="false",
+                        important="true" if starred else "false",
                     )
                 )
                 i = end
@@ -592,6 +619,7 @@ class Renderer:
             if chunk in protected:
                 rendered.append(protected[chunk])
                 continue
+            chunk = normalize_prose_tex_accents(chunk)
             chunk = chunk.replace("``", "“").replace("''", "”")
             chunk = chunk.replace("---", "—").replace("--", "–")
             chunk = chunk.replace("`", "‘").replace("'", "’")
@@ -723,8 +751,11 @@ class Renderer:
 
 def discover_ids(text: str, implicit_ids: dict[str, str] | None = None) -> set[str]:
     implicit_ids = IMPLICIT_IDS if implicit_ids is None else implicit_ids
-    ids = set(re.findall(r"\\(?:leader|header)\{([^{}]+)\}", text))
-    ids.update(re.findall(r"\\vleader\{[^{}]*\}\{([^{}]+)\}", text))
+    raw_heading_ids = re.findall(r"\\(?:leader|header)\{([^{}]+)\}", text)
+    raw_heading_ids.extend(
+        re.findall(r"\\vleader\{[^{}]*\}\{([^{}]+)\}", text)
+    )
+    ids = {canonical_heading_id(source_id)[0] for source_id in raw_heading_ids}
     ids.update(re.findall(r"\\(?:spheader|sqheader)\s+([0-9A-Za-z]{5})", text))
     ids.update(re.findall(r"\\vspheader\{[^{}]*\}\s*([0-9A-Za-z]{5})", text))
     ids.update(re.findall(r"\\Notesheader\{([^{}]+)\}", text))
@@ -1015,6 +1046,8 @@ def main() -> int:
         Bbb: ['\\\\mathbb{{#1}}', 1], BbbR: '\\\\mathbb{{R}}',
         Cal: ['\\\\mathcal{{#1}}', 1], frak: ['\\\\mathfrak{{#1}}', 1],
         Forall: '\\\\;\\\\forall\\\\;', Bover: ['\\\\frac{{#1}}{{#2}}', 2],
+        fraction: ['\\\\mathord{{<}}#1\\\\mathord{{>}}', 1],
+        tbf: ['\\\\mathbf{{#1}}', 1],
         enskip: '\\\\;', Tau: '\\\\mathrm{{T}}',
         ooint: ['\\\\left]#1\\\\right[', 1],
         symmdiff: '\\\\mathbin{{\\\\triangle}}'{extra_mathjax_macros}

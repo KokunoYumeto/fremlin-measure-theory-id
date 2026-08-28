@@ -4,10 +4,39 @@ Updated: 2026-08-28 (Europe/Berlin)
 
 > **Superseding owner state (2026-08-28):** 338/672 official pages remain
 > admitted, released, and anonymously verified through S252. Complete
-> S253–S255 are additionally translated and deterministically validated, so
-> the local contiguous candidate is 378/672. The next exact source is
-> `mt256.tex` at Volume II page 277. The older checkpoint notices below are
+> S253–S256 are additionally translated and deterministically validated, so
+> the local contiguous candidate is 386/672. The next exact source is
+> `mt257.tex` at Volume II page 285. The older checkpoint notices below are
 > historical.
+
+## Live owner state through complete S256
+
+- Public/admitted release coverage: **338/672 official pages** through S252,
+  GitHub tag `v0.17.0-v2-through-s252` and Zenodo DOI
+  `10.5281/zenodo.22105474`, with exact anonymous byte-readback receipts.
+- Local translated candidate: complete Volume I plus Volume II pages 1–284,
+  **386/672 official pages**. Complete S256 adds 8 pages; 286 remain.
+- S256 target: `source/id-ID/mt256.tex`, 46,323 bytes / 1,016 lines /
+  SHA-256
+  `5d2942aa72ae38f086a8369578097dedef702bfa6cd497e3ff3a59f2eb792b03`.
+- Passing evidence is `qa/chapter25/mt256-unit-qa.json`,
+  `mt256-source-anomaly-adjudication.json`,
+  `mt256-independent-semantic-review.md`, and `mt256-semantic-html-qa.json`.
+  Together they bind 39 stable IDs, 120 references, 917/904 authority/target
+  math atoms, 18 exercises, 9 hints, ten correction rows, and zero active
+  English residue.
+- The durable semantic reader is
+  `qa/chapter25/mt256-semantic-reader/index.html`, 120,887 bytes / SHA-256
+  `0449c3e7fb347112df46474a892c19c0080bf0a81a6746577633fca2c426d21e`.
+  Desktop/mobile replay passes with a centered, width-filling main column and
+  no document overflow, broken fragment, unresolved macro, missing
+  dependency, or console warning/error.
+- Preserve this complete bounded unit on repository `main`, anonymously read
+  it back, then translate complete `mt257.tex`, `Further exercises`, official
+  pages 285–287: 9,803 bytes / 236 lines / SHA-256
+  `45e95ad49d7d4a0f83c485c3100ff880100c78bc72e7dc99ccffb8c31a8b7996`.
+  Consolidate and publish the complete Chapter 25 boundary at 389/672. No
+  upstream contact occurred.
 
 ## Live owner state through complete S255
 

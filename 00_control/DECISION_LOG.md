@@ -970,3 +970,40 @@ freeze, and durable reader bytes exactly. Sanitized evidence is
 `qa/chapter25/mt255-github-push-receipt.json`, 3,465 bytes / SHA-256
 `8b590ce512d9c1f6945e33ec07c9a6f9b97d11c948ff601aac4c05d8a726316d`.
 No tag or Zenodo version was created for this intermediate checkpoint.
+
+## 2026-08-28 — D047: Validate complete S256 and advance the cursor to S257
+
+Complete Section 256, `Radon measures on R^r` → `Ukuran Radon pada R^r`, is
+accepted as a contiguous source-order candidate on official Volume II pages
+277–284. The final target `source/id-ID/mt256.tex` is 46,323 bytes / 1,016
+lines / SHA-256
+`5d2942aa72ae38f086a8369578097dedef702bfa6cd497e3ff3a59f2eb792b03`.
+Together with S253–S255 this raises translated candidate coverage from 378 to
+386/672 official pages; admitted/released coverage remains 338/672 pending
+the complete-Chapter-25 consolidation.
+
+The three exact translation fragments deterministically assembled the full
+section. Independent source-semantic adjudication confirmed ten
+high-confidence nonblocking defect groups; correction rows
+`O007-CORR-0229`–`0238` preserve the immutable authority while repairing the
+derivative. The unit validator passes all 39 stable IDs, 120 protected
+references, 18 exercises, 9 hints, and the finite 917/904 source/target math
+ledger, with zero active English residue. An independent complete reread then
+closed three final terminology and naturalness defects without changing the
+mathematical topology.
+
+The generic semantic renderer now preserves the legacy `tbf` and `fraction`
+formula semantics, normalizes the source's Plain-TeX acute accent in
+`Nikodým`, and maps the starred source leader `*256M` to canonical DOM ID
+`256M` while retaining its importance marker. Twelve regression tests pass.
+Live desktop and mobile replay executes all 902 reader-body formulas with
+assistive math and no MathJax/console error, broken fragment, missing asset,
+or document overflow; the two remaining target math atoms are explicitly
+identified print title/running-head metadata rather than omitted body
+mathematics.
+
+The decision is to push this complete bounded unit to repository `main` for
+preservation without creating a release tag or Zenodo version, anonymously
+read it back, then translate complete `mt257.tex` at official pages 285–287.
+The cumulative GitHub/Zenodo transaction remains complete Chapter 25 at
+389/672. No upstream contact occurred; the 672-page goal stays active.

@@ -1,5 +1,57 @@
 # Current Cursor
 
+## Superseding local production cursor — complete S256 (2026-08-28)
+
+The admitted and released boundary remains complete Volume I plus contiguous
+Volume II pages 1–236 through S252: **338/672 official pages**. Complete
+Sections 253–256 are validated source-order candidates on Volume II pages
+237–284, raising contiguous translated coverage to **386/672 official pages**;
+286 pages remain untranslated. The next substantial admission/publication
+boundary remains complete Chapter 25 through Volume II page 287, 389/672.
+
+Exact S256 evidence:
+
+- authority `authority/fremlin/source/mt2.2016/mt256.tex`: 41,604 bytes,
+  1,003 lines, SHA-256
+  `de4a178837df6915bbfb714622cb9a3a2d896fb7f00120d2348ccd0d4245d2cf`;
+- target `source/id-ID/mt256.tex`: 46,323 bytes, 1,016 lines, SHA-256
+  `5d2942aa72ae38f086a8369578097dedef702bfa6cd497e3ff3a59f2eb792b03`;
+- assembly receipt `qa/chapter25/mt256-fragment-assembly.json`: 1,172
+  bytes, SHA-256
+  `b0723ee761cce7eae706a5e1ec5676a1b4d2491c9edc765971076478090aeb6d`;
+- unit QA `qa/chapter25/mt256-unit-qa.json`: 11,816 bytes, SHA-256
+  `0002694221a724238e827f84c20cb07dd1465f43c2707105ac969ba7b941b875`,
+  passing 39/39 stable IDs, 120/120 protected references, 9/9 hints, the
+  finite 917/904 source/target math ledger, and zero active English residue;
+- anomaly adjudication
+  `qa/chapter25/mt256-source-anomaly-adjudication.json`: 7,910 bytes,
+  SHA-256
+  `8a0224404ecc1c513886102aac9befacd97e15665b8b76da8f5114804b03684d`,
+  passing ten confirmed nonblocking correction groups and exact correction
+  rows `O007-CORR-0229`–`0238`;
+- independent review `qa/chapter25/mt256-independent-semantic-review.md`:
+  3,248 bytes, SHA-256
+  `cc7a8df1301b32b870d2fc8dfd720c0162d340b63a8e08e0833cf14bd9530989`;
+- semantic/browser receipt `qa/chapter25/mt256-semantic-html-qa.json`: 7,702
+  bytes, SHA-256
+  `0df49a11a58e948969ff1eee9d8a7d6c1695d601bec19cc71b2737448bdc48cc`;
+- durable reader `qa/chapter25/mt256-semantic-reader/index.html`: 120,887
+  bytes, SHA-256
+  `0449c3e7fb347112df46474a892c19c0080bf0a81a6746577633fca2c426d21e`.
+
+The semantic reader contains all 39 source units, 18 exercises, 9 hints, and
+902 executable body formulas; two additional target math atoms belong only to
+the source's print section-title and running-head metadata and are explicitly
+hash-bound in the receipt. Desktop 1280×720 and mobile 390×844 replay have no
+document overflow, broken fragment, unresolved TeX/MathJax macro, console
+warning/error, or missing asset. The next action is the bounded repository
+preservation push and anonymous readback, followed immediately by complete
+`authority/fremlin/source/mt2.2016/mt257.tex`, official Volume II pages
+285–287: 9,803 bytes / 236 lines / SHA-256
+`45e95ad49d7d4a0f83c485c3100ff880100c78bc72e7dc99ccffb8c31a8b7996`.
+No release tag, Zenodo transaction, or upstream contact occurs until the full
+Chapter 25 boundary is consolidated.
+
 ## Superseding local production cursor — complete S255 (2026-08-28)
 
 The admitted and released boundary remains complete Volume I plus contiguous

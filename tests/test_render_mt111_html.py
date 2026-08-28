@@ -1,14 +1,19 @@
 from __future__ import annotations
 
 import unittest
+from contextlib import redirect_stdout
+import io
 from pathlib import Path
 import sys
+import tempfile
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from render_mt111_html import (  # noqa: E402
     Renderer,
     discover_ids,
+    main,
     normalize_formula,
     visible_tex_controls,
 )
@@ -105,6 +110,57 @@ class RenderFremlinUnitHtmlTests(unittest.TestCase):
         self.assertNotIn(r"\wheader", body)
         self.assertIn("Sebelum.", body)
         self.assertIn("Sesudah.", body)
+
+    def test_plain_tex_acute_y_is_normalized_before_quote_substitution(self) -> None:
+        renderer = Renderer(set(), implicit_ids={}, unit_number="256")
+
+        rendered = renderer.render_inline(r"Radon--Nikod\'ym dan NIKOD\'{Y}M")
+
+        self.assertEqual(rendered, "Radon–Nikodým dan NIKODÝM")
+        self.assertNotIn("\\", rendered)
+
+    def test_starred_heading_uses_canonical_id_and_retains_importance(self) -> None:
+        source = r"\leader{*256M}{} Isi. \header{*256N}{Catatan} Lanjut."
+        known_ids = discover_ids(source, {})
+        renderer = Renderer(known_ids, implicit_ids={}, unit_number="256")
+
+        body = renderer.render_body(renderer.transform(source))
+
+        self.assertEqual(known_ids, {"256M", "256N"})
+        self.assertIn('id="256M"', body)
+        self.assertIn('data-source-id="256M"', body)
+        self.assertIn('id="256N"', body)
+        self.assertEqual(body.count('class="importance"'), 2)
+        self.assertNotIn("*256M", body)
+        self.assertNotIn("*256N", body)
+
+    def test_generated_mathjax_config_defines_mt256_one_argument_macros(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = root / "mt256.tex"
+            output = root / "index.html"
+            source.write_text(
+                r"\leader{256Yd}{} $\tbf{0}$ dan $\fraction{3t}$.",
+                encoding="utf-8",
+            )
+            argv = [
+                "render_mt111_html.py",
+                str(source),
+                str(output),
+                "--unit-number",
+                "256",
+                "--unit-id",
+                "O007-FREMLIN-V2-S256",
+            ]
+
+            with patch.object(sys, "argv", argv), redirect_stdout(io.StringIO()):
+                self.assertEqual(main(), 0)
+
+            document = output.read_text(encoding="utf-8")
+            self.assertIn(r"fraction: ['\\mathord{<}#1\\mathord{>}', 1]", document)
+            self.assertIn(r"tbf: ['\\mathbf{#1}', 1]", document)
+            self.assertIn(r'data-source-tex="\tbf{0}"', document)
+            self.assertIn(r'data-source-tex="\fraction{3t}"', document)
 
     def test_reference_delta_is_occurrence_scoped(self) -> None:
         self.assertEqual(

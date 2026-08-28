@@ -208,3 +208,27 @@ An independent complete source/target reread confirmed the mathematical
 terminology after the orthographic and heading repairs recorded in
 `qa/chapter25/mt255-independent-semantic-review.md`. These choices do not
 alter formulas, stable IDs, exercises, hints, or component-rights boundaries.
+
+### Section 256 — Radon measures on $\BbbR^r$ (2026-08-28)
+
+Complete Section 256 uses the following field-specific forms:
+
+| Concept or construction | Preferred O007 form | Decision and boundary |
+|---|---|---|
+| Radon measure / Euclidean space | `ukuran Radon`; `ruang Euklides` | Retain the proper name and use the standard Indonesian geometric noun. |
+| topological measure / locally finite | `ukuran topologis`; `berhingga secara lokal` | Keep the topology and finiteness properties distinct; do not shorten the second form to an ambiguous bare `lokal`. |
+| inner regular / inner regularity | `regular dalam`; `regularitas dalam` | Attach the governing compact, closed, or K$_{\sigma}$ class explicitly. Use `regularitas luar` for the complementary open-set notion. |
+| Borel sigma-algebra / K-sigma set | `aljabar-sigma Borel`; `himpunan K$_{\sigma}$` | Continue the locale-first lexical sigma convention without altering formula-level sigma symbols. |
+| Lusin's theorem / lower semi-continuous | `teorema Lusin`; `semikontinu bawah` | Retain the named theorem and the established one-word technical compound. |
+| locally integrable / indefinite-integral measure | `terintegralkan secara lokal`; `ukuran integral tak tentu` | Continue the admitted Chapter 23 wording and avoid a new hyphenated compound. |
+| image measure / point-supported measure | `ukuran citra`; `ukuran yang bertumpu pada titik` | Distinguish pushforward construction from support terminology. |
+| bounded support / support / self-supporting | `dukungan terbatas`; `dukungan`; `menopang dirinya sendiri` | Reserve `dukungan` for the ordinary support. Render Fremlin's coined predicate as a full reader-first clause and retain its English key only in the backend. |
+| Radon--Nikodým derivative / Lebesgue--Stieltjes measure | `turunan Radon--Nikodým`; `ukuran Lebesgue--Stieltjes` | Preserve both proper names and their exact mathematical roles. |
+| upwards/downwards-directed | `terarah ke atas`; `terarah ke bawah` | Continue the established order-theoretic forms. |
+| c.l.d. product measure / subspace measure | `ukuran produk lengkap yang ditentukan secara lokal (c.l.d.)`; `ukuran subruang` | Expand c.l.d. at first use in the section, then retain `ukuran produk c.l.d.`. |
+
+The independent authority audit isolates ten high-confidence source anomalies
+for explicit derivative correction and rejects several unusual but valid
+expressions. Their finite evidence lives in
+`qa/chapter25/mt256-source-anomaly-candidates.md`; terminology choices do not
+themselves authorize formula or reference changes.
