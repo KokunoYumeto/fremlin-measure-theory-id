@@ -31,9 +31,15 @@ Updated: 2026-08-28 (Europe/Berlin)
   Desktop/mobile replay passes with a centered, width-filling main column and
   no document overflow, broken fragment, unresolved macro, missing
   dependency, or console warning/error.
-- Preserve this complete bounded unit on repository `main`, anonymously read
-  it back, then translate complete `mt257.tex`, `Further exercises`, official
-  pages 285–287: 9,803 bytes / 236 lines / SHA-256
+- The complete bounded unit is preserved on repository `main` at commit
+  `37c24130535c7aea075d88a82fcd3d8aeb0f2435`, tree
+  `38ae58d119c01f848040b136ef7a2642ddb4f560`. Eight selected public raw files
+  match local bytes and hashes exactly; sanitized evidence is
+  `qa/chapter25/mt256-github-push-receipt.json`, 4,236 bytes / SHA-256
+  `b638b75a0d67ada97bd8fd4e7b3e1584a2604fe6124dee59aca75defa3d137c6`.
+  This does not change the 338-page admitted/released boundary.
+- Next translate complete `mt257.tex`, `Further exercises`, official pages
+  285–287: 9,803 bytes / 236 lines / SHA-256
   `45e95ad49d7d4a0f83c485c3100ff880100c78bc72e7dc99ccffb8c31a8b7996`.
   Consolidate and publish the complete Chapter 25 boundary at 389/672. No
   upstream contact occurred.

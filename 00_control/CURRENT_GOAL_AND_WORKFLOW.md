@@ -9,8 +9,9 @@ Status: active until all 672 official pages are publicly verified
 > S252, plus complete S253–S256 translated and validated for a contiguous
 > 386/672 candidate. Complete S254 and S255 are preserved on public repository
 > `main`; S256 has passed its bounded unit, independent semantic, and
-> desktop/mobile reader gates and is ready for the required bounded push and
-> anonymous byte readback. The exact next translation cursor is `mt257.tex` at
+> desktop/mobile reader gates and is publicly preserved on `main` at commit
+> `37c24130535c7aea075d88a82fcd3d8aeb0f2435` with exact anonymous byte
+> readback. The exact next translation cursor is `mt257.tex` at
 > Volume II page 285. Complete mt257 and perform the next cumulative backend, reader, package,
 > GitHub, and Zenodo transaction at complete Chapter 25, 389/672. All earlier
 > cursor numbers retained later in this file are historical evidence only.
@@ -74,9 +75,8 @@ anonymously returned the exact reader-first PDF, resumable ZIP, and checksum
 witness. The cumulative PDF has 363 A4 reflow pages; that physical count does
 not replace the 338-page official coverage identity.
 
-Current action: preserve complete validated `mt256.tex` on repository `main`
-with anonymous exact-byte readback, then translate and validate complete
-`mt257.tex`. Consolidate backend/readers/admission and publish at complete
+Current action: translate and validate complete `mt257.tex`, then consolidate
+backend/readers/admission and publish at complete
 Chapter 25, 389/672. Do not spend a full release or Zenodo transaction on each
 small section.
 

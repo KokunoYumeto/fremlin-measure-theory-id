@@ -44,8 +44,16 @@ The semantic reader contains all 39 source units, 18 exercises, 9 hints, and
 the source's print section-title and running-head metadata and are explicitly
 hash-bound in the receipt. Desktop 1280×720 and mobile 390×844 replay have no
 document overflow, broken fragment, unresolved TeX/MathJax macro, console
-warning/error, or missing asset. The next action is the bounded repository
-preservation push and anonymous readback, followed immediately by complete
+warning/error, or missing asset. The bounded repository preservation push and
+anonymous readback are complete at
+commit `37c24130535c7aea075d88a82fcd3d8aeb0f2435`, tree
+`38ae58d119c01f848040b136ef7a2642ddb4f560`; eight selected public raw files
+matched local bytes and hashes exactly. Sanitized evidence is
+`qa/chapter25/mt256-github-push-receipt.json`, 4,236 bytes / SHA-256
+`b638b75a0d67ada97bd8fd4e7b3e1584a2604fe6124dee59aca75defa3d137c6`.
+This is not a release tag, Zenodo version, or admission transaction.
+
+The next executable source is complete
 `authority/fremlin/source/mt2.2016/mt257.tex`, official Volume II pages
 285–287: 9,803 bytes / 236 lines / SHA-256
 `45e95ad49d7d4a0f83c485c3100ff880100c78bc72e7dc99ccffb8c31a8b7996`.

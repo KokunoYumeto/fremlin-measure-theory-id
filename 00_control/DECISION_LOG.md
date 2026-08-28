@@ -1007,3 +1007,12 @@ preservation without creating a release tag or Zenodo version, anonymously
 read it back, then translate complete `mt257.tex` at official pages 285–287.
 The cumulative GitHub/Zenodo transaction remains complete Chapter 25 at
 389/672. No upstream contact occurred; the 672-page goal stays active.
+
+The bounded unit was then pushed to public repository `main` at commit
+`37c24130535c7aea075d88a82fcd3d8aeb0f2435` (tree
+`38ae58d119c01f848040b136ef7a2642ddb4f560`). Anonymous readback matched the
+translation and seven selected QA/control identities exactly. Sanitized
+evidence is `qa/chapter25/mt256-github-push-receipt.json`, 4,236 bytes /
+SHA-256
+`b638b75a0d67ada97bd8fd4e7b3e1584a2604fe6124dee59aca75defa3d137c6`.
+No tag or Zenodo version was created for this intermediate checkpoint.
