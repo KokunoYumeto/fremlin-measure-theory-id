@@ -2,13 +2,37 @@
 
 Updated: 2026-08-28 (Europe/Berlin)
 
-> **Superseding owner state (2026-08-28):** 338/672 official pages remain
-> admitted, released, and anonymously verified through S252. Complete
-> S253–S257 are additionally translated and deterministically validated, so
-> the local contiguous candidate is 389/672 and Chapter 25 is complete. The
-> active operation is cumulative consolidation, admission, and publication;
-> after it, the next exact source is `mt26.tex` followed by `mt261.tex` at
-> Volume II page 288. The older checkpoint notices below are historical.
+> **Superseding owner state (2026-08-28):** complete Chapter 25 is admitted,
+> released, and anonymously verified at 389/672 official pages (57.9%). The
+> next exact source is `mt26.tex` followed by `mt261.tex` at Volume II page
+> 288; 283 pages remain. The older checkpoint notices below are historical.
+
+## Live owner state through complete Chapter 25 public
+
+- Public/admitted coverage: **389/672 official pages**, complete Volume I and
+  contiguous Volume II pages 1–287 through complete Chapters 21–25.
+- GitHub: tag `v0.18.0-v2-through-ch25`, boundary commit
+  `a1b93b7f0ca5197f2ca05e5a0e1cfb1c0b5ebb4e`, boundary tree
+  `dd9ad023fb7a95d7acb4c2259d4c1c90b5219857`, receipt commit
+  `9867e5146527183d40d93f34a680f125fa1b35d3`.
+- Zenodo: record `22149439`, DOI `10.5281/zenodo.22149439`, existing concept
+  DOI `10.5281/zenodo.22059798`.
+- Exact public assets at both destinations: reader PDF 2,967,476 bytes /
+  SHA-256
+  `11c9af2cae2f0bd63cff2c8be3d511e88105fbcbf3b34888887abcf28669e8d2`;
+  deterministic ZIP 29,001,126 bytes / SHA-256
+  `c8e725141395145addc94a068073f97cd54ae92a3b8b4b1b5e800e0122f0a7c6`;
+  checksum witness 254 bytes / SHA-256
+  `066bb53c5faefe952ebcad4770ba6cbcedcae8549d209f3898bbee8c75b299ea`.
+- Anonymous readback of the inventories and all three assets passed exactly.
+  Sanitized receipts are `qa/PUBLICATION_RECEIPT_V0180_V2_THROUGH_CH25.json`
+  and `qa/ZENODO_PUBLICATION_RECEIPT_V0180_V2_THROUGH_CH25.json`.
+- CP0018, backend catalog v1.13, the 419-page PDF, and 67-route/134-viewport
+  offline-reader replay pass. The admitted cumulative census is 757 exercises
+  and 178 hints.
+- Next action: freeze and translate complete `mt26.tex` and `mt261.tex` from
+  official Volume II page 288, then continue the contiguous Chapter 26 batch.
+  The complete-corpus goal remains active; no upstream contact occurred.
 
 ## Live owner state through complete S257 / Chapter 25 candidate
 

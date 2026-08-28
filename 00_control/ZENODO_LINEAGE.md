@@ -294,10 +294,38 @@ SHA-256
 The public inventory, metadata, and all three assets passed anonymous exact
 byte/SHA-256 readback.
 
+## Published version 0.18.0-v2-through-ch25
+
+- Record: `22149439`
+- DOI: `10.5281/zenodo.22149439`
+- Public URL: <https://zenodo.org/records/22149439>
+- Version: `0.18.0-v2-through-ch25`
+- Status: public, admitted cumulative checkpoint through complete Volume II
+  Chapter 25; 389/672 official pages, with Volume II pages 1–287 included.
+- Lineage: exactly one new version from record `22105474`; concept DOI remains
+  `10.5281/zenodo.22059798`; no standalone or competing concept was created.
+- License metadata: Zenodo `dsl` (Design Science License); MathJax 3.2.2 is a
+  separately scoped Apache-2.0 component.
+
+Exact public assets:
+
+| Asset | Bytes | SHA-256 |
+|---|---:|---|
+| `00_READ_FIRST_FONDASI_TEORI_UKURAN_V1_DAN_V2_HINGGA_BAB_25.pdf` | 2,967,476 | `11c9af2cae2f0bd63cff2c8be3d511e88105fbcbf3b34888887abcf28669e8d2` |
+| `fondasi-teori-ukuran-v1-dan-v2-hingga-bab25-id-v0.18.0.zip` | 29,001,126 | `c8e725141395145addc94a068073f97cd54ae92a3b8b4b1b5e800e0122f0a7c6` |
+| `SHA256SUMS-v0.18.0-v2-through-ch25.txt` | 254 | `066bb53c5faefe952ebcad4770ba6cbcedcae8549d209f3898bbee8c75b299ea` |
+
+Sanitized evidence:
+`qa/ZENODO_PUBLICATION_RECEIPT_V0180_V2_THROUGH_CH25.json`, 4,368 bytes,
+SHA-256
+`bcbd756191b9e7b9e1cfa4a550105dc7cef4ac9390d458f79cafae9acf9c8224`.
+The public inventory, metadata, and all three assets passed anonymous exact
+byte/SHA-256 readback.
+
 ## Next version
 
 At the next substantial admitted Volume II boundary, create exactly one new
-version from record `22105474` in the same concept. Continue source order from
-`mt253.tex`, preserve explicit partial-corpus status until 672/672, and do not
-create a duplicate concept or spend a publication transaction on each small
-section.
+version from record `22149439` in the same concept. Continue source order from
+`mt26.tex` and `mt261.tex` at official page 288, preserve explicit
+partial-corpus status until 672/672, and do not create a duplicate concept or
+spend a publication transaction on each small section.

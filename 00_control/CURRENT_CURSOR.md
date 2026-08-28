@@ -1,5 +1,41 @@
 # Current Cursor
 
+## Superseding public production cursor — Chapter 26 (2026-08-28)
+
+Complete Volume I and contiguous Volume II pages 1–287 through complete
+Chapter 25 are admitted, published, and anonymously verified: **389/672
+official pages (57.9%)**. Exactly 283 pages remain. CP0018 admits S253–S257;
+catalog v1.13, the 419-page cumulative PDF, and all 67 offline-reader routes
+passed deterministic and desktop/mobile replay.
+
+The public checkpoint is GitHub tag `v0.18.0-v2-through-ch25` at boundary
+commit `a1b93b7f0ca5197f2ca05e5a0e1cfb1c0b5ebb4e` and receipt commit
+`9867e5146527183d40d93f34a680f125fa1b35d3`. The same exact three assets are
+public in Zenodo record `22149439`, DOI `10.5281/zenodo.22149439`, under concept
+DOI `10.5281/zenodo.22059798`. Anonymous downloads matched:
+
+- reader PDF: 2,967,476 bytes, SHA-256
+  `11c9af2cae2f0bd63cff2c8be3d511e88105fbcbf3b34888887abcf28669e8d2`;
+- deterministic ZIP: 29,001,126 bytes, SHA-256
+  `c8e725141395145addc94a068073f97cd54ae92a3b8b4b1b5e800e0122f0a7c6`;
+- checksum witness: 254 bytes, SHA-256
+  `066bb53c5faefe952ebcad4770ba6cbcedcae8549d209f3898bbee8c75b299ea`.
+
+Sanitized receipts are
+`qa/PUBLICATION_RECEIPT_V0180_V2_THROUGH_CH25.json` (4,854 bytes; SHA-256
+`9399ff8d32754a1156a556781746d0770d85f16f9ba216a63f5de5432a235432`)
+and `qa/ZENODO_PUBLICATION_RECEIPT_V0180_V2_THROUGH_CH25.json` (4,368 bytes;
+SHA-256
+`bcbd756191b9e7b9e1cfa4a550105dc7cef4ac9390d458f79cafae9acf9c8224`).
+
+The exact next source cursor is
+`authority/fremlin/source/mt2.2016/mt26.tex`, followed by `mt261.tex`, beginning
+at official Volume II page 288. Freeze those exact members, translate them in
+source order into natural `id-ID`, preserve all mathematics and stable
+structures, and continue the contiguous Chapter 26 batch. Light unit QA runs
+per section; cumulative reader/backend packaging waits for the next
+substantial boundary. No upstream contact occurred.
+
 ## Superseding local production cursor — complete Chapter 25 candidate (2026-08-28)
 
 The admitted and publicly verified boundary remains complete Volume I plus

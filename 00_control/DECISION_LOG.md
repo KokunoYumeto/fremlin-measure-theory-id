@@ -1059,3 +1059,37 @@ Zenodo-lineage publication, and anonymous byte readback at 389/672. Only after
 that substantial boundary is public does production advance to `mt26.tex` and
 `mt261.tex` at Volume II page 288. No upstream contact occurred; the complete
 672-page goal remains active.
+
+## 2026-08-28 — D049: Admit and publish complete Chapter 25 at 389/672
+
+CP0018 admits exactly S253–S257 and closes complete Chapter 25, raising the
+admitted corpus from 338 to **389/672 official pages (57.9%)**. Backend catalog
+v1.13 validates 7,156 unique schema records, 242 resources, and 63 catalog
+units. The cumulative reader PDF is 2,967,476 bytes / 419 A4 reflow pages /
+SHA-256
+`11c9af2cae2f0bd63cff2c8be3d511e88105fbcbf3b34888887abcf28669e8d2`;
+all-page geometry/visual inspection passes. The 67-route offline reader passes
+134 desktop/mobile observations with zero runtime error, broken link, or
+document-width overflow.
+
+The deterministic release ZIP contains 2,087 files and is 29,001,126 bytes /
+SHA-256
+`c8e725141395145addc94a068073f97cd54ae92a3b8b4b1b5e800e0122f0a7c6`;
+its checksum witness is 254 bytes / SHA-256
+`066bb53c5faefe952ebcad4770ba6cbcedcae8549d209f3898bbee8c75b299ea`.
+Two-build identity, CRC/member replay, exact embedded-PDF identity, and the
+finite privacy overlay all pass.
+
+GitHub prerelease `v0.18.0-v2-through-ch25` is public at boundary commit
+`a1b93b7f0ca5197f2ca05e5a0e1cfb1c0b5ebb4e`, tree
+`dd9ad023fb7a95d7acb4c2259d4c1c90b5219857`, with receipt commit
+`9867e5146527183d40d93f34a680f125fa1b35d3`. Zenodo record `22149439`, DOI
+`10.5281/zenodo.22149439`, is the next version of existing concept DOI
+`10.5281/zenodo.22059798`. Anonymous inventories and downloads at both
+destinations match all three local assets by byte count and SHA-256. The exact
+receipts are `qa/PUBLICATION_RECEIPT_V0180_V2_THROUGH_CH25.json` and
+`qa/ZENODO_PUBLICATION_RECEIPT_V0180_V2_THROUGH_CH25.json`.
+
+The goal remains active. Exactly 283 official pages remain, and production now
+continues at `mt26.tex`, then `mt261.tex`, beginning at Volume II page 288.
+No upstream contact occurred.

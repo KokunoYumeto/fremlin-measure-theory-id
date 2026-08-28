@@ -4,29 +4,24 @@ Updated: 2026-08-28 (Europe/Berlin)
 Task: `01a01f45-9d00-7f42-9071-4f932b45512a`  
 Status: active until all 672 official pages are publicly verified
 
-> **Superseding checkpoint (2026-08-28):** the authoritative current state is
-> 338/672 official pages admitted, published, and anonymously verified through
-> S252, plus complete S253–S257 translated and validated for a contiguous
-> **389/672 candidate**. Chapter 25 is complete. S257 passes bounded unit,
-> correction, independent reread, and desktop/mobile semantic-reader gates;
-> its exact controls are `qa/chapter25/mt257-source-freeze.json` and
-> `qa/chapter25/mt257-semantic-html-qa.json`. The active operation is the one
-> cumulative backend, reader, package, GitHub, and Zenodo transaction for
-> complete Chapter 25. After public-byte verification, the translation cursor
-> advances to `mt26.tex` and `mt261.tex` at Volume II page 288. All earlier
-> cursor numbers retained later in this file are historical evidence only.
+> **Superseding checkpoint (2026-08-28):** complete Chapter 25 is admitted,
+> published, and anonymously verified at **389/672 official pages (57.9%)**.
+> GitHub tag `v0.18.0-v2-through-ch25` and Zenodo DOI
+> `10.5281/zenodo.22149439` expose the same reader-first PDF, deterministic ZIP,
+> and checksum witness at the exact local byte and SHA-256 identities. The
+> source cursor is now `mt26.tex`, then `mt261.tex`, beginning at official
+> Volume II page 288; 283 official pages remain. All earlier cursor numbers
+> retained later in this file are historical evidence only.
 
 Complete and publish one coherent Bahasa Indonesia edition of D. H. Fremlin's
 *Measure Theory*, Volume 1 (*The Irreducible Minimum*) and Volume 2 (*Broad
 Foundations*) only: 672 official pages. Do not reopen selection, reduce the
 corpus to a course slice, include Volumes 3–5, or merge comparator books.
-Volume I and contiguous Volume II pages 1–236 are admitted and public at
-338/672 official pages. Complete S253–S257, Volume II pages 237–287, are
-validated source-order candidates, making 389/672 translated and closing
-Chapter 25. Preserve the public boundary and candidates; consolidate and
-publish CP0018, then continue at `mt26.tex` and `mt261.tex`. The goal remains
-active through all remaining Volume II units; 283 official pages remain
-untranslated.
+Volume I and contiguous Volume II pages 1–287 are admitted and public at
+389/672 official pages, including complete Chapters 21–25. Preserve that
+public boundary and continue in source order at `mt26.tex` and `mt261.tex`.
+The goal remains active through all remaining Volume II units; 283 official
+pages remain untranslated.
 
 Authority is
 `authority/fremlin` within this corpus repository:
@@ -68,20 +63,26 @@ Do not retry Figshare absent a license/account change. No upstream contact
 during production. After both volumes, at most one concise deduplicated report
 may be sent, signed `Codex, on instructions of the user.`
 
-The current public boundary is GitHub tag `v0.17.0-v2-through-s252`, boundary
-commit `d7d35539f7b11274a7ff202ce24ee8aef26c5550`, receipt commit
-`8b05306b63ec563a9953ad3e6d1407795eb4c53f`, and Zenodo record `22105474`,
-DOI `10.5281/zenodo.22105474`, in the existing concept DOI. Both destinations
-anonymously returned the exact reader-first PDF, resumable ZIP, and checksum
-witness. The cumulative PDF has 363 A4 reflow pages; that physical count does
-not replace the 338-page official coverage identity.
+The current public boundary is GitHub tag `v0.18.0-v2-through-ch25`, boundary
+commit `a1b93b7f0ca5197f2ca05e5a0e1cfb1c0b5ebb4e`, receipt commit
+`9867e5146527183d40d93f34a680f125fa1b35d3`, and Zenodo record `22149439`,
+DOI `10.5281/zenodo.22149439`, in concept DOI
+`10.5281/zenodo.22059798`. Both destinations anonymously returned the exact
+reader-first PDF (2,967,476 bytes; SHA-256
+`11c9af2cae2f0bd63cff2c8be3d511e88105fbcbf3b34888887abcf28669e8d2`),
+deterministic ZIP (29,001,126 bytes; SHA-256
+`c8e725141395145addc94a068073f97cd54ae92a3b8b4b1b5e800e0122f0a7c6`),
+and checksum witness (254 bytes; SHA-256
+`066bb53c5faefe952ebcad4770ba6cbcedcae8549d209f3898bbee8c75b299ea`).
+The cumulative PDF has 419 A4 reflow pages; that physical count does not
+replace the 389-page official coverage identity.
 
-Current action: generate and validate the corrected v1.13 backend, cumulative
-PDF and 67-route offline reader; inspect and admit CP0018; then package and
-publish complete Chapter 25 at 389/672 in the existing GitHub and Zenodo
-lineages with anonymous byte readback. The corrected census is 156 Chapter 25
-exercises / 35 hints and 757 cumulative exercises / 178 hints. Do not spend a
-full release or Zenodo transaction on each small section.
+Current action: freeze and translate the complete Chapter 26 introduction and
+Section 261 from official Volume II page 288, then continue in a contiguous
+chapter/major-section batch. Run light bounded unit checks while translating;
+defer cumulative backend, reader, package, and publication work to the next
+substantial boundary. The admitted census is 757 exercises / 178 hints. Do not
+spend a full release or Zenodo transaction on each small section.
 
 Recovery state lives in `00_control/CURRENT_GOAL_AND_WORKFLOW.md`,
 `CURRENT_CURSOR.md`, `CURRENT_STATE.md`, `DECISION_LOG.md`,
