@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Bab 24 — Ruang fungsi — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        BbbQ: '\\mathbb{Q}', BbbR: '\\mathbb{R}',
+        eightBbb: ['\\mathbb{#1}', 1],
+        DiniD: '\\overline{D}', Dinid: '\\underline{D}',
+        Var: '\\operatorname{Var}',
+        bumpeq: '=_{\\mathrm{approx}}',
+        intstar: '\\operatorname{int}^{*}',
+        family: ['\\langle #3\\rangle_{#1\\in #2}', 3],
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        displaycause: ['\\text{(#1)}', 1],
+        bigcupop: '\\bigcup', biggerint: '\\int',
+        eae: '=_{\\mathrm{a.e.}}', leae: '\\le_{\\mathrm{a.e.}}', geae: '\\ge_{\\mathrm{a.e.}}',
+        restr: '\\mathord{\\upharpoonright}', restrp: '\\mathord{\\upharpoonright}',
+        Real: '\\operatorname{Re}', Imag: '\\operatorname{Im}',
+        tbf: ['\\mathbf{#1}', 1], eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Qed: '\\square',
+        BbbN: '\\mathbb{N}', Expn: '\\mathbb{E}',
+        Cal: ['\\mathcal{#1}', 1], dom: '\\operatorname{dom}',
+        coint: ['\\left[#1\\right[', 1],
+        sequencen: ['\\langle #1_n\\rangle_{n\\in\\mathbb{N}}', 1],
+        imp: '\\mathop{\\text{pelestari ukuran melalui prapeta}}',
+        tildeTau: '\\widetilde{\\mathrm{T}}',
+        LLcorner: '\\mathbin{\\llcorner}',
+        prooflet: ['#1', 1],
+        halfarrow: '\\rightharpoonup',
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        roibr: '\\mathopen{{[}}',
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1]
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 2 · Bagian 24</p>
+  <h1>Bab 24 — Ruang fungsi</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi kumulatif</a></nav>
+<main id="isi">
+<p>© 1995</p>
+<span class="anchor" id="24"></span>
+<p>Kekuatan luar biasa teori integrasi Lebesgue barangkali paling jelas
+ditunjukkan oleh kemampuannya menyediakan struktur yang relevan bagi
+pertanyaan-pertanyaan yang sangat berbeda dari persoalan yang mula-mula
+hendak ditanganinya. Dalam bab ini saya menyajikan konstruksi dan sifat-sifat
+elementer beberapa ruang dasar dalam analisis fungsional.</p>
+<p>Saya tidak merasa perlu membenarkan kajian tentang ruang bernorma di sini;
+jika Anda belum pernah menjumpainya, saya berharap pendahuluan ini setidaknya
+akan menunjukkan bahwa ruang-ruang tersebut menyediakan landasan bagi suatu
+perpaduan yang mengagumkan antara aljabar dan analisis. Bagian-bagian teori
+ruang metrik, ruang bernorma, dan topologi umum yang akan kita perlukan
+diuraikan secara ringkas dalam §§2A2-2A5.  
+‘Ruang-ruang fungsi’ utama yang dibahas dalam bab ini sebenarnya memadukan
+tiga unsur struktural: ruang-ruang tersebut merupakan ruang linear
+(berdimensi tak hingga), ruang metrik, dengan konsep-konsep kontinuitas dan
+konvergensi yang menyertainya, serta ruang terurut, dengan pengertian
+supremum dan infimum yang bersesuaian. Interaksi di antara ketiga jenis
+struktur ini menyediakan khazanah gagasan yang tiada habisnya. Lebih jauh,
+banyak dari gagasan tersebut dapat diterapkan secara langsung pada beragam
+masalah dalam matematika yang kurang lebih bersifat terapan, khususnya pada
+persamaan diferensial dan integral, tetapi secara lebih umum pada setiap
+sistem dengan tak hingga banyaknya derajat kebebasan.</p>
+<p>Saya menyusun bab ini dengan bagian-bagian mengenai <span class="math inline" data-source-tex="L^0">\(L^0\)</span> (ruang kelas
+ekuivalensi semua fungsi terukur bernilai riil, tempat semua ruang lain dalam
+bab ini dibenamkan), <span class="math inline" data-source-tex="L^1">\(L^1\)</span> (kelas ekuivalensi fungsi-fungsi terintegralkan),
+<span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span> (kelas ekuivalensi fungsi-fungsi terukur terbatas), dan <span class="math inline" data-source-tex="L^p">\(L^p\)</span>
+(kelas ekuivalensi fungsi-fungsi yang pangkat ke-<span class="math inline" data-source-tex="p">\(p\)</span>-nya terintegralkan).
+Meskipun analisis fungsional biasa jauh lebih banyak memberi perhatian pada
+ruang Banach <span class="math inline" data-source-tex="L^p">\(L^p\)</span> untuk <span class="math inline" data-source-tex="1\le p\le\infty">\(1\le p\le\infty\)</span> daripada pada <span class="math inline" data-source-tex="L^0">\(L^0\)</span>, dari sudut
+pandang khusus buku ini ruang <span class="math inline" data-source-tex="L^0">\(L^0\)</span> sekurang-kurangnya sama penting dan sama
+menariknya dengan ruang-ruang yang lain. Setelah keempat bagian tersebut,
+saya kembali mengkaji topologi baku pada <span class="math inline" data-source-tex="L^0">\(L^0\)</span>, yaitu topologi ‘konvergensi
+dalam ukuran’ (§<a class="xref" href="../245/index.html#245">245</a>), kemudian dua bagian yang saling terkait mengenai
+keterintegralan seragam dan kekompakan lemah dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span> (§§<a class="xref" href="../246/index.html#246">246</a>-<a class="xref" href="../247/index.html#247">247</a>).</p>
+<p>Ada satu hal teknis di sini yang tidak boleh sekali-kali luput dari perhatian.
+Walaupun sudah lazim dan wajar untuk menyebut <span class="math inline" data-source-tex="L^1">\(L^1\)</span>, <span class="math inline" data-source-tex="L^2">\(L^2\)</span>, dan yang lainnya
+sebagai ‘ruang fungsi’, unsur-unsurnya sebenarnya bukan fungsi, melainkan
+kelas-kelas ekuivalensi fungsi. Seperti terlihat dari bahasa dalam paragraf
+sebelumnya, kebiasaan saya adalah mempertahankan pembedaan itu dengan
+saksama; alasan saya diberikan dalam catatan untuk §<a class="xref" href="../241/index.html#241">241</a>.</p>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 2: Broad Foundations</cite>, Bagian 24.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 25 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-cumulative-html-route-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V2-C24-INTRO&quot;,
+  &quot;source_member&quot;: &quot;mt2.2016/mt24.tex&quot;,
+  &quot;target_bytes&quot;: 2991,
+  &quot;target_sha256&quot;: &quot;f40a419b1451a22b2e99457610fe2baa585e9365b0f84b88f6699da4e6c3c076&quot;,
+  &quot;source_ids&quot;: [
+    &quot;24&quot;
+  ],
+  &quot;corpus_id&quot;: &quot;O007-FREMLIN&quot;,
+  &quot;volume_id&quot;: &quot;O007-FREMLIN-V2&quot;,
+  &quot;volume_source_title&quot;: &quot;Broad Foundations&quot;,
+  &quot;route&quot;: &quot;24&quot;,
+  &quot;official_source_page_start&quot;: 138,
+  &quot;chapter_official_source_pages&quot;: [
+    138,
+    203
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

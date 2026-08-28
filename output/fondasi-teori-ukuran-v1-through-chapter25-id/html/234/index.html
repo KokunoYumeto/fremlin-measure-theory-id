@@ -1,0 +1,1341 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Operasi pada ukuran — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        BbbQ: '\\mathbb{Q}', BbbR: '\\mathbb{R}',
+        eightBbb: ['\\mathbb{#1}', 1],
+        DiniD: '\\overline{D}', Dinid: '\\underline{D}',
+        Var: '\\operatorname{Var}',
+        bumpeq: '=_{\\mathrm{approx}}',
+        intstar: '\\operatorname{int}^{*}',
+        family: ['\\langle #3\\rangle_{#1\\in #2}', 3],
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        displaycause: ['\\text{(#1)}', 1],
+        bigcupop: '\\bigcup', biggerint: '\\int',
+        eae: '=_{\\mathrm{a.e.}}', leae: '\\le_{\\mathrm{a.e.}}', geae: '\\ge_{\\mathrm{a.e.}}',
+        restr: '\\mathord{\\upharpoonright}', restrp: '\\mathord{\\upharpoonright}',
+        Real: '\\operatorname{Re}', Imag: '\\operatorname{Im}',
+        tbf: ['\\mathbf{#1}', 1], eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Qed: '\\square',
+        BbbN: '\\mathbb{N}', Expn: '\\mathbb{E}',
+        Cal: ['\\mathcal{#1}', 1], dom: '\\operatorname{dom}',
+        coint: ['\\left[#1\\right[', 1],
+        sequencen: ['\\langle #1_n\\rangle_{n\\in\\mathbb{N}}', 1],
+        imp: '\\mathop{\\text{pelestari ukuran melalui prapeta}}',
+        tildeTau: '\\widetilde{\\mathrm{T}}',
+        LLcorner: '\\mathbin{\\llcorner}',
+        prooflet: ['#1', 1],
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        roibr: '\\mathopen{{[}}',
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1]
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 2 · Bagian 234</p>
+  <h1>Operasi pada ukuran</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi kumulatif</a></nav>
+<main id="isi">
+<p>© 2008</p>
+<span class="anchor" id="234"></span>
+<p>Saya menggunakan beberapa halaman untuk menguraikan sejumlah konstruksi baku.
+Gagasan-gagasannya langsung, tetapi sejumlah perincian perlu dikerjakan
+agar dapat dipadukan secara kokoh ke dalam kerangka umum yang saya gunakan.
+Langkah pertama adalah memperkenalkan secara formal fungsi-fungsi pelestari ukuran melalui prapeta 
+(<a class="xref" href="#234A">234A</a>-<a class="xref" href="#234B">234B</a>), kelas transformasi terpenting di antara ruang-ruang ukur.
+Untuk membangun ukuran baru, kita memiliki konsep
+ukuran citra (<a class="xref" href="#234C">234C</a>-<a class="xref" href="#234E">234E</a>), 
+jumlah ukuran (<a class="xref" href="#234G">234G</a>-<a class="xref" href="#234H">234H</a>), dan ukuran integral tak tentu
+(<a class="xref" href="#234I">234I</a>-<a class="xref" href="#234O">234O</a>).  
+Terakhir, saya menyebutkan suatu cara mengurutkan ukuran-ukuran pada suatu
+himpunan tertentu (<a class="xref" href="#234P">234P</a>-<a class="xref" href="#234Q">234Q</a>).</p>
+<section class="source-unit" id="234A" data-source-id="234A"><h2><span class="source-label">234A</span> Fungsi pelestari ukuran melalui
+prapeta </h2>
+<p>Sudah tiba waktunya saya memperkenalkan
+hal yang paling mendekati suatu ‘morfisme’ dalam teori ukuran.
+Jika <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dan <span class="math inline" data-source-tex="(Y,\Tau,\nu)">\((Y,\Tau,\nu)\)</span> adalah ruang ukur, suatu fungsi
+<span class="math inline" data-source-tex="\phi:X\to Y">\(\phi:X\to Y\)</span> disebut <strong>pelestari ukuran melalui prapeta</strong> jika
+<span class="math inline" data-source-tex="\phi^{-1}[F]\in\Sigma">\(\phi^{-1}[F]\in\Sigma\)</span> dan <span class="math inline" data-source-tex="\mu(\phi^{-1}[F])=\nu F">\(\mu(\phi^{-1}[F])=\nu F\)</span> untuk setiap
+<span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>.</p>
+</section>
+<section class="source-unit" id="234B" data-source-id="234B"><h2><span class="source-label">234B</span> Proposisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dan <span class="math inline" data-source-tex="(Y,\Tau,\nu)">\((Y,\Tau,\nu)\)</span>
+ruang ukur, dan <span class="math inline" data-source-tex="\phi:X\to Y">\(\phi:X\to Y\)</span> suatu fungsi pelestari ukuran melalui prapeta.</p>
+<p>(a) Jika <span class="math inline" data-source-tex="\hat\mu">\(\hat\mu\)</span>, <span class="math inline" data-source-tex="\hat\nu">\(\hat\nu\)</span> masing-masing adalah
+pelengkapan dari <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, <span class="math inline" data-source-tex="\nu">\(\nu\)</span>, maka <span class="math inline" data-source-tex="\phi">\(\phi\)</span> juga pelestari ukuran melalui prapeta untuk <span class="math inline" data-source-tex="\hat\mu">\(\hat\mu\)</span> dan
+<span class="math inline" data-source-tex="\hat\nu">\(\hat\nu\)</span>.</p>
+<p>(b) <span class="math inline" data-source-tex="\mu">\(\mu\)</span> adalah ukuran peluang jika dan hanya jika
+<span class="math inline" data-source-tex="\nu">\(\nu\)</span> adalah ukuran peluang.</p>
+<p>(c)
+ <span class="math inline" data-source-tex="\mu">\(\mu\)</span> berhingga total jika dan hanya jika <span class="math inline" data-source-tex="\nu">\(\nu\)</span> berhingga total.</p>
+<p>(d)(i)
+Jika <span class="math inline" data-source-tex="\nu">\(\nu\)</span> <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga, maka <span class="math inline" data-source-tex="\mu">\(\mu\)</span> <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga.</p>
+<p>  (ii) Jika <span class="math inline" data-source-tex="\nu">\(\nu\)</span> semihingga dan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga, maka <span class="math inline" data-source-tex="\nu">\(\nu\)</span>
+<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga.</p>
+<p>(e)(i)
+Jika <span class="math inline" data-source-tex="\nu">\(\nu\)</span> <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga dan tanpa atom, maka <span class="math inline" data-source-tex="\mu">\(\mu\)</span> tanpa atom.</p>
+<p>  (ii) Jika <span class="math inline" data-source-tex="\nu">\(\nu\)</span> semihingga dan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> atomik murni, maka
+<span class="math inline" data-source-tex="\nu">\(\nu\)</span> atomik murni.</p>
+<p>(f)(i) <span class="math inline" data-source-tex="\mu^*\phi^{-1}[B]\le\nu^*B">\(\mu^*\phi^{-1}[B]\le\nu^*B\)</span> untuk
+setiap <span class="math inline" data-source-tex="B\subseteq Y">\(B\subseteq Y\)</span>.</p>
+<p>  (ii) <span class="math inline" data-source-tex="\mu^*A\le\nu^*\phi[A]">\(\mu^*A\le\nu^*\phi[A]\)</span> untuk setiap <span class="math inline" data-source-tex="A\subseteq X">\(A\subseteq X\)</span>.</p>
+<p>(g)
+ Jika <span class="math inline" data-source-tex="(Z,\Lambda,\lambda)">\((Z,\Lambda,\lambda)\)</span> adalah ruang ukur lain, dan
+<span class="math inline" data-source-tex="\psi:Y\to Z">\(\psi:Y\to Z\)</span> bersifat pelestari ukuran melalui prapeta, maka <span class="math inline" data-source-tex="\psi\phi:X\to Z">\(\psi\phi:X\to Z\)</span> bersifat pelestari ukuran melalui prapeta.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Jika <span class="math inline" data-source-tex="\hat\nu">\(\hat\nu\)</span> mengukur <span class="math inline" data-source-tex="F">\(F\)</span>, terdapat <span class="math inline" data-source-tex="F&#x27;">\(F&#x27;\)</span>, <span class="math inline" data-source-tex="F&#x27;&#x27;\in\Tau">\(F&#x27;&#x27;\in\Tau\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="F&#x27;\subseteq F\subseteq F&#x27;&#x27;">\(F&#x27;\subseteq F\subseteq F&#x27;&#x27;\)</span> dan
+<span class="math inline" data-source-tex="\nu(F&#x27;&#x27;\setminus F&#x27;)=0">\(\nu(F&#x27;&#x27;\setminus F&#x27;)=0\)</span>. Sekarang</p>
+<div class="centerline"><span class="math inline" data-source-tex="\phi^{-1}[F&#x27;]\subseteq\phi^{-1}[F]\subseteq\phi^{-1}[F&#x27;&#x27;]">\(\phi^{-1}[F&#x27;]\subseteq\phi^{-1}[F]\subseteq\phi^{-1}[F&#x27;&#x27;]\)</span>,
+  <span class="math inline" data-source-tex="\mu(\phi^{-1}[F&#x27;&#x27;]\setminus\phi^{-1}[F&#x27;])=\nu(F&#x27;&#x27;\setminus F&#x27;)=0">\(\mu(\phi^{-1}[F&#x27;&#x27;]\setminus\phi^{-1}[F&#x27;])=\nu(F&#x27;&#x27;\setminus F&#x27;)=0\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="\hat\mu">\(\hat\mu\)</span> mengukur <span class="math inline" data-source-tex="\phi^{-1}[F]">\(\phi^{-1}[F]\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\hat\mu(\phi^{-1}[F])=\mu\phi^{-1}[F&#x27;]=\nu F&#x27;=\hat\nu F">\(\hat\mu(\phi^{-1}[F])=\mu\phi^{-1}[F&#x27;]=\nu F&#x27;=\hat\nu F\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="F">\(F\)</span> sembarang, <span class="math inline" data-source-tex="\phi">\(\phi\)</span> bersifat pelestari ukuran melalui prapeta untuk <span class="math inline" data-source-tex="\hat\mu">\(\hat\mu\)</span> dan
+<span class="math inline" data-source-tex="\hat\nu">\(\hat\nu\)</span>.</p>
+<p> </p>
+<p><strong>(b)-(c)</strong> tentu saja jelas.</p>
+<p> </p>
+<p><strong>(d)(i)</strong> Jika <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> adalah penutup <span class="math inline" data-source-tex="Y">\(Y\)</span> oleh
+himpunan-himpunan berukuran berhingga terhadap <span class="math inline" data-source-tex="\nu">\(\nu\)</span>, maka
+<span class="math inline" data-source-tex="\sequencen{\phi^{-1}[F_n]}">\(\sequencen{\phi^{-1}[F_n]}\)</span> adalah penutup <span class="math inline" data-source-tex="X">\(X\)</span> oleh himpunan-himpunan
+berukuran berhingga terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Misalkan <span class="math inline" data-source-tex="\Cal F\subseteq\Tau">\(\Cal F\subseteq\Tau\)</span> suatu keluarga saling lepas
+dari himpunan-himpunan yang tidak terabaikan terhadap <span class="math inline" data-source-tex="\nu">\(\nu\)</span>. Maka
+<span class="math inline" data-source-tex="\family{F}{\Cal F}{\phi^{-1}[F]}">\(\family{F}{\Cal F}{\phi^{-1}[F]}\)</span> adalah keluarga saling lepas dari
+himpunan-himpunan yang tidak terabaikan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Menurut <a class="xref" href="../215/index.html#215B">215B</a>(iii),
+<span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> terhitung. Dengan menggunakan <a class="xref" href="../215/index.html#215B">215B</a>(iii) dalam arah sebaliknya,
+<span class="math inline" data-source-tex="\nu">\(\nu\)</span> bersifat <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga.</p>
+<p> </p>
+<p><strong>(e)(i)</strong> Andaikan <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> dan <span class="math inline" data-source-tex="\mu E&gt;0">\(\mu E&gt;0\)</span>. Misalkan
+<span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> suatu penutup <span class="math inline" data-source-tex="Y">\(Y\)</span> oleh himpunan-himpunan berukuran
+berhingga terhadap <span class="math inline" data-source-tex="\nu">\(\nu\)</span>. Karena <span class="math inline" data-source-tex="\nu">\(\nu\)</span> tanpa atom, untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span> kita
+dapat menemukan suatu partisi berhingga <span class="math inline" data-source-tex="\family{i}{I_n}{F_{ni}}">\(\family{i}{I_n}{F_{ni}}\)</span>
+dari <span class="math inline" data-source-tex="F_n">\(F_n\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\nu F_{ni}&lt;\mu E">\(\nu F_{ni}&lt;\mu E\)</span> untuk setiap <span class="math inline" data-source-tex="i\in I_n">\(i\in I_n\)</span>
+(gunakan <a class="xref" href="../215/index.html#215D">215D</a> berulang kali). Sekarang
+<span class="math inline" data-source-tex="X=\bigcup_{n\in\Bbb N,i\in I_n}\phi^{-1}[F_{ni}]">\(X=\bigcup_{n\in\Bbb N,i\in I_n}\phi^{-1}[F_{ni}]\)</span>, sehingga terdapat
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> dan <span class="math inline" data-source-tex="i\in I_n">\(i\in I_n\)</span> dengan</p>
+<div class="centerline"><span class="math inline" data-source-tex="0&lt;\mu(E\cap\phi^{-1}[F_{ni}])
+\le\mu\phi^{-1}[F_{ni}]=\nu F_{ni}&lt;\mu E">\(0&lt;\mu(E\cap\phi^{-1}[F_{ni}])
+\le\mu\phi^{-1}[F_{ni}]=\nu F_{ni}&lt;\mu E\)</span>,</div>
+<p>dan <span class="math inline" data-source-tex="E">\(E\)</span> bukan atom terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Karena <span class="math inline" data-source-tex="E">\(E\)</span> sembarang, <span class="math inline" data-source-tex="\mu">\(\mu\)</span>
+tanpa atom.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Andaikan <span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span> dan <span class="math inline" data-source-tex="\nu F&gt;0">\(\nu F&gt;0\)</span>. Karena <span class="math inline" data-source-tex="\nu">\(\nu\)</span>
+semihingga, terdapat suatu <span class="math inline" data-source-tex="F_1\subseteq F">\(F_1\subseteq F\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="0&lt;\nu F_1&lt;\infty">\(0&lt;\nu F_1&lt;\infty\)</span>. Sekarang <span class="math inline" data-source-tex="\mu\phi^{-1}[F_1]&gt;0">\(\mu\phi^{-1}[F_1]&gt;0\)</span>; karena <span class="math inline" data-source-tex="\mu">\(\mu\)</span>
+atomik murni, terdapat suatu atom terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>,
+<span class="math inline" data-source-tex="E\subseteq\phi^{-1}[F_1]">\(E\subseteq\phi^{-1}[F_1]\)</span>.</p>
+<p>Misalkan <span class="math inline" data-source-tex="\Cal G">\(\Cal G\)</span> adalah himpunan semua <span class="math inline" data-source-tex="G\in\Tau">\(G\in\Tau\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="G\subseteq F_1">\(G\subseteq F_1\)</span> dan <span class="math inline" data-source-tex="\mu(E\cap\phi^{-1}[G])=0">\(\mu(E\cap\phi^{-1}[G])=0\)</span>. Gabungan setiap barisan
+di dalam <span class="math inline" data-source-tex="\Cal G">\(\Cal G\)</span> termasuk dalam <span class="math inline" data-source-tex="\Cal G">\(\Cal G\)</span>, sehingga menurut 215Ac terdapat
+suatu <span class="math inline" data-source-tex="H\in\Cal G">\(H\in\Cal G\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\nu(G\setminus H)=0">\(\nu(G\setminus H)=0\)</span> kapan pun
+<span class="math inline" data-source-tex="G\in\Cal G">\(G\in\Cal G\)</span>. Tinjau <span class="math inline" data-source-tex="F_1\setminus H">\(F_1\setminus H\)</span>. Kita mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu(F_1\setminus H)
+=\mu(\phi^{-1}[F_1]\setminus\phi^{-1}[H])
+\ge\mu(E\setminus\phi^{-1}[H])
+=\mu E&gt;0">\(\nu(F_1\setminus H)
+=\mu(\phi^{-1}[F_1]\setminus\phi^{-1}[H])
+\ge\mu(E\setminus\phi^{-1}[H])
+=\mu E&gt;0\)</span>.</div>
+<p>Jika <span class="math inline" data-source-tex="G\in\Tau">\(G\in\Tau\)</span> dan <span class="math inline" data-source-tex="G\subseteq F_1\setminus H">\(G\subseteq F_1\setminus H\)</span>,
+maka salah satu dari <span class="math inline" data-source-tex="E\cap\phi^{-1}[G]">\(E\cap\phi^{-1}[G]\)</span> dan
+<span class="math inline" data-source-tex="E\setminus\phi^{-1}[G]">\(E\setminus\phi^{-1}[G]\)</span> terabaikan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>.
+Dalam kasus pertama, <span class="math inline" data-source-tex="G\in\Cal G">\(G\in\Cal G\)</span> dan <span class="math inline" data-source-tex="G=G\setminus H">\(G=G\setminus H\)</span> terabaikan terhadap
+<span class="math inline" data-source-tex="\nu">\(\nu\)</span>. Dalam kasus kedua, <span class="math inline" data-source-tex="F_1\setminus G\in\Cal G">\(F_1\setminus G\in\Cal G\)</span> dan
+<span class="math inline" data-source-tex="(F_1\setminus H)\setminus G">\((F_1\setminus H)\setminus G\)</span> terabaikan terhadap <span class="math inline" data-source-tex="\nu">\(\nu\)</span>. Karena <span class="math inline" data-source-tex="G">\(G\)</span>
+sembarang, <span class="math inline" data-source-tex="F_1\setminus H">\(F_1\setminus H\)</span> adalah atom terhadap <span class="math inline" data-source-tex="\nu">\(\nu\)</span> yang termuat dalam
+<span class="math inline" data-source-tex="F">\(F\)</span>; karena <span class="math inline" data-source-tex="F">\(F\)</span> sembarang, <span class="math inline" data-source-tex="\nu">\(\nu\)</span> atomik murni.</p>
+<p> </p>
+<p><strong>(f)(i)</strong> Misalkan <span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span> sedemikian sehingga <span class="math inline" data-source-tex="B\subseteq F">\(B\subseteq F\)</span> dan
+<span class="math inline" data-source-tex="\nu^*B=\nu F">\(\nu^*B=\nu F\)</span> (132Aa); maka <span class="math inline" data-source-tex="\phi^{-1}[B]\subseteq\phi^{-1}[F]">\(\phi^{-1}[B]\subseteq\phi^{-1}[F]\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu^*\phi^{-1}[B]\le\mu\phi^{-1}[F]=\nu F=\nu^*B">\(\mu^*\phi^{-1}[B]\le\mu\phi^{-1}[F]=\nu F=\nu^*B\)</span>.</div>
+<p> </p>
+<p>  <strong>(ii)</strong> <span class="math inline" data-source-tex="\mu^*A\le\mu^*(\phi^{-1}[\phi[A]])\le\nu^*\phi[A]">\(\mu^*A\le\mu^*(\phi^{-1}[\phi[A]])\le\nu^*\phi[A]\)</span>
+menurut (i).</p>
+<p> </p>
+<p><strong>(g)</strong> Untuk sembarang <span class="math inline" data-source-tex="W\in\Lambda">\(W\in\Lambda\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu(\psi\phi)^{-1}[W]=\mu\phi^{-1}[\psi^{-1}[W]]
+=\nu\psi^{-1}[W]=\lambda W">\(\mu(\psi\phi)^{-1}[W]=\mu\phi^{-1}[\psi^{-1}[W]]
+=\nu\psi^{-1}[W]=\lambda W\)</span>.</div></aside>
+</section>
+<section class="source-unit" id="234C" data-source-id="234C"><h2><span class="source-label">234C</span> Ukuran citra </h2>
+<p>Konstruksi berikut adalah salah satu cara paling umum bagi ruang-ruang ukur
+baru untuk muncul.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur,
+<span class="math inline" data-source-tex="Y">\(Y\)</span> sembarang himpunan, dan <span class="math inline" data-source-tex="\phi:X\to Y">\(\phi:X\to Y\)</span> suatu fungsi. Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Tau=\{F:F\subseteq Y,\,\phi^{-1}[F]\in\Sigma\}">\(\Tau=\{F:F\subseteq Y,\,\phi^{-1}[F]\in\Sigma\}\)</span>,
+  <span class="math inline" data-source-tex="\nu F=\mu(\phi^{-1}[F])">\(\nu F=\mu(\phi^{-1}[F])\)</span> untuk setiap <span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>.</div>
+<p>Maka <span class="math inline" data-source-tex="(Y,\Tau,\nu)">\((Y,\Tau,\nu)\)</span> adalah ruang ukur.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> <span class="math inline" data-source-tex="\emptyset=\phi^{-1}[\emptyset]\in\Sigma">\(\emptyset=\phi^{-1}[\emptyset]\in\Sigma\)</span>, sehingga
+<span class="math inline" data-source-tex="\emptyset\in\Tau">\(\emptyset\in\Tau\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Jika <span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>, maka <span class="math inline" data-source-tex="\phi^{-1}[F]\in\Sigma">\(\phi^{-1}[F]\in\Sigma\)</span>, sehingga
+<span class="math inline" data-source-tex="X\setminus\phi^{-1}[F]\in\Sigma">\(X\setminus\phi^{-1}[F]\in\Sigma\)</span>; tetapi
+<span class="math inline" data-source-tex="X\setminus\phi^{-1}[F]=\phi^{-1}[Y\setminus F]">\(X\setminus\phi^{-1}[F]=\phi^{-1}[Y\setminus F]\)</span>, sehingga
+<span class="math inline" data-source-tex="Y\setminus F\in\Tau">\(Y\setminus F\in\Tau\)</span>.</p>
+<p> </p>
+<p><strong>(c)</strong> Jika <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> suatu barisan di dalam <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>,
+maka <span class="math inline" data-source-tex="\phi^{-1}[F_n]\in\Sigma">\(\phi^{-1}[F_n]\in\Sigma\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, sehingga
+<span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}\phi^{-1}[F_n]\in\Sigma">\(\bigcup_{n\in\Bbb N}\phi^{-1}[F_n]\in\Sigma\)</span>; tetapi
+<span class="math inline" data-source-tex="\phi^{-1}[\bigcup_{n\in\Bbb N}F_n]=\bigcup_{n\in\Bbb N}\phi^{-1}[F_n]">\(\phi^{-1}[\bigcup_{n\in\Bbb N}F_n]=\bigcup_{n\in\Bbb N}\phi^{-1}[F_n]\)</span>,
+sehingga <span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}F_n\in\Tau">\(\bigcup_{n\in\Bbb N}F_n\in\Tau\)</span>.</p>
+<p>Dengan demikian, <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> adalah aljabar-sigma.</p>
+<p> </p>
+<p><strong>(d)</strong> <span class="math inline" data-source-tex="\nu\emptyset=\mu\phi^{-1}[\emptyset]=\mu\emptyset=0">\(\nu\emptyset=\mu\phi^{-1}[\emptyset]=\mu\emptyset=0\)</span>.</p>
+<p> </p>
+<p><strong>(e)</strong> Jika <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> suatu barisan saling lepas di dalam
+<span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>, maka <span class="math inline" data-source-tex="\sequencen{\phi^{-1}[F_n]}">\(\sequencen{\phi^{-1}[F_n]}\)</span> suatu barisan saling lepas
+di dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu(\bigcup_{n\in\Bbb N}F_n)
+=\mu\phi^{-1}[\bigcup_{n\in\Bbb N}F_n]
+=\mu(\bigcup_{n\in\Bbb N}\phi^{-1}[F_n])
+=\sum_{n=0}^{\infty}\mu\phi^{-1}[F_n]
+=\sum_{n=0}^{\infty}\nu F_n">\(\nu(\bigcup_{n\in\Bbb N}F_n)
+=\mu\phi^{-1}[\bigcup_{n\in\Bbb N}F_n]
+=\mu(\bigcup_{n\in\Bbb N}\phi^{-1}[F_n])
+=\sum_{n=0}^{\infty}\mu\phi^{-1}[F_n]
+=\sum_{n=0}^{\infty}\nu F_n\)</span>.</div>
+<p>Jadi, <span class="math inline" data-source-tex="\nu">\(\nu\)</span> adalah ukuran.</p></aside>
+</section>
+<section class="source-unit" id="234D" data-source-id="234D"><h2><span class="source-label">234D</span> Definisi </h2>
+<p>Dalam konteks <a class="xref" href="#234C">234C</a>, <span class="math inline" data-source-tex="\nu">\(\nu\)</span> disebut
+<strong>ukuran citra</strong> atau <strong>ukuran dorong-maju</strong>;
+saya akan menuliskannya sebagai <span class="math inline" data-source-tex="\mu\phi^{-1}">\(\mu\phi^{-1}\)</span>.</p>
+<p> </p>
+<p><strong>Catatan</strong> Barangkali perlu saya katakan bahwa konstruksi ini
+tidak selalu menghasilkan secara persis ukuran yang ‘tepat’ pada
+<span class="math inline" data-source-tex="Y">\(Y\)</span>; terdapat keadaan ketika suatu modifikasi dari ukuran
+<span class="math inline" data-source-tex="\mu\phi^{-1}">\(\mu\phi^{-1}\)</span> yang diuraikan di sini lebih berguna. Namun, saya akan
+mencatat keadaan tersebut secara eksplisit saat muncul; ketika saya
+menggunakan frasa tanpa hiasan ‘ukuran citra’, yang saya maksud
+adalah ukuran yang dibangun di atas.</p>
+</section>
+<section class="source-unit" id="234E" data-source-id="234E"><h2><span class="source-label">234E</span> Proposisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur,
+<span class="math inline" data-source-tex="Y">\(Y\)</span> suatu himpunan, dan <span class="math inline" data-source-tex="\phi:X\to Y">\(\phi:X\to Y\)</span> suatu fungsi; misalkan
+<span class="math inline" data-source-tex="\mu\phi^{-1}">\(\mu\phi^{-1}\)</span> ukuran citra pada <span class="math inline" data-source-tex="Y">\(Y\)</span>.</p>
+<p>(a) <span class="math inline" data-source-tex="\phi">\(\phi\)</span> bersifat pelestari ukuran melalui prapeta untuk <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dan <span class="math inline" data-source-tex="\mu\phi^{-1}">\(\mu\phi^{-1}\)</span>.</p>
+<p>(b) Jika <span class="math inline" data-source-tex="\mu">\(\mu\)</span> lengkap, maka demikian pula
+<span class="math inline" data-source-tex="\mu\phi^{-1}">\(\mu\phi^{-1}\)</span>.</p>
+<p>(c) Jika <span class="math inline" data-source-tex="Z">\(Z\)</span> suatu himpunan lain, dan
+<span class="math inline" data-source-tex="\psi:Y\to Z">\(\psi:Y\to Z\)</span> suatu fungsi, maka ukuran-ukuran citra
+<span class="math inline" data-source-tex="\mu(\psi\phi)^{-1}">\(\mu(\psi\phi)^{-1}\)</span> dan <span class="math inline" data-source-tex="(\mu\phi^{-1})\psi^{-1}">\((\mu\phi^{-1})\psi^{-1}\)</span> pada <span class="math inline" data-source-tex="Z">\(Z\)</span> adalah sama.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Langsung dari definisi-definisi.</p>
+<p> </p>
+<p><strong>(b)</strong> Tuliskan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> untuk <span class="math inline" data-source-tex="\mu\phi^{-1}">\(\mu\phi^{-1}\)</span> dan <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> untuk domainnya.
+Jika <span class="math inline" data-source-tex="\nu^*B=0">\(\nu^*B=0\)</span>, maka <span class="math inline" data-source-tex="\mu^*\phi^{-1}[B]=0">\(\mu^*\phi^{-1}[B]=0\)</span>, menurut <a class="xref" href="#234B">234B</a>(f-i); karena
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span> lengkap, <span class="math inline" data-source-tex="\phi^{-1}[B]\in\Sigma">\(\phi^{-1}[B]\in\Sigma\)</span>, sehingga <span class="math inline" data-source-tex="B\in\Tau">\(B\in\Tau\)</span>. Karena <span class="math inline" data-source-tex="B">\(B\)</span>
+sembarang, <span class="math inline" data-source-tex="\nu">\(\nu\)</span> lengkap.</p>
+<p> </p>
+<p><strong>(c)</strong> Untuk <span class="math inline" data-source-tex="G\subseteq Z">\(G\subseteq Z\)</span> dan <span class="math inline" data-source-tex="u\in[0,\infty]">\(u\in[0,\infty]\)</span>,</p>
+<p><span class="math display" data-source-tex="\eqalign{(\mu(\psi\phi)^{-1})(G)&amp;\text{ terdefinisi dan sama dengan }u\cr
+&amp;\iff\mu((\psi\phi)^{-1}[G])\text{ terdefinisi dan sama dengan }u\cr
+&amp;\iff\mu(\phi^{-1}[\psi^{-1}[G]])\text{ terdefinisi dan sama dengan }u\cr
+&amp;\iff(\mu\phi^{-1})(\psi^{-1}[G])\text{ terdefinisi dan sama dengan }u\cr
+&amp;\iff((\mu\phi^{-1})\psi^{-1})(G)\text{ terdefinisi dan sama dengan }u.\cr}">\[\begin{aligned}(\mu(\psi\phi)^{-1})(G)&amp;\text{ terdefinisi dan sama dengan }u\\
+&amp;\iff\mu((\psi\phi)^{-1}[G])\text{ terdefinisi dan sama dengan }u\\
+&amp;\iff\mu(\phi^{-1}[\psi^{-1}[G]])\text{ terdefinisi dan sama dengan }u\\
+&amp;\iff(\mu\phi^{-1})(\psi^{-1}[G])\text{ terdefinisi dan sama dengan }u\\
+&amp;\iff((\mu\phi^{-1})\psi^{-1})(G)\text{ terdefinisi dan sama dengan }u.\\\end{aligned}\]</span></p></aside>
+</section>
+<section class="source-unit" id="234F" data-source-id="234F"><h2><span class="source-label">234F</span>  </h2>
+<p>Dalam arah sebaliknya,
+konstruksi ukuran tarik-balik berikut kadang-kadang berguna.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan, <span class="math inline" data-source-tex="(Y,\Tau,\nu)">\((Y,\Tau,\nu)\)</span>
+suatu ruang ukur, dan <span class="math inline" data-source-tex="\phi:X\to Y">\(\phi:X\to Y\)</span> suatu fungsi sedemikian sehingga
+<span class="math inline" data-source-tex="\phi [X]">\(\phi [X]\)</span> mempunyai ukuran luar penuh dalam <span class="math inline" data-source-tex="Y">\(Y\)</span>. Maka terdapat suatu
+ukuran <span class="math inline" data-source-tex="\mu">\(\mu\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span>, dengan domain
+<span class="math inline" data-source-tex="\Sigma=\{\phi^{-1}[F]:F\in\Tau\}">\(\Sigma=\{\phi^{-1}[F]:F\in\Tau\}\)</span>, sedemikian sehingga <span class="math inline" data-source-tex="\phi">\(\phi\)</span> bersifat
+pelestari ukuran melalui prapeta untuk <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dan <span class="math inline" data-source-tex="\nu">\(\nu\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Pemeriksaan bahwa <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> adalah aljabar-sigma subhimpunan dari
+<span class="math inline" data-source-tex="X">\(X\)</span> bersifat langsung; yang perlu kita ketahui hanyalah bahwa
+<span class="math inline" data-source-tex="\phi^{-1}[\emptyset]=\emptyset">\(\phi^{-1}[\emptyset]=\emptyset\)</span>,
+<span class="math inline" data-source-tex="X\setminus\phi^{-1}[F]=\phi^{-1}[Y\setminus F]">\(X\setminus\phi^{-1}[F]=\phi^{-1}[Y\setminus F]\)</span> untuk setiap
+<span class="math inline" data-source-tex="F\subseteq Y">\(F\subseteq Y\)</span>, dan bahwa
+<span class="math inline" data-source-tex="\phi^{-1}[\bigcup_{n\in\Bbb N}F_n]=\bigcup_{n\in\Bbb N}\phi^{-1}[F_n]">\(\phi^{-1}[\bigcup_{n\in\Bbb N}F_n]=\bigcup_{n\in\Bbb N}\phi^{-1}[F_n]\)</span>
+untuk setiap barisan <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> dari subhimpunan-subhimpunan <span class="math inline" data-source-tex="Y">\(Y\)</span>.
+Fakta kuncinya ialah bahwa jika <span class="math inline" data-source-tex="F_1">\(F_1\)</span>, <span class="math inline" data-source-tex="F_2\in\Tau">\(F_2\in\Tau\)</span> dan
+<span class="math inline" data-source-tex="\phi^{-1}[F_1]=\phi^{-1}[F_2]">\(\phi^{-1}[F_1]=\phi^{-1}[F_2]\)</span>, maka <span class="math inline" data-source-tex="\phi[X]">\(\phi[X]\)</span> tidak bertemu dengan
+<span class="math inline" data-source-tex="F_1\symmdiff F_2">\(F_1\symmdiff F_2\)</span>; karena <span class="math inline" data-source-tex="\phi[X]">\(\phi[X]\)</span> mempunyai ukuran luar penuh,
+<span class="math inline" data-source-tex="F_1\symmdiff F_2">\(F_1\symmdiff F_2\)</span> terabaikan terhadap <span class="math inline" data-source-tex="\nu">\(\nu\)</span> dan <span class="math inline" data-source-tex="\nu F_1=\nu F_2">\(\nu F_1=\nu F_2\)</span>.
+Dengan demikian, rumus <span class="math inline" data-source-tex="\mu\phi^{-1}[F]=\nu F">\(\mu\phi^{-1}[F]=\nu F\)</span> memang mendefinisikan
+suatu fungsi <span class="math inline" data-source-tex="\mu:\Sigma\to[0,\infty]">\(\mu:\Sigma\to[0,\infty]\)</span>. Sekarang</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu\emptyset=\mu\phi^{-1}[\emptyset]=\nu\emptyset=0">\(\mu\emptyset=\mu\phi^{-1}[\emptyset]=\nu\emptyset=0\)</span>.</div>
+<p>Selanjutnya, jika <span class="math inline" data-source-tex="\sequencen{E_n}">\(\sequencen{E_n}\)</span> suatu barisan saling lepas
+di dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, pilih <span class="math inline" data-source-tex="F_n\in\Tau">\(F_n\in\Tau\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="E_n=\phi^{-1}[F_n]">\(E_n=\phi^{-1}[F_n]\)</span> untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>. Barisan
+<span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> belum tentu saling lepas, tetapi jika kita menetapkan
+<span class="math inline" data-source-tex="F&#x27;_n=F_n\setminus\bigcup_{i&lt;n}F_i">\(F&#x27;_n=F_n\setminus\bigcup_{i&lt;n}F_i\)</span> untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, maka
+<span class="math inline" data-source-tex="\sequencen{F&#x27;_n}">\(\sequencen{F&#x27;_n}\)</span> saling lepas dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="E_n=E_n\setminus\bigcup_{i&lt;n}E_i=\phi^{-1}[F&#x27;_n]">\(E_n=E_n\setminus\bigcup_{i&lt;n}E_i=\phi^{-1}[F&#x27;_n]\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>; sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu(\bigcup_{n\in\Bbb N}E_n)
+=\nu(\bigcup_{n\in\Bbb N}F&#x27;_n)
+=\sum_{n=0}^{\infty}\nu F&#x27;_n
+=\sum_{n=0}^{\infty}\mu E_n">\(\mu(\bigcup_{n\in\Bbb N}E_n)
+=\nu(\bigcup_{n\in\Bbb N}F&#x27;_n)
+=\sum_{n=0}^{\infty}\nu F&#x27;_n
+=\sum_{n=0}^{\infty}\mu E_n\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="\sequencen{E_n}">\(\sequencen{E_n}\)</span> sembarang, <span class="math inline" data-source-tex="\mu">\(\mu\)</span> adalah ukuran pada
+<span class="math inline" data-source-tex="X">\(X\)</span>, sebagaimana diperlukan.</p></aside>
+</section>
+<section class="source-unit" id="234G" data-source-id="234G"><h2><span class="source-label">234G</span> Jumlah ukuran </h2>
+<p>Sekarang saya beralih ke cara
+yang sangat berbeda untuk membangun ukuran. Gagasannya jelas, tetapi
+perincian teknisnya, dalam kasus umum yang ingin saya kaji, perlu diperhatikan.</p>
+<p> </p>
+<p><strong>Proposisi</strong>
+Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan, dan <span class="math inline" data-source-tex="\familyiI{\mu_i}">\(\familyiI{\mu_i}\)</span> suatu keluarga ukuran
+pada <span class="math inline" data-source-tex="X">\(X\)</span>. Untuk setiap <span class="math inline" data-source-tex="i\in I">\(i\in I\)</span>, misalkan <span class="math inline" data-source-tex="\Sigma_i">\(\Sigma_i\)</span> domain dari <span class="math inline" data-source-tex="\mu_i">\(\mu_i\)</span>.
+Tetapkan <span class="math inline" data-source-tex="\Sigma=\Cal PX\cap\bigcap_{i\in I}\Sigma_i">\(\Sigma=\Cal PX\cap\bigcap_{i\in I}\Sigma_i\)</span> dan definisikan
+<span class="math inline" data-source-tex="\mu:\Sigma\to[0,\infty]">\(\mu:\Sigma\to[0,\infty]\)</span> dengan menetapkan
+<span class="math inline" data-source-tex="\mu E=\sum_{i\in I}\mu_iE">\(\mu E=\sum_{i\in I}\mu_iE\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>. Maka <span class="math inline" data-source-tex="\mu">\(\mu\)</span>
+adalah ukuran pada <span class="math inline" data-source-tex="X">\(X\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> adalah aljabar-sigma subhimpunan dari <span class="math inline" data-source-tex="X">\(X\)</span> karena setiap
+<span class="math inline" data-source-tex="\Sigma_i">\(\Sigma_i\)</span> demikian. (Terapkan <a class="xref" href="../111/index.html#111Ga">111Ga</a> dengan
+<span class="math inline" data-source-tex="\frak S=\{\Sigma_i:i\in I\}\cup\{\Cal PX\}">\(\frak S=\{\Sigma_i:i\in I\}\cup\{\Cal PX\}\)</span>.)
+Tentu saja <span class="math inline" data-source-tex="\mu">\(\mu\)</span> bernilai di dalam <span class="math inline" data-source-tex="[0,\infty]">\([0,\infty]\)</span> (<a class="xref" href="../226/index.html#226A">226A</a>).
+<span class="math inline" data-source-tex="\mu\emptyset=0">\(\mu\emptyset=0\)</span> karena <span class="math inline" data-source-tex="\mu_i\emptyset=0">\(\mu_i\emptyset=0\)</span> untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>. Jika
+<span class="math inline" data-source-tex="\sequencen{E_n}">\(\sequencen{E_n}\)</span> adalah barisan saling lepas di dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dengan
+gabungan <span class="math inline" data-source-tex="E">\(E\)</span>, maka</p>
+<p><span class="math display" data-source-tex="\eqalignno{\mu E
+&amp;=\sum_{i\in I}\mu_iE
+=\sum_{i\in I}\sum_{n=0}^{\infty}\mu_iE_n
+=\sum_{n=0}^{\infty}\sum_{i\in I}\mu_iE_n\cr
+\displaycause{226Af}
+&amp;=\sum_{n=0}^{\infty}\mu E_n.\cr}">\[\begin{aligned}\mu E
+&amp;=\sum_{i\in I}\mu_iE
+=\sum_{i\in I}\sum_{n=0}^{\infty}\mu_iE_n
+=\sum_{n=0}^{\infty}\sum_{i\in I}\mu_iE_n\\
+\displaycause{226Af}
+&amp;=\sum_{n=0}^{\infty}\mu E_n.\\\end{aligned}\]</span></p>
+<p>Jadi, <span class="math inline" data-source-tex="\mu">\(\mu\)</span> adalah ukuran.</p></aside>
+<p> </p>
+<p><strong>Catatan</strong> Dalam konteks ini, saya akan menyebut <span class="math inline" data-source-tex="\mu">\(\mu\)</span>
+<strong>jumlah</strong> dari keluarga <span class="math inline" data-source-tex="\familyiI{\mu_i}">\(\familyiI{\mu_i}\)</span>.</p>
+</section>
+<section class="source-unit" id="234H" data-source-id="234H"><h2><span class="source-label">234H</span> Proposisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan dan <span class="math inline" data-source-tex="\familyiI{\mu_i}">\(\familyiI{\mu_i}\)</span> suatu keluarga ukuran
+lengkap pada <span class="math inline" data-source-tex="X">\(X\)</span> dengan jumlah <span class="math inline" data-source-tex="\mu">\(\mu\)</span>.</p>
+<p>(a) <span class="math inline" data-source-tex="\mu">\(\mu\)</span> lengkap.</p>
+<p>(b)(i) Suatu subhimpunan dari <span class="math inline" data-source-tex="X">\(X\)</span> terabaikan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> jika dan
+hanya jika subhimpunan tersebut terabaikan terhadap <span class="math inline" data-source-tex="\mu_i">\(\mu_i\)</span> untuk setiap
+<span class="math inline" data-source-tex="i\in I">\(i\in I\)</span>.</p>
+<p>  (ii) Suatu subhimpunan dari <span class="math inline" data-source-tex="X">\(X\)</span> koterabaikan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> jika dan
+hanya jika subhimpunan tersebut koterabaikan terhadap <span class="math inline" data-source-tex="\mu_i">\(\mu_i\)</span> untuk setiap
+<span class="math inline" data-source-tex="i\in I">\(i\in I\)</span>.</p>
+<p>(c)
+ Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi yang didefinisikan pada suatu subhimpunan dari
+<span class="math inline" data-source-tex="X">\(X\)</span> dan bernilai dalam <span class="math inline" data-source-tex="[-\infty,\infty]">\([-\infty,\infty]\)</span>. Maka <span class="math inline" data-source-tex="\int fd\mu">\(\int fd\mu\)</span> terdefinisi di
+<span class="math inline" data-source-tex="[-\infty,\infty]">\([-\infty,\infty]\)</span> jika dan hanya jika <span class="math inline" data-source-tex="\int fd\mu_i">\(\int fd\mu_i\)</span> terdefinisi di
+<span class="math inline" data-source-tex="[-\infty,\infty]">\([-\infty,\infty]\)</span> untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>, dan salah satu dari
+<span class="math inline" data-source-tex="\sum_{i\in I}\int f^+d\mu_i">\(\sum_{i\in I}\int f^+d\mu_i\)</span>, <span class="math inline" data-source-tex="\sum_{i\in I}\int f^-d\mu_i">\(\sum_{i\in I}\int f^-d\mu_i\)</span> berhingga; dalam hal
+ini <span class="math inline" data-source-tex="\int fd\mu=\sum_{i\in I}\int fd\mu_i">\(\int fd\mu=\sum_{i\in I}\int fd\mu_i\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Tuliskan <span class="math inline" data-source-tex="\Sigma_i=\dom\mu_i">\(\Sigma_i=\dom\mu_i\)</span> untuk <span class="math inline" data-source-tex="i\in I">\(i\in I\)</span>,
+<span class="math inline" data-source-tex="\Sigma=\Cal PX\cap\bigcap_{i\in I}\Sigma_i=\dom\mu">\(\Sigma=\Cal PX\cap\bigcap_{i\in I}\Sigma_i=\dom\mu\)</span>.</p>
+<p> </p>
+<p><strong>(a)</strong> Jika <span class="math inline" data-source-tex="E\subseteq F\in\Sigma">\(E\subseteq F\in\Sigma\)</span> dan <span class="math inline" data-source-tex="\mu F=0">\(\mu F=0\)</span>, maka <span class="math inline" data-source-tex="\mu_iF=0">\(\mu_iF=0\)</span>
+untuk setiap <span class="math inline" data-source-tex="i\in I">\(i\in I\)</span>; karena <span class="math inline" data-source-tex="\mu_i">\(\mu_i\)</span> lengkap, <span class="math inline" data-source-tex="E\in\Sigma_i">\(E\in\Sigma_i\)</span> untuk
+setiap <span class="math inline" data-source-tex="i\in I">\(i\in I\)</span>, dan <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Sekarang ini langsung mengikuti, karena suatu himpunan
+<span class="math inline" data-source-tex="A\subseteq X">\(A\subseteq X\)</span> terabaikan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> jika dan hanya jika <span class="math inline" data-source-tex="\mu A=0">\(\mu A=0\)</span>.</p>
+<p> </p>
+<p><strong>(c)(i)</strong> Pertama-tama perhatikan bahwa (b-ii) memberi tahu kita bahwa,
+di bawah salah satu hipotesis, <span class="math inline" data-source-tex="\dom f">\(\dom f\)</span> koterabaikan baik terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>
+maupun terhadap setiap <span class="math inline" data-source-tex="\mu_i">\(\mu_i\)</span>. Jadi, jika kita memperluas <span class="math inline" data-source-tex="f">\(f\)</span> ke <span class="math inline" data-source-tex="X">\(X\)</span>
+dengan memberinya nilai <span class="math inline" data-source-tex="0">\(0\)</span> pada <span class="math inline" data-source-tex="X\setminus\dom f">\(X\setminus\dom f\)</span>, baik <span class="math inline" data-source-tex="\int fd\mu">\(\int fd\mu\)</span>
+maupun <span class="math inline" data-source-tex="\sum_{i\in I}\int fd\mu_i">\(\sum_{i\in I}\int fd\mu_i\)</span> tidak terpengaruh. Karena itu, mulai
+sekarang andaikan bahwa <span class="math inline" data-source-tex="f">\(f\)</span> didefinisikan di seluruh <span class="math inline" data-source-tex="X">\(X\)</span>. Sekarang jelas
+bahwa salah satu hipotesis memastikan <span class="math inline" data-source-tex="f">\(f\)</span> terukur terhadap <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>,
+yakni terukur terhadap <span class="math inline" data-source-tex="\Sigma_i">\(\Sigma_i\)</span> untuk setiap <span class="math inline" data-source-tex="i\in I">\(i\in I\)</span>.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Andaikan <span class="math inline" data-source-tex="f">\(f\)</span> nonnegatif.
+Untuk <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, tetapkan
+<span class="math inline" data-source-tex="f_n(x)=\sum_{k=1}^{4^n}2^{-n}\chi\{x:f(x)\ge 2^{-n}k\}">\(f_n(x)=\sum_{k=1}^{4^n}2^{-n}\chi\{x:f(x)\ge 2^{-n}k\}\)</span>, sehingga
+<span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> adalah barisan tak-menurun dengan supremum <span class="math inline" data-source-tex="f">\(f\)</span>. Kita
+mempunyai</p>
+<p><span class="math display" data-source-tex="\eqalign{\int f_nd\mu
+&amp;=\sum_{k=1}^{4^n}2^{-n}\mu\{x:f(x)\ge 2^{-n}k\}
+=\sum_{k=1}^{4^n}\sum_{i\in I}2^{-n}\mu_i\{x:f(x)\ge 2^{-n}k\}\cr
+&amp;=\sum_{i\in I}\sum_{k=1}^{4^n}2^{-n}\mu_i\{x:f(x)\ge 2^{-n}k\}
+=\sum_{i\in I}\int f_nd\mu_i\cr}">\[\begin{aligned}\int f_nd\mu
+&amp;=\sum_{k=1}^{4^n}2^{-n}\mu\{x:f(x)\ge 2^{-n}k\}
+=\sum_{k=1}^{4^n}\sum_{i\in I}2^{-n}\mu_i\{x:f(x)\ge 2^{-n}k\}\\
+&amp;=\sum_{i\in I}\sum_{k=1}^{4^n}2^{-n}\mu_i\{x:f(x)\ge 2^{-n}k\}
+=\sum_{i\in I}\int f_nd\mu_i\\\end{aligned}\]</span></p>
+<p>untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, sehingga</p>
+<p><span class="math display" data-source-tex="\eqalign{\int fd\mu
+&amp;=\sup_{n\in\Bbb N}\int f_nd\mu
+=\sup_{n\in\Bbb N}\sup_{J\subseteq I\text{ berhingga}}
+   \sum_{i\in J}\int f_nd\mu_i
+=\sup_{J\subseteq I\text{ berhingga}}\sup_{n\in\Bbb N}
+   \sum_{i\in J}\int f_nd\mu_i\cr
+&amp;=\sup_{J\subseteq I\text{ berhingga}}
+   \lim_{n\to\infty}\sum_{i\in J}\int f_nd\mu_i
+=\sup_{J\subseteq I\text{ berhingga}}
+   \sum_{i\in J}\lim_{n\to\infty}\int f_nd\mu_i
+=\sum_{i\in I}\int fd\mu_i.\cr}">\[\begin{aligned}\int fd\mu
+&amp;=\sup_{n\in\Bbb N}\int f_nd\mu
+=\sup_{n\in\Bbb N}\sup_{J\subseteq I\text{ berhingga}}
+   \sum_{i\in J}\int f_nd\mu_i
+=\sup_{J\subseteq I\text{ berhingga}}\sup_{n\in\Bbb N}
+   \sum_{i\in J}\int f_nd\mu_i\\
+&amp;=\sup_{J\subseteq I\text{ berhingga}}
+   \lim_{n\to\infty}\sum_{i\in J}\int f_nd\mu_i
+=\sup_{J\subseteq I\text{ berhingga}}
+   \sum_{i\in J}\lim_{n\to\infty}\int f_nd\mu_i
+=\sum_{i\in I}\int fd\mu_i.\\\end{aligned}\]</span></p>
+<p> </p>
+<p>  <strong>(iii)</strong> Secara umum,</p>
+<p><span class="math display" data-source-tex="\eqalign{\int fd\mu&amp;\text{ terdefinisi di }[-\infty,\infty]\cr
+&amp;\iff\int f^+d\mu\text{ dan }\int f^-d\mu
+  \text{ terdefinisi dan paling banyak salah satunya tak berhingga}\cr
+&amp;\iff\sum_{i\in I}\int f^+d\mu_i\text{ dan }\sum_{i\in I}\int f^-d\mu_i
+  \text{ terdefinisi dan paling banyak salah satunya tak berhingga}\cr
+&amp;\iff\int fd\mu_i\text{ terdefinisi untuk setiap }i
+  \text{ dan paling banyak salah satu dari }\sum_{i\in I}\int f^+d\mu_i,\cr
+&amp;\mskip400mu
+  \sum_{i\in I}\int f^-d\mu_i\text{ tak berhingga},\cr}">\[\begin{aligned}\int fd\mu&amp;\text{ terdefinisi di }[-\infty,\infty]\\
+&amp;\iff\int f^+d\mu\text{ dan }\int f^-d\mu
+  \text{ terdefinisi dan paling banyak salah satunya tak berhingga}\\
+&amp;\iff\sum_{i\in I}\int f^+d\mu_i\text{ dan }\sum_{i\in I}\int f^-d\mu_i
+  \text{ terdefinisi dan paling banyak salah satunya tak berhingga}\\
+&amp;\iff\int fd\mu_i\text{ terdefinisi untuk setiap }i
+  \text{ dan paling banyak salah satu dari }\sum_{i\in I}\int f^+d\mu_i,\\
+&amp;\mskip400mu
+  \sum_{i\in I}\int f^-d\mu_i\text{ tak berhingga},\\\end{aligned}\]</span></p>
+<p>dan dalam hal ini</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int fd\mu
+=\int f^+d\mu-\int f^-d\mu
+=\sum_{i\in I}\int f^+d\mu_i-\sum_{i\in I}\int f^-d\mu_i
+=\sum_{i\in I}\int fd\mu_i">\(\int fd\mu
+=\int f^+d\mu-\int f^-d\mu
+=\sum_{i\in I}\int f^+d\mu_i-\sum_{i\in I}\int f^-d\mu_i
+=\sum_{i\in I}\int fd\mu_i\)</span>.</div></aside>
+</section>
+<section class="source-unit" id="234I" data-source-id="234I"><h2><span class="source-label">234I</span> Ukuran
+integral tak tentu </h2>
+<p>Dengan memperluas
+gagasan yang telah digunakan dalam <a class="xref" href="../232/index.html#232D">232D</a>, kita sampai pada konstruksi berikut;
+sekali lagi, kita perlu berhati-hati terhadap perincian formal jika ingin
+memperoleh manfaat sepenuhnya.</p>
+<p> </p>
+<p><strong>Teorema</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur,
+dan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real nonnegatif yang terukur secara virtual
+terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dan didefinisikan pada suatu subhimpunan koterabaikan dari
+<span class="math inline" data-source-tex="X">\(X\)</span>. Tuliskan <span class="math inline" data-source-tex="\nu F=\int f\times\chi F\,d\mu">\(\nu F=\int f\times\chi F\,d\mu\)</span> kapan pun <span class="math inline" data-source-tex="F\subseteq X">\(F\subseteq X\)</span>
+sedemikian sehingga integral tersebut terdefinisi di
+<span class="math inline" data-source-tex="[0,\infty]">\([0,\infty]\)</span> menurut konvensi <a class="xref" href="../133/index.html#133A">133A</a>.
+Maka <span class="math inline" data-source-tex="\nu">\(\nu\)</span> adalah ukuran lengkap pada <span class="math inline" data-source-tex="X">\(X\)</span>, dan domainnya mencakup
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Tuliskan <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> untuk domain <span class="math inline" data-source-tex="\nu">\(\nu\)</span>, yakni keluarga
+himpunan <span class="math inline" data-source-tex="F\subseteq X">\(F\subseteq X\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\int f\times\chi F\,d\mu">\(\int f\times\chi F\,d\mu\)</span> terdefinisi di <span class="math inline" data-source-tex="[0,\infty]">\([0,\infty]\)</span>, yakni
+<span class="math inline" data-source-tex="f\times\chi F">\(f\times\chi F\)</span> terukur secara virtual terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> (<a class="xref" href="../133/index.html#133A">133A</a>). Maka
+<span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> adalah aljabar-sigma subhimpunan dari <span class="math inline" data-source-tex="X">\(X\)</span>. Bukti.
+Untuk setiap <span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>, misalkan <span class="math inline" data-source-tex="H_F\subseteq X">\(H_F\subseteq X\)</span> suatu himpunan
+koterabaikan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="f\times\chi F\restr H_F">\(f\times\chi F\restr H_F\)</span> terukur terhadap <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. Karena <span class="math inline" data-source-tex="f">\(f\)</span> sendiri
+terukur secara virtual terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, <span class="math inline" data-source-tex="X\in\Tau">\(X\in\Tau\)</span>. Jika <span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="f\times\chi(X\setminus F)\restr(H_X\cap H_F)
+=f\restr(H_X\cap H_F)-(f\times\chi F)\restr(H_X\cap H_F)">\(f\times\chi(X\setminus F)\restr(H_X\cap H_F)
+=f\restr(H_X\cap H_F)-(f\times\chi F)\restr(H_X\cap H_F)\)</span></div>
+<p>terukur terhadap <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, sedangkan <span class="math inline" data-source-tex="H_X\cap H_F">\(H_X\cap H_F\)</span>
+koterabaikan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, sehingga <span class="math inline" data-source-tex="X\setminus F\in\Tau">\(X\setminus F\in\Tau\)</span>. Jika
+<span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> adalah barisan di dalam <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> dengan gabungan <span class="math inline" data-source-tex="F">\(F\)</span>,
+tetapkan <span class="math inline" data-source-tex="H=\bigcap_{n\in\Bbb N}H_{F_n}">\(H=\bigcap_{n\in\Bbb N}H_{F_n}\)</span>; maka <span class="math inline" data-source-tex="H">\(H\)</span> koterabaikan,
+<span class="math inline" data-source-tex="f\times\chi F_n\restr H">\(f\times\chi F_n\restr H\)</span> terukur terhadap <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> untuk setiap
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, dan <span class="math inline" data-source-tex="f\times\chi F=\sup_{n\in\Bbb N}f\times\chi F_n">\(f\times\chi F=\sup_{n\in\Bbb N}f\times\chi F_n\)</span>,
+sehingga <span class="math inline" data-source-tex="f\times\chi F\restr H">\(f\times\chi F\restr H\)</span> terukur terhadap <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, dan
+<span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>. Dengan demikian, <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> adalah aljabar-sigma. Jika
+<span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>, maka <span class="math inline" data-source-tex="f\times\chi F\restr H_X">\(f\times\chi F\restr H_X\)</span> terukur terhadap <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>,
+sehingga <span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>. ∎</p>
+<p> </p>
+<p><strong>(b)</strong> Selanjutnya, <span class="math inline" data-source-tex="\nu">\(\nu\)</span> adalah ukuran. Bukti. Tentu saja
+<span class="math inline" data-source-tex="\nu F\in[0,\infty]">\(\nu F\in[0,\infty]\)</span> untuk setiap <span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>.
+<span class="math inline" data-source-tex="f\times\chi\emptyset=0">\(f\times\chi\emptyset=0\)</span> di mana pun fungsi tersebut didefinisikan,
+sehingga <span class="math inline" data-source-tex="\nu\emptyset=0">\(\nu\emptyset=0\)</span>. Jika <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> adalah barisan saling
+lepas di dalam <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> dengan gabungan <span class="math inline" data-source-tex="F">\(F\)</span>, maka
+<span class="math inline" data-source-tex="f\times\chi F=\sum_{n=0}^{\infty}f\times\chi F_n">\(f\times\chi F=\sum_{n=0}^{\infty}f\times\chi F_n\)</span>.
+Jika <span class="math inline" data-source-tex="\nu F_m=\infty">\(\nu F_m=\infty\)</span> untuk suatu <span class="math inline" data-source-tex="m">\(m\)</span>, maka tentu saja
+<span class="math inline" data-source-tex="\nu F=\infty=\sum_{n=0}^{\infty}\nu F_n">\(\nu F=\infty=\sum_{n=0}^{\infty}\nu F_n\)</span>. Jika <span class="math inline" data-source-tex="\nu F_m&lt;\infty">\(\nu F_m&lt;\infty\)</span> untuk
+setiap <span class="math inline" data-source-tex="m">\(m\)</span>, tetapi <span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\nu F_n=\infty">\(\sum_{n=0}^{\infty}\nu F_n=\infty\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int f\times\chi(\bigcup_{n\le m}F_n)
+=\sum_{n=0}^m\int f\times\chi F_n\to\infty">\(\int f\times\chi(\bigcup_{n\le m}F_n)
+=\sum_{n=0}^m\int f\times\chi F_n\to\infty\)</span></div>
+<p>ketika <span class="math inline" data-source-tex="m\to\infty">\(m\to\infty\)</span>, sehingga sekali lagi
+<span class="math inline" data-source-tex="\nu F=\infty=\sum_{n=0}^{\infty}\nu F_n">\(\nu F=\infty=\sum_{n=0}^{\infty}\nu F_n\)</span>. Jika
+<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\nu F_n&lt;\infty">\(\sum_{n=0}^{\infty}\nu F_n&lt;\infty\)</span>, maka menurut teorema B.Levi</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu F=\int\sum_{n=0}^{\infty}f\times\chi F_n
+=\sum_{n=0}^{\infty}\int f\times\chi F_n
+=\sum_{n=0}^{\infty}\nu F_n">\(\nu F=\int\sum_{n=0}^{\infty}f\times\chi F_n
+=\sum_{n=0}^{\infty}\int f\times\chi F_n
+=\sum_{n=0}^{\infty}\nu F_n\)</span>.
+∎</div>
+<p> </p>
+<p><strong>(c)</strong> Terakhir, <span class="math inline" data-source-tex="\nu">\(\nu\)</span> lengkap. Bukti. Jika <span class="math inline" data-source-tex="A\subseteq F\in\Tau">\(A\subseteq F\in\Tau\)</span>
+dan <span class="math inline" data-source-tex="\nu F=0">\(\nu F=0\)</span>, maka <span class="math inline" data-source-tex="f\times\chi F=0">\(f\times\chi F=0\)</span> hampir di mana-mana, sehingga
+<span class="math inline" data-source-tex="f\times\chi A=0">\(f\times\chi A=0\)</span> hampir di mana-mana dan <span class="math inline" data-source-tex="\nu A">\(\nu A\)</span> terdefinisi serta sama
+dengan nol. ∎</p></aside>
+</section>
+<section class="source-unit" id="234J" data-source-id="234J"><h2><span class="source-label">234J</span> Definisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur, dan
+<span class="math inline" data-source-tex="\nu">\(\nu\)</span> ukuran lain pada <span class="math inline" data-source-tex="X">\(X\)</span> dengan domain <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>. Saya akan menyebut
+<span class="math inline" data-source-tex="\nu">\(\nu\)</span> suatu <strong>ukuran integral tak tentu</strong> terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, atau
+kadang-kadang suatu <strong>ukuran integral tak tentu yang dilengkapi</strong>, jika
+ukuran tersebut dapat diperoleh dengan metode <a class="xref" href="#234I">234I</a> dari suatu fungsi
+nonnegatif <span class="math inline" data-source-tex="f">\(f\)</span> yang terukur secara virtual dan didefinisikan hampir di
+mana-mana dalam <span class="math inline" data-source-tex="X">\(X\)</span>. Dalam hal ini, <span class="math inline" data-source-tex="f">\(f\)</span> adalah suatu turunan
+Radon-Nikodým dari <span class="math inline" data-source-tex="\nu">\(\nu\)</span> terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dalam pengertian <a class="xref" href="../232/index.html#232Hf">232Hf</a>.
+Seperti dalam <a class="xref" href="../232/index.html#232Hf">232Hf</a>, frasa <strong>fungsi kerapatan</strong> juga digunakan
+dalam konteks ini.</p>
+</section>
+<section class="source-unit" id="234K" data-source-id="234K"><h2><span class="source-label">234K</span> Catatan-catatan </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur, dan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai
+real nonnegatif yang terukur secara virtual terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dan
+didefinisikan hampir di mana-mana dalam <span class="math inline" data-source-tex="X">\(X\)</span>; misalkan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> ukuran
+integral tak tentu yang bersesuaian.</p>
+</section>
+<section class="source-unit" id="234Ka" data-source-id="234Ka"><h3><span class="source-label">234Ka</span> (a) </h3>
+<p>Terdapat suatu fungsi yang terukur terhadap
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, <span class="math inline" data-source-tex="g:X\to\coint{0,\infty}">\(g:X\to\coint{0,\infty}\)</span>, sedemikian sehingga
+<span class="math inline" data-source-tex="f=g\,\,\mu">\(f=g\,\,\mu\)</span>-hampir di mana-mana. Bukti. Misalkan
+<span class="math inline" data-source-tex="H\subseteq\dom f">\(H\subseteq\dom f\)</span> suatu himpunan terukur yang koterabaikan sedemikian
+sehingga <span class="math inline" data-source-tex="f\restr H">\(f\restr H\)</span> terukur, dan tetapkan <span class="math inline" data-source-tex="g(x)=f(x)">\(g(x)=f(x)\)</span> untuk <span class="math inline" data-source-tex="x\in H">\(x\in H\)</span>,
+<span class="math inline" data-source-tex="g(x)=0">\(g(x)=0\)</span> untuk <span class="math inline" data-source-tex="x\in X\setminus H">\(x\in X\setminus H\)</span>. ∎ Dalam hal ini,
+<span class="math inline" data-source-tex="\int f\times\chi E\,d\mu=\int g\times\chi E\,d\mu">\(\int f\times\chi E\,d\mu=\int g\times\chi E\,d\mu\)</span> jika salah satunya
+terdefinisi. Jadi, <span class="math inline" data-source-tex="g">\(g\)</span> adalah suatu turunan Radon-Nikodým dari <span class="math inline" data-source-tex="\nu">\(\nu\)</span>, dan
+<span class="math inline" data-source-tex="\nu">\(\nu\)</span> mempunyai suatu turunan Radon-Nikodým yang terukur terhadap
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dan didefinisikan di mana-mana.</p>
+</section>
+<section class="source-unit" id="234Kb" data-source-id="234Kb"><h3><span class="source-label">234Kb</span> (b) </h3>
+<p>Jika <span class="math inline" data-source-tex="E">\(E\)</span> terabaikan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>,
+maka <span class="math inline" data-source-tex="f\times\chi E=0\,\,\mu">\(f\times\chi E=0\,\,\mu\)</span>-hampir di mana-mana, sehingga
+<span class="math inline" data-source-tex="\nu E=0">\(\nu E=0\)</span>.
+Banyak penulis bersedia mengatakan ‘<span class="math inline" data-source-tex="\nu">\(\nu\)</span> kontinu mutlak
+terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>’ dalam konteks ini. Namun, jika <span class="math inline" data-source-tex="\nu">\(\nu\)</span> tidak berhingga total,
+ia belum tentu kontinu mutlak dalam pengertian
+<span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span>-<span class="math inline" data-source-tex="\delta">\(\delta\)</span> pada <a class="xref" href="../232/index.html#232Aa">232Aa</a> (<a class="xref" href="#234Xh">234Xh</a>), dan kesulitan lebih lanjut dapat
+muncul jika <span class="math inline" data-source-tex="\mu">\(\mu\)</span> atau <span class="math inline" data-source-tex="\nu">\(\nu\)</span> tidak <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga (lihat <a class="xref" href="#234Yk">234Yk</a>, <a class="xref" href="#234Ym">234Ym</a>).</p>
+</section>
+<section class="source-unit" id="234Kc" data-source-id="234Kc"><h3><span class="source-label">234Kc</span> (c) </h3>
+<p>Saya telah mendefinisikan ‘ukuran integral
+tak tentu’ sedemikian rupa sehingga menghasilkan ukuran lengkap. Menurut
+saya, inilah yang paling masuk akal dalam kebanyakan penerapan. Ada
+kesempatan ketika tampaknya lebih tepat menggunakan ukuran
+<span class="math inline" data-source-tex="\nu_0:\Sigma\to[0,\infty]">\(\nu_0:\Sigma\to[0,\infty]\)</span> yang didefinisikan dengan menetapkan
+<span class="math inline" data-source-tex="\nu_0 E=\int_Efd\mu=\int f\times\chi E\,d\mu">\(\nu_0 E=\int_Efd\mu=\int f\times\chi E\,d\mu\)</span> untuk <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>.
+Saya kira saya akan menyebut ini <strong>ukuran integral tak tentu yang belum
+dilengkapi</strong> terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> yang didefinisikan oleh <span class="math inline" data-source-tex="f">\(f\)</span>. (<span class="math inline" data-source-tex="\nu">\(\nu\)</span> selalu
+merupakan pelengkapan dari <span class="math inline" data-source-tex="\nu_0">\(\nu_0\)</span>; lihat 234Lb.)</p>
+</section>
+<section class="source-unit" id="234Kd" data-source-id="234Kd"><h3><span class="source-label">234Kd</span> (d) </h3>
+<p>Perhatikan cara saya merumuskan definisi <span class="math inline" data-source-tex="\nu">\(\nu\)</span>:
+‘<span class="math inline" data-source-tex="\nu E=\int f\times\chi E\,d\mu">\(\nu E=\int f\times\chi E\,d\mu\)</span> jika integralnya terdefinisi’,
+alih-alih ‘<span class="math inline" data-source-tex="\nu E=\int_Efd\mu">\(\nu E=\int_Efd\mu\)</span>’. Pokoknya ialah bahwa rumus yang
+lebih panjang memberikan kaidah untuk menentukan domain <span class="math inline" data-source-tex="\nu">\(\nu\)</span>. Tentu saja
+memang benar bahwa <span class="math inline" data-source-tex="\nu E=\int_Efd\mu">\(\nu E=\int_Efd\mu\)</span> untuk setiap
+<span class="math inline" data-source-tex="E\in\dom\nu">\(E\in\dom\nu\)</span> (terapkan <a class="xref" href="../214/index.html#214F">214F</a> pada <span class="math inline" data-source-tex="f\times\chi E">\(f\times\chi E\)</span>).</p>
+</section>
+<section class="source-unit" id="234Ke" data-source-id="234Ke"><h3><span class="source-label">234Ke</span> (e) </h3>
+<p>Karena <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dan pelengkapannya mendefinisikan
+fungsi-fungsi terukur secara virtual yang sama, ideal nol yang sama,
+dan integral-integral yang sama (212Eb, <a class="xref" href="../212/index.html#212F">212F</a>), keduanya mendefinisikan ukuran-ukuran
+integral tak tentu yang sama.</p>
+</section>
+<section class="source-unit" id="234L" data-source-id="234L"><h2><span class="source-label">234L</span> Domain suatu ukuran
+integral tak tentu </h2>
+<p>Kadang-kadang
+berguna untuk memiliki uraian eksplisit mengenai domain suatu ukuran yang
+dibangun dengan cara ini.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur,
+<span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi nonnegatif yang terukur secara virtual terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>
+dan didefinisikan hampir di mana-mana dalam <span class="math inline" data-source-tex="X">\(X\)</span>, dan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> ukuran
+integral tak tentu yang bersesuaian. Tetapkan
+<span class="math inline" data-source-tex="G=\{x:x\in\dom f">\(G=\{x:x\in\dom f\)</span>, <span class="math inline" data-source-tex="f(x)&gt;0\}">\(f(x)&gt;0\}\)</span>, dan misalkan <span class="math inline" data-source-tex="\hat\Sigma">\(\hat\Sigma\)</span> domain
+pelengkapan <span class="math inline" data-source-tex="\hat\mu">\(\hat\mu\)</span> dari <span class="math inline" data-source-tex="\mu">\(\mu\)</span>.</p>
+<p>(a) Domain <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> dari <span class="math inline" data-source-tex="\nu">\(\nu\)</span> adalah
+<span class="math inline" data-source-tex="\{E:E\subseteq X,\,E\cap G\in\hat\Sigma\}">\(\{E:E\subseteq X,\,E\cap G\in\hat\Sigma\}\)</span>; khususnya,
+<span class="math inline" data-source-tex="\Tau\supseteq\hat\Sigma\supseteq\Sigma">\(\Tau\supseteq\hat\Sigma\supseteq\Sigma\)</span>.</p>
+<p>(b) <span class="math inline" data-source-tex="\nu">\(\nu\)</span> adalah pelengkapan dari pembatasannya pada <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>.</p>
+<p>(c) Suatu himpunan <span class="math inline" data-source-tex="A\subseteq X">\(A\subseteq X\)</span> terabaikan terhadap <span class="math inline" data-source-tex="\nu">\(\nu\)</span> jika dan
+hanya jika <span class="math inline" data-source-tex="A\cap G">\(A\cap G\)</span> terabaikan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>.</p>
+<p>(d) Khususnya, jika <span class="math inline" data-source-tex="\mu">\(\mu\)</span> sendiri lengkap, maka
+<span class="math inline" data-source-tex="\Tau=\{E:E\subseteq X,\,E\cap G\in\Sigma\}">\(\Tau=\{E:E\subseteq X,\,E\cap G\in\Sigma\}\)</span> dan <span class="math inline" data-source-tex="\nu A=0">\(\nu A=0\)</span> jika dan
+hanya jika <span class="math inline" data-source-tex="\mu(A\cap G)=0">\(\mu(A\cap G)=0\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)(i)</strong> Jika <span class="math inline" data-source-tex="E\in\Tau">\(E\in\Tau\)</span>, maka <span class="math inline" data-source-tex="f\times\chi E">\(f\times\chi E\)</span> terukur secara
+virtual, sehingga terdapat suatu himpunan terukur koterabaikan
+<span class="math inline" data-source-tex="H\subseteq\dom f">\(H\subseteq\dom f\)</span> sedemikian sehingga <span class="math inline" data-source-tex="f\times\chi E\restr H">\(f\times\chi E\restr H\)</span> terukur.
+Sekarang <span class="math inline" data-source-tex="E\cap G\cap H=\{x:x\in H,\,(f\times\chi E)(x)&gt;0\}">\(E\cap G\cap H=\{x:x\in H,\,(f\times\chi E)(x)&gt;0\}\)</span> harus
+termasuk dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, sedangkan <span class="math inline" data-source-tex="E\cap G\setminus H">\(E\cap G\setminus H\)</span> terabaikan,
+sehingga termasuk dalam <span class="math inline" data-source-tex="\hat\Sigma">\(\hat\Sigma\)</span>, dan <span class="math inline" data-source-tex="E\cap G\in\hat\Sigma">\(E\cap G\in\hat\Sigma\)</span>.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Jika <span class="math inline" data-source-tex="E\cap G\in\hat\Sigma">\(E\cap G\in\hat\Sigma\)</span>, misalkan
+<span class="math inline" data-source-tex="F_1">\(F_1\)</span>, <span class="math inline" data-source-tex="F_2\in\Sigma">\(F_2\in\Sigma\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="F_1\subseteq E\cap G\subseteq F_2">\(F_1\subseteq E\cap G\subseteq F_2\)</span> dan <span class="math inline" data-source-tex="F_2\setminus F_1">\(F_2\setminus F_1\)</span> terabaikan.
+Misalkan <span class="math inline" data-source-tex="H\subseteq\dom f">\(H\subseteq\dom f\)</span> suatu himpunan koterabaikan sedemikian sehingga
+<span class="math inline" data-source-tex="f\restr H">\(f\restr H\)</span> terukur. Maka <span class="math inline" data-source-tex="H&#x27;=H\setminus(F_2\setminus F_1)">\(H&#x27;=H\setminus(F_2\setminus F_1)\)</span> koterabaikan
+dan <span class="math inline" data-source-tex="f\times\chi E\restr H&#x27;=f\times\chi F_1\restr H&#x27;">\(f\times\chi E\restr H&#x27;=f\times\chi F_1\restr H&#x27;\)</span> terukur, sehingga
+<span class="math inline" data-source-tex="f\times\chi E">\(f\times\chi E\)</span> terukur secara virtual dan <span class="math inline" data-source-tex="E\in\Tau">\(E\in\Tau\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Jadi, rumus yang diberikan memang menguraikan <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>. Jika
+<span class="math inline" data-source-tex="E\in\Tau">\(E\in\Tau\)</span>, misalkan <span class="math inline" data-source-tex="F_1">\(F_1\)</span>, <span class="math inline" data-source-tex="F_2\in\Sigma">\(F_2\in\Sigma\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="F_1\subseteq E\cap G\subseteq F_2">\(F_1\subseteq E\cap G\subseteq F_2\)</span> dan <span class="math inline" data-source-tex="\mu(F_2\setminus F_1)=0">\(\mu(F_2\setminus F_1)=0\)</span>.
+Karena <span class="math inline" data-source-tex="G">\(G\)</span> sendiri juga termasuk dalam <span class="math inline" data-source-tex="\hat\Sigma">\(\hat\Sigma\)</span>, terdapat
+<span class="math inline" data-source-tex="G_1">\(G_1\)</span>, <span class="math inline" data-source-tex="G_2\in\Sigma">\(G_2\in\Sigma\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="G_1\subseteq G\subseteq G_2">\(G_1\subseteq G\subseteq G_2\)</span> dan <span class="math inline" data-source-tex="\mu(G_2\setminus G_1)=0">\(\mu(G_2\setminus G_1)=0\)</span>. Tetapkan
+<span class="math inline" data-source-tex="F_2&#x27;=F_2\cup(X\setminus G_1)">\(F_2&#x27;=F_2\cup(X\setminus G_1)\)</span>. Maka <span class="math inline" data-source-tex="F_2&#x27;\in\Sigma">\(F_2&#x27;\in\Sigma\)</span> dan
+<span class="math inline" data-source-tex="F_1\subseteq E\subseteq F&#x27;_2">\(F_1\subseteq E\subseteq F&#x27;_2\)</span>. Tetapi
+<span class="math inline" data-source-tex="(F&#x27;_2\setminus F_1)\cap G
+\subseteq(G_2\setminus G_1)\cup(F_2\setminus F_1)">\((F&#x27;_2\setminus F_1)\cap G
+\subseteq(G_2\setminus G_1)\cup(F_2\setminus F_1)\)</span> terabaikan terhadap
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span>, sehingga <span class="math inline" data-source-tex="\nu(F&#x27;_2\setminus F_1)=0">\(\nu(F&#x27;_2\setminus F_1)=0\)</span>.</p>
+<p>Ini menunjukkan bahwa jika <span class="math inline" data-source-tex="\nuprime">\(\nuprime\)</span> adalah pelengkapan dari
+<span class="math inline" data-source-tex="\nu\restr\Sigma">\(\nu\restr\Sigma\)</span> dan <span class="math inline" data-source-tex="\Tau&#x27;">\(\Tau&#x27;\)</span> domainnya, maka <span class="math inline" data-source-tex="\Tau\subseteq\Tau&#x27;">\(\Tau\subseteq\Tau&#x27;\)</span>.
+Namun, karena <span class="math inline" data-source-tex="\nu">\(\nu\)</span> lengkap, tentu saja ia memperluas <span class="math inline" data-source-tex="\nuprime">\(\nuprime\)</span>, sehingga
+<span class="math inline" data-source-tex="\nu=\nuprime">\(\nu=\nuprime\)</span>, sebagaimana dinyatakan.</p>
+<p> </p>
+<p><strong>(c)</strong> Sekarang ambil sembarang <span class="math inline" data-source-tex="A\subseteq X">\(A\subseteq X\)</span>. Karena <span class="math inline" data-source-tex="\nu">\(\nu\)</span> lengkap,</p>
+<p><span class="math display" data-source-tex="\eqalign{A\text{ terabaikan terhadap }\nu\text{}
+&amp;\iff\nu A=0\cr
+&amp;\iff\int f\times\chi A\,d\mu=0\cr
+&amp;\iff f\times\chi A=0\,\,\mu\text{-hampir di mana-mana}\cr
+&amp;\iff A\cap G\text{ terabaikan terhadap }\mu\text{.}\cr}">\[\begin{aligned}A\text{ terabaikan terhadap }\nu\text{}
+&amp;\iff\nu A=0\\
+&amp;\iff\int f\times\chi A\,d\mu=0\\
+&amp;\iff f\times\chi A=0\,\,\mu\text{-hampir di mana-mana}\\
+&amp;\iff A\cap G\text{ terabaikan terhadap }\mu\text{.}\\\end{aligned}\]</span></p>
+<p> </p>
+<p><strong>(d)</strong> Ini hanyalah pernyataan ulang dari (a) dan (c) ketika
+<span class="math inline" data-source-tex="\mu=\hat\mu">\(\mu=\hat\mu\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="234M" data-source-id="234M"><h2><span class="source-label">234M</span> Akibat </h2>
+<p>Jika <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur lengkap dan <span class="math inline" data-source-tex="G\in\Sigma">\(G\in\Sigma\)</span>, maka
+ukuran integral tak tentu terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> yang didefinisikan oleh <span class="math inline" data-source-tex="\chi G">\(\chi G\)</span>
+hanyalah ukuran <span class="math inline" data-source-tex="\mu\LLcorner G">\(\mu\LLcorner G\)</span> yang didefinisikan dengan menetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="(\mu\LLcorner G)(F)=\mu(F\cap G)">\((\mu\LLcorner G)(F)=\mu(F\cap G)\)</span> kapan pun <span class="math inline" data-source-tex="F\subseteq X">\(F\subseteq X\)</span>
+dan <span class="math inline" data-source-tex="F\cap G\in\Sigma">\(F\cap G\in\Sigma\)</span>.</div>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>234Ld.</p></aside>
+</section>
+<section class="source-unit" id="234N" data-source-id="234N"><h2><span class="source-label">234N</span>  </h2>
+<p>Dua hasil berikut tidak akan diandalkan dalam
+jilid ini, tetapi saya menyertakannya sebagai acuan di masa depan dan
+untuk memberikan gambaran mengenai jangkauan gagasan-gagasan ini.</p>
+<p> </p>
+<p><strong>Proposisi</strong>
+Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur, dan
+<span class="math inline" data-source-tex="\nu">\(\nu\)</span> suatu ukuran integral tak tentu terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>.</p>
+<p>(a) Jika <span class="math inline" data-source-tex="\mu">\(\mu\)</span> semihingga, maka demikian pula <span class="math inline" data-source-tex="\nu">\(\nu\)</span>.</p>
+<p>(b) Jika <span class="math inline" data-source-tex="\mu">\(\mu\)</span> lengkap dan ditentukan secara lokal, maka demikian pula
+<span class="math inline" data-source-tex="\nu">\(\nu\)</span>.</p>
+<p>(c) Jika <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dapat dilokalkan, maka demikian pula <span class="math inline" data-source-tex="\nu">\(\nu\)</span>.</p>
+<p>(d) Jika <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dapat dilokalkan secara ketat, maka demikian pula <span class="math inline" data-source-tex="\nu">\(\nu\)</span>.</p>
+<p>(e) Jika <span class="math inline" data-source-tex="\mu">\(\mu\)</span> <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga, maka demikian pula <span class="math inline" data-source-tex="\nu">\(\nu\)</span>.</p>
+<p>(f) Jika <span class="math inline" data-source-tex="\mu">\(\mu\)</span> tanpa atom, maka demikian pula <span class="math inline" data-source-tex="\nu">\(\nu\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Menurut <a class="xref" href="#234Ka">234Ka</a>, kita dapat menyatakan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> sebagai integral tak
+tentu dari suatu fungsi yang terukur terhadap <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>,
+<span class="math inline" data-source-tex="f:X\to\coint{0,\infty}">\(f:X\to\coint{0,\infty}\)</span>. Misalkan <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> domain <span class="math inline" data-source-tex="\nu">\(\nu\)</span>, dan
+<span class="math inline" data-source-tex="\hat\Sigma">\(\hat\Sigma\)</span> domain pelengkapan <span class="math inline" data-source-tex="\hat\mu">\(\hat\mu\)</span> dari <span class="math inline" data-source-tex="\mu">\(\mu\)</span>; tetapkan
+<span class="math inline" data-source-tex="G=\{x:x\in X,\,f(x)&gt;0\}\in\Sigma">\(G=\{x:x\in X,\,f(x)&gt;0\}\in\Sigma\)</span>.</p>
+<p> </p>
+<p><strong>(a)</strong> Andaikan <span class="math inline" data-source-tex="E\in\Tau">\(E\in\Tau\)</span> dan <span class="math inline" data-source-tex="\nu E=\infty">\(\nu E=\infty\)</span>. Maka <span class="math inline" data-source-tex="E\cap G">\(E\cap G\)</span> tidak
+mungkin terabaikan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Karena <span class="math inline" data-source-tex="\mu">\(\mu\)</span> semihingga, terdapat
+suatu <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> yang tidak terabaikan sedemikian sehingga
+<span class="math inline" data-source-tex="F\subseteq E\cap G">\(F\subseteq E\cap G\)</span> dan <span class="math inline" data-source-tex="\mu F&lt;\infty">\(\mu F&lt;\infty\)</span>. Sekarang
+<span class="math inline" data-source-tex="F=\bigcup_{n\in\Bbb N}\{x:x\in F">\(F=\bigcup_{n\in\Bbb N}\{x:x\in F\)</span>, <span class="math inline" data-source-tex="2^{-n}\le f(x)\le n\}">\(2^{-n}\le f(x)\le n\}\)</span>, sehingga
+terdapat suatu <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="F&#x27;=\{x:x\in F">\(F&#x27;=\{x:x\in F\)</span>, <span class="math inline" data-source-tex="2^{-n}\le f(x)\le n\}">\(2^{-n}\le f(x)\le n\}\)</span> tidak terabaikan.
+Karena <span class="math inline" data-source-tex="f">\(f\)</span> terukur, <span class="math inline" data-source-tex="F&#x27;\in\Sigma\subseteq\Tau">\(F&#x27;\in\Sigma\subseteq\Tau\)</span> dan
+<span class="math inline" data-source-tex="2^{-n}\mu F&#x27;\le\nu F&#x27;\le n\mu F&#x27;">\(2^{-n}\mu F&#x27;\le\nu F&#x27;\le n\mu F&#x27;\)</span>. Dengan demikian, kita telah menemukan
+suatu <span class="math inline" data-source-tex="F&#x27;\subseteq E">\(F&#x27;\subseteq E\)</span> sedemikian sehingga <span class="math inline" data-source-tex="0&lt;\nu F&#x27;&lt;\infty">\(0&lt;\nu F&#x27;&lt;\infty\)</span>. Karena <span class="math inline" data-source-tex="E">\(E\)</span>
+sembarang, <span class="math inline" data-source-tex="\nu">\(\nu\)</span> semihingga.</p>
+<p> </p>
+<p><strong>(b)</strong> Kita telah mengetahui bahwa <span class="math inline" data-source-tex="\nu">\(\nu\)</span> lengkap (234Lb) dan
+semihingga. Sekarang andaikan <span class="math inline" data-source-tex="E\subseteq X">\(E\subseteq X\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="E\cap F\in\Tau">\(E\cap F\in\Tau\)</span>, yakni <span class="math inline" data-source-tex="E\cap F\cap G\in\Sigma">\(E\cap F\cap G\in\Sigma\)</span> (234Ld), kapan pun
+<span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span> dan <span class="math inline" data-source-tex="\nu F&lt;\infty">\(\nu F&lt;\infty\)</span>. Maka <span class="math inline" data-source-tex="E\cap G\cap F\in\Sigma">\(E\cap G\cap F\in\Sigma\)</span> kapan pun
+<span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dan <span class="math inline" data-source-tex="\mu F&lt;\infty">\(\mu F&lt;\infty\)</span>. Bukti. Tetapkan
+<span class="math inline" data-source-tex="F_n=\{x:x\in F\cap G,\,f(x)\le n\}">\(F_n=\{x:x\in F\cap G,\,f(x)\le n\}\)</span>. Maka
+<span class="math inline" data-source-tex="\nu F_n\le n\mu F&lt;\infty">\(\nu F_n\le n\mu F&lt;\infty\)</span>, sehingga <span class="math inline" data-source-tex="E\cap G\cap F_n\in\Sigma">\(E\cap G\cap F_n\in\Sigma\)</span> untuk
+setiap <span class="math inline" data-source-tex="n">\(n\)</span>. Namun, ini berarti
+<span class="math inline" data-source-tex="E\cap G\cap F=\bigcup_{n\in\Bbb N}E\cap G\cap F_n\in\Sigma">\(E\cap G\cap F=\bigcup_{n\in\Bbb N}E\cap G\cap F_n\in\Sigma\)</span>. ∎ 
+Karena <span class="math inline" data-source-tex="\mu">\(\mu\)</span> ditentukan secara lokal, <span class="math inline" data-source-tex="E\cap G\in\Sigma">\(E\cap G\in\Sigma\)</span> dan <span class="math inline" data-source-tex="E\in\Tau">\(E\in\Tau\)</span>.
+Karena <span class="math inline" data-source-tex="E">\(E\)</span> sembarang, <span class="math inline" data-source-tex="\nu">\(\nu\)</span> ditentukan secara lokal.</p>
+<p> </p>
+<p><strong>(c)</strong> Misalkan <span class="math inline" data-source-tex="\Cal F\subseteq\Tau">\(\Cal F\subseteq\Tau\)</span> sembarang himpunan. Tetapkan
+<span class="math inline" data-source-tex="\Cal E=\{F\cap G:F\in\Cal F\}">\(\Cal E=\{F\cap G:F\in\Cal F\}\)</span>, sehingga
+<span class="math inline" data-source-tex="\Cal E\subseteq\hat\Sigma">\(\Cal E\subseteq\hat\Sigma\)</span>. Menurut 212Ga, <span class="math inline" data-source-tex="\hat\mu">\(\hat\mu\)</span> dapat dilokalkan,
+sehingga <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> mempunyai suatu supremum esensial <span class="math inline" data-source-tex="H\in\hat\Sigma">\(H\in\hat\Sigma\)</span>.
+Namun sekarang, untuk sembarang <span class="math inline" data-source-tex="H&#x27;\in\Tau">\(H&#x27;\in\Tau\)</span>,
+<span class="math inline" data-source-tex="H&#x27;\cup(X\setminus G)=(H&#x27;\cap G)\cup(X\setminus G)">\(H&#x27;\cup(X\setminus G)=(H&#x27;\cap G)\cup(X\setminus G)\)</span> termasuk dalam
+<span class="math inline" data-source-tex="\hat\Sigma">\(\hat\Sigma\)</span>, sehingga</p>
+<p><span class="math display" data-source-tex="\eqalign{\nu(F\setminus H&#x27;)&amp;=0\text{ untuk setiap }F\in\Cal F\cr
+&amp;\iff\hat\mu(F\cap G\setminus H&#x27;)=0\text{ untuk setiap }F\in\Cal F\cr
+&amp;\iff\hat\mu(E\setminus H&#x27;)=0\text{ untuk setiap }E\in\Cal E\cr
+&amp;\iff\hat\mu(E\setminus(H&#x27;\cup(X\setminus G)))=0
+  \text{ untuk setiap }E\in\Cal E\cr
+&amp;\iff\hat\mu(H\setminus(H&#x27;\cup(X\setminus G)))=0\cr
+&amp;\iff\hat\mu(H\cap G\setminus H&#x27;)=0\cr
+&amp;\iff\nu(H\setminus H&#x27;)=0.\cr}">\[\begin{aligned}\nu(F\setminus H&#x27;)&amp;=0\text{ untuk setiap }F\in\Cal F\\
+&amp;\iff\hat\mu(F\cap G\setminus H&#x27;)=0\text{ untuk setiap }F\in\Cal F\\
+&amp;\iff\hat\mu(E\setminus H&#x27;)=0\text{ untuk setiap }E\in\Cal E\\
+&amp;\iff\hat\mu(E\setminus(H&#x27;\cup(X\setminus G)))=0
+  \text{ untuk setiap }E\in\Cal E\\
+&amp;\iff\hat\mu(H\setminus(H&#x27;\cup(X\setminus G)))=0\\
+&amp;\iff\hat\mu(H\cap G\setminus H&#x27;)=0\\
+&amp;\iff\nu(H\setminus H&#x27;)=0.\\\end{aligned}\]</span></p>
+<p>Jadi, <span class="math inline" data-source-tex="H">\(H\)</span> juga merupakan supremum esensial dari <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span>
+di dalam <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>. Karena <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> sembarang, <span class="math inline" data-source-tex="\nu">\(\nu\)</span> dapat dilokalkan.</p>
+<p> </p>
+<p><strong>(d)</strong> Misalkan <span class="math inline" data-source-tex="\langle X_i\rangle_{i\in I}">\(\langle X_i\rangle_{i\in I}\)</span> suatu dekomposisi
+<span class="math inline" data-source-tex="X">\(X\)</span> untuk <span class="math inline" data-source-tex="\mu">\(\mu\)</span>; maka keluarga tersebut juga merupakan dekomposisi untuk
+<span class="math inline" data-source-tex="\hat\mu">\(\hat\mu\)</span> (212Gb). Tetapkan <span class="math inline" data-source-tex="F_0=X\setminus G">\(F_0=X\setminus G\)</span>,
+<span class="math inline" data-source-tex="F_n=\{x:x\in G,\,n-1&lt;f(x)\le n\}">\(F_n=\{x:x\in G,\,n-1&lt;f(x)\le n\}\)</span> untuk <span class="math inline" data-source-tex="n\ge 1">\(n\ge 1\)</span>. Maka
+<span class="math inline" data-source-tex="\langle X_i\cap F_n\rangle_{i\in I,n\in\Bbb N}">\(\langle X_i\cap F_n\rangle_{i\in I,n\in\Bbb N}\)</span> adalah dekomposisi
+untuk <span class="math inline" data-source-tex="\nu">\(\nu\)</span>. Bukti. (i) <span class="math inline" data-source-tex="\langle X_i\rangle_{i\in I}">\(\langle X_i\rangle_{i\in I}\)</span> dan
+<span class="math inline" data-source-tex="\langle F_n\rangle_{n\in\Bbb N}">\(\langle F_n\rangle_{n\in\Bbb N}\)</span> adalah partisi <span class="math inline" data-source-tex="X">\(X\)</span> menjadi
+anggota-anggota <span class="math inline" data-source-tex="\Sigma\subseteq\Tau">\(\Sigma\subseteq\Tau\)</span>, sehingga
+<span class="math inline" data-source-tex="\langle X_i\cap F_n\rangle_{i\in I,n\in\Bbb N}">\(\langle X_i\cap F_n\rangle_{i\in I,n\in\Bbb N}\)</span> juga demikian.
+(ii) <span class="math inline" data-source-tex="\nu(X_i\cap F_0)=0">\(\nu(X_i\cap F_0)=0\)</span>,
+<span class="math inline" data-source-tex="\nu(X_i\cap F_n)\le n\mu X_i&lt;\infty">\(\nu(X_i\cap F_n)\le n\mu X_i&lt;\infty\)</span> untuk <span class="math inline" data-source-tex="i\in I">\(i\in I\)</span>, <span class="math inline" data-source-tex="n\ge 1">\(n\ge 1\)</span>.
+(iii) Jika <span class="math inline" data-source-tex="E\subseteq X">\(E\subseteq X\)</span> dan <span class="math inline" data-source-tex="E\cap X_i\cap F_n\in\Tau">\(E\cap X_i\cap F_n\in\Tau\)</span> untuk setiap
+<span class="math inline" data-source-tex="i\in I">\(i\in I\)</span> dan <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, maka
+<span class="math inline" data-source-tex="E\cap X_i\cap G=\bigcup_{n\in\Bbb N}E\cap X_i\cap F_n\cap G">\(E\cap X_i\cap G=\bigcup_{n\in\Bbb N}E\cap X_i\cap F_n\cap G\)</span> termasuk
+dalam <span class="math inline" data-source-tex="\hat\Sigma">\(\hat\Sigma\)</span> untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>, sehingga
+<span class="math inline" data-source-tex="E\cap G\in\hat\Sigma">\(E\cap G\in\hat\Sigma\)</span> dan <span class="math inline" data-source-tex="E\in\Tau">\(E\in\Tau\)</span>.
+(iv) Jika <span class="math inline" data-source-tex="E\in\Tau">\(E\in\Tau\)</span>, maka tentu saja</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{i\in I,n\in\Bbb N}\nu(E\cap X_i\cap F_n)
+=\sup_{J\subseteq I\times\Bbb N\text{ berhingga}}
+  \sum_{(i,n)\in J}\nu(E\cap X_i\cap F_n)\le\nu E">\(\sum_{i\in I,n\in\Bbb N}\nu(E\cap X_i\cap F_n)
+=\sup_{J\subseteq I\times\Bbb N\text{ berhingga}}
+  \sum_{(i,n)\in J}\nu(E\cap X_i\cap F_n)\le\nu E\)</span>.</div>
+<p>Jadi, jika
+<span class="math inline" data-source-tex="\sum_{i\in I,n\in\Bbb N}\nu(E\cap X_i\cap F_n)=\infty">\(\sum_{i\in I,n\in\Bbb N}\nu(E\cap X_i\cap F_n)=\infty\)</span>, jumlah tersebut
+tentu sama dengan <span class="math inline" data-source-tex="\nu E">\(\nu E\)</span>. Jika jumlahnya berhingga, maka
+<span class="math inline" data-source-tex="K=\{i:i\in I,\,\nu(E\cap X_i)&gt;0\}">\(K=\{i:i\in I,\,\nu(E\cap X_i)&gt;0\}\)</span> harus terhitung. Namun, untuk
+<span class="math inline" data-source-tex="i\in I\setminus K">\(i\in I\setminus K\)</span>, <span class="math inline" data-source-tex="\int_{E\cap X_i}fd\mu=0">\(\int_{E\cap X_i}fd\mu=0\)</span>, sehingga
+<span class="math inline" data-source-tex="f=0\,\,\mu">\(f=0\,\,\mu\)</span>-hampir di mana-mana pada <span class="math inline" data-source-tex="E\cap X_i">\(E\cap X_i\)</span>, yakni
+<span class="math inline" data-source-tex="\hat\mu(E\cap G\cap X_i)=0">\(\hat\mu(E\cap G\cap X_i)=0\)</span>. Karena
+<span class="math inline" data-source-tex="\langle X_i\rangle_{i\in I}">\(\langle X_i\rangle_{i\in I}\)</span> merupakan dekomposisi untuk <span class="math inline" data-source-tex="\hat\mu">\(\hat\mu\)</span>,
+<span class="math inline" data-source-tex="\hat\mu(E\cap G\cap\bigcup_{i\in I\setminus K}X_i)=0">\(\hat\mu(E\cap G\cap\bigcup_{i\in I\setminus K}X_i)=0\)</span> dan
+<span class="math inline" data-source-tex="\nu(E\cap\bigcup_{i\in I\setminus K}X_i)=0">\(\nu(E\cap\bigcup_{i\in I\setminus K}X_i)=0\)</span>. Namun, ini berarti bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu E=\sum_{i\in K}\nu(E\cap X_i)
+=\sum_{i\in K,n\in\Bbb N}\nu(E\cap X_i\cap F_n)
+=\sum_{i\in I,n\in\Bbb N}\nu(E\cap X_i\cap F_n)">\(\nu E=\sum_{i\in K}\nu(E\cap X_i)
+=\sum_{i\in K,n\in\Bbb N}\nu(E\cap X_i\cap F_n)
+=\sum_{i\in I,n\in\Bbb N}\nu(E\cap X_i\cap F_n)\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="E">\(E\)</span> sembarang,
+<span class="math inline" data-source-tex="\langle X_i\cap F_n\rangle_{i\in I,n\in\Bbb N}">\(\langle X_i\cap F_n\rangle_{i\in I,n\in\Bbb N}\)</span> adalah dekomposisi
+untuk <span class="math inline" data-source-tex="\nu">\(\nu\)</span>. ∎ Jadi, <span class="math inline" data-source-tex="\nu">\(\nu\)</span> dapat dilokalkan secara ketat.</p>
+<p> </p>
+<p><strong>(e)</strong> Jika <span class="math inline" data-source-tex="\mu">\(\mu\)</span> <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga, maka dalam (d) kita dapat mengambil
+<span class="math inline" data-source-tex="I">\(I\)</span> terhitung, sehingga <span class="math inline" data-source-tex="I\times\Bbb N">\(I\times\Bbb N\)</span> juga terhitung, dan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> akan
+<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga.</p>
+<p> </p>
+<p><strong>(f)</strong> Jika <span class="math inline" data-source-tex="\mu">\(\mu\)</span> tanpa atom, demikian pula <span class="math inline" data-source-tex="\hat\mu">\(\hat\mu\)</span> (212Gd).
+Jika <span class="math inline" data-source-tex="E\in\Tau">\(E\in\Tau\)</span> dan <span class="math inline" data-source-tex="\nu E&gt;0">\(\nu E&gt;0\)</span>, maka <span class="math inline" data-source-tex="\hat\mu(E\cap G)&gt;0">\(\hat\mu(E\cap G)&gt;0\)</span>, sehingga
+terdapat suatu <span class="math inline" data-source-tex="F\in\hat\Sigma">\(F\in\hat\Sigma\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="F\subseteq E\cap G">\(F\subseteq E\cap G\)</span> dan baik <span class="math inline" data-source-tex="F">\(F\)</span> maupun <span class="math inline" data-source-tex="E\cap G\setminus F">\(E\cap G\setminus F\)</span> tidak
+terabaikan terhadap <span class="math inline" data-source-tex="\hat\mu">\(\hat\mu\)</span>. Namun, dalam hal ini, baik
+<span class="math inline" data-source-tex="\nu F=\int_Ffd\mu">\(\nu F=\int_Ffd\mu\)</span> maupun
+<span class="math inline" data-source-tex="\nu(E\setminus F)=\int_{E\setminus F}fd\mu">\(\nu(E\setminus F)=\int_{E\setminus F}fd\mu\)</span> pasti lebih besar daripada
+<span class="math inline" data-source-tex="0">\(0\)</span> (<a class="xref" href="../122/index.html#122Rc">122Rc</a>). Karena <span class="math inline" data-source-tex="E">\(E\)</span> sembarang, <span class="math inline" data-source-tex="\nu">\(\nu\)</span> tanpa atom.</p></aside>
+</section>
+<section class="source-unit" id="234O" data-source-id="234O"><h2><span class="source-label">234O</span>  </h2>
+<p>Untuk ukuran yang dapat dilokalkan, terdapat
+uraian langsung mengenai ukuran integral tak tentu yang bersesuaian.</p>
+<p> </p>
+<p><strong>Teorema</strong>
+ Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur yang dapat dilokalkan. Maka
+suatu ukuran <span class="math inline" data-source-tex="\nu">\(\nu\)</span>, dengan domain <span class="math inline" data-source-tex="\Tau\supseteq\Sigma">\(\Tau\supseteq\Sigma\)</span>, adalah ukuran
+integral tak tentu terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> jika dan hanya jika
+(<span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>) <span class="math inline" data-source-tex="\nu">\(\nu\)</span> semihingga dan nol pada himpunan-himpunan yang terabaikan
+terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>
+(<span class="math inline" data-source-tex="\beta">\(\beta\)</span>) <span class="math inline" data-source-tex="\nu">\(\nu\)</span> adalah pelengkapan dari pembatasannya pada <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>
+(<span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>) kapan pun <span class="math inline" data-source-tex="\nu E&gt;0">\(\nu E&gt;0\)</span>, terdapat suatu <span class="math inline" data-source-tex="F\subseteq E">\(F\subseteq E\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>, <span class="math inline" data-source-tex="\mu F&lt;\infty">\(\mu F&lt;\infty\)</span>, dan <span class="math inline" data-source-tex="\nu F&gt;0">\(\nu F&gt;0\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Jika <span class="math inline" data-source-tex="\nu">\(\nu\)</span> suatu ukuran integral tak tentu terhadap
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span>, maka menurut 234Na, <a class="xref" href="#234Kb">234Kb</a>, dan 234Lb, ukuran tersebut semihingga,
+nol pada himpunan-himpunan yang terabaikan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, dan merupakan
+pelengkapan dari pembatasannya pada <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. Sekarang andaikan
+<span class="math inline" data-source-tex="E\in\Tau">\(E\in\Tau\)</span> dan <span class="math inline" data-source-tex="\nu E&gt;0">\(\nu E&gt;0\)</span>. Maka terdapat suatu
+<span class="math inline" data-source-tex="E_0\in\Sigma">\(E_0\in\Sigma\)</span> sedemikian sehingga <span class="math inline" data-source-tex="E_0\subseteq E">\(E_0\subseteq E\)</span> dan
+<span class="math inline" data-source-tex="\nu E_0=\nu E">\(\nu E_0=\nu E\)</span>, menurut 234Lb. Jika <span class="math inline" data-source-tex="f:X\to\Bbb R">\(f:X\to\Bbb R\)</span> adalah suatu fungsi
+yang terukur terhadap <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dan merupakan turunan Radon-Nikodým dari
+<span class="math inline" data-source-tex="\nu">\(\nu\)</span> (<a class="xref" href="#234Ka">234Ka</a>), dan
+<span class="math inline" data-source-tex="G=\{x:f(x)&gt;0\}">\(G=\{x:f(x)&gt;0\}\)</span>, maka <span class="math inline" data-source-tex="\mu(G\cap E_0)&gt;0">\(\mu(G\cap E_0)&gt;0\)</span>; karena <span class="math inline" data-source-tex="\mu">\(\mu\)</span> semihingga,
+terdapat suatu <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="F\subseteq G\cap E_0">\(F\subseteq G\cap E_0\)</span> dan <span class="math inline" data-source-tex="0&lt;\mu F&lt;\infty">\(0&lt;\mu F&lt;\infty\)</span>, dan dalam hal ini
+<span class="math inline" data-source-tex="\nu F&gt;0">\(\nu F&gt;0\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Jadi, sekarang andaikan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> memenuhi syarat-syarat tersebut.</p>
+<p> </p>
+<p>  <strong>(i)</strong> Tetapkan
+<span class="math inline" data-source-tex="\Cal E=\{E:E\in\Sigma,\,\nu E&lt;\infty\}">\(\Cal E=\{E:E\in\Sigma,\,\nu E&lt;\infty\}\)</span>. Untuk setiap <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>,
+tinjau <span class="math inline" data-source-tex="\nu_E:\Sigma\to\Bbb R">\(\nu_E:\Sigma\to\Bbb R\)</span>, dengan menetapkan
+<span class="math inline" data-source-tex="\nu_EG=\nu(G\cap E)">\(\nu_EG=\nu(G\cap E)\)</span> untuk setiap <span class="math inline" data-source-tex="G\in\Sigma">\(G\in\Sigma\)</span>. Maka <span class="math inline" data-source-tex="\nu_E">\(\nu_E\)</span> aditif
+terhitung dan kontinu sejati terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Bukti.
+<span class="math inline" data-source-tex="\nu_E">\(\nu_E\)</span> aditif terhitung, persis seperti dalam <a class="xref" href="../231/index.html#231De">231De</a>. Karena <span class="math inline" data-source-tex="\nu">\(\nu\)</span> nol
+pada himpunan-himpunan yang terabaikan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, <span class="math inline" data-source-tex="\nu_E">\(\nu_E\)</span> harus
+kontinu mutlak terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, menurut 232Ba. Karena <span class="math inline" data-source-tex="\nu_E">\(\nu_E\)</span> jelas
+memenuhi syarat (<span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>) dari 232Bb, ia harus kontinu sejati. ∎</p>
+<p>Menurut <a class="xref" href="../232/index.html#232E">232E</a>, terdapat suatu fungsi yang terintegralkan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>,
+<span class="math inline" data-source-tex="f_E">\(f_E\)</span>, sedemikian sehingga <span class="math inline" data-source-tex="\nu_EG=\int_Gf_Ed\mu">\(\nu_EG=\int_Gf_Ed\mu\)</span> untuk setiap
+<span class="math inline" data-source-tex="G\in\Sigma">\(G\in\Sigma\)</span>, dan kita dapat mengandaikan bahwa <span class="math inline" data-source-tex="f_E">\(f_E\)</span> terukur terhadap
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> (<a class="xref" href="../232/index.html#232He">232He</a>). Karena <span class="math inline" data-source-tex="\nu_E">\(\nu_E\)</span> nonnegatif,
+<span class="math inline" data-source-tex="f_E\ge 0\,\,\mu">\(f_E\ge 0\,\,\mu\)</span>-hampir di mana-mana.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Jika <span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="F\in\Cal E">\(F\in\Cal E\)</span>, maka
+<span class="math inline" data-source-tex="f_E=f_F\,\,\mu">\(f_E=f_F\,\,\mu\)</span>-hampir di mana-mana pada <span class="math inline" data-source-tex="E\cap F">\(E\cap F\)</span>, karena</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_Gf_Ed\mu=\nu G=\int_Gf_Fd\mu">\(\int_Gf_Ed\mu=\nu G=\int_Gf_Fd\mu\)</span></div>
+<p>kapan pun <span class="math inline" data-source-tex="G\in\Sigma">\(G\in\Sigma\)</span> dan <span class="math inline" data-source-tex="G\subseteq E\cap F">\(G\subseteq E\cap F\)</span>. Karena
+<span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dapat dilokalkan, terdapat suatu fungsi terukur
+<span class="math inline" data-source-tex="f:X\to\Bbb R">\(f:X\to\Bbb R\)</span> sedemikian sehingga <span class="math inline" data-source-tex="f_E=f\,\,\mu">\(f_E=f\,\,\mu\)</span>-hampir di mana-mana 
+pada <span class="math inline" data-source-tex="E">\(E\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span> (<a class="xref" href="../213/index.html#213N">213N</a>). Karena setiap <span class="math inline" data-source-tex="f_E">\(f_E\)</span>
+nonnegatif hampir di mana-mana, kita dapat mengandaikan bahwa <span class="math inline" data-source-tex="f">\(f\)</span>
+nonnegatif, sebab tentu saja <span class="math inline" data-source-tex="f_E=f\vee\tbf{0}\,\,\mu">\(f_E=f\vee\tbf{0}\,\,\mu\)</span>-hampir di
+mana-mana pada <span class="math inline" data-source-tex="E">\(E\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>.</p>
+<p> </p>
+<p>  <strong>(iii)</strong> Misalkan <span class="math inline" data-source-tex="\nuprime">\(\nuprime\)</span> ukuran integral tak tentu yang
+didefinisikan oleh <span class="math inline" data-source-tex="f">\(f\)</span>. Jika <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu E=\int_Ef_Ed\mu=\int_Efd\mu=\nuprime E">\(\nu E=\int_Ef_Ed\mu=\int_Efd\mu=\nuprime E\)</span>.</div>
+<p>Untuk <span class="math inline" data-source-tex="E\in\Sigma\setminus\Cal E">\(E\in\Sigma\setminus\Cal E\)</span>, kita mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nuprime E
+\ge\sup\{\nuprime F:F\in\Cal E,\,F\subseteq E\}
+=\sup\{\nu F:F\in\Cal E,\,F\subseteq E\}=\nu E=\infty">\(\nuprime E
+\ge\sup\{\nuprime F:F\in\Cal E,\,F\subseteq E\}
+=\sup\{\nu F:F\in\Cal E,\,F\subseteq E\}=\nu E=\infty\)</span></div>
+<p>karena <span class="math inline" data-source-tex="\nu">\(\nu\)</span> semihingga. Jadi, <span class="math inline" data-source-tex="\nuprime">\(\nuprime\)</span> dan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> berimpit
+pada <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. Namun, karena masing-masing merupakan pelengkapan dari
+pembatasannya pada <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, keduanya harus sama.</p></aside>
+</section>
+<section class="source-unit" id="234P" data-source-id="234P"><h2><span class="source-label">234P</span> Pengurutan ukuran </h2>
+<p>Terdapat banyak cara
+suatu ukuran dapat mendominasi ukuran lain. Di sini saya akan menguraikan
+salah satu cara yang paling sederhana.</p>
+<p> </p>
+<p><strong>Definisi</strong>
+Misalkan <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, <span class="math inline" data-source-tex="\nu">\(\nu\)</span> dua ukuran pada suatu himpunan <span class="math inline" data-source-tex="X">\(X\)</span>.
+Saya akan mengatakan bahwa <span class="math inline" data-source-tex="\mu\le\nu">\(\mu\le\nu\)</span> jika <span class="math inline" data-source-tex="\mu E">\(\mu E\)</span> terdefinisi dan
+<span class="math inline" data-source-tex="\mu E\le\nu E">\(\mu E\le\nu E\)</span> kapan pun <span class="math inline" data-source-tex="\nu">\(\nu\)</span> mengukur <span class="math inline" data-source-tex="E">\(E\)</span>.</p>
+</section>
+<section class="source-unit" id="234Q" data-source-id="234Q"><h2><span class="source-label">234Q</span> Proposisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan, dan tuliskan <span class="math inline" data-source-tex="\Mu">\(\Mu\)</span> untuk himpunan semua
+ukuran pada <span class="math inline" data-source-tex="X">\(X\)</span>.</p>
+<p>(a) Dengan mendefinisikan <span class="math inline" data-source-tex="\le">\(\le\)</span> seperti dalam <a class="xref" href="#234P">234P</a>, <span class="math inline" data-source-tex="(\Mu,\le)">\((\Mu,\le)\)</span> adalah
+suatu himpunan terurut parsial.</p>
+<p>(b) Jika <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, <span class="math inline" data-source-tex="\nu\in\Mu">\(\nu\in\Mu\)</span>, maka <span class="math inline" data-source-tex="\mu\le\nu">\(\mu\le\nu\)</span> jika dan hanya jika terdapat
+suatu <span class="math inline" data-source-tex="\lambda\in\Mu">\(\lambda\in\Mu\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\mu+\lambda=\nu">\(\mu+\lambda=\nu\)</span>.</p>
+<p>(c) Jika <span class="math inline" data-source-tex="\mu\le\nu">\(\mu\le\nu\)</span> dalam <span class="math inline" data-source-tex="\Mu">\(\Mu\)</span> dan <span class="math inline" data-source-tex="f">\(f\)</span> adalah suatu fungsi bernilai
+<span class="math inline" data-source-tex="[-\infty,\infty]">\([-\infty,\infty]\)</span> yang didefinisikan pada suatu subhimpunan dari <span class="math inline" data-source-tex="X">\(X\)</span>,
+sedemikian sehingga <span class="math inline" data-source-tex="\int fd\nu">\(\int fd\nu\)</span> terdefinisi di <span class="math inline" data-source-tex="[-\infty,\infty]">\([-\infty,\infty]\)</span>, maka
+<span class="math inline" data-source-tex="\int fd\mu">\(\int fd\mu\)</span> terdefinisi; jika <span class="math inline" data-source-tex="f">\(f\)</span> nonnegatif,
+<span class="math inline" data-source-tex="\int fd\mu\le\int fd\nu">\(\int fd\mu\le\int fd\nu\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Tentu saja <span class="math inline" data-source-tex="\mu\le\mu">\(\mu\le\mu\)</span> untuk setiap <span class="math inline" data-source-tex="\mu\in\Mu">\(\mu\in\Mu\)</span>.
+Jika <span class="math inline" data-source-tex="\mu\le\nu">\(\mu\le\nu\)</span> dan <span class="math inline" data-source-tex="\nu\le\lambda">\(\nu\le\lambda\)</span> dalam <span class="math inline" data-source-tex="\Mu">\(\Mu\)</span>, maka
+<span class="math inline" data-source-tex="\dom\lambda\subseteq\dom\nu\subseteq\dom\mu">\(\dom\lambda\subseteq\dom\nu\subseteq\dom\mu\)</span>, dan
+<span class="math inline" data-source-tex="\mu E\le\nu E\le\lambda E">\(\mu E\le\nu E\le\lambda E\)</span> kapan pun <span class="math inline" data-source-tex="\lambda">\(\lambda\)</span> mengukur <span class="math inline" data-source-tex="E">\(E\)</span>.
+Jika <span class="math inline" data-source-tex="\mu\le\nu">\(\mu\le\nu\)</span> dan <span class="math inline" data-source-tex="\nu\le\mu">\(\nu\le\mu\)</span>, maka
+<span class="math inline" data-source-tex="\dom\mu\subseteq\dom\nu\subseteq\dom\mu">\(\dom\mu\subseteq\dom\nu\subseteq\dom\mu\)</span> dan
+<span class="math inline" data-source-tex="\mu E\le\nu E\le\mu E">\(\mu E\le\nu E\le\mu E\)</span> untuk setiap <span class="math inline" data-source-tex="E">\(E\)</span> dalam domain bersama keduanya,
+sehingga <span class="math inline" data-source-tex="\mu=\nu">\(\mu=\nu\)</span>.</p>
+<p> </p>
+<p><strong>(b)(i)</strong>
+Jika <span class="math inline" data-source-tex="\mu+\lambda=\nu">\(\mu+\lambda=\nu\)</span>, maka definisi-definisi dalam <a class="xref" href="#234G">234G</a> dan <a class="xref" href="#234P">234P</a>
+langsung menunjukkan bahwa <span class="math inline" data-source-tex="\mu\le\nu">\(\mu\le\nu\)</span>.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Dalam arah sebaliknya, jika <span class="math inline" data-source-tex="\mu\le\nu">\(\mu\le\nu\)</span>,
+tuliskan <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> untuk domain <span class="math inline" data-source-tex="\nu">\(\nu\)</span>.
+Definisikan <span class="math inline" data-source-tex="\lambda:\Tau\to[0,\infty]">\(\lambda:\Tau\to[0,\infty]\)</span> dengan menetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lambda G
+=\sup\{\nu F-\mu F:F\in\Tau,\,F\subseteq G,\,\mu F&lt;\infty\}">\(\lambda G
+=\sup\{\nu F-\mu F:F\in\Tau,\,F\subseteq G,\,\mu F&lt;\infty\}\)</span></div>
+<p>untuk <span class="math inline" data-source-tex="G\in\Tau">\(G\in\Tau\)</span>.
+Maka <span class="math inline" data-source-tex="\lambda\in\Mu">\(\lambda\in\Mu\)</span>. Bukti. Tentu saja <span class="math inline" data-source-tex="\dom\lambda=\Tau">\(\dom\lambda=\Tau\)</span> adalah
+aljabar-sigma, dan <span class="math inline" data-source-tex="\lambda\emptyset=0">\(\lambda\emptyset=0\)</span>. Andaikan
+<span class="math inline" data-source-tex="\sequencen{G_n}">\(\sequencen{G_n}\)</span> adalah suatu barisan saling lepas di dalam <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>
+dengan gabungan <span class="math inline" data-source-tex="G">\(G\)</span>. Jika <span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>, <span class="math inline" data-source-tex="F\subseteq G">\(F\subseteq G\)</span>, dan
+<span class="math inline" data-source-tex="\mu F&lt;\infty">\(\mu F&lt;\infty\)</span>, maka</p>
+<p><span class="math display" data-source-tex="\eqalign{\nu F-\mu F
+&amp;=\sum_{n=0}^{\infty}\nu(F\cap G_n)-\sum_{n=0}^{\infty}\mu(F\cap G_n)\cr
+&amp;=\sum_{n=0}^{\infty}(\nu(F\cap G_n)-\mu(F\cap G_n))
+\le\sum_{n=0}^{\infty}\lambda G_n;\cr}">\[\begin{aligned}\nu F-\mu F
+&amp;=\sum_{n=0}^{\infty}\nu(F\cap G_n)-\sum_{n=0}^{\infty}\mu(F\cap G_n)\\
+&amp;=\sum_{n=0}^{\infty}(\nu(F\cap G_n)-\mu(F\cap G_n))
+\le\sum_{n=0}^{\infty}\lambda G_n;\\\end{aligned}\]</span></p>
+<p>karena <span class="math inline" data-source-tex="F">\(F\)</span> sembarang,
+<span class="math inline" data-source-tex="\lambda G\le\sum_{n=0}^{\infty}\lambda G_n">\(\lambda G\le\sum_{n=0}^{\infty}\lambda G_n\)</span>. Jika
+<span class="math inline" data-source-tex="\gamma&lt;\sum_{n=0}^{\infty}\lambda G_n">\(\gamma&lt;\sum_{n=0}^{\infty}\lambda G_n\)</span>, terdapat suatu <span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\gamma&lt;\sum_{n=0}^m\lambda G_n">\(\gamma&lt;\sum_{n=0}^m\lambda G_n\)</span>, dan terdapat
+<span class="math inline" data-source-tex="F_0,\ldots,F_m">\(F_0,\ldots,F_m\)</span> sedemikian sehingga <span class="math inline" data-source-tex="F_n\in\Tau">\(F_n\in\Tau\)</span>, <span class="math inline" data-source-tex="F_n\subseteq G_n">\(F_n\subseteq G_n\)</span>,
+dan <span class="math inline" data-source-tex="\mu F_n&lt;\infty">\(\mu F_n&lt;\infty\)</span> untuk setiap <span class="math inline" data-source-tex="n\le m">\(n\le m\)</span>, sedangkan
+<span class="math inline" data-source-tex="\sum_{n=0}^m(\nu F_n-\mu F_n)\ge\gamma">\(\sum_{n=0}^m(\nu F_n-\mu F_n)\ge\gamma\)</span>. Tetapkan
+<span class="math inline" data-source-tex="F=\bigcup_{n\le m}F_n">\(F=\bigcup_{n\le m}F_n\)</span>; maka <span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>, <span class="math inline" data-source-tex="F\subseteq G">\(F\subseteq G\)</span>, dan
+<span class="math inline" data-source-tex="\mu F&lt;\infty">\(\mu F&lt;\infty\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lambda G\ge\nu F-\mu F
+=\sum_{n=0}^m(\nu F_n-\mu F_n)\ge\gamma">\(\lambda G\ge\nu F-\mu F
+=\sum_{n=0}^m(\nu F_n-\mu F_n)\ge\gamma\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="\gamma">\(\gamma\)</span> sembarang,
+<span class="math inline" data-source-tex="\lambda G\ge\sum_{n=0}^{\infty}\lambda G_n">\(\lambda G\ge\sum_{n=0}^{\infty}\lambda G_n\)</span>; karena
+<span class="math inline" data-source-tex="\sequencen{G_n}">\(\sequencen{G_n}\)</span> sembarang, <span class="math inline" data-source-tex="\lambda">\(\lambda\)</span> aditif terhitung. ∎</p>
+<p> </p>
+<p>   Sekarang <span class="math inline" data-source-tex="\mu+\lambda=\nu">\(\mu+\lambda=\nu\)</span>. Bukti. Domain dari
+<span class="math inline" data-source-tex="\mu+\lambda">\(\mu+\lambda\)</span> adalah
+<span class="math inline" data-source-tex="\dom\mu\cap\dom\lambda=\Tau=\dom\nu">\(\dom\mu\cap\dom\lambda=\Tau=\dom\nu\)</span>. Ambil <span class="math inline" data-source-tex="G\in\Tau">\(G\in\Tau\)</span>. Jika
+<span class="math inline" data-source-tex="\mu G=\infty">\(\mu G=\infty\)</span>, maka <span class="math inline" data-source-tex="\nu G=\infty=(\mu+\lambda)G">\(\nu G=\infty=(\mu+\lambda)G\)</span>. Jika tidak,</p>
+<div class="centerline"><span class="math inline" data-source-tex="(\mu+\lambda)G\ge\mu G+\nu G-\mu G=\nu G">\((\mu+\lambda)G\ge\mu G+\nu G-\mu G=\nu G\)</span>.</div>
+<p>Jadi, jika <span class="math inline" data-source-tex="\nu G=\infty">\(\nu G=\infty\)</span>, kita tentu akan mempunyai
+<span class="math inline" data-source-tex="\nu G=(\mu+\lambda)G">\(\nu G=(\mu+\lambda)G\)</span>. Terakhir, jika <span class="math inline" data-source-tex="\nu G&lt;\infty">\(\nu G&lt;\infty\)</span>, maka</p>
+<p><span class="math display" data-source-tex="\eqalign{(\mu+\lambda)G
+&amp;=\mu G+\sup\{\nu F-\mu F:F\in\Tau,\,F\subseteq G\}\cr
+&amp;=\sup\{\nu F+\mu(G\setminus F):F\in\Tau,\,F\subseteq G\}\cr
+&amp;\le\sup\{\nu F+\nu(G\setminus F):F\in\Tau,\,F\subseteq G\}
+=\nu G,\cr}">\[\begin{aligned}(\mu+\lambda)G
+&amp;=\mu G+\sup\{\nu F-\mu F:F\in\Tau,\,F\subseteq G\}\\
+&amp;=\sup\{\nu F+\mu(G\setminus F):F\in\Tau,\,F\subseteq G\}\\
+&amp;\le\sup\{\nu F+\nu(G\setminus F):F\in\Tau,\,F\subseteq G\}
+=\nu G,\\\end{aligned}\]</span></p>
+<p>sehingga sekali lagi kita memperoleh kesamaan. ∎</p>
+<p>Dengan demikian, kita memperoleh penguraian <span class="math inline" data-source-tex="\nu">\(\nu\)</span> yang diinginkan sebagai
+suatu jumlah ukuran.</p>
+<p> </p>
+<p><strong>(c)(i)</strong> Jika <span class="math inline" data-source-tex="f">\(f\)</span> nonnegatif, gabungkan (b) dan 234Hc.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Secara umum, jika <span class="math inline" data-source-tex="\int fd\nu">\(\int fd\nu\)</span> terdefinisi, demikian pula
+<span class="math inline" data-source-tex="\int f^+d\nu">\(\int f^+d\nu\)</span> dan <span class="math inline" data-source-tex="\int f^-d\nu">\(\int f^-d\nu\)</span>, dan paling banyak salah satunya
+tak berhingga; sehingga <span class="math inline" data-source-tex="\int f^+d\mu">\(\int f^+d\mu\)</span> dan <span class="math inline" data-source-tex="\int f^-d\mu">\(\int f^-d\mu\)</span> terdefinisi
+dan paling banyak salah satunya tak berhingga.</p></aside>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="234X" data-source-id="234X"><span class="anchor" id="234Xa"></span><h2><span class="source-label">234X</span> Latihan dasar (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dan <span class="math inline" data-source-tex="(Y,\Tau,\nu)">\((Y,\Tau,\nu)\)</span> ruang-ruang ukur, dan
+<span class="math inline" data-source-tex="\phi:X\to Y">\(\phi:X\to Y\)</span> suatu fungsi pelestari ukuran melalui prapeta. Misalkan <span class="math inline" data-source-tex="A\subseteq X">\(A\subseteq X\)</span> suatu himpunan
+dengan ukuran luar penuh dalam <span class="math inline" data-source-tex="X">\(X\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\phi[A]">\(\phi[A]\)</span> mempunyai
+ukuran luar penuh dalam <span class="math inline" data-source-tex="Y">\(Y\)</span>, dan bahwa <span class="math inline" data-source-tex="\phi\restr A">\(\phi\restr A\)</span> bersifat pelestari ukuran melalui prapeta 
+untuk ukuran-ukuran subruang pada <span class="math inline" data-source-tex="A">\(A\)</span> dan <span class="math inline" data-source-tex="\phi[A]">\(\phi[A]\)</span>.</p>
+</section>
+<section class="source-unit" id="234Xb" data-source-id="234Xb"><h3><span class="source-label">234Xb</span> (b) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur, <span class="math inline" data-source-tex="Y">\(Y\)</span> suatu himpunan, dan
+<span class="math inline" data-source-tex="\phi:X\to Y">\(\phi:X\to Y\)</span> suatu fungsi. Tunjukkan bahwa jika <span class="math inline" data-source-tex="\mu">\(\mu\)</span> bertumpu pada
+titik, maka demikian pula ukuran citra <span class="math inline" data-source-tex="\mu\phi^{-1}">\(\mu\phi^{-1}\)</span>.</p>
+</section>
+<section class="source-unit" id="234Xc" data-source-id="234Xc"><h3><span class="source-label">234Xc</span> (c) </h3>
+<p>Berikan suatu contoh ruang peluang <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span>, suatu himpunan
+<span class="math inline" data-source-tex="Y">\(Y\)</span>, dan suatu fungsi <span class="math inline" data-source-tex="\phi:X\to Y">\(\phi:X\to Y\)</span> sedemikian sehingga pelengkapan
+ukuran citra <span class="math inline" data-source-tex="\mu\phi^{-1}">\(\mu\phi^{-1}\)</span> bukan citra dari pelengkapan <span class="math inline" data-source-tex="\mu">\(\mu\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> <span class="math inline" data-source-tex="\#(X)=3">\(\#(X)=3\)</span>.</span></p>
+</section>
+<section class="source-unit" id="234Xd" data-source-id="234Xd"><h3><span class="source-label">234Xd</span> (d) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span>, <span class="math inline" data-source-tex="Y">\(Y\)</span> himpunan-himpunan, <span class="math inline" data-source-tex="\phi:X\to Y">\(\phi:X\to Y\)</span> suatu fungsi, dan
+<span class="math inline" data-source-tex="\familyiI{\mu_i}">\(\familyiI{\mu_i}\)</span> suatu keluarga ukuran pada <span class="math inline" data-source-tex="X">\(X\)</span> dengan jumlah <span class="math inline" data-source-tex="\mu">\(\mu\)</span>.
+Dengan menuliskan <span class="math inline" data-source-tex="\mu_i\phi^{-1}">\(\mu_i\phi^{-1}\)</span>, <span class="math inline" data-source-tex="\mu\phi^{-1}">\(\mu\phi^{-1}\)</span> untuk ukuran-ukuran
+citra pada <span class="math inline" data-source-tex="Y">\(Y\)</span>, tunjukkan bahwa
+<span class="math inline" data-source-tex="\mu\phi^{-1}=\sum_{i\in I}\mu_i\phi^{-1}">\(\mu\phi^{-1}=\sum_{i\in I}\mu_i\phi^{-1}\)</span>.</p>
+</section>
+<section class="source-unit" id="234Xe" data-source-id="234Xe"><h3><span class="source-label">234Xe</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan.
+(i) Tunjukkan bahwa jika <span class="math inline" data-source-tex="\familyiI{\mu_i}">\(\familyiI{\mu_i}\)</span> suatu keluarga terhitung dari
+ukuran-ukuran <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga pada <span class="math inline" data-source-tex="X">\(X\)</span>, dan
+<span class="math inline" data-source-tex="\mu=\sum_{i\in I}\mu_i">\(\mu=\sum_{i\in I}\mu_i\)</span> semihingga, maka <span class="math inline" data-source-tex="\mu">\(\mu\)</span> <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga.
+(ii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="\familyiI{\mu_i}">\(\familyiI{\mu_i}\)</span> suatu keluarga ukuran
+atomik murni pada <span class="math inline" data-source-tex="X">\(X\)</span>, dan <span class="math inline" data-source-tex="\mu=\sum_{i\in I}\mu_i">\(\mu=\sum_{i\in I}\mu_i\)</span> semihingga, maka
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span> atomik murni.
+(iii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="\familyiI{\mu_i}">\(\familyiI{\mu_i}\)</span> sembarang keluarga ukuran
+yang bertumpu pada titik pada <span class="math inline" data-source-tex="X">\(X\)</span>, maka <span class="math inline" data-source-tex="\sum_{i\in I}\mu_i">\(\sum_{i\in I}\mu_i\)</span> bertumpu
+pada titik.</p>
+</section>
+<section class="source-unit" id="234Xf" data-source-id="234Xf"><h3><span class="source-label">234Xf</span> (&gt;f) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan, dan tuliskan <span class="math inline" data-source-tex="\Mu">\(\Mu\)</span> untuk himpunan semua
+ukuran pada <span class="math inline" data-source-tex="X">\(X\)</span>. Untuk <span class="math inline" data-source-tex="\mu\in\Mu">\(\mu\in\Mu\)</span> dan
+<span class="math inline" data-source-tex="\alpha\in\coint{0,\infty}">\(\alpha\in\coint{0,\infty}\)</span>, definisikan <span class="math inline" data-source-tex="\alpha\mu">\(\alpha\mu\)</span> dengan mengatakan
+bahwa jika <span class="math inline" data-source-tex="\alpha&gt;0">\(\alpha&gt;0\)</span>, maka
+<span class="math inline" data-source-tex="(\alpha\mu)(E)=\alpha\mu E">\((\alpha\mu)(E)=\alpha\mu E\)</span> untuk <span class="math inline" data-source-tex="E\in\dom\mu">\(E\in\dom\mu\)</span>, sedangkan jika
+<span class="math inline" data-source-tex="\alpha=0">\(\alpha=0\)</span>, maka <span class="math inline" data-source-tex="(\alpha\mu)(E)=0">\((\alpha\mu)(E)=0\)</span> untuk setiap <span class="math inline" data-source-tex="E\subseteq X">\(E\subseteq X\)</span>.
+(i) Tunjukkan bahwa <span class="math inline" data-source-tex="\alpha\mu\in\Mu">\(\alpha\mu\in\Mu\)</span> untuk semua
+<span class="math inline" data-source-tex="\alpha\in\coint{0,\infty}">\(\alpha\in\coint{0,\infty}\)</span> dan <span class="math inline" data-source-tex="\mu\in\Mu">\(\mu\in\Mu\)</span>.
+(ii) Tunjukkan bahwa <span class="math inline" data-source-tex="(\alpha+\beta)\mu=\alpha\mu+\beta\mu">\((\alpha+\beta)\mu=\alpha\mu+\beta\mu\)</span>,
+<span class="math inline" data-source-tex="\alpha(\beta\mu)=(\alpha\beta)\mu">\(\alpha(\beta\mu)=(\alpha\beta)\mu\)</span>,
+<span class="math inline" data-source-tex="\alpha(\mu+\nu)=\alpha\mu+\alpha\nu">\(\alpha(\mu+\nu)=\alpha\mu+\alpha\nu\)</span> untuk semua <span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>,
+<span class="math inline" data-source-tex="\beta\in\coint{0,\infty}">\(\beta\in\coint{0,\infty}\)</span> dan <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, <span class="math inline" data-source-tex="\nu\in\Mu">\(\nu\in\Mu\)</span>.</p>
+</section>
+<section class="source-unit" id="234Xg" data-source-id="234Xg"><h3><span class="source-label">234Xg</span> (g) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan, dan <span class="math inline" data-source-tex="\familyiI{\mu_i}">\(\familyiI{\mu_i}\)</span> suatu keluarga
+ukuran lengkap pada <span class="math inline" data-source-tex="X">\(X\)</span> dengan jumlah <span class="math inline" data-source-tex="\mu">\(\mu\)</span>.
+Tunjukkan bahwa suatu fungsi bernilai <span class="math inline" data-source-tex="[-\infty,\infty]">\([-\infty,\infty]\)</span> yang dinotasikan
+dengan <span class="math inline" data-source-tex="f">\(f\)</span> dan didefinisikan pada suatu subhimpunan dari <span class="math inline" data-source-tex="X">\(X\)</span> terintegralkan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>
+jika dan hanya jika fungsi tersebut terintegralkan terhadap <span class="math inline" data-source-tex="\mu_i">\(\mu_i\)</span> untuk
+setiap <span class="math inline" data-source-tex="i\in I">\(i\in I\)</span> dan <span class="math inline" data-source-tex="\sum_{i\in I}\int|f|d\mu_i">\(\sum_{i\in I}\int|f|d\mu_i\)</span> berhingga.</p>
+</section>
+<section class="source-unit" id="234Xh" data-source-id="234Xh"><h3><span class="source-label">234Xh</span> (h) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> ukuran Lebesgue pada <span class="math inline" data-source-tex="[0,1]">\([0,1]\)</span>, dan tetapkan
+<span class="math inline" data-source-tex="f(x)=\bover1x">\(f(x)=\bover1x\)</span> untuk <span class="math inline" data-source-tex="x&gt;0">\(x&gt;0\)</span>. Misalkan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> ukuran integral tak tentu
+yang bersesuaian. Tunjukkan bahwa domain <span class="math inline" data-source-tex="\nu">\(\nu\)</span> sama dengan domain <span class="math inline" data-source-tex="\mu">\(\mu\)</span>.
+Tunjukkan bahwa untuk setiap <span class="math inline" data-source-tex="\delta\in\ocint{0,\bover12}">\(\delta\in\ocint{0,\bover12}\)</span> terdapat
+suatu himpunan terukur <span class="math inline" data-source-tex="E">\(E\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu E=\delta">\(\mu E=\delta\)</span>, tetapi <span class="math inline" data-source-tex="\nu E=\bover1{\delta}">\(\nu E=\bover1{\delta}\)</span>.</p>
+</section>
+<section class="source-unit" id="234Xi" data-source-id="234Xi"><h3><span class="source-label">234Xi</span> (i) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur. (i) Tunjukkan bahwa jika
+<span class="math inline" data-source-tex="\nu_1">\(\nu_1\)</span> dan <span class="math inline" data-source-tex="\nu_2">\(\nu_2\)</span> adalah ukuran integral tak tentu terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>,
+maka demikian pula <span class="math inline" data-source-tex="\nu_1+\nu_2">\(\nu_1+\nu_2\)</span>. (ii) Tunjukkan bahwa jika
+<span class="math inline" data-source-tex="\familyiI{\nu_i}">\(\familyiI{\nu_i}\)</span> suatu keluarga terhitung dari ukuran-ukuran integral
+tak tentu terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, dan <span class="math inline" data-source-tex="\nu=\sum_{i\in I}\nu_i">\(\nu=\sum_{i\in I}\nu_i\)</span> semihingga, maka
+<span class="math inline" data-source-tex="\nu">\(\nu\)</span> adalah ukuran integral tak tentu terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>.</p>
+</section>
+<section class="source-unit" id="234Xj" data-source-id="234Xj"><h3><span class="source-label">234Xj</span> (j) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur, dan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> suatu ukuran
+integral tak tentu terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Tunjukkan bahwa jika <span class="math inline" data-source-tex="\mu">\(\mu\)</span> atomik
+murni, maka demikian pula <span class="math inline" data-source-tex="\nu">\(\nu\)</span>.</p>
+</section>
+<section class="source-unit" id="234Xk" data-source-id="234Xk"><h3><span class="source-label">234Xk</span> (k) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> suatu ukuran yang bertumpu pada titik. Tunjukkan bahwa
+setiap ukuran integral tak tentu terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> bertumpu pada titik.</p>
+</section>
+<section class="source-unit" id="234Xl" data-source-id="234Xl"><h3><span class="source-label">234Xl</span> (l) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan, dan <span class="math inline" data-source-tex="\Mu">\(\Mu\)</span> himpunan ukuran pada <span class="math inline" data-source-tex="X">\(X\)</span>, dengan
+urutan parsial yang didefinisikan dalam <a class="xref" href="#234P">234P</a>. Tunjukkan bahwa
+(i) <span class="math inline" data-source-tex="\Mu">\(\Mu\)</span> mempunyai anggota terbesar dan terkecil (yang harus diuraikan);
+(ii) jika <span class="math inline" data-source-tex="\familyiI{\mu_i}">\(\familyiI{\mu_i}\)</span> dan <span class="math inline" data-source-tex="\familyiI{\nu_i}">\(\familyiI{\nu_i}\)</span> adalah keluarga
+dalam <span class="math inline" data-source-tex="\Mu">\(\Mu\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\mu_i\le\nu_i">\(\mu_i\le\nu_i\)</span> untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>, maka
+<span class="math inline" data-source-tex="\sum_{i\in I}\mu_i\le\sum_{i\in I}\nu_i">\(\sum_{i\in I}\mu_i\le\sum_{i\in I}\nu_i\)</span>; (iii) jika kita mendefinisikan
+perkalian skalar seperti dalam <a class="xref" href="#234Xf">234Xf</a>, maka <span class="math inline" data-source-tex="\alpha\mu\le\mu">\(\alpha\mu\le\mu\)</span> kapan pun
+<span class="math inline" data-source-tex="\mu\in\Mu">\(\mu\in\Mu\)</span> dan <span class="math inline" data-source-tex="\alpha\in[0,1]">\(\alpha\in[0,1]\)</span>; (iv) dengan menuliskan <span class="math inline" data-source-tex="\hat\mu">\(\hat\mu\)</span> untuk
+pelengkapan <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, <span class="math inline" data-source-tex="\hat\mu\le\mu">\(\hat\mu\le\mu\)</span> dan <span class="math inline" data-source-tex="\hat\mu\le\hat\nu">\(\hat\mu\le\hat\nu\)</span> kapan pun
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span>, <span class="math inline" data-source-tex="\nu\in\Mu">\(\nu\in\Mu\)</span> dan <span class="math inline" data-source-tex="\mu\le\nu">\(\mu\le\nu\)</span>; (v) dengan menuliskan <span class="math inline" data-source-tex="\tilde\mu">\(\tilde\mu\)</span>
+untuk versi c.l.d. dari <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, <span class="math inline" data-source-tex="\tilde\mu\le\mu">\(\tilde\mu\le\mu\)</span> untuk setiap
+<span class="math inline" data-source-tex="\mu\in\Mu">\(\mu\in\Mu\)</span>; (vi) kapan pun <span class="math inline" data-source-tex="A\subseteq\Mu">\(A\subseteq\Mu\)</span> terarah ke atas, himpunan
+tersebut mempunyai batas atas terkecil dalam <span class="math inline" data-source-tex="\Mu">\(\Mu\)</span>.</p>
+</section>
+<section class="source-unit" id="234Xm" data-source-id="234Xm"><h3><span class="source-label">234Xm</span> (m) </h3>
+<p>Tuliskan pembuktian langsung elementer dari 234Qc yang tidak bergantung
+pada 234Qb.</p>
+</section>
+<section class="source-unit" id="234Xn" data-source-id="234Xn"><h3><span class="source-label">234Xn</span> (n) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dan
+<span class="math inline" data-source-tex="(Y,\Tau,\nu)">\((Y,\Tau,\nu)\)</span> ruang-ruang ukur dan <span class="math inline" data-source-tex="\phi:X\to Y">\(\phi:X\to Y\)</span> suatu fungsi pelestari ukuran melalui prapeta.
+Tunjukkan bahwa jika <span class="math inline" data-source-tex="\mu">\(\mu\)</span> <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga dan atomik murni, maka
+<span class="math inline" data-source-tex="\nu">\(\nu\)</span> atomik murni.</p>
+</section>
+<section class="source-unit" id="234Y" data-source-id="234Y"><span class="anchor" id="234Ya"></span><h2><span class="source-label">234Y</span> Latihan lanjutan (a) </h2>
+<p>Tuliskan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> untuk ukuran Lebesgue pada <span class="math inline" data-source-tex="Y=[0,1]">\(Y=[0,1]\)</span>, dan <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> untuk
+domainnya. Misalkan <span class="math inline" data-source-tex="A\subseteq[0,1]">\(A\subseteq[0,1]\)</span> suatu himpunan sedemikian sehingga
+<span class="math inline" data-source-tex="\nu^*A=\nu^*([0,1]\setminus A)=1">\(\nu^*A=\nu^*([0,1]\setminus A)=1\)</span>, dan tetapkan
+<span class="math inline" data-source-tex="X=[0,1]\cup\{x+1:x\in A\}\cup\{x+2:x\in[0,1]\setminus A\}">\(X=[0,1]\cup\{x+1:x\in A\}\cup\{x+2:x\in[0,1]\setminus A\}\)</span>. Misalkan
+<span class="math inline" data-source-tex="\mu_{LX}">\(\mu_{LX}\)</span> ukuran subruang yang diinduksi pada <span class="math inline" data-source-tex="X">\(X\)</span> oleh ukuran Lebesgue,
+dan tetapkan <span class="math inline" data-source-tex="\mu E=\bover13\mu_{LX}E">\(\mu E=\bover13\mu_{LX}E\)</span> untuk
+<span class="math inline" data-source-tex="E\in\Sigma=\dom\mu_{LX}">\(E\in\Sigma=\dom\mu_{LX}\)</span>. Definisikan <span class="math inline" data-source-tex="\phi:X\to Y">\(\phi:X\to Y\)</span> dengan menuliskan
+<span class="math inline" data-source-tex="\phi(x)=x">\(\phi(x)=x\)</span> jika <span class="math inline" data-source-tex="x\in[0,1]">\(x\in[0,1]\)</span>, <span class="math inline" data-source-tex="\phi(x)=x-1">\(\phi(x)=x-1\)</span> jika
+<span class="math inline" data-source-tex="x\in X\cap\ocint{1,2}">\(x\in X\cap\ocint{1,2}\)</span>, dan <span class="math inline" data-source-tex="\phi(x)=x-2">\(\phi(x)=x-2\)</span> jika
+<span class="math inline" data-source-tex="x\in X\cap\ocint{2,3}">\(x\in X\cap\ocint{2,3}\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\nu">\(\nu\)</span> adalah ukuran citra
+<span class="math inline" data-source-tex="\mu\phi^{-1}">\(\mu\phi^{-1}\)</span>, tetapi <span class="math inline" data-source-tex="\nu^*A&gt;\mu^*\phi^{-1}[A]">\(\nu^*A&gt;\mu^*\phi^{-1}[A]\)</span>.</p>
+</section>
+<section class="source-unit" id="234Yb" data-source-id="234Yb"><h3><span class="source-label">234Yb</span> (b) </h3>
+<p>Carilah contoh-contoh menarik ruang peluang <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dan
+<span class="math inline" data-source-tex="(Y,\Tau,\nu)">\((Y,\Tau,\nu)\)</span> yang mempunyai fungsi-fungsi <span class="math inline" data-source-tex="\phi:X\to Y">\(\phi:X\to Y\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\phi[E]\in\Tau">\(\phi[E]\in\Tau\)</span> dan <span class="math inline" data-source-tex="\nu\phi[E]=\mu E">\(\nu\phi[E]=\mu E\)</span> untuk setiap
+<span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> 254K, 343J.</span></p>
+</section>
+<section class="source-unit" id="234Yc" data-source-id="234Yc"><h3><span class="source-label">234Yc</span> (c) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> ukuran Lebesgue dua dimensi pada persegi satuan
+<span class="math inline" data-source-tex="[0,1]^2">\([0,1]^2\)</span>, dan misalkan <span class="math inline" data-source-tex="\phi:[0,1]^2\to[0,1]">\(\phi:[0,1]^2\to[0,1]\)</span> proyeksi pada koordinat
+pertama, sehingga <span class="math inline" data-source-tex="\phi(\xi_1,\xi_2)=\xi_1">\(\phi(\xi_1,\xi_2)=\xi_1\)</span> untuk
+<span class="math inline" data-source-tex="\xi_1">\(\xi_1\)</span>, <span class="math inline" data-source-tex="\xi_2\in[0,1]">\(\xi_2\in[0,1]\)</span>. Tunjukkan bahwa ukuran citra
+<span class="math inline" data-source-tex="\mu\phi^{-1}">\(\mu\phi^{-1}\)</span> adalah ukuran Lebesgue satu dimensi pada <span class="math inline" data-source-tex="[0,1]">\([0,1]\)</span>.</p>
+</section>
+<section class="source-unit" id="234Yd" data-source-id="234Yd"><h3><span class="source-label">234Yd</span> (d) </h3>
+<p>Dalam <a class="xref" href="#234F">234F</a>, tunjukkan bahwa ukuran citra <span class="math inline" data-source-tex="\mu\phi^{-1}">\(\mu\phi^{-1}\)</span> memperluas
+<span class="math inline" data-source-tex="\nu">\(\nu\)</span>, dan sama dengan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> jika dan hanya jika <span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span> untuk
+setiap <span class="math inline" data-source-tex="F\subseteq Y\setminus\phi[X]">\(F\subseteq Y\setminus\phi[X]\)</span>.</p>
+</section>
+<section class="source-unit" id="234Ye" data-source-id="234Ye"><h3><span class="source-label">234Ye</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(Y,\Tau,\nu)">\((Y,\Tau,\nu)\)</span> suatu ruang ukur lengkap, <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan,
+dan <span class="math inline" data-source-tex="\phi:X\to Y">\(\phi:X\to Y\)</span> suatu surjeksi. Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Sigma=\{E:E\subseteq X">\(\Sigma=\{E:E\subseteq X\)</span>, <span class="math inline" data-source-tex="\phi[E]\in\Tau">\(\phi[E]\in\Tau\)</span>,
+<span class="math inline" data-source-tex="\nu(\phi[E]\cap\phi[X\setminus E])=0\}">\(\nu(\phi[E]\cap\phi[X\setminus E])=0\}\)</span>,
+  <span class="math inline" data-source-tex="\mu E=\nu\phi[E]">\(\mu E=\nu\phi[E]\)</span> untuk <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>.</div>
+<p>Tunjukkan bahwa <span class="math inline" data-source-tex="\mu">\(\mu\)</span> adalah pelengkapan dari ukuran yang
+dibangun melalui proses <a class="xref" href="#234F">234F</a>.</p>
+</section>
+<section class="source-unit" id="234Yf" data-source-id="234Yf"><h3><span class="source-label">234Yf</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan, dan <span class="math inline" data-source-tex="\Mu">\(\Mu\)</span> himpunan ukuran pada <span class="math inline" data-source-tex="X">\(X\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="\Mu">\(\Mu\)</span>, dengan penjumlahan sebagaimana didefinisikan untuk
+dua ukuran oleh rumus-rumus <a class="xref" href="#234G">234G</a>, adalah semigrup komutatif dengan
+identitas; uraikan identitas tersebut.</p>
+</section>
+<section class="source-unit" id="234Yg" data-source-id="234Yg"><h3><span class="source-label">234Yg</span> (g) </h3>
+<p>Berikan suatu contoh himpunan <span class="math inline" data-source-tex="X">\(X\)</span>, ukuran-ukuran peluang
+<span class="math inline" data-source-tex="\mu_1">\(\mu_1\)</span>, <span class="math inline" data-source-tex="\mu_2">\(\mu_2\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span>, dan suatu himpunan <span class="math inline" data-source-tex="A\subseteq X">\(A\subseteq X\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="A">\(A\)</span> terabaikan terhadap <span class="math inline" data-source-tex="\mu_1">\(\mu_1\)</span> maupun <span class="math inline" data-source-tex="\mu_2">\(\mu_2\)</span>, tetapi tidak
+terabaikan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, dengan <span class="math inline" data-source-tex="\mu=\mu_1+\mu_2">\(\mu=\mu_1+\mu_2\)</span>.</p>
+</section>
+<section class="source-unit" id="234Yh" data-source-id="234Yh"><h3><span class="source-label">234Yh</span> (h) </h3>
+<p>Dalam <a class="xref" href="../214/index.html#214O">214O</a>, tunjukkan bahwa jika kita menetapkan
+<span class="math inline" data-source-tex="\nu E=\sup_{I\in\Cal I}\mu^*(E\cap I)">\(\nu E=\sup_{I\in\Cal I}\mu^*(E\cap I)\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>, maka
+<span class="math inline" data-source-tex="\nu">\(\nu\)</span> adalah ukuran, sedangkan <span class="math inline" data-source-tex="\mu=\nu+\lambda">\(\mu=\nu+\lambda\)</span>.</p>
+</section>
+<section class="source-unit" id="234Yi" data-source-id="234Yi"><h3><span class="source-label">234Yi</span> (i) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur semihingga tanpa atom dan
+<span class="math inline" data-source-tex="\nu">\(\nu\)</span> suatu ukuran integral tak tentu terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Tunjukkan bahwa
+pernyataan-pernyataan berikut ekuivalen: (i) untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>
+terdapat suatu <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\nu E\le\epsilon">\(\nu E\le\epsilon\)</span> kapan
+pun <span class="math inline" data-source-tex="\mu E\le\delta">\(\mu E\le\delta\)</span> (ii) <span class="math inline" data-source-tex="\nu">\(\nu\)</span> mempunyai suatu turunan Radon-Nikodým
+yang dapat dinyatakan sebagai jumlah dari suatu fungsi terbatas dan suatu
+fungsi terintegralkan.</p>
+</section>
+<section class="source-unit" id="234Yj" data-source-id="234Yj"><h3><span class="source-label">234Yj</span> (j) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> suatu ukuran
+integral tak tentu terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, dengan turunan Radon-Nikodým <span class="math inline" data-source-tex="f">\(f\)</span>.
+Tunjukkan bahwa versi c.l.d. dari <span class="math inline" data-source-tex="\nu">\(\nu\)</span> adalah ukuran integral tak tentu
+yang didefinisikan oleh <span class="math inline" data-source-tex="f">\(f\)</span> terhadap versi c.l.d. dari <span class="math inline" data-source-tex="\mu">\(\mu\)</span>.</p>
+</section>
+<section class="source-unit" id="234Yk" data-source-id="234Yk"><h3><span class="source-label">234Yk</span> (k) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur semihingga yang tidak dapat
+dilokalkan. Tunjukkan bahwa terdapat suatu ukuran
+<span class="math inline" data-source-tex="\nu:\Sigma\to[0,\infty]">\(\nu:\Sigma\to[0,\infty]\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\nu E\le\mu E">\(\nu E\le\mu E\)</span> untuk
+setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>, tetapi tidak terdapat fungsi terukur <span class="math inline" data-source-tex="f">\(f\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\nu E=\int_Efd\mu">\(\nu E=\int_Efd\mu\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>.</p>
+</section>
+<section class="source-unit" id="234Yl" data-source-id="234Yl"><h3><span class="source-label">234Yl</span> (l) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur yang dapat dilokalkan dengan
+himpunan-himpunan terabaikan yang ditentukan secara lokal. Tunjukkan
+bahwa suatu ukuran <span class="math inline" data-source-tex="\nu">\(\nu\)</span>, dengan domain <span class="math inline" data-source-tex="\Tau\supseteq\Sigma">\(\Tau\supseteq\Sigma\)</span>, adalah
+ukuran integral tak tentu terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> jika dan hanya jika
+(<span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>) <span class="math inline" data-source-tex="\nu">\(\nu\)</span> lengkap dan semihingga serta nol pada
+himpunan-himpunan yang terabaikan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>
+(<span class="math inline" data-source-tex="\beta">\(\beta\)</span>) kapan pun <span class="math inline" data-source-tex="\nu E&gt;0">\(\nu E&gt;0\)</span>, terdapat suatu <span class="math inline" data-source-tex="F\subseteq E">\(F\subseteq E\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>, <span class="math inline" data-source-tex="\mu F&lt;\infty">\(\mu F&lt;\infty\)</span>, dan <span class="math inline" data-source-tex="\nu F&gt;0">\(\nu F&gt;0\)</span>.</p>
+</section>
+<section class="source-unit" id="234Ym" data-source-id="234Ym"><h3><span class="source-label">234Ym</span> (m) </h3>
+<p>Berikan suatu contoh ruang ukur yang dapat dilokalkan
+<span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dan suatu ukuran lengkap semihingga <span class="math inline" data-source-tex="\nu">\(\nu\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span>,
+yang didefinisikan pada suatu aljabar-sigma
+<span class="math inline" data-source-tex="\Tau\supseteq\Sigma">\(\Tau\supseteq\Sigma\)</span>, nol pada himpunan-himpunan yang terabaikan terhadap
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span>, dan sedemikian sehingga kapan pun <span class="math inline" data-source-tex="\nu E&gt;0">\(\nu E&gt;0\)</span>, terdapat suatu
+<span class="math inline" data-source-tex="F\subseteq E">\(F\subseteq E\)</span> sedemikian sehingga <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>, <span class="math inline" data-source-tex="\mu F&lt;\infty">\(\mu F&lt;\infty\)</span>, dan
+<span class="math inline" data-source-tex="\nu F&gt;0">\(\nu F&gt;0\)</span>, tetapi <span class="math inline" data-source-tex="\nu">\(\nu\)</span> bukan ukuran integral tak tentu terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> <a class="xref" href="../216/index.html#216Yb">216Yb</a>.</span></p>
+</section>
+<section class="source-unit" id="234Yn" data-source-id="234Yn"><h3><span class="source-label">234Yn</span> (n) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur yang dapat dilokalkan, dan
+<span class="math inline" data-source-tex="\nu">\(\nu\)</span> suatu ukuran lengkap yang dapat dilokalkan pada <span class="math inline" data-source-tex="X">\(X\)</span>, dengan domain
+<span class="math inline" data-source-tex="\Tau\supseteq\Sigma">\(\Tau\supseteq\Sigma\)</span>, yang merupakan pelengkapan dari pembatasannya pada
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. Tunjukkan bahwa jika kita menetapkan
+<span class="math inline" data-source-tex="\nu_1F=\sup\{\nu(F\cap E):E\in\Sigma">\(\nu_1F=\sup\{\nu(F\cap E):E\in\Sigma\)</span>, <span class="math inline" data-source-tex="\mu E&lt;\infty\}">\(\mu E&lt;\infty\}\)</span> untuk setiap
+<span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>, maka <span class="math inline" data-source-tex="\nu_1">\(\nu_1\)</span> adalah ukuran integral tak tentu terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>,
+dan terdapat suatu <span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\nu_1F=\nu(F\cap H)">\(\nu_1F=\nu(F\cap H)\)</span> untuk setiap <span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>.</p>
+</section>
+<section class="source-unit" id="234Yo" data-source-id="234Yo"><h3><span class="source-label">234Yo</span> (o) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan, dan <span class="math inline" data-source-tex="\Mu_{\text{sf}}">\(\Mu_{\text{sf}}\)</span> himpunan ukuran
+semihingga pada <span class="math inline" data-source-tex="X">\(X\)</span>. Untuk <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, <span class="math inline" data-source-tex="\nu\in\Mu_{\text{sf}}">\(\nu\in\Mu_{\text{sf}}\)</span>, katakan bahwa
+<span class="math inline" data-source-tex="\mu\preccurlyeq\nu">\(\mu\preccurlyeq\nu\)</span> jika <span class="math inline" data-source-tex="\dom\nu\subseteq\dom\mu">\(\dom\nu\subseteq\dom\mu\)</span>,
+<span class="math inline" data-source-tex="\mu F\le\nu F">\(\mu F\le\nu F\)</span> untuk setiap <span class="math inline" data-source-tex="F\in\dom\nu">\(F\in\dom\nu\)</span>, dan kapan pun
+<span class="math inline" data-source-tex="E\in\dom\mu">\(E\in\dom\mu\)</span> dan <span class="math inline" data-source-tex="\mu E&gt;0">\(\mu E&gt;0\)</span>, terdapat suatu <span class="math inline" data-source-tex="F\in\dom\nu">\(F\in\dom\nu\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="F\subseteq E">\(F\subseteq E\)</span> dan <span class="math inline" data-source-tex="0&lt;\mu F&lt;\infty">\(0&lt;\mu F&lt;\infty\)</span>. (i) Tunjukkan bahwa
+<span class="math inline" data-source-tex="(\Mu_{\text{sf}},\preccurlyeq)">\((\Mu_{\text{sf}},\preccurlyeq)\)</span> adalah suatu himpunan terurut parsial.
+(ii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="A\subseteq\Mu_{\text{sf}}">\(A\subseteq\Mu_{\text{sf}}\)</span> suatu himpunan
+tak kosong dengan batas atas dalam <span class="math inline" data-source-tex="\Mu_{\text{sf}}">\(\Mu_{\text{sf}}\)</span>, maka himpunan itu
+mempunyai batas atas terkecil <span class="math inline" data-source-tex="\lambda">\(\lambda\)</span> yang didefinisikan dengan
+mengatakan bahwa <span class="math inline" data-source-tex="\dom\lambda=\bigcap_{\mu\in A}\dom\mu">\(\dom\lambda=\bigcap_{\mu\in A}\dom\mu\)</span> dan, untuk
+<span class="math inline" data-source-tex="E\in\dom\lambda">\(E\in\dom\lambda\)</span>,</p>
+<p><span class="math display" data-source-tex="\eqalign{\lambda E
+&amp;=\sup\{\sum_{i=0}^n\mu_iF_i:\mu_0,\ldots,\mu_n\in A,\,
+   \langle F_i\rangle_{i\le n}\text{ adalah partisi dari }E,\cr
+&amp;\mskip200mu
+   F_i\in\dom\lambda\text{ untuk setiap }i\le n\}\cr
+&amp;=\sup\{\sum_{i=0}^n\mu_iF_i:\mu_0,\ldots,\mu_n\in A,\,
+   F_0,\ldots,F_n\text{ saling lepas},\cr
+&amp;\mskip200mu
+   F_i\in\dom\mu_i\text{ dan }F_i\subseteq E\text{ untuk setiap }i\le n\}.
+   \cr}">\[\begin{aligned}\lambda E
+&amp;=\sup\{\sum_{i=0}^n\mu_iF_i:\mu_0,\ldots,\mu_n\in A,\,
+   \langle F_i\rangle_{i\le n}\text{ adalah partisi dari }E,\\
+&amp;\mskip200mu
+   F_i\in\dom\lambda\text{ untuk setiap }i\le n\}\\
+&amp;=\sup\{\sum_{i=0}^n\mu_iF_i:\mu_0,\ldots,\mu_n\in A,\,
+   F_0,\ldots,F_n\text{ saling lepas},\\
+&amp;\mskip200mu
+   F_i\in\dom\mu_i\text{ dan }F_i\subseteq E\text{ untuk setiap }i\le n\}.
+   \\\end{aligned}\]</span></p>
+<p>(iii) Andaikan <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, <span class="math inline" data-source-tex="\nu\in\Mu_{\text{sf}}">\(\nu\in\Mu_{\text{sf}}\)</span> mempunyai
+pelengkapan <span class="math inline" data-source-tex="\hat\mu">\(\hat\mu\)</span>, <span class="math inline" data-source-tex="\hat\nu">\(\hat\nu\)</span> dan versi-versi c.l.d. 
+<span class="math inline" data-source-tex="\tilde\mu">\(\tilde\mu\)</span>, <span class="math inline" data-source-tex="\tilde\nu">\(\tilde\nu\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="\tilde\mu\preccurlyeq\hat\mu\preccurlyeq\mu">\(\tilde\mu\preccurlyeq\hat\mu\preccurlyeq\mu\)</span>.
+Tunjukkan bahwa jika <span class="math inline" data-source-tex="\mu\preccurlyeq\nu">\(\mu\preccurlyeq\nu\)</span>, maka
+<span class="math inline" data-source-tex="\hat\mu\preccurlyeq\hat\nu">\(\hat\mu\preccurlyeq\hat\nu\)</span> dan
+<span class="math inline" data-source-tex="\tilde\mu\preccurlyeq\tilde\nu">\(\tilde\mu\preccurlyeq\tilde\nu\)</span>.</p>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<section class="source-unit" id="234-notes" data-source-id="234-notes"><h2><span class="source-label">234-notes</span> Catatan penutup untuk Bagian 234 </h2>
+<p>Salah satu ciri mencolok teori ukuran, dibandingkan dengan cabang-cabang
+matematika murni lain yang tingkat keabstrakannya sebanding, ialah relatif
+tidak pentingnya konsep ‘morfisme’ apa pun. Teori grup, misalnya,
+didominasi oleh konsep ‘homomorfisme’, dan topologi umum memberikan
+tempat serupa kepada ‘fungsi kontinu’. Menurut saya, padanan yang
+paling dekat dalam teori ukuran adalah gagasan ‘fungsi pelestari ukuran melalui prapeta’ (<a class="xref" href="#234A">234A</a>).
+Dalam Jilid 3 dan 4 saya bermaksud mengkaji konsep ini secara lebih
+mendalam. Dalam jilid ini saya akan berpuas diri dengan menandai
+fungsi-fungsi semacam itu ketika muncul dan dengan fakta-fakta dasar yang
+tercantum dalam <a class="xref" href="#234B">234B</a>.</p>
+<p>Konstruksi ‘ukuran citra’ (<a class="xref" href="#234C">234C</a>) secara alami terkait dengan
+gagasan fungsi pelestari ukuran melalui prapeta. Ukuran semacam ini muncul di mana-mana dalam bidang
+ini, dimulai dengan <a class="xref" href="#234Yc">234Yc</a> yang tidak sepenuhnya elementer. Ukuran-ukuran
+ini begitu penting sehingga wajar untuk mengkaji variasi-variasinya, seperti
+dalam <a class="xref" href="#234F">234F</a> dan <a class="xref" href="#234Yb">234Yb</a>, tetapi menurut saya tidak satu pun memiliki arti
+penting yang sebanding.</p>
+<p>Hampir separuh bagian ini digunakan untuk ‘ukuran integral tak
+tentu’. Saya menangani bagian ini dengan sangat hati-hati karena
+gagasan-gagasan yang ingin saya nyatakan di sini, sejauh memperluas
+pekerjaan dalam §<a class="xref" href="../232/index.html#232">232</a>, sangat bergantung pada perincian perumusan dalam
+<a class="xref" href="#234I">234I</a>, dan mudah sekali mengambil langkah keliru setelah kita meninggalkan
+konteks ukuran lengkap <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga yang relatif terlindung. Saya
+percaya bahwa jika kita bersedia mencurahkan sedikit usaha pada titik ini,
+kita dapat mengembangkan suatu teori
+(<a class="xref" href="#234K">234K</a>-<a class="xref" href="#234N">234N</a>) 
+yang akan menyediakan jalan mulus menuju penerapan-penerapan berikutnya;
+untuk melihat maksud saya, Anda dapat merujuk pada entri-entri di bawah
+‘ukuran integral tak tentu’ dalam indeks. Untuk saat ini saya hanya
+menyebutkan suatu jenis teorema Radon-Nikodým untuk ukuran-ukuran yang
+dapat dilokalkan (<a class="xref" href="#234O">234O</a>).</p>
+<p>Urutan parsial yang diuraikan dalam <a class="xref" href="#234P">234P</a>-<a class="xref" href="#234Q">234Q</a> hanyalah salah satu dari
+banyak urutan yang dapat dipertimbangkan, dan untuk beberapa tujuan
+tampaknya tidak memuaskan. Contoh-contoh terpenting akan muncul dalam
+Bab 41 Jilid 4, dan mempunyai beragam ciri khusus yang mungkin patut
+digunakan sebagai dasar bagi abstraksi lebih lanjut. Namun, versi di sini
+memiliki keunggulan berupa kesederhanaan dan mendukung setidak-tidaknya
+sebagian gagasan yang relevan (<a class="xref" href="#234Xl">234Xl</a>). Untuk konsep alternatif, lihat
+<a class="xref" href="#234Yo">234Yo</a>.</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 2: Broad Foundations</cite>, Bagian 234.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 25 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-cumulative-html-route-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V2-S234&quot;,
+  &quot;source_member&quot;: &quot;mt2.2016/mt234.tex&quot;,
+  &quot;target_bytes&quot;: 55719,
+  &quot;target_sha256&quot;: &quot;0d572c4b4edf3c93d18db7c03660a51e618d5b62f64919ae7d50433d01524931&quot;,
+  &quot;source_ids&quot;: [
+    &quot;234&quot;,
+    &quot;234A&quot;,
+    &quot;234B&quot;,
+    &quot;234C&quot;,
+    &quot;234D&quot;,
+    &quot;234E&quot;,
+    &quot;234F&quot;,
+    &quot;234G&quot;,
+    &quot;234H&quot;,
+    &quot;234I&quot;,
+    &quot;234J&quot;,
+    &quot;234K&quot;,
+    &quot;234Ka&quot;,
+    &quot;234Kb&quot;,
+    &quot;234Kc&quot;,
+    &quot;234Kd&quot;,
+    &quot;234Ke&quot;,
+    &quot;234L&quot;,
+    &quot;234M&quot;,
+    &quot;234N&quot;,
+    &quot;234O&quot;,
+    &quot;234P&quot;,
+    &quot;234Q&quot;,
+    &quot;234X&quot;,
+    &quot;234Xa&quot;,
+    &quot;234Xb&quot;,
+    &quot;234Xc&quot;,
+    &quot;234Xd&quot;,
+    &quot;234Xe&quot;,
+    &quot;234Xf&quot;,
+    &quot;234Xg&quot;,
+    &quot;234Xh&quot;,
+    &quot;234Xi&quot;,
+    &quot;234Xj&quot;,
+    &quot;234Xk&quot;,
+    &quot;234Xl&quot;,
+    &quot;234Xm&quot;,
+    &quot;234Xn&quot;,
+    &quot;234Y&quot;,
+    &quot;234Ya&quot;,
+    &quot;234Yb&quot;,
+    &quot;234Yc&quot;,
+    &quot;234Yd&quot;,
+    &quot;234Ye&quot;,
+    &quot;234Yf&quot;,
+    &quot;234Yg&quot;,
+    &quot;234Yh&quot;,
+    &quot;234Yi&quot;,
+    &quot;234Yj&quot;,
+    &quot;234Yk&quot;,
+    &quot;234Yl&quot;,
+    &quot;234Ym&quot;,
+    &quot;234Yn&quot;,
+    &quot;234Yo&quot;
+  ],
+  &quot;corpus_id&quot;: &quot;O007-FREMLIN&quot;,
+  &quot;volume_id&quot;: &quot;O007-FREMLIN-V2&quot;,
+  &quot;volume_source_title&quot;: &quot;Broad Foundations&quot;,
+  &quot;route&quot;: &quot;234&quot;,
+  &quot;official_source_page_start&quot;: 117,
+  &quot;chapter_official_source_pages&quot;: [
+    96,
+    137
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>
