@@ -4,10 +4,43 @@ Updated: 2026-08-28 (Europe/Berlin)
 
 > **Superseding owner state (2026-08-28):** 338/672 official pages remain
 > admitted, released, and anonymously verified through S252. Complete
-> S253–S256 are additionally translated and deterministically validated, so
-> the local contiguous candidate is 386/672. The next exact source is
-> `mt257.tex` at Volume II page 285. The older checkpoint notices below are
-> historical.
+> S253–S257 are additionally translated and deterministically validated, so
+> the local contiguous candidate is 389/672 and Chapter 25 is complete. The
+> active operation is cumulative consolidation, admission, and publication;
+> after it, the next exact source is `mt26.tex` followed by `mt261.tex` at
+> Volume II page 288. The older checkpoint notices below are historical.
+
+## Live owner state through complete S257 / Chapter 25 candidate
+
+- Public/admitted release coverage: **338/672 official pages** through S252,
+  GitHub tag `v0.17.0-v2-through-s252` and Zenodo DOI
+  `10.5281/zenodo.22105474`, with exact anonymous byte-readback receipts.
+- Local translated candidate: complete Volume I plus Volume II pages 1–287,
+  **389/672 official pages**. Complete S257 adds the final three Chapter 25
+  pages; 283 official pages remain.
+- S257 target: `source/id-ID/mt257.tex`, 10,377 bytes / 237 lines / SHA-256
+  `a92d4f670770684902b1574c155aabbb0666ddad5916ac6311771f6974058025`.
+- Passing unit evidence is `qa/chapter25/mt257-unit-qa.json`,
+  `mt257-source-anomaly-adjudication.json`,
+  `mt257-independent-semantic-review.md`, `mt257-semantic-html-qa.json`, and
+  `mt257-source-freeze.json`. It binds 15 stable IDs, 41 references, 196/197
+  authority/target mathematical atoms, eight exercises, zero hints, six
+  correction rows, zero residue, and the independently reread final language.
+- Desktop 1280×720 and mobile 390×844 replay passes with a centered,
+  width-filling reader, 197 MathJax/assistive records, no page overflow,
+  duplicate ID, broken fragment, unresolved TeX control, or MathJax error.
+  Three exceptionally long displays remain contained inside their own
+  horizontal-scroll surfaces rather than widening the mobile page.
+- `qa/chapter25/mt25-source-freeze.json` is the complete Chapter 25 control:
+  17,819 bytes / SHA-256
+  `284795d08e8e1ab2cb48479e49ded3127a0b32a0e3b3f3ee9ff6e71b0a282cf8`.
+  It records the corrected bare-leader normalization and exact census:
+  156 Chapter 25 exercises / 35 hints; 757 cumulative exercises / 178 hints.
+- Active work: generate/validate backend catalog v1.13, build and inspect the
+  cumulative 389/672 PDF and 67-route offline reader, admit CP0018, package,
+  publish in the existing GitHub and Zenodo lineages, and anonymously read
+  back all assets. This is one substantial-boundary transaction; no upstream
+  contact occurs.
 
 ## Live owner state through complete S256
 

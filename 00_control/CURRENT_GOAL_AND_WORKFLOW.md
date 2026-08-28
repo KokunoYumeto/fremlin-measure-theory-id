@@ -6,14 +6,14 @@ Status: active until all 672 official pages are publicly verified
 
 > **Superseding checkpoint (2026-08-28):** the authoritative current state is
 > 338/672 official pages admitted, published, and anonymously verified through
-> S252, plus complete S253–S256 translated and validated for a contiguous
-> 386/672 candidate. Complete S254 and S255 are preserved on public repository
-> `main`; S256 has passed its bounded unit, independent semantic, and
-> desktop/mobile reader gates and is publicly preserved on `main` at commit
-> `37c24130535c7aea075d88a82fcd3d8aeb0f2435` with exact anonymous byte
-> readback. The exact next translation cursor is `mt257.tex` at
-> Volume II page 285. Complete mt257 and perform the next cumulative backend, reader, package,
-> GitHub, and Zenodo transaction at complete Chapter 25, 389/672. All earlier
+> S252, plus complete S253–S257 translated and validated for a contiguous
+> **389/672 candidate**. Chapter 25 is complete. S257 passes bounded unit,
+> correction, independent reread, and desktop/mobile semantic-reader gates;
+> its exact controls are `qa/chapter25/mt257-source-freeze.json` and
+> `qa/chapter25/mt257-semantic-html-qa.json`. The active operation is the one
+> cumulative backend, reader, package, GitHub, and Zenodo transaction for
+> complete Chapter 25. After public-byte verification, the translation cursor
+> advances to `mt26.tex` and `mt261.tex` at Volume II page 288. All earlier
 > cursor numbers retained later in this file are historical evidence only.
 
 Complete and publish one coherent Bahasa Indonesia edition of D. H. Fremlin's
@@ -21,11 +21,12 @@ Complete and publish one coherent Bahasa Indonesia edition of D. H. Fremlin's
 Foundations*) only: 672 official pages. Do not reopen selection, reduce the
 corpus to a course slice, include Volumes 3–5, or merge comparator books.
 Volume I and contiguous Volume II pages 1–236 are admitted and public at
-338/672 official pages. Complete S253–S256, Volume II pages 237–284, are
-validated source-order candidates, making 386/672 translated. Preserve the
-public boundary and candidates; continue at complete `mt257.tex`. The goal
-remains active through all remaining Volume II units; 286 official pages
-remain untranslated.
+338/672 official pages. Complete S253–S257, Volume II pages 237–287, are
+validated source-order candidates, making 389/672 translated and closing
+Chapter 25. Preserve the public boundary and candidates; consolidate and
+publish CP0018, then continue at `mt26.tex` and `mt261.tex`. The goal remains
+active through all remaining Volume II units; 283 official pages remain
+untranslated.
 
 Authority is
 `authority/fremlin` within this corpus repository:
@@ -75,10 +76,12 @@ anonymously returned the exact reader-first PDF, resumable ZIP, and checksum
 witness. The cumulative PDF has 363 A4 reflow pages; that physical count does
 not replace the 338-page official coverage identity.
 
-Current action: translate and validate complete `mt257.tex`, then consolidate
-backend/readers/admission and publish at complete
-Chapter 25, 389/672. Do not spend a full release or Zenodo transaction on each
-small section.
+Current action: generate and validate the corrected v1.13 backend, cumulative
+PDF and 67-route offline reader; inspect and admit CP0018; then package and
+publish complete Chapter 25 at 389/672 in the existing GitHub and Zenodo
+lineages with anonymous byte readback. The corrected census is 156 Chapter 25
+exercises / 35 hints and 757 cumulative exercises / 178 hints. Do not spend a
+full release or Zenodo transaction on each small section.
 
 Recovery state lives in `00_control/CURRENT_GOAL_AND_WORKFLOW.md`,
 `CURRENT_CURSOR.md`, `CURRENT_STATE.md`, `DECISION_LOG.md`,

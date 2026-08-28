@@ -1,5 +1,60 @@
 # Current Cursor
 
+## Superseding local production cursor — complete Chapter 25 candidate (2026-08-28)
+
+The admitted and publicly verified boundary remains complete Volume I plus
+contiguous Volume II pages 1–236 through S252: **338/672 official pages**.
+Complete Sections 253–257 are now translated and deterministically validated
+on Volume II pages 237–287, so the contiguous local candidate is **389/672
+official pages** and 283 pages remain. Chapter 25 is complete; the active work
+is its one cumulative backend/reader/admission/publication transaction, not
+another unit-translation or QA loop.
+
+Exact final-unit evidence:
+
+- authority `authority/fremlin/source/mt2.2016/mt257.tex`: 9,803 bytes,
+  236 lines, SHA-256
+  `45e95ad49d7d4a0f83c485c3100ff880100c78bc72e7dc99ccffb8c31a8b7996`;
+- target `source/id-ID/mt257.tex`: 10,377 bytes, 237 lines, SHA-256
+  `a92d4f670770684902b1574c155aabbb0666ddad5916ac6311771f6974058025`;
+- unit QA `qa/chapter25/mt257-unit-qa.json`: 6,604 bytes, SHA-256
+  `c21d5f4b070ef5fc0c9ec0d72874b4c053f6f663d58062488a2199d986f12bfe`;
+- anomaly adjudication
+  `qa/chapter25/mt257-source-anomaly-adjudication.json`: 5,532 bytes,
+  SHA-256
+  `dabfec0abf56e8ce0824d720472aab14c2a072035d951a634a3c44297d20dfdc`;
+- independent final reread
+  `qa/chapter25/mt257-independent-semantic-review.md`: 2,494 bytes,
+  SHA-256
+  `a8b885b8c7ffb72414f0138f024ef5ad969a7dabbbe81c0f79f5a468bf0299e6`;
+- semantic/browser receipt `qa/chapter25/mt257-semantic-html-qa.json`:
+  7,142 bytes, SHA-256
+  `50d1d9fee2ca6ea54dfbf2d236117407b84ef20abefd76546f3d58ab75cbfee3`;
+- unit freeze `qa/chapter25/mt257-source-freeze.json`: 3,143 bytes,
+  SHA-256
+  `fe359ece0fa2e26e664ba2e7387c91480947b28ddc1e177dbc0d95fa309c82e8`;
+- complete Chapter 25 freeze `qa/chapter25/mt25-source-freeze.json`:
+  17,819 bytes, SHA-256
+  `284795d08e8e1ab2cb48479e49ded3127a0b32a0e3b3f3ee9ff6e71b0a282cf8`.
+
+S257 passes 15/15 stable IDs, 41/41 protected references, 196/197
+authority/target mathematical atoms under the exact correction ledger, eight
+exercises, zero hints, zero active English residue, independent naturalness
+review, and centered desktop/mobile semantic-reader replay. Six confirmed
+authority defects are preserved as immutable-source corrections
+`O007-CORR-0239`–`0244`; no upstream contact occurred.
+
+The corrected exercise census normalizes every bare `X`/`Y` leader to
+`Xa`/`Ya`: Chapter 25 has **156 exercises and 35 hints**, and the cumulative
+checkpoint has **757 exercises and 178 hints**. The inherited S252 figure of
+653 exercises undercounted four bare leaders and is not propagated.
+
+The next executable action is to generate and validate backend catalog v1.13,
+build and inspect the cumulative 389/672 PDF and 67-route offline HTML reader,
+admit CP0018, package, publish to the existing GitHub/Zenodo lineages, and
+anonymously read back every public asset. Only after that transaction does the
+source cursor advance to `mt26.tex` and `mt261.tex` at Volume II page 288.
+
 ## Superseding local production cursor — complete S256 (2026-08-28)
 
 The admitted and released boundary remains complete Volume I plus contiguous

@@ -232,3 +232,24 @@ for explicit derivative correction and rejects several unusual but valid
 expressions. Their finite evidence lives in
 `qa/chapter25/mt256-source-anomaly-candidates.md`; terminology choices do not
 themselves authorize formula or reference changes.
+
+### Section 257 — Convolutions of measures (2026-08-28)
+
+Complete Section 257 uses the following reader-facing forms consistently:
+
+| Concept or construction | Preferred O007 form | Decision and boundary |
+|---|---|---|
+| convolution of measures / convolution of functions | `konvolusi ukuran`; `konvolusi fungsi` | Distinguish the pushforward construction on measures from the integral construction on functions while retaining the shared operation symbol `*`. |
+| totally finite Radon measure | `ukuran Radon berhingga total` | Continue the Section 256 form and do not silently strengthen it to a probability measure. |
+| image measure / product measure | `ukuran citra`; `ukuran produk` | Preserve the distinct pushforward and product constructions in 257A. |
+| characteristic function | `fungsi karakteristik` | Use for `\chi E`; preserve the set argument and all integration variables. |
+| absolutely continuous with respect to | `kontinu mutlak terhadap` | Keep both measures visible and preserve the direction of the relation. |
+| Banach algebra / multiplicative identity | `aljabar Banach`; `identitas perkalian` | Use in 257Ya for the normed convolution algebra and its identity element. |
+| countably additive functional | `fungsional aditif terhitung` | Retain the functional viewpoint of the exercise rather than silently relabeling every element as a positive measure. |
+| locally compact Hausdorff abelian topological group | `grup topologis abelian Hausdorff yang kompak lokal` | Preserve all four structural qualifiers in the final note. |
+
+Predicate qualifiers follow natural Indonesian order: `terukur terhadap
+$\Sigma$`, `terintegralkan terhadap $\nu$`, and `untuk $\mu$-hampir setiap
+$x$`. The six high-confidence authority corrections are separately recorded
+as `O007-CORR-0239`–`O007-CORR-0244`; the source's single-integral notation in
+257Yb is retained as unusual but intelligible rather than silently changed.

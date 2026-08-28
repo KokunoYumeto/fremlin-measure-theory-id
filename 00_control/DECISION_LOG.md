@@ -1016,3 +1016,46 @@ evidence is `qa/chapter25/mt256-github-push-receipt.json`, 4,236 bytes /
 SHA-256
 `b638b75a0d67ada97bd8fd4e7b3e1584a2604fe6124dee59aca75defa3d137c6`.
 No tag or Zenodo version was created for this intermediate checkpoint.
+
+## 2026-08-28 — D048: Validate complete S257 and close the Chapter 25 translation candidate
+
+Complete Section 257, `Convolutions of measures` → `Konvolusi ukuran`, is
+accepted as the final contiguous Chapter 25 source-order candidate on official
+Volume II pages 285–287. The final target `source/id-ID/mt257.tex` is 10,377
+bytes / 237 lines / SHA-256
+`a92d4f670770684902b1574c155aabbb0666ddad5916ac6311771f6974058025`.
+Together with S253–S256, this closes Chapter 25 and raises translated candidate
+coverage from 386 to **389/672 official pages**. The admitted/released boundary
+remains 338/672 until the cumulative CP0018 transaction completes.
+
+Independent source adjudication confirmed six high-confidence nonblocking
+authority defects. The immutable authority is unchanged; the derivative
+records and applies exact correction rows `O007-CORR-0239`–`0244`. The passing
+unit receipt binds 15/15 stable IDs, 41/41 protected references, eight
+exercises, zero hints, zero active English residue, and the complete finite
+196/197 mathematical-atom topology including one necessary bound-symbol
+insertion. An initial independent reread requested four bounded naturalness
+repairs; a second read-only replay confirmed those repairs and found no
+remaining mathematical, structural, omission, residue, renderer, or language
+blocker.
+
+The semantic reader executes all 197 target formulas with assistive math.
+Desktop and mobile replay finds a centered, width-filling reader, no document
+overflow, duplicate ID, broken fragment, unresolved control, or MathJax error.
+Three long display formulas overflow only inside their own `overflow-x:auto`
+containers. Exact evidence is `qa/chapter25/mt257-semantic-html-qa.json` and
+the complete chapter control is `qa/chapter25/mt25-source-freeze.json`.
+
+The aggregate census rule is corrected before admission: every bare section
+leader `X` or `Y` denotes the corresponding `Xa` or `Ya` exercise and is
+normalized before stable-ID deduplication. Chapter 25 therefore contains 156
+exercises and 35 hints; the cumulative checkpoint contains **757 exercises
+and 178 hints**. The inherited S252 total of 653 exercises undercounted four
+bare leaders and is retained only as historical evidence, not propagated.
+
+The decision is to run one complete-Chapter-25 backend/PDF/offline-HTML build,
+visual/browser admission, deterministic package, GitHub release, existing
+Zenodo-lineage publication, and anonymous byte readback at 389/672. Only after
+that substantial boundary is public does production advance to `mt26.tex` and
+`mt261.tex` at Volume II page 288. No upstream contact occurred; the complete
+672-page goal remains active.
