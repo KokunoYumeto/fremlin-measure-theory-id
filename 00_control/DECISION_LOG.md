@@ -925,3 +925,39 @@ translation, structural receipt, anomaly receipt, semantic receipt, and
 Chapter 25 freeze bytes exactly. Sanitized evidence is
 `qa/chapter25/mt254-github-push-receipt.json`. No tag or Zenodo version was
 created for this intermediate checkpoint.
+
+## 2026-08-28 — D046: Validate complete S255 and advance the cursor to S256
+
+Complete Section 255, `Convolutions of functions` → `Konvolusi fungsi`, is
+accepted as a contiguous source-order candidate on official Volume II pages
+266–276. The final target `source/id-ID/mt255.tex` is 54,231 bytes / 1,274
+logical lines / SHA-256
+`29205179dfc0d05c55c2b4b47ad7d72f887a01a5ff55f655f68890b173de23d9`.
+Together with S253–S254 this raises translated candidate coverage from 367 to
+378/672 official pages; admitted/released coverage remains 338/672 pending the
+complete-Chapter-25 consolidation.
+
+The three disjoint translation fragments assembled the complete section.
+Independent semantic/type adjudication confirmed 14 of 15 grouped anomaly
+candidates and correctly rejected the notation-only `|a|` candidate: vector
+absolute-value bars are valid norm notation here. The derivative applies 15
+reviewable rows `O007-CORR-0214`–`0228`; the frozen authority is unchanged.
+The unit validator passes all 55 stable IDs, 166 protected references, 934
+mathematical atoms, 26 exercises, 10 hints, and the finite occurrence-scoped
+math/reference delta ledger, with zero active English residue.
+
+The independent complete reread requested four owner-applied language
+consistency repairs: capitalized direct-address `Anda`, standardized
+`Corollary` as `Akibat`, and unhyphenated `tak menaik` in the two corrected
+monotonicity clauses. The semantic renderer was extended for legacy unbraced
+`vspheader`, print-layout `wheader`/`ifdim`, and exact `ocint`/`esssup` MathJax
+semantics. Nine regression tests and live desktop/mobile replay pass with all
+934 formulas executing and no overflow, broken fragments, unresolved macros,
+asset failures, or console messages.
+
+The decision is to push this complete bounded unit to repository `main` for
+preservation without a release tag or Zenodo version, anonymously read it back,
+then translate complete `mt256.tex` from official pages 277–284 and continue
+through mt257. The next cumulative GitHub/Zenodo release remains complete
+Chapter 25 at 389/672. No upstream contact occurred; the 672-page goal stays
+active.

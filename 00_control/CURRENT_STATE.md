@@ -3,10 +3,40 @@
 Updated: 2026-08-28 (Europe/Berlin)
 
 > **Superseding owner state (2026-08-28):** 338/672 official pages remain
-> admitted, released, and anonymously verified through S252. Complete S253 and
-> S254 are additionally translated and deterministically validated, so the
-> local contiguous candidate is 367/672. The next exact source is `mt255.tex`
-> at Volume II page 266. The older checkpoint notices below are historical.
+> admitted, released, and anonymously verified through S252. Complete
+> S253–S255 are additionally translated and deterministically validated, so
+> the local contiguous candidate is 378/672. The next exact source is
+> `mt256.tex` at Volume II page 277. The older checkpoint notices below are
+> historical.
+
+## Live owner state through complete S255
+
+- Public/admitted release coverage: **338/672 official pages** through S252,
+  GitHub tag `v0.17.0-v2-through-s252` and Zenodo DOI
+  `10.5281/zenodo.22105474`, with exact anonymous byte-readback receipts.
+- Local translated candidate: complete Volume I plus Volume II pages 1–276,
+  **378/672 official pages**. Complete S255 adds 11 pages; 294 remain.
+- S255 target: `source/id-ID/mt255.tex`, 54,231 bytes / 1,274 logical lines /
+  SHA-256
+  `29205179dfc0d05c55c2b4b47ad7d72f887a01a5ff55f655f68890b173de23d9`.
+  The source has one additional terminal empty line; all ordered content and
+  the terminal `discrpage` control are present.
+- Passing evidence is `qa/chapter25/mt255-unit-qa.json`,
+  `mt255-source-anomaly-adjudication.json`,
+  `mt255-independent-semantic-review.md`, and `mt255-semantic-html-qa.json`.
+  Together they bind 55 stable IDs, 166 references, 934 formulas, 26
+  exercises, 10 hints, 15 exact correction rows, and the one correctly
+  rejected notation-only anomaly candidate.
+- The durable semantic reader is
+  `qa/chapter25/mt255-semantic-reader/index.html`, 137,766 bytes / SHA-256
+  `f3fdd6596b4c007495f23b5fdf093f0a765fc68df741ebfd1834b811a4339856`.
+  Desktop/mobile replay passes with no overflow, broken fragment, unresolved
+  macro, missing dependency, or console warning/error.
+- The next authority is `mt256.tex`, `Radon measures on R^r`, official pages
+  277–284: 41,604 bytes / 1,003 lines / SHA-256
+  `de4a178837df6915bbfb714622cb9a3a2d896fb7f00120d2348ccd0d4245d2cf`.
+  Preserve S255 narrowly on `main`, then translate S256–S257 and consolidate
+  the complete Chapter 25 boundary at 389/672. No upstream contact occurred.
 
 ## Live owner state through complete S254
 

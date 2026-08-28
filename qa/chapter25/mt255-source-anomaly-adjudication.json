@@ -1,0 +1,73 @@
+{
+  "schema": "o007-source-anomaly-adjudication-v1",
+  "unit_id": "O007-FREMLIN-V2-S255",
+  "authority": {
+    "path": "authority/fremlin/source/mt2.2016/mt255.tex",
+    "bytes": 50407,
+    "lines": 1275,
+    "sha256": "c837735d74f688178acc82b7f004669f2fe3352e5c0293d48442777a9d5bb5b6"
+  },
+  "target": {
+    "path": "source/id-ID/mt255.tex",
+    "bytes": 54231,
+    "lines": 1274,
+    "sha256": "29205179dfc0d05c55c2b4b47ad7d72f887a01a5ff55f655f68890b173de23d9"
+  },
+  "input_count_adjudication": {
+    "stated_candidate_count": 15,
+    "actual_distinct_grouped_candidates": 15,
+    "confirmed_grouped_candidates": 14,
+    "rejected_grouped_candidates": 1,
+    "ledger_records_added": 15,
+    "explanation": "Candidate 12 contains the same confirmed monotonicity defect in two exercise clauses and therefore maps to two correction rows. Candidate 14 was rejected as a source defect and maps to no row."
+  },
+  "method": [
+    "Inspect the exact frozen authority context and all in-unit declarations without editing the authority.",
+    "Type-check every disputed measure, representative, norm, interval endpoint, normalization, monotonicity condition, and cross-reference against the same unit.",
+    "Require a complete independent source/target semantic replay before final admission.",
+    "Bind every mathematical and protected-reference change to an exact occurrence-scoped delta in the unit QA.",
+    "Reject stylistic or notation variation when the evidence does not prove a source error."
+  ],
+  "results": {
+    "ledger_id_first": "O007-CORR-0214",
+    "ledger_id_last": "O007-CORR-0228",
+    "one_for_one_math_correction_deltas": 10,
+    "reader_text_inside_math_deltas": 4,
+    "protected_reference_deltas": 3,
+    "remaining_blocking_anomalies": 0
+  },
+  "rejected_candidate": {
+    "candidate": 14,
+    "authority_line": 1028,
+    "source_text": "|a| for a in R^r",
+    "finding": "Absolute-value bars are accepted notation for the Euclidean norm of a vector in this context. The later double-bar notation is a style variation, not proof of a type error.",
+    "target_action": "Preserve the authority notation unchanged."
+  },
+  "evidence": {
+    "candidate_ledger": {
+      "path": "qa/chapter25/mt255-source-anomaly-candidates.md",
+      "bytes": 3651,
+      "sha256": "4a39734c6183570f9c411918e873ea4d99a7bbf9c188063258860b712fb129e0"
+    },
+    "correction_ledger": {
+      "path": "00_control/SOURCE_CORRECTIONS.csv",
+      "bytes": 111522,
+      "sha256": "217a6c5d7f02039372333a7d468fa74fd2f935a7001ab2dd657cf2a0ae9e2c4d",
+      "unit_rows": 15,
+      "duplicate_ids": 0
+    },
+    "unit_qa": {
+      "path": "qa/chapter25/mt255-unit-qa.json",
+      "bytes": 9591,
+      "sha256": "7f675e99aa1407b6dfd32e15424c13ebbef70314194339fafa4374abbd37eca6",
+      "pass": true
+    },
+    "independent_semantic_review": {
+      "path": "qa/chapter25/mt255-independent-semantic-review.md",
+      "bytes": 2331,
+      "sha256": "3f0b05b4081ce6d25c229b851741a0a613c427077a21b7b4be4ef9ee81a7b44f",
+      "pass_after_owner_language_repairs": true
+    }
+  },
+  "pass": true
+}

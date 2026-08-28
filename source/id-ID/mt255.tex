@@ -1,0 +1,1274 @@
+\frfilename{mt255.tex}
+\versiondate{3.7.08}
+\copyrightdate{2000}
+
+\def\chaptername{Ukuran produk}
+\def\sectionname{Konvolusi fungsi}
+
+\newsection{255}
+
+Saya mengkhususkan satu bagian untuk suatu konstruksi yang sangat penting -- dan
+khususnya akan sangat berguna dalam Bab 27 dan 28 -- dan juga dapat
+dipandang sebagai serangkaian latihan atas pembahasan sejauh ini.
+
+Saya merasa sulit menentukan seberapa banyak pengulangan yang patut diberikan dalam
+bagian ini, karena ungkapan terpadu yang alami bagi gagasan-gagasan ini terdapat dalam
+teori grup
+topologis, dan saya rasa kita belum siap untuk teori umum itu (saya
+akan membahasnya dalam Bab 44 pada Jilid 4).   Grup-grup yang kita perlukan untuk jilid ini adalah
+
+\qquad $\Bbb R$;
+
+\qquad $\BbbR^r$, untuk $r\ge 2$;
+
+\qquad $S^1=\{z:z\in\Bbb C,\,|z|=1\}$, `grup lingkaran';
+
+\qquad $\Bbb Z$, grup bilangan bulat.
+
+\noindent Semua gagasan tersebut sudah muncul dalam teori konvolusi pada
+$\Bbb R$, dan karena itu saya akan menyajikan bahan ini dalam bentuk yang relatif
+terperinci, sebelum menguraikan secara ringkas bentuk-bentuk yang sesuai untuk grup
+$\BbbR^r$ dan $S^1$ (atau $\ocint{-\pi,\pi}$);  menurut saya, $\Bbb Z$ dapat
+dengan aman diserahkan kepada latihan.
+
+\leader{255A}{}\cmmnt{ Karena ini buku tentang teori ukuran, kiranya
+tepat jika saya menekankan, sebagai dasar teori
+konvolusi, beberapa isomorfisme ruang ukur.
+
+\medskip
+
+\noindent}{\bf Teorema} Misalkan $\mu$ ukuran Lebesgue pada $\Bbb R$ dan
+$\mu_2$ ukuran Lebesgue pada $\BbbR^2$;  tuliskan $\Sigma$, $\Sigma_2$ untuk
+domain masing-masing.
+
+(a) Untuk sebarang $a\in\Bbb R$, pemetaan $x\mapsto a+x:\Bbb R\to\Bbb R$ merupakan
+automorfisme ruang ukur dari $(\Bbb R,\Sigma,\mu)$.
+
+(b) Pemetaan $x\mapsto -x:\Bbb R\to\Bbb R$ merupakan automorfisme ruang
+ukur dari $(\Bbb R,\Sigma,\mu)$.
+
+(c) Untuk sebarang $a\in\Bbb R$, pemetaan $x\mapsto a-x:\Bbb R\to\Bbb R$ merupakan
+automorfisme ruang ukur dari $(\Bbb R,\Sigma,\mu)$.
+
+(d) Pemetaan $(x,y)\mapsto(x+y,y):\BbbR^2\to\BbbR^2$ merupakan automorfisme ruang
+ukur dari $(\BbbR^2,\Sigma_2,\mu_2)$.
+
+(e) Pemetaan $(x,y)\mapsto(x-y,y):\BbbR^2\to\BbbR^2$ merupakan automorfisme ruang
+ukur dari $(\BbbR^2,\Sigma_2,\mu_2)$.
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Perlu saya catat bahwa (b), (d), dan (e) dapat
+dipandang sebagai kasus-kasus khusus sederhana
+dari Teorema 263A dalam bab berikutnya.   Namun demikian, menurut saya
+tetap layak menuliskan bukti-bukti terpisah di sini, sebagian karena
+kasus umum operator linear yang dibahas dalam 263A memerlukan beberapa
+perangkat tambahan yang tidak diperlukan di sini, tetapi terlebih karena hasil di sini tidak ada
+kaitannya dengan struktur {\it linear} dari $\Bbb R$ dan $\BbbR^2$;  hasil ini
+semata-mata bergantung pada struktur {\it grup} dari $\Bbb R$, beserta
+kaitan antara topologi dan ukurannya, dan argumen-argumen yang saya
+berikan sekarang dapat disesuaikan dengan perumuman yang tepat ke grup
+topologis abelian.
+
+}%end of comment
+
+\proof{{\bf (a)} Ini hanyalah keinvarian ukuran Lebesgue terhadap translasi,
+yang dibahas dalam \S134.   Di sana saya menunjukkan bahwa jika $E\in\Sigma$
+maka $E+a\in\Sigma$ dan $\mu(E+a)=\mu E$ (134Ab);  yakni, dengan menuliskan
+$\phi(x)=x+a$, $\mu(\phi[E])$ ada dan sama dengan $\mu E$ untuk setiap
+$E\in\Sigma$.   Tetapi tentu saja kita juga mempunyai
+
+\Centerline{$\mu(\phi^{-1}[E])=\mu(E+(-a))=\mu E$}
+
+\noindent untuk setiap $E\in\Sigma$, sehingga $\phi$ merupakan automorfisme.
+
+\medskip
+
+{\bf (b)} Pokoknya ialah bahwa $\mu^*(A)=\mu^*(-A)$ untuk setiap
+$A\subseteq\Bbb R$.   \Prf\ (Saya mengikuti definisi-definisi dalam Jilid 1.)   Jika
+$\epsilon>0$, terdapat suatu barisan $\sequencen{I_n}$ interval setengah terbuka
+yang menutupi $A$ dengan $\sum_{n=0}^{\infty}\mu
+I_n\le\mu^*A+\epsilon$.   Sekarang $-A\subseteq\bigcup_{n\in\Bbb N}(-I_n)$.
+Tetapi jika $I_n=\coint{a_n,b_n}$ maka $-I_n=\ocint{-b_n,a_n}$, sehingga
+
+\Centerline{$\mu^*(-A)\le\sum_{n=0}^{\infty}\mu(-I_n)
+=\sum_{n=0}^{\infty}\max(0,-a_n-(-b_n))=\sum_{n=0}^{\infty}\mu I_n
+\le\mu^*A+\epsilon$.}
+
+\noindent Karena $\epsilon$ sebarang, $\mu^*(-A)\le\mu^*A$.   Tentu saja juga
+$\mu^*A=\mu^*(-(-A))\le\mu^*(-A)$, sehingga $\mu^*(-A)=\mu^*A$.   \Qed
+
+Ini berarti bahwa, dengan kali ini menetapkan $\phi(x)=-x$, $\phi$ merupakan
+automorfisme dari struktur $(\Bbb R,\mu^*)$.   Tetapi karena $\mu$
+didefinisikan dari $\mu^*$ melalui prosedur abstrak metode
+\Caratheodory, $\phi$ juga harus merupakan automorfisme dari struktur $(\Bbb
+R,\Sigma,\mu)$.
+
+\medskip
+
+{\bf (c)} Gabungkan (a) dan (b);  $x\mapsto a-x$ merupakan komposisi
+automorfisme $x\mapsto -x$ dan $x\mapsto a+x$, dan
+komposisi automorfisme sudah tentu merupakan automorfisme.
+
+\medskip
+
+{\bf (d)(i)} Tuliskan $\Tau$ untuk himpunan
+$\{E:E\in\Sigma_2,\,\phi[E]\in\Sigma_2\}$, dengan kali ini
+$\phi(x,y)=(x+y,y)$ untuk $x$, $y\in\Bbb R$, sehingga
+$\phi:\BbbR^2\to\Bbb R^2$ merupakan suatu permutasi.
+Maka $\Tau$ merupakan aljabar-$\sigma$, sebab merupakan
+irisan aljabar-$\sigma$ $\Sigma_2$ dan
+$\{E:\phi[E]\in\Sigma_2\}=\{\phi^{-1}[F]:F\in\Sigma_2\}$.   Selain itu,
+$\mu_2E=\mu_2(\phi[E])$ untuk setiap $E\in\Tau$.   \Prf\  Menurut 252D,
+kita mempunyai
+
+\Centerline{$\mu_2E=\int\mu\{x:(x,y)\in E\}\mu(dy)$.}
+
+\noindent Tetapi dengan menerapkan hasil yang sama pada $\phi[E]$ kita memperoleh
+
+$$\eqalignno{\mu_2\phi[E]
+&=\int\mu\{x:(x,y)\in\phi[E]\}\mu(dy)
+=\int\mu\{x:(x-y,y)\in E\}\mu(dy)\cr
+&=\int\mu(E^{-1}[\{y\}]+y)\mu(dy)
+=\int\mu E^{-1}[\{y\}]\mu(dy)\cr
+\noalign{\noindent (karena ukuran Lebesgue invarian terhadap translasi)}
+&=\mu_2E. \text{  \Qed}\cr}$$
+
+\medskip
+
+\quad{\bf (ii)} Sekarang $\phi$ dan $\phi^{-1}$ jelas kontinu, sehingga
+$\phi[G]$ terbuka, dan karena itu terukur, untuk setiap $G$ terbuka;
+akibatnya semua himpunan terbuka harus termasuk dalam $\Tau$.   Karena $\Tau$ merupakan
+aljabar-$\sigma$, ia memuat semua himpunan Borel.   Sekarang misalkan $E$ sebarang
+himpunan terukur.   Maka terdapat himpunan Borel $H_1$, $H_2$ sedemikian sehingga
+$H_1\subseteq E\subseteq H_2$ dan $\mu_2(H_2\setminus H_1)=0$ (134Fb).
+Kita mempunyai $\phi[H_1]\subseteq\phi[E]\subseteq\phi[H_2]$ dan
+
+\Centerline{$\mu_2(\phi[H_2]\setminus\phi[H_1])
+=\mu_2\phi[H_2\setminus H_1]=\mu_2(H_2\setminus H_1)=0$.}
+
+\noindent Jadi $\phi[E]\setminus\phi[H_1]$ harus terabaikan, sehingga
+terukur, dan $\phi[E]=\phi[H_1]\cup(\phi[E]\setminus\phi[H_1])$
+terukur.   Ini menunjukkan bahwa $\phi[E]$ terukur kapan pun $E$ terukur.
+
+\medskip
+
+\quad{\bf (iii)} Dengan mengulangi argumen yang sama menggunakan $-y$ sebagai pengganti
+$y$, kita melihat bahwa $\phi^{-1}[E]$ terukur, dan
+$\mu_2\phi^{-1}[E]=\mu_2E$, untuk setiap $E\in\Sigma_2$.
+Jadi $\phi$ merupakan automorfisme dari struktur $(\BbbR^2,\Sigma_2,\mu_2)$.
+
+\medskip
+
+{\bf (e)} Tentu saja ini merupakan akibat langsung, baik dari bukti
+(d) maupun dari pernyataan (d) itu sendiri, karena $(x,y)\mapsto(x-y,y)$ hanyalah
+invers dari $(x,y)\mapsto(x+y,y)$.
+}%end of proof of 255A
+
+\leader{255B}{Akibat} (a) Jika $a\in\Bbb R$, maka untuk sebarang
+fungsi bernilai kompleks $f$ yang didefinisikan pada suatu subhimpunan $\Bbb R$
+
+\Centerline{$\int f(x)dx
+=\int f(a+x)dx=\int f(-x)dx=\int f(a-x)dx$}
+
+\noindent dalam arti bahwa jika salah satu integral ada, maka integral-integral
+lainnya juga ada, dan semuanya sama.
+
+(b) Jika $f$ merupakan fungsi bernilai kompleks yang didefinisikan pada suatu subhimpunan
+$\BbbR^2$, maka
+
+\Centerline{$\int f(x+y,y)d(x,y)=\int f(x-y,y)d(x,y)
+=\int f(x,y)d(x,y)$}
+
+\noindent dalam arti bahwa jika salah satu integral ada dan berhingga,
+maka yang lain juga demikian, dan semuanya sama.
+
+\cmmnt{
+\leader{255C}{Catatan (a)}  Saya tidak yakin apakah seharusnya dianggap
+`jelas' bahwa jika $(X,\Sigma,\mu)$, $(Y,\Tau,\nu)$ merupakan ruang ukur
+dan $\phi:X\to Y$ suatu isomorfisme, maka untuk sebarang fungsi
+$f$ yang didefinisikan pada suatu subhimpunan $Y$
+
+\Centerline{$\int f(\phi(x))\mu(dx)=\int f(y)\nu(dy)$}
+
+\noindent dalam arti bahwa jika yang satu terdefinisi maka yang lain pun terdefinisi, dan keduanya
+sama.   Jika hal ini jelas, kejelasannya tentu bergantung
+pada sifat definisi integrasi:
+keterintegralan terhadap ukuran $\mu$ merupakan sesuatu yang
+bergantung pada struktur $(X,\Sigma,\mu)$ dan tidak pada sifat lain apa pun dari
+$X$.   Jika hal ini tidak jelas, maka ia merupakan deduksi mudah dari Teorema
+235A di atas, yang diterapkan berturut-turut pada $\phi$ dan $\phi^{-1}$ serta pada bagian real
+dan imajiner dari $f$.   Bagaimanapun juga, isomorfisme-isomorfisme dalam 255A
+tepat merupakan isomorfisme yang diperlukan untuk membuktikan 255B.
+
+\header{255Cb}{\bf (b)} Perhatikan bahwa dalam 255Bb saya menuliskan $\int f(x,y)d(x,y)$
+untuk menekankan bahwa saya sedang meninjau integral $f$ terhadap
+ukuran Lebesgue dua dimensi.   Fakta bahwa
+
+\Centerline{$\int\bigl(\int f(x,y)dx\bigr)dy
+=\int\bigl(\int f(x+y,y)dx\bigr)dy=\int\bigl(\int f(x-y,y)dx\bigr)dy$}
+
+\noindent sebenarnya lebih mudah, karena merupakan akibat langsung dari
+kesamaan $\int f(a+x)dx=\int f(x)dx$.   Tetapi penerapan hasil ini
+sering kali pada dasarnya bergantung pada fakta bahwa fungsi-fungsi
+$(x,y)\mapsto f(x+y,y)$, $(x,y)\mapsto f(x-y,y)$ terukur sebagai
+fungsi dua variabel.
+
+\header{255Cc}{\bf (c)} Saya langsung beralih ke fungsi bernilai
+kompleks karena fungsi-fungsi ini diperlukan untuk penerapan dalam Bab
+28.   Namun, jika
+hal itu menimbulkan ketidaknyamanan bagi Anda, baik secara teknis maupun estetis, semua
+gagasan teori ukuran dalam bagian ini sudah dapat ditemukan dalam
+kasus real, dan mula-mula Anda mungkin ingin membacanya seolah-olah hanya bilangan real
+yang terlibat.
+}%end of comment
+
+\leader{255D}{}\cmmnt{ Akibat lebih lanjut dari 255A akan berguna.
+
+\medskip
+
+\noindent}{\bf Akibat} Misalkan $f$ suatu fungsi bernilai kompleks yang didefinisikan
+pada suatu subhimpunan $\Bbb R$.
+
+(a) Jika $f$ terukur, maka fungsi-fungsi $(x,y)\mapsto f(x+y)$,
+$(x,y)\mapsto f(x-y)$ terukur.
+
+(b) Jika $f$ didefinisikan hampir di mana-mana dalam $\Bbb R$, maka fungsi-fungsi
+$(x,y)\mapsto f(x+y)$, $(x,y)\mapsto f(x-y)$ didefinisikan hampir
+di mana-mana dalam $\BbbR^2$.
+
+\proof{ Dengan menuliskan $g_1(x,y)=f(x+y)$, $g_2(x,y)=f(x-y)$ kapan pun keduanya
+terdefinisi, kita mempunyai
+
+\Centerline{$g_1(x,y)=(f\otimes\chi\Bbb R)(\phi(x,y))$,
+\quad $g_2(x,y)=(f\otimes\chi\Bbb R)(\phi^{-1}(x,y))$,}
+
+\noindent dengan menuliskan $\phi(x,y)=(x+y,y)$ seperti dalam 255A(d-e), dan
+$(f\otimes\chi\Bbb R)(x,y)=f(x)$, mengikuti notasi 253B.   Menurut
+253C, $f\otimes\chi\Bbb R$ terukur jika $f$ terukur, dan didefinisikan
+hampir di mana-mana jika $f$ demikian.   Karena $\phi$ merupakan automorfisme ruang
+ukur, $(f\otimes\chi\Bbb R)\phi=g_1$ dan
+$(f\otimes\chi\Bbb R)\phi^{-1}=g_2$ terukur, atau didefinisikan hampir
+di mana-mana, jika $f$ demikian.
+}%end of proof of 255D
+
+\vleader{48pt}{255E}{Rumus dasar} Misalkan $f$ dan $g$ fungsi
+bernilai kompleks yang terukur
+dan didefinisikan hampir di mana-mana dalam $\Bbb R$.   Tuliskan $f*g$ untuk
+fungsi yang didefinisikan oleh rumus
+
+\Centerline{$(f*g)(x)=\int f(x-y)g(y)dy$}
+
+\noindent kapan pun integral itu ada\cmmnt{ (terhadap
+ukuran Lebesgue, tentu saja)} sebagai suatu bilangan kompleks.   Maka $f*g$ adalah
+{\bf konvolusi} fungsi $f$ dan $g$.
+\cmmnt{
+
+Perhatikan bahwa} $\dom(|f|*|g|)=\dom(f*g)$, dan\cmmnt{ bahwa}
+$|f*g|\le |f|*|g|$ di setiap titik domain bersama keduanya, untuk semua $f$ dan
+$g$.
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Perhatikan bahwa di sini saya bersedia meninjau
+konvolusi $f$ dan $g$ untuk sebarang anggota
+$\eusm L^0_{\Bbb C}$, yakni ruang fungsi terukur bernilai kompleks yang
+didefinisikan hampir di mana-mana, sekalipun
+domain $f*g$ mungkin kosong.   }%end of comment
+
+\leader{255F}{Sifat elementer (a)} Karena integrasi bersifat linear,
+tentu kita mempunyai
+
+
+\Centerline{$((f_1+f_2)*g)(x)=(f_1*g)(x)+(f_2*g)(x)$,}
+
+\Centerline{$(f*(g_1+g_2))(x)=(f*g_1)(x)+(f*g_2)(x)$,}
+
+\Centerline{$(cf*g)(x)=(f*cg)(x)=c(f*g)(x)$}
+
+\noindent kapan pun ruas kanan rumus-rumus tersebut terdefinisi.
+
+\spheader 255Fb Jika $f$ dan $g$ merupakan fungsi terukur bernilai kompleks
+yang didefinisikan hampir di mana-mana dalam $\Bbb R$, maka
+$f*g=g*f$\cmmnt{, dalam arti ketat bahwa keduanya mempunyai domain yang sama
+dan nilai yang sama di setiap
+titik domain bersama tersebut}.
+
+\prooflet{\Prf\ Ambil $x\in\Bbb R$ dan terapkan 255Ba untuk melihat bahwa
+
+$$\eqalign{(f*g)(x)
+&=\int f(x-y)g(y)dy
+=\int f(x-(x-y))g(x-y)dy\cr
+&=\int f(y)g(x-y)dy
+=(g*f)(x)\cr}$$
+
+\noindent jika salah satunya terdefinisi.   \Qed}
+
+\header{255Fc}{\bf (c)} Jika $f_1$, $f_2$, $g_1$, $g_2$ merupakan fungsi
+terukur bernilai kompleks yang didefinisikan hampir di mana-mana dalam $\Bbb R$,
+$f_1\eae f_2$ dan $g_1\eae g_2$, maka $f_1*g_1=f_2*g_2$.
+\prooflet{\Prf\ Untuk setiap $x\in\Bbb R$ kita
+akan mempunyai $f_1(x-y)=f_2(x-y)$ untuk hampir setiap $y\in\Bbb R$, menurut 255Ac.
+Akibatnya $f_1(x-y)g_1(y)=f_2(x-y)g_2(y)$ untuk hampir setiap $y$,
+dan $(f_1*g_1)(x)=(f_2*g_2)(x)$ dalam arti bahwa jika salah satunya
+terdefinisi, maka yang lain juga terdefinisi, dan keduanya sama.\ \Qed}
+
+Akibatnya, jika $u$, $v\in L^0_{\Bbb C}$, maka kita mempunyai suatu fungsi
+$\theta(u,v)$
+yang sama dengan $f*g$ kapan pun $f$, $g\in\eusm L^0_{\Bbb C}$
+sedemikian sehingga $f^{\ssbullet}=u$ dan $g^{\ssbullet}=v$.
+\cmmnt{Perhatikan bahwa $\theta(u,v)=\theta(v,u)$, dan
+bahwa $\theta(u_1+u_2,v)$ memperluas $\theta(u_1,v)+\theta(u_2,v)$,
+$\theta(cu,v)$ memperluas $c\theta(u,v)$ untuk semua $u$, $u_1$, $u_2$,
+$v\in L^0_{\Bbb C}$ dan $c\in\Bbb C$.}
+
+\leader{255G}{}\cmmnt{ Saya telah mengelompokkan 255Fa-255Fc karena
+ketiganya hanya bergantung
+pada gagasan sampai dengan 255Ac dan 255Ba.   Dengan menggunakan paruh kedua
+255A dan 255B kita memperoleh hasil yang jauh lebih mendalam.   Saya mulai dengan apa yang tampaknya
+merupakan hasil mendasar.
+
+\medskip
+
+\noindent}{\bf Teorema} Misalkan $f$, $g$, dan $h$ merupakan fungsi terukur
+bernilai kompleks yang didefinisikan hampir di mana-mana dalam $\Bbb R$.
+
+(a) Andaikan $\int h(x+y)f(x)g(y)d(x,y)$ ada dalam $\Bbb C$.
+Maka
+
+$$\eqalign{\int h(x)(f*g)(x)dx
+&=\int h(x+y)f(x)g(y)d(x,y)\cr
+&=\iint h(x+y)f(x)g(y)dxdy
+=\iint h(x+y)f(x)g(y)dydx\cr}$$
+
+\noindent asalkan
+dalam ungkapan $h(x)(f*g)(x)$ kita menafsirkan produk itu sebagai $0$ jika
+$h(x)=0$ dan $(f*g)(x)$ tidak terdefinisi.
+
+(b) Jika, dengan penafsiran serupa terhadap $|h(x)|(|f|*|g|)(x)$, integral
+$\int |h(x)|(|f|*|g|)(x)dx$ berhingga, maka
+$\int h(x+y)f(x)g(y)d(x,y)$ ada dalam $\Bbb C$.
+
+\proof{ Tinjau fungsi-fungsi
+
+\Centerline{$k_1(x,y)=h(x)f(x-y)g(y)$,\quad $k_2(x,y)=h(x+y)f(x)g(y)$}
+
+\noindent di mana pun fungsi-fungsi ini terdefinisi.   255D memberi tahu kita bahwa $k_1$ dan
+$k_2$ terukur dan didefinisikan hampir di mana-mana.   Sekarang, dengan menetapkan
+$\phi(x,y)=(x+y,y)$, kita mempunyai $k_2=k_1\phi$, sehingga
+
+\Centerline{$\int k_1(x,y)d(x,y)=\int k_2(x,y)d(x,y)$}
+
+\noindent jika salah satunya ada, menurut 255Bb.
+
+Jika
+
+\Centerline{$\int h(x+y)f(x)g(y)d(x,y)=\int k_2$}
+
+\noindent ada, maka menurut teorema Fubini kita mempunyai
+
+\Centerline{$\int k_2=\int k_1(x,y)d(x,y)
+=\int(\int h(x)f(x-y)g(y)dy)dx$}
+
+\noindent sehingga $\int h(x)f(x-y)g(y)dy$ ada hampir di mana-mana, yaitu,
+$(f*g)(x)$ ada untuk hampir setiap $x$ sedemikian sehingga $h(x)\ne 0$;  dengan
+penafsiran yang saya gunakan di sini, $h(x)(f*g)(x)$ ada hampir di mana-mana,
+dan
+
+$$\eqalign{\int h(x)(f*g)(x)dx
+&=\int\bigl(\int h(x)f(x-y)g(y)dy\bigr)dx
+=\int k_1\cr
+&=\int k_2
+=\int h(x+y)f(x)g(y)d(x,y)\cr
+&=\iint h(x+y)f(x)g(y)dxdy
+=\iint h(x+y)f(x)g(y)dydx\cr}$$
+
+\noindent sekali lagi menurut teorema Fubini.
+
+Jika (dengan penafsiran yang sama) $|h|\times(|f|*|g|)$ terintegralkan,
+
+\Centerline{$|k_1(x,y)|=|h(x)||f(x-y)||g(y)|$}
+
+\noindent terukur, dan
+
+\Centerline{$\iint|h(x)||f(x-y)||g(y)|dydx
+=\int|h(x)|(|f|*|g|)(x)dx$}
+
+\noindent berhingga, sehingga menurut teorema Tonelli (252G, 252H), $k_1$ dan
+$k_2$ terintegralkan.
+}%end of proof of 255G
+
+\leader{255H}{}\cmmnt{ Beberapa hasil standar kini mudah diperoleh.
+
+\wheader{255H}{4}{2}{2}{24pt}
+
+\noindent}{\bf Akibat} Jika $f$, $g$ merupakan fungsi bernilai kompleks
+yang terintegralkan pada $\Bbb R$, maka $f*g$ terintegralkan,
+dengan
+
+\Centerline{$\int f*g =\int f\int g$,
+\quad$\int|f*g|\le\int|f|\int|g|$.}
+
+\proof{ Dalam 255G, tetapkan $h(x)=1$ untuk setiap $x\in\Bbb R$;  maka
+
+\Centerline{$\int h(x+y)f(x)g(y)d(x,y)
+=\int f(x)g(y)d(x,y)=\int f\int g$}
+
+\noindent menurut 253D, sehingga
+
+\Centerline{$\int f*g
+=\int h(x)(f*g)(x)dx=\int h(x+y)f(x)g(y)d(x,y)=\int f\int g$,}
+
+\noindent sebagaimana dinyatakan.   Sekarang
+
+\Centerline{$\int|f*g|\le\int|f|*|g|=\int|f|\int|g|$.}
+}%\end of proof of 255H
+
+\leader{255I}{Akibat} Untuk sebarang fungsi terukur bernilai kompleks
+$f$, $g$ yang didefinisikan hampir di mana-mana dalam $\Bbb R$, $f*g$ terukur dan
+mempunyai domain terukur.
+
+\proof{ Tetapkan $f_n(x)=f(x)$ jika $x\in\dom f$, $|x|\le n$ dan $|f(x)|\le n$,
+dan $0$ di tempat lain dalam $\Bbb R$;  definisikan $g_n$ secara serupa dari $g$.   Maka
+$f_n$ dan $g_n$ terintegralkan, $|f_n|\le|f|$ dan $|g_n|\le|g|$ hampir
+di mana-mana, $f\eae\lim_{n\to\infty}f_n$ dan $g\eae\lim_{n\to\infty}g_n$.
+Akibatnya, menurut Teorema Konvergensi Terdominasi Lebesgue,
+
+$$\eqalign{(f*g)(x)
+&=\int f(x-y)g(y)dy
+=\int \lim_{n\to\infty}f_n(x-y)g_n(y)dy\cr
+&=\lim_{n\to\infty}\int f_n(x-y)g_n(y)dy
+=\lim_{n\to\infty}(f_n*g_n)(x)\cr}$$
+
+\noindent untuk setiap $x\in\dom f*g$.   Namun $f_n*g_n$ terintegralkan,
+sehingga terukur, untuk setiap $n$, jadi $f*g$ pasti terukur.
+
+Adapun domain $f*g$,
+
+$$\eqalign{x\in\dom(f*g)
+&\iff\int f(x-y)g(y)dy\text{ terdefinisi dalam }\Bbb C\cr
+&\iff\int|f(x-y)||g(y)|dy\text{ terdefinisi dalam }\Bbb R\cr
+&\iff\int|f_n(x-y)||g_n(y)|dy\text{ terdefinisi dalam }\Bbb R
+\text{ untuk setiap }n\cr
+&\qquad\qquad\text{dan }
+\sup_{n\in\Bbb N}\int|f_n(x-y)||g_n(y)|dy<\infty.\cr
+}$$
+
+\noindent Karena setiap $|f_n|*|g_n|$ terintegralkan, dan karenanya
+terukur serta mempunyai domain terukur,
+
+\Centerline{$\dom(f*g)=\{x:x\in\bigcap_{n\in\Bbb N}\dom(|f_n|*|g_n|),\,
+\sup_{n\in\Bbb N}(|f_n|*|g_n|)(x)<\infty\}$}
+
+\noindent terukur.
+}%end of proof of 255I
+
+\leader{255J}{Teorema} Misalkan $f$, $g$ dan $h$ fungsi terukur bernilai kompleks,
+yang didefinisikan hampir di mana-mana dalam $\Bbb R$, sedemikian sehingga $f*g$ dan $g*h$
+terdefinisi hampir di mana-mana.   Misalkan
+$x\in\Bbb R$ sedemikian sehingga salah satu dari $(|f|*(|g|*|h|))(x)$,
+$((|f|*|g|)*|h|)(x)$ terdefinisi dalam $\Bbb R$.   Maka $f*(g*h)$ dan
+$(f*g)*h$ terdefinisi dan sama di $x$.
+
+\proof{ Tetapkan $k(y)=f(x-y)$ ketika ruas ini terdefinisi, sehingga $k$
+terukur dan didefinisikan hampir di mana-mana (255D).
+
+\medskip
+
+{\bf (a)} Jika $(|f|*(|g|*|h|))(x)$ terdefinisi, nilainya adalah
+$\int|k(y)|(|g|*|h|)(y)dy$, sehingga menurut 255G kita mempunyai
+
+\Centerline{$\int k(y)(g*h)(y)dy=\int k(y+z)g(y)h(z)d(y,z)$,}
+
+\noindent yaitu,
+
+$$\eqalign{(f*(g*h))(x)
+&=\int f(x-y)(g*h)(y)dy
+=\int k(y)(g*h)(y)dy\cr
+&=\int k(y+z)g(y)h(z)d(y,z)
+=\iint k(y+z)g(y)h(z)dydz\cr
+&=\iint f(x-y-z)g(y)h(z)dydz
+=\int (f*g)(x-z)h(z)dz\cr
+&=((f*g)*h)(x).\cr}$$
+
+\medskip
+
+{\bf (b)} Jika $((|f|*|g|)*|h|)(x)$ terdefinisi, nilainya adalah
+
+$$\eqalign{\int(|f|*|g|)(x-z)|h(z)|dz
+&=\iint|f(x-z-y)||g(y)||h(z)|dydz\cr
+&=\iint|k(y+z)||g(y)||h(z)|dydz.\cr}$$
+
+\noindent Menurut 255D sekali lagi, $(y,z)\mapsto k(y+z)$ terukur, sehingga kita dapat
+menerapkan teorema Tonelli untuk melihat bahwa $\int k(y+z)g(y)h(z)d(y,z)$ terdefinisi,
+dan sama dengan $\int k(y)(g*h)(y)dy=(f*(g*h))(x)$ menurut 255Ga.   Di sisi
+lain, menurut dua baris terakhir bukti (a),
+$\int k(y+z)g(y)h(z)d(y,z)$ juga sama dengan $((f*g)*h)(x)$.
+}%end of proof of  255J
+
+\leader{255K}{}\cmmnt{ Saya rasa kita tidak akan memerlukan pembahasan menyeluruh
+mengenai
+persoalan kapan tepatnya $(f*g)(x)$ terdefinisi;  persoalan ini tampaknya
+rumit.   Namun ada suatu kasus mendasar yang memungkinkan kita
+memastikan bahwa $(f*g)(x)$ terdefinisi di mana-mana.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $f$, $g$ fungsi terukur
+bernilai kompleks
+yang didefinisikan hampir di mana-mana dalam $\Bbb R$, dan
+$f\in\eusm L^p_{\Bbb C}$,
+$g\in\eusm L^q_{\Bbb C}$ dengan $p$, $q\in[1,\infty]$ dan
+$\bover1p+\bover1q=1$\cmmnt{ (dengan menuliskan $\bover{1}{\infty}=0$ seperti
+biasa)}.   Maka $f*g$ terdefinisi di mana-mana dalam $\Bbb R$, kontinu
+seragam, dan
+
+$$\eqalign{\sup_{x\in\Bbb R}|(f*g)(x)|
+&\le\|f\|_p\|g\|_q\text{ jika }1<p<\infty,\,1<q<\infty,\cr
+&\le\|f\|_1\esssup|g|\text{ jika }p=1,\,q=\infty,\cr
+&\le\esssup|f|\cdot\|g\|_1\text{ jika }p=\infty,\,q=1.\cr}$$
+
+\proof{{\bf (a)} (Untuk pengantar ruang $\eusm L^p$, lihat \S244.)
+Untuk sebarang $x\in\Bbb R$, fungsi $f_x$, yang didefinisikan dengan menetapkan
+$f_x(y)=f(x-y)$ kapan pun $x-y\in\dom f$, juga harus termasuk dalam
+$\eusm L^p$, karena $f_x=f\phi$ untuk suatu automorfisme $\phi$ dari
+ruang
+ukur.   Akibatnya $(f*g)(x)=\int f_x\times g$ terdefinisi, dan modulusnya
+paling besar $\|f\|_p\|g\|_q$ atau $\|f\|_1\esssup|g|$ atau
+$\esssup|f|\cdot\|g\|_1$, menurut 244Eb/244Pb dan 243Fa/243K.
+
+\medskip
+
+{\bf (b)} Untuk melihat bahwa $f*g$ kontinu seragam, gunakan argumen berikut.
+Misalkan mula-mula $p<\infty$.   Ambil $\epsilon>0$.   Ambil $\eta>0$
+sedemikian sehingga $(2+2^{1/p})\|g\|_q\eta\le\epsilon$.
+Maka ada fungsi kontinu terbatas $h:\Bbb R\to\Bbb C$ sedemikian
+sehingga $\{x:h(x)\ne 0\}$ terbatas dan $\|f-h\|_p\le\eta$ (244Hb/244Pb);
+ambil $M\ge 1$ sedemikian sehingga $h(x)=0$ kapan pun $|x|\ge M-1$.   Selanjutnya,
+$h$ kontinu seragam, sehingga ada $\delta\in\ocint{0,1}$ sedemikian
+sehingga $|h(x)-h(x')|\le M^{-1/p}\eta$ kapan pun $|x-x'|\le\delta$.
+
+Misalkan $|x-x'|\le\delta$.   Dengan mendefinisikan $h_x(y)=h(x-y)$, seperti sebelumnya,
+kita mempunyai
+
+$$\eqalignno{\int|h_x-h_{x'}|^p
+&=\int|h(x-y)-h(x'-y)|^pdy
+=\int|h(t)-h(x'-x+t)|^pdt\cr
+\displaycause{dengan menyubstitusikan $t=x-y$}
+&=\int_{-M}^M|h(t)-h(x'-x+t)|^pdt\cr
+\displaycause{karena $h(t)=h(x'-x+t)=0$ jika $|t|\ge M$}
+&\le 2M(M^{-1/p}\eta)^p\cr
+\displaycause{karena $|h(t)-h(x'-x+t)|\le M^{-1/p}\eta$ untuk setiap $t$}
+&=2\eta^p.\cr}$$
+
+\noindent Jadi $\|h_x-h_{x'}\|_p\le 2^{1/p}\eta$.   Di sisi lain,
+
+\Centerline{$\int|h_{x}-f_{x}|^p
+=\int|h(x-y)-f(x-y)|^pdy
+=\int|h(y)-f(y)|^pdy$,}
+
+\noindent sehingga $\|h_x-f_x\|_p=\|h-f\|_p\le\eta$, dan demikian pula
+$\|h_{x'}-f_{x'}\|_p\le\eta$.   Jadi
+
+\Centerline{$\|f_x-f_{x'}\|_p
+\le\|f_x-h_x\|_p+\|h_x-h_{x'}\|_p+\|h_{x'}-f_{x'}\|_p
+\le(2+2^{1/p})\eta$.}
+
+\noindent Ini berarti bahwa
+
+$$\eqalign{|(f*g)(x)-(f*g)(x')|
+&=|\int f_x\times g-\int f_{x'}\times g|
+=|\int(f_x-f_{x'})\times g|\cr
+&\le\|f_x-f_{x'}\|_p\|g\|_q
+\le(2+2^{1/p})\|g\|_q\eta
+\le\epsilon.\cr}$$
+
+\noindent Karena $\epsilon$ sebarang, $f*g$ kontinu seragam.
+
+Argumen di sini mengandaikan bahwa $p$ berhingga.   Namun jika $p=\infty$ maka
+$q=1$ berhingga, sehingga kita dapat menerapkan metode tersebut dengan $g$ menggantikan $f$ untuk
+menunjukkan bahwa $g*f$ kontinu seragam, dan $f*g=g*f$ menurut 255Fb.
+}%end of proof of 255K
+
+\leader{255L}{Kasus berdimensi $r$} Saya telah menuliskan 255A-255K sebagai
+teorema-teorema tentang ukuran Lebesgue pada $\Bbb R$.   Namun semuanya
+berlaku\cmmnt{ sama baiknya} untuk ukuran Lebesgue pada $\BbbR^r$ bagi sebarang
+$r\ge 1$\cmmnt{, dan perubahan
+yang diperlukan begitu kecil sehingga saya rasa saya cukup
+meminta Anda membaca kembali argumen-argumen tersebut, dengan mengubah setiap $\Bbb R$ menjadi
+$\BbbR^r$, dan setiap $\BbbR^2$ menjadi $(\BbbR^r)^2$.   Dalam 255A
+dan di tempat lain, ukuran $\mu_2$ harus dibaca sebagai ukuran Lebesgue
+pada $\BbbR^{2r}$ atau sebagai ukuran produk pada $(\BbbR^r)^2$;
+menurut 251N keduanya dapat diidentifikasi.   Ada perubahan sepele yang
+diperlukan dalam bagian (b) bukti tersebut;  jika $I_n=\coint{a_n,b_n}$ maka
+
+\Centerline{$\mu I_n=\mu(-I_n)
+=\prod_{i=1}^r\max(0,\beta_{ni}-\alpha_{ni})$,}
+
+\noindent dengan menuliskan $a_n=(\alpha_{n1},\ldots,\alpha_{nr}),\ b_n=(\beta_{n1},\ldots,\beta_{nr})$.   Dalam bukti
+255I, fungsi-fungsi $f_n$ harus didefinisikan dengan menetapkan bahwa
+$f_n(x)=f(x)$ jika $|f(x)|\le n$ dan $\|x\|\le n$, serta $0$ selainnya.
+
+Karena itu, ketika mengutip hasil-hasil ini, saya tidak akan ragu untuk merujuk
+paragraf-paragraf 255A-255K seolah-olah semuanya benar-benar telah dituliskan untuk
+$r\ge 1$ secara umum}.
+
+\leader{255M}{Kasus $\ocint{-\pi,\pi}$}\dvro{ {\bf (a)}}{ Gagasan yang sama
+juga berlaku
+untuk grup lingkaran $S^1$ dan interval $\ocint{-\pi,\pi}$, tetapi
+di sini mungkin diperlukan penjelasan yang agak lebih panjang.
+
+\spheader 255Ma Hal pertama yang harus ditetapkan ialah operasi
+grup yang sesuai.}   Jika kita memandang $S^1$ sebagai himpunan
+$\{z:z\in\Bbb C,\,|z|=1\}$, maka operasi grupnya adalah perkalian
+kompleks, dan dalam
+rumus-rumus di atas $x+y$ harus diganti dengan $xy$, sedangkan $x-y$ harus
+diganti dengan $xy^{-1}$.   Pada interval $\ocint{-\pi,\pi}$, operasi grupnya
+adalah $+_{2\pi}$, dengan, untuk $x$, $y\in\ocint{-\pi,\pi}$, saya menuliskan
+$x+_{2\pi}y$ untuk salah satu dari $x+y$, $x+y+2\pi$, $x+y-2\pi$ yang termasuk dalam
+$\ocint{-\pi,\pi}$.   \cmmnt{Untuk melihat bahwa ini memang suatu operasi
+grup, salah satu
+caranya ialah memperhatikan bahwa operasi ini berpadanan dengan perkalian pada $S^1$ jika kita
+menggunakan bijeksi kanonik
+$x\mapsto e^{ix}:\ocint{-\pi,\pi}\to S^1$;  cara lain ialah memperhatikan bahwa operasi ini
+berpadanan dengan operasi pada grup hasil bagi $\Bbb R/2\pi\Bbb Z$.
+Jadi, dalam penafsiran gagasan-gagasan 255A-255K ini, kita akan
+mengganti $x+y$ dengan $x+_{2\pi}y$, $-x$ dengan $-_{2\pi}x$, dan $x-y$ dengan
+$x-_{2\pi}y$, dengan
+
+\Centerline{$-_{2\pi}x=-x$ jika $x\in\ooint{-\pi,\pi}$,
+\quad$-_{2\pi}\pi=\pi$,}
+
+\noindent dan $x-_{2\pi}y$ adalah salah satu dari $x-y$, $x-y+2\pi$, $x-y-2\pi$
+yang termasuk dalam $\ocint{-\pi,\pi}$.
+}%end of comment
+
+\header{255Mb}{\bf (b)} Mengenai ukurannya, ukuran yang digunakan pada
+$\ocint{-\pi,\pi}$ hanyalah ukuran Lebesgue.   \cmmnt{Perhatikan bahwa
+karena
+$\ocint{-\pi,\pi}$ terukur Lebesgue, tidak akan ada kerancuan
+mengenai arti `subhimpunan terukur', karena subhimpunan yang terukur secara relatif
+dari $\ocint{-\pi,\pi}$ sebenarnya diukur dengan
+ukuran Lebesgue pada $\Bbb R$.   Kita juga dapat mengidentifikasi ukuran produk
+pada $\ocint{-\pi,\pi}\times\ocint{-\pi,\pi}$ dengan ukuran subruang
+yang diinduksi oleh ukuran Lebesgue pada $\BbbR^2$ (251R).}
+
+Pada $S^1$, kita memerlukan ukuran padanan yang diinduksi oleh bijeksi
+kanonik antara $S^1$ dan $\ocint{-\pi,\pi}$\cmmnt{, yang memang
+sering disebut `ukuran Lebesgue pada $S^1$'}.   \cmmnt{(Kita akan melihat dalam
+265E bahwa ukuran ini
+juga sama dengan ukuran Hausdorff berdimensi satu pada $S^1$.)   Kita sudah sangat
+dekat dengan taraf yang
+memungkinkan kita secara wajar beralih ke $S^1$ dan ukuran ini (atau versi
+ternormalisasinya, yang diperkecil dengan faktor $2\pi$, agar
+$S^1$ menjadi ruang probabilitas).   Namun, teori elementer
+deret Fourier, yang akan menjadi penerapan utama pembahasan ini dalam
+jilid ini, umumnya dikerjakan pada interval dalam $\Bbb R$, sehingga
+rumus-rumus yang didasarkan pada $\ocint{-\pi,\pi}$ lebih dekat dengan bentuk
+standar.   Oleh karena itu, mulai sekarang saya akan menyajikan pembahasan
+dalam istilah $\ocint{-\pi,\pi}$.}
+
+
+\cmmnt{
+\header{255Mc}{\bf (c)} Hasil yang berpadanan dengan 255A kini mempunyai
+bentuk yang sedikit berbeda, jadi saya uraikan secara lengkap.
+}
+
+\leader{255N}{Teorema} Misalkan $\mu$ ukuran Lebesgue pada
+$\ocint{-\pi,\pi}$ dan
+$\mu_2$ ukuran Lebesgue pada $\ocint{-\pi,\pi}\times\ocint{-\pi,\pi}$;
+tuliskan $\Sigma$, $\Sigma_2$ untuk domain-domainnya.
+
+(a) Untuk sebarang $a\in\ocint{-\pi,\pi}$, peta $x\mapsto
+a+_{2\pi}x:\ocint{-\pi,\pi}\to\ocint{-\pi,\pi}$ adalah suatu
+automorfisme ruang ukur dari $(\ocint{-\pi,\pi},\Sigma,\mu)$.
+
+(b) Peta $x\mapsto -_{2\pi}x:\ocint{-\pi,\pi}\to\ocint{-\pi,\pi}$ adalah
+suatu automorfisme ruang ukur dari $(\ocint{-\pi,\pi},\Sigma,\mu)$.
+
+(c) Untuk sebarang $a\in\ocint{-\pi,\pi}$, peta
+$x\mapsto a-_{2\pi}x:\ocint{-\pi,\pi}\to\ocint{-\pi,\pi}$ adalah suatu
+automorfisme ruang ukur dari $(\ocint{-\pi,\pi},\Sigma,\mu)$.
+
+(d) Peta $(x,y)\mapsto(x+_{2\pi}y,y):\ocint{-\pi,\pi}^2\to
+\ocint{-\pi,\pi}^2$ adalah suatu automorfisme ruang ukur dari
+$(\ocint{-\pi,\pi}^2,
+\ifdim\pagewidth>467pt\penalty-50\fi
+\Sigma_2,
+\ifdim\pagewidth>467pt\penalty-10\fi
+\mu_2)$.
+
+(e) Peta $(x,y)\mapsto(x-_{2\pi}y,y):\ocint{-\pi,\pi}^2\to
+\ocint{-\pi,\pi}^2$ adalah suatu automorfisme ruang ukur dari
+$(\ocint{-\pi,\pi}^2,
+\ifdim\pagewidth>467pt\penalty-50\fi
+\Sigma_2,
+\ifdim\pagewidth>467pt\penalty-10\fi
+\mu_2)$.
+
+\proof{{\bf (a)} Tetapkan $\phi(x)=a+_{2\pi}x$.   Maka untuk sebarang
+$E\subseteq\ocint{-\pi,\pi}$,
+
+\Centerline{$\phi[E]
+=((E+a)\cap\ocint{-\pi,\pi})
+\cup(((E+a)\cap\ocint{\pi,3\pi})-2\pi)
+\cup(((E+a)\cap\ocint{-3\pi,-\pi})+2\pi)$,}
+
+\noindent dan ketiga himpunan ini saling lepas, sehingga
+
+$$\eqalignno{\mu\phi[E]
+&=\mu((E+a)\cap\ocint{-\pi,\pi})
++\mu(((E+a)\cap\ocint{\pi,3\pi})-2\pi)\cr
+&\qquad\qquad\qquad\qquad\qquad\qquad
+  +\mu(((E+a)\cap\ocint{-3\pi,-\pi})+2\pi)\cr
+&=\mu_L((E+a)\cap\ocint{-\pi,\pi})
++\mu_L(((E+a)\cap\ocint{\pi,3\pi})-2\pi)\cr
+&\qquad\qquad\qquad\qquad\qquad\qquad
+  +\mu_L(((E+a)\cap\ocint{-3\pi,-\pi})+2\pi)\cr
+\noalign{\noindent (dengan menuliskan $\mu_L$ untuk ukuran Lebesgue pada $\Bbb R$)}
+&=\mu_L((E+a)\cap\ocint{-\pi,\pi})
++\mu_L((E+a)\cap\ocint{\pi,3\pi})
++\mu_L((E+a)\cap\ocint{-3\pi,-\pi})\cr
+&=\mu_L(E+a)
+=\mu_LE
+=\mu E.\cr}$$
+
+\noindent Demikian pula, $\mu\phi^{-1}[E]$ terdefinisi dan sama dengan $\mu E$
+untuk setiap $E\in\Sigma$, sehingga $\phi$ merupakan automorfisme dari
+$(\ocint{-\pi,\pi},
+\ifdim\pagewidth>467pt\penalty-50\fi
+\Sigma,
+\ifdim\pagewidth>467pt\penalty-10\fi
+\mu)$.
+
+\medskip
+
+{\bf (b)} Tentu saja bagian ini lebih singkat.   Dengan menetapkan $\phi(x)=-_{2\pi}x$ untuk
+$x\in\ocint{-\pi,\pi}$,  kita mempunyai
+
+$$\eqalign{\mu(\phi[E])
+&=\mu(\phi[E]\cap\ooint{-\pi,\pi})
+=\mu(-(E\cap\ooint{-\pi,\pi}))\cr
+&=\mu_L(-(E\cap\ooint{-\pi,\pi}))
+=\mu_L(E\cap\ooint{-\pi,\pi})\cr
+&=\mu(E\cap\ooint{-\pi,\pi})
+=\mu E\cr}$$
+
+\noindent untuk setiap $E\in\Sigma$.
+
+\medskip
+
+{\bf (c)} Bagian ini cukup dengan menggabungkan (a) dan (b), seperti dalam
+255A.
+
+\medskip
+
+{\bf (d)} Kita dapat berargumen seperti dalam (a), tetapi dengan sedikit rincian tambahan.
+Jika $E\in\Sigma_2$, dan $\phi(x,y)=(x+_{2\pi}y,y)$ untuk $x$,
+$y\in\ocint{-\pi,\pi}$, tetapkan $\psi(x,y)=(x+y,y)$ untuk $x$, $y\in\Bbb R$,
+dan tuliskan $c=(2\pi,0)\in\BbbR^2$, $H=\ocint{-\pi,\pi}^2$, $H'=H+c$,
+$H''=H-c$.   Maka untuk sebarang $E\in\Sigma_2$,
+
+\Centerline{$\phi[E]=(\psi[E]\cap H)\cup((\psi[E]\cap H')-c)
+\cup((\psi[E]\cap H'')+c)$,}
+
+\noindent sehingga
+
+$$\eqalignno{\mu_2\phi[E]
+&=\mu_2(\psi[E]\cap H)
++\mu_2((\psi[E]\cap H')-c)
++\mu_2((\psi[E]\cap H'')+c)\cr
+&=\mu_L(\psi[E]\cap H)
++\mu_L((\psi[E]\cap H')-c)
++\mu_L((\psi[E]\cap H'')+c)\cr
+\noalign{\noindent (kali ini dengan menuliskan $\mu_L$ untuk ukuran Lebesgue pada
+$\BbbR^2$)}
+&=\mu_L(\psi[E]\cap H)
++\mu_L(\psi[E]\cap H')
++\mu_L(\psi[E]\cap H'')\cr
+&=\mu_L\psi[E]
+=\mu_LE
+=\mu_2 E.\cr}$$
+
+\noindent Dengan cara yang sama, $\mu_2(\phi^{-1}[E])=\mu_2E$ untuk setiap
+$E\in\Sigma_2$, sehingga $\phi$ merupakan automorfisme dari
+$(\ocint{-\pi,\pi}^2,\Sigma_2,\mu_2)$, sebagaimana diperlukan.
+
+\medskip
+
+{\bf (e)} Akhirnya, (e) hanyalah pernyataan ulang (d), seperti sebelumnya.
+}%end of proof of 255N
+
+\leader{255O}{Konvolusi pada $\ocint{-\pi,\pi}$}\cmmnt{ Dengan telah ditetapkannya
+hasil
+mendasar tersebut, argumen yang sama seperti dalam 255B-255K kini menghasilkan
+hal berikut.}   Tuliskan $\mu$ untuk ukuran Lebesgue pada $\ocint{-\pi,\pi}$.
+
+
+\header{255Oa}{\bf (a)} Misalkan $f$ dan $g$ fungsi terukur
+bernilai kompleks
+yang didefinisikan hampir di mana-mana dalam $\ocint{-\pi,\pi}$.   Tuliskan $f*g$
+untuk fungsi yang didefinisikan oleh rumus
+
+\Centerline{$(f*g)(x)=\int_{-\pi}^{\pi}f(x-_{2\pi}y)g(y)dy$}
+
+\noindent kapan pun $x\in\ocint{-\pi,\pi}$ dan integral tersebut ada sebagai suatu
+bilangan kompleks.   Maka $f*g$ adalah {\bf
+konvolusi} dari fungsi-fungsi $f$ dan $g$.
+
+\header{255Ob}{\bf (b)} Jika $f$ dan $g$ fungsi terukur bernilai kompleks
+yang didefinisikan hampir di mana-mana dalam $\ocint{-\pi,\pi}$, maka
+$f*g=g*f$.
+
+\vspheader{60pt}255Oc Misalkan $f$, $g$ dan $h$ fungsi terukur bernilai kompleks
+yang didefinisikan hampir di mana-mana dalam $\ocint{-\pi,\pi}$.   Maka
+
+\quad{(i)}
+
+\Centerline{$\int_{-\pi}^{\pi}h(x)(f*g)(x)dx
+=\int_{\ocint{-\pi,\pi}^2}h(x+_{2\pi}y)f(x)g(y)d(x,y)$}
+
+\noindent kapan pun ruas kanan ada dan berhingga, asalkan
+dalam ungkapan $h(x)(f*g)(x)$ kita menafsirkan hasil kalinya sebagai $0$ jika
+$h(x)=0$ dan $(f*g)(x)$ tidak terdefinisi.
+
+\quad{(ii)} Jika, dengan penafsiran yang sama terhadap $|h(x)|(|f|*|g|)(x)$,
+integral $\int_{-\pi}^{\pi}|h(x)|(|f|*|g|)(x)dx$
+berhingga, maka $\int_{\ocint{-\pi,\pi}^2}h(x+_{2\pi}y)f(x)g(y)d(x,y)$ ada dalam
+$\Bbb C$, sehingga sekali lagi kita mempunyai
+
+\Centerline{$\int_{-\pi}^{\pi}h(x)(f*g)(x)dx
+=\int_{\ocint{-\pi,\pi}^2}h(x+_{2\pi}y)f(x)g(y)d(x,y)$.}
+
+\spheader 255Od Jika $f$, $g$ fungsi bernilai kompleks
+yang terintegralkan pada $\ocint{-\pi,\pi}$, maka $f*g$
+terintegralkan, dengan
+
+\Centerline{$\int_{-\pi}^{\pi}f*g
+=\int_{-\pi}^{\pi}f\int_{-\pi}^{\pi}g$,
+\quad$\int_{-\pi}^{\pi}|f*g|
+\le\int_{-\pi}^{\pi}|f|\int_{-\pi}^{\pi}|g|$.}
+
+\spheader 255Oe Misalkan $f$, $g$, $h$ fungsi terukur bernilai kompleks
+yang didefinisikan hampir di mana-mana dalam $\ocint{-\pi,\pi}$, sedemikian sehingga $f*g$
+dan $g*h$ juga terdefinisi hampir di mana-mana.   Misalkan
+$x\in\ocint{-\pi,\pi}$ sedemikian sehingga salah satu dari $(|f|*(|g|*|h|))(x)$,
+$((|f|*|g|)*|h|)(x)$ terdefinisi dalam $\Bbb R$.   Maka $f*(g*h)$ dan
+$(f*g)*h$ terdefinisi dan sama di $x$.
+
+\spheader 255Of Misalkan $f\in\eusm L^p_{\Bbb C}(\mu)$,
+$g\in\eusm L^{q}_{\Bbb C}(\mu)$ dengan $p$, $q\in[1,\infty]$ dan
+$\bover1p+\bover1{q}=1$.   Maka $f*g$ terdefinisi
+di mana-mana dalam $\ocint{-\pi,\pi}$, dan
+$\sup_{x\in\ocint{-\pi,\pi}}|(f*g)(x)|\le\|f\|_p\|g\|_q$, dengan menafsirkan
+$\|\,\,\|_{\infty}$ sebagai $\esssup |\,\,|$\cmmnt{, seperti dalam 255K}.
+
+\exercises{
+\leader{255X}{Latihan dasar $\pmb{>}$(a)}
+%\sqheader 255Xa
+Misalkan $f$, $g$ adalah fungsi bernilai kompleks yang terdefinisi hampir
+di mana-mana dalam $\Bbb R$.   Tunjukkan bahwa untuk setiap
+$x\in\Bbb R$, $(f*g)(x)=\int f(x+y)g(-y)dy$ jika salah satunya terdefinisi.
+%255E
+
+\sqheader 255Xb Misalkan $f$ dan $g$ adalah fungsi bernilai kompleks yang terdefinisi
+hampir di mana-mana dalam $\Bbb R$.   (i) Tunjukkan bahwa jika $f$ dan $g$ adalah
+fungsi genap, maka $f*g$ juga genap.   (ii) Tunjukkan bahwa jika $f$ genap dan $g$ ganjil
+maka $f*g$ ganjil.   (iii) Tunjukkan bahwa jika $f$ dan $g$ ganjil maka $f*g$
+genap.
+%255E
+
+\spheader 255Xc Misalkan $f$, $g$ adalah fungsi terukur bernilai real
+yang terdefinisi hampir di mana-mana dalam $\BbbR^r$ dan sedemikian sehingga $f>0$
+hampir di mana-mana, $g\ge 0$ hampir di mana-mana\ dan $\{x:g(x)>0\}$ tidak terabaikan.   Tunjukkan bahwa
+$f*g>0$ di setiap titik dalam $\dom(f*g)$.
+%255F
+
+\sqheader 255Xd Misalkan $f:\Bbb R\to\Bbb C$ adalah fungsi terbatas yang
+dapat didiferensialkan dan bahwa $f'$ terbatas.   Tunjukkan bahwa untuk setiap fungsi
+bernilai kompleks yang terintegralkan
+$g$ pada $\Bbb R$, $f*g$ dapat didiferensialkan dan
+$(f*g)'=f'*g$ di setiap titik.   \Hint{123D.}
+%255F
+
+\spheader 255Xe Fungsi bernilai kompleks $g$ yang terdefinisi hampir di mana-mana
+dalam $\Bbb R$ disebut {\bf terintegralkan secara lokal} jika $\int_a^bg$ terdefinisi dalam
+$\Bbb C$ kapan pun $a<b$ dalam $\Bbb R$.   Misalkan $g$ adalah fungsi semacam itu
+dan bahwa $f:\Bbb R\to\Bbb C$ adalah fungsi yang dapat didiferensialkan, dengan
+turunan kontinu, sedemikian sehingga $\{x:f(x)\ne 0\}$ terbatas.   Tunjukkan
+bahwa $(f*g)'=f'*g$ di setiap titik.
+%255F 255Xd
+
+\sqheader 255Xf Tetapkan $\phi_{\delta}(x)=\exp(-\bover1{\delta^2-x^2})$ jika
+$|x|<\delta$, $0$ jika $|x|\ge\delta$, seperti dalam 242Xi.   Tetapkan
+$\alpha_{\delta}=\int\phi_{\delta}$,
+$\psi_{\delta}=\alpha_{\delta}^{-1}\phi_{\delta}$.   Misalkan $f$ adalah fungsi
+bernilai kompleks yang terintegralkan secara lokal
+pada $\Bbb R$.   (i) Tunjukkan bahwa $f*\psi_{\delta}$
+adalah fungsi mulus yang terdefinisi di setiap titik dalam $\Bbb R$ untuk setiap
+$\delta>0$.   (ii) Tunjukkan bahwa
+$\lim_{\delta\downarrow 0}(f*\psi_{\delta})(x)=f(x)$ untuk hampir setiap
+$x\in\Bbb R$.   \Hint{223Yg.}   (iii) Tunjukkan bahwa jika $f$ terintegralkan
+maka $\lim_{\delta\downarrow 0}\int|f-f*\psi_{\delta}|=0$.   \Hint{gunakan
+(ii) dan 245H(a-ii) {\it atau} perhatikan dahulu kasus $f=\chi[a,b]$ dan
+gunakan 242O, dengan mencatat bahwa $\int|f*\psi_{\delta}|\le\int|f|$.}   (iv) Tunjukkan
+bahwa jika $f$ kontinu seragam dan terdefinisi di setiap titik dalam $\Bbb R$
+maka
+$\lim_{\delta\downarrow 0}\sup_{x\in\Bbb R}|f(x)-(f*\psi_{\delta})(x)|=0$.
+%255F 255Xe
+
+\sqheader 255Xg Untuk $\alpha>0$, tetapkan
+$g_{\alpha}(t)=\Bover1{\Gamma(\alpha)}t^{\alpha-1}$ untuk $t>0$, $0$ untuk
+$t\le 0$.   Tunjukkan bahwa $g_{\alpha}*g_{\beta}=g_{\alpha+\beta}$ untuk semua
+$\alpha$, $\beta>0$.   \Hint{252Yf.}
+%255F
+
+\sqheader 255Xh Misalkan $\mu$ adalah ukuran Lebesgue pada $\Bbb R$.
+Untuk $u$, $v$,
+$w\in L^0_{\Bbb C}=L^0_{\Bbb C}(\mu)$, katakan bahwa
+$u*v=w$ jika $f*g$ terdefinisi hampir di mana-mana dan $(f*g)^{\ssbullet}=w$
+kapan pun $f$, $g\in\eusm L^0_{\Bbb C}(\mu)$, $f^{\ssbullet}=u$ dan
+$g^{\ssbullet}=v$.   (i) Tunjukkan bahwa $(u_1+u_2)*v=u_1*v+u_2*v$ kapan pun
+$u_1$, $u_2$, $v\in L^0_{\Bbb C}$ dan $u_1*v$ serta $u_2*v$ terdefinisi dalam
+pengertian ini.   (ii) Tunjukkan bahwa $u*v=v*u$ kapan pun $u$, $v\in L^0_{\Bbb C}$ dan
+salah satu dari $u*v$ atau $v*u$ terdefinisi.   (iii) Tunjukkan bahwa jika $u$, $v$,
+$w\in L^0_{\Bbb C}$, $u*v$ dan $v*w$ terdefinisi,
+dan salah satu dari $|u|*(|v|*|w|)$ atau $(|u|*|v|)*|w|$
+terdefinisi, maka $u*(v*w)=(u*v)*w$ terdefinisi dan sama.
+%255I
+
+\sqheader 255Xi Misalkan $\mu$ adalah ukuran Lebesgue pada $\Bbb R$.
+(i) Tunjukkan bahwa $u*v$, sebagaimana didefinisikan dalam 255Xh, termasuk dalam $L^1_{\Bbb C}(\mu)$
+kapan pun $u$, $v\in L^1_{\Bbb C}(\mu)$.
+(ii) Tunjukkan bahwa $L^1_{\Bbb C}$ adalah
+aljabar Banach komutatif terhadap $*$ (definisi: 2A4J).
+%255Xh 255I
+
+\spheader 255Xj(i) Tunjukkan bahwa jika $h$ adalah fungsi terintegralkan
+pada $\BbbR^2$, maka   $(Th)(x)=\int h(x-y,y)dy$ ada untuk
+hampir setiap $x\in\Bbb R$, dan bahwa $\int (Th)(x)dx=\int h(x,y)d(x,y)$.
+(ii) Tuliskan $\mu_2$ untuk ukuran Lebesgue pada $\BbbR^2$, $\mu$ untuk
+ukuran Lebesgue pada $\Bbb R$.   Tunjukkan bahwa ada operator linear
+$\tilde T:L^1(\mu_2)\to L^1(\mu)$ yang didefinisikan dengan menetapkan
+$\tilde T(h^{\ssbullet})=(Th)^{\ssbullet}$ untuk setiap fungsi terintegralkan
+$h$ pada $\BbbR^2$.   (iii) Tunjukkan bahwa dalam bahasa 253E dan 255Xh,
+$\tilde T(u\otimes v)=u*v$ untuk semua $u$, $v\in L^1(\mu)$.
+%255Xh 255I 255Xi
+
+\sqheader 255Xk  Untuk $\pmb{a}$, $\pmb{b}\in\Bbb C^{\Bbb Z}$ tetapkan
+$(\pmb{a}*\pmb{b})(n)=\sum_{i\in\Bbb Z}\pmb{a}(n-i)\pmb{b}(i)$ kapan pun
+$\sum_{i\in\Bbb Z}|\pmb{a}(n-i)\pmb{b}(i)|<\infty$.   Tunjukkan bahwa
+
+\quad (i) $\pmb{a}*\pmb{b}=\pmb{b}*\pmb{a}$;
+
+\quad (ii) $\sum_{i\in\Bbb Z}\pmb{c}(i)(\pmb{a}*\pmb{b})(i)
+=\sum_{i,j\in\Bbb Z}\pmb{c}(i+j)\pmb{a}(i)\pmb{b}(j)$ jika
+$\sum_{i,j\in\Bbb Z}|\pmb{c}(i+j)\pmb{a}(i)\pmb{b}(j)|<\infty$;
+
+\quad (iii) jika $\pmb{a}$, $\pmb{b}\in\ell^1(\Bbb Z)$ maka
+$\pmb{a}*\pmb{b}\in\ell^1(\Bbb Z)$ dan
+$\|\pmb{a}*\pmb{b}\|_1\le\|\pmb{a}\|_1\|\pmb{b}\|_1$;
+
+\quad (iv) Jika $\pmb{a}$, $\pmb{b}\in\ell^2(\Bbb Z)$ maka
+$\pmb{a}*\pmb{b}\in\ell^{\infty}(\Bbb Z)$ dan
+$\|\pmb{a}*\pmb{b}\|_{\infty}\le\|\pmb{a}\|_2\|\pmb{b}\|_2$;
+
+\quad (v) jika $\pmb{a}$, $\pmb{b}$, $\pmb{c}\in\Bbb C^{\Bbb Z}$ dan
+$(|\pmb{a}|*(|\pmb{b}|*|\pmb{c}|))(n)$ terdefinisi dengan baik, maka
+$(\pmb{a}*(\pmb{b}*\pmb{c}))(n)=((\pmb{a}*\pmb{b})*\pmb{c})(n)$.
+%255K
+
+\leader{255Y}{Latihan lanjutan (a)}
+%\spheader 255Ya
+Misalkan $f$ adalah fungsi bernilai kompleks yang terintegralkan
+pada $\Bbb R$.   (i) Misalkan $x$ adalah sebarang titik dalam himpunan Lebesgue dari $f$.
+Tunjukkan bahwa untuk setiap $\epsilon>0$ terdapat $\delta>0$ sedemikian sehingga
+$|f(x)-(f*g)(x)|\le\epsilon$ kapan pun $g:\Bbb R\to\coint{0,\infty}$ adalah
+fungsi yang tak menurun pada $\ocint{-\infty,0}$, tak menaik
+pada $\coint{0,\infty}$, dan memenuhi $\int g=1$ serta
+$\int_{-\delta}^{\delta}g\ge 1-\delta$.   (ii) Tunjukkan bahwa untuk setiap
+$\epsilon>0$ terdapat $\delta>0$ sedemikian sehingga $\|f-f*g\|_1\le\epsilon$
+kapan pun $g:\Bbb R\to\coint{0,\infty}$ adalah fungsi yang
+tak menurun pada $\ocint{-\infty,0}$, tak menaik pada
+$\coint{0,\infty}$, dan memenuhi $\int g=1$ serta
+$\int_{-\delta}^{\delta}g\ge 1-\delta$.
+%255Xf 255F
+
+\spheader 255Yb Misalkan $f$ adalah fungsi bernilai kompleks yang terintegralkan
+pada $\Bbb R$.   Tunjukkan bahwa, untuk hampir setiap $x\in\Bbb R$,
+
+\Centerline{$\lim_{a\to\infty}
+  \Bover{a}{\pi}\int_{-\infty}^{\infty}
+  \Bover{f(y)}{1+a^2(x-y)^2}dy$,
+\quad$\lim_{a\to\infty}a\int_x^{\infty}f(y)e^{-a(y-x)}dy$,}
+
+\Centerline{$\lim_{\sigma\downarrow 0}\Bover1{\sigma\sqrt{2\pi}}
+  \int_{-\infty}^{\infty}f(y)e^{-(y-x)^2/2\sigma^2}dy$}
+
+\noindent semuanya ada dan sama dengan $f(x)$.   \Hint{263G.}
+%255Ya, 255Xf 255F
+
+\spheader 255Yc
+Tetapkan $f(x)=1$ untuk semua $x\in\Bbb R$, $g(x)=\Bover{x}{|x|}$
+untuk $0<|x|\le 1$ dan $0$ selainnya, $h(x)=\tanh x$ untuk semua $x\in\Bbb R$.
+Tunjukkan bahwa $f*(g*h)$ dan $(f*g)*h$ keduanya terdefinisi (dan konstan)
+di setiap titik, dan keduanya berbeda.
+%255J
+
+\spheader 255Yd Bahas apa yang dapat terjadi jika, dalam konteks 255J, kita
+mengetahui bahwa $(|f|*(|g|*|h|))(x)$ terdefinisi, tetapi tidak memiliki informasi tentang
+domain $f*g$.
+%255J
+
+\spheader 255Ye Misalkan $p\in\coint{1,\infty}$
+dan bahwa $f\in\eusm L^p_{\Bbb C}(\mu)$, dengan $\mu$ ukuran Lebesgue
+pada $\BbbR^r$.   Untuk $a\in\BbbR^r$ tetapkan $(S_af)(x)=f(a+x)$ kapan pun
+$a+x\in\dom f$.   Tunjukkan bahwa $S_af\in\eusm L^p_{\Bbb C}(\mu)$, dan bahwa
+untuk setiap $\epsilon>0$ terdapat $\delta>0$ sedemikian sehingga
+$\|S_af-f\|_p\le\epsilon$ kapan pun $|a|\le\delta$.
+%255K
+
+\spheader 255Yf Misalkan $p$, $q\in\ooint{1,\infty}$ dan
+$\bover1p+\bover1q=1$.   Ambil $f\in\eusm L^p_{\Bbb C}(\mu)$ dan
+$g\in\eusm L^q_{\Bbb C}(\mu)$, dengan $\mu$ ukuran Lebesgue pada
+$\BbbR^r$.   Tunjukkan bahwa $\lim_{\|x\|\to\infty}(f*g)(x)=0$.
+\Hint{gunakan 244Hb.}
+%255K
+
+\spheader 255Yg Ulangi 255Ye dan 255K, kali ini dengan mengambil $\mu$
+sebagai ukuran Lebesgue pada $\ocint{-\pi,\pi}$, dan menetapkan
+$(S_af)(x)=f(a+_{2\pi}x)$ untuk $a\in\ocint{-\pi,\pi}$;  tunjukkan bahwa dalam
+versi baru 255K,
+$(f*g)(\pi)=\lim_{x\downarrow -\pi}(f*g)(x)$.
+%255K, 255Ye
+
+\spheader 255Yh Misalkan $\mu$ adalah ukuran Lebesgue pada $\Bbb R$.   Untuk
+$a\in\Bbb R$, $f\in\eusm L^0=\eusm L^0(\mu)$ tetapkan $(S_af)(x)=f(a+x)$
+kapan pun $a+x\in\dom f$.
+
+\quad (i) Tunjukkan bahwa $S_af\in\eusm L^0$ untuk setiap $f\in\eusm L^0$.
+
+\quad  (ii) Tunjukkan bahwa kita mempunyai pemetaan $\tilde S_a:L^0\to L^0$ yang didefinisikan
+dengan menetapkan $\tilde S_a(f^{\ssbullet})=(S_af)^{\ssbullet}$ untuk setiap
+$f\in\eusm L^0$.
+
+\quad  (iii) Tunjukkan bahwa $\tilde S_a$ adalah isomorfisme ruang Riesz dan
+homeomorfisme untuk topologi konvergensi dalam ukuran;  selain itu,
+bahwa $\tilde S_a(u\times v)=\tilde S_au\times\tilde S_av$ untuk semua $u$,
+$v\in L^0$.
+
+\quad  (iv) Tunjukkan bahwa $\tilde S_{a+b}=\tilde S_a\tilde S_b$ untuk semua $a$,
+$b\in\Bbb R$.
+
+\quad  (v) Tunjukkan bahwa $\lim_{a\to 0}\tilde S_au=u$ untuk topologi
+konvergensi dalam ukuran, bagi setiap $u\in L^0$.
+
+\quad  (vi) Tunjukkan bahwa jika $1\le p\le\infty$ maka $\tilde S_a\restr L^p$
+adalah isomorfisme isometrik dari kisi Banach $L^p$.
+
+\quad  (vii) Tunjukkan bahwa jika $p\in\coint{1,\infty}$ maka
+$\lim_{a\to 0}\|\tilde S_au-u\|_p=0$ untuk setiap $u\in L^p$.
+
+\quad  (viii) Tunjukkan bahwa jika $A\subseteq L^1$ terintegralkan secara seragam dan
+$M\ge 0$, maka $\{\tilde S_au:u\in A,\,|a|\le M\}$ terintegralkan secara
+seragam.
+
+\quad (ix) Misalkan $u$, $v\in L^0$ sedemikian sehingga $u*v$ terdefinisi
+dalam $L^0$ dalam pengertian 255Xh.   Tunjukkan bahwa
+$\tilde S_a(u*v)=(\tilde S_au)*v=u*(\tilde S_av)$ untuk
+setiap $a\in\Bbb R$.
+%255Ye, 255K
+
+\spheader 255Yi Buktikan 255Nd dari 255Na dengan metode yang digunakan untuk
+membuktikan 255Ad dari 255Aa, alih-alih mengutip 255Ad.
+%255N
+
+\spheader 255Yj Misalkan $\mu$ adalah ukuran Lebesgue pada $\Bbb R$, dan
+$\phi:\Bbb R\to\Bbb R$ fungsi konveks;  misalkan
+$\bar\phi:L^0\to L^0=L^0(\mu)$ adalah operator terkait (lihat 241I).
+Tunjukkan bahwa jika $u\in L^1=L^1(\mu)$, $v\in L^0$ sedemikian sehingga $u\ge 0$,
+$\int u=1$ dan $u*v$, $u*\bar\phi(v)$ keduanya terdefinisi dalam pengertian
+255Xh, maka $\bar\phi(u*v)\le u*\bar\phi(v)$.
+\Hint{233I.}
+%255Xh 255I
+
+\spheader 255Yk Misalkan $\mu$ adalah ukuran Lebesgue pada $\Bbb R$, dan
+$p\in[1,\infty]$.   Misalkan $f\in\eusm L^1_{\Bbb C}(\mu)$,
+$g\in\eusm L^p_{\Bbb C}(\mu)$.   Tunjukkan bahwa
+$f*g\in\eusm L^p_{\Bbb C}(\mu)$ dan bahwa
+$\|f*g\|_p\le\|f\|_1\|g\|_p$.   \Hint{turunkan dari 255Yj, seperti dalam 244M.}
+%255Yj 255K 255I
+
+\spheader 255Yl Misalkan $p$, $q$, $r\in\ooint{1,\infty}$ dan bahwa
+$\bover1p+\bover1q=1+\bover1r$.   Misalkan $\mu$ adalah ukuran Lebesgue pada
+$\Bbb R$.   (i) Tunjukkan bahwa
+
+\Centerline{$\int f\times g
+\le\|f\|_p^{1-p/r}\|g\|_q^{1-q/r}(\int f^p\times g^q)^{1/r}$}
+
+\noindent kapan pun $f$, $g\ge 0$ dan $f\in\eusm L^p(\mu)$,
+$g\in\eusm L^q(\mu)$.   \Hint{tetapkan $p'=p/(p-1)$, dan seterusnya;  $f_1=f^{p/q'}$,
+$g_1=g^{q/p'}$, $h=(f^p\times g^q)^{1/r}$.   Gunakan 244Xc untuk melihat bahwa
+$\|f_1\times g_1\|_{r'}\le\|f_1\|_{q'}\|g_1\|_{p'}$, sehingga
+$\int f_1\times g_1\times h\le\|f_1\|_{q'}\|g_1\|_{p'}\|h\|_r$.}   (ii)
+Tunjukkan bahwa $f*g$ terdefinisi hampir di mana-mana\ dan bahwa
+$\|f*g\|_r\le\|f\|_p\|g\|_q$ untuk semua $f\in\eusm L^p(\mu)$,
+$g\in\eusm L^q(\mu)$.   \Hint{ambil $f$, $g\ge 0$.   Gunakan (i) untuk melihat bahwa
+$(f*g)(x)^r\le\|f\|_p^{r-p}\|g\|_q^{r-q}\int f(y)^pg(x-y)^qdy$, sehingga
+$\|f*g\|_r^r\le\|f\|_p^{r-p}\|g\|_q^{r-q}\int f(y)^p\|g\|_q^qdy$.}
+(Ini adalah {\bf ketaksamaan Young}.)
+%244Xc 255K
+
+\spheader 255Ym Ulangi hasil-hasil bagian ini untuk grup
+$(S^1)^r$, dengan $r\ge 2$, yang diberi ukuran produknya.
+%+
+
+\spheader 255Yn Misalkan $G$ adalah grup dan $\mu$ suatu ukuran
+$\sigma$-hingga pada $G$ sedemikian sehingga ($\alpha$) untuk setiap $a\in G$,
+pemetaan $x\mapsto ax$ adalah automorfisme dari $(G,\mu)$ ($\beta$) pemetaan
+$(x,y)\mapsto (x,xy)$ adalah automorfisme dari $(G^2,\mu_2)$, dengan $\mu_2$
+ukuran produk c.l.d.\ pada $G\times G$.   Untuk $f$,
+$g\in\eusm L^0_{\Bbb C}(\mu)$ tuliskan $(f*g)(x)=\int f(y)g(y^{-1}x)dy$
+kapan pun ini terdefinisi.   Tunjukkan bahwa
+%+
+
+\quad (i) jika $f$, $g$, $h\in\eusm L^0_{\Bbb C}(\mu)$ dan $\int
+h(xy)f(x)g(y)d(x,y)$ terdefinisi dalam $\Bbb C$, maka $\int h(x)(f*g)(x)dx$
+ada dan sama dengan $\int h(xy)f(x)g(y)d(x,y)$, asalkan
+dalam ungkapan $h(x)(f*g)(x)$ kita menafsirkan hasil kali sebagai $0$ jika
+$h(x)=0$ dan $(f*g)(x)$ tidak terdefinisi;
+
+\quad (ii) jika $f$, $g\in\eusm L^1_{\Bbb C}(\mu)$ maka $f*g\in\eusm
+L^1_{\Bbb C}(\mu)$ dan $\int f*g=\int f\int g$,
+$\|f*g\|_1\le\|f\|_1\|g\|_1$;
+
+\quad (iii) jika $f$, $g$, $h\in\eusm L^1_{\Bbb C}(\mu)$ maka
+$f*(g*h)=(f*g)*h$.
+
+\noindent (Lihat {\smc Halmos 50}, \S59.)
+
+\spheader 255Yo Ulangi 255Yn untuk ukuran cacah pada sebarang grup $G$.
+%+ 255Yn
+}%end of exercises
+
+\endnotes{
+\Notesheader{255} Saya telah mencoba menyusun bagian ini sedemikian rupa
+agar jelas bahwa dasar seluruh pembahasan di sini adalah 255A, dan
+penerapan yang krusial adalah 255G.   Saya berharap bahwa jika dan ketika Anda mulai
+mempelajari grup topologis umum (misalnya, dalam Bab 44), Anda
+akan merasa mudah menelusuri
+gagasan-gagasan tersebut dalam sebarang grup topologis abelian yang memungkinkan
+Anda membuktikan suatu versi 255A.   Untuk grup nonabelian,
+tentu saja, diperlukan kehati-hatian yang lebih besar, terutama karena dalam beberapa contoh penting
+kita tidak lagi mempunyai $\mu\{x^{-1}:x\in E\}=\mu E$ untuk setiap $E$;
+lihat 255Yn-255Yo untuk sedikit gambaran tentang apa yang dapat dilakukan tanpa menggunakan
+gagasan topologis.
+
+Pokok kritis dalam 255A adalah peralihan dari hasil berdimensi satu
+dalam 255Aa-255Ac, yang tidak lain adalah invariansi terhadap translasi dan
+refleksi dari
+ukuran Lebesgue, ke hasil berdimensi dua dalam 255Ad-255Ae.   Dan
+pusat argumen yang sesungguhnya, sebagaimana saya menyajikannya, adalah fakta bahwa
+transformasi geser $\phi$ merupakan automorfisme dari struktur
+$(\BbbR^2,\Sigma_2)$.   Perhitungan sebenarnya atas $\mu_2\phi[E]$,
+dengan mengasumsikan bahwa himpunan itu terukur, adalah penerapan mudah dari teorema Fubini dan
+Tonelli serta invariansi $\mu$ terhadap translasi.   Untuk
+langkah inilah
+kita mutlak memerlukan sifat-sifat topologis ukuran Lebesgue.
+Barangkali saya perlu mengingatkan Anda bahwa fakta bahwa $\phi$ merupakan homeomorfisme
+tidaklah cukup;  dalam 134I saya mendeskripsikan suatu homeomorfisme selang satuan
+yang tidak melestarikan keterukuran, dan hal ini mudah diadaptasi
+untuk menghasilkan homeomorfisme $\psi:\BbbR^2\to\BbbR^2$ sedemikian sehingga
+$\psi[E]$ tidak selalu terukur untuk $E$ yang terukur.   Argumen
+255A bergantung pada hubungan khusus di antara ketiga unsur berikut:
+ukuran, topologi, dan struktur grup dari $\Bbb R$.
+
+Saya telah mengemukakan beberapa komentar mengenai apa yang semestinya, atau tidak semestinya,
+dianggap `jelas' (255C).   Namun barangkali dapat saya tambahkan bahwa hasil seperti
+255B dan pernyataan kemudian, dalam pembuktian 255K, bahwa versi tercermin
+dari suatu fungsi dalam $\eusm L^p$ juga termasuk dalam $\eusm L^p$, hanya dapat menjadi konsekuensi
+sepele dari hasil seperti 255A jika setiap langkah dalam konstruksi
+integral dilakukan dalam konteks abstrak ruang ukur umum.
+Meskipun di sini kita bekerja secara eksklusif dengan integral Lebesgue,
+argumen akan menjadi tidak dapat dipercaya jika pada tahap mana pun dalam
+definisi integral kita bahkan menyebutkan bahwa yang sedang kita pikirkan adalah
+ukuran Lebesgue.   Saya mengajukan hal ini sebagai alasan kuat untuk mendefinisikan
+`integrasi' pada ruang ukur abstrak sejak awal, sebagaimana saya lakukan dalam
+Jilid 1.   Bahkan, saya menyarankan bahwa secara umum dalam matematika murni ada
+alasan baik untuk menuangkan argumen ke dalam bentuk-bentuk yang sesuai dengan
+argumen itu sendiri.
+
+Saya menulis buku ini bagi pembaca yang berminat pada pembuktian, dan seperti
+di bagian lain saya telah menuliskan pembuktian-pembuktian bagian ini secara terperinci.   Namun
+kebanyakan dari kita merasa berguna untuk menelaah sejumlah
+materi dalam modus `kalkulus lanjut', yang saya maksudkan sebagai memulai dengan
+rumus seperti
+
+\Centerline{$(f*g)(x)=\int f(x-y)g(y)dy$,}
+
+\noindent lalu menurunkan konsekuensi melalui manipulasi formal,
+misalnya
+
+\Centerline{$\int h(x)(f*g)(x)dx=\iint h(x)f(x-y)g(y)dydx
+=\iint h(x+y)f(x)g(y)dydx$,}
+
+\noindent tanpa terlebih dahulu mempersoalkan keberlakuan tepat dari
+rumus-rumus tersebut.   Dalam beberapa hal, pendekatan berbasis rumus ini dapat
+lebih setia pada struktur pokok bahasan daripada analisis cermat yang
+biasa saya sajikan.   Hipotesis persis yang diperlukan agar teorema-teorema
+benar secara ketat tentunya bersifat sekunder, dalam konteks seperti
+bagian ini, terhadap pola yang dibentuk oleh keseluruhan teorema,
+yang dapat diungkapkan secara memadai dan elegan dalam rumus-rumus
+lugas.   Tentu saja saya tetap berkeras bahwa kita tidak dapat benar-benar
+menghargai strukturnya, ataupun menggunakannya dengan aman, tanpa menguasai gagasan
+dalam pembuktian -- dan sebagaimana telah saya katakan di tempat lain, saya percaya bahwa penguasaan
+gagasan selalu mencakup penguasaan perincian formal, sekurang-kurangnya dalam arti
+mampu merekonstruksinya dengan cukup lancar
+saat diminta.
+
+Sepanjang uraian utama bagian ini, saya telah bekerja dengan
+fungsi alih-alih kelas ekuivalensi fungsi.    Namun semua
+hasil di sini mempunyai penafsiran yang sangat penting bagi teori
+`ruang fungsi' dalam Bab 24.   Dalam 255Xh dan latihan-latihan
+sesudahnya, saya telah menunjukkan definisi konvolusi sebagai operator
+dari suatu subhimpunan $L^0\times L^0$ ke $L^0$.
+Satu hal yang menarik
+adalah bahwa jika $u$, $v\in L^0$ maka $u*v$ dapat ditafsirkan sebagai
+suatu {\it fungsi}, bukan sebagai anggota $L^0$ (255Fc).
+Dengan demikian 255H dapat dipandang sebagai menyatakan bahwa $u*v\in\eusm L^1$
+untuk $u$, $v\in L^1$.   Kita tidak dapat persis mengatakan bahwa konvolusi adalah
+operator bilinear dari $L^1\times L^1$ ke $\eusm L^1$, karena $\eusm L^1$,
+sebagaimana saya definisikan,
+secara ketat bukanlah ruang linear.   Jika kita menginginkan operator bilinear,
+maka kita harus memandang konvolusi sebagai fungsi dari
+$L^1\times L^1$ ke $L^1$.   Namun ketika kita memandang konvolusi sebagai
+fungsi pada $L^2\times L^2$, misalnya, maka fungsi-fungsi $u*v$ kita
+terdefinisi di setiap titik (255K), dan bahkan merupakan fungsi kontinu yang lenyap
+di $\infty$ (255Ye-255Yf).   Jadi dalam kasus ini tampaknya lebih tepat
+memandang konvolusi sebagai operator bilinear dari $L^2\times L^2$ ke
+suatu ruang fungsi kontinu, dan bukan sebagai operator dari
+$L^2\times L^2$ ke $L^{\infty}$.   Untuk contoh konvolusi menarik
+yang tidak secara alami dapat direpresentasikan dalam bentuk operator
+pada ruang $L^p$, lihat 255Xg.
+
+Karena konvolusi bertindak sebagai operator bilinear kontinu dari
+$L^1(\mu)\times L^1(\mu)$ ke $L^1(\mu)$, dengan $\mu$ ukuran Lebesgue
+pada $\Bbb R$, Teorema 253F memberi tahu kita bahwa konvolusi harus berkorespondensi dengan operator linear
+dari $L^1(\mu_2)$ ke $L^1(\mu)$, dengan $\mu_2$ ukuran Lebesgue
+pada $\BbbR^2$.  Inilah operator $\tilde T$ dari 255Xj.
+
+Sejauh ini dalam catatan ini saya telah menulis seolah-olah kita hanya membahas
+ukuran Lebesgue pada $\Bbb R$.   Namun banyak penerapan gagasan-gagasan tersebut
+melibatkan $\BbbR^r$ atau $\ocint{-\pi,\pi}$ atau $S^1$.   Peralihan ke
+$\BbbR^r$ semestinya elementer.   Peralihan ke $S^1$ memang memerlukan
+perumusan ulang hasil dasar 255A/255N.   Juga semestinya jelas
+bahwa tidak akan ada kesulitan baru dalam beralih ke $\ocint{-\pi,\pi}^r$
+atau $(S^1)^r$.   Selain itu, kita juga dapat menjalani seluruh teori untuk
+grup $\Bbb Z$ dan $\Bbb Z^r$, dengan ukuran yang sesuai kini adalah
+ukuran cacah, sehingga $L^0_{\Bbb C}$ menjadi teridentifikasi dengan
+$\Bbb C^{\Bbb Z}$ atau $\Bbb C^{\Bbb Z^r}$ (255Xk, 255Yo).
+
+
+}%end of notes
+
+\discrpage

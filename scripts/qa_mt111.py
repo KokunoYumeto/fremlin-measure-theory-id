@@ -238,6 +238,7 @@ def stable_ids(text: str) -> list[str]:
         r"\\vleader\{[^{}]*\}\{([^{}]+)\}",
         r"\\Notesheader\{([^{}]+)\}",
         r"\\(?:sqheader|spheader)\s+([0-9][0-9A-Za-z]+)",
+        r"\\vspheader\{[^{}]*\}\s*([0-9][0-9A-Za-z]+)",
     ]
     found: list[tuple[int, str]] = []
     for pattern in patterns:

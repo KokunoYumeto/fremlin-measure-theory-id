@@ -8,9 +8,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from render_mt111_html import (  # noqa: E402
     Renderer,
+    discover_ids,
     normalize_formula,
     visible_tex_controls,
 )
+from qa_mt111 import stable_ids  # noqa: E402
+from qa_fremlin_unit import parse_allowed_reference_deltas  # noqa: E402
 
 
 class RenderFremlinUnitHtmlTests(unittest.TestCase):
@@ -68,6 +71,48 @@ class RenderFremlinUnitHtmlTests(unittest.TestCase):
         )
         self.assertNotIn(r"\displaycause", normalized)
         self.assertNotIn(r"\noalign", normalized)
+
+    def test_vspheader_preserves_legacy_unbraced_source_id(self) -> None:
+        source = r"\vspheader{60pt}255Oc Isi hasil."
+        renderer = Renderer(discover_ids(source, {}), implicit_ids={}, unit_number="255")
+
+        body = renderer.render_body(renderer.transform(source))
+
+        self.assertIn('id="255Oc"', body)
+        self.assertIn('data-source-id="255Oc"', body)
+        self.assertIn('<span class="source-label">255Oc</span> (c)', body)
+        self.assertEqual(stable_ids(source), ["255Oc"])
+
+    def test_layout_only_ifdim_does_not_split_inline_math(self) -> None:
+        source = (
+            "$X=(A,\n"
+            "\\ifdim\\pagewidth>467pt\\penalty-50\\fi\n"
+            "B)$ tetap satu atom."
+        )
+        renderer = Renderer(set(), implicit_ids={}, unit_number="255")
+
+        body = renderer.render_body(renderer.transform(source))
+
+        self.assertEqual(body.count('class="math inline"'), 1)
+        self.assertIn('data-source-tex="X=(A,\nB)"', body)
+
+    def test_wheader_discards_only_legacy_print_geometry(self) -> None:
+        source = r"Sebelum. \wheader{255H}{4}{2}{2}{24pt} Sesudah."
+        renderer = Renderer(set(), implicit_ids={}, unit_number="255")
+
+        body = renderer.render_body(renderer.transform(source))
+
+        self.assertNotIn(r"\wheader", body)
+        self.assertIn("Sebelum.", body)
+        self.assertIn("Sesudah.", body)
+
+    def test_reference_delta_is_occurrence_scoped(self) -> None:
+        self.assertEqual(
+            parse_allowed_reference_deltas(["18:255B:255A"]),
+            {18: ("255B", "255A")},
+        )
+        with self.assertRaises(ValueError):
+            parse_allowed_reference_deltas(["18:255B:255A", "18:255B:255A"])
 
 
 if __name__ == "__main__":

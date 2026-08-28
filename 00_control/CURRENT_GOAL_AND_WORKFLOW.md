@@ -6,24 +6,25 @@ Status: active until all 672 official pages are publicly verified
 
 > **Superseding checkpoint (2026-08-28):** the authoritative current state is
 > 338/672 official pages admitted, published, and anonymously verified through
-> S252, plus complete S253–S254 translated and validated for a contiguous
-> 367/672 candidate. Complete S254 is also preserved on repository `main` as a
-> bounded unit checkpoint. The exact next cursor is `mt255.tex` at Volume II
-> page 266. Continue through mt255–mt257 and perform the next cumulative backend,
-> reader, package, GitHub, and Zenodo transaction at complete Chapter 25,
-> 389/672. All earlier cursor numbers retained later in this file are
-> historical evidence only and must not redirect production.
+> S252, plus complete S253–S255 translated and validated for a contiguous
+> 378/672 candidate. Complete S254 is already preserved on repository `main`;
+> S255 has passed its bounded unit, independent semantic, and desktop/mobile
+> reader gates and is ready for the same narrow preservation checkpoint. The
+> exact next translation cursor is `mt256.tex` at Volume II page 277. Continue
+> through mt256–mt257 and perform the next cumulative backend, reader, package,
+> GitHub, and Zenodo transaction at complete Chapter 25, 389/672. All earlier
+> cursor numbers retained later in this file are historical evidence only.
 
 Complete and publish one coherent Bahasa Indonesia edition of D. H. Fremlin's
 *Measure Theory*, Volume 1 (*The Irreducible Minimum*) and Volume 2 (*Broad
 Foundations*) only: 672 official pages. Do not reopen selection, reduce the
 corpus to a course slice, include Volumes 3–5, or merge comparator books.
 Volume I and contiguous Volume II pages 1–236 are admitted and public at
-338/672 official pages. Complete S253–S254, Volume II pages 237–265, are
-validated source-order candidates, making 367/672 translated. Preserve the
-public boundary and candidates; continue at complete `mt255.tex`, then
-mt256–mt257. The goal remains active through all remaining Volume II units;
-305 official pages remain untranslated.
+338/672 official pages. Complete S253–S255, Volume II pages 237–276, are
+validated source-order candidates, making 378/672 translated. Preserve the
+public boundary and candidates; continue at complete `mt256.tex`, then
+`mt257.tex`. The goal remains active through all remaining Volume II units;
+294 official pages remain untranslated.
 
 Authority is
 `authority/fremlin` within this corpus repository:
@@ -73,12 +74,12 @@ anonymously returned the exact reader-first PDF, resumable ZIP, and checksum
 witness. The cumulative PDF has 363 A4 reflow pages; that physical count does
 not replace the 338-page official coverage identity.
 
-Current action: translate complete `mt255.tex` from frozen authority (50,407
-bytes / 1,275 lines / SHA-256
-`c837735d74f688178acc82b7f004669f2fe3352e5c0293d48442777a9d5bb5b6`),
-then continue mt256–mt257. Run light unit checks as each section closes, then
-consolidate backend/readers/admission and publish at complete Chapter 25,
-389/672. Do not spend a full publication transaction on each small section.
+Current action: preserve complete validated S255 as a narrow repository-main
+checkpoint with anonymous byte readback, then translate complete `mt256.tex`
+from frozen authority and continue through `mt257.tex`. Run light unit checks
+as each section closes, then consolidate backend/readers/admission and publish
+at complete Chapter 25, 389/672. Do not spend a full release or Zenodo
+transaction on each small section.
 
 Recovery state lives in `00_control/CURRENT_GOAL_AND_WORKFLOW.md`,
 `CURRENT_CURSOR.md`, `CURRENT_STATE.md`, `DECISION_LOG.md`,

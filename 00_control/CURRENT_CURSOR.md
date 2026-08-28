@@ -1,5 +1,53 @@
 # Current Cursor
 
+## Superseding local production cursor — complete S255 (2026-08-28)
+
+The admitted and released boundary remains complete Volume I plus contiguous
+Volume II pages 1–236 through S252: **338/672 official pages**. Complete
+Sections 253–255 are validated source-order candidates on Volume II pages
+237–276, raising contiguous translated coverage to **378/672 official pages**;
+294 pages remain untranslated. This bounded unit checkpoint does not create a
+release tag or Zenodo version. The next substantial admission/publication
+boundary remains complete Chapter 25 through Volume II page 287, 389/672.
+
+Exact S255 evidence:
+
+- authority `authority/fremlin/source/mt2.2016/mt255.tex`: 50,407 bytes,
+  1,275 logical lines, SHA-256
+  `c837735d74f688178acc82b7f004669f2fe3352e5c0293d48442777a9d5bb5b6`;
+- target `source/id-ID/mt255.tex`: 54,231 bytes, 1,274 logical lines,
+  SHA-256
+  `29205179dfc0d05c55c2b4b47ad7d72f887a01a5ff55f655f68890b173de23d9`;
+- unit QA `qa/chapter25/mt255-unit-qa.json`: 9,591 bytes, SHA-256
+  `7f675e99aa1407b6dfd32e15424c13ebbef70314194339fafa4374abbd37eca6`,
+  passing 55/55 stable IDs, 166/166 protected references, 10/10 hints,
+  934/934 source/target mathematical atoms, and zero active English residue;
+- anomaly adjudication
+  `qa/chapter25/mt255-source-anomaly-adjudication.json`: 3,082 bytes,
+  SHA-256
+  `6b82ea0dac6e00d6c9f4b7e99318d2ab25e8c6c3b329d798226c0ba5a05ec694`,
+  passing with 14 confirmed groups, one correctly rejected notation-only
+  candidate, 15 correction rows `O007-CORR-0214`–`0228`, and no blocker;
+- independent review `qa/chapter25/mt255-independent-semantic-review.md`:
+  2,331 bytes, SHA-256
+  `3f0b05b4081ce6d25c229b851741a0a613c427077a21b7b4be4ef9ee81a7b44f`;
+- semantic/browser receipt `qa/chapter25/mt255-semantic-html-qa.json`: 8,002
+  bytes, SHA-256
+  `9496d50ab8966985fd48e5ebc1961a13a7e4510f30a99d327c0b2f434170158f`;
+- durable reader `qa/chapter25/mt255-semantic-reader/index.html`: 137,766
+  bytes, SHA-256
+  `f3fdd6596b4c007495f23b5fdf093f0a765fc68df741ebfd1834b811a4339856`.
+
+The semantic reader contains all 55 source units, 26 exercises, 10 hints, and
+934 executing formulas. Desktop 1280×720 and mobile 390×844 replay have zero
+document overflow, broken fragments, unresolved TeX/MathJax macros, console
+warnings/errors, or missing assets. The next executable source is complete
+`authority/fremlin/source/mt2.2016/mt256.tex`, `Radon measures on R^r`,
+official Volume II pages 277–284: 41,604 bytes / 1,003 lines / SHA-256
+`de4a178837df6915bbfb714622cb9a3a2d896fb7f00120d2348ccd0d4245d2cf`.
+Preserve S255 on repository `main` with anonymous byte readback, then translate
+complete S256 and continue through S257. No upstream contact occurred.
+
 ## Superseding local production cursor — complete S254 (2026-08-28)
 
 The admitted and released boundary remains complete Volume I plus contiguous

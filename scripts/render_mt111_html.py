@@ -259,6 +259,18 @@ class Renderer:
                 )
                 if narrow_branch is not None:
                     out.append(self.transform(narrow_branch))
+                # A layout-only conditional on its own physical line can sit
+                # inside one TeX math atom.  Removing its bytes while leaving
+                # both surrounding newlines creates a false blank paragraph
+                # and splits the math delimiter pair.  Consume only the first
+                # following newline when there is already one immediately
+                # before the conditional; genuine paragraph breaks retain
+                # their additional newline(s).
+                if narrow_branch is None and out and out[-1].endswith("\n"):
+                    if text.startswith("\r\n", end):
+                        end += 2
+                    elif end < len(text) and text[end] == "\n":
+                        end += 1
                 i = end
                 continue
 
@@ -339,6 +351,15 @@ class Renderer:
                 _arg, end = read_group(text, j)
                 i = end
                 continue
+            if command == "wheader":
+                # Legacy wide-page heading geometry.  The semantic heading is
+                # supplied separately by \leader/\header; all five arguments
+                # are print-layout dimensions and contain no reader content.
+                end = j
+                for _ in range(5):
+                    _arg, end = read_group(text, end)
+                i = end
+                continue
             if command in {"prooflet", "Hint"}:
                 arg, end = read_group(text, j)
                 body = self.render_inline(self.transform(arg))
@@ -400,7 +421,9 @@ class Renderer:
                 )
                 i = end
                 continue
-            if command in {"spheader", "sqheader"}:
+            if command in {"spheader", "sqheader", "vspheader"}:
+                if command == "vspheader":
+                    _, j = read_group(text, j)
                 while j < len(text) and text[j].isspace():
                     j += 1
                 id_match = re.match(r"[0-9A-Za-z]{5}", text[j:])
@@ -525,7 +548,10 @@ class Renderer:
                     break
                 end += 1
             if end >= len(text):
-                raise ValueError(f"unterminated math delimiter at {i}")
+                context = text[max(0, i - 80) : min(len(text), i + 160)]
+                raise ValueError(
+                    f"unterminated math delimiter at {i}; context={context!r}"
+                )
             raw = text[start:end]
             normalized = normalize_formula(raw)
             token = f"\ue004M{math_index:04d}\ue005"
@@ -700,6 +726,7 @@ def discover_ids(text: str, implicit_ids: dict[str, str] | None = None) -> set[s
     ids = set(re.findall(r"\\(?:leader|header)\{([^{}]+)\}", text))
     ids.update(re.findall(r"\\vleader\{[^{}]*\}\{([^{}]+)\}", text))
     ids.update(re.findall(r"\\(?:spheader|sqheader)\s+([0-9A-Za-z]{5})", text))
+    ids.update(re.findall(r"\\vspheader\{[^{}]*\}\s*([0-9A-Za-z]{5})", text))
     ids.update(re.findall(r"\\Notesheader\{([^{}]+)\}", text))
     ids.update(implicit_ids.values())
     ids.update(implicit_ids.keys())
@@ -951,6 +978,7 @@ def main() -> int:
         coint: ['\\\\left[#1\\\\right[', 1],
         dom: '\\\\operatorname{{dom}}',
         eae: '=_{\\\\text{{a.e.}}}',
+        esssup: '\\\\mathop{{\\\\text{{ess sup}}}}',
         eusm: ['\\\\underline{{\\\\mathcal{{#1}}}}', 1],
         family: ['\\\\langle #3\\\\rangle_{{#1\\\\in #2}}', 3],
         familyi: ['\\\\langle #2\\\\rangle_{{i\\\\in #1}}', 2],
@@ -959,6 +987,7 @@ def main() -> int:
         leae: '\\\\le_{{\\\\text{{a.e.}}}}',
         Nu: '\\\\mathrm{{N}}',
         nuprime: '\\\\nu^{{\\\\prime}}',
+        ocint: ['\\\\left]#1\\\\right]', 1],
         restr: '\\\\mathord{{\\\\upharpoonright}}',
         restrp: '\\\\mathord{{\\\\upharpoonright}}',
         roibr: '\\\\mathopen{{[}}',

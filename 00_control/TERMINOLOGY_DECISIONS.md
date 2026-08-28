@@ -190,3 +190,21 @@ source identifiers, exercise relations, formulas, and component-rights
 boundaries. The eight high-confidence authority corrections in this unit are
 separately recorded as `O007-CORR-0170`–`O007-CORR-0177`; terminology choices
 are not source corrections.
+
+### Section 255 — Convolutions of functions (2026-08-28)
+
+Complete Section 255 uses the following reader-facing forms consistently:
+
+| Concept or construction | Preferred O007 form | Decision and boundary |
+|---|---|---|
+| convolution / convolution of functions | `konvolusi`; `konvolusi fungsi` | Retain the standard Indonesian technical noun and use the second form for the section title. Preserve the source operation `f*g` and its domain clauses exactly. |
+| circle group | `grup lingkaran` | Use for (S^1) as a topological group; do not confuse it with a geometric disk or with the interval model used to represent it. |
+| translation/reflection invariance | `invariansi terhadap translasi`; `invariansi terhadap refleksi` | Keep the transformation named explicitly and distinguish measure invariance from pointwise invariance of a function. |
+| Lebesgue set | `himpunan Lebesgue` | Use for the set of Lebesgue points of an integrable function in the approximation exercises. |
+| non-decreasing / non-increasing | `tak menurun`; `tak menaik` | Use unhyphenated standard orthography. The right-hand approximate-identity condition in 255Ya is a separately ledgered source correction from non-decreasing to non-increasing. |
+| corollary | `akibat` | Continue the established compact heading form. Reject `korolari`, which is not the selected Indonesian form in this edition. |
+
+An independent complete source/target reread confirmed the mathematical
+terminology after the orthographic and heading repairs recorded in
+`qa/chapter25/mt255-independent-semantic-review.md`. These choices do not
+alter formulas, stable IDs, exercises, hints, or component-rights boundaries.
