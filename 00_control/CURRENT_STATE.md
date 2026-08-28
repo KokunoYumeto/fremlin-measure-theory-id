@@ -1,6 +1,45 @@
 # Current State — O007 Fremlin Volumes 1–2
 
-Updated: 2026-08-26 (Europe/Berlin)
+Updated: 2026-08-28 (Europe/Berlin)
+
+> **Superseding owner state (2026-08-28):** 338/672 official pages remain
+> admitted, released, and anonymously verified through S252. Complete S253 and
+> S254 are additionally translated and deterministically validated, so the
+> local contiguous candidate is 367/672. The next exact source is `mt255.tex`
+> at Volume II page 266. The older checkpoint notices below are historical.
+
+## Live owner state through complete S254
+
+- Public/admitted release coverage: **338/672 official pages** through S252,
+  GitHub tag `v0.17.0-v2-through-s252` and Zenodo DOI
+  `10.5281/zenodo.22105474`, with exact anonymous byte-readback receipts.
+- Local translated candidate: complete Volume I plus Volume II pages 1–265,
+  **367/672 official pages**. Complete S254 adds 18 pages; 305 pages remain.
+- S254 target: `source/id-ID/mt254.tex`, 103,957 bytes / 2,267 lines /
+  SHA-256
+  `cbe60c21165ca0d744e6f0b121b900b4470928f030f8082543743b1d4220fe1a`.
+  Passing evidence is `qa/chapter25/mt254-unit-qa.json` and
+  `qa/chapter25/mt254-source-anomaly-adjudication.json`; the latter reconciles
+  the supplied anomaly list and 36 exact high-confidence corrections without
+  changing frozen authority bytes.
+- The semantic reader and independent static/browser receipt are
+  `qa/chapter25/mt254-semantic-reader/index.html` (280,020 bytes / SHA-256
+  `c15a1cacb55aeda3cb5e30a6068ab59603533e89f8b326cfca77b0f2d7fdc0b7`)
+  and `qa/chapter25/mt254-semantic-html-qa.json` (7,531 bytes / SHA-256
+  `1a1ee2baed0cb4f4debfcbe86ce047872cf9f2f87b8f9fa104cd156f63221bb8`).
+  They bind 62 exact source units, 27 exercises, 10 hints, 2,180 executable
+  MathJax atoms, zero broken fragments or unresolved controls, and reflow at
+  1280×720 and 390×844 without document overflow.
+- The generic renderer now understands the S254 legacy formula/presentation
+  vocabulary and fails closed on visible prose-layer TeX controls; five
+  targeted regression tests pass. The deterministic fragment receipt remains
+  explicitly identified as the pre-correction assembly base, while final unit
+  receipts bind the corrected target.
+- The next source is complete `mt255.tex`, `Convolutions of functions`, Volume
+  II pages 266–276: 50,407 bytes / 1,275 lines / SHA-256
+  `c837735d74f688178acc82b7f004669f2fe3352e5c0293d48442777a9d5bb5b6`.
+  Continue through mt257; consolidate and publish the existing GitHub/Zenodo
+  lineages at complete Chapter 25, 389/672. No upstream contact occurred.
 
 > **Superseding owner state (2026-08-26):** 338/672 official pages are
 > admitted, published, and anonymously verified through S252. Complete S253

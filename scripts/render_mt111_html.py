@@ -26,9 +26,28 @@ IMPLICIT_IDS = {
     "111Y": "111Ya",
 }
 
+MATH_SPAN_PATTERN = re.compile(
+    r'<span class="math (?:inline|display)"(?=[\s>])[^>]*>.*?</span>',
+    flags=re.DOTALL,
+)
+VISIBLE_TEX_CONTROL_PATTERN = re.compile(r"\\[A-Za-z]+")
+
 
 def sha256(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
+
+
+def visible_tex_controls(body: str) -> list[str]:
+    """Return alphabetic TeX controls exposed in the prose HTML layer.
+
+    Formula source remains intentionally exact in ``data-source-tex`` and in
+    the MathJax delimiter surface, so complete math spans are removed before
+    inspecting the reader-visible prose.
+    """
+
+    prose = MATH_SPAN_PATTERN.sub("", body)
+    prose = html.unescape(re.sub(r"<[^>]+>", " ", prose))
+    return sorted(set(VISIBLE_TEX_CONTROL_PATTERN.findall(prose)))
 
 
 def strip_comments(text: str) -> str:
@@ -100,7 +119,9 @@ def read_conditional(
 
 def normalize_formula(tex: str) -> str:
     """Map only legacy presentation macros that MathJax cannot parse."""
-    out = tex
+    # Plain TeX permits line-breaking penalties inside formulae.  They are
+    # layout instructions only and MathJax otherwise exposes them literally.
+    out = re.sub(r"\\penalty\s*[+-]?\s*\d+", "", tex)
     for needle in ("\\eqalignno", "\\eqalign"):
         while needle in out:
             pos = out.find(needle)
@@ -115,6 +136,20 @@ def normalize_formula(tex: str) -> str:
 def normalize_noalign_rows(tex: str) -> str:
     r"""Turn Plain-TeX ``\noalign`` prose into rows accepted by MathJax."""
     out = tex
+    display_cause = "\\displaycause"
+    while display_cause in out:
+        pos = out.find(display_cause)
+        arg, end = read_group(out, pos + len(display_cause))
+        # Fremlin's \displaycause macro is exactly a parenthesized
+        # \noalign row.  Expand it before the existing mixed prose/math
+        # conversion so nested $...$ atoms retain mathematical semantics.
+        out = (
+            out[:pos]
+            + "\\noalign{\\noindent ("
+            + arg
+            + ")}"
+            + out[end:]
+        )
     needle = "\\noalign"
     while needle in out:
         pos = out.find(needle)
@@ -254,8 +289,14 @@ class Renderer:
                 i = j
                 continue
 
-            if command in {"grheada", "grheadb", "grheadc"}:
-                greek = {"grheada": "α", "grheadb": "β", "grheadc": "γ"}[command]
+            if command in {
+                "grheada", "grheadb", "grheadc",
+                "grheadd", "grheade", "grheadz",
+            }:
+                greek = {
+                    "grheada": "α", "grheadb": "β", "grheadc": "γ",
+                    "grheadd": "δ", "grheade": "ε", "grheadz": "ζ",
+                }[command]
                 out.append(self.inline_token(f"<strong>({greek})</strong>"))
                 i = j
                 continue
@@ -887,6 +928,9 @@ def main() -> int:
     for source_id, marker in inline_proof_anchors.items():
         add_inline_proof_anchor(renderer, source_id, marker)
     body = renderer.render_body(transformed)
+    residue = visible_tex_controls(body)
+    if residue:
+        raise ValueError(f"raw visible TeX controls remain: {residue!r}")
 
     metadata = {
         "schema": "o007-semantic-reader-v1",
@@ -901,20 +945,28 @@ def main() -> int:
     extra_mathjax_macros = ""
     if args.unit_number != "111":
         extra_mathjax_macros = """,
+        BbbN: '\\\\mathbb{{N}}', BbbQ: '\\\\mathbb{{Q}}',
+        BbbZ: '\\\\mathbb{{Z}}',
+        bover: ['\\\\frac{{#1}}{{#2}}', 2],
         coint: ['\\\\left[#1\\\\right[', 1],
         dom: '\\\\operatorname{{dom}}',
         eae: '=_{\\\\text{{a.e.}}}',
         eusm: ['\\\\underline{{\\\\mathcal{{#1}}}}', 1],
+        family: ['\\\\langle #3\\\\rangle_{{#1\\\\in #2}}', 3],
+        familyi: ['\\\\langle #2\\\\rangle_{{i\\\\in #1}}', 2],
+        familyiI: ['\\\\langle #1\\\\rangle_{{i\\\\in I}}', 1],
         geae: '\\\\ge_{{\\\\text{{a.e.}}}}',
         leae: '\\\\le_{{\\\\text{{a.e.}}}}',
         Nu: '\\\\mathrm{{N}}',
         nuprime: '\\\\nu^{{\\\\prime}}',
-        roibr: '\\\\mathopen{{[}}',
-        sequencen: ['\\\\langle #1\\\\rangle_{{n\\\\in\\\\mathbb{{N}}}}', 1]"""
-    if args.unit_number == "113":
-        extra_mathjax_macros += """,
         restr: '\\\\mathord{{\\\\upharpoonright}}',
-        restrp: '\\\\mathord{{\\\\upharpoonright}}'"""
+        restrp: '\\\\mathord{{\\\\upharpoonright}}',
+        roibr: '\\\\mathopen{{[}}',
+        sequence: ['\\\\langle #2\\\\rangle_{{#1\\\\in\\\\mathbb{{N}}}}', 2],
+        sequencen: ['\\\\langle #1\\\\rangle_{{n\\\\in\\\\mathbb{{N}}}}', 1],
+        ssbullet: '{{\\\\scriptscriptstyle\\\\bullet}}',
+        tensorhat: '\\\\widehat{{\\\\otimes}}',
+        Tensorhat: '\\\\widehat{{\\\\bigotimes}}'"""
     document = f'''<!doctype html>
 <html lang="id-ID">
 <head>

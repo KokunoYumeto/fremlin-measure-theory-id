@@ -884,3 +884,37 @@ matched four selected identities exactly; sanitized evidence is
 `qa/chapter25/mt253-github-push-receipt.json`. This ordinary preservation
 checkpoint does not change the 338-page admitted/public release boundary and
 does not create a release tag or Zenodo version.
+
+## 2026-08-28 — D045: Validate complete S254 and advance the cursor to S255
+
+Complete Section 254, `Infinite products` → `Produk tak hingga`, is accepted
+as a contiguous source-order candidate on official Volume II pages 248–265.
+The target `source/id-ID/mt254.tex` is 103,957 bytes / 2,267 lines / SHA-256
+`cbe60c21165ca0d744e6f0b121b900b4470928f030f8082543743b1d4220fe1a`.
+Together with S253 this raises translated candidate coverage from 349 to
+367/672 official pages; admitted/released coverage remains 338/672 pending the
+complete-Chapter-25 consolidation.
+
+The three exact translation fragments deterministically assembled a
+103,794-byte pre-correction base. Independent source-semantic adjudication then
+confirmed all grouped anomaly candidates and additional exact defects. The
+derivative applies 36 reviewable correction records `O007-CORR-0178`–`0213`;
+frozen authority bytes are unchanged, and the one source citation whose target
+cannot be proved is preserved with an explicit editorial disclosure rather
+than an invented redirect. The unit validator passes 62/62 stable IDs, 237/237
+protected references, 10/10 hints, zero active English residue, and a finite
+hash ledger reconciling all 2,192/2,180 source/target math atoms.
+
+The semantic renderer was extended for the actual legacy S254 vocabulary and
+now fails closed on visible prose-layer TeX controls. Five regression tests,
+independent static replay, and live desktop/mobile browser replay pass: 62
+source units, 27 exercises, 10 hints, 2,180 MathJax containers, no errors,
+broken fragments, raw controls, or document overflow. Exact consolidated
+evidence is `qa/chapter25/mt254-semantic-html-qa.json`.
+
+The decision is to push this complete bounded unit to repository `main` for
+preservation without creating a release tag or Zenodo version, then translate
+complete `mt255.tex` from official pages 266–276 and continue through mt257.
+The next cumulative GitHub/Zenodo release remains complete Chapter 25 at
+389/672 official pages. No upstream contact occurred; the 672-page goal stays
+active.

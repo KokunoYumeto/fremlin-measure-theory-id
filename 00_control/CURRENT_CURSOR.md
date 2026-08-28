@@ -1,5 +1,50 @@
 # Current Cursor
 
+## Superseding local production cursor — complete S254 (2026-08-28)
+
+The admitted and released boundary remains complete Volume I plus contiguous
+Volume II pages 1–236 through S252: **338/672 official pages**. Complete
+Sections 253–254 are validated source-order candidates on Volume II pages
+237–265, raising contiguous translated coverage to **367/672 official pages**;
+305 pages remain untranslated. This bounded unit checkpoint does not create a
+release tag or Zenodo version. The next substantial admission/publication
+boundary remains complete Chapter 25 through Volume II page 287, 389/672.
+
+Exact S254 evidence:
+
+- authority `authority/fremlin/source/mt2.2016/mt254.tex`: 94,917 bytes,
+  2,267 lines, SHA-256
+  `b75916c2e3e75947c5ff6318498a673a7f3134161a5556c6b055e40f05501f16`;
+- target `source/id-ID/mt254.tex`: 103,957 bytes, 2,267 lines, SHA-256
+  `cbe60c21165ca0d744e6f0b121b900b4470928f030f8082543743b1d4220fe1a`;
+- unit QA `qa/chapter25/mt254-unit-qa.json`: 18,899 bytes, SHA-256
+  `08f631dc7f1e3feccb1824b588815123872b2d24a2fc6a73841249b08a9c8b70`,
+  passing 62/62 stable IDs, 237/237 protected references, 10/10 hints, and
+  the complete finite hash ledger for 2,192/2,180 source/target math atoms;
+- source-anomaly adjudication
+  `qa/chapter25/mt254-source-anomaly-adjudication.json`: 2,642 bytes,
+  SHA-256
+  `c8918eda157ae037038bd199b40f8261baf3ef51b6abc74a34dc2083fb31676e`,
+  passing with 36 exact correction rows `O007-CORR-0178`–`0213` and no
+  blocking anomaly;
+- semantic/browser receipt `qa/chapter25/mt254-semantic-html-qa.json`: 7,531
+  bytes, SHA-256
+  `1a1ee2baed0cb4f4debfcbe86ce047872cf9f2f87b8f9fa104cd156f63221bb8`;
+- durable reader `qa/chapter25/mt254-semantic-reader/index.html`: 280,020
+  bytes, SHA-256
+  `c15a1cacb55aeda3cb5e30a6068ab59603533e89f8b326cfca77b0f2d7fdc0b7`;
+- Chapter 25 freeze/cursor `qa/chapter25/mt25-source-freeze.json`: 9,839
+  bytes, SHA-256
+  `09ee05b71a6881d11f43755befcf790223dc1d6666fdbb4895d54e3b43a8c63b`.
+
+The next executable source is complete
+`authority/fremlin/source/mt2.2016/mt255.tex`, `Convolutions of functions`,
+official Volume II pages 266–276: 50,407 bytes / 1,275 lines / SHA-256
+`c837735d74f688178acc82b7f004669f2fe3352e5c0293d48442777a9d5bb5b6`.
+Translate it completely, then continue through mt256–mt257 and consolidate the
+complete-Chapter-25 backend, cumulative readers, package, GitHub release,
+existing Zenodo lineage, and anonymous readback. No upstream contact occurred.
+
 ## Superseding local production cursor — complete S253 (2026-08-26)
 
 The admitted and publicly verified boundary remains complete Volume I plus
