@@ -1093,3 +1093,29 @@ receipts are `qa/PUBLICATION_RECEIPT_V0180_V2_THROUGH_CH25.json` and
 The goal remains active. Exactly 283 official pages remain, and production now
 continues at `mt26.tex`, then `mt261.tex`, beginning at Volume II page 288.
 No upstream contact occurred.
+
+## 2026-08-29 — D050: Admit and publish complete Chapter 26 at 444/672
+
+CP0019 admits complete Chapter 26 and raises the public corpus to **444/672
+official pages (66.1%)**, comprising complete Volume I and contiguous Volume II
+pages 1–342. Catalog v1.14 and the 477-page reflow PDF pass their deterministic
+gates.
+
+GitHub prerelease `v0.19.0-v2-through-ch26` is public at boundary commit
+`4c8c0bbdda7b27c627afa2ab98f5b41515692fac`, tree
+`4de5c973cfdef4dfad7f556f66c40e53870df4c4`; anonymous release metadata, all
+three downloads, and 25 bounded raw paths match exactly. The publication
+receipt commit is `c66445e4dbe745bb448ddd2d81be1df7dbe24490`. Zenodo record
+`22161046`, DOI `10.5281/zenodo.22161046`, extends existing concept DOI
+`10.5281/zenodo.22059798`; its inventory and every asset passed anonymous
+byte/SHA-256 readback.
+
+The shared public assets are the 3,426,613-byte PDF
+(`81bba1acf43824d1863f96bd484e872a7f6b40ab98405371e5c436634be04125`),
+34,485,420-byte ZIP
+(`656f47c4c8d57b80b4353bfd0306de21880f2a35101a2ff7e81d7886ce8a03ca`),
+and 254-byte checksum witness
+(`7ccf38b6a4f3f1ca96130efd85b88297905b2f6dd36ce9108e56a19a3e2ceec9`).
+
+The goal remains active. Exactly 228 official pages remain, and production
+continues at `mt27.tex`, then `mt271.tex`, beginning at Volume II page 343.

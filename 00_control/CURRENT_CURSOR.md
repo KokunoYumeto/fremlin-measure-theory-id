@@ -1,5 +1,59 @@
 # Current Cursor
 
+## Superseding public production cursor — Chapter 27 (2026-08-29)
+
+Complete Volume I and contiguous Volume II pages 1–342 through complete Chapter
+26 are admitted and public: **444/672 official pages (66.1%)**; 228 remain.
+GitHub prerelease `v0.19.0-v2-through-ch26` is public at boundary commit
+`4c8c0bbdda7b27c627afa2ab98f5b41515692fac`, tree
+`4de5c973cfdef4dfad7f556f66c40e53870df4c4`, receipt commit
+`c66445e4dbe745bb448ddd2d81be1df7dbe24490`, and
+<https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.19.0-v2-through-ch26>.
+Anonymous release metadata, all three downloads, and 25 bounded raw paths
+match the exact local bytes.
+
+Zenodo record `22161046`, DOI `10.5281/zenodo.22161046`, extends existing
+concept DOI `10.5281/zenodo.22059798`; its public inventory and all three assets
+passed anonymous byte/SHA-256 readback. Evidence is
+`qa/ZENODO_PUBLICATION_RECEIPT_V0190_V2_THROUGH_CH26.json` (4,571 bytes;
+SHA-256 `412a8c76c3f08cb26d41c18186f1d257723b1a342e2dc6205881a17d56706f95`).
+GitHub evidence is `qa/PUBLICATION_RECEIPT_V0190_V2_THROUGH_CH26.json`
+(5,057 bytes; SHA-256
+`c18ec05afc6eb9b0af3549845d0c762520769ed21da19a0f1c70ada239046314`).
+
+The exact next source cursor is
+`authority/fremlin/source/mt2.2016/mt27.tex`, followed by `mt271.tex`, beginning
+at official Volume II page 343. The 672-page goal remains active.
+
+## Superseding local production cursor — complete Chapter 26 candidate (2026-08-29)
+
+The admitted/public boundary remains complete Volume I plus Volume II pages
+1–287 through Chapter 25: **389/672 official pages (57.9%)**. Complete
+`mt26.tex` and `mt261.tex`–`mt266.tex` are now translated and independently
+validated on Volume II official pages 288–342. The contiguous local candidate
+is therefore **444/672 official pages (66.1%)**; 228 remain.
+
+Exact closure evidence:
+
+- authority freeze `qa/chapter26/mt26-source-freeze.json`: 5,103 bytes,
+  SHA-256 `6d76469ad908138aae18ae28a87d9794c4a2245591525290f82a6a11b6074e9a`;
+- aggregate QA `qa/chapter26-aggregate-qa.json`: 13,904 bytes, SHA-256
+  `f321d81eb6510683487f62970be689e1e53f10269dbfd9c9e53af1871969cc13`;
+- cumulative Volume-II driver `source/id-ID/vol2-through-chapter26-id.tex`:
+  1,711 bytes, SHA-256
+  `bd51118fa231aa6e587d85348175de1ee2e9744eabaa6780139d45cc56c1267c`;
+- corrections ledger `00_control/SOURCE_CORRECTIONS.csv`: 288 rows / 141,398
+  bytes, SHA-256
+  `a967ed50095c7e702d40ca41fba4192e55631f9e5ce3757517a5269e364c1800`.
+
+The aggregate passes all seven source-order units, 157 stable IDs, 84
+exercises, 18 hints, 44 exact source corrections, current target hashes,
+semantic-reader bindings, and immutable-authority checks. The next executable
+action is the single cumulative backend/PDF/HTML/admission/package build for
+444/672, followed by existing-lineage GitHub/Zenodo publication and anonymous
+byte/hash readback. Only after that transaction does the source cursor advance
+to `authority/fremlin/source/mt2.2016/mt27.tex`. No upstream contact occurred.
+
 ## Superseding public production cursor — Chapter 26 (2026-08-28)
 
 Complete Volume I and contiguous Volume II pages 1–287 through complete

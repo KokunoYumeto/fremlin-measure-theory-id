@@ -1,6 +1,31 @@
 # Current State — O007 Fremlin Volumes 1–2
 
-Updated: 2026-08-28 (Europe/Berlin)
+Updated: 2026-08-29 (Europe/Berlin)
+
+> **Superseding owner state (2026-08-29):** complete Chapter 26 is admitted,
+> released, and publicly byte-verified at **444/672 official pages (66.1%)**.
+> GitHub tag `v0.19.0-v2-through-ch26` points to boundary commit
+> `4c8c0bbdda7b27c627afa2ab98f5b41515692fac`; Zenodo record `22161046`, DOI
+> `10.5281/zenodo.22161046`, is in the existing concept. The next exact sources
+> are `mt27.tex` and `mt271.tex` at Volume II page 343; 228 pages remain.
+
+## Live owner state through complete Chapter 26 public
+
+- GitHub boundary tree:
+  `4de5c973cfdef4dfad7f556f66c40e53870df4c4`; receipt commit:
+  `c66445e4dbe745bb448ddd2d81be1df7dbe24490`; release:
+  <https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.19.0-v2-through-ch26>.
+- Zenodo: <https://zenodo.org/records/22161046>, DOI
+  `10.5281/zenodo.22161046`, concept DOI `10.5281/zenodo.22059798`.
+- Exact assets at both destinations: PDF 3,426,613 bytes /
+  `81bba1acf43824d1863f96bd484e872a7f6b40ab98405371e5c436634be04125`;
+  ZIP 34,485,420 bytes /
+  `656f47c4c8d57b80b4353bfd0306de21880f2a35101a2ff7e81d7886ce8a03ca`;
+  checksum witness 254 bytes /
+  `7ccf38b6a4f3f1ca96130efd85b88297905b2f6dd36ce9108e56a19a3e2ceec9`.
+- CP0019, catalog v1.14, the 477-page reflow PDF, deterministic package replay,
+  and both public readbacks pass. The goal remains active through all 672
+  official pages.
 
 > **Superseding owner state (2026-08-28):** complete Chapter 25 is admitted,
 > released, and anonymously verified at 389/672 official pages (57.9%). The

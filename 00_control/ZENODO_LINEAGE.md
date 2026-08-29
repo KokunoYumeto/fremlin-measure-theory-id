@@ -1,6 +1,6 @@
 # Zenodo Version Lineage — O007 Fremlin Volumes 1–2
 
-Updated: 2026-08-25 (Europe/Berlin)
+Updated: 2026-08-29 (Europe/Berlin)
 
 ## Canonical concept
 
@@ -322,10 +322,32 @@ SHA-256
 The public inventory, metadata, and all three assets passed anonymous exact
 byte/SHA-256 readback.
 
+## Published version 0.19.0-v2-through-ch26
+
+- Record: `22161046`
+- DOI: `10.5281/zenodo.22161046`
+- Public URL: <https://zenodo.org/records/22161046>
+- Version: `0.19.0-v2-through-ch26`
+- Coverage: complete Volume I plus contiguous Volume II pages 1–342 through
+  complete Chapter 26, **444/672 official pages**.
+- Lineage: exactly one new version from record `22149439`; concept DOI remains
+  `10.5281/zenodo.22059798`.
+- Status: public, open, and anonymously verified byte-for-byte.
+
+| Asset | Bytes | SHA-256 |
+|---|---:|---|
+| `00_READ_FIRST_FONDASI_TEORI_UKURAN_V1_DAN_V2_HINGGA_BAB_26.pdf` | 3,426,613 | `81bba1acf43824d1863f96bd484e872a7f6b40ab98405371e5c436634be04125` |
+| `fondasi-teori-ukuran-v1-dan-v2-hingga-bab26-id-v0.19.0.zip` | 34,485,420 | `656f47c4c8d57b80b4353bfd0306de21880f2a35101a2ff7e81d7886ce8a03ca` |
+| `SHA256SUMS-v0.19.0-v2-through-ch26.txt` | 254 | `7ccf38b6a4f3f1ca96130efd85b88297905b2f6dd36ce9108e56a19a3e2ceec9` |
+
+Sanitized evidence:
+`qa/ZENODO_PUBLICATION_RECEIPT_V0190_V2_THROUGH_CH26.json`, 4,571 bytes,
+SHA-256
+`412a8c76c3f08cb26d41c18186f1d257723b1a342e2dc6205881a17d56706f95`.
+
 ## Next version
 
-At the next substantial admitted Volume II boundary, create exactly one new
-version from record `22149439` in the same concept. Continue source order from
-`mt26.tex` and `mt261.tex` at official page 288, preserve explicit
-partial-corpus status until 672/672, and do not create a duplicate concept or
-spend a publication transaction on each small section.
+Create the next substantial admitted version from record `22161046` in this
+same concept. Continue in source order from `mt27.tex`, then `mt271.tex`, at
+official Volume II page 343. Preserve explicit partial-corpus status until
+672/672 and create no duplicate concept.

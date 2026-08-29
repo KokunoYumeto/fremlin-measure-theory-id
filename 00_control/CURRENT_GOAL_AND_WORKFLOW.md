@@ -1,8 +1,34 @@
 # Durable Production Goal and Externalized Workflow — O007
 
-Updated: 2026-08-28 (Europe/Berlin)
+Updated: 2026-08-29 (Europe/Berlin)
 Task: `01a01f45-9d00-7f42-9071-4f932b45512a`  
 Status: active until all 672 official pages are publicly verified
+
+> **Superseding public checkpoint (2026-08-29):** complete Chapter 26 is
+> admitted, published, and publicly byte-verified at **444/672 official pages
+> (66.1%)**. GitHub tag `v0.19.0-v2-through-ch26` is at boundary
+> `4c8c0bbdda7b27c627afa2ab98f5b41515692fac`, tree
+> `4de5c973cfdef4dfad7f556f66c40e53870df4c4`, with receipt commit
+> `c66445e4dbe745bb448ddd2d81be1df7dbe24490`. Zenodo record `22161046`, DOI
+> `10.5281/zenodo.22161046`, extends concept DOI
+> `10.5281/zenodo.22059798`. Both destinations expose the exact PDF, ZIP, and
+> checksum identities recorded in the publication receipts. The next cursor is
+> `mt27.tex`, then `mt271.tex`, at Volume II page 343. Exactly 228 official pages
+> remain; the complete-corpus goal stays active until 672/672 is publicly
+> verified. Older Chapter-26 candidate and v0.18 public statements below are
+> historical.
+
+> **Superseding local checkpoint (2026-08-29):** the complete Chapter 26
+> introduction and Sections 261–266 are translated and unit/aggregate-QA
+> validated on Volume II official pages 288–342. The contiguous local candidate
+> is now **444/672 official pages (66.1%)**; 228 remain. The admitted/public
+> boundary remains 389/672 until the single cumulative Chapter-26
+> backend/PDF/HTML/admission/package transaction passes and is published in the
+> existing GitHub and Zenodo lineages. Exact aggregate evidence is
+> `qa/chapter26-aggregate-qa.json` (13,904 bytes; SHA-256
+> `f321d81eb6510683487f62970be689e1e53f10269dbfd9c9e53af1871969cc13`);
+> it binds seven source-order units, 157 stable IDs, 84 exercises, 18 hints,
+> and 44 source corrections. The next source after publication is `mt27.tex`.
 
 > **Superseding checkpoint (2026-08-28):** complete Chapter 25 is admitted,
 > published, and anonymously verified at **389/672 official pages (57.9%)**.
@@ -19,9 +45,10 @@ Foundations*) only: 672 official pages. Do not reopen selection, reduce the
 corpus to a course slice, include Volumes 3–5, or merge comparator books.
 Volume I and contiguous Volume II pages 1–287 are admitted and public at
 389/672 official pages, including complete Chapters 21–25. Preserve that
-public boundary and continue in source order at `mt26.tex` and `mt261.tex`.
-The goal remains active through all remaining Volume II units; 283 official
-pages remain untranslated.
+public boundary. Complete Chapter 26 is a validated local candidate through
+Volume II page 342, raising contiguous local coverage to 444/672; consolidate
+and publish it as one substantial boundary. The goal remains active through
+all remaining Volume II units; 228 official pages remain untranslated.
 
 Authority is
 `authority/fremlin` within this corpus repository:
@@ -77,12 +104,14 @@ and checksum witness (254 bytes; SHA-256
 The cumulative PDF has 419 A4 reflow pages; that physical count does not
 replace the 389-page official coverage identity.
 
-Current action: freeze and translate the complete Chapter 26 introduction and
-Section 261 from official Volume II page 288, then continue in a contiguous
-chapter/major-section batch. Run light bounded unit checks while translating;
-defer cumulative backend, reader, package, and publication work to the next
-substantial boundary. The admitted census is 757 exercises / 178 hints. Do not
-spend a full release or Zenodo transaction on each small section.
+Current action: regenerate and validate the cumulative backend, PDF, and
+offline HTML through complete Chapter 26; run deterministic builds, all-page
+PDF inspection, desktop/mobile route replay, final admission and independent
+package replay; then publish one 444/672 checkpoint in the existing GitHub and
+Zenodo lineages and anonymously verify every public byte. Do not translate
+`mt27.tex` before this boundary is durably closed. The admitted predecessor
+census remains 757 exercises / 178 hints until admission; Chapter 26 adds 84
+exercises / 18 hints.
 
 Recovery state lives in `00_control/CURRENT_GOAL_AND_WORKFLOW.md`,
 `CURRENT_CURSOR.md`, `CURRENT_STATE.md`, `DECISION_LOG.md`,
