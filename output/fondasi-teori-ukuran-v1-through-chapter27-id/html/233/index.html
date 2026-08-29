@@ -1,0 +1,1010 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Ekspektasi bersyarat — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        BbbQ: '\\mathbb{Q}', BbbR: '\\mathbb{R}',
+        eightBbb: ['\\mathbb{#1}', 1],
+        DiniD: '\\overline{D}', Dinid: '\\underline{D}',
+        Var: '\\operatorname{Var}',
+        bumpeq: '=_{\\mathrm{approx}}',
+        intstar: '\\operatorname{int}^{*}',
+        family: ['\\langle #3\\rangle_{#1\\in #2}', 3],
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        displaycause: ['\\text{(#1)}', 1],
+        bigcupop: '\\bigcup', biggerint: '\\int',
+        eae: '=_{\\mathrm{a.e.}}', leae: '\\le_{\\mathrm{a.e.}}', geae: '\\ge_{\\mathrm{a.e.}}',
+        restr: '\\mathord{\\upharpoonright}', restrp: '\\mathord{\\upharpoonright}',
+        Real: '\\operatorname{Re}', Imag: '\\operatorname{Im}',
+        tbf: ['\\mathbf{#1}', 1], eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Qed: '\\square',
+        BbbN: '\\mathbb{N}', Expn: '\\mathbb{E}',
+        Cal: ['\\mathcal{#1}', 1], dom: '\\operatorname{dom}',
+        coint: ['\\left[#1\\right[', 1],
+        sequencen: ['\\langle #1_n\\rangle_{n\\in\\mathbb{N}}', 1],
+        imp: '\\mathop{\\text{pelestari ukuran melalui prapeta}}',
+        tildeTau: '\\widetilde{\\mathrm{T}}',
+        LLcorner: '\\mathbin{\\llcorner}',
+        prooflet: ['#1', 1],
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        roibr: '\\mathopen{{[}}',
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1]
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 2 · Bagian 233</p>
+  <h1>Ekspektasi bersyarat</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi kumulatif</a></nav>
+<main id="isi">
+<p>© 1994</p>
+<span class="anchor" id="233"></span>
+<p>Saya menyediakan satu bagian untuk tinjauan pertama atas salah satu
+penerapan utama Teorema Radon-Nikodým. Gagasan ini merupakan salah satu
+gagasan terpenting dalam teori ukuran, dan akan muncul berulang kali dalam
+berbagai bentuk. Di sini saya memberikan definisi dan sifat-sifat paling
+dasar ekspektasi bersyarat sebagaimana muncul dalam teori probabilitas
+abstrak, disertai catatan tentang fungsi konveks dan suatu versi
+Ketaksamaan Jensen (<a class="xref" href="#233I">233I</a>-<a class="xref" href="#233J">233J</a>).</p>
+<section class="source-unit" id="233A" data-source-id="233A"><h2><span class="source-label">233A</span> Subaljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> </h2>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan dan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>
+suatu aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>. Suatu
+<strong>subaljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span></strong> dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> adalah aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>
+dari subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\Tau\subseteq\Sigma">\(\Tau\subseteq\Sigma\)</span>. Jika <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan
+<span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> suatu subaljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, maka
+<span class="math inline" data-source-tex="(X,\Tau,\mu\restrp\Tau)">\((X,\Tau,\mu\restrp\Tau)\)</span> juga merupakan ruang ukur; hal ini
+langsung mengikuti definisi (<a class="xref" href="../112/index.html#112A">112A</a>). Sekarang kita mempunyai lema
+sederhana berikut. Lema ini merupakan kasus khusus <a class="xref" href="../235/index.html#235G">235G</a> di bawah,
+tetapi saya memberikan bukti tersendiri apabila Anda belum hendak
+memulai penyelidikan umum yang ditempuh dalam §<a class="xref" href="../235/index.html#235">235</a>.</p>
+</section>
+<section class="source-unit" id="233B" data-source-id="233B"><h2><span class="source-label">233B</span> Lema </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>
+suatu subaljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. Suatu fungsi bernilai real <span class="math inline" data-source-tex="f">\(f\)</span>
+yang didefinisikan pada suatu subhimpunan dari <span class="math inline" data-source-tex="X">\(X\)</span>
+bersifat <span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span>-terintegralkan jika dan hanya jika (i) fungsi
+tersebut <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan (ii) <span class="math inline" data-source-tex="\dom f">\(\dom f\)</span> koterabaikan terhadap
+<span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span> (iii) <span class="math inline" data-source-tex="f">\(f\)</span> terukur secara virtual terhadap
+<span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span>; dan dalam hal ini
+<span class="math inline" data-source-tex="\int fd(\mu\restrp\Tau)=\int fd\mu">\(\int fd(\mu\restrp\Tau)=\int fd\mu\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Pertama-tama perhatikan bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi
+sederhana terhadap <span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span>, yakni dapat dinyatakan sebagai
+<span class="math inline" data-source-tex="\sum_{i=0}^na_i\chi E_i">\(\sum_{i=0}^na_i\chi E_i\)</span> dengan <span class="math inline" data-source-tex="a_i\in\Bbb R">\(a_i\in\Bbb R\)</span>, <span class="math inline" data-source-tex="E_i\in\Tau">\(E_i\in\Tau\)</span>, dan
+<span class="math inline" data-source-tex="(\mu\restrp\Tau)E_i&lt;\infty">\((\mu\restrp\Tau)E_i&lt;\infty\)</span> untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>, maka <span class="math inline" data-source-tex="f">\(f\)</span> merupakan fungsi
+sederhana terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int f d\mu=\sum_{i=0}^na_i\mu E_i
+=\int f d(\mu\restrp\Tau)">\(\int f d\mu=\sum_{i=0}^na_i\mu E_i
+=\int f d(\mu\restrp\Tau)\)</span>.</div>
+<p> </p>
+<p><strong>(b)</strong> Misalkan <span class="math inline" data-source-tex="U_{\mu}">\(U_{\mu}\)</span> himpunan fungsi nonnegatif yang
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan dan <span class="math inline" data-source-tex="U_{\mu\restrp\Tau}">\(U_{\mu\restrp\Tau}\)</span> himpunan fungsi nonnegatif
+yang <span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span>-terintegralkan.</p>
+<p>Andaikan <span class="math inline" data-source-tex="f\in U_{\mu\restrp\Tau}">\(f\in U_{\mu\restrp\Tau}\)</span>. Maka terdapat barisan tak menurun
+<span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> dari fungsi-fungsi sederhana terhadap
+<span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="f(x)=\lim_{n\to\infty}f_n\,\mu\restrp\Tau">\(f(x)=\lim_{n\to\infty}f_n\,\mu\restrp\Tau\)</span>-hampir di mana-mana dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int fd(\mu\restrp\Tau)
+=\lim_{n\to\infty}\int f_nd(\mu\restrp\Tau)">\(\int fd(\mu\restrp\Tau)
+=\lim_{n\to\infty}\int f_nd(\mu\restrp\Tau)\)</span>.</div>
+<p>Namun kini setiap <span class="math inline" data-source-tex="f_n">\(f_n\)</span> juga sederhana terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, dan
+<span class="math inline" data-source-tex="\int f_nd\mu=\int f_nd(\mu\restrp\Tau)">\(\int f_nd\mu=\int f_nd(\mu\restrp\Tau)\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, serta
+<span class="math inline" data-source-tex="f=\lim_{n\to\infty}f_n\,\mu">\(f=\lim_{n\to\infty}f_n\,\mu\)</span>-hampir di mana-mana. Jadi
+<span class="math inline" data-source-tex="f\in U_{\mu}">\(f\in U_{\mu}\)</span> dan <span class="math inline" data-source-tex="\int fd\mu=\int fd(\mu\restrp\Tau)">\(\int fd\mu=\int fd(\mu\restrp\Tau)\)</span>.</p>
+<p> </p>
+<p><strong>(c)</strong> Sekarang andaikan <span class="math inline" data-source-tex="f">\(f\)</span> bersifat
+<span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span>-terintegralkan. Maka fungsi tersebut merupakan selisih dua anggota
+<span class="math inline" data-source-tex="U_{\mu\restrp\Tau}">\(U_{\mu\restrp\Tau}\)</span>, sehingga <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan, dan
+<span class="math inline" data-source-tex="\int fd\mu=\int fd(\mu\restrp\Tau)">\(\int fd\mu=\int fd(\mu\restrp\Tau)\)</span>. Syarat (ii) dan (iii) juga
+terpenuhi, sesuai dengan konvensi yang ditetapkan dalam Jilid 1
+(<a class="xref" href="../122/index.html#122Nc">122Nc</a>, <a class="xref" href="../122/index.html#122P">122P</a>-<a class="xref" href="../122/index.html#122Q">122Q</a>).</p>
+<p> </p>
+<p><strong>(d)</strong> Andaikan <span class="math inline" data-source-tex="f">\(f\)</span> memenuhi syarat (i)-(iii). Maka
+<span class="math inline" data-source-tex="|f|\in U_{\mu}">\(|f|\in U_{\mu}\)</span>, dan terdapat himpunan koterabaikan
+<span class="math inline" data-source-tex="E\subseteq\dom f">\(E\subseteq\dom f\)</span> sedemikian sehingga <span class="math inline" data-source-tex="E\in\Tau">\(E\in\Tau\)</span> dan <span class="math inline" data-source-tex="f\restr E">\(f\restr E\)</span>
+terukur terhadap <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>. Oleh karena itu, <span class="math inline" data-source-tex="|f|\restr E">\(|f|\restr E\)</span> terukur terhadap
+<span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>. Sekarang, jika <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="(\mu\restrp\Tau)\{x:x\in E,\,|f|(x)\ge\epsilon\}
+=\mu\{x:x\in E,\,|f|(x)\ge\epsilon\}
+\le{1\over\epsilon}\int|f|d\mu&lt;\infty">\((\mu\restrp\Tau)\{x:x\in E,\,|f|(x)\ge\epsilon\}
+=\mu\{x:x\in E,\,|f|(x)\ge\epsilon\}
+\le{1\over\epsilon}\int|f|d\mu&lt;\infty\)</span>;</div>
+<p>selain itu,</p>
+<p><span class="math display" data-source-tex="\eqalign{\sup\{\int g\,d(\mu\restrp\Tau):g&amp;\text{ adalah suatu fungsi }
+  \mu\restrp\Tau\text{-sederhana},
+  \,g\le |f|\,\mu\restrp\Tau\text{-hampir di mana-mana}\}\cr
+&amp;=\sup\{\int g\,d\mu:g\text{ adalah suatu fungsi }
+  \mu\restrp\Tau\text{-sederhana},
+  \,g\le |f|\,\mu\restrp\Tau\text{-hampir di mana-mana}\}\cr
+&amp;\le\sup\{\int g\,d\mu:g\text{ adalah suatu fungsi }
+  \mu\text{-sederhana},\,g\le |f|\,\mu\text{-hampir di mana-mana}\}\cr
+&amp;\le\int |f|d\mu&lt;\infty.\cr}">\[\begin{aligned}\sup\{\int g\,d(\mu\restrp\Tau):g&amp;\text{ adalah suatu fungsi }
+  \mu\restrp\Tau\text{-sederhana},
+  \,g\le |f|\,\mu\restrp\Tau\text{-hampir di mana-mana}\}\\
+&amp;=\sup\{\int g\,d\mu:g\text{ adalah suatu fungsi }
+  \mu\restrp\Tau\text{-sederhana},
+  \,g\le |f|\,\mu\restrp\Tau\text{-hampir di mana-mana}\}\\
+&amp;\le\sup\{\int g\,d\mu:g\text{ adalah suatu fungsi }
+  \mu\text{-sederhana},\,g\le |f|\,\mu\text{-hampir di mana-mana}\}\\
+&amp;\le\int |f|d\mu&lt;\infty.\\\end{aligned}\]</span></p>
+<p>Menurut kriteria <a class="xref" href="../122/index.html#122Ja">122Ja</a>, <span class="math inline" data-source-tex="|f|\in U_{\mu\restrp\Tau}">\(|f|\in U_{\mu\restrp\Tau}\)</span>.
+Akibatnya, karena <span class="math inline" data-source-tex="f">\(f\)</span> terukur secara virtual terhadap <span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span>
+sebagai fungsi yang terukur terhadap <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>, fungsi tersebut
+<span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span>-terintegralkan menurut <a class="xref" href="../122/index.html#122P">122P</a>. Ini menuntaskan bukti.</p></aside>
+</section>
+<section class="source-unit" id="233C" data-source-id="233C"><span class="anchor" id="233Ca"></span><h2><span class="source-label">233C</span> Catatan (a) </h2>
+<p>Argumen tepat di atas saya uraikan dengan
+sangat terperinci, bahkan hingga terkesan bertele-tele. Namun, walaupun
+saya dapat dituduh membuang-buang kertas dengan menuliskan semuanya,
+menurut saya setiap unsur argumen itu diperlukan bagi hasilnya. Memang,
+sebagian perincian diperlukan hanya karena saya menggunakan pengertian
+‘fungsi terintegralkan‘ yang begitu luas; jika Anda membatasi pengertian
+‘keterintegralan‘ pada fungsi terukur yang didefinisikan pada seluruh
+ruang ukur, pada tahap ini terdapat beberapa penyederhanaan, yang kelak
+harus dibayar ketika Anda mendapati bahwa banyak penerapan utama
+menyangkut fungsi yang didefinisikan oleh rumus-rumus yang tidak berlaku
+pada seluruh ruang yang mendasarinya.</p>
+<p>Pokok penting yang harus dipahami ialah bahwa meskipun himpunan yang
+terabaikan terhadap <span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span> selalu terabaikan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>,
+himpunan yang terabaikan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> belum tentu terabaikan terhadap
+<span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span>.</p>
+</section>
+<section class="source-unit" id="233Cb" data-source-id="233Cb"><h3><span class="source-label">233Cb</span> <strong>(b)</strong> </h3>
+<p>Sebagai contoh sesederhana mungkin mengenai
+masalah yang dapat timbul, saya menawarkan contoh berikut. Misalkan
+<span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> adalah <span class="math inline" data-source-tex="[0,1]^2">\([0,1]^2\)</span> dengan ukuran Lebesgue. Misalkan
+<span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> himpunan anggota <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> yang dapat dinyatakan sebagai
+<span class="math inline" data-source-tex="F\times[0,1]">\(F\times[0,1]\)</span> untuk suatu <span class="math inline" data-source-tex="F\subseteq[0,1]">\(F\subseteq[0,1]\)</span>; mudah dilihat bahwa <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>
+merupakan subaljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. Tinjau <span class="math inline" data-source-tex="f">\(f\)</span>,
+<span class="math inline" data-source-tex="g:X\to[0,1]">\(g:X\to[0,1]\)</span> yang didefinisikan dengan</p>
+<div class="centerline"><span class="math inline" data-source-tex="f(t,u)=1">\(f(t,u)=1\)</span> jika <span class="math inline" data-source-tex="u&gt;0">\(u&gt;0\)</span>, <span class="math inline" data-source-tex="0">\(0\)</span> selainnya,</div>
+<div class="centerline"><span class="math inline" data-source-tex="g(t,u)=1">\(g(t,u)=1\)</span> jika <span class="math inline" data-source-tex="t&gt;0">\(t&gt;0\)</span>, <span class="math inline" data-source-tex="0">\(0\)</span> selainnya.</div>
+<p>Maka <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span> keduanya <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan karena konstan
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span>-hampir di mana-mana. Namun, hanya <span class="math inline" data-source-tex="g">\(g\)</span> yang
+<span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span>-terintegralkan, sebab setiap <span class="math inline" data-source-tex="E\in\Tau">\(E\in\Tau\)</span> yang tidak
+terabaikan memuat suatu irisan vertikal lengkap
+<span class="math inline" data-source-tex="\{t\}\times[0,1]">\(\{t\}\times[0,1]\)</span>, sehingga <span class="math inline" data-source-tex="f">\(f\)</span> mengambil kedua nilai <span class="math inline" data-source-tex="0">\(0\)</span> dan <span class="math inline" data-source-tex="1">\(1\)</span> pada
+<span class="math inline" data-source-tex="E">\(E\)</span>. Jika kita menetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="h(t,u)=1">\(h(t,u)=1\)</span> jika <span class="math inline" data-source-tex="u&gt;0">\(u&gt;0\)</span>, tidak terdefinisi selainnya,</div>
+<p>maka sekali lagi (menurut konvensi yang saya gunakan) <span class="math inline" data-source-tex="h">\(h\)</span>
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan tetapi tidak <span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span>-terintegralkan, karena
+tidak ada anggota koterabaikan dari <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> yang termuat dalam domain <span class="math inline" data-source-tex="h">\(h\)</span>.</p>
+</section>
+<section class="source-unit" id="233Cc" data-source-id="233Cc"><h3><span class="source-label">233Cc</span> <strong>(c)</strong> </h3>
+<p>Jika <span class="math inline" data-source-tex="f">\(f\)</span> didefinisikan pada seluruh <span class="math inline" data-source-tex="X">\(X\)</span> dan
+<span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span> lengkap, maka tentu saja <span class="math inline" data-source-tex="f">\(f\)</span>
+<span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span>-terintegralkan jika dan hanya jika fungsi tersebut
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan dan terukur terhadap <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>. Namun, perhatikan bahwa
+dalam contoh tepat di atas, yang merupakan salah satu pola dasar topik
+ini, <span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span> tidak lengkap, karena himpunan-himpunan satu titik
+terabaikan tetapi tidak terukur.</p>
+</section>
+<section class="source-unit" id="233D" data-source-id="233D"><h2><span class="source-label">233D</span> Ekspektasi bersyarat </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu
+ruang probabilitas, yakni ruang ukur dengan <span class="math inline" data-source-tex="\mu X=1">\(\mu X=1\)</span>.
+(Hampir semua gagasan di sini berlaku dengan sempurna bagi
+sembarang ruang ukur berhingga total, tetapi tampaknya tidak ada manfaat
+yang diperoleh dari perluasan tersebut, dan ungkapan tradisional
+‘ekspektasi bersyarat‘ menuntut ruang probabilitas.)
+Misalkan <span class="math inline" data-source-tex="\Tau\subseteq\Sigma">\(\Tau\subseteq\Sigma\)</span> suatu subaljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>.
+ Jika <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real yang <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan,
+terdapat fungsi <span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span>-terintegralkan <span class="math inline" data-source-tex="g">\(g\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\int_Fg=\int_Ff">\(\int_Fg=\int_Ff\)</span> untuk setiap <span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>; fungsi semacam itu
+merupakan <strong>suatu ekspektasi bersyarat</strong> dari <span class="math inline" data-source-tex="f">\(f\)</span> pada <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>.</p>
+</section>
+<section class="source-unit" id="233Da" data-source-id="233Da"><h3><span class="source-label">233Da</span> <strong>(a)</strong> </h3>
+<p>Untuk setiap fungsi bernilai real yang
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan, katakanlah <span class="math inline" data-source-tex="f">\(f\)</span>, dan didefinisikan pada suatu subhimpunan
+koterabaikan dari <span class="math inline" data-source-tex="X">\(X\)</span>, kita mempunyai integral tak tentu yang
+bersesuaian, <span class="math inline" data-source-tex="\nu_f:\Sigma\to\Bbb R">\(\nu_f:\Sigma\to\Bbb R\)</span>, yang diberikan oleh rumus
+<span class="math inline" data-source-tex="\nu_fE=\int_Ef">\(\nu_fE=\int_Ef\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>. Kita tahu bahwa <span class="math inline" data-source-tex="\nu_f">\(\nu_f\)</span>
+aditif terhitung dan kontinu sejati terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, yang dalam konteks
+sekarang sama dengan mengatakan bahwa fungsional itu kontinu mutlak
+(232Bc-232Bd). Sekarang tinjau pembatasan <span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span> dan
+<span class="math inline" data-source-tex="\nu_f\restrp\Tau">\(\nu_f\restrp\Tau\)</span> dari <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dan <span class="math inline" data-source-tex="\nu_f">\(\nu_f\)</span> pada aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>.
+Langsung dari definisi ‘aditif terhitung‘ dan ‘kontinu mutlak‘ diperoleh
+bahwa <span class="math inline" data-source-tex="\nu_f\restrp\Tau">\(\nu_f\restrp\Tau\)</span> aditif terhitung dan kontinu mutlak terhadap
+<span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span>, sehingga kontinu sejati terhadap
+<span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span>. Akibatnya, Teorema Radon-Nikodým (<a class="xref" href="../232/index.html#232E">232E</a>) menyatakan
+bahwa terdapat fungsi <span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span>-terintegralkan <span class="math inline" data-source-tex="g">\(g\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="(\nu_f\restrp\Tau)F=\int_Fg\,d(\mu\restrp\Tau)">\((\nu_f\restrp\Tau)F=\int_Fg\,d(\mu\restrp\Tau)\)</span> untuk setiap
+<span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>.</p>
+</section>
+<section class="source-unit" id="233Db" data-source-id="233Db"><h3><span class="source-label">233Db</span> <strong>(b)</strong> </h3>
+<p>Mari kita definisikan <strong>suatu
+ekspektasi bersyarat dari <span class="math inline" data-source-tex="f">\(f\)</span> pada</strong> <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> sebagai fungsi semacam itu;
+yakni, suatu fungsi <span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span>-terintegralkan <span class="math inline" data-source-tex="g">\(g\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\int_Fg\,d(\mu\restrp\Tau)=\int_Ffd\mu">\(\int_Fg\,d(\mu\restrp\Tau)=\int_Ffd\mu\)</span> untuk setiap
+<span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>. Dengan menengok kembali <a class="xref" href="#233B">233B</a>, kita melihat bahwa untuk <span class="math inline" data-source-tex="g">\(g\)</span>
+semacam itu berlaku</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_Fg\,d(\mu\restrp\Tau)
+=\int g\times\chi F\,d(\mu\restrp\Tau)
+=\int g\times\chi F\, d\mu=\int_Fg\,d\mu">\(\int_Fg\,d(\mu\restrp\Tau)
+=\int g\times\chi F\,d(\mu\restrp\Tau)
+=\int g\times\chi F\, d\mu=\int_Fg\,d\mu\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>; selain itu, <span class="math inline" data-source-tex="g">\(g\)</span> hampir di mana-mana
+sama dengan suatu fungsi terukur terhadap <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> yang didefinisikan pada
+seluruh <span class="math inline" data-source-tex="X">\(X\)</span> dan juga merupakan ekspektasi bersyarat dari <span class="math inline" data-source-tex="f">\(f\)</span> pada
+<span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> (<a class="xref" href="../232/index.html#232He">232He</a>).</p>
+</section>
+<section class="source-unit" id="233Dc" data-source-id="233Dc"><h3><span class="source-label">233Dc</span> <strong>(c)</strong> </h3>
+<p>Saya mencetak tebal kata ‘suatu‘ dalam
+ungkapan ‘suatu ekspektasi bersyarat‘ untuk menekankan bahwa fungsi <span class="math inline" data-source-tex="g">\(g\)</span>
+sama sekali tidak unik. Dalam 242J saya akan kembali ke pokok ini dan
+menjelaskan suatu objek yang dengan tepat dapat disebut ‘ekspektasi
+bersyarat‘ dari <span class="math inline" data-source-tex="f">\(f\)</span> pada <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>. <span class="math inline" data-source-tex="g">\(g\)</span> ‘unik secara esensial‘ hanya dalam
+arti bahwa jika <span class="math inline" data-source-tex="g_1">\(g_1\)</span> dan <span class="math inline" data-source-tex="g_2">\(g_2\)</span> keduanya merupakan ekspektasi bersyarat
+dari <span class="math inline" data-source-tex="f">\(f\)</span> pada <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>, maka
+<span class="math inline" data-source-tex="g_1=g_2\,\,\mu\restrp\Tau">\(g_1=g_2\,\,\mu\restrp\Tau\)</span>-hampir di mana-mana
+(<a class="xref" href="../131/index.html#131Hb">131Hb</a>). Tentu saja,
+hal ini berarti bahwa sangat banyak sifatnya – misalnya fungsi
+distribusi <span class="math inline" data-source-tex="G(a)=\hat\mu\{x:g(x)\le a\}">\(G(a)=\hat\mu\{x:g(x)\le a\}\)</span>, dengan <span class="math inline" data-source-tex="\hat\mu">\(\hat\mu\)</span> pelengkapan
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span> (<a class="xref" href="../212/index.html#212C">212C</a>) – tidak bergantung pada <span class="math inline" data-source-tex="g">\(g\)</span> mana yang kita pilih.</p>
+</section>
+<section class="source-unit" id="233Dd" data-source-id="233Dd"><h3><span class="source-label">233Dd</span> <strong>(d)</strong> </h3>
+<p>Ungkapan ‘ekspektasi bersyarat‘ perlu
+dijelaskan. Ungkapan ini berasal dari identifikasi baku probabilitas
+dengan ukuran, berkat Kolmogorov, yang akan saya bahas lebih lengkap
+dalam Bab 27. Suatu peubah acak bernilai real dapat dipandang sebagai
+fungsi terukur, atau terukur secara virtual, <span class="math inline" data-source-tex="f">\(f\)</span> pada ruang probabilitas
+<span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span>; ‘ekspektasinya‘ diidentifikasi dengan <span class="math inline" data-source-tex="\int f d\mu">\(\int f d\mu\)</span>,
+dengan mengandaikan integral ini ada. Jika <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dan <span class="math inline" data-source-tex="\mu F&gt;0">\(\mu F&gt;0\)</span>,
+maka ‘ekspektasi bersyarat dari <span class="math inline" data-source-tex="f">\(f\)</span> apabila <span class="math inline" data-source-tex="F">\(F\)</span> diketahui‘ adalah
+<span class="math inline" data-source-tex="{1\over{\mu F}}\int_Ff">\({1\over{\mu F}}\int_Ff\)</span>. Jika <span class="math inline" data-source-tex="F_0,\ldots,F_n">\(F_0,\ldots,F_n\)</span> merupakan partisi <span class="math inline" data-source-tex="X">\(X\)</span>
+menjadi himpunan-himpunan terukur yang berukuran tak nol, maka fungsi
+<span class="math inline" data-source-tex="g">\(g\)</span> yang diberikan oleh</p>
+<div class="centerline"><span class="math inline" data-source-tex="g(x)=\Bover1{\mu F_i}\int_{F_i}f">\(g(x)=\Bover1{\mu F_i}\int_{F_i}f\)</span> jika <span class="math inline" data-source-tex="x\in F_i">\(x\in F_i\)</span></div>
+<p>merupakan semacam ekspektasi bersyarat yang telah
+diantisipasi; jika kelak kita diberi tahu bahwa <span class="math inline" data-source-tex="x\in F_i">\(x\in F_i\)</span>, maka <span class="math inline" data-source-tex="g(x)">\(g(x)\)</span>
+akan menjadi taksiran kita selanjutnya atas ekspektasi <span class="math inline" data-source-tex="f">\(f\)</span>. Menurut
+definisi di atas, <span class="math inline" data-source-tex="g">\(g\)</span> merupakan ekspektasi bersyarat dari <span class="math inline" data-source-tex="f">\(f\)</span> pada
+aljabar hingga <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> yang dibangkitkan oleh
+<span class="math inline" data-source-tex="\{F_0,\ldots,F_n\}">\(\{F_0,\ldots,F_n\}\)</span>. Intuisi yang sesuai bagi aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> umum
+<span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> ialah bahwa aljabar tersebut terdiri atas kejadian-kejadian yang
+akan dapat kita amati pada suatu waktu mendatang <span class="math inline" data-source-tex="t_0">\(t_0\)</span> yang ditetapkan,
+sedangkan seluruh aljabar <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> terdiri atas semua kejadian, termasuk
+yang baru dapat diamati setelah <span class="math inline" data-source-tex="t_0">\(t_0\)</span>, jika memang pernah dapat diamati.</p>
+</section>
+<section class="source-unit" id="233E" data-source-id="233E"><h2><span class="source-label">233E</span>  </h2>
+<p>Saya mencantumkan beberapa fakta elementer
+mengenai ekspektasi bersyarat.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang
+probabilitas dan <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> suatu subaljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>.
+Misalkan <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> suatu barisan fungsi bernilai real yang
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan, dan untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span> misalkan <span class="math inline" data-source-tex="g_n">\(g_n\)</span> suatu
+ekspektasi bersyarat dari <span class="math inline" data-source-tex="f_n">\(f_n\)</span> pada <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>. Maka</p>
+<p>(a) <span class="math inline" data-source-tex="g_1+g_2">\(g_1+g_2\)</span> merupakan ekspektasi bersyarat dari <span class="math inline" data-source-tex="f_1+f_2">\(f_1+f_2\)</span> pada <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>;</p>
+<p>(b) untuk setiap <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>, <span class="math inline" data-source-tex="cg_0">\(cg_0\)</span> merupakan ekspektasi bersyarat dari
+<span class="math inline" data-source-tex="cf_0">\(cf_0\)</span> pada <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>;</p>
+<p>(c) jika <span class="math inline" data-source-tex="f_1\leae f_2">\(f_1\leae f_2\)</span>, maka <span class="math inline" data-source-tex="g_1\leae g_2">\(g_1\leae g_2\)</span>;</p>
+<p>(d) jika <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> tak menurun hampir di mana-mana dan
+<span class="math inline" data-source-tex="f=\lim_{n\to\infty}f_n">\(f=\lim_{n\to\infty}f_n\)</span> bersifat <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan, maka
+<span class="math inline" data-source-tex="\lim_{n\to\infty}g_n">\(\lim_{n\to\infty}g_n\)</span> merupakan ekspektasi bersyarat dari <span class="math inline" data-source-tex="f">\(f\)</span> pada
+<span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>;</p>
+<p>(e) jika <span class="math inline" data-source-tex="f=\lim_{n\to\infty}f_n">\(f=\lim_{n\to\infty}f_n\)</span> terdefinisi hampir di mana-mana dan
+terdapat fungsi <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan <span class="math inline" data-source-tex="h">\(h\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="|f_n|\leae h">\(|f_n|\leae h\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, maka <span class="math inline" data-source-tex="\lim_{n\to\infty}g_n">\(\lim_{n\to\infty}g_n\)</span> merupakan
+ekspektasi bersyarat dari <span class="math inline" data-source-tex="f">\(f\)</span> pada <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>;</p>
+<p>(f) jika <span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>, maka <span class="math inline" data-source-tex="g_0\times \chi F">\(g_0\times \chi F\)</span> merupakan ekspektasi
+bersyarat dari <span class="math inline" data-source-tex="f_0\times\chi F">\(f_0\times\chi F\)</span> pada <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>;</p>
+<p>(g) jika <span class="math inline" data-source-tex="h">\(h\)</span> suatu fungsi bernilai real berbatas yang terukur secara
+virtual terhadap <span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span> dan didefinisikan
+<span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span>-hampir di mana-mana dalam <span class="math inline" data-source-tex="X">\(X\)</span>, maka <span class="math inline" data-source-tex="g_0\times h">\(g_0\times h\)</span>
+merupakan ekspektasi bersyarat dari <span class="math inline" data-source-tex="f_0\times h">\(f_0\times h\)</span> pada <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>;</p>
+<p>(h) jika <span class="math inline" data-source-tex="\Upsilon">\(\Upsilon\)</span> suatu subaljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>, maka suatu
+fungsi <span class="math inline" data-source-tex="h_0">\(h_0\)</span> merupakan ekspektasi bersyarat dari <span class="math inline" data-source-tex="f_0">\(f_0\)</span> pada <span class="math inline" data-source-tex="\Upsilon">\(\Upsilon\)</span>
+jika dan hanya jika fungsi tersebut merupakan ekspektasi bersyarat dari
+<span class="math inline" data-source-tex="g_0">\(g_0\)</span> pada <span class="math inline" data-source-tex="\Upsilon">\(\Upsilon\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)-(b)</strong> Kita hanya perlu mengamati bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_Fg_1+g_2d(\mu\restrp\Tau)
+=\int_Fg_1d(\mu\restrp\Tau)+\int_Fg_2d(\mu\restrp\Tau)
+=\int_Ff_1d\mu+\int_Ff_2d\mu=\int_Ff_1+f_2d\mu">\(\int_Fg_1+g_2d(\mu\restrp\Tau)
+=\int_Fg_1d(\mu\restrp\Tau)+\int_Fg_2d(\mu\restrp\Tau)
+=\int_Ff_1d\mu+\int_Ff_2d\mu=\int_Ff_1+f_2d\mu\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\int_Fcg_0d(\mu\restrp\Tau)
+=c\int_Fg_0d(\mu\restrp\Tau)=c\int_Ff_0d\mu=\int_Fcf_0d\mu">\(\int_Fcg_0d(\mu\restrp\Tau)
+=c\int_Fg_0d(\mu\restrp\Tau)=c\int_Ff_0d\mu=\int_Fcf_0d\mu\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>.</p>
+<p> </p>
+<p><strong>(c)</strong> Jika <span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_Fg_1d(\mu\restrp\Tau)=\int_Ff_1d\mu\le\int_Ff_2d
+\mu
+=\int_Fg_2d(\mu\restrp\Tau)">\(\int_Fg_1d(\mu\restrp\Tau)=\int_Ff_1d\mu\le\int_Ff_2d
+\mu
+=\int_Fg_2d(\mu\restrp\Tau)\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>; akibatnya
+<span class="math inline" data-source-tex="g_1\le g_2\,\mu\restrp\Tau">\(g_1\le g_2\,\mu\restrp\Tau\)</span>-hampir di mana-mana (<a class="xref" href="../131/index.html#131Ha">131Ha</a>).</p>
+<p> </p>
+<p><strong>(d)</strong> Menurut (c), <span class="math inline" data-source-tex="\sequencen{g_n}">\(\sequencen{g_n}\)</span> tak menurun
+<span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span>-hampir di mana-mana; selain itu,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sup_{n\in\Bbb N}\int g_nd(\mu\restrp\Tau)
+=\sup_{n\in\Bbb N}\int f_nd\mu
+=\int fd\mu&lt;\infty">\(\sup_{n\in\Bbb N}\int g_nd(\mu\restrp\Tau)
+=\sup_{n\in\Bbb N}\int f_nd\mu
+=\int fd\mu&lt;\infty\)</span>.</div>
+<p>Menurut Teorema B.Levi, <span class="math inline" data-source-tex="g=\lim_{n\to\infty}g_n">\(g=\lim_{n\to\infty}g_n\)</span> terdefinisi
+<span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span>-hampir di mana-mana, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_Fg\,d(\mu\restrp\Tau)
+=\lim_{n\to\infty}\int_Fg_nd(\mu\restrp\Tau)
+=\lim_{n\to\infty}\int_Ff_nd\mu
+=\int_Ffd\mu">\(\int_Fg\,d(\mu\restrp\Tau)
+=\lim_{n\to\infty}\int_Fg_nd(\mu\restrp\Tau)
+=\lim_{n\to\infty}\int_Ff_nd\mu
+=\int_Ffd\mu\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>, sehingga <span class="math inline" data-source-tex="g">\(g\)</span> merupakan ekspektasi
+bersyarat dari <span class="math inline" data-source-tex="f">\(f\)</span> pada <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>.</p>
+<p> </p>
+<p><strong>(e)</strong> Tetapkan <span class="math inline" data-source-tex="f&#x27;_n=\inf_{m\ge n}f_m">\(f&#x27;_n=\inf_{m\ge n}f_m\)</span> dan
+<span class="math inline" data-source-tex="f&#x27;&#x27;_n=\sup_{m\ge n}f_m">\(f&#x27;&#x27;_n=\sup_{m\ge n}f_m\)</span> untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>. Maka kita mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="-h\leae f&#x27;_n\le f_n\le f&#x27;&#x27;_n\leae h">\(-h\leae f&#x27;_n\le f_n\le f&#x27;&#x27;_n\leae h\)</span>,</div>
+<p>dan <span class="math inline" data-source-tex="\sequencen{f&#x27;_n}">\(\sequencen{f&#x27;_n}\)</span> serta <span class="math inline" data-source-tex="\sequencen{f&#x27;&#x27;_n}">\(\sequencen{f&#x27;&#x27;_n}\)</span> merupakan
+barisan fungsi yang monoton hampir di mana-mana dan keduanya konvergen
+hampir di mana-mana ke <span class="math inline" data-source-tex="f">\(f\)</span>. Untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, misalkan <span class="math inline" data-source-tex="g&#x27;_n">\(g&#x27;_n\)</span> dan
+<span class="math inline" data-source-tex="g&#x27;&#x27;_n">\(g&#x27;&#x27;_n\)</span> ekspektasi bersyarat dari <span class="math inline" data-source-tex="f&#x27;_n">\(f&#x27;_n\)</span> dan <span class="math inline" data-source-tex="f&#x27;&#x27;_n">\(f&#x27;&#x27;_n\)</span> pada <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>.
+Menurut (c) dan (d), <span class="math inline" data-source-tex="\sequencen{g&#x27;_n}">\(\sequencen{g&#x27;_n}\)</span> dan <span class="math inline" data-source-tex="\sequencen{g&#x27;&#x27;_n}">\(\sequencen{g&#x27;&#x27;_n}\)</span>
+merupakan barisan yang monoton hampir di mana-mana dan konvergen hampir
+di mana-mana ke ekspektasi bersyarat <span class="math inline" data-source-tex="g&#x27;">\(g&#x27;\)</span> dan <span class="math inline" data-source-tex="g&#x27;&#x27;">\(g&#x27;&#x27;\)</span> dari <span class="math inline" data-source-tex="f">\(f\)</span>. Tentu saja
+<span class="math inline" data-source-tex="g&#x27;=g&#x27;&#x27;\,\,\mu\restrp\Tau">\(g&#x27;=g&#x27;&#x27;\,\,\mu\restrp\Tau\)</span>-hampir di mana-mana (<a class="xref" href="#233Dc">233Dc</a>). Selain itu,
+untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, <span class="math inline" data-source-tex="g&#x27;_n\leae g_n\leae g&#x27;&#x27;_n">\(g&#x27;_n\leae g_n\leae g&#x27;&#x27;_n\)</span>, sehingga
+<span class="math inline" data-source-tex="\sequencen{g_n}">\(\sequencen{g_n}\)</span> konvergen ke
+<span class="math inline" data-source-tex="g&#x27;\,\,\mu\restrp\Tau">\(g&#x27;\,\,\mu\restrp\Tau\)</span>-hampir di mana-mana, dan
+<span class="math inline" data-source-tex="g=\lim_{n\to\infty}g_n">\(g=\lim_{n\to\infty}g_n\)</span> terdefinisi hampir di mana-mana serta merupakan
+ekspektasi bersyarat dari <span class="math inline" data-source-tex="f">\(f\)</span> pada <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>.</p>
+<p> </p>
+<p><strong>(f)</strong> Untuk setiap <span class="math inline" data-source-tex="H\in\Tau">\(H\in\Tau\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_Hg_0\times\chi F\,d(\mu\restrp\Tau)
+=\int_{H\cap F}g_0d(\mu\restrp\Tau)
+=\int_{H\cap F}f_0d\mu
+=\int_Hf_0\times\chi F\,d\mu">\(\int_Hg_0\times\chi F\,d(\mu\restrp\Tau)
+=\int_{H\cap F}g_0d(\mu\restrp\Tau)
+=\int_{H\cap F}f_0d\mu
+=\int_Hf_0\times\chi F\,d\mu\)</span>.</div>
+<p> </p>
+<p><strong>(g)</strong>(i) Jika <span class="math inline" data-source-tex="h">\(h\)</span> benar-benar sederhana terhadap
+<span class="math inline" data-source-tex="(\mu\restrp\Tau)">\((\mu\restrp\Tau)\)</span>, katakanlah
+<span class="math inline" data-source-tex="h=\sum_{i=0}^na_i\chi F_i">\(h=\sum_{i=0}^na_i\chi F_i\)</span> dengan <span class="math inline" data-source-tex="F_i\in\Tau">\(F_i\in\Tau\)</span> untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_Fg_0\times h\,d(\mu\restrp\Tau)
+=\sum_{i=0}^na_i\int_Fg_0\times\chi F_id(\mu\restrp\Tau)
+=\sum_{i=0}^na_i\int_Ff_0\times\chi F_i\,d\mu
+=\int_Ff_0\times h\,d\mu">\(\int_Fg_0\times h\,d(\mu\restrp\Tau)
+=\sum_{i=0}^na_i\int_Fg_0\times\chi F_id(\mu\restrp\Tau)
+=\sum_{i=0}^na_i\int_Ff_0\times\chi F_i\,d\mu
+=\int_Ff_0\times h\,d\mu\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>. (ii) Untuk kasus umum, jika <span class="math inline" data-source-tex="h">\(h\)</span>
+terukur secara virtual terhadap <span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span> dan
+<span class="math inline" data-source-tex="|h(x)|\le M\,\,\mu\restrp\Tau">\(|h(x)|\le M\,\,\mu\restrp\Tau\)</span>-hampir di mana-mana, maka terdapat
+barisan <span class="math inline" data-source-tex="\sequencen{h_n}">\(\sequencen{h_n}\)</span> dari fungsi-fungsi sederhana terhadap
+<span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span> yang konvergen ke <span class="math inline" data-source-tex="h">\(h\)</span> hampir di mana-mana, dengan
+<span class="math inline" data-source-tex="|h_n(x)|\le M">\(|h_n(x)|\le M\)</span> untuk setiap <span class="math inline" data-source-tex="x">\(x\)</span> dan <span class="math inline" data-source-tex="n">\(n\)</span>. Sekarang
+<span class="math inline" data-source-tex="f_0\times h_n\to f_0\times h">\(f_0\times h_n\to f_0\times h\)</span> hampir di mana-mana dan
+<span class="math inline" data-source-tex="|f_0\times h_n|\leae M|f_0|">\(|f_0\times h_n|\leae M|f_0|\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, sedangkan
+<span class="math inline" data-source-tex="g_0\times h_n">\(g_0\times h_n\)</span> merupakan ekspektasi bersyarat dari <span class="math inline" data-source-tex="f_0\times h_n">\(f_0\times h_n\)</span>
+untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>. Jadi, menurut (e),
+<span class="math inline" data-source-tex="\lim_{n\to\infty}g_0\times h_n">\(\lim_{n\to\infty}g_0\times h_n\)</span> merupakan ekspektasi bersyarat dari
+<span class="math inline" data-source-tex="f_0\times h">\(f_0\times h\)</span>; tetapi fungsi ini sama hampir di mana-mana dengan
+<span class="math inline" data-source-tex="g_0\times h">\(g_0\times h\)</span>.</p>
+<p> </p>
+<p><strong>(h)</strong> Kita hanya perlu memperhatikan bahwa
+<span class="math inline" data-source-tex="\int_Hg_0d(\mu\restrp\Tau)=\int_Hf_0d\mu">\(\int_Hg_0d(\mu\restrp\Tau)=\int_Hf_0d\mu\)</span> untuk setiap
+<span class="math inline" data-source-tex="H\in\Upsilon">\(H\in\Upsilon\)</span>, sehingga</p>
+<p><span class="math display" data-source-tex="\eqalign{\int_Hh_0&amp;d(\mu\restrp\Upsilon)=\int_Hg_0d(\mu\restrp\Tau)
+\text{ untuk setiap }H\in\Upsilon\cr
+&amp;\iff\int_Hh_0d(\mu\restrp\Upsilon)=\int_Hf_0d\mu
+\text{ untuk setiap }H\in\Upsilon.\cr}">\[\begin{aligned}\int_Hh_0&amp;d(\mu\restrp\Upsilon)=\int_Hg_0d(\mu\restrp\Tau)
+\text{ untuk setiap }H\in\Upsilon\\
+&amp;\iff\int_Hh_0d(\mu\restrp\Upsilon)=\int_Hf_0d\mu
+\text{ untuk setiap }H\in\Upsilon.\\\end{aligned}\]</span></p></aside>
+</section>
+<section class="source-unit" id="233F" data-source-id="233F"><h2><span class="source-label">233F</span> Catatan </h2>
+<p>Tentu saja, masing-masing hasil di atas hampir
+sepele (meskipun saya kira (e) dan (g) dapat membuat Anda berhenti
+sejenak untuk berpikir jika diberikan tanpa persiapan sebelumnya).
+Secara keseluruhan, hasil-hasil tersebut memberi sejumlah sifat yang
+cukup kuat. Dalam §242 saya akan menyatakannya kembali dengan bahasa
+yang secara sintaksis lebih langsung, tetapi bertumpu pada tingkat
+abstraksi yang lebih dalam.</p>
+<p>Sebagai ilustrasi tentang daya ekspektasi bersyarat untuk mengejutkan
+kita, saya menawarkan proposisi berikut, yang bergantung pada konsep
+fungsi ‘konveks‘.</p>
+</section>
+<section class="source-unit" id="233G" data-source-id="233G"><h2><span class="source-label">233G</span> Fungsi konveks </h2>
+<p>Ingat bahwa suatu fungsi bernilai real
+<span class="math inline" data-source-tex="\phi">\(\phi\)</span> yang didefinisikan pada selang <span class="math inline" data-source-tex="I\subseteq\Bbb R">\(I\subseteq\Bbb R\)</span> disebut
+<strong>konveks</strong> jika</p>
+<div class="centerline"><span class="math inline" data-source-tex="\phi(tb+(1-t)c)\le t\phi(b)+(1-t)\phi(c)">\(\phi(tb+(1-t)c)\le t\phi(b)+(1-t)\phi(c)\)</span></div>
+<p>setiap kali <span class="math inline" data-source-tex="b">\(b\)</span>, <span class="math inline" data-source-tex="c\in I">\(c\in I\)</span>, dan <span class="math inline" data-source-tex="t\in[0,1]">\(t\in[0,1]\)</span>.</p>
+<p> </p>
+<p><strong>Contoh</strong> Rumus-rumus <span class="math inline" data-source-tex="|x|">\(|x|\)</span>, <span class="math inline" data-source-tex="x^2">\(x^2\)</span>, dan
+<span class="math inline" data-source-tex="e^{\pm x}\pm x">\(e^{\pm x}\pm x\)</span> mendefinisikan fungsi konveks pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>; pada
+<span class="math inline" data-source-tex="\ooint{-1,1}">\(\ooint{-1,1}\)</span> kita mempunyai <span class="math inline" data-source-tex="1/(1-x^2)">\(1/(1-x^2)\)</span>; pada
+<span class="math inline" data-source-tex="\ooint{0,\infty}">\(\ooint{0,\infty}\)</span> kita mempunyai <span class="math inline" data-source-tex="1/x">\(1/x\)</span> dan <span class="math inline" data-source-tex="x\ln x">\(x\ln x\)</span>; pada <span class="math inline" data-source-tex="[0,1]">\([0,1]\)</span>
+kita mempunyai fungsi yang bernilai nol pada <span class="math inline" data-source-tex="\ooint{0,1}">\(\ooint{0,1}\)</span> dan <span class="math inline" data-source-tex="1">\(1\)</span> pada
+<span class="math inline" data-source-tex="\{0,1\}">\(\{0,1\}\)</span>.</p>
+</section>
+<section class="source-unit" id="233H" data-source-id="233H"><h2><span class="source-label">233H</span>  </h2>
+<p>Teori umum fungsi konveks bersifat luas sekaligus
+penting; beberapa sifatnya yang lebih menonjol saya cantumkan dalam
+<a class="xref" href="#233Xe">233Xe</a>. Untuk saat ini, lema berikut mencakup apa yang kita perlukan.</p>
+<p> </p>
+<p><strong>Lema</strong> Misalkan <span class="math inline" data-source-tex="I\subseteq\Bbb R">\(I\subseteq\Bbb R\)</span> suatu selang terbuka
+tak kosong (berbatas atau tak berbatas) dan
+<span class="math inline" data-source-tex="\phi:I\to\Bbb R">\(\phi:I\to\Bbb R\)</span> suatu fungsi konveks.</p>
+<p>(a) Untuk setiap <span class="math inline" data-source-tex="a\in I">\(a\in I\)</span> terdapat <span class="math inline" data-source-tex="b\in\Bbb R">\(b\in\Bbb R\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\phi(x)\ge\phi(a)+b(x-a)">\(\phi(x)\ge\phi(a)+b(x-a)\)</span> untuk setiap <span class="math inline" data-source-tex="x\in I">\(x\in I\)</span>.</p>
+<p>(b) Jika untuk setiap <span class="math inline" data-source-tex="q\in I\cap\Bbb Q">\(q\in I\cap\Bbb Q\)</span> kita mengambil
+<span class="math inline" data-source-tex="b_q\in\Bbb R">\(b_q\in\Bbb R\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\phi(x)\ge\phi(q)+b_q(x-q)">\(\phi(x)\ge\phi(q)+b_q(x-q)\)</span> untuk setiap <span class="math inline" data-source-tex="x\in I">\(x\in I\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\phi(x)=\sup_{q\in I\cap\Bbb Q}\phi(q)+b_q(x-q)">\(\phi(x)=\sup_{q\in I\cap\Bbb Q}\phi(q)+b_q(x-q)\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="x\in I">\(x\in I\)</span>.</p>
+<p>(c) <span class="math inline" data-source-tex="\phi">\(\phi\)</span> terukur Borel.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Jika <span class="math inline" data-source-tex="c">\(c\)</span>, <span class="math inline" data-source-tex="c&#x27;\in I">\(c&#x27;\in I\)</span>, dan <span class="math inline" data-source-tex="c&lt;a&lt;c&#x27;">\(c&lt;a&lt;c&#x27;\)</span>, maka <span class="math inline" data-source-tex="a">\(a\)</span> dapat
+dinyatakan sebagai <span class="math inline" data-source-tex="dc+(1-d)c&#x27;">\(dc+(1-d)c&#x27;\)</span> untuk suatu <span class="math inline" data-source-tex="d\in\ooint{0,1}">\(d\in\ooint{0,1}\)</span>, sehingga
+<span class="math inline" data-source-tex="\phi(a)\le d\phi(c)+(1-d)\phi(c&#x27;)">\(\phi(a)\le d\phi(c)+(1-d)\phi(c&#x27;)\)</span> dan</p>
+<p><span class="math display" data-source-tex="\eqalign{{\Bover{\phi(a)-\phi(c)}{a-c}}
+&amp;\le{\Bover{d\phi(c)+(1-d)\phi(c&#x27;)-\phi(c)}{dc+(1-d)c&#x27;-c}}
+={\Bover{(1-d)(\phi(c&#x27;)-\phi(c))}{(1-d)(c&#x27;-c)}}\cr
+&amp;={\Bover{d(\phi(c&#x27;)-\phi(c))}{d(c&#x27;-c)}}
+={\Bover{\phi(c&#x27;)-d\phi(c)-(1-d)\phi(c&#x27;)}{c&#x27;-dc-(1-d)c&#x27;}}
+\le{\Bover{\phi(c&#x27;)-\phi(a)}{c&#x27;-a}}.\cr}">\[\begin{aligned}{\Bover{\phi(a)-\phi(c)}{a-c}}
+&amp;\le{\Bover{d\phi(c)+(1-d)\phi(c&#x27;)-\phi(c)}{dc+(1-d)c&#x27;-c}}
+={\Bover{(1-d)(\phi(c&#x27;)-\phi(c))}{(1-d)(c&#x27;-c)}}\\
+&amp;={\Bover{d(\phi(c&#x27;)-\phi(c))}{d(c&#x27;-c)}}
+={\Bover{\phi(c&#x27;)-d\phi(c)-(1-d)\phi(c&#x27;)}{c&#x27;-dc-(1-d)c&#x27;}}
+\le{\Bover{\phi(c&#x27;)-\phi(a)}{c&#x27;-a}}.\\\end{aligned}\]</span></p>
+<p>Ini berarti bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="b=\sup_{c&lt;a,c\in I}\Bover{\phi(a)-\phi(c)}{a-c}">\(b=\sup_{c&lt;a,c\in I}\Bover{\phi(a)-\phi(c)}{a-c}\)</span></div>
+<p>berhingga, dan
+<span class="math inline" data-source-tex="b\le\Bover{\phi(c&#x27;)-\phi(a)}{c&#x27;-a}">\(b\le\Bover{\phi(c&#x27;)-\phi(a)}{c&#x27;-a}\)</span> setiap kali <span class="math inline" data-source-tex="a&lt;c&#x27;\in I">\(a&lt;c&#x27;\in I\)</span>; oleh
+karena itu, <span class="math inline" data-source-tex="\phi(x)\ge\phi(a)+b(x-a)">\(\phi(x)\ge\phi(a)+b(x-a)\)</span> untuk setiap <span class="math inline" data-source-tex="x\in I">\(x\in I\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Berdasarkan pemilihan <span class="math inline" data-source-tex="b_q">\(b_q\)</span>,
+<span class="math inline" data-source-tex="\phi(x)\ge\sup_{q\in I\cap\Bbb Q}\phi_q(x)">\(\phi(x)\ge\sup_{q\in I\cap\Bbb Q}\phi_q(x)\)</span>.
+Di pihak lain, untuk <span class="math inline" data-source-tex="x\in I">\(x\in I\)</span> yang diberikan, pilih <span class="math inline" data-source-tex="y\in I">\(y\in I\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="x&lt;y">\(x&lt;y\)</span>, lalu ambil <span class="math inline" data-source-tex="b\in\Bbb R">\(b\in\Bbb R\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\phi(z)\ge\phi(x)+b(z-x)">\(\phi(z)\ge\phi(x)+b(z-x)\)</span> untuk setiap <span class="math inline" data-source-tex="z\in I">\(z\in I\)</span>.
+Jika <span class="math inline" data-source-tex="q\in\Bbb Q">\(q\in\Bbb Q\)</span> dan <span class="math inline" data-source-tex="x&lt;q&lt;y">\(x&lt;q&lt;y\)</span>, kita mempunyai
+<span class="math inline" data-source-tex="\phi(y)\ge\phi(q)+b_q(y-q)">\(\phi(y)\ge\phi(q)+b_q(y-q)\)</span>, sehingga
+<span class="math inline" data-source-tex="b_q\le\bover{\phi(y)-\phi(q)}{y-q}">\(b_q\le\bover{\phi(y)-\phi(q)}{y-q}\)</span> dan</p>
+<p><span class="math display" data-source-tex="\eqalign{\phi(q)+b_q(x-q)
+&amp;=\phi(q)-b_q(q-x)
+\ge\phi(q)-\Bover{\phi(y)-\phi(q)}{y-q}(q-x)\cr
+&amp;=\Bover{y-x}{y-q}\phi(q)-\Bover{q-x}{y-q}\phi(y)
+\ge\Bover{y-x}{y-q}(\phi(x)+b(q-x))-\Bover{q-x}{y-q}\phi(y).\cr}">\[\begin{aligned}\phi(q)+b_q(x-q)
+&amp;=\phi(q)-b_q(q-x)
+\ge\phi(q)-\Bover{\phi(y)-\phi(q)}{y-q}(q-x)\\
+&amp;=\Bover{y-x}{y-q}\phi(q)-\Bover{q-x}{y-q}\phi(y)
+\ge\Bover{y-x}{y-q}(\phi(x)+b(q-x))-\Bover{q-x}{y-q}\phi(y).\\\end{aligned}\]</span></p>
+<p>Sekarang</p>
+<p><span class="math display" data-source-tex="\eqalign{\phi(x)
+&amp;=\lim_{q\downarrow x}
+   \Bover{y-x}{y-q}(\phi(x)+b(q-x))-\Bover{q-x}{y-q}\phi(y)\cr
+&amp;\le\sup_{q\in\Bbb Q\cap\ooint{x,y}}
+   \Bover{y-x}{y-q}(\phi(x)+b(q-x))-\Bover{q-x}{y-q}\phi(y)\cr
+&amp;\le\sup_{q\in\Bbb Q\cap\ooint{x,y}}\phi(q)+b_q(x-q)
+\le\sup_{q\in\Bbb Q\cap I}\phi(q)+b_q(x-q).\cr}">\[\begin{aligned}\phi(x)
+&amp;=\lim_{q\downarrow x}
+   \Bover{y-x}{y-q}(\phi(x)+b(q-x))-\Bover{q-x}{y-q}\phi(y)\\
+&amp;\le\sup_{q\in\Bbb Q\cap\ooint{x,y}}
+   \Bover{y-x}{y-q}(\phi(x)+b(q-x))-\Bover{q-x}{y-q}\phi(y)\\
+&amp;\le\sup_{q\in\Bbb Q\cap\ooint{x,y}}\phi(q)+b_q(x-q)
+\le\sup_{q\in\Bbb Q\cap I}\phi(q)+b_q(x-q).\\\end{aligned}\]</span></p>
+<p> </p>
+<p><strong>(c)</strong> Dengan menuliskan <span class="math inline" data-source-tex="\phi_q(x)=\phi(q)+b_q(x-q)">\(\phi_q(x)=\phi(q)+b_q(x-q)\)</span> untuk setiap
+<span class="math inline" data-source-tex="q\in\Bbb Q\cap I">\(q\in\Bbb Q\cap I\)</span>, setiap <span class="math inline" data-source-tex="\phi_q">\(\phi_q\)</span> merupakan fungsi terukur Borel, dan
+<span class="math inline" data-source-tex="\phi=\sup_{q\in I\cap\Bbb Q}\phi_q">\(\phi=\sup_{q\in I\cap\Bbb Q}\phi_q\)</span> adalah supremum suatu keluarga
+terhitung dari fungsi-fungsi terukur Borel, sehingga terukur Borel.</p></aside>
+</section>
+<section class="source-unit" id="233I" data-source-id="233I"><h2><span class="source-label">233I</span> Ketaksamaan Jensen </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang
+ukur dan <span class="math inline" data-source-tex="\phi:\Bbb R\to\Bbb R">\(\phi:\Bbb R\to\Bbb R\)</span> suatu fungsi konveks.</p>
+<p>(a) Andaikan <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span> fungsi bernilai real yang terukur secara virtual
+terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dan didefinisikan hampir di mana-mana dalam <span class="math inline" data-source-tex="X">\(X\)</span>, serta
+<span class="math inline" data-source-tex="g\ge 0">\(g\ge 0\)</span> hampir di mana-mana, <span class="math inline" data-source-tex="\int g=1">\(\int g=1\)</span>, dan <span class="math inline" data-source-tex="g\times f">\(g\times f\)</span>
+terintegralkan. Maka <span class="math inline" data-source-tex="\phi(\int g\times f)\le\int g\times\phi f">\(\phi(\int g\times f)\le\int g\times\phi f\)</span>, dengan
+integral di ruas kanan mungkin perlu ditafsirkan sebagai <span class="math inline" data-source-tex="\infty">\(\infty\)</span>.</p>
+<p>(b) Khususnya, jika <span class="math inline" data-source-tex="\mu X=1">\(\mu X=1\)</span> dan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real yang
+terintegralkan pada <span class="math inline" data-source-tex="X">\(X\)</span>, maka <span class="math inline" data-source-tex="\phi(\int f)\le\int\phi f">\(\phi(\int f)\le\int\phi f\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Untuk setiap <span class="math inline" data-source-tex="q\in\Bbb Q">\(q\in\Bbb Q\)</span>, ambil <span class="math inline" data-source-tex="b_q">\(b_q\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\phi(t)\ge\phi_q(t)=\phi(q)+b_q(t-q)">\(\phi(t)\ge\phi_q(t)=\phi(q)+b_q(t-q)\)</span> untuk setiap
+<span class="math inline" data-source-tex="t\in\Bbb R">\(t\in\Bbb R\)</span> (233Ha). Karena <span class="math inline" data-source-tex="\phi">\(\phi\)</span> terukur Borel (233Hc), <span class="math inline" data-source-tex="\phi f">\(\phi f\)</span>
+terukur secara virtual terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> (<a class="xref" href="../121/index.html#121H">121H</a>), sehingga <span class="math inline" data-source-tex="g\times\phi f">\(g\times\phi f\)</span>
+juga demikian; karena <span class="math inline" data-source-tex="g\times\phi f">\(g\times\phi f\)</span> terdefinisi hampir di mana-mana
+dan hampir di mana-mana lebih besar daripada atau sama dengan fungsi
+terintegralkan <span class="math inline" data-source-tex="g\times\phi_0f">\(g\times\phi_0f\)</span>, <span class="math inline" data-source-tex="\int g\times\phi f">\(\int g\times\phi f\)</span> terdefinisi dalam
+<span class="math inline" data-source-tex="\ocint{-\infty,\infty}">\(\ocint{-\infty,\infty}\)</span>. Sekarang</p>
+<p><span class="math display" data-source-tex="\eqalign{\phi_q\bigl(\intop g\times f\bigr)
+&amp;=\phi(q)+b_q\int g\times f-b_qq\cr
+&amp;=\int g\times(b_qf+(\phi(q)-b_qq)\chi X)
+=\int g\times\phi_qf
+\le\int g\times\phi f,\cr}">\[\begin{aligned}\phi_q\bigl(\intop g\times f\bigr)
+&amp;=\phi(q)+b_q\int g\times f-b_qq\\
+&amp;=\int g\times(b_qf+(\phi(q)-b_qq)\chi X)
+=\int g\times\phi_qf
+\le\int g\times\phi f,\\\end{aligned}\]</span></p>
+<p>karena <span class="math inline" data-source-tex="\int g=1">\(\int g=1\)</span> dan <span class="math inline" data-source-tex="g\ge 0">\(g\ge 0\)</span> hampir di mana-mana. Menurut
+233Hb,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\phi(\intop g\times f)
+=\sup_{q\in\Bbb Q}\phi_q(\intop g\times f)
+\le\int g\times\phi f">\(\phi(\intop g\times f)
+=\sup_{q\in\Bbb Q}\phi_q(\intop g\times f)
+\le\int g\times\phi f\)</span>.</div>
+<p> </p>
+<p><strong>(b)</strong> Ambil <span class="math inline" data-source-tex="g">\(g\)</span> sebagai fungsi konstan bernilai <span class="math inline" data-source-tex="1">\(1\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="233J" data-source-id="233J"><h2><span class="source-label">233J</span>  </h2>
+<p>Bahkan kasus khusus 233Ib dari Ketaksamaan Jensen
+sudah sangat berguna. Kasus tersebut dapat diperluas sebagai berikut.</p>
+<p> </p>
+<p><strong>Teorema</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang
+probabilitas dan <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> suatu subaljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>.
+Misalkan <span class="math inline" data-source-tex="\phi:\Bbb R\to\Bbb R">\(\phi:\Bbb R\to\Bbb R\)</span> suatu fungsi konveks dan <span class="math inline" data-source-tex="f">\(f\)</span> suatu
+fungsi bernilai real yang <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan, didefinisikan hampir di
+mana-mana dalam <span class="math inline" data-source-tex="X">\(X\)</span>, sedemikian sehingga komposisi <span class="math inline" data-source-tex="\phi f">\(\phi f\)</span> juga
+terintegralkan. Jika <span class="math inline" data-source-tex="g">\(g\)</span> dan <span class="math inline" data-source-tex="h">\(h\)</span> masing-masing merupakan ekspektasi
+bersyarat pada <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> dari <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="\phi f">\(\phi f\)</span>, maka <span class="math inline" data-source-tex="\phi g\leae h">\(\phi g\leae h\)</span>.
+Akibatnya, <span class="math inline" data-source-tex="\int\phi g\le\int\phi f">\(\int\phi g\le\int\phi f\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Kita menggunakan gagasan yang sama seperti dalam <a class="xref" href="#233I">233I</a>. Untuk
+setiap <span class="math inline" data-source-tex="q\in\Bbb Q">\(q\in\Bbb Q\)</span>, ambil <span class="math inline" data-source-tex="b_q\in\Bbb R">\(b_q\in\Bbb R\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\phi(t)\ge\phi_q(t)=\phi(q)+b_q(t-q)">\(\phi(t)\ge\phi_q(t)=\phi(q)+b_q(t-q)\)</span> untuk setiap <span class="math inline" data-source-tex="t\in\Bbb R">\(t\in\Bbb R\)</span>,
+sehingga <span class="math inline" data-source-tex="\phi(t)=\sup_{q\in\Bbb Q}\phi_q(t)">\(\phi(t)=\sup_{q\in\Bbb Q}\phi_q(t)\)</span> untuk setiap
+<span class="math inline" data-source-tex="t\in\Bbb R">\(t\in\Bbb R\)</span>. Sekarang tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\psi_q(x)=\phi(q)+b_q(g(x)-q)">\(\psi_q(x)=\phi(q)+b_q(g(x)-q)\)</span></div>
+<p>untuk <span class="math inline" data-source-tex="x\in\dom g">\(x\in\dom g\)</span>. Kita melihat bahwa
+<span class="math inline" data-source-tex="\psi_q=\phi_q g">\(\psi_q=\phi_q g\)</span> merupakan ekspektasi bersyarat dari <span class="math inline" data-source-tex="\phi_q f">\(\phi_q f\)</span>, dan
+karena <span class="math inline" data-source-tex="\phi_q f\leae\phi f">\(\phi_q f\leae\phi f\)</span>, mesti berlaku <span class="math inline" data-source-tex="\psi_q\leae h">\(\psi_q\leae h\)</span>. Tetapi
+<span class="math inline" data-source-tex="\phi g=\sup_{q\in\Bbb Q}\psi_q">\(\phi g=\sup_{q\in\Bbb Q}\psi_q\)</span> di mana pun <span class="math inline" data-source-tex="g">\(g\)</span> terdefinisi,
+sehingga <span class="math inline" data-source-tex="\phi g\leae h">\(\phi g\leae h\)</span>, sebagaimana dinyatakan.</p>
+<p>Langsung diperoleh bahwa <span class="math inline" data-source-tex="\int\phi g\le\int h=\int\phi f">\(\int\phi g\le\int h=\int\phi f\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="233K" data-source-id="233K"><h2><span class="source-label">233K</span>  </h2>
+<p>Saya memberikan proposisi berikut, suatu
+pengembangan 233Eg, dalam bentuk yang sangat umum, sebab penerapannya
+dapat muncul di mana saja.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang
+probabilitas dan <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> suatu subaljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>.
+Andaikan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi yang <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan dan <span class="math inline" data-source-tex="h">\(h\)</span> suatu fungsi
+bernilai real yang terukur secara virtual terhadap
+<span class="math inline" data-source-tex="(\mu\restrp\Tau)">\((\mu\restrp\Tau)\)</span> dan didefinisikan
+<span class="math inline" data-source-tex="(\mu\restrp\Tau)">\((\mu\restrp\Tau)\)</span>-hampir di mana-mana dalam <span class="math inline" data-source-tex="X">\(X\)</span>. Misalkan <span class="math inline" data-source-tex="g">\(g\)</span> dan
+<span class="math inline" data-source-tex="g_0">\(g_0\)</span> ekspektasi bersyarat dari <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="|f|">\(|f|\)</span> pada <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>. Maka
+<span class="math inline" data-source-tex="f\times h">\(f\times h\)</span> terintegralkan jika dan hanya jika <span class="math inline" data-source-tex="g_0\times h">\(g_0\times h\)</span>
+terintegralkan, dan dalam hal ini <span class="math inline" data-source-tex="g\times h">\(g\times h\)</span> merupakan ekspektasi
+bersyarat dari <span class="math inline" data-source-tex="f\times h">\(f\times h\)</span> pada <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Andaikan <span class="math inline" data-source-tex="h">\(h\)</span> suatu fungsi sederhana terhadap
+<span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span>. Maka tentu <span class="math inline" data-source-tex="f\times h">\(f\times h\)</span> dan <span class="math inline" data-source-tex="g_0\times h">\(g_0\times h\)</span>
+terintegralkan, dan <span class="math inline" data-source-tex="g\times h">\(g\times h\)</span> merupakan ekspektasi bersyarat dari
+<span class="math inline" data-source-tex="f\times h">\(f\times h\)</span> seperti dalam 233Eg.</p>
+<p> </p>
+<p><strong>(b)</strong> Sekarang andaikan <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="h\ge 0">\(h\ge 0\)</span>. Maka <span class="math inline" data-source-tex="g=g_0\ge 0">\(g=g_0\ge 0\)</span> hampir di
+mana-mana (233Ec). Misalkan <span class="math inline" data-source-tex="\tilde h">\(\tilde h\)</span> suatu fungsi nonnegatif yang
+terukur terhadap <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> dan didefinisikan pada seluruh <span class="math inline" data-source-tex="X">\(X\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="h\eae\tilde h">\(h\eae\tilde h\)</span>. Untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, tetapkan</p>
+<p><span class="math display" data-source-tex="\eqalign{h_n(x)
+&amp;=2^{-n}k\text{ jika }0\le k&lt;4^n
+  \text{ dan }2^{-n}k\le\tilde h(x)&lt;2^{-n}(k+1),\cr
+&amp;=2^n\text{ jika }\tilde h(x)\ge 2^n.\cr}">\[\begin{aligned}h_n(x)
+&amp;=2^{-n}k\text{ jika }0\le k&lt;4^n
+  \text{ dan }2^{-n}k\le\tilde h(x)&lt;2^{-n}(k+1),\\
+&amp;=2^n\text{ jika }\tilde h(x)\ge 2^n.\\\end{aligned}\]</span></p>
+<p>Maka <span class="math inline" data-source-tex="h_n">\(h_n\)</span> suatu fungsi sederhana terhadap
+<span class="math inline" data-source-tex="(\mu\restrp\Tau)">\((\mu\restrp\Tau)\)</span>, sehingga <span class="math inline" data-source-tex="g\times h_n">\(g\times h_n\)</span> merupakan ekspektasi
+bersyarat dari <span class="math inline" data-source-tex="f\times h_n">\(f\times h_n\)</span>. Barisan <span class="math inline" data-source-tex="\sequencen{f\times h_n}">\(\sequencen{f\times h_n}\)</span> dan
+<span class="math inline" data-source-tex="\sequencen{g\times h_n}">\(\sequencen{g\times h_n}\)</span> keduanya merupakan barisan tak menurun hampir
+di mana-mana dari fungsi-fungsi terintegralkan, dengan limit masing-masing
+<span class="math inline" data-source-tex="f\times h">\(f\times h\)</span> dan <span class="math inline" data-source-tex="g\times h">\(g\times h\)</span>. Menurut Teorema B.Levi,</p>
+<p><span class="math display" data-source-tex="\eqalignno{f\times h\text{ terintegralkan}
+&amp;\iff\,f\times\tilde h\text{ terintegralkan}\cr
+&amp;\iff\,\sup_{n\in\Bbb N}\int f\times h_n&lt;\infty
+\iff\,\sup_{n\in\Bbb N}\int g\times h_n&lt;\infty\cr
+\noalign{  (karena $\int g\times h_n=\int f\times h_n$ untuk
+setiap $n$)}
+&amp;\iff\,g\times h\text{ terintegralkan}
+\iff\,g_0\times h\text{ terintegralkan}.\cr}">\[\begin{aligned}f\times h\text{ terintegralkan}
+&amp;\iff\,f\times\tilde h\text{ terintegralkan}\\
+&amp;\iff\,\sup_{n\in\Bbb N}\int f\times h_n&lt;\infty
+\iff\,\sup_{n\in\Bbb N}\int g\times h_n&lt;\infty\\
+&amp;\text{(karena }\int g\times h_n=\int f\times h_n\text{ untuk
+setiap }n\text{)}\\
+&amp;\iff\,g\times h\text{ terintegralkan}
+\iff\,g_0\times h\text{ terintegralkan}.\\\end{aligned}\]</span></p>
+<p>Selain itu, dalam hal ini</p>
+<p><span class="math display" data-source-tex="\eqalign{\int_Ef\times h
+&amp;=\int_Ef\times\tilde h
+=\lim_{n\to\infty}\int_Ef\times h_n\cr
+&amp;=\lim_{n\to\infty}\int_Eg\times h_n
+=\int_Eg\times\tilde h
+=\int_Eg\times h\cr}">\[\begin{aligned}\int_Ef\times h
+&amp;=\int_Ef\times\tilde h
+=\lim_{n\to\infty}\int_Ef\times h_n\\
+&amp;=\lim_{n\to\infty}\int_Eg\times h_n
+=\int_Eg\times\tilde h
+=\int_Eg\times h\\\end{aligned}\]</span></p>
+<p>untuk setiap <span class="math inline" data-source-tex="E\in\Tau">\(E\in\Tau\)</span>, sedangkan <span class="math inline" data-source-tex="g\times h">\(g\times h\)</span> terukur secara
+virtual terhadap <span class="math inline" data-source-tex="(\mu\restrp\Tau)">\((\mu\restrp\Tau)\)</span>, sehingga <span class="math inline" data-source-tex="g\times h">\(g\times h\)</span> merupakan
+ekspektasi bersyarat dari <span class="math inline" data-source-tex="f\times h">\(f\times h\)</span>.</p>
+<p> </p>
+<p><strong>(c)</strong> Terakhir, tinjau kasus umum dengan <span class="math inline" data-source-tex="f">\(f\)</span> terintegralkan dan <span class="math inline" data-source-tex="h">\(h\)</span>
+terukur secara virtual. Tetapkan <span class="math inline" data-source-tex="f^+=f\vee 0">\(f^+=f\vee 0\)</span> dan <span class="math inline" data-source-tex="f^-=(-f)\vee 0">\(f^-=(-f)\vee 0\)</span>,
+sehingga <span class="math inline" data-source-tex="f=f^+-f^-">\(f=f^+-f^-\)</span> dan <span class="math inline" data-source-tex="0\le f^+,\,f^-\le|f|">\(0\le f^+,\,f^-\le|f|\)</span>; serupa dengan itu,
+tetapkan <span class="math inline" data-source-tex="h^+=h\vee 0">\(h^+=h\vee 0\)</span> dan <span class="math inline" data-source-tex="h^-=(-h)\vee 0">\(h^-=(-h)\vee 0\)</span>. Misalkan <span class="math inline" data-source-tex="g_1">\(g_1\)</span> dan <span class="math inline" data-source-tex="g_2">\(g_2\)</span>
+ekspektasi bersyarat dari <span class="math inline" data-source-tex="f^+">\(f^+\)</span> dan <span class="math inline" data-source-tex="f^-">\(f^-\)</span> pada <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>. Karena
+<span class="math inline" data-source-tex="0\le f^+">\(0\le f^+\)</span>, <span class="math inline" data-source-tex="f^-\le|f|">\(f^-\le|f|\)</span>, maka <span class="math inline" data-source-tex="0\le g_1">\(0\le g_1\)</span>, <span class="math inline" data-source-tex="g_2\leae g_0">\(g_2\leae g_0\)</span>, sedangkan
+<span class="math inline" data-source-tex="g\eae g_1-g_2">\(g\eae g_1-g_2\)</span>.</p>
+<p>Kita melihat bahwa</p>
+<p><span class="math display" data-source-tex="\eqalign{f\times h\text{ terintegralkan}
+&amp;\iff\,|f|\times|h|=|f\times h|\text{ terintegralkan}\cr
+&amp;\iff\,g_0\times |h|\text{ terintegralkan}\cr
+&amp;\iff\,g_0\times h\text{ terintegralkan}.\cr}">\[\begin{aligned}f\times h\text{ terintegralkan}
+&amp;\iff\,|f|\times|h|=|f\times h|\text{ terintegralkan}\\
+&amp;\iff\,g_0\times |h|\text{ terintegralkan}\\
+&amp;\iff\,g_0\times h\text{ terintegralkan}.\\\end{aligned}\]</span></p>
+<p>Dan dalam hal ini keempat fungsi
+<span class="math inline" data-source-tex="f^+\times h^+,\ldots,f^-\times h^-">\(f^+\times h^+,\ldots,f^-\times h^-\)</span> terintegralkan, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="(g_1-g_2)\times h
+=g_1\times h^+-g_2\times h^+-g_1\times h^-+g_2\times h^-">\((g_1-g_2)\times h
+=g_1\times h^+-g_2\times h^+-g_1\times h^-+g_2\times h^-\)</span></div>
+<p>merupakan ekspektasi bersyarat dari</p>
+<div class="centerline"><span class="math inline" data-source-tex="f^+\times h^+-f^-\times h^+-f^+\times h^-+f^-\times h^- 
+=f\times h">\(f^+\times h^+-f^-\times h^+-f^+\times h^-+f^-\times h^- 
+=f\times h\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="g\times h\eae(g_1-g_2)\times h">\(g\times h\eae(g_1-g_2)\times h\)</span>, fungsi ini juga
+merupakan ekspektasi bersyarat dari <span class="math inline" data-source-tex="f\times h">\(f\times h\)</span>, dan selesailah bukti.</p></aside>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="233X" data-source-id="233X"><span class="anchor" id="233Xa"></span><h2><span class="source-label">233X</span> Latihan dasar (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang probabilitas dan <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> suatu
+subaljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. Misalkan <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> suatu
+barisan fungsi nonnegatif yang <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan, dan andaikan <span class="math inline" data-source-tex="g_n">\(g_n\)</span>
+suatu ekspektasi bersyarat dari <span class="math inline" data-source-tex="f_n">\(f_n\)</span> pada <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>.
+Andaikan <span class="math inline" data-source-tex="f=\liminf_{n\to\infty}f_n">\(f=\liminf_{n\to\infty}f_n\)</span> terintegralkan dan mempunyai
+ekspektasi bersyarat <span class="math inline" data-source-tex="g">\(g\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="g\leae\liminf_{n\to\infty}g_n">\(g\leae\liminf_{n\to\infty}g_n\)</span>.</p>
+</section>
+<section class="source-unit" id="233Xb" data-source-id="233Xb"><h3><span class="source-label">233Xb</span> (b) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="I\subseteq\Bbb R">\(I\subseteq\Bbb R\)</span> suatu selang dan
+<span class="math inline" data-source-tex="\phi:I\to\Bbb R">\(\phi:I\to\Bbb R\)</span> suatu fungsi. Tunjukkan bahwa <span class="math inline" data-source-tex="\phi">\(\phi\)</span> konveks jika dan
+hanya jika <span class="math inline" data-source-tex="\{x:x\in I,\,\phi(x)+bx\le c\}">\(\{x:x\in I,\,\phi(x)+bx\le c\}\)</span> merupakan selang untuk setiap
+<span class="math inline" data-source-tex="b">\(b\)</span>, <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>.</p>
+</section>
+<section class="source-unit" id="233Xc" data-source-id="233Xc"><h3><span class="source-label">233Xc</span> (&gt;c) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="I\subseteq\Bbb R">\(I\subseteq\Bbb R\)</span> suatu selang terbuka dan
+<span class="math inline" data-source-tex="\phi:I\to\Bbb R">\(\phi:I\to\Bbb R\)</span> suatu fungsi. (i) Tunjukkan bahwa jika <span class="math inline" data-source-tex="\phi">\(\phi\)</span> dapat
+didiferensialkan, maka fungsi tersebut konveks jika dan hanya jika
+<span class="math inline" data-source-tex="\phi&#x27;">\(\phi&#x27;\)</span> tak menurun. (ii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="\phi">\(\phi\)</span> kontinu mutlak
+pada setiap subselang tertutup berbatas dari <span class="math inline" data-source-tex="I">\(I\)</span>, maka <span class="math inline" data-source-tex="\phi">\(\phi\)</span> konveks
+jika dan hanya jika <span class="math inline" data-source-tex="\phi&#x27;">\(\phi&#x27;\)</span> tak menurun pada domainnya.</p>
+</section>
+<section class="source-unit" id="233Xd" data-source-id="233Xd"><h3><span class="source-label">233Xd</span> (d) </h3>
+<p>Untuk setiap <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span>, suatu subhimpunan <span class="math inline" data-source-tex="C">\(C\)</span> dari
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> disebut <strong>konveks</strong> jika <span class="math inline" data-source-tex="tx + (1-t)y\in C">\(tx + (1-t)y\in C\)</span> untuk semua
+<span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="y\in C">\(y\in C\)</span>, dan <span class="math inline" data-source-tex="t\in[0,1]">\(t\in[0,1]\)</span>. Jika <span class="math inline" data-source-tex="C\subseteq\BbbR^r">\(C\subseteq\BbbR^r\)</span> konveks, maka
+suatu fungsi <span class="math inline" data-source-tex="\phi:C\to\Bbb R">\(\phi:C\to\Bbb R\)</span> disebut <strong>konveks</strong> jika
+<span class="math inline" data-source-tex="\phi(tx+(1-t)y)\le t\phi(x)+(1-t)\phi(y)">\(\phi(tx+(1-t)y)\le t\phi(x)+(1-t)\phi(y)\)</span> untuk semua <span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="y\in C">\(y\in C\)</span>,
+dan <span class="math inline" data-source-tex="t\in[0,1]">\(t\in[0,1]\)</span>.</p>
+<p>Misalkan <span class="math inline" data-source-tex="C\subseteq\BbbR^r">\(C\subseteq\BbbR^r\)</span> suatu himpunan konveks dan
+<span class="math inline" data-source-tex="\phi:C\to\Bbb R">\(\phi:C\to\Bbb R\)</span> suatu fungsi. Tunjukkan bahwa pernyataan-pernyataan
+berikut ekuivalen: (i) fungsi <span class="math inline" data-source-tex="\phi">\(\phi\)</span> konveks; (ii) himpunan
+<span class="math inline" data-source-tex="\{(x,t):x\in C,\,t\in\Bbb R,\,t\ge\phi(x)\}">\(\{(x,t):x\in C,\,t\in\Bbb R,\,t\ge\phi(x)\}\)</span> konveks dalam
+<span class="math inline" data-source-tex="\BbbR^{r+1}">\(\BbbR^{r+1}\)</span>; (iii) himpunan
+<span class="math inline" data-source-tex="\{x:x\in C,\,\phi(x)+b\dotproduct x\le c\}">\(\{x:x\in C,\,\phi(x)+b\dotproduct x\le c\}\)</span> konveks dalam <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>
+untuk setiap <span class="math inline" data-source-tex="b\in\BbbR^r">\(b\in\BbbR^r\)</span> dan <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>, dengan menuliskan
+<span class="math inline" data-source-tex="b\dotproduct x=\sum_{i=1}^r\beta_i\xi_i">\(b\dotproduct x=\sum_{i=1}^r\beta_i\xi_i\)</span> jika
+<span class="math inline" data-source-tex="b=(\beta_1,\ldots,\beta_r)">\(b=(\beta_1,\ldots,\beta_r)\)</span> dan <span class="math inline" data-source-tex="x=(\xi_1,\ldots,\xi_r)">\(x=(\xi_1,\ldots,\xi_r)\)</span>.</p>
+</section>
+<section class="source-unit" id="233Xe" data-source-id="233Xe"><h3><span class="source-label">233Xe</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="I\subseteq\Bbb R">\(I\subseteq\Bbb R\)</span> suatu selang dan
+<span class="math inline" data-source-tex="\phi:I\to\Bbb R">\(\phi:I\to\Bbb R\)</span> suatu fungsi konveks.</p>
+<p>   (i) Tunjukkan bahwa jika <span class="math inline" data-source-tex="a">\(a\)</span>, <span class="math inline" data-source-tex="d\in I">\(d\in I\)</span>, dan <span class="math inline" data-source-tex="a&lt;b\le c&lt;d">\(a&lt;b\le c&lt;d\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Bover{\phi(b)-\phi(a)}{b-a}
+\le\Bover{\phi(d)-\phi(c)}{d-c}">\(\Bover{\phi(b)-\phi(a)}{b-a}
+\le\Bover{\phi(d)-\phi(c)}{d-c}\)</span>.</div>
+<p>   (ii) Tunjukkan bahwa <span class="math inline" data-source-tex="\phi">\(\phi\)</span> kontinu pada setiap titik interior
+<span class="math inline" data-source-tex="I">\(I\)</span>.</p>
+<p>   (iii) Tunjukkan bahwa <em>salah satu</em> <span class="math inline" data-source-tex="\phi">\(\phi\)</span> monoton pada <span class="math inline" data-source-tex="I">\(I\)</span>
+<em>atau</em> terdapat <span class="math inline" data-source-tex="c\in I">\(c\in I\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\phi(c)=\min_{x\in I}\phi(x)">\(\phi(c)=\min_{x\in I}\phi(x)\)</span>, dan <span class="math inline" data-source-tex="\phi">\(\phi\)</span> tak menaik pada
+<span class="math inline" data-source-tex="I\cap\ocint{-\infty,c}">\(I\cap\ocint{-\infty,c}\)</span> serta monoton tak menurun pada
+<span class="math inline" data-source-tex="I\cap\coint{c,\infty}">\(I\cap\coint{c,\infty}\)</span>.</p>
+<p>   (iv) Tunjukkan bahwa <span class="math inline" data-source-tex="\phi">\(\phi\)</span> dapat didiferensialkan di semua titik
+<span class="math inline" data-source-tex="I">\(I\)</span> kecuali pada suatu himpunan titik yang paling banyak terhitung, dan turunannya tak
+menurun dalam arti bahwa <span class="math inline" data-source-tex="\phi&#x27;(x)\le\phi&#x27;(y)">\(\phi&#x27;(x)\le\phi&#x27;(y)\)</span> setiap kali
+<span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="y\in\dom\phi&#x27;">\(y\in\dom\phi&#x27;\)</span> dan <span class="math inline" data-source-tex="x\le y">\(x\le y\)</span>.</p>
+<p>   (v) Tunjukkan bahwa jika <span class="math inline" data-source-tex="I">\(I\)</span> tertutup dan berbatas serta <span class="math inline" data-source-tex="\phi">\(\phi\)</span>
+kontinu, maka <span class="math inline" data-source-tex="\phi">\(\phi\)</span> kontinu mutlak.</p>
+<p>   (vi) Tunjukkan bahwa jika <span class="math inline" data-source-tex="I">\(I\)</span> tertutup dan berbatas serta
+<span class="math inline" data-source-tex="\psi:I\to\Bbb R">\(\psi:I\to\Bbb R\)</span> kontinu mutlak dengan turunan tak menurun, maka <span class="math inline" data-source-tex="\psi">\(\psi\)</span>
+konveks.</p>
+</section>
+<section class="source-unit" id="233Xf" data-source-id="233Xf"><h3><span class="source-label">233Xf</span> (f) </h3>
+<p>Tunjukkan bahwa jika <span class="math inline" data-source-tex="I\subseteq\Bbb R">\(I\subseteq\Bbb R\)</span> suatu selang dan
+<span class="math inline" data-source-tex="\phi">\(\phi\)</span>, <span class="math inline" data-source-tex="\psi:I\to\Bbb R">\(\psi:I\to\Bbb R\)</span> fungsi-fungsi konveks, maka
+<span class="math inline" data-source-tex="a\phi+b\psi">\(a\phi+b\psi\)</span> juga konveks untuk setiap <span class="math inline" data-source-tex="a">\(a\)</span>, <span class="math inline" data-source-tex="b\ge 0">\(b\ge 0\)</span>.</p>
+</section>
+<section class="source-unit" id="233Xg" data-source-id="233Xg"><h3><span class="source-label">233Xg</span> (g) </h3>
+<p>Dalam konteks <a class="xref" href="#233K">233K</a>, berikan contoh ketika <span class="math inline" data-source-tex="g\times h">\(g\times h\)</span>
+terintegralkan tetapi <span class="math inline" data-source-tex="f\times h">\(f\times h\)</span> tidak terintegralkan.
+<span class="hint" role="note"><strong>Petunjuk:</strong> ambil <span class="math inline" data-source-tex="X">\(X\)</span>, <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, dan <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> seperti dalam <a class="xref" href="#233Cb">233Cb</a>, lalu atur agar
+<span class="math inline" data-source-tex="g">\(g\)</span> bernilai <span class="math inline" data-source-tex="0">\(0\)</span>.</span></p>
+</section>
+<section class="source-unit" id="233Xh" data-source-id="233Xh"><h3><span class="source-label">233Xh</span> (h) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="I\subseteq\Bbb R">\(I\subseteq\Bbb R\)</span> suatu selang dan <span class="math inline" data-source-tex="\Phi">\(\Phi\)</span>
+suatu keluarga tak kosong dari fungsi-fungsi konveks bernilai real pada
+<span class="math inline" data-source-tex="I">\(I\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\psi(x)=\sup_{\phi\in\Phi}\phi(x)">\(\psi(x)=\sup_{\phi\in\Phi}\phi(x)\)</span> berhingga
+untuk setiap <span class="math inline" data-source-tex="x\in I">\(x\in I\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\psi">\(\psi\)</span> konveks.</p>
+</section>
+<section class="source-unit" id="233Y" data-source-id="233Y"><span class="anchor" id="233Ya"></span><h2><span class="source-label">233Y</span> Latihan lanjutan (a) </h2>
+<p>Jika <span class="math inline" data-source-tex="I\subseteq\Bbb R">\(I\subseteq\Bbb R\)</span> suatu
+selang, suatu fungsi <span class="math inline" data-source-tex="\phi:I\to\Bbb R">\(\phi:I\to\Bbb R\)</span> disebut <strong>konveks-tengah</strong> jika
+<span class="math inline" data-source-tex="\phi(\bover{x+y}2)\le\bover12(\phi(x)+\phi(y))">\(\phi(\bover{x+y}2)\le\bover12(\phi(x)+\phi(y))\)</span> untuk semua
+<span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="y\in I">\(y\in I\)</span>. Tunjukkan bahwa fungsi konveks-tengah yang berbatas pada
+suatu subselang tak trivial dari <span class="math inline" data-source-tex="I">\(I\)</span> adalah konveks.</p>
+</section>
+<section class="source-unit" id="233Yb" data-source-id="233Yb"><h3><span class="source-label">233Yb</span> (b) </h3>
+<p>Perumum <a class="xref" href="#233Xd">233Xd</a> ke ruang bernorma sembarang sebagai
+pengganti <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>.</p>
+</section>
+<section class="source-unit" id="233Yc" data-source-id="233Yc"><h3><span class="source-label">233Yc</span> (c) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang probabilitas dan
+<span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> suatu subaljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. Misalkan <span class="math inline" data-source-tex="\phi">\(\phi\)</span> suatu
+fungsi konveks bernilai real dengan domain suatu selang
+<span class="math inline" data-source-tex="I\subseteq\Bbb R">\(I\subseteq\Bbb R\)</span>, dan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real yang terintegralkan
+pada <span class="math inline" data-source-tex="X">\(X\)</span> sedemikian sehingga <span class="math inline" data-source-tex="f(x)\in I">\(f(x)\in I\)</span> untuk hampir setiap <span class="math inline" data-source-tex="x\in X">\(x\in X\)</span>
+dan <span class="math inline" data-source-tex="\phi f">\(\phi f\)</span> terintegralkan. Misalkan <span class="math inline" data-source-tex="g">\(g\)</span> dan <span class="math inline" data-source-tex="h">\(h\)</span> masing-masing
+ekspektasi bersyarat pada <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> dari <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="\phi f">\(\phi f\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="g(x)\in I">\(g(x)\in I\)</span> untuk hampir setiap <span class="math inline" data-source-tex="x">\(x\)</span> dan <span class="math inline" data-source-tex="\phi g\leae h">\(\phi g\leae h\)</span>.</p>
+</section>
+<section class="source-unit" id="233Yd" data-source-id="233Yd"><h3><span class="source-label">233Yd</span> (d) </h3>
+<p>(i) Tunjukkan bahwa jika <span class="math inline" data-source-tex="I\subseteq\Bbb R">\(I\subseteq\Bbb R\)</span> suatu selang
+berbatas, <span class="math inline" data-source-tex="E\subseteq I">\(E\subseteq I\)</span> terukur Lebesgue, dan
+<span class="math inline" data-source-tex="\mu E&gt;\bover23\mu I">\(\mu E&gt;\bover23\mu I\)</span> dengan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> ukuran Lebesgue, maka untuk setiap
+<span class="math inline" data-source-tex="x\in I">\(x\in I\)</span> terdapat <span class="math inline" data-source-tex="y">\(y\)</span>, <span class="math inline" data-source-tex="z\in E">\(z\in E\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="z=\bover{x+y}2">\(z=\bover{x+y}2\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> menurut <a class="xref" href="../134/index.html#134Ya">134Ya</a>/263A,
+<span class="math inline" data-source-tex="\mu(x+E)+\mu(2E)&gt;\mu(2I)">\(\mu(x+E)+\mu(2E)&gt;\mu(2I)\)</span>.</span> (ii) Tunjukkan bahwa jika
+<span class="math inline" data-source-tex="f:[0,1]\to\Bbb R">\(f:[0,1]\to\Bbb R\)</span> suatu fungsi konveks-tengah terukur Lebesgue
+(definisi: <a class="xref" href="#233Ya">233Ya</a>), <span class="math inline" data-source-tex="a&gt;0">\(a&gt;0\)</span>, dan
+<span class="math inline" data-source-tex="E=\{x:x\in[0,1]">\(E=\{x:x\in[0,1]\)</span>, <span class="math inline" data-source-tex="a\le f(x)&lt;2a\}">\(a\le f(x)&lt;2a\}\)</span> tidak terabaikan, maka terdapat
+selang tak trivial <span class="math inline" data-source-tex="I\subseteq[0,1]">\(I\subseteq[0,1]\)</span> sedemikian sehingga <span class="math inline" data-source-tex="f(x)&gt;0">\(f(x)&gt;0\)</span> untuk
+setiap <span class="math inline" data-source-tex="x\in I">\(x\in I\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> <a class="xref" href="../223/index.html#223B">223B</a>.</span> (iii) Andaikan
+<span class="math inline" data-source-tex="f:[0,1]\to\Bbb R">\(f:[0,1]\to\Bbb R\)</span> suatu fungsi konveks-tengah sedemikian sehingga
+<span class="math inline" data-source-tex="f\le 0">\(f\le 0\)</span> hampir di mana-mana dalam <span class="math inline" data-source-tex="[0,1]">\([0,1]\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="f\le 0">\(f\le 0\)</span> di
+setiap titik <span class="math inline" data-source-tex="\ooint{0,1}">\(\ooint{0,1}\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> untuk setiap <span class="math inline" data-source-tex="x\in\ooint{0,1}">\(x\in\ooint{0,1}\)</span>,
+<span class="math inline" data-source-tex="\max(f(x-t),f(x+t))\le 0">\(\max(f(x-t),f(x+t))\le 0\)</span> untuk hampir setiap
+<span class="math inline" data-source-tex="t\in[0,\min(x,1-x)]">\(t\in[0,\min(x,1-x)]\)</span>.</span>
+(iv) Andaikan <span class="math inline" data-source-tex="f:[0,1]\to\Bbb R">\(f:[0,1]\to\Bbb R\)</span> suatu fungsi konveks-tengah terukur
+Lebesgue sedemikian sehingga <span class="math inline" data-source-tex="f(0)=f(1)=0">\(f(0)=f(1)=0\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="f(x)\le 0">\(f(x)\le 0\)</span>
+untuk setiap <span class="math inline" data-source-tex="x\in[0,1]">\(x\in[0,1]\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> tunjukkan bahwa <span class="math inline" data-source-tex="\{x:f(x)\le 0\}">\(\{x:f(x)\le 0\}\)</span> padat dalam <span class="math inline" data-source-tex="[0,1]">\([0,1]\)</span>, gunakan
+(ii) untuk menunjukkan bahwa himpunan tersebut koterabaikan dalam
+<span class="math inline" data-source-tex="[0,1]">\([0,1]\)</span>, lalu terapkan (iii).</span>
+(v) Tunjukkan bahwa jika <span class="math inline" data-source-tex="I\subseteq\Bbb R">\(I\subseteq\Bbb R\)</span> suatu selang dan
+<span class="math inline" data-source-tex="f:I\to\Bbb R">\(f:I\to\Bbb R\)</span> suatu fungsi konveks-tengah terukur Lebesgue, maka fungsi
+tersebut konveks.</p>
+</section>
+<section class="source-unit" id="233Ye" data-source-id="233Ye"><h3><span class="source-label">233Ye</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang probabilitas,
+<span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> suatu subaljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>, dan
+<span class="math inline" data-source-tex="f:X\to[0,\infty]">\(f:X\to[0,\infty]\)</span> suatu fungsi terukur terhadap <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. Tunjukkan
+bahwa (i) terdapat suatu fungsi yang terukur terhadap <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>, yaitu
+<span class="math inline" data-source-tex="g:X\to[0,\infty]">\(g:X\to[0,\infty]\)</span>, sedemikian sehingga <span class="math inline" data-source-tex="\int_Fg=\int_Ff">\(\int_Fg=\int_Ff\)</span> untuk setiap
+<span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>
+(ii) setiap dua fungsi semacam itu sama hampir di mana-mana.</p>
+</section>
+<section class="source-unit" id="233Yf" data-source-id="233Yf"><h3><span class="source-label">233Yf</span> (f) </h3>
+<p>Andaikan <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span> dan
+<span class="math inline" data-source-tex="C\subseteq\BbbR^r\setminus\{0\}">\(C\subseteq\BbbR^r\setminus\{0\}\)</span> suatu himpunan konveks. Tunjukkan
+bahwa terdapat <span class="math inline" data-source-tex="b\in\BbbR^r">\(b\in\BbbR^r\)</span> tak nol sedemikian sehingga
+<span class="math inline" data-source-tex="\varinnerprod{b}{z}\ge 0">\(\varinnerprod{b}{z}\ge 0\)</span> untuk setiap <span class="math inline" data-source-tex="z\in C">\(z\in C\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> jika <span class="math inline" data-source-tex="r=2">\(r=2\)</span>, identifikasikan <span class="math inline" data-source-tex="\BbbR^2">\(\BbbR^2\)</span> dengan <span class="math inline" data-source-tex="\Bbb C">\(\Bbb C\)</span>; reduksikan
+ke kasus ketika <span class="math inline" data-source-tex="C">\(C\)</span> tidak memuat titik yang real dan negatif; tetapkan
+<span class="math inline" data-source-tex="\theta=\sup\{\arg z:z\in C\}">\(\theta=\sup\{\arg z:z\in C\}\)</span> dan <span class="math inline" data-source-tex="b=-ie^{i\theta}">\(b=-ie^{i\theta}\)</span>. Lalu gunakan
+induksi pada <span class="math inline" data-source-tex="r">\(r\)</span>.</span></p>
+</section>
+<section class="source-unit" id="233Yg" data-source-id="233Yg"><h3><span class="source-label">233Yg</span> (g) </h3>
+<p>Andaikan <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span>, <span class="math inline" data-source-tex="C\subseteq\BbbR^r">\(C\subseteq\BbbR^r\)</span> suatu himpunan
+konveks, dan <span class="math inline" data-source-tex="\phi:C\to\Bbb R">\(\phi:C\to\Bbb R\)</span> suatu fungsi konveks. Tunjukkan bahwa
+terdapat fungsi <span class="math inline" data-source-tex="h:\BbbR^r\to\coint{-\infty,\infty}">\(h:\BbbR^r\to\coint{-\infty,\infty}\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\phi(z)=\sup\{h(y)+\varinnerprod{z}{y}:y\in\BbbR^r\}">\(\phi(z)=\sup\{h(y)+\varinnerprod{z}{y}:y\in\BbbR^r\}\)</span> untuk setiap
+<span class="math inline" data-source-tex="z\in C">\(z\in C\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> coba <span class="math inline" data-source-tex="h(y)=\inf\{\phi(z)-\varinnerprod{z}{y}:z\in C\}">\(h(y)=\inf\{\phi(z)-\varinnerprod{z}{y}:z\in C\}\)</span>, lalu
+terapkan <a class="xref" href="#233Yf">233Yf</a> pada suatu translasi dari
+<span class="math inline" data-source-tex="\{(z,t):\phi(z)\le t\}">\(\{(z,t):\phi(z)\le t\}\)</span>.</span></p>
+</section>
+<section class="source-unit" id="233Yh" data-source-id="233Yh"><h3><span class="source-label">233Yh</span> (h) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang probabilitas,
+<span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span> suatu bilangan bulat, dan <span class="math inline" data-source-tex="C\subseteq\BbbR^r">\(C\subseteq\BbbR^r\)</span> suatu himpunan
+konveks. Misalkan <span class="math inline" data-source-tex="f_1,\ldots,f_r">\(f_1,\ldots,f_r\)</span> fungsi-fungsi bernilai real yang
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan dan andaikan
+<span class="math inline" data-source-tex="\{x:x\in\bigcap_{j\le r}\dom f_j">\(\{x:x\in\bigcap_{j\le r}\dom f_j\)</span>,
+<span class="math inline" data-source-tex="(f_1(x),\ldots,f_r(x))\in C\}">\((f_1(x),\ldots,f_r(x))\in C\}\)</span> merupakan subhimpunan koterabaikan dari
+<span class="math inline" data-source-tex="X">\(X\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="(\int f_1,\ldots,\int f_r)\in C">\((\int f_1,\ldots,\int f_r)\in C\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> gunakan induksi pada <span class="math inline" data-source-tex="r">\(r\)</span>.</span></p>
+</section>
+<section class="source-unit" id="233Yi" data-source-id="233Yi"><h3><span class="source-label">233Yi</span> (i) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang probabilitas,
+<span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span> suatu bilangan bulat, <span class="math inline" data-source-tex="C\subseteq\BbbR^r">\(C\subseteq\BbbR^r\)</span> suatu himpunan
+konveks, dan <span class="math inline" data-source-tex="\phi:C\to\Bbb R">\(\phi:C\to\Bbb R\)</span> suatu fungsi konveks. Misalkan
+<span class="math inline" data-source-tex="f_1,\ldots,f_r">\(f_1,\ldots,f_r\)</span> fungsi-fungsi bernilai real yang
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan dan andaikan
+<span class="math inline" data-source-tex="\{x:x\in\bigcap_{j\le r}\dom f_j">\(\{x:x\in\bigcap_{j\le r}\dom f_j\)</span>,
+<span class="math inline" data-source-tex="(f_1(x),\ldots,f_r(x))\in C\}">\((f_1(x),\ldots,f_r(x))\in C\}\)</span> merupakan subhimpunan koterabaikan dari
+<span class="math inline" data-source-tex="X">\(X\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\phi(\int f_1,\ldots,\int f_r)\le\int\phi(f_1,\ldots,f_r)">\(\phi(\int f_1,\ldots,\int f_r)\le\int\phi(f_1,\ldots,f_r)\)</span>.</p>
+</section>
+<section class="source-unit" id="233Yj" data-source-id="233Yj"><h3><span class="source-label">233Yj</span> (j) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dengan
+<span class="math inline" data-source-tex="\mu X&gt;0">\(\mu X&gt;0\)</span>, <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span> suatu bilangan bulat, <span class="math inline" data-source-tex="C\subseteq\BbbR^r">\(C\subseteq\BbbR^r\)</span> suatu
+himpunan konveks sedemikian sehingga <span class="math inline" data-source-tex="tz\in C">\(tz\in C\)</span> setiap kali <span class="math inline" data-source-tex="z\in C">\(z\in C\)</span> dan
+<span class="math inline" data-source-tex="t&gt;0">\(t&gt;0\)</span>, dan <span class="math inline" data-source-tex="\phi:C\to\Bbb R">\(\phi:C\to\Bbb R\)</span> suatu fungsi konveks. Misalkan
+<span class="math inline" data-source-tex="f_1,\ldots,f_r">\(f_1,\ldots,f_r\)</span> fungsi-fungsi bernilai real yang
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan dan andaikan
+<span class="math inline" data-source-tex="\{x:x\in\bigcap_{j\le r}\dom f_j">\(\{x:x\in\bigcap_{j\le r}\dom f_j\)</span>,
+<span class="math inline" data-source-tex="(f_1(x),\ldots,f_r(x))\in C\}">\((f_1(x),\ldots,f_r(x))\in C\}\)</span> merupakan subhimpunan koterabaikan dari
+<span class="math inline" data-source-tex="X">\(X\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="(\int f_1,\ldots,\int f_r)\in C">\((\int f_1,\ldots,\int f_r)\in C\)</span> dan
+<span class="math inline" data-source-tex="\phi(\int f_1,\ldots,\int f_r)\le\int\phi(f_1,\ldots,f_r)">\(\phi(\int f_1,\ldots,\int f_r)\le\int\phi(f_1,\ldots,f_r)\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> dengan menggabungkan <a class="xref" href="../215/index.html#215B">215B</a>(viii) dan <a class="xref" href="../235/index.html#235K">235K</a> di bawah, tunjukkan bahwa
+terdapat suatu ukuran probabilitas <span class="math inline" data-source-tex="\nu">\(\nu\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span> dan suatu fungsi
+<span class="math inline" data-source-tex="h:X\to\coint{0,\infty}">\(h:X\to\coint{0,\infty}\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\int f_jd\mu=\int f_j\times h\,d\nu">\(\int f_jd\mu=\int f_j\times h\,d\nu\)</span> untuk setiap <span class="math inline" data-source-tex="j">\(j\)</span>.</span></p>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<section class="source-unit" id="233-notes" data-source-id="233-notes"><h2><span class="source-label">233-notes</span> Catatan penutup untuk Bagian 233 </h2>
+<p>Konsep ‘ekspektasi bersyarat‘ bersifat fundamental
+dalam teori probabilitas dan akan muncul kembali dalam konteks
+alamiahnya pada Bab 27. Namun, bahkan sebagai latihan teknik, saya
+berharap konsep tersebut akan terasa patut diperhatikan.</p>
+<p>Saya memperkenalkan <a class="xref" href="#233E">233E</a> sebagai ‘daftar fakta elementer‘, dan
+fakta-fakta tersebut memang langsung. Namun, di bawah permukaan terdapat
+sejumlah gagasan luar biasa yang menunggu untuk diungkapkan. Jika Anda
+mengambil <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> sebagai aljabar trivial <span class="math inline" data-source-tex="\{\emptyset,X\}">\(\{\emptyset,X\}\)</span>, sehingga
+ekspektasi bersyarat (yang unik) dari suatu fungsi terintegralkan <span class="math inline" data-source-tex="f">\(f\)</span>
+adalah fungsi konstan <span class="math inline" data-source-tex="(\int f)\chi X">\((\int f)\chi X\)</span>, maka 233Ed dan 233Ee menjadi
+versi-versi Teorema B.Levi dan Teorema Konvergensi Terdominasi Lebesgue.
+(Lema Fatou terdapat dalam <a class="xref" href="#233Xa">233Xa</a>.) Bahkan 233Eg dapat dipandang sebagai
+perumuman hasil <span class="math inline" data-source-tex="\int cf=c\int f">\(\int cf=c\int f\)</span>, dengan konstanta <span class="math inline" data-source-tex="c">\(c\)</span> diganti oleh
+fungsi berbatas yang terukur terhadap <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>. Tema berulang dalam
+bagian-bagian selanjutnya risalah ini ialah pencarian versi ‘bersyarat‘
+dari teorema-teorema. Bukti 233Ee merupakan contoh khas argumen yang
+diterjemahkan dari bukti hasil ‘tak bersyarat‘ semula.</p>
+<p>Saya mengemukakan bahwa <a class="xref" href="#233I">233I</a>-<a class="xref" href="#233J">233J</a> mengejutkan, dan menurut saya sebagian
+besar dari kita memang merasakannya demikian, bahkan ketika hasil-hasil
+itu diterapkan pada daftar fungsi konveks yang diberikan dalam <a class="xref" href="#233G">233G</a>.
+Namun, perlu saya nyatakan bahwa dalam satu segi <a class="xref" href="#233J">233J</a> hanya sedikit
+berkaitan dengan ekspektasi bersyarat. Satu-satunya sifat ekspektasi
+bersyarat yang digunakan dalam bukti ialah (i) jika <span class="math inline" data-source-tex="g">\(g\)</span> suatu ekspektasi
+bersyarat dari <span class="math inline" data-source-tex="f">\(f\)</span>, maka <span class="math inline" data-source-tex="a\chi X+bg">\(a\chi X+bg\)</span> merupakan ekspektasi bersyarat
+dari <span class="math inline" data-source-tex="a\chi X+bf">\(a\chi X+bf\)</span> untuk semua <span class="math inline" data-source-tex="a">\(a\)</span>, <span class="math inline" data-source-tex="b">\(b\)</span> real (ii) jika <span class="math inline" data-source-tex="g_1">\(g_1\)</span>, <span class="math inline" data-source-tex="g_2">\(g_2\)</span>
+merupakan ekspektasi bersyarat dari <span class="math inline" data-source-tex="f_1">\(f_1\)</span>, <span class="math inline" data-source-tex="f_2">\(f_2\)</span> dan <span class="math inline" data-source-tex="f_1\leae f_2">\(f_1\leae f_2\)</span>,
+maka <span class="math inline" data-source-tex="g_1\leae g_2">\(g_1\leae g_2\)</span>. Lihat 244Xm di bawah. Ketaksamaan Jensen mempunyai
+perluasan menarik ke kasus multidimensi, yang ditelaah dalam
+<a class="xref" href="#233Yf">233Yf</a>-<a class="xref" href="#233Yj">233Yj</a>.   
+Jika Anda pernah menjumpai bentuk ‘geometris‘ Teorema Hahn-Banach (lihat
+3A5C dalam Jilid 3), Anda akan mendapati <a class="xref" href="#233Yf">233Yf</a> dan <a class="xref" href="#233Yg">233Yg</a> sangat alami,
+dan mungkin memperhatikan bahwa kasus berdimensi hingga agak berbeda
+dari kasus berdimensi tak hingga yang mungkin pernah diajarkan kepada
+Anda. Menurut saya, langkah yang sebenarnya paling pelik terdapat dalam
+<a class="xref" href="#233Yh">233Yh</a>.</p>
+<p>Perhatikan bahwa 233Ib dapat dipandang sebagai kasus khusus <a class="xref" href="#233J">233J</a> ketika
+<span class="math inline" data-source-tex="\Tau=\{\emptyset,X\}">\(\Tau=\{\emptyset,X\}\)</span>. Bahkan 233Ia dapat diturunkan dari 233Ib yang
+diterapkan pada ukuran <span class="math inline" data-source-tex="\nu">\(\nu\)</span> dengan <span class="math inline" data-source-tex="\nu E=\int_Eg">\(\nu E=\int_Eg\)</span> untuk setiap
+<span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>.</p>
+<p>Seperti <a class="xref" href="#233B">233B</a>, argumen dalam <a class="xref" href="#233K">233K</a> tampaknya memiliki cukup banyak
+perincian teknis. Pokok hasil ini ialah bahwa kita dapat menyimpulkan
+keterintegralan <span class="math inline" data-source-tex="f\times h">\(f\times h\)</span> dari keterintegralan <span class="math inline" data-source-tex="g_0\times h">\(g_0\times h\)</span> (tetapi
+tidak dari keterintegralan <span class="math inline" data-source-tex="g\times h">\(g\times h\)</span>; lihat <a class="xref" href="#233Xg">233Xg</a>).
+Selebihnya seharusnya rutin.</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 2: Broad Foundations</cite>, Bagian 233.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 25 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-cumulative-html-route-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V2-S233&quot;,
+  &quot;source_member&quot;: &quot;mt2.2016/mt233.tex&quot;,
+  &quot;target_bytes&quot;: 40052,
+  &quot;target_sha256&quot;: &quot;645e10179fd46dbe22934c53dca9be5be09f18d1a5f2cf16e986e8e9a147a4fa&quot;,
+  &quot;source_ids&quot;: [
+    &quot;233&quot;,
+    &quot;233A&quot;,
+    &quot;233B&quot;,
+    &quot;233C&quot;,
+    &quot;233Ca&quot;,
+    &quot;233Cb&quot;,
+    &quot;233Cc&quot;,
+    &quot;233D&quot;,
+    &quot;233Da&quot;,
+    &quot;233Db&quot;,
+    &quot;233Dc&quot;,
+    &quot;233Dd&quot;,
+    &quot;233E&quot;,
+    &quot;233F&quot;,
+    &quot;233G&quot;,
+    &quot;233H&quot;,
+    &quot;233I&quot;,
+    &quot;233J&quot;,
+    &quot;233K&quot;,
+    &quot;233X&quot;,
+    &quot;233Xa&quot;,
+    &quot;233Xb&quot;,
+    &quot;233Xc&quot;,
+    &quot;233Xd&quot;,
+    &quot;233Xe&quot;,
+    &quot;233Xf&quot;,
+    &quot;233Xg&quot;,
+    &quot;233Xh&quot;,
+    &quot;233Y&quot;,
+    &quot;233Ya&quot;,
+    &quot;233Yb&quot;,
+    &quot;233Yc&quot;,
+    &quot;233Yd&quot;,
+    &quot;233Ye&quot;,
+    &quot;233Yf&quot;,
+    &quot;233Yg&quot;,
+    &quot;233Yh&quot;,
+    &quot;233Yi&quot;,
+    &quot;233Yj&quot;
+  ],
+  &quot;corpus_id&quot;: &quot;O007-FREMLIN&quot;,
+  &quot;volume_id&quot;: &quot;O007-FREMLIN-V2&quot;,
+  &quot;volume_source_title&quot;: &quot;Broad Foundations&quot;,
+  &quot;route&quot;: &quot;233&quot;,
+  &quot;official_source_page_start&quot;: 109,
+  &quot;chapter_official_source_pages&quot;: [
+    96,
+    137
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

@@ -264,3 +264,28 @@ as `O007-CORR-0239`–`O007-CORR-0244`; the source's single-integral notation in
 This semantic distinction is propagated through Section 265, including its
 exercises and notes. `Luas permukaan bola` remains the compact form when the
 dimension is already fixed by context.
+
+### Chapter 27 — Probability theory (2026-08-29)
+
+Use the following reader-facing forms throughout `mt27.tex` and
+`mt271.tex`–`mt276.tex`:
+
+| Concept or construction | Preferred O007 form | Decision and boundary |
+|---|---|---|
+| probability theory / probability space | `teori probabilitas`; `ruang probabilitas` | Continue the admitted noun `probabilitas` and do not alternate the chapter title with `teori peluang`. |
+| distribution / joint distribution | `distribusi`; `distribusi bersama` | Use for laws of random variables and tuples; preserve each image-measure formula defining the distribution. |
+| independent / independence | `bebas`; `kebebasan` | Use the compact established probability adjective and noun. Reserve `saling lepas` for disjoint sets, not independent events. |
+| random variable / expectation / variance | `variabel acak`; `ekspektasi`; `varians` | Apply consistently in prose while preserving `\Expn`, `\Var`, and all source formulas. |
+| strong law of large numbers | `hukum kuat bilangan besar` | Use this word order in titles and cross-references for all six forms in the chapter. |
+| central limit theorem | `teorema limit pusat` | Use the conventional Indonesian statistical term; retain every normalization and limiting distribution exactly. |
+| martingale / martingale difference sequence | `martingal`; `barisan selisih martingal` | Use the localized technical noun consistently. A sequence of martingale increments is a `barisan selisih`, not a generic sequence of numerical differences. |
+| conditional expectation / stopping time | `ekspektasi bersyarat`; `waktu henti` | Continue the Chapter 23 conditional-expectation term and use the standard stochastic-process term for stopping times. |
+| exchangeable / predictable sequence | `dapat dipertukarkan`; `barisan terprediksi` | The first names invariance under finite reindexing; the second names adaptation to past information. Do not collapse either into ordinary independence. |
+| almost everywhere / almost surely | `hampir di mana-mana`; `hampir pasti` | Use the measure-theoretic form for a.e. statements and the probability idiom for events asserted with probability one. |
+| sigma-additive | `$\sigma$-aditif` | Keep the symbolic prefix before the Indonesian adjective, matching the established mathematical compound; do not reverse it to `aditif-$\sigma$`. |
+
+The lexical `aljabar-sigma` and `subaljabar-sigma` localization exception
+continues from Chapters 21–26. Symbolic sigma variables, `\sigma`-finite
+compounds, formulas, stable identifiers, exercise/hint relations, and source
+order remain unchanged except for separately ledgered high-confidence source
+corrections.

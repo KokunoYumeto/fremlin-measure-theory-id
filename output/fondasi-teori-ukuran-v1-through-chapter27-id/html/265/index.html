@@ -1,0 +1,939 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Ukuran Hausdorff dari permukaan — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        BbbQ: '\\mathbb{Q}', BbbR: '\\mathbb{R}',
+        eightBbb: ['\\mathbb{#1}', 1],
+        DiniD: '\\overline{D}', Dinid: '\\underline{D}',
+        Var: '\\operatorname{Var}',
+        bumpeq: '=_{\\mathrm{approx}}',
+        intstar: '\\operatorname{int}^{*}',
+        family: ['\\langle #3\\rangle_{#1\\in #2}', 3],
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        displaycause: ['\\text{(#1)}', 1],
+        bigcupop: '\\bigcup', biggerint: '\\int',
+        eae: '=_{\\mathrm{a.e.}}', leae: '\\le_{\\mathrm{a.e.}}', geae: '\\ge_{\\mathrm{a.e.}}',
+        restr: '\\mathord{\\upharpoonright}', restrp: '\\mathord{\\upharpoonright}',
+        Real: '\\operatorname{Re}', Imag: '\\operatorname{Im}',
+        tbf: ['\\mathbf{#1}', 1], eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Qed: '\\square',
+        BbbN: '\\mathbb{N}', Expn: '\\mathbb{E}',
+        Cal: ['\\mathcal{#1}', 1], dom: '\\operatorname{dom}',
+        coint: ['\\left[#1\\right[', 1],
+        sequencen: ['\\langle #1_n\\rangle_{n\\in\\mathbb{N}}', 1],
+        imp: '\\mathop{\\text{pelestari ukuran melalui prapeta}}',
+        tildeTau: '\\widetilde{\\mathrm{T}}',
+        LLcorner: '\\mathbin{\\llcorner}',
+        prooflet: ['#1', 1],
+        halfarrow: '\\rightharpoonup',
+        esssup: '\\mathop{\\text{ess sup}}',
+        ocint: ['\\left]#1\\right]', 1],
+        fraction: ['\\mathord{<}#1\\mathord{>}', 1],
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        fraction: ['\\mathord{<}#1\\mathord{>}', 1],
+        tbf: ['\\mathbf{#1}', 1],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        BbbN: '\\mathbb{{N}}', BbbQ: '\\mathbb{{Q}}',
+        BbbZ: '\\mathbb{{Z}}',
+        bover: ['\\frac{{#1}}{{#2}}', 2],
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        esssup: '\\mathop{{\\text{{ess sup}}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        family: ['\\langle #3\\rangle_{{#1\\in #2}}', 3],
+        familyi: ['\\langle #2\\rangle_{{i\\in #1}}', 2],
+        familyiI: ['\\langle #1\\rangle_{{i\\in I}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        ocint: ['\\left]#1\\right]', 1],
+        restr: '\\mathord{{\\upharpoonright}}',
+        restrp: '\\mathord{{\\upharpoonright}}',
+        roibr: '\\mathopen{{[}}',
+        sequence: ['\\langle #2\\rangle_{{#1\\in\\mathbb{{N}}}}', 2],
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1],
+        ssbullet: '{{\\scriptscriptstyle\\bullet}}',
+        tensorhat: '\\widehat{{\\otimes}}',
+        Tensorhat: '\\widehat{{\\bigotimes}}'
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 2 · Bagian 265</p>
+  <h1>Ukuran Hausdorff dari permukaan</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi kumulatif</a></nav>
+<main id="isi">
+<p>© 2000</p>
+<p>Dalam bagian ini saya menyajikan versi baru argumen-argumen §<a class="xref" href="../263/index.html#263">263</a>, kali
+ini bukan untuk membenarkan integrasi dengan substitusi, melainkan untuk
+memberikan metode yang efektif dalam praktik guna menghitung ukuran
+Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> dari permukaan mulus berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> dalam ruang
+berdimensi <span class="math inline" data-source-tex="s">\(s\)</span>. Kasus dasar yang patut diingat adalah <span class="math inline" data-source-tex="r=2">\(r=2\)</span>, <span class="math inline" data-source-tex="s=3">\(s=3\)</span>,
+meskipun kombinasi lain yang mudah Anda bayangkan juga akan sangat
+membantu intuisi. Saya memberikan teorema fundamental (<a class="xref" href="#265E">265E</a>) yang
+menyediakan rumus yang dapat digunakan untuk menghitung ukuran
+berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> dari permukaan dalam ruang berdimensi <span class="math inline" data-source-tex="s">\(s\)</span> yang
+diparameterkan oleh fungsi terdiferensialkan, lalu mengerjakan beberapa
+perhitungan untuk permukaan bola berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> (<a class="xref" href="#265F">265F</a>-<a class="xref" href="#265H">265H</a>).</p>
+<section class="source-unit" id="265A" data-source-id="265A"><h2><span class="source-label">265A</span> Ukuran Hausdorff ternormalisasi </h2>
+<p>Seperti
+yang saya kemukakan pada akhir bagian sebelumnya, ukuran Hausdorff,
+sebagaimana didefinisikan dalam <a class="xref" href="../264/index.html#264A">264A</a>-<a class="xref" href="../264/index.html#264C">264C</a>, bukanlah ukuran yang paling
+sesuai untuk pekerjaan kita di sini; karena itu dalam
+bagian ini saya akan menggunakan <strong>ukuran Hausdorff ternormalisasi</strong>,
+yang berarti <span class="math inline" data-source-tex="\nu_r=2^{-r}\beta_r\mu_{Hr}">\(\nu_r=2^{-r}\beta_r\mu_{Hr}\)</span>, dengan <span class="math inline" data-source-tex="\mu_{Hr}">\(\mu_{Hr}\)</span> ukuran
+Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> (ditafsirkan dalam ruang mana pun yang
+sedang ditinjau) dan <span class="math inline" data-source-tex="\beta_r=\mu_rB(\tbf{0},1)">\(\beta_r=\mu_rB(\tbf{0},1)\)</span> ukuran Lebesgue dari
+setiap bola berjari-jari <span class="math inline" data-source-tex="1">\(1\)</span> dalam <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>. Akan memudahkan
+jika kita mengambil <span class="math inline" data-source-tex="\beta_0=1">\(\beta_0=1\)</span>. Seperti
+ditunjukkan dalam <a class="xref" href="../264/index.html#264H">264H</a>-<a class="xref" href="../264/index.html#264I">264I</a>, normalisasi ini membuat <span class="math inline" data-source-tex="\nu_r">\(\nu_r\)</span> pada
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> sama dengan ukuran Lebesgue <span class="math inline" data-source-tex="\mu_r">\(\mu_r\)</span>.
+Perhatikan bahwa tentu saja
+<span class="math inline" data-source-tex="\nu_r^*=2^{-r}\beta_r\mu_{Hr}^*">\(\nu_r^*=2^{-r}\beta_r\mu_{Hr}^*\)</span> (264Fb).</p>
+</section>
+<section class="source-unit" id="265B" data-source-id="265B"><h2><span class="source-label">265B</span> Subruang linear  </h2>
+<p>Sama seperti dalam
+§<a class="xref" href="../263/index.html#263">263</a>, langkah pertama adalah menangani operator linear.</p>
+<p> </p>
+<p><strong>Teorema</strong> Misalkan <span class="math inline" data-source-tex="r">\(r\)</span>, <span class="math inline" data-source-tex="s">\(s\)</span> adalah bilangan bulat dengan
+<span class="math inline" data-source-tex="1\le r\le s">\(1\le r\le s\)</span>, dan <span class="math inline" data-source-tex="T">\(T\)</span> adalah matriks real berukuran <span class="math inline" data-source-tex="s\times r">\(s\times r\)</span>;
+pandang <span class="math inline" data-source-tex="T">\(T\)</span> sebagai operator linear dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> ke <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>.
+Tetapkan <span class="math inline" data-source-tex="J=\sqrt{\det T\trs T}">\(J=\sqrt{\det T\trs T}\)</span>, dengan <span class="math inline" data-source-tex="T\trs ">\(T\trs \)</span> transpos dari <span class="math inline" data-source-tex="T">\(T\)</span>.
+Tuliskan <span class="math inline" data-source-tex="\nu_r">\(\nu_r\)</span> untuk ukuran Hausdorff ternormalisasi berdimensi <span class="math inline" data-source-tex="r">\(r\)</span>
+pada <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>, <span class="math inline" data-source-tex="\Tau_r">\(\Tau_r\)</span> untuk domainnya, dan <span class="math inline" data-source-tex="\mu_r">\(\mu_r\)</span> untuk ukuran
+Lebesgue pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu_r T[E]=J\mu_rE">\(\nu_r T[E]=J\mu_rE\)</span></div>
+<p>untuk setiap himpunan terukur <span class="math inline" data-source-tex="E\subseteq\BbbR^r">\(E\subseteq\BbbR^r\)</span>. Jika <span class="math inline" data-source-tex="T">\(T\)</span>
+injektif (yakni jika <span class="math inline" data-source-tex="J\ne 0">\(J\ne 0\)</span>), maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu_rF=J\mu_rT^{-1}[F]">\(\nu_rF=J\mu_rT^{-1}[F]\)</span></div>
+<p>kapan pun <span class="math inline" data-source-tex="F\in\Tau_r">\(F\in\Tau_r\)</span> dan <span class="math inline" data-source-tex="F\subseteq T[\BbbR^r]">\(F\subseteq T[\BbbR^r]\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Rumus untuk <span class="math inline" data-source-tex="J">\(J\)</span> mengandaikan bahwa <span class="math inline" data-source-tex="\det T\trs T">\(\det T\trs T\)</span> nonnegatif,
+yang belum kita ketahui; tetapi argumen berikut akan segera
+membuktikannya dengan memadai.
+
+<strong>(a)</strong> Misalkan <span class="math inline" data-source-tex="V">\(V\)</span> adalah subruang linear dari <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span> yang
+terdiri atas vektor <span class="math inline" data-source-tex="y=(\eta_1,\ldots,\eta_s)">\(y=(\eta_1,\ldots,\eta_s)\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\eta_i=0">\(\eta_i=0\)</span> kapan pun <span class="math inline" data-source-tex="r&lt;i\le s">\(r&lt;i\le s\)</span>. Misalkan <span class="math inline" data-source-tex="R">\(R\)</span> adalah matriks
+<span class="math inline" data-source-tex="r\times s">\(r\times s\)</span>, <span class="math inline" data-source-tex="\langle\rho_{ij}\rangle_{i\le r,j\le s}">\(\langle\rho_{ij}\rangle_{i\le r,j\le s}\)</span>, dengan
+<span class="math inline" data-source-tex="\rho_{ij}=1">\(\rho_{ij}=1\)</span> jika <span class="math inline" data-source-tex="i=j\le r">\(i=j\le r\)</span>, dan <span class="math inline" data-source-tex="0">\(0\)</span> jika tidak; maka matriks
+<span class="math inline" data-source-tex="s\times r">\(s\times r\)</span> <span class="math inline" data-source-tex="R\trs ">\(R\trs \)</span> dapat dipandang sebagai bijeksi dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>
+ke <span class="math inline" data-source-tex="V">\(V\)</span>. Misalkan <span class="math inline" data-source-tex="W">\(W\)</span> adalah subruang linear berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> dari
+<span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span> yang memuat <span class="math inline" data-source-tex="T[\BbbR^r]">\(T[\BbbR^r]\)</span>, dan misalkan <span class="math inline" data-source-tex="P">\(P\)</span> adalah matriks
+ortogonal <span class="math inline" data-source-tex="s\times s">\(s\times s\)</span> sedemikian sehingga <span class="math inline" data-source-tex="P[W]=V">\(P[W]=V\)</span>. Maka <span class="math inline" data-source-tex="S=RPT">\(S=RPT\)</span>
+adalah matriks <span class="math inline" data-source-tex="r\times r">\(r\times r\)</span>. Kita mempunyai <span class="math inline" data-source-tex="R\trs Ry=y">\(R\trs Ry=y\)</span> untuk <span class="math inline" data-source-tex="y\in V">\(y\in V\)</span>,
+sehingga <span class="math inline" data-source-tex="R\trs RPT=PT">\(R\trs RPT=PT\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="S\trs S=T\trs P\trs R\trs RPT=T\trs P\trs PT=T\trs T">\(S\trs S=T\trs P\trs R\trs RPT=T\trs P\trs PT=T\trs T\)</span>;</div>
+<p>jadi</p>
+<div class="centerline"><span class="math inline" data-source-tex="\det T\trs T=\det S\trs S=(\det S)^2\ge 0">\(\det T\trs T=\det S\trs S=(\det S)^2\ge 0\)</span></div>
+<p>dan <span class="math inline" data-source-tex="J=|\det S|">\(J=|\det S|\)</span>. Pada saat yang sama,</p>
+<div class="centerline"><span class="math inline" data-source-tex="P\trs R\trs S=P\trs R\trs RPT=P\trs PT=T">\(P\trs R\trs S=P\trs R\trs RPT=P\trs PT=T\)</span>.</div>
+<p>Perhatikan bahwa <span class="math inline" data-source-tex="J=0">\(J=0\)</span> jika dan hanya jika <span class="math inline" data-source-tex="S">\(S\)</span> tidak
+injektif, yakni jika dan hanya jika <span class="math inline" data-source-tex="T">\(T\)</span> tidak injektif.</p>
+<p> </p>
+<p><strong>(b)</strong> Jika kita memandang matriks <span class="math inline" data-source-tex="s\times r">\(s\times r\)</span> <span class="math inline" data-source-tex="P\trs R\trs ">\(P\trs R\trs \)</span> sebagai
+pemetaan dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> ke <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>, tampak bahwa
+<span class="math inline" data-source-tex="\phi=P\trs R\trs ">\(\phi=P\trs R\trs \)</span> adalah isometri antara <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> dan <span class="math inline" data-source-tex="W">\(W\)</span>, dengan
+invers <span class="math inline" data-source-tex="\phi^{-1}=RP\restrp W">\(\phi^{-1}=RP\restrp W\)</span>. Karena itu <span class="math inline" data-source-tex="\phi">\(\phi\)</span> adalah isomorfisme
+antara ruang ukur <span class="math inline" data-source-tex="(\Bbb R^r,\mu_{Hr}^{(r)})">\((\Bbb R^r,\mu_{Hr}^{(r)})\)</span> dan
+<span class="math inline" data-source-tex="(W,\mu_{HrW}^{(s)})">\((W,\mu_{HrW}^{(s)})\)</span>, dengan <span class="math inline" data-source-tex="\mu_{Hr}^{(r)}">\(\mu_{Hr}^{(r)}\)</span> ukuran Hausdorff
+berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> dan <span class="math inline" data-source-tex="\mu_{HrW}^{(s)}">\(\mu_{HrW}^{(s)}\)</span> ukuran subruang
+pada <span class="math inline" data-source-tex="W">\(W\)</span> yang diinduksi oleh ukuran Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span>
+<span class="math inline" data-source-tex="\mu_{Hr}^{(s)}">\(\mu_{Hr}^{(s)}\)</span> pada <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>.</p>
+<p> </p>
+<p>Bukti. <strong>(i)</strong> Jika <span class="math inline" data-source-tex="A\subseteq\BbbR^r">\(A\subseteq\BbbR^r\)</span> dan <span class="math inline" data-source-tex="A&#x27;\subseteq W">\(A&#x27;\subseteq W\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu_{Hr}^{(s)*}(\phi[A])\le\mu_{Hr}^{(r)*}(A)">\(\mu_{Hr}^{(s)*}(\phi[A])\le\mu_{Hr}^{(r)*}(A)\)</span>,
+   <span class="math inline" data-source-tex="\mu_{Hr}^{(r)*}(\phi^{-1}[A&#x27;])\le\mu_{Hr}^{(s)*}(A&#x27;)">\(\mu_{Hr}^{(r)*}(\phi^{-1}[A&#x27;])\le\mu_{Hr}^{(s)*}(A&#x27;)\)</span>,</div>
+<p>dengan menggunakan <a class="xref" href="../264/index.html#264G">264G</a> dua kali. Jadi
+<span class="math inline" data-source-tex="\mu_{Hr}^{(s)*}(\phi[A])=\mu_{Hr}^{(r)*}(A)">\(\mu_{Hr}^{(s)*}(\phi[A])=\mu_{Hr}^{(r)*}(A)\)</span> untuk setiap
+<span class="math inline" data-source-tex="A\subseteq \BbbR^r">\(A\subseteq \BbbR^r\)</span>.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Sekarang, karena <span class="math inline" data-source-tex="W">\(W\)</span> tertutup dan dengan demikian
+berada dalam domain <span class="math inline" data-source-tex="\mu_{Hr}^{(s)}">\(\mu_{Hr}^{(s)}\)</span> (<a class="xref" href="../264/index.html#264E">264E</a>), ukuran subruang
+<span class="math inline" data-source-tex="\mu_{HrW}^{(s)}">\(\mu_{HrW}^{(s)}\)</span> tepat merupakan ukuran yang diinduksi oleh
+<span class="math inline" data-source-tex="\mu_{Hr}^{(s)*}\restrp W">\(\mu_{Hr}^{(s)*}\restrp W\)</span> melalui metode Carathéodory
+(<a class="xref" href="../214/index.html#214H">214H</a>(b-ii)). Karena <span class="math inline" data-source-tex="\phi">\(\phi\)</span> adalah isomorfisme antara
+<span class="math inline" data-source-tex="(\Bbb R^r,\mu_{Hr}^{(r)*})">\((\Bbb R^r,\mu_{Hr}^{(r)*})\)</span> dan
+<span class="math inline" data-source-tex="(W,\mu_{Hr}^{(s)*}\restrp W)">\((W,\mu_{Hr}^{(s)*}\restrp W)\)</span>, ia merupakan isomorfisme antara
+<span class="math inline" data-source-tex="(\BbbR^r,\mu_{Hr}^{(r)})">\((\BbbR^r,\mu_{Hr}^{(r)})\)</span> dan <span class="math inline" data-source-tex="(W,\mu_{HrW}^{(s)})">\((W,\mu_{HrW}^{(s)})\)</span>.
+∎</p>
+<p> </p>
+<p><strong>(c)</strong> Akibatnya, <span class="math inline" data-source-tex="\phi">\(\phi\)</span> juga merupakan isomorfisme antara versi
+ternormalisasi <span class="math inline" data-source-tex="(\BbbR^r,\mu_r)">\((\BbbR^r,\mu_r)\)</span> dan <span class="math inline" data-source-tex="(W,\nu_{rW})">\((W,\nu_{rW})\)</span>, dengan
+<span class="math inline" data-source-tex="\nu_{rW}">\(\nu_{rW}\)</span> ukuran subruang pada <span class="math inline" data-source-tex="W">\(W\)</span> yang diinduksi oleh <span class="math inline" data-source-tex="\nu_r">\(\nu_r\)</span>.</p>
+<p>Sekarang, jika <span class="math inline" data-source-tex="E\subseteq\BbbR^r">\(E\subseteq\BbbR^r\)</span> terukur Lebesgue, berdasarkan
+<a class="xref" href="../263/index.html#263A">263A</a> kita mempunyai <span class="math inline" data-source-tex="\mu_rS[E]=J\mu_rE">\(\mu_rS[E]=J\mu_rE\)</span>; sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu_rT[E]=\nu_r(P\trs R\trs [S[E]])=\nu_r(\phi[S[E]])
+=\mu_rS[E]=J\mu_rE">\(\nu_rT[E]=\nu_r(P\trs R\trs [S[E]])=\nu_r(\phi[S[E]])
+=\mu_rS[E]=J\mu_rE\)</span>.</div>
+<p>Jika <span class="math inline" data-source-tex="T">\(T\)</span> injektif, maka <span class="math inline" data-source-tex="S=\phi^{-1}T">\(S=\phi^{-1}T\)</span> juga harus injektif,
+sehingga <span class="math inline" data-source-tex="J\ne 0">\(J\ne 0\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu_rF=\mu_r(\phi^{-1}[F])
+=J\mu_r(S^{-1}[\phi^{-1}[F]])=J\mu_rT^{-1}[F]">\(\nu_rF=\mu_r(\phi^{-1}[F])
+=J\mu_r(S^{-1}[\phi^{-1}[F]])=J\mu_rT^{-1}[F]\)</span></div>
+<p>kapan pun <span class="math inline" data-source-tex="F\in\Tau_r">\(F\in\Tau_r\)</span> dan <span class="math inline" data-source-tex="F\subseteq W=T[\BbbR^r]">\(F\subseteq W=T[\BbbR^r]\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="265C" data-source-id="265C"><h2><span class="source-label">265C</span> Akibat </h2>
+<p>Di bawah syarat-syarat <a class="xref" href="#265B">265B</a>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu_r^*T[A]=J\mu_r^*A">\(\nu_r^*T[A]=J\mu_r^*A\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="A\subseteq\BbbR^r">\(A\subseteq\BbbR^r\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Jika <span class="math inline" data-source-tex="E">\(E\)</span> terukur Lebesgue dan <span class="math inline" data-source-tex="A\subseteq E">\(A\subseteq E\)</span>,
+maka <span class="math inline" data-source-tex="T[A]\subseteq T[E]">\(T[A]\subseteq T[E]\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu_r^*T[A]\le \nu_rT[E]=J\mu_rE">\(\nu_r^*T[A]\le \nu_rT[E]=J\mu_rE\)</span>;</div>
+<p>karena <span class="math inline" data-source-tex="E">\(E\)</span> sebarang, <span class="math inline" data-source-tex="\nu_r^*T[A]\le J\mu_r^*A">\(\nu_r^*T[A]\le J\mu_r^*A\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Jika <span class="math inline" data-source-tex="J=0">\(J=0\)</span>, kita selesai. Jika <span class="math inline" data-source-tex="J\ne 0">\(J\ne 0\)</span>, maka <span class="math inline" data-source-tex="T">\(T\)</span> injektif,
+sehingga jika <span class="math inline" data-source-tex="F\in\Tau_r">\(F\in\Tau_r\)</span> dan <span class="math inline" data-source-tex="T[A]\subseteq F">\(T[A]\subseteq F\)</span>, kita akan mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="J\mu_r^*A\le J\mu_rT^{-1}[F\cap T[\BbbR^r]]
+=\nu_r(F\cap T[\BbbR^r])\le\nu_rF">\(J\mu_r^*A\le J\mu_rT^{-1}[F\cap T[\BbbR^r]]
+=\nu_r(F\cap T[\BbbR^r])\le\nu_rF\)</span>;</div>
+<p>karena <span class="math inline" data-source-tex="F">\(F\)</span> sebarang, <span class="math inline" data-source-tex="J\mu_r^*A\le\nu_r^*T[A]">\(J\mu_r^*A\le\nu_r^*T[A]\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="265D" data-source-id="265D"><h2><span class="source-label">265D</span>  </h2>
+<p>Sekarang saya beralih ke lema yang bersesuaian
+dengan <a class="xref" href="../263/index.html#263C">263C</a>.</p>
+<p> </p>
+<p><strong>Lema</strong> Misalkan <span class="math inline" data-source-tex="1\le r\le s">\(1\le r\le s\)</span> dan <span class="math inline" data-source-tex="T">\(T\)</span> adalah matriks
+<span class="math inline" data-source-tex="s\times r">\(s\times r\)</span>; tetapkan <span class="math inline" data-source-tex="J=\sqrt{\det T\trs T}">\(J=\sqrt{\det T\trs T}\)</span>, dan misalkan <span class="math inline" data-source-tex="J\ne 0">\(J\ne 0\)</span>.
+Maka untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat
+<span class="math inline" data-source-tex="\zeta=\zeta(T,\epsilon)&gt;0">\(\zeta=\zeta(T,\epsilon)&gt;0\)</span> sedemikian sehingga</p>
+<p>(i) <span class="math inline" data-source-tex="|\sqrt{\det S\trs S}-J|\le\epsilon">\(|\sqrt{\det S\trs S}-J|\le\epsilon\)</span> kapan pun <span class="math inline" data-source-tex="S">\(S\)</span> adalah matriks
+<span class="math inline" data-source-tex="s\times r">\(s\times r\)</span> dan <span class="math inline" data-source-tex="\|S-T\|\le\zeta">\(\|S-T\|\le\zeta\)</span>, dengan norma matriks
+didefinisikan seperti dalam <a class="xref" href="../262/index.html#262H">262H</a>;</p>
+<p>(ii) kapan pun <span class="math inline" data-source-tex="D\subseteq\BbbR^r">\(D\subseteq\BbbR^r\)</span> adalah himpunan terbatas dan
+<span class="math inline" data-source-tex="\phi:D\to\Bbb R^s">\(\phi:D\to\Bbb R^s\)</span> adalah fungsi sedemikian sehingga
+<span class="math inline" data-source-tex="\|\phi(x)-\phi(y)-T(x-y)\|\le\zeta\|x-y\|">\(\|\phi(x)-\phi(y)-T(x-y)\|\le\zeta\|x-y\|\)</span> untuk semua <span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="y\in D">\(y\in D\)</span>,
+maka <span class="math inline" data-source-tex="|\nu_r^*\phi[D]-J\mu_r^*D|\le\epsilon\mu_r^*D">\(|\nu_r^*\phi[D]-J\mu_r^*D|\le\epsilon\mu_r^*D\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Karena <span class="math inline" data-source-tex="\det S\trs S">\(\det S\trs S\)</span> adalah fungsi kontinu dari
+koefisien-koefisien <span class="math inline" data-source-tex="S">\(S\)</span>, <a class="xref" href="../262/index.html#262Hb">262Hb</a> memberi tahu kita bahwa harus ada
+<span class="math inline" data-source-tex="\zeta_0&gt;0">\(\zeta_0&gt;0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="|J-\sqrt{\det S\trs S}|\le\epsilon">\(|J-\sqrt{\det S\trs S}|\le\epsilon\)</span> kapan pun
+<span class="math inline" data-source-tex="\|S-T\|\le\zeta_0">\(\|S-T\|\le\zeta_0\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Karena <span class="math inline" data-source-tex="J\ne 0">\(J\ne 0\)</span>, <span class="math inline" data-source-tex="T">\(T\)</span> injektif, dan terdapat matriks
+<span class="math inline" data-source-tex="r\times s">\(r\times s\)</span> <span class="math inline" data-source-tex="T^*">\(T^*\)</span> sedemikian sehingga <span class="math inline" data-source-tex="T^*T">\(T^*T\)</span> adalah matriks identitas
+<span class="math inline" data-source-tex="r\times r">\(r\times r\)</span>. Ambil <span class="math inline" data-source-tex="\zeta&gt;0">\(\zeta&gt;0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\zeta\le\zeta_0">\(\zeta\le\zeta_0\)</span>, <span class="math inline" data-source-tex="\zeta\|T^*\|&lt;1">\(\zeta\|T^*\|&lt;1\)</span>,
+<span class="math inline" data-source-tex="J(1+\zeta\|T^*\|)^r\le J+\epsilon">\(J(1+\zeta\|T^*\|)^r\le J+\epsilon\)</span>, dan
+<span class="math inline" data-source-tex="1-J^{-1}\epsilon\le(1-\zeta\|T^*\|)^r">\(1-J^{-1}\epsilon\le(1-\zeta\|T^*\|)^r\)</span>.</p>
+<p>Misalkan <span class="math inline" data-source-tex="\phi:D\to\BbbR^s">\(\phi:D\to\BbbR^s\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\|\phi(x)-\phi(y)-T(x-y)\|\le\zeta\|x-y\|">\(\|\phi(x)-\phi(y)-T(x-y)\|\le\zeta\|x-y\|\)</span> kapan pun <span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="y\in D">\(y\in D\)</span>.
+Tetapkan <span class="math inline" data-source-tex="\psi=\phi T^*">\(\psi=\phi T^*\)</span>, sehingga <span class="math inline" data-source-tex="\phi=\psi T">\(\phi=\psi T\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|\psi(u)-\psi(v)\|\le(1+\zeta\|T^*\|)\|u-v\|">\(\|\psi(u)-\psi(v)\|\le(1+\zeta\|T^*\|)\|u-v\|\)</span>,
+  <span class="math inline" data-source-tex="\|u-v\|\le(1-\zeta\|T^*\|)^{-1}\|\psi(u)-\psi(v)\|">\(\|u-v\|\le(1-\zeta\|T^*\|)^{-1}\|\psi(u)-\psi(v)\|\)</span></div>
+<p>kapan pun <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in T[D]">\(v\in T[D]\)</span>.
+Bukti. Ambil <span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="y\in D">\(y\in D\)</span> sedemikian sehingga <span class="math inline" data-source-tex="u=Tx">\(u=Tx\)</span>, <span class="math inline" data-source-tex="v=Ty">\(v=Ty\)</span>;
+tentu saja <span class="math inline" data-source-tex="x=T^*u">\(x=T^*u\)</span>, <span class="math inline" data-source-tex="y=T^*v">\(y=T^*v\)</span>. Maka</p>
+<p><span class="math display" data-source-tex="\eqalign{\|\psi(u)-\psi(v)\|
+&amp;=\|\phi(T^*u)-\phi(T^*v)\|
+=\|\phi(x)-\phi(y)\|\cr
+&amp;\le\|T(x-y)\|+\zeta\|x-y\|\cr
+&amp;=\|u-v\|+\zeta\|T^*u-T^*v\|
+\le\|u-v\|(1+\zeta\|T^*\|).\cr}">\[\begin{aligned}\|\psi(u)-\psi(v)\|
+&amp;=\|\phi(T^*u)-\phi(T^*v)\|
+=\|\phi(x)-\phi(y)\|\\
+&amp;\le\|T(x-y)\|+\zeta\|x-y\|\\
+&amp;=\|u-v\|+\zeta\|T^*u-T^*v\|
+\le\|u-v\|(1+\zeta\|T^*\|).\\\end{aligned}\]</span></p>
+<p>Selanjutnya,</p>
+<p><span class="math display" data-source-tex="\eqalign{\|u-v\|
+&amp;=\|Tx-Ty\|
+\le\|\phi(x)-\phi(y)\|+\zeta\|x-y\|\cr
+&amp;=\|\psi(u)-\psi(v)\|+\zeta\|T^*u-T^*v\|\cr
+&amp;\le\|\psi(u)-\psi(v)\|+\zeta\|T^*\|\|u-v\|,\cr}">\[\begin{aligned}\|u-v\|
+&amp;=\|Tx-Ty\|
+\le\|\phi(x)-\phi(y)\|+\zeta\|x-y\|\\
+&amp;=\|\psi(u)-\psi(v)\|+\zeta\|T^*u-T^*v\|\\
+&amp;\le\|\psi(u)-\psi(v)\|+\zeta\|T^*\|\|u-v\|,\\\end{aligned}\]</span></p>
+<p>sehingga
+<span class="math inline" data-source-tex="(1-\zeta\|T^*\|)\|u-v\|\le\|\psi(u)-\psi(v)\|">\((1-\zeta\|T^*\|)\|u-v\|\le\|\psi(u)-\psi(v)\|\)</span> dan
+<span class="math inline" data-source-tex="\|u-v\|\le(1-\zeta\|T^*\|)^{-1}\|\psi(u)-\psi(v)\|">\(\|u-v\|\le(1-\zeta\|T^*\|)^{-1}\|\psi(u)-\psi(v)\|\)</span>. ∎</p>
+<p> </p>
+<p><strong>(c)</strong> Sekarang, dari <a class="xref" href="../264/index.html#264G">264G</a> dan <a class="xref" href="#265C">265C</a> kita melihat bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu^*_r\phi[D]
+=\nu_r^*\psi[T[D]]
+\le(1+\zeta\|T^*\|)^r\nu_r^*T[D]
+=(1+\zeta\|T^*\|)^rJ\mu_r^*D
+\le(J+\epsilon)\mu_r^*D">\(\nu^*_r\phi[D]
+=\nu_r^*\psi[T[D]]
+\le(1+\zeta\|T^*\|)^r\nu_r^*T[D]
+=(1+\zeta\|T^*\|)^rJ\mu_r^*D
+\le(J+\epsilon)\mu_r^*D\)</span>,</div>
+<p>dan (asalkan <span class="math inline" data-source-tex="\epsilon\le J">\(\epsilon\le J\)</span>)</p>
+<p><span class="math display" data-source-tex="\eqalignno{(J-\epsilon)\mu_r^*D
+&amp;=(1-J^{-1}\epsilon)\nu_r^*T[D]
+\le(1-J^{-1}\epsilon)(1-\zeta\|T^*\|)^{-r}\nu_r^*\psi[T[D]]\cr
+\displaycause{dengan menerapkan 264G pada $\psi^{-1}:\psi[T[D]]\to T[D]$}
+&amp;\le\nu_r^*\psi[T[D]]
+=\nu_r^*\phi[D].\cr}">\[\begin{aligned}(J-\epsilon)\mu_r^*D
+&amp;=(1-J^{-1}\epsilon)\nu_r^*T[D]
+\le(1-J^{-1}\epsilon)(1-\zeta\|T^*\|)^{-r}\nu_r^*\psi[T[D]]\\
+&amp;\text{(dengan menerapkan 264G pada }\psi^{-1}:\psi[T[D]]\to T[D]\text{)}\\
+&amp;\le\nu_r^*\psi[T[D]]
+=\nu_r^*\phi[D].\\\end{aligned}\]</span></p>
+<p>(Tentu saja, jika <span class="math inline" data-source-tex="\epsilon\ge J">\(\epsilon\ge J\)</span>, maka pasti
+<span class="math inline" data-source-tex="(J-\epsilon)\mu_r^*D\le\nu_r^*\phi[D]">\((J-\epsilon)\mu_r^*D\le\nu_r^*\phi[D]\)</span>.) Jadi</p>
+<div class="centerline"><span class="math inline" data-source-tex="(J-\epsilon)\mu_r^*D\le\nu_r^*\phi[D]
+\le(J+\epsilon)\mu_r^*D">\((J-\epsilon)\mu_r^*D\le\nu_r^*\phi[D]
+\le(J+\epsilon)\mu_r^*D\)</span></div>
+<p>seperti yang diperlukan, dan kita mempunyai <span class="math inline" data-source-tex="\zeta">\(\zeta\)</span> yang
+sesuai.</p></aside>
+</section>
+<section class="source-unit" id="265E" data-source-id="265E"><h2><span class="source-label">265E</span> Teorema </h2>
+<p>Misalkan <span class="math inline" data-source-tex="1\le r\le s">\(1\le r\le s\)</span>; tuliskan <span class="math inline" data-source-tex="\mu_r">\(\mu_r\)</span> untuk
+ukuran Lebesgue pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, <span class="math inline" data-source-tex="\nu_r">\(\nu_r\)</span> untuk ukuran Hausdorff
+ternormalisasi pada <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>, dan <span class="math inline" data-source-tex="\Tau_r">\(\Tau_r\)</span> untuk domain <span class="math inline" data-source-tex="\nu_r">\(\nu_r\)</span>.
+Misalkan <span class="math inline" data-source-tex="D\subseteq\BbbR^r">\(D\subseteq\BbbR^r\)</span> sebarang, dan
+<span class="math inline" data-source-tex="\phi:D\to\BbbR^s">\(\phi:D\to\BbbR^s\)</span> adalah fungsi yang terdiferensialkan relatif terhadap
+domainnya pada setiap titik dalam <span class="math inline" data-source-tex="D">\(D\)</span>. Untuk setiap <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span>, misalkan <span class="math inline" data-source-tex="T(x)">\(T(x)\)</span>
+adalah suatu turunan dari <span class="math inline" data-source-tex="\phi">\(\phi\)</span> di <span class="math inline" data-source-tex="x">\(x\)</span> relatif terhadap <span class="math inline" data-source-tex="D">\(D\)</span>, dan
+tetapkan <span class="math inline" data-source-tex="J(x)=\sqrt{\det T(x)\trs T(x)}">\(J(x)=\sqrt{\det T(x)\trs T(x)}\)</span>.
+Tetapkan <span class="math inline" data-source-tex="D&#x27;=\{x:x\in D,\,J(x)&gt;0\}">\(D&#x27;=\{x:x\in D,\,J(x)&gt;0\}\)</span>. Maka</p>
+<p>   (i) <span class="math inline" data-source-tex="J:D\to\coint{0,\infty}">\(J:D\to\coint{0,\infty}\)</span> adalah fungsi terukur;</p>
+<p>   (ii) <span class="math inline" data-source-tex="\nu_r^*\phi[D]\le\int_DJ(x)\mu_r(dx)">\(\nu_r^*\phi[D]\le\int_DJ(x)\mu_r(dx)\)</span>,</p>
+<p>dengan memperbolehkan <span class="math inline" data-source-tex="\infty">\(\infty\)</span> sebagai nilai integral;</p>
+<p>   (iii) <span class="math inline" data-source-tex="\nu_r^*\phi[D\setminus D&#x27;]=0">\(\nu_r^*\phi[D\setminus D&#x27;]=0\)</span>.</p>
+<p>Jika <span class="math inline" data-source-tex="D">\(D\)</span> terukur Lebesgue, maka</p>
+<p>   (iv) <span class="math inline" data-source-tex="\phi[D]\in\Tau_r">\(\phi[D]\in\Tau_r\)</span>.</p>
+<p>Jika <span class="math inline" data-source-tex="D">\(D\)</span> terukur dan <span class="math inline" data-source-tex="\phi">\(\phi\)</span> injektif, maka</p>
+<p>   (v) <span class="math inline" data-source-tex="\nu_r\phi[D]=\int_DJ\,d\mu_r">\(\nu_r\phi[D]=\int_DJ\,d\mu_r\)</span>;</p>
+<p>   (vi) untuk setiap himpunan <span class="math inline" data-source-tex="E\subseteq\phi[D]">\(E\subseteq\phi[D]\)</span>, <span class="math inline" data-source-tex="E\in\Tau_r">\(E\in\Tau_r\)</span>
+jika dan hanya jika <span class="math inline" data-source-tex="\phi^{-1}[E]\cap D&#x27;">\(\phi^{-1}[E]\cap D&#x27;\)</span> terukur Lebesgue, dan
+dalam hal ini</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu_rE
+=\int_{\phi^{-1}[E]}J(x)\mu_r(dx)
+=\int_DJ\times\chi(\phi^{-1}[E])d\mu_r">\(\nu_rE
+=\int_{\phi^{-1}[E]}J(x)\mu_r(dx)
+=\int_DJ\times\chi(\phi^{-1}[E])d\mu_r\)</span>;</div>
+<p>   (vii) untuk setiap fungsi bernilai real <span class="math inline" data-source-tex="g">\(g\)</span> yang didefinisikan
+pada suatu himpunan bagian dari <span class="math inline" data-source-tex="\phi[D]">\(\phi[D]\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_{\phi[D]}g\,d\nu_r=\int_DJ\times g\phi\,d\mu_r">\(\int_{\phi[D]}g\,d\nu_r=\int_DJ\times g\phi\,d\mu_r\)</span></div>
+<p>jika salah satu integral terdefinisi dalam
+<span class="math inline" data-source-tex="[-\infty,\infty]">\([-\infty,\infty]\)</span>, dengan ketentuan bahwa kita menafsirkan
+<span class="math inline" data-source-tex="J(x)g(\phi(x))">\(J(x)g(\phi(x))\)</span> sebagai nol ketika <span class="math inline" data-source-tex="J(x)=0">\(J(x)=0\)</span> dan <span class="math inline" data-source-tex="g(\phi(x))">\(g(\phi(x))\)</span> tidak
+terdefinisi.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Saya akan mengikuti alur yang digariskan dalam bukti <a class="xref" href="../263/index.html#263D">263D</a>.</p>
+<p> </p>
+<p><strong>(a)</strong> Sama seperti dalam <a class="xref" href="../263/index.html#263D">263D</a>, kita tahu bahwa <span class="math inline" data-source-tex="J:D\to\Bbb R">\(J:D\to\Bbb R\)</span>
+terukur, sebab <span class="math inline" data-source-tex="J(x)">\(J(x)\)</span> adalah fungsi kontinu dari koefisien-koefisien
+<span class="math inline" data-source-tex="T(x)">\(T(x)\)</span>, yang semuanya terukur berdasarkan <a class="xref" href="../262/index.html#262P">262P</a>. Jika <span class="math inline" data-source-tex="D">\(D\)</span> terukur
+Lebesgue, terdapat barisan <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> himpunan bagian kompak dari
+<span class="math inline" data-source-tex="D">\(D\)</span> sedemikian sehingga <span class="math inline" data-source-tex="D\setminus\bigcup_{n\in\Bbb N}F_n">\(D\setminus\bigcup_{n\in\Bbb N}F_n\)</span>
+terabaikan terhadap <span class="math inline" data-source-tex="\mu_r">\(\mu_r\)</span>. Sekarang <span class="math inline" data-source-tex="\phi[F_n]">\(\phi[F_n]\)</span> kompak, sehingga
+termasuk dalam <span class="math inline" data-source-tex="\Tau_r">\(\Tau_r\)</span>, untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>. Adapun
+<span class="math inline" data-source-tex="\phi[D\setminus\bigcup_{n\in\Bbb N}F_n]">\(\phi[D\setminus\bigcup_{n\in\Bbb N}F_n]\)</span>, himpunan ini harus
+terabaikan terhadap <span class="math inline" data-source-tex="\nu_r">\(\nu_r\)</span> berdasarkan <a class="xref" href="../264/index.html#264G">264G</a>, karena <span class="math inline" data-source-tex="\phi">\(\phi\)</span> merupakan
+gabungan terhitung dari fungsi-fungsi Lipschitz (<a class="xref" href="../262/index.html#262N">262N</a>). Jadi</p>
+<div class="centerline"><span class="math inline" data-source-tex="\phi[D]=\bigcup_{n\in\Bbb N}
+  \phi[F_n]\cup\phi[D\setminus\bigcup_{n\in\Bbb N}F_n]\in\Tau_r">\(\phi[D]=\bigcup_{n\in\Bbb N}
+  \phi[F_n]\cup\phi[D\setminus\bigcup_{n\in\Bbb N}F_n]\in\Tau_r\)</span>.</div>
+<p>Ini menangani (i) dan (iv).</p>
+<p> </p>
+<p><strong>(b)</strong> Untuk sementara, andaikan <span class="math inline" data-source-tex="D">\(D\)</span> terbatas dan <span class="math inline" data-source-tex="J(x)&gt;0">\(J(x)&gt;0\)</span> untuk
+setiap <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span>, serta tetapkan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Misalkan <span class="math inline" data-source-tex="M^*_{sr}">\(M^*_{sr}\)</span>
+adalah himpunan matriks <span class="math inline" data-source-tex="s\times r">\(s\times r\)</span> <span class="math inline" data-source-tex="T">\(T\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\det T\trs T\ne 0">\(\det T\trs T\ne 0\)</span>, yakni pemetaan yang bersesuaian
+<span class="math inline" data-source-tex="T:\BbbR^r\to\BbbR^s">\(T:\BbbR^r\to\BbbR^s\)</span> injektif. Untuk <span class="math inline" data-source-tex="T\in M_{sr}^*">\(T\in M_{sr}^*\)</span>, ambil
+<span class="math inline" data-source-tex="\zeta(T,\epsilon)&gt;0">\(\zeta(T,\epsilon)&gt;0\)</span> seperti dalam <a class="xref" href="#265D">265D</a>.</p>
+<p>Ambil <span class="math inline" data-source-tex="\sequencen{D_n}">\(\sequencen{D_n}\)</span>, <span class="math inline" data-source-tex="\sequencen{T_n}">\(\sequencen{T_n}\)</span> seperti dalam <a class="xref" href="../262/index.html#262M">262M</a>, dengan
+<span class="math inline" data-source-tex="A=M^*_{sr}">\(A=M^*_{sr}\)</span>, sehingga <span class="math inline" data-source-tex="\sequencen{D_n}">\(\sequencen{D_n}\)</span> adalah partisi <span class="math inline" data-source-tex="D">\(D\)</span> menjadi
+himpunan-himpunan yang relatif terukur dalam <span class="math inline" data-source-tex="D">\(D\)</span>, dan setiap <span class="math inline" data-source-tex="T_n">\(T_n\)</span>
+adalah matriks <span class="math inline" data-source-tex="s\times r">\(s\times r\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|T(x)-T_n\|\le\zeta(T_n,\epsilon)">\(\|T(x)-T_n\|\le\zeta(T_n,\epsilon)\)</span> kapan pun <span class="math inline" data-source-tex="x\in D_n">\(x\in D_n\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\|\phi(x)-\phi(y)-T_n(x-y)\|\le\zeta(T_n,\epsilon)\|x-y\|">\(\|\phi(x)-\phi(y)-T_n(x-y)\|\le\zeta(T_n,\epsilon)\|x-y\|\)</span>
+untuk semua <span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="y\in D_n">\(y\in D_n\)</span>.</div>
+<p>Kemudian, dengan menetapkan
+<span class="math inline" data-source-tex="J_n=\sqrt{\det T_n\trs T_n}">\(J_n=\sqrt{\det T_n\trs T_n}\)</span>, kita mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="|J(x)-J_n|\le\epsilon">\(|J(x)-J_n|\le\epsilon\)</span> untuk setiap <span class="math inline" data-source-tex="x\in D_n">\(x\in D_n\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="|\nu_r^*\phi[D_n]-J_n\mu_r^*D_n|\le\epsilon\mu_r^*D_n">\(|\nu_r^*\phi[D_n]-J_n\mu_r^*D_n|\le\epsilon\mu_r^*D_n\)</span>,</div>
+<p>berdasarkan pemilihan <span class="math inline" data-source-tex="\zeta(T_n,\epsilon)">\(\zeta(T_n,\epsilon)\)</span>. Jadi</p>
+<p><span class="math display" data-source-tex="\eqalignno{\nu_r^*\phi[D]
+&amp;\le\sum_{n=0}^{\infty}\nu_r^*\phi[D_n]\cr
+\displaycause{karena $\phi[D]=\bigcup_{n\in\Bbb N}\phi[D_n]$}
+&amp;\le\sum_{n=0}^{\infty}(J_n\mu_r^*D_n+\epsilon\mu_r^*D_n)
+\le\epsilon\mu_r^*D+\sum_{n=0}^{\infty}J_n\mu_r^*D_n\cr
+\displaycause{karena $D_n$ saling lepas dan relatif terukur dalam $D$}
+&amp;=\epsilon\mu_r^*D+\int_D\sum_{n=0}^{\infty}J_n\chi D_nd\mu_r\cr
+&amp;\le\epsilon\mu_r^*D+\int_DJ(x)+\epsilon\mu_r(dx)
+=2\epsilon\mu_r^*D+\int_DJ\,d\mu_r.\cr}">\[\begin{aligned}\nu_r^*\phi[D]
+&amp;\le\sum_{n=0}^{\infty}\nu_r^*\phi[D_n]\\
+&amp;\text{(karena }\phi[D]=\bigcup_{n\in\Bbb N}\phi[D_n]\text{)}\\
+&amp;\le\sum_{n=0}^{\infty}(J_n\mu_r^*D_n+\epsilon\mu_r^*D_n)
+\le\epsilon\mu_r^*D+\sum_{n=0}^{\infty}J_n\mu_r^*D_n\\
+&amp;\text{(karena }D_n\text{ saling lepas dan relatif terukur dalam }D\text{)}\\
+&amp;=\epsilon\mu_r^*D+\int_D\sum_{n=0}^{\infty}J_n\chi D_nd\mu_r\\
+&amp;\le\epsilon\mu_r^*D+\int_DJ(x)+\epsilon\mu_r(dx)
+=2\epsilon\mu_r^*D+\int_DJ\,d\mu_r.\\\end{aligned}\]</span></p>
+<p>Jika <span class="math inline" data-source-tex="D">\(D\)</span> terukur dan <span class="math inline" data-source-tex="\phi">\(\phi\)</span> injektif, maka semua <span class="math inline" data-source-tex="D_n">\(D_n\)</span> adalah himpunan
+bagian <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> yang terukur Lebesgue, sehingga semua
+<span class="math inline" data-source-tex="\phi[D_n]">\(\phi[D_n]\)</span> diukur oleh <span class="math inline" data-source-tex="\nu_r">\(\nu_r\)</span>, dan himpunan-himpunan itu juga saling
+lepas. Oleh karena itu</p>
+<p><span class="math display" data-source-tex="\eqalign{\int_{D}J\,d\mu_r
+&amp;\le\sum_{n=0}^{\infty}J_n\mu_r D_n+\epsilon\mu_r D\cr
+&amp;\le\sum_{n=0}^{\infty}(\nu_r\phi[D_n]
+   +\epsilon\mu_r D_n)+\epsilon\mu_rD
+=\nu_r\phi[D]+2\epsilon\mu_rD.\cr}">\[\begin{aligned}\int_{D}J\,d\mu_r
+&amp;\le\sum_{n=0}^{\infty}J_n\mu_r D_n+\epsilon\mu_r D\\
+&amp;\le\sum_{n=0}^{\infty}(\nu_r\phi[D_n]
+   +\epsilon\mu_r D_n)+\epsilon\mu_rD
+=\nu_r\phi[D]+2\epsilon\mu_rD.\\\end{aligned}\]</span></p>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang, kita memperoleh</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu_r^*\phi[D]\le\int_DJ\,d\mu_r">\(\nu_r^*\phi[D]\le\int_DJ\,d\mu_r\)</span>,</div>
+<p>dan jika <span class="math inline" data-source-tex="D">\(D\)</span> terukur serta <span class="math inline" data-source-tex="\phi">\(\phi\)</span> injektif,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_DJ\,d\mu_r\le\nu_r\phi[D]">\(\int_DJ\,d\mu_r\le\nu_r\phi[D]\)</span>;</div>
+<p>jadi kita memperoleh (ii) dan (v), dengan asumsi bahwa <span class="math inline" data-source-tex="D">\(D\)</span>
+terbatas dan <span class="math inline" data-source-tex="J&gt;0">\(J&gt;0\)</span> pada setiap titik dalam <span class="math inline" data-source-tex="D">\(D\)</span>.</p>
+<p> </p>
+<p><strong>(c)</strong> Sama seperti dalam bukti <a class="xref" href="../263/index.html#263D">263D</a>, sekarang kita dapat melepaskan
+asumsi bahwa <span class="math inline" data-source-tex="D">\(D\)</span> terbatas dengan meninjau
+<span class="math inline" data-source-tex="B_k=B(\tbf{0},k)\subseteq\BbbR^r">\(B_k=B(\tbf{0},k)\subseteq\BbbR^r\)</span>; asalkan <span class="math inline" data-source-tex="J&gt;0">\(J&gt;0\)</span> pada setiap titik dalam <span class="math inline" data-source-tex="D">\(D\)</span>,
+kita memperoleh</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu_r^*\phi[D]
+=\lim_{k\to\infty}\nu_r^*\phi[D\cap B_k]
+\le\lim_{k\to\infty}\int_{D\cap B_k}J\,d\mu_r
+=\int_DJ\,d\mu_r">\(\nu_r^*\phi[D]
+=\lim_{k\to\infty}\nu_r^*\phi[D\cap B_k]
+\le\lim_{k\to\infty}\int_{D\cap B_k}J\,d\mu_r
+=\int_DJ\,d\mu_r\)</span>,</div>
+<p>dengan kesamaan jika <span class="math inline" data-source-tex="D">\(D\)</span> terukur dan <span class="math inline" data-source-tex="\phi">\(\phi\)</span> injektif.</p>
+<p> </p>
+<p><strong>(d)</strong> Sekarang kita mendapati bahwa
+<span class="math inline" data-source-tex="\nu_r^*\phi[D\setminus D&#x27;]=0">\(\nu_r^*\phi[D\setminus D&#x27;]=0\)</span>.</p>
+<p> </p>
+<p>Bukti. Misalkan <span class="math inline" data-source-tex="\eta\in\ocint{0,1}">\(\eta\in\ocint{0,1}\)</span>. Definisikan
+<span class="math inline" data-source-tex="\psi_{\eta}:D\to\BbbR^{s+r}">\(\psi_{\eta}:D\to\BbbR^{s+r}\)</span> dengan menetapkan
+<span class="math inline" data-source-tex="\psi_{\eta}(x)=(\phi(x),\eta x)">\(\psi_{\eta}(x)=(\phi(x),\eta x)\)</span>, dan identifikasikan <span class="math inline" data-source-tex="\BbbR^{s+r}">\(\BbbR^{s+r}\)</span>
+dengan <span class="math inline" data-source-tex="\BbbR^s\times\BbbR^r">\(\BbbR^s\times\BbbR^r\)</span>. <span class="math inline" data-source-tex="\psi_{\eta}">\(\psi_{\eta}\)</span> terdiferensialkan relatif
+terhadap domainnya pada setiap titik dalam <span class="math inline" data-source-tex="D">\(D\)</span>, dengan turunan
+<span class="math inline" data-source-tex="\tilde T_{\eta}(x)">\(\tilde T_{\eta}(x)\)</span>, yaitu matriks <span class="math inline" data-source-tex="(s+r)\times r">\((s+r)\times r\)</span> yang <span class="math inline" data-source-tex="s">\(s\)</span> baris
+atasnya terdiri atas matriks <span class="math inline" data-source-tex="s\times r">\(s\times r\)</span> <span class="math inline" data-source-tex="T(x)">\(T(x)\)</span>, dan <span class="math inline" data-source-tex="r">\(r\)</span> baris bawahnya
+adalah <span class="math inline" data-source-tex="\eta I_r">\(\eta I_r\)</span>, dengan <span class="math inline" data-source-tex="I_r">\(I_r\)</span> matriks identitas <span class="math inline" data-source-tex="r\times r">\(r\times r\)</span>.
+(Gunakan 262Ib.) Tentu saja <span class="math inline" data-source-tex="\tilde T_{\eta}(x)">\(\tilde T_{\eta}(x)\)</span>, dipandang sebagai
+pemetaan dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> ke <span class="math inline" data-source-tex="\BbbR^{s+r}">\(\BbbR^{s+r}\)</span>, injektif, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\tilde J_{\eta}(x)
+=\sqrt{\det\tilde T_{\eta}(x)\trs \tilde T_{\eta}(x)}
+=\sqrt{\det(T(x)\trs T(x)+\eta^2I)}&gt;0">\(\tilde J_{\eta}(x)
+=\sqrt{\det\tilde T_{\eta}(x)\trs \tilde T_{\eta}(x)}
+=\sqrt{\det(T(x)\trs T(x)+\eta^2I)}&gt;0\)</span>.</div>
+<p>Kita mempunyai
+<span class="math inline" data-source-tex="\lim_{\eta\downarrow 0}\tilde J_{\eta}(x)=J(x)=0">\(\lim_{\eta\downarrow 0}\tilde J_{\eta}(x)=J(x)=0\)</span> untuk
+<span class="math inline" data-source-tex="x\in D\setminus D&#x27;">\(x\in D\setminus D&#x27;\)</span>.</p>
+<p> </p>
+<p>   Nyatakan <span class="math inline" data-source-tex="T(x)">\(T(x)\)</span> sebagai
+<span class="math inline" data-source-tex="\langle\tau_{ij}(x)\rangle_{i\le s,j\le r}">\(\langle\tau_{ij}(x)\rangle_{i\le s,j\le r}\)</span> untuk setiap <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span>.
+Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="C_m=\{x:x\in D,\,\|x\|\le m,\,|\tau_{ij}(x)|\le m">\(C_m=\{x:x\in D,\,\|x\|\le m,\,|\tau_{ij}(x)|\le m\)</span> untuk
+semua <span class="math inline" data-source-tex="i\le s,\,j\le r\}">\(i\le s,\,j\le r\}\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="m\ge 1">\(m\ge 1\)</span>. Untuk <span class="math inline" data-source-tex="x\in C_m">\(x\in C_m\)</span>, semua koefisien
+<span class="math inline" data-source-tex="\tilde T_{\eta}(x)">\(\tilde T_{\eta}(x)\)</span> mempunyai modulus paling besar <span class="math inline" data-source-tex="m">\(m\)</span>; akibatnya
+(dengan menggunakan ketaksamaan paling kasar yang segera tersedia),
+semua koefisien <span class="math inline" data-source-tex="\tilde T_{\eta}(x)\trs \tilde T_{\eta}(x)">\(\tilde T_{\eta}(x)\trs \tilde T_{\eta}(x)\)</span> mempunyai
+modulus paling besar <span class="math inline" data-source-tex="(r+s)m^2">\((r+s)m^2\)</span> dan
+<span class="math inline" data-source-tex="\tilde J_{\eta}(x)\le\sqrt{r!(s+r)^r}m^r">\(\tilde J_{\eta}(x)\le\sqrt{r!(s+r)^r}m^r\)</span>. Karena itu kita dapat
+menggunakan Teorema Konvergensi Terdominasi Lebesgue untuk melihat bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{\eta\downarrow 0}\int_{C_m\setminus D&#x27;}\tilde
+J_{\eta}d\mu_r=0">\(\lim_{\eta\downarrow 0}\int_{C_m\setminus D&#x27;}\tilde
+J_{\eta}d\mu_r=0\)</span>.</div>
+<p> </p>
+<p>   Misalkan <span class="math inline" data-source-tex="\tilde\nu_r">\(\tilde\nu_r\)</span> adalah ukuran Hausdorff
+ternormalisasi berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> pada <span class="math inline" data-source-tex="\BbbR^{s+r}">\(\BbbR^{s+r}\)</span>. Dengan menerapkan
+bagian (b) bukti ini pada <span class="math inline" data-source-tex="\psi_{\eta}\restr C_m\setminus D&#x27;">\(\psi_{\eta}\restr C_m\setminus D&#x27;\)</span>, kita
+melihat bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\tilde\nu_r^*\psi_{\eta}[C_m\setminus D&#x27;]
+\le\int_{C_m\setminus D&#x27;}\tilde J_{\eta}d\mu_r">\(\tilde\nu_r^*\psi_{\eta}[C_m\setminus D&#x27;]
+\le\int_{C_m\setminus D&#x27;}\tilde J_{\eta}d\mu_r\)</span>.</div>
+<p>Sekarang kita mempunyai pemetaan alami
+<span class="math inline" data-source-tex="P:\BbbR^{s+r}\to\BbbR^s">\(P:\BbbR^{s+r}\to\BbbR^s\)</span> yang diberikan dengan menetapkan
+<span class="math inline" data-source-tex="P(\xi_1,\ldots,\xi_{s+r})=(\xi_1,\ldots,\xi_s)">\(P(\xi_1,\ldots,\xi_{s+r})=(\xi_1,\ldots,\xi_s)\)</span>, dan <span class="math inline" data-source-tex="P">\(P\)</span> bersifat
+<span class="math inline" data-source-tex="1">\(1\)</span>-Lipschitz, sehingga dengan <a class="xref" href="../264/index.html#264G">264G</a> sekali lagi kita mempunyai (dengan
+memperhitungkan konstanta normalisasi <span class="math inline" data-source-tex="2^{-r}\beta_r">\(2^{-r}\beta_r\)</span>)</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu_r^*P[A]\le\tilde\nu_r^*A">\(\nu_r^*P[A]\le\tilde\nu_r^*A\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="A\subseteq\BbbR^{s+r}">\(A\subseteq\BbbR^{s+r}\)</span>. Khususnya,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu_r^*\phi[C_m\setminus D&#x27;]
+=\nu_r^*P[\psi_{\eta}[C_m\setminus D&#x27;]]
+\le\tilde\nu_r^*\psi_{\eta}[C_m\setminus D&#x27;]
+\le\int_{C_m\setminus D&#x27;}\tilde J_{\eta}d\mu_r
+\to 0">\(\nu_r^*\phi[C_m\setminus D&#x27;]
+=\nu_r^*P[\psi_{\eta}[C_m\setminus D&#x27;]]
+\le\tilde\nu_r^*\psi_{\eta}[C_m\setminus D&#x27;]
+\le\int_{C_m\setminus D&#x27;}\tilde J_{\eta}d\mu_r
+\to 0\)</span></div>
+<p>ketika <span class="math inline" data-source-tex="\eta\downarrow 0">\(\eta\downarrow 0\)</span>. Namun ini berarti
+<span class="math inline" data-source-tex="\nu_r^*\phi[C_m\setminus D&#x27;]=0">\(\nu_r^*\phi[C_m\setminus D&#x27;]=0\)</span>. Karena
+<span class="math inline" data-source-tex="D=\bigcup_{m\ge 1}C_m">\(D=\bigcup_{m\ge 1}C_m\)</span>, <span class="math inline" data-source-tex="\nu_r^*\phi[D\setminus D&#x27;]=0">\(\nu_r^*\phi[D\setminus D&#x27;]=0\)</span>, seperti yang
+diklaim. ∎</p>
+<p> </p>
+<p><strong>(e)</strong> Ini membuktikan (iii) dalam teorema. Tentu saja ini cukup
+untuk memberikan (ii) dan (v), sebab (dengan menerapkan (b)-(c) pada
+<span class="math inline" data-source-tex="\phi\restr D&#x27;">\(\phi\restr D&#x27;\)</span>) kita harus mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu_r^*\phi[D]
+=\nu_r^*\phi[D&#x27;]
+\le\int_{D&#x27;}J\,d\mu_r
+=\int_DJ\,d\mu_r">\(\nu_r^*\phi[D]
+=\nu_r^*\phi[D&#x27;]
+\le\int_{D&#x27;}J\,d\mu_r
+=\int_DJ\,d\mu_r\)</span>,</div>
+<p>dengan kesamaan jika <span class="math inline" data-source-tex="D">\(D\)</span> (dan karena itu juga <span class="math inline" data-source-tex="D&#x27;">\(D&#x27;\)</span>) terukur
+dan <span class="math inline" data-source-tex="\phi">\(\phi\)</span> injektif.</p>
+<p> </p>
+<p><strong>(f)</strong> Sekarang mari kita beralih ke bagian (vi). Andaikan <span class="math inline" data-source-tex="D">\(D\)</span>
+terukur dan <span class="math inline" data-source-tex="\phi">\(\phi\)</span> injektif.</p>
+<p> </p>
+<p>   Misalkan <span class="math inline" data-source-tex="E\subseteq\phi[D]">\(E\subseteq\phi[D]\)</span> termasuk dalam <span class="math inline" data-source-tex="\Tau_r">\(\Tau_r\)</span>.
+Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="H_k=\{x:x\in D,\,\|x\|\le k,\,J(x)\le k\}">\(H_k=\{x:x\in D,\,\|x\|\le k,\,J(x)\le k\}\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="k">\(k\)</span>; maka setiap <span class="math inline" data-source-tex="H_k">\(H_k\)</span> terukur Lebesgue,
+sehingga (dengan menerapkan (iv) pada <span class="math inline" data-source-tex="\phi\restr H_k">\(\phi\restr H_k\)</span>)
+<span class="math inline" data-source-tex="\phi[H_k]\in\Tau_r">\(\phi[H_k]\in\Tau_r\)</span>, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu_r\phi[H_k]\le k\mu_rH_k&lt;\infty">\(\nu_r\phi[H_k]\le k\mu_rH_k&lt;\infty\)</span>.</div>
+<p>Jadi <span class="math inline" data-source-tex="\phi[D]">\(\phi[D]\)</span> dapat ditutupi oleh suatu barisan himpunan
+berukuran berhingga terhadap <span class="math inline" data-source-tex="\nu_r">\(\nu_r\)</span>, yang tentu saja juga berukuran
+berhingga terhadap ukuran Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> pada <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>.
+Berdasarkan 264Fc, terdapat himpunan Borel
+<span class="math inline" data-source-tex="E_1">\(E_1\)</span>, <span class="math inline" data-source-tex="E_2\subseteq\BbbR^s">\(E_2\subseteq\BbbR^s\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="E_1\subseteq E\subseteq E_2">\(E_1\subseteq E\subseteq E_2\)</span> dan <span class="math inline" data-source-tex="\nu_r(E_2\setminus E_1)=0">\(\nu_r(E_2\setminus E_1)=0\)</span>.
+Sekarang <span class="math inline" data-source-tex="F_1=\phi^{-1}[E_1]">\(F_1=\phi^{-1}[E_1]\)</span>, <span class="math inline" data-source-tex="F_2=\phi^{-1}[E_2]">\(F_2=\phi^{-1}[E_2]\)</span> adalah himpunan
+bagian terukur Lebesgue dari <span class="math inline" data-source-tex="D">\(D\)</span>, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_{F_2\setminus F_1}J\,d\mu_r=\nu_r\phi[F_2\setminus
+F_1]=\nu_r(\phi[D]\cap E_2\setminus E_1)=0">\(\int_{F_2\setminus F_1}J\,d\mu_r=\nu_r\phi[F_2\setminus
+F_1]=\nu_r(\phi[D]\cap E_2\setminus E_1)=0\)</span>.</div>
+<p>Karena itu <span class="math inline" data-source-tex="\mu_r(D&#x27;\cap(F_2\setminus F_1))=0">\(\mu_r(D&#x27;\cap(F_2\setminus F_1))=0\)</span>. Namun karena</p>
+<div class="centerline"><span class="math inline" data-source-tex="D&#x27;\cap F_1\subseteq D&#x27;\cap\phi^{-1}[E]
+\subseteq D&#x27;\cap F_2">\(D&#x27;\cap F_1\subseteq D&#x27;\cap\phi^{-1}[E]
+\subseteq D&#x27;\cap F_2\)</span>,</div>
+<p>diperoleh bahwa <span class="math inline" data-source-tex="D&#x27;\cap\phi^{-1}[E]">\(D&#x27;\cap\phi^{-1}[E]\)</span> terukur, dan bahwa</p>
+<p><span class="math display" data-source-tex="\eqalign{\int_{\phi^{-1}[E]}J\,d\mu_r
+&amp;=\int_{D&#x27;\cap\phi^{-1}[E]}J\,d\mu_r
+=\int_{D&#x27;\cap F_1}J\,d\mu_r\cr
+&amp;=\int_{D\cap F_1}J\,d\mu_r
+=\nu_r\phi[D\cap F_1]
+=\nu_rE_1
+=\nu_rE.\cr}">\[\begin{aligned}\int_{\phi^{-1}[E]}J\,d\mu_r
+&amp;=\int_{D&#x27;\cap\phi^{-1}[E]}J\,d\mu_r
+=\int_{D&#x27;\cap F_1}J\,d\mu_r\\
+&amp;=\int_{D\cap F_1}J\,d\mu_r
+=\nu_r\phi[D\cap F_1]
+=\nu_rE_1
+=\nu_rE.\\\end{aligned}\]</span></p>
+<p>Selain itu, <span class="math inline" data-source-tex="J\times\chi(\phi^{-1}[E])
+=J\times\chi(D&#x27;\cap\phi^{-1}[E])">\(J\times\chi(\phi^{-1}[E])
+=J\times\chi(D&#x27;\cap\phi^{-1}[E])\)</span> terukur, sehingga kita dapat menulis
+<span class="math inline" data-source-tex="\int J\times\chi(\phi^{-1}[E])">\(\int J\times\chi(\phi^{-1}[E])\)</span> sebagai pengganti
+<span class="math inline" data-source-tex="\int_{\phi^{-1}[E]}J">\(\int_{\phi^{-1}[E]}J\)</span>.</p>
+<p> </p>
+<p>   Jika <span class="math inline" data-source-tex="E\subseteq\phi[D]">\(E\subseteq\phi[D]\)</span> dan
+<span class="math inline" data-source-tex="D&#x27;\cap\phi^{-1}[E]">\(D&#x27;\cap\phi^{-1}[E]\)</span> terukur, maka tentu saja</p>
+<div class="centerline"><span class="math inline" data-source-tex="E=\phi[D&#x27;\cap\phi^{-1}[E]]
+  \cup\phi[(D\setminus D&#x27;)\cap\phi^{-1}[E]]\in\Tau_r">\(E=\phi[D&#x27;\cap\phi^{-1}[E]]
+  \cup\phi[(D\setminus D&#x27;)\cap\phi^{-1}[E]]\in\Tau_r\)</span>,</div>
+<p>karena <span class="math inline" data-source-tex="\phi[G]\in\Tau_r">\(\phi[G]\in\Tau_r\)</span> untuk setiap himpunan terukur
+<span class="math inline" data-source-tex="G\subseteq D">\(G\subseteq D\)</span> dan <span class="math inline" data-source-tex="\phi[D\setminus D&#x27;]">\(\phi[D\setminus D&#x27;]\)</span> terabaikan terhadap
+<span class="math inline" data-source-tex="\nu_r">\(\nu_r\)</span>.</p>
+<p> </p>
+<p><strong>(g)</strong> Akhirnya, (vii) segera mengikuti dari (vi), dengan
+menerapkan <a class="xref" href="../235/index.html#235J">235J</a> pada <span class="math inline" data-source-tex="\mu_r">\(\mu_r\)</span> dan ukuran subruang yang diinduksi oleh
+<span class="math inline" data-source-tex="\nu_r">\(\nu_r\)</span> pada <span class="math inline" data-source-tex="\phi[D]">\(\phi[D]\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="265F" data-source-id="265F"><h2><span class="source-label">265F</span> Permukaan bola </h2>
+<p>Untuk menunjukkan bagaimana
+gagasan-gagasan ini dapat diterapkan pada salah satu kasus dasar, saya
+memberikan rincian metode untuk mendeskripsikan ukuran permukaan bola
+dalam ruang berdimensi <span class="math inline" data-source-tex="s">\(s\)</span>. Ambil <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span> dan <span class="math inline" data-source-tex="s=r+1">\(s=r+1\)</span>. Tuliskan
+<span class="math inline" data-source-tex="S_r">\(S_r\)</span> untuk <span class="math inline" data-source-tex="\{z:z\in\Bbb R^{r+1},\,\|z\|=1\}">\(\{z:z\in\Bbb R^{r+1},\,\|z\|=1\}\)</span>, permukaan bola
+berdimensi <span class="math inline" data-source-tex="r">\(r\)</span>.
+Maka kita mempunyai parametrisasi <span class="math inline" data-source-tex="\phi_r">\(\phi_r\)</span> dari <span class="math inline" data-source-tex="S_r">\(S_r\)</span> yang diberikan
+dengan menetapkan</p>
+<p><span class="math display" data-source-tex="\phi_r\begin{pmatrix}\xi_1\\ \xi_2\\ \ldots \\ \ldots \\ \ldots\\ \xi_r\end{pmatrix}
+=\begin{pmatrix}\sin\xi_1\sin\xi_2\sin\xi_3\ldots\sin\xi_r\\
+\cos\xi_1\sin\xi_2\sin\xi_3\ldots\sin\xi_r\\
+\cos\xi_2\sin\xi_3\ldots\sin\xi_r\\
+\ldots\\
+\cos\xi_{r-2}\sin\xi_{r-1}\sin\xi_r\\
+\cos\xi_{r-1}\sin\xi_r\\
+\cos\xi_r\end{pmatrix}.">\[\phi_r\begin{pmatrix}\xi_1\\ \xi_2\\ \ldots \\ \ldots \\ \ldots\\ \xi_r\end{pmatrix}
+=\begin{pmatrix}\sin\xi_1\sin\xi_2\sin\xi_3\ldots\sin\xi_r\\
+\cos\xi_1\sin\xi_2\sin\xi_3\ldots\sin\xi_r\\
+\cos\xi_2\sin\xi_3\ldots\sin\xi_r\\
+\ldots\\
+\cos\xi_{r-2}\sin\xi_{r-1}\sin\xi_r\\
+\cos\xi_{r-1}\sin\xi_r\\
+\cos\xi_r\end{pmatrix}.\]</span></p>
+<p>Saya memilih perumusan ini karena saya ingin menggunakan
+argumen induktif yang didasarkan pada kenyataan bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\phi_{r+1}\begin{pmatrix}x\\ \xi\end{pmatrix}
+=\begin{pmatrix}\sin\xi\,\phi_r(x)\\ \cos\xi\end{pmatrix}">\(\phi_{r+1}\begin{pmatrix}x\\ \xi\end{pmatrix}
+=\begin{pmatrix}\sin\xi\,\phi_r(x)\\ \cos\xi\end{pmatrix}\)</span></div>
+<p>untuk <span class="math inline" data-source-tex="x\in\BbbR^r">\(x\in\BbbR^r\)</span>, <span class="math inline" data-source-tex="\xi\in\Bbb R">\(\xi\in\Bbb R\)</span>. Setiap <span class="math inline" data-source-tex="\phi_r">\(\phi_r\)</span>
+terdiferensialkan, berdasarkan 262Id. Jika kita menetapkan</p>
+<p><span class="math display" data-source-tex="\eqalign{D_r
+=\{x:\xi_1&amp;\in\ocint{-\pi,\pi},\,\xi_2,\ldots,\xi_r\in[0,\pi],\cr
+&amp;\text{ jika }\xi_j\in\{0,\pi\}\text{ maka }
+  \xi_i=0\text{ untuk }i&lt;j\},\cr}">\[\begin{aligned}D_r
+=\{x:\xi_1&amp;\in\ocint{-\pi,\pi},\,\xi_2,\ldots,\xi_r\in[0,\pi],\\
+&amp;\text{ jika }\xi_j\in\{0,\pi\}\text{ maka }
+  \xi_i=0\text{ untuk }i&lt;j\},\\\end{aligned}\]</span></p>
+<p>maka mudah diperiksa bahwa <span class="math inline" data-source-tex="D_r">\(D_r\)</span> adalah himpunan bagian Borel
+dari <span class="math inline" data-source-tex="\Bbb R^r">\(\Bbb R^r\)</span> dan <span class="math inline" data-source-tex="\phi_r\restr D_r">\(\phi_r\restr D_r\)</span> adalah bijeksi antara <span class="math inline" data-source-tex="D_r">\(D_r\)</span> dan
+<span class="math inline" data-source-tex="S_r">\(S_r\)</span>. Sekarang misalkan <span class="math inline" data-source-tex="T_r(x)">\(T_r(x)\)</span> adalah matriks <span class="math inline" data-source-tex="(r+1)\times r">\((r+1)\times r\)</span>
+<span class="math inline" data-source-tex="\phi_r&#x27;(x)">\(\phi_r&#x27;(x)\)</span>. Maka</p>
+<p><span class="math display" data-source-tex="T_{r+1}\begin{pmatrix}x\\ \xi\end{pmatrix}=\begin{pmatrix}\sin\xi\,T_r(x)&amp;\cos\xi\,\phi_r(x)\\
+                                  \tbf{0}&amp;-\sin\xi\end{pmatrix}.">\[T_{r+1}\begin{pmatrix}x\\ \xi\end{pmatrix}=\begin{pmatrix}\sin\xi\,T_r(x)&amp;\cos\xi\,\phi_r(x)\\
+                                  \tbf{0}&amp;-\sin\xi\end{pmatrix}.\]</span></p>
+<p>Jadi</p>
+<p><span class="math display" data-source-tex="(T_{r+1}\begin{pmatrix}x\\ \xi\end{pmatrix})\trs T_{r+1}\begin{pmatrix}x\\ \xi\end{pmatrix}
+=\begin{pmatrix}\sin^2\xi\,T_r(x)\trs T_r(x)&amp;\sin\xi\cos\xi\,T_r(x)\trs \phi_r(x)\\
+\cos\xi\sin\xi\,\phi_r(x)\trs T_r(x)&amp;\cos^2\xi\phi_r(x)\trs \phi_r(x)+\sin^2\xi\end{pmatrix}
+.">\[(T_{r+1}\begin{pmatrix}x\\ \xi\end{pmatrix})\trs T_{r+1}\begin{pmatrix}x\\ \xi\end{pmatrix}
+=\begin{pmatrix}\sin^2\xi\,T_r(x)\trs T_r(x)&amp;\sin\xi\cos\xi\,T_r(x)\trs \phi_r(x)\\
+\cos\xi\sin\xi\,\phi_r(x)\trs T_r(x)&amp;\cos^2\xi\phi_r(x)\trs \phi_r(x)+\sin^2\xi\end{pmatrix}
+.\]</span></p>
+<p>Namun tentu saja
+<span class="math inline" data-source-tex="\phi_r(x)\trs \phi_r(x)=\|\phi_r(x)\|^2=1">\(\phi_r(x)\trs \phi_r(x)=\|\phi_r(x)\|^2=1\)</span> untuk setiap <span class="math inline" data-source-tex="x">\(x\)</span>, dan
+(dengan mendiferensialkan terhadap setiap koordinat <span class="math inline" data-source-tex="x">\(x\)</span>, jika Anda
+ingin) <span class="math inline" data-source-tex="T_r(x)\trs \phi_r(x)=\tbf{0}">\(T_r(x)\trs \phi_r(x)=\tbf{0}\)</span>,
+<span class="math inline" data-source-tex="\phi_r(x)\trs T_r(x)=\tbf{0}">\(\phi_r(x)\trs T_r(x)=\tbf{0}\)</span>. Jadi kita memperoleh</p>
+<p><span class="math display" data-source-tex="(T_{r+1}\begin{pmatrix}x\\ \xi\end{pmatrix})\trs T_{r+1}\begin{pmatrix}x\\ \xi\end{pmatrix}
+=\begin{pmatrix}\sin^2\xi\,T_r(x)\trs T_r(x)&amp;\tbf{0}\\
+\tbf{0}&amp;1\end{pmatrix},">\[(T_{r+1}\begin{pmatrix}x\\ \xi\end{pmatrix})\trs T_{r+1}\begin{pmatrix}x\\ \xi\end{pmatrix}
+=\begin{pmatrix}\sin^2\xi\,T_r(x)\trs T_r(x)&amp;\tbf{0}\\
+\tbf{0}&amp;1\end{pmatrix},\]</span></p>
+<p>dan, dengan menulis
+<span class="math inline" data-source-tex="J_r(x)=\sqrt{\det T_r(x)\trs T_r(x)}">\(J_r(x)=\sqrt{\det T_r(x)\trs T_r(x)}\)</span>,</p>
+<p><span class="math display" data-source-tex="J_{r+1}\begin{pmatrix}x\\ \xi\end{pmatrix}=|\sin^r\xi|J_r(x).">\[J_{r+1}\begin{pmatrix}x\\ \xi\end{pmatrix}=|\sin^r\xi|J_r(x).\]</span></p>
+<p>Pada titik ini kita melakukan induksi pada <span class="math inline" data-source-tex="r">\(r\)</span> untuk melihat bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="J_r(x)
+=|\sin^{r-1}\xi_r\sin^{r-2}\xi_{r-1}\ldots\sin\xi_2|">\(J_r(x)
+=|\sin^{r-1}\xi_r\sin^{r-2}\xi_{r-1}\ldots\sin\xi_2|\)</span></div>
+<p>(karena tentu saja induksi dimulai dengan kasus <span class="math inline" data-source-tex="r=1">\(r=1\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\phi_1(x)=\begin{pmatrix}\sin x\\ \cos x\end{pmatrix}">\(\phi_1(x)=\begin{pmatrix}\sin x\\ \cos x\end{pmatrix}\)</span>,
+<span class="math inline" data-source-tex="T_1(x)=\begin{pmatrix}\cos x\\ -\sin x\end{pmatrix}">\(T_1(x)=\begin{pmatrix}\cos x\\ -\sin x\end{pmatrix}\)</span>,
+<span class="math inline" data-source-tex="T_1(x)\trs T_1(x)=1">\(T_1(x)\trs T_1(x)=1\)</span>,
+<span class="math inline" data-source-tex="J_1(x)=1">\(J_1(x)=1\)</span>).</div>
+<p>Untuk mencari ukuran permukaan <span class="math inline" data-source-tex="S_r">\(S_r\)</span>, kita perlu menghitung</p>
+<p><span class="math display" data-source-tex="\eqalignno{\int_{D_r}J_rd\mu_r
+&amp;=\int_0^{\pi}\ldots\int_0^{\pi}\int_{-\pi}^{\pi}
+\sin^{r-1}\xi_r\ldots\sin\xi_2
+d\xi_1d\xi_2\ldots d\xi_r\cr
+&amp;=2\pi\prod_{k=2}^r\int_0^{\pi}\sin^{k-1}t\,dt
+=2\pi\prod_{k=1}^{r-1}\int_{-\pi/2}^{\pi/2}\cos^kt\,dt\cr}">\[\begin{aligned}\int_{D_r}J_rd\mu_r
+&amp;=\int_0^{\pi}\ldots\int_0^{\pi}\int_{-\pi}^{\pi}
+\sin^{r-1}\xi_r\ldots\sin\xi_2
+d\xi_1d\xi_2\ldots d\xi_r\\
+&amp;=2\pi\prod_{k=2}^r\int_0^{\pi}\sin^{k-1}t\,dt
+=2\pi\prod_{k=1}^{r-1}\int_{-\pi/2}^{\pi/2}\cos^kt\,dt\\\end{aligned}\]</span></p>
+<p>(dengan menyubstitusikan <span class="math inline" data-source-tex="\bover{\pi}{2}-t">\(\bover{\pi}{2}-t\)</span> untuk <span class="math inline" data-source-tex="t">\(t\)</span>).
+Namun, dalam bahasa <a class="xref" href="../252/index.html#252Q">252Q</a>, ini tepat sama dengan</p>
+<div class="centerline"><span class="math inline" data-source-tex="2\pi\prod_{k=1}^{r-1}I_k=2\pi\beta_{r-1}">\(2\pi\prod_{k=1}^{r-1}I_k=2\pi\beta_{r-1}\)</span>,</div>
+<p>dengan <span class="math inline" data-source-tex="\beta_{r-1}">\(\beta_{r-1}\)</span> volume bola satuan dari
+<span class="math inline" data-source-tex="\BbbR^{r-1}">\(\BbbR^{r-1}\)</span> (dengan menafsirkan <span class="math inline" data-source-tex="\beta_0">\(\beta_0\)</span> sebagai <span class="math inline" data-source-tex="1">\(1\)</span>, jika
+Anda mau).</p>
+</section>
+<section class="source-unit" id="265G" data-source-id="265G"><h2><span class="source-label">265G</span>  </h2>
+<p>Luas permukaan bola juga dapat dihitung melalui
+hasil berikut.</p>
+<p> </p>
+<p><strong>Teorema</strong> Misalkan <span class="math inline" data-source-tex="\mu_{r+1}">\(\mu_{r+1}\)</span> adalah ukuran Lebesgue
+pada <span class="math inline" data-source-tex="\BbbR^{r+1}">\(\BbbR^{r+1}\)</span>, dan <span class="math inline" data-source-tex="\nu_r">\(\nu_r\)</span> ukuran Hausdorff ternormalisasi
+berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> pada <span class="math inline" data-source-tex="\BbbR^{r+1}">\(\BbbR^{r+1}\)</span>. Jika <span class="math inline" data-source-tex="f">\(f\)</span> adalah fungsi bernilai real
+yang terintegralkan secara lokal terhadap <span class="math inline" data-source-tex="\mu_{r+1}">\(\mu_{r+1}\)</span>,
+<span class="math inline" data-source-tex="y\in\BbbR^{r+1}">\(y\in\BbbR^{r+1}\)</span>, dan <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_{B(y,\delta)}fd\mu_{r+1}
+=\int_0^{\delta}\int_{\partial B(y,t)}fd\nu_rdt">\(\int_{B(y,\delta)}fd\mu_{r+1}
+=\int_0^{\delta}\int_{\partial B(y,t)}fd\nu_rdt\)</span>,</div>
+<p>dengan <span class="math inline" data-source-tex="\partial B(y,t)">\(\partial B(y,t)\)</span> menyatakan permukaan bola
+<span class="math inline" data-source-tex="\{x:\|x-y\|=t\}">\(\{x:\|x-y\|=t\}\)</span> dan integral <span class="math inline" data-source-tex="\int\ldots dt">\(\int\ldots dt\)</span> diambil terhadap
+ukuran Lebesgue pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Ambil sembarang fungsi terdiferensialkan
+<span class="math inline" data-source-tex="\phi:\BbbR^r\to S_r">\(\phi:\BbbR^r\to S_r\)</span> bersama himpunan Borel <span class="math inline" data-source-tex="F\subseteq\BbbR^r">\(F\subseteq\BbbR^r\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\phi\restr F">\(\phi\restr F\)</span> merupakan bijeksi antara <span class="math inline" data-source-tex="F">\(F\)</span> dan
+<span class="math inline" data-source-tex="S_r">\(S_r\)</span>; pasangan <span class="math inline" data-source-tex="(\phi,F)">\((\phi,F)\)</span> semacam itu dideskripsikan dalam <a class="xref" href="#265F">265F</a>.
+Definisikan <span class="math inline" data-source-tex="\psi:\BbbR^r\times\Bbb R\to\BbbR^{r+1}">\(\psi:\BbbR^r\times\Bbb R\to\BbbR^{r+1}\)</span> dengan
+menetapkan <span class="math inline" data-source-tex="\psi(z,t)=y+t\phi(z)">\(\psi(z,t)=y+t\phi(z)\)</span>; maka <span class="math inline" data-source-tex="\psi">\(\psi\)</span> terdiferensialkan dan
+<span class="math inline" data-source-tex="\psi\restr F\times\ocint{0,\delta}">\(\psi\restr F\times\ocint{0,\delta}\)</span> merupakan bijeksi antara
+<span class="math inline" data-source-tex="F\times\ocint{0,\delta}">\(F\times\ocint{0,\delta}\)</span> dan <span class="math inline" data-source-tex="B(y,\delta)\setminus\{y\}">\(B(y,\delta)\setminus\{y\}\)</span>. Untuk
+<span class="math inline" data-source-tex="t\in\ocint{0,\delta}">\(t\in\ocint{0,\delta}\)</span>, <span class="math inline" data-source-tex="z\in\BbbR^r">\(z\in\BbbR^r\)</span>, tetapkan
+<span class="math inline" data-source-tex="\psi_t(z)=\psi(z,t)">\(\psi_t(z)=\psi(z,t)\)</span>; maka <span class="math inline" data-source-tex="\psi_t\restr F">\(\psi_t\restr F\)</span> merupakan bijeksi antara
+<span class="math inline" data-source-tex="F">\(F\)</span> dan permukaan bola <span class="math inline" data-source-tex="\{x:\|x-y\|=t\}=\partial B(y,t)">\(\{x:\|x-y\|=t\}=\partial B(y,t)\)</span>.</p>
+<p>Turunan <span class="math inline" data-source-tex="\phi">\(\phi\)</span> di <span class="math inline" data-source-tex="z">\(z\)</span> adalah matriks <span class="math inline" data-source-tex="(r+1)\times r">\((r+1)\times r\)</span>, katakanlah
+<span class="math inline" data-source-tex="T_1(z)">\(T_1(z)\)</span>, dan turunan <span class="math inline" data-source-tex="T_t(z)">\(T_t(z)\)</span> dari <span class="math inline" data-source-tex="\psi_t">\(\psi_t\)</span> di <span class="math inline" data-source-tex="z">\(z\)</span> tepat <span class="math inline" data-source-tex="tT_1(z)">\(tT_1(z)\)</span>;
+turunan <span class="math inline" data-source-tex="\psi">\(\psi\)</span> di <span class="math inline" data-source-tex="(z,t)">\((z,t)\)</span> adalah matriks <span class="math inline" data-source-tex="(r+1)\times(r+1)">\((r+1)\times(r+1)\)</span>
+<span class="math inline" data-source-tex="T(z,t)=\begin{pmatrix}tT_1(z)&amp;\phi(z)\end{pmatrix}">\(T(z,t)=\begin{pmatrix}tT_1(z)&amp;\phi(z)\end{pmatrix}\)</span>, dengan <span class="math inline" data-source-tex="\phi(z)">\(\phi(z)\)</span> ditafsirkan sebagai
+vektor kolom. Jika kita menetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="J_t(z)=\sqrt{\det T_t(z)\trs T_t(z)}">\(J_t(z)=\sqrt{\det T_t(z)\trs T_t(z)}\)</span>,
+  <span class="math inline" data-source-tex="J(z,t)=|\det T(z,t)|">\(J(z,t)=|\det T(z,t)|\)</span>,</div>
+<p>maka</p>
+<p><span class="math display" data-source-tex="\eqalign{J(z,t)^2
+=\det T(z,t)\trs T(z,t)
+&amp;=\det\begin{pmatrix}tT_1(z)\trs \\ \phi(z)\trs \end{pmatrix}\begin{pmatrix}tT_1(z)&amp;\phi(z)\end{pmatrix}\cr
+&amp;=\det\begin{pmatrix}t^2T_1(z)\trs T_1(z)&amp;\tbf{0}\\ \tbf{0}&amp;1\end{pmatrix}
+=J_t(z)^2,\cr}">\[\begin{aligned}J(z,t)^2
+=\det T(z,t)\trs T(z,t)
+&amp;=\det\begin{pmatrix}tT_1(z)\trs \\ \phi(z)\trs \end{pmatrix}\begin{pmatrix}tT_1(z)&amp;\phi(z)\end{pmatrix}\\
+&amp;=\det\begin{pmatrix}t^2T_1(z)\trs T_1(z)&amp;\tbf{0}\\ \tbf{0}&amp;1\end{pmatrix}
+=J_t(z)^2,\\\end{aligned}\]</span></p>
+<p>sebab ketika kita menghitung koefisien <span class="math inline" data-source-tex="(i,r+1)">\((i,r+1)\)</span> dari
+<span class="math inline" data-source-tex="T(z,t)\trs T(z,t)">\(T(z,t)\trs T(z,t)\)</span>, untuk <span class="math inline" data-source-tex="1\le i\le r">\(1\le i\le r\)</span>, koefisien itu adalah</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{j=1}^{r+1}t\Pd{\phi_j}{\zeta_i}(z)\phi_j(z)
+=\Bover{t}2\Pd{}{\zeta_i}(\sum_{j=1}^{r+1}\phi_j(z)^2)
+=0">\(\sum_{j=1}^{r+1}t\Pd{\phi_j}{\zeta_i}(z)\phi_j(z)
+=\Bover{t}2\Pd{}{\zeta_i}(\sum_{j=1}^{r+1}\phi_j(z)^2)
+=0\)</span>,</div>
+<p>dengan <span class="math inline" data-source-tex="\phi_j">\(\phi_j\)</span> koordinat ke-<span class="math inline" data-source-tex="j">\(j\)</span> dari <span class="math inline" data-source-tex="\phi">\(\phi\)</span>; sedangkan
+koefisien <span class="math inline" data-source-tex="(r+1,r+1)">\((r+1,r+1)\)</span> dari <span class="math inline" data-source-tex="T(z,t)\trs T(z,t)">\(T(z,t)\trs T(z,t)\)</span> tepat
+<span class="math inline" data-source-tex="\sum_{j=1}^{r+1}\phi_j(z)^2=1">\(\sum_{j=1}^{r+1}\phi_j(z)^2=1\)</span>. Jadi sebenarnya
+<span class="math inline" data-source-tex="J(z,t)=J_t(z)">\(J(z,t)=J_t(z)\)</span> untuk semua <span class="math inline" data-source-tex="z\in\BbbR^r">\(z\in\BbbR^r\)</span>, <span class="math inline" data-source-tex="t&gt;0">\(t&gt;0\)</span>.</p>
+<p>Sekarang, untuk <span class="math inline" data-source-tex="f\in\eusm L^1(\mu_{r+1})">\(f\in\eusm L^1(\mu_{r+1})\)</span>, kita dapat menghitung</p>
+<p><span class="math display" data-source-tex="\eqalignno{\int_{B(y,\delta)}fd\mu_{r+1}
+&amp;=\int_{B(y,\delta)\setminus\{y\}}fd\mu_{r+1}\cr
+&amp;=\int_{F\times\ocint{0,\delta}}f(\psi(z,t))J(z,t)\mu_{r+1}(d(z,t))\cr
+\displaycause{berdasarkan 263D}
+&amp;=\int_0^{\delta}\int_Ff(\psi_t(z))J_t(z)\mu_r(dz)dt\cr
+\displaycause{dengan $\mu_r$ ukuran Lebesgue pada $\BbbR^r$,
+berdasarkan teorema Fubini, 252B}
+&amp;=\int_0^{\delta}\int_{\partial B(y,t)}fd\nu_rdt\cr}">\[\begin{aligned}\int_{B(y,\delta)}fd\mu_{r+1}
+&amp;=\int_{B(y,\delta)\setminus\{y\}}fd\mu_{r+1}\\
+&amp;=\int_{F\times\ocint{0,\delta}}f(\psi(z,t))J(z,t)\mu_{r+1}(d(z,t))\\
+&amp;\text{(berdasarkan 263D)}\\
+&amp;=\int_0^{\delta}\int_Ff(\psi_t(z))J_t(z)\mu_r(dz)dt\\
+&amp;\text{(dengan }\mu_r\text{ ukuran Lebesgue pada }\BbbR^r\text{,
+berdasarkan teorema Fubini, 252B)}\\
+&amp;=\int_0^{\delta}\int_{\partial B(y,t)}fd\nu_rdt\\\end{aligned}\]</span></p>
+<p>berdasarkan <a class="xref" href="#265E">265E</a>(vii).</p></aside>
+</section>
+<section class="source-unit" id="265H" data-source-id="265H"><h2><span class="source-label">265H</span> Akibat </h2>
+<p>Jika <span class="math inline" data-source-tex="\nu_r">\(\nu_r\)</span> adalah ukuran Hausdorff
+ternormalisasi berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> pada <span class="math inline" data-source-tex="\BbbR^{r+1}">\(\BbbR^{r+1}\)</span>, maka
+<span class="math inline" data-source-tex="\nu_rS_r=(r+1)\beta_{r+1}">\(\nu_rS_r=(r+1)\beta_{r+1}\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Dalam <a class="xref" href="#265G">265G</a>, ambil <span class="math inline" data-source-tex="y=\tbf{0}">\(y=\tbf{0}\)</span>, <span class="math inline" data-source-tex="\delta=1">\(\delta=1\)</span>, dan
+<span class="math inline" data-source-tex="f=\chi B(\tbf{0},1)">\(f=\chi B(\tbf{0},1)\)</span>; maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\beta_{r+1}=\int fd\mu_{r+1}
+=\int_0^1\nu_r(\partial B(\tbf{0},t))dt=\int_0^1t^r\nu_rS_rdt
+=\Bover1{r+1}\nu_rS_r">\(\beta_{r+1}=\int fd\mu_{r+1}
+=\int_0^1\nu_r(\partial B(\tbf{0},t))dt=\int_0^1t^r\nu_rS_rdt
+=\Bover1{r+1}\nu_rS_r\)</span>,</div>
+<p>kali ini dengan menerapkan <a class="xref" href="../264/index.html#264G">264G</a> pada pemetaan
+<span class="math inline" data-source-tex="x\mapsto tx">\(x\mapsto tx\)</span>, <span class="math inline" data-source-tex="x\mapsto\bover1tx">\(x\mapsto\bover1tx\)</span> dari <span class="math inline" data-source-tex="\BbbR^{r+1}">\(\BbbR^{r+1}\)</span> ke dirinya
+sendiri untuk melihat bahwa
+<span class="math inline" data-source-tex="\nu_r(\partial B(\tbf{0},t))=t^r\nu_rS_r">\(\nu_r(\partial B(\tbf{0},t))=t^r\nu_rS_r\)</span> untuk <span class="math inline" data-source-tex="t&gt;0">\(t&gt;0\)</span>.</p></aside>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="265X" data-source-id="265X"><span class="anchor" id="265Xa"></span><h2><span class="source-label">265X</span> Latihan dasar (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span>, dan misalkan
+<span class="math inline" data-source-tex="S_r(\alpha)=\{z:z\in\BbbR^{r+1},\,\|z\|=\alpha\}">\(S_r(\alpha)=\{z:z\in\BbbR^{r+1},\,\|z\|=\alpha\}\)</span> adalah permukaan bola
+berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> dan berjari-jari <span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\nu_rS_r(\alpha)=2\pi\beta_{r-1}\alpha^r=(r+1)\beta_{r+1}\alpha^r">\(\nu_rS_r(\alpha)=2\pi\beta_{r-1}\alpha^r=(r+1)\beta_{r+1}\alpha^r\)</span>
+untuk setiap <span class="math inline" data-source-tex="\alpha\ge 0">\(\alpha\ge 0\)</span>.</p>
+</section>
+<section class="source-unit" id="265Xb" data-source-id="265Xb"><h3><span class="source-label">265Xb</span> (b) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span>, dan untuk <span class="math inline" data-source-tex="a\in[-1,1]">\(a\in[-1,1]\)</span> tetapkan
+<span class="math inline" data-source-tex="C_a=\{z:z\in\BbbR^{r+1},\,\|z\|=1,\,\zeta_{r+1}\ge a\}">\(C_a=\{z:z\in\BbbR^{r+1},\,\|z\|=1,\,\zeta_{r+1}\ge a\}\)</span>, dengan
+<span class="math inline" data-source-tex="z=(\zeta_1,\ldots,\zeta_{r+1})">\(z=(\zeta_1,\ldots,\zeta_{r+1})\)</span> seperti biasa. (i) Tunjukkan bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu_rC_a=r\beta_r\int_0^{\arccos a}\sin^{r-1}t\,dt">\(\nu_rC_a=r\beta_r\int_0^{\arccos a}\sin^{r-1}t\,dt\)</span>.</div>
+<p>(ii)
+Hitung integral tersebut untuk kasus <span class="math inline" data-source-tex="r=2">\(r=2\)</span>, <span class="math inline" data-source-tex="r=4">\(r=4\)</span>.</p>
+</section>
+<section class="source-unit" id="265Xc" data-source-id="265Xc"><h3><span class="source-label">265Xc</span> (c) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Tuliskan lagi
+<span class="math inline" data-source-tex="C_a=\{z:z\in S_r,\,\zeta_{r+1}\ge a\}">\(C_a=\{z:z\in S_r,\,\zeta_{r+1}\ge a\}\)</span>, dengan
+<span class="math inline" data-source-tex="S_r\subseteq\BbbR^{r+1}">\(S_r\subseteq\BbbR^{r+1}\)</span> permukaan bola satuan. Tunjukkan bahwa, untuk setiap
+<span class="math inline" data-source-tex="a\in\ocint{0,1}">\(a\in\ocint{0,1}\)</span>,
+<span class="math inline" data-source-tex="\nu_rC_a\le\Bover{\nu_rS_r}{2(r+1)a^2}">\(\nu_rC_a\le\Bover{\nu_rS_r}{2(r+1)a^2}\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> hitung
+<span class="math inline" data-source-tex="\sum_{i=1}^{r+1}\int_{S_r}\|\xi_i\|^2\nu_r(dx)">\(\sum_{i=1}^{r+1}\int_{S_r}\|\xi_i\|^2\nu_r(dx)\)</span>.</span></p>
+</section>
+<section class="source-unit" id="265Xd" data-source-id="265Xd"><h3><span class="source-label">265Xd</span> (d) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="\phi:\ooint{0,1}\to\BbbR^r">\(\phi:\ooint{0,1}\to\BbbR^r\)</span> adalah fungsi
+injektif yang terdiferensialkan. Tunjukkan bahwa ‘panjang’ atau ukuran
+Hausdorff satu-dimensi dari <span class="math inline" data-source-tex="\phi[\,\ooint{0,1}\,]">\(\phi[\,\ooint{0,1}\,]\)</span> tepat sama dengan
+<span class="math inline" data-source-tex="\int_0^1\|\phi&#x27;(t)\|dt">\(\int_0^1\|\phi&#x27;(t)\|dt\)</span>.</p>
+</section>
+<section class="source-unit" id="265Xe" data-source-id="265Xe"><h3><span class="source-label">265Xe</span> (e) </h3>
+<p>(i) Tunjukkan bahwa jika <span class="math inline" data-source-tex="I">\(I\)</span> adalah matriks identitas
+<span class="math inline" data-source-tex="r\times r">\(r\times r\)</span> dan <span class="math inline" data-source-tex="z\in\BbbR^r">\(z\in\BbbR^r\)</span>, maka
+<span class="math inline" data-source-tex="\det(I+zz\trs )=1+\|z\|^2">\(\det(I+zz\trs )=1+\|z\|^2\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> lakukan induksi pada <span class="math inline" data-source-tex="r">\(r\)</span>.</span>
+(ii) Tuliskan <span class="math inline" data-source-tex="U_{r-1}">\(U_{r-1}\)</span> untuk bola satuan terbuka dalam <span class="math inline" data-source-tex="\BbbR^{r-1}">\(\BbbR^{r-1}\)</span>,
+dengan <span class="math inline" data-source-tex="r\ge 2">\(r\ge 2\)</span>. Definisikan
+<span class="math inline" data-source-tex="\phi:U_{r-1}\times\Bbb R\to S_r">\(\phi:U_{r-1}\times\Bbb R\to S_r\)</span> dengan menetapkan</p>
+<p><span class="math display" data-source-tex="\phi\begin{pmatrix}x\\ \xi\end{pmatrix}=\begin{pmatrix}x\\ \theta(x)\cos\xi \\
+\theta(x)\sin\xi\end{pmatrix},">\[\phi\begin{pmatrix}x\\ \xi\end{pmatrix}=\begin{pmatrix}x\\ \theta(x)\cos\xi \\
+\theta(x)\sin\xi\end{pmatrix},\]</span></p>
+<p>dengan <span class="math inline" data-source-tex="\theta(x)=\sqrt{1-\|x\|^2}">\(\theta(x)=\sqrt{1-\|x\|^2}\)</span>. Tunjukkan bahwa</p>
+<p><span class="math display" data-source-tex="\phi&#x27;\begin{pmatrix}x\\ \xi\end{pmatrix}\trs \phi&#x27;\begin{pmatrix}x\\ \xi\end{pmatrix}
+=\begin{pmatrix}I+\Bover1{\theta(x)^2}xx\trs  &amp; \tbf{0}\\
+        \tbf{0} &amp; \theta(x)^2\end{pmatrix},">\[\phi&#x27;\begin{pmatrix}x\\ \xi\end{pmatrix}\trs \phi&#x27;\begin{pmatrix}x\\ \xi\end{pmatrix}
+=\begin{pmatrix}I+\Bover1{\theta(x)^2}xx\trs  &amp; \tbf{0}\\
+        \tbf{0} &amp; \theta(x)^2\end{pmatrix},\]</span></p>
+<p>sehingga <span class="math inline" data-source-tex="J\begin{pmatrix}x\\ \xi\end{pmatrix}=1">\(J\begin{pmatrix}x\\ \xi\end{pmatrix}=1\)</span> untuk semua
+<span class="math inline" data-source-tex="x\in U_{r-1}">\(x\in U_{r-1}\)</span>, <span class="math inline" data-source-tex="\xi\in\Bbb R">\(\xi\in\Bbb R\)</span>. (iii) Karena itu, tunjukkan bahwa
+ukuran Hausdorff ternormalisasi berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> dari
+<span class="math inline" data-source-tex="\{y:y\in S_r,\,\sum_{i=1}^{r-1}\eta_i^2&lt;1\}">\(\{y:y\in S_r,\,\sum_{i=1}^{r-1}\eta_i^2&lt;1\}\)</span> tepat
+<span class="math inline" data-source-tex="2\pi\beta_{r-1}">\(2\pi\beta_{r-1}\)</span>, dengan <span class="math inline" data-source-tex="\beta_{r-1}">\(\beta_{r-1}\)</span> ukuran Lebesgue dari
+<span class="math inline" data-source-tex="U_{r-1}">\(U_{r-1}\)</span>. (iv) Dengan meninjau
+<span class="math inline" data-source-tex="\psi z=\begin{pmatrix}z\\ 0\\ 0\end{pmatrix}">\(\psi z=\begin{pmatrix}z\\ 0\\ 0\end{pmatrix}\)</span> untuk <span class="math inline" data-source-tex="z\in S_{r-2}">\(z\in S_{r-2}\)</span>, atau dengan cara
+lain, tunjukkan bahwa ukuran Hausdorff ternormalisasi berdimensi <span class="math inline" data-source-tex="r">\(r\)</span>
+dari <span class="math inline" data-source-tex="S_r">\(S_r\)</span> adalah <span class="math inline" data-source-tex="2\pi\beta_{r-1}">\(2\pi\beta_{r-1}\)</span>. (v) Kali ini dengan menetapkan
+<span class="math inline" data-source-tex="C_a=\{z:z\in\BbbR^{r+1},\,\|z\|=1,\,\zeta_1\ge a\}">\(C_a=\{z:z\in\BbbR^{r+1},\,\|z\|=1,\,\zeta_1\ge a\}\)</span>, tunjukkan bahwa
+<span class="math inline" data-source-tex="\nu_rC_a=2\pi\mu_{r-1}\{x:x\in\BbbR^{r-1},\,\|x\|\le 1,\,\xi_1\ge a\}">\(\nu_rC_a=2\pi\mu_{r-1}\{x:x\in\BbbR^{r-1},\,\|x\|\le 1,\,\xi_1\ge a\}\)</span>
+untuk setiap <span class="math inline" data-source-tex="a\in[-1,1]">\(a\in[-1,1]\)</span>.</p>
+</section>
+<section class="source-unit" id="265Xf" data-source-id="265Xf"><h3><span class="source-label">265Xf</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="r\ge 2">\(r\ge 2\)</span>. Dengan
+mengidentifikasikan <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> dengan <span class="math inline" data-source-tex="\BbbR^{r-1}\times\Bbb R">\(\BbbR^{r-1}\times\Bbb R\)</span>,
+misalkan <span class="math inline" data-source-tex="C_r">\(C_r\)</span> adalah silinder
+<span class="math inline" data-source-tex="B_{r-1}\times[-1,1]\supseteq B_r">\(B_{r-1}\times[-1,1]\supseteq B_r\)</span>, dan
+<span class="math inline" data-source-tex="\partial C_r=(B_{r-1}\times\{-1,1\})\cup(S_{r-2}\times[-1,1])">\(\partial C_r=(B_{r-1}\times\{-1,1\})\cup(S_{r-2}\times[-1,1])\)</span>
+batasnya. Tunjukkan bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Bover{\mu_rB_r}{\mu_rC_r}
+=\Bover{\nu_{r-1}S_{r-1}}{\nu_{r-1}(\partial C_r)}">\(\Bover{\mu_rB_r}{\mu_rC_r}
+=\Bover{\nu_{r-1}S_{r-1}}{\nu_{r-1}(\partial C_r)}\)</span>.</div>
+<p>(Kasus <span class="math inline" data-source-tex="r=3">\(r=3\)</span> berasal dari Archimedes.)</p>
+</section>
+<section class="source-unit" id="265Y" data-source-id="265Y"><span class="anchor" id="265Ya"></span><h2><span class="source-label">265Y</span> Latihan lanjutan (a) </h2>
+<p>Ambil <span class="math inline" data-source-tex="a&lt;b">\(a&lt;b\)</span> dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. (i) Tunjukkan bahwa
+<span class="math inline" data-source-tex="\phi:[a,b]\to\BbbR^r">\(\phi:[a,b]\to\BbbR^r\)</span> kontinu mutlak dalam pengertian <a class="xref" href="../264/index.html#264Yp">264Yp</a> jika dan
+hanya jika semua koordinatnya <span class="math inline" data-source-tex="\phi_i:[a,b]\to\Bbb R">\(\phi_i:[a,b]\to\Bbb R\)</span>, untuk <span class="math inline" data-source-tex="i\le r">\(i\le r\)</span>,
+kontinu mutlak dalam pengertian §<a class="xref" href="../225/index.html#225">225</a>. (ii) Misalkan
+<span class="math inline" data-source-tex="\phi:[a,b]\to\BbbR^r">\(\phi:[a,b]\to\BbbR^r\)</span> adalah fungsi kontinu, dan tetapkan
+<span class="math inline" data-source-tex="F=\{x:x\in\ooint{a,b},\,\phi">\(F=\{x:x\in\ooint{a,b},\,\phi\)</span> terdiferensialkan di <span class="math inline" data-source-tex="x\}">\(x\}\)</span>. Tunjukkan
+bahwa <span class="math inline" data-source-tex="\phi">\(\phi\)</span> kontinu mutlak jika dan hanya jika
+<span class="math inline" data-source-tex="\int_F\|\phi&#x27;(x)\|dx">\(\int_F\|\phi&#x27;(x)\|dx\)</span> berhingga dan
+<span class="math inline" data-source-tex="\nu_1(\phi[[a,b]\setminus F])=0">\(\nu_1(\phi[[a,b]\setminus F])=0\)</span>, dengan <span class="math inline" data-source-tex="\nu_1">\(\nu_1\)</span> ukuran Hausdorff
+satu-dimensi (ternormalisasi) pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>. (<em>Petunjuk</em>:
+<a class="xref" href="../225/index.html#225K">225K</a>.) (iii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="\phi:[a,b]\to\BbbR^r">\(\phi:[a,b]\to\BbbR^r\)</span> kontinu
+mutlak, maka <span class="math inline" data-source-tex="\nu_1^*(\phi[D])\le\int_D\|\phi&#x27;(x)\|dx">\(\nu_1^*(\phi[D])\le\int_D\|\phi&#x27;(x)\|dx\)</span> untuk setiap
+<span class="math inline" data-source-tex="D\subseteq[a,b]">\(D\subseteq[a,b]\)</span>, dengan kesamaan jika <span class="math inline" data-source-tex="D">\(D\)</span> terukur dan
+<span class="math inline" data-source-tex="\phi\restr D">\(\phi\restr D\)</span> injektif.</p>
+</section>
+<section class="source-unit" id="265Yb" data-source-id="265Yb"><h3><span class="source-label">265Yb</span> (b) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="a\le b">\(a\le b\)</span> dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan
+<span class="math inline" data-source-tex="f:[a,b]\to\Bbb R">\(f:[a,b]\to\Bbb R\)</span> adalah fungsi kontinu bervariasi terbatas dengan
+grafik <span class="math inline" data-source-tex="\Gamma_f">\(\Gamma_f\)</span>. Tunjukkan bahwa ukuran Hausdorff satu-dimensi dari
+<span class="math inline" data-source-tex="\Gamma_f">\(\Gamma_f\)</span> adalah
+<span class="math inline" data-source-tex="\Var_{[a,b]}(f)+\int_a^b(\sqrt{1+(f&#x27;)^2}-|f&#x27;|)">\(\Var_{[a,b]}(f)+\int_a^b(\sqrt{1+(f&#x27;)^2}-|f&#x27;|)\)</span>.</p>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<section class="source-unit" id="265-notes" data-source-id="265"><span class="anchor" id="265"></span><h2><span class="source-label">265</span> Catatan penutup untuk Bagian 265 </h2>
+<p>Bukti <a class="xref" href="#265B">265B</a> tampaknya menggunakan hampir seluruh
+paruh kedua alfabet. Gagasannya seharusnya cukup langsung. Karena
+<span class="math inline" data-source-tex="T[\BbbR^r]">\(T[\BbbR^r]\)</span> berdimensi paling besar <span class="math inline" data-source-tex="r">\(r\)</span>, himpunan itu dapat dirotasikan
+oleh transformasi ortogonal <span class="math inline" data-source-tex="P">\(P\)</span> ke dalam suatu subruang dari subruang
+kanonik berdimensi <span class="math inline" data-source-tex="r">\(r\)</span>, <span class="math inline" data-source-tex="V">\(V\)</span>, yang merupakan salinan alami dari
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>; matriks <span class="math inline" data-source-tex="R">\(R\)</span> merepresentasikan proses penyalinan dari <span class="math inline" data-source-tex="V">\(V\)</span> ke
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dan <span class="math inline" data-source-tex="\phi">\(\phi\)</span> atau <span class="math inline" data-source-tex="P\trs R\trs ">\(P\trs R\trs \)</span> merupakan salinan <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>
+ke suatu subruang yang memuat <span class="math inline" data-source-tex="T[\Bbb R^r]">\(T[\Bbb R^r]\)</span>. Semua penyalinan bolak-balik
+ini dirancang untuk mengubah <span class="math inline" data-source-tex="T">\(T\)</span> menjadi operator linear
+<span class="math inline" data-source-tex="S:\BbbR^r\to\BbbR^r">\(S:\BbbR^r\to\BbbR^r\)</span> yang dapat kita tangani dengan <a class="xref" href="../263/index.html#263A">263A</a>, dan bagian
+(b) dalam bukti memeriksa bahwa kita menyalin ukuran sekaligus struktur
+linearnya.</p>
+<p>Dalam <a class="xref" href="#265D">265D</a>-<a class="xref" href="#265E">265E</a> saya berusaha mengikuti <a class="xref" href="../263/index.html#263C">263C</a>-<a class="xref" href="../263/index.html#263D">263D</a> sedekat mungkin.
+Sebenarnya hanya diperlukan satu gagasan baru. Ketika <span class="math inline" data-source-tex="s=r">\(s=r\)</span>, kita
+mempunyai argumen khusus untuk menunjukkan bahwa
+<span class="math inline" data-source-tex="\mu_r^*\phi[D]\le J\mu_r^*D+\epsilon\mu_r^*D">\(\mu_r^*\phi[D]\le J\mu_r^*D+\epsilon\mu_r^*D\)</span> (dalam bahasa <a class="xref" href="../263/index.html#263C">263C</a>),
+yang berlaku baik <span class="math inline" data-source-tex="J=0">\(J=0\)</span> maupun tidak. Ketika <span class="math inline" data-source-tex="s&gt;r">\(s&gt;r\)</span>, pendekatan ini gagal,
+karena kita tidak lagi dapat menghampiri <span class="math inline" data-source-tex="\nu_rT[B]">\(\nu_rT[B]\)</span> dengan <span class="math inline" data-source-tex="\nu_rG">\(\nu_rG\)</span>
+untuk <span class="math inline" data-source-tex="G\supseteq T[B]">\(G\supseteq T[B]\)</span> terbuka. (Lihat bagian (b-i) bukti <a class="xref" href="../263/index.html#263C">263C</a>.) Karena
+itu saya beralih ke argumen lain, yang hanya berlaku ketika <span class="math inline" data-source-tex="J&gt;0">\(J&gt;0\)</span>, dan
+akibatnya harus mencari metode terpisah untuk menunjukkan bahwa
+<span class="math inline" data-source-tex="\{\phi(x):x\in D,\,J(x)=0\}">\(\{\phi(x):x\in D,\,J(x)=0\}\)</span> terabaikan terhadap <span class="math inline" data-source-tex="\nu_r">\(\nu_r\)</span>. Karena
+kita bekerja tanpa batasan pada dimensi <span class="math inline" data-source-tex="r">\(r\)</span>, <span class="math inline" data-source-tex="s">\(s\)</span> selain <span class="math inline" data-source-tex="r\le s">\(r\le s\)</span>, kita
+dapat menggunakan trik menghampiri <span class="math inline" data-source-tex="\phi:D\to\BbbR^s">\(\phi:D\to\BbbR^s\)</span> dengan
+<span class="math inline" data-source-tex="\psi_{\eta}:D\to\BbbR^{s+r}">\(\psi_{\eta}:D\to\BbbR^{s+r}\)</span>, seperti dalam bagian (d) bukti <a class="xref" href="#265E">265E</a>.</p>
+<p>Saya memberikan tiga metode untuk menghitung luas permukaan bola berdimensi
+<span class="math inline" data-source-tex="r">\(r\)</span>: pendekatan
+langsung (<a class="xref" href="#265F">265F</a>), metode silinder luar (<a class="xref" href="#265Xe">265Xe</a>), dan teorema integral
+berulang yang penting (<a class="xref" href="#265G">265G</a>). Dua metode pertama memberikan rumus untuk
+luas tudung (<a class="xref" href="#265Xb">265Xb</a>, <a class="xref" href="#265Xe">265Xe</a>(v)). Metode silinder luar menarik karena
+Jacobiannya ternyata <span class="math inline" data-source-tex="1">\(1\)</span>, yakni kita mempunyai fungsi pelestari ukuran melalui prapeta\. Saya
+mencatat bahwa meskipun telah mengembangkan teknik yang memperbolehkan
+domain tidak beraturan, singularitas dalam fungsi <span class="math inline" data-source-tex="\theta">\(\theta\)</span> pada <a class="xref" href="#265Xe">265Xe</a>
+tetap memaksa saya menangani permukaan bola dalam dua bagian. Teorema <a class="xref" href="#265G">265G</a> adalah
+kasus khusus Teorema Koarea (Evans &amp; Gariepy 92, §3.4;
+Federer 69, 3.<a class="xref" href="../2/index.html#2">2</a>.<a class="xref" href="../12/index.html#12">12</a>).</p>
+<p>Untuk langkah berikutnya dalam teori geometris ukuran pada ruang
+Euklides, lihat Bab 47 Jilid 4.</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 2: Broad Foundations</cite>, Bagian 265.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 29 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-cumulative-html-route-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V2-S265&quot;,
+  &quot;source_member&quot;: &quot;mt2.2016/mt265.tex&quot;,
+  &quot;target_bytes&quot;: 33615,
+  &quot;target_sha256&quot;: &quot;9f8223edb6751c65f225187fb47708fd54a9221a21d286cb75ac788310294144&quot;,
+  &quot;source_ids&quot;: [
+    &quot;265&quot;,
+    &quot;265A&quot;,
+    &quot;265B&quot;,
+    &quot;265C&quot;,
+    &quot;265D&quot;,
+    &quot;265E&quot;,
+    &quot;265F&quot;,
+    &quot;265G&quot;,
+    &quot;265H&quot;,
+    &quot;265X&quot;,
+    &quot;265Xa&quot;,
+    &quot;265Xb&quot;,
+    &quot;265Xc&quot;,
+    &quot;265Xd&quot;,
+    &quot;265Xe&quot;,
+    &quot;265Xf&quot;,
+    &quot;265Y&quot;,
+    &quot;265Ya&quot;,
+    &quot;265Yb&quot;
+  ],
+  &quot;corpus_id&quot;: &quot;O007-FREMLIN&quot;,
+  &quot;volume_id&quot;: &quot;O007-FREMLIN-V2&quot;,
+  &quot;volume_source_title&quot;: &quot;Broad Foundations&quot;,
+  &quot;route&quot;: &quot;265&quot;,
+  &quot;official_source_page_start&quot;: 330,
+  &quot;chapter_official_source_pages&quot;: [
+    288,
+    342
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

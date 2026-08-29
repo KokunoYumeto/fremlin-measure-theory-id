@@ -1,0 +1,772 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Ukuran Lebesgue pada ℝ^r — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        bigcupop: '\\bigcup',
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        sp: ['^{#1}', 1],
+        bover: ['\\frac{#1}{#2}', 2],
+        sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        Prf: '\\text{Bukti.}\\;',
+        BbbQ: '\\mathbb{Q}',
+        BbbZ: '\\mathbb{Z}',
+        tbf: ['\\mathbf{#1}', 1],
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        roibr: '\\mathopen{{[}}',
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1]
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 1 · Bagian 115</p>
+  <h1>Ukuran Lebesgue pada ℝ^r</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi Volume 1</a></nav>
+<main id="isi">
+<span class="anchor" id="115-intro"></span>
+<p>Sesudah gagasan-gagasan yang sangat abstrak dalam §§111-113, terdapat
+kebutuhan mendesak akan contoh-contoh ruang ukur yang taktrivial. Contoh
+yang jauh lebih penting daripada contoh-contoh lain adalah ruang-ruang
+Euklides <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> dengan ukuran Lebesgue, dan sekarang saya
+akan menguraikan definisi ukuran-ukuran ini (<a class="xref" href="#115A">115A</a>-<a class="xref" href="#115E">115E</a>), beserta beberapa
+sifat dasarnya. Kecuali pada satu titik (dalam bukti lema fundamental
+<a class="xref" href="#115B">115B</a>), bagian ini tidak bergantung secara hakiki pada §114; tetapi
+bagaimanapun, kebanyakan mahasiswa yang menjumpai ukuran Lebesgue untuk
+pertama kalinya akan merasa lebih mudah mempelajari dengan saksama kasus
+berdimensi satu sebelum beranjak ke kasus berdimensi banyak.</p>
+<section class="source-unit" id="115A" data-source-id="115A"><span class="anchor" id="115Aa"></span><h2><span class="source-label">115A</span> Definisi (a) </h2>
+<p>Hampir di seluruh bagian ini
+(pengecualiannya adalah bukti Lema <a class="xref" href="#115B">115B</a>), <span class="math inline" data-source-tex="r">\(r\)</span> akan menyatakan suatu
+bilangan bulat tetap yang lebih besar daripada atau sama dengan <span class="math inline" data-source-tex="1">\(1\)</span>.
+Saya akan menggunakan huruf Latin <span class="math inline" data-source-tex="a">\(a\)</span>, <span class="math inline" data-source-tex="b">\(b\)</span>, <span class="math inline" data-source-tex="c">\(c\)</span>, <span class="math inline" data-source-tex="d">\(d\)</span>, <span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="y">\(y\)</span> untuk
+menyatakan anggota <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dan huruf Yunani untuk koordinatnya,
+sehingga <span class="math inline" data-source-tex="a=(\alpha_1,\ldots,\alpha_r)">\(a=(\alpha_1,\ldots,\alpha_r)\)</span>,
+<span class="math inline" data-source-tex="b=(\beta_1,\ldots,\beta_r)">\(b=(\beta_1,\ldots,\beta_r)\)</span>, <span class="math inline" data-source-tex="x=(\xi_1,\ldots,\xi_r)">\(x=(\xi_1,\ldots,\xi_r)\)</span>.</p>
+</section>
+<section class="source-unit" id="115Ab" data-source-id="115Ab"><h3><span class="source-label">115Ab</span> <strong>(b)</strong> </h3>
+<p>Untuk keperluan bagian ini, sebuah <strong>interval setengah terbuka</strong> dalam <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> adalah himpunan berbentuk
+<span class="math inline" data-source-tex="\coint{a,b}=\{x:\alpha_i\le \xi_i&lt;\beta_i\Forall i\le
+r\}">\(\coint{a,b}=\{x:\alpha_i\le \xi_i&lt;\beta_i\Forall i\le
+r\}\)</span>, dengan <span class="math inline" data-source-tex="a">\(a\)</span>, <span class="math inline" data-source-tex="b\in\BbbR^r">\(b\in\BbbR^r\)</span>.
+Perhatikan bahwa saya mengizinkan <span class="math inline" data-source-tex="\beta_i\le \alpha_i">\(\beta_i\le \alpha_i\)</span> dalam rumus ini;
+jika hal ini terjadi untuk suatu <span class="math inline" data-source-tex="i">\(i\)</span>, maka <span class="math inline" data-source-tex="\coint{a,b}=\emptyset">\(\coint{a,b}=\emptyset\)</span>.</p>
+</section>
+<section class="source-unit" id="115Ac" data-source-id="115Ac"><h3><span class="source-label">115Ac</span> <strong>(c)</strong> </h3>
+<p>Jika <span class="math inline" data-source-tex="I=\coint{a,b}\subseteq \BbbR^r">\(I=\coint{a,b}\subseteq \BbbR^r\)</span> adalah
+interval setengah terbuka, maka
+<span class="math inline" data-source-tex="I=\emptyset">\(I=\emptyset\)</span> atau</p>
+<div class="centerline"><span class="math inline" data-source-tex="\alpha_i=\inf\{\xi_i:x\in I\}">\(\alpha_i=\inf\{\xi_i:x\in I\}\)</span>,
+  <span class="math inline" data-source-tex="\beta_i=\sup\{\xi_i:x\in I\}">\(\beta_i=\sup\{\xi_i:x\in I\}\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="i\le r">\(i\le r\)</span>; dalam kasus kedua, penyajian <span class="math inline" data-source-tex="I">\(I\)</span>
+sebagai interval setengah terbuka bersifat unik.
+Karena itu, kita dapat mendefinisikan <strong>volume berdimensi <span class="math inline" data-source-tex="r">\(r\)</span></strong>
+<span class="math inline" data-source-tex="\lambda I">\(\lambda I\)</span> dari suatu interval setengah terbuka <span class="math inline" data-source-tex="I">\(I\)</span> dengan menetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lambda\emptyset = 0">\(\lambda\emptyset = 0\)</span>,
+   <span class="math inline" data-source-tex="\lambda\coint{a,b}=\prod_{i=1}^r\beta_i-\alpha_i">\(\lambda\coint{a,b}=\prod_{i=1}^r\beta_i-\alpha_i\)</span> jika
+<span class="math inline" data-source-tex="\alpha_i&lt;\beta_i">\(\alpha_i&lt;\beta_i\)</span> untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>.</div>
+</section>
+<section class="source-unit" id="115B" data-source-id="115B"><h2><span class="source-label">115B</span> Lema </h2>
+<p>Jika <span class="math inline" data-source-tex="I\subseteq\BbbR^r">\(I\subseteq\BbbR^r\)</span> adalah interval setengah
+terbuka dan <span class="math inline" data-source-tex="\langle I_j\rangle_{j\in\Bbb N}">\(\langle I_j\rangle_{j\in\Bbb N}\)</span> adalah barisan interval
+setengah terbuka yang menutupi <span class="math inline" data-source-tex="I">\(I\)</span>, maka
+<span class="math inline" data-source-tex="\lambda I\le\sum_{j=0}^{\infty}\lambda I_j">\(\lambda I\le\sum_{j=0}^{\infty}\lambda I_j\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Bukti dilakukan dengan induksi pada <span class="math inline" data-source-tex="r">\(r\)</span>. Karena itu, hanya untuk
+bukti ini, saya menuliskan <span class="math inline" data-source-tex="\lambda_r">\(\lambda_r\)</span> bagi fungsi yang didefinisikan
+pada interval-interval setengah terbuka dalam <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> melalui rumus
+<a class="xref" href="#115Ac">115Ac</a>.</p>
+<p> </p>
+<p><span class="anchor" id="115Ba"></span><strong>(a)</strong> Argumen untuk <span class="math inline" data-source-tex="r=1">\(r=1\)</span>, yang memulai induksi, serupa dengan
+langkah induksi; tetapi alih-alih menetapkan kesepakatan yang sesuai
+untuk membangun kasus trivial <span class="math inline" data-source-tex="r=0">\(r=0\)</span>, atau meminta Anda mengerjakan sendiri
+rinciannya, saya merujuk Anda ke <a class="xref" href="../114/index.html#114B">114B</a>, yang tepat merupakan kasus <span class="math inline" data-source-tex="r=1">\(r=1\)</span>.</p>
+<p> </p>
+<p><span class="anchor" id="115Bb"></span><strong>(b)</strong> Untuk langkah induksi menuju <span class="math inline" data-source-tex="r+1">\(r+1\)</span>, dengan <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span>, ambil
+interval setengah terbuka <span class="math inline" data-source-tex="I\subseteq\BbbR^{r+1}">\(I\subseteq\BbbR^{r+1}\)</span> dan
+<span class="math inline" data-source-tex="\sequence{j}{I_j}">\(\sequence{j}{I_j}\)</span> suatu barisan interval setengah terbuka yang
+menutupi <span class="math inline" data-source-tex="I">\(I\)</span>. Jika <span class="math inline" data-source-tex="I=\emptyset">\(I=\emptyset\)</span>, tentu saja <span class="math inline" data-source-tex="\lambda_{r+1}
+I=0\le\sum_{j=0}^{\infty}\lambda_{r+1}
+I_j">\(\lambda_{r+1}
+I=0\le\sum_{j=0}^{\infty}\lambda_{r+1}
+I_j\)</span>. Jika tidak, nyatakan
+<span class="math inline" data-source-tex="I">\(I\)</span> sebagai <span class="math inline" data-source-tex="\coint{a,b}">\(\coint{a,b}\)</span>, dengan <span class="math inline" data-source-tex="\alpha_i&lt;\beta_i">\(\alpha_i&lt;\beta_i\)</span> untuk <span class="math inline" data-source-tex="i\le r+1">\(i\le r+1\)</span>,
+dan setiap <span class="math inline" data-source-tex="I_j">\(I_j\)</span> sebagai <span class="math inline" data-source-tex="\coint{a^{(j)},b^{(j)}}">\(\coint{a^{(j)},b^{(j)}}\)</span>. Tuliskan
+<span class="math inline" data-source-tex="\zeta=\prod_{i=1}^r\beta_i-\alpha_i">\(\zeta=\prod_{i=1}^r\beta_i-\alpha_i\)</span>, sehingga
+<span class="math inline" data-source-tex="\lambda_{r+1}I=\zeta(\beta_{r+1}-\alpha_{r+1})">\(\lambda_{r+1}I=\zeta(\beta_{r+1}-\alpha_{r+1})\)</span>. Tetapkan
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Untuk setiap <span class="math inline" data-source-tex="\xi\in \Bbb R">\(\xi\in \Bbb R\)</span>, misalkan <span class="math inline" data-source-tex="H_{\xi}">\(H_{\xi}\)</span> adalah
+setengah-ruang <span class="math inline" data-source-tex="\{x:\xi_{r+1}&lt;\xi\}">\(\{x:\xi_{r+1}&lt;\xi\}\)</span>, dan tinjau himpunan</p>
+<div class="centerline"><span class="math inline" data-source-tex="A=\{\xi:\alpha_{r+1}\le \xi\le \beta_{r+1},\,
+\zeta(\xi-\alpha_{r+1})
+\le(1+\epsilon)\sum_{j=0}^{\infty}\lambda_{r+1}(I_j\cap H_{\xi})\}">\(A=\{\xi:\alpha_{r+1}\le \xi\le \beta_{r+1},\,
+\zeta(\xi-\alpha_{r+1})
+\le(1+\epsilon)\sum_{j=0}^{\infty}\lambda_{r+1}(I_j\cap H_{\xi})\}\)</span>.</div>
+<p>(Perhatikan bahwa
+<span class="math inline" data-source-tex="I_j\cap H_{\xi}
+=\hbox{$\bigl[$}a^{(j)},\tilde b^{(j)}\hbox{$\bigr[$}">\(I_j\cap H_{\xi}=\mathopen{[}a^{(j)},\tilde b^{(j)}\mathclose{[}\)</span>,
+dengan <span class="math inline" data-source-tex="\tilde\beta^{(j)}_i=\beta^{(j)}_i">\(\tilde\beta^{(j)}_i=\beta^{(j)}_i\)</span> untuk <span class="math inline" data-source-tex="i\le r">\(i\le r\)</span> dan
+<span class="math inline" data-source-tex="\tilde\beta^{(j)}_{r+1}=\min(\beta^{(j)}_{r+1},\xi)">\(\tilde\beta^{(j)}_{r+1}=\min(\beta^{(j)}_{r+1},\xi)\)</span>, sehingga
+<span class="math inline" data-source-tex="\lambda_{r+1}(I_j\cap H_{\xi})">\(\lambda_{r+1}(I_j\cap H_{\xi})\)</span> selalu terdefinisi.)
+Kita mempunyai <span class="math inline" data-source-tex="\alpha_{r+1}\in A">\(\alpha_{r+1}\in A\)</span>, karena</p>
+<div class="centerline"><span class="math inline" data-source-tex="\zeta(\alpha_{r+1}-\alpha_{r+1})=0
+\le(1+\epsilon)\sum_{j=0}^{\infty}\lambda_{r+1}(I_j\cap H_{\alpha_{r+1}})">\(\zeta(\alpha_{r+1}-\alpha_{r+1})=0
+\le(1+\epsilon)\sum_{j=0}^{\infty}\lambda_{r+1}(I_j\cap H_{\alpha_{r+1}})\)</span>,</div>
+<p>dan tentu saja <span class="math inline" data-source-tex="A\subseteq[\alpha_{r+1},\beta_{r+1}]">\(A\subseteq[\alpha_{r+1},\beta_{r+1}]\)</span>,
+sehingga <span class="math inline" data-source-tex="\gamma=\sup A">\(\gamma=\sup A\)</span> terdefinisi dan
+termasuk dalam <span class="math inline" data-source-tex="[\alpha_{r+1},\beta_{r+1}]">\([\alpha_{r+1},\beta_{r+1}]\)</span>.</p>
+<p> </p>
+<p><span class="anchor" id="115Bc"></span><strong>(c)</strong> Sekarang kita dapati bahwa <span class="math inline" data-source-tex="\gamma\in A">\(\gamma\in A\)</span>.</p>
+<p><span class="math display" data-source-tex="\eqalign{\Prf\ \zeta(\gamma-\alpha_{r+1})
+&amp;=\sup_{\xi\in A}\zeta(\xi-\alpha_{r+1})\cr
+&amp;\le(1+\epsilon)\sup_{\xi\in A}
+  \sum_{j=0}^{\infty}\lambda_{r+1}(I_j\cap H_{\xi})
+\le(1+\epsilon)\sum_{j=0}^{\infty}\lambda_{r+1}(I_j\cap H_{\gamma}).
+\text{ \Qed}\cr}">\[\begin{aligned}\Prf\ \zeta(\gamma-\alpha_{r+1})
+&amp;=\sup_{\xi\in A}\zeta(\xi-\alpha_{r+1})\\
+&amp;\le(1+\epsilon)\sup_{\xi\in A}
+  \sum_{j=0}^{\infty}\lambda_{r+1}(I_j\cap H_{\xi})
+\le(1+\epsilon)\sum_{j=0}^{\infty}\lambda_{r+1}(I_j\cap H_{\gamma}).
+\quad\square\\\end{aligned}\]</span></p>
+<p><span class="anchor" id="115Bd"></span><strong>(d)</strong> ? Andaikan, jika mungkin, bahwa
+<span class="math inline" data-source-tex="\gamma&lt;\beta_{r+1}">\(\gamma&lt;\beta_{r+1}\)</span>. Maka
+<span class="math inline" data-source-tex="\gamma\in\coint{\alpha_{r+1},\beta_{r+1}}">\(\gamma\in\coint{\alpha_{r+1},\beta_{r+1}}\)</span>. Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="J=\{x:x\in\BbbR^r,\,(x,\gamma)\in I\}
+=\coint{a&#x27;,b&#x27;}">\(J=\{x:x\in\BbbR^r,\,(x,\gamma)\in I\}
+=\coint{a&#x27;,b&#x27;}\)</span>,</div>
+<p>dengan <span class="math inline" data-source-tex="a&#x27;=(\alpha_1,\ldots,\alpha_r)">\(a&#x27;=(\alpha_1,\ldots,\alpha_r)\)</span>,
+<span class="math inline" data-source-tex="b&#x27;=(\beta_1,\ldots,\beta_r)">\(b&#x27;=(\beta_1,\ldots,\beta_r)\)</span>, dan untuk setiap <span class="math inline" data-source-tex="j\in\Bbb N">\(j\in\Bbb N\)</span>
+tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="J_j=\{x:x\in\BbbR^r,\,(x,\gamma)\in I_j\}">\(J_j=\{x:x\in\BbbR^r,\,(x,\gamma)\in I_j\}\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="I\subseteq\bigcup_{j\in\Bbb N}I_j">\(I\subseteq\bigcup_{j\in\Bbb N}I_j\)</span>, kita harus
+mempunyai <span class="math inline" data-source-tex="J\subseteq\bigcup_{j\in\Bbb N}J_j">\(J\subseteq\bigcup_{j\in\Bbb N}J_j\)</span>. Tentu saja, baik <span class="math inline" data-source-tex="J">\(J\)</span>
+maupun setiap <span class="math inline" data-source-tex="J_j">\(J_j\)</span> merupakan interval setengah terbuka dalam
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>. (Inilah salah satu tempat yang memperlihatkan manfaat
+menganggap himpunan kosong sebagai interval setengah terbuka.)
+Menurut hipotesis induksi,
+<span class="math inline" data-source-tex="\zeta=\lambda_rJ\le\sum_{j=0}^{\infty}\lambda_rJ_j">\(\zeta=\lambda_rJ\le\sum_{j=0}^{\infty}\lambda_rJ_j\)</span>. Karena <span class="math inline" data-source-tex="\zeta&gt;0">\(\zeta&gt;0\)</span>,
+terdapat <span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\zeta\le(1+\epsilon)\sum_{j=0}^m\lambda_rJ_j">\(\zeta\le(1+\epsilon)\sum_{j=0}^m\lambda_rJ_j\)</span>.
+Sekarang, untuk setiap <span class="math inline" data-source-tex="j\le m">\(j\le m\)</span>, berlaku <span class="math inline" data-source-tex="J_j=\emptyset">\(J_j=\emptyset\)</span> atau
+<span class="math inline" data-source-tex="\alpha^{(j)}_{r+1}\le\gamma&lt;\beta^{(j)}_{r+1}">\(\alpha^{(j)}_{r+1}\le\gamma&lt;\beta^{(j)}_{r+1}\)</span>; tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\xi=\min(\{\beta_{r+1}\}\cup\{\beta^{(j)}_{r+1}:j\le
+m,\,J_j\ne\emptyset\})&gt;\gamma">\(\xi=\min(\{\beta_{r+1}\}\cup\{\beta^{(j)}_{r+1}:j\le
+m,\,J_j\ne\emptyset\})&gt;\gamma\)</span>.</div>
+<p>Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lambda_{r+1}(I_j\cap H_{\xi})
+\ge\lambda_{r+1}(I_j\cap H_{\gamma})+(\xi-\gamma)\lambda_rJ_j">\(\lambda_{r+1}(I_j\cap H_{\xi})
+\ge\lambda_{r+1}(I_j\cap H_{\gamma})+(\xi-\gamma)\lambda_rJ_j\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="j\le m">\(j\le m\)</span> yang untuknya <span class="math inline" data-source-tex="J_j">\(J_j\)</span> tak kosong, dan
+karena itu untuk setiap <span class="math inline" data-source-tex="j">\(j\)</span>. Akibatnya,</p>
+<p><span class="math display" data-source-tex="\eqalign{\zeta(\xi-\alpha_{r+1})
+&amp;=\zeta(\gamma-\alpha_{r+1})+\zeta(\xi-\gamma)\cr
+&amp;\le(1+\epsilon)\sum_{j=0}^{\infty}\lambda_{r+1}(I_j\cap H_{\gamma})
++(1+\epsilon)(\xi-\gamma)\sum_{j=0}^m\lambda_rJ_j\cr
+&amp;\le(1+\epsilon)\sum_{j=m+1}^{\infty}\lambda_{r+1}(I_j\cap H_{\gamma})
++(1+\epsilon)\sum_{j=0}^m\lambda_{r+1}(I_j\cap H_{\xi})\cr
+&amp;\le(1+\epsilon)\sum_{j=0}^{\infty}\lambda_{r+1}(I_j\cap H_{\xi}),\cr}">\[\begin{aligned}\zeta(\xi-\alpha_{r+1})
+&amp;=\zeta(\gamma-\alpha_{r+1})+\zeta(\xi-\gamma)\\
+&amp;\le(1+\epsilon)\sum_{j=0}^{\infty}\lambda_{r+1}(I_j\cap H_{\gamma})
++(1+\epsilon)(\xi-\gamma)\sum_{j=0}^m\lambda_rJ_j\\
+&amp;\le(1+\epsilon)\sum_{j=m+1}^{\infty}\lambda_{r+1}(I_j\cap H_{\gamma})
++(1+\epsilon)\sum_{j=0}^m\lambda_{r+1}(I_j\cap H_{\xi})\\
+&amp;\le(1+\epsilon)\sum_{j=0}^{\infty}\lambda_{r+1}(I_j\cap H_{\xi}),\\\end{aligned}\]</span></p>
+<p>dan <span class="math inline" data-source-tex="\xi\in A">\(\xi\in A\)</span>, yang mustahil. X</p>
+<p> </p>
+<p><span class="anchor" id="115Be"></span><strong>(e)</strong> Kita menyimpulkan bahwa <span class="math inline" data-source-tex="\gamma=\beta_{r+1}">\(\gamma=\beta_{r+1}\)</span>, sehingga
+<span class="math inline" data-source-tex="\beta_{r+1}\in A">\(\beta_{r+1}\in A\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lambda_{r+1}I=\zeta(\beta_{r+1}-\alpha_{r+1})
+\le(1+\epsilon)\sum_{j=0}^{\infty}\lambda_{r+1}(I_j\cap H_{\beta_{r+1}})
+\le(1+\epsilon)\sum_{j=0}^{\infty}\lambda_{r+1}I_j">\(\lambda_{r+1}I=\zeta(\beta_{r+1}-\alpha_{r+1})
+\le(1+\epsilon)\sum_{j=0}^{\infty}\lambda_{r+1}(I_j\cap H_{\beta_{r+1}})
+\le(1+\epsilon)\sum_{j=0}^{\infty}\lambda_{r+1}I_j\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lambda_{r+1}I\le\sum_{j=0}^{\infty}\lambda_{r+1}I_j">\(\lambda_{r+1}I\le\sum_{j=0}^{\infty}\lambda_{r+1}I_j\)</span>,</div>
+<p>sebagaimana diklaim.</p></aside>
+<p> 
+ <strong>Catatan</strong> Bukti ini cukup berat, dan tidak semua orang
+menyusun uraian
+serinci
+ini untuk membuktikannya. Pendekatan yang barangkali lebih konvensional diuraikan
+secara garis besar dalam <a class="xref" href="#115Ya">115Ya</a>, dengan menggunakan teorema Heine–Borel
+untuk mereduksi masalah menjadi persoalan tentang liputan berhingga,
+kemudian (sangat sering) mengatakan bahwa persoalan tersebut trivial.
+Saya tidak menggunakan metode ini, antara lain karena kita tidak
+memerlukan teorema Heine–Borel di tempat lain dalam jilid ini (meskipun
+kita pasti memerlukannya dalam Jilid 2, dan saya menuliskan buktinya
+dalam 2A2F), dan antara lain karena saya tidak setuju bahwa lema tersebut
+trivial ketika kita mempunyai barisan berhingga <span class="math inline" data-source-tex="I_0,\ldots,I_m">\(I_0,\ldots,I_m\)</span> yang
+menutupi <span class="math inline" data-source-tex="I">\(I\)</span>. Saya mengundang Anda untuk mempertimbangkannya sendiri.
+Menurut saya, setiap argumen yang saksama harus melibatkan induksi pada
+dimensi, dan itulah yang saya berikan di sini. Tentu saja, penanganan
+barisan tak hingga sepanjang pembuktian membuat pelacakan atas apa yang
+sedang kita kerjakan sedikit lebih sulit, dan saya mencatat bahwa
+sesungguhnya terdapat suatu langkah krusial yang mengharuskan pemotongan
+barisan; yang saya maksud ialah rumus</p>
+<div class="centerline"><span class="math inline" data-source-tex="\xi=\min(\{\beta_{r+1}\}\cup\{\beta^{(j)}_{r+1}:
+                                          j\le m,\,J_j\ne\emptyset\})">\(\xi=\min(\{\beta_{r+1}\}\cup\{\beta^{(j)}_{r+1}:
+                                          j\le m,\,J_j\ne\emptyset\})\)</span></div>
+<p>pada bagian (d) dari bukti. Kita jelas tidak dapat mengambil
+<span class="math inline" data-source-tex="\xi=\inf\{\beta^{(j)}_{r+1}:j\in\Bbb N,\,J_j\ne\emptyset\}">\(\xi=\inf\{\beta^{(j)}_{r+1}:j\in\Bbb N,\,J_j\ne\emptyset\}\)</span>, karena
+nilai ini sangat mungkin sama dengan <span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>. Dengan demikian, saya
+memerlukan suatu alasan untuk memotong barisan, dan alasan itu terdapat
+dalam kalimat</p>
+<div class="centerline">Karena <span class="math inline" data-source-tex="\zeta&gt;0">\(\zeta&gt;0\)</span>, terdapat <span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\zeta\le(1+\epsilon)\sum_{j=0}^m\lambda_rJ_j">\(\zeta\le(1+\epsilon)\sum_{j=0}^m\lambda_rJ_j\)</span>.</div>
+<p>Langkah itulah alasan untuk memasukkan kelonggaran
+<span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> ke dalam definisi himpunan <span class="math inline" data-source-tex="A">\(A\)</span> pada awal bukti. Selain
+modifikasi ini, struktur argumen tersebut dimaksudkan mencerminkan
+struktur <a class="xref" href="../114/index.html#114B">114B</a>; jadi saya berharap Anda dapat menggunakan rumus-rumus
+yang lebih sederhana dalam <a class="xref" href="../114/index.html#114B">114B</a> sebagai panduan di sini.</p>
+</section>
+<section class="source-unit" id="115C" data-source-id="115C"><h2><span class="source-label">115C</span> Definisi </h2>
+<p>Sekarang, dan untuk seluruh sisa bagian ini,
+definisikan <span class="math inline" data-source-tex="\theta:\Cal P(\BbbR^r)\to[0,\infty]">\(\theta:\Cal P(\BbbR^r)\to[0,\infty]\)</span> dengan
+menetapkan</p>
+<p><span class="math display" data-source-tex="\eqalign{\theta A=\inf\{\sum_{j=0}^{\infty}\lambda I_j:\langle
+I_j\rangle_{j\in\Bbb N}
+\text{ adalah barisan }&amp;\text{interval setengah terbuka}\cr
+&amp;\text{sedemikian sehingga }
+A\subseteq\bigcup_{j\in\Bbb N}I_j\}.\cr}">\[\begin{aligned}\theta A=\inf\{\sum_{j=0}^{\infty}\lambda I_j:\langle
+I_j\rangle_{j\in\Bbb N}
+\text{ adalah barisan }&amp;\text{interval setengah terbuka}\\
+&amp;\text{sedemikian sehingga }
+A\subseteq\bigcup_{j\in\Bbb N}I_j\}.\\\end{aligned}\]</span></p>
+<p>Perhatikan bahwa setiap <span class="math inline" data-source-tex="A">\(A\)</span> dapat ditutupi oleh suatu
+barisan interval setengah terbuka — misalnya,
+<span class="math inline" data-source-tex="A\subseteq\bigcup_{n\in\Bbb N}\coint{-\tbf{n},\tbf{n}}">\(A\subseteq\bigcup_{n\in\Bbb N}\coint{-\tbf{n},\tbf{n}}\)</span>, dengan
+<span class="math inline" data-source-tex="\tbf{n}=(n,n,\ldots,n)\in\BbbR^r">\(\tbf{n}=(n,n,\ldots,n)\in\BbbR^r\)</span>; sehingga jika kita menafsirkan
+jumlah-jumlahnya dalam <span class="math inline" data-source-tex="[0,\infty]">\([0,\infty]\)</span>, seperti dalam <a class="xref" href="../112/index.html#112Bc">112Bc</a> di atas, kita
+selalu mempunyai himpunan tak kosong yang infimumnya dapat diambil, dan
+<span class="math inline" data-source-tex="\theta A">\(\theta A\)</span> selalu terdefinisi dalam <span class="math inline" data-source-tex="[0,\infty]">\([0,\infty]\)</span>.</p>
+<p>Fungsi <span class="math inline" data-source-tex="\theta">\(\theta\)</span> ini disebut <strong>ukuran luar Lebesgue</strong> pada
+<span class="math inline" data-source-tex="\BbbR^{r}">\(\BbbR^{r}\)</span>; frasa ini dibenarkan oleh (a) dari proposisi berikutnya.</p>
+</section>
+<section class="source-unit" id="115D" data-source-id="115D"><span class="anchor" id="115Da"></span><h2><span class="source-label">115D</span> Proposisi </h2>
+<p>(a) <span class="math inline" data-source-tex="\theta">\(\theta\)</span> adalah ukuran luar pada
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>.</p>
+<span class="anchor" id="115Db"></span>
+<p>(b) <span class="math inline" data-source-tex="\theta I=\lambda I">\(\theta I=\lambda I\)</span> untuk setiap interval setengah terbuka
+<span class="math inline" data-source-tex="I\subseteq\BbbR^r">\(I\subseteq\BbbR^r\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)(i)</strong> <span class="math inline" data-source-tex="\theta">\(\theta\)</span> mengambil nilai dalam <span class="math inline" data-source-tex="[0,\infty]">\([0,\infty]\)</span>
+karena setiap <span class="math inline" data-source-tex="\theta A">\(\theta A\)</span> merupakan infimum suatu subhimpunan tak kosong
+dari <span class="math inline" data-source-tex="[0,\infty]">\([0,\infty]\)</span>.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> <span class="math inline" data-source-tex="\theta\emptyset=0">\(\theta\emptyset=0\)</span> karena (misalnya) jika kita
+menetapkan <span class="math inline" data-source-tex="I_j=\emptyset">\(I_j=\emptyset\)</span> untuk setiap <span class="math inline" data-source-tex="j">\(j\)</span>, maka setiap <span class="math inline" data-source-tex="I_j">\(I_j\)</span> adalah
+interval setengah terbuka (menurut kesepakatan yang saya gunakan),
+<span class="math inline" data-source-tex="\emptyset\subseteq\bigcup_{j\in\Bbb N}I_j">\(\emptyset\subseteq\bigcup_{j\in\Bbb N}I_j\)</span>
+dan <span class="math inline" data-source-tex="\sum_{j=0}^{\infty}\lambda I_j=0">\(\sum_{j=0}^{\infty}\lambda I_j=0\)</span>.</p>
+<p> </p>
+<p>  <strong>(iii)</strong> Jika <span class="math inline" data-source-tex="A\subseteq B">\(A\subseteq B\)</span>, maka setiap kali
+<span class="math inline" data-source-tex="B\subseteq\bigcup_{j\in\Bbb N}I_j">\(B\subseteq\bigcup_{j\in\Bbb N}I_j\)</span> kita mempunyai
+<span class="math inline" data-source-tex="A\subseteq\bigcup_{j\in\Bbb N}I_j">\(A\subseteq\bigcup_{j\in\Bbb N}I_j\)</span>, sehingga <span class="math inline" data-source-tex="\theta A">\(\theta A\)</span> adalah
+infimum suatu himpunan yang memuat himpunan yang terlibat dalam
+definisi <span class="math inline" data-source-tex="\theta B">\(\theta B\)</span>, dan
+<span class="math inline" data-source-tex="\theta A\le\theta B">\(\theta A\le\theta B\)</span>.</p>
+<p> </p>
+<p>  <strong>(iv)</strong> Sekarang andaikan bahwa
+<span class="math inline" data-source-tex="\langle A_n\rangle_{n\in\Bbb N}">\(\langle A_n\rangle_{n\in\Bbb N}\)</span> adalah barisan subhimpunan
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dengan gabungan <span class="math inline" data-source-tex="A">\(A\)</span>. Untuk setiap
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, kita dapat memilih, bagi setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, suatu
+barisan <span class="math inline" data-source-tex="\langle I_{nj}\rangle_{j\in\Bbb N}">\(\langle I_{nj}\rangle_{j\in\Bbb N}\)</span> yang terdiri atas interval
+setengah terbuka sedemikian sehingga
+<span class="math inline" data-source-tex="A_n\subseteq\bigcup_{j\in\Bbb N}I_{nj}">\(A_n\subseteq\bigcup_{j\in\Bbb N}I_{nj}\)</span> dan
+<span class="math inline" data-source-tex="\sum_{j=0}^{\infty}\lambda I_{nj}\le\theta A_n+2^{-n}\epsilon">\(\sum_{j=0}^{\infty}\lambda I_{nj}\le\theta A_n+2^{-n}\epsilon\)</span>.
+(Anda mungkin perlu memeriksa bahwa perumusan ini sah, baik ketika
+<span class="math inline" data-source-tex="\theta A_n">\(\theta A_n\)</span> berhingga maupun tak hingga.) Sekarang, menurut <a class="xref" href="../111/index.html#111F">111F</a>(b-ii),
+terdapat bijeksi dari <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span> ke <span class="math inline" data-source-tex="\Bbb N\times\Bbb N">\(\Bbb N\times\Bbb N\)</span>; nyatakan
+bijeksi ini dalam bentuk <span class="math inline" data-source-tex="m\mapsto(k_m,l_m)">\(m\mapsto(k_m,l_m)\)</span>. Maka kita memperoleh</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{m=0}^{\infty}\lambda I_{k_m,l_m}
+=\sum_{n=0}^{\infty}\sum_{j=0}^{\infty}\lambda I_{nj}">\(\sum_{m=0}^{\infty}\lambda I_{k_m,l_m}
+=\sum_{n=0}^{\infty}\sum_{j=0}^{\infty}\lambda I_{nj}\)</span>.</div>
+<p>(Untuk melihat ini, perhatikan bahwa karena setiap
+<span class="math inline" data-source-tex="\lambda I_{nj}">\(\lambda I_{nj}\)</span> lebih besar daripada atau sama dengan <span class="math inline" data-source-tex="0">\(0\)</span>, dan
+<span class="math inline" data-source-tex="m\mapsto(k_m,l_m)">\(m\mapsto(k_m,l_m)\)</span> adalah bijeksi, kedua jumlah sama dengan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sup_{K\subseteq\Bbb N\times\Bbb N\text{ berhingga}}
+\sum_{(n,j)\in K}\lambda I_{nj}">\(\sup_{K\subseteq\Bbb N\times\Bbb N\text{ berhingga}}
+\sum_{(n,j)\in K}\lambda I_{nj}\)</span>.</div>
+<p>Atau lihat argumen yang dituliskan lengkap dalam <a class="xref" href="../114/index.html#114D">114D</a>.) Namun
+sekarang <span class="math inline" data-source-tex="\langle I_{k_m,l_m}\rangle_{m\in\Bbb N}">\(\langle I_{k_m,l_m}\rangle_{m\in\Bbb N}\)</span> adalah barisan
+interval setengah terbuka dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="A=\bigcup_{n\in\Bbb N}A_n
+\subseteq\bigcup_{n\in\Bbb N}\bigcup_{j\in\Bbb N}I_{nj}
+=\bigcup_{m\in\Bbb N}I_{k_m,l_m}">\(A=\bigcup_{n\in\Bbb N}A_n
+\subseteq\bigcup_{n\in\Bbb N}\bigcup_{j\in\Bbb N}I_{nj}
+=\bigcup_{m\in\Bbb N}I_{k_m,l_m}\)</span>,</div>
+<p>sehingga</p>
+<p><span class="math display" data-source-tex="\eqalign{\theta A
+&amp;\le\sum_{m=0}^{\infty}\lambda I_{k_m,l_m}
+=\sum_{n=0}^{\infty}\sum_{j=0}^{\infty}\lambda I_{nj}\cr
+&amp;\le\sum_{n=0}^{\infty}(\theta A_n+2^{-n}\epsilon)
+=\sum_{n=0}^{\infty}\theta A_n+\sum_{n=0}^{\infty}2^{-n}\epsilon
+=\sum_{n=0}^{\infty}\theta A_n+2\epsilon.\cr}">\[\begin{aligned}\theta A
+&amp;\le\sum_{m=0}^{\infty}\lambda I_{k_m,l_m}
+=\sum_{n=0}^{\infty}\sum_{j=0}^{\infty}\lambda I_{nj}\\
+&amp;\le\sum_{n=0}^{\infty}(\theta A_n+2^{-n}\epsilon)
+=\sum_{n=0}^{\infty}\theta A_n+\sum_{n=0}^{\infty}2^{-n}\epsilon
+=\sum_{n=0}^{\infty}\theta A_n+2\epsilon.\\\end{aligned}\]</span></p>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang, <span class="math inline" data-source-tex="\theta
+A\le\sum_{n=0}^{\infty}\theta A_n">\(\theta
+A\le\sum_{n=0}^{\infty}\theta A_n\)</span> (sekali lagi, Anda sebaiknya
+memeriksa bahwa ini sah, baik
+<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\theta A_n">\(\sum_{n=0}^{\infty}\theta A_n\)</span> berhingga maupun tidak).
+Karena <span class="math inline" data-source-tex="\langle A_n\rangle_{n\in\Bbb N}">\(\langle A_n\rangle_{n\in\Bbb N}\)</span> sebarang, <span class="math inline" data-source-tex="\theta">\(\theta\)</span> adalah
+ukuran luar.</p>
+<p> </p>
+<p><strong>(b)</strong> Karena kita selalu dapat mengambil <span class="math inline" data-source-tex="I_0=I">\(I_0=I\)</span> dan
+<span class="math inline" data-source-tex="I_j=\emptyset">\(I_j=\emptyset\)</span> untuk <span class="math inline" data-source-tex="j\ge 1">\(j\ge 1\)</span>, untuk memperoleh barisan interval
+setengah terbuka yang menutupi <span class="math inline" data-source-tex="I">\(I\)</span> dengan
+<span class="math inline" data-source-tex="\sum_{j=0}^{\infty}\lambda I_j=\lambda I">\(\sum_{j=0}^{\infty}\lambda I_j=\lambda I\)</span>, kita tentu mempunyai
+<span class="math inline" data-source-tex="\theta I\le\lambda I">\(\theta I\le\lambda I\)</span>. Untuk ketaksamaan sebaliknya, gunakan <a class="xref" href="#115B">115B</a>;
+jika <span class="math inline" data-source-tex="I\subseteq\bigcup_{j\in\Bbb N}I_j">\(I\subseteq\bigcup_{j\in\Bbb N}I_j\)</span>, maka <span class="math inline" data-source-tex="\lambda
+I\le\sum_{j=0}^{\infty}\lambda I_j">\(\lambda
+I\le\sum_{j=0}^{\infty}\lambda I_j\)</span>; karena
+<span class="math inline" data-source-tex="\langle I_j\rangle_{j\in\Bbb N}">\(\langle I_j\rangle_{j\in\Bbb N}\)</span> sebarang, <span class="math inline" data-source-tex="\theta I\ge\lambda I">\(\theta I\ge\lambda I\)</span> dan
+<span class="math inline" data-source-tex="\theta I=\lambda I">\(\theta I=\lambda I\)</span>, sebagaimana diperlukan.</p></aside>
+</section>
+<section class="source-unit" id="115E" data-source-id="115E"><h2><span class="source-label">115E</span> Definisi </h2>
+<p>Karena ukuran luar
+Lebesgue (<a class="xref" href="#115C">115C</a>) adalah memang
+ukuran luar (<a class="xref" href="#115Da">115Da</a>),
+kita dapat menggunakannya untuk mengonstruksi suatu ukuran <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, dengan
+metode Carathéodory (<a class="xref" href="../113/index.html#113C">113C</a>).
+Ukuran ini adalah <strong>ukuran Lebesgue pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span></strong>.
+Himpunan-himpunan <span class="math inline" data-source-tex="E">\(E\)</span> dengan <span class="math inline" data-source-tex="\mu E">\(\mu E\)</span> terdefinisi (yakni,
+yang memenuhi <span class="math inline" data-source-tex="\theta(A\cap E)+\theta(A\setminus E)=\theta A">\(\theta(A\cap E)+\theta(A\setminus E)=\theta A\)</span> untuk
+setiap <span class="math inline" data-source-tex="A\subseteq\BbbR^r">\(A\subseteq\BbbR^r\)</span>) disebut <strong>terukur Lebesgue</strong>.</p>
+<p>Himpunan-himpunan yang terabaikan untuk <span class="math inline" data-source-tex="\mu">\(\mu\)</span> disebut <strong>terabaikan
+Lebesgue</strong>; perhatikan bahwa himpunan-himpunan ini tepatlah
+himpunan <span class="math inline" data-source-tex="A">\(A\)</span> yang memenuhi <span class="math inline" data-source-tex="\theta A=0">\(\theta A=0\)</span>, dan semuanya terukur Lebesgue
+(<a class="xref" href="../113/index.html#113Xa">113Xa</a>).</p>
+</section>
+<section class="source-unit" id="115F" data-source-id="115F"><h2><span class="source-label">115F</span> Lema </h2>
+<p>Jika <span class="math inline" data-source-tex="i\le r">\(i\le r\)</span> dan <span class="math inline" data-source-tex="\xi\in\Bbb R">\(\xi\in\Bbb R\)</span>, maka
+<span class="math inline" data-source-tex="H_{i\xi}=\{y:\eta_i&lt;\xi\}">\(H_{i\xi}=\{y:\eta_i&lt;\xi\}\)</span> terukur Lebesgue.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Tuliskan <span class="math inline" data-source-tex="H">\(H\)</span> untuk <span class="math inline" data-source-tex="H_{i\xi}">\(H_{i\xi}\)</span>.</p>
+<p> </p>
+<p><span class="anchor" id="115Fa"></span><strong>(a)</strong> Intinya adalah bahwa <span class="math inline" data-source-tex="\lambda I=\lambda(I\cap
+H)+\lambda(I\setminus H)">\(\lambda I=\lambda(I\cap
+H)+\lambda(I\setminus H)\)</span> untuk setiap interval setengah terbuka
+<span class="math inline" data-source-tex="I\subseteq\BbbR^r">\(I\subseteq\BbbR^r\)</span>. Bukti. Jika <span class="math inline" data-source-tex="I\subseteq H">\(I\subseteq H\)</span> atau
+<span class="math inline" data-source-tex="I\cap H=\emptyset">\(I\cap H=\emptyset\)</span>, hal ini langsung jelas. Jika tidak, <span class="math inline" data-source-tex="I">\(I\)</span> harus
+berbentuk <span class="math inline" data-source-tex="\coint{a,b}">\(\coint{a,b}\)</span>, dengan <span class="math inline" data-source-tex="\alpha_i&lt;\xi&lt;\beta_i">\(\alpha_i&lt;\xi&lt;\beta_i\)</span>. Sekarang
+<span class="math inline" data-source-tex="I\cap H=\coint{a,x}">\(I\cap H=\coint{a,x}\)</span> dan
+<span class="math inline" data-source-tex="I\setminus H=\coint{y,b}">\(I\setminus H=\coint{y,b}\)</span>, dengan <span class="math inline" data-source-tex="\xi_j=\beta_j">\(\xi_j=\beta_j\)</span> untuk <span class="math inline" data-source-tex="j\ne i">\(j\ne i\)</span>,
+<span class="math inline" data-source-tex="\xi_i=\xi">\(\xi_i=\xi\)</span>, <span class="math inline" data-source-tex="\eta_j=\alpha_j">\(\eta_j=\alpha_j\)</span> untuk <span class="math inline" data-source-tex="j\ne i">\(j\ne i\)</span>, <span class="math inline" data-source-tex="\eta_i=\xi">\(\eta_i=\xi\)</span>, sehingga
+keduanya merupakan interval setengah terbuka, dan</p>
+<p><span class="math display" data-source-tex="\eqalign{\lambda(I\cap H)+\lambda(I\setminus H)
+&amp;=(\xi-\alpha_i)\prod_{j\ne i}(\beta_j-\alpha_j)
++(\beta_i-\xi)\prod_{j\ne i}(\beta_j-\alpha_j)\cr
+&amp;=(\beta_i-\alpha_i)\prod_{j\ne i}(\beta_j-\alpha_j)
+=\lambda I.\text{ \Qed}\cr}">\[\begin{aligned}\lambda(I\cap H)+\lambda(I\setminus H)
+&amp;=(\xi-\alpha_i)\prod_{j\ne i}(\beta_j-\alpha_j)
++(\beta_i-\xi)\prod_{j\ne i}(\beta_j-\alpha_j)\\
+&amp;=(\beta_i-\alpha_i)\prod_{j\ne i}(\beta_j-\alpha_j)
+=\lambda I.\quad\square\\\end{aligned}\]</span></p>
+<p> </p>
+<p><span class="anchor" id="115Fb"></span><strong>(b)</strong> Sekarang andaikan bahwa <span class="math inline" data-source-tex="A">\(A\)</span> adalah sembarang subhimpunan
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Maka kita dapat menemukan barisan
+<span class="math inline" data-source-tex="\langle I_j\rangle_{j\in\Bbb N}">\(\langle I_j\rangle_{j\in\Bbb N}\)</span>
+yang terdiri atas interval setengah terbuka sedemikian sehingga
+<span class="math inline" data-source-tex="A\subseteq\bigcup_{j\in\Bbb N}I_j">\(A\subseteq\bigcup_{j\in\Bbb N}I_j\)</span> dan
+<span class="math inline" data-source-tex="\sum_{j=0}^{\infty}\lambda I_j\le\theta A+\epsilon">\(\sum_{j=0}^{\infty}\lambda I_j\le\theta A+\epsilon\)</span>. Dalam hal ini,
+<span class="math inline" data-source-tex="\langle I_j\cap H\rangle_{j\in\Bbb N}">\(\langle I_j\cap H\rangle_{j\in\Bbb N}\)</span> dan
+<span class="math inline" data-source-tex="\langle I_j\setminus H\rangle_{j\in\Bbb N}">\(\langle I_j\setminus H\rangle_{j\in\Bbb N}\)</span> adalah barisan interval
+setengah terbuka,
+<span class="math inline" data-source-tex="A\cap H\subseteq\bigcup_{j\in\Bbb N}(I_j\cap H)">\(A\cap H\subseteq\bigcup_{j\in\Bbb N}(I_j\cap H)\)</span> dan
+<span class="math inline" data-source-tex="A\setminus H\subseteq\bigcup_{j\in\Bbb N}(I_j\setminus H)">\(A\setminus H\subseteq\bigcup_{j\in\Bbb N}(I_j\setminus H)\)</span>. Jadi</p>
+<p><span class="math display" data-source-tex="\eqalign{\theta(A\cap H)+\theta(A\setminus H)
+&amp;\le\sum_{j=0}^{\infty}\lambda(I_j\cap
+H)+\sum_{j=0}^{\infty}\lambda(I_j\setminus H) \cr
+&amp;=\sum_{j=0}^{\infty}\lambda I_j
+\le\theta A+\epsilon.\cr}">\[\begin{aligned}\theta(A\cap H)+\theta(A\setminus H)
+&amp;\le\sum_{j=0}^{\infty}\lambda(I_j\cap
+H)+\sum_{j=0}^{\infty}\lambda(I_j\setminus H) \\
+&amp;=\sum_{j=0}^{\infty}\lambda I_j
+\le\theta A+\epsilon.\\\end{aligned}\]</span></p>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang,
+<span class="math inline" data-source-tex="\theta(A\cap H)+\theta(A\setminus H)\le\theta A">\(\theta(A\cap H)+\theta(A\setminus H)\le\theta A\)</span>;
+karena <span class="math inline" data-source-tex="A">\(A\)</span> sebarang, <span class="math inline" data-source-tex="H">\(H\)</span> terukur, sebagaimana dicatat dalam <a class="xref" href="../113/index.html#113D">113D</a>.</p></aside>
+</section>
+<section class="source-unit" id="115G" data-source-id="115G"><h2><span class="source-label">115G</span> Proposisi </h2>
+<p>Semua subhimpunan Borel dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> terukur
+Lebesgue; khususnya, semua himpunan terbuka dan semua himpunan dari
+kelas-kelas berikut, beserta gabungan terhitung dari himpunan-himpunan
+tersebut:</p>
+<div class="inset-block"><p>interval terbuka
+<span class="math inline" data-source-tex="\ooint{a,b}=\{x:x\in\BbbR^r,\,
+\alpha_i&lt;\xi_i&lt;\beta_i\Forall i\le r\}">\(\ooint{a,b}=\{x:x\in\BbbR^r,\,
+\alpha_i&lt;\xi_i&lt;\beta_i\Forall i\le r\}\)</span>,
+dengan <span class="math inline" data-source-tex="-\infty\le\alpha_i&lt;\beta_i\le\infty">\(-\infty\le\alpha_i&lt;\beta_i\le\infty\)</span> untuk setiap <span class="math inline" data-source-tex="i\le r">\(i\le r\)</span>;</p>
+<p>interval tertutup <span class="math inline" data-source-tex="[a,b]
+=\{x:x\in\BbbR^r,\,\alpha_i\le\xi_i\le\beta_i
+  \Forall i\le r\}">\([a,b]
+=\{x:x\in\BbbR^r,\,\alpha_i\le\xi_i\le\beta_i
+  \Forall i\le r\}\)</span>, dengan
+<span class="math inline" data-source-tex="-\infty&lt;\alpha_i&lt;\beta_i&lt;\infty">\(-\infty&lt;\alpha_i&lt;\beta_i&lt;\infty\)</span> untuk setiap <span class="math inline" data-source-tex="i\le r">\(i\le r\)</span>.</p></div>
+<p>Kita juga mempunyai rumus berikut untuk ukuran
+himpunan-himpunan tersebut, dengan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> menyatakan ukuran Lebesgue:</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu\ooint{a,b}=\mu[a,b]=\prod_{i=1}^r\beta_i-\alpha_i">\(\mu\ooint{a,b}=\mu[a,b]=\prod_{i=1}^r\beta_i-\alpha_i\)</span></div>
+<p>setiap kali <span class="math inline" data-source-tex="a\le b">\(a\le b\)</span> dalam <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>. Akibatnya, setiap
+subhimpunan terhitung dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> terukur dan berukuran nol.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><span class="anchor" id="115Ga"></span><strong>(a)</strong> Pertama-tama saya tunjukkan bahwa semua subhimpunan
+terbuka dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> terukur. Bukti. Misalkan <span class="math inline" data-source-tex="G\subseteq\BbbR^r">\(G\subseteq\BbbR^r\)</span>
+terbuka. Misalkan <span class="math inline" data-source-tex="K\subseteq\BbbQ^r\times\BbbQ^r">\(K\subseteq\BbbQ^r\times\BbbQ^r\)</span> adalah himpunan
+pasangan <span class="math inline" data-source-tex="(c,d)">\((c,d)\)</span> dari tupel-<span class="math inline" data-source-tex="r">\(r\)</span> bilangan rasional sedemikian sehingga
+<span class="math inline" data-source-tex="\coint{c,d}\subseteq G">\(\coint{c,d}\subseteq G\)</span>.
+Sekarang, menurut catatan
+dalam <a class="xref" href="../111/index.html#111E">111E</a>-<a class="xref" href="../111/index.html#111F">111F</a> — khususnya, <a class="xref" href="../111/index.html#111Eb">111Eb</a>, yang menunjukkan bahwa <span class="math inline" data-source-tex="\Bbb Q">\(\Bbb Q\)</span>
+terhitung, <a class="xref" href="../111/index.html#111F">111F</a>(b-iii), yang menunjukkan bahwa produk dua himpunan
+terhitung adalah terhitung, dan <a class="xref" href="../111/index.html#111F">111F</a>(b-i), yang menunjukkan bahwa
+subhimpunan dari himpunan terhitung adalah terhitung — kita melihat,
+dengan induksi pada <span class="math inline" data-source-tex="r">\(r\)</span>, bahwa <span class="math inline" data-source-tex="\BbbQ^r">\(\BbbQ^r\)</span> terhitung, dan bahwa <span class="math inline" data-source-tex="K">\(K\)</span>
+terhitung. Selain itu, setiap <span class="math inline" data-source-tex="\coint{c,d}">\(\coint{c,d}\)</span> terukur, karena merupakan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bigcap_{i\le r}H_{i\delta_i}\setminus H_{i\gamma_i}">\(\bigcap_{i\le r}H_{i\delta_i}\setminus H_{i\gamma_i}\)</span>,</div>
+<p>dalam notasi <a class="xref" href="#115F">115F</a>, jika <span class="math inline" data-source-tex="c=(\gamma_1,\ldots,\gamma_r)">\(c=(\gamma_1,\ldots,\gamma_r)\)</span> dan
+<span class="math inline" data-source-tex="d=(\delta_1,\ldots,\delta_r)">\(d=(\delta_1,\ldots,\delta_r)\)</span>. Jadi, menurut <a class="xref" href="../111/index.html#111Fa">111Fa</a>,
+<span class="math inline" data-source-tex="G&#x27;=\bigcup_{(r,s)\in K}\coint{r,s}">\(G&#x27;=\bigcup_{(r,s)\in K}\coint{r,s}\)</span> terukur.</p>
+<p>Menurut definisi <span class="math inline" data-source-tex="K">\(K\)</span>, <span class="math inline" data-source-tex="G&#x27;\subseteq G">\(G&#x27;\subseteq G\)</span>. Di pihak lain, jika <span class="math inline" data-source-tex="x\in G">\(x\in G\)</span>,
+terdapat <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> sedemikian sehingga <span class="math inline" data-source-tex="y\in G">\(y\in G\)</span> setiap kali
+<span class="math inline" data-source-tex="\|y-x\|&lt;\epsilon">\(\|y-x\|&lt;\epsilon\)</span>.
+Sekarang, untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>, terdapat bilangan-bilangan rasional
+<span class="math inline" data-source-tex="\gamma_i">\(\gamma_i\)</span>, <span class="math inline" data-source-tex="\delta_i">\(\delta_i\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\gamma_i\le\xi_i&lt;\delta_i">\(\gamma_i\le\xi_i&lt;\delta_i\)</span> dan
+<span class="math inline" data-source-tex="\delta_i-\gamma_i\le\Bover{\epsilon}{\sqrt r}">\(\delta_i-\gamma_i\le\Bover{\epsilon}{\sqrt r}\)</span>. Jika
+<span class="math inline" data-source-tex="y\in\coint{c,d}">\(y\in\coint{c,d}\)</span>, maka
+<span class="math inline" data-source-tex="|\eta_i-\xi_i|&lt;\Bover{\epsilon}{\sqrt r}">\(|\eta_i-\xi_i|&lt;\Bover{\epsilon}{\sqrt r}\)</span> untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>, sehingga
+<span class="math inline" data-source-tex="\|y-x\|&lt;\epsilon">\(\|y-x\|&lt;\epsilon\)</span> dan <span class="math inline" data-source-tex="y\in G">\(y\in G\)</span>. Dengan demikian <span class="math inline" data-source-tex="(c,d)\in K">\((c,d)\in K\)</span> dan
+<span class="math inline" data-source-tex="x\in\coint{c,d}\subseteq G&#x27;">\(x\in\coint{c,d}\subseteq G&#x27;\)</span>.
+Karena <span class="math inline" data-source-tex="x">\(x\)</span> sebarang, <span class="math inline" data-source-tex="G=G&#x27;">\(G=G&#x27;\)</span> dan <span class="math inline" data-source-tex="G">\(G\)</span> terukur. ∎</p>
+<p> </p>
+<p><span class="anchor" id="115Gb"></span><strong>(b)</strong> Sekarang keluarga <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dari himpunan-himpunan terukur
+Lebesgue adalah aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas subhimpunan-subhimpunan <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>
+yang memuat keluarga himpunan terbuka, sehingga harus memuat setiap
+himpunan Borel, menurut definisi himpunan Borel (<a class="xref" href="../111/index.html#111G">111G</a>).</p>
+<p> </p>
+<p><span class="anchor" id="115Gc"></span><strong>(c)</strong> Di antara jenis-jenis interval yang ditinjau, semua interval
+terbuka memang merupakan himpunan terbuka, sehingga tentu merupakan
+himpunan Borel. Sebuah interval tertutup <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span> dapat dinyatakan sebagai
+irisan
+<span class="math inline" data-source-tex="\bigcap_{n\in\Bbb N}\ooint{a-2^{-n}\tbf{1},b+2^{-n}\tbf{1}}">\(\bigcap_{n\in\Bbb N}\ooint{a-2^{-n}\tbf{1},b+2^{-n}\tbf{1}}\)</span> dari suatu
+barisan interval terbuka, sehingga merupakan himpunan Borel.</p>
+<p> </p>
+<p><span class="anchor" id="115Gd"></span><strong>(d)</strong> Untuk menghitung ukurannya, dari <a class="xref" href="#115Db">115Db</a> kita sudah mengetahui
+bahwa <span class="math inline" data-source-tex="\mu\coint{a,b}=\prod_{i=1}^r\beta_i-\alpha_i">\(\mu\coint{a,b}=\prod_{i=1}^r\beta_i-\alpha_i\)</span> jika <span class="math inline" data-source-tex="a\le b">\(a\le b\)</span>.
+Untuk jenis-jenis interval berbatas lainnya, cukup diperhatikan bahwa
+jika <span class="math inline" data-source-tex="-\infty&lt;\alpha_i&lt;\beta_i&lt;\infty">\(-\infty&lt;\alpha_i&lt;\beta_i&lt;\infty\)</span> untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\coint{a+\epsilon\tbf{1},b}
+\subseteq\ooint{a,b}\subseteq[a,b]\subseteq
+\coint{a,b+\epsilon\tbf{1}}">\(\coint{a+\epsilon\tbf{1},b}
+\subseteq\ooint{a,b}\subseteq[a,b]\subseteq
+\coint{a,b+\epsilon\tbf{1}}\)</span></div>
+<p>setiap kali <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Jadi</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu\ooint{a,b}\le\mu[a,b]
+\le\inf_{\epsilon&gt;0}\mu\coint{a,b+\epsilon\tbf{1}}
+=\inf_{\epsilon&gt;0}\prod_{i=1}^r(\beta_i-\alpha_i+\epsilon)
+=\prod_{i=1}^r\beta_i-\alpha_i">\(\mu\ooint{a,b}\le\mu[a,b]
+\le\inf_{\epsilon&gt;0}\mu\coint{a,b+\epsilon\tbf{1}}
+=\inf_{\epsilon&gt;0}\prod_{i=1}^r(\beta_i-\alpha_i+\epsilon)
+=\prod_{i=1}^r\beta_i-\alpha_i\)</span>.</div>
+<p>Jika <span class="math inline" data-source-tex="\beta_i=\alpha_i">\(\beta_i=\alpha_i\)</span> untuk suatu <span class="math inline" data-source-tex="i">\(i\)</span>, maka kita harus
+mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu\ooint{a,b}=\mu[a,b]=
+0=\prod_{i=1}^r\beta_i-\alpha_i">\(\mu\ooint{a,b}=\mu[a,b]=
+0=\prod_{i=1}^r\beta_i-\alpha_i\)</span>.</div>
+<p>Jika <span class="math inline" data-source-tex="\beta_i&gt;\alpha_i">\(\beta_i&gt;\alpha_i\)</span> untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>, tetapkan
+<span class="math inline" data-source-tex="\epsilon_0=\min_{i\le r}\beta_i-\alpha_i&gt;0">\(\epsilon_0=\min_{i\le r}\beta_i-\alpha_i&gt;0\)</span>; maka</p>
+<p><span class="math display" data-source-tex="\eqalign{\mu[a,b]\ge\mu\ooint{a,b}
+&amp;\ge\sup_{0&lt;\epsilon\le\epsilon_0}\mu\coint{a+\epsilon\tbf{1},b}\cr
+&amp;=\sup_{0&lt;\epsilon\le\epsilon_0}
+  \prod_{i=1}^r(\beta_i-\alpha_i-\epsilon)
+=\prod_{i=1}^r\beta_i-\alpha_i.\cr}">\[\begin{aligned}\mu[a,b]\ge\mu\ooint{a,b}
+&amp;\ge\sup_{0&lt;\epsilon\le\epsilon_0}\mu\coint{a+\epsilon\tbf{1},b}\\
+&amp;=\sup_{0&lt;\epsilon\le\epsilon_0}
+  \prod_{i=1}^r(\beta_i-\alpha_i-\epsilon)
+=\prod_{i=1}^r\beta_i-\alpha_i.\\\end{aligned}\]</span></p>
+<p>Jadi, dalam kasus ini,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\prod_{i=1}^r\beta_i-\alpha_i\le\mu\ooint{a,b}
+\le\mu[a,b]\le\prod_{i=1}^r\beta_i-\alpha_i">\(\prod_{i=1}^r\beta_i-\alpha_i\le\mu\ooint{a,b}
+\le\mu[a,b]\le\prod_{i=1}^r\beta_i-\alpha_i\)</span></div>
+<p>dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu\ooint{a,b}
+=\mu[a,b]=\prod_{i=1}^r\beta_i-\alpha_i">\(\mu\ooint{a,b}
+=\mu[a,b]=\prod_{i=1}^r\beta_i-\alpha_i\)</span>.</div>
+<p> </p>
+<p><span class="anchor" id="115Ge"></span><strong>(e)</strong> Menurut (d), <span class="math inline" data-source-tex="\mu\{a\}=\mu[a,a]=0">\(\mu\{a\}=\mu[a,a]=0\)</span> untuk setiap <span class="math inline" data-source-tex="a">\(a\)</span>. Jika
+<span class="math inline" data-source-tex="A\subseteq\BbbR^r">\(A\subseteq\BbbR^r\)</span> terhitung, himpunan tersebut kosong atau dapat
+dinyatakan sebagai <span class="math inline" data-source-tex="\{a_n:n\in\Bbb N\}">\(\{a_n:n\in\Bbb N\}\)</span>. Dalam kasus pertama,
+<span class="math inline" data-source-tex="\mu A=\mu\emptyset=0">\(\mu A=\mu\emptyset=0\)</span>; dalam kasus kedua,
+<span class="math inline" data-source-tex="A=\bigcup_{n\in\Bbb N}\{a_n\}">\(A=\bigcup_{n\in\Bbb N}\{a_n\}\)</span> adalah himpunan Borel dan
+<span class="math inline" data-source-tex="\mu A\le\sum_{n=0}^{\infty}\mu\{a_n\}=0">\(\mu A\le\sum_{n=0}^{\infty}\mu\{a_n\}=0\)</span>.</p></aside>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="115X" data-source-id="115X"><h2><span class="source-label">115X</span> Latihan dasar </h2>
+<p>Jika Anda melewati §114, sekarang Anda
+sebaiknya kembali ke <a class="xref" href="../114/index.html#114X">114X</a> dan memastikan bahwa Anda dapat mengerjakan
+latihan-latihan di sana maupun latihan-latihan di bawah ini.</p>
+</section>
+<section class="source-unit" id="115Xa" data-source-id="115Xa"><h3><span class="source-label">115Xa</span> <strong>(a)</strong> </h3>
+<p>Tunjukkan bahwa jika <span class="math inline" data-source-tex="I">\(I\)</span>, <span class="math inline" data-source-tex="J">\(J\)</span> adalah interval
+setengah terbuka dalam <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, maka <span class="math inline" data-source-tex="I\setminus J">\(I\setminus J\)</span> dapat dinyatakan
+sebagai gabungan paling banyak <span class="math inline" data-source-tex="2r">\(2r\)</span>
+interval setengah terbuka yang saling lepas. Selanjutnya, tunjukkan bahwa
+(i) setiap gabungan berhingga interval-interval setengah terbuka dapat
+dinyatakan sebagai gabungan berhingga interval-interval setengah terbuka
+yang saling lepas (ii) setiap gabungan terhitung interval-interval
+setengah terbuka dapat dinyatakan sebagai gabungan suatu barisan
+interval setengah terbuka yang saling lepas.</p>
+</section>
+<section class="source-unit" id="115Xb" data-source-id="115Xb"><h3><span class="source-label">115Xb</span> (&gt;b) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Tuliskan <span class="math inline" data-source-tex="\theta">\(\theta\)</span> untuk ukuran luar Lebesgue, <span class="math inline" data-source-tex="\mu">\(\mu\)</span>
+untuk ukuran Lebesgue pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\theta A=\inf\{\mu E:E">\(\theta A=\inf\{\mu E:E\)</span> terukur Lebesgue, <span class="math inline" data-source-tex="A\subseteq E\}">\(A\subseteq E\}\)</span> untuk setiap
+<span class="math inline" data-source-tex="A\subseteq\BbbR^r">\(A\subseteq\BbbR^r\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> Tinjau himpunan-himpunan <span class="math inline" data-source-tex="E">\(E\)</span> berbentuk
+<span class="math inline" data-source-tex="\bigcup_{j\in\Bbb N}I_j">\(\bigcup_{j\in\Bbb N}I_j\)</span>, dengan <span class="math inline" data-source-tex="\sequence{j}{I_j}">\(\sequence{j}{I_j}\)</span> suatu barisan
+interval setengah terbuka.</span></p>
+</section>
+<section class="source-unit" id="115Xc" data-source-id="115Xc"><h3><span class="source-label">115Xc</span> <strong>(c)</strong> </h3>
+<p>Misalkan <span class="math inline" data-source-tex="E\subseteq\BbbR^r">\(E\subseteq\BbbR^r\)</span> suatu himpunan
+yang mempunyai ukuran berhingga menurut ukuran Lebesgue <span class="math inline" data-source-tex="\mu">\(\mu\)</span>.
+Tunjukkan bahwa untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat keluarga saling lepas
+<span class="math inline" data-source-tex="I_0,\ldots,I_n">\(I_0,\ldots,I_n\)</span> yang terdiri atas interval setengah terbuka sedemikian
+sehingga <span class="math inline" data-source-tex="\mu(E\symmdiff\bigcup_{j\le n}I_j)\le\epsilon">\(\mu(E\symmdiff\bigcup_{j\le n}I_j)\le\epsilon\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> misalkan
+<span class="math inline" data-source-tex="\langle J_j\rangle_{j\in\Bbb N}">\(\langle J_j\rangle_{j\in\Bbb N}\)</span> suatu barisan interval setengah
+terbuka sedemikian sehingga
+<span class="math inline" data-source-tex="E\subseteq\bigcup_{j\in\Bbb N}J_j">\(E\subseteq\bigcup_{j\in\Bbb N}J_j\)</span> dan
+<span class="math inline" data-source-tex="\sum_{j=0}^{\infty}\mu J_j\le\mu E+\bover{1}{2}\epsilon">\(\sum_{j=0}^{\infty}\mu J_j\le\mu E+\bover{1}{2}\epsilon\)</span>. Sekarang
+ambil <span class="math inline" data-source-tex="m">\(m\)</span> yang cukup besar dan nyatakan <span class="math inline" data-source-tex="\bigcup_{j\le m}J_j">\(\bigcup_{j\le m}J_j\)</span> sebagai
+gabungan saling lepas interval-interval setengah terbuka.</span></p>
+</section>
+<section class="source-unit" id="115Xd" data-source-id="115Xd"><h3><span class="source-label">115Xd</span> (&gt;d) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Andaikan bahwa <span class="math inline" data-source-tex="c\in\BbbR^r">\(c\in\BbbR^r\)</span>. (i) Tunjukkan bahwa
+<span class="math inline" data-source-tex="\theta(A+c)=\theta A">\(\theta(A+c)=\theta A\)</span> untuk setiap <span class="math inline" data-source-tex="A\subseteq\BbbR^r">\(A\subseteq\BbbR^r\)</span>, dengan
+<span class="math inline" data-source-tex="A+c=\{x+c:x\in A\}">\(A+c=\{x+c:x\in A\}\)</span>. (ii)
+Tunjukkan bahwa jika <span class="math inline" data-source-tex="E\subseteq \BbbR^r">\(E\subseteq \BbbR^r\)</span> terukur, maka <span class="math inline" data-source-tex="E+c">\(E+c\)</span> juga
+terukur, dan dalam hal ini <span class="math inline" data-source-tex="\mu(E+c)=\mu E">\(\mu(E+c)=\mu E\)</span>.</p>
+</section>
+<section class="source-unit" id="115Xe" data-source-id="115Xe"><h3><span class="source-label">115Xe</span> <strong>(e)</strong> </h3>
+<p>Andaikan bahwa <span class="math inline" data-source-tex="\gamma&gt;0">\(\gamma&gt;0\)</span>. (i) Tunjukkan bahwa
+<span class="math inline" data-source-tex="\theta(\gamma A)=\gamma^r\theta A">\(\theta(\gamma A)=\gamma^r\theta A\)</span> untuk setiap <span class="math inline" data-source-tex="A\subseteq\BbbR^r">\(A\subseteq\BbbR^r\)</span>,
+dengan <span class="math inline" data-source-tex="\gamma A=\{\gamma x:x\in A\}">\(\gamma A=\{\gamma x:x\in A\}\)</span>. (ii) Tunjukkan bahwa jika
+<span class="math inline" data-source-tex="E\subseteq \BbbR^r">\(E\subseteq \BbbR^r\)</span> terukur, maka <span class="math inline" data-source-tex="\gamma E">\(\gamma E\)</span> juga terukur, dan dalam
+hal ini <span class="math inline" data-source-tex="\mu(\gamma E)=\gamma^r\mu E">\(\mu(\gamma E)=\gamma^r\mu E\)</span></p>
+</section>
+<section class="source-unit" id="115Y" data-source-id="115Y"><span class="anchor" id="115Ya"></span><h2><span class="source-label">115Y</span> Latihan lanjutan (a) </h2>
+<p>(i) Andaikan bahwa <span class="math inline" data-source-tex="M">\(M\)</span> adalah bilangan bulat positif dan <span class="math inline" data-source-tex="k_i">\(k_i\)</span>, <span class="math inline" data-source-tex="l_i">\(l_i\)</span>
+adalah bilangan bulat untuk <span class="math inline" data-source-tex="1\le i\le r">\(1\le i\le r\)</span>. Tetapkan
+<span class="math inline" data-source-tex="\alpha_i=k_i/M">\(\alpha_i=k_i/M\)</span> dan
+<span class="math inline" data-source-tex="\beta_i=l_i/M">\(\beta_i=l_i/M\)</span> untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>, dan <span class="math inline" data-source-tex="I=\coint{a,b}">\(I=\coint{a,b}\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\lambda I=\#(J)/M^r">\(\lambda I=\#(J)/M^r\)</span>, dengan <span class="math inline" data-source-tex="J">\(J\)</span> menyatakan <span class="math inline" data-source-tex="\{z:z\in\BbbZ^r">\(\{z:z\in\BbbZ^r\)</span>,
+<span class="math inline" data-source-tex="\bover1Mz\in I\}">\(\bover1Mz\in I\}\)</span>. (ii) Tunjukkan bahwa jika suatu interval setengah
+terbuka <span class="math inline" data-source-tex="I\subseteq\BbbR^r">\(I\subseteq\BbbR^r\)</span> ditutupi oleh suatu barisan <em>berhingga</em>
+<span class="math inline" data-source-tex="I_0,\ldots,I_m">\(I_0,\ldots,I_m\)</span> yang terdiri atas interval setengah terbuka, dan semua
+koordinat yang terlibat dalam menentukan interval-interval <span class="math inline" data-source-tex="I">\(I\)</span>,
+<span class="math inline" data-source-tex="I_0,\ldots,I_m">\(I_0,\ldots,I_m\)</span> adalah rasional, maka
+<span class="math inline" data-source-tex="\lambda I\le\sum_{j=0}^m\lambda I_j">\(\lambda I\le\sum_{j=0}^m\lambda I_j\)</span>. (iii) Dengan mengandaikan
+teorema Heine–Borel dalam bentuk</p>
+<div class="inset-block"><p>setiap kali <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span> merupakan interval tertutup dalam <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> yang
+ditutupi oleh suatu barisan <span class="math inline" data-source-tex="\sequence{j}{\ooint{a^{(j)},b^{(j)}}}">\(\sequence{j}{\ooint{a^{(j)},b^{(j)}}}\)</span>
+yang terdiri atas interval terbuka, terdapat <span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span> sedemikian
+sehingga
+<span class="math inline" data-source-tex="[a,b]\subseteq\bigcup_{j\le m}\ooint{a^{(j)},b^{(j)}}">\([a,b]\subseteq\bigcup_{j\le m}\ooint{a^{(j)},b^{(j)}}\)</span>,</p></div>
+<p>buktikan <a class="xref" href="#115B">115B</a>. <span class="hint" role="note"><strong>Petunjuk:</strong> jika
+<span class="math inline" data-source-tex="\coint{a,b}\subseteq\bigcup_{j\in\Bbb N}\coint{a^{(j)},b^{(j)}}">\(\coint{a,b}\subseteq\bigcup_{j\in\Bbb N}\coint{a^{(j)},b^{(j)}}\)</span>,
+gantikan <span class="math inline" data-source-tex="\coint{a,b}">\(\coint{a,b}\)</span> dengan interval tertutup yang lebih kecil dan
+setiap <span class="math inline" data-source-tex="\coint{a^{(j)},b^{(j)}}">\(\coint{a^{(j)},b^{(j)}}\)</span> dengan interval terbuka yang lebih besar,
+dengan mengubah masing-masing volume sebesar nilai yang cukup kecil.</span></p>
+</section>
+<section class="source-unit" id="115Yb" data-source-id="115Yb"><h3><span class="source-label">115Yb</span> (b) </h3>
+<p>(i)
+Tunjukkan bahwa jika <span class="math inline" data-source-tex="A\subseteq\BbbR^r">\(A\subseteq\BbbR^r\)</span> dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, terdapat
+himpunan terbuka <span class="math inline" data-source-tex="G\supseteq A">\(G\supseteq A\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\theta G\le\theta A+\epsilon">\(\theta G\le\theta A+\epsilon\)</span>, dengan <span class="math inline" data-source-tex="\theta">\(\theta\)</span> ukuran luar Lebesgue.
+(ii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="E\subseteq\BbbR^r">\(E\subseteq\BbbR^r\)</span> terukur Lebesgue dan
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, terdapat himpunan terbuka <span class="math inline" data-source-tex="G\supseteq E">\(G\supseteq E\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\mu(G\setminus E)\le\epsilon">\(\mu(G\setminus E)\le\epsilon\)</span>, dengan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> ukuran Lebesgue.
+<span class="hint" role="note"><strong>Petunjuk:</strong> tinjau terlebih dahulu kasus <span class="math inline" data-source-tex="E">\(E\)</span> berbatas.</span> (iii) Tunjukkan bahwa
+jika <span class="math inline" data-source-tex="E\subseteq\BbbR^r">\(E\subseteq\BbbR^r\)</span> terukur Lebesgue, terdapat himpunan-himpunan
+Borel <span class="math inline" data-source-tex="H_1">\(H_1\)</span>, <span class="math inline" data-source-tex="H_2">\(H_2\)</span> sedemikian sehingga <span class="math inline" data-source-tex="H_1\subseteq E\subseteq H_2">\(H_1\subseteq E\subseteq H_2\)</span>
+dan <span class="math inline" data-source-tex="\mu(H_2\setminus E)=\mu(E\setminus H_1)=0">\(\mu(H_2\setminus E)=\mu(E\setminus H_1)=0\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> gunakan (ii) untuk menemukan <span class="math inline" data-source-tex="H_2">\(H_2\)</span>, lalu tinjau komplemen
+<span class="math inline" data-source-tex="E">\(E\)</span>.</span></p>
+</section>
+<section class="source-unit" id="115Yc" data-source-id="115Yc"><h3><span class="source-label">115Yc</span> (c) </h3>
+<p>Tuliskan <span class="math inline" data-source-tex="\theta">\(\theta\)</span> untuk ukuran luar Lebesgue pada
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>. Tunjukkan
+bahwa suatu himpunan <span class="math inline" data-source-tex="E\subseteq\BbbR^r">\(E\subseteq\BbbR^r\)</span> terukur Lebesgue jika dan hanya
+jika
+<span class="math inline" data-source-tex="\theta([-\tbf{n},\tbf{n}]\cap E)+\theta([-\tbf{n},\tbf{n}]\setminus
+E)=(2n)^r">\(\theta([-\tbf{n},\tbf{n}]\cap E)+\theta([-\tbf{n},\tbf{n}]\setminus
+E)=(2n)^r\)</span> untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, dengan
+<span class="math inline" data-source-tex="\tbf{n}=(n,\ldots,n)">\(\tbf{n}=(n,\ldots,n)\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> gunakan <a class="xref" href="#115Yb">115Yb</a> untuk menunjukkan bahwa
+bagi setiap <span class="math inline" data-source-tex="n">\(n\)</span> terdapat
+himpunan-himpunan terukur <span class="math inline" data-source-tex="F_n">\(F_n\)</span>, <span class="math inline" data-source-tex="H_n">\(H_n\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="F_n\subseteq[-\tbf{n},\tbf{n}]\cap
+E\subseteq H_n">\(F_n\subseteq[-\tbf{n},\tbf{n}]\cap
+E\subseteq H_n\)</span> dan <span class="math inline" data-source-tex="H_n\setminus F_n">\(H_n\setminus F_n\)</span> terabaikan.</span></p>
+</section>
+<section class="source-unit" id="115Yd" data-source-id="115Yd"><h3><span class="source-label">115Yd</span> <strong>(d)</strong> </h3>
+<p>Dengan mengandaikan bahwa terdapat himpunan
+<span class="math inline" data-source-tex="A\subseteq\Bbb R">\(A\subseteq\Bbb R\)</span> yang bukan himpunan Borel, tunjukkan bahwa terdapat
+keluarga <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> yang terdiri atas interval setengah terbuka dalam
+<span class="math inline" data-source-tex="\BbbR^2">\(\BbbR^2\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\bigcup\Cal E">\(\bigcup\Cal E\)</span> bukan himpunan Borel.
+<span class="hint" role="note"><strong>Petunjuk:</strong> tinjau <span class="math inline" data-source-tex="\Cal
+E=\{\coint{\xi,1+\xi}\times\coint{-\xi,1-\xi}:\xi\in A\}">\(\Cal
+E=\{\coint{\xi,1+\xi}\times\coint{-\xi,1-\xi}:\xi\in A\}\)</span>.</span></p>
+</section>
+<section class="source-unit" id="115Ye" data-source-id="115Ye"><h3><span class="source-label">115Ye</span> <strong>(e)</strong> </h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan dan <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> suatu
+<strong>semiring</strong> yang terdiri atas subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>, yakni,
+suatu keluarga subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span> sedemikian sehingga</p>
+<div class="inset-block"><p><span class="math inline" data-source-tex="\emptyset\in\Cal A">\(\emptyset\in\Cal A\)</span>,</p></div>
+<div class="inset-block"><p><span class="math inline" data-source-tex="E\cap F\in\Cal A">\(E\cap F\in\Cal A\)</span> untuk semua <span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="F\in\Cal A">\(F\in\Cal A\)</span>,</p></div>
+<div class="inset-block"><p>setiap kali <span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="F\in\Cal A">\(F\in\Cal A\)</span>, terdapat himpunan-himpunan saling
+lepas <span class="math inline" data-source-tex="E_0,\ldots,E_n\in\Cal A">\(E_0,\ldots,E_n\in\Cal A\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="E\setminus F=E_0\cup\ldots\cup E_n">\(E\setminus F=E_0\cup\ldots\cup E_n\)</span>.</p></div>
+<p>Misalkan <span class="math inline" data-source-tex="\lambda:\Cal A\to[0,\infty]">\(\lambda:\Cal A\to[0,\infty]\)</span> suatu fungsional
+sedemikian sehingga</p>
+<div class="inset-block"><p><span class="math inline" data-source-tex="\lambda\emptyset=0">\(\lambda\emptyset=0\)</span>,</p></div>
+<div class="inset-block"><p><span class="math inline" data-source-tex="\lambda E=\sum_{i=0}^{\infty}\lambda E_i">\(\lambda E=\sum_{i=0}^{\infty}\lambda E_i\)</span> setiap kali
+<span class="math inline" data-source-tex="E\in\Cal A">\(E\in\Cal A\)</span> dan <span class="math inline" data-source-tex="\sequence{i}{E_i}">\(\sequence{i}{E_i}\)</span> adalah barisan saling lepas dalam
+<span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> dengan gabungan <span class="math inline" data-source-tex="E">\(E\)</span>.</p></div>
+<p>Tunjukkan bahwa terdapat suatu ukuran <span class="math inline" data-source-tex="\mu">\(\mu\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span> yang
+memperluas <span class="math inline" data-source-tex="\lambda">\(\lambda\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> gunakan metode <a class="xref" href="../113/index.html#113Yi">113Yi</a>.</span></p>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<span class="anchor" id="115"></span>
+<section class="source-unit" id="115-notes" data-source-id="115-notes"><h2><span class="source-label">115-notes</span> Catatan penutup untuk Bagian 115 </h2>
+<p>Dalam catatan untuk §114, saya meninjau sekilas
+metode-metode yang sejauh ini tersedia bagi kita untuk mengonstruksi
+ruang ukur. Sekarang ukuran Lebesgue pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> dapat kita tambahkan
+ke dalam daftar tersebut.</p>
+<p>Jika Anda melihat kembali §114, Anda akan melihat bahwa saya sengaja
+menyalin pemaparan di sana. Saya berharap pengulangan ini membantu Anda
+melihat unsur-unsur hakiki dari metode tersebut, yang berjumlah tiga:
+suatu konsep primitif tentang volume (114A/<a class="xref" href="#115A">115A</a>); subaditivitas
+terhitung (<a class="xref" href="../114/index.html#114B">114B</a>/<a class="xref" href="#115B">115B</a>); dan keterukuran blok-blok pembangun (<a class="xref" href="../114/index.html#114F">114F</a>/<a class="xref" href="#115F">115F</a>).</p>
+<p>Mengenai ‘konsep primitif tentang volume’, tidak banyak yang perlu
+dikatakan. Gagasan panjang suatu interval, luas suatu persegi panjang,
+dan volume suatu balok dapat ditelusuri sampai ke awal sejarah
+matematika. Saya menggunakan ‘interval setengah terbuka’, sebagaimana
+didefinisikan dalam <a class="xref" href="../114/index.html#114Aa">114Aa</a>/<a class="xref" href="#115Ab">115Ab</a>, semata-mata karena alasan teknis, yakni
+karena interval-interval tersebut dapat dirangkai dengan rapi (lihat
+<a class="xref" href="#115Xa">115Xa</a> dan <a class="xref" href="#115Ye">115Ye</a>); jika kita memulai dengan interval ‘terbuka’ atau
+‘tertutup’, metode ini tetap akan berhasil. Satu hal barangkali layak
+disebutkan: semua balok yang saya gunakan berorientasi tegak, dengan
+rusuk-rusuk sejajar terhadap sumbu-sumbu koordinat. Sesungguhnya,
+membuktikan bahwa
+suatu balok dalam orientasi lain mempunyai ukuran Lebesgue yang tepat
+merupakan latihan yang taktrivial, dan saya menundanya hingga Bab 26.
+Untuk saat ini, kita mencari jalan aman terpendek menuju definisi yang
+tepat, dan fakta bahwa merotasi suatu himpunan tidak mengubah ukuran
+Lebesgue-nya harus menunggu.</p>
+<p>Langkah besarnya ialah ‘subaditivitas terhitung’: fakta bahwa jika suatu
+balok ditutupi oleh barisan balok lain, volumenya lebih kecil daripada
+atau sama dengan jumlah volume balok-balok tersebut. Hal ini tentunya
+diperlukan jika balok-balok itu harus terukur dan mempunyai ukuran yang tepat,
+menurut <a class="xref" href="../112/index.html#112Cd">112Cd</a>. (Yang luar biasa ialah bahwa syarat ini nyaris sudah
+mencukupi.) Di sini kita mempunyai pekerjaan yang perlu dilakukan, dan
+dalam kasus berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> terdapat bukit terjal yang harus didaki. Anda
+dapat mendakinya dalam dua tahap jika Anda mencari teorema Heine–Borel
+(<a class="xref" href="#115Ya">115Ya</a>); tetapi sebagaimana saya coba jelaskan dalam catatan setelah
+<a class="xref" href="#115B">115B</a>, menurut saya jalur ini tidak menghindari satu pun kesulitan yang
+sesungguhnya.</p>
+<p>Hal ketiga yang harus kita periksa ialah bahwa balok-balok tersebut
+terukur dalam pengertian teknis yang diuraikan oleh teorema
+Carathéodory. Ini karena balok-balok itu dapat diperoleh dari
+setengah-ruang melalui operasi irisan, gabungan, dan pengambilan
+komplemen, sedangkan setengah-ruang terukur karena alasan yang sangat
+langsung (<a class="xref" href="../114/index.html#114F">114F</a>/<a class="xref" href="#115F">115F</a>). Setelah itu kita sudah melangkah jauh, dan saya
+hanya melakukan sedikit lagi: sekadar memeriksa bahwa himpunan terbuka,
+dan dengan demikian himpunan Borel, terukur, serta bahwa interval
+tertutup dan terbuka mempunyai ukuran yang tepat (<a class="xref" href="../114/index.html#114G">114G</a>/<a class="xref" href="#115G">115G</a>). Beberapa
+sifat ukuran Lebesgue yang lain dapat ditemukan dalam §134. Namun,
+setiap jilid—bahkan hampir setiap bab—dalam risalah ini akan
+memperkenalkan ciri-ciri lebih lanjut dari konstruksi yang luar biasa
+ini.</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 1: The Irreducible Minimum</cite>, Bagian 115.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 21 Agustus 2026. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-semantic-reader-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V1-S115&quot;,
+  &quot;source_member&quot;: &quot;mt1.2011/mt115.tex&quot;,
+  &quot;target_bytes&quot;: 30520,
+  &quot;target_sha256&quot;: &quot;0cadff37a61d891231702b6dac5ab978285d3e55094659f30dd740f656f730a7&quot;,
+  &quot;source_ids&quot;: [
+    &quot;115-intro&quot;,
+    &quot;115-notes&quot;,
+    &quot;115A&quot;,
+    &quot;115Aa&quot;,
+    &quot;115Ab&quot;,
+    &quot;115Ac&quot;,
+    &quot;115B&quot;,
+    &quot;115Ba&quot;,
+    &quot;115Bb&quot;,
+    &quot;115Bc&quot;,
+    &quot;115Bd&quot;,
+    &quot;115Be&quot;,
+    &quot;115C&quot;,
+    &quot;115D&quot;,
+    &quot;115Da&quot;,
+    &quot;115Db&quot;,
+    &quot;115E&quot;,
+    &quot;115F&quot;,
+    &quot;115Fa&quot;,
+    &quot;115Fb&quot;,
+    &quot;115G&quot;,
+    &quot;115Ga&quot;,
+    &quot;115Gb&quot;,
+    &quot;115Gc&quot;,
+    &quot;115Gd&quot;,
+    &quot;115Ge&quot;,
+    &quot;115X&quot;,
+    &quot;115Xa&quot;,
+    &quot;115Xb&quot;,
+    &quot;115Xc&quot;,
+    &quot;115Xd&quot;,
+    &quot;115Xe&quot;,
+    &quot;115Y&quot;,
+    &quot;115Ya&quot;,
+    &quot;115Yb&quot;,
+    &quot;115Yc&quot;,
+    &quot;115Yd&quot;,
+    &quot;115Ye&quot;
+  ]
+}</pre></details>
+</footer>
+</body>
+</html>

@@ -205,6 +205,7 @@ class Renderer:
         self.xref_map = {source_id: f"#{source_id}" for source_id in known_ids}
         if xref_map:
             self.xref_map.update(xref_map)
+        self.emitted_heading_ids: set[str] = set()
         self.blocks: dict[str, tuple[str, dict[str, str]]] = {}
         self.inline: dict[str, str] = {}
         self.block_counter = 0
@@ -375,12 +376,38 @@ class Renderer:
                 i = end
                 continue
             if command == "wheader":
-                # Legacy wide-page heading geometry.  The semantic heading is
-                # supplied separately by \leader/\header; all five arguments
-                # are print-layout dimensions and contain no reader content.
-                end = j
-                for _ in range(5):
+                # Most wide headers repeat an immediately preceding semantic
+                # leader solely for legacy print geometry.  A few are the only
+                # active declaration of a structure (notably exercise 274Xf),
+                # so retain the first source-order declaration and suppress
+                # only a duplicate continuation.
+                raw_source_id, end = read_group(text, j)
+                source_id, _starred = canonical_heading_id(raw_source_id)
+                for _ in range(4):
                     _arg, end = read_group(text, end)
+                if source_id not in self.emitted_heading_ids:
+                    title = source_id
+                    important = "false"
+                    label = re.match(
+                        r"\s*\$\\pmb\{>\}\$\s*\{\\bf\s+\(([^{}()]*)\)\}",
+                        text[end:],
+                    )
+                    if label:
+                        title = f"({label.group(1)})"
+                        important = "true"
+                        end += label.end()
+                    elif re.fullmatch(r"[0-9]{3}[XY][a-z]", source_id):
+                        title = f"({source_id[-1]})"
+                    out.append(
+                        self.block_token(
+                            "heading",
+                            source_id=source_id,
+                            title=html.escape(title),
+                            level="3",
+                            important=important,
+                        )
+                    )
+                    self.emitted_heading_ids.add(source_id)
                 i = end
                 continue
             if command in {"prooflet", "Hint"}:
@@ -418,6 +445,10 @@ class Renderer:
                     raise ValueError(
                         f"expected title argument after \\{command}{{{raw_source_id}}}"
                     )
+                # Register the outer semantic declaration before recursively
+                # rendering its title.  Legacy duplicate \wheader controls can
+                # occur inside that title's selected reader branch.
+                self.emitted_heading_ids.add(source_id)
                 out.append(
                     self.block_token(
                         "heading",
@@ -436,6 +467,7 @@ class Renderer:
                 raw_source_id, after_id = read_group(text, after_space)
                 source_id, starred = canonical_heading_id(raw_source_id)
                 title, end = read_group(text, after_id)
+                self.emitted_heading_ids.add(source_id)
                 out.append(
                     self.block_token(
                         "heading",
@@ -459,6 +491,7 @@ class Renderer:
                         important="false",
                     )
                 )
+                self.emitted_heading_ids.add(source_id.strip())
                 i = end
                 continue
             if command in {"spheader", "sqheader", "vspheader"}:
@@ -484,6 +517,7 @@ class Renderer:
                         important="true" if command == "sqheader" else "false",
                     )
                 )
+                self.emitted_heading_ids.add(source_id)
                 i = j + len(source_id)
                 continue
             if command in {"Centerline", "centerline"}:
@@ -772,6 +806,10 @@ def discover_ids(text: str, implicit_ids: dict[str, str] | None = None) -> set[s
     ids.update(re.findall(r"\\(?:spheader|sqheader)\s+([0-9A-Za-z]{5})", text))
     ids.update(re.findall(r"\\vspheader\{[^{}]*\}\s*([0-9A-Za-z]{5})", text))
     ids.update(re.findall(r"\\Notesheader\{([^{}]+)\}", text))
+    ids.update(
+        canonical_heading_id(source_id)[0]
+        for source_id in re.findall(r"\\wheader\{([^{}]+)\}", text)
+    )
     ids.update(implicit_ids.values())
     ids.update(implicit_ids.keys())
     return ids

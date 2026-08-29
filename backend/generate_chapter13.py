@@ -761,6 +761,7 @@ def declaration_spans(text: str) -> list[tuple[int, int]]:
         re.compile(r"\\vspheader\{[^{}]*\}[0-9][0-9A-Za-z]+"),
         re.compile(r"\\Notesheader\{[^{}]+\}"),
         re.compile(r"\\(?:sqheader|spheader)\s+[0-9][0-9A-Za-z]+"),
+        re.compile(r"\\wheader\{[^{}]+\}(?:\{[^{}]*\}){4}"),
     )
     return [(match.start(), match.end()) for pattern in patterns for match in pattern.finditer(clean)]
 

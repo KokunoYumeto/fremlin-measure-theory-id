@@ -1,0 +1,1211 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Ukuran Hausdorff — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        BbbQ: '\\mathbb{Q}', BbbR: '\\mathbb{R}',
+        eightBbb: ['\\mathbb{#1}', 1],
+        DiniD: '\\overline{D}', Dinid: '\\underline{D}',
+        Var: '\\operatorname{Var}',
+        bumpeq: '=_{\\mathrm{approx}}',
+        intstar: '\\operatorname{int}^{*}',
+        family: ['\\langle #3\\rangle_{#1\\in #2}', 3],
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        displaycause: ['\\text{(#1)}', 1],
+        bigcupop: '\\bigcup', biggerint: '\\int',
+        eae: '=_{\\mathrm{a.e.}}', leae: '\\le_{\\mathrm{a.e.}}', geae: '\\ge_{\\mathrm{a.e.}}',
+        restr: '\\mathord{\\upharpoonright}', restrp: '\\mathord{\\upharpoonright}',
+        Real: '\\operatorname{Re}', Imag: '\\operatorname{Im}',
+        tbf: ['\\mathbf{#1}', 1], eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Qed: '\\square',
+        BbbN: '\\mathbb{N}', Expn: '\\mathbb{E}',
+        Cal: ['\\mathcal{#1}', 1], dom: '\\operatorname{dom}',
+        coint: ['\\left[#1\\right[', 1],
+        sequencen: ['\\langle #1_n\\rangle_{n\\in\\mathbb{N}}', 1],
+        imp: '\\mathop{\\text{pelestari ukuran melalui prapeta}}',
+        tildeTau: '\\widetilde{\\mathrm{T}}',
+        LLcorner: '\\mathbin{\\llcorner}',
+        prooflet: ['#1', 1],
+        halfarrow: '\\rightharpoonup',
+        esssup: '\\mathop{\\text{ess sup}}',
+        ocint: ['\\left]#1\\right]', 1],
+        fraction: ['\\mathord{<}#1\\mathord{>}', 1],
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        fraction: ['\\mathord{<}#1\\mathord{>}', 1],
+        tbf: ['\\mathbf{#1}', 1],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        BbbN: '\\mathbb{{N}}', BbbQ: '\\mathbb{{Q}}',
+        BbbZ: '\\mathbb{{Z}}',
+        bover: ['\\frac{{#1}}{{#2}}', 2],
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        esssup: '\\mathop{{\\text{{ess sup}}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        family: ['\\langle #3\\rangle_{{#1\\in #2}}', 3],
+        familyi: ['\\langle #2\\rangle_{{i\\in #1}}', 2],
+        familyiI: ['\\langle #1\\rangle_{{i\\in I}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        ocint: ['\\left]#1\\right]', 1],
+        restr: '\\mathord{{\\upharpoonright}}',
+        restrp: '\\mathord{{\\upharpoonright}}',
+        roibr: '\\mathopen{{[}}',
+        sequence: ['\\langle #2\\rangle_{{#1\\in\\mathbb{{N}}}}', 2],
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1],
+        ssbullet: '{{\\scriptscriptstyle\\bullet}}',
+        tensorhat: '\\widehat{{\\otimes}}',
+        Tensorhat: '\\widehat{{\\bigotimes}}'
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 2 · Bagian 264</p>
+  <h1>Ukuran Hausdorff</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi kumulatif</a></nav>
+<main id="isi">
+<p>© 1994</p>
+<p>Pokok berikutnya yang ingin saya bahas adalah persoalan ‘ukuran
+permukaan’; contoh yang berguna untuk terus diingat sepanjang bagian ini dan
+bagian berikutnya ialah gagasan luas bagi daerah-daerah pada permukaan bola, tetapi
+setiap permukaan dua dimensi lain yang melengkung mulus dalam ruang tiga
+dimensi juga sama baiknya. Menurut saya, sangatlah masuk akal bahwa konsep
+intuitif kita tentang ‘luas’ permukaan demikian seharusnya bersesuaian dengan
+ukuran yang tepat. Namun, memformalkan intuisi ini tidak sepele, terutama jika
+kita menginginkan keumuman yang diarahkan oleh gagasan geometris sederhana;
+maksud saya, kita tidak berpuas diri dengan argumen yang bergantung pada sifat
+khusus permukaan bola, misalnya, untuk menguraikan luas permukaan bola. Saya membagi
+persoalan ini menjadi dua bagian. Dalam bagian ini saya akan menguraikan suatu
+konstruksi yang memungkinkan kita mendefinisikan ukuran berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> dari
+suatu permukaan berdimensi <span class="math inline" data-source-tex="r">\(r\)</span>—di antara hal-hal lain—dalam ruang berdimensi
+<span class="math inline" data-source-tex="s">\(s\)</span>. Dalam bagian berikutnya saya akan menyajikan teorema-teorema dasar yang
+memungkinkan ukuran-ukuran ini dihitung secara efektif dalam kasus-kasus utama.</p>
+<section class="source-unit" id="264A" data-source-id="264A"><h2><span class="source-label">264A</span> Definisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="s\ge 1">\(s\ge 1\)</span> suatu bilangan bulat, dan <span class="math inline" data-source-tex="r&gt;0">\(r&gt;0\)</span>.
+(Perhatian utama saya adalah <span class="math inline" data-source-tex="r">\(r\)</span> yang bulat,
+tetapi saya tidak akan mensyaratkan hal ini sebelum benar-benar diperlukan,
+sebab ada beberapa gagasan yang sangat menarik yang melibatkan ‘dimensi’
+tak bulat <span class="math inline" data-source-tex="r">\(r\)</span>.) Untuk sebarang <span class="math inline" data-source-tex="A\subseteq \BbbR^s">\(A\subseteq \BbbR^s\)</span>, <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>, tetapkan</p>
+<p><span class="math display" data-source-tex="\eqalign{\theta_{r\delta}A
+=\inf\{\sum_{n=0}^{\infty}(\diam A_n)^r:\sequencen{A_n}
+&amp;\text{ adalah barisan subhimpunan }\BbbR^s\text{ yang meliput }A,\cr
+&amp;\qquad\qquad\qquad\quad\diam A_n\le\delta\text{ untuk setiap }
+  n\in\Bbb N\}.\cr}">\[\begin{aligned}\theta_{r\delta}A
+=\inf\{\sum_{n=0}^{\infty}(\diam A_n)^r:\sequencen{A_n}
+&amp;\text{ adalah barisan subhimpunan }\BbbR^s\text{ yang meliput }A,\\
+&amp;\qquad\qquad\qquad\quad\diam A_n\le\delta\text{ untuk setiap }
+  n\in\Bbb N\}.\\\end{aligned}\]</span></p>
+<p>Dalam konteks ini, akan memudahkan jika kita mengatakan bahwa
+<span class="math inline" data-source-tex="\diam\emptyset=0">\(\diam\emptyset=0\)</span>.
+Sekarang tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\theta_rA=\sup_{\delta&gt;0}\theta_{r\delta}A">\(\theta_rA=\sup_{\delta&gt;0}\theta_{r\delta}A\)</span>;</div>
+<p><span class="math inline" data-source-tex="\theta_r">\(\theta_r\)</span> adalah <strong>ukuran luar Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span></strong> pada
+<span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>.</p>
+</section>
+<section class="source-unit" id="264B" data-source-id="264B"><h2><span class="source-label">264B</span>  </h2>
+<p>Tentu saja kita harus segera memeriksa hal berikut:</p>
+<p> </p>
+<p><strong>Lema</strong> <span class="math inline" data-source-tex="\theta_r">\(\theta_r\)</span>, sebagaimana didefinisikan dalam <a class="xref" href="#264A">264A</a>, selalu
+merupakan ukuran luar.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Anda seharusnya sudah terbiasa dengan argumen-argumen ini, tetapi
+terdapat satu langkah tambahan dalam argumen ini, jadi saya menguraikan
+rinciannya.</p>
+<p> </p>
+<p><strong>(a)</strong> Dengan menafsirkan diameter himpunan kosong sebagai <span class="math inline" data-source-tex="0">\(0\)</span>, kita
+mempunyai <span class="math inline" data-source-tex="\theta_{r\delta}\emptyset=0">\(\theta_{r\delta}\emptyset=0\)</span> untuk setiap <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>, sehingga
+<span class="math inline" data-source-tex="\theta_r\emptyset=0">\(\theta_r\emptyset=0\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Jika <span class="math inline" data-source-tex="A\subseteq B\subseteq\BbbR^s">\(A\subseteq B\subseteq\BbbR^s\)</span>, maka setiap barisan yang
+meliput <span class="math inline" data-source-tex="B">\(B\)</span> juga meliput <span class="math inline" data-source-tex="A">\(A\)</span>, sehingga
+<span class="math inline" data-source-tex="\theta_{r\delta}A\le\theta_{r\delta}B">\(\theta_{r\delta}A\le\theta_{r\delta}B\)</span> untuk setiap <span class="math inline" data-source-tex="\delta">\(\delta\)</span> dan
+<span class="math inline" data-source-tex="\theta_rA\le\theta_rB">\(\theta_rA\le\theta_rB\)</span>.</p>
+<p> </p>
+<p><strong>(c)</strong> Misalkan <span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> suatu barisan subhimpunan <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>
+yang gabungannya <span class="math inline" data-source-tex="A">\(A\)</span>, dan ambil sebarang <span class="math inline" data-source-tex="a&lt;\theta_rA">\(a&lt;\theta_rA\)</span>. Maka terdapat
+<span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga <span class="math inline" data-source-tex="a\le\theta_{r\delta}A">\(a\le\theta_{r\delta}A\)</span>. Sekarang
+<span class="math inline" data-source-tex="\theta_{r\delta}A\le\sum_{n=0}^{\infty}\theta_{r\delta}(A_n)">\(\theta_{r\delta}A\le\sum_{n=0}^{\infty}\theta_{r\delta}(A_n)\)</span>. Bukti.
+Ambil <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, dan untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> pilih suatu barisan
+<span class="math inline" data-source-tex="\sequence{m}{A_{nm}}">\(\sequence{m}{A_{nm}}\)</span> himpunan yang meliput <span class="math inline" data-source-tex="A_n">\(A_n\)</span>, dengan
+<span class="math inline" data-source-tex="\diam A_{nm}\le\delta">\(\diam A_{nm}\le\delta\)</span> untuk setiap <span class="math inline" data-source-tex="m">\(m\)</span> dan
+<span class="math inline" data-source-tex="\sum_{m=0}^{\infty}(\diam A_{nm})^r\le\theta_{r\delta}A_n+2^{-n}\epsilon">\(\sum_{m=0}^{\infty}(\diam A_{nm})^r\le\theta_{r\delta}A_n+2^{-n}\epsilon\)</span>.
+Maka <span class="math inline" data-source-tex="\langle A_{nm}\rangle_{m,n\in\Bbb N}">\(\langle A_{nm}\rangle_{m,n\in\Bbb N}\)</span> merupakan peliput <span class="math inline" data-source-tex="A">\(A\)</span> oleh
+terhitung banyak himpunan berdiameter paling besar <span class="math inline" data-source-tex="\delta">\(\delta\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\theta_{r\delta}A
+\le\sum_{n=0}^{\infty}\sum_{m=0}^{\infty}(\diam A_{nm})^r
+\le\sum_{n=0}^{\infty}(\theta_{r\delta}A_n+2^{-n}\epsilon)
+=2\epsilon+\sum_{n=0}^{\infty}\theta_{r\delta}A_n">\(\theta_{r\delta}A
+\le\sum_{n=0}^{\infty}\sum_{m=0}^{\infty}(\diam A_{nm})^r
+\le\sum_{n=0}^{\infty}(\theta_{r\delta}A_n+2^{-n}\epsilon)
+=2\epsilon+\sum_{n=0}^{\infty}\theta_{r\delta}A_n\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang, kita memperoleh hasilnya. ∎</p>
+<p>Dengan demikian,</p>
+<div class="centerline"><span class="math inline" data-source-tex="a\le\theta_{r\delta}A
+\le\sum_{n=0}^{\infty}\theta_{r\delta}A_n
+\le\sum_{n=0}^{\infty}\theta_rA_n">\(a\le\theta_{r\delta}A
+\le\sum_{n=0}^{\infty}\theta_{r\delta}A_n
+\le\sum_{n=0}^{\infty}\theta_rA_n\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="a">\(a\)</span> sebarang,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\theta_rA\le\sum_{n=0}^{\infty}\theta_rA_n">\(\theta_rA\le\sum_{n=0}^{\infty}\theta_rA_n\)</span>;</div>
+<p>karena <span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> sebarang, <span class="math inline" data-source-tex="\theta_r">\(\theta_r\)</span> merupakan ukuran
+luar.</p></aside>
+</section>
+<section class="source-unit" id="264C" data-source-id="264C"><h2><span class="source-label">264C</span> Definisi </h2>
+<p>Jika <span class="math inline" data-source-tex="s\ge 1">\(s\ge 1\)</span> suatu bilangan bulat, dan <span class="math inline" data-source-tex="r&gt;0">\(r&gt;0\)</span>, maka
+<strong>ukuran Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span></strong> pada <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span> adalah ukuran
+<span class="math inline" data-source-tex="\mu_{Hr}">\(\mu_{Hr}\)</span> pada <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span> yang didefinisikan melalui metode Carathéodory
+dari ukuran luar <span class="math inline" data-source-tex="\theta_r">\(\theta_r\)</span> dalam <a class="xref" href="#264A">264A</a>-<a class="xref" href="#264B">264B</a>.</p>
+</section>
+<section class="source-unit" id="264D" data-source-id="264D"><span class="anchor" id="264Da"></span><h2><span class="source-label">264D</span> Catatan </h2>
+<p><strong>(a)</strong> Penting diperhatikan bahwa
+himpunan-himpunan yang digunakan dalam definisi <span class="math inline" data-source-tex="\theta_{r\delta}">\(\theta_{r\delta}\)</span> tidak harus
+berupa bola; bahkan dalam <span class="math inline" data-source-tex="\BbbR^2">\(\BbbR^2\)</span>, tidak setiap himpunan <span class="math inline" data-source-tex="A">\(A\)</span> dapat diliput
+oleh suatu bola yang berdiameter sama dengan <span class="math inline" data-source-tex="A">\(A\)</span>.</p>
+</section>
+<section class="source-unit" id="264Db" data-source-id="264Db"><h3><span class="source-label">264Db</span>  </h3>
+<p><strong>(b)</strong> Dalam definisi-definisi di atas saya mensyaratkan
+<span class="math inline" data-source-tex="r&gt;0">\(r&gt;0\)</span>. Kadang-kadang tepat untuk mengambil <span class="math inline" data-source-tex="\mu_{H0}">\(\mu_{H0}\)</span> sebagai ukuran cacah.
+Ini hampir merupakan hasil penerapan rumus-rumus di atas dengan <span class="math inline" data-source-tex="r=0">\(r=0\)</span>,
+tetapi dapat timbul kesulitan jika kita menafsirkannya terlalu harfiah.</p>
+</section>
+<section class="source-unit" id="264Dc" data-source-id="264Dc"><h3><span class="source-label">264Dc</span> <strong>(c)</strong> </h3>
+<p>Semua ukuran Hausdorff harus lengkap, karena
+semuanya didefinisikan melalui metode Carathéodory (<a class="xref" href="../212/index.html#212A">212A</a>). Untuk <span class="math inline" data-source-tex="r&gt;0">\(r&gt;0\)</span>,
+semuanya tanpa atom (<a class="xref" href="#264Yg">264Yg</a>). Namun, ditinjau dari kriteria lain
+dalam §<a class="xref" href="../211/index.html#211">211</a>, perilakunya sangat buruk; misalnya, jika <span class="math inline" data-source-tex="r">\(r\)</span>, <span class="math inline" data-source-tex="s">\(s\)</span> bilangan bulat
+dan <span class="math inline" data-source-tex="1\le r&lt;s">\(1\le r&lt;s\)</span>, maka <span class="math inline" data-source-tex="\mu_{Hr}">\(\mu_{Hr}\)</span> pada <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span> tidak semihingga. (Saya akan
+memberikan pembuktiannya dalam 439H pada Jilid 4.) Meskipun demikian,
+ukuran-ukuran tersebut memiliki beberapa sifat mencolok yang membuatnya cukup
+mudah ditangani.</p>
+</section>
+<section class="source-unit" id="264Dd" data-source-id="264Dd"><h3><span class="source-label">264Dd</span> <strong>(d)</strong> </h3>
+<p>Dalam <a class="xref" href="#264A">264A</a>, perhatikan bahwa
+<span class="math inline" data-source-tex="\theta_{r\delta}A\le\theta_{r\delta&#x27;}A">\(\theta_{r\delta}A\le\theta_{r\delta&#x27;}A\)</span> ketika <span class="math inline" data-source-tex="0&lt;\delta&#x27;\le\delta">\(0&lt;\delta&#x27;\le\delta\)</span>;
+akibatnya, misalnya,
+<span class="math inline" data-source-tex="\theta_rA=\lim_{n\to\infty}\theta_{r,2^{-n}}A">\(\theta_rA=\lim_{n\to\infty}\theta_{r,2^{-n}}A\)</span>. Saya telah mengizinkan
+himpunan sebarang <span class="math inline" data-source-tex="A_n">\(A_n\)</span> dalam peliput, tetapi hasilnya tidak berubah jika kita
+membatasi perhatian pada peliput yang terdiri atas himpunan terbuka atau
+himpunan tertutup (<a class="xref" href="#264Xc">264Xc</a>).</p>
+</section>
+<section class="source-unit" id="264E" data-source-id="264E"><h2><span class="source-label">264E</span> Teorema </h2>
+<p>Misalkan <span class="math inline" data-source-tex="s\ge 1">\(s\ge 1\)</span> suatu bilangan bulat, dan <span class="math inline" data-source-tex="r\ge 0">\(r\ge 0\)</span>;
+misalkan <span class="math inline" data-source-tex="\mu_{Hr}">\(\mu_{Hr}\)</span> ukuran Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> pada <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>, dan
+<span class="math inline" data-source-tex="\Sigma_{Hr}">\(\Sigma_{Hr}\)</span> domainnya. Maka setiap subhimpunan Borel dari <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span> termasuk
+dalam <span class="math inline" data-source-tex="\Sigma_{Hr}">\(\Sigma_{Hr}\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Hal ini sepele jika <span class="math inline" data-source-tex="r=0">\(r=0\)</span>; jadi selanjutnya andaikan bahwa <span class="math inline" data-source-tex="r&gt;0">\(r&gt;0\)</span>.</p>
+<p> </p>
+<p><strong>(a)</strong> Langkah pertama ialah memperhatikan bahwa jika <span class="math inline" data-source-tex="A">\(A\)</span>, <span class="math inline" data-source-tex="B">\(B\)</span> merupakan
+subhimpunan <span class="math inline" data-source-tex="\Bbb R^s">\(\Bbb R^s\)</span> dan <span class="math inline" data-source-tex="\eta&gt;0">\(\eta&gt;0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\|x-y\|\ge\eta">\(\|x-y\|\ge\eta\)</span> untuk semua <span class="math inline" data-source-tex="x\in A">\(x\in A\)</span>, <span class="math inline" data-source-tex="y\in B">\(y\in B\)</span>, maka
+<span class="math inline" data-source-tex="\theta_r(A\cup B)=\theta_rA+\theta_rB">\(\theta_r(A\cup B)=\theta_rA+\theta_rB\)</span>, dengan <span class="math inline" data-source-tex="\theta_r">\(\theta_r\)</span> ukuran luar
+Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> pada <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>. Bukti. Tentu saja
+<span class="math inline" data-source-tex="\theta_r(A\cup B)\le\theta_rA+\theta_rB">\(\theta_r(A\cup B)\le\theta_rA+\theta_rB\)</span>, karena <span class="math inline" data-source-tex="\theta_r">\(\theta_r\)</span> merupakan ukuran
+luar. Untuk ketaksamaan sebaliknya, kita dapat mengandaikan bahwa
+<span class="math inline" data-source-tex="\theta_r(A\cup B)&lt;\infty">\(\theta_r(A\cup B)&lt;\infty\)</span>, sehingga <span class="math inline" data-source-tex="\theta_rA">\(\theta_rA\)</span> dan <span class="math inline" data-source-tex="\theta_rB">\(\theta_rB\)</span> keduanya
+berhingga. Ambil <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> dan <span class="math inline" data-source-tex="\delta_1">\(\delta_1\)</span>, <span class="math inline" data-source-tex="\delta_2&gt;0">\(\delta_2&gt;0\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\theta_rA+\theta_rB\le
+\theta_{r\delta_1}A+\theta_{r\delta_2}B+\epsilon">\(\theta_rA+\theta_rB\le
+\theta_{r\delta_1}A+\theta_{r\delta_2}B+\epsilon\)</span>.</div>
+<p>Tetapkan <span class="math inline" data-source-tex="\delta=\min(\delta_1,\delta_2,\bover12\eta)&gt;0">\(\delta=\min(\delta_1,\delta_2,\bover12\eta)&gt;0\)</span> dan
+misalkan <span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> suatu barisan himpunan yang berdiameter paling
+besar <span class="math inline" data-source-tex="\delta">\(\delta\)</span>, meliput <span class="math inline" data-source-tex="A\cup B">\(A\cup B\)</span>, dan sedemikian sehingga
+<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}(\diam A_n)^r\le\theta_{r\delta}(A\cup B)+\epsilon">\(\sum_{n=0}^{\infty}(\diam A_n)^r\le\theta_{r\delta}(A\cup B)+\epsilon\)</span>.
+Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="K=\{n:A_n\cap A\ne\emptyset\}">\(K=\{n:A_n\cap A\ne\emptyset\}\)</span>,
+  <span class="math inline" data-source-tex="L=\{n:A_n\cap B\ne\emptyset\}">\(L=\{n:A_n\cap B\ne\emptyset\}\)</span>.</div>
+<p>Karena</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|x-y\|\ge\eta&gt;\diam A_n">\(\|x-y\|\ge\eta&gt;\diam A_n\)</span></div>
+<p>setiap kali <span class="math inline" data-source-tex="x\in A">\(x\in A\)</span>, <span class="math inline" data-source-tex="y\in B">\(y\in B\)</span> dan <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, kita mempunyai
+<span class="math inline" data-source-tex="K\cap L=\emptyset">\(K\cap L=\emptyset\)</span>; dan tentu saja <span class="math inline" data-source-tex="A\subseteq\bigcup_{n\in K}A_n">\(A\subseteq\bigcup_{n\in K}A_n\)</span>,
+<span class="math inline" data-source-tex="B\subseteq\bigcup_{n\in L}A_n">\(B\subseteq\bigcup_{n\in L}A_n\)</span>. Akibatnya,</p>
+<p><span class="math display" data-source-tex="\eqalign{\theta_rA+\theta_rB
+&amp;\le\epsilon+\theta_{r\delta_1}A+\theta_{r\delta_2}B\cr
+&amp;\le\epsilon+\sum_{n\in K}(\diam A_n)^r+\sum_{n\in L}(\diam A_n)^r\cr
+&amp;\le\epsilon+\sum_{n=0}^{\infty}(\diam A_n)^r
+\le2\epsilon+\theta_{r\delta}(A\cup B)
+\le 2\epsilon+\theta_r(A\cup B).\cr}">\[\begin{aligned}\theta_rA+\theta_rB
+&amp;\le\epsilon+\theta_{r\delta_1}A+\theta_{r\delta_2}B\\
+&amp;\le\epsilon+\sum_{n\in K}(\diam A_n)^r+\sum_{n\in L}(\diam A_n)^r\\
+&amp;\le\epsilon+\sum_{n=0}^{\infty}(\diam A_n)^r
+\le2\epsilon+\theta_{r\delta}(A\cup B)
+\le 2\epsilon+\theta_r(A\cup B).\\\end{aligned}\]</span></p>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang, <span class="math inline" data-source-tex="\theta_r(A\cup
+B)\ge\theta_rA+\theta_rB">\(\theta_r(A\cup
+B)\ge\theta_rA+\theta_rB\)</span>, sebagaimana diperlukan. ∎</p>
+<p> </p>
+<p><strong>(b)</strong> Diperoleh bahwa
+<span class="math inline" data-source-tex="\theta_rA=\theta_r(A\cap G)+\theta_r(A\setminus G)">\(\theta_rA=\theta_r(A\cap G)+\theta_r(A\setminus G)\)</span> setiap kali
+<span class="math inline" data-source-tex="A\subseteq \BbbR^s">\(A\subseteq \BbbR^s\)</span> dan <span class="math inline" data-source-tex="G">\(G\)</span> terbuka.
+Bukti. Seperti biasa, cukup dipertimbangkan kasus <span class="math inline" data-source-tex="\theta_rA&lt;\infty">\(\theta_rA&lt;\infty\)</span> dan
+ditunjukkan bahwa dalam kasus ini
+<span class="math inline" data-source-tex="\theta_r(A\cap G)+\theta_r(A\setminus G)\le\theta_rA">\(\theta_r(A\cap G)+\theta_r(A\setminus G)\le\theta_rA\)</span>. Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="A_n=\{x:x\in A,\,\|x-y\|\ge 2^{-n}">\(A_n=\{x:x\in A,\,\|x-y\|\ge 2^{-n}\)</span> untuk setiap
+<span class="math inline" data-source-tex="y\in A\setminus G\}">\(y\in A\setminus G\}\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="B_0=A_0">\(B_0=A_0\)</span>,
+  <span class="math inline" data-source-tex="B_n=A_n\setminus A_{n-1}">\(B_n=A_n\setminus A_{n-1}\)</span> untuk <span class="math inline" data-source-tex="n&gt;0">\(n&gt;0\)</span>.</div>
+<p>Perhatikan bahwa <span class="math inline" data-source-tex="A_n\subseteq A_{n+1}">\(A_n\subseteq A_{n+1}\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span> dan
+<span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}A_n=\bigcup_{n\in\Bbb N}B_n=A\cap G">\(\bigcup_{n\in\Bbb N}A_n=\bigcup_{n\in\Bbb N}B_n=A\cap G\)</span>. Intinya ialah
+bahwa jika <span class="math inline" data-source-tex="m">\(m\)</span>, <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> dan <span class="math inline" data-source-tex="n\ge m+2">\(n\ge m+2\)</span>, serta jika <span class="math inline" data-source-tex="x\in B_m">\(x\in B_m\)</span> dan
+<span class="math inline" data-source-tex="y\in B_n">\(y\in B_n\)</span>, maka terdapat <span class="math inline" data-source-tex="z\in A\setminus G">\(z\in A\setminus G\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\|y-z\|&lt;2^{-n+1}\le 2^{-m-1}">\(\|y-z\|&lt;2^{-n+1}\le 2^{-m-1}\)</span>, sedangkan <span class="math inline" data-source-tex="\|x-z\|">\(\|x-z\|\)</span> harus paling sedikit
+<span class="math inline" data-source-tex="2^{-m}">\(2^{-m}\)</span>, sehingga <span class="math inline" data-source-tex="\|x-y\|\ge\|x-z\|-\|y-z\|\ge 2^{-m-1}">\(\|x-y\|\ge\|x-z\|-\|y-z\|\ge 2^{-m-1}\)</span>. Akibatnya, untuk
+setiap <span class="math inline" data-source-tex="k\ge 0">\(k\ge 0\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{m=0}^k\theta_rB_{2m}
+=\theta_r(\bigcup_{m\le k}B_{2m})\le\theta_r(A\cap G)&lt;\infty">\(\sum_{m=0}^k\theta_rB_{2m}
+=\theta_r(\bigcup_{m\le k}B_{2m})\le\theta_r(A\cap G)&lt;\infty\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{m=0}^k\theta_rB_{2m+1}
+=\theta_r(\bigcup_{m\le k}B_{2m+1})\le\theta_r(A\cap G)&lt;\infty">\(\sum_{m=0}^k\theta_rB_{2m+1}
+=\theta_r(\bigcup_{m\le k}B_{2m+1})\le\theta_r(A\cap G)&lt;\infty\)</span>,</div>
+<p>(dengan melakukan induksi pada <span class="math inline" data-source-tex="k">\(k\)</span> dan menggunakan (a) di atas pada
+langkah induksi). Akibatnya <span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\theta_rB_n&lt;\infty">\(\sum_{n=0}^{\infty}\theta_rB_n&lt;\infty\)</span>.</p>
+<p>Sekarang, jika <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> diberikan, terdapat <span class="math inline" data-source-tex="m">\(m\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\sum_{n=m}^{\infty}\theta_rB_n\le\epsilon">\(\sum_{n=m}^{\infty}\theta_rB_n\le\epsilon\)</span>, sehingga</p>
+<p><span class="math display" data-source-tex="\eqalignno{\theta_r(A\cap G)+\theta_r(A\setminus G)
+&amp;\le\theta_rA_m+\sum_{n=m}^{\infty}\theta_rB_n+\theta_r(A\setminus G)\cr
+&amp;\le\epsilon+\theta_rA_m+\theta_r(A\setminus G)
+=\epsilon+\theta_r(A_m\cup(A\setminus G))\cr
+\noalign{  (berdasarkan (a) lagi, karena $\|x-y\|\ge 2^{-m}$ untuk
+$x\in A_m$, $y\in A\setminus G$)}
+&amp;\le\epsilon+\theta_rA.\cr}">\[\begin{aligned}\theta_r(A\cap G)+\theta_r(A\setminus G)
+&amp;\le\theta_rA_m+\sum_{n=m}^{\infty}\theta_rB_n+\theta_r(A\setminus G)\\
+&amp;\le\epsilon+\theta_rA_m+\theta_r(A\setminus G)
+=\epsilon+\theta_r(A_m\cup(A\setminus G))\\
+&amp;\text{(berdasarkan (a) lagi, karena }\|x-y\|\ge 2^{-m}\text{ untuk
+}x\in A_m\text{, }y\in A\setminus G\text{)}\\
+&amp;\le\epsilon+\theta_rA.\\\end{aligned}\]</span></p>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang,
+<span class="math inline" data-source-tex="\theta_r(A\cap G)+\theta_r(A\setminus G)\le\theta_rA">\(\theta_r(A\cap G)+\theta_r(A\setminus G)\le\theta_rA\)</span>,
+sebagaimana diperlukan. ∎</p>
+<p> </p>
+<p><strong>(c)</strong> Bagian (b) menunjukkan tepat bahwa himpunan terbuka termasuk dalam
+<span class="math inline" data-source-tex="\Sigma_{Hr}">\(\Sigma_{Hr}\)</span>. Langsung diperoleh bahwa aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> Borel dari
+<span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span> termuat dalam <span class="math inline" data-source-tex="\Sigma_{Hr}">\(\Sigma_{Hr}\)</span>, sebagaimana dinyatakan.</p></aside>
+</section>
+<section class="source-unit" id="264F" data-source-id="264F"><h2><span class="source-label">264F</span> Proposisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="s\ge 1">\(s\ge 1\)</span> suatu bilangan bulat, dan <span class="math inline" data-source-tex="r&gt;0">\(r&gt;0\)</span>;
+misalkan <span class="math inline" data-source-tex="\theta_r">\(\theta_r\)</span> ukuran luar Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> pada <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>, dan
+tuliskan <span class="math inline" data-source-tex="\mu_{Hr}">\(\mu_{Hr}\)</span> untuk ukuran Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> pada <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>,
+<span class="math inline" data-source-tex="\Sigma_{Hr}">\(\Sigma_{Hr}\)</span> untuk domainnya. Maka</p>
+<p>(a) untuk setiap <span class="math inline" data-source-tex="A\subseteq \BbbR^s">\(A\subseteq \BbbR^s\)</span> terdapat suatu himpunan Borel
+<span class="math inline" data-source-tex="E\supseteq A">\(E\supseteq A\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\mu_{Hr}E=\theta_rA">\(\mu_{Hr}E=\theta_rA\)</span>;</p>
+<p>(b) <span class="math inline" data-source-tex="\theta_r=\mu^*_{Hr}">\(\theta_r=\mu^*_{Hr}\)</span>, yaitu ukuran luar yang didefinisikan dari
+<span class="math inline" data-source-tex="\mu_{Hr}">\(\mu_{Hr}\)</span>;</p>
+<p>(c) jika <span class="math inline" data-source-tex="E\in\Sigma_{Hr}">\(E\in\Sigma_{Hr}\)</span> dapat dinyatakan sebagai gabungan terhitung dari
+himpunan-himpunan berukuran berhingga, terdapat himpunan Borel <span class="math inline" data-source-tex="E&#x27;">\(E&#x27;\)</span>, <span class="math inline" data-source-tex="E&#x27;&#x27;">\(E&#x27;&#x27;\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="E&#x27;\subseteq E\subseteq E&#x27;&#x27;">\(E&#x27;\subseteq E\subseteq E&#x27;&#x27;\)</span> dan
+<span class="math inline" data-source-tex="\mu_{Hr}(E&#x27;&#x27;\setminus E&#x27;)=0">\(\mu_{Hr}(E&#x27;&#x27;\setminus E&#x27;)=0\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Jika <span class="math inline" data-source-tex="\theta_rA=\infty">\(\theta_rA=\infty\)</span>, hal ini sepele—ambil
+<span class="math inline" data-source-tex="E=\BbbR^s">\(E=\BbbR^s\)</span>. Jika tidak, untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> pilih suatu barisan
+<span class="math inline" data-source-tex="\sequence{m}{A_{nm}}">\(\sequence{m}{A_{nm}}\)</span> himpunan berdiameter paling besar <span class="math inline" data-source-tex="2^{-n}">\(2^{-n}\)</span>, yang
+meliput <span class="math inline" data-source-tex="A">\(A\)</span>, dan sedemikian sehingga
+<span class="math inline" data-source-tex="\sum_{m=0}^{\infty}(\diam A_{nm})^r\le\theta_{r,2^{-n}}A+2^{-n}">\(\sum_{m=0}^{\infty}(\diam A_{nm})^r\le\theta_{r,2^{-n}}A+2^{-n}\)</span>. Tetapkan
+<span class="math inline" data-source-tex="F_{nm}=\overline{A}_{nm}">\(F_{nm}=\overline{A}_{nm}\)</span>, <span class="math inline" data-source-tex="E=\bigcap_{n\in\Bbb N}\bigcup_{m\in\Bbb
+N}F_{nm}">\(E=\bigcap_{n\in\Bbb N}\bigcup_{m\in\Bbb
+N}F_{nm}\)</span>; maka <span class="math inline" data-source-tex="E">\(E\)</span> merupakan suatu himpunan Borel dalam <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>. Tentu saja</p>
+<div class="centerline"><span class="math inline" data-source-tex="A\subseteq\bigcap_{n\in\Bbb N}\bigcup_{m\in\Bbb N}A_{nm}
+\subseteq\bigcap_{n\in\Bbb N}\bigcup_{m\in\Bbb N}F_{nm}=E">\(A\subseteq\bigcap_{n\in\Bbb N}\bigcup_{m\in\Bbb N}A_{nm}
+\subseteq\bigcap_{n\in\Bbb N}\bigcup_{m\in\Bbb N}F_{nm}=E\)</span>.</div>
+<p>Untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\diam F_{nm}=\diam A_{nm}\le 2^{-n}">\(\diam F_{nm}=\diam A_{nm}\le 2^{-n}\)</span>
+untuk setiap <span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{m=0}^{\infty}(\diam F_{nm})^r
+=\sum_{m=0}^{\infty}(\diam A_{nm})^r
+\le\theta_{r,2^{-n}}A+2^{-n}">\(\sum_{m=0}^{\infty}(\diam F_{nm})^r
+=\sum_{m=0}^{\infty}(\diam A_{nm})^r
+\le\theta_{r,2^{-n}}A+2^{-n}\)</span>,</div>
+<p>sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\theta_{r,2^{-n}}E\le\theta_{r,2^{-n}}A+2^{-n}">\(\theta_{r,2^{-n}}E\le\theta_{r,2^{-n}}A+2^{-n}\)</span>.</div>
+<p>Dengan membiarkan <span class="math inline" data-source-tex="n\to\infty">\(n\to\infty\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\theta_rE=\lim_{n\to\infty}\theta_{r,2^{-n}}E
+\le\lim_{n\to\infty}\theta_{r,2^{-n}}A+2^{-n}
+=\theta_rA">\(\theta_rE=\lim_{n\to\infty}\theta_{r,2^{-n}}E
+\le\lim_{n\to\infty}\theta_{r,2^{-n}}A+2^{-n}
+=\theta_rA\)</span>;</div>
+<p>tentu saja diperoleh bahwa <span class="math inline" data-source-tex="\theta_rA=\theta_rE">\(\theta_rA=\theta_rE\)</span>, karena
+<span class="math inline" data-source-tex="A\subseteq E">\(A\subseteq E\)</span>. Sekarang, berdasarkan <a class="xref" href="#264E">264E</a> kita mengetahui bahwa
+<span class="math inline" data-source-tex="E\in\Sigma_{Hr}">\(E\in\Sigma_{Hr}\)</span>, sehingga kita dapat menuliskan <span class="math inline" data-source-tex="\mu_{Hr}E">\(\mu_{Hr}E\)</span> sebagai
+pengganti <span class="math inline" data-source-tex="\theta_rE">\(\theta_rE\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Hal ini langsung diperoleh, karena kita mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu_{Hr}^*A
+=\inf\{\mu_{Hr}E:E\in\Sigma_{Hr},\,A\subseteq E\}
+=\inf\{\theta_rE:E\in\Sigma_{Hr},\,A\subseteq E\}
+\ge\theta_rA">\(\mu_{Hr}^*A
+=\inf\{\mu_{Hr}E:E\in\Sigma_{Hr},\,A\subseteq E\}
+=\inf\{\theta_rE:E\in\Sigma_{Hr},\,A\subseteq E\}
+\ge\theta_rA\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="A\subseteq \BbbR^s">\(A\subseteq \BbbR^s\)</span>. Di pihak lain, jika
+<span class="math inline" data-source-tex="A\subseteq\BbbR^s">\(A\subseteq\BbbR^s\)</span>, kita mempunyai suatu himpunan Borel <span class="math inline" data-source-tex="E\supseteq A">\(E\supseteq A\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\theta_rA=\mu_{Hr}E">\(\theta_rA=\mu_{Hr}E\)</span>, sehingga
+<span class="math inline" data-source-tex="\mu_{Hr}^*A\le\mu_{Hr}E=\theta_rA">\(\mu_{Hr}^*A\le\mu_{Hr}E=\theta_rA\)</span>.</p>
+<p> </p>
+<p><strong>(c)(i)</strong> Andaikan terlebih dahulu bahwa <span class="math inline" data-source-tex="\mu_{Hr}E&lt;\infty">\(\mu_{Hr}E&lt;\infty\)</span>. Berdasarkan
+(a), terdapat himpunan Borel <span class="math inline" data-source-tex="E&#x27;&#x27;\supseteq E">\(E&#x27;&#x27;\supseteq E\)</span>, <span class="math inline" data-source-tex="H\supseteq E&#x27;&#x27;\setminus E">\(H\supseteq E&#x27;&#x27;\setminus E\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\mu_{Hr}E&#x27;&#x27;=\theta_rE">\(\mu_{Hr}E&#x27;&#x27;=\theta_rE\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu_{Hr}H=\theta_r(E&#x27;&#x27;\setminus E)
+=\mu_{Hr}(E&#x27;&#x27;\setminus E)
+=\mu_{Hr}E&#x27;&#x27;-\mu_{Hr}E
+=\mu_{Hr}E&#x27;&#x27;-\theta_rE
+=0">\(\mu_{Hr}H=\theta_r(E&#x27;&#x27;\setminus E)
+=\mu_{Hr}(E&#x27;&#x27;\setminus E)
+=\mu_{Hr}E&#x27;&#x27;-\mu_{Hr}E
+=\mu_{Hr}E&#x27;&#x27;-\theta_rE
+=0\)</span>.</div>
+<p>Jadi, dengan menetapkan <span class="math inline" data-source-tex="E&#x27;=E&#x27;&#x27;\setminus H">\(E&#x27;=E&#x27;&#x27;\setminus H\)</span>, kita memperoleh suatu
+himpunan Borel yang termuat dalam <span class="math inline" data-source-tex="E">\(E\)</span>, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu_{Hr}(E&#x27;&#x27;\setminus E&#x27;)\le\mu_{Hr}H=0">\(\mu_{Hr}(E&#x27;&#x27;\setminus E&#x27;)\le\mu_{Hr}H=0\)</span>.</div>
+<p> </p>
+<p>  <strong>(ii)</strong> Untuk kasus umum, nyatakan <span class="math inline" data-source-tex="E">\(E\)</span> sebagai <span class="math inline" data-source-tex="\bigcup_{n\in\Bbb
+N}E_n">\(\bigcup_{n\in\Bbb
+N}E_n\)</span> dengan <span class="math inline" data-source-tex="\mu_{Hr}E_n&lt;\infty">\(\mu_{Hr}E_n&lt;\infty\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>; ambil himpunan Borel
+<span class="math inline" data-source-tex="E&#x27;_n">\(E&#x27;_n\)</span>, <span class="math inline" data-source-tex="E_n&#x27;&#x27;">\(E_n&#x27;&#x27;\)</span> sedemikian sehingga <span class="math inline" data-source-tex="E_n&#x27;\subseteq E_n\subseteq E_n&#x27;&#x27;">\(E_n&#x27;\subseteq E_n\subseteq E_n&#x27;&#x27;\)</span> dan
+<span class="math inline" data-source-tex="\mu_{Hr}(E_n&#x27;&#x27;\setminus E_n&#x27;)=0">\(\mu_{Hr}(E_n&#x27;&#x27;\setminus E_n&#x27;)=0\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>; dan tetapkan
+<span class="math inline" data-source-tex="E&#x27;=\bigcup_{n\in\Bbb N}E&#x27;_n">\(E&#x27;=\bigcup_{n\in\Bbb N}E&#x27;_n\)</span>, <span class="math inline" data-source-tex="E&#x27;&#x27;=\bigcup_{n\in\Bbb N}E_n&#x27;&#x27;">\(E&#x27;&#x27;=\bigcup_{n\in\Bbb N}E_n&#x27;&#x27;\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="264G" data-source-id="264G"><h2><span class="source-label">264G</span> Fungsi Lipschitz </h2>
+<p>Definisi ukuran Hausdorff tepat
+disesuaikan dengan hasil berikut, yang bersesuaian dengan <a class="xref" href="../262/index.html#262D">262D</a>.</p>
+<p><strong>Proposisi</strong> Misalkan <span class="math inline" data-source-tex="m">\(m\)</span>, <span class="math inline" data-source-tex="s\ge 1">\(s\ge 1\)</span> bilangan bulat, dan
+<span class="math inline" data-source-tex="\phi:D\to\BbbR^s">\(\phi:D\to\BbbR^s\)</span> suatu fungsi <span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>-Lipschitz, dengan <span class="math inline" data-source-tex="D">\(D\)</span> suatu
+subhimpunan <span class="math inline" data-source-tex="\BbbR^m">\(\BbbR^m\)</span>. Maka untuk sebarang <span class="math inline" data-source-tex="A\subseteq D">\(A\subseteq D\)</span> dan <span class="math inline" data-source-tex="r\ge 0">\(r\ge 0\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu_{Hr}^*(\phi[A])\le\gamma^r\mu_{Hr}^*A">\(\mu_{Hr}^*(\phi[A])\le\gamma^r\mu_{Hr}^*A\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="A\subseteq D">\(A\subseteq D\)</span>, dengan menuliskan <span class="math inline" data-source-tex="\mu_{Hr}^*">\(\mu_{Hr}^*\)</span> untuk
+ukuran luar Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> baik pada <span class="math inline" data-source-tex="\BbbR^m">\(\BbbR^m\)</span> maupun pada
+<span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Kasus <span class="math inline" data-source-tex="r=0">\(r=0\)</span> sepele, sebab ketika itu <span class="math inline" data-source-tex="\gamma^r=1">\(\gamma^r=1\)</span> dan
+<span class="math inline" data-source-tex="\mu_{Hr}^*A=\mu_{H0}A=\#(A)">\(\mu_{Hr}^*A=\mu_{H0}A=\#(A)\)</span> jika <span class="math inline" data-source-tex="A">\(A\)</span> berhingga, dan <span class="math inline" data-source-tex="\infty">\(\infty\)</span> jika tidak,
+sedangkan <span class="math inline" data-source-tex="\#(\phi[A])\le\#(A)">\(\#(\phi[A])\le\#(A)\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Jika <span class="math inline" data-source-tex="r&gt;0">\(r&gt;0\)</span>, ambil sebarang <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>. Tetapkan
+<span class="math inline" data-source-tex="\eta=\delta/(1+\gamma)">\(\eta=\delta/(1+\gamma)\)</span> dan tinjau <span class="math inline" data-source-tex="\theta_{r\eta}:\Cal
+P\BbbR^m\to[0,\infty]">\(\theta_{r\eta}:\Cal
+P\BbbR^m\to[0,\infty]\)</span>, yang didefinisikan seperti dalam <a class="xref" href="#264A">264A</a>. Berdasarkan
+264Fb kita mengetahui bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu_{Hr}^*A=\theta_rA\ge\theta_{r\eta}A">\(\mu_{Hr}^*A=\theta_rA\ge\theta_{r\eta}A\)</span>,</div>
+<p>sehingga terdapat suatu barisan <span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> himpunan,
+semuanya berdiameter paling besar <span class="math inline" data-source-tex="\eta">\(\eta\)</span>, yang meliput <span class="math inline" data-source-tex="A">\(A\)</span>, dengan
+<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}(\diam A_n)^r\le\mu_{Hr}^*A+\delta">\(\sum_{n=0}^{\infty}(\diam A_n)^r\le\mu_{Hr}^*A+\delta\)</span>.
+Sekarang <span class="math inline" data-source-tex="\phi[A]\subseteq\bigcup_{n\in\Bbb N}\phi[A_n\cap D]">\(\phi[A]\subseteq\bigcup_{n\in\Bbb N}\phi[A_n\cap D]\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\diam \phi[A_n\cap D]
+\le\gamma\diam A_n\le\gamma\eta\le\delta">\(\diam \phi[A_n\cap D]
+\le\gamma\diam A_n\le\gamma\eta\le\delta\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>. Akibatnya,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\theta_{r\delta}(\phi[A])\le\sum_{n=0}^{\infty}
+(\diam \phi[A_n\cap D])^r
+\le\sum_{n=0}^{\infty}\gamma^r(\diam A_n)^r
+\le\gamma^r(\mu_{Hr}^*A+\delta)">\(\theta_{r\delta}(\phi[A])\le\sum_{n=0}^{\infty}
+(\diam \phi[A_n\cap D])^r
+\le\sum_{n=0}^{\infty}\gamma^r(\diam A_n)^r
+\le\gamma^r(\mu_{Hr}^*A+\delta)\)</span>,</div>
+<p>dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu_{Hr}^*(\phi[A])
+=\lim_{\delta\downarrow 0}\theta_{r\delta}(\phi[A])
+\le\gamma^r\mu_{Hr}^*A">\(\mu_{Hr}^*(\phi[A])
+=\lim_{\delta\downarrow 0}\theta_{r\delta}(\phi[A])
+\le\gamma^r\mu_{Hr}^*A\)</span>,</div>
+<p>sebagaimana dinyatakan.</p></aside>
+</section>
+<section class="source-unit" id="264H" data-source-id="264H"><h2><span class="source-label">264H</span>  </h2>
+<p>Langkah berikutnya ialah menghubungkan ukuran Hausdorff
+berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> dengan ukuran Lebesgue pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>. Fakta
+dasar yang kita perlukan adalah sebagai berikut, dan gagasan dalam
+pembuktiannya bahkan lebih penting daripada hasilnya.</p>
+<p><strong>Teorema</strong></p>
+<p>Misalkan <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span> suatu bilangan bulat, dan <span class="math inline" data-source-tex="A">\(A\)</span> suatu subhimpunan terbatas
+dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>; tuliskan <span class="math inline" data-source-tex="\mu_r">\(\mu_r\)</span> untuk ukuran Lebesgue pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> dan
+<span class="math inline" data-source-tex="d=\diam A">\(d=\diam A\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu_r^*(A)\le\mu_rB(\tbf{0},\Bover{d}2)=2^{-r}\beta_rd^r">\(\mu_r^*(A)\le\mu_rB(\tbf{0},\Bover{d}2)=2^{-r}\beta_rd^r\)</span>,</div>
+<p>dengan <span class="math inline" data-source-tex="B(\tbf{0},\bover{d}2)">\(B(\tbf{0},\bover{d}2)\)</span> bola berpusat di <span class="math inline" data-source-tex="\tbf{0}">\(\tbf{0}\)</span> dan
+berdiameter <span class="math inline" data-source-tex="d">\(d\)</span>, sehingga <span class="math inline" data-source-tex="B(\tbf{0},1)">\(B(\tbf{0},1)\)</span> merupakan bola satuan dalam
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dan mempunyai ukuran</p>
+<p><span class="math display" data-source-tex="\eqalign{\beta_r
+&amp;=\Bover{1}{k!}\pi^k\text{ jika }r=2k\text{ genap},\cr
+&amp;=\Bover{2^{2k+1}k!}{(2k+1)!}\pi^k\text{ jika }r=2k+1\text{ ganjil}.\cr}">\[\begin{aligned}\beta_r
+&amp;=\Bover{1}{k!}\pi^k\text{ jika }r=2k\text{ genap},\\
+&amp;=\Bover{2^{2k+1}k!}{(2k+1)!}\pi^k\text{ jika }r=2k+1\text{ ganjil}.\\\end{aligned}\]</span></p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Untuk perhitungan <span class="math inline" data-source-tex="\beta_r">\(\beta_r\)</span>, lihat <a class="xref" href="../252/index.html#252Q">252Q</a> atau <a class="xref" href="../252/index.html#252Xi">252Xi</a>.</p>
+<p> </p>
+<p><strong>(b)</strong> Kasus <span class="math inline" data-source-tex="r=1">\(r=1\)</span> elementer, sebab dalam kasus ini <span class="math inline" data-source-tex="A">\(A\)</span> termuat dalam suatu
+interval dengan panjang <span class="math inline" data-source-tex="\diam A">\(\diam A\)</span>, sehingga <span class="math inline" data-source-tex="\mu_1^*A\le\diam A">\(\mu_1^*A\le\diam A\)</span>. Jadi,
+selanjutnya andaikan bahwa <span class="math inline" data-source-tex="r\ge 2">\(r\ge 2\)</span>.</p>
+<p> </p>
+<p><strong>(c)</strong> Untuk <span class="math inline" data-source-tex="1\le i\le r">\(1\le i\le r\)</span>, misalkan <span class="math inline" data-source-tex="S_i:\BbbR^r\to\BbbR^r">\(S_i:\BbbR^r\to\BbbR^r\)</span> refleksi
+pada koordinat ke-<span class="math inline" data-source-tex="i">\(i\)</span>, sehingga
+<span class="math inline" data-source-tex="S_ix=(\xi_1,\ldots,
+\ifdim\pagewidth&gt;467pt\penalty-100\fi
+\xi_{i-1},-\xi_i,\xi_{i+1},
+\ifdim\pagewidth&gt;467pt\penalty-50\fi
+\ldots,
+\ifdim\pagewidth&gt;467pt\penalty-10\fi
+\xi_r)">\(S_ix=(\xi_1,\ldots,
+\xi_{i-1},-\xi_i,\xi_{i+1},
+\ldots,
+\xi_r)\)</span> untuk setiap
+<span class="math inline" data-source-tex="x=(\xi_1,\ldots,\xi_r)\in \BbbR^r">\(x=(\xi_1,\ldots,\xi_r)\in \BbbR^r\)</span>. Kita katakan bahwa suatu himpunan
+<span class="math inline" data-source-tex="C\subseteq\BbbR^r">\(C\subseteq\BbbR^r\)</span> <strong>simetris pada koordinat-koordinat dalam <span class="math inline" data-source-tex="J">\(J\)</span></strong>, dengan
+<span class="math inline" data-source-tex="J\subseteq\{1,\ldots,r\}">\(J\subseteq\{1,\ldots,r\}\)</span>, jika <span class="math inline" data-source-tex="S_i[C]=C">\(S_i[C]=C\)</span> untuk <span class="math inline" data-source-tex="i\in J">\(i\in J\)</span>. Sekarang, inti
+argumennya adalah fakta berikut: jika <span class="math inline" data-source-tex="C\subseteq\Bbb R^r">\(C\subseteq\Bbb R^r\)</span> suatu himpunan
+terbatas yang simetris pada koordinat-koordinat dalam <span class="math inline" data-source-tex="J">\(J\)</span>, dengan <span class="math inline" data-source-tex="J">\(J\)</span> suatu
+subhimpunan sejati dari <span class="math inline" data-source-tex="\{1,\ldots,r\}">\(\{1,\ldots,r\}\)</span>, dan
+<span class="math inline" data-source-tex="j\in\{1,\ldots,r\}\setminus J">\(j\in\{1,\ldots,r\}\setminus J\)</span>, maka terdapat suatu himpunan <span class="math inline" data-source-tex="D">\(D\)</span>, yang
+simetris pada koordinat-koordinat dalam <span class="math inline" data-source-tex="J\cup\{j\}">\(J\cup\{j\}\)</span>, sedemikian sehingga
+<span class="math inline" data-source-tex="\diam D\le\diam C">\(\diam D\le\diam C\)</span> dan <span class="math inline" data-source-tex="\mu_r^*C\le\mu^*_rD">\(\mu_r^*C\le\mu^*_rD\)</span>.</p>
+<p>Bukti. <strong>(i)</strong> Karena ukuran Lebesgue invarian terhadap permutasi koordinat,
+cukup ditangani kasus <span class="math inline" data-source-tex="j=r">\(j=r\)</span>. Mulailah dengan menuliskan
+<span class="math inline" data-source-tex="F=\overline{C}">\(F=\overline{C}\)</span>, sehingga <span class="math inline" data-source-tex="\diam F=\diam C">\(\diam F=\diam C\)</span> dan
+<span class="math inline" data-source-tex="\mu_rF\ge\mu_r^*C">\(\mu_rF\ge\mu_r^*C\)</span>. Perhatikan bahwa karena <span class="math inline" data-source-tex="S_i">\(S_i\)</span> merupakan homeomorfisme
+untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="S_i[F]=S_i[\overline{C}]=\overline{S_i[C]}=\overline{C}=F">\(S_i[F]=S_i[\overline{C}]=\overline{S_i[C]}=\overline{C}=F\)</span></div>
+<p>untuk <span class="math inline" data-source-tex="i\in J">\(i\in J\)</span>, dan <span class="math inline" data-source-tex="F">\(F\)</span> simetris pada koordinat-koordinat dalam
+<span class="math inline" data-source-tex="J">\(J\)</span>.</p>
+<p>Untuk <span class="math inline" data-source-tex="y=(\eta_1,\ldots,\eta_{r-1})\in\BbbR^{r-1}">\(y=(\eta_1,\ldots,\eta_{r-1})\in\BbbR^{r-1}\)</span>, tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="F_y=\{\xi:(\eta_1,\ldots,\eta_{r-1},\xi)\in F\}">\(F_y=\{\xi:(\eta_1,\ldots,\eta_{r-1},\xi)\in F\}\)</span>,
+<span class="math inline" data-source-tex="f(y)=\mu_1F_y">\(f(y)=\mu_1F_y\)</span>,</div>
+<p>dengan <span class="math inline" data-source-tex="\mu_1">\(\mu_1\)</span> ukuran Lebesgue pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.
+Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="D=\{(y,\xi):y\in\BbbR^{r-1},\,|\xi|&lt;\Bover12f(y)\}
+\subseteq\BbbR^r">\(D=\{(y,\xi):y\in\BbbR^{r-1},\,|\xi|&lt;\Bover12f(y)\}
+\subseteq\BbbR^r\)</span>.</div>
+<p> </p>
+<p>  <strong>(ii)</strong> Jika <span class="math inline" data-source-tex="H\subseteq\BbbR^r">\(H\subseteq\BbbR^r\)</span> terukur dan <span class="math inline" data-source-tex="H\supseteq D">\(H\supseteq D\)</span>, maka,
+dengan menuliskan <span class="math inline" data-source-tex="\mu_{r-1}">\(\mu_{r-1}\)</span> untuk ukuran Lebesgue pada <span class="math inline" data-source-tex="\BbbR^{r-1}">\(\BbbR^{r-1}\)</span>, kita
+mempunyai</p>
+<p><span class="math display" data-source-tex="\eqalignno{\mu_rH
+&amp;=\int\mu_1\{\xi:(y,\xi)\in H\}\mu_{r-1}(dy)\cr
+\noalign{  (dengan menggunakan 251N dan 252D)}
+&amp;\ge\int\mu_1\{\xi:(y,\xi)\in D\}\mu_{r-1}(dy)
+=\int f(y)\mu_{r-1}(dy)\cr
+&amp;=\int\mu_1\{\xi:(y,\xi)\in F\}\mu_{r-1}(dy)
+=\mu_rF
+\ge\mu^*_rC.\cr}">\[\begin{aligned}\mu_rH
+&amp;=\int\mu_1\{\xi:(y,\xi)\in H\}\mu_{r-1}(dy)\\
+&amp;\text{(dengan menggunakan 251N dan 252D)}\\
+&amp;\ge\int\mu_1\{\xi:(y,\xi)\in D\}\mu_{r-1}(dy)
+=\int f(y)\mu_{r-1}(dy)\\
+&amp;=\int\mu_1\{\xi:(y,\xi)\in F\}\mu_{r-1}(dy)
+=\mu_rF
+\ge\mu^*_rC.\\\end{aligned}\]</span></p>
+<p>Karena <span class="math inline" data-source-tex="H">\(H\)</span> sebarang, <span class="math inline" data-source-tex="\mu_r^*D\ge\mu_r^*C">\(\mu_r^*D\ge\mu_r^*C\)</span>.</p>
+<p> </p>
+<p>  <strong>(iii)</strong> Langkah berikutnya ialah memeriksa bahwa
+<span class="math inline" data-source-tex="\diam D\le\diam C">\(\diam D\le\diam C\)</span>. Jika <span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="x&#x27;\in D">\(x&#x27;\in D\)</span>, nyatakan keduanya sebagai
+<span class="math inline" data-source-tex="(y,\xi_r)">\((y,\xi_r)\)</span> dan <span class="math inline" data-source-tex="(y&#x27;,\xi_r&#x27;)">\((y&#x27;,\xi_r&#x27;)\)</span>. Karena <span class="math inline" data-source-tex="F">\(F\)</span> suatu himpunan tertutup terbatas
+dalam <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, <span class="math inline" data-source-tex="F_y">\(F_y\)</span> dan <span class="math inline" data-source-tex="F_{y&#x27;}">\(F_{y&#x27;}\)</span> merupakan subhimpunan tertutup terbatas
+dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Selain itu, baik <span class="math inline" data-source-tex="f(y)">\(f(y)\)</span> maupun <span class="math inline" data-source-tex="f(y&#x27;)">\(f(y&#x27;)\)</span> harus lebih besar dari
+<span class="math inline" data-source-tex="0">\(0\)</span>, sehingga <span class="math inline" data-source-tex="F_y">\(F_y\)</span>, <span class="math inline" data-source-tex="F_{y&#x27;}">\(F_{y&#x27;}\)</span> keduanya tak kosong. Akibatnya,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\alpha=\inf F_y">\(\alpha=\inf F_y\)</span>,   <span class="math inline" data-source-tex="\beta=\sup F_y">\(\beta=\sup F_y\)</span>,
+  <span class="math inline" data-source-tex="\alpha&#x27;=\inf F_{y&#x27;}">\(\alpha&#x27;=\inf F_{y&#x27;}\)</span>,
+  <span class="math inline" data-source-tex="\beta&#x27;=\sup F_{y&#x27;}">\(\beta&#x27;=\sup F_{y&#x27;}\)</span></div>
+<p>semuanya terdefinisi dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan <span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>,
+<span class="math inline" data-source-tex="\beta\in F_y">\(\beta\in F_y\)</span>, sedangkan <span class="math inline" data-source-tex="\alpha&#x27;">\(\alpha&#x27;\)</span> dan <span class="math inline" data-source-tex="\beta&#x27;">\(\beta&#x27;\)</span> termasuk dalam <span class="math inline" data-source-tex="F_{y&#x27;}">\(F_{y&#x27;}\)</span>.
+Kita mempunyai</p>
+<p><span class="math display" data-source-tex="\eqalign{|\xi_r-\xi_r&#x27;|
+&amp;\le|\xi_r|+|\xi&#x27;_r|
+&lt;\Bover12f(y)+\Bover12f(y&#x27;)\cr
+&amp;=\Bover12(\mu_1F_y+\mu_1F_{y&#x27;})
+\le\Bover12(\beta-\alpha+\beta&#x27;-\alpha&#x27;)
+\le\max(\beta&#x27;-\alpha,\beta-\alpha&#x27;).\cr}">\[\begin{aligned}|\xi_r-\xi_r&#x27;|
+&amp;\le|\xi_r|+|\xi&#x27;_r|
+&lt;\Bover12f(y)+\Bover12f(y&#x27;)\\
+&amp;=\Bover12(\mu_1F_y+\mu_1F_{y&#x27;})
+\le\Bover12(\beta-\alpha+\beta&#x27;-\alpha&#x27;)
+\le\max(\beta&#x27;-\alpha,\beta-\alpha&#x27;).\\\end{aligned}\]</span></p>
+<p>Jadi, dengan mengambil <span class="math inline" data-source-tex="(\xi,\xi&#x27;)">\((\xi,\xi&#x27;)\)</span> sebagai salah satu dari
+<span class="math inline" data-source-tex="(\alpha,\beta&#x27;)">\((\alpha,\beta&#x27;)\)</span> atau <span class="math inline" data-source-tex="(\beta,\alpha&#x27;)">\((\beta,\alpha&#x27;)\)</span>, kita dapat menemukan
+<span class="math inline" data-source-tex="\xi\in F_y">\(\xi\in F_y\)</span>, <span class="math inline" data-source-tex="\xi&#x27;\in F_{y&#x27;}">\(\xi&#x27;\in F_{y&#x27;}\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="|\xi-\xi&#x27;|\ge|\xi_r-\xi&#x27;_r|">\(|\xi-\xi&#x27;|\ge|\xi_r-\xi&#x27;_r|\)</span>. Sekarang <span class="math inline" data-source-tex="z=(y,\xi)">\(z=(y,\xi)\)</span>, <span class="math inline" data-source-tex="z&#x27;=(y&#x27;,\xi&#x27;)">\(z&#x27;=(y&#x27;,\xi&#x27;)\)</span> keduanya
+termasuk dalam <span class="math inline" data-source-tex="F">\(F\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|x-x&#x27;\|^2=\|y-y&#x27;\|^2+|\xi_r-\xi_r&#x27;|^2
+\le\|y-y&#x27;\|^2+|\xi-\xi&#x27;|^2
+=\|z-z&#x27;\|^2
+\le(\diam F)^2">\(\|x-x&#x27;\|^2=\|y-y&#x27;\|^2+|\xi_r-\xi_r&#x27;|^2
+\le\|y-y&#x27;\|^2+|\xi-\xi&#x27;|^2
+=\|z-z&#x27;\|^2
+\le(\diam F)^2\)</span>,</div>
+<p>dan <span class="math inline" data-source-tex="\|x-x&#x27;\|\le\diam F">\(\|x-x&#x27;\|\le\diam F\)</span>. Karena <span class="math inline" data-source-tex="x">\(x\)</span> dan <span class="math inline" data-source-tex="x&#x27;">\(x&#x27;\)</span> sebarang,
+<span class="math inline" data-source-tex="\diam D\le\diam F=\diam C">\(\diam D\le\diam F=\diam C\)</span>, sebagaimana dinyatakan.</p>
+<p> </p>
+<p>  <strong>(iv)</strong> Jelas bahwa <span class="math inline" data-source-tex="S_r[D]=D">\(S_r[D]=D\)</span>. Selain itu, jika <span class="math inline" data-source-tex="i\in J">\(i\in J\)</span>, maka
+(dengan menafsirkan <span class="math inline" data-source-tex="S_i">\(S_i\)</span> sebagai operator pada <span class="math inline" data-source-tex="\BbbR^{r-1}">\(\BbbR^{r-1}\)</span>)</p>
+<div class="centerline"><span class="math inline" data-source-tex="F_{S_i(y)}=F_y">\(F_{S_i(y)}=F_y\)</span> untuk setiap <span class="math inline" data-source-tex="y\in\BbbR^{r-1}">\(y\in\BbbR^{r-1}\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="f(S_i(y))=f(y)">\(f(S_i(y))=f(y)\)</span> dan, untuk <span class="math inline" data-source-tex="\xi\in \Bbb R">\(\xi\in \Bbb R\)</span>,
+<span class="math inline" data-source-tex="y\in\BbbR^{r-1}">\(y\in\BbbR^{r-1}\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="(y,\xi)\in D\,\iff\,|\xi|&lt;\bover12 f(y)\,
+\iff\,|\xi|&lt;\bover12f(S_i(y))
+\,\iff\,(S_i(y),\xi)\in D">\((y,\xi)\in D\,\iff\,|\xi|&lt;\bover12 f(y)\,
+\iff\,|\xi|&lt;\bover12f(S_i(y))
+\,\iff\,(S_i(y),\xi)\in D\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="S_i[D]=D">\(S_i[D]=D\)</span>. Jadi <span class="math inline" data-source-tex="D">\(D\)</span> simetris pada koordinat-koordinat
+dalam <span class="math inline" data-source-tex="J\cup\{r\}">\(J\cup\{r\}\)</span>. ∎</p>
+<p> </p>
+<p><strong>(d)</strong> Sisanya mudah. Mulai dengan sebarang himpunan terbatas
+<span class="math inline" data-source-tex="A\subseteq\BbbR^r">\(A\subseteq\BbbR^r\)</span>; tetapkan <span class="math inline" data-source-tex="A_0=A">\(A_0=A\)</span> dan secara induktif konstruksikan
+<span class="math inline" data-source-tex="A_1,\ldots,A_r">\(A_1,\ldots,A_r\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="d=\diam A=\diam A_0\ge\diam A_1\ge\ldots\ge\diam A_r">\(d=\diam A=\diam A_0\ge\diam A_1\ge\ldots\ge\diam A_r\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\mu_r^*A=\mu_r^*A_0\le\ldots\le\mu_r^*A_r">\(\mu_r^*A=\mu_r^*A_0\le\ldots\le\mu_r^*A_r\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="A_j">\(A_j\)</span> simetris pada koordinat-koordinat dalam
+<span class="math inline" data-source-tex="\{1,\ldots,j\}">\(\{1,\ldots,j\}\)</span> untuk setiap <span class="math inline" data-source-tex="j\le r">\(j\le r\)</span>.</div>
+<p>Pada akhirnya, kita mempunyai <span class="math inline" data-source-tex="A_r">\(A_r\)</span> yang simetris pada
+koordinat-koordinat dalam <span class="math inline" data-source-tex="\{1,\ldots,r\}">\(\{1,\ldots,r\}\)</span>. Namun, ini berarti bahwa jika
+<span class="math inline" data-source-tex="x\in A_r">\(x\in A_r\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="-x=S_1S_2\ldots S_rx\in A_r">\(-x=S_1S_2\ldots S_rx\in A_r\)</span>,</div>
+<p>sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|x\|=\Bover12\|x-(-x)\|
+\le\Bover12\diam A_r\le\Bover{d}2">\(\|x\|=\Bover12\|x-(-x)\|
+\le\Bover12\diam A_r\le\Bover{d}2\)</span>.</div>
+<p>Jadi <span class="math inline" data-source-tex="A_r\subseteq B(\tbf{0},\bover{d}2)">\(A_r\subseteq B(\tbf{0},\bover{d}2)\)</span>, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu_r^*A\le\mu_r^*A_r\le\mu_rB(\tbf{0},\Bover{d}2)">\(\mu_r^*A\le\mu_r^*A_r\le\mu_rB(\tbf{0},\Bover{d}2)\)</span>,</div>
+<p>sebagaimana dinyatakan.</p></aside>
+</section>
+<section class="source-unit" id="264I" data-source-id="264I"><h2><span class="source-label">264I</span> Teorema </h2>
+<p>Misalkan <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span> suatu bilangan bulat; misalkan
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span> ukuran Lebesgue pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dan misalkan <span class="math inline" data-source-tex="\mu_{Hr}">\(\mu_{Hr}\)</span> ukuran Hausdorff
+berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>. Maka <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dan <span class="math inline" data-source-tex="\mu_{Hr}">\(\mu_{Hr}\)</span> mempunyai
+himpunan-himpunan terukur yang sama dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu E=2^{-r}\beta_r\mu_{Hr}E">\(\mu E=2^{-r}\beta_r\mu_{Hr}E\)</span></div>
+<p>untuk setiap himpunan terukur <span class="math inline" data-source-tex="E\subseteq\BbbR^r">\(E\subseteq\BbbR^r\)</span>, dengan
+<span class="math inline" data-source-tex="\beta_r=\mu B(\tbf{0},1)">\(\beta_r=\mu B(\tbf{0},1)\)</span>, sehingga faktor normalisasinya adalah</p>
+<p><span class="math display" data-source-tex="\eqalign{2^{-r}\beta_r
+&amp;=\Bover{1}{2^{2k}k!}\pi^k\text{ jika }r=2k\text{ genap},\cr
+&amp;=\Bover{k!}{(2k+1)!}\pi^k\text{ jika }r=2k+1\text{ ganjil}.\cr}">\[\begin{aligned}2^{-r}\beta_r
+&amp;=\Bover{1}{2^{2k}k!}\pi^k\text{ jika }r=2k\text{ genap},\\
+&amp;=\Bover{k!}{(2k+1)!}\pi^k\text{ jika }r=2k+1\text{ ganjil}.\\\end{aligned}\]</span></p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Tentu saja jika <span class="math inline" data-source-tex="B=B(x,\alpha)">\(B=B(x,\alpha)\)</span> sebarang bola berjari-jari
+<span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="2^{-r}\beta_r(\diam B)^r
+=\beta_r\alpha^r=\mu B">\(2^{-r}\beta_r(\diam B)^r
+=\beta_r\alpha^r=\mu B\)</span>.</div>
+<p> </p>
+<p><strong>(b)</strong> Intinya ialah bahwa <span class="math inline" data-source-tex="\mu^*=2^{-r}\beta_r\mu_{Hr}^*">\(\mu^*=2^{-r}\beta_r\mu_{Hr}^*\)</span>. Bukti.
+Misalkan <span class="math inline" data-source-tex="A\subseteq\BbbR^r">\(A\subseteq\BbbR^r\)</span>.</p>
+<p> </p>
+<p>  <strong>(i)</strong> Misalkan <span class="math inline" data-source-tex="\delta">\(\delta\)</span>, <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Berdasarkan <a class="xref" href="../261/index.html#261F">261F</a>, terdapat
+suatu barisan <span class="math inline" data-source-tex="\sequencen{B_n}">\(\sequencen{B_n}\)</span> bola, semuanya berdiameter paling besar
+<span class="math inline" data-source-tex="\delta">\(\delta\)</span>, sedemikian sehingga <span class="math inline" data-source-tex="A\subseteq\bigcup_{n\in\Bbb N}B_n">\(A\subseteq\bigcup_{n\in\Bbb N}B_n\)</span> dan
+<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\mu B_n\le\mu^*A+\epsilon">\(\sum_{n=0}^{\infty}\mu B_n\le\mu^*A+\epsilon\)</span>. Sekarang, dengan
+mendefinisikan <span class="math inline" data-source-tex="\theta_{r\delta}">\(\theta_{r\delta}\)</span> seperti dalam <a class="xref" href="#264A">264A</a>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="2^{-r}\beta_r\theta_{r\delta}(A)
+\le 2^{-r}\beta_r\sum_{n=0}^{\infty}(\diam B_n)^r
+=\sum_{n=0}^{\infty}\mu B_n
+\le\mu^*A+\epsilon">\(2^{-r}\beta_r\theta_{r\delta}(A)
+\le 2^{-r}\beta_r\sum_{n=0}^{\infty}(\diam B_n)^r
+=\sum_{n=0}^{\infty}\mu B_n
+\le\mu^*A+\epsilon\)</span>.</div>
+<p>Dengan membiarkan <span class="math inline" data-source-tex="\delta\downarrow 0">\(\delta\downarrow 0\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="2^{-r}\beta_r\mu^*_{Hr}A\le\mu^*A+\epsilon">\(2^{-r}\beta_r\mu^*_{Hr}A\le\mu^*A+\epsilon\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang,
+<span class="math inline" data-source-tex="2^{-r}\beta_r\mu_{Hr}^*A\le\mu^*A">\(2^{-r}\beta_r\mu_{Hr}^*A\le\mu^*A\)</span>.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Misalkan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Maka terdapat suatu barisan
+<span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> himpunan berdiameter paling besar <span class="math inline" data-source-tex="1">\(1\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="A\subseteq\bigcup_{n\in\Bbb N}A_n">\(A\subseteq\bigcup_{n\in\Bbb N}A_n\)</span> dan
+<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}(\diam A_n)^r\le\theta_{r1}A+\epsilon">\(\sum_{n=0}^{\infty}(\diam A_n)^r\le\theta_{r1}A+\epsilon\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu^*A\le\sum_{n=0}^{\infty}\mu^*A_n
+\le\sum_{n=0}^{\infty}2^{-r}\beta_r(\diam A_n)^r
+\le 2^{-r}\beta_r(\theta_{r1}A+\epsilon)
+\le 2^{-r}\beta_r(\mu_{Hr}^*A+\epsilon)">\(\mu^*A\le\sum_{n=0}^{\infty}\mu^*A_n
+\le\sum_{n=0}^{\infty}2^{-r}\beta_r(\diam A_n)^r
+\le 2^{-r}\beta_r(\theta_{r1}A+\epsilon)
+\le 2^{-r}\beta_r(\mu_{Hr}^*A+\epsilon)\)</span></div>
+<p>berdasarkan <a class="xref" href="#264H">264H</a>. Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang,
+<span class="math inline" data-source-tex="\mu^*A\le 2^{-r}\beta_r\mu_{Hr}^*A">\(\mu^*A\le 2^{-r}\beta_r\mu_{Hr}^*A\)</span>. ∎</p>
+<p> </p>
+<p><strong>(c)</strong> Karena <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, <span class="math inline" data-source-tex="\mu_{Hr}">\(\mu_{Hr}\)</span> merupakan ukuran yang didefinisikan dari
+ukuran luarnya masing-masing melalui metode Carathéodory, langsung diperoleh
+bahwa <span class="math inline" data-source-tex="\mu=2^{-r}\beta_r\mu_{Hr}">\(\mu=2^{-r}\beta_r\mu_{Hr}\)</span> dalam pengertian ketat yang diperlukan.</p></aside>
+</section>
+<section class="source-unit" id="264J" data-source-id="264J"><h2><span class="source-label">264J</span> Himpunan Cantor  </h2>
+<p>Dalam <a class="xref" href="#264A">264A</a> saya menyatakan
+bahwa ‘dimensi’ pecahan <span class="math inline" data-source-tex="r">\(r\)</span> menarik. Saya tidak mempunyai ruang untuk
+membahasnya di sini, dan pokok itu berada di luar jalur utama jilid ini,
+tetapi saya akan memberikan satu hasil karena hasil itu menarik pada dirinya
+sendiri.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Misalkan <span class="math inline" data-source-tex="C">\(C\)</span> himpunan Cantor dalam <span class="math inline" data-source-tex="[0,1]">\([0,1]\)</span>.
+Tetapkan <span class="math inline" data-source-tex="r=\ln 2/\ln 3">\(r=\ln 2/\ln 3\)</span>. Maka ukuran Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> dari <span class="math inline" data-source-tex="C">\(C\)</span> adalah
+<span class="math inline" data-source-tex="1">\(1\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Ingat bahwa <span class="math inline" data-source-tex="C=\bigcap_{n\in\Bbb N}C_n">\(C=\bigcap_{n\in\Bbb N}C_n\)</span>, dengan setiap
+<span class="math inline" data-source-tex="C_n">\(C_n\)</span> terdiri atas <span class="math inline" data-source-tex="2^n">\(2^n\)</span> interval tertutup yang panjangnya <span class="math inline" data-source-tex="3^{-n}">\(3^{-n}\)</span>, dan
+<span class="math inline" data-source-tex="C_{n+1}">\(C_{n+1}\)</span> diperoleh dari <span class="math inline" data-source-tex="C_n">\(C_n\)</span> dengan menghapus sepertiga tengah (terbuka) dari
+setiap interval dalam <span class="math inline" data-source-tex="C_n">\(C_n\)</span>. (Lihat <a class="xref" href="../134/index.html#134G">134G</a>.) Karena <span class="math inline" data-source-tex="C">\(C\)</span> tertutup,
+<span class="math inline" data-source-tex="\mu_{Hr}C">\(\mu_{Hr}C\)</span> terdefinisi (<a class="xref" href="#264E">264E</a>). Perhatikan bahwa <span class="math inline" data-source-tex="3^r=2">\(3^r=2\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Jika <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>, ambil <span class="math inline" data-source-tex="n">\(n\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="3^{-n}\le\delta">\(3^{-n}\le\delta\)</span>; maka <span class="math inline" data-source-tex="C">\(C\)</span> dapat diliput oleh <span class="math inline" data-source-tex="2^n">\(2^n\)</span> interval berdiameter
+<span class="math inline" data-source-tex="3^{-n}">\(3^{-n}\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\theta_{r\delta}C\le 2^n(3^{-n})^r=1">\(\theta_{r\delta}C\le 2^n(3^{-n})^r=1\)</span>.</div>
+<p>Akibatnya,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu_{Hr}C=\mu_{Hr}^*C
+=\lim_{\delta\downarrow 0}\theta_{r\delta}C\le 1">\(\mu_{Hr}C=\mu_{Hr}^*C
+=\lim_{\delta\downarrow 0}\theta_{r\delta}C\le 1\)</span>.</div>
+<p> </p>
+<p><strong>(c)</strong> Kita memerlukan fakta elementer berikut: jika <span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>, <span class="math inline" data-source-tex="\beta">\(\beta\)</span>,
+<span class="math inline" data-source-tex="\gamma\ge 0">\(\gamma\ge 0\)</span> dan <span class="math inline" data-source-tex="\max(\alpha,\gamma)\le\beta">\(\max(\alpha,\gamma)\le\beta\)</span>, maka
+<span class="math inline" data-source-tex="\alpha^r+\gamma^r\le(\alpha+\beta+\gamma)^r">\(\alpha^r+\gamma^r\le(\alpha+\beta+\gamma)^r\)</span>. Bukti. Karena
+<span class="math inline" data-source-tex="0&lt;r\le 1">\(0&lt;r\le 1\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\xi\mapsto(\xi+\eta)^r-\xi^r
+=r\biggerint_0^{\eta}(\xi+\zeta)^{r-1}d\zeta">\(\xi\mapsto(\xi+\eta)^r-\xi^r
+=r\biggerint_0^{\eta}(\xi+\zeta)^{r-1}d\zeta\)</span></div>
+<p>tak menaik untuk setiap <span class="math inline" data-source-tex="\eta\ge 0">\(\eta\ge 0\)</span>.
+Akibatnya,</p>
+<p><span class="math display" data-source-tex="\eqalign{(\alpha+\beta+\gamma)^r-\alpha^r-\gamma^r
+&amp;\ge (\beta+\beta+\gamma)^r-\beta^r-\gamma^r\cr
+&amp;\ge(\beta+\beta+\beta)^r-\beta^r-\beta^r
+=\beta^r(3^r-2)
+=0,\cr}">\[\begin{aligned}(\alpha+\beta+\gamma)^r-\alpha^r-\gamma^r
+&amp;\ge (\beta+\beta+\gamma)^r-\beta^r-\gamma^r\\
+&amp;\ge(\beta+\beta+\beta)^r-\beta^r-\beta^r
+=\beta^r(3^r-2)
+=0,\\\end{aligned}\]</span></p>
+<p>sebagaimana diperlukan. ∎</p>
+<p> </p>
+<p><strong>(d)</strong> Sekarang andaikan bahwa <span class="math inline" data-source-tex="I\subseteq\Bbb R">\(I\subseteq\Bbb R\)</span> sebarang interval, dan
+<span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span>; tuliskan <span class="math inline" data-source-tex="j_m(I)">\(j_m(I)\)</span> untuk banyaknya interval penyusun <span class="math inline" data-source-tex="C_m">\(C_m\)</span> yang
+termuat dalam <span class="math inline" data-source-tex="I">\(I\)</span>. Maka <span class="math inline" data-source-tex="2^{-m}j_m(I)\le(\diam I)^r">\(2^{-m}j_m(I)\le(\diam I)^r\)</span>.
+Bukti. Jika <span class="math inline" data-source-tex="I">\(I\)</span> tidak bertemu <span class="math inline" data-source-tex="C_m">\(C_m\)</span>, hal ini sepele. Jika tidak, lakukan induksi
+pada</p>
+<div class="centerline"><span class="math inline" data-source-tex="l=\min\{i:I">\(l=\min\{i:I\)</span> hanya bertemu dengan satu interval penyusun
+<span class="math inline" data-source-tex="C_{m-i}\}">\(C_{m-i}\}\)</span>.</div>
+<p>Jika <span class="math inline" data-source-tex="l=0">\(l=0\)</span>, sehingga <span class="math inline" data-source-tex="I">\(I\)</span> hanya bertemu dengan satu interval penyusun
+<span class="math inline" data-source-tex="C_m">\(C_m\)</span>, maka <span class="math inline" data-source-tex="j_m(I)\le 1">\(j_m(I)\le 1\)</span>, dan jika <span class="math inline" data-source-tex="j_m(I)=1">\(j_m(I)=1\)</span>, maka
+<span class="math inline" data-source-tex="\diam I\ge 3^{-m}">\(\diam I\ge 3^{-m}\)</span> sehingga <span class="math inline" data-source-tex="(\diam I)^r\ge 2^{-m}">\((\diam I)^r\ge 2^{-m}\)</span>; dengan demikian induksi
+dimulai. Untuk langkah induksi menuju <span class="math inline" data-source-tex="l&gt;0">\(l&gt;0\)</span>, misalkan <span class="math inline" data-source-tex="J">\(J\)</span> interval dalam
+<span class="math inline" data-source-tex="C_{m-l}">\(C_{m-l}\)</span> yang bertemu dengan <span class="math inline" data-source-tex="I">\(I\)</span>, dan <span class="math inline" data-source-tex="J&#x27;">\(J&#x27;\)</span>, <span class="math inline" data-source-tex="J&#x27;&#x27;">\(J&#x27;&#x27;\)</span> kedua interval dalam
+<span class="math inline" data-source-tex="C_{m-l+1}">\(C_{m-l+1}\)</span> yang termuat dalam <span class="math inline" data-source-tex="J">\(J\)</span>, sehingga <span class="math inline" data-source-tex="I">\(I\)</span> bertemu dengan <span class="math inline" data-source-tex="J&#x27;">\(J&#x27;\)</span> dan
+<span class="math inline" data-source-tex="J&#x27;&#x27;">\(J&#x27;&#x27;\)</span>, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="j_m(I)=j_m(I\cap J)=j_m(I\cap J&#x27;)+j_m(I\cap J&#x27;&#x27;)">\(j_m(I)=j_m(I\cap J)=j_m(I\cap J&#x27;)+j_m(I\cap J&#x27;&#x27;)\)</span>.</div>
+<p>Berdasarkan hipotesis induksi,</p>
+<div class="centerline"><span class="math inline" data-source-tex="(\diam(I\cap J&#x27;))^r+(\diam(I\cap J&#x27;&#x27;))^r
+\ge 2^{-m}j_m(I\cap J&#x27;)+2^{-m}j_m(I\cap J&#x27;&#x27;)
+=2^{-m}j_m(I)">\((\diam(I\cap J&#x27;))^r+(\diam(I\cap J&#x27;&#x27;))^r
+\ge 2^{-m}j_m(I\cap J&#x27;)+2^{-m}j_m(I\cap J&#x27;&#x27;)
+=2^{-m}j_m(I)\)</span>.</div>
+<p>Di pihak lain, berdasarkan (c),</p>
+<p><span class="math display" data-source-tex="\eqalign{(\diam(I\cap J&#x27;))^r+(\diam(I\cap J&#x27;&#x27;))^r
+&amp;\le(\diam(I\cap J&#x27;)+3^{-m+l-1}+\diam(I\cap J&#x27;&#x27;))^r\cr
+&amp;=(\diam(I\cap J))^r
+\le(\diam I)^r\cr}">\[\begin{aligned}(\diam(I\cap J&#x27;))^r+(\diam(I\cap J&#x27;&#x27;))^r
+&amp;\le(\diam(I\cap J&#x27;)+3^{-m+l-1}+\diam(I\cap J&#x27;&#x27;))^r\\
+&amp;=(\diam(I\cap J))^r
+\le(\diam I)^r\\\end{aligned}\]</span></p>
+<p>karena <span class="math inline" data-source-tex="J&#x27;">\(J&#x27;\)</span>, <span class="math inline" data-source-tex="J&#x27;&#x27;">\(J&#x27;&#x27;\)</span> keduanya berdiameter paling besar
+<span class="math inline" data-source-tex="3^{-(m-l+1)}">\(3^{-(m-l+1)}\)</span>, yaitu panjang interval di antara keduanya.
+Dengan demikian induksi berlanjut. ∎</p>
+<p> </p>
+<p><strong>(e)</strong> Sekarang andaikan bahwa <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Maka terdapat suatu barisan
+<span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> himpunan yang meliput <span class="math inline" data-source-tex="C">\(C\)</span>, sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{n=0}^{\infty}(\diam A_n)^r
+&lt;\mu_{Hr}C+\epsilon">\(\sum_{n=0}^{\infty}(\diam A_n)^r
+&lt;\mu_{Hr}C+\epsilon\)</span>.  </div>
+<p>Ambil <span class="math inline" data-source-tex="\eta_n&gt;0">\(\eta_n&gt;0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}(\diam A_n+\eta_n)^r\le\mu_{Hr}C+\epsilon">\(\sum_{n=0}^{\infty}(\diam A_n+\eta_n)^r\le\mu_{Hr}C+\epsilon\)</span>, dan untuk
+setiap <span class="math inline" data-source-tex="n">\(n\)</span> ambil suatu interval terbuka <span class="math inline" data-source-tex="I_n\supseteq A_n">\(I_n\supseteq A_n\)</span> dengan panjang
+paling besar <span class="math inline" data-source-tex="\diam A_n+\eta_n">\(\diam A_n+\eta_n\)</span> dan dengan kedua titik ujung tidak termasuk
+dalam <span class="math inline" data-source-tex="C">\(C\)</span>; hal ini mungkin karena <span class="math inline" data-source-tex="C">\(C\)</span> tidak memuat interval nontrivial mana
+pun. Sekarang <span class="math inline" data-source-tex="C\subseteq\bigcup_{n\in\Bbb N}I_n">\(C\subseteq\bigcup_{n\in\Bbb N}I_n\)</span>; karena <span class="math inline" data-source-tex="C">\(C\)</span> kompak,
+terdapat <span class="math inline" data-source-tex="k\in\Bbb N">\(k\in\Bbb N\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="C\subseteq\bigcup_{n\le k}I_n">\(C\subseteq\bigcup_{n\le k}I_n\)</span>. Berikutnya, terdapat <span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span> sedemikian
+sehingga tidak ada titik ujung <span class="math inline" data-source-tex="I_n">\(I_n\)</span>, untuk <span class="math inline" data-source-tex="n\le k">\(n\le k\)</span>, yang termasuk dalam
+<span class="math inline" data-source-tex="C_m">\(C_m\)</span>. Akibatnya, setiap interval penyusun <span class="math inline" data-source-tex="C_m">\(C_m\)</span> harus termuat dalam suatu
+<span class="math inline" data-source-tex="I_n">\(I_n\)</span>, dan (dengan terminologi (d) di atas)
+<span class="math inline" data-source-tex="\sum_{n=0}^kj_m(I_n)\ge 2^m">\(\sum_{n=0}^kj_m(I_n)\ge 2^m\)</span>. Dengan demikian,</p>
+<div class="centerline"><span class="math inline" data-source-tex="1
+\le\sum_{n=0}^k2^{-m}j_m(I_n)
+\le \sum_{n=0}^k(\diam I_n)^r
+\le \sum_{n=0}^{\infty}(\diam A_n+\eta_n)^r
+\le\mu_{Hr}C+\epsilon">\(1
+\le\sum_{n=0}^k2^{-m}j_m(I_n)
+\le \sum_{n=0}^k(\diam I_n)^r
+\le \sum_{n=0}^{\infty}(\diam A_n+\eta_n)^r
+\le\mu_{Hr}C+\epsilon\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang, <span class="math inline" data-source-tex="\mu_{Hr}C\ge 1">\(\mu_{Hr}C\ge 1\)</span>, sebagaimana
+diperlukan.</p></aside>
+</section>
+<section class="source-unit" id="264K" data-source-id="264K"><h2><span class="source-label">264K</span> Ruang metrik umum </h2>
+<p>Walaupun bab ini secara eksklusif
+membahas ruang Euklides, pembaca yang mengenal teori umum ruang metrik mungkin
+akan melihat sifat teori ini dengan lebih jelas jika mereka menggunakan
+bahasa ruang metrik dalam definisi dan hasil dasar. Karena itu, saya mengulang
+definisinya di sini dan menguraikan hasil-hasil yang bersesuaian dalam latihan
+<a class="xref" href="#264Yb">264Yb</a>-<a class="xref" href="#264Yl">264Yl</a>.</p>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\rho)">\((X,\rho)\)</span> suatu ruang metrik, dan <span class="math inline" data-source-tex="r&gt;0">\(r&gt;0\)</span>. Untuk sebarang
+<span class="math inline" data-source-tex="A\subseteq X">\(A\subseteq X\)</span>, <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>, tetapkan</p>
+<p><span class="math display" data-source-tex="\eqalign{\theta_{r\delta}A
+=\inf\{\sum_{n=0}^{\infty}(\diam A_n)^r:\sequencen{A_n}
+&amp;\text{ adalah barisan subhimpunan }X\text{ yang meliput }A,\cr
+&amp;\qquad\qquad\qquad\quad\diam A_n\le\delta\text{ untuk setiap }
+  n\in\Bbb N\},\cr}">\[\begin{aligned}\theta_{r\delta}A
+=\inf\{\sum_{n=0}^{\infty}(\diam A_n)^r:\sequencen{A_n}
+&amp;\text{ adalah barisan subhimpunan }X\text{ yang meliput }A,\\
+&amp;\qquad\qquad\qquad\quad\diam A_n\le\delta\text{ untuk setiap }
+  n\in\Bbb N\},\\\end{aligned}\]</span></p>
+<p>dengan menafsirkan diameter himpunan kosong sebagai <span class="math inline" data-source-tex="0">\(0\)</span>, dan
+<span class="math inline" data-source-tex="\inf\emptyset">\(\inf\emptyset\)</span> sebagai <span class="math inline" data-source-tex="\infty">\(\infty\)</span>, sehingga <span class="math inline" data-source-tex="\theta_{r\delta}A=\infty">\(\theta_{r\delta}A=\infty\)</span> jika
+<span class="math inline" data-source-tex="A">\(A\)</span> tidak dapat diliput oleh suatu barisan himpunan berdiameter paling besar
+<span class="math inline" data-source-tex="\delta">\(\delta\)</span>. Katakan bahwa <span class="math inline" data-source-tex="\theta_rA=\sup_{\delta&gt;0}\theta_{r\delta}A">\(\theta_rA=\sup_{\delta&gt;0}\theta_{r\delta}A\)</span> adalah
+<strong>ukuran luar Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span></strong> dari <span class="math inline" data-source-tex="A">\(A\)</span>, dan ambil ukuran
+<span class="math inline" data-source-tex="\mu_{Hr}">\(\mu_{Hr}\)</span> yang didefinisikan melalui metode Carathéodory dari ukuran luar
+ini sebagai <strong>ukuran Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span></strong> pada <span class="math inline" data-source-tex="X">\(X\)</span>.</p>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="264X" data-source-id="264X"><span class="anchor" id="264Xa"></span><h2><span class="source-label">264X</span> Latihan dasar <span class="math inline" data-source-tex="\pmb{&gt;}">\(\pmb{&gt;}\)</span>(a) <span class="importance" title="Sangat penting">penting</span></h2>
+<p>Tunjukkan bahwa semua fungsi <span class="math inline" data-source-tex="\theta_{r\delta}">\(\theta_{r\delta}\)</span> dalam <a class="xref" href="#264A">264A</a> merupakan ukuran
+luar. Tunjukkan bahwa dalam konteks tersebut,
+<span class="math inline" data-source-tex="\theta_{r\delta}(A)=0">\(\theta_{r\delta}(A)=0\)</span> jika dan hanya jika <span class="math inline" data-source-tex="\theta_r(A)=0">\(\theta_r(A)=0\)</span>, untuk sebarang
+<span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> dan sebarang <span class="math inline" data-source-tex="A\subseteq\BbbR^s">\(A\subseteq\BbbR^s\)</span>.</p>
+</section>
+<section class="source-unit" id="264Xb" data-source-id="264Xb"><h3><span class="source-label">264Xb</span> (b) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="s\ge 1">\(s\ge 1\)</span> suatu bilangan bulat, dan <span class="math inline" data-source-tex="\theta">\(\theta\)</span> suatu
+ukuran luar pada <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\theta(A\cup B)=\theta A+\theta B">\(\theta(A\cup B)=\theta A+\theta B\)</span> setiap kali <span class="math inline" data-source-tex="A">\(A\)</span>, <span class="math inline" data-source-tex="B">\(B\)</span> merupakan
+subhimpunan tak kosong dari <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span> dan
+<span class="math inline" data-source-tex="\inf_{x\in A,y\in B}\|x-y\|&gt;0">\(\inf_{x\in A,y\in B}\|x-y\|&gt;0\)</span>. Tunjukkan bahwa setiap subhimpunan Borel dari
+<span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span> diukur oleh ukuran yang didefinisikan dari <span class="math inline" data-source-tex="\theta">\(\theta\)</span> melalui metode
+Carathéodory.</p>
+</section>
+<section class="source-unit" id="264Xc" data-source-id="264Xc"><h3><span class="source-label">264Xc</span> (c) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="s\ge 1">\(s\ge 1\)</span> suatu bilangan bulat dan <span class="math inline" data-source-tex="r&gt;0">\(r&gt;0\)</span>;
+definisikan <span class="math inline" data-source-tex="\theta_{r\delta}">\(\theta_{r\delta}\)</span> seperti dalam <a class="xref" href="#264A">264A</a>. Tunjukkan bahwa untuk
+sebarang <span class="math inline" data-source-tex="A\subseteq\BbbR^s">\(A\subseteq\BbbR^s\)</span>, <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>,</p>
+<p><span class="math display" data-source-tex="\eqalign{\theta_{r\delta}A
+&amp;=\inf\{\sum_{n=0}^{\infty}(\diam F_n)^r:\sequencen{F_n}
+ \text{ adalah barisan subhimpunan tertutup dari }\BbbR^s\cr
+&amp;\qquad\qquad\qquad\qquad\qquad\qquad\text{ yang meliput }A,\diam
+F_n\le\delta
+  \text{ untuk setiap }n\in\Bbb N\}\cr
+&amp;=\inf\{\sum_{n=0}^{\infty}(\diam G_n)^r:\sequencen{G_n}
+  \text{ adalah barisan subhimpunan terbuka dari }\BbbR^s\cr
+&amp;\qquad\qquad\qquad\qquad\qquad\qquad\text{ yang meliput }A,\diam
+G_n\le\delta
+  \text{ untuk setiap }n\in\Bbb N\}.\cr}">\[\begin{aligned}\theta_{r\delta}A
+&amp;=\inf\{\sum_{n=0}^{\infty}(\diam F_n)^r:\sequencen{F_n}
+ \text{ adalah barisan subhimpunan tertutup dari }\BbbR^s\\
+&amp;\qquad\qquad\qquad\qquad\qquad\qquad\text{ yang meliput }A,\diam
+F_n\le\delta
+  \text{ untuk setiap }n\in\Bbb N\}\\
+&amp;=\inf\{\sum_{n=0}^{\infty}(\diam G_n)^r:\sequencen{G_n}
+  \text{ adalah barisan subhimpunan terbuka dari }\BbbR^s\\
+&amp;\qquad\qquad\qquad\qquad\qquad\qquad\text{ yang meliput }A,\diam
+G_n\le\delta
+  \text{ untuk setiap }n\in\Bbb N\}.\\\end{aligned}\]</span></p>
+</section>
+<section class="source-unit" id="264Xd" data-source-id="264Xd"><h3><span class="source-label">264Xd</span> (d) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="s\ge 1">\(s\ge 1\)</span> suatu bilangan bulat dan <span class="math inline" data-source-tex="r\ge 0">\(r\ge 0\)</span>;
+misalkan <span class="math inline" data-source-tex="\mu_{Hr}">\(\mu_{Hr}\)</span> ukuran Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> pada <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>.
+Tunjukkan bahwa untuk setiap <span class="math inline" data-source-tex="A\subseteq \BbbR^s">\(A\subseteq \BbbR^s\)</span> terdapat suatu himpunan
+G<span class="math inline" data-source-tex="_{\delta}">\(_{\delta}\)</span> (yakni, suatu himpunan yang dapat dinyatakan sebagai irisan suatu
+barisan himpunan terbuka) <span class="math inline" data-source-tex="H\supseteq A">\(H\supseteq A\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu_{Hr}H=\mu^*_{Hr}A">\(\mu_{Hr}H=\mu^*_{Hr}A\)</span>. (<em>Petunjuk</em>: gunakan <a class="xref" href="#264Xc">264Xc</a>.)</p>
+</section>
+<section class="source-unit" id="264Xe" data-source-id="264Xe"><h3><span class="source-label">264Xe</span> (e) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="s\ge 1">\(s\ge 1\)</span> suatu bilangan bulat, dan <span class="math inline" data-source-tex="0\le r&lt;r&#x27;">\(0\le r&lt;r&#x27;\)</span>.
+Tunjukkan bahwa jika <span class="math inline" data-source-tex="A\subseteq\BbbR^s">\(A\subseteq\BbbR^s\)</span> dan ukuran luar Hausdorff berdimensi
+<span class="math inline" data-source-tex="r">\(r\)</span>, yaitu <span class="math inline" data-source-tex="\mu_{Hr}^*A">\(\mu_{Hr}^*A\)</span>, dari <span class="math inline" data-source-tex="A">\(A\)</span> berhingga, maka <span class="math inline" data-source-tex="\mu_{Hr&#x27;}^*A">\(\mu_{Hr&#x27;}^*A\)</span> harus nol.</p>
+</section>
+<section class="source-unit" id="264Xf" data-source-id="264Xf"><h3><span class="source-label">264Xf</span> (f) </h3>
+<p>(i) Andaikan bahwa <span class="math inline" data-source-tex="f:[a,b]\to\Bbb R">\(f:[a,b]\to\Bbb R\)</span> mempunyai grafik
+<span class="math inline" data-source-tex="\Gamma_f\subseteq\BbbR^2">\(\Gamma_f\subseteq\BbbR^2\)</span>, dengan <span class="math inline" data-source-tex="a\le b">\(a\le b\)</span> dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Tunjukkan bahwa
+ukuran luar <span class="math inline" data-source-tex="\mu_{H1}^*(\Gamma_f)">\(\mu_{H1}^*(\Gamma_f)\)</span> dari <span class="math inline" data-source-tex="\Gamma_f">\(\Gamma_f\)</span> untuk ukuran Hausdorff
+berdimensi satu pada <span class="math inline" data-source-tex="\BbbR^2">\(\BbbR^2\)</span> paling besar
+<span class="math inline" data-source-tex="b-a+\Var_{[a,b]}(f)">\(b-a+\Var_{[a,b]}(f)\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> jika <span class="math inline" data-source-tex="f">\(f\)</span> mempunyai variasi berhingga, tunjukkan bahwa
+<span class="math inline" data-source-tex="\diam(\Gamma_{f\restr\ooint{t,u}})
+\le u-t+\Var_{\ooint{t,u}}(f)">\(\diam(\Gamma_{f\restr\ooint{t,u}})
+\le u-t+\Var_{\ooint{t,u}}(f)\)</span>; kemudian gunakan <a class="xref" href="../224/index.html#224E">224E</a>.</span> (ii) Misalkan
+<span class="math inline" data-source-tex="f:[0,1]\to[0,1]">\(f:[0,1]\to[0,1]\)</span> fungsi Cantor (<a class="xref" href="../134/index.html#134H">134H</a>). Tunjukkan bahwa
+<span class="math inline" data-source-tex="\mu_{H1}(\Gamma_f)=2">\(\mu_{H1}(\Gamma_f)=2\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> <a class="xref" href="#264G">264G</a>.</span></p>
+</section>
+<section class="source-unit" id="264Xg" data-source-id="264Xg"><h3><span class="source-label">264Xg</span> (g) </h3>
+<p>Dalam <a class="xref" href="#264A">264A</a>, tunjukkan bahwa</p>
+<p><span class="math display" data-source-tex="\eqalign{\theta_{r\delta}A
+=\inf\{\sum_{n=0}^{\infty}(\diam A_n)^r:\sequencen{A_n}
+&amp;\text{ adalah barisan himpunan konveks yang meliput }A,\cr
+&amp;\qquad\qquad\qquad\quad\diam A_n\le\delta\text{ untuk setiap }
+  n\in\Bbb N\}\cr}">\[\begin{aligned}\theta_{r\delta}A
+=\inf\{\sum_{n=0}^{\infty}(\diam A_n)^r:\sequencen{A_n}
+&amp;\text{ adalah barisan himpunan konveks yang meliput }A,\\
+&amp;\qquad\qquad\qquad\quad\diam A_n\le\delta\text{ untuk setiap }
+  n\in\Bbb N\}\\\end{aligned}\]</span></p>
+<p>untuk sebarang <span class="math inline" data-source-tex="A\subseteq\BbbR^s">\(A\subseteq\BbbR^s\)</span>.</p>
+</section>
+<section class="source-unit" id="264Y" data-source-id="264Y"><span class="anchor" id="264Ya"></span><h2><span class="source-label">264Y</span> Latihan lanjutan (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="\theta_{11}">\(\theta_{11}\)</span> ukuran luar pada <span class="math inline" data-source-tex="\BbbR^2">\(\BbbR^2\)</span> yang didefinisikan dalam
+<a class="xref" href="#264A">264A</a>, dengan <span class="math inline" data-source-tex="r=\delta=1">\(r=\delta=1\)</span>, dan <span class="math inline" data-source-tex="\mu_{11}">\(\mu_{11}\)</span> ukuran yang diturunkan dari
+<span class="math inline" data-source-tex="\theta_{11}">\(\theta_{11}\)</span> melalui metode Carathéodory, serta <span class="math inline" data-source-tex="\Sigma_{11}">\(\Sigma_{11}\)</span> domainnya.
+Tunjukkan bahwa setiap himpunan dalam <span class="math inline" data-source-tex="\Sigma_{11}">\(\Sigma_{11}\)</span> terabaikan atau
+koterabaikan.</p>
+</section>
+<section class="source-unit" id="264Yb" data-source-id="264Yb"><h3><span class="source-label">264Yb</span> (b) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\rho)">\((X,\rho)\)</span> suatu ruang metrik dan <span class="math inline" data-source-tex="r\ge 0">\(r\ge 0\)</span>.
+Tunjukkan bahwa jika <span class="math inline" data-source-tex="A\subseteq X">\(A\subseteq X\)</span> dan <span class="math inline" data-source-tex="\mu_{Hr}^*A&lt;\infty">\(\mu_{Hr}^*A&lt;\infty\)</span>, maka <span class="math inline" data-source-tex="A">\(A\)</span>
+separabel.</p>
+</section>
+<section class="source-unit" id="264Yc" data-source-id="264Yc"><h3><span class="source-label">264Yc</span> (c) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\rho)">\((X,\rho)\)</span> suatu ruang metrik, dan <span class="math inline" data-source-tex="\theta">\(\theta\)</span> suatu
+ukuran luar pada <span class="math inline" data-source-tex="X">\(X\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\theta(A\cup B)=\theta A+\theta B">\(\theta(A\cup B)=\theta A+\theta B\)</span> setiap kali <span class="math inline" data-source-tex="A">\(A\)</span>, <span class="math inline" data-source-tex="B">\(B\)</span> merupakan subhimpunan
+tak kosong dari <span class="math inline" data-source-tex="X">\(X\)</span> dan <span class="math inline" data-source-tex="\inf_{x\in A,y\in B}\rho(x,y)&gt;0">\(\inf_{x\in A,y\in B}\rho(x,y)&gt;0\)</span>. (Ukuran luar
+demikian disebut <strong>ukuran luar metrik</strong>.) Tunjukkan bahwa setiap subhimpunan
+terbuka dari <span class="math inline" data-source-tex="X">\(X\)</span> diukur oleh ukuran yang didefinisikan dari <span class="math inline" data-source-tex="\theta">\(\theta\)</span> melalui
+metode Carathéodory.</p>
+</section>
+<section class="source-unit" id="264Yd" data-source-id="264Yd"><h3><span class="source-label">264Yd</span> (d) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\rho)">\((X,\rho)\)</span> suatu ruang metrik dan <span class="math inline" data-source-tex="r&gt;0">\(r&gt;0\)</span>;
+definisikan <span class="math inline" data-source-tex="\theta_{r\delta}">\(\theta_{r\delta}\)</span> seperti dalam <a class="xref" href="#264K">264K</a>. Tunjukkan bahwa untuk
+sebarang <span class="math inline" data-source-tex="A\subseteq X">\(A\subseteq X\)</span>,</p>
+<p><span class="math display" data-source-tex="\eqalign{\mu_{Hr}^*A
+&amp;=\sup_{\delta&gt;0}\inf\{\sum_{n=0}^{\infty}(\diam F_n)^r:\sequencen{F_n}
+  \text{ adalah barisan subhimpunan tertutup dari }X\cr
+&amp;\qquad\qquad\qquad\qquad\qquad\qquad\text{ yang meliput }A,\,\diam
+F_n\le\delta
+  \text{ untuk setiap }n\in\Bbb N\}\cr
+&amp;=\sup_{\delta&gt;0}\inf\{\sum_{n=0}^{\infty}(\diam G_n)^r:\sequencen{G_n}
+  \text{ adalah barisan subhimpunan terbuka dari }X\cr
+&amp;\qquad\qquad\qquad\qquad\qquad\qquad\text{ yang meliput }A,\,\diam
+G_n\le\delta
+  \text{ untuk setiap }n\in\Bbb N\}.\cr}">\[\begin{aligned}\mu_{Hr}^*A
+&amp;=\sup_{\delta&gt;0}\inf\{\sum_{n=0}^{\infty}(\diam F_n)^r:\sequencen{F_n}
+  \text{ adalah barisan subhimpunan tertutup dari }X\\
+&amp;\qquad\qquad\qquad\qquad\qquad\qquad\text{ yang meliput }A,\,\diam
+F_n\le\delta
+  \text{ untuk setiap }n\in\Bbb N\}\\
+&amp;=\sup_{\delta&gt;0}\inf\{\sum_{n=0}^{\infty}(\diam G_n)^r:\sequencen{G_n}
+  \text{ adalah barisan subhimpunan terbuka dari }X\\
+&amp;\qquad\qquad\qquad\qquad\qquad\qquad\text{ yang meliput }A,\,\diam
+G_n\le\delta
+  \text{ untuk setiap }n\in\Bbb N\}.\\\end{aligned}\]</span></p>
+</section>
+<section class="source-unit" id="264Ye" data-source-id="264Ye"><h3><span class="source-label">264Ye</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\rho)">\((X,\rho)\)</span> suatu ruang metrik dan <span class="math inline" data-source-tex="r\ge 0">\(r\ge 0\)</span>;
+misalkan <span class="math inline" data-source-tex="\mu_{Hr}">\(\mu_{Hr}\)</span> ukuran Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span>.
+Tunjukkan bahwa untuk setiap <span class="math inline" data-source-tex="A\subseteq X">\(A\subseteq X\)</span> terdapat suatu himpunan
+G<span class="math inline" data-source-tex="_{\delta}">\(_{\delta}\)</span> <span class="math inline" data-source-tex="H\supseteq A">\(H\supseteq A\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu_{Hr}H=\mu^*_{Hr}A">\(\mu_{Hr}H=\mu^*_{Hr}A\)</span> merupakan ukuran luar Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> dari
+<span class="math inline" data-source-tex="A">\(A\)</span>.</p>
+</section>
+<section class="source-unit" id="264Yf" data-source-id="264Yf"><h3><span class="source-label">264Yf</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\rho)">\((X,\rho)\)</span> suatu ruang metrik dan <span class="math inline" data-source-tex="r\ge 0">\(r\ge 0\)</span>;
+misalkan <span class="math inline" data-source-tex="Y">\(Y\)</span> sebarang subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>, dan lengkapi <span class="math inline" data-source-tex="Y">\(Y\)</span> dengan metrik
+terinduksi <span class="math inline" data-source-tex="\rho_Y">\(\rho_Y\)</span>. (i) Tunjukkan bahwa ukuran luar Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span>
+<span class="math inline" data-source-tex="\mu^{(Y)*}_{Hr}">\(\mu^{(Y)*}_{Hr}\)</span> pada <span class="math inline" data-source-tex="Y">\(Y\)</span> tepat merupakan pembatasan pada <span class="math inline" data-source-tex="\Cal PY">\(\Cal PY\)</span> dari
+ukuran luar <span class="math inline" data-source-tex="\mu_{Hr}^*">\(\mu_{Hr}^*\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span>. (ii) Tunjukkan bahwa jika <em>salah satu</em>
+dari <span class="math inline" data-source-tex="\mu_{Hr}^*Y&lt;\infty">\(\mu_{Hr}^*Y&lt;\infty\)</span> <em>atau</em> <span class="math inline" data-source-tex="\mu_{Hr}">\(\mu_{Hr}\)</span> mengukur <span class="math inline" data-source-tex="Y">\(Y\)</span> berlaku, maka
+ukuran Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> <span class="math inline" data-source-tex="\mu^{(Y)}_{Hr}">\(\mu^{(Y)}_{Hr}\)</span> pada <span class="math inline" data-source-tex="Y">\(Y\)</span> tepat merupakan
+ukuran subruang pada <span class="math inline" data-source-tex="Y">\(Y\)</span> yang diinduksi oleh ukuran <span class="math inline" data-source-tex="\mu_{Hr}">\(\mu_{Hr}\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span>.</p>
+</section>
+<section class="source-unit" id="264Yg" data-source-id="264Yg"><h3><span class="source-label">264Yg</span> (g) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\rho)">\((X,\rho)\)</span> suatu ruang metrik dan <span class="math inline" data-source-tex="r&gt;0">\(r&gt;0\)</span>.
+Tunjukkan bahwa ukuran Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span> bersifat tanpa atom.
+(<em>Petunjuk</em>: Misalkan <span class="math inline" data-source-tex="E\in\dom\mu_{Hr}">\(E\in\dom\mu_{Hr}\)</span>. (i) Jika <span class="math inline" data-source-tex="E">\(E\)</span> tidak separabel,
+terdapat suatu himpunan terbuka <span class="math inline" data-source-tex="G">\(G\)</span> sedemikian sehingga <span class="math inline" data-source-tex="E\cap G">\(E\cap G\)</span> dan
+<span class="math inline" data-source-tex="E\setminus G">\(E\setminus G\)</span> keduanya tidak separabel, sehingga keduanya tidak terabaikan.
+(ii) Jika terdapat <span class="math inline" data-source-tex="x\in E">\(x\in E\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu_{Hr}(E\cap B(x,\delta))&gt;0">\(\mu_{Hr}(E\cap B(x,\delta))&gt;0\)</span> untuk setiap <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>, maka salah satu dari
+himpunan-himpunan ini mempunyai komplemen yang tidak terabaikan dalam <span class="math inline" data-source-tex="E">\(E\)</span>.
+(iii) Jika tidak, <span class="math inline" data-source-tex="\mu_{Hr}E=0">\(\mu_{Hr}E=0\)</span>.)</p>
+</section>
+<section class="source-unit" id="264Yh" data-source-id="264Yh"><h3><span class="source-label">264Yh</span> (h) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\rho)">\((X,\rho)\)</span> suatu ruang metrik dan <span class="math inline" data-source-tex="r\ge 0">\(r\ge 0\)</span>;
+misalkan <span class="math inline" data-source-tex="\mu_{Hr}">\(\mu_{Hr}\)</span> ukuran Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span>. Tunjukkan bahwa
+jika <span class="math inline" data-source-tex="\mu_{Hr}E&lt;\infty">\(\mu_{Hr}E&lt;\infty\)</span>, maka
+<span class="math inline" data-source-tex="\mu_{Hr}E=\sup\{\mu_{Hr}F:F\subseteq E">\(\mu_{Hr}E=\sup\{\mu_{Hr}F:F\subseteq E\)</span> tertutup dan terbatas total<span class="math inline" data-source-tex="\}">\(\}\)</span>.
+(<em>Petunjuk</em>: jika <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> diberikan, gunakan <a class="xref" href="#264Yd">264Yd</a> untuk menemukan
+suatu himpunan tertutup dan terbatas total <span class="math inline" data-source-tex="F">\(F\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu_{Hr}(F\setminus E)=0">\(\mu_{Hr}(F\setminus E)=0\)</span> dan <span class="math inline" data-source-tex="\mu_{Hr}(E\setminus F)\le\epsilon">\(\mu_{Hr}(E\setminus F)\le\epsilon\)</span>, lalu
+terapkan <a class="xref" href="#264Ye">264Ye</a> pada <span class="math inline" data-source-tex="F\setminus E">\(F\setminus E\)</span>.)</p>
+</section>
+<section class="source-unit" id="264Yi" data-source-id="264Yi"><h3><span class="source-label">264Yi</span> (i) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\rho)">\((X,\rho)\)</span> suatu ruang metrik lengkap dan <span class="math inline" data-source-tex="r\ge 0">\(r\ge 0\)</span>;
+misalkan <span class="math inline" data-source-tex="\mu_{Hr}">\(\mu_{Hr}\)</span> ukuran Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span>. Tunjukkan bahwa
+jika <span class="math inline" data-source-tex="\mu_{Hr}E&lt;\infty">\(\mu_{Hr}E&lt;\infty\)</span>, maka
+<span class="math inline" data-source-tex="\mu_{Hr}E=\sup\{\mu_{Hr}F:F\subseteq E">\(\mu_{Hr}E=\sup\{\mu_{Hr}F:F\subseteq E\)</span> kompak<span class="math inline" data-source-tex="\}">\(\}\)</span>.</p>
+</section>
+<section class="source-unit" id="264Yj" data-source-id="264Yj"><h3><span class="source-label">264Yj</span> (j) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\rho)">\((X,\rho)\)</span> dan <span class="math inline" data-source-tex="(Y,\sigma)">\((Y,\sigma)\)</span> ruang metrik. Jika
+<span class="math inline" data-source-tex="D\subseteq X">\(D\subseteq X\)</span> dan <span class="math inline" data-source-tex="\phi:D\to Y">\(\phi:D\to Y\)</span> suatu fungsi, maka <span class="math inline" data-source-tex="\phi">\(\phi\)</span> adalah
+<strong><span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>-Lipschitz</strong> jika
+<span class="math inline" data-source-tex="\sigma(\phi(x),\phi(x&#x27;))\le\gamma\rho(x,x&#x27;)">\(\sigma(\phi(x),\phi(x&#x27;))\le\gamma\rho(x,x&#x27;)\)</span> untuk setiap <span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="x&#x27;\in D">\(x&#x27;\in D\)</span>.
+(i) Tunjukkan bahwa dalam hal ini, jika <span class="math inline" data-source-tex="r\ge 0">\(r\ge 0\)</span>,
+<span class="math inline" data-source-tex="\mu_{Hr}^*(\phi[A])\le\gamma^r\mu_{Hr}^*A">\(\mu_{Hr}^*(\phi[A])\le\gamma^r\mu_{Hr}^*A\)</span> untuk setiap <span class="math inline" data-source-tex="A\subseteq D">\(A\subseteq D\)</span>,
+dengan menuliskan <span class="math inline" data-source-tex="\mu_{Hr}^*">\(\mu_{Hr}^*\)</span> untuk ukuran luar Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span>
+pada <span class="math inline" data-source-tex="X">\(X\)</span> maupun <span class="math inline" data-source-tex="Y">\(Y\)</span>. (ii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="X">\(X\)</span> lengkap dan
+<span class="math inline" data-source-tex="E\subseteq D">\(E\subseteq D\)</span> dan <span class="math inline" data-source-tex="\mu_{Hr}E">\(\mu_{Hr}E\)</span> terdefinisi dan berhingga, maka
+<span class="math inline" data-source-tex="\mu_{Hr}(\phi[E])">\(\mu_{Hr}(\phi[E])\)</span> terdefinisi.
+(<em>Petunjuk</em>: <a class="xref" href="#264Yi">264Yi</a>.)</p>
+</section>
+<section class="source-unit" id="264Yk" data-source-id="264Yk"><h3><span class="source-label">264Yk</span> (k) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\rho)">\((X,\rho)\)</span> suatu ruang metrik, dan untuk <span class="math inline" data-source-tex="r\ge 0">\(r\ge 0\)</span>
+misalkan <span class="math inline" data-source-tex="\mu_{Hr}">\(\mu_{Hr}\)</span> ukuran Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span>. Tunjukkan bahwa
+terdapat tepat satu <span class="math inline" data-source-tex="\Delta=\Delta(X)\in[0,\infty]">\(\Delta=\Delta(X)\in[0,\infty]\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu_{Hr}X=\infty">\(\mu_{Hr}X=\infty\)</span> jika <span class="math inline" data-source-tex="r\in\coint{0,\Delta}">\(r\in\coint{0,\Delta}\)</span>, dan <span class="math inline" data-source-tex="0">\(0\)</span> jika
+<span class="math inline" data-source-tex="r\in\ooint{\Delta,\infty}">\(r\in\ooint{\Delta,\infty}\)</span>.</p>
+</section>
+<section class="source-unit" id="264Yl" data-source-id="264Yl"><h3><span class="source-label">264Yl</span> (l) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\rho)">\((X,\rho)\)</span> suatu ruang metrik dan <span class="math inline" data-source-tex="\phi:I\to X">\(\phi:I\to X\)</span>
+suatu fungsi kontinu, dengan <span class="math inline" data-source-tex="I\subseteq\Bbb R">\(I\subseteq\Bbb R\)</span> suatu interval. Tuliskan
+<span class="math inline" data-source-tex="\mu_{H1}">\(\mu_{H1}\)</span> untuk ukuran Hausdorff berdimensi satu pada <span class="math inline" data-source-tex="X">\(X\)</span>. Tunjukkan bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu_{H1}(\phi[I])
+\le\sup\{\sum_{i=1}^n\rho(\phi(t_i),\phi(t_{i-1})):t_0,\ldots,t_n\in
+I,\,t_0\le\ldots\le t_n\}">\(\mu_{H1}(\phi[I])
+\le\sup\{\sum_{i=1}^n\rho(\phi(t_i),\phi(t_{i-1})):t_0,\ldots,t_n\in
+I,\,t_0\le\ldots\le t_n\}\)</span>,</div>
+<p>yaitu panjang kurva <span class="math inline" data-source-tex="\phi">\(\phi\)</span>, dengan kesamaan jika <span class="math inline" data-source-tex="\phi">\(\phi\)</span> injektif.</p>
+</section>
+<section class="source-unit" id="264Ym" data-source-id="264Ym"><h3><span class="source-label">264Ym</span> (m) </h3>
+<p>Tetapkan <span class="math inline" data-source-tex="r=\ln 2/\ln 3">\(r=\ln 2/\ln 3\)</span>, seperti dalam <a class="xref" href="#264J">264J</a>, dan tuliskan
+<span class="math inline" data-source-tex="\mu_{Hr}">\(\mu_{Hr}\)</span> untuk ukuran Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> pada himpunan Cantor <span class="math inline" data-source-tex="C">\(C\)</span>.
+Misalkan <span class="math inline" data-source-tex="\lambda">\(\lambda\)</span> ukuran biasa pada <span class="math inline" data-source-tex="\{0,1\}^{\Bbb N}">\(\{0,1\}^{\Bbb N}\)</span> (<a class="xref" href="../254/index.html#254J">254J</a>).
+Definisikan <span class="math inline" data-source-tex="\phi:\{0,1\}^{\Bbb N}\to C">\(\phi:\{0,1\}^{\Bbb N}\to C\)</span> dengan menetapkan
+<span class="math inline" data-source-tex="\phi(x)=\bover23\sum_{n=0}^{\infty}3^{-n}x(n)">\(\phi(x)=\bover23\sum_{n=0}^{\infty}3^{-n}x(n)\)</span> untuk
+<span class="math inline" data-source-tex="x\in\{0,1\}^{\Bbb N}">\(x\in\{0,1\}^{\Bbb N}\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\phi">\(\phi\)</span> merupakan isomorfisme antara
+<span class="math inline" data-source-tex="(\{0,1\}^{\Bbb N},\lambda)">\((\{0,1\}^{\Bbb N},\lambda)\)</span> dan <span class="math inline" data-source-tex="(C,\mu_{Hr})">\((C,\mu_{Hr})\)</span>, sehingga <span class="math inline" data-source-tex="\mu_{Hr}">\(\mu_{Hr}\)</span> merupakan
+ukuran subruang pada <span class="math inline" data-source-tex="C">\(C\)</span> yang diinduksi oleh ‘ukuran Cantor’ sebagaimana
+didefinisikan dalam <a class="xref" href="../256/index.html#256Hc">256Hc</a>.</p>
+</section>
+<section class="source-unit" id="264Yn" data-source-id="264Yn"><h3><span class="source-label">264Yn</span> (n) </h3>
+<p>Tetapkan <span class="math inline" data-source-tex="r=\ln 2/\ln 3">\(r=\ln 2/\ln 3\)</span> dan tuliskan <span class="math inline" data-source-tex="\mu_{Hr}">\(\mu_{Hr}\)</span> untuk ukuran
+Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> pada himpunan Cantor <span class="math inline" data-source-tex="C">\(C\)</span>. Misalkan
+<span class="math inline" data-source-tex="f:[0,1]\to[0,1]">\(f:[0,1]\to[0,1]\)</span> fungsi Cantor dan misalkan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> ukuran Lebesgue pada
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\mu f[E]=\mu_{Hr}E">\(\mu f[E]=\mu_{Hr}E\)</span> untuk setiap
+<span class="math inline" data-source-tex="E\in\dom\mu_{Hr}">\(E\in\dom\mu_{Hr}\)</span> dan <span class="math inline" data-source-tex="\mu_{Hr}(C\cap f^{-1}[F])=\mu F">\(\mu_{Hr}(C\cap f^{-1}[F])=\mu F\)</span> untuk setiap
+himpunan terukur Lebesgue <span class="math inline" data-source-tex="F\subseteq[0,1]">\(F\subseteq[0,1]\)</span>.</p>
+</section>
+<section class="source-unit" id="264Yo" data-source-id="264Yo"><h3><span class="source-label">264Yo</span> (o) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\rho)">\((X,\rho)\)</span> suatu ruang metrik dan
+<span class="math inline" data-source-tex="h:\coint{0,\infty}\to\coint{0,\infty},\ h(0)=0">\(h:\coint{0,\infty}\to\coint{0,\infty},\ h(0)=0\)</span> suatu fungsi tak menurun. Untuk
+<span class="math inline" data-source-tex="A\subseteq X">\(A\subseteq X\)</span>, tetapkan</p>
+<p><span class="math display" data-source-tex="\eqalign{\theta_hA
+&amp;=\sup_{\delta&gt;0}\inf\{\sum_{n=0}^{\infty}h(\diam A_n):\sequencen{A_n}
+  \text{ adalah barisan subhimpunan dari }X\cr
+&amp;\qquad\qquad\qquad\qquad\qquad\qquad\text{ yang meliput }A,\,\diam
+A_n\le\delta
+  \text{ untuk setiap }n\in\Bbb N\},\cr}">\[\begin{aligned}\theta_hA
+&amp;=\sup_{\delta&gt;0}\inf\{\sum_{n=0}^{\infty}h(\diam A_n):\sequencen{A_n}
+  \text{ adalah barisan subhimpunan dari }X\\
+&amp;\qquad\qquad\qquad\qquad\qquad\qquad\text{ yang meliput }A,\,\diam
+A_n\le\delta
+  \text{ untuk setiap }n\in\Bbb N\},\\\end{aligned}\]</span></p>
+<p>dengan menafsirkan <span class="math inline" data-source-tex="\diam\emptyset">\(\diam\emptyset\)</span> sebagai <span class="math inline" data-source-tex="0">\(0\)</span> dan
+<span class="math inline" data-source-tex="\inf\emptyset">\(\inf\emptyset\)</span> sebagai <span class="math inline" data-source-tex="\infty">\(\infty\)</span> seperti biasa. Tunjukkan bahwa <span class="math inline" data-source-tex="\theta_h">\(\theta_h\)</span>
+merupakan ukuran luar pada <span class="math inline" data-source-tex="X">\(X\)</span>. Nyatakan dan buktikan teorema-teorema yang
+bersesuaian dengan <a class="xref" href="#264E">264E</a> dan <a class="xref" href="#264F">264F</a>. Periksa <a class="xref" href="#264X">264X</a> dan <a class="xref" href="#264Y">264Y</a> untuk mencari hasil
+lain yang mungkin dapat digeneralisasi, barangkali dengan asumsi bahwa <span class="math inline" data-source-tex="h">\(h\)</span>
+kontinu dari kanan.</p>
+</section>
+<section class="source-unit" id="264Yp" data-source-id="264Yp"><h3><span class="source-label">264Yp</span> (p) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\rho)">\((X,\rho)\)</span> suatu ruang metrik. Kita katakan bahwa
+jika <span class="math inline" data-source-tex="a&lt;b">\(a&lt;b\)</span> dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> dan <span class="math inline" data-source-tex="f:[a,b]\to X">\(f:[a,b]\to X\)</span> suatu fungsi, maka <span class="math inline" data-source-tex="f">\(f\)</span>
+<strong>kontinu mutlak</strong> jika untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\sum_{i=0}^n\rho(f(a_i),f(b_i))\le\epsilon">\(\sum_{i=0}^n\rho(f(a_i),f(b_i))\le\epsilon\)</span> setiap kali
+<span class="math inline" data-source-tex="a\le a_0\le b_0\le\ldots\le a_n\le b_n\le b">\(a\le a_0\le b_0\le\ldots\le a_n\le b_n\le b\)</span> dan
+<span class="math inline" data-source-tex="\sum_{i=0}^n(b_i-a_i)\le\delta">\(\sum_{i=0}^n(b_i-a_i)\le\delta\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="f:[a,b]\to X">\(f:[a,b]\to X\)</span> kontinu
+mutlak jika dan hanya jika fungsi itu kontinu dan bervariasi terbatas (dalam
+pengertian <a class="xref" href="../224/index.html#224Ye">224Ye</a>) serta <span class="math inline" data-source-tex="\mu_{H1}f[A]=0">\(\mu_{H1}f[A]=0\)</span> setiap kali <span class="math inline" data-source-tex="A\subseteq[a,b]">\(A\subseteq[a,b]\)</span>
+terabaikan Lebesgue, dengan <span class="math inline" data-source-tex="\mu_{H1}">\(\mu_{H1}\)</span> ukuran Hausdorff berdimensi satu pada
+<span class="math inline" data-source-tex="X">\(X\)</span>. (Bandingkan <a class="xref" href="../225/index.html#225M">225M</a>.)
+Tunjukkan bahwa dalam hal ini <span class="math inline" data-source-tex="\mu_{H1}f[\,[a,b]\,]&lt;\infty">\(\mu_{H1}f[\,[a,b]\,]&lt;\infty\)</span>.</p>
+</section>
+<section class="source-unit" id="264Yq" data-source-id="264Yq"><h3><span class="source-label">264Yq</span> (q) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="s\ge 1">\(s\ge 1\)</span> suatu bilangan bulat, dan
+<span class="math inline" data-source-tex="r\in\coint{s,\infty}">\(r\in\coint{s,\infty}\)</span>. Untuk <span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="y\in\BbbR^s">\(y\in\BbbR^s\)</span>, tetapkan
+<span class="math inline" data-source-tex="\rho(x,y)=\|x-y\|^{s/r}">\(\rho(x,y)=\|x-y\|^{s/r}\)</span>. (i) Tunjukkan bahwa <span class="math inline" data-source-tex="\rho">\(\rho\)</span> merupakan metrik pada
+<span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span> yang menginduksi topologi Euklides. (ii) Misalkan <span class="math inline" data-source-tex="\mu_{Hr}">\(\mu_{Hr}\)</span> ukuran
+Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> yang bersesuaian. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\mu_{Hr}B(\tbf{0},1)=2^s">\(\mu_{Hr}B(\tbf{0},1)=2^s\)</span>.</p>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<section class="source-unit" id="264-notes" data-source-id="264"><span class="anchor" id="264"></span><h2><span class="source-label">264</span> Catatan penutup untuk Bagian 264 </h2>
+<p>Dalam bagian ini kita telah sampai pada langkah berikutnya
+dalam ‘teori ukuran geometris’. Saya membahasnya dengan sangat perlahan,
+karena terdapat kesulitan nyata dalam pokok ini, dan untuk keperluan jilid ini
+kita tidak perlu menguasai banyak darinya. Gagasannya di sini ialah menemukan
+suatu definisi ukuran Lebesgue berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> yang ‘geometris’ dalam
+pengertian ketat, yakni hanya bergantung pada struktur metrik <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dan
+karena itu dapat diterapkan pada himpunan yang mempunyai struktur metrik
+tetapi tidak mempunyai struktur linear. Seperti yang sudah terjadi
+sebelumnya, definisi ukuran Hausdorff dari suatu ukuran luar tidak
+menimbulkan masalah—satu-satunya gagasan baru dalam <a class="xref" href="#264A">264A</a>-<a class="xref" href="#264C">264C</a> ialah
+penggunaan supremum <span class="math inline" data-source-tex="\theta_r=\sup_{\delta&gt;0}\theta_{r\delta}">\(\theta_r=\sup_{\delta&gt;0}\theta_{r\delta}\)</span> dari
+ukuran-ukuran luar—dan bagian sulitnya adalah membuktikan bahwa ukuran baru
+kita mempunyai sifat yang berguna. Mengenai sifat ukuran Hausdorff, terdapat
+dua sasaran pokok: pertama, memeriksa bahwa secara umum ukuran-ukuran ini
+memiliki bagian yang cukup besar dari sifat ukuran Lebesgue; dan kedua,
+membenarkan istilah ‘ukuran berdimensi <span class="math inline" data-source-tex="r">\(r\)</span>’ dengan menghubungkan ukuran
+Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> dengan ukuran Lebesgue pada
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>.</p>
+<p>Mengenai sifat ukuran Hausdorff umum, kita harus melangkah cukup hati-hati.
+Saya tidak memberikan contoh tandingan di sini karena contoh-contoh itu
+melibatkan konsep yang termasuk dalam Jilid 4 dan 5, bukan jilid ini, tetapi
+saya harus memperingatkan Anda agar mengantisipasi hal terburuk. Setidaknya,
+kita mengetahui bahwa himpunan terbuka terukur, sehingga semua himpunan Borel
+terukur (<a class="xref" href="#264E">264E</a>). Ukuran luar suatu himpunan <span class="math inline" data-source-tex="A">\(A\)</span> dapat didefinisikan melalui
+himpunan-himpunan Borel yang memuat <span class="math inline" data-source-tex="A">\(A\)</span> (264Fa), walaupun secara umum tidak
+melalui himpunan-himpunan terbuka yang memuat <span class="math inline" data-source-tex="A">\(A\)</span>; tetapi ukuran suatu
+himpunan terukur <span class="math inline" data-source-tex="E">\(E\)</span> tidak selalu merupakan supremum ukuran
+himpunan-himpunan Borel yang termuat dalam <span class="math inline" data-source-tex="E">\(E\)</span>, kecuali <span class="math inline" data-source-tex="E">\(E\)</span> berukuran
+berhingga (264Fc). Kita memang mendapati bahwa ukuran luar <span class="math inline" data-source-tex="\theta_r">\(\theta_r\)</span> yang
+didefinisikan dalam <a class="xref" href="#264A">264A</a> merupakan ukuran luar yang didefinisikan dari
+<span class="math inline" data-source-tex="\mu_{Hr}">\(\mu_{Hr}\)</span> (264Fb), sehingga frasa ‘ukuran luar Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span>’
+tidak ambigu. Salah satu sifat penting ukuran Lebesgue ialah bahwa ukuran
+suatu himpunan terukur <span class="math inline" data-source-tex="E">\(E\)</span> merupakan supremum ukuran subhimpunan kompak dari
+<span class="math inline" data-source-tex="E">\(E\)</span>; sifat ini secara umum tidak dimiliki ukuran Hausdorff, tetapi berlaku
+untuk himpunan <span class="math inline" data-source-tex="E">\(E\)</span> berukuran berhingga dalam ruang lengkap (<a class="xref" href="#264Yi">264Yi</a>). Mengenai
+subruang, tidak terdapat masalah dengan ukuran luar, dan untuk himpunan
+berukuran berhingga, ukuran subruangnya juga konsisten (<a class="xref" href="#264Yf">264Yf</a>). Karena ukuran
+Hausdorff didefinisikan dalam istilah metrik, ia berperilaku teratur di bawah
+pemetaan Lipschitz (<a class="xref" href="#264G">264G</a>); salah satu kelas fungsi yang paling alami untuk
+dipertimbangkan ketika mempelajari ruang metrik adalah fungsi <span class="math inline" data-source-tex="1">\(1\)</span>-Lipschitz,
+sehingga (dalam bahasa <a class="xref" href="#264G">264G</a>) <span class="math inline" data-source-tex="\mu_{Hr}^*\phi[A]\le \mu_{Hr}^*A">\(\mu_{Hr}^*\phi[A]\le \mu_{Hr}^*A\)</span> untuk setiap
+<span class="math inline" data-source-tex="A">\(A\)</span>.</p>
+<p>Sifat pokok kedua ukuran Hausdorff, yakni hubungannya dengan ukuran Lebesgue
+dalam dimensi yang sesuai, adalah Teorema <a class="xref" href="#264I">264I</a>. Karena ukuran Hausdorff dan
+ukuran Lebesgue sama-sama invarian terhadap translasi, hal ini dapat
+dibuktikan dengan cara yang relatif elementer, kecuali dalam evaluasi
+konstanta normalisasi; kita hanya perlu mengetahui bahwa
+<span class="math inline" data-source-tex="\mu\coint{0,1}^r=1">\(\mu\coint{0,1}^r=1\)</span> dan <span class="math inline" data-source-tex="\mu_{Hr}\coint{0,1}^r">\(\mu_{Hr}\coint{0,1}^r\)</span> keduanya berhingga dan tidak
+nol, dan ini langsung. (Argumen bagian (a) pembuktian <a class="xref" href="../261/index.html#261F">261F</a> relevan.) Untuk
+keperluan bab ini, menurut saya kita tidak harus mengetahui nilai konstanta
+tersebut; tetapi saya tidak dapat membiarkannya tak terselesaikan, dan karena
+itu memberikan Teorema <a class="xref" href="#264H">264H</a>, yaitu <strong>ketaksamaan isodiametrik</strong>, untuk
+menunjukkan bahwa konstanta itu tepat merupakan ukuran Lebesgue dari bola
+berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> dengan diameter <span class="math inline" data-source-tex="1">\(1\)</span>, sebagaimana diharapkan. Langkah kritis
+dalam argumen <a class="xref" href="#264H">264H</a> terdapat pada bagian (c) pembuktiannya. Langkah ini disebut
+‘simetrisasi Steiner’; gagasannya ialah bahwa, setelah diberikan suatu
+himpunan <span class="math inline" data-source-tex="A">\(A\)</span>, kita mentransformasi <span class="math inline" data-source-tex="A">\(A\)</span> melalui serangkaian langkah, pada
+setiap tahap menurunkan, atau setidaknya tidak menaikkan, diameternya, dan
+menaikkan, atau setidaknya tidak menurunkan, ukuran luarnya, dengan secara
+bertahap membuat <span class="math inline" data-source-tex="A">\(A\)</span> lebih simetris, sampai akhirnya diperoleh suatu himpunan
+yang cukup terkendala sehingga mudah ditangani. Operasi simetrisasi khusus
+yang digunakan dalam pembuktian ini cukup penting; tetapi gagasan regularisasi
+bertahap terhadap suatu objek merupakan salah satu metode paling ampuh dalam
+teori ukuran, dan Anda patut mencurahkan seluruh perhatian untuk menguasai
+setiap contoh yang Anda jumpai. Berdasarkan pengalaman saya, gagasan itu
+terutama berguna ketika mencari suatu ketaksamaan yang melibatkan besaran
+yang berbeda sifat—dalam contoh sekarang, diameter dan volume suatu himpunan.</p>
+<p>Tentu saja tidak nyaman memiliki dua ukuran pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> yang berbeda
+sebesar suatu kelipatan konstan, dan untuk keperluan bagian berikutnya
+sebenarnya akan sedikit lebih mudah mengikuti Federer 69 dengan
+menggunakan ‘ukuran Hausdorff ternormalisasi’
+<span class="math inline" data-source-tex="2^{-r}\beta_r\mu_{Hr}">\(2^{-r}\beta_r\mu_{Hr}\)</span>. (Untuk <span class="math inline" data-source-tex="r">\(r\)</span> tak bulat, kita dapat mengambil
+<span class="math inline" data-source-tex="\beta_r=\pi^{r/2}/\Gamma(1+\bover{r}2)">\(\beta_r=\pi^{r/2}/\Gamma(1+\bover{r}2)\)</span>, sebagaimana disarankan dalam
+<a class="xref" href="../252/index.html#252Xi">252Xi</a>.) Namun, saya yakin ini merupakan pandangan minoritas, dan contoh
+mencolok ukuran Hausdorff pada himpunan Cantor (<a class="xref" href="#264J">264J</a>, <a class="xref" href="#264Ym">264Ym</a>-<a class="xref" href="#264Yn">264Yn</a>) tampak jauh
+lebih baik dalam versi yang tidak dinormalisasi.</p>
+<p>Ukuran Hausdorff berdimensi (<span class="math inline" data-source-tex="\ln 2/\ln 3">\(\ln 2/\ln 3\)</span>) pada himpunan Cantor tentu
+hanyalah satu, barangkali yang termudah, dari suatu kelas contoh yang besar.
+Karena ukuran luar Hausdorff berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> dari suatu himpunan <span class="math inline" data-source-tex="A">\(A\)</span>, jika
+dipandang sebagai fungsi <span class="math inline" data-source-tex="r">\(r\)</span>, berperilaku secara drastis (turun dari <span class="math inline" data-source-tex="\infty">\(\infty\)</span>
+ke <span class="math inline" data-source-tex="0">\(0\)</span>) pada suatu nilai kritis <span class="math inline" data-source-tex="\Delta(A)">\(\Delta(A)\)</span> (lihat <a class="xref" href="#264Xe">264Xe</a>, <a class="xref" href="#264Yk">264Yk</a>), ukuran itu
+memberi kita suatu invarian ruang metrik dari <span class="math inline" data-source-tex="A">\(A\)</span>; <span class="math inline" data-source-tex="\Delta(A)">\(\Delta(A)\)</span> adalah
+<strong>dimensi Hausdorff</strong> dari <span class="math inline" data-source-tex="A">\(A\)</span>. Jelas bahwa dimensi Hausdorff dari <span class="math inline" data-source-tex="C">\(C\)</span>
+adalah <span class="math inline" data-source-tex="\ln 2/\ln 3">\(\ln 2/\ln 3\)</span>, sedangkan dimensi Hausdorff ruang Euklides berdimensi
+<span class="math inline" data-source-tex="r">\(r\)</span> adalah <span class="math inline" data-source-tex="r">\(r\)</span>.</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 2: Broad Foundations</cite>, Bagian 264.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 29 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-cumulative-html-route-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V2-S264&quot;,
+  &quot;source_member&quot;: &quot;mt2.2016/mt264.tex&quot;,
+  &quot;target_bytes&quot;: 46722,
+  &quot;target_sha256&quot;: &quot;61c006edab49d27a10c5c5ba67efdc5368eb0eea95edec3b386219627590de08&quot;,
+  &quot;source_ids&quot;: [
+    &quot;264&quot;,
+    &quot;264A&quot;,
+    &quot;264B&quot;,
+    &quot;264C&quot;,
+    &quot;264D&quot;,
+    &quot;264Da&quot;,
+    &quot;264Db&quot;,
+    &quot;264Dc&quot;,
+    &quot;264Dd&quot;,
+    &quot;264E&quot;,
+    &quot;264F&quot;,
+    &quot;264G&quot;,
+    &quot;264H&quot;,
+    &quot;264I&quot;,
+    &quot;264J&quot;,
+    &quot;264K&quot;,
+    &quot;264X&quot;,
+    &quot;264Xa&quot;,
+    &quot;264Xb&quot;,
+    &quot;264Xc&quot;,
+    &quot;264Xd&quot;,
+    &quot;264Xe&quot;,
+    &quot;264Xf&quot;,
+    &quot;264Xg&quot;,
+    &quot;264Y&quot;,
+    &quot;264Ya&quot;,
+    &quot;264Yb&quot;,
+    &quot;264Yc&quot;,
+    &quot;264Yd&quot;,
+    &quot;264Ye&quot;,
+    &quot;264Yf&quot;,
+    &quot;264Yg&quot;,
+    &quot;264Yh&quot;,
+    &quot;264Yi&quot;,
+    &quot;264Yj&quot;,
+    &quot;264Yk&quot;,
+    &quot;264Yl&quot;,
+    &quot;264Ym&quot;,
+    &quot;264Yn&quot;,
+    &quot;264Yo&quot;,
+    &quot;264Yp&quot;,
+    &quot;264Yq&quot;
+  ],
+  &quot;corpus_id&quot;: &quot;O007-FREMLIN&quot;,
+  &quot;volume_id&quot;: &quot;O007-FREMLIN-V2&quot;,
+  &quot;volume_source_title&quot;: &quot;Broad Foundations&quot;,
+  &quot;route&quot;: &quot;264&quot;,
+  &quot;official_source_page_start&quot;: 320,
+  &quot;chapter_official_source_pages&quot;: [
+    288,
+    342
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

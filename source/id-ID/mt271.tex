@@ -1,0 +1,823 @@
+\frfilename{mt271.tex}
+\versiondate{11.12.08}
+\copyrightdate{1995}
+
+\def\chaptername{Teori probabilitas}
+\def\sectionname{Distribusi}
+
+\newsection{271}
+
+Saya memulai bab ini dengan pembahasan mengenai `distribusi
+probabilitas', yaitu ukuran probabilitas pada $\BbbR^n$ yang didefinisikan
+oleh keluarga $(X_1,\ldots,X_n)$ dari variabel-variabel acak. Saya memberikan
+hasil-hasil dasar yang menguraikan keadaan ketika dua distribusi sama
+(271G), integrasi terhadap suatu distribusi (271E), dan fungsi kerapatan
+probabilitas (271H-271K).   %271H 271I 271J 271K
+
+\medskip
+
+\leader{271A}{Notasi }\cmmnt{Saya baru saja menghabiskan beberapa paragraf
+untuk mencoba menguraikan perbedaan hakiki antara teori probabilitas dan
+teori ukuran. Namun ada uji yang lebih cepat untuk mengetahui apakah penulis
+Anda seorang ahli teori ukuran atau ahli probabilitas: bukalah sembarang
+halaman, lalu cari frasa `fungsi terukur' dan `variabel acak', serta rumus
+`$\int fd\mu$' dan `$\Expn(X)$'. Anggota pertama dari setiap pasangan akan
+memungkinkan Anda mendiagnosis `ukuran', dan anggota kedua `probabilitas',
+dengan kemungkinan keliru yang kecil. Sejauh ini dalam risalah ini saya
+dengan teguh menggunakan istilah para ahli teori ukuran, dengan beberapa
+kekhasan pribadi. Namun dalam sebuah bab tentang teori probabilitas, saya
+mendapati bahwa notasi teori ukuran, meskipun sepenuhnya memadai dalam arti
+formal, begitu merusak rumusan-rumusan yang sudah akrab sehingga membuatnya
+tidak wajar. Lagi pula, pada suatu saat -- jika belum -- Anda tentu harus
+mengenal bahasa para ahli probabilitas. Jadi dalam bab ini saya akan mengambil
+langkah besar ke arah itu. Untungnya, saya pikir hal ini dapat dilakukan tanpa
+menimbulkan pertentangan langsung, sehingga dalam jilid-jilid selanjutnya saya
+akan dapat menggunakan pekerjaan ini dalam notasi mana pun yang pada saat itu
+tampak sesuai, tanpa perlu merumuskannya kembali.
+
+\medskip
+
+}{\bf (a)}\dvro{ Misalkan}{ Jadi misalkan} $(\Omega,\Sigma,\mu)$ adalah
+suatu ruang probabilitas. \cmmnt{Saya menggunakan kesempatan yang diberikan
+oleh suatu frasa baru untuk mengambil langkah teknis.} Suatu
+{\bf variabel acak bernilai real}
+pada $\Omega$ akan merupakan anggota dari
+$\eusm L^0(\mu)$\cmmnt{, sebagaimana didefinisikan dalam 241A; yaitu, suatu
+fungsi bernilai real $X$ yang didefinisikan pada suatu himpunan bagian
+koterabaikan dari $\Omega$ sedemikian sehingga $X$ terukur terhadap
+pelengkapan $\hat\mu$ dari $\mu$, atau, jika Anda lebih suka,
+sedemikian sehingga $X\restr E$ terukur terhadap $\Sigma$ untuk suatu
+himpunan koterabaikan $E\subseteq\Omega$}.\cmmnt{\footnote{Untuk uraian
+tentang bagaimana istilah ini menjadi baku, lihat
+{\tt
+http://www.dartmouth.edu/$\sptilde$chance/\penalty-100Doob/\penalty-100conversation.html}.}}
+% http://www.dartmouth.edu/~chance/Doob/conversation.html  % Apr09
+
+\header{271Ab}{\bf (b)} Jika $X$ adalah variabel acak bernilai real pada
+suatu ruang probabilitas
+$(\Omega,\Sigma,\mu)$, tuliskan $\Expn(X)=\int X\,d\mu$ jika nilai ini
+terdefinisi dalam $[-\infty,\infty]$\cmmnt{ dalam arti Bab 12 dan \S133}.
+Dalam hal ini saya akan menyebut $\Expn(X)$ sebagai {\bf rataan} atau
+{\bf ekspektasi} dari $X$. Jadi kita boleh mengatakan bahwa
+`$X$ {\bf mempunyai ekspektasi hingga}' sebagai ganti `$X$
+terintegralkan'. \cmmnt{133A mengatakan bahwa
+`$\Expn(X+Y)=\Expn(X)+\Expn(Y)$ setiap kali $\Expn(X)$
+dan $\Expn(Y)$ beserta jumlahnya terdefinisi dalam $[-\infty,\infty]$', dan
+122P menjadi `suatu variabel acak bernilai real $X$ mempunyai ekspektasi
+hingga jika dan hanya jika $\Expn(|X|)<\infty$'.}
+
+\header{271Ac}{\bf (c)} Jika $X$ adalah variabel acak bernilai real dengan
+ekspektasi hingga, {\bf varians} dari $X$ adalah
+
+\Centerline{$\Var(X)=\Expn(X-\Expn(X))^2
+=\Expn(X^2-2\Expn(X)X+\Expn(X)^2)=\Expn(X^2)-(\Expn(X))^2$\dvro{.}{}}
+
+\cmmnt{\noindent (Perhatikan bahwa rumus ini menunjukkan bahwa
+$\Expn(X)^2\le\Expn(X^2)$; bandingkan 244Xd(i).) $\Var(X)$ berhingga jika
+dan hanya jika $\Expn(X^2)<\infty$, yaitu, jika dan hanya jika
+$X\in\eusm L^2(\mu)$ (244A). Secara khusus, $X+Y$ dan $cX$ mempunyai
+varians hingga setiap kali $X$ dan $Y$ demikian dan $c\in\Bbb R$.}
+
+
+\header{271Ad}{\bf (d)} Saya akan membolehkan diri menggunakan rumus-rumus
+seperti
+
+\Centerline{$\Pr(X>a)$,\quad $\Pr(X-\epsilon\le Y\le X+\delta)$,}
+
+\noindent dengan $X$ dan $Y$ variabel acak pada ruang probabilitas yang sama
+$(\Omega,\Sigma,\mu)$, untuk masing-masing berarti
+
+\Centerline{$\hat\mu\{\omega:\omega\in\dom X,\,X(\omega)>a\}$,}
+
+\Centerline{$\hat\mu\{\omega:\omega\in\dom X\cap\dom Y,\,
+X(\omega)-\epsilon\le Y(\omega)\le X(\omega)+\delta\}$,}
+
+\noindent dengan menuliskan $\hat\mu$ untuk pelengkapan $\mu$\cmmnt{
+seperti biasa}. \cmmnt{Ada dua hal yang perlu diperhatikan di sini.
+Pertama, $\Pr$ bergantung pada $\hat\mu$, bukan pada $\mu$; pada dasarnya,
+notasi tersebut secara otomatis mengarahkan kita untuk melengkapi ruang
+probabilitas $(\Omega,\Sigma,\mu)$. Tentu saja, saya dapat pula menulis
+
+\Centerline{$\Pr(X^2+Y^2>1)
+=\mu^*\{\omega:\omega\in\dom X\cap\dom Y,\,
+X(\omega)^2+Y(\omega)^2>1\}$,}
+
+\noindent dengan mengambil $\mu^*$ sebagai ukuran luar pada $\Omega$ yang
+berkaitan dengan $\mu$ (132B). Kedua,} saya akan menggunakan notasi ini
+{\it hanya untuk predikat yang bersesuaian dengan himpunan terukur Borel};
+artinya, saya akan menulis
+
+\Centerline{$\Pr(\psi(X_1,\ldots,X_n))
+=\hat\mu\{\omega:\omega\in\bigcap_{i\le n}\dom X_i,\,
+\psi(X_1(\omega),\ldots,X_n(\omega))\}$}
+
+\noindent hanya ketika himpunan
+
+\Centerline{$\{(\alpha_1,\ldots,\alpha_n):
+\psi(\alpha_1,\ldots,\alpha_n)\}$}
+
+\noindent merupakan himpunan Borel dalam $\BbbR^n$. \cmmnt{Sebagian alasan
+bagi pembatasan ini akan tampak dalam beberapa paragraf berikutnya;
+$\Pr(\psi(X_1,\ldots,X_n))$ harus merupakan sesuatu yang dapat dihitung dari
+pengetahuan mengenai distribusi gabungan $X_1,\ldots,X_n$, sebagaimana
+didefinisikan dalam 271C. Sebenarnya kita dapat dengan aman memperluas gagasan
+ini ke predikat $\psi$ yang `terukur universal', yang akan dibahas dalam Jilid
+4. Namun dapat saja terjadi bahwa $\mu$ memberi ukuran kepada himpunan
+berbentuk $\{\omega:X(\omega)\in A\}$ untuk suatu himpunan $A$ yang luar biasa
+tak beraturan, dan dalam kasus semacam itu akan lebih bijaksana memandang hal
+ini sebagai patologi kebetulan dari ruang probabilitas, lalu menanganinya
+dengan cara yang agak berbeda.
+
+(Saya melihat bahwa saya telah agak gegabah menganggap bahwa rumus di atas
+mendefinisikan $\Pr(\psi(X_1,\ldots,X_n))$ untuk setiap predikat Borel $\psi$.
+Ini merupakan konsekuensi dari 271Bb di bawah.)
+}
+
+\leader{271B}{Teorema} Misalkan $(\Omega,\Sigma,\mu)$ suatu ruang
+probabilitas, dan $X_1,\ldots,X_n$ variabel-variabel acak bernilai real pada
+$\Omega$. Tetapkan
+$\pmb{X}(\omega)=(X_1(\omega),\ldots,X_n(\omega))$ untuk
+$\omega\in\bigcap_{i\le n}\dom X_i$.
+
+(a) Terdapat tepat satu ukuran Radon $\nu$ pada $\BbbR^n$ sedemikian sehingga
+
+\Centerline{$\nu\ocint{-\infty,a}=\Pr(X_i\le\alpha_i$
+untuk setiap $i\le n)$}
+
+\noindent setiap kali $a=(\alpha_1,\ldots,\alpha_n)
+\in\BbbR^n$\cmmnt{, dengan menuliskan $\ocint{-\infty,a}$ untuk
+$\prod_{i\le n}\ocint{-\infty,\alpha_i}$};
+
+(b) $\nu\BbbR^n=1$ dan $\nu E=\hat\mu(\pmb{X}^{-1}[E])$ setiap kali $\nu E$
+terdefinisi, dengan $\hat\mu$ pelengkapan dari $\mu$; khususnya,
+$\nu E=\Pr((X_1,\ldots,X_n)\in E)$ untuk setiap himpunan Borel
+$E\subseteq\BbbR^n$.
+
+\proof{ Misalkan $\hat\Sigma$ domain dari $\hat\mu$, dan tetapkan
+$D=\bigcap_{i\le n}\dom X_i=\dom\pmb{X}$; maka $D$ koterabaikan, sehingga
+termasuk dalam $\hat\Sigma$. Misalkan
+$\hat\mu_D=\hat\mu\restrp\Cal PD$ ukuran subruang pada $D$ (131B, 214B), dan
+$\nu_0$ ukuran citra $\hat\mu_D\pmb{X}^{-1}$ (234D); misalkan $\Tau$ domain
+dari $\nu_0$.
+
+Tuliskan $\Cal B$ untuk aljabar himpunan Borel dalam $\BbbR^n$. Maka
+$\Cal B\subseteq\Tau$. \Prf\ Untuk $i\le n$, $\alpha\in\Bbb R$ tetapkan
+$F_{i\alpha}=\{x:x\in\BbbR^n,\,\xi_i\le\alpha\}$,
+$H_{i\alpha}=\{\omega:\omega\in\dom X_i,\,X_i(\omega)\le\alpha\}$.
+$X_i$ terukur terhadap $\hat\Sigma$ dan domainnya berada dalam
+$\hat\Sigma$, sehingga $H_{i\alpha}\in\hat\Sigma$, dan
+$\pmb{X}^{-1}[F_{i\alpha}]=D\cap H_{i\alpha}$ terukur terhadap
+$\hat\mu_D$. Jadi $F_{i\alpha}\in\Tau$.
+Karena $\Tau$ adalah aljabar-sigma bagian-bagian dari $\BbbR^n$,
+$\Cal B\subseteq\Tau$ (121J).\ \Qed
+
+Dengan demikian $\nu_0\restr\Cal B$ adalah ukuran pada $\BbbR^n$ dengan
+domain $\Cal B$; tentu saja $\nu_0\BbbR^n=\hat\mu D=1$. Berdasarkan 256C,
+pelengkapan $\nu$ dari $\nu_0\restr\Cal B$ adalah ukuran Radon pada
+$\BbbR^n$, dan $\nu\BbbR^n=\nu_0\BbbR^n=1$.
+
+Untuk $E\in\Cal B$,
+
+\Centerline{$\nu E=\nu_0E=\hat\mu_D\pmb{X}^{-1}[E]
+=\hat\mu\pmb{X}^{-1}[E]
+=\Pr((X_1,\ldots,X_n)\in E)$.}
+
+\noindent Secara lebih umum, jika $E\in\dom\nu$, maka terdapat himpunan Borel
+$E'$, $E''$ sedemikian sehingga $E'\subseteq E\subseteq E''$ dan
+$\nu(E''\setminus E')=0$, sehingga
+$\pmb{X}^{-1}[E']\subseteq\pmb{X}^{-1}[E]\subseteq\pmb{X}^{-1}[E'']$ dan
+$\hat\mu(\pmb{X}^{-1}[E'']\setminus\pmb{X}^{-1}[E'])=0$. Ini berarti bahwa
+$\pmb{X}^{-1}[E]\in\hat\Sigma$ dan
+
+\Centerline{$\hat\mu\pmb{X}^{-1}[E]=\hat\mu\pmb{X}^{-1}[E']=\nu E'=\nu
+E$.}
+
+Adapun mengenai ketunggalan $\nu$, jika $\nuprime$ adalah suatu ukuran Radon
+pada $\Bbb
+R^n$ sedemikian sehingga
+$\nuprime\ocint{-\infty,a}=\Pr(X_i\le\alpha_i\Forall i\le n)$ untuk setiap
+$a\in\BbbR^n$, maka tentu
+
+\Centerline{$\nuprime\BbbR^n
+=\lim_{k\to\infty}\nuprime\ocint{-\infty,k\tbf{1}}
+=\lim_{k\to\infty}\nu\ocint{-\infty,k\tbf{1}}=1=\nu\BbbR^n$.}
+
+\noindent Selain itu, $\Cal I=\{\ocint{-\infty,a}:a\in\BbbR^n\}$ tertutup
+terhadap irisan berhingga, dan $\nu$ serta $\nuprime$ bersepakat pada
+$\Cal I$. Berdasarkan Teorema Kelas Monoton (atau lebih tepatnya, akibatnya
+136C), $\nu$ dan $\nuprime$ bersepakat pada aljabar-sigma yang dibangkitkan
+oleh $\Cal I$, yaitu $\Cal B$ (121J), dan keduanya identik (256D).
+}%end of proof of 271B
+
+\leader{271C}{Definisi} Misalkan $(\Omega,\Sigma,\mu)$ suatu ruang
+probabilitas dan $X_1,\ldots,X_n$ variabel-variabel acak bernilai real pada
+$\Omega$. Yang saya maksud dengan {\bf distribusi} ({\bf gabungan}) atau
+{\bf hukum} $\nu_{\pmb{X}}$ dari keluarga
+$\pmb{X}=(X_1,\ldots,X_n)$ ialah ukuran probabilitas Radon $\nu$ dalam 271B.
+\cmmnt{Jika kita memandang $\pmb{X}$ sebagai fungsi dari
+$\bigcap_{i\le n}\dom X_i$ ke $\BbbR^n$, maka
+$\nu_{\pmb{X}}E=\Pr(\pmb{X}\in E)$ untuk setiap himpunan Borel
+$E\subseteq\BbbR^n$.}
+
+\leader{271D}{Catatan }\cmmnt{{\bf (a)} Pemilihan ukuran probabilitas Radon
+$\nu_{\pmb{X}}$ sebagai `distribusi' dari $\pmb{X}$, dengan tuntutan agar
+`ukuran Radon' lengkap, tentu agak sebarang. Selain prinsip umum bahwa ukuran
+selalu sebaiknya dilengkapi, konvensi-konvensi ini lebih sesuai dengan
+sebagian pekerjaan dalam Jilid 4 dan dengan hasil-hasil seperti 272G di bawah.
+
+\spheader 271Db
+Perhatikan bahwa agar dapat berbicara tentang distribusi suatu keluarga
+$\pmb{X}=(X_1,\ldots,X_n)$ dari variabel acak, semua $X_i$ harus didefinisikan
+pada ruang probabilitas yang sama.
+
+\spheader 271Dc Saya melihat bahwa bahasa yang telah saya pilih
+memungkinkan $X_i$ mempunyai domain yang berbeda-beda, sehingga keluarga
+$(X_1,\ldots,X_n)$ mungkin tidak dapat diidentifikasi secara tepat dengan
+fungsi yang bersesuaian dari $\bigcap_{i\le n}\dom X_i$ ke $\BbbR^n$.
+Namun saya berharap penggunaan lambang yang sama $\pmb{X}$ untuk keduanya
+tidak menimbulkan kebingungan.
+
+\spheader 271Dd Tidaklah berguna memandang seluruh ukuran citra
+$\nu_0=\hat\mu_D\pmb{X}^{-1}$ dalam bukti 271B sebagai distribusi dari
+$\pmb{X}$, kecuali jika kebetulan ukuran itu sama dengan
+$\nu=\nu_{\pmb{X}}$. `Distribusi' suatu variabel acak adalah tepat aspek
+variabel tersebut yang dapat dipisahkan dari segala pertimbangan mengenai ruang
+yang mendasari $(\Omega,\Sigma,\mu)$, dan pokok hasil seperti 271K dan 272G
+ialah bahwa distribusi dapat dihitung dari satu sama lain, tanpa kembali ke
+model variabel acak yang relatif mudah berubah dan tak pasti sebagai suatu
+fungsi pada ruang probabilitas.
+
+\medskip
+
+}{\bf (e)} %271De
+Jika $\pmb{X}=(X_1,\ldots,X_n)$ dan
+$\pmb{Y}=(Y_1,\ldots,Y_n)$ sedemikian sehingga $X_i\eae Y_i$ untuk setiap
+$i$, maka\cmmnt{
+
+\Centerline{$\{\omega:\omega\in\bigcap_{i\le n}\dom X_i,
+  \,X_i(\omega)\le\alpha_i\Forall i\le n\}
+\symmdiff\{\omega:\omega\in\bigcap_{i\le n}\dom Y_i,
+  \,Y_i(\omega)\le\alpha_i\Forall i\le n\}$}
+
+\noindent terabaikan, sehingga
+
+$$\eqalign{\Pr(X_i\le\alpha_i\Forall i\le n)
+&=\hat\mu\{\omega:\omega\in\bigcap_{i\le n}\dom X_i,
+  \,X_i(\omega)\le\alpha_i\Forall i\le n\}\cr
+&=\Pr(Y_i\le\alpha_i\Forall i\le n)\cr}$$
+
+\noindent untuk semua $\alpha_1,\ldots,\alpha_n\in\Bbb R$,
+dan} $\nu_{\pmb{X}}=\nu_{\pmb{Y}}$. \cmmnt{Ini berarti bahwa, jika kita
+mau, kita dapat memandang suatu distribusi sebagai ukuran
+$\nu_{\pmb{u}}$ dengan $\pmb{u}=(u_0,\ldots,u_n)$ barisan berhingga dalam
+$L^0(\mu)$. Dalam bab ini saya tidak akan menekankan pendekatan tersebut,
+tetapi pendekatan itu akan selalu ada di benak saya.
+}%end of comment
+
+\leader{271E}{Fungsi terukur dari variabel acak: Proposisi}
+Misalkan $\pmb{X}=(X_1,\ldots,X_n)$ suatu keluarga variabel acak
+\cmmnt{(seperti biasa dalam konteks semacam itu, yang saya maksud ialah bahwa
+semuanya berada pada ruang probabilitas yang sama
+$(\Omega,\Sigma,\mu)$)}; tuliskan $\Tau_{\pmb{X}}$ untuk domain distribusi
+$\nu_{\pmb{X}}$, dan misalkan $h$ suatu fungsi bernilai real yang terukur
+terhadap $\Tau_{\pmb{X}}$ dan didefinisikan hampir di mana-mana terhadap
+$\nu_{\pmb{X}}$ pada $\BbbR^n$. Maka kita mempunyai variabel acak
+$Y=h(X_1,\ldots,X_n)$ yang didefinisikan dengan menetapkan
+
+\Centerline{$h(X_1,\ldots,X_n)(\omega)
+=h(X_1(\omega),\ldots,X_n(\omega))$ untuk setiap
+$\omega\in\pmb{X}^{-1}[\dom h]$.}
+
+\noindent Distribusi $\nu_Y$ dari $Y$ adalah ukuran pada $\Bbb R$ yang
+didefinisikan oleh rumus
+
+\Centerline{$\nu_YF=\nu_{\pmb{X}}h^{-1}[F]$}
+
+\noindent untuk dan hanya untuk himpunan-himpunan $F\subseteq\Bbb R$ sedemikian sehingga
+$h^{-1}[F]\in\Tau_{\pmb{X}}$. Selain itu
+
+\Centerline{$\Expn(Y)=\int h\,d\nu_{\pmb{X}}$}
+
+\noindent dalam arti bahwa jika salah satu dari keduanya ada dalam
+$[-\infty,\infty]$, maka yang lain juga ada dan keduanya sama.
+
+\proof{{\bf (a)(i)} Sekali lagi, tuliskan
+$(\Omega,\hat\Sigma,\hat\mu)$ untuk pelengkapan
+$(\Omega,\Sigma,\mu)$. Karena
+
+\Centerline{$\Omega\setminus\dom Y
+\subseteq\bigcup_{i\le n}(\Omega\setminus\dom X_i)
+  \cup\pmb{X}^{-1}[\BbbR^n\setminus\dom h]$}
+
+\noindent terabaikan (dengan menggunakan 271Bb), $\dom Y$ koterabaikan.
+Jika $a\in\Bbb R$, maka
+
+\Centerline{$E=\{x:x\in\dom h,\,h(x)\le a\}\in\Tau_{\pmb{X}},$}
+
+\noindent sehingga
+
+\Centerline{$\{\omega:\omega\in\Omega,\,Y(\omega)\le a\}
+=\pmb{X}^{-1}[E]\in\hat\Sigma$.}
+
+\noindent Karena $a$ sebarang, $Y$ terukur terhadap $\hat\Sigma$, dan
+merupakan variabel acak.
+
+\medskip
+
+\quad{\bf (ii)} Misalkan $\tilde h:\BbbR^n\to\Bbb R$ suatu perluasan dari
+$h$ ke seluruh $\BbbR^n$. Maka $\tilde h$ terukur terhadap
+$\Tau_{\pmb{X}}$, sehingga ukuran citra biasa
+$\nu_{\pmb{X}}\tilde h^{-1}$, yang didefinisikan pada
+$\{F:\tilde h^{-1}[F]\in\dom\nu_{\pmb{X}}\}$, merupakan ukuran probabilitas
+Radon pada $\Bbb R$ (256G). Namun untuk setiap $A\subseteq\Bbb R$,
+
+\Centerline{$\tilde h^{-1}[A]\symmdiff h^{-1}[A]
+\subseteq\BbbR^n\setminus\dom h$}
+
+\noindent terabaikan terhadap $\nu_{\pmb{X}}$, sehingga
+$\nu_{\pmb{X}}h^{-1}[F]=\nu_{\pmb{X}}\tilde h^{-1}[F]$ jika salah satunya
+terdefinisi.
+
+Jika $F\subseteq\Bbb R$ suatu himpunan Borel, maka
+
+\Centerline{$\nu_YF=\hat\mu\{\omega:Y(\omega)\in F\}
+=\hat\mu(\pmb{X}^{-1}[h^{-1}[F]])=\nu_{\pmb{X}}(h^{-1}[F])$.}
+
+\noindent Jadi $\nu_Y$ dan $\nu_{\pmb{X}}\tilde h^{-1}$ bersepakat pada
+himpunan-himpunan Borel dan sama (256D lagi).
+
+\medskip
+
+{\bf (b)} Sekarang terapkan Teorema 235E pada ukuran $\hat\mu$ dan
+$\nu_{\pmb{X}}$ serta fungsi $\phi=\pmb{X}$. Kita mempunyai
+
+\Centerline{$\int\chi(\pmb{X}^{-1}[F])d\hat\mu
+=\hat\mu(\pmb{X}^{-1}[F])=\nu_{\pmb{X}}F$}
+
+\noindent untuk setiap $F\in\Tau_{\pmb{X}}$, berdasarkan 271Bb. Karena $h$
+terukur secara virtual terhadap $\nu_{\pmb{X}}$ dan didefinisikan hampir di
+mana-mana terhadap $\nu_{\pmb{X}}$, 235Eb memberi tahu kita bahwa
+
+\Centerline{$\int h(\pmb{X})d\mu=\int h(\pmb{X})d\hat\mu
+=\int h\,d\nu_{\pmb{X}}$}
+
+\noindent setiap kali salah satu ruas terdefinisi dalam
+$[-\infty,\infty]$, dan inilah tepat hasil yang kita perlukan.
+}%end of proof of 271E
+
+\vleader{72pt}{271F}{Akibat} Jika $X$ suatu variabel acak tunggal dengan
+distribusi $\nu_{X}$, maka
+
+\Centerline{$\Expn(X)=\int_{-\infty}^{\infty}x\,\nu_X(dx)$}
+
+\noindent jika salah satunya terdefinisi dalam $[-\infty,\infty]$.
+Demikian pula
+
+\Centerline{$\Expn(X^2)=\int_{-\infty}^{\infty} x^2\,\nu_X(dx)$}
+
+\noindent (apa pun $X$). Jika $X$, $Y$ dua variabel acak\cmmnt{ (pada ruang
+probabilitas yang sama!)} maka kita mempunyai
+
+\Centerline{$\Expn(X\times Y)=\int xy\,\nu_{(X,Y)}d(x,y)$}
+
+\noindent jika salah satu ruas terdefinisi dalam $[-\infty,\infty]$.
+
+\medskip
+
+\noindent{\bf Catatan}\dvAnew{2013} Jika $\nu$ distribusi suatu variabel acak
+bernilai real, yaitu suatu ukuran probabilitas Radon pada $\Bbb R$, saya akan
+mengatakan bahwa {\bf ekspektasi} $\Expn(\nu)$ dari $\nu$ adalah
+$\int_{-\infty}^{\infty}x\,\nu(dx)$ jika nilai ini terdefinisi; jika $\nu$
+mempunyai ekspektasi hingga, maka {\bf varians} $\Var(\nu)$ adalah
+$\int x^2\,\nu(dx)-(\Expn(\nu))^2$. Jadi jika $X$ suatu variabel acak bernilai
+real dengan distribusi $\nu_X$, $\Expn(X)=\Expn(\nu_X)$ dan
+$\Var(X)=\Var(\nu_X)$ setiap kali nilai-nilai ini terdefinisi.
+
+\leader{271G}{Fungsi distribusi (a)} Jika $X$ suatu variabel acak bernilai
+real, {\bf fungsi distribusi}-nya adalah fungsi $F_X:\Bbb R\to[0,1]$ yang
+didefinisikan dengan menetapkan
+
+\Centerline{$F_X(a)=\Pr(X\le a)=\nu_X\ocint{-\infty,a}$}
+
+\noindent untuk setiap $a\in\Bbb R$. ({\bf Peringatan!} beberapa penulis
+lebih menyukai $F_X(a)=\Pr(X<a)$.) \cmmnt{Perhatikan bahwa $F_X$ tak
+menurun, bahwa $\lim_{a\to-\infty}F_X(a)=0$, bahwa
+$\lim_{a\to\infty}F_X(a)=1$ dan bahwa
+$\lim_{x\downarrow a}F_X(x)=F_X(a)$ untuk setiap $a\in\Bbb R$.
+Berdasarkan 271Ba,} $X$ dan $Y$ mempunyai distribusi yang sama jika dan hanya
+jika $F_X=F_Y$.
+
+\spheader 271Gb
+Jika $X_1,\ldots,X_n$ variabel-variabel acak bernilai real pada ruang
+probabilitas yang sama, {\bf fungsi distribusi (gabungan)} mereka adalah
+fungsi $F_{\pmb{X}}:\BbbR^n\to[0,1]$ yang didefinisikan dengan menuliskan
+
+\Centerline{$F_{\pmb{X}}(a)=\Pr(X_i\le\alpha_i\Forall i\le n)$}
+
+\noindent setiap kali $a=(\alpha_1,\ldots,\alpha_n)\in\BbbR^n$. Jika
+$\pmb{X}$ dan $\pmb{Y}$ mempunyai fungsi distribusi yang sama, keduanya
+mempunyai distribusi yang sama\cmmnt{, berdasarkan versi berdimensi $n$ dari
+271B}.
+
+\leader{271H}{Kerapatan} Misalkan $\pmb{X}=(X_1,\ldots,X_n)$ suatu keluarga
+variabel acak, semuanya didefinisikan pada ruang probabilitas yang sama. Suatu
+{\bf fungsi kerapatan} untuk $(X_1,\ldots,X_n)$ adalah turunan
+Radon-Nikod\'ym, terhadap ukuran Lebesgue, bagi distribusi
+$\nu_{\pmb{X}}$\cmmnt{; yaitu, suatu fungsi nonnegatif $f$, yang
+terintegralkan terhadap ukuran Lebesgue $\mu_L$ pada $\BbbR^n$, sedemikian
+sehingga
+
+\Centerline{$\int_Efd\mu_L=\nu_{\pmb{X}}E=\Pr(\pmb{X}\in E)$}
+
+\noindent untuk setiap himpunan Borel $E\subseteq\BbbR^n$ (256J) -- tentu
+saja jika fungsi semacam itu ada}.
+
+\leader{271I}{Proposisi} Misalkan $\pmb{X}=(X_1,\ldots,X_n)$ suatu keluarga
+variabel acak, semuanya didefinisikan pada ruang probabilitas yang sama.
+Tuliskan $\mu_L$ untuk ukuran Lebesgue pada $\BbbR^n$.
+
+(a) Terdapat fungsi kerapatan untuk $\pmb{X}$ jika dan hanya jika
+$\Pr(\pmb{X}\in E)=0$ untuk setiap himpunan Borel $E$ sedemikian sehingga
+$\mu_LE=0$.
+
+(b) Suatu fungsi nonnegatif $f$ yang terintegralkan secara Lebesgue adalah
+fungsi kerapatan untuk $\pmb{X}$ jika dan hanya jika
+$\int_{\ocint{-\infty,a}}fd\mu_L=\Pr(\pmb{X}\in\ocint{-\infty,a})$ untuk
+setiap $a\in\BbbR^n$.
+
+(c) Misalkan $f$ suatu fungsi kerapatan untuk $\pmb{X}$, dan
+$G=\{x:f(x)>0\}$.
+Maka jika $h$ suatu fungsi bernilai real terukur Lebesgue yang didefinisikan
+hampir di mana-mana dalam $G$,
+
+\Centerline{$\Expn(h(\pmb{X}))=\int h\,d\nu_{\pmb{X}}
+=\int h\times fd\mu_L$}
+
+\noindent jika salah satu dari ketiga integral itu terdefinisi dalam
+$[-\infty,\infty]$, dengan menafsirkan $(h\times f)(x)$ sebagai $0$ jika
+$f(x)=0$ dan $x\notin\dom h$.
+
+\proof{{\bf (a)} Terapkan 256J pada ukuran probabilitas Radon
+$\nu_{\pmb{X}}$.
+
+\medskip
+
+{\bf (b)} Tentu saja syarat tersebut perlu. Jika syarat itu dipenuhi, maka
+(berdasarkan teorema B.Levi)
+
+\Centerline{$\int fd\mu_L
+=\lim_{k\to\infty}\int_{\ocint{-\infty,k\pmb{1}}}fd\mu_L
+=\lim_{k\to\infty}\nu_{\pmb{X}}\ocint{-\infty,k\pmb{1}}
+=1$.}
+
+\noindent Jadi kita mempunyai ukuran probabilitas Radon $\nu$ yang
+didefinisikan dengan menuliskan
+
+\Centerline{$\nu E=\int_Efd\mu_L$}
+
+\noindent setiap kali $E\cap\{x:f(x)>0\}$ terukur Lebesgue (256E). Kita
+mengandaikan bahwa
+$\nu\ocint{-\infty,a}=\nu_{\pmb{X}}\ocint{-\infty,a}$ untuk setiap
+$a\in\BbbR^n$; berdasarkan 271Ba, seperti biasa, $\nu=\nu_{\pmb{X}}$,
+sehingga
+
+\Centerline{$\int_Efd\mu_L=\nu E=\nu_{\pmb{X}}E
+=\Pr(\pmb{X}\in E)$}
+
+\noindent untuk setiap himpunan Borel $E\subseteq\BbbR^n$, dan $f$ adalah
+fungsi kerapatan untuk $\pmb{X}$.
+
+\medskip
+
+{\bf (c)} Berdasarkan 256E, $\nu_{\pmb{X}}$ adalah ukuran integral tak tentu
+di atas $\mu_L$ yang berkaitan dengan $f$. Jadi, dengan menuliskan
+$G=\{x:f(x)>0\}$, kita mempunyai
+
+\Centerline{$\int h\,d\nu_{\pmb{X}}=\int h\times fd\mu_L$}
+
+\noindent setiap kali salah satunya terdefinisi dalam $[-\infty,\infty]$
+(235K). Berdasarkan 234La, $h$ terukur terhadap $\Tau_{\pmb{X}}$ dan
+didefinisikan hampir di mana-mana terhadap $\nu_{\pmb{X}}$, dengan
+$\Tau_{\pmb{X}}=\dom\nu_{\pmb{X}}$, sehingga
+$\Expn(h(\pmb{X}))=\int h\,d\nu_{\pmb{X}}$ berdasarkan 271E.
+}%end of proof of 271I
+
+\leader{271J}{}\cmmnt{ Perangkat yang dikembangkan dalam \S263 memadai
+untuk memberikan hasil yang sangat umum mengenai kerapatan variabel acak
+berbentuk $\phi(\pmb{X})$, sebagai berikut.
+
+\medskip
+
+\noindent}{\bf Teorema} Misalkan $\pmb{X}=(X_1,\ldots,X_n)$ suatu keluarga
+variabel acak, dan $D\subseteq\BbbR^n$ suatu himpunan Borel sedemikian sehingga
+$\Pr(\pmb{X}\in D)=1$. Misalkan $\phi:D\to\BbbR^n$ suatu fungsi yang dapat
+didiferensialkan relatif terhadap domainnya di setiap titik dalam $D$; untuk
+$x\in D$, misalkan $T(x)$ suatu turunan dari $\phi$ pada $x$, dan tetapkan
+$J(x)=|\det T(x)|$. Andaikan bahwa $J(x)\ne 0$ untuk setiap $x\in D$, bahwa
+$\pmb{X}$ mempunyai fungsi kerapatan $f$; dan andaikan pula bahwa
+$\sequence{k}{D_k}$ suatu barisan himpunan Borel yang saling lepas,
+yang gabungannya $D$, sedemikian sehingga $\phi_k=\phi\restr D_k$ injektif
+untuk setiap $k$. Maka $\phi(\pmb{X})$ mempunyai fungsi kerapatan
+$g=\sum_{k=0}^{\infty}g_k$ dengan
+
+$$\eqalignno{g_k(y)&=\Bover{f(\phi_k^{-1}(y))}{J(\phi_k^{-1}(y))}
+\text{ untuk }y\in\phi[D_k\cap\dom f],\cr
+&=0\text{ untuk }y\in\BbbR^n\setminus\phi[D_k].\cr}$$
+
+\proof{ Berdasarkan 262Ia, $\phi$ kontinu, sehingga terukur Borel, dan karena
+itu $\phi(\pmb{X})$ merupakan variabel acak.
+
+Untuk sementara, tetapkan $k\in\Bbb N$ dan suatu himpunan Borel
+$F\subseteq\BbbR^n$. Berdasarkan 263D(iii), $\phi[D_k]$ terukur, dan
+berdasarkan 263D(ii) $\phi[D_k\setminus\dom f]$ terabaikan. Fungsi $g_k$
+sedemikian sehingga $f(x)=J(x)g_k(\phi(x))$ untuk setiap
+$x\in D_k\cap\dom f$, sehingga berdasarkan 263D(v) kita mempunyai
+
+$$\eqalign{\int_Fg_k\,d\mu
+&=\int_{\phi[D_k]} g_k\times\chi F\,d\mu
+=\int_{D_k} J(x)g_k(\phi(x))\chi F(\phi(x))\mu(dx)\cr
+&=\int_{D_k\cap\phi^{-1}[F]}fd\mu
+=\Pr(\pmb{X}\in D_k\cap\phi^{-1}[F]).\cr}$$
+
+\noindent (Integral
+$\int_{\phi[D_k]} g_k\times\chi F$ terdefinisi karena
+$\int_{D_k}J\times(g_k\times\chi F)\phi$ terdefinisi, dan integral
+$\int
+g_k\times\chi F$ terdefinisi karena $\phi[D_k]$ terukur dan $g_k$ nol di luar
+$\phi[D_k]$.)
+
+Sekarang jumlahkan atas $k$. Setiap $g_k$ nonnegatif, sehingga berdasarkan
+teorema B.Levi (123A, 123Xa)
+
+$$\eqalign{\int_Fg\,d\mu
+&=\sum_{k=0}^{\infty}\int_Fg_k\,d\mu
+=\sum_{k=0}^{\infty}\Pr(\pmb{X}\in D_k\cap\phi^{-1}[F])\cr
+&=\Pr(\pmb{X}\in\phi^{-1}[F])
+=\Pr(\phi(\pmb{X})\in F).\cr}$$
+
+\noindent Karena $F$ sebarang, $g$ adalah fungsi kerapatan untuk
+$\phi(\pmb{X})$, sebagaimana diklaim.
+}%end of proof of 271J
+
+\leader{271K}{}\cmmnt{ Penerapan teorema terakhir pada transformasi biasa
+kadang-kadang tidak langsung, sehingga saya memberikan sebuah contoh.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $X$, $Y$ dua variabel acak dengan suatu
+fungsi kerapatan gabungan $f$. Maka $X\times Y$ mempunyai fungsi kerapatan
+$h$, dengan
+
+\Centerline{$h(u)
+=\int_{-\infty}^{\infty}\Bover1{|v|}f(\bover{u}{v},v)dv$}
+
+\noindent setiap kali nilai ini terdefinisi dalam $\Bbb R$.
+
+\proof{ Tetapkan $\phi(x,y)=(xy,y)$ untuk $x$, $y\in\BbbR^2$. Maka $\phi$
+dapat didiferensialkan, dengan turunan $T(x,y)=\Matrix{y&x\\0&1}$, sehingga
+$J(x,y)=|\det T(x,y)|=|y|$. Tetapkan $D=\{(x,y):y\ne 0\}$; maka $D$ adalah
+himpunan Borel koterabaikan dalam $\BbbR^2$ dan $\phi\restr D$ injektif.
+Sekarang $\phi[D]=D$ dan $\phi^{-1}(u,v)=(\bover{u}{v},v)$ untuk $v\ne 0$.
+Jadi $\phi(X,Y)=(X\times Y,Y)$ mempunyai fungsi kerapatan $g$, dengan
+
+\Centerline{$g(u,v)=\Bover{f(u/v,v)}{|v|}$ jika $v\ne 0$.}
+
+Untuk menemukan fungsi kerapatan bagi $X\times Y$, kita menghitung
+
+\Centerline{$\Pr(X\times Y\le a)
+=\int_{\ocint{-\infty,a}\times\Bbb R}g
+=\int_{-\infty}^a\int_{-\infty}^{\infty}g(u,v)dv\,du
+=\int_{-\infty}^ah$}
+
+\noindent berdasarkan teorema Fubini (252B, 252C). Khususnya, $h$ terdefinisi
+dan berhingga hampir di mana-mana; dan berdasarkan 271Ib, fungsi tersebut
+adalah fungsi
+kerapatan untuk $X\times Y$.
+}%end of proof of 271K
+
+\leader{*271L}{}\cmmnt{ Ketika suatu variabel acak disajikan sebagai limit
+suatu barisan variabel acak, hasil berikut dapat sangat berguna.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $\sequencen{X_n}$ suatu barisan variabel
+acak bernilai real yang konvergen dalam ukuran menuju suatu variabel acak
+$X$\cmmnt{ (definisi: 245A)}. Dengan menuliskan $F_{X_n}$, $F_X$ untuk
+fungsi distribusi masing-masing $X_n$, $X$,
+
+\Centerline{$F_X(a)=\inf_{b>a}\liminf_{n\to\infty}F_{X_n}(b)
+=\inf_{b>a}\limsup_{n\to\infty}F_{X_n}(b)$}
+
+\noindent untuk setiap $a\in\Bbb R$.
+
+\proof{ Tetapkan $\gamma=\inf_{b>a}\liminf_{n\to\infty}F_{X_n}(b)$,
+$\gamma'=\inf_{b>a}\limsup_{n\to\infty}F_{X_n}(b)$.
+
+\medskip
+
+{\bf (a)} $F_X(a)\le\gamma$. \Prf\ Ambil sembarang $b>a$ dan $\epsilon>0$.
+Maka terdapat $n_0\in\Bbb N$ sedemikian sehingga
+$\Pr(|X_n-X|\ge b-a)\le\epsilon$ untuk setiap $n\ge n_0$ (245F). Sekarang,
+untuk $n\ge n_0$,
+
+\Centerline{$F_X(a)
+=\Pr(X\le a)
+\le\Pr(X_n\le b)+\Pr(X_n-X\ge b-a)
+\le F_{X_n}(b)+\epsilon$.}
+
+\noindent Jadi $F_X(a)\le\liminf_{n\to\infty}F_{X_n}(b)+\epsilon$; karena
+$\epsilon$ sebarang, $F_X(a)\le\liminf_{n\to\infty}F_{X_n}(b)$; karena
+$b$ sebarang, $F_X(a)\le\gamma$.\ \Qed
+
+\medskip
+
+{\bf (b)} $\gamma'\le F_X(a)$. \Prf\ Misalkan $\epsilon>0$. Maka terdapat
+$\delta>0$ sedemikian sehingga $F_X(a+2\delta)\le F_X(a)+\epsilon$ (271Ga).
+Selanjutnya, terdapat $n_0\in\Bbb N$ sedemikian sehingga
+$\Pr(|X_n-X|\ge\delta)\le\epsilon$ untuk setiap $n\ge n_0$.
+Dalam hal ini, untuk $n\ge n_0$,
+
+$$\eqalign{F_{X_n}(a+\delta)
+&=\Pr(X_n\le a+\delta)
+\le\Pr(X\le a+2\delta)+\Pr(X-X_n\ge\delta)\cr
+&\le F_X(a+2\delta)+\epsilon
+\le F_X(a)+2\epsilon.\cr}$$
+
+\noindent Dengan demikian
+
+\Centerline{$\gamma'\le\limsup_{n\to\infty}F_{X_n}(a+\delta)
+\le F_X(a)+2\epsilon$.}
+
+\noindent Karena $\epsilon$ sebarang, $\gamma'\le F_X(a)$.\ \Qed
+
+\medskip
+
+{\bf (c)} Karena tentu saja $\gamma\le\gamma'$, haruslah
+$F_X(a)=\gamma=\gamma'$, sebagaimana diklaim.
+}%end of proof of 271L
+
+\exercises{
+\leader{271X}{Latihan dasar $\pmb{>}$(a)}
+%\spheader 271Xa
+Misalkan $X$ suatu variabel acak bernilai real dengan ekspektasi hingga, dan
+$\epsilon>0$. Tunjukkan bahwa
+$\Pr(|X-\Expn(X)|\ge\epsilon)\le\Bover1{\epsilon^2}\Var(X)$.
+(Ini adalah {\bf ketaksamaan Chebyshev}.)
+%271A
+
+\sqheader 271Xb Misalkan $F:\Bbb R\to[0,1]$ suatu fungsi tak menurun
+sedemikian sehingga
+(i) $\lim_{a\to-\infty}F(a)=0$ (ii) $\lim_{a\to\infty}F(a)=1$ (iii)
+$\lim_{x\downarrow a}F(x)=F(a)$ untuk setiap $a\in\Bbb R$. Tunjukkan bahwa
+terdapat tepat satu ukuran probabilitas Radon $\nu$ pada $\Bbb R$ sedemikian
+sehingga $F(a)=\nu\ocint{-\infty,a}$ untuk setiap
+$a\in\Bbb R$. \Hint{114Xa.} Selanjutnya tunjukkan bahwa $F$
+adalah fungsi distribusi dari suatu variabel acak.
+%271G
+
+\sqheader 271Xc Misalkan $X$ suatu variabel acak bernilai real dengan fungsi
+kerapatan $f$. (i) Tunjukkan bahwa $|X|$ mempunyai fungsi kerapatan $g_1$
+dengan $g_1(x)=f(x)+f(-x)$ setiap kali $x\ge 0$ dan $f(x)$, $f(-x)$ keduanya
+terdefinisi, dan $0$ jika tidak. (ii) Tunjukkan bahwa $X^2$ mempunyai fungsi
+kerapatan $g_2$ dengan
+$g_2(x)=(f(\sqrt{x})+f(-\sqrt{x}))/2\sqrt{x}$ setiap kali $x>0$ dan nilai ini
+terdefinisi, serta $0$ untuk $x$ lainnya. (iii) Tunjukkan bahwa jika
+$\Pr(X=0)=0$ maka $1/X$ mempunyai fungsi kerapatan $g_3$ dengan
+$g_3(x)=\bover1{x^2}f(\bover1x)$ setiap kali nilai ini terdefinisi.
+(iv) Tunjukkan bahwa jika $\Pr(X<0)=0$ maka $\sqrt{X}$ mempunyai fungsi
+kerapatan $g_4$ dengan $g_4(x)=2xf(x^2)$ jika $x\ge 0$ dan $f(x^2)$
+terdefinisi, serta $0$ jika tidak.
+%271J
+
+\sqheader 271Xd Misalkan $X$ dan $Y$ variabel-variabel acak dengan fungsi
+kerapatan gabungan $f:\BbbR^2\to\Bbb R$. Tunjukkan bahwa $X+Y$ mempunyai
+fungsi kerapatan $h$ dengan $h(u)=\int f(u-v,v)dv$ untuk hampir setiap $u$.
+%271K
+
+\spheader 271Xe Misalkan $X$, $Y$ variabel-variabel acak dengan fungsi kerapatan
+gabungan $f:\BbbR^2\to\Bbb R$. Tunjukkan bahwa $X/Y$ mempunyai fungsi
+kerapatan $h$ dengan $h(u)=\int|v|f(uv,v)dv$ untuk hampir setiap $u$.
+%271K
+
+\spheader 271Xf Rancang suatu bukti alternatif untuk 271K dengan menggunakan
+teorema Fubini dan substitusi satu dimensi untuk menunjukkan bahwa
+
+\Centerline{$\int_a^b\int_{-\infty}^{\infty}
+\Bover1{|v|}f(\bover{u}{v},v)dv\,du
+=\int_{\{(u,v):a\le uv\le b\}}f$}
+
+\noindent setiap kali $a\le b$ dalam $\Bbb R$.
+%271K
+
+\leader{271Y}{Latihan lanjutan (a)}
+%\spheader 271Ya
+Misalkan $\frak T$ topologi dari
+$\BbbR^{\Bbb N}$ dan $\Cal B$ aljabar-sigma himpunan Borel (256Yf).
+(i) Misalkan $\Cal I$ keluarga himpunan berbentuk
+
+\Centerline{$\{x:x\in\BbbR^{\Bbb N},\,
+x(i)\le \alpha_i\Forall i\le n\}$,}
+
+\noindent dengan $n\in\Bbb N$ dan $\alpha_i\in\Bbb R$
+untuk setiap $i\le n$. Tunjukkan bahwa $\Cal B$ adalah keluarga terkecil
+dari bagian-bagian $\BbbR^{\Bbb N}$ sedemikian sehingga ($\alpha$)
+$\Cal I\subseteq\Cal B$
+($\beta$) $B\setminus A\in\Cal B$ setiap kali $A$, $B\in\Cal B$ dan
+$A\subseteq B$ ($\gamma$) $\bigcup_{k\in\Bbb N}A_k\in\Cal B$ untuk setiap
+barisan tak menurun $\sequence{k}{A_k}$ dalam $\Cal B$. (ii) Tunjukkan bahwa
+jika $\mu$, $\mu'$ dua ukuran berhingga total yang didefinisikan pada
+$\BbbR^{\Bbb N}$, dan
+$\mu F$ serta $\mu' F$ terdefinisi dan sama untuk setiap $F\in\Cal I$, maka
+$\mu E$ dan $\mu' E$ terdefinisi dan sama untuk setiap $E\in\Cal B$.
+(iii) Tunjukkan bahwa jika $\Omega$ suatu himpunan dan $\Sigma$ suatu
+aljabar-sigma bagian-bagian dari $\Omega$ dan
+$X:\Omega\to\BbbR^{\Bbb N}$ suatu fungsi, maka $X^{-1}[E]\in\Sigma$ untuk
+setiap $E\in\Cal B$ jika dan hanya jika $\pi_iX$ terukur terhadap $\Sigma$
+untuk setiap $i\in \Bbb N$, dengan $\pi_i(x)=x(i)$ untuk setiap
+$x\in\BbbR^{\Bbb N}$, $i\in \Bbb N$. (iv) Tunjukkan bahwa jika
+$\pmb{X}=\sequence{i}{X_i}$ suatu barisan variabel acak bernilai real pada ruang
+probabilitas $(\Omega,\Sigma,\mu)$, maka terdapat tepat satu ukuran
+probabilitas $\nu_{\pmb{X}}^{\Cal B}$, dengan domain $\Cal B$, sedemikian
+sehingga
+$\nu_{\pmb{X}}^{\Cal B}\{x:x(i)\le\alpha_i\Forall i\le n\}
+=\Pr(X_i\le\alpha_i\Forall i\le n)$ untuk setiap
+$\alpha_0,\ldots,\alpha_n\in\Bbb R$. (v) Di bawah syarat-syarat (iv),
+tunjukkan bahwa terdapat tepat satu ukuran Radon $\nu_{\pmb{X}}$ pada
+$\BbbR^{\Bbb N}$ (dalam arti 256Yf) sedemikian sehingga
+$\nu_{\pmb{X}}\{x:x(i)\le\alpha_i\Forall i\le n\}
+=\Pr(X_i\le\alpha_i\Forall i\le n)$ untuk setiap
+$\alpha_0,\ldots,\alpha_n\in\Bbb R$.
+
+\header{271Yb}{\bf (b)} Misalkan $F:\BbbR^2\to[0,1]$ suatu fungsi.
+Tunjukkan bahwa pernyataan berikut ekuivalen: (i) $F$ adalah fungsi distribusi
+dari suatu pasangan $(X_1,X_2)$ variabel acak (ii) terdapat suatu ukuran
+probabilitas $\nu$ pada $\BbbR^2$ sedemikian sehingga
+$\nu\ocint{-\infty,a}=F(a)$ untuk setiap $a\in\BbbR^2$
+(iii)($\alpha$)
+$F(\alpha_1,\alpha_2)+F(\beta_1,\beta_2)
+\ge F(\alpha_1,\beta_2)+F(\beta_1,\alpha_2)$ setiap kali
+$\alpha_1\le\beta_1$
+dan $\alpha_2\le\beta_2$ ($\beta$) $F(\alpha_1,\alpha_2)
+=\lim_{\xi_1\downarrow\alpha_1,\xi_2\downarrow\alpha_2}F(\xi_1,\xi_2)$
+untuk setiap $\alpha_1$, $\alpha_2$ ($\gamma$)
+$\lim_{\alpha\to-\infty}F(\alpha,\beta)
+=\lim_{\alpha\to-\infty}F(\beta,\alpha)=0$ untuk semua $\beta$
+($\delta$) $\lim_{\alpha\to\infty}F(\alpha,\alpha)=1$.
+\Hint{untuk interval setengah terbuka tak kosong $\ocint{a,b}$, tetapkan
+$\lambda\ocint{a,b}=F(\alpha_1,\alpha_2)+F(\beta_1,\beta_2)
+  -F(\alpha_1,\beta_2)-F(\beta_1,\alpha_2)$, dan
+lanjutkan seperti dalam 115B-115F.}
+
+\header{271Yc}{\bf (c)} Perumum (b) ke dimensi yang lebih tinggi, dengan
+mencari rumus yang sesuai untuk menggantikan rumus dalam (iii-$\alpha$) dari
+(b).
+
+\spheader 271Yd Misalkan $(\Omega,\Sigma,\mu)$ suatu ruang probabilitas dan
+$\Cal F$ suatu filter pada $\eusm L^0(\mu)$ yang konvergen menuju
+$X_0\in\eusm L^0(\mu)$ untuk topologi konvergensi dalam ukuran. Tunjukkan
+bahwa, dengan menuliskan $F_X$ untuk fungsi distribusi dari
+$X\in\eusm L^0(\mu)$,
+
+\Centerline{$F_{X_0}(a)=\inf_{b>a}\liminf_{X\to\Cal F}F_X(b)
+=\inf_{b>a}\limsup_{X\to\Cal F}F_X(b)$}
+
+\noindent untuk setiap $a\in\Bbb R$.
+%271L
+
+\spheader 271Ye\dvAnew{2009.} Misalkan $X$, $Y$ variabel-variabel acak
+nonnegatif dengan distribusi yang sama, dan
+$h:\coint{0,\infty}\to\coint{0,\infty}$ suatu fungsi tak menurun. Tunjukkan
+bahwa $\Expn(X\times hY)\le\Expn(Y\times hY)$.
+\Hint{dalam bahasa 252Yo, $(Y\times hY)^*=Y^*\times(hY)^*$.}
+}%end of exercises
+
+\endnotes{
+\Notesheader{271} Sebagian besar bagian ini tampaknya telah dipenuhi oleh
+hal-hal teknis. Ini mungkin tidak mengherankan mengingat bagian ini membahas
+hubungan antara suatu variabel acak vektor $\pmb{X}$ dan distribusi terkait
+$\nu_{\pmb{X}}$, dan hal ini dengan sendirinya membawa kita ke ladang ranjau
+yang telah saya coba petakan dalam \S235. Sesungguhnya, saya menggunakan
+hasil dari \S235 dua kali; sekali dalam 271E, dengan
+$\phi(\omega)=\pmb{X}(\omega)$ dan $J(\omega)=1$, dan sekali dalam 271I,
+dengan $\phi(x)=x$ dan $J(x)=f(x)$.
+
+Fungsi distribusi variabel acak satu dimensi mudah dicirikan (271Xb); dalam
+dimensi yang lebih tinggi kita harus bekerja lebih keras (271Yb-271Yc).
+Distribusi, alih-alih fungsi distribusi, dapat diuraikan untuk barisan tak
+hingga variabel acak (271Ya); bahkan, gagasan ini dapat diperluas ke keluarga
+tak terhitung, tetapi hal ini memerlukan teori ukuran topologis yang
+sesungguhnya dan termasuk dalam Jilid 4.
+
+Pernyataan 271J rumit, bahkan dapat dikatakan berbelit-belit. Pokoknya ialah
+bahwa banyak transformasi $\phi$ yang paling penting tidak dengan sendirinya
+injektif, tetapi dapat dengan mudah diuraikan menjadi fragmen-fragmen injektif
+(lihat, misalnya, 271Xc dan 263Xd). Pokok 271K ialah bahwa kita sering ingin
+menerapkan gagasan di sini pada transformasi yang singular, dan bahkan
+mengubah dimensi variabel acak. Saya belum memberikan teorema yang membuat
+penerapan semacam itu rutin, dan lebih menyarankan agar Anda mencari siasat
+seperti yang digunakan dalam bukti 271K, yang bagaimanapun diperlukan jika
+Anda menginginkan rumus-rumus yang mudah ditangani. Tentu saja metode lain
+tersedia (271Xf).
+}%end of notes
+
+\discrpage

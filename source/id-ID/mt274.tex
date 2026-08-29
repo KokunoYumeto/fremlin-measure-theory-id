@@ -1,0 +1,1084 @@
+\frfilename{mt274.tex}
+\versiondate{13.4.10}
+\copyrightdate{1995}
+
+\def\chaptername{Teori probabilitas}
+\def\sectionname{Teorema limit pusat}
+
+\newsection{274}
+
+Teorema besar kedua yang menjadi pokok bab ini mempunyai jenis yang baru.
+Teorema ini merupakan teorema limit, tetapi limit yang terlibat adalah limit
+{\it distribusi}, bukan limit fungsi (seperti dalam teorema limit kuat di atas
+atau teorema martingal di bawah), dan bukan pula limit kelas ekuivalensi fungsi
+(seperti dalam Bab 24). Saya memberikan tiga bentuk teorema ini, dalam
+274I-274K, semuanya diturunkan sebagai akibat Teorema 274G; pembuktiannya
+tersebar sepanjang 274C-274G. Dalam 274A-274B dan 274M saya memberikan
+sifat-sifat paling dasar dari distribusi normal.
+
+\leader{274A}{Distribusi normal }\cmmnt{Kita memerlukan beberapa fakta dari
+teori probabilitas dasar.
+
+\medskip
+
+}{\bf (a)}\cmmnt{ Ingat bahwa
+
+\Centerline{$\int_{-\infty}^{\infty}e^{-x^2/2}dx=\sqrt{2\pi}$}
+
+\noindent (263G). Oleh karena itu, jika kita menetapkan}\dvro{ Jika kita menetapkan}{}
+
+\Centerline{$\mu_G E=\Bover1{\sqrt{2\pi}}\int_Ee^{-x^2/2}dx$}
+
+\noindent untuk setiap himpunan terukur Lebesgue $E$, maka $\mu_G$ adalah
+ukuran probabilitas Radon\cmmnt{ (256E)}; kita menyebutnya {\bf distribusi
+normal baku}. Fungsi distribusi yang bersesuaian adalah
+
+\Centerline{$\Phi(a)
+\cmmnt{\mskip5mu =\mu_G\ocint{-\infty,a}}
+=\Bover1{\sqrt{2\pi}}\int_{-\infty}^ae^{-x^2/2}dx$}
+
+\noindent untuk $a\in\Bbb R$; di seluruh bagian ini saya akan mencadangkan
+lambang $\Phi$ untuk fungsi tersebut.
+
+\cmmnt{Dengan menulis $\Sigma$ untuk aljabar himpunan bagian terukur
+Lebesgue dari $\Bbb R$, $(\Bbb R,\Sigma,\mu_G)$ adalah ruang probabilitas.
+Perhatikan bahwa ruang ini lengkap, dan mempunyai himpunan-himpunan terabaikan
+yang sama dengan ukuran Lebesgue, karena $e^{-x^2/2}>0$ untuk setiap
+$x$ (bandingkan 234Lc).}
+
+\header{274Ab}{\bf (b)} Variabel acak $X$ disebut {\bf normal baku}
+jika distribusinya adalah $\mu_G$\cmmnt{; yakni, jika fungsi
+$x\mapsto\Bover1{\sqrt{2\pi}}e^{-x^2/2}$ merupakan fungsi kepadatan bagi $X$.
+Maksud dari catatan dalam (a) adalah bahwa variabel acak demikian memang ada;
+misalnya, ambil ruang probabilitas $(\Bbb R,\Sigma,\mu_G)$ di sana, dan
+tetapkan $X(x)=x$ untuk setiap $x\in\Bbb R$}.
+
+\header{274Ac}{\bf (c)} Jika $X$ adalah variabel acak normal baku, maka
+
+\Centerline{$\Expn(X)
+=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}xe^{-x^2/2}dx
+=0$,}
+
+\Centerline{$\Var(X)
+=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}x^2e^{-x^2/2}dx
+=1$\dvro{.}{}}
+
+\cmmnt{\noindent berdasarkan 263H.}
+
+\header{274Ad}{\bf (d)} Secara lebih umum, variabel acak $X$ disebut {\bf
+normal} jika terdapat $a\in\Bbb R$ dan $\sigma>0$ sedemikian sehingga
+$Z=(X-a)/\sigma$ normal baku. Dalam kasus ini\cmmnt{ $X=\sigma Z+a$ sehingga}
+$\Expn(X)\cmmnt{\mskip5mu =\sigma\Expn(Z)+a}=a$,
+$\Var(X)\cmmnt{\mskip5mu =\sigma^2\Var(Z)}=\sigma^2$.
+\cmmnt{
+
+Untuk setiap $c\in\Bbb R$, kita mempunyai
+
+$$\eqalignno{\Bover1{\sigma\sqrt{2\pi}}
+  \int_{-\infty}^ce^{-(x-a)^2/2\sigma^2}dx
+&=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{(c-a)/\sigma}
+  e^{-y^2/2}dy\cr
+\noalign{\noindent (dengan menyubstitusikan $x=a+\sigma y$ untuk
+$-\infty<y\le(c-a)/\sigma$)}
+&=\Pr(Z\le\Bover{c-a}{\sigma})
+=\Pr(X\le c).\cr}$$
+
+\noindent Jadi}
+$x\mapsto\Bover1{\sigma\sqrt{2\pi}}e^{-(x-a)^2/2\sigma^2}$
+adalah fungsi kepadatan bagi $X$\cmmnt{ (271Ib)}.
+Sebaliknya,\cmmnt{ tentu saja,} variabel acak
+dengan fungsi kepadatan seperti ini adalah normal,
+dengan ekspektasi $a$ dan varians $\sigma^2$.
+{\bf Distribusi normal} adalah distribusi dengan fungsi-fungsi kepadatan ini.
+
+\header{274Ae}{\bf (e)} Jika\cmmnt{ $Z$ normal baku, maka $-Z$ juga normal
+baku, karena
+
+\Centerline{$\Pr(-Z\le a)=\Pr(Z\ge -a)
+=\Bover1{\sqrt{2\pi}}\int_{-a}^{\infty}e^{-x^2/2}dx
+=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{a}e^{-x^2/2}dx$.}
+
+\noindent Definisi dalam kalimat pertama (d) sekarang memperlihatkan dengan
+jelas bahwa jika} $X$ normal, maka $a+bX$ juga normal untuk setiap
+$a\in\Bbb R$ dan $b\in\Bbb R\setminus\{0\}$.
+
+\leader{274B}{Proposisi} Misalkan $X_1,\ldots,X_n$ adalah variabel acak
+normal yang saling bebas. Maka $Y=X_1+\ldots+X_n$ normal, dengan
+$\Expn(Y)=\Expn(X_1)+\ldots+\Expn(X_n)$ dan
+$\Var(Y)=\Var(X_1)+\ldots+\Var(X_n)$.
+
+\proof{ Ada tak terhitung banyaknya bukti untuk fakta ini; bukti berikut
+memberi saya kesempatan untuk memperlihatkan kekuatan Bab 26, tetapi tentu
+saja (dengan harga berupa aljabar yang agak tidak menyenangkan) 272U juga
+memberikan hasil tersebut.
+
+\medskip
+
+{\bf (a)} Tinjau dahulu kasus $n=2$. Dengan menetapkan
+$a_i=\Expn(X_i)$, $\sigma_i=\sqrt{\Var(X_i)}$,
+$Z_i=(X_i-a_i)/\sigma_i$
+kita memperoleh variabel normal baku $Z_1$, $Z_2$ yang saling bebas. Tetapkan
+$\rho=\sqrt{\sigma_1^2+\sigma_2^2}$, dan nyatakan $\sigma_1$, $\sigma_2$
+sebagai $\rho\cos\theta$, $\rho\sin\theta$. Tinjau $U=\cos\theta
+Z_1+\sin\theta Z_2$. Kita tahu bahwa $(Z_1,Z_2)$ mempunyai fungsi kepadatan
+
+\Centerline{$(\zeta_1,\zeta_2)\mapsto g(\zeta_1,\zeta_2)=
+\Bover1{2\pi}e^{-(\zeta_1^2+\zeta_2^2)/2}$}
+
+\noindent (272I). Oleh karena itu, untuk setiap $c\in\Bbb R$,
+
+\Centerline{$\Pr(U\le c)=\int_Fg(z)dz$,}
+
+\noindent dengan
+$F=\{(\zeta_1,\zeta_2):\zeta_1\cos\theta+\zeta_2\sin\theta\le c\}$.
+Namun sekarang misalkan $T$ adalah matriks
+
+$$\Matrix{\cos\theta&-\sin\theta\\\sin\theta&\cos\theta}.$$
+
+\noindent Maka mudah diperiksa bahwa
+
+\Centerline{$T^{-1}[F]=\{(\eta_1,\eta_2):\eta_1\le c\}$,}
+
+\Centerline{$\det T=1$,
+\quad$g(Ty)=g(y)$ untuk setiap $y\in\BbbR^2$,}
+
+\noindent sehingga berdasarkan 263A
+
+\Centerline{$\Pr(U\le c)=\int_Fg(z)dz=\int_{T^{-1}[F]}g(Ty)dy
+=\int_{\ocint{-\infty,c}\times\Bbb R}g(y)dy
+=\Pr(Z_1\le c)=\Phi(c)$.}
+
+\noindent Karena ini benar untuk setiap $c\in\Bbb R$, $U$ juga normal baku
+(saya kembali menggunakan 271Ga). Tetapi
+
+\Centerline{$X_1+X_2=\sigma_1Z_1+\sigma_2Z_2+a_1+a_2
+=\rho U+a_1+a_2$,}
+
+\noindent sehingga $X_1+X_2$ normal.
+
+\medskip
+
+{\bf (b)} Sekarang kita dapat melakukan induksi pada $n$. Jika $n=1$
+hasilnya seketika. Untuk langkah induksi menuju $n+1\ge 2$, kita tahu bahwa
+$X_1+\ldots+X_n$ normal, berdasarkan hipotesis induksi, dan bahwa $X_{n+1}$
+saling bebas dengan $X_1+\ldots+X_n$, berdasarkan 272L. Jadi
+$X_1+\ldots+X_n+X_{n+1}$ normal, berdasarkan (a).
+
+Perhitungan ekspektasi dan varians $X_1+\ldots+X_n$ langsung diperoleh dari
+271Ab dan 272S.
+}%end of proof of 274B
+
+\leader{274C}{Lemma} Misalkan $U_0,\ldots,U_n,V_0,\ldots,V_n$ adalah
+variabel acak bernilai real yang saling bebas dan
+$h:\Bbb R\to\Bbb R$ fungsi terukur Borel yang terbatas. Maka
+
+\Centerline{$|\Expn\bigl(h(\sum_{i=0}^nU_i)-h(\sum_{i=0}^nV_i)\bigr)|
+\le\sum_{i=0}^n\sup_{t\in\Bbb R}|\Expn\bigl(h(t+U_i)-h(t+V_i)\bigr)|$.}
+
+\proof{ Untuk $0\le j\le n+1$, tetapkan
+$Z_j=\sum_{i=0}^{j-1}U_i+\sum_{i=j}^nV_i$, dengan mengambil
+$Z_0=\sum_{i=0}^nV_i$ dan $Z_{n+1}=\sum_{i=0}^nU_i$, dan untuk $j\le n$
+tetapkan
+$W_j=\sum_{i=0}^{j-1}U_i+\sum_{i=j+1}^nV_i$, sehingga $Z_j=W_j+V_j$ dan
+$Z_{j+1}=W_j+U_j$ serta $W_j$, $U_j$, dan $V_j$ saling bebas (saya
+menggunakan 272K, seperti dalam 272L). Maka
+
+$$\eqalign{|\Expn\bigl(h(\sum_{i=0}^nU_i)-h(\sum_{i=0}^nV_i)\bigr)|
+&=|\Expn\bigl(\sum_{i=0}^nh(Z_{i+1})-h(Z_i)\bigr)|\cr
+&\le\sum_{i=0}^n|\Expn\bigl(h(Z_{i+1})-h(Z_i)\bigr)|\cr
+&=\sum_{i=0}^n|\Expn\bigl(h(W_i+U_i)-h(W_i+V_i)\bigr)|.\cr}$$
+
+Untuk menaksir jumlah ini, saya mengubahnya menjadi jumlah integral sebagai
+berikut. Untuk setiap $i$, misalkan $\nu_{W_i}$ adalah distribusi $W_i$,
+dan demikian seterusnya. Karena $(w,u)\mapsto w+u$ kontinu, sehingga terukur
+Borel, $(w,u)\mapsto h(w+u)$ juga terukur Borel; oleh karena itu
+$(w,u,v)\mapsto h(w+u)-h(w+v)$ terukur untuk setiap ukuran produk
+$\nu_{W_i}\times\nu_{U_i}\times\nu_{V_i}$ pada $\BbbR^3$, dan
+271E serta 272G memberi kita
+
+$$\eqalignno{\bigl|\Expn\bigl(h(W_i+U_i)-&h(W_i+V_i)\bigr)\bigr|\cr
+&=\bigl|\int h(w+u)-h(w+v)
+(\nu_{W_i}\times\nu_{U_i}\times\nu_{V_i})d(w,u,v)\bigr|\cr
+&=\bigl|\int\bigl(\int h(w+u)-h(w+v)(\nu_{U_i}\times\nu_{V_i})d(u,v)
+\bigr)\nu_{W_i}(dw)\bigr|\cr
+&\le\int\bigl|\int h(w+u)-h(w+v)(\nu_{U_i}\times\nu_{V_i})d(u,v)\bigr|
+\nu_{W_i}(dw)\cr
+&=\int\bigl|\Expn\bigl(h(w+U_i)-h(w+V_i)\bigr)\bigr|\nu_{W_i}(dw)\cr
+&\le\sup_{t\in\Bbb R}
+    \bigl|\Expn\bigl(h(t+U_i)-h(t+V_i)\bigr)\bigr|.\cr}$$
+
+\noindent Jadi kita memperoleh
+
+$$\eqalign{|\Expn\bigl(h(\sum_{i=0}^nU_i)-h(\sum_{i=0}^nV_i)\bigr)|
+&\le\sum_{i=0}^n|\Expn\bigl(h(W_i+U_i)-h(W_i+V_i)\bigr)|\cr
+&\le\sum_{i=0}^n
+\sup_{t\in\Bbb R}|\Expn\bigl(h(t+U_i)-h(t+V_i)\bigr)|,\cr}$$
+
+\noindent sebagaimana diperlukan.
+}%end of proof of 274C
+
+\leader{274D}{Lemma} Misalkan $h:\Bbb R\to\Bbb R$ adalah fungsi terbatas
+yang terdiferensialkan tiga kali sedemikian sehingga
+$M_2=\sup_{x\in\Bbb R}|h''(x)|$, $M_3=\sup_{x\in\Bbb R}|h'''(x)|$
+keduanya berhingga. Misalkan $\epsilon>0$.
+
+(a) Misalkan $U$ adalah variabel acak bernilai real dengan ekspektasi nol dan
+varians berhingga $\sigma^2$. Maka untuk setiap $t\in\Bbb R$ kita mempunyai
+
+\Centerline{$|\Expn(h(t+U))-h(t)-\Bover{\sigma^2}2h''(t)|
+\le\Bover16\epsilon M_3\sigma^2+M_2\Expn(\psi_{\epsilon}(U))$}
+
+\noindent dengan $\psi_{\epsilon}(x)=0$ jika $|x|\le \epsilon$, dan $x^2$
+jika $|x|>\epsilon$.
+
+(b) Misalkan $U_0,\ldots,U_n,V_0,\ldots,V_n$ adalah variabel acak yang
+saling bebas dengan varians berhingga, dan anggap bahwa
+$\Expn(U_i)=\Expn(V_i)=0$ serta
+$\Var(U_i)=\Var(V_i)=\sigma_i^2$ untuk setiap $i\le n$. Maka
+
+$$\eqalign{|\Expn\bigl(h(\sum_{i=0}^n&U_i)-h(\sum_{i=0}^nV_i)\bigr)|\cr
+&\le\Bover13\epsilon M_3\sum_{i=0}^n\sigma_i^2
++M_2\sum_{i=0}^n\Expn\bigl(\psi_{\epsilon}(U_i)\bigr)
++M_2\sum_{i=0}^n\Expn\bigl(\psi_{\epsilon}(V_i)\bigr).\cr}$$
+
+\proof{{\bf (a)} Intinya adalah bahwa, berdasarkan teorema Taylor dengan
+sisa,
+
+\Centerline{$|h(t+x)-h(t)-xh'(t)|\le\Bover12M_2x^2$,}
+
+\Centerline{$|h(t+x)-h(t)-xh'(t)-\Bover12x^2h''(t)|
+\le\Bover16M_3|x|^3$}
+
+\noindent untuk setiap $x\in\Bbb R$. Jadi
+
+\Centerline{$|h(t+x)-h(t)-xh'(t)-\Bover12x^2h''(t)|
+\le\min(\Bover16M_3|x|^3,M_2x^2)
+\le \Bover16\epsilon M_3x^2+M_2\psi_{\epsilon}(x)$.}
+
+\noindent Dengan mengintegralkan terhadap distribusi $U$, kita memperoleh
+
+$$\eqalign{|\Expn\bigl(h(t+U))-h(t)-\Bover12h''(t)\sigma^2\bigr)|
+&=|\Expn(h(t+U))-h(t)-h'(t)\Expn(U)
+-\Bover12h''(t)\Expn(U^2)|\cr
+&=|\Expn\bigl(h(t+U)-h(t)-h'(t)U-\Bover12h''(t)U^2\bigr)|\cr
+&\le\Expn\bigl(|h(t+U)-h(t)-h'(t)U-\Bover12h''(t)U^2|\bigr)\cr
+&\le\Expn\bigl(\Bover16\epsilon M_3U^2+M_2\psi_{\epsilon}(U)\bigr)\cr
+&=\Bover16\epsilon M_3\sigma^2+M_2\Expn(\psi_{\epsilon}(U)),\cr}$$
+
+\noindent sebagaimana diklaim.
+
+\medskip
+
+{\bf (b)} Berdasarkan 274C,
+
+$$\eqalign{|\Expn\bigl(h(\sum_{i=0}^nU_i)-h(\sum_{i=0}^nV_i)\bigr)|
+&\le\sum_{i=0}^n\sup_{t\in\Bbb R}|\Expn\bigl(h(t+U_i)-h(t+V_i)\bigr)|\cr
+&\le\sum_{i=0}^{n}\sup_{t\in\Bbb R}\bigl(
+|\Expn(h(t+U_i))-h(t)-\Bover12h''(t)\sigma_i^2|\cr
+&\qquad\qquad\qquad
++|\Expn(h(t+V_i))-h(t)-\Bover12h''(t)\sigma_i^2|\bigr),\cr}$$
+
+\noindent yang berdasarkan (a) di atas tidak lebih dari
+
+\Centerline{$\sum_{i=0}^n\Bover13\epsilon  M_3\sigma_i^2
++M_2\Expn(\psi_{\epsilon}(U_i))+M_2\Expn(\psi_{\epsilon}(V_i))$,}
+
+\noindent sebagaimana diklaim.
+}%end of proof of 274D
+
+\leader{274E}{Lemma} Untuk setiap $\epsilon>0$, terdapat fungsi
+$h:\Bbb R\to[0,1]$ yang terdiferensialkan tiga kali, dengan turunan ketiga
+kontinu, sedemikian sehingga $h(x)=1$ untuk $x\le -\epsilon$ dan $h(x)=0$
+untuk $x\ge\epsilon$.
+
+\proof{ Misalkan $f:\ooint{-\epsilon,\epsilon}
+\to\ooint{0,\infty}$
+adalah sebarang fungsi yang terdiferensialkan dua kali sedemikian sehingga
+
+\Centerline{
+$\lim_{x\downarrow-\epsilon}f^{(n)}(x)
+=\lim_{x\uparrow\epsilon}f^{(n)}(x)=
+0$}
+
+\noindent untuk $n=0$, $1$, dan $2$, dengan $f^{(n)}$ menyatakan turunan
+ke-$n$ dari $f$; misalnya, kita dapat mengambil
+$f(x)=(\epsilon^2-x^2)^3$, atau
+$f(x)=\exp(-\Bover1{\epsilon^2-x^2})$. Sekarang tetapkan
+
+\Centerline{$h(x)=1-\int_{-\epsilon}^xf/\int_{-\epsilon}^{\epsilon}f$}
+
+\noindent untuk $|x|\le\epsilon$, lalu perluas fungsi tersebut dengan menetapkan
+$h(x)=1\text{ jika }x\le-\epsilon,\quad\text{dan}\quad
+h(x)=0\text{ jika }x\ge\epsilon$.
+}%end of proof of 274E
+
+\leader{274F}{Teorema Lindeberg} Misalkan $\epsilon>0$. Maka terdapat
+$\delta>0$ sedemikian sehingga kapan pun $X_0,\ldots,X_n$ adalah variabel
+acak bernilai real yang saling bebas sedemikian sehingga
+
+\Centerline{$\Expn(X_i)=0$ untuk setiap $i\le n$,}
+
+\Centerline{$\sum_{i=0}^n\Var(X_i)=1$,}
+
+\Centerline{$\sum_{i=0}^n\Expn(\psi_{\delta}(X_i))\le\delta$}
+
+\noindent (dengan $\psi_{\delta}(x)=0$ jika $|x|\le\delta$, dan $x^2$ jika
+$|x|>\delta$), maka
+
+\Centerline{$\bigl|\Pr(\sum_{i=0}^nX_i\le a)
+-\Phi(a)\bigr|
+\le\epsilon$}
+
+\noindent untuk setiap $a\in\Bbb R$.
+
+\proof{{\bf (a)} Misalkan $h:\Bbb R\to[0,1]$ adalah fungsi yang
+terdiferensialkan tiga kali, dengan turunan ketiga kontinu, sedemikian sehingga
+$\chi\ocint{-\infty,-\epsilon}\le h\le\chi\ocint{-\infty,\epsilon}$, seperti
+dalam 274E. Tetapkan
+
+\Centerline{$M_2=\sup_{x\in\Bbb
+R}|h''(x)|=\sup_{|x|\le\epsilon}|h''(x)|$,}
+
+\Centerline{$M_3=\sup_{x\in\Bbb
+R}|h'''(x)|=\sup_{|x|\le\epsilon}|h'''(x)|$;}
+
+\noindent karena \hbox{$h'''$} kontinu, keduanya berhingga. Tuliskan
+$\epsilon'=\epsilon(1-\Bover2{\sqrt{2\pi}})>0$, dan ambil $\eta>0$
+sedemikian sehingga
+
+\Centerline{$(\Bover13M_3+2M_2)\eta
+\le \epsilon'$.}
+
+\noindent Perhatikan bahwa $\lim_{m\to\infty}\psi_m(x)=0$ untuk setiap $x$,
+sehingga jika $X$ adalah variabel acak dengan varians berhingga, kita harus
+mempunyai $\lim_{m\to\infty}\Expn(\psi_m(X))\discretionary{}{}{}=0$,
+berdasarkan Teorema Konvergensi Terdominasi Lebesgue; ambil $m\ge 1$
+sedemikian sehingga $\Expn(\psi_m(Z))\le\eta$, dengan $Z$ suatu (atau
+sebarang) variabel acak normal baku. Akhirnya, ambil $\delta>0$ sedemikian
+sehingga $\delta+\delta^2\le(\eta/m)^2$; perhatikan bahwa $\delta\le\eta$.
+
+(Saya berharap Anda sudah cukup sering melihat argumen $\epsilon$-$\delta$
+sehingga tidak terganggu oleh harapan untuk memahami alasan setiap rumus
+tertentu di sini sebelum membaca seluruh argumen. Namun rumus
+$\bover13M_3+2M_2$, dalam kaitannya dengan $\psi_{\delta}$, semestinya
+mengingatkan kita pada 274D.)
+
+\medskip
+
+{\bf (b)} Misalkan $X_0,\ldots,X_n$ adalah variabel acak yang saling bebas
+dengan ekspektasi nol sedemikian sehingga $\sum_{i=0}^n\Var(X_i)=1$ dan
+$\sum_{i=0}^n\Expn(\psi_{\delta}(X_i))\le\delta$. Kita memerlukan barisan
+bantu $Z_0,\ldots,Z_n$ dari variabel acak normal baku untuk dipasangkan dengan
+$X_i$. Untuk membentuknya, saya menggunakan cara berikut. Misalkan ruang
+probabilitas yang mendasari $X_0,\ldots,X_n$ adalah $(\Omega,\Sigma,\mu)$.
+Tetapkan $\Omega'=\Omega\times\BbbR^{n+1}$, dan misalkan $\mu'$ adalah ukuran
+produk pada $\Omega'$, dengan $\Omega$ diberi ukuran $\mu$ dan setiap faktor
+$\Bbb R$ dari $\BbbR^{n+1}$ diberi ukuran $\mu_G$. Tetapkan
+$X'_i(\omega,z)=X_i(\omega)$ dan $Z_i(\omega,z)=\zeta_i$ untuk
+$\omega\in\dom X_i$, $z=(\zeta_0,\ldots,\zeta_n)\in\BbbR^{n+1}$,
+$i\le n$. Maka $X'_0,\ldots,X'_n,Z_0,\ldots,Z_n$ saling bebas, dan setiap
+$X'_i$ mempunyai distribusi yang sama dengan $X_i$ (272Mb). Akibatnya
+$S'=X'_0+\ldots+X'_n$ mempunyai distribusi yang sama dengan
+$S=X_0+\ldots+X_n$ (menggunakan 272T, atau dengan cara lain); sehingga
+$\Expn(g(S'))=\Expn(g(S))$ untuk setiap fungsi terukur Borel terbatas $g$
+(menggunakan 271E). Setiap $Z_i$ juga mempunyai distribusi $\mu_G$, sehingga
+normal baku.
+
+\medskip
+
+{\bf (c)} Tuliskan $\sigma_i=\sqrt{\Var(X_i)}$ untuk setiap $i$, dan tetapkan
+$K=\{i:i\le n,\,\sigma_i>0\}$. Perhatikan bahwa $\eta/\sigma_i\ge m$ untuk
+setiap $i\in K$. \Prf\ Kita tahu bahwa
+
+\Centerline{$\sigma_i^2=\Var(X_i)=\Expn(X_i^2)
+\le\Expn(\delta^2+\psi_{\delta}(X_i))=\delta^2+\Expn(\psi_{\delta}(X_i))
+\le\delta^2+\delta$,}
+
+\noindent sehingga
+
+\Centerline{$\Bover{\eta}{\sigma_i}\ge\Bover{\eta}{\sqrt{\delta+\delta^2}}
+\ge m$}
+
+\noindent berdasarkan pilihan $\delta$. \Qed
+
+\medskip
+
+{\bf (d)} Tinjau variabel acak normal $\sigma_iZ_i$ yang saling bebas.
+Kita mempunyai $\Expn(\sigma_iZ_i)=\Expn(X'_i)=0$ dan
+$\Var(\sigma_iZ_i)=\Var(X'_i)=\sigma_i^2$ untuk setiap $i$, sehingga
+$Z=\sigma_0Z_0+\ldots+\sigma_nZ_n$ mempunyai ekspektasi $0$ dan varians
+$\sum_{i=0}^n\sigma_i^2=1$; terlebih lagi, berdasarkan 274B, $Z$ normal,
+sehingga sebenarnya normal baku. Sekarang kita mempunyai
+
+$$\eqalignno{\sum_{i=0}^n\Expn(\psi_{\eta}(\sigma_iZ_i))
+&=\sum_{i\in K}\Expn(\psi_{\eta}(\sigma_iZ_i))
+=\sum_{i\in K}\sigma_i^2\Expn(\psi_{\eta/\sigma_i}(Z_i))\cr
+\noalign{\noindent (karena
+$\sigma^2\psi_{\eta/\sigma}(x)=\psi_{\eta}(\sigma x)$ kapan pun
+$x\in\Bbb R$, $\sigma>0$)}
+&=\sum_{i\in K}\sigma_i^2\Expn(\psi_{\eta/\sigma_i}(Z))
+\le\sum_{i\in K}\sigma_i^2\Expn(\psi_{m}(Z))\cr
+\noalign{\noindent (karena, berdasarkan (c),
+$\eta/\sigma_i\ge m$ untuk setiap $i\in K$, sehingga
+$\psi_{\eta/\sigma_i}(t)\le\psi_m(t)$ untuk setiap $t$)}
+&=\Expn(\psi_m(Z))
+\le\eta\cr}$$
+
+\noindent (berdasarkan pilihan $m$). Di sisi lain, kita tentu mempunyai
+
+\Centerline{$\sum_{i=0}^n\Expn(\psi_{\eta}(X'_i))
+=\sum_{i=0}^n\Expn(\psi_{\eta}(X_i))
+\le\sum_{i=0}^n\Expn(\psi_{\delta}(X_i))
+\le\delta\le\eta$.}
+
+\medskip
+
+{\bf (e)} Untuk setiap bilangan real $t$, tetapkan
+
+\Centerline{$h_{t}(x)=h(x-t)$}
+
+\noindent untuk setiap $x\in\Bbb R$. Maka $h_t$ terdiferensialkan tiga kali,
+dengan $\sup_{x\in\Bbb R}|h_t''(x)|=M_2$ dan
+$\sup_{x\in\Bbb R}|h_t'''(x)|=M_3$. Akibatnya
+
+\Centerline{$|\Expn(h_t(S))-\Expn(h_t(Z))|
+\le\epsilon'$.}
+
+\noindent\vthsp\Prf\ Berdasarkan 274Db,
+
+$$\eqalign{|\Expn(h_t(S))-\Expn(h_t(Z))|
+&=|\Expn(h_t(S'))-\Expn(h_t(Z))|\cr
+&=|\Expn(h_t(\sum_{i=0}^nX'_i))-\Expn(h_t(\sum_{i=0}^n\sigma_iZ_i))|\cr
+&\le\Bover13\eta M_3\sum_{i=0}^n\sigma_i^2
++M_2\sum_{i=0}^n\Expn(\psi_{\eta}(X_i))
++M_2\sum_{i=0}^n\Expn(\psi_{\eta}(\sigma_iZ_i))\cr
+&\le\Bover13\eta M_3+M_2\eta+M_2\eta
+\le\epsilon',\cr}$$
+
+\noindent berdasarkan pilihan $\eta$. \Qed
+
+
+\medskip
+
+{\bf (f)} Sekarang ambil sebarang $a\in\Bbb R$. Kita mempunyai
+
+\Centerline{$\chi\ocint{-\infty,a-2\epsilon}
+\le h_{a-\epsilon}\le\chi\ocint{-\infty,a}
+\le h_{a+\epsilon}\le\chi\ocint{-\infty,a+\epsilon}$.}
+
+\noindent Perhatikan pula bahwa, untuk setiap $b$,
+
+\Centerline{$\Phi(b+2\epsilon)
+=\Phi(b)+\Bover1{\sqrt{2\pi}}\int_b^{b+2\epsilon}e^{-x^2/2}dx
+\le\Phi(b)+\Bover{2\epsilon}{\sqrt{2\pi}}
+=\Phi(b)+\epsilon-\epsilon'$.}
+
+
+\noindent Akibatnya
+
+$$\eqalign{\Phi(a)-\epsilon
+&\le\Phi(a-2\epsilon)-\epsilon'
+=\Pr(Z\le a-2\epsilon)-\epsilon'
+\le\Expn(h_{a-\epsilon}(Z))-\epsilon'
+\le\Expn(h_{a-\epsilon}(S))\cr
+&\le\Pr(S\le a)\cr
+&\le\Expn(h_{a+\epsilon}(S))
+\le\Expn(h_{a+\epsilon}(Z))+\epsilon'
+\le\Pr(Z\le a+2\epsilon)+\epsilon'
+=\Phi(a+2\epsilon)+\epsilon'\cr
+&\le\Phi(a)+\epsilon.\cr}$$
+
+\noindent Namun ini tepat berarti bahwa
+
+\Centerline{$\bigl|\Pr(\sum_{i=0}^nX_i\le a)
+-\Phi(a)\bigr|
+\le\epsilon$,}
+
+\noindent sebagaimana diklaim.
+}%end of proof of 274F
+
+\leader{274G}{Teorema Limit Pusat} Misalkan $\sequencen{X_n}$ adalah
+barisan variabel acak yang saling bebas, semuanya dengan ekspektasi nol dan
+varians berhingga; tuliskan $s_n=\sqrt{\sum_{i=0}^n\Var(X_i)}$ untuk setiap
+$n$. Anggap bahwa
+
+\Centerline{$\lim_{n\to\infty}\Bover1{s_n^2}\sum_{i=0}^n
+\Expn(\psi_{\delta s_n}(X_i))=0$ untuk setiap $\delta>0$,}
+
+\noindent dengan $\psi_{\delta}(x)=0$ jika $|x|\le\delta$, dan $x^2$ jika
+$|x|>\delta$. Tetapkan
+
+\Centerline{$S_n=\Bover1{s_n}(X_0+\ldots+X_n)$}
+
+\noindent untuk setiap $n\in\Bbb N$ sedemikian sehingga $s_n>0$. Maka
+
+\Centerline{$\lim_{n\to\infty}\Pr(S_n\le a)
+=\Phi(a)$}
+
+\noindent secara seragam untuk $a\in\Bbb R$.
+
+\proof{ Diberikan $\epsilon>0$, ambil $\delta>0$ seperti dalam teorema
+Lindeberg (274F). Maka untuk semua $n$ yang cukup besar,
+
+\Centerline{$\Bover1{s_n^2}\sum_{i=0}^n
+\Expn(\psi_{\delta s_n}(X_i))\le\delta$.}
+
+\noindent Tetapkan sebarang $n$ demikian. Tentu saja kita mempunyai $s_n>0$.
+Tetapkan
+
+\Centerline{$X'_i=\Bover1{s_n}X_i$ untuk $i\le n$;}
+
+\noindent maka $X'_0,\ldots,X'_n$ saling bebas, dengan ekspektasi nol,
+
+\Centerline{$\sum_{i=0}^n\Var(X'_i)=\sum_{i=0}^n\Bover1{s_n^2}\Var(X_i)
+=1$,}
+
+\Centerline{$\sum_{i=0}^n\Expn(\psi_{\delta}(X'_i))
+=\sum_{i=0}^n\Bover1{s_n^2}\Expn(\psi_{\delta s_n}(X_i))
+\le\delta$.}
+
+\noindent Berdasarkan 274F,
+
+\Centerline{$\bigl|\Pr(S_n\le a)
+-\Phi(a)\bigr|
+=\bigl|\Pr(\sum_{i=0}^nX'_i\le a)
+-\Phi(a)\bigr|
+\le\epsilon$}
+
+\noindent untuk setiap $a\in\Bbb R$. Karena ini benar untuk semua $n$ yang
+cukup besar, kita memperoleh hasilnya.
+}%end of proof of 274G
+
+\leader{274H}{Catatan (a)} Syarat
+
+\Centerline{$\lim_{n\to\infty}\Bover1{s_n^2}\sum_{i=0}^n
+\Expn(\psi_{\epsilon s_n}(X_i))=0$ untuk setiap $\epsilon>0$}
+
+\noindent disebut {\bf syarat Lindeberg}\cmmnt{, mengikuti
+{\smc Lindeberg 1922}}.
+
+\header{274Hb}{\bf (b)} Syarat Lindeberg bersifat perlu sekaligus cukup,
+dalam arti berikut. Misalkan $\sequencen{X_n}$ adalah barisan variabel acak
+bernilai real yang saling bebas dengan ekspektasi nol dan varians berhingga;
+tuliskan $\sigma_n=\sqrt{\Var(X_n)}$,
+$s_n=\sqrt{\sum_{i=0}^n\Var(X_i)}$ untuk setiap $n$. Anggap bahwa
+$\lim_{n\to\infty}s_n=\infty$,
+$\lim_{n\to\infty}\Bover{\sigma_n}{s_n}=0$ dan bahwa
+$\lim_{n\to\infty}\Pr(S_n\le a)=\Phi(a)$ untuk setiap $a\in\Bbb R$, dengan
+$S_n=\Bover1{s_n}(X_0+\ldots+X_n)$. Maka
+
+\Centerline{$\lim_{n\to\infty}\Bover1{s_n^2}\sum_{i=0}^n
+\Expn(\psi_{\epsilon s_n}(X_i))=0$}
+
+\noindent untuk setiap $\epsilon>0$. \cmmnt{({\smc Feller 66}, \S XV.6,
+Teorema 3; {\smc Lo\`eve 77}, \S21.2.)
+}%end of comment
+
+\cmmnt{\header{274Hc}{\bf (c)}
+Bukti 274F-274G di sini diadaptasi dari {\smc Feller 66}, \S VIII.4.
+Keunggulannya ialah bersifat ‘elementer’, dalam arti tidak melibatkan fungsi
+karakteristik. Tentu hal ini harus dibayar dengan sejumlah taksiran terperinci;
+dan -- yang jauh lebih serius -- membuat kita tidak memiliki salah satu teknik
+paling ampuh untuk mendeskripsikan distribusi. Bukti tersebut memang
+menawarkan metode untuk membatasi
+
+\Centerline{$|\Pr(S_n\le a)-\Phi(a)|$;}
+
+\noindent tetapi perlu dikatakan bahwa batas yang diperoleh tidak berguna,
+karena terlalu pesimistis secara mencolok, sekurang-kurangnya dalam kasus yang
+mudah dianalisis. (Misalnya, dalam banyak kasus batas yang lebih baik diberikan
+oleh teorema Berry-Ess\'een: jika $\sequencen{X_n}$ saling bebas dan
+berdistribusi identik, dengan ekspektasi nol, dan nilai bersama dari
+$\sqrt{\Expn(X_n^2)}$, $\Expn(|X_n|^3)$ masing-masing adalah
+$\sigma$, $\rho<\infty$, maka
+
+\Centerline{$|\Pr(S_n\le a)-\Phi(a)|
+\le\Bover{33\rho}{4\sigma^3\sqrt{n+1}}$;}
+
+\noindent lihat {\smc Feller 66}, \S XVI.5, {\smc Lo\`eve 77},
+\S21.3, atau {\smc Hall 82}.) Selain itu, ketika $|a|$ besar,
+$\Phi(a)$ amat dekat dengan $0$ atau $1$, sehingga sebarang batas seragam bagi
+$|\Pr(S\le a)-\Phi(a)|$ hanya memberikan sangat sedikit informasi; banyak
+sekali pekerjaan telah dilakukan untuk menaksir ekor distribusi demikian
+secara lebih tepat, dengan tunduk pada syarat-syarat khusus. Misalnya, jika
+$X_0,\ldots,X_n$ adalah variabel acak yang saling bebas dengan ekspektasi nol,
+terbatas secara seragam dengan $|X_i|\le K$ hampir di mana-mana untuk setiap
+$i$, $Y=X_0+\ldots+X_n$, $s=\sqrt{\Var(Y)}>0$, $S=\bover1sY$, maka untuk
+setiap $\alpha\in[0,s/K]$
+
+$$\Pr(|S|\ge\alpha)
+\le 2\exp\bigl(\bover{-\alpha^2}{2(1+\bover{\alpha K}{2s})^2}\bigr)
+\bumpeq 2e^{-\alpha^2/2}$$
+
+\noindent jika $s\gg\alpha K$ ({\smc R\'enyi 70}, \S VII.4, Teorema 1).
+Hasil yang kurang tajam dari jenis yang sama terdapat dalam 272Xl.
+
+Sekarang saya mendaftarkan beberapa kasus baku ketika syarat Lindeberg
+terpenuhi, sehingga kita dapat menerapkan teoremanya.
+}%end of comment
+
+\leader{274I}{Akibat} Misalkan $\sequencen{X_n}$ adalah barisan variabel
+acak bernilai real yang saling bebas, semuanya dengan distribusi yang sama,
+dan anggap bahwa ekspektasi bersamanya adalah $0$ serta varians bersamanya
+berhingga dan tidak nol. Tuliskan $\sigma$ untuk nilai bersama
+$\sqrt{\Var(X_n)}$, dan tetapkan
+
+\Centerline{$S_n=\Bover1{\sigma\sqrt{n+1}}(X_0+\ldots+X_n)$}
+
+\noindent untuk setiap $n\in\Bbb N$. Maka
+
+\Centerline{$\lim_{n\to\infty}\Pr(S_n\le a)=\Phi(a)$}
+
+\noindent secara seragam untuk $a\in\Bbb R$.
+
+\proof{ Dalam bahasa 274G-274H, kita mempunyai $\sigma_n=\sigma$,
+$s_n=\sigma\sqrt{n+1}$ dan $S_n=\Bover1{s_n}\sum_{i=0}^nX_i$.
+Selain itu, jika $\nu$ adalah distribusi yang sama bagi semua $X_n$, maka
+
+\Centerline{$\Expn(\psi_{\epsilon s_n}(X_n))
+=\int_{\{x:|x|>\epsilon\sigma\sqrt{n+1}\}}x^2\nu(dx)\to 0$}
+
+\noindent berdasarkan Teorema Konvergensi Terdominasi Lebesgue; sehingga
+
+\Centerline{$\Bover1{s_n^2}\sum_{i=0}^n\Expn(\psi_{\epsilon s_n}(X_n))
+\to 0$}
+
+\noindent berdasarkan 273Ca. Jadi syarat Lindeberg terpenuhi dan 274G
+memberikan hasilnya.
+}%end of proof of 274I
+
+\leader{274J}{Akibat} Misalkan $\sequencen{X_n}$ adalah barisan variabel
+acak bernilai real yang saling bebas dengan ekspektasi nol, dan anggap bahwa
+$\{X_n^2:n\in\Bbb N\}$ terintegralkan secara seragam dan bahwa
+
+\Centerline{$\liminf_{n\to\infty}\Bover1{n+1}\sum_{i=0}^n\Var(X_i)>0$.}
+
+\noindent Tetapkan
+
+\Centerline{$s_n=\sqrt{\sumop_{i=0}^n\Var(X_i)}$,
+\quad$S_n=\Bover1{s_n}(X_0+\ldots+X_n)$}
+%\sumop needed because inside \sqrt{}
+
+\noindent untuk $n\in\Bbb N$ yang besar. Maka
+
+\Centerline{$\lim_{n\to\infty}\Pr(S_n\le a)=\Phi(a)$}
+
+\noindent secara seragam untuk $a\in\Bbb R$.
+
+\proof{ Syarat
+
+\Centerline{$\liminf_{n\to\infty}\Bover1{n+1}\sum_{i=0}^n\Var(X_i)>0$}
+
+\noindent berarti bahwa terdapat $c>0$, $n_0\in\Bbb N$ sedemikian sehingga
+$s_n\ge c\sqrt{n+1}$ untuk setiap $n\ge n_0$. Misalkan ruang yang mendasarinya
+adalah $(\Omega,\Sigma,\mu)$, dan ambil $\epsilon$, $\eta>0$. Dengan menulis
+$\psi_{\delta}(x)=0$ untuk $|x|\le\delta$, dan $x^2$ untuk $|x|>\delta$,
+seperti dalam 274F-274G, kita mempunyai
+
+\Centerline{$\Expn(\psi_{\epsilon s_n}(X_i))
+\le\Expn(\psi_{c\epsilon\sqrt{n+1}}(X_i))
+=\int_{F(i,c\epsilon\sqrt{n+1})}X_i^2d\mu$}
+
+\noindent untuk $n\ge n_0$, $i\le n$, dengan
+$F(i,\gamma)=\{\omega:\omega\in\dom X_i,\,|X_i(\omega)|>\gamma\}$.
+Karena $\{X_i^2:i\in\Bbb N\}$ terintegralkan secara seragam, terdapat
+$\gamma\ge 0$ sedemikian sehingga $\int_{F(i,\gamma)}X_i^2d\mu\le\eta c^2$
+untuk setiap $i\in\Bbb N$ (246I). Ambil $n_1\ge n_0$ sedemikian sehingga
+$c\epsilon\sqrt{n_1+1}\ge\gamma$; maka untuk setiap $n\ge n_1$
+
+\Centerline{$\Bover1{s_n^2}\sum_{i=0}^{n}\Expn(\psi_{\epsilon s_n}(X_i))
+\le\Bover1{c^2(n+1)}\sum_{i=0}^n\eta c^2=\eta$.}
+
+\noindent Karena $\epsilon$ dan $\eta$ sebarang, syarat-syarat 274G terpenuhi
+dan hasilnya menyusul.
+}%end of proof of 274J
+
+\leader{274K}{Akibat} Misalkan $\sequencen{X_n}$ adalah barisan variabel
+acak bernilai real yang saling bebas dengan ekspektasi nol, dan anggap bahwa
+
+(i) terdapat suatu $\delta>0$ sedemikian sehingga
+$\sup_{n\in\Bbb N}\Expn(|X_n|^{2+\delta})<\infty$,
+
+(ii) $\liminf_{n\to\infty}\Bover1{n+1}\sum_{i=0}^n\Var(X_i)>0$.
+
+\noindent Tetapkan $s_n=\sqrt{\sum_{i=0}^n\Var(X_i)}$ dan
+
+\Centerline{$S_n=\Bover1{s_n}(X_0+\ldots+X_n)$}
+
+\noindent untuk $n\in\Bbb N$ yang besar. Maka
+
+\Centerline{$\lim_{n\to\infty}\Pr(S_n\le a)
+=\Phi(a)$}
+
+\noindent secara seragam untuk $a\in\Bbb R$.
+
+\proof{ Intinya ialah bahwa $\{X_n^2:n\in\Bbb N\}$ terintegralkan secara
+seragam. \Prf\ Tetapkan
+$K=1+\sup_{n\in\Bbb N}\Expn(|X_n|^{2+\delta})$. Diberikan $\epsilon>0$,
+tetapkan $M=(K/\epsilon)^{1/\delta}$. Maka
+$(X_n^2-M)^+\le M^{-\delta}|X_n|^{2+\delta}$, sehingga
+
+\Centerline{$\Expn(X_n^2-M)^+\le KM^{-\delta}=\epsilon$}
+
+\noindent untuk setiap $n\in\Bbb N$. Karena $\epsilon$ sebarang,
+$\{X_n^2:n\in\Bbb N\}$ terintegralkan secara seragam. \Qed
+
+Dengan demikian syarat-syarat 274J terpenuhi dan kita memperoleh hasilnya.
+}
+
+\cmmnt{
+\leader{274L}{Catatan (a)} Semua teorema dalam bagian ini ditujukan untuk
+menemukan syarat-syarat ketika variabel acak $S$ `hampir' normal baku, dalam
+arti $\Pr(S\le a)\bumpeq\Pr(Z\le a)$ secara seragam untuk $a\in\Bbb R$,
+dengan $Z$ suatu (atau sebarang) variabel acak normal baku. Dalam semua kasus,
+variabel acak $S$ dinormalisasi agar mempunyai ekspektasi $0$ dan varians $1$,
+dan merupakan jumlah dari sejumlah besar variabel acak yang saling bebas.
+(Dalam 274G dan 274I-274K dinyatakan secara eksplisit bahwa harus ada banyak
+$X_i$, karena hasil-hasil tersebut merujuk pada limit ketika $n\to\infty$.
+Hal ini tidak dinyatakan dengan kata-kata yang persis demikian dalam rumusan
+teorema Lindeberg yang saya berikan, tetapi pembuktiannya memperjelas bahwa
+$n(\delta+\delta^2)\ge 1$, sehingga tentu $n$ juga harus besar di sana.)
+
+\header{274Lb}{\bf (b)} Saya tidak dapat meninggalkan bagian ini tanpa
+mencatat bahwa bentuk definisi `hampir normal baku' dapat menyesatkan intuisi
+Anda jika dicoba diterapkan pada distribusi lain. Jika kita mengambil $F$
+sebagai fungsi distribusi $S$, sehingga $F(a)=\Pr(S\le a)$, saya mengatakan
+bahwa $S$ `hampir normal baku' jika
+$\sup_{a\in\Bbb R}|F(a)-\Phi(a)|$ kecil. Wajar untuk memandang ini sebagai
+aproksimasi dalam suatu metrik, dengan menulis
+
+\Centerline{$\tilde\rho(\nu,\nuprime)
+=\sup_{a\in \Bbb R}|F_{\nu}(a)-F_{\nuprime}(a)|$}
+
+\noindent untuk distribusi $\nu$, $\nuprime$ pada $\Bbb R$, dengan
+$F_{\nu}(a)=\nu\ocint{-\infty,a}$. Dalam bentuk ini, teorema-teorema di atas
+dapat dibaca sebagai pencarian syarat-syarat yang membuat
+$\lim_{n\to\infty}\tilde\rho(\nu_{S_n},\mu_G)=0$. Namun intinya ialah bahwa
+$\tilde\rho$ sebenarnya bukan metrik yang tepat digunakan. Metrik ini bekerja
+di sini karena $\mu_G$ tak beratom. Tetapi misalkan, sebagai contoh, $\nu$
+adalah ukuran Dirac pada $\Bbb R$ yang terpusat di $0$, dan $\nu_n$ adalah
+distribusi variabel acak normal dengan ekspektasi $0$ dan varians
+${1\over n}$, untuk setiap $n\ge 1$. Maka $F_{\nu}(0)=1$ dan
+$F_{\nu_n}(0)={1\over 2}$, sehingga
+$\tilde\rho(\nu_n,\nu)={1\over 2}$ untuk setiap $n\ge 1$. Namun, untuk
+kebanyakan tujuan orang akan menganggap selisih antara $\nu_n$ dan $\nu$
+kecil, dan tentunya $\nu$ adalah satu-satunya distribusi yang dapat disebut
+secara wajar sebagai limit dari $\nu_n$.
+
+\header{274Lc}{\bf (c)} Kesulitan-kesulitan di sini muncul dalam lebih dari
+satu bentuk. Seorang statistikawan tidak akan menyukai gagasan bahwa $\nu_n$
+dalam (b) di atas jauh dari $\nu$ (dan dari satu sama lain), dengan alasan
+bahwa setiap pengukuran yang melibatkan variabel acak dengan distribusi ini
+pasti mengalami galat, dan galat pengukuran yang kecil akan membuatnya tidak
+dapat dibedakan. Seorang matematikawan murni, yang membayangkan kemungkinan
+generalisasi hasil-hasil ini, tidak akan menyukai penekanan pada nilai
+$\nu\ocint{-\infty,a}$, yang padanannya mungkin sulit ditemukan dalam ruang
+yang lebih abstrak.
+
+\header{274Ld}{\bf (d)} Pertimbangan-pertimbangan ini berpadu dan membawa
+kita pada definisi yang agak berbeda untuk topologi pada ruang $P$ dari
+distribusi probabilitas pada $\Bbb R$. Untuk setiap fungsi kontinu terbatas
+$h:\Bbb R\to\Bbb R$ kita mempunyai pseudometrik
+$\rho_h:P\times P\to\coint{0,\infty}$
+yang didefinisikan dengan menulis
+
+\Centerline{$\rho_h(\nu,\nuprime)=|\int h\,d\nu-\int h\,d\nuprime|$}
+
+\noindent untuk semua $\nu$, $\nuprime\in P$. {\bf Topologi samar} pada $P$
+adalah topologi yang dibangkitkan oleh pseudometrik $\rho_h$ (2A3F). Saya
+tidak akan membahas sifat-sifatnya secara terperinci di sini (beberapa
+diuraikan dalam 274Yc-274Yf %274Yc 274Yd 274Ye 274Yf
+di bawah; lihat pula 285K-285L, 285S, dan 437J-437T
+%437J 437K 437L 437M 437N (4{}37Q) 437P (4{}37T) 437R (4{}37O, 4{}37R)
+%437S (4{}37P}) 437T (4{}37S)
+dalam Jilid 4). Namun saya berpendapat bahwa cara yang tepat untuk memandang
+hasil-hasil bab ini ialah dengan mengatakan bahwa (i) distribusi $\nu_S$
+dekat dengan $\mu_G$ untuk topologi samar, (ii) himpunan
+$\{\nu:\tilde\rho(\nu,\mu_G)<\epsilon\}$ terbuka untuk topologi tersebut,
+dan itulah sebabnya $\tilde\rho(\nu_S,\mu_G)$ kecil.
+}%end of comment
+
+\leader{*274M}{}\cmmnt{ Saya menutup bagian ini dengan sepasang ketaksamaan
+sederhana yang sering berguna ketika mempelajari variabel acak normal.
+
+\medskip
+
+\noindent}{\bf Lemma} (a)
+$\int_x^{\infty}e^{-t^2/2}dt\le\Bover1xe^{-x^2/2}$ untuk setiap $x>0$.
+
+(b) $\int_x^{\infty}e^{-t^2/2}dt\ge\Bover1{2x}e^{-x^2/2}$ untuk setiap
+$x\ge 1$.
+
+\proof{{\bf (a)}
+
+$$\eqalign{\int_x^{\infty}e^{-t^2/2}dt
+=\int_0^{\infty}e^{-(x+s)^2/2}ds
+\le e^{-x^2/2}\int_0^{\infty}e^{-xs}ds
+=\Bover1xe^{-x^2/2}.\cr}$$
+
+\medskip
+
+{\bf (b)} Tetapkan
+
+\Centerline{$f(t)=e^{-t^2/2}-(1-x(t-x))e^{-x^2/2}$.}
+
+\noindent Maka $f(x)=f'(x)=0$ dan
+$f''(t)=(t^2-1)e^{-t^2/2}$ positif untuk $t\ge x$ (karena $x\ge 1$).
+Dengan demikian $f(t)\ge 0$ untuk setiap $t\ge x$, dan
+$\int_x^{x+1/x}f(t)dt\ge 0$. Namun ini tepat berarti bahwa
+
+$$\eqalign{\int_x^{\infty}e^{-t^2/2}dt
+\ge\int_x^{x+\bover1x}e^{-t^2/2}dt
+\ge\int_x^{x+\bover1x}(1-x(t-x))e^{-x^2/2}dt
+=\Bover1{2x}e^{-x^2/2},\cr}$$
+
+\noindent sebagaimana diperlukan.
+}%end of proof of 274M
+
+\exercises{
+\leader{274X}{Latihan dasar $\pmb{>}$(a)}
+%\spheader 274Xa
+Gunakan 272U untuk memberikan bukti alternatif bagi 274B.
+%274B
+
+\spheader 274Xb Misalkan $f:\Bbb R\to\Bbb R$ kontinu mutlak pada setiap
+interval tertutup terbatas, dan bahwa
+$\int_{-\infty}^{\infty}|f'(x)|e^{-ax^2}dx\penalty-100<\infty$ untuk setiap
+$a>0$. Misalkan $X$ adalah variabel acak normal dengan ekspektasi nol.
+Tunjukkan bahwa $\Expn(Xf(X))$ dan $\Expn(X^2)\Expn(f'(X))$ terdefinisi dan
+sama.
+%274B
+
+\spheader 274Xc Buktikan 274D ketika $h''$ bersifat $M_3$-Lipschitz tetapi
+tidak harus terdiferensialkan.
+%274D
+
+\spheader 274Xd Misalkan $\sequence{k}{m_k}$ adalah barisan yang meningkat
+ketat dalam $\Bbb N$ sedemikian sehingga $m_0=0$ dan
+$\lim_{k\to\infty}m_k/m_{k+1}=0$. Misalkan $\sequencen{X_n}$ adalah barisan
+variabel acak yang saling bebas sedemikian sehingga
+$\Pr(X_n=\sqrt{m_{k}})=\Pr(X_n=-\sqrt{m_{k}})=1/2m_{k}$,
+$\Pr(X_n=0)=1-1/m_{k}$ kapan pun $m_{k-1}\le n<m_{k}$. Tunjukkan bahwa
+Teorema Limit Pusat tidak berlaku untuk $\sequencen{X_n}$.
+\Hint{dengan menetapkan $W_k=(X_0+\ldots+X_{m_k-1})/\sqrt{m_k}$, tunjukkan
+bahwa $\Pr(W_k\in[\epsilon,1-\epsilon])\to 0$ untuk setiap $\epsilon>0$.}
+%274G mt27bits
+
+\spheader 274Xe Misalkan $\sequencen{X_n}$ adalah sebarang barisan variabel
+acak yang saling bebas dan semuanya mempunyai distribusi yang sama; anggap
+bahwa semuanya mempunyai varians berhingga $\sigma^2>0$, dan bahwa ekspektasi
+bersamanya adalah $c$. Tetapkan
+$S_n=c+\Bover1{\sqrt{n+1}}\sum_{i=0}^n(X_i-c)$ untuk setiap $n$, dan misalkan $Y$
+adalah variabel acak normal dengan ekspektasi $c$ dan varians $\sigma^2$.
+Tunjukkan bahwa $\lim_{n\to\infty}\Pr(S_n\le a)=\Pr(Y\le a)$
+secara seragam untuk $a\in\Bbb R$.
+%274I
+
+%\sqheader 274Xf
+\wheader{274Xf}{10}{4}{4}{48pt}$\pmb{>}${\bf (f)}
+Tunjukkan bahwa untuk setiap $a\in\Bbb R$,
+
+$$\lim_{n\to\infty}\bover{1}{2^n}
+\sum_{r=0}^{\lfloor\bover{n}2+a\bover{\sqrt{n}}2\rfloor}
+\bover{n!}{r!(n-r)!}
+=\lim_{n\to\infty}\bover1{2^n}\#(\{I:I\subseteq
+n,\,\#(I)\le\Bover{n}2+a\Bover{\sqrt{n}}2\})
+=\Phi(a).$$
+%274I
+
+\spheader 274Xg Tunjukkan bahwa 274I adalah kasus khusus dari 274J.
+%274J
+
+\spheader 274Xh Misalkan $\sequencen{X_n}$ adalah barisan variabel acak
+bernilai real yang saling bebas dengan ekspektasi nol. Tetapkan
+$s_n=\sqrt{\sum_{i=0}^n\Var(X_i)}$ dan
+
+\Centerline{$S_n=\Bover1{s_n}(X_0+\ldots+X_n)$}
+
+\noindent untuk setiap $n\in\Bbb N$. Anggap bahwa terdapat suatu $\delta>0$
+sedemikian sehingga
+
+\Centerline{$\lim_{n\to\infty}\Bover1{s_n^{2+\delta}}
+\sum_{i=0}^n\Expn(|X_i|^{2+\delta})=0$.}
+
+\noindent Tunjukkan bahwa $\lim_{n\to\infty}\Pr(S_n\le a)=\Phi(a)$ secara
+seragam untuk $a\in\Bbb R$. (Ini adalah suatu bentuk {\bf teorema limit pusat
+Liapounoff}; lihat {\smc Liapounoff 1901}.)
+%274K
+
+\spheader 274Xi Misalkan $P$ adalah himpunan ukuran probabilitas Radon pada
+$\Bbb R$. Misalkan $\nu_0\in P$, $a\in\Bbb R$. Tunjukkan bahwa pemetaan
+$\nu\mapsto\nu\ocint{-\infty,a}:P\to[0,1]$ kontinu di $\nu_0$ untuk
+topologi samar pada $P$ jika dan hanya jika $\nu_0\{a\}=0$.
+%274L
+
+\spheader 274Xj Misalkan $\sequencen{X_n}$ adalah barisan variabel acak
+yang saling bebas dan berdistribusi identik dengan varians berhingga tak nol.
+Misalkan $\sequencen{t_n}$ adalah barisan dalam $\Bbb R$ sedemikian sehingga
+$\sum_{n=0}^{\infty}t_n^2=\infty$. Tunjukkan bahwa
+$\sum_{n=0}^{\infty}t_nX_n$ tidak terdefinisi atau tak berhingga hampir di
+mana-mana. \Hint{Tangani dahulu kasus ketika $\sequencen{t_n}$ tidak
+konvergen ke $0$. Jika tidak demikian, gunakan 274G untuk menunjukkan bahwa,
+untuk setiap $n\in\Bbb N$,
+$\lim_{m\to\infty}\Pr(|\sum_{i=n}^mt_iX_i|\ge 1)\ge\bover12$. Lihat pula
+276Xd.}
+%274G
+%query:  do we really need `finite variance'?
+
+\spheader 274Xk Misalkan $\sequencen{X_n}$ adalah barisan variabel acak
+bernilai real yang saling bebas dengan ekspektasi nol. Anggap bahwa $M\ge 0$
+sedemikian sehingga $|X_n|\le M$ hampir di mana-mana untuk setiap $n$, dan
+bahwa $\sum_{n=0}^{\infty}\Var(X_n)=\infty$. Tetapkan
+$s_n=\sqrt{\sum_{i=0}^n\Var(X_i)}$ untuk setiap $n$, dan
+$S_n=\Bover1{s_n}\sum_{i=0}^nX_i$ ketika $s_n>0$. Tunjukkan bahwa
+$\lim_{n\to\infty}\Pr(S_n\le a)=\Phi(a)$ untuk setiap $a\in\Bbb R$.
+%274G
+%out of order query
+
+\leader{274Y}{Latihan lanjutan (a)}
+%\spheader 274Ya
+({\smc Steele 86})
+Misalkan $X_0,\ldots,X_n,Y_0,\ldots,Y_n$ adalah variabel acak yang saling
+bebas sedemikian sehingga, untuk setiap $i\le n$,
+$X_i$ dan $Y_i$ mempunyai distribusi yang sama.
+Misalkan $h:\BbbR^{n+1}\to\Bbb R$ adalah fungsi terukur Borel, dan tetapkan
+$Z=h(X_0,\ldots,X_n)$,
+$Z_i=h(X_0,\ldots,X_{i-1},Y_i,X_{i+1},\ldots,X_n)$ untuk setiap $i$
+(dengan $Z_0=h(Y_0,X_1,\ldots,X_n)$ dan
+$Z_n=h(X_0,\ldots,X_{n-1},Y_n)$, tentu saja). Anggap bahwa $Z$ mempunyai
+ekspektasi berhingga. Tunjukkan bahwa
+$\Var(Z)\le\bover12\sum_{i=0}^n\Expn(Z_i-Z)^2$.
+%274C mt27bits
+
+\spheader 274Yb\dvAnew{2010} Tunjukkan bahwa untuk setiap $\epsilon>0$
+terdapat fungsi mulus $h:\Bbb R\to[0,1]$ sedemikian sehingga
+$\chi\ocint{-\infty,-\epsilon}\le h\le\chi\ocint{-\infty,\epsilon}$.
+%274E
+
+\spheader 274Yc\dvAformerly{2{}74Ya}
+Tuliskan $P$ untuk himpunan ukuran probabilitas Radon pada $\Bbb R$. Untuk
+$\nu$, $\nuprime\in P$ tetapkan
+
+$$\eqalign{\rho(\nu,\nuprime)
+=\inf\{\epsilon:\epsilon\ge 0,\,\nu\ocint{-\infty,a-\epsilon}-\epsilon
+\le\nuprime\ocint{-\infty,a}
+&\le\nu\ocint{-\infty,a+\epsilon}+\epsilon\cr
+&\quad\quad\text{ untuk setiap }a\in\Bbb R\}.\cr}$$
+
+\noindent Tunjukkan bahwa $\rho$ adalah metrik pada $P$ dan mendefinisikan
+topologi samar pada $P$. ($\rho$ disebut {\bf metrik L\'evy}.)
+%274L
+
+\spheader 274Yd Tuliskan $P$ untuk himpunan ukuran probabilitas Radon pada
+$\Bbb R$, dan misalkan $\tilde\rho$ adalah metrik pada $P$ yang didefinisikan
+dalam 274Lb. Tunjukkan bahwa jika $\nu\in P$ tak beratom dan $\epsilon>0$,
+maka $\{\nuprime:\nuprime\in P,\,\tilde\rho(\nuprime,\nu)<\epsilon\}$ terbuka
+untuk topologi samar pada $P$.
+%274L
+
+\spheader 274Ye Misalkan $\sequencen{S_n}$ adalah barisan variabel acak
+bernilai real, dan $Z$ variabel acak normal baku. Tunjukkan bahwa pernyataan
+berikut ekuivalen:
+
+\quad(i) $\mu_G=\lim_{n\to\infty}\nu_{S_n}$ untuk topologi samar, dengan
+$\nu_{S_n}$ menyatakan distribusi $S_n$;
+
+\quad(ii) $\Expn(h(Z))=\lim_{n\to\infty}\Expn(h(S_n))$ untuk setiap fungsi
+kontinu terbatas $h:\Bbb R\to\Bbb R$;
+
+\quad(iii) $\Expn(h(Z))=\lim_{n\to\infty}\Expn(h(S_n))$ untuk setiap fungsi
+terbatas $h:\Bbb R\to\Bbb R$ sedemikian sehingga
+($\alpha$) $h$ mempunyai turunan kontinu dari semua orde
+($\beta$) $\{x:h(x)\ne 0\}$ terbatas;
+
+\quad(iv) $\lim_{n\to\infty}\Pr(S_n\le a)=\Phi(a)$ untuk setiap
+$a\in\Bbb R$;
+
+\quad(v) $\lim_{n\to\infty}\Pr(S_n\le a)=\Phi(a)$ secara seragam untuk
+$a\in\Bbb R$;
+
+\quad(vi) $\{a:\lim_{n\to\infty}\Pr(S_n\le a)=\Phi(a)\}$ rapat dalam
+$\Bbb R$.
+
+\noindent (Lihat pula 285L.)
+%274L
+
+\spheader 274Yf Misalkan $(\Omega,\Sigma,\mu)$ adalah ruang probabilitas,
+dan $P$ himpunan ukuran probabilitas Radon pada $\Bbb R$. Tunjukkan bahwa
+$X\mapsto\nu_X:\eusm L^0(\mu)\to P$ kontinu untuk topologi konvergensi dalam
+ukuran pada $\eusm L^0(\mu)$ dan topologi samar pada $P$.
+%274L
+
+\spheader 274Yg Misalkan $\sequencen{X_n}$ adalah barisan variabel acak
+bernilai real yang saling bebas. Anggap bahwa terdapat $M\ge 0$ sedemikian
+sehingga $|X_n|\le M$ hampir di mana-mana untuk setiap $n\in\Bbb N$, dan
+bahwa $\sum_{n=0}^{\infty}X_n$ terdefinisi, sebagai bilangan real, hampir di
+mana-mana. Tunjukkan bahwa $\sum_{n=0}^{\infty}\Var(X_n)<\infty$.
+%274Xk 274G 274Yf
+
+}%end of exercises
+
+\endnotes{
+\Notesheader{274} Selama lebih dari dua ratus tahun Teorema Limit Pusat telah
+menjadi salah satu kejayaan matematika, dan tidak ada cabang matematika atau
+sains yang akan tetap sama tanpanya. Saya kira teorema ini adalah satu teorema
+terpenting dalam teori probabilitas; dan saya mengamati bahwa pembuktiannya
+hampir tidak menggunakan teori ukuran. Memang, saya telah membungkus argumen
+di atas dalam bahasa ukuran dan integrasi. Namun jika kita melihat hakikatnya,
+unsur-unsur penting pembuktian tersebut adalah
+
+\inset{(i) kombinasi linear variabel acak normal yang saling bebas adalah
+normal (274Ae, 274B);}
+
+\inset{(ii) jika $U$, $V$, $W$ adalah variabel acak yang saling bebas, dan
+$h$ fungsi kontinu terbatas, maka
+$|\Expn(h(U,V,W))|\le\sup_{t\in\Bbb R}|\Expn(h(U,V,t))|$ (274C);}
+
+\inset{(iii) jika $(X_0,\ldots,X_n)$ adalah variabel acak yang saling bebas,
+maka kita dapat menemukan variabel acak yang saling bebas
+$(X_0',\ldots,X_n',Z_0,\ldots,Z_n)$ sedemikian sehingga $Z_j$ normal baku dan
+$X_j'$ mempunyai distribusi yang sama dengan $X_j$, untuk setiap $j$ (274F).}
+
+\noindent Bagian selebihnya dari argumen terdiri atas kalkulus elementer,
+taksiran cermat, dan beberapa sifat paling mendasar dari ekspektasi dan
+kebebasan. Sekarang (ii) dan (iii) dibenarkan di atas dengan menggunakan
+teorema Fubini, tetapi tentu saja keduanya termasuk dalam daftar intuisi
+probabilistik yang mendahului pengidentifikasian probabilitas dengan fungsional
+aditif terhitung. Seandainya keduanya menimbulkan kesulitan yang tidak dapat
+diatasi, hal itu akan menjadi argumen kuat yang menentang model probabilitas
+yang kita gunakan, tetapi tidak akan memengaruhi Teorema Limit Pusat.
+Sesungguhnya (i) tampaknya merupakan tempat kita benar-benar memerlukan model
+matematis bagi konsep `distribusi', dan semua perhitungan yang relevan dapat
+dilakukan dalam pengertian integral Riemann pada bidang, tanpa menyebut
+aditivitas terhitung. Jadi, meskipun saya senang dan bangga telah menuliskan
+suatu versi dari gagasan-gagasan indah ini, saya harus mengakui bahwa semuanya
+tidak bergantung secara esensial pada bagian lain risalah ini.
+
+Dalam \S285 saya akan mendeskripsikan pendekatan yang sama sekali berbeda
+terhadap teorema ini, dengan menggunakan perangkat yang jauh lebih canggih;
+tetapi sekali lagi, barangkali dengan lebih tersembunyi, relevansi teori ukuran
+bukan terletak pada teorema itu sendiri, melainkan pada bayangan kita tentang
+apa yang dimaksud dengan distribusi sebarang. Sebab di sinilah saya memang
+mengajukan klaim bagi bidang saya. Karakterisasi fungsi distribusi sebagai
+fungsi monoton sebarang, kontinu dari kanan, dan dengan limit yang tepat pada
+$\pm\infty$ (271Xb), bersama dengan analisis fungsi monoton dalam \S226,
+memberi kita kesempatan untuk membentuk gambaran mental tentang kelas objek
+yang tepat bagi penerapan hasil-hasil seperti Teorema Limit Pusat.
+
+Teorema 274F adalah modifikasi kecil dari Teorema 3 dalam
+{\smc Lindeberg 1922}. Seperti aslinya, teorema ini menekankan apa yang saya
+yakini penting bagi semua teorema limit dalam bab ini: teorema-teorema tersebut
+sebaiknya didasarkan pada pemahaman yang tepat mengenai barisan berhingga
+variabel acak. Syarat Lindeberg merupakan puncak dari pencarian panjang akan
+syarat paling umum yang membuat Teorema Limit Pusat berlaku. Saya menawarkan
+suatu versi teorema Laplace (274Xf) sebagai titik awal, dan syarat Liapounoff
+(274Xh) sebagai contoh salah satu tahap perantara. Tentu saja akibat 274I,
+274J, 274K, dan 274Xe adalah bentuk yang hendak kita terapkan jika dapat
+memilih. Terdapat kesejajaran yang menarik, tetapi sejauh yang saya ketahui
+murni kebetulan, antara 273H/274K dan 273I/274Xe. Sebagai contoh barisan
+variabel acak $\sequencen{X_n}$ yang saling bebas, semuanya dengan ekspektasi
+nol dan varians $1$, tetapi yang {\it tidak} memenuhi Teorema Limit Pusat, saya
+menawarkan 274Xd.
+}%end of notes
+
+\discrpage

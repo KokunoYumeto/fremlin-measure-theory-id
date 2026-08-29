@@ -1,0 +1,1078 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>ℒ⁰ dan L⁰ — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        BbbQ: '\\mathbb{Q}', BbbR: '\\mathbb{R}',
+        eightBbb: ['\\mathbb{#1}', 1],
+        DiniD: '\\overline{D}', Dinid: '\\underline{D}',
+        Var: '\\operatorname{Var}',
+        bumpeq: '=_{\\mathrm{approx}}',
+        intstar: '\\operatorname{int}^{*}',
+        family: ['\\langle #3\\rangle_{#1\\in #2}', 3],
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        displaycause: ['\\text{(#1)}', 1],
+        bigcupop: '\\bigcup', biggerint: '\\int',
+        eae: '=_{\\mathrm{a.e.}}', leae: '\\le_{\\mathrm{a.e.}}', geae: '\\ge_{\\mathrm{a.e.}}',
+        restr: '\\mathord{\\upharpoonright}', restrp: '\\mathord{\\upharpoonright}',
+        Real: '\\operatorname{Re}', Imag: '\\operatorname{Im}',
+        tbf: ['\\mathbf{#1}', 1], eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Qed: '\\square',
+        BbbN: '\\mathbb{N}', Expn: '\\mathbb{E}',
+        Cal: ['\\mathcal{#1}', 1], dom: '\\operatorname{dom}',
+        coint: ['\\left[#1\\right[', 1],
+        sequencen: ['\\langle #1_n\\rangle_{n\\in\\mathbb{N}}', 1],
+        imp: '\\mathop{\\text{pelestari ukuran melalui prapeta}}',
+        tildeTau: '\\widetilde{\\mathrm{T}}',
+        LLcorner: '\\mathbin{\\llcorner}',
+        prooflet: ['#1', 1],
+        halfarrow: '\\rightharpoonup',
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        roibr: '\\mathopen{{[}}',
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1]
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 2 · Bagian 241</p>
+  <h1><span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> dan <span class="math inline" data-source-tex="L^0">\(L^0\)</span></h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi kumulatif</a></nav>
+<main id="isi">
+<p>© 1995</p>
+<span class="anchor" id="241"></span>
+<p>Tujuan utama bab ini adalah membahas ruang-ruang <span class="math inline" data-source-tex="L^1">\(L^1\)</span>, <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span>,
+dan <span class="math inline" data-source-tex="L^p">\(L^p\)</span> dalam tiga bagian berikutnya. Namun, akan lebih mudah jika semua
+ruang tersebut dipandang sebagai subruang dari ruang yang lebih besar,
+yaitu <span class="math inline" data-source-tex="L^0">\(L^0\)</span>, yang terdiri atas kelas-kelas ekuivalensi fungsi-fungsi yang
+(secara maya) terukur; dalam bagian ini saya menghimpun fakta-fakta dasar
+mengenai ruang linear terurut <span class="math inline" data-source-tex="L^0">\(L^0\)</span>.</p>
+<p>Hampir dapat dikatakan bahwa prinsip pertama teori ukuran adalah bahwa
+himpunan-himpunan berukuran nol sering kali dapat diabaikan; frasa
+‘himpunan terabaikan’ itu sendiri menegaskan prinsip ini. Oleh karena itu,
+dua fungsi yang sama hampir di mana-mana sering kali (tidak selalu!) dapat
+diperlakukan sebagai identik. Ungkapan yang sesuai bagi gagasan ini adalah
+membentuk ruang kelas-kelas ekuivalensi fungsi, dengan menyatakan bahwa dua
+fungsi ekuivalen jika keduanya sama pada suatu himpunan koterabaikan. Inilah
+landasan semua konstruksi dalam bab ini. Merupakan fakta yang mengagumkan
+bahwa ruang-ruang kelas ekuivalensi yang dibangun dengan cara ini justru
+lebih sesuai untuk masalah-masalah tertentu daripada ruang fungsi asalnya;
+setelah tekniknya dikuasai, berpikir dalam ruang yang lebih abstrak itu pun
+menjadi lebih mudah.</p>
+<section class="source-unit" id="241A" data-source-id="241A"><h2><span class="source-label">241A</span> Ruang <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span>: Definisi </h2>
+<p>Kini tiba waktunya untuk memberi
+nama kepada suatu himpunan fungsi yang telah digunakan lebih dari sekali.
+Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur.
+Saya menulis <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span>, atau <span class="math inline" data-source-tex="\eusm L^0(\mu)">\(\eusm L^0(\mu)\)</span>, untuk ruang
+fungsi-fungsi bernilai riil <span class="math inline" data-source-tex="f">\(f\)</span> yang didefinisikan pada subhimpunan
+koterabaikan dari <span class="math inline" data-source-tex="X">\(X\)</span> dan terukur secara maya, artinya,
+<span class="math inline" data-source-tex="f\restr E">\(f\restr E\)</span> terukur untuk suatu himpunan koterabaikan <span class="math inline" data-source-tex="E\subseteq X">\(E\subseteq X\)</span>.
+Ingat bahwa <span class="math inline" data-source-tex="f">\(f\)</span> terukur secara maya terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> jika dan hanya jika fungsi itu terukur terhadap
+<span class="math inline" data-source-tex="\hat\Sigma">\(\hat\Sigma\)</span>, dengan <span class="math inline" data-source-tex="\hat\Sigma">\(\hat\Sigma\)</span> kelengkapan dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> (212Fa).</p>
+</section>
+<section class="source-unit" id="241B" data-source-id="241B"><span class="anchor" id="241Ba"></span><h2><span class="source-label">241B</span> Sifat-sifat dasar </h2>
+<p>Jika <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu
+ruang ukur sebarang, maka kita mempunyai fakta-fakta berikut, yang
+bersesuaian dengan sifat-sifat dasar fungsi terukur yang tercantum dalam
+§<a class="xref" href="../121/index.html#121">121</a> Jilid 1. Saya membahasnya satu demi satu, sehingga jika Jilid 1 ada
+di tangan Anda, Anda dapat melihat bagian mana yang harus dilewati.</p>
+<p> </p>
+<p><strong>(a)</strong> Fungsi konstan bernilai riil yang didefinisikan hampir di
+mana-mana dalam <span class="math inline" data-source-tex="X">\(X\)</span> termasuk dalam <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span><span class="proof-fragment"> (<a class="xref" href="../121/index.html#121Ea">121Ea</a>)</span>.</p>
+</section>
+<section class="source-unit" id="241Bb" data-source-id="241Bb"><h3><span class="source-label">241Bb</span> (b) </h3>
+<p><span class="math inline" data-source-tex="f+g\in\eusm L^0">\(f+g\in\eusm L^0\)</span> untuk semua <span class="math inline" data-source-tex="f">\(f\)</span>,
+<span class="math inline" data-source-tex="g\in\eusm L^0">\(g\in\eusm L^0\)</span><span class="proof-fragment"> (sebab jika <span class="math inline" data-source-tex="f\restr F">\(f\restr F\)</span> dan <span class="math inline" data-source-tex="g\restr G">\(g\restr G\)</span>
+terukur, maka <span class="math inline" data-source-tex="(f+g)\restr(F\cap G)=(f\restr F)+(g\restr G)">\((f+g)\restr(F\cap G)=(f\restr F)+(g\restr G)\)</span> terukur)
+(<a class="xref" href="../121/index.html#121Eb">121Eb</a>)</span>.</p>
+</section>
+<section class="source-unit" id="241Bc" data-source-id="241Bc"><h3><span class="source-label">241Bc</span> (c) </h3>
+<p><span class="math inline" data-source-tex="cf\in\eusm L^0">\(cf\in\eusm L^0\)</span> untuk semua <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span>,
+<span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span><span class="proof-fragment"> (<a class="xref" href="../121/index.html#121Ec">121Ec</a>)</span>.</p>
+</section>
+<section class="source-unit" id="241Bd" data-source-id="241Bd"><h3><span class="source-label">241Bd</span> (d) </h3>
+<p><span class="math inline" data-source-tex="f\times g\in\eusm L^0">\(f\times g\in\eusm L^0\)</span> untuk semua <span class="math inline" data-source-tex="f">\(f\)</span>,
+<span class="math inline" data-source-tex="g\in\eusm L^0">\(g\in\eusm L^0\)</span><span class="proof-fragment"> (<a class="xref" href="../121/index.html#121Ed">121Ed</a>)</span>.</p>
+</section>
+<section class="source-unit" id="241Be" data-source-id="241Be"><h3><span class="source-label">241Be</span> (e) </h3>
+<p>Jika <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span> dan <span class="math inline" data-source-tex="h:\Bbb R\to\Bbb R">\(h:\Bbb R\to\Bbb R\)</span> terukur
+Borel, maka <span class="math inline" data-source-tex="hf\in\eusm L^0">\(hf\in\eusm L^0\)</span><span class="proof-fragment"> (<a class="xref" href="../121/index.html#121Eg">121Eg</a>)</span>.</p>
+</section>
+<section class="source-unit" id="241Bf" data-source-id="241Bf"><h3><span class="source-label">241Bf</span> (f) </h3>
+<p>Jika <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> suatu barisan dalam <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span>
+dan <span class="math inline" data-source-tex="f=\lim_{n\to\infty}f_n">\(f=\lim_{n\to\infty}f_n\)</span> didefinisikan (sebagai fungsi
+bernilai riil) hampir di mana-mana dalam <span class="math inline" data-source-tex="X">\(X\)</span>, maka
+<span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span><span class="proof-fragment"> (<a class="xref" href="../121/index.html#121Fa">121Fa</a>)</span>.</p>
+</section>
+<section class="source-unit" id="241Bg" data-source-id="241Bg"><h3><span class="source-label">241Bg</span> (g) </h3>
+<p>Jika <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> suatu barisan dalam <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span>
+dan <span class="math inline" data-source-tex="f=\sup_{n\in\Bbb N}f_n">\(f=\sup_{n\in\Bbb N}f_n\)</span> didefinisikan (sebagai fungsi
+bernilai riil) hampir di mana-mana dalam <span class="math inline" data-source-tex="X">\(X\)</span>, maka
+<span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span><span class="proof-fragment"> (<a class="xref" href="../121/index.html#121Fb">121Fb</a>)</span>.</p>
+</section>
+<section class="source-unit" id="241Bh" data-source-id="241Bh"><h3><span class="source-label">241Bh</span> (h) </h3>
+<p>Jika <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> suatu barisan dalam <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span>
+dan <span class="math inline" data-source-tex="f=\inf_{n\in\Bbb N}f_n">\(f=\inf_{n\in\Bbb N}f_n\)</span> didefinisikan (sebagai fungsi
+bernilai riil) hampir di mana-mana dalam <span class="math inline" data-source-tex="X">\(X\)</span>, maka
+<span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span><span class="proof-fragment"> (<a class="xref" href="../121/index.html#121Fc">121Fc</a>)</span>.</p>
+</section>
+<section class="source-unit" id="241Bi" data-source-id="241Bi"><h3><span class="source-label">241Bi</span> (i) </h3>
+<p>Jika <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> suatu barisan dalam <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span>
+dan <span class="math inline" data-source-tex="f=\limsup_{n\to\infty}f_n">\(f=\limsup_{n\to\infty}f_n\)</span> didefinisikan (sebagai fungsi
+bernilai riil) hampir di mana-mana dalam <span class="math inline" data-source-tex="X">\(X\)</span>, maka
+<span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span><span class="proof-fragment"> (<a class="xref" href="../121/index.html#121Fd">121Fd</a>)</span>.</p>
+</section>
+<section class="source-unit" id="241Bj" data-source-id="241Bj"><h3><span class="source-label">241Bj</span> (j) </h3>
+<p>Jika <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> suatu barisan dalam <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span>
+dan <span class="math inline" data-source-tex="f=\liminf_{n\to\infty}f_n">\(f=\liminf_{n\to\infty}f_n\)</span> didefinisikan (sebagai fungsi
+bernilai riil) hampir di mana-mana dalam <span class="math inline" data-source-tex="X">\(X\)</span>, maka
+<span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span><span class="proof-fragment"> (<a class="xref" href="../121/index.html#121Fe">121Fe</a>)</span>.</p>
+</section>
+<section class="source-unit" id="241Bk" data-source-id="241Bk"><h3><span class="source-label">241Bk</span> (k) </h3>
+<p><span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> tepat merupakan himpunan fungsi-fungsi
+bernilai riil, yang didefinisikan pada subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>, dan
+sama hampir di mana-mana dengan suatu fungsi terukur terhadap <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dari
+<span class="math inline" data-source-tex="X">\(X\)</span> ke <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.
+<span class="proof-fragment">Bukti. (i) Jika <span class="math inline" data-source-tex="g:X\to\Bbb R">\(g:X\to\Bbb R\)</span> terukur terhadap <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dan
+<span class="math inline" data-source-tex="f\eae g">\(f\eae g\)</span>, maka <span class="math inline" data-source-tex="F=\{x:x\in\dom f,\,f(x)=g(x)\}">\(F=\{x:x\in\dom f,\,f(x)=g(x)\}\)</span> koterabaikan dan
+<span class="math inline" data-source-tex="f\restr F=g\restr F">\(f\restr F=g\restr F\)</span> terukur (<a class="xref" href="../121/index.html#121Eh">121Eh</a>), sehingga <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span>. (ii)
+Jika <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span>, ambil himpunan koterabaikan <span class="math inline" data-source-tex="E\subseteq X">\(E\subseteq X\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="f\restr E">\(f\restr E\)</span> terukur. Maka <span class="math inline" data-source-tex="D=E\cap\dom f">\(D=E\cap\dom f\)</span>
+koterabaikan dan <span class="math inline" data-source-tex="f\restr D">\(f\restr D\)</span> terukur, sehingga terdapat fungsi terukur
+<span class="math inline" data-source-tex="h:X\to\Bbb R">\(h:X\to\Bbb R\)</span> yang sama dengan <span class="math inline" data-source-tex="f">\(f\)</span> pada <span class="math inline" data-source-tex="D">\(D\)</span> (<a class="xref" href="../121/index.html#121I">121I</a>); dan <span class="math inline" data-source-tex="h\eae f">\(h\eae f\)</span>.
+ ∎</span></p>
+</section>
+<section class="source-unit" id="241C" data-source-id="241C"><h2><span class="source-label">241C</span> Ruang <span class="math inline" data-source-tex="L^0">\(L^0\)</span>: Definisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu
+ruang ukur sebarang. Maka <span class="math inline" data-source-tex="\eae">\(\eae\)</span> merupakan relasi ekuivalensi pada
+<span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span>. Tuliskan <span class="math inline" data-source-tex="L^0">\(L^0\)</span>, atau <span class="math inline" data-source-tex="L^0(\mu)">\(L^0(\mu)\)</span>, untuk himpunan kelas-kelas
+ekuivalensi dalam <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> terhadap <span class="math inline" data-source-tex="\eae">\(\eae\)</span>. Untuk <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span>,
+tuliskan <span class="math inline" data-source-tex="f^{\ssbullet}">\(f^{\ssbullet}\)</span> untuk kelas ekuivalensinya dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span>.</p>
+</section>
+<section class="source-unit" id="241D" data-source-id="241D"><h2><span class="source-label">241D</span> Struktur linear <span class="math inline" data-source-tex="L^0">\(L^0\)</span> </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu
+ruang ukur sebarang, dan tetapkan <span class="math inline" data-source-tex="\eusm L^0=\eusm L^0(\mu)">\(\eusm L^0=\eusm L^0(\mu)\)</span>,
+<span class="math inline" data-source-tex="L^0=L^0(\mu)">\(L^0=L^0(\mu)\)</span>.</p>
+</section>
+<section class="source-unit" id="241Da" data-source-id="241Da"><h3><span class="source-label">241Da</span> (a) </h3>
+<p>Jika <span class="math inline" data-source-tex="f_1">\(f_1\)</span>, <span class="math inline" data-source-tex="f_2">\(f_2\)</span>, <span class="math inline" data-source-tex="g_1">\(g_1\)</span>, <span class="math inline" data-source-tex="g_2\in\eusm L^0">\(g_2\in\eusm L^0\)</span>,
+<span class="math inline" data-source-tex="f_1\eae f_2">\(f_1\eae f_2\)</span> dan <span class="math inline" data-source-tex="g_1\eae g_2">\(g_1\eae g_2\)</span>, maka <span class="math inline" data-source-tex="f_1+g_1\eae f_2+g_2">\(f_1+g_1\eae f_2+g_2\)</span>. Oleh
+karena itu, kita dapat mendefinisikan penjumlahan pada <span class="math inline" data-source-tex="L^0">\(L^0\)</span> dengan
+menetapkan <span class="math inline" data-source-tex="f^{\ssbullet}+g^{\ssbullet}=(f+g)^{\ssbullet}">\(f^{\ssbullet}+g^{\ssbullet}=(f+g)^{\ssbullet}\)</span> untuk semua
+<span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in\eusm L^0">\(g\in\eusm L^0\)</span>.</p>
+</section>
+<section class="source-unit" id="241Db" data-source-id="241Db"><h3><span class="source-label">241Db</span> (b) </h3>
+<p>Jika <span class="math inline" data-source-tex="f_1">\(f_1\)</span>, <span class="math inline" data-source-tex="f_2\in\eusm L^0">\(f_2\in\eusm L^0\)</span> dan <span class="math inline" data-source-tex="f_1\eae f_2">\(f_1\eae f_2\)</span>,
+maka <span class="math inline" data-source-tex="cf_1\eae cf_2">\(cf_1\eae cf_2\)</span> untuk setiap <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>. Oleh karena itu, kita
+dapat mendefinisikan perkalian skalar pada <span class="math inline" data-source-tex="L^0">\(L^0\)</span> dengan menetapkan
+<span class="math inline" data-source-tex="c\cdot f^{\ssbullet}=(cf)^{\ssbullet}">\(c\cdot f^{\ssbullet}=(cf)^{\ssbullet}\)</span> untuk semua <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span>
+dan <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>.</p>
+</section>
+<section class="source-unit" id="241Dc" data-source-id="241Dc"><h3><span class="source-label">241Dc</span> (c) </h3>
+<p>Kini <span class="math inline" data-source-tex="L^0">\(L^0\)</span> merupakan ruang linear atas
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dengan nol <span class="math inline" data-source-tex="\tbf{0}^{\ssbullet}">\(\tbf{0}^{\ssbullet}\)</span>, dengan <span class="math inline" data-source-tex="\tbf{0}">\(\tbf{0}\)</span> fungsi
+berdomain <span class="math inline" data-source-tex="X">\(X\)</span> dan bernilai konstan <span class="math inline" data-source-tex="0">\(0\)</span>, serta negatif
+<span class="math inline" data-source-tex="-(f^{\ssbullet})=(-f)^{\ssbullet}">\(-(f^{\ssbullet})=(-f)^{\ssbullet}\)</span>.
+<span class="proof-fragment">Bukti. (i)
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="f+(g+h)=(f+g)+h">\(f+(g+h)=(f+g)+h\)</span> untuk semua <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g">\(g\)</span>, <span class="math inline" data-source-tex="h\in\eusm L^0">\(h\in\eusm L^0\)</span>,</span>
+
+
+
+  sehingga
+
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="u+(v+w)=(u+v)+w">\(u+(v+w)=(u+v)+w\)</span> untuk semua <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v">\(v\)</span>, <span class="math inline" data-source-tex="w\in L^0">\(w\in L^0\)</span>.</span>
+
+
+
+(ii)
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="f+\tbf{0}=\tbf{0}+f=f">\(f+\tbf{0}=\tbf{0}+f=f\)</span> untuk setiap <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span>,</span>
+
+
+
+  sehingga
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="u+\tbf{0}^{\ssbullet}=\tbf{0}^{\ssbullet}+u=u">\(u+\tbf{0}^{\ssbullet}=\tbf{0}^{\ssbullet}+u=u\)</span> untuk
+setiap <span class="math inline" data-source-tex="u\in L^0">\(u\in L^0\)</span>.</span>
+
+
+
+(iii)
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="f+(-f)\eae\tbf{0}">\(f+(-f)\eae\tbf{0}\)</span> untuk setiap <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span>,</span>
+
+
+
+  sehingga
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="f^{\ssbullet}+(-f)^{\ssbullet}=\tbf{0}^{\ssbullet}">\(f^{\ssbullet}+(-f)^{\ssbullet}=\tbf{0}^{\ssbullet}\)</span> untuk
+setiap <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span>.</span>
+
+
+
+(iv)
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="f+g=g+f">\(f+g=g+f\)</span> untuk semua <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in\eusm L^0">\(g\in\eusm L^0\)</span>,</span>
+
+
+
+  sehingga
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="u+v=v+u">\(u+v=v+u\)</span> untuk semua <span class="math inline" data-source-tex="u">\(u\)</span>,
+<span class="math inline" data-source-tex="v\in L^0">\(v\in L^0\)</span>.</span>
+
+
+
+(v)
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="c(f+g)=cf+cg">\(c(f+g)=cf+cg\)</span> untuk semua <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in\eusm L^0">\(g\in\eusm L^0\)</span> dan
+<span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>,</span>
+
+
+
+  sehingga
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="c(u+v)=cu+cv">\(c(u+v)=cu+cv\)</span> untuk semua <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^0">\(v\in L^0\)</span> dan <span class="math inline" data-source-tex="c\in\Bbb
+R">\(c\in\Bbb
+R\)</span>.</span>
+
+
+
+(vi)
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="(a+b)f=af+bf">\((a+b)f=af+bf\)</span> untuk semua <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span> dan <span class="math inline" data-source-tex="a">\(a\)</span>,
+<span class="math inline" data-source-tex="b\in\Bbb R">\(b\in\Bbb R\)</span>,</span>
+
+
+
+  sehingga
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="(a+b)u=au+bu">\((a+b)u=au+bu\)</span> untuk semua <span class="math inline" data-source-tex="u\in L^0">\(u\in L^0\)</span> dan <span class="math inline" data-source-tex="a">\(a\)</span>, <span class="math inline" data-source-tex="b\in\Bbb R">\(b\in\Bbb R\)</span>.</span>
+
+
+
+(vii)
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="(ab)f=a(bf)">\((ab)f=a(bf)\)</span> untuk semua <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span> dan <span class="math inline" data-source-tex="a">\(a\)</span>,
+<span class="math inline" data-source-tex="b\in\Bbb R">\(b\in\Bbb R\)</span>,</span>
+
+
+
+
+  sehingga
+
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="(ab)u=a(bu)">\((ab)u=a(bu)\)</span> untuk semua <span class="math inline" data-source-tex="u\in L^0">\(u\in L^0\)</span> dan <span class="math inline" data-source-tex="a">\(a\)</span>, <span class="math inline" data-source-tex="b\in\Bbb R">\(b\in\Bbb R\)</span>.</span>
+
+
+
+(viii)
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="1f=f">\(1f=f\)</span> untuk semua <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span>,</span>
+
+
+
+  sehingga
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="1u=u">\(1u=u\)</span> untuk semua <span class="math inline" data-source-tex="u\in L^0">\(u\in L^0\)</span>. ∎</span>
+
+
+</span></p>
+</section>
+<section class="source-unit" id="241E" data-source-id="241E"><h2><span class="source-label">241E</span> Struktur urutan <span class="math inline" data-source-tex="L^0">\(L^0\)</span> </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu
+ruang ukur sebarang dan tetapkan <span class="math inline" data-source-tex="\eusm L^0=\eusm L^0(\mu)">\(\eusm L^0=\eusm L^0(\mu)\)</span>,
+<span class="math inline" data-source-tex="L^0=L^0(\mu)">\(L^0=L^0(\mu)\)</span>.</p>
+</section>
+<section class="source-unit" id="241Ea" data-source-id="241Ea"><h3><span class="source-label">241Ea</span> (a) </h3>
+<p>Jika <span class="math inline" data-source-tex="f_1">\(f_1\)</span>, <span class="math inline" data-source-tex="f_2">\(f_2\)</span>, <span class="math inline" data-source-tex="g_1">\(g_1\)</span>, <span class="math inline" data-source-tex="g_2\in\eusm L^0">\(g_2\in\eusm L^0\)</span>,
+<span class="math inline" data-source-tex="f_1\eae f_2">\(f_1\eae f_2\)</span>, <span class="math inline" data-source-tex="g_1\eae g_2">\(g_1\eae g_2\)</span>, dan <span class="math inline" data-source-tex="f_1\leae g_1">\(f_1\leae g_1\)</span>, maka
+<span class="math inline" data-source-tex="f_2\leae g_2">\(f_2\leae g_2\)</span>. Oleh karena itu, kita dapat mendefinisikan relasi <span class="math inline" data-source-tex="\le">\(\le\)</span>
+pada <span class="math inline" data-source-tex="L^0">\(L^0\)</span> dengan mengatakan bahwa <span class="math inline" data-source-tex="f^{\ssbullet}\le g^{\ssbullet}">\(f^{\ssbullet}\le g^{\ssbullet}\)</span> jika dan hanya jika
+<span class="math inline" data-source-tex="f\leae g">\(f\leae g\)</span>.</p>
+</section>
+<section class="source-unit" id="241Eb" data-source-id="241Eb"><h3><span class="source-label">241Eb</span> (b) </h3>
+<p>Kini <span class="math inline" data-source-tex="\le">\(\le\)</span> merupakan urutan parsial pada <span class="math inline" data-source-tex="L^0">\(L^0\)</span>.
+<span class="proof-fragment">Bukti. (i) Jika <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g">\(g\)</span>, <span class="math inline" data-source-tex="h\in\eusm L^0">\(h\in\eusm L^0\)</span>, <span class="math inline" data-source-tex="f\leae g">\(f\leae g\)</span>, dan
+<span class="math inline" data-source-tex="g\leae h">\(g\leae h\)</span>, maka <span class="math inline" data-source-tex="f\leae h">\(f\leae h\)</span>. Oleh karena itu, <span class="math inline" data-source-tex="u\le w">\(u\le w\)</span> kapan pun <span class="math inline" data-source-tex="u">\(u\)</span>,
+<span class="math inline" data-source-tex="v">\(v\)</span>, <span class="math inline" data-source-tex="w\in L^0">\(w\in L^0\)</span>, <span class="math inline" data-source-tex="u\le v">\(u\le v\)</span>, dan <span class="math inline" data-source-tex="v\le w">\(v\le w\)</span>. (ii) Jika <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span>,
+maka <span class="math inline" data-source-tex="f\leae f">\(f\leae f\)</span>; jadi <span class="math inline" data-source-tex="u\le u">\(u\le u\)</span> untuk setiap <span class="math inline" data-source-tex="u\in L^0">\(u\in L^0\)</span>. (iii) Jika
+<span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in\eusm L^0">\(g\in\eusm L^0\)</span>, <span class="math inline" data-source-tex="f\leae g">\(f\leae g\)</span>, dan <span class="math inline" data-source-tex="g\leae f">\(g\leae f\)</span>, maka <span class="math inline" data-source-tex="f\eae g">\(f\eae g\)</span>,
+sehingga jika <span class="math inline" data-source-tex="u\le v">\(u\le v\)</span> dan <span class="math inline" data-source-tex="v\le u">\(v\le u\)</span>, maka <span class="math inline" data-source-tex="u=v">\(u=v\)</span>. ∎</span></p>
+</section>
+<section class="source-unit" id="241Ec" data-source-id="241Ec"><h3><span class="source-label">241Ec</span> (c) </h3>
+<p>Bahkan <span class="math inline" data-source-tex="L^0">\(L^0\)</span>, dengan <span class="math inline" data-source-tex="\le">\(\le\)</span>, merupakan
+<strong>ruang linear terurut parsial</strong>, yakni ruang linear (riil) dengan
+urutan parsial <span class="math inline" data-source-tex="\le">\(\le\)</span> sedemikian sehingga</p>
+<p>   jika <span class="math inline" data-source-tex="u\le v">\(u\le v\)</span>, maka <span class="math inline" data-source-tex="u+w\le v+w">\(u+w\le v+w\)</span> untuk setiap <span class="math inline" data-source-tex="w">\(w\)</span>,</p>
+<p>   jika <span class="math inline" data-source-tex="0\le u">\(0\le u\)</span>, maka <span class="math inline" data-source-tex="0\le cu">\(0\le cu\)</span> untuk setiap <span class="math inline" data-source-tex="c\ge 0">\(c\ge 0\)</span>.</p>
+<p><span class="proof-fragment">Bukti. (i) Jika <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g">\(g\)</span>, <span class="math inline" data-source-tex="h\in\eusm L^0">\(h\in\eusm L^0\)</span> dan
+<span class="math inline" data-source-tex="f\leae g">\(f\leae g\)</span>, maka <span class="math inline" data-source-tex="f+h\leae g+h">\(f+h\leae g+h\)</span>. (ii) Jika <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span> dan
+<span class="math inline" data-source-tex="f\ge 0">\(f\ge 0\)</span> hampir di mana-mana, maka <span class="math inline" data-source-tex="cf\ge 0">\(cf\ge 0\)</span> hampir di mana-mana untuk
+setiap <span class="math inline" data-source-tex="c\ge 0">\(c\ge 0\)</span>. ∎</span></p>
+</section>
+<section class="source-unit" id="241Ed" data-source-id="241Ed"><h3><span class="source-label">241Ed</span> (d) </h3>
+<p>Lebih jauh lagi: <span class="math inline" data-source-tex="L^0">\(L^0\)</span> merupakan <strong>ruang
+Riesz</strong> atau <strong>kisi vektor</strong>, yakni ruang linear terurut parsial
+sedemikian sehingga <span class="math inline" data-source-tex="u\vee v=\sup\{u,v\}">\(u\vee v=\sup\{u,v\}\)</span> dan
+<span class="math inline" data-source-tex="u\wedge v=\inf\{u,v\}">\(u\wedge v=\inf\{u,v\}\)</span> terdefinisi untuk semua <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^0">\(v\in L^0\)</span>.
+<span class="proof-fragment">Bukti. Ambil <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in\eusm L^0">\(g\in\eusm L^0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="f^{\ssbullet}=u">\(f^{\ssbullet}=u\)</span> dan <span class="math inline" data-source-tex="g^{\ssbullet}=v">\(g^{\ssbullet}=v\)</span>. Maka <span class="math inline" data-source-tex="f\vee g">\(f\vee g\)</span>,
+<span class="math inline" data-source-tex="f\wedge g\in\eusm L^0">\(f\wedge g\in\eusm L^0\)</span>, dengan menuliskan
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="(f\vee g)(x)=\max(f(x),g(x))">\((f\vee g)(x)=\max(f(x),g(x))\)</span>,    <span class="math inline" data-source-tex="(f\wedge
+g)(x)=\min(f(x),g(x))">\((f\wedge
+g)(x)=\min(f(x),g(x))\)</span></span>
+
+
+
+  untuk <span class="math inline" data-source-tex="x\in\dom f\cap\dom g">\(x\in\dom f\cap\dom g\)</span>. (Bandingkan <a class="xref" href="#241Bg">241Bg</a>-h.) Kini,
+untuk sebarang <span class="math inline" data-source-tex="h\in\eusm L^0">\(h\in\eusm L^0\)</span>, kita mempunyai
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="f\vee g\leae h\iff f\leae h">\(f\vee g\leae h\iff f\leae h\)</span> dan <span class="math inline" data-source-tex="g\leae h">\(g\leae h\)</span>,</span>
+
+
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="h\leae f\wedge g\iff h\leae f">\(h\leae f\wedge g\iff h\leae f\)</span> dan <span class="math inline" data-source-tex="h\leae g">\(h\leae g\)</span>,</span>
+
+
+
+  sehingga untuk sebarang <span class="math inline" data-source-tex="w\in L^0">\(w\in L^0\)</span> kita mempunyai
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="(f\vee g)^{\ssbullet}\le w\iff u\le w">\((f\vee g)^{\ssbullet}\le w\iff u\le w\)</span> dan <span class="math inline" data-source-tex="v\le w">\(v\le w\)</span>,</span>
+
+
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="w\le(f\wedge g)^{\ssbullet}\iff w\le u">\(w\le(f\wedge g)^{\ssbullet}\iff w\le u\)</span> dan <span class="math inline" data-source-tex="w\le v">\(w\le v\)</span>.</span>
+
+
+
+  Jadi, kita memperoleh
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="(f\vee g)^{\ssbullet}=\sup\{u,v\}=u\vee v">\((f\vee g)^{\ssbullet}=\sup\{u,v\}=u\vee v\)</span>,
+  <span class="math inline" data-source-tex="(f\wedge g)^{\ssbullet}=\inf\{u,v\}=u\wedge v">\((f\wedge g)^{\ssbullet}=\inf\{u,v\}=u\wedge v\)</span></span>
+
+
+
+  dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span>. ∎</span></p>
+</section>
+<section class="source-unit" id="241Ee" data-source-id="241Ee"><h3><span class="source-label">241Ee</span> (e) </h3>
+<p>Khususnya, untuk sebarang <span class="math inline" data-source-tex="u\in L^0">\(u\in L^0\)</span> kita dapat
+membicarakan <span class="math inline" data-source-tex="|u|=u\vee(-u)">\(|u|=u\vee(-u)\)</span>; jika <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span>, maka
+<span class="math inline" data-source-tex="|f^{\ssbullet}|=|f|^{\ssbullet}">\(|f^{\ssbullet}|=|f|^{\ssbullet}\)</span>.</p>
+<p>Jika <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in\eusm L^0">\(g\in\eusm L^0\)</span>, <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>, maka</p>
+<p><span class="proof-fragment">
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="|cf|=|c||f|">\(|cf|=|c||f|\)</span>,   <span class="math inline" data-source-tex="f\vee g=\Bover12(f+g+|f-g|)">\(f\vee g=\Bover12(f+g+|f-g|)\)</span>,</span>
+
+
+
+
+
+<span class="centerline nested-center">
+<span class="math inline" data-source-tex="f\wedge g=\Bover12(f+g-|f-g|)">\(f\wedge g=\Bover12(f+g-|f-g|)\)</span>,   <span class="math inline" data-source-tex="|f+g|\leae|f|+|g|">\(|f+g|\leae|f|+|g|\)</span>,</span>
+
+
+
+  sehingga
+</span></p>
+<div class="centerline"><span class="math inline" data-source-tex="|cu|=|c||u|">\(|cu|=|c||u|\)</span>,   <span class="math inline" data-source-tex="u\vee v=\Bover12(u+v+|u-v|)">\(u\vee v=\Bover12(u+v+|u-v|)\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="u\wedge v=\Bover12(u+v-|u-v|)">\(u\wedge v=\Bover12(u+v-|u-v|)\)</span>,   <span class="math inline" data-source-tex="|u+v|\le|u|+|v|">\(|u+v|\le|u|+|v|\)</span></div>
+<p>untuk semua <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^0">\(v\in L^0\)</span>.</p>
+</section>
+<section class="source-unit" id="241Ef" data-source-id="241Ef"><h3><span class="source-label">241Ef</span> (f) </h3>
+<p>Suatu notasi khusus sering kali berguna.
+Jika <span class="math inline" data-source-tex="f">\(f\)</span> fungsi bernilai riil, tetapkan <span class="math inline" data-source-tex="f^+(x)=\max(f(x),0)">\(f^+(x)=\max(f(x),0)\)</span>,
+<span class="math inline" data-source-tex="f^-(x)=\max(-f(x),0)">\(f^-(x)=\max(-f(x),0)\)</span> untuk <span class="math inline" data-source-tex="x\in\dom f">\(x\in\dom f\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="f=f^+-f^-">\(f=f^+-f^-\)</span>,   <span class="math inline" data-source-tex="|f|=f^++f^-=f^+\vee f^-">\(|f|=f^++f^-=f^+\vee f^-\)</span>,</div>
+<p>dengan semua fungsi tersebut didefinisikan pada <span class="math inline" data-source-tex="\dom f">\(\dom f\)</span>.
+Dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span>, operasi-operasi yang bersesuaian adalah <span class="math inline" data-source-tex="u^+=u\vee 0">\(u^+=u\vee 0\)</span>,
+<span class="math inline" data-source-tex="u^-=(-u)\vee 0">\(u^-=(-u)\vee 0\)</span>, dan kita mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="u=u^+-u^-">\(u=u^+-u^-\)</span>,
+  <span class="math inline" data-source-tex="|u|=u^++u^-=u^+\vee u^-">\(|u|=u^++u^-=u^+\vee u^-\)</span>,
+  <span class="math inline" data-source-tex="u^+\wedge u^-=0">\(u^+\wedge u^-=0\)</span>.</div>
+</section>
+<section class="source-unit" id="241Eg" data-source-id="241Eg"><h3><span class="source-label">241Eg</span> (g) </h3>
+<p>Jika <span class="math inline" data-source-tex="u\ge 0">\(u\ge 0\)</span> dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span>, maka terdapat
+<span class="math inline" data-source-tex="f\ge 0">\(f\ge 0\)</span> dalam <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> sedemikian sehingga <span class="math inline" data-source-tex="f^{\ssbullet}=u">\(f^{\ssbullet}=u\)</span>.
+<span class="proof-fragment">Bukti. Ambil sebarang <span class="math inline" data-source-tex="g\in\eusm L^0">\(g\in\eusm L^0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="u=g^{\ssbullet}">\(u=g^{\ssbullet}\)</span>, dan tetapkan <span class="math inline" data-source-tex="f=g\vee\tbf{0}">\(f=g\vee\tbf{0}\)</span>. ∎</span></p>
+</section>
+<section class="source-unit" id="241F" data-source-id="241F"><span class="anchor" id="241Fa"></span><h2><span class="source-label">241F</span> Ruang Riesz </h2>
+<p>Terdapat teori abstrak yang luas
+mengenai ruang Riesz, yang menurut saya sebaiknya kita kesampingkan untuk
+saat ini; uraian umum dapat ditemukan dalam Luxemburg \&amp; Zaanen 71
+dan Zaanen 83; buku saya sendiri Fremlin 74 membahas bahan
+elementernya, dan Bab 35 dalam jilid berikutnya mengulangi gagasan-gagasan
+yang paling esensial. Untuk keperluan kita di sini, kita hanya memerlukan
+beberapa definisi dan sejumlah hasil sederhana yang paling mudah dibuktikan
+untuk kasus-kasus khusus yang kita butuhkan, tanpa mengacu pada teori umum.</p>
+<p> </p>
+<p><strong>(a)</strong> Suatu ruang Riesz <span class="math inline" data-source-tex="U">\(U\)</span> disebut <strong>Archimedes</strong> jika kapan
+pun <span class="math inline" data-source-tex="u\in U">\(u\in U\)</span>, <span class="math inline" data-source-tex="u&gt;0">\(u&gt;0\)</span> (artinya, <span class="math inline" data-source-tex="u\ge 0">\(u\ge 0\)</span> dan <span class="math inline" data-source-tex="u\ne 0">\(u\ne 0\)</span>), dan
+<span class="math inline" data-source-tex="v\in U">\(v\in U\)</span>, terdapat <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> sedemikian sehingga <span class="math inline" data-source-tex="nu\not\le v">\(nu\not\le v\)</span>.</p>
+</section>
+<section class="source-unit" id="241Fb" data-source-id="241Fb"><h3><span class="source-label">241Fb</span> (b) </h3>
+<p>Suatu ruang Riesz <span class="math inline" data-source-tex="U">\(U\)</span> disebut <strong>lengkap-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>
+Dedekind</strong> (atau <strong>lengkap-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> menurut urutan</strong>, atau
+<strong>lengkap-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span></strong>) jika setiap himpunan tak kosong terhitung
+<span class="math inline" data-source-tex="A\subseteq U">\(A\subseteq U\)</span> yang terbatas di atas mempunyai batas atas terkecil dalam
+<span class="math inline" data-source-tex="U">\(U\)</span>.</p>
+</section>
+<section class="source-unit" id="241Fc" data-source-id="241Fc"><h3><span class="source-label">241Fc</span> (c) </h3>
+<p>Suatu ruang Riesz <span class="math inline" data-source-tex="U">\(U\)</span> disebut <strong>lengkap Dedekind</strong>
+(atau <strong>lengkap menurut urutan</strong>, atau <strong>lengkap</strong>) jika setiap
+himpunan tak kosong <span class="math inline" data-source-tex="A\subseteq U">\(A\subseteq U\)</span> yang terbatas di atas dalam <span class="math inline" data-source-tex="U">\(U\)</span>
+mempunyai batas atas terkecil dalam <span class="math inline" data-source-tex="U">\(U\)</span>.</p>
+</section>
+<section class="source-unit" id="241G" data-source-id="241G"><h2><span class="source-label">241G</span>  </h2>
+<p>Kini kita mempunyai sifat-sifat penting <span class="math inline" data-source-tex="L^0">\(L^0\)</span>
+berikut.</p>
+<p> </p>
+<p><strong>Teorema</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur.
+Tetapkan <span class="math inline" data-source-tex="L^0=L^0(\mu)">\(L^0=L^0(\mu)\)</span>.</p>
+<p>(a) <span class="math inline" data-source-tex="L^0">\(L^0\)</span> bersifat Archimedes dan lengkap-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> Dedekind.</p>
+<p>(b) Jika <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> semihingga, maka <span class="math inline" data-source-tex="L^0">\(L^0\)</span> lengkap Dedekind jika dan hanya jika
+<span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dapat dilokalkan.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Tetapkan <span class="math inline" data-source-tex="\eusm L^0=\eusm L^0(\mu)">\(\eusm L^0=\eusm L^0(\mu)\)</span>.</p>
+<p> </p>
+<p><strong>(a)(i)</strong> Jika <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^0">\(v\in L^0\)</span> dan <span class="math inline" data-source-tex="u&gt;0">\(u&gt;0\)</span>, nyatakan <span class="math inline" data-source-tex="u">\(u\)</span> sebagai
+<span class="math inline" data-source-tex="f^{\ssbullet}">\(f^{\ssbullet}\)</span> dan <span class="math inline" data-source-tex="v">\(v\)</span> sebagai <span class="math inline" data-source-tex="g^{\ssbullet}">\(g^{\ssbullet}\)</span> dengan <span class="math inline" data-source-tex="f">\(f\)</span>,
+<span class="math inline" data-source-tex="g\in\eusm L^0">\(g\in\eusm L^0\)</span>. Maka <span class="math inline" data-source-tex="E=\{x:x\in\dom f,\,f(x)&gt;0\}">\(E=\{x:x\in\dom f,\,f(x)&gt;0\}\)</span> tidak terabaikan.
+Jadi, terdapat <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="E_n=\{x:x\in\dom f\cap\dom g,\,nf(x)&gt;g(x)\}">\(E_n=\{x:x\in\dom f\cap\dom g,\,nf(x)&gt;g(x)\}\)</span></div>
+<p>tidak terabaikan, sebab
+<span class="math inline" data-source-tex="E\cap\dom g\subseteq\bigcup_{n\in\Bbb N}E_n">\(E\cap\dom g\subseteq\bigcup_{n\in\Bbb N}E_n\)</span>. Tetapi sekarang
+<span class="math inline" data-source-tex="nu\not\le v">\(nu\not\le v\)</span>. Karena <span class="math inline" data-source-tex="u">\(u\)</span> dan <span class="math inline" data-source-tex="v">\(v\)</span> sebarang, <span class="math inline" data-source-tex="L^0">\(L^0\)</span> bersifat Archimedes.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Sekarang misalkan <span class="math inline" data-source-tex="A\subseteq L^0">\(A\subseteq L^0\)</span> suatu himpunan tak
+kosong terhitung dengan batas atas <span class="math inline" data-source-tex="w">\(w\)</span> dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span>. Nyatakan <span class="math inline" data-source-tex="A">\(A\)</span> sebagai
+<span class="math inline" data-source-tex="\{f_n^{\ssbullet}:n\in\Bbb N\}">\(\{f_n^{\ssbullet}:n\in\Bbb N\}\)</span> dengan <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> suatu barisan
+dalam <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span>, dan <span class="math inline" data-source-tex="w">\(w\)</span> sebagai <span class="math inline" data-source-tex="h^{\ssbullet}">\(h^{\ssbullet}\)</span> dengan
+<span class="math inline" data-source-tex="h\in\eusm L^0">\(h\in\eusm L^0\)</span>. Tetapkan <span class="math inline" data-source-tex="f=\sup_{n\in\Bbb N}f_n">\(f=\sup_{n\in\Bbb N}f_n\)</span>. Maka <span class="math inline" data-source-tex="f(x)">\(f(x)\)</span>
+terdefinisi dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> di setiap titik
+<span class="math inline" data-source-tex="x\in\dom h\cap\bigcap_{n\in\Bbb N}\dom f_n">\(x\in\dom h\cap\bigcap_{n\in\Bbb N}\dom f_n\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="f_n(x)\le h(x)">\(f_n(x)\le h(x)\)</span> untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, yakni untuk hampir setiap
+<span class="math inline" data-source-tex="x\in X">\(x\in X\)</span>; jadi <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span> (<a class="xref" href="#241Bg">241Bg</a>). Tetapkan
+<span class="math inline" data-source-tex="u=f^{\ssbullet}\in L^0">\(u=f^{\ssbullet}\in L^0\)</span>. Jika <span class="math inline" data-source-tex="v\in L^0">\(v\in L^0\)</span>, katakanlah
+<span class="math inline" data-source-tex="v=g^{\ssbullet}">\(v=g^{\ssbullet}\)</span> dengan <span class="math inline" data-source-tex="g\in\eusm L^0">\(g\in\eusm L^0\)</span>, maka</p>
+<p><span class="math display" data-source-tex="\eqalign{u_n\le v&amp;\text{ untuk setiap }n\in\Bbb N\cr
+&amp;\iff\text{ untuk setiap }n\in\Bbb N,\,f_n\leae g\cr
+&amp;\iff\text{ untuk hampir setiap }x\in X,\,f_n(x)\le g(x)
+      \text{ untuk setiap }n\in\Bbb N\cr
+&amp;\iff f\leae g
+\iff u\le v.\cr}">\[\begin{aligned}u_n\le v&amp;\text{ untuk setiap }n\in\Bbb N\\
+&amp;\iff\text{ untuk setiap }n\in\Bbb N,\,f_n\leae g\\
+&amp;\iff\text{ untuk hampir setiap }x\in X,\,f_n(x)\le g(x)
+      \text{ untuk setiap }n\in\Bbb N\\
+&amp;\iff f\leae g
+\iff u\le v.\\\end{aligned}\]</span></p>
+<p>Jadi, <span class="math inline" data-source-tex="u=\sup_{n\in\Bbb N}u_n">\(u=\sup_{n\in\Bbb N}u_n\)</span> dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span>. Karena <span class="math inline" data-source-tex="A">\(A\)</span>
+sebarang, <span class="math inline" data-source-tex="L^0">\(L^0\)</span> lengkap-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> Dedekind.</p>
+<p> </p>
+<p><strong>(b)(i)</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dapat dilokalkan. Misalkan
+<span class="math inline" data-source-tex="A\subseteq L^0">\(A\subseteq L^0\)</span> sebarang himpunan tak kosong dengan batas atas
+<span class="math inline" data-source-tex="w_0\in L^0">\(w_0\in L^0\)</span>. Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Cal A=\{f:f">\(\Cal A=\{f:f\)</span> fungsi terukur dari <span class="math inline" data-source-tex="X">\(X\)</span> ke
+<span class="math inline" data-source-tex="\Bbb R,\,f^{\ssbullet}\in A\}">\(\Bbb R,\,f^{\ssbullet}\in A\}\)</span>;</div>
+<p>maka setiap anggota <span class="math inline" data-source-tex="A">\(A\)</span> berbentuk <span class="math inline" data-source-tex="f^{\ssbullet}">\(f^{\ssbullet}\)</span> untuk suatu
+<span class="math inline" data-source-tex="f\in\Cal A">\(f\in\Cal A\)</span> (<a class="xref" href="#241Bk">241Bk</a>). Untuk setiap <span class="math inline" data-source-tex="q\in\Bbb Q">\(q\in\Bbb Q\)</span>, misalkan <span class="math inline" data-source-tex="\Cal E_q">\(\Cal E_q\)</span>
+keluarga subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span> yang dapat dinyatakan dalam bentuk
+<span class="math inline" data-source-tex="\{x:f(x)\ge q\}">\(\{x:f(x)\ge q\}\)</span> untuk suatu <span class="math inline" data-source-tex="f\in\Cal A">\(f\in\Cal A\)</span>; maka
+<span class="math inline" data-source-tex="\Cal E_q\subseteq\Sigma">\(\Cal E_q\subseteq\Sigma\)</span>. Karena <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dapat dilokalkan,
+terdapat himpunan <span class="math inline" data-source-tex="F_q\in\Sigma">\(F_q\in\Sigma\)</span> yang merupakan supremum esensial bagi
+<span class="math inline" data-source-tex="\Cal E_q">\(\Cal E_q\)</span>. Untuk <span class="math inline" data-source-tex="x\in X">\(x\in X\)</span>, tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="g^*(x)=\sup\{q:q\in\Bbb Q,\,x\in F_q\}">\(g^*(x)=\sup\{q:q\in\Bbb Q,\,x\in F_q\}\)</span>,</div>
+<p>dengan mengizinkan <span class="math inline" data-source-tex="\infty">\(\infty\)</span> sebagai supremum suatu himpunan
+yang tidak terbatas di atas, dan <span class="math inline" data-source-tex="-\infty">\(-\infty\)</span> sebagai <span class="math inline" data-source-tex="\sup\emptyset">\(\sup\emptyset\)</span>.
+Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:g^*(x)&gt;a\}=\bigcup_{q\in\Bbb Q,q&gt;a}F_q\in\Sigma">\(\{x:g^*(x)&gt;a\}=\bigcup_{q\in\Bbb Q,q&gt;a}F_q\in\Sigma\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>.</p>
+<p>Jika <span class="math inline" data-source-tex="f\in\Cal A">\(f\in\Cal A\)</span>, maka <span class="math inline" data-source-tex="f\leae g^*">\(f\leae g^*\)</span>. Bukti. Untuk setiap
+<span class="math inline" data-source-tex="q\in\Bbb Q">\(q\in\Bbb Q\)</span>, tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="E_q=\{x:f(x)\ge q\}\in\Cal E_q">\(E_q=\{x:f(x)\ge q\}\in\Cal E_q\)</span>;</div>
+<p>maka <span class="math inline" data-source-tex="E_q\setminus F_q">\(E_q\setminus F_q\)</span> terabaikan. Tetapkan
+<span class="math inline" data-source-tex="H=\bigcup_{q\in\Bbb Q}(E_q\setminus F_q)">\(H=\bigcup_{q\in\Bbb Q}(E_q\setminus F_q)\)</span>. Jika <span class="math inline" data-source-tex="x\in X\setminus H">\(x\in X\setminus H\)</span>,
+maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="f(x)\ge q\Longrightarrow g^*(x)\ge q">\(f(x)\ge q\Longrightarrow g^*(x)\ge q\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="f(x)\le g^*(x)">\(f(x)\le g^*(x)\)</span>; jadi <span class="math inline" data-source-tex="f\leae g^*">\(f\leae g^*\)</span>. ∎</p>
+<p>Jika <span class="math inline" data-source-tex="h:X\to\Bbb R">\(h:X\to\Bbb R\)</span> terukur dan <span class="math inline" data-source-tex="u\le h^{\ssbullet}">\(u\le h^{\ssbullet}\)</span> untuk setiap
+<span class="math inline" data-source-tex="u\in A">\(u\in A\)</span>, maka <span class="math inline" data-source-tex="g^*\leae h">\(g^*\leae h\)</span>. Bukti. Tetapkan
+<span class="math inline" data-source-tex="G_q=\{x:h(x)\ge q\}">\(G_q=\{x:h(x)\ge q\}\)</span> untuk setiap <span class="math inline" data-source-tex="q\in\Bbb Q">\(q\in\Bbb Q\)</span>. Jika
+<span class="math inline" data-source-tex="E\in\Cal E_q">\(E\in\Cal E_q\)</span>, terdapat <span class="math inline" data-source-tex="f\in\Cal A">\(f\in\Cal A\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="E=\{x:f(x)\ge q\}">\(E=\{x:f(x)\ge q\}\)</span>; kini <span class="math inline" data-source-tex="f\leae h">\(f\leae h\)</span>, sehingga
+<span class="math inline" data-source-tex="E\setminus G_q\subseteq\{x:f(x)&gt;h(x)\}">\(E\setminus G_q\subseteq\{x:f(x)&gt;h(x)\}\)</span> terabaikan. Karena <span class="math inline" data-source-tex="F_q">\(F_q\)</span>
+merupakan supremum esensial bagi <span class="math inline" data-source-tex="\Cal E_q">\(\Cal E_q\)</span>, <span class="math inline" data-source-tex="F_q\setminus G_q">\(F_q\setminus G_q\)</span>
+terabaikan; dan ini berlaku untuk setiap <span class="math inline" data-source-tex="q\in\Bbb Q">\(q\in\Bbb Q\)</span>. Akibatnya,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:h(x)&lt;g^*(x)\}
+\subseteq\bigcup_{q\in\Bbb Q}F_q\setminus G_q">\(\{x:h(x)&lt;g^*(x)\}
+\subseteq\bigcup_{q\in\Bbb Q}F_q\setminus G_q\)</span></div>
+<p>terabaikan, dan <span class="math inline" data-source-tex="g^*\leae h">\(g^*\leae h\)</span>. ∎</p>
+<p>Kini ingat bahwa kita mengandaikan <span class="math inline" data-source-tex="A\ne\emptyset">\(A\ne\emptyset\)</span> dan bahwa <span class="math inline" data-source-tex="A">\(A\)</span>
+mempunyai batas atas <span class="math inline" data-source-tex="w_0\in L^0">\(w_0\in L^0\)</span>. Ambil sebarang <span class="math inline" data-source-tex="f_0\in\Cal A">\(f_0\in\Cal A\)</span> dan
+fungsi terukur <span class="math inline" data-source-tex="h_0:X\to\Bbb R">\(h_0:X\to\Bbb R\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="h_0^{\ssbullet}=w_0">\(h_0^{\ssbullet}=w_0\)</span>; maka <span class="math inline" data-source-tex="f\leae h_0">\(f\leae h_0\)</span> untuk setiap <span class="math inline" data-source-tex="f\in\Cal A">\(f\in\Cal A\)</span>,
+sehingga <span class="math inline" data-source-tex="f_0\leae g^*\leae h_0">\(f_0\leae g^*\leae h_0\)</span>, dan <span class="math inline" data-source-tex="g^*">\(g^*\)</span> harus berhingga hampir di
+mana-mana. Dengan menetapkan <span class="math inline" data-source-tex="g(x)=g^*(x)">\(g(x)=g^*(x)\)</span> ketika <span class="math inline" data-source-tex="g^*(x)\in\Bbb R">\(g^*(x)\in\Bbb R\)</span>,
+kita memperoleh <span class="math inline" data-source-tex="g\in\eusm L^0">\(g\in\eusm L^0\)</span> dan <span class="math inline" data-source-tex="g\eae g^*">\(g\eae g^*\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="f\leae g\leae h">\(f\leae g\leae h\)</span></div>
+<p>kapan pun <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="h">\(h\)</span> merupakan fungsi terukur dari <span class="math inline" data-source-tex="X">\(X\)</span> ke
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, <span class="math inline" data-source-tex="f^{\ssbullet}\in A">\(f^{\ssbullet}\in A\)</span>, dan <span class="math inline" data-source-tex="h^{\ssbullet}">\(h^{\ssbullet}\)</span> merupakan batas
+atas bagi <span class="math inline" data-source-tex="A">\(A\)</span>; yakni,</p>
+<div class="centerline"><span class="math inline" data-source-tex="u\le g^{\ssbullet}\le w">\(u\le g^{\ssbullet}\le w\)</span></div>
+<p>kapan pun <span class="math inline" data-source-tex="u\in A">\(u\in A\)</span> dan <span class="math inline" data-source-tex="w">\(w\)</span> merupakan batas atas bagi <span class="math inline" data-source-tex="A">\(A\)</span>.
+Tetapi ini berarti <span class="math inline" data-source-tex="g^{\ssbullet}">\(g^{\ssbullet}\)</span> merupakan batas atas terkecil bagi
+<span class="math inline" data-source-tex="A">\(A\)</span> dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span>. Karena <span class="math inline" data-source-tex="A">\(A\)</span> sebarang, <span class="math inline" data-source-tex="L^0">\(L^0\)</span> lengkap Dedekind.</p>
+<p> </p>
+<p><strong>(ii)</strong> Misalkan <span class="math inline" data-source-tex="L^0">\(L^0\)</span> lengkap Dedekind. Kita mengandaikan bahwa
+<span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> semihingga. Misalkan <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> sebarang subhimpunan
+dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="A=\{0\}\cup\{(\chi E)^{\ssbullet}:E\in\Cal E\}\subseteq
+L^0">\(A=\{0\}\cup\{(\chi E)^{\ssbullet}:E\in\Cal E\}\subseteq
+L^0\)</span>.</div>
+<p>Maka <span class="math inline" data-source-tex="A">\(A\)</span> terbatas di atas oleh <span class="math inline" data-source-tex="(\chi X)^{\ssbullet}">\((\chi X)^{\ssbullet}\)</span>,
+sehingga mempunyai batas atas terkecil <span class="math inline" data-source-tex="w\in L^0">\(w\in L^0\)</span>. Nyatakan <span class="math inline" data-source-tex="w">\(w\)</span> sebagai
+<span class="math inline" data-source-tex="h^{\ssbullet}">\(h^{\ssbullet}\)</span> dengan <span class="math inline" data-source-tex="h:X\to\Bbb R">\(h:X\to\Bbb R\)</span> terukur, dan tetapkan
+<span class="math inline" data-source-tex="F=\{x:h(x)&gt;0\}">\(F=\{x:h(x)&gt;0\}\)</span>. Maka <span class="math inline" data-source-tex="F">\(F\)</span> merupakan supremum esensial bagi <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span>
+dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. Bukti. <strong>(<span class="math inline" data-source-tex="{\alpha}">\({\alpha}\)</span>)</strong> Jika <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>, maka
+<span class="math inline" data-source-tex="(\chi E)^{\ssbullet}\le w">\((\chi E)^{\ssbullet}\le w\)</span>, sehingga <span class="math inline" data-source-tex="\chi E\leae h">\(\chi E\leae h\)</span>, yakni
+<span class="math inline" data-source-tex="h(x)\ge 1">\(h(x)\ge 1\)</span> untuk hampir setiap <span class="math inline" data-source-tex="x\in E">\(x\in E\)</span>, dan
+<span class="math inline" data-source-tex="E\setminus F\subseteq\{x:x\in E,\,h(x)&lt;1\}">\(E\setminus F\subseteq\{x:x\in E,\,h(x)&lt;1\}\)</span> terabaikan.
+<strong>(<span class="math inline" data-source-tex="{\beta}">\({\beta}\)</span>)</strong> Jika <span class="math inline" data-source-tex="G\in\Sigma">\(G\in\Sigma\)</span> dan <span class="math inline" data-source-tex="E\setminus G">\(E\setminus G\)</span> terabaikan untuk
+setiap <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>, maka <span class="math inline" data-source-tex="\chi E\leae\chi G">\(\chi E\leae\chi G\)</span> untuk setiap
+<span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>, yakni <span class="math inline" data-source-tex="(\chi E)^{\ssbullet}\le(\chi G)^{\ssbullet}">\((\chi E)^{\ssbullet}\le(\chi G)^{\ssbullet}\)</span>
+untuk setiap <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>; jadi <span class="math inline" data-source-tex="w\le(\chi G)^{\ssbullet}">\(w\le(\chi G)^{\ssbullet}\)</span>, yakni
+<span class="math inline" data-source-tex="h\leae\chi G">\(h\leae\chi G\)</span>. Oleh karena itu,
+<span class="math inline" data-source-tex="F\setminus G\subseteq\{x:h(x)&gt;(\chi G)(x)\}">\(F\setminus G\subseteq\{x:h(x)&gt;(\chi G)(x)\}\)</span> terabaikan. ∎</p>
+<p>Karena <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> sebarang, <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dapat dilokalkan.</p></aside>
+</section>
+<section class="source-unit" id="241H" data-source-id="241H"><h2><span class="source-label">241H</span> Struktur perkalian <span class="math inline" data-source-tex="L^0">\(L^0\)</span> </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu
+ruang ukur sebarang; tuliskan <span class="math inline" data-source-tex="L^0=L^0(\mu)">\(L^0=L^0(\mu)\)</span>,
+<span class="math inline" data-source-tex="\eusm L^0=\eusm L^0(\mu)">\(\eusm L^0=\eusm L^0(\mu)\)</span>.</p>
+</section>
+<section class="source-unit" id="241Ha" data-source-id="241Ha"><h3><span class="source-label">241Ha</span> (a) </h3>
+<p>Jika <span class="math inline" data-source-tex="f_1">\(f_1\)</span>, <span class="math inline" data-source-tex="f_2">\(f_2\)</span>, <span class="math inline" data-source-tex="g_1">\(g_1\)</span>, <span class="math inline" data-source-tex="g_2\in\eusm L^0">\(g_2\in\eusm L^0\)</span>,
+<span class="math inline" data-source-tex="f_1\eae f_2">\(f_1\eae f_2\)</span>, dan <span class="math inline" data-source-tex="g_1\eae g_2">\(g_1\eae g_2\)</span>, maka
+<span class="math inline" data-source-tex="f_1\times g_1\eae f_2\times g_2">\(f_1\times g_1\eae f_2\times g_2\)</span>. Oleh karena itu, kita dapat
+mendefinisikan perkalian pada <span class="math inline" data-source-tex="L^0">\(L^0\)</span> dengan menetapkan
+<span class="math inline" data-source-tex="f^{\ssbullet}\times g^{\ssbullet}=(f\times g)^{\ssbullet}">\(f^{\ssbullet}\times g^{\ssbullet}=(f\times g)^{\ssbullet}\)</span> untuk semua
+<span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in\eusm L^0">\(g\in\eusm L^0\)</span>.</p>
+</section>
+<section class="source-unit" id="241Hb" data-source-id="241Hb"><h3><span class="source-label">241Hb</span> (b) </h3>
+<p>Untuk semua
+<span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v">\(v\)</span>, <span class="math inline" data-source-tex="w\in L^0">\(w\in L^0\)</span> dan <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>,</p>
+<p>   <span class="math inline" data-source-tex="u\times(v\times w)=(u\times v)\times w">\(u\times(v\times w)=(u\times v)\times w\)</span>,</p>
+<p>   <span class="math inline" data-source-tex="u\times e=e\times u=u">\(u\times e=e\times u=u\)</span>,</p>
+<p>dengan <span class="math inline" data-source-tex="e=\chi X^{\ssbullet}">\(e=\chi X^{\ssbullet}\)</span> kelas ekuivalensi fungsi yang
+bernilai konstan <span class="math inline" data-source-tex="1">\(1\)</span>,</p>
+<p>   <span class="math inline" data-source-tex="c(u\times v)=cu\times v=u\times cv">\(c(u\times v)=cu\times v=u\times cv\)</span>,</p>
+<p>   <span class="math inline" data-source-tex="u\times(v+w)=(u\times v)+(u\times w)">\(u\times(v+w)=(u\times v)+(u\times w)\)</span>,</p>
+<p>   <span class="math inline" data-source-tex="(u+v)\times w=(u\times w)+(v\times w)">\((u+v)\times w=(u\times w)+(v\times w)\)</span>,</p>
+<p>   <span class="math inline" data-source-tex="u\times v=v\times u">\(u\times v=v\times u\)</span>,</p>
+<p>   <span class="math inline" data-source-tex="|u\times v|=|u|\times |v|">\(|u\times v|=|u|\times |v|\)</span>,</p>
+<p>   <span class="math inline" data-source-tex="u\times v=0">\(u\times v=0\)</span> jika dan hanya jika <span class="math inline" data-source-tex="|u|\wedge|v|=0">\(|u|\wedge|v|=0\)</span>,</p>
+<p>   <span class="math inline" data-source-tex="|u|\le|v|">\(|u|\le|v|\)</span> jika dan hanya jika terdapat <span class="math inline" data-source-tex="w">\(w\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="|w|\le e">\(|w|\le e\)</span> dan <span class="math inline" data-source-tex="u=v\times w">\(u=v\times w\)</span>.</p>
+</section>
+<section class="source-unit" id="241I" data-source-id="241I"><h2><span class="source-label">241I</span> Aksi fungsi Borel pada <span class="math inline" data-source-tex="L^0">\(L^0\)</span> </h2>
+<p>Misalkan
+<span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan <span class="math inline" data-source-tex="h:\Bbb R\to\Bbb R">\(h:\Bbb R\to\Bbb R\)</span> suatu fungsi
+terukur Borel. Maka <span class="math inline" data-source-tex="hf\in\eusm L^0=\eusm L^0(\mu)">\(hf\in\eusm L^0=\eusm L^0(\mu)\)</span> untuk
+setiap <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span><span class="proof-fragment"> (<a class="xref" href="#241Be">241Be</a>)</span> dan <span class="math inline" data-source-tex="hf\eae hg">\(hf\eae hg\)</span> kapan pun
+<span class="math inline" data-source-tex="f\eae g">\(f\eae g\)</span>. Jadi kita mempunyai fungsi <span class="math inline" data-source-tex="\bar h:L^0\to L^0">\(\bar h:L^0\to L^0\)</span> yang
+didefinisikan dengan menetapkan
+<span class="math inline" data-source-tex="\bar h(f^{\ssbullet})=(hf)^{\ssbullet}">\(\bar h(f^{\ssbullet})=(hf)^{\ssbullet}\)</span> untuk setiap
+<span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span>. Sebagai contoh, jika <span class="math inline" data-source-tex="u\in L^0">\(u\in L^0\)</span> dan <span class="math inline" data-source-tex="p\ge 1">\(p\ge 1\)</span>,
+kita dapat meninjau <span class="math inline" data-source-tex="|u|^p=\bar h(u)">\(|u|^p=\bar h(u)\)</span> dengan <span class="math inline" data-source-tex="h(x)=|x|^p">\(h(x)=|x|^p\)</span> untuk
+<span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span>.</p>
+</section>
+<section class="source-unit" id="241J" data-source-id="241J"><h2><span class="source-label">241J</span> <span class="math inline" data-source-tex="L^0">\(L^0\)</span> kompleks </h2>
+<p>Gagasan-gagasan dalam bab ini,
+seperti halnya dalam Bab <a class="xref" href="../22/index.html#22">22</a>-<a class="xref" href="../23/index.html#23">23</a>, sering diterapkan pada ruang-ruang yang
+berdasarkan fungsi bernilai kompleks, bukan fungsi bernilai riil.
+Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur.</p>
+</section>
+<section class="source-unit" id="241Ja" data-source-id="241Ja"><h3><span class="source-label">241Ja</span> (a) </h3>
+<p>Kita dapat menuliskan
+<span class="math inline" data-source-tex="\eusm L^0_{\Bbb C}=\eusm L^0_{\Bbb C}(\mu)">\(\eusm L^0_{\Bbb C}=\eusm L^0_{\Bbb C}(\mu)\)</span> untuk ruang fungsi-fungsi
+bernilai kompleks <span class="math inline" data-source-tex="f">\(f\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\dom f">\(\dom f\)</span> merupakan subhimpunan
+koterabaikan dari <span class="math inline" data-source-tex="X">\(X\)</span> dan terdapat subhimpunan koterabaikan
+<span class="math inline" data-source-tex="E\subseteq X">\(E\subseteq X\)</span> sedemikian sehingga <span class="math inline" data-source-tex="f\restr E">\(f\restr E\)</span> terukur; yakni,
+sedemikian sehingga bagian riil dan bagian imajiner <span class="math inline" data-source-tex="f">\(f\)</span> keduanya termasuk
+dalam <span class="math inline" data-source-tex="\eusm L^0(\mu)">\(\eusm L^0(\mu)\)</span>. Selanjutnya,
+<span class="math inline" data-source-tex="L^0_{\Bbb C}=L^0_{\Bbb C}(\mu)">\(L^0_{\Bbb C}=L^0_{\Bbb C}(\mu)\)</span> merupakan ruang kelas-kelas
+ekuivalensi dalam <span class="math inline" data-source-tex="\eusm L^0_{\Bbb C}">\(\eusm L^0_{\Bbb C}\)</span> terhadap relasi ekuivalensi
+<span class="math inline" data-source-tex="\eae">\(\eae\)</span>.</p>
+</section>
+<section class="source-unit" id="241Jb" data-source-id="241Jb"><h3><span class="source-label">241Jb</span> (b) </h3>
+<p>Dengan menggunakan rumus yang sama seperti dalam <a class="xref" href="#241D">241D</a>,
+mudah untuk mendeskripsikan penjumlahan dan perkalian skalar yang menjadikan
+<span class="math inline" data-source-tex="L^0_{\Bbb C}">\(L^0_{\Bbb C}\)</span> ruang linear atas <span class="math inline" data-source-tex="\Bbb C">\(\Bbb C\)</span>. Kita tidak lagi
+mempunyai struktur urutan yang persis sama, tetapi kita dapat
+mengidentifikasi suatu ‘bagian riil’, yaitu</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{f^{\ssbullet}:f\in\eusm L^0_{\Bbb C}">\(\{f^{\ssbullet}:f\in\eusm L^0_{\Bbb C}\)</span> bernilai riil
+hampir di mana-mana<span class="math inline" data-source-tex="\}">\(\}\)</span>,</div>
+<p>yang jelas dapat diidentifikasi dengan ruang linear
+riil <span class="math inline" data-source-tex="L^0">\(L^0\)</span>, serta peta-peta yang bersesuaian
+<span class="math inline" data-source-tex="u\mapsto\Real(u)">\(u\mapsto\Real(u)\)</span>, <span class="math inline" data-source-tex="u\mapsto\Imag(u):L^0_{\Bbb C}\to L^0">\(u\mapsto\Imag(u):L^0_{\Bbb C}\to L^0\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="u=\Real(u)+i\Imag(u)">\(u=\Real(u)+i\Imag(u)\)</span> untuk setiap <span class="math inline" data-source-tex="u">\(u\)</span>. Selain itu, kita
+mempunyai pengertian ‘modulus’, dengan menuliskan</p>
+<div class="centerline"><span class="math inline" data-source-tex="|f^{\ssbullet}|=|f|^{\ssbullet}\in L^0">\(|f^{\ssbullet}|=|f|^{\ssbullet}\in L^0\)</span> untuk setiap
+<span class="math inline" data-source-tex="f\in\eusm L^0_{\Bbb C}">\(f\in\eusm L^0_{\Bbb C}\)</span>,</div>
+<p>yang memenuhi relasi dasar <span class="math inline" data-source-tex="|cu|=|c||u|">\(|cu|=|c||u|\)</span>,
+<span class="math inline" data-source-tex="|u+v|\le|u|+|v|">\(|u+v|\le|u|+|v|\)</span> untuk <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^0_{\Bbb C}">\(v\in L^0_{\Bbb C}\)</span> dan
+<span class="math inline" data-source-tex="c\in\Bbb C">\(c\in\Bbb C\)</span>, seperti dalam <a class="xref" href="#241Ef">241Ef</a>.
+Kita tentu saja masih mempunyai perkalian pada <span class="math inline" data-source-tex="L^0_{\Bbb C}">\(L^0_{\Bbb C}\)</span>,
+dan semua rumus dalam <a class="xref" href="#241H">241H</a> tetap berlaku untuknya.</p>
+</section>
+<section class="source-unit" id="241Jc" data-source-id="241Jc"><h3><span class="source-label">241Jc</span> (c) </h3>
+<p>Fakta berikut berguna. Untuk sebarang
+<span class="math inline" data-source-tex="u\in L^0_{\Bbb C}">\(u\in L^0_{\Bbb C}\)</span>, <span class="math inline" data-source-tex="|u|">\(|u|\)</span> merupakan supremum dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span> dari
+<span class="math inline" data-source-tex="\{\Real(\zeta u):\zeta\in\Bbb C,\,|\zeta|=1\}">\(\{\Real(\zeta u):\zeta\in\Bbb C,\,|\zeta|=1\}\)</span>. <span class="proof-fragment">Bukti.
+(i) Jika <span class="math inline" data-source-tex="|\zeta|=1">\(|\zeta|=1\)</span>, maka <span class="math inline" data-source-tex="\Real(\zeta u)\le|\zeta u|=|u|">\(\Real(\zeta u)\le|\zeta u|=|u|\)</span>. Jadi,
+<span class="math inline" data-source-tex="|u|">\(|u|\)</span> merupakan batas atas dari
+<span class="math inline" data-source-tex="\{\Real(\zeta u):|\zeta|=1\}">\(\{\Real(\zeta u):|\zeta|=1\}\)</span>. (ii) Jika <span class="math inline" data-source-tex="v\in L^0">\(v\in L^0\)</span> dan
+<span class="math inline" data-source-tex="\Real(\zeta u)\le v">\(\Real(\zeta u)\le v\)</span> kapan pun <span class="math inline" data-source-tex="|\zeta|=1">\(|\zeta|=1\)</span>, nyatakan <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v">\(v\)</span> sebagai
+<span class="math inline" data-source-tex="f^{\ssbullet}">\(f^{\ssbullet}\)</span>, <span class="math inline" data-source-tex="g^{\ssbullet}">\(g^{\ssbullet}\)</span> dengan <span class="math inline" data-source-tex="f:X\to\Bbb C">\(f:X\to\Bbb C\)</span> dan
+<span class="math inline" data-source-tex="g:X\to\Bbb R">\(g:X\to\Bbb R\)</span> terukur. Untuk sebarang <span class="math inline" data-source-tex="q\in\Bbb Q">\(q\in\Bbb Q\)</span>, <span class="math inline" data-source-tex="x\in X">\(x\in X\)</span>,
+tetapkan <span class="math inline" data-source-tex="f_q(x)=\Real(e^{iq}f(x))">\(f_q(x)=\Real(e^{iq}f(x))\)</span>. Maka <span class="math inline" data-source-tex="f_q\leae g">\(f_q\leae g\)</span>. Oleh karena itu,
+<span class="math inline" data-source-tex="H=\{x:f_q(x)\le g(x)">\(H=\{x:f_q(x)\le g(x)\)</span> untuk setiap <span class="math inline" data-source-tex="q\in\Bbb Q\}">\(q\in\Bbb Q\}\)</span> koterabaikan.
+Tetapi tentu saja <span class="math inline" data-source-tex="H=\{x:|f(x)|\le g(x)\}">\(H=\{x:|f(x)|\le g(x)\}\)</span>, sehingga <span class="math inline" data-source-tex="|f|\leae g">\(|f|\leae g\)</span> dan
+<span class="math inline" data-source-tex="|u|\le v">\(|u|\le v\)</span>. Karena <span class="math inline" data-source-tex="v">\(v\)</span> sebarang, <span class="math inline" data-source-tex="|u|">\(|u|\)</span> merupakan batas atas terkecil
+dari <span class="math inline" data-source-tex="\{\Real(\zeta u):|\zeta|=1\}">\(\{\Real(\zeta u):|\zeta|=1\}\)</span>. ∎</span></p>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="241X" data-source-id="241X"><span class="anchor" id="241Xa"></span><h2><span class="source-label">241X</span> Latihan dasar <span class="math inline" data-source-tex="\pmb{&gt;}">\(\pmb{&gt;}\)</span>(a) <span class="importance" title="Sangat penting">penting</span></h2>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan, dan misalkan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> ukuran cacah pada <span class="math inline" data-source-tex="X">\(X\)</span>
+(<a class="xref" href="../112/index.html#112Bd">112Bd</a>). Tunjukkan bahwa <span class="math inline" data-source-tex="L^0(\mu)">\(L^0(\mu)\)</span> dapat diidentifikasi dengan
+<span class="math inline" data-source-tex="\eusm L^0(\mu)=\Bbb R^X">\(\eusm L^0(\mu)=\Bbb R^X\)</span>.</p>
+</section>
+<section class="source-unit" id="241Xb" data-source-id="241Xb"><h3><span class="source-label">241Xb</span> (&gt;b) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan
+<span class="math inline" data-source-tex="\hat\mu">\(\hat\mu\)</span> kelengkapan dari <span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\eusm L^0(\mu)=\eusm L^0(\hat\mu)">\(\eusm L^0(\mu)=\eusm L^0(\hat\mu)\)</span> dan
+<span class="math inline" data-source-tex="L^0(\mu)=L^0(\hat\mu)">\(L^0(\mu)=L^0(\hat\mu)\)</span>.</p>
+</section>
+<section class="source-unit" id="241Xc" data-source-id="241Xc"><h3><span class="source-label">241Xc</span> (c) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur. (i)
+Tunjukkan bahwa untuk setiap <span class="math inline" data-source-tex="u\in L^0(\mu)">\(u\in L^0(\mu)\)</span> kita dapat mendefinisikan
+suatu ukuran luar <span class="math inline" data-source-tex="\theta_u:\Cal P\Bbb R\to[0,\infty]">\(\theta_u:\Cal P\Bbb R\to[0,\infty]\)</span> dengan menuliskan
+<span class="math inline" data-source-tex="\theta_u(A)=\mu^*f^{-1}[A]">\(\theta_u(A)=\mu^*f^{-1}[A]\)</span> kapan pun <span class="math inline" data-source-tex="A\subseteq\Bbb R">\(A\subseteq\Bbb R\)</span> dan
+<span class="math inline" data-source-tex="f\in\eusm L^0(\mu)">\(f\in\eusm L^0(\mu)\)</span> sedemikian sehingga <span class="math inline" data-source-tex="f^{\ssbullet}=u">\(f^{\ssbullet}=u\)</span>. (ii)
+Tunjukkan bahwa ukuran yang didefinisikan dari <span class="math inline" data-source-tex="\theta_u">\(\theta_u\)</span> dengan metode
+Carathéodory mengukur setiap subhimpunan Borel dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.</p>
+</section>
+<section class="source-unit" id="241Xd" data-source-id="241Xd"><h3><span class="source-label">241Xd</span> (d) </h3>
+<p>Misalkan
+<span class="math inline" data-source-tex="\langle(X_i,\Sigma_i,\mu_i)\rangle_{i\in I}">\(\langle(X_i,\Sigma_i,\mu_i)\rangle_{i\in I}\)</span> suatu keluarga ruang ukur,
+dengan jumlah langsung <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> (<a class="xref" href="../214/index.html#214L">214L</a>). (i) Dengan menuliskan
+<span class="math inline" data-source-tex="\phi_i:X_i\to X">\(\phi_i:X_i\to X\)</span> untuk peta kanonik (dalam konstruksi <a class="xref" href="../214/index.html#214L">214L</a>,
+<span class="math inline" data-source-tex="\phi_i(x)=(x,i)">\(\phi_i(x)=(x,i)\)</span> untuk <span class="math inline" data-source-tex="x\in X_i">\(x\in X_i\)</span>), tunjukkan bahwa
+<span class="math inline" data-source-tex="f\mapsto\langle f\phi_i\rangle_{i\in I}">\(f\mapsto\langle f\phi_i\rangle_{i\in I}\)</span> merupakan bijeksi antara
+<span class="math inline" data-source-tex="\eusm L^0(\mu)">\(\eusm L^0(\mu)\)</span> dan <span class="math inline" data-source-tex="\prod_{i\in I}\eusm L^0(\mu_i)">\(\prod_{i\in I}\eusm L^0(\mu_i)\)</span>. (ii) Tunjukkan
+bahwa ini bersesuaian dengan suatu bijeksi antara <span class="math inline" data-source-tex="L^0(\mu)">\(L^0(\mu)\)</span> dan
+<span class="math inline" data-source-tex="\prod_{i\in I}L^0(\mu_i)">\(\prod_{i\in I}L^0(\mu_i)\)</span>.</p>
+</section>
+<section class="source-unit" id="241Xe" data-source-id="241Xe"><h3><span class="source-label">241Xe</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="U">\(U\)</span> suatu ruang Riesz lengkap-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>
+Dedekind dan <span class="math inline" data-source-tex="A\subseteq U">\(A\subseteq U\)</span> suatu himpunan tak kosong terhitung yang
+terbatas di bawah dalam <span class="math inline" data-source-tex="U">\(U\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\inf A">\(\inf A\)</span> terdefinisi dalam
+<span class="math inline" data-source-tex="U">\(U\)</span>.</p>
+</section>
+<section class="source-unit" id="241Xf" data-source-id="241Xf"><h3><span class="source-label">241Xf</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="U">\(U\)</span> suatu ruang Riesz lengkap Dedekind dan
+<span class="math inline" data-source-tex="A\subseteq U">\(A\subseteq U\)</span> suatu himpunan tak kosong yang terbatas di bawah dalam
+<span class="math inline" data-source-tex="U">\(U\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\inf A">\(\inf A\)</span> terdefinisi dalam <span class="math inline" data-source-tex="U">\(U\)</span>.</p>
+</section>
+<section class="source-unit" id="241Xg" data-source-id="241Xg"><h3><span class="source-label">241Xg</span> (g) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dan <span class="math inline" data-source-tex="(Y,\Tau,\nu)">\((Y,\Tau,\nu)\)</span>
+ruang-ruang ukur, dan <span class="math inline" data-source-tex="\phi:X\to Y">\(\phi:X\to Y\)</span> suatu pelestari ukuran melalui prapeta fungsi. (i) Tunjukkan
+bahwa kita mempunyai peta <span class="math inline" data-source-tex="T:L^0(\nu)\to L^0(\mu)">\(T:L^0(\nu)\to L^0(\mu)\)</span> yang didefinisikan
+dengan menetapkan <span class="math inline" data-source-tex="Tg^{\ssbullet}=(g\phi)^{\ssbullet}">\(Tg^{\ssbullet}=(g\phi)^{\ssbullet}\)</span> untuk setiap
+<span class="math inline" data-source-tex="g\in\eusm L^0(\nu)">\(g\in\eusm L^0(\nu)\)</span>. (ii) Tunjukkan bahwa <span class="math inline" data-source-tex="T">\(T\)</span> linear, bahwa
+<span class="math inline" data-source-tex="T(v\times w)=Tv\times Tw">\(T(v\times w)=Tv\times Tw\)</span> untuk semua <span class="math inline" data-source-tex="v">\(v\)</span>, <span class="math inline" data-source-tex="w\in L^0(\nu)">\(w\in L^0(\nu)\)</span>, dan bahwa
+<span class="math inline" data-source-tex="T(\sup_{n\in\Bbb N}v_n)=\sup_{n\in\Bbb N}Tv_n">\(T(\sup_{n\in\Bbb N}v_n)=\sup_{n\in\Bbb N}Tv_n\)</span> kapan pun
+<span class="math inline" data-source-tex="\sequencen{v_n}">\(\sequencen{v_n}\)</span> suatu barisan dalam <span class="math inline" data-source-tex="L^0(\nu)">\(L^0(\nu)\)</span> dengan batas atas dalam
+<span class="math inline" data-source-tex="L^0(\nu)">\(L^0(\nu)\)</span>.</p>
+</section>
+<section class="source-unit" id="241Xh" data-source-id="241Xh"><h3><span class="source-label">241Xh</span> (&gt;h) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur. Andaikan
+<span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span> dan <span class="math inline" data-source-tex="h:\BbbR^r\to\Bbb R">\(h:\BbbR^r\to\Bbb R\)</span> suatu fungsi terukur Borel.
+Tunjukkan bahwa terdapat fungsi <span class="math inline" data-source-tex="\bar h:L^0(\mu)^r\to L^0(\mu)">\(\bar h:L^0(\mu)^r\to L^0(\mu)\)</span> yang
+didefinisikan dengan menuliskan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bar h(f_1^{\ssbullet},\ldots,f_r^{\ssbullet})
+=(h(f_1,\ldots,f_r))^{\ssbullet}">\(\bar h(f_1^{\ssbullet},\ldots,f_r^{\ssbullet})
+=(h(f_1,\ldots,f_r))^{\ssbullet}\)</span></div>
+<p>untuk <span class="math inline" data-source-tex="f_1,\ldots,f_r\in{\eusm L}^0(\mu)">\(f_1,\ldots,f_r\in{\eusm L}^0(\mu)\)</span>.</p>
+</section>
+<section class="source-unit" id="241Xi" data-source-id="241Xi"><h3><span class="source-label">241Xi</span> (i) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan <span class="math inline" data-source-tex="g">\(g\)</span>,
+<span class="math inline" data-source-tex="h">\(h\)</span>, <span class="math inline" data-source-tex="\sequencen{g_n}">\(\sequencen{g_n}\)</span> fungsi-fungsi terukur Borel dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> ke
+dirinya sendiri; tuliskan <span class="math inline" data-source-tex="\bar g">\(\bar g\)</span>, <span class="math inline" data-source-tex="\bar h">\(\bar h\)</span>, <span class="math inline" data-source-tex="\bar g_n">\(\bar g_n\)</span> untuk
+fungsi-fungsi yang bersesuaian dari <span class="math inline" data-source-tex="L^0=L^0(\mu)">\(L^0=L^0(\mu)\)</span> ke dirinya sendiri
+(<a class="xref" href="#241I">241I</a>). (i) Tunjukkan bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bar g(u)+\bar h(u)=\overline{g+h}(u)">\(\bar g(u)+\bar h(u)=\overline{g+h}(u)\)</span>,
+  <span class="math inline" data-source-tex="\bar g(u)\times\bar h(u)=\overline{g\times h}(u)">\(\bar g(u)\times\bar h(u)=\overline{g\times h}(u)\)</span>,
+  <span class="math inline" data-source-tex="\bar g(\bar h(u))=\overline{gh}(u)">\(\bar g(\bar h(u))=\overline{gh}(u)\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="u\in L^0">\(u\in L^0\)</span>. (ii) Tunjukkan bahwa jika
+<span class="math inline" data-source-tex="g(t)\le h(t)">\(g(t)\le h(t)\)</span> untuk setiap <span class="math inline" data-source-tex="t\in\Bbb R">\(t\in\Bbb R\)</span>, maka
+<span class="math inline" data-source-tex="\bar g(u)\le\bar h(u)">\(\bar g(u)\le\bar h(u)\)</span> untuk setiap <span class="math inline" data-source-tex="u\in L^0">\(u\in L^0\)</span>. (iii) Tunjukkan bahwa
+jika <span class="math inline" data-source-tex="g">\(g\)</span> tak menurun, maka <span class="math inline" data-source-tex="\bar g(u)\le\bar g(v)">\(\bar g(u)\le\bar g(v)\)</span> kapan pun <span class="math inline" data-source-tex="u\le v">\(u\le v\)</span>
+dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span>. (iv) Tunjukkan bahwa jika
+<span class="math inline" data-source-tex="h(t)=\sup_{n\in\Bbb N}g_n(t)">\(h(t)=\sup_{n\in\Bbb N}g_n(t)\)</span> untuk setiap <span class="math inline" data-source-tex="t\in\Bbb R">\(t\in\Bbb R\)</span>, maka
+<span class="math inline" data-source-tex="\bar h(u)=\sup_{n\in\Bbb N}\bar g_n(u)">\(\bar h(u)=\sup_{n\in\Bbb N}\bar g_n(u)\)</span> dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span> untuk setiap
+<span class="math inline" data-source-tex="u\in L^0">\(u\in L^0\)</span>.</p>
+</section>
+<section class="source-unit" id="241Y" data-source-id="241Y"><span class="anchor" id="241Ya"></span><h2><span class="source-label">241Y</span> Latihan lanjutan (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="U">\(U\)</span> sebarang ruang Riesz. Untuk <span class="math inline" data-source-tex="u\in U">\(u\in U\)</span>, tuliskan
+<span class="math inline" data-source-tex="|u|=u\vee(-u)">\(|u|=u\vee(-u)\)</span>, <span class="math inline" data-source-tex="u^+=u\vee 0">\(u^+=u\vee 0\)</span>, <span class="math inline" data-source-tex="u^-=(-u)\vee 0">\(u^-=(-u)\vee 0\)</span>. Tunjukkan bahwa,
+untuk sebarang <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in U">\(v\in U\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="u=u^+-u^-">\(u=u^+-u^-\)</span>,  <span class="math inline" data-source-tex="|u|=u^++u^-=u^+\vee u^-">\(|u|=u^++u^-=u^+\vee u^-\)</span>,
+  <span class="math inline" data-source-tex="u^+\wedge u^-=0">\(u^+\wedge u^-=0\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="u\vee v=\Bover12(u+v+|u-v|)=u+(v-u)^+">\(u\vee v=\Bover12(u+v+|u-v|)=u+(v-u)^+\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="u\wedge v=\Bover12(u+v-|u-v|)=u-(u-v)^+">\(u\wedge v=\Bover12(u+v-|u-v|)=u-(u-v)^+\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="|u+v|\le|u|+|v|">\(|u+v|\le|u|+|v|\)</span>.</div>
+</section>
+<section class="source-unit" id="241Yb" data-source-id="241Yb"><h3><span class="source-label">241Yb</span> (b) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="U">\(U\)</span> suatu ruang linear terurut parsial dan
+<span class="math inline" data-source-tex="N">\(N\)</span> suatu subruang linear dari <span class="math inline" data-source-tex="U">\(U\)</span> sedemikian sehingga kapan pun <span class="math inline" data-source-tex="u">\(u\)</span>,
+<span class="math inline" data-source-tex="u&#x27;\in N">\(u&#x27;\in N\)</span> dan <span class="math inline" data-source-tex="u&#x27;\le v\le u">\(u&#x27;\le v\le u\)</span>, maka <span class="math inline" data-source-tex="v\in N">\(v\in N\)</span>. (i) Tunjukkan bahwa ruang
+linear hasil bagi <span class="math inline" data-source-tex="U/N">\(U/N\)</span> merupakan ruang linear terurut parsial jika kita
+mengatakan bahwa <span class="math inline" data-source-tex="u^{\ssbullet}\le v^{\ssbullet}">\(u^{\ssbullet}\le v^{\ssbullet}\)</span> dalam <span class="math inline" data-source-tex="U/N">\(U/N\)</span> jika dan hanya jika
+terdapat <span class="math inline" data-source-tex="w\in N">\(w\in N\)</span> sedemikian sehingga <span class="math inline" data-source-tex="u\le v+w">\(u\le v+w\)</span> dalam <span class="math inline" data-source-tex="U">\(U\)</span>. (ii)
+Tunjukkan bahwa dalam hal ini <span class="math inline" data-source-tex="U/N">\(U/N\)</span> merupakan ruang Riesz jika <span class="math inline" data-source-tex="U">\(U\)</span>
+merupakan ruang Riesz dan <span class="math inline" data-source-tex="|u|\in N">\(|u|\in N\)</span> untuk setiap <span class="math inline" data-source-tex="u\in N">\(u\in N\)</span>.</p>
+</section>
+<section class="source-unit" id="241Yc" data-source-id="241Yc"><h3><span class="source-label">241Yc</span> (c) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur. Tuliskan
+<span class="math inline" data-source-tex="\eusm L^0_{\Sigma}">\(\eusm L^0_{\Sigma}\)</span> untuk ruang semua fungsi terukur dari <span class="math inline" data-source-tex="X">\(X\)</span> ke
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan <span class="math inline" data-source-tex="\eusm N">\(\eusm N\)</span> untuk subruang dari <span class="math inline" data-source-tex="\eusm L^0_{\Sigma}">\(\eusm L^0_{\Sigma}\)</span> yang
+terdiri atas fungsi-fungsi terukur yang bernilai nol hampir di mana-mana.
+(i) Tunjukkan bahwa <span class="math inline" data-source-tex="\eusm L^0_{\Sigma}">\(\eusm L^0_{\Sigma}\)</span> merupakan ruang Riesz
+lengkap-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> Dedekind. (ii) Tunjukkan bahwa <span class="math inline" data-source-tex="L^0(\mu)">\(L^0(\mu)\)</span> dapat
+diidentifikasi, sebagai ruang linear terurut, dengan hasil bagi
+<span class="math inline" data-source-tex="\eusm L^0_{\Sigma}/\eusm N">\(\eusm L^0_{\Sigma}/\eusm N\)</span> sebagaimana didefinisikan dalam <a class="xref" href="#241Yb">241Yb</a> di
+atas.</p>
+</section>
+<section class="source-unit" id="241Yd" data-source-id="241Yd"><h3><span class="source-label">241Yd</span> (d) </h3>
+<p>Tunjukkan bahwa setiap ruang Riesz lengkap-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>
+Dedekind bersifat Archimedes.</p>
+</section>
+<section class="source-unit" id="241Ye" data-source-id="241Ye"><h3><span class="source-label">241Ye</span> (e) </h3>
+<p>Suatu ruang Riesz <span class="math inline" data-source-tex="U">\(U\)</span> dikatakan memiliki
+<strong>sifat supremum terhitung</strong> jika untuk setiap <span class="math inline" data-source-tex="A\subseteq U">\(A\subseteq U\)</span> yang
+mempunyai batas atas terkecil dalam <span class="math inline" data-source-tex="U">\(U\)</span>, terdapat <span class="math inline" data-source-tex="B\subseteq A">\(B\subseteq A\)</span>
+terhitung sedemikian sehingga <span class="math inline" data-source-tex="\sup B=\sup A">\(\sup B=\sup A\)</span>. Tunjukkan bahwa jika
+<span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur semihingga, maka ruang itu
+<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga jika dan hanya jika <span class="math inline" data-source-tex="L^0(\mu)">\(L^0(\mu)\)</span> memiliki sifat supremum terhitung.</p>
+</section>
+<section class="source-unit" id="241Yf" data-source-id="241Yf"><h3><span class="source-label">241Yf</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan <span class="math inline" data-source-tex="\tilde\mu">\(\tilde\mu\)</span> versi c.l.d.
+dari <span class="math inline" data-source-tex="\mu">\(\mu\)</span> (<a class="xref" href="../213/index.html#213E">213E</a>). (i) Tunjukkan bahwa
+<span class="math inline" data-source-tex="\eusm L^0(\mu)\subseteq\eusm L^0(\tilde\mu)">\(\eusm L^0(\mu)\subseteq\eusm L^0(\tilde\mu)\)</span>. (ii) Tunjukkan bahwa
+inklusi ini mendefinisikan operator linear
+<span class="math inline" data-source-tex="T:L^0(\mu)\to L^0(\tilde\mu)">\(T:L^0(\mu)\to L^0(\tilde\mu)\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="T(u\times v)=Tu\times Tv">\(T(u\times v)=Tu\times Tv\)</span> untuk semua <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^0(\mu)">\(v\in L^0(\mu)\)</span>. (iii)
+Tunjukkan bahwa kapan pun <span class="math inline" data-source-tex="v&gt;0">\(v&gt;0\)</span> dalam <span class="math inline" data-source-tex="L^0(\tilde\mu)">\(L^0(\tilde\mu)\)</span>, terdapat
+<span class="math inline" data-source-tex="u\ge 0">\(u\ge 0\)</span> dalam <span class="math inline" data-source-tex="L^0(\mu)">\(L^0(\mu)\)</span> sedemikian sehingga <span class="math inline" data-source-tex="0&lt;Tu\le v">\(0&lt;Tu\le v\)</span>. (iv)
+Tunjukkan bahwa <span class="math inline" data-source-tex="T(\sup A)=\sup T[A]">\(T(\sup A)=\sup T[A]\)</span> kapan pun
+<span class="math inline" data-source-tex="A\subseteq L^0(\mu)">\(A\subseteq L^0(\mu)\)</span> suatu himpunan tak kosong dengan batas atas terkecil
+dalam <span class="math inline" data-source-tex="L^0(\mu)">\(L^0(\mu)\)</span>. (v) Tunjukkan bahwa <span class="math inline" data-source-tex="T">\(T\)</span> injektif jika dan hanya jika <span class="math inline" data-source-tex="\mu">\(\mu\)</span>
+semihingga. (vi) Tunjukkan bahwa jika <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dapat dilokalkan, maka <span class="math inline" data-source-tex="T">\(T\)</span>
+merupakan isomorfisme untuk struktur linear dan urutan dari <span class="math inline" data-source-tex="L^0(\mu)">\(L^0(\mu)\)</span>
+dan <span class="math inline" data-source-tex="L^0(\tilde\mu)">\(L^0(\tilde\mu)\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> 213Hb.</span></p>
+</section>
+<section class="source-unit" id="241Yg" data-source-id="241Yg"><h3><span class="source-label">241Yg</span> (g) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan <span class="math inline" data-source-tex="Y">\(Y\)</span>
+sebarang subhimpunan dari <span class="math inline" data-source-tex="X">\(X\)</span>; misalkan <span class="math inline" data-source-tex="\mu_Y">\(\mu_Y\)</span> ukuran subruang pada <span class="math inline" data-source-tex="Y">\(Y\)</span>.
+(i) Tunjukkan bahwa
+<span class="math inline" data-source-tex="\eusm L^0(\mu_Y)=\{f\restrp Y:f\in\eusm L^0(\mu)\}">\(\eusm L^0(\mu_Y)=\{f\restrp Y:f\in\eusm L^0(\mu)\}\)</span>. (ii) Tunjukkan
+bahwa terdapat surjeksi kanonik <span class="math inline" data-source-tex="T:L^0(\mu)\to L^0(\mu_Y)">\(T:L^0(\mu)\to L^0(\mu_Y)\)</span> yang
+didefinisikan dengan menetapkan
+<span class="math inline" data-source-tex="T(f^{\ssbullet})=(f\restrp Y)^{\ssbullet}">\(T(f^{\ssbullet})=(f\restrp Y)^{\ssbullet}\)</span> untuk setiap
+<span class="math inline" data-source-tex="f\in\eusm L^0(\mu)">\(f\in\eusm L^0(\mu)\)</span>, yang linear dan multiplikatif serta mempertahankan
+supremum dan infimum hingga, sehingga (khususnya) <span class="math inline" data-source-tex="T(|u|)=|Tu|">\(T(|u|)=|Tu|\)</span> untuk
+setiap <span class="math inline" data-source-tex="u\in L^0(\mu)">\(u\in L^0(\mu)\)</span>. (iii) Tunjukkan bahwa <span class="math inline" data-source-tex="T">\(T\)</span> injektif jika dan hanya jika <span class="math inline" data-source-tex="Y">\(Y\)</span>
+mempunyai ukuran luar penuh.</p>
+</section>
+<section class="source-unit" id="241Yh" data-source-id="241Yh"><h3><span class="source-label">241Yh</span> (h) </h3>
+<p>Andaikan, dalam <a class="xref" href="#241Yg">241Yg</a>, bahwa <span class="math inline" data-source-tex="Y\in\Sigma">\(Y\in\Sigma\)</span>.
+Jelaskan bagaimana <span class="math inline" data-source-tex="L^0(\mu_Y)">\(L^0(\mu_Y)\)</span> dapat diidentifikasi (sebagai ruang linear
+terurut) dengan subruang
+<span class="math inline" data-source-tex="\{u:u\times\chi(X\setminus Y)^{\ssbullet}=0\}">\(\{u:u\times\chi(X\setminus Y)^{\ssbullet}=0\}\)</span> dari <span class="math inline" data-source-tex="L^0(\mu)">\(L^0(\mu)\)</span>.</p>
+</section>
+<section class="source-unit" id="241Yi" data-source-id="241Yi"><h3><span class="source-label">241Yi</span> (i) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur, dan
+<span class="math inline" data-source-tex="h:\Bbb R\to\Bbb R">\(h:\Bbb R\to\Bbb R\)</span> suatu fungsi tak menurun yang kontinu dari kiri.
+Tunjukkan bahwa jika <span class="math inline" data-source-tex="A\subseteq L^0=L^0(\mu)">\(A\subseteq L^0=L^0(\mu)\)</span> suatu himpunan tak kosong
+dengan supremum <span class="math inline" data-source-tex="v\in L^0">\(v\in L^0\)</span>, maka <span class="math inline" data-source-tex="\bar h(v)=\sup_{u\in A}\bar h(u)">\(\bar h(v)=\sup_{u\in A}\bar h(u)\)</span>,
+dengan <span class="math inline" data-source-tex="\bar h:L^0\to L^0">\(\bar h:L^0\to L^0\)</span> fungsi yang dideskripsikan dalam <a class="xref" href="#241I">241I</a>.</p>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<section class="source-unit" id="241-notes" data-source-id="241-notes"><h2><span class="source-label">241-notes</span> Catatan penutup untuk Bagian 241 </h2>
+<p>Sebagaimana disiratkan dalam <a class="xref" href="#241Ya">241Ya</a> dan <a class="xref" href="#241Yd">241Yd</a>,
+sifat-sifat elementer ruang <span class="math inline" data-source-tex="L^0">\(L^0\)</span> yang mengisi sebagian besar bagian ini
+saling bergantung dengan kuat; tidaklah sulit untuk mengembangkan teori
+‘aljabar Riesz’ guna memadukan gagasan-gagasan dalam <a class="xref" href="#241H">241H</a> dengan
+gagasan-gagasan lainnya. (Sesungguhnya, saya menguraikan teori semacam itu
+dalam §352 di jilid berikutnya, dengan nama ‘aljabar-<span class="math inline" data-source-tex="f">\(f\)</span>’.)</p>
+<p>Jika kita menuliskan <span class="math inline" data-source-tex="\eusm L^0_{\Sigma}">\(\eusm L^0_{\Sigma}\)</span> untuk ruang fungsi-fungsi terukur
+dari <span class="math inline" data-source-tex="X">\(X\)</span> ke <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, maka <span class="math inline" data-source-tex="\eusm L^0_{\Sigma}">\(\eusm L^0_{\Sigma}\)</span> juga merupakan ruang Riesz
+lengkap-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> Dedekind, dan <span class="math inline" data-source-tex="L^0">\(L^0\)</span> dapat diidentifikasi dengan hasil bagi
+<span class="math inline" data-source-tex="\eusm L^0_{\Sigma}/\eusm N">\(\eusm L^0_{\Sigma}/\eusm N\)</span>, dengan <span class="math inline" data-source-tex="\eusm N">\(\eusm N\)</span> menyatakan himpunan
+fungsi-fungsi dalam <span class="math inline" data-source-tex="\eusm L^0_{\Sigma}">\(\eusm L^0_{\Sigma}\)</span> yang bernilai nol hampir di
+mana-mana. (Untuk melakukannya dengan tepat, kita memerlukan teori hasil bagi
+ruang linear terurut; lihat <a class="xref" href="#241Yb">241Yb</a>-<a class="xref" href="#241Yc">241Yc</a> di atas.) Tentu saja <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span>,
+sebagaimana saya mendefinisikannya, tidak sepenuhnya merupakan ruang linear.
+Saya memilih deskripsi <span class="math inline" data-source-tex="L^0">\(L^0\)</span> yang sedikit lebih rumit sebagai ruang kelas
+ekuivalensi dalam <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span>, bukan dalam <span class="math inline" data-source-tex="\eusm L^0_{\Sigma}">\(\eusm L^0_{\Sigma}\)</span>, sebab
+dalam praktik sering terjadi bahwa suatu anggota <span class="math inline" data-source-tex="L^0">\(L^0\)</span> berasal dari anggota
+<span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> yang entah tidak didefinisikan di setiap titik ruang dasarnya,
+atau tidak sepenuhnya terukur; dan menyesuaikan fungsi semacam itu supaya
+menjadi anggota <span class="math inline" data-source-tex="\eusm L^0_{\Sigma}">\(\eusm L^0_{\Sigma}\)</span>, sekalipun sepele, merupakan proses
+sewenang-wenang yang menurut saya dapat menyimpangkan sifat sejati konstruksi
+tersebut. Tentu saja argumen yang sama dapat digunakan untuk mendukung ruang
+yang sedikit lebih besar, yaitu ruang <span class="math inline" data-source-tex="\eusm L^0_{\infty}">\(\eusm L^0_{\infty}\)</span> dari fungsi
+yang terukur secara maya terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, bernilai <span class="math inline" data-source-tex="[-\infty,\infty]">\([-\infty,\infty]\)</span>, serta
+didefinisikan dan berhingga hampir di mana-mana, dengan mengandalkan <a class="xref" href="../135/index.html#135E">135E</a>,
+bukan <a class="xref" href="../121/index.html#121E">121E</a>-<a class="xref" href="../121/index.html#121F">121F</a>. Akan tetapi, saya berpendapat bahwa operasi membatasi suatu
+fungsi dalam <span class="math inline" data-source-tex="\eusm L^0_{\infty}">\(\eusm L^0_{\infty}\)</span> pada himpunan tempat fungsi itu berhingga
+<em>bukan</em> sewenang-wenang, melainkan kanonik dan sepenuhnya alami.</p>
+<p>Ketika membaca uraian di atas – atau, dalam hal ini, menelusuri bagian lain
+bab ini – Anda pasti akan memperhatikan berlimpahnya tanda <span class="math inline" data-source-tex="^{\ssbullet}">\(^{\ssbullet}\)</span>,
+yang memberi halaman-halaman ini watak khas yang, saya duga, akan terasa
+tidak sedap dipandang dan menakutkan, atau setidaknya melelahkan, bagi batin.
+Banyak pengarang, mungkin sebagian besar, lebih suka menyederhanakan tipografi
+dengan menggunakan simbol yang sama untuk fungsi dalam <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> atau
+<span class="math inline" data-source-tex="\eusm L^0_{\Sigma}">\(\eusm L^0_{\Sigma}\)</span> dan untuk kelas ekuivalensinya dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span>; bahkan,
+lazim pula digunakan sintaksis yang tidak membedakan keduanya, sehingga suatu
+objek yang telah didefinisikan sebagai anggota <span class="math inline" data-source-tex="L^0">\(L^0\)</span> tiba-tiba menjadi fungsi
+dengan nilai-nilai aktual pada titik-titik ruang ukur dasarnya. Saya lebih
+suka mempertahankan pembedaan yang tegas; Anda harus memutuskan sendiri apakah
+hendak mengikuti saya. Karena saya telah memilih bentuk yang lebih panjang,
+saya kira beban pembuktiannya ada pada saya untuk membenarkan keputusan
+tersebut. (i) Semua orang akan setuju bahwa setidaknya terdapat perbedaan
+formal antara sebuah fungsi dan sebuah himpunan fungsi. Hal ini sendiri tidak
+membenarkan keharusan mempertahankan perbedaan tersebut dalam setiap kalimat;
+uraian matematika akan mustahil jika kita selalu menuntut konsistensi dalam
+pertanyaan semacam apakah (misalnya) bilangan <span class="math inline" data-source-tex="3">\(3\)</span> yang termasuk dalam himpunan
+<span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span> bilangan asli merupakan objek yang persis sama dengan bilangan <span class="math inline" data-source-tex="3">\(3\)</span>
+yang termasuk dalam himpunan <span class="math inline" data-source-tex="\Bbb C">\(\Bbb C\)</span> bilangan kompleks, atau dengan ordinal
+<span class="math inline" data-source-tex="3">\(3\)</span>. Namun, perbedaan antara sebuah objek dan sebuah himpunan yang memuatnya
+merupakan perbedaan jenis yang cukup besar untuk membuat setiap kerancuan
+sangat berbahaya; dan meskipun saya setuju bahwa Anda dapat mempelajari topik
+ini tanpa menggunakan simbol berbeda untuk <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="f^{\ssbullet}">\(f^{\ssbullet}\)</span>, saya
+tidak berpendapat bahwa Anda dapat dengan aman menghindari pembedaan mental
+itu lebih dari beberapa baris argumen. (ii) Sebagai pengajar, saya harus
+mengatakan bahwa cukup banyak mahasiswa yang baru pertama kali menjumpai
+bahan ini tersesat oleh kegagalan apa pun untuk membedakan <span class="math inline" data-source-tex="f">\(f\)</span> dan
+<span class="math inline" data-source-tex="f^{\ssbullet}">\(f^{\ssbullet}\)</span> hingga percaya bahwa pembedaan memang tidak perlu dibuat;
+dan – sebagai pengajar – saya selalu meminta seorang mahasiswa meyakinkan
+saya, dengan menuliskan bentuk argumen yang lebih teliti secara benar selama
+beberapa minggu, bahwa ia memahami manipulasi yang diperlukan, sebelum saya
+membiarkannya menempuh jalannya sendiri. (iii) Alasan mengapa pembedaan itu
+<em>dapat</em> dihindari dalam jenis argumen tertentu ialah bahwa ruang Riesz
+lengkap-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> Dedekind <span class="math inline" data-source-tex="\eusm L^0_{\Sigma}">\(\eusm L^0_{\Sigma}\)</span> sejajar sedemikian erat dengan
+ruang Riesz lengkap-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> Dedekind <span class="math inline" data-source-tex="L^0">\(L^0\)</span> sehingga setiap proposisi yang
+melibatkan hanya terhitung banyaknya anggota ruang-ruang ini kemungkinan
+besar berlaku dalam yang satu jika dan hanya jika berlaku dalam yang lain.
+Menurut pandangan saya, implikasi korespondensi ini berada tepat di jantung
+teori ukuran. Karena itu, saya lebih suka membuatnya terus-menerus tampak
+jelas, mengingatkan diri melalui simbolisme bahwa setiap teorema mempunyai
+kembaran Siam, dan menyambut setiap tantangan untuk mengungkapkan teorema
+kembar tersebut dalam bahasa yang sesuai. (iv) Ada cara-cara tertentu yang
+membuat <span class="math inline" data-source-tex="\eusm L^0_{\Sigma}">\(\eusm L^0_{\Sigma}\)</span> dan <span class="math inline" data-source-tex="L^0">\(L^0\)</span> sungguh-sungguh sangat berbeda, dan
+banyak gagasan menarik hanya dapat diungkapkan dalam bahasa yang memisahkan
+keduanya dengan jelas.</p>
+<p>Selama lebih dari separuh hidup saya hingga sekarang, saya merasa bahwa
+butir-butir tersebut secara bersama-sama merupakan alasan yang cukup untuk
+secara konsisten mempertahankan pembedaan formal antara <span class="math inline" data-source-tex="f">\(f\)</span> dan
+<span class="math inline" data-source-tex="f^{\ssbullet}">\(f^{\ssbullet}\)</span>. Anda mungkin merasa bahwa dalam butir (iii) dan (iv) pada
+paragraf terakhir saya mencoba mempertahankan dua posisi sekaligus; saya
+berargumen bahwa baik kemiripan maupun perbedaan antara <span class="math inline" data-source-tex="L^0">\(L^0\)</span> dan
+<span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> mendukung pendirian saya. Memang, itulah persis pendirian saya.
+Jika keduanya sama sekali berbeda, penggunaan bahasa yang sama untuk
+keduanya tidak akan menimbulkan kerancuan; jika keduanya pada dasarnya sama,
+tidak akan menjadi masalah jika kadang-kadang tidak jelas yang mana yang
+sedang kita bicarakan.</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 2: Broad Foundations</cite>, Bagian 241.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 25 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-cumulative-html-route-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V2-S241&quot;,
+  &quot;source_member&quot;: &quot;mt2.2016/mt241.tex&quot;,
+  &quot;target_bytes&quot;: 37302,
+  &quot;target_sha256&quot;: &quot;6b4e94e7712643412b709aa11c66e584737a00af7e46f9f6679ce64cfbca62bb&quot;,
+  &quot;source_ids&quot;: [
+    &quot;241&quot;,
+    &quot;241A&quot;,
+    &quot;241B&quot;,
+    &quot;241Ba&quot;,
+    &quot;241Bb&quot;,
+    &quot;241Bc&quot;,
+    &quot;241Bd&quot;,
+    &quot;241Be&quot;,
+    &quot;241Bf&quot;,
+    &quot;241Bg&quot;,
+    &quot;241Bh&quot;,
+    &quot;241Bi&quot;,
+    &quot;241Bj&quot;,
+    &quot;241Bk&quot;,
+    &quot;241C&quot;,
+    &quot;241D&quot;,
+    &quot;241Da&quot;,
+    &quot;241Db&quot;,
+    &quot;241Dc&quot;,
+    &quot;241E&quot;,
+    &quot;241Ea&quot;,
+    &quot;241Eb&quot;,
+    &quot;241Ec&quot;,
+    &quot;241Ed&quot;,
+    &quot;241Ee&quot;,
+    &quot;241Ef&quot;,
+    &quot;241Eg&quot;,
+    &quot;241F&quot;,
+    &quot;241Fa&quot;,
+    &quot;241Fb&quot;,
+    &quot;241Fc&quot;,
+    &quot;241G&quot;,
+    &quot;241H&quot;,
+    &quot;241Ha&quot;,
+    &quot;241Hb&quot;,
+    &quot;241I&quot;,
+    &quot;241J&quot;,
+    &quot;241Ja&quot;,
+    &quot;241Jb&quot;,
+    &quot;241Jc&quot;,
+    &quot;241X&quot;,
+    &quot;241Xa&quot;,
+    &quot;241Xb&quot;,
+    &quot;241Xc&quot;,
+    &quot;241Xd&quot;,
+    &quot;241Xe&quot;,
+    &quot;241Xf&quot;,
+    &quot;241Xg&quot;,
+    &quot;241Xh&quot;,
+    &quot;241Xi&quot;,
+    &quot;241Y&quot;,
+    &quot;241Ya&quot;,
+    &quot;241Yb&quot;,
+    &quot;241Yc&quot;,
+    &quot;241Yd&quot;,
+    &quot;241Ye&quot;,
+    &quot;241Yf&quot;,
+    &quot;241Yg&quot;,
+    &quot;241Yh&quot;,
+    &quot;241Yi&quot;
+  ],
+  &quot;corpus_id&quot;: &quot;O007-FREMLIN&quot;,
+  &quot;volume_id&quot;: &quot;O007-FREMLIN-V2&quot;,
+  &quot;volume_source_title&quot;: &quot;Broad Foundations&quot;,
+  &quot;route&quot;: &quot;241&quot;,
+  &quot;official_source_page_start&quot;: 138,
+  &quot;chapter_official_source_pages&quot;: [
+    138,
+    203
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

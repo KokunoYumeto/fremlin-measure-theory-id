@@ -1,0 +1,985 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Fungsi bervariasi terbatas — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        BbbQ: '\\mathbb{Q}', BbbR: '\\mathbb{R}',
+        eightBbb: ['\\mathbb{#1}', 1],
+        DiniD: '\\overline{D}', Dinid: '\\underline{D}',
+        Var: '\\operatorname{Var}',
+        bumpeq: '=_{\\mathrm{approx}}',
+        intstar: '\\operatorname{int}^{*}',
+        family: ['\\langle #3\\rangle_{#1\\in #2}', 3],
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        displaycause: ['\\text{(#1)}', 1],
+        bigcupop: '\\bigcup', biggerint: '\\int',
+        eae: '=_{\\mathrm{a.e.}}', leae: '\\le_{\\mathrm{a.e.}}', geae: '\\ge_{\\mathrm{a.e.}}',
+        restr: '\\mathord{\\upharpoonright}', restrp: '\\mathord{\\upharpoonright}',
+        Real: '\\operatorname{Re}', Imag: '\\operatorname{Im}',
+        tbf: ['\\mathbf{#1}', 1], eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Qed: '\\square',
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        roibr: '\\mathopen{{[}}',
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1]
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 2 · Bagian 224</p>
+  <h1>Fungsi bervariasi terbatas</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi kumulatif</a></nav>
+<main id="isi">
+<span class="anchor" id="224"></span>
+<p>Sekarang saya beralih ke masalah kedua dari dua masalah yang dibahas dalam
+bab ini: mengidentifikasi fungsi-fungsi real yang merupakan integral tak
+tentu. Saya menggunakan kesempatan ini untuk memberikan pengantar singkat
+tentang teori fungsi bervariasi terbatas, yang juga menarik sebagai objek kajian tersendiri
+dan akan penting dalam Bab 28. Saya memberikan pencirian dasar fungsi-fungsi
+ini sebagai selisih fungsi-fungsi monoton (<a class="xref" href="#224D">224D</a>), bersama contoh yang
+mewakili sifat-sifat elementernya.</p>
+<section class="source-unit" id="224A" data-source-id="224A"><h2><span class="source-label">224A</span> Definisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real dan <span class="math inline" data-source-tex="D">\(D\)</span>
+suatu subhimpunan <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Saya mendefinisikan <span class="math inline" data-source-tex="\Var_D(f)">\(\Var_D(f)\)</span>, yakni
+<strong>variasi (total) dari <span class="math inline" data-source-tex="f">\(f\)</span> pada <span class="math inline" data-source-tex="D">\(D\)</span></strong>, sebagai berikut. Jika
+<span class="math inline" data-source-tex="D\cap\dom f=\emptyset">\(D\cap\dom f=\emptyset\)</span>, maka <span class="math inline" data-source-tex="\Var_D(f)=0">\(\Var_D(f)=0\)</span>. Jika tidak, <span class="math inline" data-source-tex="\Var_D(f)">\(\Var_D(f)\)</span> ialah</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sup\{\sum_{i=1}^n|f(a_i)-f(a_{i-1})|:
+  a_0,a_1,\ldots,a_n\in D\cap\dom f,\,a_0\le a_1\le\ldots\le a_n\}">\(\sup\{\sum_{i=1}^n|f(a_i)-f(a_{i-1})|:
+  a_0,a_1,\ldots,a_n\in D\cap\dom f,\,a_0\le a_1\le\ldots\le a_n\}\)</span>,</div>
+<p>dengan membolehkan <span class="math inline" data-source-tex="\Var_{D}(f)=\infty">\(\Var_{D}(f)=\infty\)</span>.
+Jika <span class="math inline" data-source-tex="\Var_{D}(f)">\(\Var_{D}(f)\)</span> berhingga, kita mengatakan bahwa <span class="math inline" data-source-tex="f">\(f\)</span> <strong>bervariasi
+terbatas</strong> pada <span class="math inline" data-source-tex="D">\(D\)</span>. Jika konteksnya tampak jelas, saya dapat
+menuliskan <span class="math inline" data-source-tex="\Var f">\(\Var f\)</span> untuk <span class="math inline" data-source-tex="\Var_{\dom f}(f)">\(\Var_{\dom f}(f)\)</span>, dan mengatakan bahwa <span class="math inline" data-source-tex="f">\(f\)</span>
+sekadar ‘<strong>bervariasi terbatas</strong>’ jika nilai ini berhingga.</p>
+</section>
+<section class="source-unit" id="224B" data-source-id="224B"><span class="anchor" id="224Ba"></span><h2><span class="source-label">224B</span> Catatan-catatan </h2>
+<p><strong>(a)</strong> Dalam bab ini, perhatian
+kita hampir seluruhnya tertuju pada kasus ketika <span class="math inline" data-source-tex="D">\(D\)</span> suatu interval tertutup terbatas
+yang termuat dalam <span class="math inline" data-source-tex="\dom f">\(\dom f\)</span>. Rumusan umum tersebut akan berguna untuk beberapa
+pertanyaan teknis yang muncul dalam Bab 28; tetapi jika itu membuat Anda lebih
+nyaman, untuk sementara tidak ada yang hilang jika Anda mengandaikan bahwa
+<span class="math inline" data-source-tex="D">\(D\)</span> suatu interval.</p>
+</section>
+<section class="source-unit" id="224Bb" data-source-id="224Bb"><h3><span class="source-label">224Bb</span> (b) </h3>
+<p>Jelas bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Var_D(f)=\Var_{D\cap\dom f}(f)=\Var(f\restr D)">\(\Var_D(f)=\Var_{D\cap\dom f}(f)=\Var(f\restr D)\)</span></div>
+<p>untuk semua <span class="math inline" data-source-tex="D">\(D\)</span>, <span class="math inline" data-source-tex="f">\(f\)</span>.</p>
+</section>
+<section class="source-unit" id="224C" data-source-id="224C"><h2><span class="source-label">224C</span> Proposisi </h2>
+<p>(a) Jika <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g">\(g\)</span> dua fungsi bernilai real dan
+<span class="math inline" data-source-tex="D\subseteq\Bbb R">\(D\subseteq\Bbb R\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Var_{D}(f+g)\le\Var_{D}(f)+\Var_{D}(g)">\(\Var_{D}(f+g)\le\Var_{D}(f)+\Var_{D}(g)\)</span>.</div>
+<p>(b) Jika <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real, <span class="math inline" data-source-tex="D\subseteq\Bbb R">\(D\subseteq\Bbb R\)</span>, dan
+<span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>, maka <span class="math inline" data-source-tex="\Var_{D}(cf)=|c|\Var_{D}(f)">\(\Var_{D}(cf)=|c|\Var_{D}(f)\)</span>.</p>
+<p>(c) Jika <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real, <span class="math inline" data-source-tex="D\subseteq\Bbb R">\(D\subseteq\Bbb R\)</span>, dan
+<span class="math inline" data-source-tex="x\in \Bbb R">\(x\in \Bbb R\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Var_{D}(f)
+\ge\Var_{D\cap\ocint{-\infty,x}}(f)+\Var_{D\cap\coint{x,\infty}}(f)">\(\Var_{D}(f)
+\ge\Var_{D\cap\ocint{-\infty,x}}(f)+\Var_{D\cap\coint{x,\infty}}(f)\)</span>,</div>
+<p>dengan kesamaan jika <span class="math inline" data-source-tex="x\in D\cap\dom f">\(x\in D\cap\dom f\)</span>.</p>
+<p>(d) Jika <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real dan
+<span class="math inline" data-source-tex="D\subseteq D&#x27;\subseteq\Bbb R">\(D\subseteq D&#x27;\subseteq\Bbb R\)</span>, maka <span class="math inline" data-source-tex="\Var_D(f)\le\Var_{D&#x27;}(f)">\(\Var_D(f)\le\Var_{D&#x27;}(f)\)</span>.</p>
+<p>(e) Jika <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real dan <span class="math inline" data-source-tex="D\subseteq\Bbb R">\(D\subseteq\Bbb R\)</span>, maka
+<span class="math inline" data-source-tex="|f(x)-f(y)|\le\Var_D(f)">\(|f(x)-f(y)|\le\Var_D(f)\)</span> untuk semua <span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="y\in D\cap\dom f">\(y\in D\cap\dom f\)</span>; jadi jika
+<span class="math inline" data-source-tex="f">\(f\)</span> bervariasi terbatas pada <span class="math inline" data-source-tex="D">\(D\)</span>, maka <span class="math inline" data-source-tex="f">\(f\)</span> terbatas pada <span class="math inline" data-source-tex="D\cap\dom f">\(D\cap\dom f\)</span> dan
+(jika <span class="math inline" data-source-tex="D\cap\dom f\ne\emptyset">\(D\cap\dom f\ne\emptyset\)</span>)</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sup_{y\in D\cap\dom f}|f(y)|\le |f(x)|+\Var_D(f)">\(\sup_{y\in D\cap\dom f}|f(y)|\le |f(x)|+\Var_D(f)\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="x\in D\cap\dom f">\(x\in D\cap\dom f\)</span>.</p>
+<p>(f) Jika <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real monoton dan <span class="math inline" data-source-tex="D\subseteq\Bbb R">\(D\subseteq\Bbb R\)</span>
+beririsan dengan <span class="math inline" data-source-tex="\dom f">\(\dom f\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Var_D(f)=\sup_{x\in D\cap\dom f}f(x)-\inf_{x\in D\cap\dom f}f(x)">\(\Var_D(f)=\sup_{x\in D\cap\dom f}f(x)-\inf_{x\in D\cap\dom f}f(x)\)</span>.</div>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Jika <span class="math inline" data-source-tex="D\cap\dom(f+g)=\emptyset">\(D\cap\dom(f+g)=\emptyset\)</span>, pernyataan ini sepele,
+karena <span class="math inline" data-source-tex="\Var_D(f)">\(\Var_D(f)\)</span> dan <span class="math inline" data-source-tex="\Var_D(g)">\(\Var_D(g)\)</span> tentu nonnegatif. Jika tidak, apabila
+<span class="math inline" data-source-tex="a_0\le\ldots\le a_n">\(a_0\le\ldots\le a_n\)</span> dalam <span class="math inline" data-source-tex="D\cap\dom(f+g)">\(D\cap\dom(f+g)\)</span>, maka</p>
+<p><span class="math display" data-source-tex="\eqalign{\sum_{i=1}^n|(f+g)(a_i)-(f+g)(a_{i-1})|
+&amp;\le \sum_{i=1}^n|f(a_i)-f(a_{i-1})|
++\sum_{i=1}^n|g(a_i)-g(a_{i-1})|\cr
+&amp;\le\Var_{D}(f)+\Var_{D}(g);\cr}">\[\begin{aligned}\sum_{i=1}^n|(f+g)(a_i)-(f+g)(a_{i-1})|
+&amp;\le \sum_{i=1}^n|f(a_i)-f(a_{i-1})|
++\sum_{i=1}^n|g(a_i)-g(a_{i-1})|\\
+&amp;\le\Var_{D}(f)+\Var_{D}(g);\\\end{aligned}\]</span></p>
+<p>karena <span class="math inline" data-source-tex="a_0,\ldots,a_n">\(a_0,\ldots,a_n\)</span> sebarang,
+<span class="math inline" data-source-tex="\Var_{D}(f+g)\le\Var_{D}(f)+\Var_{D}(g)">\(\Var_{D}(f+g)\le\Var_{D}(f)+\Var_{D}(g)\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong></p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{i=1}^n|(cf)(a_i)-(cf)(a_{i-1})|
+=|c|\sum_{i=1}^n|f(a_i)-f(a_{i-1})|">\(\sum_{i=1}^n|(cf)(a_i)-(cf)(a_{i-1})|
+=|c|\sum_{i=1}^n|f(a_i)-f(a_{i-1})|\)</span></div>
+<p>kapan pun
+<span class="math inline" data-source-tex="a_0\le\ldots\le a_n">\(a_0\le\ldots\le a_n\)</span> dalam <span class="math inline" data-source-tex="D\cap\dom f">\(D\cap\dom f\)</span>.</p>
+<p> </p>
+<p><strong>(c)(i)</strong> Jika salah satu dari
+<span class="math inline" data-source-tex="D\cap\ocint{-\infty,x}\cap\dom f">\(D\cap\ocint{-\infty,x}\cap\dom f\)</span> dan
+<span class="math inline" data-source-tex="D\cap\coint{x,\infty}\cap\dom f">\(D\cap\coint{x,\infty}\cap\dom f\)</span> kosong, pernyataan ini sepele. Jika
+<span class="math inline" data-source-tex="a_0\le\ldots\le a_m">\(a_0\le\ldots\le a_m\)</span> dalam <span class="math inline" data-source-tex="D\cap\ocint{-\infty,x}\cap\dom f">\(D\cap\ocint{-\infty,x}\cap\dom f\)</span> dan
+<span class="math inline" data-source-tex="b_0\le\ldots\le b_n">\(b_0\le\ldots\le b_n\)</span> dalam <span class="math inline" data-source-tex="D\cap\coint{x,\infty}\cap\dom f">\(D\cap\coint{x,\infty}\cap\dom f\)</span>, maka</p>
+<p><span class="math display" data-source-tex="\eqalign{\sum_{i=1}^m|f(a_i)-f(a_{i-1})|
++\sum_{j=1}^n|f(b_j)-f(b_{j-1})|
+&amp;\le\sum_{i=1}^{m+n+1}|f(a_i)-f(a_{i-1})|\cr
+&amp;\le\Var_{D}(f),\cr}">\[\begin{aligned}\sum_{i=1}^m|f(a_i)-f(a_{i-1})|
++\sum_{j=1}^n|f(b_j)-f(b_{j-1})|
+&amp;\le\sum_{i=1}^{m+n+1}|f(a_i)-f(a_{i-1})|\\
+&amp;\le\Var_{D}(f),\\\end{aligned}\]</span></p>
+<p>jika kita menuliskan <span class="math inline" data-source-tex="a_i=b_{i-m-1}">\(a_i=b_{i-m-1}\)</span> untuk
+<span class="math inline" data-source-tex="m+1\le i\le m+n+1">\(m+1\le i\le m+n+1\)</span>. Jadi</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Var_{D\cap\ocint{-\infty,x}}(f)
++\Var_{D\cap\coint{x,\infty}}(f)
+\le\Var_D(f)">\(\Var_{D\cap\ocint{-\infty,x}}(f)
++\Var_{D\cap\coint{x,\infty}}(f)
+\le\Var_D(f)\)</span>.</div>
+<p> </p>
+<p>  <strong>(ii)</strong> Sekarang andaikan bahwa <span class="math inline" data-source-tex="x\in D\cap\dom f">\(x\in D\cap\dom f\)</span>.
+Jika <span class="math inline" data-source-tex="a_0\le\ldots\le a_n">\(a_0\le\ldots\le a_n\)</span> dalam <span class="math inline" data-source-tex="D\cap\dom f">\(D\cap\dom f\)</span>, dan
+<span class="math inline" data-source-tex="a_0\le x\le a_n">\(a_0\le x\le a_n\)</span>, misalkan <span class="math inline" data-source-tex="k">\(k\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="x\in [a_{k-1},a_k]">\(x\in [a_{k-1},a_k]\)</span>; maka</p>
+<p><span class="math display" data-source-tex="\eqalign{\sum_{i=1}^n|f(a_i)-f(a_{i-1})|
+&amp;\le\sum_{i=1}^{k-1}|f(a_i)-f(a_{i-1})|
++|f(x)-f(a_{k-1})|\cr
+&amp;\mskip150mu +|f(a_k)-f(x)|+\sum_{i=k+1}^n|f(a_i)-f(a_{i-1})|\cr
+&amp;\le\Var_{D\cap\ocint{-\infty,x}}(f)
++\Var_{D\cap\coint{x,\infty}}(f)
+\cr}">\[\begin{aligned}\sum_{i=1}^n|f(a_i)-f(a_{i-1})|
+&amp;\le\sum_{i=1}^{k-1}|f(a_i)-f(a_{i-1})|
++|f(x)-f(a_{k-1})|\\
+&amp;\mskip150mu +|f(a_k)-f(x)|+\sum_{i=k+1}^n|f(a_i)-f(a_{i-1})|\\
+&amp;\le\Var_{D\cap\ocint{-\infty,x}}(f)
++\Var_{D\cap\coint{x,\infty}}(f)
+\\\end{aligned}\]</span></p>
+<p>(dengan menghitung jumlah kosong <span class="math inline" data-source-tex="\sum_{i=1}^0">\(\sum_{i=1}^0\)</span> dan
+<span class="math inline" data-source-tex="\sum_{i=n+1}^n">\(\sum_{i=n+1}^n\)</span> sebagai <span class="math inline" data-source-tex="0">\(0\)</span>). Jika <span class="math inline" data-source-tex="x\le a_0">\(x\le a_0\)</span>, maka
+<span class="math inline" data-source-tex="\sum_{i=1}^n|f(a_i)-f(a_{i-1})|\le\Var_{D\cap\coint{x,\infty}}(f)">\(\sum_{i=1}^n|f(a_i)-f(a_{i-1})|\le\Var_{D\cap\coint{x,\infty}}(f)\)</span>;
+jika <span class="math inline" data-source-tex="x\ge a_n">\(x\ge a_n\)</span>, maka
+<span class="math inline" data-source-tex="\sum_{i=1}^n|f(a_i)-f(a_{i-1})|\le\Var_{D\cap\ocint{-\infty,x}}(f)">\(\sum_{i=1}^n|f(a_i)-f(a_{i-1})|\le\Var_{D\cap\ocint{-\infty,x}}(f)\)</span>.
+Jadi</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{i=1}^n|f(a_i)-f(a_{i-1})|
+\le\Var_{D\cap\ocint{-\infty,x}}(f)
++\Var_{D\cap\coint{x,\infty}}(f)
+">\(\sum_{i=1}^n|f(a_i)-f(a_{i-1})|
+\le\Var_{D\cap\ocint{-\infty,x}}(f)
++\Var_{D\cap\coint{x,\infty}}(f)
+\)</span></div>
+<p>dalam semua kasus; karena <span class="math inline" data-source-tex="a_0,\ldots,a_n">\(a_0,\ldots,a_n\)</span> sebarang,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Var_D(f)
+\le\Var_{D\cap\ocint{-\infty,x}}(f)
++\Var_{D\cap\coint{x,\infty}}(f)">\(\Var_D(f)
+\le\Var_{D\cap\ocint{-\infty,x}}(f)
++\Var_{D\cap\coint{x,\infty}}(f)\)</span>.</div>
+<p>Jadi kedua ruas sama.</p>
+<p> </p>
+<p><strong>(d)</strong> sepele.</p>
+<p> </p>
+<p><strong>(e)</strong> Jika <span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="y\in D\cap\dom f">\(y\in D\cap\dom f\)</span> dan <span class="math inline" data-source-tex="x\le y">\(x\le y\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="|f(x)-f(y)|=|f(y)-f(x)|\le \Var_D(f)">\(|f(x)-f(y)|=|f(y)-f(x)|\le \Var_D(f)\)</span></div>
+<p>menurut definisi <span class="math inline" data-source-tex="\Var_D">\(\Var_D\)</span>; dan hal yang sama benar jika
+<span class="math inline" data-source-tex="y\le x">\(y\le x\)</span>. Jadi tentu saja <span class="math inline" data-source-tex="|f(y)|\le|f(x)|+\Var_D(f)">\(|f(y)|\le|f(x)|+\Var_D(f)\)</span>.</p>
+<p> </p>
+<p><strong>(f)</strong> Jika <span class="math inline" data-source-tex="f">\(f\)</span> tak-menurun, maka</p>
+<p><span class="math display" data-source-tex="\eqalign{\Var_D(f)
+&amp;=\sup\{\sum_{i=1}^n|f(a_i)-f(a_{i-1})|:a_0,a_1,\ldots,a_n\in
+D\cap\dom f,\,a_0\le
+a_1\le\ldots\le a_n\}\cr
+&amp;=\sup\{\sum_{i=1}^nf(a_i)-f(a_{i-1}):a_0,a_1,\ldots,a_n\in
+D\cap\dom f,\,a_0\le
+a_1\le\ldots\le a_n\}\cr
+&amp;=\sup\{f(b)-f(a):a,\,b\in D\cap\dom f,\,a\le b\}\cr
+&amp;=\sup_{b\in D\cap\dom f}f(b)-\inf_{a\in D\cap\dom f}f(a).\cr}">\[\begin{aligned}\Var_D(f)
+&amp;=\sup\{\sum_{i=1}^n|f(a_i)-f(a_{i-1})|:a_0,a_1,\ldots,a_n\in
+D\cap\dom f,\,a_0\le
+a_1\le\ldots\le a_n\}\\
+&amp;=\sup\{\sum_{i=1}^nf(a_i)-f(a_{i-1}):a_0,a_1,\ldots,a_n\in
+D\cap\dom f,\,a_0\le
+a_1\le\ldots\le a_n\}\\
+&amp;=\sup\{f(b)-f(a):a,\,b\in D\cap\dom f,\,a\le b\}\\
+&amp;=\sup_{b\in D\cap\dom f}f(b)-\inf_{a\in D\cap\dom f}f(a).\\\end{aligned}\]</span></p>
+<p>Jika <span class="math inline" data-source-tex="f">\(f\)</span> tak-menaik, maka</p>
+<p><span class="math display" data-source-tex="\eqalign{\Var_D(f)
+&amp;=\sup\{\sum_{i=1}^n|f(a_i)-f(a_{i-1})|:a_0,a_1,\ldots,a_n\in
+D\cap\dom f,\,a_0\le
+a_1\le\ldots\le a_n\}\cr
+&amp;=\sup\{\sum_{i=1}^nf(a_{i-1})-f(a_i):a_0,a_1,\ldots,a_n\in
+D\cap\dom f,\,a_0\le
+a_1\le\ldots\le a_n\}\cr
+&amp;=\sup\{f(a)-f(b):a,\,b\in D\cap\dom f,\,a\le b\}\cr
+&amp;=\sup_{a\in D\cap\dom f}f(a)-\inf_{b\in D\cap\dom f}f(b).\cr}">\[\begin{aligned}\Var_D(f)
+&amp;=\sup\{\sum_{i=1}^n|f(a_i)-f(a_{i-1})|:a_0,a_1,\ldots,a_n\in
+D\cap\dom f,\,a_0\le
+a_1\le\ldots\le a_n\}\\
+&amp;=\sup\{\sum_{i=1}^nf(a_{i-1})-f(a_i):a_0,a_1,\ldots,a_n\in
+D\cap\dom f,\,a_0\le
+a_1\le\ldots\le a_n\}\\
+&amp;=\sup\{f(a)-f(b):a,\,b\in D\cap\dom f,\,a\le b\}\\
+&amp;=\sup_{a\in D\cap\dom f}f(a)-\inf_{b\in D\cap\dom f}f(b).\\\end{aligned}\]</span></p></aside>
+</section>
+<section class="source-unit" id="224D" data-source-id="224D"><h2><span class="source-label">224D</span> Teorema </h2>
+<p>Untuk setiap fungsi bernilai real <span class="math inline" data-source-tex="f">\(f\)</span> dan setiap
+himpunan <span class="math inline" data-source-tex="D\subseteq \Bbb R">\(D\subseteq \Bbb R\)</span>, pernyataan-pernyataan berikut ekuivalen:</p>
+<p>   (i) terdapat dua fungsi terbatas dan tak-menurun <span class="math inline" data-source-tex="f_1">\(f_1\)</span>,
+<span class="math inline" data-source-tex="f_2:\Bbb R\to\Bbb R">\(f_2:\Bbb R\to\Bbb R\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="f=f_1-f_2">\(f=f_1-f_2\)</span> pada <span class="math inline" data-source-tex="D\cap\dom f">\(D\cap\dom f\)</span>;</p>
+<p>   (ii) <span class="math inline" data-source-tex="f">\(f\)</span> bervariasi terbatas pada <span class="math inline" data-source-tex="D">\(D\)</span>;</p>
+<p>   (iii) terdapat fungsi terbatas dan tak-menurun <span class="math inline" data-source-tex="f_1">\(f_1\)</span>,
+<span class="math inline" data-source-tex="f_2:\Bbb R\to\Bbb R">\(f_2:\Bbb R\to\Bbb R\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="f=f_1-f_2">\(f=f_1-f_2\)</span> pada <span class="math inline" data-source-tex="D\cap\dom f">\(D\cap\dom f\)</span> dan <span class="math inline" data-source-tex="\Var_D(f)=\Var f_1+\Var f_2">\(\Var_D(f)=\Var f_1+\Var f_2\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(i)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(ii)</strong> Jika <span class="math inline" data-source-tex="f:\Bbb R\to\Bbb R">\(f:\Bbb R\to\Bbb R\)</span> terbatas
+dan tak-menurun, maka
+<span class="math inline" data-source-tex="\Var f=\sup_{x\in\Bbb R}f(x)-\inf_{x\in\Bbb R}f(x)">\(\Var f=\sup_{x\in\Bbb R}f(x)-\inf_{x\in\Bbb R}f(x)\)</span> berhingga. Jadi,
+jika <span class="math inline" data-source-tex="f">\(f\)</span> pada <span class="math inline" data-source-tex="D\cap\dom f">\(D\cap\dom f\)</span> berimpit dengan <span class="math inline" data-source-tex="f_1-f_2">\(f_1-f_2\)</span>, dengan <span class="math inline" data-source-tex="f_1">\(f_1\)</span> dan
+<span class="math inline" data-source-tex="f_2">\(f_2\)</span> terbatas dan tak-menurun, maka</p>
+<p><span class="math display" data-source-tex="\eqalign{\Var_D(f)
+&amp;=\Var_{D\cap\dom f}(f)
+\le\Var_{D\cap\dom f}(f_1)+\Var_{D\cap\dom f}(f_2)\cr
+&amp;\le\Var f_1+\Var f_2
+&lt;\infty,}">\[\begin{aligned}\Var_D(f)
+&amp;=\Var_{D\cap\dom f}(f)
+\le\Var_{D\cap\dom f}(f_1)+\Var_{D\cap\dom f}(f_2)\\
+&amp;\le\Var f_1+\Var f_2
+&lt;\infty,\end{aligned}\]</span></p>
+<p>dengan menggunakan (a), (b), dan (d) dari <a class="xref" href="#224C">224C</a>.</p>
+<p> </p>
+<p><strong>(ii)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(iii)</strong> Andaikan bahwa <span class="math inline" data-source-tex="f">\(f\)</span> bervariasi terbatas pada
+<span class="math inline" data-source-tex="D">\(D\)</span>. Tetapkan <span class="math inline" data-source-tex="D&#x27;=D\cap\dom f">\(D&#x27;=D\cap\dom f\)</span>. Jika <span class="math inline" data-source-tex="D&#x27;=\emptyset">\(D&#x27;=\emptyset\)</span>, kita dapat mengambil
+kedua <span class="math inline" data-source-tex="f_j">\(f_j\)</span> sebagai fungsi nol; jadi, mulai sekarang andaikan bahwa
+<span class="math inline" data-source-tex="D&#x27;\ne\emptyset">\(D&#x27;\ne\emptyset\)</span>. Tuliskan</p>
+<div class="centerline"><span class="math inline" data-source-tex="g(x)=\Var_{D\cap\ocint{-\infty,x}}(f)">\(g(x)=\Var_{D\cap\ocint{-\infty,x}}(f)\)</span></div>
+<p>untuk <span class="math inline" data-source-tex="x\in D&#x27;">\(x\in D&#x27;\)</span>. Maka <span class="math inline" data-source-tex="g_1=g+f">\(g_1=g+f\)</span> dan <span class="math inline" data-source-tex="g_2=g-f">\(g_2=g-f\)</span> keduanya
+tak-menurun. Bukti. Jika <span class="math inline" data-source-tex="a">\(a\)</span>, <span class="math inline" data-source-tex="b\in D&#x27;">\(b\in D&#x27;\)</span> dan <span class="math inline" data-source-tex="a\le b">\(a\le b\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="g(b)=g(a)+\Var_{D\cap[a,b]}(f)\ge g(a)+|f(b)-f(a)|">\(g(b)=g(a)+\Var_{D\cap[a,b]}(f)\ge g(a)+|f(b)-f(a)|\)</span>.</div>
+<p>Jadi</p>
+<div class="centerline"><span class="math inline" data-source-tex="g_1(b)-g_1(a)=g(b)-g(a)+f(b)-f(a)">\(g_1(b)-g_1(a)=g(b)-g(a)+f(b)-f(a)\)</span>,
+  <span class="math inline" data-source-tex="g_2(b)-g_2(a)=g(b)-g(a)-f(b)+f(a)">\(g_2(b)-g_2(a)=g(b)-g(a)-f(b)+f(a)\)</span></div>
+<p>keduanya nonnegatif. ∎</p>
+<p>Sekarang terdapat fungsi-fungsi tak-menurun
+<span class="math inline" data-source-tex="h_1">\(h_1\)</span>, <span class="math inline" data-source-tex="h_2:\Bbb R\to\Bbb R">\(h_2:\Bbb R\to\Bbb R\)</span> yang masing-masing memperluas <span class="math inline" data-source-tex="g_1">\(g_1\)</span>, <span class="math inline" data-source-tex="g_2">\(g_2\)</span>,
+sedemikian sehingga <span class="math inline" data-source-tex="\Var h_j=\Var g_j">\(\Var h_j=\Var g_j\)</span> untuk masing-masing <span class="math inline" data-source-tex="j">\(j\)</span>. Bukti. <span class="math inline" data-source-tex="f">\(f\)</span>
+terbatas pada <span class="math inline" data-source-tex="D">\(D\)</span>, menurut 224Ce, dan <span class="math inline" data-source-tex="g">\(g\)</span> terbatas semata-mata karena
+<span class="math inline" data-source-tex="\Var_D(f)&lt;\infty">\(\Var_D(f)&lt;\infty\)</span>, sehingga <span class="math inline" data-source-tex="g_j">\(g_j\)</span> terbatas. Tetapkan
+<span class="math inline" data-source-tex="c_j=\inf_{x\in D&#x27;}g_j(x)">\(c_j=\inf_{x\in D&#x27;}g_j(x)\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="h_j(x)=\sup(\{c_j\}\cup\{g_j(y):y\in D&#x27;,\,y\le x\})">\(h_j(x)=\sup(\{c_j\}\cup\{g_j(y):y\in D&#x27;,\,y\le x\})\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span>; definisi ini memenuhi syarat. ∎\
+Perhatikan bahwa untuk <span class="math inline" data-source-tex="x\in D&#x27;">\(x\in D&#x27;\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="h_1(x)+h_2(x)=g_1(x)+g_2(x)=g(x)+f(x)+g(x)-f(x)=2g(x)">\(h_1(x)+h_2(x)=g_1(x)+g_2(x)=g(x)+f(x)+g(x)-f(x)=2g(x)\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="h_1(x)-h_2(x)=2f(x)">\(h_1(x)-h_2(x)=2f(x)\)</span>.</div>
+<p>Sekarang, karena <span class="math inline" data-source-tex="g_1">\(g_1\)</span> dan <span class="math inline" data-source-tex="g_2">\(g_2\)</span> tak-menurun,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sup_{x\in D&#x27;}g_1(x)+\sup_{x\in D&#x27;}g_2(x)=\sup_{x\in
+D&#x27;}g_1(x)+g_2(x)=2\sup_{x\in D&#x27;}g(x)">\(\sup_{x\in D&#x27;}g_1(x)+\sup_{x\in D&#x27;}g_2(x)=\sup_{x\in
+D&#x27;}g_1(x)+g_2(x)=2\sup_{x\in D&#x27;}g(x)\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\inf_{x\in D&#x27;}g_1(x)+\inf_{x\in D&#x27;}g_2(x)=\inf_{x\in
+D&#x27;}g_1(x)+g_2(x)=2\inf_{x\in D&#x27;}g(x)\ge 0">\(\inf_{x\in D&#x27;}g_1(x)+\inf_{x\in D&#x27;}g_2(x)=\inf_{x\in
+D&#x27;}g_1(x)+g_2(x)=2\inf_{x\in D&#x27;}g(x)\ge 0\)</span>.</div>
+<p>Namun, ini berarti bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Var h_1+\Var h_2
+=\Var g_1+\Var g_2
+=2\Var g
+\le 2\Var_D(f)">\(\Var h_1+\Var h_2
+=\Var g_1+\Var g_2
+=2\Var g
+\le 2\Var_D(f)\)</span>,</div>
+<p>dengan menggunakan 224Cf tiga kali. Jadi, jika kita menetapkan
+<span class="math inline" data-source-tex="f_j(x)=\bover12h_j(x)">\(f_j(x)=\bover12h_j(x)\)</span>
+untuk <span class="math inline" data-source-tex="j\in\{1,2\}">\(j\in\{1,2\}\)</span> dan <span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span>, kita akan memperoleh fungsi-fungsi
+tak-menurun sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="f_1(x)-f_2(x)=f(x)">\(f_1(x)-f_2(x)=f(x)\)</span> untuk <span class="math inline" data-source-tex="x\in D&#x27;">\(x\in D&#x27;\)</span>,
+  <span class="math inline" data-source-tex="\Var f_1+\Var f_2=\Bover12\Var h_1+\Bover12\Var h_2\le\Var_D(f)">\(\Var f_1+\Var f_2=\Bover12\Var h_1+\Bover12\Var h_2\le\Var_D(f)\)</span>.</div>
+<p>Karena tentu kita juga mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Var_D(f)\le\Var_D(f_1)+\Var_D(f_2)\le\Var f_1+\Var f_2">\(\Var_D(f)\le\Var_D(f_1)+\Var_D(f_2)\le\Var f_1+\Var f_2\)</span>,</div>
+<p>kita melihat bahwa <span class="math inline" data-source-tex="\Var_D(f)=\Var f_1+\Var f_2">\(\Var_D(f)=\Var f_1+\Var f_2\)</span>, dan (iii)
+benar.</p>
+<p> </p>
+<p><strong>(iii)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(i)</strong> langsung.</p></aside>
+</section>
+<section class="source-unit" id="224E" data-source-id="224E"><h2><span class="source-label">224E</span> Korolari </h2>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real dan <span class="math inline" data-source-tex="D">\(D\)</span>
+sembarang subhimpunan dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Jika <span class="math inline" data-source-tex="f">\(f\)</span> bervariasi terbatas pada <span class="math inline" data-source-tex="D">\(D\)</span>,
+maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{x\downarrow a}\Var_{D\cap\ocint{a,x}}(f)
+=\lim_{x\uparrow a}\Var_{D\cap\coint{x,a}}(f)=0">\(\lim_{x\downarrow a}\Var_{D\cap\ocint{a,x}}(f)
+=\lim_{x\uparrow a}\Var_{D\cap\coint{x,a}}(f)=0\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{a\to-\infty}\Var_{D\cap\ocint{-\infty,a}}(f)
+=\lim_{a\to\infty}\Var_{D\cap\coint{a,\infty}}(f)=0">\(\lim_{a\to-\infty}\Var_{D\cap\ocint{-\infty,a}}(f)
+=\lim_{a\to\infty}\Var_{D\cap\coint{a,\infty}}(f)=0\)</span>.</div>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Tinjau terlebih dahulu kasus ketika
+<span class="math inline" data-source-tex="D=\dom f=\Bbb R">\(D=\dom f=\Bbb R\)</span> dan <span class="math inline" data-source-tex="f">\(f\)</span> merupakan fungsi terbatas dan tak-menurun. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Var_{D\cap\ocint{a,x}}(f)
+=\sup_{y\in\ocint{a,x}}f(x)-f(y)
+=f(x)-\inf_{y&gt;a}f(y)
+=f(x)-\lim_{y\downarrow a}f(y)">\(\Var_{D\cap\ocint{a,x}}(f)
+=\sup_{y\in\ocint{a,x}}f(x)-f(y)
+=f(x)-\inf_{y&gt;a}f(y)
+=f(x)-\lim_{y\downarrow a}f(y)\)</span>,</div>
+<p>sehingga tentu saja</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{x\downarrow a}\Var_{D\cap\ocint{a,x}}(f)
+=\lim_{x\downarrow a}f(x)-\lim_{y\downarrow a}f(y)=0">\(\lim_{x\downarrow a}\Var_{D\cap\ocint{a,x}}(f)
+=\lim_{x\downarrow a}f(x)-\lim_{y\downarrow a}f(y)=0\)</span>.</div>
+<p>Dengan cara yang sama,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{x\uparrow a}\Var_{D\cap\coint{x,a}}(f)
+=\lim_{y\uparrow a}f(y)-\lim_{x\uparrow a}f(x)=0">\(\lim_{x\uparrow a}\Var_{D\cap\coint{x,a}}(f)
+=\lim_{y\uparrow a}f(y)-\lim_{x\uparrow a}f(x)=0\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{a\to-\infty}\Var_{D\cap\ocint{-\infty,a}}(f)
+=\lim_{a\to-\infty}f(a)-\lim_{y\to-\infty}f(y)=0">\(\lim_{a\to-\infty}\Var_{D\cap\ocint{-\infty,a}}(f)
+=\lim_{a\to-\infty}f(a)-\lim_{y\to-\infty}f(y)=0\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{a\to\infty}\Var_{D\cap\coint{a,\infty}}(f)
+=\lim_{y\to\infty}f(y)-\lim_{a\to\infty}f(a)=0">\(\lim_{a\to\infty}\Var_{D\cap\coint{a,\infty}}(f)
+=\lim_{y\to\infty}f(y)-\lim_{a\to\infty}f(a)=0\)</span>.</div>
+<p> </p>
+<p><strong>(b)</strong> Untuk kasus umum, definisikan <span class="math inline" data-source-tex="f_1">\(f_1\)</span>, <span class="math inline" data-source-tex="f_2">\(f_2\)</span> dari <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="D">\(D\)</span>
+seperti dalam <a class="xref" href="#224D">224D</a>. Maka, untuk setiap interval <span class="math inline" data-source-tex="I">\(I\)</span>, kita mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Var_{D\cap I}(f)\le\Var_I(f_1)+\Var_I(f_2)">\(\Var_{D\cap I}(f)\le\Var_I(f_1)+\Var_I(f_2)\)</span>,</div>
+<p>sehingga hasil-hasil untuk <span class="math inline" data-source-tex="f">\(f\)</span> mengikuti hasil-hasil untuk
+<span class="math inline" data-source-tex="f_1">\(f_1\)</span> dan <span class="math inline" data-source-tex="f_2">\(f_2\)</span> yang telah dibuktikan dalam bagian (a).</p></aside>
+</section>
+<section class="source-unit" id="224F" data-source-id="224F"><h2><span class="source-label">224F</span> Korolari </h2>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real yang
+bervariasi terbatas pada <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>, dengan <span class="math inline" data-source-tex="a&lt;b">\(a&lt;b\)</span>. Jika <span class="math inline" data-source-tex="\dom f">\(\dom f\)</span> beririsan
+dengan setiap interval <span class="math inline" data-source-tex="\ocint{a,a+\delta}">\(\ocint{a,a+\delta}\)</span> untuk <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{t\in\dom f,t\downarrow a}f(t)">\(\lim_{t\in\dom f,t\downarrow a}f(t)\)</span></div>
+<p>ada dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Jika <span class="math inline" data-source-tex="\dom f">\(\dom f\)</span> beririsan dengan
+<span class="math inline" data-source-tex="\coint{b-\delta,b}">\(\coint{b-\delta,b}\)</span> untuk setiap <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{t\in\dom f,t\uparrow b}f(t)">\(\lim_{t\in\dom f,t\uparrow b}f(t)\)</span></div>
+<p>ada dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Misalkan <span class="math inline" data-source-tex="f_1">\(f_1\)</span>, <span class="math inline" data-source-tex="f_2:\Bbb R\to\Bbb R">\(f_2:\Bbb R\to\Bbb R\)</span> fungsi-fungsi tak-menurun
+sedemikian sehingga <span class="math inline" data-source-tex="f=f_1-f_2">\(f=f_1-f_2\)</span> pada <span class="math inline" data-source-tex="[a,b]\cap\dom f">\([a,b]\cap\dom f\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{t\in\dom f,t\downarrow a}f(t)
+=\lim_{t\downarrow a}f_1(t)-\lim_{t\downarrow a}f_2(t)
+=\inf_{t&gt;a}f_1(t)-\inf_{t&gt;a}f_2(t)">\(\lim_{t\in\dom f,t\downarrow a}f(t)
+=\lim_{t\downarrow a}f_1(t)-\lim_{t\downarrow a}f_2(t)
+=\inf_{t&gt;a}f_1(t)-\inf_{t&gt;a}f_2(t)\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{t\in\dom f,t\uparrow b}f(t)
+=\lim_{t\uparrow b}f_1(t)-\lim_{t\uparrow b}f_2(t)
+=\sup_{t&lt;b}f_1(t)-\sup_{t&lt;b}f_2(t)">\(\lim_{t\in\dom f,t\uparrow b}f(t)
+=\lim_{t\uparrow b}f_1(t)-\lim_{t\uparrow b}f_2(t)
+=\sup_{t&lt;b}f_1(t)-\sup_{t&lt;b}f_2(t)\)</span>.</div></aside>
+</section>
+<section class="source-unit" id="224G" data-source-id="224G"><h2><span class="source-label">224G</span> Korolari </h2>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g">\(g\)</span> fungsi-fungsi bernilai real dan
+<span class="math inline" data-source-tex="D">\(D\)</span> suatu subhimpunan dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Jika <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span> bervariasi terbatas
+pada <span class="math inline" data-source-tex="D">\(D\)</span>, demikian pula <span class="math inline" data-source-tex="f\times g">\(f\times g\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Pokoknya adalah bahwa terdapat fungsi-fungsi terbatas,
+tak-menurun, dan <em>nonnegatif</em> <span class="math inline" data-source-tex="f_1">\(f_1\)</span>, <span class="math inline" data-source-tex="f_2:\Bbb R\to\Bbb R">\(f_2:\Bbb R\to\Bbb R\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="f=f_1-f_2">\(f=f_1-f_2\)</span> pada <span class="math inline" data-source-tex="D\cap\dom f">\(D\cap\dom f\)</span>. Bukti. Kita tahu bahwa terdapat
+fungsi terbatas dan tak-menurun <span class="math inline" data-source-tex="h_1">\(h_1\)</span>, <span class="math inline" data-source-tex="h_2">\(h_2\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="f=h_1-h_2">\(f=h_1-h_2\)</span> pada <span class="math inline" data-source-tex="D\cap\dom f">\(D\cap\dom f\)</span>. Tetapkan
+<span class="math inline" data-source-tex="\gamma_i=\inf_{x\in\Bbb R}h_i(x)">\(\gamma_i=\inf_{x\in\Bbb R}h_i(x)\)</span> untuk <span class="math inline" data-source-tex="i=1">\(i=1\)</span>, <span class="math inline" data-source-tex="2">\(2\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\beta_1=\max(\gamma_1-\gamma_2,0)">\(\beta_1=\max(\gamma_1-\gamma_2,0)\)</span>,
+  <span class="math inline" data-source-tex="\beta_2=\max(\gamma_2-\gamma_1,0)">\(\beta_2=\max(\gamma_2-\gamma_1,0)\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="f_1=h_1-\gamma_1+\beta_1">\(f_1=h_1-\gamma_1+\beta_1\)</span>,
+  <span class="math inline" data-source-tex="f_2=h_2-\gamma_2+\beta_2">\(f_2=h_2-\gamma_2+\beta_2\)</span>;</div>
+<p>definisi ini memenuhi syarat. ∎</p>
+<p> </p>
+<p><strong>(b)</strong> Sekarang, dengan mengambil fungsi-fungsi serupa <span class="math inline" data-source-tex="g_1">\(g_1\)</span>, <span class="math inline" data-source-tex="g_2">\(g_2\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="g=g_1-g_2">\(g=g_1-g_2\)</span> pada <span class="math inline" data-source-tex="D\cap\dom g">\(D\cap\dom g\)</span>, kita mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="f\times g=f_1\times g_1-f_2\times g_1-f_1\times g_2
++f_2\times g_2">\(f\times g=f_1\times g_1-f_2\times g_1-f_1\times g_2
++f_2\times g_2\)</span></div>
+<p>di setiap titik dalam
+<span class="math inline" data-source-tex="D\cap\dom(f\times g)=D\cap\dom f\cap\dom g">\(D\cap\dom(f\times g)=D\cap\dom f\cap\dom g\)</span>; tetapi semua
+<span class="math inline" data-source-tex="f_i\times g_j">\(f_i\times g_j\)</span> merupakan fungsi terbatas dan tak-menurun, sehingga
+bervariasi terbatas, dan <span class="math inline" data-source-tex="f\times g">\(f\times g\)</span> pasti bervariasi terbatas pada <span class="math inline" data-source-tex="D">\(D\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="224H" data-source-id="224H"><h2><span class="source-label">224H</span> Proposisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="f:D\to\Bbb R">\(f:D\to\Bbb R\)</span> suatu fungsi bervariasi
+terbatas, dengan <span class="math inline" data-source-tex="D\subseteq\Bbb R">\(D\subseteq\Bbb R\)</span>. Maka <span class="math inline" data-source-tex="f">\(f\)</span> kontinu pada <span class="math inline" data-source-tex="D">\(D\)</span>, kecuali
+pada terhitung banyak titik.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Untuk <span class="math inline" data-source-tex="n\ge 1">\(n\ge 1\)</span>, tetapkan</p>
+<p><span class="math display" data-source-tex="\eqalign{A_n
+&amp;=\{x:x\in D,\text{ untuk setiap }\delta&gt;0\text{ terdapat }y\in
+D\cap[x-\delta,x+\delta]\cr
+&amp;\qquad\qquad\qquad\qquad\text{ sedemikian sehingga }|f(y)-f(x)|
+  \ge\Bover1n\}.\cr}">\[\begin{aligned}A_n
+&amp;=\{x:x\in D,\text{ untuk setiap }\delta&gt;0\text{ terdapat }y\in
+D\cap[x-\delta,x+\delta]\\
+&amp;\qquad\qquad\qquad\qquad\text{ sedemikian sehingga }|f(y)-f(x)|
+  \ge\Bover1n\}.\\\end{aligned}\]</span></p>
+<p>Maka <span class="math inline" data-source-tex="\#(A_n)\le n\Var f">\(\#(A_n)\le n\Var f\)</span>. Bukti.<span class="fremlin-query" role="img" aria-label="andaikan untuk kontradiksi"></span> Jika tidak, kita dapat
+menemukan <span class="math inline" data-source-tex="x_0,\ldots,x_k\in A_n">\(x_0,\ldots,x_k\in A_n\)</span> yang berbeda-beda dengan
+<span class="math inline" data-source-tex="k+1&gt;n\Var f">\(k+1&gt;n\Var f\)</span>. Urutkan titik-titik ini sedemikian sehingga
+<span class="math inline" data-source-tex="x_0&lt;x_1&lt;\ldots&lt;x_k">\(x_0&lt;x_1&lt;\ldots&lt;x_k\)</span>. Tetapkan
+<span class="math inline" data-source-tex="\delta=\bover12\min_{1\le i\le k}x_i-x_{i-1}&gt;0">\(\delta=\bover12\min_{1\le i\le k}x_i-x_{i-1}&gt;0\)</span>. Untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>,
+terdapat <span class="math inline" data-source-tex="y_i\in D\cap[x_i-\delta,x_i+\delta]">\(y_i\in D\cap[x_i-\delta,x_i+\delta]\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="|f(y_i)-f(x_i)|\ge\bover1n">\(|f(y_i)-f(x_i)|\ge\bover1n\)</span>. Ambil <span class="math inline" data-source-tex="x&#x27;_i">\(x&#x27;_i\)</span>, <span class="math inline" data-source-tex="y&#x27;_i">\(y&#x27;_i\)</span> sebagai <span class="math inline" data-source-tex="x_i">\(x_i\)</span>, <span class="math inline" data-source-tex="y_i">\(y_i\)</span>
+menurut urutan besarnya, sehingga <span class="math inline" data-source-tex="x&#x27;_i&lt;y&#x27;_i">\(x&#x27;_i&lt;y&#x27;_i\)</span>. Sekarang</p>
+<div class="centerline"><span class="math inline" data-source-tex="x&#x27;_0\le y&#x27;_0\le x&#x27;_1\le y&#x27;_1\le\ldots\le x&#x27;_k\le y&#x27;_k">\(x&#x27;_0\le y&#x27;_0\le x&#x27;_1\le y&#x27;_1\le\ldots\le x&#x27;_k\le y&#x27;_k\)</span>,</div>
+<p>dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Var f
+\ge\sum_{i=0}^k|f(y&#x27;_i)-f(x&#x27;_i)|
+=\sum_{i=0}^k|f(y_i)-f(x_i)|
+\ge \Bover1n(k+1)
+&gt;\Var f">\(\Var f
+\ge\sum_{i=0}^k|f(y&#x27;_i)-f(x&#x27;_i)|
+=\sum_{i=0}^k|f(y_i)-f(x_i)|
+\ge \Bover1n(k+1)
+&gt;\Var f\)</span>,</div>
+<p>yang mustahil. <span class="fremlin-bang" role="img" aria-label="kontradiksi"></span>∎</p>
+<p>Akibatnya, <span class="math inline" data-source-tex="A=\bigcup_{n\ge 1}A_n">\(A=\bigcup_{n\ge 1}A_n\)</span> terhitung, karena merupakan
+gabungan terhitung dari himpunan-himpunan berhingga. Namun, <span class="math inline" data-source-tex="A">\(A\)</span> tepat
+merupakan himpunan titik-titik dalam <span class="math inline" data-source-tex="D">\(D\)</span> tempat <span class="math inline" data-source-tex="f">\(f\)</span> tidak kontinu.</p></aside>
+</section>
+<section class="source-unit" id="224I" data-source-id="224I"><h2><span class="source-label">224I</span> Teorema </h2>
+<p>Misalkan <span class="math inline" data-source-tex="I\subseteq\Bbb R">\(I\subseteq\Bbb R\)</span> suatu interval, dan
+<span class="math inline" data-source-tex="f:I\to\Bbb R">\(f:I\to\Bbb R\)</span> suatu fungsi bervariasi terbatas. Maka <span class="math inline" data-source-tex="f">\(f\)</span> dapat
+didiferensialkan hampir di mana-mana dalam <span class="math inline" data-source-tex="I">\(I\)</span>, dan <span class="math inline" data-source-tex="f&#x27;">\(f&#x27;\)</span> terintegralkan
+pada <span class="math inline" data-source-tex="I">\(I\)</span>, dengan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_I|f&#x27;|\le\Var_I(f)">\(\int_I|f&#x27;|\le\Var_I(f)\)</span>.</div>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Misalkan <span class="math inline" data-source-tex="f_1">\(f_1\)</span> dan <span class="math inline" data-source-tex="f_2">\(f_2\)</span> fungsi-fungsi tak-menurun
+sedemikian sehingga <span class="math inline" data-source-tex="f=f_1-f_2">\(f=f_1-f_2\)</span> di setiap titik dalam <span class="math inline" data-source-tex="I">\(I\)</span> (<a class="xref" href="#224D">224D</a>). Maka
+<span class="math inline" data-source-tex="f_1">\(f_1\)</span> dan <span class="math inline" data-source-tex="f_2">\(f_2\)</span> terdiferensialkan hampir di mana-mana (<a class="xref" href="../222/index.html#222A">222A</a>). Pada
+setiap titik dalam <span class="math inline" data-source-tex="I">\(I\)</span> selain mungkin titik-titik ujungnya, jika ada, <span class="math inline" data-source-tex="f">\(f\)</span>
+terdiferensialkan jika <span class="math inline" data-source-tex="f_1">\(f_1\)</span> dan <span class="math inline" data-source-tex="f_2">\(f_2\)</span> terdiferensialkan, sehingga
+<span class="math inline" data-source-tex="f&#x27;(x)">\(f&#x27;(x)\)</span> terdefinisi untuk hampir setiap <span class="math inline" data-source-tex="x\in I">\(x\in I\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Tetapkan <span class="math inline" data-source-tex="F(x)=\Var_{I\cap\ocint{-\infty,x}}f">\(F(x)=\Var_{I\cap\ocint{-\infty,x}}f\)</span> untuk
+<span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span>. Jika <span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="y\in I">\(y\in I\)</span> dan <span class="math inline" data-source-tex="x\le y">\(x\le y\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="F(y)-F(x)=\Var_{[x,y]}f\ge|f(y)-f(x)|">\(F(y)-F(x)=\Var_{[x,y]}f\ge|f(y)-f(x)|\)</span>,</div>
+<p>menurut 224Cc; sehingga <span class="math inline" data-source-tex="F&#x27;(x)\ge|f&#x27;(x)|">\(F&#x27;(x)\ge|f&#x27;(x)|\)</span> kapan pun <span class="math inline" data-source-tex="x">\(x\)</span>
+merupakan titik interior dari <span class="math inline" data-source-tex="I">\(I\)</span> dan kedua turunan itu ada, yang berlaku
+hampir di mana-mana. Jadi <span class="math inline" data-source-tex="\int_I|f&#x27;|\le\int_IF&#x27;">\(\int_I|f&#x27;|\le\int_IF&#x27;\)</span>. Namun, jika <span class="math inline" data-source-tex="a">\(a\)</span>,
+<span class="math inline" data-source-tex="b\in I">\(b\in I\)</span> dan <span class="math inline" data-source-tex="a\le b">\(a\le b\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_a^bF&#x27;\le F(b)-F(a)\le F(b)\le\Var f">\(\int_a^bF&#x27;\le F(b)-F(a)\le F(b)\le\Var f\)</span>.</div>
+<p>Sekarang <span class="math inline" data-source-tex="I">\(I\)</span> dapat dinyatakan sebagai
+<span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}[a_n,b_n]">\(\bigcup_{n\in\Bbb N}[a_n,b_n]\)</span>, dengan
+<span class="math inline" data-source-tex="a_{n+1}\le a_n\le b_n\le b_{n+1}">\(a_{n+1}\le a_n\le b_n\le b_{n+1}\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>. Jadi</p>
+<p><span class="math display" data-source-tex="\eqalignno{\int_I|f&#x27;|
+&amp;\le\int_IF&#x27;
+=\int F&#x27;\times\chi I\cr
+&amp;=\int\sup_{n\in\Bbb N}F&#x27;\times\chi[a_n,b_n]
+=\sup_{n\in\Bbb N}\int F&#x27;\times\chi[a_n,b_n]\cr
+\noalign{\noindent (menurut teorema B. Levi)}
+&amp;=\sup_{n\in\Bbb N}\int_{a_n}^{b_n}F&#x27;
+\le\Var_I(f).\cr}">\[\begin{aligned}\int_I|f&#x27;|
+&amp;\le\int_IF&#x27;
+=\int F&#x27;\times\chi I\\
+&amp;=\int\sup_{n\in\Bbb N}F&#x27;\times\chi[a_n,b_n]
+=\sup_{n\in\Bbb N}\int F&#x27;\times\chi[a_n,b_n]\\
+&amp;\text{(menurut teorema B. Levi)}\\
+&amp;=\sup_{n\in\Bbb N}\int_{a_n}^{b_n}F&#x27;
+\le\Var_I(f).\\\end{aligned}\]</span></p></aside>
+</section>
+<section class="source-unit" id="224J" data-source-id="224J"><h2><span class="source-label">224J</span>  </h2>
+<p>Hasil berikut tidak diperlukan dalam bab ini,
+tetapi merupakan salah satu sifat yang paling berguna dari fungsi
+bervariasi terbatas, dan akan digunakan berulang kali dalam Bab 28.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Misalkan <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g">\(g\)</span> fungsi-fungsi bernilai real
+yang didefinisikan pada subhimpunan-subhimpunan <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan andaikan
+bahwa <span class="math inline" data-source-tex="g">\(g\)</span> terintegralkan pada interval <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>, dengan <span class="math inline" data-source-tex="a&lt;b">\(a&lt;b\)</span>, sedangkan
+<span class="math inline" data-source-tex="f">\(f\)</span> bervariasi terbatas pada <span class="math inline" data-source-tex="\ooint{a,b}">\(\ooint{a,b}\)</span> dan didefinisikan hampir di
+mana-mana dalam <span class="math inline" data-source-tex="\ooint{a,b}">\(\ooint{a,b}\)</span>. Maka <span class="math inline" data-source-tex="f\times g">\(f\times g\)</span> terintegralkan pada
+<span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>, dan</p>
+<p><span class="math display" data-source-tex="\bigl|\int_a^bf\times g\bigr|
+\le\bigl(\lim_{x\in\dom f,x\uparrow b}|f(x)|+\Var_{\ooint{a,b}}(f)\bigr)
+  \sup_{c\in[a,b]}\bigl|\int_a^cg\bigr|.">\[\bigl|\int_a^bf\times g\bigr|
+\le\bigl(\lim_{x\in\dom f,x\uparrow b}|f(x)|+\Var_{\ooint{a,b}}(f)\bigr)
+  \sup_{c\in[a,b]}\bigl|\int_a^cg\bigr|.\]</span></p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Menurut <a class="xref" href="#224F">224F</a>,
+<span class="math inline" data-source-tex="l=\lim_{x\in\dom f,x\uparrow b}f(x)">\(l=\lim_{x\in\dom f,x\uparrow b}f(x)\)</span> terdefinisi. Tuliskan
+<span class="math inline" data-source-tex="M=|l|+\Var_{\ooint{a,b}}(f)">\(M=|l|+\Var_{\ooint{a,b}}(f)\)</span>. Perhatikan bahwa jika <span class="math inline" data-source-tex="y">\(y\)</span> adalah sembarang
+titik dari <span class="math inline" data-source-tex="\dom f\cap\ooint{a,b}">\(\dom f\cap\ooint{a,b}\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="|f(y)|\le|f(x)|+|f(x)-f(y)|
+\le|f(x)|+\Var_{\ooint{a,b}}(f)\to M">\(|f(y)|\le|f(x)|+|f(x)-f(y)|
+\le|f(x)|+\Var_{\ooint{a,b}}(f)\to M\)</span></div>
+<p>ketika <span class="math inline" data-source-tex="x\uparrow b">\(x\uparrow b\)</span> di dalam <span class="math inline" data-source-tex="\dom f">\(\dom f\)</span>, sehingga
+<span class="math inline" data-source-tex="|f(y)|\le M">\(|f(y)|\le M\)</span>. Selain itu, <span class="math inline" data-source-tex="f">\(f\)</span> terukur pada <span class="math inline" data-source-tex="\ooint{a,b}">\(\ooint{a,b}\)</span>, karena
+terdapat fungsi-fungsi monoton terbatas
+<span class="math inline" data-source-tex="f_1">\(f_1\)</span>, <span class="math inline" data-source-tex="f_2:\Bbb R\to\Bbb R">\(f_2:\Bbb R\to\Bbb R\)</span> sedemikian sehingga <span class="math inline" data-source-tex="f=f_1-f_2">\(f=f_1-f_2\)</span>
+di setiap titik dalam <span class="math inline" data-source-tex="\ooint{a,b}\cap\dom f">\(\ooint{a,b}\cap\dom f\)</span>. Jadi <span class="math inline" data-source-tex="f\times g">\(f\times g\)</span> terukur,
+didominasi oleh <span class="math inline" data-source-tex="M|g|">\(M|g|\)</span>, dan terintegralkan pada <span class="math inline" data-source-tex="\ooint{a,b}">\(\ooint{a,b}\)</span> maupun
+<span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Untuk <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, <span class="math inline" data-source-tex="k\le 2^n">\(k\le 2^n\)</span>, tetapkan
+<span class="math inline" data-source-tex="a_{nk}=a+2^{-n}k(b-a)">\(a_{nk}=a+2^{-n}k(b-a)\)</span>, dan untuk <span class="math inline" data-source-tex="1\le k\le 2^n">\(1\le k\le 2^n\)</span>, pilih
+<span class="math inline" data-source-tex="x_{nk}\in\dom f\cap\ooint{a_{n,k-1},a_{nk}}">\(x_{nk}\in\dom f\cap\ooint{a_{n,k-1},a_{nk}}\)</span>. Definisikan
+<span class="math inline" data-source-tex="f_n:\ocint{a,b}\to\Bbb R">\(f_n:\ocint{a,b}\to\Bbb R\)</span> dengan menetapkan <span class="math inline" data-source-tex="f_n(x)=f(x_{nk})">\(f_n(x)=f(x_{nk})\)</span> jika
+<span class="math inline" data-source-tex="1\le k\le 2^n">\(1\le k\le 2^n\)</span> dan <span class="math inline" data-source-tex="x\in\ocint{a_{n,k-1},a_{nk}}">\(x\in\ocint{a_{n,k-1},a_{nk}}\)</span>. Maka
+<span class="math inline" data-source-tex="f(x)=\lim_{n\to\infty}f_n(x)">\(f(x)=\lim_{n\to\infty}f_n(x)\)</span> kapan pun
+<span class="math inline" data-source-tex="x\in\ooint{a,b}\cap\dom f">\(x\in\ooint{a,b}\cap\dom f\)</span> dan <span class="math inline" data-source-tex="f">\(f\)</span> kontinu di <span class="math inline" data-source-tex="x">\(x\)</span>, yang pasti berlaku
+hampir di mana-mana (<a class="xref" href="#224H">224H</a>). Selanjutnya, perhatikan bahwa semua <span class="math inline" data-source-tex="f_n">\(f_n\)</span>
+terukur, dan nilai mutlaknya dibatasi secara seragam oleh <span class="math inline" data-source-tex="M">\(M\)</span>. Jadi
+<span class="math inline" data-source-tex="\{f_n\times g:n\in\Bbb N\}">\(\{f_n\times g:n\in\Bbb N\}\)</span> didominasi oleh fungsi terintegralkan
+<span class="math inline" data-source-tex="M|g|">\(M|g|\)</span>, dan Teorema Konvergensi Terdominasi Lebesgue menyatakan bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_a^bf\times g=\lim_{n\to\infty}\int_a^bf_n\times g">\(\int_a^bf\times g=\lim_{n\to\infty}\int_a^bf_n\times g\)</span>.</div>
+<p> </p>
+<p><strong>(c)</strong> Untuk sementara, tetapkan <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>. Tetapkan
+<span class="math inline" data-source-tex="K=\sup_{c\in[a,b]}|\int_a^cg|">\(K=\sup_{c\in[a,b]}|\int_a^cg|\)</span>. (Perhatikan bahwa <span class="math inline" data-source-tex="K">\(K\)</span> berhingga karena
+<span class="math inline" data-source-tex="c\mapsto\int_a^cg">\(c\mapsto\int_a^cg\)</span> kontinu.) Maka</p>
+<p><span class="math display" data-source-tex="\eqalignno{\bigl|\int_a^bf_n\times g\bigr|
+&amp;=\bigl|\sum_{k=1}^{2^n}\int_{a_{n,k-1}}^{a_{nk}}f_n\times g\bigr|\cr
+&amp;=\bigl|\sum_{k=1}^{2^n}
+    f(x_{nk})(\int_a^{a_{nk}}g-\int_a^{a_{n,k-1}}g)\bigr|\cr
+&amp;=\bigl|\sum_{k=1}^{2^n-1}
+   (f(x_{nk})-f(x_{n,k+1}))\int_a^{a_{nk}}g
+   +f(x_{n,2^n})\int_a^bg\bigr|\cr
+&amp;\le\bigl|f(x_{n,2^n})\bigr|\bigl|\int_a^bg\bigr|+\sum_{k=1}^{2^n-1}
+   \bigl|f(x_{n,k+1})-f(x_{nk})\bigr|\bigl|\int_a^{a_{nk}}g\bigr|\cr
+&amp;\le(|f(x_{n,2^n})|+\Var_{\ooint{a,b}}(f))K
+\to MK\cr}">\[\begin{aligned}\bigl|\int_a^bf_n\times g\bigr|
+&amp;=\bigl|\sum_{k=1}^{2^n}\int_{a_{n,k-1}}^{a_{nk}}f_n\times g\bigr|\\
+&amp;=\bigl|\sum_{k=1}^{2^n}
+    f(x_{nk})(\int_a^{a_{nk}}g-\int_a^{a_{n,k-1}}g)\bigr|\\
+&amp;=\bigl|\sum_{k=1}^{2^n-1}
+   (f(x_{nk})-f(x_{n,k+1}))\int_a^{a_{nk}}g
+   +f(x_{n,2^n})\int_a^bg\bigr|\\
+&amp;\le\bigl|f(x_{n,2^n})\bigr|\bigl|\int_a^bg\bigr|+\sum_{k=1}^{2^n-1}
+   \bigl|f(x_{n,k+1})-f(x_{nk})\bigr|\bigl|\int_a^{a_{nk}}g\bigr|\\
+&amp;\le(|f(x_{n,2^n})|+\Var_{\ooint{a,b}}(f))K
+\to MK\\\end{aligned}\]</span></p>
+<p>ketika <span class="math inline" data-source-tex="n\to\infty">\(n\to\infty\)</span>.</p>
+<p> </p>
+<p><strong>(d)</strong> Sekarang</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\int_a^bf\times g|
+=\lim_{n\to\infty}|\int_a^bf_n\times g|\le MK">\(|\int_a^bf\times g|
+=\lim_{n\to\infty}|\int_a^bf_n\times g|\le MK\)</span>,</div>
+<p>sebagaimana diperlukan.</p></aside>
+</section>
+<section class="source-unit" id="224K" data-source-id="224K"><h2><span class="source-label">224K</span> Fungsi bernilai kompleks </h2>
+<p>Sejauh ini saya telah
+menganggap semua fungsi bernilai real. Ini memadai bagi keperluan bab ini,
+tetapi dalam Bab 28 kita perlu meninjau fungsi bernilai kompleks yang
+bervariasi terbatas, dan barangkali saya perlu menguraikan penyesuaian
+(elementer) yang terlibat dalam perluasan ke kasus kompleks.</p>
+</section>
+<section class="source-unit" id="224Ka" data-source-id="224Ka"><h3><span class="source-label">224Ka</span> (a) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="D">\(D\)</span> suatu subhimpunan dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> dan <span class="math inline" data-source-tex="f">\(f\)</span>
+suatu fungsi bernilai kompleks. <strong>Variasi</strong> <span class="math inline" data-source-tex="f">\(f\)</span> pada <span class="math inline" data-source-tex="D">\(D\)</span>, <span class="math inline" data-source-tex="\Var_D(f)">\(\Var_D(f)\)</span>,
+adalah nol jika <span class="math inline" data-source-tex="D\cap\dom f=\emptyset">\(D\cap\dom f=\emptyset\)</span>, dan jika tidak, variasi tersebut
+adalah</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sup\{\sum_{j=1}^n|f(a_j)-f(a_{j-1})|:
+ a_0\le a_1\le\ldots\le a_n">\(\sup\{\sum_{j=1}^n|f(a_j)-f(a_{j-1})|:
+ a_0\le a_1\le\ldots\le a_n\)</span> dalam <span class="math inline" data-source-tex="D\cap\dom f\}">\(D\cap\dom f\}\)</span>,</div>
+<p>dengan mengizinkan nilai <span class="math inline" data-source-tex="\infty">\(\infty\)</span>.
+Jika <span class="math inline" data-source-tex="\Var_{D}(f)">\(\Var_{D}(f)\)</span> berhingga, kita mengatakan bahwa <span class="math inline" data-source-tex="f">\(f\)</span> <strong>bervariasi
+terbatas</strong> pada <span class="math inline" data-source-tex="D">\(D\)</span>.</p>
+</section>
+<section class="source-unit" id="224Kb" data-source-id="224Kb"><h3><span class="source-label">224Kb</span> (b) </h3>
+<p>Seperti dalam kasus real, suatu fungsi
+bernilai kompleks yang bervariasi terbatas pasti terbatas, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Var_{D}(f+g)\le\Var_{D}(f)+\Var_{D}(g)">\(\Var_{D}(f+g)\le\Var_{D}(f)+\Var_{D}(g)\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\Var_{D}(cf)=|c|\Var_{D}(f)">\(\Var_{D}(cf)=|c|\Var_{D}(f)\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\Var_{D}(f)\ge\Var_{D\cap\ocint{-\infty,x}}(f)
++\Var_{D\cap\coint{x,\infty}}(f)">\(\Var_{D}(f)\ge\Var_{D\cap\ocint{-\infty,x}}(f)
++\Var_{D\cap\coint{x,\infty}}(f)\)</span></div>
+<p>untuk setiap
+<span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span>, dengan kesamaan jika <span class="math inline" data-source-tex="x\in D\cap\dom f">\(x\in D\cap\dom f\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Var_D(f)\le\Var_{D&#x27;}(f)">\(\Var_D(f)\le\Var_{D&#x27;}(f)\)</span> kapan pun <span class="math inline" data-source-tex="D\subseteq
+D&#x27;">\(D\subseteq
+D&#x27;\)</span>;</div>
+<p>argumen-argumen <a class="xref" href="#224C">224C</a> berlaku tanpa perubahan.</p>
+</section>
+<section class="source-unit" id="224Kc" data-source-id="224Kc"><h3><span class="source-label">224Kc</span> (c) </h3>
+<p>Suatu fungsi bernilai kompleks bervariasi terbatas jika
+dan hanya jika bagian real dan bagian imajinernya sama-sama bervariasi
+terbatas (karena</p>
+<div class="centerline"><span class="math inline" data-source-tex="\max(\Var_{D}(\Real f),\Var_{D}(\Imag f))
+\le\Var_{D}(f)\le\Var_{D}(\Real f)+\Var_{D}(\Imag f)">\(\max(\Var_{D}(\Real f),\Var_{D}(\Imag f))
+\le\Var_{D}(f)\le\Var_{D}(\Real f)+\Var_{D}(\Imag f)\)</span>.)</div>
+<p>Jadi, suatu fungsi bernilai kompleks <span class="math inline" data-source-tex="f">\(f\)</span> bervariasi terbatas
+pada <span class="math inline" data-source-tex="D">\(D\)</span> jika dan hanya jika terdapat fungsi-fungsi terbatas dan
+tak-menurun <span class="math inline" data-source-tex="f_1,\ldots,f_4:\Bbb R\to\Bbb R">\(f_1,\ldots,f_4:\Bbb R\to\Bbb R\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="f=f_1-f_2+if_3-if_4">\(f=f_1-f_2+if_3-if_4\)</span> pada <span class="math inline" data-source-tex="D\cap\dom f">\(D\cap\dom f\)</span> (<a class="xref" href="#224D">224D</a>).</p>
+</section>
+<section class="source-unit" id="224Kd" data-source-id="224Kd"><h3><span class="source-label">224Kd</span> (d) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai kompleks dan <span class="math inline" data-source-tex="D">\(D\)</span>
+sembarang subhimpunan dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Jika <span class="math inline" data-source-tex="f">\(f\)</span> bervariasi terbatas pada
+<span class="math inline" data-source-tex="D">\(D\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{x\downarrow a}\Var_{D\cap\ocint{a,x}}(f)
+=\lim_{x\uparrow a}\Var_{D\cap\coint{x,a}}(f)=0">\(\lim_{x\downarrow a}\Var_{D\cap\ocint{a,x}}(f)
+=\lim_{x\uparrow a}\Var_{D\cap\coint{x,a}}(f)=0\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{a\to-\infty}\Var_{D\cap\ocint{-\infty,a}}(f)
+=\lim_{a\to\infty}\Var_{D\cap\coint{a,\infty}}(f)=0">\(\lim_{a\to-\infty}\Var_{D\cap\ocint{-\infty,a}}(f)
+=\lim_{a\to\infty}\Var_{D\cap\coint{a,\infty}}(f)=0\)</span>.</div>
+<p><span class="proof-fragment">  (Terapkan <a class="xref" href="#224E">224E</a> pada bagian real dan bagian imajiner
+dari <span class="math inline" data-source-tex="f">\(f\)</span>.)</span></p>
+</section>
+<section class="source-unit" id="224Ke" data-source-id="224Ke"><h3><span class="source-label">224Ke</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai kompleks yang
+bervariasi terbatas pada <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>, dengan <span class="math inline" data-source-tex="a&lt;b">\(a&lt;b\)</span>. Jika <span class="math inline" data-source-tex="\dom f">\(\dom f\)</span> beririsan
+dengan setiap interval <span class="math inline" data-source-tex="\ocint{a,a+\delta}">\(\ocint{a,a+\delta}\)</span> untuk <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>, maka
+ <span class="math inline" data-source-tex="\lim_{t\in\dom f,t\downarrow a}f(t)">\(\lim_{t\in\dom f,t\downarrow a}f(t)\)</span>
+ada dalam <span class="math inline" data-source-tex="\Bbb C">\(\Bbb C\)</span>. Jika <span class="math inline" data-source-tex="\dom f">\(\dom f\)</span> beririsan dengan
+<span class="math inline" data-source-tex="\coint{b-\delta,b}">\(\coint{b-\delta,b}\)</span> untuk setiap <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>, maka
+<span class="math inline" data-source-tex="\lim_{t\in\dom f,t\uparrow b}f(t)">\(\lim_{t\in\dom f,t\uparrow b}f(t)\)</span>
+ada dalam <span class="math inline" data-source-tex="\Bbb C">\(\Bbb C\)</span>. <span class="proof-fragment">(Terapkan <a class="xref" href="#224F">224F</a> pada bagian real
+dan bagian imajiner dari <span class="math inline" data-source-tex="f">\(f\)</span>.)</span></p>
+</section>
+<section class="source-unit" id="224Kf" data-source-id="224Kf"><h3><span class="source-label">224Kf</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g">\(g\)</span> fungsi-fungsi bernilai kompleks dan <span class="math inline" data-source-tex="D">\(D\)</span> suatu
+subhimpunan dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Jika <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span> bervariasi terbatas pada <span class="math inline" data-source-tex="D">\(D\)</span>,
+demikian pula <span class="math inline" data-source-tex="f\times g">\(f\times g\)</span>. <span class="proof-fragment">(Sebab <span class="math inline" data-source-tex="f\times g">\(f\times g\)</span> dapat dinyatakan
+sebagai kombinasi linear dari keempat hasil kali
+<span class="math inline" data-source-tex="\Real f\times\Real g,\ldots,\Imag f\times\Imag g">\(\Real f\times\Real g,\ldots,\Imag f\times\Imag g\)</span>,
+dan <a class="xref" href="#224G">224G</a> dapat diterapkan pada masing-masing hasil kali tersebut.)</span></p>
+</section>
+<section class="source-unit" id="224Kg" data-source-id="224Kg"><h3><span class="source-label">224Kg</span> (g) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="I\subseteq\Bbb R">\(I\subseteq\Bbb R\)</span> suatu interval, dan
+<span class="math inline" data-source-tex="f:I\to\Bbb C">\(f:I\to\Bbb C\)</span> suatu fungsi bervariasi terbatas. Maka <span class="math inline" data-source-tex="f">\(f\)</span> dapat
+didiferensialkan hampir di mana-mana dalam <span class="math inline" data-source-tex="I">\(I\)</span>, dan
+<span class="math inline" data-source-tex="\int_I|f&#x27;|\le\Var_I(f)">\(\int_I|f&#x27;|\le\Var_I(f)\)</span>.
+<span class="proof-fragment">(Seperti <a class="xref" href="#224I">224I</a>.)</span></p>
+</section>
+<section class="source-unit" id="224Kh" data-source-id="224Kh"><h3><span class="source-label">224Kh</span> (h) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span> fungsi-fungsi bernilai kompleks yang
+didefinisikan pada subhimpunan-subhimpunan <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan andaikan bahwa
+<span class="math inline" data-source-tex="g">\(g\)</span> terintegralkan pada interval <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>, dengan <span class="math inline" data-source-tex="a&lt;b">\(a&lt;b\)</span>, sedangkan <span class="math inline" data-source-tex="f">\(f\)</span>
+bervariasi terbatas pada <span class="math inline" data-source-tex="\ooint{a,b}">\(\ooint{a,b}\)</span> dan didefinisikan hampir di
+mana-mana dalam <span class="math inline" data-source-tex="\ooint{a,b}">\(\ooint{a,b}\)</span>. Maka <span class="math inline" data-source-tex="f\times g">\(f\times g\)</span> terintegralkan pada
+<span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>, dan</p>
+<p><span class="math display" data-source-tex="\bigl|\int_a^bf\times g\bigr|
+\le\bigl(\lim_{x\in\dom f,x\uparrow b}|f(x)|+\Var_{\ooint{a,b}}(f)\bigr)
+  \sup_{c\in[a,b]}\bigl|\int_a^cg\bigr|.">\[\bigl|\int_a^bf\times g\bigr|
+\le\bigl(\lim_{x\in\dom f,x\uparrow b}|f(x)|+\Var_{\ooint{a,b}}(f)\bigr)
+  \sup_{c\in[a,b]}\bigl|\int_a^cg\bigr|.\]</span></p>
+<p><span class="proof-fragment">  (Argumen <a class="xref" href="#224J">224J</a> berlaku nyaris tanpa perubahan.)</span></p>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="224X" data-source-id="224X"><span class="anchor" id="224Xa"></span><h2><span class="source-label">224X</span> Latihan dasar <span class="math inline" data-source-tex="\pmb{&gt;}">\(\pmb{&gt;}\)</span>(a) <span class="importance" title="Sangat penting">penting</span></h2>
+<p>Tetapkan <span class="math inline" data-source-tex="f(x)=x^2\sin\Bover1{x^2}">\(f(x)=x^2\sin\Bover1{x^2}\)</span> untuk <span class="math inline" data-source-tex="x\ne 0">\(x\ne 0\)</span>, <span class="math inline" data-source-tex="f(0)=0">\(f(0)=0\)</span>. Tunjukkan
+bahwa <span class="math inline" data-source-tex="f:\Bbb R\to\Bbb R">\(f:\Bbb R\to\Bbb R\)</span> terdiferensialkan di setiap titik dan
+kontinu seragam, tetapi tidak bervariasi terbatas pada interval tak-sepele
+mana pun yang memuat <span class="math inline" data-source-tex="0">\(0\)</span>.</p>
+</section>
+<section class="source-unit" id="224Xb" data-source-id="224Xb"><h3><span class="source-label">224Xb</span> (b) </h3>
+<p>Berikan contoh suatu fungsi nonnegatif
+<span class="math inline" data-source-tex="g:[0,1]\to[0,1]">\(g:[0,1]\to[0,1]\)</span> yang bervariasi terbatas, tetapi <span class="math inline" data-source-tex="\sqrt{g}">\(\sqrt{g}\)</span> tidak
+bervariasi terbatas.</p>
+</section>
+<section class="source-unit" id="224Xc" data-source-id="224Xc"><h3><span class="source-label">224Xc</span> (c) </h3>
+<p>Tunjukkan bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span> sembarang fungsi bernilai real
+yang didefinisikan pada suatu subhimpunan dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, terdapat fungsi
+<span class="math inline" data-source-tex="\tilde f:\Bbb R\to\Bbb R">\(\tilde f:\Bbb R\to\Bbb R\)</span> yang memperluas <span class="math inline" data-source-tex="f">\(f\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\Var\tilde f=\Var f">\(\Var\tilde f=\Var f\)</span>. Dalam keadaan apa <span class="math inline" data-source-tex="\tilde f">\(\tilde f\)</span> tunggal?</p>
+</section>
+<section class="source-unit" id="224Xd" data-source-id="224Xd"><h3><span class="source-label">224Xd</span> (d) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f:D\to\Bbb R">\(f:D\to\Bbb R\)</span> suatu fungsi bervariasi terbatas,
+dengan <span class="math inline" data-source-tex="D\subseteq\Bbb R">\(D\subseteq\Bbb R\)</span> suatu himpunan tak kosong. Tunjukkan bahwa jika
+<span class="math inline" data-source-tex="\inf_{x\in
+D}|f(x)|&gt;0">\(\inf_{x\in
+D}|f(x)|&gt;0\)</span>, maka <span class="math inline" data-source-tex="1/f">\(1/f\)</span> bervariasi terbatas.</p>
+</section>
+<section class="source-unit" id="224Xe" data-source-id="224Xe"><h3><span class="source-label">224Xe</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f:[a,b]\to\Bbb R">\(f:[a,b]\to\Bbb R\)</span> suatu fungsi kontinu, dengan
+<span class="math inline" data-source-tex="a\le b">\(a\le b\)</span> dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Tunjukkan bahwa jika <span class="math inline" data-source-tex="c&lt;\Var f">\(c&lt;\Var f\)</span>, terdapat
+<span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\sum_{i=1}^n|f(a_i)-f(a_{i-1})|\ge c">\(\sum_{i=1}^n|f(a_i)-f(a_{i-1})|\ge c\)</span> kapan pun
+<span class="math inline" data-source-tex="a=a_0\le a_1\le\ldots\le a_n=b">\(a=a_0\le a_1\le\ldots\le a_n=b\)</span> dan
+<span class="math inline" data-source-tex="\max_{1\le i\le n}a_i-a_{i-1}\le\delta">\(\max_{1\le i\le n}a_i-a_{i-1}\le\delta\)</span>.</p>
+</section>
+<section class="source-unit" id="224Xf" data-source-id="224Xf"><h3><span class="source-label">224Xf</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> suatu barisan fungsi bernilai
+real, dan tetapkan <span class="math inline" data-source-tex="f(x)=\lim_{n\to\infty}f_n(x)">\(f(x)=\lim_{n\to\infty}f_n(x)\)</span> kapan pun limit tersebut
+terdefinisi. Tunjukkan bahwa <span class="math inline" data-source-tex="\Var f\le\liminf_{n\to\infty}\Var f_n">\(\Var f\le\liminf_{n\to\infty}\Var f_n\)</span>.</p>
+</section>
+<section class="source-unit" id="224Xg" data-source-id="224Xg"><h3><span class="source-label">224Xg</span> (g) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real yang
+terintegralkan pada interval <span class="math inline" data-source-tex="[a,b]\subseteq\Bbb R">\([a,b]\subseteq\Bbb R\)</span>. Tetapkan
+<span class="math inline" data-source-tex="F(x)=\int_a^xf">\(F(x)=\int_a^xf\)</span> untuk <span class="math inline" data-source-tex="x\in[a,b]">\(x\in[a,b]\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="\Var F=\int_a^b|f|">\(\Var F=\int_a^b|f|\)</span>. (<em>Petunjuk\/</em>: mulailah dengan
+memeriksa bahwa <span class="math inline" data-source-tex="\Var F\le\int|f|">\(\Var F\le\int|f|\)</span>; untuk ketaksamaan sebaliknya, tinjau
+terlebih dahulu kasus <span class="math inline" data-source-tex="f\ge 0">\(f\ge 0\)</span>.)</p>
+</section>
+<section class="source-unit" id="224Xh" data-source-id="224Xh"><h3><span class="source-label">224Xh</span> (h) </h3>
+<p>Tunjukkan bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real yang
+didefinisikan pada himpunan tak kosong <span class="math inline" data-source-tex="D\subseteq\Bbb R">\(D\subseteq\Bbb R\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Var f=\sup\{|\sum_{i=1}^n(-1)^i(f(a_i)-f(a_{i-1}))|:
+  a_0\le a_1\le\ldots\le a_n">\(\Var f=\sup\{|\sum_{i=1}^n(-1)^i(f(a_i)-f(a_{i-1}))|:
+  a_0\le a_1\le\ldots\le a_n\)</span> dalam <span class="math inline" data-source-tex="D\}">\(D\}\)</span>.</div>
+</section>
+<section class="source-unit" id="224Xi" data-source-id="224Xi"><h3><span class="source-label">224Xi</span> (i) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real yang
+terintegralkan pada interval terbatas <span class="math inline" data-source-tex="[a,b]\subseteq\Bbb R">\([a,b]\subseteq\Bbb R\)</span>. Tunjukkan
+bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_a^b|f|
+=">\(\int_a^b|f|
+=\)</span><span class="math inline" data-source-tex="\sup\{|\sum_{i=1}^n(-1)^i\int_{a_{i-1}}^{a_i}f|:
+  a=a_0\le a_1\le a_2\le\ldots\le a_n=b\}">\(\sup\{|\sum_{i=1}^n(-1)^i\int_{a_{i-1}}^{a_i}f|:
+  a=a_0\le a_1\le a_2\le\ldots\le a_n=b\}\)</span>.</div>
+<p>(<em>Petunjuk\/</em>: gabungkan <a class="xref" href="#224Xg">224Xg</a> dan <a class="xref" href="#224Xh">224Xh</a>.)</p>
+</section>
+<section class="source-unit" id="224Xj" data-source-id="224Xj"><h3><span class="source-label">224Xj</span> (j) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span> fungsi-fungsi bernilai real yang
+didefinisikan pada subhimpunan-subhimpunan <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan andaikan bahwa
+<span class="math inline" data-source-tex="g">\(g\)</span> terintegralkan pada interval <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>, dengan <span class="math inline" data-source-tex="a&lt;b">\(a&lt;b\)</span>, sedangkan <span class="math inline" data-source-tex="f">\(f\)</span>
+bervariasi terbatas pada <span class="math inline" data-source-tex="\ooint{a,b}">\(\ooint{a,b}\)</span> dan didefinisikan hampir di
+mana-mana dalam <span class="math inline" data-source-tex="\ooint{a,b}">\(\ooint{a,b}\)</span>. Tunjukkan bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\int_a^bf\times g|
+\le(\lim_{x\in\dom f,x\downarrow a}|f(x)|
+  +\Var_{\ooint{a,b}}(f))\sup_{c\in[a,b]}|\int_c^bg|">\(|\int_a^bf\times g|
+\le(\lim_{x\in\dom f,x\downarrow a}|f(x)|
+  +\Var_{\ooint{a,b}}(f))\sup_{c\in[a,b]}|\int_c^bg|\)</span>.</div>
+</section>
+<section class="source-unit" id="224Xk" data-source-id="224Xk"><h3><span class="source-label">224Xk</span> (k) </h3>
+<p>Andaikan bahwa <span class="math inline" data-source-tex="D\subseteq\Bbb R">\(D\subseteq\Bbb R\)</span> dan
+<span class="math inline" data-source-tex="f:D\to\Bbb R">\(f:D\to\Bbb R\)</span> suatu fungsi. Tunjukkan bahwa <span class="math inline" data-source-tex="f">\(f\)</span> dapat dinyatakan sebagai
+selisih dua fungsi tak-menurun jika dan hanya jika
+<span class="math inline" data-source-tex="\Var_{D\cap[a,b]}(f)">\(\Var_{D\cap[a,b]}(f)\)</span> berhingga kapan pun <span class="math inline" data-source-tex="a\le b">\(a\le b\)</span> dalam <span class="math inline" data-source-tex="D">\(D\)</span>.</p>
+</section>
+<section class="source-unit" id="224Xl" data-source-id="224Xl"><h3><span class="source-label">224Xl</span> (l) </h3>
+<p>Andaikan bahwa <span class="math inline" data-source-tex="D\subseteq\Bbb R">\(D\subseteq\Bbb R\)</span> dan bahwa <span class="math inline" data-source-tex="f:D\to\Bbb R">\(f:D\to\Bbb R\)</span> suatu fungsi
+kontinu yang bervariasi terbatas. Tunjukkan bahwa <span class="math inline" data-source-tex="f">\(f\)</span> dapat dinyatakan
+sebagai selisih dua fungsi kontinu dan tak-menurun.</p>
+</section>
+<section class="source-unit" id="224Xm" data-source-id="224Xm"><h3><span class="source-label">224Xm</span> (m) </h3>
+<p>Andaikan bahwa <span class="math inline" data-source-tex="D\subseteq\Bbb R">\(D\subseteq\Bbb R\)</span> dan bahwa <span class="math inline" data-source-tex="f:D\to\Bbb R">\(f:D\to\Bbb R\)</span> suatu fungsi
+bervariasi terbatas yang kontinu dari kanan, yakni kapan pun <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span> dan
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, terdapat <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="|f(t)-f(x)|\le\epsilon">\(|f(t)-f(x)|\le\epsilon\)</span> untuk setiap <span class="math inline" data-source-tex="t\in D\cap[x,x+\delta]">\(t\in D\cap[x,x+\delta]\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="f">\(f\)</span> dapat dinyatakan sebagai selisih dua fungsi
+tak-menurun yang kontinu dari kanan.</p>
+</section>
+<section class="source-unit" id="224Y" data-source-id="224Y"><span class="anchor" id="224Ya"></span><h2><span class="source-label">224Y</span> Latihan lanjutan (a) </h2>
+<p>Tunjukkan bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span> sembarang fungsi bernilai kompleks yang
+didefinisikan pada suatu subhimpunan dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, terdapat fungsi
+<span class="math inline" data-source-tex="\tilde f:\Bbb R\to\Bbb C">\(\tilde f:\Bbb R\to\Bbb C\)</span> yang memperluas <span class="math inline" data-source-tex="f">\(f\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\Var\tilde f=\Var f">\(\Var\tilde f=\Var f\)</span>. Dalam keadaan apa <span class="math inline" data-source-tex="\tilde f">\(\tilde f\)</span> tunggal?</p>
+</section>
+<section class="source-unit" id="224Yb" data-source-id="224Yb"><h3><span class="source-label">224Yb</span> (b) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="D">\(D\)</span> sembarang subhimpunan tak kosong dari
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan misalkan <span class="math inline" data-source-tex="\eusm V">\(\eusm V\)</span> suatu ruang fungsi-fungsi
+<span class="math inline" data-source-tex="f:D\to\Bbb R">\(f:D\to\Bbb R\)</span> yang bervariasi terbatas. Untuk <span class="math inline" data-source-tex="f\in\eusm V">\(f\in\eusm V\)</span>, tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|f\|=\sup\{|f(t_0)|+\sum_{i=1}^n|f(t_i)-f(t_{i-1})|:
+t_0\le\ldots\le t_n\in D\}">\(\|f\|=\sup\{|f(t_0)|+\sum_{i=1}^n|f(t_i)-f(t_{i-1})|:
+t_0\le\ldots\le t_n\in D\}\)</span>.</div>
+<p>Tunjukkan bahwa (i) <span class="math inline" data-source-tex="\|\,\|">\(\|\,\|\)</span> merupakan norma pada <span class="math inline" data-source-tex="\eusm V">\(\eusm V\)</span>
+(ii) <span class="math inline" data-source-tex="\eusm V">\(\eusm V\)</span> lengkap terhadap <span class="math inline" data-source-tex="\|\,\|">\(\|\,\|\)</span> (iii)
+<span class="math inline" data-source-tex="\|f\times g\|\le\|f\|\|g\|">\(\|f\times g\|\le\|f\|\|g\|\)</span> untuk semua <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in\eusm V">\(g\in\eusm V\)</span>, sehingga
+<span class="math inline" data-source-tex="\eusm V">\(\eusm V\)</span> merupakan suatu aljabar Banach.</p>
+</section>
+<section class="source-unit" id="224Yc" data-source-id="224Yc"><h3><span class="source-label">224Yc</span> (c) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f:\Bbb R\to\Bbb R">\(f:\Bbb R\to\Bbb R\)</span> suatu fungsi bervariasi
+terbatas.
+Tunjukkan bahwa terdapat suatu barisan <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> dari fungsi-fungsi
+yang terdiferensialkan
+sedemikian sehingga <span class="math inline" data-source-tex="\lim_{n\to\infty}f_n(x)=f(x)">\(\lim_{n\to\infty}f_n(x)=f(x)\)</span> untuk setiap
+<span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span>, <span class="math inline" data-source-tex="\lim_{n\to\infty}\int|f_n-f|=0">\(\lim_{n\to\infty}\int|f_n-f|=0\)</span>, dan
+<span class="math inline" data-source-tex="\Var(f_n)\le\Var(f)">\(\Var(f_n)\le\Var(f)\)</span> untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> mulailah dengan
+<span class="math inline" data-source-tex="f">\(f\)</span> yang tak-menurun.</span></p>
+</section>
+<section class="source-unit" id="224Yd" data-source-id="224Yd"><h3><span class="source-label">224Yd</span> (d) </h3>
+<p>Untuk setiap himpunan terurut parsial <span class="math inline" data-source-tex="X">\(X\)</span> dan setiap
+fungsi <span class="math inline" data-source-tex="f:X\to\Bbb R">\(f:X\to\Bbb R\)</span>, katakan bahwa <span class="math inline" data-source-tex="\Var_X(f)=0">\(\Var_X(f)=0\)</span> jika <span class="math inline" data-source-tex="X=\emptyset">\(X=\emptyset\)</span>,
+dan jika tidak,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Var_X(f)
+=\sup\{\sum_{i=1}^n|f(a_i)-f(a_{i-1})|:a_0,a_1,\ldots,a_n\in X,\,a_0\le
+a_1\le\ldots\le a_n\}">\(\Var_X(f)
+=\sup\{\sum_{i=1}^n|f(a_i)-f(a_{i-1})|:a_0,a_1,\ldots,a_n\in X,\,a_0\le
+a_1\le\ldots\le a_n\}\)</span>.</div>
+<p>Nyatakan dan buktikan hasil-hasil dalam kerangka ini yang
+memperumum <a class="xref" href="#224D">224D</a> dan <a class="xref" href="#224Yb">224Yb</a>. (<em>Petunjuk-petunjuk\/</em>: <span class="math inline" data-source-tex="f">\(f\)</span> disebut
+‘tak-menurun’ jika <span class="math inline" data-source-tex="f(x)\le f(y)">\(f(x)\le f(y)\)</span> kapan pun <span class="math inline" data-source-tex="x\le y">\(x\le y\)</span>; tafsirkan
+<span class="math inline" data-source-tex="\ocint{-\infty,x}">\(\ocint{-\infty,x}\)</span> sebagai <span class="math inline" data-source-tex="\{y:y\le x\}">\(\{y:y\le x\}\)</span>.)</p>
+</section>
+<section class="source-unit" id="224Ye" data-source-id="224Ye"><h3><span class="source-label">224Ye</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\rho)">\((X,\rho)\)</span> suatu ruang metrik dan
+<span class="math inline" data-source-tex="f:[a,b]\to X">\(f:[a,b]\to X\)</span> suatu fungsi, dengan <span class="math inline" data-source-tex="a\le b">\(a\le b\)</span> dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Var_{[a,b]}(f)
+=\sup\{\sum_{i=1}^n\rho(f(a_i),f(a_{i-1})):
+a\le a_0\le\ldots\le a_n\le b\}">\(\Var_{[a,b]}(f)
+=\sup\{\sum_{i=1}^n\rho(f(a_i),f(a_{i-1})):
+a\le a_0\le\ldots\le a_n\le b\}\)</span>.</div>
+<p>(i) Tunjukkan bahwa
+<span class="math inline" data-source-tex="\Var_{[a,b]}(f)=\Var_{[a,c]}(f)+\Var_{[c,b]}(f)">\(\Var_{[a,b]}(f)=\Var_{[a,c]}(f)+\Var_{[c,b]}(f)\)</span> untuk setiap
+<span class="math inline" data-source-tex="c\in[a,b]">\(c\in[a,b]\)</span>.
+(ii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="\Var_{[a,b]}(f)">\(\Var_{[a,b]}(f)\)</span> berhingga, maka <span class="math inline" data-source-tex="f">\(f\)</span> kontinu
+pada <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>, kecuali pada terhitung banyak titik.
+(iii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="X">\(X\)</span> lengkap dan <span class="math inline" data-source-tex="\Var_{[a,b]}(f)&lt;\infty">\(\Var_{[a,b]}(f)&lt;\infty\)</span>, maka
+<span class="math inline" data-source-tex="\lim_{t\uparrow x}f(t)">\(\lim_{t\uparrow x}f(t)\)</span> ada untuk setiap <span class="math inline" data-source-tex="x\in\ocint{a,b}">\(x\in\ocint{a,b}\)</span>.
+(iv) Tunjukkan bahwa jika <span class="math inline" data-source-tex="X">\(X\)</span> lengkap, maka <span class="math inline" data-source-tex="\Var_{[a,b]}(f)">\(\Var_{[a,b]}(f)\)</span> berhingga
+jika dan hanya jika <span class="math inline" data-source-tex="f">\(f\)</span> dapat dinyatakan sebagai komposisi <span class="math inline" data-source-tex="gh">\(gh\)</span>, dengan
+<span class="math inline" data-source-tex="h:[a,b]\to\Bbb R">\(h:[a,b]\to\Bbb R\)</span> tak-menurun dan <span class="math inline" data-source-tex="g:\Bbb R\to X">\(g:\Bbb R\to X\)</span> bersifat
+<span class="math inline" data-source-tex="1">\(1\)</span>-Lipschitz, yakni <span class="math inline" data-source-tex="\rho(g(c),g(d))\le|c-d|">\(\rho(g(c),g(d))\le|c-d|\)</span> untuk semua <span class="math inline" data-source-tex="c">\(c\)</span>,
+<span class="math inline" data-source-tex="d\in\Bbb R">\(d\in\Bbb R\)</span>.</p>
+</section>
+<section class="source-unit" id="224Yf" data-source-id="224Yf"><h3><span class="source-label">224Yf</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="U">\(U\)</span> suatu ruang bernorma dan <span class="math inline" data-source-tex="a\le b">\(a\le b\)</span> dalam
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Untuk fungsi-fungsi <span class="math inline" data-source-tex="f:[a,b]\to U">\(f:[a,b]\to U\)</span>, definisikan
+<span class="math inline" data-source-tex="\Var_{[a,b]}(f)">\(\Var_{[a,b]}(f)\)</span> seperti dalam <a class="xref" href="#224Ye">224Ye</a>, dengan menggunakan metrik baku
+<span class="math inline" data-source-tex="\rho(x,y)=\|x-y\|">\(\rho(x,y)=\|x-y\|\)</span> untuk <span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="y\in U">\(y\in U\)</span>. (i) Tunjukkan bahwa
+<span class="math inline" data-source-tex="\Var_{[a,b]}(f+g)\le\Var_{[a,b]}(f)+\Var_{[a,b]}(g)">\(\Var_{[a,b]}(f+g)\le\Var_{[a,b]}(f)+\Var_{[a,b]}(g)\)</span>,
+<span class="math inline" data-source-tex="\Var_{[a,b]}(cf)=|c|\Var_{[a,b]}(f)">\(\Var_{[a,b]}(cf)=|c|\Var_{[a,b]}(f)\)</span> untuk semua <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g:[a,b]\to U">\(g:[a,b]\to U\)</span>
+dan semua <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>. (ii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="V">\(V\)</span> ruang bernorma lain
+dan <span class="math inline" data-source-tex="T:U\to V">\(T:U\to V\)</span> suatu operator linear terbatas, maka
+<span class="math inline" data-source-tex="\Var_{[a,b]}(Tf)\le\|T\|\Var_{[a,b]}(f)">\(\Var_{[a,b]}(Tf)\le\|T\|\Var_{[a,b]}(f)\)</span> untuk setiap <span class="math inline" data-source-tex="f:[a,b]\to U">\(f:[a,b]\to U\)</span>.</p>
+</section>
+<section class="source-unit" id="224Yg" data-source-id="224Yg"><h3><span class="source-label">224Yg</span> (g) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f:[0,1]\to\Bbb R">\(f:[0,1]\to\Bbb R\)</span> suatu fungsi kontinu. Untuk
+<span class="math inline" data-source-tex="y\in\Bbb R">\(y\in\Bbb R\)</span>, tetapkan <span class="math inline" data-source-tex="h(y)=\#(f^{-1}[\{y\}])">\(h(y)=\#(f^{-1}[\{y\}])\)</span> jika nilai ini berhingga,
+dan <span class="math inline" data-source-tex="\infty">\(\infty\)</span> jika tidak. Tunjukkan bahwa (jika kita mengizinkan <span class="math inline" data-source-tex="\infty">\(\infty\)</span>
+sebagai nilai integral) <span class="math inline" data-source-tex="\Var_{[0,1]}(f)=\int h">\(\Var_{[0,1]}(f)=\int h\)</span>. (<em>Petunjuk\/</em>:
+untuk <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, <span class="math inline" data-source-tex="i&lt;2^n">\(i&lt;2^n\)</span>, tetapkan
+<span class="math inline" data-source-tex="c_{ni}=\sup\{f(x)-f(y):x,y\in[2^{-n}i,2^{-n}(i+1)]\}">\(c_{ni}=\sup\{f(x)-f(y):x,y\in[2^{-n}i,2^{-n}(i+1)]\}\)</span>,
+<span class="math inline" data-source-tex="h_{ni}(y)=1">\(h_{ni}(y)=1\)</span> jika <span class="math inline" data-source-tex="y\in f[\,\coint{2^{-n}i,2^{-n}(i+1)}\,]">\(y\in f[\,\coint{2^{-n}i,2^{-n}(i+1)}\,]\)</span>, dan <span class="math inline" data-source-tex="0">\(0\)</span>
+jika tidak. Tunjukkan bahwa <span class="math inline" data-source-tex="c_{ni}=\int h_{ni}">\(c_{ni}=\int h_{ni}\)</span>,
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\sum_{i=0}^{2^n-1}c_{ni}=\Var f">\(\lim_{n\to\infty}\sum_{i=0}^{2^n-1}c_{ni}=\Var f\)</span>,
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\sum_{i=0}^{2^n-1}h_{ni}=h">\(\lim_{n\to\infty}\sum_{i=0}^{2^n-1}h_{ni}=h\)</span>.)
+(Lihat juga <a class="xref" href="../226/index.html#226Yc">226Yc</a>.)</p>
+</section>
+<section class="source-unit" id="224Yh" data-source-id="224Yh"><h3><span class="source-label">224Yh</span> (h) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> sembarang ukuran Lebesgue-Stieltjes pada
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, <span class="math inline" data-source-tex="I\subseteq \Bbb R">\(I\subseteq \Bbb R\)</span> suatu interval (yang dapat terbuka atau
+tertutup, terbatas atau tak terbatas), dan <span class="math inline" data-source-tex="D\subseteq I">\(D\subseteq I\)</span> suatu himpunan
+tak kosong. Misalkan <span class="math inline" data-source-tex="\eusm V">\(\eusm V\)</span> ruang fungsi-fungsi bervariasi terbatas
+dari <span class="math inline" data-source-tex="D">\(D\)</span> ke <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan <span class="math inline" data-source-tex="\|\,\|">\(\|\,\|\)</span> norma <a class="xref" href="#224Yb">224Yb</a> pada <span class="math inline" data-source-tex="\eusm V">\(\eusm V\)</span>. Misalkan
+<span class="math inline" data-source-tex="g:D\to\Bbb R">\(g:D\to\Bbb R\)</span> suatu fungsi sedemikian sehingga
+<span class="math inline" data-source-tex="\int_{[a,b]\cap D}g\,d\nu">\(\int_{[a,b]\cap D}g\,d\nu\)</span> ada kapan pun <span class="math inline" data-source-tex="a\le b">\(a\le b\)</span> dalam <span class="math inline" data-source-tex="I">\(I\)</span>, dan
+<span class="math inline" data-source-tex="K=\sup_{a,b\in I,a\le  b}|\int_{[a,b]\cap D}g\,d\nu|">\(K=\sup_{a,b\in I,a\le  b}|\int_{[a,b]\cap D}g\,d\nu|\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="|\int_Df\times g\,d\nu|\le K\|f\|">\(|\int_Df\times g\,d\nu|\le K\|f\|\)</span> untuk setiap
+<span class="math inline" data-source-tex="f\in\eusm V">\(f\in\eusm V\)</span>.</p>
+</section>
+<section class="source-unit" id="224Yi" data-source-id="224Yi"><h3><span class="source-label">224Yi</span> (i) </h3>
+<p>Jelaskan cara menerapkan <a class="xref" href="#224Yh">224Yh</a> dengan <span class="math inline" data-source-tex="D=\Bbb N">\(D=\Bbb N\)</span> untuk
+memperoleh Teorema Abel bahwa jika suatu barisan monoton konvergen ke <span class="math inline" data-source-tex="0">\(0\)</span>
+dan suatu deret mempunyai barisan jumlah parsial yang terbatas, maka deret
+hasil kali suku demi suku keduanya dapat dijumlahkan.</p>
+</section>
+<section class="source-unit" id="224Yj" data-source-id="224Yj"><h3><span class="source-label">224Yj</span> (j) </h3>
+<p>Andaikan bahwa <span class="math inline" data-source-tex="I\subseteq\Bbb R">\(I\subseteq\Bbb R\)</span> suatu interval, dan
+bahwa <span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> suatu barisan himpunan yang menutupi <span class="math inline" data-source-tex="I">\(I\)</span>.
+Misalkan <span class="math inline" data-source-tex="f:I\to\Bbb R">\(f:I\to\Bbb R\)</span> kontinu. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\Var f\le\sum_{n=0}^{\infty}\Var_{A_n}f">\(\Var f\le\sum_{n=0}^{\infty}\Var_{A_n}f\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> cukup buktikan untuk kasus himpunan-himpunan tertutup <span class="math inline" data-source-tex="A_n">\(A_n\)</span>;
+gunakan Teorema Baire (4A2Ma).</span></p>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<section class="source-unit" id="224-notes" data-source-id="224-notes"><h2><span class="source-label">224-notes</span> Catatan penutup untuk Bagian 224 </h2>
+<p>Saya telah mengembangkan gagasan-gagasan di atas agak
+lebih jauh daripada yang segera kita perlukan; untuk bab ini, cukup meninjau
+kasus ketika <span class="math inline" data-source-tex="D=\dom f=[a,b]">\(D=\dom f=[a,b]\)</span> untuk suatu interval
+<span class="math inline" data-source-tex="[a,b]\subseteq\Bbb R">\([a,b]\subseteq\Bbb R\)</span>. Perluasan ke fungsi-fungsi dengan domain tak
+beraturan akan berguna dalam Bab 28, dan perluasan ke himpunan tak
+beraturan <span class="math inline" data-source-tex="D">\(D\)</span>, meskipun tidak penting bagi kita di sini, cukup menarik
+– misalnya, dengan mengambil <span class="math inline" data-source-tex="D=\Bbb N">\(D=\Bbb N\)</span>, kita memperoleh konsep ‘barisan
+bervariasi terbatas’, yang tentu relevan bagi persoalan konvergensi dan
+keterjumlahan.</p>
+<p>Hasil utama bagian ini tentu saja adalah fakta bahwa suatu fungsi
+bervariasi terbatas dapat dinyatakan sebagai selisih fungsi-fungsi
+monoton (<a class="xref" href="#224D">224D</a>); bahkan, salah satu tujuan konsep ini adalah mencirikan
+rentang linear fungsi-fungsi monoton. Hampir semua hasil lain di sini
+dapat diperoleh sebagai konsekuensi mudah dari fakta tersebut, seperti
+dalam <a class="xref" href="#224E">224E</a>-<a class="xref" href="#224G">224G</a>. Dalam <a class="xref" href="#224I">224I</a> dan <a class="xref" href="#224Xg">224Xg</a> kita melangkah sedikit lebih dalam,
+dan bahkan mulai muncul unsur-unsur teori ukuran; di sinilah gagasan-gagasan ini
+mulai terhubung dengan pokok sesungguhnya dari bab ini, yang akan
+dilanjutkan dalam bagian berikutnya. Hasil lain yang pada dasarnya cukup
+mudah, tetapi mengandung benih gagasan-gagasan penting, adalah <a class="xref" href="#224Yg">224Yg</a>.</p>
+<p>Dalam <a class="xref" href="#224Yb">224Yb</a> saya menyebutkan suatu pengembangan alami dalam analisis
+fungsional, dan dalam <a class="xref" href="#224Yd">224Yd</a>-<a class="xref" href="#224Yf">224Yf</a> 
+saya mengusulkan generalisasi lebih lanjut yang berjangkauan luas.</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 2: Broad Foundations</cite>, Bagian 224.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 25 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-cumulative-html-route-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V2-S224&quot;,
+  &quot;source_member&quot;: &quot;mt2.2016/mt224.tex&quot;,
+  &quot;target_bytes&quot;: 34064,
+  &quot;target_sha256&quot;: &quot;18e8e226c77e4f7f488ebfdc32eaf5060717f95ce29caf10443c401b6b96dc5c&quot;,
+  &quot;source_ids&quot;: [
+    &quot;224&quot;,
+    &quot;224A&quot;,
+    &quot;224B&quot;,
+    &quot;224Ba&quot;,
+    &quot;224Bb&quot;,
+    &quot;224C&quot;,
+    &quot;224D&quot;,
+    &quot;224E&quot;,
+    &quot;224F&quot;,
+    &quot;224G&quot;,
+    &quot;224H&quot;,
+    &quot;224I&quot;,
+    &quot;224J&quot;,
+    &quot;224K&quot;,
+    &quot;224Ka&quot;,
+    &quot;224Kb&quot;,
+    &quot;224Kc&quot;,
+    &quot;224Kd&quot;,
+    &quot;224Ke&quot;,
+    &quot;224Kf&quot;,
+    &quot;224Kg&quot;,
+    &quot;224Kh&quot;,
+    &quot;224X&quot;,
+    &quot;224Xa&quot;,
+    &quot;224Xb&quot;,
+    &quot;224Xc&quot;,
+    &quot;224Xd&quot;,
+    &quot;224Xe&quot;,
+    &quot;224Xf&quot;,
+    &quot;224Xg&quot;,
+    &quot;224Xh&quot;,
+    &quot;224Xi&quot;,
+    &quot;224Xj&quot;,
+    &quot;224Xk&quot;,
+    &quot;224Xl&quot;,
+    &quot;224Xm&quot;,
+    &quot;224Y&quot;,
+    &quot;224Ya&quot;,
+    &quot;224Yb&quot;,
+    &quot;224Yc&quot;,
+    &quot;224Yd&quot;,
+    &quot;224Ye&quot;,
+    &quot;224Yf&quot;,
+    &quot;224Yg&quot;,
+    &quot;224Yh&quot;,
+    &quot;224Yi&quot;,
+    &quot;224Yj&quot;
+  ],
+  &quot;corpus_id&quot;: &quot;O007-FREMLIN&quot;,
+  &quot;volume_id&quot;: &quot;O007-FREMLIN-V2&quot;,
+  &quot;volume_source_title&quot;: &quot;Broad Foundations&quot;,
+  &quot;route&quot;: &quot;224&quot;,
+  &quot;official_source_page_start&quot;: 70,
+  &quot;chapter_official_source_pages&quot;: [
+    55,
+    95
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1306 @@
+\frfilename{mt275.tex}
+\versiondate{3.12.12}
+
+\def\chaptername{Teori probabilitas}
+\def\sectionname{Martingal}
+\copyrightdate{2001}
+
+\newsection{275}
+
+Sejauh ini bab ini didominasi oleh barisan variabel acak yang saling bebas.
+Sekarang saya beralih pada satu lagi konsep luar biasa yang lahir dari intuisi
+probabilistik. Di sini kita mempelajari sistem yang berkembang, tempat kita
+memperoleh semakin banyak informasi seiring berjalannya waktu. Saya memberikan
+teorema-teorema dasar tentang konvergensi titik demi titik martingal
+(275F-275H, %275F 275G 275H
+275K) dan uraian yang sangat singkat tentang `waktu henti'
+(275L-275P). %275L 275M 275N 275O 275P
+
+\leader{275A}{Definisi} Misalkan $(\Omega,\Sigma,\mu)$ adalah ruang
+probabilitas dengan pelengkapan $(\Omega,\hat\Sigma,\hat\mu)$, dan
+$\sequencen{\Sigma_n}$ barisan subaljabar-sigma dari $\hat\Sigma$ yang tak
+menurun. \cmmnt{(Barisan $\sequencen{\Sigma_n}$ demikian disebut
+{\bf filtrasi}.)}
+Suatu {\bf martingal yang teradaptasi terhadap
+$\sequencen{\Sigma_n}$} adalah barisan $\sequencen{X_n}$ dari variabel acak
+bernilai real yang terintegralkan pada $\Omega$ sedemikian sehingga
+(i) $\dom X_n\in\Sigma_n$ dan $X_n$ terukur terhadap $\Sigma_n$ untuk setiap
+$n\in\Bbb N$ (ii) kapan pun $m\le n\in\Bbb N$ dan $E\in\Sigma_m$, maka
+$\int_EX_{n}=\int_EX_m$.
+
+\cmmnt{Perhatikan bahwa untuk (ii) cukup jika
+$\int_EX_{n+1}=\int_EX_n$ kapan pun $n\in\Bbb N$ dan $E\in\Sigma_n$.}
+
+\leader{275B}{Contoh }\cmmnt{Kita telah melihat banyak konteks tempat
+barisan semacam ini muncul secara alami; berikut beberapa di antaranya.
+
+\medskip
+
+}{\bf (a)} Misalkan $(\Omega,\Sigma,\mu)$ adalah ruang probabilitas dan
+$\sequencen{\Sigma_n}$ barisan subaljabar-sigma dari $\Sigma$ yang tak
+menurun. Misalkan $X$ adalah sebarang variabel acak bernilai real pada
+$\Omega$ dengan ekspektasi berhingga, dan untuk setiap $n\in\Bbb N$ misalkan
+$X_n$ adalah suatu ekspektasi bersyarat dari $X$ pada $\Sigma_n$\cmmnt{,
+seperti dalam \S233}. Dengan tunduk pada syarat bahwa
+$\dom X_n\in\Sigma_n$ dan $X_n$ benar-benar terukur terhadap $\Sigma_n$
+untuk setiap $n$\cmmnt{ (suatu hal yang murni teknis -- lihat 232He)},
+$\sequencen{X_n}$ merupakan martingal yang teradaptasi terhadap
+$\sequencen{\Sigma_n}$\cmmnt{, karena
+$\int_EX_{n+1}=\int_EX=\int_EX_n$ kapan pun $E\in\Sigma_n$}.
+
+\spheader 275Bb Misalkan $(\Omega,\Sigma,\mu)$ adalah ruang probabilitas
+dan $\sequencen{X_n}$ barisan variabel acak yang saling bebas dan semuanya
+berekspektasi nol. Untuk setiap $n\in\Bbb N$ misalkan
+$\tilde\Sigma_n$ adalah aljabar-sigma yang dibangkitkan oleh
+$\bigcup_{i\le n}\Sigma_{X_i}$, dengan $\Sigma_{X_i}$ menyatakan
+aljabar-sigma yang didefinisikan oleh $X_i$\cmmnt{ (272C)}, dan tetapkan
+$S_n=X_0+\ldots+X_n$. Maka $\sequencen{S_n}$ adalah martingal yang
+teradaptasi terhadap $\tilde\Sigma_n$. \cmmnt{(Gunakan 272K untuk melihat
+bahwa $\Sigma_{X_{n+1}}$ bebas dari $\tilde\Sigma_n$, sehingga
+$\int_EX_{n+1}=\int X_{n+1}\times\chi E=0$ untuk setiap
+$E\in\tilde\Sigma_n$, berdasarkan 272R.)}
+
+\spheader 275Bc Misalkan $(\Omega,\Sigma,\mu)$ adalah ruang probabilitas
+dan $\sequencen{X_n}$ barisan variabel acak yang saling bebas dan semuanya
+berekspektasi $1$. Untuk setiap $n\in\Bbb N$ misalkan
+$\tilde\Sigma_n$ adalah aljabar-sigma yang dibangkitkan oleh
+$\bigcup_{i\le n}\Sigma_{X_i}$, dengan $\Sigma_{X_i}$ menyatakan
+aljabar-sigma yang didefinisikan oleh $X_i$, dan tetapkan
+$W_n=X_0\times\ldots\times X_n$. Maka $\sequencen{W_n}$ adalah martingal
+yang teradaptasi terhadap $\sequencen{\tilde\Sigma_n}$.
+%\sequencen{\tilde\Sigma_n} is the {\bf natural filtration} for
+%\sequencen{X_n}
+
+\leader{275C}{Catatan }\cmmnt{{\bf (a)} Tampaknya sesuai dengan konsep
+variabel acak $X$ yang `teradaptasi' terhadap aljabar-sigma $\Sigma$ untuk
+mensyaratkan bahwa $\dom X\in\Sigma$ dan $X$ terukur terhadap $\Sigma$,
+meskipun ini dapat berarti bahwa variabel acak lain, yang sama hampir di
+mana-mana dengan $X$, mungkin tidak `teradaptasi' terhadap $\Sigma$.
+
+\spheader 275Cb Masalah teknis semacam ini tentu lenyap jika semua himpunan
+yang terabaikan terhadap $\mu$ di dalam $\Omega$ termasuk dalam $\Sigma_0$.
+Namun contoh seperti 275Bb membuatnya tampak tidak wajar untuk memaksakan
+penyederhanaan semacam ini sebagai aturan umum.
+
+\header{275Cc}}%end of comment
+{\bf (c)} Konsep `martingal' dapat dengan mudah diperluas ke himpunan indeks
+selain $\Bbb N$; bahkan, jika $I$ adalah sebarang himpunan terurut parsial,
+kita dapat mengatakan bahwa $\langle X_i\rangle_{i\in I}$ adalah martingal
+pada $(\Omega,\Sigma,\mu)$ yang teradaptasi terhadap
+$\langle\Sigma_i\rangle_{i\in I}$ jika (i) setiap $\Sigma_i$ adalah
+subaljabar-sigma dari $\hat\Sigma$ (ii) setiap $X_i$ adalah variabel acak
+bernilai real yang terintegralkan dan terukur terhadap $\Sigma_i$, dengan
+$\dom X_i\in\Sigma_i$ (iii) kapan pun $i\le j$ dalam $I$, maka
+$\Sigma_i\subseteq\Sigma_j$ dan $\int_EX_i=\int_EX_j$ untuk setiap
+$E\in\Sigma_i$. \cmmnt{Kasus utama setelah $I=\Bbb N$ adalah
+$I=\coint{0,\infty}$; $I=\Bbb Z$ juga menarik, dan saya rasa wajar untuk
+mengatakan bahwa gagasan-gagasan terpenting sudah dapat diungkapkan dalam
+teorema tentang martingal yang diindeks oleh himpunan berhingga $I$. Namun
+dalam jilid ini pada umumnya saya akan mengambil martingal yang diindeks oleh
+$\Bbb N$.
+}%end of comment
+
+\spheader 275Cd Jika hanya diberikan barisan $\sequencen{X_n}$ dari
+variabel acak bernilai real yang terintegralkan pada ruang probabilitas
+$(\Omega,\Sigma,\mu)$, kita cukup mengatakan bahwa $\sequencen{X_n}$ adalah
+suatu {\bf martingal} pada $(\Omega,\Sigma,\mu)$ jika terdapat suatu barisan
+subaljabar-sigma $\sequencen{\Sigma_n}$ dari $\hat\Sigma$ yang tak menurun
+\cmmnt{ (pelengkapan $\Sigma$)} sedemikian sehingga $\sequencen{X_n}$ adalah
+martingal yang teradaptasi terhadap $\sequencen{\Sigma_n}$. Jika kita
+menuliskan $\tilde\Sigma_n$ untuk aljabar-sigma yang dibangkitkan oleh
+$\bigcup_{i\le n}\Sigma_{X_i}$, dengan $\Sigma_{X_i}$ adalah aljabar-sigma
+yang didefinisikan oleh $X_i$\cmmnt{, seperti dalam 275Bb}, maka\cmmnt{
+mudah dilihat bahwa} $\sequencen{X_n}$ adalah martingal jika dan hanya jika
+ia adalah martingal yang teradaptasi terhadap
+$\sequencen{\tilde\Sigma_n}$.
+
+\spheader 275Ce Melanjutkan dari (d),\cmmnt{ mudah pula dilihat bahwa} jika
+$\sequencen{X_n}$ adalah martingal pada $(\Omega,\Sigma,\mu)$, dan
+$X'_n\eae X_n$ untuk setiap $n$, maka $\sequencen{X'_n}$ adalah martingal
+pada $(\Omega,\Sigma,\mu)$. \cmmnt{(Intinya ialah bahwa jika
+$\sequencen{X_n}$ teradaptasi terhadap $\sequencen{\Sigma_n}$, maka baik
+$\sequencen{X_n}$ maupun $\sequencen{X'_n}$ teradaptasi terhadap
+$\sequencen{\hat\Sigma_n}$, dengan
+
+\Centerline{$\hat\Sigma_n
+=\{E\symmdiff F:E\in\Sigma_n,\,F\text{ terabaikan}\}$.)}
+
+\noindent}Akibatnya kita mempunyai konsep `martingal' sebagai barisan dalam
+$L^1(\mu)$, yaitu suatu barisan $\sequencen{X_n^{\ssbullet}}$ dalam
+$L^1(\mu)$ adalah martingal jika dan hanya jika $\sequencen{X_n}$ adalah
+martingal.
+
+\cmmnt{Meskipun demikian, saya berpendapat bahwa konsep `martingal yang
+teradaptasi terhadap suatu barisan aljabar-sigma' adalah konsep utama, karena
+dalam semua penerapan pokok aljabar-sigma tersebut mencerminkan suatu aspek
+esensial dari masalah yang mungkin tidak sepenuhnya tercakup oleh variabel acak
+saja.}
+
+\cmmnt{
+\spheader 275Cf Kata `martingale' mula-mula (dalam bahasa Inggris; sejarahnya
+dalam bahasa Prancis lebih rumit) merujuk pada tali kekang yang digunakan
+untuk mencegah kuda mendongakkan kepalanya. Kemudian kata ini digunakan untuk
+menamai sistem perjudian tempat penjudi menggandakan taruhannya setiap kali
+kalah, dan (dalam bahasa Prancis) sebagai istilah umum bagi sistem perjudian.
+Sistem-sistem ini dapat dipandang sebagai suatu kelas `martingal waktu henti',
+seperti dijelaskan dalam 275L-275P %275L 275M 275N 275O 275P
+di bawah.
+}%end of comment
+
+\leader{275D}{}\cmmnt{ Sebagian besar teori martingal terdiri atas berbagai
+jenis ketaksamaan. Saya memberikan dua yang paling penting, keduanya berasal
+dari J.L.Doob. (Lihat pula 276Xa-276Xb.)
+
+\medskip
+
+\noindent}{\bf Lemma} Misalkan $(\Omega,\Sigma,\mu)$ adalah ruang
+probabilitas, dan $\sequencen{X_n}$ suatu martingal pada $\Omega$. Tetapkan
+$n\in\Bbb N$ dan $X^*=\max(X_0,\ldots,X_n)$. Maka untuk setiap
+$\epsilon>0$,
+
+\Centerline{$\Pr(X^*\ge\epsilon)
+\le\Bover1{\epsilon}\Expn(X_n^+)$,}
+
+\noindent dengan $X_n^+=\max({0},X_n)$.
+
+\proof{ Tuliskan $\hat\mu$ untuk pelengkapan $\mu$, dan $\hat\Sigma$ untuk
+domainnya. Misalkan $\sequencen{\Sigma_n}$ adalah barisan subaljabar-sigma
+dari $\hat\Sigma$ yang tak menurun dan terhadapnya $\sequencen{X_n}$
+teradaptasi. Untuk setiap $i\le n$ tetapkan
+
+\Centerline{$E_i=\{\omega:\omega\in\dom
+X_i,\,X_i(\omega)\ge\epsilon\}$,}
+
+\Centerline{$F_i=E_i\setminus\bigcup_{j<i}E_j$.}
+
+\noindent Maka $F_0,\ldots,F_n$ saling lepas dan
+$F=\bigcup_{i\le n}F_i=\bigcup_{i\le n}E_i$; selain itu, dengan $H$
+menyatakan himpunan koterabaikan $\bigcap_{i\le n}\dom X_i$,
+
+\Centerline{$\{\omega:X^*(\omega)\ge\epsilon\}=F\cap H$,}
+
+\noindent sehingga
+
+\Centerline{$\Pr(X^*\ge\epsilon)=
+\hat\mu\{\omega:X^*(\omega)\ge\epsilon\}
+=\hat\mu F=\sum_{i=0}^n\hat\mu F_i$.}
+
+\noindent Di sisi lain, $E_i$ dan $F_i$ termasuk dalam $\Sigma_i$ untuk
+setiap $i\le n$, sehingga
+
+\Centerline{$\int_{F_i}X_n=\int_{F_i}X_i\ge \epsilon\hat\mu F_i$}
+
+\noindent untuk setiap $i$, dan
+
+\Centerline{$\epsilon\hat\mu F=\epsilon\sum_{i=0}^n\hat\mu F_i
+\le\sum_{i=0}^n\int_{F_i}X_n
+=\int_FX_n
+\le\int_FX_n^+
+\le\Expn(X_n^+)$,}
+
+\noindent sebagaimana diperlukan.
+}%end of proof of 275D
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Perhatikan bahwa sebenarnya kita mempunyai
+$\epsilon\hat\mu F\le\int_FX_n$, dengan
+$F=\{\omega:X^*(\omega)\ge\epsilon\}$; hal ini sangat penting dalam banyak
+penerapan.
+}%end of comment
+
+\leader{275E}{Pelintasan naik}\cmmnt{ Lemma berikut bergantung pada gagasan
+`pelintasan naik'.} Misalkan $x_0,\ldots,x_n$ adalah sebarang daftar bilangan
+real, dan $a<b$ dalam $\Bbb R$. {\bf Banyaknya pelintasan naik dari $a$ ke
+$b$} dalam daftar $x_0,\ldots,x_n$ adalah banyaknya pasangan $(j,k)$
+sedemikian sehingga $0\le j<k\le n$, $x_j\le a$, $x_k\ge b$, dan
+$a<x_i<b$ untuk $j<i<k$. \cmmnt{Perhatikan bahwa ini juga merupakan $m$
+terbesar sedemikian sehingga $s_m<\infty$, jika kita menulis
+
+\Centerline{$r_1=\inf\{i:i\le n,\,x_i\le a\}$,}
+
+\Centerline{$s_1=\inf\{i:r_1<i\le n,\,x_i\ge b\}$,}
+
+\Centerline{$r_2=\inf\{i:s_1<i\le n,\,x_i\le a\}$,}
+
+\Centerline{$s_2=\inf\{i:r_2<i\le n,\,x_i\ge b\}$}
+
+\noindent dan seterusnya, dengan mengambil $\inf\emptyset=\infty$.
+}%end of comment
+
+\leader{275F}{Lemma} Misalkan $(\Omega,\Sigma,\mu)$ adalah ruang
+probabilitas dan $\sequencen{X_n}$ suatu martingal pada $\Omega$. Anggap bahwa
+$n\in\Bbb N$ dan $a<b$ dalam $\Bbb R$. Untuk setiap
+$\omega\in\bigcap_{i\le n}\dom X_i$, misalkan $U(\omega)$ adalah banyaknya
+pelintasan naik dari $a$ ke $b$ dalam daftar
+$X_0(\omega),\ldots,X_n(\omega)$. Maka
+
+\Centerline{$\Expn(U)\le\Bover1{b-a}\Expn((X_n-X_0)^+)$,}
+
+\noindent dengan $(X_n-X_0)^+(\omega)=\max(0,X_n(\omega)-X_0(\omega))$
+untuk $\omega\in\dom X_n\cap\dom X_0$.
+
+\proof{ Setiap langkah tersendiri dalam pembuktian ini bersifat `elementer',
+tetapi strukturnya secara keseluruhan tidak sepele.
+
+\medskip
+
+{\bf (a)} Fakta berikut akan berguna. Misalkan $x_0,\ldots,x_n$ adalah
+bilangan real; misalkan $u$ adalah banyaknya pelintasan naik dari $a$ ke $b$
+dalam daftar $x_0,\ldots,x_n$. Tetapkan $y_i=\max(x_i,a)$ untuk setiap $i$;
+maka $u$ juga merupakan banyaknya pelintasan naik dari $a$ ke $b$ dalam daftar
+$y_0,\ldots,y_n$. Untuk setiap $k\le n$, tetapkan $c_k=1$ jika terdapat
+$j\le k$ sedemikian sehingga $x_j\le a$ dan $x_i<b$ untuk $j\le i\le k$,
+dan $0$ jika tidak. Maka
+
+\Centerline{$(b-a)u\le\sum_{k=0}^{n-1}c_k(y_{k+1}-y_{k})$.}
+
+\noindent\vthsp\Prf\ Saya melakukan induksi pada $m$ untuk menunjukkan bahwa
+(dengan mendefinisikan $r_m$, $s_m$ seperti dalam 275E)
+
+\Centerline{$(b-a)m\le\sum_{k=0}^{s_m-1}c_k(y_{k+1}-y_{k})$}
+
+\noindent kapan pun $m\le u$. Untuk $m=0$ (dengan mengambil $s_0=-1$) kita
+mempunyai $0=0$. Untuk langkah induksi menuju $m\ge 1$, kita mempunyai
+$s_{m-1}<r_{m}<s_m\le n$ (karena saya mengandaikan $m\le u$), dan
+$c_k=0$ jika $s_{m-1}\le k<r_{m}$, $c_k=1$ jika $r_{m}\le k<s_m$. Jadi
+
+$$\eqalignno{\sum_{k=0}^{s_{m}-1}c_k(y_{k+1}-y_{k})
+&=\sum_{k=0}^{s_{m-1}-1}c_k(y_{k+1}-y_{k})
++\sum_{k=r_m}^{s_m-1}(y_{k+1}-y_k)\cr
+&\ge(b-a)(m-1)+y_{s_m}-y_{r_m}\cr
+\noalign{\noindent (berdasarkan hipotesis induksi)}
+&\ge(b-a)m\cr}$$
+
+\noindent (karena $y_{s_m}\ge b$, $y_{r_m}=a$), dan induksi berlanjut.
+
+
+Dengan demikian
+
+\Centerline{$\sum_{k=0}^{s_u-1}c_k(y_{k+1}-y_{k})\ge(b-a)u$.}
+
+\noindent Untuk jumlah $\sum_{k=s_u}^{n-1}c_k(y_{k+1}-y_k)$, kita mempunyai
+$c_k=0$ untuk $s_u\le k<r_{u+1}$, $c_k=1$ untuk
+$r_{u+1}\le k<s_{u+1}$, sedangkan $s_{u+1}>n$, sehingga jika
+$n\le r_{u+1}$ kita mempunyai
+
+\Centerline{$\sum_{k=0}^{n-1}c_k(y_{k+1}-y_{k})
+=\sum_{k=0}^{s_u-1}c_k(y_{k+1}-y_{k})\ge(b-a)u$,}
+
+\noindent sedangkan jika $n>r_{u+1}$ kita mempunyai
+
+$$\eqalign{\sum_{k=0}^{n-1}c_k(y_{k+1}-y_{k})
+&=\sum_{k=0}^{s_u-1}c_k(y_{k+1}-y_{k})
++\sum_{k=r_{u+1}}^{n-1}y_{k+1}-y_k\cr
+&\ge(b-a)u+y_n-y_{r_{u+1}}\cr
+&\ge(b-a)u\cr}$$
+
+
+\noindent karena $y_n\ge a=y_{r_{u+1}}$. Jadi dalam kedua kasus kita
+memperoleh hasil yang diperlukan.\ \Qed
+
+\medskip
+
+{\bf (b)(i)} Sekarang definisikan
+
+\Centerline{$Y_k(\omega)=\max(a,X_k(\omega))$ untuk $\omega\in\dom X_k$,}
+
+\Centerline{$F_k=\{\omega:\omega\in\bigcap_{i\le k}\dom X_i,\,
+\exists\,j\le k,\,X_j(\omega)\le a,\,X_i(\omega)<b$ jika $j\le i\le k\}$}
+
+\noindent untuk setiap $k\in\Bbb N$. Jika $\sequencen{\Sigma_n}$ adalah
+barisan aljabar-sigma tak menurun yang terhadapnya $\sequencen{X_n}$
+teradaptasi, maka $F_k\in\Sigma_k$ (karena jika $j\le k$, semua himpunan
+$\dom X_j$, $\{\omega:X_j(\omega)\le a\}$,
+$\{\omega:X_j(\omega)<b\}$ termasuk dalam
+$\Sigma_j\subseteq\Sigma_k$).
+
+\medskip
+
+\quad{\bf (ii)} Kita mendapati bahwa $\int_FY_k\le\int_FY_{k+1}$ jika
+$F\in\Sigma_k$. \Prf\ Tetapkan $G=\{\omega:X_k(\omega)>a\}\in\Sigma_k$.
+Maka
+
+$$\eqalign{\int_FY_k
+&=\int_{F\cap G}X_k+a\hat\mu(F\setminus G)\cr
+&=\int_{F\cap G}X_{k+1}+a\hat\mu(F\setminus G)\cr
+&\le\int_{F\cap G}Y_{k+1}+\int_{F\setminus G}Y_{k+1}
+=\int_FY_{k+1}.\,\,\Qed\cr}$$
+
+\medskip
+
+\quad{\bf (iii)}
+Akibatnya $\int_FY_{k+1}-Y_k\le\int Y_{k+1}-Y_k$ untuk setiap
+$F\in\Sigma_k$.
+
+\Centerline{\Prf\enskip $\int (Y_{k+1}-Y_k)-\int_F(Y_{k+1}-Y_k)
+=\int_{\Omega\setminus F}Y_{k+1}-\int_{\Omega\setminus F}Y_k\ge 0$.
+\Qed}
+
+\medskip
+
+{\bf (c)} Misalkan $H$ adalah himpunan koterabaikan
+$\dom U=\bigcap_{i\le n}\dom X_i\in\Sigma_n$. Pada suatu titik kita perlu
+memeriksa bahwa $U$ terukur terhadap $\Sigma_n$; tetapi hal ini jelas benar,
+karena semua himpunan yang relevan $\{\omega:X_i(\omega)\le a\}$,
+$\{\omega:X_i(\omega)\ge b\}$ termasuk dalam $\Sigma_n$. Untuk setiap
+$\omega\in H$, terapkan (a) pada daftar
+$X_0(\omega),\ldots,X_n(\omega)$ untuk melihat bahwa
+
+\Centerline{$(b-a)U(\omega)\le\sum_{k=0}^{n-1}\chi F_k(\omega)
+(Y_{k+1}(\omega)-Y_k(\omega))$.}
+
+\noindent Karena $H$ koterabaikan, diperoleh
+
+$$\eqalignno{(b-a)\Expn(U)
+&\le\sum_{k=0}^{n-1}\int_{F_k}Y_{k+1}-Y_k
+\le\sum_{k=0}^{n-1}\int Y_{k+1}-Y_k\cr
+\noalign{\noindent (menggunakan (b-iii))}
+&=\Expn(Y_n-Y_0)
+\le\Expn((X_n-X_0)^+)\cr}$$
+
+\noindent karena $Y_n-Y_0\le(X_n-X_0)^+$ di mana-mana pada
+$\dom X_n\cap\dom X_0$. Ini menuntaskan pembuktian.
+}%end of proof of 275F
+
+
+\leader{275G}{}\cmmnt{ Sekarang kita siap untuk teorema-teorema utama dalam
+bagian ini.
+
+\medskip
+
+\noindent}{\bf Teorema Konvergensi Martingal Doob} Misalkan
+$\sequencen{X_n}$ adalah suatu martingal pada ruang probabilitas
+$(\Omega,\Sigma,\mu)$, dan anggap bahwa
+$\sup_{n\in\Bbb N}\Expn(|X_n|)<\infty$. Maka
+$\lim_{n\to\infty}X_n(\omega)$ terdefinisi dalam $\Bbb R$ untuk hampir
+setiap $\omega$ dalam $\Omega$.
+
+\proof{{\bf (a)} Tetapkan $H=\bigcap_{n\in\Bbb N}\dom X_n$, dan untuk
+$\omega\in H$ tetapkan
+
+\Centerline{$Y(\omega)=\liminf_{n\to\infty}X_n(\omega)$,
+\quad$Z(\omega)=\limsup_{n\to\infty}X_n(\omega)$,}
+
+\noindent dengan memperbolehkan $\pm\infty$ dalam kedua kasus. Namun
+perhatikan bahwa $Y\le\liminf_{n\to\infty}|X_n|$, sehingga berdasarkan lemma
+Fatou $Y(\omega)<\infty$ untuk hampir setiap $\omega$; demikian pula
+$Z(\omega)>-\infty$ untuk hampir setiap $\omega$. Karena itu cukup jika saya
+dapat menunjukkan bahwa $Y\eae Z$, sebab dengan demikian
+$Y(\omega)=Z(\omega)\in\Bbb R$ untuk hampir setiap $\omega$, dan
+$\sequencen{X_n(\omega)}$ akan konvergen untuk hampir setiap $\omega$.
+
+\medskip
+
+{\bf (b)} \Quer\ Jadi andaikan, jika mungkin, bahwa $Y$ dan $Z$ tidak sama
+hampir di mana-mana. Tentu keduanya terukur terhadap $\hat\Sigma$, dengan
+$(\Omega,\hat\Sigma,\hat\mu)$ adalah pelengkapan
+$(\Omega,\Sigma,\mu)$, sehingga kita harus mempunyai
+
+\Centerline{$\hat\mu\{\omega:\omega\in H,\,Y(\omega)<Z(\omega)\}>0$.}
+
+\noindent Oleh karena itu terdapat bilangan rasional $q$, $q'$ sedemikian
+sehingga $q<q'$ dan $\hat\mu G>0$, dengan
+
+\Centerline{$G=\{\omega:\omega\in H,\,Y(\omega)<q<q'<Z(\omega)\}$.}
+
+\noindent Sekarang, untuk setiap $\omega\in H$ dan $n\in\Bbb N$, misalkan
+$U_n(\omega)$ adalah banyaknya pelintasan naik dari $q$ ke $q'$ dalam daftar
+$X_0(\omega),\ldots,
+\ifdim\pagewidth>467pt\penalty-50\fi
+X_n(\omega)$. Maka 275F memberi tahu kita bahwa
+
+\Centerline{$\Expn(U_n)\le\Bover1{q'-q}\Expn((X_n-X_0)^+)
+\le\Bover1{q'-q}\Expn(|X_n|+|X_0|)
+\le\Bover{2M}{q'-q}$,}
+
+\noindent jika kita menulis $M=\sup_{i\in\Bbb N}\Expn(|X_i|)$. Berdasarkan
+teorema B.Levi, $U(\omega)=\sup_{n\in\Bbb N}U_n(\omega)<\infty$ untuk hampir
+setiap $\omega$. Di sisi lain, jika $\omega\in G$, maka terdapat $j$, $k$
+sebesar apa pun sedemikian sehingga $X_j(\omega)<q$ dan $X_k(\omega)>q'$,
+sehingga $U(\omega)=\infty$. Ini berarti bahwa $\hat\mu G$ harus bernilai
+$0$, bertentangan dengan pilihan $q$ dan $q'$. \Bang
+
+\medskip
+
+{\bf (c)} Jadi sebenarnya kita harus mempunyai $Y\eae Z$, dan
+$\sequencen{X_n(\omega)}$ konvergen untuk hampir setiap $\omega$, sebagaimana
+diklaim.
+}%end of proof of 275G
+
+\leader{275H}{Teorema}
+Misalkan $(\Omega,\Sigma,\mu)$ adalah ruang probabilitas, dan
+$\sequencen{\Sigma_n}$ barisan subaljabar-sigma dari $\Sigma$ yang tak
+menurun. Misalkan $\sequencen{X_n}$ adalah martingal yang teradaptasi terhadap
+$\sequencen{\Sigma_n}$. Maka pernyataan berikut ekuivalen:
+
+\quad(i) terdapat variabel acak $X$, dengan ekspektasi berhingga, sedemikian
+sehingga $X_n$ adalah suatu ekspektasi bersyarat dari $X$ pada $\Sigma_n$
+untuk setiap $n$;
+
+\quad (ii) $\{X_n:n\in\Bbb N\}$ terintegralkan secara seragam;
+
+\quad (iii) $X_{\infty}(\omega)=\lim_{n\to\infty}X_n(\omega)$ terdefinisi
+dalam $\Bbb R$ untuk hampir setiap $\omega$, dan
+$\Expn(|X_{\infty}|)=\lim_{n\to\infty}\Expn(|X_n|)<\infty$.
+
+\proof{{\bf(i)$\Rightarrow$(ii)} Berdasarkan 246D, himpunan semua ekspektasi
+bersyarat dari $X$ terintegralkan secara seragam, sehingga
+$\{X_n:n\in\Bbb N\}$ tentu terintegralkan secara seragam.
+
+\medskip
+
+{\bf (ii)$\Rightarrow$(iii)} Jika $\{X_n:n\in\Bbb N\}$ terintegralkan
+secara seragam, kita tentu mempunyai
+$\sup_{n\in\Bbb N}\Expn(|X_n|)<\infty$, sehingga 275G memberi tahu kita
+bahwa $X_{\infty}$ terdefinisi hampir di mana-mana. Berdasarkan 246Ja,
+$X_{\infty}$ terintegralkan dan
+$\lim_{n\to\infty}\Expn(|X_n-X_{\infty}|)=0$. Akibatnya
+$\Expn(|X_{\infty}|)=\lim_{n\to\infty}\Expn(|X_n|)<\infty$.
+
+\medskip
+
+{\bf (iii)$\Rightarrow$(i)} Karena
+$\Expn(|X_{\infty}|)=\lim_{n\to\infty}\Expn(|X_n|)$,
+$\lim_{n\to\infty}\Expn(|X_n-X_{\infty}|)=0$ (245H(a-ii)). Sekarang ambil
+$n\in\Bbb N$ dan $E\in\Sigma_n$. Maka
+
+\Centerline{$\int_EX_n=\lim_{m\to\infty}\int_EX_m=\int_EX_{\infty}$.}
+
+\noindent Karena $E$ sebarang, $X_n$ adalah suatu ekspektasi bersyarat dari
+$X_{\infty}$ pada $\Sigma_n$.
+}%end of proof of 275H
+
+\leader{275I}{Teorema} Misalkan $(\Omega,\Sigma,\mu)$ adalah ruang
+probabilitas, dan $\sequencen{\Sigma_n}$ barisan subaljabar-sigma dari
+$\Sigma$ yang tak menurun; tuliskan $\Sigma_{\infty}$ untuk aljabar-sigma yang
+dibangkitkan oleh $\bigcup_{n\in\Bbb N}\Sigma_n$. Misalkan $X$ adalah
+sebarang variabel acak bernilai real pada $\Omega$ dengan ekspektasi berhingga,
+dan untuk setiap $n\in\Bbb N$ misalkan $X_n$ adalah suatu ekspektasi bersyarat
+dari $X$ pada $\Sigma_n$. Maka
+$X_{\infty}(\omega)=\lim_{n\to\infty}X_n(\omega)$ terdefinisi hampir di
+mana-mana; $\lim_{n\to\infty}\Expn(|X_{\infty}-X_n|)=0$, dan $X_{\infty}$
+adalah suatu ekspektasi bersyarat dari $X$ pada $\Sigma_{\infty}$.
+
+\proof{ Berdasarkan 275G-275H, kita tahu bahwa $X_{\infty}$ terdefinisi
+hampir di mana-mana, dan, sebagaimana dicatat dalam bukti 275H,
+$\lim_{n\to\infty}\Expn(|X_{\infty}-X_n|)=0$. Untuk melihat bahwa
+$X_{\infty}$ adalah suatu ekspektasi bersyarat dari $X$ pada
+$\Sigma_{\infty}$, tetapkan
+
+\Centerline{$\Cal A
+=\{E:E\in\Sigma_{\infty},\,\int_EX_{\infty}=\int_EX\}$,
+\quad$\Cal I=\bigcup_{n\in\Bbb N}\Sigma_n$.}
+
+\noindent Sekarang $\Cal I$ dan $\Cal A$ memenuhi syarat-syarat Teorema
+Kelas Monoton (136B). \Prf\ {\bf ($\pmb{\alpha}$)} Tentu saja
+$\Omega\in\Cal I$ dan $\Cal I$ tertutup terhadap irisan berhingga, karena
+$\sequencen{\Sigma_n}$ adalah barisan aljabar-sigma yang tak menurun; bahkan
+$\Cal I$ merupakan subaljabar dari $\Cal P\Omega$, dan tertutup terhadap
+gabungan berhingga dan komplemen. {\bf ($\pmb{\beta}$)} Jika
+$E\in\Cal I$, katakanlah $E\in\Sigma_n$; maka
+
+\Centerline{$\int_EX_{\infty}=\lim_{m\to\infty}\int_EX_m=\int_EX$,}
+
+\noindent seperti dalam (iii)$\Rightarrow$(i) dari 275H, sehingga
+$E\in\Cal A$. Jadi $\Cal I\subseteq\Cal A$.
+{\bf ($\pmb{\gamma}$)} Jika $E$, $F\in\Cal A$ dan $E\subseteq F$, maka
+
+\Centerline{$\int_{F\setminus E}X_{\infty}
+=\int_FX_{\infty}-\int_EX_{\infty}
+=\int_FX-\int_EX
+=\int_{F\setminus E}X$,}
+
+\noindent sehingga $F\setminus E\in\Cal A$.
+{\bf($\pmb{\delta}$)} Jika $\sequencen{E_k}$ adalah barisan tak menurun
+dalam $\Cal A$ dengan gabungan $E$, maka
+
+\Centerline{$\int_{E}X_{\infty}
+=\lim_{k\to\infty}\int_{E_k}X_{\infty}
+=\lim_{k\to\infty}\int_{E_k}X
+=\int_{E}X$,}
+
+\noindent sehingga $E\in\Cal A$. Jadi $\Cal A$ adalah kelas Dynkin.\ \Qed
+
+Akibatnya, berdasarkan 136B, $\Cal A$ mencakup $\Sigma_{\infty}$; yakni,
+$X_{\infty}$ adalah suatu ekspektasi bersyarat dari $X$ pada
+$\Sigma_{\infty}$.
+}%end of proof of 275I
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Saya telah menulis
+`$\lim_{n\to\infty}\Expn(|X_n-X_{\infty}|)=0$'; tetapi Anda mungkin lebih
+suka mengatakan `$X^{\ssbullet}_{\infty}=\lim_{n\to\infty}X_n^{\ssbullet}$
+dalam $L^1(\mu)$', seperti dalam Bab 24.
+
+Teorema ini begitu penting sehingga Anda mungkin tertarik pada pembuktian
+yang didasarkan pada 275D alih-alih 275E-275G; lihat 275Xd.
+}
+
+\leader{*275J}{}\cmmnt{ Sebagai akibat teorema ini saya memberikan hasil
+penting, sejenis teorema kepadatan untuk ukuran produk.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan
+$\sequencen{(\Omega_n,\Sigma_n,\mu_n)}$ adalah barisan ruang probabilitas
+dengan produk $(\Omega,\Sigma,\mu)$. Misalkan $X$ adalah variabel acak
+bernilai real pada $\Omega$ dengan ekspektasi berhingga. Untuk setiap
+$n\in\Bbb N$ definisikan $X_n$ dengan menetapkan
+
+\Centerline{$X_n(\pmb{\omega})
+=\int X(\omega_0,\ldots,\omega_n,\xi_{n+1},\ldots)d(\xi_{n+1},\ldots)$}
+
+\noindent di mana pun ini terdefinisi, dengan saya menulis
+`$\int\ldots d(\xi_{n+1},\ldots)$' untuk menyatakan integrasi terhadap
+ukuran produk $\lambda'_n$ pada $\prod_{i\ge n+1}\Omega_i$. Maka
+$X(\pmb{\omega})=\lim_{n\to\infty}X_n(\pmb{\omega})$ untuk hampir setiap
+$\pmb{\omega}=(\omega_0,\omega_1,\ldots)$ dalam $\Omega$, dan
+$\lim_{n\to\infty}\Expn(|X-X_n|)=0$.
+
+\proof{ Untuk setiap $n$, kita dapat mengidentifikasi $\mu$ dengan produk
+$\lambda_n$ dan $\lambda'_n$, dengan $\lambda_n$ adalah ukuran produk pada
+$\Omega_0\times\ldots\times\Omega_n$ (254N). Jadi 253H memberi tahu kita
+bahwa $X_n$ adalah suatu ekspektasi bersyarat dari $X$ pada aljabar-sigma
+$\Lambda_n=\{E\times\prod_{i>n}\Omega_i:E\in\dom\lambda_n\}$. Karena
+(kembali berdasarkan 254N) kita dapat memandang $\lambda_{n+1}$ sebagai
+produk $\lambda_n$ dan $\mu_{n+1}$, $\Lambda_n\subseteq\Lambda_{n+1}$ untuk
+setiap $n$. Jadi 275I memberi tahu kita bahwa $\sequencen{X_n}$ konvergen
+hampir di mana-mana menuju suatu ekspektasi bersyarat $X_{\infty}$ dari $X$
+pada aljabar-sigma $\Lambda_{\infty}$ yang dibangkitkan oleh
+$\bigcup_{n\in\Bbb N}\Lambda_n$. Sekarang
+$\Lambda_{\infty}\subseteq\Sigma$ dan juga
+$\Tensorhat_{n\in\Bbb N}\Sigma_n\subseteq\Lambda_{\infty}$, sehingga setiap
+anggota $\Sigma$ diapit oleh dua anggota $\Lambda_{\infty}$ yang berukuran
+sama (254Ff), dan $X_{\infty}$ harus sama dengan $X$ hampir di mana-mana.
+Selain itu, 275I juga memberi tahu kita bahwa
+
+\Centerline{$\lim_{n\to\infty}\Expn(|X-X_n|)
+=\lim_{n\to\infty}\Expn(|X_{\infty}-X_n|)=0$,}
+
+\noindent sebagaimana diperlukan.
+}%end of proof of 275J
+
+\leader{275K}{Martingal \dvrocolon{terbalik}}\cmmnt{ Kita mempunyai hasil
+yang bersesuaian dengan 275I untuk barisan aljabar-sigma yang {\it menurun}.
+Meskipun lebih jarang digunakan daripada 275G-275I, %275G 275H 275I
+hasil ini mempunyai penerapan yang sangat penting.
+
+\medskip
+
+\noindent}{\bf Teorema} Misalkan $(\Omega,\Sigma,\mu)$ adalah ruang
+probabilitas, dan $\sequencen{\Sigma_n}$ barisan subaljabar-sigma dari
+$\Sigma$ yang tak menaik, dengan irisan $\Sigma_{\infty}$. Misalkan $X$
+adalah sebarang variabel acak bernilai real dengan ekspektasi berhingga, dan
+untuk setiap $n\in\Bbb N$ misalkan $X_n$ adalah suatu ekspektasi bersyarat
+dari $X$ pada $\Sigma_n$. Maka
+$X_{\infty}=\lim_{n\to\infty}X_n$ terdefinisi hampir di mana-mana dan
+merupakan suatu ekspektasi bersyarat dari $X$ pada $\Sigma_{\infty}$.
+
+\proof{{\bf (a)} Tetapkan $H=\bigcap_{n\in\Bbb N}\dom X_n$, sehingga $H$
+koterabaikan. Untuk $n\in\Bbb N$, $a<b$ dalam $\Bbb R$, dan $\omega\in H$,
+tuliskan $U_{abn}(\omega)$ untuk banyaknya pelintasan naik dari $a$ ke $b$
+dalam daftar $X_n(\omega),X_{n-1}(\omega),\ldots,X_0(\omega)$ (275E).
+Maka
+
+$$\eqalignno{\Expn(U_{abn})
+&\le\Bover1{b-a}\Expn((X_0-X_n)^+)\cr
+\displaycause{275F}
+&\le\Bover1{b-a}\Expn(|X_0|+|X_n|)
+\le\Bover2{b-a}\Expn(|X_0|)<\infty.\cr}$$
+
+\noindent Jadi $\lim_{n\to\infty}U_{abn}(\omega)$ berhingga untuk hampir
+setiap $\omega$. Namun ini berarti bahwa
+
+\Centerline{$\{\omega:\liminf_{n\to\infty}X_n(\omega)<a,\,
+  \limsup_{n\to\infty}X_n(\omega)>b\}$}
+
+\noindent terabaikan. Karena $a$ dan $b$ sebarang, $\sequencen{X_n}$
+konvergen hampir di mana-mana, tepat seperti dalam 275G. Tetapkan
+$X_{\infty}(\omega)=\lim_{n\to\infty}X_n(\omega)$ kapan pun ini terdefinisi
+dalam $\Bbb R$.
+
+\medskip
+
+{\bf (b)} Berdasarkan 246D, $\{X_n:n\in\Bbb N\}$ terintegralkan secara
+seragam, sehingga $\Expn(|X_n-X_{\infty}|)\to 0$ ketika $n\to\infty$
+(246Ja), dan
+
+\Centerline{$\int_EX_{\infty}=\lim_{n\to\infty}\int_EX_n=\int_EX_0$}
+
+\noindent untuk setiap $E\in\Sigma_{\infty}$.
+
+\medskip
+
+{\bf (c)} Sekarang terdapat himpunan koterabaikan
+$G\in\Sigma_{\infty}$ sedemikian sehingga $G\subseteq\dom X_{\infty}$ dan
+$X_{\infty}\restr G$ terukur terhadap $\Sigma_{\infty}$. \Prf\ Untuk setiap
+$n\in\Bbb N$, terdapat himpunan koterabaikan $G_n\in\Sigma_n$ sedemikian
+sehingga $G_n\subseteq\dom X_n$ dan $X_n\restr G_n$ terukur terhadap
+$\Sigma_n$. Tetapkan $G'=\bigcup_{n\in\Bbb N}\bigcap_{m\ge n}G_m$; maka,
+untuk setiap $r\in\Bbb N$,
+$G'=\bigcup_{n\ge r}\bigcap_{m\ge n}G_m$ termasuk dalam $\Sigma_r$,
+sehingga $G'\in\Sigma_{\infty}$, sedangkan tentu saja $G'$ koterabaikan.
+Untuk $n\in\Bbb N$, tetapkan $X'_n(\omega)=X_n(\omega)$ untuk
+$\omega\in G_n$, dan $0$ untuk $\omega\in\Omega\setminus G_n$; maka untuk
+$\omega\in G'$,
+$\lim_{n\to\infty}X'_n(\omega)=\lim_{n\to\infty}X_n(\omega)$ jika salah
+satunya terdefinisi dalam $\Bbb R$. Dengan menulis
+$X'_{\infty}=\lim_{n\to\infty}X'_n$ kapan pun ini terdefinisi dalam
+$\Bbb R$, 121F dan 121H memberi tahu kita bahwa $X'_{\infty}$ terukur
+terhadap $\Sigma_r$ dan $\dom X'_{\infty}\in\Sigma_r$ untuk setiap
+$r\in\Bbb N$, sehingga $G''=\dom X'_{\infty}$ termasuk dalam
+$\Sigma_{\infty}$ dan $X'_{\infty}$ terukur terhadap $\Sigma_{\infty}$.
+Kita juga tahu, dari (a), bahwa $G''$ koterabaikan. Jadi dengan menetapkan
+$G=G'\cap G''$ kita memperoleh hasilnya.\ \Qed
+
+Dengan demikian $X_{\infty}$ adalah suatu ekspektasi bersyarat dari $X$ pada
+$\Sigma_{\infty}$.
+}%end of proof of 275K
+
+\leader{275L}{Waktu\dvro{ henti: }{ henti}}\cmmnt{ Dalam suatu arti,
+pekerjaan utama bagian ini telah selesai; saya tidak mempunyai ruang bagi
+teorema penting lain yang sebanding dengan 275G-275I. Namun tidak tepat untuk
+meninggalkan bab ini tanpa mendeskripsikan secara singkat salah satu gagasan
+paling subur dalam bidang ini.
+
+\medskip
+
+\noindent}{\bf Definisi} Misalkan $(\Omega,\Sigma,\mu)$ adalah ruang
+probabilitas, dengan pelengkapan $(\Omega,\hat\Sigma,\hat\mu)$, dan
+$\sequencen{\Sigma_n}$ barisan subaljabar-sigma dari $\hat\Sigma$ yang tak
+menurun. Suatu {\bf waktu henti yang teradaptasi terhadap
+$\sequencen{\Sigma_n}$}\cmmnt{ (juga disebut `{\bf waktu opsional}',
+`{\bf waktu Markov}')} adalah fungsi $\tau$ dari $\Omega$ ke
+$\Bbb N\cup\{\infty\}$ sedemikian sehingga
+$\{\omega:\tau(\omega)\le n\}\in\Sigma_n$ untuk setiap $n\in\Bbb N$.
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Tentu saja syarat
+
+\Centerline{$\{\omega:\tau(\omega)\le n\}\in\Sigma_n$ untuk setiap
+$n\in\Bbb N$}
+
+\noindent dapat digantikan oleh syarat yang ekuivalen
+
+\Centerline{$\{\omega:\tau(\omega)=n\}\in\Sigma_n$
+untuk setiap $n\in\Bbb N$.}
+
+\noindent Saya mendahulukan ungkapan pertama karena lebih sesuai untuk
+himpunan indeks lain (lihat 275Cc).
+}%end of comment
+
+\leader{275M}{Contoh (a)} Jika $\sequencen{X_n}$ adalah martingal yang
+teradaptasi terhadap barisan aljabar-sigma $\sequencen{\Sigma_n}$, dan
+${H_n}$ adalah himpunan bagian Borel dari $\BbbR^{n+1}$ untuk setiap $n$,
+maka kita mempunyai waktu henti $\tau$ yang teradaptasi terhadap
+$\sequencen{\Sigma_n}$ dan didefinisikan oleh rumus
+
+\Centerline{$\tau(\omega)
+=\inf\{n:\omega\in\bigcap_{i\le n}\dom X_i,\,
+  (X_0(\omega),\ldots,X_n(\omega))\in H_n\}$,}
+
+\noindent dengan menetapkan $\inf\emptyset=\infty$\cmmnt{ seperti biasa}.
+\cmmnt{(Sebab berdasarkan 121Ka, himpunan
+$E_n=\{\omega:(X_0(\omega),\ldots,X_n(\omega))\in H_n\}$ termasuk dalam
+$\Sigma_n$ untuk setiap $n$, dan
+$\{\omega:\tau(\omega)\le n\}=\bigcup_{i\le n}E_i$.)} Khususnya,
+\cmmnt{misalnya,} rumus-rumus
+
+\Centerline{$\inf\{n:X_n(\omega)\ge a\}$, \quad
+$\inf\{n:|X_n(\omega)|> a\}$}
+
+\noindent mendefinisikan waktu henti.
+
+\header{275Mb}{\bf (b)} Setiap fungsi konstan
+$\tau:\Omega\to\Bbb N\cup\{\infty\}$ adalah waktu henti. Jika $\tau$,
+$\tau'$ adalah dua waktu henti yang teradaptasi terhadap barisan aljabar-sigma
+$\sequencen{\Sigma_n}$ yang sama, maka $\tau\wedge\tau'$ adalah waktu henti
+yang teradaptasi terhadap $\sequencen{\Sigma_n}$, dengan menetapkan
+$(\tau\wedge\tau')(\omega)=\min(\tau(\omega),\tau'(\omega))$ untuk
+$\omega\in\Omega$\prooflet{, karena
+
+\Centerline{$\{\omega:(\tau\wedge\tau')(\omega)\le n\}
+=\{\omega:\tau(\omega)\le n\}\cup\{\omega:\tau'(\omega)\le n\}
+\in\Sigma_n$}
+
+\noindent untuk setiap $n\in\Bbb N$}.
+
+\leader{275N}{Lemma} Misalkan $(\Omega,\Sigma,\mu)$ adalah ruang
+probabilitas lengkap, dan $\sequencen{\Sigma_n}$ barisan subaljabar-sigma dari
+$\Sigma$ yang tak menurun. Anggap bahwa $\tau$ dan $\tau'$ adalah waktu henti
+pada $\Omega$, dan $\sequencen{X_n}$ suatu martingal, semuanya teradaptasi
+terhadap $\sequencen{\Sigma_n}$.
+
+(a) Keluarga
+
+\Centerline{$\tilde\Sigma_{\tau}
+=\{E:E\in\Sigma,\,E\cap\{\omega:\tau(\omega)\le n\}\in\Sigma_n$ untuk
+setiap $n\in\Bbb N\}$}
+
+\noindent adalah subaljabar-sigma dari $\Sigma$.
+
+(b) Jika $\tau(\omega)\le\tau'(\omega)$ untuk setiap $\omega$, maka
+$\tilde\Sigma_{\tau}\subseteq\tilde\Sigma_{\tau'}$.
+
+(c) Sekarang anggap bahwa $\tau$ berhingga hampir di mana-mana. Tetapkan
+
+\Centerline{$\tilde X_{\tau}(\omega)=X_{\tau(\omega)}(\omega)$}
+
+\noindent kapan pun $\tau(\omega)<\infty$ dan
+$\omega\in\dom X_{\tau(\omega)}$. Maka
+$\dom\tilde X_{\tau}\in\tilde\Sigma_{\tau}$ dan $\tilde X_{\tau}$ terukur
+terhadap $\tilde\Sigma_{\tau}$.
+
+(d) Jika $\tau$ terbatas secara esensial, yakni, terdapat suatu
+$m\in\Bbb N$ sedemikian sehingga $\tau\le m$ hampir di mana-mana, maka
+$\Expn(\tilde X_{\tau})$ ada dan sama dengan $\Expn(X_0)$.
+
+(e) Jika $\tau\le\tau'$ hampir di mana-mana, dan $\tau'$ terbatas secara
+esensial, maka $\tilde X_{\tau}$ adalah suatu ekspektasi bersyarat dari
+$\tilde X_{\tau'}$ pada $\tilde\Sigma_{\tau}$.
+
+\proof{{\bf (a)} Hal ini elementer. Tuliskan
+$H_n=\{\omega:\tau(\omega)\le n\}$ untuk setiap $n\in\Bbb N$. Himpunan kosong
+termasuk dalam $\tilde\Sigma_{\tau}$ karena termasuk dalam $\Sigma_n$ untuk
+setiap $n$.
+Jika $E\in\tilde\Sigma_{\tau}$, maka
+
+\Centerline{$(\Omega\setminus E)\cap H_n=H_n\setminus(E\cap
+H_n)\in\Sigma_n$}
+
+\noindent karena $H_n\in\Sigma_n$; ini benar untuk setiap $n$, sehingga
+$\Omega\setminus E\in\tilde\Sigma_{\tau}$. Jika $\sequence{k}{E_k}$ adalah
+sebarang barisan dalam $\tilde\Sigma_{\tau}$, maka
+
+\Centerline{$(\bigcup_{k\in\Bbb N}E_k)\cap H_n=\bigcup_{k\in\Bbb
+N}E_k\cap H_n\in\Sigma_n$}
+
+\noindent untuk setiap $n$, sehingga
+$\bigcup_{k\in\Bbb N}E_k\in\tilde\Sigma_{\tau}$.
+
+\medskip
+
+{\bf (b)} Jika $E\in\tilde\Sigma_{\tau}$ maka tentu saja $E\in\Sigma$,
+dan jika $n\in\Bbb N$ maka
+$\{\omega:\tau'(\omega)\le n\}\subseteq\{\omega:\tau(\omega)\le n\}$,
+sehingga
+
+\Centerline{$E\cap\{\omega:\tau'(\omega)\le n\}
+=E\cap\{\omega:\tau(\omega)\le n\}\cap\{\omega:\tau'(\omega)\le n\}$}
+
+\noindent termasuk dalam $\Sigma_n$; karena $n$ sebarang,
+$E\in\tilde\Sigma_{\tau'}$.
+
+\medskip
+
+{\bf (c)} Tetapkan $H_n=\{\omega:\tau(\omega)\le n\}$ untuk setiap
+$n\in\Bbb N$. Untuk setiap $a\in\Bbb R$,
+
+$$\eqalign{H_n\cap\{\omega:\omega\in
+&\dom\tilde X_{\tau},\,\tilde X_{\tau}(\omega)\le a\}\cr
+&=\bigcup_{k\le n}\{\omega:\tau(\omega)=k,\,\omega\in\dom X_k,
+  \,X_k(\omega)\le a\}
+\in\Sigma_n.\cr}$$
+
+\noindent Karena $n$ sebarang,
+
+\Centerline{$G_a=\{\omega:\omega\in\dom\tilde X_{\tau},\,
+\tilde X_{\tau}(\omega)\le a\}\in\tilde\Sigma_{\tau}$.}
+
+\noindent Karena $a$ sebarang,
+$\dom\tilde X_{\tau}=\bigcup_{m\in\Bbb N}G_m\in\tilde\Sigma_{\tau}$ dan
+$\tilde X_{\tau}$ terukur terhadap $\tilde\Sigma_{\tau}$.
+
+\medskip
+
+{\bf (d)} Tetapkan $H_k=\{\omega:\tau(\omega)=k\}$ untuk $k\le m$. Maka
+$\bigcup_{k\le m}H_k$ koterabaikan, sehingga
+
+\Centerline{$\Expn(\tilde X_{\tau})
+=\sum_{k=0}^m\int_{H_k}X_k
+=\sum_{k=0}^m\int_{H_k}X_m
+=\int_{\Omega}X_m
+=\int_{\Omega}X_0$.}
+
+\medskip
+
+{\bf (e)} Anggap bahwa $\tau'\le n$ hampir di mana-mana. Tetapkan
+$H_k=\{\omega:\tau(\omega)=k\}$,
+$H'_k=\{\omega:\tau'(\omega)=k\}$ untuk setiap $k$; maka baik
+$\langle H_k\rangle_{k\le n}$ maupun $\langle H'_k\rangle_{k\le n}$ adalah
+partisi dari himpunan bagian koterabaikan dari $\Omega$.
+Sekarang anggap bahwa $E\in\tilde\Sigma_{\tau}$. Maka
+
+\Centerline{$\int_E\tilde X_{\tau}
+=\sum_{k=0}^n\int_{E\cap H_k}\tilde X_{\tau}
+=\sum_{k=0}^n\int_{E\cap H_k}X_k
+=\sum_{k=0}^n\int_{E\cap H_k}X_n
+=\int_EX_n$}
+
+\noindent karena $E\cap H_k\in\Sigma_k$ untuk setiap $k$. Berdasarkan (b),
+$E\in\tilde\Sigma_{\tau'}$, sehingga kita juga mempunyai
+$\int_E\tilde X_{\tau'}=\int_EX_n$. Jadi
+$\int_E\tilde X_{\tau}=\int_E\tilde X_{\tau'}$ untuk setiap
+$E\in\tilde\Sigma_{\tau}$, sebagaimana diklaim.
+}%end of proof of 275N
+
+\leader{275O}{Proposisi} Misalkan $\sequencen{X_n}$ adalah martingal dan
+$\tau$ suatu waktu henti, keduanya teradaptasi terhadap barisan aljabar-sigma
+$\sequencen{\Sigma_n}$ yang sama. Untuk setiap $n$, tetapkan
+$(\tau\wedge n)(\omega)=\min(\tau(\omega),n)$ untuk $\omega\in\Omega$; maka
+$\tau\wedge n$ adalah waktu henti, dan $\sequencen{\tilde X_{\tau\wedge n}}$
+adalah martingal yang teradaptasi terhadap
+$\sequencen{\tilde\Sigma_{\tau\wedge n}}$, dengan
+$\tilde X_{\tau\wedge n}$ dan $\tilde\Sigma_{\tau\wedge n}$ didefinisikan
+seperti dalam 275N.
+
+\proof{ Sebagaimana dicatat dalam 275Mb, setiap $\tau\wedge n$ adalah waktu
+henti. Jika $m\le n$, maka
+$\tilde\Sigma_{\tau\wedge m}\subseteq\tilde\Sigma_{\tau\wedge n}$
+berdasarkan 275Nb. Setiap $\tilde X_{\tau\wedge m}$ terukur terhadap
+$\tilde\Sigma_{\tau\wedge m}$, dengan domain termasuk dalam
+$\tilde\Sigma_{\tau\wedge m}$, berdasarkan 275Nc, dan mempunyai ekspektasi
+berhingga, berdasarkan 275Nd; akhirnya, jika $m\le n$, maka
+$\tilde X_{\tau\wedge m}$ adalah suatu ekspektasi bersyarat dari
+$\tilde X_{\tau\wedge n}$ pada $\tilde\Sigma_{\tau\wedge m}$, berdasarkan
+275Ne.
+}%end of proof of 275O
+
+\leader{275P}{Akibat} Anggap bahwa $(\Omega,\Sigma,\mu)$ adalah ruang
+probabilitas dan $\sequencen{X_n}$ suatu martingal pada $\Omega$ sedemikian
+sehingga $W=\sup_{n\in\Bbb N}|X_{n+1}-X_n|$ berhingga hampir di mana-mana dan
+mempunyai ekspektasi berhingga. Maka untuk hampir setiap $\omega\in\Omega$,
+entah $\lim_{n\to\infty}X_n(\omega)$ ada dalam $\Bbb R$, atau
+$\sup_{n\in\Bbb N}X_n(\omega)=\infty$ dan
+$\inf_{n\in\Bbb N}X_n(\omega)=-\infty$.
+
+\proof{ Misalkan $\sequencen{\Sigma_n}$ adalah barisan aljabar-sigma tak
+menurun yang terhadapnya $\sequencen{X_n}$ teradaptasi. Misalkan $H$ adalah
+himpunan koterabaikan
+$\bigcap_{n\in\Bbb N}\dom X_n\cap\{\omega:W(\omega)<\infty\}$. Untuk setiap
+$m\in\Bbb N$, tetapkan
+
+\Centerline{$\tau_m(\omega)=\inf\{n:\omega\in\dom
+X_n,\,X_n(\omega)>m\}$.}
+
+\noindent Seperti dalam 275Ma, $\tau_m$ adalah waktu henti yang teradaptasi
+terhadap $\sequencen{\Sigma_n}$. Tetapkan
+
+\Centerline{$Y_{mn}=\tilde X_{\tau_m\wedge n}$,}
+
+\noindent yang didefinisikan seperti dalam 275O, sehingga
+$\sequencen{Y_{mn}}$ adalah martingal. Jika $\omega\in H$, maka entah
+$\tau_m(\omega)>n$ dan
+
+\Centerline{$Y_{mn}(\omega)=X_n(\omega)\le m$,}
+
+\noindent atau $0<\tau_m(\omega)\le n$ dan
+
+\Centerline{$Y_{mn}(\omega)=X_{\tau_m(\omega)}(\omega)
+\le W(\omega)+X_{\tau_m(\omega)-1}(\omega)\le W(\omega)+m$,}
+
+\noindent atau $\tau_m(\omega)=0$ dan
+
+\Centerline{$Y_{mn}(\omega)=X_0(\omega)$.}
+
+\noindent Jadi
+
+\Centerline{$Y_{mn}(\omega)\le|X_0(\omega)|+W(\omega)+m$}
+
+\noindent untuk setiap $\omega\in H$, dan
+
+\Centerline{$|Y_{mn}(\omega)|=2\max(0,Y_{mn}(\omega))-Y_{mn}(\omega)
+\le 2(|X_0(\omega)|+W(\omega)+m)-Y_{mn}(\omega)$,}
+
+\Centerline{$\Expn(|Y_{mn}|)\le 2\Expn(|X_0|)+2\Expn(W)+2m-\Expn(Y_{mn})
+= 2\Expn(|X_0|)+2\Expn(W)+2m-\Expn(X_0)$}
+
+\noindent berdasarkan 275Nd. Karena ini benar untuk setiap $n\in\Bbb N$,
+$\sup_{n\in\Bbb N}\Expn(|Y_{mn}|)<\infty$, dan
+$\lim_{n\to\infty}Y_{mn}$ terdefinisi dalam $\Bbb R$ hampir di mana-mana,
+berdasarkan Teorema Konvergensi Martingal Doob (275G). Misalkan $F_m$ adalah
+himpunan koterabaikan tempat $\sequencen{Y_{mn}}$ konvergen.
+Tetapkan $H^*=H\cap\bigcap_{m\in\Bbb N}F_m$, sehingga $H^*$ koterabaikan.
+
+Sekarang tinjau
+
+\Centerline{$E=\{\omega:\omega\in H^*,\,\sup_{n\in\Bbb
+N}X_n(\omega)<\infty\}$.}
+
+\noindent Untuk setiap $\omega\in E$, harus terdapat $m\in\Bbb N$ sedemikian
+sehingga $\sup_{n\in\Bbb N}X_n(\omega)\le m$. Sekarang ini berarti bahwa
+$Y_{mn}(\omega)=X_n(\omega)$ untuk setiap $n$, dan karena $\omega\in F_m$
+kita mempunyai
+
+\Centerline{$\lim_{n\to\infty}X_n(\omega)
+=\lim_{n\to\infty}Y_{mn}(\omega)\in\Bbb R$.}
+
+\noindent Ini berarti bahwa $\sequencen{X_n(\omega)}$ konvergen untuk hampir
+setiap $\omega$ sedemikian sehingga $\{X_n(\omega):n\in\Bbb N\}$ terbatas
+ke atas.
+
+Dengan cara serupa, $\sequencen{X_n(\omega)}$ konvergen untuk hampir setiap
+$\omega$ sedemikian sehingga $\{X_n(\omega):n\in\Bbb N\}$ terbatas ke bawah,
+yang menuntaskan pembuktian.
+}%end of proof of 275P
+
+
+\exercises{
+\leader{275X}{Latihan dasar $\pmb{>}$(a)}
+%\sqheader 275Xa
+Misalkan $\sequencen{X_n}$ adalah barisan variabel acak yang saling bebas
+dengan ekspektasi nol dan varians berhingga. Tetapkan
+$s_n=(\sum_{i=0}^n\Var(X_i))^{1/2}$,
+$Y_n=(X_0+\ldots+X_n)^2-s_n^2$ untuk setiap $n$. Tunjukkan bahwa
+$\sequencen{Y_n}$ adalah martingal.
+%275B
+
+\sqheader 275Xb Misalkan $\sequencen{X_n}$ adalah suatu martingal. Tunjukkan
+bahwa untuk setiap $\epsilon>0$,
+$\Pr(\sup_{n\in\Bbb N}|X_n|\ge\epsilon)
+\le\bover1\epsilon\sup_{n\in\Bbb N}\Expn(|X_n|)$.
+%275D
+
+\spheader 275Xc {\bf Skema guci P\'olya} Bayangkan sebuah kotak yang memuat
+bola merah dan putih. Pada setiap langkah, sebuah bola diambil secara acak
+dari kotak lalu dikembalikan bersama sebuah bola lain dengan warna yang sama.
+(i) Dengan $R_n$, $W_n$ menyatakan banyaknya bola merah dan putih setelah
+langkah ke-$n$, dan $X_n=R_n/(R_n+W_n)$, tunjukkan bahwa
+$\sequencen{X_n}$ adalah martingal. (ii) Dengan memulai dari $R_0=W_0=1$,
+temukan distribusi $(R_n,W_n)$ untuk setiap $n$. (iii) Tunjukkan bahwa
+$X=\lim_{n\to\infty}X_n$ terdefinisi hampir di mana-mana, dan temukan
+distribusinya ketika $R_0=W_0=1$. (Lihat {\smc Feller 66} untuk pembahasan
+nilai awal lainnya.)
+%275G
+
+\sqheader 275Xd Misalkan $(\Omega,\Sigma,\mu)$ adalah ruang probabilitas,
+dan $\sequencen{\Sigma_n}$ barisan subaljabar-sigma dari $\Sigma$ yang tak
+menurun; untuk setiap $n\in\Bbb N$ misalkan $P_n:L^1\to L^1$ adalah operator
+ekspektasi bersyarat yang bersesuaian dengan $\Sigma_n$, dengan
+$L^1=L^1(\mu)$ (242J). (i) Tunjukkan bahwa
+$V=\{u:u\in L^1,\,\lim_{n\to\infty}\|P_nu-u\|_1=0\}$ adalah subruang linear
+tertutup-$\|\,\|_1$ dari $L^1$. (ii) Tunjukkan bahwa
+$\{E:E\in\Sigma,\,\chi E^{\ssbullet}\in V\}$ adalah kelas Dynkin yang
+mencakup $\bigcup_{n\in\Bbb N}\Sigma_n$, sehingga mencakup aljabar-sigma
+$\Sigma_{\infty}$ yang dibangkitkan oleh
+$\bigcup_{n\in\Bbb N}\Sigma_n$. (iii) Tunjukkan bahwa jika $u\in L^1$ maka
+$v=\sup_{n\in\Bbb N}P_n|u|$ terdefinisi dalam $L^1$ dan berbentuk
+$W^{\ssbullet}$ dengan $\Pr(W\ge\epsilon)\le\bover1{\epsilon}\|u\|_1$ untuk
+setiap $\epsilon>0$. \Hint{275D.} (iv) Tunjukkan bahwa jika $X$ adalah
+variabel acak terukur terhadap $\Sigma_{\infty}$ dengan ekspektasi berhingga,
+dan untuk setiap $n\in\Bbb N,\ X_n$ adalah suatu ekspektasi bersyarat dari
+$X$ pada $\Sigma_n$, maka $X^{\ssbullet}\in V$ dan
+$X\eae\lim_{n\to\infty}X_n$.
+\Hint{terapkan (iii) pada $u=(X-X_m)^{\ssbullet}$ untuk $m$ yang besar.}
+%275I
+
+\spheader 275Xe Misalkan $(\Omega,\Sigma,\mu)$ adalah ruang probabilitas,
+$\sequencen{\Sigma_n}$ barisan subaljabar-sigma dari $\Sigma$ yang tak
+menurun, dan $\Sigma_{\infty}$ aljabar-sigma yang dibangkitkan oleh
+$\bigcup_{n\in\Bbb N}\Sigma_n$. Untuk setiap
+$n\in\Bbb N\cup\{\infty\}$ misalkan $P_n:L^1\to L^1$ adalah operator
+ekspektasi bersyarat yang bersesuaian dengan $\Sigma_n$, dengan
+$L^1=L^1(\mu)$. Tunjukkan bahwa
+$\lim_{n\to\infty}\|P_nu-P_{\infty}u\|_p=0$ kapan pun
+$p\in\coint{1,\infty}$ dan $u\in L^p(\mu)$.
+\Hint{275Xd, 233J/242K, 246Xg.}
+%275Xd, 275I
+
+\spheader 275Xf Misalkan $\sequencen{X_n}$ adalah suatu martingal, dan
+anggap bahwa $p\in\ooint{1,\infty}$ sedemikian sehingga
+$\sup_{n\in\Bbb N}\|X_n\|_p<\infty$. Tunjukkan bahwa
+$X=\lim_{n\to\infty}X_n$ terdefinisi hampir di mana-mana dan bahwa
+$\lim_{n\to\infty}\|X_n-X\|_p=0$.
+%275Xe, 275H, 275I
+
+\sqheader 275Xg Misalkan $(\Omega,\Sigma,\mu)$ adalah $[0,1]$ dengan ukuran
+Lebesgue. Untuk setiap $n\in\Bbb N$ misalkan $\Sigma_n$ adalah subaljabar
+berhingga dari $\Sigma$ yang dibangkitkan oleh interval jenis $[0,2^{-n}r]$
+untuk $r\le 2^n$. Gunakan 275I untuk menunjukkan bahwa untuk setiap
+$X:[0,1]\to\Bbb R$ yang terintegralkan kita harus mempunyai
+$X(t)=\lim_{n\to\infty}2^n\int_{I_n(t)}X$ untuk hampir setiap
+$t\in\coint{0,1}$, dengan $I_n(t)$ adalah interval berbentuk
+$\coint{2^{-n}r,2^{-n}(r+1)}$ yang memuat $t$. Bandingkan hasil ini dengan
+223A dan 261Yd.
+%275I
+
+\spheader 275Xh Dalam 275K, tunjukkan bahwa
+$\lim_{n\to\infty}\|X_n-X_{\infty}\|_p=0$ untuk setiap
+$p\in\coint{1,\infty}$ sedemikian sehingga $\|X_0\|_p$ berhingga.
+(Bandingkan 275Xe.)
+%275K
+
+\spheader 275Xi\dvAnew{2012} Misalkan $(\Omega,\Sigma,\mu)$ adalah ruang
+probabilitas, dengan pelengkapan $(\Omega,\hat\Sigma,\hat\mu)$, dan
+$\sequencen{\Sigma_n}$ barisan subaljabar-sigma dari $\hat\Sigma$ yang tak
+menurun. Tunjukkan bahwa jika $\sequence{i}{\tau_i}$ adalah barisan waktu
+henti yang teradaptasi terhadap $\sequencen{\Sigma_n}$, dan kita menetapkan
+$\tau(\omega)=\sup_{i\in\Bbb N}\tau_i(\omega)$ untuk $\omega\in\Omega$,
+maka $\tau$ adalah waktu henti yang teradaptasi terhadap
+$\sequencen{\Sigma_n}$.
+%275M
+
+\spheader 275Xj Misalkan $(\Omega,\Sigma,\mu)$ adalah ruang probabilitas,
+dengan pelengkapan $(\Omega,\hat\Sigma,\hat\mu)$, dan
+$\sequencen{\Sigma_n}$ barisan subaljabar-sigma dari $\hat\Sigma$ yang tak
+menurun. Misalkan $\sequencen{X_n}$ adalah martingal terintegralkan secara
+seragam yang teradaptasi terhadap $\sequencen{\Sigma_n}$, dan tetapkan
+$X_{\infty}=\lim_{n\to\infty}X_n$. Misalkan $\tau$ adalah waktu henti yang
+teradaptasi terhadap $\sequencen{\Sigma_n}$, dan tetapkan
+$\tilde X_{\tau}(\omega)=X_{\tau(\omega)}(\omega)$ kapan pun
+$\omega\in\dom X_{\tau(\omega)}$, dengan memperbolehkan $\infty$ sebagai
+nilai $\tau(\omega)$. Tunjukkan bahwa $\tilde X_{\tau}$ adalah suatu
+ekspektasi bersyarat dari $X_{\infty}$ pada $\tilde\Sigma_{\tau}$,
+sebagaimana didefinisikan dalam 275N.
+%275N
+
+\spheader 275Xk Misalkan $(\Omega,\Sigma,\mu)$ adalah ruang probabilitas,
+dengan pelengkapan $(\Omega,\hat\Sigma,\hat\mu)$, dan
+$\sequencen{\Sigma_n}$ barisan subaljabar-sigma dari $\hat\Sigma$ yang tak
+menurun. Misalkan $\sequencen{X_n}$ adalah martingal dan $\tau$ suatu waktu
+henti, keduanya teradaptasi terhadap $\sequencen{\Sigma_n}$. Anggap bahwa
+$\sup_{n\in\Bbb N}\Expn(|X_n|)<\infty$ dan bahwa $\tau$ berhingga hampir di
+mana-mana. Tunjukkan bahwa $\tilde X_{\tau}$, sebagaimana didefinisikan dalam
+275Nc, mempunyai ekspektasi berhingga, tetapi
+$\Expn(\tilde X_{\tau})$ tidak harus sama dengan $\Expn(X_0)$.
+%275N
+
+\spheader 275Xl(i)\dvAnew{2014} Tunjukkan bahwa jika $\sequencen{X_n}$ adalah
+martingal sedemikian sehingga $\sup_{n\in\Bbb N}\Expn(|X_n|)$ berhingga dan
+$\sequencen{X_n}$ konvergen dalam ukuran, maka $\sequencen{X_n}$ konvergen
+hampir di mana-mana. (ii) Temukan martingal $\sequencen{X_n}$ sedemikian
+sehingga $\sequencen{X_{2n}}\to 0$ hampir di mana-mana tetapi
+$|X_{2n+1}|\ge 1$ hampir di mana-mana untuk setiap $n\in\Bbb N$.
+(iii) Temukan martingal yang konvergen dalam ukuran tetapi tidak konvergen
+hampir di mana-mana.
+%275D+  
+
+\leader{275Y}{Latihan lanjutan (a)}%
+%\spheader 275Ya
+\dvAnew{2012} Misalkan $(\Omega,\Sigma,\mu)$ adalah ruang probabilitas,
+$\sequencen{\Sigma_n}$ barisan aljabar-sigma yang saling bebas dari $\Sigma$,
+dan $X$ variabel acak pada $\Omega$ dengan varians berhingga. Misalkan $X_n$
+adalah suatu ekspektasi bersyarat dari $X$ pada $\Sigma_n$ untuk setiap $n$.
+Tunjukkan bahwa $\lim_{n\to\infty}X_n=\Expn(X)$ hampir di mana-mana.
+\Hint{tinjau $\sum_{n=0}^{\infty}\Var(X_n)$.}
+%-
+
+\spheader 275Yb
+Misalkan $(\Omega,\Sigma,\mu)$ adalah ruang probabilitas lengkap,
+$\sequencen{\Sigma_n}$ barisan subaljabar-sigma dari $\Sigma$ yang tak
+menurun dan semuanya memuat setiap himpunan terabaikan, dan
+$\sequencen{X_n}$ suatu martingal yang teradaptasi terhadap
+$\sequencen{\Sigma_n}$. Misalkan $\nu$ adalah ukuran probabilitas lain dengan
+domain $\Sigma$ yang kontinu mutlak terhadap $\mu$, dengan turunan
+Radon-Nikod\'ym $Z$. Untuk setiap $n\in\Bbb N$ misalkan $Z_n$ adalah suatu
+ekspektasi bersyarat dari $Z$ pada $\Sigma_n$ (terhadap ukuran $\mu$).
+(i) Tunjukkan bahwa $Z_n$ adalah turunan Radon-Nikod\'ym dari
+$\nu\restr\Sigma_n$ terhadap $\mu\restr\Sigma_n$, untuk setiap $n\in\Bbb N$.
+(ii) Dengan mendefinisikan $X_n/Z_n$ seperti dalam 121E, sehingga domainnya
+adalah $\{\omega:\omega\in\dom X_n\cap\dom Z_n$, $Z_n(\omega)\ne 0\}$,
+tunjukkan bahwa $\sequencen{X_n/Z_n}$ adalah martingal terhadap ukuran $\nu$.
+%275B
+
+\spheader 275Yc Gabungkan gagasan 275Cc dengan gagasan 275Cd-275Ce untuk
+mendeskripsikan pengertian `martingal yang diindeks oleh $I$', dengan $I$
+sebarang himpunan terurut parsial.
+%275C
+
+\spheader 275Yd\dvAformerly{2{}75Yc}
+Misalkan $\sequence{k}{X_k}$ adalah martingal pada ruang probabilitas lengkap
+$(\Omega,\Sigma,\mu)$, dan tetapkan $n\in\Bbb N$. Tetapkan
+$X^*=\max(|X_0|,\ldots,\discretionary{}{}{}|X_n|)$. Misalkan
+$p\in\ooint{1,\infty}$. Tunjukkan bahwa
+$\|X^*\|_p\le\Bover{p}{p-1}\|X_n\|_p$. ({\it Petunjuk\/}: tetapkan
+$F_t=\{\omega:X^*(\omega)\ge t\}$. Tunjukkan bahwa
+$t\mu F_t\le\int_{F_t}|X_n|$. Dengan menggunakan teorema Fubini pada
+$\Omega\times\coint{0,\infty}$ dan pada
+$\Omega\times\coint{0,\infty}\times\coint{0,\infty}$, tunjukkan bahwa
+
+\Centerline{$\Expn((X^*)^p)=p\int_0^{\infty}t^{p-1}\mu F_tdt$,}
+
+\Centerline{$\int_0^{\infty}t^{p-2}\int_{F_t}|X_n|dt
+=\Bover1{p-1}\Expn(|X_n|\times(X^*)^{p-1})$,}
+
+\Centerline{$\Expn(|X_n|\times(X^*)^{p-1})
+\le\|X_n\|_p\|X^*\|_p^{p-1}$.}
+
+\noindent Bandingkan 286A di bawah.)
+%275D
+
+\spheader 275Ye\dvArevised{2012}(i)
+Tunjukkan bahwa jika $a$, $b\ge 0$ maka
+$a\ln^+b\le a\ln^+a+\Bover{b}e$, dengan $\ln^+t=0$ jika $t\le 1$,
+dan $\ln t$ jika $t\ge 1$.
+(ii) Misalkan $(\Omega,\Sigma,\mu)$ adalah ruang probabilitas lengkap dan
+$X$, $Y$ variabel acak nonnegatif pada $\Omega$ sedemikian sehingga
+$t\mu F_t\le\int_{F_t}X$ untuk setiap $t\ge 0$, dengan
+$F_t=\{\omega:Y(\omega)\ge t\}$. Tunjukkan bahwa
+$\int_{F_1}Y\le\int_{F_1}X\times\ln^+Y$, dan karenanya
+$\Expn(Y)\le\Bover{e}{e-1}(1+\Expn(X\times\ln^+X))$. (iii) Tunjukkan bahwa
+jika $\sequencen{X_n}$ adalah suatu martingal pada $\Omega$, $n\in\Bbb N$
+dan $X^*=\sup_{i\le n}|X_i|$, maka
+$\Expn(X^*)\le\Bover{e}{e-1}(1+\Expn(|X_n|\times\ln^+|X_n|))$.
+%275Yd, 275D {\smc Doob 53}
+
+\spheader 275Yf Misalkan $(\Omega,\Sigma,\mu)$ adalah ruang probabilitas
+dan $\langle\Sigma_i\rangle_{i\in I}$ keluarga terhitung subaljabar-sigma
+dari $\Sigma$ sedemikian sehingga untuk setiap $i$, $j\in I$, entah
+$\Sigma_i\subseteq\Sigma_j$ atau $\Sigma_j\subseteq\Sigma_i$. Misalkan $X$
+adalah variabel acak bernilai real pada $\Omega$ sedemikian sehingga
+$\|X\|_p<\infty$, dengan $1<p<\infty$, dan anggap bahwa $X_i$ adalah suatu
+ekspektasi bersyarat dari $X$ pada $\Sigma_i$ untuk setiap $i\in I$.
+Tunjukkan bahwa
+$\|\sup_{i\in I}|X_i|\|_p\le\Bover{p}{p-1}\|X\|_p$.
+%275Yd, 275D
+
+\spheader 275Yg Misalkan $(\Omega,\Sigma,\mu)$ adalah ruang probabilitas,
+dengan pelengkapan $(\Omega,\hat\Sigma,\hat\mu)$, dan misalkan
+$\sequencen{\Sigma_n}$ adalah barisan subaljabar-sigma dari $\hat\Sigma$ yang
+tak menurun. Misalkan $\sequencen{X_n}$ adalah barisan fungsi bernilai real
+yang terintegralkan terhadap $\mu$ sedemikian sehingga
+$\dom X_n\in\Sigma_n$ dan $X_n$ terukur terhadap $\Sigma_n$ untuk setiap
+$n\in\Bbb N$. Kita mengatakan bahwa $\sequencen{X_n}$ adalah suatu
+{\bf submartingal yang teradaptasi terhadap $\sequencen{\Sigma_n}$} jika
+$\int_EX_{n+1}\ge\int_EX_n$ untuk setiap $n\in\Bbb N$ dan setiap
+$E\in\Sigma_n$. Buktikan versi 275D, 275F, 275G, 275Xf untuk submartingal.
+%275G
+
+\spheader 275Yh Misalkan $\sequencen{X_n}$ adalah suatu martingal, dan
+$\phi:\Bbb R\to\Bbb R$ fungsi konveks. Tunjukkan bahwa
+$\sequencen{\phi(X_n)}$ adalah suatu submartingal. \Hint{233J.}
+Periksa kembali bagian (b-ii) dari bukti 275F berdasarkan fakta ini.
+%275F, 275Yg, 275G
+
+\spheader 275Yi Misalkan $\sequencen{X_n}$ adalah barisan variabel acak
+nonnegatif yang saling bebas dan semuanya berekspektasi $1$. Tetapkan
+$W_n=X_0\times\ldots\times X_n$ untuk setiap $n$. (i) Tunjukkan bahwa
+$W=\lim_{n\to\infty}W_n$ terdefinisi hampir di mana-mana. (ii) Tunjukkan
+bahwa $\Expn(W)$ bernilai $0$ atau $1$. \Hint{andaikan $\Expn(W)>0$.
+Tetapkan $Z_n=\lim_{m\to\infty}X_n\times\ldots\times X_m$. Tunjukkan bahwa
+$\lim_{n\to\infty}Z_n=1$ ketika $0<W<\infty$, dan karenanya hampir di
+mana-mana berdasarkan hukum nol-satu, sedangkan $\Expn(Z_n)\le 1$ berdasarkan
+lemma Fatou, sehingga $\lim_{n\to\infty}\Expn(Z_n)=1$, sedangkan
+$\Expn(W)=\Expn(W_n)\Expn(Z_{n+1})$ untuk setiap $n$.} (iii) Tetapkan
+$\gamma=\prod_{n=0}^{\infty}\Expn(\sqrt{X_n})$. Tunjukkan bahwa $\gamma>0$
+jika dan hanya jika $\Expn(W)=1$.
+\Hint{$\Pr(W_n\ge\bover14\gamma^2)\ge\bover14\gamma^2$ untuk setiap $n$,
+sehingga jika $\gamma>0$ maka $W$ tidak mungkin nol hampir di mana-mana;
+sedangkan $\Expn(\sqrt{W})\le\gamma$.}
+%275G
+
+\spheader 275Yj Misalkan $\sequencen{(\Omega_n,\Sigma_n,\mu_n)}$ adalah
+barisan ruang probabilitas dengan produk $(\Omega,\Sigma,\mu)$. Anggap bahwa
+untuk setiap $n\in\Bbb N$ kita mempunyai ukuran probabilitas $\nu_n$, dengan
+domain $\Sigma_n$, yang kontinu mutlak terhadap $\mu_n$, dengan turunan
+Radon-Nikod\'ym $f_n$, dan anggap bahwa
+$\prod_{n=0}^{\infty}\int\sqrt{f_n}d\mu_n>0$. Misalkan $\nu$ adalah produk
+dari $\sequencen{\nu_n}$. Tunjukkan bahwa $\nu$ adalah ukuran integral tak
+tentu terhadap $\mu$, dengan turunan Radon-Nikod\'ym $f$, dengan
+$f(\pmb{\omega})=\prod_{n=0}^{\infty}f_n(\omega_n)$ untuk $\mu$-hampir setiap
+$\pmb{\omega}=\sequencen{\omega_n}$ dalam $\Omega$.
+\Hint{gunakan 275Yi untuk menunjukkan bahwa $\int fd\mu=1$.}
+%275G, 275Yi
+
+\spheader 275Yk Misalkan $\sequencen{p_n}$ adalah barisan dalam $[0,1]$.
+Misalkan $\mu$ adalah ukuran biasa pada $\{0,1\}^{\Bbb N}$ (254J) dan $\nu$
+produk $\sequencen{\nu_n}$, dengan $\nu_n$ adalah ukuran probabilitas pada
+$\{0,1\}$ yang didefinisikan dengan menetapkan $\nu_n\{1\}=p_n$. Tunjukkan
+bahwa $\nu$ adalah ukuran integral tak tentu terhadap $\mu$ jika dan hanya
+jika $\sum_{n=0}^{\infty}|p_n-\bover12|^2<\infty$.
+%275Yj, 275G
+
+\spheader 275Yl
+Temukan martingal $\sequencen{X_n}$ sedemikian sehingga barisan distribusi
+$\nu_{X_n}$ (271C) konvergen untuk topologi samar (274Ld), tetapi
+$\sequencen{X_n}$ tidak konvergen dalam ukuran.
+%275G added 2002
+
+\spheader 275Ym Misalkan $\sequencen{X_n}$ adalah barisan variabel acak
+bernilai real yang saling bebas sedemikian sehingga
+$\sum_{n=0}^{\infty}X_n$ terdefinisi dalam $\Bbb R$ hampir di mana-mana.
+Anggap bahwa terdapat $M\ge 0$ sedemikian sehingga $|X_n|\le M$ hampir di
+mana-mana untuk setiap $n$. Tunjukkan bahwa
+$\sum_{n=0}^{\infty}\Expn(X_n)$ terdefinisi dalam $\Bbb R$.
+\Hint{274Yg, 275G.}
+%275G
+
+\spheader 275Yn Misalkan $(\Omega,\Sigma,\mu)$ adalah ruang probabilitas dan
+$\sequencen{X_n}$ barisan variabel acak bernilai real yang saling bebas pada
+$\Omega$; tetapkan
+$E_n=\{\omega:\omega\in\dom X_n$, $|X_n(\omega)|>1\}$,
+$Y_n=X_n\times\chi(\Omega\setminus E_n)$ untuk setiap $n$, dan
+$Z_n(\omega)=\med(-1,X_n(\omega),1)$ untuk $n\in\Bbb N$ dan
+$\omega\in\dom X_n$. Tunjukkan bahwa pernyataan berikut ekuivalen:
+(i) $\sum_{n=0}^{\infty}X_n(\omega)$ terdefinisi dalam $\Bbb R$ untuk hampir
+setiap $\omega$; (ii) $\sum_{n=0}^{\infty}\hat\mu E_n<\infty$,
+$\sum_{n=0}^{\infty}\Expn(Y_n)$ terdefinisi dalam $\Bbb R$, dan
+$\sum_{n=0}^{\infty}\Var(Y_n)<\infty$, dengan $\hat\mu$ adalah pelengkapan
+$\mu$; (iii) $\sum_{n=0}^{\infty}\hat\mu E_n<\infty$,
+$\sum_{n=0}^{\infty}\Expn(Z_n)$ terdefinisi dalam $\Bbb R$, dan
+$\sum_{n=0}^{\infty}\Var(Z_n)<\infty$. \Hint{273K, 275Ym.}
+(Ini adalah suatu versi dari {\bf Teorema Tiga Deret}.)
+%275Ym 275G 273K
+
+\spheader 275Yo Misalkan $(\Omega,\Sigma,\mu)$ adalah ruang probabilitas,
+$\sequencen{\Sigma_n}$ barisan subaljabar-sigma dari $\Sigma$ yang tak
+menurun dan $\sequencen{X_n}$ barisan variabel acak pada $\Omega$ sedemikian
+sehingga $\Expn(\sup_{n\in\Bbb N}|X_n|)$ berhingga dan
+$X=\lim_{n\to\infty}X_n$ terdefinisi hampir di mana-mana. Untuk setiap $n$,
+misalkan $Y_n$ adalah suatu ekspektasi bersyarat dari $X_n$ pada $\Sigma_n$.
+Tunjukkan bahwa $\sequencen{Y_n}$ konvergen hampir di mana-mana menuju suatu
+ekspektasi bersyarat dari $X$ pada aljabar-sigma yang dibangkitkan oleh
+$\bigcup_{n\in\Bbb N}\Sigma_n$.
+%275I %mt27bits
+
+\spheader 275Yp Tunjukkan bahwa 275Yo dapat gagal jika $\sequencen{X_n}$
+hanya terintegralkan secara seragam, alih-alih didominasi oleh suatu fungsi
+terintegralkan.
+%275Yo, 275I  %mt27bits
+
+\spheader 275Yq Misalkan $(\Omega,\Sigma,\mu)$ adalah ruang probabilitas
+lengkap, dan $\sequencen{X_n}$ barisan variabel acak yang saling bebas pada
+$\Omega$, semuanya dengan distribusi yang sama, dan berekspektasi berhingga.
+Untuk setiap $n$, tetapkan $S_n=\bover1{n+1}(X_0+\ldots+X_n)$; misalkan
+$\Sigma_n$ adalah aljabar-sigma yang didefinisikan oleh $S_n$ dan
+$\Sigma_n^*$ aljabar-sigma yang dibangkitkan oleh
+$\bigcup_{m\ge n}\Sigma_m$. Tunjukkan bahwa $S_n$ adalah suatu ekspektasi
+bersyarat dari $X_0$ pada $\Sigma_n^*$.
+\Hint{anggap setiap $X_i$ terdefinisi di seluruh $\Omega$. Tetapkan
+$\phi(\omega)=\sequence{i}{X_i(\omega)}$. Tunjukkan bahwa
+$\phi:\Omega\to\BbbR^{\Bbb N}$ adalah \imp\ untuk suatu ukuran produk yang
+sesuai pada $\BbbR^{\Bbb N}$, dan bahwa setiap himpunan dalam $\Sigma_n^*$
+berbentuk $\phi^{-1}[H]$ dengan $H\subseteq\BbbR^{\Bbb N}$ suatu himpunan
+Borel yang invarian terhadap permutasi koordinat dalam himpunan
+$\{0,\ldots,n\}$, sehingga $\int_EX_i=\int_EX_j$ kapan pun $i\le j\le n$
+dan $E\in\Sigma_n^*$.} Dari sini tunjukkan bahwa $\sequencen{S_n}$ konvergen
+hampir di mana-mana. (Bandingkan 273I.)
+%275K
+
+\spheader 275Yr Rumuskan dan buktikan versi hasil-hasil dalam bagian ini
+untuk martingal yang terdiri atas fungsi bernilai $\Bbb C$ atau $\BbbR^r$,
+bukan $\Bbb R$.
+}%end of exercises
+
+\cmmnt{
+\Notesheader{275} Saya berharap uraian di atas, meskipun sangat disingkat,
+telah memberi gambaran tentang kekayaan konsep-konsep yang terlibat, dan akan
+menyediakan landasan untuk pembelajaran lebih lanjut. Semua teorema dalam
+bagian ini mempunyai implikasi yang luas, tetapi yang benar-benar sangat
+diperlukan dalam teori ukuran lanjut ialah 275I, `teorema konvergensi martingal
+L\'evy', yang akan saya gunakan dalam pembuktian Teorema Lifting pada Bab 34
+dalam jilid berikutnya.
+
+Mengenai waktu henti, saya menyebutkannya sebagian sebagai upaya untuk
+menjelaskan lebih jauh kegunaan martingal (lihat 276Ed di bawah), dan sebagian
+karena gagasan 275N-275O begitu penting dalam teori probabilitas modern
+sehingga, sekadar sebagai pengetahuan umum, Anda perlu menyadari bahwa ada
+sesuatu di sana. Saya menambahkan 275P sebagai salah satu hasil baku yang
+paling mudah diakses dan dapat diperoleh dengan metode ini.
+
+}%end of notes
+
+\discrpage

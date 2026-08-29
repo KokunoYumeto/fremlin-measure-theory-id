@@ -58,21 +58,36 @@ def strip_comments_preserve(text: str) -> str:
 
 def explicit_occurrences(text: str) -> list[dict[str, object]]:
     patterns = [
-        re.compile(r"\\leader\{([^{}]+)\}"),
-        re.compile(r"\\header\{([^{}]+)\}"),
-        re.compile(r"\\vleader\{[^{}]*\}\{([^{}]+)\}"),
-        re.compile(r"\\vspheader\{[^{}]*\}([0-9][0-9A-Za-z]+)"),
-        re.compile(r"\\Notesheader\{([^{}]+)\}"),
-        re.compile(r"\\(?:sqheader|spheader)\s+([0-9][0-9A-Za-z]+)"),
+        ("leader", re.compile(r"\\leader\{([^{}]+)\}")),
+        ("header", re.compile(r"\\header\{([^{}]+)\}")),
+        ("vleader", re.compile(r"\\vleader\{[^{}]*\}\{([^{}]+)\}")),
+        ("vspheader", re.compile(r"\\vspheader\{[^{}]*\}([0-9][0-9A-Za-z]+)")),
+        ("Notesheader", re.compile(r"\\Notesheader\{([^{}]+)\}")),
+        ("exercise-header", re.compile(r"\\(?:sqheader|spheader)\s+([0-9][0-9A-Za-z]+)")),
+        ("wheader", re.compile(r"\\wheader\{([^{}]+)\}")),
     ]
     clean = strip_comments_preserve(text)
     found: list[dict[str, object]] = []
-    for pattern in patterns:
+    for kind, pattern in patterns:
         found.extend(
-            {"anchor": match.group(1).strip(), "start": match.start()}
+            {
+                "anchor": match.group(1).strip(),
+                "start": match.start(),
+                "declaration_kind": kind,
+            }
             for match in pattern.finditer(clean)
         )
-    return sorted(found, key=lambda item: int(item["start"]))
+    ordered = sorted(found, key=lambda item: int(item["start"]))
+    result: list[dict[str, object]] = []
+    seen_semantic_ids: set[str] = set()
+    for item in ordered:
+        anchor = str(item["anchor"])
+        semantic_id = anchor.lstrip("*")
+        if item["declaration_kind"] == "wheader" and semantic_id in seen_semantic_ids:
+            continue
+        result.append({"anchor": anchor, "start": item["start"]})
+        seen_semantic_ids.add(semantic_id)
+    return result
 
 
 def balanced_command_arguments(text: str, command: str) -> list[dict[str, object]]:

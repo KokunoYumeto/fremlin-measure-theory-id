@@ -1,0 +1,1364 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Martingal — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        BbbQ: '\\mathbb{Q}', BbbR: '\\mathbb{R}',
+        eightBbb: ['\\mathbb{#1}', 1],
+        DiniD: '\\overline{D}', Dinid: '\\underline{D}',
+        Var: '\\operatorname{Var}',
+        bumpeq: '=_{\\mathrm{approx}}',
+        intstar: '\\operatorname{int}^{*}',
+        family: ['\\langle #3\\rangle_{#1\\in #2}', 3],
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        displaycause: ['\\text{(#1)}', 1],
+        bigcupop: '\\bigcup', biggerint: '\\int',
+        eae: '=_{\\mathrm{a.e.}}', leae: '\\le_{\\mathrm{a.e.}}', geae: '\\ge_{\\mathrm{a.e.}}',
+        restr: '\\mathord{\\upharpoonright}', restrp: '\\mathord{\\upharpoonright}',
+        Real: '\\operatorname{Re}', Imag: '\\operatorname{Im}',
+        tbf: ['\\mathbf{#1}', 1], eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Qed: '\\square',
+        BbbN: '\\mathbb{N}', Expn: '\\mathbb{E}',
+        Cal: ['\\mathcal{#1}', 1], dom: '\\operatorname{dom}',
+        coint: ['\\left[#1\\right[', 1],
+        sequencen: ['\\langle #1_n\\rangle_{n\\in\\mathbb{N}}', 1],
+        imp: '\\mathop{\\text{pelestari ukuran melalui prapeta}}',
+        tildeTau: '\\widetilde{\\mathrm{T}}',
+        LLcorner: '\\mathbin{\\llcorner}',
+        prooflet: ['#1', 1],
+        halfarrow: '\\rightharpoonup',
+        esssup: '\\mathop{\\text{ess sup}}',
+        ocint: ['\\left]#1\\right]', 1],
+        fraction: ['\\mathord{<}#1\\mathord{>}', 1],
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        fraction: ['\\mathord{<}#1\\mathord{>}', 1],
+        tbf: ['\\mathbf{#1}', 1],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        BbbN: '\\mathbb{{N}}', BbbQ: '\\mathbb{{Q}}',
+        BbbZ: '\\mathbb{{Z}}',
+        bover: ['\\frac{{#1}}{{#2}}', 2],
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        esssup: '\\mathop{{\\text{{ess sup}}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        family: ['\\langle #3\\rangle_{{#1\\in #2}}', 3],
+        familyi: ['\\langle #2\\rangle_{{i\\in #1}}', 2],
+        familyiI: ['\\langle #1\\rangle_{{i\\in I}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        ocint: ['\\left]#1\\right]', 1],
+        restr: '\\mathord{{\\upharpoonright}}',
+        restrp: '\\mathord{{\\upharpoonright}}',
+        roibr: '\\mathopen{{[}}',
+        sequence: ['\\langle #2\\rangle_{{#1\\in\\mathbb{{N}}}}', 2],
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1],
+        ssbullet: '{{\\scriptscriptstyle\\bullet}}',
+        tensorhat: '\\widehat{{\\otimes}}',
+        Tensorhat: '\\widehat{{\\bigotimes}}'
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 2 · Bagian 275</p>
+  <h1>Martingal</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi kumulatif</a></nav>
+<main id="isi">
+<p>© 2001</p>
+<p>Sejauh ini bab ini didominasi oleh barisan variabel acak yang saling bebas.
+Sekarang saya beralih pada satu lagi konsep luar biasa yang lahir dari intuisi
+probabilistik. Di sini kita mempelajari sistem yang berkembang, tempat kita
+memperoleh semakin banyak informasi seiring berjalannya waktu. Saya memberikan
+teorema-teorema dasar tentang konvergensi titik demi titik martingal
+(<a class="xref" href="#275F">275F</a>-<a class="xref" href="#275H">275H</a>,
+<a class="xref" href="#275K">275K</a>) dan uraian yang sangat singkat tentang ‘waktu henti’
+(<a class="xref" href="#275L">275L</a>-<a class="xref" href="#275P">275P</a>).</p>
+<section class="source-unit" id="275A" data-source-id="275A"><h2><span class="source-label">275A</span> Definisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> adalah ruang
+probabilitas dengan pelengkapan <span class="math inline" data-source-tex="(\Omega,\hat\Sigma,\hat\mu)">\((\Omega,\hat\Sigma,\hat\mu)\)</span>, dan
+<span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span> barisan subaljabar-sigma dari <span class="math inline" data-source-tex="\hat\Sigma">\(\hat\Sigma\)</span> yang tak
+menurun. (Barisan <span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span> demikian disebut
+<strong>filtrasi</strong>.)
+Suatu <strong>martingal yang teradaptasi terhadap
+<span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span></strong> adalah barisan <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> dari variabel acak
+bernilai real yang terintegralkan pada <span class="math inline" data-source-tex="\Omega">\(\Omega\)</span> sedemikian sehingga
+(i) <span class="math inline" data-source-tex="\dom X_n\in\Sigma_n">\(\dom X_n\in\Sigma_n\)</span> dan <span class="math inline" data-source-tex="X_n">\(X_n\)</span> terukur terhadap <span class="math inline" data-source-tex="\Sigma_n">\(\Sigma_n\)</span> untuk setiap
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> (ii) kapan pun <span class="math inline" data-source-tex="m\le n\in\Bbb N">\(m\le n\in\Bbb N\)</span> dan <span class="math inline" data-source-tex="E\in\Sigma_m">\(E\in\Sigma_m\)</span>, maka
+<span class="math inline" data-source-tex="\int_EX_{n}=\int_EX_m">\(\int_EX_{n}=\int_EX_m\)</span>.</p>
+<p>Perhatikan bahwa untuk (ii) cukup jika
+<span class="math inline" data-source-tex="\int_EX_{n+1}=\int_EX_n">\(\int_EX_{n+1}=\int_EX_n\)</span> kapan pun <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> dan <span class="math inline" data-source-tex="E\in\Sigma_n">\(E\in\Sigma_n\)</span>.</p>
+</section>
+<section class="source-unit" id="275B" data-source-id="275B"><span class="anchor" id="275Ba"></span><h2><span class="source-label">275B</span> Contoh  </h2>
+<p>Kita telah melihat banyak konteks tempat
+barisan semacam ini muncul secara alami; berikut beberapa di antaranya.</p>
+<p> </p>
+<p><strong>(a)</strong> Misalkan <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> adalah ruang probabilitas dan
+<span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span> barisan subaljabar-sigma dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> yang tak
+menurun. Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> adalah sebarang variabel acak bernilai real pada
+<span class="math inline" data-source-tex="\Omega">\(\Omega\)</span> dengan ekspektasi berhingga, dan untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> misalkan
+<span class="math inline" data-source-tex="X_n">\(X_n\)</span> adalah suatu ekspektasi bersyarat dari <span class="math inline" data-source-tex="X">\(X\)</span> pada <span class="math inline" data-source-tex="\Sigma_n">\(\Sigma_n\)</span>,
+seperti dalam §<a class="xref" href="../233/index.html#233">233</a>. Dengan tunduk pada syarat bahwa
+<span class="math inline" data-source-tex="\dom X_n\in\Sigma_n">\(\dom X_n\in\Sigma_n\)</span> dan <span class="math inline" data-source-tex="X_n">\(X_n\)</span> benar-benar terukur terhadap <span class="math inline" data-source-tex="\Sigma_n">\(\Sigma_n\)</span>
+untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span> (suatu hal yang murni teknis – lihat <a class="xref" href="../232/index.html#232He">232He</a>),
+<span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> merupakan martingal yang teradaptasi terhadap
+<span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span>, karena
+<span class="math inline" data-source-tex="\int_EX_{n+1}=\int_EX=\int_EX_n">\(\int_EX_{n+1}=\int_EX=\int_EX_n\)</span> kapan pun <span class="math inline" data-source-tex="E\in\Sigma_n">\(E\in\Sigma_n\)</span>.</p>
+</section>
+<section class="source-unit" id="275Bb" data-source-id="275Bb"><h3><span class="source-label">275Bb</span> (b) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> adalah ruang probabilitas
+dan <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> barisan variabel acak yang saling bebas dan semuanya
+berekspektasi nol. Untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> misalkan
+<span class="math inline" data-source-tex="\tilde\Sigma_n">\(\tilde\Sigma_n\)</span> adalah aljabar-sigma yang dibangkitkan oleh
+<span class="math inline" data-source-tex="\bigcup_{i\le n}\Sigma_{X_i}">\(\bigcup_{i\le n}\Sigma_{X_i}\)</span>, dengan <span class="math inline" data-source-tex="\Sigma_{X_i}">\(\Sigma_{X_i}\)</span> menyatakan
+aljabar-sigma yang didefinisikan oleh <span class="math inline" data-source-tex="X_i">\(X_i\)</span> (<a class="xref" href="../272/index.html#272C">272C</a>), dan tetapkan
+<span class="math inline" data-source-tex="S_n=X_0+\ldots+X_n">\(S_n=X_0+\ldots+X_n\)</span>. Maka <span class="math inline" data-source-tex="\sequencen{S_n}">\(\sequencen{S_n}\)</span> adalah martingal yang
+teradaptasi terhadap <span class="math inline" data-source-tex="\tilde\Sigma_n">\(\tilde\Sigma_n\)</span>. (Gunakan <a class="xref" href="../272/index.html#272K">272K</a> untuk melihat
+bahwa <span class="math inline" data-source-tex="\Sigma_{X_{n+1}}">\(\Sigma_{X_{n+1}}\)</span> bebas dari <span class="math inline" data-source-tex="\tilde\Sigma_n">\(\tilde\Sigma_n\)</span>, sehingga
+<span class="math inline" data-source-tex="\int_EX_{n+1}=\int X_{n+1}\times\chi E=0">\(\int_EX_{n+1}=\int X_{n+1}\times\chi E=0\)</span> untuk setiap
+<span class="math inline" data-source-tex="E\in\tilde\Sigma_n">\(E\in\tilde\Sigma_n\)</span>, berdasarkan <a class="xref" href="../272/index.html#272R">272R</a>.)</p>
+</section>
+<section class="source-unit" id="275Bc" data-source-id="275Bc"><h3><span class="source-label">275Bc</span> (c) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> adalah ruang probabilitas
+dan <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> barisan variabel acak yang saling bebas dan semuanya
+berekspektasi <span class="math inline" data-source-tex="1">\(1\)</span>. Untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> misalkan
+<span class="math inline" data-source-tex="\tilde\Sigma_n">\(\tilde\Sigma_n\)</span> adalah aljabar-sigma yang dibangkitkan oleh
+<span class="math inline" data-source-tex="\bigcup_{i\le n}\Sigma_{X_i}">\(\bigcup_{i\le n}\Sigma_{X_i}\)</span>, dengan <span class="math inline" data-source-tex="\Sigma_{X_i}">\(\Sigma_{X_i}\)</span> menyatakan
+aljabar-sigma yang didefinisikan oleh <span class="math inline" data-source-tex="X_i">\(X_i\)</span>, dan tetapkan
+<span class="math inline" data-source-tex="W_n=X_0\times\ldots\times X_n">\(W_n=X_0\times\ldots\times X_n\)</span>. Maka <span class="math inline" data-source-tex="\sequencen{W_n}">\(\sequencen{W_n}\)</span> adalah martingal
+yang teradaptasi terhadap <span class="math inline" data-source-tex="\sequencen{\tilde\Sigma_n}">\(\sequencen{\tilde\Sigma_n}\)</span>.</p>
+</section>
+<section class="source-unit" id="275C" data-source-id="275C"><span class="anchor" id="275Ca"></span><h2><span class="source-label">275C</span> Catatan  </h2>
+<p><strong>(a)</strong> Tampaknya sesuai dengan konsep
+variabel acak <span class="math inline" data-source-tex="X">\(X\)</span> yang ‘teradaptasi’ terhadap aljabar-sigma <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> untuk
+mensyaratkan bahwa <span class="math inline" data-source-tex="\dom X\in\Sigma">\(\dom X\in\Sigma\)</span> dan <span class="math inline" data-source-tex="X">\(X\)</span> terukur terhadap <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>,
+meskipun ini dapat berarti bahwa variabel acak lain, yang sama hampir di
+mana-mana dengan <span class="math inline" data-source-tex="X">\(X\)</span>, mungkin tidak ‘teradaptasi’ terhadap <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>.</p>
+</section>
+<section class="source-unit" id="275Cb" data-source-id="275Cb"><h3><span class="source-label">275Cb</span> (b) </h3>
+<p>Masalah teknis semacam ini tentu lenyap jika semua himpunan
+yang terabaikan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> di dalam <span class="math inline" data-source-tex="\Omega">\(\Omega\)</span> termasuk dalam <span class="math inline" data-source-tex="\Sigma_0">\(\Sigma_0\)</span>.
+Namun contoh seperti <a class="xref" href="#275Bb">275Bb</a> membuatnya tampak tidak wajar untuk memaksakan
+penyederhanaan semacam ini sebagai aturan umum.</p>
+</section>
+<section class="source-unit" id="275Cc" data-source-id="275Cc"><h3><span class="source-label">275Cc</span>  </h3>
+<p><strong>(c)</strong> Konsep ‘martingal’ dapat dengan mudah diperluas ke himpunan indeks
+selain <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span>; bahkan, jika <span class="math inline" data-source-tex="I">\(I\)</span> adalah sebarang himpunan terurut parsial,
+kita dapat mengatakan bahwa <span class="math inline" data-source-tex="\langle X_i\rangle_{i\in I}">\(\langle X_i\rangle_{i\in I}\)</span> adalah martingal
+pada <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> yang teradaptasi terhadap
+<span class="math inline" data-source-tex="\langle\Sigma_i\rangle_{i\in I}">\(\langle\Sigma_i\rangle_{i\in I}\)</span> jika (i) setiap <span class="math inline" data-source-tex="\Sigma_i">\(\Sigma_i\)</span> adalah
+subaljabar-sigma dari <span class="math inline" data-source-tex="\hat\Sigma">\(\hat\Sigma\)</span> (ii) setiap <span class="math inline" data-source-tex="X_i">\(X_i\)</span> adalah variabel acak
+bernilai real yang terintegralkan dan terukur terhadap <span class="math inline" data-source-tex="\Sigma_i">\(\Sigma_i\)</span>, dengan
+<span class="math inline" data-source-tex="\dom X_i\in\Sigma_i">\(\dom X_i\in\Sigma_i\)</span> (iii) kapan pun <span class="math inline" data-source-tex="i\le j">\(i\le j\)</span> dalam <span class="math inline" data-source-tex="I">\(I\)</span>, maka
+<span class="math inline" data-source-tex="\Sigma_i\subseteq\Sigma_j">\(\Sigma_i\subseteq\Sigma_j\)</span> dan <span class="math inline" data-source-tex="\int_EX_i=\int_EX_j">\(\int_EX_i=\int_EX_j\)</span> untuk setiap
+<span class="math inline" data-source-tex="E\in\Sigma_i">\(E\in\Sigma_i\)</span>. Kasus utama setelah <span class="math inline" data-source-tex="I=\Bbb N">\(I=\Bbb N\)</span> adalah
+<span class="math inline" data-source-tex="I=\coint{0,\infty}">\(I=\coint{0,\infty}\)</span>; <span class="math inline" data-source-tex="I=\Bbb Z">\(I=\Bbb Z\)</span> juga menarik, dan saya rasa wajar untuk
+mengatakan bahwa gagasan-gagasan terpenting sudah dapat diungkapkan dalam
+teorema tentang martingal yang diindeks oleh himpunan berhingga <span class="math inline" data-source-tex="I">\(I\)</span>. Namun
+dalam jilid ini pada umumnya saya akan mengambil martingal yang diindeks oleh
+<span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span>.</p>
+</section>
+<section class="source-unit" id="275Cd" data-source-id="275Cd"><h3><span class="source-label">275Cd</span> (d) </h3>
+<p>Jika hanya diberikan barisan <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> dari
+variabel acak bernilai real yang terintegralkan pada ruang probabilitas
+<span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span>, kita cukup mengatakan bahwa <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> adalah
+suatu <strong>martingal</strong> pada <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> jika terdapat suatu barisan
+subaljabar-sigma <span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span> dari <span class="math inline" data-source-tex="\hat\Sigma">\(\hat\Sigma\)</span> yang tak menurun
+ (pelengkapan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>) sedemikian sehingga <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> adalah
+martingal yang teradaptasi terhadap <span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span>. Jika kita
+menuliskan <span class="math inline" data-source-tex="\tilde\Sigma_n">\(\tilde\Sigma_n\)</span> untuk aljabar-sigma yang dibangkitkan oleh
+<span class="math inline" data-source-tex="\bigcup_{i\le n}\Sigma_{X_i}">\(\bigcup_{i\le n}\Sigma_{X_i}\)</span>, dengan <span class="math inline" data-source-tex="\Sigma_{X_i}">\(\Sigma_{X_i}\)</span> adalah aljabar-sigma
+yang didefinisikan oleh <span class="math inline" data-source-tex="X_i">\(X_i\)</span>, seperti dalam <a class="xref" href="#275Bb">275Bb</a>, maka
+mudah dilihat bahwa <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> adalah martingal jika dan hanya jika
+ia adalah martingal yang teradaptasi terhadap
+<span class="math inline" data-source-tex="\sequencen{\tilde\Sigma_n}">\(\sequencen{\tilde\Sigma_n}\)</span>.</p>
+</section>
+<section class="source-unit" id="275Ce" data-source-id="275Ce"><h3><span class="source-label">275Ce</span> (e) </h3>
+<p>Melanjutkan dari (d), mudah pula dilihat bahwa jika
+<span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> adalah martingal pada <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span>, dan
+<span class="math inline" data-source-tex="X&#x27;_n\eae X_n">\(X&#x27;_n\eae X_n\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, maka <span class="math inline" data-source-tex="\sequencen{X&#x27;_n}">\(\sequencen{X&#x27;_n}\)</span> adalah martingal
+pada <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span>. (Intinya ialah bahwa jika
+<span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> teradaptasi terhadap <span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span>, maka baik
+<span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> maupun <span class="math inline" data-source-tex="\sequencen{X&#x27;_n}">\(\sequencen{X&#x27;_n}\)</span> teradaptasi terhadap
+<span class="math inline" data-source-tex="\sequencen{\hat\Sigma_n}">\(\sequencen{\hat\Sigma_n}\)</span>, dengan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\hat\Sigma_n
+=\{E\symmdiff F:E\in\Sigma_n,\,F\text{ terabaikan}\}">\(\hat\Sigma_n
+=\{E\symmdiff F:E\in\Sigma_n,\,F\text{ terabaikan}\}\)</span>.)</div>
+<p>Akibatnya kita mempunyai konsep ‘martingal’ sebagai barisan dalam
+<span class="math inline" data-source-tex="L^1(\mu)">\(L^1(\mu)\)</span>, yaitu suatu barisan <span class="math inline" data-source-tex="\sequencen{X_n^{\ssbullet}}">\(\sequencen{X_n^{\ssbullet}}\)</span> dalam
+<span class="math inline" data-source-tex="L^1(\mu)">\(L^1(\mu)\)</span> adalah martingal jika dan hanya jika <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> adalah
+martingal.</p>
+<p>Meskipun demikian, saya berpendapat bahwa konsep ‘martingal yang
+teradaptasi terhadap suatu barisan aljabar-sigma’ adalah konsep utama, karena
+dalam semua penerapan pokok aljabar-sigma tersebut mencerminkan suatu aspek
+esensial dari masalah yang mungkin tidak sepenuhnya tercakup oleh variabel acak
+saja.</p>
+</section>
+<section class="source-unit" id="275Cf" data-source-id="275Cf"><h3><span class="source-label">275Cf</span> (f) </h3>
+<p>Kata ‘martingale’ mula-mula (dalam bahasa Inggris; sejarahnya
+dalam bahasa Prancis lebih rumit) merujuk pada tali kekang yang digunakan
+untuk mencegah kuda mendongakkan kepalanya. Kemudian kata ini digunakan untuk
+menamai sistem perjudian tempat penjudi menggandakan taruhannya setiap kali
+kalah, dan (dalam bahasa Prancis) sebagai istilah umum bagi sistem perjudian.
+Sistem-sistem ini dapat dipandang sebagai suatu kelas ‘martingal waktu henti’,
+seperti dijelaskan dalam <a class="xref" href="#275L">275L</a>-<a class="xref" href="#275P">275P</a>
+di bawah.</p>
+</section>
+<section class="source-unit" id="275D" data-source-id="275D"><h2><span class="source-label">275D</span>  </h2>
+<p>Sebagian besar teori martingal terdiri atas berbagai
+jenis ketaksamaan. Saya memberikan dua yang paling penting, keduanya berasal
+dari J.L.Doob. (Lihat pula <a class="xref" href="../276/index.html#276Xa">276Xa</a>-<a class="xref" href="../276/index.html#276Xb">276Xb</a>.)</p>
+<p> </p>
+<p><strong>Lemma</strong> Misalkan <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> adalah ruang
+probabilitas, dan <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> suatu martingal pada <span class="math inline" data-source-tex="\Omega">\(\Omega\)</span>. Tetapkan
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> dan <span class="math inline" data-source-tex="X^*=\max(X_0,\ldots,X_n)">\(X^*=\max(X_0,\ldots,X_n)\)</span>. Maka untuk setiap
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Pr(X^*\ge\epsilon)
+\le\Bover1{\epsilon}\Expn(X_n^+)">\(\Pr(X^*\ge\epsilon)
+\le\Bover1{\epsilon}\Expn(X_n^+)\)</span>,</div>
+<p>dengan <span class="math inline" data-source-tex="X_n^+=\max({0},X_n)">\(X_n^+=\max({0},X_n)\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Tuliskan <span class="math inline" data-source-tex="\hat\mu">\(\hat\mu\)</span> untuk pelengkapan <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, dan <span class="math inline" data-source-tex="\hat\Sigma">\(\hat\Sigma\)</span> untuk
+domainnya. Misalkan <span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span> adalah barisan subaljabar-sigma
+dari <span class="math inline" data-source-tex="\hat\Sigma">\(\hat\Sigma\)</span> yang tak menurun dan terhadapnya <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span>
+teradaptasi. Untuk setiap <span class="math inline" data-source-tex="i\le n">\(i\le n\)</span> tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="E_i=\{\omega:\omega\in\dom
+X_i,\,X_i(\omega)\ge\epsilon\}">\(E_i=\{\omega:\omega\in\dom
+X_i,\,X_i(\omega)\ge\epsilon\}\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="F_i=E_i\setminus\bigcup_{j&lt;i}E_j">\(F_i=E_i\setminus\bigcup_{j&lt;i}E_j\)</span>.</div>
+<p>Maka <span class="math inline" data-source-tex="F_0,\ldots,F_n">\(F_0,\ldots,F_n\)</span> saling lepas dan
+<span class="math inline" data-source-tex="F=\bigcup_{i\le n}F_i=\bigcup_{i\le n}E_i">\(F=\bigcup_{i\le n}F_i=\bigcup_{i\le n}E_i\)</span>; selain itu, dengan <span class="math inline" data-source-tex="H">\(H\)</span>
+menyatakan himpunan koterabaikan <span class="math inline" data-source-tex="\bigcap_{i\le n}\dom X_i">\(\bigcap_{i\le n}\dom X_i\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{\omega:X^*(\omega)\ge\epsilon\}=F\cap H">\(\{\omega:X^*(\omega)\ge\epsilon\}=F\cap H\)</span>,</div>
+<p>sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Pr(X^*\ge\epsilon)=
+\hat\mu\{\omega:X^*(\omega)\ge\epsilon\}
+=\hat\mu F=\sum_{i=0}^n\hat\mu F_i">\(\Pr(X^*\ge\epsilon)=
+\hat\mu\{\omega:X^*(\omega)\ge\epsilon\}
+=\hat\mu F=\sum_{i=0}^n\hat\mu F_i\)</span>.</div>
+<p>Di sisi lain, <span class="math inline" data-source-tex="E_i">\(E_i\)</span> dan <span class="math inline" data-source-tex="F_i">\(F_i\)</span> termasuk dalam <span class="math inline" data-source-tex="\Sigma_i">\(\Sigma_i\)</span> untuk
+setiap <span class="math inline" data-source-tex="i\le n">\(i\le n\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_{F_i}X_n=\int_{F_i}X_i\ge \epsilon\hat\mu F_i">\(\int_{F_i}X_n=\int_{F_i}X_i\ge \epsilon\hat\mu F_i\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\epsilon\hat\mu F=\epsilon\sum_{i=0}^n\hat\mu F_i
+\le\sum_{i=0}^n\int_{F_i}X_n
+=\int_FX_n
+\le\int_FX_n^+
+\le\Expn(X_n^+)">\(\epsilon\hat\mu F=\epsilon\sum_{i=0}^n\hat\mu F_i
+\le\sum_{i=0}^n\int_{F_i}X_n
+=\int_FX_n
+\le\int_FX_n^+
+\le\Expn(X_n^+)\)</span>,</div>
+<p>sebagaimana diperlukan.</p></aside>
+<p> </p>
+<p><strong>Catatan</strong> Perhatikan bahwa sebenarnya kita mempunyai
+<span class="math inline" data-source-tex="\epsilon\hat\mu F\le\int_FX_n">\(\epsilon\hat\mu F\le\int_FX_n\)</span>, dengan
+<span class="math inline" data-source-tex="F=\{\omega:X^*(\omega)\ge\epsilon\}">\(F=\{\omega:X^*(\omega)\ge\epsilon\}\)</span>; hal ini sangat penting dalam banyak
+penerapan.</p>
+</section>
+<section class="source-unit" id="275E" data-source-id="275E"><h2><span class="source-label">275E</span> Pelintasan naik </h2>
+<p>Lemma berikut bergantung pada gagasan
+‘pelintasan naik’. Misalkan <span class="math inline" data-source-tex="x_0,\ldots,x_n">\(x_0,\ldots,x_n\)</span> adalah sebarang daftar bilangan
+real, dan <span class="math inline" data-source-tex="a&lt;b">\(a&lt;b\)</span> dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. <strong>Banyaknya pelintasan naik dari <span class="math inline" data-source-tex="a">\(a\)</span> ke
+<span class="math inline" data-source-tex="b">\(b\)</span></strong> dalam daftar <span class="math inline" data-source-tex="x_0,\ldots,x_n">\(x_0,\ldots,x_n\)</span> adalah banyaknya pasangan <span class="math inline" data-source-tex="(j,k)">\((j,k)\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="0\le j&lt;k\le n">\(0\le j&lt;k\le n\)</span>, <span class="math inline" data-source-tex="x_j\le a">\(x_j\le a\)</span>, <span class="math inline" data-source-tex="x_k\ge b">\(x_k\ge b\)</span>, dan
+<span class="math inline" data-source-tex="a&lt;x_i&lt;b">\(a&lt;x_i&lt;b\)</span> untuk <span class="math inline" data-source-tex="j&lt;i&lt;k">\(j&lt;i&lt;k\)</span>. Perhatikan bahwa ini juga merupakan <span class="math inline" data-source-tex="m">\(m\)</span>
+terbesar sedemikian sehingga <span class="math inline" data-source-tex="s_m&lt;\infty">\(s_m&lt;\infty\)</span>, jika kita menulis</p>
+<div class="centerline"><span class="math inline" data-source-tex="r_1=\inf\{i:i\le n,\,x_i\le a\}">\(r_1=\inf\{i:i\le n,\,x_i\le a\}\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="s_1=\inf\{i:r_1&lt;i\le n,\,x_i\ge b\}">\(s_1=\inf\{i:r_1&lt;i\le n,\,x_i\ge b\}\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="r_2=\inf\{i:s_1&lt;i\le n,\,x_i\le a\}">\(r_2=\inf\{i:s_1&lt;i\le n,\,x_i\le a\}\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="s_2=\inf\{i:r_2&lt;i\le n,\,x_i\ge b\}">\(s_2=\inf\{i:r_2&lt;i\le n,\,x_i\ge b\}\)</span></div>
+<p>dan seterusnya, dengan mengambil <span class="math inline" data-source-tex="\inf\emptyset=\infty">\(\inf\emptyset=\infty\)</span>.</p>
+</section>
+<section class="source-unit" id="275F" data-source-id="275F"><h2><span class="source-label">275F</span> Lemma </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> adalah ruang
+probabilitas dan <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> suatu martingal pada <span class="math inline" data-source-tex="\Omega">\(\Omega\)</span>. Anggap bahwa
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> dan <span class="math inline" data-source-tex="a&lt;b">\(a&lt;b\)</span> dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Untuk setiap
+<span class="math inline" data-source-tex="\omega\in\bigcap_{i\le n}\dom X_i">\(\omega\in\bigcap_{i\le n}\dom X_i\)</span>, misalkan <span class="math inline" data-source-tex="U(\omega)">\(U(\omega)\)</span> adalah banyaknya
+pelintasan naik dari <span class="math inline" data-source-tex="a">\(a\)</span> ke <span class="math inline" data-source-tex="b">\(b\)</span> dalam daftar
+<span class="math inline" data-source-tex="X_0(\omega),\ldots,X_n(\omega)">\(X_0(\omega),\ldots,X_n(\omega)\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Expn(U)\le\Bover1{b-a}\Expn((X_n-X_0)^+)">\(\Expn(U)\le\Bover1{b-a}\Expn((X_n-X_0)^+)\)</span>,</div>
+<p>dengan <span class="math inline" data-source-tex="(X_n-X_0)^+(\omega)=\max(0,X_n(\omega)-X_0(\omega))">\((X_n-X_0)^+(\omega)=\max(0,X_n(\omega)-X_0(\omega))\)</span>
+untuk <span class="math inline" data-source-tex="\omega\in\dom X_n\cap\dom X_0">\(\omega\in\dom X_n\cap\dom X_0\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Setiap langkah tersendiri dalam pembuktian ini bersifat ‘elementer’,
+tetapi strukturnya secara keseluruhan tidak sepele.</p>
+<p> </p>
+<p><strong>(a)</strong> Fakta berikut akan berguna. Misalkan <span class="math inline" data-source-tex="x_0,\ldots,x_n">\(x_0,\ldots,x_n\)</span> adalah
+bilangan real; misalkan <span class="math inline" data-source-tex="u">\(u\)</span> adalah banyaknya pelintasan naik dari <span class="math inline" data-source-tex="a">\(a\)</span> ke <span class="math inline" data-source-tex="b">\(b\)</span>
+dalam daftar <span class="math inline" data-source-tex="x_0,\ldots,x_n">\(x_0,\ldots,x_n\)</span>. Tetapkan <span class="math inline" data-source-tex="y_i=\max(x_i,a)">\(y_i=\max(x_i,a)\)</span> untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>;
+maka <span class="math inline" data-source-tex="u">\(u\)</span> juga merupakan banyaknya pelintasan naik dari <span class="math inline" data-source-tex="a">\(a\)</span> ke <span class="math inline" data-source-tex="b">\(b\)</span> dalam daftar
+<span class="math inline" data-source-tex="y_0,\ldots,y_n">\(y_0,\ldots,y_n\)</span>. Untuk setiap <span class="math inline" data-source-tex="k\le n">\(k\le n\)</span>, tetapkan <span class="math inline" data-source-tex="c_k=1">\(c_k=1\)</span> jika terdapat
+<span class="math inline" data-source-tex="j\le k">\(j\le k\)</span> sedemikian sehingga <span class="math inline" data-source-tex="x_j\le a">\(x_j\le a\)</span> dan <span class="math inline" data-source-tex="x_i&lt;b">\(x_i&lt;b\)</span> untuk <span class="math inline" data-source-tex="j\le i\le k">\(j\le i\le k\)</span>,
+dan <span class="math inline" data-source-tex="0">\(0\)</span> jika tidak. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="(b-a)u\le\sum_{k=0}^{n-1}c_k(y_{k+1}-y_{k})">\((b-a)u\le\sum_{k=0}^{n-1}c_k(y_{k+1}-y_{k})\)</span>.</div>
+<p>Bukti. Saya melakukan induksi pada <span class="math inline" data-source-tex="m">\(m\)</span> untuk menunjukkan bahwa
+(dengan mendefinisikan <span class="math inline" data-source-tex="r_m">\(r_m\)</span>, <span class="math inline" data-source-tex="s_m">\(s_m\)</span> seperti dalam <a class="xref" href="#275E">275E</a>)</p>
+<div class="centerline"><span class="math inline" data-source-tex="(b-a)m\le\sum_{k=0}^{s_m-1}c_k(y_{k+1}-y_{k})">\((b-a)m\le\sum_{k=0}^{s_m-1}c_k(y_{k+1}-y_{k})\)</span></div>
+<p>kapan pun <span class="math inline" data-source-tex="m\le u">\(m\le u\)</span>. Untuk <span class="math inline" data-source-tex="m=0">\(m=0\)</span> (dengan mengambil <span class="math inline" data-source-tex="s_0=-1">\(s_0=-1\)</span>) kita
+mempunyai <span class="math inline" data-source-tex="0=0">\(0=0\)</span>. Untuk langkah induksi menuju <span class="math inline" data-source-tex="m\ge 1">\(m\ge 1\)</span>, kita mempunyai
+<span class="math inline" data-source-tex="s_{m-1}&lt;r_{m}&lt;s_m\le n">\(s_{m-1}&lt;r_{m}&lt;s_m\le n\)</span> (karena saya mengandaikan <span class="math inline" data-source-tex="m\le u">\(m\le u\)</span>), dan
+<span class="math inline" data-source-tex="c_k=0">\(c_k=0\)</span> jika <span class="math inline" data-source-tex="s_{m-1}\le k&lt;r_{m}">\(s_{m-1}\le k&lt;r_{m}\)</span>, <span class="math inline" data-source-tex="c_k=1">\(c_k=1\)</span> jika <span class="math inline" data-source-tex="r_{m}\le k&lt;s_m">\(r_{m}\le k&lt;s_m\)</span>. Jadi</p>
+<p><span class="math display" data-source-tex="\eqalignno{\sum_{k=0}^{s_{m}-1}c_k(y_{k+1}-y_{k})
+&amp;=\sum_{k=0}^{s_{m-1}-1}c_k(y_{k+1}-y_{k})
++\sum_{k=r_m}^{s_m-1}(y_{k+1}-y_k)\cr
+&amp;\ge(b-a)(m-1)+y_{s_m}-y_{r_m}\cr
+\noalign{  (berdasarkan hipotesis induksi)}
+&amp;\ge(b-a)m\cr}">\[\begin{aligned}\sum_{k=0}^{s_{m}-1}c_k(y_{k+1}-y_{k})
+&amp;=\sum_{k=0}^{s_{m-1}-1}c_k(y_{k+1}-y_{k})
++\sum_{k=r_m}^{s_m-1}(y_{k+1}-y_k)\\
+&amp;\ge(b-a)(m-1)+y_{s_m}-y_{r_m}\\
+&amp;\text{(berdasarkan hipotesis induksi)}\\
+&amp;\ge(b-a)m\\\end{aligned}\]</span></p>
+<p>(karena <span class="math inline" data-source-tex="y_{s_m}\ge b">\(y_{s_m}\ge b\)</span>, <span class="math inline" data-source-tex="y_{r_m}=a">\(y_{r_m}=a\)</span>), dan induksi berlanjut.</p>
+<p>Dengan demikian</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{k=0}^{s_u-1}c_k(y_{k+1}-y_{k})\ge(b-a)u">\(\sum_{k=0}^{s_u-1}c_k(y_{k+1}-y_{k})\ge(b-a)u\)</span>.</div>
+<p>Untuk jumlah <span class="math inline" data-source-tex="\sum_{k=s_u}^{n-1}c_k(y_{k+1}-y_k)">\(\sum_{k=s_u}^{n-1}c_k(y_{k+1}-y_k)\)</span>, kita mempunyai
+<span class="math inline" data-source-tex="c_k=0">\(c_k=0\)</span> untuk <span class="math inline" data-source-tex="s_u\le k&lt;r_{u+1}">\(s_u\le k&lt;r_{u+1}\)</span>, <span class="math inline" data-source-tex="c_k=1">\(c_k=1\)</span> untuk
+<span class="math inline" data-source-tex="r_{u+1}\le k&lt;s_{u+1}">\(r_{u+1}\le k&lt;s_{u+1}\)</span>, sedangkan <span class="math inline" data-source-tex="s_{u+1}&gt;n">\(s_{u+1}&gt;n\)</span>, sehingga jika
+<span class="math inline" data-source-tex="n\le r_{u+1}">\(n\le r_{u+1}\)</span> kita mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{k=0}^{n-1}c_k(y_{k+1}-y_{k})
+=\sum_{k=0}^{s_u-1}c_k(y_{k+1}-y_{k})\ge(b-a)u">\(\sum_{k=0}^{n-1}c_k(y_{k+1}-y_{k})
+=\sum_{k=0}^{s_u-1}c_k(y_{k+1}-y_{k})\ge(b-a)u\)</span>,</div>
+<p>sedangkan jika <span class="math inline" data-source-tex="n&gt;r_{u+1}">\(n&gt;r_{u+1}\)</span> kita mempunyai</p>
+<p><span class="math display" data-source-tex="\eqalign{\sum_{k=0}^{n-1}c_k(y_{k+1}-y_{k})
+&amp;=\sum_{k=0}^{s_u-1}c_k(y_{k+1}-y_{k})
++\sum_{k=r_{u+1}}^{n-1}y_{k+1}-y_k\cr
+&amp;\ge(b-a)u+y_n-y_{r_{u+1}}\cr
+&amp;\ge(b-a)u\cr}">\[\begin{aligned}\sum_{k=0}^{n-1}c_k(y_{k+1}-y_{k})
+&amp;=\sum_{k=0}^{s_u-1}c_k(y_{k+1}-y_{k})
++\sum_{k=r_{u+1}}^{n-1}y_{k+1}-y_k\\
+&amp;\ge(b-a)u+y_n-y_{r_{u+1}}\\
+&amp;\ge(b-a)u\\\end{aligned}\]</span></p>
+<p>karena <span class="math inline" data-source-tex="y_n\ge a=y_{r_{u+1}}">\(y_n\ge a=y_{r_{u+1}}\)</span>. Jadi dalam kedua kasus kita
+memperoleh hasil yang diperlukan. ∎</p>
+<p> </p>
+<p><strong>(b)(i)</strong> Sekarang definisikan</p>
+<div class="centerline"><span class="math inline" data-source-tex="Y_k(\omega)=\max(a,X_k(\omega))">\(Y_k(\omega)=\max(a,X_k(\omega))\)</span> untuk <span class="math inline" data-source-tex="\omega\in\dom X_k">\(\omega\in\dom X_k\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="F_k=\{\omega:\omega\in\bigcap_{i\le k}\dom X_i,\,
+\exists\,j\le k,\,X_j(\omega)\le a,\,X_i(\omega)&lt;b">\(F_k=\{\omega:\omega\in\bigcap_{i\le k}\dom X_i,\,
+\exists\,j\le k,\,X_j(\omega)\le a,\,X_i(\omega)&lt;b\)</span> jika <span class="math inline" data-source-tex="j\le i\le k\}">\(j\le i\le k\}\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="k\in\Bbb N">\(k\in\Bbb N\)</span>. Jika <span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span> adalah
+barisan aljabar-sigma tak menurun yang terhadapnya <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span>
+teradaptasi, maka <span class="math inline" data-source-tex="F_k\in\Sigma_k">\(F_k\in\Sigma_k\)</span> (karena jika <span class="math inline" data-source-tex="j\le k">\(j\le k\)</span>, semua himpunan
+<span class="math inline" data-source-tex="\dom X_j">\(\dom X_j\)</span>, <span class="math inline" data-source-tex="\{\omega:X_j(\omega)\le a\}">\(\{\omega:X_j(\omega)\le a\}\)</span>,
+<span class="math inline" data-source-tex="\{\omega:X_j(\omega)&lt;b\}">\(\{\omega:X_j(\omega)&lt;b\}\)</span> termasuk dalam
+<span class="math inline" data-source-tex="\Sigma_j\subseteq\Sigma_k">\(\Sigma_j\subseteq\Sigma_k\)</span>).</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Kita mendapati bahwa <span class="math inline" data-source-tex="\int_FY_k\le\int_FY_{k+1}">\(\int_FY_k\le\int_FY_{k+1}\)</span> jika
+<span class="math inline" data-source-tex="F\in\Sigma_k">\(F\in\Sigma_k\)</span>. Bukti. Tetapkan <span class="math inline" data-source-tex="G=\{\omega:X_k(\omega)&gt;a\}\in\Sigma_k">\(G=\{\omega:X_k(\omega)&gt;a\}\in\Sigma_k\)</span>.
+Maka</p>
+<p><span class="math display" data-source-tex="\eqalign{\int_FY_k
+&amp;=\int_{F\cap G}X_k+a\hat\mu(F\setminus G)\cr
+&amp;=\int_{F\cap G}X_{k+1}+a\hat\mu(F\setminus G)\cr
+&amp;\le\int_{F\cap G}Y_{k+1}+\int_{F\setminus G}Y_{k+1}
+=\int_FY_{k+1}.\,\,\Qed\cr}">\[\begin{aligned}\int_FY_k
+&amp;=\int_{F\cap G}X_k+a\hat\mu(F\setminus G)\\
+&amp;=\int_{F\cap G}X_{k+1}+a\hat\mu(F\setminus G)\\
+&amp;\le\int_{F\cap G}Y_{k+1}+\int_{F\setminus G}Y_{k+1}
+=\int_FY_{k+1}.\,\,\Qed\\\end{aligned}\]</span></p>
+<p> </p>
+<p>  <strong>(iii)</strong>
+Akibatnya <span class="math inline" data-source-tex="\int_FY_{k+1}-Y_k\le\int Y_{k+1}-Y_k">\(\int_FY_{k+1}-Y_k\le\int Y_{k+1}-Y_k\)</span> untuk setiap
+<span class="math inline" data-source-tex="F\in\Sigma_k">\(F\in\Sigma_k\)</span>.</p>
+<div class="centerline">Bukti.  <span class="math inline" data-source-tex="\int (Y_{k+1}-Y_k)-\int_F(Y_{k+1}-Y_k)
+=\int_{\Omega\setminus F}Y_{k+1}-\int_{\Omega\setminus F}Y_k\ge 0">\(\int (Y_{k+1}-Y_k)-\int_F(Y_{k+1}-Y_k)
+=\int_{\Omega\setminus F}Y_{k+1}-\int_{\Omega\setminus F}Y_k\ge 0\)</span>.
+∎</div>
+<p> </p>
+<p><strong>(c)</strong> Misalkan <span class="math inline" data-source-tex="H">\(H\)</span> adalah himpunan koterabaikan
+<span class="math inline" data-source-tex="\dom U=\bigcap_{i\le n}\dom X_i\in\Sigma_n">\(\dom U=\bigcap_{i\le n}\dom X_i\in\Sigma_n\)</span>. Pada suatu titik kita perlu
+memeriksa bahwa <span class="math inline" data-source-tex="U">\(U\)</span> terukur terhadap <span class="math inline" data-source-tex="\Sigma_n">\(\Sigma_n\)</span>; tetapi hal ini jelas benar,
+karena semua himpunan yang relevan <span class="math inline" data-source-tex="\{\omega:X_i(\omega)\le a\}">\(\{\omega:X_i(\omega)\le a\}\)</span>,
+<span class="math inline" data-source-tex="\{\omega:X_i(\omega)\ge b\}">\(\{\omega:X_i(\omega)\ge b\}\)</span> termasuk dalam <span class="math inline" data-source-tex="\Sigma_n">\(\Sigma_n\)</span>. Untuk setiap
+<span class="math inline" data-source-tex="\omega\in H">\(\omega\in H\)</span>, terapkan (a) pada daftar
+<span class="math inline" data-source-tex="X_0(\omega),\ldots,X_n(\omega)">\(X_0(\omega),\ldots,X_n(\omega)\)</span> untuk melihat bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="(b-a)U(\omega)\le\sum_{k=0}^{n-1}\chi F_k(\omega)
+(Y_{k+1}(\omega)-Y_k(\omega))">\((b-a)U(\omega)\le\sum_{k=0}^{n-1}\chi F_k(\omega)
+(Y_{k+1}(\omega)-Y_k(\omega))\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="H">\(H\)</span> koterabaikan, diperoleh</p>
+<p><span class="math display" data-source-tex="\eqalignno{(b-a)\Expn(U)
+&amp;\le\sum_{k=0}^{n-1}\int_{F_k}Y_{k+1}-Y_k
+\le\sum_{k=0}^{n-1}\int Y_{k+1}-Y_k\cr
+\noalign{  (menggunakan (b-iii))}
+&amp;=\Expn(Y_n-Y_0)
+\le\Expn((X_n-X_0)^+)\cr}">\[\begin{aligned}(b-a)\Expn(U)
+&amp;\le\sum_{k=0}^{n-1}\int_{F_k}Y_{k+1}-Y_k
+\le\sum_{k=0}^{n-1}\int Y_{k+1}-Y_k\\
+&amp;\text{(menggunakan (b-iii))}\\
+&amp;=\Expn(Y_n-Y_0)
+\le\Expn((X_n-X_0)^+)\\\end{aligned}\]</span></p>
+<p>karena <span class="math inline" data-source-tex="Y_n-Y_0\le(X_n-X_0)^+">\(Y_n-Y_0\le(X_n-X_0)^+\)</span> di mana-mana pada
+<span class="math inline" data-source-tex="\dom X_n\cap\dom X_0">\(\dom X_n\cap\dom X_0\)</span>. Ini menuntaskan pembuktian.</p></aside>
+</section>
+<section class="source-unit" id="275G" data-source-id="275G"><h2><span class="source-label">275G</span>  </h2>
+<p>Sekarang kita siap untuk teorema-teorema utama dalam
+bagian ini.</p>
+<p> </p>
+<p><strong>Teorema Konvergensi Martingal Doob</strong> Misalkan
+<span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> adalah suatu martingal pada ruang probabilitas
+<span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span>, dan anggap bahwa
+<span class="math inline" data-source-tex="\sup_{n\in\Bbb N}\Expn(|X_n|)&lt;\infty">\(\sup_{n\in\Bbb N}\Expn(|X_n|)&lt;\infty\)</span>. Maka
+<span class="math inline" data-source-tex="\lim_{n\to\infty}X_n(\omega)">\(\lim_{n\to\infty}X_n(\omega)\)</span> terdefinisi dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> untuk hampir
+setiap <span class="math inline" data-source-tex="\omega">\(\omega\)</span> dalam <span class="math inline" data-source-tex="\Omega">\(\Omega\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Tetapkan <span class="math inline" data-source-tex="H=\bigcap_{n\in\Bbb N}\dom X_n">\(H=\bigcap_{n\in\Bbb N}\dom X_n\)</span>, dan untuk
+<span class="math inline" data-source-tex="\omega\in H">\(\omega\in H\)</span> tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="Y(\omega)=\liminf_{n\to\infty}X_n(\omega)">\(Y(\omega)=\liminf_{n\to\infty}X_n(\omega)\)</span>,
+  <span class="math inline" data-source-tex="Z(\omega)=\limsup_{n\to\infty}X_n(\omega)">\(Z(\omega)=\limsup_{n\to\infty}X_n(\omega)\)</span>,</div>
+<p>dengan memperbolehkan <span class="math inline" data-source-tex="\pm\infty">\(\pm\infty\)</span> dalam kedua kasus. Namun
+perhatikan bahwa <span class="math inline" data-source-tex="Y\le\liminf_{n\to\infty}|X_n|">\(Y\le\liminf_{n\to\infty}|X_n|\)</span>, sehingga berdasarkan lemma
+Fatou <span class="math inline" data-source-tex="Y(\omega)&lt;\infty">\(Y(\omega)&lt;\infty\)</span> untuk hampir setiap <span class="math inline" data-source-tex="\omega">\(\omega\)</span>; demikian pula
+<span class="math inline" data-source-tex="Z(\omega)&gt;-\infty">\(Z(\omega)&gt;-\infty\)</span> untuk hampir setiap <span class="math inline" data-source-tex="\omega">\(\omega\)</span>. Karena itu cukup jika saya
+dapat menunjukkan bahwa <span class="math inline" data-source-tex="Y\eae Z">\(Y\eae Z\)</span>, sebab dengan demikian
+<span class="math inline" data-source-tex="Y(\omega)=Z(\omega)\in\Bbb R">\(Y(\omega)=Z(\omega)\in\Bbb R\)</span> untuk hampir setiap <span class="math inline" data-source-tex="\omega">\(\omega\)</span>, dan
+<span class="math inline" data-source-tex="\sequencen{X_n(\omega)}">\(\sequencen{X_n(\omega)}\)</span> akan konvergen untuk hampir setiap <span class="math inline" data-source-tex="\omega">\(\omega\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> ? Jadi andaikan, jika mungkin, bahwa <span class="math inline" data-source-tex="Y">\(Y\)</span> dan <span class="math inline" data-source-tex="Z">\(Z\)</span> tidak sama
+hampir di mana-mana. Tentu keduanya terukur terhadap <span class="math inline" data-source-tex="\hat\Sigma">\(\hat\Sigma\)</span>, dengan
+<span class="math inline" data-source-tex="(\Omega,\hat\Sigma,\hat\mu)">\((\Omega,\hat\Sigma,\hat\mu)\)</span> adalah pelengkapan
+<span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span>, sehingga kita harus mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\hat\mu\{\omega:\omega\in H,\,Y(\omega)&lt;Z(\omega)\}&gt;0">\(\hat\mu\{\omega:\omega\in H,\,Y(\omega)&lt;Z(\omega)\}&gt;0\)</span>.</div>
+<p>Oleh karena itu terdapat bilangan rasional <span class="math inline" data-source-tex="q">\(q\)</span>, <span class="math inline" data-source-tex="q&#x27;">\(q&#x27;\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="q&lt;q&#x27;">\(q&lt;q&#x27;\)</span> dan <span class="math inline" data-source-tex="\hat\mu G&gt;0">\(\hat\mu G&gt;0\)</span>, dengan</p>
+<div class="centerline"><span class="math inline" data-source-tex="G=\{\omega:\omega\in H,\,Y(\omega)&lt;q&lt;q&#x27;&lt;Z(\omega)\}">\(G=\{\omega:\omega\in H,\,Y(\omega)&lt;q&lt;q&#x27;&lt;Z(\omega)\}\)</span>.</div>
+<p>Sekarang, untuk setiap <span class="math inline" data-source-tex="\omega\in H">\(\omega\in H\)</span> dan <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, misalkan
+<span class="math inline" data-source-tex="U_n(\omega)">\(U_n(\omega)\)</span> adalah banyaknya pelintasan naik dari <span class="math inline" data-source-tex="q">\(q\)</span> ke <span class="math inline" data-source-tex="q&#x27;">\(q&#x27;\)</span> dalam daftar
+<span class="math inline" data-source-tex="X_0(\omega),\ldots,X_n(\omega)">\(X_0(\omega),\ldots,X_n(\omega)\)</span>. Maka <a class="xref" href="#275F">275F</a> memberi tahu kita bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Expn(U_n)\le\Bover1{q&#x27;-q}\Expn((X_n-X_0)^+)
+\le\Bover1{q&#x27;-q}\Expn(|X_n|+|X_0|)
+\le\Bover{2M}{q&#x27;-q}">\(\Expn(U_n)\le\Bover1{q&#x27;-q}\Expn((X_n-X_0)^+)
+\le\Bover1{q&#x27;-q}\Expn(|X_n|+|X_0|)
+\le\Bover{2M}{q&#x27;-q}\)</span>,</div>
+<p>jika kita menulis <span class="math inline" data-source-tex="M=\sup_{i\in\Bbb N}\Expn(|X_i|)">\(M=\sup_{i\in\Bbb N}\Expn(|X_i|)\)</span>. Berdasarkan
+teorema B.Levi, <span class="math inline" data-source-tex="U(\omega)=\sup_{n\in\Bbb N}U_n(\omega)&lt;\infty">\(U(\omega)=\sup_{n\in\Bbb N}U_n(\omega)&lt;\infty\)</span> untuk hampir
+setiap <span class="math inline" data-source-tex="\omega">\(\omega\)</span>. Di sisi lain, jika <span class="math inline" data-source-tex="\omega\in G">\(\omega\in G\)</span>, maka terdapat <span class="math inline" data-source-tex="j">\(j\)</span>, <span class="math inline" data-source-tex="k">\(k\)</span>
+sebesar apa pun sedemikian sehingga <span class="math inline" data-source-tex="X_j(\omega)&lt;q">\(X_j(\omega)&lt;q\)</span> dan <span class="math inline" data-source-tex="X_k(\omega)&gt;q&#x27;">\(X_k(\omega)&gt;q&#x27;\)</span>,
+sehingga <span class="math inline" data-source-tex="U(\omega)=\infty">\(U(\omega)=\infty\)</span>. Ini berarti bahwa <span class="math inline" data-source-tex="\hat\mu G">\(\hat\mu G\)</span> harus bernilai
+<span class="math inline" data-source-tex="0">\(0\)</span>, bertentangan dengan pilihan <span class="math inline" data-source-tex="q">\(q\)</span> dan <span class="math inline" data-source-tex="q&#x27;">\(q&#x27;\)</span>. !</p>
+<p> </p>
+<p><strong>(c)</strong> Jadi sebenarnya kita harus mempunyai <span class="math inline" data-source-tex="Y\eae Z">\(Y\eae Z\)</span>, dan
+<span class="math inline" data-source-tex="\sequencen{X_n(\omega)}">\(\sequencen{X_n(\omega)}\)</span> konvergen untuk hampir setiap <span class="math inline" data-source-tex="\omega">\(\omega\)</span>, sebagaimana
+diklaim.</p></aside>
+</section>
+<section class="source-unit" id="275H" data-source-id="275H"><h2><span class="source-label">275H</span> Teorema </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> adalah ruang probabilitas, dan
+<span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span> barisan subaljabar-sigma dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> yang tak
+menurun. Misalkan <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> adalah martingal yang teradaptasi terhadap
+<span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span>. Maka pernyataan berikut ekuivalen:</p>
+<p>  (i) terdapat variabel acak <span class="math inline" data-source-tex="X">\(X\)</span>, dengan ekspektasi berhingga, sedemikian
+sehingga <span class="math inline" data-source-tex="X_n">\(X_n\)</span> adalah suatu ekspektasi bersyarat dari <span class="math inline" data-source-tex="X">\(X\)</span> pada <span class="math inline" data-source-tex="\Sigma_n">\(\Sigma_n\)</span>
+untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>;</p>
+<p>   (ii) <span class="math inline" data-source-tex="\{X_n:n\in\Bbb N\}">\(\{X_n:n\in\Bbb N\}\)</span> terintegralkan secara seragam;</p>
+<p>   (iii) <span class="math inline" data-source-tex="X_{\infty}(\omega)=\lim_{n\to\infty}X_n(\omega)">\(X_{\infty}(\omega)=\lim_{n\to\infty}X_n(\omega)\)</span> terdefinisi
+dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> untuk hampir setiap <span class="math inline" data-source-tex="\omega">\(\omega\)</span>, dan
+<span class="math inline" data-source-tex="\Expn(|X_{\infty}|)=\lim_{n\to\infty}\Expn(|X_n|)&lt;\infty">\(\Expn(|X_{\infty}|)=\lim_{n\to\infty}\Expn(|X_n|)&lt;\infty\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(i)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(ii)</strong> Berdasarkan <a class="xref" href="../246/index.html#246D">246D</a>, himpunan semua ekspektasi
+bersyarat dari <span class="math inline" data-source-tex="X">\(X\)</span> terintegralkan secara seragam, sehingga
+<span class="math inline" data-source-tex="\{X_n:n\in\Bbb N\}">\(\{X_n:n\in\Bbb N\}\)</span> tentu terintegralkan secara seragam.</p>
+<p> </p>
+<p><strong>(ii)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(iii)</strong> Jika <span class="math inline" data-source-tex="\{X_n:n\in\Bbb N\}">\(\{X_n:n\in\Bbb N\}\)</span> terintegralkan
+secara seragam, kita tentu mempunyai
+<span class="math inline" data-source-tex="\sup_{n\in\Bbb N}\Expn(|X_n|)&lt;\infty">\(\sup_{n\in\Bbb N}\Expn(|X_n|)&lt;\infty\)</span>, sehingga <a class="xref" href="#275G">275G</a> memberi tahu kita
+bahwa <span class="math inline" data-source-tex="X_{\infty}">\(X_{\infty}\)</span> terdefinisi hampir di mana-mana. Berdasarkan 246Ja,
+<span class="math inline" data-source-tex="X_{\infty}">\(X_{\infty}\)</span> terintegralkan dan
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\Expn(|X_n-X_{\infty}|)=0">\(\lim_{n\to\infty}\Expn(|X_n-X_{\infty}|)=0\)</span>. Akibatnya
+<span class="math inline" data-source-tex="\Expn(|X_{\infty}|)=\lim_{n\to\infty}\Expn(|X_n|)&lt;\infty">\(\Expn(|X_{\infty}|)=\lim_{n\to\infty}\Expn(|X_n|)&lt;\infty\)</span>.</p>
+<p> </p>
+<p><strong>(iii)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(i)</strong> Karena
+<span class="math inline" data-source-tex="\Expn(|X_{\infty}|)=\lim_{n\to\infty}\Expn(|X_n|)">\(\Expn(|X_{\infty}|)=\lim_{n\to\infty}\Expn(|X_n|)\)</span>,
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\Expn(|X_n-X_{\infty}|)=0">\(\lim_{n\to\infty}\Expn(|X_n-X_{\infty}|)=0\)</span> (<a class="xref" href="../245/index.html#245H">245H</a>(a-ii)). Sekarang ambil
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> dan <span class="math inline" data-source-tex="E\in\Sigma_n">\(E\in\Sigma_n\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_EX_n=\lim_{m\to\infty}\int_EX_m=\int_EX_{\infty}">\(\int_EX_n=\lim_{m\to\infty}\int_EX_m=\int_EX_{\infty}\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="E">\(E\)</span> sebarang, <span class="math inline" data-source-tex="X_n">\(X_n\)</span> adalah suatu ekspektasi bersyarat dari
+<span class="math inline" data-source-tex="X_{\infty}">\(X_{\infty}\)</span> pada <span class="math inline" data-source-tex="\Sigma_n">\(\Sigma_n\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="275I" data-source-id="275I"><h2><span class="source-label">275I</span> Teorema </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> adalah ruang
+probabilitas, dan <span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span> barisan subaljabar-sigma dari
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> yang tak menurun; tuliskan <span class="math inline" data-source-tex="\Sigma_{\infty}">\(\Sigma_{\infty}\)</span> untuk aljabar-sigma yang
+dibangkitkan oleh <span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}\Sigma_n">\(\bigcup_{n\in\Bbb N}\Sigma_n\)</span>. Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> adalah
+sebarang variabel acak bernilai real pada <span class="math inline" data-source-tex="\Omega">\(\Omega\)</span> dengan ekspektasi berhingga,
+dan untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> misalkan <span class="math inline" data-source-tex="X_n">\(X_n\)</span> adalah suatu ekspektasi bersyarat
+dari <span class="math inline" data-source-tex="X">\(X\)</span> pada <span class="math inline" data-source-tex="\Sigma_n">\(\Sigma_n\)</span>. Maka
+<span class="math inline" data-source-tex="X_{\infty}(\omega)=\lim_{n\to\infty}X_n(\omega)">\(X_{\infty}(\omega)=\lim_{n\to\infty}X_n(\omega)\)</span> terdefinisi hampir di
+mana-mana; <span class="math inline" data-source-tex="\lim_{n\to\infty}\Expn(|X_{\infty}-X_n|)=0">\(\lim_{n\to\infty}\Expn(|X_{\infty}-X_n|)=0\)</span>, dan <span class="math inline" data-source-tex="X_{\infty}">\(X_{\infty}\)</span>
+adalah suatu ekspektasi bersyarat dari <span class="math inline" data-source-tex="X">\(X\)</span> pada <span class="math inline" data-source-tex="\Sigma_{\infty}">\(\Sigma_{\infty}\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Berdasarkan <a class="xref" href="#275G">275G</a>-<a class="xref" href="#275H">275H</a>, kita tahu bahwa <span class="math inline" data-source-tex="X_{\infty}">\(X_{\infty}\)</span> terdefinisi
+hampir di mana-mana, dan, sebagaimana dicatat dalam bukti <a class="xref" href="#275H">275H</a>,
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\Expn(|X_{\infty}-X_n|)=0">\(\lim_{n\to\infty}\Expn(|X_{\infty}-X_n|)=0\)</span>. Untuk melihat bahwa
+<span class="math inline" data-source-tex="X_{\infty}">\(X_{\infty}\)</span> adalah suatu ekspektasi bersyarat dari <span class="math inline" data-source-tex="X">\(X\)</span> pada
+<span class="math inline" data-source-tex="\Sigma_{\infty}">\(\Sigma_{\infty}\)</span>, tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Cal A
+=\{E:E\in\Sigma_{\infty},\,\int_EX_{\infty}=\int_EX\}">\(\Cal A
+=\{E:E\in\Sigma_{\infty},\,\int_EX_{\infty}=\int_EX\}\)</span>,
+  <span class="math inline" data-source-tex="\Cal I=\bigcup_{n\in\Bbb N}\Sigma_n">\(\Cal I=\bigcup_{n\in\Bbb N}\Sigma_n\)</span>.</div>
+<p>Sekarang <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> dan <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> memenuhi syarat-syarat Teorema
+Kelas Monoton (<a class="xref" href="../136/index.html#136B">136B</a>). Bukti. <strong>(<span class="math inline" data-source-tex="\pmb{\alpha}">\(\pmb{\alpha}\)</span>)</strong> Tentu saja
+<span class="math inline" data-source-tex="\Omega\in\Cal I">\(\Omega\in\Cal I\)</span> dan <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> tertutup terhadap irisan berhingga, karena
+<span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span> adalah barisan aljabar-sigma yang tak menurun; bahkan
+<span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> merupakan subaljabar dari <span class="math inline" data-source-tex="\Cal P\Omega">\(\Cal P\Omega\)</span>, dan tertutup terhadap
+gabungan berhingga dan komplemen. <strong>(<span class="math inline" data-source-tex="\pmb{\beta}">\(\pmb{\beta}\)</span>)</strong> Jika
+<span class="math inline" data-source-tex="E\in\Cal I">\(E\in\Cal I\)</span>, katakanlah <span class="math inline" data-source-tex="E\in\Sigma_n">\(E\in\Sigma_n\)</span>; maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_EX_{\infty}=\lim_{m\to\infty}\int_EX_m=\int_EX">\(\int_EX_{\infty}=\lim_{m\to\infty}\int_EX_m=\int_EX\)</span>,</div>
+<p>seperti dalam (iii)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(i) dari <a class="xref" href="#275H">275H</a>, sehingga
+<span class="math inline" data-source-tex="E\in\Cal A">\(E\in\Cal A\)</span>. Jadi <span class="math inline" data-source-tex="\Cal I\subseteq\Cal A">\(\Cal I\subseteq\Cal A\)</span>.
+<strong>(<span class="math inline" data-source-tex="\pmb{\gamma}">\(\pmb{\gamma}\)</span>)</strong> Jika <span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="F\in\Cal A">\(F\in\Cal A\)</span> dan <span class="math inline" data-source-tex="E\subseteq F">\(E\subseteq F\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_{F\setminus E}X_{\infty}
+=\int_FX_{\infty}-\int_EX_{\infty}
+=\int_FX-\int_EX
+=\int_{F\setminus E}X">\(\int_{F\setminus E}X_{\infty}
+=\int_FX_{\infty}-\int_EX_{\infty}
+=\int_FX-\int_EX
+=\int_{F\setminus E}X\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="F\setminus E\in\Cal A">\(F\setminus E\in\Cal A\)</span>.
+<strong>(<span class="math inline" data-source-tex="\pmb{\delta}">\(\pmb{\delta}\)</span>)</strong> Jika <span class="math inline" data-source-tex="\sequencen{E_k}">\(\sequencen{E_k}\)</span> adalah barisan tak menurun
+dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> dengan gabungan <span class="math inline" data-source-tex="E">\(E\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_{E}X_{\infty}
+=\lim_{k\to\infty}\int_{E_k}X_{\infty}
+=\lim_{k\to\infty}\int_{E_k}X
+=\int_{E}X">\(\int_{E}X_{\infty}
+=\lim_{k\to\infty}\int_{E_k}X_{\infty}
+=\lim_{k\to\infty}\int_{E_k}X
+=\int_{E}X\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="E\in\Cal A">\(E\in\Cal A\)</span>. Jadi <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> adalah kelas Dynkin. ∎</p>
+<p>Akibatnya, berdasarkan <a class="xref" href="../136/index.html#136B">136B</a>, <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> mencakup <span class="math inline" data-source-tex="\Sigma_{\infty}">\(\Sigma_{\infty}\)</span>; yakni,
+<span class="math inline" data-source-tex="X_{\infty}">\(X_{\infty}\)</span> adalah suatu ekspektasi bersyarat dari <span class="math inline" data-source-tex="X">\(X\)</span> pada
+<span class="math inline" data-source-tex="\Sigma_{\infty}">\(\Sigma_{\infty}\)</span>.</p></aside>
+<p> </p>
+<p><strong>Catatan</strong> Saya telah menulis
+‘<span class="math inline" data-source-tex="\lim_{n\to\infty}\Expn(|X_n-X_{\infty}|)=0">\(\lim_{n\to\infty}\Expn(|X_n-X_{\infty}|)=0\)</span>’; tetapi Anda mungkin lebih
+suka mengatakan ‘<span class="math inline" data-source-tex="X^{\ssbullet}_{\infty}=\lim_{n\to\infty}X_n^{\ssbullet}">\(X^{\ssbullet}_{\infty}=\lim_{n\to\infty}X_n^{\ssbullet}\)</span>
+dalam <span class="math inline" data-source-tex="L^1(\mu)">\(L^1(\mu)\)</span>’, seperti dalam Bab <a class="xref" href="../24/index.html#24">24</a>.</p>
+<p>Teorema ini begitu penting sehingga Anda mungkin tertarik pada pembuktian
+yang didasarkan pada <a class="xref" href="#275D">275D</a> alih-alih <a class="xref" href="#275E">275E</a>-<a class="xref" href="#275G">275G</a>; lihat <a class="xref" href="#275Xd">275Xd</a>.</p>
+</section>
+<section class="source-unit" id="275J" data-source-id="275J"><h2><span class="source-label">275J</span>  </h2>
+<p>Sebagai akibat teorema ini saya memberikan hasil
+penting, sejenis teorema kepadatan untuk ukuran produk.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Misalkan
+<span class="math inline" data-source-tex="\sequencen{(\Omega_n,\Sigma_n,\mu_n)}">\(\sequencen{(\Omega_n,\Sigma_n,\mu_n)}\)</span> adalah barisan ruang probabilitas
+dengan produk <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span>. Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> adalah variabel acak
+bernilai real pada <span class="math inline" data-source-tex="\Omega">\(\Omega\)</span> dengan ekspektasi berhingga. Untuk setiap
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> definisikan <span class="math inline" data-source-tex="X_n">\(X_n\)</span> dengan menetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="X_n(\pmb{\omega})
+=\int X(\omega_0,\ldots,\omega_n,\xi_{n+1},\ldots)d(\xi_{n+1},\ldots)">\(X_n(\pmb{\omega})
+=\int X(\omega_0,\ldots,\omega_n,\xi_{n+1},\ldots)d(\xi_{n+1},\ldots)\)</span></div>
+<p>di mana pun ini terdefinisi, dengan saya menulis
+‘<span class="math inline" data-source-tex="\int\ldots d(\xi_{n+1},\ldots)">\(\int\ldots d(\xi_{n+1},\ldots)\)</span>’ untuk menyatakan integrasi terhadap
+ukuran produk <span class="math inline" data-source-tex="\lambda&#x27;_n">\(\lambda&#x27;_n\)</span> pada <span class="math inline" data-source-tex="\prod_{i\ge n+1}\Omega_i">\(\prod_{i\ge n+1}\Omega_i\)</span>. Maka
+<span class="math inline" data-source-tex="X(\pmb{\omega})=\lim_{n\to\infty}X_n(\pmb{\omega})">\(X(\pmb{\omega})=\lim_{n\to\infty}X_n(\pmb{\omega})\)</span> untuk hampir setiap
+<span class="math inline" data-source-tex="\pmb{\omega}=(\omega_0,\omega_1,\ldots)">\(\pmb{\omega}=(\omega_0,\omega_1,\ldots)\)</span> dalam <span class="math inline" data-source-tex="\Omega">\(\Omega\)</span>, dan
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\Expn(|X-X_n|)=0">\(\lim_{n\to\infty}\Expn(|X-X_n|)=0\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, kita dapat mengidentifikasi <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dengan produk
+<span class="math inline" data-source-tex="\lambda_n">\(\lambda_n\)</span> dan <span class="math inline" data-source-tex="\lambda&#x27;_n">\(\lambda&#x27;_n\)</span>, dengan <span class="math inline" data-source-tex="\lambda_n">\(\lambda_n\)</span> adalah ukuran produk pada
+<span class="math inline" data-source-tex="\Omega_0\times\ldots\times\Omega_n">\(\Omega_0\times\ldots\times\Omega_n\)</span> (<a class="xref" href="../254/index.html#254N">254N</a>). Jadi <a class="xref" href="../253/index.html#253H">253H</a> memberi tahu kita
+bahwa <span class="math inline" data-source-tex="X_n">\(X_n\)</span> adalah suatu ekspektasi bersyarat dari <span class="math inline" data-source-tex="X">\(X\)</span> pada aljabar-sigma
+<span class="math inline" data-source-tex="\Lambda_n=\{E\times\prod_{i&gt;n}\Omega_i:E\in\dom\lambda_n\}">\(\Lambda_n=\{E\times\prod_{i&gt;n}\Omega_i:E\in\dom\lambda_n\}\)</span>. Karena
+(kembali berdasarkan <a class="xref" href="../254/index.html#254N">254N</a>) kita dapat memandang <span class="math inline" data-source-tex="\lambda_{n+1}">\(\lambda_{n+1}\)</span> sebagai
+produk <span class="math inline" data-source-tex="\lambda_n">\(\lambda_n\)</span> dan <span class="math inline" data-source-tex="\mu_{n+1}">\(\mu_{n+1}\)</span>, <span class="math inline" data-source-tex="\Lambda_n\subseteq\Lambda_{n+1}">\(\Lambda_n\subseteq\Lambda_{n+1}\)</span> untuk
+setiap <span class="math inline" data-source-tex="n">\(n\)</span>. Jadi <a class="xref" href="#275I">275I</a> memberi tahu kita bahwa <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> konvergen
+hampir di mana-mana menuju suatu ekspektasi bersyarat <span class="math inline" data-source-tex="X_{\infty}">\(X_{\infty}\)</span> dari <span class="math inline" data-source-tex="X">\(X\)</span>
+pada aljabar-sigma <span class="math inline" data-source-tex="\Lambda_{\infty}">\(\Lambda_{\infty}\)</span> yang dibangkitkan oleh
+<span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}\Lambda_n">\(\bigcup_{n\in\Bbb N}\Lambda_n\)</span>. Sekarang
+<span class="math inline" data-source-tex="\Lambda_{\infty}\subseteq\Sigma">\(\Lambda_{\infty}\subseteq\Sigma\)</span> dan juga
+<span class="math inline" data-source-tex="\Tensorhat_{n\in\Bbb N}\Sigma_n\subseteq\Lambda_{\infty}">\(\Tensorhat_{n\in\Bbb N}\Sigma_n\subseteq\Lambda_{\infty}\)</span>, sehingga setiap
+anggota <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> diapit oleh dua anggota <span class="math inline" data-source-tex="\Lambda_{\infty}">\(\Lambda_{\infty}\)</span> yang berukuran
+sama (254Ff), dan <span class="math inline" data-source-tex="X_{\infty}">\(X_{\infty}\)</span> harus sama dengan <span class="math inline" data-source-tex="X">\(X\)</span> hampir di mana-mana.
+Selain itu, <a class="xref" href="#275I">275I</a> juga memberi tahu kita bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{n\to\infty}\Expn(|X-X_n|)
+=\lim_{n\to\infty}\Expn(|X_{\infty}-X_n|)=0">\(\lim_{n\to\infty}\Expn(|X-X_n|)
+=\lim_{n\to\infty}\Expn(|X_{\infty}-X_n|)=0\)</span>,</div>
+<p>sebagaimana diperlukan.</p></aside>
+</section>
+<section class="source-unit" id="275K" data-source-id="275K"><h2><span class="source-label">275K</span> Martingal terbalik </h2>
+<p>Kita mempunyai hasil
+yang bersesuaian dengan <a class="xref" href="#275I">275I</a> untuk barisan aljabar-sigma yang <em>menurun</em>.
+Meskipun lebih jarang digunakan daripada <a class="xref" href="#275G">275G</a>-<a class="xref" href="#275I">275I</a>,
+hasil ini mempunyai penerapan yang sangat penting.</p>
+<p> </p>
+<p><strong>Teorema</strong> Misalkan <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> adalah ruang
+probabilitas, dan <span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span> barisan subaljabar-sigma dari
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> yang tak menaik, dengan irisan <span class="math inline" data-source-tex="\Sigma_{\infty}">\(\Sigma_{\infty}\)</span>. Misalkan <span class="math inline" data-source-tex="X">\(X\)</span>
+adalah sebarang variabel acak bernilai real dengan ekspektasi berhingga, dan
+untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> misalkan <span class="math inline" data-source-tex="X_n">\(X_n\)</span> adalah suatu ekspektasi bersyarat
+dari <span class="math inline" data-source-tex="X">\(X\)</span> pada <span class="math inline" data-source-tex="\Sigma_n">\(\Sigma_n\)</span>. Maka
+<span class="math inline" data-source-tex="X_{\infty}=\lim_{n\to\infty}X_n">\(X_{\infty}=\lim_{n\to\infty}X_n\)</span> terdefinisi hampir di mana-mana dan
+merupakan suatu ekspektasi bersyarat dari <span class="math inline" data-source-tex="X">\(X\)</span> pada <span class="math inline" data-source-tex="\Sigma_{\infty}">\(\Sigma_{\infty}\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Tetapkan <span class="math inline" data-source-tex="H=\bigcap_{n\in\Bbb N}\dom X_n">\(H=\bigcap_{n\in\Bbb N}\dom X_n\)</span>, sehingga <span class="math inline" data-source-tex="H">\(H\)</span>
+koterabaikan. Untuk <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, <span class="math inline" data-source-tex="a&lt;b">\(a&lt;b\)</span> dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan <span class="math inline" data-source-tex="\omega\in H">\(\omega\in H\)</span>,
+tuliskan <span class="math inline" data-source-tex="U_{abn}(\omega)">\(U_{abn}(\omega)\)</span> untuk banyaknya pelintasan naik dari <span class="math inline" data-source-tex="a">\(a\)</span> ke <span class="math inline" data-source-tex="b">\(b\)</span>
+dalam daftar <span class="math inline" data-source-tex="X_n(\omega),X_{n-1}(\omega),\ldots,X_0(\omega)">\(X_n(\omega),X_{n-1}(\omega),\ldots,X_0(\omega)\)</span> (<a class="xref" href="#275E">275E</a>).
+Maka</p>
+<p><span class="math display" data-source-tex="\eqalignno{\Expn(U_{abn})
+&amp;\le\Bover1{b-a}\Expn((X_0-X_n)^+)\cr
+\displaycause{275F}
+&amp;\le\Bover1{b-a}\Expn(|X_0|+|X_n|)
+\le\Bover2{b-a}\Expn(|X_0|)&lt;\infty.\cr}">\[\begin{aligned}\Expn(U_{abn})
+&amp;\le\Bover1{b-a}\Expn((X_0-X_n)^+)\\
+&amp;\text{(275F)}\\
+&amp;\le\Bover1{b-a}\Expn(|X_0|+|X_n|)
+\le\Bover2{b-a}\Expn(|X_0|)&lt;\infty.\\\end{aligned}\]</span></p>
+<p>Jadi <span class="math inline" data-source-tex="\lim_{n\to\infty}U_{abn}(\omega)">\(\lim_{n\to\infty}U_{abn}(\omega)\)</span> berhingga untuk hampir
+setiap <span class="math inline" data-source-tex="\omega">\(\omega\)</span>. Namun ini berarti bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{\omega:\liminf_{n\to\infty}X_n(\omega)&lt;a,\,
+  \limsup_{n\to\infty}X_n(\omega)&gt;b\}">\(\{\omega:\liminf_{n\to\infty}X_n(\omega)&lt;a,\,
+  \limsup_{n\to\infty}X_n(\omega)&gt;b\}\)</span></div>
+<p>terabaikan. Karena <span class="math inline" data-source-tex="a">\(a\)</span> dan <span class="math inline" data-source-tex="b">\(b\)</span> sebarang, <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span>
+konvergen hampir di mana-mana, tepat seperti dalam <a class="xref" href="#275G">275G</a>. Tetapkan
+<span class="math inline" data-source-tex="X_{\infty}(\omega)=\lim_{n\to\infty}X_n(\omega)">\(X_{\infty}(\omega)=\lim_{n\to\infty}X_n(\omega)\)</span> kapan pun ini terdefinisi
+dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Berdasarkan <a class="xref" href="../246/index.html#246D">246D</a>, <span class="math inline" data-source-tex="\{X_n:n\in\Bbb N\}">\(\{X_n:n\in\Bbb N\}\)</span> terintegralkan secara
+seragam, sehingga <span class="math inline" data-source-tex="\Expn(|X_n-X_{\infty}|)\to 0">\(\Expn(|X_n-X_{\infty}|)\to 0\)</span> ketika <span class="math inline" data-source-tex="n\to\infty">\(n\to\infty\)</span>
+(246Ja), dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_EX_{\infty}=\lim_{n\to\infty}\int_EX_n=\int_EX_0">\(\int_EX_{\infty}=\lim_{n\to\infty}\int_EX_n=\int_EX_0\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="E\in\Sigma_{\infty}">\(E\in\Sigma_{\infty}\)</span>.</p>
+<p> </p>
+<p><strong>(c)</strong> Sekarang terdapat himpunan koterabaikan
+<span class="math inline" data-source-tex="G\in\Sigma_{\infty}">\(G\in\Sigma_{\infty}\)</span> sedemikian sehingga <span class="math inline" data-source-tex="G\subseteq\dom X_{\infty}">\(G\subseteq\dom X_{\infty}\)</span> dan
+<span class="math inline" data-source-tex="X_{\infty}\restr G">\(X_{\infty}\restr G\)</span> terukur terhadap <span class="math inline" data-source-tex="\Sigma_{\infty}">\(\Sigma_{\infty}\)</span>. Bukti. Untuk setiap
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, terdapat himpunan koterabaikan <span class="math inline" data-source-tex="G_n\in\Sigma_n">\(G_n\in\Sigma_n\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="G_n\subseteq\dom X_n">\(G_n\subseteq\dom X_n\)</span> dan <span class="math inline" data-source-tex="X_n\restr G_n">\(X_n\restr G_n\)</span> terukur terhadap
+<span class="math inline" data-source-tex="\Sigma_n">\(\Sigma_n\)</span>. Tetapkan <span class="math inline" data-source-tex="G&#x27;=\bigcup_{n\in\Bbb N}\bigcap_{m\ge n}G_m">\(G&#x27;=\bigcup_{n\in\Bbb N}\bigcap_{m\ge n}G_m\)</span>; maka,
+untuk setiap <span class="math inline" data-source-tex="r\in\Bbb N">\(r\in\Bbb N\)</span>,
+<span class="math inline" data-source-tex="G&#x27;=\bigcup_{n\ge r}\bigcap_{m\ge n}G_m">\(G&#x27;=\bigcup_{n\ge r}\bigcap_{m\ge n}G_m\)</span> termasuk dalam <span class="math inline" data-source-tex="\Sigma_r">\(\Sigma_r\)</span>,
+sehingga <span class="math inline" data-source-tex="G&#x27;\in\Sigma_{\infty}">\(G&#x27;\in\Sigma_{\infty}\)</span>, sedangkan tentu saja <span class="math inline" data-source-tex="G&#x27;">\(G&#x27;\)</span> koterabaikan.
+Untuk <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, tetapkan <span class="math inline" data-source-tex="X&#x27;_n(\omega)=X_n(\omega)">\(X&#x27;_n(\omega)=X_n(\omega)\)</span> untuk
+<span class="math inline" data-source-tex="\omega\in G_n">\(\omega\in G_n\)</span>, dan <span class="math inline" data-source-tex="0">\(0\)</span> untuk <span class="math inline" data-source-tex="\omega\in\Omega\setminus G_n">\(\omega\in\Omega\setminus G_n\)</span>; maka untuk
+<span class="math inline" data-source-tex="\omega\in G&#x27;">\(\omega\in G&#x27;\)</span>,
+<span class="math inline" data-source-tex="\lim_{n\to\infty}X&#x27;_n(\omega)=\lim_{n\to\infty}X_n(\omega)">\(\lim_{n\to\infty}X&#x27;_n(\omega)=\lim_{n\to\infty}X_n(\omega)\)</span> jika salah
+satunya terdefinisi dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Dengan menulis
+<span class="math inline" data-source-tex="X&#x27;_{\infty}=\lim_{n\to\infty}X&#x27;_n">\(X&#x27;_{\infty}=\lim_{n\to\infty}X&#x27;_n\)</span> kapan pun ini terdefinisi dalam
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, <a class="xref" href="../121/index.html#121F">121F</a> dan <a class="xref" href="../121/index.html#121H">121H</a> memberi tahu kita bahwa <span class="math inline" data-source-tex="X&#x27;_{\infty}">\(X&#x27;_{\infty}\)</span> terukur
+terhadap <span class="math inline" data-source-tex="\Sigma_r">\(\Sigma_r\)</span> dan <span class="math inline" data-source-tex="\dom X&#x27;_{\infty}\in\Sigma_r">\(\dom X&#x27;_{\infty}\in\Sigma_r\)</span> untuk setiap
+<span class="math inline" data-source-tex="r\in\Bbb N">\(r\in\Bbb N\)</span>, sehingga <span class="math inline" data-source-tex="G&#x27;&#x27;=\dom X&#x27;_{\infty}">\(G&#x27;&#x27;=\dom X&#x27;_{\infty}\)</span> termasuk dalam
+<span class="math inline" data-source-tex="\Sigma_{\infty}">\(\Sigma_{\infty}\)</span> dan <span class="math inline" data-source-tex="X&#x27;_{\infty}">\(X&#x27;_{\infty}\)</span> terukur terhadap <span class="math inline" data-source-tex="\Sigma_{\infty}">\(\Sigma_{\infty}\)</span>.
+Kita juga tahu, dari (a), bahwa <span class="math inline" data-source-tex="G&#x27;&#x27;">\(G&#x27;&#x27;\)</span> koterabaikan. Jadi dengan menetapkan
+<span class="math inline" data-source-tex="G=G&#x27;\cap G&#x27;&#x27;">\(G=G&#x27;\cap G&#x27;&#x27;\)</span> kita memperoleh hasilnya. ∎</p>
+<p>Dengan demikian <span class="math inline" data-source-tex="X_{\infty}">\(X_{\infty}\)</span> adalah suatu ekspektasi bersyarat dari <span class="math inline" data-source-tex="X">\(X\)</span> pada
+<span class="math inline" data-source-tex="\Sigma_{\infty}">\(\Sigma_{\infty}\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="275L" data-source-id="275L"><h2><span class="source-label">275L</span> Waktu henti </h2>
+<p>Dalam suatu arti,
+pekerjaan utama bagian ini telah selesai; saya tidak mempunyai ruang bagi
+teorema penting lain yang sebanding dengan <a class="xref" href="#275G">275G</a>-<a class="xref" href="#275I">275I</a>. Namun tidak tepat untuk
+meninggalkan bab ini tanpa mendeskripsikan secara singkat salah satu gagasan
+paling subur dalam bidang ini.</p>
+<p> </p>
+<p><strong>Definisi</strong> Misalkan <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> adalah ruang
+probabilitas, dengan pelengkapan <span class="math inline" data-source-tex="(\Omega,\hat\Sigma,\hat\mu)">\((\Omega,\hat\Sigma,\hat\mu)\)</span>, dan
+<span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span> barisan subaljabar-sigma dari <span class="math inline" data-source-tex="\hat\Sigma">\(\hat\Sigma\)</span> yang tak
+menurun. Suatu <strong>waktu henti yang teradaptasi terhadap
+<span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span></strong> (juga disebut ‘<strong>waktu opsional</strong>’,
+‘<strong>waktu Markov</strong>’) adalah fungsi <span class="math inline" data-source-tex="\tau">\(\tau\)</span> dari <span class="math inline" data-source-tex="\Omega">\(\Omega\)</span> ke
+<span class="math inline" data-source-tex="\Bbb N\cup\{\infty\}">\(\Bbb N\cup\{\infty\}\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\{\omega:\tau(\omega)\le n\}\in\Sigma_n">\(\{\omega:\tau(\omega)\le n\}\in\Sigma_n\)</span> untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>.</p>
+<p> </p>
+<p><strong>Catatan</strong> Tentu saja syarat</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{\omega:\tau(\omega)\le n\}\in\Sigma_n">\(\{\omega:\tau(\omega)\le n\}\in\Sigma_n\)</span> untuk setiap
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span></div>
+<p>dapat digantikan oleh syarat yang ekuivalen</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{\omega:\tau(\omega)=n\}\in\Sigma_n">\(\{\omega:\tau(\omega)=n\}\in\Sigma_n\)</span>
+untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>.</div>
+<p>Saya mendahulukan ungkapan pertama karena lebih sesuai untuk
+himpunan indeks lain (lihat <a class="xref" href="#275Cc">275Cc</a>).</p>
+</section>
+<section class="source-unit" id="275M" data-source-id="275M"><span class="anchor" id="275Ma"></span><h2><span class="source-label">275M</span> Contoh (a) </h2>
+<p>Jika <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> adalah martingal yang
+teradaptasi terhadap barisan aljabar-sigma <span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span>, dan
+<span class="math inline" data-source-tex="{H_n}">\({H_n}\)</span> adalah himpunan bagian Borel dari <span class="math inline" data-source-tex="\BbbR^{n+1}">\(\BbbR^{n+1}\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>,
+maka kita mempunyai waktu henti <span class="math inline" data-source-tex="\tau">\(\tau\)</span> yang teradaptasi terhadap
+<span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span> dan didefinisikan oleh rumus</p>
+<div class="centerline"><span class="math inline" data-source-tex="\tau(\omega)
+=\inf\{n:\omega\in\bigcap_{i\le n}\dom X_i,\,
+  (X_0(\omega),\ldots,X_n(\omega))\in H_n\}">\(\tau(\omega)
+=\inf\{n:\omega\in\bigcap_{i\le n}\dom X_i,\,
+  (X_0(\omega),\ldots,X_n(\omega))\in H_n\}\)</span>,</div>
+<p>dengan menetapkan <span class="math inline" data-source-tex="\inf\emptyset=\infty">\(\inf\emptyset=\infty\)</span> seperti biasa.
+(Sebab berdasarkan <a class="xref" href="../121/index.html#121Ka">121Ka</a>, himpunan
+<span class="math inline" data-source-tex="E_n=\{\omega:(X_0(\omega),\ldots,X_n(\omega))\in H_n\}">\(E_n=\{\omega:(X_0(\omega),\ldots,X_n(\omega))\in H_n\}\)</span> termasuk dalam
+<span class="math inline" data-source-tex="\Sigma_n">\(\Sigma_n\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, dan
+<span class="math inline" data-source-tex="\{\omega:\tau(\omega)\le n\}=\bigcup_{i\le n}E_i">\(\{\omega:\tau(\omega)\le n\}=\bigcup_{i\le n}E_i\)</span>.) Khususnya,
+misalnya, rumus-rumus</p>
+<div class="centerline"><span class="math inline" data-source-tex="\inf\{n:X_n(\omega)\ge a\}">\(\inf\{n:X_n(\omega)\ge a\}\)</span>,
+<span class="math inline" data-source-tex="\inf\{n:|X_n(\omega)|&gt; a\}">\(\inf\{n:|X_n(\omega)|&gt; a\}\)</span></div>
+<p>mendefinisikan waktu henti.</p>
+</section>
+<section class="source-unit" id="275Mb" data-source-id="275Mb"><h3><span class="source-label">275Mb</span> <strong>(b)</strong> </h3>
+<p>Setiap fungsi konstan
+<span class="math inline" data-source-tex="\tau:\Omega\to\Bbb N\cup\{\infty\}">\(\tau:\Omega\to\Bbb N\cup\{\infty\}\)</span> adalah waktu henti. Jika <span class="math inline" data-source-tex="\tau">\(\tau\)</span>,
+<span class="math inline" data-source-tex="\tau&#x27;">\(\tau&#x27;\)</span> adalah dua waktu henti yang teradaptasi terhadap barisan aljabar-sigma
+<span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span> yang sama, maka <span class="math inline" data-source-tex="\tau\wedge\tau&#x27;">\(\tau\wedge\tau&#x27;\)</span> adalah waktu henti
+yang teradaptasi terhadap <span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span>, dengan menetapkan
+<span class="math inline" data-source-tex="(\tau\wedge\tau&#x27;)(\omega)=\min(\tau(\omega),\tau&#x27;(\omega))">\((\tau\wedge\tau&#x27;)(\omega)=\min(\tau(\omega),\tau&#x27;(\omega))\)</span> untuk
+<span class="math inline" data-source-tex="\omega\in\Omega">\(\omega\in\Omega\)</span><span class="proof-fragment">, karena
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\{\omega:(\tau\wedge\tau&#x27;)(\omega)\le n\}
+=\{\omega:\tau(\omega)\le n\}\cup\{\omega:\tau&#x27;(\omega)\le n\}
+\in\Sigma_n">\(\{\omega:(\tau\wedge\tau&#x27;)(\omega)\le n\}
+=\{\omega:\tau(\omega)\le n\}\cup\{\omega:\tau&#x27;(\omega)\le n\}
+\in\Sigma_n\)</span></span>
+
+
+
+  untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span></span>.</p>
+</section>
+<section class="source-unit" id="275N" data-source-id="275N"><h2><span class="source-label">275N</span> Lemma </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> adalah ruang
+probabilitas lengkap, dan <span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span> barisan subaljabar-sigma dari
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> yang tak menurun. Anggap bahwa <span class="math inline" data-source-tex="\tau">\(\tau\)</span> dan <span class="math inline" data-source-tex="\tau&#x27;">\(\tau&#x27;\)</span> adalah waktu henti
+pada <span class="math inline" data-source-tex="\Omega">\(\Omega\)</span>, dan <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> suatu martingal, semuanya teradaptasi
+terhadap <span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span>.</p>
+<p>(a) Keluarga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\tilde\Sigma_{\tau}
+=\{E:E\in\Sigma,\,E\cap\{\omega:\tau(\omega)\le n\}\in\Sigma_n">\(\tilde\Sigma_{\tau}
+=\{E:E\in\Sigma,\,E\cap\{\omega:\tau(\omega)\le n\}\in\Sigma_n\)</span> untuk
+setiap <span class="math inline" data-source-tex="n\in\Bbb N\}">\(n\in\Bbb N\}\)</span></div>
+<p>adalah subaljabar-sigma dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>.</p>
+<p>(b) Jika <span class="math inline" data-source-tex="\tau(\omega)\le\tau&#x27;(\omega)">\(\tau(\omega)\le\tau&#x27;(\omega)\)</span> untuk setiap <span class="math inline" data-source-tex="\omega">\(\omega\)</span>, maka
+<span class="math inline" data-source-tex="\tilde\Sigma_{\tau}\subseteq\tilde\Sigma_{\tau&#x27;}">\(\tilde\Sigma_{\tau}\subseteq\tilde\Sigma_{\tau&#x27;}\)</span>.</p>
+<p>(c) Sekarang anggap bahwa <span class="math inline" data-source-tex="\tau">\(\tau\)</span> berhingga hampir di mana-mana. Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\tilde X_{\tau}(\omega)=X_{\tau(\omega)}(\omega)">\(\tilde X_{\tau}(\omega)=X_{\tau(\omega)}(\omega)\)</span></div>
+<p>kapan pun <span class="math inline" data-source-tex="\tau(\omega)&lt;\infty">\(\tau(\omega)&lt;\infty\)</span> dan
+<span class="math inline" data-source-tex="\omega\in\dom X_{\tau(\omega)}">\(\omega\in\dom X_{\tau(\omega)}\)</span>. Maka
+<span class="math inline" data-source-tex="\dom\tilde X_{\tau}\in\tilde\Sigma_{\tau}">\(\dom\tilde X_{\tau}\in\tilde\Sigma_{\tau}\)</span> dan <span class="math inline" data-source-tex="\tilde X_{\tau}">\(\tilde X_{\tau}\)</span> terukur
+terhadap <span class="math inline" data-source-tex="\tilde\Sigma_{\tau}">\(\tilde\Sigma_{\tau}\)</span>.</p>
+<p>(d) Jika <span class="math inline" data-source-tex="\tau">\(\tau\)</span> terbatas secara esensial, yakni, terdapat suatu
+<span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\tau\le m">\(\tau\le m\)</span> hampir di mana-mana, maka
+<span class="math inline" data-source-tex="\Expn(\tilde X_{\tau})">\(\Expn(\tilde X_{\tau})\)</span> ada dan sama dengan <span class="math inline" data-source-tex="\Expn(X_0)">\(\Expn(X_0)\)</span>.</p>
+<p>(e) Jika <span class="math inline" data-source-tex="\tau\le\tau&#x27;">\(\tau\le\tau&#x27;\)</span> hampir di mana-mana, dan <span class="math inline" data-source-tex="\tau&#x27;">\(\tau&#x27;\)</span> terbatas secara
+esensial, maka <span class="math inline" data-source-tex="\tilde X_{\tau}">\(\tilde X_{\tau}\)</span> adalah suatu ekspektasi bersyarat dari
+<span class="math inline" data-source-tex="\tilde X_{\tau&#x27;}">\(\tilde X_{\tau&#x27;}\)</span> pada <span class="math inline" data-source-tex="\tilde\Sigma_{\tau}">\(\tilde\Sigma_{\tau}\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Hal ini elementer. Tuliskan
+<span class="math inline" data-source-tex="H_n=\{\omega:\tau(\omega)\le n\}">\(H_n=\{\omega:\tau(\omega)\le n\}\)</span> untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>. Himpunan kosong
+termasuk dalam <span class="math inline" data-source-tex="\tilde\Sigma_{\tau}">\(\tilde\Sigma_{\tau}\)</span> karena termasuk dalam <span class="math inline" data-source-tex="\Sigma_n">\(\Sigma_n\)</span> untuk
+setiap <span class="math inline" data-source-tex="n">\(n\)</span>.
+Jika <span class="math inline" data-source-tex="E\in\tilde\Sigma_{\tau}">\(E\in\tilde\Sigma_{\tau}\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="(\Omega\setminus E)\cap H_n=H_n\setminus(E\cap
+H_n)\in\Sigma_n">\((\Omega\setminus E)\cap H_n=H_n\setminus(E\cap
+H_n)\in\Sigma_n\)</span></div>
+<p>karena <span class="math inline" data-source-tex="H_n\in\Sigma_n">\(H_n\in\Sigma_n\)</span>; ini benar untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, sehingga
+<span class="math inline" data-source-tex="\Omega\setminus E\in\tilde\Sigma_{\tau}">\(\Omega\setminus E\in\tilde\Sigma_{\tau}\)</span>. Jika <span class="math inline" data-source-tex="\sequence{k}{E_k}">\(\sequence{k}{E_k}\)</span> adalah
+sebarang barisan dalam <span class="math inline" data-source-tex="\tilde\Sigma_{\tau}">\(\tilde\Sigma_{\tau}\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="(\bigcup_{k\in\Bbb N}E_k)\cap H_n=\bigcup_{k\in\Bbb
+N}E_k\cap H_n\in\Sigma_n">\((\bigcup_{k\in\Bbb N}E_k)\cap H_n=\bigcup_{k\in\Bbb
+N}E_k\cap H_n\in\Sigma_n\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, sehingga
+<span class="math inline" data-source-tex="\bigcup_{k\in\Bbb N}E_k\in\tilde\Sigma_{\tau}">\(\bigcup_{k\in\Bbb N}E_k\in\tilde\Sigma_{\tau}\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Jika <span class="math inline" data-source-tex="E\in\tilde\Sigma_{\tau}">\(E\in\tilde\Sigma_{\tau}\)</span> maka tentu saja <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>,
+dan jika <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> maka
+<span class="math inline" data-source-tex="\{\omega:\tau&#x27;(\omega)\le n\}\subseteq\{\omega:\tau(\omega)\le n\}">\(\{\omega:\tau&#x27;(\omega)\le n\}\subseteq\{\omega:\tau(\omega)\le n\}\)</span>,
+sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="E\cap\{\omega:\tau&#x27;(\omega)\le n\}
+=E\cap\{\omega:\tau(\omega)\le n\}\cap\{\omega:\tau&#x27;(\omega)\le n\}">\(E\cap\{\omega:\tau&#x27;(\omega)\le n\}
+=E\cap\{\omega:\tau(\omega)\le n\}\cap\{\omega:\tau&#x27;(\omega)\le n\}\)</span></div>
+<p>termasuk dalam <span class="math inline" data-source-tex="\Sigma_n">\(\Sigma_n\)</span>; karena <span class="math inline" data-source-tex="n">\(n\)</span> sebarang,
+<span class="math inline" data-source-tex="E\in\tilde\Sigma_{\tau&#x27;}">\(E\in\tilde\Sigma_{\tau&#x27;}\)</span>.</p>
+<p> </p>
+<p><strong>(c)</strong> Tetapkan <span class="math inline" data-source-tex="H_n=\{\omega:\tau(\omega)\le n\}">\(H_n=\{\omega:\tau(\omega)\le n\}\)</span> untuk setiap
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>. Untuk setiap <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>,</p>
+<p><span class="math display" data-source-tex="\eqalign{H_n\cap\{\omega:\omega\in
+&amp;\dom\tilde X_{\tau},\,\tilde X_{\tau}(\omega)\le a\}\cr
+&amp;=\bigcup_{k\le n}\{\omega:\tau(\omega)=k,\,\omega\in\dom X_k,
+  \,X_k(\omega)\le a\}
+\in\Sigma_n.\cr}">\[\begin{aligned}H_n\cap\{\omega:\omega\in
+&amp;\dom\tilde X_{\tau},\,\tilde X_{\tau}(\omega)\le a\}\\
+&amp;=\bigcup_{k\le n}\{\omega:\tau(\omega)=k,\,\omega\in\dom X_k,
+  \,X_k(\omega)\le a\}
+\in\Sigma_n.\\\end{aligned}\]</span></p>
+<p>Karena <span class="math inline" data-source-tex="n">\(n\)</span> sebarang,</p>
+<div class="centerline"><span class="math inline" data-source-tex="G_a=\{\omega:\omega\in\dom\tilde X_{\tau},\,
+\tilde X_{\tau}(\omega)\le a\}\in\tilde\Sigma_{\tau}">\(G_a=\{\omega:\omega\in\dom\tilde X_{\tau},\,
+\tilde X_{\tau}(\omega)\le a\}\in\tilde\Sigma_{\tau}\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="a">\(a\)</span> sebarang,
+<span class="math inline" data-source-tex="\dom\tilde X_{\tau}=\bigcup_{m\in\Bbb N}G_m\in\tilde\Sigma_{\tau}">\(\dom\tilde X_{\tau}=\bigcup_{m\in\Bbb N}G_m\in\tilde\Sigma_{\tau}\)</span> dan
+<span class="math inline" data-source-tex="\tilde X_{\tau}">\(\tilde X_{\tau}\)</span> terukur terhadap <span class="math inline" data-source-tex="\tilde\Sigma_{\tau}">\(\tilde\Sigma_{\tau}\)</span>.</p>
+<p> </p>
+<p><strong>(d)</strong> Tetapkan <span class="math inline" data-source-tex="H_k=\{\omega:\tau(\omega)=k\}">\(H_k=\{\omega:\tau(\omega)=k\}\)</span> untuk <span class="math inline" data-source-tex="k\le m">\(k\le m\)</span>. Maka
+<span class="math inline" data-source-tex="\bigcup_{k\le m}H_k">\(\bigcup_{k\le m}H_k\)</span> koterabaikan, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Expn(\tilde X_{\tau})
+=\sum_{k=0}^m\int_{H_k}X_k
+=\sum_{k=0}^m\int_{H_k}X_m
+=\int_{\Omega}X_m
+=\int_{\Omega}X_0">\(\Expn(\tilde X_{\tau})
+=\sum_{k=0}^m\int_{H_k}X_k
+=\sum_{k=0}^m\int_{H_k}X_m
+=\int_{\Omega}X_m
+=\int_{\Omega}X_0\)</span>.</div>
+<p> </p>
+<p><strong>(e)</strong> Anggap bahwa <span class="math inline" data-source-tex="\tau&#x27;\le n">\(\tau&#x27;\le n\)</span> hampir di mana-mana. Tetapkan
+<span class="math inline" data-source-tex="H_k=\{\omega:\tau(\omega)=k\}">\(H_k=\{\omega:\tau(\omega)=k\}\)</span>,
+<span class="math inline" data-source-tex="H&#x27;_k=\{\omega:\tau&#x27;(\omega)=k\}">\(H&#x27;_k=\{\omega:\tau&#x27;(\omega)=k\}\)</span> untuk setiap <span class="math inline" data-source-tex="k">\(k\)</span>; maka baik
+<span class="math inline" data-source-tex="\langle H_k\rangle_{k\le n}">\(\langle H_k\rangle_{k\le n}\)</span> maupun <span class="math inline" data-source-tex="\langle H&#x27;_k\rangle_{k\le n}">\(\langle H&#x27;_k\rangle_{k\le n}\)</span> adalah
+partisi dari himpunan bagian koterabaikan dari <span class="math inline" data-source-tex="\Omega">\(\Omega\)</span>.
+Sekarang anggap bahwa <span class="math inline" data-source-tex="E\in\tilde\Sigma_{\tau}">\(E\in\tilde\Sigma_{\tau}\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_E\tilde X_{\tau}
+=\sum_{k=0}^n\int_{E\cap H_k}\tilde X_{\tau}
+=\sum_{k=0}^n\int_{E\cap H_k}X_k
+=\sum_{k=0}^n\int_{E\cap H_k}X_n
+=\int_EX_n">\(\int_E\tilde X_{\tau}
+=\sum_{k=0}^n\int_{E\cap H_k}\tilde X_{\tau}
+=\sum_{k=0}^n\int_{E\cap H_k}X_k
+=\sum_{k=0}^n\int_{E\cap H_k}X_n
+=\int_EX_n\)</span></div>
+<p>karena <span class="math inline" data-source-tex="E\cap H_k\in\Sigma_k">\(E\cap H_k\in\Sigma_k\)</span> untuk setiap <span class="math inline" data-source-tex="k">\(k\)</span>. Berdasarkan (b),
+<span class="math inline" data-source-tex="E\in\tilde\Sigma_{\tau&#x27;}">\(E\in\tilde\Sigma_{\tau&#x27;}\)</span>, sehingga kita juga mempunyai
+<span class="math inline" data-source-tex="\int_E\tilde X_{\tau&#x27;}=\int_EX_n">\(\int_E\tilde X_{\tau&#x27;}=\int_EX_n\)</span>. Jadi
+<span class="math inline" data-source-tex="\int_E\tilde X_{\tau}=\int_E\tilde X_{\tau&#x27;}">\(\int_E\tilde X_{\tau}=\int_E\tilde X_{\tau&#x27;}\)</span> untuk setiap
+<span class="math inline" data-source-tex="E\in\tilde\Sigma_{\tau}">\(E\in\tilde\Sigma_{\tau}\)</span>, sebagaimana diklaim.</p></aside>
+</section>
+<section class="source-unit" id="275O" data-source-id="275O"><h2><span class="source-label">275O</span> Proposisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> adalah martingal dan
+<span class="math inline" data-source-tex="\tau">\(\tau\)</span> suatu waktu henti, keduanya teradaptasi terhadap barisan aljabar-sigma
+<span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span> yang sama. Untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, tetapkan
+<span class="math inline" data-source-tex="(\tau\wedge n)(\omega)=\min(\tau(\omega),n)">\((\tau\wedge n)(\omega)=\min(\tau(\omega),n)\)</span> untuk <span class="math inline" data-source-tex="\omega\in\Omega">\(\omega\in\Omega\)</span>; maka
+<span class="math inline" data-source-tex="\tau\wedge n">\(\tau\wedge n\)</span> adalah waktu henti, dan <span class="math inline" data-source-tex="\sequencen{\tilde X_{\tau\wedge n}}">\(\sequencen{\tilde X_{\tau\wedge n}}\)</span>
+adalah martingal yang teradaptasi terhadap
+<span class="math inline" data-source-tex="\sequencen{\tilde\Sigma_{\tau\wedge n}}">\(\sequencen{\tilde\Sigma_{\tau\wedge n}}\)</span>, dengan
+<span class="math inline" data-source-tex="\tilde X_{\tau\wedge n}">\(\tilde X_{\tau\wedge n}\)</span> dan <span class="math inline" data-source-tex="\tilde\Sigma_{\tau\wedge n}">\(\tilde\Sigma_{\tau\wedge n}\)</span> didefinisikan
+seperti dalam <a class="xref" href="#275N">275N</a>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Sebagaimana dicatat dalam <a class="xref" href="#275Mb">275Mb</a>, setiap <span class="math inline" data-source-tex="\tau\wedge n">\(\tau\wedge n\)</span> adalah waktu
+henti. Jika <span class="math inline" data-source-tex="m\le n">\(m\le n\)</span>, maka
+<span class="math inline" data-source-tex="\tilde\Sigma_{\tau\wedge m}\subseteq\tilde\Sigma_{\tau\wedge n}">\(\tilde\Sigma_{\tau\wedge m}\subseteq\tilde\Sigma_{\tau\wedge n}\)</span>
+berdasarkan 275Nb. Setiap <span class="math inline" data-source-tex="\tilde X_{\tau\wedge m}">\(\tilde X_{\tau\wedge m}\)</span> terukur terhadap
+<span class="math inline" data-source-tex="\tilde\Sigma_{\tau\wedge m}">\(\tilde\Sigma_{\tau\wedge m}\)</span>, dengan domain termasuk dalam
+<span class="math inline" data-source-tex="\tilde\Sigma_{\tau\wedge m}">\(\tilde\Sigma_{\tau\wedge m}\)</span>, berdasarkan 275Nc, dan mempunyai ekspektasi
+berhingga, berdasarkan 275Nd; akhirnya, jika <span class="math inline" data-source-tex="m\le n">\(m\le n\)</span>, maka
+<span class="math inline" data-source-tex="\tilde X_{\tau\wedge m}">\(\tilde X_{\tau\wedge m}\)</span> adalah suatu ekspektasi bersyarat dari
+<span class="math inline" data-source-tex="\tilde X_{\tau\wedge n}">\(\tilde X_{\tau\wedge n}\)</span> pada <span class="math inline" data-source-tex="\tilde\Sigma_{\tau\wedge m}">\(\tilde\Sigma_{\tau\wedge m}\)</span>, berdasarkan
+275Ne.</p></aside>
+</section>
+<section class="source-unit" id="275P" data-source-id="275P"><h2><span class="source-label">275P</span> Akibat </h2>
+<p>Anggap bahwa <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> adalah ruang
+probabilitas dan <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> suatu martingal pada <span class="math inline" data-source-tex="\Omega">\(\Omega\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="W=\sup_{n\in\Bbb N}|X_{n+1}-X_n|">\(W=\sup_{n\in\Bbb N}|X_{n+1}-X_n|\)</span> berhingga hampir di mana-mana dan
+mempunyai ekspektasi berhingga. Maka untuk hampir setiap <span class="math inline" data-source-tex="\omega\in\Omega">\(\omega\in\Omega\)</span>,
+entah <span class="math inline" data-source-tex="\lim_{n\to\infty}X_n(\omega)">\(\lim_{n\to\infty}X_n(\omega)\)</span> ada dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, atau
+<span class="math inline" data-source-tex="\sup_{n\in\Bbb N}X_n(\omega)=\infty">\(\sup_{n\in\Bbb N}X_n(\omega)=\infty\)</span> dan
+<span class="math inline" data-source-tex="\inf_{n\in\Bbb N}X_n(\omega)=-\infty">\(\inf_{n\in\Bbb N}X_n(\omega)=-\infty\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Misalkan <span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span> adalah barisan aljabar-sigma tak
+menurun yang terhadapnya <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> teradaptasi. Misalkan <span class="math inline" data-source-tex="H">\(H\)</span> adalah
+himpunan koterabaikan
+<span class="math inline" data-source-tex="\bigcap_{n\in\Bbb N}\dom X_n\cap\{\omega:W(\omega)&lt;\infty\}">\(\bigcap_{n\in\Bbb N}\dom X_n\cap\{\omega:W(\omega)&lt;\infty\}\)</span>. Untuk setiap
+<span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span>, tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\tau_m(\omega)=\inf\{n:\omega\in\dom
+X_n,\,X_n(\omega)&gt;m\}">\(\tau_m(\omega)=\inf\{n:\omega\in\dom
+X_n,\,X_n(\omega)&gt;m\}\)</span>.</div>
+<p>Seperti dalam <a class="xref" href="#275Ma">275Ma</a>, <span class="math inline" data-source-tex="\tau_m">\(\tau_m\)</span> adalah waktu henti yang teradaptasi
+terhadap <span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span>. Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="Y_{mn}=\tilde X_{\tau_m\wedge n}">\(Y_{mn}=\tilde X_{\tau_m\wedge n}\)</span>,</div>
+<p>yang didefinisikan seperti dalam <a class="xref" href="#275O">275O</a>, sehingga
+<span class="math inline" data-source-tex="\sequencen{Y_{mn}}">\(\sequencen{Y_{mn}}\)</span> adalah martingal. Jika <span class="math inline" data-source-tex="\omega\in H">\(\omega\in H\)</span>, maka entah
+<span class="math inline" data-source-tex="\tau_m(\omega)&gt;n">\(\tau_m(\omega)&gt;n\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="Y_{mn}(\omega)=X_n(\omega)\le m">\(Y_{mn}(\omega)=X_n(\omega)\le m\)</span>,</div>
+<p>atau <span class="math inline" data-source-tex="0&lt;\tau_m(\omega)\le n">\(0&lt;\tau_m(\omega)\le n\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="Y_{mn}(\omega)=X_{\tau_m(\omega)}(\omega)
+\le W(\omega)+X_{\tau_m(\omega)-1}(\omega)\le W(\omega)+m">\(Y_{mn}(\omega)=X_{\tau_m(\omega)}(\omega)
+\le W(\omega)+X_{\tau_m(\omega)-1}(\omega)\le W(\omega)+m\)</span>,</div>
+<p>atau <span class="math inline" data-source-tex="\tau_m(\omega)=0">\(\tau_m(\omega)=0\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="Y_{mn}(\omega)=X_0(\omega)">\(Y_{mn}(\omega)=X_0(\omega)\)</span>.</div>
+<p>Jadi</p>
+<div class="centerline"><span class="math inline" data-source-tex="Y_{mn}(\omega)\le|X_0(\omega)|+W(\omega)+m">\(Y_{mn}(\omega)\le|X_0(\omega)|+W(\omega)+m\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="\omega\in H">\(\omega\in H\)</span>, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="|Y_{mn}(\omega)|=2\max(0,Y_{mn}(\omega))-Y_{mn}(\omega)
+\le 2(|X_0(\omega)|+W(\omega)+m)-Y_{mn}(\omega)">\(|Y_{mn}(\omega)|=2\max(0,Y_{mn}(\omega))-Y_{mn}(\omega)
+\le 2(|X_0(\omega)|+W(\omega)+m)-Y_{mn}(\omega)\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\Expn(|Y_{mn}|)\le 2\Expn(|X_0|)+2\Expn(W)+2m-\Expn(Y_{mn})
+= 2\Expn(|X_0|)+2\Expn(W)+2m-\Expn(X_0)">\(\Expn(|Y_{mn}|)\le 2\Expn(|X_0|)+2\Expn(W)+2m-\Expn(Y_{mn})
+= 2\Expn(|X_0|)+2\Expn(W)+2m-\Expn(X_0)\)</span></div>
+<p>berdasarkan 275Nd. Karena ini benar untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>,
+<span class="math inline" data-source-tex="\sup_{n\in\Bbb N}\Expn(|Y_{mn}|)&lt;\infty">\(\sup_{n\in\Bbb N}\Expn(|Y_{mn}|)&lt;\infty\)</span>, dan
+<span class="math inline" data-source-tex="\lim_{n\to\infty}Y_{mn}">\(\lim_{n\to\infty}Y_{mn}\)</span> terdefinisi dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> hampir di mana-mana,
+berdasarkan Teorema Konvergensi Martingal Doob (<a class="xref" href="#275G">275G</a>). Misalkan <span class="math inline" data-source-tex="F_m">\(F_m\)</span> adalah
+himpunan koterabaikan tempat <span class="math inline" data-source-tex="\sequencen{Y_{mn}}">\(\sequencen{Y_{mn}}\)</span> konvergen.
+Tetapkan <span class="math inline" data-source-tex="H^*=H\cap\bigcap_{m\in\Bbb N}F_m">\(H^*=H\cap\bigcap_{m\in\Bbb N}F_m\)</span>, sehingga <span class="math inline" data-source-tex="H^*">\(H^*\)</span> koterabaikan.</p>
+<p>Sekarang tinjau</p>
+<div class="centerline"><span class="math inline" data-source-tex="E=\{\omega:\omega\in H^*,\,\sup_{n\in\Bbb
+N}X_n(\omega)&lt;\infty\}">\(E=\{\omega:\omega\in H^*,\,\sup_{n\in\Bbb
+N}X_n(\omega)&lt;\infty\}\)</span>.</div>
+<p>Untuk setiap <span class="math inline" data-source-tex="\omega\in E">\(\omega\in E\)</span>, harus terdapat <span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\sup_{n\in\Bbb N}X_n(\omega)\le m">\(\sup_{n\in\Bbb N}X_n(\omega)\le m\)</span>. Sekarang ini berarti bahwa
+<span class="math inline" data-source-tex="Y_{mn}(\omega)=X_n(\omega)">\(Y_{mn}(\omega)=X_n(\omega)\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, dan karena <span class="math inline" data-source-tex="\omega\in F_m">\(\omega\in F_m\)</span>
+kita mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{n\to\infty}X_n(\omega)
+=\lim_{n\to\infty}Y_{mn}(\omega)\in\Bbb R">\(\lim_{n\to\infty}X_n(\omega)
+=\lim_{n\to\infty}Y_{mn}(\omega)\in\Bbb R\)</span>.</div>
+<p>Ini berarti bahwa <span class="math inline" data-source-tex="\sequencen{X_n(\omega)}">\(\sequencen{X_n(\omega)}\)</span> konvergen untuk hampir
+setiap <span class="math inline" data-source-tex="\omega">\(\omega\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\{X_n(\omega):n\in\Bbb N\}">\(\{X_n(\omega):n\in\Bbb N\}\)</span> terbatas
+ke atas.</p>
+<p>Dengan cara serupa, <span class="math inline" data-source-tex="\sequencen{X_n(\omega)}">\(\sequencen{X_n(\omega)}\)</span> konvergen untuk hampir setiap
+<span class="math inline" data-source-tex="\omega">\(\omega\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\{X_n(\omega):n\in\Bbb N\}">\(\{X_n(\omega):n\in\Bbb N\}\)</span> terbatas ke bawah,
+yang menuntaskan pembuktian.</p></aside>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="275X" data-source-id="275X"><span class="anchor" id="275Xa"></span><h2><span class="source-label">275X</span> Latihan dasar <span class="math inline" data-source-tex="\pmb{&gt;}">\(\pmb{&gt;}\)</span>(a) <span class="importance" title="Sangat penting">penting</span></h2>
+<p>Misalkan <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> adalah barisan variabel acak yang saling bebas
+dengan ekspektasi nol dan varians berhingga. Tetapkan
+<span class="math inline" data-source-tex="s_n=(\sum_{i=0}^n\Var(X_i))^{1/2}">\(s_n=(\sum_{i=0}^n\Var(X_i))^{1/2}\)</span>,
+<span class="math inline" data-source-tex="Y_n=(X_0+\ldots+X_n)^2-s_n^2">\(Y_n=(X_0+\ldots+X_n)^2-s_n^2\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\sequencen{Y_n}">\(\sequencen{Y_n}\)</span> adalah martingal.</p>
+</section>
+<section class="source-unit" id="275Xb" data-source-id="275Xb"><h3><span class="source-label">275Xb</span> (b) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> adalah suatu martingal. Tunjukkan
+bahwa untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>,
+<span class="math inline" data-source-tex="\Pr(\sup_{n\in\Bbb N}|X_n|\ge\epsilon)
+\le\bover1\epsilon\sup_{n\in\Bbb N}\Expn(|X_n|)">\(\Pr(\sup_{n\in\Bbb N}|X_n|\ge\epsilon)
+\le\bover1\epsilon\sup_{n\in\Bbb N}\Expn(|X_n|)\)</span>.</p>
+</section>
+<section class="source-unit" id="275Xc" data-source-id="275Xc"><h3><span class="source-label">275Xc</span> (c) </h3>
+<p><strong>Skema guci Pólya</strong> Bayangkan sebuah kotak yang memuat
+bola merah dan putih. Pada setiap langkah, sebuah bola diambil secara acak
+dari kotak lalu dikembalikan bersama sebuah bola lain dengan warna yang sama.
+(i) Dengan <span class="math inline" data-source-tex="R_n">\(R_n\)</span>, <span class="math inline" data-source-tex="W_n">\(W_n\)</span> menyatakan banyaknya bola merah dan putih setelah
+langkah ke-<span class="math inline" data-source-tex="n">\(n\)</span>, dan <span class="math inline" data-source-tex="X_n=R_n/(R_n+W_n)">\(X_n=R_n/(R_n+W_n)\)</span>, tunjukkan bahwa
+<span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> adalah martingal. (ii) Dengan memulai dari <span class="math inline" data-source-tex="R_0=W_0=1">\(R_0=W_0=1\)</span>,
+temukan distribusi <span class="math inline" data-source-tex="(R_n,W_n)">\((R_n,W_n)\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>. (iii) Tunjukkan bahwa
+<span class="math inline" data-source-tex="X=\lim_{n\to\infty}X_n">\(X=\lim_{n\to\infty}X_n\)</span> terdefinisi hampir di mana-mana, dan temukan
+distribusinya ketika <span class="math inline" data-source-tex="R_0=W_0=1">\(R_0=W_0=1\)</span>. (Lihat Feller 66 untuk pembahasan
+nilai awal lainnya.)</p>
+</section>
+<section class="source-unit" id="275Xd" data-source-id="275Xd"><h3><span class="source-label">275Xd</span> (d) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> adalah ruang probabilitas,
+dan <span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span> barisan subaljabar-sigma dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> yang tak
+menurun; untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> misalkan <span class="math inline" data-source-tex="P_n:L^1\to L^1">\(P_n:L^1\to L^1\)</span> adalah operator
+ekspektasi bersyarat yang bersesuaian dengan <span class="math inline" data-source-tex="\Sigma_n">\(\Sigma_n\)</span>, dengan
+<span class="math inline" data-source-tex="L^1=L^1(\mu)">\(L^1=L^1(\mu)\)</span> (<a class="xref" href="../242/index.html#242J">242J</a>). (i) Tunjukkan bahwa
+<span class="math inline" data-source-tex="V=\{u:u\in L^1,\,\lim_{n\to\infty}\|P_nu-u\|_1=0\}">\(V=\{u:u\in L^1,\,\lim_{n\to\infty}\|P_nu-u\|_1=0\}\)</span> adalah subruang linear
+tertutup-<span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span> dari <span class="math inline" data-source-tex="L^1">\(L^1\)</span>. (ii) Tunjukkan bahwa
+<span class="math inline" data-source-tex="\{E:E\in\Sigma,\,\chi E^{\ssbullet}\in V\}">\(\{E:E\in\Sigma,\,\chi E^{\ssbullet}\in V\}\)</span> adalah kelas Dynkin yang
+mencakup <span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}\Sigma_n">\(\bigcup_{n\in\Bbb N}\Sigma_n\)</span>, sehingga mencakup aljabar-sigma
+<span class="math inline" data-source-tex="\Sigma_{\infty}">\(\Sigma_{\infty}\)</span> yang dibangkitkan oleh
+<span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}\Sigma_n">\(\bigcup_{n\in\Bbb N}\Sigma_n\)</span>. (iii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span> maka
+<span class="math inline" data-source-tex="v=\sup_{n\in\Bbb N}P_n|u|">\(v=\sup_{n\in\Bbb N}P_n|u|\)</span> terdefinisi dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span> dan berbentuk
+<span class="math inline" data-source-tex="W^{\ssbullet}">\(W^{\ssbullet}\)</span> dengan <span class="math inline" data-source-tex="\Pr(W\ge\epsilon)\le\bover1{\epsilon}\|u\|_1">\(\Pr(W\ge\epsilon)\le\bover1{\epsilon}\|u\|_1\)</span> untuk
+setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> <a class="xref" href="#275D">275D</a>.</span> (iv) Tunjukkan bahwa jika <span class="math inline" data-source-tex="X">\(X\)</span> adalah
+variabel acak terukur terhadap <span class="math inline" data-source-tex="\Sigma_{\infty}">\(\Sigma_{\infty}\)</span> dengan ekspektasi berhingga,
+dan untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N,\ X_n">\(n\in\Bbb N,\ X_n\)</span> adalah suatu ekspektasi bersyarat dari
+<span class="math inline" data-source-tex="X">\(X\)</span> pada <span class="math inline" data-source-tex="\Sigma_n">\(\Sigma_n\)</span>, maka <span class="math inline" data-source-tex="X^{\ssbullet}\in V">\(X^{\ssbullet}\in V\)</span> dan
+<span class="math inline" data-source-tex="X\eae\lim_{n\to\infty}X_n">\(X\eae\lim_{n\to\infty}X_n\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> terapkan (iii) pada <span class="math inline" data-source-tex="u=(X-X_m)^{\ssbullet}">\(u=(X-X_m)^{\ssbullet}\)</span> untuk <span class="math inline" data-source-tex="m">\(m\)</span> yang besar.</span></p>
+</section>
+<section class="source-unit" id="275Xe" data-source-id="275Xe"><h3><span class="source-label">275Xe</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> adalah ruang probabilitas,
+<span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span> barisan subaljabar-sigma dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> yang tak
+menurun, dan <span class="math inline" data-source-tex="\Sigma_{\infty}">\(\Sigma_{\infty}\)</span> aljabar-sigma yang dibangkitkan oleh
+<span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}\Sigma_n">\(\bigcup_{n\in\Bbb N}\Sigma_n\)</span>. Untuk setiap
+<span class="math inline" data-source-tex="n\in\Bbb N\cup\{\infty\}">\(n\in\Bbb N\cup\{\infty\}\)</span> misalkan <span class="math inline" data-source-tex="P_n:L^1\to L^1">\(P_n:L^1\to L^1\)</span> adalah operator
+ekspektasi bersyarat yang bersesuaian dengan <span class="math inline" data-source-tex="\Sigma_n">\(\Sigma_n\)</span>, dengan
+<span class="math inline" data-source-tex="L^1=L^1(\mu)">\(L^1=L^1(\mu)\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\|P_nu-P_{\infty}u\|_p=0">\(\lim_{n\to\infty}\|P_nu-P_{\infty}u\|_p=0\)</span> kapan pun
+<span class="math inline" data-source-tex="p\in\coint{1,\infty}">\(p\in\coint{1,\infty}\)</span> dan <span class="math inline" data-source-tex="u\in L^p(\mu)">\(u\in L^p(\mu)\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> <a class="xref" href="#275Xd">275Xd</a>, <a class="xref" href="../233/index.html#233J">233J</a>/<a class="xref" href="../242/index.html#242K">242K</a>, <a class="xref" href="../246/index.html#246Xg">246Xg</a>.</span></p>
+</section>
+<section class="source-unit" id="275Xf" data-source-id="275Xf"><h3><span class="source-label">275Xf</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> adalah suatu martingal, dan
+anggap bahwa <span class="math inline" data-source-tex="p\in\ooint{1,\infty}">\(p\in\ooint{1,\infty}\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\sup_{n\in\Bbb N}\|X_n\|_p&lt;\infty">\(\sup_{n\in\Bbb N}\|X_n\|_p&lt;\infty\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="X=\lim_{n\to\infty}X_n">\(X=\lim_{n\to\infty}X_n\)</span> terdefinisi hampir di mana-mana dan bahwa
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\|X_n-X\|_p=0">\(\lim_{n\to\infty}\|X_n-X\|_p=0\)</span>.</p>
+</section>
+<section class="source-unit" id="275Xg" data-source-id="275Xg"><h3><span class="source-label">275Xg</span> (g) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> adalah <span class="math inline" data-source-tex="[0,1]">\([0,1]\)</span> dengan ukuran
+Lebesgue. Untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> misalkan <span class="math inline" data-source-tex="\Sigma_n">\(\Sigma_n\)</span> adalah subaljabar
+berhingga dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> yang dibangkitkan oleh interval jenis <span class="math inline" data-source-tex="[0,2^{-n}r]">\([0,2^{-n}r]\)</span>
+untuk <span class="math inline" data-source-tex="r\le 2^n">\(r\le 2^n\)</span>. Gunakan <a class="xref" href="#275I">275I</a> untuk menunjukkan bahwa untuk setiap
+<span class="math inline" data-source-tex="X:[0,1]\to\Bbb R">\(X:[0,1]\to\Bbb R\)</span> yang terintegralkan kita harus mempunyai
+<span class="math inline" data-source-tex="X(t)=\lim_{n\to\infty}2^n\int_{I_n(t)}X">\(X(t)=\lim_{n\to\infty}2^n\int_{I_n(t)}X\)</span> untuk hampir setiap
+<span class="math inline" data-source-tex="t\in\coint{0,1}">\(t\in\coint{0,1}\)</span>, dengan <span class="math inline" data-source-tex="I_n(t)">\(I_n(t)\)</span> adalah interval berbentuk
+<span class="math inline" data-source-tex="\coint{2^{-n}r,2^{-n}(r+1)}">\(\coint{2^{-n}r,2^{-n}(r+1)}\)</span> yang memuat <span class="math inline" data-source-tex="t">\(t\)</span>. Bandingkan hasil ini dengan
+<a class="xref" href="../223/index.html#223A">223A</a> dan <a class="xref" href="../261/index.html#261Yd">261Yd</a>.</p>
+</section>
+<section class="source-unit" id="275Xh" data-source-id="275Xh"><h3><span class="source-label">275Xh</span> (h) </h3>
+<p>Dalam <a class="xref" href="#275K">275K</a>, tunjukkan bahwa
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\|X_n-X_{\infty}\|_p=0">\(\lim_{n\to\infty}\|X_n-X_{\infty}\|_p=0\)</span> untuk setiap
+<span class="math inline" data-source-tex="p\in\coint{1,\infty}">\(p\in\coint{1,\infty}\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\|X_0\|_p">\(\|X_0\|_p\)</span> berhingga.
+(Bandingkan <a class="xref" href="#275Xe">275Xe</a>.)</p>
+</section>
+<section class="source-unit" id="275Xi" data-source-id="275Xi"><h3><span class="source-label">275Xi</span> (i) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> adalah ruang
+probabilitas, dengan pelengkapan <span class="math inline" data-source-tex="(\Omega,\hat\Sigma,\hat\mu)">\((\Omega,\hat\Sigma,\hat\mu)\)</span>, dan
+<span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span> barisan subaljabar-sigma dari <span class="math inline" data-source-tex="\hat\Sigma">\(\hat\Sigma\)</span> yang tak
+menurun. Tunjukkan bahwa jika <span class="math inline" data-source-tex="\sequence{i}{\tau_i}">\(\sequence{i}{\tau_i}\)</span> adalah barisan waktu
+henti yang teradaptasi terhadap <span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span>, dan kita menetapkan
+<span class="math inline" data-source-tex="\tau(\omega)=\sup_{i\in\Bbb N}\tau_i(\omega)">\(\tau(\omega)=\sup_{i\in\Bbb N}\tau_i(\omega)\)</span> untuk <span class="math inline" data-source-tex="\omega\in\Omega">\(\omega\in\Omega\)</span>,
+maka <span class="math inline" data-source-tex="\tau">\(\tau\)</span> adalah waktu henti yang teradaptasi terhadap
+<span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span>.</p>
+</section>
+<section class="source-unit" id="275Xj" data-source-id="275Xj"><h3><span class="source-label">275Xj</span> (j) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> adalah ruang probabilitas,
+dengan pelengkapan <span class="math inline" data-source-tex="(\Omega,\hat\Sigma,\hat\mu)">\((\Omega,\hat\Sigma,\hat\mu)\)</span>, dan
+<span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span> barisan subaljabar-sigma dari <span class="math inline" data-source-tex="\hat\Sigma">\(\hat\Sigma\)</span> yang tak
+menurun. Misalkan <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> adalah martingal terintegralkan secara
+seragam yang teradaptasi terhadap <span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span>, dan tetapkan
+<span class="math inline" data-source-tex="X_{\infty}=\lim_{n\to\infty}X_n">\(X_{\infty}=\lim_{n\to\infty}X_n\)</span>. Misalkan <span class="math inline" data-source-tex="\tau">\(\tau\)</span> adalah waktu henti yang
+teradaptasi terhadap <span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span>, dan tetapkan
+<span class="math inline" data-source-tex="\tilde X_{\tau}(\omega)=X_{\tau(\omega)}(\omega)">\(\tilde X_{\tau}(\omega)=X_{\tau(\omega)}(\omega)\)</span> kapan pun
+<span class="math inline" data-source-tex="\omega\in\dom X_{\tau(\omega)}">\(\omega\in\dom X_{\tau(\omega)}\)</span>, dengan memperbolehkan <span class="math inline" data-source-tex="\infty">\(\infty\)</span> sebagai
+nilai <span class="math inline" data-source-tex="\tau(\omega)">\(\tau(\omega)\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\tilde X_{\tau}">\(\tilde X_{\tau}\)</span> adalah suatu
+ekspektasi bersyarat dari <span class="math inline" data-source-tex="X_{\infty}">\(X_{\infty}\)</span> pada <span class="math inline" data-source-tex="\tilde\Sigma_{\tau}">\(\tilde\Sigma_{\tau}\)</span>,
+sebagaimana didefinisikan dalam <a class="xref" href="#275N">275N</a>.</p>
+</section>
+<section class="source-unit" id="275Xk" data-source-id="275Xk"><h3><span class="source-label">275Xk</span> (k) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> adalah ruang probabilitas,
+dengan pelengkapan <span class="math inline" data-source-tex="(\Omega,\hat\Sigma,\hat\mu)">\((\Omega,\hat\Sigma,\hat\mu)\)</span>, dan
+<span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span> barisan subaljabar-sigma dari <span class="math inline" data-source-tex="\hat\Sigma">\(\hat\Sigma\)</span> yang tak
+menurun. Misalkan <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> adalah martingal dan <span class="math inline" data-source-tex="\tau">\(\tau\)</span> suatu waktu
+henti, keduanya teradaptasi terhadap <span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span>. Anggap bahwa
+<span class="math inline" data-source-tex="\sup_{n\in\Bbb N}\Expn(|X_n|)&lt;\infty">\(\sup_{n\in\Bbb N}\Expn(|X_n|)&lt;\infty\)</span> dan bahwa <span class="math inline" data-source-tex="\tau">\(\tau\)</span> berhingga hampir di
+mana-mana. Tunjukkan bahwa <span class="math inline" data-source-tex="\tilde X_{\tau}">\(\tilde X_{\tau}\)</span>, sebagaimana didefinisikan dalam
+275Nc, mempunyai ekspektasi berhingga, tetapi
+<span class="math inline" data-source-tex="\Expn(\tilde X_{\tau})">\(\Expn(\tilde X_{\tau})\)</span> tidak harus sama dengan <span class="math inline" data-source-tex="\Expn(X_0)">\(\Expn(X_0)\)</span>.</p>
+</section>
+<section class="source-unit" id="275Xl" data-source-id="275Xl"><h3><span class="source-label">275Xl</span> (l) </h3>
+<p>(i) Tunjukkan bahwa jika <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> adalah
+martingal sedemikian sehingga <span class="math inline" data-source-tex="\sup_{n\in\Bbb N}\Expn(|X_n|)">\(\sup_{n\in\Bbb N}\Expn(|X_n|)\)</span> berhingga dan
+<span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> konvergen dalam ukuran, maka <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> konvergen
+hampir di mana-mana. (ii) Temukan martingal <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\sequencen{X_{2n}}\to 0">\(\sequencen{X_{2n}}\to 0\)</span> hampir di mana-mana tetapi
+<span class="math inline" data-source-tex="|X_{2n+1}|\ge 1">\(|X_{2n+1}|\ge 1\)</span> hampir di mana-mana untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>.
+(iii) Temukan martingal yang konvergen dalam ukuran tetapi tidak konvergen
+hampir di mana-mana.</p>
+</section>
+<section class="source-unit" id="275Y" data-source-id="275Y"><span class="anchor" id="275Ya"></span><h2><span class="source-label">275Y</span> Latihan lanjutan (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> adalah ruang probabilitas,
+<span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span> barisan aljabar-sigma yang saling bebas dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>,
+dan <span class="math inline" data-source-tex="X">\(X\)</span> variabel acak pada <span class="math inline" data-source-tex="\Omega">\(\Omega\)</span> dengan varians berhingga. Misalkan <span class="math inline" data-source-tex="X_n">\(X_n\)</span>
+adalah suatu ekspektasi bersyarat dari <span class="math inline" data-source-tex="X">\(X\)</span> pada <span class="math inline" data-source-tex="\Sigma_n">\(\Sigma_n\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="\lim_{n\to\infty}X_n=\Expn(X)">\(\lim_{n\to\infty}X_n=\Expn(X)\)</span> hampir di mana-mana.
+<span class="hint" role="note"><strong>Petunjuk:</strong> tinjau <span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\Var(X_n)">\(\sum_{n=0}^{\infty}\Var(X_n)\)</span>.</span></p>
+</section>
+<section class="source-unit" id="275Yb" data-source-id="275Yb"><h3><span class="source-label">275Yb</span> (b) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> adalah ruang probabilitas lengkap,
+<span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span> barisan subaljabar-sigma dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> yang tak
+menurun dan semuanya memuat setiap himpunan terabaikan, dan
+<span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> suatu martingal yang teradaptasi terhadap
+<span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span>. Misalkan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> adalah ukuran probabilitas lain dengan
+domain <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> yang kontinu mutlak terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, dengan turunan
+Radon-Nikodým <span class="math inline" data-source-tex="Z">\(Z\)</span>. Untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> misalkan <span class="math inline" data-source-tex="Z_n">\(Z_n\)</span> adalah suatu
+ekspektasi bersyarat dari <span class="math inline" data-source-tex="Z">\(Z\)</span> pada <span class="math inline" data-source-tex="\Sigma_n">\(\Sigma_n\)</span> (terhadap ukuran <span class="math inline" data-source-tex="\mu">\(\mu\)</span>).
+(i) Tunjukkan bahwa <span class="math inline" data-source-tex="Z_n">\(Z_n\)</span> adalah turunan Radon-Nikodým dari
+<span class="math inline" data-source-tex="\nu\restr\Sigma_n">\(\nu\restr\Sigma_n\)</span> terhadap <span class="math inline" data-source-tex="\mu\restr\Sigma_n">\(\mu\restr\Sigma_n\)</span>, untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>.
+(ii) Dengan mendefinisikan <span class="math inline" data-source-tex="X_n/Z_n">\(X_n/Z_n\)</span> seperti dalam <a class="xref" href="../121/index.html#121E">121E</a>, sehingga domainnya
+adalah <span class="math inline" data-source-tex="\{\omega:\omega\in\dom X_n\cap\dom Z_n">\(\{\omega:\omega\in\dom X_n\cap\dom Z_n\)</span>, <span class="math inline" data-source-tex="Z_n(\omega)\ne 0\}">\(Z_n(\omega)\ne 0\}\)</span>,
+tunjukkan bahwa <span class="math inline" data-source-tex="\sequencen{X_n/Z_n}">\(\sequencen{X_n/Z_n}\)</span> adalah martingal terhadap ukuran <span class="math inline" data-source-tex="\nu">\(\nu\)</span>.</p>
+</section>
+<section class="source-unit" id="275Yc" data-source-id="275Yc"><h3><span class="source-label">275Yc</span> (c) </h3>
+<p>Gabungkan gagasan <a class="xref" href="#275Cc">275Cc</a> dengan gagasan <a class="xref" href="#275Cd">275Cd</a>-<a class="xref" href="#275Ce">275Ce</a> untuk
+mendeskripsikan pengertian ‘martingal yang diindeks oleh <span class="math inline" data-source-tex="I">\(I\)</span>’, dengan <span class="math inline" data-source-tex="I">\(I\)</span>
+sebarang himpunan terurut parsial.</p>
+</section>
+<section class="source-unit" id="275Yd" data-source-id="275Yd"><h3><span class="source-label">275Yd</span> (d) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\sequence{k}{X_k}">\(\sequence{k}{X_k}\)</span> adalah martingal pada ruang probabilitas lengkap
+<span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span>, dan tetapkan <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>. Tetapkan
+<span class="math inline" data-source-tex="X^*=\max(|X_0|,\ldots,|X_n|)">\(X^*=\max(|X_0|,\ldots,|X_n|)\)</span>. Misalkan
+<span class="math inline" data-source-tex="p\in\ooint{1,\infty}">\(p\in\ooint{1,\infty}\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\|X^*\|_p\le\Bover{p}{p-1}\|X_n\|_p">\(\|X^*\|_p\le\Bover{p}{p-1}\|X_n\|_p\)</span>. (<em>Petunjuk</em>: tetapkan
+<span class="math inline" data-source-tex="F_t=\{\omega:X^*(\omega)\ge t\}">\(F_t=\{\omega:X^*(\omega)\ge t\}\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="t\mu F_t\le\int_{F_t}|X_n|">\(t\mu F_t\le\int_{F_t}|X_n|\)</span>. Dengan menggunakan teorema Fubini pada
+<span class="math inline" data-source-tex="\Omega\times\coint{0,\infty}">\(\Omega\times\coint{0,\infty}\)</span> dan pada
+<span class="math inline" data-source-tex="\Omega\times\coint{0,\infty}\times\coint{0,\infty}">\(\Omega\times\coint{0,\infty}\times\coint{0,\infty}\)</span>, tunjukkan bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Expn((X^*)^p)=p\int_0^{\infty}t^{p-1}\mu F_tdt">\(\Expn((X^*)^p)=p\int_0^{\infty}t^{p-1}\mu F_tdt\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\int_0^{\infty}t^{p-2}\int_{F_t}|X_n|dt
+=\Bover1{p-1}\Expn(|X_n|\times(X^*)^{p-1})">\(\int_0^{\infty}t^{p-2}\int_{F_t}|X_n|dt
+=\Bover1{p-1}\Expn(|X_n|\times(X^*)^{p-1})\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\Expn(|X_n|\times(X^*)^{p-1})
+\le\|X_n\|_p\|X^*\|_p^{p-1}">\(\Expn(|X_n|\times(X^*)^{p-1})
+\le\|X_n\|_p\|X^*\|_p^{p-1}\)</span>.</div>
+<p>Bandingkan 286A di bawah.)</p>
+</section>
+<section class="source-unit" id="275Ye" data-source-id="275Ye"><h3><span class="source-label">275Ye</span> (e) </h3>
+<p>(i)
+Tunjukkan bahwa jika <span class="math inline" data-source-tex="a">\(a\)</span>, <span class="math inline" data-source-tex="b\ge 0">\(b\ge 0\)</span> maka
+<span class="math inline" data-source-tex="a\ln^+b\le a\ln^+a+\Bover{b}e">\(a\ln^+b\le a\ln^+a+\Bover{b}e\)</span>, dengan <span class="math inline" data-source-tex="\ln^+t=0">\(\ln^+t=0\)</span> jika <span class="math inline" data-source-tex="t\le 1">\(t\le 1\)</span>,
+dan <span class="math inline" data-source-tex="\ln t">\(\ln t\)</span> jika <span class="math inline" data-source-tex="t\ge 1">\(t\ge 1\)</span>.
+(ii) Misalkan <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> adalah ruang probabilitas lengkap dan
+<span class="math inline" data-source-tex="X">\(X\)</span>, <span class="math inline" data-source-tex="Y">\(Y\)</span> variabel acak nonnegatif pada <span class="math inline" data-source-tex="\Omega">\(\Omega\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="t\mu F_t\le\int_{F_t}X">\(t\mu F_t\le\int_{F_t}X\)</span> untuk setiap <span class="math inline" data-source-tex="t\ge 0">\(t\ge 0\)</span>, dengan
+<span class="math inline" data-source-tex="F_t=\{\omega:Y(\omega)\ge t\}">\(F_t=\{\omega:Y(\omega)\ge t\}\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\int_{F_1}Y\le\int_{F_1}X\times\ln^+Y">\(\int_{F_1}Y\le\int_{F_1}X\times\ln^+Y\)</span>, dan karenanya
+<span class="math inline" data-source-tex="\Expn(Y)\le\Bover{e}{e-1}(1+\Expn(X\times\ln^+X))">\(\Expn(Y)\le\Bover{e}{e-1}(1+\Expn(X\times\ln^+X))\)</span>. (iii) Tunjukkan bahwa
+jika <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> adalah suatu martingal pada <span class="math inline" data-source-tex="\Omega">\(\Omega\)</span>, <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>
+dan <span class="math inline" data-source-tex="X^*=\sup_{i\le n}|X_i|">\(X^*=\sup_{i\le n}|X_i|\)</span>, maka
+<span class="math inline" data-source-tex="\Expn(X^*)\le\Bover{e}{e-1}(1+\Expn(|X_n|\times\ln^+|X_n|))">\(\Expn(X^*)\le\Bover{e}{e-1}(1+\Expn(|X_n|\times\ln^+|X_n|))\)</span>.</p>
+</section>
+<section class="source-unit" id="275Yf" data-source-id="275Yf"><h3><span class="source-label">275Yf</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> adalah ruang probabilitas
+dan <span class="math inline" data-source-tex="\langle\Sigma_i\rangle_{i\in I}">\(\langle\Sigma_i\rangle_{i\in I}\)</span> keluarga terhitung subaljabar-sigma
+dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> sedemikian sehingga untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>, <span class="math inline" data-source-tex="j\in I">\(j\in I\)</span>, entah
+<span class="math inline" data-source-tex="\Sigma_i\subseteq\Sigma_j">\(\Sigma_i\subseteq\Sigma_j\)</span> atau <span class="math inline" data-source-tex="\Sigma_j\subseteq\Sigma_i">\(\Sigma_j\subseteq\Sigma_i\)</span>. Misalkan <span class="math inline" data-source-tex="X">\(X\)</span>
+adalah variabel acak bernilai real pada <span class="math inline" data-source-tex="\Omega">\(\Omega\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\|X\|_p&lt;\infty">\(\|X\|_p&lt;\infty\)</span>, dengan <span class="math inline" data-source-tex="1&lt;p&lt;\infty">\(1&lt;p&lt;\infty\)</span>, dan anggap bahwa <span class="math inline" data-source-tex="X_i">\(X_i\)</span> adalah suatu
+ekspektasi bersyarat dari <span class="math inline" data-source-tex="X">\(X\)</span> pada <span class="math inline" data-source-tex="\Sigma_i">\(\Sigma_i\)</span> untuk setiap <span class="math inline" data-source-tex="i\in I">\(i\in I\)</span>.
+Tunjukkan bahwa
+<span class="math inline" data-source-tex="\|\sup_{i\in I}|X_i|\|_p\le\Bover{p}{p-1}\|X\|_p">\(\|\sup_{i\in I}|X_i|\|_p\le\Bover{p}{p-1}\|X\|_p\)</span>.</p>
+</section>
+<section class="source-unit" id="275Yg" data-source-id="275Yg"><h3><span class="source-label">275Yg</span> (g) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> adalah ruang probabilitas,
+dengan pelengkapan <span class="math inline" data-source-tex="(\Omega,\hat\Sigma,\hat\mu)">\((\Omega,\hat\Sigma,\hat\mu)\)</span>, dan misalkan
+<span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span> adalah barisan subaljabar-sigma dari <span class="math inline" data-source-tex="\hat\Sigma">\(\hat\Sigma\)</span> yang
+tak menurun. Misalkan <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> adalah barisan fungsi bernilai real
+yang terintegralkan terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\dom X_n\in\Sigma_n">\(\dom X_n\in\Sigma_n\)</span> dan <span class="math inline" data-source-tex="X_n">\(X_n\)</span> terukur terhadap <span class="math inline" data-source-tex="\Sigma_n">\(\Sigma_n\)</span> untuk setiap
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>. Kita mengatakan bahwa <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> adalah suatu
+<strong>submartingal yang teradaptasi terhadap <span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span></strong> jika
+<span class="math inline" data-source-tex="\int_EX_{n+1}\ge\int_EX_n">\(\int_EX_{n+1}\ge\int_EX_n\)</span> untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> dan setiap
+<span class="math inline" data-source-tex="E\in\Sigma_n">\(E\in\Sigma_n\)</span>. Buktikan versi <a class="xref" href="#275D">275D</a>, <a class="xref" href="#275F">275F</a>, <a class="xref" href="#275G">275G</a>, <a class="xref" href="#275Xf">275Xf</a> untuk submartingal.</p>
+</section>
+<section class="source-unit" id="275Yh" data-source-id="275Yh"><h3><span class="source-label">275Yh</span> (h) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> adalah suatu martingal, dan
+<span class="math inline" data-source-tex="\phi:\Bbb R\to\Bbb R">\(\phi:\Bbb R\to\Bbb R\)</span> fungsi konveks. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\sequencen{\phi(X_n)}">\(\sequencen{\phi(X_n)}\)</span> adalah suatu submartingal. <span class="hint" role="note"><strong>Petunjuk:</strong> <a class="xref" href="../233/index.html#233J">233J</a>.</span>
+Periksa kembali bagian (b-ii) dari bukti <a class="xref" href="#275F">275F</a> berdasarkan fakta ini.</p>
+</section>
+<section class="source-unit" id="275Yi" data-source-id="275Yi"><h3><span class="source-label">275Yi</span> (i) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> adalah barisan variabel acak
+nonnegatif yang saling bebas dan semuanya berekspektasi <span class="math inline" data-source-tex="1">\(1\)</span>. Tetapkan
+<span class="math inline" data-source-tex="W_n=X_0\times\ldots\times X_n">\(W_n=X_0\times\ldots\times X_n\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>. (i) Tunjukkan bahwa
+<span class="math inline" data-source-tex="W=\lim_{n\to\infty}W_n">\(W=\lim_{n\to\infty}W_n\)</span> terdefinisi hampir di mana-mana. (ii) Tunjukkan
+bahwa <span class="math inline" data-source-tex="\Expn(W)">\(\Expn(W)\)</span> bernilai <span class="math inline" data-source-tex="0">\(0\)</span> atau <span class="math inline" data-source-tex="1">\(1\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> andaikan <span class="math inline" data-source-tex="\Expn(W)&gt;0">\(\Expn(W)&gt;0\)</span>.
+Tetapkan <span class="math inline" data-source-tex="Z_n=\lim_{m\to\infty}X_n\times\ldots\times X_m">\(Z_n=\lim_{m\to\infty}X_n\times\ldots\times X_m\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\lim_{n\to\infty}Z_n=1">\(\lim_{n\to\infty}Z_n=1\)</span> ketika <span class="math inline" data-source-tex="0&lt;W&lt;\infty">\(0&lt;W&lt;\infty\)</span>, dan karenanya hampir di
+mana-mana berdasarkan hukum nol-satu, sedangkan <span class="math inline" data-source-tex="\Expn(Z_n)\le 1">\(\Expn(Z_n)\le 1\)</span> berdasarkan
+lemma Fatou, sehingga <span class="math inline" data-source-tex="\lim_{n\to\infty}\Expn(Z_n)=1">\(\lim_{n\to\infty}\Expn(Z_n)=1\)</span>, sedangkan
+<span class="math inline" data-source-tex="\Expn(W)=\Expn(W_n)\Expn(Z_{n+1})">\(\Expn(W)=\Expn(W_n)\Expn(Z_{n+1})\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>.</span> (iii) Tetapkan
+<span class="math inline" data-source-tex="\gamma=\prod_{n=0}^{\infty}\Expn(\sqrt{X_n})">\(\gamma=\prod_{n=0}^{\infty}\Expn(\sqrt{X_n})\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\gamma&gt;0">\(\gamma&gt;0\)</span>
+jika dan hanya jika <span class="math inline" data-source-tex="\Expn(W)=1">\(\Expn(W)=1\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> <span class="math inline" data-source-tex="\Pr(W_n\ge\bover14\gamma^2)\ge\bover14\gamma^2">\(\Pr(W_n\ge\bover14\gamma^2)\ge\bover14\gamma^2\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>,
+sehingga jika <span class="math inline" data-source-tex="\gamma&gt;0">\(\gamma&gt;0\)</span> maka <span class="math inline" data-source-tex="W">\(W\)</span> tidak mungkin nol hampir di mana-mana;
+sedangkan <span class="math inline" data-source-tex="\Expn(\sqrt{W})\le\gamma">\(\Expn(\sqrt{W})\le\gamma\)</span>.</span></p>
+</section>
+<section class="source-unit" id="275Yj" data-source-id="275Yj"><h3><span class="source-label">275Yj</span> (j) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\sequencen{(\Omega_n,\Sigma_n,\mu_n)}">\(\sequencen{(\Omega_n,\Sigma_n,\mu_n)}\)</span> adalah
+barisan ruang probabilitas dengan produk <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span>. Anggap bahwa
+untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> kita mempunyai ukuran probabilitas <span class="math inline" data-source-tex="\nu_n">\(\nu_n\)</span>, dengan
+domain <span class="math inline" data-source-tex="\Sigma_n">\(\Sigma_n\)</span>, yang kontinu mutlak terhadap <span class="math inline" data-source-tex="\mu_n">\(\mu_n\)</span>, dengan turunan
+Radon-Nikodým <span class="math inline" data-source-tex="f_n">\(f_n\)</span>, dan anggap bahwa
+<span class="math inline" data-source-tex="\prod_{n=0}^{\infty}\int\sqrt{f_n}d\mu_n&gt;0">\(\prod_{n=0}^{\infty}\int\sqrt{f_n}d\mu_n&gt;0\)</span>. Misalkan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> adalah produk
+dari <span class="math inline" data-source-tex="\sequencen{\nu_n}">\(\sequencen{\nu_n}\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\nu">\(\nu\)</span> adalah ukuran integral tak
+tentu terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, dengan turunan Radon-Nikodým <span class="math inline" data-source-tex="f">\(f\)</span>, dengan
+<span class="math inline" data-source-tex="f(\pmb{\omega})=\prod_{n=0}^{\infty}f_n(\omega_n)">\(f(\pmb{\omega})=\prod_{n=0}^{\infty}f_n(\omega_n)\)</span> untuk <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-hampir setiap
+<span class="math inline" data-source-tex="\pmb{\omega}=\sequencen{\omega_n}">\(\pmb{\omega}=\sequencen{\omega_n}\)</span> dalam <span class="math inline" data-source-tex="\Omega">\(\Omega\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> gunakan <a class="xref" href="#275Yi">275Yi</a> untuk menunjukkan bahwa <span class="math inline" data-source-tex="\int fd\mu=1">\(\int fd\mu=1\)</span>.</span></p>
+</section>
+<section class="source-unit" id="275Yk" data-source-id="275Yk"><h3><span class="source-label">275Yk</span> (k) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\sequencen{p_n}">\(\sequencen{p_n}\)</span> adalah barisan dalam <span class="math inline" data-source-tex="[0,1]">\([0,1]\)</span>.
+Misalkan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> adalah ukuran biasa pada <span class="math inline" data-source-tex="\{0,1\}^{\Bbb N}">\(\{0,1\}^{\Bbb N}\)</span> (<a class="xref" href="../254/index.html#254J">254J</a>) dan <span class="math inline" data-source-tex="\nu">\(\nu\)</span>
+produk <span class="math inline" data-source-tex="\sequencen{\nu_n}">\(\sequencen{\nu_n}\)</span>, dengan <span class="math inline" data-source-tex="\nu_n">\(\nu_n\)</span> adalah ukuran probabilitas pada
+<span class="math inline" data-source-tex="\{0,1\}">\(\{0,1\}\)</span> yang didefinisikan dengan menetapkan <span class="math inline" data-source-tex="\nu_n\{1\}=p_n">\(\nu_n\{1\}=p_n\)</span>. Tunjukkan
+bahwa <span class="math inline" data-source-tex="\nu">\(\nu\)</span> adalah ukuran integral tak tentu terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> jika dan hanya
+jika <span class="math inline" data-source-tex="\sum_{n=0}^{\infty}|p_n-\bover12|^2&lt;\infty">\(\sum_{n=0}^{\infty}|p_n-\bover12|^2&lt;\infty\)</span>.</p>
+</section>
+<section class="source-unit" id="275Yl" data-source-id="275Yl"><h3><span class="source-label">275Yl</span> (l) </h3>
+<p>Temukan martingal <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> sedemikian sehingga barisan distribusi
+<span class="math inline" data-source-tex="\nu_{X_n}">\(\nu_{X_n}\)</span> (<a class="xref" href="../271/index.html#271C">271C</a>) konvergen untuk topologi samar (<a class="xref" href="../274/index.html#274Ld">274Ld</a>), tetapi
+<span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> tidak konvergen dalam ukuran.</p>
+</section>
+<section class="source-unit" id="275Ym" data-source-id="275Ym"><h3><span class="source-label">275Ym</span> (m) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> adalah barisan variabel acak
+bernilai real yang saling bebas sedemikian sehingga
+<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}X_n">\(\sum_{n=0}^{\infty}X_n\)</span> terdefinisi dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> hampir di mana-mana.
+Anggap bahwa terdapat <span class="math inline" data-source-tex="M\ge 0">\(M\ge 0\)</span> sedemikian sehingga <span class="math inline" data-source-tex="|X_n|\le M">\(|X_n|\le M\)</span> hampir di
+mana-mana untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\Expn(X_n)">\(\sum_{n=0}^{\infty}\Expn(X_n)\)</span> terdefinisi dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> <a class="xref" href="../274/index.html#274Yg">274Yg</a>, <a class="xref" href="#275G">275G</a>.</span></p>
+</section>
+<section class="source-unit" id="275Yn" data-source-id="275Yn"><h3><span class="source-label">275Yn</span> (n) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> adalah ruang probabilitas dan
+<span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> barisan variabel acak bernilai real yang saling bebas pada
+<span class="math inline" data-source-tex="\Omega">\(\Omega\)</span>; tetapkan
+<span class="math inline" data-source-tex="E_n=\{\omega:\omega\in\dom X_n">\(E_n=\{\omega:\omega\in\dom X_n\)</span>, <span class="math inline" data-source-tex="|X_n(\omega)|&gt;1\}">\(|X_n(\omega)|&gt;1\}\)</span>,
+<span class="math inline" data-source-tex="Y_n=X_n\times\chi(\Omega\setminus E_n)">\(Y_n=X_n\times\chi(\Omega\setminus E_n)\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, dan
+<span class="math inline" data-source-tex="Z_n(\omega)=\med(-1,X_n(\omega),1)">\(Z_n(\omega)=\med(-1,X_n(\omega),1)\)</span> untuk <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> dan
+<span class="math inline" data-source-tex="\omega\in\dom X_n">\(\omega\in\dom X_n\)</span>. Tunjukkan bahwa pernyataan berikut ekuivalen:
+(i) <span class="math inline" data-source-tex="\sum_{n=0}^{\infty}X_n(\omega)">\(\sum_{n=0}^{\infty}X_n(\omega)\)</span> terdefinisi dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> untuk hampir
+setiap <span class="math inline" data-source-tex="\omega">\(\omega\)</span>; (ii) <span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\hat\mu E_n&lt;\infty">\(\sum_{n=0}^{\infty}\hat\mu E_n&lt;\infty\)</span>,
+<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\Expn(Y_n)">\(\sum_{n=0}^{\infty}\Expn(Y_n)\)</span> terdefinisi dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan
+<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\Var(Y_n)&lt;\infty">\(\sum_{n=0}^{\infty}\Var(Y_n)&lt;\infty\)</span>, dengan <span class="math inline" data-source-tex="\hat\mu">\(\hat\mu\)</span> adalah pelengkapan
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span>; (iii) <span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\hat\mu E_n&lt;\infty">\(\sum_{n=0}^{\infty}\hat\mu E_n&lt;\infty\)</span>,
+<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\Expn(Z_n)">\(\sum_{n=0}^{\infty}\Expn(Z_n)\)</span> terdefinisi dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan
+<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\Var(Z_n)&lt;\infty">\(\sum_{n=0}^{\infty}\Var(Z_n)&lt;\infty\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> <a class="xref" href="../273/index.html#273K">273K</a>, <a class="xref" href="#275Ym">275Ym</a>.</span>
+(Ini adalah suatu versi dari <strong>Teorema Tiga Deret</strong>.)</p>
+</section>
+<section class="source-unit" id="275Yo" data-source-id="275Yo"><h3><span class="source-label">275Yo</span> (o) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> adalah ruang probabilitas,
+<span class="math inline" data-source-tex="\sequencen{\Sigma_n}">\(\sequencen{\Sigma_n}\)</span> barisan subaljabar-sigma dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> yang tak
+menurun dan <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> barisan variabel acak pada <span class="math inline" data-source-tex="\Omega">\(\Omega\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\Expn(\sup_{n\in\Bbb N}|X_n|)">\(\Expn(\sup_{n\in\Bbb N}|X_n|)\)</span> berhingga dan
+<span class="math inline" data-source-tex="X=\lim_{n\to\infty}X_n">\(X=\lim_{n\to\infty}X_n\)</span> terdefinisi hampir di mana-mana. Untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>,
+misalkan <span class="math inline" data-source-tex="Y_n">\(Y_n\)</span> adalah suatu ekspektasi bersyarat dari <span class="math inline" data-source-tex="X_n">\(X_n\)</span> pada <span class="math inline" data-source-tex="\Sigma_n">\(\Sigma_n\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="\sequencen{Y_n}">\(\sequencen{Y_n}\)</span> konvergen hampir di mana-mana menuju suatu
+ekspektasi bersyarat dari <span class="math inline" data-source-tex="X">\(X\)</span> pada aljabar-sigma yang dibangkitkan oleh
+<span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}\Sigma_n">\(\bigcup_{n\in\Bbb N}\Sigma_n\)</span>.</p>
+</section>
+<section class="source-unit" id="275Yp" data-source-id="275Yp"><h3><span class="source-label">275Yp</span> (p) </h3>
+<p>Tunjukkan bahwa <a class="xref" href="#275Yo">275Yo</a> dapat gagal jika <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span>
+hanya terintegralkan secara seragam, alih-alih didominasi oleh suatu fungsi
+terintegralkan.</p>
+</section>
+<section class="source-unit" id="275Yq" data-source-id="275Yq"><h3><span class="source-label">275Yq</span> (q) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(\Omega,\Sigma,\mu)">\((\Omega,\Sigma,\mu)\)</span> adalah ruang probabilitas
+lengkap, dan <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> barisan variabel acak yang saling bebas pada
+<span class="math inline" data-source-tex="\Omega">\(\Omega\)</span>, semuanya dengan distribusi yang sama, dan berekspektasi berhingga.
+Untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, tetapkan <span class="math inline" data-source-tex="S_n=\bover1{n+1}(X_0+\ldots+X_n)">\(S_n=\bover1{n+1}(X_0+\ldots+X_n)\)</span>; misalkan
+<span class="math inline" data-source-tex="\Sigma_n">\(\Sigma_n\)</span> adalah aljabar-sigma yang didefinisikan oleh <span class="math inline" data-source-tex="S_n">\(S_n\)</span> dan
+<span class="math inline" data-source-tex="\Sigma_n^*">\(\Sigma_n^*\)</span> aljabar-sigma yang dibangkitkan oleh
+<span class="math inline" data-source-tex="\bigcup_{m\ge n}\Sigma_m">\(\bigcup_{m\ge n}\Sigma_m\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="S_n">\(S_n\)</span> adalah suatu ekspektasi
+bersyarat dari <span class="math inline" data-source-tex="X_0">\(X_0\)</span> pada <span class="math inline" data-source-tex="\Sigma_n^*">\(\Sigma_n^*\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> anggap setiap <span class="math inline" data-source-tex="X_i">\(X_i\)</span> terdefinisi di seluruh <span class="math inline" data-source-tex="\Omega">\(\Omega\)</span>. Tetapkan
+<span class="math inline" data-source-tex="\phi(\omega)=\sequence{i}{X_i(\omega)}">\(\phi(\omega)=\sequence{i}{X_i(\omega)}\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\phi:\Omega\to\BbbR^{\Bbb N}">\(\phi:\Omega\to\BbbR^{\Bbb N}\)</span> adalah pelestari ukuran melalui prapeta untuk suatu ukuran produk yang
+sesuai pada <span class="math inline" data-source-tex="\BbbR^{\Bbb N}">\(\BbbR^{\Bbb N}\)</span>, dan bahwa setiap himpunan dalam <span class="math inline" data-source-tex="\Sigma_n^*">\(\Sigma_n^*\)</span>
+berbentuk <span class="math inline" data-source-tex="\phi^{-1}[H]">\(\phi^{-1}[H]\)</span> dengan <span class="math inline" data-source-tex="H\subseteq\BbbR^{\Bbb N}">\(H\subseteq\BbbR^{\Bbb N}\)</span> suatu himpunan
+Borel yang invarian terhadap permutasi koordinat dalam himpunan
+<span class="math inline" data-source-tex="\{0,\ldots,n\}">\(\{0,\ldots,n\}\)</span>, sehingga <span class="math inline" data-source-tex="\int_EX_i=\int_EX_j">\(\int_EX_i=\int_EX_j\)</span> kapan pun <span class="math inline" data-source-tex="i\le j\le n">\(i\le j\le n\)</span>
+dan <span class="math inline" data-source-tex="E\in\Sigma_n^*">\(E\in\Sigma_n^*\)</span>.</span> Dari sini tunjukkan bahwa <span class="math inline" data-source-tex="\sequencen{S_n}">\(\sequencen{S_n}\)</span> konvergen
+hampir di mana-mana. (Bandingkan <a class="xref" href="../273/index.html#273I">273I</a>.)</p>
+</section>
+<section class="source-unit" id="275Yr" data-source-id="275Yr"><h3><span class="source-label">275Yr</span> (r) </h3>
+<p>Rumuskan dan buktikan versi hasil-hasil dalam bagian ini
+untuk martingal yang terdiri atas fungsi bernilai <span class="math inline" data-source-tex="\Bbb C">\(\Bbb C\)</span> atau <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>,
+bukan <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.</p>
+</section>
+<section class="source-unit" id="275-notes" data-source-id="275"><span class="anchor" id="275"></span><h2><span class="source-label">275</span> Catatan penutup untuk Bagian 275 </h2>
+<p>Saya berharap uraian di atas, meskipun sangat disingkat,
+telah memberi gambaran tentang kekayaan konsep-konsep yang terlibat, dan akan
+menyediakan landasan untuk pembelajaran lebih lanjut. Semua teorema dalam
+bagian ini mempunyai implikasi yang luas, tetapi yang benar-benar sangat
+diperlukan dalam teori ukuran lanjut ialah <a class="xref" href="#275I">275I</a>, ‘teorema konvergensi martingal
+Lévy’, yang akan saya gunakan dalam pembuktian Teorema Lifting pada Bab 34
+dalam jilid berikutnya.</p>
+<p>Mengenai waktu henti, saya menyebutkannya sebagian sebagai upaya untuk
+menjelaskan lebih jauh kegunaan martingal (lihat <a class="xref" href="../276/index.html#276Ed">276Ed</a> di bawah), dan sebagian
+karena gagasan <a class="xref" href="#275N">275N</a>-<a class="xref" href="#275O">275O</a> begitu penting dalam teori probabilitas modern
+sehingga, sekadar sebagai pengetahuan umum, Anda perlu menyadari bahwa ada
+sesuatu di sana. Saya menambahkan <a class="xref" href="#275P">275P</a> sebagai salah satu hasil baku yang
+paling mudah diakses dan dapat diperoleh dengan metode ini.</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 2: Broad Foundations</cite>, Bagian 275.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 29 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-cumulative-html-route-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V2-S275&quot;,
+  &quot;source_member&quot;: &quot;mt2.2016/mt275.tex&quot;,
+  &quot;target_bytes&quot;: 57434,
+  &quot;target_sha256&quot;: &quot;68bd832653d14d058c943b6b19894b9e7f520d140174f924dc9f626d7e28ec09&quot;,
+  &quot;source_ids&quot;: [
+    &quot;275&quot;,
+    &quot;275A&quot;,
+    &quot;275B&quot;,
+    &quot;275Ba&quot;,
+    &quot;275Bb&quot;,
+    &quot;275Bc&quot;,
+    &quot;275C&quot;,
+    &quot;275Ca&quot;,
+    &quot;275Cb&quot;,
+    &quot;275Cc&quot;,
+    &quot;275Cd&quot;,
+    &quot;275Ce&quot;,
+    &quot;275Cf&quot;,
+    &quot;275D&quot;,
+    &quot;275E&quot;,
+    &quot;275F&quot;,
+    &quot;275G&quot;,
+    &quot;275H&quot;,
+    &quot;275I&quot;,
+    &quot;275J&quot;,
+    &quot;275K&quot;,
+    &quot;275L&quot;,
+    &quot;275M&quot;,
+    &quot;275Ma&quot;,
+    &quot;275Mb&quot;,
+    &quot;275N&quot;,
+    &quot;275O&quot;,
+    &quot;275P&quot;,
+    &quot;275X&quot;,
+    &quot;275Xa&quot;,
+    &quot;275Xb&quot;,
+    &quot;275Xc&quot;,
+    &quot;275Xd&quot;,
+    &quot;275Xe&quot;,
+    &quot;275Xf&quot;,
+    &quot;275Xg&quot;,
+    &quot;275Xh&quot;,
+    &quot;275Xi&quot;,
+    &quot;275Xj&quot;,
+    &quot;275Xk&quot;,
+    &quot;275Xl&quot;,
+    &quot;275Y&quot;,
+    &quot;275Ya&quot;,
+    &quot;275Yb&quot;,
+    &quot;275Yc&quot;,
+    &quot;275Yd&quot;,
+    &quot;275Ye&quot;,
+    &quot;275Yf&quot;,
+    &quot;275Yg&quot;,
+    &quot;275Yh&quot;,
+    &quot;275Yi&quot;,
+    &quot;275Yj&quot;,
+    &quot;275Yk&quot;,
+    &quot;275Yl&quot;,
+    &quot;275Ym&quot;,
+    &quot;275Yn&quot;,
+    &quot;275Yo&quot;,
+    &quot;275Yp&quot;,
+    &quot;275Yq&quot;,
+    &quot;275Yr&quot;
+  ],
+  &quot;corpus_id&quot;: &quot;O007-FREMLIN&quot;,
+  &quot;volume_id&quot;: &quot;O007-FREMLIN-V2&quot;,
+  &quot;volume_source_title&quot;: &quot;Broad Foundations&quot;,
+  &quot;route&quot;: &quot;275&quot;,
+  &quot;official_source_page_start&quot;: 388,
+  &quot;chapter_official_source_pages&quot;: [
+    343,
+    407
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

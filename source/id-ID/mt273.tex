@@ -1,0 +1,1248 @@
+\frfilename{mt273.tex}
+\versiondate{2.12.09}
+\copyrightdate{2000}
+
+\def\chaptername{Teori probabilitas}
+\def\sectionname{Hukum kuat bilangan besar}
+
+\newsection{273}
+
+Sekarang saya sampai pada teorema pertama dari tiga teorema utama bab
+ini. Barangkali saya seharusnya menyebutnya suatu 'prinsip', bukan
+'teorema', karena saya tidak akan mencoba menyatakan suatu bentuk yang
+sepenuhnya umum, melainkan akan memberikan tiga teorema (273D, 273H,
+273I), dengan beragam akibat, yang masing-masing menguraikan syarat-syarat
+yang menjamin bahwa rata-rata suatu barisan variabel acak bebas akan
+konvergen hampir pasti. Pada akhir seksi ini (273N) saya menambahkan suatu
+hasil mengenai konvergensi norma rata-rata.
+
+\leader{273A}{}\cmmnt{ Akan berguna jika kita memulai dengan pernyataan
+eksplisit dari suatu lemma yang sangat sederhana tetapi sangat berguna.
+
+\medskip
+
+\noindent}{\bf Lemma} Misalkan $\sequencen{E_n}$ suatu barisan himpunan
+terukur dalam ruang ukur $(\Omega,\Sigma,\mu)$, dan andaikan
+$\sum_{n=0}^{\infty}\mu E_n<\infty$. Maka $\{n:\omega\in E_n\}$
+berhingga untuk hampir setiap $\omega\in\Omega$.
+
+\proof{ Kita mempunyai
+
+$$\eqalign{\mu\{\omega:\{n:\omega\in E_n\}\text{ tak berhingga}\}
+&=\mu(\bigcap_{n\in\Bbb N}\bigcup_{m\ge n}E_m)
+=\inf_{n\in\Bbb N}\mu(\bigcup_{m\ge n}E_m)\cr
+&\le\inf_{n\in\Bbb N}\sum_{m=n}^{\infty}\mu E_m
+=0.\cr}$$
+}%end of proof of 273A
+
+\leader{273B}{Lemma} Misalkan $\sequencen{X_n}$ suatu barisan bebas
+variabel acak bernilai real, dan tetapkan $S_n=\sum_{i=0}^nX_i$ untuk
+setiap $n\in\Bbb N$.
+
+(a) Jika $\sequencen{S_n}$ konvergen dalam ukuran, maka barisan tersebut
+konvergen hampir di mana-mana.
+
+(b) Khususnya, jika $\Expn(X_n)=0$ untuk setiap $n$ dan
+$\sum_{n=0}^{\infty}\Expn(X_n^2)<\infty$, maka
+$\sum_{n=0}^{\infty}X_n$ terdefinisi, dan berhingga, hampir di mana-mana.
+
+\proof{{\bf (a)} Misalkan $(\Omega,\Sigma,\mu)$ ruang probabilitas yang
+mendasarinya. Jika kita mengubah setiap $X_n$ pada suatu himpunan
+terabaikan, kita tidak mengubah kebebasan $\sequencen{X_n}$ (272H), dan
+$S_n$ juga berubah hanya pada suatu himpunan terabaikan; jadi sejak awal
+kita boleh mengandaikan bahwa setiap $X_n$ merupakan fungsi terukur yang
+didefinisikan pada seluruh $\Omega$.
+
+Karena fungsional $X\mapsto\Expn(\min(1,|X|))$ merupakan salah satu
+pseudometrik yang mendefinisikan topologi konvergensi dalam ukuran (245A),
+$\lim_{m,n\to\infty}\Expn(\min(1,|S_m-S_n|))=0$, dan untuk setiap
+$k\in\Bbb N$ kita dapat menemukan $n_k\in\Bbb N$ sedemikian sehingga
+$\Expn(\min(1,|S_m-S_{n_k}|))\le 4^{-k}$ untuk setiap $m\ge n_k$. Jadi
+$\Pr(|S_m-S_{n_k}|\ge 2^{-k})\le 2^{-k}$ untuk setiap $m\ge n_k$.
+Berdasarkan lemma Etemadi (272V) yang diterapkan pada
+$\langle X_i\rangle_{i>n_k}$,
+
+\Centerline{$\Pr(\sup_{n_k\le m\le n}|S_m-S_{n_k}|\ge 3\cdot 2^{-k})
+\le 3\cdot 2^{-k}$}
+
+\noindent untuk setiap $n\ge n_k$. Dengan menetapkan
+
+\Centerline{$H_{kn}
+=\{\omega:\sup_{n_k\le m\le n}|S_m(\omega)-S_{n_k}(\omega)|
+  \ge 3\cdot 2^{-k}\}$ untuk $n\ge n_k$,}
+
+\Centerline{$H_k=\bigcup_{n\ge n_k}H_{kn}$,}
+
+\noindent kita mempunyai
+
+\Centerline{$\mu H_k=\lim_{n\to\infty}\mu H_{kn}\le 3\cdot 2^{-k}$}
+
+\noindent untuk setiap $k$, sehingga $\sum_{k=0}^{\infty}\mu H_k$
+berhingga dan hampir setiap $\omega\in\Omega$ termasuk hanya dalam
+berhingga banyak $H_k$ (273A).
+
+Sekarang ambil sebarang $\omega$ demikian. Maka terdapat suatu
+$r\in\Bbb N$ sedemikian sehingga $\omega\notin H_k$ untuk setiap
+$k\ge r$. Dalam hal ini, untuk setiap $k\ge r$,
+$\omega\notin\bigcup_{n\ge n_k}H_{kn}$, yaitu
+$|S_n(\omega)-S_{n_k}(\omega)|<3\cdot 2^{-k}$ untuk setiap $n\ge n_k$.
+Namun ini berarti bahwa $\sequencen{S_n(\omega)}$ merupakan barisan
+Cauchy, dan karena itu konvergen. Karena hal ini benar untuk hampir setiap
+$\omega$, $\sequencen{S_n}$ konvergen hampir di mana-mana, sebagaimana
+dinyatakan.
+
+\medskip
+
+{\bf (b)} Sekarang andaikan $\Expn(X_n)=0$ untuk setiap $n$ dan
+$\sum_{n=0}^{\infty}\Expn(X_n^2)<\infty$. Dalam hal ini, untuk sebarang
+$m<n$,
+
+$$\eqalignno{\|S_n-S_m\|_1^2
+&\le\|\chi\Omega\|_2^2\|S_n-S_m\|_2^2\cr
+\displaycause{berdasarkan ketaksamaan Cauchy, 244Eb}
+&=\Expn(S_n-S_m)^2
+=\Var(S_n-S_m)\cr
+\displaycause{karena $\Expn(S_n-S_m)=\sum_{i=m+1}^n\Expn(X_i)=0$}
+&=\sum_{i=m+1}^n\Var(X_i)\cr
+\displaycause{berdasarkan kesamaan Bienaym\'e, 272S}
+&\to 0\cr}$$
+
+\noindent ketika $m\to\infty$. Jadi
+$\sequencen{S_n^{\ssbullet}}$ merupakan barisan Cauchy dalam $L^1(\mu)$
+dan konvergen dalam $L^1(\mu)$, berdasarkan 242F; berdasarkan 245G,
+barisan tersebut konvergen dalam ukuran dalam $L^0(\mu)$, yaitu
+$\sequencen{S_n}$ konvergen dalam ukuran dalam $\eusm L^0(\mu)$.
+Berdasarkan (a), $\sequencen{S_n}$ konvergen hampir di mana-mana, yaitu
+$\sum_{i=0}^{\infty}X_i$ terdefinisi dan berhingga hampir di mana-mana.
+}%end of proof of 273B
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Bukti di atas mengandaikan keakraban dengan
+gagasan-gagasan Bab 24. Namun sekurang-kurangnya bagian (b) dapat dibangun
+tanpa satu pun gagasan tersebut; lihat 273Xa. Dalam 276B terdapat
+generalisasi (b) yang didasarkan pada pendekatan berbeda.
+}%end of comment
+
+\leader{273C}{}\cmmnt{ Sekarang kita memerlukan suatu lemma (bagian (b)
+di bawah) dari teori keterjumlahan. Saya menggunakan kesempatan ini untuk
+menyertakan suatu fakta elementer yang akan berguna nanti dalam seksi ini
+dan di tempat lain.
+
+\medskip
+
+\noindent}
+{\bf Lemma} (a) Jika $\lim_{n\to\infty}x_n=x$, maka
+$\lim_{n\to\infty}\Bover1{n+1}\sum_{i=0}^nx_i=x$.
+
+(b) Misalkan $\sequencen{x_n}$ sedemikian sehingga
+$\sum_{i=0}^{\infty}x_i$ terdefinisi dalam $\Bbb R$\dvAnew{2012}, dan
+$\sequencen{b_n}$ suatu barisan tak menurun dalam $\coint{0,\infty}$
+yang divergen ke $\infty$. Maka
+\ifnum\stylenumber=12
+
+\Centerline{$\lim_{n\to\infty}\Bover1{b_n}\sum_{k=0}^nb_kx_k=0$.}
+\else
+$\lim_{n\to\infty}\Bover1{b_n}\sum_{k=0}^nb_kx_k=0$.\fi
+
+\proof{{\bf (a)} Misalkan $\epsilon>0$. Misalkan $m$ sedemikian sehingga
+$|x_n-x|\le\epsilon$ setiap kali $n\ge m$. Misalkan $m'\ge m$ sedemikian
+sehingga $|\sum_{i=0}^{m-1}(x-x_i)|\le\epsilon m'$. Maka untuk $n\ge m'$
+kita mempunyai
+
+$$\eqalign{|x-\Bover1{n+1}\sum_{i=0}^nx_i|
+&=\Bover1{n+1}|\sum_{i=0}^n(x-x_i)|\cr
+&\le\Bover1{n+1}|\sum_{i=0}^{m-1}(x-x_i)|
++\Bover1{n+1}\sum_{i=m}^n|x-x_i|\cr
+&\le\Bover{\epsilon m'}{n+1}+\Bover{\epsilon (n-m+1)}{n+1}
+\le 2\epsilon.\cr}$$
+
+\noindent Karena $\epsilon$ sebarang,
+$\lim_{n\to\infty}\Bover1{n+1}\sum_{i=0}^nx_i=x$.
+
+\medskip
+
+{\bf (b)} Misalkan $\epsilon>0$. Tuliskan
+$s_n=\sum_{i=0}^nx_i$ untuk setiap $n$, dan
+
+\Centerline{$s=\lim_{n\to\infty}s_n=\sum_{i=0}^{\infty}x_i$;}
+
+\noindent tetapkan $s^*=\sup_{n\in\Bbb N}|s_n|<\infty$. Misalkan
+$m\in\Bbb N$ sedemikian sehingga $|s_n-s|\le\epsilon$ setiap kali
+$n\ge m$; maka $|s_n-s_j|\le 2\epsilon$ setiap kali $j$, $n\ge m$.
+Misalkan $m'\ge m$ sedemikian sehingga $b_ms^*\le\epsilon b_{m'}$.
+
+Ambil sebarang $n\ge m'$. Maka
+
+$$\eqalignno{|\sum_{k=0}^nb_kx_k|
+&=|b_0s_0+b_1(s_1-s_0)+\ldots+b_n(s_n-s_{n-1})|\cr
+&=|(b_0-b_1)s_0+(b_1-b_2)s_1+\ldots+(b_{n-1}-b_n)s_{n-1}+b_ns_n|\cr
+&=|b_0s_n+\sum_{i=0}^{n-1}(b_{i+1}-b_i)(s_n-s_i)|\cr
+&\le b_0|s_n|+\sum_{i=0}^{m-1}(b_{i+1}-b_{i})|s_n-s_i|
++\sum_{i=m}^{n-1}(b_{i+1}-b_{i})|s_n-s_i|\cr
+&\le b_0s^*
++2s^*\sum_{i=0}^{m-1}(b_{i+1}-b_i)
++2\epsilon\sum_{i=m}^{n-1}(b_{i+1}-b_i)\cr
+&=b_0s^*+2s^*(b_m-b_0)+2\epsilon(b_n-b_m)
+\le 2s^*b_m+2\epsilon b_n.\cr}$$
+
+\noindent Akibatnya, karena $b_n\ge b_{m'}$,
+
+\Centerline{$|\Bover1{b_n}\sum_{k=0}^nb_kx_k|\le
+2\Bover{s^*b_m}{b_n}+2\epsilon
+\le 4\epsilon$.}
+
+\noindent Karena $\epsilon$ sebarang,
+
+\Centerline{$\lim_{n\to\infty}\Bover1{b_n}\sum_{k=0}^nb_kx_k
+=0$,}
+
+\noindent sebagaimana diperlukan.
+}%end of proof of 273C
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Bagian (b) di atas kadang-kadang disebut 'lemma
+Kronecker'.
+}%end of comment
+
+\leader{273D}{Hukum kuat bilangan besar: bentuk pertama} Misalkan
+$\sequencen{X_n}$ suatu barisan bebas variabel acak bernilai real, dan
+andaikan $\sequencen{b_n}$ suatu barisan tak menurun dalam
+$\ooint{0,\infty}$, yang divergen ke $\infty$, sedemikian sehingga
+$\sum_{n=0}^{\infty}\Bover1{b_n^2}\Var(X_n)<\infty$. Maka
+
+\Centerline{$\lim_{n\to\infty}
+\Bover{1}{b_n}\sum_{i=0}^n(X_i-\Expn(X_i))=0$}
+
+\noindent hampir di mana-mana.
+
+\proof{ Seperti biasa, tuliskan $(\Omega,\Sigma,\mu)$ untuk ruang
+probabilitas yang mendasarinya. Tetapkan
+
+\Centerline{$Y_n=\Bover1{b_n}(X_n-\Expn(X_n))$}
+
+\noindent untuk setiap $n$; maka $\sequencen{Y_n}$ bebas (272E),
+$\Expn(Y_n)=0$ untuk setiap $n$, dan
+
+\Centerline{$\sum_{n=0}^{\infty}\Expn(Y_n^2)
+=\sum_{n=0}^{\infty}\Bover1{b_n^2}\Var(X_n)<\infty$.}
+
+\noindent Berdasarkan 273B, $\sequencen{Y_n(\omega)}$ dapat dijumlahkan
+untuk hampir setiap $\omega\in\Omega$. Namun berdasarkan 273Cb,
+
+\Centerline{$\lim_{n\to\infty}\Bover{1}{b_n}
+  \sum_{i=0}^n(X_i(\omega)-\Expn(X_i))
+=\lim_{n\to\infty}\Bover{1}{b_n}
+\sum_{i=0}^nb_iY_i(\omega)=0$}
+
+\noindent untuk semua $\omega$ demikian. Jadi kita memperoleh hasilnya.
+}%end of proof of 273D
+
+\leader{273E}{Akibat} Misalkan $\sequencen{X_n}$ suatu barisan bebas
+variabel acak sedemikian sehingga $\Expn(X_n)=0$ untuk setiap $n$ dan
+$\sup_{n\in\Bbb N}\Expn(X_n^2)<\infty$. Maka
+
+\Centerline{$\lim_{n\to\infty}\Bover{1}{b_n}(X_0+\ldots+X_n)
+=0$}
+
+\noindent hampir di mana-mana setiap kali $\sequencen{b_n}$ merupakan
+barisan tak menurun dari bilangan yang benar-benar positif dan
+$\sum_{n=0}^{\infty}\Bover{1}{b_n^2}$ berhingga. Khususnya,
+
+\Centerline{$\lim_{n\to\infty}\Bover{1}{n+1}(X_0+\ldots+X_n)=0$}
+
+\noindent hampir di mana-mana.
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Untuk sebagian besar sisa seksi ini, kita akan
+mengambil $b_n=n+1$. Keistimewaan khusus 273D ialah bahwa hasil tersebut
+mengizinkan $b_n$ lain, misalnya, setelah suku-suku awalnya dipilih
+positif agar barisan tetap tak menurun,
+$b_n=\sqrt{n}\ln n\quad(n\ge 2)$. Suatu penguatan
+langsung teorema ini terdapat dalam 276C di bawah.
+}%end of comment
+
+\leader{273F}{Akibat} Misalkan $\sequencen{E_n}$ suatu barisan bebas
+himpunan terukur dalam ruang probabilitas $(\Omega,\Sigma,\mu)$, dan
+andaikan bahwa
+
+\Centerline{$\lim_{n\to\infty}\Bover{1}{n+1}\sum_{i=0}^n\mu
+E_i=c$.}
+
+\noindent Maka
+
+\Centerline{$\lim_{n\to\infty}\Bover{1}{n+1}\#(\{i:i\le
+n,\,\omega\in E_i\})=c$}
+
+\noindent untuk hampir setiap $\omega\in\Omega$.
+
+\proof{ Dalam 273D, tetapkan $X_n=\chi E_n$, $b_n=n+1$. Untuk hampir
+setiap $\omega$, kita mempunyai
+
+\Centerline{$\lim_{n\to\infty}\Bover1{n+1}
+\sum_{i=0}^n(\chi E_i(\omega)-a_i)=0$,}
+
+\noindent dengan menuliskan $a_i=\mu E_i=\Expn(X_i)$ untuk setiap $i$.
+(Saya melihat bahwa saya mengandalkan 272F untuk mendukung klaim bahwa
+$\sequencen{X_n}$ bebas.) Namun untuk setiap $\omega$ demikian,
+
+$$\eqalign{\lim_{n\to\infty}\bigl(\Bover1{n+1}
+&\#(\{i:i\le n,\,\omega\in E_i\})-\Bover1{n+1}\sum_{i=0}^na_i\bigr)\cr
+&=\lim_{n\to\infty}\Bover1{n+1}
+\sum_{i=0}^n(\chi E_i(\omega)-a_i)
+=0;\cr}$$
+
+\noindent karena kita mengandaikan bahwa
+$\lim_{n\to\infty}\Bover1{n+1}\sum_{i=0}^na_i=c$, kita harus mempunyai
+
+\Centerline{$\lim_{n\to\infty}\Bover{1}{n+1}\#(\{i:i\le
+n,\,\omega\in E_i\})=c,$}
+
+\noindent sebagaimana diperlukan.
+}%end of proof of 273F
+
+\vleader{48pt}{273G}{Akibat} Misalkan $\mu$ ukuran biasa pada
+$\Cal P\Bbb N$\cmmnt{, sebagaimana diuraikan dalam 254Jb}. Maka untuk
+$\mu$-hampir setiap himpunan $a\subseteq\Bbb N$,
+
+\Centerline{$\lim_{n\to\infty}\Bover1{n+1}
+\#(a\cap\{0,\ldots,n\})
+= {1\over 2}$.}
+
+\proof{ Himpunan-himpunan $E_n=\{a:n\in a\}$ bebas, dengan ukuran
+$ {1\over 2}$.
+}%end of proof of 273G
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Limit $\lim_{n\to\infty}\Bover1{n+1}
+\#(a\cap\{0,\ldots,n\})$ disebut {\bf kepadatan asimtotik} dari $a$.
+}%end of comment
+
+\leader{273H}{Hukum kuat bilangan besar: bentuk kedua} Misalkan
+$\sequencen{X_n}$ suatu barisan bebas variabel acak bernilai real, dan
+andaikan bahwa
+$\sup_{n\in\Bbb N}\Expn(|X_n|^{1+\delta})<\infty$ untuk suatu
+$\delta>0$. Maka
+
+\Centerline{$\lim_{n\to\infty}\Bover{1}{n+1}\sum_{i=0}^n(X_i-\Expn(X_i))
+=0$}
+
+\noindent hampir di mana-mana.
+
+\proof{ Seperti biasa, sebut ruang probabilitas yang mendasarinya
+$(\Omega,\Sigma,\mu)$; seperti dalam 273B kita dapat menyesuaikan $X_n$
+pada himpunan-himpunan terabaikan agar semuanya terukur dan didefinisikan
+di setiap titik pada $\Omega$, tanpa mengubah $\Expn(X_n)$,
+$\Expn(|X_n|)$ atau konvergensi rata-rata kecuali pada suatu himpunan
+terabaikan.
+
+\medskip
+
+{\bf (a)} Untuk setiap $n$, definisikan suatu variabel acak $Y_n$ pada
+$\Omega$ dengan menetapkan
+
+$$\eqalign{Y_n(\omega)&=X_n(\omega)\text{ jika }|X_n(\omega)|\le n,\cr
+&=0\text{ jika }|X_n(\omega)|>n.\cr}$$
+
+\noindent Maka $\sequencen{Y_n}$ bebas (272E). Suku pertama tidak memberi
+kontribusi, dan untuk setiap $n\ge 1$,
+
+\Centerline{$\Var(Y_n)\le
+\Expn(Y_n^2)\le\Expn(n^{1-\delta}|X_n|^{1+\delta})\le n^{1-\delta}K$,}
+
+\noindent dengan $K=\sup_{n\in\Bbb N}\Expn(|X_n|^{1+\delta})$, sehingga
+
+\Centerline{$\sum_{n=0}^{\infty}\Bover1{(n+1)^2}\Var(Y_n)
+=\sum_{n=1}^{\infty}\Bover1{(n+1)^2}\Var(Y_n)
+\le\sum_{n=1}^{\infty}\Bover{n^{1-\delta}}{(n+1)^2}K
+<\infty$.}
+
+\noindent Berdasarkan 273D,
+
+\Centerline{$G
+=\{\omega:\lim_{n\to\infty}\Bover{1}{n+1}
+  \sum_{i=0}^n(Y_i(\omega)-\Expn(Y_i))=0\}$}
+
+\noindent koterabaikan.
+
+\medskip
+
+{\bf (b)} Di sisi lain, dengan menetapkan
+
+\Centerline{$E_n=\{\omega:Y_n(\omega)\ne X_n(\omega)\}
+=\{\omega:|X_n(\omega)|>n\}$,}
+
+\noindent kita mempunyai $K\ge n^{1+\delta}\mu E_n$ untuk setiap $n$,
+sehingga
+
+\Centerline{$\sum_{n=0}^{\infty}\mu E_n
+\le 1+K\sum_{n=1}^{\infty}\Bover1{n^{1+\delta}}<\infty$,}
+
+\noindent dan himpunan $H=\{\omega:\{n:\omega\in E_n\}$
+berhingga$\}$ koterabaikan (273A). Namun tentu saja
+
+\Centerline{$\lim_{n\to\infty}\Bover1{n+1}
+\sum_{i=0}^n(X_i(\omega)-Y_i(\omega))=0$}
+
+\noindent untuk setiap $\omega\in H$.
+
+\medskip
+
+{\bf (c)} Akhirnya,
+
+\Centerline{$|\Expn(Y_n)-\Expn(X_n)|\le\int_{E_n}|X_n|
+\le\int_{E_n}n^{-\delta}|X_n|^{1+\delta}\le n^{-\delta}K$}
+
+\noindent setiap kali $n\ge 1$, sehingga
+$\lim_{n\to\infty}(\Expn(Y_n)-\Expn(X_n))=0$ dan
+
+\Centerline{$\lim_{n\to\infty}\Bover1{n+1}
+\sum_{i=0}^n(\Expn(Y_i)-\Expn(X_i))=0$}
+
+\noindent (273Ca). Dengan menggabungkan ketiga hal ini, kita memperoleh
+
+\Centerline{$\lim_{n\to\infty}\Bover{1}{n+1}
+\sum_{i=0}^n(X_i(\omega)-\Expn(X_i))=0$}
+
+\noindent setiap kali $\omega$ termasuk dalam himpunan koterabaikan
+$G\cap H$. Jadi
+
+\Centerline{$\lim_{n\to\infty}\Bover{1}{n+1}
+\sum_{i=0}^n(X_i-\Expn(X_i))=0$}
+
+\noindent hampir di mana-mana, sebagaimana diperlukan.
+}%end of proof of 273H
+
+\leader{273I}{Hukum kuat bilangan besar: bentuk ketiga} Misalkan
+$\sequencen{X_n}$ suatu barisan bebas variabel acak bernilai real dengan
+ekspektasi berhingga, dan andaikan semuanya {\bf berdistribusi identik},
+yaitu semuanya mempunyai distribusi yang sama. Maka
+
+\Centerline{$\lim_{n\to\infty}\Bover{1}{n+1}
+\sum_{i=0}^n(X_i-\Expn(X_i))=0$}
+
+\noindent hampir di mana-mana.
+
+\proof{ Bukti ini mengikuti alur yang sama dengan bukti 273H, tetapi
+beberapa ketaksamaannya memerlukan argumen yang lebih halus. Seperti
+biasa, sebut ruang probabilitas yang mendasarinya
+$(\Omega,\Sigma,\mu)$ dan andaikan semua $X_n$ terukur serta
+didefinisikan di setiap titik pada $\Omega$. (Kita perlu mengingat bahwa
+mengubah suatu variabel acak pada suatu himpunan terabaikan tidak mengubah
+distribusinya.) Misalkan $\nu$ distribusi yang sama bagi semua $X_n$.
+
+\medskip
+
+{\bf (a)} Untuk setiap $n$, definisikan suatu variabel acak $Y_n$ pada
+$\Omega$ dengan menetapkan
+
+$$\eqalign{Y_n(\omega)&=X_n(\omega)\text{ jika }|X_n(\omega)|\le n,\cr
+&=0\text{ jika }|X_n(\omega)|>n.\cr}$$
+
+\noindent Maka $\sequencen{Y_n}$ bebas (272E). Untuk setiap
+$n\in\Bbb N$,
+
+\Centerline{$\Var(Y_n)\le\Expn(Y_n^2)=\int_{[-n,n]}x^2\nu(dx)$}
+
+\noindent (271E). Untuk menaksir
+$\sum_{n=0}^{\infty}\Bover1{(n+1)^2}\Expn(Y_n^2)$, tetapkan
+
+\Centerline{$f_n(x)=\Bover{x^2}{(n+1)^2}$ jika $|x|\le n$,
+$0$ jika $|x|>n$,}
+
+\noindent sehingga
+$\Bover1{(n+1)^2}\Var(Y_n)\le\int f_nd\nu$. Jika $r\ge 1$ dan
+$r<|x|\le r+1$, maka
+
+$$\eqalign{\sum_{n=0}^{\infty}f_n(x)
+&\le\sum_{n=r+1}^{\infty}\Bover1{(n+1)^2}(r+1)|x|\cr
+&\le(r+1)|x|\sum_{n=r+1}^{\infty}(\Bover1n-\Bover1{n+1})
+\le |x|,\cr}$$
+
+\noindent sedangkan jika $|x|\le 1$, maka
+
+\Centerline{$\sum_{n=0}^{\infty}f_n(x)
+\le\sum_{n=0}^{\infty}\Bover1{(n+1)^2}=\Bover{\pi^2}6\le 2<\infty$.}
+
+\noindent (Anda tidak perlu mengetahui bahwa jumlah tersebut adalah
+$\bover{\pi^2}6$, hanya bahwa jumlah itu berhingga; tetapi lihat 282Xo.)
+Akibatnya
+
+\Centerline{$f(x)=\sum_{n=0}^{\infty}f_n(x)\le 2+|x|$}
+
+\noindent untuk setiap $x$, dan $\int fd\nu<\infty$, karena
+$\int |x|\nu(dx)$ merupakan nilai bersama dari $\Expn(|X_n|)$, dan
+berhingga. Berdasarkan salah satu dari teorema-teorema konvergensi besar,
+
+\Centerline{$\sum_{n=0}^{\infty}\Bover1{(n+1)^2}\Var(Y_n)
+\le\sum_{n=0}^{\infty}\int f_nd\nu
+=\int fd\nu<\infty$.}
+
+\noindent Berdasarkan 273D,
+
+\Centerline{$G
+=\{\omega:\lim_{n\to\infty}\Bover{1}{n+1}
+   \sum_{i=0}^n(Y_i(\omega)-\Expn(Y_i))=0\}$}
+
+\noindent koterabaikan.
+
+\medskip
+
+{\bf (b)} Selanjutnya, dengan menetapkan
+
+\Centerline{$E_n
+=\{\omega:X_n(\omega)\ne Y_n(\omega)\}
+=\{\omega:|X_n(\omega)|>n\}$,}
+
+\noindent kita mempunyai
+
+\Centerline{$E_n=\bigcup_{i\ge n}F_{ni}$,}
+
+\noindent dengan
+
+\Centerline{$F_{ni}=\{\omega:i<|X_n(\omega)|\le i+1\}$.}
+
+\noindent Sekarang
+
+\Centerline{$\mu F_{ni}=\nu\{x:i<|x|\le i+1\}$}
+
+\noindent untuk setiap $n$ dan $i$. Jadi
+
+$$\eqalign{\sum_{n=0}^{\infty}\mu E_n
+&=\sum_{n=0}^{\infty}\sum_{i=n}^{\infty}\mu F_{ni}
+=\sum_{i=0}^{\infty}\sum_{n=0}^i\mu F_{ni}\cr
+&=\sum_{i=0}^{\infty}(i+1)\nu\{x:i<|x|\le i+1\}
+\le\int(1+|x|)\nu(dx)
+<\infty.\cr}$$
+
+\noindent Akibatnya himpunan
+$H=\{\omega:\{n:X_n(\omega)\ne Y_n(\omega)\}$ berhingga$\}$
+koterabaikan (273A). Namun tentu saja
+
+\Centerline{$\lim_{n\to\infty}\Bover1{n+1}
+  \sum_{i=0}^n(X_i(\omega)-Y_i(\omega))
+=0$}
+
+\noindent untuk setiap $\omega\in H$.
+
+\medskip
+
+{\bf (c)} Akhirnya,
+
+\Centerline{$|\Expn(Y_n)-\Expn(X_n)|\le\int_{E_n}|X_n|
+=\int_{\Bbb R\setminus[-n,n]}|x|\nu(dx)$}
+
+\noindent setiap kali $n\in\Bbb N$, sehingga
+$\lim_{n\to\infty}(\Expn(Y_n)-\Expn(X_n))=0$ dan
+
+\Centerline{$\lim_{n\to\infty}\Bover1{n+1}
+\sum_{i=0}^n(\Expn(Y_i)-\Expn(X_i))=0$}
+
+\noindent (273Ca). Dengan menggabungkan ketiga hal ini, kita memperoleh
+
+\Centerline{$\lim_{n\to\infty}\Bover{1}{n+1}
+\sum_{i=0}^n(X_i(\omega)-\Expn(X_i))=0$}
+
+\noindent setiap kali $\omega$ termasuk dalam himpunan koterabaikan
+$G\cap H$. Jadi
+
+\Centerline{$\lim_{n\to\infty}\Bover{1}{n+1}
+\sum_{i=0}^n(X_i-\Expn(X_i))=0$}
+
+\noindent hampir di mana-mana, sebagaimana diperlukan.
+}%end of proof of 273I
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Dalam pengalaman saya sendiri, inilah bentuk
+hukum kuat yang paling penting dari sudut pandang teori ukuran 'murni'.
+Saya mencatat bahwa 273G di atas juga dapat dipandang sebagai akibat
+dari bentuk ini.
+
+Untuk suatu bukti alternatif yang sangat mencolok, lihat 275Yq.
+Bukti lain memperlakukan hasil ini sebagai suatu kasus khusus Teorema
+Ergodik (lihat 372Xg dalam Jilid 3).
+}%end of comment
+
+\leader{273J}{Akibat}\discrversionA{\footnote{Diperluas 2008.}}{}
+Misalkan $(\Omega,\Sigma,\mu)$ suatu ruang probabilitas.
+Jika $f$ suatu fungsi bernilai real sedemikian sehingga $\int fd\mu$
+terdefinisi dalam $[-\infty,\infty]$, maka
+
+\Centerline{$\lim_{n\to\infty}\Bover1{n+1}\sum_{i=0}^nf(\omega_i)
+=\int fd\mu$}
+
+\noindent untuk $\lambda$-hampir setiap
+$\pmb{\omega}=\sequencen{\omega_n}\in\Omega^{\Bbb N}$,
+dengan $\lambda$ ukuran produk pada
+$\Omega^{\Bbb N}$\cmmnt{ (254A-254C)}.
+
+\proof{{\bf (a)} Mula-mula andaikan $f$ terintegralkan.
+Definisikan fungsi-fungsi $X_n$ pada $\Omega^{\Bbb N}$ dengan menetapkan
+
+\Centerline{$X_n(\pmb{\omega})=f(\omega_n)$ setiap kali
+$\omega_n\in\dom f$.}
+
+\noindent Maka $\sequencen{X_n}$ merupakan barisan bebas variabel acak,
+semuanya dengan distribusi yang sama dengan $f$ (272M). Jadi
+
+\Centerline{$
+\lim_{n\to\infty}\Bover1{n+1}\sum_{i=0}^nf(\omega_i)-\int fd\mu
+=\lim_{n\to\infty}\Bover1{n+1}\sum_{i=0}^n(X_i(\pmb{\omega})-\Expn(X_i))
+=0$}
+
+\noindent untuk hampir setiap $\pmb{\omega}$, berdasarkan 273I, dan
+
+\Centerline{$\lim_{n\to\infty}\Bover1{n+1}\sum_{i=0}^nf(\omega_i)
+=\int fd\mu$}
+
+\noindent untuk hampir setiap $\pmb{\omega}$.
+
+\medskip
+
+{\bf (b)} Selanjutnya, andaikan $f\ge 0$ dan $\int f=\infty$. Dalam hal
+ini, untuk setiap $m\in\Bbb N$,
+
+$$\eqalign{\liminf_{n\to\infty}\Bover1{n+1}\sum_{i=0}^nf(\omega_i)
+&\ge\liminf_{n\to\infty}\Bover1{n+1}\sum_{i=0}^n\min(m,f(\omega_i))\cr
+&=\int\min(m,f(\omega))\mu(d\omega)\cr}$$
+
+\noindent untuk hampir setiap $\pmb{\omega}$, sehingga
+
+\Centerline{$\liminf_{n\to\infty}\Bover1{n+1}\sum_{i=0}^nf(\omega_i)
+\ge\sup_{m\in\Bbb N}\int\min(m,f(\omega))\mu(d\omega)
+=\infty$}
+
+\noindent dan
+
+\Centerline{$\lim_{n\to\infty}\Bover1{n+1}\sum_{i=0}^nf(\omega_i)
+=\infty=\int f$}
+
+\noindent untuk hampir setiap $\pmb{\omega}$.
+
+\medskip
+
+{\bf (c)} Secara umum, jika $\int f=\infty$, hal ini karena
+$\int f^+=\infty$ dan $f^-$ terintegralkan, sehingga
+
+$$\eqalign{\lim_{n\to\infty}\Bover1{n+1}\sum_{i=0}^nf(\omega_i)
+&=\lim_{n\to\infty}\Bover1{n+1}\sum_{i=0}^nf^+(\omega_i)
+  -\lim_{n\to\infty}\Bover1{n+1}\sum_{i=0}^nf^-(\omega_i)\cr
+&=\infty-\int f^-  %
+=\int f\cr}$$
+
+\noindent untuk hampir setiap $\pmb{\omega}$. Demikian pula,
+
+\Centerline{$\lim_{n\to\infty}\Bover1{n+1}\sum_{i=0}^nf(\omega_i)
+=-\infty$}
+
+\noindent untuk hampir setiap $\pmb{\omega}$ jika
+$\int fd\mu=-\infty$.
+}%end of proof of 273J
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Saya mendapati diri saya beralih di sini ke dalam
+terminologi para ahli teori ukuran; akibat ini merupakan salah satu
+penerapan dasar hukum kuat pada teori ukuran. Jelas, dengan mengingat
+272J dan 272M, akibat ini mencakup 273I. Akibat ini juga dapat (secara
+teoretis) digunakan sebagai suatu {\it definisi} integrasi pada ruang
+probabilitas (lihat 273Ya); hal ini kadang-kadang disebut metode integrasi
+'Monte Carlo'.
+}%end of comment
+
+\leader{273K}{}\cmmnt{ Menggiurkan untuk mencari perluasan 273I yang
+tidak mengharuskan $X_n$ berdistribusi identik, tetapi yang dalam
+segi-segi lain tetap berperilaku baik. Setiap gagasan demikian harus
+diuji terhadap contoh berikut. Saya mendapati bahwa saya memerlukan satu
+lagi hasil baku, yang melengkapi hasil dalam 273A.
+
+\medskip
+
+\noindent}{\bf Lemma Borel--Cantelli} Misalkan $(\Omega,\Sigma,\mu)$
+suatu ruang probabilitas dan $\sequencen{E_n}$ suatu barisan subhimpunan
+terukur dari $\Omega$ sedemikian sehingga
+$\sum_{n=0}^{\infty}\mu E_n=\infty$ dan
+$\mu(E_m\cap E_n)\le\mu E_m\cdot\mu E_n$ setiap kali $m\ne n$.
+Maka hampir setiap titik dalam $\Omega$ termasuk dalam tak berhingga
+banyak $E_n$.
+
+\proof{ Untuk $n$, $k\in\Bbb N$ tetapkan
+$X_n=\sum_{i=0}^n\chi E_i$,
+$\beta_n=\sum_{i=0}^n\mu E_i=\Expn(X_n)$ dan
+$F_{nk}=\{x:x\in\Omega$, $\#(\{i:i\le n$, $x\in E_i\})\le k\}$. Maka
+
+$$\eqalign{\Expn(X_n^2)
+&=\sum_{i=0}^n\sum_{j=0}^n\mu(E_i\cap E_j)
+\le\sum_{i=0}^n\mu E_i+\sum_{i=0}^n\sum_{j\ne i}\mu E_i\cdot\mu E_j\cr
+&=\beta_n+\beta_n^2-\sum_{i=0}^n(\mu E_i)^2,\cr}$$
+
+\noindent sehingga
+
+\Centerline{$\Var(X_n)=\beta_n-\sum_{i=0}^n(\mu E_i)^2\le\beta_n$.}
+
+\noindent Sekarang jika $k<\beta_n$,
+
+\Centerline{$(\beta_n-k)^2\mu F_{nk}
+=(\beta_n-k)^2\Pr(X_n\le k)
+\le\Expn(X_n-\beta_n)^2=\Var(X_n)\le\beta_n$}
+
+\noindent dan $\mu F_{nk}\le\Bover{\beta_n}{(\beta_n-k)^2}$.
+
+Sekarang ingat bahwa kita mengandaikan
+$\lim_{n\to\infty}\beta_n=\infty$. Jadi untuk sebarang $k\in\Bbb N$,
+
+\Centerline{$\mu(\bigcap_{n\in\Bbb N}F_{nk})
+=\lim_{n\to\infty}\mu F_{nk}
+\le\lim_{n\to\infty}\Bover{\beta_n}{(\beta_n-k)^2}
+=0$.}
+
+\noindent Dengan demikian
+
+\Centerline{$\mu\{x:x$ termasuk hanya dalam berhingga banyak $E_n\}
+=\mu(\bigcup_{k\in\Bbb N}\bigcap_{n\in\Bbb N}F_{nk})
+=0$,}
+
+\noindent dan hampir setiap titik dalam $\Omega$ termasuk dalam tak
+berhingga banyak $E_n$.
+}%end of proof of 273K
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Tentu saja hasil ini biasanya diterapkan pada
+suatu barisan bebas $\sequencen{E_n}$. Namun sesekali berguna untuk
+mengetahui bahwa hipotesis yang lebih lemah itu sudah memadai. Lihat pula
+273Yb.}
+
+\vleader{72pt}{273L}{}\cmmnt{ Sekarang untuk contoh yang dijanjikan.
+
+\medskip
+
+\noindent}{\bf Contoh} Terdapat suatu barisan bebas
+$\sequencen{X_n}$ dari variabel acak nonnegatif sedemikian sehingga
+$\lim_{n\to\infty}\Expn(X_n)=0$, tetapi
+
+\Centerline{$\limsup_{n\to\infty}\Bover1{n+1}
+  \sum_{i=0}^{n}(X_i-\Expn(X_i))=\infty$,}
+
+\Centerline{$\liminf_{n\to\infty}\Bover1{n+1}
+  \sum_{i=0}^{n}(X_i-\Expn(X_i))=0$}
+
+\noindent hampir di mana-mana.
+
+\proof{ Misalkan $(\Omega,\Sigma,\mu)$ suatu ruang probabilitas dengan
+suatu barisan bebas $\sequencen{E_n}$ dari himpunan-himpunan terukur
+sedemikian sehingga
+$\mu E_n=\Bover{1}{(n+3)\ln(n+3)}$ untuk setiap $n$.
+(Di mana pun saya belum menjelaskan secara tepat cara membangun barisan
+demikian. Tersedia bagi kita dua metode yang jelas, serta satu lagi yang
+sedikit kurang jelas. (i) Ambil $\Omega=\{0,1\}^{\Bbb N}$ dan misalkan
+$\mu$ produk dari probabilitas-probabilitas $\mu_n$ pada $\{0,1\}$, yang
+didefinisikan dengan menyatakan bahwa
+$\mu_n\{1\}=\Bover1{(n+3)\ln(n+3)}$ untuk setiap $n$; tetapkan
+$E_n=\{\omega:\omega(n)=1\}$, dan gunakan 272M untuk memeriksa bahwa
+$E_n$ bebas. (ii) Bangun $E_n$ secara induktif sebagai subhimpunan dari
+$[0,1]$, dengan mengatur agar setiap $E_n$ menjadi gabungan berhingga
+interval, sehingga ketika Anda hendak memilih $E_{n+1}$, himpunan-
+himpunan $E_0,\ldots,E_n$ mendefinisikan suatu partisi $\Cal I_n$ dari
+$[0,1]$ menjadi interval-interval, dan Anda dapat mengambil $E_{n+1}$
+sebagai gabungan dari (misalnya) subinterval-subinterval sebelah kiri
+dengan panjang sebesar proporsi $\Bover1{(n+3)\ln(n+3)}$ dari
+interval-interval dalam $\Cal I_n$. (iii) Gunakan 215D untuk melihat
+bahwa metode (ii) dapat digunakan pada sebarang ruang probabilitas tanpa
+atom, seperti dalam 272Xa.)
+
+Tetapkan $X_n=(n+3)\ln\ln(n+3)\chi E_n$ untuk setiap $n$; maka
+$\sequencen{X_n}$ merupakan barisan bebas variabel acak bernilai real
+(272F) dan
+$\Expn(X_n)=\Bover{\ln\ln(n+3)}{\ln(n+3)}$ untuk setiap $n$, sehingga
+$\Expn(X_n)\to 0$ ketika $n\to\infty$. Jadi, misalnya,
+$\{X_n:n\in\Bbb N\}$ terintegralkan secara seragam dan
+$\sequencen{X_n}\to 0$ dalam ukuran (246Jc); sedangkan tentu saja
+$\lim_{n\to\infty}\Bover1{n+1}\sum_{i=0}^n\Expn(X_i)=0$.
+
+Di sisi lain,
+
+$$\eqalign{\sum_{n=0}^{\infty}\mu E_n
+&=\sum_{n=0}^{\infty}\Bover1{(n+3)\ln(n+3)}
+\ge\int_0^{\infty}\Bover1{(x+3)\ln(x+3)}dx\cr
+&=\lim_{a\to\infty}(\ln\ln(a+3)-\ln\ln 3)
+=\infty,\cr}$$
+
+\noindent sehingga hampir setiap $\omega$ termasuk dalam tak berhingga
+banyak $E_n$, berdasarkan lemma Borel--Cantelli (273K). Sekarang jika
+kita menuliskan $Y_n=\Bover1{n+1}\sum_{i=0}^nX_i$, maka jika
+$\omega\in E_n$ kita mempunyai
+$X_n(\omega)=(n+3)\ln\ln(n+3)$, sehingga
+
+\Centerline{$Y_n(\omega)\ge\Bover{n+3}{n+1}\ln\ln(n+3).$}
+
+\noindent Ini berarti bahwa
+
+$$\eqalign{\{\omega:\limsup_{n\to\infty}\Bover1{n+1}
+    &\sum_{i=0}^n(X_i(\omega)-\Expn(X_i))=\infty\}
+=\{\omega:\limsup_{n\to\infty}
+    \Bover{1}{n+1}\sum_{i=0}^nX_i(\omega)=\infty\}\cr
+&=\{\omega:\sup_{n\in\Bbb N}Y_n(\omega)=\infty\}
+\supseteq\{\omega:\{n:\omega\in E_n\}\text{ tak berhingga}\}\cr}$$
+
+\noindent koterabaikan, dan hukum kuat bilangan besar tidak berlaku
+bagi $\sequencen{X_n}$.
+
+Karena
+
+\Centerline{$\lim_{n\to\infty}\|Y_n\|_1
+=\lim_{n\to\infty}\Expn(Y_n)=\lim_{n\to\infty}\Expn(X_n)=0$}
+
+\noindent (273Ca), $\sequencen{Y_n}\to 0$ untuk topologi konvergensi
+dalam ukuran, dan $\sequencen{Y_n}$ mempunyai suatu subbarisan yang
+konvergen ke $0$ hampir di mana-mana (245K). Jadi
+
+\Centerline{$\liminf_{n\to\infty}\Bover1{n+1}
+\sum_{i=0}^n(X_i(\omega)-\Expn(X_i))=\liminf_{n\to\infty}Y_n(\omega)=0$}
+
+\noindent untuk hampir setiap $\omega$. Fakta bahwa baik
+$\limsup_{n\to\infty}Y_n$ maupun $\liminf_{n\to\infty}Y_n$ konstan
+hampir di mana-mana tentu merupakan akibat hukum nol-satu (272P).
+}%end of example
+
+\leader{*273M}{}\cmmnt{ Semua pembahasan di atas berkaitan dengan
+konvergensi titik demi titik dari rata-rata variabel acak bebas, dan
+itulah bagian penting dari pekerjaan dalam seksi ini. Namun barangkali
+pembahasan tersebut patut dilengkapi dengan penyelidikan singkat mengenai
+konvergensi norma. Untuk menangani konvergensi dalam $\eusm L^p$ secara
+efisien, kita memerlukan hal berikut. (Barangkali perlu saya catat bahwa,
+dibandingkan dengan kasus umum yang ditangani di sini, kasus $p=2$
+langsung; lihat 273Xl.)
+
+\medskip
+
+\noindent}{\bf Lemma} Untuk sebarang $p\in\ooint{1,\infty}$ dan
+$\epsilon>0$, terdapat suatu $\delta>0$ sedemikian sehingga
+$\|S+X\|_p\le 1+\epsilon\|X\|_p$ setiap kali $S$ dan $X$ merupakan
+variabel acak yang bebas, $\|S\|_p=1$, $\|X\|_p\le\delta$, dan
+$\Expn(X)=0$.
+
+\proof{{\bf (a)} Ambil $\zeta\in\ocint{0,1}$ sedemikian sehingga
+$p\zeta\le 2$ dan
+
+\Centerline{$(1+\xi)^p\le 1+p\xi+\Bover{p^2}2\xi^2$}
+
+\noindent setiap kali $|\xi|\le\zeta$; nilai demikian ada karena
+
+\Centerline{$\lim_{\xi\to 0}\Bover{(1+\xi)^p-1-p\xi}{\xi^2}
+=\Bover{p(p-1)}2<\Bover{p^2}2$.}
+
+\noindent Perhatikan bahwa
+
+\Centerline{$(1+\xi)^p
+\le(1+\Bover1{\zeta})^p+\xi^p+2p\xi^{p-1}$}
+
+\noindent untuk setiap $\xi\ge 0$. \Prf\
+Jika $\xi\le\Bover1{\zeta}$, hal ini langsung. Jika
+$\xi\ge\Bover1{\zeta}$, maka
+
+$$\eqalign{(1+\xi)^p
+&=\xi^p(1+\Bover1{\xi})^p
+\le\xi^p(1+\Bover{p}{\xi}+\Bover{p^2}{2\xi^2})\cr
+&\le\xi^p(1+\Bover{p}{\xi}+\Bover{p^2\zeta}{2\xi})
+=\xi^p+p\xi^{p-1}(1+\Bover{p\zeta}{2})
+\le\xi^p+2p\xi^{p-1}.  \text{ \Qed}\cr}$$
+
+Definisikan $\eta>0$ dengan menetapkan
+$3\eta^{p-1}=\Bover{\epsilon}2$ (inilah salah satu tempat kita perlu
+mengetahui bahwa $p>1$).
+Misalkan $\delta>0$ sedemikian sehingga
+
+\Centerline{$\delta\le\eta\zeta$,
+\quad$\Bover{p^2}{2\eta^2}\delta+(1+\Bover1{\zeta})^p\delta^{p-1}
+\le\Bover{p\epsilon}2$.}
+
+\medskip
+
+{\bf (b)} Sekarang andaikan $S$ dan $X$ merupakan variabel acak bebas
+dengan $\|S\|_p=1$, $\|X\|_p\le\delta$, dan $\Expn(X)=0$. Jika
+$\|X\|_p=0$, maka tentu $\|S+X\|_p\le 1+\epsilon\|X\|_p$, jadi andaikan
+$X$ tak trivial. Tuliskan $(\Omega,\Sigma,\mu)$ untuk ruang probabilitas
+yang mendasarinya dan sesuaikan $S$ serta $X$ pada himpunan-himpunan
+terabaikan agar keduanya terukur dan didefinisikan di setiap titik pada
+$\Omega$. Tetapkan $\alpha=\|X\|_p$, $\gamma=\alpha/\eta$,
+
+\Centerline{$E=\{\omega:S(\omega)\ne 0\}$,
+\quad$F=\{\omega:|X(\omega)|>\gamma|S(\omega)|\}$,
+\quad$\beta=\|S\times\chi F\|_p$.}
+
+\noindent Maka
+
+$$\eqalignno{\int|S+X|^p
+&=\int_F|S+X|^p+\int_{E\setminus F}|S+X|^p\cr
+\displaycause{karena $S$ dan $X$ keduanya nol pada
+$\Omega\setminus(E\cup F)$}
+&=\|(S\times\chi F)+(X\times\chi F)\|_p^p
+  +\int_{E\setminus F}|S|^p|1+\Bover{X}{S}|^p\cr
+&\le(\|S\times\chi F\|_p+\|X\times\chi F\|_p)^p
+  +\int_{E\setminus F}|S|^p(1+p\Bover{X}{S}+\Bover{p^2}2\gamma^2)\cr
+\displaycause{karena
+$|\Bover{X}{S}|\le\gamma\le\Bover{\delta}{\eta}\le\zeta\le 1$ di setiap
+titik pada $E\setminus F$}
+&\le(\beta+\alpha)^p+(1+\Bover{p^2}2\gamma^2)\int_{E\setminus F}|S|^p
+  +p\int_{E\setminus F}|S|^{p-1}\times\sgn S\times X\cr
+\displaycause{dengan menuliskan $\sgn(\xi)=\xi/|\xi|$ jika $\xi\ne 0$,
+dan $0$ jika $\xi=0$}
+&=(\beta+\alpha)^p+(1+\Bover{p^2}2\gamma^2)\int_{\Omega\setminus F}|S|^p
+  +p\int_{\Omega\setminus F}|S|^{p-1}\times\sgn S\times X\cr
+\displaycause{karena $S=0$ pada $\Omega\setminus E$}
+&=\alpha^p(1+\Bover{\beta}{\alpha})^p+(1+\Bover{p^2}2\gamma^2)(1-\beta^p)
+  -p\int_F|S|^{p-1}\times\sgn S\times X\cr
+\displaycause{karena $X$ dan $|S|^{p-1}\times\sgn S$ bebas, berdasarkan
+272L, sehingga
+$\int|S|^{p-1}\times\sgn S\times X
+=\Expn(|S|^{p-1}\times\sgn S)\Expn(X)=0$}
+&\le\alpha^p\bigl((1+\Bover1{\zeta})^p+2p(\Bover{\beta}{\alpha})^{p-1}
+  +(\Bover{\beta}{\alpha})^p\bigr)+(1+\Bover{p^2}2\gamma^2)(1-\beta^p)\cr
+ &\qquad\qquad\qquad
+  +p\int_F|S|^{p-1}\times|X|\cr
+\displaycause{lihat (a) di atas}
+&\le\alpha^p(1+\Bover1{\zeta})^p+\beta^p+2p\beta^{p-1}\alpha
+  +(1+\Bover{p^2}2\gamma^2)(1-\beta^p)\cr
+ &\qquad\qquad\qquad
+  +p\int_F\Bover{1}{\gamma^{p-1}}|X|^p\cr
+&\le\alpha^p(1+\Bover1{\zeta})^p
+  +2p\Bover{\alpha^p}{\gamma^{p-1}}
+  +1+\Bover{p^2}2\gamma^2
+  +p\Bover{\alpha^p}{\gamma^{p-1}}\cr
+\displaycause{karena $\beta=\|S\times\chi F\|_p
+\le\Bover1{\gamma}\|X\times\chi F\|_p\le\Bover{\alpha}{\gamma}$}
+&=\alpha^p(1+\Bover1{\zeta})^p
+  +3p\eta^{p-1}\alpha
+  +1+\Bover{p^2\alpha^2}{2\eta^2}
+  \cr
+&=1+\bigl(\alpha^{p-1}(1+\Bover1{\zeta})^p
+  +3p\eta^{p-1}
+  +\Bover{p^2\alpha}{2\eta^2}\bigr)\alpha\cr
+&\le 1+\bigl(\delta^{p-1}(1+\Bover1{\zeta})^p
+  +3p\eta^{p-1}
+  +\Bover{p^2\delta}{2\eta^2}\bigr)\alpha\cr
+&\le 1+p\alpha\epsilon\le(1+\epsilon\|X\|_p)^p.\cr}$$
+
+\noindent Jadi $\|S+X\|_p\le 1+\epsilon\|X\|_p$, sebagaimana diperlukan.
+}%end of proof of 273M
+
+\cmmnt{\medskip
+
+\noindent*{\bf Catatan} Yang sebenarnya terjadi di sini ialah bahwa
+$\phi=\|\,\|^p_p:L^p\to\Bbb R$ terdiferensialkan (sebagai fungsi bernilai
+real pada ruang bernorma $L^p$) dan
+
+\Centerline{$\phi'(S^{\ssbullet})(X^{\ssbullet})
+=p\int|S|^{p-1}\times\sgn S\times X$,}
+
+\noindent sehingga dalam konteks di sini
+
+\Centerline{$\phi((S+X)^{\ssbullet})
+=\phi(S^{\ssbullet})+\phi'(S^{\ssbullet})(X^{\ssbullet})
+   +o(\|X\|_p)
+=1+o(\|X\|_p)$}
+
+\noindent dan $\|S+X\|_p=1+o(\|X\|_p)$. Perhitungan-perhitungan di atas
+rumit sebagian karena tidak menggunakan gagasan tak trivial apa pun
+tentang ruang bernorma, dan sebagian karena kita memerlukan taksiran yang
+seragam dalam $S$.
+}%end of comment
+
+\leader{273N}{Teorema} Misalkan $\sequencen{X_n}$ suatu barisan bebas
+variabel acak bernilai real dengan ekspektasi nol, dan tetapkan
+$Y_n=\bover1{n+1}(X_0+\ldots+X_n)$ untuk setiap $n\in\Bbb N$.
+
+(a) Jika $\sequencen{X_n}$ terintegralkan secara seragam, maka
+$\lim_{n\to\infty}\|Y_n\|_1=0$.
+
+*(b) Jika $p\in\ooint{1,\infty}$ dan
+$\sup_{n\in\Bbb N}\|X_n\|_p<\infty$, maka
+$\lim_{n\to\infty}\|Y_n\|_p=0$.
+
+\proof{{\bf (a)} Misalkan $\epsilon>0$. Maka terdapat suatu $M\ge 0$
+sedemikian sehingga $\Expn(|X_n|-M)^+\le\epsilon$ untuk setiap
+$n\in\Bbb N$. Tetapkan
+
+\Centerline{$X_n'=(-M\chi\Omega)\vee(X_n\wedge M\chi\Omega)$,
+\quad$\alpha_n=\Expn(X_n')$,
+\quad $\tilde X_n=X'_n-\alpha_n$,
+\quad $X''_n=X_n-X'_n$}
+
+\noindent untuk setiap $n\in\Bbb N$. Maka $\sequencen{X'_n}$ dan
+$\sequencen{\tilde X_n}$ bebas dan terbatas secara seragam, dan
+$\|X''_n\|_1\le\epsilon$ untuk setiap $n$. Jadi jika kita menuliskan
+
+\Centerline{$\tilde Y_n=\Bover1{n+1}\sum_{i=0}^n\tilde X_i$,
+\quad$Y''_n=\Bover1{n+1}\sum_{i=0}^nX''_i$,}
+
+\noindent maka $\sequencen{\tilde Y_n}\to 0$ hampir di mana-mana,
+berdasarkan 273E (misalnya), sedangkan $\|Y''_n\|_1\le\epsilon$ untuk
+setiap $n$. Selain itu,
+
+\Centerline{$|\alpha_n|=|\Expn(X'_n-X_n)|\le\Expn(|X''_n|)\le\epsilon$}
+
+\noindent untuk setiap $n$. Karena $|\tilde Y_n|\le 2M$ hampir di
+mana-mana untuk setiap $n$, maka
+$\lim_{n\to\infty}\|\tilde Y_n\|_1=0$, berdasarkan Teorema Konvergensi
+Terdominasi Lebesgue. Jadi
+
+$$\eqalign{\limsup_{n\to\infty}\|Y_n\|_1
+&=\limsup_{n\to\infty}\|\tilde Y_n+Y''_n
+  +\Bover1{n+1}\sum_{i=0}^n\alpha_i\|_1\cr
+&\le\lim_{n\to\infty}\|\tilde Y_n\|_1
+  +\sup_{n\in\Bbb N}\|Y''_n\|_1
+  +\sup_{n\in\Bbb N}|\Bover1{n+1}\sum_{i=0}^n\alpha_i|\cr
+&\le 2\epsilon.\cr}$$
+
+\noindent Karena $\epsilon$ sebarang,
+$\lim_{n\to\infty}\|Y_n\|_1=0$, sebagaimana dinyatakan.
+
+\medskip
+
+{\bf *(b)} Tetapkan $M=\sup_{n\in\Bbb N}\|X_n\|_p$. Untuk
+$n\in\Bbb N$, tetapkan $S_n=\sum_{i=0}^nX_i$. Misalkan $\epsilon>0$.
+Maka terdapat suatu $\delta>0$ sedemikian sehingga
+$\|S+X\|_p\le 1+\epsilon\|X\|_p$ setiap kali $S$ dan $X$ merupakan
+variabel acak bebas, $\|S\|_p=1$, $\|X\|_p\le\delta$, dan
+$\Expn(X)=0$ (273M). Akibatnya
+$\|S+X\|_p\le\|S\|_p+\epsilon\|X\|_p$ setiap kali $S$ dan $X$ merupakan
+variabel acak bebas, $\|S\|_p$ berhingga,
+$\|X\|_p\le\delta\|S\|_p$, dan $\Expn(X)=0$. Khususnya,
+$\|S_{n+1}\|_p\le\|S_n\|_p+\epsilon M$ setiap kali
+$\|S_n\|_p\ge M/\delta$. Suatu induksi mudah menunjukkan bahwa
+
+\Centerline{$\|S_n\|_p\le\Bover{M}{\delta}+M+n\epsilon M$}
+
+\noindent untuk setiap $n\in\Bbb N$. Namun ini berarti bahwa
+
+\Centerline{$\limsup_{n\to\infty}\|Y_n\|_p
+=\limsup_{n\to\infty}\Bover1{n+1}\|S_n\|_p\le\epsilon M$.}
+
+\noindent Karena $\epsilon$ sebarang,
+$\lim_{n\to\infty}\|Y_n\|_p=0$.
+}%end of proof of 273N
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Terdapat penguatan (a) dalam 276Xe, dan penguatan
+(b) dalam 276Ya.
+}%end of comment
+
+\exercises{
+\leader{273X}{Latihan dasar (a)}
+%\spheader 273Xa
+Dalam bagian (b) dari bukti 273B, gunakan kesamaan Bienaym\'e untuk
+menunjukkan bahwa
+$\lim_{m\to\infty}\sup_{n\ge m}\discretionary{}
+{}{}\Pr(|S_n-S_m|\ge\epsilon)=0$ untuk setiap $\epsilon>0$, sehingga kita
+dapat menerapkan argumen bagian (a) dari bukti tersebut secara langsung,
+tanpa menggunakan 242F atau 245G atau bahkan 244E.
+%273B
+
+\spheader 273Xb Tunjukkan bahwa
+$\sum_{n=0}^{\infty}\Bover{(-1)^{\omega(n)}}{n+1}$ terdefinisi dalam
+$\Bbb R$ untuk hampir setiap $\pmb{\omega}=\sequencen{\omega(n)}$ dalam
+$\{0,1\}^{\Bbb N}$, dengan $\{0,1\}^{\Bbb N}$ dilengkapi ukuran biasanya
+(254J).
+%273B
+
+\spheader 273Xc Misalkan $\sequencen{E_n}$ suatu barisan bebas himpunan
+terukur dalam ruang probabilitas, semuanya dengan ukuran tak nol yang
+sama. Misalkan $\sequencen{a_n}$ suatu barisan bilangan real nonnegatif
+sedemikian sehingga $\sum_{n=0}^{\infty}a_n=\infty$. Tunjukkan bahwa
+$\sum_{n=0}^{\infty}a_n\chi E_n=\infty$ hampir di mana-mana.
+\Hint{Ambil suatu barisan naik ketat $\sequencen{k_n}$ sedemikian
+sehingga $d_n=\sum_{i=k_n+1}^{k_{n+1}}a_i\ge 1$ untuk setiap $n$.
+Tetapkan $c_i=\Bover{a_i}{(n+1)d_n}$ untuk
+$k_n<i\le k_{n+1}$; tunjukkan bahwa
+$\sum_{n=0}^{\infty}c_n^2<\infty=\sum_{n=0}^{\infty}c_n$.
+Terapkan 273D dengan $X_n=c_n\chi E_n$ dan
+$b_n=\sqrt{\sum_{i=0}^nc_i}$.}
+%273D  added 2002
+
+\sqheader 273Xd Ambil sebarang $q\in[0,1]$, dan lengkapi
+$\Cal P\Bbb N$ dengan suatu ukuran $\mu$ sedemikian sehingga
+
+\Centerline{$\mu\{a:I\subseteq a\}=q^{\#(I)}$}
+
+\noindent untuk setiap $I\subseteq\Bbb N$, seperti dalam 254Xg.
+Tunjukkan bahwa untuk $\mu$-hampir setiap $a\subseteq\Bbb N$,
+
+\Centerline{$\lim_{n\to\infty}\Bover{1}{n+1}
+\#(a\cap\{0,\ldots,n\})=q$.}
+%273F
+
+\sqheader 273Xe Misalkan $\mu$ ukuran probabilitas biasa pada
+$\Cal P\Bbb N$ (254Jb), dan untuk $r\ge 1$ misalkan $\mu^r$ ukuran
+probabilitas produk pada $(\Cal P\Bbb N)^r$. Tunjukkan bahwa
+
+\Centerline{$\lim_{n\to\infty}
+  \Bover1{n+1}\#(a_1\cap\ldots\cap a_r\cap\{0,\ldots,n\})=2^{-r}$,}
+
+\Centerline{$\lim_{n\to\infty}
+  \Bover1{n+1}\#((a_1\cup\ldots\cup a_r)\cap\{0,\ldots,n\})=1-2^{-r}$}
+
+\noindent untuk $\mu^r$-hampir setiap
+$(a_1,\ldots,a_r)\in(\Cal P\Bbb N)^r$.
+%273F
+
+\spheader 273Xf Misalkan $\mu$ ukuran probabilitas biasa pada
+$\Cal P\Bbb N$, dan $b$ sebarang subhimpunan tak berhingga dari
+$\Bbb N$. Tunjukkan bahwa
+$\lim_{n\to\infty}
+\Bover{\#(a\cap b\cap\{0,\ldots,n\})}{\#(b\cap\{0,\ldots,n\})}
+\penalty-100=\Bover12$ untuk hampir setiap $a\subseteq\Bbb N$.
+%273F
+
+\sqheader 273Xg Untuk setiap $x\in[0,1]$, misalkan $\epsilon_k(x)$ digit
+ke-$k$ dalam pengembangan desimal $x$ (putuskan sendiri apa yang hendak
+dilakukan terhadap $0{\cdot}100\ldots=0{\cdot}099\ldots$). Tunjukkan
+bahwa
+$\lim_{k\to\infty}\bover1k\#(\{j:j\le k,\,\epsilon_j(x)=7\})
+=\bover1{10}$ untuk hampir setiap $x\in[0,1]$.
+%273F
+
+\spheader 273Xh Misalkan $\sequencen{F_n}$ suatu barisan fungsi
+distribusi bagi variabel acak bernilai real, dalam arti 271Ga, dan $F$
+suatu fungsi distribusi lain; andaikan
+$\lim_{n\to\infty}F_n(q)=F(q)$ untuk setiap $q\in\Bbb Q$ dan
+$\lim_{n\to\infty}F_n(a^-)=F(a^-)$ setiap kali $F(a^-)<F(a)$, dengan
+$F(a^-)$ menyatakan $\lim_{x\uparrow a}F(x)$. Tunjukkan bahwa
+$F_n\to F$ secara seragam.
+%for 273Xi
+
+\sqheader 273Xi\dvAformerly{2{}73Xh}
+Misalkan $(\Omega,\Sigma,\mu)$ suatu ruang probabilitas dan
+$\sequencen{X_n}$ suatu barisan bebas dan berdistribusi identik dari
+variabel acak bernilai real pada $\Omega$, dengan fungsi distribusi yang
+sama $F$. Untuk $a\in\Bbb R$, $n\in\Bbb N$, dan
+$\omega\in\bigcap_{i\le n}\dom X_i$ tetapkan
+
+\Centerline{$F_n(\omega,a)
+=\Bover1{n+1}\#(\{i:i\le n,\,X_i(\omega)\le a\})$.}
+
+\noindent Tunjukkan bahwa
+
+\Centerline{$\lim_{n\to\infty}\sup_{a\in\Bbb R}|F_n(\omega,a)-F(a)|
+=0$}
+
+\noindent untuk hampir setiap $\omega\in\Omega$.
+%273Xh, 273F
+
+\spheader 273Xj Misalkan $(\Omega,\Sigma,\mu)$ suatu ruang probabilitas,
+dan $\lambda$ ukuran produk pada $\Omega^{\Bbb N}$.
+Misalkan $f:\Omega\to\Bbb R$ suatu fungsi, dan tetapkan
+$f^*(\pmb{\omega})
+=\limsup_{n\to\infty}\Bover1{n+1}\sum_{i=0}^nf(\omega_i)$
+untuk $\pmb{\omega}=\sequencen{\omega_n}\in\Omega^{\Bbb N}$.
+Tunjukkan bahwa
+$\overline{\int}f^*d\lambda=\overline{\int}fd\mu$ setiap kali ruas kanan
+berhingga.
+\Hint{133J(a-i).}
+%273J
+
+\spheader 273Xk Temukan suatu barisan bebas $\sequencen{X_n}$ dari
+variabel acak dengan ekspektasi nol sedemikian sehingga
+$\|X_n\|_1=1$ dan
+$\|\bover1{n+1}\sum_{i=0}^nX_i\|_1\ge\bover12$ untuk setiap $n\in\Bbb N$.
+\Hint{ambil $\Pr(X_n\ne 0)$ sangat kecil.}
+%273N
+
+\spheader 273Xl Gunakan 272S untuk membuktikan 273Nb dalam kasus $p=2$.
+%273N
+
+\spheader 273Xm Temukan suatu barisan bebas $\sequencen{X_n}$ dari
+variabel acak dengan ekspektasi nol sedemikian sehingga
+$\|X_n\|_{\infty}=\|\bover1{n+1}\sum_{i=0}^nX_i\|_{\infty}=1$ untuk
+setiap $n\in\Bbb N$.
+%273N
+
+\spheader 273Xn Ulangi pekerjaan seksi ini untuk variabel acak bernilai
+kompleks.
+%273+
+
+\spheader 273Xo Misalkan $(X,\Sigma,\mu)$ suatu ruang probabilitas dan
+$\sequencen{E_n}$ suatu barisan bebas dalam $\Sigma$ sedemikian sehingga
+$\alpha=\lim_{n\to\infty}\mu E_n$ terdefinisi. Untuk $x\in X$ tetapkan
+$I_x=\{n:x\in E_n\}$. Tunjukkan bahwa $I_x$ mempunyai kepadatan
+asimtotik $\alpha$ untuk hampir setiap $x$.
+%273G
+
+\leader{273Y}{Latihan lanjutan (a)}
+%\spheader 273Ya
+Misalkan $(\Omega,\Sigma,\mu)$ suatu ruang probabilitas, dan $\lambda$
+ukuran produk pada $\Omega^{\Bbb N}$. Andaikan $f$ suatu fungsi bernilai
+real, yang didefinisikan pada suatu subhimpunan dari $\Omega$, sedemikian
+sehingga
+
+\Centerline{$h(\pmb{\omega})
+=\lim_{n\to\infty}\Bover1{n+1}\sum_{i=0}^nf(\omega_i)$}
+
+\noindent ada dalam $\Bbb R$ untuk $\lambda$-hampir setiap
+$\pmb{\omega}=\sequencen{\omega_n}$ dalam $\Omega^{\Bbb N}$. Tunjukkan
+(i) bahwa $f$ mempunyai domain koterabaikan (ii) $f$ terukur terhadap
+$\hat\Sigma$, dengan $\hat\Sigma$ domain pelengkapan $\mu$ (iii) terdapat
+suatu $a\in\Bbb R$ sedemikian sehingga $h=a$ hampir di mana-mana dalam
+$\Omega^{\Bbb N}$ (iv) $f$ terintegralkan, dengan $\int fd\mu=a$.
+%273J mt27bits
+
+\spheader 273Yb\dvAnew{2009}
+Misalkan $\sequencen{X_n}$ suatu barisan variabel acak dengan varians
+berhingga. Andaikan $\lim_{n\to\infty}\Expn(X_n)=\infty$ dan
+$\liminf_{n\to\infty}
+\Bover{\Expn(X_n^2)}{(\Expn(X_n))^2}\le 1$.
+Tunjukkan bahwa $\limsup_{n\to\infty}X_n=\infty$ hampir di mana-mana.
+%273K
+}%end of exercises
+
+\endnotes{
+\Notesheader{273} Dalam seksi ini saya telah mencoba menawarkan
+kriteria-kriteria baku yang paling berguna bagi konvergensi titik demi
+titik dari rata-rata variabel acak bebas. Menurut pandangan saya, hukum
+kuat bilangan besar, seperti teorema Fubini, merupakan salah satu langkah
+penting dalam teori ukuran, tempat pokok bahasan tersebut berubah sifat.
+Teorema-teorema yang bergantung pada hukum kuat mempunyai semacam
+kedalaman dan kehalusan yang tidak terdapat di bagian-bagian lain pokok
+bahasan ini. Saya hanya menguraikan segelintir penerapan di sini, tetapi
+saya berharap 273G, 273J, 273Xd, 273Xg, dan 273Xi memberi gambaran
+tentang apa yang dapat diharapkan. Penerapan-penerapan ini mempunyai
+bobot yang agak berbeda. Di antara kelimanya, hanya 273J yang memerlukan
+seluruh sumber daya bab ini; yang lain dapat diturunkan dari versi yang
+pada dasarnya lebih sederhana dalam 273F.
+
+273Xi adalah 'teorema dasar statistika' atau 'teorema
+Glivenko--Cantelli'. Fungsi-fungsi $F_n(.,a)$ merupakan 'statistik', yang
+dihitung dari $X_i$; fungsi-fungsi tersebut merupakan 'distribusi
+empiris', dan teorema itu menyatakan bahwa, hampir pasti, $F_n\to F$
+secara seragam. (Saya mengatakan 'secara seragam' untuk membuat hasilnya
+tampak lebih mencolok, tetapi tentu saja isi sebenarnya ialah bahwa
+$F_n(.,a)\to F(a)$ hampir pasti untuk setiap $a$; langkah tambahannya
+hanyalah 273Xh.)
+
+Saya menyertakan 273N untuk menunjukkan bahwa kebebasan sama pentingnya
+dalam persoalan konvergensi norma seperti dalam persoalan konvergensi
+titik demi titik. Hasil tersebut sebenarnya tidak mengandalkan bentuk
+hukum kuat apa pun; dalam buktinya saya mengutip 273E sebagai cara cepat
+untuk menangani 'bagian-bagian terbatas secara seragam' $X'_n$, tetapi tentu saja
+kesamaan Bienaym\'e (272S) sudah cukup untuk menunjukkan bahwa jika
+$\sequencen{X'_n}$ merupakan barisan bebas terbatas secara seragam dari variabel
+acak dengan ekspektasi nol, maka
+$\|\bover1{n+1}(X'_0+\ldots+X'_n)\|_p\to 0$ untuk $p=2$, dan karena itu
+untuk setiap $p<\infty$.
+
+Bukti-bukti 273H, 273I, dan 273Na semuanya melibatkan 'pemenggalan',
+yaitu pengungkapan suatu variabel acak $X$ sebagai jumlah suatu variabel
+acak terbatas dan suatu ekor. Ini merupakan salah satu teknik terkuat
+dalam pokok bahasan ini, dan akan muncul lagi dalam \S276 serta (dengan
+cara yang agak berbeda) dalam \S274.
+Dalam 273Na saya menggunakan perumusan metode yang sedikit berbeda,
+semata-mata karena perumusan itu lebih dekat dengan definisi
+'terintegralkan secara seragam'.
+}%end of notes
+
+\discrpage
