@@ -1119,3 +1119,65 @@ and 254-byte checksum witness
 
 The goal remains active. Exactly 228 official pages remain, and production
 continues at `mt27.tex`, then `mt271.tex`, beginning at Volume II page 343.
+
+## 2026-08-29 — D051: Admit complete Chapter 27 locally at 509/672
+
+CP0020 admits exactly `mt27.tex` and `mt271.tex`–`mt276.tex`, closing complete
+Chapter 27 and raising the contiguous local corpus to **509/672 official pages
+(75.7%)**: complete Volume I plus Volume II pages 1–407.  Exactly 163 official
+pages remain.  The public boundary remains the Chapter 26 release at 444/672
+until the v0.20 publication transaction completes.
+
+Catalog v1.15 validates 6,464 unique schema records, 77 units, 292 exact local
+resources, and 217 materialized files / 10,818,056 bytes.  The cumulative PDF
+is 3,939,039 bytes / 545 A4 reflow pages / SHA-256
+`48fda0dae726802208056bd3e8a4e3f4713ea45b498c4fe891710f7e2f349466`;
+all-page render inspection passes.  The 81-route offline reader passes 162
+desktop/mobile observations with zero runtime, link, fragment, clipping, or
+document-width failure.
+
+The immediate executable action is deterministic v0.20 packaging, existing-
+lineage GitHub and Zenodo publication, and anonymous exact-byte readback.  Only
+then does production advance to `mt28.tex` and `mt281.tex` at official Volume
+II page 408.  No upstream contact occurred; the 672-page goal remains active.
+
+### Publication transport correction (2026-08-29)
+
+The first bounded GitHub invocation failed closed before any credential,
+network, or Git mutation because the publisher still named the earlier v0.19
+receipt commit (`c66445e4...`) as its main-parent guard.  Exact local and
+remote ref checks show that the already-public D050 metadata commit
+`1f6de4f1e4b9f63c5435be8d2c87f748c6a0077b` is the current `main` and the
+correct pre-v0.20 parent; the v0.19 boundary tag and receipt commit remain
+unchanged.  The narrow publisher constant was corrected accordingly, and the
+package will be regenerated so its source hash and release manifest bind this
+auditable transport fix.
+
+## 2026-08-29 — D052: Publish and verify complete Chapter 27 at 509/672
+
+The v0.20.0 Chapter 27 checkpoint is published in both existing lineages and
+has passed public-byte verification.  GitHub prerelease
+`v0.20.0-v2-through-ch27` points to boundary commit
+`a97eb373b3a7465326b82f811e6e277d73aad4f1` (tree
+`67934bc7b19d6fb7969625f65d0cb9a3c3c71537`), with the sanitized publication
+receipt committed at `6e6234363ce3fe3896c2724979b399be2d4153ce`.
+Zenodo record `22163307` / DOI `10.5281/zenodo.22163307` is the single next
+version of concept `10.5281/zenodo.22059798`, from predecessor record
+`22161046`; no standalone deposition was created.
+
+The exact reader-first asset set is: PDF 3,939,039 bytes / SHA-256
+`48fda0dae726802208056bd3e8a4e3f4713ea45b498c4fe891710f7e2f349466`; ZIP
+40,608,493 bytes / SHA-256
+`113ade913e593f5a118d6ea63dc492cb45db577ec3f1ae88e8c1e21a65fad47c`; and
+checksum witness 254 bytes / SHA-256
+`8847a4dd1fa5f4c28a2fb759ca05c124b1f91bf78ad070b55202026acc8bcf75`.
+GitHub release HTML, anonymous raw readback of 25 bounded evidence paths, and
+all three downloads matched local bytes.  Zenodo metadata, its exact three
+file inventory, and all three anonymous downloads matched as well.  The
+Zenodo API returns file rows in a server-defined order (checksum, ZIP, PDF),
+so the receipt binds the intended reader-first order explicitly while retaining
+the actual public inventory truth; no public bytes were altered.
+
+The goal remains active. Exactly 163 official pages remain; production now
+continues at `mt28.tex` and `mt281.tex`, beginning at Volume II page 408.  No
+upstream contact occurred.

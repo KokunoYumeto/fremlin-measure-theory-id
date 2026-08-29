@@ -2,6 +2,54 @@
 
 Updated: 2026-08-29 (Europe/Berlin)
 
+> **Superseding public owner state (2026-08-29):** complete Chapter 27 is now
+> public at **509/672 official pages (75.7%)**.  The GitHub prerelease
+> `v0.20.0-v2-through-ch27` is at boundary commit
+> `a97eb373b3a7465326b82f811e6e277d73aad4f1`, tree
+> `67934bc7b19d6fb7969625f65d0cb9a3c3c71537`, with the sanitized receipt
+> commit `6e6234363ce3fe3896c2724979b399be2d4153ce`:
+> <https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.20.0-v2-through-ch27>.
+> Zenodo record `22163307`, DOI `10.5281/zenodo.22163307`, is the next version
+> in concept `10.5281/zenodo.22059798`.
+
+## Live owner state through complete Chapter 27 public
+
+- The reader-first PDF is 3,939,039 bytes / SHA-256
+  `48fda0dae726802208056bd3e8a4e3f4713ea45b498c4fe891710f7e2f349466`.
+- The deterministic source/backend ZIP is 40,608,493 bytes / SHA-256
+  `113ade913e593f5a118d6ea63dc492cb45db577ec3f1ae88e8c1e21a65fad47c`.
+- The checksum witness is 254 bytes / SHA-256
+  `8847a4dd1fa5f4c28a2fb759ca05c124b1f91bf78ad070b55202026acc8bcf75`.
+  GitHub and Zenodo public downloads matched all three exact identities;
+  anonymous GitHub HTML/raw readback covered the release and 25 bounded paths,
+  and Zenodo metadata plus all three files passed anonymous verification.
+- CP0020, catalog v1.15, the 545-page PDF, and the 81-route reader remain
+  passing.  Exactly 163 official pages remain; the next source is `mt28.tex`,
+  followed by `mt281.tex`, at Volume II official page 408.  No upstream contact
+  occurred.
+
+> **Superseding local owner state (2026-08-29):** CP0020 admits complete
+> Chapter 27 at **509/672 official pages (75.7%)**.  Complete Volume I and
+> contiguous Volume II pages 1–407 are translated, backend-indexed, built, and
+> reader-validated; 163 pages remain.  The cumulative PDF is 3,939,039 bytes /
+> 545 A4 reflow pages / SHA-256
+> `48fda0dae726802208056bd3e8a4e3f4713ea45b498c4fe891710f7e2f349466`.
+> This was the pre-publication local state; it is retained as historical
+> evidence below.  The public v0.20 transaction has since completed.
+
+## Live local state through complete Chapter 27 admitted
+
+- Admission: `00_control/CP0020_THROUGH_CHAPTER27_ADMISSION.md` and
+  `qa/through-chapter27-final-admission.json`; both pass and bind the seven
+  Chapter 27 units without changing predecessor evidence.
+- Backend: catalog v1.15, 6,464 schema-valid unique records, 77 units, 292
+  dereferenced resources, and 217 materialized files / 10,818,056 bytes.
+- Reader evidence: all 545 PDF pages and all 81 offline-reader routes at both
+  desktop and mobile viewports pass deterministic and visual/browser QA.
+- Immediate action: build and replay the deterministic v0.20 package, publish
+  it in the existing GitHub and Zenodo lineages, anonymously verify all public
+  bytes, then advance to Chapter 28.  No upstream contact occurred.
+
 > **Superseding owner state (2026-08-29):** complete Chapter 26 is admitted,
 > released, and publicly byte-verified at **444/672 official pages (66.1%)**.
 > GitHub tag `v0.19.0-v2-through-ch26` points to boundary commit

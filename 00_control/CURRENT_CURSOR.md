@@ -1,5 +1,41 @@
 # Current Cursor
 
+## Superseding public production cursor — Chapter 28 (2026-08-29)
+
+Complete Volume I and contiguous Volume II pages 1–407 through Chapter 27 are
+admitted and public: **509/672 official pages (75.7%)**; 163 remain.  The
+GitHub tag `v0.20.0-v2-through-ch27` is public at boundary commit
+`a97eb373b3a7465326b82f811e6e277d73aad4f1`, tree
+`67934bc7b19d6fb7969625f65d0cb9a3c3c71537`, and receipt commit
+`6e6234363ce3fe3896c2724979b399be2d4153ce`.  The release URL is
+<https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.20.0-v2-through-ch27>.
+
+Zenodo record `22163307`, DOI `10.5281/zenodo.22163307`, extends concept DOI
+`10.5281/zenodo.22059798`.  Sanitized receipts are
+`qa/PUBLICATION_RECEIPT_V0200_V2_THROUGH_CH27.json` (5,260 bytes; SHA-256
+`6c16a68ea449d894cdcc70d85d2e0b06f522d10c8da139a50365d3d55b695370`) and
+`qa/ZENODO_PUBLICATION_RECEIPT_V0200_V2_THROUGH_CH27.json` (4,774 bytes;
+SHA-256 `61502c2f0b7c54ca380d2c5de10260add5282f13b6b4129bf5b2b603711696d`).
+The exact three public assets are PDF 3,939,039 bytes (`48fda0...`), ZIP
+40,608,493 bytes (`113ade...`), and checksum witness 254 bytes (`8847a4...`),
+all anonymously hash-verified.  The next executable cursor is
+`authority/fremlin/source/mt2.2016/mt28.tex`, then `mt281.tex`, beginning at
+official Volume II page 408.  No upstream contact occurred.
+
+## Superseding local production cursor — Chapter 27 admitted (2026-08-29)
+
+CP0020 admits complete Volume I and contiguous Volume II pages 1–407 through
+complete Chapter 27: **509/672 official pages (75.7%)**; 163 remain.  The seven
+new units `mt27.tex` and `mt271.tex`–`mt276.tex`, backend catalog v1.15, the
+545-page cumulative PDF, and all 81 desktop/mobile offline-reader routes pass.
+Exact evidence is `00_control/CP0020_THROUGH_CHAPTER27_ADMISSION.md` and
+`qa/through-chapter27-final-admission.json`.
+
+This was the pre-publication local cursor; the v0.20 package and both
+existing-lineage publications have now completed.  Continue directly at
+`authority/fremlin/source/mt2.2016/mt28.tex`, followed by `mt281.tex`, beginning
+at official Volume II page 408.
+
 ## Superseding public production cursor — Chapter 27 (2026-08-29)
 
 Complete Volume I and contiguous Volume II pages 1–342 through complete Chapter
