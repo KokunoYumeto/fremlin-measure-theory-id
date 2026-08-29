@@ -310,7 +310,7 @@ class Renderer:
                 i = j
                 continue
 
-            if command in {"Quer", "Bang"}:
+            if command in {"Quer", "Bang", "BanG"}:
                 # Fremlin's proof prose uses these as visible punctuation
                 # macros.  Preserve the mark without leaking the TeX control
                 # sequence into the semantic reader.
@@ -404,7 +404,20 @@ class Renderer:
             if command in {"leader", "header"}:
                 raw_source_id, after_id = read_group(text, j)
                 source_id, starred = canonical_heading_id(raw_source_id)
-                title, end = read_group(text, after_id)
+                title_start = after_id
+                while title_start < len(text) and text[title_start].isspace():
+                    title_start += 1
+                if title_start < len(text) and text[title_start] == "{":
+                    title, end = read_group(text, after_id)
+                elif command == "header":
+                    # Some legacy Fremlin sources use a one-argument header
+                    # only as an anchor at the end of a cmmnt branch; the
+                    # visible bold subpart label follows outside that branch.
+                    title, end = "", after_id
+                else:
+                    raise ValueError(
+                        f"expected title argument after \\{command}{{{raw_source_id}}}"
+                    )
                 out.append(
                     self.block_token(
                         "heading",
@@ -518,7 +531,7 @@ class Renderer:
                 _arg, end = read_group(text, j)
                 i = end
                 continue
-            if command == "discrpage":
+            if command in {"discrpage", "frnewpage"}:
                 i = j
                 continue
             out.append(text[i:j])

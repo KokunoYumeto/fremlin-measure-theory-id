@@ -253,3 +253,14 @@ $\Sigma$`, `terintegralkan terhadap $\nu$`, and `untuk $\mu$-hampir setiap
 $x$`. The six high-confidence authority corrections are separately recorded
 as `O007-CORR-0239`–`O007-CORR-0244`; the source's single-integral notation in
 257Yb is retained as unusual but intelligible rather than silently changed.
+
+### Section 265 — Hausdorff measure of surfaces (2026-08-29)
+
+| Concept or construction | Preferred O007 form | Decision and boundary |
+|---|---|---|
+| ball / unit ball | `bola`; `bola satuan` | Reserve these forms for sets defined by a norm inequality, such as $B(x,r)$ or $\{x:\|x\|\le 1\}$. |
+| sphere / unit sphere / $r$-sphere | `permukaan bola`; `permukaan bola satuan`; `permukaan bola berdimensi $r$` | Use the explicit surface phrase for norm-level sets such as $\partial B(y,t)$ and $\{x:\|x\|=1\}$. This prevents the English distinction between *ball* and *sphere* from collapsing into the single word `bola`; it does not alter any formula or source identifier. |
+
+This semantic distinction is propagated through Section 265, including its
+exercises and notes. `Luas permukaan bola` remains the compact form when the
+dimension is already fixed by context.

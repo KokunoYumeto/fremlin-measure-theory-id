@@ -1,0 +1,887 @@
+\frfilename{mt265.tex}
+\versiondate{3.9.13}
+\copyrightdate{2000}
+
+\def\chaptername{Perubahan variabel dalam integral}
+\def\sectionname{Ukuran permukaan}
+
+\newsection{265}
+
+Dalam bagian ini saya menyajikan versi baru argumen-argumen \S263, kali
+ini bukan untuk membenarkan integrasi dengan substitusi, melainkan untuk
+memberikan metode yang efektif dalam praktik guna menghitung ukuran
+Hausdorff berdimensi $r$ dari permukaan mulus berdimensi $r$ dalam ruang
+berdimensi $s$. Kasus dasar yang patut diingat adalah $r=2$, $s=3$,
+meskipun kombinasi lain yang mudah Anda bayangkan juga akan sangat
+membantu intuisi. Saya memberikan teorema fundamental (265E) yang
+menyediakan rumus yang dapat digunakan untuk menghitung ukuran
+berdimensi $r$ dari permukaan dalam ruang berdimensi $s$ yang
+diparameterkan oleh fungsi terdiferensialkan, lalu mengerjakan beberapa
+perhitungan untuk permukaan bola berdimensi $r$ (265F-265H). %265F 265G 265H
+
+\leader{265A}{Ukuran Hausdorff ternormalisasi}\dvro{ Dalam}{ Seperti
+yang saya kemukakan pada akhir bagian sebelumnya, ukuran Hausdorff,
+sebagaimana didefinisikan dalam 264A-264C, bukanlah ukuran yang paling
+sesuai untuk pekerjaan kita di sini; karena itu dalam}
+bagian ini saya akan menggunakan {\bf ukuran Hausdorff ternormalisasi},
+yang berarti $\nu_r=2^{-r}\beta_r\mu_{Hr}$, dengan $\mu_{Hr}$ ukuran
+Hausdorff berdimensi $r$\cmmnt{ (ditafsirkan dalam ruang mana pun yang
+sedang ditinjau)} dan $\beta_r=\mu_rB(\tbf{0},1)$ ukuran Lebesgue dari
+setiap bola berjari-jari $1$ dalam $\BbbR^r$. \cmmnt{Akan memudahkan
+jika kita mengambil $\beta_0=1$.} \dvro{Normalisasi ini}{Seperti
+ditunjukkan dalam 264H-264I, normalisasi ini} membuat $\nu_r$ pada
+$\BbbR^r$ sama dengan ukuran Lebesgue $\mu_r$.
+\cmmnt{Perhatikan bahwa tentu saja}
+$\nu_r^*=2^{-r}\beta_r\mu_{Hr}^*$\cmmnt{ (264Fb)}.
+
+\leader{265B}{Subruang linear \dvrocolon{}}\cmmnt{ Sama seperti dalam
+\S263, langkah pertama adalah menangani operator linear.
+
+\medskip
+
+\noindent}{\bf Teorema} Misalkan $r$, $s$ adalah bilangan bulat dengan
+$1\le r\le s$, dan $T$ adalah matriks real berukuran $s\times r$;
+pandang $T$ sebagai operator linear dari $\BbbR^r$ ke $\BbbR^s$.
+Tetapkan $J=\sqrt{\det T\trs T}$, dengan $T\trs $ transpos dari $T$.
+Tuliskan $\nu_r$ untuk ukuran Hausdorff ternormalisasi berdimensi $r$
+pada $\BbbR^s$, $\Tau_r$ untuk domainnya, dan $\mu_r$ untuk ukuran
+Lebesgue pada $\BbbR^r$. Maka
+
+\Centerline{$\nu_r T[E]=J\mu_rE$}
+
+\noindent untuk setiap himpunan terukur $E\subseteq\BbbR^r$. Jika $T$
+injektif (yakni jika $J\ne 0$), maka
+
+\Centerline{$\nu_rF=J\mu_rT^{-1}[F]$}
+
+\noindent kapan pun $F\in\Tau_r$ dan $F\subseteq T[\BbbR^r]$.
+
+\proof{ Rumus untuk $J$ mengandaikan bahwa $\det T\trs T$ nonnegatif,
+yang belum kita ketahui; tetapi argumen berikut akan segera
+membuktikannya dengan memadai.
+\medskip
+{\bf (a)} Misalkan $V$ adalah subruang linear dari $\BbbR^s$ yang
+terdiri atas vektor $y=(\eta_1,\ldots,\eta_s)$ sedemikian sehingga
+$\eta_i=0$ kapan pun $r<i\le s$. Misalkan $R$ adalah matriks
+$r\times s$, $\langle\rho_{ij}\rangle_{i\le r,j\le s}$, dengan
+$\rho_{ij}=1$ jika $i=j\le r$, dan $0$ jika tidak; maka matriks
+$s\times r$ $R\trs $ dapat dipandang sebagai bijeksi dari $\BbbR^r$
+ke $V$. Misalkan $W$ adalah subruang linear berdimensi $r$ dari
+$\BbbR^s$ yang memuat $T[\BbbR^r]$, dan misalkan $P$ adalah matriks
+ortogonal $s\times s$ sedemikian sehingga $P[W]=V$. Maka $S=RPT$
+adalah matriks $r\times r$. Kita mempunyai $R\trs Ry=y$ untuk $y\in V$,
+sehingga $R\trs RPT=PT$ dan
+
+\Centerline{$S\trs S=T\trs P\trs R\trs RPT=T\trs P\trs PT=T\trs T$;}
+
+\noindent jadi
+
+\Centerline{$\det T\trs T=\det S\trs S=(\det S)^2\ge 0$}
+
+\noindent dan $J=|\det S|$. Pada saat yang sama,
+
+\Centerline{$P\trs R\trs S=P\trs R\trs RPT=P\trs PT=T$.}
+
+\noindent Perhatikan bahwa $J=0$ jika dan hanya jika $S$ tidak
+injektif, yakni jika dan hanya jika $T$ tidak injektif.
+
+\medskip
+
+{\bf (b)} Jika kita memandang matriks $s\times r$ $P\trs R\trs $ sebagai
+pemetaan dari $\BbbR^r$ ke $\BbbR^s$, tampak bahwa
+$\phi=P\trs R\trs $ adalah isometri antara $\BbbR^r$ dan $W$, dengan
+invers $\phi^{-1}=RP\restrp W$. Karena itu $\phi$ adalah isomorfisme
+antara ruang ukur $(\Bbb R^r,\mu_{Hr}^{(r)})$ dan
+$(W,\mu_{HrW}^{(s)})$, dengan $\mu_{Hr}^{(r)}$ ukuran Hausdorff
+berdimensi $r$ pada $\BbbR^r$ dan $\mu_{HrW}^{(s)}$ ukuran subruang
+pada $W$ yang diinduksi oleh ukuran Hausdorff berdimensi $r$
+$\mu_{Hr}^{(s)}$ pada $\BbbR^s$.
+
+\medskip
+
+\Prf\ {\bf (i)} Jika $A\subseteq\BbbR^r$ dan $A'\subseteq W$,
+
+\Centerline{$\mu_{Hr}^{(s)*}(\phi[A])\le\mu_{Hr}^{(r)*}(A)$,
+\quad $\mu_{Hr}^{(r)*}(\phi^{-1}[A'])\le\mu_{Hr}^{(s)*}(A')$,}
+
+\noindent dengan menggunakan 264G dua kali. Jadi
+$\mu_{Hr}^{(s)*}(\phi[A])=\mu_{Hr}^{(r)*}(A)$ untuk setiap
+$A\subseteq \BbbR^r$.
+
+\medskip
+
+\quad{\bf (ii)} Sekarang, karena $W$ tertutup dan dengan demikian
+berada dalam domain $\mu_{Hr}^{(s)}$ (264E), ukuran subruang
+$\mu_{HrW}^{(s)}$ tepat merupakan ukuran yang diinduksi oleh
+$\mu_{Hr}^{(s)*}\restrp W$ melalui metode \Caratheodory\
+(214H(b-ii)). Karena $\phi$ adalah isomorfisme antara
+$(\Bbb R^r,\mu_{Hr}^{(r)*})$ dan
+$(W,\mu_{Hr}^{(s)*}\restrp W)$, ia merupakan isomorfisme antara
+$(\BbbR^r,\mu_{Hr}^{(r)})$ dan $(W,\mu_{HrW}^{(s)})$.
+\Qed
+
+\medskip
+
+{\bf (c)} Akibatnya, $\phi$ juga merupakan isomorfisme antara versi
+ternormalisasi $(\BbbR^r,\mu_r)$ dan $(W,\nu_{rW})$, dengan
+$\nu_{rW}$ ukuran subruang pada $W$ yang diinduksi oleh $\nu_r$.
+
+Sekarang, jika $E\subseteq\BbbR^r$ terukur Lebesgue, berdasarkan
+263A kita mempunyai $\mu_rS[E]=J\mu_rE$; sehingga
+
+\Centerline{$\nu_rT[E]=\nu_r(P\trs R\trs [S[E]])=\nu_r(\phi[S[E]])
+=\mu_rS[E]=J\mu_rE$.}
+
+\noindent Jika $T$ injektif, maka $S=\phi^{-1}T$ juga harus injektif,
+sehingga $J\ne 0$ dan
+
+\Centerline{$\nu_rF=\mu_r(\phi^{-1}[F])
+=J\mu_r(S^{-1}[\phi^{-1}[F]])=J\mu_rT^{-1}[F]$}
+
+\noindent kapan pun $F\in\Tau_r$ dan $F\subseteq W=T[\BbbR^r]$.
+}%end of proof of 265B
+
+\leader{265C}{Akibat} Di bawah syarat-syarat 265B,
+
+\Centerline{$\nu_r^*T[A]=J\mu_r^*A$}
+
+\noindent untuk setiap $A\subseteq\BbbR^r$.
+
+\proof{{\bf (a)} Jika $E$ terukur Lebesgue dan $A\subseteq E$,
+maka $T[A]\subseteq T[E]$, sehingga
+
+\Centerline{$\nu_r^*T[A]\le \nu_rT[E]=J\mu_rE$;}
+
+\noindent karena $E$ sebarang, $\nu_r^*T[A]\le J\mu_r^*A$.
+
+\medskip
+
+{\bf (b)} Jika $J=0$, kita selesai. Jika $J\ne 0$, maka $T$ injektif,
+sehingga jika $F\in\Tau_r$ dan $T[A]\subseteq F$, kita akan mempunyai
+
+\Centerline{$J\mu_r^*A\le J\mu_rT^{-1}[F\cap T[\BbbR^r]]
+=\nu_r(F\cap T[\BbbR^r])\le\nu_rF$;}
+
+\noindent karena $F$ sebarang, $J\mu_r^*A\le\nu_r^*T[A]$.
+}%end of proof of 265C
+
+\leader{265D}{}\cmmnt{ Sekarang saya beralih ke lema yang bersesuaian
+dengan 263C.
+
+\medskip
+
+\noindent}{\bf Lema} Misalkan $1\le r\le s$ dan $T$ adalah matriks
+$s\times r$; tetapkan $J=\sqrt{\det T\trs T}$, dan misalkan $J\ne 0$.
+Maka untuk setiap $\epsilon>0$ terdapat
+$\zeta=\zeta(T,\epsilon)>0$ sedemikian sehingga
+
+(i) $|\sqrt{\det S\trs S}-J|\le\epsilon$ kapan pun $S$ adalah matriks
+$s\times r$ dan $\|S-T\|\le\zeta$\cmmnt{, dengan norma matriks
+didefinisikan seperti dalam 262H};
+
+(ii) kapan pun $D\subseteq\BbbR^r$ adalah himpunan terbatas dan
+$\phi:D\to\Bbb R^s$ adalah fungsi sedemikian sehingga
+$\|\phi(x)-\phi(y)-T(x-y)\|\le\zeta\|x-y\|$ untuk semua $x$, $y\in D$,
+maka $|\nu_r^*\phi[D]-J\mu_r^*D|\le\epsilon\mu_r^*D$.
+
+\proof{{\bf (a)} Karena $\det S\trs S$ adalah fungsi kontinu dari
+koefisien-koefisien $S$, 262Hb memberi tahu kita bahwa harus ada
+$\zeta_0>0$ sedemikian sehingga
+$|J-\sqrt{\det S\trs S}|\le\epsilon$ kapan pun
+$\|S-T\|\le\zeta_0$.
+
+\medskip
+
+{\bf (b)} Karena $J\ne 0$, $T$ injektif, dan terdapat matriks
+$r\times s$ $T^*$ sedemikian sehingga $T^*T$ adalah matriks identitas
+$r\times r$. Ambil $\zeta>0$ sedemikian sehingga
+$\zeta\le\zeta_0$, $\zeta\|T^*\|<1$,
+$J(1+\zeta\|T^*\|)^r\le J+\epsilon$, dan
+$1-J^{-1}\epsilon\le(1-\zeta\|T^*\|)^r$.
+
+Misalkan $\phi:D\to\BbbR^s$ sedemikian sehingga
+$\|\phi(x)-\phi(y)-T(x-y)\|\le\zeta\|x-y\|$ kapan pun $x$, $y\in D$.
+Tetapkan $\psi=\phi T^*$, sehingga $\phi=\psi T$. Maka
+
+\Centerline{$\|\psi(u)-\psi(v)\|\le(1+\zeta\|T^*\|)\|u-v\|$,
+\quad$\|u-v\|\le(1-\zeta\|T^*\|)^{-1}\|\psi(u)-\psi(v)\|$}
+
+\noindent kapan pun $u$, $v\in T[D]$.
+\Prf\ Ambil $x$, $y\in D$ sedemikian sehingga $u=Tx$, $v=Ty$;
+tentu saja $x=T^*u$, $y=T^*v$. Maka
+
+$$\eqalign{\|\psi(u)-\psi(v)\|
+&=\|\phi(T^*u)-\phi(T^*v)\|
+=\|\phi(x)-\phi(y)\|\cr
+&\le\|T(x-y)\|+\zeta\|x-y\|\cr
+&=\|u-v\|+\zeta\|T^*u-T^*v\|
+\le\|u-v\|(1+\zeta\|T^*\|).\cr}$$
+
+\noindent Selanjutnya,
+
+$$\eqalign{\|u-v\|
+&=\|Tx-Ty\|
+\le\|\phi(x)-\phi(y)\|+\zeta\|x-y\|\cr
+&=\|\psi(u)-\psi(v)\|+\zeta\|T^*u-T^*v\|\cr
+&\le\|\psi(u)-\psi(v)\|+\zeta\|T^*\|\|u-v\|,\cr}$$
+
+\noindent sehingga
+$(1-\zeta\|T^*\|)\|u-v\|\le\|\psi(u)-\psi(v)\|$ dan
+$\|u-v\|\le(1-\zeta\|T^*\|)^{-1}\|\psi(u)-\psi(v)\|$. \Qed
+
+\medskip
+
+{\bf (c)} Sekarang, dari 264G dan 265C kita melihat bahwa
+
+\Centerline{$\nu^*_r\phi[D]
+=\nu_r^*\psi[T[D]]
+\le(1+\zeta\|T^*\|)^r\nu_r^*T[D]
+=(1+\zeta\|T^*\|)^rJ\mu_r^*D
+\le(J+\epsilon)\mu_r^*D$,}
+
+\noindent dan (asalkan $\epsilon\le J$)
+
+$$\eqalignno{(J-\epsilon)\mu_r^*D
+&=(1-J^{-1}\epsilon)\nu_r^*T[D]
+\le(1-J^{-1}\epsilon)(1-\zeta\|T^*\|)^{-r}\nu_r^*\psi[T[D]]\cr
+\displaycause{dengan menerapkan 264G pada $\psi^{-1}:\psi[T[D]]\to T[D]$}
+&\le\nu_r^*\psi[T[D]]
+=\nu_r^*\phi[D].\cr}$$
+
+\noindent (Tentu saja, jika $\epsilon\ge J$, maka pasti
+$(J-\epsilon)\mu_r^*D\le\nu_r^*\phi[D]$.) Jadi
+\Centerline{$(J-\epsilon)\mu_r^*D\le\nu_r^*\phi[D]
+\le(J+\epsilon)\mu_r^*D$}
+
+\noindent seperti yang diperlukan, dan kita mempunyai $\zeta$ yang
+sesuai.
+}%end of proof of 265D
+
+\leader{265E}{Teorema} Misalkan $1\le r\le s$; tuliskan $\mu_r$ untuk
+ukuran Lebesgue pada $\BbbR^r$, $\nu_r$ untuk ukuran Hausdorff
+ternormalisasi pada $\BbbR^s$, dan $\Tau_r$ untuk domain $\nu_r$.
+Misalkan $D\subseteq\BbbR^r$ sebarang, dan
+$\phi:D\to\BbbR^s$ adalah fungsi yang terdiferensialkan relatif terhadap
+domainnya pada setiap titik dalam $D$. Untuk setiap $x\in D$, misalkan $T(x)$
+adalah suatu turunan dari $\phi$ di $x$ relatif terhadap $D$, dan
+tetapkan $J(x)=\sqrt{\det T(x)\trs T(x)}$.
+Tetapkan $D'=\{x:x\in D,\,J(x)>0\}$. Maka
+
+\quad (i) $J:D\to\coint{0,\infty}$ adalah fungsi terukur;
+
+\quad (ii) $\nu_r^*\phi[D]\le\int_DJ(x)\mu_r(dx)$,
+
+\noindent dengan memperbolehkan $\infty$ sebagai nilai integral;
+
+\quad (iii) $\nu_r^*\phi[D\setminus D']=0$.
+
+\noindent Jika $D$ terukur Lebesgue, maka
+
+\quad (iv) $\phi[D]\in\Tau_r$.
+
+\noindent Jika $D$ terukur dan $\phi$ injektif, maka
+
+\quad (v) $\nu_r\phi[D]=\int_DJ\,d\mu_r$;
+
+\quad (vi) untuk setiap himpunan $E\subseteq\phi[D]$, $E\in\Tau_r$
+jika dan hanya jika $\phi^{-1}[E]\cap D'$ terukur Lebesgue, dan
+dalam hal ini
+
+\Centerline{$\nu_rE
+=\int_{\phi^{-1}[E]}J(x)\mu_r(dx)
+=\int_DJ\times\chi(\phi^{-1}[E])d\mu_r$;}
+
+\quad (vii) untuk setiap fungsi bernilai real $g$ yang didefinisikan
+pada suatu himpunan bagian dari $\phi[D]$,
+
+\Centerline{$\int_{\phi[D]}g\,d\nu_r=\int_DJ\times g\phi\,d\mu_r$}
+
+\noindent jika salah satu integral terdefinisi dalam
+$[-\infty,\infty]$, dengan ketentuan bahwa kita menafsirkan
+$J(x)g(\phi(x))$ sebagai nol ketika $J(x)=0$ dan $g(\phi(x))$ tidak
+terdefinisi.
+
+\proof{ Saya akan mengikuti alur yang digariskan dalam bukti 263D.
+
+\medskip
+
+{\bf (a)} Sama seperti dalam 263D, kita tahu bahwa $J:D\to\Bbb R$
+terukur, sebab $J(x)$ adalah fungsi kontinu dari koefisien-koefisien
+$T(x)$, yang semuanya terukur berdasarkan 262P. Jika $D$ terukur
+Lebesgue, terdapat barisan $\sequencen{F_n}$ himpunan bagian kompak dari
+$D$ sedemikian sehingga $D\setminus\bigcup_{n\in\Bbb N}F_n$
+terabaikan terhadap $\mu_r$. Sekarang $\phi[F_n]$ kompak, sehingga
+termasuk dalam $\Tau_r$, untuk setiap $n\in\Bbb N$. Adapun
+$\phi[D\setminus\bigcup_{n\in\Bbb N}F_n]$, himpunan ini harus
+terabaikan terhadap $\nu_r$ berdasarkan 264G, karena $\phi$ merupakan
+gabungan terhitung dari fungsi-fungsi Lipschitz (262N). Jadi
+
+\Centerline{$\phi[D]=\bigcup_{n\in\Bbb N}
+  \phi[F_n]\cup\phi[D\setminus\bigcup_{n\in\Bbb N}F_n]\in\Tau_r$.}
+
+\noindent Ini menangani (i) dan (iv).
+
+\medskip
+
+{\bf (b)} Untuk sementara, andaikan $D$ terbatas dan $J(x)>0$ untuk
+setiap $x\in D$, serta tetapkan $\epsilon>0$. Misalkan $M^*_{sr}$
+adalah himpunan matriks $s\times r$ $T$ sedemikian sehingga
+$\det T\trs T\ne 0$, yakni pemetaan yang bersesuaian
+$T:\BbbR^r\to\BbbR^s$ injektif. Untuk $T\in M_{sr}^*$, ambil
+$\zeta(T,\epsilon)>0$ seperti dalam 265D.
+
+Ambil $\sequencen{D_n}$, $\sequencen{T_n}$ seperti dalam 262M, dengan
+$A=M^*_{sr}$, sehingga $\sequencen{D_n}$ adalah partisi $D$ menjadi
+himpunan-himpunan yang relatif terukur dalam $D$, dan setiap $T_n$
+adalah matriks $s\times r$ sedemikian sehingga
+
+\Centerline{$\|T(x)-T_n\|\le\zeta(T_n,\epsilon)$ kapan pun $x\in D_n$,}
+
+\Centerline{$\|\phi(x)-\phi(y)-T_n(x-y)\|\le\zeta(T_n,\epsilon)\|x-y\|$
+untuk semua $x$, $y\in D_n$.}
+
+\noindent Kemudian, dengan menetapkan
+$J_n=\sqrt{\det T_n\trs T_n}$, kita mempunyai
+
+\Centerline{$|J(x)-J_n|\le\epsilon$ untuk setiap $x\in D_n$,}
+
+\Centerline{$|\nu_r^*\phi[D_n]-J_n\mu_r^*D_n|\le\epsilon\mu_r^*D_n$,}
+
+\noindent berdasarkan pemilihan $\zeta(T_n,\epsilon)$. Jadi
+
+$$\eqalignno{\nu_r^*\phi[D]
+&\le\sum_{n=0}^{\infty}\nu_r^*\phi[D_n]\cr
+\displaycause{karena $\phi[D]=\bigcup_{n\in\Bbb N}\phi[D_n]$}
+&\le\sum_{n=0}^{\infty}(J_n\mu_r^*D_n+\epsilon\mu_r^*D_n)
+\le\epsilon\mu_r^*D+\sum_{n=0}^{\infty}J_n\mu_r^*D_n\cr
+\displaycause{karena $D_n$ saling lepas dan relatif terukur dalam $D$}
+&=\epsilon\mu_r^*D+\int_D\sum_{n=0}^{\infty}J_n\chi D_nd\mu_r\cr
+&\le\epsilon\mu_r^*D+\int_DJ(x)+\epsilon\mu_r(dx)
+=2\epsilon\mu_r^*D+\int_DJ\,d\mu_r.\cr}$$
+
+Jika $D$ terukur dan $\phi$ injektif, maka semua $D_n$ adalah himpunan
+bagian $\BbbR^r$ yang terukur Lebesgue, sehingga semua
+$\phi[D_n]$ diukur oleh $\nu_r$, dan himpunan-himpunan itu juga saling
+lepas. Oleh karena itu
+
+$$\eqalign{\int_{D}J\,d\mu_r
+&\le\sum_{n=0}^{\infty}J_n\mu_r D_n+\epsilon\mu_r D\cr
+&\le\sum_{n=0}^{\infty}(\nu_r\phi[D_n]
+   +\epsilon\mu_r D_n)+\epsilon\mu_rD
+=\nu_r\phi[D]+2\epsilon\mu_rD.\cr}$$
+
+\noindent Karena $\epsilon$ sebarang, kita memperoleh
+
+\Centerline{$\nu_r^*\phi[D]\le\int_DJ\,d\mu_r$,}
+
+\noindent dan jika $D$ terukur serta $\phi$ injektif,
+
+\Centerline{$\int_DJ\,d\mu_r\le\nu_r\phi[D]$;}
+
+\noindent jadi kita memperoleh (ii) dan (v), dengan asumsi bahwa $D$
+terbatas dan $J>0$ pada setiap titik dalam $D$.
+
+\medskip
+
+{\bf (c)} Sama seperti dalam bukti 263D, sekarang kita dapat melepaskan
+asumsi bahwa $D$ terbatas dengan meninjau
+$B_k=B(\tbf{0},k)\subseteq\BbbR^r$; asalkan $J>0$ pada setiap titik dalam $D$,
+kita memperoleh
+
+\Centerline{$\nu_r^*\phi[D]
+=\lim_{k\to\infty}\nu_r^*\phi[D\cap B_k]
+\le\lim_{k\to\infty}\int_{D\cap B_k}J\,d\mu_r
+=\int_DJ\,d\mu_r$,}
+
+\noindent dengan kesamaan jika $D$ terukur dan $\phi$ injektif.
+
+\medskip
+
+{\bf (d)} Sekarang kita mendapati bahwa
+$\nu_r^*\phi[D\setminus D']=0$.
+
+\medskip
+
+\Prf\grheada\ Misalkan $\eta\in\ocint{0,1}$. Definisikan
+$\psi_{\eta}:D\to\BbbR^{s+r}$ dengan menetapkan
+$\psi_{\eta}(x)=(\phi(x),\eta x)$, dan identifikasikan $\BbbR^{s+r}$
+dengan $\BbbR^s\times\BbbR^r$. $\psi_{\eta}$ terdiferensialkan relatif
+terhadap domainnya pada setiap titik dalam $D$, dengan turunan
+$\tilde T_{\eta}(x)$, yaitu matriks $(s+r)\times r$ yang $s$ baris
+atasnya terdiri atas matriks $s\times r$ $T(x)$, dan $r$ baris bawahnya
+adalah $\eta I_r$, dengan $I_r$ matriks identitas $r\times r$.
+(Gunakan 262Ib.) Tentu saja $\tilde T_{\eta}(x)$, dipandang sebagai
+pemetaan dari $\BbbR^r$ ke $\BbbR^{s+r}$, injektif, sehingga
+
+\Centerline{$\tilde J_{\eta}(x)
+=\sqrt{\det\tilde T_{\eta}(x)\trs \tilde T_{\eta}(x)}
+=\sqrt{\det(T(x)\trs T(x)+\eta^2I)}>0$.}
+
+\noindent Kita mempunyai
+$\lim_{\eta\downarrow 0}\tilde J_{\eta}(x)=J(x)=0$ untuk
+$x\in D\setminus D'$.
+
+\medskip
+
+\quad\grheadb\ Nyatakan $T(x)$ sebagai
+$\langle\tau_{ij}(x)\rangle_{i\le s,j\le r}$ untuk setiap $x\in D$.
+Tetapkan
+
+\Centerline{$C_m=\{x:x\in D,\,\|x\|\le m,\,|\tau_{ij}(x)|\le m$ untuk
+semua $i\le s,\,j\le r\}$}
+
+\noindent untuk setiap $m\ge 1$. Untuk $x\in C_m$, semua koefisien
+$\tilde T_{\eta}(x)$ mempunyai modulus paling besar $m$; akibatnya
+(dengan menggunakan ketaksamaan paling kasar yang segera tersedia),
+semua koefisien $\tilde T_{\eta}(x)\trs \tilde T_{\eta}(x)$ mempunyai
+modulus paling besar $(r+s)m^2$ dan
+$\tilde J_{\eta}(x)\le\sqrt{r!(s+r)^r}m^r$. Karena itu kita dapat
+menggunakan Teorema Konvergensi Terdominasi Lebesgue untuk melihat bahwa
+
+\Centerline{$\lim_{\eta\downarrow 0}\int_{C_m\setminus D'}\tilde
+J_{\eta}d\mu_r=0$.}
+
+\medskip
+
+\quad\grheadc\ Misalkan $\tilde\nu_r$ adalah ukuran Hausdorff
+ternormalisasi berdimensi $r$ pada $\BbbR^{s+r}$. Dengan menerapkan
+bagian (b) bukti ini pada $\psi_{\eta}\restr C_m\setminus D'$, kita
+melihat bahwa
+
+\Centerline{$\tilde\nu_r^*\psi_{\eta}[C_m\setminus D']
+\le\int_{C_m\setminus D'}\tilde J_{\eta}d\mu_r$.}
+
+\noindent Sekarang kita mempunyai pemetaan alami
+$P:\BbbR^{s+r}\to\BbbR^s$ yang diberikan dengan menetapkan
+$P(\xi_1,\ldots,\xi_{s+r})=(\xi_1,\ldots,\xi_s)$, dan $P$ bersifat
+$1$-Lipschitz, sehingga dengan 264G sekali lagi kita mempunyai (dengan
+memperhitungkan konstanta normalisasi $2^{-r}\beta_r$)
+
+\Centerline{$\nu_r^*P[A]\le\tilde\nu_r^*A$}
+
+\noindent untuk setiap $A\subseteq\BbbR^{s+r}$. Khususnya,
+
+\Centerline{$\nu_r^*\phi[C_m\setminus D']
+=\nu_r^*P[\psi_{\eta}[C_m\setminus D']]
+\le\tilde\nu_r^*\psi_{\eta}[C_m\setminus D']
+\le\int_{C_m\setminus D'}\tilde J_{\eta}d\mu_r
+\to 0$}
+
+\noindent ketika $\eta\downarrow 0$. Namun ini berarti
+$\nu_r^*\phi[C_m\setminus D']=0$. Karena
+$D=\bigcup_{m\ge 1}C_m$, $\nu_r^*\phi[D\setminus D']=0$, seperti yang
+diklaim. \Qed
+
+\medskip
+
+{\bf (e)} Ini membuktikan (iii) dalam teorema. Tentu saja ini cukup
+untuk memberikan (ii) dan (v), sebab (dengan menerapkan (b)-(c) pada
+$\phi\restr D'$) kita harus mempunyai
+
+\Centerline{$\nu_r^*\phi[D]
+=\nu_r^*\phi[D']
+\le\int_{D'}J\,d\mu_r
+=\int_DJ\,d\mu_r$,}
+
+\noindent dengan kesamaan jika $D$ (dan karena itu juga $D'$) terukur
+dan $\phi$ injektif.
+
+\medskip
+
+{\bf (f)} Sekarang mari kita beralih ke bagian (vi). Andaikan $D$
+terukur dan $\phi$ injektif.
+
+\medskip
+
+\quad\grheada\ Misalkan $E\subseteq\phi[D]$ termasuk dalam $\Tau_r$.
+Tetapkan
+
+\Centerline{$H_k=\{x:x\in D,\,\|x\|\le k,\,J(x)\le k\}$}
+
+\noindent untuk setiap $k$; maka setiap $H_k$ terukur Lebesgue,
+sehingga (dengan menerapkan (iv) pada $\phi\restr H_k$)
+$\phi[H_k]\in\Tau_r$, dan
+
+\Centerline{$\nu_r\phi[H_k]\le k\mu_rH_k<\infty$.}
+
+\noindent Jadi $\phi[D]$ dapat ditutupi oleh suatu barisan himpunan
+berukuran berhingga terhadap $\nu_r$, yang tentu saja juga berukuran
+berhingga terhadap ukuran Hausdorff berdimensi $r$ pada $\BbbR^s$.
+Berdasarkan 264Fc, terdapat himpunan Borel
+$E_1$, $E_2\subseteq\BbbR^s$ sedemikian sehingga
+$E_1\subseteq E\subseteq E_2$ dan $\nu_r(E_2\setminus E_1)=0$.
+Sekarang $F_1=\phi^{-1}[E_1]$, $F_2=\phi^{-1}[E_2]$ adalah himpunan
+bagian terukur Lebesgue dari $D$, dan
+
+\Centerline{$\int_{F_2\setminus F_1}J\,d\mu_r=\nu_r\phi[F_2\setminus
+F_1]=\nu_r(\phi[D]\cap E_2\setminus E_1)=0$.}
+
+\noindent Karena itu $\mu_r(D'\cap(F_2\setminus F_1))=0$. Namun karena
+
+\Centerline{$D'\cap F_1\subseteq D'\cap\phi^{-1}[E]
+\subseteq D'\cap F_2$,}
+
+\noindent diperoleh bahwa $D'\cap\phi^{-1}[E]$ terukur, dan bahwa
+
+$$\eqalign{\int_{\phi^{-1}[E]}J\,d\mu_r
+&=\int_{D'\cap\phi^{-1}[E]}J\,d\mu_r
+=\int_{D'\cap F_1}J\,d\mu_r\cr
+&=\int_{D\cap F_1}J\,d\mu_r
+=\nu_r\phi[D\cap F_1]
+=\nu_rE_1
+=\nu_rE.\cr}$$
+
+\noindent Selain itu, $J\times\chi(\phi^{-1}[E])
+=J\times\chi(D'\cap\phi^{-1}[E])$ terukur, sehingga kita dapat menulis
+$\int J\times\chi(\phi^{-1}[E])$ sebagai pengganti
+$\int_{\phi^{-1}[E]}J$.
+
+\medskip
+
+\quad\grheadb\ Jika $E\subseteq\phi[D]$ dan
+$D'\cap\phi^{-1}[E]$ terukur, maka tentu saja
+
+\Centerline{$E=\phi[D'\cap\phi^{-1}[E]]
+  \cup\phi[(D\setminus D')\cap\phi^{-1}[E]]\in\Tau_r$,}
+
+\noindent karena $\phi[G]\in\Tau_r$ untuk setiap himpunan terukur
+$G\subseteq D$ dan $\phi[D\setminus D']$ terabaikan terhadap
+$\nu_r$.
+
+\medskip
+
+{\bf (g)} Akhirnya, (vii) segera mengikuti dari (vi), dengan
+menerapkan 235J pada $\mu_r$ dan ukuran subruang yang diinduksi oleh
+$\nu_r$ pada $\phi[D]$.
+}%end of proof of 265E
+
+\leader{265F}{Permukaan bola}\cmmnt{ Untuk menunjukkan bagaimana
+gagasan-gagasan ini dapat diterapkan pada salah satu kasus dasar, saya
+memberikan rincian metode untuk mendeskripsikan ukuran permukaan bola
+dalam ruang berdimensi $s$. Ambil $r\ge 1$ dan $s=r+1$.} Tuliskan
+$S_r$ untuk $\{z:z\in\Bbb R^{r+1},\,\|z\|=1\}$, permukaan bola
+berdimensi $r$.
+\dvro{Maka ukuran Hausdorff ternormalisasi berdimensi $r$ dari $S_r$
+adalah $2\pi\beta_{r-1}$, dengan $\beta_{r-1}$ volume bola satuan dari
+$\BbbR^{r-1}$ (dengan menafsirkan $\beta_0$ sebagai $1$).}
+{Maka kita mempunyai parametrisasi $\phi_r$ dari $S_r$ yang diberikan
+dengan menetapkan
+
+$$\phi_r\Matrix{\xi_1\\ \xi_2\\ \ldots \\ \ldots \\ \ldots\\ \xi_r}
+=\Matrix{\sin\xi_1\sin\xi_2\sin\xi_3\ldots\sin\xi_r\\
+\cos\xi_1\sin\xi_2\sin\xi_3\ldots\sin\xi_r\\
+\cos\xi_2\sin\xi_3\ldots\sin\xi_r\\
+\ldots\\
+\cos\xi_{r-2}\sin\xi_{r-1}\sin\xi_r\\
+\cos\xi_{r-1}\sin\xi_r\\
+\cos\xi_r}.$$
+
+\noindent Saya memilih perumusan ini karena saya ingin menggunakan
+argumen induktif yang didasarkan pada kenyataan bahwa
+
+\Centerline{$\phi_{r+1}\Matrix{x\\ \xi}
+=\Matrix{\sin\xi\,\phi_r(x)\\ \cos\xi}$}
+\noindent untuk $x\in\BbbR^r$, $\xi\in\Bbb R$. Setiap $\phi_r$
+terdiferensialkan, berdasarkan 262Id. Jika kita menetapkan
+
+$$\eqalign{D_r
+=\{x:\xi_1&\in\ocint{-\pi,\pi},\,\xi_2,\ldots,\xi_r\in[0,\pi],\cr
+&\text{ jika }\xi_j\in\{0,\pi\}\text{ maka }
+  \xi_i=0\text{ untuk }i<j\},\cr}$$
+
+\noindent maka mudah diperiksa bahwa $D_r$ adalah himpunan bagian Borel
+dari $\Bbb R^r$ dan $\phi_r\restr D_r$ adalah bijeksi antara $D_r$ dan
+$S_r$. Sekarang misalkan $T_r(x)$ adalah matriks $(r+1)\times r$
+$\phi_r'(x)$. Maka
+
+$$T_{r+1}\Matrix{x\\ \xi}=\Matrix{\sin\xi\,T_r(x)&\cos\xi\,\phi_r(x)\\
+                                  \tbf{0}&-\sin\xi}.$$
+
+\noindent Jadi
+
+$$(T_{r+1}\Matrix{x\\ \xi})\trs T_{r+1}\Matrix{x\\ \xi}
+=\Matrix{\sin^2\xi\,T_r(x)\trs T_r(x)&\sin\xi\cos\xi\,T_r(x)\trs \phi_r(x)\\
+\cos\xi\sin\xi\,\phi_r(x)\trs T_r(x)&\cos^2\xi\phi_r(x)\trs \phi_r(x)+\sin^2\xi}
+.$$
+
+\noindent Namun tentu saja
+$\phi_r(x)\trs \phi_r(x)=\|\phi_r(x)\|^2=1$ untuk setiap $x$, dan
+(dengan mendiferensialkan terhadap setiap koordinat $x$, jika Anda
+ingin) $T_r(x)\trs \phi_r(x)=\tbf{0}$,
+$\phi_r(x)\trs T_r(x)=\tbf{0}$. Jadi kita memperoleh
+
+$$(T_{r+1}\Matrix{x\\ \xi})\trs T_{r+1}\Matrix{x\\ \xi}
+=\Matrix{\sin^2\xi\,T_r(x)\trs T_r(x)&\tbf{0}\\
+\tbf{0}&1},$$
+
+\noindent dan, dengan menulis
+$J_r(x)=\sqrt{\det T_r(x)\trs T_r(x)}$,
+
+$$J_{r+1}\Matrix{x\\ \xi}=|\sin^r\xi|J_r(x).$$
+
+Pada titik ini kita melakukan induksi pada $r$ untuk melihat bahwa
+
+\Centerline{$J_r(x)
+=|\sin^{r-1}\xi_r\sin^{r-2}\xi_{r-1}\ldots\sin\xi_2|$}
+
+\noindent (karena tentu saja induksi dimulai dengan kasus $r=1$,
+\discrcenter{468pt}{$\phi_1(x)=\Matrix{\sin x\\ \cos x}$,
+\ifdim\pagewidth>467pt\quad\fi
+$T_1(x)=\Matrix{\cos x\\ -\sin x}$,
+\ifdim\pagewidth>467pt\quad\fi
+$T_1(x)\trs T_1(x)=1$,
+\ifdim\pagewidth>467pt\quad\fi
+$J_1(x)=1$).}
+
+Untuk mencari ukuran permukaan $S_r$, kita perlu menghitung
+
+$$\eqalignno{\int_{D_r}J_rd\mu_r
+&=\int_0^{\pi}\ldots\int_0^{\pi}\int_{-\pi}^{\pi}
+\sin^{r-1}\xi_r\ldots\sin\xi_2
+d\xi_1d\xi_2\ldots d\xi_r\cr
+&=2\pi\prod_{k=2}^r\int_0^{\pi}\sin^{k-1}t\,dt
+=2\pi\prod_{k=1}^{r-1}\int_{-\pi/2}^{\pi/2}\cos^kt\,dt\cr}$$
+
+\noindent (dengan menyubstitusikan $\bover{\pi}{2}-t$ untuk $t$).
+Namun, dalam bahasa 252Q, ini tepat sama dengan
+
+\Centerline{$2\pi\prod_{k=1}^{r-1}I_k=2\pi\beta_{r-1}$,}
+
+\noindent dengan $\beta_{r-1}$ volume bola satuan dari
+$\BbbR^{r-1}$\cmmnt{ (dengan menafsirkan $\beta_0$ sebagai $1$, jika
+Anda mau)}.
+}%end of dvro
+
+\leader{265G}{}\cmmnt{ Luas permukaan bola juga dapat dihitung melalui
+hasil berikut.
+
+\medskip
+
+\noindent}{\bf Teorema} Misalkan $\mu_{r+1}$ adalah ukuran Lebesgue
+pada $\BbbR^{r+1}$, dan $\nu_r$ ukuran Hausdorff ternormalisasi
+berdimensi $r$ pada $\BbbR^{r+1}$. Jika $f$ adalah fungsi bernilai real
+yang terintegralkan secara lokal terhadap $\mu_{r+1}$,
+$y\in\BbbR^{r+1}$, dan $\delta>0$,
+
+\Centerline{$\int_{B(y,\delta)}fd\mu_{r+1}
+=\int_0^{\delta}\int_{\partial B(y,t)}fd\nu_rdt$,}
+
+\noindent dengan $\partial B(y,t)$ menyatakan permukaan bola
+$\{x:\|x-y\|=t\}$\cmmnt{ dan integral $\int\ldots dt$ diambil terhadap
+ukuran Lebesgue pada $\Bbb R$}.
+
+\proof{ Ambil sembarang fungsi terdiferensialkan
+$\phi:\BbbR^r\to S_r$ bersama himpunan Borel $F\subseteq\BbbR^r$
+sedemikian sehingga $\phi\restr F$ merupakan bijeksi antara $F$ dan
+$S_r$; pasangan $(\phi,F)$ semacam itu dideskripsikan dalam 265F.
+Definisikan $\psi:\BbbR^r\times\Bbb R\to\BbbR^{r+1}$ dengan
+menetapkan $\psi(z,t)=y+t\phi(z)$; maka $\psi$ terdiferensialkan dan
+$\psi\restr F\times\ocint{0,\delta}$ merupakan bijeksi antara
+$F\times\ocint{0,\delta}$ dan $B(y,\delta)\setminus\{y\}$. Untuk
+$t\in\ocint{0,\delta}$, $z\in\BbbR^r$, tetapkan
+$\psi_t(z)=\psi(z,t)$; maka $\psi_t\restr F$ merupakan bijeksi antara
+$F$ dan permukaan bola $\{x:\|x-y\|=t\}=\partial B(y,t)$.
+
+Turunan $\phi$ di $z$ adalah matriks $(r+1)\times r$, katakanlah
+$T_1(z)$, dan turunan $T_t(z)$ dari $\psi_t$ di $z$ tepat $tT_1(z)$;
+turunan $\psi$ di $(z,t)$ adalah matriks $(r+1)\times(r+1)$
+$T(z,t)=\Matrix{tT_1(z)&\phi(z)}$, dengan $\phi(z)$ ditafsirkan sebagai
+vektor kolom. Jika kita menetapkan
+
+\Centerline{$J_t(z)=\sqrt{\det T_t(z)\trs T_t(z)}$,
+\quad$J(z,t)=|\det T(z,t)|$,}
+
+\noindent maka
+
+$$\eqalign{J(z,t)^2
+=\det T(z,t)\trs T(z,t)
+&=\det\Matrix{tT_1(z)\trs \\ \phi(z)\trs }\Matrix{tT_1(z)&\phi(z)}\cr
+&=\det\Matrix{t^2T_1(z)\trs T_1(z)&\tbf{0}\\ \tbf{0}&1}
+=J_t(z)^2,\cr}$$
+
+\noindent sebab ketika kita menghitung koefisien $(i,r+1)$ dari
+$T(z,t)\trs T(z,t)$, untuk $1\le i\le r$, koefisien itu adalah
+
+\Centerline{$\sum_{j=1}^{r+1}t\Pd{\phi_j}{\zeta_i}(z)\phi_j(z)
+=\Bover{t}2\Pd{}{\zeta_i}(\sum_{j=1}^{r+1}\phi_j(z)^2)
+=0$,}
+
+\noindent dengan $\phi_j$ koordinat ke-$j$ dari $\phi$; sedangkan
+koefisien $(r+1,r+1)$ dari $T(z,t)\trs T(z,t)$ tepat
+$\sum_{j=1}^{r+1}\phi_j(z)^2=1$. Jadi sebenarnya
+$J(z,t)=J_t(z)$ untuk semua $z\in\BbbR^r$, $t>0$.
+
+Sekarang, untuk $f\in\eusm L^1(\mu_{r+1})$, kita dapat menghitung
+
+$$\eqalignno{\int_{B(y,\delta)}fd\mu_{r+1}
+&=\int_{B(y,\delta)\setminus\{y\}}fd\mu_{r+1}\cr
+&=\int_{F\times\ocint{0,\delta}}f(\psi(z,t))J(z,t)\mu_{r+1}(d(z,t))\cr
+\displaycause{berdasarkan 263D}
+&=\int_0^{\delta}\int_Ff(\psi_t(z))J_t(z)\mu_r(dz)dt\cr
+\displaycause{dengan $\mu_r$ ukuran Lebesgue pada $\BbbR^r$,
+berdasarkan teorema Fubini, 252B}
+&=\int_0^{\delta}\int_{\partial B(y,t)}fd\nu_rdt\cr}$$
+
+\noindent berdasarkan 265E(vii).
+}%end of proof of 265G
+
+\leader{265H}{Akibat} Jika $\nu_r$ adalah ukuran Hausdorff
+ternormalisasi berdimensi $r$ pada $\BbbR^{r+1}$, maka
+$\nu_rS_r=(r+1)\beta_{r+1}$.
+
+\proof{ Dalam 265G, ambil $y=\tbf{0}$, $\delta=1$, dan
+$f=\chi B(\tbf{0},1)$; maka
+
+\Centerline{$\beta_{r+1}=\int fd\mu_{r+1}
+=\int_0^1\nu_r(\partial B(\tbf{0},t))dt=\int_0^1t^r\nu_rS_rdt
+=\Bover1{r+1}\nu_rS_r$,}
+
+\noindent kali ini dengan menerapkan 264G pada pemetaan
+$x\mapsto tx$, $x\mapsto\bover1tx$ dari $\BbbR^{r+1}$ ke dirinya
+sendiri untuk melihat bahwa
+$\nu_r(\partial B(\tbf{0},t))=t^r\nu_rS_r$ untuk $t>0$.
+}%end of proof of 265H
+
+\exercises{
+\leader{265X}{Latihan dasar (a)} Misalkan $r\ge 1$, dan misalkan
+$S_r(\alpha)=\{z:z\in\BbbR^{r+1},\,\|z\|=\alpha\}$ adalah permukaan bola
+berdimensi $r$ dan berjari-jari $\alpha$. Tunjukkan bahwa
+$\nu_rS_r(\alpha)=2\pi\beta_{r-1}\alpha^r=(r+1)\beta_{r+1}\alpha^r$
+untuk setiap $\alpha\ge 0$.
+
+\sqheader 265Xb Misalkan $r\ge 1$, dan untuk $a\in[-1,1]$ tetapkan
+$C_a=\{z:z\in\BbbR^{r+1},\,\|z\|=1,\,\zeta_{r+1}\ge a\}$, dengan
+$z=(\zeta_1,\ldots,\zeta_{r+1})$ seperti biasa. (i) Tunjukkan bahwa
+
+\Centerline{$\nu_rC_a=r\beta_r\int_0^{\arccos a}\sin^{r-1}t\,dt$.}
+
+\noindent (ii)\dvAnew{2013}
+Hitung integral tersebut untuk kasus $r=2$, $r=4$.
+
+\sqheader 265Xc Tuliskan lagi
+$C_a=\{z:z\in S_r,\,\zeta_{r+1}\ge a\}$, dengan
+$S_r\subseteq\BbbR^{r+1}$ permukaan bola satuan. Tunjukkan bahwa, untuk setiap
+$a\in\ocint{0,1}$,
+$\nu_rC_a\le\Bover{\nu_rS_r}{2(r+1)a^2}$. \Hint{hitung
+$\sum_{i=1}^{r+1}\int_{S_r}\|\xi_i\|^2\nu_r(dx)$.}
+%265F
+
+\sqheader 265Xd Misalkan $\phi:\ooint{0,1}\to\BbbR^r$ adalah fungsi
+injektif yang terdiferensialkan. Tunjukkan bahwa `panjang' atau ukuran
+Hausdorff satu-dimensi dari $\phi[\,\ooint{0,1}\,]$ tepat sama dengan
+$\int_0^1\|\phi'(t)\|dt$.
+
+\spheader 265Xe(i) Tunjukkan bahwa jika $I$ adalah matriks identitas
+$r\times r$ dan $z\in\BbbR^r$, maka
+$\det(I+zz\trs )=1+\|z\|^2$. \Hint{lakukan induksi pada $r$.}
+(ii) Tuliskan $U_{r-1}$ untuk bola satuan terbuka dalam $\BbbR^{r-1}$,
+dengan $r\ge 2$. Definisikan
+$\phi:U_{r-1}\times\Bbb R\to S_r$ dengan menetapkan
+
+$$\phi\Matrix{x\\ \xi}=\Matrix{x\\ \theta(x)\cos\xi \\
+\theta(x)\sin\xi},$$
+
+\noindent dengan $\theta(x)=\sqrt{1-\|x\|^2}$. Tunjukkan bahwa
+
+$$\phi'\Matrix{x\\ \xi}\trs \phi'\Matrix{x\\ \xi}
+=\Matrix{I+\Bover1{\theta(x)^2}xx\trs  & \tbf{0}\\
+        \tbf{0} & \theta(x)^2},$$
+
+\noindent sehingga $J\Matrix{x\\ \xi}=1$ untuk semua
+$x\in U_{r-1}$, $\xi\in\Bbb R$. (iii) Karena itu, tunjukkan bahwa
+ukuran Hausdorff ternormalisasi berdimensi $r$ dari
+$\{y:y\in S_r,\,\sum_{i=1}^{r-1}\eta_i^2<1\}$ tepat
+$2\pi\beta_{r-1}$, dengan $\beta_{r-1}$ ukuran Lebesgue dari
+$U_{r-1}$. (iv) Dengan meninjau
+$\psi z=\Matrix{z\\ 0\\ 0}$ untuk $z\in S_{r-2}$, atau dengan cara
+lain, tunjukkan bahwa ukuran Hausdorff ternormalisasi berdimensi $r$
+dari $S_r$ adalah $2\pi\beta_{r-1}$. (v) Kali ini dengan menetapkan
+$C_a=\{z:z\in\BbbR^{r+1},\,\|z\|=1,\,\zeta_1\ge a\}$, tunjukkan bahwa
+$\nu_rC_a=2\pi\mu_{r-1}\{x:x\in\BbbR^{r-1},\,\|x\|\le 1,\,\xi_1\ge a\}$
+untuk setiap $a\in[-1,1]$.
+%265F
+
+\spheader 265Xf\dvAnew{2013} Misalkan $r\ge 2$. Dengan
+mengidentifikasikan $\BbbR^r$ dengan $\BbbR^{r-1}\times\Bbb R$,
+misalkan $C_r$ adalah silinder
+$B_{r-1}\times[-1,1]\supseteq B_r$, dan
+$\partial C_r=(B_{r-1}\times\{-1,1\})\cup(S_{r-2}\times[-1,1])$
+batasnya. Tunjukkan bahwa
+
+\Centerline{$\Bover{\mu_rB_r}{\mu_rC_r}
+=\Bover{\nu_{r-1}S_{r-1}}{\nu_{r-1}(\partial C_r)}$.}
+
+\noindent(Kasus $r=3$ berasal dari Archimedes.)
+%265F
+
+\leader{265Y}{Latihan lanjutan (a)}
+%\spheader 265Ya
+Ambil $a<b$ dalam $\Bbb R$. (i) Tunjukkan bahwa
+$\phi:[a,b]\to\BbbR^r$ kontinu mutlak dalam pengertian 264Yp jika dan
+hanya jika semua koordinatnya $\phi_i:[a,b]\to\Bbb R$, untuk $i\le r$,
+kontinu mutlak dalam pengertian \S225. (ii) Misalkan
+$\phi:[a,b]\to\BbbR^r$ adalah fungsi kontinu, dan tetapkan
+$F=\{x:x\in\ooint{a,b},\,\phi$ terdiferensialkan di $x\}$. Tunjukkan
+bahwa $\phi$ kontinu mutlak jika dan hanya jika
+$\int_F\|\phi'(x)\|dx$ berhingga dan
+$\nu_1(\phi[[a,b]\setminus F])=0$, dengan $\nu_1$ ukuran Hausdorff
+satu-dimensi (ternormalisasi) pada $\BbbR^r$. ({\it Petunjuk\/}:
+225K.) (iii) Tunjukkan bahwa jika $\phi:[a,b]\to\BbbR^r$ kontinu
+mutlak, maka $\nu_1^*(\phi[D])\le\int_D\|\phi'(x)\|dx$ untuk setiap
+$D\subseteq[a,b]$, dengan kesamaan jika $D$ terukur dan
+$\phi\restr D$ injektif.
+
+\spheader 265Yb Misalkan $a\le b$ dalam $\Bbb R$, dan
+$f:[a,b]\to\Bbb R$ adalah fungsi kontinu bervariasi terbatas dengan
+grafik $\Gamma_f$. Tunjukkan bahwa ukuran Hausdorff satu-dimensi dari
+$\Gamma_f$ adalah
+$\Var_{[a,b]}(f)+\int_a^b(\sqrt{1+(f')^2}-|f'|)$.
+%mt26bits
+}%end of exercises
+
+\endnotes{
+\Notesheader{265} Bukti 265B tampaknya menggunakan hampir seluruh
+paruh kedua alfabet. Gagasannya seharusnya cukup langsung. Karena
+$T[\BbbR^r]$ berdimensi paling besar $r$, himpunan itu dapat dirotasikan
+oleh transformasi ortogonal $P$ ke dalam suatu subruang dari subruang
+kanonik berdimensi $r$, $V$, yang merupakan salinan alami dari
+$\BbbR^r$; matriks $R$ merepresentasikan proses penyalinan dari $V$ ke
+$\BbbR^r$, dan $\phi$ atau $P\trs R\trs $ merupakan salinan $\BbbR^r$
+ke suatu subruang yang memuat $T[\Bbb R^r]$. Semua penyalinan bolak-balik
+ini dirancang untuk mengubah $T$ menjadi operator linear
+$S:\BbbR^r\to\BbbR^r$ yang dapat kita tangani dengan 263A, dan bagian
+(b) dalam bukti memeriksa bahwa kita menyalin ukuran sekaligus struktur
+linearnya.
+
+Dalam 265D-265E saya berusaha mengikuti 263C-263D sedekat mungkin.
+Sebenarnya hanya diperlukan satu gagasan baru. Ketika $s=r$, kita
+mempunyai argumen khusus untuk menunjukkan bahwa
+$\mu_r^*\phi[D]\le J\mu_r^*D+\epsilon\mu_r^*D$ (dalam bahasa 263C),
+yang berlaku baik $J=0$ maupun tidak. Ketika $s>r$, pendekatan ini gagal,
+karena kita tidak lagi dapat menghampiri $\nu_rT[B]$ dengan $\nu_rG$
+untuk $G\supseteq T[B]$ terbuka. (Lihat bagian (b-i) bukti 263C.) Karena
+itu saya beralih ke argumen lain, yang hanya berlaku ketika $J>0$, dan
+akibatnya harus mencari metode terpisah untuk menunjukkan bahwa
+$\{\phi(x):x\in D,\,J(x)=0\}$ terabaikan terhadap $\nu_r$. Karena
+kita bekerja tanpa batasan pada dimensi $r$, $s$ selain $r\le s$, kita
+dapat menggunakan trik menghampiri $\phi:D\to\BbbR^s$ dengan
+$\psi_{\eta}:D\to\BbbR^{s+r}$, seperti dalam bagian (d) bukti 265E.
+
+Saya memberikan tiga metode untuk menghitung luas permukaan bola berdimensi
+$r$: pendekatan
+langsung (265F), metode silinder luar (265Xe), dan teorema integral
+berulang yang penting (265G). Dua metode pertama memberikan rumus untuk
+luas tudung (265Xb, 265Xe(v)). Metode silinder luar menarik karena
+Jacobiannya ternyata $1$, yakni kita mempunyai fungsi \imp\. Saya
+mencatat bahwa meskipun telah mengembangkan teknik yang memperbolehkan
+domain tidak beraturan, singularitas dalam fungsi $\theta$ pada 265Xe
+tetap memaksa saya menangani permukaan bola dalam dua bagian. Teorema 265G adalah
+kasus khusus Teorema Koarea ({\smc Evans \& Gariepy 92}, \S3.4;
+{\smc Federer 69}, 3.2.12).
+
+Untuk langkah berikutnya dalam teori geometris ukuran pada ruang
+Euklides, lihat Bab 47 Jilid 4.
+
+}%end of notes
+
+\frnewpage

@@ -1,0 +1,354 @@
+\frfilename{mt266.tex}
+\versiondate{28.1.09}
+\copyrightdate{2004}
+
+\def\chaptername{Perubahan variabel dalam integral}
+\def\sectionname{Ketaksamaan Brunn-Minkowski}
+
+\newsection{*266\dvAnew{2004}}
+
+Sekarang kita telah memiliki sebagian besar unsur penting untuk membuktikan
+ketaksamaan Brunn-Minkowski (266C) dalam bentuk yang kuat. Saat ini saya tidak
+berharap akan menggunakannya dalam risalah ini, tetapi ketaksamaan tersebut
+merupakan salah satu hasil dasar teori ukuran geometris dan, dari posisi kita
+sekarang, tidak sulit; karena itu saya menyertakannya di sini. Hasil-hasil
+pendahuluan mengenai rataan aritmetika dan geometrik (266A) serta penutupan
+esensial (266B) sangat penting pula untuk alasan-alasan lain.
+
+\leader{266A}{Rataan aritmetika dan geometrik \dvrocolon{}}\cmmnt{ Kita
+akan memerlukan hasil baku berikut.
+
+\medskip
+
+\noindent}{\bf Proposisi} Jika
+$u_0,\ldots,u_n,p_0,\ldots,p_n\in\coint{0,\infty}$ dan
+$\sum_{i=0}^np_i=1$, maka $\prod_{i=0}^nu_i^{p_i}\le\sum_{i=0}^np_iu_i$.
+
+\proof{ Lakukan induksi pada $n$. Untuk $n=0$, $p_0=1$, hasilnya
+segera. Jika $n=1$, maka apabila $u_1=0$ hasilnya segera (bahkan jika,
+sebagaimana menjadi kebiasaan dalam buku ini, kita menafsirkan $0^0$
+sebagai $1$). Jika tidak, tetapkan $t=\Bover{u_0}{u_1}$; maka
+
+\Centerline{$t^{p_0}\le p_0t+1-p_0=p_0t+p_1$}
+
+\noindent(seperti pada bagian (a) bukti 244E), sehingga
+
+\Centerline{$u_0^{p_0}u_1^{p_1}=t^{p_0}u_1\le p_0tu_1+p_1u_1
+=p_0u_0+p_1u_1$.}
+
+\noindent Untuk langkah induksi menuju $n\ge 2$, jika
+$p_0=\ldots=p_{n-1}=0$ hasilnya segera. Jika tidak, tetapkan
+$q=p_0+\ldots+p_{n-1}=1-p_n$; maka
+
+$$\eqalignno{\prod_{i=0}^nu_i^{p_i}
+&=(\prod_{i=0}^{n-1}u_i^{p_i/q})^qu_n^{p_n}
+\le(\sum_{i=0}^{n-1}\Bover{p_i}qu_i)^qu_n^{p_n}\cr
+\displaycause{berdasarkan hipotesis induksi}
+&\le q(\sum_{i=0}^{n-1}\Bover{p_i}qu_i)+p_nu_n\cr
+\displaycause{berdasarkan kasus dua suku yang baru saja diperiksa}
+&=\sum_{i=0}^np_iu_i,\cr}$$
+
+\noindent dan induksi berlanjut.
+}%end of proof of 266A
+
+\leader{266B}{Proposisi} Untuk setiap himpunan $D\subseteq\BbbR^r$,
+tetapkan
+
+\Centerline{$\clstar D=\{x:\limsup_{\delta\downarrow 0}
+\Bover{\mu^*(D\cap B(x,\delta))}{\mu B(x,\delta)}>0\}$,}
+
+\noindent dengan $\mu$ ukuran Lebesgue pada $\BbbR^r$.
+
+(a) $D\setminus\clstar D$ terabaikan.
+
+(b) $\clstar D\subseteq\overline{D}$.
+
+(c) $\clstar D$ adalah himpunan Borel.
+
+(d) $\mu(\clstar D)=\mu^*D$.
+
+(e) Jika $C\subseteq\Bbb R^r$, maka
+$\overline{C}+\clstar D\subseteq\clstar(C+D)$, dengan $C+D$ menyatakan
+$\{x+y:x\in C$, $y\in D\}$.
+
+\proof{{\bf (a)} 261Da.
+
+\medskip
+
+{\bf (b)} Jika $x\in\BbbR^r\setminus\overline{D}$, maka
+$D\cap B(x,\delta)=\emptyset$ untuk semua $\delta$ yang cukup kecil.
+
+\medskip
+
+{\bf (c)} Intinya hanyalah bahwa
+$(x,\delta)\mapsto\mu^*(D\cap B(x,\delta))$ kontinu. \Prf\ Untuk
+setiap $x$, $y\in\BbbR^r$ dan $\delta$, $\eta\ge 0$, kita mempunyai
+
+$$\eqalignno{|\mu^*(D\cap B(y,\eta))-\mu^*(D\cap B(x,\delta))|
+&\le\mu(B(y,\eta)\symmdiff B(x,\delta))\cr
+&=2\mu(B(x,\delta)\cup B(y,\eta))-\mu B(x,\delta)-\mu B(y,\eta)\cr
+&\le\beta_r\bigl(2(\max(\delta,\eta)+\|x-y\|)^r-\delta^r-\eta^r\bigr)\cr
+\displaycause{dengan $\beta_r=\mu B(\tbf{0},1)$}
+&\to 0\cr}$$
+
+\noindent ketika $(y,\eta)\to(x,\delta)$.\ \QeD\ Jadi
+
+\Centerline{$x\mapsto
+\limsup_{\delta\downarrow 0}
+  \Bover{\mu^*(D\cap B(x,\delta))}{\mu B(x,\delta)}
+=\inf_{\alpha\in\Bbb Q,\alpha>0}\sup_{\beta\in\Bbb Q,0<\beta\le\alpha}
+  \Bover1{\beta_r\beta^r}\mu^*(D\cap B(x,\beta))$}
+
+\noindent terukur Borel, dan
+
+\Centerline{$\clstar D=\{x:\limsup_{\delta\downarrow 0}
+  \Bover{\mu^*(D\cap B(x,\delta))}{\mu B(x,\delta)}>0\}$}
+
+\noindent adalah himpunan Borel.
+
+\medskip
+
+{\bf (d)} Berdasarkan (c), $\mu(\clstar D)$ terdefinisi; berdasarkan
+(a), $\mu(\clstar D)\ge\mu^*D$. Di sisi lain, ambil selubung terukur
+$E$ dari $D$ (132Ee); maka 261Db memberi tahu kita bahwa
+
+\Centerline{$\limsup_{\delta\downarrow 0}
+  \Bover{\mu^*(D\cap B(x,\delta))}{\mu B(x,\delta)}
+\le\limsup_{\delta\downarrow 0}
+  \Bover{\mu(E\cap B(x,\delta))}{\mu B(x,\delta)}
+=0$}
+
+\noindent untuk hampir setiap $x\in\BbbR^r\setminus E$, sehingga
+$\clstar D\setminus E$ terabaikan dan
+
+\Centerline{$\mu(\clstar D)\le\mu E=\mu^*D$.}
+
+\medskip
+
+{\bf (e)} Jika $x\in\overline{C}$ dan $y\in\clstar D$, tetapkan
+
+\Centerline{$\gamma=\Bover13\limsup_{\delta\downarrow 0}
+  \Bover{\mu^*(D\cap B(y,\delta))}{\mu B(y,\delta)}>0$.}
+
+\noindent Untuk setiap $\eta>0$, terdapat $\delta\in\ocint{0,\eta}$
+sedemikian sehingga
+$\mu^*(D\cap B(y,\delta))\ge 2\gamma\mu B(x,\delta)$. Ambil
+$\delta_1\in\coint{0,\delta}$ sedemikian sehingga
+$\delta^r-\delta_1^r\le\gamma\delta^r$. Maka terdapat $x'\in C$
+sedemikian sehingga $\|x-x'\|\le\delta-\delta_1$. Dalam hal ini,
+
+$$\eqalign{\mu^*((C+D)\cap B(x+y,\delta))
+&\ge\mu^*((x'+D)\cap B(x'+y,\delta_1))
+=\mu^*(D\cap B(y,\delta_1))\cr
+&\ge\mu^*(D\cap B(y,\delta))-\mu B(y,\delta)+\mu B(y,\delta_1)\cr
+&\ge 2\beta_r\gamma\delta^r-\beta_r\delta^r+\beta_r\delta_1^r
+\ge\beta_r\gamma\delta^r.\cr}$$
+
+\noindent Karena $\eta$ sebarang,
+
+\Centerline{$\limsup_{\delta\downarrow 0}
+  \Bover{\mu^*((C+D)\cap B(x+y,\delta))}{\mu B(y,\delta)}
+\ge\gamma$}
+
+\noindent dan $x+y\in\clstar(C+D)$; karena $x$ dan $y$ sebarang,
+$\overline{C}+\clstar D\subseteq\clstar(C+D)$.
+}%end of proof of 266B
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Dalam konteks ini, $\clstar D$ disebut
+{\bf penutupan esensial} dari $D$.
+}
+
+\leader{266C}{Teorema} Misalkan $A$, $B\subseteq\BbbR^r$ adalah
+himpunan tak kosong, dengan $r\ge 1$ bilangan bulat. Jika $\mu$ adalah
+ukuran Lebesgue pada $\BbbR^r$, dan $A+B=\{x+y:x\in A$, $y\in B\}$,
+maka $\mu^*(A+B)^{1/r}\ge(\mu^*A)^{1/r}+(\mu^*B)^{1/r}$.
+
+\proof{{\bf (a)} Pertama-tama tinjau kasus ketika
+$A=\coint{a,a'}$ dan $B=\coint{b,b'}$ adalah interval setengah terbuka.
+Dalam hal ini $A+B=\coint{a+b,a'+b'}$; dengan menulis
+$a=(\alpha_1,\ldots,\alpha_r)$, dan seterusnya, seperti dalam \S115,
+tetapkan
+
+\Centerline{$u_i
+=\Bover{\alpha'_i-\alpha_i}{\alpha'_i+\beta'_i-\alpha_i-\beta_i}$,
+\quad$v_i
+=\Bover{\beta'_i-\beta_i}{\alpha'_i+\beta'_i-\alpha_i-\beta_i}$}
+
+\noindent untuk setiap $i$. Maka kita mempunyai
+
+$$\eqalignno{(\mu A)^{1/r}+(\mu B)^{1/r}
+&=\prod_{i=1}^r(\alpha'_i-\alpha_i)^{1/r}
+  +\prod_{i=1}^r(\beta'_i-\beta_i)^{1/r}\cr
+&=\mu(A+B)^{1/r}(\prod_{i=1}^ru_i^{1/r}+\prod_{i=1}^rv_i^{1/r})\cr
+&\le\mu(A+B)^{1/r}(\Bover1r\sum_{i=1}^ru_i+\Bover1r\sum_{i=1}^rv_i)\cr
+\displaycause{266A}
+&=\mu(A+B)^{1/r}.\cr}$$
+
+\medskip
+
+{\bf (b)} Sekarang saya buktikan dengan induksi pada $m+n$ bahwa jika
+$A=\bigcup_{j=0}^mA_j$ dan $B=\bigcup_{j=0}^nB_j$, dengan
+$\langle A_j\rangle_{j\le m}$ dan $\langle B_j\rangle_{j\le n}$
+keduanya keluarga saling lepas dari interval setengah terbuka tak kosong,
+maka $\mu(A+B)^{1/r}\ge(\mu A)^{1/r}+(\mu B)^{1/r}$. \Prf\ Induksi
+dimulai dengan kasus $m=n=0$, yang telah ditangani dalam (a). Untuk
+langkah induksi menuju $m+n=l\ge 1$, salah satu dari $m$, $n$ tidak nol;
+argumennya sama dalam kedua kasus; misalkan yang pertama.
+Karena $A_0\cap A_1=\emptyset$, harus ada suatu $j\le r$ dan
+$\alpha\in\Bbb R$ sedemikian sehingga $A_0$ dan $A_1$ dipisahkan oleh
+hiperbidang $\{x:\xi_j=\alpha\}$. Tetapkan
+$A'=\{x:x\in A$, $\xi_j<\alpha\}$ dan
+$A''=\{x:x\in A$, $\xi_j\ge\alpha\}$; maka $A'$ dan $A''$ keduanya tak
+kosong dan dapat dinyatakan sebagai gabungan paling banyak $m$ interval
+setengah terbuka yang saling lepas. Tetapkan
+$\gamma=\Bover{\mu A'}{\mu A}\in\ooint{0,1}$. Fungsi
+$\beta\mapsto\mu\{x:x\in B$, $\xi_j<\beta\}$ kontinu, sehingga terdapat
+$\beta\in\Bbb R$ sedemikian sehingga $\mu B'=\gamma\mu B$, dengan
+$B'=\{x:x\in B$, $\xi_j<\beta\}$; tetapkan $B''=B\setminus B'$. Maka
+$B'$ dan $B''$ dapat dinyatakan sebagai gabungan paling banyak $n+1$
+interval setengah terbuka. Berdasarkan hipotesis induksi,
+
+\Centerline{$\mu(A'+B')^{1/r}\ge(\mu A')^{1/r}+(\mu B')^{1/r}$,
+\quad$\mu(A''+B'')^{1/r}\ge(\mu A'')^{1/r}+(\mu B'')^{1/r}$.}
+
+\noindent Sekarang $A'+B'\subseteq\{x:\xi_j<\alpha+\beta\}$,
+sedangkan $A''+B''\subseteq\{x:\xi_j\ge\alpha+\beta\}$. Jadi
+
+$$\eqalign{\mu(A+B)
+&\ge\mu(A'+B')+\mu(A''+B'')\cr
+&\ge\bigl((\mu A')^{1/r}+(\mu B')^{1/r}\bigr)^r
+  +\bigl((\mu A'')^{1/r}+(\mu B'')^{1/r}\bigr)^r\cr
+&=\bigl((\gamma\mu A)^{1/r}+(\gamma\mu B)^{1/r}\bigr)^r
+  +\bigl(((1-\gamma)\mu A)^{1/r}+((1-\gamma)\mu B)^{1/r}\bigr)^r\cr
+&=(\bigl(\mu A)^{1/r}+(\mu B)^{1/r}\bigr)^r.\cr}$$
+
+\noindent Dengan mengambil akar ke-$r$,
+$\mu(A+B)^{1/r}\ge(\mu A)^{1/r}+(\mu B)^{1/r}$ dan induksi
+berlanjut.\ \Qed
+
+\medskip
+
+{\bf (c)} Sekarang misalkan $A$ dan $B$ adalah himpunan bagian kompak
+tak kosong dari $\BbbR^r$. Maka
+$\mu(A+B)^{1/r}\ge(\mu A)^{1/r}+(\mu B)^{1/r}$.
+\Prf\ $A+B$ kompak (karena $A\times B\subseteq\BbbR^r\times\BbbR^r$
+kompak, sebab tertutup dan terbatas, serta penjumlahan kontinu, sehingga
+kita dapat menggunakan 2A2Eb). Ambil $\epsilon>0$. Ambil himpunan terbuka
+$G\supseteq A+B$ sedemikian sehingga $\mu G\le\mu(A+B)+\epsilon$
+(134Fa); maka terdapat $\delta>0$ sedemikian sehingga
+$B(x,2\delta)\subseteq G$ untuk setiap $x\in A+B$ (2A2Ed). Ambil
+$n\in\Bbb N$ sedemikian sehingga $2^{-n}\sqrt{r}\le\delta$, dan misalkan
+$A_1$ adalah gabungan semua interval setengah terbuka berbentuk
+$\coint{2^{-n}z,2^{-n}z+2^{-n}e}$ yang bertemu $A$, dengan
+$z\in\BbbZ^r$ dan $e=(1,1,\ldots,1)$. Maka $A_1$ adalah gabungan
+berhingga yang saling lepas dari interval-interval setengah terbuka,
+$A\subseteq A_1$, dan setiap titik dalam $A_1$ berjarak paling jauh $\delta$
+dari suatu titik dalam $A$. Dengan cara serupa, kita dapat memperoleh himpunan
+$B_1$, suatu gabungan berhingga yang saling lepas dari interval-interval
+setengah terbuka, yang mencakup $B$ dan sedemikian sehingga setiap titik
+dalam $B_1$ berjarak paling jauh $\delta$ dari suatu titik dalam $B$. Namun ini
+berarti bahwa setiap titik dalam $A_1+B_1$ berjarak paling jauh $2\delta$ dari
+suatu titik dalam $A+B$, dan termasuk dalam $G$. Oleh karena itu
+
+$$\eqalignno{(\mu(A+B)+\epsilon)^{1/r}
+&\ge(\mu G)^{1/r}
+\ge\mu(A_1+B_1)^{1/r}
+\ge(\mu A_1)^{1/r}+(\mu B_1)^{1/r}\cr
+\displaycause{berdasarkan (b)}
+&\ge(\mu A)^{1/r}+(\mu B)^{1/r}.\cr}$$
+
+\noindent Karena $\epsilon$ sebarang,
+$\mu(A+B)^{1/r}\ge(\mu A)^{1/r}+(\mu B)^{1/r}$.\ \Qed
+
+\medskip
+
+{\bf (d)} Selanjutnya, misalkan $A$, $B\subseteq\BbbR^r$ terukur
+Lebesgue. Maka
+
+$$\eqalignno{(\mu A)^{1/r}+(\mu B)^{1/r}
+&=\sup\{(\mu K)^{1/r}+(\mu L)^{1/r}:
+  K\subseteq A\text{ dan }L\subseteq B\text{ kompak}\}\cr
+\displaycause{134Fb}
+&\le\sup\{\mu(K+L)^{1/r}:
+  K\subseteq A\text{ dan }L\subseteq B\text{ kompak}\}\cr
+\displaycause{berdasarkan (c)}
+&\le\mu^*(A+B)^{1/r}.\cr}$$
+
+\medskip
+
+{\bf (e)} Untuk langkah kedua terakhir, misalkan
+$A$, $B\subseteq\BbbR^r$ mempunyai ukuran luar Lebesgue tak nol. Tinjau
+$\clstar A$, $\clstar B$, dan $\clstar(A+B)$ sebagaimana didefinisikan
+dalam 266B. Maka $\clstar A$ dan $\clstar B$ tak kosong dan jumlahnya
+termuat dalam $\clstar(A+B)$, berdasarkan 266Bb dan 266Be. Jadi kita
+mempunyai
+
+$$\eqalignno{(\mu^*A)^{1/r}+(\mu^*B)^{1/r}
+&=\mu(\clstar A)^{1/r}+\mu(\clstar B)^{1/r}\cr
+\displaycause{266Bd}
+&\le\mu^*(\clstar A+\clstar B)^{1/r}\cr
+\displaycause{berdasarkan (d) di sini}
+&\le\mu(\clstar(A+B))^{1/r}
+=\mu^*(A+B)^{1/r}.\cr}$$
+
+\medskip
+
+{\bf (f)} Akhirnya, untuk himpunan tak kosong sebarang $A$,
+$B\subseteq\BbbR^r$, perhatikan bahwa jika (misalnya) $A$ dapat
+diabaikan, kita dapat mengambil sembarang $x\in A$ dan melihat bahwa
+
+\Centerline{$\mu^*(A+B)^{1/r}\ge\mu^*(x+B)^{1/r}=(\mu^*B)^{1/r}
+=(\mu^*A)^{1/r}+(\mu^*B)^{1/r}$,}
+
+\noindent dan hasilnya segera pula jika $B$ terabaikan. Jadi semua
+kasus telah tercakup.
+}%end of proof of 266C
+
+\exercises{\leader{266X}{Latihan dasar (a)}
+Misalkan $D$, $D'$ adalah himpunan bagian dari $\BbbR^r$. Tunjukkan bahwa
+(i) $\clstar(D\cup D')=\clstar D\cup\clstar D'$ (ii) $\clstar D=\clstar D'$
+jika dan hanya jika $D$ dan $D'$ mempunyai selubung terukur bersama
+(iii) $\clstar D\setminus\clstar(\BbbR^r\setminus D')
+\subseteq\clstar(D\cap D')$ (iv) $D$ terukur Lebesgue jika dan hanya
+jika $\clstar D\cap\clstar(\BbbR^r\setminus D)$ terabaikan menurut
+Lebesgue (v) $D\cup\clstar D$ adalah selubung terukur dari $D$
+(vi) $\clstar(\clstar D)=\clstar D$.
+%266B
+
+\spheader 266Xb Tunjukkan bahwa, untuk himpunan terukur
+$E\subseteq\Bbb R$, $\clstar E$ tepat merupakan himpunan bilangan real
+yang bukan titik kepadatan dari $\Bbb R\setminus E$.
+%266B
+
+\spheader 266Xc Dalam 266C, tunjukkan bahwa jika $A$ dan $B$ adalah
+himpunan cembung serupa dengan orientasi yang sama, maka $A+B$ adalah
+himpunan cembung yang serupa dengan keduanya dan
+$\mu(A+B)^{1/r}=(\mu A)^{1/r}+(\mu B)^{1/r}$.
+%266C
+
+%\leader{266Y}{Further exercises (a)}
+
+}%end of exercises
+
+\endnotes{
+\Notesheader{266}
+Bukti 266C diambil dari {\smc Federer 69}.
+%Is there a Hausdorff-measure version?
+Ada sedikit generalitas semu dalam bentuk yang diberikan di sini. Jika
+himpunan $A$ dan $B$ sedikit saja tak beraturan, maka
+$\mu^*(A+B)^{1/r}$ kemungkinan jauh lebih besar daripada
+$(\mu^*A)^{1/r}+(\mu^*B)^{1/r}$. Kasus kritis, ketika $A$ dan $B$
+merupakan himpunan cembung serupa, jauh lebih mudah (266Xc). Karena itu
+teorema ini paling berguna ketika $A$ dan $B$ adalah himpunan cembung
+yang tidak serupa dan kita memperoleh taksiran tak sepele yang mungkin
+sulit dibuktikan dengan cara lain. Untuk kasus ini kita tidak memerlukan
+266B. Teorema 266C merupakan contoh yang mencerahkan tentang cara dimensi
+$r$ masuk ke dalam rumus-rumus ketika kita mencari hasil yang berlaku
+bagi ruang Euklides umum. Akan ada jauh lebih banyak contoh ketika saya
+kembali ke teori ukuran geometris dalam Bab 47 Jilid 4.
+}%end of notes
+
+\discrpage
+

@@ -1,0 +1,850 @@
+\frfilename{mt261.tex} 
+\versiondate{11.12.12} 
+\copyrightdate{2000} 
+      
+\def\dist{\mathop{\text{dist}}} 
+      
+\def\chaptername{Perubahan variabel dalam integral} 
+\def\sectionname{Teorema Vitali dalam $\BbbR^r$} 
+      
+\newsection{261} 
+      
+\def\headlinesectionname{Teorema Vitali dalam $\eightBbb R^r$} 
+      
+Tujuan utama bagian ini ialah memberikan versi berdimensi $r$ dari teorema 
+Vitali dan Teorema Kerapatan Lebesgue, dengan mengikuti gagasan-gagasan yang 
+telah disajikan dalam \S\S221 dan 223. Saya mengakhirinya dengan pembuktian
+bahwa ukuran luar Lebesgue dapat didefinisikan melalui peliputan oleh bola,
+bukan oleh interval (261F).
+      
+\cmmnt{ 
+\leader{261A}{Notasi} Dalam sebagian besar bab ini, kita akan berurusan 
+dengan geometri dan ukuran ruang Euklides; penetapan sejumlah notasi akan 
+menghemat ruang. 
+      
+Di seluruh bagian ini dan dua bagian berikutnya, $r\ge 1$ adalah suatu 
+bilangan bulat. Saya akan menggunakan huruf Latin untuk anggota $\BbbR^r$ dan 
+huruf Yunani untuk koordinatnya, sehingga 
+$a=(\alpha_1,\ldots,\alpha_r)$, dan seterusnya; jika Anda melihat huruf Yunani 
+berindeks bawah, pertama-tama carilah vektor di dekatnya yang mungkin memiliki 
+huruf itu sebagai koordinat. Ukuran yang dibahas hampir selalu merupakan 
+ukuran Lebesgue pada $\Bbb R^r$; jadi, kecuali dinyatakan lain, $\mu$ harus 
+ditafsirkan sebagai ukuran Lebesgue dan $\mu^*$ sebagai ukuran luar Lebesgue. 
+Demikian pula, $\int\ldots dx$ selalu berarti integrasi terhadap ukuran 
+Lebesgue (dalam dimensi yang ditentukan oleh konteks). 
+      
+Untuk $x=(\xi_1,\ldots,\xi_r)\in\BbbR^r$, tuliskan 
+$\|x\|=\sqrt{\xi_1^2+\ldots+\xi_r^2}$. Ingat bahwa 
+$\|x+y\|\le\|x\|+\|y\|$ (1A2C) dan bahwa $\|\alpha x\|=|\alpha|\|x\|$ 
+untuk sebarang vektor $x$, $y$ dan skalar $\alpha$. 
+      
+Saya akan menggunakan notasi yang sama seperti dalam \S115 untuk `interval', 
+sehingga, khususnya, 
+      
+\Centerline{$\coint{a,b} 
+=\{x:\alpha_i\le\xi_i<\beta_i\Forall i\le r\}$,} 
+      
+\Centerline{$\ooint{a,b} 
+=\{x:\alpha_i<\xi_i<\beta_i\Forall i\le r\}$,} 
+      
+\Centerline{$[a,b] 
+=\{x:\alpha_i\le \xi_i\le \beta_i\Forall i\le r\}$} 
+      
+\noindent setiap kali $a$, $b\in\BbbR^r$. 
+      
+$\tbf{0}=(0,\ldots,0)$ adalah vektor nol dalam $\BbbR^r$, dan 
+$\tbf{1}$ adalah $(1,\ldots,1)$. Jika 
+$x\in\BbbR^r$ dan $\delta>0$, maka $B(x,\delta)$ adalah bola tertutup 
+berpusat di $x$ dan berjari-jari $\delta$, yakni 
+$\{y:y\in\BbbR^r,\,\|y-x\|\le\delta\}$. 
+Perhatikan bahwa $B(x,\delta)=x+B(\tbf{0},\delta)$; maka, berdasarkan 
+invariansi ukuran Lebesgue terhadap translasi, kita mempunyai 
+      
+\Centerline{$\mu B(x,\delta)=\mu B(\tbf{0},\delta) 
+=\beta_r\delta^r$,} 
+      
+\noindent dengan 
+      
+$$\eqalign{\beta_r 
+&=\Bover{1}{k!}\pi^k\text{ jika }r=2k\text{ genap},\cr 
+&=\Bover{2^{2k+1}k!}{(2k+1)!}\pi^k\text{ jika }r=2k+1\text{ ganjil}\cr}$$ 
+      
+\noindent (252Q). 
+}%end of comment 
+      
+\leader{261B}{Teorema Vitali dalam $\BbbR^r$} Misalkan $A\subseteq\BbbR^r$ 
+sebarang himpunan, dan $\Cal I$ suatu keluarga bola tertutup nontrivial\cmmnt{ 
+(yakni, bukan singleton, atau secara ekuivalen, tidak terabaikan)} 
+dalam $\BbbR^r$ sedemikian sehingga setiap titik dalam $A$ termuat dalam anggota 
+$\Cal I$ yang berdiameter sekecil apa pun. Maka terdapat suatu himpunan 
+terhitung yang 
+saling lepas $\Cal I_0\subseteq \Cal I$ sedemikian sehingga 
+$\mu(A\setminus\bigcup\Cal I_0)=0$. 
+      
+\proof{{\bf (a)} Sebagai permulaan (sampai akhir (f) di bawah), andaikan 
+bahwa $\|x\|<M$ untuk setiap $x\in A$, dan tetapkan 
+      
+\Centerline{$\Cal 
+I'=\{I:I\in\Cal I,\,I\subseteq B(\tbf{0},M)\}$.} 
+      
+\noindent Jika terdapat suatu himpunan berhingga yang saling lepas 
+$\Cal I_0\subseteq\Cal I'$ sedemikian sehingga 
+$A\subseteq\bigcup\Cal I_0$ (termasuk kemungkinan bahwa 
+$A=\Cal I_0=\emptyset$), kita dapat berhenti. Jadi, selanjutnya andaikan 
+tidak ada $\Cal I_0$ demikian. 
+      
+\medskip 
+      
+{\bf (b)} Dalam hal ini, jika $\Cal I_0$ adalah sebarang subhimpunan berhingga 
+yang saling lepas dari $\Cal I'$, terdapat $J\in\Cal I'$ yang saling lepas 
+dari setiap anggota $\Cal I_0$. \Prf\ Ambil 
+$x\in A\setminus\bigcup\Cal I_0$. Karena setiap anggota $\Cal I_0$ tertutup, 
+terdapat $\delta>0$ sedemikian sehingga $B(x,\delta)$ tidak bertemu dengan 
+anggota mana pun dari $\Cal I_0$, dan karena $\|x\|<M$ kita dapat mengandaikan 
+bahwa $B(x,\delta)\subseteq B(\tbf{0},M)$. Ambil $J$ sebagai anggota 
+$\Cal I$ yang memuat $x$ dan berdiameter paling besar $\delta$; maka 
+$J\in\Cal I'$ dan $J\cap\bigcup\Cal I_0=\emptyset$.\ 
+\Qed 
+      
+\medskip 
+      
+{\bf (c)} Karena itu, kita dapat memilih suatu barisan bilangan real 
+$\sequencen{\gamma_n}$ dan suatu barisan yang saling lepas 
+$\sequencen{I_n}$ dalam $\Cal I'$ secara induktif sebagai berikut. Setelah 
+$\langle I_j\rangle_{j<n}$ diberikan (jika $n=0$, ini adalah barisan kosong, 
+tanpa anggota), dengan $I_j\in\Cal I'$ untuk setiap $j<n$, dan 
+$I_j\cap I_k=\emptyset$ untuk $j<k<n$, tetapkan $\Cal 
+J_n=\{I:I\in\Cal I',\,I\cap I_j=\emptyset$ untuk setiap $j<n\}$. Dari (b) 
+kita mengetahui bahwa $\Cal J_n\ne\emptyset$. Tetapkan 
+      
+\Centerline{$\gamma_n=\sup\{\diam I:I\in\Cal J_n\}$;} 
+      
+\noindent maka $\gamma_n\le 2M$, karena setiap anggota $\Cal J_n$ termuat 
+dalam $B(\tbf{0},M)$. Karena itu, kita dapat menemukan suatu himpunan 
+$I_n\in\Cal J_n$ sedemikian sehingga $\diam I_n\ge{1\over 2}\gamma_n$, dan 
+ini melanjutkan proses induksi. 
+      
+\medskip 
+      
+{\bf (d)} Karena $I_n$ merupakan subhimpunan terukur yang saling lepas dari 
+himpunan terbatas $B(\tbf{0},M)$, kita mempunyai 
+      
+\Centerline{$\sum_{n=0}^{\infty}\mu I_n 
+\le\mu B(\tbf{0},M)<\infty$,} 
+      
+\noindent dan $\lim_{n\to\infty}\mu I_n=0$. Juga, 
+$\mu I_n\ge\beta_r(\bover14\gamma_n)^r$ untuk setiap $n$, sehingga 
+$\lim_{n\to\infty}\gamma_n=0$. 
+      
+\medskip
+
+{\bf (e)}
+
+Sekarang definisikan $I'_n$ sebagai bola tertutup dengan pusat yang sama 
+seperti $I_n$ tetapi dengan diameter lima kali lipat, sehingga bola ini 
+memuat setiap titik yang berjarak paling besar $\gamma_n$ dari $I_n$. Saya 
+menyatakan bahwa, untuk setiap $n$, 
+$A\subseteq\bigcup_{j<n}{I}_j\cup\bigcup_{j\ge n}I_j'$. 
+\Prf\Quer\ Andaikan, jika mungkin, sebaliknya. Ambil sebarang 
+$x\in A\setminus(\bigcup_{j<n}{I}_j\cup\bigcup_{j\ge n}I'_j)$. Ambil 
+$\delta>0$ sedemikian sehingga 
+      
+      
+\Centerline{$B(x,\delta) 
+  \subseteq B(\tbf{0},M)\setminus\bigcup_{j<n}I_j$,} 
+      
+\noindent dan ambil $J\in\Cal I$ sedemikian sehingga 
+$x\in J\subseteq B(x,\delta)$. Maka 
+      
+\Centerline{$\lim_{m\to\infty}\gamma_m=0<\diam J$} 
+      
+\noindent (di sinilah kita menggunakan hipotesis bahwa semua bola dalam 
+$\Cal I$ nontrivial); misalkan $m$ bilangan bulat terkecil yang lebih besar 
+atau sama dengan $n$ sedemikian sehingga $\gamma_m<\diam J$. Dalam hal ini 
+$J$ tidak mungkin termasuk dalam $\Cal J_m$, sehingga harus ada suatu $k<m$ 
+sedemikian sehingga $J\cap I_k\ne\emptyset$, karena tentu saja 
+$J\in\Cal I'$. Berdasarkan pemilihan $\delta$, $k$ tidak mungkin kurang dari 
+$n$, sehingga $n\le k<m$, dan $\gamma_k\ge\diam J$. Jadi jarak dari $x$ ke 
+titik terdekat $I_k$ paling besar $\diam J\le \gamma_k$. Namun, ini berarti 
+bahwa $x\in I'_k$; bertentangan dengan pemilihan $x$.\ \Bang\Qed 
+      
+\medskip 
+      
+{\bf (f)} Akibatnya, 
+      
+\Centerline{$\mu\sp*(A\setminus\bigcup_{j<n}I_j)\le\mu(\bigcup_{j\ge 
+n}I'_j)\le\sum_{j=n}^{\infty}\mu I'_j\le 5^r\sum_{j=n}^{\infty}\mu 
+I_j$.} 
+      
+\noindent Karena 
+      
+\Centerline{$\sum_{j=0}^{\infty}\mu I_j\le \mu B(\tbf{0},M)<\infty$,} 
+      
+\noindent $\lim_{n\to\infty}\mu\sp*(A\setminus\bigcup_{j<n}I_j)=0$ dan 
+      
+\Centerline{$\mu(A\setminus\bigcup_{j\in\Bbb N}I_j)= 
+\mu\sp*(A\setminus\bigcup_{j\in\Bbb N}I_j)=0$.} 
+      
+      
+Jadi, dalam hal ini kita dapat menetapkan $\Cal I_0=\{I_n:n\in\Bbb N\}$ untuk 
+memperoleh suatu keluarga terhitung yang saling lepas dalam $\Cal I$ dengan 
+$\mu(A\setminus\bigcup\Cal I_0)=0$. 
+      
+      
+\medskip 
+      
+{\bf (g)} Ini menyelesaikan pembuktian jika $A$ terbatas. Secara umum, 
+tetapkan 
+      
+\Centerline{$U_n=\{x:x\in \BbbR^r,\,n<\|x\|<n+1\}$, 
+\quad $A_n=A\cap U_n$, 
+\quad$\Cal J_n=\{I:I\in\Cal I,\,I\subseteq U_n\}$,} 
+      
+\noindent untuk setiap $n\in\Bbb N$. Maka, untuk setiap $n$, kita melihat 
+bahwa setiap titik dalam $A_n$ termasuk dalam anggota $\Cal J_n$ yang berdiameter 
+sekecil apa pun, sehingga terdapat suatu $\Cal J'_n\subseteq\Cal J_n$ yang terhitung 
+dan saling lepas sedemikian sehingga 
+$A_n\setminus\bigcup\Cal J'_n$ terabaikan. Sekarang (karena $U_n$ saling 
+lepas) $\Cal I_0=\bigcup_{n\in\Bbb N}\Cal J'_n$ saling lepas, dan tentu saja 
+$\Cal I_0$ merupakan subhimpunan terhitung dari $\Cal I$; selain itu, 
+      
+\Centerline{$A\setminus\bigcup\Cal I_0 
+\subseteq(\BbbR^r\setminus\bigcup_{n\in\Bbb N}U_n) 
+\cup\bigcup_{n\in\Bbb N}(A_n\setminus\bigcup\Cal J'_n)$} 
+      
+\noindent terabaikan. (Untuk melihat bahwa $\Bbb 
+R^r\setminus\bigcup_{n\in\Bbb N}U_n=\{x:\|x\|\in\Bbb N\}$ terabaikan, 
+perhatikan bahwa untuk setiap $n\in\Bbb N$ himpunan 
+      
+\Centerline{$\{x:\|x\|=n\}\subseteq B(\tbf{0},n)\setminus 
+B(\tbf{0},\delta n)$} 
+      
+\noindent mempunyai ukuran paling besar $\beta_rn^r-\beta_r(\delta n)^r$ 
+untuk setiap $\delta\in\coint{0,1}$, sehingga harus terabaikan.) 
+}%end of proof of 261B 
+      
+      
+\leader{261C}{}\cmmnt{ Seperti dalam \S223, kita dapat menggunakan teorema 
+Vitali berdimensi $r$ untuk membuktikan teorema-teorema tentang pendekatan 
+fungsi melalui nilai rata-rata lokalnya. 
+      
+\medskip 
+      
+\noindent}{\bf Teorema Kerapatan dalam $\BbbR^r$: bentuk integral} Misalkan 
+$D$ suatu subhimpunan $\BbbR^r$, dan $f$ suatu fungsi bernilai real yang 
+terintegralkan pada $D$. Maka 
+      
+\Centerline{$f(x)=\lim_{\delta\downarrow 0}\Bover{1}{\mu B(x,\delta)} 
+  \int_{D\cap B(x,\delta)}fd\mu$} 
+      
+\noindent untuk hampir setiap $x\in D$. 
+      
+\proof{{\bf (a)} Sebagai permulaan (sampai akhir (b)), andaikan bahwa 
+$D=\dom f=\BbbR^r$. 
+      
+Ambil $n\in\Bbb N$ dan $q$, $q'\in\Bbb Q$ dengan $q<q'$, dan tetapkan 
+      
+\Centerline{$A=A_{nqq'} 
+=\{x:\|x\|\le n,\,f(x)\le q,\, 
+  \limsup_{\delta\downarrow 0}\Bover{1}{\mu B(x,\delta)} 
+  \int_{B(x,\delta)}fd\mu>q'\}$.} 
+      
+\noindent\Quer\ Andaikan, jika mungkin, bahwa $\mu^*A>0$. Ambil 
+$\epsilon>0$ sedemikian sehingga $\epsilon(1+|q|)<(q'-q)\mu^* A$, dan ambil 
+$\eta\in\ocint{0,\epsilon}$ sedemikian sehingga $\int_{E}|f|\le\epsilon$ 
+setiap kali $\mu E\le\eta$ (225A). Ambil suatu himpunan terbuka $G\supseteq A$ 
+yang berukuran paling besar $\mu^*A+\eta$ (134Fa). Misalkan $\Cal I$ adalah 
+himpunan bola tertutup nontrivial $B\subseteq G$ sedemikian sehingga 
+$\bover{1}{\mu B}\int_Bfd\mu\ge q'$. Maka setiap titik dalam $A$ termuat dalam 
+(bahkan merupakan pusat dari) anggota $\Cal I$ yang berdiameter sekecil apa 
+pun. Jadi, 
+berdasarkan 261B, terdapat suatu himpunan terhitung yang saling lepas 
+$\Cal I_0\subseteq\Cal I$ sedemikian sehingga 
+$\mu(A\setminus\bigcup\Cal I_0)=0$; tetapkan $H=\bigcup\Cal I_0$. 
+      
+Karena $\int_{I}fd\mu\ge q'\mu I$ untuk setiap $I\in\Cal I_0$, kita 
+mempunyai 
+      
+\Centerline{$\int_{H}fd\mu=\sum_{I\in\Cal I_0}\int_Ifd\mu 
+\ge q'\sum_{I\in\Cal I_0}\mu I=q'\mu H\ge q'\mu^* A$.} 
+      
+\noindent Tetapkan 
+      
+\Centerline{$E=\{x:x\in G,\,f(x)\le q\}$.} 
+      
+\noindent Maka $E$ terukur, dan $A\subseteq E\subseteq G$; jadi 
+      
+\Centerline{$\mu^* A\le\mu E\le\mu G\le\mu^* A+\eta 
+\le\mu^* A+\epsilon$.} 
+      
+\noindent Selain itu, 
+      
+\Centerline{$\mu(H\setminus E)\le\mu G-\mu E\le\eta$,} 
+      
+\noindent sehingga, berdasarkan pemilihan $\eta$, 
+$\int_{H\setminus E}f\le\epsilon$ dan 
+      
+$$\eqalignno{\int_{H}f 
+&\le\epsilon+\int_{H\cap E}f 
+\le\epsilon+q\mu(H\cap E)\cr 
+&\le\epsilon+q\mu^*A+|q|(\mu(H\cap E)-\mu^* A) 
+\le q\mu^* A+\epsilon(1+|q|)\cr 
+\displaycause{karena $\mu^*A=\mu^*(A\cap H)\le\mu(H\cap E)\le\mu E$} 
+&<q'\mu^* A 
+\le\int_{H}f,\cr}$$ 
+      
+\noindent yang mustahil.\ \Bang 
+      
+Jadi $A_{nqq'}$ terabaikan. Ini berlaku untuk semua $q<q'$ dan semua $n$, 
+sehingga 
+      
+\Centerline{$A^*=\bigcup_{q,q'\in\Bbb Q,q<q'} 
+  \bigcup_{n\in\Bbb N}A_{nqq'}$} 
+      
+\noindent terabaikan. Namun, 
+      
+\Centerline{$f(x) 
+\ge\limsup_{\delta\downarrow 0}\Bover{1}{\mu B(x,\delta)} 
+  \int_{B(x,\delta)}f$} 
+      
+\noindent untuk setiap $x\in\BbbR^r\setminus A^*$, yakni, untuk hampir 
+setiap $x\in \BbbR^r$. 
+      
+\medskip 
+      
+{\bf (b)} Dengan cara serupa, atau dengan menerapkan hasil ini pada $-f$, 
+      
+\Centerline{$f(x) 
+\le\liminf_{\delta\downarrow 0}\Bover{1}{\mu B(x,\delta)} 
+  \int_{B(x,\delta)}f$} 
+      
+\noindent untuk hampir setiap $x$, sehingga 
+      
+\Centerline{$f(x) 
+=\lim_{\delta\downarrow 0}\Bover{1}{\mu B(x,\delta)} 
+  \int_{B(x,\delta)}f$} 
+      
+\noindent untuk hampir setiap $x$. 
+      
+\medskip 
+      
+{\bf (c)} Untuk kasus yang (secara sepintas) lebih umum sebagaimana dinyatakan 
+dalam teorema, misalkan $\tilde f$ suatu fungsi yang terintegralkan terhadap 
+$\mu$ dan memperluas $f\restr D$, terdefinisi di seluruh $\BbbR^r$, serta 
+sedemikian sehingga $\int_F\tilde f=\int_{D\cap F}f$ untuk setiap himpunan 
+terukur $F\subseteq\BbbR^r$ (dengan menerapkan 214Eb pada $f\restr D$). Maka 
+      
+\Centerline{$f(x)=\tilde f(x) 
+=\lim_{\delta\downarrow 0}\Bover{1}{\mu B(x,\delta)} 
+  \int_{B(x,\delta)}\tilde f 
+=\lim_{\delta\downarrow 0}\Bover{1}{\mu B(x,\delta)} 
+  \int_{D\cap B(x,\delta)}f$} 
+      
+\noindent untuk hampir setiap $x\in D$. 
+}%end of proof of 261C 
+      
+\leader{261D}{Akibat} (a) Jika $D\subseteq\BbbR^r$ sebarang himpunan, maka 
+      
+\Centerline{$\lim_{\delta\downarrow 0}\Bover{\mu^*(D\cap B(x,\delta))} 
+{\mu B(x,\delta)}=1$} 
+      
+\noindent untuk hampir setiap $x\in D$. 
+      
+(b) Jika $E\subseteq\BbbR^r$ suatu himpunan terukur, maka 
+      
+\Centerline{$\lim_{\delta\downarrow 0}\Bover{\mu(E\cap B(x,\delta))} 
+{\mu B(x,\delta)}=\chi E(x)$} 
+      
+\noindent untuk hampir setiap $x\in \BbbR^r$. 
+      
+      
+(c) Jika $D\subseteq\BbbR^r$ dan $f:D\to\Bbb R$ sebarang fungsi, maka untuk 
+hampir setiap $x\in D$, 
+      
+\Centerline{$\lim_{\delta\downarrow 0} 
+\Bover{\mu^*(\{y:y\in D,\,|f(y)-f(x)|\le\epsilon\}\cap 
+B(x,\delta))} 
+{\mu B(x,\delta)}=1$} 
+      
+\noindent untuk setiap $\epsilon>0$. 
+      
+(d) Jika $D\subseteq\BbbR^r$ dan $f:D\to\Bbb R$ terukur, maka untuk hampir 
+setiap $x\in D$, 
+      
+\Centerline{$\lim_{\delta\downarrow 0} 
+\Bover{\mu^*(\{y:y\in D,\,|f(y)-f(x)|\ge\epsilon\}\cap 
+B(x,\delta))} 
+{\mu B(x,\delta)}=0$} 
+      
+\noindent untuk setiap $\epsilon>0$. 
+      
+\proof{{\bf (a)} Terapkan 261C dengan $f=\chi B(\tbf{0},n)$ untuk melihat 
+bahwa, untuk setiap $n\in\Bbb N$, 
+      
+\Centerline{$\lim_{\delta\downarrow 0}\Bover{\mu^*(D\cap B(x,\delta))} 
+{\mu B(x,\delta)}=1$} 
+      
+\noindent untuk hampir setiap $x\in D$ dengan $\|x\|<n$. 
+      
+\medskip 
+      
+{\bf (b)} Terapkan (a) pada $E$ untuk melihat bahwa 
+      
+\Centerline{$\liminf_{\delta\downarrow 0}\Bover{\mu(E\cap 
+B(x,\delta))}{\mu B(x,\delta)}\ge\chi E(x)$} 
+      
+\noindent untuk hampir setiap $x\in\BbbR^r$, dan pada 
+$E'=\BbbR^r\setminus E$ untuk melihat bahwa 
+      
+\Centerline{$\limsup_{\delta\downarrow 0}\Bover{\mu(E\cap 
+B(x,\delta))}{\mu B(x,\delta)} 
+=1-\liminf_{\delta\downarrow 0} 
+  \Bover{\mu(E'\cap B(x,\delta))}{\mu B(x,\delta)} 
+\le 1-\chi E'(x)=\chi E(x)$} 
+      
+\noindent untuk hampir setiap $x$. 
+      
+\medskip 
+      
+{\bf (c)} Untuk $q$, $q'\in\Bbb Q$, tetapkan 
+      
+\Centerline{$D_{qq'}=\{x:x\in D,\,q\le f(x)\le q'\}$,} 
+      
+\Centerline{$C_{qq'}=\{x:x\in D_{qq'},\,\lim_{\delta\downarrow 0} 
+\Bover{\mu^*(D_{qq'}\cap B(x,\delta))}{\mu B(x,\delta)}=1\}$;} 
+      
+\noindent sekarang tetapkan 
+      
+\Centerline{$C 
+=D\setminus\bigcup_{q,q'\in\Bbb Q}(D_{qq'}\setminus C_{qq'})$,} 
+      
+\noindent sehingga $D\setminus C$ terabaikan. Jika $x\in C$ dan 
+$\epsilon>0$, maka terdapat $q$, $q'\in\Bbb Q$ sedemikian sehingga 
+$f(x)-\epsilon\le q\le f(x)\le q'\le f(x)+\epsilon$, dan sekarang 
+$x\in C_{qq'}$; oleh karena itu 
+      
+\Centerline{$\liminf_{\delta\downarrow 0} 
+\Bover{\mu^*\{y:y\in D\cap B(x,\delta),\,|f(y)-f(x)|\le\epsilon\}} 
+  {\mu B(x,\delta)} 
+\ge\liminf_{\delta\downarrow 0} 
+  \Bover{\mu^*(D_{qq'}\cap B(x,\delta))}{\mu B(x,\delta)}=1$,} 
+      
+\noindent sehingga 
+      
+\Centerline{$\lim_{\delta\downarrow 0} 
+\Bover{\mu^*\{y:y\in D\cap B(x,\delta),\,|f(y)-f(x)|\le\epsilon\}} 
+{\mu B(x,\delta)} 
+=1$.} 
+      
+\medskip 
+      
+{\bf (d)} Definisikan $C$ seperti dalam (c). Berdasarkan (a), kita mengetahui 
+bahwa $\mu(D\setminus C')=0$, dengan 
+      
+\Centerline{$C'=\{x:x\in D,\lim_{\delta\downarrow 0}\Bover{\mu^*(D\cap 
+B(x,\delta))} 
+{\mu B(x,\delta)}=1\}$. 
+} 
+      
+\noindent Jika $x\in C\cap C'$ dan $\epsilon>0$, berdasarkan (c) kita 
+mengetahui bahwa 
+      
+ \Centerline{$\lim_{\delta\downarrow 0} 
+\Bover{\mu^*\{y:y\in D\cap B(x,\delta),\,|f(y)-f(x)|\le\epsilon/2\}} 
+{\mu B(x,\delta)} 
+=1$.} 
+      
+\noindent Namun, karena $f$ terukur, kita mempunyai 
+      
+$$\eqalign{\mu^*\{y:y\in &D\cap B(x,\delta),\, 
+|f(y)-f(x)|\ge\epsilon\}\cr 
+&+\mu^*\{y:y\in D\cap B(x,\delta),\,|f(y)-f(x)|\le\Bover12\epsilon\} 
+\le\mu^*(D\cap B(x,\delta))\cr}$$ 
+      
+\noindent untuk setiap $\delta>0$. Oleh karena itu, 
+      
+$$\eqalign{\limsup_{\delta\downarrow 0} 
+&\Bover{\mu^*\{y:y\in D\cap B(x,\delta),\,|f(y)-f(x)|\ge\epsilon\}} 
+{\mu B(x,\delta)}\cr 
+&\le\lim_{\delta\downarrow 0} 
+  \Bover{\mu^*(D\cap B(x,\delta))}{\mu B(x,\delta)} 
+-\lim_{\delta\downarrow 0} 
+  \Bover{\mu^*\{y:y\in D\cap B(x,\delta),\,|f(y)-f(x)|\le\epsilon/2\}} 
+  {\mu B(x,\delta)} 
+=0,\cr}$$ 
+      
+\noindent dan 
+      
+\Centerline{$\lim_{\delta\downarrow 0} 
+\Bover{\mu^*\{y:y\in D\cap B(x,\delta),\,|f(y)-f(x)|\ge\epsilon\}} 
+{\mu B(x,\delta)}=0$} 
+      
+\noindent untuk setiap $x\in C\cap C'$, yakni, untuk hampir setiap 
+$x\in D$. 
+}%end of proof of 261D 
+      
+\leader{261E}{Teorema} Misalkan $f$ suatu fungsi yang terintegralkan secara 
+lokal dan terdefinisi pada suatu subhimpunan koterabaikan dari $\BbbR^r$. Maka 
+      
+\Centerline{$\lim_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)} 
+\int_{B(x,\delta)}|f(y)-f(x)|dy=0$} 
+      
+\noindent untuk hampir setiap $x\in\BbbR^r$. 
+      
+\proof{ (Bandingkan 223D.) 
+      
+\medskip 
+      
+{\bf (a)} Untuk sementara, tetapkan $n\in\Bbb N$, dan tetapkan 
+$G=\{x:\|x\|<n\}$. Untuk setiap $q\in\Bbb Q$, tetapkan 
+$g_q(x)=|f(x)-q|$ untuk $x\in G\cap\dom f$; maka $g_q$ terintegralkan pada 
+$G$, dan 
+      
+\Centerline{$\lim_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)} 
+\int_{G\cap B(x,\delta)}g_q=g_q(x)$} 
+      
+\noindent untuk hampir setiap $x\in G$, berdasarkan 261C. Dengan menetapkan 
+      
+\Centerline{$E_q=\{x:x\in G\cap\dom f,\,\lim_{\delta\downarrow 0} 
+\Bover1{\mu B(x,\delta)}\int_{G\cap B(x,\delta)}g_q=g_q(x)\}$,} 
+      
+\noindent kita mempunyai $G\setminus E_q$ terabaikan untuk setiap $q$, 
+sehingga $G\setminus E$ terabaikan, dengan 
+$E=\bigcap_{q\in\Bbb Q}E_q$. Sekarang 
+      
+\Centerline{$\lim_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)} 
+\int_{G\cap B(x,\delta)}|f(y)-f(x)|dy=0$} 
+      
+\noindent untuk setiap $x\in E$. \Prf\ Ambil $x\in E$ dan $\epsilon>0$. 
+Maka terdapat $q\in\Bbb Q$ sedemikian sehingga $|f(x)-q|\le\epsilon$, 
+sehingga 
+      
+\Centerline{$|f(y)-f(x)|\le|f(y)-q|+\epsilon=g_q(y)+\epsilon$} 
+      
+\noindent untuk setiap $y\in G\cap\dom f$, dan 
+      
+$$\eqalign{\limsup_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)} 
+\int_{G\cap B(x,\delta)}|f(y)-f(x)|dy 
+&\le\limsup_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)} 
+\int_{G\cap B(x,\delta)}g_q(y)+\epsilon\,dy\cr 
+&=\epsilon+g_q(x) 
+\le 2\epsilon.\cr}$$ 
+      
+\noindent Karena $\epsilon$ sebarang, 
+      
+\Centerline{$\lim_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)} 
+\int_{G\cap B(x,\delta)}|f(y)-f(x)|dy=0$,} 
+      
+\noindent sebagaimana diperlukan.\ \Qed 
+      
+\medskip 
+      
+{\bf (b)} Karena $G$ terbuka, 
+ 
+\Centerline{$\lim_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)} 
+\int_{B(x,\delta)}|f(y)-f(x)|dy 
+=\lim_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)} 
+\int_{G\cap B(x,\delta)}|f(y)-f(x)|dy 
+=0$} 
+      
+\noindent untuk hampir setiap $x\in G$. Karena $n$ sebarang, 
+ 
+\Centerline{$\lim_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)} 
+\int_{B(x,\delta)}|f(y)-f(x)|dy=0$} 
+      
+\noindent untuk hampir setiap $x\in\BbbR^r$. 
+}%end of proof of 261E 
+      
+\medskip 
+\noindent{\bf Catatan} Himpunan 
+      
+\Centerline{$\{x:x\in\dom f,\, 
+  \lim_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)} 
+\int_{B(x,\delta)}|f(y)-f(x)|dy=0\}$} 
+      
+\noindent kadang-kadang disebut {\bf himpunan Lebesgue} dari $f$. 
+      
+\leader{261F}{}\cmmnt{ Akibat lain yang sangat berguna dari 261B adalah 
+sebagai berikut. 
+      
+\medskip 
+      
+\noindent}{\bf Proposisi} Misalkan $A\subseteq\BbbR^r$ sebarang himpunan, 
+dan $\epsilon>0$. Maka terdapat suatu barisan $\sequencen{B_n}$ bola tertutup 
+dalam $\BbbR^r$, semuanya berjari-jari paling besar $\epsilon$, sedemikian 
+sehingga $A\subseteq\bigcup_{n\in\Bbb N}B_n$ dan 
+$\sum_{n=0}^{\infty}\mu B_n\le\mu^*A+\epsilon$. Selain itu, kita dapat 
+mengandaikan bahwa bola-bola dalam barisan yang pusatnya tidak terletak dalam 
+$A$ memiliki jumlah ukuran paling besar $\epsilon$. 
+      
+\proof{{\bf (a)} Langkah pertama adalah pengamatan yang jelas bahwa jika 
+$x\in\BbbR^r$, $\delta>0$, maka kubus setengah terbuka 
+$I=\coint{x,x+\delta\tbf{1}}$ merupakan subhimpunan bola 
+$B(x,\delta\sqrt{r})$, yang berukuran 
+$\gamma_r\delta^r=\gamma_r\mu I$, dengan 
+$\gamma_r=\beta_rr^{r/2}$. Akibatnya, jika $G\subseteq\BbbR^r$ sebarang 
+himpunan terbuka, maka $G$ dapat diliput oleh suatu barisan bola dengan jumlah 
+ukuran paling besar $\gamma_r\mu G$. \Prf\ Jika $G$ kosong, kita dapat 
+mengambil semua bola sebagai himpunan satu titik. Jika tidak, untuk setiap 
+$k\in\Bbb N$, tetapkan 
+      
+\Centerline{$Q_k 
+=\{z:z\in \Bbb Z^r,\,\coint{2^{-k}z,2^{-k}(z+\tbf{1})}\subseteq G\}$,} 
+      
+\Centerline{$E_k 
+=\bigcup_{z\in Q_k}\coint{2^{-k}z,2^{-k}(z+\tbf{1})}$.} 
+      
+\noindent Maka $\sequence{k}{E_k}$ merupakan barisan himpunan yang tak 
+menurun dengan gabungan $G$, dan $E_0$ serta setiap selisih 
+$E_{k+1}\setminus E_k$ dapat dinyatakan sebagai gabungan yang saling lepas 
+dari kubus-kubus setengah terbuka. Dengan demikian, $G$ juga dapat dinyatakan 
+sebagai gabungan yang saling lepas dari suatu barisan $\sequencen{I_n}$ kubus 
+setengah terbuka. Setiap $I_n$ diliput oleh suatu bola $B_n$ yang berukuran 
+$\gamma_r\mu I_n$; sehingga $G\subseteq\bigcup_{n\in\Bbb N}B_n$ dan 
+      
+\Centerline{$\sum_{n=0}^{\infty}\mu B_n 
+\le\gamma_r\sum_{n=0}^{\infty}\mu I_n=\gamma_r\mu G$. \Qed} 
+      
+\medskip 
+      
+{\bf (b)} Langsung diperoleh bahwa jika $\mu A=0$, maka untuk setiap 
+$\epsilon>0$ terdapat suatu barisan $\sequencen{B_n}$ bola yang meliput $A$ 
+dengan jumlah ukuran paling besar $\epsilon$, karena tentu saja terdapat 
+suatu himpunan terbuka yang memuat $A$ dan berukuran paling besar 
+$\epsilon/\gamma_r$. 
+      
+\medskip 
+      
+{\bf (c)} Sekarang ambil sebarang himpunan $A$, dan $\epsilon>0$. Ambil suatu 
+himpunan terbuka $G\supseteq A$ dengan 
+$\mu G\le\mu^*A+\bover12\epsilon$. Misalkan $\Cal I$ adalah keluarga bola 
+tertutup nontrivial yang termuat dalam $G$, berjari-jari paling besar 
+$\epsilon$ dan berpusat dalam $A$. Maka setiap titik dalam $A$ termasuk dalam 
+anggota $\Cal I$ yang berdiameter sekecil apa pun, sehingga terdapat suatu 
+$\Cal I_0\subseteq\Cal I$ yang terhitung dan saling lepas sedemikian sehingga 
+$\mu(A\setminus\bigcup\Cal I_0)=0$. Misalkan $\sequencen{B'_n}$ suatu 
+barisan bola yang meliput $A\setminus\bigcup\Cal I_0$ dengan 
+$\sum_{n=0}^{\infty}\mu B'_n\le\min(\bover12\epsilon,\beta_r\epsilon^r)$; 
+semuanya tentu berjari-jari paling besar $\epsilon$. Misalkan 
+$\sequencen{B_n}$ suatu barisan yang menggabungkan $\Cal I_0$ dengan 
+$\sequencen{B'_n}$; maka $A\subseteq\bigcup_{n\in\Bbb N}B_n$, setiap $B_n$ 
+berjari-jari paling besar $\epsilon$ dan 
+      
+\Centerline{$\sum_{n=0}^{\infty}\mu B_n 
+=\sum_{B\in\Cal I_0}\mu B+\sum_{n=0}^{\infty}\mu B'_n 
+\le\mu G+\Bover12\epsilon 
+\le\mu^*A+\epsilon$,} 
+      
+\noindent sedangkan $B_n$ yang pusatnya tidak terletak dalam $A$ harus 
+berasal dari barisan $\sequencen{B'_n}$, sehingga jumlah ukurannya paling 
+besar $\bover12\epsilon\le\epsilon$. 
+}%end of proof of 261F 
+      
+\cmmnt{\medskip 
+      
+\noindent{\bf Catatan} Sebenarnya kita dapat (jika $A$ tidak kosong) mengatur 
+agar pusat {\it setiap} $B_n$ termasuk dalam $A$. Ini merupakan akibat mudah 
+dari Lema Peliputan Besicovitch (lihat \S472 dalam Jilid 4). 
+}%end of comment 
+      
+\exercises{ 
+\leader{261X}{Latihan dasar (a)} Tunjukkan bahwa 261C berlaku untuk 
+sebarang fungsi bernilai real $f$ yang terintegralkan secara lokal; khususnya, 
+untuk sebarang $f\in\eusm L^p(\mu_D)$ dan sebarang $p\ge 1$, dengan $\mu_D$ 
+menyatakan ukuran subruang pada $D$. 
+%261C 
+      
+\spheader 261Xb Tunjukkan bahwa 261C, 261Dc, 261Dd dan 261E berlaku untuk 
+fungsi bernilai kompleks $f$. 
+%261E 
+      
+\sqheader 261Xc Ambil tiga cakram pada bidang, masing-masing bersinggungan 
+dengan dua cakram lainnya, sehingga ketiganya mengurung suatu daerah terbuka 
+$R$ dengan tiga titik lancip. Dalam $R$, misalkan $D$ suatu cakram yang 
+menyinggung masing-masing dari ketiga cakram semula, dan misalkan 
+$R_0$, $R_1$, $R_2$ ketiga komponen $R\setminus D$. Dalam setiap $R_j$, 
+misalkan $D_j$ suatu cakram yang menyinggung setiap cakram yang membatasi 
+$R_j$, dan misalkan $R_{j0}$, $R_{j1}$, $R_{j2}$ ketiga komponen 
+$R_j\setminus D_j$. Lanjutkan proses ini sehingga diperoleh 27 daerah pada 
+langkah berikutnya, 81 daerah pada langkah sesudahnya, dan seterusnya. 
+      
+Tunjukkan bahwa luas total daerah-daerah sisa konvergen ke nol ketika proses 
+ini diteruskan tanpa batas. \Hint{bandingkan dengan proses dalam pembuktian 
+261B.} 
+%261B 
+      
+\leader{261Y}{Latihan lanjutan (a)} 
+%\spheader 261Ya 
+Rumuskan suatu definisi abstrak untuk `peliput Vitali', yang berarti suatu 
+keluarga himpunan yang memenuhi kesimpulan 261B dalam suatu pengertian, serta 
+generalisasi 261C-261E yang bersesuaian dan mencakup (setidaknya) (b)-(d) di 
+bawah ini. 
+      
+\header{261Yb}{\bf (b)} Untuk $x\in\BbbR^r$, $k\in\Bbb N$, misalkan 
+$C(x,k)$ adalah kubus setengah terbuka berbentuk 
+$\coint{2^{-k}z,2^{-k}(z+\tbf{1})}$, dengan $z\in \Bbb Z^r$, yang memuat 
+$x$. Tunjukkan bahwa jika $f$ suatu fungsi yang terintegralkan pada 
+$\BbbR^r$, maka 
+      
+\Centerline{$\lim_{k\to\infty}2^{kr}\int_{C(x,k)}f=f(x)$} 
+      
+\noindent untuk hampir setiap $x\in\BbbR^r$. 
+      
+\spheader 261Yc Misalkan $f$ suatu fungsi bernilai real yang terintegralkan 
+pada $\BbbR^r$. Tunjukkan bahwa 
+      
+\Centerline{$\lim_{\delta\downarrow 
+0}\Bover{1}{\delta^r}\int_{\coint{x,x+\delta\tbf{1}}}f=f(x)$} 
+      
+\noindent untuk hampir setiap $x\in\BbbR^r$. 
+      
+\spheader 261Yd Bekali $X=\{0,1\}^{\Bbb N}$ dengan ukuran lazim $\nu$ 
+(254J). Untuk $x\in X$, $k\in\Bbb N$, tetapkan 
+$C(x,k)=\{y:y\in X,\,y(i)=x(i)$ untuk $i<k\}$. Tunjukkan bahwa jika $f$ 
+sebarang fungsi bernilai real yang terintegralkan pada $X$, maka 
+$\lim_{k\to\infty}2^k\int_{C(x,k)}fd\nu=f(x)$ dan 
+$\lim_{k\to\infty}2^k\int_{C(x,k)}|f(y)-f(x)|\nu(dy)=0$ untuk hampir setiap 
+$x\in X$. 
+      
+\spheader 261Ye Misalkan $f$ suatu fungsi bernilai real yang terintegralkan 
+pada $\BbbR^r$, dan $x$ suatu titik dalam himpunan Lebesgue dari $f$. 
+Tunjukkan bahwa untuk setiap $\epsilon>0$ terdapat $\delta>0$ sedemikian 
+sehingga 
+\discrcenter{390pt}{$|f(x)-\int f(x-y)g(\|y\|)dy|\le\epsilon$ }setiap kali 
+$g:\coint{0,\infty}\to\coint{0,\infty}$ suatu fungsi tak menaik sedemikian 
+sehingga $\int_{\Bbb R^r}g(\|y\|)dy=1$ dan 
+$\int_{B(\tbf{0},\delta)}g(\|y\|)dy\ge 1-\delta$. \Hint{223Yg.} 
+      
+\spheader 261Yf Misalkan $\frak T$ keluarga himpunan terukur 
+$G\subseteq\BbbR^r$ sedemikian sehingga 
+\discrcenter{390pt}{$\lim_{\delta\downarrow 0} 
+\Bover{\mu(G\cap B(x,\delta))}{\mu B(x,\delta)}=1$ }untuk setiap $x\in G$. 
+Tunjukkan bahwa $\frak T$ merupakan suatu topologi pada $\BbbR^r$, yaitu 
+{\bf topologi kerapatan} dari $\BbbR^r$. Tunjukkan bahwa suatu fungsi 
+$f:\BbbR^r\to\Bbb R$ terukur jika dan hanya jika fungsi itu kontinu dalam 
+topologi $\frak T$ pada hampir setiap titik dalam $\Bbb R^r$. 
+      
+\spheader 261Yg Suatu himpunan $A\subseteq\BbbR^r$ dikatakan {\bf berpori} 
+di $x\in\BbbR^r$ jika 
+$\limsup_{y\to x}\Bover{\rho(y,A)}{\|y-x\|}>0$, dengan 
+$\rho(y,A)=\inf_{z\in A}\|y-z\|$ (atau $\infty$ jika $A$ kosong). 
+(i) Tunjukkan bahwa jika $A$ berpori pada semua titiknya, maka himpunan itu 
+terabaikan. 
+(ii) Tunjukkan bahwa dalam konstruksi 261B, himpunan sisa 
+$A\setminus\bigcup\Cal I_0$ berpori pada semua titiknya. 
+ 
+\spheader 261Yh Misalkan $A\subseteq\BbbR^r$ suatu himpunan terbatas dan 
+$\Cal I$ suatu keluarga tak kosong dari bola tertutup nontrivial yang meliput 
+$A$. Tunjukkan bahwa untuk setiap $\epsilon>0$ terdapat bola-bola yang saling 
+lepas $B_0,\ldots,B_n\in\Cal I$ sedemikian sehingga 
+$\mu^*A\le(3+\epsilon)^r\sum_{k=0}^n\mu B_k$. 
+      
+\spheader 261Yi Misalkan $(X,\rho)$ suatu ruang metrik, 
+$A\subseteq X$ sebarang himpunan, dan 
+$x\mapsto\delta_x:A\to\coint{0,\infty}$ sebarang fungsi terbatas. 
+Tunjukkan bahwa jika $\gamma>3$, maka terdapat $A'\subseteq A$ sedemikian 
+sehingga (i) $\rho(x,y)>\delta_x+\delta_y$ untuk semua $x$, $y\in A'$ yang 
+berbeda; (ii) 
+$\bigcup_{x\in A}B(x,\delta_x) 
+\subseteq\bigcup_{x\in A'}B(x,\gamma\delta_x)$, dengan $B(x,\alpha)$ 
+menyatakan bola tertutup $\{y:\rho(y,x)\le\alpha\}$. 
+      
+\spheader 261Yj(i) Misalkan $\Cal C$ keluarga himpunan terukur 
+$C\subseteq\BbbR^r$ sedemikian sehingga 
+\discrcenter{390pt}{$\limsup_{\delta\downarrow 0} 
+\Bover{\mu(C\cap B(x,\delta))}{\mu B(x,\delta)}>0$ }untuk setiap $x\in C$. 
+Tunjukkan bahwa $\bigcup\Cal C_0\in\Cal C$ untuk setiap 
+$\Cal C_0\subseteq\Cal C$. \Hint{215B(iv).}   
+(ii) Tunjukkan bahwa setiap gabungan bola tertutup nontrivial dalam 
+$\BbbR^r$ terukur Lebesgue. (Bandingkan 415Ye dalam Jilid 4.) 
+      
+\spheader 261Yk Andaikan bahwa $A\subseteq\BbbR^r$ dan bahwa $\Cal I$ 
+merupakan suatu keluarga subhimpunan tertutup dari $\BbbR^r$ sedemikian 
+sehingga 
+      
+\inset{\noindent untuk setiap $x\in A$ terdapat $\eta>0$ sedemikian sehingga 
+untuk setiap $\epsilon>0$ terdapat $I\in\Cal I$ sedemikian sehingga $x\in I$ 
+dan $0<\eta(\diam I)^r\le\mu I\le\epsilon$.} 
+      
+\noindent Tunjukkan bahwa terdapat suatu himpunan terhitung yang saling lepas 
+$\Cal I_0\subseteq\Cal I$ sedemikian sehingga 
+$A\setminus\bigcup\Cal I_0$ terabaikan. 
+%261B 
+ 
+\spheader 261Yl Misalkan $\frak T'$ keluarga himpunan terukur 
+$G\subseteq\BbbR^r$ sedemikian sehingga setiap kali $x\in G$ dan 
+$\epsilon>0$, terdapat $\delta>0$ sedemikian sehingga 
+$\mu(G\cap I)\ge(1-\epsilon)\mu I$ setiap kali $I$ suatu interval yang memuat 
+$x$ dan termuat dalam $B(x,\delta)$. Tunjukkan bahwa 
+$\frak T'$ merupakan suatu topologi pada $\BbbR^r$ yang berada di antara 
+topologi kerapatan (261Yf) dan topologi Euklides. 
+}%end of exercises 
+      
+\endnotes{ 
+\Notesheader{261} 
+Dalam pembuktian 261B-261E di atas, saya telah berusaha sebaik mungkin untuk 
+mengikuti alur kasus satu dimensi; bagian ini merupakan serangkaian 
+generalisasi dari pekerjaan dalam \S\S221 dan 223. 
+      
+Jelas bahwa gagasan 261A/261B dapat digunakan pada bentuk selain bola. Agar 
+gagasan itu bekerja dalam bentuk di atas, kita memerlukan suatu keluarga 
+$\Cal I$ sedemikian sehingga terdapat konstanta $K$ yang memenuhi 
+      
+\Centerline{$\mu I'\le K\mu I$} 
+      
+\noindent untuk setiap $I\in \Cal I$, dengan kita menuliskan 
+      
+\Centerline{$I'=\{x:\inf_{y\in I}\|x-y\|\le\diam(I)\}$.} 
+      
+\noindent Jelas bahwa hal ini berlaku bagi banyak kelas $\Cal I$ yang 
+ditentukan oleh bentuk himpunan-himpunan yang terlibat; misalnya, jika 
+$E\subseteq\BbbR^r$ sebarang himpunan terbatas dengan ukuran positif, 
+keluarga $\Cal I=\{x+\delta E:x\in\BbbR^r,\,\delta>0\}$ memenuhi syarat itu. 
+      
+Dalam 261Ya saya menantang Anda untuk menemukan generalisasi yang sesuai bagi 
+argumen-argumen yang bergantung pada kesimpulan 261B. 
+      
+Cara lain menggunakan 261B adalah mengatakan bahwa karena himpunan secara 
+esensial dapat diliput oleh barisan bola yang {\it saling lepas}, seharusnya 
+bola, bukan interval setengah terbuka, dapat digunakan dalam definisi ukuran 
+Lebesgue pada $\BbbR^r$. Hal ini memang benar (261F). Kesulitan menggunakan 
+bola dalam definisi dasar muncul tepat pada permulaan, ketika membuktikan 
+bahwa jika suatu bola diliput oleh berhingga banyak bola, maka jumlah volume 
+bola-bola peliput itu setidaknya sebesar volume bola yang diliput. (Ada suatu 
+siasat, dengan menggunakan kekompakan bola tertutup dan keterbukaan bola 
+terbuka, untuk memperluas pembuktian demikian ke peliput tak hingga.) Tentu 
+saja Anda dapat menganggap fakta ini `elementer', atas dasar bahwa Archimedes 
+tentu akan menyadari seandainya fakta itu tidak benar, tetapi bagaimanapun 
+fakta itu akan cukup menantang untuk dibuktikan, kecuali Anda bersedia 
+menunggu suatu versi teorema Fubini, sebagaimana dilakukan beberapa penulis. 
+      
+Saya memberikan hasil-hasil dalam 261C-261D untuk subhimpunan sebarang $D$ 
+dari $\Bbb R^r$, bukan karena saya membayangkan penerapan yang menjadikan 
+subhimpunan tak terukur penting, melainkan karena saya ingin memungkinkan 
+kita memperhatikan kapan keterukuran berperan. Tentu saja integral 
+$\int_Dfd\mu$ perlu ditafsirkan dengan cara yang ditetapkan dalam \S214. 
+Rahasia argumennya terungkap dalam bagian (c) pembuktian 261C, tempat saya 
+mengandalkan fakta bahwa jika $f$ terintegralkan pada $D$, maka terdapat 
+suatu fungsi terintegralkan $\tilde f:\BbbR^r\to\Bbb R$ sedemikian sehingga 
+$\int_F\tilde f=\int_{D\cap F}f$ untuk setiap himpunan terukur 
+$F\subseteq\BbbR^r$. Pada hakikatnya, untuk semua persoalan yang dibahas di 
+sini, kita dapat mengganti $f$, $D$ dengan $\tilde f$, $\BbbR^r$. 
+      
+Gagasan 261C ialah bahwa, untuk hampir setiap $x$, $f(x)$ didekati oleh nilai 
+rata-ratanya pada bola kecil $B(x,\delta)$, dengan mengabaikan nilai-nilai 
+yang hilang pada $B(x,\delta)\setminus(D\cap\dom f)$; 261E merupakan versi 
+lebih tajam dari gagasan yang sama. Rumus-rumus 261C-261E terutama memuat 
+ungkapan $\mu B(x,\delta)$. Tentu saja ini hanyalah $\beta_r\delta^r$. Namun, 
+menurut saya membiarkannya tanpa dikembangkan justru lebih memperjelas, 
+sekaligus menghindari indeks bawah dan atas, karena dengan demikian lebih 
+jelas apa pokok sesungguhnya dari teorema-teorema kerapatan ini. Dalam \S472 
+dari Jilid 4 saya akan kembali ke materi ini dan menunjukkan bahwa sebagian 
+besar gagasannya, dalam kadar yang mengejutkan, dapat diterapkan pada 
+sebarang ukuran Radon pada $\BbbR^r$, walaupun teorema Vitali (dalam bentuk 
+yang dinyatakan di sini) tidak lagi berlaku. 
+      
+}%end of notes 
+      
+      
+\discrpage 
+      

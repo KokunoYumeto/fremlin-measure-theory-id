@@ -1,0 +1,1318 @@
+\frfilename{mt263.tex}
+\versiondate{4.4.13}
+\copyrightdate{2000}
+
+\def\diam{\mathop{\text{diam}}}
+\def\dist{\mathop{\text{dist}}}
+
+\def\chaptername{Perubahan variabel dalam integral}
+\def\sectionname{Transformasi terdiferensialkan dalam $\BbbR^r$}
+
+\newsection{263}
+
+\def\headlinesectionname{Transformasi terdiferensialkan dalam
+$\eightBbb R^r$}
+
+Bagian ini dikhususkan untuk pembuktian satu teorema utama
+(263D) mengenai transformasi terdiferensialkan antara himpunan-himpunan bagian
+$\BbbR^r$.   Hasil ini akan digeneralisasi dalam \S265,
+dan pembaca yang cukup mengenal pokok bahasan ini, atau cukup berani,
+mungkin ingin membaca \S264 sebelum mempelajari bagian ini dan \S265
+secara bersamaan.   Saya mengakhiri bagian ini dengan beberapa akibat sederhana dan suatu
+perluasan hasil utama yang dapat dibuat dalam kasus berdimensi satu (263J).
+
+Di seluruh bagian ini, sebagaimana dalam bagian lain bab ini, $\mu$ akan
+menyatakan ukuran Lebesgue pada $\BbbR^r$.
+
+\leader{263A}{Transformasi \dvrocolon{linear}}\cmmnt{ Saya mulai dengan
+kasus khusus
+operator linear, yang bukan saja menjadi dasar pembuktian
+263D, melainkan juga salah satu penerapannya yang paling penting,
+dan bahkan sudah memadai untuk banyak hasil yang sangat mencolok.
+
+\medskip
+
+\noindent}{\bf Teorema} Misalkan $T$ suatu matriks real $r\times r$;  pandang
+$T$ sebagai
+operator linear dari $\BbbR^r$ ke dirinya sendiri.   Misalkan $J=|\det T|$ adalah
+modulus determinannya.   Maka
+
+\Centerline{$\mu T[E]=J\mu E$}
+
+\noindent untuk setiap himpunan terukur $E\subseteq\BbbR^r$.   Jika
+$T$ merupakan suatu permutasi (yakni, jika $J\ne 0$), maka
+
+\Centerline{$\mu F=J\mu(T^{-1}[F])$}
+
+\noindent untuk setiap himpunan terukur $F\subseteq\BbbR^r$, dan
+
+\Centerline{$\int_F g\,d\mu=J\int_{T^{-1}[F]} gT\,d\mu$}
+
+\noindent untuk setiap fungsi terintegralkan $g$ dan himpunan terukur $F$.
+
+\proof{{\bf (a)} Langkah pertama ialah menunjukkan bahwa $T[I]$
+terukur untuk setiap interval setengah-terbuka $I\subseteq\BbbR^r$.   \Prf\
+Setiap interval setengah-terbuka tak kosong
+$I=\coint{a,b}$ adalah gabungan terhitung dari interval-interval tertutup
+$I_n =[a,b-2^{-n}\tbf{1}]$, dan setiap $I_n$ kompak (2A2F),
+sehingga $T[I_n]$ kompak (2A2Eb), maka tertutup (2A2Ec),
+maka terukur (115G), dan $T[I]=\bigcup_{n\in\Bbb N}T[I_n]$
+terukur.\ \Qed
+
+\medskip
+
+{\bf (b)} Tetapkan $J^*=\mu T[\,\coint{\tbf{0},\tbf{1}}\,]$, dengan
+$\tbf{0}=(0,\dots,0)$ dan $\tbf{1}=(1,\ldots,1)$;  karena
+$T[\,\coint{\tbf{0},\tbf{1}}\,]$ terbatas, $J^*<\infty$.   (Pada akhirnya saya akan
+menunjukkan bahwa $J^*=J$.)   Lebih mudah untuk terlebih dahulu menangani kasus
+$T$ yang singular.   Ingat bahwa $T$, jika dipandang sebagai transformasi linear
+dari $\BbbR^r$ ke dirinya sendiri, bersifat bijektif atau mempunyai citra berupa
+suatu subruang linear sejati.   Dalam kasus yang kedua, ambil sebarang $e\in\Bbb
+R^r\setminus T[\BbbR^r]$;  maka himpunan-himpunan
+
+\Centerline{$T[\,\coint{\tbf{0},\tbf{1}}\,]+\gamma e$,}
+
+\noindent ketika $\gamma$ menjelajahi $[0,1]$, saling lepas dan semuanya
+berukuran sama, yaitu $J^*$, karena $\mu$ invarian terhadap translasi (134A);
+selain itu, gabungannya terbatas, sehingga mempunyai ukuran luar berhingga.   Karena
+terdapat tak berhingga banyak $\gamma$ semacam itu, ukuran bersama $J^*$ haruslah
+nol.   Sekarang perhatikan bahwa
+
+\Centerline{$T[\BbbR^r]=\bigcup_{z\in \Bbb
+Z^r}T[\,\coint{\tbf{0},\tbf{1}}\,]+Tz$,}
+
+\noindent dan
+
+\Centerline{$\mu(T[\,\coint{\tbf{0},\tbf{1}}\,]+Tz)=J^*=0$}
+
+\noindent untuk setiap $z\in\Bbb Z^r$, sedangkan $\Bbb Z^r$ terhitung, sehingga
+$\mu T[\Bbb R^r]=0$.   Pada saat yang sama, karena
+$T$ singular, determinannya nol, dan $J=0$.
+Dengan demikian
+
+\Centerline{$\mu T[E]=0=J\mu E$}
+
+\noindent untuk setiap himpunan terukur $E\subseteq\BbbR^r$, dan pembuktian selesai.
+
+\medskip
+
+{\bf (c)} Mulai sekarang, dengan demikian, kita andaikan bahwa $T$
+nonsingular.
+Perhatikan bahwa operator ini dan inversnya kontinu, sehingga $T$ merupakan
+homeomorfisme, dan $T[G]$ terbuka jika dan hanya jika $G$ terbuka.
+
+Jika $a\in\BbbR^r$ dan $k\in\Bbb N$, maka
+
+\Centerline{$\mu T[\,\coint{a,a+2^{-k}\tbf{1}}\,]=2^{-kr}J^*$.}
+
+\noindent   \Prf\ Tetapkan
+$J^*_k=\mu T[\,\coint{\tbf{0},2^{-k}\tbf{1}}\,]$.   Sekarang
+$T[\,\coint{a,a+2^{-k}\tbf{1}}\,]
+=T[\,\coint{\tbf{0},2^{-k}\tbf{1}}\,]+Ta$;  karena $\mu$
+invarian terhadap translasi, ukurannya juga $J^*_k$.   Selanjutnya,
+$\coint{\tbf{0},\tbf{1}}$ dapat dinyatakan sebagai gabungan saling lepas dari $2^{kr}$
+himpunan berbentuk $\coint{a,a+2^{-k}\tbf{1}}$;  akibatnya,
+$T[\,\coint{\tbf{0},\tbf{1}}\,]$ dapat dinyatakan sebagai gabungan saling lepas dari
+$2^{kr}$ himpunan berbentuk $T[\,\coint{a,a+2^{-k}\tbf{1}}\,]$, dan
+
+
+\Centerline{$J^*=\mu T[\,\coint{\tbf{0},\tbf{1}}\,]=2^{kr}J^*_k$,}
+
+\noindent yakni,
+$J^*_k=2^{-kr}J^*$, sebagaimana diklaim.\ \Qed
+
+\medskip
+
+{\bf (d)} Akibatnya $\mu T[G]=J^*\mu G$ untuk setiap himpunan terbuka
+$G\subseteq\BbbR^r$.   \Prf\ Untuk setiap $k\in\Bbb N$, tetapkan
+
+\Centerline{$Q_k
+=\{z:z\in\Bbb Z^r,\,\coint{2^{-k}z,2^{-k}z+2^{-k}\tbf{1}}\subseteq G\}$,}
+
+\Centerline{$G_k=\bigcup_{z\in Q_k}
+\coint{2^{-k}z,2^{-k}z+2^{-k}\tbf{1}}$.}
+
+\noindent Maka $G_k$ adalah gabungan saling lepas dari $\#(Q_k)$ himpunan berbentuk
+$\coint{2^{-k}z,2^{-k}z+2^{-k}\tbf{1}}$, sehingga $\mu G_k=2^{-kr}\#(Q_k)$;
+juga, $T[G_k]$ adalah gabungan saling lepas dari $\#(Q_k)$ himpunan berbentuk
+$T[\,\coint{2^{-k}z,2^{-k}z+2^{-k}\tbf{1}}\,]$, sehingga berukuran
+$2^{-kr}J^*\#(Q_k)=J^*\mu G_k$, dengan menggunakan (c).
+
+Selanjutnya perhatikan bahwa $\sequence{k}{G_k}$ adalah barisan tak menurun dengan
+gabungan $G$, sehingga
+
+\Centerline{$\mu T[G]=\lim_{k\to\infty}\mu T[G_k]
+=\lim_{k\to\infty}J^*\mu G_k
+=J^*\mu G$.   \Qed}
+
+\medskip
+
+{\bf (e)} Maka $\mu^*T[A]=J^*\mu^* A$ untuk setiap
+$A\subseteq\Bbb R^r$.   \Prf\ Diberikan $A\subseteq\BbbR^r$ dan
+$\epsilon>0$, terdapat
+himpunan-himpunan terbuka $G$, $H$ sedemikian sehingga $G\supseteq A$, $H\supseteq T[A]$,
+$\mu G\le\mu^* A+\epsilon$ dan $\mu H\le\mu^*T[A]+\epsilon$ (134Fa).
+Tetapkan $G_1=G\cap T^{-1}[H]$;  maka $G_1$ terbuka karena $T^{-1}[H]$
+terbuka.   Sekarang $\mu T[G_1]=J^*\mu G_1$, sehingga
+
+$$\eqalign{\mu^* T[A]
+&\le\mu T[G_1]
+=J^*\mu G_1
+\le J^*\mu^* A+J^*\epsilon\cr
+&\le J^*\mu G_1+J^*\epsilon
+=\mu T[G_1]+J^*\epsilon
+\le\mu H+J^*\epsilon\cr
+&\le\mu^*T[A]+\epsilon+J^*\epsilon.\cr}$$
+
+\noindent Karena $\epsilon$ sebarang, $\mu^*T[A]=J^*\mu^* A$.\ \Qed
+
+\medskip
+
+{\bf (f)} Akibatnya $\mu T[E]$ ada dan sama dengan $J^*\mu E$
+untuk setiap himpunan terukur $E\subseteq\BbbR^r$.   \Prf\ Misalkan
+$E\subseteq\BbbR^r$ terukur, dan ambil sebarang
+$A\subseteq\BbbR^r$.   Tetapkan $A'=T^{-1}[A]$.   Maka
+
+$$\eqalign{\mu^*(A\cap T[E])+\mu^*(A\setminus T[E])
+&=\mu^*(T[A'\cap E])+\mu^*(T[A'\setminus E])\cr
+&=J^*(\mu^*(A'\cap E)+\mu^*(A'\setminus E))\cr
+&=J^*\mu^* A'
+=\mu^*T[A']
+=\mu^* A.\cr}$$
+
+\noindent Karena $A$ sebarang, $T[E]$ terukur, dan sekarang
+
+
+\Centerline{$\mu T[E]=\mu^*T[E]=J^*\mu^* E=J^*\mu E$.  \Qed}
+
+\medskip
+
+{\bf (g)} Akhirnya kita siap menghitung $J^*$.
+Ingat bahwa matriks $T$ harus dapat dinyatakan sebagai $PDQ$, dengan $P$ dan
+$Q$ matriks ortogonal dan $D$ diagonal, dengan entri-entri diagonal
+nonnegatif (2A6C).  Maka harus berlaku
+
+\Centerline{$T[\,\coint{\tbf{0},\tbf{1}}\,]
+=P[D[Q[\,\coint{\tbf{0},\tbf{1}}\,]]]$,}
+
+\noindent sehingga, dengan menggunakan (f),
+
+\Centerline{$J^*=J^*_PJ^*_DJ^*_Q$,}
+
+\noindent dengan $J^*_P=\mu P[\,\coint{\tbf{0},\tbf{1}}\,]$, dan seterusnya.
+Sekarang
+kita mendapati bahwa $J^*_P=J^*_Q=1$.   \Prf\ Misalkan $B=B(\tbf{0},1)$ adalah bola
+satuan dalam $\BbbR^r$.    Karena $B$ tertutup, ia terukur;  karena
+terbatas, $\mu B<\infty$;  dan karena $B$ memuat interval setengah-terbuka tak kosong
+$\coint{\tbf{0},r^{-1/2}\tbf{1}}$, $\mu B>0$.   Sekarang
+$P[B]=Q[B]=B$, karena $P$ dan $Q$ adalah matriks ortogonal;
+jadi kita mempunyai
+
+\Centerline{$\mu B=\mu P[B]=J^*_P\mu B$,}
+
+\noindent dan $J^*_P$ haruslah $1$;  demikian pula, $J^*_Q=1$.\ \Qed
+
+\medskip
+
+{\bf (h)} Jadi kita hanya perlu menghitung $J^*_D$.   Andaikan
+koefisien-koefisien $D$ adalah $\delta_1,\ldots,\delta_r\ge 0$, sehingga
+$Dx=(\delta_1\xi_1,\ldots,\delta_r\xi_r)\penalty-100=d\times x$.   Sejak
+awal (c) kita telah mengandaikan bahwa $T$ nonsingular, sehingga
+tidak ada $\delta_i$ yang bernilai $0$.   Dengan demikian
+
+\Centerline{$D[\,\coint{\tbf{0},\tbf{1}}\,]
+=\coint{\tbf{0},d}$,}
+
+\noindent dan
+
+\Centerline{$J^*_D=\mu\coint{\tbf{0},d}=\prod_{i=1}^r\delta_i
+=\det D$.}
+
+\noindent Sekarang karena $P$ dan $Q$ ortogonal, keduanya mempunyai determinan
+$\pm 1$, sehingga $\det T=\pm\det D$ dan $J^*=\pm\det T$;  karena $J^*$ tentu
+nonnegatif, $J^*=|\det T|=J$.
+
+\medskip
+
+{\bf (i)} Dengan demikian $\mu T[E]=J\mu E$ untuk setiap himpunan terukur Lebesgue
+$E\subseteq\BbbR^r$.   Karena $T$ nonsingular, kita dapat menggunakan
+argumen di atas untuk menunjukkan
+bahwa $T^{-1}[F]$ terukur untuk setiap $F$ terukur, dan
+
+\Centerline{$\mu F=\mu T[T^{-1}[F]]=J\mu T^{-1}[F]
+=\int J\times\chi(T^{-1}[F])\,d\mu$,}
+
+\noindent dengan mengidentifikasi $J$ dengan fungsi konstan bernilai $J$.
+Berdasarkan 235A,
+
+\Centerline{$\int_F g\,d\mu=\int_{T^{-1}[F]}JgT\,d\mu
+=J\int_{T^{-1}[F]}gT\,d\mu$}
+
+\noindent untuk setiap fungsi terintegralkan $g$ dan himpunan terukur $F$.
+}%end of proof of 263A
+
+\cmmnt{
+\leader{263B}{Catatan} Mungkin saya seharusnya telah memperingatkan Anda bahwa saya
+akan menggunakan hasil-hasil \S235.   Namun, jika hasil-hasil itu masih segar
+dalam ingatan Anda, rumus-rumus dalam pernyataan teorema tentu telah
+mengingatkannya; dan jika tidak, barangkali lebih baik kembali kepada hasil-hasil itu
+sekarang daripada sebelum membaca teorema, karena hasil-hasil itu hanya digunakan dalam
+kalimat terakhir pembuktian.
+
+Saya telah menguraikan argumen di atas dengan santai,
+bahkan mungkin dapat dikatakan sangat perlahan.   Intinya ialah bahwa meskipun
+invariansi ukuran Lebesgue terhadap translasi, dan perilakunya di bawah
+pembesaran sederhana pada satu koordinat, kurang lebih sudah tertanam dalam
+definisinya, perilakunya di bawah rotasi umum tidak demikian, karena suatu
+rotasi membawa interval setengah-terbuka menjadi balok miring.   Tentu saja
+perhitungan ukuran objek semacam itu sebenarnya tidak berkaitan khusus
+dengan teori Lebesgue, dan jelas bahwa sebagian besar argumen ini akan berlaku
+sama baiknya bagi setiap pengertian volume berdimensi $r$ yang wajar secara geometris.
+
+Sekarang kita sampai pada hasil utama bab ini.  Sebagian pekerjaan terperincinya
+telah kita lakukan dalam 262M.   Unsur dasar berikutnya adalah lemma
+di bawah ini.
+}%end of comment
+
+\leader{263C}{Lemma} Misalkan $T$ suatu matriks real $r\times r$;  tetapkan
+$J=|\det T|$.
+Maka untuk setiap $\epsilon>0$ terdapat $\zeta=\zeta(T,\epsilon)>0$ sedemikian
+sehingga
+
+(i) $|\det S-\det T|\le\epsilon$ kapan pun $S$ adalah matriks $r\times r$
+dan $\|S-T\|\le\zeta$;
+
+(ii) kapan pun $D\subseteq\BbbR^r$ merupakan himpunan terbatas dan
+$\phi:D\to\BbbR^r$ adalah fungsi sedemikian sehingga
+$\|\phi(x)-\phi(y)-T(x-y)\|\le\zeta\|x-y\|$ untuk semua $x$, $y\in D$, maka
+$|\mu^*\phi[D]-J\mu^*D|\le\epsilon\mu^*D$.
+
+\proof{{\bf (a)} Tentu saja (i) adalah bagian yang mudah.   Karena
+$\det S$ merupakan fungsi kontinu dari koefisien-koefisien $S$, dan
+koefisien-koefisien $S$ harus dekat dengan koefisien-koefisien $T$ jika $\|S-T\|$
+kecil (262Hb), tentu terdapat $\zeta_0>0$ sedemikian sehingga
+$|\det S-\det T|\le\epsilon$ kapan pun $\|S-T\|\le\zeta_0$.
+
+\medskip
+
+{\bf (b)(i)} Tuliskan $B=B(\tbf{0},1)$ untuk bola satuan dalam $\BbbR^r$, dan
+perhatikan $T[B]$.      Kita tahu bahwa $\mu T[B]=J\mu B$ (263A).    Misalkan
+$G\supseteq T[B]$ suatu himpunan terbuka sedemikian sehingga $\mu G\le (J+\epsilon)\mu B$
+(134Fa sekali lagi).   Karena $B$ kompak (2A2F sekali lagi), $T[B]$ juga kompak, sehingga
+terdapat $\zeta_1>0$ sedemikian sehingga $T[B]+\zeta_1B\subseteq G$ (2A2Ed).
+Ini berarti bahwa $\mu^*(T[B]+\zeta_1B)\le(J+\epsilon)\mu B$.
+
+\medskip
+
+\quad{\bf (ii)}
+Sekarang andaikan bahwa $D\subseteq\BbbR^r$ merupakan himpunan terbatas, dan
+$\phi:D\to\BbbR^r$ adalah fungsi sedemikian sehingga
+$\|\phi(x)-\phi(y)-T(x-y)\|\le\zeta_1\|x-y\|$ untuk semua $x$, $y\in D$.
+Maka jika $x\in D$ dan $\delta>0$,
+
+\Centerline{$\phi[D\cap B(x,\delta)]\subseteq \phi(x) + \delta T[B] +
+\delta\zeta_1B$,}
+
+\noindent karena jika $y\in D\cap B(x,\delta)$ maka $T(y-x)\in\delta
+T[B]$ dan
+
+$$\eqalign{\phi(y)
+&= \phi(x) + T(y-x) + (\phi(y)-\phi(x)-T(y-x))\cr
+&\in\phi(x) + \delta T[B]+\zeta_1\|y-x\|B
+\subseteq\phi(x)+\delta T[B]+\zeta_1\delta B.\cr}$$
+
+\noindent Dengan demikian
+
+$$\eqalign{\mu^*\phi[D\cap B(x,\delta)]
+&\le\mu^*(\delta T[B]+\delta\zeta_1B)
+=\delta^r\mu^*(T[B]+\zeta_1B)\cr
+&\le\delta^r(J+\epsilon)\mu B
+=(J+\epsilon)\mu B(x,\delta).\cr}$$
+
+Misalkan $\eta>0$.   Maka terdapat barisan bola $\sequencen{B_n}$ dalam
+$\BbbR^r$ sedemikian sehingga $D\subseteq\bigcup_{n\in\Bbb N}B_n$,
+$\sum_{n=0}^{\infty}\mu B_n\le\mu^*D+\eta$ dan jumlah ukuran
+bola-bola $B_n$ yang pusatnya tidak berada dalam $D$ paling besar $\eta$ (261F).
+Misalkan $K$ adalah himpunan semua $n$ sedemikian sehingga pusat $B_n$ berada dalam
+$D$.   Maka $\mu^*\phi[D\cap B_n]\le(J+\epsilon)\mu B_n$ untuk setiap
+$n\in K$.    Juga, tentu saja, $\phi$ bersifat Lipschitz dengan konstanta
+$(\|T\|+\zeta_1)$, sehingga $\mu^*\phi[D\cap B_n]\le(\|T\|+\zeta_1)^r\mu B_n$
+untuk $n\in\Bbb N\setminus K$ (262D).   Sekarang
+
+$$\eqalign{\mu^*\phi[D]
+&\le\sum_{n=0}^{\infty}\mu^*\phi[D\cap B_n]\cr
+&\le\sum_{n\in K}(J+\epsilon)\mu B_n
+   +\sum_{n\in\Bbb N\setminus K}(\|T\|+\zeta_1)^r\mu B_n\cr
+&\le(J+\epsilon)(\mu^*D+\eta)+\eta(\|T\|+\zeta_1)^r.\cr}$$
+
+\noindent Karena $\eta$ sebarang,
+
+\Centerline{$\mu^*\phi[D]\le (J+\epsilon)\mu^*D$.}
+
+\medskip
+
+{\bf (c)} Jika $J=0$, kita dapat berhenti di sini dengan menetapkan
+$\zeta=\min(\zeta_0,\zeta_1)$;  sebab saat itu tentu berlaku $|\det S-\det
+T|\le\epsilon$ kapan pun $\|S-T\|\le\zeta$, sedangkan jika $\phi:D\to\Bbb
+R^r$ sedemikian sehingga $\|\phi(x)-\phi(y)-T(x-y)\|\le\zeta\|x-y\|$ untuk semua
+$x$, $y\in D$, maka
+
+\Centerline{$|\mu^*\phi[D]-J\mu^*D|=\mu^*\phi[D]\le\epsilon\mu^*D$.}
+
+\noindent Jika $J\ne 0$, masih ada yang harus dilakukan.   Karena $T$ mempunyai
+determinan tak nol, ia mempunyai invers $T^{-1}$, dan $|\det T^{-1}|=J^{-1}$.
+Seperti dalam (b-i) di atas, terdapat $\zeta_2>0$ sedemikian sehingga
+$\mu^*(T^{-1}[B]+\zeta_2B)\le(J^{-1}+\epsilon')\mu B$, dengan
+$\epsilon'=\epsilon/(J(J+\epsilon))$.   Dengan mengulangi (b), kita melihat bahwa jika
+$C\subseteq\Bbb R^r$ terbatas dan $\psi:C\to\BbbR^r$ sedemikian sehingga
+$\|\psi(u)-\psi(v)-T^{-1}(u-v)\|\le\zeta_2\|u-v\|$ untuk semua $u$,
+$v\in C$, maka $\mu^*\psi[C]\le(J^{-1}+\epsilon')\mu^*C$.
+
+Sekarang andaikan bahwa
+$D\subseteq\BbbR^r$ terbatas dan $\phi:D\to\BbbR^r$ sedemikian sehingga
+$\|\phi(x)-\phi(y)-T(x-y)\|\le\zeta_2' \|x-y\|$ untuk semua $x$, $y\in D$,
+dengan $\zeta_2'=\min(\zeta_2,\|T^{-1}\|)/2\|T^{-1}\|^2>0$.   Maka
+
+\Centerline{$\|T^{-1}(\phi(x)-\phi(y))-(x-y)\|
+\le\|T^{-1}\|\zeta_2'\|x-y\|\le\Bover12\|x-y\|$}
+
+\noindent untuk semua $x$, $y\in D$, sehingga $\phi$ harus injektif;  tetapkan
+$C=\phi[D]$ dan $\psi=\phi^{-1}:C\to D$.   Perhatikan bahwa $C$ terbatas,
+karena
+
+\Centerline{$\|\phi(x)-\phi(y)\|\le(\|T\|+\zeta_2')\|x-y\|$}
+
+\noindent kapan pun $x$, $y\in D$.   Juga
+
+\Centerline{$\|T^{-1}(u-v)-(\psi(u)-\psi(v))\|
+\le\|T^{-1}\|\zeta_2'\|\psi(u)-\psi(v)\|\le\Bover12\|\psi(u)-\psi(v)\|$}
+
+\noindent untuk semua $u$, $v\in C$.   Namun ini berarti bahwa
+
+\Centerline{$\|\psi(u)-\psi(v)\|-\|T^{-1}\|\|u-v\|
+\le\Bover12\|\psi(u)-\psi(v)\|$}
+
+\noindent dan $\|\psi(u)-\psi(v)\|\le 2\|T^{-1}\|\|u-v\|$ untuk semua $u$,
+$v\in C$, sehingga
+
+\Centerline{$\|\psi(u)-\psi(v)-T^{-1}(u-v)\|
+\le 2\zeta_2'\|T^{-1}\|^2\|u-v\|\le\zeta_2\|u-v\|$}
+
+\noindent untuk semua $u$, $v\in C$.
+
+Akibatnya
+
+\Centerline{$\mu^*D=\mu^*\psi[C]\le(J^{-1}+\epsilon')\mu^*C
+=(J^{-1}+\epsilon')\mu^*\phi[D]$,}
+
+\noindent dan
+
+\Centerline{$J\mu^*D\le (1+J\epsilon')\mu^*\phi[D]$.}
+
+\medskip
+
+{\bf (d)} Jadi jika kita menetapkan $\zeta=\min(\zeta_0,\zeta_1,\zeta_2')>0$, dan jika
+$D\subseteq\BbbR^r$, $\phi:D\to\BbbR^r$ sedemikian sehingga $D$ terbatas
+dan
+$\|\phi(x)-\phi(y)-T(x-y)\|\le\zeta\|x-y\|$ untuk semua $x$, $y\in D$, kita
+akan mempunyai
+
+\Centerline{$\mu^*\phi[D]\le(J+\epsilon)\mu^*D$,}
+
+\Centerline{$\mu^*\phi[D]\ge J\mu^*D-J\epsilon'\mu^*\phi[D]
+\ge J\mu^*D-J\epsilon'(J+\epsilon)\mu^*D
+= J\mu^*D-\epsilon\mu^*D$,}
+
+\noindent sehingga kita memperoleh rumus yang diperlukan
+
+\Centerline{$|\mu^*\phi[D]-J\mu^*D|\le\epsilon\mu^*D$.}
+}%end of proof of 263C
+
+\leader{263D}{}\cmmnt{ Kita siap untuk teorema ini.
+
+\medskip
+
+\noindent}{\bf Teorema} Misalkan $D\subseteq\BbbR^r$ sebarang himpunan, dan
+$\phi:D\to\BbbR^r$ suatu fungsi yang terdiferensialkan relatif terhadap domainnya
+di setiap titik dalam $D$.   Untuk setiap $x\in D$ misalkan $T(x)$ suatu turunan
+$\phi$ relatif terhadap $D$ di $x$, dan tetapkan $J(x)=|\det T(x)|$.   Maka
+
+\quad (i) $J:D\to\coint{0,\infty}$ merupakan fungsi terukur,
+
+\quad (ii) $\mu^*\phi[D]\le\int_DJ\,d\mu$,
+
+\noindent dengan membolehkan $\infty$ sebagai nilai integral.  Jika $D$
+terukur, maka
+
+\quad (iii) $\phi[D]$ terukur.
+
+\noindent Jika $D$ terukur dan $\phi$ injektif, maka
+
+\quad (iv) $\mu\phi[D]=\int_DJ\,d\mu$,
+
+\quad (v) untuk setiap fungsi bernilai real $g$ yang didefinisikan pada suatu
+himpunan bagian dari $\phi[D]$,
+
+\Centerline{$\int_{\phi[D]}g\,d\mu=\int_{D}J\times g\phi\,d\mu$}
+
+\noindent jika salah satu integral terdefinisi dalam $[-\infty,\infty]$, dengan syarat
+kita menafsirkan $J(x)g(\phi(x))$ sebagai nol ketika $J(x)=0$ dan
+$g(\phi(x))$ tidak terdefinisi.
+
+\proof{{\bf (a)} Untuk melihat bahwa $J$ terukur, gunakan 262P;  fungsi
+$T\mapsto|\det T|$ merupakan fungsi kontinu dari koefisien-koefisien $T$,
+dan koefisien-koefisien $T(x)$ merupakan fungsi-fungsi terukur dari $x$, berdasarkan 262P,
+sehingga $x\mapsto|\det T(x)|$ terukur (121K).   Kita juga tahu bahwa jika
+$D$ terukur, $\phi[D]$ akan terukur, berdasarkan 262Ob.   Dengan demikian (i)
+dan (iii) selesai.
+
+\medskip
+
+{\bf (b)} Untuk sementara, andaikan
+bahwa $D$ terbatas, dan tetapkan $\epsilon>0$.    Untuk matriks-matriks $r\times r$
+$T$, ambil $\zeta(T,\epsilon)>0$ seperti dalam 263C.   Ambil $\sequencen{D_n}$,
+$\sequencen{T_n}$ seperti dalam 262M, sehingga $\sequencen{D_n}$ merupakan
+penutup saling lepas dari $D$ oleh himpunan-himpunan yang terukur relatif dalam $D$, dan setiap
+$T_n$ merupakan matriks $r\times r$ sedemikian sehingga
+
+\Centerline{$\|T(x)-T_n\|\le\zeta(T_n,\epsilon)$ kapan pun $x\in D_n$,}
+
+\Centerline{$\|\phi(x)-\phi(y)-T_n(x-y)\|\le\zeta(T_n,\epsilon)\|x-y\|$
+untuk semua $x$, $y\in D_n$.}
+
+\noindent Maka, dengan menetapkan $J_n=|\det T_n|$, kita mempunyai
+
+\Centerline{$|J(x)-J_n|\le\epsilon$ untuk setiap $x\in D_n$,}
+
+\Centerline{$|\mu^*\phi[D_n]-J_n\mu^*D_n|\le\epsilon\mu^*D_n$,}
+
+\noindent berdasarkan pemilihan $\zeta(T_n,\epsilon)$.   Jadi kita mempunyai
+
+\Centerline{$\int_DJ\,d\mu
+\le\sum_{n=0}^{\infty}J_n\mu^*D_n+\epsilon\mu^*D
+\le\int_DJ\,d\mu+2\epsilon\mu^*D$;}
+
+\noindent di sini saya menggunakan fakta bahwa semua $D_n$ terukur relatif
+dalam $D$, sehingga, khususnya,
+$\mu^*D=\sum_{n=0}^{\infty}\mu^*D_n$.   Selanjutnya,
+
+\Centerline{$\mu^*\phi[D]\le\sum_{n=0}^{\infty}\mu^*\phi[D_n]
+\le\sum_{n=0}^{\infty}J_n\mu^*D_n+\epsilon\mu^*D$.}
+
+\noindent Dengan menggabungkannya,
+
+\Centerline{$\mu^*\phi[D]\le\int_DJ\,d\mu+2\epsilon\mu^*D$.}
+
+Jika $D$ terukur dan $\phi$ injektif, maka semua $D_n$ merupakan
+himpunan-himpunan bagian terukur dari $\BbbR^r$, sehingga semua $\phi[D_n]$ terukur,
+dan himpunan-himpunan itu juga saling lepas.   Dengan demikian
+
+\Centerline{$\int_DJ\,d\mu
+\le\sum_{n=0}^{\infty}J_n\mu D_n+\epsilon\mu D
+\le\sum_{n=0}^{\infty}(\mu\phi[D_n]+\epsilon\mu D_n)+\epsilon\mu D
+=\mu\phi[D]+2\epsilon\mu D$.}
+
+Karena $\epsilon$ sebarang, kita memperoleh
+
+\Centerline{$\mu^*\phi[D]\le\int_DJ\,d\mu$,}
+
+\noindent dan jika $D$ terukur dan $\phi$ injektif,
+
+\Centerline{$\int_DJ\,d\mu\le\mu\phi[D]$;}
+
+\noindent dengan demikian kita memperoleh (ii) dan (iv), dengan asumsi bahwa $D$
+terbatas.
+
+\medskip
+
+{\bf (c)} Untuk himpunan umum $D$, tetapkan $B_k=B(\tbf{0},k)$;  maka
+
+\Centerline{$\mu^*\phi[D]=\lim_{k\to\infty}\mu^*\phi[D\cap B_k]
+\le\lim_{k\to\infty}\int_{D\cap B_k}J\,d\mu
+=\int_DJ\,d\mu$,}
+
+\noindent dengan kesamaan jika $\phi$ injektif dan $D$ terukur.
+
+\medskip
+
+{\bf (d)} Untuk bagian (v), saya hendak menunjukkan bahwa
+hipotesis-hipotesis 235J terpenuhi, dengan mengambil $X=D$ dan $Y=\phi[D]$.   \Prf\
+Tetapkan $G=\{x:x\in D,\,J(x)>0\}$.
+
+\medskip
+
+\quad\grheada\ Jika $F\subseteq\phi[D]$ terukur, maka terdapat
+himpunan-himpunan Borel $F_1$, $F_2$ sedemikian sehingga
+$F_1\subseteq F\subseteq F_2$ dan $\mu(F_2\setminus F_1)=0$.   Tetapkan
+$E_j=\phi^{-1}[F_j]$ untuk setiap $j$, sehingga
+$E_1\subseteq \phi^{-1}[F]\subseteq E_2$, dan kedua himpunan $E_j$
+terukur,
+karena $\phi$ dan $\dom\phi$ terukur.   Sekarang, dengan menerapkan (iv) pada
+$\phi\restr E_j$,
+
+\Centerline{$\int_{E_j}J\,d\mu=\mu\phi[E_j]=\mu(F_j\cap\phi[D])=\mu F$}
+
+\noindent untuk kedua $j$, sehingga $\int_{E_2\setminus E_1}J\,d\mu=0$ dan $J=0$
+hampir di mana-mana pada $E_2\setminus E_1$.   Dengan demikian
+$J\times\chi(\phi^{-1}[F])\eae J\times\chi E_1$, dan
+$\int J\times\chi(\phi^{-1}[F])d\mu$ ada dan sama dengan
+$\int_{E_1}J\,d\mu=\mu F$.   Pada saat yang sama,
+$(\phi^{-1}[F]\cap G)\symmdiff(E_1\cap G)$ terabaikan, sehingga
+$\phi^{-1}[F]\cap G$ terukur.
+
+\medskip
+
+\quad\grheadb\ Jika $F\subseteq\phi[D]$ dan $G\cap\phi^{-1}[F]$
+terukur, maka kita tahu bahwa $\mu\phi[D\setminus G]=\int_{D\setminus
+G}J=0$ (berdasarkan (iv) yang diterapkan pada $\phi\restr D\setminus G$),
+sehingga $F\setminus\phi[G]$ harus terabaikan;  sedangkan
+$F\cap\phi[G]=\phi[G\cap\phi^{-1}[F]]$ juga terukur, berdasarkan (iii).
+Dengan demikian $F$ terukur kapan pun $G\cap\phi^{-1}[F]$
+terukur.
+
+\medskip
+
+Jadi semua hipotesis 235J terpenuhi.\ \QeD\   Sekarang (v) dapat
+langsung dibaca dari kesimpulan 235J.
+}%end of proof of 263D
+
+\cmmnt{
+\leader{263E}{Catatan (a)} Ini adalah suatu versi hasil klasik mengenai perubahan
+variabel dalam integral berdimensi banyak.   Yang di sini saya sebut $J(x)$ adalah
+{\bf Jacobian} dari $\phi$ di $x$;  ia menggambarkan perubahan volume
+objek-objek di dekat $x$, mengikuti kaidah yang telah ditetapkan dalam 263A bagi
+fungsi-fungsi dengan turunan konstan.   Gagasan
+pembuktiannya juga merupakan gagasan klasik:  memecah himpunan $D$ menjadi
+bagian-bagian $D_m$ yang cukup kecil agar kita dapat menghampiri $\phi$ dengan operator
+afin $y\mapsto \phi(x) + T_{m}(y-x)$ pada masing-masing bagian.   Potensi
+ketakteraturan himpunan $D$, yang dalam teorema ini boleh berupa sebarang himpunan,
+diimbangi oleh kebebasan yang bersesuaian dalam
+memilih himpunan-himpunan $D_m$.   Sesungguhnya terdapat dekomposisi lebih lanjut atas
+himpunan-himpunan $D_m$ yang tersembunyi dalam bagian (b-ii) pembuktian 263C;  setiap $D_m$
+pada hakikatnya ditutupi oleh suatu keluarga bola yang saling lepas, dan ukuran
+citranya dapat kita taksir dengan ketelitian yang memadai.   Selalu ada bahaya
+munculnya himpunan pengecualian yang terabaikan, dan kita memerlukan pertaksamaan kasar
+dalam pembuktian 262D untuk menanganinya.
+
+\header{263Eb}{\bf (b)} Di sepanjang pekerjaan dalam bab ini, dari 261B
+sampai 263D, saya telah memilih
+bola-bola $B(x,\delta)$ sebagai bentuk dasar yang digunakan.   Kiranya jelas
+bahwa sebenarnya sebarang bentuk yang wajar juga akan sama baiknya.    Khususnya,
+bentuk-bentuk yang disebut bola
+
+\Centerline{$B_1(x,\delta)
+=\{y:\sum_{i=1}^r|\eta_i-\xi_i|\le\delta\}$,\quad
+$B_{\infty}(x,\delta)=\{y:|\eta_i-\xi_i|\le\delta\Forall
+i\}$}
+
+\noindent akan berfungsi dengan sempurna.   Ada banyak alternatif.   Kita
+dapat menggunakan himpunan berbentuk $C(x,k)$, untuk $x\in\BbbR^r$ dan
+$k\in\Bbb N$, yang didefinisikan sebagai kubus setengah-terbuka berbentuk
+$\coint{2^{-k}z,2^{-k}(z+\tbf{1})}$ dengan $z\in\Bbb Z^r$ yang memuat $x$,
+sebagai gantinya;  atau bahkan $C'(x,\delta)=\coint{x,x+\delta\tbf{1}}$.   Dalam semua
+kasus semacam ini kita mempunyai versi teorema kepadatan (261Yb-261Yc) yang
+mendukung teori selanjutnya.
+
+
+\header{263Ec}{\bf (c)} Saya telah menyajikan 263D sebagai teorema mengenai
+fungsi-fungsi terdiferensialkan, karena itulah bentuk normal penggunaannya dalam
+penerapan elementer.   Namun, pembuktiannya pada hakikatnya bergantung pada
+fakta bahwa fungsi terdiferensialkan merupakan gabungan terhitung dari fungsi-fungsi Lipschitz,
+dan 263D akan langsung mengikuti dari teorema yang sama
+yang dibuktikan hanya untuk fungsi-fungsi Lipschitz.   Faktanya, teorema ini
+berlaku bagi {\it sebarang} gabungan terhitung dari fungsi-fungsi Lipschitz,
+karena fungsi Lipschitz terdiferensialkan hampir di mana-mana.   Untuk
+pekerjaan yang lebih lanjut (lihat {\smc Federer 69} atau {\smc Evans \& Gariepy 92},
+atau Bab 47 dalam Jilid 4), tampaknya jelas bahwa fungsi-fungsi Lipschitz
+merupakan objek yang penting, sehingga saya nyatakan hasilnya secara lengkap.
+}%end of comment
+
+\leader{*263F}{Akibat} Misalkan $D\subseteq\BbbR^r$ sebarang himpunan dan
+$\phi:D\to\BbbR^r$ suatu fungsi Lipschitz.   Misalkan $D_1$ adalah himpunan
+titik-titik tempat $\phi$ mempunyai turunan relatif terhadap $D$, dan untuk setiap
+$x\in D_1$ misalkan $T(x)$ turunan semacam itu, dengan $J(x)=|\det T(x)|$.
+Maka
+
+\quad (i) $D\setminus D_1$ terabaikan;
+
+\quad (ii) $J:D_1\to\coint{0,\infty}$ terukur;
+
+\quad (iii) $\mu^*\phi[D]\le\int_DJ(x)dx$.
+
+\noindent Jika $D$ terukur, maka
+
+\quad (iv) $\phi[D]$ terukur.
+
+\noindent Jika $D$ terukur dan $\phi$ injektif, maka
+
+\quad (v) $\mu\phi[D]=\int_DJ\,d\mu$,
+
+\quad (vi) untuk setiap fungsi bernilai real $g$ yang didefinisikan pada suatu
+himpunan bagian dari $\phi[D]$,
+
+\Centerline{$\int_{\phi[D]}g\,d\mu=\int_{D}J\times g\phi\,d\mu$}
+
+\noindent jika salah satu integral terdefinisi dalam $[-\infty,\infty]$, dengan syarat
+kita menafsirkan $J(x)g(\phi(x))$ sebagai nol ketika $J(x)=0$ dan
+$g(\phi(x))$ tidak terdefinisi.
+
+\proof{ Ini sekarang cukup dengan menggabungkan 262Q dan 263D,
+dengan sedikit bantuan dari 262D.   Gunakan 262Q untuk menunjukkan bahwa
+$D\setminus D_1$ terabaikan, 262D untuk menunjukkan bahwa $\phi[D\setminus D_1]$
+terabaikan, dan terapkan 263D pada $\phi\restr D_1$.
+}%end of proof of 263F
+
+\dvro{\leader{263G}{Proposisi}
+$\int_{-\infty}^{\infty}e^{-t^2/2}dt=\sqrt{2\pi}$.}
+{\leader{263G}{Koordinat polar pada bidang} Saya berikan suatu contoh elementer
+dengan akibat yang berguna.   Definisikan $\phi:\BbbR^2\to\BbbR^2$
+dengan menetapkan $\phi(\rho,\theta)=(\rho\cos\theta,\rho\sin\theta)$ untuk
+$\rho$, $\theta\in\BbbR$.   Maka $\phi'(\rho,\theta)
+=\Matrix{\cos\theta&-\rho\sin\theta\\ \sin\theta&\rho\cos\theta}$, sehingga
+$J(\rho,\theta)=|\rho|$ untuk semua $\rho$, $\theta$.   Tentu saja $\phi$ tidak
+injektif, tetapi jika kita membatasinya pada domain
+$D=\{(0,0)\}\cup\{(\rho,\theta):\rho>0,\,-\pi<\theta\le\pi\}$ maka
+$\phi\restr D$ adalah bijeksi antara $D$ dan $\BbbR^2$, dan
+
+\Centerline{$\int g\,d\xi_1d\xi_2=\int_Dg(\phi(\rho,\theta))\rho\,d\rho
+d\theta$}
+
+\noindent untuk setiap fungsi bernilai real $g$ yang terintegralkan pada
+$\BbbR^2$.
+
+Andaikan, khususnya, bahwa kita menetapkan
+
+\Centerline{$g(x)=e^{-\|x\|^2/2}
+=e^{-\xi_1^2/2}e^{-\xi_2^2/2}$}
+
+\noindent untuk $x=(\xi_1,\xi_2)\in\Bbb R^2$.   Maka
+
+\Centerline{$\int g(x)dx=\int e^{-\xi_1^2/2}d\xi_1
+\int e^{-\xi_2^2/2}d\xi_2$,}
+
+\noindent seperti dalam 253D.   Dengan menetapkan $I=\int e^{-t^2/2}dt$, kita mempunyai
+$\int g=I^2$.   (Untuk melihat bahwa $I$ terdefinisi dengan baik dalam $\Bbb R$, perhatikan
+bahwa integrannya kontinu, sehingga terukur, dan bahwa
+
+\Centerline{$\int_{-1}^1e^{-t^2/2}dt\le 2$,}
+
+\Centerline{$\int_{-\infty}^{-1}e^{-t^2/2}dt
+=\int_1^{\infty}e^{-t^2/2}dt
+\le\int_1^{\infty}e^{-t/2}dt
+=\lim_{a\to\infty}\int_1^ae^{-t/2}dt
+=2e^{-1/2}$}
+
+\noindent keduanya berhingga.)   Sekarang, dengan memperhatikan bentuk alternatif, kita
+memperoleh
+
+$$\eqalignno{I^2
+&=\int g(x)dx
+=\int_Dg(\rho\cos\theta,\rho\sin\theta)\rho\,d(\rho,\theta)\cr
+&=\int_De^{-\rho^2/2}\rho\,d(\rho,\theta)
+=\int_0^{\infty}\int_{-\pi}^{\pi}\rho e^{-\rho^2/2}d\theta d\rho\cr
+\noalign{\noindent (dengan mengabaikan titik $(0,0)$, yang berukuran nol)}
+&=\int_0^{\infty}2\pi\rho e^{-\rho^2/2}d\rho
+=2\pi\lim_{a\to\infty}\int_0^a\rho e^{-\rho^2/2}d\rho\cr
+&=2\pi\lim_{a\to\infty}(-e^{-a^2/2}+1)
+=2\pi.\cr}$$
+
+\noindent Akibatnya
+
+\Centerline{$\int_{-\infty}^{\infty}e^{-t^2/2}dt=I=\sqrt{2\pi}$,}
+
+\noindent yang merupakan salah satu dari banyak fakta yang seharusnya diketahui setiap
+matematikawan, dan khususnya sangat penting bagi Bab 27 di bawah.
+}%end of dvro
+
+\leader{263H}{Akibat} Jika $k\in\Bbb N$ ganjil,
+
+\Centerline{$\int_{-\infty}^{\infty}x^ke^{-x^2/2}dx=0$;}
+
+\noindent jika $k=2l\in\Bbb N$ genap, maka
+
+\Centerline{$\int_{-\infty}^{\infty}x^ke^{-x^2/2}dx
+=\Bover{(2l)!}{2^ll!}\sqrt{2\pi}$.}
+
+\proof{{\bf (a)} Untuk melihat bahwa semua integral terdefinisi dengan baik dan
+berhingga, perhatikan bahwa
+$\lim_{x\to\pm\infty}x^ke^{-x^2/4}=0$, sehingga
+$M_k=\sup_{x\in\Bbb R}|x^ke^{-x^2/4}|$ berhingga, dan
+
+\Centerline{$\int_{-\infty}^{\infty}|x^ke^{-x^2/2}|dx
+\le M_k\int_{-\infty}^{\infty}e^{-x^2/4}dx<\infty$.}
+
+\medskip
+
+{\bf (b)} Jika $k$ ganjil, maka dengan substitusi $y=-x$ kita memperoleh
+
+\Centerline{$\int_{-\infty}^{\infty}x^ke^{-x^2/2}dx
+=-\int_{-\infty}^{\infty}y^ke^{-y^2/2}dy$,}
+
+\noindent sehingga kedua integral harus nol.
+
+\medskip
+
+{\bf (c)} Untuk $k$ genap, lanjutkan dengan induksi.   Tetapkan
+$I_l=\int_{-\infty}^{\infty}x^{2l}e^{-x^2/2}dx$.
+$I_0=\sqrt{2\pi}=\bover{0!}{2^00!}\sqrt{2\pi}$ berdasarkan 263G.   Untuk
+langkah induksi menuju $l+1\ge 1$, lakukan integrasi parsial untuk melihat bahwa
+
+\Centerline{$\int_{-a}^ax^{2l+1}\cdot xe^{-x^2/2}dx
+=-a^{2l+1}e^{-a^2/2}+(-a)^{2l+1}e^{-a^2/2}
+  +\int_{-a}^a(2l+1)x^{2l}e^{-x^2/2}dx$}
+
+\noindent untuk setiap $a\ge 0$.   Dengan membiarkan $a\to\infty$,
+
+\Centerline{$I_{l+1}=(2l+1)I_l$.}
+
+\noindent Karena
+
+\Centerline{$\Bover{(2(l+1))!}{2^{l+1}(l+1)!}\sqrt{2\pi}
+=(2l+1)\Bover{(2l)!}{2^ll!}\sqrt{2\pi}$,}
+
+\noindent induksi berlanjut.
+}%end of proof of 263H
+
+\leader{263I}{}\cmmnt{ Berikut ini adalah versi 263D untuk transformasi
+yang tidak injektif.
+
+\medskip
+
+\noindent}{\bf Teorema}\dvAnew{2013}
+Misalkan $D\subseteq\BbbR^r$ suatu himpunan terukur, dan
+$\phi:D\to\BbbR^r$ suatu fungsi yang terdiferensialkan relatif terhadap domainnya di
+setiap titik dalam $D$.   Untuk setiap $x\in D$ misalkan $T(x)$ suatu turunan
+$\phi$ relatif terhadap $D$ di $x$, dan tetapkan $J(x)=|\det T(x)|$.
+
+(a) Misalkan $\nu$ adalah ukuran cacah pada $\BbbR^r$.   Maka
+$\int_{\BbbR^r}\nu(\phi^{-1}[\{y\}])dy$ dan
+$\int_DJ\,d\mu$ terdefinisi dalam $[0,\infty]$ dan bernilai sama.
+
+(b) Misalkan $g$ suatu fungsi bernilai real yang didefinisikan pada suatu himpunan
+bagian dari $\phi[D]$
+sedemikian sehingga $\int_Dg(\phi(x))\det T(x)dx$ terdefinisi dalam $\Bbb R$,
+dengan menafsirkan $g(\phi(x))\det T(x)$ sebagai nol ketika $\det T(x)=0$ dan
+$g(\phi(x))$ tidak terdefinisi.   Tetapkan
+
+\Centerline{$C=\{y:y\in\phi[D]$, $\phi^{-1}[\{y\}]$ berhingga$\}$,
+\quad$R(y)=\sum_{x\in\phi^{-1}[\{y\}]}\sgn\det T(x)$}
+
+\noindent untuk $y\in C$, dengan $\sgn(0)=0$ dan
+$\sgn(\alpha)=\Bover{\alpha}{|\alpha|}$ untuk $\alpha$ tak nol.
+Jika kita menafsirkan $g(y)R(y)$ sebagai nol ketika $g(y)=0$ dan $R(y)$ tidak terdefinisi,
+maka $\int_{\phi[D]}g\times R\,d\mu$ terdefinisi dan sama dengan
+$\int_Dg(\phi(x))\det T(x)dx$.
+
+\proof{{\bf (a)} Berdasarkan 263D(i), $J$ terukur, sehingga
+$\int_DJ\,d\mu$ terdefinisi dalam $[0,\infty]$ dan
+$D_0=\{x:x\in D$, $J(x)=0\}$ terukur.   Dengan menerapkan 263D(ii) pada
+$\phi\restr D_0$, kita melihat bahwa $\phi[D_0]$ terabaikan.
+
+Dengan menerapkan 262M pada $\phi\restr D\setminus D_0$,
+himpunan $A$ dari matriks-matriks $r\times r$ nonsingular dan
+$\zeta(S)=\bover1{2\|S^{-1}\|}$ untuk $S\in A$,
+kita memperoleh partisi $\sequencen{E_n}$ atas $D\setminus D_0$ menjadi himpunan-himpunan
+terukur dan barisan $\sequencen{T_n}$ dalam $A$ sedemikian sehingga
+
+\Centerline{$\|\phi(x)-\phi(y)-T_n(x-y)\|\le\Bover1{2\|T_n^{-1}\|}\|x-y\|$,
+\quad$\|T(x)-T_n\|\le\Bover1{2\|T_n^{-1}\|}$}
+
+\noindent kapan pun
+$n\in\Bbb N$ dan $x$, $y\in E_n$.   Dalam hal ini, untuk $x$, $y\in E_n$,
+
+\Centerline{$\phi(x)=\phi(y)
+\,\Longrightarrow\,\|x-y\|\le\|T_n^{-1}\|\|T_n(x-y)\|
+\le\Bover12\|x-y\|
+\,\Longrightarrow\, x=y$,}
+
+\noindent sehingga $\phi\restr E_n$ injektif, untuk setiap $n$.
+Akibatnya
+$\#(\phi^{-1}[\{y\}])=\#(\{n:y\in\phi[E_n]\})$ untuk
+$y\in\phi[D]\setminus\phi[D_0]$, dan
+
+$$\eqalignno{\int_{\phi[D]}\nu(\phi^{-1}[\{y\}])dy
+&=\int_{\phi[D]\setminus\phi[D_0]}\nu(\phi^{-1}[\{y\}])dy
+=\sum_{n=0}^{\infty}\mu(\phi[E_n]\setminus\phi[D_0])\cr
+\displaycause{dengan menerapkan 263D(iii) pada $\phi\restr E_n$, kita tahu bahwa
+$\phi[E_n]$ terukur untuk setiap $n$}
+&=\sum_{n=0}^{\infty}\mu\phi[E_n]
+=\sum_{n=0}^{\infty}\int_{E_n}J\cr
+\displaycause{dengan menerapkan 263D(iv) pada $\phi\restr E_n$}
+&=\int_{D\setminus D_0}J
+=\int_DJ,\cr}$$
+
+\noindent dengan setiap jumlah atau integral terdefinisi dalam $[0,\infty]$ karena
+yang berikutnya demikian.
+
+\medskip
+
+{\bf (b)(i)} Dengan menetapkan $D'=\phi^{-1}[\dom g]$, kita melihat bahwa
+$D\setminus(D_0\cup D')$ terabaikan, sehingga (dengan menggunakan 263D(ii) lagi)
+
+\Centerline{$\phi[D]\setminus\dom g=\phi[D]\setminus\phi[D']
+\subseteq\phi[D_0]\cup\phi[D\setminus(D_0\cup D')]$}
+
+\noindent terabaikan.   Selanjutnya, jika kita menetapkan
+$C'=C\cup g^{-1}[\{0\}]$, $\phi[D]\setminus C'$ terabaikan.
+\Prf\ Untuk setiap $m\in\Bbb N$, tetapkan
+$F_m=\{y:y\in\dom g$, $|g(y)|\ge 2^{-m}\}$.   Maka
+
+\Centerline{$\phi^{-1}[F_m]\setminus D_0=\{x:x\in D$, $J(x)\ne 0$,
+   $g(\phi(x))$ terdefinisi dan $|g(\phi(x))|\ge 2^{-m}\}$}
+
+\noindent terukur (karena $J\times g\phi$ terukur) dan
+(dengan menerapkan (a) pada $\phi\restr\phi^{-1}[F_m]$)
+
+\Centerline{$\int_{F_m}\nu(\phi^{-1}[\{y\}])dy
+=\int_{\phi^{-1}[F_m]}J\,d\mu
+\le 2^m\int_{\phi^{-1}[F_m]}|J\times g(\phi)|\,d\mu$}
+
+\noindent berhingga.   Namun ini berarti bahwa $\nu(\phi^{-1}[\{y\}])$ harus
+berhingga untuk hampir setiap $y\in F_m$, yakni, bahwa $F_m\setminus C$
+terabaikan.   Karena $m$ sebarang, $\dom g\setminus C'$ dan
+$\phi[D]\setminus C'$ terabaikan.\ \Qed
+
+\medskip
+
+\quad{\bf (ii)} Dengan mengambil $\sequencen{E_n}$ dan $\sequencen{T_n}$ seperti dalam (a),
+tetapkan $\epsilon_n=\sgn\det T_n\in\{-1,1\}$ untuk setiap $n$.   Maka
+$\sgn\det T(x)=\epsilon_n$ kapan pun $n\in\Bbb N$ dan $x\in E_n$.   \Prf\
+Untuk setiap $\alpha\in[0,1]$,
+
+\Centerline{$\|(\alpha T(x)+(1-\alpha)T_n)-T_n\|
+\le\|T(x)-T_n\|\le\Bover1{2\|T_n^{-1}\|}$,}
+
+\noindent sehingga (dengan menggunakan 2A4Fd)
+$\|T_n^{-1}(\alpha T(x)+(1-\alpha)T_n)-I_r\|\le\Bover12$,
+dengan $I_r$ matriks identitas $r\times r$,
+dan $\alpha T(x)+(1-\alpha)T_n$ nonsingular
+(sebab jika $(\alpha T(x)+(1-\alpha)T_n)z=0$, maka
+$\|z\|\le\bover12\|z\|$).   Dengan demikian $\det(\alpha T(x)+(1-\alpha)T_n)$
+tak nol untuk $0\le\alpha\le 1$.   Namun karena
+$\alpha\mapsto\det(\alpha T(x)+(1-\alpha)T_n)$ kontinu,
+$\epsilon_n=\sgn\det T_n=\sgn\det T(x)$.\ \Qed
+
+\medskip
+
+\quad{\bf (iii)} Sekarang
+
+$$\eqalignno{\int_Dg(\phi(x))\det T(x)\,dx
+&=\int_{D\setminus D_0}g(\phi(x))\det T(x)\,dx\cr
+&=\sum_{n=0}^{\infty}\int_{E_n}g(\phi(x))\det T(x)\,dx\cr
+\displaycause{dalam rangkaian rumus ini, setiap jumlah dan integral
+terdefinisi dengan baik karena yang sebelumnya demikian}
+&=\sum_{n=0}^{\infty}\epsilon_n\int_{E_n}g(\phi(x))J(x)\,dx
+=\sum_{n=0}^{\infty}\epsilon_n\int_{\phi[E_n]}g\,dx\cr
+&=\sum_{n=0}^{\infty}\epsilon_n\int_{\phi[E_n]\cap C'}g\,dx
+=\sum_{n=0}^{\infty}\epsilon_n\int_{C'}g\times\chi(\phi[E_n])\,dx\cr}$$
+
+\noindent (gunakan 131Fa, jika Anda mau, untuk langkah terakhir).
+Karena kita juga mempunyai
+
+\Centerline{$\infty
+>\int_D|g(\phi(x))\det T(x)|\,dx
+=\sum_{n=0}^{\infty}\int_{C'}|g|\times\chi(\phi[E_n])\,dx$}
+
+\noindent (dengan melalui tahap-tahap yang sama menggunakan nilai mutlak
+integran), kita mempunyai
+
+$$\eqalignno{\int_Dg(\phi(x))\det T(x)\,dx
+&=\sum_{n=0}^{\infty}\epsilon_n\int_{C'}g\times\chi(\phi[E_n])\,dx\cr
+&=\int_{C'}g\times\sum_{n=0}^{\infty}\epsilon_n\chi(\phi[E_n])\,dx\cr
+&=\int_{C'\setminus\phi[D_0]}
+   g\times\sum_{n=0}^{\infty}\epsilon_n\chi(\phi[E_n])\,dx
+=\int_{C'\setminus\phi[D_0]}g\times R\,d\mu\cr
+\displaycause{karena jika $y\in C'\setminus\phi[D_0]$, $g(y)=0$ atau
+$R(y)$ terdefinisi dan sama dengan
+$\sum_{n=0}^{\infty}\epsilon_n\chi(\phi[E_n])(y)$}
+&=\int_{\phi[D]}g\times R\,d\mu,\cr}$$
+
+\noindent sebagaimana diklaim.
+}%end of proof of 263I
+
+\leader{263J}{Kasus \dvrocolon{berdimensi satu}}\cmmnt{ Pembatasan pada fungsi
+injektif $\phi$ dalam 263D(v) tidak dapat dihindari dalam konteks hasil
+tersebut.   Namun, dalam substitusi kalkulus elementer, pembatasan ini tidak
+selalu perlu.   Dengan harapan memperjelas keadaan, di sini saya berikan
+suatu hasil yang mencakup banyak kiat standar.
+
+\medskip
+
+\noindent}{\bf Proposisi}
+Misalkan $I\subseteq\Bbb R$ suatu interval dengan lebih dari
+satu titik, dan $\phi:I\to\Bbb R$ suatu fungsi yang kontinu mutlak
+pada setiap subinterval tertutup terbatas dari $I$.   Tuliskan $u=\inf I$,
+$u'=\sup I$ dalam
+$[-\infty,\infty]$, dan andaikan bahwa $v=\lim_{x\downarrow u}\phi(x)$ dan
+$v'=\lim_{x\uparrow u'}\phi(x)$ terdefinisi dalam $[-\infty,\infty]$.   Misalkan
+$g$ suatu fungsi real sedemikian sehingga
+$\int_Ig(\phi(x))\phi'(x)dx$ terdefinisi,
+dengan ketentuan bahwa kita menafsirkan $g(\phi(x))\phi'(x)$ sebagai $0$ ketika
+$\phi'(x)=0$ dan $g(\phi(x))$ tidak terdefinisi.   Maka
+$\int_v^{v'}g$ terdefinisi dan sama dengan $\int_Ig(\phi(x))\phi'(x)dx$, dengan
+di sini $\int_v^{v'}g$ ditafsirkan sebagai $-\int_{v'}^vg$ jika
+$v'<v$.
+
+\proof{{\bf (a)} $\phi$ terdiferensialkan hampir di mana-mana
+pada $I$ dan $\phi[A]$ terabaikan untuk setiap himpunan terabaikan
+$A\subseteq I$.   \Prf\ Kita dapat menyatakan $I$ sebagai gabungan suatu
+barisan $\sequencen{I_n}$ dari interval-interval tertutup terbatas sedemikian sehingga
+$\phi\restr I_n$ kontinu mutlak untuk setiap $n$.   Berdasarkan
+225Cb dan 225G, $\phi\restr I_n$ terdiferensialkan hampir di mana-mana
+pada $I_n$ dan $\phi[A]$ terabaikan untuk setiap himpunan terabaikan
+$A\subseteq I_n$, untuk setiap $n$.   Jadi
+$\phi$ terdiferensialkan hampir di mana-mana
+pada $\bigcup_{n\in\Bbb N}I_n=I$ dan
+$\phi[A]=\bigcup_{n\in\Bbb N}\phi[A\cap I_n]$ terabaikan untuk setiap himpunan
+terabaikan $A\subseteq I$.\ \Qed
+
+Karena $\phi\restr J$ kontinu untuk setiap interval tertutup
+$J\subseteq I$, $\phi$ kontinu.   Berdasarkan Teorema Nilai Antara,
+$\phi[I]$ merupakan interval yang memuat $\ooint{\min(v,v'),\max(v,v')}$.
+
+\medskip
+
+{\bf (b)} Misalkan $D\subseteq I$ adalah domain $\phi'$.   Untuk $x\in D$,
+kita dapat memandang $\phi'(x)$ sebagai matriks $1\times 1$ dengan determinan
+$\phi'(x)$.   Karena $I\setminus D$ terabaikan,
+$\phi[I]\setminus\phi[D]\subseteq\phi[I\setminus D]$ terabaikan.
+Sekarang $\int_Dg(\phi(x))\phi'(x)dx=\int_Ig(\phi(x))\phi'(x)dx$.
+Dengan menerapkan 263I pada $\phi\restr D$ dan $g\restr\phi[D]$, kita melihat bahwa
+$\int_{\phi[D]}g\times R$ terdefinisi dan sama dengan
+$\int_Dg\phi\times\phi'$, dengan
+$R(y)=\sum_{x\in D\cap\phi^{-1}[\{y\}]}\sgn\phi'(x)$ kapan pun
+$y\in\phi[D]$ dan $D\cap\phi^{-1}[\{y\}]$ berhingga.
+
+\medskip
+
+{\bf (c)} (Langkah kunci.) Tetapkan $D_0=\{x:x\in D$, $\phi'(x)=0\}$.   Berdasarkan
+263D(ii), yang diterapkan pada $\phi\restr D_0$, $\phi[D_0]$ terabaikan.
+Tetapkan
+
+\Centerline{$C=\{y:y\in\phi[D]\cap\dom g\setminus(\phi[D_0]\cup\{v,v'\})$,
+$\phi^{-1}[\{y\}]$ berhingga, $g(y)\ne 0\}$.}
+
+\noindent Jika $y\in C$ dan $K=\phi^{-1}[\{y\}]$, maka
+
+$$\eqalign{R(y)
+=\sum_{x\in K}\sgn\phi'(x)
+&=1\text{ jika }v<y<v',\cr
+&=-1\text{ jika }v'<y<v,\cr
+&=0\text{ selain itu}.\cr}$$
+
+\noindent\Prf\
+Jika $J\subseteq I\setminus K$ suatu interval, $\phi(z)\ne y$ untuk
+$z\in J$;  karena $\phi$ kontinu, Teorema Nilai Antara
+memberi tahu kita bahwa $\sgn(\phi(z)-y)$ konstan pada $J$.
+Juga $\phi'(x)\ne 0$ untuk setiap $x\in K$, karena $y\notin\phi[D_0]$.
+Induksi sederhana
+atas $\#(K\cap\ooint{-\infty,z})$ menunjukkan bahwa
+$\sgn(\phi(z)-y)=\sgn(v-y)+2\sum_{x\in K,x<z}\sgn\phi'(x)$ untuk setiap
+$z\in I\setminus K$;  dengan mengambil limit ketika $z\uparrow u'$,
+$\sum_{x\in K}\sgn\phi'(x)=\bover12(\sgn(v'-y)-\sgn(v-y))$.
+(Di sini mungkin kita harus menafsirkan $\sgn(\pm\infty)$ sebagai $\pm 1$
+dengan cara yang wajar.)   Ini ternyata tepat seperti yang perlu kita ketahui.\ \Qed
+
+\medskip
+
+{\bf (d)} Jadi sekarang kita mempunyai
+
+$$\eqalign{\int_Ig\phi\times\phi'
+&=\int_Dg\phi\times\phi'
+=\int_{\phi[D]}g\times R\cr
+&=\int_{\phi[D]}g\times R\times\chi C
+=\int_v^{v'}g\times\chi C
+=\int_v^{v'}g\cr}$$
+
+\noindent karena $\phi[D]\setminus(C\cup g^{-1}[\{0\}])$ terabaikan.
+}%end of proof of 263J
+
+\exercises{
+\leader{263X}{Latihan dasar (a)}
+%\spheader 263Xa
+Misalkan $(X,\Sigma,\mu)$ sebarang ruang ukur, $f\in\eusm L^0(\mu)$ dan
+$p\in\coint{1,\infty}$.   Tunjukkan bahwa $f\in\eusm L^p(\mu)$ jika dan hanya jika
+
+\Centerline{$\gamma=p\int_0^{\infty}\alpha^{p-1}
+\mu^*\{x:x\in\dom f,\,|f(x)|>\alpha\}d\alpha$}
+
+\noindent berhingga, dan dalam hal ini $\|f\|_p=\gamma^{1/p}$.
+\Hint{$\int|f|^p=\int_0^{\infty}\mu^*\{x:|f(x)|^p>\beta\}d\beta$, berdasarkan
+252O;  sekarang substitusikan $\beta=\alpha^p$.}
+%263D
+
+\spheader 263Xb Misalkan $f$ suatu fungsi terintegralkan yang didefinisikan hampir
+di mana-mana dalam $\BbbR^r$.   Tunjukkan bahwa jika $\alpha<r-1$ maka
+$\sum_{n=1}^{\infty}n^{\alpha}|f(nx)|$ berhingga untuk hampir setiap
+$x\in\BbbR^r$.   \Hint{Taksirlah
+$\sum_{n=0}^{\infty}n^{\alpha}\int_B|f(nx)|dx$ untuk bola-bola $B$
+yang berpusat di titik asal.}
+%263D
+
+\spheader 263Xc Misalkan $A\subseteq\ooint{0,1}$ suatu himpunan sedemikian sehingga
+$\mu^*A=\mu^*([0,1]\setminus A)=1$, dengan $\mu$ ukuran Lebesgue pada
+$\Bbb R$.   Tetapkan $D=A\cup\{-x:x\in\ooint{0,1}\setminus A\}
+\subseteq[-1,1]$, dan tetapkan $\phi(x)=|x|$ untuk $x\in D$.   Tunjukkan bahwa $\phi$
+injektif, bahwa $\phi$ terdiferensialkan relatif terhadap domainnya
+pada setiap titik dalam $D$, dan bahwa $\mu^*\phi[D]<\int_D|\phi'(x)|dx$.
+%263D
+
+\spheader 263Xd Misalkan $\phi:D\to\BbbR^r$ suatu fungsi yang terdiferensialkan
+relatif terhadap $D$ di setiap titik dari $D\subseteq\BbbR^r$, dan andaikan bahwa
+untuk setiap
+$x\in D$ terdapat turunan nonsingular $T(x)$ dari $\phi$ di $x$.
+Tunjukkan bahwa $D$ dapat dinyatakan sebagai
+$\bigcup_{k\in\Bbb N}D_k$ dengan $D_k=D\cap\overline{D}_k$ dan
+$\phi\restr D_k$ injektif untuk setiap $k$.
+%263D
+
+\sqheader 263Xe(i) Tunjukkan bahwa untuk setiap himpunan terukur Lebesgue
+$E\subseteq\Bbb R$ dan $t\in\Bbb R\setminus\{0\}$,
+$\int_{tE}\bover1{|u|}du=\int_E\bover1{|u|}du$.   (ii) Untuk $t\in\Bbb R$,
+$u\in\Bbb R\setminus\{0\}$ tetapkan $\phi(t,u)=(\bover{t}{u},u)$.   Tunjukkan bahwa
+$\int_{\phi[E]}\bover1{|tu|}d(t,u)=\int_E\bover1{|tu|}d(t,u)$ untuk setiap
+himpunan terukur Lebesgue $E\subseteq\BbbR^2$.
+%263D
+
+\sqheader 263Xf Definisikan $\phi:\BbbR^3\to\BbbR^3$ dengan
+menetapkan
+
+\Centerline{$\phi(\rho,\theta,\alpha)
+=(\rho\sin\theta\sin\alpha,\rho\cos\theta\sin\alpha,\rho\cos\alpha)$.}
+
+\noindent Tunjukkan bahwa $\det\phi'(\rho,\theta,\alpha)=\rho^2\sin\alpha$.
+%263G
+
+\spheader 263Xg Tunjukkan bahwa jika $k=2l+1$ ganjil, maka
+$\int_0^{\infty}x^ke^{-x^2/2}dx=2^ll!$.   (Bandingkan 252Xi.)
+%263H
+
+\leader{263Y}{Latihan lanjutan (a)}
+%\spheader 263Ya
+Definisikan ukuran $\nu$ pada $\Bbb R$ dengan menetapkan
+$\nu E=\int_E\bover1{|x|}dx$ untuk himpunan-himpunan terukur Lebesgue
+$E\subseteq\Bbb R$.   Untuk $f$, $g\in\eusm L^1(\nu)$ tetapkan
+$(f*g)(x)=\int f(\bover{x}{t})g(t)\nu(dt)$ kapan pun ini terdefinisi dalam
+$\Bbb R$.   (i) Tunjukkan bahwa $f*g=g*f\in\eusm L^1(\nu)$.   (ii) Tunjukkan bahwa
+$\int h(x)(f*g)(x)\nu(dx)=\int h(xy)f(x)g(y)\nu(dx)\nu(dy)$ untuk setiap
+$h\in\eusm L^{\infty}(\nu)$.   (iii) Tunjukkan bahwa $f*(g*h)=(f*g)*h$ untuk
+setiap $h\in\eusm L^1(\nu)$.   \Hint{263Xe.}
+%263Xe 263D
+
+\spheader 263Yb Misalkan $E\subseteq\BbbR^2$ suatu himpunan terukur sedemikian sehingga
+$\limsup_{\alpha\to\infty}
+\bover1{\alpha^2}\mu_2(E\cap B(\tbf{0},\alpha))>0$, dengan $\mu_2$ menyatakan
+ukuran Lebesgue pada
+$\BbbR^2$.   Tunjukkan bahwa terdapat $\theta\in\ocint{-\pi,\pi}$ sedemikian sehingga
+$\mu_1E_{\theta}=\infty$, dengan
+$E_{\theta}=\{\rho:\rho\ge 0,\,(\rho\cos\theta,\rho\sin\theta)\in E\}$.
+\Hint{Tunjukkan bahwa $\mu_2(E\cap B(\tbf{0},\alpha))
+\le\alpha\int_{-\pi}^{\pi}\mu_1E_{\theta}d\theta$.}
+Generalisasikan ke dimensi yang lebih tinggi dan ke fungsi-fungsi selain $\chi E$.
+%263G
+
+\spheader 263Yc Misalkan $E\subseteq\BbbR^r$ suatu himpunan terukur,
+dan $\phi:E\to\BbbR^r$ suatu fungsi yang terdiferensialkan relatif terhadap domainnya,
+dengan turunan $T(x)$ di setiap titik $x$ dari $E$;  tetapkan
+$J(x)=|\det T(x)|$.
+Tunjukkan bahwa untuk setiap fungsi terintegralkan $g$ yang didefinisikan pada $\phi[E]$,
+
+\Centerline{$\int g(y)\#(\phi^{-1}[\{y\}])dy
+=\int_EJ(x)g(\phi(x))dx$.}
+%263I
+
+\spheader 263Yd Temukan pembuktian 263J berdasarkan gagasan-gagasan \S225.
+\Hint{225Xe.}
+%263J
+
+\spheader 263Ye Misalkan $f:[a,b]\to\Bbb R$ suatu fungsi bervariasi terbatas,
+dengan $a<b$ dalam $\Bbb R$, dengan dekomposisi Lebesgue
+$f=f_p+f_{cs}+f_{ac}$ seperti dalam 226Cd;  misalkan $\mu$ ukuran Lebesgue pada
+$\Bbb R$.   Tunjukkan bahwa pernyataan-pernyataan berikut ekuivalen:  (i) $f_{cs}$
+konstan;  (ii) $\mu f[\,[c,d]\,]\le\int_c^d|f'|d\mu$ kapan pun
+$a\le c\le d\le b$;   (iii)
+$\mu^*f[A]\le\int_A|f'|d\mu$ untuk setiap $A\subseteq[a,b]$;   (iv) $f[A]$
+terabaikan untuk setiap himpunan terabaikan $A\subseteq[a,b]$.   \Hint{Untuk
+(iv)$\Rightarrow$(i), gabungkan 226Yd dan 263D(ii) untuk menunjukkan bahwa
+$|f(d)-f(c)|\le\int_c^d|f'|d\mu+\Var_{[c,d]}f_p$ kapan pun
+$a\le c\le d\le b$, dan karena itu
+$\Var_{[a,b]}f\le\Var_{[a,b]}f_p+\Var_{[a,b]}f_{ac}$.}
+%263D
+
+\spheader 263Yf\dvAnew{2013} Andaikan $r=2$ dan
+$\phi:\BbbR^2\to\BbbR^2$ terdiferensialkan secara kontinu dengan turunan nonsingular
+$T$ di $\tbf{0}$.   (i) Tunjukkan bahwa terdapat $\epsilon>0$
+sedemikian sehingga kapan pun
+$\Gamma$ suatu lingkaran kecil berpusat di $\tbf{0}$ dengan jari-jari paling besar
+$\epsilon$, maka
+$\phi\restr\Gamma$ adalah homeomorfisme antara $\Gamma$ dan suatu kurva tertutup
+sederhana yang mengelilingi $\tbf{0}$.   (ii) Tunjukkan bahwa jika $\det T>0$, maka
+untuk lingkaran-lingkaran semacam itu $\phi(x)$ bergerak berlawanan arah jarum jam
+mengelilingi $\phi[\Gamma]$ ketika $x$
+bergerak berlawanan arah jarum jam mengelilingi $\Gamma$.   (iii) Apa yang terjadi jika
+$\det T<0$?
+}%end of exercises
+
+\endnotes{
+\Notesheader{263} Sekali lagi, ketika mendekati 263D, saya harus
+memilih antara memberikan hasil yang mudah dipahami tetapi relatif lemah, dan
+mencurahkan upaya tambahan untuk menyajikan teorema yang mendekati
+batas alamiah dari apa yang dapat dicapai dengan konsep-konsep yang sedang
+dikembangkan dalam jilid ini;  dan, seperti biasa, saya memilih bentuk yang lebih
+kuat.   Ada tiga sumber kesulitan utama:  (i) fakta bahwa
+kita menangani lebih dari satu dimensi;  (ii) fakta bahwa
+kita menangani domain yang tidak teratur;   (iii) fakta bahwa
+kita menangani fungsi terintegralkan yang sebarang.   Saya rasa saya tidak perlu
+meminta maaf atas (iii) dalam buku mengenai teori ukuran.   Mengenai (ii),
+memang benar bahwa penerapan utama hasil-hasil ini adalah pada
+kasus-kasus ketika transformasi $\phi$ terdiferensialkan di mana-mana,
+dengan turunan kontinu, dan himpunan $D$ mempunyai batas yang terabaikan;
+dan dalam kasus-kasus ini tersedia penyederhanaan yang berarti --
+terutama karena himpunan-himpunan $D_m$ dalam pembuktian 263D dapat diambil sebagai
+kubus.   Meskipun demikian, menurut saya setiap bentuk hasil yang menggunakan
+asumsi semacam itu sangat tidak memuaskan pada tingkat ini, karena merupakan
+kompromi canggung antara gagasan yang alamiah bagi integral Riemann dan gagasan
+yang alamiah bagi integral Lebesgue.   Mengenai (i), mungkin bahkan tepat untuk
+menguraikan seluruh argumen untuk kasus $r=1$ sebelum
+beralih ke kasus umum, seperti yang saya lakukan dalam \S\S114-115, karena
+kasus berdimensi satu sudah penting dan menarik;  dan jika Anda
+merasa pekerjaan di atas sulit -- dan memang sulit -- sementara minat langsung
+Anda adalah integrasi berdimensi satu melalui substitusi, maka saya kira
+bermanfaat bagi Anda untuk menyusun sendiri argumen $r=1$, sampai pada
+pembuktian 263J.   Sesungguhnya perbedaan terbesar terdapat
+dalam 263A, yang menjadi hampir sepele;  pekerjaan dalam 262M dan 263C
+menjadi lebih mudah dibaca, karena semua matriks berubah menjadi skalar dan kita
+dapat menghilangkan kata "determinan", tetapi menurut saya kita tidak dapat
+meninggalkan satu pun gagasannya, setidaknya jika kita ingin memperoleh 263D
+seperti yang dinyatakan.   (Namun lihat 263Yd.)
+
+Dalam paragraf terakhir saya bersikeras bahwa suatu pembedaan dapat
+dibuat antara "gagasan yang alamiah bagi integral Riemann dan gagasan
+yang alamiah bagi integral Lebesgue".   Di sini kita mendekati pertanyaan yang
+mendalam, seperti "untuk apa buku teori ukuran dibuat?", yang menurut saya
+tidak dapat dijawab tanpa suatu acuan -- mungkin secara tidak sadar --
+kepada pertanyaan "untuk apa matematika dibuat?".   Tentu saja saya
+ingin menyajikan di sini beberapa teorema umum yang mengagumkan yang
+muncul dalam teori Lebesgue.   Namun yang lebih penting daripada teorema tertentu
+mana pun adalah gambaran umum tentang apa yang dapat dibuktikan dengan metode-metode ini.
+Hakikat teori ukuran modern adalah bahwa kontinuitas tidak
+penting, atau, jika Anda lebih suka, bahwa fungsi-fungsi terukur dalam arti tertentu
+begitu mendekati kontinu sehingga kita tidak perlu menambahkan hipotesis
+kontinuitas dalam teorema-teorema kita.   Dalam suatu arti, ini merupakan pembebasan
+besar, dan integral Lebesgue kini menjadi integral standar.   Namun Anda tidak
+boleh menganggap integral Riemann sudah usang.   Intuisi yang melandasinya --
+misalnya, bahwa permukaan suatu benda pejal mempunyai volume nol -- tetap
+sangat bernilai dalam konteks yang tepat, yang tentu mencakup kajian
+fungsi terdiferensialkan dengan turunan kontinu.   Yang saya katakan
+di sini ialah bahwa menurut saya kita dapat menggunakan intuisi tersebut sebaik-baiknya
+jika kita mempertahankan pembagian, tentu saja yang lentur dan dapat ditembus,
+antara gagasan kedua teori itu;  dan bahwa ketika memindahkan suatu teorema
+dari satu sisi batas ke sisi lainnya, kita seharusnya melakukannya
+secara sungguh-sungguh, dengan berusaha mengungkapkan seluruh kekuatan metode yang
+kita gunakan.
+
+Saya telah mengatakan bahwa perbedaan hakiki antara
+kasus berdimensi satu dan berdimensi banyak terletak dalam 263A, tempat Jacobian
+$J=|\det T|$ masuk ke dalam argumen.   Jika perangkat teknis yang diperlukan
+untuk menangani sebarang himpunan terukur Lebesgue disisihkan, hal ini
+merupakan perhitungan volume paralelipipedum $T[I]$
+dengan $I$ interval $\coint{\tbf{0},\tbf{1}}$.   Saya menangani
+hal ini dengan sedikit aljabar, dengan mengatakan bahwa hasilnya pada hakikatnya
+jelas jika $T$ diagonal, sedangkan jika $T$ suatu isometri hasilnya mengikuti
+dari fakta bahwa bola satuan tetap invarian;  dan aljabar digunakan untuk
+menyatakan sebarang matriks sebagai produk matriks diagonal dan ortogonal.
+Dari 261F juga jelas bahwa ukuran Lebesgue
+harus invarian terhadap rotasi maupun terhadap translasi;
+dengan kata lain, ia invarian di bawah semua isometri.   Cara lain memandang
+hal ini akan muncul dalam bagian berikutnya.
+
+Menurut saya pusat argumen untuk 263D terletak dalam lemma
+263C.   Di sinilah kita mengubah hasil eksak untuk operator linear menjadi
+hasil hampiran untuk fungsi yang hampir linear;  dan inti
+keterdiferensialan ialah bahwa fungsi terdiferensialkan dihampiri dengan baik,
+di dekat setiap titik domainnya, oleh operator linear.
+Lemma ini melibatkan dua gagasan yang agak berbeda.   Untuk menunjukkan
+bahwa $\mu^*\phi[D]\le(J+\epsilon)\mu^*D$, pertama-tama kita memperhatikan bola-bola
+dan kemudian menggunakan teorema Vitali untuk melihat bahwa $D$ ditutupi
+secara hemat oleh bola-bola, sehingga batas atas bagi $\mu^*\phi[D]$ dalam
+bentuk jumlah $\sum_{B\in\Cal I_0}\mu^*\phi[D\cap B]$ sudah memadai.
+Untuk memperoleh batas bawah, kita perlu membalik argumen dengan memperhatikan
+$\psi=\phi^{-1}$, yang mengharuskan kita terlebih dahulu memeriksa bahwa $\phi$
+dapat dibalik, lalu bahwa $\psi$ terhubung secara tepat dengan $T^{-1}$.
+Saya telah menuliskan rumus eksak untuk $\epsilon'$, $\zeta_2'$ dan seterusnya,
+tetapi ini hanya untuk berjaga-jaga jika Anda tidak mempercayai intuisi Anda;  fakta bahwa
+$\|\phi^{-1}(u)-\phi^{-1}(v)-T^{-1}(u-v)\|$ kecil dibandingkan dengan
+$\|u-v\|$ jelas merupakan akibat hipotesis bahwa
+$\|\phi(x)-\phi(y)-T(x-y)\|$ kecil dibandingkan dengan $\|x-y\|$.
+
+Argumen 263D sendiri sekarang tinggal memecah himpunan $D$ menjadi
+bagian-bagian yang tepat, yang pada masing-masing bagiannya $\phi$ cukup
+mendekati linear agar 263C dapat diterapkan, sehingga
+
+\Centerline{$\mu^*\phi[D]\le\sum_{m=0}^{\infty}\mu^*\phi[D_m]
+\le\sum_{m=0}^{\infty}(J_m+\epsilon)\mu^*D_m$.}
+
+\noindent Dengan sedikit kehati-hatian (yang dilakukan dalam 263C, dengan syarat (i)),
+kita juga dapat memastikan bahwa Jacobian $J$
+dihampiri dengan baik oleh $J_m$ hampir di mana-mana dalam $D_m$, sehingga
+$\sum_{m=0}^{\infty}J_m\mu^*D_m\bumpeq\int_DJ(x)dx$.
+
+Gagasan-gagasan ini, jika digabungkan dengan hasil-hasil \S262, membawa kita
+pada
+
+\Centerline{$\int_EJ\,d\mu=\mu\phi[E]$}
+
+\noindent ketika $\phi$ injektif dan $E\subseteq D$ terukur.
+Kita memerlukan satu kiat terakhir, yang melibatkan himpunan Borel, untuk
+mengubah ini menjadi
+
+\Centerline{$\int_{\phi^{-1}[F]}J\,d\mu=\mu F$}
+
+\noindent kapan pun $F\subseteq\phi[D]$ terukur, yang merupakan hal yang
+diperlukan untuk penerapan 235J.
+
+Saya berharap Anda sudah lama melihat, dan merasa senang oleh, cara dalam 263G.
+Sekali lagi, ini sebenarnya bukan integrasi Lebesgue;  tetapi saya memasukkannya
+untuk menunjukkan bahwa perangkat bab ini dapat digunakan menangani
+hasil-hasil klasik, dan bahwa sesungguhnya kita memperoleh sedikit keuntungan
+dari jerih payah kita, karena tidak perlu meminta maaf atas batas himpunan
+$D$ yang menjadi sasaran sistem koordinat polar dalam pemetaan bidang.
+Hasil yang sebenarnya telah saya berikan sebagai latihan dalam 252Xi.
+Latihan itu melibatkan (jika Anda mengikuti semua acuannya) substitusi
+berdimensi satu (yang dilakukan dalam 225Xh), teorema Fubini, dan penerapan
+rumus-rumus \S235;  yakni, unsur-unsur yang hampir sama dengan yang digunakan
+di atas, meskipun dalam urutan yang berbeda.   Saya dapat menyajikan ini tanpa
+menyinggung diferensiasi dalam dimensi yang lebih tinggi karena perubahan
+variabel pertama berdimensi satu, dan yang kedua (yang melibatkan fungsi
+$x\mapsto\|x\|$, dalam 252Xi(i)) merupakan jenis yang sangat sederhana, sehingga
+metode lain dapat digunakan untuk menemukan fungsi $J$.
+
+Fungsi $R(y)=\sum_{x\in\phi^{-1}[\{y\}]}\sgn\det T(x)$ dalam 263Ib
+termasuk dalam gagasan geometri diferensial yang lebih mendalam daripada
+yang ingin saya uraikan di sini.   Dalam konteks berdimensi satu, fungsi itu
+hanya menghitung perlintasan naik dan turun pada $y$ (lihat bagian (c)
+pembuktian 263J), karena kita dapat memandang setiap $T(x)$ sebagai skalar
+yang positif atau negatif.   (Relevan di sini bahwa dalam kasus ini kita dapat
+mengandaikan bahwa $T(x)$ nonsingular kapan pun $\phi(x)=y$.)
+Dalam dimensi yang lebih tinggi, saya kira hal pertama yang perlu dicari adalah
+tafsiran geometris bagi $\sgn\det T(x)$.   (Lihat 263Ye.)
+Tafsiran geometris untuk jumlahnya merupakan perkara lain lagi.
+Namun patut diperhatikan bahwa (dengan tafsiran yang wajar bagi
+"0$\times$tidak terdefinisi") kita dapat
+menghubungkan $\int_Dg\phi\times\det\phi'$ dengan $\int_{\phi[D]}g\times R$,
+dengan $R$ dapat didefinisikan dari $\phi$ tanpa mengacu pada $g$;  fungsi itu
+menghitung lipatan dalam grafik $\phi$.
+
+Gagasan abstrak yang menjadi pokok risalah ini memang
+tidak membawa kita kepada banyak contoh khusus untuk melatih gagasan-gagasan
+dalam bagian ini.   Contoh-contoh yang muncul cenderung sangat langsung,
+seperti dalam 263G, 263Xa-263Xb, dan 263Xe.   Saya menyebut yang terakhir
+karena contoh itu memberikan rumus yang diperlukan untuk membahas jenis baru
+konvolusi (263Ya).   Pada hakikatnya, hal ini bergantung pada grup perkalian
+$\Bbb R\setminus\{0\}$ sebagai pengganti grup penjumlahan $\Bbb R$ yang dibahas
+dalam \S255.   Rumus $\bover1x$ dalam definisi $\nu$ tentu saja merupakan
+turunan $\ln x$, dan $\ln$ merupakan isomorfisme antara
+$(\ooint{0,\infty},\cdot,\nu)$ dan $(\Bbb R,+,\text{ukuran Lebesgue})$.
+}%end of notes
+
+\discrpage

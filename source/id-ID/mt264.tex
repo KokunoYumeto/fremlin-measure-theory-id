@@ -1,0 +1,1091 @@
+\frfilename{mt264.tex}
+\versiondate{12.5.03}
+\copyrightdate{1994}
+
+\def\chaptername{Perubahan variabel dalam integral}
+\def\sectionname{Ukuran Hausdorff}
+
+\newsection{264}
+
+Pokok berikutnya yang ingin saya bahas adalah persoalan `ukuran
+permukaan'; contoh yang berguna untuk terus diingat sepanjang bagian ini dan
+bagian berikutnya ialah gagasan luas bagi daerah-daerah pada permukaan bola, tetapi
+setiap permukaan dua dimensi lain yang melengkung mulus dalam ruang tiga
+dimensi juga sama baiknya. Menurut saya, sangatlah masuk akal bahwa konsep
+intuitif kita tentang `luas' permukaan demikian seharusnya bersesuaian dengan
+ukuran yang tepat. Namun, memformalkan intuisi ini tidak sepele, terutama jika
+kita menginginkan keumuman yang diarahkan oleh gagasan geometris sederhana;
+maksud saya, kita tidak berpuas diri dengan argumen yang bergantung pada sifat
+khusus permukaan bola, misalnya, untuk menguraikan luas permukaan bola. Saya membagi
+persoalan ini menjadi dua bagian. Dalam bagian ini saya akan menguraikan suatu
+konstruksi yang memungkinkan kita mendefinisikan ukuran berdimensi $r$ dari
+suatu permukaan berdimensi $r$—di antara hal-hal lain—dalam ruang berdimensi
+$s$. Dalam bagian berikutnya saya akan menyajikan teorema-teorema dasar yang
+memungkinkan ukuran-ukuran ini dihitung secara efektif dalam kasus-kasus utama.
+
+\leader{264A}{Definisi} Misalkan $s\ge 1$ suatu bilangan bulat, dan $r>0$.
+\cmmnt{(Perhatian utama saya adalah $r$ yang bulat,
+tetapi saya tidak akan mensyaratkan hal ini sebelum benar-benar diperlukan,
+sebab ada beberapa gagasan yang sangat menarik yang melibatkan `dimensi'
+tak bulat $r$.)} Untuk sebarang $A\subseteq \BbbR^s$, $\delta>0$, tetapkan
+
+$$\eqalign{\theta_{r\delta}A
+=\inf\{\sum_{n=0}^{\infty}(\diam A_n)^r:\sequencen{A_n}
+&\text{ adalah barisan subhimpunan }\BbbR^s\text{ yang meliput }A,\cr
+&\qquad\qquad\qquad\quad\diam A_n\le\delta\text{ untuk setiap }
+  n\in\Bbb N\}.\cr}$$
+
+\noindent Dalam konteks ini, akan memudahkan jika kita mengatakan bahwa
+$\diam\emptyset=0$.
+Sekarang tetapkan
+
+\Centerline{$\theta_rA=\sup_{\delta>0}\theta_{r\delta}A$;}
+
+\noindent $\theta_r$ adalah {\bf ukuran luar Hausdorff berdimensi $r$} pada
+$\BbbR^s$.
+
+\leader{264B}{}\cmmnt{ Tentu saja kita harus segera memeriksa hal berikut:
+
+\medskip
+
+\noindent}{\bf Lema} $\theta_r$, sebagaimana didefinisikan dalam 264A, selalu
+merupakan ukuran luar.
+
+\proof{ Anda seharusnya sudah terbiasa dengan argumen-argumen ini, tetapi
+terdapat satu langkah tambahan dalam argumen ini, jadi saya menguraikan
+rinciannya.
+
+\medskip
+
+{\bf (a)} Dengan menafsirkan diameter himpunan kosong sebagai $0$, kita
+mempunyai $\theta_{r\delta}\emptyset=0$ untuk setiap $\delta>0$, sehingga
+$\theta_r\emptyset=0$.
+
+\medskip
+
+{\bf (b)} Jika $A\subseteq B\subseteq\BbbR^s$, maka setiap barisan yang
+meliput $B$ juga meliput $A$, sehingga
+$\theta_{r\delta}A\le\theta_{r\delta}B$ untuk setiap $\delta$ dan
+$\theta_rA\le\theta_rB$.
+
+\medskip
+
+{\bf (c)} Misalkan $\sequencen{A_n}$ suatu barisan subhimpunan $\BbbR^s$
+yang gabungannya $A$, dan ambil sebarang $a<\theta_rA$. Maka terdapat
+$\delta>0$ sedemikian sehingga $a\le\theta_{r\delta}A$. Sekarang
+$\theta_{r\delta}A\le\sum_{n=0}^{\infty}\theta_{r\delta}(A_n)$. \Prf\
+Ambil $\epsilon>0$, dan untuk setiap $n\in\Bbb N$ pilih suatu barisan
+$\sequence{m}{A_{nm}}$ himpunan yang meliput $A_n$, dengan
+$\diam A_{nm}\le\delta$ untuk setiap $m$ dan
+$\sum_{m=0}^{\infty}(\diam A_{nm})^r\le\theta_{r\delta}A_n+2^{-n}\epsilon$.
+Maka $\langle A_{nm}\rangle_{m,n\in\Bbb N}$ merupakan peliput $A$ oleh
+terhitung banyak himpunan berdiameter paling besar $\delta$, sehingga
+
+\Centerline{$\theta_{r\delta}A
+\le\sum_{n=0}^{\infty}\sum_{m=0}^{\infty}(\diam A_{nm})^r
+\le\sum_{n=0}^{\infty}(\theta_{r\delta}A_n+2^{-n}\epsilon)
+=2\epsilon+\sum_{n=0}^{\infty}\theta_{r\delta}A_n$.}
+
+\noindent Karena $\epsilon$ sebarang, kita memperoleh hasilnya.\ \Qed
+
+Dengan demikian,
+
+\Centerline{$a\le\theta_{r\delta}A
+\le\sum_{n=0}^{\infty}\theta_{r\delta}A_n
+\le\sum_{n=0}^{\infty}\theta_rA_n$.}
+
+\noindent Karena $a$ sebarang,
+
+\Centerline{$\theta_rA\le\sum_{n=0}^{\infty}\theta_rA_n$;}
+
+\noindent karena $\sequencen{A_n}$ sebarang, $\theta_r$ merupakan ukuran
+luar.
+}%end of proof of 264B
+
+\leader{264C}{Definisi} Jika $s\ge 1$ suatu bilangan bulat, dan $r>0$, maka
+{\bf ukuran Hausdorff berdimensi $r$} pada $\BbbR^s$ adalah ukuran
+$\mu_{Hr}$ pada $\BbbR^s$ yang didefinisikan melalui metode \Caratheodory\
+dari ukuran luar $\theta_r$ dalam 264A-264B.
+
+\leader{264D}{Catatan}\cmmnt{ {\bf (a)} Penting diperhatikan bahwa
+himpunan-himpunan yang digunakan dalam definisi $\theta_{r\delta}$ tidak harus
+berupa bola; bahkan dalam $\BbbR^2$, tidak setiap himpunan $A$ dapat diliput
+oleh suatu bola yang berdiameter sama dengan $A$.
+
+\header{264Db}}{\bf (b)} Dalam definisi-definisi di atas saya mensyaratkan
+$r>0$. Kadang-kadang tepat untuk mengambil $\mu_{H0}$ sebagai ukuran cacah.
+\cmmnt{Ini hampir merupakan hasil penerapan rumus-rumus di atas dengan $r=0$,
+tetapi dapat timbul kesulitan jika kita menafsirkannya terlalu harfiah.}
+
+\header{264Dc}{\bf (c)} Semua ukuran Hausdorff harus lengkap\cmmnt{, karena
+semuanya didefinisikan melalui metode \Caratheodory\ (212A)}. Untuk $r>0$,
+semuanya tanpa atom\cmmnt{ (264Yg)}. \cmmnt{Namun, ditinjau dari kriteria lain
+dalam \S211, perilakunya sangat buruk; misalnya, jika $r$, $s$ bilangan bulat
+dan $1\le r<s$, maka $\mu_{Hr}$ pada $\BbbR^s$ tidak semihingga. (Saya akan
+memberikan pembuktiannya dalam 439H pada Jilid 4.) Meskipun demikian,
+ukuran-ukuran tersebut memiliki beberapa sifat mencolok yang membuatnya cukup
+mudah ditangani.}
+
+\cmmnt{
+\header{264Dd}{\bf (d)} Dalam 264A, perhatikan bahwa
+$\theta_{r\delta}A\le\theta_{r\delta'}A$ ketika $0<\delta'\le\delta$;
+akibatnya, misalnya,
+$\theta_rA=\lim_{n\to\infty}\theta_{r,2^{-n}}A$. Saya telah mengizinkan
+himpunan sebarang $A_n$ dalam peliput, tetapi hasilnya tidak berubah jika kita
+membatasi perhatian pada peliput yang terdiri atas himpunan terbuka atau
+himpunan tertutup (264Xc).
+}%end of comment
+
+\leader{264E}{Teorema} Misalkan $s\ge 1$ suatu bilangan bulat, dan $r\ge 0$;
+misalkan $\mu_{Hr}$ ukuran Hausdorff berdimensi $r$ pada $\BbbR^s$, dan
+$\Sigma_{Hr}$ domainnya. Maka setiap subhimpunan Borel dari $\BbbR^s$ termasuk
+dalam $\Sigma_{Hr}$.
+
+\proof{ Hal ini sepele jika $r=0$; jadi selanjutnya andaikan bahwa $r>0$.
+
+\medskip
+
+{\bf (a)} Langkah pertama ialah memperhatikan bahwa jika $A$, $B$ merupakan
+subhimpunan $\Bbb R^s$ dan $\eta>0$ sedemikian sehingga
+$\|x-y\|\ge\eta$ untuk semua $x\in A$, $y\in B$, maka
+$\theta_r(A\cup B)=\theta_rA+\theta_rB$, dengan $\theta_r$ ukuran luar
+Hausdorff berdimensi $r$ pada $\BbbR^s$. \Prf\ Tentu saja
+$\theta_r(A\cup B)\le\theta_rA+\theta_rB$, karena $\theta_r$ merupakan ukuran
+luar. Untuk ketaksamaan sebaliknya, kita dapat mengandaikan bahwa
+$\theta_r(A\cup B)<\infty$, sehingga $\theta_rA$ dan $\theta_rB$ keduanya
+berhingga. Ambil $\epsilon>0$ dan $\delta_1$, $\delta_2>0$ sedemikian sehingga
+
+\Centerline{$\theta_rA+\theta_rB\le
+\theta_{r\delta_1}A+\theta_{r\delta_2}B+\epsilon$.}
+
+\noindent Tetapkan $\delta=\min(\delta_1,\delta_2,\bover12\eta)>0$ dan
+misalkan $\sequencen{A_n}$ suatu barisan himpunan yang berdiameter paling
+besar $\delta$, meliput $A\cup B$, dan sedemikian sehingga
+$\sum_{n=0}^{\infty}(\diam A_n)^r\le\theta_{r\delta}(A\cup B)+\epsilon$.
+Tetapkan
+
+\Centerline{$K=\{n:A_n\cap A\ne\emptyset\}$,
+\quad$L=\{n:A_n\cap B\ne\emptyset\}$.}
+
+\noindent Karena
+
+\Centerline{$\|x-y\|\ge\eta>\diam A_n$}
+
+\noindent setiap kali $x\in A$, $y\in B$ dan $n\in\Bbb N$, kita mempunyai
+$K\cap L=\emptyset$; dan tentu saja $A\subseteq\bigcup_{n\in K}A_n$,
+$B\subseteq\bigcup_{n\in L}A_n$. Akibatnya,
+
+$$\eqalign{\theta_rA+\theta_rB
+&\le\epsilon+\theta_{r\delta_1}A+\theta_{r\delta_2}B\cr
+&\le\epsilon+\sum_{n\in K}(\diam A_n)^r+\sum_{n\in L}(\diam A_n)^r\cr
+&\le\epsilon+\sum_{n=0}^{\infty}(\diam A_n)^r
+\le2\epsilon+\theta_{r\delta}(A\cup B)
+\le 2\epsilon+\theta_r(A\cup B).\cr}$$
+
+\noindent Karena $\epsilon$ sebarang, $\theta_r(A\cup
+B)\ge\theta_rA+\theta_rB$, sebagaimana diperlukan.\ \Qed
+
+\medskip
+
+{\bf (b)} Diperoleh bahwa
+$\theta_rA=\theta_r(A\cap G)+\theta_r(A\setminus G)$ setiap kali
+$A\subseteq \BbbR^s$ dan $G$ terbuka.
+\Prf\ Seperti biasa, cukup dipertimbangkan kasus $\theta_rA<\infty$ dan
+ditunjukkan bahwa dalam kasus ini
+$\theta_r(A\cap G)+\theta_r(A\setminus G)\le\theta_rA$. Tetapkan
+
+\Centerline{$A_n=\{x:x\in A,\,\|x-y\|\ge 2^{-n}$ untuk setiap
+$y\in A\setminus G\}$,}
+
+\Centerline{$B_0=A_0$,
+\quad$B_n=A_n\setminus A_{n-1}$ untuk $n>0$.}
+
+\noindent Perhatikan bahwa $A_n\subseteq A_{n+1}$ untuk setiap $n$ dan
+$\bigcup_{n\in\Bbb N}A_n=\bigcup_{n\in\Bbb N}B_n=A\cap G$. Intinya ialah
+bahwa jika $m$, $n\in\Bbb N$ dan $n\ge m+2$, serta jika $x\in B_m$ dan
+$y\in B_n$, maka terdapat $z\in A\setminus G$ sedemikian sehingga
+$\|y-z\|<2^{-n+1}\le 2^{-m-1}$, sedangkan $\|x-z\|$ harus paling sedikit
+$2^{-m}$, sehingga $\|x-y\|\ge\|x-z\|-\|y-z\|\ge 2^{-m-1}$. Akibatnya, untuk
+setiap $k\ge 0$,
+
+\Centerline{$\sum_{m=0}^k\theta_rB_{2m}
+=\theta_r(\bigcup_{m\le k}B_{2m})\le\theta_r(A\cap G)<\infty$,}
+
+\Centerline{$\sum_{m=0}^k\theta_rB_{2m+1}
+=\theta_r(\bigcup_{m\le k}B_{2m+1})\le\theta_r(A\cap G)<\infty$,}
+
+\noindent (dengan melakukan induksi pada $k$ dan menggunakan (a) di atas pada
+langkah induksi). Akibatnya $\sum_{n=0}^{\infty}\theta_rB_n<\infty$.
+
+Sekarang, jika $\epsilon>0$ diberikan, terdapat $m$ sedemikian sehingga
+$\sum_{n=m}^{\infty}\theta_rB_n\le\epsilon$, sehingga
+
+$$\eqalignno{\theta_r(A\cap G)+\theta_r(A\setminus G)
+&\le\theta_rA_m+\sum_{n=m}^{\infty}\theta_rB_n+\theta_r(A\setminus G)\cr
+&\le\epsilon+\theta_rA_m+\theta_r(A\setminus G)
+=\epsilon+\theta_r(A_m\cup(A\setminus G))\cr
+\noalign{\noindent (berdasarkan (a) lagi, karena $\|x-y\|\ge 2^{-m}$ untuk
+$x\in A_m$, $y\in A\setminus G$)}
+&\le\epsilon+\theta_rA.\cr}$$
+
+\noindent Karena $\epsilon$ sebarang,
+$\theta_r(A\cap G)+\theta_r(A\setminus G)\le\theta_rA$,
+sebagaimana diperlukan.\ \Qed
+
+\medskip
+
+{\bf (c)} Bagian (b) menunjukkan tepat bahwa himpunan terbuka termasuk dalam
+$\Sigma_{Hr}$. Langsung diperoleh bahwa aljabar-$\sigma$ Borel dari
+$\BbbR^s$ termuat dalam $\Sigma_{Hr}$, sebagaimana dinyatakan.
+}%end of proof of 264E
+
+\leader{264F}{Proposisi} Misalkan $s\ge 1$ suatu bilangan bulat, dan $r>0$;
+misalkan $\theta_r$ ukuran luar Hausdorff berdimensi $r$ pada $\BbbR^s$, dan
+tuliskan $\mu_{Hr}$ untuk ukuran Hausdorff berdimensi $r$ pada $\BbbR^s$,
+$\Sigma_{Hr}$ untuk domainnya. Maka
+
+(a) untuk setiap $A\subseteq \BbbR^s$ terdapat suatu himpunan Borel
+$E\supseteq A$ sedemikian sehingga $\mu_{Hr}E=\theta_rA$;
+
+(b) $\theta_r=\mu^*_{Hr}$, yaitu ukuran luar yang didefinisikan dari
+$\mu_{Hr}$;
+
+(c) jika $E\in\Sigma_{Hr}$ dapat dinyatakan sebagai gabungan terhitung dari
+himpunan-himpunan berukuran berhingga, terdapat himpunan Borel $E'$, $E''$
+sedemikian sehingga $E'\subseteq E\subseteq E''$ dan
+$\mu_{Hr}(E''\setminus E')=0$.
+
+\proof{{\bf (a)} Jika $\theta_rA=\infty$, hal ini sepele—ambil
+$E=\BbbR^s$. Jika tidak, untuk setiap $n\in\Bbb N$ pilih suatu barisan
+$\sequence{m}{A_{nm}}$ himpunan berdiameter paling besar $2^{-n}$, yang
+meliput $A$, dan sedemikian sehingga
+$\sum_{m=0}^{\infty}(\diam A_{nm})^r\le\theta_{r,2^{-n}}A+2^{-n}$. Tetapkan
+$F_{nm}=\overline{A}_{nm}$, $E=\bigcap_{n\in\Bbb N}\bigcup_{m\in\Bbb
+N}F_{nm}$; maka $E$ merupakan suatu himpunan Borel dalam $\BbbR^s$. Tentu saja
+
+\Centerline{$A\subseteq\bigcap_{n\in\Bbb N}\bigcup_{m\in\Bbb N}A_{nm}
+\subseteq\bigcap_{n\in\Bbb N}\bigcup_{m\in\Bbb N}F_{nm}=E$.}
+
+Untuk setiap $n\in\Bbb N$,
+
+\Centerline{$\diam F_{nm}=\diam A_{nm}\le 2^{-n}$
+untuk setiap $m\in\Bbb N$,}
+
+\Centerline{$\sum_{m=0}^{\infty}(\diam F_{nm})^r
+=\sum_{m=0}^{\infty}(\diam A_{nm})^r
+\le\theta_{r,2^{-n}}A+2^{-n}$,}
+
+\noindent sehingga
+
+\Centerline{$\theta_{r,2^{-n}}E\le\theta_{r,2^{-n}}A+2^{-n}$.}
+
+\noindent Dengan membiarkan $n\to\infty$,
+
+\Centerline{$\theta_rE=\lim_{n\to\infty}\theta_{r,2^{-n}}E
+\le\lim_{n\to\infty}\theta_{r,2^{-n}}A+2^{-n}
+=\theta_rA$;}
+
+\noindent tentu saja diperoleh bahwa $\theta_rA=\theta_rE$, karena
+$A\subseteq E$. Sekarang, berdasarkan 264E kita mengetahui bahwa
+$E\in\Sigma_{Hr}$, sehingga kita dapat menuliskan $\mu_{Hr}E$ sebagai
+pengganti $\theta_rE$.
+
+\medskip
+
+{\bf (b)} Hal ini langsung diperoleh, karena kita mempunyai
+
+\Centerline{$\mu_{Hr}^*A
+=\inf\{\mu_{Hr}E:E\in\Sigma_{Hr},\,A\subseteq E\}
+=\inf\{\theta_rE:E\in\Sigma_{Hr},\,A\subseteq E\}
+\ge\theta_rA$}
+
+\noindent untuk setiap $A\subseteq \BbbR^s$. Di pihak lain, jika
+$A\subseteq\BbbR^s$, kita mempunyai suatu himpunan Borel $E\supseteq A$
+sedemikian sehingga $\theta_rA=\mu_{Hr}E$, sehingga
+$\mu_{Hr}^*A\le\mu_{Hr}E=\theta_rA$.
+
+\medskip
+
+{\bf (c)(i)} Andaikan terlebih dahulu bahwa $\mu_{Hr}E<\infty$. Berdasarkan
+(a), terdapat himpunan Borel $E''\supseteq E$, $H\supseteq E''\setminus E$
+sedemikian sehingga $\mu_{Hr}E''=\theta_rE$,
+
+\Centerline{$\mu_{Hr}H=\theta_r(E''\setminus E)
+=\mu_{Hr}(E''\setminus E)
+=\mu_{Hr}E''-\mu_{Hr}E
+=\mu_{Hr}E''-\theta_rE
+=0$.}
+
+\noindent Jadi, dengan menetapkan $E'=E''\setminus H$, kita memperoleh suatu
+himpunan Borel yang termuat dalam $E$, dan
+
+\Centerline{$\mu_{Hr}(E''\setminus E')\le\mu_{Hr}H=0$.}
+
+\medskip
+
+\quad{\bf (ii)} Untuk kasus umum, nyatakan $E$ sebagai $\bigcup_{n\in\Bbb
+N}E_n$ dengan $\mu_{Hr}E_n<\infty$ untuk setiap $n$; ambil himpunan Borel
+$E'_n$, $E_n''$ sedemikian sehingga $E_n'\subseteq E_n\subseteq E_n''$ dan
+$\mu_{Hr}(E_n''\setminus E_n')=0$ untuk setiap $n$; dan tetapkan
+$E'=\bigcup_{n\in\Bbb N}E'_n$, $E''=\bigcup_{n\in\Bbb N}E_n''$.
+}%end of proof of 264F
+
+\leader{264G}{Fungsi Lipschitz}\dvro{\bf: }{ Definisi ukuran Hausdorff tepat
+disesuaikan dengan hasil berikut, yang bersesuaian dengan 262D.
+
+\wheader{264G}{6}{2}{2}{48pt}
+
+\noindent}{\bf Proposisi} Misalkan $m$, $s\ge 1$ bilangan bulat, dan
+$\phi:D\to\BbbR^s$ suatu fungsi $\gamma$-Lipschitz, dengan $D$ suatu
+subhimpunan $\BbbR^m$. Maka untuk sebarang $A\subseteq D$ dan $r\ge 0$,
+
+\Centerline{$\mu_{Hr}^*(\phi[A])\le\gamma^r\mu_{Hr}^*A$}
+
+\noindent untuk setiap $A\subseteq D$, dengan menuliskan $\mu_{Hr}^*$ untuk
+ukuran luar Hausdorff berdimensi $r$ baik pada $\BbbR^m$ maupun pada
+$\BbbR^s$.
+
+\proof{{\bf (a)} Kasus $r=0$ sepele, sebab ketika itu $\gamma^r=1$ dan
+$\mu_{Hr}^*A=\mu_{H0}A=\#(A)$ jika $A$ berhingga, dan $\infty$ jika tidak,
+sedangkan $\#(\phi[A])\le\#(A)$.
+
+\medskip
+
+{\bf (b)} Jika $r>0$, ambil sebarang $\delta>0$. Tetapkan
+$\eta=\delta/(1+\gamma)$ dan tinjau $\theta_{r\eta}:\Cal
+P\BbbR^m\to[0,\infty]$, yang didefinisikan seperti dalam 264A. Berdasarkan
+264Fb kita mengetahui bahwa
+
+\Centerline{$\mu_{Hr}^*A=\theta_rA\ge\theta_{r\eta}A$,}
+
+\noindent sehingga terdapat suatu barisan $\sequencen{A_n}$ himpunan,
+semuanya berdiameter paling besar $\eta$, yang meliput $A$, dengan
+$\sum_{n=0}^{\infty}(\diam A_n)^r\le\mu_{Hr}^*A+\delta$.
+Sekarang $\phi[A]\subseteq\bigcup_{n\in\Bbb N}\phi[A_n\cap D]$ dan
+
+\Centerline{$\diam \phi[A_n\cap D]
+\le\gamma\diam A_n\le\gamma\eta\le\delta$}
+
+\noindent untuk setiap $n$. Akibatnya,
+
+\Centerline{$\theta_{r\delta}(\phi[A])\le\sum_{n=0}^{\infty}
+(\diam \phi[A_n\cap D])^r
+\le\sum_{n=0}^{\infty}\gamma^r(\diam A_n)^r
+\le\gamma^r(\mu_{Hr}^*A+\delta)$,}
+
+\noindent dan
+
+\Centerline{$\mu_{Hr}^*(\phi[A])
+=\lim_{\delta\downarrow 0}\theta_{r\delta}(\phi[A])
+\le\gamma^r\mu_{Hr}^*A$,}
+
+\noindent sebagaimana dinyatakan.
+}%end of proof of 264G
+
+\leader{264H}{}\cmmnt{ Langkah berikutnya ialah menghubungkan ukuran Hausdorff
+berdimensi $r$ pada $\BbbR^r$ dengan ukuran Lebesgue pada $\BbbR^r$. Fakta
+dasar yang kita perlukan adalah sebagai berikut, dan gagasan dalam
+pembuktiannya bahkan lebih penting daripada hasilnya.
+
+\wheader{264H}{6}{2}{2}{48pt}\noindent}{\bf Teorema}
+%hold this line to get spacing right
+Misalkan $r\ge 1$ suatu bilangan bulat, dan $A$ suatu subhimpunan terbatas
+dari $\BbbR^r$; tuliskan $\mu_r$ untuk ukuran Lebesgue pada $\BbbR^r$ dan
+$d=\diam A$. Maka
+
+\Centerline{$\mu_r^*(A)\le\mu_rB(\tbf{0},\Bover{d}2)=2^{-r}\beta_rd^r$,}
+
+\noindent dengan $B(\tbf{0},\bover{d}2)$ bola berpusat di $\tbf{0}$ dan
+berdiameter $d$, sehingga $B(\tbf{0},1)$ merupakan bola satuan dalam
+$\BbbR^r$, dan mempunyai ukuran
+
+$$\eqalign{\beta_r
+&=\Bover{1}{k!}\pi^k\text{ jika }r=2k\text{ genap},\cr
+&=\Bover{2^{2k+1}k!}{(2k+1)!}\pi^k\text{ jika }r=2k+1\text{ ganjil}.\cr}$$
+
+\proof{{\bf (a)} Untuk perhitungan $\beta_r$, lihat 252Q atau 252Xi.
+
+\medskip
+
+{\bf (b)} Kasus $r=1$ elementer, sebab dalam kasus ini $A$ termuat dalam suatu
+interval dengan panjang $\diam A$, sehingga $\mu_1^*A\le\diam A$. Jadi,
+selanjutnya andaikan bahwa $r\ge 2$.
+
+\medskip
+
+{\bf (c)} Untuk $1\le i\le r$, misalkan $S_i:\BbbR^r\to\BbbR^r$ refleksi
+pada koordinat ke-$i$, sehingga
+$S_ix=(\xi_1,\ldots,
+\ifdim\pagewidth>467pt\penalty-100\fi
+\xi_{i-1},-\xi_i,\xi_{i+1},
+\ifdim\pagewidth>467pt\penalty-50\fi
+\ldots,
+\ifdim\pagewidth>467pt\penalty-10\fi
+\xi_r)$ untuk setiap
+$x=(\xi_1,\ldots,\xi_r)\in \BbbR^r$. Kita katakan bahwa suatu himpunan
+$C\subseteq\BbbR^r$ {\bf simetris pada koordinat-koordinat dalam $J$}, dengan
+$J\subseteq\{1,\ldots,r\}$, jika $S_i[C]=C$ untuk $i\in J$. Sekarang, inti
+argumennya adalah fakta berikut: jika $C\subseteq\Bbb R^r$ suatu himpunan
+terbatas yang simetris pada koordinat-koordinat dalam $J$, dengan $J$ suatu
+subhimpunan sejati dari $\{1,\ldots,r\}$, dan
+$j\in\{1,\ldots,r\}\setminus J$, maka terdapat suatu himpunan $D$, yang
+simetris pada koordinat-koordinat dalam $J\cup\{j\}$, sedemikian sehingga
+$\diam D\le\diam C$ dan $\mu_r^*C\le\mu^*_rD$.
+
+
+\Prf\ {\bf (i)} Karena ukuran Lebesgue invarian terhadap permutasi koordinat,
+cukup ditangani kasus $j=r$. Mulailah dengan menuliskan
+$F=\overline{C}$, sehingga $\diam F=\diam C$ dan
+$\mu_rF\ge\mu_r^*C$. Perhatikan bahwa karena $S_i$ merupakan homeomorfisme
+untuk setiap $i$,
+
+\Centerline{$S_i[F]=S_i[\overline{C}]=\overline{S_i[C]}=\overline{C}=F$}
+
+\noindent untuk $i\in J$, dan $F$ simetris pada koordinat-koordinat dalam
+$J$.
+
+Untuk $y=(\eta_1,\ldots,\eta_{r-1})\in\BbbR^{r-1}$, tetapkan
+
+\Centerline{$F_y=\{\xi:(\eta_1,\ldots,\eta_{r-1},\xi)\in F\}$,\quad
+$f(y)=\mu_1F_y$,}
+
+\noindent dengan $\mu_1$ ukuran Lebesgue pada $\Bbb R$.
+Tetapkan
+
+\Centerline{$D=\{(y,\xi):y\in\BbbR^{r-1},\,|\xi|<\Bover12f(y)\}
+\subseteq\BbbR^r$.}
+
+\medskip
+
+\quad{\bf (ii)} Jika $H\subseteq\BbbR^r$ terukur dan $H\supseteq D$, maka,
+dengan menuliskan $\mu_{r-1}$ untuk ukuran Lebesgue pada $\BbbR^{r-1}$, kita
+mempunyai
+
+$$\eqalignno{\mu_rH
+&=\int\mu_1\{\xi:(y,\xi)\in H\}\mu_{r-1}(dy)\cr
+\noalign{\noindent (dengan menggunakan 251N dan 252D)}
+&\ge\int\mu_1\{\xi:(y,\xi)\in D\}\mu_{r-1}(dy)
+=\int f(y)\mu_{r-1}(dy)\cr
+&=\int\mu_1\{\xi:(y,\xi)\in F\}\mu_{r-1}(dy)
+=\mu_rF
+\ge\mu^*_rC.\cr}$$
+
+\noindent Karena $H$ sebarang, $\mu_r^*D\ge\mu_r^*C$.
+
+\medskip
+
+\quad{\bf (iii)} Langkah berikutnya ialah memeriksa bahwa
+$\diam D\le\diam C$. Jika $x$, $x'\in D$, nyatakan keduanya sebagai
+$(y,\xi_r)$ dan $(y',\xi_r')$. Karena $F$ suatu himpunan tertutup terbatas
+dalam $\BbbR^r$, $F_y$ dan $F_{y'}$ merupakan subhimpunan tertutup terbatas
+dari $\Bbb R$. Selain itu, baik $f(y)$ maupun $f(y')$ harus lebih besar dari
+$0$, sehingga $F_y$, $F_{y'}$ keduanya tak kosong. Akibatnya,
+
+\Centerline{$\alpha=\inf F_y$,\quad $\beta=\sup F_y$,
+\quad$\alpha'=\inf F_{y'}$,
+\quad$\beta'=\sup F_{y'}$}
+
+\noindent semuanya terdefinisi dalam $\Bbb R$, dan $\alpha$,
+$\beta\in F_y$, sedangkan $\alpha'$ dan $\beta'$ termasuk dalam $F_{y'}$.
+Kita mempunyai
+
+$$\eqalign{|\xi_r-\xi_r'|
+&\le|\xi_r|+|\xi'_r|
+<\Bover12f(y)+\Bover12f(y')\cr
+&=\Bover12(\mu_1F_y+\mu_1F_{y'})
+\le\Bover12(\beta-\alpha+\beta'-\alpha')
+\le\max(\beta'-\alpha,\beta-\alpha').\cr}$$
+
+\noindent Jadi, dengan mengambil $(\xi,\xi')$ sebagai salah satu dari
+$(\alpha,\beta')$ atau $(\beta,\alpha')$, kita dapat menemukan
+$\xi\in F_y$, $\xi'\in F_{y'}$ sedemikian sehingga
+$|\xi-\xi'|\ge|\xi_r-\xi'_r|$. Sekarang $z=(y,\xi)$, $z'=(y',\xi')$ keduanya
+termasuk dalam $F$, sehingga
+
+\Centerline{$\|x-x'\|^2=\|y-y'\|^2+|\xi_r-\xi_r'|^2
+\le\|y-y'\|^2+|\xi-\xi'|^2
+=\|z-z'\|^2
+\le(\diam F)^2$,}
+
+\noindent dan $\|x-x'\|\le\diam F$. Karena $x$ dan $x'$ sebarang,
+$\diam D\le\diam F=\diam C$, sebagaimana dinyatakan.
+
+\medskip
+
+\quad{\bf (iv)} Jelas bahwa $S_r[D]=D$. Selain itu, jika $i\in J$, maka
+(dengan menafsirkan $S_i$ sebagai operator pada $\BbbR^{r-1}$)
+
+\Centerline{$F_{S_i(y)}=F_y$ untuk setiap $y\in\BbbR^{r-1}$,}
+
+\noindent sehingga $f(S_i(y))=f(y)$ dan, untuk $\xi\in \Bbb R$,
+$y\in\BbbR^{r-1}$,
+
+\Centerline{$(y,\xi)\in D\,\iff\,|\xi|<\bover12 f(y)\,
+\iff\,|\xi|<\bover12f(S_i(y))
+\,\iff\,(S_i(y),\xi)\in D$,}
+
+\noindent sehingga $S_i[D]=D$. Jadi $D$ simetris pada koordinat-koordinat
+dalam $J\cup\{r\}$.\ \Qed
+
+\medskip
+
+{\bf (d)} Sisanya mudah. Mulai dengan sebarang himpunan terbatas
+$A\subseteq\BbbR^r$; tetapkan $A_0=A$ dan secara induktif konstruksikan
+$A_1,\ldots,A_r$ sedemikian sehingga
+
+\Centerline{$d=\diam A=\diam A_0\ge\diam A_1\ge\ldots\ge\diam A_r$,}
+
+\Centerline{$\mu_r^*A=\mu_r^*A_0\le\ldots\le\mu_r^*A_r$,}
+
+\Centerline{$A_j$ simetris pada koordinat-koordinat dalam
+$\{1,\ldots,j\}$ untuk setiap $j\le r$.}
+
+\noindent Pada akhirnya, kita mempunyai $A_r$ yang simetris pada
+koordinat-koordinat dalam $\{1,\ldots,r\}$. Namun, ini berarti bahwa jika
+$x\in A_r$, maka
+
+\Centerline{$-x=S_1S_2\ldots S_rx\in A_r$,}
+
+\noindent sehingga
+
+\Centerline{$\|x\|=\Bover12\|x-(-x)\|
+\le\Bover12\diam A_r\le\Bover{d}2$.}
+
+\noindent Jadi $A_r\subseteq B(\tbf{0},\bover{d}2)$, dan
+
+\Centerline{$\mu_r^*A\le\mu_r^*A_r\le\mu_rB(\tbf{0},\Bover{d}2)$,}
+
+\noindent sebagaimana dinyatakan.
+}%end of proof of 264H
+
+
+\leader{264I}{Teorema} Misalkan $r\ge 1$ suatu bilangan bulat; misalkan
+$\mu$ ukuran Lebesgue pada $\BbbR^r$, dan misalkan $\mu_{Hr}$ ukuran Hausdorff
+berdimensi $r$ pada $\BbbR^r$. Maka $\mu$ dan $\mu_{Hr}$ mempunyai
+himpunan-himpunan terukur yang sama dan
+
+\Centerline{$\mu E=2^{-r}\beta_r\mu_{Hr}E$}
+
+\noindent untuk setiap himpunan terukur $E\subseteq\BbbR^r$, dengan
+$\beta_r=\mu B(\tbf{0},1)$, sehingga faktor normalisasinya adalah
+
+$$\eqalign{2^{-r}\beta_r
+&=\Bover{1}{2^{2k}k!}\pi^k\text{ jika }r=2k\text{ genap},\cr
+&=\Bover{k!}{(2k+1)!}\pi^k\text{ jika }r=2k+1\text{ ganjil}.\cr}$$
+
+\proof{{\bf (a)} Tentu saja jika $B=B(x,\alpha)$ sebarang bola berjari-jari
+$\alpha$,
+
+\Centerline{$2^{-r}\beta_r(\diam B)^r
+=\beta_r\alpha^r=\mu B$.}
+
+\medskip
+
+{\bf (b)} Intinya ialah bahwa $\mu^*=2^{-r}\beta_r\mu_{Hr}^*$. \Prf\
+Misalkan $A\subseteq\BbbR^r$.
+
+\medskip
+
+\quad{\bf (i)} Misalkan $\delta$, $\epsilon>0$. Berdasarkan 261F, terdapat
+suatu barisan $\sequencen{B_n}$ bola, semuanya berdiameter paling besar
+$\delta$, sedemikian sehingga $A\subseteq\bigcup_{n\in\Bbb N}B_n$ dan
+$\sum_{n=0}^{\infty}\mu B_n\le\mu^*A+\epsilon$. Sekarang, dengan
+mendefinisikan $\theta_{r\delta}$ seperti dalam 264A,
+
+\Centerline{$2^{-r}\beta_r\theta_{r\delta}(A)
+\le 2^{-r}\beta_r\sum_{n=0}^{\infty}(\diam B_n)^r
+=\sum_{n=0}^{\infty}\mu B_n
+\le\mu^*A+\epsilon$.}
+
+\noindent Dengan membiarkan $\delta\downarrow 0$,
+
+\Centerline{$2^{-r}\beta_r\mu^*_{Hr}A\le\mu^*A+\epsilon$.}
+
+\noindent Karena $\epsilon$ sebarang,
+$2^{-r}\beta_r\mu_{Hr}^*A\le\mu^*A$.
+
+\medskip
+
+\quad{\bf (ii)} Misalkan $\epsilon>0$. Maka terdapat suatu barisan
+$\sequencen{A_n}$ himpunan berdiameter paling besar $1$ sedemikian sehingga
+$A\subseteq\bigcup_{n\in\Bbb N}A_n$ dan
+$\sum_{n=0}^{\infty}(\diam A_n)^r\le\theta_{r1}A+\epsilon$, sehingga
+
+\Centerline{$\mu^*A\le\sum_{n=0}^{\infty}\mu^*A_n
+\le\sum_{n=0}^{\infty}2^{-r}\beta_r(\diam A_n)^r
+\le 2^{-r}\beta_r(\theta_{r1}A+\epsilon)
+\le 2^{-r}\beta_r(\mu_{Hr}^*A+\epsilon)$}
+
+\noindent berdasarkan 264H. Karena $\epsilon$ sebarang,
+$\mu^*A\le 2^{-r}\beta_r\mu_{Hr}^*A$.\ \Qed
+
+\medskip
+
+{\bf (c)} Karena $\mu$, $\mu_{Hr}$ merupakan ukuran yang didefinisikan dari
+ukuran luarnya masing-masing melalui metode \Caratheodory, langsung diperoleh
+bahwa $\mu=2^{-r}\beta_r\mu_{Hr}$ dalam pengertian ketat yang diperlukan.
+}%end of proof of 264I
+
+\leader{*264J}{Himpunan Cantor \dvrocolon{}}\cmmnt{ Dalam 264A saya menyatakan
+bahwa `dimensi' pecahan $r$ menarik. Saya tidak mempunyai ruang untuk
+membahasnya di sini, dan pokok itu berada di luar jalur utama jilid ini,
+tetapi saya akan memberikan satu hasil karena hasil itu menarik pada dirinya
+sendiri.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $C$ himpunan Cantor dalam $[0,1]$.
+Tetapkan $r=\ln 2/\ln 3$. Maka ukuran Hausdorff berdimensi $r$ dari $C$ adalah
+$1$.
+
+\proof{{\bf (a)} Ingat bahwa $C=\bigcap_{n\in\Bbb N}C_n$, dengan setiap
+$C_n$ terdiri atas $2^n$ interval tertutup yang panjangnya $3^{-n}$, dan
+$C_{n+1}$ diperoleh dari $C_n$ dengan menghapus sepertiga tengah (terbuka) dari
+setiap interval dalam $C_n$. (Lihat 134G.) Karena $C$ tertutup,
+$\mu_{Hr}C$ terdefinisi (264E). Perhatikan bahwa $3^r=2$.
+
+\medskip
+
+{\bf (b)} Jika $\delta>0$, ambil $n$ sedemikian sehingga
+$3^{-n}\le\delta$; maka $C$ dapat diliput oleh $2^n$ interval berdiameter
+$3^{-n}$, sehingga
+
+\Centerline{$\theta_{r\delta}C\le 2^n(3^{-n})^r=1$.}
+
+\noindent Akibatnya,
+
+\Centerline{$\mu_{Hr}C=\mu_{Hr}^*C
+=\lim_{\delta\downarrow 0}\theta_{r\delta}C\le 1$.}
+
+\medskip
+
+{\bf (c)} Kita memerlukan fakta elementer berikut: jika $\alpha$, $\beta$,
+$\gamma\ge 0$ dan $\max(\alpha,\gamma)\le\beta$, maka
+$\alpha^r+\gamma^r\le(\alpha+\beta+\gamma)^r$. \Prf\ Karena
+$0<r\le 1$,
+
+\Centerline{$\xi\mapsto(\xi+\eta)^r-\xi^r
+=r\biggerint_0^{\eta}(\xi+\zeta)^{r-1}d\zeta$}
+
+\noindent tak menaik untuk setiap $\eta\ge 0$.
+Akibatnya,
+
+$$\eqalign{(\alpha+\beta+\gamma)^r-\alpha^r-\gamma^r
+&\ge (\beta+\beta+\gamma)^r-\beta^r-\gamma^r\cr
+&\ge(\beta+\beta+\beta)^r-\beta^r-\beta^r
+=\beta^r(3^r-2)
+=0,\cr}$$
+
+\noindent sebagaimana diperlukan.\ \Qed
+
+\medskip
+
+{\bf (d)} Sekarang andaikan bahwa $I\subseteq\Bbb R$ sebarang interval, dan
+$m\in\Bbb N$; tuliskan $j_m(I)$ untuk banyaknya interval penyusun $C_m$ yang
+termuat dalam $I$. Maka $2^{-m}j_m(I)\le(\diam I)^r$.
+\Prf\ Jika $I$ tidak bertemu $C_m$, hal ini sepele. Jika tidak, lakukan induksi
+pada
+
+\Centerline{$l=\min\{i:I$ hanya bertemu dengan satu interval penyusun
+$C_{m-i}\}$.}
+
+\noindent Jika $l=0$, sehingga $I$ hanya bertemu dengan satu interval penyusun
+$C_m$, maka $j_m(I)\le 1$, dan jika $j_m(I)=1$, maka
+$\diam I\ge 3^{-m}$ sehingga $(\diam I)^r\ge 2^{-m}$; dengan demikian induksi
+dimulai. Untuk langkah induksi menuju $l>0$, misalkan $J$ interval dalam
+$C_{m-l}$ yang bertemu dengan $I$, dan $J'$, $J''$ kedua interval dalam
+$C_{m-l+1}$ yang termuat dalam $J$, sehingga $I$ bertemu dengan $J'$ dan
+$J''$, dan
+
+
+\Centerline{$j_m(I)=j_m(I\cap J)=j_m(I\cap J')+j_m(I\cap J'')$.}
+
+\noindent Berdasarkan hipotesis induksi,
+
+\Centerline{$(\diam(I\cap J'))^r+(\diam(I\cap J''))^r
+\ge 2^{-m}j_m(I\cap J')+2^{-m}j_m(I\cap J'')
+=2^{-m}j_m(I)$.}
+
+\noindent Di pihak lain, berdasarkan (c),
+
+$$\eqalign{(\diam(I\cap J'))^r+(\diam(I\cap J''))^r
+&\le(\diam(I\cap J')+3^{-m+l-1}+\diam(I\cap J''))^r\cr
+&=(\diam(I\cap J))^r
+\le(\diam I)^r\cr}$$
+
+\noindent karena $J'$, $J''$ keduanya berdiameter paling besar
+$3^{-(m-l+1)}$, yaitu panjang interval di antara keduanya.
+Dengan demikian induksi berlanjut.\ \Qed
+
+\medskip
+
+{\bf (e)} Sekarang andaikan bahwa $\epsilon>0$. Maka terdapat suatu barisan
+$\sequencen{A_n}$ himpunan yang meliput $C$, sedemikian sehingga
+\discrcenter{468pt}{$\sum_{n=0}^{\infty}(\diam A_n)^r
+<\mu_{Hr}C+\epsilon$.  }Ambil $\eta_n>0$ sedemikian sehingga
+$\sum_{n=0}^{\infty}(\diam A_n+\eta_n)^r\le\mu_{Hr}C+\epsilon$, dan untuk
+setiap $n$ ambil suatu interval terbuka $I_n\supseteq A_n$ dengan panjang
+paling besar $\diam A_n+\eta_n$ dan dengan kedua titik ujung tidak termasuk
+dalam $C$; hal ini mungkin karena $C$ tidak memuat interval nontrivial mana
+pun. Sekarang $C\subseteq\bigcup_{n\in\Bbb N}I_n$; karena $C$ kompak,
+terdapat $k\in\Bbb N$ sedemikian sehingga
+$C\subseteq\bigcup_{n\le k}I_n$. Berikutnya, terdapat $m\in\Bbb N$ sedemikian
+sehingga tidak ada titik ujung $I_n$, untuk $n\le k$, yang termasuk dalam
+$C_m$. Akibatnya, setiap interval penyusun $C_m$ harus termuat dalam suatu
+$I_n$, dan (dengan terminologi (d) di atas)
+$\sum_{n=0}^kj_m(I_n)\ge 2^m$. Dengan demikian,
+
+\Centerline{$1
+\le\sum_{n=0}^k2^{-m}j_m(I_n)
+\le \sum_{n=0}^k(\diam I_n)^r
+\le \sum_{n=0}^{\infty}(\diam A_n+\eta_n)^r
+\le\mu_{Hr}C+\epsilon$.}
+
+\noindent Karena $\epsilon$ sebarang, $\mu_{Hr}C\ge 1$, sebagaimana
+diperlukan.
+}%end of proof of 264J
+
+\leader{*264K}{Ruang metrik umum}\cmmnt{ Walaupun bab ini secara eksklusif
+membahas ruang Euklides, pembaca yang mengenal teori umum ruang metrik mungkin
+akan melihat sifat teori ini dengan lebih jelas jika mereka menggunakan
+bahasa ruang metrik dalam definisi dan hasil dasar. Karena itu, saya mengulang
+definisinya di sini dan menguraikan hasil-hasil yang bersesuaian dalam latihan
+264Yb-264Yl.
+
+} Misalkan $(X,\rho)$ suatu ruang metrik, dan $r>0$. Untuk sebarang
+$A\subseteq X$, $\delta>0$, tetapkan
+
+$$\eqalign{\theta_{r\delta}A
+=\inf\{\sum_{n=0}^{\infty}(\diam A_n)^r:\sequencen{A_n}
+&\text{ adalah barisan subhimpunan }X\text{ yang meliput }A,\cr
+&\qquad\qquad\qquad\quad\diam A_n\le\delta\text{ untuk setiap }
+  n\in\Bbb N\},\cr}$$
+
+\noindent dengan menafsirkan diameter himpunan kosong sebagai $0$, dan
+$\inf\emptyset$ sebagai $\infty$, sehingga $\theta_{r\delta}A=\infty$ jika
+$A$ tidak dapat diliput oleh suatu barisan himpunan berdiameter paling besar
+$\delta$. Katakan bahwa $\theta_rA=\sup_{\delta>0}\theta_{r\delta}A$ adalah
+{\bf ukuran luar Hausdorff berdimensi $r$} dari $A$, dan ambil ukuran
+$\mu_{Hr}$ yang didefinisikan melalui metode \Caratheodory\ dari ukuran luar
+ini sebagai {\bf ukuran Hausdorff berdimensi $r$} pada $X$.
+
+\exercises{
+\leader{264X}{Latihan dasar $\pmb{>}$(a)}
+%\spheader 264Xa
+Tunjukkan bahwa semua fungsi $\theta_{r\delta}$ dalam 264A merupakan ukuran
+luar. Tunjukkan bahwa dalam konteks tersebut,
+$\theta_{r\delta}(A)=0$ jika dan hanya jika $\theta_r(A)=0$, untuk sebarang
+$\delta>0$ dan sebarang $A\subseteq\BbbR^s$.
+
+\spheader 264Xb Misalkan $s\ge 1$ suatu bilangan bulat, dan $\theta$ suatu
+ukuran luar pada $\BbbR^s$ sedemikian sehingga
+$\theta(A\cup B)=\theta A+\theta B$ setiap kali $A$, $B$ merupakan
+subhimpunan tak kosong dari $\BbbR^s$ dan
+$\inf_{x\in A,y\in B}\|x-y\|>0$. Tunjukkan bahwa setiap subhimpunan Borel dari
+$\BbbR^s$ diukur oleh ukuran yang didefinisikan dari $\theta$ melalui metode
+\Caratheodory.
+
+\sqheader 264Xc Misalkan $s\ge 1$ suatu bilangan bulat dan $r>0$;
+definisikan $\theta_{r\delta}$ seperti dalam 264A. Tunjukkan bahwa untuk
+sebarang $A\subseteq\BbbR^s$, $\delta>0$,
+
+$$\eqalign{\theta_{r\delta}A
+&=\inf\{\sum_{n=0}^{\infty}(\diam F_n)^r:\sequencen{F_n}
+ \text{ adalah barisan subhimpunan tertutup dari }\BbbR^s\cr
+&\qquad\qquad\qquad\qquad\qquad\qquad\text{ yang meliput }A,\diam
+F_n\le\delta
+  \text{ untuk setiap }n\in\Bbb N\}\cr
+&=\inf\{\sum_{n=0}^{\infty}(\diam G_n)^r:\sequencen{G_n}
+  \text{ adalah barisan subhimpunan terbuka dari }\BbbR^s\cr
+&\qquad\qquad\qquad\qquad\qquad\qquad\text{ yang meliput }A,\diam
+G_n\le\delta
+  \text{ untuk setiap }n\in\Bbb N\}.\cr}$$
+
+\sqheader 264Xd Misalkan $s\ge 1$ suatu bilangan bulat dan $r\ge 0$;
+misalkan $\mu_{Hr}$ ukuran Hausdorff berdimensi $r$ pada $\BbbR^s$.
+Tunjukkan bahwa untuk setiap $A\subseteq \BbbR^s$ terdapat suatu himpunan
+G$_{\delta}$ (yakni, suatu himpunan yang dapat dinyatakan sebagai irisan suatu
+barisan himpunan terbuka) $H\supseteq A$ sedemikian sehingga
+$\mu_{Hr}H=\mu^*_{Hr}A$. ({\it Petunjuk\/}: gunakan 264Xc.)
+
+\sqheader 264Xe Misalkan $s\ge 1$ suatu bilangan bulat, dan $0\le r<r'$.
+Tunjukkan bahwa jika $A\subseteq\BbbR^s$ dan ukuran luar Hausdorff berdimensi
+$r$, yaitu $\mu_{Hr}^*A$, dari $A$ berhingga, maka $\mu_{Hr'}^*A$ harus nol.
+
+\spheader 264Xf(i) Andaikan bahwa $f:[a,b]\to\Bbb R$ mempunyai grafik
+$\Gamma_f\subseteq\BbbR^2$, dengan $a\le b$ dalam $\Bbb R$. Tunjukkan bahwa
+ukuran luar $\mu_{H1}^*(\Gamma_f)$ dari $\Gamma_f$ untuk ukuran Hausdorff
+berdimensi satu pada $\BbbR^2$ paling besar
+$b-a+\Var_{[a,b]}(f)$.
+\Hint{jika $f$ mempunyai variasi berhingga, tunjukkan bahwa
+$\diam(\Gamma_{f\restr\ooint{t,u}})
+\le u-t+\Var_{\ooint{t,u}}(f)$; kemudian gunakan 224E.} (ii) Misalkan
+$f:[0,1]\to[0,1]$ fungsi Cantor (134H). Tunjukkan bahwa
+$\mu_{H1}(\Gamma_f)=2$. \Hint{264G.}
+%264G
+
+\spheader 264Xg\dvAnew{2009.} Dalam 264A, tunjukkan bahwa
+
+$$\eqalign{\theta_{r\delta}A
+=\inf\{\sum_{n=0}^{\infty}(\diam A_n)^r:\sequencen{A_n}
+&\text{ adalah barisan himpunan konveks yang meliput }A,\cr
+&\qquad\qquad\qquad\quad\diam A_n\le\delta\text{ untuk setiap }
+  n\in\Bbb N\}\cr}$$
+
+\noindent untuk sebarang $A\subseteq\BbbR^s$.
+%264A
+
+\leader{264Y}{Latihan lanjutan (a)}
+%\spheader 264Ya
+Misalkan $\theta_{11}$ ukuran luar pada $\BbbR^2$ yang didefinisikan dalam
+264A, dengan $r=\delta=1$, dan $\mu_{11}$ ukuran yang diturunkan dari
+$\theta_{11}$ melalui metode \Caratheodory, serta $\Sigma_{11}$ domainnya.
+Tunjukkan bahwa setiap himpunan dalam $\Sigma_{11}$ terabaikan atau
+koterabaikan.
+
+\spheader 264Yb Misalkan $(X,\rho)$ suatu ruang metrik dan $r\ge 0$.
+Tunjukkan bahwa jika $A\subseteq X$ dan $\mu_{Hr}^*A<\infty$, maka $A$
+separabel.
+
+\spheader 264Yc Misalkan $(X,\rho)$ suatu ruang metrik, dan $\theta$ suatu
+ukuran luar pada $X$ sedemikian sehingga
+$\theta(A\cup B)=\theta A+\theta B$ setiap kali $A$, $B$ merupakan subhimpunan
+tak kosong dari $X$ dan $\inf_{x\in A,y\in B}\rho(x,y)>0$. (Ukuran luar
+demikian disebut {\bf ukuran luar metrik}.) Tunjukkan bahwa setiap subhimpunan
+terbuka dari $X$ diukur oleh ukuran yang didefinisikan dari $\theta$ melalui
+metode \Caratheodory.
+
+\spheader 264Yd Misalkan $(X,\rho)$ suatu ruang metrik dan $r>0$;
+definisikan $\theta_{r\delta}$ seperti dalam 264K. Tunjukkan bahwa untuk
+sebarang $A\subseteq X$,
+
+$$\eqalign{\mu_{Hr}^*A
+&=\sup_{\delta>0}\inf\{\sum_{n=0}^{\infty}(\diam F_n)^r:\sequencen{F_n}
+  \text{ adalah barisan subhimpunan tertutup dari }X\cr
+&\qquad\qquad\qquad\qquad\qquad\qquad\text{ yang meliput }A,\,\diam
+F_n\le\delta
+  \text{ untuk setiap }n\in\Bbb N\}\cr
+&=\sup_{\delta>0}\inf\{\sum_{n=0}^{\infty}(\diam G_n)^r:\sequencen{G_n}
+  \text{ adalah barisan subhimpunan terbuka dari }X\cr
+&\qquad\qquad\qquad\qquad\qquad\qquad\text{ yang meliput }A,\,\diam
+G_n\le\delta
+  \text{ untuk setiap }n\in\Bbb N\}.\cr}$$
+\spheader 264Ye Misalkan $(X,\rho)$ suatu ruang metrik dan $r\ge 0$;
+misalkan $\mu_{Hr}$ ukuran Hausdorff berdimensi $r$ pada $X$.
+Tunjukkan bahwa untuk setiap $A\subseteq X$ terdapat suatu himpunan
+G$_{\delta}$ $H\supseteq A$ sedemikian sehingga
+$\mu_{Hr}H=\mu^*_{Hr}A$ merupakan ukuran luar Hausdorff berdimensi $r$ dari
+$A$.
+
+\spheader 264Yf Misalkan $(X,\rho)$ suatu ruang metrik dan $r\ge 0$;
+misalkan $Y$ sebarang subhimpunan $X$, dan lengkapi $Y$ dengan metrik
+terinduksi $\rho_Y$. (i) Tunjukkan bahwa ukuran luar Hausdorff berdimensi $r$
+$\mu^{(Y)*}_{Hr}$ pada $Y$ tepat merupakan pembatasan pada $\Cal PY$ dari
+ukuran luar $\mu_{Hr}^*$ pada $X$. (ii) Tunjukkan bahwa jika {\it salah satu}
+dari $\mu_{Hr}^*Y<\infty$ {\it atau} $\mu_{Hr}$ mengukur $Y$ berlaku, maka
+ukuran Hausdorff berdimensi $r$ $\mu^{(Y)}_{Hr}$ pada $Y$ tepat merupakan
+ukuran subruang pada $Y$ yang diinduksi oleh ukuran $\mu_{Hr}$ pada $X$.
+
+\spheader 264Yg Misalkan $(X,\rho)$ suatu ruang metrik dan $r>0$.
+Tunjukkan bahwa ukuran Hausdorff berdimensi $r$ pada $X$ bersifat tanpa atom.
+({\it Petunjuk\/}: Misalkan $E\in\dom\mu_{Hr}$. (i) Jika $E$ tidak separabel,
+terdapat suatu himpunan terbuka $G$ sedemikian sehingga $E\cap G$ dan
+$E\setminus G$ keduanya tidak separabel, sehingga keduanya tidak terabaikan.
+(ii) Jika terdapat $x\in E$ sedemikian sehingga
+$\mu_{Hr}(E\cap B(x,\delta))>0$ untuk setiap $\delta>0$, maka salah satu dari
+himpunan-himpunan ini mempunyai komplemen yang tidak terabaikan dalam $E$.
+(iii) Jika tidak, $\mu_{Hr}E=0$.)
+
+\spheader 264Yh Misalkan $(X,\rho)$ suatu ruang metrik dan $r\ge 0$;
+misalkan $\mu_{Hr}$ ukuran Hausdorff berdimensi $r$ pada $X$. Tunjukkan bahwa
+jika $\mu_{Hr}E<\infty$, maka
+$\mu_{Hr}E=\sup\{\mu_{Hr}F:F\subseteq E$ tertutup dan terbatas total$\}$.
+({\it Petunjuk\/}: jika $\epsilon>0$ diberikan, gunakan 264Yd untuk menemukan
+suatu himpunan tertutup dan terbatas total $F$ sedemikian sehingga
+$\mu_{Hr}(F\setminus E)=0$ dan $\mu_{Hr}(E\setminus F)\le\epsilon$, lalu
+terapkan 264Ye pada $F\setminus E$.)
+
+\spheader 264Yi Misalkan $(X,\rho)$ suatu ruang metrik lengkap dan $r\ge 0$;
+misalkan $\mu_{Hr}$ ukuran Hausdorff berdimensi $r$ pada $X$. Tunjukkan bahwa
+jika $\mu_{Hr}E<\infty$, maka
+$\mu_{Hr}E=\sup\{\mu_{Hr}F:F\subseteq E$ kompak$\}$.
+
+\spheader 264Yj Misalkan $(X,\rho)$ dan $(Y,\sigma)$ ruang metrik. Jika
+$D\subseteq X$ dan $\phi:D\to Y$ suatu fungsi, maka $\phi$ adalah
+{\bf $\gamma$-Lipschitz} jika
+$\sigma(\phi(x),\phi(x'))\le\gamma\rho(x,x')$ untuk setiap $x$, $x'\in D$.
+(i) Tunjukkan bahwa dalam hal ini, jika $r\ge 0$,
+$\mu_{Hr}^*(\phi[A])\le\gamma^r\mu_{Hr}^*A$ untuk setiap $A\subseteq D$,
+dengan menuliskan $\mu_{Hr}^*$ untuk ukuran luar Hausdorff berdimensi $r$
+pada $X$ maupun $Y$. (ii) Tunjukkan bahwa jika $X$ lengkap dan
+$E\subseteq D$ dan $\mu_{Hr}E$ terdefinisi dan berhingga, maka
+$\mu_{Hr}(\phi[E])$ terdefinisi.
+({\it Petunjuk\/}: 264Yi.)
+
+\spheader 264Yk Misalkan $(X,\rho)$ suatu ruang metrik, dan untuk $r\ge 0$
+misalkan $\mu_{Hr}$ ukuran Hausdorff berdimensi $r$ pada $X$. Tunjukkan bahwa
+terdapat tepat satu $\Delta=\Delta(X)\in[0,\infty]$ sedemikian sehingga
+$\mu_{Hr}X=\infty$ jika $r\in\coint{0,\Delta}$, dan $0$ jika
+$r\in\ooint{\Delta,\infty}$.
+
+\spheader 264Yl Misalkan $(X,\rho)$ suatu ruang metrik dan $\phi:I\to X$
+suatu fungsi kontinu, dengan $I\subseteq\Bbb R$ suatu interval. Tuliskan
+$\mu_{H1}$ untuk ukuran Hausdorff berdimensi satu pada $X$. Tunjukkan bahwa
+
+\Centerline{$\mu_{H1}(\phi[I])
+\le\sup\{\sum_{i=1}^n\rho(\phi(t_i),\phi(t_{i-1})):t_0,\ldots,t_n\in
+I,\,t_0\le\ldots\le t_n\}$,}
+
+\noindent yaitu panjang kurva $\phi$, dengan kesamaan jika $\phi$ injektif.
+
+
+\spheader 264Ym Tetapkan $r=\ln 2/\ln 3$, seperti dalam 264J, dan tuliskan
+$\mu_{Hr}$ untuk ukuran Hausdorff berdimensi $r$ pada himpunan Cantor $C$.
+Misalkan $\lambda$ ukuran biasa pada $\{0,1\}^{\Bbb N}$ (254J).
+Definisikan $\phi:\{0,1\}^{\Bbb N}\to C$ dengan menetapkan
+$\phi(x)=\bover23\sum_{n=0}^{\infty}3^{-n}x(n)$ untuk
+$x\in\{0,1\}^{\Bbb N}$. Tunjukkan bahwa $\phi$ merupakan isomorfisme antara
+$(\{0,1\}^{\Bbb N},\lambda)$ dan $(C,\mu_{Hr})$, sehingga $\mu_{Hr}$ merupakan
+ukuran subruang pada $C$ yang diinduksi oleh `ukuran Cantor' sebagaimana
+didefinisikan dalam 256Hc.
+
+\spheader 264Yn Tetapkan $r=\ln 2/\ln 3$ dan tuliskan $\mu_{Hr}$ untuk ukuran
+Hausdorff berdimensi $r$ pada himpunan Cantor $C$. Misalkan
+$f:[0,1]\to[0,1]$ fungsi Cantor dan misalkan $\mu$ ukuran Lebesgue pada
+$\Bbb R$. Tunjukkan bahwa $\mu f[E]=\mu_{Hr}E$ untuk setiap
+$E\in\dom\mu_{Hr}$ dan $\mu_{Hr}(C\cap f^{-1}[F])=\mu F$ untuk setiap
+himpunan terukur Lebesgue $F\subseteq[0,1]$.
+
+\spheader 264Yo Misalkan $(X,\rho)$ suatu ruang metrik dan
+$h:\coint{0,\infty}\to\coint{0,\infty},\ h(0)=0$ suatu fungsi tak menurun. Untuk
+$A\subseteq X$, tetapkan
+
+$$\eqalign{\theta_hA
+&=\sup_{\delta>0}\inf\{\sum_{n=0}^{\infty}h(\diam A_n):\sequencen{A_n}
+  \text{ adalah barisan subhimpunan dari }X\cr
+&\qquad\qquad\qquad\qquad\qquad\qquad\text{ yang meliput }A,\,\diam
+A_n\le\delta
+  \text{ untuk setiap }n\in\Bbb N\},\cr}$$
+
+\noindent dengan menafsirkan $\diam\emptyset$ sebagai $0$ dan
+$\inf\emptyset$ sebagai $\infty$ seperti biasa. Tunjukkan bahwa $\theta_h$
+merupakan ukuran luar pada $X$. Nyatakan dan buktikan teorema-teorema yang
+bersesuaian dengan 264E dan 264F. Periksa 264X dan 264Y untuk mencari hasil
+lain yang mungkin dapat digeneralisasi, barangkali dengan asumsi bahwa $h$
+kontinu dari kanan.
+
+\spheader 264Yp Misalkan $(X,\rho)$ suatu ruang metrik. Kita katakan bahwa
+jika $a<b$ dalam $\Bbb R$ dan $f:[a,b]\to X$ suatu fungsi, maka $f$
+{\bf kontinu mutlak} jika untuk setiap $\epsilon>0$ terdapat $\delta>0$
+sedemikian sehingga $\sum_{i=0}^n\rho(f(a_i),f(b_i))\le\epsilon$ setiap kali
+$a\le a_0\le b_0\le\ldots\le a_n\le b_n\le b$ dan
+$\sum_{i=0}^n(b_i-a_i)\le\delta$. Tunjukkan bahwa $f:[a,b]\to X$ kontinu
+mutlak jika dan hanya jika fungsi itu kontinu dan bervariasi terbatas (dalam
+pengertian 224Ye) serta $\mu_{H1}f[A]=0$ setiap kali $A\subseteq[a,b]$
+terabaikan Lebesgue, dengan $\mu_{H1}$ ukuran Hausdorff berdimensi satu pada
+$X$. (Bandingkan 225M.)
+Tunjukkan bahwa dalam hal ini $\mu_{H1}f[\,[a,b]\,]<\infty$.
+%-  mt26bits
+
+\spheader 264Yq Misalkan $s\ge 1$ suatu bilangan bulat, dan
+$r\in\coint{s,\infty}$. Untuk $x$, $y\in\BbbR^s$, tetapkan
+$\rho(x,y)=\|x-y\|^{s/r}$. (i) Tunjukkan bahwa $\rho$ merupakan metrik pada
+$\BbbR^s$ yang menginduksi topologi Euklides. (ii) Misalkan $\mu_{Hr}$ ukuran
+Hausdorff berdimensi $r$ yang bersesuaian. Tunjukkan bahwa
+$\mu_{Hr}B(\tbf{0},1)=2^s$.
+%264I out of order query
+}%end of exercises
+
+\endnotes{
+\Notesheader{264} Dalam bagian ini kita telah sampai pada langkah berikutnya
+dalam `teori ukuran geometris'. Saya membahasnya dengan sangat perlahan,
+karena terdapat kesulitan nyata dalam pokok ini, dan untuk keperluan jilid ini
+kita tidak perlu menguasai banyak darinya. Gagasannya di sini ialah menemukan
+suatu definisi ukuran Lebesgue berdimensi $r$ yang `geometris' dalam
+pengertian ketat, yakni hanya bergantung pada struktur metrik $\BbbR^r$, dan
+karena itu dapat diterapkan pada himpunan yang mempunyai struktur metrik
+tetapi tidak mempunyai struktur linear. Seperti yang sudah terjadi
+sebelumnya, definisi ukuran Hausdorff dari suatu ukuran luar tidak
+menimbulkan masalah—satu-satunya gagasan baru dalam 264A-264C ialah
+penggunaan supremum $\theta_r=\sup_{\delta>0}\theta_{r\delta}$ dari
+ukuran-ukuran luar—dan bagian sulitnya adalah membuktikan bahwa ukuran baru
+kita mempunyai sifat yang berguna. Mengenai sifat ukuran Hausdorff, terdapat
+dua sasaran pokok: pertama, memeriksa bahwa secara umum ukuran-ukuran ini
+memiliki bagian yang cukup besar dari sifat ukuran Lebesgue; dan kedua,
+membenarkan istilah `ukuran berdimensi $r$' dengan menghubungkan ukuran
+Hausdorff berdimensi $r$ pada $\BbbR^r$ dengan ukuran Lebesgue pada
+$\BbbR^r$.
+
+Mengenai sifat ukuran Hausdorff umum, kita harus melangkah cukup hati-hati.
+Saya tidak memberikan contoh tandingan di sini karena contoh-contoh itu
+melibatkan konsep yang termasuk dalam Jilid 4 dan 5, bukan jilid ini, tetapi
+saya harus memperingatkan Anda agar mengantisipasi hal terburuk. Setidaknya,
+kita mengetahui bahwa himpunan terbuka terukur, sehingga semua himpunan Borel
+terukur (264E). Ukuran luar suatu himpunan $A$ dapat didefinisikan melalui
+himpunan-himpunan Borel yang memuat $A$ (264Fa), walaupun secara umum tidak
+melalui himpunan-himpunan terbuka yang memuat $A$; tetapi ukuran suatu
+himpunan terukur $E$ tidak selalu merupakan supremum ukuran
+himpunan-himpunan Borel yang termuat dalam $E$, kecuali $E$ berukuran
+berhingga (264Fc). Kita memang mendapati bahwa ukuran luar $\theta_r$ yang
+didefinisikan dalam 264A merupakan ukuran luar yang didefinisikan dari
+$\mu_{Hr}$ (264Fb), sehingga frasa `ukuran luar Hausdorff berdimensi $r$'
+tidak ambigu. Salah satu sifat penting ukuran Lebesgue ialah bahwa ukuran
+suatu himpunan terukur $E$ merupakan supremum ukuran subhimpunan kompak dari
+$E$; sifat ini secara umum tidak dimiliki ukuran Hausdorff, tetapi berlaku
+untuk himpunan $E$ berukuran berhingga dalam ruang lengkap (264Yi). Mengenai
+subruang, tidak terdapat masalah dengan ukuran luar, dan untuk himpunan
+berukuran berhingga, ukuran subruangnya juga konsisten (264Yf). Karena ukuran
+Hausdorff didefinisikan dalam istilah metrik, ia berperilaku teratur di bawah
+pemetaan Lipschitz (264G); salah satu kelas fungsi yang paling alami untuk
+dipertimbangkan ketika mempelajari ruang metrik adalah fungsi $1$-Lipschitz,
+sehingga (dalam bahasa 264G) $\mu_{Hr}^*\phi[A]\le \mu_{Hr}^*A$ untuk setiap
+$A$.
+
+Sifat pokok kedua ukuran Hausdorff, yakni hubungannya dengan ukuran Lebesgue
+dalam dimensi yang sesuai, adalah Teorema 264I. Karena ukuran Hausdorff dan
+ukuran Lebesgue sama-sama invarian terhadap translasi, hal ini dapat
+dibuktikan dengan cara yang relatif elementer, kecuali dalam evaluasi
+konstanta normalisasi; kita hanya perlu mengetahui bahwa
+$\mu\coint{0,1}^r=1$ dan $\mu_{Hr}\coint{0,1}^r$ keduanya berhingga dan tidak
+nol, dan ini langsung. (Argumen bagian (a) pembuktian 261F relevan.) Untuk
+keperluan bab ini, menurut saya kita tidak harus mengetahui nilai konstanta
+tersebut; tetapi saya tidak dapat membiarkannya tak terselesaikan, dan karena
+itu memberikan Teorema 264H, yaitu {\bf ketaksamaan isodiametrik}, untuk
+menunjukkan bahwa konstanta itu tepat merupakan ukuran Lebesgue dari bola
+berdimensi $r$ dengan diameter $1$, sebagaimana diharapkan. Langkah kritis
+dalam argumen 264H terdapat pada bagian (c) pembuktiannya. Langkah ini disebut
+`simetrisasi Steiner'; gagasannya ialah bahwa, setelah diberikan suatu
+himpunan $A$, kita mentransformasi $A$ melalui serangkaian langkah, pada
+setiap tahap menurunkan, atau setidaknya tidak menaikkan, diameternya, dan
+menaikkan, atau setidaknya tidak menurunkan, ukuran luarnya, dengan secara
+bertahap membuat $A$ lebih simetris, sampai akhirnya diperoleh suatu himpunan
+yang cukup terkendala sehingga mudah ditangani. Operasi simetrisasi khusus
+yang digunakan dalam pembuktian ini cukup penting; tetapi gagasan regularisasi
+bertahap terhadap suatu objek merupakan salah satu metode paling ampuh dalam
+teori ukuran, dan Anda patut mencurahkan seluruh perhatian untuk menguasai
+setiap contoh yang Anda jumpai. Berdasarkan pengalaman saya, gagasan itu
+terutama berguna ketika mencari suatu ketaksamaan yang melibatkan besaran
+yang berbeda sifat—dalam contoh sekarang, diameter dan volume suatu himpunan.
+
+Tentu saja tidak nyaman memiliki dua ukuran pada $\BbbR^r$ yang berbeda
+sebesar suatu kelipatan konstan, dan untuk keperluan bagian berikutnya
+sebenarnya akan sedikit lebih mudah mengikuti {\smc Federer 69} dengan
+menggunakan `ukuran Hausdorff ternormalisasi'
+$2^{-r}\beta_r\mu_{Hr}$. (Untuk $r$ tak bulat, kita dapat mengambil
+$\beta_r=\pi^{r/2}/\Gamma(1+\bover{r}2)$, sebagaimana disarankan dalam
+252Xi.) Namun, saya yakin ini merupakan pandangan minoritas, dan contoh
+mencolok ukuran Hausdorff pada himpunan Cantor (264J, 264Ym-264Yn) tampak jauh
+lebih baik dalam versi yang tidak dinormalisasi.
+
+Ukuran Hausdorff berdimensi ($\ln 2/\ln 3$) pada himpunan Cantor tentu
+hanyalah satu, barangkali yang termudah, dari suatu kelas contoh yang besar.
+Karena ukuran luar Hausdorff berdimensi $r$ dari suatu himpunan $A$, jika
+dipandang sebagai fungsi $r$, berperilaku secara drastis (turun dari $\infty$
+ke $0$) pada suatu nilai kritis $\Delta(A)$ (lihat 264Xe, 264Yk), ukuran itu
+memberi kita suatu invarian ruang metrik dari $A$; $\Delta(A)$ adalah
+{\bf dimensi Hausdorff} dari $A$. Jelas bahwa dimensi Hausdorff dari $C$
+adalah $\ln 2/\ln 3$, sedangkan dimensi Hausdorff ruang Euklides berdimensi
+$r$ adalah $r$.
+}%end of notes
+
+\discrpage

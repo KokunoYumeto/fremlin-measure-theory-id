@@ -1,0 +1,1345 @@
+\frfilename{mt262.tex}
+\versiondate{11.8.15}
+\copyrightdate{1995}
+
+\def\dist{\mathop{\text{dist}}}
+
+\def\chaptername{Perubahan variabel dalam integral}
+\def\sectionname{Fungsi Lipschitz dan fungsi terdiferensialkan}
+
+\newsection{262}
+
+Sebagai persiapan untuk pekerjaan utama bab ini dalam \S263, saya
+menyediakan satu bagian bagi dua kelas penting fungsi antar-ruang Euklides.
+Yang sebenarnya kita perlukan ialah bahan yang pada hakikatnya elementer
+sampai 262I, bersama lemma teknis 262M dan akibat-akibatnya.   Teorema
+262Q tidak digunakan dalam jilid ini, walaupun saya yakin teorema itu
+membuat pola-pola yang akan berkembang menjadi lebih alami dan mudah dipahami.
+
+Seperti dalam \S261, $r$ (dan di sini juga $s$) akan selalu merupakan
+bilangan bulat positif, dan `terukur', `terabaikan', `terintegralkan' akan
+mengacu pada ukuran Lebesgue kecuali dinyatakan lain.
+
+\leader{262A}{Fungsi Lipschitz} Misalkan
+$\phi:D\to\BbbR^s$ suatu fungsi, dengan $D\subseteq\BbbR^r$.   
+\cmmnt{Kita katakan bahwa }$\phi$ {\bf $\gamma$-Lipschitz}, dengan
+$\gamma\in\coint{0,\infty}$, jika
+
+\Centerline{$\|\phi(x)-\phi(y)\|\le \gamma \|x-y\|$}
+
+\noindent untuk semua $x$, $y\in D$, dengan menuliskan
+$\|x\|=\sqrt{\xi_1^2+\ldots+\xi_r^2}$ jika
+$x=(\xi_1,\ldots,\xi_r)\in\BbbR^r$,
+$\|z\|=\sqrt{\zeta_1^2+\ldots+\zeta_s^2}$ jika
+$z=(\zeta_1,\ldots,\zeta_s)\in\BbbR^s$.   Dalam hal ini, $\gamma$ adalah
+{\bf konstanta Lipschitz bagi $\phi$}.
+
+Sebuah {\bf fungsi Lipschitz} adalah fungsi $\phi$ yang
+$\gamma$-Lipschitz untuk suatu $\gamma\ge 0$.
+\cmmnt{Perhatikan bahwa dalam hal ini $\phi$ mempunyai konstanta
+Lipschitz terkecil (sebab jika $A$ adalah himpunan konstanta Lipschitz bagi
+$\phi$, dan $\gamma_0=\inf A$, maka $\gamma_0$ merupakan konstanta Lipschitz
+bagi $\phi$).}
+\dvAnew{2015}Jelas bahwa fungsi Lipschitz kontinu (secara seragam).
+
+\leader{262B}{}\cmmnt{ Kita memerlukan fakta-fakta mudah berikut.
+
+\medskip
+
+\noindent}{\bf Lemma} Misalkan $D\subseteq\BbbR^r$ suatu himpunan dan
+$\phi:D\to\BbbR^s$ suatu fungsi.
+
+(a)  $\phi$ Lipschitz jika dan hanya jika $\phi_i:D\to\Bbb R$
+Lipschitz untuk setiap $i$, dengan menuliskan
+$\phi(x)=(\phi_1(x),\ldots,\phi_s(x))$ untuk setiap $x\in
+D=\dom\phi\subseteq\BbbR^r$.
+
+(b) Dalam hal ini, terdapat fungsi Lipschitz
+$\tilde\phi:\BbbR^r\to\BbbR^s$ yang memperluas $\phi$.
+
+(c) Jika $r=s=1$ dan $D=[a,b]$ suatu interval,
+maka $\phi$ Lipschitz jika dan hanya jika kontinu mutlak dan mempunyai
+turunan terbatas.
+
+\proof{{\bf (a)} Untuk sebarang $x$, $y\in D$ dan $i\le s$,
+
+\Centerline{$|\phi_i(x)-\phi_i(y)|\le\|\phi(x)-\phi(y)\|
+\le\sqrt{s}\sup_{j\le s}|\phi_j(x)-\phi_j(y)|$,}
+
+\noindent sehingga setiap konstanta Lipschitz bagi $\phi$ merupakan
+konstanta Lipschitz bagi setiap $\phi_i$, dan jika $\gamma_j$ adalah
+konstanta Lipschitz bagi $\phi_j$ untuk setiap $j$, maka
+$\sqrt{s}\sup_{j\le s}\gamma_j$ merupakan konstanta Lipschitz bagi $\phi$.
+
+\medskip
+
+{\bf (b)} Berdasarkan (a), cukup dipertimbangkan kasus $s=1$, sebab jika
+setiap $\phi_i$ mempunyai perluasan Lipschitz $\tilde\phi_i$, kita dapat
+menetapkan $\tilde\phi(x)=(\tilde\phi_1(x),\ldots,\tilde\phi_s(x))$ untuk
+setiap $x$ guna memperoleh perluasan Lipschitz dari $\phi$.
+Jadi ambil $s=1$; perhatikan bahwa kasus $D=\emptyset$ sepele;  maka
+andaikan $D\ne\emptyset$.   Misalkan $\gamma$ suatu konstanta Lipschitz
+bagi $\phi$, dan tuliskan
+
+\Centerline{$\tilde\phi(z)=\sup_{y\in D}\phi(y)-\gamma\|y-z\|$}
+
+\noindent untuk setiap $z\in\BbbR^r$.   Jika $x\in D$, maka untuk sebarang
+$z\in\BbbR^r$ dan $y\in D$,
+
+\Centerline{$\phi(y)-\gamma\|y-z\|
+\le\phi(x)+\gamma\|y-x\|-\gamma\|y-z\|
+\le\phi(x)+\gamma\|z-x\|$,}
+
+\noindent sehingga $\tilde\phi(z)\le\phi(x)+\gamma\|z-x\|$;  khususnya,
+ini menunjukkan bahwa $\tilde\phi(z)<\infty$.   Selain itu, jika $z\in D$,
+harus berlaku
+
+\Centerline{$\phi(z)-\gamma\|z-z\|\le\tilde\phi(z)
+\le\phi(z)+\gamma\|z-z\|$,}
+
+\noindent sehingga $\tilde\phi$ memperluas $\phi$.   Akhirnya, jika $w$,
+$z\in\BbbR^r$ dan $y\in D$,
+
+\Centerline{$\phi(y)-\gamma\|y-w\|
+\le\phi(y)-\gamma\|y-z\|+\gamma\|w-z\|
+\le\tilde\phi(z)+\gamma\|w-z\|$;}
+
+\noindent dan dengan mengambil supremum atas $y\in D$,
+
+\Centerline{$\tilde\phi(w)\le\tilde\phi(z)+\gamma\|w-z\|$.}
+
+\noindent Karena $w$ dan $z$ sebarang, $\tilde\phi$ Lipschitz.
+
+\medskip
+
+{\bf (c)(i)} Andaikan $\phi$ $\gamma$-Lipschitz.  Jika $\epsilon>0$ dan
+$a\le a_1\le b_1\le\ldots\le a_n\le b_n\le b$ serta
+$\sum_{i=1}^n(b_i-a_i)\le\epsilon/(1+\gamma)$, maka
+
+\Centerline{$\sum_{i=1}^n|\phi(b_i)-\phi(a_i)|
+\le\sum_{i=1}^n\gamma|b_i-a_i|
+\le\epsilon$.}
+
+\noindent Karena $\epsilon$ sebarang, $\phi$ kontinu mutlak.
+Jika $x\in[a,b]$ dan $\phi'(x)$ terdefinisi, maka
+
+\Centerline{$|\phi'(x)|
+=\lim_{y\to x}\Bover{|\phi(y)-\phi(x)|}{|y-x|}\le\gamma$,}
+
+\noindent sehingga $\phi'$ terbatas.
+
+\medskip
+
+\quad{\bf (ii)} Sekarang andaikan $\phi$ kontinu mutlak dan
+$|\phi'(x)|\le\gamma$ untuk setiap $x\in\dom\phi'$, dengan
+$\gamma\ge 0$.   Maka setiap kali $a\le x\le y\le b$,
+
+\Centerline{$|\phi(y)-\phi(x)|=|\int_x^y\phi'|\le\int_x^y|\phi'|
+\le\gamma(y-x)$}
+
+\noindent (menggunakan 225E untuk kesamaan pertama).   Karena $x$ dan $y$
+sebarang, $\phi$ $\gamma$-Lipschitz.
+}%end of proof of 262B
+
+\cmmnt{
+\leader{262C}{Catatan} Argumen untuk (b) di atas menunjukkan bahwa jika
+$\phi:D\to\Bbb R$ suatu fungsi Lipschitz, dengan
+$D\subseteq\Bbb R^r$, maka $\phi$ mempunyai perluasan ke $\BbbR^r$ dengan
+konstanta Lipschitz yang sama.   Bahkan, jika $\phi:D\to\BbbR^s$ suatu
+fungsi Lipschitz, maka $\phi$ mempunyai perluasan
+$\tilde\phi:\BbbR^r\to\BbbR^s$ dengan konstanta Lipschitz yang sama;
+ini adalah `teorema Kirszbraun' ({\smc Kirszbraun 34}, atau
+{\smc Federer 69}, 2.10.43).
+}%end of comment
+
+\leader{262D}{Proposisi} Jika $\phi:D\to\BbbR^r$ suatu fungsi
+$\gamma$-Lipschitz, dengan $D\subseteq\BbbR^r$, maka
+$\mu^*\phi[A]\le\gamma^r\mu^*A$ untuk setiap $A\subseteq D$, dengan $\mu$
+ukuran Lebesgue pada $\BbbR^r$.   Khususnya,
+$\phi[D\cap A]$ terabaikan untuk setiap himpunan terabaikan
+$A\subseteq\BbbR^r$.
+
+\proof{ Misalkan $\epsilon>0$.   Berdasarkan 261F, terdapat barisan bola
+tertutup $\sequencen{B_n}=\sequencen{B(x_n,\delta_n)}$ di
+$\Bbb R^r$ yang menutupi $A$, sedemikian sehingga
+$\sum_{n=0}^{\infty}\mu B_n\le\mu^* A+\epsilon$ dan
+$\sum_{n\in\Bbb N\setminus K}\mu B_n\le\epsilon$, dengan
+$K=\{n:n\in\Bbb N,\,x_n\in A\}$.   Tetapkan
+
+\Centerline{$L=\{n:n\in\Bbb N\setminus K,\,B_n\cap D\ne\emptyset\}$,}
+
+\noindent dan untuk $n\in L$ pilih $y_n\in D\cap B_n$.   Sekarang tetapkan
+
+$$\eqalign{B'_n
+&=B(\phi(x_n),\gamma\delta_n)\text{ jika }n\in K,\cr
+&=B(\phi(y_n),2\gamma\delta_n)\text{ jika }n\in L,\cr
+&=\emptyset\text{ jika }n\in\Bbb N\setminus(K\cup L).\cr}$$
+
+\noindent Maka $\phi[B_n\cap D]\subseteq B'_n$ untuk setiap $n$, sehingga
+$\phi[D\cap A]\subseteq\bigcup_{n\in\Bbb N}B'_n$, dan
+
+$$\eqalign{\mu^*\phi[A\cap D]
+&\le\sum_{n=0}^{\infty}\mu B'_n
+=\gamma^r\sum_{n\in K}\mu B_n+2^r\gamma^r\sum_{n\in L}\mu B_n\cr
+&\le\gamma^r(\mu^*A+\epsilon)+2^r\gamma^r\epsilon.\cr}$$
+
+\noindent Karena $\epsilon$ sebarang, $\mu^*\phi[A\cap
+D]\le\gamma^r\mu^*A$, sebagaimana diklaim.
+}%end of proof of 262D
+
+\vleader{72pt}{262E}{Akibat} Misalkan $\phi:D\to\BbbR^r$ suatu fungsi
+Lipschitz injektif, dengan $D\subseteq\BbbR^r$, dan $f$ suatu fungsi
+terukur dari suatu himpunan bagian $\BbbR^r$ ke $\Bbb R$.
+
+(a) Jika $\phi^{-1}$ terdefinisi hampir di mana-mana dalam suatu himpunan $H$
+dari $\BbbR^r$ dan $f$ terdefinisi hampir di mana-mana dalam
+$\BbbR^r$, maka $f\phi^{-1}$ terdefinisi hampir di mana-mana dalam $H$.
+
+(b) Jika $E\subseteq D$ terukur Lebesgue, maka $\phi[E]$ terukur.
+
+(c) Jika $D$ terukur, maka $f\phi^{-1}$ terukur.
+
+\proof{ Tetapkan
+
+\Centerline{$C=\dom(f\phi^{-1})
+=\{y:y\in\phi[D],\,\phi^{-1}(y)\in\dom f\}=\phi[D\cap\dom f]$.}
+
+\medskip
+
+{\bf (a)} Karena $f$ terdefinisi hampir di mana-mana,
+$\phi[D\setminus\dom f]$ terabaikan.   Tetapi sekarang
+
+\Centerline{$C=\phi[D]\setminus \phi[D\setminus\dom f]
+=\dom\phi^{-1}\setminus\phi[D\setminus\dom f]$,}
+
+\noindent sehingga
+
+\Centerline{$H\setminus C
+\subseteq(H\setminus\dom\phi^{-1})\cup\phi[D\setminus\dom f]$}
+
+\noindent terabaikan.
+
+\medskip
+
+{\bf (b)} Sekarang andaikan $E\subseteq D$ dan $E$ terukur.
+Misalkan $\sequencen{F_n}$ suatu barisan himpunan bagian tertutup dan
+terbatas dari $E$ sedemikian sehingga
+$\mu(E\setminus\bigcup_{n\in\Bbb N}F_n)=0$ (134Fb).   Karena $\phi$
+Lipschitz, fungsi ini kontinu, sehingga $\phi[F_n]$ kompak, jadi tertutup,
+dan karena itu terukur untuk setiap $n$ (2A2E, 115G); selain itu,
+$\phi[E\setminus\bigcup_{n\in\Bbb N}F_n]$ terabaikan berdasarkan 262D,
+dan karena itu terukur.   Jadi
+
+\Centerline{$\phi[E]
+=\phi[E\setminus\bigcup_{n\in\Bbb N}F_n]
+  \cup\bigcup_{n\in\Bbb N}\phi[F_n]
+$}
+
+\noindent terukur.
+
+\medskip
+
+{\bf (c)} Untuk sebarang $a\in\Bbb R$, ambil himpunan terukur
+$E\subseteq\BbbR^r$ sedemikian sehingga
+$\{x:f(x)\ge a\}=E\cap\dom f$.   Maka
+
+\Centerline{$\{y:y\in C,\,f\phi^{-1}(y)\ge a\}
+=C\cap\phi[D\cap E]$.}
+
+\noindent Tetapi $\phi[D\cap E]$ terukur berdasarkan (b), sehingga
+$\{y:f\phi^{-1}(y)\ge a\}$ terukur relatif dalam $C$.   Karena $a$
+sebarang, $f\phi^{-1}$ terukur.
+}%end of proof of 262E
+
+\leader{262F}{\dvrocolon{Keterdiferensialan}}\cmmnt{ Sekarang saya
+beralih ke kelas fungsi yang sifat-sifatnya akan mengisi sebagian besar
+sisa bab ini.
+
+\medskip
+
+\noindent}{\bf Definisi}  Misalkan $\phi$ suatu fungsi dari himpunan
+bagian $D=\dom\phi$ dari $\BbbR^r$ ke $\BbbR^s$.
+
+\spheader 262Fa $\phi$ {\bf terdiferensialkan} di $x\in D$ jika terdapat
+matriks real $s\times r$, yaitu $T$, sedemikian sehingga
+
+\Centerline{$\lim_{y\to x}
+\Bover{\|\phi(y)-\phi(x)-T(y-x)\|}{\|y-x\|}=0$;}
+
+\noindent dalam hal ini kita dapat menuliskan $T=\phi'(x)$.
+
+\spheader 262Fb Saya akan mengatakan bahwa $\phi$ {\bf terdiferensialkan
+relatif terhadap domainnya} di $x$, dan bahwa $T$ adalah {\bf suatu}
+turunan dari $\phi$ di $x$, jika $x\in D$ dan untuk setiap $\epsilon>0$
+terdapat $\delta>0$ sedemikian sehingga
+$\|\phi(y)-\phi(x)-T(y-x)\|\le\epsilon\|y-x\|$ untuk setiap
+$y\in B(x,\delta)\cap D$.
+
+\cmmnt{
+\vleader{72pt}{262G}{Catatan (a)} Definisi baku dalam 262Fa, yang
+melibatkan limit dari semua arah
+`$\lim_{y\to x}$', secara tersirat mensyaratkan $\phi$ terdefinisi pada
+suatu bola tak-sepele yang berpusat di $x$, agar kita dapat menghitung
+$\phi(y)-\phi(x)-T(y-x)$ untuk semua $y$ yang cukup dekat dengan $x$.
+Keuntungannya ialah turunan $T=\phi'(x)$ terdefinisi secara tunggal
+(sebab jika $\lim_{z\to \tbf{0}}\Bover{\|T_1z-T_2z\|}{\|z\|}=0$ maka
+
+\Centerline{$\Bover{\|(T_1-T_2)z\|}{\|z\|}=\lim_{\alpha\to
+0}\Bover{\|T_1(\alpha
+z)-T_2(\alpha z)\|}{\|\alpha z\|}=0$}
+
+\noindent untuk setiap $z$ taknol, sehingga $T_1-T_2$ harus merupakan
+matriks nol). Untuk keperluan kita di sini, ada manfaatnya melonggarkan
+hal ini sedikit menjadi bentuk dalam 262Fb, agar kita tidak perlu memberi
+perhatian khusus pada batas $\dom\phi$.   Khususnya, kita mendapati bahwa
+jika $T$ suatu turunan dari $\phi:D\to\BbbR^s$ relatif terhadap domainnya
+di $x$, dan $x\in D'\subseteq D$, maka $T$ merupakan turunan dari
+$\phi\restr D'$ relatif terhadap domainnya di $x$.
+
+\header{262Gb}{\bf (b)} Jika Anda belum pernah menjumpai konsep
+`keterdiferensialan' ini, tetapi cukup mengenal pendiferensialan parsial,
+perlu ditekankan bahwa konsep fungsi `terdiferensialkan' (setidaknya dalam
+pengertian ketat yang dituntut 262Fa) benar-benar lebih kuat daripada
+konsep fungsi `terdiferensialkan secara parsial'. Untuk keperluan
+perhitungan, metode paling berguna untuk menemukan turunan sejati diberikan
+oleh 262Id di bawah.   Sebagai contoh sederhana fungsi yang mempunyai
+semua turunan parsial tetapi tidak terdiferensialkan di setiap titik,
+perhatikan $\phi:\BbbR^2\to\Bbb R$ yang didefinisikan oleh
+
+$$\eqalign{\phi(\xi_1,\xi_2)
+&={{\xi_1\xi_2}\over{\xi_1^2+\xi_2^2}}
+ \text{ jika }\xi_1^2+\xi_2^2\ne 0,\cr
+&=0\text{ jika }\xi_1=\xi_2=0.\cr}$$
+
+\noindent Maka $\phi$ bahkan tidak kontinu di $\tbf{0}$, walaupun kedua
+turunan parsial $\pd{\phi}{\xi_j}$ terdefinisi di mana-mana.
+
+\header{262Gc}{\bf (c)} Dalam definisi di atas, saya menyebut turunan
+sebagai suatu matriks.   Secara tepat, turunan fungsi yang didefinisikan
+pada suatu himpunan bagian $\BbbR^r$ dan bernilai dalam $\BbbR^s$
+seharusnya dipandang sebagai operator linear terbatas dari $\BbbR^r$ ke
+$\BbbR^s$;  perumusan dengan matriks dapat diterima karena terdapat
+korespondensi satu-satu alami antara matriks real $s\times r$ dan operator
+linear dari $\BbbR^r$ ke $\BbbR^s$, dan semua operator linear ini terbatas.
+Saya menggunakan deskripsi `matriks' karena deskripsi ini membuat beberapa
+perhitungan lebih langsung; khususnya, hubungan antara $\phi'$ dan turunan
+parsial $\phi$ (262Ic), serta gagasan determinan $\det\phi'(x)$, yang
+digunakan sepanjang \S\S263 dan 265.
+}%end of comment
+
+\leader{262H}{Norma matriks} Beberapa perhitungan di bawah akan bertumpu
+pada gagasan `norma' matriks.   Norma yang akan saya gunakan\cmmnt{
+(sebenarnya, untuk keperluan kita di sini, norma apa pun memadai)} ialah
+`norma operator', yang didefinisikan dengan menetapkan
+
+\Centerline{$\|T\|=\sup\{\|Tx\|:x\in\BbbR^r,\,\|x\|\le 1\}$}
+
+\noindent untuk sebarang matriks $s\times r$, yaitu $T$.   \cmmnt{Untuk
+fakta-fakta dasar mengenai norma-norma ini, lihat 2A4F-2A4G.   Hal berikut
+juga akan berguna.}
+
+\header{262Ha}{\bf (a)} Jika\cmmnt{ semua koefisien $T$ kecil, maka
+$\|T\|$ juga kecil;  sesungguhnya, jika}
+$T=\langle\tau_{ij}\rangle_{i\le s,j\le r}$\cmmnt{, dan
+$\|x\|\le 1$,} maka
+\cmmnt{$|\xi_j|\le 1$ untuk setiap $j$, sehingga
+
+\Centerline{$\|Tx\|
+=\bigl(\sum_{i=1}^s(\sum_{j=1}^r\tau_{ij}\xi_j)^2\bigr)^{1/2}
+\le \bigl(\sum_{i=1}^s(\sum_{j=1}^r|\tau_{ij}|)^2\bigr)^{1/2}
+\le r\sqrt{s}\max_{i\le s,j\le r}|\tau_{ij}|$,}
+
+\noindent dan} $\|T\|\le r\sqrt{s}\max_{i\le s,j\le r}|\tau_{ij}|$.
+\cmmnt{(Ini ketaksamaan yang sangat kasar.   Ketaksamaan yang lebih baik
+ada dalam 262Yb.   Namun khususnya ini memberi tahu kita bahwa $\|T\|$
+selalu berhingga.)
+}
+
+\header{262Hb}{\bf (b)}\dvro{ $|\tau_{ij}|\le\|T\|$ untuk semua $i$, $j$.}
+{ Jika $\|T\|$ kecil, maka semua koefisien $T$ juga kecil; sesungguhnya,
+dengan menuliskan $e_j$ untuk vektor satuan ke-$j$ dari $\BbbR^r$, maka
+koordinat ke-$i$ dari $Te_j$ adalah $\tau_{ij}$, sehingga
+$|\tau_{ij}|\le\|Te_j\|\le\|T\|$.}
+
+\leader{262I}{Lemma} Misalkan $\phi:D\to\BbbR^s$ suatu fungsi, dengan
+$D\subseteq\BbbR^r$.   Untuk $i\le s$, misalkan $\phi_i:D\to\Bbb R$
+koordinat ke-$i$-nya, sehingga $\phi(x)=(\phi_1(x),\ldots,\phi_s(x))$
+untuk $x\in D$.
+
+(a) Jika $\phi$ terdiferensialkan relatif terhadap domainnya di $x\in D$,
+maka $\phi$ kontinu di $x$.
+
+(b) Jika $x\in D$, maka $\phi$ terdiferensialkan relatif terhadap
+domainnya di $x$ jika dan hanya jika setiap $\phi_i$ terdiferensialkan
+relatif terhadap domainnya di $x$.
+
+(c) Jika $\phi$ terdiferensialkan di $x\in D$, maka semua turunan parsial
+$\pd{\phi_i}{\xi_j}$ dari $\phi$ terdefinisi di $x$, dan turunan $\phi$
+di $x$ adalah matriks
+$\langle\pd{\phi_i}{\xi_j}(x)\rangle_{i\le s,j\le r}$.
+
+(d) Jika semua turunan parsial $\pd{\phi_i}{\xi_j}$, untuk $i\le s$ dan
+$j\le r$, terdefinisi di suatu lingkungan dari $x\in D$ dan kontinu di $x$,
+maka $\phi$ terdiferensialkan di $x$.
+
+\proof{{\bf (a)} Misalkan $T$ suatu turunan dari $\phi$ di $x$. Dengan
+menerapkan definisi 262Fb dengan $\epsilon=1$, kita melihat bahwa terdapat
+$\delta>0$ sedemikian sehingga
+\Centerline{$\|\phi(y)-\phi(x)-T(y-x)\|\le\|y-x\|$}
+
+\noindent setiap kali $y\in D$ dan $\|y-x\|\le\delta$.   Sekarang
+
+\Centerline{$\|\phi(y)-\phi(x)\|\le\|T(y-x)\|+\|y-x\|
+\le(1+\|T\|)\|y-x\|$}
+
+\noindent setiap kali $y\in D$ dan $\|y-x\|\le\delta$, sehingga $\phi$
+kontinu di $x$.
+
+\medskip
+
+{\bf (b)(i)} Jika $\phi$ terdiferensialkan relatif terhadap domainnya di
+$x\in D$, misalkan $T$ suatu turunan dari $\phi$ di $x$. Untuk $i\le s$,
+misalkan $T_i$ matriks $1\times r$ yang terdiri atas baris ke-$i$ dari
+$T$. Misalkan $\epsilon>0$. Maka terdapat $\delta>0$ sedemikian sehingga
+
+$$\eqalign{|\phi_i(y)-\phi_i(x)-T_i(y-x)|
+&\le\|\phi(y)-\phi(x)-T(y-x)\|\cr
+&\le\epsilon\|y-x\|\cr}$$
+
+\noindent setiap kali $y\in D$ dan $\|y-x\|\le\delta$, sehingga $T_i$
+merupakan turunan dari $\phi_i$ di $x$.
+
+\medskip
+
+\quad{\bf (ii)} Jika setiap $\phi_i$ terdiferensialkan relatif terhadap
+domainnya di $x$, dengan turunan yang bersesuaian $T_i$, misalkan $T$
+matriks $s\times r$ dengan baris $T_1,\ldots,T_s$. Untuk $\epsilon>0$
+yang diberikan, bagi setiap $i\le s$ terdapat $\delta_i>0$ sedemikian
+sehingga
+
+\Centerline{$|\phi_i(y)-\phi_i(x)-T_i(y-x)|\le\epsilon\|y-x\|$ setiap kali
+$y\in D$, $\|y-x\|\le\delta_i$;}
+
+\noindent tetapkan $\delta=\min_{i\le s}\delta_i>0$; maka jika $y\in D$
+dan $\|y-x\|\le\delta$, akan berlaku
+
+\Centerline{$\|\phi(y)-\phi(x)-T(y-x)\|^2
+=\sum_{i=1}^s|\phi_i(y)-\phi_i(x)-T_i(y-x)|^2
+\le s\epsilon^2\|y-x\|^2$,}
+
+\noindent sehingga
+
+\Centerline{$\|\phi(y)-\phi(x)-T(y-x)\|
+\le\epsilon\sqrt{s}\|y-x\|$.}
+
+\noindent Karena $\epsilon$ sebarang, $T$ merupakan turunan dari $\phi$
+di $x$.
+
+\medskip
+
+{\bf (c)} Tetapkan $T=\phi'(x)$.   Kita mempunyai
+
+\Centerline{$\lim_{y\to x}\Bover{\|\phi(y)-\phi(x)-T(y-x)\|}{\|y-x\|}
+=0$;}
+
+\noindent tetapkan $j\le r$, dan perhatikan $y=x+\eta e_j$, dengan
+$e_j=(0,\ldots,0,1,0,\ldots,0)$ vektor satuan ke-$j$ dalam $\BbbR^r$.
+Maka harus berlaku
+
+\Centerline{$\lim_{\eta\to 0}\Bover{\|\phi(x+\eta e_j)-\phi(x)-\eta
+T(e_j)\|}{|\eta|}
+=0$.}
+
+\noindent Dengan memperhatikan koordinat ke-$i$ dari
+$\phi(x+\eta e_j)-\phi(x)-\eta T(e_j)$, kita memperoleh
+
+
+\Centerline{$|\phi_i(x+\eta e_j)-\phi_i(x)-\tau_{ij}\eta|
+\le\|\phi(x+\eta e_j)-\phi(x)-\eta T(e_j)\|$,}
+
+\noindent dengan $\tau_{ij}$ koefisien ke-$(i,j)$ dari $T$; sehingga
+
+\Centerline{$\lim_{\eta\to 0}
+\Bover{|\phi_i(x+\eta e_j)-\phi_i(x)-\tau_{ij}\eta|}{|\eta|}
+=0$.}
+
+\noindent Tetapi ini tepat mengatakan bahwa turunan parsial
+$\pd{\phi_i}{\xi_j}(x)$ ada dan sama dengan $\tau_{ij}$, sebagaimana
+dinyatakan.
+
+\medskip
+
+{\bf (d)} Sekarang andaikan turunan parsial $\pd{\phi_i}{\xi_j}$
+terdefinisi di dekat $x$ dan kontinu di $x$. Misalkan $\epsilon>0$.
+Misalkan $\delta>0$ sedemikian sehingga
+
+\Centerline{$|\pd{\phi_i}{\xi_j}(y)-\tau_{ij}|\le\epsilon$}
+
+\noindent setiap kali $\|y-x\|\le\delta$, dengan menuliskan
+$\tau_{ij}=\pd{\phi_i}{\xi_j}(x)$.   Sekarang andaikan
+$\|y-x\|\le\delta$.   Tetapkan
+
+\Centerline{$y=(\eta_1,\ldots,\eta_r)$,
+\quad$x=(\xi_1,\ldots,\xi_r)$,}
+
+\Centerline{$y_j=(\eta_1,\ldots,\eta_j,\xi_{j+1},\ldots,\xi_r)$ untuk
+$0\le
+j\le r$,}
+
+\noindent sehingga $y_0=x$, $y_r=y$, dan ruas garis antara $y_{j-1}$ dan
+$y_{j}$ seluruhnya berada dalam jarak $\delta$ dari $x$ setiap kali
+$1\le j\le r$, sebab jika $z=(\zeta_1,\ldots,\zeta_r)$ terletak pada
+ruas ini, maka $\zeta_i$ berada di antara $\xi_i$ dan $\eta_i$ untuk
+setiap $i$. Berdasarkan teorema nilai rata-rata biasa bagi fungsi real
+terdiferensialkan, yang diterapkan pada fungsi
+
+\Centerline{$t\mapsto
+\phi_i(\eta_1,\ldots,\eta_{j-1},t,\xi_{j+1},\ldots,\xi_r)$,}
+
+\noindent untuk setiap $i\le s$, $j\le r$ terdapat titik $z_{ij}$ pada
+ruas garis antara $y_{j-1}$ dan $y_j$ sedemikian sehingga
+
+\Centerline{$\phi_i(y_j)-\phi_i(y_{j-1})
+=(\eta_j-\xi_j)\pd{\phi_i}{\xi_j}(z_{ij})$.}
+
+\noindent Tetapi
+
+\Centerline{$|\pd{\phi_i}{\xi_j}(z_{ij})-\tau_{ij}|\le\epsilon$,}
+\noindent sehingga
+
+\Centerline{$|\phi_i(y_j)-\phi_i(y_{j-1})
+-\tau_{ij}(\eta_j-\xi_j)|\le\epsilon|\eta_j-\xi_j|\le\epsilon\|y-x\|$.}
+
+\noindent Dengan menjumlahkan atas $j$,
+
+\Centerline{$|\phi_i(y)-\phi_i(x)-\sum_{j=1}^r\tau_{ij}(\eta_j-\xi_j)|
+\le r\epsilon\|y-x\|$}
+
+\noindent untuk setiap $i$.   Dengan menjumlahkan kuadrat-kuadratnya dan
+mengambil akar kuadrat,
+
+\Centerline{$\|\phi(y)-\phi(x)-T(y-x)\|\le \epsilon r\sqrt{s}\|y-x\|$,}
+
+\noindent dengan $T=\langle\tau_{ij}\rangle_{i\le s,j\le r}$. Ini berlaku
+setiap kali $\|y-x\|\le\delta$.   Karena $\epsilon$ sebarang,
+$\phi'(x)=T$ terdefinisi.
+}%end of proof of 262I
+
+\cmmnt{
+\leader{262J}{Catatan} Saya tidak yakin apakah saya perlu meminta maaf
+atas notasi $\pd{}{\xi_j}$.   Dalam rumus seperti
+$(\eta_j-\xi_j)\pd{\phi_i}{\xi_j}(z_{ij})$ di atas, kedua kemunculan
+$\xi_j$ sangat mudah membingungkan.   Namun saya rasa orang yang
+beriktikad baik tidak akan tersesat, asalkan label $\xi_j$ (atau simbol
+apa pun yang digunakan untuk mewakili variabel terkait) dijelaskan secara
+memadai ketika domain $\phi$ pertama kali diperkenalkan (dan selalu diingat
+bahwa dalam pendiferensialan parsial, kita tidak hanya menggerakkan satu
+variabel -- suatu $\xi_j$ dalam konteks sekarang -- tetapi juga menahan
+tetap daftar variabel lain yang tidak dicantumkan dalam notasi). Saya yakin
+notasi tradisional $\pd{}{\xi_j}$ bertahan karena alasan yang kuat, dan
+saya ingin menyambut mereka yang lebih nyaman dengannya daripada dengan
+berbagai alternatif yang pernah diusulkan tetapi tidak pernah berakar.
+}%end of comment
+
+\cmmnt{
+\leader{262K}{Meninjau kembali fungsi Cantor} Ada manfaatnya memeriksa
+kembali contoh-contoh 134H-134I dalam terang pertimbangan sekarang.
+Misalkan $f:[0,1]\to[0,1]$ fungsi Cantor (134H) dan tetapkan
+$g(x)=\bover12(x+f(x))$ untuk $x\in [0,1]$.   Maka
+$g:[0,1]\to[0,1]$ suatu homeomorfisme (134I); tetapkan
+$\phi=g^{-1}:[0,1]\to[0,1]$.   Kita melihat bahwa jika
+$0\le x\le y\le 1$ maka $g(y)-g(x)\ge\bover12(y-x)$; secara ekuivalen,
+$\phi(y)-\phi(x)\le 2(y-x)$ setiap kali $0\le x\le y\le 1$, sehingga
+$\phi$ merupakan fungsi Lipschitz, dan karena itu kontinu mutlak (262Bc).
+Jika $D=\{x:\phi'(x)$ terdefinisi$\}$, maka $[0,1]\setminus D$ terabaikan
+(225Cb), sehingga $[0,1]\setminus\phi[D]=\phi[\,[0,1]\setminus D]$
+terabaikan (262Da). Saya mencatat dalam 134I bahwa terdapat fungsi terukur
+$h:[0,1]\to\Bbb R$ sedemikian sehingga komposisi $h\phi$ tidak terukur;
+sekarang $h(\phi\restr D)=(h\phi)\restr D$ tidak mungkin terukur, meskipun
+$\phi\restr D$ terdiferensialkan.
+}%end of comment
+
+\leader{262L}{}\cmmnt{ Akan berguna jika kita dapat memakai hasil langsung
+berikut.
+
+\medskip
+
+\noindent}{\bf Lemma} Andaikan $D\subseteq\BbbR^r$ dan $x\in\BbbR^r$
+sedemikian sehingga
+$\lim_{\delta\downarrow 0}
+ \Bover{\mu^*(D\cap B(x,\delta))}{\mu B(x,\delta)}=1$.   Maka
+$\lim_{z\to\tbf{0}}\Bover{\rho(x+z,D)}{\|z\|}=0$, dengan
+$\rho(x+z,D)=\inf_{y\in D}\|x+z-y\|$.
+
+\proof{ Misalkan $\epsilon>0$. Misalkan $\delta_0>0$ sedemikian sehingga
+
+\Centerline{$\mu^*(D\cap B(x,\delta))
+>(1-(\Bover{\epsilon}{1+\epsilon})^r)\mu B(x,\delta)$}
+
+\noindent setiap kali $0<\delta\le\delta_0$. Ambil sebarang $z$ sedemikian
+sehingga $0<\|z\|\le\delta_0/(1+\epsilon)$.   \Quer\ Andaikan, jika
+mungkin, bahwa $\rho(x+z,D)>\epsilon\|z\|$. Maka
+$B(x+z,\epsilon\|z\|)\subseteq B(x,(1+\epsilon)\|z\|)\setminus D$,
+sehingga
+
+$$\eqalign{\mu^*(D\cap B(x,(1+\epsilon)\|z\|))
+&\le\mu B(x,(1+\epsilon)\|z\|)-\mu B(x+z,\epsilon\|z\|)\cr
+&=(1-(\Bover{\epsilon}{1+\epsilon})^r)\mu B(x,(1+\epsilon)\|z\|),\cr}$$
+
+\noindent yang mustahil, sebab $(1+\epsilon)\|z\|\le\delta_0$.\
+\BanG\ Jadi $\rho(x+z,D)\le\epsilon\|z\|$. Karena $\epsilon$ sebarang,
+ini membuktikan hasil tersebut.
+}%end of proof of 262L
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Ada istilah untuk hal ini; lihat 261Yg.}
+
+\leader{262M}{}\cmmnt{ Sekarang saya sampai pada hasil pertama yang
+menghubungkan fungsi Lipschitz dengan fungsi terdiferensialkan. Saya
+mendekatinya melalui suatu lemma penting yang akan menjadi landasan \S263.
+
+\medskip
+
+\noindent}{\bf Lemma} Misalkan $\phi$ suatu fungsi dari himpunan bagian
+$D$ dari $\BbbR^r$ ke $\BbbR^s$ yang terdiferensialkan di setiap titik
+domainnya. Untuk setiap $x\in D$, misalkan $T(x)$ suatu turunan dari
+$\phi$. Misalkan $M_{sr}$ himpunan matriks $s\times r$ dan
+$\zeta:A\to\ooint{0,\infty}$ suatu fungsi positif ketat, dengan
+$A\subseteq M_{sr}$ suatu himpunan takkosong yang memuat $T(x)$ untuk
+setiap $x\in D$. Maka kita dapat menemukan barisan
+$\sequencen{D_n}$, $\sequencen{T_n}$ sedemikian sehingga
+
+(i) $\sequencen{D_n}$ adalah partisi $D$ menjadi himpunan-himpunan yang
+terukur relatif dalam $D$\cmmnt{, yaitu irisan $D$ dengan himpunan bagian
+terukur dari $\BbbR^r$};
+
+(ii) $T_n\in A$ untuk setiap $n$;
+
+(iii) $\|\phi(x)-\phi(y)-T_n(x-y)\|\le\zeta(T_n)\|x-y\|$ untuk setiap
+$n\in\Bbb N$ dan $x$, $y\in D_n$;
+
+(iv) $\|T(x)-T_n\|\le\zeta(T_n)$ untuk setiap $x\in D_n$.
+
+\proof{{\bf (a)} Langkah pertama ialah mencatat bahwa terdapat barisan
+$\sequencen{S_n}$ dalam $A$ sedemikian sehingga
+
+\Centerline{$A
+\subseteq\bigcup_{n\in\Bbb N}\{T:T\in M_{sr},\,\|T-S_n\|<\zeta(S_n)\}$.}
+
+\noindent\Prf\ (Tentu saja ini merupakan hasil baku mengenai ruang metrik
+terpisahkan.) Tuliskan $Q$ untuk himpunan matriks dalam $M_{sr}$ dengan
+koefisien rasional; maka terdapat bijeksi alami antara $Q$ dan
+$\Bbb Q^{sr}$, sehingga $Q$ dan $Q\times\Bbb N$ terhitung. Daftarkan
+$Q\times\Bbb N$ sebagai $\sequencen{(R_n,k_n)}$. Untuk setiap
+$n\in\Bbb N$, pilih $S_n\in A$ menurut aturan
+
+\quad --- jika terdapat $S\in A$ sedemikian sehingga
+$\{T:\|T-R_n\|\le 2^{-k_n}\}\subseteq\{T:\|T-S\|<\zeta(S)\}$,
+ambil $S$ seperti itu sebagai $S_n$;
+
+\quad --- jika tidak, ambil $S_n$ sebagai sebarang anggota $A$.
+
+\noindent Saya nyatakan bahwa ini berhasil. Misalkan $S\in A$. Maka
+$\zeta(S)>0$; ambil $k\in\Bbb N$ sedemikian sehingga
+$2^{-k}<\zeta(S)$. Ambil $R^*\in Q$ sedemikian sehingga
+$\|R^*-S\|<\min(\zeta(S)-2^{-k},2^{-k})$; ini mungkin karena $\|R-S\|$
+akan kecil setiap kali semua koefisien $R$ cukup dekat dengan koefisien
+$S$ yang bersesuaian (262Ha), dan kita dapat memilih bilangan rasional
+untuk mencapainya. Misalkan $n\in\Bbb N$ sedemikian sehingga $R^*=R_n$
+dan $k=k_n$. Maka
+
+\Centerline{$\{T:\|T-R_n\|\le 2^{-k_n}\}
+\subseteq\{T:\|T-S\|<\zeta(S)\}$}
+
+\noindent (sebab $\|T-S\|\le\|T-R_n\|+\|R_n-S\|$), sehingga kita pasti
+memilih $S_n$ menurut bagian pertama aturan di atas, dan
+
+\Centerline{$S\in\{T:\|T-R_n\|\le 2^{-k_n}\}
+\subseteq\{T:\|T-S_n\|<\zeta(S_n)\}$.}
+
+\noindent Karena $S$ sebarang, ini membuktikan hasil tersebut.\ \Qed
+
+\medskip
+
+{\bf (b)} Daftarkan $\Bbb Q^r\times\Bbb Q^r\times\Bbb N$ sebagai
+$\sequencen{(q_n,q'_n,m_n)}$. Untuk setiap $n\in\Bbb N$, tetapkan
+
+$$\eqalign{H_n&=\{x:x\in[q_n,q'_n]\cap D,\,
+\|\phi(y)-\phi(x)-S_{m_n}(y-x)\|\le\zeta(S_{m_n})\|y-x\|\cr
+&\mskip370mu
+    \text{untuk setiap }y\in[q_n,q'_n]\cap D\}\cr
+&=[q_n,q'_n]\cap D\cap\bigcap_{y\in[q_n,q'_n]\cap D}
+       \{x:x\in D,\cr
+&\mskip270mu
+    \|\phi(y)-\phi(x)-S_{m_n}(y-x)\|\le\zeta(S_{m_n})\|y-x\|\}.\cr}$$
+
+\noindent Karena $\phi$ kontinu, $H_n=D\cap\overline{H}_n$, dengan
+$\overline{H}_n$ menyatakan penutupan $H_n$, sehingga $H_n$ terukur
+relatif dalam $D$. Perhatikan bahwa jika $x$, $y\in H_n$, maka
+$y\in D\cap[q_n,q'_n]$, sehingga
+
+\Centerline{$\|\phi(y)-\phi(x)-S_{m_n}(y-x)\|\le\zeta(S_{m_n})\|y-x\|$.}
+
+
+Tetapkan
+
+\Centerline{$H_n'=\{x:x\in H_n,\,\|T(x)-S_{m_n}\|\le\zeta(S_{m_n})\}$.}
+
+\medskip
+
+{\bf (c)} $D=\bigcup_{n\in\Bbb N}H'_n$.   \Prf\ Misalkan $x\in D$.
+Maka $T(x)\in A$, sehingga terdapat $k\in\Bbb N$ sedemikian sehingga
+$\|T(x)-S_k\|<\zeta(S_k)$. Misalkan $\delta>0$ sedemikian sehingga
+
+\Centerline{$\|\phi(y)-\phi(x)-T(x)(y-x)\|
+\le(\zeta(S_k)-\|T(x)-S_k\|)\|x-y\|$}
+
+\noindent setiap kali $y\in D$ dan $\|y-x\|\le\delta$.   Maka
+
+$$\eqalign{\|\phi(y)-\phi(x)-S_k(y-x)\|
+&\le(\zeta(S_k)-\|T(x)-S_k\|)\|x-y\|+\|T(x)-S_k\|\|x-y\|\cr
+&\le\zeta(S_k)\|x-y\|\cr}$$
+
+\noindent setiap kali $y\in D\cap B(x,\delta)$. Misalkan $q$,
+$q'\in\Bbb Q^r$ sedemikian sehingga
+$x\in[q,q']\subseteq B(x,\delta)$. Misalkan $n$ sedemikian sehingga
+$q=q_n$, $q'=q'_n$ dan $k=m_n$. Maka $x\in H'_n$.\ \Qed
+
+\medskip
+
+{\bf (d)} Tuliskan
+
+\Centerline{$C_n=\{x:x\in H_n,\,\lim_{\delta\downarrow 0}
+\Bover{\mu^*(H_n\cap B(x,\delta))}{\mu B(x,\delta)}=1\}$.}
+
+\noindent Maka $C_n\subseteq H'_n$.
+
+\medskip
+
+\Prf\ {\bf (i)} Ambil $x\in C_n$, dan tetapkan
+$\tilde T=T(x)-S_{m_n}$. Saya harus menunjukkan bahwa
+$\|\tilde T\|\le\zeta(S_{m_n})$. Ambil $\epsilon>0$. Misalkan
+$\delta_0>0$ sedemikian sehingga
+
+\Centerline{$\|\phi(y)-\phi(x)-T(x)(y-x)\|\le\epsilon\|y-x\|$}
+
+\noindent setiap kali $y\in D$ dan $\|y-x\|\le\delta_0$.   Karena
+
+\Centerline{$\|\phi(y)-\phi(x)-S_{m_n}(y-x)\|\le\zeta(S_{m_n})\|y-x\|$}
+
+\noindent setiap kali $y\in H_n$, kita mempunyai
+
+\Centerline{$\|\tilde T(y-x)\|\le(\epsilon+\zeta(S_{m_n}))\|y-x\|$}
+
+\noindent setiap kali $y\in H_n$ dan $\|y-x\|\le\delta_0$.
+
+\medskip
+
+\quad{\bf (ii)} Berdasarkan 262L, terdapat $\delta_1>0$ sedemikian
+sehingga $(1+2\epsilon)\delta_1\le\delta_0$ dan
+$\rho(x+z,H_n)\le\epsilon\|z\|$ setiap kali
+$0<\|z\|\le\delta_1$. Jadi jika $\|z\|\le\delta_1$, terdapat $y\in H_n$
+sedemikian sehingga $\|x+z-y\|\le 2\epsilon\|z\|$. (Jika $z=0$, kita
+dapat mengambil $y=x$.) Sekarang
+$\|x-y\|\le (1+2\epsilon)\|z\|\le\delta_0$, sehingga
+
+$$\eqalign{\|\tilde Tz\|
+&\le\|\tilde T(y-x)\|+\|\tilde T(x+z-y)\|\cr
+&\le(\epsilon+\zeta(S_{m_n}))\|y-x\|+\|\tilde T\|\|x+z-y\|\cr
+&\le(\epsilon+\zeta(S_{m_n}))\|z\|
+    +(\epsilon+\zeta(S_{m_n})+\|\tilde T\|)\|x+z-y\|\cr
+&\le(\epsilon+\zeta(S_{m_n})+2\epsilon^2+2\epsilon\zeta(S_{m_n})
+    +2\epsilon\|\tilde T\|)\|z\|.\cr}$$
+
+\noindent Ini berlaku setiap kali $0<\|z\|\le\delta_1$.
+Namun dengan mengalikan ketaksamaan ini dengan skalar positif yang sesuai,
+kita melihat bahwa
+
+\Centerline{$\|\tilde Tz\|
+\le\bigl(\epsilon+\zeta(S_{m_n})+2\epsilon^2+2\epsilon\zeta(S_{m_n})
++2\epsilon\|\tilde T\|\bigr)\|z\|$}
+
+\noindent untuk semua $z\in\BbbR^r$, dan
+
+\Centerline{$\|\tilde T\|
+\le\epsilon+\zeta(S_{m_n})+2\epsilon^2+2\epsilon\zeta(S_{m_n})
+  +2\epsilon\|\tilde T\|$.}
+
+\noindent Karena $\epsilon$ sebarang,
+$\|\tilde T\|\le\zeta(S_{m_n})$, sebagaimana diklaim.\ \Qed
+
+\medskip
+
+{\bf (e)} Berdasarkan 261Da, $H_n\setminus C_n$ terabaikan untuk setiap
+$n$, sehingga $H_n\setminus H'_n$ terabaikan, dan
+
+\Centerline{$H'_n=D\cap(\overline{H}_n\setminus(H_n\setminus H'_n))$}
+
+\noindent terukur relatif dalam $D$.   Tetapkan
+
+\Centerline{$D_n=H'_n\setminus\bigcup_{k<n}H'_k$,
+\quad$T_n=S_{m_n}$}
+
+\noindent untuk setiap $n$; barisan-barisan ini memenuhi syarat.
+}%end of proof of 262M
+
+
+\leader{262N}{Akibat} Misalkan $\phi$ suatu fungsi dari himpunan bagian
+$D$ dari $\Bbb R^r$ ke $\BbbR^s$, dan andaikan $\phi$ terdiferensialkan
+relatif terhadap domainnya di setiap titik $D$. Maka $D$ dapat dinyatakan
+sebagai gabungan barisan saling lepas $\sequencen{D_n}$ dari himpunan
+bagian $D$ yang terukur relatif, sedemikian sehingga $\phi\restr D_n$
+Lipschitz untuk setiap $n\in\Bbb N$.
+
+\proof{ Dalam 262M, ambil $\zeta(T)=1$ untuk setiap $T\in A=M_{sr}$.
+Jika $x$, $y\in D_n$, maka
+
+$$\eqalign{\|\phi(x)-\phi(y)\|
+&\le\|\phi(x)-\phi(y)-T_n(x-y)\|+\|T_n(x-y)\|\cr
+&\le\|x-y\|+\|T_n\|\|x-y\|,\cr}$$
+
+\noindent sehingga $\phi\restr D_n$ $(1+\|T_n\|)$-Lipschitz.
+}%end of proof of 262N
+
+\leader{262O}{Akibat} Andaikan $\phi$ suatu fungsi injektif dari himpunan
+bagian terukur $D$ dari $\BbbR^r$ ke $\BbbR^r$, dan bahwa $\phi$
+terdiferensialkan relatif terhadap domainnya di setiap titik $D$.
+
+(a) Jika $A\subseteq D$ terabaikan, maka $\phi[A]$ terabaikan.
+
+(b) Jika $E\subseteq D$ terukur, maka $\phi[E]$ terukur.
+
+(c) Jika $D$ terukur dan $f$ suatu fungsi terukur yang didefinisikan pada
+suatu himpunan bagian $\BbbR^r$, maka $f\phi^{-1}$ terukur.
+
+(d) Jika $H\subseteq\BbbR^r$ dan $\phi^{-1}$ terdefinisi hampir di
+mana-mana dalam $H$, dan jika $f$ suatu fungsi yang terdefinisi hampir di
+mana-mana dalam $\Bbb R^r$, maka $f\phi^{-1}$ terdefinisi hampir di
+mana-mana dalam $H$.
+
+\proof{ Ambil barisan $\sequencen{D_n}$ seperti dalam 262N, dan terapkan
+262E pada $\phi\restr D_n$ untuk setiap $n$.
+}%end of proof of 262O
+
+\leader{262P}{Akibat} Misalkan $\phi$ suatu fungsi dari suatu himpunan
+bagian $D$ dari $\BbbR^r$ ke $\BbbR^s$, dan andaikan bahwa $\phi$
+terdiferensialkan relatif terhadap domainnya, dengan suatu turunan
+$T(x)$, pada setiap titik $x\in D$. Maka fungsi $x\mapsto T(x)$ terukur dalam
+arti bahwa $\tau_{ij}:D\to\Bbb R$ terukur untuk semua $i\le s$ dan
+$j\le r$, dengan $\tau_{ij}(x)$ koefisien ke-$(i,j)$ dari matriks $T(x)$
+untuk semua $i$, $j$, dan $x$.
+
+\proof{ Untuk setiap $k\in\Bbb N$, terapkan 262M dengan
+$\zeta(T)=2^{-k}$ untuk setiap $T\in A=M_{sr}$, sehingga diperoleh
+barisan $\sequencen{D_{kn}}$ dari himpunan bagian $D$ yang terukur
+relatif, dan $\sequencen{T_{kn}}$ dalam $M_{sr}$. Misalkan
+$\tau^{(kn)}_{ij}$ koefisien ke-$(i,j)$ dari $T_{kn}$. Maka kita
+mempunyai fungsi $f_{ijk}:D\to\Bbb R$ yang didefinisikan dengan menetapkan
+
+\Centerline{$f_{ijk}(x)=\tau^{(kn)}_{ij}$ jika $x\in D_{kn}$.}
+
+\noindent Karena $D_{kn}$ terukur relatif, $f_{ijk}$ merupakan fungsi
+terukur.   Untuk $x\in D_{kn}$,
+\Centerline{$|\tau_{ij}(x)-f_{ijk}(x)|\le\|T(x)-T_{kn}\|\le 2^{-k}$,}
+
+\noindent sehingga $|\tau_{ij}(x)-f_{ijk}(x)|\le 2^{-k}$ untuk setiap
+$x\in D$, dan
+
+\Centerline{$\tau_{ij}=\lim_{k\to\infty}f_{ijk}$}
+
+\noindent terukur, sebagaimana diklaim.
+}%end of proof of 262P
+
+\leader{*262Q}{}\cmmnt{ Ini mengakhiri bagian yang esensial bagi sisa bab
+ini. Namun menurut saya, hasil-hasil utama \S263 akan lebih mudah dipahami
+jika Anda mengetahui fakta bahwa setiap fungsi Lipschitz terdiferensialkan
+(relatif terhadap domainnya) hampir di mana-mana dalam domainnya. Saya
+menyediakan beberapa halaman berikut untuk membuktikan fakta ini, yang
+selain menarik pada dirinya sendiri juga merupakan latihan yang berguna.
+
+\medskip
+
+\noindent}{\bf Teorema Rademacher} Misalkan $\phi$ suatu fungsi Lipschitz
+dari suatu himpunan bagian $\BbbR^r$ ke $\BbbR^s$. Maka $\phi$
+terdiferensialkan relatif terhadap domainnya hampir di mana-mana dalam
+domainnya.
+
+\proof{{\bf (a)} Berdasarkan 262Ba dan 262Ib, cukup menangani kasus
+$s=1$. Berdasarkan 262Bb, terdapat fungsi Lipschitz
+$\tilde\phi:\BbbR^r\to\Bbb R$ yang memperluas $\phi$; kini $\phi$
+terdiferensialkan relatif terhadap domainnya di setiap titik $\dom\phi$
+tempat $\tilde\phi$ terdiferensialkan, sehingga cukup jika saya dapat
+menunjukkan bahwa $\tilde\phi$ terdiferensialkan hampir di mana-mana.
+Agar notasinya lebih nyaman dibaca, saya akan mengandaikan bahwa $\phi$
+sendiri terdefinisi di seluruh $\BbbR^r$. Misalkan $\gamma$ suatu
+konstanta Lipschitz bagi $\phi$.
+
+Bukti berjalan dengan induksi pada $r$. Jika $r=1$, kita mempunyai fungsi
+Lipschitz $\phi:\Bbb R\to\Bbb R$; kini $\phi$ kontinu mutlak dalam setiap
+interval terbatas (262Bc), dan karena itu terdiferensialkan hampir di
+mana-mana (225Cb). Dengan demikian induksi dimulai. Sisa bukti ditujukan
+pada langkah induktif menuju $r>1$.
+
+\medskip
+
+{\bf (b)} Langkah pertama ialah menunjukkan bahwa semua turunan parsial
+$\pd{\phi}{\xi_j}$ terdefinisi hampir di mana-mana dan terukur Borel.
+\Prf\ Ambil $j\le r$. Untuk $q\in\Bbb Q\setminus\{0\}$ tetapkan
+
+\Centerline{$\Delta_q(x)=\Bover{1}{q}(\phi(x+qe_j)-\phi(x))$,}
+
+\noindent dengan menuliskan $e_j$ untuk vektor satuan ke-$j$ dari
+$\BbbR^r$. Karena $\phi$ kontinu, $\Delta_q$ juga kontinu, sehingga
+$\Delta_q$ merupakan fungsi terukur Borel untuk setiap $q$. Selanjutnya,
+untuk sebarang $x\in\Bbb R^r$,
+
+\Centerline{$D^+(x)=\limsup_{\delta\to 0}\Bover1{\delta}
+(\phi(x+\delta e_j)-\phi(x))
+=\lim_{n\to\infty}\sup_{q\in\Bbb Q,0<|q|\le 2^{-n}}\Delta_q(x)$,}
+
+\noindent sehingga himpunan tempat $D^+(x)$ terdefinisi dalam $\Bbb R$
+adalah himpunan Borel dan $D^+$ merupakan fungsi terukur Borel. Demikian
+pula,
+
+\Centerline{$D^-(x)=\liminf_{\delta\to 0}\Bover1{\delta}
+(\phi(x+\delta e_j)-\phi(x))$}
+
+\noindent merupakan fungsi terukur Borel dengan domain Borel.   Jadi
+
+\Centerline{$E=\{x:\pd{\phi}{\xi_j}(x)\text{ ada dalam }\Bbb R\}
+=\{x:D^+(x)=D^-(x)\in\Bbb R\}$}
+
+\noindent merupakan himpunan Borel, dan $\pd{\phi}{\xi_j}$ merupakan
+fungsi terukur Borel.
+
+Di sisi lain, jika kita mengidentifikasi $\BbbR^r$ dengan
+$\BbbR^J\times\Bbb R$, dengan mengambil $J$ sebagai
+$\{1,\ldots,j-1,j+1,\ldots,r\}$, kita dapat memandang ukuran Lebesgue
+$\mu$ pada $\BbbR^r$ sebagai produk ukuran Lebesgue $\mu_J$ pada
+$\BbbR^J$ dengan ukuran Lebesgue $\mu_1$ pada $\Bbb R$ (251N). Kini,
+untuk setiap $y\in\BbbR^J$, kita mempunyai fungsi
+$\phi_y:\Bbb R\to\Bbb R$ yang didefinisikan dengan menuliskan
+
+\Centerline{$\phi_y(\sigma)=\phi(y,\sigma)$,}
+
+\noindent dan $E$ menjadi
+
+\Centerline{$\{(y,\sigma):\phi_y'(\sigma)$ terdefinisi$\}$,}
+
+\noindent sehingga semua penampang
+
+\Centerline{$\{\sigma:(y,\sigma)\in E\}$}
+
+\noindent merupakan himpunan bagian koterabaikan dari $\Bbb R$, sebab
+setiap $\phi_y$ Lipschitz, dan karena itu terdiferensialkan hampir di
+mana-mana, sebagaimana dicatat dalam bagian (a) bukti. Karena kita tahu
+bahwa $E$ terukur, himpunan tersebut harus koterabaikan berdasarkan teorema
+Fubini (terapkan 252D atau 252F pada komplemen $E$). Dengan demikian
+$\pd{\phi}{\xi_j}$ terdefinisi hampir di mana-mana, sebagaimana
+diklaim.\ \Qed
+
+Tuliskan
+
+\Centerline{$H=\{x:x\in\BbbR^r,\,\pd{\phi}{\xi_j}(x)
+\text{ ada untuk setiap }j\le r\}$,}
+
+\noindent sehingga $H$ merupakan himpunan Borel koterabaikan dalam
+$\BbbR^r$.
+
+\medskip
+
+{\bf (c)} Untuk sisa bukti ini, saya tetapkan identifikasi alami
+$\BbbR^r$ dengan $\BbbR^{r-1}\times\Bbb R$, dengan mengidentifikasi
+$(\xi_1,\ldots,\xi_r)$ dengan $((\xi_1,\ldots,\xi_{r-1}),\xi_r)$.
+Untuk $x\in H$, misalkan $T(x)$ matriks $1\times r$
+$(\pd{\phi}{\xi_1}(x),\ldots,\pd{\phi}{\xi_r}(x))$.
+
+\medskip
+
+{\bf (d)} Tetapkan
+
+\Centerline{$H_1=\{x:x\in H,\,\lim_{u\to\tbf{0}\text{ dalam }\BbbR^{r-1}}
+\Bover{|\phi(x+(u,0))-\phi(x)-T(x)(u,0)|}{\|u\|}=0\}$.}
+
+\noindent Saya nyatakan bahwa $H_1$ koterabaikan dalam $\BbbR^r$.
+\Prf\ Ini sebenarnya gagasan yang sama seperti dalam (b). Untuk
+$x\in H$, $x\in H_1$ jika dan hanya jika
+
+\inset{untuk setiap $\epsilon>0$ terdapat $\delta>0$ sedemikian sehingga
+
+\Centerline{$|\phi(x+(u,0))-\phi(x)-T(x)(u,0)|\le\epsilon\|u\|$}
+
+\noindent setiap kali $\|u\|\le\delta$,}
+
+\noindent yaitu, jika dan hanya jika
+
+\inset{untuk setiap $m\in\Bbb N$ terdapat $n\in\Bbb N$ sedemikian
+sehingga
+
+\Centerline{$|\phi(x+(u,0))-\phi(x)-T(x)(u,0)|\le 2^{-m}\|u\|$}
+
+\noindent setiap kali $u\in\Bbb Q^{r-1}$ dan $\|u\|\le 2^{-n}$.}
+
+\noindent Namun, untuk setiap $m\in\Bbb N$ dan $u\in\Bbb Q^{r-1}$ tertentu,
+himpunan
+
+\Centerline{$\{x:|\phi(x+(u,0))-\phi(x)-T(x)(u,0)|\le 2^{-m}\|u\|\}$}
+
+\noindent terukur, bahkan Borel, sebab semua fungsi
+$x\mapsto\phi(x+(u,0))$, $x\mapsto\phi(x)$, $x\mapsto T(x)(u,0)$ terukur
+Borel. Jadi $H_1$ berbentuk
+
+\Centerline{$\bigcap_{m\in\Bbb N}\bigcup_{n\in\Bbb N}
+\bigcap_{u\in\Bbb Q^{r-1},\|u\|\le 2^{-n}}E_{mnu}$}
+
+\noindent dengan setiap $E_{mnu}$ suatu himpunan terukur, sehingga $H_1$
+terukur.
+
+Namun sekarang perhatikan bahwa untuk sebarang $\sigma\in\Bbb R$, fungsi
+
+\Centerline{$v\mapsto\phi_{\sigma}(v)=\phi(v,\sigma):
+\BbbR^{r-1}\to\Bbb R$}
+
+\noindent Lipschitz, dan karena itu (berdasarkan hipotesis induktif)
+terdiferensialkan hampir di mana-mana dalam $\BbbR^{r-1}$; dan
+$(v,\sigma)\in H_1$ jika dan hanya jika $(v,\sigma)\in H$ dan
+$\phi_{\sigma}'(v)$ terdefinisi. Akibatnya
+$\{v:(v,\sigma)\in H_1\}$ koterabaikan setiap kali
+$\{v:(v,\sigma)\in H\}$ koterabaikan, yaitu untuk hampir setiap
+$\sigma\in\Bbb R$; sehingga $H_1$, karena terukur, harus koterabaikan.\ \Qed
+
+\medskip
+
+{\bf (e)} Sekarang, untuk $q$, $q'\in\Bbb Q$ dan $n\in\Bbb N$, tetapkan
+
+\Centerline{$F(q,q',n)
+=\{x:x\in\BbbR^r$,
+  $q\le\Bover{\phi(x+(\tbf{0},\eta))-\phi(x)}{\eta}\le q'$
+  setiap kali $0<|\eta|\le 2^{-n}\}$,}
+
+\Centerline{$F_*(q,q',n)
+=\{x:x\in F(q,q',n),\,\lim_{\delta\downarrow 0}
+ \Bover{\mu^*(F(q,q',n)\cap B(x,\delta))}{\mu B(x,\delta)}=1\}$.}
+
+\noindent Berdasarkan 261Da, $F(q,q',n)\setminus F_*(q,q',n)$ terabaikan
+untuk semua $q$, $q'$, $n$, sehingga
+
+\Centerline{$H_2
+=H_1\setminus\bigcup_{q,q'\in\Bbb Q,n\in\Bbb N}
+  (F(q,q',n)\setminus F_*(q,q',n))$}
+
+\noindent koterabaikan.
+
+\medskip
+
+{\bf (f)} Saya nyatakan bahwa $\phi$ terdiferensialkan di setiap titik
+$H_2$. \Prf\ Ambil $x=(u,\sigma)\in H_2$. Maka
+$\alpha=\Pd{\phi}{\xi_r}(x)$ dan $T=T(x)$ terdefinisi. Misalkan $\gamma$
+suatu konstanta Lipschitz bagi $\phi$.
+
+Ambil $\epsilon>0$; ambil $q$, $q'\in\Bbb Q$ sedemikian sehingga
+$\alpha-\epsilon\le q<\alpha<q'\le\alpha+\epsilon$. Harus ada
+$n\in\Bbb N$ sedemikian sehingga $x\in F(q,q',n)$; akibatnya
+$x\in F_*(q,q',n)$ berdasarkan definisi $H_2$. Berdasarkan 262L, terdapat
+$\delta_0>0$ sedemikian sehingga
+$\rho(x+z,F(q,q',n))\le\epsilon\|z\|$ setiap kali $\|z\|\le\delta_0$.
+Selanjutnya, terdapat $\delta_1>0$ sedemikian sehingga
+$|\phi(x+(v,0))-\phi(x)-T(v,0)|\le\epsilon\|v\|$ setiap kali
+$v\in\BbbR^{r-1}$ dan $\|v\|\le\delta_1$. Tetapkan
+
+\Centerline{$\delta=\min(\delta_0,\delta_1,2^{-n})/(1+2\epsilon)>0$.}
+
+Andaikan $z=(v,\tau)\in\BbbR^r$ dan $\|z\|\le\delta$. Karena
+$\|z\|\le\delta_0$, terdapat $x'=(u',\sigma')\in F(q,q',n)$ sedemikian
+sehingga $\|x+z-x'\|\le2\epsilon\|z\|$; tetapkan $x^*=(u',\sigma)$.
+Sekarang
+
+\Centerline{$\max(\|u-u'\|,|\sigma-\sigma'|)\le
+\|x-x'\|\le(1+2\epsilon)\|z\|\le\min(\delta_1,2^{-n})$}
+
+\noindent dan $x^*=x+(u'-u,0)$, sehingga
+
+\Centerline{$|\phi(x^*)-\phi(x)-T(x^*-x)|
+\le\epsilon\|u'-u\|\le\epsilon(1+2\epsilon)\|z\|$.}
+
+\noindent Tetapi juga
+
+\Centerline{$|\phi(x')-\phi(x^*)-T(x'-x^*)|
+=|\phi(x')-\phi(x^*)-\alpha(\sigma'-\sigma)|
+\le\epsilon|\sigma'-\sigma|\le\epsilon(1+ 2\epsilon)\|z\|$,}
+
+\noindent sebab $x'\in F(q,q',n)$ dan
+$|\sigma-\sigma'|\le 2^{-n}$, sehingga (jika $x'\ne x^*$)
+
+\Centerline{$\alpha-\epsilon\le q
+\le\Bover{\phi(x^*)-\phi(x')}{\sigma-\sigma'}\le q'\le\alpha+\epsilon$}
+
+\noindent dan
+
+\Centerline{$\bigl|\Bover{\phi(x')-\phi(x^*)}
+{\sigma'-\sigma}-\alpha\bigr|\le\epsilon$.}
+\noindent Akhirnya,
+
+\Centerline{$|\phi(x+z)-\phi(x')|
+\le\gamma\|x+z-x'\|\le2\gamma\epsilon\|z\|$,}
+
+\Centerline{$|Tz-T(x'-x)|\le\|T\|\|x+z-x'\|\le2\epsilon\|T\|\|z\|$.}
+
+Dengan menggabungkan semuanya,
+
+$$\eqalign{|\phi(x+z)-\phi x-Tz|
+&\le|\phi(x+z)-\phi(x')|
++|T(x'-x)-Tz|\cr
+&\qquad
++|\phi(x')-\phi(x^*)-T(x'-x^*)|
++|\phi(x^*)-\phi(x)-T(x^*-x)|\cr
+&\le2\gamma\epsilon\|z\|
++2\epsilon\|T\|\|z\|
++\epsilon(1+2\epsilon)\|z\|
++\epsilon(1+2\epsilon)\|z\|\cr
+&=\epsilon(2\gamma+2\|T\|+2+4\epsilon)\|z\|.\cr}$$
+
+\noindent Ini berlaku setiap kali $\|z\|\le\delta$. Karena $\epsilon$
+sebarang, $\phi$ terdiferensialkan di $x$.\ \Qed
+
+Dengan demikian, $\{x:\phi$ terdiferensialkan di $x\}$ memuat $H_2$ dan
+koterabaikan; induksi pun berlanjut.
+}%end of proof of 262Q
+
+\exercises{
+\leader{262X}{Latihan dasar (a)} Misalkan $\phi$ dan $\psi$ fungsi
+Lipschitz dari himpunan-himpunan bagian $\BbbR^r$ ke $\BbbR^s$.
+Tunjukkan bahwa $\phi+\psi$ merupakan fungsi Lipschitz dari
+$\dom\phi\cap\dom\psi$ ke
+$\Bbb R^s$.
+%262A
+
+\header{262Xb}{\bf (b)} Misalkan $\phi$ fungsi Lipschitz dari suatu
+himpunan bagian $\BbbR^r$ ke $\BbbR^s$, dan $c\in\Bbb R$. Tunjukkan
+bahwa $c\phi$ merupakan fungsi Lipschitz.
+%262A
+
+\header{262Xc}{\bf (c)} Andaikan $\phi:D\to\BbbR^s$ dan
+$\psi:E\to\BbbR^q$ fungsi-fungsi Lipschitz, dengan
+$D\subseteq\BbbR^r$ dan $E\subseteq\BbbR^s$. Tunjukkan bahwa komposisi
+$\psi\phi:D\cap\phi^{-1}[E]\to\BbbR^q$ bersifat Lipschitz.
+%262A
+
+\header{262Xd}{\bf (d)} Andaikan $\phi$, $\psi$ fungsi-fungsi dari
+himpunan-himpunan bagian $\BbbR^r$ ke $\BbbR^s$, dan andaikan
+$x\in\dom\phi\cap\dom\psi$ sedemikian sehingga masing-masing fungsi
+terdiferensialkan relatif terhadap domainnya di $x$, dengan turunan
+$S$, $T$ di sana. Tunjukkan bahwa $\phi+\psi$ terdiferensialkan relatif
+terhadap domainnya di $x$, dan bahwa $S+T$ merupakan suatu turunan dari
+$\phi+\psi$ di $x$.
+%262F
+
+\header{262Xe}{\bf (e)} Andaikan $\phi$ suatu fungsi dari suatu himpunan
+bagian $\BbbR^r$ ke $\BbbR^s$, dan terdiferensialkan relatif terhadap
+domainnya di $x\in\dom\phi$. Tunjukkan bahwa $c\phi$ terdiferensialkan
+relatif terhadap domainnya di $x$ untuk setiap $c\in\Bbb R$.
+%262F
+
+\sqheader 262Xf Andaikan $\phi:D\to\BbbR^s$ dan
+$\psi:E\to\Bbb R^q$ fungsi-fungsi, dengan
+$D\subseteq\BbbR^r$ dan $E\subseteq\BbbR^s$; andaikan $\phi$
+terdiferensialkan relatif terhadap domainnya di
+$x\in D\cap\phi^{-1}[E]$, dengan matriks $s\times r$, yaitu $T$, sebagai
+suatu turunan di sana, dan $\psi$ terdiferensialkan relatif terhadap
+domainnya di $\phi(x)$, dengan matriks $q\times s$, yaitu $S$, sebagai
+suatu turunan di sana. Tunjukkan bahwa komposisi $\psi\phi$
+terdiferensialkan relatif terhadap domainnya di $x$, dan bahwa matriks
+$q\times r$, yaitu $ST$, merupakan suatu turunan dari $\psi\phi$ di $x$.
+%262F
+
+\sqheader 262Xg Misalkan $\phi:\BbbR^r\to\BbbR^s$ suatu operator linear,
+dengan matriks terkait $T$. Tunjukkan bahwa $\phi$ terdiferensialkan
+di mana-mana, dengan $\phi'(x)=T$ untuk setiap $x$.
+%262F
+
+\spheader 262Xh Misalkan $G\subseteq\BbbR^r$ suatu himpunan terbuka
+konveks, dan $\phi:G\to\BbbR^s$ suatu fungsi sedemikian sehingga semua
+turunan parsial $\pd{\phi_i}{\xi_j}$ terdefinisi di mana-mana dalam $G$.
+Tunjukkan bahwa $\phi$ Lipschitz jika dan hanya jika semua turunan
+parsialnya terbatas pada $G$.
+%262I
+
+\spheader 262Xi Misalkan $\phi:\BbbR^r\to\BbbR^s$ suatu fungsi.
+Tunjukkan bahwa $\phi$ terdiferensialkan di $x\in\BbbR^r$ jika dan hanya
+jika untuk setiap $m\in\Bbb N$ terdapat $n\in\Bbb N$ dan matriks
+$s\times r$, yaitu $T$, dengan koefisien rasional sedemikian sehingga
+$\|\phi(y)-\phi(x)-T(y-x)\|\le 2^{-m}\|y-x\|$ setiap kali
+$\|y-x\|\le 2^{-n}$.
+%262I
+
+\spheader 262Xj Andaikan $f$ suatu fungsi bernilai real yang terintegralkan
+atas $\BbbR^r$, dan $g:\BbbR^r\to\Bbb R$ suatu fungsi terdiferensialkan
+dan terbatas sedemikian sehingga turunan parsial $\Pd{g}{\xi_j}$ terbatas,
+dengan $j\le r$. Misalkan $f*g$ konvolusi $f$ dan $g$ (255E, 255L).
+Tunjukkan bahwa $\Pd{}{\xi_j}(f*g)$ terdefinisi di mana-mana dan sama
+dengan $f*\Pd{g}{\xi_j}$. \Hint{255Xd.}
+%262+
+
+\spheader 262Xk Misalkan $(X,\Sigma,\mu)$ suatu ruang ukuran,
+$G\subseteq\BbbR^r$ suatu himpunan terbuka, dan
+$f:X\times G\to\Bbb R$ suatu fungsi. Andaikan bahwa
+
+\inset{(i) untuk setiap $x\in X$, fungsi
+$t\mapsto f(x,t):G\to\Bbb R$ terdiferensialkan;
+
+(ii) terdapat fungsi terintegralkan $g$ pada $X$ sedemikian sehingga
+$|\pd{f}{\tau_j}(x,t)|\le g(x)$ setiap kali $x\in X$, $t\in G$ dan
+$j\le r$;
+
+(iii) $\int|f(x,t)|\mu(dx)$ ada dalam $\Bbb R$ untuk setiap $t\in G$.}
+
+\noindent Tunjukkan bahwa fungsi
+$t\mapsto\int f(x,t)\mu(dx):G\to\Bbb R$ terdiferensialkan.
+\Hint{tunjukkan terlebih dahulu bahwa, untuk suatu $M$ yang sesuai,
+$|f(x,t)-f(x,t')|\le M|g(x)|\|t-t'\|$ untuk setiap $t$, $t'\in G$ dan
+$x\in X$.}
+%262+
+
+\spheader 262Xl\dvAnew{2015} Misalkan $f:[a,b]\to\Bbb R$ suatu fungsi
+kontinu mutlak, dengan $a\le b$, dan $g:f[\,[a,b]\,]\to\Bbb R$ suatu
+fungsi Lipschitz. Tunjukkan bahwa $gf$ kontinu mutlak.
+%262Bc out of order query
+
+\leader{262Y}{Latihan lanjutan (a)}
+%\spheader 262Ya
+Misalkan $L$ ruang semua fungsi Lipschitz dari $\BbbR^r$ ke $\BbbR^s$,
+dan untuk $\phi\in L$ tetapkan
+
+\Centerline{$\|\phi\|
+=\|\phi(0)\|+\min\{\gamma:\gamma\in\coint{0,\infty}$,
+$\|\phi(y)-\phi(x)\|\le\gamma\|y-x\|$ untuk setiap $x$, $y\in\BbbR^r\}$.}
+
+\noindent Tunjukkan bahwa $(L,\|\,\,\|)$ merupakan ruang Banach.
+%262A
+
+\spheader 262Yb Tunjukkan bahwa jika
+$T=\langle\tau_{ij}\rangle_{i\le s,j\le r}$ suatu matriks $s\times r$,
+maka norma operator $\|T\|$, sebagaimana didefinisikan dalam 262H, paling
+besar
+$\sqrt{\sum_{i=1}^s\sum_{j=1}^r\tau_{ij}^2}$.
+%262H
+
+\spheader 262Yc Misalkan $\phi:D\to\Bbb R$ sebarang fungsi, dengan
+$D\subseteq\BbbR^r$. Tunjukkan bahwa
+$H=\{x:x\in D,\,\phi$ terdiferensialkan relatif terhadap domainnya di
+$x\}$ terukur relatif dalam $D$, dan bahwa $\pd{\phi}{\xi_j}\restr H$
+terukur untuk setiap $j\le r$.
+%262I
+
+\spheader 262Yd\dvAnew{2015}
+Misalkan $\phi:D\to\Bbb R$ suatu fungsi, dengan
+$D\subseteq\BbbR^r$.
+(i) Tunjukkan bahwa jika $\phi$ terukur, maka semua turunan parsialnya
+terukur.
+(ii) Tunjukkan bahwa jika $\phi$ terukur Borel, maka semua turunan
+parsialnya terukur Borel.
+%262Yc 262I 225Yg
+
+\spheader 262Ye Suatu fungsi $\phi:\BbbR^r\to\Bbb R$ disebut
+{\bf mulus} jika semua turunan parsialnya
+$\Bover{\partial\ldots\partial\phi}
+{\partial\xi_i\partial\xi_j\ldots\partial\xi_l}$ terdefinisi di mana-mana
+dalam $\BbbR^r$ dan kontinu. Tunjukkan bahwa jika $f$ terintegralkan atas
+$\BbbR^r$ dan $\phi:\BbbR^r\to\Bbb R$ mulus serta mempunyai dukungan
+terbatas, maka konvolusi $f*\phi$ mulus. \Hint{262Xj, 262Xk.}
+%262Xk 262+
+
+\spheader 262Yf Untuk $\delta>0$, tetapkan
+$\tilde\phi_{\delta}(x) =e^{-1/(\delta^2-\|x\|^2)}$ jika $\|x\|<\delta$,
+$0$ jika $\|x\|\ge\delta$; tetapkan
+$\alpha_{\delta}=\int\tilde\phi_{\delta}(x)dx$,
+$\phi_{\delta}(x)=\alpha_{\delta}^{-1}\tilde\phi_{\delta}(x)$ untuk setiap
+$x$. (i) Tunjukkan bahwa $\phi_{\delta}:\BbbR^r\to\Bbb R$ mulus dan
+mempunyai dukungan terbatas. (ii) Tunjukkan bahwa jika $f$ terintegralkan
+atas $\BbbR^r$, maka
+$\lim_{\delta\downarrow 0}\int|f(x)-(f*\phi_{\delta})(x)|dx=0$.
+\Hint{mulailah dengan fungsi-fungsi kontinu $f$ yang mempunyai dukungan
+terbatas, dan gunakan 242O.}
+%262Ye 262+
+
+\spheader 262Yg Tunjukkan bahwa jika $f$ terintegralkan atas $\BbbR^r$
+dan $\epsilon>0$, terdapat fungsi mulus $h$ dengan dukungan terbatas
+sedemikian sehingga $\int|f-h|\le\epsilon$.
+\Hint{{\it salah satu}: reduksikan ke kasus ketika $f$ mempunyai dukungan
+terbatas dan gunakan 262Yf; {\it atau} sesuaikan metode 242Xi.}
+%262Yf 262+
+
+\spheader 262Yh Andaikan $f$ suatu fungsi real yang terintegralkan atas
+setiap himpunan bagian terbatas $\BbbR^r$. (i) Tunjukkan bahwa
+$f\times\phi$ terintegralkan setiap kali $\phi:\BbbR^r\to\Bbb R$ suatu
+fungsi mulus dengan dukungan terbatas. (ii) Tunjukkan bahwa jika
+$\int f\times\phi=0$ untuk setiap fungsi mulus dengan dukungan terbatas,
+maka $f=0$ hampir di mana-mana. ({\it Petunjuk\/}: tunjukkan bahwa
+$\int_{B(x,\delta)}f=0$ untuk setiap $x\in\BbbR^r$ dan $\delta>0$, dan
+gunakan 261C. Sebagai alternatif, tunjukkan terlebih dahulu bahwa
+$\int_Ef=0$ untuk $E=[b,c]$, kemudian untuk himpunan terbuka $E$, lalu
+untuk sebarang himpunan terukur $E$.)
+%262Ye 262+
+
+\spheader 262Yi Misalkan $f$ terintegralkan atas $\BbbR^r$, dan untuk
+$\delta>0$ misalkan $\phi_{\delta}:\BbbR^r\to\Bbb R$ fungsi dari 262Yf.
+Tunjukkan bahwa $\lim_{\delta\downarrow 0}(f*\phi_{\delta})(x)=f(x)$
+untuk setiap $x$ dalam himpunan Lebesgue $f$. ({\it Petunjuk\/}: 261Ye.)
+%262Yf 262+
+
+}%end of exercises
+
+\endnotes{
+\Notesheader{262} Penekanan bagian ini ternyata terletak pada hubungan
+antara konsep `fungsi Lipschitz' dan `fungsi terdiferensialkan'. Salah
+satu pesona analisis real klasik ialah munculnya hubungan sedemikian erat
+antara konsep-konsep yang termasuk dalam kategori berbeda. `Fungsi
+Lipschitz' jelas termasuk dalam teori ruang metrik (saya akan kembali ke
+hal ini dalam \S264), sedangkan `fungsi terdiferensialkan' termasuk dalam
+teori manifold terdiferensialkan, yang berada di luar cakupan jilid ini.
+Saya telah menuliskan bagian ini dengan saksama untuk berjaga-jaga jika
+ada pembaca yang sejauh ini belum mempelajari teori pemetaan
+terdiferensialkan antar-ruang Euklides multidimensi; tetapi ini juga
+memberi saya kesempatan untuk menguraikan gagasan `fungsi yang
+terdiferensialkan relatif terhadap domainnya', yang memungkinkan kita
+menangani dengan lancar berbagai masalah yang muncul pada batas dalam
+bagian berikutnya. Kesulitan yang saya perhatikan pertama-tama muncul
+pada fungsi seperti transformasi koordinat polar
+
+\Centerline{$(\rho,\theta)\mapsto (\rho\cos\theta,\rho\sin\theta):
+\{(0,0)\}\cup(\ooint{0,\infty}\times\ocint{-\pi,\pi})\to\BbbR^2$.}
+
+\noindent Untuk menjadikannya bijeksi, kita harus melakukan sesuatu yang
+agak sebarang, dan domain transformasi tersebut tidak mungkin berupa
+himpunan terbuka. Berdasarkan definisi yang saya gunakan, fungsi ini
+terdiferensialkan relatif terhadap domainnya di setiap titik domainnya,
+dan kita dapat menerapkan hasil seperti 262O tanpa hambatan. Perhatikan
+bahwa dalam kasus ini titik-titik domain yang bukan titik interior
+membentuk himpunan terabaikan
+$\{(0,0)\}\cup(\ooint{0,\infty}\times\{\pi\})$, sehingga kita dapat
+berharap untuk mengabaikannya; dan bagi sebagian besar transformasi
+geometris langsung yang menjadi sasaran penerapan teori ini, penghilangan
+himpunan-himpunan terabaikan secara bijaksana akan mereduksi masalah ke
+kasus fungsi yang terdiferensialkan dalam arti biasa dengan domain terbuka. Namun,
+meskipun teori domain terbuka akan menangani sebagian besar contoh yang
+paling penting, ada bahaya bahwa Anda akan memiliki kesalahpahaman nyata
+mengenai cakupan metode-metode ini.
+
+Hakikat keterdiferensialan ialah bahwa suatu fungsi terdiferensialkan
+$\phi$ dapat dihampiri, di dekat sebarang titik tertentu dalam domainnya,
+oleh fungsi afin. Gagasan 262M ialah menguraikan suatu metode yang efektif
+untuk cakupan luas guna membagi $D=\dom\phi$ menjadi terhitung banyak bagian,
+dan pada setiap bagian itu $\phi$ terkendali dengan baik. Metode ini akan
+diterapkan dalam \S\S263 dan 265 untuk menyelidiki ukuran $\phi[D]$;
+tetapi kita sudah mempunyai beberapa akibat langsung (262N-262P).
+
+Saya telah memberikan sejumlah hasil yang menunjukkan bahwa (berdasarkan
+definisi-definisi yang saya pilih) suatu turunan dapat diharapkan memiliki
+sekurang-kurangnya beberapa sifat `deskriptif' yang juga dimiliki fungsi
+asalnya; lihat 222Yd, 225J, 225Yg, 262Yc, 262Yd. Untuk turunan parsial,
+terdapat komplikasi mengenai domainnya (419Yd, 431Yd) yang tidak muncul
+pada turunan penuh (225J, 262Yc).
+}%end of notes
+
+\discrpage

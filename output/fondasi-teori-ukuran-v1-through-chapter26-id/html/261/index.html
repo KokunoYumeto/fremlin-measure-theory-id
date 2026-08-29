@@ -1,0 +1,921 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Teorema Vitali di R^r — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        BbbQ: '\\mathbb{Q}', BbbR: '\\mathbb{R}',
+        eightBbb: ['\\mathbb{#1}', 1],
+        DiniD: '\\overline{D}', Dinid: '\\underline{D}',
+        Var: '\\operatorname{Var}',
+        bumpeq: '=_{\\mathrm{approx}}',
+        intstar: '\\operatorname{int}^{*}',
+        family: ['\\langle #3\\rangle_{#1\\in #2}', 3],
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        displaycause: ['\\text{(#1)}', 1],
+        bigcupop: '\\bigcup', biggerint: '\\int',
+        eae: '=_{\\mathrm{a.e.}}', leae: '\\le_{\\mathrm{a.e.}}', geae: '\\ge_{\\mathrm{a.e.}}',
+        restr: '\\mathord{\\upharpoonright}', restrp: '\\mathord{\\upharpoonright}',
+        Real: '\\operatorname{Re}', Imag: '\\operatorname{Im}',
+        tbf: ['\\mathbf{#1}', 1], eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Qed: '\\square',
+        BbbN: '\\mathbb{N}', Expn: '\\mathbb{E}',
+        Cal: ['\\mathcal{#1}', 1], dom: '\\operatorname{dom}',
+        coint: ['\\left[#1\\right[', 1],
+        sequencen: ['\\langle #1_n\\rangle_{n\\in\\mathbb{N}}', 1],
+        imp: '\\mathop{\\text{pelestari ukuran melalui prapeta}}',
+        tildeTau: '\\widetilde{\\mathrm{T}}',
+        LLcorner: '\\mathbin{\\llcorner}',
+        prooflet: ['#1', 1],
+        halfarrow: '\\rightharpoonup',
+        esssup: '\\mathop{\\text{ess sup}}',
+        ocint: ['\\left]#1\\right]', 1],
+        fraction: ['\\mathord{<}#1\\mathord{>}', 1],
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        fraction: ['\\mathord{<}#1\\mathord{>}', 1],
+        tbf: ['\\mathbf{#1}', 1],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        BbbN: '\\mathbb{{N}}', BbbQ: '\\mathbb{{Q}}',
+        BbbZ: '\\mathbb{{Z}}',
+        bover: ['\\frac{{#1}}{{#2}}', 2],
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        esssup: '\\mathop{{\\text{{ess sup}}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        family: ['\\langle #3\\rangle_{{#1\\in #2}}', 3],
+        familyi: ['\\langle #2\\rangle_{{i\\in #1}}', 2],
+        familyiI: ['\\langle #1\\rangle_{{i\\in I}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        ocint: ['\\left]#1\\right]', 1],
+        restr: '\\mathord{{\\upharpoonright}}',
+        restrp: '\\mathord{{\\upharpoonright}}',
+        roibr: '\\mathopen{{[}}',
+        sequence: ['\\langle #2\\rangle_{{#1\\in\\mathbb{{N}}}}', 2],
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1],
+        ssbullet: '{{\\scriptscriptstyle\\bullet}}',
+        tensorhat: '\\widehat{{\\otimes}}',
+        Tensorhat: '\\widehat{{\\bigotimes}}'
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 2 · Bagian 261</p>
+  <h1>Teorema Vitali di R^r</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi kumulatif</a></nav>
+<main id="isi">
+<p>© 2000</p>
+<p>Tujuan utama bagian ini ialah memberikan versi berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> dari teorema
+Vitali dan Teorema Kerapatan Lebesgue, dengan mengikuti gagasan-gagasan yang
+telah disajikan dalam §§<a class="xref" href="../221/index.html#221">221</a> dan <a class="xref" href="../223/index.html#223">223</a>. Saya mengakhirinya dengan pembuktian
+bahwa ukuran luar Lebesgue dapat didefinisikan melalui peliputan oleh bola,
+bukan oleh interval (<a class="xref" href="#261F">261F</a>).</p>
+<section class="source-unit" id="261A" data-source-id="261A"><h2><span class="source-label">261A</span> Notasi </h2>
+<p>Dalam sebagian besar bab ini, kita akan berurusan
+dengan geometri dan ukuran ruang Euklides; penetapan sejumlah notasi akan
+menghemat ruang.</p>
+<p>Di seluruh bagian ini dan dua bagian berikutnya, <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span> adalah suatu
+bilangan bulat. Saya akan menggunakan huruf Latin untuk anggota <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> dan
+huruf Yunani untuk koordinatnya, sehingga
+<span class="math inline" data-source-tex="a=(\alpha_1,\ldots,\alpha_r)">\(a=(\alpha_1,\ldots,\alpha_r)\)</span>, dan seterusnya; jika Anda melihat huruf Yunani
+berindeks bawah, pertama-tama carilah vektor di dekatnya yang mungkin memiliki
+huruf itu sebagai koordinat. Ukuran yang dibahas hampir selalu merupakan
+ukuran Lebesgue pada <span class="math inline" data-source-tex="\Bbb R^r">\(\Bbb R^r\)</span>; jadi, kecuali dinyatakan lain, <span class="math inline" data-source-tex="\mu">\(\mu\)</span> harus
+ditafsirkan sebagai ukuran Lebesgue dan <span class="math inline" data-source-tex="\mu^*">\(\mu^*\)</span> sebagai ukuran luar Lebesgue.
+Demikian pula, <span class="math inline" data-source-tex="\int\ldots dx">\(\int\ldots dx\)</span> selalu berarti integrasi terhadap ukuran
+Lebesgue (dalam dimensi yang ditentukan oleh konteks).</p>
+<p>Untuk <span class="math inline" data-source-tex="x=(\xi_1,\ldots,\xi_r)\in\BbbR^r">\(x=(\xi_1,\ldots,\xi_r)\in\BbbR^r\)</span>, tuliskan
+<span class="math inline" data-source-tex="\|x\|=\sqrt{\xi_1^2+\ldots+\xi_r^2}">\(\|x\|=\sqrt{\xi_1^2+\ldots+\xi_r^2}\)</span>. Ingat bahwa
+<span class="math inline" data-source-tex="\|x+y\|\le\|x\|+\|y\|">\(\|x+y\|\le\|x\|+\|y\|\)</span> (<a class="xref" href="../1A2/index.html#1A2C">1A2C</a>) dan bahwa <span class="math inline" data-source-tex="\|\alpha x\|=|\alpha|\|x\|">\(\|\alpha x\|=|\alpha|\|x\|\)</span>
+untuk sebarang vektor <span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="y">\(y\)</span> dan skalar <span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>.</p>
+<p>Saya akan menggunakan notasi yang sama seperti dalam §<a class="xref" href="../115/index.html#115">115</a> untuk ‘interval’,
+sehingga, khususnya,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\coint{a,b} 
+=\{x:\alpha_i\le\xi_i&lt;\beta_i\Forall i\le r\}">\(\coint{a,b}
+=\{x:\alpha_i\le\xi_i&lt;\beta_i\Forall i\le r\}\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\ooint{a,b} 
+=\{x:\alpha_i&lt;\xi_i&lt;\beta_i\Forall i\le r\}">\(\ooint{a,b}
+=\{x:\alpha_i&lt;\xi_i&lt;\beta_i\Forall i\le r\}\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="[a,b] 
+=\{x:\alpha_i\le \xi_i\le \beta_i\Forall i\le r\}">\([a,b]
+=\{x:\alpha_i\le \xi_i\le \beta_i\Forall i\le r\}\)</span></div>
+<p>setiap kali <span class="math inline" data-source-tex="a">\(a\)</span>, <span class="math inline" data-source-tex="b\in\BbbR^r">\(b\in\BbbR^r\)</span>.</p>
+<p><span class="math inline" data-source-tex="\tbf{0}=(0,\ldots,0)">\(\tbf{0}=(0,\ldots,0)\)</span> adalah vektor nol dalam <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dan
+<span class="math inline" data-source-tex="\tbf{1}">\(\tbf{1}\)</span> adalah <span class="math inline" data-source-tex="(1,\ldots,1)">\((1,\ldots,1)\)</span>. Jika
+<span class="math inline" data-source-tex="x\in\BbbR^r">\(x\in\BbbR^r\)</span> dan <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>, maka <span class="math inline" data-source-tex="B(x,\delta)">\(B(x,\delta)\)</span> adalah bola tertutup
+berpusat di <span class="math inline" data-source-tex="x">\(x\)</span> dan berjari-jari <span class="math inline" data-source-tex="\delta">\(\delta\)</span>, yakni
+<span class="math inline" data-source-tex="\{y:y\in\BbbR^r,\,\|y-x\|\le\delta\}">\(\{y:y\in\BbbR^r,\,\|y-x\|\le\delta\}\)</span>.
+Perhatikan bahwa <span class="math inline" data-source-tex="B(x,\delta)=x+B(\tbf{0},\delta)">\(B(x,\delta)=x+B(\tbf{0},\delta)\)</span>; maka, berdasarkan
+invariansi ukuran Lebesgue terhadap translasi, kita mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu B(x,\delta)=\mu B(\tbf{0},\delta) 
+=\beta_r\delta^r">\(\mu B(x,\delta)=\mu B(\tbf{0},\delta)
+=\beta_r\delta^r\)</span>,</div>
+<p>dengan</p>
+<p><span class="math display" data-source-tex="\eqalign{\beta_r 
+&amp;=\Bover{1}{k!}\pi^k\text{ jika }r=2k\text{ genap},\cr 
+&amp;=\Bover{2^{2k+1}k!}{(2k+1)!}\pi^k\text{ jika }r=2k+1\text{ ganjil}\cr}">\[\begin{aligned}\beta_r
+&amp;=\Bover{1}{k!}\pi^k\text{ jika }r=2k\text{ genap},\\
+&amp;=\Bover{2^{2k+1}k!}{(2k+1)!}\pi^k\text{ jika }r=2k+1\text{ ganjil}\\\end{aligned}\]</span></p>
+<p>(<a class="xref" href="../252/index.html#252Q">252Q</a>).</p>
+</section>
+<section class="source-unit" id="261B" data-source-id="261B"><h2><span class="source-label">261B</span> Teorema Vitali dalam <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> </h2>
+<p>Misalkan <span class="math inline" data-source-tex="A\subseteq\BbbR^r">\(A\subseteq\BbbR^r\)</span>
+sebarang himpunan, dan <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> suatu keluarga bola tertutup nontrivial
+(yakni, bukan singleton, atau secara ekuivalen, tidak terabaikan)
+dalam <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> sedemikian sehingga setiap titik dalam <span class="math inline" data-source-tex="A">\(A\)</span> termuat dalam anggota
+<span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> yang berdiameter sekecil apa pun. Maka terdapat suatu himpunan
+terhitung yang
+saling lepas <span class="math inline" data-source-tex="\Cal I_0\subseteq \Cal I">\(\Cal I_0\subseteq \Cal I\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu(A\setminus\bigcup\Cal I_0)=0">\(\mu(A\setminus\bigcup\Cal I_0)=0\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Sebagai permulaan (sampai akhir (f) di bawah), andaikan
+bahwa <span class="math inline" data-source-tex="\|x\|&lt;M">\(\|x\|&lt;M\)</span> untuk setiap <span class="math inline" data-source-tex="x\in A">\(x\in A\)</span>, dan tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Cal 
+I&#x27;=\{I:I\in\Cal I,\,I\subseteq B(\tbf{0},M)\}">\(\Cal
+I&#x27;=\{I:I\in\Cal I,\,I\subseteq B(\tbf{0},M)\}\)</span>.</div>
+<p>Jika terdapat suatu himpunan berhingga yang saling lepas
+<span class="math inline" data-source-tex="\Cal I_0\subseteq\Cal I&#x27;">\(\Cal I_0\subseteq\Cal I&#x27;\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="A\subseteq\bigcup\Cal I_0">\(A\subseteq\bigcup\Cal I_0\)</span> (termasuk kemungkinan bahwa
+<span class="math inline" data-source-tex="A=\Cal I_0=\emptyset">\(A=\Cal I_0=\emptyset\)</span>), kita dapat berhenti. Jadi, selanjutnya andaikan
+tidak ada <span class="math inline" data-source-tex="\Cal I_0">\(\Cal I_0\)</span> demikian.</p>
+<p> </p>
+<p><strong>(b)</strong> Dalam hal ini, jika <span class="math inline" data-source-tex="\Cal I_0">\(\Cal I_0\)</span> adalah sebarang subhimpunan berhingga
+yang saling lepas dari <span class="math inline" data-source-tex="\Cal I&#x27;">\(\Cal I&#x27;\)</span>, terdapat <span class="math inline" data-source-tex="J\in\Cal I&#x27;">\(J\in\Cal I&#x27;\)</span> yang saling lepas
+dari setiap anggota <span class="math inline" data-source-tex="\Cal I_0">\(\Cal I_0\)</span>. Bukti. Ambil
+<span class="math inline" data-source-tex="x\in A\setminus\bigcup\Cal I_0">\(x\in A\setminus\bigcup\Cal I_0\)</span>. Karena setiap anggota <span class="math inline" data-source-tex="\Cal I_0">\(\Cal I_0\)</span> tertutup,
+terdapat <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga <span class="math inline" data-source-tex="B(x,\delta)">\(B(x,\delta)\)</span> tidak bertemu dengan
+anggota mana pun dari <span class="math inline" data-source-tex="\Cal I_0">\(\Cal I_0\)</span>, dan karena <span class="math inline" data-source-tex="\|x\|&lt;M">\(\|x\|&lt;M\)</span> kita dapat mengandaikan
+bahwa <span class="math inline" data-source-tex="B(x,\delta)\subseteq B(\tbf{0},M)">\(B(x,\delta)\subseteq B(\tbf{0},M)\)</span>. Ambil <span class="math inline" data-source-tex="J">\(J\)</span> sebagai anggota
+<span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> yang memuat <span class="math inline" data-source-tex="x">\(x\)</span> dan berdiameter paling besar <span class="math inline" data-source-tex="\delta">\(\delta\)</span>; maka
+<span class="math inline" data-source-tex="J\in\Cal I&#x27;">\(J\in\Cal I&#x27;\)</span> dan <span class="math inline" data-source-tex="J\cap\bigcup\Cal I_0=\emptyset">\(J\cap\bigcup\Cal I_0=\emptyset\)</span>.
+∎</p>
+<p> </p>
+<p><strong>(c)</strong> Karena itu, kita dapat memilih suatu barisan bilangan real
+<span class="math inline" data-source-tex="\sequencen{\gamma_n}">\(\sequencen{\gamma_n}\)</span> dan suatu barisan yang saling lepas
+<span class="math inline" data-source-tex="\sequencen{I_n}">\(\sequencen{I_n}\)</span> dalam <span class="math inline" data-source-tex="\Cal I&#x27;">\(\Cal I&#x27;\)</span> secara induktif sebagai berikut. Setelah
+<span class="math inline" data-source-tex="\langle I_j\rangle_{j&lt;n}">\(\langle I_j\rangle_{j&lt;n}\)</span> diberikan (jika <span class="math inline" data-source-tex="n=0">\(n=0\)</span>, ini adalah barisan kosong,
+tanpa anggota), dengan <span class="math inline" data-source-tex="I_j\in\Cal I&#x27;">\(I_j\in\Cal I&#x27;\)</span> untuk setiap <span class="math inline" data-source-tex="j&lt;n">\(j&lt;n\)</span>, dan
+<span class="math inline" data-source-tex="I_j\cap I_k=\emptyset">\(I_j\cap I_k=\emptyset\)</span> untuk <span class="math inline" data-source-tex="j&lt;k&lt;n">\(j&lt;k&lt;n\)</span>, tetapkan <span class="math inline" data-source-tex="\Cal 
+J_n=\{I:I\in\Cal I&#x27;,\,I\cap I_j=\emptyset">\(\Cal
+J_n=\{I:I\in\Cal I&#x27;,\,I\cap I_j=\emptyset\)</span> untuk setiap <span class="math inline" data-source-tex="j&lt;n\}">\(j&lt;n\}\)</span>. Dari (b)
+kita mengetahui bahwa <span class="math inline" data-source-tex="\Cal J_n\ne\emptyset">\(\Cal J_n\ne\emptyset\)</span>. Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\gamma_n=\sup\{\diam I:I\in\Cal J_n\}">\(\gamma_n=\sup\{\diam I:I\in\Cal J_n\}\)</span>;</div>
+<p>maka <span class="math inline" data-source-tex="\gamma_n\le 2M">\(\gamma_n\le 2M\)</span>, karena setiap anggota <span class="math inline" data-source-tex="\Cal J_n">\(\Cal J_n\)</span> termuat
+dalam <span class="math inline" data-source-tex="B(\tbf{0},M)">\(B(\tbf{0},M)\)</span>. Karena itu, kita dapat menemukan suatu himpunan
+<span class="math inline" data-source-tex="I_n\in\Cal J_n">\(I_n\in\Cal J_n\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\diam I_n\ge{1\over 2}\gamma_n">\(\diam I_n\ge{1\over 2}\gamma_n\)</span>, dan
+ini melanjutkan proses induksi.</p>
+<p> </p>
+<p><strong>(d)</strong> Karena <span class="math inline" data-source-tex="I_n">\(I_n\)</span> merupakan subhimpunan terukur yang saling lepas dari
+himpunan terbatas <span class="math inline" data-source-tex="B(\tbf{0},M)">\(B(\tbf{0},M)\)</span>, kita mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\mu I_n 
+\le\mu B(\tbf{0},M)&lt;\infty">\(\sum_{n=0}^{\infty}\mu I_n
+\le\mu B(\tbf{0},M)&lt;\infty\)</span>,</div>
+<p>dan <span class="math inline" data-source-tex="\lim_{n\to\infty}\mu I_n=0">\(\lim_{n\to\infty}\mu I_n=0\)</span>. Juga,
+<span class="math inline" data-source-tex="\mu I_n\ge\beta_r(\bover14\gamma_n)^r">\(\mu I_n\ge\beta_r(\bover14\gamma_n)^r\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, sehingga
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\gamma_n=0">\(\lim_{n\to\infty}\gamma_n=0\)</span>.</p>
+<p> </p>
+<p><strong>(e)</strong></p>
+<p>Sekarang definisikan <span class="math inline" data-source-tex="I&#x27;_n">\(I&#x27;_n\)</span> sebagai bola tertutup dengan pusat yang sama
+seperti <span class="math inline" data-source-tex="I_n">\(I_n\)</span> tetapi dengan diameter lima kali lipat, sehingga bola ini
+memuat setiap titik yang berjarak paling besar <span class="math inline" data-source-tex="\gamma_n">\(\gamma_n\)</span> dari <span class="math inline" data-source-tex="I_n">\(I_n\)</span>. Saya
+menyatakan bahwa, untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>,
+<span class="math inline" data-source-tex="A\subseteq\bigcup_{j&lt;n}{I}_j\cup\bigcup_{j\ge n}I_j&#x27;">\(A\subseteq\bigcup_{j&lt;n}{I}_j\cup\bigcup_{j\ge n}I_j&#x27;\)</span>.
+Bukti.? Andaikan, jika mungkin, sebaliknya. Ambil sebarang
+<span class="math inline" data-source-tex="x\in A\setminus(\bigcup_{j&lt;n}{I}_j\cup\bigcup_{j\ge n}I&#x27;_j)">\(x\in A\setminus(\bigcup_{j&lt;n}{I}_j\cup\bigcup_{j\ge n}I&#x27;_j)\)</span>. Ambil
+<span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="B(x,\delta) 
+  \subseteq B(\tbf{0},M)\setminus\bigcup_{j&lt;n}I_j">\(B(x,\delta)
+  \subseteq B(\tbf{0},M)\setminus\bigcup_{j&lt;n}I_j\)</span>,</div>
+<p>dan ambil <span class="math inline" data-source-tex="J\in\Cal I">\(J\in\Cal I\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="x\in J\subseteq B(x,\delta)">\(x\in J\subseteq B(x,\delta)\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{m\to\infty}\gamma_m=0&lt;\diam J">\(\lim_{m\to\infty}\gamma_m=0&lt;\diam J\)</span></div>
+<p>(di sinilah kita menggunakan hipotesis bahwa semua bola dalam
+<span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> nontrivial); misalkan <span class="math inline" data-source-tex="m">\(m\)</span> bilangan bulat terkecil yang lebih besar
+atau sama dengan <span class="math inline" data-source-tex="n">\(n\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\gamma_m&lt;\diam J">\(\gamma_m&lt;\diam J\)</span>. Dalam hal ini
+<span class="math inline" data-source-tex="J">\(J\)</span> tidak mungkin termasuk dalam <span class="math inline" data-source-tex="\Cal J_m">\(\Cal J_m\)</span>, sehingga harus ada suatu <span class="math inline" data-source-tex="k&lt;m">\(k&lt;m\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="J\cap I_k\ne\emptyset">\(J\cap I_k\ne\emptyset\)</span>, karena tentu saja
+<span class="math inline" data-source-tex="J\in\Cal I&#x27;">\(J\in\Cal I&#x27;\)</span>. Berdasarkan pemilihan <span class="math inline" data-source-tex="\delta">\(\delta\)</span>, <span class="math inline" data-source-tex="k">\(k\)</span> tidak mungkin kurang dari
+<span class="math inline" data-source-tex="n">\(n\)</span>, sehingga <span class="math inline" data-source-tex="n\le k&lt;m">\(n\le k&lt;m\)</span>, dan <span class="math inline" data-source-tex="\gamma_k\ge\diam J">\(\gamma_k\ge\diam J\)</span>. Jadi jarak dari <span class="math inline" data-source-tex="x">\(x\)</span> ke
+titik terdekat <span class="math inline" data-source-tex="I_k">\(I_k\)</span> paling besar <span class="math inline" data-source-tex="\diam J\le \gamma_k">\(\diam J\le \gamma_k\)</span>. Namun, ini berarti
+bahwa <span class="math inline" data-source-tex="x\in I&#x27;_k">\(x\in I&#x27;_k\)</span>; bertentangan dengan pemilihan <span class="math inline" data-source-tex="x">\(x\)</span>. !∎</p>
+<p> </p>
+<p><strong>(f)</strong> Akibatnya,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu\sp*(A\setminus\bigcup_{j&lt;n}I_j)\le\mu(\bigcup_{j\ge 
+n}I&#x27;_j)\le\sum_{j=n}^{\infty}\mu I&#x27;_j\le 5^r\sum_{j=n}^{\infty}\mu 
+I_j">\(\mu\sp*(A\setminus\bigcup_{j&lt;n}I_j)\le\mu(\bigcup_{j\ge
+n}I&#x27;_j)\le\sum_{j=n}^{\infty}\mu I&#x27;_j\le 5^r\sum_{j=n}^{\infty}\mu
+I_j\)</span>.</div>
+<p>Karena</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{j=0}^{\infty}\mu I_j\le \mu B(\tbf{0},M)&lt;\infty">\(\sum_{j=0}^{\infty}\mu I_j\le \mu B(\tbf{0},M)&lt;\infty\)</span>,</div>
+<p><span class="math inline" data-source-tex="\lim_{n\to\infty}\mu\sp*(A\setminus\bigcup_{j&lt;n}I_j)=0">\(\lim_{n\to\infty}\mu\sp*(A\setminus\bigcup_{j&lt;n}I_j)=0\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu(A\setminus\bigcup_{j\in\Bbb N}I_j)= 
+\mu\sp*(A\setminus\bigcup_{j\in\Bbb N}I_j)=0">\(\mu(A\setminus\bigcup_{j\in\Bbb N}I_j)=
+\mu\sp*(A\setminus\bigcup_{j\in\Bbb N}I_j)=0\)</span>.</div>
+<p>Jadi, dalam hal ini kita dapat menetapkan <span class="math inline" data-source-tex="\Cal I_0=\{I_n:n\in\Bbb N\}">\(\Cal I_0=\{I_n:n\in\Bbb N\}\)</span> untuk
+memperoleh suatu keluarga terhitung yang saling lepas dalam <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> dengan
+<span class="math inline" data-source-tex="\mu(A\setminus\bigcup\Cal I_0)=0">\(\mu(A\setminus\bigcup\Cal I_0)=0\)</span>.</p>
+<p> </p>
+<p><strong>(g)</strong> Ini menyelesaikan pembuktian jika <span class="math inline" data-source-tex="A">\(A\)</span> terbatas. Secara umum,
+tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="U_n=\{x:x\in \BbbR^r,\,n&lt;\|x\|&lt;n+1\}">\(U_n=\{x:x\in \BbbR^r,\,n&lt;\|x\|&lt;n+1\}\)</span>,
+   <span class="math inline" data-source-tex="A_n=A\cap U_n">\(A_n=A\cap U_n\)</span>,
+  <span class="math inline" data-source-tex="\Cal J_n=\{I:I\in\Cal I,\,I\subseteq U_n\}">\(\Cal J_n=\{I:I\in\Cal I,\,I\subseteq U_n\}\)</span>,</div>
+<p>untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>. Maka, untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, kita melihat
+bahwa setiap titik dalam <span class="math inline" data-source-tex="A_n">\(A_n\)</span> termasuk dalam anggota <span class="math inline" data-source-tex="\Cal J_n">\(\Cal J_n\)</span> yang berdiameter
+sekecil apa pun, sehingga terdapat suatu <span class="math inline" data-source-tex="\Cal J&#x27;_n\subseteq\Cal J_n">\(\Cal J&#x27;_n\subseteq\Cal J_n\)</span> yang terhitung
+dan saling lepas sedemikian sehingga
+<span class="math inline" data-source-tex="A_n\setminus\bigcup\Cal J&#x27;_n">\(A_n\setminus\bigcup\Cal J&#x27;_n\)</span> terabaikan. Sekarang (karena <span class="math inline" data-source-tex="U_n">\(U_n\)</span> saling
+lepas) <span class="math inline" data-source-tex="\Cal I_0=\bigcup_{n\in\Bbb N}\Cal J&#x27;_n">\(\Cal I_0=\bigcup_{n\in\Bbb N}\Cal J&#x27;_n\)</span> saling lepas, dan tentu saja
+<span class="math inline" data-source-tex="\Cal I_0">\(\Cal I_0\)</span> merupakan subhimpunan terhitung dari <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span>; selain itu,</p>
+<div class="centerline"><span class="math inline" data-source-tex="A\setminus\bigcup\Cal I_0 
+\subseteq(\BbbR^r\setminus\bigcup_{n\in\Bbb N}U_n) 
+\cup\bigcup_{n\in\Bbb N}(A_n\setminus\bigcup\Cal J&#x27;_n)">\(A\setminus\bigcup\Cal I_0
+\subseteq(\BbbR^r\setminus\bigcup_{n\in\Bbb N}U_n)
+\cup\bigcup_{n\in\Bbb N}(A_n\setminus\bigcup\Cal J&#x27;_n)\)</span></div>
+<p>terabaikan. (Untuk melihat bahwa <span class="math inline" data-source-tex="\Bbb 
+R^r\setminus\bigcup_{n\in\Bbb N}U_n=\{x:\|x\|\in\Bbb N\}">\(\Bbb
+R^r\setminus\bigcup_{n\in\Bbb N}U_n=\{x:\|x\|\in\Bbb N\}\)</span> terabaikan,
+perhatikan bahwa untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> himpunan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:\|x\|=n\}\subseteq B(\tbf{0},n)\setminus 
+B(\tbf{0},\delta n)">\(\{x:\|x\|=n\}\subseteq B(\tbf{0},n)\setminus
+B(\tbf{0},\delta n)\)</span></div>
+<p>mempunyai ukuran paling besar <span class="math inline" data-source-tex="\beta_rn^r-\beta_r(\delta n)^r">\(\beta_rn^r-\beta_r(\delta n)^r\)</span>
+untuk setiap <span class="math inline" data-source-tex="\delta\in\coint{0,1}">\(\delta\in\coint{0,1}\)</span>, sehingga harus terabaikan.)</p></aside>
+</section>
+<section class="source-unit" id="261C" data-source-id="261C"><h2><span class="source-label">261C</span>  </h2>
+<p>Seperti dalam §<a class="xref" href="../223/index.html#223">223</a>, kita dapat menggunakan teorema
+Vitali berdimensi <span class="math inline" data-source-tex="r">\(r\)</span> untuk membuktikan teorema-teorema tentang pendekatan
+fungsi melalui nilai rata-rata lokalnya.</p>
+<p> </p>
+<p><strong>Teorema Kerapatan dalam <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>: bentuk integral</strong> Misalkan
+<span class="math inline" data-source-tex="D">\(D\)</span> suatu subhimpunan <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real yang
+terintegralkan pada <span class="math inline" data-source-tex="D">\(D\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="f(x)=\lim_{\delta\downarrow 0}\Bover{1}{\mu B(x,\delta)} 
+  \int_{D\cap B(x,\delta)}fd\mu">\(f(x)=\lim_{\delta\downarrow 0}\Bover{1}{\mu B(x,\delta)}
+  \int_{D\cap B(x,\delta)}fd\mu\)</span></div>
+<p>untuk hampir setiap <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Sebagai permulaan (sampai akhir (b)), andaikan bahwa
+<span class="math inline" data-source-tex="D=\dom f=\BbbR^r">\(D=\dom f=\BbbR^r\)</span>.</p>
+<p>Ambil <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> dan <span class="math inline" data-source-tex="q">\(q\)</span>, <span class="math inline" data-source-tex="q&#x27;\in\Bbb Q">\(q&#x27;\in\Bbb Q\)</span> dengan <span class="math inline" data-source-tex="q&lt;q&#x27;">\(q&lt;q&#x27;\)</span>, dan tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="A=A_{nqq&#x27;} 
+=\{x:\|x\|\le n,\,f(x)\le q,\, 
+  \limsup_{\delta\downarrow 0}\Bover{1}{\mu B(x,\delta)} 
+  \int_{B(x,\delta)}fd\mu&gt;q&#x27;\}">\(A=A_{nqq&#x27;}
+=\{x:\|x\|\le n,\,f(x)\le q,\,
+  \limsup_{\delta\downarrow 0}\Bover{1}{\mu B(x,\delta)}
+  \int_{B(x,\delta)}fd\mu&gt;q&#x27;\}\)</span>.</div>
+<p>? Andaikan, jika mungkin, bahwa <span class="math inline" data-source-tex="\mu^*A&gt;0">\(\mu^*A&gt;0\)</span>. Ambil
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\epsilon(1+|q|)&lt;(q&#x27;-q)\mu^* A">\(\epsilon(1+|q|)&lt;(q&#x27;-q)\mu^* A\)</span>, dan ambil
+<span class="math inline" data-source-tex="\eta\in\ocint{0,\epsilon}">\(\eta\in\ocint{0,\epsilon}\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\int_{E}|f|\le\epsilon">\(\int_{E}|f|\le\epsilon\)</span>
+setiap kali <span class="math inline" data-source-tex="\mu E\le\eta">\(\mu E\le\eta\)</span> (<a class="xref" href="../225/index.html#225A">225A</a>). Ambil suatu himpunan terbuka <span class="math inline" data-source-tex="G\supseteq A">\(G\supseteq A\)</span>
+yang berukuran paling besar <span class="math inline" data-source-tex="\mu^*A+\eta">\(\mu^*A+\eta\)</span> (134Fa). Misalkan <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> adalah
+himpunan bola tertutup nontrivial <span class="math inline" data-source-tex="B\subseteq G">\(B\subseteq G\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\bover{1}{\mu B}\int_Bfd\mu\ge q&#x27;">\(\bover{1}{\mu B}\int_Bfd\mu\ge q&#x27;\)</span>. Maka setiap titik dalam <span class="math inline" data-source-tex="A">\(A\)</span> termuat dalam
+(bahkan merupakan pusat dari) anggota <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> yang berdiameter sekecil apa
+pun. Jadi,
+berdasarkan <a class="xref" href="#261B">261B</a>, terdapat suatu himpunan terhitung yang saling lepas
+<span class="math inline" data-source-tex="\Cal I_0\subseteq\Cal I">\(\Cal I_0\subseteq\Cal I\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu(A\setminus\bigcup\Cal I_0)=0">\(\mu(A\setminus\bigcup\Cal I_0)=0\)</span>; tetapkan <span class="math inline" data-source-tex="H=\bigcup\Cal I_0">\(H=\bigcup\Cal I_0\)</span>.</p>
+<p>Karena <span class="math inline" data-source-tex="\int_{I}fd\mu\ge q&#x27;\mu I">\(\int_{I}fd\mu\ge q&#x27;\mu I\)</span> untuk setiap <span class="math inline" data-source-tex="I\in\Cal I_0">\(I\in\Cal I_0\)</span>, kita
+mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_{H}fd\mu=\sum_{I\in\Cal I_0}\int_Ifd\mu 
+\ge q&#x27;\sum_{I\in\Cal I_0}\mu I=q&#x27;\mu H\ge q&#x27;\mu^* A">\(\int_{H}fd\mu=\sum_{I\in\Cal I_0}\int_Ifd\mu
+\ge q&#x27;\sum_{I\in\Cal I_0}\mu I=q&#x27;\mu H\ge q&#x27;\mu^* A\)</span>.</div>
+<p>Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="E=\{x:x\in G,\,f(x)\le q\}">\(E=\{x:x\in G,\,f(x)\le q\}\)</span>.</div>
+<p>Maka <span class="math inline" data-source-tex="E">\(E\)</span> terukur, dan <span class="math inline" data-source-tex="A\subseteq E\subseteq G">\(A\subseteq E\subseteq G\)</span>; jadi</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu^* A\le\mu E\le\mu G\le\mu^* A+\eta 
+\le\mu^* A+\epsilon">\(\mu^* A\le\mu E\le\mu G\le\mu^* A+\eta
+\le\mu^* A+\epsilon\)</span>.</div>
+<p>Selain itu,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu(H\setminus E)\le\mu G-\mu E\le\eta">\(\mu(H\setminus E)\le\mu G-\mu E\le\eta\)</span>,</div>
+<p>sehingga, berdasarkan pemilihan <span class="math inline" data-source-tex="\eta">\(\eta\)</span>,
+<span class="math inline" data-source-tex="\int_{H\setminus E}f\le\epsilon">\(\int_{H\setminus E}f\le\epsilon\)</span> dan</p>
+<p><span class="math display" data-source-tex="\eqalignno{\int_{H}f 
+&amp;\le\epsilon+\int_{H\cap E}f 
+\le\epsilon+q\mu(H\cap E)\cr 
+&amp;\le\epsilon+q\mu^*A+|q|(\mu(H\cap E)-\mu^* A) 
+\le q\mu^* A+\epsilon(1+|q|)\cr 
+\displaycause{karena $\mu^*A=\mu^*(A\cap H)\le\mu(H\cap E)\le\mu E$} 
+&amp;&lt;q&#x27;\mu^* A 
+\le\int_{H}f,\cr}">\[\begin{aligned}\int_{H}f
+&amp;\le\epsilon+\int_{H\cap E}f
+\le\epsilon+q\mu(H\cap E)\\
+&amp;\le\epsilon+q\mu^*A+|q|(\mu(H\cap E)-\mu^* A)
+\le q\mu^* A+\epsilon(1+|q|)\\
+&amp;\text{(karena }\mu^*A=\mu^*(A\cap H)\le\mu(H\cap E)\le\mu E\text{)}\\
+&amp;&lt;q&#x27;\mu^* A
+\le\int_{H}f,\\\end{aligned}\]</span></p>
+<p>yang mustahil. !</p>
+<p>Jadi <span class="math inline" data-source-tex="A_{nqq&#x27;}">\(A_{nqq&#x27;}\)</span> terabaikan. Ini berlaku untuk semua <span class="math inline" data-source-tex="q&lt;q&#x27;">\(q&lt;q&#x27;\)</span> dan semua <span class="math inline" data-source-tex="n">\(n\)</span>,
+sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="A^*=\bigcup_{q,q&#x27;\in\Bbb Q,q&lt;q&#x27;} 
+  \bigcup_{n\in\Bbb N}A_{nqq&#x27;}">\(A^*=\bigcup_{q,q&#x27;\in\Bbb Q,q&lt;q&#x27;}
+  \bigcup_{n\in\Bbb N}A_{nqq&#x27;}\)</span></div>
+<p>terabaikan. Namun,</p>
+<div class="centerline"><span class="math inline" data-source-tex="f(x) 
+\ge\limsup_{\delta\downarrow 0}\Bover{1}{\mu B(x,\delta)} 
+  \int_{B(x,\delta)}f">\(f(x)
+\ge\limsup_{\delta\downarrow 0}\Bover{1}{\mu B(x,\delta)}
+  \int_{B(x,\delta)}f\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="x\in\BbbR^r\setminus A^*">\(x\in\BbbR^r\setminus A^*\)</span>, yakni, untuk hampir
+setiap <span class="math inline" data-source-tex="x\in \BbbR^r">\(x\in \BbbR^r\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Dengan cara serupa, atau dengan menerapkan hasil ini pada <span class="math inline" data-source-tex="-f">\(-f\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="f(x) 
+\le\liminf_{\delta\downarrow 0}\Bover{1}{\mu B(x,\delta)} 
+  \int_{B(x,\delta)}f">\(f(x)
+\le\liminf_{\delta\downarrow 0}\Bover{1}{\mu B(x,\delta)}
+  \int_{B(x,\delta)}f\)</span></div>
+<p>untuk hampir setiap <span class="math inline" data-source-tex="x">\(x\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="f(x) 
+=\lim_{\delta\downarrow 0}\Bover{1}{\mu B(x,\delta)} 
+  \int_{B(x,\delta)}f">\(f(x)
+=\lim_{\delta\downarrow 0}\Bover{1}{\mu B(x,\delta)}
+  \int_{B(x,\delta)}f\)</span></div>
+<p>untuk hampir setiap <span class="math inline" data-source-tex="x">\(x\)</span>.</p>
+<p> </p>
+<p><strong>(c)</strong> Untuk kasus yang (secara sepintas) lebih umum sebagaimana dinyatakan
+dalam teorema, misalkan <span class="math inline" data-source-tex="\tilde f">\(\tilde f\)</span> suatu fungsi yang terintegralkan terhadap
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span> dan memperluas <span class="math inline" data-source-tex="f\restr D">\(f\restr D\)</span>, terdefinisi di seluruh <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, serta
+sedemikian sehingga <span class="math inline" data-source-tex="\int_F\tilde f=\int_{D\cap F}f">\(\int_F\tilde f=\int_{D\cap F}f\)</span> untuk setiap himpunan
+terukur <span class="math inline" data-source-tex="F\subseteq\BbbR^r">\(F\subseteq\BbbR^r\)</span> (dengan menerapkan 214Eb pada <span class="math inline" data-source-tex="f\restr D">\(f\restr D\)</span>). Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="f(x)=\tilde f(x) 
+=\lim_{\delta\downarrow 0}\Bover{1}{\mu B(x,\delta)} 
+  \int_{B(x,\delta)}\tilde f 
+=\lim_{\delta\downarrow 0}\Bover{1}{\mu B(x,\delta)} 
+  \int_{D\cap B(x,\delta)}f">\(f(x)=\tilde f(x)
+=\lim_{\delta\downarrow 0}\Bover{1}{\mu B(x,\delta)}
+  \int_{B(x,\delta)}\tilde f
+=\lim_{\delta\downarrow 0}\Bover{1}{\mu B(x,\delta)}
+  \int_{D\cap B(x,\delta)}f\)</span></div>
+<p>untuk hampir setiap <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="261D" data-source-id="261D"><h2><span class="source-label">261D</span> Akibat </h2>
+<p>(a) Jika <span class="math inline" data-source-tex="D\subseteq\BbbR^r">\(D\subseteq\BbbR^r\)</span> sebarang himpunan, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{\delta\downarrow 0}\Bover{\mu^*(D\cap B(x,\delta))} 
+{\mu B(x,\delta)}=1">\(\lim_{\delta\downarrow 0}\Bover{\mu^*(D\cap B(x,\delta))}
+{\mu B(x,\delta)}=1\)</span></div>
+<p>untuk hampir setiap <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span>.</p>
+<p>(b) Jika <span class="math inline" data-source-tex="E\subseteq\BbbR^r">\(E\subseteq\BbbR^r\)</span> suatu himpunan terukur, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{\delta\downarrow 0}\Bover{\mu(E\cap B(x,\delta))} 
+{\mu B(x,\delta)}=\chi E(x)">\(\lim_{\delta\downarrow 0}\Bover{\mu(E\cap B(x,\delta))}
+{\mu B(x,\delta)}=\chi E(x)\)</span></div>
+<p>untuk hampir setiap <span class="math inline" data-source-tex="x\in \BbbR^r">\(x\in \BbbR^r\)</span>.</p>
+<p>(c) Jika <span class="math inline" data-source-tex="D\subseteq\BbbR^r">\(D\subseteq\BbbR^r\)</span> dan <span class="math inline" data-source-tex="f:D\to\Bbb R">\(f:D\to\Bbb R\)</span> sebarang fungsi, maka untuk
+hampir setiap <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{\delta\downarrow 0} 
+\Bover{\mu^*(\{y:y\in D,\,|f(y)-f(x)|\le\epsilon\}\cap 
+B(x,\delta))} 
+{\mu B(x,\delta)}=1">\(\lim_{\delta\downarrow 0}
+\Bover{\mu^*(\{y:y\in D,\,|f(y)-f(x)|\le\epsilon\}\cap
+B(x,\delta))}
+{\mu B(x,\delta)}=1\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>.</p>
+<p>(d) Jika <span class="math inline" data-source-tex="D\subseteq\BbbR^r">\(D\subseteq\BbbR^r\)</span> dan <span class="math inline" data-source-tex="f:D\to\Bbb R">\(f:D\to\Bbb R\)</span> terukur, maka untuk hampir
+setiap <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{\delta\downarrow 0} 
+\Bover{\mu^*(\{y:y\in D,\,|f(y)-f(x)|\ge\epsilon\}\cap 
+B(x,\delta))} 
+{\mu B(x,\delta)}=0">\(\lim_{\delta\downarrow 0}
+\Bover{\mu^*(\{y:y\in D,\,|f(y)-f(x)|\ge\epsilon\}\cap
+B(x,\delta))}
+{\mu B(x,\delta)}=0\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Terapkan <a class="xref" href="#261C">261C</a> dengan <span class="math inline" data-source-tex="f=\chi B(\tbf{0},n)">\(f=\chi B(\tbf{0},n)\)</span> untuk melihat
+bahwa, untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{\delta\downarrow 0}\Bover{\mu^*(D\cap B(x,\delta))} 
+{\mu B(x,\delta)}=1">\(\lim_{\delta\downarrow 0}\Bover{\mu^*(D\cap B(x,\delta))}
+{\mu B(x,\delta)}=1\)</span></div>
+<p>untuk hampir setiap <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span> dengan <span class="math inline" data-source-tex="\|x\|&lt;n">\(\|x\|&lt;n\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Terapkan (a) pada <span class="math inline" data-source-tex="E">\(E\)</span> untuk melihat bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\liminf_{\delta\downarrow 0}\Bover{\mu(E\cap 
+B(x,\delta))}{\mu B(x,\delta)}\ge\chi E(x)">\(\liminf_{\delta\downarrow 0}\Bover{\mu(E\cap
+B(x,\delta))}{\mu B(x,\delta)}\ge\chi E(x)\)</span></div>
+<p>untuk hampir setiap <span class="math inline" data-source-tex="x\in\BbbR^r">\(x\in\BbbR^r\)</span>, dan pada
+<span class="math inline" data-source-tex="E&#x27;=\BbbR^r\setminus E">\(E&#x27;=\BbbR^r\setminus E\)</span> untuk melihat bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\limsup_{\delta\downarrow 0}\Bover{\mu(E\cap 
+B(x,\delta))}{\mu B(x,\delta)} 
+=1-\liminf_{\delta\downarrow 0} 
+  \Bover{\mu(E&#x27;\cap B(x,\delta))}{\mu B(x,\delta)} 
+\le 1-\chi E&#x27;(x)=\chi E(x)">\(\limsup_{\delta\downarrow 0}\Bover{\mu(E\cap
+B(x,\delta))}{\mu B(x,\delta)}
+=1-\liminf_{\delta\downarrow 0}
+  \Bover{\mu(E&#x27;\cap B(x,\delta))}{\mu B(x,\delta)}
+\le 1-\chi E&#x27;(x)=\chi E(x)\)</span></div>
+<p>untuk hampir setiap <span class="math inline" data-source-tex="x">\(x\)</span>.</p>
+<p> </p>
+<p><strong>(c)</strong> Untuk <span class="math inline" data-source-tex="q">\(q\)</span>, <span class="math inline" data-source-tex="q&#x27;\in\Bbb Q">\(q&#x27;\in\Bbb Q\)</span>, tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="D_{qq&#x27;}=\{x:x\in D,\,q\le f(x)\le q&#x27;\}">\(D_{qq&#x27;}=\{x:x\in D,\,q\le f(x)\le q&#x27;\}\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="C_{qq&#x27;}=\{x:x\in D_{qq&#x27;},\,\lim_{\delta\downarrow 0} 
+\Bover{\mu^*(D_{qq&#x27;}\cap B(x,\delta))}{\mu B(x,\delta)}=1\}">\(C_{qq&#x27;}=\{x:x\in D_{qq&#x27;},\,\lim_{\delta\downarrow 0}
+\Bover{\mu^*(D_{qq&#x27;}\cap B(x,\delta))}{\mu B(x,\delta)}=1\}\)</span>;</div>
+<p>sekarang tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="C 
+=D\setminus\bigcup_{q,q&#x27;\in\Bbb Q}(D_{qq&#x27;}\setminus C_{qq&#x27;})">\(C
+=D\setminus\bigcup_{q,q&#x27;\in\Bbb Q}(D_{qq&#x27;}\setminus C_{qq&#x27;})\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="D\setminus C">\(D\setminus C\)</span> terabaikan. Jika <span class="math inline" data-source-tex="x\in C">\(x\in C\)</span> dan
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, maka terdapat <span class="math inline" data-source-tex="q">\(q\)</span>, <span class="math inline" data-source-tex="q&#x27;\in\Bbb Q">\(q&#x27;\in\Bbb Q\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="f(x)-\epsilon\le q\le f(x)\le q&#x27;\le f(x)+\epsilon">\(f(x)-\epsilon\le q\le f(x)\le q&#x27;\le f(x)+\epsilon\)</span>, dan sekarang
+<span class="math inline" data-source-tex="x\in C_{qq&#x27;}">\(x\in C_{qq&#x27;}\)</span>; oleh karena itu</p>
+<div class="centerline"><span class="math inline" data-source-tex="\liminf_{\delta\downarrow 0} 
+\Bover{\mu^*\{y:y\in D\cap B(x,\delta),\,|f(y)-f(x)|\le\epsilon\}} 
+  {\mu B(x,\delta)} 
+\ge\liminf_{\delta\downarrow 0} 
+  \Bover{\mu^*(D_{qq&#x27;}\cap B(x,\delta))}{\mu B(x,\delta)}=1">\(\liminf_{\delta\downarrow 0}
+\Bover{\mu^*\{y:y\in D\cap B(x,\delta),\,|f(y)-f(x)|\le\epsilon\}}
+  {\mu B(x,\delta)}
+\ge\liminf_{\delta\downarrow 0}
+  \Bover{\mu^*(D_{qq&#x27;}\cap B(x,\delta))}{\mu B(x,\delta)}=1\)</span>,</div>
+<p>sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{\delta\downarrow 0} 
+\Bover{\mu^*\{y:y\in D\cap B(x,\delta),\,|f(y)-f(x)|\le\epsilon\}} 
+{\mu B(x,\delta)} 
+=1">\(\lim_{\delta\downarrow 0}
+\Bover{\mu^*\{y:y\in D\cap B(x,\delta),\,|f(y)-f(x)|\le\epsilon\}}
+{\mu B(x,\delta)}
+=1\)</span>.</div>
+<p> </p>
+<p><strong>(d)</strong> Definisikan <span class="math inline" data-source-tex="C">\(C\)</span> seperti dalam (c). Berdasarkan (a), kita mengetahui
+bahwa <span class="math inline" data-source-tex="\mu(D\setminus C&#x27;)=0">\(\mu(D\setminus C&#x27;)=0\)</span>, dengan</p>
+<div class="centerline"><span class="math inline" data-source-tex="C&#x27;=\{x:x\in D,\lim_{\delta\downarrow 0}\Bover{\mu^*(D\cap 
+B(x,\delta))} 
+{\mu B(x,\delta)}=1\}">\(C&#x27;=\{x:x\in D,\lim_{\delta\downarrow 0}\Bover{\mu^*(D\cap
+B(x,\delta))}
+{\mu B(x,\delta)}=1\}\)</span>.
+</div>
+<p>Jika <span class="math inline" data-source-tex="x\in C\cap C&#x27;">\(x\in C\cap C&#x27;\)</span> dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, berdasarkan (c) kita
+mengetahui bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{\delta\downarrow 0} 
+\Bover{\mu^*\{y:y\in D\cap B(x,\delta),\,|f(y)-f(x)|\le\epsilon/2\}} 
+{\mu B(x,\delta)} 
+=1">\(\lim_{\delta\downarrow 0}
+\Bover{\mu^*\{y:y\in D\cap B(x,\delta),\,|f(y)-f(x)|\le\epsilon/2\}}
+{\mu B(x,\delta)}
+=1\)</span>.</div>
+<p>Namun, karena <span class="math inline" data-source-tex="f">\(f\)</span> terukur, kita mempunyai</p>
+<p><span class="math display" data-source-tex="\eqalign{\mu^*\{y:y\in &amp;D\cap B(x,\delta),\, 
+|f(y)-f(x)|\ge\epsilon\}\cr 
+&amp;+\mu^*\{y:y\in D\cap B(x,\delta),\,|f(y)-f(x)|\le\Bover12\epsilon\} 
+\le\mu^*(D\cap B(x,\delta))\cr}">\[\begin{aligned}\mu^*\{y:y\in &amp;D\cap B(x,\delta),\,
+|f(y)-f(x)|\ge\epsilon\}\\
+&amp;+\mu^*\{y:y\in D\cap B(x,\delta),\,|f(y)-f(x)|\le\Bover12\epsilon\}
+\le\mu^*(D\cap B(x,\delta))\\\end{aligned}\]</span></p>
+<p>untuk setiap <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>. Oleh karena itu,</p>
+<p><span class="math display" data-source-tex="\eqalign{\limsup_{\delta\downarrow 0} 
+&amp;\Bover{\mu^*\{y:y\in D\cap B(x,\delta),\,|f(y)-f(x)|\ge\epsilon\}} 
+{\mu B(x,\delta)}\cr 
+&amp;\le\lim_{\delta\downarrow 0} 
+  \Bover{\mu^*(D\cap B(x,\delta))}{\mu B(x,\delta)} 
+-\lim_{\delta\downarrow 0} 
+  \Bover{\mu^*\{y:y\in D\cap B(x,\delta),\,|f(y)-f(x)|\le\epsilon/2\}} 
+  {\mu B(x,\delta)} 
+=0,\cr}">\[\begin{aligned}\limsup_{\delta\downarrow 0}
+&amp;\Bover{\mu^*\{y:y\in D\cap B(x,\delta),\,|f(y)-f(x)|\ge\epsilon\}}
+{\mu B(x,\delta)}\\
+&amp;\le\lim_{\delta\downarrow 0}
+  \Bover{\mu^*(D\cap B(x,\delta))}{\mu B(x,\delta)}
+-\lim_{\delta\downarrow 0}
+  \Bover{\mu^*\{y:y\in D\cap B(x,\delta),\,|f(y)-f(x)|\le\epsilon/2\}}
+  {\mu B(x,\delta)}
+=0,\\\end{aligned}\]</span></p>
+<p>dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{\delta\downarrow 0} 
+\Bover{\mu^*\{y:y\in D\cap B(x,\delta),\,|f(y)-f(x)|\ge\epsilon\}} 
+{\mu B(x,\delta)}=0">\(\lim_{\delta\downarrow 0}
+\Bover{\mu^*\{y:y\in D\cap B(x,\delta),\,|f(y)-f(x)|\ge\epsilon\}}
+{\mu B(x,\delta)}=0\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="x\in C\cap C&#x27;">\(x\in C\cap C&#x27;\)</span>, yakni, untuk hampir setiap
+<span class="math inline" data-source-tex="x\in D">\(x\in D\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="261E" data-source-id="261E"><h2><span class="source-label">261E</span> Teorema </h2>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi yang terintegralkan secara
+lokal dan terdefinisi pada suatu subhimpunan koterabaikan dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)} 
+\int_{B(x,\delta)}|f(y)-f(x)|dy=0">\(\lim_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)}
+\int_{B(x,\delta)}|f(y)-f(x)|dy=0\)</span></div>
+<p>untuk hampir setiap <span class="math inline" data-source-tex="x\in\BbbR^r">\(x\in\BbbR^r\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>(Bandingkan <a class="xref" href="../223/index.html#223D">223D</a>.)</p>
+<p> </p>
+<p><strong>(a)</strong> Untuk sementara, tetapkan <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, dan tetapkan
+<span class="math inline" data-source-tex="G=\{x:\|x\|&lt;n\}">\(G=\{x:\|x\|&lt;n\}\)</span>. Untuk setiap <span class="math inline" data-source-tex="q\in\Bbb Q">\(q\in\Bbb Q\)</span>, tetapkan
+<span class="math inline" data-source-tex="g_q(x)=|f(x)-q|">\(g_q(x)=|f(x)-q|\)</span> untuk <span class="math inline" data-source-tex="x\in G\cap\dom f">\(x\in G\cap\dom f\)</span>; maka <span class="math inline" data-source-tex="g_q">\(g_q\)</span> terintegralkan pada
+<span class="math inline" data-source-tex="G">\(G\)</span>, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)} 
+\int_{G\cap B(x,\delta)}g_q=g_q(x)">\(\lim_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)}
+\int_{G\cap B(x,\delta)}g_q=g_q(x)\)</span></div>
+<p>untuk hampir setiap <span class="math inline" data-source-tex="x\in G">\(x\in G\)</span>, berdasarkan <a class="xref" href="#261C">261C</a>. Dengan menetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="E_q=\{x:x\in G\cap\dom f,\,\lim_{\delta\downarrow 0} 
+\Bover1{\mu B(x,\delta)}\int_{G\cap B(x,\delta)}g_q=g_q(x)\}">\(E_q=\{x:x\in G\cap\dom f,\,\lim_{\delta\downarrow 0}
+\Bover1{\mu B(x,\delta)}\int_{G\cap B(x,\delta)}g_q=g_q(x)\}\)</span>,</div>
+<p>kita mempunyai <span class="math inline" data-source-tex="G\setminus E_q">\(G\setminus E_q\)</span> terabaikan untuk setiap <span class="math inline" data-source-tex="q">\(q\)</span>,
+sehingga <span class="math inline" data-source-tex="G\setminus E">\(G\setminus E\)</span> terabaikan, dengan
+<span class="math inline" data-source-tex="E=\bigcap_{q\in\Bbb Q}E_q">\(E=\bigcap_{q\in\Bbb Q}E_q\)</span>. Sekarang</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)} 
+\int_{G\cap B(x,\delta)}|f(y)-f(x)|dy=0">\(\lim_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)}
+\int_{G\cap B(x,\delta)}|f(y)-f(x)|dy=0\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="x\in E">\(x\in E\)</span>. Bukti. Ambil <span class="math inline" data-source-tex="x\in E">\(x\in E\)</span> dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>.
+Maka terdapat <span class="math inline" data-source-tex="q\in\Bbb Q">\(q\in\Bbb Q\)</span> sedemikian sehingga <span class="math inline" data-source-tex="|f(x)-q|\le\epsilon">\(|f(x)-q|\le\epsilon\)</span>,
+sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="|f(y)-f(x)|\le|f(y)-q|+\epsilon=g_q(y)+\epsilon">\(|f(y)-f(x)|\le|f(y)-q|+\epsilon=g_q(y)+\epsilon\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="y\in G\cap\dom f">\(y\in G\cap\dom f\)</span>, dan</p>
+<p><span class="math display" data-source-tex="\eqalign{\limsup_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)} 
+\int_{G\cap B(x,\delta)}|f(y)-f(x)|dy 
+&amp;\le\limsup_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)} 
+\int_{G\cap B(x,\delta)}g_q(y)+\epsilon\,dy\cr 
+&amp;=\epsilon+g_q(x) 
+\le 2\epsilon.\cr}">\[\begin{aligned}\limsup_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)}
+\int_{G\cap B(x,\delta)}|f(y)-f(x)|dy
+&amp;\le\limsup_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)}
+\int_{G\cap B(x,\delta)}g_q(y)+\epsilon\,dy\\
+&amp;=\epsilon+g_q(x)
+\le 2\epsilon.\\\end{aligned}\]</span></p>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)} 
+\int_{G\cap B(x,\delta)}|f(y)-f(x)|dy=0">\(\lim_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)}
+\int_{G\cap B(x,\delta)}|f(y)-f(x)|dy=0\)</span>,</div>
+<p>sebagaimana diperlukan. ∎</p>
+<p> </p>
+<p><strong>(b)</strong> Karena <span class="math inline" data-source-tex="G">\(G\)</span> terbuka,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)} 
+\int_{B(x,\delta)}|f(y)-f(x)|dy 
+=\lim_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)} 
+\int_{G\cap B(x,\delta)}|f(y)-f(x)|dy 
+=0">\(\lim_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)}
+\int_{B(x,\delta)}|f(y)-f(x)|dy
+=\lim_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)}
+\int_{G\cap B(x,\delta)}|f(y)-f(x)|dy
+=0\)</span></div>
+<p>untuk hampir setiap <span class="math inline" data-source-tex="x\in G">\(x\in G\)</span>. Karena <span class="math inline" data-source-tex="n">\(n\)</span> sebarang,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)} 
+\int_{B(x,\delta)}|f(y)-f(x)|dy=0">\(\lim_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)}
+\int_{B(x,\delta)}|f(y)-f(x)|dy=0\)</span></div>
+<p>untuk hampir setiap <span class="math inline" data-source-tex="x\in\BbbR^r">\(x\in\BbbR^r\)</span>.</p></aside>
+<p>
+ <strong>Catatan</strong> Himpunan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:x\in\dom f,\, 
+  \lim_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)} 
+\int_{B(x,\delta)}|f(y)-f(x)|dy=0\}">\(\{x:x\in\dom f,\,
+  \lim_{\delta\downarrow 0}\Bover1{\mu B(x,\delta)}
+\int_{B(x,\delta)}|f(y)-f(x)|dy=0\}\)</span></div>
+<p>kadang-kadang disebut <strong>himpunan Lebesgue</strong> dari <span class="math inline" data-source-tex="f">\(f\)</span>.</p>
+</section>
+<section class="source-unit" id="261F" data-source-id="261F"><h2><span class="source-label">261F</span>  </h2>
+<p>Akibat lain yang sangat berguna dari <a class="xref" href="#261B">261B</a> adalah
+sebagai berikut.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Misalkan <span class="math inline" data-source-tex="A\subseteq\BbbR^r">\(A\subseteq\BbbR^r\)</span> sebarang himpunan,
+dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Maka terdapat suatu barisan <span class="math inline" data-source-tex="\sequencen{B_n}">\(\sequencen{B_n}\)</span> bola tertutup
+dalam <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, semuanya berjari-jari paling besar <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span>, sedemikian
+sehingga <span class="math inline" data-source-tex="A\subseteq\bigcup_{n\in\Bbb N}B_n">\(A\subseteq\bigcup_{n\in\Bbb N}B_n\)</span> dan
+<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\mu B_n\le\mu^*A+\epsilon">\(\sum_{n=0}^{\infty}\mu B_n\le\mu^*A+\epsilon\)</span>. Selain itu, kita dapat
+mengandaikan bahwa bola-bola dalam barisan yang pusatnya tidak terletak dalam
+<span class="math inline" data-source-tex="A">\(A\)</span> memiliki jumlah ukuran paling besar <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Langkah pertama adalah pengamatan yang jelas bahwa jika
+<span class="math inline" data-source-tex="x\in\BbbR^r">\(x\in\BbbR^r\)</span>, <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>, maka kubus setengah terbuka
+<span class="math inline" data-source-tex="I=\coint{x,x+\delta\tbf{1}}">\(I=\coint{x,x+\delta\tbf{1}}\)</span> merupakan subhimpunan bola
+<span class="math inline" data-source-tex="B(x,\delta\sqrt{r})">\(B(x,\delta\sqrt{r})\)</span>, yang berukuran
+<span class="math inline" data-source-tex="\gamma_r\delta^r=\gamma_r\mu I">\(\gamma_r\delta^r=\gamma_r\mu I\)</span>, dengan
+<span class="math inline" data-source-tex="\gamma_r=\beta_rr^{r/2}">\(\gamma_r=\beta_rr^{r/2}\)</span>. Akibatnya, jika <span class="math inline" data-source-tex="G\subseteq\BbbR^r">\(G\subseteq\BbbR^r\)</span> sebarang
+himpunan terbuka, maka <span class="math inline" data-source-tex="G">\(G\)</span> dapat diliput oleh suatu barisan bola dengan jumlah
+ukuran paling besar <span class="math inline" data-source-tex="\gamma_r\mu G">\(\gamma_r\mu G\)</span>. Bukti. Jika <span class="math inline" data-source-tex="G">\(G\)</span> kosong, kita dapat
+mengambil semua bola sebagai himpunan satu titik. Jika tidak, untuk setiap
+<span class="math inline" data-source-tex="k\in\Bbb N">\(k\in\Bbb N\)</span>, tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="Q_k 
+=\{z:z\in \Bbb Z^r,\,\coint{2^{-k}z,2^{-k}(z+\tbf{1})}\subseteq G\}">\(Q_k
+=\{z:z\in \Bbb Z^r,\,\coint{2^{-k}z,2^{-k}(z+\tbf{1})}\subseteq G\}\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="E_k 
+=\bigcup_{z\in Q_k}\coint{2^{-k}z,2^{-k}(z+\tbf{1})}">\(E_k
+=\bigcup_{z\in Q_k}\coint{2^{-k}z,2^{-k}(z+\tbf{1})}\)</span>.</div>
+<p>Maka <span class="math inline" data-source-tex="\sequence{k}{E_k}">\(\sequence{k}{E_k}\)</span> merupakan barisan himpunan yang tak
+menurun dengan gabungan <span class="math inline" data-source-tex="G">\(G\)</span>, dan <span class="math inline" data-source-tex="E_0">\(E_0\)</span> serta setiap selisih
+<span class="math inline" data-source-tex="E_{k+1}\setminus E_k">\(E_{k+1}\setminus E_k\)</span> dapat dinyatakan sebagai gabungan yang saling lepas
+dari kubus-kubus setengah terbuka. Dengan demikian, <span class="math inline" data-source-tex="G">\(G\)</span> juga dapat dinyatakan
+sebagai gabungan yang saling lepas dari suatu barisan <span class="math inline" data-source-tex="\sequencen{I_n}">\(\sequencen{I_n}\)</span> kubus
+setengah terbuka. Setiap <span class="math inline" data-source-tex="I_n">\(I_n\)</span> diliput oleh suatu bola <span class="math inline" data-source-tex="B_n">\(B_n\)</span> yang berukuran
+<span class="math inline" data-source-tex="\gamma_r\mu I_n">\(\gamma_r\mu I_n\)</span>; sehingga <span class="math inline" data-source-tex="G\subseteq\bigcup_{n\in\Bbb N}B_n">\(G\subseteq\bigcup_{n\in\Bbb N}B_n\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\mu B_n 
+\le\gamma_r\sum_{n=0}^{\infty}\mu I_n=\gamma_r\mu G">\(\sum_{n=0}^{\infty}\mu B_n
+\le\gamma_r\sum_{n=0}^{\infty}\mu I_n=\gamma_r\mu G\)</span>. ∎</div>
+<p> </p>
+<p><strong>(b)</strong> Langsung diperoleh bahwa jika <span class="math inline" data-source-tex="\mu A=0">\(\mu A=0\)</span>, maka untuk setiap
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat suatu barisan <span class="math inline" data-source-tex="\sequencen{B_n}">\(\sequencen{B_n}\)</span> bola yang meliput <span class="math inline" data-source-tex="A">\(A\)</span>
+dengan jumlah ukuran paling besar <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span>, karena tentu saja terdapat
+suatu himpunan terbuka yang memuat <span class="math inline" data-source-tex="A">\(A\)</span> dan berukuran paling besar
+<span class="math inline" data-source-tex="\epsilon/\gamma_r">\(\epsilon/\gamma_r\)</span>.</p>
+<p> </p>
+<p><strong>(c)</strong> Sekarang ambil sebarang himpunan <span class="math inline" data-source-tex="A">\(A\)</span>, dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Ambil suatu
+himpunan terbuka <span class="math inline" data-source-tex="G\supseteq A">\(G\supseteq A\)</span> dengan
+<span class="math inline" data-source-tex="\mu G\le\mu^*A+\bover12\epsilon">\(\mu G\le\mu^*A+\bover12\epsilon\)</span>. Misalkan <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> adalah keluarga bola
+tertutup nontrivial yang termuat dalam <span class="math inline" data-source-tex="G">\(G\)</span>, berjari-jari paling besar
+<span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> dan berpusat dalam <span class="math inline" data-source-tex="A">\(A\)</span>. Maka setiap titik dalam <span class="math inline" data-source-tex="A">\(A\)</span> termasuk dalam
+anggota <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> yang berdiameter sekecil apa pun, sehingga terdapat suatu
+<span class="math inline" data-source-tex="\Cal I_0\subseteq\Cal I">\(\Cal I_0\subseteq\Cal I\)</span> yang terhitung dan saling lepas sedemikian sehingga
+<span class="math inline" data-source-tex="\mu(A\setminus\bigcup\Cal I_0)=0">\(\mu(A\setminus\bigcup\Cal I_0)=0\)</span>. Misalkan <span class="math inline" data-source-tex="\sequencen{B&#x27;_n}">\(\sequencen{B&#x27;_n}\)</span> suatu
+barisan bola yang meliput <span class="math inline" data-source-tex="A\setminus\bigcup\Cal I_0">\(A\setminus\bigcup\Cal I_0\)</span> dengan
+<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\mu B&#x27;_n\le\min(\bover12\epsilon,\beta_r\epsilon^r)">\(\sum_{n=0}^{\infty}\mu B&#x27;_n\le\min(\bover12\epsilon,\beta_r\epsilon^r)\)</span>;
+semuanya tentu berjari-jari paling besar <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span>. Misalkan
+<span class="math inline" data-source-tex="\sequencen{B_n}">\(\sequencen{B_n}\)</span> suatu barisan yang menggabungkan <span class="math inline" data-source-tex="\Cal I_0">\(\Cal I_0\)</span> dengan
+<span class="math inline" data-source-tex="\sequencen{B&#x27;_n}">\(\sequencen{B&#x27;_n}\)</span>; maka <span class="math inline" data-source-tex="A\subseteq\bigcup_{n\in\Bbb N}B_n">\(A\subseteq\bigcup_{n\in\Bbb N}B_n\)</span>, setiap <span class="math inline" data-source-tex="B_n">\(B_n\)</span>
+berjari-jari paling besar <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\mu B_n 
+=\sum_{B\in\Cal I_0}\mu B+\sum_{n=0}^{\infty}\mu B&#x27;_n 
+\le\mu G+\Bover12\epsilon 
+\le\mu^*A+\epsilon">\(\sum_{n=0}^{\infty}\mu B_n
+=\sum_{B\in\Cal I_0}\mu B+\sum_{n=0}^{\infty}\mu B&#x27;_n
+\le\mu G+\Bover12\epsilon
+\le\mu^*A+\epsilon\)</span>,</div>
+<p>sedangkan <span class="math inline" data-source-tex="B_n">\(B_n\)</span> yang pusatnya tidak terletak dalam <span class="math inline" data-source-tex="A">\(A\)</span> harus
+berasal dari barisan <span class="math inline" data-source-tex="\sequencen{B&#x27;_n}">\(\sequencen{B&#x27;_n}\)</span>, sehingga jumlah ukurannya paling
+besar <span class="math inline" data-source-tex="\bover12\epsilon\le\epsilon">\(\bover12\epsilon\le\epsilon\)</span>.</p></aside>
+<p> </p>
+<p><strong>Catatan</strong> Sebenarnya kita dapat (jika <span class="math inline" data-source-tex="A">\(A\)</span> tidak kosong) mengatur
+agar pusat <em>setiap</em> <span class="math inline" data-source-tex="B_n">\(B_n\)</span> termasuk dalam <span class="math inline" data-source-tex="A">\(A\)</span>. Ini merupakan akibat mudah
+dari Lema Peliputan Besicovitch (lihat §472 dalam Jilid 4).</p>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="261X" data-source-id="261X"><span class="anchor" id="261Xa"></span><h2><span class="source-label">261X</span> Latihan dasar (a) </h2>
+<p>Tunjukkan bahwa <a class="xref" href="#261C">261C</a> berlaku untuk
+sebarang fungsi bernilai real <span class="math inline" data-source-tex="f">\(f\)</span> yang terintegralkan secara lokal; khususnya,
+untuk sebarang <span class="math inline" data-source-tex="f\in\eusm L^p(\mu_D)">\(f\in\eusm L^p(\mu_D)\)</span> dan sebarang <span class="math inline" data-source-tex="p\ge 1">\(p\ge 1\)</span>, dengan <span class="math inline" data-source-tex="\mu_D">\(\mu_D\)</span>
+menyatakan ukuran subruang pada <span class="math inline" data-source-tex="D">\(D\)</span>.</p>
+</section>
+<section class="source-unit" id="261Xb" data-source-id="261Xb"><h3><span class="source-label">261Xb</span> (b) </h3>
+<p>Tunjukkan bahwa <a class="xref" href="#261C">261C</a>, 261Dc, 261Dd dan <a class="xref" href="#261E">261E</a> berlaku untuk
+fungsi bernilai kompleks <span class="math inline" data-source-tex="f">\(f\)</span>.</p>
+</section>
+<section class="source-unit" id="261Xc" data-source-id="261Xc"><h3><span class="source-label">261Xc</span> (c) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Ambil tiga cakram pada bidang, masing-masing bersinggungan
+dengan dua cakram lainnya, sehingga ketiganya mengurung suatu daerah terbuka
+<span class="math inline" data-source-tex="R">\(R\)</span> dengan tiga titik lancip. Dalam <span class="math inline" data-source-tex="R">\(R\)</span>, misalkan <span class="math inline" data-source-tex="D">\(D\)</span> suatu cakram yang
+menyinggung masing-masing dari ketiga cakram semula, dan misalkan
+<span class="math inline" data-source-tex="R_0">\(R_0\)</span>, <span class="math inline" data-source-tex="R_1">\(R_1\)</span>, <span class="math inline" data-source-tex="R_2">\(R_2\)</span> ketiga komponen <span class="math inline" data-source-tex="R\setminus D">\(R\setminus D\)</span>. Dalam setiap <span class="math inline" data-source-tex="R_j">\(R_j\)</span>,
+misalkan <span class="math inline" data-source-tex="D_j">\(D_j\)</span> suatu cakram yang menyinggung setiap cakram yang membatasi
+<span class="math inline" data-source-tex="R_j">\(R_j\)</span>, dan misalkan <span class="math inline" data-source-tex="R_{j0}">\(R_{j0}\)</span>, <span class="math inline" data-source-tex="R_{j1}">\(R_{j1}\)</span>, <span class="math inline" data-source-tex="R_{j2}">\(R_{j2}\)</span> ketiga komponen
+<span class="math inline" data-source-tex="R_j\setminus D_j">\(R_j\setminus D_j\)</span>. Lanjutkan proses ini sehingga diperoleh 27 daerah pada
+langkah berikutnya, 81 daerah pada langkah sesudahnya, dan seterusnya.</p>
+<p>Tunjukkan bahwa luas total daerah-daerah sisa konvergen ke nol ketika proses
+ini diteruskan tanpa batas. <span class="hint" role="note"><strong>Petunjuk:</strong> bandingkan dengan proses dalam pembuktian
+<a class="xref" href="#261B">261B</a>.</span></p>
+</section>
+<section class="source-unit" id="261Y" data-source-id="261Y"><span class="anchor" id="261Ya"></span><h2><span class="source-label">261Y</span> Latihan lanjutan (a) </h2>
+<p>Rumuskan suatu definisi abstrak untuk ‘peliput Vitali’, yang berarti suatu
+keluarga himpunan yang memenuhi kesimpulan <a class="xref" href="#261B">261B</a> dalam suatu pengertian, serta
+generalisasi <a class="xref" href="#261C">261C</a>-<a class="xref" href="#261E">261E</a> yang bersesuaian dan mencakup (setidaknya) (b)-(d) di
+bawah ini.</p>
+</section>
+<section class="source-unit" id="261Yb" data-source-id="261Yb"><h3><span class="source-label">261Yb</span> <strong>(b)</strong> </h3>
+<p>Untuk <span class="math inline" data-source-tex="x\in\BbbR^r">\(x\in\BbbR^r\)</span>, <span class="math inline" data-source-tex="k\in\Bbb N">\(k\in\Bbb N\)</span>, misalkan
+<span class="math inline" data-source-tex="C(x,k)">\(C(x,k)\)</span> adalah kubus setengah terbuka berbentuk
+<span class="math inline" data-source-tex="\coint{2^{-k}z,2^{-k}(z+\tbf{1})}">\(\coint{2^{-k}z,2^{-k}(z+\tbf{1})}\)</span>, dengan <span class="math inline" data-source-tex="z\in \Bbb Z^r">\(z\in \Bbb Z^r\)</span>, yang memuat
+<span class="math inline" data-source-tex="x">\(x\)</span>. Tunjukkan bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi yang terintegralkan pada
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{k\to\infty}2^{kr}\int_{C(x,k)}f=f(x)">\(\lim_{k\to\infty}2^{kr}\int_{C(x,k)}f=f(x)\)</span></div>
+<p>untuk hampir setiap <span class="math inline" data-source-tex="x\in\BbbR^r">\(x\in\BbbR^r\)</span>.</p>
+</section>
+<section class="source-unit" id="261Yc" data-source-id="261Yc"><h3><span class="source-label">261Yc</span> (c) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real yang terintegralkan
+pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>. Tunjukkan bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{\delta\downarrow 
+0}\Bover{1}{\delta^r}\int_{\coint{x,x+\delta\tbf{1}}}f=f(x)">\(\lim_{\delta\downarrow
+0}\Bover{1}{\delta^r}\int_{\coint{x,x+\delta\tbf{1}}}f=f(x)\)</span></div>
+<p>untuk hampir setiap <span class="math inline" data-source-tex="x\in\BbbR^r">\(x\in\BbbR^r\)</span>.</p>
+</section>
+<section class="source-unit" id="261Yd" data-source-id="261Yd"><h3><span class="source-label">261Yd</span> (d) </h3>
+<p>Bekali <span class="math inline" data-source-tex="X=\{0,1\}^{\Bbb N}">\(X=\{0,1\}^{\Bbb N}\)</span> dengan ukuran lazim <span class="math inline" data-source-tex="\nu">\(\nu\)</span>
+(<a class="xref" href="../254/index.html#254J">254J</a>). Untuk <span class="math inline" data-source-tex="x\in X">\(x\in X\)</span>, <span class="math inline" data-source-tex="k\in\Bbb N">\(k\in\Bbb N\)</span>, tetapkan
+<span class="math inline" data-source-tex="C(x,k)=\{y:y\in X,\,y(i)=x(i)">\(C(x,k)=\{y:y\in X,\,y(i)=x(i)\)</span> untuk <span class="math inline" data-source-tex="i&lt;k\}">\(i&lt;k\}\)</span>. Tunjukkan bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span>
+sebarang fungsi bernilai real yang terintegralkan pada <span class="math inline" data-source-tex="X">\(X\)</span>, maka
+<span class="math inline" data-source-tex="\lim_{k\to\infty}2^k\int_{C(x,k)}fd\nu=f(x)">\(\lim_{k\to\infty}2^k\int_{C(x,k)}fd\nu=f(x)\)</span> dan
+<span class="math inline" data-source-tex="\lim_{k\to\infty}2^k\int_{C(x,k)}|f(y)-f(x)|\nu(dy)=0">\(\lim_{k\to\infty}2^k\int_{C(x,k)}|f(y)-f(x)|\nu(dy)=0\)</span> untuk hampir setiap
+<span class="math inline" data-source-tex="x\in X">\(x\in X\)</span>.</p>
+</section>
+<section class="source-unit" id="261Ye" data-source-id="261Ye"><h3><span class="source-label">261Ye</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real yang terintegralkan
+pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dan <span class="math inline" data-source-tex="x">\(x\)</span> suatu titik dalam himpunan Lebesgue dari <span class="math inline" data-source-tex="f">\(f\)</span>.
+Tunjukkan bahwa untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian
+sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="|f(x)-\int f(x-y)g(\|y\|)dy|\le\epsilon">\(|f(x)-\int f(x-y)g(\|y\|)dy|\le\epsilon\)</span> </div>
+<p>setiap kali
+<span class="math inline" data-source-tex="g:\coint{0,\infty}\to\coint{0,\infty}">\(g:\coint{0,\infty}\to\coint{0,\infty}\)</span> suatu fungsi tak menaik sedemikian
+sehingga <span class="math inline" data-source-tex="\int_{\Bbb R^r}g(\|y\|)dy=1">\(\int_{\Bbb R^r}g(\|y\|)dy=1\)</span> dan
+<span class="math inline" data-source-tex="\int_{B(\tbf{0},\delta)}g(\|y\|)dy\ge 1-\delta">\(\int_{B(\tbf{0},\delta)}g(\|y\|)dy\ge 1-\delta\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> <a class="xref" href="../223/index.html#223Yg">223Yg</a>.</span></p>
+</section>
+<section class="source-unit" id="261Yf" data-source-id="261Yf"><h3><span class="source-label">261Yf</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> keluarga himpunan terukur
+<span class="math inline" data-source-tex="G\subseteq\BbbR^r">\(G\subseteq\BbbR^r\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{\delta\downarrow 0} 
+\Bover{\mu(G\cap B(x,\delta))}{\mu B(x,\delta)}=1">\(\lim_{\delta\downarrow 0}
+\Bover{\mu(G\cap B(x,\delta))}{\mu B(x,\delta)}=1\)</span> </div>
+<p>untuk setiap <span class="math inline" data-source-tex="x\in G">\(x\in G\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> merupakan suatu topologi pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, yaitu
+<strong>topologi kerapatan</strong> dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>. Tunjukkan bahwa suatu fungsi
+<span class="math inline" data-source-tex="f:\BbbR^r\to\Bbb R">\(f:\BbbR^r\to\Bbb R\)</span> terukur jika dan hanya jika fungsi itu kontinu dalam
+topologi <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> pada hampir setiap titik dalam <span class="math inline" data-source-tex="\Bbb R^r">\(\Bbb R^r\)</span>.</p>
+</section>
+<section class="source-unit" id="261Yg" data-source-id="261Yg"><h3><span class="source-label">261Yg</span> (g) </h3>
+<p>Suatu himpunan <span class="math inline" data-source-tex="A\subseteq\BbbR^r">\(A\subseteq\BbbR^r\)</span> dikatakan <strong>berpori</strong>
+di <span class="math inline" data-source-tex="x\in\BbbR^r">\(x\in\BbbR^r\)</span> jika
+<span class="math inline" data-source-tex="\limsup_{y\to x}\Bover{\rho(y,A)}{\|y-x\|}&gt;0">\(\limsup_{y\to x}\Bover{\rho(y,A)}{\|y-x\|}&gt;0\)</span>, dengan
+<span class="math inline" data-source-tex="\rho(y,A)=\inf_{z\in A}\|y-z\|">\(\rho(y,A)=\inf_{z\in A}\|y-z\|\)</span> (atau <span class="math inline" data-source-tex="\infty">\(\infty\)</span> jika <span class="math inline" data-source-tex="A">\(A\)</span> kosong).
+(i) Tunjukkan bahwa jika <span class="math inline" data-source-tex="A">\(A\)</span> berpori pada semua titiknya, maka himpunan itu
+terabaikan.
+(ii) Tunjukkan bahwa dalam konstruksi <a class="xref" href="#261B">261B</a>, himpunan sisa
+<span class="math inline" data-source-tex="A\setminus\bigcup\Cal I_0">\(A\setminus\bigcup\Cal I_0\)</span> berpori pada semua titiknya.</p>
+</section>
+<section class="source-unit" id="261Yh" data-source-id="261Yh"><h3><span class="source-label">261Yh</span> (h) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="A\subseteq\BbbR^r">\(A\subseteq\BbbR^r\)</span> suatu himpunan terbatas dan
+<span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> suatu keluarga tak kosong dari bola tertutup nontrivial yang meliput
+<span class="math inline" data-source-tex="A">\(A\)</span>. Tunjukkan bahwa untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat bola-bola yang saling
+lepas <span class="math inline" data-source-tex="B_0,\ldots,B_n\in\Cal I">\(B_0,\ldots,B_n\in\Cal I\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu^*A\le(3+\epsilon)^r\sum_{k=0}^n\mu B_k">\(\mu^*A\le(3+\epsilon)^r\sum_{k=0}^n\mu B_k\)</span>.</p>
+</section>
+<section class="source-unit" id="261Yi" data-source-id="261Yi"><h3><span class="source-label">261Yi</span> (i) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\rho)">\((X,\rho)\)</span> suatu ruang metrik,
+<span class="math inline" data-source-tex="A\subseteq X">\(A\subseteq X\)</span> sebarang himpunan, dan
+<span class="math inline" data-source-tex="x\mapsto\delta_x:A\to\coint{0,\infty}">\(x\mapsto\delta_x:A\to\coint{0,\infty}\)</span> sebarang fungsi terbatas.
+Tunjukkan bahwa jika <span class="math inline" data-source-tex="\gamma&gt;3">\(\gamma&gt;3\)</span>, maka terdapat <span class="math inline" data-source-tex="A&#x27;\subseteq A">\(A&#x27;\subseteq A\)</span> sedemikian
+sehingga (i) <span class="math inline" data-source-tex="\rho(x,y)&gt;\delta_x+\delta_y">\(\rho(x,y)&gt;\delta_x+\delta_y\)</span> untuk semua <span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="y\in A&#x27;">\(y\in A&#x27;\)</span> yang
+berbeda; (ii)
+<span class="math inline" data-source-tex="\bigcup_{x\in A}B(x,\delta_x) 
+\subseteq\bigcup_{x\in A&#x27;}B(x,\gamma\delta_x)">\(\bigcup_{x\in A}B(x,\delta_x)
+\subseteq\bigcup_{x\in A&#x27;}B(x,\gamma\delta_x)\)</span>, dengan <span class="math inline" data-source-tex="B(x,\alpha)">\(B(x,\alpha)\)</span>
+menyatakan bola tertutup <span class="math inline" data-source-tex="\{y:\rho(y,x)\le\alpha\}">\(\{y:\rho(y,x)\le\alpha\}\)</span>.</p>
+</section>
+<section class="source-unit" id="261Yj" data-source-id="261Yj"><h3><span class="source-label">261Yj</span> (j) </h3>
+<p>(i) Misalkan <span class="math inline" data-source-tex="\Cal C">\(\Cal C\)</span> keluarga himpunan terukur
+<span class="math inline" data-source-tex="C\subseteq\BbbR^r">\(C\subseteq\BbbR^r\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\limsup_{\delta\downarrow 0} 
+\Bover{\mu(C\cap B(x,\delta))}{\mu B(x,\delta)}&gt;0">\(\limsup_{\delta\downarrow 0}
+\Bover{\mu(C\cap B(x,\delta))}{\mu B(x,\delta)}&gt;0\)</span> </div>
+<p>untuk setiap <span class="math inline" data-source-tex="x\in C">\(x\in C\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="\bigcup\Cal C_0\in\Cal C">\(\bigcup\Cal C_0\in\Cal C\)</span> untuk setiap
+<span class="math inline" data-source-tex="\Cal C_0\subseteq\Cal C">\(\Cal C_0\subseteq\Cal C\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> <a class="xref" href="../215/index.html#215B">215B</a>(iv).</span>
+(ii) Tunjukkan bahwa setiap gabungan bola tertutup nontrivial dalam
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> terukur Lebesgue. (Bandingkan 415Ye dalam Jilid 4.)</p>
+</section>
+<section class="source-unit" id="261Yk" data-source-id="261Yk"><h3><span class="source-label">261Yk</span> (k) </h3>
+<p>Andaikan bahwa <span class="math inline" data-source-tex="A\subseteq\BbbR^r">\(A\subseteq\BbbR^r\)</span> dan bahwa <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span>
+merupakan suatu keluarga subhimpunan tertutup dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> sedemikian
+sehingga</p>
+<div class="inset-block"><p>untuk setiap <span class="math inline" data-source-tex="x\in A">\(x\in A\)</span> terdapat <span class="math inline" data-source-tex="\eta&gt;0">\(\eta&gt;0\)</span> sedemikian sehingga
+untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat <span class="math inline" data-source-tex="I\in\Cal I">\(I\in\Cal I\)</span> sedemikian sehingga <span class="math inline" data-source-tex="x\in I">\(x\in I\)</span>
+dan <span class="math inline" data-source-tex="0&lt;\eta(\diam I)^r\le\mu I\le\epsilon">\(0&lt;\eta(\diam I)^r\le\mu I\le\epsilon\)</span>.</p></div>
+<p>Tunjukkan bahwa terdapat suatu himpunan terhitung yang saling lepas
+<span class="math inline" data-source-tex="\Cal I_0\subseteq\Cal I">\(\Cal I_0\subseteq\Cal I\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="A\setminus\bigcup\Cal I_0">\(A\setminus\bigcup\Cal I_0\)</span> terabaikan.</p>
+</section>
+<section class="source-unit" id="261Yl" data-source-id="261Yl"><h3><span class="source-label">261Yl</span> (l) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\frak T&#x27;">\(\frak T&#x27;\)</span> keluarga himpunan terukur
+<span class="math inline" data-source-tex="G\subseteq\BbbR^r">\(G\subseteq\BbbR^r\)</span> sedemikian sehingga setiap kali <span class="math inline" data-source-tex="x\in G">\(x\in G\)</span> dan
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, terdapat <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu(G\cap I)\ge(1-\epsilon)\mu I">\(\mu(G\cap I)\ge(1-\epsilon)\mu I\)</span> setiap kali <span class="math inline" data-source-tex="I">\(I\)</span> suatu interval yang memuat
+<span class="math inline" data-source-tex="x">\(x\)</span> dan termuat dalam <span class="math inline" data-source-tex="B(x,\delta)">\(B(x,\delta)\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\frak T&#x27;">\(\frak T&#x27;\)</span> merupakan suatu topologi pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> yang berada di antara
+topologi kerapatan (<a class="xref" href="#261Yf">261Yf</a>) dan topologi Euklides.</p>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<section class="source-unit" id="261-notes" data-source-id="261"><span class="anchor" id="261"></span><h2><span class="source-label">261</span> Catatan penutup untuk Bagian 261 </h2>
+<p>Dalam pembuktian <a class="xref" href="#261B">261B</a>-<a class="xref" href="#261E">261E</a> di atas, saya telah berusaha sebaik mungkin untuk
+mengikuti alur kasus satu dimensi; bagian ini merupakan serangkaian
+generalisasi dari pekerjaan dalam §§<a class="xref" href="../221/index.html#221">221</a> dan <a class="xref" href="../223/index.html#223">223</a>.</p>
+<p>Jelas bahwa gagasan <a class="xref" href="#261A">261A</a>/<a class="xref" href="#261B">261B</a> dapat digunakan pada bentuk selain bola. Agar
+gagasan itu bekerja dalam bentuk di atas, kita memerlukan suatu keluarga
+<span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> sedemikian sehingga terdapat konstanta <span class="math inline" data-source-tex="K">\(K\)</span> yang memenuhi</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu I&#x27;\le K\mu I">\(\mu I&#x27;\le K\mu I\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="I\in \Cal I">\(I\in \Cal I\)</span>, dengan kita menuliskan</p>
+<div class="centerline"><span class="math inline" data-source-tex="I&#x27;=\{x:\inf_{y\in I}\|x-y\|\le\diam(I)\}">\(I&#x27;=\{x:\inf_{y\in I}\|x-y\|\le\diam(I)\}\)</span>.</div>
+<p>Jelas bahwa hal ini berlaku bagi banyak kelas <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> yang
+ditentukan oleh bentuk himpunan-himpunan yang terlibat; misalnya, jika
+<span class="math inline" data-source-tex="E\subseteq\BbbR^r">\(E\subseteq\BbbR^r\)</span> sebarang himpunan terbatas dengan ukuran positif,
+keluarga <span class="math inline" data-source-tex="\Cal I=\{x+\delta E:x\in\BbbR^r,\,\delta&gt;0\}">\(\Cal I=\{x+\delta E:x\in\BbbR^r,\,\delta&gt;0\}\)</span> memenuhi syarat itu.</p>
+<p>Dalam <a class="xref" href="#261Ya">261Ya</a> saya menantang Anda untuk menemukan generalisasi yang sesuai bagi
+argumen-argumen yang bergantung pada kesimpulan <a class="xref" href="#261B">261B</a>.</p>
+<p>Cara lain menggunakan <a class="xref" href="#261B">261B</a> adalah mengatakan bahwa karena himpunan secara
+esensial dapat diliput oleh barisan bola yang <em>saling lepas</em>, seharusnya
+bola, bukan interval setengah terbuka, dapat digunakan dalam definisi ukuran
+Lebesgue pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>. Hal ini memang benar (<a class="xref" href="#261F">261F</a>). Kesulitan menggunakan
+bola dalam definisi dasar muncul tepat pada permulaan, ketika membuktikan
+bahwa jika suatu bola diliput oleh berhingga banyak bola, maka jumlah volume
+bola-bola peliput itu setidaknya sebesar volume bola yang diliput. (Ada suatu
+siasat, dengan menggunakan kekompakan bola tertutup dan keterbukaan bola
+terbuka, untuk memperluas pembuktian demikian ke peliput tak hingga.) Tentu
+saja Anda dapat menganggap fakta ini ‘elementer’, atas dasar bahwa Archimedes
+tentu akan menyadari seandainya fakta itu tidak benar, tetapi bagaimanapun
+fakta itu akan cukup menantang untuk dibuktikan, kecuali Anda bersedia
+menunggu suatu versi teorema Fubini, sebagaimana dilakukan beberapa penulis.</p>
+<p>Saya memberikan hasil-hasil dalam <a class="xref" href="#261C">261C</a>-<a class="xref" href="#261D">261D</a> untuk subhimpunan sebarang <span class="math inline" data-source-tex="D">\(D\)</span>
+dari <span class="math inline" data-source-tex="\Bbb R^r">\(\Bbb R^r\)</span>, bukan karena saya membayangkan penerapan yang menjadikan
+subhimpunan tak terukur penting, melainkan karena saya ingin memungkinkan
+kita memperhatikan kapan keterukuran berperan. Tentu saja integral
+<span class="math inline" data-source-tex="\int_Dfd\mu">\(\int_Dfd\mu\)</span> perlu ditafsirkan dengan cara yang ditetapkan dalam §<a class="xref" href="../214/index.html#214">214</a>.
+Rahasia argumennya terungkap dalam bagian (c) pembuktian <a class="xref" href="#261C">261C</a>, tempat saya
+mengandalkan fakta bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span> terintegralkan pada <span class="math inline" data-source-tex="D">\(D\)</span>, maka terdapat
+suatu fungsi terintegralkan <span class="math inline" data-source-tex="\tilde f:\BbbR^r\to\Bbb R">\(\tilde f:\BbbR^r\to\Bbb R\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\int_F\tilde f=\int_{D\cap F}f">\(\int_F\tilde f=\int_{D\cap F}f\)</span> untuk setiap himpunan terukur
+<span class="math inline" data-source-tex="F\subseteq\BbbR^r">\(F\subseteq\BbbR^r\)</span>. Pada hakikatnya, untuk semua persoalan yang dibahas di
+sini, kita dapat mengganti <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="D">\(D\)</span> dengan <span class="math inline" data-source-tex="\tilde f">\(\tilde f\)</span>, <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>.</p>
+<p>Gagasan <a class="xref" href="#261C">261C</a> ialah bahwa, untuk hampir setiap <span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="f(x)">\(f(x)\)</span> didekati oleh nilai
+rata-ratanya pada bola kecil <span class="math inline" data-source-tex="B(x,\delta)">\(B(x,\delta)\)</span>, dengan mengabaikan nilai-nilai
+yang hilang pada <span class="math inline" data-source-tex="B(x,\delta)\setminus(D\cap\dom f)">\(B(x,\delta)\setminus(D\cap\dom f)\)</span>; <a class="xref" href="#261E">261E</a> merupakan versi
+lebih tajam dari gagasan yang sama. Rumus-rumus <a class="xref" href="#261C">261C</a>-<a class="xref" href="#261E">261E</a> terutama memuat
+ungkapan <span class="math inline" data-source-tex="\mu B(x,\delta)">\(\mu B(x,\delta)\)</span>. Tentu saja ini hanyalah <span class="math inline" data-source-tex="\beta_r\delta^r">\(\beta_r\delta^r\)</span>. Namun,
+menurut saya membiarkannya tanpa dikembangkan justru lebih memperjelas,
+sekaligus menghindari indeks bawah dan atas, karena dengan demikian lebih
+jelas apa pokok sesungguhnya dari teorema-teorema kerapatan ini. Dalam §472
+dari Jilid 4 saya akan kembali ke materi ini dan menunjukkan bahwa sebagian
+besar gagasannya, dalam kadar yang mengejutkan, dapat diterapkan pada
+sebarang ukuran Radon pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, walaupun teorema Vitali (dalam bentuk
+yang dinyatakan di sini) tidak lagi berlaku.</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 2: Broad Foundations</cite>, Bagian 261.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 29 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-cumulative-html-route-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V2-S261&quot;,
+  &quot;source_member&quot;: &quot;mt2.2016/mt261.tex&quot;,
+  &quot;target_bytes&quot;: 34797,
+  &quot;target_sha256&quot;: &quot;6d777072f7534752ad69979463c1b8d78f6ecfd387021d1a89aeb1cb35e5606a&quot;,
+  &quot;source_ids&quot;: [
+    &quot;261&quot;,
+    &quot;261A&quot;,
+    &quot;261B&quot;,
+    &quot;261C&quot;,
+    &quot;261D&quot;,
+    &quot;261E&quot;,
+    &quot;261F&quot;,
+    &quot;261X&quot;,
+    &quot;261Xa&quot;,
+    &quot;261Xb&quot;,
+    &quot;261Xc&quot;,
+    &quot;261Y&quot;,
+    &quot;261Ya&quot;,
+    &quot;261Yb&quot;,
+    &quot;261Yc&quot;,
+    &quot;261Yd&quot;,
+    &quot;261Ye&quot;,
+    &quot;261Yf&quot;,
+    &quot;261Yg&quot;,
+    &quot;261Yh&quot;,
+    &quot;261Yi&quot;,
+    &quot;261Yj&quot;,
+    &quot;261Yk&quot;,
+    &quot;261Yl&quot;
+  ],
+  &quot;corpus_id&quot;: &quot;O007-FREMLIN&quot;,
+  &quot;volume_id&quot;: &quot;O007-FREMLIN-V2&quot;,
+  &quot;volume_source_title&quot;: &quot;Broad Foundations&quot;,
+  &quot;route&quot;: &quot;261&quot;,
+  &quot;official_source_page_start&quot;: 288,
+  &quot;chapter_official_source_pages&quot;: [
+    288,
+    342
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

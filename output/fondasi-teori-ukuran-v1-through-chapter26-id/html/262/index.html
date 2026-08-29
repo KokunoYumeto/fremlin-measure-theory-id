@@ -1,0 +1,1343 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Fungsi Lipschitz dan diferensiabilitas — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        BbbQ: '\\mathbb{Q}', BbbR: '\\mathbb{R}',
+        eightBbb: ['\\mathbb{#1}', 1],
+        DiniD: '\\overline{D}', Dinid: '\\underline{D}',
+        Var: '\\operatorname{Var}',
+        bumpeq: '=_{\\mathrm{approx}}',
+        intstar: '\\operatorname{int}^{*}',
+        family: ['\\langle #3\\rangle_{#1\\in #2}', 3],
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        displaycause: ['\\text{(#1)}', 1],
+        bigcupop: '\\bigcup', biggerint: '\\int',
+        eae: '=_{\\mathrm{a.e.}}', leae: '\\le_{\\mathrm{a.e.}}', geae: '\\ge_{\\mathrm{a.e.}}',
+        restr: '\\mathord{\\upharpoonright}', restrp: '\\mathord{\\upharpoonright}',
+        Real: '\\operatorname{Re}', Imag: '\\operatorname{Im}',
+        tbf: ['\\mathbf{#1}', 1], eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Qed: '\\square',
+        BbbN: '\\mathbb{N}', Expn: '\\mathbb{E}',
+        Cal: ['\\mathcal{#1}', 1], dom: '\\operatorname{dom}',
+        coint: ['\\left[#1\\right[', 1],
+        sequencen: ['\\langle #1_n\\rangle_{n\\in\\mathbb{N}}', 1],
+        imp: '\\mathop{\\text{pelestari ukuran melalui prapeta}}',
+        tildeTau: '\\widetilde{\\mathrm{T}}',
+        LLcorner: '\\mathbin{\\llcorner}',
+        prooflet: ['#1', 1],
+        halfarrow: '\\rightharpoonup',
+        esssup: '\\mathop{\\text{ess sup}}',
+        ocint: ['\\left]#1\\right]', 1],
+        fraction: ['\\mathord{<}#1\\mathord{>}', 1],
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        fraction: ['\\mathord{<}#1\\mathord{>}', 1],
+        tbf: ['\\mathbf{#1}', 1],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        BbbN: '\\mathbb{{N}}', BbbQ: '\\mathbb{{Q}}',
+        BbbZ: '\\mathbb{{Z}}',
+        bover: ['\\frac{{#1}}{{#2}}', 2],
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        esssup: '\\mathop{{\\text{{ess sup}}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        family: ['\\langle #3\\rangle_{{#1\\in #2}}', 3],
+        familyi: ['\\langle #2\\rangle_{{i\\in #1}}', 2],
+        familyiI: ['\\langle #1\\rangle_{{i\\in I}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        ocint: ['\\left]#1\\right]', 1],
+        restr: '\\mathord{{\\upharpoonright}}',
+        restrp: '\\mathord{{\\upharpoonright}}',
+        roibr: '\\mathopen{{[}}',
+        sequence: ['\\langle #2\\rangle_{{#1\\in\\mathbb{{N}}}}', 2],
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1],
+        ssbullet: '{{\\scriptscriptstyle\\bullet}}',
+        tensorhat: '\\widehat{{\\otimes}}',
+        Tensorhat: '\\widehat{{\\bigotimes}}'
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 2 · Bagian 262</p>
+  <h1>Fungsi Lipschitz dan diferensiabilitas</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi kumulatif</a></nav>
+<main id="isi">
+<p>© 1995</p>
+<p>Sebagai persiapan untuk pekerjaan utama bab ini dalam §<a class="xref" href="../263/index.html#263">263</a>, saya
+menyediakan satu bagian bagi dua kelas penting fungsi antar-ruang Euklides.
+Yang sebenarnya kita perlukan ialah bahan yang pada hakikatnya elementer
+sampai <a class="xref" href="#262I">262I</a>, bersama lemma teknis <a class="xref" href="#262M">262M</a> dan akibat-akibatnya.   Teorema
+<a class="xref" href="#262Q">262Q</a> tidak digunakan dalam jilid ini, walaupun saya yakin teorema itu
+membuat pola-pola yang akan berkembang menjadi lebih alami dan mudah dipahami.</p>
+<p>Seperti dalam §<a class="xref" href="../261/index.html#261">261</a>, <span class="math inline" data-source-tex="r">\(r\)</span> (dan di sini juga <span class="math inline" data-source-tex="s">\(s\)</span>) akan selalu merupakan
+bilangan bulat positif, dan ‘terukur’, ‘terabaikan’, ‘terintegralkan’ akan
+mengacu pada ukuran Lebesgue kecuali dinyatakan lain.</p>
+<section class="source-unit" id="262A" data-source-id="262A"><h2><span class="source-label">262A</span> Fungsi Lipschitz </h2>
+<p>Misalkan
+<span class="math inline" data-source-tex="\phi:D\to\BbbR^s">\(\phi:D\to\BbbR^s\)</span> suatu fungsi, dengan <span class="math inline" data-source-tex="D\subseteq\BbbR^r">\(D\subseteq\BbbR^r\)</span>.
+Kita katakan bahwa <span class="math inline" data-source-tex="\phi">\(\phi\)</span> <strong><span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>-Lipschitz</strong>, dengan
+<span class="math inline" data-source-tex="\gamma\in\coint{0,\infty}">\(\gamma\in\coint{0,\infty}\)</span>, jika</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|\phi(x)-\phi(y)\|\le \gamma \|x-y\|">\(\|\phi(x)-\phi(y)\|\le \gamma \|x-y\|\)</span></div>
+<p>untuk semua <span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="y\in D">\(y\in D\)</span>, dengan menuliskan
+<span class="math inline" data-source-tex="\|x\|=\sqrt{\xi_1^2+\ldots+\xi_r^2}">\(\|x\|=\sqrt{\xi_1^2+\ldots+\xi_r^2}\)</span> jika
+<span class="math inline" data-source-tex="x=(\xi_1,\ldots,\xi_r)\in\BbbR^r">\(x=(\xi_1,\ldots,\xi_r)\in\BbbR^r\)</span>,
+<span class="math inline" data-source-tex="\|z\|=\sqrt{\zeta_1^2+\ldots+\zeta_s^2}">\(\|z\|=\sqrt{\zeta_1^2+\ldots+\zeta_s^2}\)</span> jika
+<span class="math inline" data-source-tex="z=(\zeta_1,\ldots,\zeta_s)\in\BbbR^s">\(z=(\zeta_1,\ldots,\zeta_s)\in\BbbR^s\)</span>.   Dalam hal ini, <span class="math inline" data-source-tex="\gamma">\(\gamma\)</span> adalah
+<strong>konstanta Lipschitz bagi <span class="math inline" data-source-tex="\phi">\(\phi\)</span></strong>.</p>
+<p>Sebuah <strong>fungsi Lipschitz</strong> adalah fungsi <span class="math inline" data-source-tex="\phi">\(\phi\)</span> yang
+<span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>-Lipschitz untuk suatu <span class="math inline" data-source-tex="\gamma\ge 0">\(\gamma\ge 0\)</span>.
+Perhatikan bahwa dalam hal ini <span class="math inline" data-source-tex="\phi">\(\phi\)</span> mempunyai konstanta
+Lipschitz terkecil (sebab jika <span class="math inline" data-source-tex="A">\(A\)</span> adalah himpunan konstanta Lipschitz bagi
+<span class="math inline" data-source-tex="\phi">\(\phi\)</span>, dan <span class="math inline" data-source-tex="\gamma_0=\inf A">\(\gamma_0=\inf A\)</span>, maka <span class="math inline" data-source-tex="\gamma_0">\(\gamma_0\)</span> merupakan konstanta Lipschitz
+bagi <span class="math inline" data-source-tex="\phi">\(\phi\)</span>).
+Jelas bahwa fungsi Lipschitz kontinu (secara seragam).</p>
+</section>
+<section class="source-unit" id="262B" data-source-id="262B"><h2><span class="source-label">262B</span>  </h2>
+<p>Kita memerlukan fakta-fakta mudah berikut.</p>
+<p> </p>
+<p><strong>Lemma</strong> Misalkan <span class="math inline" data-source-tex="D\subseteq\BbbR^r">\(D\subseteq\BbbR^r\)</span> suatu himpunan dan
+<span class="math inline" data-source-tex="\phi:D\to\BbbR^s">\(\phi:D\to\BbbR^s\)</span> suatu fungsi.</p>
+<p>(a)  <span class="math inline" data-source-tex="\phi">\(\phi\)</span> Lipschitz jika dan hanya jika <span class="math inline" data-source-tex="\phi_i:D\to\Bbb R">\(\phi_i:D\to\Bbb R\)</span>
+Lipschitz untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>, dengan menuliskan
+<span class="math inline" data-source-tex="\phi(x)=(\phi_1(x),\ldots,\phi_s(x))">\(\phi(x)=(\phi_1(x),\ldots,\phi_s(x))\)</span> untuk setiap <span class="math inline" data-source-tex="x\in
+D=\dom\phi\subseteq\BbbR^r">\(x\in
+D=\dom\phi\subseteq\BbbR^r\)</span>.</p>
+<p>(b) Dalam hal ini, terdapat fungsi Lipschitz
+<span class="math inline" data-source-tex="\tilde\phi:\BbbR^r\to\BbbR^s">\(\tilde\phi:\BbbR^r\to\BbbR^s\)</span> yang memperluas <span class="math inline" data-source-tex="\phi">\(\phi\)</span>.</p>
+<p>(c) Jika <span class="math inline" data-source-tex="r=s=1">\(r=s=1\)</span> dan <span class="math inline" data-source-tex="D=[a,b]">\(D=[a,b]\)</span> suatu interval,
+maka <span class="math inline" data-source-tex="\phi">\(\phi\)</span> Lipschitz jika dan hanya jika kontinu mutlak dan mempunyai
+turunan terbatas.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Untuk sebarang <span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="y\in D">\(y\in D\)</span> dan <span class="math inline" data-source-tex="i\le s">\(i\le s\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\phi_i(x)-\phi_i(y)|\le\|\phi(x)-\phi(y)\|
+\le\sqrt{s}\sup_{j\le s}|\phi_j(x)-\phi_j(y)|">\(|\phi_i(x)-\phi_i(y)|\le\|\phi(x)-\phi(y)\|
+\le\sqrt{s}\sup_{j\le s}|\phi_j(x)-\phi_j(y)|\)</span>,</div>
+<p>sehingga setiap konstanta Lipschitz bagi <span class="math inline" data-source-tex="\phi">\(\phi\)</span> merupakan
+konstanta Lipschitz bagi setiap <span class="math inline" data-source-tex="\phi_i">\(\phi_i\)</span>, dan jika <span class="math inline" data-source-tex="\gamma_j">\(\gamma_j\)</span> adalah
+konstanta Lipschitz bagi <span class="math inline" data-source-tex="\phi_j">\(\phi_j\)</span> untuk setiap <span class="math inline" data-source-tex="j">\(j\)</span>, maka
+<span class="math inline" data-source-tex="\sqrt{s}\sup_{j\le s}\gamma_j">\(\sqrt{s}\sup_{j\le s}\gamma_j\)</span> merupakan konstanta Lipschitz bagi <span class="math inline" data-source-tex="\phi">\(\phi\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Berdasarkan (a), cukup dipertimbangkan kasus <span class="math inline" data-source-tex="s=1">\(s=1\)</span>, sebab jika
+setiap <span class="math inline" data-source-tex="\phi_i">\(\phi_i\)</span> mempunyai perluasan Lipschitz <span class="math inline" data-source-tex="\tilde\phi_i">\(\tilde\phi_i\)</span>, kita dapat
+menetapkan <span class="math inline" data-source-tex="\tilde\phi(x)=(\tilde\phi_1(x),\ldots,\tilde\phi_s(x))">\(\tilde\phi(x)=(\tilde\phi_1(x),\ldots,\tilde\phi_s(x))\)</span> untuk
+setiap <span class="math inline" data-source-tex="x">\(x\)</span> guna memperoleh perluasan Lipschitz dari <span class="math inline" data-source-tex="\phi">\(\phi\)</span>.
+Jadi ambil <span class="math inline" data-source-tex="s=1">\(s=1\)</span>; perhatikan bahwa kasus <span class="math inline" data-source-tex="D=\emptyset">\(D=\emptyset\)</span> sepele;  maka
+andaikan <span class="math inline" data-source-tex="D\ne\emptyset">\(D\ne\emptyset\)</span>.   Misalkan <span class="math inline" data-source-tex="\gamma">\(\gamma\)</span> suatu konstanta Lipschitz
+bagi <span class="math inline" data-source-tex="\phi">\(\phi\)</span>, dan tuliskan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\tilde\phi(z)=\sup_{y\in D}\phi(y)-\gamma\|y-z\|">\(\tilde\phi(z)=\sup_{y\in D}\phi(y)-\gamma\|y-z\|\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="z\in\BbbR^r">\(z\in\BbbR^r\)</span>.   Jika <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span>, maka untuk sebarang
+<span class="math inline" data-source-tex="z\in\BbbR^r">\(z\in\BbbR^r\)</span> dan <span class="math inline" data-source-tex="y\in D">\(y\in D\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\phi(y)-\gamma\|y-z\|
+\le\phi(x)+\gamma\|y-x\|-\gamma\|y-z\|
+\le\phi(x)+\gamma\|z-x\|">\(\phi(y)-\gamma\|y-z\|
+\le\phi(x)+\gamma\|y-x\|-\gamma\|y-z\|
+\le\phi(x)+\gamma\|z-x\|\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="\tilde\phi(z)\le\phi(x)+\gamma\|z-x\|">\(\tilde\phi(z)\le\phi(x)+\gamma\|z-x\|\)</span>;  khususnya,
+ini menunjukkan bahwa <span class="math inline" data-source-tex="\tilde\phi(z)&lt;\infty">\(\tilde\phi(z)&lt;\infty\)</span>.   Selain itu, jika <span class="math inline" data-source-tex="z\in D">\(z\in D\)</span>,
+harus berlaku</p>
+<div class="centerline"><span class="math inline" data-source-tex="\phi(z)-\gamma\|z-z\|\le\tilde\phi(z)
+\le\phi(z)+\gamma\|z-z\|">\(\phi(z)-\gamma\|z-z\|\le\tilde\phi(z)
+\le\phi(z)+\gamma\|z-z\|\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="\tilde\phi">\(\tilde\phi\)</span> memperluas <span class="math inline" data-source-tex="\phi">\(\phi\)</span>.   Akhirnya, jika <span class="math inline" data-source-tex="w">\(w\)</span>,
+<span class="math inline" data-source-tex="z\in\BbbR^r">\(z\in\BbbR^r\)</span> dan <span class="math inline" data-source-tex="y\in D">\(y\in D\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\phi(y)-\gamma\|y-w\|
+\le\phi(y)-\gamma\|y-z\|+\gamma\|w-z\|
+\le\tilde\phi(z)+\gamma\|w-z\|">\(\phi(y)-\gamma\|y-w\|
+\le\phi(y)-\gamma\|y-z\|+\gamma\|w-z\|
+\le\tilde\phi(z)+\gamma\|w-z\|\)</span>;</div>
+<p>dan dengan mengambil supremum atas <span class="math inline" data-source-tex="y\in D">\(y\in D\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\tilde\phi(w)\le\tilde\phi(z)+\gamma\|w-z\|">\(\tilde\phi(w)\le\tilde\phi(z)+\gamma\|w-z\|\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="w">\(w\)</span> dan <span class="math inline" data-source-tex="z">\(z\)</span> sebarang, <span class="math inline" data-source-tex="\tilde\phi">\(\tilde\phi\)</span> Lipschitz.</p>
+<p> </p>
+<p><strong>(c)(i)</strong> Andaikan <span class="math inline" data-source-tex="\phi">\(\phi\)</span> <span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>-Lipschitz.  Jika <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> dan
+<span class="math inline" data-source-tex="a\le a_1\le b_1\le\ldots\le a_n\le b_n\le b">\(a\le a_1\le b_1\le\ldots\le a_n\le b_n\le b\)</span> serta
+<span class="math inline" data-source-tex="\sum_{i=1}^n(b_i-a_i)\le\epsilon/(1+\gamma)">\(\sum_{i=1}^n(b_i-a_i)\le\epsilon/(1+\gamma)\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{i=1}^n|\phi(b_i)-\phi(a_i)|
+\le\sum_{i=1}^n\gamma|b_i-a_i|
+\le\epsilon">\(\sum_{i=1}^n|\phi(b_i)-\phi(a_i)|
+\le\sum_{i=1}^n\gamma|b_i-a_i|
+\le\epsilon\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang, <span class="math inline" data-source-tex="\phi">\(\phi\)</span> kontinu mutlak.
+Jika <span class="math inline" data-source-tex="x\in[a,b]">\(x\in[a,b]\)</span> dan <span class="math inline" data-source-tex="\phi&#x27;(x)">\(\phi&#x27;(x)\)</span> terdefinisi, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\phi&#x27;(x)|
+=\lim_{y\to x}\Bover{|\phi(y)-\phi(x)|}{|y-x|}\le\gamma">\(|\phi&#x27;(x)|
+=\lim_{y\to x}\Bover{|\phi(y)-\phi(x)|}{|y-x|}\le\gamma\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="\phi&#x27;">\(\phi&#x27;\)</span> terbatas.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Sekarang andaikan <span class="math inline" data-source-tex="\phi">\(\phi\)</span> kontinu mutlak dan
+<span class="math inline" data-source-tex="|\phi&#x27;(x)|\le\gamma">\(|\phi&#x27;(x)|\le\gamma\)</span> untuk setiap <span class="math inline" data-source-tex="x\in\dom\phi&#x27;">\(x\in\dom\phi&#x27;\)</span>, dengan
+<span class="math inline" data-source-tex="\gamma\ge 0">\(\gamma\ge 0\)</span>.   Maka setiap kali <span class="math inline" data-source-tex="a\le x\le y\le b">\(a\le x\le y\le b\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\phi(y)-\phi(x)|=|\int_x^y\phi&#x27;|\le\int_x^y|\phi&#x27;|
+\le\gamma(y-x)">\(|\phi(y)-\phi(x)|=|\int_x^y\phi&#x27;|\le\int_x^y|\phi&#x27;|
+\le\gamma(y-x)\)</span></div>
+<p>(menggunakan <a class="xref" href="../225/index.html#225E">225E</a> untuk kesamaan pertama).   Karena <span class="math inline" data-source-tex="x">\(x\)</span> dan <span class="math inline" data-source-tex="y">\(y\)</span>
+sebarang, <span class="math inline" data-source-tex="\phi">\(\phi\)</span> <span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>-Lipschitz.</p></aside>
+</section>
+<section class="source-unit" id="262C" data-source-id="262C"><h2><span class="source-label">262C</span> Catatan </h2>
+<p>Argumen untuk (b) di atas menunjukkan bahwa jika
+<span class="math inline" data-source-tex="\phi:D\to\Bbb R">\(\phi:D\to\Bbb R\)</span> suatu fungsi Lipschitz, dengan
+<span class="math inline" data-source-tex="D\subseteq\Bbb R^r">\(D\subseteq\Bbb R^r\)</span>, maka <span class="math inline" data-source-tex="\phi">\(\phi\)</span> mempunyai perluasan ke <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> dengan
+konstanta Lipschitz yang sama.   Bahkan, jika <span class="math inline" data-source-tex="\phi:D\to\BbbR^s">\(\phi:D\to\BbbR^s\)</span> suatu
+fungsi Lipschitz, maka <span class="math inline" data-source-tex="\phi">\(\phi\)</span> mempunyai perluasan
+<span class="math inline" data-source-tex="\tilde\phi:\BbbR^r\to\BbbR^s">\(\tilde\phi:\BbbR^r\to\BbbR^s\)</span> dengan konstanta Lipschitz yang sama;
+ini adalah ‘teorema Kirszbraun’ (Kirszbraun 34, atau
+Federer 69, <a class="xref" href="../2/index.html#2">2</a>.10.43).</p>
+</section>
+<section class="source-unit" id="262D" data-source-id="262D"><h2><span class="source-label">262D</span> Proposisi </h2>
+<p>Jika <span class="math inline" data-source-tex="\phi:D\to\BbbR^r">\(\phi:D\to\BbbR^r\)</span> suatu fungsi
+<span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>-Lipschitz, dengan <span class="math inline" data-source-tex="D\subseteq\BbbR^r">\(D\subseteq\BbbR^r\)</span>, maka
+<span class="math inline" data-source-tex="\mu^*\phi[A]\le\gamma^r\mu^*A">\(\mu^*\phi[A]\le\gamma^r\mu^*A\)</span> untuk setiap <span class="math inline" data-source-tex="A\subseteq D">\(A\subseteq D\)</span>, dengan <span class="math inline" data-source-tex="\mu">\(\mu\)</span>
+ukuran Lebesgue pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>.   Khususnya,
+<span class="math inline" data-source-tex="\phi[D\cap A]">\(\phi[D\cap A]\)</span> terabaikan untuk setiap himpunan terabaikan
+<span class="math inline" data-source-tex="A\subseteq\BbbR^r">\(A\subseteq\BbbR^r\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Misalkan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>.   Berdasarkan <a class="xref" href="../261/index.html#261F">261F</a>, terdapat barisan bola
+tertutup <span class="math inline" data-source-tex="\sequencen{B_n}=\sequencen{B(x_n,\delta_n)}">\(\sequencen{B_n}=\sequencen{B(x_n,\delta_n)}\)</span> di
+<span class="math inline" data-source-tex="\Bbb R^r">\(\Bbb R^r\)</span> yang menutupi <span class="math inline" data-source-tex="A">\(A\)</span>, sedemikian sehingga
+<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\mu B_n\le\mu^* A+\epsilon">\(\sum_{n=0}^{\infty}\mu B_n\le\mu^* A+\epsilon\)</span> dan
+<span class="math inline" data-source-tex="\sum_{n\in\Bbb N\setminus K}\mu B_n\le\epsilon">\(\sum_{n\in\Bbb N\setminus K}\mu B_n\le\epsilon\)</span>, dengan
+<span class="math inline" data-source-tex="K=\{n:n\in\Bbb N,\,x_n\in A\}">\(K=\{n:n\in\Bbb N,\,x_n\in A\}\)</span>.   Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="L=\{n:n\in\Bbb N\setminus K,\,B_n\cap D\ne\emptyset\}">\(L=\{n:n\in\Bbb N\setminus K,\,B_n\cap D\ne\emptyset\}\)</span>,</div>
+<p>dan untuk <span class="math inline" data-source-tex="n\in L">\(n\in L\)</span> pilih <span class="math inline" data-source-tex="y_n\in D\cap B_n">\(y_n\in D\cap B_n\)</span>.   Sekarang tetapkan</p>
+<p><span class="math display" data-source-tex="\eqalign{B&#x27;_n
+&amp;=B(\phi(x_n),\gamma\delta_n)\text{ jika }n\in K,\cr
+&amp;=B(\phi(y_n),2\gamma\delta_n)\text{ jika }n\in L,\cr
+&amp;=\emptyset\text{ jika }n\in\Bbb N\setminus(K\cup L).\cr}">\[\begin{aligned}B&#x27;_n
+&amp;=B(\phi(x_n),\gamma\delta_n)\text{ jika }n\in K,\\
+&amp;=B(\phi(y_n),2\gamma\delta_n)\text{ jika }n\in L,\\
+&amp;=\emptyset\text{ jika }n\in\Bbb N\setminus(K\cup L).\\\end{aligned}\]</span></p>
+<p>Maka <span class="math inline" data-source-tex="\phi[B_n\cap D]\subseteq B&#x27;_n">\(\phi[B_n\cap D]\subseteq B&#x27;_n\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, sehingga
+<span class="math inline" data-source-tex="\phi[D\cap A]\subseteq\bigcup_{n\in\Bbb N}B&#x27;_n">\(\phi[D\cap A]\subseteq\bigcup_{n\in\Bbb N}B&#x27;_n\)</span>, dan</p>
+<p><span class="math display" data-source-tex="\eqalign{\mu^*\phi[A\cap D]
+&amp;\le\sum_{n=0}^{\infty}\mu B&#x27;_n
+=\gamma^r\sum_{n\in K}\mu B_n+2^r\gamma^r\sum_{n\in L}\mu B_n\cr
+&amp;\le\gamma^r(\mu^*A+\epsilon)+2^r\gamma^r\epsilon.\cr}">\[\begin{aligned}\mu^*\phi[A\cap D]
+&amp;\le\sum_{n=0}^{\infty}\mu B&#x27;_n
+=\gamma^r\sum_{n\in K}\mu B_n+2^r\gamma^r\sum_{n\in L}\mu B_n\\
+&amp;\le\gamma^r(\mu^*A+\epsilon)+2^r\gamma^r\epsilon.\\\end{aligned}\]</span></p>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang, <span class="math inline" data-source-tex="\mu^*\phi[A\cap
+D]\le\gamma^r\mu^*A">\(\mu^*\phi[A\cap
+D]\le\gamma^r\mu^*A\)</span>, sebagaimana diklaim.</p></aside>
+</section>
+<section class="source-unit" id="262E" data-source-id="262E"><h2><span class="source-label">262E</span> Akibat </h2>
+<p>Misalkan <span class="math inline" data-source-tex="\phi:D\to\BbbR^r">\(\phi:D\to\BbbR^r\)</span> suatu fungsi
+Lipschitz injektif, dengan <span class="math inline" data-source-tex="D\subseteq\BbbR^r">\(D\subseteq\BbbR^r\)</span>, dan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi
+terukur dari suatu himpunan bagian <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> ke <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.</p>
+<p>(a) Jika <span class="math inline" data-source-tex="\phi^{-1}">\(\phi^{-1}\)</span> terdefinisi hampir di mana-mana dalam suatu himpunan <span class="math inline" data-source-tex="H">\(H\)</span>
+dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> dan <span class="math inline" data-source-tex="f">\(f\)</span> terdefinisi hampir di mana-mana dalam
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, maka <span class="math inline" data-source-tex="f\phi^{-1}">\(f\phi^{-1}\)</span> terdefinisi hampir di mana-mana dalam <span class="math inline" data-source-tex="H">\(H\)</span>.</p>
+<p>(b) Jika <span class="math inline" data-source-tex="E\subseteq D">\(E\subseteq D\)</span> terukur Lebesgue, maka <span class="math inline" data-source-tex="\phi[E]">\(\phi[E]\)</span> terukur.</p>
+<p>(c) Jika <span class="math inline" data-source-tex="D">\(D\)</span> terukur, maka <span class="math inline" data-source-tex="f\phi^{-1}">\(f\phi^{-1}\)</span> terukur.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="C=\dom(f\phi^{-1})
+=\{y:y\in\phi[D],\,\phi^{-1}(y)\in\dom f\}=\phi[D\cap\dom f]">\(C=\dom(f\phi^{-1})
+=\{y:y\in\phi[D],\,\phi^{-1}(y)\in\dom f\}=\phi[D\cap\dom f]\)</span>.</div>
+<p> </p>
+<p><strong>(a)</strong> Karena <span class="math inline" data-source-tex="f">\(f\)</span> terdefinisi hampir di mana-mana,
+<span class="math inline" data-source-tex="\phi[D\setminus\dom f]">\(\phi[D\setminus\dom f]\)</span> terabaikan.   Tetapi sekarang</p>
+<div class="centerline"><span class="math inline" data-source-tex="C=\phi[D]\setminus \phi[D\setminus\dom f]
+=\dom\phi^{-1}\setminus\phi[D\setminus\dom f]">\(C=\phi[D]\setminus \phi[D\setminus\dom f]
+=\dom\phi^{-1}\setminus\phi[D\setminus\dom f]\)</span>,</div>
+<p>sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="H\setminus C
+\subseteq(H\setminus\dom\phi^{-1})\cup\phi[D\setminus\dom f]">\(H\setminus C
+\subseteq(H\setminus\dom\phi^{-1})\cup\phi[D\setminus\dom f]\)</span></div>
+<p>terabaikan.</p>
+<p> </p>
+<p><strong>(b)</strong> Sekarang andaikan <span class="math inline" data-source-tex="E\subseteq D">\(E\subseteq D\)</span> dan <span class="math inline" data-source-tex="E">\(E\)</span> terukur.
+Misalkan <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> suatu barisan himpunan bagian tertutup dan
+terbatas dari <span class="math inline" data-source-tex="E">\(E\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu(E\setminus\bigcup_{n\in\Bbb N}F_n)=0">\(\mu(E\setminus\bigcup_{n\in\Bbb N}F_n)=0\)</span> (134Fb).   Karena <span class="math inline" data-source-tex="\phi">\(\phi\)</span>
+Lipschitz, fungsi ini kontinu, sehingga <span class="math inline" data-source-tex="\phi[F_n]">\(\phi[F_n]\)</span> kompak, jadi tertutup,
+dan karena itu terukur untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span> (2A2E, <a class="xref" href="../115/index.html#115G">115G</a>); selain itu,
+<span class="math inline" data-source-tex="\phi[E\setminus\bigcup_{n\in\Bbb N}F_n]">\(\phi[E\setminus\bigcup_{n\in\Bbb N}F_n]\)</span> terabaikan berdasarkan <a class="xref" href="#262D">262D</a>,
+dan karena itu terukur.   Jadi</p>
+<div class="centerline"><span class="math inline" data-source-tex="\phi[E]
+=\phi[E\setminus\bigcup_{n\in\Bbb N}F_n]
+  \cup\bigcup_{n\in\Bbb N}\phi[F_n]
+">\(\phi[E]
+=\phi[E\setminus\bigcup_{n\in\Bbb N}F_n]
+  \cup\bigcup_{n\in\Bbb N}\phi[F_n]
+\)</span></div>
+<p>terukur.</p>
+<p> </p>
+<p><strong>(c)</strong> Untuk sebarang <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>, ambil himpunan terukur
+<span class="math inline" data-source-tex="E\subseteq\BbbR^r">\(E\subseteq\BbbR^r\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\{x:f(x)\ge a\}=E\cap\dom f">\(\{x:f(x)\ge a\}=E\cap\dom f\)</span>.   Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{y:y\in C,\,f\phi^{-1}(y)\ge a\}
+=C\cap\phi[D\cap E]">\(\{y:y\in C,\,f\phi^{-1}(y)\ge a\}
+=C\cap\phi[D\cap E]\)</span>.</div>
+<p>Tetapi <span class="math inline" data-source-tex="\phi[D\cap E]">\(\phi[D\cap E]\)</span> terukur berdasarkan (b), sehingga
+<span class="math inline" data-source-tex="\{y:f\phi^{-1}(y)\ge a\}">\(\{y:f\phi^{-1}(y)\ge a\}\)</span> terukur relatif dalam <span class="math inline" data-source-tex="C">\(C\)</span>.   Karena <span class="math inline" data-source-tex="a">\(a\)</span>
+sebarang, <span class="math inline" data-source-tex="f\phi^{-1}">\(f\phi^{-1}\)</span> terukur.</p></aside>
+</section>
+<section class="source-unit" id="262F" data-source-id="262F"><h2><span class="source-label">262F</span> Keterdiferensialan </h2>
+<p>Sekarang saya
+beralih ke kelas fungsi yang sifat-sifatnya akan mengisi sebagian besar
+sisa bab ini.</p>
+<p> </p>
+<p><strong>Definisi</strong>  Misalkan <span class="math inline" data-source-tex="\phi">\(\phi\)</span> suatu fungsi dari himpunan
+bagian <span class="math inline" data-source-tex="D=\dom\phi">\(D=\dom\phi\)</span> dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> ke <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>.</p>
+</section>
+<section class="source-unit" id="262Fa" data-source-id="262Fa"><h3><span class="source-label">262Fa</span> (a) </h3>
+<p><span class="math inline" data-source-tex="\phi">\(\phi\)</span> <strong>terdiferensialkan</strong> di <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span> jika terdapat
+matriks real <span class="math inline" data-source-tex="s\times r">\(s\times r\)</span>, yaitu <span class="math inline" data-source-tex="T">\(T\)</span>, sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{y\to x}
+\Bover{\|\phi(y)-\phi(x)-T(y-x)\|}{\|y-x\|}=0">\(\lim_{y\to x}
+\Bover{\|\phi(y)-\phi(x)-T(y-x)\|}{\|y-x\|}=0\)</span>;</div>
+<p>dalam hal ini kita dapat menuliskan <span class="math inline" data-source-tex="T=\phi&#x27;(x)">\(T=\phi&#x27;(x)\)</span>.</p>
+</section>
+<section class="source-unit" id="262Fb" data-source-id="262Fb"><h3><span class="source-label">262Fb</span> (b) </h3>
+<p>Saya akan mengatakan bahwa <span class="math inline" data-source-tex="\phi">\(\phi\)</span> <strong>terdiferensialkan
+relatif terhadap domainnya</strong> di <span class="math inline" data-source-tex="x">\(x\)</span>, dan bahwa <span class="math inline" data-source-tex="T">\(T\)</span> adalah <strong>suatu</strong>
+turunan dari <span class="math inline" data-source-tex="\phi">\(\phi\)</span> di <span class="math inline" data-source-tex="x">\(x\)</span>, jika <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span> dan untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>
+terdapat <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\|\phi(y)-\phi(x)-T(y-x)\|\le\epsilon\|y-x\|">\(\|\phi(y)-\phi(x)-T(y-x)\|\le\epsilon\|y-x\|\)</span> untuk setiap
+<span class="math inline" data-source-tex="y\in B(x,\delta)\cap D">\(y\in B(x,\delta)\cap D\)</span>.</p>
+</section>
+<section class="source-unit" id="262G" data-source-id="262G"><span class="anchor" id="262Ga"></span><h2><span class="source-label">262G</span> Catatan (a) </h2>
+<p>Definisi baku dalam <a class="xref" href="#262Fa">262Fa</a>, yang
+melibatkan limit dari semua arah
+‘<span class="math inline" data-source-tex="\lim_{y\to x}">\(\lim_{y\to x}\)</span>’, secara tersirat mensyaratkan <span class="math inline" data-source-tex="\phi">\(\phi\)</span> terdefinisi pada
+suatu bola tak-sepele yang berpusat di <span class="math inline" data-source-tex="x">\(x\)</span>, agar kita dapat menghitung
+<span class="math inline" data-source-tex="\phi(y)-\phi(x)-T(y-x)">\(\phi(y)-\phi(x)-T(y-x)\)</span> untuk semua <span class="math inline" data-source-tex="y">\(y\)</span> yang cukup dekat dengan <span class="math inline" data-source-tex="x">\(x\)</span>.
+Keuntungannya ialah turunan <span class="math inline" data-source-tex="T=\phi&#x27;(x)">\(T=\phi&#x27;(x)\)</span> terdefinisi secara tunggal
+(sebab jika <span class="math inline" data-source-tex="\lim_{z\to \tbf{0}}\Bover{\|T_1z-T_2z\|}{\|z\|}=0">\(\lim_{z\to \tbf{0}}\Bover{\|T_1z-T_2z\|}{\|z\|}=0\)</span> maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Bover{\|(T_1-T_2)z\|}{\|z\|}=\lim_{\alpha\to
+0}\Bover{\|T_1(\alpha
+z)-T_2(\alpha z)\|}{\|\alpha z\|}=0">\(\Bover{\|(T_1-T_2)z\|}{\|z\|}=\lim_{\alpha\to
+0}\Bover{\|T_1(\alpha
+z)-T_2(\alpha z)\|}{\|\alpha z\|}=0\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="z">\(z\)</span> taknol, sehingga <span class="math inline" data-source-tex="T_1-T_2">\(T_1-T_2\)</span> harus merupakan
+matriks nol). Untuk keperluan kita di sini, ada manfaatnya melonggarkan
+hal ini sedikit menjadi bentuk dalam <a class="xref" href="#262Fb">262Fb</a>, agar kita tidak perlu memberi
+perhatian khusus pada batas <span class="math inline" data-source-tex="\dom\phi">\(\dom\phi\)</span>.   Khususnya, kita mendapati bahwa
+jika <span class="math inline" data-source-tex="T">\(T\)</span> suatu turunan dari <span class="math inline" data-source-tex="\phi:D\to\BbbR^s">\(\phi:D\to\BbbR^s\)</span> relatif terhadap domainnya
+di <span class="math inline" data-source-tex="x">\(x\)</span>, dan <span class="math inline" data-source-tex="x\in D&#x27;\subseteq D">\(x\in D&#x27;\subseteq D\)</span>, maka <span class="math inline" data-source-tex="T">\(T\)</span> merupakan turunan dari
+<span class="math inline" data-source-tex="\phi\restr D&#x27;">\(\phi\restr D&#x27;\)</span> relatif terhadap domainnya di <span class="math inline" data-source-tex="x">\(x\)</span>.</p>
+</section>
+<section class="source-unit" id="262Gb" data-source-id="262Gb"><h3><span class="source-label">262Gb</span> <strong>(b)</strong> </h3>
+<p>Jika Anda belum pernah menjumpai konsep
+‘keterdiferensialan’ ini, tetapi cukup mengenal pendiferensialan parsial,
+perlu ditekankan bahwa konsep fungsi ‘terdiferensialkan’ (setidaknya dalam
+pengertian ketat yang dituntut <a class="xref" href="#262Fa">262Fa</a>) benar-benar lebih kuat daripada
+konsep fungsi ‘terdiferensialkan secara parsial’. Untuk keperluan
+perhitungan, metode paling berguna untuk menemukan turunan sejati diberikan
+oleh 262Id di bawah.   Sebagai contoh sederhana fungsi yang mempunyai
+semua turunan parsial tetapi tidak terdiferensialkan di setiap titik,
+perhatikan <span class="math inline" data-source-tex="\phi:\BbbR^2\to\Bbb R">\(\phi:\BbbR^2\to\Bbb R\)</span> yang didefinisikan oleh</p>
+<p><span class="math display" data-source-tex="\eqalign{\phi(\xi_1,\xi_2)
+&amp;={{\xi_1\xi_2}\over{\xi_1^2+\xi_2^2}}
+ \text{ jika }\xi_1^2+\xi_2^2\ne 0,\cr
+&amp;=0\text{ jika }\xi_1=\xi_2=0.\cr}">\[\begin{aligned}\phi(\xi_1,\xi_2)
+&amp;={{\xi_1\xi_2}\over{\xi_1^2+\xi_2^2}}
+ \text{ jika }\xi_1^2+\xi_2^2\ne 0,\\
+&amp;=0\text{ jika }\xi_1=\xi_2=0.\\\end{aligned}\]</span></p>
+<p>Maka <span class="math inline" data-source-tex="\phi">\(\phi\)</span> bahkan tidak kontinu di <span class="math inline" data-source-tex="\tbf{0}">\(\tbf{0}\)</span>, walaupun kedua
+turunan parsial <span class="math inline" data-source-tex="\pd{\phi}{\xi_j}">\(\pd{\phi}{\xi_j}\)</span> terdefinisi di mana-mana.</p>
+</section>
+<section class="source-unit" id="262Gc" data-source-id="262Gc"><h3><span class="source-label">262Gc</span> <strong>(c)</strong> </h3>
+<p>Dalam definisi di atas, saya menyebut turunan
+sebagai suatu matriks.   Secara tepat, turunan fungsi yang didefinisikan
+pada suatu himpunan bagian <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> dan bernilai dalam <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>
+seharusnya dipandang sebagai operator linear terbatas dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> ke
+<span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>;  perumusan dengan matriks dapat diterima karena terdapat
+korespondensi satu-satu alami antara matriks real <span class="math inline" data-source-tex="s\times r">\(s\times r\)</span> dan operator
+linear dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> ke <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>, dan semua operator linear ini terbatas.
+Saya menggunakan deskripsi ‘matriks’ karena deskripsi ini membuat beberapa
+perhitungan lebih langsung; khususnya, hubungan antara <span class="math inline" data-source-tex="\phi&#x27;">\(\phi&#x27;\)</span> dan turunan
+parsial <span class="math inline" data-source-tex="\phi">\(\phi\)</span> (262Ic), serta gagasan determinan <span class="math inline" data-source-tex="\det\phi&#x27;(x)">\(\det\phi&#x27;(x)\)</span>, yang
+digunakan sepanjang §§<a class="xref" href="../263/index.html#263">263</a> dan <a class="xref" href="../265/index.html#265">265</a>.</p>
+</section>
+<section class="source-unit" id="262H" data-source-id="262H"><h2><span class="source-label">262H</span> Norma matriks </h2>
+<p>Beberapa perhitungan di bawah akan bertumpu
+pada gagasan ‘norma’ matriks.   Norma yang akan saya gunakan
+(sebenarnya, untuk keperluan kita di sini, norma apa pun memadai) ialah
+‘norma operator’, yang didefinisikan dengan menetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|T\|=\sup\{\|Tx\|:x\in\BbbR^r,\,\|x\|\le 1\}">\(\|T\|=\sup\{\|Tx\|:x\in\BbbR^r,\,\|x\|\le 1\}\)</span></div>
+<p>untuk sebarang matriks <span class="math inline" data-source-tex="s\times r">\(s\times r\)</span>, yaitu <span class="math inline" data-source-tex="T">\(T\)</span>.   Untuk
+fakta-fakta dasar mengenai norma-norma ini, lihat 2A4F-2A4G.   Hal berikut
+juga akan berguna.</p>
+</section>
+<section class="source-unit" id="262Ha" data-source-id="262Ha"><h3><span class="source-label">262Ha</span> <strong>(a)</strong> </h3>
+<p>Jika semua koefisien <span class="math inline" data-source-tex="T">\(T\)</span> kecil, maka
+<span class="math inline" data-source-tex="\|T\|">\(\|T\|\)</span> juga kecil;  sesungguhnya, jika
+<span class="math inline" data-source-tex="T=\langle\tau_{ij}\rangle_{i\le s,j\le r}">\(T=\langle\tau_{ij}\rangle_{i\le s,j\le r}\)</span>, dan
+<span class="math inline" data-source-tex="\|x\|\le 1">\(\|x\|\le 1\)</span>, maka
+<span class="math inline" data-source-tex="|\xi_j|\le 1">\(|\xi_j|\le 1\)</span> untuk setiap <span class="math inline" data-source-tex="j">\(j\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|Tx\|
+=\bigl(\sum_{i=1}^s(\sum_{j=1}^r\tau_{ij}\xi_j)^2\bigr)^{1/2}
+\le \bigl(\sum_{i=1}^s(\sum_{j=1}^r|\tau_{ij}|)^2\bigr)^{1/2}
+\le r\sqrt{s}\max_{i\le s,j\le r}|\tau_{ij}|">\(\|Tx\|
+=\bigl(\sum_{i=1}^s(\sum_{j=1}^r\tau_{ij}\xi_j)^2\bigr)^{1/2}
+\le \bigl(\sum_{i=1}^s(\sum_{j=1}^r|\tau_{ij}|)^2\bigr)^{1/2}
+\le r\sqrt{s}\max_{i\le s,j\le r}|\tau_{ij}|\)</span>,</div>
+<p>dan <span class="math inline" data-source-tex="\|T\|\le r\sqrt{s}\max_{i\le s,j\le r}|\tau_{ij}|">\(\|T\|\le r\sqrt{s}\max_{i\le s,j\le r}|\tau_{ij}|\)</span>.
+(Ini ketaksamaan yang sangat kasar.   Ketaksamaan yang lebih baik
+ada dalam <a class="xref" href="#262Yb">262Yb</a>.   Namun khususnya ini memberi tahu kita bahwa <span class="math inline" data-source-tex="\|T\|">\(\|T\|\)</span>
+selalu berhingga.)</p>
+</section>
+<section class="source-unit" id="262Hb" data-source-id="262Hb"><h3><span class="source-label">262Hb</span> <strong>(b)</strong> </h3>
+<p>Jika <span class="math inline" data-source-tex="\|T\|">\(\|T\|\)</span> kecil, maka semua koefisien <span class="math inline" data-source-tex="T">\(T\)</span> juga kecil; sesungguhnya,
+dengan menuliskan <span class="math inline" data-source-tex="e_j">\(e_j\)</span> untuk vektor satuan ke-<span class="math inline" data-source-tex="j">\(j\)</span> dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, maka
+koordinat ke-<span class="math inline" data-source-tex="i">\(i\)</span> dari <span class="math inline" data-source-tex="Te_j">\(Te_j\)</span> adalah <span class="math inline" data-source-tex="\tau_{ij}">\(\tau_{ij}\)</span>, sehingga
+<span class="math inline" data-source-tex="|\tau_{ij}|\le\|Te_j\|\le\|T\|">\(|\tau_{ij}|\le\|Te_j\|\le\|T\|\)</span>.</p>
+</section>
+<section class="source-unit" id="262I" data-source-id="262I"><h2><span class="source-label">262I</span> Lemma </h2>
+<p>Misalkan <span class="math inline" data-source-tex="\phi:D\to\BbbR^s">\(\phi:D\to\BbbR^s\)</span> suatu fungsi, dengan
+<span class="math inline" data-source-tex="D\subseteq\BbbR^r">\(D\subseteq\BbbR^r\)</span>.   Untuk <span class="math inline" data-source-tex="i\le s">\(i\le s\)</span>, misalkan <span class="math inline" data-source-tex="\phi_i:D\to\Bbb R">\(\phi_i:D\to\Bbb R\)</span>
+koordinat ke-<span class="math inline" data-source-tex="i">\(i\)</span>-nya, sehingga <span class="math inline" data-source-tex="\phi(x)=(\phi_1(x),\ldots,\phi_s(x))">\(\phi(x)=(\phi_1(x),\ldots,\phi_s(x))\)</span>
+untuk <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span>.</p>
+<p>(a) Jika <span class="math inline" data-source-tex="\phi">\(\phi\)</span> terdiferensialkan relatif terhadap domainnya di <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span>,
+maka <span class="math inline" data-source-tex="\phi">\(\phi\)</span> kontinu di <span class="math inline" data-source-tex="x">\(x\)</span>.</p>
+<p>(b) Jika <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span>, maka <span class="math inline" data-source-tex="\phi">\(\phi\)</span> terdiferensialkan relatif terhadap
+domainnya di <span class="math inline" data-source-tex="x">\(x\)</span> jika dan hanya jika setiap <span class="math inline" data-source-tex="\phi_i">\(\phi_i\)</span> terdiferensialkan
+relatif terhadap domainnya di <span class="math inline" data-source-tex="x">\(x\)</span>.</p>
+<p>(c) Jika <span class="math inline" data-source-tex="\phi">\(\phi\)</span> terdiferensialkan di <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span>, maka semua turunan parsial
+<span class="math inline" data-source-tex="\pd{\phi_i}{\xi_j}">\(\pd{\phi_i}{\xi_j}\)</span> dari <span class="math inline" data-source-tex="\phi">\(\phi\)</span> terdefinisi di <span class="math inline" data-source-tex="x">\(x\)</span>, dan turunan <span class="math inline" data-source-tex="\phi">\(\phi\)</span>
+di <span class="math inline" data-source-tex="x">\(x\)</span> adalah matriks
+<span class="math inline" data-source-tex="\langle\pd{\phi_i}{\xi_j}(x)\rangle_{i\le s,j\le r}">\(\langle\pd{\phi_i}{\xi_j}(x)\rangle_{i\le s,j\le r}\)</span>.</p>
+<p>(d) Jika semua turunan parsial <span class="math inline" data-source-tex="\pd{\phi_i}{\xi_j}">\(\pd{\phi_i}{\xi_j}\)</span>, untuk <span class="math inline" data-source-tex="i\le s">\(i\le s\)</span> dan
+<span class="math inline" data-source-tex="j\le r">\(j\le r\)</span>, terdefinisi di suatu lingkungan dari <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span> dan kontinu di <span class="math inline" data-source-tex="x">\(x\)</span>,
+maka <span class="math inline" data-source-tex="\phi">\(\phi\)</span> terdiferensialkan di <span class="math inline" data-source-tex="x">\(x\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Misalkan <span class="math inline" data-source-tex="T">\(T\)</span> suatu turunan dari <span class="math inline" data-source-tex="\phi">\(\phi\)</span> di <span class="math inline" data-source-tex="x">\(x\)</span>. Dengan
+menerapkan definisi <a class="xref" href="#262Fb">262Fb</a> dengan <span class="math inline" data-source-tex="\epsilon=1">\(\epsilon=1\)</span>, kita melihat bahwa terdapat
+<span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|\phi(y)-\phi(x)-T(y-x)\|\le\|y-x\|">\(\|\phi(y)-\phi(x)-T(y-x)\|\le\|y-x\|\)</span></div>
+<p>setiap kali <span class="math inline" data-source-tex="y\in D">\(y\in D\)</span> dan <span class="math inline" data-source-tex="\|y-x\|\le\delta">\(\|y-x\|\le\delta\)</span>.   Sekarang</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|\phi(y)-\phi(x)\|\le\|T(y-x)\|+\|y-x\|
+\le(1+\|T\|)\|y-x\|">\(\|\phi(y)-\phi(x)\|\le\|T(y-x)\|+\|y-x\|
+\le(1+\|T\|)\|y-x\|\)</span></div>
+<p>setiap kali <span class="math inline" data-source-tex="y\in D">\(y\in D\)</span> dan <span class="math inline" data-source-tex="\|y-x\|\le\delta">\(\|y-x\|\le\delta\)</span>, sehingga <span class="math inline" data-source-tex="\phi">\(\phi\)</span>
+kontinu di <span class="math inline" data-source-tex="x">\(x\)</span>.</p>
+<p> </p>
+<p><strong>(b)(i)</strong> Jika <span class="math inline" data-source-tex="\phi">\(\phi\)</span> terdiferensialkan relatif terhadap domainnya di
+<span class="math inline" data-source-tex="x\in D">\(x\in D\)</span>, misalkan <span class="math inline" data-source-tex="T">\(T\)</span> suatu turunan dari <span class="math inline" data-source-tex="\phi">\(\phi\)</span> di <span class="math inline" data-source-tex="x">\(x\)</span>. Untuk <span class="math inline" data-source-tex="i\le s">\(i\le s\)</span>,
+misalkan <span class="math inline" data-source-tex="T_i">\(T_i\)</span> matriks <span class="math inline" data-source-tex="1\times r">\(1\times r\)</span> yang terdiri atas baris ke-<span class="math inline" data-source-tex="i">\(i\)</span> dari
+<span class="math inline" data-source-tex="T">\(T\)</span>. Misalkan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Maka terdapat <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga</p>
+<p><span class="math display" data-source-tex="\eqalign{|\phi_i(y)-\phi_i(x)-T_i(y-x)|
+&amp;\le\|\phi(y)-\phi(x)-T(y-x)\|\cr
+&amp;\le\epsilon\|y-x\|\cr}">\[\begin{aligned}|\phi_i(y)-\phi_i(x)-T_i(y-x)|
+&amp;\le\|\phi(y)-\phi(x)-T(y-x)\|\\
+&amp;\le\epsilon\|y-x\|\\\end{aligned}\]</span></p>
+<p>setiap kali <span class="math inline" data-source-tex="y\in D">\(y\in D\)</span> dan <span class="math inline" data-source-tex="\|y-x\|\le\delta">\(\|y-x\|\le\delta\)</span>, sehingga <span class="math inline" data-source-tex="T_i">\(T_i\)</span>
+merupakan turunan dari <span class="math inline" data-source-tex="\phi_i">\(\phi_i\)</span> di <span class="math inline" data-source-tex="x">\(x\)</span>.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Jika setiap <span class="math inline" data-source-tex="\phi_i">\(\phi_i\)</span> terdiferensialkan relatif terhadap
+domainnya di <span class="math inline" data-source-tex="x">\(x\)</span>, dengan turunan yang bersesuaian <span class="math inline" data-source-tex="T_i">\(T_i\)</span>, misalkan <span class="math inline" data-source-tex="T">\(T\)</span>
+matriks <span class="math inline" data-source-tex="s\times r">\(s\times r\)</span> dengan baris <span class="math inline" data-source-tex="T_1,\ldots,T_s">\(T_1,\ldots,T_s\)</span>. Untuk <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>
+yang diberikan, bagi setiap <span class="math inline" data-source-tex="i\le s">\(i\le s\)</span> terdapat <span class="math inline" data-source-tex="\delta_i&gt;0">\(\delta_i&gt;0\)</span> sedemikian
+sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\phi_i(y)-\phi_i(x)-T_i(y-x)|\le\epsilon\|y-x\|">\(|\phi_i(y)-\phi_i(x)-T_i(y-x)|\le\epsilon\|y-x\|\)</span> setiap kali
+<span class="math inline" data-source-tex="y\in D">\(y\in D\)</span>, <span class="math inline" data-source-tex="\|y-x\|\le\delta_i">\(\|y-x\|\le\delta_i\)</span>;</div>
+<p>tetapkan <span class="math inline" data-source-tex="\delta=\min_{i\le s}\delta_i&gt;0">\(\delta=\min_{i\le s}\delta_i&gt;0\)</span>; maka jika <span class="math inline" data-source-tex="y\in D">\(y\in D\)</span>
+dan <span class="math inline" data-source-tex="\|y-x\|\le\delta">\(\|y-x\|\le\delta\)</span>, akan berlaku</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|\phi(y)-\phi(x)-T(y-x)\|^2
+=\sum_{i=1}^s|\phi_i(y)-\phi_i(x)-T_i(y-x)|^2
+\le s\epsilon^2\|y-x\|^2">\(\|\phi(y)-\phi(x)-T(y-x)\|^2
+=\sum_{i=1}^s|\phi_i(y)-\phi_i(x)-T_i(y-x)|^2
+\le s\epsilon^2\|y-x\|^2\)</span>,</div>
+<p>sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|\phi(y)-\phi(x)-T(y-x)\|
+\le\epsilon\sqrt{s}\|y-x\|">\(\|\phi(y)-\phi(x)-T(y-x)\|
+\le\epsilon\sqrt{s}\|y-x\|\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang, <span class="math inline" data-source-tex="T">\(T\)</span> merupakan turunan dari <span class="math inline" data-source-tex="\phi">\(\phi\)</span>
+di <span class="math inline" data-source-tex="x">\(x\)</span>.</p>
+<p> </p>
+<p><strong>(c)</strong> Tetapkan <span class="math inline" data-source-tex="T=\phi&#x27;(x)">\(T=\phi&#x27;(x)\)</span>.   Kita mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{y\to x}\Bover{\|\phi(y)-\phi(x)-T(y-x)\|}{\|y-x\|}
+=0">\(\lim_{y\to x}\Bover{\|\phi(y)-\phi(x)-T(y-x)\|}{\|y-x\|}
+=0\)</span>;</div>
+<p>tetapkan <span class="math inline" data-source-tex="j\le r">\(j\le r\)</span>, dan perhatikan <span class="math inline" data-source-tex="y=x+\eta e_j">\(y=x+\eta e_j\)</span>, dengan
+<span class="math inline" data-source-tex="e_j=(0,\ldots,0,1,0,\ldots,0)">\(e_j=(0,\ldots,0,1,0,\ldots,0)\)</span> vektor satuan ke-<span class="math inline" data-source-tex="j">\(j\)</span> dalam <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>.
+Maka harus berlaku</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{\eta\to 0}\Bover{\|\phi(x+\eta e_j)-\phi(x)-\eta
+T(e_j)\|}{|\eta|}
+=0">\(\lim_{\eta\to 0}\Bover{\|\phi(x+\eta e_j)-\phi(x)-\eta
+T(e_j)\|}{|\eta|}
+=0\)</span>.</div>
+<p>Dengan memperhatikan koordinat ke-<span class="math inline" data-source-tex="i">\(i\)</span> dari
+<span class="math inline" data-source-tex="\phi(x+\eta e_j)-\phi(x)-\eta T(e_j)">\(\phi(x+\eta e_j)-\phi(x)-\eta T(e_j)\)</span>, kita memperoleh</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\phi_i(x+\eta e_j)-\phi_i(x)-\tau_{ij}\eta|
+\le\|\phi(x+\eta e_j)-\phi(x)-\eta T(e_j)\|">\(|\phi_i(x+\eta e_j)-\phi_i(x)-\tau_{ij}\eta|
+\le\|\phi(x+\eta e_j)-\phi(x)-\eta T(e_j)\|\)</span>,</div>
+<p>dengan <span class="math inline" data-source-tex="\tau_{ij}">\(\tau_{ij}\)</span> koefisien ke-<span class="math inline" data-source-tex="(i,j)">\((i,j)\)</span> dari <span class="math inline" data-source-tex="T">\(T\)</span>; sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{\eta\to 0}
+\Bover{|\phi_i(x+\eta e_j)-\phi_i(x)-\tau_{ij}\eta|}{|\eta|}
+=0">\(\lim_{\eta\to 0}
+\Bover{|\phi_i(x+\eta e_j)-\phi_i(x)-\tau_{ij}\eta|}{|\eta|}
+=0\)</span>.</div>
+<p>Tetapi ini tepat mengatakan bahwa turunan parsial
+<span class="math inline" data-source-tex="\pd{\phi_i}{\xi_j}(x)">\(\pd{\phi_i}{\xi_j}(x)\)</span> ada dan sama dengan <span class="math inline" data-source-tex="\tau_{ij}">\(\tau_{ij}\)</span>, sebagaimana
+dinyatakan.</p>
+<p> </p>
+<p><strong>(d)</strong> Sekarang andaikan turunan parsial <span class="math inline" data-source-tex="\pd{\phi_i}{\xi_j}">\(\pd{\phi_i}{\xi_j}\)</span>
+terdefinisi di dekat <span class="math inline" data-source-tex="x">\(x\)</span> dan kontinu di <span class="math inline" data-source-tex="x">\(x\)</span>. Misalkan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>.
+Misalkan <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\pd{\phi_i}{\xi_j}(y)-\tau_{ij}|\le\epsilon">\(|\pd{\phi_i}{\xi_j}(y)-\tau_{ij}|\le\epsilon\)</span></div>
+<p>setiap kali <span class="math inline" data-source-tex="\|y-x\|\le\delta">\(\|y-x\|\le\delta\)</span>, dengan menuliskan
+<span class="math inline" data-source-tex="\tau_{ij}=\pd{\phi_i}{\xi_j}(x)">\(\tau_{ij}=\pd{\phi_i}{\xi_j}(x)\)</span>.   Sekarang andaikan
+<span class="math inline" data-source-tex="\|y-x\|\le\delta">\(\|y-x\|\le\delta\)</span>.   Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="y=(\eta_1,\ldots,\eta_r)">\(y=(\eta_1,\ldots,\eta_r)\)</span>,
+  <span class="math inline" data-source-tex="x=(\xi_1,\ldots,\xi_r)">\(x=(\xi_1,\ldots,\xi_r)\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="y_j=(\eta_1,\ldots,\eta_j,\xi_{j+1},\ldots,\xi_r)">\(y_j=(\eta_1,\ldots,\eta_j,\xi_{j+1},\ldots,\xi_r)\)</span> untuk
+<span class="math inline" data-source-tex="0\le
+j\le r">\(0\le
+j\le r\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="y_0=x">\(y_0=x\)</span>, <span class="math inline" data-source-tex="y_r=y">\(y_r=y\)</span>, dan ruas garis antara <span class="math inline" data-source-tex="y_{j-1}">\(y_{j-1}\)</span> dan
+<span class="math inline" data-source-tex="y_{j}">\(y_{j}\)</span> seluruhnya berada dalam jarak <span class="math inline" data-source-tex="\delta">\(\delta\)</span> dari <span class="math inline" data-source-tex="x">\(x\)</span> setiap kali
+<span class="math inline" data-source-tex="1\le j\le r">\(1\le j\le r\)</span>, sebab jika <span class="math inline" data-source-tex="z=(\zeta_1,\ldots,\zeta_r)">\(z=(\zeta_1,\ldots,\zeta_r)\)</span> terletak pada
+ruas ini, maka <span class="math inline" data-source-tex="\zeta_i">\(\zeta_i\)</span> berada di antara <span class="math inline" data-source-tex="\xi_i">\(\xi_i\)</span> dan <span class="math inline" data-source-tex="\eta_i">\(\eta_i\)</span> untuk
+setiap <span class="math inline" data-source-tex="i">\(i\)</span>. Berdasarkan teorema nilai rata-rata biasa bagi fungsi real
+terdiferensialkan, yang diterapkan pada fungsi</p>
+<div class="centerline"><span class="math inline" data-source-tex="t\mapsto
+\phi_i(\eta_1,\ldots,\eta_{j-1},t,\xi_{j+1},\ldots,\xi_r)">\(t\mapsto
+\phi_i(\eta_1,\ldots,\eta_{j-1},t,\xi_{j+1},\ldots,\xi_r)\)</span>,</div>
+<p>untuk setiap <span class="math inline" data-source-tex="i\le s">\(i\le s\)</span>, <span class="math inline" data-source-tex="j\le r">\(j\le r\)</span> terdapat titik <span class="math inline" data-source-tex="z_{ij}">\(z_{ij}\)</span> pada
+ruas garis antara <span class="math inline" data-source-tex="y_{j-1}">\(y_{j-1}\)</span> dan <span class="math inline" data-source-tex="y_j">\(y_j\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\phi_i(y_j)-\phi_i(y_{j-1})
+=(\eta_j-\xi_j)\pd{\phi_i}{\xi_j}(z_{ij})">\(\phi_i(y_j)-\phi_i(y_{j-1})
+=(\eta_j-\xi_j)\pd{\phi_i}{\xi_j}(z_{ij})\)</span>.</div>
+<p>Tetapi</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\pd{\phi_i}{\xi_j}(z_{ij})-\tau_{ij}|\le\epsilon">\(|\pd{\phi_i}{\xi_j}(z_{ij})-\tau_{ij}|\le\epsilon\)</span>,</div>
+<p>sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\phi_i(y_j)-\phi_i(y_{j-1})
+-\tau_{ij}(\eta_j-\xi_j)|\le\epsilon|\eta_j-\xi_j|\le\epsilon\|y-x\|">\(|\phi_i(y_j)-\phi_i(y_{j-1})
+-\tau_{ij}(\eta_j-\xi_j)|\le\epsilon|\eta_j-\xi_j|\le\epsilon\|y-x\|\)</span>.</div>
+<p>Dengan menjumlahkan atas <span class="math inline" data-source-tex="j">\(j\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\phi_i(y)-\phi_i(x)-\sum_{j=1}^r\tau_{ij}(\eta_j-\xi_j)|
+\le r\epsilon\|y-x\|">\(|\phi_i(y)-\phi_i(x)-\sum_{j=1}^r\tau_{ij}(\eta_j-\xi_j)|
+\le r\epsilon\|y-x\|\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>.   Dengan menjumlahkan kuadrat-kuadratnya dan
+mengambil akar kuadrat,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|\phi(y)-\phi(x)-T(y-x)\|\le \epsilon r\sqrt{s}\|y-x\|">\(\|\phi(y)-\phi(x)-T(y-x)\|\le \epsilon r\sqrt{s}\|y-x\|\)</span>,</div>
+<p>dengan <span class="math inline" data-source-tex="T=\langle\tau_{ij}\rangle_{i\le s,j\le r}">\(T=\langle\tau_{ij}\rangle_{i\le s,j\le r}\)</span>. Ini berlaku
+setiap kali <span class="math inline" data-source-tex="\|y-x\|\le\delta">\(\|y-x\|\le\delta\)</span>.   Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang,
+<span class="math inline" data-source-tex="\phi&#x27;(x)=T">\(\phi&#x27;(x)=T\)</span> terdefinisi.</p></aside>
+</section>
+<section class="source-unit" id="262J" data-source-id="262J"><h2><span class="source-label">262J</span> Catatan </h2>
+<p>Saya tidak yakin apakah saya perlu meminta maaf
+atas notasi <span class="math inline" data-source-tex="\pd{}{\xi_j}">\(\pd{}{\xi_j}\)</span>.   Dalam rumus seperti
+<span class="math inline" data-source-tex="(\eta_j-\xi_j)\pd{\phi_i}{\xi_j}(z_{ij})">\((\eta_j-\xi_j)\pd{\phi_i}{\xi_j}(z_{ij})\)</span> di atas, kedua kemunculan
+<span class="math inline" data-source-tex="\xi_j">\(\xi_j\)</span> sangat mudah membingungkan.   Namun saya rasa orang yang
+beriktikad baik tidak akan tersesat, asalkan label <span class="math inline" data-source-tex="\xi_j">\(\xi_j\)</span> (atau simbol
+apa pun yang digunakan untuk mewakili variabel terkait) dijelaskan secara
+memadai ketika domain <span class="math inline" data-source-tex="\phi">\(\phi\)</span> pertama kali diperkenalkan (dan selalu diingat
+bahwa dalam pendiferensialan parsial, kita tidak hanya menggerakkan satu
+variabel – suatu <span class="math inline" data-source-tex="\xi_j">\(\xi_j\)</span> dalam konteks sekarang – tetapi juga menahan
+tetap daftar variabel lain yang tidak dicantumkan dalam notasi). Saya yakin
+notasi tradisional <span class="math inline" data-source-tex="\pd{}{\xi_j}">\(\pd{}{\xi_j}\)</span> bertahan karena alasan yang kuat, dan
+saya ingin menyambut mereka yang lebih nyaman dengannya daripada dengan
+berbagai alternatif yang pernah diusulkan tetapi tidak pernah berakar.</p>
+</section>
+<section class="source-unit" id="262K" data-source-id="262K"><h2><span class="source-label">262K</span> Meninjau kembali fungsi Cantor </h2>
+<p>Ada manfaatnya memeriksa
+kembali contoh-contoh <a class="xref" href="../134/index.html#134H">134H</a>-<a class="xref" href="../134/index.html#134I">134I</a> dalam terang pertimbangan sekarang.
+Misalkan <span class="math inline" data-source-tex="f:[0,1]\to[0,1]">\(f:[0,1]\to[0,1]\)</span> fungsi Cantor (<a class="xref" href="../134/index.html#134H">134H</a>) dan tetapkan
+<span class="math inline" data-source-tex="g(x)=\bover12(x+f(x))">\(g(x)=\bover12(x+f(x))\)</span> untuk <span class="math inline" data-source-tex="x\in [0,1]">\(x\in [0,1]\)</span>.   Maka
+<span class="math inline" data-source-tex="g:[0,1]\to[0,1]">\(g:[0,1]\to[0,1]\)</span> suatu homeomorfisme (<a class="xref" href="../134/index.html#134I">134I</a>); tetapkan
+<span class="math inline" data-source-tex="\phi=g^{-1}:[0,1]\to[0,1]">\(\phi=g^{-1}:[0,1]\to[0,1]\)</span>.   Kita melihat bahwa jika
+<span class="math inline" data-source-tex="0\le x\le y\le 1">\(0\le x\le y\le 1\)</span> maka <span class="math inline" data-source-tex="g(y)-g(x)\ge\bover12(y-x)">\(g(y)-g(x)\ge\bover12(y-x)\)</span>; secara ekuivalen,
+<span class="math inline" data-source-tex="\phi(y)-\phi(x)\le 2(y-x)">\(\phi(y)-\phi(x)\le 2(y-x)\)</span> setiap kali <span class="math inline" data-source-tex="0\le x\le y\le 1">\(0\le x\le y\le 1\)</span>, sehingga
+<span class="math inline" data-source-tex="\phi">\(\phi\)</span> merupakan fungsi Lipschitz, dan karena itu kontinu mutlak (262Bc).
+Jika <span class="math inline" data-source-tex="D=\{x:\phi&#x27;(x)">\(D=\{x:\phi&#x27;(x)\)</span> terdefinisi<span class="math inline" data-source-tex="\}">\(\}\)</span>, maka <span class="math inline" data-source-tex="[0,1]\setminus D">\([0,1]\setminus D\)</span> terabaikan
+(225Cb), sehingga <span class="math inline" data-source-tex="[0,1]\setminus\phi[D]=\phi[\,[0,1]\setminus D]">\([0,1]\setminus\phi[D]=\phi[\,[0,1]\setminus D]\)</span>
+terabaikan (262Da). Saya mencatat dalam <a class="xref" href="../134/index.html#134I">134I</a> bahwa terdapat fungsi terukur
+<span class="math inline" data-source-tex="h:[0,1]\to\Bbb R">\(h:[0,1]\to\Bbb R\)</span> sedemikian sehingga komposisi <span class="math inline" data-source-tex="h\phi">\(h\phi\)</span> tidak terukur;
+sekarang <span class="math inline" data-source-tex="h(\phi\restr D)=(h\phi)\restr D">\(h(\phi\restr D)=(h\phi)\restr D\)</span> tidak mungkin terukur, meskipun
+<span class="math inline" data-source-tex="\phi\restr D">\(\phi\restr D\)</span> terdiferensialkan.</p>
+</section>
+<section class="source-unit" id="262L" data-source-id="262L"><h2><span class="source-label">262L</span>  </h2>
+<p>Akan berguna jika kita dapat memakai hasil langsung
+berikut.</p>
+<p> </p>
+<p><strong>Lemma</strong> Andaikan <span class="math inline" data-source-tex="D\subseteq\BbbR^r">\(D\subseteq\BbbR^r\)</span> dan <span class="math inline" data-source-tex="x\in\BbbR^r">\(x\in\BbbR^r\)</span>
+sedemikian sehingga
+<span class="math inline" data-source-tex="\lim_{\delta\downarrow 0}
+ \Bover{\mu^*(D\cap B(x,\delta))}{\mu B(x,\delta)}=1">\(\lim_{\delta\downarrow 0}
+ \Bover{\mu^*(D\cap B(x,\delta))}{\mu B(x,\delta)}=1\)</span>.   Maka
+<span class="math inline" data-source-tex="\lim_{z\to\tbf{0}}\Bover{\rho(x+z,D)}{\|z\|}=0">\(\lim_{z\to\tbf{0}}\Bover{\rho(x+z,D)}{\|z\|}=0\)</span>, dengan
+<span class="math inline" data-source-tex="\rho(x+z,D)=\inf_{y\in D}\|x+z-y\|">\(\rho(x+z,D)=\inf_{y\in D}\|x+z-y\|\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Misalkan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Misalkan <span class="math inline" data-source-tex="\delta_0&gt;0">\(\delta_0&gt;0\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu^*(D\cap B(x,\delta))
+&gt;(1-(\Bover{\epsilon}{1+\epsilon})^r)\mu B(x,\delta)">\(\mu^*(D\cap B(x,\delta))
+&gt;(1-(\Bover{\epsilon}{1+\epsilon})^r)\mu B(x,\delta)\)</span></div>
+<p>setiap kali <span class="math inline" data-source-tex="0&lt;\delta\le\delta_0">\(0&lt;\delta\le\delta_0\)</span>. Ambil sebarang <span class="math inline" data-source-tex="z">\(z\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="0&lt;\|z\|\le\delta_0/(1+\epsilon)">\(0&lt;\|z\|\le\delta_0/(1+\epsilon)\)</span>.   ? Andaikan, jika
+mungkin, bahwa <span class="math inline" data-source-tex="\rho(x+z,D)&gt;\epsilon\|z\|">\(\rho(x+z,D)&gt;\epsilon\|z\|\)</span>. Maka
+<span class="math inline" data-source-tex="B(x+z,\epsilon\|z\|)\subseteq B(x,(1+\epsilon)\|z\|)\setminus D">\(B(x+z,\epsilon\|z\|)\subseteq B(x,(1+\epsilon)\|z\|)\setminus D\)</span>,
+sehingga</p>
+<p><span class="math display" data-source-tex="\eqalign{\mu^*(D\cap B(x,(1+\epsilon)\|z\|))
+&amp;\le\mu B(x,(1+\epsilon)\|z\|)-\mu B(x+z,\epsilon\|z\|)\cr
+&amp;=(1-(\Bover{\epsilon}{1+\epsilon})^r)\mu B(x,(1+\epsilon)\|z\|),\cr}">\[\begin{aligned}\mu^*(D\cap B(x,(1+\epsilon)\|z\|))
+&amp;\le\mu B(x,(1+\epsilon)\|z\|)-\mu B(x+z,\epsilon\|z\|)\\
+&amp;=(1-(\Bover{\epsilon}{1+\epsilon})^r)\mu B(x,(1+\epsilon)\|z\|),\\\end{aligned}\]</span></p>
+<p>yang mustahil, sebab <span class="math inline" data-source-tex="(1+\epsilon)\|z\|\le\delta_0">\((1+\epsilon)\|z\|\le\delta_0\)</span>.
+! Jadi <span class="math inline" data-source-tex="\rho(x+z,D)\le\epsilon\|z\|">\(\rho(x+z,D)\le\epsilon\|z\|\)</span>. Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang,
+ini membuktikan hasil tersebut.</p></aside>
+<p> </p>
+<p><strong>Catatan</strong> Ada istilah untuk hal ini; lihat <a class="xref" href="../261/index.html#261Yg">261Yg</a>.</p>
+</section>
+<section class="source-unit" id="262M" data-source-id="262M"><h2><span class="source-label">262M</span>  </h2>
+<p>Sekarang saya sampai pada hasil pertama yang
+menghubungkan fungsi Lipschitz dengan fungsi terdiferensialkan. Saya
+mendekatinya melalui suatu lemma penting yang akan menjadi landasan §<a class="xref" href="../263/index.html#263">263</a>.</p>
+<p> </p>
+<p><strong>Lemma</strong> Misalkan <span class="math inline" data-source-tex="\phi">\(\phi\)</span> suatu fungsi dari himpunan bagian
+<span class="math inline" data-source-tex="D">\(D\)</span> dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> ke <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span> yang terdiferensialkan di setiap titik
+domainnya. Untuk setiap <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span>, misalkan <span class="math inline" data-source-tex="T(x)">\(T(x)\)</span> suatu turunan dari
+<span class="math inline" data-source-tex="\phi">\(\phi\)</span>. Misalkan <span class="math inline" data-source-tex="M_{sr}">\(M_{sr}\)</span> himpunan matriks <span class="math inline" data-source-tex="s\times r">\(s\times r\)</span> dan
+<span class="math inline" data-source-tex="\zeta:A\to\ooint{0,\infty}">\(\zeta:A\to\ooint{0,\infty}\)</span> suatu fungsi positif ketat, dengan
+<span class="math inline" data-source-tex="A\subseteq M_{sr}">\(A\subseteq M_{sr}\)</span> suatu himpunan takkosong yang memuat <span class="math inline" data-source-tex="T(x)">\(T(x)\)</span> untuk
+setiap <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span>. Maka kita dapat menemukan barisan
+<span class="math inline" data-source-tex="\sequencen{D_n}">\(\sequencen{D_n}\)</span>, <span class="math inline" data-source-tex="\sequencen{T_n}">\(\sequencen{T_n}\)</span> sedemikian sehingga</p>
+<p>(i) <span class="math inline" data-source-tex="\sequencen{D_n}">\(\sequencen{D_n}\)</span> adalah partisi <span class="math inline" data-source-tex="D">\(D\)</span> menjadi himpunan-himpunan yang
+terukur relatif dalam <span class="math inline" data-source-tex="D">\(D\)</span>, yaitu irisan <span class="math inline" data-source-tex="D">\(D\)</span> dengan himpunan bagian
+terukur dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>;</p>
+<p>(ii) <span class="math inline" data-source-tex="T_n\in A">\(T_n\in A\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>;</p>
+<p>(iii) <span class="math inline" data-source-tex="\|\phi(x)-\phi(y)-T_n(x-y)\|\le\zeta(T_n)\|x-y\|">\(\|\phi(x)-\phi(y)-T_n(x-y)\|\le\zeta(T_n)\|x-y\|\)</span> untuk setiap
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> dan <span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="y\in D_n">\(y\in D_n\)</span>;</p>
+<p>(iv) <span class="math inline" data-source-tex="\|T(x)-T_n\|\le\zeta(T_n)">\(\|T(x)-T_n\|\le\zeta(T_n)\)</span> untuk setiap <span class="math inline" data-source-tex="x\in D_n">\(x\in D_n\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Langkah pertama ialah mencatat bahwa terdapat barisan
+<span class="math inline" data-source-tex="\sequencen{S_n}">\(\sequencen{S_n}\)</span> dalam <span class="math inline" data-source-tex="A">\(A\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="A
+\subseteq\bigcup_{n\in\Bbb N}\{T:T\in M_{sr},\,\|T-S_n\|&lt;\zeta(S_n)\}">\(A
+\subseteq\bigcup_{n\in\Bbb N}\{T:T\in M_{sr},\,\|T-S_n\|&lt;\zeta(S_n)\}\)</span>.</div>
+<p>Bukti. (Tentu saja ini merupakan hasil baku mengenai ruang metrik
+terpisahkan.) Tuliskan <span class="math inline" data-source-tex="Q">\(Q\)</span> untuk himpunan matriks dalam <span class="math inline" data-source-tex="M_{sr}">\(M_{sr}\)</span> dengan
+koefisien rasional; maka terdapat bijeksi alami antara <span class="math inline" data-source-tex="Q">\(Q\)</span> dan
+<span class="math inline" data-source-tex="\Bbb Q^{sr}">\(\Bbb Q^{sr}\)</span>, sehingga <span class="math inline" data-source-tex="Q">\(Q\)</span> dan <span class="math inline" data-source-tex="Q\times\Bbb N">\(Q\times\Bbb N\)</span> terhitung. Daftarkan
+<span class="math inline" data-source-tex="Q\times\Bbb N">\(Q\times\Bbb N\)</span> sebagai <span class="math inline" data-source-tex="\sequencen{(R_n,k_n)}">\(\sequencen{(R_n,k_n)}\)</span>. Untuk setiap
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, pilih <span class="math inline" data-source-tex="S_n\in A">\(S_n\in A\)</span> menurut aturan</p>
+<p>   — jika terdapat <span class="math inline" data-source-tex="S\in A">\(S\in A\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\{T:\|T-R_n\|\le 2^{-k_n}\}\subseteq\{T:\|T-S\|&lt;\zeta(S)\}">\(\{T:\|T-R_n\|\le 2^{-k_n}\}\subseteq\{T:\|T-S\|&lt;\zeta(S)\}\)</span>,
+ambil <span class="math inline" data-source-tex="S">\(S\)</span> seperti itu sebagai <span class="math inline" data-source-tex="S_n">\(S_n\)</span>;</p>
+<p>   — jika tidak, ambil <span class="math inline" data-source-tex="S_n">\(S_n\)</span> sebagai sebarang anggota <span class="math inline" data-source-tex="A">\(A\)</span>.</p>
+<p>Saya nyatakan bahwa ini berhasil. Misalkan <span class="math inline" data-source-tex="S\in A">\(S\in A\)</span>. Maka
+<span class="math inline" data-source-tex="\zeta(S)&gt;0">\(\zeta(S)&gt;0\)</span>; ambil <span class="math inline" data-source-tex="k\in\Bbb N">\(k\in\Bbb N\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="2^{-k}&lt;\zeta(S)">\(2^{-k}&lt;\zeta(S)\)</span>. Ambil <span class="math inline" data-source-tex="R^*\in Q">\(R^*\in Q\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\|R^*-S\|&lt;\min(\zeta(S)-2^{-k},2^{-k})">\(\|R^*-S\|&lt;\min(\zeta(S)-2^{-k},2^{-k})\)</span>; ini mungkin karena <span class="math inline" data-source-tex="\|R-S\|">\(\|R-S\|\)</span>
+akan kecil setiap kali semua koefisien <span class="math inline" data-source-tex="R">\(R\)</span> cukup dekat dengan koefisien
+<span class="math inline" data-source-tex="S">\(S\)</span> yang bersesuaian (<a class="xref" href="#262Ha">262Ha</a>), dan kita dapat memilih bilangan rasional
+untuk mencapainya. Misalkan <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> sedemikian sehingga <span class="math inline" data-source-tex="R^*=R_n">\(R^*=R_n\)</span>
+dan <span class="math inline" data-source-tex="k=k_n">\(k=k_n\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{T:\|T-R_n\|\le 2^{-k_n}\}
+\subseteq\{T:\|T-S\|&lt;\zeta(S)\}">\(\{T:\|T-R_n\|\le 2^{-k_n}\}
+\subseteq\{T:\|T-S\|&lt;\zeta(S)\}\)</span></div>
+<p>(sebab <span class="math inline" data-source-tex="\|T-S\|\le\|T-R_n\|+\|R_n-S\|">\(\|T-S\|\le\|T-R_n\|+\|R_n-S\|\)</span>), sehingga kita pasti
+memilih <span class="math inline" data-source-tex="S_n">\(S_n\)</span> menurut bagian pertama aturan di atas, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="S\in\{T:\|T-R_n\|\le 2^{-k_n}\}
+\subseteq\{T:\|T-S_n\|&lt;\zeta(S_n)\}">\(S\in\{T:\|T-R_n\|\le 2^{-k_n}\}
+\subseteq\{T:\|T-S_n\|&lt;\zeta(S_n)\}\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="S">\(S\)</span> sebarang, ini membuktikan hasil tersebut. ∎</p>
+<p> </p>
+<p><strong>(b)</strong> Daftarkan <span class="math inline" data-source-tex="\Bbb Q^r\times\Bbb Q^r\times\Bbb N">\(\Bbb Q^r\times\Bbb Q^r\times\Bbb N\)</span> sebagai
+<span class="math inline" data-source-tex="\sequencen{(q_n,q&#x27;_n,m_n)}">\(\sequencen{(q_n,q&#x27;_n,m_n)}\)</span>. Untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, tetapkan</p>
+<p><span class="math display" data-source-tex="\eqalign{H_n&amp;=\{x:x\in[q_n,q&#x27;_n]\cap D,\,
+\|\phi(y)-\phi(x)-S_{m_n}(y-x)\|\le\zeta(S_{m_n})\|y-x\|\cr
+&amp;\mskip370mu
+    \text{untuk setiap }y\in[q_n,q&#x27;_n]\cap D\}\cr
+&amp;=[q_n,q&#x27;_n]\cap D\cap\bigcap_{y\in[q_n,q&#x27;_n]\cap D}
+       \{x:x\in D,\cr
+&amp;\mskip270mu
+    \|\phi(y)-\phi(x)-S_{m_n}(y-x)\|\le\zeta(S_{m_n})\|y-x\|\}.\cr}">\[\begin{aligned}H_n&amp;=\{x:x\in[q_n,q&#x27;_n]\cap D,\,
+\|\phi(y)-\phi(x)-S_{m_n}(y-x)\|\le\zeta(S_{m_n})\|y-x\|\\
+&amp;\mskip370mu
+    \text{untuk setiap }y\in[q_n,q&#x27;_n]\cap D\}\\
+&amp;=[q_n,q&#x27;_n]\cap D\cap\bigcap_{y\in[q_n,q&#x27;_n]\cap D}
+       \{x:x\in D,\\
+&amp;\mskip270mu
+    \|\phi(y)-\phi(x)-S_{m_n}(y-x)\|\le\zeta(S_{m_n})\|y-x\|\}.\\\end{aligned}\]</span></p>
+<p>Karena <span class="math inline" data-source-tex="\phi">\(\phi\)</span> kontinu, <span class="math inline" data-source-tex="H_n=D\cap\overline{H}_n">\(H_n=D\cap\overline{H}_n\)</span>, dengan
+<span class="math inline" data-source-tex="\overline{H}_n">\(\overline{H}_n\)</span> menyatakan penutupan <span class="math inline" data-source-tex="H_n">\(H_n\)</span>, sehingga <span class="math inline" data-source-tex="H_n">\(H_n\)</span> terukur
+relatif dalam <span class="math inline" data-source-tex="D">\(D\)</span>. Perhatikan bahwa jika <span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="y\in H_n">\(y\in H_n\)</span>, maka
+<span class="math inline" data-source-tex="y\in D\cap[q_n,q&#x27;_n]">\(y\in D\cap[q_n,q&#x27;_n]\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|\phi(y)-\phi(x)-S_{m_n}(y-x)\|\le\zeta(S_{m_n})\|y-x\|">\(\|\phi(y)-\phi(x)-S_{m_n}(y-x)\|\le\zeta(S_{m_n})\|y-x\|\)</span>.</div>
+<p>Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="H_n&#x27;=\{x:x\in H_n,\,\|T(x)-S_{m_n}\|\le\zeta(S_{m_n})\}">\(H_n&#x27;=\{x:x\in H_n,\,\|T(x)-S_{m_n}\|\le\zeta(S_{m_n})\}\)</span>.</div>
+<p> </p>
+<p><strong>(c)</strong> <span class="math inline" data-source-tex="D=\bigcup_{n\in\Bbb N}H&#x27;_n">\(D=\bigcup_{n\in\Bbb N}H&#x27;_n\)</span>.   Bukti. Misalkan <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span>.
+Maka <span class="math inline" data-source-tex="T(x)\in A">\(T(x)\in A\)</span>, sehingga terdapat <span class="math inline" data-source-tex="k\in\Bbb N">\(k\in\Bbb N\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\|T(x)-S_k\|&lt;\zeta(S_k)">\(\|T(x)-S_k\|&lt;\zeta(S_k)\)</span>. Misalkan <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|\phi(y)-\phi(x)-T(x)(y-x)\|
+\le(\zeta(S_k)-\|T(x)-S_k\|)\|x-y\|">\(\|\phi(y)-\phi(x)-T(x)(y-x)\|
+\le(\zeta(S_k)-\|T(x)-S_k\|)\|x-y\|\)</span></div>
+<p>setiap kali <span class="math inline" data-source-tex="y\in D">\(y\in D\)</span> dan <span class="math inline" data-source-tex="\|y-x\|\le\delta">\(\|y-x\|\le\delta\)</span>.   Maka</p>
+<p><span class="math display" data-source-tex="\eqalign{\|\phi(y)-\phi(x)-S_k(y-x)\|
+&amp;\le(\zeta(S_k)-\|T(x)-S_k\|)\|x-y\|+\|T(x)-S_k\|\|x-y\|\cr
+&amp;\le\zeta(S_k)\|x-y\|\cr}">\[\begin{aligned}\|\phi(y)-\phi(x)-S_k(y-x)\|
+&amp;\le(\zeta(S_k)-\|T(x)-S_k\|)\|x-y\|+\|T(x)-S_k\|\|x-y\|\\
+&amp;\le\zeta(S_k)\|x-y\|\\\end{aligned}\]</span></p>
+<p>setiap kali <span class="math inline" data-source-tex="y\in D\cap B(x,\delta)">\(y\in D\cap B(x,\delta)\)</span>. Misalkan <span class="math inline" data-source-tex="q">\(q\)</span>,
+<span class="math inline" data-source-tex="q&#x27;\in\Bbb Q^r">\(q&#x27;\in\Bbb Q^r\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="x\in[q,q&#x27;]\subseteq B(x,\delta)">\(x\in[q,q&#x27;]\subseteq B(x,\delta)\)</span>. Misalkan <span class="math inline" data-source-tex="n">\(n\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="q=q_n">\(q=q_n\)</span>, <span class="math inline" data-source-tex="q&#x27;=q&#x27;_n">\(q&#x27;=q&#x27;_n\)</span> dan <span class="math inline" data-source-tex="k=m_n">\(k=m_n\)</span>. Maka <span class="math inline" data-source-tex="x\in H&#x27;_n">\(x\in H&#x27;_n\)</span>. ∎</p>
+<p> </p>
+<p><strong>(d)</strong> Tuliskan</p>
+<div class="centerline"><span class="math inline" data-source-tex="C_n=\{x:x\in H_n,\,\lim_{\delta\downarrow 0}
+\Bover{\mu^*(H_n\cap B(x,\delta))}{\mu B(x,\delta)}=1\}">\(C_n=\{x:x\in H_n,\,\lim_{\delta\downarrow 0}
+\Bover{\mu^*(H_n\cap B(x,\delta))}{\mu B(x,\delta)}=1\}\)</span>.</div>
+<p>Maka <span class="math inline" data-source-tex="C_n\subseteq H&#x27;_n">\(C_n\subseteq H&#x27;_n\)</span>.</p>
+<p> </p>
+<p>Bukti. <strong>(i)</strong> Ambil <span class="math inline" data-source-tex="x\in C_n">\(x\in C_n\)</span>, dan tetapkan
+<span class="math inline" data-source-tex="\tilde T=T(x)-S_{m_n}">\(\tilde T=T(x)-S_{m_n}\)</span>. Saya harus menunjukkan bahwa
+<span class="math inline" data-source-tex="\|\tilde T\|\le\zeta(S_{m_n})">\(\|\tilde T\|\le\zeta(S_{m_n})\)</span>. Ambil <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Misalkan
+<span class="math inline" data-source-tex="\delta_0&gt;0">\(\delta_0&gt;0\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|\phi(y)-\phi(x)-T(x)(y-x)\|\le\epsilon\|y-x\|">\(\|\phi(y)-\phi(x)-T(x)(y-x)\|\le\epsilon\|y-x\|\)</span></div>
+<p>setiap kali <span class="math inline" data-source-tex="y\in D">\(y\in D\)</span> dan <span class="math inline" data-source-tex="\|y-x\|\le\delta_0">\(\|y-x\|\le\delta_0\)</span>.   Karena</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|\phi(y)-\phi(x)-S_{m_n}(y-x)\|\le\zeta(S_{m_n})\|y-x\|">\(\|\phi(y)-\phi(x)-S_{m_n}(y-x)\|\le\zeta(S_{m_n})\|y-x\|\)</span></div>
+<p>setiap kali <span class="math inline" data-source-tex="y\in H_n">\(y\in H_n\)</span>, kita mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|\tilde T(y-x)\|\le(\epsilon+\zeta(S_{m_n}))\|y-x\|">\(\|\tilde T(y-x)\|\le(\epsilon+\zeta(S_{m_n}))\|y-x\|\)</span></div>
+<p>setiap kali <span class="math inline" data-source-tex="y\in H_n">\(y\in H_n\)</span> dan <span class="math inline" data-source-tex="\|y-x\|\le\delta_0">\(\|y-x\|\le\delta_0\)</span>.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Berdasarkan <a class="xref" href="#262L">262L</a>, terdapat <span class="math inline" data-source-tex="\delta_1&gt;0">\(\delta_1&gt;0\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="(1+2\epsilon)\delta_1\le\delta_0">\((1+2\epsilon)\delta_1\le\delta_0\)</span> dan
+<span class="math inline" data-source-tex="\rho(x+z,H_n)\le\epsilon\|z\|">\(\rho(x+z,H_n)\le\epsilon\|z\|\)</span> setiap kali
+<span class="math inline" data-source-tex="0&lt;\|z\|\le\delta_1">\(0&lt;\|z\|\le\delta_1\)</span>. Jadi jika <span class="math inline" data-source-tex="\|z\|\le\delta_1">\(\|z\|\le\delta_1\)</span>, terdapat <span class="math inline" data-source-tex="y\in H_n">\(y\in H_n\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\|x+z-y\|\le 2\epsilon\|z\|">\(\|x+z-y\|\le 2\epsilon\|z\|\)</span>. (Jika <span class="math inline" data-source-tex="z=0">\(z=0\)</span>, kita
+dapat mengambil <span class="math inline" data-source-tex="y=x">\(y=x\)</span>.) Sekarang
+<span class="math inline" data-source-tex="\|x-y\|\le (1+2\epsilon)\|z\|\le\delta_0">\(\|x-y\|\le (1+2\epsilon)\|z\|\le\delta_0\)</span>, sehingga</p>
+<p><span class="math display" data-source-tex="\eqalign{\|\tilde Tz\|
+&amp;\le\|\tilde T(y-x)\|+\|\tilde T(x+z-y)\|\cr
+&amp;\le(\epsilon+\zeta(S_{m_n}))\|y-x\|+\|\tilde T\|\|x+z-y\|\cr
+&amp;\le(\epsilon+\zeta(S_{m_n}))\|z\|
+    +(\epsilon+\zeta(S_{m_n})+\|\tilde T\|)\|x+z-y\|\cr
+&amp;\le(\epsilon+\zeta(S_{m_n})+2\epsilon^2+2\epsilon\zeta(S_{m_n})
+    +2\epsilon\|\tilde T\|)\|z\|.\cr}">\[\begin{aligned}\|\tilde Tz\|
+&amp;\le\|\tilde T(y-x)\|+\|\tilde T(x+z-y)\|\\
+&amp;\le(\epsilon+\zeta(S_{m_n}))\|y-x\|+\|\tilde T\|\|x+z-y\|\\
+&amp;\le(\epsilon+\zeta(S_{m_n}))\|z\|
+    +(\epsilon+\zeta(S_{m_n})+\|\tilde T\|)\|x+z-y\|\\
+&amp;\le(\epsilon+\zeta(S_{m_n})+2\epsilon^2+2\epsilon\zeta(S_{m_n})
+    +2\epsilon\|\tilde T\|)\|z\|.\\\end{aligned}\]</span></p>
+<p>Ini berlaku setiap kali <span class="math inline" data-source-tex="0&lt;\|z\|\le\delta_1">\(0&lt;\|z\|\le\delta_1\)</span>.
+Namun dengan mengalikan ketaksamaan ini dengan skalar positif yang sesuai,
+kita melihat bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|\tilde Tz\|
+\le\bigl(\epsilon+\zeta(S_{m_n})+2\epsilon^2+2\epsilon\zeta(S_{m_n})
++2\epsilon\|\tilde T\|\bigr)\|z\|">\(\|\tilde Tz\|
+\le\bigl(\epsilon+\zeta(S_{m_n})+2\epsilon^2+2\epsilon\zeta(S_{m_n})
++2\epsilon\|\tilde T\|\bigr)\|z\|\)</span></div>
+<p>untuk semua <span class="math inline" data-source-tex="z\in\BbbR^r">\(z\in\BbbR^r\)</span>, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|\tilde T\|
+\le\epsilon+\zeta(S_{m_n})+2\epsilon^2+2\epsilon\zeta(S_{m_n})
+  +2\epsilon\|\tilde T\|">\(\|\tilde T\|
+\le\epsilon+\zeta(S_{m_n})+2\epsilon^2+2\epsilon\zeta(S_{m_n})
+  +2\epsilon\|\tilde T\|\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang,
+<span class="math inline" data-source-tex="\|\tilde T\|\le\zeta(S_{m_n})">\(\|\tilde T\|\le\zeta(S_{m_n})\)</span>, sebagaimana diklaim. ∎</p>
+<p> </p>
+<p><strong>(e)</strong> Berdasarkan 261Da, <span class="math inline" data-source-tex="H_n\setminus C_n">\(H_n\setminus C_n\)</span> terabaikan untuk setiap
+<span class="math inline" data-source-tex="n">\(n\)</span>, sehingga <span class="math inline" data-source-tex="H_n\setminus H&#x27;_n">\(H_n\setminus H&#x27;_n\)</span> terabaikan, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="H&#x27;_n=D\cap(\overline{H}_n\setminus(H_n\setminus H&#x27;_n))">\(H&#x27;_n=D\cap(\overline{H}_n\setminus(H_n\setminus H&#x27;_n))\)</span></div>
+<p>terukur relatif dalam <span class="math inline" data-source-tex="D">\(D\)</span>.   Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="D_n=H&#x27;_n\setminus\bigcup_{k&lt;n}H&#x27;_k">\(D_n=H&#x27;_n\setminus\bigcup_{k&lt;n}H&#x27;_k\)</span>,
+  <span class="math inline" data-source-tex="T_n=S_{m_n}">\(T_n=S_{m_n}\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>; barisan-barisan ini memenuhi syarat.</p></aside>
+</section>
+<section class="source-unit" id="262N" data-source-id="262N"><h2><span class="source-label">262N</span> Akibat </h2>
+<p>Misalkan <span class="math inline" data-source-tex="\phi">\(\phi\)</span> suatu fungsi dari himpunan bagian
+<span class="math inline" data-source-tex="D">\(D\)</span> dari <span class="math inline" data-source-tex="\Bbb R^r">\(\Bbb R^r\)</span> ke <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>, dan andaikan <span class="math inline" data-source-tex="\phi">\(\phi\)</span> terdiferensialkan
+relatif terhadap domainnya di setiap titik <span class="math inline" data-source-tex="D">\(D\)</span>. Maka <span class="math inline" data-source-tex="D">\(D\)</span> dapat dinyatakan
+sebagai gabungan barisan saling lepas <span class="math inline" data-source-tex="\sequencen{D_n}">\(\sequencen{D_n}\)</span> dari himpunan
+bagian <span class="math inline" data-source-tex="D">\(D\)</span> yang terukur relatif, sedemikian sehingga <span class="math inline" data-source-tex="\phi\restr D_n">\(\phi\restr D_n\)</span>
+Lipschitz untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Dalam <a class="xref" href="#262M">262M</a>, ambil <span class="math inline" data-source-tex="\zeta(T)=1">\(\zeta(T)=1\)</span> untuk setiap <span class="math inline" data-source-tex="T\in A=M_{sr}">\(T\in A=M_{sr}\)</span>.
+Jika <span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="y\in D_n">\(y\in D_n\)</span>, maka</p>
+<p><span class="math display" data-source-tex="\eqalign{\|\phi(x)-\phi(y)\|
+&amp;\le\|\phi(x)-\phi(y)-T_n(x-y)\|+\|T_n(x-y)\|\cr
+&amp;\le\|x-y\|+\|T_n\|\|x-y\|,\cr}">\[\begin{aligned}\|\phi(x)-\phi(y)\|
+&amp;\le\|\phi(x)-\phi(y)-T_n(x-y)\|+\|T_n(x-y)\|\\
+&amp;\le\|x-y\|+\|T_n\|\|x-y\|,\\\end{aligned}\]</span></p>
+<p>sehingga <span class="math inline" data-source-tex="\phi\restr D_n">\(\phi\restr D_n\)</span> <span class="math inline" data-source-tex="(1+\|T_n\|)">\((1+\|T_n\|)\)</span>-Lipschitz.</p></aside>
+</section>
+<section class="source-unit" id="262O" data-source-id="262O"><h2><span class="source-label">262O</span> Akibat </h2>
+<p>Andaikan <span class="math inline" data-source-tex="\phi">\(\phi\)</span> suatu fungsi injektif dari himpunan
+bagian terukur <span class="math inline" data-source-tex="D">\(D\)</span> dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> ke <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dan bahwa <span class="math inline" data-source-tex="\phi">\(\phi\)</span>
+terdiferensialkan relatif terhadap domainnya di setiap titik <span class="math inline" data-source-tex="D">\(D\)</span>.</p>
+<p>(a) Jika <span class="math inline" data-source-tex="A\subseteq D">\(A\subseteq D\)</span> terabaikan, maka <span class="math inline" data-source-tex="\phi[A]">\(\phi[A]\)</span> terabaikan.</p>
+<p>(b) Jika <span class="math inline" data-source-tex="E\subseteq D">\(E\subseteq D\)</span> terukur, maka <span class="math inline" data-source-tex="\phi[E]">\(\phi[E]\)</span> terukur.</p>
+<p>(c) Jika <span class="math inline" data-source-tex="D">\(D\)</span> terukur dan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi terukur yang didefinisikan pada
+suatu himpunan bagian <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, maka <span class="math inline" data-source-tex="f\phi^{-1}">\(f\phi^{-1}\)</span> terukur.</p>
+<p>(d) Jika <span class="math inline" data-source-tex="H\subseteq\BbbR^r">\(H\subseteq\BbbR^r\)</span> dan <span class="math inline" data-source-tex="\phi^{-1}">\(\phi^{-1}\)</span> terdefinisi hampir di
+mana-mana dalam <span class="math inline" data-source-tex="H">\(H\)</span>, dan jika <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi yang terdefinisi hampir di
+mana-mana dalam <span class="math inline" data-source-tex="\Bbb R^r">\(\Bbb R^r\)</span>, maka <span class="math inline" data-source-tex="f\phi^{-1}">\(f\phi^{-1}\)</span> terdefinisi hampir di
+mana-mana dalam <span class="math inline" data-source-tex="H">\(H\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Ambil barisan <span class="math inline" data-source-tex="\sequencen{D_n}">\(\sequencen{D_n}\)</span> seperti dalam <a class="xref" href="#262N">262N</a>, dan terapkan
+<a class="xref" href="#262E">262E</a> pada <span class="math inline" data-source-tex="\phi\restr D_n">\(\phi\restr D_n\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="262P" data-source-id="262P"><h2><span class="source-label">262P</span> Akibat </h2>
+<p>Misalkan <span class="math inline" data-source-tex="\phi">\(\phi\)</span> suatu fungsi dari suatu himpunan
+bagian <span class="math inline" data-source-tex="D">\(D\)</span> dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> ke <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>, dan andaikan bahwa <span class="math inline" data-source-tex="\phi">\(\phi\)</span>
+terdiferensialkan relatif terhadap domainnya, dengan suatu turunan
+<span class="math inline" data-source-tex="T(x)">\(T(x)\)</span>, pada setiap titik <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span>. Maka fungsi <span class="math inline" data-source-tex="x\mapsto T(x)">\(x\mapsto T(x)\)</span> terukur dalam
+arti bahwa <span class="math inline" data-source-tex="\tau_{ij}:D\to\Bbb R">\(\tau_{ij}:D\to\Bbb R\)</span> terukur untuk semua <span class="math inline" data-source-tex="i\le s">\(i\le s\)</span> dan
+<span class="math inline" data-source-tex="j\le r">\(j\le r\)</span>, dengan <span class="math inline" data-source-tex="\tau_{ij}(x)">\(\tau_{ij}(x)\)</span> koefisien ke-<span class="math inline" data-source-tex="(i,j)">\((i,j)\)</span> dari matriks <span class="math inline" data-source-tex="T(x)">\(T(x)\)</span>
+untuk semua <span class="math inline" data-source-tex="i">\(i\)</span>, <span class="math inline" data-source-tex="j">\(j\)</span>, dan <span class="math inline" data-source-tex="x">\(x\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Untuk setiap <span class="math inline" data-source-tex="k\in\Bbb N">\(k\in\Bbb N\)</span>, terapkan <a class="xref" href="#262M">262M</a> dengan
+<span class="math inline" data-source-tex="\zeta(T)=2^{-k}">\(\zeta(T)=2^{-k}\)</span> untuk setiap <span class="math inline" data-source-tex="T\in A=M_{sr}">\(T\in A=M_{sr}\)</span>, sehingga diperoleh
+barisan <span class="math inline" data-source-tex="\sequencen{D_{kn}}">\(\sequencen{D_{kn}}\)</span> dari himpunan bagian <span class="math inline" data-source-tex="D">\(D\)</span> yang terukur
+relatif, dan <span class="math inline" data-source-tex="\sequencen{T_{kn}}">\(\sequencen{T_{kn}}\)</span> dalam <span class="math inline" data-source-tex="M_{sr}">\(M_{sr}\)</span>. Misalkan
+<span class="math inline" data-source-tex="\tau^{(kn)}_{ij}">\(\tau^{(kn)}_{ij}\)</span> koefisien ke-<span class="math inline" data-source-tex="(i,j)">\((i,j)\)</span> dari <span class="math inline" data-source-tex="T_{kn}">\(T_{kn}\)</span>. Maka kita
+mempunyai fungsi <span class="math inline" data-source-tex="f_{ijk}:D\to\Bbb R">\(f_{ijk}:D\to\Bbb R\)</span> yang didefinisikan dengan menetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="f_{ijk}(x)=\tau^{(kn)}_{ij}">\(f_{ijk}(x)=\tau^{(kn)}_{ij}\)</span> jika <span class="math inline" data-source-tex="x\in D_{kn}">\(x\in D_{kn}\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="D_{kn}">\(D_{kn}\)</span> terukur relatif, <span class="math inline" data-source-tex="f_{ijk}">\(f_{ijk}\)</span> merupakan fungsi
+terukur.   Untuk <span class="math inline" data-source-tex="x\in D_{kn}">\(x\in D_{kn}\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\tau_{ij}(x)-f_{ijk}(x)|\le\|T(x)-T_{kn}\|\le 2^{-k}">\(|\tau_{ij}(x)-f_{ijk}(x)|\le\|T(x)-T_{kn}\|\le 2^{-k}\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="|\tau_{ij}(x)-f_{ijk}(x)|\le 2^{-k}">\(|\tau_{ij}(x)-f_{ijk}(x)|\le 2^{-k}\)</span> untuk setiap
+<span class="math inline" data-source-tex="x\in D">\(x\in D\)</span>, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\tau_{ij}=\lim_{k\to\infty}f_{ijk}">\(\tau_{ij}=\lim_{k\to\infty}f_{ijk}\)</span></div>
+<p>terukur, sebagaimana diklaim.</p></aside>
+</section>
+<section class="source-unit" id="262Q" data-source-id="262Q"><h2><span class="source-label">262Q</span>  </h2>
+<p>Ini mengakhiri bagian yang esensial bagi sisa bab
+ini. Namun menurut saya, hasil-hasil utama §<a class="xref" href="../263/index.html#263">263</a> akan lebih mudah dipahami
+jika Anda mengetahui fakta bahwa setiap fungsi Lipschitz terdiferensialkan
+(relatif terhadap domainnya) hampir di mana-mana dalam domainnya. Saya
+menyediakan beberapa halaman berikut untuk membuktikan fakta ini, yang
+selain menarik pada dirinya sendiri juga merupakan latihan yang berguna.</p>
+<p> </p>
+<p><strong>Teorema Rademacher</strong> Misalkan <span class="math inline" data-source-tex="\phi">\(\phi\)</span> suatu fungsi Lipschitz
+dari suatu himpunan bagian <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> ke <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>. Maka <span class="math inline" data-source-tex="\phi">\(\phi\)</span>
+terdiferensialkan relatif terhadap domainnya hampir di mana-mana dalam
+domainnya.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Berdasarkan 262Ba dan 262Ib, cukup menangani kasus
+<span class="math inline" data-source-tex="s=1">\(s=1\)</span>. Berdasarkan 262Bb, terdapat fungsi Lipschitz
+<span class="math inline" data-source-tex="\tilde\phi:\BbbR^r\to\Bbb R">\(\tilde\phi:\BbbR^r\to\Bbb R\)</span> yang memperluas <span class="math inline" data-source-tex="\phi">\(\phi\)</span>; kini <span class="math inline" data-source-tex="\phi">\(\phi\)</span>
+terdiferensialkan relatif terhadap domainnya di setiap titik <span class="math inline" data-source-tex="\dom\phi">\(\dom\phi\)</span>
+tempat <span class="math inline" data-source-tex="\tilde\phi">\(\tilde\phi\)</span> terdiferensialkan, sehingga cukup jika saya dapat
+menunjukkan bahwa <span class="math inline" data-source-tex="\tilde\phi">\(\tilde\phi\)</span> terdiferensialkan hampir di mana-mana.
+Agar notasinya lebih nyaman dibaca, saya akan mengandaikan bahwa <span class="math inline" data-source-tex="\phi">\(\phi\)</span>
+sendiri terdefinisi di seluruh <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>. Misalkan <span class="math inline" data-source-tex="\gamma">\(\gamma\)</span> suatu
+konstanta Lipschitz bagi <span class="math inline" data-source-tex="\phi">\(\phi\)</span>.</p>
+<p>Bukti berjalan dengan induksi pada <span class="math inline" data-source-tex="r">\(r\)</span>. Jika <span class="math inline" data-source-tex="r=1">\(r=1\)</span>, kita mempunyai fungsi
+Lipschitz <span class="math inline" data-source-tex="\phi:\Bbb R\to\Bbb R">\(\phi:\Bbb R\to\Bbb R\)</span>; kini <span class="math inline" data-source-tex="\phi">\(\phi\)</span> kontinu mutlak dalam setiap
+interval terbatas (262Bc), dan karena itu terdiferensialkan hampir di
+mana-mana (225Cb). Dengan demikian induksi dimulai. Sisa bukti ditujukan
+pada langkah induktif menuju <span class="math inline" data-source-tex="r&gt;1">\(r&gt;1\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Langkah pertama ialah menunjukkan bahwa semua turunan parsial
+<span class="math inline" data-source-tex="\pd{\phi}{\xi_j}">\(\pd{\phi}{\xi_j}\)</span> terdefinisi hampir di mana-mana dan terukur Borel.
+Bukti. Ambil <span class="math inline" data-source-tex="j\le r">\(j\le r\)</span>. Untuk <span class="math inline" data-source-tex="q\in\Bbb Q\setminus\{0\}">\(q\in\Bbb Q\setminus\{0\}\)</span> tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Delta_q(x)=\Bover{1}{q}(\phi(x+qe_j)-\phi(x))">\(\Delta_q(x)=\Bover{1}{q}(\phi(x+qe_j)-\phi(x))\)</span>,</div>
+<p>dengan menuliskan <span class="math inline" data-source-tex="e_j">\(e_j\)</span> untuk vektor satuan ke-<span class="math inline" data-source-tex="j">\(j\)</span> dari
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>. Karena <span class="math inline" data-source-tex="\phi">\(\phi\)</span> kontinu, <span class="math inline" data-source-tex="\Delta_q">\(\Delta_q\)</span> juga kontinu, sehingga
+<span class="math inline" data-source-tex="\Delta_q">\(\Delta_q\)</span> merupakan fungsi terukur Borel untuk setiap <span class="math inline" data-source-tex="q">\(q\)</span>. Selanjutnya,
+untuk sebarang <span class="math inline" data-source-tex="x\in\Bbb R^r">\(x\in\Bbb R^r\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="D^+(x)=\limsup_{\delta\to 0}\Bover1{\delta}
+(\phi(x+\delta e_j)-\phi(x))
+=\lim_{n\to\infty}\sup_{q\in\Bbb Q,0&lt;|q|\le 2^{-n}}\Delta_q(x)">\(D^+(x)=\limsup_{\delta\to 0}\Bover1{\delta}
+(\phi(x+\delta e_j)-\phi(x))
+=\lim_{n\to\infty}\sup_{q\in\Bbb Q,0&lt;|q|\le 2^{-n}}\Delta_q(x)\)</span>,</div>
+<p>sehingga himpunan tempat <span class="math inline" data-source-tex="D^+(x)">\(D^+(x)\)</span> terdefinisi dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>
+adalah himpunan Borel dan <span class="math inline" data-source-tex="D^+">\(D^+\)</span> merupakan fungsi terukur Borel. Demikian
+pula,</p>
+<div class="centerline"><span class="math inline" data-source-tex="D^-(x)=\liminf_{\delta\to 0}\Bover1{\delta}
+(\phi(x+\delta e_j)-\phi(x))">\(D^-(x)=\liminf_{\delta\to 0}\Bover1{\delta}
+(\phi(x+\delta e_j)-\phi(x))\)</span></div>
+<p>merupakan fungsi terukur Borel dengan domain Borel.   Jadi</p>
+<div class="centerline"><span class="math inline" data-source-tex="E=\{x:\pd{\phi}{\xi_j}(x)\text{ ada dalam }\Bbb R\}
+=\{x:D^+(x)=D^-(x)\in\Bbb R\}">\(E=\{x:\pd{\phi}{\xi_j}(x)\text{ ada dalam }\Bbb R\}
+=\{x:D^+(x)=D^-(x)\in\Bbb R\}\)</span></div>
+<p>merupakan himpunan Borel, dan <span class="math inline" data-source-tex="\pd{\phi}{\xi_j}">\(\pd{\phi}{\xi_j}\)</span> merupakan
+fungsi terukur Borel.</p>
+<p>Di sisi lain, jika kita mengidentifikasi <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> dengan
+<span class="math inline" data-source-tex="\BbbR^J\times\Bbb R">\(\BbbR^J\times\Bbb R\)</span>, dengan mengambil <span class="math inline" data-source-tex="J">\(J\)</span> sebagai
+<span class="math inline" data-source-tex="\{1,\ldots,j-1,j+1,\ldots,r\}">\(\{1,\ldots,j-1,j+1,\ldots,r\}\)</span>, kita dapat memandang ukuran Lebesgue
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span> pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> sebagai produk ukuran Lebesgue <span class="math inline" data-source-tex="\mu_J">\(\mu_J\)</span> pada
+<span class="math inline" data-source-tex="\BbbR^J">\(\BbbR^J\)</span> dengan ukuran Lebesgue <span class="math inline" data-source-tex="\mu_1">\(\mu_1\)</span> pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> (<a class="xref" href="../251/index.html#251N">251N</a>). Kini,
+untuk setiap <span class="math inline" data-source-tex="y\in\BbbR^J">\(y\in\BbbR^J\)</span>, kita mempunyai fungsi
+<span class="math inline" data-source-tex="\phi_y:\Bbb R\to\Bbb R">\(\phi_y:\Bbb R\to\Bbb R\)</span> yang didefinisikan dengan menuliskan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\phi_y(\sigma)=\phi(y,\sigma)">\(\phi_y(\sigma)=\phi(y,\sigma)\)</span>,</div>
+<p>dan <span class="math inline" data-source-tex="E">\(E\)</span> menjadi</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{(y,\sigma):\phi_y&#x27;(\sigma)">\(\{(y,\sigma):\phi_y&#x27;(\sigma)\)</span> terdefinisi<span class="math inline" data-source-tex="\}">\(\}\)</span>,</div>
+<p>sehingga semua penampang</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{\sigma:(y,\sigma)\in E\}">\(\{\sigma:(y,\sigma)\in E\}\)</span></div>
+<p>merupakan himpunan bagian koterabaikan dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, sebab
+setiap <span class="math inline" data-source-tex="\phi_y">\(\phi_y\)</span> Lipschitz, dan karena itu terdiferensialkan hampir di
+mana-mana, sebagaimana dicatat dalam bagian (a) bukti. Karena kita tahu
+bahwa <span class="math inline" data-source-tex="E">\(E\)</span> terukur, himpunan tersebut harus koterabaikan berdasarkan teorema
+Fubini (terapkan <a class="xref" href="../252/index.html#252D">252D</a> atau <a class="xref" href="../252/index.html#252F">252F</a> pada komplemen <span class="math inline" data-source-tex="E">\(E\)</span>). Dengan demikian
+<span class="math inline" data-source-tex="\pd{\phi}{\xi_j}">\(\pd{\phi}{\xi_j}\)</span> terdefinisi hampir di mana-mana, sebagaimana
+diklaim. ∎</p>
+<p>Tuliskan</p>
+<div class="centerline"><span class="math inline" data-source-tex="H=\{x:x\in\BbbR^r,\,\pd{\phi}{\xi_j}(x)
+\text{ ada untuk setiap }j\le r\}">\(H=\{x:x\in\BbbR^r,\,\pd{\phi}{\xi_j}(x)
+\text{ ada untuk setiap }j\le r\}\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="H">\(H\)</span> merupakan himpunan Borel koterabaikan dalam
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>.</p>
+<p> </p>
+<p><strong>(c)</strong> Untuk sisa bukti ini, saya tetapkan identifikasi alami
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> dengan <span class="math inline" data-source-tex="\BbbR^{r-1}\times\Bbb R">\(\BbbR^{r-1}\times\Bbb R\)</span>, dengan mengidentifikasi
+<span class="math inline" data-source-tex="(\xi_1,\ldots,\xi_r)">\((\xi_1,\ldots,\xi_r)\)</span> dengan <span class="math inline" data-source-tex="((\xi_1,\ldots,\xi_{r-1}),\xi_r)">\(((\xi_1,\ldots,\xi_{r-1}),\xi_r)\)</span>.
+Untuk <span class="math inline" data-source-tex="x\in H">\(x\in H\)</span>, misalkan <span class="math inline" data-source-tex="T(x)">\(T(x)\)</span> matriks <span class="math inline" data-source-tex="1\times r">\(1\times r\)</span>
+<span class="math inline" data-source-tex="(\pd{\phi}{\xi_1}(x),\ldots,\pd{\phi}{\xi_r}(x))">\((\pd{\phi}{\xi_1}(x),\ldots,\pd{\phi}{\xi_r}(x))\)</span>.</p>
+<p> </p>
+<p><strong>(d)</strong> Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="H_1=\{x:x\in H,\,\lim_{u\to\tbf{0}\text{ dalam }\BbbR^{r-1}}
+\Bover{|\phi(x+(u,0))-\phi(x)-T(x)(u,0)|}{\|u\|}=0\}">\(H_1=\{x:x\in H,\,\lim_{u\to\tbf{0}\text{ dalam }\BbbR^{r-1}}
+\Bover{|\phi(x+(u,0))-\phi(x)-T(x)(u,0)|}{\|u\|}=0\}\)</span>.</div>
+<p>Saya nyatakan bahwa <span class="math inline" data-source-tex="H_1">\(H_1\)</span> koterabaikan dalam <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>.
+Bukti. Ini sebenarnya gagasan yang sama seperti dalam (b). Untuk
+<span class="math inline" data-source-tex="x\in H">\(x\in H\)</span>, <span class="math inline" data-source-tex="x\in H_1">\(x\in H_1\)</span> jika dan hanya jika</p>
+<div class="inset-block"><p>untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\phi(x+(u,0))-\phi(x)-T(x)(u,0)|\le\epsilon\|u\|">\(|\phi(x+(u,0))-\phi(x)-T(x)(u,0)|\le\epsilon\|u\|\)</span></div>
+<p>setiap kali <span class="math inline" data-source-tex="\|u\|\le\delta">\(\|u\|\le\delta\)</span>,</p></div>
+<p>yaitu, jika dan hanya jika</p>
+<div class="inset-block"><p>untuk setiap <span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span> terdapat <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> sedemikian
+sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\phi(x+(u,0))-\phi(x)-T(x)(u,0)|\le 2^{-m}\|u\|">\(|\phi(x+(u,0))-\phi(x)-T(x)(u,0)|\le 2^{-m}\|u\|\)</span></div>
+<p>setiap kali <span class="math inline" data-source-tex="u\in\Bbb Q^{r-1}">\(u\in\Bbb Q^{r-1}\)</span> dan <span class="math inline" data-source-tex="\|u\|\le 2^{-n}">\(\|u\|\le 2^{-n}\)</span>.</p></div>
+<p>Namun, untuk setiap <span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span> dan <span class="math inline" data-source-tex="u\in\Bbb Q^{r-1}">\(u\in\Bbb Q^{r-1}\)</span> tertentu,
+himpunan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:|\phi(x+(u,0))-\phi(x)-T(x)(u,0)|\le 2^{-m}\|u\|\}">\(\{x:|\phi(x+(u,0))-\phi(x)-T(x)(u,0)|\le 2^{-m}\|u\|\}\)</span></div>
+<p>terukur, bahkan Borel, sebab semua fungsi
+<span class="math inline" data-source-tex="x\mapsto\phi(x+(u,0))">\(x\mapsto\phi(x+(u,0))\)</span>, <span class="math inline" data-source-tex="x\mapsto\phi(x)">\(x\mapsto\phi(x)\)</span>, <span class="math inline" data-source-tex="x\mapsto T(x)(u,0)">\(x\mapsto T(x)(u,0)\)</span> terukur
+Borel. Jadi <span class="math inline" data-source-tex="H_1">\(H_1\)</span> berbentuk</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bigcap_{m\in\Bbb N}\bigcup_{n\in\Bbb N}
+\bigcap_{u\in\Bbb Q^{r-1},\|u\|\le 2^{-n}}E_{mnu}">\(\bigcap_{m\in\Bbb N}\bigcup_{n\in\Bbb N}
+\bigcap_{u\in\Bbb Q^{r-1},\|u\|\le 2^{-n}}E_{mnu}\)</span></div>
+<p>dengan setiap <span class="math inline" data-source-tex="E_{mnu}">\(E_{mnu}\)</span> suatu himpunan terukur, sehingga <span class="math inline" data-source-tex="H_1">\(H_1\)</span>
+terukur.</p>
+<p>Namun sekarang perhatikan bahwa untuk sebarang <span class="math inline" data-source-tex="\sigma\in\Bbb R">\(\sigma\in\Bbb R\)</span>, fungsi</p>
+<div class="centerline"><span class="math inline" data-source-tex="v\mapsto\phi_{\sigma}(v)=\phi(v,\sigma):
+\BbbR^{r-1}\to\Bbb R">\(v\mapsto\phi_{\sigma}(v)=\phi(v,\sigma):
+\BbbR^{r-1}\to\Bbb R\)</span></div>
+<p>Lipschitz, dan karena itu (berdasarkan hipotesis induktif)
+terdiferensialkan hampir di mana-mana dalam <span class="math inline" data-source-tex="\BbbR^{r-1}">\(\BbbR^{r-1}\)</span>; dan
+<span class="math inline" data-source-tex="(v,\sigma)\in H_1">\((v,\sigma)\in H_1\)</span> jika dan hanya jika <span class="math inline" data-source-tex="(v,\sigma)\in H">\((v,\sigma)\in H\)</span> dan
+<span class="math inline" data-source-tex="\phi_{\sigma}&#x27;(v)">\(\phi_{\sigma}&#x27;(v)\)</span> terdefinisi. Akibatnya
+<span class="math inline" data-source-tex="\{v:(v,\sigma)\in H_1\}">\(\{v:(v,\sigma)\in H_1\}\)</span> koterabaikan setiap kali
+<span class="math inline" data-source-tex="\{v:(v,\sigma)\in H\}">\(\{v:(v,\sigma)\in H\}\)</span> koterabaikan, yaitu untuk hampir setiap
+<span class="math inline" data-source-tex="\sigma\in\Bbb R">\(\sigma\in\Bbb R\)</span>; sehingga <span class="math inline" data-source-tex="H_1">\(H_1\)</span>, karena terukur, harus koterabaikan. ∎</p>
+<p> </p>
+<p><strong>(e)</strong> Sekarang, untuk <span class="math inline" data-source-tex="q">\(q\)</span>, <span class="math inline" data-source-tex="q&#x27;\in\Bbb Q">\(q&#x27;\in\Bbb Q\)</span> dan <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="F(q,q&#x27;,n)
+=\{x:x\in\BbbR^r">\(F(q,q&#x27;,n)
+=\{x:x\in\BbbR^r\)</span>,
+  <span class="math inline" data-source-tex="q\le\Bover{\phi(x+(\tbf{0},\eta))-\phi(x)}{\eta}\le q&#x27;">\(q\le\Bover{\phi(x+(\tbf{0},\eta))-\phi(x)}{\eta}\le q&#x27;\)</span>
+  setiap kali <span class="math inline" data-source-tex="0&lt;|\eta|\le 2^{-n}\}">\(0&lt;|\eta|\le 2^{-n}\}\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="F_*(q,q&#x27;,n)
+=\{x:x\in F(q,q&#x27;,n),\,\lim_{\delta\downarrow 0}
+ \Bover{\mu^*(F(q,q&#x27;,n)\cap B(x,\delta))}{\mu B(x,\delta)}=1\}">\(F_*(q,q&#x27;,n)
+=\{x:x\in F(q,q&#x27;,n),\,\lim_{\delta\downarrow 0}
+ \Bover{\mu^*(F(q,q&#x27;,n)\cap B(x,\delta))}{\mu B(x,\delta)}=1\}\)</span>.</div>
+<p>Berdasarkan 261Da, <span class="math inline" data-source-tex="F(q,q&#x27;,n)\setminus F_*(q,q&#x27;,n)">\(F(q,q&#x27;,n)\setminus F_*(q,q&#x27;,n)\)</span> terabaikan
+untuk semua <span class="math inline" data-source-tex="q">\(q\)</span>, <span class="math inline" data-source-tex="q&#x27;">\(q&#x27;\)</span>, <span class="math inline" data-source-tex="n">\(n\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="H_2
+=H_1\setminus\bigcup_{q,q&#x27;\in\Bbb Q,n\in\Bbb N}
+  (F(q,q&#x27;,n)\setminus F_*(q,q&#x27;,n))">\(H_2
+=H_1\setminus\bigcup_{q,q&#x27;\in\Bbb Q,n\in\Bbb N}
+  (F(q,q&#x27;,n)\setminus F_*(q,q&#x27;,n))\)</span></div>
+<p>koterabaikan.</p>
+<p> </p>
+<p><strong>(f)</strong> Saya nyatakan bahwa <span class="math inline" data-source-tex="\phi">\(\phi\)</span> terdiferensialkan di setiap titik
+<span class="math inline" data-source-tex="H_2">\(H_2\)</span>. Bukti. Ambil <span class="math inline" data-source-tex="x=(u,\sigma)\in H_2">\(x=(u,\sigma)\in H_2\)</span>. Maka
+<span class="math inline" data-source-tex="\alpha=\Pd{\phi}{\xi_r}(x)">\(\alpha=\Pd{\phi}{\xi_r}(x)\)</span> dan <span class="math inline" data-source-tex="T=T(x)">\(T=T(x)\)</span> terdefinisi. Misalkan <span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>
+suatu konstanta Lipschitz bagi <span class="math inline" data-source-tex="\phi">\(\phi\)</span>.</p>
+<p>Ambil <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>; ambil <span class="math inline" data-source-tex="q">\(q\)</span>, <span class="math inline" data-source-tex="q&#x27;\in\Bbb Q">\(q&#x27;\in\Bbb Q\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\alpha-\epsilon\le q&lt;\alpha&lt;q&#x27;\le\alpha+\epsilon">\(\alpha-\epsilon\le q&lt;\alpha&lt;q&#x27;\le\alpha+\epsilon\)</span>. Harus ada
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> sedemikian sehingga <span class="math inline" data-source-tex="x\in F(q,q&#x27;,n)">\(x\in F(q,q&#x27;,n)\)</span>; akibatnya
+<span class="math inline" data-source-tex="x\in F_*(q,q&#x27;,n)">\(x\in F_*(q,q&#x27;,n)\)</span> berdasarkan definisi <span class="math inline" data-source-tex="H_2">\(H_2\)</span>. Berdasarkan <a class="xref" href="#262L">262L</a>, terdapat
+<span class="math inline" data-source-tex="\delta_0&gt;0">\(\delta_0&gt;0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\rho(x+z,F(q,q&#x27;,n))\le\epsilon\|z\|">\(\rho(x+z,F(q,q&#x27;,n))\le\epsilon\|z\|\)</span> setiap kali <span class="math inline" data-source-tex="\|z\|\le\delta_0">\(\|z\|\le\delta_0\)</span>.
+Selanjutnya, terdapat <span class="math inline" data-source-tex="\delta_1&gt;0">\(\delta_1&gt;0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="|\phi(x+(v,0))-\phi(x)-T(v,0)|\le\epsilon\|v\|">\(|\phi(x+(v,0))-\phi(x)-T(v,0)|\le\epsilon\|v\|\)</span> setiap kali
+<span class="math inline" data-source-tex="v\in\BbbR^{r-1}">\(v\in\BbbR^{r-1}\)</span> dan <span class="math inline" data-source-tex="\|v\|\le\delta_1">\(\|v\|\le\delta_1\)</span>. Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\delta=\min(\delta_0,\delta_1,2^{-n})/(1+2\epsilon)&gt;0">\(\delta=\min(\delta_0,\delta_1,2^{-n})/(1+2\epsilon)&gt;0\)</span>.</div>
+<p>Andaikan <span class="math inline" data-source-tex="z=(v,\tau)\in\BbbR^r">\(z=(v,\tau)\in\BbbR^r\)</span> dan <span class="math inline" data-source-tex="\|z\|\le\delta">\(\|z\|\le\delta\)</span>. Karena
+<span class="math inline" data-source-tex="\|z\|\le\delta_0">\(\|z\|\le\delta_0\)</span>, terdapat <span class="math inline" data-source-tex="x&#x27;=(u&#x27;,\sigma&#x27;)\in F(q,q&#x27;,n)">\(x&#x27;=(u&#x27;,\sigma&#x27;)\in F(q,q&#x27;,n)\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\|x+z-x&#x27;\|\le2\epsilon\|z\|">\(\|x+z-x&#x27;\|\le2\epsilon\|z\|\)</span>; tetapkan <span class="math inline" data-source-tex="x^*=(u&#x27;,\sigma)">\(x^*=(u&#x27;,\sigma)\)</span>.
+Sekarang</p>
+<div class="centerline"><span class="math inline" data-source-tex="\max(\|u-u&#x27;\|,|\sigma-\sigma&#x27;|)\le
+\|x-x&#x27;\|\le(1+2\epsilon)\|z\|\le\min(\delta_1,2^{-n})">\(\max(\|u-u&#x27;\|,|\sigma-\sigma&#x27;|)\le
+\|x-x&#x27;\|\le(1+2\epsilon)\|z\|\le\min(\delta_1,2^{-n})\)</span></div>
+<p>dan <span class="math inline" data-source-tex="x^*=x+(u&#x27;-u,0)">\(x^*=x+(u&#x27;-u,0)\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\phi(x^*)-\phi(x)-T(x^*-x)|
+\le\epsilon\|u&#x27;-u\|\le\epsilon(1+2\epsilon)\|z\|">\(|\phi(x^*)-\phi(x)-T(x^*-x)|
+\le\epsilon\|u&#x27;-u\|\le\epsilon(1+2\epsilon)\|z\|\)</span>.</div>
+<p>Tetapi juga</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\phi(x&#x27;)-\phi(x^*)-T(x&#x27;-x^*)|
+=|\phi(x&#x27;)-\phi(x^*)-\alpha(\sigma&#x27;-\sigma)|
+\le\epsilon|\sigma&#x27;-\sigma|\le\epsilon(1+ 2\epsilon)\|z\|">\(|\phi(x&#x27;)-\phi(x^*)-T(x&#x27;-x^*)|
+=|\phi(x&#x27;)-\phi(x^*)-\alpha(\sigma&#x27;-\sigma)|
+\le\epsilon|\sigma&#x27;-\sigma|\le\epsilon(1+ 2\epsilon)\|z\|\)</span>,</div>
+<p>sebab <span class="math inline" data-source-tex="x&#x27;\in F(q,q&#x27;,n)">\(x&#x27;\in F(q,q&#x27;,n)\)</span> dan
+<span class="math inline" data-source-tex="|\sigma-\sigma&#x27;|\le 2^{-n}">\(|\sigma-\sigma&#x27;|\le 2^{-n}\)</span>, sehingga (jika <span class="math inline" data-source-tex="x&#x27;\ne x^*">\(x&#x27;\ne x^*\)</span>)</p>
+<div class="centerline"><span class="math inline" data-source-tex="\alpha-\epsilon\le q
+\le\Bover{\phi(x^*)-\phi(x&#x27;)}{\sigma-\sigma&#x27;}\le q&#x27;\le\alpha+\epsilon">\(\alpha-\epsilon\le q
+\le\Bover{\phi(x^*)-\phi(x&#x27;)}{\sigma-\sigma&#x27;}\le q&#x27;\le\alpha+\epsilon\)</span></div>
+<p>dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bigl|\Bover{\phi(x&#x27;)-\phi(x^*)}
+{\sigma&#x27;-\sigma}-\alpha\bigr|\le\epsilon">\(\bigl|\Bover{\phi(x&#x27;)-\phi(x^*)}
+{\sigma&#x27;-\sigma}-\alpha\bigr|\le\epsilon\)</span>.</div>
+<p>Akhirnya,</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\phi(x+z)-\phi(x&#x27;)|
+\le\gamma\|x+z-x&#x27;\|\le2\gamma\epsilon\|z\|">\(|\phi(x+z)-\phi(x&#x27;)|
+\le\gamma\|x+z-x&#x27;\|\le2\gamma\epsilon\|z\|\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="|Tz-T(x&#x27;-x)|\le\|T\|\|x+z-x&#x27;\|\le2\epsilon\|T\|\|z\|">\(|Tz-T(x&#x27;-x)|\le\|T\|\|x+z-x&#x27;\|\le2\epsilon\|T\|\|z\|\)</span>.</div>
+<p>Dengan menggabungkan semuanya,</p>
+<p><span class="math display" data-source-tex="\eqalign{|\phi(x+z)-\phi x-Tz|
+&amp;\le|\phi(x+z)-\phi(x&#x27;)|
++|T(x&#x27;-x)-Tz|\cr
+&amp;\qquad
++|\phi(x&#x27;)-\phi(x^*)-T(x&#x27;-x^*)|
++|\phi(x^*)-\phi(x)-T(x^*-x)|\cr
+&amp;\le2\gamma\epsilon\|z\|
++2\epsilon\|T\|\|z\|
++\epsilon(1+2\epsilon)\|z\|
++\epsilon(1+2\epsilon)\|z\|\cr
+&amp;=\epsilon(2\gamma+2\|T\|+2+4\epsilon)\|z\|.\cr}">\[\begin{aligned}|\phi(x+z)-\phi x-Tz|
+&amp;\le|\phi(x+z)-\phi(x&#x27;)|
++|T(x&#x27;-x)-Tz|\\
+&amp;\qquad
++|\phi(x&#x27;)-\phi(x^*)-T(x&#x27;-x^*)|
++|\phi(x^*)-\phi(x)-T(x^*-x)|\\
+&amp;\le2\gamma\epsilon\|z\|
++2\epsilon\|T\|\|z\|
++\epsilon(1+2\epsilon)\|z\|
++\epsilon(1+2\epsilon)\|z\|\\
+&amp;=\epsilon(2\gamma+2\|T\|+2+4\epsilon)\|z\|.\\\end{aligned}\]</span></p>
+<p>Ini berlaku setiap kali <span class="math inline" data-source-tex="\|z\|\le\delta">\(\|z\|\le\delta\)</span>. Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span>
+sebarang, <span class="math inline" data-source-tex="\phi">\(\phi\)</span> terdiferensialkan di <span class="math inline" data-source-tex="x">\(x\)</span>. ∎</p>
+<p>Dengan demikian, <span class="math inline" data-source-tex="\{x:\phi">\(\{x:\phi\)</span> terdiferensialkan di <span class="math inline" data-source-tex="x\}">\(x\}\)</span> memuat <span class="math inline" data-source-tex="H_2">\(H_2\)</span> dan
+koterabaikan; induksi pun berlanjut.</p></aside>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="262X" data-source-id="262X"><span class="anchor" id="262Xa"></span><h2><span class="source-label">262X</span> Latihan dasar (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="\phi">\(\phi\)</span> dan <span class="math inline" data-source-tex="\psi">\(\psi\)</span> fungsi
+Lipschitz dari himpunan-himpunan bagian <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> ke <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="\phi+\psi">\(\phi+\psi\)</span> merupakan fungsi Lipschitz dari
+<span class="math inline" data-source-tex="\dom\phi\cap\dom\psi">\(\dom\phi\cap\dom\psi\)</span> ke
+<span class="math inline" data-source-tex="\Bbb R^s">\(\Bbb R^s\)</span>.</p>
+</section>
+<section class="source-unit" id="262Xb" data-source-id="262Xb"><h3><span class="source-label">262Xb</span> <strong>(b)</strong> </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\phi">\(\phi\)</span> fungsi Lipschitz dari suatu
+himpunan bagian <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> ke <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>, dan <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>. Tunjukkan
+bahwa <span class="math inline" data-source-tex="c\phi">\(c\phi\)</span> merupakan fungsi Lipschitz.</p>
+</section>
+<section class="source-unit" id="262Xc" data-source-id="262Xc"><h3><span class="source-label">262Xc</span> <strong>(c)</strong> </h3>
+<p>Andaikan <span class="math inline" data-source-tex="\phi:D\to\BbbR^s">\(\phi:D\to\BbbR^s\)</span> dan
+<span class="math inline" data-source-tex="\psi:E\to\BbbR^q">\(\psi:E\to\BbbR^q\)</span> fungsi-fungsi Lipschitz, dengan
+<span class="math inline" data-source-tex="D\subseteq\BbbR^r">\(D\subseteq\BbbR^r\)</span> dan <span class="math inline" data-source-tex="E\subseteq\BbbR^s">\(E\subseteq\BbbR^s\)</span>. Tunjukkan bahwa komposisi
+<span class="math inline" data-source-tex="\psi\phi:D\cap\phi^{-1}[E]\to\BbbR^q">\(\psi\phi:D\cap\phi^{-1}[E]\to\BbbR^q\)</span> bersifat Lipschitz.</p>
+</section>
+<section class="source-unit" id="262Xd" data-source-id="262Xd"><h3><span class="source-label">262Xd</span> <strong>(d)</strong> </h3>
+<p>Andaikan <span class="math inline" data-source-tex="\phi">\(\phi\)</span>, <span class="math inline" data-source-tex="\psi">\(\psi\)</span> fungsi-fungsi dari
+himpunan-himpunan bagian <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> ke <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>, dan andaikan
+<span class="math inline" data-source-tex="x\in\dom\phi\cap\dom\psi">\(x\in\dom\phi\cap\dom\psi\)</span> sedemikian sehingga masing-masing fungsi
+terdiferensialkan relatif terhadap domainnya di <span class="math inline" data-source-tex="x">\(x\)</span>, dengan turunan
+<span class="math inline" data-source-tex="S">\(S\)</span>, <span class="math inline" data-source-tex="T">\(T\)</span> di sana. Tunjukkan bahwa <span class="math inline" data-source-tex="\phi+\psi">\(\phi+\psi\)</span> terdiferensialkan relatif
+terhadap domainnya di <span class="math inline" data-source-tex="x">\(x\)</span>, dan bahwa <span class="math inline" data-source-tex="S+T">\(S+T\)</span> merupakan suatu turunan dari
+<span class="math inline" data-source-tex="\phi+\psi">\(\phi+\psi\)</span> di <span class="math inline" data-source-tex="x">\(x\)</span>.</p>
+</section>
+<section class="source-unit" id="262Xe" data-source-id="262Xe"><h3><span class="source-label">262Xe</span> <strong>(e)</strong> </h3>
+<p>Andaikan <span class="math inline" data-source-tex="\phi">\(\phi\)</span> suatu fungsi dari suatu himpunan
+bagian <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> ke <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>, dan terdiferensialkan relatif terhadap
+domainnya di <span class="math inline" data-source-tex="x\in\dom\phi">\(x\in\dom\phi\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="c\phi">\(c\phi\)</span> terdiferensialkan
+relatif terhadap domainnya di <span class="math inline" data-source-tex="x">\(x\)</span> untuk setiap <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>.</p>
+</section>
+<section class="source-unit" id="262Xf" data-source-id="262Xf"><h3><span class="source-label">262Xf</span> (f) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Andaikan <span class="math inline" data-source-tex="\phi:D\to\BbbR^s">\(\phi:D\to\BbbR^s\)</span> dan
+<span class="math inline" data-source-tex="\psi:E\to\Bbb R^q">\(\psi:E\to\Bbb R^q\)</span> fungsi-fungsi, dengan
+<span class="math inline" data-source-tex="D\subseteq\BbbR^r">\(D\subseteq\BbbR^r\)</span> dan <span class="math inline" data-source-tex="E\subseteq\BbbR^s">\(E\subseteq\BbbR^s\)</span>; andaikan <span class="math inline" data-source-tex="\phi">\(\phi\)</span>
+terdiferensialkan relatif terhadap domainnya di
+<span class="math inline" data-source-tex="x\in D\cap\phi^{-1}[E]">\(x\in D\cap\phi^{-1}[E]\)</span>, dengan matriks <span class="math inline" data-source-tex="s\times r">\(s\times r\)</span>, yaitu <span class="math inline" data-source-tex="T">\(T\)</span>, sebagai
+suatu turunan di sana, dan <span class="math inline" data-source-tex="\psi">\(\psi\)</span> terdiferensialkan relatif terhadap
+domainnya di <span class="math inline" data-source-tex="\phi(x)">\(\phi(x)\)</span>, dengan matriks <span class="math inline" data-source-tex="q\times s">\(q\times s\)</span>, yaitu <span class="math inline" data-source-tex="S">\(S\)</span>, sebagai
+suatu turunan di sana. Tunjukkan bahwa komposisi <span class="math inline" data-source-tex="\psi\phi">\(\psi\phi\)</span>
+terdiferensialkan relatif terhadap domainnya di <span class="math inline" data-source-tex="x">\(x\)</span>, dan bahwa matriks
+<span class="math inline" data-source-tex="q\times r">\(q\times r\)</span>, yaitu <span class="math inline" data-source-tex="ST">\(ST\)</span>, merupakan suatu turunan dari <span class="math inline" data-source-tex="\psi\phi">\(\psi\phi\)</span> di <span class="math inline" data-source-tex="x">\(x\)</span>.</p>
+</section>
+<section class="source-unit" id="262Xg" data-source-id="262Xg"><h3><span class="source-label">262Xg</span> (g) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="\phi:\BbbR^r\to\BbbR^s">\(\phi:\BbbR^r\to\BbbR^s\)</span> suatu operator linear,
+dengan matriks terkait <span class="math inline" data-source-tex="T">\(T\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\phi">\(\phi\)</span> terdiferensialkan
+di mana-mana, dengan <span class="math inline" data-source-tex="\phi&#x27;(x)=T">\(\phi&#x27;(x)=T\)</span> untuk setiap <span class="math inline" data-source-tex="x">\(x\)</span>.</p>
+</section>
+<section class="source-unit" id="262Xh" data-source-id="262Xh"><h3><span class="source-label">262Xh</span> (h) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="G\subseteq\BbbR^r">\(G\subseteq\BbbR^r\)</span> suatu himpunan terbuka
+konveks, dan <span class="math inline" data-source-tex="\phi:G\to\BbbR^s">\(\phi:G\to\BbbR^s\)</span> suatu fungsi sedemikian sehingga semua
+turunan parsial <span class="math inline" data-source-tex="\pd{\phi_i}{\xi_j}">\(\pd{\phi_i}{\xi_j}\)</span> terdefinisi di mana-mana dalam <span class="math inline" data-source-tex="G">\(G\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="\phi">\(\phi\)</span> Lipschitz jika dan hanya jika semua turunan
+parsialnya terbatas pada <span class="math inline" data-source-tex="G">\(G\)</span>.</p>
+</section>
+<section class="source-unit" id="262Xi" data-source-id="262Xi"><h3><span class="source-label">262Xi</span> (i) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\phi:\BbbR^r\to\BbbR^s">\(\phi:\BbbR^r\to\BbbR^s\)</span> suatu fungsi.
+Tunjukkan bahwa <span class="math inline" data-source-tex="\phi">\(\phi\)</span> terdiferensialkan di <span class="math inline" data-source-tex="x\in\BbbR^r">\(x\in\BbbR^r\)</span> jika dan hanya
+jika untuk setiap <span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span> terdapat <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> dan matriks
+<span class="math inline" data-source-tex="s\times r">\(s\times r\)</span>, yaitu <span class="math inline" data-source-tex="T">\(T\)</span>, dengan koefisien rasional sedemikian sehingga
+<span class="math inline" data-source-tex="\|\phi(y)-\phi(x)-T(y-x)\|\le 2^{-m}\|y-x\|">\(\|\phi(y)-\phi(x)-T(y-x)\|\le 2^{-m}\|y-x\|\)</span> setiap kali
+<span class="math inline" data-source-tex="\|y-x\|\le 2^{-n}">\(\|y-x\|\le 2^{-n}\)</span>.</p>
+</section>
+<section class="source-unit" id="262Xj" data-source-id="262Xj"><h3><span class="source-label">262Xj</span> (j) </h3>
+<p>Andaikan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real yang terintegralkan
+atas <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dan <span class="math inline" data-source-tex="g:\BbbR^r\to\Bbb R">\(g:\BbbR^r\to\Bbb R\)</span> suatu fungsi terdiferensialkan
+dan terbatas sedemikian sehingga turunan parsial <span class="math inline" data-source-tex="\Pd{g}{\xi_j}">\(\Pd{g}{\xi_j}\)</span> terbatas,
+dengan <span class="math inline" data-source-tex="j\le r">\(j\le r\)</span>. Misalkan <span class="math inline" data-source-tex="f*g">\(f*g\)</span> konvolusi <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span> (<a class="xref" href="../255/index.html#255E">255E</a>, <a class="xref" href="../255/index.html#255L">255L</a>).
+Tunjukkan bahwa <span class="math inline" data-source-tex="\Pd{}{\xi_j}(f*g)">\(\Pd{}{\xi_j}(f*g)\)</span> terdefinisi di mana-mana dan sama
+dengan <span class="math inline" data-source-tex="f*\Pd{g}{\xi_j}">\(f*\Pd{g}{\xi_j}\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> <a class="xref" href="../255/index.html#255Xd">255Xd</a>.</span></p>
+</section>
+<section class="source-unit" id="262Xk" data-source-id="262Xk"><h3><span class="source-label">262Xk</span> (k) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukuran,
+<span class="math inline" data-source-tex="G\subseteq\BbbR^r">\(G\subseteq\BbbR^r\)</span> suatu himpunan terbuka, dan
+<span class="math inline" data-source-tex="f:X\times G\to\Bbb R">\(f:X\times G\to\Bbb R\)</span> suatu fungsi. Andaikan bahwa</p>
+<div class="inset-block"><p>(i) untuk setiap <span class="math inline" data-source-tex="x\in X">\(x\in X\)</span>, fungsi
+<span class="math inline" data-source-tex="t\mapsto f(x,t):G\to\Bbb R">\(t\mapsto f(x,t):G\to\Bbb R\)</span> terdiferensialkan;</p>
+<p>(ii) terdapat fungsi terintegralkan <span class="math inline" data-source-tex="g">\(g\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="|\pd{f}{\tau_j}(x,t)|\le g(x)">\(|\pd{f}{\tau_j}(x,t)|\le g(x)\)</span> setiap kali <span class="math inline" data-source-tex="x\in X">\(x\in X\)</span>, <span class="math inline" data-source-tex="t\in G">\(t\in G\)</span> dan
+<span class="math inline" data-source-tex="j\le r">\(j\le r\)</span>;</p>
+<p>(iii) <span class="math inline" data-source-tex="\int|f(x,t)|\mu(dx)">\(\int|f(x,t)|\mu(dx)\)</span> ada dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> untuk setiap <span class="math inline" data-source-tex="t\in G">\(t\in G\)</span>.</p></div>
+<p>Tunjukkan bahwa fungsi
+<span class="math inline" data-source-tex="t\mapsto\int f(x,t)\mu(dx):G\to\Bbb R">\(t\mapsto\int f(x,t)\mu(dx):G\to\Bbb R\)</span> terdiferensialkan.
+<span class="hint" role="note"><strong>Petunjuk:</strong> tunjukkan terlebih dahulu bahwa, untuk suatu <span class="math inline" data-source-tex="M">\(M\)</span> yang sesuai,
+<span class="math inline" data-source-tex="|f(x,t)-f(x,t&#x27;)|\le M|g(x)|\|t-t&#x27;\|">\(|f(x,t)-f(x,t&#x27;)|\le M|g(x)|\|t-t&#x27;\|\)</span> untuk setiap <span class="math inline" data-source-tex="t">\(t\)</span>, <span class="math inline" data-source-tex="t&#x27;\in G">\(t&#x27;\in G\)</span> dan
+<span class="math inline" data-source-tex="x\in X">\(x\in X\)</span>.</span></p>
+</section>
+<section class="source-unit" id="262Xl" data-source-id="262Xl"><h3><span class="source-label">262Xl</span> (l) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f:[a,b]\to\Bbb R">\(f:[a,b]\to\Bbb R\)</span> suatu fungsi
+kontinu mutlak, dengan <span class="math inline" data-source-tex="a\le b">\(a\le b\)</span>, dan <span class="math inline" data-source-tex="g:f[\,[a,b]\,]\to\Bbb R">\(g:f[\,[a,b]\,]\to\Bbb R\)</span> suatu
+fungsi Lipschitz. Tunjukkan bahwa <span class="math inline" data-source-tex="gf">\(gf\)</span> kontinu mutlak.</p>
+</section>
+<section class="source-unit" id="262Y" data-source-id="262Y"><span class="anchor" id="262Ya"></span><h2><span class="source-label">262Y</span> Latihan lanjutan (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="L">\(L\)</span> ruang semua fungsi Lipschitz dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> ke <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>,
+dan untuk <span class="math inline" data-source-tex="\phi\in L">\(\phi\in L\)</span> tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|\phi\|
+=\|\phi(0)\|+\min\{\gamma:\gamma\in\coint{0,\infty}">\(\|\phi\|
+=\|\phi(0)\|+\min\{\gamma:\gamma\in\coint{0,\infty}\)</span>,
+<span class="math inline" data-source-tex="\|\phi(y)-\phi(x)\|\le\gamma\|y-x\|">\(\|\phi(y)-\phi(x)\|\le\gamma\|y-x\|\)</span> untuk setiap <span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="y\in\BbbR^r\}">\(y\in\BbbR^r\}\)</span>.</div>
+<p>Tunjukkan bahwa <span class="math inline" data-source-tex="(L,\|\,\,\|)">\((L,\|\,\,\|)\)</span> merupakan ruang Banach.</p>
+</section>
+<section class="source-unit" id="262Yb" data-source-id="262Yb"><h3><span class="source-label">262Yb</span> (b) </h3>
+<p>Tunjukkan bahwa jika
+<span class="math inline" data-source-tex="T=\langle\tau_{ij}\rangle_{i\le s,j\le r}">\(T=\langle\tau_{ij}\rangle_{i\le s,j\le r}\)</span> suatu matriks <span class="math inline" data-source-tex="s\times r">\(s\times r\)</span>,
+maka norma operator <span class="math inline" data-source-tex="\|T\|">\(\|T\|\)</span>, sebagaimana didefinisikan dalam <a class="xref" href="#262H">262H</a>, paling
+besar
+<span class="math inline" data-source-tex="\sqrt{\sum_{i=1}^s\sum_{j=1}^r\tau_{ij}^2}">\(\sqrt{\sum_{i=1}^s\sum_{j=1}^r\tau_{ij}^2}\)</span>.</p>
+</section>
+<section class="source-unit" id="262Yc" data-source-id="262Yc"><h3><span class="source-label">262Yc</span> (c) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\phi:D\to\Bbb R">\(\phi:D\to\Bbb R\)</span> sebarang fungsi, dengan
+<span class="math inline" data-source-tex="D\subseteq\BbbR^r">\(D\subseteq\BbbR^r\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="H=\{x:x\in D,\,\phi">\(H=\{x:x\in D,\,\phi\)</span> terdiferensialkan relatif terhadap domainnya di
+<span class="math inline" data-source-tex="x\}">\(x\}\)</span> terukur relatif dalam <span class="math inline" data-source-tex="D">\(D\)</span>, dan bahwa <span class="math inline" data-source-tex="\pd{\phi}{\xi_j}\restr H">\(\pd{\phi}{\xi_j}\restr H\)</span>
+terukur untuk setiap <span class="math inline" data-source-tex="j\le r">\(j\le r\)</span>.</p>
+</section>
+<section class="source-unit" id="262Yd" data-source-id="262Yd"><h3><span class="source-label">262Yd</span> (d) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\phi:D\to\Bbb R">\(\phi:D\to\Bbb R\)</span> suatu fungsi, dengan
+<span class="math inline" data-source-tex="D\subseteq\BbbR^r">\(D\subseteq\BbbR^r\)</span>.
+(i) Tunjukkan bahwa jika <span class="math inline" data-source-tex="\phi">\(\phi\)</span> terukur, maka semua turunan parsialnya
+terukur.
+(ii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="\phi">\(\phi\)</span> terukur Borel, maka semua turunan
+parsialnya terukur Borel.</p>
+</section>
+<section class="source-unit" id="262Ye" data-source-id="262Ye"><h3><span class="source-label">262Ye</span> (e) </h3>
+<p>Suatu fungsi <span class="math inline" data-source-tex="\phi:\BbbR^r\to\Bbb R">\(\phi:\BbbR^r\to\Bbb R\)</span> disebut
+<strong>mulus</strong> jika semua turunan parsialnya
+<span class="math inline" data-source-tex="\Bover{\partial\ldots\partial\phi}
+{\partial\xi_i\partial\xi_j\ldots\partial\xi_l}">\(\Bover{\partial\ldots\partial\phi}
+{\partial\xi_i\partial\xi_j\ldots\partial\xi_l}\)</span> terdefinisi di mana-mana
+dalam <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> dan kontinu. Tunjukkan bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span> terintegralkan atas
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> dan <span class="math inline" data-source-tex="\phi:\BbbR^r\to\Bbb R">\(\phi:\BbbR^r\to\Bbb R\)</span> mulus serta mempunyai dukungan
+terbatas, maka konvolusi <span class="math inline" data-source-tex="f*\phi">\(f*\phi\)</span> mulus. <span class="hint" role="note"><strong>Petunjuk:</strong> <a class="xref" href="#262Xj">262Xj</a>, <a class="xref" href="#262Xk">262Xk</a>.</span></p>
+</section>
+<section class="source-unit" id="262Yf" data-source-id="262Yf"><h3><span class="source-label">262Yf</span> (f) </h3>
+<p>Untuk <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>, tetapkan
+<span class="math inline" data-source-tex="\tilde\phi_{\delta}(x) =e^{-1/(\delta^2-\|x\|^2)}">\(\tilde\phi_{\delta}(x) =e^{-1/(\delta^2-\|x\|^2)}\)</span> jika <span class="math inline" data-source-tex="\|x\|&lt;\delta">\(\|x\|&lt;\delta\)</span>,
+<span class="math inline" data-source-tex="0">\(0\)</span> jika <span class="math inline" data-source-tex="\|x\|\ge\delta">\(\|x\|\ge\delta\)</span>; tetapkan
+<span class="math inline" data-source-tex="\alpha_{\delta}=\int\tilde\phi_{\delta}(x)dx">\(\alpha_{\delta}=\int\tilde\phi_{\delta}(x)dx\)</span>,
+<span class="math inline" data-source-tex="\phi_{\delta}(x)=\alpha_{\delta}^{-1}\tilde\phi_{\delta}(x)">\(\phi_{\delta}(x)=\alpha_{\delta}^{-1}\tilde\phi_{\delta}(x)\)</span> untuk setiap
+<span class="math inline" data-source-tex="x">\(x\)</span>. (i) Tunjukkan bahwa <span class="math inline" data-source-tex="\phi_{\delta}:\BbbR^r\to\Bbb R">\(\phi_{\delta}:\BbbR^r\to\Bbb R\)</span> mulus dan
+mempunyai dukungan terbatas. (ii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span> terintegralkan
+atas <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, maka
+<span class="math inline" data-source-tex="\lim_{\delta\downarrow 0}\int|f(x)-(f*\phi_{\delta})(x)|dx=0">\(\lim_{\delta\downarrow 0}\int|f(x)-(f*\phi_{\delta})(x)|dx=0\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> mulailah dengan fungsi-fungsi kontinu <span class="math inline" data-source-tex="f">\(f\)</span> yang mempunyai dukungan
+terbatas, dan gunakan <a class="xref" href="../242/index.html#242O">242O</a>.</span></p>
+</section>
+<section class="source-unit" id="262Yg" data-source-id="262Yg"><h3><span class="source-label">262Yg</span> (g) </h3>
+<p>Tunjukkan bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span> terintegralkan atas <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>
+dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, terdapat fungsi mulus <span class="math inline" data-source-tex="h">\(h\)</span> dengan dukungan terbatas
+sedemikian sehingga <span class="math inline" data-source-tex="\int|f-h|\le\epsilon">\(\int|f-h|\le\epsilon\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> <em>salah satu</em>: reduksikan ke kasus ketika <span class="math inline" data-source-tex="f">\(f\)</span> mempunyai dukungan
+terbatas dan gunakan <a class="xref" href="#262Yf">262Yf</a>; <em>atau</em> sesuaikan metode <a class="xref" href="../242/index.html#242Xi">242Xi</a>.</span></p>
+</section>
+<section class="source-unit" id="262Yh" data-source-id="262Yh"><h3><span class="source-label">262Yh</span> (h) </h3>
+<p>Andaikan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi real yang terintegralkan atas
+setiap himpunan bagian terbatas <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>. (i) Tunjukkan bahwa
+<span class="math inline" data-source-tex="f\times\phi">\(f\times\phi\)</span> terintegralkan setiap kali <span class="math inline" data-source-tex="\phi:\BbbR^r\to\Bbb R">\(\phi:\BbbR^r\to\Bbb R\)</span> suatu
+fungsi mulus dengan dukungan terbatas. (ii) Tunjukkan bahwa jika
+<span class="math inline" data-source-tex="\int f\times\phi=0">\(\int f\times\phi=0\)</span> untuk setiap fungsi mulus dengan dukungan terbatas,
+maka <span class="math inline" data-source-tex="f=0">\(f=0\)</span> hampir di mana-mana. (<em>Petunjuk</em>: tunjukkan bahwa
+<span class="math inline" data-source-tex="\int_{B(x,\delta)}f=0">\(\int_{B(x,\delta)}f=0\)</span> untuk setiap <span class="math inline" data-source-tex="x\in\BbbR^r">\(x\in\BbbR^r\)</span> dan <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>, dan
+gunakan <a class="xref" href="../261/index.html#261C">261C</a>. Sebagai alternatif, tunjukkan terlebih dahulu bahwa
+<span class="math inline" data-source-tex="\int_Ef=0">\(\int_Ef=0\)</span> untuk <span class="math inline" data-source-tex="E=[b,c]">\(E=[b,c]\)</span>, kemudian untuk himpunan terbuka <span class="math inline" data-source-tex="E">\(E\)</span>, lalu
+untuk sebarang himpunan terukur <span class="math inline" data-source-tex="E">\(E\)</span>.)</p>
+</section>
+<section class="source-unit" id="262Yi" data-source-id="262Yi"><h3><span class="source-label">262Yi</span> (i) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> terintegralkan atas <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dan untuk
+<span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> misalkan <span class="math inline" data-source-tex="\phi_{\delta}:\BbbR^r\to\Bbb R">\(\phi_{\delta}:\BbbR^r\to\Bbb R\)</span> fungsi dari <a class="xref" href="#262Yf">262Yf</a>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="\lim_{\delta\downarrow 0}(f*\phi_{\delta})(x)=f(x)">\(\lim_{\delta\downarrow 0}(f*\phi_{\delta})(x)=f(x)\)</span>
+untuk setiap <span class="math inline" data-source-tex="x">\(x\)</span> dalam himpunan Lebesgue <span class="math inline" data-source-tex="f">\(f\)</span>. (<em>Petunjuk</em>: <a class="xref" href="../261/index.html#261Ye">261Ye</a>.)</p>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<section class="source-unit" id="262-notes" data-source-id="262"><span class="anchor" id="262"></span><h2><span class="source-label">262</span> Catatan penutup untuk Bagian 262 </h2>
+<p>Penekanan bagian ini ternyata terletak pada hubungan
+antara konsep ‘fungsi Lipschitz’ dan ‘fungsi terdiferensialkan’. Salah
+satu pesona analisis real klasik ialah munculnya hubungan sedemikian erat
+antara konsep-konsep yang termasuk dalam kategori berbeda. ‘Fungsi
+Lipschitz’ jelas termasuk dalam teori ruang metrik (saya akan kembali ke
+hal ini dalam §<a class="xref" href="../264/index.html#264">264</a>), sedangkan ‘fungsi terdiferensialkan’ termasuk dalam
+teori manifold terdiferensialkan, yang berada di luar cakupan jilid ini.
+Saya telah menuliskan bagian ini dengan saksama untuk berjaga-jaga jika
+ada pembaca yang sejauh ini belum mempelajari teori pemetaan
+terdiferensialkan antar-ruang Euklides multidimensi; tetapi ini juga
+memberi saya kesempatan untuk menguraikan gagasan ‘fungsi yang
+terdiferensialkan relatif terhadap domainnya’, yang memungkinkan kita
+menangani dengan lancar berbagai masalah yang muncul pada batas dalam
+bagian berikutnya. Kesulitan yang saya perhatikan pertama-tama muncul
+pada fungsi seperti transformasi koordinat polar</p>
+<div class="centerline"><span class="math inline" data-source-tex="(\rho,\theta)\mapsto (\rho\cos\theta,\rho\sin\theta):
+\{(0,0)\}\cup(\ooint{0,\infty}\times\ocint{-\pi,\pi})\to\BbbR^2">\((\rho,\theta)\mapsto (\rho\cos\theta,\rho\sin\theta):
+\{(0,0)\}\cup(\ooint{0,\infty}\times\ocint{-\pi,\pi})\to\BbbR^2\)</span>.</div>
+<p>Untuk menjadikannya bijeksi, kita harus melakukan sesuatu yang
+agak sebarang, dan domain transformasi tersebut tidak mungkin berupa
+himpunan terbuka. Berdasarkan definisi yang saya gunakan, fungsi ini
+terdiferensialkan relatif terhadap domainnya di setiap titik domainnya,
+dan kita dapat menerapkan hasil seperti <a class="xref" href="#262O">262O</a> tanpa hambatan. Perhatikan
+bahwa dalam kasus ini titik-titik domain yang bukan titik interior
+membentuk himpunan terabaikan
+<span class="math inline" data-source-tex="\{(0,0)\}\cup(\ooint{0,\infty}\times\{\pi\})">\(\{(0,0)\}\cup(\ooint{0,\infty}\times\{\pi\})\)</span>, sehingga kita dapat
+berharap untuk mengabaikannya; dan bagi sebagian besar transformasi
+geometris langsung yang menjadi sasaran penerapan teori ini, penghilangan
+himpunan-himpunan terabaikan secara bijaksana akan mereduksi masalah ke
+kasus fungsi yang terdiferensialkan dalam arti biasa dengan domain terbuka. Namun,
+meskipun teori domain terbuka akan menangani sebagian besar contoh yang
+paling penting, ada bahaya bahwa Anda akan memiliki kesalahpahaman nyata
+mengenai cakupan metode-metode ini.</p>
+<p>Hakikat keterdiferensialan ialah bahwa suatu fungsi terdiferensialkan
+<span class="math inline" data-source-tex="\phi">\(\phi\)</span> dapat dihampiri, di dekat sebarang titik tertentu dalam domainnya,
+oleh fungsi afin. Gagasan <a class="xref" href="#262M">262M</a> ialah menguraikan suatu metode yang efektif
+untuk cakupan luas guna membagi <span class="math inline" data-source-tex="D=\dom\phi">\(D=\dom\phi\)</span> menjadi terhitung banyak bagian,
+dan pada setiap bagian itu <span class="math inline" data-source-tex="\phi">\(\phi\)</span> terkendali dengan baik. Metode ini akan
+diterapkan dalam §§<a class="xref" href="../263/index.html#263">263</a> dan <a class="xref" href="../265/index.html#265">265</a> untuk menyelidiki ukuran <span class="math inline" data-source-tex="\phi[D]">\(\phi[D]\)</span>;
+tetapi kita sudah mempunyai beberapa akibat langsung (<a class="xref" href="#262N">262N</a>-<a class="xref" href="#262P">262P</a>).</p>
+<p>Saya telah memberikan sejumlah hasil yang menunjukkan bahwa (berdasarkan
+definisi-definisi yang saya pilih) suatu turunan dapat diharapkan memiliki
+sekurang-kurangnya beberapa sifat ‘deskriptif’ yang juga dimiliki fungsi
+asalnya; lihat <a class="xref" href="../222/index.html#222Yd">222Yd</a>, <a class="xref" href="../225/index.html#225J">225J</a>, <a class="xref" href="../225/index.html#225Yg">225Yg</a>, <a class="xref" href="#262Yc">262Yc</a>, <a class="xref" href="#262Yd">262Yd</a>. Untuk turunan parsial,
+terdapat komplikasi mengenai domainnya (419Yd, 431Yd) yang tidak muncul
+pada turunan penuh (<a class="xref" href="../225/index.html#225J">225J</a>, <a class="xref" href="#262Yc">262Yc</a>).</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 2: Broad Foundations</cite>, Bagian 262.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 29 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-cumulative-html-route-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V2-S262&quot;,
+  &quot;source_member&quot;: &quot;mt2.2016/mt262.tex&quot;,
+  &quot;target_bytes&quot;: 52797,
+  &quot;target_sha256&quot;: &quot;212d6bc8260103d7d1cabcf92cbca484c6903949d8be8f118819094ba86d5be2&quot;,
+  &quot;source_ids&quot;: [
+    &quot;262&quot;,
+    &quot;262A&quot;,
+    &quot;262B&quot;,
+    &quot;262C&quot;,
+    &quot;262D&quot;,
+    &quot;262E&quot;,
+    &quot;262F&quot;,
+    &quot;262Fa&quot;,
+    &quot;262Fb&quot;,
+    &quot;262G&quot;,
+    &quot;262Ga&quot;,
+    &quot;262Gb&quot;,
+    &quot;262Gc&quot;,
+    &quot;262H&quot;,
+    &quot;262Ha&quot;,
+    &quot;262Hb&quot;,
+    &quot;262I&quot;,
+    &quot;262J&quot;,
+    &quot;262K&quot;,
+    &quot;262L&quot;,
+    &quot;262M&quot;,
+    &quot;262N&quot;,
+    &quot;262O&quot;,
+    &quot;262P&quot;,
+    &quot;262Q&quot;,
+    &quot;262X&quot;,
+    &quot;262Xa&quot;,
+    &quot;262Xb&quot;,
+    &quot;262Xc&quot;,
+    &quot;262Xd&quot;,
+    &quot;262Xe&quot;,
+    &quot;262Xf&quot;,
+    &quot;262Xg&quot;,
+    &quot;262Xh&quot;,
+    &quot;262Xi&quot;,
+    &quot;262Xj&quot;,
+    &quot;262Xk&quot;,
+    &quot;262Xl&quot;,
+    &quot;262Y&quot;,
+    &quot;262Ya&quot;,
+    &quot;262Yb&quot;,
+    &quot;262Yc&quot;,
+    &quot;262Yd&quot;,
+    &quot;262Ye&quot;,
+    &quot;262Yf&quot;,
+    &quot;262Yg&quot;,
+    &quot;262Yh&quot;,
+    &quot;262Yi&quot;
+  ],
+  &quot;corpus_id&quot;: &quot;O007-FREMLIN&quot;,
+  &quot;volume_id&quot;: &quot;O007-FREMLIN-V2&quot;,
+  &quot;volume_source_title&quot;: &quot;Broad Foundations&quot;,
+  &quot;route&quot;: &quot;262&quot;,
+  &quot;official_source_page_start&quot;: 296,
+  &quot;chapter_official_source_pages&quot;: [
+    288,
+    342
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>
