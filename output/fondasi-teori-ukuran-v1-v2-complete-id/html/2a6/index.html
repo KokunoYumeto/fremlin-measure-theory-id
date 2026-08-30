@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Faktorisasi matriks — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        BbbQ: '\\mathbb{Q}', BbbR: '\\mathbb{R}',
+        eightBbb: ['\\mathbb{#1}', 1],
+        DiniD: '\\overline{D}', Dinid: '\\underline{D}',
+        Var: '\\operatorname{Var}',
+        bumpeq: '=_{\\mathrm{approx}}',
+        intstar: '\\operatorname{int}^{*}',
+        family: ['\\langle #3\\rangle_{#1\\in #2}', 3],
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        displaycause: ['\\text{(#1)}', 1],
+        bigcupop: '\\bigcup', biggerint: '\\int',
+        eae: '=_{\\mathrm{a.e.}}', leae: '\\le_{\\mathrm{a.e.}}', geae: '\\ge_{\\mathrm{a.e.}}',
+        restr: '\\mathord{\\upharpoonright}', restrp: '\\mathord{\\upharpoonright}',
+        Real: '\\operatorname{Re}', Imag: '\\operatorname{Im}',
+        tbf: ['\\mathbf{#1}', 1], eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Qed: '\\square',
+        BbbN: '\\mathbb{N}', Expn: '\\mathbb{E}',
+        Cal: ['\\mathcal{#1}', 1], dom: '\\operatorname{dom}',
+        coint: ['\\left[#1\\right[', 1],
+        sequencen: ['\\langle #1_n\\rangle_{n\\in\\mathbb{N}}', 1],
+        imp: '\\mathop{\\text{pelestari ukuran melalui prapeta}}',
+        tildeTau: '\\widetilde{\\mathrm{T}}',
+        LLcorner: '\\mathbin{\\llcorner}',
+        prooflet: ['#1', 1],
+        halfarrow: '\\rightharpoonup',
+        esssup: '\\mathop{\\text{ess sup}}',
+        ocint: ['\\left]#1\\right]', 1],
+        fraction: ['\\mathord{<}#1\\mathord{>}', 1],
+        energy: '\\mathop{\\text{energi}}\\nolimits', mass: '\\mathop{\\text{massa}}\\nolimits',
+        Innerprod: ['\\bigl(#1\\bigr|#2\\bigr)', 2], vartildef: '\\widetilde{f}',
+        varBbb: ['\\mathbb{#1}', 1],
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        fraction: ['\\mathord{<}#1\\mathord{>}', 1],
+        tbf: ['\\mathbf{#1}', 1],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        BbbN: '\\mathbb{{N}}', BbbQ: '\\mathbb{{Q}}',
+        BbbZ: '\\mathbb{{Z}}',
+        bover: ['\\frac{{#1}}{{#2}}', 2],
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        esssup: '\\mathop{{\\text{{ess sup}}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        family: ['\\langle #3\\rangle_{{#1\\in #2}}', 3],
+        familyi: ['\\langle #2\\rangle_{{i\\in #1}}', 2],
+        familyiI: ['\\langle #1\\rangle_{{i\\in I}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        ocint: ['\\left]#1\\right]', 1],
+        restr: '\\mathord{{\\upharpoonright}}',
+        restrp: '\\mathord{{\\upharpoonright}}',
+        roibr: '\\mathopen{{[}}',
+        sequence: ['\\langle #2\\rangle_{{#1\\in\\mathbb{{N}}}}', 2],
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1],
+        ssbullet: '{{\\scriptscriptstyle\\bullet}}',
+        tensorhat: '\\widehat{{\\otimes}}',
+        Tensorhat: '\\widehat{{\\bigotimes}}',
+        med: '\\operatorname{med}', ofamily: ['\\langle #3\\rangle_{#1<#2}', 3],
+        CalFr: '\\mathcal{F}_{\\mathrm{Fr}}', Rho: '\\mathrm{P}',
+        interior: '\\operatorname{int}', RoverC: '\\genfrac{}{}{0pt}{}{\\mathbb{R}}{\\mathbb{C}}',
+        eurm: ['\\underline{\\mathcal{#1}}', 1], trs: '^{\\top}\\!',
+        Reverse: ['\\overset{\\scriptscriptstyle\\leftrightarrow}{#1}', 1],
+        varcheckf: '\\check{f}', varspcheck: '^{\\scriptscriptstyle\\vee}', varsphat: '^{\\scriptscriptstyle\\wedge}',
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 2 · Bagian 2A6</p>
+  <h1>Faktorisasi matriks</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi kumulatif</a></nav>
+<main id="isi">
+<p>© 1994</p>
+<span class="anchor" id="2A6"></span>
+<p>Saya menggunakan beberapa halaman untuk membahas aljabar linear <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>
+yang diperlukan bagi Bab <a class="xref" href="../26/index.html#26">26</a>. Saya hanya memberikan satu bukti, karena materi
+ini dapat ditemukan dalam setiap buku ajar aljabar linear elementer; tetapi
+saya rasa akan bermanfaat untuk meninjau gagasan-gagasan dasarnya dalam bahasa
+yang saya gunakan untuk risalah ini.</p>
+<section class="source-unit" id="2A6A" data-source-id="2A6A"><h2><span class="source-label">2A6A</span> Determinan </h2>
+<p>Kita perlu mengetahui hal-hal berikut
+tentang determinan.</p>
+<div class="inset-block"><p>(i) Setiap matriks real <span class="math inline" data-source-tex="r\times r">\(r\times r\)</span> <span class="math inline" data-source-tex="T">\(T\)</span> mempunyai determinan real
+<span class="math inline" data-source-tex="\det T">\(\det T\)</span>.</p></div>
+<div class="inset-block"><p>(ii) Untuk setiap matriks <span class="math inline" data-source-tex="r\times r">\(r\times r\)</span> <span class="math inline" data-source-tex="S">\(S\)</span> dan <span class="math inline" data-source-tex="T">\(T\)</span>,
+<span class="math inline" data-source-tex="\det ST=\det S\det T">\(\det ST=\det S\det T\)</span>.</p></div>
+<div class="inset-block"><p>(iii) Jika <span class="math inline" data-source-tex="T">\(T\)</span> matriks diagonal, determinannya adalah hasil kali
+entri-entri diagonalnya.</p></div>
+<div class="inset-block"><p>(iv) Untuk setiap matriks <span class="math inline" data-source-tex="r\times r">\(r\times r\)</span> <span class="math inline" data-source-tex="T">\(T\)</span>, <span class="math inline" data-source-tex="\det T\trs=\det T">\(\det T\trs=\det T\)</span>,
+dengan <span class="math inline" data-source-tex="T\trs">\(T\trs\)</span> transpos dari <span class="math inline" data-source-tex="T">\(T\)</span>.</p></div>
+<div class="inset-block"><p>(v) <span class="math inline" data-source-tex="\det T">\(\det T\)</span> merupakan fungsi kontinu dari koefisien-koefisien
+<span class="math inline" data-source-tex="T">\(T\)</span>.</p></div>
+<p>Ada begitu banyak jalan untuk membahas topik ini sehingga
+saya bahkan menghindari pemberian definisi ‘determinan’; saya mengajak Anda
+memeriksa ingatan Anda, atau buku kesukaan Anda, untuk memastikan bahwa Anda
+memang memahami fakta-fakta di atas.</p>
+</section>
+<section class="source-unit" id="2A6B" data-source-id="2A6B"><h2><span class="source-label">2A6B</span> Keluarga ortonormal </h2>
+<p>Untuk <span class="math inline" data-source-tex="x=(\xi_1,\ldots,\xi_r)">\(x=(\xi_1,\ldots,\xi_r)\)</span>,
+<span class="math inline" data-source-tex="y=(\eta_1,\ldots,\eta_r)\in\BbbR^r">\(y=(\eta_1,\ldots,\eta_r)\in\BbbR^r\)</span>, tuliskan <span class="math inline" data-source-tex="x\dotproduct
+y=\sum_{i=1}^r\xi_i\eta_i">\(x\dotproduct
+y=\sum_{i=1}^r\xi_i\eta_i\)</span>; tentu saja <span class="math inline" data-source-tex="\|x\|">\(\|x\|\)</span>, sebagaimana
+didefinisikan dalam <a class="xref" href="../1A2/index.html#1A2A">1A2A</a>, adalah <span class="math inline" data-source-tex="\sqrt{x\dotproduct x}">\(\sqrt{x\dotproduct x}\)</span>.
+Ingat bahwa <span class="math inline" data-source-tex="x_1,\ldots,x_k">\(x_1,\ldots,x_k\)</span> disebut <strong>ortonormal</strong> jika
+<span class="math inline" data-source-tex="x_i\dotproduct x_j=0">\(x_i\dotproduct x_j=0\)</span> untuk <span class="math inline" data-source-tex="i\ne j">\(i\ne j\)</span>, dan <span class="math inline" data-source-tex="1">\(1\)</span> untuk <span class="math inline" data-source-tex="i=j">\(i=j\)</span>.
+Hasil-hasil yang kita perlukan di sini adalah:</p>
+<div class="inset-block"><p>(i) Jika <span class="math inline" data-source-tex="x_1,\ldots,x_k">\(x_1,\ldots,x_k\)</span> merupakan vektor-vektor ortonormal dalam
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dengan <span class="math inline" data-source-tex="k&lt;r">\(k&lt;r\)</span>, maka terdapat vektor <span class="math inline" data-source-tex="x_{k+1},\ldots,x_r">\(x_{k+1},\ldots,x_r\)</span> dalam
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> sedemikian sehingga <span class="math inline" data-source-tex="x_1,\ldots,x_r">\(x_1,\ldots,x_r\)</span> ortonormal.</p></div>
+<div class="inset-block"><p>(ii) Matriks <span class="math inline" data-source-tex="r\times r">\(r\times r\)</span> <span class="math inline" data-source-tex="P">\(P\)</span> disebut <strong>ortogonal</strong> jika <span class="math inline" data-source-tex="P\trs P">\(P\trs P\)</span>
+adalah matriks identitas; secara ekuivalen, jika kolom-kolom <span class="math inline" data-source-tex="P">\(P\)</span> ortonormal.</p></div>
+<div class="inset-block"><p>(iii) Untuk matriks ortogonal <span class="math inline" data-source-tex="P">\(P\)</span>, <span class="math inline" data-source-tex="\det P">\(\det P\)</span> harus bernilai
+<span class="math inline" data-source-tex="\pm 1">\(\pm 1\)</span> (gabungkan (ii)–(iv) dari <a class="xref" href="#2A6A">2A6A</a>).</p></div>
+<div class="inset-block"><p>(iv) Jika <span class="math inline" data-source-tex="P">\(P\)</span> ortogonal, maka <span class="math inline" data-source-tex="Px\dotproduct
+Py\cmmnt{\mskip5mu =P\trs Px\dotproduct
+y}=x\dotproduct y">\(Px\dotproduct
+Py\mskip5mu =P\trs Px\dotproduct
+y=x\dotproduct y\)</span> untuk semua <span class="math inline" data-source-tex="x">\(x\)</span>, <span class="math inline" data-source-tex="y\in\BbbR^r">\(y\in\BbbR^r\)</span>.</p></div>
+<div class="inset-block"><p>(v) Jika <span class="math inline" data-source-tex="P">\(P\)</span> ortogonal, maka <span class="math inline" data-source-tex="P\trs=P^{-1}">\(P\trs=P^{-1}\)</span> juga ortogonal.</p></div>
+<div class="inset-block"><p>(vi) Jika <span class="math inline" data-source-tex="P">\(P\)</span> dan <span class="math inline" data-source-tex="Q">\(Q\)</span> ortogonal, maka <span class="math inline" data-source-tex="PQ">\(PQ\)</span> juga ortogonal.</p></div>
+</section>
+<section class="source-unit" id="2A6C" data-source-id="2A6C"><h2><span class="source-label">2A6C</span>  </h2>
+<p>Sekarang saya memberikan suatu proposisi yang tidak
+selalu disertakan dalam penyajian elementer. Tentu saja ada banyak pendekatan
+untuk hal ini; saya menawarkan pendekatan langsung.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Misalkan <span class="math inline" data-source-tex="T">\(T\)</span> sebarang matriks real <span class="math inline" data-source-tex="r\times r">\(r\times r\)</span>.
+Maka <span class="math inline" data-source-tex="T">\(T\)</span> dapat dinyatakan sebagai <span class="math inline" data-source-tex="PDQ">\(PDQ\)</span>, dengan <span class="math inline" data-source-tex="P">\(P\)</span> dan <span class="math inline" data-source-tex="Q">\(Q\)</span> matriks ortogonal
+dan <span class="math inline" data-source-tex="D">\(D\)</span> matriks diagonal berkoefisien tak negatif.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Kita menggunakan induksi pada <span class="math inline" data-source-tex="r">\(r\)</span>.</p>
+<p> </p>
+<p><strong>(a)</strong> Jika <span class="math inline" data-source-tex="r=1">\(r=1\)</span>, maka <span class="math inline" data-source-tex="T=(\tau_{11})">\(T=(\tau_{11})\)</span>. Tetapkan <span class="math inline" data-source-tex="D=(|\tau_{11}|)">\(D=(|\tau_{11}|)\)</span>,
+<span class="math inline" data-source-tex="P=(1)">\(P=(1)\)</span>, dan <span class="math inline" data-source-tex="Q=(1)">\(Q=(1)\)</span> jika <span class="math inline" data-source-tex="\tau_{11}\ge 0">\(\tau_{11}\ge 0\)</span>, serta <span class="math inline" data-source-tex="(-1)">\((-1)\)</span> jika tidak.</p>
+<p> </p>
+<p><strong>(b)(i)</strong> Untuk langkah induksi ke <span class="math inline" data-source-tex="r+1\ge 2">\(r+1\ge 2\)</span>, pertimbangkan bola satuan
+<span class="math inline" data-source-tex="B=\{x:x\in\BbbR^{r+1},\,\|x\|\le 1\}">\(B=\{x:x\in\BbbR^{r+1},\,\|x\|\le 1\}\)</span>. Ini adalah himpunan tertutup dan
+terbatas dalam <span class="math inline" data-source-tex="\BbbR^{r+1}">\(\BbbR^{r+1}\)</span>, sehingga kompak (<a class="xref" href="../2a2/index.html#2A2F">2A2F</a>). Pemetaan
+<span class="math inline" data-source-tex="x\mapsto Tx:\BbbR^{r+1}\to\BbbR^{r+1}">\(x\mapsto Tx:\BbbR^{r+1}\to\BbbR^{r+1}\)</span> dan
+<span class="math inline" data-source-tex="x\mapsto\|x\|:\BbbR^{r+1}\to\Bbb R">\(x\mapsto\|x\|:\BbbR^{r+1}\to\Bbb R\)</span> kontinu, sehingga fungsi
+<span class="math inline" data-source-tex="x\mapsto\|Tx\|:B\to\Bbb R">\(x\mapsto\|Tx\|:B\to\Bbb R\)</span> terbatas dan mencapai batas-batasnya (<a class="xref" href="../2a2/index.html#2A2G">2A2G</a>),
+dan terdapat <span class="math inline" data-source-tex="u\in B">\(u\in B\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\|Tu\|\ge\|Tx\|">\(\|Tu\|\ge\|Tx\|\)</span> untuk setiap
+<span class="math inline" data-source-tex="x\in B">\(x\in B\)</span>. Perhatikan bahwa <span class="math inline" data-source-tex="\|Tu\|">\(\|Tu\|\)</span> harus merupakan norma <span class="math inline" data-source-tex="\|T\|">\(\|T\|\)</span> dari <span class="math inline" data-source-tex="T">\(T\)</span>
+sebagaimana didefinisikan dalam <a class="xref" href="../262/index.html#262H">262H</a>. Tetapkan
+<span class="math inline" data-source-tex="\delta=\|T\|=\|Tu\|">\(\delta=\|T\|=\|Tu\|\)</span>. Jika <span class="math inline" data-source-tex="\delta=0">\(\delta=0\)</span>, maka <span class="math inline" data-source-tex="T">\(T\)</span> harus merupakan matriks
+nol dan hasilnya trivial; jadi anggaplah <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>. Dalam kasus ini
+<span class="math inline" data-source-tex="\|u\|">\(\|u\|\)</span> harus tepat sama dengan <span class="math inline" data-source-tex="1">\(1\)</span>, sebab jika tidak, kita akan mempunyai
+<span class="math inline" data-source-tex="u=\|u\|u&#x27;">\(u=\|u\|u&#x27;\)</span> dengan <span class="math inline" data-source-tex="\|u&#x27;\|=1">\(\|u&#x27;\|=1\)</span> dan <span class="math inline" data-source-tex="\|Tu&#x27;\|&gt;\|Tu\|">\(\|Tu&#x27;\|&gt;\|Tu\|\)</span>.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Jika <span class="math inline" data-source-tex="x\in\BbbR^{r+1}">\(x\in\BbbR^{r+1}\)</span> dan <span class="math inline" data-source-tex="x\dotproduct u=0">\(x\dotproduct u=0\)</span>, maka
+<span class="math inline" data-source-tex="Tx\dotproduct Tu=0">\(Tx\dotproduct Tu=0\)</span>. Bukti.? Jika tidak, tetapkan
+<span class="math inline" data-source-tex="\gamma=Tx\dotproduct Tu\ne 0">\(\gamma=Tx\dotproduct Tu\ne 0\)</span>. Pertimbangkan <span class="math inline" data-source-tex="y=u+\eta\gamma x">\(y=u+\eta\gamma x\)</span> untuk
+<span class="math inline" data-source-tex="\eta&gt;0">\(\eta&gt;0\)</span> yang kecil. Kita mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|y\|^2=y\dotproduct y
+=u\dotproduct u+2\eta\gamma u\dotproduct x+\eta^2\gamma^2 x\dotproduct x
+=\|u\|^2+\eta^2\gamma^2\|x\|^2
+=1+\eta^2\gamma^2\|x\|^2">\(\|y\|^2=y\dotproduct y
+=u\dotproduct u+2\eta\gamma u\dotproduct x+\eta^2\gamma^2 x\dotproduct x
+=\|u\|^2+\eta^2\gamma^2\|x\|^2
+=1+\eta^2\gamma^2\|x\|^2\)</span>,</div>
+<p>sedangkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|Ty\|^2=Ty\dotproduct Ty
+=Tu\dotproduct Tu+2\eta\gamma Tu\dotproduct Tx
+  +\eta^2\gamma^2 Tx\dotproduct Tx
+=\delta^2+2\eta\gamma^2+\eta^2\gamma^2\|Tx\|^2">\(\|Ty\|^2=Ty\dotproduct Ty
+=Tu\dotproduct Tu+2\eta\gamma Tu\dotproduct Tx
+  +\eta^2\gamma^2 Tx\dotproduct Tx
+=\delta^2+2\eta\gamma^2+\eta^2\gamma^2\|Tx\|^2\)</span>.</div>
+<p>Tetapi juga <span class="math inline" data-source-tex="\|Ty\|^2\le\delta^2\|y\|^2">\(\|Ty\|^2\le\delta^2\|y\|^2\)</span> (<a class="xref" href="../2a4/index.html#2A4Fb">2A4Fb</a>), sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\delta^2+2\eta\gamma^2+\eta^2\gamma^2\|Tx\|^2
+\le\delta^2(1+\eta^2\gamma^2\|x\|^2)">\(\delta^2+2\eta\gamma^2+\eta^2\gamma^2\|Tx\|^2
+\le\delta^2(1+\eta^2\gamma^2\|x\|^2)\)</span></div>
+<p>dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="2\eta\gamma^2
+\le\delta^2\eta^2\gamma^2\|x\|^2-\eta^2\gamma^2\|Tx\|^2">\(2\eta\gamma^2
+\le\delta^2\eta^2\gamma^2\|x\|^2-\eta^2\gamma^2\|Tx\|^2\)</span>,</div>
+<p>yaitu</p>
+<div class="centerline"><span class="math inline" data-source-tex="2\le\eta(\delta^2\|x\|^2-\|Tx\|^2)">\(2\le\eta(\delta^2\|x\|^2-\|Tx\|^2)\)</span>.</div>
+<p>Namun ini tentu tidak mungkin benar untuk semua <span class="math inline" data-source-tex="\eta&gt;0">\(\eta&gt;0\)</span>, jadi
+kita memperoleh kontradiksi. !∎</p>
+<p> </p>
+<p>  <strong>(iii)</strong> Tetapkan <span class="math inline" data-source-tex="v=\delta^{-1}Tu">\(v=\delta^{-1}Tu\)</span>, sehingga <span class="math inline" data-source-tex="\|v\|=1">\(\|v\|=1\)</span>. Misalkan
+<span class="math inline" data-source-tex="u_1,\ldots,u_{r+1}">\(u_1,\ldots,u_{r+1}\)</span> vektor-vektor ortonormal dengan <span class="math inline" data-source-tex="u_{r+1}=u">\(u_{r+1}=u\)</span>, dan
+misalkan <span class="math inline" data-source-tex="Q_0">\(Q_0\)</span> matriks ortogonal <span class="math inline" data-source-tex="(r+1)\times(r+1)">\((r+1)\times(r+1)\)</span> dengan kolom-kolom
+<span class="math inline" data-source-tex="u_1,\ldots,u_{r+1}">\(u_1,\ldots,u_{r+1}\)</span>; maka, dengan menuliskan <span class="math inline" data-source-tex="e_1,\ldots,e_{r+1}">\(e_1,\ldots,e_{r+1}\)</span> untuk
+basis ortonormal baku dari <span class="math inline" data-source-tex="\BbbR^{r+1}">\(\BbbR^{r+1}\)</span>, kita mempunyai <span class="math inline" data-source-tex="Q_0e_i=u_i">\(Q_0e_i=u_i\)</span> untuk
+setiap <span class="math inline" data-source-tex="i">\(i\)</span>, dan <span class="math inline" data-source-tex="Q_0e_{r+1}=u">\(Q_0e_{r+1}=u\)</span>. Demikian pula, terdapat matriks ortogonal
+<span class="math inline" data-source-tex="P_0">\(P_0\)</span> sedemikian sehingga <span class="math inline" data-source-tex="P_0e_{r+1}=v">\(P_0e_{r+1}=v\)</span>.</p>
+<p>Tetapkan <span class="math inline" data-source-tex="T_1=P_0^{-1}TQ_0">\(T_1=P_0^{-1}TQ_0\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="T_1e_{r+1}=P_0^{-1}Tu=\delta P_0^{-1}v=\delta e_{r+1}">\(T_1e_{r+1}=P_0^{-1}Tu=\delta P_0^{-1}v=\delta e_{r+1}\)</span>,</div>
+<p>sedangkan jika <span class="math inline" data-source-tex="x\dotproduct e_{r+1}=0">\(x\dotproduct e_{r+1}=0\)</span>, maka
+<span class="math inline" data-source-tex="Q_0x\dotproduct u=0">\(Q_0x\dotproduct u=0\)</span> (<a class="xref" href="#2A6B">2A6B</a>(iv)), sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="T_1x\dotproduct e_{r+1}=P_0T_1x\dotproduct P_0e_{r+1}
+=TQ_0x\dotproduct v=0">\(T_1x\dotproduct e_{r+1}=P_0T_1x\dotproduct P_0e_{r+1}
+=TQ_0x\dotproduct v=0\)</span>,</div>
+<p>menurut (ii). Ini berarti bahwa <span class="math inline" data-source-tex="T_1">\(T_1\)</span> harus berbentuk</p>
+<p><span class="math display" data-source-tex="\Matrix{S&amp;0\\0&amp;\delta},">\[\begin{pmatrix}S&amp;0\\0&amp;\delta\end{pmatrix},\]</span></p>
+<p>dengan <span class="math inline" data-source-tex="S">\(S\)</span> matriks <span class="math inline" data-source-tex="r\times r">\(r\times r\)</span>.</p>
+<p> </p>
+<p>  <strong>(iv)</strong> Menurut hipotesis induksi, <span class="math inline" data-source-tex="S">\(S\)</span> dapat dinyatakan sebagai
+<span class="math inline" data-source-tex="\tilde P\tilde D\tilde Q">\(\tilde P\tilde D\tilde Q\)</span>, dengan <span class="math inline" data-source-tex="\tilde P">\(\tilde P\)</span> dan <span class="math inline" data-source-tex="\tilde Q">\(\tilde Q\)</span> matriks
+ortogonal <span class="math inline" data-source-tex="r\times r">\(r\times r\)</span> dan <span class="math inline" data-source-tex="\tilde D">\(\tilde D\)</span> matriks diagonal <span class="math inline" data-source-tex="r\times r">\(r\times r\)</span>
+berkoefisien tak negatif. Tetapkan</p>
+<p><span class="math display" data-source-tex="P_1=\Matrix{\tilde P&amp;0\\0&amp;1},\quad Q_1=\Matrix{\tilde Q&amp;0\\0&amp;1},\quad
+D=\Matrix{\tilde D&amp;0\\0&amp;\delta}.">\[P_1=\begin{pmatrix}\tilde P&amp;0\\0&amp;1\end{pmatrix},\quad Q_1=\begin{pmatrix}\tilde Q&amp;0\\0&amp;1\end{pmatrix},\quad
+D=\begin{pmatrix}\tilde D&amp;0\\0&amp;\delta\end{pmatrix}.\]</span></p>
+<p>Maka <span class="math inline" data-source-tex="P_1">\(P_1\)</span> dan <span class="math inline" data-source-tex="Q_1">\(Q_1\)</span> ortogonal dan <span class="math inline" data-source-tex="D">\(D\)</span> diagonal berkoefisien tak
+negatif, serta <span class="math inline" data-source-tex="P_1DQ_1=T_1">\(P_1DQ_1=T_1\)</span>. Sekarang tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="P=P_0P_1">\(P=P_0P_1\)</span>,   <span class="math inline" data-source-tex="Q=Q_1Q_0^{-1}">\(Q=Q_1Q_0^{-1}\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="P">\(P\)</span> dan <span class="math inline" data-source-tex="Q">\(Q\)</span> ortogonal (<a class="xref" href="#2A6B">2A6B</a>(v)–(vi)) dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="PDQ=P_0P_1DQ_1Q_0^{-1}=P_0T_1Q_0^{-1}=T">\(PDQ=P_0P_1DQ_1Q_0^{-1}=P_0T_1Q_0^{-1}=T\)</span>.</div>
+<p>Jadi langkah induksi selesai.</p></aside>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 2: Broad Foundations</cite>, Bagian 2A6.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 30 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-cumulative-html-route-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V2-S2A6&quot;,
+  &quot;source_member&quot;: &quot;mt2.2016/mt2a6.tex&quot;,
+  &quot;target_bytes&quot;: 6722,
+  &quot;target_sha256&quot;: &quot;03433b781c3683f78a95a43d2923051fa75b78f2526df6f4146b49505da0c03e&quot;,
+  &quot;source_ids&quot;: [
+    &quot;2A6&quot;,
+    &quot;2A6A&quot;,
+    &quot;2A6B&quot;,
+    &quot;2A6C&quot;
+  ],
+  &quot;corpus_id&quot;: &quot;O007-FREMLIN&quot;,
+  &quot;volume_id&quot;: &quot;O007-FREMLIN-V2&quot;,
+  &quot;volume_source_title&quot;: &quot;Broad Foundations&quot;,
+  &quot;route&quot;: &quot;2a6&quot;,
+  &quot;official_source_page_start&quot;: 543,
+  &quot;chapter_official_source_pages&quot;: [
+    518,
+    570
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

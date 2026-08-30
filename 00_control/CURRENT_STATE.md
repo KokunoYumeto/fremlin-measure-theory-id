@@ -1,6 +1,112 @@
 # Current State — O007 Fremlin Volumes 1–2
 
-Updated: 2026-08-29 (Europe/Berlin)
+Updated: 2026-08-30 (Europe/Berlin)
+
+> **Superseding cumulative-reader state (2026-08-30):** source coverage is
+> **672/672 official pages (100%)** and the corrected full PDF now passes its
+> complete automated and visual gate.  `mt286.tex` is 121,560 bytes / SHA-256
+> `d23e617446c254822a276436ae5adeadfeb2bb4723a6db2cdc1d13b0b29f421e`;
+> its only post-seal change is the one-LF reader reflow recorded in
+> `qa/chapter28/mt286-reader-reflow-qa.json`.  The complete PDF is 4,958,199
+> bytes / SHA-256
+> `e52b9b9fd5ffe967c7b3572b6e650743e91a3836d4f07fd30394a0788ff75fcd`
+> and 715 physical pages.  `qa/complete-corpus-pdf-visual-qa.json` is 499,934
+> bytes / SHA-256
+> `27ee8bbf54d30b5f9e5df301e30fce88c47cc6b6d506a21b6dcb45ec42ae102e`:
+> all 715 pages rendered, the 545-page predecessor replayed exactly, and all
+> 170 appended pages passed inspection across 19 contact sheets.  The earlier
+> page-643 right-edge defect is resolved.  Complete backend validation also
+> passes at 119,466 bytes / SHA-256
+> `d361ef42361406c5ea0ac9852d950fb70f50a0065f5a3696569d3632adf3b25d`;
+> `catalog-v1.16` contains 16,093 unique schema-valid IDs and 94 units.  Its
+> lossless exercise topology explicitly records the root 1,094 planning census
+> plus active variant headers `243Xo` and `274Xf` (1,096 typed records total),
+> with exactly 276 active hints.  Offline HTML, admission, package, and
+> existing-lineage publication remain required; public coverage is still
+> **509/672 (75.7%)** until they pass and are read back anonymously.
+
+> **Superseding complete-source state (2026-08-30):** all selected source
+> units for Fremlin Volumes I--II are now canonically integrated in exact
+> source order, **672/672 official pages (100%)**.  Chapter 28 C is bound by
+> the independently replayed 12-row seal at
+> `HP-D10-CH28-C-SEALED-20260830T035947+0200`; all three canonical unit QAs
+> pass.  All nine post-Chapter-28 appendix/concordance/reference targets still
+> match their passing receipts.  The old Volume-I index remains intact, while
+> the passing Volume-I/II index has the distinct path
+> `source/id-ID/mti-volume12-id.tex` and distinct Volume-II complete driver.
+> The deterministic integration receipt is
+> `qa/final-closure/complete-source-integration.json` (6,475 bytes; SHA-256
+> `c960c0c8a05f504329184de0aab5ffa222631e161a05d43ad614edf1011c0e2a`).
+> Cumulative backend/PDF/HTML/package gates are now active; no complete-corpus
+> reader is admitted or published yet.  The public boundary therefore remains
+> **509/672 (75.7%)** until those gates pass and the existing GitHub/Zenodo
+> lineages are updated and anonymously read back.
+
+> **Active unadmitted repair state (2026-08-29):** local admitted coverage is
+> still **554/672 (82.4%)** and public coverage is still **509/672 (75.7%)**.
+> Chapter 28 C (`mt284.tex`--`mt286.tex`) remains intentionally unsealed.
+> Packet-local `mt284` and `mt285` repairs now pass exact structure, language,
+> and independent readback gates at SHA-256
+> `3a0cda1025d9a3f360f60f649828aa797939edc28d2280d9aa8aa888962c50c0`
+> and `29c6df056ac911321713ce52e363739d0b5262cf5defb6c9729a94162bce0516`.
+> `mt286` conserves all 9,247 commands, 38 stable IDs, 172 references, and
+> 1,715 math atoms.  Its live source-led range now passes completely through
+> `286W`, stopping before `286X`, at 121,293 bytes / SHA-256
+> `6ab3736a556aa5eb3eab5dd8fa9ddd0e8bcc398e8ddcee51bc01fcc007fdb4d9`.
+> The disjoint `286X`/`286Y`/Notes translation is sealed and undergoing an
+> independent semantic replay before its unique-anchor merge and whole-unit
+> QA.  Two bulk alternatives were correctly rejected for
+> duplicated protected syntax or semantic damage.  No packet-local unit may
+> mutate canonical owner files before the complete packet is sealed and
+> independently replayed.
+>
+> The remaining shared index has a deterministic, QA-passing Volume-I/II-only
+> projection under `work/index/mti-volume12-owner-replay/`.  The active baseline
+> is 99,390 bytes / SHA-256
+> `3704a67b60b39c8f934e11dafa863059be5ae59dd5c496bafb79a39ebc0fe81c`,
+> comprising 1,399 paragraphs, of which 1,274 require translation.  285 required
+> paragraphs exactly reuse validated Volume I translations and 989 are new or
+> changed; all Volume III--V content is deterministically excluded.  Nine
+> appendix/concordance/reference units already pass bounded QA, so after Chapter
+> 28 the index projection is the only substantial untranslated source surface
+> before cumulative assembly and publication.
+
+> **Index packet progress (2026-08-30):** workloads A, B, and C are complete
+> and packet-local PASS (342 + 337 + 310 records).  Their current SHA-256 values
+> are `b7641829252f603fdb2389a553759d4ff621c4ede6bb7fa96684cd89b8f2277b`,
+> `95039d2f4b368377f000b970659abab98ab47409b754369e6069225a2f2a59c4`,
+> and `cdc90515fc7821150284a1de1b03a54c6494dcc15c5780e78d2b80f3de8b4f19`.
+> The three bounded record repairs (`P1024`, `P1090`, `P1091`) are applied.
+> Deterministic assembly now produces a 100,767-byte candidate, SHA-256
+> `455f68551db3a51770c0e7e90e42d5335f8aa7899e51f4c62b0dce99ae366438`.
+> Independent reverse replay, topology/reference checks, high-risk-English
+> sweep, and an isolated 571-page build all pass; audit JSON SHA-256 is
+> `1c224c98de6779177a9a37b6e74dd9c80ce4a200e56de2c60446aa0d596aad7a`.
+> The complete index is ready as a noncanonical final source-order input after
+> Chapter 28 C closes.
+
+> **Final-tail readiness (2026-08-30):** all nine already prepared units pass
+> fresh receipt replay in source order: `mt2a`, `mt2a1`--`mt2a6`, `mt2conc`,
+> and `mt2r`.  Current authority/target hashes match their receipts and the
+> aggregate replay preserves 3,094 math atoms, 150 stable IDs, and 77
+> references.  Evidence:
+> `work/final-closure/tail-readiness/TAIL_READINESS_AUDIT.md` (7,918 bytes;
+> SHA-256
+> `685c0b6e04b8eda5e8676363f50d754c181592d578aa30554a6dd381c852c16e`).
+
+> **Superseding local production state (2026-08-29):** Chapter 28 B
+> (`mt282.tex` and `mt283.tex`) is owner-integrated and unit-QA passing.  The
+> contiguous local candidate now reaches official Volume II page 452, or
+> **554/672 pages (82.4%)**.  The public boundary remains **509/672 (75.7%)**
+> until the chapter-level cumulative boundary is built and verified.  Canonical
+> target hashes are `fd5b43404abdf778251a4bdfc04855e48b95978bf5913bf2062d29c0a7798e81`
+> (mt282) and
+> `2c494e06bd16d4cb48e8e61265346756c413b729dbe81b8b8c8ae6f3012c5809`
+> (mt283); owner receipt:
+> `qa/chapter28/HP-D10-CH28-B-owner-integration.json`.  The next exact source
+> is `mt284.tex` at official page 453.  The 17 anomaly decisions and three
+> language repairs are recorded in the packet's hash-bound anomaly receipt;
+> no upstream contact or publication occurred at this unit boundary.
 
 > **Superseding public owner state (2026-08-29):** complete Chapter 27 is now
 > public at **509/672 official pages (75.7%)**.  The GitHub prerelease
@@ -11,6 +117,64 @@ Updated: 2026-08-29 (Europe/Berlin)
 > <https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.20.0-v2-through-ch27>.
 > Zenodo record `22163307`, DOI `10.5281/zenodo.22163307`, is the next version
 > in concept `10.5281/zenodo.22059798`.
+
+> **Superseding local production state (2026-08-29):** the Chapter 28
+> introduction and complete Section 281 are owner-integrated QA-passing
+> candidates through official Volume II page 418. This is **520/672 (77.4%)
+> locally integrated**, but it is not yet chapter-admitted or public; the
+> verified public boundary remains 509/672. Exact owner evidence is
+> `qa/chapter28/HP-D10-CH28-A-owner-integration.json` (2,798 bytes; SHA-256
+> `ff9c6b4afbd409852d88e875eb81ac7d4ff804886537472b1d9afa57045658b1`).
+> Continue contiguously at `mt282.tex`, official Volume II page 419. Chapter 28
+> ends at page 517; appendix/concordance/references/index pages 518–570 remain
+> part of the complete 672-page goal.
+
+> **Owner-integrated Appendix 2A3 (2026-08-29):** complete `mt2a3.tex`
+> (sections 2A3A–2A3U) is translated and owner-integrated as noncontiguous
+> closure evidence. Authority: 44,169 bytes, SHA-256
+> `a652e80b8c4324f9f1343d5000cd8abe7379fb5f97e6c73ab4ab077cd7059962`.
+> Canonical target: 47,331 bytes, SHA-256
+> `824ef35cb73961bcbc7d71a51a222b2e2f160adfae2c7f88d5f040fbad5530f0`.
+> QA passes 1,092/1,092 math segments, 55/55 stable IDs, exact symbolic order,
+> zero active English residue, and 14 ledgered source corrections
+> `O007-CORR-0376`–`O007-CORR-0389`. Independent review,
+> `work/appendix/mt2a3-google-candidate/independent-semantic-review.md`, is
+> 3,785 bytes / SHA-256
+> `babf37a80dd99dcec7e9f58e44be798450a4ac67f9dee4f23a1d7f1239c2555f`;
+> owner receipt `qa/appendix/mt2a3-owner-integration.json` is 2,270 bytes /
+> SHA-256 `bb193462430136b7b1b8827128375b5f10ae61550b236d45575b31876acbf21e`.
+> It is not counted in the public percentage until the source-order gap closes;
+> continue contiguous work at `mt282.tex`, official Volume II page 419.
+
+> **Noncontiguous closure evidence (2026-08-29):** later units `mt2a.tex`,
+> `mt2a1.tex`, `mt2a2.tex`, `mt2a4.tex`, `mt2a5.tex`, `mt2a6.tex`,
+> `mt2conc.tex`, and `mt2r.tex` are translated and pass bounded
+> unit QA, but are deliberately excluded from the coverage percentage until
+> their preceding gaps close.  The newest unit is the complete reference list,
+> `source/id-ID/mt2r.tex` (8,581 bytes; SHA-256
+> `7e92c353bd6f462d6c84dcd8ae94aa40dfe7b8bbad6f9bc501b703491e04d462`),
+> with passing receipt `qa/appendix/mt2r-unit-qa.json` (9,746 bytes; SHA-256
+> `a02765a338128f8662ff98deb388621dee4cc6925f8001204c0c49c17109a9bf`).
+> Complete Appendix 2A4 is `source/id-ID/mt2a4.tex` (14,306 bytes; SHA-256
+> `2a70633f28d6efb41efdb6d9e8c14cbca381d6f2e6a0baf15bc6f44994db76ae`)
+> with passing receipt `qa/appendix/mt2a4-unit-qa.json` (3,398 bytes;
+> SHA-256
+> `5093997ae2b5a01a6ddf024eaae4be3c55d12b38befd3636f6cc5435c92a6078`)
+> and exact correction rows `O007-CORR-0365`–`0366`.
+> Complete Appendix 2A5 is `source/id-ID/mt2a5.tex` (18,232 bytes;
+> SHA-256
+> `f2c2d94ab3a1733fda6c9f5cc301ffb21a49f0118b4c5754cb8384aafa3abb8f`),
+> with passing receipt `qa/appendix/mt2a5-unit-qa.json` (3,802 bytes;
+> SHA-256
+> `502c5a4c7875de4c63028945b6400dfe59d16da7360c6b714adac3bddd071b09`)
+> and exact corrections `O007-CORR-0367`–`0369`.
+> Appendices 2A1–2A2 are owner-integrated from sealed packet
+> `HP-D10-APP-A`; canonical targets are 34,185 and 18,754 bytes with
+> SHA-256 `a809cca943cf4db9bb3efa6cdca899575835d89d3be4ddbf9e35af403a46b30a`
+> and `6b900ca93a247264e1da2395f4afa3bfacb4b61f248a7ab2c83a851e8f99a40a`.
+> The 3,758-byte owner receipt has SHA-256
+> `47043eac984b70a7ed79620fd83b88bea1fc3167795dd33ed055b1b0e709cf28`
+> and binds accepted corrections `O007-CORR-0370`–`0375`.
 
 ## Live owner state through complete Chapter 27 public
 

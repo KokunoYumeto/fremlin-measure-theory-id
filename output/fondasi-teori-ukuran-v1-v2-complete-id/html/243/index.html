@@ -1,0 +1,1011 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>L∞ — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        BbbQ: '\\mathbb{Q}', BbbR: '\\mathbb{R}',
+        eightBbb: ['\\mathbb{#1}', 1],
+        DiniD: '\\overline{D}', Dinid: '\\underline{D}',
+        Var: '\\operatorname{Var}',
+        bumpeq: '=_{\\mathrm{approx}}',
+        intstar: '\\operatorname{int}^{*}',
+        family: ['\\langle #3\\rangle_{#1\\in #2}', 3],
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        displaycause: ['\\text{(#1)}', 1],
+        bigcupop: '\\bigcup', biggerint: '\\int',
+        eae: '=_{\\mathrm{a.e.}}', leae: '\\le_{\\mathrm{a.e.}}', geae: '\\ge_{\\mathrm{a.e.}}',
+        restr: '\\mathord{\\upharpoonright}', restrp: '\\mathord{\\upharpoonright}',
+        Real: '\\operatorname{Re}', Imag: '\\operatorname{Im}',
+        tbf: ['\\mathbf{#1}', 1], eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Qed: '\\square',
+        BbbN: '\\mathbb{N}', Expn: '\\mathbb{E}',
+        Cal: ['\\mathcal{#1}', 1], dom: '\\operatorname{dom}',
+        coint: ['\\left[#1\\right[', 1],
+        sequencen: ['\\langle #1_n\\rangle_{n\\in\\mathbb{N}}', 1],
+        imp: '\\mathop{\\text{pelestari ukuran melalui prapeta}}',
+        tildeTau: '\\widetilde{\\mathrm{T}}',
+        LLcorner: '\\mathbin{\\llcorner}',
+        prooflet: ['#1', 1],
+        halfarrow: '\\rightharpoonup',
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        roibr: '\\mathopen{{[}}',
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1]
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 2 · Bagian 243</p>
+  <h1><span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span></h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi kumulatif</a></nav>
+<main id="isi">
+<span class="anchor" id="243"></span>
+<p>Ruang Banach klasik kedua dalam teori ukur yang saya bahas adalah ruang
+<span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span>. Sebagaimana akan tampak di bawah, <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span> merupakan
+pasangan polar dari <span class="math inline" data-source-tex="L^1">\(L^1\)</span>, yakni lawan yang terkait; untuk ruang ukur
+‘biasa’, ruang ini sebenarnya merupakan dual dari <span class="math inline" data-source-tex="L^1">\(L^1\)</span> (<a class="xref" href="#243F">243F</a>-<a class="xref" href="#243G">243G</a>).</p>
+<section class="source-unit" id="243A" data-source-id="243A"><h2><span class="source-label">243A</span> Definisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sebarang ruang ukur.
+Misalkan <span class="math inline" data-source-tex="\eusm L^{\infty}=\eusm L^{\infty}(\mu)">\(\eusm L^{\infty}=\eusm L^{\infty}(\mu)\)</span> himpunan fungsi
+<span class="math inline" data-source-tex="f\in\eusm L^0=\eusm L^0(\mu)">\(f\in\eusm L^0=\eusm L^0(\mu)\)</span> yang <strong>terbatas secara esensial</strong>, yaitu
+sedemikian sehingga terdapat <span class="math inline" data-source-tex="M\ge 0">\(M\ge 0\)</span> dengan
+<span class="math inline" data-source-tex="\{x:x\in\dom f,\,|f(x)|\le M\}">\(\{x:x\in\dom f,\,|f(x)|\le M\}\)</span> koterabaikan, dan tuliskan</p>
+<div class="centerline"><span class="math inline" data-source-tex="L^{\infty}=L^{\infty}(\mu)
+=\{f^{\ssbullet}:f\in\eusm L^{\infty}(\mu)\}\subseteq L^0(\mu)">\(L^{\infty}=L^{\infty}(\mu)
+=\{f^{\ssbullet}:f\in\eusm L^{\infty}(\mu)\}\subseteq L^0(\mu)\)</span>.</div>
+<p>Perhatikan bahwa jika <span class="math inline" data-source-tex="f\in\eusm L^{\infty}">\(f\in\eusm L^{\infty}\)</span>,
+<span class="math inline" data-source-tex="g\in\eusm L^0">\(g\in\eusm L^0\)</span> dan <span class="math inline" data-source-tex="g\eae f">\(g\eae f\)</span>, maka <span class="math inline" data-source-tex="g\in\eusm L^{\infty}">\(g\in\eusm L^{\infty}\)</span>; dengan
+demikian
+<span class="math inline" data-source-tex="\eusm L^{\infty}=\{f:f\in\eusm L^0,\,f^{\ssbullet}\in L^{\infty}\}">\(\eusm L^{\infty}=\{f:f\in\eusm L^0,\,f^{\ssbullet}\in L^{\infty}\}\)</span>.</p>
+</section>
+<section class="source-unit" id="243B" data-source-id="243B"><h2><span class="source-label">243B</span> Teorema </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sebarang ruang ukur. Maka</p>
+<p>(a) <span class="math inline" data-source-tex="L^{\infty}=L^{\infty}(\mu)">\(L^{\infty}=L^{\infty}(\mu)\)</span> merupakan subruang linear dari
+<span class="math inline" data-source-tex="L^0=L^0(\mu)">\(L^0=L^0(\mu)\)</span>.</p>
+<p>(b) Jika <span class="math inline" data-source-tex="u\in L^{\infty}">\(u\in L^{\infty}\)</span>, <span class="math inline" data-source-tex="v\in L^0">\(v\in L^0\)</span> dan <span class="math inline" data-source-tex="|v|\le|u|">\(|v|\le|u|\)</span>, maka
+<span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span>. Akibatnya, <span class="math inline" data-source-tex="|u|">\(|u|\)</span>, <span class="math inline" data-source-tex="u\vee v">\(u\vee v\)</span>, <span class="math inline" data-source-tex="u\wedge v">\(u\wedge v\)</span>,
+<span class="math inline" data-source-tex="u^+\mskip5mu =u\vee 0">\(u^+\mskip5mu =u\vee 0\)</span> dan <span class="math inline" data-source-tex="u^-\mskip5mu =(-u)\vee 0">\(u^-\mskip5mu =(-u)\vee 0\)</span>
+termasuk dalam <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span> untuk semua <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span>.</p>
+<p>(c) Dengan menuliskan <span class="math inline" data-source-tex="e=\chi X^{\ssbullet}">\(e=\chi X^{\ssbullet}\)</span>, yaitu kelas ekuivalensi
+dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span> dari fungsi konstan yang bernilai <span class="math inline" data-source-tex="1">\(1\)</span>, suatu unsur <span class="math inline" data-source-tex="u">\(u\)</span> dari
+<span class="math inline" data-source-tex="L^0">\(L^0\)</span> termasuk dalam <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span> jika dan hanya jika terdapat <span class="math inline" data-source-tex="M\ge 0">\(M\ge 0\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="|u|\le Me">\(|u|\le Me\)</span>.</p>
+<p>(d) Jika <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span>, maka <span class="math inline" data-source-tex="u\times v\in L^{\infty}">\(u\times v\in L^{\infty}\)</span>.</p>
+<p>(e) Jika <span class="math inline" data-source-tex="u\in L^{\infty}">\(u\in L^{\infty}\)</span> dan <span class="math inline" data-source-tex="v\in L^1=L^1(\mu)">\(v\in L^1=L^1(\mu)\)</span>, maka
+<span class="math inline" data-source-tex="u\times v\in L^1">\(u\times v\in L^1\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Jika <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in\eusm
+L^{\infty}=\eusm L^{\infty}(\mu)">\(g\in\eusm
+L^{\infty}=\eusm L^{\infty}(\mu)\)</span> dan <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>, maka <span class="math inline" data-source-tex="f+g">\(f+g\)</span>,
+<span class="math inline" data-source-tex="cf\in\eusm L^{\infty}">\(cf\in\eusm L^{\infty}\)</span>.
+Bukti. Kita mempunyai <span class="math inline" data-source-tex="M_1">\(M_1\)</span>, <span class="math inline" data-source-tex="M_2\ge 0">\(M_2\ge 0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="|f|\le M_1">\(|f|\le M_1\)</span> hampir di mana-mana dan <span class="math inline" data-source-tex="|g|\le M_2">\(|g|\le M_2\)</span> hampir di mana-mana.
+Sekarang</p>
+<div class="centerline"><span class="math inline" data-source-tex="|f+g|\le|f|+|g|\le M_1+M_2">\(|f+g|\le|f|+|g|\le M_1+M_2\)</span> hampir di mana-mana,
+   <span class="math inline" data-source-tex="|cf|\le|c|M_1">\(|cf|\le|c|M_1\)</span> hampir di mana-mana,</div>
+<p>sehingga <span class="math inline" data-source-tex="f+g">\(f+g\)</span>, <span class="math inline" data-source-tex="cf\in\eusm L^{\infty}">\(cf\in\eusm L^{\infty}\)</span>.
+ ∎ Segera diperoleh bahwa <span class="math inline" data-source-tex="u+v">\(u+v\)</span>, <span class="math inline" data-source-tex="cu\in L^{\infty}">\(cu\in L^{\infty}\)</span> setiap kali
+<span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span> dan <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>.</p>
+<p> </p>
+<p><strong>(b)(i)</strong> Ambil <span class="math inline" data-source-tex="f\in\eusm L^{\infty}">\(f\in\eusm L^{\infty}\)</span>,
+<span class="math inline" data-source-tex="g\in\eusm L^0=\eusm L^0(\mu)">\(g\in\eusm L^0=\eusm L^0(\mu)\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="u=f^{\ssbullet}">\(u=f^{\ssbullet}\)</span> dan <span class="math inline" data-source-tex="v=g^{\ssbullet}">\(v=g^{\ssbullet}\)</span>. Maka <span class="math inline" data-source-tex="|g|\leae|f|">\(|g|\leae|f|\)</span>.
+Misalkan <span class="math inline" data-source-tex="M\ge 0">\(M\ge 0\)</span> sedemikian sehingga <span class="math inline" data-source-tex="|f|\le M">\(|f|\le M\)</span> hampir di mana-mana;
+maka <span class="math inline" data-source-tex="|g|\le M">\(|g|\le M\)</span> hampir di mana-mana, sehingga
+<span class="math inline" data-source-tex="g\in\eusm L^{\infty}">\(g\in\eusm L^{\infty}\)</span> dan <span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span>.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Sekarang <span class="math inline" data-source-tex="|\,|u|\,|=|u|">\(|\,|u|\,|=|u|\)</span>, sehingga
+<span class="math inline" data-source-tex="|u|\in L^{\infty}">\(|u|\in L^{\infty}\)</span> setiap kali <span class="math inline" data-source-tex="u\in L^{\infty}">\(u\in L^{\infty}\)</span>. Selain itu,
+<span class="math inline" data-source-tex="u\vee v=\bover12(u+v+|u-v|)">\(u\vee v=\bover12(u+v+|u-v|)\)</span> dan
+<span class="math inline" data-source-tex="u\wedge v=\bover12(u+v-|u-v|)">\(u\wedge v=\bover12(u+v-|u-v|)\)</span> termasuk dalam <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span> untuk semua
+<span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span>.</p>
+<p> </p>
+<p><strong>(c)</strong>(i) Jika <span class="math inline" data-source-tex="u\in L^{\infty}">\(u\in L^{\infty}\)</span>, ambil
+<span class="math inline" data-source-tex="f\in\eusm L^{\infty}">\(f\in\eusm L^{\infty}\)</span> sedemikian sehingga <span class="math inline" data-source-tex="f^{\ssbullet}=u">\(f^{\ssbullet}=u\)</span>.
+Maka terdapat <span class="math inline" data-source-tex="M\ge 0">\(M\ge 0\)</span> sedemikian sehingga <span class="math inline" data-source-tex="|f|\le M">\(|f|\le M\)</span> hampir di
+mana-mana, sehingga <span class="math inline" data-source-tex="|f|\leae M\chi X">\(|f|\leae M\chi X\)</span> dan <span class="math inline" data-source-tex="|u|\le Me">\(|u|\le Me\)</span>. (ii) Tentu saja
+<span class="math inline" data-source-tex="\chi X\in\eusm L^{\infty}">\(\chi X\in\eusm L^{\infty}\)</span>, sehingga <span class="math inline" data-source-tex="e\in L^{\infty}">\(e\in L^{\infty}\)</span>, dan jika
+<span class="math inline" data-source-tex="u\in L^0">\(u\in L^0\)</span> serta <span class="math inline" data-source-tex="|u|\le Me">\(|u|\le Me\)</span>, maka <span class="math inline" data-source-tex="u\in L^{\infty}">\(u\in L^{\infty}\)</span> menurut (b).</p>
+<p> </p>
+<p><strong>(d)</strong> <span class="math inline" data-source-tex="f\times g\in\eusm L^{\infty}">\(f\times g\in\eusm L^{\infty}\)</span> setiap kali <span class="math inline" data-source-tex="f">\(f\)</span>,
+<span class="math inline" data-source-tex="g\in\eusm L^{\infty}">\(g\in\eusm L^{\infty}\)</span>. Bukti. Jika <span class="math inline" data-source-tex="|f|\le M_1">\(|f|\le M_1\)</span> hampir di mana-mana
+dan <span class="math inline" data-source-tex="|g|\le M_2">\(|g|\le M_2\)</span> hampir di mana-mana, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="|f\times g|=|f|\times|g|\le M_1M_2">\(|f\times g|=|f|\times|g|\le M_1M_2\)</span> hampir di mana-mana.
+∎</div>
+<p>Jadi <span class="math inline" data-source-tex="u\times v\in L^{\infty}">\(u\times v\in L^{\infty}\)</span> untuk semua <span class="math inline" data-source-tex="u">\(u\)</span>,
+<span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span>.</p>
+<p> </p>
+<p><strong>(e)</strong> Jika <span class="math inline" data-source-tex="f\in\eusm L^{\infty}">\(f\in\eusm L^{\infty}\)</span> dan
+<span class="math inline" data-source-tex="g\in\eusm L^1=\eusm L^1(\mu)">\(g\in\eusm L^1=\eusm L^1(\mu)\)</span>, maka terdapat <span class="math inline" data-source-tex="M\ge 0">\(M\ge 0\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="|f|\le M">\(|f|\le M\)</span> hampir di mana-mana, sehingga
+<span class="math inline" data-source-tex="|f\times g|\leae M|g|">\(|f\times g|\leae M|g|\)</span>; karena <span class="math inline" data-source-tex="M|g|">\(M|g|\)</span> terintegralkan dan <span class="math inline" data-source-tex="f\times g">\(f\times g\)</span>
+terukur secara virtual, <span class="math inline" data-source-tex="f\times g">\(f\times g\)</span> terintegralkan dan <span class="math inline" data-source-tex="u\times v\in L^1">\(u\times v\in L^1\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="243C" data-source-id="243C"><h2><span class="source-label">243C</span> Struktur terurut <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span> </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sebarang ruang ukur. Maka
+<span class="math inline" data-source-tex="L^{\infty}=L^{\infty}(\mu)">\(L^{\infty}=L^{\infty}(\mu)\)</span>, sebagai subruang linear dari
+<span class="math inline" data-source-tex="L^0=L^0(\mu)">\(L^0=L^0(\mu)\)</span>, mewarisi suatu urutan parsial yang menjadikannya ruang
+linear terurut parsial (bandingkan <a class="xref" href="../242/index.html#242Ca">242Ca</a>). Karena
+<span class="math inline" data-source-tex="|u|\in L^{\infty}">\(|u|\in L^{\infty}\)</span> setiap kali <span class="math inline" data-source-tex="u\in L^{\infty}">\(u\in L^{\infty}\)</span> (243Bb),
+<span class="math inline" data-source-tex="u\wedge v">\(u\wedge v\)</span> dan <span class="math inline" data-source-tex="u\vee v">\(u\vee v\)</span> termasuk dalam <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span> setiap kali <span class="math inline" data-source-tex="u">\(u\)</span>,
+<span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span>, dan <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span> merupakan ruang Riesz
+(bandingkan <a class="xref" href="../242/index.html#242Cd">242Cd</a>).</p>
+<p>Perilaku <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span> sebagai ruang Riesz didominasi
+oleh fakta bahwa ruang ini mempunyai suatu <strong>satuan urutan</strong> <span class="math inline" data-source-tex="e">\(e\)</span>
+dengan sifat bahwa</p>
+<div class="centerline">untuk setiap <span class="math inline" data-source-tex="u\in L^{\infty}">\(u\in L^{\infty}\)</span> terdapat <span class="math inline" data-source-tex="M\ge 0">\(M\ge 0\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="|u|\le Me">\(|u|\le Me\)</span>.</div>
+<p>(243Bc).</p>
+</section>
+<section class="source-unit" id="243D" data-source-id="243D"><h2><span class="source-label">243D</span> Norma <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span> </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sebarang
+ruang ukur.</p>
+</section>
+<section class="source-unit" id="243Da" data-source-id="243Da"><h3><span class="source-label">243Da</span> <strong>(a)</strong> </h3>
+<p>Untuk
+<span class="math inline" data-source-tex="f\in\eusm L^{\infty}=\eusm L^{\infty}(\mu)">\(f\in\eusm L^{\infty}=\eusm L^{\infty}(\mu)\)</span>, katakanlah
+<strong>supremum esensial</strong> dari <span class="math inline" data-source-tex="|f|">\(|f|\)</span> adalah</p>
+<div class="centerline"><span class="math inline" data-source-tex="\esssup|f|=
+\inf\{M:M\ge 0,\,\{x:x\in\dom f,\,|f(x)|\le M\}">\(\esssup|f|=
+\inf\{M:M\ge 0,\,\{x:x\in\dom f,\,|f(x)|\le M\}\)</span> koterabaikan<span class="math inline" data-source-tex="\}">\(\}\)</span>.</div>
+<p>Maka <span class="math inline" data-source-tex="|f|\le\esssup|f|">\(|f|\le\esssup|f|\)</span> hampir di mana-mana.
+<span class="proof-fragment">Bukti. Tetapkan <span class="math inline" data-source-tex="M=\esssup|f|">\(M=\esssup|f|\)</span>. Untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>,
+terdapat <span class="math inline" data-source-tex="M_n\le M+2^{-n}">\(M_n\le M+2^{-n}\)</span> sedemikian sehingga <span class="math inline" data-source-tex="|f|\le M_n">\(|f|\le M_n\)</span> hampir di
+mana-mana. Sekarang
+     
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\{x:|f(x)|\le M\}=\bigcap_{n\in\Bbb N}\{x:|f(x)|\le M_n\}">\(\{x:|f(x)|\le M\}=\bigcap_{n\in\Bbb N}\{x:|f(x)|\le M_n\}\)</span></span>
+
+
+     
+  koterabaikan, sehingga <span class="math inline" data-source-tex="|f|\le M">\(|f|\le M\)</span> hampir di mana-mana. ∎</span></p>
+</section>
+<section class="source-unit" id="243Db" data-source-id="243Db"><h3><span class="source-label">243Db</span> <strong>(b)</strong> </h3>
+<p>Jika <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in\eusm L^{\infty}">\(g\in\eusm L^{\infty}\)</span> dan
+<span class="math inline" data-source-tex="f\eae g">\(f\eae g\)</span>, maka <span class="math inline" data-source-tex="\esssup|f|=\esssup|g|">\(\esssup|f|=\esssup|g|\)</span>. Dengan demikian kita dapat
+mendefinisikan suatu fungsional <span class="math inline" data-source-tex="\|\,\|_{\infty}">\(\|\,\|_{\infty}\)</span> pada
+<span class="math inline" data-source-tex="L^{\infty}=L^{\infty}(\mu)">\(L^{\infty}=L^{\infty}(\mu)\)</span> dengan menetapkan
+<span class="math inline" data-source-tex="\|u\|_{\infty}=\esssup|f|">\(\|u\|_{\infty}=\esssup|f|\)</span> setiap kali <span class="math inline" data-source-tex="u=f^{\ssbullet}">\(u=f^{\ssbullet}\)</span>.</p>
+<p> </p>
+</section>
+<section class="source-unit" id="243Dc" data-source-id="243Dc"><h3><span class="source-label">243Dc</span> (c) </h3>
+<p>Untuk
+sebarang <span class="math inline" data-source-tex="u\in L^{\infty}">\(u\in L^{\infty}\)</span>,
+<span class="math inline" data-source-tex="\|u\|_{\infty}=\min\{\gamma:|u|\le\gamma e\}">\(\|u\|_{\infty}=\min\{\gamma:|u|\le\gamma e\}\)</span>, dengan, seperti
+sebelumnya, <span class="math inline" data-source-tex="e=\chi X^{\ssbullet}\in L^{\infty}">\(e=\chi X^{\ssbullet}\in L^{\infty}\)</span>. Akibatnya
+<span class="math inline" data-source-tex="\|\,\|_{\infty}">\(\|\,\|_{\infty}\)</span> merupakan suatu norma pada <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span>.
+<span class="proof-fragment">Bukti.(i) Jika <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span>, maka
+     
+     
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="|u+v|\le|u|+|v|\le(\|u\|_{\infty}+\|v\|_{\infty})e">\(|u+v|\le|u|+|v|\le(\|u\|_{\infty}+\|v\|_{\infty})e\)</span></span>
+
+
+     
+  sehingga
+<span class="math inline" data-source-tex="\|u+v\|_{\infty}\le\|u\|_{\infty}+\|v\|_{\infty}">\(\|u+v\|_{\infty}\le\|u\|_{\infty}+\|v\|_{\infty}\)</span>. (ii) Jika
+<span class="math inline" data-source-tex="u\in L^{\infty}">\(u\in L^{\infty}\)</span> dan <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>, maka
+     
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="|cu|=|c||u|\le|c|\|u\|_{\infty}e">\(|cu|=|c||u|\le|c|\|u\|_{\infty}e\)</span>,</span>
+
+
+     
+  sehingga <span class="math inline" data-source-tex="\|cu\|_{\infty}\le|c|\|u\|_{\infty}">\(\|cu\|_{\infty}\le|c|\|u\|_{\infty}\)</span>. (iii) Jika
+<span class="math inline" data-source-tex="\|u\|_{\infty}=0">\(\|u\|_{\infty}=0\)</span>, terdapat <span class="math inline" data-source-tex="f\in\eusm L^{\infty}">\(f\in\eusm L^{\infty}\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="f^{\ssbullet}=u">\(f^{\ssbullet}=u\)</span> dan <span class="math inline" data-source-tex="|f|\le\|u\|_{\infty}">\(|f|\le\|u\|_{\infty}\)</span> hampir di mana-mana;
+sekarang <span class="math inline" data-source-tex="f=0">\(f=0\)</span> hampir di mana-mana, sehingga <span class="math inline" data-source-tex="u=0">\(u=0\)</span>. ∎</span></p>
+</section>
+<section class="source-unit" id="243Dd" data-source-id="243Dd"><h3><span class="source-label">243Dd</span> (d) </h3>
+<p>Perhatikan pula bahwa jika <span class="math inline" data-source-tex="u\in L^0">\(u\in L^0\)</span>,
+<span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span> dan <span class="math inline" data-source-tex="|u|\le|v|">\(|u|\le|v|\)</span>, maka
+<span class="math inline" data-source-tex="|u|\le\|v\|_{\infty}e">\(|u|\le\|v\|_{\infty}e\)</span>, sehingga <span class="math inline" data-source-tex="u\in L^{\infty}">\(u\in L^{\infty}\)</span> dan
+<span class="math inline" data-source-tex="\|u\|_{\infty}\le\|v\|_{\infty}">\(\|u\|_{\infty}\le\|v\|_{\infty}\)</span>; demikian pula,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|u\times v\|_{\infty}\le\|u\|_{\infty}\|v\|_{\infty}">\(\|u\times v\|_{\infty}\le\|u\|_{\infty}\|v\|_{\infty}\)</span>,
+  <span class="math inline" data-source-tex="\|u\vee v\|_{\infty}\le\max(\|u\|_{\infty},\|v\|_{\infty})">\(\|u\vee v\|_{\infty}\le\max(\|u\|_{\infty},\|v\|_{\infty})\)</span></div>
+<p>untuk semua <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span>. Dengan demikian
+<span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span> merupakan aljabar Banach komutatif (2A4J).</p>
+</section>
+<section class="source-unit" id="243De" data-source-id="243De"><h3><span class="source-label">243De</span> (e) </h3>
+<p>Selain itu,</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\int u\times v|\le\int|u\times v|
+=\|u\times v\|_1\le\|u\|_1\|v\|_{\infty}">\(|\int u\times v|\le\int|u\times v|
+=\|u\times v\|_1\le\|u\|_1\|v\|_{\infty}\)</span></div>
+<p>setiap kali <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span> dan <span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span>.</p>
+</section>
+<section class="source-unit" id="243Df" data-source-id="243Df"><h3><span class="source-label">243Df</span> (f) </h3>
+<p>Perhatikan bahwa jika <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v">\(v\)</span> merupakan anggota nonnegatif dari
+<span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|u\vee v\|_{\infty}
+=\max(\|u\|_{\infty},\|v\|_{\infty})">\(\|u\vee v\|_{\infty}
+=\max(\|u\|_{\infty},\|v\|_{\infty})\)</span>.</div>
+<p>ini karena, untuk sebarang <span class="math inline" data-source-tex="\gamma\ge 0">\(\gamma\ge 0\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="u\vee v\le\gamma e\,\iff\,u\le\gamma e">\(u\vee v\le\gamma e\,\iff\,u\le\gamma e\)</span> dan
+<span class="math inline" data-source-tex="v\le\gamma e">\(v\le\gamma e\)</span>.</div>
+</section>
+<section class="source-unit" id="243E" data-source-id="243E"><h2><span class="source-label">243E</span> Teorema </h2>
+<p>Untuk sebarang ruang ukur <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span>,
+<span class="math inline" data-source-tex="L^{\infty}=L^{\infty}(\mu)">\(L^{\infty}=L^{\infty}(\mu)\)</span> merupakan kisi Banach di bawah
+<span class="math inline" data-source-tex="\|\,\|_{\infty}">\(\|\,\|_{\infty}\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Kita telah mengetahui bahwa
+<span class="math inline" data-source-tex="\|u\|_{\infty}\le\|v\|_{\infty}">\(\|u\|_{\infty}\le\|v\|_{\infty}\)</span> setiap kali <span class="math inline" data-source-tex="|u|\le|v|">\(|u|\le|v|\)</span> (<a class="xref" href="#243Dd">243Dd</a>);
+jadi kita hanya perlu memeriksa bahwa <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span> lengkap di bawah
+<span class="math inline" data-source-tex="\|\,\|_{\infty}">\(\|\,\|_{\infty}\)</span>. Misalkan <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> suatu barisan Cauchy dalam
+<span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span>. Untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, pilih
+<span class="math inline" data-source-tex="f_n\in\eusm L^{\infty}=\eusm L^{\infty}(\mu)">\(f_n\in\eusm L^{\infty}=\eusm L^{\infty}(\mu)\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="f_n^{\ssbullet}=u_n">\(f_n^{\ssbullet}=u_n\)</span> dalam <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span>. Untuk semua <span class="math inline" data-source-tex="m">\(m\)</span>,
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, <span class="math inline" data-source-tex="(f_m-f_n)^{\ssbullet}=u_m-u_n">\((f_m-f_n)^{\ssbullet}=u_m-u_n\)</span>. Akibatnya</p>
+<div class="centerline"><span class="math inline" data-source-tex="E_{mn}=\{x:|f_m(x)-f_n(x)|&gt;\|u_m-u_n\|_{\infty}\}">\(E_{mn}=\{x:|f_m(x)-f_n(x)|&gt;\|u_m-u_n\|_{\infty}\}\)</span></div>
+<p>terabaikan, menurut <a class="xref" href="#243Da">243Da</a>. Ini berarti bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="E
+=\bigcap_{n\in\Bbb N}\{x:x\in\dom f_n,\,|f_n(x)|\le\|u_n\|_{\infty}\}
+  \setminus\bigcup_{m,n\in\Bbb N}E_{mn}">\(E
+=\bigcap_{n\in\Bbb N}\{x:x\in\dom f_n,\,|f_n(x)|\le\|u_n\|_{\infty}\}
+  \setminus\bigcup_{m,n\in\Bbb N}E_{mn}\)</span></div>
+<p>koterabaikan. Namun, untuk setiap <span class="math inline" data-source-tex="x\in E">\(x\in E\)</span>,
+<span class="math inline" data-source-tex="|f_m(x)-f_n(x)|\le\|u_m-u_n\|_{\infty}">\(|f_m(x)-f_n(x)|\le\|u_m-u_n\|_{\infty}\)</span> untuk semua <span class="math inline" data-source-tex="m">\(m\)</span>,
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, sehingga <span class="math inline" data-source-tex="\sequencen{f_n(x)}">\(\sequencen{f_n(x)}\)</span> merupakan barisan Cauchy
+dengan limit dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Jadi <span class="math inline" data-source-tex="f=\lim_{n\to\infty}f_n">\(f=\lim_{n\to\infty}f_n\)</span> terdefinisi
+hampir di mana-mana. Selain itu, setidaknya untuk <span class="math inline" data-source-tex="x\in E">\(x\in E\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="|f(x)|\le\sup_{n\in\Bbb N}\|u_n\|_{\infty}&lt;\infty">\(|f(x)|\le\sup_{n\in\Bbb N}\|u_n\|_{\infty}&lt;\infty\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="f\in\eusm L^{\infty}">\(f\in\eusm L^{\infty}\)</span> dan
+<span class="math inline" data-source-tex="u=f^{\ssbullet}\in L^{\infty}">\(u=f^{\ssbullet}\in L^{\infty}\)</span>. Jika <span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span>, maka, untuk setiap
+<span class="math inline" data-source-tex="x\in E">\(x\in E\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="|f(x)-f_m(x)|\le\sup_{n\ge m}|f_n(x)-f_m(x)|
+\le\sup_{n\ge m}\|u_n-u_m\|_{\infty}">\(|f(x)-f_m(x)|\le\sup_{n\ge m}|f_n(x)-f_m(x)|
+\le\sup_{n\ge m}\|u_n-u_m\|_{\infty}\)</span>,</div>
+<p>sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|u-u_m\|_{\infty}\le\sup_{n\ge m}\|u_n-u_m\|_{\infty}
+\to 0">\(\|u-u_m\|_{\infty}\le\sup_{n\ge m}\|u_n-u_m\|_{\infty}
+\to 0\)</span></div>
+<p>ketika <span class="math inline" data-source-tex="m\to\infty">\(m\to\infty\)</span>, dan <span class="math inline" data-source-tex="u=\lim_{m\to\infty}u_m">\(u=\lim_{m\to\infty}u_m\)</span> dalam
+<span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span>. Karena <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> sembarang, <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span> lengkap.</p></aside>
+</section>
+<section class="source-unit" id="243F" data-source-id="243F"><h2><span class="source-label">243F</span> Dualitas antara <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span> dan <span class="math inline" data-source-tex="L^1">\(L^1\)</span> </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sebarang ruang ukur.</p>
+</section>
+<section class="source-unit" id="243Fa" data-source-id="243Fa"><h3><span class="source-label">243Fa</span> <strong>(a)</strong> </h3>
+<p>Saya telah menyatakan bahwa jika <span class="math inline" data-source-tex="u\in L^{1}=L^{1}(\mu)">\(u\in L^{1}=L^{1}(\mu)\)</span> dan
+<span class="math inline" data-source-tex="v\in L^{\infty}=L^{\infty}(\mu)">\(v\in L^{\infty}=L^{\infty}(\mu)\)</span>, maka <span class="math inline" data-source-tex="u\times v\in L^1">\(u\times v\in L^1\)</span> dan
+<span class="math inline" data-source-tex="|\int u\times v|\le\|u\|_1\|v\|_{\infty}">\(|\int u\times v|\le\|u\|_1\|v\|_{\infty}\)</span> (243Bd, <a class="xref" href="#243De">243De</a>).</p>
+</section>
+<section class="source-unit" id="243Fb" data-source-id="243Fb"><h3><span class="source-label">243Fb</span> <strong>(b)</strong> </h3>
+<p>Kita mempunyai suatu
+operator linear terbatas <span class="math inline" data-source-tex="T">\(T\)</span> dari <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span> ke dual ruang bernorma
+<span class="math inline" data-source-tex="(L^1)^*">\((L^1)^*\)</span> dari <span class="math inline" data-source-tex="L^1">\(L^1\)</span>, yang diberikan dengan menuliskan</p>
+<div class="centerline"><span class="math inline" data-source-tex="(Tv)(u)=\int u\times v">\((Tv)(u)=\int u\times v\)</span> untuk semua <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span>,
+<span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span>.</div>
+<p><span class="proof-fragment"> Bukti. (i)
+Menurut (a), <span class="math inline" data-source-tex="(Tv)(u)">\((Tv)(u)\)</span> terdefinisi dengan baik untuk <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span>,
+<span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span>. (ii) Jika <span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span>, <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="u_1">\(u_1\)</span>,
+<span class="math inline" data-source-tex="u_2\in L^1">\(u_2\in L^1\)</span> dan <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>, maka
+     
+<span class="math display" data-source-tex="\eqalign{(Tv)(u_1+u_2)
+&amp;=\int(u_1+u_2)\times v
+=\int(u_1\times v)+(u_2\times v)\cr
+&amp;=\int u_1\times v+\int u_2\times v
+=(Tv)(u_1)+(Tv)(u_2),\cr}">\[\begin{aligned}(Tv)(u_1+u_2)
+&amp;=\int(u_1+u_2)\times v
+=\int(u_1\times v)+(u_2\times v)\\
+&amp;=\int u_1\times v+\int u_2\times v
+=(Tv)(u_1)+(Tv)(u_2),\\\end{aligned}\]</span>
+     
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="(Tv)(cu)=\int cu\times v=\int c(u\times v)
+=c\int u\times v=c(Tv)(u)">\((Tv)(cu)=\int cu\times v=\int c(u\times v)
+=c\int u\times v=c(Tv)(u)\)</span>.</span>
+
+
+     
+  Ini menunjukkan bahwa <span class="math inline" data-source-tex="Tv:L^1\to\Bbb R">\(Tv:L^1\to\Bbb R\)</span> merupakan fungsional
+linear untuk setiap <span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span>. (iii) Selanjutnya, untuk sebarang
+<span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span> dan <span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span>,
+     
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="|(Tv)(u)|=|\int u\times v|\le\|u\times v\|_1
+\le\|u\|_1\|v\|_{\infty}">\(|(Tv)(u)|=|\int u\times v|\le\|u\times v\|_1
+\le\|u\|_1\|v\|_{\infty}\)</span>,</span>
+
+
+     
+  sebagaimana dinyatakan dalam (a). Ini berarti bahwa
+<span class="math inline" data-source-tex="Tv\in (L^1)^*">\(Tv\in (L^1)^*\)</span> dan <span class="math inline" data-source-tex="\|Tv\|\le\|v\|_{\infty}">\(\|Tv\|\le\|v\|_{\infty}\)</span> untuk setiap
+<span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span>. (iv) Jika <span class="math inline" data-source-tex="v">\(v\)</span>, <span class="math inline" data-source-tex="v_1">\(v_1\)</span>, <span class="math inline" data-source-tex="v_2\in L^{\infty}">\(v_2\in L^{\infty}\)</span>,
+<span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span> dan <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>, maka
+     
+<span class="math display" data-source-tex="\eqalign{T(v_1+v_2)(u)
+&amp;=\int(v_1+v_2)\times u
+=\int(v_1\times u)+(v_2\times u)\cr
+&amp;=\int v_1\times u+\int v_2\times u
+=(Tv_1)(u)+(Tv_2)(u)\cr
+&amp;=(Tv_1+Tv_2)(u),\cr}">\[\begin{aligned}T(v_1+v_2)(u)
+&amp;=\int(v_1+v_2)\times u
+=\int(v_1\times u)+(v_2\times u)\\
+&amp;=\int v_1\times u+\int v_2\times u
+=(Tv_1)(u)+(Tv_2)(u)\\
+&amp;=(Tv_1+Tv_2)(u),\\\end{aligned}\]</span>
+     
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="T(cv)(u)=\int cv\times u=c\int v\times u
+=c(Tv)(u)=(cTv)(u)">\(T(cv)(u)=\int cv\times u=c\int v\times u
+=c(Tv)(u)=(cTv)(u)\)</span>.</span>
+
+
+     
+  Karena <span class="math inline" data-source-tex="u">\(u\)</span> sembarang,
+<span class="math inline" data-source-tex="T(v_1+v_2)=Tv_1+Tv_2">\(T(v_1+v_2)=Tv_1+Tv_2\)</span> dan <span class="math inline" data-source-tex="T(cv)=c(Tv)">\(T(cv)=c(Tv)\)</span>; jadi
+<span class="math inline" data-source-tex="T:L^{\infty}\to(L^1)^*">\(T:L^{\infty}\to(L^1)^*\)</span> linear. (v) Dengan mengingat dari (iii) bahwa
+<span class="math inline" data-source-tex="\|Tv\|\le\|v\|_{\infty}">\(\|Tv\|\le\|v\|_{\infty}\)</span> untuk setiap <span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span>, kita melihat
+bahwa <span class="math inline" data-source-tex="\|T\|\le 1">\(\|T\|\le 1\)</span>. ∎</span></p>
+</section>
+<section class="source-unit" id="243Fc" data-source-id="243Fc"><h3><span class="source-label">243Fc</span> <strong>(c)</strong> </h3>
+<p>Kita mempunyai suatu operator linear <span class="math inline" data-source-tex="T&#x27;:L^1\to (L^{\infty})^*">\(T&#x27;:L^1\to (L^{\infty})^*\)</span>,
+yang diberikan dengan menuliskan</p>
+<div class="centerline"><span class="math inline" data-source-tex="(T&#x27;u)(v)=\int u\times v">\((T&#x27;u)(v)=\int u\times v\)</span> untuk semua <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span>,
+<span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span>,</div>
+<p>dan bahwa <span class="math inline" data-source-tex="\|T&#x27;\|">\(\|T&#x27;\|\)</span> juga paling besar <span class="math inline" data-source-tex="1">\(1\)</span>.</p>
+</section>
+<section class="source-unit" id="243G" data-source-id="243G"><h2><span class="source-label">243G</span> Teorema </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur, dan
+<span class="math inline" data-source-tex="T:L^{\infty}(\mu)\to(L^1(\mu))^*">\(T:L^{\infty}(\mu)\to(L^1(\mu))^*\)</span> peta kanonik yang diuraikan dalam
+<a class="xref" href="#243F">243F</a>. Maka</p>
+<p>(a) <span class="math inline" data-source-tex="T">\(T\)</span> injektif jika dan hanya jika <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> semihingga, dan
+dalam hal ini peta tersebut mempertahankan norma;</p>
+<p>(b) <span class="math inline" data-source-tex="T">\(T\)</span> bijektif jika dan hanya jika <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dapat dilokalkan,
+dan dalam hal ini peta tersebut merupakan isomorfisme ruang bernorma.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)(i)</strong> Andaikan <span class="math inline" data-source-tex="T">\(T\)</span> injektif, dan <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> mempunyai
+<span class="math inline" data-source-tex="\mu E=\infty">\(\mu E=\infty\)</span>. Maka <span class="math inline" data-source-tex="\chi E">\(\chi E\)</span> tidak sama hampir di mana-mana dengan
+<span class="math inline" data-source-tex="\tbf{0}">\(\tbf{0}\)</span>, sehingga <span class="math inline" data-source-tex="(\chi E)^{\ssbullet}\ne 0">\((\chi E)^{\ssbullet}\ne 0\)</span> dalam <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span>, dan
+<span class="math inline" data-source-tex="T(\chi E)^{\ssbullet}\ne 0">\(T(\chi E)^{\ssbullet}\ne 0\)</span>; misalkan <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="T(\chi E)^{\ssbullet}(u)\ne 0">\(T(\chi E)^{\ssbullet}(u)\ne 0\)</span>, yaitu
+<span class="math inline" data-source-tex="\int u\times(\chi E)^{\ssbullet}\ne 0">\(\int u\times(\chi E)^{\ssbullet}\ne 0\)</span>. Nyatakan <span class="math inline" data-source-tex="u">\(u\)</span> sebagai
+<span class="math inline" data-source-tex="f^{\ssbullet}">\(f^{\ssbullet}\)</span> dengan <span class="math inline" data-source-tex="f">\(f\)</span> terintegralkan; maka <span class="math inline" data-source-tex="\int_Ef\ne 0">\(\int_Ef\ne 0\)</span>, sehingga
+<span class="math inline" data-source-tex="\int_E|f|\ne 0">\(\int_E|f|\ne 0\)</span>. Misalkan <span class="math inline" data-source-tex="g">\(g\)</span> suatu fungsi sederhana sedemikian sehingga
+<span class="math inline" data-source-tex="0\le g\leae|f|">\(0\le g\leae|f|\)</span> dan <span class="math inline" data-source-tex="\int g&gt;\int|f|-\int_E|f|">\(\int g&gt;\int|f|-\int_E|f|\)</span>; maka
+<span class="math inline" data-source-tex="\int_Eg\ne 0">\(\int_Eg\ne 0\)</span>. Nyatakan <span class="math inline" data-source-tex="g">\(g\)</span> sebagai <span class="math inline" data-source-tex="\sum_{i=0}^na_i\chi E_i">\(\sum_{i=0}^na_i\chi E_i\)</span> dengan
+<span class="math inline" data-source-tex="\mu E_i&lt;\infty">\(\mu E_i&lt;\infty\)</span> untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>; maka
+<span class="math inline" data-source-tex="0\ne\sum_{i=0}^na_i\mu(E_i\cap E)">\(0\ne\sum_{i=0}^na_i\mu(E_i\cap E)\)</span>, sehingga terdapat <span class="math inline" data-source-tex="i\le n">\(i\le n\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\mu(E\cap E_i)\ne 0">\(\mu(E\cap E_i)\ne 0\)</span>, dan sekarang <span class="math inline" data-source-tex="E\cap E_i">\(E\cap E_i\)</span>
+merupakan himpunan bagian terukur dari <span class="math inline" data-source-tex="E">\(E\)</span> yang berukuran hingga dan
+tak nol.</p>
+<p>Karena <span class="math inline" data-source-tex="E">\(E\)</span> sembarang, ini menunjukkan bahwa <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> harus
+semihingga jika <span class="math inline" data-source-tex="T">\(T\)</span> injektif.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Sekarang andaikan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> semihingga, dan
+<span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span> tak nol. Nyatakan <span class="math inline" data-source-tex="v">\(v\)</span> sebagai <span class="math inline" data-source-tex="g^{\ssbullet}">\(g^{\ssbullet}\)</span> dengan
+<span class="math inline" data-source-tex="g:X\to\Bbb R">\(g:X\to\Bbb R\)</span> terukur; maka <span class="math inline" data-source-tex="g\in\eusm L^{\infty}">\(g\in\eusm L^{\infty}\)</span>. Ambil sebarang
+<span class="math inline" data-source-tex="a\in\ooint{0,\|v\|_{\infty}}">\(a\in\ooint{0,\|v\|_{\infty}}\)</span>; maka
+<span class="math inline" data-source-tex="E=\{x:|g(x)|\ge a\}">\(E=\{x:|g(x)|\ge a\}\)</span> mempunyai ukuran tak nol. Misalkan <span class="math inline" data-source-tex="F\subseteq E">\(F\subseteq E\)</span>
+suatu himpunan terukur yang berukuran hingga dan tak nol, dan tetapkan
+<span class="math inline" data-source-tex="f(x)=|g(x)|/g(x)">\(f(x)=|g(x)|/g(x)\)</span> jika <span class="math inline" data-source-tex="x\in F">\(x\in F\)</span>, serta <span class="math inline" data-source-tex="0">\(0\)</span> selainnya; maka
+<span class="math inline" data-source-tex="f\in\eusm L^1">\(f\in\eusm L^1\)</span> dan <span class="math inline" data-source-tex="(f\times g)(x)\ge a">\((f\times g)(x)\ge a\)</span> untuk <span class="math inline" data-source-tex="x\in F">\(x\in F\)</span>, sehingga,
+dengan menetapkan <span class="math inline" data-source-tex="u=f^{\ssbullet}\in L^1">\(u=f^{\ssbullet}\in L^1\)</span>, kita mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="(Tv)(u)=\int u\times v=\int f\times g\ge a\mu F=a\int|f|
+=a\|u\|_1&gt;0">\((Tv)(u)=\int u\times v=\int f\times g\ge a\mu F=a\int|f|
+=a\|u\|_1&gt;0\)</span>.</div>
+<p>Ini menunjukkan bahwa <span class="math inline" data-source-tex="\|Tv\|\ge a">\(\|Tv\|\ge a\)</span>; karena <span class="math inline" data-source-tex="a">\(a\)</span> sembarang,
+<span class="math inline" data-source-tex="\|Tv\|\ge\|v\|_{\infty}">\(\|Tv\|\ge\|v\|_{\infty}\)</span>. Kita telah mengetahui dari <a class="xref" href="#243F">243F</a> bahwa
+<span class="math inline" data-source-tex="\|Tv\|\le\|v\|_{\infty}">\(\|Tv\|\le\|v\|_{\infty}\)</span>, sehingga
+<span class="math inline" data-source-tex="\|Tv\|=\|v\|_{\infty}">\(\|Tv\|=\|v\|_{\infty}\)</span> untuk setiap <span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span> yang tak nol;
+hal yang sama tentu benar untuk <span class="math inline" data-source-tex="v=0">\(v=0\)</span>, sehingga <span class="math inline" data-source-tex="T">\(T\)</span> mempertahankan norma
+dan injektif.</p>
+<p> </p>
+<p><strong>(b)(i)</strong> Dengan menggunakan (a) dan definisi ‘dapat dilokalkan’,
+kita melihat bahwa di bawah salah satu syarat yang diajukan,
+<span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> semihingga dan <span class="math inline" data-source-tex="T">\(T\)</span> injektif serta mempertahankan norma.
+Karena itu saya hanya perlu menunjukkan bahwa peta tersebut surjektif jika dan
+hanya jika <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dapat dilokalkan.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Andaikan <span class="math inline" data-source-tex="T">\(T\)</span> surjektif dan <span class="math inline" data-source-tex="\Cal E\subseteq\Sigma">\(\Cal E\subseteq\Sigma\)</span>.
+Misalkan <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> keluarga gabungan hingga dari anggota-anggota
+<span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span>, dengan <span class="math inline" data-source-tex="\emptyset">\(\emptyset\)</span> dihitung sebagai gabungan tanpa anggota
+<span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span>, sehingga <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> tertutup terhadap gabungan hingga dan,
+untuk setiap <span class="math inline" data-source-tex="G\in\Sigma">\(G\in\Sigma\)</span>, <span class="math inline" data-source-tex="E\setminus G">\(E\setminus G\)</span> terabaikan untuk setiap
+<span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span> jika dan hanya jika <span class="math inline" data-source-tex="E\setminus G">\(E\setminus G\)</span> terabaikan untuk setiap
+<span class="math inline" data-source-tex="E\in\Cal F">\(E\in\Cal F\)</span>.</p>
+<p>Jika <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span>, maka
+<span class="math inline" data-source-tex="h(u)=\lim_{E\in\Cal F,E\uparrow}\int_Eu">\(h(u)=\lim_{E\in\Cal F,E\uparrow}\int_Eu\)</span> ada dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.
+<span class="proof-fragment">Bukti. Jika <span class="math inline" data-source-tex="u">\(u\)</span> nonnegatif, maka
+     
+     
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="h(u)=\sup\{\int_Eu:E\in\Cal F\}\le\int u&lt;\infty">\(h(u)=\sup\{\int_Eu:E\in\Cal F\}\le\int u&lt;\infty\)</span>.</span>
+
+
+     
+  Untuk <span class="math inline" data-source-tex="u">\(u\)</span> yang lain, kita dapat menyatakan <span class="math inline" data-source-tex="u">\(u\)</span> sebagai
+<span class="math inline" data-source-tex="u_1-u_2">\(u_1-u_2\)</span>, dengan <span class="math inline" data-source-tex="u_1">\(u_1\)</span> dan <span class="math inline" data-source-tex="u_2">\(u_2\)</span> nonnegatif, dan sekarang
+<span class="math inline" data-source-tex="h(u)=h(u_1)-h(u_2)">\(h(u)=h(u_1)-h(u_2)\)</span>. ∎</span></p>
+<p>Jelas bahwa <span class="math inline" data-source-tex="h:L^1\to\Bbb R">\(h:L^1\to\Bbb R\)</span> linear, karena merupakan limit dari
+fungsional-fungsional linear <span class="math inline" data-source-tex="u\mapsto\int_Eu">\(u\mapsto\int_Eu\)</span>, dan juga</p>
+<div class="centerline"><span class="math inline" data-source-tex="|h(u)|\le\sup_{E\in\Cal F}|\int_Eu|\le\int|u|">\(|h(u)|\le\sup_{E\in\Cal F}|\int_Eu|\le\int|u|\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="u">\(u\)</span>, sehingga <span class="math inline" data-source-tex="h\in(L^1)^*">\(h\in(L^1)^*\)</span>.
+Karena kita mengandaikan bahwa <span class="math inline" data-source-tex="T">\(T\)</span> surjektif, terdapat
+<span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span> sedemikian sehingga <span class="math inline" data-source-tex="Tv=h">\(Tv=h\)</span>. Nyatakan <span class="math inline" data-source-tex="v">\(v\)</span> sebagai
+<span class="math inline" data-source-tex="g^{\ssbullet}">\(g^{\ssbullet}\)</span> dengan <span class="math inline" data-source-tex="g:X\to\Bbb R">\(g:X\to\Bbb R\)</span> terukur dan terbatas secara
+esensial. Tetapkan <span class="math inline" data-source-tex="G=\{x:g(x)&gt;0\}\in\Sigma">\(G=\{x:g(x)&gt;0\}\in\Sigma\)</span>.</p>
+<p>Jika <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dan <span class="math inline" data-source-tex="\mu F&lt;\infty">\(\mu F&lt;\infty\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_Fg=\int(\chi F)^{\ssbullet}\times g^{\ssbullet}
+=(Tv)(\chi F)^{\ssbullet}
+=h(\chi F)^{\ssbullet}
+=\sup_{E\in\Cal F}\mu(E\cap F)">\(\int_Fg=\int(\chi F)^{\ssbullet}\times g^{\ssbullet}
+=(Tv)(\chi F)^{\ssbullet}
+=h(\chi F)^{\ssbullet}
+=\sup_{E\in\Cal F}\mu(E\cap F)\)</span>.</div>
+<p><span class="fremlin-query" role="img" aria-label="andaikan untuk kontradiksi"></span> Jika <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span> dan <span class="math inline" data-source-tex="E\setminus G">\(E\setminus G\)</span> tidak terabaikan, terdapat
+suatu himpunan <span class="math inline" data-source-tex="F\subseteq E\setminus G">\(F\subseteq E\setminus G\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="0&lt;\mu F&lt;\infty">\(0&lt;\mu F&lt;\infty\)</span>; sekarang</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu F=\mu(E\cap F)\le\int_Fg\le 0">\(\mu F=\mu(E\cap F)\le\int_Fg\le 0\)</span>,</div>
+<p>karena <span class="math inline" data-source-tex="g(x)\le 0">\(g(x)\le 0\)</span> untuk <span class="math inline" data-source-tex="x\in F">\(x\in F\)</span>. <span class="fremlin-bang" role="img" aria-label="kontradiksi"></span> Jadi
+<span class="math inline" data-source-tex="E\setminus G">\(E\setminus G\)</span> terabaikan untuk setiap <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>.</p>
+<p>Misalkan <span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span> sedemikian sehingga <span class="math inline" data-source-tex="E\setminus H">\(E\setminus H\)</span> terabaikan
+untuk setiap <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>. <span class="fremlin-query" role="img" aria-label="andaikan untuk kontradiksi"></span> Jika <span class="math inline" data-source-tex="G\setminus H">\(G\setminus H\)</span> tidak terabaikan,
+terdapat suatu himpunan <span class="math inline" data-source-tex="F\subseteq G\setminus H">\(F\subseteq G\setminus H\)</span> yang berukuran hingga
+dan tak nol. Sekarang</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu(E\cap F)\le\mu(H\cap F)=0">\(\mu(E\cap F)\le\mu(H\cap F)=0\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>, sehingga
+<span class="math inline" data-source-tex="\mu(E\cap F)=0">\(\mu(E\cap F)=0\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\Cal F">\(E\in\Cal F\)</span>, dan <span class="math inline" data-source-tex="\int_Fg=0">\(\int_Fg=0\)</span>; tetapi
+<span class="math inline" data-source-tex="g(x)&gt;0">\(g(x)&gt;0\)</span> untuk setiap <span class="math inline" data-source-tex="x\in F">\(x\in F\)</span>, sehingga <span class="math inline" data-source-tex="\mu F=0">\(\mu F=0\)</span>, yang mustahil.
+ <span class="fremlin-bang" role="img" aria-label="kontradiksi"></span> Jadi <span class="math inline" data-source-tex="G\setminus H">\(G\setminus H\)</span> terabaikan.</p>
+<p>Dengan demikian <span class="math inline" data-source-tex="G">\(G\)</span> merupakan supremum esensial dari <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> dalam
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. Karena <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> sembarang, <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dapat dilokalkan.</p>
+<p> </p>
+<p>  <strong>(iii)</strong> Untuk sisa bukti ini, saya akan mengandaikan bahwa
+<span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dapat dilokalkan dan berusaha menunjukkan bahwa <span class="math inline" data-source-tex="T">\(T\)</span>
+surjektif.</p>
+<p>Ambil <span class="math inline" data-source-tex="h\in(L^1)^*">\(h\in(L^1)^*\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\|h\|=1">\(\|h\|=1\)</span>. Tuliskan
+<span class="math inline" data-source-tex="\Sigma^f=\{F:F\in\Sigma,\,\mu F&lt;\infty\}">\(\Sigma^f=\{F:F\in\Sigma,\,\mu F&lt;\infty\}\)</span>, dan untuk
+<span class="math inline" data-source-tex="F\in\Sigma^f">\(F\in\Sigma^f\)</span>, definisikan <span class="math inline" data-source-tex="\nu_F:\Sigma\to\Bbb R">\(\nu_F:\Sigma\to\Bbb R\)</span> dengan menetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu_FE=h(\chi(E\cap F)^{\ssbullet})">\(\nu_FE=h(\chi(E\cap F)^{\ssbullet})\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>. Maka
+<span class="math inline" data-source-tex="\nu_F\emptyset=h(0)=0">\(\nu_F\emptyset=h(0)=0\)</span>, dan jika <span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="E&#x27;\in\Sigma">\(E&#x27;\in\Sigma\)</span> saling lepas,</p>
+<p><span class="math display" data-source-tex="\eqalign{\nu_FE+\nu_FE&#x27;
+&amp;=h(\chi(E\cap F)^{\ssbullet})+h(\chi(E&#x27;\cap F)^{\ssbullet})
+=h((\chi(E\cap F)+\chi(E&#x27;\cap F))^{\ssbullet})\cr
+&amp;=h(\chi((E\cup E&#x27;)\cap F)^{\ssbullet})
+=\nu_F(E\cup E&#x27;).\cr}">\[\begin{aligned}\nu_FE+\nu_FE&#x27;
+&amp;=h(\chi(E\cap F)^{\ssbullet})+h(\chi(E&#x27;\cap F)^{\ssbullet})
+=h((\chi(E\cap F)+\chi(E&#x27;\cap F))^{\ssbullet})\\
+&amp;=h(\chi((E\cup E&#x27;)\cap F)^{\ssbullet})
+=\nu_F(E\cup E&#x27;).\\\end{aligned}\]</span></p>
+<p>Jadi <span class="math inline" data-source-tex="\nu_F">\(\nu_F\)</span> aditif. Selain itu,</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\nu_FE|\le\|\chi(E\cap F)^{\ssbullet}\|_1
+=\mu(E\cap F)">\(|\nu_FE|\le\|\chi(E\cap F)^{\ssbullet}\|_1
+=\mu(E\cap F)\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>, sehingga <span class="math inline" data-source-tex="\nu_F">\(\nu_F\)</span> benar-benar
+kontinu dalam arti <a class="xref" href="../232/index.html#232Ab">232Ab</a>. Menurut teorema Radon-Nikodým (<a class="xref" href="../232/index.html#232E">232E</a>), terdapat
+fungsi terintegralkan <span class="math inline" data-source-tex="g_F">\(g_F\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\int_Eg_F=\nu_FE">\(\int_Eg_F=\nu_FE\)</span> untuk
+setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>; kita dapat mengambil <span class="math inline" data-source-tex="g_F">\(g_F\)</span> terukur dan mempunyai
+domain <span class="math inline" data-source-tex="X">\(X\)</span> (<a class="xref" href="../232/index.html#232He">232He</a>).</p>
+<p> </p>
+<p>  <strong>(iv)</strong> Patut diperhatikan bahwa <span class="math inline" data-source-tex="|g_F|\le 1">\(|g_F|\le 1\)</span> hampir di mana-mana.
+<span class="proof-fragment">Bukti. Jika <span class="math inline" data-source-tex="G=\{x:g_F(x)&gt;1\}">\(G=\{x:g_F(x)&gt;1\}\)</span>, maka
+     
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\int_Gg_F=\nu_FG\le\mu(F\cap G)\le\mu G">\(\int_Gg_F=\nu_FG\le\mu(F\cap G)\le\mu G\)</span>;</span>
+
+
+     
+  tetapi ini hanya mungkin jika <span class="math inline" data-source-tex="\mu G=0">\(\mu G=0\)</span>. Demikian pula, jika
+<span class="math inline" data-source-tex="G&#x27;=\{x:g_F(x)&lt;-1\}">\(G&#x27;=\{x:g_F(x)&lt;-1\}\)</span>, maka
+     
+     
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\int_{G&#x27;}g_F=\nu_FG&#x27;\ge-\mu G&#x27;">\(\int_{G&#x27;}g_F=\nu_FG&#x27;\ge-\mu G&#x27;\)</span>,</span>
+
+
+     
+  sehingga sekali lagi <span class="math inline" data-source-tex="\mu G&#x27;=0">\(\mu G&#x27;=0\)</span>. ∎</span></p>
+<p> </p>
+<p>  <strong>(v)</strong> Jika <span class="math inline" data-source-tex="F">\(F\)</span>, <span class="math inline" data-source-tex="F&#x27;\in\Sigma^f">\(F&#x27;\in\Sigma^f\)</span>, maka <span class="math inline" data-source-tex="g_F=g_{F&#x27;}">\(g_F=g_{F&#x27;}\)</span> hampir di
+mana-mana dalam <span class="math inline" data-source-tex="F\cap F&#x27;">\(F\cap F&#x27;\)</span>. Bukti. Jika <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> dan
+<span class="math inline" data-source-tex="E\subseteq F\cap F&#x27;">\(E\subseteq F\cap F&#x27;\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_Eg_F=h(\chi(E\cap F)^{\ssbullet})
+=h(\chi(E\cap F&#x27;)^{\ssbullet})=\int_Eg_{F&#x27;}">\(\int_Eg_F=h(\chi(E\cap F)^{\ssbullet})
+=h(\chi(E\cap F&#x27;)^{\ssbullet})=\int_Eg_{F&#x27;}\)</span>.</div>
+<p>Jadi <a class="xref" href="../131/index.html#131Hb">131Hb</a> memberikan hasil tersebut. ∎ <a class="xref" href="../213/index.html#213N">213N</a> (diterapkan
+pada <span class="math inline" data-source-tex="\{g_F\restr F:F\in\Sigma^f\}">\(\{g_F\restr F:F\in\Sigma^f\}\)</span>) kini memberi tahu kita bahwa, karena
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span> dapat dilokalkan, terdapat fungsi terukur <span class="math inline" data-source-tex="g:X\to\Bbb R">\(g:X\to\Bbb R\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="g=g_F">\(g=g_F\)</span> hampir di mana-mana dalam <span class="math inline" data-source-tex="F">\(F\)</span>, untuk setiap
+<span class="math inline" data-source-tex="F\in\Sigma^f">\(F\in\Sigma^f\)</span>.</p>
+<p> </p>
+<p>  <strong>(vi)</strong> Untuk sebarang <span class="math inline" data-source-tex="F\in\Sigma^f">\(F\in\Sigma^f\)</span>, himpunan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:x\in F,\,|g(x)|&gt;1\}\subseteq\{x:|g_F(x)|&gt;1\}
+\cup\{x:x\in F,\,g(x)\ne g_F(x)\}">\(\{x:x\in F,\,|g(x)|&gt;1\}\subseteq\{x:|g_F(x)|&gt;1\}
+\cup\{x:x\in F,\,g(x)\ne g_F(x)\}\)</span></div>
+<p>terabaikan; karena <span class="math inline" data-source-tex="\mu">\(\mu\)</span> semihingga,
+<span class="math inline" data-source-tex="\{x:|g(x)|&gt;1\}">\(\{x:|g(x)|&gt;1\}\)</span> terabaikan, dan <span class="math inline" data-source-tex="g\in\eusm L^{\infty}">\(g\in\eusm L^{\infty}\)</span>, dengan
+<span class="math inline" data-source-tex="\esssup|g|\le 1">\(\esssup|g|\le 1\)</span>. Dengan demikian <span class="math inline" data-source-tex="v=g^{\ssbullet}\in L^{\infty}">\(v=g^{\ssbullet}\in L^{\infty}\)</span>,
+dan kita dapat berbicara tentang <span class="math inline" data-source-tex="Tv\in(L^1)^*">\(Tv\in(L^1)^*\)</span>.</p>
+<p> </p>
+<p>  <strong>(vii)</strong> Jika <span class="math inline" data-source-tex="F\in\Sigma^f">\(F\in\Sigma^f\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_Fg=\int_Fg_F=\nu_FX=h(\chi F^{\ssbullet})">\(\int_Fg=\int_Fg_F=\nu_FX=h(\chi F^{\ssbullet})\)</span>.</div>
+<p>Segera diperoleh bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="(Tv)(f^{\ssbullet})=\int f\times g=h(f^{\ssbullet})">\((Tv)(f^{\ssbullet})=\int f\times g=h(f^{\ssbullet})\)</span></div>
+<p>untuk setiap fungsi sederhana <span class="math inline" data-source-tex="f:X\to\Bbb R">\(f:X\to\Bbb R\)</span>.
+Akibatnya <span class="math inline" data-source-tex="Tv=h">\(Tv=h\)</span>, karena baik <span class="math inline" data-source-tex="Tv">\(Tv\)</span> maupun <span class="math inline" data-source-tex="h">\(h\)</span> kontinu dan kelas-kelas
+ekuivalensi fungsi sederhana membentuk subhimpunan padat dari <span class="math inline" data-source-tex="L^1">\(L^1\)</span>
+(242Mb, 2A3Uc). Jadi <span class="math inline" data-source-tex="h=Tv">\(h=Tv\)</span> merupakan suatu nilai <span class="math inline" data-source-tex="T">\(T\)</span>.</p>
+<p> </p>
+<p>  <strong>(viii)</strong> Argumen sebagaimana ditulis di atas mengandaikan bahwa
+<span class="math inline" data-source-tex="\|h\|=1">\(\|h\|=1\)</span>. Namun tentu saja setiap anggota tak nol dari <span class="math inline" data-source-tex="(L^1)^*">\((L^1)^*\)</span>
+merupakan kelipatan skalar dari suatu unsur bernorma <span class="math inline" data-source-tex="1">\(1\)</span>, sehingga
+merupakan suatu nilai <span class="math inline" data-source-tex="T">\(T\)</span>. Jadi <span class="math inline" data-source-tex="T:L^{\infty}\to(L^1)^*">\(T:L^{\infty}\to(L^1)^*\)</span> memang
+surjektif, dan karena itu merupakan isomorfisme isometrik, seperti yang
+dinyatakan.</p></aside>
+</section>
+<section class="source-unit" id="243H" data-source-id="243H"><h2><span class="source-label">243H</span>  </h2>
+<p>Ingat bahwa <span class="math inline" data-source-tex="L^0">\(L^0\)</span> selalu lengkap-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>
+Dedekind dan kadang-kadang lengkap Dedekind (<a class="xref" href="../241/index.html#241G">241G</a>), sedangkan <span class="math inline" data-source-tex="L^1">\(L^1\)</span>
+selalu lengkap Dedekind (<a class="xref" href="../242/index.html#242H">242H</a>). Dalam hal ini <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span> mengikuti
+<span class="math inline" data-source-tex="L^0">\(L^0\)</span>.</p>
+<p> </p>
+<p><strong>Teorema</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur.</p>
+<p>(a) <span class="math inline" data-source-tex="L^{\infty}(\mu)">\(L^{\infty}(\mu)\)</span> lengkap-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> Dedekind.</p>
+<p>(b) Jika <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dapat dilokalkan, <span class="math inline" data-source-tex="L^{\infty}(\mu)">\(L^{\infty}(\mu)\)</span> lengkap Dedekind.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Keduanya merupakan akibat <a class="xref" href="../241/index.html#241G">241G</a>.
+Jika <span class="math inline" data-source-tex="A\subseteq L^{\infty}=L^{\infty}(\mu)">\(A\subseteq L^{\infty}=L^{\infty}(\mu)\)</span> terbatas di atas dalam
+<span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span>, tetapkan <span class="math inline" data-source-tex="u_0\in A">\(u_0\in A\)</span> dan suatu batas atas <span class="math inline" data-source-tex="w_0">\(w_0\)</span> dari <span class="math inline" data-source-tex="A">\(A\)</span>
+dalam <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span>. Jika <span class="math inline" data-source-tex="B">\(B\)</span> himpunan batas atas untuk <span class="math inline" data-source-tex="A">\(A\)</span> dalam
+<span class="math inline" data-source-tex="L^0=L^0(\mu)">\(L^0=L^0(\mu)\)</span>, maka <span class="math inline" data-source-tex="B\cap L^{\infty}">\(B\cap L^{\infty}\)</span> merupakan himpunan batas atas
+untuk <span class="math inline" data-source-tex="A">\(A\)</span> dalam <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span>. Selain itu, jika <span class="math inline" data-source-tex="B">\(B\)</span> mempunyai anggota
+terkecil <span class="math inline" data-source-tex="v_0">\(v_0\)</span>, kita harus mempunyai <span class="math inline" data-source-tex="u_0\le v_0\le w_0">\(u_0\le v_0\le w_0\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="0\le v_0-u_0\le w_0-u_0\in L^{\infty}">\(0\le v_0-u_0\le w_0-u_0\in L^{\infty}\)</span></div>
+<p>dan <span class="math inline" data-source-tex="v_0-u_0">\(v_0-u_0\)</span>, <span class="math inline" data-source-tex="v_0">\(v_0\)</span> termasuk dalam <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span>.
+(Bandingkan bagian (a) dari bukti <a class="xref" href="../242/index.html#242H">242H</a>.) Jadi <span class="math inline" data-source-tex="v_0=\sup A">\(v_0=\sup A\)</span> dalam
+<span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span>.</p>
+<p>Sekarang kita mengetahui bahwa <span class="math inline" data-source-tex="L^0">\(L^0\)</span> lengkap-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> Dedekind; jika
+<span class="math inline" data-source-tex="A\subseteq L^{\infty}">\(A\subseteq L^{\infty}\)</span> merupakan himpunan tak kosong terhitung yang
+terbatas di atas dalam <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span>, tentu himpunan itu terbatas di atas
+dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span>, sehingga mempunyai supremum dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span> yang juga merupakan
+supremumnya dalam <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span>. Karena <span class="math inline" data-source-tex="A">\(A\)</span> sembarang, <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span>
+lengkap-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> Dedekind. Sedangkan jika <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dapat dilokalkan, kita
+dapat berargumen dengan cara yang sama untuk subhimpunan tak kosong
+sembarang dari <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span> untuk melihat bahwa <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span> lengkap
+Dedekind karena <span class="math inline" data-source-tex="L^0">\(L^0\)</span> demikian.</p></aside>
+</section>
+<section class="source-unit" id="243I" data-source-id="243I"><h2><span class="source-label">243I</span> Suatu subruang padat dari
+<span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span> </h2>
+<p>Dalam <a class="xref" href="../242/index.html#242M">242M</a> dan <a class="xref" href="../242/index.html#242O">242O</a> saya menguraikan
+sepasang subruang linear padat yang penting dari ruang-ruang <span class="math inline" data-source-tex="L^1">\(L^1\)</span>.
+Keadaan untuk <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span> agak berbeda. Namun saya dapat menguraikan
+satu subruang padat yang penting.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur.</p>
+<p>(a) Tuliskan <span class="math inline" data-source-tex="\eusm S">\(\eusm S\)</span> untuk ruang fungsi ‘sederhana-<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>’ pada <span class="math inline" data-source-tex="X">\(X\)</span>,
+yaitu ruang fungsi dari <span class="math inline" data-source-tex="X">\(X\)</span> ke <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> yang dapat dinyatakan sebagai
+<span class="math inline" data-source-tex="\sum_{k=0}^na_k\chi E_k">\(\sum_{k=0}^na_k\chi E_k\)</span>, dengan <span class="math inline" data-source-tex="a_k\in\Bbb R">\(a_k\in\Bbb R\)</span> dan <span class="math inline" data-source-tex="E_k\in\Sigma">\(E_k\in\Sigma\)</span>
+untuk setiap <span class="math inline" data-source-tex="k\le n">\(k\le n\)</span>. Maka untuk setiap
+<span class="math inline" data-source-tex="f\in\eusm L^{\infty}=\eusm L^{\infty}(\mu)">\(f\in\eusm L^{\infty}=\eusm L^{\infty}(\mu)\)</span> dan setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>,
+terdapat <span class="math inline" data-source-tex="g\in\eusm S">\(g\in\eusm S\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\esssup|f-g|\le\epsilon">\(\esssup|f-g|\le\epsilon\)</span>.</p>
+<p>(b) <span class="math inline" data-source-tex="S=\{f^{\ssbullet}:f\in\eusm S\}">\(S=\{f^{\ssbullet}:f\in\eusm S\}\)</span> merupakan subruang linear yang
+padat-<span class="math inline" data-source-tex="\|\,\|_{\infty}">\(\|\,\|_{\infty}\)</span> dalam <span class="math inline" data-source-tex="L^{\infty}=L^{\infty}(\mu)">\(L^{\infty}=L^{\infty}(\mu)\)</span>.</p>
+<p>(c) Jika <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> hingga total, maka <span class="math inline" data-source-tex="\eusm S">\(\eusm S\)</span> merupakan ruang
+fungsi sederhana-<span class="math inline" data-source-tex="\mu">\(\mu\)</span>, sehingga <span class="math inline" data-source-tex="S">\(S\)</span> hanyalah ruang kelas ekuivalensi
+fungsi sederhana, seperti dalam 242Mb.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Misalkan <span class="math inline" data-source-tex="\tilde f:X\to\Bbb R">\(\tilde f:X\to\Bbb R\)</span> suatu fungsi terukur
+terbatas sedemikian sehingga <span class="math inline" data-source-tex="f\eae\tilde f">\(f\eae\tilde f\)</span>. Misalkan <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="|f(x)|\le n\epsilon">\(|f(x)|\le n\epsilon\)</span> untuk setiap <span class="math inline" data-source-tex="x\in X">\(x\in X\)</span>.
+Untuk <span class="math inline" data-source-tex="-n\le k\le n">\(-n\le k\le n\)</span>, tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="E_k=\{x:k\epsilon\le \tilde f(x)&lt;(k+1)\epsilon\}">\(E_k=\{x:k\epsilon\le \tilde f(x)&lt;(k+1)\epsilon\}\)</span>.</div>
+<p>Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="g=\sum_{k=-n}^nk\epsilon\chi E_k\in\eusm S">\(g=\sum_{k=-n}^nk\epsilon\chi E_k\in\eusm S\)</span>;</div>
+<p>maka <span class="math inline" data-source-tex="0\le\tilde f(x)-g(x)\le\epsilon">\(0\le\tilde f(x)-g(x)\le\epsilon\)</span> untuk setiap <span class="math inline" data-source-tex="x\in X">\(x\in X\)</span>,
+sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\esssup|f-g|=\esssup|\tilde f-g|\le\epsilon">\(\esssup|f-g|=\esssup|\tilde f-g|\le\epsilon\)</span>.</div>
+<p> </p>
+<p><strong>(b)</strong> Ini segera diperoleh, seperti dalam 242Mb.</p>
+<p> </p>
+<p><strong>(c)</strong> juga elementer.</p></aside>
+</section>
+<section class="source-unit" id="243J" data-source-id="243J"><span class="anchor" id="243Ja"></span><h2><span class="source-label">243J</span> Ekspektasi bersyarat </h2>
+<p>Ekspektasi bersyarat
+begitu penting sehingga layak dipertimbangkan interaksinya dengan setiap
+konsep baru.</p>
+<p> </p>
+<p><strong>(a)</strong> Jika <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sebarang ruang ukur, dan <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> suatu
+subaljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, maka pembenaman kanonik
+<span class="math inline" data-source-tex="S:L^0(\mu\restrp\Tau)\to L^0(\mu)">\(S:L^0(\mu\restrp\Tau)\to L^0(\mu)\)</span> (<a class="xref" href="../242/index.html#242Ja">242Ja</a>) membenamkan
+<span class="math inline" data-source-tex="L^{\infty}(\mu\restrp\Tau)">\(L^{\infty}(\mu\restrp\Tau)\)</span> sebagai subruang dari <span class="math inline" data-source-tex="L^{\infty}(\mu)">\(L^{\infty}(\mu)\)</span>,
+dan <span class="math inline" data-source-tex="\|Su\|_{\infty}=\|u\|_{\infty}">\(\|Su\|_{\infty}=\|u\|_{\infty}\)</span> untuk setiap
+<span class="math inline" data-source-tex="u\in L^{\infty}(\mu\restrp\Tau)">\(u\in L^{\infty}(\mu\restrp\Tau)\)</span>. Kita dapat mengidentifikasi <span class="math inline" data-source-tex="L^{\infty}(\mu\restrp\Tau)">\(L^{\infty}(\mu\restrp\Tau)\)</span> dengan
+citranya dalam <span class="math inline" data-source-tex="L^{\infty}(\mu)">\(L^{\infty}(\mu)\)</span>.</p>
+</section>
+<section class="source-unit" id="243Jb" data-source-id="243Jb"><h3><span class="source-label">243Jb</span> <strong>(b)</strong> </h3>
+<p>Sekarang andaikan bahwa <span class="math inline" data-source-tex="\mu X=1">\(\mu X=1\)</span>, dan misalkan
+<span class="math inline" data-source-tex="P:L^1(\mu)\to L^1(\mu\restrp\Tau)">\(P:L^1(\mu)\to L^1(\mu\restrp\Tau)\)</span> operator ekspektasi
+bersyarat (<a class="xref" href="../242/index.html#242Jd">242Jd</a>). Maka <span class="math inline" data-source-tex="L^{\infty}(\mu)">\(L^{\infty}(\mu)\)</span>
+merupakan sebenarnya subruang linear dari <span class="math inline" data-source-tex="L^1(\mu)">\(L^1(\mu)\)</span>.
+Dengan menetapkan <span class="math inline" data-source-tex="e=\chi X^{\ssbullet}\in L^{\infty}(\mu)">\(e=\chi X^{\ssbullet}\in L^{\infty}(\mu)\)</span>,
+kita melihat bahwa <span class="math inline" data-source-tex="\int_Fe=(\mu\restrp\Tau)(F)">\(\int_Fe=(\mu\restrp\Tau)(F)\)</span> untuk setiap
+<span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="Pe=\chi X^{\ssbullet}\in L^{\infty}(\mu\restrp\Tau)">\(Pe=\chi X^{\ssbullet}\in L^{\infty}(\mu\restrp\Tau)\)</span>.</div>
+<p>Jika <span class="math inline" data-source-tex="u\in L^{\infty}(\mu)">\(u\in L^{\infty}(\mu)\)</span>, maka dengan menetapkan
+<span class="math inline" data-source-tex="M=\|u\|_{\infty}">\(M=\|u\|_{\infty}\)</span> kita mempunyai <span class="math inline" data-source-tex="-Me\le u\le Me">\(-Me\le u\le Me\)</span>, sehingga
+<span class="math inline" data-source-tex="-MPe\le Pu\le MPe">\(-MPe\le Pu\le MPe\)</span>, karena <span class="math inline" data-source-tex="P">\(P\)</span> mempertahankan urutan (<a class="xref" href="../242/index.html#242Je">242Je</a>); dengan
+demikian <span class="math inline" data-source-tex="\|Pu\|_{\infty}\le M=\|u\|_{\infty}">\(\|Pu\|_{\infty}\le M=\|u\|_{\infty}\)</span>.
+Jadi <span class="math inline" data-source-tex="P\restr L^{\infty}(\mu):L^{\infty}(\mu)\to
+L^{\infty}(\mu\restrp\Tau)">\(P\restr L^{\infty}(\mu):L^{\infty}(\mu)\to
+L^{\infty}(\mu\restrp\Tau)\)</span> merupakan operator bernorma <span class="math inline" data-source-tex="1">\(1\)</span>.</p>
+<p>Jika <span class="math inline" data-source-tex="u\in L^{\infty}(\mu\restrp\Tau)">\(u\in L^{\infty}(\mu\restrp\Tau)\)</span>, maka <span class="math inline" data-source-tex="Pu=u">\(Pu=u\)</span>; jadi
+<span class="math inline" data-source-tex="P[L^{\infty}]">\(P[L^{\infty}]\)</span> adalah seluruh <span class="math inline" data-source-tex="L^{\infty}(\mu\restrp\Tau)">\(L^{\infty}(\mu\restrp\Tau)\)</span>.</p>
+</section>
+<section class="source-unit" id="243K" data-source-id="243K"><h2><span class="source-label">243K</span> <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span> kompleks </h2>
+<p>Semua gagasan yang
+diperlukan untuk menyesuaikan pekerjaan di atas dengan ruang
+<span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span> kompleks telah muncul dalam <a class="xref" href="../241/index.html#241J">241J</a> dan <a class="xref" href="../242/index.html#242P">242P</a>. Misalkan
+<span class="math inline" data-source-tex="\eusm L^{\infty}_{\Bbb C}">\(\eusm L^{\infty}_{\Bbb C}\)</span> adalah</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{f:f\in\eusm L^0_{\Bbb C},\,\esssup|f|&lt;\infty\}
+=\{f:\Real(f)\in\eusm L^{\infty},\,\Imag(f)\in\eusm L^{\infty}\}">\(\{f:f\in\eusm L^0_{\Bbb C},\,\esssup|f|&lt;\infty\}
+=\{f:\Real(f)\in\eusm L^{\infty},\,\Imag(f)\in\eusm L^{\infty}\}\)</span>.</div>
+<p>Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="L^{\infty}_{\Bbb C}
+=\{f^{\ssbullet}:f\in\eusm L^{\infty}_{\Bbb C}\}
+=\{u:u\in L^0_{\Bbb C},\,\Real(u)\in L^{\infty},
+  \,\Imag(u)\in L^{\infty}\}">\(L^{\infty}_{\Bbb C}
+=\{f^{\ssbullet}:f\in\eusm L^{\infty}_{\Bbb C}\}
+=\{u:u\in L^0_{\Bbb C},\,\Real(u)\in L^{\infty},
+  \,\Imag(u)\in L^{\infty}\}\)</span>.</div>
+<p>Dengan menetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|u\|_{\infty}
+=\||u|\|_{\infty}">\(\|u\|_{\infty}
+=\||u|\|_{\infty}\)</span><span class="math inline" data-source-tex="=\esssup|f|">\(=\esssup|f|\)</span> setiap kali <span class="math inline" data-source-tex="f^{\ssbullet}=u">\(f^{\ssbullet}=u\)</span>,</div>
+<p>kita mempunyai suatu norma pada <span class="math inline" data-source-tex="L^{\infty}_{\Bbb C}">\(L^{\infty}_{\Bbb C}\)</span> yang
+menjadikannya ruang Banach. Kita tetap mempunyai
+<span class="math inline" data-source-tex="u\times v\in L^{\infty}_{\Bbb C}">\(u\times v\in L^{\infty}_{\Bbb C}\)</span> dan
+<span class="math inline" data-source-tex="\|u\times v\|_{\infty}\le\|u\|_{\infty}\|v\|_{\infty}">\(\|u\times v\|_{\infty}\le\|u\|_{\infty}\|v\|_{\infty}\)</span> untuk semua
+<span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^{\infty}_{\Bbb C}">\(v\in L^{\infty}_{\Bbb C}\)</span>.</p>
+<p>Sekarang kita mempunyai dualitas antara <span class="math inline" data-source-tex="L^1_{\Bbb C}">\(L^1_{\Bbb C}\)</span> dan
+<span class="math inline" data-source-tex="L^{\infty}_{\Bbb C}">\(L^{\infty}_{\Bbb C}\)</span> yang menghasilkan suatu operator linear
+<span class="math inline" data-source-tex="T:L^{\infty}_{\Bbb C}\to(L^1_{\Bbb C})^*">\(T:L^{\infty}_{\Bbb C}\to(L^1_{\Bbb C})^*\)</span> bernorma paling besar <span class="math inline" data-source-tex="1">\(1\)</span>,
+yang didefinisikan oleh rumus</p>
+<div class="centerline"><span class="math inline" data-source-tex="(Tv)(u)=\int u\times v">\((Tv)(u)=\int u\times v\)</span>
+untuk setiap <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span>, <span class="math inline" data-source-tex="v\in L^{\infty}">\(v\in L^{\infty}\)</span>.</div>
+<p><span class="math inline" data-source-tex="T">\(T\)</span> injektif jika dan hanya jika ruang ukur yang mendasarinya
+semihingga, dan bijektif jika dan hanya jika ruang ukur yang mendasarinya
+dapat dilokalkan. <span class="proof-fragment">(Tentu saja ini dapat dibuktikan dengan
+mengerjakan kembali argumen <a class="xref" href="#243G">243G</a>; tetapi mungkin lebih mudah untuk
+memperhatikan bahwa <span class="math inline" data-source-tex="T(\Real(v))=\Real(Tv)">\(T(\Real(v))=\Real(Tv)\)</span>,
+<span class="math inline" data-source-tex="T(\Imag(v))=\Imag(Tv)">\(T(\Imag(v))=\Imag(Tv)\)</span> untuk setiap <span class="math inline" data-source-tex="v">\(v\)</span>, sehingga hasil untuk ruang
+kompleks dapat diturunkan dari hasil untuk ruang real.)</span> Untuk
+memeriksa bahwa <span class="math inline" data-source-tex="T">\(T\)</span> mempertahankan norma ketika injektif, rute
+tercepat tampaknya meniru argumen (a-ii) dalam bukti <a class="xref" href="#243G">243G</a>.</p>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="243X" data-source-id="243X"><span class="anchor" id="243Xa"></span><h2><span class="source-label">243X</span> Latihan dasar (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sebarang ruang ukur, dan <span class="math inline" data-source-tex="\hat\mu">\(\hat\mu\)</span>
+pelengkapan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> (<a class="xref" href="../212/index.html#212C">212C</a>, <a class="xref" href="../241/index.html#241Xb">241Xb</a>). Tunjukkan bahwa
+<span class="math inline" data-source-tex="\eusm L^{\infty}(\hat\mu)=\eusm L^{\infty}(\mu)">\(\eusm L^{\infty}(\hat\mu)=\eusm L^{\infty}(\mu)\)</span> dan
+<span class="math inline" data-source-tex="L^{\infty}(\hat\mu)=L^{\infty}(\mu)">\(L^{\infty}(\hat\mu)=L^{\infty}(\mu)\)</span>.</p>
+</section>
+<section class="source-unit" id="243Xb" data-source-id="243Xb"><h3><span class="source-label">243Xb</span> (&gt;b) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur tak kosong.
+Tuliskan <span class="math inline" data-source-tex="\eusm L^{\infty}_{\Sigma}">\(\eusm L^{\infty}_{\Sigma}\)</span> untuk ruang fungsi bernilai real
+terbatas yang terukur terhadap <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dan berdomain <span class="math inline" data-source-tex="X">\(X\)</span>.
+(i) Tunjukkan bahwa <span class="math inline" data-source-tex="L^{\infty}(\mu)
+=\{f^{\ssbullet}:f\in\eusm L^{\infty}_{\Sigma}\}
+\subseteq L^0=L^0(\mu)">\(L^{\infty}(\mu)
+=\{f^{\ssbullet}:f\in\eusm L^{\infty}_{\Sigma}\}
+\subseteq L^0=L^0(\mu)\)</span>. (ii) Tunjukkan bahwa
+<span class="math inline" data-source-tex="\eusm L^{\infty}_{\Sigma}">\(\eusm L^{\infty}_{\Sigma}\)</span> merupakan kisi Banach lengkap-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>
+Dedekind jika kita memberinya norma</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|f\|_{\infty}=\sup_{x\in X}|f(x)|">\(\|f\|_{\infty}=\sup_{x\in X}|f(x)|\)</span> untuk setiap
+<span class="math inline" data-source-tex="f\in\eusm L^{\infty}_{\Sigma}">\(f\in\eusm L^{\infty}_{\Sigma}\)</span>.</div>
+<p>(iii) Tunjukkan bahwa untuk setiap
+<span class="math inline" data-source-tex="u\in L^{\infty}=L^{\infty}(\mu)">\(u\in L^{\infty}=L^{\infty}(\mu)\)</span>,
+<span class="math inline" data-source-tex="\|u\|_{\infty}=\min\{\|f\|_{\infty}:
+f\in\eusm L^{\infty}_{\Sigma},\,f^{\ssbullet}=u\}">\(\|u\|_{\infty}=\min\{\|f\|_{\infty}:
+f\in\eusm L^{\infty}_{\Sigma},\,f^{\ssbullet}=u\}\)</span>.</p>
+</section>
+<section class="source-unit" id="243Xc" data-source-id="243Xc"><h3><span class="source-label">243Xc</span> (&gt;c) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sebarang ruang ukur, dan
+<span class="math inline" data-source-tex="A">\(A\)</span> suatu subhimpunan dari <span class="math inline" data-source-tex="L^{\infty}(\mu)">\(L^{\infty}(\mu)\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="A">\(A\)</span>
+terbatas untuk norma <span class="math inline" data-source-tex="\|\,\|_{\infty}">\(\|\,\|_{\infty}\)</span> jika dan hanya jika himpunan itu terbatas
+di atas dan di bawah untuk pengurutan <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span>.</p>
+</section>
+<section class="source-unit" id="243Xd" data-source-id="243Xd"><h3><span class="source-label">243Xd</span> (d) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sebarang ruang ukur, dan
+<span class="math inline" data-source-tex="A\subseteq L^{\infty}(\mu)">\(A\subseteq L^{\infty}(\mu)\)</span> suatu himpunan tak kosong dengan batas atas
+terkecil <span class="math inline" data-source-tex="w">\(w\)</span> dalam <span class="math inline" data-source-tex="L^{\infty}(\mu)">\(L^{\infty}(\mu)\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\|w\|_{\infty}\le\sup_{u\in A}\|u\|_{\infty}">\(\|w\|_{\infty}\le\sup_{u\in A}\|u\|_{\infty}\)</span>.</p>
+</section>
+<section class="source-unit" id="243Xe" data-source-id="243Xe"><h3><span class="source-label">243Xe</span> (e) </h3>
+<p>Misalkan
+<span class="math inline" data-source-tex="\langle(X_i,\Sigma_i,\mu_i)\rangle_{i\in I}">\(\langle(X_i,\Sigma_i,\mu_i)\rangle_{i\in I}\)</span> suatu keluarga ruang ukur,
+dan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> jumlah langsungnya (<a class="xref" href="../214/index.html#214L">214L</a>). Tunjukkan bahwa
+isomorfisme kanonik antara <span class="math inline" data-source-tex="L^0(\mu)">\(L^0(\mu)\)</span> dan
+<span class="math inline" data-source-tex="\prod_{i\in I}L^0(\mu_i)">\(\prod_{i\in I}L^0(\mu_i)\)</span> (<a class="xref" href="../241/index.html#241Xd">241Xd</a>) menginduksi isomorfisme antara
+<span class="math inline" data-source-tex="L^{\infty}(\mu)">\(L^{\infty}(\mu)\)</span> dan subruang</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{u:u\in\prod_{i\in I}L^{\infty}(\mu_i),\,
+\|u\|=\sup_{i\in I}\|u(i)\|_{\infty}&lt;\infty\}">\(\{u:u\in\prod_{i\in I}L^{\infty}(\mu_i),\,
+\|u\|=\sup_{i\in I}\|u(i)\|_{\infty}&lt;\infty\}\)</span></div>
+<p>dari <span class="math inline" data-source-tex="\prod_{i\in I}L^{\infty}(\mu_i)">\(\prod_{i\in I}L^{\infty}(\mu_i)\)</span>.</p>
+</section>
+<section class="source-unit" id="243Xf" data-source-id="243Xf"><h3><span class="source-label">243Xf</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sebarang ruang ukur, dan
+<span class="math inline" data-source-tex="u\in L^1(\mu)">\(u\in L^1(\mu)\)</span>. Tunjukkan bahwa terdapat <span class="math inline" data-source-tex="v\in L^{\infty}(\mu)">\(v\in L^{\infty}(\mu)\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\|v\|_{\infty}\le 1">\(\|v\|_{\infty}\le 1\)</span> dan
+<span class="math inline" data-source-tex="\int u\times v=\|u\|_1">\(\int u\times v=\|u\|_1\)</span>.</p>
+</section>
+<section class="source-unit" id="243Xg" data-source-id="243Xg"><h3><span class="source-label">243Xg</span> (g) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur semihingga dan
+<span class="math inline" data-source-tex="v\in L^{\infty}(\mu)">\(v\in L^{\infty}(\mu)\)</span>. Tunjukkan bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|v\|_{\infty}
+=\sup\{\int u\times v:u\in L^1,\,\|u\|_1\le 1\}
+=\sup\{\|u\times v\|_1:u\in L^1,\,\|u\|_1\le 1\}">\(\|v\|_{\infty}
+=\sup\{\int u\times v:u\in L^1,\,\|u\|_1\le 1\}
+=\sup\{\|u\times v\|_1:u\in L^1,\,\|u\|_1\le 1\}\)</span>.</div>
+</section>
+<section class="source-unit" id="243Xh" data-source-id="243Xh"><h3><span class="source-label">243Xh</span> (h) </h3>
+<p>Berikan contoh suatu ruang probabilitas
+<span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dan suatu <span class="math inline" data-source-tex="v\in L^{\infty}(\mu)">\(v\in L^{\infty}(\mu)\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\|u\times v\|_1&lt;\|v\|_{\infty}">\(\|u\times v\|_1&lt;\|v\|_{\infty}\)</span> setiap kali <span class="math inline" data-source-tex="u\in L^1(\mu)">\(u\in L^1(\mu)\)</span> dan
+<span class="math inline" data-source-tex="\|u\|_1\le 1">\(\|u\|_1\le 1\)</span>.</p>
+</section>
+<section class="source-unit" id="243Xi" data-source-id="243Xi"><h3><span class="source-label">243Xi</span> (i) </h3>
+<p>Tuliskan bukti-bukti <a class="xref" href="#243G">243G</a> yang disesuaikan dengan kasus
+khusus (i) <span class="math inline" data-source-tex="\mu X=1">\(\mu X=1\)</span> (ii) <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> bersifat <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga.</p>
+</section>
+<section class="source-unit" id="243Xj" data-source-id="243Xj"><h3><span class="source-label">243Xj</span> (j) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sebarang ruang ukur.
+Tunjukkan bahwa <span class="math inline" data-source-tex="L^0(\mu)">\(L^0(\mu)\)</span> lengkap Dedekind jika dan hanya jika
+<span class="math inline" data-source-tex="L^{\infty}(\mu)">\(L^{\infty}(\mu)\)</span> lengkap Dedekind.</p>
+</section>
+<section class="source-unit" id="243Xk" data-source-id="243Xk"><h3><span class="source-label">243Xk</span> (k) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur hingga total
+dan <span class="math inline" data-source-tex="\nu:\Sigma\to\Bbb R">\(\nu:\Sigma\to\Bbb R\)</span> suatu fungsional. Tunjukkan bahwa pernyataan
+berikut ekuivalen: (i) terdapat fungsional linear kontinu
+<span class="math inline" data-source-tex="h:L^1(\mu)\to\Bbb R">\(h:L^1(\mu)\to\Bbb R\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="h((\chi E)^{\ssbullet})=\nu E">\(h((\chi E)^{\ssbullet})=\nu E\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> (ii) <span class="math inline" data-source-tex="\nu">\(\nu\)</span>
+aditif dan terdapat <span class="math inline" data-source-tex="M\ge 0">\(M\ge 0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="|\nu E|\le M\mu E">\(|\nu E|\le M\mu E\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>.</p>
+</section>
+<section class="source-unit" id="243Xl" data-source-id="243Xl"><h3><span class="source-label">243Xl</span> (&gt;l) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> sebarang himpunan, dan misalkan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> ukuran
+pencacahan pada <span class="math inline" data-source-tex="X">\(X\)</span>. Dalam kasus ini lazim dituliskan <span class="math inline" data-source-tex="\ell^{\infty}(X)">\(\ell^{\infty}(X)\)</span>
+untuk <span class="math inline" data-source-tex="\eusm L^{\infty}(\mu)">\(\eusm L^{\infty}(\mu)\)</span>, dan ruang itu diidentifikasi dengan
+<span class="math inline" data-source-tex="L^{\infty}(\mu)">\(L^{\infty}(\mu)\)</span>. Tuliskan pernyataan dan bukti hasil-hasil bab ini yang
+disesuaikan dengan kasus khusus ini – jika Anda suka, dengan <span class="math inline" data-source-tex="X=\Bbb N">\(X=\Bbb N\)</span>.
+Secara khusus, tuliskan bukti langsung bahwa <span class="math inline" data-source-tex="(\ell^1)^*">\((\ell^1)^*\)</span> dapat
+diidentifikasi dengan <span class="math inline" data-source-tex="\ell^{\infty}">\(\ell^{\infty}\)</span>. Apa yang terjadi ketika <span class="math inline" data-source-tex="X">\(X\)</span>
+hanya mempunyai dua anggota? atau tiga?</p>
+</section>
+<section class="source-unit" id="243Xm" data-source-id="243Xm"><h3><span class="source-label">243Xm</span> (m) </h3>
+<p>Tunjukkan bahwa jika <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sebarang ruang ukur
+dan <span class="math inline" data-source-tex="u\in L^{\infty}_{\Bbb C}(\mu)">\(u\in L^{\infty}_{\Bbb C}(\mu)\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|u\|_{\infty}=\sup\{\|\Real(\zeta u)\|_{\infty}:
+\zeta\in\Bbb C,\,|\zeta|=1\}">\(\|u\|_{\infty}=\sup\{\|\Real(\zeta u)\|_{\infty}:
+\zeta\in\Bbb C,\,|\zeta|=1\}\)</span>.</div>
+</section>
+<section class="source-unit" id="243Xn" data-source-id="243Xn"><h3><span class="source-label">243Xn</span> (n) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dan <span class="math inline" data-source-tex="(Y,\Tau,\nu)">\((Y,\Tau,\nu)\)</span> ruang-ruang
+ukur, dan <span class="math inline" data-source-tex="\phi:X\to Y">\(\phi:X\to Y\)</span> suatu fungsi pelestari ukuran melalui prapeta. Tunjukkan bahwa
+<span class="math inline" data-source-tex="g\phi\in\eusm L^{\infty}(\mu)">\(g\phi\in\eusm L^{\infty}(\mu)\)</span> untuk setiap
+<span class="math inline" data-source-tex="g\in\eusm L^{\infty}(\nu)">\(g\in\eusm L^{\infty}(\nu)\)</span>, dan bahwa peta <span class="math inline" data-source-tex="g\mapsto g\phi">\(g\mapsto g\phi\)</span> menginduksi
+suatu operator linear <span class="math inline" data-source-tex="T:L^{\infty}(\nu)\to L^{\infty}(\mu)">\(T:L^{\infty}(\nu)\to L^{\infty}(\mu)\)</span> yang
+didefinisikan dengan menetapkan
+<span class="math inline" data-source-tex="T(g^{\ssbullet})=(g\phi)^{\ssbullet}">\(T(g^{\ssbullet})=(g\phi)^{\ssbullet}\)</span> untuk setiap
+<span class="math inline" data-source-tex="g\in\eusm L^{\infty}(\nu)">\(g\in\eusm L^{\infty}(\nu)\)</span>. (Bandingkan <a class="xref" href="../241/index.html#241Xg">241Xg</a>.) Tunjukkan bahwa
+<span class="math inline" data-source-tex="\|Tv\|_{\infty}=\|v\|_{\infty}">\(\|Tv\|_{\infty}=\|v\|_{\infty}\)</span> untuk setiap
+<span class="math inline" data-source-tex="v\in L^{\infty}(\nu)">\(v\in L^{\infty}(\nu)\)</span>.</p>
+</section>
+<section class="source-unit" id="243Xo" data-source-id="243Xo"><h3><span class="source-label">243Xo</span> (o) </h3>
+<p>Untuk <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in C=C([0,1])">\(g\in C=C([0,1])\)</span>, ruang fungsi
+bernilai real yang kontinu pada interval satuan <span class="math inline" data-source-tex="[0,1]">\([0,1]\)</span>, katakanlah</p>
+<div class="centerline"><span class="math inline" data-source-tex="f\le g">\(f\le g\)</span> jika dan hanya jika <span class="math inline" data-source-tex="f(x)\le g(x)">\(f(x)\le g(x)\)</span> untuk setiap
+<span class="math inline" data-source-tex="x\in [0,1]">\(x\in [0,1]\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\|f\|_{\infty}=\sup_{x\in [0,1]}|f(x)|">\(\|f\|_{\infty}=\sup_{x\in [0,1]}|f(x)|\)</span>.</div>
+<p>Tunjukkan bahwa <span class="math inline" data-source-tex="C">\(C\)</span> merupakan kisi Banach, dan terlebih lagi</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|f\vee g\|_{\infty}=\max(\|f\|_{\infty},\|g\|_{\infty})">\(\|f\vee g\|_{\infty}=\max(\|f\|_{\infty},\|g\|_{\infty})\)</span>
+setiap kali <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\ge 0">\(g\ge 0\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\|f\times g\|_{\infty}\le\|f\|_{\infty}\|g\|_{\infty}">\(\|f\times g\|_{\infty}\le\|f\|_{\infty}\|g\|_{\infty}\)</span>
+untuk semua <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in C">\(g\in C\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\|f\|_{\infty}=\min\{\gamma:|f|\le\gamma\chi X\}">\(\|f\|_{\infty}=\min\{\gamma:|f|\le\gamma\chi X\}\)</span> untuk
+setiap <span class="math inline" data-source-tex="f\in C">\(f\in C\)</span>.</div>
+</section>
+<section class="source-unit" id="243Y" data-source-id="243Y"><h2><span class="source-label">243Y</span> Latihan lanjutan (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu
+ruang ukur, dan <span class="math inline" data-source-tex="Y">\(Y\)</span> subhimpunan dari <span class="math inline" data-source-tex="X">\(X\)</span>; tuliskan <span class="math inline" data-source-tex="\mu_Y">\(\mu_Y\)</span> untuk ukuran
+subruang pada <span class="math inline" data-source-tex="Y">\(Y\)</span>. Tunjukkan bahwa peta kanonik dari <span class="math inline" data-source-tex="L^0(\mu)">\(L^0(\mu)\)</span> pada
+<span class="math inline" data-source-tex="L^0(\mu_Y)">\(L^0(\mu_Y)\)</span> (<a class="xref" href="../241/index.html#241Yg">241Yg</a>) menginduksi peta kanonik dari
+<span class="math inline" data-source-tex="L^{\infty}(\mu)">\(L^{\infty}(\mu)\)</span> pada <span class="math inline" data-source-tex="L^{\infty}(\mu_Y)">\(L^{\infty}(\mu_Y)\)</span>, yang mempertahankan norma
+jika dan hanya jika peta itu injektif jika dan hanya jika <span class="math inline" data-source-tex="Y">\(Y\)</span> mempunyai
+ukuran luar penuh.</p>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<section class="source-unit" id="243-notes" data-source-id="243-notes"><h2><span class="source-label">243-notes</span> Catatan penutup untuk Bagian 243 </h2>
+<p>Saya menyebutkan rumus</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|u\vee v\|_{\infty}=\max(\|u\|_{\infty},\|v\|_{\infty})">\(\|u\vee v\|_{\infty}=\max(\|u\|_{\infty},\|v\|_{\infty})\)</span>
+untuk <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\ge 0">\(v\ge 0\)</span></div>
+<p>(<a class="xref" href="#243Df">243Df</a>) karena walaupun rumus itu tidak mencirikan ruang
+<span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span> di antara kisi Banach (lihat <a class="xref" href="#243Xo">243Xo</a>), dalam suatu arti rumus
+tersebut dual terhadap sifat karakteristik</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|u+v\|_1=\|u\|_1+\|v\|_1">\(\|u+v\|_1=\|u\|_1+\|v\|_1\)</span> untuk <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\ge 0">\(v\ge 0\)</span></div>
+<p>dari norma <span class="math inline" data-source-tex="L^1">\(L^1\)</span>. (Saya akan kembali ke hal ini dalam Bab 35
+di jilid berikutnya.)</p>
+<p>Himpunan khusus <span class="math inline" data-source-tex="\eusm L^{\infty}">\(\eusm L^{\infty}\)</span> yang saya pilih (<a class="xref" href="#243A">243A</a>) agak
+sembarang. Ruang <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span> dapat dengan baik diuraikan seluruhnya
+sebagai subruang dari <span class="math inline" data-source-tex="L^0">\(L^0\)</span>, tanpa kembali ke fungsi sama sekali; lihat
+243Bc, <a class="xref" href="#243Dc">243Dc</a>. Seperti halnya <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> dan <span class="math inline" data-source-tex="\eusm L^1">\(\eusm L^1\)</span>, ada kesempatan
+ketika lebih sederhana untuk bekerja dengan ruang linear fungsi terukur
+yang terbatas secara esensial dari <span class="math inline" data-source-tex="X">\(X\)</span> ke <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>; dan sekarang kita
+mempunyai kandidat jelas yang ketiga, yakni ruang linear
+<span class="math inline" data-source-tex="\eusm L^{\infty}_{\Sigma}">\(\eusm L^{\infty}_{\Sigma}\)</span> dari fungsi terukur dari <span class="math inline" data-source-tex="X">\(X\)</span> ke <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> yang
+benar-benar terbatas, bukan sekadar terbatas secara esensial, yang
+sendirinya merupakan kisi Banach (<a class="xref" href="#243Xb">243Xb</a>).</p>
+<p>Saya kira teorema terpenting dalam bagian ini adalah <a class="xref" href="#243G">243G</a>, yang
+mengidentifikasi <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span> dengan <span class="math inline" data-source-tex="(L^1)^*">\((L^1)^*\)</span>. Identifikasi ini merupakan
+alasan utama untuk membedakan ruang ukur ‘yang dapat dilokalkan’. Bukti
+243Gb panjang karena bergantung pada dua gagasan terpisah. Teorema
+Radon-Nikodým, pada dasarnya, menangani kasus hingga total, lalu dalam
+bagian (b-v) dan (b-vi) bukti tersebut keterlokalan digunakan untuk
+merangkai solusi parsial <span class="math inline" data-source-tex="g_F">\(g_F\)</span>. Latihan <a class="xref" href="#243Xi">243Xi</a> dimaksudkan untuk membantu
+Anda membedakan kedua operasi tersebut. Peta
+<span class="math inline" data-source-tex="T&#x27;:L^1\to(L^{\infty})^*">\(T&#x27;:L^1\to(L^{\infty})^*\)</span> (<a class="xref" href="#243Fc">243Fc</a>) juga sangat menarik dengan caranya
+sendiri, tetapi akan saya tinggalkan untuk Bab 36.</p>
+<p><a class="xref" href="#243G">243G</a> memberikan cara lain untuk memandang operator ekspektasi bersyarat.
+Jika <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang probabilitas dan <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> suatu
+subaljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, tentu baik <span class="math inline" data-source-tex="\mu">\(\mu\)</span> maupun
+<span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span> dapat dilokalkan, sehingga <span class="math inline" data-source-tex="L^{\infty}(\mu)">\(L^{\infty}(\mu)\)</span> dapat
+diidentifikasi dengan <span class="math inline" data-source-tex="(L^1(\mu))^*">\((L^1(\mu))^*\)</span> dan
+<span class="math inline" data-source-tex="L^{\infty}(\mu\restrp\Tau)">\(L^{\infty}(\mu\restrp\Tau)\)</span> dapat diidentifikasi dengan
+<span class="math inline" data-source-tex="(L^1(\mu\restrp\Tau))^*">\((L^1(\mu\restrp\Tau))^*\)</span>. Sekarang kita mempunyai pembenaman kanonik
+<span class="math inline" data-source-tex="S:L^1(\mu\restrp\Tau)\to L^1(\mu)">\(S:L^1(\mu\restrp\Tau)\to L^1(\mu)\)</span> (<a class="xref" href="../242/index.html#242Jb">242Jb</a>), yang merupakan operator
+linear yang mempertahankan norma, sehingga menghasilkan operator adjoint
+<span class="math inline" data-source-tex="S&#x27;:L^1(\mu)^*\to L^1(\mu\restrp\Tau)^*">\(S&#x27;:L^1(\mu)^*\to L^1(\mu\restrp\Tau)^*\)</span> yang didefinisikan oleh rumus</p>
+<div class="centerline"><span class="math inline" data-source-tex="(S&#x27;h)(v)=h(Sv)">\((S&#x27;h)(v)=h(Sv)\)</span> untuk semua <span class="math inline" data-source-tex="v\in L^1(\mu\restrp\Tau)">\(v\in L^1(\mu\restrp\Tau)\)</span>,
+<span class="math inline" data-source-tex="h\in L^1(\mu)^*">\(h\in L^1(\mu)^*\)</span>.</div>
+<p>Dengan menuliskan
+<span class="math inline" data-source-tex="T_{\mu}:L^{\infty}(\mu)\to L^1(\mu)^*">\(T_{\mu}:L^{\infty}(\mu)\to L^1(\mu)^*\)</span> dan
+<span class="math inline" data-source-tex="T_{\mu\restrp\Tau}:L^{\infty}(\mu\restrp\Tau)\to
+L^1(\mu\restrp\Tau)^*">\(T_{\mu\restrp\Tau}:L^{\infty}(\mu\restrp\Tau)\to
+L^1(\mu\restrp\Tau)^*\)</span> untuk peta-peta kanonik, kita memperoleh peta
+<span class="math inline" data-source-tex="Q=T_{\mu\restrp\Tau}^{-1}S&#x27;T_{\mu}:
+L^{\infty}(\mu)\to L^{\infty}(\mu\restrp\Tau)">\(Q=T_{\mu\restrp\Tau}^{-1}S&#x27;T_{\mu}:
+L^{\infty}(\mu)\to L^{\infty}(\mu\restrp\Tau)\)</span>, yang didefinisikan
+dengan mengatakan bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int Qu\times v=(T_{\mu\restrp\Tau}Qu)(v)
+=(S&#x27;T_{\mu}u)(v)=(T_{\mu}v)(Su)=\int Su\times v=\int u\times v">\(\int Qu\times v=(T_{\mu\restrp\Tau}Qu)(v)
+=(S&#x27;T_{\mu}u)(v)=(T_{\mu}v)(Su)=\int Su\times v=\int u\times v\)</span></div>
+<p>setiap kali <span class="math inline" data-source-tex="v\in L^1(\mu\restrp\Tau)">\(v\in L^1(\mu\restrp\Tau)\)</span> dan
+<span class="math inline" data-source-tex="u\in L^{\infty}(\mu)">\(u\in L^{\infty}(\mu)\)</span>. Namun ini sesuai dengan rumus <a class="xref" href="../242/index.html#242L">242L</a>: kita
+mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int Qu\times v=\int u\times v=\int P(u\times v)
+=\int Pu\times v">\(\int Qu\times v=\int u\times v=\int P(u\times v)
+=\int Pu\times v\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="v">\(v\)</span> sembarang, kita harus mempunyai <span class="math inline" data-source-tex="Qu=Pu">\(Qu=Pu\)</span> untuk
+setiap <span class="math inline" data-source-tex="u\in L^{\infty}(\mu)">\(u\in L^{\infty}(\mu)\)</span>. Jadi, dalam suatu arti, operator
+ekspektasi bersyarat merupakan adjoint dari operator pembenaman yang
+sesuai.</p>
+<p>Pembahasan dalam paragraf terakhir tentu saja hanya berlaku bagi
+pembatasan <span class="math inline" data-source-tex="P\restr L^{\infty}(\mu)">\(P\restr L^{\infty}(\mu)\)</span> dari operator ekspektasi bersyarat
+pada ruang <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span>. Karena <span class="math inline" data-source-tex="\mu">\(\mu\)</span> hingga total,
+<span class="math inline" data-source-tex="L^{\infty}(\mu)">\(L^{\infty}(\mu)\)</span> merupakan subruang dari <span class="math inline" data-source-tex="L^1(\mu)">\(L^1(\mu)\)</span>, dan sifat-sifat
+hakiki operator <span class="math inline" data-source-tex="P">\(P\)</span> berhubungan dengan perilakunya pada seluruh ruang
+<span class="math inline" data-source-tex="L^1">\(L^1\)</span>. <span class="math inline" data-source-tex="P:L^1(\mu)\to L^1(\mu\restrp\Tau)">\(P:L^1(\mu)\to L^1(\mu\restrp\Tau)\)</span> juga dapat dinyatakan sebagai
+operator adjoint, tetapi ungkapannya memerlukan lebih banyak teori ruang
+Riesz daripada yang dapat saya muat di sini. Saya akan kembali ke topik
+ini dalam Bab 36.</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 2: Broad Foundations</cite>, Bagian 243.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 25 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-cumulative-html-route-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V2-S243&quot;,
+  &quot;source_member&quot;: &quot;mt2.2016/mt243.tex&quot;,
+  &quot;target_bytes&quot;: 37945,
+  &quot;target_sha256&quot;: &quot;66257d05024217eb7c99784102fe7f2f45f27aa4e387b87652cd1bf34ae775af&quot;,
+  &quot;source_ids&quot;: [
+    &quot;243&quot;,
+    &quot;243A&quot;,
+    &quot;243B&quot;,
+    &quot;243C&quot;,
+    &quot;243D&quot;,
+    &quot;243Da&quot;,
+    &quot;243Db&quot;,
+    &quot;243Dc&quot;,
+    &quot;243Dd&quot;,
+    &quot;243De&quot;,
+    &quot;243Df&quot;,
+    &quot;243E&quot;,
+    &quot;243F&quot;,
+    &quot;243Fa&quot;,
+    &quot;243Fb&quot;,
+    &quot;243Fc&quot;,
+    &quot;243G&quot;,
+    &quot;243H&quot;,
+    &quot;243I&quot;,
+    &quot;243J&quot;,
+    &quot;243Ja&quot;,
+    &quot;243Jb&quot;,
+    &quot;243K&quot;,
+    &quot;243X&quot;,
+    &quot;243Xa&quot;,
+    &quot;243Xb&quot;,
+    &quot;243Xc&quot;,
+    &quot;243Xd&quot;,
+    &quot;243Xe&quot;,
+    &quot;243Xf&quot;,
+    &quot;243Xg&quot;,
+    &quot;243Xh&quot;,
+    &quot;243Xi&quot;,
+    &quot;243Xj&quot;,
+    &quot;243Xk&quot;,
+    &quot;243Xl&quot;,
+    &quot;243Xm&quot;,
+    &quot;243Xn&quot;,
+    &quot;243Xo&quot;,
+    &quot;243Y&quot;
+  ],
+  &quot;corpus_id&quot;: &quot;O007-FREMLIN&quot;,
+  &quot;volume_id&quot;: &quot;O007-FREMLIN-V2&quot;,
+  &quot;volume_source_title&quot;: &quot;Broad Foundations&quot;,
+  &quot;route&quot;: &quot;243&quot;,
+  &quot;official_source_page_start&quot;: 156,
+  &quot;chapter_official_source_pages&quot;: [
+    138,
+    203
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

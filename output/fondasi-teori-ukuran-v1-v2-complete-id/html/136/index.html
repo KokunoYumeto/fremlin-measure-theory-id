@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Teorema Kelas Monoton — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        bigcupop: '\\bigcup',
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        roibr: '\\mathopen{{[}}',
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1]
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 1 · Bagian 136</p>
+  <h1>Teorema Kelas Monoton</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi Volume 1</a></nav>
+<main id="isi">
+<p>Pada bagian terakhir jilid ini, saya menyajikan dua teorema mengenai
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> beserta beberapa akibat sederhana. Hasil-hasil ini ditempatkan
+di sini karena saya tidak menemukan tempat alami untuknya dalam Jilid 2.
+Walaupun keduanya (terutama <a class="xref" href="#136B">136B</a>) merupakan bagian dari teknik dasar teori
+ukuran dan memiliki banyak penerapan yang tersebar luas, keduanya tidak sentral
+bagi pendekatan khusus yang saya pilih dan, jika Anda menghendakinya, dapat
+dikesampingkan sampai diperlukan.</p>
+<section class="source-unit" id="136A" data-source-id="136A"><h2><span class="source-label">136A</span> Lema </h2>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan, dan <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> suatu keluarga
+subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>. Maka pernyataan-pernyataan berikut ekuivalen:</p>
+<div class="inset-block"><p>(i) <span class="math inline" data-source-tex="X\in\Cal A">\(X\in\Cal A\)</span>, <span class="math inline" data-source-tex="B\setminus A\in\Cal A">\(B\setminus A\in\Cal A\)</span> kapan pun <span class="math inline" data-source-tex="A">\(A\)</span>,
+<span class="math inline" data-source-tex="B\in\Cal A">\(B\in\Cal A\)</span> dan <span class="math inline" data-source-tex="A\subseteq B">\(A\subseteq B\)</span>, dan <span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}A_n\in\Cal A">\(\bigcup_{n\in\Bbb N}A_n\in\Cal A\)</span>
+kapan pun <span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> merupakan barisan tak-menurun dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>;</p>
+<p>(ii) <span class="math inline" data-source-tex="\emptyset\in\Cal A">\(\emptyset\in\Cal A\)</span>, <span class="math inline" data-source-tex="X\setminus A\in\Cal A">\(X\setminus A\in\Cal A\)</span> untuk setiap
+<span class="math inline" data-source-tex="A\in\Cal A">\(A\in\Cal A\)</span>, dan <span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}A_n\in\Cal A">\(\bigcup_{n\in\Bbb N}A_n\in\Cal A\)</span> kapan pun
+<span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> merupakan barisan saling lepas dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>.</p></div>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(i)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(ii)</strong> Andaikan (i) benar. Tentu saja
+<span class="math inline" data-source-tex="\emptyset=X\setminus X">\(\emptyset=X\setminus X\)</span> termasuk dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> dan
+<span class="math inline" data-source-tex="X\setminus A\in\Cal A">\(X\setminus A\in\Cal A\)</span> untuk setiap <span class="math inline" data-source-tex="A\in\Cal A">\(A\in\Cal A\)</span>.
+Jika <span class="math inline" data-source-tex="A">\(A\)</span>, <span class="math inline" data-source-tex="B\in\Cal A">\(B\in\Cal A\)</span> saling lepas, maka
+<span class="math inline" data-source-tex="A\subseteq X\setminus B\in\Cal A">\(A\subseteq X\setminus B\in\Cal A\)</span>, sehingga
+<span class="math inline" data-source-tex="(X\setminus B)\setminus A">\((X\setminus B)\setminus A\)</span> dan komplemennya <span class="math inline" data-source-tex="A\cup B">\(A\cup B\)</span> termasuk dalam
+<span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>. Jadi, jika <span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> merupakan barisan saling lepas dalam
+<span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>, <span class="math inline" data-source-tex="\bigcup_{i\le n}A_i\in\Cal A">\(\bigcup_{i\le n}A_i\in\Cal A\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, dan
+<span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}A_n">\(\bigcup_{n\in\Bbb N}A_n\)</span> adalah gabungan suatu barisan tak-menurun dalam
+<span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>, sehingga termasuk dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>. Dengan demikian (ii) benar.</p>
+<p> </p>
+<p><strong>(ii)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(i)</strong> Jika (ii) benar, maka tentu saja
+<span class="math inline" data-source-tex="X=X\setminus\emptyset">\(X=X\setminus\emptyset\)</span> termasuk dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>. Jika <span class="math inline" data-source-tex="A">\(A\)</span> dan <span class="math inline" data-source-tex="B">\(B\)</span> adalah
+anggota <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> sedemikian sehingga <span class="math inline" data-source-tex="A\subseteq B">\(A\subseteq B\)</span>, maka <span class="math inline" data-source-tex="X\setminus B">\(X\setminus B\)</span>
+termasuk dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> dan saling lepas dengan <span class="math inline" data-source-tex="A">\(A\)</span>, sehingga
+<span class="math inline" data-source-tex="A\cup(X\setminus B)">\(A\cup(X\setminus B)\)</span> dan komplemennya <span class="math inline" data-source-tex="B\setminus A">\(B\setminus A\)</span> termasuk dalam
+<span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>. Dengan demikian klausa kedua (i) terpenuhi. Untuk klausa ketiga,
+jika <span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> merupakan barisan tak-menurun dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>, maka
+<span class="math inline" data-source-tex="A_0,A_1\setminus A_0,A_2\setminus A_1,\ldots">\(A_0,A_1\setminus A_0,A_2\setminus A_1,\ldots\)</span> merupakan barisan saling lepas
+dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>, sehingga gabungannya <span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}A_n">\(\bigcup_{n\in\Bbb N}A_n\)</span> termasuk
+dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>.</p></aside>
+<p> </p>
+<p><strong>Definisi</strong> Jika <span class="math inline" data-source-tex="\Cal A\subseteq\Cal PX">\(\Cal A\subseteq\Cal PX\)</span> memenuhi syarat-syarat
+(i) dan/atau (ii) di atas, keluarga tersebut disebut suatu <strong>kelas Dynkin</strong> dari
+subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>.</p>
+</section>
+<section class="source-unit" id="136B" data-source-id="136B"><h2><span class="source-label">136B</span> Teorema Kelas Monoton </h2>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan dan
+<span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> suatu kelas Dynkin dari subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>. Andaikan bahwa
+<span class="math inline" data-source-tex="\Cal I\subseteq\Cal A">\(\Cal I\subseteq\Cal A\)</span> sedemikian sehingga <span class="math inline" data-source-tex="I\cap J\in\Cal I">\(I\cap J\in\Cal I\)</span> untuk semua
+<span class="math inline" data-source-tex="I">\(I\)</span>, <span class="math inline" data-source-tex="J\in\Cal I">\(J\in\Cal I\)</span>. Maka <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> memuat aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari subhimpunan-
+subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span> yang dibangkitkan oleh <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Misalkan <span class="math inline" data-source-tex="\frak S">\(\frak S\)</span> keluarga kelas-kelas Dynkin dari
+subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span> yang memuat <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span>. Maka mudah diperiksa,
+dengan menggunakan (i) atau (ii) dalam <a class="xref" href="#136A">136A</a>, bahwa irisan
+<span class="math inline" data-source-tex="\Sigma=\bigcap\frak S">\(\Sigma=\bigcap\frak S\)</span> juga merupakan suatu kelas Dynkin (bandingkan <a class="xref" href="../111/index.html#111Ga">111Ga</a>).
+Karena <span class="math inline" data-source-tex="\Cal A\in\frak S">\(\Cal A\in\frak S\)</span>, <span class="math inline" data-source-tex="\Sigma\subseteq\Cal A">\(\Sigma\subseteq\Cal A\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Jika <span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Sigma_H=\{E:E\in\Sigma,\,E\cap H\in\Sigma\}">\(\Sigma_H=\{E:E\in\Sigma,\,E\cap H\in\Sigma\}\)</span></div>
+<p>merupakan suatu kelas Dynkin. Bukti. (<span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>)
+<span class="math inline" data-source-tex="X\cap H=H\in\Sigma">\(X\cap H=H\in\Sigma\)</span> sehingga <span class="math inline" data-source-tex="X\in\Sigma_H">\(X\in\Sigma_H\)</span>. (<span class="math inline" data-source-tex="\beta">\(\beta\)</span>) Jika <span class="math inline" data-source-tex="A">\(A\)</span>,
+<span class="math inline" data-source-tex="B\in\Sigma_H">\(B\in\Sigma_H\)</span> dan <span class="math inline" data-source-tex="A\subseteq B">\(A\subseteq B\)</span>, maka <span class="math inline" data-source-tex="A\cap H">\(A\cap H\)</span>, <span class="math inline" data-source-tex="B\cap H">\(B\cap H\)</span> termasuk
+dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dan <span class="math inline" data-source-tex="A\cap H\subseteq B\cap H">\(A\cap H\subseteq B\cap H\)</span>; akibatnya</p>
+<div class="centerline"><span class="math inline" data-source-tex="(B\setminus A)\cap H=(B\cap H)\setminus(A\cap H)\in\Sigma">\((B\setminus A)\cap H=(B\cap H)\setminus(A\cap H)\in\Sigma\)</span></div>
+<p>dan <span class="math inline" data-source-tex="B\setminus A\in\Sigma_H">\(B\setminus A\in\Sigma_H\)</span>. (<span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>) Jika
+<span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> merupakan barisan tak-menurun dalam <span class="math inline" data-source-tex="\Sigma_H">\(\Sigma_H\)</span>, maka
+<span class="math inline" data-source-tex="\sequencen{A_n\cap H}">\(\sequencen{A_n\cap H}\)</span> merupakan barisan tak-menurun dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="(\bigcup_{n\in\Bbb N}A_n)\cap H
+=\bigcup_{n\in\Bbb N}(A_n\cap H)\in\Sigma">\((\bigcup_{n\in\Bbb N}A_n)\cap H
+=\bigcup_{n\in\Bbb N}(A_n\cap H)\in\Sigma\)</span></div>
+<p>dan <span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}A_n\in\Sigma_H">\(\bigcup_{n\in\Bbb N}A_n\in\Sigma_H\)</span>. ∎</p>
+<p>Akibatnya, jika <span class="math inline" data-source-tex="I\cap H\in\Sigma">\(I\cap H\in\Sigma\)</span> untuk setiap <span class="math inline" data-source-tex="I\in\Cal I">\(I\in\Cal I\)</span>, sehingga
+<span class="math inline" data-source-tex="\Sigma_H\supseteq\Cal I">\(\Sigma_H\supseteq\Cal I\)</span>, maka <span class="math inline" data-source-tex="\Sigma_H\in\frak S">\(\Sigma_H\in\frak S\)</span> dan harus sama dengan
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>.</p>
+<p> </p>
+<p><strong>(c)</strong> Berikutnya kita dapati bahwa <span class="math inline" data-source-tex="G\cap H\in\Sigma">\(G\cap H\in\Sigma\)</span> untuk semua <span class="math inline" data-source-tex="G">\(G\)</span>,
+<span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span>. Bukti. Ambil <span class="math inline" data-source-tex="I">\(I\)</span>, <span class="math inline" data-source-tex="J\in\Cal I">\(J\in\Cal I\)</span>. Kita tahu bahwa
+<span class="math inline" data-source-tex="I\cap J\in\Cal I">\(I\cap J\in\Cal I\)</span>. Karena <span class="math inline" data-source-tex="I">\(I\)</span> sembarang, <span class="math inline" data-source-tex="\Sigma_J=\Sigma">\(\Sigma_J=\Sigma\)</span> dan
+<span class="math inline" data-source-tex="H\in\Sigma_J">\(H\in\Sigma_J\)</span>, yakni <span class="math inline" data-source-tex="H\cap J\in\Sigma">\(H\cap J\in\Sigma\)</span>. Karena <span class="math inline" data-source-tex="J">\(J\)</span> sembarang,
+<span class="math inline" data-source-tex="\Sigma_H=\Sigma">\(\Sigma_H=\Sigma\)</span> dan <span class="math inline" data-source-tex="G\in\Sigma_H">\(G\in\Sigma_H\)</span>, yakni <span class="math inline" data-source-tex="G\cap H\in\Sigma">\(G\cap H\in\Sigma\)</span>. ∎</p>
+<p> </p>
+<p><strong>(d)</strong> Karena <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> merupakan kelas Dynkin,
+<span class="math inline" data-source-tex="\emptyset=X\setminus X\in\Sigma">\(\emptyset=X\setminus X\in\Sigma\)</span>. Selain itu,</p>
+<div class="centerline"><span class="math inline" data-source-tex="G\cup H
+=X\setminus((X\setminus G)\cap(X\setminus H))\in\Sigma">\(G\cup H
+=X\setminus((X\setminus G)\cap(X\setminus H))\in\Sigma\)</span></div>
+<p>untuk sembarang <span class="math inline" data-source-tex="G">\(G\)</span>, <span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span> (menggunakan (c)).
+Jadi, jika <span class="math inline" data-source-tex="\sequencen{G_n}">\(\sequencen{G_n}\)</span> merupakan sembarang barisan dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>,
+<span class="math inline" data-source-tex="G&#x27;_n=\bigcup_{i\le n}G_i\in\Sigma">\(G&#x27;_n=\bigcup_{i\le n}G_i\in\Sigma\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span> (dengan induksi pada
+<span class="math inline" data-source-tex="n">\(n\)</span>). Namun, <span class="math inline" data-source-tex="\sequencen{G&#x27;_n}">\(\sequencen{G&#x27;_n}\)</span> sekarang merupakan barisan tak-menurun dalam
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}G_n
+=\bigcup_{n\in\Bbb N}G&#x27;_n\in\Sigma">\(\bigcup_{n\in\Bbb N}G_n
+=\bigcup_{n\in\Bbb N}G&#x27;_n\in\Sigma\)</span>.</div>
+<p>Ini berarti bahwa <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> memenuhi semua syarat dalam <a class="xref" href="../111/index.html#111A">111A</a> dan merupakan
+suatu aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>. Karena
+<span class="math inline" data-source-tex="\Cal I\subseteq\Sigma">\(\Cal I\subseteq\Sigma\)</span>, <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> harus memuat aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> <span class="math inline" data-source-tex="\Sigma&#x27;">\(\Sigma&#x27;\)</span> dari
+subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span> yang dibangkitkan oleh <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span>. Jadi
+<span class="math inline" data-source-tex="\Sigma&#x27;\subseteq\Sigma\subseteq\Cal A">\(\Sigma&#x27;\subseteq\Sigma\subseteq\Cal A\)</span>, sebagaimana diperlukan.</p>
+<p>(Sebenarnya, tentu saja, <span class="math inline" data-source-tex="\Sigma=\Sigma&#x27;">\(\Sigma=\Sigma&#x27;\)</span>, karena <span class="math inline" data-source-tex="\Sigma&#x27;\in\frak S">\(\Sigma&#x27;\in\frak S\)</span>.)</p></aside>
+<p> </p>
+<p><strong>Catatan</strong> Saya pernah melihat hasil ini disebut
+<strong>Teorema Kelas Sierpiński</strong> dan
+<strong>Teorema <span class="math inline" data-source-tex="\pmb{\pi}">\(\pmb{\pi}\)</span>-<span class="math inline" data-source-tex="\pmb{\lambda}">\(\pmb{\lambda}\)</span></strong>.</p>
+</section>
+<section class="source-unit" id="136C" data-source-id="136C"><h2><span class="source-label">136C</span> Akibat </h2>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan, dan <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, <span class="math inline" data-source-tex="\nu">\(\nu\)</span> dua
+ukuran yang didefinisikan pada <span class="math inline" data-source-tex="X">\(X\)</span> dengan domain masing-masing <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>,
+<span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>. Andaikan bahwa <span class="math inline" data-source-tex="\mu X=\nu X&lt;\infty">\(\mu X=\nu X&lt;\infty\)</span>, dan bahwa
+<span class="math inline" data-source-tex="\Cal I\subseteq\Sigma\cap\Tau">\(\Cal I\subseteq\Sigma\cap\Tau\)</span> merupakan keluarga himpunan sedemikian
+sehingga <span class="math inline" data-source-tex="\mu I=\nu I">\(\mu I=\nu I\)</span> untuk setiap <span class="math inline" data-source-tex="I\in\Cal I">\(I\in\Cal I\)</span> dan
+<span class="math inline" data-source-tex="I\cap J\in\Cal I">\(I\cap J\in\Cal I\)</span> untuk semua <span class="math inline" data-source-tex="I">\(I\)</span>, <span class="math inline" data-source-tex="J\in\Cal I">\(J\in\Cal I\)</span>. Maka <span class="math inline" data-source-tex="\mu E=\nu E">\(\mu E=\nu E\)</span> untuk
+setiap <span class="math inline" data-source-tex="E">\(E\)</span> dalam aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span> yang
+dibangkitkan oleh <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Intinya adalah bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Cal A=\{H:H\in\Sigma\cap\Tau,\,\mu H=\nu H\}">\(\Cal A=\{H:H\in\Sigma\cap\Tau,\,\mu H=\nu H\}\)</span></div>
+<p>merupakan suatu kelas Dynkin dari subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>.
+Bukti. Saya menggunakan (ii) dalam <a class="xref" href="#136A">136A</a>. Tentu saja
+<span class="math inline" data-source-tex="\emptyset\in\Cal A">\(\emptyset\in\Cal A\)</span>. Jika <span class="math inline" data-source-tex="A\in\Cal A">\(A\in\Cal A\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu(X\setminus A)=\mu X-\mu A=\nu X-\nu A
+=\nu(X\setminus A)">\(\mu(X\setminus A)=\mu X-\mu A=\nu X-\nu A
+=\nu(X\setminus A)\)</span></div>
+<p>(karena <span class="math inline" data-source-tex="\mu X=\nu X&lt;\infty">\(\mu X=\nu X&lt;\infty\)</span>, sehingga pengurangannya aman), dan
+<span class="math inline" data-source-tex="X\setminus A\in\Cal A">\(X\setminus A\in\Cal A\)</span>. Jika <span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> merupakan barisan saling lepas
+dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> dan <span class="math inline" data-source-tex="A=\bigcup_{n\in\Bbb N}A_n">\(A=\bigcup_{n\in\Bbb N}A_n\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu A=\sum_{n=0}^{\infty}\mu A_n=\sum_{n=0}^{\infty}\nu A_n
+=\nu A">\(\mu A=\sum_{n=0}^{\infty}\mu A_n=\sum_{n=0}^{\infty}\nu A_n
+=\nu A\)</span>,</div>
+<p>dan <span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}A_n\in\Cal A">\(\bigcup_{n\in\Bbb N}A_n\in\Cal A\)</span>. ∎</p>
+<p>Karena <span class="math inline" data-source-tex="\Cal I\subseteq\Cal A">\(\Cal I\subseteq\Cal A\)</span>, <a class="xref" href="#136B">136B</a> memberi tahu kita bahwa
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> <span class="math inline" data-source-tex="\Sigma&#x27;">\(\Sigma&#x27;\)</span> yang dibangkitkan oleh <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> termuat dalam
+<span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>, yakni, <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> sama pada <span class="math inline" data-source-tex="\Sigma&#x27;">\(\Sigma&#x27;\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="136D" data-source-id="136D"><h2><span class="source-label">136D</span> Akibat </h2>
+<p>Misalkan <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, <span class="math inline" data-source-tex="\nu">\(\nu\)</span> dua ukuran pada
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>,
+dengan <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span>, yang keduanya didefinisikan, dan bernilai sama, pada semua
+interval berbentuk</p>
+<div class="centerline"><span class="math inline" data-source-tex="\ocint{-\infty,a}=\{x:x\le a\}=\{(\xi_1,\ldots,\xi_r):
+\xi_i\le\alpha_i">\(\ocint{-\infty,a}=\{x:x\le a\}=\{(\xi_1,\ldots,\xi_r):
+\xi_i\le\alpha_i\)</span> untuk setiap <span class="math inline" data-source-tex="i\le r\}">\(i\le r\}\)</span></div>
+<p>untuk <span class="math inline" data-source-tex="a=(\alpha_1,\ldots,\alpha_r)\in\BbbR^r">\(a=(\alpha_1,\ldots,\alpha_r)\in\BbbR^r\)</span>. Andaikan pula bahwa
+<span class="math inline" data-source-tex="\mu\BbbR^r&lt;\infty">\(\mu\BbbR^r&lt;\infty\)</span>. Maka <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> bernilai sama pada semua
+subhimpunan Borel dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Dalam <a class="xref" href="#136C">136C</a>, ambil <span class="math inline" data-source-tex="X=\BbbR^r">\(X=\BbbR^r\)</span> dan <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> sebagai himpunan
+interval-interval <span class="math inline" data-source-tex="\ocint{-\infty,a}">\(\ocint{-\infty,a}\)</span>. Maka <span class="math inline" data-source-tex="I\cap J\in\Cal I">\(I\cap J\in\Cal I\)</span> untuk semua
+<span class="math inline" data-source-tex="I">\(I\)</span>, <span class="math inline" data-source-tex="J\in\Cal I">\(J\in\Cal I\)</span>, karena
+<span class="math inline" data-source-tex="\ocint{-\infty,a}\cap\ocint{-\infty,b}=\ocint{-\infty,a\wedge b}">\(\ocint{-\infty,a}\cap\ocint{-\infty,b}=\ocint{-\infty,a\wedge b}\)</span>, dengan
+menuliskan
+<span class="math inline" data-source-tex="a\wedge b=(\min(\alpha_1,\beta_1),\ldots,\min(\alpha_r,\beta_r))">\(a\wedge b=(\min(\alpha_1,\beta_1),\ldots,\min(\alpha_r,\beta_r))\)</span> jika
+<span class="math inline" data-source-tex="a=(\alpha_1,\ldots,\alpha_r)">\(a=(\alpha_1,\ldots,\alpha_r)\)</span>, <span class="math inline" data-source-tex="b=(\beta_1,\ldots,\beta_r)\in\BbbR^r">\(b=(\beta_1,\ldots,\beta_r)\in\BbbR^r\)</span>.
+Selain itu, dengan menetapkan <span class="math inline" data-source-tex="\tbf{n}=(n,\ldots,n)">\(\tbf{n}=(n,\ldots,n)\)</span> untuk <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu\BbbR^r=\lim_{n\to\infty}\nu\ocint{-\infty,\tbf{n}}
+=\lim_{n\to\infty}\mu\ocint{-\infty,\tbf{n}}=\mu\BbbR^r">\(\nu\BbbR^r=\lim_{n\to\infty}\nu\ocint{-\infty,\tbf{n}}
+=\lim_{n\to\infty}\mu\ocint{-\infty,\tbf{n}}=\mu\BbbR^r\)</span>.</div>
+<p>Jadi semua syarat <a class="xref" href="#136C">136C</a> terpenuhi dan <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, <span class="math inline" data-source-tex="\nu">\(\nu\)</span> bernilai sama
+pada aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> yang dibangkitkan oleh <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span>. Namun ini
+tepat merupakan aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> himpunan-himpunan Borel, menurut <a class="xref" href="../121/index.html#121J">121J</a>.</p></aside>
+</section>
+<section class="source-unit" id="136E" data-source-id="136E"><h2><span class="source-label">136E</span> Aljabar himpunan: Definisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan.
+Suatu keluarga <span class="math inline" data-source-tex="\Cal E\subseteq\Cal PX">\(\Cal E\subseteq\Cal PX\)</span> merupakan suatu <strong>aljabar</strong> atau
+<strong>medan</strong> dari subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span> jika</p>
+<div class="inset-block"><p>(i) <span class="math inline" data-source-tex="\emptyset\in\Cal E">\(\emptyset\in\Cal E\)</span>;</p>
+<p>(ii) untuk setiap <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>, komplemennya <span class="math inline" data-source-tex="X\setminus E">\(X\setminus E\)</span> termasuk
+dalam <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span>;</p>
+<p>(iii) untuk setiap <span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="F\in\Cal E">\(F\in\Cal E\)</span>, <span class="math inline" data-source-tex="E\cup F\in\Cal E">\(E\cup F\in\Cal E\)</span>.</p></div>
+</section>
+<section class="source-unit" id="136F" data-source-id="136F"><span class="anchor" id="136Fa"></span><h2><span class="source-label">136F</span> Catatan-catatan </h2>
+<p><strong>(a)</strong> Saya dapat saja
+memperkenalkan gagasan ini dalam Bab 11, bersama ‘aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>’. Saya tidak
+memperkenalkannya di sana, kecuali dalam beberapa latihan, karena tampaknya
+sudah cukup banyak definisi baru dalam §<a class="xref" href="../111/index.html#111">111</a>, dan karena tidak ada hal
+substansial yang ingin saya katakan mengenai aljabar himpunan.</p>
+</section>
+<section class="source-unit" id="136Fb" data-source-id="136Fb"><h3><span class="source-label">136Fb</span> <strong>(b)</strong> </h3>
+<p>Jika <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> suatu aljabar dari subhimpunan-
+subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="E\cap F\cmmnt{\mskip5mu =X\setminus((X\setminus
+E)\cup(X\setminus
+F))}">\(E\cap F\mskip5mu =X\setminus((X\setminus
+E)\cup(X\setminus
+F))\)</span>,
+  <span class="math inline" data-source-tex="E\setminus F\cmmnt{\mskip5mu =E\cap(X\setminus F)}">\(E\setminus F\mskip5mu =E\cap(X\setminus F)\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="E_0\cup E_1\cup\ldots\cup E_n">\(E_0\cup E_1\cup\ldots\cup E_n\)</span>,
+  <span class="math inline" data-source-tex="E_0\cap E_1\cap\ldots\cap E_n">\(E_0\cap E_1\cap\ldots\cap E_n\)</span></div>
+<p>termasuk dalam <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> untuk semua <span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="F">\(F\)</span>,
+<span class="math inline" data-source-tex="E_0,\ldots,E_n\in\Cal E">\(E_0,\ldots,E_n\in\Cal E\)</span>. (Gunakan induksi pada <span class="math inline" data-source-tex="n">\(n\)</span> untuk yang
+terakhir.)</p>
+</section>
+<section class="source-unit" id="136Fc" data-source-id="136Fc"><h3><span class="source-label">136Fc</span> (c) </h3>
+<p>Suatu aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>
+(tentu saja) merupakan suatu aljabar dari subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>.</p>
+</section>
+<section class="source-unit" id="136G" data-source-id="136G"><h2><span class="source-label">136G</span> Teorema </h2>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan dan <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> suatu
+aljabar dari subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>. Andaikan bahwa
+<span class="math inline" data-source-tex="\Cal A\subseteq\Cal PX">\(\Cal A\subseteq\Cal PX\)</span> merupakan keluarga himpunan sedemikian sehingga</p>
+<div class="inset-block"><p>(<span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>) <span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}A_n\in\Cal A">\(\bigcup_{n\in\Bbb N}A_n\in\Cal A\)</span> untuk setiap barisan
+tak-menurun <span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>,</p>
+<p>(<span class="math inline" data-source-tex="\beta">\(\beta\)</span>) <span class="math inline" data-source-tex="\bigcap_{n\in\Bbb N}A_n\in\Cal A">\(\bigcap_{n\in\Bbb N}A_n\in\Cal A\)</span> untuk setiap barisan
+tak-menaik <span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>,</p>
+<p>(<span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>) <span class="math inline" data-source-tex="\Cal E\subseteq\Cal A">\(\Cal E\subseteq\Cal A\)</span>.</p></div>
+<p>Maka <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> memuat aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari subhimpunan-subhimpunan
+<span class="math inline" data-source-tex="X">\(X\)</span> yang dibangkitkan oleh <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Saya menggunakan gagasan yang sama seperti dalam <a class="xref" href="#136B">136B</a>.</p>
+<p> </p>
+<p><strong>(a)</strong> Misalkan <span class="math inline" data-source-tex="\frak S">\(\frak S\)</span> keluarga semua himpunan
+<span class="math inline" data-source-tex="\Cal S\subseteq\Cal PX">\(\Cal S\subseteq\Cal PX\)</span> yang memenuhi (<span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>)-(<span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>). Maka irisannya
+<span class="math inline" data-source-tex="\Sigma=\bigcap\frak S">\(\Sigma=\bigcap\frak S\)</span> juga memenuhi syarat-syarat tersebut. Karena
+<span class="math inline" data-source-tex="\Cal A\in\frak S">\(\Cal A\in\frak S\)</span>, <span class="math inline" data-source-tex="\Sigma\subseteq\Cal A">\(\Sigma\subseteq\Cal A\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Jika <span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Sigma_H=\{E:E\in\Sigma,\,E\cap H\in\Sigma\}">\(\Sigma_H=\{E:E\in\Sigma,\,E\cap H\in\Sigma\}\)</span></div>
+<p>memenuhi syarat-syarat (<span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>)-(<span class="math inline" data-source-tex="\beta">\(\beta\)</span>). Bukti. (<span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>)
+Jika <span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> merupakan barisan tak-menurun dalam <span class="math inline" data-source-tex="\Sigma_H">\(\Sigma_H\)</span>, maka
+<span class="math inline" data-source-tex="\sequencen{A_n\cap H}">\(\sequencen{A_n\cap H}\)</span> merupakan barisan tak-menurun dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="(\bigcup_{n\in\Bbb N}A_n)\cap H
+=\bigcup_{n\in\Bbb N}(A_n\cap
+H)\in\Sigma">\((\bigcup_{n\in\Bbb N}A_n)\cap H
+=\bigcup_{n\in\Bbb N}(A_n\cap
+H)\in\Sigma\)</span></div>
+<p>dan <span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}A_n\in\Sigma_H">\(\bigcup_{n\in\Bbb N}A_n\in\Sigma_H\)</span>. (<span class="math inline" data-source-tex="\beta">\(\beta\)</span>)
+Demikian pula, jika <span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> merupakan barisan tak-menaik dalam
+<span class="math inline" data-source-tex="\Sigma_H">\(\Sigma_H\)</span>, maka <span class="math inline" data-source-tex="\bigcap_{n\in\Bbb N}A_n\cap H\in\Sigma">\(\bigcap_{n\in\Bbb N}A_n\cap H\in\Sigma\)</span> sehingga
+<span class="math inline" data-source-tex="\bigcap_{n\in\Bbb N}A_n\in\Sigma_H">\(\bigcap_{n\in\Bbb N}A_n\in\Sigma_H\)</span>. ∎</p>
+<p>Akibatnya, jika <span class="math inline" data-source-tex="E\cap H\in\Sigma">\(E\cap H\in\Sigma\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>, sehingga
+<span class="math inline" data-source-tex="\Sigma_H">\(\Sigma_H\)</span> juga memenuhi (<span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>), maka <span class="math inline" data-source-tex="\Sigma_H\in\frak S">\(\Sigma_H\in\frak S\)</span> dan harus
+sama dengan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>.
+ </p>
+<p><strong>(c)</strong> Akibatnya <span class="math inline" data-source-tex="G\cap H\in\Sigma">\(G\cap H\in\Sigma\)</span> untuk semua <span class="math inline" data-source-tex="G">\(G\)</span>, <span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span>.
+Bukti. Ambil <span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="F\in\Cal E">\(F\in\Cal E\)</span>. Kita tahu bahwa <span class="math inline" data-source-tex="E\cap F\in\Cal E">\(E\cap F\in\Cal E\)</span>. Karena
+<span class="math inline" data-source-tex="E">\(E\)</span> sembarang, <span class="math inline" data-source-tex="\Sigma_F=\Sigma">\(\Sigma_F=\Sigma\)</span> dan <span class="math inline" data-source-tex="H\in\Sigma_F">\(H\in\Sigma_F\)</span>, yakni
+<span class="math inline" data-source-tex="H\cap F\in\Sigma">\(H\cap F\in\Sigma\)</span>. Karena <span class="math inline" data-source-tex="F">\(F\)</span> sembarang, <span class="math inline" data-source-tex="\Sigma_H=\Sigma">\(\Sigma_H=\Sigma\)</span> dan
+<span class="math inline" data-source-tex="G\in\Sigma_H">\(G\in\Sigma_H\)</span>, yakni <span class="math inline" data-source-tex="G\cap H\in\Sigma">\(G\cap H\in\Sigma\)</span>. ∎</p>
+<p> </p>
+<p><strong>(d)</strong> Selanjutnya, <span class="math inline" data-source-tex="\Sigma^*=\{X\setminus H:H\in\Sigma\}\in\frak S">\(\Sigma^*=\{X\setminus H:H\in\Sigma\}\in\frak S\)</span>.
+Bukti. (<span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>) Jika <span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> merupakan barisan tak-menurun dalam
+<span class="math inline" data-source-tex="\Sigma^*">\(\Sigma^*\)</span>, maka <span class="math inline" data-source-tex="\sequencen{X\setminus A_n}">\(\sequencen{X\setminus A_n}\)</span> merupakan barisan tak-menaik
+dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}A_n=X
+\setminus\bigcap_{n\in\Bbb N}(X\setminus A_n)\in\Sigma^*">\(\bigcup_{n\in\Bbb N}A_n=X
+\setminus\bigcap_{n\in\Bbb N}(X\setminus A_n)\in\Sigma^*\)</span>.</div>
+<p>(<span class="math inline" data-source-tex="\beta">\(\beta\)</span>) Demikian pula, jika <span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> merupakan barisan
+tak-menaik dalam <span class="math inline" data-source-tex="\Sigma^*">\(\Sigma^*\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bigcap_{n\in\Bbb N}A_n
+=X\setminus\bigcup_{n\in\Bbb N}(X\setminus A_n)\in\Sigma^*">\(\bigcap_{n\in\Bbb N}A_n
+=X\setminus\bigcup_{n\in\Bbb N}(X\setminus A_n)\in\Sigma^*\)</span>.</div>
+<p>(<span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>) Jika <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>, maka <span class="math inline" data-source-tex="X\setminus E\in\Cal E">\(X\setminus E\in\Cal E\)</span>
+sehingga <span class="math inline" data-source-tex="X\setminus E\in\Sigma">\(X\setminus E\in\Sigma\)</span> dan <span class="math inline" data-source-tex="E\in\Sigma^*">\(E\in\Sigma^*\)</span>. ∎ Akibatnya
+<span class="math inline" data-source-tex="\Sigma\subseteq\Sigma^*">\(\Sigma\subseteq\Sigma^*\)</span>, yakni <span class="math inline" data-source-tex="X\setminus H\in\Sigma">\(X\setminus H\in\Sigma\)</span> untuk setiap
+<span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span>.</p>
+<p> </p>
+<p><strong>(e)</strong> Dengan menggabungkan (c) dan (d) dengan fakta bahwa
+<span class="math inline" data-source-tex="X\in\Sigma">\(X\in\Sigma\)</span> (karena <span class="math inline" data-source-tex="X\in\Cal E">\(X\in\Cal E\)</span>) dan bahwa gabungan suatu barisan
+tak-menurun dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> termasuk dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> (menurut syarat
+(<span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>)), kita melihat bahwa argumen yang sama seperti dalam bagian (d)
+bukti <a class="xref" href="#136B">136B</a> menunjukkan bahwa <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> merupakan suatu aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari
+subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>. Jadi, seperti dalam <a class="xref" href="#136B">136B</a>, kita menyimpulkan bahwa
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> yang dibangkitkan oleh <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> termuat dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dan
+karena itu dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="136H" data-source-id="136H"><h2><span class="source-label">136H</span> Proposisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur
+sedemikian sehingga <span class="math inline" data-source-tex="\mu X&lt;\infty">\(\mu X&lt;\infty\)</span>, dan <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> suatu subaljabar dari
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>; misalkan <span class="math inline" data-source-tex="\Sigma&#x27;">\(\Sigma&#x27;\)</span> merupakan aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari subhimpunan-
+subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span> yang dibangkitkan oleh <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span>. Jika <span class="math inline" data-source-tex="F\in\Sigma&#x27;">\(F\in\Sigma&#x27;\)</span> dan
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, terdapat <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu(F\symmdiff E)\le\epsilon">\(\mu(F\symmdiff E)\le\epsilon\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Misalkan <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> keluarga himpunan <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> sedemikian sehingga</p>
+<div class="centerline">untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\mu(F\symmdiff E)\le\epsilon">\(\mu(F\symmdiff E)\le\epsilon\)</span>.</div>
+<p>Maka <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> merupakan suatu kelas Dynkin. Bukti. Saya memeriksa
+ketiga syarat dalam <a class="xref" href="#136A">136A</a>(i). (<span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>) <span class="math inline" data-source-tex="X\in\Cal A">\(X\in\Cal A\)</span> karena
+<span class="math inline" data-source-tex="X\in\Cal E">\(X\in\Cal E\)</span>. (<span class="math inline" data-source-tex="\beta">\(\beta\)</span>) Jika <span class="math inline" data-source-tex="F_1">\(F_1\)</span>, <span class="math inline" data-source-tex="F_2\in\Cal A">\(F_2\in\Cal A\)</span> dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>,
+terdapat <span class="math inline" data-source-tex="E_1">\(E_1\)</span>, <span class="math inline" data-source-tex="E_2\in\Cal E">\(E_2\in\Cal E\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu(F_i\symmdiff E_i)\le\bover12\epsilon">\(\mu(F_i\symmdiff E_i)\le\bover12\epsilon\)</span> untuk kedua <span class="math inline" data-source-tex="i">\(i\)</span>; sekarang
+<span class="math inline" data-source-tex="E_1\setminus E_2\in\Cal E">\(E_1\setminus E_2\in\Cal E\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="(F_1\setminus F_2)\symmdiff(E_1\setminus E_2)
+\subseteq(F_1\symmdiff E_1)\cup(F_2\symmdiff E_2)">\((F_1\setminus F_2)\symmdiff(E_1\setminus E_2)
+\subseteq(F_1\symmdiff E_1)\cup(F_2\symmdiff E_2)\)</span>,</div>
+<p>sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu((F_1\setminus F_2)\symmdiff(E_1\setminus E_2))
+\le\mu(F_1\symmdiff E_1)+\mu(F_2\symmdiff E_2)\le\epsilon">\(\mu((F_1\setminus F_2)\symmdiff(E_1\setminus E_2))
+\le\mu(F_1\symmdiff E_1)+\mu(F_2\symmdiff E_2)\le\epsilon\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sembarang, <span class="math inline" data-source-tex="F_1\setminus F_2\in\Cal A">\(F_1\setminus F_2\in\Cal A\)</span>.
+(<span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>) Jika <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> merupakan barisan tak-menurun dalam
+<span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>, dengan gabungan <span class="math inline" data-source-tex="F">\(F\)</span>, dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{n\to\infty}\mu F_n=\mu F\le\mu X&lt;\infty">\(\lim_{n\to\infty}\mu F_n=\mu F\le\mu X&lt;\infty\)</span>,</div>
+<p>sehingga terdapat <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu(F\setminus F_n)\le\bover12\epsilon">\(\mu(F\setminus F_n)\le\bover12\epsilon\)</span>. Sekarang terdapat
+<span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu(F_n\symmdiff E)\le\bover12\epsilon">\(\mu(F_n\symmdiff E)\le\bover12\epsilon\)</span>; karena
+<span class="math inline" data-source-tex="F\symmdiff E\subseteq(F\setminus F_n)\cup(F_n\symmdiff E)">\(F\symmdiff E\subseteq(F\setminus F_n)\cup(F_n\symmdiff E)\)</span>,
+<span class="math inline" data-source-tex="\mu(F\symmdiff E)\le\epsilon">\(\mu(F\symmdiff E)\le\epsilon\)</span>. Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sembarang,
+<span class="math inline" data-source-tex="F\in\Cal A">\(F\in\Cal A\)</span>. ∎</p>
+<p>Karena <span class="math inline" data-source-tex="\Cal E\subseteq\Cal A">\(\Cal E\subseteq\Cal A\)</span> dan <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> tertutup terhadap <span class="math inline" data-source-tex="\cap">\(\cap\)</span>,
+<span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> memuat aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> <span class="math inline" data-source-tex="\Sigma&#x27;">\(\Sigma&#x27;\)</span> yang dibangkitkan oleh <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span>,
+sebagaimana diklaim.</p></aside>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="136X" data-source-id="136X"><span class="anchor" id="136Xa"></span><h2><span class="source-label">136X</span> Latihan dasar <span class="math inline" data-source-tex="\pmb{&gt;}">\(\pmb{&gt;}\)</span>(a) <span class="importance" title="Sangat penting">penting</span></h2>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan dan <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> suatu keluarga subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>.
+Tunjukkan bahwa pernyataan-pernyataan berikut ekuivalen:</p>
+<p>  (i) <span class="math inline" data-source-tex="X\in\Cal A">\(X\in\Cal A\)</span> dan <span class="math inline" data-source-tex="B\setminus A\in\Cal A">\(B\setminus A\in\Cal A\)</span> kapan pun <span class="math inline" data-source-tex="A">\(A\)</span>,
+<span class="math inline" data-source-tex="B\in\Cal A">\(B\in\Cal A\)</span> dan <span class="math inline" data-source-tex="A\subseteq B">\(A\subseteq B\)</span>;</p>
+<p>  (ii) <span class="math inline" data-source-tex="\emptyset\in\Cal A">\(\emptyset\in\Cal A\)</span>, <span class="math inline" data-source-tex="X\setminus A\in\Cal A">\(X\setminus A\in\Cal A\)</span> untuk setiap
+<span class="math inline" data-source-tex="A\in\Cal A">\(A\in\Cal A\)</span> dan <span class="math inline" data-source-tex="A\cup B\in\Cal A">\(A\cup B\in\Cal A\)</span> kapan pun <span class="math inline" data-source-tex="A">\(A\)</span>,
+<span class="math inline" data-source-tex="B\in\Cal A">\(B\in\Cal A\)</span> saling lepas.</p>
+</section>
+<section class="source-unit" id="136Xb" data-source-id="136Xb"><h3><span class="source-label">136Xb</span> (b) </h3>
+<p>Andaikan bahwa <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan dan
+<span class="math inline" data-source-tex="\Cal A\subseteq\Cal PX">\(\Cal A\subseteq\Cal PX\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> merupakan suatu
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span> jika dan hanya jika
+keluarga itu merupakan suatu kelas Dynkin dan <span class="math inline" data-source-tex="A\cap B\in\Cal A">\(A\cap B\in\Cal A\)</span> kapan pun <span class="math inline" data-source-tex="A">\(A\)</span>,
+<span class="math inline" data-source-tex="B\in\Cal A">\(B\in\Cal A\)</span>.</p>
+</section>
+<section class="source-unit" id="136Xc" data-source-id="136Xc"><h3><span class="source-label">136Xc</span> (c) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan, dan <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> suatu keluarga subhimpunan
+<span class="math inline" data-source-tex="X">\(X\)</span> sedemikian sehingga <span class="math inline" data-source-tex="I\cap J\in\Cal I">\(I\cap J\in\Cal I\)</span> untuk semua <span class="math inline" data-source-tex="I">\(I\)</span>, <span class="math inline" data-source-tex="J\in\Cal I">\(J\in\Cal I\)</span>;
+misalkan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> merupakan aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari subhimpunan-subhimpunan
+<span class="math inline" data-source-tex="X">\(X\)</span> yang dibangkitkan oleh <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span>.
+Misalkan pula <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> dua ukuran pada <span class="math inline" data-source-tex="X">\(X\)</span>, keduanya berdomain
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, sedemikian sehingga <span class="math inline" data-source-tex="\mu I=\nu I&lt;\infty">\(\mu I=\nu I&lt;\infty\)</span> untuk setiap
+<span class="math inline" data-source-tex="I\in\Cal I">\(I\in\Cal I\)</span>.
+Tunjukkan bahwa
+<span class="math inline" data-source-tex="\mu E=\nu E">\(\mu E=\nu E\)</span> kapan pun <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> ditutupi oleh suatu barisan dalam
+<span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span>.
+(<em>Petunjuk\/</em>: Untuk <span class="math inline" data-source-tex="J\in\Cal I">\(J\in\Cal I\)</span>, tetapkan
+<span class="math inline" data-source-tex="\mu_JE=\mu(E\cap J)">\(\mu_JE=\mu(E\cap J)\)</span>,
+<span class="math inline" data-source-tex="\nu_JE=\nu(E\cap J)">\(\nu_JE=\nu(E\cap J)\)</span> untuk <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>. Gunakan <a class="xref" href="#136C">136C</a> untuk menunjukkan
+bahwa <span class="math inline" data-source-tex="\mu_J=\nu_J">\(\mu_J=\nu_J\)</span> untuk setiap <span class="math inline" data-source-tex="J">\(J\)</span>.)</p>
+</section>
+<section class="source-unit" id="136Xd" data-source-id="136Xd"><h3><span class="source-label">136Xd</span> (&gt;d) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Tetapkan <span class="math inline" data-source-tex="X=\{0,1,2,3\}">\(X=\{0,1,2,3\}\)</span>,
+<span class="math inline" data-source-tex="\Cal I=\{X,\{0,1\},\{0,2\}\}">\(\Cal I=\{X,\{0,1\},\{0,2\}\}\)</span>. Temukan dua ukuran berbeda <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, <span class="math inline" data-source-tex="\nu">\(\nu\)</span>
+pada <span class="math inline" data-source-tex="X">\(X\)</span>, keduanya didefinisikan pada aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> <span class="math inline" data-source-tex="\Cal PX">\(\Cal PX\)</span> dan dengan
+<span class="math inline" data-source-tex="\mu I=\nu I&lt;\infty">\(\mu I=\nu I&lt;\infty\)</span> untuk setiap <span class="math inline" data-source-tex="I\in\Cal I">\(I\in\Cal I\)</span>.</p>
+</section>
+<section class="source-unit" id="136Xe" data-source-id="136Xe"><h3><span class="source-label">136Xe</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> keluarga subhimpunan
+<span class="math inline" data-source-tex="\coint{0,1}">\(\coint{0,1}\)</span> yang dapat dinyatakan sebagai gabungan berhingga interval-
+interval setengah terbuka <span class="math inline" data-source-tex="\coint{a,b}">\(\coint{a,b}\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> merupakan
+suatu aljabar dari subhimpunan-subhimpunan <span class="math inline" data-source-tex="\coint{0,1}">\(\coint{0,1}\)</span>.</p>
+</section>
+<section class="source-unit" id="136Xf" data-source-id="136Xf"><h3><span class="source-label">136Xf</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan, dan <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> suatu keluarga
+subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span> sedemikian sehingga <span class="math inline" data-source-tex="I\cap J\in\Cal I">\(I\cap J\in\Cal I\)</span> kapan pun <span class="math inline" data-source-tex="I">\(I\)</span>,
+<span class="math inline" data-source-tex="J\in\Cal I">\(J\in\Cal I\)</span>. Misalkan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> keluarga himpunan terkecil sedemikian sehingga
+<span class="math inline" data-source-tex="X\in\Sigma">\(X\in\Sigma\)</span>, <span class="math inline" data-source-tex="F\setminus E\in\Sigma">\(F\setminus E\in\Sigma\)</span> kapan pun <span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dan
+<span class="math inline" data-source-tex="E\subseteq F">\(E\subseteq F\)</span>, dan <span class="math inline" data-source-tex="\Cal I\subseteq\Sigma">\(\Cal I\subseteq\Sigma\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>
+merupakan suatu aljabar dari subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>.</p>
+</section>
+<section class="source-unit" id="136Xg" data-source-id="136Xg"><h3><span class="source-label">136Xg</span> (g) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan, dan
+<span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> suatu aljabar dari subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>. Suatu fungsional
+<span class="math inline" data-source-tex="\nu:\Cal E\to\Bbb R">\(\nu:\Cal E\to\Bbb R\)</span> disebut <strong>aditif</strong> (<strong>berhingga</strong>) jika
+<span class="math inline" data-source-tex="\nu(E\cup F)=\nu E+\nu F">\(\nu(E\cup F)=\nu E+\nu F\)</span> kapan pun <span class="math inline" data-source-tex="E">\(E\)</span>,
+<span class="math inline" data-source-tex="F\in\Cal E">\(F\in\Cal E\)</span> dan <span class="math inline" data-source-tex="E\cap F=\emptyset">\(E\cap F=\emptyset\)</span>. (i) Tunjukkan bahwa dalam kasus ini
+<span class="math inline" data-source-tex="\nu(E\cup F)+\nu(E\cap F)=\nu E+\nu F">\(\nu(E\cup F)+\nu(E\cap F)=\nu E+\nu F\)</span> untuk semua <span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="F\in\Cal E">\(F\in\Cal E\)</span>.
+(ii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="\nu E\ge 0">\(\nu E\ge 0\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>, maka
+<span class="math inline" data-source-tex="\nu(\bigcup_{i\le n}E_i)\le\sum_{i=0}^n\nu E_i">\(\nu(\bigcup_{i\le n}E_i)\le\sum_{i=0}^n\nu E_i\)</span> untuk semua
+<span class="math inline" data-source-tex="E_0,\ldots,E_n\in\Cal E">\(E_0,\ldots,E_n\in\Cal E\)</span>.</p>
+</section>
+<section class="source-unit" id="136Xh" data-source-id="136Xh"><h3><span class="source-label">136Xh</span> (&gt;h) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan, dan <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> suatu keluarga
+subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span> sedemikian sehingga (<span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>) <span class="math inline" data-source-tex="\emptyset">\(\emptyset\)</span>, <span class="math inline" data-source-tex="X">\(X\)</span> termasuk
+dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> (<span class="math inline" data-source-tex="\beta">\(\beta\)</span>) <span class="math inline" data-source-tex="A\cap B\in\Cal A">\(A\cap B\in\Cal A\)</span> untuk semua <span class="math inline" data-source-tex="A">\(A\)</span>,
+<span class="math inline" data-source-tex="B\in\Cal A">\(B\in\Cal A\)</span> (<span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>) <span class="math inline" data-source-tex="A\cup B\in\Cal A">\(A\cup B\in\Cal A\)</span> kapan pun <span class="math inline" data-source-tex="A">\(A\)</span>, <span class="math inline" data-source-tex="B\in\Cal A">\(B\in\Cal A\)</span> dan
+<span class="math inline" data-source-tex="A\cap B=\emptyset">\(A\cap B=\emptyset\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\{A:A\in\Cal A,\,X\setminus A\in\Cal A\}">\(\{A:A\in\Cal A,\,X\setminus A\in\Cal A\}\)</span> merupakan suatu aljabar dari
+subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>.</p>
+</section>
+<section class="source-unit" id="136Xi" data-source-id="136Xi"><h3><span class="source-label">136Xi</span> (&gt;i) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan, dan <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> suatu keluarga
+subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span> sedemikian sehingga (<span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>) <span class="math inline" data-source-tex="\emptyset">\(\emptyset\)</span>, <span class="math inline" data-source-tex="X">\(X\)</span> termasuk
+dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> (<span class="math inline" data-source-tex="\beta">\(\beta\)</span>) <span class="math inline" data-source-tex="\bigcap_{n\in\Bbb N}A_n\in\Cal A">\(\bigcap_{n\in\Bbb N}A_n\in\Cal A\)</span> untuk setiap
+barisan <span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> (<span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>)
+<span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}A_n\in\Cal A">\(\bigcup_{n\in\Bbb N}A_n\in\Cal A\)</span> untuk setiap barisan saling lepas
+<span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\{A:A\in\Cal A,\,X\setminus A\in\Cal A\}">\(\{A:A\in\Cal A,\,X\setminus A\in\Cal A\}\)</span> merupakan suatu aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>
+dari subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>.</p>
+</section>
+<section class="source-unit" id="136Xj" data-source-id="136Xj"><h3><span class="source-label">136Xj</span> (&gt;j) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> suatu keluarga subhimpunan <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>
+sedemikian sehingga (i) <span class="math inline" data-source-tex="\bigcap_{n\in\Bbb N}A_n\in\Cal A">\(\bigcap_{n\in\Bbb N}A_n\in\Cal A\)</span> untuk setiap
+barisan <span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> (ii)
+<span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}A_n\in\Cal A">\(\bigcup_{n\in\Bbb N}A_n\in\Cal A\)</span> untuk setiap barisan saling lepas
+<span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> (iii) setiap interval terbuka
+<span class="math inline" data-source-tex="\ooint{a,b}">\(\ooint{a,b}\)</span> termasuk dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>. Tunjukkan bahwa setiap subhimpunan
+Borel dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> termasuk dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>. (<em>Petunjuk\/</em>: tunjukkan
+bahwa setiap interval setengah terbuka <span class="math inline" data-source-tex="\coint{a,b}">\(\coint{a,b}\)</span>, <span class="math inline" data-source-tex="\ocint{a,b}">\(\ocint{a,b}\)</span> termasuk
+dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>, dan karena itu semua interval <span class="math inline" data-source-tex="\ocint{-\infty,a}">\(\ocint{-\infty,a}\)</span>,
+<span class="math inline" data-source-tex="\coint{a,\infty}">\(\coint{a,\infty}\)</span>; sekarang gunakan <a class="xref" href="#136Xi">136Xi</a>.)</p>
+</section>
+<section class="source-unit" id="136Xk" data-source-id="136Xk"><h3><span class="source-label">136Xk</span> (&gt;k) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan, <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> suatu aljabar dari
+subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>, dan <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> suatu keluarga subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>
+sedemikian sehingga (<span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>) <span class="math inline" data-source-tex="\bigcap_{n\in\Bbb N}A_n\in\Cal A">\(\bigcap_{n\in\Bbb N}A_n\in\Cal A\)</span> untuk
+setiap barisan tak-menaik <span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> (<span class="math inline" data-source-tex="\beta">\(\beta\)</span>)
+<span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}A_n\in\Cal A">\(\bigcup_{n\in\Bbb N}A_n\in\Cal A\)</span> untuk setiap barisan saling lepas dalam
+<span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> (<span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>) <span class="math inline" data-source-tex="\Cal E\subseteq\Cal A">\(\Cal E\subseteq\Cal A\)</span>. Tunjukkan bahwa
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> himpunan yang dibangkitkan oleh <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> termuat dalam
+<span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> gunakan metode <a class="xref" href="#136B">136B</a> untuk mereduksi ke kasus ketika
+<span class="math inline" data-source-tex="A\cap B\in\Cal A">\(A\cap B\in\Cal A\)</span> untuk setiap <span class="math inline" data-source-tex="A">\(A\)</span>, <span class="math inline" data-source-tex="B\in\Cal A">\(B\in\Cal A\)</span>; sekarang gunakan <a class="xref" href="#136Xi">136Xi</a>.</span></p>
+</section>
+<section class="source-unit" id="136Y" data-source-id="136Y"><span class="anchor" id="136Ya"></span><h2><span class="source-label">136Y</span> Latihan lanjutan (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan dan
+<span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> suatu aljabar dari subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>. Misalkan
+<span class="math inline" data-source-tex="\nu:\Cal E\to\coint{0,\infty}">\(\nu:\Cal E\to\coint{0,\infty}\)</span> suatu fungsional nonnegatif yang aditif dalam
+pengertian <a class="xref" href="#136Xg">136Xg</a>. Definisikan <span class="math inline" data-source-tex="\theta:\Cal PX\to\coint{0,\infty}">\(\theta:\Cal PX\to\coint{0,\infty}\)</span> dengan
+menetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\theta A=\inf\{\sum_{n=0}^{\infty}\nu E_n:\sequencen{E_n}">\(\theta A=\inf\{\sum_{n=0}^{\infty}\nu E_n:\sequencen{E_n}\)</span>
+merupakan barisan dalam <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> yang menutupi <span class="math inline" data-source-tex="A\}">\(A\}\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="A\subseteq X">\(A\subseteq X\)</span>. (i) Tunjukkan bahwa <span class="math inline" data-source-tex="\theta">\(\theta\)</span> merupakan
+suatu ukuran luar pada <span class="math inline" data-source-tex="X">\(X\)</span> dan bahwa <span class="math inline" data-source-tex="\theta E\le\nu E">\(\theta E\le\nu E\)</span> untuk setiap
+<span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>. (ii) Misalkan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> ukuran pada <span class="math inline" data-source-tex="X">\(X\)</span> yang didefinisikan dari
+<span class="math inline" data-source-tex="\theta">\(\theta\)</span> dengan metode Carathéodory, dan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> domainnya. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\Cal E\subseteq\Sigma">\(\Cal E\subseteq\Sigma\)</span> dan bahwa <span class="math inline" data-source-tex="\mu E\le\nu E">\(\mu E\le\nu E\)</span> untuk setiap
+<span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>. (iii) Tunjukkan bahwa pernyataan-pernyataan berikut ekuivalen:
+(<span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>) <span class="math inline" data-source-tex="\mu E=\nu E">\(\mu E=\nu E\)</span>
+untuk setiap <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span> (<span class="math inline" data-source-tex="\beta">\(\beta\)</span>) <span class="math inline" data-source-tex="\theta X=\nu X">\(\theta X=\nu X\)</span> (<span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>) kapan pun
+<span class="math inline" data-source-tex="\sequencen{E_n}">\(\sequencen{E_n}\)</span> merupakan barisan tak-menaik dalam <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> dengan irisan
+kosong, <span class="math inline" data-source-tex="\lim_{n\to\infty}\nu E_n=0">\(\lim_{n\to\infty}\nu E_n=0\)</span>.</p>
+</section>
+<section class="source-unit" id="136Yb" data-source-id="136Yb"><h3><span class="source-label">136Yb</span> (b) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan, <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> suatu aljabar dari
+subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>, dan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> suatu fungsional aditif nonnegatif pada
+<span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span>. Misalkan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> merupakan aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari subhimpunan-
+subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span> yang dibangkitkan oleh <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span>. Tunjukkan bahwa terdapat
+paling banyak satu ukuran <span class="math inline" data-source-tex="\mu">\(\mu\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span> dengan domain <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> yang
+memperluas <span class="math inline" data-source-tex="\nu">\(\nu\)</span>, dan bahwa ukuran demikian ada jika dan hanya jika
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\nu E_n=0">\(\lim_{n\to\infty}\nu E_n=0\)</span> untuk setiap barisan tak-menaik
+<span class="math inline" data-source-tex="\sequencen{E_n}">\(\sequencen{E_n}\)</span> dalam <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> dengan irisan kosong.</p>
+</section>
+<section class="source-unit" id="136Yc" data-source-id="136Yc"><h3><span class="source-label">136Yc</span> (c) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan. Misalkan <span class="math inline" data-source-tex="\Cal G">\(\Cal G\)</span> suatu keluarga
+subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span> sedemikian sehingga (i) <span class="math inline" data-source-tex="G\cap H\in\Cal G">\(G\cap H\in\Cal G\)</span> untuk semua <span class="math inline" data-source-tex="G">\(G\)</span>,
+<span class="math inline" data-source-tex="H\in\Cal G">\(H\in\Cal G\)</span> (ii) untuk setiap <span class="math inline" data-source-tex="G\in\Cal G">\(G\in\Cal G\)</span> terdapat suatu barisan
+<span class="math inline" data-source-tex="\sequencen{G_n}">\(\sequencen{G_n}\)</span> dalam <span class="math inline" data-source-tex="\Cal G">\(\Cal G\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="X\setminus G=\bigcap_{n\in\Bbb N}G_n">\(X\setminus G=\bigcap_{n\in\Bbb N}G_n\)</span>. Misalkan <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> suatu keluarga
+subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span> sedemikian sehingga (<span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>) <span class="math inline" data-source-tex="\emptyset">\(\emptyset\)</span>, <span class="math inline" data-source-tex="X\in\Cal A">\(X\in\Cal A\)</span>
+(<span class="math inline" data-source-tex="\beta">\(\beta\)</span>) <span class="math inline" data-source-tex="\bigcap_{n\in\Bbb N}A_n\in\Cal A">\(\bigcap_{n\in\Bbb N}A_n\in\Cal A\)</span>
+untuk setiap barisan tak-menaik <span class="math inline" data-source-tex="\sequencen{A_n}">\(\sequencen{A_n}\)</span> dalam
+<span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> (<span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>) <span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}A_n\in\Cal A">\(\bigcup_{n\in\Bbb N}A_n\in\Cal A\)</span> untuk setiap
+barisan saling lepas dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> (<span class="math inline" data-source-tex="\delta">\(\delta\)</span>) <span class="math inline" data-source-tex="\Cal G\subseteq\Cal A">\(\Cal G\subseteq\Cal A\)</span>.
+Tunjukkan bahwa aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> himpunan yang dibangkitkan oleh <span class="math inline" data-source-tex="\Cal G">\(\Cal G\)</span>
+termuat dalam <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span>.</p>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<section class="source-unit" id="136" data-source-id="136"><h2><span class="source-label">136</span> Catatan penutup untuk Bagian 136 </h2>
+<p>Hasil paling berguna di sini adalah <a class="xref" href="#136B">136B</a>; hasil ini akan
+diperlukan dalam Bab 27, dan berguna pada berbagai bagian lain dalam Jilid 2,
+sering kali melalui akibat-akibatnya <a class="xref" href="#136C">136C</a> dan <a class="xref" href="#136Xc">136Xc</a>. Tentu saja <a class="xref" href="#136C">136C</a>, seperti
+akibatnya <a class="xref" href="#136D">136D</a> dan kasus khususnya <a class="xref" href="#136Yb">136Yb</a>, hanya dapat digunakan secara langsung
+pada ukuran yang tidak mengambil nilai <span class="math inline" data-source-tex="\infty">\(\infty\)</span>, karena kita harus mengetahui
+bahwa <span class="math inline" data-source-tex="\mu(F\setminus E)=\mu F-\mu E">\(\mu(F\setminus E)=\mu F-\mu E\)</span> untuk himpunan terukur
+<span class="math inline" data-source-tex="E\subseteq F">\(E\subseteq F\)</span>; itulah sebabnya hasil ini menjadi menonjol hanya ketika kita
+mengkhususkan diri pada ukuran probabilitas (yang seluruh ruangnya berukuran
+<span class="math inline" data-source-tex="1">\(1\)</span>). Karena itu saya menyertakan <a class="xref" href="#136Xc">136Xc</a> untuk menunjukkan teknik yang dapat
+membawa kita selangkah lebih jauh. Saya rasa kita belum benar-benar siap untuk
+ukuran umum pada himpunan-himpunan Borel dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, tetapi saya
+menyebutkan <a class="xref" href="#136D">136D</a> untuk menunjukkan jenis kelas <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> yang dapat muncul
+dalam <a class="xref" href="#136B">136B</a>.</p>
+<p>Kedua teorema di sini (<a class="xref" href="#136B">136B</a>, <a class="xref" href="#136G">136G</a>) menjawab pertanyaan: jika diberikan suatu
+keluarga himpunan <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span>, operasi apa yang harus kita lakukan untuk membangun
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> yang dibangkitkan oleh <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span>? Untuk
+<span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> sembarang, tentu saja kita mengharapkan perlunya komplemen dan gabungan
+barisan. Inti teorema-teorema di sini adalah bahwa jika <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> mempunyai
+sejumlah struktur tertentu, kita dapat mencapai <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dengan operasi yang
+lebih terbatas; jadi, jika <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> merupakan suatu aljabar himpunan, maka
+gabungan dan irisan <em>monoton</em> sudah cukup (<a class="xref" href="#136G">136G</a>). Tentu saja terdapat tak
+terhitung banyaknya variasi atas tema ini. Saya menawarkan <a class="xref" href="#136Xh">136Xh</a>–<a class="xref" href="#136Xj">136Xj</a> sebagai
+hasil khas yang benar-benar akan digunakan dalam Jilid 4, dan <a class="xref" href="#136Xk">136Xk</a> serta <a class="xref" href="#136Yc">136Yc</a>
+sebagai contoh modifikasi yang mungkin. Terdapat versi abstrak <a class="xref" href="#136B">136B</a> dalam 313G
+di Jilid 3.</p>
+<p>Setelah mulai mempertimbangkan perluasan suatu aljabar himpunan menjadi suatu
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>, wajar untuk menanyakan syarat-syarat yang memungkinkan suatu
+fungsional pada aljabar himpunan diperluas menjadi suatu ukuran. Syarat
+aditivitas (<a class="xref" href="#136Xg">136Xg</a>) jelas diperlukan, dan hampir sama jelasnya bahwa syarat itu
+tidak mencukupi.
+Saya menyertakan <a class="xref" href="#136Ya">136Ya</a>–<a class="xref" href="#136Yb">136Yb</a> sebagai syarat perlu dan cukup yang paling penting
+di antara banyak syarat agar suatu fungsional aditif dapat diperluas menjadi
+suatu ukuran. Kita harus kembali ke hal ini dalam Jilid 4.</p>
+
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 1: The Irreducible Minimum</cite>, Bagian 136.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 23 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-semantic-reader-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V1-S136&quot;,
+  &quot;source_member&quot;: &quot;mt1.2011/mt136.tex&quot;,
+  &quot;target_bytes&quot;: 25298,
+  &quot;target_sha256&quot;: &quot;aadd0bdbb660d8843ed83189eb0f0362f2b5aed22b42544f4deac57f382eec92&quot;,
+  &quot;source_ids&quot;: [
+    &quot;136&quot;,
+    &quot;136A&quot;,
+    &quot;136B&quot;,
+    &quot;136C&quot;,
+    &quot;136D&quot;,
+    &quot;136E&quot;,
+    &quot;136F&quot;,
+    &quot;136Fa&quot;,
+    &quot;136Fb&quot;,
+    &quot;136Fc&quot;,
+    &quot;136G&quot;,
+    &quot;136H&quot;,
+    &quot;136X&quot;,
+    &quot;136Xa&quot;,
+    &quot;136Xb&quot;,
+    &quot;136Xc&quot;,
+    &quot;136Xd&quot;,
+    &quot;136Xe&quot;,
+    &quot;136Xf&quot;,
+    &quot;136Xg&quot;,
+    &quot;136Xh&quot;,
+    &quot;136Xi&quot;,
+    &quot;136Xj&quot;,
+    &quot;136Xk&quot;,
+    &quot;136Y&quot;,
+    &quot;136Ya&quot;,
+    &quot;136Yb&quot;,
+    &quot;136Yc&quot;
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

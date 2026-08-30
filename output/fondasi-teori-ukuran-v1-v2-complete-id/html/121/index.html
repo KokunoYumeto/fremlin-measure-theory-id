@@ -1,0 +1,1030 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Fungsi terukur — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        bigcupop: '\\bigcup',
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        ocint: ['\\left]#1\\right]', 1],
+        BbbQ: '\\mathbb{Q}',
+        restr: '\\mathord{\\upharpoonright}',
+        Exists: '\\;\\exists\\;',
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        roibr: '\\mathopen{{[}}',
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1]
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 1 · Bagian 121</p>
+  <h1>Fungsi terukur</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi Volume 1</a></nav>
+<main id="isi">
+<span class="anchor" id="121-intro"></span>
+<p>Dalam bagian ini, saya mundur sejenak untuk mengembangkan gagasan-gagasan
+yang berkaitan dengan aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> himpunan, melanjutkan §111; di
+sini tidak akan disebutkan ‘ukuran’, kecuali dalam latihan. Tujuannya
+adalah menetapkan konsep ‘fungsi terukur’ (<a class="xref" href="#121C">121C</a>) dan berbagai teknik
+yang terkait dengannya.
+Contoh tunggal terbaik tentang aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> yang patut diingat ketika
+membaca bab ini barangkali adalah aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> subhimpunan Borel dari
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> (<a class="xref" href="../111/index.html#111G">111G</a>); aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> subhimpunan terukur Lebesgue
+dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> (<a class="xref" href="../114/index.html#114E">114E</a>) merupakan contoh kedua yang baik.</p>
+<p>Sepanjang uraian di sini (mulai dari <a class="xref" href="#121A">121A</a>), saya berusaha menangani
+fungsi-fungsi yang tidak didefinisikan pada seluruh ruang <span class="math inline" data-source-tex="X">\(X\)</span> yang
+sedang ditinjau. Saya percaya bahwa ada alasan-alasan kuat untuk
+menghadapi fungsi semacam itu sejak awal (lihat <a class="xref" href="#121G">121G</a>); tetapi
+tidak dapat disangkal bahwa fungsi-fungsi tersebut menambah kesulitan
+teknis. Karena itu, wajar saja bila Anda membaca bab ini sekali dengan
+anggapan sementara bahwa semua fungsi terdefinisi di mana-mana, sebelum
+kembali untuk menangani kasus umum.</p>
+<section class="source-unit" id="121A" data-source-id="121A"><h2><span class="source-label">121A</span> Lema </h2>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan dan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> suatu
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>. Misalkan <span class="math inline" data-source-tex="D">\(D\)</span>
+sembarang subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span> dan tuliskan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Sigma_D=\{E\cap D:E\in\Sigma\}">\(\Sigma_D=\{E\cap D:E\in\Sigma\}\)</span>.</div>
+<p>Maka <span class="math inline" data-source-tex="\Sigma_D">\(\Sigma_D\)</span> adalah aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas
+subhimpunan-subhimpunan <span class="math inline" data-source-tex="D">\(D\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><span class="anchor" id="121A-proof-i"></span><strong>(i)</strong> <span class="math inline" data-source-tex="\emptyset=\emptyset\cap D\in\Sigma_D">\(\emptyset=\emptyset\cap D\in\Sigma_D\)</span> karena
+<span class="math inline" data-source-tex="\emptyset\in\Sigma">\(\emptyset\in\Sigma\)</span>.</p>
+<p> </p>
+<p><span class="anchor" id="121A-proof-ii"></span><strong>(ii)</strong> Jika <span class="math inline" data-source-tex="F\in\Sigma_D">\(F\in\Sigma_D\)</span>, terdapat <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="F=E\cap D">\(F=E\cap D\)</span>; sekarang
+<span class="math inline" data-source-tex="D\setminus F=(X\setminus E)\cap D\in\Sigma_D">\(D\setminus F=(X\setminus E)\cap D\in\Sigma_D\)</span> karena
+<span class="math inline" data-source-tex="X\setminus E\in\Sigma">\(X\setminus E\in\Sigma\)</span>.</p>
+<p> </p>
+<p><span class="anchor" id="121A-proof-iii"></span><strong>(iii)</strong> Jika <span class="math inline" data-source-tex="\langle F_n\rangle_{n\in\Bbb N}">\(\langle F_n\rangle_{n\in\Bbb N}\)</span> adalah sembarang
+barisan di dalam <span class="math inline" data-source-tex="\Sigma_D">\(\Sigma_D\)</span>, maka untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> kita dapat
+memilih <span class="math inline" data-source-tex="E_n\in\Sigma">\(E_n\in\Sigma\)</span> sedemikian sehingga <span class="math inline" data-source-tex="F_n=E_n\cap D">\(F_n=E_n\cap D\)</span>; sekarang
+<span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}F_n=(\bigcup_{n\in\Bbb N}E_n)\cap D\in\Sigma_D">\(\bigcup_{n\in\Bbb N}F_n=(\bigcup_{n\in\Bbb N}E_n)\cap D\in\Sigma_D\)</span>
+karena <span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}E_n\in\Sigma">\(\bigcup_{n\in\Bbb N}E_n\in\Sigma\)</span>.</p></aside>
+<p> </p>
+<p><strong>Notasi</strong> Saya akan menyebut <span class="math inline" data-source-tex="\Sigma_D">\(\Sigma_D\)</span> sebagai
+<strong>aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> subruang</strong> atas subhimpunan-subhimpunan <span class="math inline" data-source-tex="D">\(D\)</span>, dan
+saya akan mengatakan bahwa anggota-anggotanya <strong>terukur relatif</strong>
+di <span class="math inline" data-source-tex="D">\(D\)</span>.
+<span class="math inline" data-source-tex="\Sigma_D">\(\Sigma_D\)</span> juga kadang-kadang disebut <strong>jejak</strong> <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> pada <span class="math inline" data-source-tex="D">\(D\)</span>.</p>
+</section>
+<section class="source-unit" id="121B" data-source-id="121B"><h2><span class="source-label">121B</span> Proposisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan, <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> suatu
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>, dan <span class="math inline" data-source-tex="D">\(D\)</span> suatu
+subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>. Tuliskan <span class="math inline" data-source-tex="\Sigma_D">\(\Sigma_D\)</span> untuk aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> subruang
+atas subhimpunan-subhimpunan <span class="math inline" data-source-tex="D">\(D\)</span>. Maka, untuk setiap fungsi
+<span class="math inline" data-source-tex="f:D\to\Bbb R">\(f:D\to\Bbb R\)</span>, pernyataan-pernyataan berikut ekuivalen, yakni,
+jika salah satunya benar maka semuanya benar:</p>
+<p>  (i) <span class="math inline" data-source-tex="\{x:f(x)&lt;a\}\in\Sigma_D">\(\{x:f(x)&lt;a\}\in\Sigma_D\)</span> untuk setiap <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>;</p>
+<p>  (ii) <span class="math inline" data-source-tex="\{x:f(x)\le a\}\in\Sigma_D">\(\{x:f(x)\le a\}\in\Sigma_D\)</span> untuk setiap <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>;</p>
+<p>  (iii) <span class="math inline" data-source-tex="\{x:f(x)&gt;a\}\in\Sigma_D">\(\{x:f(x)&gt;a\}\in\Sigma_D\)</span> untuk setiap <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>;</p>
+<p>  (iv) <span class="math inline" data-source-tex="\{x:f(x)\ge a\}\in\Sigma_D">\(\{x:f(x)\ge a\}\in\Sigma_D\)</span> untuk setiap <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><span class="anchor" id="121B-proof-i-to-ii"></span><strong>(i)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(ii)</strong> Andaikan (i), dan misalkan
+<span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:f(x)\le a\}
+=\bigcap_{n\in\Bbb N}\{x:f(x)&lt;a+2^{-n}\}\in\Sigma_D">\(\{x:f(x)\le a\}
+=\bigcap_{n\in\Bbb N}\{x:f(x)&lt;a+2^{-n}\}\in\Sigma_D\)</span></div>
+<p>karena <span class="math inline" data-source-tex="\{x:f(x)&lt;a+2^{-n}\}\in\Sigma_D">\(\{x:f(x)&lt;a+2^{-n}\}\in\Sigma_D\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>
+dan <span class="math inline" data-source-tex="\Sigma_D">\(\Sigma_D\)</span> tertutup terhadap irisan terhitung (<a class="xref" href="../111/index.html#111Dd">111Dd</a>).
+Karena <span class="math inline" data-source-tex="a">\(a\)</span> sebarang, (ii) benar.</p>
+<p><span class="anchor" id="121B-proof-ii-to-iii"></span><strong>(ii)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(iii)</strong> Andaikan (ii), dan misalkan
+<span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:f(x)&gt;a\}=D\setminus\{x:f(x)\le a\}\in\Sigma_D">\(\{x:f(x)&gt;a\}=D\setminus\{x:f(x)\le a\}\in\Sigma_D\)</span></div>
+<p>karena <span class="math inline" data-source-tex="\{x:f(x)\le a\}\in\Sigma_D">\(\{x:f(x)\le a\}\in\Sigma_D\)</span> dan <span class="math inline" data-source-tex="\Sigma_D">\(\Sigma_D\)</span>
+tertutup terhadap pengambilan komplemen. Karena <span class="math inline" data-source-tex="a">\(a\)</span> sebarang, (iii)
+benar.</p>
+<p> </p>
+<p><span class="anchor" id="121B-proof-iii-to-iv"></span><strong>(iii)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(iv)</strong> Andaikan (iii), dan misalkan
+<span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:f(x)\ge a\}
+=\bigcap_{n\in\Bbb N}\{x:f(x)&gt;a-2^{-n}\}\in\Sigma_D">\(\{x:f(x)\ge a\}
+=\bigcap_{n\in\Bbb N}\{x:f(x)&gt;a-2^{-n}\}\in\Sigma_D\)</span></div>
+<p>karena <span class="math inline" data-source-tex="\{x:f(x)&gt;a-2^{-n}\}\in\Sigma_D">\(\{x:f(x)&gt;a-2^{-n}\}\in\Sigma_D\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>
+dan <span class="math inline" data-source-tex="\Sigma_D">\(\Sigma_D\)</span> tertutup terhadap irisan terhitung.
+Karena <span class="math inline" data-source-tex="a">\(a\)</span> sebarang, (iv) benar.</p>
+<p> </p>
+<p><span class="anchor" id="121B-proof-iv-to-i"></span><strong>(iv)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(i)</strong> Andaikan (iv), dan misalkan
+<span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:f(x)&lt;a\}=D\setminus\{x:f(x)\ge a\}\in\Sigma_D">\(\{x:f(x)&lt;a\}=D\setminus\{x:f(x)\ge a\}\in\Sigma_D\)</span></div>
+<p>karena <span class="math inline" data-source-tex="\{x:f(x)\ge a\}\in\Sigma_D">\(\{x:f(x)\ge a\}\in\Sigma_D\)</span> dan <span class="math inline" data-source-tex="\Sigma_D">\(\Sigma_D\)</span>
+tertutup terhadap pengambilan komplemen. Karena <span class="math inline" data-source-tex="a">\(a\)</span> sebarang, (i)
+benar.</p></aside>
+</section>
+<section class="source-unit" id="121C" data-source-id="121C"><h2><span class="source-label">121C</span> Definisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan, <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> suatu
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>, dan <span class="math inline" data-source-tex="D">\(D\)</span> suatu
+subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>. Sebuah fungsi <span class="math inline" data-source-tex="f:D\to\Bbb R">\(f:D\to\Bbb R\)</span> disebut <strong>terukur</strong>
+(atau <strong><span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>-terukur</strong>) jika memenuhi salah satu, atau secara
+ekuivalen semua, syarat (i)-(iv) dalam <a class="xref" href="#121B">121B</a>.</p>
+<p>Jika <span class="math inline" data-source-tex="X">\(X\)</span> adalah <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> atau <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> adalah
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> Borel-nya (<a class="xref" href="../111/index.html#111G">111G</a>), suatu fungsi <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>-terukur
+disebut <strong>terukur Borel</strong>. Jika <span class="math inline" data-source-tex="X">\(X\)</span> adalah <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> atau <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>,
+dan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> adalah aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> himpunan-himpunan terukur
+Lebesgue (<a class="xref" href="../114/index.html#114E">114E</a>, <a class="xref" href="../115/index.html#115E">115E</a>), suatu fungsi <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>-terukur disebut
+<strong>terukur Lebesgue</strong>.</p>
+<p> </p>
+<p><strong>Catatan</strong> Tentu saja, kasus utama di sini ialah ketika
+<span class="math inline" data-source-tex="D=X">\(D=X\)</span>. Namun, fungsi-fungsi yang terdefinisi sebagian begitu umum, dan
+begitu penting, dalam analisis (tinjau, misalnya, fungsi real
+<span class="math inline" data-source-tex="\ln\sin">\(\ln\sin\)</span>) sehingga tampaknya layak untuk sejak awal menetapkan
+teknik-teknik yang dapat menanganinya secara efisien.</p>
+<p>Banyak penulis mengembangkan teori ‘bilangan real diperluas’ pada titik
+ini, dengan bekerja pada
+<span class="math inline" data-source-tex="[-\infty,\infty]=\Bbb R\cup\{-\infty,\infty\}">\([-\infty,\infty]=\Bbb R\cup\{-\infty,\infty\}\)</span>, dan mendefinisikan
+keterukuran bagi fungsi-fungsi yang mengambil nilai dalam himpunan ini.
+Saya menguraikan garis besar teori semacam itu dalam §135 di bawah.</p>
+</section>
+<section class="source-unit" id="121D" data-source-id="121D"><span class="anchor" id="121Da"></span><h2><span class="source-label">121D</span> Proposisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> adalah <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> untuk suatu
+<span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span>, <span class="math inline" data-source-tex="D">\(D\)</span> suatu subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>, dan <span class="math inline" data-source-tex="g:D\to\Bbb R">\(g:D\to\Bbb R\)</span> suatu fungsi.</p>
+<p>(a) Jika <span class="math inline" data-source-tex="g">\(g\)</span> terukur Borel, maka fungsi tersebut terukur Lebesgue.</p>
+<span class="anchor" id="121Db"></span>
+<p>(b) Jika <span class="math inline" data-source-tex="g">\(g\)</span> kontinu, maka fungsi tersebut terukur Borel.</p>
+<span class="anchor" id="121Dc"></span>
+<p>(c) Jika <span class="math inline" data-source-tex="r=1">\(r=1\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span> monoton, maka fungsi tersebut terukur Borel.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Hal ini langsung mengikuti definisi dalam <a class="xref" href="#121C">121C</a>,
+jika kita mengingat bahwa aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> Borel termuat dalam
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> Lebesgue (<a class="xref" href="../114/index.html#114G">114G</a>, <a class="xref" href="../115/index.html#115G">115G</a>).</p>
+<p> </p>
+<p><strong>(b)</strong> Ambil <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>. Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Cal G=\{G:G\subseteq\BbbR^r\text{ terbuka},
+\,g(x)&lt;a\Forall x\in G\cap D\}">\(\Cal G=\{G:G\subseteq\BbbR^r\text{ terbuka},
+\,g(x)&lt;a\Forall x\in G\cap D\}\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="G_0=\bigcup\Cal G
+=\{x:\exists\enskip G\in\Cal G,\,x\in G\}">\(G_0=\bigcup\Cal G
+=\{x:\exists\enskip G\in\Cal G,\,x\in G\}\)</span>.</div>
+<p>Maka <span class="math inline" data-source-tex="G_0">\(G_0\)</span> adalah gabungan himpunan-himpunan terbuka, sehingga
+terbuka (1A2Bd). Selanjutnya,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:g(x)&lt;a\}=G_0\cap D">\(\{x:g(x)&lt;a\}=G_0\cap D\)</span>.</div>
+<p>Bukti. <strong>(i)</strong> Jika <span class="math inline" data-source-tex="g(x)&lt;a">\(g(x)&lt;a\)</span>, maka (karena <span class="math inline" data-source-tex="g">\(g\)</span> kontinu)
+terdapat <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga <span class="math inline" data-source-tex="|g(y)-g(x)|&lt;a-g(x)">\(|g(y)-g(x)|&lt;a-g(x)\)</span> setiap
+kali <span class="math inline" data-source-tex="y\in D">\(y\in D\)</span> dan <span class="math inline" data-source-tex="\|y-x\|&lt;\delta">\(\|y-x\|&lt;\delta\)</span>. Tetapi
+<span class="math inline" data-source-tex="\{y:\|y-x\|&lt;\delta\}">\(\{y:\|y-x\|&lt;\delta\}\)</span> terbuka (1A2D), sehingga termasuk dalam
+<span class="math inline" data-source-tex="\Cal G">\(\Cal G\)</span> dan termuat dalam <span class="math inline" data-source-tex="G_0">\(G_0\)</span>, serta <span class="math inline" data-source-tex="x\in G_0\cap D">\(x\in G_0\cap D\)</span>.
+<strong>(ii)</strong> Jika <span class="math inline" data-source-tex="x\in G_0\cap D">\(x\in G_0\cap D\)</span>, terdapat <span class="math inline" data-source-tex="G\in\Cal G">\(G\in\Cal G\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="x\in G">\(x\in G\)</span>; sekarang <span class="math inline" data-source-tex="g(y)&lt;a">\(g(y)&lt;a\)</span> untuk setiap <span class="math inline" data-source-tex="y\in G\cap D">\(y\in G\cap D\)</span>,
+sehingga, khususnya, <span class="math inline" data-source-tex="g(x)&lt;a">\(g(x)&lt;a\)</span>. ∎</p>
+<p>Akhirnya, <span class="math inline" data-source-tex="G_0">\(G_0\)</span>, karena terbuka, merupakan himpunan Borel. Karena <span class="math inline" data-source-tex="a">\(a\)</span>
+sebarang, <span class="math inline" data-source-tex="g">\(g\)</span> terukur Borel.</p>
+<p> </p>
+<p><strong>(c)</strong> Andaikan terlebih dahulu bahwa <span class="math inline" data-source-tex="g">\(g\)</span> tak-menurun. Misalkan
+<span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span> dan tuliskan <span class="math inline" data-source-tex="E=\{x:g(x)&lt;a\}">\(E=\{x:g(x)&lt;a\}\)</span>. Jika <span class="math inline" data-source-tex="E=D">\(E=D\)</span> atau
+<span class="math inline" data-source-tex="E=\emptyset">\(E=\emptyset\)</span>, maka tentu saja himpunan tersebut adalah irisan <span class="math inline" data-source-tex="D">\(D\)</span>
+dengan suatu himpunan Borel. Jika tidak, <span class="math inline" data-source-tex="E">\(E\)</span> tak kosong dan berbatas atas dalam
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, sehingga mempunyai supremum <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>. Sekarang <span class="math inline" data-source-tex="E">\(E\)</span>
+haruslah <span class="math inline" data-source-tex="D\cap\ocint{-\infty,c}">\(D\cap\ocint{-\infty,c}\)</span> atau <span class="math inline" data-source-tex="D\cap\ooint{-\infty,c}">\(D\cap\ooint{-\infty,c}\)</span>;
+bentuk pertama berlaku jika <span class="math inline" data-source-tex="c\in E">\(c\in E\)</span>, dan bentuk kedua jika tidak.
+Dalam kedua kasus, himpunan tersebut merupakan irisan <span class="math inline" data-source-tex="D">\(D\)</span> dengan suatu
+himpunan Borel (lihat <a class="xref" href="../114/index.html#114G">114G</a>).</p>
+<p>Demikian pula, jika <span class="math inline" data-source-tex="g">\(g\)</span> tak-menaik, <span class="math inline" data-source-tex="\{x:g(x)&gt;a\}">\(\{x:g(x)&gt;a\}\)</span> kembali akan menjadi
+irisan <span class="math inline" data-source-tex="D">\(D\)</span> dengan salah satu dari <span class="math inline" data-source-tex="\emptyset">\(\emptyset\)</span>, <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>,
+<span class="math inline" data-source-tex="\ocint{-\infty,c}">\(\ocint{-\infty,c}\)</span>, atau <span class="math inline" data-source-tex="\ooint{-\infty,c}">\(\ooint{-\infty,c}\)</span> untuk suatu <span class="math inline" data-source-tex="c">\(c\)</span>. Jadi,
+dalam kasus ini <a class="xref" href="#121B">121B</a>(iii) akan terpenuhi.</p>
+<p> </p>
+<p><strong>Catatan</strong> Saya melihat bahwa dalam bagian (b) dari bukti
+di atas saya menggunakan beberapa fakta dasar tentang himpunan terbuka
+dalam <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>. Fakta-fakta ini dibahas secara terperinci dalam
+§1A2. Jika fakta-fakta tersebut baru bagi Anda, barangkali bijaksana
+untuk mengulang argumennya dengan <span class="math inline" data-source-tex="r=1">\(r=1\)</span>, sehingga <span class="math inline" data-source-tex="D\subseteq\Bbb R">\(D\subseteq\Bbb R\)</span>,
+sebelum beralih ke kasus umum.</p></aside>
+</section>
+<section class="source-unit" id="121E" data-source-id="121E"><span class="anchor" id="121Ea"></span><h2><span class="source-label">121E</span> Teorema </h2>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan dan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> suatu aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>
+atas subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>. Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span> fungsi bernilai
+real yang didefinisikan pada domain <span class="math inline" data-source-tex="\dom f">\(\dom f\)</span>, <span class="math inline" data-source-tex="\dom g\subseteq X">\(\dom g\subseteq X\)</span>.</p>
+<p>(a) Jika <span class="math inline" data-source-tex="f">\(f\)</span> konstan, maka fungsi tersebut terukur.</p>
+<span class="anchor" id="121Eb"></span>
+<p>(b) Jika <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span> terukur, maka <span class="math inline" data-source-tex="f+g">\(f+g\)</span> juga terukur, dengan
+<span class="math inline" data-source-tex="(f+g)(x)=f(x)+g(x)">\((f+g)(x)=f(x)+g(x)\)</span> untuk <span class="math inline" data-source-tex="x\in\dom f\cap\dom g">\(x\in\dom f\cap\dom g\)</span>.</p>
+<span class="anchor" id="121Ec"></span>
+<p>(c) Jika <span class="math inline" data-source-tex="f">\(f\)</span> terukur dan <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>, maka <span class="math inline" data-source-tex="cf">\(cf\)</span> terukur, dengan
+<span class="math inline" data-source-tex="(cf)(x)=c\cdot f(x)">\((cf)(x)=c\cdot f(x)\)</span> untuk <span class="math inline" data-source-tex="x\in \dom f">\(x\in \dom f\)</span>.</p>
+<span class="anchor" id="121Ed"></span>
+<p>(d) Jika <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span> terukur, maka <span class="math inline" data-source-tex="f\times g">\(f\times g\)</span> juga terukur, dengan
+<span class="math inline" data-source-tex="(f\times g)(x)=f(x)\times g(x)">\((f\times g)(x)=f(x)\times g(x)\)</span> untuk
+<span class="math inline" data-source-tex="x\in \dom f\cap\dom g">\(x\in \dom f\cap\dom g\)</span>.</p>
+<span class="anchor" id="121Ee"></span>
+<p>(e) Jika <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span> terukur, maka <span class="math inline" data-source-tex="f/g">\(f/g\)</span> juga terukur, dengan
+<span class="math inline" data-source-tex="(f/g)(x)=f(x)/g(x)">\((f/g)(x)=f(x)/g(x)\)</span> ketika <span class="math inline" data-source-tex="x\in \dom f\cap\dom g">\(x\in \dom f\cap\dom g\)</span> dan <span class="math inline" data-source-tex="g(x)\ne 0">\(g(x)\ne 0\)</span>.</p>
+<span class="anchor" id="121Ef"></span>
+<p>(f) Jika <span class="math inline" data-source-tex="f">\(f\)</span> terukur dan <span class="math inline" data-source-tex="E\subseteq\Bbb R">\(E\subseteq\Bbb R\)</span> suatu himpunan Borel, maka
+terdapat <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="f^{-1}[E]=\{x:f(x)\in E\}">\(f^{-1}[E]=\{x:f(x)\in E\}\)</span> sama dengan <span class="math inline" data-source-tex="F\cap\dom f">\(F\cap\dom f\)</span>.</p>
+<span class="anchor" id="121Eg"></span>
+<p>(g) Jika <span class="math inline" data-source-tex="f">\(f\)</span> terukur dan <span class="math inline" data-source-tex="h">\(h\)</span> suatu fungsi terukur Borel dari suatu
+subhimpunan <span class="math inline" data-source-tex="\dom h">\(\dom h\)</span> dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> ke <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, maka <span class="math inline" data-source-tex="hf">\(hf\)</span> terukur,
+dengan <span class="math inline" data-source-tex="(hf)(x)=h(f(x))">\((hf)(x)=h(f(x))\)</span> untuk
+<span class="math inline" data-source-tex="x\in\dom(hf)=\{y:y\in\dom f,\,f(y)\in\dom h\}">\(x\in\dom(hf)=\{y:y\in\dom f,\,f(y)\in\dom h\}\)</span>.</p>
+<span class="anchor" id="121Eh"></span>
+<p>(h) Jika <span class="math inline" data-source-tex="f">\(f\)</span> terukur dan <span class="math inline" data-source-tex="A">\(A\)</span> sembarang himpunan, maka <span class="math inline" data-source-tex="f\restr A">\(f\restr A\)</span>
+terukur, dengan <span class="math inline" data-source-tex="\dom(f\restr A)=A\cap\dom f">\(\dom(f\restr A)=A\cap\dom f\)</span> dan
+<span class="math inline" data-source-tex="(f\restr A)(x)=f(x)">\((f\restr A)(x)=f(x)\)</span> untuk <span class="math inline" data-source-tex="x\in A\cap\dom f">\(x\in A\cap\dom f\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Untuk setiap <span class="math inline" data-source-tex="D\subseteq X">\(D\subseteq X\)</span>, tuliskan <span class="math inline" data-source-tex="\Sigma_D">\(\Sigma_D\)</span> untuk
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> subruang atas subhimpunan-subhimpunan <span class="math inline" data-source-tex="D">\(D\)</span>.</p>
+<p> </p>
+<p><strong>(a)</strong> Jika <span class="math inline" data-source-tex="f(x)=c">\(f(x)=c\)</span> untuk setiap <span class="math inline" data-source-tex="x\in \dom f">\(x\in \dom f\)</span>, maka
+<span class="math inline" data-source-tex="\{x:f(x)&lt;a\}=\dom f">\(\{x:f(x)&lt;a\}=\dom f\)</span> jika <span class="math inline" data-source-tex="c&lt;a">\(c&lt;a\)</span>, dan <span class="math inline" data-source-tex="\emptyset">\(\emptyset\)</span> jika tidak; dalam
+kedua kasus himpunan tersebut termasuk dalam <span class="math inline" data-source-tex="\Sigma_{\dom f}">\(\Sigma_{\dom f}\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Tuliskan <span class="math inline" data-source-tex="D=\dom(f+g)=\dom f\cap\dom g">\(D=\dom(f+g)=\dom f\cap\dom g\)</span>. Jika <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>,
+tetapkan <span class="math inline" data-source-tex="K=\{(q,q&#x27;):q,\,q&#x27;\in\Bbb Q,\,q+q&#x27;\le a\}">\(K=\{(q,q&#x27;):q,\,q&#x27;\in\Bbb Q,\,q+q&#x27;\le a\}\)</span>. Maka <span class="math inline" data-source-tex="K">\(K\)</span> adalah
+subhimpunan <span class="math inline" data-source-tex="\Bbb Q\times\Bbb Q">\(\Bbb Q\times\Bbb Q\)</span>, sehingga terhitung (<a class="xref" href="../111/index.html#111Fb">111Fb</a>, 1A1E).
+Untuk <span class="math inline" data-source-tex="q\in\Bbb Q">\(q\in\Bbb Q\)</span>, pilih himpunan-himpunan <span class="math inline" data-source-tex="F_q">\(F_q\)</span>,
+<span class="math inline" data-source-tex="G_q\in\Sigma">\(G_q\in\Sigma\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:f(x)&lt;q\}=F_q\cap\dom f">\(\{x:f(x)&lt;q\}=F_q\cap\dom f\)</span>,
+  <span class="math inline" data-source-tex="\{x:g(x)&lt;q\}=G_q\cap\dom g">\(\{x:g(x)&lt;q\}=G_q\cap\dom g\)</span>.</div>
+<p>Untuk setiap <span class="math inline" data-source-tex="(q,q&#x27;)\in K">\((q,q&#x27;)\in K\)</span>, himpunan</p>
+<div class="centerline"><span class="math inline" data-source-tex="E_{qq&#x27;}
+=\{x:f(x)&lt;q,\,g(x)&lt;q&#x27;\}=F_q\cap G_{q&#x27;}\cap D">\(E_{qq&#x27;}
+=\{x:f(x)&lt;q,\,g(x)&lt;q&#x27;\}=F_q\cap G_{q&#x27;}\cap D\)</span></div>
+<p>termasuk dalam <span class="math inline" data-source-tex="\Sigma_D">\(\Sigma_D\)</span>.
+Akhirnya, jika <span class="math inline" data-source-tex="(f+g)(x)&lt;a">\((f+g)(x)&lt;a\)</span>, kita dapat menemukan
+<span class="math inline" data-source-tex="q\in\ooint{f(x),a-g(x)}">\(q\in\ooint{f(x),a-g(x)}\)</span>, <span class="math inline" data-source-tex="q&#x27;\in\ocint{g(x),a-q}">\(q&#x27;\in\ocint{g(x),a-q}\)</span>, sehingga
+<span class="math inline" data-source-tex="(q,q&#x27;)\in K">\((q,q&#x27;)\in K\)</span> dan <span class="math inline" data-source-tex="x\in E_{qq&#x27;}">\(x\in E_{qq&#x27;}\)</span>; sedangkan jika <span class="math inline" data-source-tex="(q,q&#x27;)\in K">\((q,q&#x27;)\in K\)</span> dan
+<span class="math inline" data-source-tex="x\in E_{qq&#x27;}">\(x\in E_{qq&#x27;}\)</span>, maka <span class="math inline" data-source-tex="(f+g)(x)&lt;q+q&#x27;\le a">\((f+g)(x)&lt;q+q&#x27;\le a\)</span>. Jadi</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:(f+g)(x)&lt;a\}
+=\bigcup_{(q,q&#x27;)\in K}E_{qq&#x27;}\in\Sigma_D">\(\{x:(f+g)(x)&lt;a\}
+=\bigcup_{(q,q&#x27;)\in K}E_{qq&#x27;}\in\Sigma_D\)</span></div>
+<p>menurut <a class="xref" href="../111/index.html#111Fa">111Fa</a>. Karena <span class="math inline" data-source-tex="a">\(a\)</span> sebarang, <span class="math inline" data-source-tex="f+g">\(f+g\)</span> terukur.</p>
+<p> </p>
+<p><strong>(c)</strong> Tuliskan <span class="math inline" data-source-tex="D=\dom f">\(D=\dom f\)</span>. Misalkan <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>. Jika <span class="math inline" data-source-tex="c&gt;0">\(c&gt;0\)</span>,
+maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:cf(x)&lt;a\}=\{x:f(x)&lt;\Bover{a}{c}\}\in\Sigma_D">\(\{x:cf(x)&lt;a\}=\{x:f(x)&lt;\Bover{a}{c}\}\in\Sigma_D\)</span>.</div>
+<p>Jika <span class="math inline" data-source-tex="c&lt;0">\(c&lt;0\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:cf(x)&lt;a\}=\{x:f(x)&gt;\Bover{a}{c}\}\in\Sigma_D">\(\{x:cf(x)&lt;a\}=\{x:f(x)&gt;\Bover{a}{c}\}\in\Sigma_D\)</span>.</div>
+<p>Sedangkan jika <span class="math inline" data-source-tex="c=0">\(c=0\)</span>, maka <span class="math inline" data-source-tex="\{x:cf(x)&lt;a\}">\(\{x:cf(x)&lt;a\}\)</span> adalah <span class="math inline" data-source-tex="D">\(D\)</span> atau
+<span class="math inline" data-source-tex="\emptyset">\(\emptyset\)</span>, seperti dalam (a) di atas, sehingga termasuk dalam
+<span class="math inline" data-source-tex="\Sigma_D">\(\Sigma_D\)</span>. Karena <span class="math inline" data-source-tex="a">\(a\)</span> sebarang, <span class="math inline" data-source-tex="cf">\(cf\)</span> terukur.</p>
+<p> </p>
+<p><strong>(d)</strong> Tuliskan <span class="math inline" data-source-tex="D=\dom(f\times g)=\dom f\cap\dom g">\(D=\dom(f\times g)=\dom f\cap\dom g\)</span>. Misalkan
+<span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>. Misalkan <span class="math inline" data-source-tex="K">\(K\)</span> adalah</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{(q_1,q_2,q_3,q_4):q_1,\ldots,q_4\in\Bbb Q,\,uv&lt;a
+\text{ setiap kali }u\in\ooint{q_1,q_2},\,v\in\ooint{q_3,q_4}\}">\(\{(q_1,q_2,q_3,q_4):q_1,\ldots,q_4\in\Bbb Q,\,uv&lt;a
+\text{ setiap kali }u\in\ooint{q_1,q_2},\,v\in\ooint{q_3,q_4}\}\)</span>.</div>
+<p>Maka <span class="math inline" data-source-tex="K">\(K\)</span> terhitung. Untuk <span class="math inline" data-source-tex="q\in\Bbb Q">\(q\in\Bbb Q\)</span>, pilih
+himpunan-himpunan <span class="math inline" data-source-tex="F_q">\(F_q\)</span>, <span class="math inline" data-source-tex="F&#x27;_q">\(F&#x27;_q\)</span>, <span class="math inline" data-source-tex="G_q">\(G_q\)</span>, <span class="math inline" data-source-tex="G&#x27;_q\in\Sigma">\(G&#x27;_q\in\Sigma\)</span> sedemikian
+sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:f(x)&lt;q\}=F_q\cap\dom f">\(\{x:f(x)&lt;q\}=F_q\cap\dom f\)</span>,
+  <span class="math inline" data-source-tex="\{x:f(x)&gt;q\}=F&#x27;_q\cap\dom f">\(\{x:f(x)&gt;q\}=F&#x27;_q\cap\dom f\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:g(x)&lt;q\}=G_q\cap\dom g">\(\{x:g(x)&lt;q\}=G_q\cap\dom g\)</span>,
+  <span class="math inline" data-source-tex="\{x:g(x)&gt;q\}=G&#x27;_q\cap\dom g">\(\{x:g(x)&gt;q\}=G&#x27;_q\cap\dom g\)</span>.</div>
+<p>Untuk <span class="math inline" data-source-tex="(q_1,q_2,q_3,q_4)\in K">\((q_1,q_2,q_3,q_4)\in K\)</span>, tetapkan</p>
+<p><span class="math display" data-source-tex="\eqalign{E_{q_1q_2q_3q_4}
+&amp;=\{x:f(x)\in\ooint{q_1,q_2},\,g(x)\in\ooint{q_3,q_4}\}\cr
+&amp;=D\cap F&#x27;_{q_1}\cap F_{q_2}\cap G&#x27;_{q_3}\cap G_{q_4}
+\in\Sigma_D;\cr}">\[\begin{aligned}E_{q_1q_2q_3q_4}
+&amp;=\{x:f(x)\in\ooint{q_1,q_2},\,g(x)\in\ooint{q_3,q_4}\}\\
+&amp;=D\cap F&#x27;_{q_1}\cap F_{q_2}\cap G&#x27;_{q_3}\cap G_{q_4}
+\in\Sigma_D;\\\end{aligned}\]</span></p>
+<p>maka <span class="math inline" data-source-tex="E=\bigcup_{(q_1,q_2,q_3,q_4)\in
+K}E_{q_1q_2q_3q_4}\in\Sigma_D">\(E=\bigcup_{(q_1,q_2,q_3,q_4)\in
+K}E_{q_1q_2q_3q_4}\in\Sigma_D\)</span>.</p>
+<p>Sekarang <span class="math inline" data-source-tex="E=\{x:(f\times g)(x)&lt;a\}">\(E=\{x:(f\times g)(x)&lt;a\}\)</span>. Bukti. <strong>(i)</strong> Jika
+<span class="math inline" data-source-tex="(f\times g)(x)&lt;a">\((f\times g)(x)&lt;a\)</span>, tetapkan <span class="math inline" data-source-tex="u=f(x)">\(u=f(x)\)</span>, <span class="math inline" data-source-tex="v=g(x)">\(v=g(x)\)</span>. Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\eta=\min(1,\Bover{a-uv}{1+|u|+|v|})&gt;0">\(\eta=\min(1,\Bover{a-uv}{1+|u|+|v|})&gt;0\)</span>.</div>
+<p>Ambil <span class="math inline" data-source-tex="q_1,\ldots,q_4\in\Bbb Q">\(q_1,\ldots,q_4\in\Bbb Q\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="u-\eta\le q_1&lt;u&lt;q_2\le u+\eta">\(u-\eta\le q_1&lt;u&lt;q_2\le u+\eta\)</span>,
+  <span class="math inline" data-source-tex="v-\eta\le q_3&lt;v&lt;q_4\le v+\eta">\(v-\eta\le q_3&lt;v&lt;q_4\le v+\eta\)</span>.</div>
+<p>Jika <span class="math inline" data-source-tex="u&#x27;\in\ooint{q_1,q_2}">\(u&#x27;\in\ooint{q_1,q_2}\)</span>,
+<span class="math inline" data-source-tex="v&#x27;\in\ooint{q_3,q_4}">\(v&#x27;\in\ooint{q_3,q_4}\)</span>, maka <span class="math inline" data-source-tex="|u&#x27;-u|&lt;\eta">\(|u&#x27;-u|&lt;\eta\)</span> dan <span class="math inline" data-source-tex="|v&#x27;-v|&lt;\eta">\(|v&#x27;-v|&lt;\eta\)</span>, sehingga</p>
+<p><span class="math display" data-source-tex="\eqalign{u&#x27;v&#x27;-uv
+&amp;=(u&#x27;-u)(v&#x27;-v)+(u&#x27;-u)v+u(v&#x27;-v)\cr
+&amp;&lt;\eta^2+\eta|v|+|u|\eta
+\le\eta(1+|u|+|v|)
+\le a-uv,\cr}">\[\begin{aligned}u&#x27;v&#x27;-uv
+&amp;=(u&#x27;-u)(v&#x27;-v)+(u&#x27;-u)v+u(v&#x27;-v)\\
+&amp;&lt;\eta^2+\eta|v|+|u|\eta
+\le\eta(1+|u|+|v|)
+\le a-uv,\\\end{aligned}\]</span></p>
+<p>dan <span class="math inline" data-source-tex="u&#x27;v&#x27;&lt;a">\(u&#x27;v&#x27;&lt;a\)</span>. Dengan demikian <span class="math inline" data-source-tex="(q_1,q_2,q_3,q_4)\in K">\((q_1,q_2,q_3,q_4)\in K\)</span>.
+Selain itu, <span class="math inline" data-source-tex="x\in E_{q_1q_2q_3q_4}">\(x\in E_{q_1q_2q_3q_4}\)</span>, sehingga <span class="math inline" data-source-tex="x\in E">\(x\in E\)</span>. Jadi
+<span class="math inline" data-source-tex="\{x:(f\times g)(x)&lt;a\}\subseteq E">\(\{x:(f\times g)(x)&lt;a\}\subseteq E\)</span>. <strong>(ii)</strong> Di pihak lain, jika
+<span class="math inline" data-source-tex="x\in E">\(x\in E\)</span>, terdapat <span class="math inline" data-source-tex="q_1,\ldots,q_4">\(q_1,\ldots,q_4\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="(q_1,q_2,q_3,q_4)\in K">\((q_1,q_2,q_3,q_4)\in K\)</span> dan <span class="math inline" data-source-tex="x\in E_{q_1q_2q_3q_4}">\(x\in E_{q_1q_2q_3q_4}\)</span>, sehingga
+<span class="math inline" data-source-tex="f(x)\in\ooint{q_1,q_2}">\(f(x)\in\ooint{q_1,q_2}\)</span> dan <span class="math inline" data-source-tex="g(x)\in\ooint{q_3,q_4}">\(g(x)\in\ooint{q_3,q_4}\)</span> serta
+<span class="math inline" data-source-tex="f(x)g(x)&lt;a">\(f(x)g(x)&lt;a\)</span>. Jadi <span class="math inline" data-source-tex="E\subseteq\{x:(f\times g)(x)&lt;a\}">\(E\subseteq\{x:(f\times g)(x)&lt;a\}\)</span>. ∎</p>
+<p>Dengan demikian <span class="math inline" data-source-tex="\{x:(f\times g)(x)&lt;a\}\in\Sigma_D">\(\{x:(f\times g)(x)&lt;a\}\in\Sigma_D\)</span>. Karena <span class="math inline" data-source-tex="a">\(a\)</span>
+sebarang, <span class="math inline" data-source-tex="f\times g">\(f\times g\)</span> terukur.</p>
+<p> </p>
+<p><strong>(e)</strong> Berdasarkan (d), cukup ditunjukkan bahwa <span class="math inline" data-source-tex="1/g">\(1/g\)</span> terukur.
+Sekarang, jika <span class="math inline" data-source-tex="a&gt;0">\(a&gt;0\)</span>,
+<span class="math inline" data-source-tex="\{x:1/g(x)&lt;a\}=\{x:g(x)&gt;1/a\}\cup\{x:g(x)&lt;0\}">\(\{x:1/g(x)&lt;a\}=\{x:g(x)&gt;1/a\}\cup\{x:g(x)&lt;0\}\)</span>; jika <span class="math inline" data-source-tex="a&lt;0">\(a&lt;0\)</span>, maka
+<span class="math inline" data-source-tex="\{x:1/g(x)&lt;a\}=\{x:1/a&lt;g(x)&lt;0\}">\(\{x:1/g(x)&lt;a\}=\{x:1/a&lt;g(x)&lt;0\}\)</span>; dan jika <span class="math inline" data-source-tex="a=0">\(a=0\)</span>, maka
+<span class="math inline" data-source-tex="\{x:1/g(x)&lt;a\}=\{x:g(x)&lt;0\}">\(\{x:1/g(x)&lt;a\}=\{x:g(x)&lt;0\}\)</span>. Semua himpunan ini termasuk dalam
+<span class="math inline" data-source-tex="\Sigma_{\dom 1/g}">\(\Sigma_{\dom 1/g}\)</span>.</p>
+<p> </p>
+<p><strong>(f)</strong> Tuliskan <span class="math inline" data-source-tex="D=\dom f">\(D=\dom f\)</span> dan tinjau himpunan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Tau=\{E:E\subseteq\Bbb R,\,f^{-1}[E]\in\Sigma_D\}">\(\Tau=\{E:E\subseteq\Bbb R,\,f^{-1}[E]\in\Sigma_D\}\)</span>.</div>
+<p>Maka <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> adalah aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas
+subhimpunan-subhimpunan <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.
+Bukti. (i) <span class="math inline" data-source-tex="f^{-1}[\emptyset]=\emptyset\in\Sigma_D">\(f^{-1}[\emptyset]=\emptyset\in\Sigma_D\)</span>, sehingga
+<span class="math inline" data-source-tex="\emptyset\in\Tau">\(\emptyset\in\Tau\)</span>. (ii) Jika <span class="math inline" data-source-tex="E\in\Tau">\(E\in\Tau\)</span>, maka
+<span class="math inline" data-source-tex="f^{-1}[\Bbb R\setminus E]=D\setminus f^{-1}[E]\in\Sigma_D">\(f^{-1}[\Bbb R\setminus E]=D\setminus f^{-1}[E]\in\Sigma_D\)</span>,
+sehingga <span class="math inline" data-source-tex="\Bbb R\setminus E\in\Tau">\(\Bbb R\setminus E\in\Tau\)</span>.
+(iii) Jika <span class="math inline" data-source-tex="\langle E_n\rangle_{n\in\Bbb N}">\(\langle E_n\rangle_{n\in\Bbb N}\)</span> adalah suatu barisan
+di dalam <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>, maka
+<span class="math inline" data-source-tex="f^{-1}[\bigcup_{n\in\Bbb N}E_n]
+=\bigcup_{n\in\Bbb N}f^{-1}[E_n]\in\Sigma_D">\(f^{-1}[\bigcup_{n\in\Bbb N}E_n]
+=\bigcup_{n\in\Bbb N}f^{-1}[E_n]\in\Sigma_D\)</span> karena <span class="math inline" data-source-tex="\Sigma_D">\(\Sigma_D\)</span>
+adalah aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>, sehingga <span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}E_n\in\Tau">\(\bigcup_{n\in\Bbb N}E_n\in\Tau\)</span>. ∎</p>
+<p>Selanjutnya, <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> memuat semua himpunan berbentuk
+<span class="math inline" data-source-tex="H_a=\ooint{-\infty,a}">\(H_a=\ooint{-\infty,a}\)</span> untuk <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>, menurut definisi
+keterukuran <span class="math inline" data-source-tex="f">\(f\)</span>. Hasilnya mengikuti dari argumen yang sudah digunakan
+dalam <a class="xref" href="../114/index.html#114G">114G</a> di atas. Pertama, semua subhimpunan terbuka dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>
+termasuk dalam <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>. Bukti. Misalkan <span class="math inline" data-source-tex="G\subseteq\Bbb R">\(G\subseteq\Bbb R\)</span> terbuka.
+Misalkan <span class="math inline" data-source-tex="K\subseteq\Bbb Q\times\Bbb Q">\(K\subseteq\Bbb Q\times\Bbb Q\)</span> adalah himpunan pasangan
+<span class="math inline" data-source-tex="(q,q&#x27;)">\((q,q&#x27;)\)</span> bilangan rasional sedemikian sehingga
+<span class="math inline" data-source-tex="\coint{q,q&#x27;}\subseteq G">\(\coint{q,q&#x27;}\subseteq G\)</span>. <span class="math inline" data-source-tex="K">\(K\)</span> terhitung. Selain itu, setiap
+<span class="math inline" data-source-tex="\coint{q,q&#x27;}">\(\coint{q,q&#x27;}\)</span> termasuk dalam <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>, karena merupakan
+<span class="math inline" data-source-tex="H_{q&#x27;}\setminus H_q">\(H_{q&#x27;}\setminus H_q\)</span>. Jadi
+<span class="math inline" data-source-tex="G&#x27;=\bigcup_{(q,q&#x27;)\in K}\coint{q,q&#x27;}\in\Tau">\(G&#x27;=\bigcup_{(q,q&#x27;)\in K}\coint{q,q&#x27;}\in\Tau\)</span>.</p>
+<p>Menurut definisi <span class="math inline" data-source-tex="K">\(K\)</span>, <span class="math inline" data-source-tex="G&#x27;\subseteq G">\(G&#x27;\subseteq G\)</span>. Di pihak lain, jika <span class="math inline" data-source-tex="x\in G">\(x\in G\)</span>,
+terdapat <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\ooint{x-\delta,x+\delta}\subseteq G">\(\ooint{x-\delta,x+\delta}\subseteq G\)</span>. Sekarang terdapat bilangan
+rasional <span class="math inline" data-source-tex="q\in\ocint{x-\delta,x}">\(q\in\ocint{x-\delta,x}\)</span> dan
+<span class="math inline" data-source-tex="q&#x27;\in\ocint{x,x+\delta}">\(q&#x27;\in\ocint{x,x+\delta}\)</span>, sehingga <span class="math inline" data-source-tex="(q,q&#x27;)\in K">\((q,q&#x27;)\in K\)</span> dan
+<span class="math inline" data-source-tex="x\in\coint{q,q&#x27;}\subseteq G&#x27;">\(x\in\coint{q,q&#x27;}\subseteq G&#x27;\)</span>. Karena <span class="math inline" data-source-tex="x">\(x\)</span> sebarang, <span class="math inline" data-source-tex="G=G&#x27;">\(G=G&#x27;\)</span> dan
+<span class="math inline" data-source-tex="G\in\Tau">\(G\in\Tau\)</span>. ∎</p>
+<p>Akhirnya, <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> adalah aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas subhimpunan-subhimpunan
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> yang memuat keluarga himpunan terbuka, sehingga harus memuat
+setiap himpunan Borel, menurut definisi himpunan Borel (<a class="xref" href="../111/index.html#111G">111G</a>).</p>
+<p> </p>
+<p><strong>(g)</strong> Jika <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>, maka <span class="math inline" data-source-tex="\{y:h(y)&lt;a\}">\(\{y:h(y)&lt;a\}\)</span> berbentuk
+<span class="math inline" data-source-tex="E\cap\dom h">\(E\cap\dom h\)</span>, dengan <span class="math inline" data-source-tex="E">\(E\)</span> suatu subhimpunan Borel dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.
+Selanjutnya, <span class="math inline" data-source-tex="f^{-1}[E]">\(f^{-1}[E]\)</span> berbentuk <span class="math inline" data-source-tex="F\cap\dom f">\(F\cap\dom f\)</span>, dengan <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>,
+menurut (f) di atas. Jadi</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:(hf)(x)&lt;a\}=F\cap\dom hf\in\Sigma_{\dom hf}">\(\{x:(hf)(x)&lt;a\}=F\cap\dom hf\in\Sigma_{\dom hf}\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="a">\(a\)</span> sebarang, <span class="math inline" data-source-tex="hf">\(hf\)</span> terukur.</p>
+<p> </p>
+<p><strong>(h)</strong> Intinya ialah bahwa
+<span class="math inline" data-source-tex="\Sigma_{A\cap\dom f}=\{E\cap A:E\in\Sigma_{\dom f}\}">\(\Sigma_{A\cap\dom f}=\{E\cap A:E\in\Sigma_{\dom f}\}\)</span>. Jadi, jika
+<span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:(f\restr
+A)(x)&lt;a\}=A\cap\{x:f(x)&lt;a\}\in\Sigma_{\dom(f\restr A)}">\(\{x:(f\restr
+A)(x)&lt;a\}=A\cap\{x:f(x)&lt;a\}\in\Sigma_{\dom(f\restr A)}\)</span>.</div></aside>
+<p> </p>
+<p><strong>Catatan</strong> Tentu saja, bagian (c) dari teorema ini hanya
+merupakan hasil menggabungkan (a) dan (d), sedangkan (e) merupakan
+akibat dari (d), (g), dan fakta bahwa fungsi kontinu terukur Borel
+(<a class="xref" href="#121Db">121Db</a>).</p>
+<p>Saya harap Anda mengenali teknik dalam bukti bagian (d) sebagai suatu
+versi argumen yang dapat digunakan untuk membuktikan bahwa limit hasil
+kali adalah hasil kali limit, atau bahwa hasil kali fungsi-fungsi
+kontinu bersifat kontinu. Sebenarnya, (b) dan (d) di sini, bersama
+dengan teorema-teorema tentang jumlah dan hasil kali limit, merupakan
+akibat dari fakta bahwa penjumlahan dan perkalian adalah fungsi
+kontinu. Dalam <a class="xref" href="#121K">121K</a> saya memberikan suatu hasil umum yang dapat
+digunakan untuk memanfaatkan fakta-fakta semacam itu.</p>
+<p>Sesungguhnya, bagian (f) di sini merupakan inti konsep fungsi bernilai
+real yang ‘terukur’. Inti definisi dalam <a class="xref" href="#121B">121B</a>-<a class="xref" href="#121C">121C</a> ialah bahwa
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> Borel pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> dapat dibangkitkan oleh salah satu
+di antara keluarga-keluarga
+<span class="math inline" data-source-tex="\{\ooint{-\infty,a}:a\in\Bbb R\}">\(\{\ooint{-\infty,a}:a\in\Bbb R\}\)</span>,
+<span class="math inline" data-source-tex="\{\ocint{-\infty,a}:a\in\Bbb R\},\ldots">\(\{\ocint{-\infty,a}:a\in\Bbb R\},\ldots\)</span>. (Lihat <a class="xref" href="#121Yc">121Yc</a>(ii).)
+Ada banyak cara membahas pokok ini dengan jauh lebih ringkas daripada
+yang saya lakukan, dengan konsekuensi tingkat abstraksi yang sedikit
+lebih tinggi.</p>
+</section>
+<section class="source-unit" id="121F" data-source-id="121F"><span class="anchor" id="121Fa"></span><h2><span class="source-label">121F</span> Teorema </h2>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan dan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> suatu
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>. Misalkan
+<span class="math inline" data-source-tex="\langle f_n\rangle_{n\in\Bbb N}">\(\langle f_n\rangle_{n\in\Bbb N}\)</span> suatu barisan fungsi bernilai real
+yang <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>-terukur, dengan domain-domain yang termuat dalam <span class="math inline" data-source-tex="X">\(X\)</span>.</p>
+<p>(a) Definisikan suatu fungsi <span class="math inline" data-source-tex="\lim_{n\to\infty}f_n">\(\lim_{n\to\infty}f_n\)</span> dengan menuliskan</p>
+<div class="centerline"><span class="math inline" data-source-tex="(\lim_{n\to\infty}f_n)(x)=\lim_{n\to\infty}f_n(x)">\((\lim_{n\to\infty}f_n)(x)=\lim_{n\to\infty}f_n(x)\)</span></div>
+<p>untuk semua
+<span class="math inline" data-source-tex="x\in\bigcup_{n\in\Bbb N}\bigcap_{m\ge n}\dom f_m">\(x\in\bigcup_{n\in\Bbb N}\bigcap_{m\ge n}\dom f_m\)</span> yang limitnya ada
+dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Maka <span class="math inline" data-source-tex="\lim_{n\to\infty}f_n">\(\lim_{n\to\infty}f_n\)</span> merupakan fungsi
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>-terukur.</p>
+<span class="anchor" id="121Fb"></span>
+<p>(b) Definisikan suatu fungsi <span class="math inline" data-source-tex="\sup_{n\in\Bbb N}f_n">\(\sup_{n\in\Bbb N}f_n\)</span> dengan menuliskan</p>
+<div class="centerline"><span class="math inline" data-source-tex="(\sup_{n\in\Bbb N}f_n)(x)=\sup_{n\in\Bbb N}f_n(x)">\((\sup_{n\in\Bbb N}f_n)(x)=\sup_{n\in\Bbb N}f_n(x)\)</span></div>
+<p>untuk semua <span class="math inline" data-source-tex="x\in\bigcap_{n\in\Bbb N}\dom f_n">\(x\in\bigcap_{n\in\Bbb N}\dom f_n\)</span> yang
+supremumnya ada dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Maka <span class="math inline" data-source-tex="\sup_{n\in\Bbb N}f_n">\(\sup_{n\in\Bbb N}f_n\)</span> merupakan
+fungsi <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>-terukur.</p>
+<span class="anchor" id="121Fc"></span>
+<p>(c) Definisikan suatu fungsi <span class="math inline" data-source-tex="\inf_{n\in\Bbb N}f_n">\(\inf_{n\in\Bbb N}f_n\)</span> dengan menuliskan</p>
+<div class="centerline"><span class="math inline" data-source-tex="(\inf_{n\in\Bbb N}f_n)(x)=\inf_{n\in\Bbb N}f_n(x)">\((\inf_{n\in\Bbb N}f_n)(x)=\inf_{n\in\Bbb N}f_n(x)\)</span></div>
+<p>untuk semua <span class="math inline" data-source-tex="x\in\bigcap_{n\in\Bbb N}\dom f_n">\(x\in\bigcap_{n\in\Bbb N}\dom f_n\)</span> yang
+infimumnya ada dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Maka <span class="math inline" data-source-tex="\inf_{n\in\Bbb N}f_n">\(\inf_{n\in\Bbb N}f_n\)</span> merupakan
+fungsi <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>-terukur.</p>
+<span class="anchor" id="121Fd"></span>
+<p>(d) Definisikan suatu fungsi <span class="math inline" data-source-tex="\limsup_{n\to\infty}f_n">\(\limsup_{n\to\infty}f_n\)</span> dengan
+menuliskan</p>
+<div class="centerline"><span class="math inline" data-source-tex="(\limsup_{n\to\infty}f_n)(x)
+=\limsup_{n\to\infty}f_n(x)">\((\limsup_{n\to\infty}f_n)(x)
+=\limsup_{n\to\infty}f_n(x)\)</span></div>
+<p>untuk semua
+<span class="math inline" data-source-tex="x\in\bigcup_{n\in\Bbb N}\bigcap_{m\ge n}\dom f_m">\(x\in\bigcup_{n\in\Bbb N}\bigcap_{m\ge n}\dom f_m\)</span> yang <span class="math inline" data-source-tex="\limsup">\(\limsup\)</span>-nya
+ada dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Maka <span class="math inline" data-source-tex="\limsup_{n\to\infty}f_n">\(\limsup_{n\to\infty}f_n\)</span> merupakan fungsi
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>-terukur.</p>
+<span class="anchor" id="121Fe"></span>
+<p>(e) Definisikan suatu fungsi <span class="math inline" data-source-tex="\liminf_{n\to\infty}f_n">\(\liminf_{n\to\infty}f_n\)</span> dengan
+menuliskan</p>
+<div class="centerline"><span class="math inline" data-source-tex="(\liminf_{n\to\infty}f_n)(x)
+=\liminf_{n\to\infty}f_n(x)">\((\liminf_{n\to\infty}f_n)(x)
+=\liminf_{n\to\infty}f_n(x)\)</span></div>
+<p>untuk semua
+<span class="math inline" data-source-tex="x\in\bigcup_{n\in\Bbb N}\bigcap_{m\ge n}\dom f_m">\(x\in\bigcup_{n\in\Bbb N}\bigcap_{m\ge n}\dom f_m\)</span> yang <span class="math inline" data-source-tex="\liminf">\(\liminf\)</span>-nya
+ada dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Maka <span class="math inline" data-source-tex="\liminf_{n\to\infty}f_n">\(\liminf_{n\to\infty}f_n\)</span> merupakan fungsi
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>-terukur.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Untuk <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>, pilih
+<span class="math inline" data-source-tex="H_n(a)\in\Sigma">\(H_n(a)\in\Sigma\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\{x:f_n(x)\le a\}=H_n(a)\cap \dom f_n">\(\{x:f_n(x)\le a\}=H_n(a)\cap \dom f_n\)</span>. Sekarang, bukti-buktinya
+cukup dengan mengamati fakta-fakta berikut:</p>
+<p> </p>
+<p><strong>(a)</strong>
+<span class="math inline" data-source-tex="\{x:(\lim_{n\to\infty}f_n)(x)\le a\}
+=\dom(\lim_{n\to\infty}f_n)
+  \cap\bigcap_{k\in\Bbb N}\bigcup_{n\in\Bbb N}
+    \bigcap_{m\ge n}H_m(a+2^{-k})">\(\{x:(\lim_{n\to\infty}f_n)(x)\le a\}
+=\dom(\lim_{n\to\infty}f_n)
+  \cap\bigcap_{k\in\Bbb N}\bigcup_{n\in\Bbb N}
+    \bigcap_{m\ge n}H_m(a+2^{-k})\)</span>;</p>
+<p> </p>
+<p><strong>(b)</strong> <span class="math inline" data-source-tex="\{x:(\sup_{n\in\Bbb N}f_n)(x)\le a\}
+=\dom(\sup_{n\in\Bbb N}f_n)\cap\bigcap_{n\in\Bbb N}H_n(a)">\(\{x:(\sup_{n\in\Bbb N}f_n)(x)\le a\}
+=\dom(\sup_{n\in\Bbb N}f_n)\cap\bigcap_{n\in\Bbb N}H_n(a)\)</span>;</p>
+<p> </p>
+<p><strong>(c)</strong> <span class="math inline" data-source-tex="\inf_{n\in\Bbb N}f_n=-\sup_{n\in\Bbb N}(-f_n)">\(\inf_{n\in\Bbb N}f_n=-\sup_{n\in\Bbb N}(-f_n)\)</span>;</p>
+<p> </p>
+<p><strong>(d)</strong> <span class="math inline" data-source-tex="\limsup_{n\to\infty}f_n
+=\lim_{n\to\infty}\sup_{m\in\Bbb N}f_{m+n}">\(\limsup_{n\to\infty}f_n
+=\lim_{n\to\infty}\sup_{m\in\Bbb N}f_{m+n}\)</span>;</p>
+<p> </p>
+<p><strong>(e)</strong> <span class="math inline" data-source-tex="\liminf_{n\to\infty}f_n
+=-\limsup_{n\to\infty}(-f_n)">\(\liminf_{n\to\infty}f_n
+=-\limsup_{n\to\infty}(-f_n)\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="121G" data-source-id="121G"><h2><span class="source-label">121G</span> Catatan </h2>
+<p>Pada titik inilah kita untuk pertama kalinya
+berhadapan secara nyata dengan persoalan fungsi yang tidak terdefinisi
+di seluruh ruang. (Hasil bagi <span class="math inline" data-source-tex="f/g">\(f/g\)</span> dalam <a class="xref" href="#121Ee">121Ee</a> juga tidak harus
+terdefinisi di seluruh domain bersama <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span>, tetapi hal ini kurang
+penting dan lebih mudah ditangani.) Sejak Lebesgue, inti teori ukuran
+dan integrasi ialah bahwa kita dapat menangani limit barisan fungsi;
+dan himpunan tempat <span class="math inline" data-source-tex="\lim_{n\to\infty}f_n(x)">\(\lim_{n\to\infty}f_n(x)\)</span> ada dapat sangat tidak
+teratur, bahkan bagi fungsi-fungsi <span class="math inline" data-source-tex="f_n">\(f_n\)</span> yang tampaknya berperilaku
+baik. (Jika Anda pernah menjumpai teori deret Fourier, contoh yang tepat
+untuk dipikirkan ialah barisan jumlah parsial
+<span class="math inline" data-source-tex="f_n(x)={1\over 2}a_0+\sum_{k=1}^n(a_k\cos kx+b_k\sin kx)">\(f_n(x)={1\over 2}a_0+\sum_{k=1}^n(a_k\cos kx+b_k\sin kx)\)</span> dari suatu
+deret Fourier dengan <span class="math inline" data-source-tex="\sum_{k=1}^{\infty}(|a_k|+|b_k|)=\infty">\(\sum_{k=1}^{\infty}(|a_k|+|b_k|)=\infty\)</span>, sehingga
+deret tersebut tidak dapat dijumlahkan mutlak secara seragam, tetapi
+mungkin dapat dijumlahkan secara bersyarat pada titik-titik tertentu.)</p>
+<p>Saya telah berusaha menjelaskan domain mana yang saya maksud bagi
+fungsi-fungsi <span class="math inline" data-source-tex="\sup_{n\in\Bbb N}f_n">\(\sup_{n\in\Bbb N}f_n\)</span>,
+<span class="math inline" data-source-tex="\lim_{n\to\infty}f_n">\(\lim_{n\to\infty}f_n\)</span>, dan seterusnya. Asas penuntunnya ialah bahwa
+domain-domain itu harus menjadi himpunan semua <span class="math inline" data-source-tex="x\in X">\(x\in X\)</span> yang untuknya
+rumus pendefinisi <span class="math inline" data-source-tex="\sup_{n\in\Bbb N}f_n(x)">\(\sup_{n\in\Bbb N}f_n(x)\)</span>,
+<span class="math inline" data-source-tex="\lim_{n\to\infty}f_n(x)">\(\lim_{n\to\infty}f_n(x)\)</span> dapat ditafsirkan sebagai bilangan real.
+(Seperti saya catat dalam <a class="xref" href="#121C">121C</a>, untuk sementara saya menghindari
+‘<span class="math inline" data-source-tex="\infty">\(\infty\)</span>’ sebagai nilai fungsi, walaupun hal itu hanya menimbulkan
+sedikit kesulitan dan beberapa rumus lebih alami ditafsirkan dengan
+mengizinkannya.) Namun, dalam kasus <span class="math inline" data-source-tex="\lim">\(\lim\)</span>, <span class="math inline" data-source-tex="\limsup">\(\limsup\)</span>, <span class="math inline" data-source-tex="\liminf">\(\liminf\)</span>,
+perlu dicatat bahwa saya menggunakan definisi yang membatasi, yakni
+<span class="math inline" data-source-tex="\lim_{n\to\infty}a_n">\(\lim_{n\to\infty}a_n\)</span> dapat dianggap ada hanya jika terdapat suatu
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> sedemikian sehingga <span class="math inline" data-source-tex="a_m">\(a_m\)</span> terdefinisi untuk setiap
+<span class="math inline" data-source-tex="m\ge n">\(m\ge n\)</span>. Ada kalanya lebih alami untuk menerima limit ketika kita
+hanya tahu bahwa <span class="math inline" data-source-tex="a_m">\(a_m\)</span> terdefinisi untuk tak hingga banyak nilai <span class="math inline" data-source-tex="m">\(m\)</span>;
+tetapi kesepakatan semacam itu dapat membuat <a class="xref" href="#121Fa">121Fa</a> salah, kecuali jika
+diterapkan dengan hati-hati.</p>
+<p>Seperti dalam <a class="xref" href="../111/index.html#111E">111E</a>-<a class="xref" href="../111/index.html#111F">111F</a>, kita dapat menggunakan gagasan pada bagian (b),
+(c) di sini untuk membahas fungsi berbentuk <span class="math inline" data-source-tex="\sup_{k\in K}f_k">\(\sup_{k\in K}f_k\)</span>,
+<span class="math inline" data-source-tex="\inf_{k\in K}f_k">\(\inf_{k\in K}f_k\)</span> bagi sembarang keluarga
+<span class="math inline" data-source-tex="\langle f_k\rangle_{k\in K}">\(\langle f_k\rangle_{k\in K}\)</span> fungsi terukur yang diindeks oleh
+himpunan terhitung tak kosong <span class="math inline" data-source-tex="K">\(K\)</span>.</p>
+<p>Dalam teorema ini dan teorema sebelumnya, fungsi-fungsi <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g">\(g\)</span>,
+<span class="math inline" data-source-tex="f_n">\(f_n\)</span> diizinkan mempunyai domain sembarang, sehingga tidak ada yang
+dapat dikatakan tentang domain fungsi-fungsi yang dikonstruksi. Namun,
+tentu saja, jika fungsi-fungsi semula mempunyai domain terukur, maka
+demikian pula fungsi-fungsi yang dikonstruksi darinya menurut aturan
+yang saya usulkan. Saya menjabarkan rinciannya dalam proposisi berikut.</p>
+</section>
+<section class="source-unit" id="121H" data-source-id="121H"><h2><span class="source-label">121H</span> Proposisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan dan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>
+suatu aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>; misalkan
+<span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g">\(g\)</span>, dan <span class="math inline" data-source-tex="f_n">\(f_n\)</span>, untuk <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, adalah fungsi-fungsi bernilai
+real yang <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>-terukur dan domainnya termasuk dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. Maka
+semua fungsi</p>
+<div class="centerline"><span class="math inline" data-source-tex="f+g">\(f+g\)</span>,   <span class="math inline" data-source-tex="f\times g">\(f\times g\)</span>,   <span class="math inline" data-source-tex="f/g">\(f/g\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\sup_{n\in\Bbb N}f_n">\(\sup_{n\in\Bbb N}f_n\)</span>,   <span class="math inline" data-source-tex="\inf_{n\in\Bbb N}f_n">\(\inf_{n\in\Bbb N}f_n\)</span>,
+  <span class="math inline" data-source-tex="\lim_{n\to\infty}f_n">\(\lim_{n\to\infty}f_n\)</span>,   <span class="math inline" data-source-tex="\limsup_{n\to\infty}f_n">\(\limsup_{n\to\infty}f_n\)</span>,
+  <span class="math inline" data-source-tex="\liminf_{n\to\infty}f_n">\(\liminf_{n\to\infty}f_n\)</span></div>
+<p>mempunyai domain yang termasuk dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. Selain itu,
+jika <span class="math inline" data-source-tex="h">\(h\)</span> adalah fungsi bernilai real terukur Borel yang didefinisikan
+pada suatu subhimpunan Borel dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, maka <span class="math inline" data-source-tex="\dom hf\in\Sigma">\(\dom hf\in\Sigma\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Untuk dua fungsi pertama, kita mempunyai
+<span class="math inline" data-source-tex="\dom(f+g)=\dom(f\times g)=\dom f\cap \dom g">\(\dom(f+g)=\dom(f\times g)=\dom f\cap \dom g\)</span>. Selanjutnya, jika <span class="math inline" data-source-tex="E">\(E\)</span>
+adalah suatu subhimpunan Borel dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, terdapat <span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="f^{-1}[E]=H\cap\dom f">\(f^{-1}[E]=H\cap\dom f\)</span>; jadi
+<span class="math inline" data-source-tex="f^{-1}[E]\in\Sigma">\(f^{-1}[E]\in\Sigma\)</span>. Dengan demikian</p>
+<div class="centerline"><span class="math inline" data-source-tex="\dom hf=f^{-1}[\dom h]\in\Sigma">\(\dom hf=f^{-1}[\dom h]\in\Sigma\)</span>.</div>
+<p>Dengan menetapkan <span class="math inline" data-source-tex="h(a)=1/a">\(h(a)=1/a\)</span> untuk
+<span class="math inline" data-source-tex="a\in\Bbb R\setminus\{0\}">\(a\in\Bbb R\setminus\{0\}\)</span>, kita melihat bahwa
+<span class="math inline" data-source-tex="\dom(1/f)\in\Sigma">\(\dom(1/f)\in\Sigma\)</span>. (<span class="math inline" data-source-tex="\dom h=\Bbb R\setminus\{0\}">\(\dom h=\Bbb R\setminus\{0\}\)</span> adalah himpunan
+Borel karena terbuka.) Demikian pula, <span class="math inline" data-source-tex="\dom(1/g)">\(\dom(1/g)\)</span> dan
+<span class="math inline" data-source-tex="\dom(f/g)=\dom f\cap\dom(1/g)">\(\dom(f/g)=\dom f\cap\dom(1/g)\)</span> termasuk dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>.</p>
+<p>Sekarang tinjau kombinasi-kombinasi tak hingga. Tetapkan
+<span class="math inline" data-source-tex="H_n(a)=\{x:x\in\dom f_n,\,f_n(x)&lt;a\}">\(H_n(a)=\{x:x\in\dom f_n,\,f_n(x)&lt;a\}\)</span> untuk
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>; seperti baru saja dijelaskan, setiap
+<span class="math inline" data-source-tex="H_n(a)">\(H_n(a)\)</span> termasuk dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. Sekarang</p>
+<div class="centerline"><span class="math inline" data-source-tex="\dom(\sup_{n\in\Bbb N}f_n)
+=\bigcup_{m\in\Bbb N}\bigcap_{n\in\Bbb N}H_n(m)\in\Sigma">\(\dom(\sup_{n\in\Bbb N}f_n)
+=\bigcup_{m\in\Bbb N}\bigcap_{n\in\Bbb N}H_n(m)\in\Sigma\)</span>.</div>
+<p>Selanjutnya, <span class="math inline" data-source-tex="|f_m-f_n|">\(|f_m-f_n|\)</span> terukur, dengan domain yang termasuk
+dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, untuk semua <span class="math inline" data-source-tex="m">\(m\)</span>, <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> (dengan menerapkan
+hasil-hasil di atas pada <span class="math inline" data-source-tex="-f_n=-1\cdot f_n">\(-f_n=-1\cdot f_n\)</span>,
+<span class="math inline" data-source-tex="f_m-f_n=f_m+(-f_n)">\(f_m-f_n=f_m+(-f_n)\)</span>, dan <span class="math inline" data-source-tex="|f_m-f_n|=|\,\,|\circ(f_m-f_n)">\(|f_m-f_n|=|\,\,|\circ(f_m-f_n)\)</span>), sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="G_{mnk}
+=\{x:x\in\dom f_m\cap\dom f_n,\,|f_m(x)-f_n(x)|\le 2^{-k}\}\in\Sigma">\(G_{mnk}
+=\{x:x\in\dom f_m\cap\dom f_n,\,|f_m(x)-f_n(x)|\le 2^{-k}\}\in\Sigma\)</span></div>
+<p>untuk semua <span class="math inline" data-source-tex="m">\(m\)</span>, <span class="math inline" data-source-tex="n">\(n\)</span>, <span class="math inline" data-source-tex="k\in\Bbb N">\(k\in\Bbb N\)</span>. Dengan demikian</p>
+<div class="centerline"><span class="math inline" data-source-tex="\dom(\lim_{n\to\infty}f_n)
+=\{x:\Exists n,\,\langle f_m(x)\rangle_{m\ge n}">\(\dom(\lim_{n\to\infty}f_n)
+=\{x:\Exists n,\,\langle f_m(x)\rangle_{m\ge n}\)</span> merupakan barisan Cauchy<span class="math inline" data-source-tex="\}
+=\bigcap_{k\in\Bbb N}\bigcup_{n\in\Bbb N}\bigcap_{m\ge n}G_{mnk}
+\in\Sigma">\(\}
+=\bigcap_{k\in\Bbb N}\bigcup_{n\in\Bbb N}\bigcap_{m\ge n}G_{mnk}
+\in\Sigma\)</span>.</div>
+<p>Dengan memanipulasi hasil-hasil di atas seperti dalam (c), (d), dan (e)
+dari bukti <a class="xref" href="#121F">121F</a>, kita dengan mudah menyelesaikan bukti.</p></aside>
+<p> </p>
+<p><strong>Catatan</strong> Perhatikan penggunaan Asas Umum Konvergensi
+dalam bukti di atas. Saya tidak yakin apakah hal ini akan terasa
+‘alami’ bagi Anda, dan ada metode-metode alternatif; tetapi rumus</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:\lim_{n\to\infty}f_n(x)">\(\{x:\lim_{n\to\infty}f_n(x)\)</span> ada dalam <span class="math inline" data-source-tex="\Bbb R\}
+=\{x:\sequencen{f_n(x)}">\(\Bbb R\}
+=\{x:\sequencen{f_n(x)}\)</span> merupakan barisan Cauchy<span class="math inline" data-source-tex="\}">\(\}\)</span></div>
+<p>patut disimpan dalam ingatan jangka panjang Anda.</p>
+</section>
+<section class="source-unit optional-result" id="121I" data-source-id="121I" data-source-layout-id="*121I"><h2><span class="source-label">121I</span> Hasil tambahan </h2>
+<p>Saya mengakhiri bagian ini dengan dua hasil
+yang dapat dilewati dengan aman pada pembacaan pertama, tetapi yang pada
+suatu saat perlu Anda kuasai jika ingin melangkah lebih jauh dalam teori
+ukuran daripada bab ini, karena keduanya merupakan bagian-bagian hakiki
+dari konsep ‘fungsi terukur’.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan dan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>
+suatu aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>. Misalkan <span class="math inline" data-source-tex="D">\(D\)</span>
+suatu subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span> dan <span class="math inline" data-source-tex="f:D\to\Bbb R">\(f:D\to\Bbb R\)</span> suatu fungsi. Maka <span class="math inline" data-source-tex="f">\(f\)</span> terukur
+jika dan hanya jika terdapat fungsi terukur <span class="math inline" data-source-tex="h:X\to\Bbb R">\(h:X\to\Bbb R\)</span> yang
+memperluas <span class="math inline" data-source-tex="f">\(f\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><span class="anchor" id="121I-proof-a"></span><strong>(a)</strong> Jika <span class="math inline" data-source-tex="h:X\to\Bbb R">\(h:X\to\Bbb R\)</span> terukur dan <span class="math inline" data-source-tex="f=h\restr D">\(f=h\restr D\)</span>, maka
+<span class="math inline" data-source-tex="f">\(f\)</span> terukur menurut <a class="xref" href="#121Eh">121Eh</a>.</p>
+<p> </p>
+<p><span class="anchor" id="121I-proof-b"></span><strong>(b)</strong> Sekarang andaikan bahwa <span class="math inline" data-source-tex="f">\(f\)</span> terukur.</p>
+<p> </p>
+<p>  <strong>(i)</strong> Untuk setiap <span class="math inline" data-source-tex="q\in\Bbb Q">\(q\in\Bbb Q\)</span>, himpunan
+<span class="math inline" data-source-tex="D_q=\{x:x\in D,\,f(x)\le q\}">\(D_q=\{x:x\in D,\,f(x)\le q\}\)</span> termasuk dalam aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>
+subruang <span class="math inline" data-source-tex="\Sigma_D">\(\Sigma_D\)</span>, yakni, terdapat <span class="math inline" data-source-tex="E_q\in\Sigma">\(E_q\in\Sigma\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="D_q=E_q\cap D">\(D_q=E_q\cap D\)</span>. Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="F=X\setminus\bigcup_{q\in\Bbb Q}E_q">\(F=X\setminus\bigcup_{q\in\Bbb Q}E_q\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="G=\bigcap_{n\in\Bbb N}\bigcup_{q\in\Bbb Q,q\le -n}E_q">\(G=\bigcap_{n\in\Bbb N}\bigcup_{q\in\Bbb Q,q\le -n}E_q\)</span>;</div>
+<p>maka <span class="math inline" data-source-tex="F">\(F\)</span> dan <span class="math inline" data-source-tex="G">\(G\)</span> keduanya termasuk dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dan saling
+lepas dari <span class="math inline" data-source-tex="D">\(D\)</span>. Bukti. Jika <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span>, terdapat <span class="math inline" data-source-tex="q\in\Bbb Q">\(q\in\Bbb Q\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="f(x)\le q">\(f(x)\le q\)</span>, sehingga <span class="math inline" data-source-tex="x\in E_q">\(x\in E_q\)</span> dan <span class="math inline" data-source-tex="x\notin F">\(x\notin F\)</span>. Selain itu,
+terdapat <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> sedemikian sehingga <span class="math inline" data-source-tex="f(x)&gt;-n">\(f(x)&gt;-n\)</span>, sehingga
+<span class="math inline" data-source-tex="x\notin E_{q&#x27;}">\(x\notin E_{q&#x27;}\)</span> untuk <span class="math inline" data-source-tex="q&#x27;\le-n">\(q&#x27;\le-n\)</span> dan <span class="math inline" data-source-tex="x\notin G">\(x\notin G\)</span>. ∎</p>
+<p>Tetapkan <span class="math inline" data-source-tex="H=X\setminus(F\cup G)\in\Sigma">\(H=X\setminus(F\cup G)\in\Sigma\)</span>. Untuk <span class="math inline" data-source-tex="x\in H">\(x\in H\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{q:q\in\Bbb Q,\,x\in E_q\}">\(\{q:q\in\Bbb Q,\,x\in E_q\}\)</span></div>
+<p>tak kosong dan berbatas bawah, sehingga kita dapat menetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="h(x)=\inf\{q:x\in E_q\}">\(h(x)=\inf\{q:x\in E_q\}\)</span>;</div>
+<p>untuk <span class="math inline" data-source-tex="x\in F\cup G">\(x\in F\cup G\)</span>, tetapkan <span class="math inline" data-source-tex="h(x)=0">\(h(x)=0\)</span>. Ini mendefinisikan
+<span class="math inline" data-source-tex="h:X\to\Bbb R">\(h:X\to\Bbb R\)</span>.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> <span class="math inline" data-source-tex="h(x)=f(x)">\(h(x)=f(x)\)</span> untuk <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span>. Bukti. Seperti telah
+dicatat di atas, <span class="math inline" data-source-tex="x\in H">\(x\in H\)</span>. Jika <span class="math inline" data-source-tex="q\in\Bbb Q">\(q\in\Bbb Q\)</span> dan <span class="math inline" data-source-tex="x\in E_q">\(x\in E_q\)</span>, maka
+<span class="math inline" data-source-tex="f(x)\le q">\(f(x)\le q\)</span>; akibatnya <span class="math inline" data-source-tex="h(x)\ge f(x)">\(h(x)\ge f(x)\)</span>. Di pihak lain, untuk setiap
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, terdapat <span class="math inline" data-source-tex="q\in\Bbb Q\cap[f(x),f(x)+\epsilon]">\(q\in\Bbb Q\cap[f(x),f(x)+\epsilon]\)</span>, dan
+sekarang <span class="math inline" data-source-tex="x\in E_q">\(x\in E_q\)</span>, sehingga <span class="math inline" data-source-tex="h(x)\le q\le f(x)+\epsilon">\(h(x)\le q\le f(x)+\epsilon\)</span>; karena
+<span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang, <span class="math inline" data-source-tex="h(x)\le f(x)">\(h(x)\le f(x)\)</span>. ∎</p>
+<p> </p>
+<p>  <strong>(iii)</strong> <span class="math inline" data-source-tex="h">\(h\)</span> terukur. Bukti. Jika <span class="math inline" data-source-tex="a&gt;0">\(a&gt;0\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:h(x)&lt;a\}=(H\cap\bigcup_{q&lt;a}E_q)\cup(F\cup
+G)\in\Sigma">\(\{x:h(x)&lt;a\}=(H\cap\bigcup_{q&lt;a}E_q)\cup(F\cup
+G)\in\Sigma\)</span>,</div>
+<p>sedangkan jika <span class="math inline" data-source-tex="a\le 0">\(a\le 0\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:h(x)&lt;a\}=H\cap\bigcup_{q&lt;a}E_q\in\Sigma">\(\{x:h(x)&lt;a\}=H\cap\bigcup_{q&lt;a}E_q\in\Sigma\)</span>. ∎</div>
+<p>Ini menyelesaikan bukti.</p></aside>
+</section>
+<section class="source-unit optional-result" id="121J" data-source-id="121J" data-source-layout-id="*121J"><h2><span class="source-label">121J</span> Hasil tambahan </h2>
+<p>Proposisi berikut dapat memperjelas <a class="xref" href="#121E">121E</a>,
+sekaligus sangat diperlukan bagi pekerjaan dalam Jilid 2. Saya mulai
+dengan suatu deskripsi berguna tentang himpunan-himpunan Borel dalam
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>.</p>
+<p> </p>
+<p><strong>Lema</strong> Misalkan <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span> suatu bilangan bulat, dan
+tuliskan <span class="math inline" data-source-tex="\Cal J">\(\Cal J\)</span> untuk keluarga subhimpunan-subhimpunan <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>
+yang berbentuk <span class="math inline" data-source-tex="\{x:\xi_i\le\alpha\}">\(\{x:\xi_i\le\alpha\}\)</span>, dengan <span class="math inline" data-source-tex="i\le r">\(i\le r\)</span>,
+<span class="math inline" data-source-tex="\alpha\in\Bbb R">\(\alpha\in\Bbb R\)</span>, serta <span class="math inline" data-source-tex="x=(\xi_1,\ldots,\xi_r)">\(x=(\xi_1,\ldots,\xi_r)\)</span>, seperti dalam
+§115. Maka aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas subhimpunan-subhimpunan <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>
+yang dibangkitkan oleh <span class="math inline" data-source-tex="\Cal J">\(\Cal J\)</span> tepat sama dengan aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>
+<span class="math inline" data-source-tex="\Cal B">\(\Cal B\)</span> dari subhimpunan-subhimpunan Borel <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><span class="anchor" id="121J-proof-a"></span><strong>(a)</strong> Semua himpunan dalam <span class="math inline" data-source-tex="\Cal J">\(\Cal J\)</span> tertutup, sehingga
+harus termasuk dalam <span class="math inline" data-source-tex="\Cal B">\(\Cal B\)</span>; dengan menuliskan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> untuk
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> yang dibangkitkan oleh <span class="math inline" data-source-tex="\Cal J">\(\Cal J\)</span>, kita harus mempunyai
+<span class="math inline" data-source-tex="\Sigma\subseteq\Cal B">\(\Sigma\subseteq\Cal B\)</span>.</p>
+<p> </p>
+<p><span class="anchor" id="121J-proof-b"></span><strong>(b)</strong> Langkah berikutnya ialah mengamati bahwa semua interval
+setengah terbuka berbentuk</p>
+<div class="centerline"><span class="math inline" data-source-tex="\ocint{a,b}
+=\{x:\alpha_i&lt;\xi_i\le\beta_i\Forall i\le r\}">\(\ocint{a,b}
+=\{x:\alpha_i&lt;\xi_i\le\beta_i\Forall i\le r\}\)</span></div>
+<p>termasuk dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>; hal ini karena</p>
+<div class="centerline"><span class="math inline" data-source-tex="\ocint{a,b}=\bigcap_{i\le
+r}(\{x:\xi_i\le\beta_i\}\setminus\{x:\xi_i\le\alpha_i\})">\(\ocint{a,b}=\bigcap_{i\le
+r}(\{x:\xi_i\le\beta_i\}\setminus\{x:\xi_i\le\alpha_i\})\)</span>.</div>
+<p>Akibatnya, semua himpunan terbuka termasuk dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>.
+Bukti. (Bandingkan bukti <a class="xref" href="#121Ef">121Ef</a>.) Misalkan <span class="math inline" data-source-tex="G\subseteq\BbbR^r">\(G\subseteq\BbbR^r\)</span> suatu
+himpunan terbuka. Misalkan <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> adalah himpunan semua interval
+berbentuk <span class="math inline" data-source-tex="\ocint{q,q&#x27;}">\(\ocint{q,q&#x27;}\)</span> yang termuat dalam <span class="math inline" data-source-tex="G">\(G\)</span>, dengan
+<span class="math inline" data-source-tex="q">\(q\)</span>, <span class="math inline" data-source-tex="q&#x27;\in\BbbQ^r">\(q&#x27;\in\BbbQ^r\)</span>. Maka <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> adalah subhimpunan terhitung dari
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, sehingga (karena <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> adalah aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>)
+<span class="math inline" data-source-tex="\bigcup\Cal I\in\Sigma">\(\bigcup\Cal I\in\Sigma\)</span>. Menurut definisi <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span>,
+<span class="math inline" data-source-tex="\bigcup\Cal I\subseteq G">\(\bigcup\Cal I\subseteq G\)</span>. Namun, jika <span class="math inline" data-source-tex="x\in G">\(x\in G\)</span>, terdapat
+<span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga bola terbuka <span class="math inline" data-source-tex="U(x,\delta)">\(U(x,\delta)\)</span> yang berpusat
+di <span class="math inline" data-source-tex="x">\(x\)</span> dan berjari-jari <span class="math inline" data-source-tex="\delta">\(\delta\)</span> termuat dalam <span class="math inline" data-source-tex="G">\(G\)</span> (1A2A).
+Sekarang, untuk setiap <span class="math inline" data-source-tex="i\le r">\(i\le r\)</span>, kita dapat menemukan bilangan-bilangan
+rasional <span class="math inline" data-source-tex="\alpha_i">\(\alpha_i\)</span>, <span class="math inline" data-source-tex="\beta_i">\(\beta_i\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\xi_i-\Bover{\delta}r
+\le\alpha_i&lt;\xi_i\le\beta_i&lt;\xi_i+\Bover{\delta}r">\(\xi_i-\Bover{\delta}r
+\le\alpha_i&lt;\xi_i\le\beta_i&lt;\xi_i+\Bover{\delta}r\)</span>,</div>
+<p>sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="x\in\ocint{a,b}\subseteq U(x,\delta)\subseteq G">\(x\in\ocint{a,b}\subseteq U(x,\delta)\subseteq G\)</span></div>
+<p>dan <span class="math inline" data-source-tex="x\in\ocint{a,b}\in\Cal I">\(x\in\ocint{a,b}\in\Cal I\)</span>. Jadi
+<span class="math inline" data-source-tex="x\in\bigcup\Cal I">\(x\in\bigcup\Cal I\)</span>. Karena <span class="math inline" data-source-tex="x">\(x\)</span> sebarang,
+<span class="math inline" data-source-tex="G\subseteq\bigcup\Cal I">\(G\subseteq\bigcup\Cal I\)</span> dan <span class="math inline" data-source-tex="G=\bigcup\Cal I\in\Sigma">\(G=\bigcup\Cal I\in\Sigma\)</span>. ∎</p>
+<p> </p>
+<p><span class="anchor" id="121J-proof-c"></span><strong>(c)</strong> Dengan demikian, <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> adalah aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> himpunan
+yang memuat setiap himpunan terbuka, dan harus memuat <span class="math inline" data-source-tex="\Cal B">\(\Cal B\)</span>,
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> terkecil semacam itu.</p></aside>
+<p> </p>
+<p><strong>Catatan</strong> Bandingkan bukti <a class="xref" href="../115/index.html#115G">115G</a>.</p>
+</section>
+<section class="source-unit optional-result" id="121K" data-source-id="121K" data-source-layout-id="*121K"><h2><span class="source-label">121K</span> Proposisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan dan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>
+suatu aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>. Misalkan
+<span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span> suatu bilangan bulat, dan <span class="math inline" data-source-tex="f_1,\ldots,f_r">\(f_1,\ldots,f_r\)</span> fungsi-fungsi
+terukur yang didefinisikan pada subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>. Tetapkan
+<span class="math inline" data-source-tex="D=\bigcap_{i\le r}\dom f_i">\(D=\bigcap_{i\le r}\dom f_i\)</span>, dan untuk <span class="math inline" data-source-tex="x\in D">\(x\in D\)</span> tetapkan
+<span class="math inline" data-source-tex="f(x)=(f_1(x),\ldots,f_r(x))\in\BbbR^r">\(f(x)=(f_1(x),\ldots,f_r(x))\in\BbbR^r\)</span>. Maka</p>
+<span class="anchor" id="121Ka"></span>
+<p>(a) untuk setiap himpunan Borel <span class="math inline" data-source-tex="E\subseteq\BbbR^r">\(E\subseteq\BbbR^r\)</span>, <span class="math inline" data-source-tex="f^{-1}[E]">\(f^{-1}[E]\)</span>
+termasuk dalam aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> subruang <span class="math inline" data-source-tex="\Sigma_D">\(\Sigma_D\)</span>;</p>
+<span class="anchor" id="121Kb"></span>
+<p>(b) jika <span class="math inline" data-source-tex="h">\(h\)</span> adalah suatu fungsi terukur Borel dari suatu subhimpunan
+<span class="math inline" data-source-tex="\dom h">\(\dom h\)</span> dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> ke <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, maka komposisi <span class="math inline" data-source-tex="hf">\(hf\)</span> terukur.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)(i)</strong> Tinjau himpunan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Tau=\{E:E\subseteq\BbbR^r,\,f^{-1}[E]\in\Sigma_D\}">\(\Tau=\{E:E\subseteq\BbbR^r,\,f^{-1}[E]\in\Sigma_D\}\)</span>.</div>
+<p>Maka <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> adalah aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas
+subhimpunan-subhimpunan <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>.
+Bukti. (Bandingkan <a class="xref" href="#121Ef">121Ef</a>.) <strong>(<span class="math inline" data-source-tex="\pmb{\alpha}">\(\pmb{\alpha}\)</span>)</strong>
+<span class="math inline" data-source-tex="f^{-1}[\emptyset]=\emptyset\in\Sigma_D">\(f^{-1}[\emptyset]=\emptyset\in\Sigma_D\)</span>, sehingga
+<span class="math inline" data-source-tex="\emptyset\in\Tau">\(\emptyset\in\Tau\)</span>. <strong>(<span class="math inline" data-source-tex="\pmb{\beta}">\(\pmb{\beta}\)</span>)</strong> Jika <span class="math inline" data-source-tex="E\in\Tau">\(E\in\Tau\)</span>, maka
+<span class="math inline" data-source-tex="f^{-1}[\BbbR^r\setminus E]=D\setminus f^{-1}[E]\in\Sigma_D">\(f^{-1}[\BbbR^r\setminus E]=D\setminus f^{-1}[E]\in\Sigma_D\)</span>,
+sehingga <span class="math inline" data-source-tex="\BbbR^r\setminus E\in\Tau">\(\BbbR^r\setminus E\in\Tau\)</span>.
+<strong>(<span class="math inline" data-source-tex="\pmb{\gamma}">\(\pmb{\gamma}\)</span>)</strong> Jika <span class="math inline" data-source-tex="\langle E_n\rangle_{n\in\Bbb N}">\(\langle E_n\rangle_{n\in\Bbb N}\)</span> adalah
+suatu barisan di dalam <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>, maka
+<span class="math inline" data-source-tex="f^{-1}[\bigcup_{n\in\Bbb N}E_n]
+=\bigcup_{n\in\Bbb N}f^{-1}[E_n]\in\Sigma_D">\(f^{-1}[\bigcup_{n\in\Bbb N}E_n]
+=\bigcup_{n\in\Bbb N}f^{-1}[E_n]\in\Sigma_D\)</span> karena <span class="math inline" data-source-tex="\Sigma_D">\(\Sigma_D\)</span>
+adalah aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>, sehingga <span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}E_n\in\Tau">\(\bigcup_{n\in\Bbb N}E_n\in\Tau\)</span>. ∎</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Selanjutnya, untuk setiap <span class="math inline" data-source-tex="i\le r">\(i\le r\)</span> dan
+<span class="math inline" data-source-tex="\alpha\in\Bbb R">\(\alpha\in\Bbb R\)</span>, <span class="math inline" data-source-tex="J=\{x:\xi_i\le\alpha\}">\(J=\{x:\xi_i\le\alpha\}\)</span> termasuk dalam <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>,
+karena</p>
+<div class="centerline"><span class="math inline" data-source-tex="f^{-1}[J]
+=\{x:x\in D,\, f_i(x)\le \alpha\}\in\Sigma_D">\(f^{-1}[J]
+=\{x:x\in D,\, f_i(x)\le \alpha\}\in\Sigma_D\)</span>.</div>
+<p>Jadi <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> memuat keluarga <span class="math inline" data-source-tex="\Cal J">\(\Cal J\)</span> dari <a class="xref" href="#121J">121J</a>, dan karena
+itu memuat aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> <span class="math inline" data-source-tex="\Cal B">\(\Cal B\)</span> yang dibangkitkan oleh <span class="math inline" data-source-tex="\Cal J">\(\Cal J\)</span>,
+yakni, memuat setiap subhimpunan Borel dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Sekarang sisanya mengikuti dari argumen <a class="xref" href="#121Eg">121Eg</a>. Jika
+<span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>, maka <span class="math inline" data-source-tex="\{y:y\in\dom h,\,h(y)&lt;a\}">\(\{y:y\in\dom h,\,h(y)&lt;a\}\)</span> berbentuk
+<span class="math inline" data-source-tex="E\cap\dom h">\(E\cap\dom h\)</span>, dengan <span class="math inline" data-source-tex="E">\(E\)</span> suatu subhimpunan Borel dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>,
+sehingga <span class="math inline" data-source-tex="\{x:x\in\dom(hf),\,(hf)(x)&lt;a\}
+=f^{-1}[E]\cap\dom(hf)">\(\{x:x\in\dom(hf),\,(hf)(x)&lt;a\}
+=f^{-1}[E]\cap\dom(hf)\)</span> termasuk dalam <span class="math inline" data-source-tex="\Sigma_{\dom hf}">\(\Sigma_{\dom hf}\)</span>.</p></aside>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="121X" data-source-id="121X"><span class="anchor" id="121Xa"></span><h2><span class="source-label">121X</span> Latihan dasar <span class="math inline" data-source-tex="\pmb{&gt;}">\(\pmb{&gt;}\)</span>(a) <span class="importance" title="Sangat penting">penting</span></h2>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan, <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> suatu aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas
+subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>, dan <span class="math inline" data-source-tex="D\subseteq X">\(D\subseteq X\)</span>. Misalkan
+<span class="math inline" data-source-tex="\sequencen{D_n}">\(\sequencen{D_n}\)</span> suatu partisi <span class="math inline" data-source-tex="D">\(D\)</span> menjadi himpunan-himpunan yang
+terukur relatif, dan <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> suatu barisan fungsi bernilai
+real terukur sedemikian sehingga <span class="math inline" data-source-tex="D_n\subseteq\dom f_n">\(D_n\subseteq\dom f_n\)</span> untuk setiap
+<span class="math inline" data-source-tex="n">\(n\)</span>. Definisikan <span class="math inline" data-source-tex="f:D\to\Bbb R">\(f:D\to\Bbb R\)</span> dengan menetapkan <span class="math inline" data-source-tex="f(x)=f_n(x)">\(f(x)=f_n(x)\)</span> setiap
+kali <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, <span class="math inline" data-source-tex="x\in D_n">\(x\in D_n\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="f">\(f\)</span> terukur.</p>
+</section>
+<section class="source-unit" id="121Xb" data-source-id="121Xb"><h3><span class="source-label">121Xb</span> (b) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan dan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> suatu
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>. Jika <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span>
+adalah fungsi-fungsi bernilai real terukur yang didefinisikan pada
+subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>, tunjukkan bahwa <span class="math inline" data-source-tex="f^+">\(f^+\)</span>, <span class="math inline" data-source-tex="f^-">\(f^-\)</span>,
+<span class="math inline" data-source-tex="f\wedge g">\(f\wedge g\)</span>, dan <span class="math inline" data-source-tex="f\vee g">\(f\vee g\)</span> terukur, dengan</p>
+<div class="centerline"><span class="math inline" data-source-tex="f^+(x)=\max(f(x),0)">\(f^+(x)=\max(f(x),0)\)</span> untuk <span class="math inline" data-source-tex="x\in\dom f">\(x\in\dom f\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="f^-(x)=\max(-f(x),0)">\(f^-(x)=\max(-f(x),0)\)</span> untuk <span class="math inline" data-source-tex="x\in\dom f">\(x\in\dom f\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="(f\vee g)(x)=\max(f(x),g(x))">\((f\vee g)(x)=\max(f(x),g(x))\)</span> untuk
+<span class="math inline" data-source-tex="x\in\dom f\cap\dom g">\(x\in\dom f\cap\dom g\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="(f\wedge g)(x)=\min(f(x),g(x))">\((f\wedge g)(x)=\min(f(x),g(x))\)</span> untuk
+<span class="math inline" data-source-tex="x\in\dom f\cap\dom g">\(x\in\dom f\cap\dom g\)</span>.</div>
+</section>
+<section class="source-unit" id="121Xc" data-source-id="121Xc"><h3><span class="source-label">121Xc</span> (&gt;c) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur. Tuliskan
+<span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> untuk himpunan fungsi bernilai real <span class="math inline" data-source-tex="f">\(f\)</span> sedemikian sehingga
+(<span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>) <span class="math inline" data-source-tex="\dom f">\(\dom f\)</span> adalah subhimpunan koterabaikan dari <span class="math inline" data-source-tex="X">\(X\)</span>
+(<span class="math inline" data-source-tex="\beta">\(\beta\)</span>) terdapat himpunan koterabaikan <span class="math inline" data-source-tex="E\subseteq X">\(E\subseteq X\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="f\restr E">\(f\restr E\)</span> terukur.
+(i) Tunjukkan bahwa himpunan <span class="math inline" data-source-tex="E">\(E\)</span> pada klausa (<span class="math inline" data-source-tex="\beta">\(\beta\)</span>) dalam kalimat
+terakhir dapat diambil termasuk dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dan termuat dalam
+<span class="math inline" data-source-tex="\dom f">\(\dom f\)</span>. (ii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in\eusm L^0">\(g\in\eusm L^0\)</span> dan
+<span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>, maka <span class="math inline" data-source-tex="f+g">\(f+g\)</span>, <span class="math inline" data-source-tex="cf">\(cf\)</span>, <span class="math inline" data-source-tex="f\times g">\(f\times g\)</span>, <span class="math inline" data-source-tex="|f|">\(|f|\)</span>, <span class="math inline" data-source-tex="f^+">\(f^+\)</span>, <span class="math inline" data-source-tex="f^-">\(f^-\)</span>,
+<span class="math inline" data-source-tex="f\wedge g">\(f\wedge g\)</span>, <span class="math inline" data-source-tex="f\vee g">\(f\vee g\)</span> semuanya termasuk dalam <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span>.
+(iii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in\eusm L^0">\(g\in\eusm L^0\)</span> dan <span class="math inline" data-source-tex="g\ne 0">\(g\ne 0\)</span> a.e.,
+maka <span class="math inline" data-source-tex="f/g\in\eusm L^0">\(f/g\in\eusm L^0\)</span>. (iv) Tunjukkan bahwa jika
+<span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> adalah suatu barisan di dalam <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span>, maka
+fungsi-fungsi</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{n\to\infty}f_n">\(\lim_{n\to\infty}f_n\)</span>,  <span class="math inline" data-source-tex="\sup_{n\in\Bbb N}f_n">\(\sup_{n\in\Bbb N}f_n\)</span>,
+  <span class="math inline" data-source-tex="\inf_{n\in\Bbb N}f_n">\(\inf_{n\in\Bbb N}f_n\)</span>,   <span class="math inline" data-source-tex="\limsup_{n\to\infty}f_n">\(\limsup_{n\to\infty}f_n\)</span>,
+  <span class="math inline" data-source-tex="\liminf_{n\to\infty}f_n">\(\liminf_{n\to\infty}f_n\)</span></div>
+<p>termasuk dalam <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> setiap kali fungsi-fungsi itu
+terdefinisi hampir di mana-mana sebagai fungsi bernilai real.
+(v) Tunjukkan bahwa jika <span class="math inline" data-source-tex="f\in\eusm L^0">\(f\in\eusm L^0\)</span> dan
+<span class="math inline" data-source-tex="h:\Bbb R\to\Bbb R">\(h:\Bbb R\to\Bbb R\)</span> terukur Borel, maka <span class="math inline" data-source-tex="hf\in\eusm L^0">\(hf\in\eusm L^0\)</span>.</p>
+</section>
+<section class="source-unit" id="121Xd" data-source-id="121Xd"><h3><span class="source-label">121Xd</span> (&gt;d) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Tinjau empat keluarga subhimpunan <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> berikut:</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Cal A_1=\{\ooint{-\infty,a}:a\in\Bbb R\}">\(\Cal A_1=\{\ooint{-\infty,a}:a\in\Bbb R\}\)</span>,
+  <span class="math inline" data-source-tex="\Cal A_2=\{\ocint{-\infty,a}:a\in\Bbb R\}">\(\Cal A_2=\{\ocint{-\infty,a}:a\in\Bbb R\}\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\Cal A_3=\{\ooint{a,\infty}:a\in\Bbb R\}">\(\Cal A_3=\{\ooint{a,\infty}:a\in\Bbb R\}\)</span>,
+  <span class="math inline" data-source-tex="\Cal A_4=\{\coint{a,\infty}:a\in\Bbb R\}">\(\Cal A_4=\{\coint{a,\infty}:a\in\Bbb R\}\)</span>.</div>
+<p>Tunjukkan bahwa untuk setiap <span class="math inline" data-source-tex="j">\(j\)</span>, aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas
+subhimpunan-subhimpunan <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> yang dibangkitkan oleh <span class="math inline" data-source-tex="\Cal A_j">\(\Cal A_j\)</span>
+adalah aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> himpunan-himpunan Borel.</p>
+</section>
+<section class="source-unit" id="121Xe" data-source-id="121Xe"><h3><span class="source-label">121Xe</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="D">\(D\)</span> sembarang subhimpunan <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dengan
+<span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span>. Tuliskan <span class="math inline" data-source-tex="\frak T_D">\(\frak T_D\)</span> untuk himpunan
+<span class="math inline" data-source-tex="\{G\cap D:G\subseteq\BbbR^r">\(\{G\cap D:G\subseteq\BbbR^r\)</span> merupakan himpunan terbuka<span class="math inline" data-source-tex="\}">\(\}\)</span>.
+(i) Tunjukkan bahwa <span class="math inline" data-source-tex="\frak T_D">\(\frak T_D\)</span> memenuhi sifat-sifat himpunan terbuka
+yang tercantum dalam 1A2B. (ii) Misalkan <span class="math inline" data-source-tex="\Cal B">\(\Cal B\)</span> aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>
+himpunan-himpunan Borel dalam <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dan <span class="math inline" data-source-tex="\Cal B(D)">\(\Cal B(D)\)</span>
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> subruang pada <span class="math inline" data-source-tex="D">\(D\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\Cal B(D)">\(\Cal B(D)\)</span> tepat
+sama dengan aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas subhimpunan-subhimpunan <span class="math inline" data-source-tex="D">\(D\)</span> yang
+dibangkitkan oleh <span class="math inline" data-source-tex="\frak T_D">\(\frak T_D\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> (<span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>) amati bahwa
+<span class="math inline" data-source-tex="\frak T_D\subseteq\Cal B(D)">\(\frak T_D\subseteq\Cal B(D)\)</span> (<span class="math inline" data-source-tex="\beta">\(\beta\)</span>) tinjau
+<span class="math inline" data-source-tex="\{E:E\subseteq\BbbR^r,\,E\cap D">\(\{E:E\subseteq\BbbR^r,\,E\cap D\)</span> termasuk dalam aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>
+yang dibangkitkan oleh <span class="math inline" data-source-tex="\frak T_D\}">\(\frak T_D\}\)</span>.</span></p>
+</section>
+<section class="source-unit" id="121Xf" data-source-id="121Xf"><h3><span class="source-label">121Xf</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan
+definisikan <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> seperti dalam <a class="xref" href="#121Xc">121Xc</a>. Tunjukkan bahwa jika
+<span class="math inline" data-source-tex="f_1,\ldots,f_r">\(f_1,\ldots,f_r\)</span> termasuk dalam <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span> dan
+<span class="math inline" data-source-tex="h:\BbbR^r\to\Bbb R">\(h:\BbbR^r\to\Bbb R\)</span> terukur Borel, maka <span class="math inline" data-source-tex="h(f_1,\ldots,f_r)">\(h(f_1,\ldots,f_r)\)</span>
+termasuk dalam <span class="math inline" data-source-tex="\eusm L^0">\(\eusm L^0\)</span>.</p>
+</section>
+<section class="source-unit" id="121Y" data-source-id="121Y"><span class="anchor" id="121Ya"></span><h2><span class="source-label">121Y</span> Latihan lanjutan (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> dan <span class="math inline" data-source-tex="Y">\(Y\)</span> himpunan-himpunan, <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> suatu
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>, <span class="math inline" data-source-tex="\phi:X\to Y">\(\phi:X\to Y\)</span> suatu
+fungsi, dan <span class="math inline" data-source-tex="g">\(g\)</span> suatu fungsi bernilai real yang didefinisikan pada suatu
+subhimpunan <span class="math inline" data-source-tex="Y">\(Y\)</span>. Tetapkan
+<span class="math inline" data-source-tex="\Tau=\{F:F\subseteq Y,\,\phi^{-1}[F]\in\Sigma\}">\(\Tau=\{F:F\subseteq Y,\,\phi^{-1}[F]\in\Sigma\}\)</span>; maka <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> adalah
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas subhimpunan-subhimpunan <span class="math inline" data-source-tex="Y">\(Y\)</span> (lihat <a class="xref" href="../111/index.html#111Xc">111Xc</a>).
+(i) Tunjukkan bahwa jika <span class="math inline" data-source-tex="g">\(g\)</span> <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>-terukur, maka <span class="math inline" data-source-tex="g\phi">\(g\phi\)</span>
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>-terukur.
+(ii) Berikan suatu contoh ketika <span class="math inline" data-source-tex="g\phi">\(g\phi\)</span> <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>-terukur, tetapi <span class="math inline" data-source-tex="g">\(g\)</span>
+tidak <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>-terukur.
+(iii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="g\phi">\(g\phi\)</span> <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>-terukur dan
+<em>salah satu</em> dari syarat berikut berlaku: <span class="math inline" data-source-tex="\phi">\(\phi\)</span> injektif,
+<em>atau</em> <span class="math inline" data-source-tex="\dom(g\phi)\in\Sigma">\(\dom(g\phi)\in\Sigma\)</span>, <em>atau</em>
+<span class="math inline" data-source-tex="\phi[X]\subseteq\dom g">\(\phi[X]\subseteq\dom g\)</span>, maka <span class="math inline" data-source-tex="g">\(g\)</span> <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>-terukur.<sup class="footnote-ref" id="fnref-121Y-1"><a href="#fn-121Y-1" aria-label="Catatan kaki 1">1</a></sup></p>
+<aside class="footnote" id="fn-121Y-1" role="note" aria-label="Catatan kaki 1"><p><strong>Catatan kaki 1.</strong> Saya berterima kasih kepada P. Wallace Thompson karena telah menunjukkan kekeliruan dalam versi asli latihan ini. <a class="footnote-backref" href="#fnref-121Y-1" aria-label="Kembali ke rujukan catatan kaki 1">↩</a></p></aside>
+</section>
+<section class="source-unit" id="121Yb" data-source-id="121Yb"><h3><span class="source-label">121Yb</span> (b) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> dan <span class="math inline" data-source-tex="Y">\(Y\)</span> himpunan-himpunan, <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> suatu
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas subhimpunan-subhimpunan <span class="math inline" data-source-tex="Y">\(Y\)</span>, dan <span class="math inline" data-source-tex="\phi:X\to Y">\(\phi:X\to Y\)</span>
+suatu fungsi. Tetapkan <span class="math inline" data-source-tex="\Sigma=\{\phi^{-1}[F]:F\in\Tau\}">\(\Sigma=\{\phi^{-1}[F]:F\in\Tau\}\)</span>, seperti
+dalam <a class="xref" href="../111/index.html#111Xd">111Xd</a>. Tunjukkan bahwa suatu fungsi <span class="math inline" data-source-tex="f:X\to\Bbb R">\(f:X\to\Bbb R\)</span>
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>-terukur jika dan hanya jika terdapat fungsi <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>-terukur
+<span class="math inline" data-source-tex="g:Y\to\Bbb R">\(g:Y\to\Bbb R\)</span> sedemikian sehingga <span class="math inline" data-source-tex="f=g\phi">\(f=g\phi\)</span>.</p>
+</section>
+<section class="source-unit" id="121Yc" data-source-id="121Yc"><h3><span class="source-label">121Yc</span> (c) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> dan <span class="math inline" data-source-tex="Y">\(Y\)</span> himpunan-himpunan, dan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>,
+<span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> masing-masing aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas subhimpunan-subhimpunan
+<span class="math inline" data-source-tex="X">\(X\)</span>, <span class="math inline" data-source-tex="Y">\(Y\)</span>. Suatu fungsi <span class="math inline" data-source-tex="\phi:X\to Y">\(\phi:X\to Y\)</span> disebut
+<strong><span class="math inline" data-source-tex="(\Sigma,\Tau)">\((\Sigma,\Tau)\)</span>-terukur</strong> jika <span class="math inline" data-source-tex="\phi^{-1}[F]\in\Sigma">\(\phi^{-1}[F]\in\Sigma\)</span> untuk
+setiap <span class="math inline" data-source-tex="F\in\Tau">\(F\in\Tau\)</span>.
+(i) Tunjukkan bahwa jika <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>, <span class="math inline" data-source-tex="\Upsilon">\(\Upsilon\)</span> masing-masing
+adalah aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>, <span class="math inline" data-source-tex="Y">\(Y\)</span>, <span class="math inline" data-source-tex="Z">\(Z\)</span>,
+dan <span class="math inline" data-source-tex="\phi:X\to Y">\(\phi:X\to Y\)</span> <span class="math inline" data-source-tex="(\Sigma,\Tau)">\((\Sigma,\Tau)\)</span>-terukur,
+<span class="math inline" data-source-tex="\psi:Y\to Z">\(\psi:Y\to Z\)</span> <span class="math inline" data-source-tex="(\Tau,\Upsilon)">\((\Tau,\Upsilon)\)</span>-terukur, maka <span class="math inline" data-source-tex="\psi\phi:X\to Z">\(\psi\phi:X\to Z\)</span>
+<span class="math inline" data-source-tex="(\Sigma,\Upsilon)">\((\Sigma,\Upsilon)\)</span>-terukur.
+(ii) Andaikan <span class="math inline" data-source-tex="\Cal A\subseteq\Tau">\(\Cal A\subseteq\Tau\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>
+merupakan aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas subhimpunan-subhimpunan <span class="math inline" data-source-tex="Y">\(Y\)</span> yang
+dibangkitkan oleh <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> (<a class="xref" href="../111/index.html#111Gb">111Gb</a>). Tunjukkan bahwa <span class="math inline" data-source-tex="\phi:X\to Y">\(\phi:X\to Y\)</span>
+<span class="math inline" data-source-tex="(\Sigma,\Tau)">\((\Sigma,\Tau)\)</span>-terukur jika dan hanya jika
+<span class="math inline" data-source-tex="\phi^{-1}[A]\in\Sigma">\(\phi^{-1}[A]\in\Sigma\)</span> untuk setiap <span class="math inline" data-source-tex="A\in\Cal A">\(A\in\Cal A\)</span>.
+(iii) Untuk <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span>, tuliskan <span class="math inline" data-source-tex="\Cal B_r">\(\Cal B_r\)</span> untuk aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>
+subhimpunan-subhimpunan Borel dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>. Tunjukkan bahwa jika <span class="math inline" data-source-tex="X">\(X\)</span>
+sembarang himpunan dan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> suatu aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas
+subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>, maka suatu fungsi <span class="math inline" data-source-tex="f:X\to\BbbR^r">\(f:X\to\BbbR^r\)</span>
+<span class="math inline" data-source-tex="(\Sigma,\Cal B_r)">\((\Sigma,\Cal B_r)\)</span>-terukur jika dan hanya jika
+<span class="math inline" data-source-tex="\pi_if:X\to\Bbb R">\(\pi_if:X\to\Bbb R\)</span> <span class="math inline" data-source-tex="(\Sigma,\Cal B_1)">\((\Sigma,\Cal B_1)\)</span>-terukur untuk setiap
+<span class="math inline" data-source-tex="i\le r">\(i\le r\)</span>, dengan <span class="math inline" data-source-tex="\pi_i(x)=\xi_i">\(\pi_i(x)=\xi_i\)</span> untuk <span class="math inline" data-source-tex="i\le r">\(i\le r\)</span>,
+<span class="math inline" data-source-tex="x=(\xi_1,\ldots,\xi_r)\in\BbbR^r">\(x=(\xi_1,\ldots,\xi_r)\in\BbbR^r\)</span>.
+(iv) Rumuskan kembali gagasan-gagasan ini untuk fungsi-fungsi yang
+terdefinisi sebagian.</p>
+</section>
+<section class="source-unit" id="121Yd" data-source-id="121Yd"><h3><span class="source-label">121Yd</span> (d) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan dan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> suatu
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>. Untuk <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span>,
+<span class="math inline" data-source-tex="D\subseteq X">\(D\subseteq X\)</span>, katakan bahwa suatu fungsi <span class="math inline" data-source-tex="\phi:D\to\BbbR^r">\(\phi:D\to\BbbR^r\)</span>
+<strong>terukur</strong> jika <span class="math inline" data-source-tex="\phi^{-1}[G]">\(\phi^{-1}[G]\)</span> terukur relatif dalam <span class="math inline" data-source-tex="D">\(D\)</span> untuk
+setiap himpunan terbuka <span class="math inline" data-source-tex="G\subseteq\BbbR^r">\(G\subseteq\BbbR^r\)</span>. Jika <span class="math inline" data-source-tex="X=\BbbR^s">\(X=\BbbR^s\)</span> dan
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> adalah aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> <span class="math inline" data-source-tex="\Cal B_s">\(\Cal B_s\)</span> dari subhimpunan-subhimpunan
+Borel <span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span>, katakan bahwa <span class="math inline" data-source-tex="\phi">\(\phi\)</span> <strong>terukur Borel</strong>.
+(i) Tunjukkan bahwa <span class="math inline" data-source-tex="\phi">\(\phi\)</span> terukur dalam pengertian ini jika dan hanya
+jika semua fungsi koordinatnya <span class="math inline" data-source-tex="\phi_i:D\to\Bbb R">\(\phi_i:D\to\Bbb R\)</span> terukur dalam
+pengertian <a class="xref" href="#121C">121C</a>, dengan <span class="math inline" data-source-tex="\phi(x)=(\phi_1(x),\ldots,\phi_r(x))">\(\phi(x)=(\phi_1(x),\ldots,\phi_r(x))\)</span> untuk
+<span class="math inline" data-source-tex="x\in D">\(x\in D\)</span>. (Khususnya, definisi ini sesuai dengan <a class="xref" href="#121C">121C</a> ketika <span class="math inline" data-source-tex="r=1">\(r=1\)</span>.)
+(ii) Tunjukkan bahwa <span class="math inline" data-source-tex="\phi:D\to\BbbR^r">\(\phi:D\to\BbbR^r\)</span> terukur jika dan hanya jika
+<span class="math inline" data-source-tex="(\Sigma,\Cal B_r)">\((\Sigma,\Cal B_r)\)</span>-terukur dalam pengertian <a class="xref" href="#121Yc">121Yc</a>.
+(iii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="\phi:D\to\BbbR^r">\(\phi:D\to\BbbR^r\)</span> terukur dan
+<span class="math inline" data-source-tex="\psi:E\to\BbbR^s">\(\psi:E\to\BbbR^s\)</span> terukur Borel, dengan <span class="math inline" data-source-tex="E\subseteq\BbbR^r">\(E\subseteq\BbbR^r\)</span>, maka
+<span class="math inline" data-source-tex="\psi\phi:\phi^{-1}[E]\to\BbbR^s">\(\psi\phi:\phi^{-1}[E]\to\BbbR^s\)</span> terukur.
+(iv) Tunjukkan bahwa setiap fungsi kontinu dari suatu subhimpunan
+<span class="math inline" data-source-tex="\BbbR^s">\(\BbbR^s\)</span> ke <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span> terukur Borel.</p>
+</section>
+<section class="source-unit" id="121Ye" data-source-id="121Ye"><h3><span class="source-label">121Ye</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan dan <span class="math inline" data-source-tex="\theta">\(\theta\)</span> suatu ukuran
+luar pada <span class="math inline" data-source-tex="X">\(X\)</span>; misalkan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> ukuran yang didefinisikan dari <span class="math inline" data-source-tex="\theta">\(\theta\)</span>
+dengan metode Carathéodory, dan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> domainnya. Andaikan bahwa
+<span class="math inline" data-source-tex="f:X\to\Bbb R">\(f:X\to\Bbb R\)</span> adalah suatu fungsi sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\theta\{x:x\in A,\,f(x)\le a\}
+  +\theta\{x:x\in A,\,f(x)\ge b\}\le\theta A">\(\theta\{x:x\in A,\,f(x)\le a\}
+  +\theta\{x:x\in A,\,f(x)\ge b\}\le\theta A\)</span></div>
+<p>setiap kali <span class="math inline" data-source-tex="A\subseteq X">\(A\subseteq X\)</span> dan <span class="math inline" data-source-tex="a&lt;b">\(a&lt;b\)</span> dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="f">\(f\)</span> <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>-terukur. (<em>Petunjuk\/</em>: andaikan
+<span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span> dan <span class="math inline" data-source-tex="\theta A&lt;\infty">\(\theta A&lt;\infty\)</span>. Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="B_k=\{x:x\in A,\,
+ a+\Bover1{2k+2}\le f(x)\le a+\Bover1{2k+1}\}">\(B_k=\{x:x\in A,\,
+ a+\Bover1{2k+2}\le f(x)\le a+\Bover1{2k+1}\}\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="B&#x27;_k=\{x:x\in A,\,
+  a+\Bover1{2k+3}\le f(x)\le a+\Bover1{2k+2}\}">\(B&#x27;_k=\{x:x\in A,\,
+  a+\Bover1{2k+3}\le f(x)\le a+\Bover1{2k+2}\}\)</span></div>
+<p>untuk <span class="math inline" data-source-tex="k\in\Bbb N">\(k\in\Bbb N\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\sum_{k=0}^{\infty}\theta B_k\le\theta A">\(\sum_{k=0}^{\infty}\theta B_k\le\theta A\)</span>, dan periksa hasil serupa
+untuk <span class="math inline" data-source-tex="B&#x27;_k">\(B&#x27;_k\)</span>. Dari sini, tunjukkan bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\theta\{x:x\in A,\,f(x)&gt;a\}
+=\lim_{k\to\infty}\theta\{x:x\in A,\,f(x)\ge a+\Bover1k\}">\(\theta\{x:x\in A,\,f(x)&gt;a\}
+=\lim_{k\to\infty}\theta\{x:x\in A,\,f(x)\ge a+\Bover1k\}\)</span>.)</div>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<span class="anchor" id="121"></span>
+<section class="source-unit" id="121-notes" data-source-id="121-notes"><h2><span class="source-label">121-notes</span> Catatan penutup untuk Bagian 121 </h2>
+<p>Dalam bagian ini saya telah memberikan tidak kurang
+dari tiga definisi ‘fungsi terukur’, dalam <a class="xref" href="#121C">121C</a>, <a class="xref" href="#121Yc">121Yc</a>, dan <a class="xref" href="#121Yd">121Yd</a>.
+Sebenarnya, definisi terakhir barangkali yang terpenting dan menjadi
+panduan terbaik menuju gagasan-gagasan selanjutnya. Meskipun demikian,
+sebagian
+besar penerapan merujuk pada fungsi bernilai real, dan empat syarat
+ekuivalen dalam <a class="xref" href="#121B">121B</a> adalah yang paling alami dan paling mudah
+digunakan. Fakta bahwa semuanya berimpit dengan syarat dalam <a class="xref" href="#121Yd">121Yd</a>
+bersesuaian dengan fakta bahwa semuanya berbentuk</p>
+<div class="centerline"><span class="math inline" data-source-tex="f^{-1}[E]\in\Sigma_D">\(f^{-1}[E]\in\Sigma_D\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\Cal A">\(E\in\Cal A\)</span></div>
+<p>dengan <span class="math inline" data-source-tex="\Cal A">\(\Cal A\)</span> suatu keluarga subhimpunan <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> yang
+membangkitkan aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> Borel (<a class="xref" href="#121Xd">121Xd</a>, <a class="xref" href="#121Yc">121Yc</a>(ii)).</p>
+<p>Kelas fungsi terukur mungkin merupakan kelas terluas yang sejauh ini
+pernah Anda lihat, jika kita tidak menghitung keluarga semua fungsi
+bernilai real; semua fungsi yang mudah dideskripsikan antara
+subhimpunan-subhimpunan <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> bersifat terukur. Ruang fungsi
+terukur bukan hanya tertutup terhadap penjumlahan, perkalian, dan
+komposisi dengan fungsi kontinu (<a class="xref" href="#121E">121E</a>), tetapi setiap operasi alami
+yang bekerja pada suatu barisan fungsi terukur akan menghasilkan fungsi
+terukur (<a class="xref" href="#121F">121F</a>, <a class="xref" href="#121Xb">121Xb</a>, <a class="xref" href="#121Xa">121Xa</a>). Namun, <em>tidak</em> selalu benar bahwa
+komposisi dua fungsi terukur Lebesgue dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> ke dirinya sendiri
+terukur Lebesgue; saya memberikan contoh tandingan dalam 134Ib.
+Intinya di sini ialah bahwa suatu fungsi disebut ‘terukur’ jika fungsi
+tersebut <span class="math inline" data-source-tex="(\Sigma,\Cal B)">\((\Sigma,\Cal B)\)</span>-terukur, dalam bahasa <a class="xref" href="#121Yc">121Yc</a>, dengan
+<span class="math inline" data-source-tex="\Cal B">\(\Cal B\)</span> aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> himpunan-himpunan Borel. Fungsi semacam itu
+dapat saja gagal menjadi <span class="math inline" data-source-tex="(\Sigma,\Sigma)">\((\Sigma,\Sigma)\)</span>-terukur jika <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>
+memuat <span class="math inline" data-source-tex="\Cal B">\(\Cal B\)</span> secara sejati, sehingga argumen alami untuk komposisi
+(<a class="xref" href="#121Yc">121Yc</a>(i)) gagal. Meskipun demikian, karena alasan-alasan yang akan
+saya singgung dalam §134, fungsi yang tidak terukur Lebesgue sulit
+ditemukan, dan hanya muncul secara alami dalam jenis-jenis analisis real
+yang sangat terspesialisasi. Karena itu, Anda dapat mendekati pertanyaan
+apakah suatu fungsi tertentu terukur Lebesgue dengan keyakinan yang
+wajar bahwa fungsi tersebut memang terukur, dan bahwa buktinya sekadar
+menjadi tantangan bagi teknik Anda.</p>
+<p>Anda akan mengamati bahwa hasil-hasil <a class="xref" href="#121E">121E</a> sebagian besar tercakup oleh
+<a class="xref" href="#121I">121I</a>-<a class="xref" href="#121K">121K</a>, yang juga mencakup sebagian besar <a class="xref" href="../114/index.html#114G">114G</a> dan <a class="xref" href="../115/index.html#115G">115G</a>; dan bahwa
+<a class="xref" href="#121Kb">121Kb</a> tercakup oleh <a class="xref" href="#121Yd">121Yd</a>(iii). Anda dapat menganggap diri telah
+menguasai bagian pokok bahasan ini ketika pemaparan saya terasa
+membosankan karena berulang-ulang. Tentu saja, untuk menurunkan <a class="xref" href="#121Ed">121Ed</a>
+dari <a class="xref" href="#121K">121K</a>, misalnya, Anda harus mengetahui bahwa perkalian, dipandang
+sebagai fungsi dari <span class="math inline" data-source-tex="\BbbR^2">\(\BbbR^2\)</span> ke <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, bersifat kontinu, sehingga
+terukur Borel; buktinya tertanam dalam bukti yang saya berikan untuk
+<a class="xref" href="#121Ed">121Ed</a> (lihat rumus untuk <span class="math inline" data-source-tex="\eta">\(\eta\)</span> di pertengahan bukti).</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 1: The Irreducible Minimum</cite>, Bagian 121.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 21 Agustus 2026. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-semantic-reader-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V1-S121&quot;,
+  &quot;source_member&quot;: &quot;mt1.2011/mt121.tex&quot;,
+  &quot;target_bytes&quot;: 43931,
+  &quot;target_sha256&quot;: &quot;76a5d90e6a647d158d2aecd32eaeaa4384063ef0d09f105c40c49205555a9f53&quot;,
+  &quot;source_ids&quot;: [
+    &quot;121-intro&quot;,
+    &quot;121-notes&quot;,
+    &quot;121A&quot;,
+    &quot;121A-proof-i&quot;,
+    &quot;121A-proof-ii&quot;,
+    &quot;121A-proof-iii&quot;,
+    &quot;121B&quot;,
+    &quot;121B-proof-i-to-ii&quot;,
+    &quot;121B-proof-ii-to-iii&quot;,
+    &quot;121B-proof-iii-to-iv&quot;,
+    &quot;121B-proof-iv-to-i&quot;,
+    &quot;121C&quot;,
+    &quot;121D&quot;,
+    &quot;121Da&quot;,
+    &quot;121Db&quot;,
+    &quot;121Dc&quot;,
+    &quot;121E&quot;,
+    &quot;121Ea&quot;,
+    &quot;121Eb&quot;,
+    &quot;121Ec&quot;,
+    &quot;121Ed&quot;,
+    &quot;121Ee&quot;,
+    &quot;121Ef&quot;,
+    &quot;121Eg&quot;,
+    &quot;121Eh&quot;,
+    &quot;121F&quot;,
+    &quot;121Fa&quot;,
+    &quot;121Fb&quot;,
+    &quot;121Fc&quot;,
+    &quot;121Fd&quot;,
+    &quot;121Fe&quot;,
+    &quot;121G&quot;,
+    &quot;121H&quot;,
+    &quot;121I&quot;,
+    &quot;121I-proof-a&quot;,
+    &quot;121I-proof-b&quot;,
+    &quot;121J&quot;,
+    &quot;121J-proof-a&quot;,
+    &quot;121J-proof-b&quot;,
+    &quot;121J-proof-c&quot;,
+    &quot;121K&quot;,
+    &quot;121Ka&quot;,
+    &quot;121Kb&quot;,
+    &quot;121X&quot;,
+    &quot;121Xa&quot;,
+    &quot;121Xb&quot;,
+    &quot;121Xc&quot;,
+    &quot;121Xd&quot;,
+    &quot;121Xe&quot;,
+    &quot;121Xf&quot;,
+    &quot;121Y&quot;,
+    &quot;121Ya&quot;,
+    &quot;121Yb&quot;,
+    &quot;121Yc&quot;,
+    &quot;121Yd&quot;,
+    &quot;121Ye&quot;
+  ]
+}</pre></details>
+</footer>
+</body>
+</html>

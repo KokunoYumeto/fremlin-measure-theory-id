@@ -241,7 +241,7 @@ The exact [USER]-authored canonical instructions are:
 - `[USER_HOME]/Documents/Obsidian notes/Untitled 1693.md`;
 - 10,476 bytes;
 - SHA-256
-  `cf913e8cb4d487f4c6958c079b372ccbb2fb5929dd483068441e80cefd6794f2`.
+  `[PRIVATE_CONTROL_SHA256_WITHHELD]`.
 
 They must be read in full, retained verbatim in the lane, and treated as
 [USER]'s instructions rather than coordinator paraphrase. Translation is the

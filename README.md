@@ -1,100 +1,136 @@
 # Fondasi Teori Ukuran — Bahasa Indonesia
 
-Adaptasi Bahasa Indonesia dari dua jilid pengantar *Measure Theory* karya
-D. H. Fremlin:
+Adaptasi Bahasa Indonesia lengkap dari dua jilid terpilih *Measure Theory*
+karya D. H. Fremlin:
 
-- Jilid 1, *The Irreducible Minimum* — lengkap, 102 halaman resmi;
-- Jilid 2, *Broad Foundations* — bagian awal dan Bab 21–23 lengkap, halaman
-  resmi 1–137.
+- Jilid 1, *The Irreducible Minimum*: 102/102 halaman resmi;
+- Jilid 2, *Broad Foundations*: 570/570 halaman resmi, termasuk Bab 21–28,
+  lampiran, konkordansi, referensi, dan indeks gabungan Jilid I–II;
+- jumlah korpus terpilih: **672/672 halaman resmi (100%)**.
 
-Korpus terpilih berjumlah 672 halaman resmi. Jilid 3–5 dan buku pembanding
-tidak digabungkan ke dalam korpus ini. Checkpoint
-`0.15.0-v2-through-ch23` mencakup 239/672 halaman resmi: seluruh Jilid 1 dan
-137 halaman pertama Jilid 2 secara berurutan. Bab 24 dan sesudahnya belum
-termasuk dan tidak dinyatakan selesai.
+Jilid 3–5 dan buku pembanding tidak termasuk dalam korpus ini. Akuntansi
+halaman resmi mengikuti sumber, sedangkan PDF pembaca memakai reflow Bahasa
+Indonesia dan karena itu mempunyai jumlah halaman fisik yang berbeda.
 
 ## Mulai membaca
 
-PDF kumulatif adalah berkas utama:
+Artefak pembaca lengkap yang sudah dibangun dan lolos QA PDF adalah:
 
-- PDF: `output/pdf/fondasi-teori-ukuran-jilid-1-dan-jilid-2-hingga-bab-23-id.pdf`
-- pembaca HTML luring:
-  `output/fondasi-teori-ukuran-v1-through-chapter23-id/html/index.html`
-- sumber Bahasa Indonesia: `source/id-ID/`
-- backend semantik: backend unit yang sudah diterima dan
-  `backend/catalog-v1.10/`
-- admission checkpoint: `00_control/CP0015_THROUGH_CHAPTER23_ADMISSION.md`
+- PDF: `output/pdf/fondasi-teori-ukuran-jilid-1-dan-jilid-2-lengkap-id.pdf`
+- sumber editabel Bahasa Indonesia: `source/id-ID/`
+- backend semantik lengkap: `backend/catalog-v1.16/`
+- bukti integrasi sumber:
+  `qa/final-closure/complete-source-integration.json`
+- bukti build dan QA PDF: `qa/complete-corpus-build.json` dan
+  `qa/complete-corpus-pdf-visual-qa.json`
+- bukti backend: `backend/complete-corpus-backend-validation.json`
+- pembaca HTML luring lengkap:
+  `output/fondasi-teori-ukuran-v1-v2-complete-id/html/`
+- bukti build dan replay HTML:
+  `qa/complete-corpus-html-build.json` dan
+  `qa/complete-corpus-html-reader-qa.json`
 
-Garis keturunan publik tetap tunggal:
-
-- [GitHub release v0.15.0-v2-through-ch23](https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v0.15.0-v2-through-ch23)
-- [Zenodo checkpoint 0.15.0-v2-through-ch23](https://doi.org/10.5281/zenodo.22097858)
-- [Zenodo concept untuk seluruh riwayat versi](https://doi.org/10.5281/zenodo.22059798)
-- [Checkpoint publik sebelumnya](https://doi.org/10.5281/zenodo.22088384)
-
-Pada aset rilis, buka PDF bernama
-`00_READ_FIRST_FONDASI_TEORI_UKURAN_V1_DAN_V2_HINGGA_BAB_23.pdf` terlebih
-dahulu. Paket ZIP menyertakan pembaca HTML luring, sumber editabel, backend
-semantik, otoritas, lisensi, manifes, checksum, dan bukti QA yang diperlukan
-untuk membaca atau melanjutkan produksi.
+Pembaca HTML luring lengkap telah dibangun secara deterministik dan direplay
+secara headless pada seluruh 98 rute, masing-masing pada viewport desktop dan
+seluler. Pohonnya memuat 138 berkas / 15.166.155 byte; 196 observasi rute-
+viewport, 53.255 pasangan matematika sumber-pembaca, tautan, fragmen, ID,
+gambar, dan penampungan rumus lebar seluruhnya lulus.
 
 ## Status terverifikasi
 
-Checkpoint ini memuat 464 latihan/soal dan 103 petunjuk sumber: 198/55 dari
-Jilid 1, 80/12 dari Bab 21, 88/20 dari Bab 22, dan 98/16 dari Bab 23. Backend
-baru untuk Bab 23 beserta katalog kumulatif memuat 5.718 rekaman unik yang
-lolos skema, 47 unit katalog, dan 184 ikatan sumber daya yang dibaca ulang
-berdasarkan byte dan SHA-256. Format JSONL/CSV, ID stabil, formula, relasi,
-koreksi, hak, dan pemetaan sumber–target berputar balik secara deterministik.
+Integrasi sumber kanonik mencapai 672/672 halaman resmi. Receipt
+`qa/final-closure/complete-source-integration.json` berukuran 7.325 byte dan
+memiliki SHA-256
+`838d8140356a41d574322d222bc495e02e8bf67954a1b332020801a70009ce73`.
 
-PDF reflow kumulatif memiliki 258 halaman A4. Seluruh halaman diraster dan
-diperiksa; awalan Jilid 1 sebanyak 110 halaman dipertahankan pixel-identik,
-sedangkan seluruh 148 halaman Jilid 2 diperiksa kembali. Font, ekstraksi teks,
-margin, dan urutan halaman lolos; tidak ditemukan halaman kosong atau
-duplikat, kliping, tumpang-tindih, glif hilang, maupun artefak galat. Jumlah
-258 halaman reflow tidak menggantikan akuntansi 239 halaman resmi.
+PDF lengkap dibangun dua kali secara deterministik. Artefaknya berukuran
+4.958.199 byte, memiliki SHA-256
+`e52b9b9fd5ffe967c7b3572b6e650743e91a3836d4f07fd30394a0788ff75fcd`,
+dan terdiri atas 715 halaman reflow A4. Receipt build
+`qa/complete-corpus-build.json` berukuran 143.472 byte dengan SHA-256
+`27cac895f03c1e147fedeb9eb8ac86765088ab27c3d355e2955686ab8ce410b1`.
+QA meraster seluruh halaman, mereplay tepat 545 halaman pendahulu, dan
+memeriksa 170 halaman tambahan pada 19 contact sheet. Tidak ditemukan
+kliping, tumpang-tindih, reflow yang tidak terpusat, glif rusak, halaman
+kosong/duplikat, atau residu galat build. Receipt visual
+`qa/complete-corpus-pdf-visual-qa.json` berukuran 499.934 byte dengan SHA-256
+`2081b9a22f347bd8891b328f9229193a5bc0aca87963a062e29f70e0553df17b`.
 
-Pembaca HTML kumulatif memiliki 51 rute dan 20.204 sumber rumus MathJax.
-Seluruh rute melewati pemeriksaan statis dan replay browser desktop serta
-seluler: sumber rumus, hasil render, dan permukaan bantu tetap terikat; tautan
-dan fragmen menutup; tidak ada galat konsol, aset hilang, ID ganda, atau
-overflow selebar dokumen. Rumus lebar dapat digulir secara lokal pada layar
-sempit. HTML bersifat reflow dan mengisi lebar baca yang nyaman, bukan kolom
-sempit yang terlepas dari pusat halaman.
+Backend lengkap lolos materialisasi dan replay deterministik. Katalog memuat
+507 berkas / 24.944.288 byte, 16.096 ID rekaman unik yang valid terhadap skema,
+94 unit, 349 ikatan sumber daya lokal, dua rekaman hak komponen, 1.096 rekaman
+latihan bertipe, dan 276 rekaman petunjuk aktif.
+`backend/catalog-v1.16/MANIFEST.tsv` berukuran 59.663 byte dengan SHA-256
+`b9a4074d11f42eea9717fb78927ed682c207ae4fad4128367219ff2c9f41e85a`.
+Receipt validasi backend berukuran 120.121 byte dengan SHA-256
+`9964324a1740d817036200d87f766eea401bc3f7af8079eb7c9abfa1d987135c`.
 
-Sasaran dua jilid masih aktif. Checkpoint ini bukan edisi lengkap 672 halaman;
-produksi berikutnya melanjutkan Bab 24 dari `mt24.tex` dan `mt241.tex` dalam
-urutan sumber.
+Build HTML lengkap berukuran 110.490 byte dengan SHA-256
+`ed93bc27a7d708b6a693649651922724ea060490fe66e7d6de2330e57c57324c`;
+receipt replay pembacanya berukuran 52.522 byte dengan SHA-256
+`4dc69a16a82fe0cc0043cce03760abcb140ad309b5773f541d9eaba4d756ccac`.
 
-## Reproduksi
+Korpus lengkap telah di-admit melalui `CP0021`: catatan admission berukuran
+2.602 byte dengan SHA-256
+`0b426ec374ca199ce909bd960a286c037d2a667bec1918bdf9129ead40a90cc0`,
+dan receipt mesin berukuran 21.597 byte dengan SHA-256
+`0bb4cec0ba42403a74af9b77237910d2c8360dfe00013bf78e0823498326973c`.
+Receipt paket, publikasi, dan pembacaan balik byte publik tetap menjadi sumber
+kebenaran untuk transaksi rilis.
 
-Prasyarat lokal: Python 3, TeX/AMS-TeX, `dvipdfmx`, Ghostscript, Poppler,
-Chromium/Playwright, dan dependensi Python terbuka yang dipakai validator. Dari
-akar repositori:
+## Reproduksi dan gate rilis
+
+Entry point kumulatif dijalankan dalam urutan berikut dari akar repositori:
 
 ```text
-python backend/generate_through_chapter23_checkpoint.py --check
-python backend/validate_through_chapter23_checkpoint.py --receipt backend/chapter23-backend-validation.json
-python scripts/build_volume1_through_chapter23.py
-python scripts/qa_volume1_through_chapter23_pdf.py --finalize-visual-inspection-pass
-python scripts/render_volume1_through_chapter23_html.py --write
-python scripts/qa_volume1_through_chapter23_html.py
-python scripts/admit_volume1_through_chapter23.py
-python scripts/package_volume1_through_chapter23_release.py --write
+backend/generate_complete_corpus_checkpoint.py
+backend/validate_complete_corpus_checkpoint.py
+scripts/build_complete_corpus.py
+scripts/qa_complete_corpus_pdf.py
+scripts/render_complete_corpus_html.py
+scripts/qa_complete_corpus_html.py
+scripts/admit_complete_corpus.py
+scripts/package_complete_corpus_release.py
 ```
 
-Identitas build, pembaca, paket, dan publikasi tersimpan di `qa/`. Kontrol
-produksi, kursor, keputusan, terminologi, koreksi sumber, serta garis keturunan
-Zenodo tersimpan di `00_control/`.
+Prasyarat lokal mencakup Python 3, TeX/AMS-TeX, `dvipdfmx`, Ghostscript,
+Poppler, Chromium/Playwright, serta dependensi Python terbuka yang dipakai
+generator dan validator. Opsi eksekusi dan identitas input/output harus
+mengikuti receipt kumulatif yang sedang berlaku.
 
-## Hak dan atribusi
+## Garis keturunan publik
 
-Materi turunan Fremlin tetap berada di bawah Design Science License. Ini adalah
-adaptasi Bahasa Indonesia yang dimodifikasi, bukan edisi asli yang tidak
-berubah. D. H. Fremlin tetap dikreditkan sebagai penulis sumber. MathJax 3.2.2
-adalah komponen terpisah di bawah Apache License 2.0. Sumber editabel, teks
-lisensi, tanggal dan sifat perubahan, atribusi, serta batas komponen disertakan
-dalam setiap paket.
+Rilis lengkap 672/672 ini menggunakan versi dan tag **v1.0.0** pada garis
+keturunan yang sama:
+
+- [Repositori GitHub](https://github.com/KokunoYumeto/fremlin-measure-theory-id)
+- [GitHub release v1.0.0](https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v1.0.0)
+- [Zenodo concept untuk seluruh riwayat versi](https://doi.org/10.5281/zenodo.22059798)
+
+Record Zenodo versi lengkap mempunyai DOI versi tersendiri setelah transaksi;
+concept DOI di atas merupakan pengenal stabil untuk seluruh riwayat. Checkpoint
+Bab 27 tetap dipertahankan sebagai versi pendahulu, bukan sebagai batas korpus
+lengkap.
+
+## Hak, atribusi, dan provenans
+
+Materi turunan Fremlin tetap berada di bawah **Design Science License**;
+salinan lisensi berada di `authority/fremlin/dsl.txt`. Ini adalah adaptasi
+Bahasa Indonesia yang dimodifikasi, bukan edisi asli yang tidak berubah.
+D. H. Fremlin tetap dikreditkan sebagai penulis sumber.
+
+Komponen yang ditulis secara independen dan tidak berasal dari Fremlin—skema
+backend, metadata navigasi, perkakas build dan QA beserta ekspresi aslinya,
+serta materi penguasaan orisinal jika ada—merupakan komponen terpisah di bawah
+**CC0 1.0 Universal**. Teks hukum resmi Creative Commons disimpan byte demi
+byte di `LICENSE-CC0-1.0.txt`; sumbernya adalah
+<https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt> (7.048 byte;
+SHA-256 `a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499`).
+CC0 tidak diterapkan pada prosa terjemahan, matematika, unit, segmen, rumus,
+latihan, petunjuk, indeks, atau aset turunan Fremlin. MathJax 3.2.2 tetap
+merupakan komponen ketiga yang terpisah di bawah Apache License 2.0. Sumber
+editabel, teks lisensi, tanggal dan sifat perubahan, atribusi, batas komponen,
+manifes, checksum, dan bukti QA disertakan pada paket rilis.
 
 Provenans produksi: `OpenAI Codex gpt-5.6-sol, Ultra.` Pekerjaan dilakukan atas
 arahan pengguna; kredit penulis, sumber, dan kontributor dipertahankan.

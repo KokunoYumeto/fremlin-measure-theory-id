@@ -1,0 +1,97 @@
+{
+  "schema_version": "o007.mti-v12-owner-independent-audit.v1",
+  "audit_date": "2026-08-30",
+  "result": "pass",
+  "scope": "Independent read-only audit of the assembled Volume-I/II index candidate; canonical files were not changed.",
+  "identities": {
+    "mti-volume12-id-candidate.tex": {
+      "bytes": 100767,
+      "sha256": "455f68551db3a51770c0e7e90e42d5335f8aa7899e51f4c62b0dce99ae366438"
+    },
+    "mti-volume12-translations-id-candidate.jsonl": {
+      "bytes": 3213652,
+      "sha256": "2fb30cc9bbbed822f1ad03120455d3c3af3312046e26f55c45d29706138f0991"
+    },
+    "mti-volume12-candidate-render.json": {
+      "bytes": 2305,
+      "sha256": "2c4abf8feed2b0bfd45ceafaa76c2ec2d026ca50de7dee2fe2a946dd139c2aef"
+    }
+  },
+  "census": {
+    "projection_records": 1399,
+    "translated_records": 1274,
+    "nontranslated_records": 125,
+    "nontranslated_classification": {
+      "index_entry_without_numeric_reference": 56,
+      "index_heading": 35,
+      "index_entry": 25,
+      "metadata_or_control": 6,
+      "reader_prose": 3
+    }
+  },
+  "validation": {
+    "identity_replay": "pass",
+    "reverse_interval_render_replay": "pass_exact_byte_identity",
+    "source_order_and_projection_intervals": "pass",
+    "translated_nontranslated_partition": "pass",
+    "volume_iii_v_references_absent": "pass",
+    "cross_reference_prefixes": {
+      "volume_1": 480,
+      "volume_2": 2788,
+      "volume_3": 0,
+      "volume_4": 0,
+      "volume_5": 0
+    },
+    "raw_braces": {
+      "open": 2257,
+      "close": 2257,
+      "result": "pass"
+    },
+    "protected_tex_contract": "pass_as_replayed_from_all_1274_merged_records",
+    "active_english_high_risk_sweep": "pass_no_unjustified_hits",
+    "semantic_and_terminology_consistency": "pass_after_three_bounded_repairs",
+    "isolated_volume_2_build_smoke": {
+      "command": "tex --disable-installer --interaction=nonstopmode vol2.tex",
+      "exit_code": 0,
+      "pages": 571,
+      "dvi_bytes": 3664484,
+      "dvi_sha256": "6a4b16bbd19e6a386c6a0d9c9e9fb3ac1c9de70c34784664bb192cd7a4790980",
+      "log_bytes": 48346,
+      "log_sha256": "6165d6d559722d8cf5d706ab6be421e9dacace5619d81c20b2697b677d5f53b0",
+      "tex_bang_errors": 0,
+      "undefined_control_sequences": 0,
+      "emergency_stops": 0,
+      "runaway_arguments": 0,
+      "overfull_hboxes": 6,
+      "result": "pass"
+    }
+  },
+  "repairs_replayed": [
+    {
+      "id": "MTI-AUDIT-001",
+      "candidate_line": 7590,
+      "unit_id": "O007-FREMLIN-MTI-V12-P1024",
+      "origin": "mti-volume12-translation-seed.jsonl",
+      "result": "\\indexheader{semifinit}",
+      "reason": "The heading conflicts with adjacent P1025/P1026/P1291 and the admitted corpus term 'semifinit'."
+    },
+    {
+      "id": "MTI-AUDIT-002",
+      "candidate_line": 8142,
+      "unit_id": "O007-FREMLIN-MTI-V12-P1090",
+      "origin": "mti-volume12-translation-seed.jsonl",
+      "result": "\\indexheader{dukungan}",
+      "reason": "The admitted corpus consistently uses 'dukungan'; the same index family uses 'dukungan terbatas', 'dukungan kompak', and 'dukungan' at P1092/P1095."
+    },
+    {
+      "id": "MTI-AUDIT-003",
+      "candidate_line": 8147,
+      "unit_id": "O007-FREMLIN-MTI-V12-P1091",
+      "origin": "mti-volume12-translated-c.jsonl",
+      "result": "----- dari suatu ukuran topologis ...",
+      "reason": "The translation drops the source relation 'of' in 'support of a topological measure'."
+    }
+  ],
+  "blocking_defects": [],
+  "terminal_decision": "PASS: the repaired packet-local candidate is admissible for the owner's later canonical integration transaction."
+}

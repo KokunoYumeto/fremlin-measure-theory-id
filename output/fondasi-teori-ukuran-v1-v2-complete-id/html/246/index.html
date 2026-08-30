@@ -1,0 +1,1032 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Keterintegralan seragam — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        BbbQ: '\\mathbb{Q}', BbbR: '\\mathbb{R}',
+        eightBbb: ['\\mathbb{#1}', 1],
+        DiniD: '\\overline{D}', Dinid: '\\underline{D}',
+        Var: '\\operatorname{Var}',
+        bumpeq: '=_{\\mathrm{approx}}',
+        intstar: '\\operatorname{int}^{*}',
+        family: ['\\langle #3\\rangle_{#1\\in #2}', 3],
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        displaycause: ['\\text{(#1)}', 1],
+        bigcupop: '\\bigcup', biggerint: '\\int',
+        eae: '=_{\\mathrm{a.e.}}', leae: '\\le_{\\mathrm{a.e.}}', geae: '\\ge_{\\mathrm{a.e.}}',
+        restr: '\\mathord{\\upharpoonright}', restrp: '\\mathord{\\upharpoonright}',
+        Real: '\\operatorname{Re}', Imag: '\\operatorname{Im}',
+        tbf: ['\\mathbf{#1}', 1], eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Qed: '\\square',
+        BbbN: '\\mathbb{N}', Expn: '\\mathbb{E}',
+        Cal: ['\\mathcal{#1}', 1], dom: '\\operatorname{dom}',
+        coint: ['\\left[#1\\right[', 1],
+        sequencen: ['\\langle #1_n\\rangle_{n\\in\\mathbb{N}}', 1],
+        imp: '\\mathop{\\text{pelestari ukuran melalui prapeta}}',
+        tildeTau: '\\widetilde{\\mathrm{T}}',
+        LLcorner: '\\mathbin{\\llcorner}',
+        prooflet: ['#1', 1],
+        halfarrow: '\\rightharpoonup',
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        roibr: '\\mathopen{{[}}',
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1]
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 2 · Bagian 246</p>
+  <h1>Keterintegralan seragam</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi kumulatif</a></nav>
+<main id="isi">
+<span class="anchor" id="246"></span>
+<p>Topik berikut cukup khusus. Namun, karena alasan yang berlainan, topik ini
+sangat penting baik dalam teori probabilitas maupun dalam analisis fungsional,
+sehingga layak dibahas secara tuntas sejak awal.</p>
+<section class="source-unit" id="246A" data-source-id="246A"><h2><span class="source-label">246A</span> Definisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> adalah ruang ukur.</p>
+</section>
+<section class="source-unit" id="246Aa" data-source-id="246Aa"><h3><span class="source-label">246Aa</span> <strong>(a)</strong> </h3>
+<p>Himpunan <span class="math inline" data-source-tex="A\subseteq{\eusm L}^1(\mu)">\(A\subseteq{\eusm L}^1(\mu)\)</span> <strong>terintegralkan secara seragam</strong> jika, untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, terdapat
+himpunan <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> dengan ukuran berhingga dan bilangan
+<span class="math inline" data-source-tex="M\ge 0">\(M\ge 0\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int(|f|-M\chi E)^+\le\epsilon">\(\int(|f|-M\chi E)^+\le\epsilon\)</span> untuk setiap <span class="math inline" data-source-tex="f\in A">\(f\in A\)</span>.</div>
+</section>
+<section class="source-unit" id="246Ab" data-source-id="246Ab"><h3><span class="source-label">246Ab</span> <strong>(b)</strong> </h3>
+<p>Himpunan <span class="math inline" data-source-tex="A\subseteq L^1(\mu)">\(A\subseteq L^1(\mu)\)</span> <strong>terintegralkan secara seragam</strong> jika, untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, terdapat
+himpunan <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> dengan ukuran berhingga dan bilangan
+<span class="math inline" data-source-tex="M\ge 0">\(M\ge 0\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int(|u|-M\chi E^{\ssbullet})^+\le\epsilon">\(\int(|u|-M\chi E^{\ssbullet})^+\le\epsilon\)</span> untuk setiap <span class="math inline" data-source-tex="u\in
+A">\(u\in
+A\)</span>.</div>
+</section>
+<section class="source-unit" id="246B" data-source-id="246B"><span class="anchor" id="246Ba"></span><h2><span class="source-label">246B</span> Catatan </h2>
+<p><strong>(a)</strong> Ingat rumus-rumus dari <a class="xref" href="../241/index.html#241Ef">241Ef</a>:
+<span class="math inline" data-source-tex="u^+=u\vee 0">\(u^+=u\vee 0\)</span>, jadi <span class="math inline" data-source-tex="(u-v)^+=u-u\wedge v">\((u-v)^+=u-u\wedge v\)</span>.</p>
+</section>
+<section class="source-unit" id="246Bb" data-source-id="246Bb"><h3><span class="source-label">246Bb</span> <strong>(b)</strong> </h3>
+<p>Frasa ‘terintegralkan secara seragam’ sendiri tidak
+terlalu membantu. Namun, untuk setiap fungsi terintegralkan <span class="math inline" data-source-tex="f">\(f\)</span>, terdapat
+fungsi-fungsi sederhana yang menghampiri <span class="math inline" data-source-tex="f">\(f\)</span> dalam norma <span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span> (<a class="xref" href="../242/index.html#242M">242M</a>).
+Modulus fungsi sederhana tersebut dibatasi oleh fungsi berbentuk <span class="math inline" data-source-tex="M\chi E">\(M\chi E\)</span>,
+dengan <span class="math inline" data-source-tex="\mu E&lt;\infty">\(\mu E&lt;\infty\)</span>; karena itu, setiap himpunan beranggota tunggal dalam
+<span class="math inline" data-source-tex="\eusm L^1">\(\eusm L^1\)</span> atau <span class="math inline" data-source-tex="L^1">\(L^1\)</span> terintegralkan secara seragam. Pada himpunan fungsi
+terintegralkan secara seragam yang umum, <span class="math inline" data-source-tex="M">\(M\)</span> dan <span class="math inline" data-source-tex="E">\(E\)</span> dapat dipilih sekaligus
+untuk seluruh anggota himpunan.</p>
+<p> </p>
+<p><strong>(c)</strong> Dari definisi, semestinya jelas bahwa 
+<span class="math inline" data-source-tex="A\subseteq\eusm L^1">\(A\subseteq\eusm L^1\)</span> terintegralkan secara seragam jika dan hanya
+jika <span class="math inline" data-source-tex="\{f^{\ssbullet}:f\in A\}\subseteq L^1">\(\{f^{\ssbullet}:f\in A\}\subseteq L^1\)</span> terintegralkan secara seragam.</p>
+</section>
+<section class="source-unit" id="246Bd" data-source-id="246Bd"><h3><span class="source-label">246Bd</span> <strong>(d)</strong> </h3>
+<p>Jika
+<span class="math inline" data-source-tex="\mu X&lt;\infty">\(\mu X&lt;\infty\)</span> himpunan <span class="math inline" data-source-tex="A\subseteq L^1(\mu)">\(A\subseteq L^1(\mu)\)</span>
+terintegralkan secara seragam jika dan hanya jika</p>
+<div class="centerline"><span class="math inline" data-source-tex="\inf_{M\ge 0}\sup_{u\in A}\int(|u|-Me)^+=0">\(\inf_{M\ge 0}\sup_{u\in A}\int(|u|-Me)^+=0\)</span></div>
+<p>jika dan hanya jika</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{M\to\infty}\sup_{u\in A}\int(|u|-Me)^+=0">\(\lim_{M\to\infty}\sup_{u\in A}\int(|u|-Me)^+=0\)</span>,</div>
+<p>dengan <span class="math inline" data-source-tex="e=\chi X^{\ssbullet}\in L^1(\mu)">\(e=\chi X^{\ssbullet}\in L^1(\mu)\)</span>.
+<span class="proof-fragment">(Sebab jika
+<span class="math inline" data-source-tex="\sup_{u\in A}\int(|u|-M\chi E^{\ssbullet})^+\le\epsilon">\(\sup_{u\in A}\int(|u|-M\chi E^{\ssbullet})^+\le\epsilon\)</span>, maka
+<span class="math inline" data-source-tex="\int(|u|-M&#x27;e)^+\le\epsilon">\(\int(|u|-M&#x27;e)^+\le\epsilon\)</span> untuk setiap <span class="math inline" data-source-tex="M&#x27;\ge M">\(M&#x27;\ge M\)</span>.)</span> Demikian pula,
+<span class="math inline" data-source-tex="A\subseteq\eusm L^1(\mu)">\(A\subseteq\eusm L^1(\mu)\)</span> terintegralkan secara seragam jika dan hanya jika</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{M\to\infty}\sup_{f\in A}\int(|f|-M\chi X)^+
+=0">\(\lim_{M\to\infty}\sup_{f\in A}\int(|f|-M\chi X)^+
+=0\)</span></div>
+<p>jika dan hanya jika</p>
+<div class="centerline"><span class="math inline" data-source-tex="\inf_{M\ge 0}\sup_{f\in A}\int(|f|-M\chi X)^+=0">\(\inf_{M\ge 0}\sup_{f\in A}\int(|f|-M\chi X)^+=0\)</span>.</div>
+<p> </p>
+<p><strong>Peringatan!</strong> Beberapa penulis menggunakan frasa ‘terintegralkan
+secara seragam’ bagi himpunan yang memenuhi syarat-syarat dalam
+(d), bahkan ketika <span class="math inline" data-source-tex="\mu">\(\mu\)</span> tidak berhingga total.</p>
+</section>
+<section class="source-unit" id="246C" data-source-id="246C"><h2><span class="source-label">246C</span>  </h2>
+<p>Kelas himpunan terintegralkan secara seragam dalam
+<span class="math inline" data-source-tex="L^1">\(L^1\)</span> atau <span class="math inline" data-source-tex="\eusm L^1">\(\eusm L^1\)</span> memiliki berbagai sifat kestabilan berikut.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> ruang ukur dan <span class="math inline" data-source-tex="A">\(A\)</span>
+subhimpunan <span class="math inline" data-source-tex="L^1(\mu)">\(L^1(\mu)\)</span> yang terintegralkan secara seragam.</p>
+<p>(a) <span class="math inline" data-source-tex="A">\(A\)</span> terbatas dalam norma <span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span>.</p>
+<p>(b) Setiap subhimpunan dari <span class="math inline" data-source-tex="A">\(A\)</span> terintegralkan secara seragam.</p>
+<p>(c) Untuk setiap <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>, <span class="math inline" data-source-tex="aA=\{au:u\in A\}">\(aA=\{au:u\in A\}\)</span> terintegralkan secara seragam.</p>
+<p>(d) Terdapat <span class="math inline" data-source-tex="C\supseteq A">\(C\supseteq A\)</span> yang terintegralkan secara seragam sedemikian
+sehingga <span class="math inline" data-source-tex="C">\(C\)</span> konveks dan tertutup dalam norma <span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span>, serta <span class="math inline" data-source-tex="v\in C">\(v\in C\)</span>
+setiap kali <span class="math inline" data-source-tex="u\in C">\(u\in C\)</span> dan
+<span class="math inline" data-source-tex="|v|\le|u|">\(|v|\le|u|\)</span>.</p>
+<p>(e) Jika <span class="math inline" data-source-tex="B">\(B\)</span> adalah himpunan terintegralkan secara seragam lainnya dalam
+<span class="math inline" data-source-tex="L^1">\(L^1\)</span>, maka <span class="math inline" data-source-tex="A\cup B">\(A\cup B\)</span> dan <span class="math inline" data-source-tex="A+B=\{u+v:u\in A,\,v\in B\}">\(A+B=\{u+v:u\in A,\,v\in B\}\)</span> juga terintegralkan
+secara seragam.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Tuliskan <span class="math inline" data-source-tex="\Sigma^f">\(\Sigma^f\)</span> untuk <span class="math inline" data-source-tex="\{E:E\in\Sigma,\,\mu E&lt;\infty\}">\(\{E:E\in\Sigma,\,\mu E&lt;\infty\}\)</span>.</p>
+<p> </p>
+<p><strong>(a)</strong> Harus ada <span class="math inline" data-source-tex="E\in\Sigma^f">\(E\in\Sigma^f\)</span>, <span class="math inline" data-source-tex="M\ge 0">\(M\ge 0\)</span> sehingga <span class="math inline" data-source-tex="\int(|u|-M\chi
+E^{\ssbullet})^+\le 1">\(\int(|u|-M\chi
+E^{\ssbullet})^+\le 1\)</span> untuk setiap <span class="math inline" data-source-tex="u\in A">\(u\in A\)</span>; sekarang</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|u\|_1\le\int(|u|-M\chi E^{\ssbullet})^+
++\int M\chi
+E^{\ssbullet}\le 1+M\mu E">\(\|u\|_1\le\int(|u|-M\chi E^{\ssbullet})^+
++\int M\chi
+E^{\ssbullet}\le 1+M\mu E\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="u\in A">\(u\in A\)</span>, sehingga <span class="math inline" data-source-tex="A">\(A\)</span> terbatas.</p>
+<p> </p>
+<p><strong>(b)</strong> Ini langsung dari definisi <a class="xref" href="#246Ab">246Ab</a>.</p>
+<p> </p>
+<p><strong>(c)</strong> Untuk <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, kita dapat memilih <span class="math inline" data-source-tex="E\in\Sigma^f">\(E\in\Sigma^f\)</span> dan <span class="math inline" data-source-tex="M\ge
+0">\(M\ge
+0\)</span> sedemikian sehingga <span class="math inline" data-source-tex="|a|\int(|u|-M\chi E^{\ssbullet})^+\le\epsilon">\(|a|\int(|u|-M\chi E^{\ssbullet})^+\le\epsilon\)</span>
+untuk setiap <span class="math inline" data-source-tex="u\in A">\(u\in A\)</span>. Karena itu,
+<span class="math inline" data-source-tex="\int(|v|-|a|M\chi E^{\ssbullet})^+\le\epsilon">\(\int(|v|-|a|M\chi E^{\ssbullet})^+\le\epsilon\)</span> untuk setiap <span class="math inline" data-source-tex="v\in aA">\(v\in aA\)</span>.</p>
+<p> </p>
+<p><strong>(d)</strong> Jika <span class="math inline" data-source-tex="A">\(A\)</span> kosong, ambil <span class="math inline" data-source-tex="C=A">\(C=A\)</span>. Jika tidak, ambil</p>
+<div class="centerline"><span class="math inline" data-source-tex="C=\{v:v\in L^1,\,\int(|v|-w)^+
+\le\sup_{u\in A}\int(|u|-w)^+">\(C=\{v:v\in L^1,\,\int(|v|-w)^+
+\le\sup_{u\in A}\int(|u|-w)^+\)</span>
+untuk setiap <span class="math inline" data-source-tex="w\in L^1(\mu)\}">\(w\in L^1(\mu)\}\)</span>.</div>
+<p>Jelas bahwa <span class="math inline" data-source-tex="A\subseteq C">\(A\subseteq C\)</span>, dan <span class="math inline" data-source-tex="C">\(C\)</span> memenuhi definisi <a class="xref" href="#246Ab">246Ab</a> karena
+<span class="math inline" data-source-tex="A">\(A\)</span> memenuhinya: cukup tinjau <span class="math inline" data-source-tex="w">\(w\)</span> berbentuk <span class="math inline" data-source-tex="M\chi E^{\ssbullet}">\(M\chi E^{\ssbullet}\)</span>,
+dengan <span class="math inline" data-source-tex="E\in\Sigma^f">\(E\in\Sigma^f\)</span> dan <span class="math inline" data-source-tex="M\ge 0">\(M\ge 0\)</span>. Setiap fungsional</p>
+<div class="centerline"><span class="math inline" data-source-tex="v\mapsto\int(|v|-w)^+:L^1(\mu)\to\Bbb R">\(v\mapsto\int(|v|-w)^+:L^1(\mu)\to\Bbb R\)</span></div>
+<p>kontinu dalam norma <span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span> (karena operator <span class="math inline" data-source-tex="v\mapsto|v|">\(v\mapsto|v|\)</span>,
+<span class="math inline" data-source-tex="v\mapsto v-w">\(v\mapsto v-w\)</span>, <span class="math inline" data-source-tex="v\mapsto v^+">\(v\mapsto v^+\)</span>, dan <span class="math inline" data-source-tex="v\mapsto\int v">\(v\mapsto\int v\)</span> semuanya kontinu),
+sehingga <span class="math inline" data-source-tex="C">\(C\)</span> tertutup.
+Jika <span class="math inline" data-source-tex="|v&#x27;|\le|v|">\(|v&#x27;|\le|v|\)</span> dan <span class="math inline" data-source-tex="v\in C">\(v\in C\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int(|v&#x27;|-w)^+\le\int(|v|-w)^+
+\le\sup_{u\in A}\int(|u|-w)^+">\(\int(|v&#x27;|-w)^+\le\int(|v|-w)^+
+\le\sup_{u\in A}\int(|u|-w)^+\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="w">\(w\)</span>, dan <span class="math inline" data-source-tex="v&#x27;\in C">\(v&#x27;\in C\)</span>. Jika <span class="math inline" data-source-tex="v=av_1+bv_2">\(v=av_1+bv_2\)</span> di mana <span class="math inline" data-source-tex="v_1">\(v_1\)</span>,
+<span class="math inline" data-source-tex="v_2\in C">\(v_2\in C\)</span>, <span class="math inline" data-source-tex="a\in[0,1]">\(a\in[0,1]\)</span> dan <span class="math inline" data-source-tex="b=1-a">\(b=1-a\)</span>, maka <span class="math inline" data-source-tex="|v|\le a|v_1|+b|v_2|">\(|v|\le a|v_1|+b|v_2|\)</span>, jadi</p>
+<div class="centerline"><span class="math inline" data-source-tex="|v|-w\le(a|v_1|-aw)+(b|v_2|-bw)
+\le(a|v_1|-aw)^++(b|v_2|-bw)^+">\(|v|-w\le(a|v_1|-aw)+(b|v_2|-bw)
+\le(a|v_1|-aw)^++(b|v_2|-bw)^+\)</span></div>
+<p>dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="(|v|-w)^+\le a(|v_1|-w)^++b(|v_2|-w)^+">\((|v|-w)^+\le a(|v_1|-w)^++b(|v_2|-w)^+\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="w">\(w\)</span>; oleh karena itu,</p>
+<p><span class="math display" data-source-tex="\eqalign{\int(|v|-w)^+
+&amp;\le a\int(|v_1|-w)^++b\int(|v_2|-w)^+\cr
+&amp;\le(a+b)\sup_{u\in A}\int(|u|-w)^+
+=\sup_{u\in A}\int(|u|-w)^+\cr}">\[\begin{aligned}\int(|v|-w)^+
+&amp;\le a\int(|v_1|-w)^++b\int(|v_2|-w)^+\\
+&amp;\le(a+b)\sup_{u\in A}\int(|u|-w)^+
+=\sup_{u\in A}\int(|u|-w)^+\\\end{aligned}\]</span></p>
+<p>untuk setiap <span class="math inline" data-source-tex="w">\(w\)</span>, sehingga <span class="math inline" data-source-tex="v\in C">\(v\in C\)</span>.</p>
+<p>Jadi <span class="math inline" data-source-tex="C">\(C\)</span> memiliki semua sifat yang disyaratkan.</p>
+<p> </p>
+<p><strong>(e)</strong> Pertama-tama akan ditunjukkan bahwa <span class="math inline" data-source-tex="A\cup B">\(A\cup B\)</span> terintegralkan secara
+seragam. Bukti. Untuk <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, pilih <span class="math inline" data-source-tex="M_1">\(M_1\)</span>, <span class="math inline" data-source-tex="M_2\ge 0">\(M_2\ge 0\)</span> dan
+<span class="math inline" data-source-tex="E_1">\(E_1\)</span>, <span class="math inline" data-source-tex="E_2\in\Sigma^f">\(E_2\in\Sigma^f\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int(|u|-M_1\chi E_1^{\ssbullet})^+\le\epsilon">\(\int(|u|-M_1\chi E_1^{\ssbullet})^+\le\epsilon\)</span> untuk setiap
+<span class="math inline" data-source-tex="u\in A">\(u\in A\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\int(|u|-M_2\chi E_2^{\ssbullet})^+\le\epsilon">\(\int(|u|-M_2\chi E_2^{\ssbullet})^+\le\epsilon\)</span> untuk setiap
+<span class="math inline" data-source-tex="u\in B">\(u\in B\)</span>.</div>
+<p>Tetapkan <span class="math inline" data-source-tex="M=\max(M_1,M_2)">\(M=\max(M_1,M_2)\)</span> dan <span class="math inline" data-source-tex="E=E_1\cup E_2">\(E=E_1\cup E_2\)</span>; maka <span class="math inline" data-source-tex="\mu E&lt;\infty">\(\mu E&lt;\infty\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int(|u|-M\chi E^{\ssbullet})^+\le\epsilon">\(\int(|u|-M\chi E^{\ssbullet})^+\le\epsilon\)</span> untuk setiap <span class="math inline" data-source-tex="u\in
+A\cup B">\(u\in
+A\cup B\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sembarang, <span class="math inline" data-source-tex="A\cup B">\(A\cup B\)</span> terintegralkan secara
+seragam. ∎</p>
+<p>Menurut (d), terdapat himpunan konveks terintegralkan secara seragam <span class="math inline" data-source-tex="C">\(C\)</span> yang
+memuat <span class="math inline" data-source-tex="A\cup B">\(A\cup B\)</span>. Dalam hal ini <span class="math inline" data-source-tex="A+B\subseteq 2C">\(A+B\subseteq 2C\)</span>, sehingga (b) dan (c)
+menunjukkan bahwa <span class="math inline" data-source-tex="A+B">\(A+B\)</span> juga terintegralkan secara seragam.</p></aside>
+</section>
+<section class="source-unit" id="246D" data-source-id="246D"><h2><span class="source-label">246D</span> Proposisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> ruang probabilitas dan
+<span class="math inline" data-source-tex="A\subseteq L^1(\mu)">\(A\subseteq L^1(\mu)\)</span> himpunan terintegralkan secara seragam. Maka terdapat
+himpunan konveks, tertutup dalam norma <span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span>, dan terintegralkan secara
+seragam, yakni <span class="math inline" data-source-tex="C\subseteq L^1">\(C\subseteq L^1\)</span>,
+sedemikian sehingga <span class="math inline" data-source-tex="A\subseteq C">\(A\subseteq C\)</span>, <span class="math inline" data-source-tex="w\in C">\(w\in C\)</span> setiap kali <span class="math inline" data-source-tex="v\in C">\(v\in C\)</span> dan
+<span class="math inline" data-source-tex="|w|\le|v|">\(|w|\le|v|\)</span>, dan <span class="math inline" data-source-tex="Pv\in C">\(Pv\in C\)</span> setiap kali <span class="math inline" data-source-tex="v\in C">\(v\in C\)</span> dan <span class="math inline" data-source-tex="P">\(P\)</span> adalah operator
+ekspektasi bersyarat yang terkait dengan subaljabar-sigma dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="C=\{v:v\in L^1(\mu),\,
+  \int(|v|-Me)^+\le\sup_{u\in
+A}\int(|u|-Me)^+">\(C=\{v:v\in L^1(\mu),\,
+  \int(|v|-Me)^+\le\sup_{u\in
+A}\int(|u|-Me)^+\)</span> untuk setiap <span class="math inline" data-source-tex="M\ge 0\}">\(M\ge 0\}\)</span>,</div>
+<p>dengan <span class="math inline" data-source-tex="e=\chi X^{\ssbullet}">\(e=\chi X^{\ssbullet}\)</span> seperti biasa. Argumen dalam
+bukti 246Cd menunjukkan bahwa <span class="math inline" data-source-tex="C\supseteq A">\(C\supseteq A\)</span> terintegralkan secara seragam,
+konveks, dan tertutup, serta bahwa <span class="math inline" data-source-tex="w\in C">\(w\in C\)</span> setiap kali <span class="math inline" data-source-tex="v\in C">\(v\in C\)</span> dan
+<span class="math inline" data-source-tex="|w|\le|v|">\(|w|\le|v|\)</span>. Adapun operator ekspektasi bersyarat, jika <span class="math inline" data-source-tex="v\in C">\(v\in C\)</span>, <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>
+adalah subaljabar-sigma dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, <span class="math inline" data-source-tex="P">\(P\)</span> operator ekspektasi
+bersyarat yang terkait, dan <span class="math inline" data-source-tex="M\ge 0">\(M\ge 0\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="|Pv|\le P|v|=P((|v|\wedge Me)+(|v|-Me)^+)
+\le Me+P((|v|-Me)^+)">\(|Pv|\le P|v|=P((|v|\wedge Me)+(|v|-Me)^+)
+\le Me+P((|v|-Me)^+)\)</span>,</div>
+<p>jadi</p>
+<div class="centerline"><span class="math inline" data-source-tex="(|Pv|-Me)^+\le P((|v|-Me)^+)">\((|Pv|-Me)^+\le P((|v|-Me)^+)\)</span></div>
+<p>dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int(|Pv|-Me)^+\le\int P(|v|-Me)^+=\int(|v|-Me)^+
+\le\sup_{u\in
+A}\int(|u|-Me)^+">\(\int(|Pv|-Me)^+\le\int P(|v|-Me)^+=\int(|v|-Me)^+
+\le\sup_{u\in
+A}\int(|u|-Me)^+\)</span>;</div>
+<p>karena <span class="math inline" data-source-tex="M">\(M\)</span> sembarang, <span class="math inline" data-source-tex="Pv\in C">\(Pv\in C\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="246E" data-source-id="246E"><span class="anchor" id="246Ea"></span><h2><span class="source-label">246E</span> Catatan (a) </h2>
+<p>Tentu saja <a class="xref" href="#246D">246D</a> dapat dirumuskan dengan
+<span class="math inline" data-source-tex="\eusm L^1">\(\eusm L^1\)</span>, bukan <span class="math inline" data-source-tex="L^1">\(L^1\)</span>: jika <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> ruang probabilitas dan
+<span class="math inline" data-source-tex="A\subseteq\eusm L^1(\mu)">\(A\subseteq\eusm L^1(\mu)\)</span> terintegralkan secara seragam, maka terdapat
+himpunan terintegralkan secara seragam <span class="math inline" data-source-tex="C\supseteq A">\(C\supseteq A\)</span> sedemikian
+sehingga (i) <span class="math inline" data-source-tex="af+(1-a)g\in C">\(af+(1-a)g\in C\)</span> setiap kali <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in C">\(g\in C\)</span> dan <span class="math inline" data-source-tex="a\in[0,1]">\(a\in[0,1]\)</span> (ii) <span class="math inline" data-source-tex="g\in
+C">\(g\in
+C\)</span> setiap kali <span class="math inline" data-source-tex="f\in C">\(f\in C\)</span>, <span class="math inline" data-source-tex="g\in\eusm L^0(\mu)">\(g\in\eusm L^0(\mu)\)</span> dan <span class="math inline" data-source-tex="|g|\leae|f|">\(|g|\leae|f|\)</span> (iii) <span class="math inline" data-source-tex="f\in C">\(f\in C\)</span>
+setiap kali terdapat suatu barisan <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> dalam <span class="math inline" data-source-tex="C">\(C\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\lim_{n\to\infty}\int|f-f_n|=0">\(\lim_{n\to\infty}\int|f-f_n|=0\)</span> (iv) <span class="math inline" data-source-tex="g\in C">\(g\in C\)</span> setiap kali terdapat
+<span class="math inline" data-source-tex="f\in C">\(f\in C\)</span> sedemikian hingga <span class="math inline" data-source-tex="g">\(g\)</span> merupakan ekspektasi bersyarat dari <span class="math inline" data-source-tex="f">\(f\)</span>
+terhadap suatu subaljabar-sigma dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>.</p>
+</section>
+<section class="source-unit" id="246Eb" data-source-id="246Eb"><h3><span class="source-label">246Eb</span> <strong>(b)</strong> </h3>
+<p>Sebenarnya, <a class="xref" href="#246D">246D</a> dapat diperluas dengan mudah;
+bukti di sana sudah menunjukkan bahwa <span class="math inline" data-source-tex="T[C]\subseteq C">\(T[C]\subseteq C\)</span> setiap kali
+<span class="math inline" data-source-tex="T:L^1(\mu)\to L^1(\mu)">\(T:L^1(\mu)\to L^1(\mu)\)</span> adalah operator linear yang melestarikan urutan,
+sehingga <span class="math inline" data-source-tex="\|Tu\|_1\le\|u\|_1">\(\|Tu\|_1\le\|u\|_1\)</span> untuk setiap <span class="math inline" data-source-tex="u\in L^1(\mu)">\(u\in L^1(\mu)\)</span> dan
+<span class="math inline" data-source-tex="\|Tu\|_{\infty}\le\|u\|_{\infty}">\(\|Tu\|_{\infty}\le\|u\|_{\infty}\)</span> untuk setiap <span class="math inline" data-source-tex="u\in L^1(\mu)\cap
+L^{\infty}(\mu)">\(u\in L^1(\mu)\cap
+L^{\infty}(\mu)\)</span> (<a class="xref" href="#246Yc">246Yc</a>). Seandainya teori operator pada ruang Riesz telah
+dibahas lebih jauh, pembahasan ini pun dapat dikembangkan lebih lanjut;
+misalnya, operator <span class="math inline" data-source-tex="T">\(T\)</span> dalam kalimat terakhir sebenarnya tidak perlu
+melestarikan urutan. Saya akan kembali ke masalah ini dalam Bab 37 pada volume
+berikutnya.</p>
+</section>
+<section class="source-unit" id="246Ec" data-source-id="246Ec"><h3><span class="source-label">246Ec</span> <strong>(c)</strong> </h3>
+<p>Selain itu, teorema utama pada bagian berikut akan
+menunjukkan bahwa untuk setiap ruang ukur <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span>, <span class="math inline" data-source-tex="(Y,\Tau,\nu)">\((Y,\Tau,\nu)\)</span>,
+<span class="math inline" data-source-tex="T[A]">\(T[A]\)</span> terintegralkan secara seragam dalam <span class="math inline" data-source-tex="L^1(\nu)">\(L^1(\nu)\)</span> setiap kali
+<span class="math inline" data-source-tex="A\subseteq L^1(\mu)">\(A\subseteq L^1(\mu)\)</span> terintegralkan secara seragam dan <span class="math inline" data-source-tex="T:L^1(\mu)\to
+L^1(\nu)">\(T:L^1(\mu)\to
+L^1(\nu)\)</span> adalah operator linear kontinu (<a class="xref" href="../247/index.html#247D">247D</a>).</p>
+</section>
+<section class="source-unit" id="246F" data-source-id="246F"><h2><span class="source-label">246F</span>  </h2>
+<p>Kita memerlukan sebuah lema elementer yang belum
+dinyatakan sebelumnya.</p>
+<p> </p>
+<p><strong>Lema</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> ruang ukur. Maka
+untuk setiap <span class="math inline" data-source-tex="u\in L^1(\mu)">\(u\in L^1(\mu)\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|u\|_1\le 2\sup_{E\in\Sigma}|\int_Eu|">\(\|u\|_1\le 2\sup_{E\in\Sigma}|\int_Eu|\)</span>.</div>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Nyatakan <span class="math inline" data-source-tex="u">\(u\)</span> sebagai <span class="math inline" data-source-tex="f^{\ssbullet}">\(f^{\ssbullet}\)</span>, dengan <span class="math inline" data-source-tex="f:X\to\Bbb R">\(f:X\to\Bbb R\)</span> terukur.
+Tetapkan <span class="math inline" data-source-tex="F=\{x:f(x)\ge 0\}">\(F=\{x:f(x)\ge 0\}\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|u\|_1=\int|f|=|\int_Ff|+|\int_{X\setminus F}f|
+\le
+2\sup_{E\in\Sigma}|\int_Ef|=2\sup_{E\in\Sigma}|\int_Eu|">\(\|u\|_1=\int|f|=|\int_Ff|+|\int_{X\setminus F}f|
+\le
+2\sup_{E\in\Sigma}|\int_Ef|=2\sup_{E\in\Sigma}|\int_Eu|\)</span>.</div></aside>
+</section>
+<section class="source-unit" id="246G" data-source-id="246G"><h2><span class="source-label">246G</span>  </h2>
+<p>Sekarang kita sampai pada beberapa pencirian alternatif
+yang mencolok bagi keterintegralan seragam.</p>
+<p> </p>
+<p><strong>Teorema</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> ruang ukur sembarang dan
+<span class="math inline" data-source-tex="A">\(A\)</span> subhimpunan tak kosong dari <span class="math inline" data-source-tex="L^1(\mu)">\(L^1(\mu)\)</span>. Maka pernyataan-pernyataan berikut
+ekuivalen:</p>
+<p>  (i) <span class="math inline" data-source-tex="A">\(A\)</span> terintegralkan secara seragam;</p>
+<p>  (ii) <span class="math inline" data-source-tex="\sup_{u\in A}|\int_Fu|&lt;\infty">\(\sup_{u\in A}|\int_Fu|&lt;\infty\)</span> untuk setiap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-atom
+<span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>, dan untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>, <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>
+sedemikian rupa sehingga <span class="math inline" data-source-tex="\mu E&lt;\infty">\(\mu E&lt;\infty\)</span> dan <span class="math inline" data-source-tex="|\int_Fu|\le\epsilon">\(|\int_Fu|\le\epsilon\)</span> setiap kali
+<span class="math inline" data-source-tex="u\in A">\(u\in A\)</span>, <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dan <span class="math inline" data-source-tex="\mu(F\cap E)\le\delta">\(\mu(F\cap E)\le\delta\)</span>;</p>
+<p>  (iii) <span class="math inline" data-source-tex="\sup_{u\in A}|\int_Fu|&lt;\infty">\(\sup_{u\in A}|\int_Fu|&lt;\infty\)</span> untuk setiap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-atom
+<span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>, dan <span class="math inline" data-source-tex="\lim_{n\to\infty}\sup_{u\in A}|\int_{F_n}u|=0">\(\lim_{n\to\infty}\sup_{u\in A}|\int_{F_n}u|=0\)</span> setiap kali
+<span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> barisan saling lepas dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>;</p>
+<p>  (iv) <span class="math inline" data-source-tex="\sup_{u\in A}|\int_Fu|&lt;\infty">\(\sup_{u\in A}|\int_Fu|&lt;\infty\)</span> untuk setiap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-atom
+<span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>, dan <span class="math inline" data-source-tex="\lim_{n\to\infty}\sup_{u\in A}|\int_{F_n}u|=0">\(\lim_{n\to\infty}\sup_{u\in A}|\int_{F_n}u|=0\)</span> setiap kali
+<span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> barisan tak meningkat dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dengan irisan
+kosong.</p>
+<p> </p>
+<p><strong>Catatan</strong> Saya menggunakan frasa ‘<span class="math inline" data-source-tex="\mu">\(\mu\)</span>-atom’ untuk menekankan
+bahwa saya maksud atom dalam arti ruang ukur (<a class="xref" href="../211/index.html#211I">211I</a>).</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)(i)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(iv)</strong> Misalkan <span class="math inline" data-source-tex="A">\(A\)</span> terintegralkan secara
+seragam. Jelas bahwa jika <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> adalah sebuah <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-atom,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sup_{u\in A}|\int_Fu|
+\le\sup_{u\in A}\|u\|_1&lt;\infty">\(\sup_{u\in A}|\int_Fu|
+\le\sup_{u\in A}\|u\|_1&lt;\infty\)</span>,</div>
+<p>menurut 246Ca. Misalkan <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> barisan tak
+meningkat dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dengan irisan kosong, dan misalkan
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Ambil <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>, <span class="math inline" data-source-tex="M\ge 0">\(M\ge 0\)</span> sedemikian rupa sehingga <span class="math inline" data-source-tex="\mu
+E&lt;\infty">\(\mu
+E&lt;\infty\)</span> dan <span class="math inline" data-source-tex="\int(|u|-M\chi E^{\ssbullet})^+\le\bover12\epsilon">\(\int(|u|-M\chi E^{\ssbullet})^+\le\bover12\epsilon\)</span> setiap kali
+<span class="math inline" data-source-tex="u\in A">\(u\in A\)</span>. Untuk semua <span class="math inline" data-source-tex="n">\(n\)</span> yang cukup besar berlaku <span class="math inline" data-source-tex="M\mu(F_n\cap
+E)\le\bover12\epsilon">\(M\mu(F_n\cap
+E)\le\bover12\epsilon\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\int_{F_n}u|\le\int_{F_n}|u|
+\le\int(|u|-M\chi
+E^{\ssbullet})^++\int_{F_n}M\chi E^{\ssbullet}
+\le\Bover{\epsilon}2+M\mu(F_n\cap E)\le\epsilon">\(|\int_{F_n}u|\le\int_{F_n}|u|
+\le\int(|u|-M\chi
+E^{\ssbullet})^++\int_{F_n}M\chi E^{\ssbullet}
+\le\Bover{\epsilon}2+M\mu(F_n\cap E)\le\epsilon\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="u\in A">\(u\in A\)</span>. Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sembarang,
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\sup_{u\in A}|\int_{F_n}u|=0">\(\lim_{n\to\infty}\sup_{u\in A}|\int_{F_n}u|=0\)</span>, dan (iv) benar.</p>
+<p> </p>
+<p><strong>(b)(iv)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(iii)</strong> Misalkan (iv) benar. Maka tentu saja
+<span class="math inline" data-source-tex="\sup_{u\in A}|\int_Fu|&lt;\infty">\(\sup_{u\in A}|\int_Fu|&lt;\infty\)</span> untuk setiap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-atom <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>. <span class="fremlin-query" role="img" aria-label="andaikan untuk kontradiksi"></span>
+Andaikan, jika mungkin, bahwa <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> barisan saling lepas dalam
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\epsilon
+=\limsup_{n\to\infty}\sup_{u\in A}\min(1,\bover13|\int_{F_n}u|)
+&gt;0">\(\epsilon
+=\limsup_{n\to\infty}\sup_{u\in A}\min(1,\bover13|\int_{F_n}u|)
+&gt;0\)</span>. </div>
+<p>Tetapkan <span class="math inline" data-source-tex="H_n=\bigcup_{i\ge n}F_i">\(H_n=\bigcup_{i\ge n}F_i\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, sehingga
+<span class="math inline" data-source-tex="\sequencen{H_n}">\(\sequencen{H_n}\)</span> tak meningkat dan beririsan kosong, serta
+<span class="math inline" data-source-tex="\int_{H_n}u\to 0">\(\int_{H_n}u\to 0\)</span> sebagai <span class="math inline" data-source-tex="n\to\infty">\(n\to\infty\)</span> untuk setiap <span class="math inline" data-source-tex="u\in L^1(\mu)">\(u\in L^1(\mu)\)</span>. Pilih
+<span class="math inline" data-source-tex="\sequence{i}{n_i}">\(\sequence{i}{n_i}\)</span>, <span class="math inline" data-source-tex="\sequence{i}{m_i}">\(\sequence{i}{m_i}\)</span>, <span class="math inline" data-source-tex="\sequence{i}{u_i}">\(\sequence{i}{u_i}\)</span> secara induktif
+sebagai berikut. Tetapkan <span class="math inline" data-source-tex="n_0=0">\(n_0=0\)</span>. Setelah <span class="math inline" data-source-tex="n_i\in\Bbb N">\(n_i\in\Bbb N\)</span> dipilih, ambil
+<span class="math inline" data-source-tex="m_i\ge n_i">\(m_i\ge n_i\)</span>,
+<span class="math inline" data-source-tex="u_i\in A">\(u_i\in A\)</span> sedemikian sehingga <span class="math inline" data-source-tex="|\int_{F_{m_i}}u_i|\ge 2\epsilon">\(|\int_{F_{m_i}}u_i|\ge 2\epsilon\)</span>. Ambil
+<span class="math inline" data-source-tex="n_{i+1}&gt;m_i">\(n_{i+1}&gt;m_i\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\int_{H_{n_{i+1}}}|u_i|\le\epsilon">\(\int_{H_{n_{i+1}}}|u_i|\le\epsilon\)</span>.
+Lanjutkan.</p>
+<p>Tetapkan <span class="math inline" data-source-tex="G_k=\bigcup_{i\ge k}F_{m_i}">\(G_k=\bigcup_{i\ge k}F_{m_i}\)</span> untuk setiap <span class="math inline" data-source-tex="k">\(k\)</span>. Maka
+<span class="math inline" data-source-tex="\sequence{k}{G_k}">\(\sequence{k}{G_k}\)</span> barisan tak meningkat dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dengan
+irisan kosong. Tetapi <span class="math inline" data-source-tex="F_{m_i}\subseteq G_i\subseteq F_{m_i}\cup
+H_{n_{i+1}}">\(F_{m_i}\subseteq G_i\subseteq F_{m_i}\cup
+H_{n_{i+1}}\)</span>,
+jadi</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\int_{G_i}u_i|
+\ge|\int_{F_{m_i}}u_i|-|\int_{G_i\setminus
+F_{m_i}}u_i|
+\ge 2\epsilon-\int_{H_{n_{i+1}}}|u_i|
+\ge\epsilon">\(|\int_{G_i}u_i|
+\ge|\int_{F_{m_i}}u_i|-|\int_{G_i\setminus
+F_{m_i}}u_i|
+\ge 2\epsilon-\int_{H_{n_{i+1}}}|u_i|
+\ge\epsilon\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>; ini bertentangan dengan hipotesis (iv). <span class="fremlin-bang" role="img" aria-label="kontradiksi"></span></p>
+<p>Ini berarti bahwa <span class="math inline" data-source-tex="\lim_{n\to\infty}\sup_{u\in A}|\int_{F_n}u|">\(\lim_{n\to\infty}\sup_{u\in A}|\int_{F_n}u|\)</span> harus nol, dan
+(iii) berlaku.</p>
+<p> </p>
+<p><strong>(c)(iii)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(ii)</strong> Kita tetap mempunyai <span class="math inline" data-source-tex="\sup_{u\in
+A}|\int_Fu|&lt;\infty">\(\sup_{u\in
+A}|\int_Fu|&lt;\infty\)</span> untuk setiap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-atom <span class="math inline" data-source-tex="F">\(F\)</span>. <span class="fremlin-query" role="img" aria-label="andaikan untuk kontradiksi"></span> Andaikan terdapat
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> sedemikian sehingga untuk setiap
+himpunan terukur <span class="math inline" data-source-tex="E">\(E\)</span> berukuran berhingga dan setiap <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> terdapat
+<span class="math inline" data-source-tex="u\in A">\(u\in A\)</span>,
+<span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> sedemikian rupa sehingga <span class="math inline" data-source-tex="\mu(F\cap E)\le\delta">\(\mu(F\cap E)\le\delta\)</span> dan
+<span class="math inline" data-source-tex="|\int_Fu|\ge\epsilon">\(|\int_Fu|\ge\epsilon\)</span>. Pilih barisan <span class="math inline" data-source-tex="\sequencen{E_n}">\(\sequencen{E_n}\)</span> dari
+himpunan-himpunan berukuran berhingga, barisan <span class="math inline" data-source-tex="\sequencen{G_n}">\(\sequencen{G_n}\)</span> dalam
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, barisan <span class="math inline" data-source-tex="\sequencen{\delta_n}">\(\sequencen{\delta_n}\)</span> bilangan real positif tegas, dan
+barisan <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> dalam <span class="math inline" data-source-tex="A">\(A\)</span> sebagai berikut.
+Setelah <span class="math inline" data-source-tex="u_k">\(u_k\)</span>, <span class="math inline" data-source-tex="E_k">\(E_k\)</span>, <span class="math inline" data-source-tex="\delta_k">\(\delta_k\)</span> dipilih untuk <span class="math inline" data-source-tex="k&lt;n">\(k&lt;n\)</span>, pilih <span class="math inline" data-source-tex="u_n\in A">\(u_n\in A\)</span> dan
+<span class="math inline" data-source-tex="G_n\in\Sigma">\(G_n\in\Sigma\)</span> sedemikian rupa sehingga <span class="math inline" data-source-tex="\mu(G_n\cap\bigcup_{k&lt;n}E_k)\le
+2^{-n}\min(\{1\}\cup\{\delta_k:k&lt;n\})">\(\mu(G_n\cap\bigcup_{k&lt;n}E_k)\le
+2^{-n}\min(\{1\}\cup\{\delta_k:k&lt;n\})\)</span> dan <span class="math inline" data-source-tex="|\int_{G_n}u_n|\ge\epsilon">\(|\int_{G_n}u_n|\ge\epsilon\)</span>;
+lalu pilih himpunan <span class="math inline" data-source-tex="E_n">\(E_n\)</span> berukuran berhingga dan <span class="math inline" data-source-tex="\delta_n&gt;0">\(\delta_n&gt;0\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\int_F|u_n|\le\bover12\epsilon">\(\int_F|u_n|\le\bover12\epsilon\)</span> setiap kali <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>
+dan <span class="math inline" data-source-tex="\mu(F\cap E_n)\le\delta_n">\(\mu(F\cap E_n)\le\delta_n\)</span> (lihat <a class="xref" href="../225/index.html#225A">225A</a>). Lanjutkan.</p>
+<p>Setelah induksi selesai, tetapkan <span class="math inline" data-source-tex="F_n=E_n\cap
+G_n\setminus\bigcup_{k&gt;n}G_k">\(F_n=E_n\cap
+G_n\setminus\bigcup_{k&gt;n}G_k\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>; maka <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span>
+merupakan barisan saling lepas dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. Berdasarkan pemilihan <span class="math inline" data-source-tex="G_k">\(G_k\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu(E_n\cap\bigcup_{k&gt;n}G_k)
+\le\sum_{k=n+1}^{\infty}2^{-k}\delta_n\le\delta_n">\(\mu(E_n\cap\bigcup_{k&gt;n}G_k)
+\le\sum_{k=n+1}^{\infty}2^{-k}\delta_n\le\delta_n\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="\mu(E_n\cap(G_n\setminus F_n))\le\delta_n">\(\mu(E_n\cap(G_n\setminus F_n))\le\delta_n\)</span> dan
+<span class="math inline" data-source-tex="\int_{G_n\setminus F_n}|u_n|\le \bover12\epsilon">\(\int_{G_n\setminus F_n}|u_n|\le \bover12\epsilon\)</span>. Ini berarti bahwa
+<span class="math inline" data-source-tex="|\int_{F_n}u_n|\ge|\int_{G_n}u_n|-\bover12\epsilon\ge\bover12\epsilon">\(|\int_{F_n}u_n|\ge|\int_{G_n}u_n|-\bover12\epsilon\ge\bover12\epsilon\)</span>.
+Tetapi ini bertentangan dengan hipotesis (iii). <span class="fremlin-bang" role="img" aria-label="kontradiksi"></span></p>
+<p> </p>
+<p><strong>(d)(ii)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(i)</strong> Misalkan (ii) berlaku dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>.
+Maka terdapat <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>, <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\mu E&lt;\infty">\(\mu E&lt;\infty\)</span> dan
+<span class="math inline" data-source-tex="|\int_Fu|\le\epsilon">\(|\int_Fu|\le\epsilon\)</span> setiap kali <span class="math inline" data-source-tex="u\in A">\(u\in A\)</span>, <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dan <span class="math inline" data-source-tex="\mu(F\cap
+E)\le\delta">\(\mu(F\cap
+E)\le\delta\)</span>. Sekarang <span class="math inline" data-source-tex="\sup_{u\in A}\int_E|u|&lt;\infty">\(\sup_{u\in A}\int_E|u|&lt;\infty\)</span>. Bukti.
+ Tuliskan <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> sebagai keluarga semua <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="F\subseteq E">\(F\subseteq E\)</span> dan <span class="math inline" data-source-tex="\sup_{u\in A}\int_F|u|">\(\sup_{u\in A}\int_F|u|\)</span> berhingga. Jika <span class="math inline" data-source-tex="F\subseteq E">\(F\subseteq E\)</span>
+merupakan atom bagi <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, maka
+<span class="math inline" data-source-tex="\sup_{u\in A}\int_F|u|=\sup_{u\in A}|\int_Fu|&lt;\infty">\(\sup_{u\in A}\int_F|u|=\sup_{u\in A}|\int_Fu|&lt;\infty\)</span>,
+sehingga <span class="math inline" data-source-tex="F\in\Cal I">\(F\in\Cal I\)</span>. (Intinya adalah bahwa jika <span class="math inline" data-source-tex="f:X\to\Bbb R">\(f:X\to\Bbb R\)</span> adalah fungsi
+terukur sedemikian sehingga <span class="math inline" data-source-tex="f^{\ssbullet}=u">\(f^{\ssbullet}=u\)</span>, maka salah satu dari
+<span class="math inline" data-source-tex="F&#x27;=\{x:x\in F,\,f(x)\ge 0\}">\(F&#x27;=\{x:x\in F,\,f(x)\ge 0\}\)</span>, <span class="math inline" data-source-tex="F&#x27;&#x27;=\{x:x\in F,\,f(x)&lt;0\}">\(F&#x27;&#x27;=\{x:x\in F,\,f(x)&lt;0\}\)</span> harus terabaikan,
+sehingga <span class="math inline" data-source-tex="\int_F|u|">\(\int_F|u|\)</span> adalah <span class="math inline" data-source-tex="\int_{F&#x27;}u=\int_Fu">\(\int_{F&#x27;}u=\int_Fu\)</span> atau
+<span class="math inline" data-source-tex="-\int_{F&#x27;&#x27;}u=-\int_Fu">\(-\int_{F&#x27;&#x27;}u=-\int_Fu\)</span>.) Jika <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>, <span class="math inline" data-source-tex="F\subseteq E">\(F\subseteq E\)</span> dan <span class="math inline" data-source-tex="\mu
+F\le\delta">\(\mu
+F\le\delta\)</span> maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sup_{u\in A}\int_F|u|
+\le 2\sup_{u\in A,G\in\Sigma,G\subseteq
+F}|\int_Gu|
+\le 2\epsilon">\(\sup_{u\in A}\int_F|u|
+\le 2\sup_{u\in A,G\in\Sigma,G\subseteq
+F}|\int_Gu|
+\le 2\epsilon\)</span></div>
+<p>(menurut <a class="xref" href="#246F">246F</a>), sehingga <span class="math inline" data-source-tex="F\in\Cal I">\(F\in\Cal I\)</span>. Selanjutnya, jika
+<span class="math inline" data-source-tex="F">\(F\)</span>, <span class="math inline" data-source-tex="G\in\Cal I">\(G\in\Cal I\)</span>, maka <span class="math inline" data-source-tex="\sup_{u\in A}\int_{F\cup G}|u|
+\le\sup_{u\in A}\int_F|u|+\sup_{u\in
+A}\int_G|u|">\(\sup_{u\in A}\int_{F\cup G}|u|
+\le\sup_{u\in A}\int_F|u|+\sup_{u\in
+A}\int_G|u|\)</span> berhingga, jadi <span class="math inline" data-source-tex="F\cup G\in \Cal I">\(F\cup G\in \Cal I\)</span>. Akhirnya, jika
+<span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> sembarang barisan dalam <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span>, dan
+<span class="math inline" data-source-tex="F=\bigcup_{n\in\Bbb N}F_n">\(F=\bigcup_{n\in\Bbb N}F_n\)</span>, terdapat <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> sehingga
+<span class="math inline" data-source-tex="\mu(F\setminus\bigcup_{i\le n}F_i)\le\delta">\(\mu(F\setminus\bigcup_{i\le n}F_i)\le\delta\)</span>; sekarang <span class="math inline" data-source-tex="\bigcup_{i\le n}F_i">\(\bigcup_{i\le n}F_i\)</span>
+dan <span class="math inline" data-source-tex="F\setminus\bigcup_{i\le n}F_i">\(F\setminus\bigcup_{i\le n}F_i\)</span> keduanya termasuk dalam <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span>, jadi
+<span class="math inline" data-source-tex="F\in\Cal I">\(F\in\Cal I\)</span>.</p>
+<p>Menurut 215Ab, terdapat <span class="math inline" data-source-tex="F\in\Cal I">\(F\in\Cal I\)</span> sedemikian sehingga <span class="math inline" data-source-tex="H\setminus F">\(H\setminus F\)</span>
+terabaikan untuk setiap <span class="math inline" data-source-tex="H\in\Cal I">\(H\in\Cal I\)</span>. Sekarang perhatikan bahwa
+<span class="math inline" data-source-tex="E\setminus F">\(E\setminus F\)</span> tidak dapat memuat anggota <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> yang tidak terabaikan;
+khususnya, ia tidak dapat memuat atom ataupun himpunan tidak terabaikan yang
+berukuran kurang dari <span class="math inline" data-source-tex="\delta">\(\delta\)</span>. Dengan demikian, ukuran pada subruang
+<span class="math inline" data-source-tex="E\setminus F">\(E\setminus F\)</span> tak beratom, berhingga total, dan tidak mempunyai
+himpunan terukur yang tidak terabaikan dengan ukuran
+kurang dari <span class="math inline" data-source-tex="\delta">\(\delta\)</span>; berdasarkan <a class="xref" href="../215/index.html#215D">215D</a>, <span class="math inline" data-source-tex="\mu(E\setminus F)=0">\(\mu(E\setminus F)=0\)</span> dan baik
+<span class="math inline" data-source-tex="E\setminus F">\(E\setminus F\)</span> maupun <span class="math inline" data-source-tex="E">\(E\)</span> termasuk dalam <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span>, sebagaimana diperlukan. ∎</p>
+<p>Karena <span class="math inline" data-source-tex="\int_{X\setminus E}|u|\le 2\epsilon">\(\int_{X\setminus E}|u|\le 2\epsilon\)</span> untuk setiap <span class="math inline" data-source-tex="u\in A">\(u\in A\)</span>,
+<span class="math inline" data-source-tex="\gamma=\sup_{u\in A}\int|u|">\(\gamma=\sup_{u\in A}\int|u|\)</span> berhingga.</p>
+<p> </p>
+<p>  
+Tetapkan <span class="math inline" data-source-tex="M=\gamma/\delta">\(M=\gamma/\delta\)</span>. Jika <span class="math inline" data-source-tex="u\in A">\(u\in A\)</span>, nyatakan <span class="math inline" data-source-tex="u">\(u\)</span> sebagai
+<span class="math inline" data-source-tex="f^{\ssbullet}">\(f^{\ssbullet}\)</span>, dengan <span class="math inline" data-source-tex="f:X\to\Bbb R">\(f:X\to\Bbb R\)</span> terukur, dan pertimbangkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="F=\{x:f(x)\ge M\chi E(x)\}">\(F=\{x:f(x)\ge M\chi E(x)\}\)</span>.</div>
+<p>Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="M\mu(F\cap E)\le\int_Ff=\int_Fu\le\gamma">\(M\mu(F\cap E)\le\int_Ff=\int_Fu\le\gamma\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="\mu(F\cap E)\le\gamma/M=\delta">\(\mu(F\cap E)\le\gamma/M=\delta\)</span>. Oleh karena itu
+<span class="math inline" data-source-tex="\int_Fu\le\epsilon">\(\int_Fu\le\epsilon\)</span>. Demikian pula, <span class="math inline" data-source-tex="\int_{F&#x27;}(-u)\le\epsilon">\(\int_{F&#x27;}(-u)\le\epsilon\)</span>, dengan
+<span class="math inline" data-source-tex="F&#x27;=\{x:-f(x)\ge M\chi E(x)\}">\(F&#x27;=\{x:-f(x)\ge M\chi E(x)\}\)</span>. Ini berarti bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int(|u|-M\chi E^{\ssbullet})^+
+=\int(|f|-M\chi
+E)^+\le\int_{F\cup F&#x27;}|f|
+=\int_{F\cup F&#x27;}|u|\le 2\epsilon">\(\int(|u|-M\chi E^{\ssbullet})^+
+=\int(|f|-M\chi
+E)^+\le\int_{F\cup F&#x27;}|f|
+=\int_{F\cup F&#x27;}|u|\le 2\epsilon\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="u\in A">\(u\in A\)</span>. Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sembarang, <span class="math inline" data-source-tex="A">\(A\)</span>
+terintegralkan secara seragam.</p></aside>
+</section>
+<section class="source-unit" id="246H" data-source-id="246H"><span class="anchor" id="246Ha"></span><h2><span class="source-label">246H</span> Catatan (a) </h2>
+<p>Seperti (i), syarat (ii)–(iv) dalam
+teorema ini tentu memiliki padanan langsung bagi anggota <span class="math inline" data-source-tex="\eusm L^1">\(\eusm L^1\)</span>.
+Dengan demikian, himpunan tak kosong <span class="math inline" data-source-tex="A\subseteq\eusm L^1">\(A\subseteq\eusm L^1\)</span>
+terintegralkan secara seragam jika dan hanya jika <span class="math inline" data-source-tex="\sup_{f\in A}|\int_Ff|">\(\sup_{f\in A}|\int_Ff|\)</span>
+berhingga untuk setiap atom <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dan</p>
+<div class="inset-block"><p><em>baik </em> untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat
+<span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>, <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sehingga <span class="math inline" data-source-tex="\mu E&lt;\infty">\(\mu E&lt;\infty\)</span> dan <span class="math inline" data-source-tex="|\int_Ff|\le\epsilon">\(|\int_Ff|\le\epsilon\)</span>
+setiap kali <span class="math inline" data-source-tex="f\in A">\(f\in A\)</span>, <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dan <span class="math inline" data-source-tex="\mu(F\cap
+E)\le\delta">\(\mu(F\cap
+E)\le\delta\)</span></p></div>
+<div class="inset-block"><p><em>atau </em> <span class="math inline" data-source-tex="\lim_{n\to\infty}\sup_{f\in A}|\int_{F_n}f|=0">\(\lim_{n\to\infty}\sup_{f\in A}|\int_{F_n}f|=0\)</span> untuk
+setiap barisan saling lepas <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span></p></div>
+<div class="inset-block"><p><em>atau </em> <span class="math inline" data-source-tex="\lim_{n\to\infty}\sup_{f\in A}|\int_{F_n}f|=0">\(\lim_{n\to\infty}\sup_{f\in A}|\int_{F_n}f|=0\)</span> untuk
+setiap barisan tak meningkat <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dengan
+irisan kosong.</p></div>
+</section>
+<section class="source-unit" id="246Hb" data-source-id="246Hb"><h3><span class="source-label">246Hb</span> <strong>(b)</strong> </h3>
+<p>Masih ada tak terhitung banyaknya ungkapan ekuivalen
+yang mencirikan keterintegralan seragam; setiap penulis memiliki pilihannya
+sendiri. Banyak di antaranya merupakan variasi atas (i)–(iv) dalam teorema
+ini, seperti pada <a class="xref" href="#246I">246I</a> dan <a class="xref" href="#246Yd">246Yd</a>–<a class="xref" href="#246Yf">246Yf</a>. Untuk syarat yang sama sekali berbeda,
+lihat Teorema <a class="xref" href="../247/index.html#247C">247C</a>.</p>
+</section>
+<section class="source-unit" id="246I" data-source-id="246I"><h2><span class="source-label">246I</span> Akibat </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> ruang probabilitas. Untuk
+<span class="math inline" data-source-tex="f\in\eusm L^0(\mu)">\(f\in\eusm L^0(\mu)\)</span>, <span class="math inline" data-source-tex="M\ge 0">\(M\ge 0\)</span>, tetapkan
+<span class="math inline" data-source-tex="F(f,M)=\{x:x\in\dom f,\,|f(x)|\ge M\}">\(F(f,M)=\{x:x\in\dom f,\,|f(x)|\ge M\}\)</span>. Maka himpunan tak kosong
+<span class="math inline" data-source-tex="A\subseteq\eusm L^1(\mu)">\(A\subseteq\eusm L^1(\mu)\)</span>
+terintegralkan secara seragam jika dan hanya jika</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{M\to\infty}\sup_{f\in A}\int_{F(f,M)}|f|=0">\(\lim_{M\to\infty}\sup_{f\in A}\int_{F(f,M)}|f|=0\)</span>.</div>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Jika <span class="math inline" data-source-tex="A">\(A\)</span> memenuhi syarat tersebut, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\inf_{M\ge 0}\sup_{f\in A}\int(|f|-M\chi X)^+
+\le\inf_{M\ge
+0}\sup_{f\in A}\int_{F(f,M)}|f|=0">\(\inf_{M\ge 0}\sup_{f\in A}\int(|f|-M\chi X)^+
+\le\inf_{M\ge
+0}\sup_{f\in A}\int_{F(f,M)}|f|=0\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="A">\(A\)</span> terintegralkan secara seragam.</p>
+<p> </p>
+<p><strong>(b)</strong> Jika <span class="math inline" data-source-tex="A">\(A\)</span> terintegralkan secara seragam dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, terdapat
+<span class="math inline" data-source-tex="M_0\ge 0">\(M_0\ge 0\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\int(|f|-M_0\chi X)^+\le\epsilon">\(\int(|f|-M_0\chi X)^+\le\epsilon\)</span> untuk setiap
+<span class="math inline" data-source-tex="f\in
+A">\(f\in
+A\)</span>; selain itu, <span class="math inline" data-source-tex="\gamma=\sup_{f\in A}\int|f|">\(\gamma=\sup_{f\in A}\int|f|\)</span> berhingga (246Ca). Ambil sembarang
+<span class="math inline" data-source-tex="M\ge M_0\max(1,(1+\gamma)/\epsilon)">\(M\ge M_0\max(1,(1+\gamma)/\epsilon)\)</span>. Jika <span class="math inline" data-source-tex="f\in A">\(f\in A\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="|f|\times\chi F(f,M)
+\le (|f|-M_0\chi X)^++M_0\chi F(f,M)
+\le
+(|f|-M_0\chi X)^++\Bover{\epsilon}{\gamma+1}|f|">\(|f|\times\chi F(f,M)
+\le (|f|-M_0\chi X)^++M_0\chi F(f,M)
+\le
+(|f|-M_0\chi X)^++\Bover{\epsilon}{\gamma+1}|f|\)</span></div>
+<p>di seluruh <span class="math inline" data-source-tex="\dom f">\(\dom f\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_{F(f,M)}|f|
+\le\int(|f|-M_0\chi
+X)^++\Bover{\epsilon}{\gamma+1}\int|f|
+\le 2\epsilon">\(\int_{F(f,M)}|f|
+\le\int(|f|-M_0\chi
+X)^++\Bover{\epsilon}{\gamma+1}\int|f|
+\le 2\epsilon\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sembarang,
+<span class="math inline" data-source-tex="\lim_{M\to\infty}\sup_{f\in
+A}\int_{F(f,M)}|f|=0">\(\lim_{M\to\infty}\sup_{f\in
+A}\int_{F(f,M)}|f|=0\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="246J" data-source-id="246J"><h2><span class="source-label">246J</span>  </h2>
+<p>Langkah berikutnya ialah memaparkan beberapa kaitan
+penting antara keterintegralan seragam dan topologi konvergensi dalam
+ukuran yang dibahas dalam bagian sebelumnya.</p>
+<p> </p>
+<p><strong>Teorema</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> ruang ukur.</p>
+<p>(a) Jika <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span>
+adalah barisan fungsi bernilai real pada <span class="math inline" data-source-tex="X">\(X\)</span> yang terintegralkan secara
+seragam dan <span class="math inline" data-source-tex="f(x)=\lim_{n\to\infty}f_n(x)">\(f(x)=\lim_{n\to\infty}f_n(x)\)</span> untuk hampir setiap <span class="math inline" data-source-tex="x\in X">\(x\in X\)</span>, maka <span class="math inline" data-source-tex="f">\(f\)</span>
+terintegralkan dan <span class="math inline" data-source-tex="\lim_{n\to\infty}\int|f_n-f|=0">\(\lim_{n\to\infty}\int|f_n-f|=0\)</span>; akibatnya <span class="math inline" data-source-tex="\int
+f=\lim_{n\to\infty}\int f_n">\(\int
+f=\lim_{n\to\infty}\int f_n\)</span>.</p>
+<p>(b) Jika <span class="math inline" data-source-tex="A\subseteq L^1=L^1(\mu)">\(A\subseteq L^1=L^1(\mu)\)</span> terintegralkan secara seragam, maka
+topologi norma pada <span class="math inline" data-source-tex="L^1">\(L^1\)</span> dan topologi konvergensi dalam ukuran pada
+<span class="math inline" data-source-tex="L^0=L^0(\mu)">\(L^0=L^0(\mu)\)</span> berimpit pada <span class="math inline" data-source-tex="A">\(A\)</span>.</p>
+<p>(c) Untuk setiap <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span> dan setiap barisan <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span>,
+pernyataan-pernyataan berikut ekuivalen:</p>
+<p>  (i) <span class="math inline" data-source-tex="u=\lim_{n\to\infty}u_n">\(u=\lim_{n\to\infty}u_n\)</span> dalam norma <span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span>;</p>
+<p>  (ii) <span class="math inline" data-source-tex="\{u_n:n\in\Bbb N\}">\(\{u_n:n\in\Bbb N\}\)</span> terintegralkan secara seragam dan
+<span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> konvergen ke <span class="math inline" data-source-tex="u">\(u\)</span> dalam ukuran.</p>
+<p>(d) Jika <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> semihingga dan <span class="math inline" data-source-tex="A\subseteq L^1">\(A\subseteq L^1\)</span> terintegralkan secara
+seragam, maka penutupan <span class="math inline" data-source-tex="\overline{A}">\(\overline{A}\)</span> dari <span class="math inline" data-source-tex="A">\(A\)</span> dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span>, untuk topologi
+konvergensi dalam ukuran, tetap merupakan subhimpunan <span class="math inline" data-source-tex="L^1">\(L^1\)</span> yang terintegralkan
+secara seragam.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Perhatikan dahulu bahwa karena <span class="math inline" data-source-tex="\sup_{n\in\Bbb
+N}\int|f_n|&lt;\infty">\(\sup_{n\in\Bbb
+N}\int|f_n|&lt;\infty\)</span> (246Ca) dan <span class="math inline" data-source-tex="|f|=\liminf_{n\to\infty}|f_n|">\(|f|=\liminf_{n\to\infty}|f_n|\)</span>, Lemma Fatou
+memastikan bahwa <span class="math inline" data-source-tex="|f|">\(|f|\)</span> terintegralkan, dengan
+<span class="math inline" data-source-tex="\int|f|\le\limsup_{n\to\infty}\int|f_n|">\(\int|f|\le\limsup_{n\to\infty}\int|f_n|\)</span>. Dengan segera diperoleh bahwa
+<span class="math inline" data-source-tex="\{f_n-f:n\in\Bbb N\}">\(\{f_n-f:n\in\Bbb N\}\)</span> terintegralkan secara
+seragam, karena merupakan jumlah dua himpunan terintegralkan secara seragam
+(246Cc, 246Ce).</p>
+<p>Untuk <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, terdapat <span class="math inline" data-source-tex="M\ge 0">\(M\ge 0\)</span>, <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> sehingga <span class="math inline" data-source-tex="\mu
+E&lt;\infty">\(\mu
+E&lt;\infty\)</span> dan
+<span class="math inline" data-source-tex="\int(|f_n-f|-M\chi E)^+\le\epsilon">\(\int(|f_n-f|-M\chi E)^+\le\epsilon\)</span> untuk setiap <span class="math inline" data-source-tex="n\in\Bbb
+N">\(n\in\Bbb
+N\)</span>. Selain itu,
+<span class="math inline" data-source-tex="|f_n-f|\wedge M\chi E\to 0">\(|f_n-f|\wedge M\chi E\to 0\)</span> hampir di mana-mana, sehingga</p>
+<p><span class="math display" data-source-tex="\eqalign{\limsup_{n\to\infty}\int|f_n-f|
+&amp;\le\limsup_{n\to\infty}\int(|f_n-f|-M\chi E)^+\cr
+&amp;\qquad\qquad+\limsup_{n\to\infty}\int|f_n-f|\wedge M\chi E\cr
+&amp;\le\epsilon,\cr}">\[\begin{aligned}\limsup_{n\to\infty}\int|f_n-f|
+&amp;\le\limsup_{n\to\infty}\int(|f_n-f|-M\chi E)^+\\
+&amp;\qquad\qquad+\limsup_{n\to\infty}\int|f_n-f|\wedge M\chi E\\
+&amp;\le\epsilon,\\\end{aligned}\]</span></p>
+<p>menurut Teorema Konvergensi Terdominasi Lebesgue. Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span>
+sembarang, <span class="math inline" data-source-tex="\lim_{n\to\infty}\int|f_n-f|=0">\(\lim_{n\to\infty}\int|f_n-f|=0\)</span> dan <span class="math inline" data-source-tex="\lim_{n\to\infty}\int
+f_n-f=0">\(\lim_{n\to\infty}\int
+f_n-f=0\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Misalkan <span class="math inline" data-source-tex="\frak T_A">\(\frak T_A\)</span> dan <span class="math inline" data-source-tex="\frak S_A">\(\frak S_A\)</span> berturut-turut adalah topologi
+pada <span class="math inline" data-source-tex="A">\(A\)</span> yang diinduksi oleh topologi norma pada <span class="math inline" data-source-tex="L^1">\(L^1\)</span> dan topologi
+konvergensi dalam ukuran pada <span class="math inline" data-source-tex="L^0">\(L^0\)</span>.</p>
+<p> </p>
+<p>  <strong>(i)</strong> Untuk <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, pilih <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dan <span class="math inline" data-source-tex="M\ge 0">\(M\ge 0\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\mu F&lt;\infty">\(\mu F&lt;\infty\)</span> dan <span class="math inline" data-source-tex="\int(|v|-M\chi
+F^{\ssbullet})^+\le\epsilon">\(\int(|v|-M\chi
+F^{\ssbullet})^+\le\epsilon\)</span> untuk setiap <span class="math inline" data-source-tex="v\in A">\(v\in A\)</span>, dan pertimbangkan
+<span class="math inline" data-source-tex="\bar\rho_F">\(\bar\rho_F\)</span>, yang didefinisikan seperti di <a class="xref" href="../245/index.html#245A">245A</a>. Kemudian untuk setiap <span class="math inline" data-source-tex="f">\(f\)</span>,
+<span class="math inline" data-source-tex="g\in\eusm L^0">\(g\in\eusm L^0\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="|f-g|\le(|f|-M\chi F)^+
++(|g|-M\chi F)^++M(|f-g|\wedge \chi F)">\(|f-g|\le(|f|-M\chi F)^+
++(|g|-M\chi F)^++M(|f-g|\wedge \chi F)\)</span></div>
+<p>di seluruh <span class="math inline" data-source-tex="\dom f\cap \dom g">\(\dom f\cap \dom g\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="|u-v|\le(|u|-M\chi F^{\ssbullet})^+
++(|v|-M\chi
+F^{\ssbullet})^++M(|u-v|\wedge\chi F^{\ssbullet})">\(|u-v|\le(|u|-M\chi F^{\ssbullet})^+
++(|v|-M\chi
+F^{\ssbullet})^++M(|u-v|\wedge\chi F^{\ssbullet})\)</span></div>
+<p>untuk semua <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in L^0">\(v\in L^0\)</span>. Akibatnya</p>
+<div class="centerline"><span class="math inline" data-source-tex="\|u-v\|_1\le 2\epsilon+M\bar\rho_F(u,v)">\(\|u-v\|_1\le 2\epsilon+M\bar\rho_F(u,v)\)</span></div>
+<p>untuk semua <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in A">\(v\in A\)</span>.</p>
+<p>Artinya, untuk <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, kita dapat memilih <span class="math inline" data-source-tex="F">\(F\)</span> dan <span class="math inline" data-source-tex="M">\(M\)</span> sehingga, bagi
+<span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in A">\(v\in A\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\bar\rho_F(u,v)
+\le\Bover{\epsilon}{1+M}\Longrightarrow\|u-v\|_1\le 3\epsilon">\(\bar\rho_F(u,v)
+\le\Bover{\epsilon}{1+M}\Longrightarrow\|u-v\|_1\le 3\epsilon\)</span>.</div>
+<p>Maka setiap subhimpunan dari <span class="math inline" data-source-tex="A">\(A\)</span> yang terbuka dalam <span class="math inline" data-source-tex="\frak T_A">\(\frak T_A\)</span>
+juga terbuka dalam <span class="math inline" data-source-tex="\frak S_A">\(\frak S_A\)</span> (2A3Ib).</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Sebaliknya, kita mempunyai <span class="math inline" data-source-tex="\bar\rho_F(u,v)\le\|u-v\|_1">\(\bar\rho_F(u,v)\le\|u-v\|_1\)</span>
+untuk setiap <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span> dan setiap himpunan <span class="math inline" data-source-tex="F">\(F\)</span> berukuran berhingga,
+sehingga setiap subhimpunan dari <span class="math inline" data-source-tex="A">\(A\)</span> yang terbuka dalam <span class="math inline" data-source-tex="\frak S_A">\(\frak S_A\)</span>
+terbuka dalam <span class="math inline" data-source-tex="\frak T_A">\(\frak T_A\)</span>.</p>
+<p> </p>
+<p><strong>(c)</strong> Jika <span class="math inline" data-source-tex="\sequencen{u_n}\to u">\(\sequencen{u_n}\to u\)</span> dalam norma <span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span>, maka
+<span class="math inline" data-source-tex="A=\{u_n:n\in\Bbb N\}">\(A=\{u_n:n\in\Bbb N\}\)</span> terintegralkan secara seragam. Bukti. Untuk
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>,
+pilih <span class="math inline" data-source-tex="m">\(m\)</span> sedemikian rupa sehingga <span class="math inline" data-source-tex="\|u_n-u\|_1\le\epsilon">\(\|u_n-u\|_1\le\epsilon\)</span> setiap kali
+<span class="math inline" data-source-tex="n\ge m">\(n\ge m\)</span>. Tetapkan <span class="math inline" data-source-tex="v=|u|+\sum_{i\le m}|u_i|\in L^1">\(v=|u|+\sum_{i\le m}|u_i|\in L^1\)</span>, dan pilih <span class="math inline" data-source-tex="M\ge 0">\(M\ge 0\)</span>,
+<span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\mu E">\(\mu E\)</span> berhingga dan
+<span class="math inline" data-source-tex="\int(v-M\chi E^{\ssbullet})^+\le\epsilon">\(\int(v-M\chi E^{\ssbullet})^+\le\epsilon\)</span>. Maka, untuk <span class="math inline" data-source-tex="w\in A">\(w\in A\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="(|w|-M\chi E^{\ssbullet})^+
+\le(|w|-v)^++(v-M\chi
+E^{\ssbullet})^+">\((|w|-M\chi E^{\ssbullet})^+
+\le(|w|-v)^++(v-M\chi
+E^{\ssbullet})^+\)</span>,</div>
+<p>jadi</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int(|w|-M\chi E^{\ssbullet})^+
+\le\|(|w|-v)^+\|_1+\int(v-M\chi E^{\ssbullet})^+
+\le 2\epsilon">\(\int(|w|-M\chi E^{\ssbullet})^+
+\le\|(|w|-v)^+\|_1+\int(v-M\chi E^{\ssbullet})^+
+\le 2\epsilon\)</span>. ∎</div>
+<p>Jadi, di bawah salah satu hipotesis, <span class="math inline" data-source-tex="\{u_n:n\in\Bbb N\}">\(\{u_n:n\in\Bbb N\}\)</span> dan
+<span class="math inline" data-source-tex="A=\{u\}\cup\{u_n:n\in\Bbb N\}">\(A=\{u\}\cup\{u_n:n\in\Bbb N\}\)</span> terintegralkan secara seragam. Karena itu,
+kedua topologi berimpit pada <span class="math inline" data-source-tex="A">\(A\)</span> (menurut (b)), dan
+<span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> konvergen
+ke <span class="math inline" data-source-tex="u">\(u\)</span> dalam satu topologi jika dan hanya jika ia konvergen ke <span class="math inline" data-source-tex="u">\(u\)</span> dalam
+topologi yang lain.</p>
+<p> </p>
+<p><strong>(d)</strong> Karena <span class="math inline" data-source-tex="A">\(A\)</span> terbatas dalam norma <span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span> (246Ca) dan <span class="math inline" data-source-tex="\mu">\(\mu\)</span>
+semihingga, <span class="math inline" data-source-tex="\overline{A}\subseteq L^1">\(\overline{A}\subseteq L^1\)</span> (<a class="xref" href="../245/index.html#245J">245J</a>(b-i)). Untuk
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, pilih <span class="math inline" data-source-tex="M\ge 0">\(M\ge 0\)</span>, <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\mu
+E&lt;\infty">\(\mu
+E&lt;\infty\)</span> dan <span class="math inline" data-source-tex="\int(|u|-M\chi E^{\ssbullet})^+\le\epsilon">\(\int(|u|-M\chi E^{\ssbullet})^+\le\epsilon\)</span> untuk setiap <span class="math inline" data-source-tex="u\in
+A">\(u\in
+A\)</span>.   Sekarang peta <span class="math inline" data-source-tex="u\mapsto|u|">\(u\mapsto|u|\)</span>, <span class="math inline" data-source-tex="u\mapsto u-M\chi E^{\ssbullet}">\(u\mapsto u-M\chi E^{\ssbullet}\)</span>, <span class="math inline" data-source-tex="u\mapsto
+u^+:L^0\to L^0">\(u\mapsto
+u^+:L^0\to L^0\)</span> semuanya kontinu untuk topologi konvergensi dalam ukuran
+(<a class="xref" href="../245/index.html#245D">245D</a>), sementara <span class="math inline" data-source-tex="\{u:\|u\|_1\le\epsilon\}">\(\{u:\|u\|_1\le\epsilon\}\)</span> tertutup untuk topologi yang sama
+(<a class="xref" href="../245/index.html#245J">245J</a> lagi), sehingga <span class="math inline" data-source-tex="\{u:u\in L^0,\,\int(|u|-M\chi
+E^{\ssbullet})^+\le\epsilon\}">\(\{u:u\in L^0,\,\int(|u|-M\chi
+E^{\ssbullet})^+\le\epsilon\}\)</span> tertutup dan harus mencakup <span class="math inline" data-source-tex="\overline{A}">\(\overline{A}\)</span>.
+Dengan demikian <span class="math inline" data-source-tex="\int(|u|-M\chi E^{\ssbullet})^+\le\epsilon">\(\int(|u|-M\chi E^{\ssbullet})^+\le\epsilon\)</span> untuk setiap
+<span class="math inline" data-source-tex="u\in\overline{A}">\(u\in\overline{A}\)</span>. Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sembarang, <span class="math inline" data-source-tex="\overline{A}">\(\overline{A}\)</span>
+terintegralkan secara seragam.</p></aside>
+</section>
+<section class="source-unit" id="246K" data-source-id="246K"><h2><span class="source-label">246K</span> <span class="math inline" data-source-tex="\eusm L^1">\(\eusm L^1\)</span> dan <span class="math inline" data-source-tex="L^1">\(L^1\)</span> kompleks </h2>
+<p>Untuk <span class="math inline" data-source-tex="u\in
+L^1_{\Bbb C}(\mu)">\(u\in
+L^1_{\Bbb C}(\mu)\)</span>, <span class="math inline" data-source-tex="\|u\|_1\le 4\sup_{F\in\Sigma}|\int_Fu|">\(\|u\|_1\le 4\sup_{F\in\Sigma}|\int_Fu|\)</span>.</p>
+<p>(Sebenarnya, <span class="math inline" data-source-tex="\|u\|_1\le\pi\sup_{F\in\Sigma}|\int_Fu|">\(\|u\|_1\le\pi\sup_{F\in\Sigma}|\int_Fu|\)</span>; lihat
+<a class="xref" href="#246Yl">246Yl</a> dan 252Yt.) Akibatnya, beberapa argumen dalam <a class="xref" href="#246G">246G</a> perlu ditulis dengan
+konstanta berbeda, tetapi hasil-hasil sebagaimana dinyatakan tetap berlaku.</p>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="246X" data-source-id="246X"><span class="anchor" id="246Xa"></span><h2><span class="source-label">246X</span> Latihan dasar (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> ruang ukur dan <span class="math inline" data-source-tex="A">\(A\)</span> subhimpunan
+<span class="math inline" data-source-tex="L^1=L^1(\mu)">\(L^1=L^1(\mu)\)</span>. Tunjukkan bahwa pernyataan-pernyataan berikut ekuivalen: (i) <span class="math inline" data-source-tex="A">\(A\)</span>
+terintegralkan secara seragam; (ii) untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat <span class="math inline" data-source-tex="w\ge
+0">\(w\ge
+0\)</span> di <span class="math inline" data-source-tex="L^1">\(L^1\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\int(|u|-w)^+\le\epsilon">\(\int(|u|-w)^+\le\epsilon\)</span> untuk setiap <span class="math inline" data-source-tex="u\in
+A">\(u\in
+A\)</span>; (iii) <span class="math inline" data-source-tex="\sequencen{(|u_{n+1}|-\sup_{i\le n}|u_i|)^+}\to 0">\(\sequencen{(|u_{n+1}|-\sup_{i\le n}|u_i|)^+}\to 0\)</span> dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span>
+untuk setiap barisan <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> dalam <span class="math inline" data-source-tex="A">\(A\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong>  untuk (ii) <span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>
+(iii), tetapkan <span class="math inline" data-source-tex="v_n=\sup_{i\le n}|u_i|">\(v_n=\sup_{i\le n}|u_i|\)</span> dan perhatikan bahwa
+<span class="math inline" data-source-tex="\sequencen{v_n\wedge w}">\(\sequencen{v_n\wedge w}\)</span> konvergen dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span> untuk setiap <span class="math inline" data-source-tex="w\ge 0">\(w\ge 0\)</span>. </span></p>
+</section>
+<section class="source-unit" id="246Xb" data-source-id="246Xb"><h3><span class="source-label">246Xb</span> (&gt;b) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> ruang ukur berhingga total.
+Tunjukkan bahwa untuk setiap <span class="math inline" data-source-tex="p&gt;1">\(p&gt;1\)</span> dan <span class="math inline" data-source-tex="M\ge 0">\(M\ge 0\)</span>, himpunan
+<span class="math inline" data-source-tex="\{f:f\in{\eusm L}^p(\mu),\,\|f\|_p\le M\}">\(\{f:f\in{\eusm L}^p(\mu),\,\|f\|_p\le M\}\)</span> terintegralkan secara
+seragam. <span class="hint" role="note"><strong>Petunjuk:</strong> <span class="math inline" data-source-tex="\int(|f|-M\chi X)^+\le M^{1-p}\int|f|^p">\(\int(|f|-M\chi X)^+\le M^{1-p}\int|f|^p\)</span>.</span></p>
+</section>
+<section class="source-unit" id="246Xc" data-source-id="246Xc"><h3><span class="source-label">246Xc</span> (&gt;c) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> ukuran hitung pada <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span>. Tunjukkan bahwa
+suatu himpunan <span class="math inline" data-source-tex="A\subseteq\eusm L^1(\mu)=\ell^1">\(A\subseteq\eusm L^1(\mu)=\ell^1\)</span> terintegralkan secara
+seragam jika dan hanya jika (i) <span class="math inline" data-source-tex="\sup_{f\in A}|f(n)|&lt;\infty">\(\sup_{f\in A}|f(n)|&lt;\infty\)</span> untuk
+setiap <span class="math inline" data-source-tex="n\in \Bbb N">\(n\in \Bbb N\)</span> (ii) untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat <span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span> sehingga
+<span class="math inline" data-source-tex="\sum_{n=m}^{\infty}|f(n)|\le\epsilon">\(\sum_{n=m}^{\infty}|f(n)|\le\epsilon\)</span> untuk setiap <span class="math inline" data-source-tex="f\in A">\(f\in A\)</span>.</p>
+</section>
+<section class="source-unit" id="246Xd" data-source-id="246Xd"><h3><span class="source-label">246Xd</span> (d) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan dan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> ukuran hitung pada <span class="math inline" data-source-tex="X">\(X\)</span>.
+Tunjukkan bahwa himpunan <span class="math inline" data-source-tex="A\subseteq\eusm L^1(\mu)=\ell^1(X)">\(A\subseteq\eusm L^1(\mu)=\ell^1(X)\)</span>
+terintegralkan secara seragam jika dan hanya
+jika (i) <span class="math inline" data-source-tex="\sup_{f\in A}|f(x)|&lt;\infty">\(\sup_{f\in A}|f(x)|&lt;\infty\)</span> untuk setiap <span class="math inline" data-source-tex="x\in X">\(x\in X\)</span> (ii) untuk setiap
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat himpunan berhingga <span class="math inline" data-source-tex="I\subseteq
+X">\(I\subseteq
+X\)</span> sehingga <span class="math inline" data-source-tex="\sum_{x\in
+X\setminus I}|f(x)|\le\epsilon">\(\sum_{x\in
+X\setminus I}|f(x)|\le\epsilon\)</span> untuk setiap <span class="math inline" data-source-tex="f\in
+A">\(f\in
+A\)</span>. Tunjukkan bahwa dalam hal ini <span class="math inline" data-source-tex="A">\(A\)</span> relatif kompak dalam topologi norma pada
+<span class="math inline" data-source-tex="\ell^1(X)">\(\ell^1(X)\)</span>.</p>
+</section>
+<section class="source-unit" id="246Xe" data-source-id="246Xe"><h3><span class="source-label">246Xe</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> ruang ukur, <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>, dan
+<span class="math inline" data-source-tex="\Cal I\subseteq\Sigma">\(\Cal I\subseteq\Sigma\)</span> suatu keluarga sedemikian sehingga (i) setiap
+atom termasuk dalam <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> (ii) <span class="math inline" data-source-tex="E\in\Cal I">\(E\in\Cal I\)</span> setiap kali <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> dan
+<span class="math inline" data-source-tex="\mu E\le\delta">\(\mu E\le\delta\)</span> (iii) <span class="math inline" data-source-tex="E\cup F\in\Cal I">\(E\cup F\in\Cal I\)</span> setiap kali <span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="F\in\Cal I">\(F\in\Cal I\)</span> dan
+<span class="math inline" data-source-tex="E\cap
+F=\emptyset">\(E\cap
+F=\emptyset\)</span>. Tunjukkan bahwa setiap himpunan berukuran berhingga
+termasuk dalam <span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span>.</p>
+</section>
+<section class="source-unit" id="246Xf" data-source-id="246Xf"><h3><span class="source-label">246Xf</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dan <span class="math inline" data-source-tex="(Y,\Tau,\nu)">\((Y,\Tau,\nu)\)</span> ruang ukur,
+serta <span class="math inline" data-source-tex="\phi:X\to Y">\(\phi:X\to Y\)</span> fungsi pelestari ukuran melalui prapeta . Tunjukkan bahwa suatu himpunan
+<span class="math inline" data-source-tex="A\subseteq\eusm L^1(\nu)">\(A\subseteq\eusm L^1(\nu)\)</span> terintegralkan secara seragam jika dan hanya
+jika <span class="math inline" data-source-tex="\{g\phi:g\in A\}">\(\{g\phi:g\in A\}\)</span> terintegralkan secara seragam dalam
+<span class="math inline" data-source-tex="\eusm L^1(\mu)">\(\eusm L^1(\mu)\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> 
+gunakan <a class="xref" href="#246G">246G</a> untuk ‘jika’, <a class="xref" href="#246A">246A</a> untuk ‘hanya jika’.</span></p>
+</section>
+<section class="source-unit" id="246Xg" data-source-id="246Xg"><h3><span class="source-label">246Xg</span> (&gt;g) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> ruang ukur dan
+<span class="math inline" data-source-tex="p\in\coint{1,\infty}">\(p\in\coint{1,\infty}\)</span>. Misalkan <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> suatu barisan dalam
+<span class="math inline" data-source-tex="\eusm L^p=\eusm L^p(\mu)">\(\eusm L^p=\eusm L^p(\mu)\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\{|f_n|^p:n\in\Bbb N\}">\(\{|f_n|^p:n\in\Bbb N\}\)</span>
+terintegralkan secara seragam dan <span class="math inline" data-source-tex="f_n\to f">\(f_n\to f\)</span> hampir di mana-mana. Tunjukkan
+bahwa <span class="math inline" data-source-tex="f\in\eusm L^p">\(f\in\eusm L^p\)</span> dan <span class="math inline" data-source-tex="\lim_{n\to\infty}\int|f_n-f|^p=0">\(\lim_{n\to\infty}\int|f_n-f|^p=0\)</span>.</p>
+</section>
+<section class="source-unit" id="246Xh" data-source-id="246Xh"><h3><span class="source-label">246Xh</span> (h) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> ruang ukur semihingga dan
+<span class="math inline" data-source-tex="p\in\coint{1,\infty}">\(p\in\coint{1,\infty}\)</span>. Misalkan <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> suatu barisan dalam
+<span class="math inline" data-source-tex="L^p=L^p(\mu)">\(L^p=L^p(\mu)\)</span> dan <span class="math inline" data-source-tex="u\in L^0(\mu)">\(u\in L^0(\mu)\)</span>. Tunjukkan bahwa pernyataan-pernyataan
+berikut ekuivalen: (i) <span class="math inline" data-source-tex="u\in L^p">\(u\in L^p\)</span> dan <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> konvergen ke <span class="math inline" data-source-tex="u">\(u\)</span>
+dalam norma <span class="math inline" data-source-tex="\|\,\|_p">\(\|\,\|_p\)</span>
+(ii) <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> konvergen dalam ukuran ke <span class="math inline" data-source-tex="u">\(u\)</span> dan <span class="math inline" data-source-tex="\{|u_n|^p:n\in\Bbb
+N\}">\(\{|u_n|^p:n\in\Bbb
+N\}\)</span> terintegralkan secara seragam. <span class="hint" role="note"><strong>Petunjuk:</strong> <a class="xref" href="../245/index.html#245Xl">245Xl</a>.</span></p>
+</section>
+<section class="source-unit" id="246Xi" data-source-id="246Xi"><h3><span class="source-label">246Xi</span> (i) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> ruang ukur berhingga total, dan
+<span class="math inline" data-source-tex="1\le p&lt;r\le\infty">\(1\le p&lt;r\le\infty\)</span>. Misalkan <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> barisan yang terbatas dalam
+norma <span class="math inline" data-source-tex="\|\,\|_r">\(\|\,\|_r\)</span> dalam <span class="math inline" data-source-tex="L^r(\mu)">\(L^r(\mu)\)</span> dan konvergen dalam ukuran ke <span class="math inline" data-source-tex="u\in
+L^0(\mu)">\(u\in
+L^0(\mu)\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> konvergen ke <span class="math inline" data-source-tex="u">\(u\)</span> dalam norma
+<span class="math inline" data-source-tex="\|\,\|_p">\(\|\,\|_p\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong>  tunjukkan bahwa <span class="math inline" data-source-tex="\{|u_n|^p:n\in\Bbb N\}">\(\{|u_n|^p:n\in\Bbb N\}\)</span>
+terintegralkan secara seragam. </span></p>
+</section>
+<section class="source-unit" id="246Y" data-source-id="246Y"><span class="anchor" id="246Ya"></span><h2><span class="source-label">246Y</span> Latihan lebih lanjut (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span>
+ruang ukur berhingga total. Tunjukkan bahwa <span class="math inline" data-source-tex="A\subseteq\eusm
+L^1(\mu)">\(A\subseteq\eusm
+L^1(\mu)\)</span> terintegralkan secara seragam jika dan hanya jika terdapat fungsi
+konveks <span class="math inline" data-source-tex="\phi:\coint{0,\infty}\to\Bbb R">\(\phi:\coint{0,\infty}\to\Bbb R\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\lim_{a\to\infty}\phi(a)/a=\infty">\(\lim_{a\to\infty}\phi(a)/a=\infty\)</span> dan <span class="math inline" data-source-tex="\sup_{f\in A}\int\phi(|f|)&lt;\infty">\(\sup_{f\in A}\int\phi(|f|)&lt;\infty\)</span>.</p>
+</section>
+<section class="source-unit" id="246Yb" data-source-id="246Yb"><h3><span class="source-label">246Yb</span> (b) </h3>
+<p>Untuk setiap ruang metrik <span class="math inline" data-source-tex="(Z,\rho)">\((Z,\rho)\)</span>, misalkan <span class="math inline" data-source-tex="\Cal C_Z">\(\Cal C_Z\)</span>
+keluarga subhimpunan tertutup dari <span class="math inline" data-source-tex="Z">\(Z\)</span>. Untuk <span class="math inline" data-source-tex="F">\(F\)</span>,
+<span class="math inline" data-source-tex="F&#x27;\in\Cal C_Z\setminus\{\emptyset\}">\(F&#x27;\in\Cal C_Z\setminus\{\emptyset\}\)</span> tetapkan
+<span class="math inline" data-source-tex="\tilde\rho(F,F&#x27;)=\min(1,\max(\sup_{z\in F}\inf_{z&#x27;\in F&#x27;}\rho(z,z&#x27;),
+\sup_{z&#x27;\in F&#x27;}\inf_{z\in F}\rho(z,z&#x27;)))">\(\tilde\rho(F,F&#x27;)=\min(1,\max(\sup_{z\in F}\inf_{z&#x27;\in F&#x27;}\rho(z,z&#x27;),
+\sup_{z&#x27;\in F&#x27;}\inf_{z\in F}\rho(z,z&#x27;)))\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\tilde\rho">\(\tilde\rho\)</span>
+merupakan metrik pada <span class="math inline" data-source-tex="\Cal C_Z\setminus\{\emptyset\}">\(\Cal C_Z\setminus\{\emptyset\}\)</span> (inilah <strong>metrik
+Hausdorff</strong>). Tunjukkan bahwa jika <span class="math inline" data-source-tex="(Z,\rho)">\((Z,\rho)\)</span> lengkap, maka keluarga
+<span class="math inline" data-source-tex="\Cal K_Z\setminus\{\emptyset\}">\(\Cal K_Z\setminus\{\emptyset\}\)</span> dari subhimpunan kompak tak kosong dalam <span class="math inline" data-source-tex="Z">\(Z\)</span>
+tertutup dalam metrik <span class="math inline" data-source-tex="\tilde\rho">\(\tilde\rho\)</span>. Sekarang misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> ruang ukur
+sembarang dan ambil <span class="math inline" data-source-tex="Z=L^1=L^1(\mu)">\(Z=L^1=L^1(\mu)\)</span>,
+<span class="math inline" data-source-tex="\rho(z,z&#x27;)=\|z-z&#x27;\|_1">\(\rho(z,z&#x27;)=\|z-z&#x27;\|_1\)</span> untuk <span class="math inline" data-source-tex="z">\(z\)</span>, <span class="math inline" data-source-tex="z&#x27;\in Z">\(z&#x27;\in Z\)</span>. Tunjukkan bahwa keluarga
+subhimpunan tertutup tak kosong dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span> yang terintegralkan secara seragam
+merupakan subhimpunan tertutup dari
+<span class="math inline" data-source-tex="\Cal C_Z\setminus\{\emptyset\}">\(\Cal C_Z\setminus\{\emptyset\}\)</span> yang memuat
+<span class="math inline" data-source-tex="\Cal K_Z\setminus\{\emptyset\}">\(\Cal K_Z\setminus\{\emptyset\}\)</span>.</p>
+</section>
+<section class="source-unit" id="246Yc" data-source-id="246Yc"><h3><span class="source-label">246Yc</span> (c) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> ruang ukur berhingga total dan
+<span class="math inline" data-source-tex="A\subseteq L^1(\mu)">\(A\subseteq L^1(\mu)\)</span> himpunan terintegralkan secara seragam. Tunjukkan bahwa
+terdapat himpunan terintegralkan secara seragam <span class="math inline" data-source-tex="C\supseteq A">\(C\supseteq A\)</span> sedemikian
+sehingga (i) <span class="math inline" data-source-tex="C">\(C\)</span> konveks dan
+tertutup dalam <span class="math inline" data-source-tex="L^0(\mu)">\(L^0(\mu)\)</span> untuk topologi konvergensi dalam ukuran (ii) jika
+<span class="math inline" data-source-tex="u\in C">\(u\in C\)</span> dan <span class="math inline" data-source-tex="|v|\le|u|">\(|v|\le|u|\)</span> maka <span class="math inline" data-source-tex="v\in C">\(v\in C\)</span> (iii) jika <span class="math inline" data-source-tex="T">\(T\)</span> termasuk dalam himpunan
+<span class="math inline" data-source-tex="\Cal T^+">\(\Cal T^+\)</span> dari operator dari <span class="math inline" data-source-tex="L^1(\mu)=M^{1,\infty}(\mu)">\(L^1(\mu)=M^{1,\infty}(\mu)\)</span> ke dirinya sendiri,
+seperti yang dijelaskan dalam <a class="xref" href="../244/index.html#244Xm">244Xm</a>, maka <span class="math inline" data-source-tex="T[C]\subseteq C">\(T[C]\subseteq C\)</span>.</p>
+</section>
+<section class="source-unit" id="246Yd" data-source-id="246Yd"><h3><span class="source-label">246Yd</span> (d) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> ukuran Lebesgue pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Tunjukkan bahwa
+suatu himpunan <span class="math inline" data-source-tex="A\subseteq\eusm L^1(\mu)">\(A\subseteq\eusm L^1(\mu)\)</span> terintegralkan secara seragam
+jika dan hanya jika <span class="math inline" data-source-tex="\lim_{n\to\infty}\int_{F_n}f_n
+=0">\(\lim_{n\to\infty}\int_{F_n}f_n
+=0\)</span> untuk setiap barisan saling lepas <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> dari himpunan kompak
+dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> dan setiap barisan <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> dalam <span class="math inline" data-source-tex="A">\(A\)</span>.</p>
+</section>
+<section class="source-unit" id="246Ye" data-source-id="246Ye"><h3><span class="source-label">246Ye</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> ukuran Lebesgue pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Tunjukkan
+bahwa himpunan <span class="math inline" data-source-tex="A\subseteq\eusm L^1(\mu)">\(A\subseteq\eusm L^1(\mu)\)</span> terintegralkan
+secara seragam jika dan hanya jika <span class="math inline" data-source-tex="\lim_{n\to\infty}\int_{G_n}f_n
+=0">\(\lim_{n\to\infty}\int_{G_n}f_n
+=0\)</span> untuk setiap barisan saling lepas <span class="math inline" data-source-tex="\sequencen{G_n}">\(\sequencen{G_n}\)</span> dari himpunan terbuka
+dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> dan setiap barisan <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> dalam <span class="math inline" data-source-tex="A">\(A\)</span>.</p>
+</section>
+<section class="source-unit" id="246Yf" data-source-id="246Yf"><h3><span class="source-label">246Yf</span> (f) </h3>
+<p>Ulangi <a class="xref" href="#246Yd">246Yd</a> dan <a class="xref" href="#246Ye">246Ye</a> untuk ukuran Lebesgue pada subhimpunan
+sembarang dari <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>.</p>
+</section>
+<section class="source-unit" id="246Yg" data-source-id="246Yg"><h3><span class="source-label">246Yg</span> (g) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan dan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> aljabar-sigma dari
+subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>. Misalkan <span class="math inline" data-source-tex="\sequencen{\nu_n}">\(\sequencen{\nu_n}\)</span> barisan fungsional
+aditif terhitung pada <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\nu E=\lim_{n\to\infty}\nu_nE">\(\nu E=\lim_{n\to\infty}\nu_nE\)</span> terdefinisi untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="\lim_{n\to\infty}\nu_nF_n=0">\(\lim_{n\to\infty}\nu_nF_n=0\)</span> setiap kali <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span>
+barisan saling lepas dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> Andaikan sebaliknya. Dengan
+mengambil subbarisan yang sesuai, cukup tinjau kasus ketika <span class="math inline" data-source-tex="|\nu_nF_i-\nu
+F_i|\le 2^{-n}\epsilon">\(|\nu_nF_i-\nu
+F_i|\le 2^{-n}\epsilon\)</span> untuk <span class="math inline" data-source-tex="i&lt;n">\(i&lt;n\)</span>, <span class="math inline" data-source-tex="|\nu_nF_n|\ge 3\epsilon">\(|\nu_nF_n|\ge 3\epsilon\)</span>, <span class="math inline" data-source-tex="|\nu_nF_i|\le
+2^{-i}\epsilon">\(|\nu_nF_i|\le
+2^{-i}\epsilon\)</span> untuk <span class="math inline" data-source-tex="i&gt;n">\(i&gt;n\)</span>. Tetapkan <span class="math inline" data-source-tex="F=\bigcup_{i\in\Bbb N}F_{2i+1}">\(F=\bigcup_{i\in\Bbb N}F_{2i+1}\)</span> dan
+tunjukkan bahwa <span class="math inline" data-source-tex="|\nu_{2n+1}F-\nu_{2n}F|\ge\epsilon">\(|\nu_{2n+1}F-\nu_{2n}F|\ge\epsilon\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>.</span></p>
+</section>
+<section class="source-unit" id="246Yh" data-source-id="246Yh"><h3><span class="source-label">246Yh</span> (h) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> adalah ruang ukur dan
+<span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> suatu barisan dalam <span class="math inline" data-source-tex="L^1=L^1(\mu)">\(L^1=L^1(\mu)\)</span> sehingga
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\int_Fu_n">\(\lim_{n\to\infty}\int_Fu_n\)</span> terdefinisi untuk setiap <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="\{u_n:n\in\Bbb N\}">\(\{u_n:n\in\Bbb N\}\)</span> terintegralkan secara seragam.
+<span class="hint" role="note"><strong>Petunjuk:</strong> Andaikan tidak. Maka terdapat barisan saling lepas
+<span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dan subbarisan <span class="math inline" data-source-tex="\sequencen{u&#x27;_n}">\(\sequencen{u&#x27;_n}\)</span> dari
+<span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> sehingga <span class="math inline" data-source-tex="\inf_{n\in\Bbb N}|\int_{F_n}u&#x27;_n|=\epsilon&gt;0">\(\inf_{n\in\Bbb N}|\int_{F_n}u&#x27;_n|=\epsilon&gt;0\)</span>.
+Tetapi ini bertentangan dengan <a class="xref" href="#246Yg">246Yg</a>.</span></p>
+</section>
+<section class="source-unit" id="246Yi" data-source-id="246Yi"><h3><span class="source-label">246Yi</span> (i) </h3>
+<p>Dalam <a class="xref" href="#246Yg">246Yg</a>, tunjukkan bahwa <span class="math inline" data-source-tex="\nu">\(\nu\)</span> bersifat aditif terhitung.
+<span class="hint" role="note"><strong>Petunjuk:</strong> Tetapkan <span class="math inline" data-source-tex="\mu=\sum_{n=0}^{\infty}a_n|\nu_n|">\(\mu=\sum_{n=0}^{\infty}a_n|\nu_n|\)</span> untuk suatu barisan
+<span class="math inline" data-source-tex="\sequencen{a_n}">\(\sequencen{a_n}\)</span> bilangan positif tegas yang sesuai. Untuk
+setiap <span class="math inline" data-source-tex="n">\(n\)</span> pilih turunan Radon-Nikodým <span class="math inline" data-source-tex="f_n">\(f_n\)</span> dari <span class="math inline" data-source-tex="\nu_n">\(\nu_n\)</span> terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="\{f_n:n\in\Bbb N\}">\(\{f_n:n\in\Bbb N\}\)</span> terintegralkan secara seragam, sehingga
+<span class="math inline" data-source-tex="\nu">\(\nu\)</span> kontinu sejati.</span> (Ini adalah <strong>teorema
+Vitali-Hahn-Saks</strong>.)</p>
+</section>
+<section class="source-unit" id="246Yj" data-source-id="246Yj"><h3><span class="source-label">246Yj</span> (j) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> ruang ukur sembarang, dan
+<span class="math inline" data-source-tex="A\subseteq L^1(\mu)">\(A\subseteq L^1(\mu)\)</span>. Tunjukkan bahwa pernyataan-pernyataan berikut
+ekuivalen: (i) <span class="math inline" data-source-tex="A">\(A\)</span> terbatas dalam norma <span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span>; (ii)
+<span class="math inline" data-source-tex="\sup_{u\in A}|\int_Fu|&lt;\infty">\(\sup_{u\in A}|\int_Fu|&lt;\infty\)</span> untuk setiap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-atom <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dan
+<span class="math inline" data-source-tex="\limsup_{n\to\infty}\sup_{u\in A}|\int_{F_n}u|&lt;\infty">\(\limsup_{n\to\infty}\sup_{u\in A}|\int_{F_n}u|&lt;\infty\)</span> untuk setiap barisan
+saling lepas <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> dari himpunan-himpunan terukur berukuran
+berhingga; (iii) <span class="math inline" data-source-tex="\sup_{u\in
+A}|\int_Eu|&lt;\infty">\(\sup_{u\in
+A}|\int_Eu|&lt;\infty\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong>  tunjukkan bahwa
+<span class="math inline" data-source-tex="\sequencen{a_nu_n}">\(\sequencen{a_nu_n}\)</span> terintegralkan secara seragam bila
+<span class="math inline" data-source-tex="\lim_{n\to\infty}a_n=0">\(\lim_{n\to\infty}a_n=0\)</span> dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> dan <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> suatu barisan
+dalam <span class="math inline" data-source-tex="A">\(A\)</span>. </span></p>
+</section>
+<section class="source-unit" id="246Yk" data-source-id="246Yk"><h3><span class="source-label">246Yk</span> (k) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> adalah ruang ukur dan <span class="math inline" data-source-tex="A\subseteq
+L^1(\mu)">\(A\subseteq
+L^1(\mu)\)</span> himpunan tak kosong. Tunjukkan bahwa pernyataan-pernyataan berikut
+ekuivalen: (i) <span class="math inline" data-source-tex="A">\(A\)</span> terintegralkan secara seragam; (ii) setiap kali
+<span class="math inline" data-source-tex="B\subseteq
+L^{\infty}(\mu)">\(B\subseteq
+L^{\infty}(\mu)\)</span> tidak kosong dan terarah ke bawah serta memiliki
+infimum <span class="math inline" data-source-tex="0">\(0\)</span> dalam <span class="math inline" data-source-tex="L^{\infty}(\mu)">\(L^{\infty}(\mu)\)</span> maka <span class="math inline" data-source-tex="\inf_{v\in B}\sup_{u\in A}|\int u\times
+v|=0">\(\inf_{v\in B}\sup_{u\in A}|\int u\times
+v|=0\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> Untuk (i)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(ii), catat bahwa <span class="math inline" data-source-tex="\inf_{v\in B}w\times
+v=0">\(\inf_{v\in B}w\times
+v=0\)</span> untuk setiap <span class="math inline" data-source-tex="w\ge 0">\(w\ge 0\)</span> dalam <span class="math inline" data-source-tex="L^0">\(L^0\)</span>. Untuk (ii)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(i), gunakan
+<a class="xref" href="#246G">246G</a>(iv).</span></p>
+</section>
+<section class="source-unit" id="246Yl" data-source-id="246Yl"><h3><span class="source-label">246Yl</span> (l) </h3>
+<p>Tetapkan <span class="math inline" data-source-tex="f(x)=e^{ix}">\(f(x)=e^{ix}\)</span> untuk <span class="math inline" data-source-tex="x\in[-\pi,\pi]">\(x\in[-\pi,\pi]\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="|\int_Ef|\le 2">\(|\int_Ef|\le 2\)</span> untuk setiap <span class="math inline" data-source-tex="E\subseteq[-\pi,\pi]">\(E\subseteq[-\pi,\pi]\)</span>.</p>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<section class="source-unit" id="246-notes" data-source-id="246-notes"><h2><span class="source-label">246-notes</span> Catatan penutup untuk Bagian 246 </h2>
+<p>Sifat paling mencolok dari himpunan terintegralkan
+secara seragam saya tunda sampai bagian berikutnya: himpunan-himpunan itu
+relatif kompak secara lemah dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span>. Pembuktiannya memerlukan beberapa
+gagasan yang tidak sederhana dari analisis fungsional dan topologi umum.
+Bagian ini memuat hasil-hasil yang pada dasarnya berangkat dari teori ukuran.
+Konsep, atau teknik, baru yang terpenting ialah ‘teorema barisan saling lepas’.
+Contoh khas terdapat pada syarat (iii) dalam <a class="xref" href="#246G">246G</a>, yang mengaitkan
+keterintegralan seragam dengan perilaku fungsional pada barisan himpunan yang
+saling lepas. Variasinya diberikan dalam <a class="xref" href="#246Yd">246Yd</a>–<a class="xref" href="#246Yf">246Yf</a>, sedangkan
+<a class="xref" href="#246Yg">246Yg</a>–<a class="xref" href="#246Yj">246Yj</a> memuat hasil-hasil lain yang dapat dibuktikan dengan metode
+serupa. Hasil utama bagian berikutnya (<a class="xref" href="../247/index.html#247C">247C</a>) juga menggunakan barisan saling
+lepas dalam pembuktiannya; barisan demikian akan muncul beberapa kali lagi
+dalam Bab 35 pada volume berikutnya.</p>
+<p>Frasa ‘terintegralkan secara seragam’ semestinya berarti kira-kira ‘dapat
+dihampiri secara seragam oleh fungsi sederhana’. Definisi <a class="xref" href="#246A">246A</a> dapat diubah
+ke bentuk semacam itu, tetapi menurut saya bentuk tersebut tidak terlalu
+berguna. Sebaliknya, syarat (ii) dalam <a class="xref" href="#246G">246G</a> kira-kira menyatakan sifat
+‘kontinu sejati secara seragam’, jika anggota <span class="math inline" data-source-tex="L^1">\(L^1\)</span> dipandang sebagai
+fungsional kontinu sejati pada <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, seperti dalam <a class="xref" href="../242/index.html#242I">242I</a>. (Lihat <a class="xref" href="#246Yi">246Yi</a>.)
+Perhatikan bahwa dalam setiap pernyataan (ii)–(iv) dari <a class="xref" href="#246G">246G</a>, atom-atom ukuran
+harus ditangani secara khusus karena tidak dikendalikan oleh syarat utamanya.
+Pada ruang ukur tak beratom, tentu terdapat penyederhanaan sebagaimana dalam
+<a class="xref" href="#246Yd">246Yd</a>–<a class="xref" href="#246Yf">246Yf</a>.</p>
+<p>Cara lain untuk membenarkan kata ‘seragam’ dalam ‘terintegralkan secara
+seragam’ ialah dengan meninjau fungsional <span class="math inline" data-source-tex="\theta_w">\(\theta_w\)</span>, dengan <span class="math inline" data-source-tex="w\ge 0">\(w\ge 0\)</span> dalam
+<span class="math inline" data-source-tex="L^1">\(L^1\)</span>, yang didefinisikan oleh <span class="math inline" data-source-tex="\theta_w(u)=\int(|u|-w)^+">\(\theta_w(u)=\int(|u|-w)^+\)</span> untuk <span class="math inline" data-source-tex="u\in L^1">\(u\in L^1\)</span>.
+Himpunan <span class="math inline" data-source-tex="A\subseteq L^1">\(A\subseteq L^1\)</span> terintegralkan secara seragam jika dan hanya jika
+<span class="math inline" data-source-tex="\theta_w\to 0">\(\theta_w\to 0\)</span> secara seragam pada <span class="math inline" data-source-tex="A">\(A\)</span> ketika <span class="math inline" data-source-tex="w">\(w\)</span> meningkat dalam <span class="math inline" data-source-tex="L^1">\(L^1\)</span>
+(<a class="xref" href="#246Xa">246Xa</a>). Jika sifat ini berlaku, kadang-kadang berguna bahwa sifat tersebut
+dapat diperlihatkan dengan unsur <span class="math inline" data-source-tex="w">\(w\)</span> yang dibangun langsung dari bahan yang
+tersedia (lihat (iii) dalam <a class="xref" href="#246Xa">246Xa</a>). Selanjutnya, himpunan
+<span class="math inline" data-source-tex="A_{w\epsilon}=\{u:\theta_w(u)\le\epsilon\}">\(A_{w\epsilon}=\{u:\theta_w(u)\le\epsilon\}\)</span> selalu konveks, tertutup dalam
+norma <span class="math inline" data-source-tex="\|\,\|_1">\(\|\,\|_1\)</span>, dan ‘solid’ (jika <span class="math inline" data-source-tex="u\in A_{w\epsilon}">\(u\in A_{w\epsilon}\)</span> dan <span class="math inline" data-source-tex="|v|\le
+|u|">\(|v|\le
+|u|\)</span>, maka <span class="math inline" data-source-tex="v\in A_{w\epsilon}">\(v\in A_{w\epsilon}\)</span>) (246Cd). Himpunan ini tertutup terhadap
+konvergensi titik demi titik dari barisan (246Ja), dan pada ruang ukur
+semihingga juga tertutup dalam topologi konvergensi dalam ukuran (246Jd).
+Pada ruang probabilitas, jika <span class="math inline" data-source-tex="w">\(w\)</span> konstan, himpunan ini tertutup terhadap
+ekspektasi bersyarat (<a class="xref" href="#246D">246D</a>) dan operator serupa (<a class="xref" href="#246Yc">246Yc</a>). Karena itu, kita dapat
+mengharapkan bahwa setiap himpunan terintegralkan secara seragam termuat dalam
+himpunan terintegralkan secara seragam yang tertutup terhadap beberapa jenis
+operasi.</p>
+<p>Sifat ‘seragam’ lainnya tercantum dalam <a class="xref" href="#246Yk">246Yk</a>. Norma <span class="math inline" data-source-tex="\|\,\|_{\infty}">\(\|\,\|_{\infty}\)</span> tidak
+pernah kontinu terhadap urutan (dalam kasus-kasus yang menarik) sebagaimana
+norma <span class="math inline" data-source-tex="\|\,\|_p">\(\|\,\|_p\)</span> lainnya (<a class="xref" href="../244/index.html#244Ye">244Ye</a>). Namun, subhimpunan terintegralkan secara
+seragam dari <span class="math inline" data-source-tex="L^1">\(L^1\)</span> menghasilkan seminorma-seminorma kontinu terhadap urutan
+yang menarik pada <span class="math inline" data-source-tex="L^{\infty}">\(L^{\infty}\)</span>.</p>
+<p><a class="xref" href="#246J">246J</a> melengkapi hasil-hasil dari §<a class="xref" href="../245/index.html#245">245</a>. Dalam catatan untuk bagian itu saya
+mengajukan pertanyaan berikut: jika <span class="math inline" data-source-tex="\sequencen{f_n}\to f">\(\sequencen{f_n}\to f\)</span> hampir di mana-mana,
+dengan cara apa <span class="math inline" data-source-tex="\sequencen{\int f_n}">\(\sequencen{\int f_n}\)</span> dapat gagal konvergen ke <span class="math inline" data-source-tex="\int f">\(\int f\)</span>?
+Di sini diperoleh bahwa <span class="math inline" data-source-tex="\sequencen{\int|f_n-f|}\to 0">\(\sequencen{\int|f_n-f|}\to 0\)</span> jika dan hanya jika
+<span class="math inline" data-source-tex="\{f_n:n\in\Bbb N\}">\(\{f_n:n\in\Bbb N\}\)</span> terintegralkan secara seragam. Hal ini memperjelas
+ungkapan ‘tidak ada bobot barisan yang hilang di tak hingga’. Secara umum,
+untuk barisan, konvergensi dalam norma <span class="math inline" data-source-tex="\|\,\|_p">\(\|\,\|_p\)</span>, dengan
+<span class="math inline" data-source-tex="p\in\coint{1,\infty}">\(p\in\coint{1,\infty}\)</span>, adalah konvergensi dalam ukuran bagi barisan yang pangkat-<span class="math inline" data-source-tex="p">\(p\)</span>-nya
+terintegralkan secara seragam (<a class="xref" href="#246Xh">246Xh</a>).</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 2: Broad Foundations</cite>, Bagian 246.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 25 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-cumulative-html-route-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V2-S246&quot;,
+  &quot;source_member&quot;: &quot;mt2.2016/mt246.tex&quot;,
+  &quot;target_bytes&quot;: 40468,
+  &quot;target_sha256&quot;: &quot;fbacbf271fb7b15b5b4d532df2c3fb23e8ec7d28cb84cf49b7f10afae784559c&quot;,
+  &quot;source_ids&quot;: [
+    &quot;246&quot;,
+    &quot;246A&quot;,
+    &quot;246Aa&quot;,
+    &quot;246Ab&quot;,
+    &quot;246B&quot;,
+    &quot;246Ba&quot;,
+    &quot;246Bb&quot;,
+    &quot;246Bd&quot;,
+    &quot;246C&quot;,
+    &quot;246D&quot;,
+    &quot;246E&quot;,
+    &quot;246Ea&quot;,
+    &quot;246Eb&quot;,
+    &quot;246Ec&quot;,
+    &quot;246F&quot;,
+    &quot;246G&quot;,
+    &quot;246H&quot;,
+    &quot;246Ha&quot;,
+    &quot;246Hb&quot;,
+    &quot;246I&quot;,
+    &quot;246J&quot;,
+    &quot;246K&quot;,
+    &quot;246X&quot;,
+    &quot;246Xa&quot;,
+    &quot;246Xb&quot;,
+    &quot;246Xc&quot;,
+    &quot;246Xd&quot;,
+    &quot;246Xe&quot;,
+    &quot;246Xf&quot;,
+    &quot;246Xg&quot;,
+    &quot;246Xh&quot;,
+    &quot;246Xi&quot;,
+    &quot;246Y&quot;,
+    &quot;246Ya&quot;,
+    &quot;246Yb&quot;,
+    &quot;246Yc&quot;,
+    &quot;246Yd&quot;,
+    &quot;246Ye&quot;,
+    &quot;246Yf&quot;,
+    &quot;246Yg&quot;,
+    &quot;246Yh&quot;,
+    &quot;246Yi&quot;,
+    &quot;246Yj&quot;,
+    &quot;246Yk&quot;,
+    &quot;246Yl&quot;
+  ],
+  &quot;corpus_id&quot;: &quot;O007-FREMLIN&quot;,
+  &quot;volume_id&quot;: &quot;O007-FREMLIN-V2&quot;,
+  &quot;volume_source_title&quot;: &quot;Broad Foundations&quot;,
+  &quot;route&quot;: &quot;246&quot;,
+  &quot;official_source_page_start&quot;: 190,
+  &quot;chapter_official_source_pages&quot;: [
+    138,
+    203
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

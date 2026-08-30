@@ -1,0 +1,1109 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Teorema Radon-Nikodým — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        BbbQ: '\\mathbb{Q}', BbbR: '\\mathbb{R}',
+        eightBbb: ['\\mathbb{#1}', 1],
+        DiniD: '\\overline{D}', Dinid: '\\underline{D}',
+        Var: '\\operatorname{Var}',
+        bumpeq: '=_{\\mathrm{approx}}',
+        intstar: '\\operatorname{int}^{*}',
+        family: ['\\langle #3\\rangle_{#1\\in #2}', 3],
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        displaycause: ['\\text{(#1)}', 1],
+        bigcupop: '\\bigcup', biggerint: '\\int',
+        eae: '=_{\\mathrm{a.e.}}', leae: '\\le_{\\mathrm{a.e.}}', geae: '\\ge_{\\mathrm{a.e.}}',
+        restr: '\\mathord{\\upharpoonright}', restrp: '\\mathord{\\upharpoonright}',
+        Real: '\\operatorname{Re}', Imag: '\\operatorname{Im}',
+        tbf: ['\\mathbf{#1}', 1], eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Qed: '\\square',
+        BbbN: '\\mathbb{N}', Expn: '\\mathbb{E}',
+        Cal: ['\\mathcal{#1}', 1], dom: '\\operatorname{dom}',
+        coint: ['\\left[#1\\right[', 1],
+        sequencen: ['\\langle #1_n\\rangle_{n\\in\\mathbb{N}}', 1],
+        imp: '\\mathop{\\text{pelestari ukuran melalui prapeta}}',
+        tildeTau: '\\widetilde{\\mathrm{T}}',
+        LLcorner: '\\mathbin{\\llcorner}',
+        prooflet: ['#1', 1],
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        roibr: '\\mathopen{{[}}',
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1]
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 2 · Bagian 232</p>
+  <h1>Teorema Radon-Nikodým</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi kumulatif</a></nav>
+<main id="isi">
+<p>© 1994</p>
+<span class="anchor" id="232"></span>
+<p>Sekarang saya sampai pada teorema utama bab ini, salah satu hasil sentral
+teori ukuran, yang menghubungkan fungsional aditif terhitung dengan integral
+tak tentu. Tujuannya ialah memberikan deskripsi lengkap mengenai fungsional
+yang dapat muncul sebagai integral tak tentu dari fungsi terintegralkan
+(<a class="xref" href="#232E">232E</a>). Fungsional tersebut dapat dicirikan sebagai fungsional aditif yang
+‘kontinu sejati’ (<a class="xref" href="#232Ab">232Ab</a>). Konsep yang lebih lazim digunakan, dan memadai
+dalam banyak kasus, ialah fungsional aditif ‘kontinu mutlak’ (<a class="xref" href="#232Aa">232Aa</a>); saya
+menggunakan beberapa paragraf pertama (<a class="xref" href="#232B">232B</a>-<a class="xref" href="#232D">232D</a>) untuk membahas fakta-fakta
+elementer mengenai fungsional kontinu sejati dan kontinu mutlak. Bagian ini
+saya akhiri dengan pembahasan mengenai penguraian fungsional aditif terhitung
+umum (<a class="xref" href="#232I">232I</a>).</p>
+<section class="source-unit" id="232A" data-source-id="232A"><h2><span class="source-label">232A</span> Fungsional kontinu mutlak </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu
+ruang ukur dan <span class="math inline" data-source-tex="\nu:\Sigma\to\Bbb R">\(\nu:\Sigma\to\Bbb R\)</span> suatu fungsional aditif hingga.</p>
+</section>
+<section class="source-unit" id="232Aa" data-source-id="232Aa"><h3><span class="source-label">232Aa</span> <strong>(a)</strong> </h3>
+<p><span class="math inline" data-source-tex="\nu">\(\nu\)</span> bersifat <strong>kontinu mutlak</strong> terhadap
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span> (kadang-kadang ditulis ‘<span class="math inline" data-source-tex="\nu\ll\mu">\(\nu\ll\mu\)</span>’) jika untuk setiap
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="|\nu E|\le\epsilon">\(|\nu E|\le\epsilon\)</span> setiap kali <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> dan <span class="math inline" data-source-tex="\mu E\le\delta">\(\mu E\le\delta\)</span>.</p>
+</section>
+<section class="source-unit" id="232Ab" data-source-id="232Ab"><h3><span class="source-label">232Ab</span> <strong>(b)</strong> </h3>
+<p><span class="math inline" data-source-tex="\nu">\(\nu\)</span> bersifat <strong>kontinu sejati</strong> terhadap
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span> jika untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> dan
+<span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\mu E">\(\mu E\)</span> berhingga dan
+<span class="math inline" data-source-tex="|\nu F|\le\epsilon">\(|\nu F|\le\epsilon\)</span> setiap kali <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dan
+<span class="math inline" data-source-tex="\mu(E\cap F)\le\delta">\(\mu(E\cap F)\le\delta\)</span>.</p>
+</section>
+<section class="source-unit" id="232Ac" data-source-id="232Ac"><h3><span class="source-label">232Ac</span> <strong>(c)</strong> </h3>
+<p>Untuk rujukan, saya tambahkan definisi
+lain di sini. Jika <span class="math inline" data-source-tex="\nu">\(\nu\)</span> aditif terhitung, maka ia bersifat
+<strong>singular</strong> terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> jika terdapat himpunan <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\mu F=0">\(\mu F=0\)</span> dan <span class="math inline" data-source-tex="\nu E=0">\(\nu E=0\)</span> setiap kali <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>
+dan <span class="math inline" data-source-tex="E\subseteq X\setminus F">\(E\subseteq X\setminus F\)</span>.</p>
+</section>
+<section class="source-unit" id="232B" data-source-id="232B"><h2><span class="source-label">232B</span> Proposisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan
+<span class="math inline" data-source-tex="\nu:\Sigma\to\Bbb R">\(\nu:\Sigma\to\Bbb R\)</span> suatu fungsional aditif hingga.</p>
+<p>(a) Jika <span class="math inline" data-source-tex="\nu">\(\nu\)</span> aditif terhitung, maka ia kontinu mutlak terhadap
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span> jika dan hanya jika <span class="math inline" data-source-tex="\nu E=0">\(\nu E=0\)</span> setiap kali <span class="math inline" data-source-tex="\mu E=0">\(\mu E=0\)</span>.</p>
+<p>(b) <span class="math inline" data-source-tex="\nu">\(\nu\)</span> kontinu sejati terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> jika dan hanya jika
+(<span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>) ia aditif terhitung, (<span class="math inline" data-source-tex="\beta">\(\beta\)</span>) ia kontinu mutlak terhadap
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span>, dan (<span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>) setiap kali <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> dan <span class="math inline" data-source-tex="\nu E\ne 0">\(\nu E\ne 0\)</span> terdapat
+<span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\mu F&lt;\infty">\(\mu F&lt;\infty\)</span> dan
+<span class="math inline" data-source-tex="\nu(E\cap F)\ne 0">\(\nu(E\cap F)\ne 0\)</span>.</p>
+<p>(c) Jika <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga, maka <span class="math inline" data-source-tex="\nu">\(\nu\)</span> kontinu sejati
+terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> jika dan hanya jika ia aditif terhitung dan kontinu
+mutlak terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>.</p>
+<p>(d) Jika <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> hingga total, maka <span class="math inline" data-source-tex="\nu">\(\nu\)</span> kontinu sejati
+terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> jika dan hanya jika ia kontinu mutlak terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)(i)</strong> Jika <span class="math inline" data-source-tex="\nu">\(\nu\)</span> kontinu mutlak terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dan
+<span class="math inline" data-source-tex="\mu E=0">\(\mu E=0\)</span>, maka <span class="math inline" data-source-tex="\mu E\le\delta">\(\mu E\le\delta\)</span> untuk setiap <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>, sehingga
+<span class="math inline" data-source-tex="|\nu E|\le\epsilon">\(|\nu E|\le\epsilon\)</span> untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> dan <span class="math inline" data-source-tex="\nu E=0">\(\nu E=0\)</span>.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> <span class="fremlin-query" role="img" aria-label="andaikan untuk kontradiksi"></span> Andaikan, jika mungkin, bahwa <span class="math inline" data-source-tex="\nu E=0">\(\nu E=0\)</span> setiap
+kali <span class="math inline" data-source-tex="\mu E=0">\(\mu E=0\)</span>, tetapi <span class="math inline" data-source-tex="\nu">\(\nu\)</span> tidak kontinu mutlak. Maka terdapat
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> sedemikian sehingga untuk setiap <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> terdapat
+<span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> dengan <span class="math inline" data-source-tex="\mu E\le\delta">\(\mu E\le\delta\)</span> tetapi
+<span class="math inline" data-source-tex="|\nu E|\ge\epsilon">\(|\nu E|\ge\epsilon\)</span>. Untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> kita dapat memilih
+<span class="math inline" data-source-tex="F_n\in\Sigma">\(F_n\in\Sigma\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\mu F_n\le 2^{-n}">\(\mu F_n\le 2^{-n}\)</span> dan
+<span class="math inline" data-source-tex="|\nu F_n|\ge\epsilon">\(|\nu F_n|\ge\epsilon\)</span>. Tinjau
+<span class="math inline" data-source-tex="F=\bigcap_{n\in\Bbb N}\bigcup_{k\ge n}F_k">\(F=\bigcap_{n\in\Bbb N}\bigcup_{k\ge n}F_k\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu F\le\inf_{n\in\Bbb N}\mu(\bigcup_{k\ge n}F_k)
+\le\inf_{n\in\Bbb N}\sum_{k=n}^{\infty}2^{-k}=0">\(\mu F\le\inf_{n\in\Bbb N}\mu(\bigcup_{k\ge n}F_k)
+\le\inf_{n\in\Bbb N}\sum_{k=n}^{\infty}2^{-k}=0\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="\mu F=0">\(\mu F=0\)</span>.</p>
+<p>Sekarang ingat bahwa menurut 231Eb terdapat <span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\nu G\ge 0">\(\nu G\ge 0\)</span> jika <span class="math inline" data-source-tex="G\in\Sigma">\(G\in\Sigma\)</span> dan <span class="math inline" data-source-tex="G\subseteq H">\(G\subseteq H\)</span>, serta
+<span class="math inline" data-source-tex="\nu G\le 0">\(\nu G\le 0\)</span> jika <span class="math inline" data-source-tex="G\in\Sigma">\(G\in\Sigma\)</span> dan <span class="math inline" data-source-tex="G\cap H=\emptyset">\(G\cap H=\emptyset\)</span>. Seperti dalam
+<a class="xref" href="../231/index.html#231F">231F</a>, tetapkan <span class="math inline" data-source-tex="\nu_1 G=\nu(G\cap H)">\(\nu_1 G=\nu(G\cap H)\)</span> dan
+<span class="math inline" data-source-tex="\nu_2G=-\nu(G\setminus H)">\(\nu_2G=-\nu(G\setminus H)\)</span> untuk <span class="math inline" data-source-tex="G\in\Sigma">\(G\in\Sigma\)</span>, sehingga <span class="math inline" data-source-tex="\nu_1">\(\nu_1\)</span> dan
+<span class="math inline" data-source-tex="\nu_2">\(\nu_2\)</span> merupakan ukuran hingga total, dan <span class="math inline" data-source-tex="\nu_1F=\nu_2F=0">\(\nu_1F=\nu_2F=0\)</span> karena
+<span class="math inline" data-source-tex="\mu(F\cap H)=\mu(F\setminus H)=0">\(\mu(F\cap H)=\mu(F\setminus H)=0\)</span>. Akibatnya</p>
+<div class="centerline"><span class="math inline" data-source-tex="0=\nu_iF=\lim_{n\to\infty}\nu_i(\bigcup_{m\ge n}F_m)
+\ge\limsup_{n\to\infty}\nu_iF_n">\(0=\nu_iF=\lim_{n\to\infty}\nu_i(\bigcup_{m\ge n}F_m)
+\ge\limsup_{n\to\infty}\nu_iF_n\)</span></div>
+<p>untuk kedua nilai <span class="math inline" data-source-tex="i">\(i\)</span>, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="0=\lim_{n\to\infty}(\nu_1F_n+\nu_2F_n)
+\ge\liminf_{n\to\infty}|\nu F_n|\ge\epsilon&gt;0">\(0=\lim_{n\to\infty}(\nu_1F_n+\nu_2F_n)
+\ge\liminf_{n\to\infty}|\nu F_n|\ge\epsilon&gt;0\)</span>,</div>
+<p>yang mustahil. <span class="fremlin-bang" role="img" aria-label="kontradiksi"></span></p>
+<p> </p>
+<p><strong>(b)(i)</strong> Andaikan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> kontinu sejati terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Dari
+definisi-definisi tersebut jelas bahwa <span class="math inline" data-source-tex="\nu">\(\nu\)</span> kontinu mutlak terhadap
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Jika <span class="math inline" data-source-tex="\nu E\ne 0">\(\nu E\ne 0\)</span>, mesti terdapat <span class="math inline" data-source-tex="F">\(F\)</span> yang berukuran hingga
+sedemikian sehingga <span class="math inline" data-source-tex="|\nu G|&lt;|\nu E|">\(|\nu G|&lt;|\nu E|\)</span> setiap kali
+<span class="math inline" data-source-tex="G\cap F=\emptyset">\(G\cap F=\emptyset\)</span>, sehingga <span class="math inline" data-source-tex="|\nu(E\setminus F)|&lt;|\nu E|">\(|\nu(E\setminus F)|&lt;|\nu E|\)</span> dan
+<span class="math inline" data-source-tex="\nu(E\cap F)\ne 0">\(\nu(E\cap F)\ne 0\)</span>. Ini menangani syarat (<span class="math inline" data-source-tex="\beta">\(\beta\)</span>) dan (<span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>).</p>
+<p>Untuk memeriksa bahwa <span class="math inline" data-source-tex="\nu">\(\nu\)</span> aditif terhitung, misalkan
+<span class="math inline" data-source-tex="\sequencen{E_n}">\(\sequencen{E_n}\)</span> suatu barisan saling lepas dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dengan
+gabungan <span class="math inline" data-source-tex="E">\(E\)</span>, dan misalkan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Ambil <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> dan
+<span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\mu F&lt;\infty">\(\mu F&lt;\infty\)</span> dan
+<span class="math inline" data-source-tex="|\nu G|\le\epsilon">\(|\nu G|\le\epsilon\)</span> setiap kali <span class="math inline" data-source-tex="G\in\Sigma">\(G\in\Sigma\)</span> dan
+<span class="math inline" data-source-tex="\mu(F\cap G)\le\delta">\(\mu(F\cap G)\le\delta\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\mu(E_n\cap F)\le\mu F&lt;\infty">\(\sum_{n=0}^{\infty}\mu(E_n\cap F)\le\mu F&lt;\infty\)</span>,</div>
+<p>sehingga terdapat <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\sum_{i=n}^{\infty}\mu(E_i\cap F)\le\delta">\(\sum_{i=n}^{\infty}\mu(E_i\cap F)\le\delta\)</span>. Ambil sembarang <span class="math inline" data-source-tex="m\ge n">\(m\ge n\)</span>
+dan tinjau <span class="math inline" data-source-tex="E^*_m=\bigcup_{i\le m}E_i">\(E^*_m=\bigcup_{i\le m}E_i\)</span>. Kita mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\nu E-\sum_{i=0}^m\nu E_i|
+=|\nu E-\nu E^*_m|
+=|\nu(E\setminus E^*_m)|
+\le\epsilon">\(|\nu E-\sum_{i=0}^m\nu E_i|
+=|\nu E-\nu E^*_m|
+=|\nu(E\setminus E^*_m)|
+\le\epsilon\)</span>,</div>
+<p>karena</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu(F\cap E\setminus E^*_m)
+=\sum_{i=m+1}^{\infty}\mu(F\cap E_i)
+\le\delta">\(\mu(F\cap E\setminus E^*_m)
+=\sum_{i=m+1}^{\infty}\mu(F\cap E_i)
+\le\delta\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sembarang,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu E=\sum_{i=0}^{\infty}\nu E_i">\(\nu E=\sum_{i=0}^{\infty}\nu E_i\)</span>;</div>
+<p>karena <span class="math inline" data-source-tex="\sequencen{E_n}">\(\sequencen{E_n}\)</span> sembarang, <span class="math inline" data-source-tex="\nu">\(\nu\)</span> aditif terhitung.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Sekarang andaikan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> memenuhi ketiga syarat tersebut.
+Menurut <a class="xref" href="../231/index.html#231F">231F</a>, <span class="math inline" data-source-tex="\nu">\(\nu\)</span> dapat dinyatakan sebagai selisih dua fungsional aditif
+terhitung nonnegatif <span class="math inline" data-source-tex="\nu_1">\(\nu_1\)</span>, <span class="math inline" data-source-tex="\nu_2">\(\nu_2\)</span>; tetapkan
+<span class="math inline" data-source-tex="\nuprime=\nu_1+\nu_2">\(\nuprime=\nu_1+\nu_2\)</span>, sehingga <span class="math inline" data-source-tex="\nuprime">\(\nuprime\)</span> merupakan fungsional aditif
+terhitung nonnegatif dan <span class="math inline" data-source-tex="|\nu F|\le\nuprime F">\(|\nu F|\le\nuprime F\)</span> untuk setiap
+<span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>. Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\gamma=\sup\{\nuprime F:F\in\Sigma,\,\mu
+F&lt;\infty\}\le\nuprime
+X&lt;\infty">\(\gamma=\sup\{\nuprime F:F\in\Sigma,\,\mu
+F&lt;\infty\}\le\nuprime
+X&lt;\infty\)</span>,</div>
+<p>dan pilih suatu barisan <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> yang terdiri atas
+himpunan-himpunan berukuran hingga sedemikian sehingga
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\nuprime F_n=\gamma">\(\lim_{n\to\infty}\nuprime F_n=\gamma\)</span>; tetapkan
+<span class="math inline" data-source-tex="F^*=\bigcup_{n\in\Bbb N}F_n">\(F^*=\bigcup_{n\in\Bbb N}F_n\)</span>.
+Jika <span class="math inline" data-source-tex="G\in\Sigma">\(G\in\Sigma\)</span> dan <span class="math inline" data-source-tex="G\cap F^*=\emptyset">\(G\cap F^*=\emptyset\)</span>, maka <span class="math inline" data-source-tex="\nu G=0">\(\nu G=0\)</span>.
+Bukti.<span class="fremlin-query" role="img" aria-label="andaikan untuk kontradiksi"></span>
+Jika tidak, menurut syarat (<span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>), terdapat <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\mu F&lt;\infty">\(\mu F&lt;\infty\)</span> dan <span class="math inline" data-source-tex="\nu(G\cap F)\ne 0">\(\nu(G\cap F)\ne 0\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nuprime(F\setminus F^*)\ge\nuprime(F\cap G)\ge|\nu(F\cap
+G)|&gt;0">\(\nuprime(F\setminus F^*)\ge\nuprime(F\cap G)\ge|\nu(F\cap
+G)|&gt;0\)</span>,</div>
+<p>dan mesti terdapat <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\gamma&lt;\nuprime F_n+\nuprime(F\setminus
+F^*)=\nuprime(F_n\cup(F\setminus
+F^*))\le\nuprime(F\cup F_n)\le\gamma">\(\gamma&lt;\nuprime F_n+\nuprime(F\setminus
+F^*)=\nuprime(F_n\cup(F\setminus
+F^*))\le\nuprime(F\cup F_n)\le\gamma\)</span></div>
+<p>karena <span class="math inline" data-source-tex="\mu(F\cup F_n)&lt;\infty">\(\mu(F\cup F_n)&lt;\infty\)</span>; tetapi ini mustahil.
+<span class="fremlin-bang" role="img" aria-label="kontradiksi"></span>∎</p>
+<p>Dengan menetapkan <span class="math inline" data-source-tex="F_n^*=\bigcup_{k\le n}F_k">\(F_n^*=\bigcup_{k\le n}F_k\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, kita
+memperoleh <span class="math inline" data-source-tex="\lim_{n\to\infty}\nuprime(F^*\setminus F^*_n)=0">\(\lim_{n\to\infty}\nuprime(F^*\setminus F^*_n)=0\)</span>.
+Ambil sembarang <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, dan (dengan menggunakan syarat (<span class="math inline" data-source-tex="\beta">\(\beta\)</span>))
+pilih <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga <span class="math inline" data-source-tex="|\nu E|\le{1\over 2}\epsilon">\(|\nu E|\le{1\over 2}\epsilon\)</span>
+setiap kali <span class="math inline" data-source-tex="\mu E\le\delta">\(\mu E\le\delta\)</span>. Pilih <span class="math inline" data-source-tex="n">\(n\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\nuprime(F^*\setminus F_n^*)\le\bover12\epsilon">\(\nuprime(F^*\setminus F_n^*)\le\bover12\epsilon\)</span>. Sekarang, jika
+<span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dan <span class="math inline" data-source-tex="\mu(F\cap F^*_n)\le\delta">\(\mu(F\cap F^*_n)\le\delta\)</span>, maka</p>
+<p><span class="math display" data-source-tex="\eqalign{|\nu F|
+&amp;\le|\nu(F\cap F^*_n)|
+   +|\nu(F\cap F^*\setminus F^*_n)|
+   +|\nu(F\setminus F^*)|\cr
+&amp;\le\Bover12\epsilon+\nuprime(F\cap F^*\setminus F^*_n)+0\cr
+&amp;\le\Bover12\epsilon+\nuprime(F^*\setminus F^*_n)
+\le\Bover12\epsilon+\Bover12\epsilon
+=\epsilon.\cr}">\[\begin{aligned}|\nu F|
+&amp;\le|\nu(F\cap F^*_n)|
+   +|\nu(F\cap F^*\setminus F^*_n)|
+   +|\nu(F\setminus F^*)|\\
+&amp;\le\Bover12\epsilon+\nuprime(F\cap F^*\setminus F^*_n)+0\\
+&amp;\le\Bover12\epsilon+\nuprime(F^*\setminus F^*_n)
+\le\Bover12\epsilon+\Bover12\epsilon
+=\epsilon.\\\end{aligned}\]</span></p>
+<p>Dan <span class="math inline" data-source-tex="\mu F^*_n&lt;\infty">\(\mu F^*_n&lt;\infty\)</span>. Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sembarang, <span class="math inline" data-source-tex="\nu">\(\nu\)</span>
+kontinu sejati.</p>
+<p> </p>
+<p><strong>(c)</strong> Sekarang andaikan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga dan <span class="math inline" data-source-tex="\nu">\(\nu\)</span>
+aditif terhitung serta kontinu mutlak terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Misalkan
+<span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> suatu barisan tak menurun yang terdiri atas himpunan
+berukuran hingga dan meliputi <span class="math inline" data-source-tex="X">\(X\)</span> (<a class="xref" href="../211/index.html#211D">211D</a>). Jika <span class="math inline" data-source-tex="\nu E\ne 0">\(\nu E\ne 0\)</span>, maka
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\nu(E\cap X_n)\ne 0">\(\lim_{n\to\infty}\nu(E\cap X_n)\ne 0\)</span>, sehingga
+<span class="math inline" data-source-tex="\nu(E\cap X_n)\ne 0">\(\nu(E\cap X_n)\ne 0\)</span> untuk suatu <span class="math inline" data-source-tex="n">\(n\)</span>. Ini menunjukkan bahwa <span class="math inline" data-source-tex="\nu">\(\nu\)</span>
+memenuhi syarat (<span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>) dalam (b), sehingga kontinu sejati.</p>
+<p>Tentu saja, implikasi sebaliknya sudah tercakup dalam (b).</p>
+<p> </p>
+<p><strong>(d)</strong> Terakhir, andaikan <span class="math inline" data-source-tex="\mu X&lt;\infty">\(\mu X&lt;\infty\)</span> dan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> kontinu mutlak
+terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Maka ia mesti kontinu sejati, karena kita dapat
+mengambil <span class="math inline" data-source-tex="F=X">\(F=X\)</span> dalam definisi <a class="xref" href="#232Ab">232Ab</a>.</p></aside>
+</section>
+<section class="source-unit" id="232C" data-source-id="232C"><h2><span class="source-label">232C</span> Lema </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur, dan
+<span class="math inline" data-source-tex="\nu">\(\nu\)</span>, <span class="math inline" data-source-tex="\nuprime">\(\nuprime\)</span> dua fungsional aditif terhitung pada <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> yang
+kontinu sejati terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Ambil <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span> dan <span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span>,
+serta tetapkan <span class="math inline" data-source-tex="\nu_HE=\nu(E\cap H)">\(\nu_HE=\nu(E\cap H)\)</span>, seperti dalam <a class="xref" href="../231/index.html#231De">231De</a>.
+Maka <span class="math inline" data-source-tex="\nu+\nuprime">\(\nu+\nuprime\)</span>, <span class="math inline" data-source-tex="c\nu">\(c\nu\)</span>, dan <span class="math inline" data-source-tex="\nu_H">\(\nu_H\)</span> semuanya kontinu sejati terhadap
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span>, dan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> dapat dinyatakan sebagai selisih fungsional-fungsional
+aditif terhitung nonnegatif yang kontinu sejati terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Misalkan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Tetapkan <span class="math inline" data-source-tex="\eta=\epsilon/(2+|c|)&gt;0">\(\eta=\epsilon/(2+|c|)&gt;0\)</span>.
+Maka terdapat <span class="math inline" data-source-tex="\delta">\(\delta\)</span>, <span class="math inline" data-source-tex="\delta&#x27;&gt;0">\(\delta&#x27;&gt;0\)</span> serta <span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="E&#x27;\in\Sigma">\(E&#x27;\in\Sigma\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\mu E&lt;\infty">\(\mu E&lt;\infty\)</span>, <span class="math inline" data-source-tex="\mu E&#x27;&lt;\infty">\(\mu E&#x27;&lt;\infty\)</span>, dan <span class="math inline" data-source-tex="|\nu F|\le\eta">\(|\nu F|\le\eta\)</span> setiap
+kali <span class="math inline" data-source-tex="\mu(F\cap E)\le\delta">\(\mu(F\cap E)\le\delta\)</span>, serta <span class="math inline" data-source-tex="|\nuprime F|\le\eta">\(|\nuprime F|\le\eta\)</span> setiap kali
+<span class="math inline" data-source-tex="\mu(F\cap E&#x27;)\le\delta&#x27;">\(\mu(F\cap E&#x27;)\le\delta&#x27;\)</span>. Tetapkan
+<span class="math inline" data-source-tex="\delta^*=\min(\delta,\delta&#x27;)&gt;0">\(\delta^*=\min(\delta,\delta&#x27;)&gt;0\)</span> dan <span class="math inline" data-source-tex="E^*=E\cup E&#x27;\in\Sigma">\(E^*=E\cup E&#x27;\in\Sigma\)</span>; maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu
+E^*\le\mu E+\mu E&#x27;&lt;\infty">\(\mu
+E^*\le\mu E+\mu E&#x27;&lt;\infty\)</span>.</div>
+<p>Andaikan <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dan <span class="math inline" data-source-tex="\mu(F\cap E^*)\le\delta^*">\(\mu(F\cap E^*)\le\delta^*\)</span>; maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu(F\cap H\cap E)\le\mu(F\cap E)\le\delta^*\le\delta">\(\mu(F\cap H\cap E)\le\mu(F\cap E)\le\delta^*\le\delta\)</span>,
+   <span class="math inline" data-source-tex="\mu(F\cap E&#x27;)\le\delta^*">\(\mu(F\cap E&#x27;)\le\delta^*\)</span></div>
+<p>sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="|(\nu+\nuprime)F|\le|\nu
+F|+|\nuprime F|\le\eta+\eta\le\epsilon">\(|(\nu+\nuprime)F|\le|\nu
+F|+|\nuprime F|\le\eta+\eta\le\epsilon\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="|(c\nu)F|=|c||\nu F|\le|c|\eta\le\epsilon">\(|(c\nu)F|=|c||\nu F|\le|c|\eta\le\epsilon\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="|\nu_HF|=|\nu(F\cap H)|\le\eta\le\epsilon">\(|\nu_HF|=|\nu(F\cap H)|\le\eta\le\epsilon\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sembarang, <span class="math inline" data-source-tex="\nu+\nuprime">\(\nu+\nuprime\)</span>, <span class="math inline" data-source-tex="c\nu">\(c\nu\)</span>, dan
+<span class="math inline" data-source-tex="\nu_H">\(\nu_H\)</span> semuanya kontinu sejati.</p>
+<p>Sekarang, dengan mengambil <span class="math inline" data-source-tex="H">\(H\)</span> dari 231Eb, kita melihat bahwa
+<span class="math inline" data-source-tex="\nu_1=\nu_H">\(\nu_1=\nu_H\)</span> dan <span class="math inline" data-source-tex="\nu_2=-\nu_{X\setminus H}">\(\nu_2=-\nu_{X\setminus H}\)</span> kontinu sejati dan tak
+negatif, serta <span class="math inline" data-source-tex="\nu=\nu_1-\nu_2">\(\nu=\nu_1-\nu_2\)</span> merupakan selisih ukuran-ukuran kontinu
+sejati.</p></aside>
+</section>
+<section class="source-unit" id="232D" data-source-id="232D"><h2><span class="source-label">232D</span> Proposisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur,
+dan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real yang <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan. Untuk
+<span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>, tetapkan <span class="math inline" data-source-tex="\nu E=\int_Ef">\(\nu E=\int_Ef\)</span>. Maka
+<span class="math inline" data-source-tex="\nu:\Sigma\to\Bbb R">\(\nu:\Sigma\to\Bbb R\)</span> merupakan fungsional aditif terhitung dan kontinu
+sejati terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, sehingga kontinu mutlak terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Ingat bahwa <span class="math inline" data-source-tex="\int_Ef=\int f\times\chi E">\(\int_Ef=\int f\times\chi E\)</span> terdefinisi untuk
+setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> (<a class="xref" href="../131/index.html#131Fa">131Fa</a>). Jadi <span class="math inline" data-source-tex="\nu:\Sigma\to\Bbb R">\(\nu:\Sigma\to\Bbb R\)</span> terdefinisi
+dengan baik. Jika <span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> saling lepas, maka</p>
+<p><span class="math display" data-source-tex="\eqalign{\nu(E\cup F)
+&amp;=\int f\times\chi(E\cup F)
+=\int (f\times\chi E)+(f\times\chi F)\cr
+&amp;=\int f\times\chi E+\int f\times\chi F
+=\nu E+\nu F,\cr}">\[\begin{aligned}\nu(E\cup F)
+&amp;=\int f\times\chi(E\cup F)
+=\int (f\times\chi E)+(f\times\chi F)\\
+&amp;=\int f\times\chi E+\int f\times\chi F
+=\nu E+\nu F,\\\end{aligned}\]</span></p>
+<p>sehingga <span class="math inline" data-source-tex="\nu">\(\nu\)</span> aditif hingga.</p>
+<p>Sekarang <a class="xref" href="../225/index.html#225A">225A</a>, tanpa menggunakan ungkapan ‘kontinu sejati’, membuktikan
+persis bahwa <span class="math inline" data-source-tex="\nu">\(\nu\)</span> kontinu sejati terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Menurut 232Bb, <span class="math inline" data-source-tex="\nu">\(\nu\)</span>
+aditif terhitung dan kontinu mutlak.</p></aside>
+<p> </p>
+<p><strong>Catatan</strong> Fungsional <span class="math inline" data-source-tex="E\mapsto\int_Ef">\(E\mapsto\int_Ef\)</span> disebut
+<strong>integral tak tentu</strong> dari <span class="math inline" data-source-tex="f">\(f\)</span>.</p>
+</section>
+<section class="source-unit" id="232E" data-source-id="232E"><h2><span class="source-label">232E</span>  </h2>
+<p>Kini akhirnya kita siap untuk teorema tersebut.</p>
+<p> </p>
+<p><strong>Teorema Radon-Nikodým</strong>
+Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan
+<span class="math inline" data-source-tex="\nu:\Sigma\to\Bbb R">\(\nu:\Sigma\to\Bbb R\)</span> suatu fungsi. Maka pernyataan-pernyataan berikut
+ekuivalen:</p>
+<p>(i) terdapat fungsi <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan <span class="math inline" data-source-tex="f">\(f\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\nu E=\int_Ef">\(\nu E=\int_Ef\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>;</p>
+<p>(ii) <span class="math inline" data-source-tex="\nu">\(\nu\)</span> aditif hingga dan kontinu sejati terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Jika <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real yang
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan dan <span class="math inline" data-source-tex="\nu E=\int_Ef">\(\nu E=\int_Ef\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>,
+maka <a class="xref" href="#232D">232D</a> memberi tahu kita bahwa <span class="math inline" data-source-tex="\nu">\(\nu\)</span> aditif hingga dan kontinu sejati.</p>
+<p> </p>
+<p><strong>(b)</strong> Untuk arah sebaliknya, andaikan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> aditif hingga dan
+kontinu sejati; perhatikan bahwa (menurut <a class="xref" href="#232B">232B</a>(a-b)) <span class="math inline" data-source-tex="\nu E=0">\(\nu E=0\)</span> setiap
+kali <span class="math inline" data-source-tex="\mu E=0">\(\mu E=0\)</span>. Pertama-tama, andaikan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> nonnegatif dan tak nol.</p>
+<p>Dalam hal ini, terdapat fungsi sederhana nonnegatif <span class="math inline" data-source-tex="f">\(f\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\int f&gt;0">\(\int f&gt;0\)</span> dan <span class="math inline" data-source-tex="\int_Ef\le\nu E">\(\int_Ef\le\nu E\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>.
+Bukti. Misalkan <span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\nu H&gt;0">\(\nu H&gt;0\)</span>; tetapkan
+<span class="math inline" data-source-tex="\epsilon={1\over 3}\nu H&gt;0">\(\epsilon={1\over 3}\nu H&gt;0\)</span>. Ambil <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> dan <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\mu E&lt;\infty">\(\mu E&lt;\infty\)</span> dan <span class="math inline" data-source-tex="\nu F\le\epsilon">\(\nu F\le\epsilon\)</span> setiap kali
+<span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dan <span class="math inline" data-source-tex="\mu(F\cap E)\le\delta">\(\mu(F\cap E)\le\delta\)</span>; maka
+<span class="math inline" data-source-tex="\nu(H\setminus E)\le\epsilon">\(\nu(H\setminus E)\le\epsilon\)</span>, sehingga
+<span class="math inline" data-source-tex="\nu E\ge\nu(H\cap E)\ge2\epsilon">\(\nu E\ge\nu(H\cap E)\ge2\epsilon\)</span> dan
+<span class="math inline" data-source-tex="\mu E\ge\mu(H\cap E)&gt;0">\(\mu E\ge\mu(H\cap E)&gt;0\)</span>. Tetapkan <span class="math inline" data-source-tex="\mu_EF=\mu(F\cap E)">\(\mu_EF=\mu(F\cap E)\)</span> untuk setiap
+<span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>; maka <span class="math inline" data-source-tex="\mu_E">\(\mu_E\)</span> merupakan fungsional aditif terhitung pada
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. Tetapkan <span class="math inline" data-source-tex="\nuprime=\nu-\alpha\mu_E">\(\nuprime=\nu-\alpha\mu_E\)</span>, dengan
+<span class="math inline" data-source-tex="\alpha=\epsilon/\mu E">\(\alpha=\epsilon/\mu E\)</span>; maka <span class="math inline" data-source-tex="\nuprime">\(\nuprime\)</span> merupakan fungsional aditif
+terhitung dan <span class="math inline" data-source-tex="\nuprime E&gt;0">\(\nuprime E&gt;0\)</span>. Seperti biasa, menurut 231Eb terdapat
+himpunan <span class="math inline" data-source-tex="G\in\Sigma">\(G\in\Sigma\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\nuprime F\ge 0">\(\nuprime F\ge 0\)</span> jika
+<span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>, <span class="math inline" data-source-tex="F\subseteq G">\(F\subseteq G\)</span>, tetapi <span class="math inline" data-source-tex="\nuprime F\le 0">\(\nuprime F\le 0\)</span> jika
+<span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dan <span class="math inline" data-source-tex="F\cap G=\emptyset">\(F\cap G=\emptyset\)</span>.
+Karena <span class="math inline" data-source-tex="\nuprime(E\setminus G)\le 0">\(\nuprime(E\setminus G)\le 0\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="0&lt;\nuprime E\le\nuprime(E\cap G)\le\nu(E\cap G)">\(0&lt;\nuprime E\le\nuprime(E\cap G)\le\nu(E\cap G)\)</span></div>
+<p>dan <span class="math inline" data-source-tex="\mu(E\cap G)&gt;0">\(\mu(E\cap G)&gt;0\)</span>. Tetapkan
+<span class="math inline" data-source-tex="f={\alpha}\chi(E\cap G)">\(f={\alpha}\chi(E\cap G)\)</span>; maka <span class="math inline" data-source-tex="f">\(f\)</span> merupakan fungsi sederhana tak
+negatif dan <span class="math inline" data-source-tex="\int f={\alpha}\mu(E\cap G)&gt;0">\(\int f={\alpha}\mu(E\cap G)&gt;0\)</span>.</p>
+<p>Jika <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>, maka <span class="math inline" data-source-tex="\nuprime(F\cap G)\ge 0">\(\nuprime(F\cap G)\ge 0\)</span>, yakni</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu(F\cap G)\ge\alpha\mu_E(F\cap G)
+=\alpha\mu(F\cap E\cap G)=\int_Ff">\(\nu(F\cap G)\ge\alpha\mu_E(F\cap G)
+=\alpha\mu(F\cap E\cap G)=\int_Ff\)</span>.</div>
+<p>Jadi</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu F\ge\nu(F\cap G)\ge\int_Ff">\(\nu F\ge\nu(F\cap G)\ge\int_Ff\)</span>,</div>
+<p>sebagaimana diperlukan. ∎</p>
+<p> </p>
+<p><strong>(c)</strong> Dengan tetap mengandaikan bahwa <span class="math inline" data-source-tex="\nu">\(\nu\)</span> merupakan fungsional
+aditif nonnegatif yang kontinu sejati, misalkan <span class="math inline" data-source-tex="\Phi">\(\Phi\)</span> himpunan
+fungsi-fungsi sederhana nonnegatif <span class="math inline" data-source-tex="f:X\to\Bbb R">\(f:X\to\Bbb R\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\int_Ef\le\nu E">\(\int_Ef\le\nu E\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>; fungsi konstan <span class="math inline" data-source-tex="\tbf{0}">\(\tbf{0}\)</span>
+termasuk dalam <span class="math inline" data-source-tex="\Phi">\(\Phi\)</span>, sehingga <span class="math inline" data-source-tex="\Phi">\(\Phi\)</span> tidak kosong.</p>
+<p>Jika <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in\Phi">\(g\in\Phi\)</span>, maka <span class="math inline" data-source-tex="f\vee g\in\Phi">\(f\vee g\in\Phi\)</span>, dengan <span class="math inline" data-source-tex="(f\vee
+g)(x)=\max(f(x),g(x))">\((f\vee
+g)(x)=\max(f(x),g(x))\)</span> untuk <span class="math inline" data-source-tex="x\in X">\(x\in X\)</span>. Bukti. Tetapkan
+<span class="math inline" data-source-tex="H=\{x:(f-g)(x)\ge 0\}\in\Sigma">\(H=\{x:(f-g)(x)\ge 0\}\in\Sigma\)</span>; maka <span class="math inline" data-source-tex="f\vee g=(f\times\chi
+H)+(g\times\chi(X\setminus H))">\(f\vee g=(f\times\chi
+H)+(g\times\chi(X\setminus H))\)</span> merupakan fungsi sederhana nonnegatif,
+dan untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_Ef\vee g=\int_{E\cap H}f+\int_{E\setminus H}g
+\le\nu(E\cap H)+\nu(E\setminus H)=\nu E">\(\int_Ef\vee g=\int_{E\cap H}f+\int_{E\setminus H}g
+\le\nu(E\cap H)+\nu(E\setminus H)=\nu E\)</span>. ∎</div>
+<p>Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\gamma=\sup\{\int f:f\in\Phi\}\le\nu X&lt;\infty">\(\gamma=\sup\{\int f:f\in\Phi\}\le\nu X&lt;\infty\)</span>.</div>
+<p>Pilih suatu barisan <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> dalam <span class="math inline" data-source-tex="\Phi">\(\Phi\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\lim_{n\to\infty}\int f_n=\gamma">\(\lim_{n\to\infty}\int f_n=\gamma\)</span>. Untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, tetapkan
+<span class="math inline" data-source-tex="g_n=f_0\vee f_1\vee\ldots\vee f_n">\(g_n=f_0\vee f_1\vee\ldots\vee f_n\)</span>; maka <span class="math inline" data-source-tex="g_n\in\Phi">\(g_n\in\Phi\)</span> dan
+<span class="math inline" data-source-tex="\int f_n\le\int g_n\le\gamma">\(\int f_n\le\int g_n\le\gamma\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, sehingga
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\int g_n=\gamma">\(\lim_{n\to\infty}\int g_n=\gamma\)</span>. Menurut Teorema B.Levi,
+<span class="math inline" data-source-tex="f=\lim_{n\to\infty}g_n">\(f=\lim_{n\to\infty}g_n\)</span> terintegralkan dan <span class="math inline" data-source-tex="\int f=\gamma">\(\int f=\gamma\)</span>. Perhatikan
+bahwa jika <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_Ef=\lim_{n\to\infty}\int_Eg_n\le\nu E">\(\int_Ef=\lim_{n\to\infty}\int_Eg_n\le\nu E\)</span>.</div>
+<p><span class="fremlin-query" role="img" aria-label="andaikan untuk kontradiksi"></span> Andaikan, jika mungkin, terdapat <span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\int_Hf\ne\nu H">\(\int_Hf\ne\nu H\)</span>. Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu_1F=\nu F-\int_Ff\ge 0">\(\nu_1F=\nu F-\int_Ff\ge 0\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>; maka menurut bagian (a) dari bukti ini
+dan <a class="xref" href="#232C">232C</a>, <span class="math inline" data-source-tex="\nu_1">\(\nu_1\)</span> merupakan fungsional aditif hingga yang kontinu sejati,
+dan kita mengandaikan bahwa <span class="math inline" data-source-tex="\nu_1\ne 0">\(\nu_1\ne 0\)</span>. Menurut bagian (b) dari bukti ini,
+terdapat fungsi sederhana nonnegatif <span class="math inline" data-source-tex="g">\(g\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\int_Fg\le\nu_1F">\(\int_Fg\le\nu_1F\)</span> untuk setiap <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dan <span class="math inline" data-source-tex="\int g&gt;0">\(\int g&gt;0\)</span>. Ambil
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\int f_n+\int g&gt;\gamma">\(\int f_n+\int g&gt;\gamma\)</span>. Maka
+<span class="math inline" data-source-tex="f_n+g">\(f_n+g\)</span> merupakan fungsi sederhana nonnegatif dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_F(f_n+g)=\int_Ff_n+\int_Fg\le\int_Ff+\int_Fg
+=\nu F-\nu_1F+\int_Fg\le\nu F">\(\int_F(f_n+g)=\int_Ff_n+\int_Fg\le\int_Ff+\int_Fg
+=\nu F-\nu_1F+\int_Fg\le\nu F\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>, sehingga <span class="math inline" data-source-tex="f_n+g\in\Phi">\(f_n+g\in\Phi\)</span>, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\gamma&lt;\int f_n+\int g=\int f_n+g\le\gamma">\(\gamma&lt;\int f_n+\int g=\int f_n+g\le\gamma\)</span>,</div>
+<p>yang mustahil. <span class="fremlin-bang" role="img" aria-label="kontradiksi"></span> Jadi <span class="math inline" data-source-tex="\int_Hf=\nu H">\(\int_Hf=\nu H\)</span> untuk setiap
+<span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span>.</p>
+<p> </p>
+<p><strong>(d)</strong> Ini membuktikan teorema untuk <span class="math inline" data-source-tex="\nu">\(\nu\)</span> nonnegatif. Untuk <span class="math inline" data-source-tex="\nu">\(\nu\)</span>
+umum, kita hanya perlu mengamati bahwa <span class="math inline" data-source-tex="\nu">\(\nu\)</span> dapat dinyatakan sebagai
+<span class="math inline" data-source-tex="\nu_1-\nu_2">\(\nu_1-\nu_2\)</span>, dengan <span class="math inline" data-source-tex="\nu_1">\(\nu_1\)</span> dan <span class="math inline" data-source-tex="\nu_2">\(\nu_2\)</span> fungsional aditif terhitung
+nonnegatif yang kontinu sejati, menurut <a class="xref" href="#232C">232C</a>; dengan demikian,
+terdapat fungsi terintegralkan <span class="math inline" data-source-tex="f_1">\(f_1\)</span>, <span class="math inline" data-source-tex="f_2">\(f_2\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\nu_iF=\int_Ff_i">\(\nu_iF=\int_Ff_i\)</span> untuk kedua nilai <span class="math inline" data-source-tex="i">\(i\)</span> dan setiap <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>.
+Tentu saja, <span class="math inline" data-source-tex="f=f_1-f_2">\(f=f_1-f_2\)</span> terintegralkan dan <span class="math inline" data-source-tex="\nu F=\int_Ff">\(\nu F=\int_Ff\)</span> untuk setiap
+<span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>. Ini menuntaskan bukti.</p></aside>
+</section>
+<section class="source-unit" id="232F" data-source-id="232F"><h2><span class="source-label">232F</span> Akibat </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur
+<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga dan <span class="math inline" data-source-tex="\nu:\Sigma\to\Bbb R">\(\nu:\Sigma\to\Bbb R\)</span> suatu fungsi. Maka terdapat
+fungsi <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan <span class="math inline" data-source-tex="f">\(f\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\nu E=\int_Ef">\(\nu E=\int_Ef\)</span>
+untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> jika dan hanya jika <span class="math inline" data-source-tex="\nu">\(\nu\)</span> aditif terhitung
+dan kontinu mutlak terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Gabungkan 232Bc dan <a class="xref" href="#232E">232E</a>.</p></aside>
+</section>
+<section class="source-unit" id="232G" data-source-id="232G"><h2><span class="source-label">232G</span> Akibat </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur
+hingga total dan <span class="math inline" data-source-tex="\nu:\Sigma\to\Bbb R">\(\nu:\Sigma\to\Bbb R\)</span> suatu fungsi. Maka terdapat
+fungsi <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan <span class="math inline" data-source-tex="f">\(f\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\nu E=\int_Ef">\(\nu E=\int_Ef\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> jika dan hanya jika <span class="math inline" data-source-tex="\nu">\(\nu\)</span>
+aditif hingga dan kontinu mutlak terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Gabungkan 232Bd dan <a class="xref" href="#232E">232E</a>.</p></aside>
+</section>
+<section class="source-unit" id="232H" data-source-id="232H"><span class="anchor" id="232Ha"></span><h2><span class="source-label">232H</span> Catatan </h2>
+<p><strong>(a)</strong> Kebanyakan penulis menganggap
+<a class="xref" href="#232F">232F</a> sudah memadai sebagai ‘Teorema Radon-Nikodým’. Menurut pandangan
+saya, persoalan mengidentifikasi integral tak tentu cukup penting untuk
+membenarkan suatu analisis yang berlaku pada semua ruang ukur, sekalipun
+analisis itu memerlukan konsep baru (konsep fungsional ‘kontinu sejati’).</p>
+</section>
+<section class="source-unit" id="232Hb" data-source-id="232Hb"><h3><span class="source-label">232Hb</span> <strong>(b)</strong> </h3>
+<p>Saya patut memberikan contoh suatu fungsional
+kontinu mutlak yang tidak kontinu sejati. Berikut ini sebuah contoh
+sederhana. Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> sembarang himpunan tak terhitung. Misalkan
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> terhitung-koterhitung pada <span class="math inline" data-source-tex="X">\(X\)</span>, dan <span class="math inline" data-source-tex="\nu">\(\nu\)</span>
+ukuran terhitung-koterhitung pada <span class="math inline" data-source-tex="X">\(X\)</span> (<a class="xref" href="../211/index.html#211R">211R</a>). Misalkan
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span> pembatasan ke <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dari ukuran pencacahan pada <span class="math inline" data-source-tex="X">\(X\)</span>. Jika <span class="math inline" data-source-tex="\mu E=0">\(\mu E=0\)</span>,
+maka <span class="math inline" data-source-tex="E=\emptyset">\(E=\emptyset\)</span> dan <span class="math inline" data-source-tex="\nu E=0">\(\nu E=0\)</span>, sehingga <span class="math inline" data-source-tex="\nu">\(\nu\)</span> kontinu mutlak. Namun,
+untuk setiap <span class="math inline" data-source-tex="E">\(E\)</span> berukuran hingga kita mempunyai <span class="math inline" data-source-tex="\nu(X\setminus E)=1">\(\nu(X\setminus E)=1\)</span>,
+sehingga <span class="math inline" data-source-tex="\nu">\(\nu\)</span> tidak kontinu sejati. Lihat juga <a class="xref" href="#232Xf">232Xf</a>(i).</p>
+</section>
+<section class="source-unit" id="232Hc" data-source-id="232Hc"><h3><span class="source-label">232Hc</span> <strong>*(c)</strong> </h3>
+<p>Dalam klasifikasi yang dikembangkan dalam Bab
+<a class="xref" href="../21/index.html#21">21</a>, ruang <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> dari contoh ini agak tidak teratur; misalnya,
+ruang ini tidak ditentukan secara lokal dan juga tidak dapat dilokalkan, sehingga
+tidak dapat dilokalkan secara ketat, walaupun lengkap dan semihingga.
+Dapatkah gejala ini terjadi dalam ruang ukur yang dapat dilokalkan secara
+ketat? Di sini kita berhadapan dengan pertanyaan yang memikat. Andaikan,
+dalam (b), saya menggunakan gagasan yang sama tetapi dengan
+<span class="math inline" data-source-tex="\Sigma=\Cal PX">\(\Sigma=\Cal PX\)</span>. Tidak ada kesulitan dalam mengonstruksi <span class="math inline" data-source-tex="\mu">\(\mu\)</span>; tetapi
+dapatkah sekarang terdapat <span class="math inline" data-source-tex="\nu">\(\nu\)</span> dengan sifat-sifat yang diperlukan,
+yakni suatu fungsional aditif terhitung tak nol dari <span class="math inline" data-source-tex="\Cal PX">\(\Cal PX\)</span> ke
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> yang bernilai nol pada semua himpunan hingga? Inilah ‘masalah
+Banach-Ulam’, yang telah saya bahas secara luas di tempat lain
+(Fremlin 93), dan yang akan saya tinjau kembali dalam Jilid 5.
+Pertanyaan ini disinggung lagi dalam 363S di Jilid 3.</p>
+</section>
+<section class="source-unit" id="232Hd" data-source-id="232Hd"><h3><span class="source-label">232Hd</span> <strong>(d)</strong> </h3>
+<p>Seusai Teorema Radon-Nikodým, pertanyaan
+berikut langsung muncul: untuk <span class="math inline" data-source-tex="\nu">\(\nu\)</span> tertentu, seberapa besar variasi
+yang mungkin terdapat dalam <span class="math inline" data-source-tex="f">\(f\)</span> yang bersesuaian? Jawabannya cukup
+langsung: dua fungsi terintegralkan <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span> menghasilkan integral tak
+tentu yang sama jika dan hanya jika keduanya sama hampir di mana-mana
+(<a class="xref" href="../131/index.html#131Hb">131Hb</a>).</p>
+</section>
+<section class="source-unit" id="232He" data-source-id="232He"><h3><span class="source-label">232He</span> <strong>(e)</strong> </h3>
+<p>Saya telah menyatakan Teorema Radon-Nikodým
+dengan fungsi terintegralkan sembarang, dengan maksud menafsirkan
+‘keterintegralan’ dalam arti luas, sesuai dengan konvensi Jilid 1. Namun,
+untuk suatu fungsional aditif terhitung kontinu sejati <span class="math inline" data-source-tex="\nu">\(\nu\)</span>, kita
+dapat bertanya apakah dalam suatu pengertian terdapat fungsi terintegralkan
+kanonik yang mewakilinya. Jawabannya tidak. Tetapi kita tentu tidak perlu
+mengambil fungsi terintegralkan sembarang dari jenis yang dibahas dalam
+Bab <a class="xref" href="../12/index.html#12">12</a>. Jika <span class="math inline" data-source-tex="f">\(f\)</span> sembarang fungsi terintegralkan, terdapat himpunan
+koterabaikan <span class="math inline" data-source-tex="E">\(E\)</span> sedemikian sehingga <span class="math inline" data-source-tex="f\restr E">\(f\restr E\)</span> terukur, dan kini kita
+dapat menemukan himpunan terukur koterabaikan
+<span class="math inline" data-source-tex="G\subseteq E\cap\dom f">\(G\subseteq E\cap\dom f\)</span>; jika kita menetapkan <span class="math inline" data-source-tex="g(x)=f(x)">\(g(x)=f(x)\)</span> untuk
+<span class="math inline" data-source-tex="x\in G">\(x\in G\)</span> dan <span class="math inline" data-source-tex="0">\(0\)</span> untuk <span class="math inline" data-source-tex="x\in X\setminus G">\(x\in X\setminus G\)</span>, maka <span class="math inline" data-source-tex="f\eae g">\(f\eae g\)</span>, sehingga
+<span class="math inline" data-source-tex="g">\(g\)</span> mempunyai integral tak tentu yang sama dengan <span class="math inline" data-source-tex="f">\(f\)</span> (sebagaimana dicatat
+dalam (d) tepat di atas), sedangkan <span class="math inline" data-source-tex="g">\(g\)</span> terukur dan berdomain <span class="math inline" data-source-tex="X">\(X\)</span>. Dengan
+demikian, kita dapat membuat penghalusan yang sepele tetapi kadang-kadang
+berguna pada teorema tersebut: jika <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan
+<span class="math inline" data-source-tex="\nu:\Sigma\to\Bbb R">\(\nu:\Sigma\to\Bbb R\)</span> aditif hingga serta kontinu sejati terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>,
+maka terdapat fungsi <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>-terukur dan <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan
+<span class="math inline" data-source-tex="g:X\to\Bbb R">\(g:X\to\Bbb R\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\int_Eg=\nu E">\(\int_Eg=\nu E\)</span> untuk setiap
+<span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>.</p>
+</section>
+<section class="source-unit" id="232Hf" data-source-id="232Hf"><h3><span class="source-label">232Hf</span> <strong>(f)</strong> </h3>
+<p>Sekarang ada gunanya memperkenalkan suatu definisi umum. 
+Jika <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> suatu fungsional bernilai
+<span class="math inline" data-source-tex="[-\infty,\infty]">\([-\infty,\infty]\)</span> yang didefinisikan pada suatu keluarga subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>,
+saya akan mengatakan bahwa suatu fungsi bernilai <span class="math inline" data-source-tex="[-\infty,\infty]">\([-\infty,\infty]\)</span> yang
+dilambangkan dengan <span class="math inline" data-source-tex="f">\(f\)</span> dan didefinisikan pada suatu subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span> merupakan
+<strong>turunan Radon-Nikodým</strong> dari <span class="math inline" data-source-tex="\nu">\(\nu\)</span> terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> jika
+<span class="math inline" data-source-tex="\int_Efd\mu">\(\int_Efd\mu\)</span> terdefinisi (dalam pengertian <a class="xref" href="../214/index.html#214D">214D</a>) dan sama dengan
+<span class="math inline" data-source-tex="\nu E">\(\nu E\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\dom\nu">\(E\in\dom\nu\)</span>. Dengan demikian, fungsi-fungsi
+terintegralkan yang disebut <span class="math inline" data-source-tex="f">\(f\)</span> dalam <a class="xref" href="#232E">232E</a>-<a class="xref" href="#232G">232G</a> 
+semuanya merupakan ‘turunan Radon-Nikodým’; kelak kita akan menjumpai
+contoh-contoh yang kurang teratur.</p>
+<p>Jika <span class="math inline" data-source-tex="\nu">\(\nu\)</span> suatu ukuran dan <span class="math inline" data-source-tex="f">\(f\)</span> nonnegatif,
+<span class="math inline" data-source-tex="f">\(f\)</span> dapat disebut <strong>fungsi kerapatan</strong>.</p>
+</section>
+<section class="source-unit" id="232Hg" data-source-id="232Hg"><h3><span class="source-label">232Hg</span> <strong>(g)</strong> </h3>
+<p>Dalam seluruh pembahasan di atas, saya
+mengandaikan bahwa <span class="math inline" data-source-tex="\nu">\(\nu\)</span> didefinisikan pada seluruh domain <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dari
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Namun, dalam beberapa penerapan terpenting, <span class="math inline" data-source-tex="\nu">\(\nu\)</span> hanya didefinisikan
+pada suatu aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> yang lebih kecil, <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>. Dalam hal ini kita
+lazimnya berusaha menerapkan hasil-hasil yang sama dengan <span class="math inline" data-source-tex="\mu\restrp\Tau">\(\mu\restrp\Tau\)</span>
+sebagai pengganti <span class="math inline" data-source-tex="\mu">\(\mu\)</span>.</p>
+</section>
+<section class="source-unit" id="232I" data-source-id="232I"><h2><span class="source-label">232I</span>  </h2>
+<p><strong>Dekomposisi Lebesgue suatu fungsional aditif
+terhitung: Proposisi</strong> (a) Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan
+<span class="math inline" data-source-tex="\nu:\Sigma\to\Bbb R">\(\nu:\Sigma\to\Bbb R\)</span> suatu fungsional aditif terhitung. Maka <span class="math inline" data-source-tex="\nu">\(\nu\)</span>
+mempunyai representasi unik</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu=\nu_s+\nu_{ac}=\nu_s+\nu_{tc}+\nu_e">\(\nu=\nu_s+\nu_{ac}=\nu_s+\nu_{tc}+\nu_e\)</span>,</div>
+<p>dengan <span class="math inline" data-source-tex="\nu_s">\(\nu_s\)</span> singular terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, <span class="math inline" data-source-tex="\nu_{ac}">\(\nu_{ac}\)</span> kontinu
+mutlak terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, <span class="math inline" data-source-tex="\nu_{tc}">\(\nu_{tc}\)</span> kontinu sejati terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, dan
+<span class="math inline" data-source-tex="\nu_e">\(\nu_e\)</span> kontinu mutlak terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> serta bernilai nol pada setiap
+himpunan berukuran hingga.</p>
+<p>(b) Jika <span class="math inline" data-source-tex="X=\BbbR^r">\(X=\BbbR^r\)</span>, <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> aljabar himpunan-himpunan Borel dalam
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> pembatasan ukuran Lebesgue ke <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, maka <span class="math inline" data-source-tex="\nu">\(\nu\)</span>
+dapat dinyatakan secara unik sebagai <span class="math inline" data-source-tex="\nu_p+\nu_{cs}+\nu_{ac}">\(\nu_p+\nu_{cs}+\nu_{ac}\)</span>, dengan
+<span class="math inline" data-source-tex="\nu_{ac}">\(\nu_{ac}\)</span> kontinu mutlak terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, <span class="math inline" data-source-tex="\nu_{cs}">\(\nu_{cs}\)</span> singular terhadap
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span> dan bernilai nol pada himpunan-himpunan satu titik, serta
+<span class="math inline" data-source-tex="\nu_pE=\sum_{x\in E}\nu_p\{x\}">\(\nu_pE=\sum_{x\in E}\nu_p\{x\}\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)(i)</strong> Andaikan terlebih dahulu bahwa <span class="math inline" data-source-tex="\nu">\(\nu\)</span> nonnegatif.
+Dalam hal ini, tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu_sE=\sup\{\nu(E\cap F):F\in\Sigma,\,\mu F=0\}">\(\nu_sE=\sup\{\nu(E\cap F):F\in\Sigma,\,\mu F=0\}\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\nu_tE=\sup\{\nu(E\cap F):F\in\Sigma,\,\mu F&lt;\infty\}">\(\nu_tE=\sup\{\nu(E\cap F):F\in\Sigma,\,\mu F&lt;\infty\}\)</span>.</div>
+<p>Maka <span class="math inline" data-source-tex="\nu_s">\(\nu_s\)</span> dan <span class="math inline" data-source-tex="\nu_t">\(\nu_t\)</span> keduanya aditif terhitung.
+<span class="proof-fragment">Bukti.
+Jelas bahwa <span class="math inline" data-source-tex="\nu_s\emptyset=\nu_t\emptyset=0">\(\nu_s\emptyset=\nu_t\emptyset=0\)</span>. Misalkan
+<span class="math inline" data-source-tex="\sequencen{E_n}">\(\sequencen{E_n}\)</span> suatu barisan saling lepas dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dengan
+gabungan <span class="math inline" data-source-tex="E">\(E\)</span>.  Jika <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dan <span class="math inline" data-source-tex="\mu F=0">\(\mu F=0\)</span>, maka
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\nu(E\cap F)=\sum_{n=0}^{\infty}\nu(E_n\cap F)
+\le\sum_{n=0}^{\infty}\nu_s(E_n)">\(\nu(E\cap F)=\sum_{n=0}^{\infty}\nu(E_n\cap F)
+\le\sum_{n=0}^{\infty}\nu_s(E_n)\)</span>;</span>
+
+
+
+  karena <span class="math inline" data-source-tex="F">\(F\)</span> sembarang,
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\nu_sE\le\sum_{n=0}^{\infty}\nu_sE_n">\(\nu_sE\le\sum_{n=0}^{\infty}\nu_sE_n\)</span>.</span>
+
+
+
+
+   Jika <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dan <span class="math inline" data-source-tex="\mu F&lt;\infty">\(\mu F&lt;\infty\)</span>, maka
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\nu(E\cap F)=\sum_{n=0}^{\infty}\nu(E_n\cap F)
+\le\sum_{n=0}^{\infty}\nu_t(E_n)">\(\nu(E\cap F)=\sum_{n=0}^{\infty}\nu(E_n\cap F)
+\le\sum_{n=0}^{\infty}\nu_t(E_n)\)</span>;</span>
+
+
+
+  karena <span class="math inline" data-source-tex="F">\(F\)</span> sembarang,
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\nu_tE\le\sum_{n=0}^{\infty}\nu_tE_n">\(\nu_tE\le\sum_{n=0}^{\infty}\nu_tE_n\)</span>.</span>
+
+
+
+   Jika <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, maka (karena
+<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\nu E_n=\nu E&lt;\infty">\(\sum_{n=0}^{\infty}\nu E_n=\nu E&lt;\infty\)</span>) terdapat <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\sum_{k=n+1}^{\infty}\nu E_k\le\epsilon">\(\sum_{k=n+1}^{\infty}\nu E_k\le\epsilon\)</span>.
+Sekarang, untuk setiap <span class="math inline" data-source-tex="k\le n">\(k\le n\)</span>, terdapat <span class="math inline" data-source-tex="F_k\in\Sigma">\(F_k\in\Sigma\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\mu F_k=0">\(\mu F_k=0\)</span> dan
+<span class="math inline" data-source-tex="\nu(E_k\cap F_k)\ge\nu_sE_k-{{\epsilon}\over{n+1}}">\(\nu(E_k\cap F_k)\ge\nu_sE_k-{{\epsilon}\over{n+1}}\)</span>. Dalam hal ini,
+<span class="math inline" data-source-tex="F=\bigcup_{k\le n}F_k\in\Sigma">\(F=\bigcup_{k\le n}F_k\in\Sigma\)</span>, <span class="math inline" data-source-tex="\mu F=0">\(\mu F=0\)</span>, dan
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\nu_sE\ge\nu(E\cap F)
+\ge\sum_{k=0}^n\nu(E_k\cap F_k)\ge\sum_{k=0}^n\nu_sE_k-\epsilon
+\ge\sum_{k=0}^{\infty}\nu_sE_k-2\epsilon">\(\nu_sE\ge\nu(E\cap F)
+\ge\sum_{k=0}^n\nu(E_k\cap F_k)\ge\sum_{k=0}^n\nu_sE_k-\epsilon
+\ge\sum_{k=0}^{\infty}\nu_sE_k-2\epsilon\)</span>,</span>
+
+
+
+  karena
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\sum_{k=n+1}^{\infty}\nu_sE_k
+\le\sum_{k=n+1}^{\infty}\nu E_k\le\epsilon">\(\sum_{k=n+1}^{\infty}\nu_sE_k
+\le\sum_{k=n+1}^{\infty}\nu E_k\le\epsilon\)</span>.</span>
+
+
+
+  Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sembarang,
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\nu_sE\ge\sum_{k=0}^{\infty}\nu_sE_k">\(\nu_sE\ge\sum_{k=0}^{\infty}\nu_sE_k\)</span>.</span>
+
+
+
+ 
+ Demikian pula, untuk setiap <span class="math inline" data-source-tex="k\le n">\(k\le n\)</span>, terdapat
+<span class="math inline" data-source-tex="F&#x27;_k\in\Sigma">\(F&#x27;_k\in\Sigma\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\mu F&#x27;_k&lt;\infty">\(\mu F&#x27;_k&lt;\infty\)</span> dan
+<span class="math inline" data-source-tex="\nu(E_k\cap F&#x27;_k)\ge\nu_tE_k-{{\epsilon}\over{n+1}}">\(\nu(E_k\cap F&#x27;_k)\ge\nu_tE_k-{{\epsilon}\over{n+1}}\)</span>. Dalam hal ini,
+<span class="math inline" data-source-tex="F&#x27;=\bigcup_{k\le n}F&#x27;_k\in\Sigma">\(F&#x27;=\bigcup_{k\le n}F&#x27;_k\in\Sigma\)</span>, <span class="math inline" data-source-tex="\mu F&#x27;&lt;\infty">\(\mu F&#x27;&lt;\infty\)</span>, dan
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\nu_tE\ge\nu(E\cap F&#x27;)\ge\sum_{k=0}^n\nu(E_k\cap F&#x27;_k)
+\ge\sum_{k=0}^n\nu_tE_k-\epsilon
+\ge\sum_{k=0}^{\infty}\nu_tE_k-2\epsilon">\(\nu_tE\ge\nu(E\cap F&#x27;)\ge\sum_{k=0}^n\nu(E_k\cap F&#x27;_k)
+\ge\sum_{k=0}^n\nu_tE_k-\epsilon
+\ge\sum_{k=0}^{\infty}\nu_tE_k-2\epsilon\)</span>,</span>
+
+
+
+  karena
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\sum_{k=n+1}^{\infty}\nu_tE_k
+\le\sum_{k=n+1}^{\infty}\nu E_k\le\epsilon">\(\sum_{k=n+1}^{\infty}\nu_tE_k
+\le\sum_{k=n+1}^{\infty}\nu E_k\le\epsilon\)</span>.</span>
+
+
+
+  Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sembarang,
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\nu_tE\ge\sum_{k=0}^{\infty}\nu_tE_k">\(\nu_tE\ge\sum_{k=0}^{\infty}\nu_tE_k\)</span>.</span>
+
+
+
+   Dengan menggabungkan hasil-hasil ini,
+<span class="math inline" data-source-tex="\nu_sE=\sum_{n=0}^{\infty}\nu_sE_n">\(\nu_sE=\sum_{n=0}^{\infty}\nu_sE_n\)</span> dan
+<span class="math inline" data-source-tex="\nu_tE=\sum_{n=0}^{\infty}\nu_tE_n">\(\nu_tE=\sum_{n=0}^{\infty}\nu_tE_n\)</span>. Karena <span class="math inline" data-source-tex="\sequencen{E_n}">\(\sequencen{E_n}\)</span>
+sembarang, <span class="math inline" data-source-tex="\nu_s">\(\nu_s\)</span> dan <span class="math inline" data-source-tex="\nu_t">\(\nu_t\)</span> aditif terhitung. ∎</span></p>
+<p> </p>
+<p>  <strong>(ii)</strong> Dengan tetap mengandaikan bahwa <span class="math inline" data-source-tex="\nu">\(\nu\)</span> nonnegatif,
+jika kita memilih suatu barisan <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\mu F_n=0">\(\mu F_n=0\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span> dan
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\nu F_n=\nu_sX">\(\lim_{n\to\infty}\nu F_n=\nu_sX\)</span>, maka
+<span class="math inline" data-source-tex="F^*=\bigcup_{n\in\Bbb N}F_n">\(F^*=\bigcup_{n\in\Bbb N}F_n\)</span> memenuhi <span class="math inline" data-source-tex="\mu F^*=0">\(\mu F^*=0\)</span> dan
+<span class="math inline" data-source-tex="\nu F^*=\nu_sX">\(\nu F^*=\nu_sX\)</span>; dengan demikian <span class="math inline" data-source-tex="\nu_s(X\setminus F^*)=0">\(\nu_s(X\setminus F^*)=0\)</span>, dan
+<span class="math inline" data-source-tex="\nu_s">\(\nu_s\)</span> singular terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dalam pengertian <a class="xref" href="#232Ac">232Ac</a>.</p>
+<p>Perhatikan bahwa <span class="math inline" data-source-tex="\nu_sF=\nu F">\(\nu_sF=\nu F\)</span> setiap kali <span class="math inline" data-source-tex="\mu F=0">\(\mu F=0\)</span>. Jadi, jika kita
+menuliskan <span class="math inline" data-source-tex="\nu_{ac}=\nu-\nu_s">\(\nu_{ac}=\nu-\nu_s\)</span>, maka <span class="math inline" data-source-tex="\nu_{ac}">\(\nu_{ac}\)</span> merupakan fungsional
+aditif terhitung dan <span class="math inline" data-source-tex="\nu_{ac}F=0">\(\nu_{ac}F=0\)</span> setiap kali <span class="math inline" data-source-tex="\mu F=0">\(\mu F=0\)</span>; yakni,
+<span class="math inline" data-source-tex="\nu_{ac}">\(\nu_{ac}\)</span> kontinu mutlak terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>.</p>
+<p>Jika kita menuliskan <span class="math inline" data-source-tex="\nu_{tc}=\nu_t-\nu_s">\(\nu_{tc}=\nu_t-\nu_s\)</span>, maka <span class="math inline" data-source-tex="\nu_{tc}">\(\nu_{tc}\)</span> merupakan
+fungsional aditif terhitung nonnegatif; <span class="math inline" data-source-tex="\nu_{tc}F=0">\(\nu_{tc}F=0\)</span> setiap kali
+<span class="math inline" data-source-tex="\mu F=0">\(\mu F=0\)</span>, dan jika <span class="math inline" data-source-tex="\nu_{tc}E&gt;0">\(\nu_{tc}E&gt;0\)</span>, terdapat himpunan <span class="math inline" data-source-tex="F">\(F\)</span> dengan
+<span class="math inline" data-source-tex="\mu F&lt;\infty">\(\mu F&lt;\infty\)</span> dan <span class="math inline" data-source-tex="\nu_{tc}(E\cap F)&gt;0">\(\nu_{tc}(E\cap F)&gt;0\)</span>. Jadi, menurut 232Bb,
+<span class="math inline" data-source-tex="\nu_{tc}">\(\nu_{tc}\)</span> kontinu sejati terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Tetapkan
+<span class="math inline" data-source-tex="\nu_e=\nu-\nu_t=\nu_{ac}-\nu_{tc}">\(\nu_e=\nu-\nu_t=\nu_{ac}-\nu_{tc}\)</span>.</p>
+<p>Dengan demikian, untuk setiap fungsional aditif terhitung nonnegatif
+<span class="math inline" data-source-tex="\nu">\(\nu\)</span>, kita mempunyai representasi</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu=\nu_s+\nu_{ac}">\(\nu=\nu_s+\nu_{ac}\)</span>,   <span class="math inline" data-source-tex="\nu_{ac}=\nu_{tc}+\nu_e">\(\nu_{ac}=\nu_{tc}+\nu_e\)</span></div>
+<p>dengan <span class="math inline" data-source-tex="\nu_s">\(\nu_s\)</span>, <span class="math inline" data-source-tex="\nu_{ac}">\(\nu_{ac}\)</span>, <span class="math inline" data-source-tex="\nu_{tc}">\(\nu_{tc}\)</span>, dan <span class="math inline" data-source-tex="\nu_e">\(\nu_e\)</span> semuanya
+fungsional aditif terhitung nonnegatif, <span class="math inline" data-source-tex="\nu_s">\(\nu_s\)</span> singular terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>,
+<span class="math inline" data-source-tex="\nu_{ac}">\(\nu_{ac}\)</span> dan <span class="math inline" data-source-tex="\nu_e">\(\nu_e\)</span> kontinu mutlak terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, <span class="math inline" data-source-tex="\nu_{tc}">\(\nu_{tc}\)</span> kontinu
+sejati terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, dan <span class="math inline" data-source-tex="\nu_eF=0">\(\nu_eF=0\)</span> setiap kali <span class="math inline" data-source-tex="\mu F&lt;\infty">\(\mu F&lt;\infty\)</span>.</p>
+<p> </p>
+<p>  <strong>(iii)</strong> Untuk fungsional aditif terhitung umum
+<span class="math inline" data-source-tex="\nu:\Sigma\to\Bbb R">\(\nu:\Sigma\to\Bbb R\)</span>, kita dapat menyatakan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> sebagai
+<span class="math inline" data-source-tex="\nuprime-\nu\mskip0.5mu&#x27;&#x27;">\(\nuprime-\nu\mskip0.5mu&#x27;&#x27;\)</span>, dengan <span class="math inline" data-source-tex="\nuprime">\(\nuprime\)</span> dan
+<span class="math inline" data-source-tex="\nu\mskip0.5mu&#x27;&#x27;">\(\nu\mskip0.5mu&#x27;&#x27;\)</span> fungsional aditif terhitung nonnegatif. Jika kita
+mendefinisikan <span class="math inline" data-source-tex="\nuprime_s">\(\nuprime_s\)</span>, <span class="math inline" data-source-tex="\nu_s&#x27;&#x27;,\ldots,\nu_e&#x27;&#x27;">\(\nu_s&#x27;&#x27;,\ldots,\nu_e&#x27;&#x27;\)</span> seperti dalam
+(i)-(ii), kita memperoleh fungsional-fungsional aditif terhitung</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu_s=\nu_s&#x27;-\nu_s&#x27;&#x27;">\(\nu_s=\nu_s&#x27;-\nu_s&#x27;&#x27;\)</span>,
+   <span class="math inline" data-source-tex="\nu_{ac}=\nu_{ac}&#x27;-\nu_{ac}&#x27;&#x27;">\(\nu_{ac}=\nu_{ac}&#x27;-\nu_{ac}&#x27;&#x27;\)</span>,
+   <span class="math inline" data-source-tex="\nu_{tc}=\nu_{tc}&#x27;-\nu_{tc}&#x27;&#x27;">\(\nu_{tc}=\nu_{tc}&#x27;-\nu_{tc}&#x27;&#x27;\)</span>,
+   <span class="math inline" data-source-tex="\nu_e=\nu_e&#x27;-\nu_e&#x27;&#x27;">\(\nu_e=\nu_e&#x27;-\nu_e&#x27;&#x27;\)</span></div>
+<p>sedemikian sehingga <span class="math inline" data-source-tex="\nu_s">\(\nu_s\)</span> singular terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> (jika
+<span class="math inline" data-source-tex="F&#x27;">\(F&#x27;\)</span>, <span class="math inline" data-source-tex="F&#x27;&#x27;">\(F&#x27;&#x27;\)</span> dipilih sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu F&#x27;=\mu F&#x27;&#x27;=\nu_s&#x27;(X\setminus F&#x27;)=\nu_s&#x27;&#x27;(X\setminus
+F&#x27;&#x27;)=0">\(\mu F&#x27;=\mu F&#x27;&#x27;=\nu_s&#x27;(X\setminus F&#x27;)=\nu_s&#x27;&#x27;(X\setminus
+F&#x27;&#x27;)=0\)</span>,</div>
+<p>maka <span class="math inline" data-source-tex="\mu(F&#x27;\cup F&#x27;&#x27;)=0">\(\mu(F&#x27;\cup F&#x27;&#x27;)=0\)</span> dan <span class="math inline" data-source-tex="\nu_sE=0">\(\nu_sE=0\)</span> setiap kali
+<span class="math inline" data-source-tex="E\subseteq X\setminus(F&#x27;\cup F&#x27;&#x27;)">\(E\subseteq X\setminus(F&#x27;\cup F&#x27;&#x27;)\)</span>), <span class="math inline" data-source-tex="\nu_{ac}">\(\nu_{ac}\)</span> kontinu mutlak terhadap
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span>, <span class="math inline" data-source-tex="\nu_{tc}">\(\nu_{tc}\)</span> kontinu sejati terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, dan <span class="math inline" data-source-tex="\nu_eF=0">\(\nu_eF=0\)</span> setiap
+kali <span class="math inline" data-source-tex="\mu F&lt;\infty">\(\mu F&lt;\infty\)</span>, sedangkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu=\nu_s+\nu_{ac}=\nu_s+\nu_{tc}+\nu_e">\(\nu=\nu_s+\nu_{ac}=\nu_s+\nu_{tc}+\nu_e\)</span>.</div>
+<p> </p>
+<p>  <strong>(iv)</strong> Selain itu, dekomposisi-dekomposisi ini unik.
+<span class="proof-fragment">Bukti.
+Jika, misalnya, <span class="math inline" data-source-tex="\nu=\tilde\nu_s+\tilde\nu_{ac}">\(\nu=\tilde\nu_s+\tilde\nu_{ac}\)</span>, dengan <span class="math inline" data-source-tex="\tilde\nu_s">\(\tilde\nu_s\)</span>
+singular dan <span class="math inline" data-source-tex="\tilde\nu_{ac}">\(\tilde\nu_{ac}\)</span> kontinu mutlak terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, misalkan
+<span class="math inline" data-source-tex="F">\(F\)</span>, <span class="math inline" data-source-tex="\tilde F">\(\tilde F\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\mu F=\mu\tilde F=0">\(\mu F=\mu\tilde F=0\)</span> dan
+<span class="math inline" data-source-tex="\tilde\nu_sE=0">\(\tilde\nu_sE=0\)</span> setiap kali <span class="math inline" data-source-tex="E\cap \tilde F=\emptyset">\(E\cap \tilde F=\emptyset\)</span>, serta
+<span class="math inline" data-source-tex="\nu_sE=0">\(\nu_sE=0\)</span> setiap kali <span class="math inline" data-source-tex="E\cap F=\emptyset">\(E\cap F=\emptyset\)</span>; maka kita mesti mempunyai
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\nu_{ac}(E\cap(F\cup\tilde
+F))=\tilde\nu_{ac}(E\cap(F\cup\tilde F))=0">\(\nu_{ac}(E\cap(F\cup\tilde
+F))=\tilde\nu_{ac}(E\cap(F\cup\tilde F))=0\)</span></span>
+
+
+
+  untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>, sehingga
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\nu_sE=\nu(E\cap(F\cup\tilde
+F))=\tilde\nu_sE">\(\nu_sE=\nu(E\cap(F\cup\tilde
+F))=\tilde\nu_sE\)</span></span>
+
+
+
+  untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>.
+Dengan demikian, <span class="math inline" data-source-tex="\tilde\nu_s=\nu_s">\(\tilde\nu_s=\nu_s\)</span> dan
+<span class="math inline" data-source-tex="\tilde\nu_{ac}=\nu_{ac}">\(\tilde\nu_{ac}=\nu_{ac}\)</span>.
+ 
+
+   Demikian pula, jika
+<span class="math inline" data-source-tex="\nu_{ac}=\tilde\nu_{tc}+\tilde\nu_e">\(\nu_{ac}=\tilde\nu_{tc}+\tilde\nu_e\)</span>, dengan <span class="math inline" data-source-tex="\tilde\nu_{tc}">\(\tilde\nu_{tc}\)</span> kontinu
+sejati terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dan <span class="math inline" data-source-tex="\tilde\nu_eF=0">\(\tilde\nu_eF=0\)</span> setiap kali <span class="math inline" data-source-tex="\mu F&lt;\infty">\(\mu F&lt;\infty\)</span>,
+maka terdapat barisan-barisan <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> dan
+<span class="math inline" data-source-tex="\sequencen{\tilde F_n}">\(\sequencen{\tilde F_n}\)</span> yang terdiri atas himpunan-himpunan berukuran
+hingga sedemikian sehingga <span class="math inline" data-source-tex="\nu_{tc}F=0">\(\nu_{tc}F=0\)</span> setiap kali
+<span class="math inline" data-source-tex="F\cap\bigcup_{n\in\Bbb N}F_n=\emptyset">\(F\cap\bigcup_{n\in\Bbb N}F_n=\emptyset\)</span> dan <span class="math inline" data-source-tex="\tilde\nu_{tc}F=0">\(\tilde\nu_{tc}F=0\)</span> setiap
+kali <span class="math inline" data-source-tex="F\cap\bigcup_{n\in\Bbb N}\tilde F_n=\emptyset">\(F\cap\bigcup_{n\in\Bbb N}\tilde F_n=\emptyset\)</span>. Tuliskan
+<span class="math inline" data-source-tex="F^*=\bigcup_{n\in\Bbb N}(F_n\cup\tilde F_n)">\(F^*=\bigcup_{n\in\Bbb N}(F_n\cup\tilde F_n)\)</span>; maka
+<span class="math inline" data-source-tex="\tilde\nu_eE=\nu_eE=0">\(\tilde\nu_eE=\nu_eE=0\)</span> setiap kali <span class="math inline" data-source-tex="E\subseteq F^*">\(E\subseteq F^*\)</span> dan
+<span class="math inline" data-source-tex="\tilde\nu_{tc}E=\nu_{tc}E=0">\(\tilde\nu_{tc}E=\nu_{tc}E=0\)</span> setiap kali <span class="math inline" data-source-tex="E\cap F^*=\emptyset">\(E\cap F^*=\emptyset\)</span>, sehingga
+<span class="math inline" data-source-tex="\nu_eE=\nu_{ac}(E\setminus F^*)=\tilde\nu_eE">\(\nu_eE=\nu_{ac}(E\setminus F^*)=\tilde\nu_eE\)</span> untuk setiap
+<span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>, serta <span class="math inline" data-source-tex="\nu_e=\tilde\nu_e">\(\nu_e=\tilde\nu_e\)</span> dan
+<span class="math inline" data-source-tex="\nu_{tc}=\tilde\nu_{tc}">\(\nu_{tc}=\tilde\nu_{tc}\)</span>. ∎</span></p>
+<p> </p>
+<p><strong>(b)</strong> Dalam hal ini, <span class="math inline" data-source-tex="\mu">\(\mu\)</span> <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga (bdk. <a class="xref" href="../211/index.html#211P">211P</a>), sehingga
+setiap fungsional aditif terhitung yang kontinu mutlak bersifat kontinu
+sejati (232Bc), dan kita selalu mempunyai <span class="math inline" data-source-tex="\nu_e=0">\(\nu_e=0\)</span> serta
+<span class="math inline" data-source-tex="\nu_{ac}=\nu_{tc}">\(\nu_{ac}=\nu_{tc}\)</span>. Di sisi lain, kita mengetahui bahwa semua himpunan
+satu titik, dan karena itu semua himpunan terhitung, terukur. Dengan
+demikian, kita mempunyai dekomposisi lebih lanjut
+<span class="math inline" data-source-tex="\nu_s=\nu_p+\nu_{cs}">\(\nu_s=\nu_p+\nu_{cs}\)</span>, dengan suatu himpunan terhitung
+<span class="math inline" data-source-tex="K\subseteq\BbbR^r">\(K\subseteq\BbbR^r\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\nu_pE=0">\(\nu_pE=0\)</span> setiap kali
+<span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> dan <span class="math inline" data-source-tex="E\cap K=\emptyset">\(E\cap K=\emptyset\)</span>, sedangkan <span class="math inline" data-source-tex="\nu_{cs}">\(\nu_{cs}\)</span> singular
+terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dan bernilai nol pada himpunan-himpunan terhitung.
+<span class="proof-fragment">Bukti. (i) Jika <span class="math inline" data-source-tex="\nu\ge 0">\(\nu\ge 0\)</span>, tetapkan
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\nu_pE=\sup\{\nu(E\cap K):K\subseteq\BbbR^r">\(\nu_pE=\sup\{\nu(E\cap K):K\subseteq\BbbR^r\)</span>
+terhitung<span class="math inline" data-source-tex="\}">\(\}\)</span>;</span>
+
+
+
+  persis seperti untuk <span class="math inline" data-source-tex="\nu_s">\(\nu_s\)</span> yang ditangani dalam (a) di atas,
+<span class="math inline" data-source-tex="\nu_p">\(\nu_p\)</span> aditif terhitung dan terdapat himpunan terhitung
+<span class="math inline" data-source-tex="K\subseteq\BbbR^r">\(K\subseteq\BbbR^r\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\nu_pE=\nu(E\cap K)">\(\nu_pE=\nu(E\cap K)\)</span> untuk
+setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>. (ii) Untuk <span class="math inline" data-source-tex="\nu">\(\nu\)</span> umum, kita dapat menyatakan <span class="math inline" data-source-tex="\nu">\(\nu\)</span>
+sebagai <span class="math inline" data-source-tex="\nuprime-\nu\mskip0.5mu&#x27;&#x27;">\(\nuprime-\nu\mskip0.5mu&#x27;&#x27;\)</span>, dengan <span class="math inline" data-source-tex="\nuprime">\(\nuprime\)</span> dan
+<span class="math inline" data-source-tex="\nu\mskip0.5mu&#x27;&#x27;">\(\nu\mskip0.5mu&#x27;&#x27;\)</span> nonnegatif, serta menuliskan
+<span class="math inline" data-source-tex="\nu_p=\nu_p&#x27;-\nu_p&#x27;&#x27;">\(\nu_p=\nu_p&#x27;-\nu_p&#x27;&#x27;\)</span>. (iii) <span class="math inline" data-source-tex="\nu_p">\(\nu_p\)</span> dicirikan dengan mengatakan bahwa
+terdapat himpunan terhitung <span class="math inline" data-source-tex="K">\(K\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\nu_pE=\nu(E\cap K)">\(\nu_pE=\nu(E\cap K)\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> dan <span class="math inline" data-source-tex="\nu\{x\}=0">\(\nu\{x\}=0\)</span> untuk
+setiap <span class="math inline" data-source-tex="x\in \BbbR^r\setminus K">\(x\in \BbbR^r\setminus K\)</span>. (iv) Jadi, jika kita menetapkan
+<span class="math inline" data-source-tex="\nu_{cs}=\nu_s-\nu_p">\(\nu_{cs}=\nu_s-\nu_p\)</span>, maka <span class="math inline" data-source-tex="\nu_{cs}">\(\nu_{cs}\)</span> singular terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dan
+bernilai nol pada himpunan-himpunan terhitung. ∎</span></p>
+<p>Sekarang, untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\nu_pE=\nu(E\cap K)=\sum_{x\in K\cap E}\nu\{x\}
+=\sum_{x\in E}\nu\{x\}">\(\nu_pE=\nu(E\cap K)=\sum_{x\in K\cap E}\nu\{x\}
+=\sum_{x\in E}\nu\{x\}\)</span>.</div></aside>
+<p> </p>
+<p><strong>Catatan</strong> Representasi <span class="math inline" data-source-tex="\nu=\nu_p+\nu_{cs}+\nu_{ac}">\(\nu=\nu_p+\nu_{cs}+\nu_{ac}\)</span>
+dalam (b) adalah <strong>dekomposisi Lebesgue</strong> dari <span class="math inline" data-source-tex="\nu">\(\nu\)</span>.</p>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="232X" data-source-id="232X"><span class="anchor" id="232Xa"></span><h2><span class="source-label">232X</span> Latihan dasar (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan
+<span class="math inline" data-source-tex="\nu:\Sigma\to\Bbb R">\(\nu:\Sigma\to\Bbb R\)</span> suatu fungsional aditif terhitung yang kontinu
+mutlak terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Tunjukkan bahwa pernyataan-pernyataan berikut
+ekuivalen: (i) <span class="math inline" data-source-tex="\nu">\(\nu\)</span> kontinu sejati terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>; (ii) terdapat suatu
+barisan <span class="math inline" data-source-tex="\sequencen{E_n}">\(\sequencen{E_n}\)</span> dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu E_n&lt;\infty">\(\mu E_n&lt;\infty\)</span> untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> dan <span class="math inline" data-source-tex="\nu F=0">\(\nu F=0\)</span> setiap kali
+<span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dan <span class="math inline" data-source-tex="F\cap\bigcup_{n\in\Bbb N}E_n=\emptyset">\(F\cap\bigcup_{n\in\Bbb N}E_n=\emptyset\)</span>.</p>
+</section>
+<section class="source-unit" id="232Xb" data-source-id="232Xb"><h3><span class="source-label">232Xb</span> (&gt;b) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="g:\Bbb R\to\Bbb R">\(g:\Bbb R\to\Bbb R\)</span> suatu fungsi terbatas tak
+menurun dan <span class="math inline" data-source-tex="\mu_g">\(\mu_g\)</span> ukuran Lebesgue-Stieltjes yang bersesuaian (<a class="xref" href="../114/index.html#114Xa">114Xa</a>).
+Tunjukkan bahwa <span class="math inline" data-source-tex="\mu_g">\(\mu_g\)</span> kontinu mutlak (secara ekuivalen, kontinu sejati)
+terhadap ukuran Lebesgue jika dan hanya jika pembatasan <span class="math inline" data-source-tex="g">\(g\)</span> pada setiap
+interval tertutup terbatas bersifat kontinu mutlak dalam pengertian <a class="xref" href="../225/index.html#225B">225B</a>.</p>
+</section>
+<section class="source-unit" id="232Xc" data-source-id="232Xc"><h3><span class="source-label">232Xc</span> <strong>(c)</strong> </h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan dan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> suatu
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>; misalkan
+<span class="math inline" data-source-tex="\nu:\Sigma\to\Bbb R">\(\nu:\Sigma\to\Bbb R\)</span> suatu fungsional aditif terhitung. Misalkan
+<span class="math inline" data-source-tex="\Cal I">\(\Cal I\)</span> suatu <strong>ideal</strong> dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, yakni suatu subhimpunan dari
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> sedemikian sehingga (<span class="math inline" data-source-tex="\alpha">\(\alpha\)</span>) <span class="math inline" data-source-tex="\emptyset\in\Cal I">\(\emptyset\in\Cal I\)</span>,
+(<span class="math inline" data-source-tex="\beta">\(\beta\)</span>) <span class="math inline" data-source-tex="E\cup F\in\Cal I">\(E\cup F\in\Cal I\)</span> untuk semua <span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="F\in\Cal I">\(F\in\Cal I\)</span>, dan
+(<span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>) jika <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>, <span class="math inline" data-source-tex="F\in\Cal I">\(F\in\Cal I\)</span>, serta <span class="math inline" data-source-tex="E\subseteq F">\(E\subseteq F\)</span>, maka
+<span class="math inline" data-source-tex="E\in\Cal I">\(E\in\Cal I\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\nu">\(\nu\)</span> mempunyai dekomposisi unik
+<span class="math inline" data-source-tex="\nu=\nu_{\Cal I}+\nuprime_{\Cal I}">\(\nu=\nu_{\Cal I}+\nuprime_{\Cal I}\)</span>, dengan <span class="math inline" data-source-tex="\nu_{\Cal I}">\(\nu_{\Cal I}\)</span> dan
+<span class="math inline" data-source-tex="\nuprime_{\Cal I}">\(\nuprime_{\Cal I}\)</span> fungsional aditif terhitung,
+<span class="math inline" data-source-tex="\nuprime_{\Cal I}E=0">\(\nuprime_{\Cal I}E=0\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\Cal I">\(E\in\Cal I\)</span>, dan setiap kali
+<span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>, <span class="math inline" data-source-tex="\nu_{\Cal I}E\ne 0">\(\nu_{\Cal I}E\ne 0\)</span>, terdapat <span class="math inline" data-source-tex="F\in\Cal I">\(F\in\Cal I\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\nu_{\Cal I}(E\cap F)\ne 0">\(\nu_{\Cal I}(E\cap F)\ne 0\)</span>.</p>
+</section>
+<section class="source-unit" id="232Xd" data-source-id="232Xd"><h3><span class="source-label">232Xd</span> (&gt;d) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan tak kosong dan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>
+suatu aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>. Tunjukkan bahwa
+untuk setiap barisan <span class="math inline" data-source-tex="\sequencen{\nu_n}">\(\sequencen{\nu_n}\)</span> yang terdiri atas
+fungsional-fungsional aditif terhitung pada <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, terdapat suatu
+ukuran peluang <span class="math inline" data-source-tex="\mu">\(\mu\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span> dengan domain
+<span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> sedemikian sehingga setiap <span class="math inline" data-source-tex="\nu_n">\(\nu_n\)</span> kontinu mutlak terhadap
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> mulailah dengan kasus <span class="math inline" data-source-tex="\nu_n\ge 0">\(\nu_n\ge 0\)</span>.</span></p>
+</section>
+<section class="source-unit" id="232Xe" data-source-id="232Xe"><h3><span class="source-label">232Xe</span> <strong>(e)</strong> </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan
+<span class="math inline" data-source-tex="(X,\hat\Sigma,\hat\mu)">\((X,\hat\Sigma,\hat\mu)\)</span> pelengkapannya (<a class="xref" href="../212/index.html#212C">212C</a>). Misalkan
+<span class="math inline" data-source-tex="\nu:\Sigma\to\Bbb R">\(\nu:\Sigma\to\Bbb R\)</span> suatu fungsional aditif sedemikian sehingga
+<span class="math inline" data-source-tex="\nu E=0">\(\nu E=0\)</span> setiap kali <span class="math inline" data-source-tex="\mu E=0">\(\mu E=0\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="\nu">\(\nu\)</span> mempunyai perluasan unik menjadi fungsional aditif
+<span class="math inline" data-source-tex="\hat\nu:\hat\Sigma\to\Bbb R">\(\hat\nu:\hat\Sigma\to\Bbb R\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\hat\nu E=0">\(\hat\nu E=0\)</span> setiap
+kali <span class="math inline" data-source-tex="\hat\mu E=0">\(\hat\mu E=0\)</span>.</p>
+</section>
+<section class="source-unit" id="232Xf" data-source-id="232Xf"><h3><span class="source-label">232Xf</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> suatu ultrafilter pada <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span> yang
+memuat filter <span class="math inline" data-source-tex="\{\Bbb N\setminus I:I\subseteq\Bbb N">\(\{\Bbb N\setminus I:I\subseteq\Bbb N\)</span> berhingga<span class="math inline" data-source-tex="\}">\(\}\)</span>
+(2A1O). Definisikan <span class="math inline" data-source-tex="\nu:\Cal P\Bbb N\to\{0,1\}">\(\nu:\Cal P\Bbb N\to\{0,1\}\)</span> dengan
+menetapkan <span class="math inline" data-source-tex="\nu E=1">\(\nu E=1\)</span> jika <span class="math inline" data-source-tex="E\in\Cal F">\(E\in\Cal F\)</span>, dan <span class="math inline" data-source-tex="0">\(0\)</span> jika
+<span class="math inline" data-source-tex="E\in\Cal P\Bbb N\setminus\Cal F">\(E\in\Cal P\Bbb N\setminus\Cal F\)</span>.
+(i) Misalkan <span class="math inline" data-source-tex="\mu_1">\(\mu_1\)</span> ukuran pencacahan pada <span class="math inline" data-source-tex="\Cal P\Bbb N">\(\Cal P\Bbb N\)</span>. Tunjukkan
+bahwa <span class="math inline" data-source-tex="\nu">\(\nu\)</span> aditif dan kontinu mutlak terhadap <span class="math inline" data-source-tex="\mu_1">\(\mu_1\)</span>, tetapi tidak
+kontinu sejati. (ii) Definisikan <span class="math inline" data-source-tex="\mu_2:\Cal P\Bbb N\to[0,1]">\(\mu_2:\Cal P\Bbb N\to[0,1]\)</span> dengan
+menetapkan <span class="math inline" data-source-tex="\mu_2E=\sum_{n\in E}2^{-n-1}">\(\mu_2E=\sum_{n\in E}2^{-n-1}\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\nu">\(\nu\)</span> bernilai
+nol pada himpunan-himpunan yang <span class="math inline" data-source-tex="\mu_2">\(\mu_2\)</span>-terabaikan, tetapi tidak kontinu
+mutlak terhadap <span class="math inline" data-source-tex="\mu_2">\(\mu_2\)</span>.</p>
+</section>
+<section class="source-unit" id="232Xg" data-source-id="232Xg"><h3><span class="source-label">232Xg</span> <strong>(g)</strong> </h3>
+<p>Tuliskan kembali bagian ini dalam konteks
+fungsional aditif bernilai kompleks.</p>
+</section>
+<section class="source-unit" id="232Xh" data-source-id="232Xh"><h3><span class="source-label">232Xh</span> (h) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur, dan <span class="math inline" data-source-tex="\nu">\(\nu\)</span>
+serta <span class="math inline" data-source-tex="\lambda">\(\lambda\)</span> fungsional aditif pada <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, dengan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> positif dan
+aditif terhitung, sehingga <span class="math inline" data-source-tex="(X,\Sigma,\nu)">\((X,\Sigma,\nu)\)</span> juga suatu ruang ukur.
+(i) Tunjukkan bahwa jika <span class="math inline" data-source-tex="\nu">\(\nu\)</span> kontinu mutlak terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dan
+<span class="math inline" data-source-tex="\lambda">\(\lambda\)</span> kontinu mutlak terhadap <span class="math inline" data-source-tex="\nu">\(\nu\)</span>, maka <span class="math inline" data-source-tex="\lambda">\(\lambda\)</span> kontinu mutlak
+terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>. (ii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="\nu">\(\nu\)</span> kontinu sejati terhadap
+<span class="math inline" data-source-tex="\mu">\(\mu\)</span> dan <span class="math inline" data-source-tex="\lambda">\(\lambda\)</span> kontinu mutlak terhadap <span class="math inline" data-source-tex="\nu">\(\nu\)</span>, maka <span class="math inline" data-source-tex="\lambda">\(\lambda\)</span>
+kontinu sejati terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>.</p>
+</section>
+<section class="source-unit" id="232Y" data-source-id="232Y"><span class="anchor" id="232Ya"></span><h2><span class="source-label">232Y</span> Latihan lanjutan (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu
+ruang ukur dan <span class="math inline" data-source-tex="\nu:\Sigma\to\Bbb R">\(\nu:\Sigma\to\Bbb R\)</span> suatu fungsional aditif hingga.
+Jika <span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="F">\(F\)</span>, <span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span> dan <span class="math inline" data-source-tex="\mu H&lt;\infty">\(\mu H&lt;\infty\)</span>, tetapkan
+<span class="math inline" data-source-tex="\rho_H(E,F)=\mu(H\cap(E\symmdiff F))">\(\rho_H(E,F)=\mu(H\cap(E\symmdiff F))\)</span>. (i) Tunjukkan bahwa <span class="math inline" data-source-tex="\rho_H">\(\rho_H\)</span>
+merupakan pseudometrik pada <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> (2A3Fa). (ii)
+Misalkan <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> topologi pada <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> yang dibangkitkan oleh
+<span class="math inline" data-source-tex="\{\rho_H:H\in\Sigma,\,\mu H&lt;\infty\}">\(\{\rho_H:H\in\Sigma,\,\mu H&lt;\infty\}\)</span> (2A3Fc). Tunjukkan bahwa <span class="math inline" data-source-tex="\nu">\(\nu\)</span>
+kontinu terhadap <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> jika dan hanya jika ia kontinu sejati
+dalam pengertian <a class="xref" href="#232Ab">232Ab</a>.
+(<span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> adalah topologi <strong>konvergensi dalam ukuran</strong> pada <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>.)</p>
+</section>
+<section class="source-unit" id="232Yb" data-source-id="232Yb"><h3><span class="source-label">232Yb</span> <strong>(b)</strong> </h3>
+<p>Untuk fungsi tak menurun
+<span class="math inline" data-source-tex="F:[a,b]\to\Bbb R">\(F:[a,b]\to\Bbb R\)</span>, dengan <span class="math inline" data-source-tex="a&lt;b">\(a&lt;b\)</span>, misalkan <span class="math inline" data-source-tex="\nu_F">\(\nu_F\)</span> ukuran
+Lebesgue-Stieltjes yang bersesuaian. Tunjukkan bahwa jika kita
+mendefinisikan <span class="math inline" data-source-tex="(\nu_F)_{ac}">\((\nu_F)_{ac}\)</span>, dan seterusnya, terhadap ukuran Lebesgue
+pada <span class="math inline" data-source-tex="[a,b]">\([a,b]\)</span>, seperti dalam <a class="xref" href="#232I">232I</a>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="(\nu_F)_p=\nu_{F_p}">\((\nu_F)_p=\nu_{F_p}\)</span>,   <span class="math inline" data-source-tex="(\nu_F)_{ac}=\nu_{F_{ac}}">\((\nu_F)_{ac}=\nu_{F_{ac}}\)</span>,
+  <span class="math inline" data-source-tex="(\nu_F)_{cs}=\nu_{F_{cs}}">\((\nu_F)_{cs}=\nu_{F_{cs}}\)</span>,</div>
+<p>dengan <span class="math inline" data-source-tex="F_p">\(F_p\)</span>, <span class="math inline" data-source-tex="F_{cs}">\(F_{cs}\)</span>, dan <span class="math inline" data-source-tex="F_{ac}">\(F_{ac}\)</span> didefinisikan seperti
+dalam <a class="xref" href="../226/index.html#226C">226C</a>.</p>
+</section>
+<section class="source-unit" id="232Yc" data-source-id="232Yc"><h3><span class="source-label">232Yc</span> <strong>(c)</strong> </h3>
+<p>Perluas gagasan dalam (b) ke fungsi umum <span class="math inline" data-source-tex="F">\(F\)</span>
+yang bervariasi terbatas.</p>
+</section>
+<section class="source-unit" id="232Yd" data-source-id="232Yd"><h3><span class="source-label">232Yd</span> <strong>(d)</strong> </h3>
+<p>Perluas gagasan-gagasan dalam (b) dan (c) ke
+interval terbuka, setengah terbuka, dan tak berbatas (bdk. <a class="xref" href="../226/index.html#226Yb">226Yb</a>).</p>
+</section>
+<section class="source-unit" id="232Ye" data-source-id="232Ye"><h3><span class="source-label">232Ye</span> <strong>(e)</strong> </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan
+<span class="math inline" data-source-tex="(X,\tilde\Sigma,\tilde\mu)">\((X,\tilde\Sigma,\tilde\mu)\)</span> versi c.l.d. yang bersesuaian (<a class="xref" href="../213/index.html#213E">213E</a>).
+Misalkan
+<span class="math inline" data-source-tex="\nu:\Sigma\to\Bbb R">\(\nu:\Sigma\to\Bbb R\)</span> suatu fungsional aditif yang kontinu sejati
+terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="\nu">\(\nu\)</span> mempunyai perluasan unik menjadi
+fungsional <span class="math inline" data-source-tex="\tilde\nu:\tilde\Sigma\to\Bbb R">\(\tilde\nu:\tilde\Sigma\to\Bbb R\)</span> yang kontinu sejati
+terhadap <span class="math inline" data-source-tex="\tilde\mu">\(\tilde\mu\)</span>.</p>
+</section>
+<section class="source-unit" id="232Yf" data-source-id="232Yf"><h3><span class="source-label">232Yf</span> <strong>(f)</strong> </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan
+<span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real yang <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan. Tunjukkan bahwa
+integral tak tentu dari <span class="math inline" data-source-tex="f">\(f\)</span> merupakan satu-satunya fungsional aditif
+terhitung <span class="math inline" data-source-tex="\nu:\Sigma\to\Bbb R">\(\nu:\Sigma\to\Bbb R\)</span> sedemikian sehingga setiap kali
+<span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> dan <span class="math inline" data-source-tex="f(x)\in[a,b]">\(f(x)\in[a,b]\)</span> untuk hampir setiap <span class="math inline" data-source-tex="x\in E">\(x\in E\)</span>, berlaku
+<span class="math inline" data-source-tex="a\mu E\le\nu E\le b\mu E">\(a\mu E\le\nu E\le b\mu E\)</span>.</p>
+</section>
+<section class="source-unit" id="232Yg" data-source-id="232Yg"><h3><span class="source-label">232Yg</span> <strong>(g)</strong> </h3>
+<p>Katakan bahwa dua fungsional aditif terbatas
+<span class="math inline" data-source-tex="\nu_1">\(\nu_1\)</span>, <span class="math inline" data-source-tex="\nu_2">\(\nu_2\)</span> pada suatu aljabar himpunan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> bersifat
+<strong>saling singular</strong> jika untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat
+<span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sup\{|\nu_1F|:F\in\Sigma,\,F\subseteq H\}\le\epsilon">\(\sup\{|\nu_1F|:F\in\Sigma,\,F\subseteq H\}\le\epsilon\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\sup\{|\nu_2F|:F\in\Sigma,\,F\cap H=\emptyset\}
+\le\epsilon">\(\sup\{|\nu_2F|:F\in\Sigma,\,F\cap H=\emptyset\}
+\le\epsilon\)</span>.</div>
+<p>   (i) Tunjukkan bahwa <span class="math inline" data-source-tex="\nu_1">\(\nu_1\)</span> dan <span class="math inline" data-source-tex="\nu_2">\(\nu_2\)</span> saling singular jika dan
+hanya jika, dalam bahasa <a class="xref" href="../231/index.html#231Ya">231Ya</a>-<a class="xref" href="../231/index.html#231Yb">231Yb</a>, <span class="math inline" data-source-tex="|\nu_1|\wedge|\nu_2|=0">\(|\nu_1|\wedge|\nu_2|=0\)</span>.</p>
+<p>  (ii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> suatu aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dan
+<span class="math inline" data-source-tex="\nu_1">\(\nu_1\)</span>, <span class="math inline" data-source-tex="\nu_2">\(\nu_2\)</span> aditif terhitung, maka keduanya saling singular jika
+dan hanya jika terdapat <span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\nu_1F=0">\(\nu_1F=0\)</span>
+setiap kali <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dan <span class="math inline" data-source-tex="F\subseteq H">\(F\subseteq H\)</span>, sedangkan <span class="math inline" data-source-tex="\nu_2F=0">\(\nu_2F=0\)</span>
+setiap kali <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> dan <span class="math inline" data-source-tex="F\cap H=\emptyset">\(F\cap H=\emptyset\)</span>.</p>
+<p>  (iii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="\nu_s">\(\nu_s\)</span>, <span class="math inline" data-source-tex="\nu_{tc}">\(\nu_{tc}\)</span>, dan <span class="math inline" data-source-tex="\nu_e">\(\nu_e\)</span>
+didefinisikan dari <span class="math inline" data-source-tex="\nu">\(\nu\)</span> dan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> seperti dalam <a class="xref" href="#232I">232I</a>, maka setiap
+pasangan dari ketiganya saling singular.</p>
+</section>
+<section class="source-unit" id="232Yh" data-source-id="232Yh"><h3><span class="source-label">232Yh</span> (h) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan <span class="math inline" data-source-tex="f">\(f\)</span> suatu
+fungsi bernilai real nonnegatif yang terintegralkan pada <span class="math inline" data-source-tex="X">\(X\)</span>; misalkan
+<span class="math inline" data-source-tex="\nu">\(\nu\)</span> integral tak tentu dari fungsi tersebut. Tunjukkan bahwa untuk setiap fungsi
+<span class="math inline" data-source-tex="g:X\to\Bbb R">\(g:X\to\Bbb R\)</span>, <span class="math inline" data-source-tex="\int g\,d\nu=\int f\times g\,d\mu">\(\int g\,d\nu=\int f\times g\,d\mu\)</span>, dalam arti bahwa
+jika salah satu integral ini terdefinisi dalam <span class="math inline" data-source-tex="[-\infty,\infty]">\([-\infty,\infty]\)</span>, maka
+yang lain pun demikian, dan keduanya sama. <span class="hint" role="note"><strong>Petunjuk:</strong> mulailah dengan fungsi
+sederhana <span class="math inline" data-source-tex="g">\(g\)</span>.</span></p>
+</section>
+<section class="source-unit" id="232Yi" data-source-id="232Yi"><h3><span class="source-label">232Yi</span> (i) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur, <span class="math inline" data-source-tex="f">\(f\)</span> suatu
+fungsi terintegralkan, dan <span class="math inline" data-source-tex="\nu:\Sigma\to\Bbb R">\(\nu:\Sigma\to\Bbb R\)</span> integral tak tentu dari
+<span class="math inline" data-source-tex="f">\(f\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="|\nu|">\(|\nu|\)</span>, sebagaimana didefinisikan dalam <a class="xref" href="../231/index.html#231Ya">231Ya</a>,
+merupakan integral tak tentu dari <span class="math inline" data-source-tex="|f|">\(|f|\)</span>.</p>
+</section>
+<section class="source-unit" id="232Yj" data-source-id="232Yj"><h3><span class="source-label">232Yj</span> (j) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan, <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> suatu
+aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> dari subhimpunan-subhimpunan <span class="math inline" data-source-tex="X">\(X\)</span>, dan
+<span class="math inline" data-source-tex="\nu:\Sigma\to\Bbb R">\(\nu:\Sigma\to\Bbb R\)</span> suatu fungsional aditif terhitung. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\nu">\(\nu\)</span> mempunyai turunan Radon-Nikodým terhadap <span class="math inline" data-source-tex="|\nu|">\(|\nu|\)</span> sebagaimana
+didefinisikan dalam <a class="xref" href="../231/index.html#231Ya">231Ya</a>, dan bahwa setiap turunan demikian mempunyai
+modulus sama dengan <span class="math inline" data-source-tex="1\,\,|\nu|">\(1\,\,|\nu|\)</span>-hampir di mana-mana.</p>
+</section>
+<section class="source-unit" id="232Yk" data-source-id="232Yk"><h3><span class="source-label">232Yk</span> (k) </h3>
+<p>(H.König)
+Misalkan <span class="math inline" data-source-tex="X">\(X\)</span> suatu himpunan dan <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, <span class="math inline" data-source-tex="\nu">\(\nu\)</span> dua ukuran pada <span class="math inline" data-source-tex="X">\(X\)</span> dengan
+domain yang sama, <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. Untuk <span class="math inline" data-source-tex="\alpha\ge 0">\(\alpha\ge 0\)</span> dan <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>,
+tetapkan <span class="math inline" data-source-tex="(\alpha\mu\wedge\nu)(E)
+=\inf\{\alpha\mu(E\cap F)+\nu(E\setminus F):F\in\Sigma\}">\((\alpha\mu\wedge\nu)(E)
+=\inf\{\alpha\mu(E\cap F)+\nu(E\setminus F):F\in\Sigma\}\)</span> (bdk.
+<a class="xref" href="../112/index.html#112Ya">112Ya</a> (dahulu <a class="xref" href="../112/index.html#112Yb">112Yb</a>)).
+Tunjukkan bahwa pernyataan-pernyataan berikut ekuivalen: (i) <span class="math inline" data-source-tex="\nu E=0">\(\nu E=0\)</span>
+setiap kali <span class="math inline" data-source-tex="\mu E=0">\(\mu E=0\)</span>; (ii)
+<span class="math inline" data-source-tex="\sup_{\alpha\ge 0}(\alpha\mu\wedge\nu)(E)=\nu E">\(\sup_{\alpha\ge 0}(\alpha\mu\wedge\nu)(E)=\nu E\)</span> untuk setiap
+<span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>.</p>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<section class="source-unit" id="232-notes" data-source-id="232-notes"><h2><span class="source-label">232-notes</span> Catatan penutup untuk Bagian 232 </h2>
+<p>Teorema Radon-Nikodým harus termasuk dalam setiap
+daftar enam teorema terpenting teori ukuran; bukan hanya teoremanya
+sendiri, melainkan juga teknik-teknik yang diperlukan untuk membuktikannya,
+merupakan inti bidang ini. Dalam buku saya Fremlin 74, saya
+membahas berbagai versi yang kurang lebih abstrak dari teorema dan metode
+tersebut; sebagian di antaranya akan saya tinjau kembali dalam §§327 dan
+365 di jilid berikutnya.</p>
+<p>Sebagaimana saya menyajikannya di sini, inti pembuktian terbagi antara
+<a class="xref" href="../231/index.html#231E">231E</a> dan <a class="xref" href="#232E">232E</a>. Saya pikir kita dapat membedakan unsur-unsur berikut.
+Misalkan <span class="math inline" data-source-tex="\nu">\(\nu\)</span> suatu fungsional aditif terhitung.</p>
+<div class="inset-block"><p>(i) <span class="math inline" data-source-tex="\nu">\(\nu\)</span> terbatas (231Ea).</p></div>
+<div class="inset-block"><p>(ii) <span class="math inline" data-source-tex="\nu">\(\nu\)</span> dapat dinyatakan sebagai selisih fungsional-fungsional
+nonnegatif (<a class="xref" href="../231/index.html#231F">231F</a>).</p></div>
+<p>(Saya memberikannya sebagai suatu akibat dari 231Eb, tetapi
+hasil ini juga dapat dibuktikan dengan metode yang lebih sederhana,
+seperti dalam <a class="xref" href="../231/index.html#231Ya">231Ya</a>.)</p>
+<div class="inset-block"><p>(iii) Jika <span class="math inline" data-source-tex="\nu&gt;0">\(\nu&gt;0\)</span>, terdapat fungsi terintegralkan <span class="math inline" data-source-tex="f">\(f\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="0&lt;\nu_f\le\nu">\(0&lt;\nu_f\le\nu\)</span>,</p></div>
+<p>dengan menuliskan <span class="math inline" data-source-tex="\nu_f">\(\nu_f\)</span> untuk integral tak tentu dari <span class="math inline" data-source-tex="f">\(f\)</span>.
+(Pada titik inilah kita benar-benar memerlukan dekomposisi Hahn 231Eb.)</p>
+<div class="inset-block"><p>(iv) Himpunan <span class="math inline" data-source-tex="\Psi=\{f:\nu_f\le\nu\}">\(\Psi=\{f:\nu_f\le\nu\}\)</span> tertutup terhadap
+supremum terhitung, sehingga terdapat <span class="math inline" data-source-tex="f\in\Psi">\(f\in\Psi\)</span> yang memaksimumkan
+<span class="math inline" data-source-tex="\int f">\(\int f\)</span>.</p></div>
+<p>(Dalam bagian (b) dari pembuktian <a class="xref" href="#232E">232E</a>, saya berbicara tentang
+fungsi sederhana; tetapi ini semata-mata untuk menyederhanakan perincian
+teknis, dan argumen yang sama berlaku jika kita menerapkannya pada <span class="math inline" data-source-tex="\Psi">\(\Psi\)</span>
+alih-alih <span class="math inline" data-source-tex="\Phi">\(\Phi\)</span>. Perhatikan penggunaan Teorema B.Levi di sini.)</p>
+<div class="inset-block"><p>(v) Ambil <span class="math inline" data-source-tex="f">\(f\)</span> dari (iv) dan gunakan (iii) untuk menunjukkan bahwa
+<span class="math inline" data-source-tex="\nu-\nu_f=0">\(\nu-\nu_f=0\)</span>.</p></div>
+<p>Setiap langkah (i)-(iv) memerlukan suatu gagasan yang tidak
+sepele, dan pentingnya teorema ini tidak hanya terletak pada konsekuensi
+langsungnya yang mengagumkan dalam sisa bab ini dan di tempat lain,
+melainkan juga pada keserbagunaan dan kekuatan gagasan-gagasan tersebut.</p>
+<p>Saya memperkenalkan gagasan fungsional ‘kontinu sejati’ untuk memberikan
+uraian yang cukup langsung mengenai kedudukan Teorema Radon-Nikodým
+dalam ruang ukur yang tidak <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga. Tentu saja, pokok utamanya
+ialah bahwa suatu fungsional kontinu sejati, seperti integral tak tentu,
+harus terpusat pada bagian ruang yang <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga (<a class="xref" href="#232Xa">232Xa</a>), sehingga
+<a class="xref" href="#232E">232E</a>, sebagaimana dinyatakan, dapat dengan mudah diturunkan dari bentuk
+baku <a class="xref" href="#232F">232F</a>. Saya memberanikan diri menggunakan kata ‘sejati’ dalam konteks
+ini karena jenis kekontinuan ini memang bersesuaian dengan suatu konsep
+topologis (<a class="xref" href="#232Ya">232Ya</a>).</p>
+<p>Ada kemungkinan jebakan dalam definisi fungsional ‘kontinu mutlak’ yang
+saya berikan. Banyak penulis menggunakan syarat 232Ba sebagai definisi,
+dengan mengatakan bahwa <span class="math inline" data-source-tex="\nu">\(\nu\)</span> kontinu mutlak terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span> jika
+<span class="math inline" data-source-tex="\nu E=0">\(\nu E=0\)</span> setiap kali <span class="math inline" data-source-tex="\mu E=0">\(\mu E=0\)</span>. Untuk fungsional aditif terhitung,
+syarat ini sama dengan perumusan <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span>-<span class="math inline" data-source-tex="\delta">\(\delta\)</span> dalam <a class="xref" href="#232Aa">232Aa</a>; tetapi
+untuk fungsional aditif lain, hal itu tidak harus demikian (<a class="xref" href="#232Xf">232Xf</a>(ii)).
+Pada umumnya perbedaan tersebut tidak penting, tetapi saya mencatat bahwa
+dalam 232Bd perbedaan itu sangat penting, karena di sana <span class="math inline" data-source-tex="\nu">\(\nu\)</span> tidak
+diandaikan aditif terhitung.</p>
+<p>Dalam <a class="xref" href="#232I">232I</a> saya menguraikan salah satu dari banyak cara untuk menguraikan
+suatu fungsional aditif terhitung menjadi bagian-bagian saling singular
+dengan sifat-sifat khusus. Dalam <a class="xref" href="../231/index.html#231Yf">231Yf</a>-<a class="xref" href="../231/index.html#231Yg">231Yg</a> saya telah menyarankan suatu
+metode untuk menguraikan fungsional aditif menjadi jumlah suatu bagian
+aditif terhitung dan suatu bagian ‘aditif hingga murni’. Semua hasil ini
+mempunyai ungkapan alami dalam kerangka ruang linear terurut dari
+fungsional-fungsional aditif terbatas pada suatu aljabar (<a class="xref" href="../231/index.html#231Yc">231Yc</a>).</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 2: Broad Foundations</cite>, Bagian 232.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 25 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-cumulative-html-route-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V2-S232&quot;,
+  &quot;source_member&quot;: &quot;mt2.2016/mt232.tex&quot;,
+  &quot;target_bytes&quot;: 43235,
+  &quot;target_sha256&quot;: &quot;6935cedc3c36c4f5f78e3fe15d523f24b30b06db2f4d92dce3ddc278d20b1a36&quot;,
+  &quot;source_ids&quot;: [
+    &quot;232&quot;,
+    &quot;232A&quot;,
+    &quot;232Aa&quot;,
+    &quot;232Ab&quot;,
+    &quot;232Ac&quot;,
+    &quot;232B&quot;,
+    &quot;232C&quot;,
+    &quot;232D&quot;,
+    &quot;232E&quot;,
+    &quot;232F&quot;,
+    &quot;232G&quot;,
+    &quot;232H&quot;,
+    &quot;232Ha&quot;,
+    &quot;232Hb&quot;,
+    &quot;232Hc&quot;,
+    &quot;232Hd&quot;,
+    &quot;232He&quot;,
+    &quot;232Hf&quot;,
+    &quot;232Hg&quot;,
+    &quot;232I&quot;,
+    &quot;232X&quot;,
+    &quot;232Xa&quot;,
+    &quot;232Xb&quot;,
+    &quot;232Xc&quot;,
+    &quot;232Xd&quot;,
+    &quot;232Xe&quot;,
+    &quot;232Xf&quot;,
+    &quot;232Xg&quot;,
+    &quot;232Xh&quot;,
+    &quot;232Y&quot;,
+    &quot;232Ya&quot;,
+    &quot;232Yb&quot;,
+    &quot;232Yc&quot;,
+    &quot;232Yd&quot;,
+    &quot;232Ye&quot;,
+    &quot;232Yf&quot;,
+    &quot;232Yg&quot;,
+    &quot;232Yh&quot;,
+    &quot;232Yi&quot;,
+    &quot;232Yj&quot;,
+    &quot;232Yk&quot;
+  ],
+  &quot;corpus_id&quot;: &quot;O007-FREMLIN&quot;,
+  &quot;volume_id&quot;: &quot;O007-FREMLIN-V2&quot;,
+  &quot;volume_source_title&quot;: &quot;Broad Foundations&quot;,
+  &quot;route&quot;: &quot;232&quot;,
+  &quot;official_source_page_start&quot;: 100,
+  &quot;chapter_official_source_pages&quot;: [
+    96,
+    137
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

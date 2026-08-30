@@ -1181,3 +1181,31 @@ the actual public inventory truth; no public bytes were altered.
 The goal remains active. Exactly 163 official pages remain; production now
 continues at `mt28.tex` and `mt281.tex`, beginning at Volume II page 408.  No
 upstream contact occurred.
+
+## 2026-08-29 — D053: Integrate Chapter 28 B (mt282–mt283) as local candidate
+
+The sealed helper packet `HP-D10-CH28-B` passed a bounded checksum replay
+(9 manifest entries; zero mismatches).  After an independent owner audit, the
+canonical Indonesian targets `source/id-ID/mt282.tex` and `mt283.tex` were
+integrated by stable unit.  Fresh canonical QA passes with exact symbolic
+command order, stable IDs, protected references, math topology, exercises, and
+hints:
+
+- mt282: 68,659 bytes, SHA-256
+  `fd5b43404abdf778251a4bdfc04855e48b95978bf5913bf2062d29c0a7798e81`;
+- mt283: 51,452 bytes, SHA-256
+  `2c494e06bd16d4cb48e8e61265346756c413b729dbe81b8b8c8ae6f3012c5809`.
+
+The owner QA receipts are `qa/chapter28/mt282-unit-qa.json` (9,315 bytes;
+`498367c4f284a01132968d1a795009852d98f7fb571f1d05732129014154a4bd`) and
+`qa/chapter28/mt283-unit-qa.json` (7,035 bytes;
+`f9c71ebf8cb3b78d9be7d1b30430845624bbfdbfd5b1c392ec28d99dd6fa5b05`).
+The independent audit is `work/chapter28/packet-b-owner-replay/repaired/FINAL_OWNER_AUDIT.md`
+(2,299 bytes; `f05c5625efbf4182b082dd2cdc26057623d7f7700cbcc49ff058c7e8f1c2697f`),
+and the 17-entry anomaly receipt is retained beside the repaired packet.
+
+This closes the contiguous local candidate through Volume II page 452:
+**554/672 official pages (82.4%)**.  The public boundary remains 509/672
+(75.7%) pending the next substantial cumulative Chapter 28 boundary.  The
+next executable cursor is `mt284.tex` at official page 453.  No upstream
+contact or publication was performed at this small unit boundary.

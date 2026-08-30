@@ -25,6 +25,23 @@ PUBLIC_MAP_RELATIVE = "qa/chapters21-22-PUBLIC_SANITIZATION_MAP.json"
 PUBLIC_MANIFEST_MEMBER = "PUBLIC_SOURCE_TREE_MANIFEST.tsv"
 PUBLIC_MAP_MEMBER = "PUBLIC_SANITIZATION_MAP.json"
 SANITIZED_CLASS = "sanitized-overlay"
+PRIVATE_CONTROL_WITHHELD_CLASS = "private-control-withheld"
+PRIVATE_CONTROL_RELATIVE = "00_control/CANONICAL_USER_INSTRUCTIONS_20260821.md"
+PRIVATE_CONTROL_PUBLIC_NOTICE = (
+    "# Private canonical control omitted from the public package\n\n"
+    "This same-path public placeholder intentionally withholds the private "
+    "operating-control text. The canonical local record is unchanged; only "
+    "its byte count and SHA-256 are retained in PUBLIC_SANITIZATION_MAP.json.\n"
+).encode("utf-8")
+# Build this marker without placing the private-control phrase itself in the
+# reusable public validator source.
+PRIVATE_CREDENTIAL_LOCATION_PHRASE = b"zenodo/" + b"github tokens"
+ACCOUNT_REPLACEMENT_CLASSES = frozenset({"user_home", "user_identifier"})
+NON_ACCOUNT_REPLACEMENT_CLASSES = frozenset({
+    "embedded_private_control_withheld",
+    "private_credential_location_withheld",
+    "private_control_sha256_withheld",
+})
 
 SENSITIVE_DESTINATIONS = (
     "00_control/ROOT_SELECTION_HANDOFF_20260821.md",
@@ -263,7 +280,14 @@ def load_public_overlay(
             manifest_row = rows.get(relative)
             _require(manifest_row is not None, f"public overlay absent from source-tree manifest: {relative}")
             assert manifest_row is not None
-            _require(manifest_row.publication_class == SANITIZED_CLASS, f"public overlay class differs: {relative}")
+            expected_class = (
+                PRIVATE_CONTROL_WITHHELD_CLASS
+                if relative == PRIVATE_CONTROL_RELATIVE
+                and classes == ["private_control_withheld"]
+                else SANITIZED_CLASS
+            )
+            _require(manifest_row.publication_class == expected_class,
+                     f"public overlay class differs: {relative}")
             _require((manifest_row.size, manifest_row.sha256) == public_identity, f"public map/manifest identity differs: {relative}")
             public_data = public_payloads[relative]
             _exact_bytes(public_data, public_identity, f"public overlay {relative}")
@@ -282,9 +306,22 @@ def load_public_overlay(
     _require(set(overlays) == expected, "public sanitization-map destination set differs")
     bound_paths = receipt_binding.get("sanitized_paths")
     _require(bound_paths == list(SENSITIVE_DESTINATIONS), "receipt-bound sanitized path order differs")
+    accepted_overlay_classes = {SANITIZED_CLASS, PRIVATE_CONTROL_WITHHELD_CLASS}
     _require(
-        {path for path, row in rows.items() if row.publication_class == SANITIZED_CLASS} == expected,
-        "public manifest sanitized-overlay set differs",
+        {path for path, row in rows.items()
+         if row.publication_class in accepted_overlay_classes} == expected,
+        "public manifest overlay set differs",
+    )
+    expected_withheld = (
+        {PRIVATE_CONTROL_RELATIVE}
+        if PRIVATE_CONTROL_RELATIVE in expected
+        else set()
+    )
+    _require(
+        {path for path, row in rows.items()
+         if row.publication_class == PRIVATE_CONTROL_WITHHELD_CLASS}
+        == expected_withheld,
+        "public manifest private-control-withheld set differs",
     )
     return PublicOverlayBundle(package_root, manifest_data, map_data, rows, public_payloads, overlays)
 
@@ -365,10 +402,47 @@ def validate_public_boundary(
         elif safe == PUBLIC_MANIFEST_MEMBER:
             _exact_bytes(data, (len(bundle.manifest_data), _sha256(bundle.manifest_data)), "ZIP-backed public source-tree manifest")
         assert_public_bytes_private_token_free(safe, data)
+    private_row = bundle.overlays.get(PRIVATE_CONTROL_RELATIVE)
+    _require(private_row is not None, "private canonical-control overlay is absent")
+    assert private_row is not None
+    private_canonical = (root / PRIVATE_CONTROL_RELATIVE).read_bytes()
+    private_digest = private_row.canonical_sha256.encode("ascii")
     for relative, row in bundle.overlays.items():
         canonical_data = (root / relative).read_bytes()
-        _require(privacy_hits(canonical_data), f"canonical privacy evidence unexpectedly absent: {relative}")
+        if relative == PRIVATE_CONTROL_RELATIVE:
+            _require(
+                row.replacement_classes == ("private_control_withheld",)
+                and row.replacement_count == 1,
+                "private canonical-control replacement contract differs",
+            )
+            _require(
+                row.public_data == PRIVATE_CONTROL_PUBLIC_NOTICE,
+                "private canonical-control public notice bytes differ",
+            )
+        else:
+            classes = set(row.replacement_classes)
+            allowed = ACCOUNT_REPLACEMENT_CLASSES | NON_ACCOUNT_REPLACEMENT_CLASSES
+            _require(classes and classes <= allowed,
+                     f"public overlay replacement class is unsupported: {relative}")
+            if classes & ACCOUNT_REPLACEMENT_CLASSES:
+                _require(privacy_hits(canonical_data),
+                         f"canonical account-path privacy evidence is absent: {relative}")
+            if "embedded_private_control_withheld" in classes:
+                _require(private_canonical in canonical_data,
+                         f"embedded canonical-control evidence is absent: {relative}")
+            if "private_credential_location_withheld" in classes:
+                _require(PRIVATE_CREDENTIAL_LOCATION_PHRASE in canonical_data.lower(),
+                         f"private credential-location evidence is absent: {relative}")
+            if "private_control_sha256_withheld" in classes:
+                _require(private_digest in canonical_data,
+                         f"private canonical-control SHA evidence is absent: {relative}")
         _require(not privacy_hits(row.public_data), f"public privacy overlay still contains a private token: {relative}")
+        _require(PRIVATE_CREDENTIAL_LOCATION_PHRASE not in row.public_data.lower(),
+                 f"public privacy overlay still contains a credential-location phrase: {relative}")
+        _require(private_digest not in row.public_data,
+                 f"public privacy overlay still contains the private control SHA: {relative}")
+        _require(private_canonical not in row.public_data,
+                 f"public privacy overlay still embeds the private canonical control: {relative}")
     return {
         "boundary_paths_scanned": len(values),
         "manifest_bound_boundary_paths": len(manifest_bound),

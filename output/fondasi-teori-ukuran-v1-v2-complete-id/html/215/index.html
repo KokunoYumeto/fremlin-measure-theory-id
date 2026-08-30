@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Ruang sigma-hingga dan prinsip penghabisan — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        BbbQ: '\\mathbb{Q}', BbbR: '\\mathbb{R}',
+        eightBbb: ['\\mathbb{#1}', 1],
+        DiniD: '\\overline{D}', Dinid: '\\underline{D}',
+        Var: '\\operatorname{Var}',
+        bumpeq: '=_{\\mathrm{approx}}',
+        intstar: '\\operatorname{int}^{*}',
+        family: ['\\langle #3\\rangle_{#1\\in #2}', 3],
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        displaycause: ['\\text{(#1)}', 1],
+        bigcupop: '\\bigcup', biggerint: '\\int',
+        eae: '=_{\\mathrm{a.e.}}', leae: '\\le_{\\mathrm{a.e.}}', geae: '\\ge_{\\mathrm{a.e.}}',
+        restr: '\\mathord{\\upharpoonright}', restrp: '\\mathord{\\upharpoonright}',
+        Real: '\\operatorname{Re}', Imag: '\\operatorname{Im}',
+        tbf: ['\\mathbf{#1}', 1], eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Qed: '\\square',
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        roibr: '\\mathopen{{[}}',
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1]
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 2 · Bagian 215</p>
+  <h1>Ruang <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga dan prinsip penghabisan</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi kumulatif</a></nav>
+<main id="isi">
+<span class="anchor" id="215"></span>
+<p>Saya menyisipkan bagian singkat ini untuk membahas beberapa fakta berguna
+yang mungkin luput jika ditempatkan dalam salah satu bagian yang lebih panjang
+di bab ini. Hampir semua penerapan teori ukuran melibatkan ruang
+<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga, sampai-sampai banyak penulis hanya membahas sepintas ruang
+lainnya. Saya sendiri lebih suka menandai pentingnya konsep-konsep semacam itu
+dengan menyatakan secara tegas teorema mana yang hanya berlaku bagi kelas
+ruang yang lebih terbatas tersebut. Namun, beberapa fakta tentang ruang
+<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga memang perlu dipahami sejak awal. Dalam <a class="xref" href="#215B">215B</a> saya memberikan
+daftar sifat yang mencirikan ruang <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga. Sebagian di antaranya lebih
+mudah dipahami melalui prinsip penghabisan (<a class="xref" href="#215A">215A</a>). Sekaligus, saya menyertakan
+sebuah fakta mendasar mengenai ruang ukur
+tanpa atom (<a class="xref" href="#215D">215D</a>).</p>
+<section class="source-unit" id="215A" data-source-id="215A"><h2><span class="source-label">215A</span> Prinsip penghabisan </h2>
+<p>Pernyataan berikut
+merupakan contoh penggunaan salah satu metode terpenting dalam teori ukuran.</p>
+<p> </p>
+<p><strong>Lema</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sembarang ruang ukur dan
+<span class="math inline" data-source-tex="\Cal E\subseteq\Sigma">\(\Cal E\subseteq\Sigma\)</span> suatu keluarga tak-kosong sedemikian sehingga
+<span class="math inline" data-source-tex="\sup_{n\in\Bbb N}\mu F_n">\(\sup_{n\in\Bbb N}\mu F_n\)</span> berhingga untuk setiap barisan tak-menurun
+<span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> dalam <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span>.</p>
+<p>(a) Terdapat suatu barisan tak-menurun <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> dalam <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span>
+sedemikian sehingga, untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>, <em>salah satu</em> dari dua
+hal berikut berlaku: terdapat <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> sedemikian sehingga <span class="math inline" data-source-tex="E\cup F_n">\(E\cup F_n\)</span>
+tidak termuat dalam satu pun anggota <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span>; <em>atau</em>, dengan menetapkan
+<span class="math inline" data-source-tex="F=\bigcup_{n\in\Bbb N}F_n">\(F=\bigcup_{n\in\Bbb N}F_n\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{n\to\infty}\mu(E\setminus F_n)
+=\mu(E\setminus F)=0">\(\lim_{n\to\infty}\mu(E\setminus F_n)
+=\mu(E\setminus F)=0\)</span>.</div>
+<p>Khususnya, jika <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span> dan <span class="math inline" data-source-tex="E\supseteq F">\(E\supseteq F\)</span>, maka
+<span class="math inline" data-source-tex="E\setminus F">\(E\setminus F\)</span> terabaikan.</p>
+<p>(b) Jika <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> terarah ke atas, maka terdapat suatu barisan tak-menurun
+<span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> dalam <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> sedemikian sehingga, dengan menetapkan
+<span class="math inline" data-source-tex="F=\bigcup_{n\in\Bbb N}F_n">\(F=\bigcup_{n\in\Bbb N}F_n\)</span>, berlaku <span class="math inline" data-source-tex="\mu F=\sup_{E\in\Cal E}\mu E">\(\mu F=\sup_{E\in\Cal E}\mu E\)</span> dan
+<span class="math inline" data-source-tex="E\setminus F">\(E\setminus F\)</span> terabaikan untuk setiap <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>; dengan demikian <span class="math inline" data-source-tex="F">\(F\)</span>
+merupakan supremum esensial dari <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dalam
+pengertian <a class="xref" href="../211/index.html#211G">211G</a>.</p>
+<p>(c) Jika gabungan setiap barisan tak-menurun dalam <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> merupakan anggota
+<span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span>, maka terdapat <span class="math inline" data-source-tex="F\in\Cal E">\(F\in\Cal E\)</span> sedemikian sehingga <span class="math inline" data-source-tex="E\setminus F">\(E\setminus F\)</span>
+terabaikan untuk setiap <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span> dengan <span class="math inline" data-source-tex="F\subseteq E">\(F\subseteq E\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Pilih <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span>, <span class="math inline" data-source-tex="\sequencen{\Cal E_n}">\(\sequencen{\Cal E_n}\)</span>, dan
+<span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> secara induktif sebagai berikut. Ambil <span class="math inline" data-source-tex="F_0">\(F_0\)</span> sebagai
+sembarang anggota <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span>. Setelah <span class="math inline" data-source-tex="F_n\in\Cal E">\(F_n\in\Cal E\)</span> dipilih, tetapkan
+<span class="math inline" data-source-tex="\Cal E_n=\{E:F_n\subseteq E\in\Cal E\}">\(\Cal E_n=\{E:F_n\subseteq E\in\Cal E\}\)</span> dan
+<span class="math inline" data-source-tex="u_n=\sup\{\mu E:E\in\Cal E_n\}">\(u_n=\sup\{\mu E:E\in\Cal E_n\}\)</span> dalam <span class="math inline" data-source-tex="[0,\infty]">\([0,\infty]\)</span>, lalu pilih
+<span class="math inline" data-source-tex="F_{n+1}\in\Cal E_n">\(F_{n+1}\in\Cal E_n\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\mu F_{n+1}\ge\min(n,u_n-2^{-n})">\(\mu F_{n+1}\ge\min(n,u_n-2^{-n})\)</span>; lanjutkan proses ini.</p>
+<p>Perhatikan bahwa konstruksi ini menghasilkan suatu barisan tak-menurun
+<span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> dalam <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span>. Karena
+<span class="math inline" data-source-tex="\Cal E_{n+1}\subseteq\Cal E_n">\(\Cal E_{n+1}\subseteq\Cal E_n\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, barisan
+<span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> tak-menaik dan memiliki limit <span class="math inline" data-source-tex="u">\(u\)</span> dalam <span class="math inline" data-source-tex="[0,\infty]">\([0,\infty]\)</span>.
+Karena <span class="math inline" data-source-tex="\min(n,u-2^{-n})\le\mu F_{n+1}\le u_n">\(\min(n,u-2^{-n})\le\mu F_{n+1}\le u_n\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, berlaku
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\mu F_n=u">\(\lim_{n\to\infty}\mu F_n=u\)</span>. Hipotesis kita mengenai <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> sekarang
+menunjukkan bahwa <span class="math inline" data-source-tex="u">\(u\)</span> berhingga.</p>
+<p>Jika <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> sedemikian sehingga untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> terdapat
+<span class="math inline" data-source-tex="E_n\in\Cal E">\(E_n\in\Cal E\)</span> dengan <span class="math inline" data-source-tex="E\cup F_n\subseteq E_n">\(E\cup F_n\subseteq E_n\)</span>, maka
+<span class="math inline" data-source-tex="E_n\in\Cal E_n">\(E_n\in\Cal E_n\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu F_n\le\mu(E\cup F_n)\le\mu E_n\le u_n">\(\mu F_n\le\mu(E\cup F_n)\le\mu E_n\le u_n\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, dan
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\mu(E\cup F_n)=u">\(\lim_{n\to\infty}\mu(E\cup F_n)=u\)</span>. Ini berarti bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu(E\setminus F)
+\le\lim_{n\to\infty}\mu(E\setminus F_n)
+=\lim_{n\to\infty}\mu(E\cup F_n)-\mu F_n
+=0">\(\mu(E\setminus F)
+\le\lim_{n\to\infty}\mu(E\setminus F_n)
+=\lim_{n\to\infty}\mu(E\cup F_n)-\mu F_n
+=0\)</span>,</div>
+<p>sebagaimana dinyatakan. Khususnya, kesimpulan ini berlaku jika
+<span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span> dan <span class="math inline" data-source-tex="E\supseteq F">\(E\supseteq F\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Ambil <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> dari (a). Jika <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>, maka
+(karena <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> terarah ke atas) <span class="math inline" data-source-tex="E\cup F_n">\(E\cup F_n\)</span> termuat dalam suatu anggota
+<span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>; oleh sebab itu alternatif kedua dalam
+(a) harus berlaku, dan <span class="math inline" data-source-tex="E\setminus F">\(E\setminus F\)</span> terabaikan. Akibatnya,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sup_{E\in\Cal E}\mu E
+\le\mu F
+=\lim_{n\to\infty}\mu F_n
+\le\sup_{E\in\Cal E}\mu E">\(\sup_{E\in\Cal E}\mu E
+\le\mu F
+=\lim_{n\to\infty}\mu F_n
+\le\sup_{E\in\Cal E}\mu E\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="\mu F=\sup_{E\in\Cal E}\mu E">\(\mu F=\sup_{E\in\Cal E}\mu E\)</span>.</p>
+<p>Jika <span class="math inline" data-source-tex="G">\(G\)</span> sembarang himpunan terukur sedemikian sehingga <span class="math inline" data-source-tex="E\setminus G">\(E\setminus G\)</span>
+terabaikan untuk setiap <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>, maka <span class="math inline" data-source-tex="F_n\setminus G">\(F_n\setminus G\)</span> terabaikan
+untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>, sehingga <span class="math inline" data-source-tex="F\setminus G">\(F\setminus G\)</span> terabaikan; jadi <span class="math inline" data-source-tex="F">\(F\)</span> merupakan
+supremum esensial bagi <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span>.</p>
+<p> </p>
+<p><strong>(c)</strong> Ambil kembali <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> dari (a), dan tetapkan
+<span class="math inline" data-source-tex="F=\bigcup_{n\in\Bbb N}F_n">\(F=\bigcup_{n\in\Bbb N}F_n\)</span>. Hipotesis kita sekarang menyatakan bahwa
+<span class="math inline" data-source-tex="F\in\Cal E">\(F\in\Cal E\)</span>, sehingga kedua sifat yang dinyatakan terpenuhi.</p></aside>
+</section>
+<section class="source-unit" id="215B" data-source-id="215B"><h2><span class="source-label">215B</span>  </h2>
+<p>Ruang <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga begitu penting sehingga
+fakta-fakta berikut layak dinyatakan secara terperinci.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur
+semihingga. Tuliskan <span class="math inline" data-source-tex="\Cal N">\(\Cal N\)</span> untuk keluarga himpunan <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terabaikan
+dan <span class="math inline" data-source-tex="\Sigma^f">\(\Sigma^f\)</span> untuk keluarga himpunan terukur berukuran berhingga.
+Pernyataan-pernyataan berikut ekuivalen:</p>
+<p>(i) <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> bersifat <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga;</p>
+<p>(ii) setiap keluarga saling lepas dalam <span class="math inline" data-source-tex="\Sigma^f\setminus\Cal N">\(\Sigma^f\setminus\Cal N\)</span>
+terhitung;</p>
+<p>(iii) setiap keluarga saling lepas dalam <span class="math inline" data-source-tex="\Sigma\setminus\Cal N">\(\Sigma\setminus\Cal N\)</span>
+terhitung;</p>
+<p>(iv) untuk setiap <span class="math inline" data-source-tex="\Cal E\subseteq\Sigma">\(\Cal E\subseteq\Sigma\)</span> terdapat himpunan terhitung
+<span class="math inline" data-source-tex="\Cal E_0\subseteq\Cal E">\(\Cal E_0\subseteq\Cal E\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="E\setminus\bigcup\Cal E_0">\(E\setminus\bigcup\Cal E_0\)</span> terabaikan untuk setiap <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>;</p>
+<p>(v) untuk setiap <span class="math inline" data-source-tex="\Cal E\subseteq\Sigma">\(\Cal E\subseteq\Sigma\)</span> yang tak-kosong dan terarah ke
+atas, terdapat suatu barisan tak-menurun <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> dalam
+<span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="E\setminus\bigcup_{n\in\Bbb N}F_n">\(E\setminus\bigcup_{n\in\Bbb N}F_n\)</span> terabaikan untuk setiap
+<span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>;</p>
+<p>(vi) untuk setiap <span class="math inline" data-source-tex="\Cal E\subseteq\Sigma">\(\Cal E\subseteq\Sigma\)</span> yang tak-kosong, terdapat suatu
+barisan tak-menurun <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> dalam <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="E\setminus\bigcup_{n\in\Bbb N}F_n">\(E\setminus\bigcup_{n\in\Bbb N}F_n\)</span> terabaikan untuk setiap <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>
+yang memenuhi <span class="math inline" data-source-tex="E\supseteq F_n">\(E\supseteq F_n\)</span> untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>;</p>
+<p>(vii) <em><span class="math inline" data-source-tex="\mu X=0">\(\mu X=0\)</span></em>, <em>atau</em> terdapat suatu ukuran
+peluang <span class="math inline" data-source-tex="\nu">\(\nu\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span> dengan domain dan himpunan-himpunan terabaikan yang
+sama dengan <span class="math inline" data-source-tex="\mu">\(\mu\)</span>;</p>
+<p>(viii) terdapat suatu fungsi terukur dan terintegralkan
+<span class="math inline" data-source-tex="f:X\to\ocint{0,1}">\(f:X\to\ocint{0,1}\)</span>;</p>
+<p>(ix) <span class="math inline" data-source-tex="\mu X=0">\(\mu X=0\)</span>, atau terdapat suatu fungsi terukur
+<span class="math inline" data-source-tex="f:X\to\ooint{0,\infty}">\(f:X\to\ooint{0,\infty}\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\int fd\mu=1">\(\int fd\mu=1\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(i)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(vii) dan (viii)</strong> Jika <span class="math inline" data-source-tex="\mu X=0">\(\mu X=0\)</span>, maka (vii)
+langsung berlaku dan kita dapat mengambil <span class="math inline" data-source-tex="f=\chi X">\(f=\chi X\)</span> dalam (viii). Jika
+tidak, misalkan <span class="math inline" data-source-tex="\sequencen{E_n}">\(\sequencen{E_n}\)</span> suatu barisan saling lepas dalam
+<span class="math inline" data-source-tex="\Sigma^f">\(\Sigma^f\)</span> yang menutupi <span class="math inline" data-source-tex="X">\(X\)</span>. Mudah dilihat bahwa terdapat suatu barisan
+<span class="math inline" data-source-tex="\sequencen{\alpha_n}">\(\sequencen{\alpha_n}\)</span> bilangan real yang semuanya positif sedemikian sehingga
+<span class="math inline" data-source-tex="\sum_{n=0}^{\infty}\alpha_n\mu E_n=1">\(\sum_{n=0}^{\infty}\alpha_n\mu E_n=1\)</span>. Tetapkan
+<span class="math inline" data-source-tex="\nu E=\sum_{n=0}^{\infty}\alpha_n\mu(E\cap E_n)">\(\nu E=\sum_{n=0}^{\infty}\alpha_n\mu(E\cap E_n)\)</span> untuk <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>;
+maka <span class="math inline" data-source-tex="\nu">\(\nu\)</span> merupakan ukuran peluang dengan domain <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dan
+himpunan-himpunan terabaikan yang sama dengan <span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Selain itu,
+<span class="math inline" data-source-tex="f=\sum_{n=0}^{\infty}\min(1,\alpha_n)\chi E_n">\(f=\sum_{n=0}^{\infty}\min(1,\alpha_n)\chi E_n\)</span> merupakan fungsi terukur
+dan terintegralkan yang bernilai positif di setiap titik.</p>
+<p> </p>
+<p><strong>(vii)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(vi) dan (v)</strong> Andaikan (vii), dan misalkan
+<span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> suatu keluarga tak-kosong yang terdiri atas himpunan terukur. Jika
+<span class="math inline" data-source-tex="\mu X=0">\(\mu X=0\)</span>, maka (vi) dan (v) jelas benar. Jika tidak, misalkan <span class="math inline" data-source-tex="\nu">\(\nu\)</span>
+suatu ukuran peluang dengan domain <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> dan himpunan-himpunan
+terabaikan yang sama dengan <span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Karena
+<span class="math inline" data-source-tex="\sup_{E\in\Cal E}\nu E\le 1">\(\sup_{E\in\Cal E}\nu E\le 1\)</span> berhingga, kita dapat menerapkan 215Aa
+untuk memperoleh suatu barisan tak-menurun <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> dalam
+<span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="E\setminus\bigcup_{n\in\Bbb N}F_n">\(E\setminus\bigcup_{n\in\Bbb N}F_n\)</span> terabaikan untuk setiap
+<span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span> yang
+memuat <span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}F_n">\(\bigcup_{n\in\Bbb N}F_n\)</span>; dan jika <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> terarah ke atas,
+<span class="math inline" data-source-tex="E\setminus\bigcup_{n\in\Bbb N}F_n">\(E\setminus\bigcup_{n\in\Bbb N}F_n\)</span> terabaikan untuk setiap <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>,
+sebagaimana dalam 215Ab.</p>
+<p> </p>
+<p><strong>(vi)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(iv)</strong> Andaikan (vi), dan misalkan <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span>
+sembarang subhimpunan dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>. Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Cal H=\{\bigcup\Cal E_0:\Cal E_0\subseteq\Cal E">\(\Cal H=\{\bigcup\Cal E_0:\Cal E_0\subseteq\Cal E\)</span> terhitung<span class="math inline" data-source-tex="\}">\(\}\)</span>.</div>
+<p>Menurut (vi), terdapat suatu barisan <span class="math inline" data-source-tex="\sequencen{H_n}">\(\sequencen{H_n}\)</span> dalam
+<span class="math inline" data-source-tex="\Cal H">\(\Cal H\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="H\setminus\bigcup_{n\in\Bbb N}H_n">\(H\setminus\bigcup_{n\in\Bbb N}H_n\)</span> terabaikan untuk setiap <span class="math inline" data-source-tex="H\in\Cal H">\(H\in\Cal H\)</span>
+yang memenuhi <span class="math inline" data-source-tex="H\supseteq H_n">\(H\supseteq H_n\)</span> untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>. Sekarang setiap <span class="math inline" data-source-tex="H_n">\(H_n\)</span>
+dapat dinyatakan sebagai <span class="math inline" data-source-tex="\bigcup\Cal E&#x27;_n">\(\bigcup\Cal E&#x27;_n\)</span>, dengan
+<span class="math inline" data-source-tex="\Cal E&#x27;_n\subseteq\Cal E">\(\Cal E&#x27;_n\subseteq\Cal E\)</span> terhitung; dengan menetapkan
+<span class="math inline" data-source-tex="\Cal E_0=\bigcup_{n\in\Bbb N}\Cal E&#x27;_n">\(\Cal E_0=\bigcup_{n\in\Bbb N}\Cal E&#x27;_n\)</span>, himpunan <span class="math inline" data-source-tex="\Cal E_0">\(\Cal E_0\)</span>
+terhitung. Jika <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>, maka
+<span class="math inline" data-source-tex="E\cup\bigcup_{n\in\Bbb N}H_n=\bigcup(\{E\}\cup\Cal E_0)">\(E\cup\bigcup_{n\in\Bbb N}H_n=\bigcup(\{E\}\cup\Cal E_0)\)</span> termasuk
+dalam <span class="math inline" data-source-tex="\Cal H">\(\Cal H\)</span> dan memuat setiap <span class="math inline" data-source-tex="H_n">\(H_n\)</span>, sehingga
+<span class="math inline" data-source-tex="E\setminus\bigcup\Cal E_0=E\setminus\bigcup_{n\in\Bbb N}H_n">\(E\setminus\bigcup\Cal E_0=E\setminus\bigcup_{n\in\Bbb N}H_n\)</span>
+terabaikan. Jadi <span class="math inline" data-source-tex="\Cal E_0">\(\Cal E_0\)</span> mempunyai sifat yang diperlukan, dan (iv)
+benar.</p>
+<p> </p>
+<p><strong>(iv)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(iii)</strong> Andaikan (iv). Jika <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> suatu keluarga
+saling lepas dalam <span class="math inline" data-source-tex="\Sigma\setminus\Cal N">\(\Sigma\setminus\Cal N\)</span>, ambil suatu
+<span class="math inline" data-source-tex="\Cal E_0\subseteq\Cal E">\(\Cal E_0\subseteq\Cal E\)</span> terhitung sedemikian sehingga
+<span class="math inline" data-source-tex="E\setminus\bigcup\Cal E_0">\(E\setminus\bigcup\Cal E_0\)</span> terabaikan untuk setiap <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>.
+Maka <span class="math inline" data-source-tex="E=E\setminus\bigcup\Cal E_0">\(E=E\setminus\bigcup\Cal E_0\)</span> terabaikan untuk setiap
+<span class="math inline" data-source-tex="E\in\Cal E\setminus\Cal E_0">\(E\in\Cal E\setminus\Cal E_0\)</span>; tetapi ini berarti
+<span class="math inline" data-source-tex="\Cal E\setminus\Cal E_0">\(\Cal E\setminus\Cal E_0\)</span> kosong, sehingga <span class="math inline" data-source-tex="\Cal E=\Cal E_0">\(\Cal E=\Cal E_0\)</span> terhitung.</p>
+<p> </p>
+<p><strong>(iii)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(ii)</strong> langsung.</p>
+<p> </p>
+<p><strong>(ii)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(i)</strong> Andaikan (ii). Misalkan <span class="math inline" data-source-tex="\frak P">\(\frak P\)</span> himpunan
+semua keluarga saling lepas yang merupakan subhimpunan
+<span class="math inline" data-source-tex="\Sigma^f\setminus\Cal N">\(\Sigma^f\setminus\Cal N\)</span>, dengan urutan <span class="math inline" data-source-tex="\subseteq">\(\subseteq\)</span>. Maka <span class="math inline" data-source-tex="\frak P">\(\frak P\)</span>
+merupakan himpunan terurut sebagian yang tak-kosong (karena
+<span class="math inline" data-source-tex="\emptyset\in \frak P">\(\emptyset\in \frak P\)</span>); dan setiap
+<span class="math inline" data-source-tex="\frak Q\subseteq \frak P">\(\frak Q\subseteq \frak P\)</span> yang tak-kosong dan terurut total mempunyai
+suatu batas atas dalam <span class="math inline" data-source-tex="\frak P">\(\frak P\)</span>. Bukti. Tetapkan
+<span class="math inline" data-source-tex="\Cal E=\bigcup \frak Q">\(\Cal E=\bigcup \frak Q\)</span>, yakni gabungan semua keluarga saling lepas yang
+merupakan anggota <span class="math inline" data-source-tex="\frak Q">\(\frak Q\)</span>. Jika <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>, maka <span class="math inline" data-source-tex="E\in\Cal C">\(E\in\Cal C\)</span> untuk
+suatu <span class="math inline" data-source-tex="\Cal C\in \frak Q">\(\Cal C\in \frak Q\)</span>, sehingga <span class="math inline" data-source-tex="E\in\Sigma^f\setminus\Cal N">\(E\in\Sigma^f\setminus\Cal N\)</span>.
+Jika <span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="F\in\Cal E">\(F\in\Cal E\)</span> dan <span class="math inline" data-source-tex="E\ne F">\(E\ne F\)</span>, maka terdapat
+<span class="math inline" data-source-tex="\Cal C">\(\Cal C\)</span>, <span class="math inline" data-source-tex="\Cal D\in \frak Q">\(\Cal D\in \frak Q\)</span> sedemikian sehingga <span class="math inline" data-source-tex="E\in\Cal C">\(E\in\Cal C\)</span> dan
+<span class="math inline" data-source-tex="F\in\Cal D">\(F\in\Cal D\)</span>; karena <span class="math inline" data-source-tex="\frak Q">\(\frak Q\)</span> terurut total, salah satu dari <span class="math inline" data-source-tex="\Cal C">\(\Cal C\)</span>,
+<span class="math inline" data-source-tex="\Cal D">\(\Cal D\)</span> memuat yang lain, dan dalam kedua kasus
+<span class="math inline" data-source-tex="\Cal C\cup\Cal D">\(\Cal C\cup\Cal D\)</span> merupakan anggota <span class="math inline" data-source-tex="\frak Q">\(\frak Q\)</span> yang memuat <span class="math inline" data-source-tex="E">\(E\)</span> dan <span class="math inline" data-source-tex="F">\(F\)</span>.
+Karena setiap anggota <span class="math inline" data-source-tex="\frak Q">\(\frak Q\)</span> merupakan keluarga himpunan saling lepas,
+<span class="math inline" data-source-tex="E\cap F=\emptyset">\(E\cap F=\emptyset\)</span>. Karena <span class="math inline" data-source-tex="E">\(E\)</span> dan <span class="math inline" data-source-tex="F">\(F\)</span> sembarang, <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> merupakan
+keluarga himpunan saling lepas, sehingga merupakan anggota <span class="math inline" data-source-tex="\frak P">\(\frak P\)</span>.
+Tentu saja
+<span class="math inline" data-source-tex="\Cal C\subseteq\Cal E">\(\Cal C\subseteq\Cal E\)</span> untuk setiap <span class="math inline" data-source-tex="\Cal C\in \frak Q">\(\Cal C\in \frak Q\)</span>, sehingga
+<span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> merupakan batas atas bagi <span class="math inline" data-source-tex="\frak Q">\(\frak Q\)</span> dalam <span class="math inline" data-source-tex="\frak P">\(\frak P\)</span>. ∎</p>
+<p>Menurut Lema Zorn (2A1M), <span class="math inline" data-source-tex="\frak P">\(\frak P\)</span> mempunyai suatu elemen maksimal,
+sebut <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span>. Menurut (ii), <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> harus terhitung, sehingga
+<span class="math inline" data-source-tex="\bigcup\Cal E\in\Sigma">\(\bigcup\Cal E\in\Sigma\)</span>. Sekarang
+<span class="math inline" data-source-tex="H=X\setminus\bigcup\Cal E">\(H=X\setminus\bigcup\Cal E\)</span> terabaikan. Bukti.<span class="fremlin-query" role="img" aria-label="andaikan untuk kontradiksi"></span> Andaikan sebaliknya.
+Karena <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> semihingga, terdapat suatu himpunan <span class="math inline" data-source-tex="G">\(G\)</span> berukuran
+berhingga sedemikian sehingga <span class="math inline" data-source-tex="G\subseteq H">\(G\subseteq H\)</span> dan <span class="math inline" data-source-tex="\mu G&gt;0">\(\mu G&gt;0\)</span>, yakni
+<span class="math inline" data-source-tex="G\in\Sigma^f\setminus\Cal N">\(G\in\Sigma^f\setminus\Cal N\)</span> dan <span class="math inline" data-source-tex="G\cap E=\emptyset">\(G\cap E=\emptyset\)</span> untuk setiap
+<span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>. Namun ini berarti bahwa <span class="math inline" data-source-tex="\{G\}\cup\Cal E">\(\{G\}\cup\Cal E\)</span> merupakan
+anggota <span class="math inline" data-source-tex="\frak P">\(\frak P\)</span> yang lebih besar daripada <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span>, padahal hal itu
+mustahil. <span class="fremlin-bang" role="img" aria-label="kontradiksi"></span>∎</p>
+<p>Misalkan <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> suatu barisan yang mencakup semua anggota
+<span class="math inline" data-source-tex="\Cal E\cup\{H\}">\(\Cal E\cup\{H\}\)</span>. Maka <span class="math inline" data-source-tex="\sequencen{X_n}">\(\sequencen{X_n}\)</span> merupakan penutup <span class="math inline" data-source-tex="X">\(X\)</span> oleh
+suatu barisan himpunan terukur berukuran berhingga, sehingga
+<span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> bersifat <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga.</p>
+<p> </p>
+<p><strong>(v)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(i)</strong> Jika (v) benar, maka terdapat suatu barisan
+<span class="math inline" data-source-tex="\sequencen{E_n}">\(\sequencen{E_n}\)</span> dalam <span class="math inline" data-source-tex="\Sigma^f">\(\Sigma^f\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="E\setminus\bigcup_{n\in\Bbb N}E_n">\(E\setminus\bigcup_{n\in\Bbb N}E_n\)</span> terabaikan untuk setiap
+<span class="math inline" data-source-tex="E\in\Sigma^f">\(E\in\Sigma^f\)</span>. Karena <span class="math inline" data-source-tex="\mu">\(\mu\)</span> semihingga,
+<span class="math inline" data-source-tex="X\setminus\bigcup_{n\in\Bbb N}E_n">\(X\setminus\bigcup_{n\in\Bbb N}E_n\)</span> harus terabaikan; jadi <span class="math inline" data-source-tex="X">\(X\)</span> ditutupi
+oleh suatu keluarga terhitung yang terdiri atas himpunan berukuran berhingga
+dan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> bersifat <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga.</p>
+<p> </p>
+<p><strong>(viii)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(ix)</strong> Jika <span class="math inline" data-source-tex="\mu X=0">\(\mu X=0\)</span>, pernyataan ini langsung.
+Jika tidak, apabila <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi terukur dan terintegralkan yang bernilai
+positif di setiap titik, maka <span class="math inline" data-source-tex="c=\int f&gt;0">\(c=\int f&gt;0\)</span> (<a class="xref" href="../122/index.html#122Rc">122Rc</a>), sehingga <span class="math inline" data-source-tex="\Bover1cf">\(\Bover1cf\)</span>
+merupakan fungsi terukur yang bernilai positif di setiap titik dan berintegral
+<span class="math inline" data-source-tex="1">\(1\)</span>.</p>
+<p><strong>(ix)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(i)</strong> Jika <span class="math inline" data-source-tex="f:X\to\ooint{0,\infty}">\(f:X\to\ooint{0,\infty}\)</span> terukur dan
+terintegralkan, maka
+<span class="math inline" data-source-tex="\sequencen{\{x:f(x)\ge 2^{-n}\}}">\(\sequencen{\{x:f(x)\ge 2^{-n}\}}\)</span> merupakan barisan himpunan berukuran
+berhingga yang menutupi <span class="math inline" data-source-tex="X">\(X\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="215C" data-source-id="215C"><h2><span class="source-label">215C</span> Akibat </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur
+<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga, dan andaikan <span class="math inline" data-source-tex="\Cal E\subseteq\Sigma">\(\Cal E\subseteq\Sigma\)</span> sembarang keluarga
+tak-kosong.</p>
+<p>(a) Terdapat suatu barisan tak-menurun <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> dalam <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span>
+sedemikian sehingga, untuk setiap <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>, <em>salah satu</em> dari
+dua hal berikut berlaku: terdapat <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="E\cup F_n">\(E\cup F_n\)</span> tidak termuat dalam satu pun anggota <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span>; <em>atau</em>
+<span class="math inline" data-source-tex="E\setminus\bigcup_{n\in\Bbb N}F_n">\(E\setminus\bigcup_{n\in\Bbb N}F_n\)</span> terabaikan.</p>
+<p>(b) Jika <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> terarah ke atas, maka terdapat suatu barisan tak-menurun
+<span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> dalam <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}F_n">\(\bigcup_{n\in\Bbb N}F_n\)</span> merupakan supremum esensial dari <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span>
+dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>.</p>
+<p>(c) Jika gabungan setiap barisan tak-menurun dalam <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> merupakan anggota
+<span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span>, maka terdapat <span class="math inline" data-source-tex="F\in\Cal E">\(F\in\Cal E\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="E\setminus F">\(E\setminus F\)</span> terabaikan untuk setiap <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span> dengan <span class="math inline" data-source-tex="F\subseteq E">\(F\subseteq E\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Menurut <a class="xref" href="#215B">215B</a>, terdapat suatu ukuran berhingga total <span class="math inline" data-source-tex="\nu">\(\nu\)</span> pada
+<span class="math inline" data-source-tex="X">\(X\)</span> dengan himpunan-himpunan terukur dan himpunan-himpunan terabaikan yang
+sama dengan <span class="math inline" data-source-tex="\mu">\(\mu\)</span>. Karena <span class="math inline" data-source-tex="\sup_{E\in\Cal E}\nu E">\(\sup_{E\in\Cal E}\nu E\)</span> berhingga, kita dapat
+menerapkan <a class="xref" href="#215A">215A</a> pada <span class="math inline" data-source-tex="\nu">\(\nu\)</span> untuk memperoleh hasil-hasil tersebut.</p></aside>
+</section>
+<section class="source-unit" id="215D" data-source-id="215D"><h2><span class="source-label">215D</span>  </h2>
+<p>Sebagai contoh lain penggunaan prinsip penghabisan,
+saya memberikan sebuah fakta mendasar mengenai ruang ukur tanpa atom.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur tanpa
+atom. Jika <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> dan <span class="math inline" data-source-tex="0\le\alpha\le\mu E&lt;\infty">\(0\le\alpha\le\mu E&lt;\infty\)</span>, maka terdapat
+<span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span> sedemikian sehingga <span class="math inline" data-source-tex="F\subseteq E">\(F\subseteq E\)</span> dan <span class="math inline" data-source-tex="\mu F=\alpha">\(\mu F=\alpha\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Kita perlu mengetahui bahwa jika <span class="math inline" data-source-tex="G\in\Sigma">\(G\in\Sigma\)</span>
+tak-terabaikan dan <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, maka terdapat <span class="math inline" data-source-tex="H\subseteq G">\(H\subseteq G\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="0&lt;\mu H\le 2^{-n}\mu G">\(0&lt;\mu H\le 2^{-n}\mu G\)</span>. Bukti. Kita buktikan dengan induksi
+terhadap <span class="math inline" data-source-tex="n">\(n\)</span>. Untuk <span class="math inline" data-source-tex="n=0">\(n=0\)</span> pernyataan ini langsung. Untuk langkah induksi
+ke <span class="math inline" data-source-tex="n+1">\(n+1\)</span>, gunakan
+hipotesis induksi untuk memperoleh <span class="math inline" data-source-tex="H\subseteq G">\(H\subseteq G\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="0&lt;\mu H\le 2^{-n}\mu G">\(0&lt;\mu H\le 2^{-n}\mu G\)</span>. Karena <span class="math inline" data-source-tex="\mu">\(\mu\)</span> tanpa atom, terdapat
+<span class="math inline" data-source-tex="H&#x27;\subseteq H">\(H&#x27;\subseteq H\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\mu H&#x27;">\(\mu H&#x27;\)</span> dan <span class="math inline" data-source-tex="\mu(H\setminus H&#x27;)">\(\mu(H\setminus H&#x27;)\)</span>
+keduanya terdefinisi dan bukan nol. Setidaknya salah satu di antaranya
+berukuran kurang dari atau sama dengan <span class="math inline" data-source-tex="\bover12\mu H">\(\bover12\mu H\)</span>, sehingga
+memberikan suatu subhimpunan dari <span class="math inline" data-source-tex="G">\(G\)</span> yang berukuran positif dan tidak lebih
+dari <span class="math inline" data-source-tex="2^{-n-1}\mu G">\(2^{-n-1}\mu G\)</span>. ∎</p>
+<p>Akibatnya, jika <span class="math inline" data-source-tex="G\in\Sigma">\(G\in\Sigma\)</span> berukuran positif dan berhingga serta
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, maka terdapat suatu himpunan terukur <span class="math inline" data-source-tex="H\subseteq G">\(H\subseteq G\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="0&lt;\mu H\le\epsilon">\(0&lt;\mu H\le\epsilon\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Misalkan <span class="math inline" data-source-tex="\Cal H">\(\Cal H\)</span> adalah keluarga semua <span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="H\subseteq E">\(H\subseteq E\)</span> dan <span class="math inline" data-source-tex="\mu H\le\alpha">\(\mu H\le\alpha\)</span>. Jika <span class="math inline" data-source-tex="\sequencen{H_n}">\(\sequencen{H_n}\)</span>
+sembarang barisan tak-menurun dalam <span class="math inline" data-source-tex="\Cal H">\(\Cal H\)</span>, maka
+<span class="math inline" data-source-tex="\mu(\bigcup_{n\in\Bbb N}H_n)=\lim_{n\to\infty}\mu H_n\le\alpha">\(\mu(\bigcup_{n\in\Bbb N}H_n)=\lim_{n\to\infty}\mu H_n\le\alpha\)</span>,
+sehingga <span class="math inline" data-source-tex="\bigcup_{n\in\Bbb N}H_n\in\Cal H">\(\bigcup_{n\in\Bbb N}H_n\in\Cal H\)</span>. Jadi 215Ac menunjukkan
+bahwa terdapat <span class="math inline" data-source-tex="F\in\Cal H">\(F\in\Cal H\)</span> sedemikian sehingga <span class="math inline" data-source-tex="H\setminus F">\(H\setminus F\)</span>
+terabaikan untuk setiap <span class="math inline" data-source-tex="H\in\Cal H">\(H\in\Cal H\)</span> dengan <span class="math inline" data-source-tex="F\subseteq H">\(F\subseteq H\)</span>.
+<span class="fremlin-query" role="img" aria-label="andaikan untuk kontradiksi"></span> Andaikan sebaliknya bahwa <span class="math inline" data-source-tex="\mu F&lt;\alpha">\(\mu F&lt;\alpha\)</span>. Menurut (a),
+terdapat <span class="math inline" data-source-tex="H\subseteq E\setminus F">\(H\subseteq E\setminus F\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="0&lt;\mu H\le\alpha-\mu F">\(0&lt;\mu H\le\alpha-\mu F\)</span>. Namun dalam hal ini <span class="math inline" data-source-tex="H\cup F\in\Cal H">\(H\cup F\in\Cal H\)</span> dan
+<span class="math inline" data-source-tex="\mu((H\cup F)\setminus F)&gt;0">\(\mu((H\cup F)\setminus F)&gt;0\)</span>, suatu kemustahilan. <span class="fremlin-bang" role="img" aria-label="kontradiksi"></span></p>
+<p>Dengan demikian kita telah menemukan himpunan <span class="math inline" data-source-tex="F">\(F\)</span> yang sesuai.</p></aside>
+</section>
+<section class="source-unit" id="215E" data-source-id="215E"><h2><span class="source-label">215E</span>  </h2>
+<p>Salah satu sifat dasar ukuran Lebesgue ialah bahwa
+himpunan bagian beranggota tunggal (dan karenanya himpunan bagian terhitung)
+terabaikan.
+Hal ini tentu berkaitan dengan kenyataan bahwa ukuran Lebesgue bersifat tanpa atom
+(<a class="xref" href="../211/index.html#211Md">211Md</a>). Mudah mengonstruksi ukuran yang membuat setiap himpunan beranggota
+tunggal terabaikan tetapi tetap memiliki atom (misalnya ukuran
+terhitung-koterhitung dalam <a class="xref" href="../211/index.html#211R">211R</a>). Perlu sedikit siasat tambahan untuk
+mengonstruksi ukuran tanpa atom yang di dalamnya tidak semua himpunan
+beranggota tunggal terabaikan
+(<a class="xref" href="../216/index.html#216Ye">216Ye</a>). Hasil berikut memberikan syarat-syarat yang mencegah hal tersebut.</p>
+<p> </p>
+<p><strong>Proposisi</strong>
+Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur tanpa atom dan <span class="math inline" data-source-tex="x\in X">\(x\in X\)</span>.</p>
+<p>(a) Jika <span class="math inline" data-source-tex="\mu^*\{x\}">\(\mu^*\{x\}\)</span> berhingga, maka <span class="math inline" data-source-tex="\{x\}">\(\{x\}\)</span> terabaikan.</p>
+<p>(b) Jika <span class="math inline" data-source-tex="\mu">\(\mu\)</span> memiliki himpunan-himpunan terabaikan yang ditentukan
+secara lokal, maka <span class="math inline" data-source-tex="\{x\}">\(\{x\}\)</span> terabaikan.</p>
+<p>(c) Jika <span class="math inline" data-source-tex="\mu">\(\mu\)</span> dapat dilokalkan, maka <span class="math inline" data-source-tex="\{x\}">\(\{x\}\)</span> terabaikan.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> <span class="fremlin-query" role="img" aria-label="andaikan untuk kontradiksi"></span> Andaikan sebaliknya; maka
+<span class="math inline" data-source-tex="0&lt;\mu^*\{x\}&lt;\infty">\(0&lt;\mu^*\{x\}&lt;\infty\)</span>. Misalkan <span class="math inline" data-source-tex="E">\(E\)</span> suatu himpunan yang memuat <span class="math inline" data-source-tex="x">\(x\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\mu E&lt;2\mu^*\{x\}">\(\mu E&lt;2\mu^*\{x\}\)</span>. Menurut <a class="xref" href="#215D">215D</a>, terdapat
+<span class="math inline" data-source-tex="F\subseteq E">\(F\subseteq E\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu F=\bover12\mu E=\mu(E\setminus F)&lt;\mu^*\{x\}">\(\mu F=\bover12\mu E=\mu(E\setminus F)&lt;\mu^*\{x\}\)</span>.</div>
+<p>Jadi baik <span class="math inline" data-source-tex="F">\(F\)</span> maupun <span class="math inline" data-source-tex="E\setminus F">\(E\setminus F\)</span> tidak mungkin memuat <span class="math inline" data-source-tex="x">\(x\)</span>;
+padahal <span class="math inline" data-source-tex="x\in E">\(x\in E\)</span>. <span class="fremlin-bang" role="img" aria-label="kontradiksi"></span></p>
+<p> </p>
+<p><strong>(b)</strong> Untuk setiap himpunan <span class="math inline" data-source-tex="E">\(E\)</span> berukuran berhingga,
+<span class="math inline" data-source-tex="E\cap\{x\}">\(E\cap\{x\}\)</span> terabaikan; sebab, jika himpunan ini tidak kosong, maka
+<span class="math inline" data-source-tex="x\in E">\(x\in E\)</span> dan kita dapat menerapkan (a). Karena <span class="math inline" data-source-tex="\mu">\(\mu\)</span> memiliki
+himpunan-himpunan terabaikan yang ditentukan secara lokal, <span class="math inline" data-source-tex="\{x\}">\(\{x\}\)</span>
+terabaikan.</p>
+<p> </p>
+<p><strong>(c)</strong> Misalkan <span class="math inline" data-source-tex="\Cal E\subseteq\Sigma^f">\(\Cal E\subseteq\Sigma^f\)</span> suatu keluarga maksimal
+sedemikian sehingga <span class="math inline" data-source-tex="\mu E&lt;\infty">\(\mu E&lt;\infty\)</span> untuk setiap <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span> dan
+<span class="math inline" data-source-tex="\mu(E\cap F)=0">\(\mu(E\cap F)=0\)</span> setiap kali <span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="F\in\Cal E">\(F\in\Cal E\)</span> berbeda. Untuk setiap
+<span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span> dan <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, terapkan <a class="xref" href="#215D">215D</a> sebanyak <span class="math inline" data-source-tex="n">\(n\)</span> kali untuk
+memperoleh suatu partisi <span class="math inline" data-source-tex="E_{n0}">\(E_{n0}\)</span>, <span class="math inline" data-source-tex="E_{n1},\ldots,E_{nn}">\(E_{n1},\ldots,E_{nn}\)</span> dari <span class="math inline" data-source-tex="E">\(E\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\mu E_{ni}=\bover1{n+1}\mu E">\(\mu E_{ni}=\bover1{n+1}\mu E\)</span> untuk setiap <span class="math inline" data-source-tex="i\le n">\(i\le n\)</span>.
+Selanjutnya, untuk <span class="math inline" data-source-tex="i\le n\in\Bbb N">\(i\le n\in\Bbb N\)</span>, misalkan <span class="math inline" data-source-tex="H_{ni}">\(H_{ni}\)</span> suatu supremum
+esensial dari <span class="math inline" data-source-tex="\{E_{ni}:E\in\Cal E\}">\(\{E_{ni}:E\in\Cal E\}\)</span>. Untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> dan
+<span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu(E\setminus\bigcup_{i\le n}H_{ni})
+\le\sum_{i=0}^n\mu(E_{ni}\setminus H_{ni})=0">\(\mu(E\setminus\bigcup_{i\le n}H_{ni})
+\le\sum_{i=0}^n\mu(E_{ni}\setminus H_{ni})=0\)</span>.</div>
+<p>Jadi, jika <span class="math inline" data-source-tex="F\in\Sigma">\(F\in\Sigma\)</span>, <span class="math inline" data-source-tex="\mu F&lt;\infty">\(\mu F&lt;\infty\)</span>, dan
+<span class="math inline" data-source-tex="F\cap\bigcup_{i\le n}H_{ni}=\emptyset">\(F\cap\bigcup_{i\le n}H_{ni}=\emptyset\)</span>, maka <span class="math inline" data-source-tex="\mu(E\cap F)=0">\(\mu(E\cap F)=0\)</span> untuk
+setiap <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>; karena <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> maksimal, <span class="math inline" data-source-tex="F">\(F\)</span> harus terabaikan.
+Kita mengandaikan bahwa <span class="math inline" data-source-tex="\mu">\(\mu\)</span> semihingga, sehingga
+<span class="math inline" data-source-tex="X\setminus\bigcup_{i\le n}H_{ni}">\(X\setminus\bigcup_{i\le n}H_{ni}\)</span> terabaikan.</p>
+<p>Akibatnya, jika terdapat <span class="math inline" data-source-tex="n">\(n\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="x\notin\bigcup_{i\le n}H_{ni}">\(x\notin\bigcup_{i\le n}H_{ni}\)</span>, maka <span class="math inline" data-source-tex="\{x\}">\(\{x\}\)</span> terabaikan dan pembuktian
+selesai. Tinjau
+<span class="math inline" data-source-tex="H=\bigcap\{H_{ni}:i\le n\in\Bbb N">\(H=\bigcap\{H_{ni}:i\le n\in\Bbb N\)</span>, <span class="math inline" data-source-tex="x\in H_{ni}\}">\(x\in H_{ni}\}\)</span>.
+<span class="fremlin-query" role="img" aria-label="andaikan untuk kontradiksi"></span> Jika <span class="math inline" data-source-tex="\mu H&gt;0">\(\mu H&gt;0\)</span>, terdapat <span class="math inline" data-source-tex="F\subseteq H">\(F\subseteq H\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="0&lt;\mu F&lt;\infty">\(0&lt;\mu F&lt;\infty\)</span>. Karena kemaksimalan <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span>, terdapat
+<span class="math inline" data-source-tex="E^*\in\Cal E">\(E^*\in\Cal E\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\mu(F\cap E^*)&gt;0">\(\mu(F\cap E^*)&gt;0\)</span>. Pilih <span class="math inline" data-source-tex="n">\(n\)</span>
+sedemikian sehingga
+<span class="math inline" data-source-tex="\mu(F\cap E^*)&gt;\bover1{n+1}\mu E^*">\(\mu(F\cap E^*)&gt;\bover1{n+1}\mu E^*\)</span>. Terdapat <span class="math inline" data-source-tex="i\le n">\(i\le n\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="x\in H_{ni}">\(x\in H_{ni}\)</span>; dengan demikian <span class="math inline" data-source-tex="F\subseteq H_{ni}">\(F\subseteq H_{ni}\)</span>, sedangkan
+<span class="math inline" data-source-tex="\mu(F\cap E^*_{ni})\le\bover1{n+1}\mu E^*">\(\mu(F\cap E^*_{ni})\le\bover1{n+1}\mu E^*\)</span>, sehingga
+<span class="math inline" data-source-tex="F&#x27;=F\cap E^*\setminus E^*_{ni}">\(F&#x27;=F\cap E^*\setminus E^*_{ni}\)</span> berukuran positif. Tinjau
+<span class="math inline" data-source-tex="G=H_{ni}\setminus F&#x27;">\(G=H_{ni}\setminus F&#x27;\)</span>. Jika <span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span>, maka salah satu dari dua hal
+berikut berlaku: <span class="math inline" data-source-tex="E=E^*">\(E=E^*\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="E_{ni}\setminus G=E^*_{ni}\setminus G
+=E^*_{ni}\setminus H_{ni}">\(E_{ni}\setminus G=E^*_{ni}\setminus G
+=E^*_{ni}\setminus H_{ni}\)</span></div>
+<p>terabaikan; atau <span class="math inline" data-source-tex="E\ne E^*">\(E\ne E^*\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="E_{ni}\setminus G
+\subseteq(E_{ni}\setminus H_{ni})\cup(E\cap E^*)">\(E_{ni}\setminus G
+\subseteq(E_{ni}\setminus H_{ni})\cup(E\cap E^*)\)</span></div>
+<p>terabaikan. Karena <span class="math inline" data-source-tex="H_{ni}">\(H_{ni}\)</span> merupakan supremum esensial dari
+<span class="math inline" data-source-tex="\{E_{ni}:E\in\Cal E\}">\(\{E_{ni}:E\in\Cal E\}\)</span>, maka <span class="math inline" data-source-tex="H_{ni}\setminus G">\(H_{ni}\setminus G\)</span> harus terabaikan dan
+<span class="math inline" data-source-tex="F&#x27;">\(F&#x27;\)</span> terabaikan; ini mustahil. ∎</p>
+<p>Jadi <span class="math inline" data-source-tex="H">\(H\)</span> merupakan himpunan terabaikan yang memuat <span class="math inline" data-source-tex="x">\(x\)</span>, dan dalam kasus
+ini pun <span class="math inline" data-source-tex="\{x\}">\(\{x\}\)</span> terabaikan.</p></aside>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="215X" data-source-id="215X"><span class="anchor" id="215Xa"></span><h2><span class="source-label">215X</span> Latihan dasar (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan <span class="math inline" data-source-tex="\Phi">\(\Phi\)</span> suatu himpunan
+tak-kosong yang terdiri atas fungsi-fungsi bernilai real yang terintegralkan
+terhadap <span class="math inline" data-source-tex="\mu">\(\mu\)</span>, yang masing-masing memetakan <span class="math inline" data-source-tex="X">\(X\)</span> ke <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Andaikan
+<span class="math inline" data-source-tex="\sup_{n\in\Bbb N}\int f_n">\(\sup_{n\in\Bbb N}\int f_n\)</span> berhingga
+untuk setiap barisan <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> dalam <span class="math inline" data-source-tex="\Phi">\(\Phi\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="f_n\leae f_{n+1}">\(f_n\leae f_{n+1}\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>. Tunjukkan bahwa terdapat suatu
+barisan <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> dalam <span class="math inline" data-source-tex="\Phi">\(\Phi\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="f_n\leae f_{n+1}">\(f_n\leae f_{n+1}\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span> dan, untuk setiap fungsi bernilai
+real yang terintegralkan <span class="math inline" data-source-tex="f">\(f\)</span> pada <span class="math inline" data-source-tex="X">\(X\)</span>, <em>salah satu</em>:
+<span class="math inline" data-source-tex="f\leae\sup_{n\in\Bbb N}f_n">\(f\leae\sup_{n\in\Bbb N}f_n\)</span> <em>atau</em> terdapat <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> sedemikian
+sehingga tidak ada anggota <span class="math inline" data-source-tex="\Phi">\(\Phi\)</span> yang lebih besar atau sama
+dengan <span class="math inline" data-source-tex="\max(f,f_n)">\(\max(f,f_n)\)</span> hampir di mana-mana.</p>
+</section>
+<section class="source-unit" id="215Xb" data-source-id="215Xb"><h3><span class="source-label">215Xb</span> (&gt;b) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur. (i) Andaikan
+<span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span> suatu subhimpunan <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span> yang tak-kosong dan terarah ke atas
+sedemikian sehingga <span class="math inline" data-source-tex="c=\sup_{E\in\Cal E}\mu E">\(c=\sup_{E\in\Cal E}\mu E\)</span> berhingga. Tunjukkan
+bahwa <span class="math inline" data-source-tex="E\setminus\bigcup_{n\in\Bbb N}F_n">\(E\setminus\bigcup_{n\in\Bbb N}F_n\)</span> terabaikan untuk setiap
+<span class="math inline" data-source-tex="E\in\Cal E">\(E\in\Cal E\)</span> dan setiap barisan <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> dalam <span class="math inline" data-source-tex="\Cal E">\(\Cal E\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\lim_{n\to\infty}\mu F_n=c">\(\lim_{n\to\infty}\mu F_n=c\)</span>. (ii) Misalkan <span class="math inline" data-source-tex="\Phi">\(\Phi\)</span>
+suatu himpunan tak-kosong yang terdiri atas fungsi-fungsi terintegralkan
+pada <span class="math inline" data-source-tex="X">\(X\)</span>
+yang terarah ke atas dalam arti bahwa untuk setiap <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g\in\Phi">\(g\in\Phi\)</span>
+terdapat <span class="math inline" data-source-tex="h\in\Phi">\(h\in\Phi\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\max(f,g)\leae h">\(\max(f,g)\leae h\)</span>, serta andaikan
+<span class="math inline" data-source-tex="c=\sup_{f\in\Phi}\int f">\(c=\sup_{f\in\Phi}\int f\)</span> berhingga. Tunjukkan bahwa
+<span class="math inline" data-source-tex="f\leae\sup_{n\in\Bbb N}f_n">\(f\leae\sup_{n\in\Bbb N}f_n\)</span> untuk setiap <span class="math inline" data-source-tex="f\in\Phi">\(f\in\Phi\)</span> dan setiap barisan
+<span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> dalam <span class="math inline" data-source-tex="\Phi">\(\Phi\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\int f_n=c">\(\lim_{n\to\infty}\int f_n=c\)</span>.</p>
+</section>
+<section class="source-unit" id="215Xc" data-source-id="215Xc"><h3><span class="source-label">215Xc</span> (c) </h3>
+<p>Gunakan <a class="xref" href="#215A">215A</a> untuk mempersingkat bukti 211Ld.</p>
+</section>
+<section class="source-unit" id="215Xd" data-source-id="215Xd"><h3><span class="source-label">215Xd</span> (d) </h3>
+<p>Berikan contoh suatu ruang ukur (yang tidak semihingga)
+<span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> yang memenuhi syarat (ii)-(iv) dalam <a class="xref" href="#215B">215B</a>, tetapi tidak
+memenuhi (i).</p>
+</section>
+<section class="source-unit" id="215Xe" data-source-id="215Xe"><h3><span class="source-label">215Xe</span> (&gt;e) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga
+tanpa atom. Tunjukkan bahwa untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat suatu
+barisan saling lepas <span class="math inline" data-source-tex="\sequencen{E_n}">\(\sequencen{E_n}\)</span> dari himpunan-himpunan terukur
+yang masing-masing berukuran paling besar <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> dan sedemikian
+sehingga <span class="math inline" data-source-tex="X=\bigcup_{n\in\Bbb N}E_n">\(X=\bigcup_{n\in\Bbb N}E_n\)</span>.</p>
+</section>
+<section class="source-unit" id="215Xf" data-source-id="215Xf"><h3><span class="source-label">215Xf</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur tanpa atom
+yang dapat dilokalkan secara ketat. Tunjukkan bahwa untuk setiap
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat suatu dekomposisi <span class="math inline" data-source-tex="\familyiI{X_i}">\(\familyiI{X_i}\)</span> dari <span class="math inline" data-source-tex="X">\(X\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\mu X_i\le\epsilon">\(\mu X_i\le\epsilon\)</span> untuk setiap <span class="math inline" data-source-tex="i\in I">\(i\in I\)</span>.</p>
+</section>
+<section class="source-unit" id="215Y" data-source-id="215Y"><span class="anchor" id="215Ya"></span><h2><span class="source-label">215Y</span> Latihan lanjutan (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga dan
+<span class="math inline" data-source-tex="\langle f_{mn}\rangle_{m,n\in\Bbb N}">\(\langle f_{mn}\rangle_{m,n\in\Bbb N}\)</span>, <span class="math inline" data-source-tex="\sequence{m}{f_m}">\(\sequence{m}{f_m}\)</span>, <span class="math inline" data-source-tex="f">\(f\)</span>
+fungsi-fungsi terukur bernilai real yang didefinisikan hampir di
+mana-mana dalam <span class="math inline" data-source-tex="X">\(X\)</span> serta sedemikian sehingga
+<span class="math inline" data-source-tex="\sequencen{f_{mn}}\to f_m">\(\sequencen{f_{mn}}\to f_m\)</span> hampir di mana-mana untuk setiap <span class="math inline" data-source-tex="m">\(m\)</span> dan
+<span class="math inline" data-source-tex="\sequence{m}{f_m}\to f">\(\sequence{m}{f_m}\to f\)</span> hampir di mana-mana. Tunjukkan bahwa terdapat
+suatu barisan naik ketat <span class="math inline" data-source-tex="\sequence{m}{n_m}">\(\sequence{m}{n_m}\)</span> dalam <span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\sequence{m}{f_{m,n_m}}\to f">\(\sequence{m}{f_{m,n_m}}\to f\)</span> hampir di mana-mana. (Bandingkan <a class="xref" href="../134/index.html#134Yb">134Yb</a>.)</p>
+</section>
+<section class="source-unit" id="215Yb" data-source-id="215Yb"><h3><span class="source-label">215Yb</span> (b) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur
+<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga. Misalkan <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> suatu barisan fungsi terukur
+bernilai real sedemikian sehingga <span class="math inline" data-source-tex="f=\lim_{n\to\infty}f_n">\(f=\lim_{n\to\infty}f_n\)</span> didefinisikan
+hampir di mana-mana dalam <span class="math inline" data-source-tex="X">\(X\)</span>. Tunjukkan bahwa terdapat suatu barisan
+tak-menurun <span class="math inline" data-source-tex="\sequence{k}{X_k}">\(\sequence{k}{X_k}\)</span> yang terdiri atas subhimpunan terukur dari
+<span class="math inline" data-source-tex="X">\(X\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\bigcup_{k\in\Bbb N}X_k">\(\bigcup_{k\in\Bbb N}X_k\)</span> koterabaikan dalam
+<span class="math inline" data-source-tex="X">\(X\)</span> dan <span class="math inline" data-source-tex="\sequencen{f_n}\to f">\(\sequencen{f_n}\to f\)</span> seragam pada setiap <span class="math inline" data-source-tex="X_k">\(X_k\)</span>, dalam arti
+bahwa untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat <span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="|f_j(x)-f(x)|">\(|f_j(x)-f(x)|\)</span> terdefinisi dan kurang dari atau sama dengan
+<span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> untuk setiap <span class="math inline" data-source-tex="j\ge m">\(j\ge m\)</span> dan <span class="math inline" data-source-tex="x\in X_k">\(x\in X_k\)</span>.</p>
+<p>(Ini merupakan suatu versi Teorema Egorov.)</p>
+</section>
+<section class="source-unit" id="215Yc" data-source-id="215Yc"><h3><span class="source-label">215Yc</span> (c) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur berhingga
+total dan <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span>, <span class="math inline" data-source-tex="f">\(f\)</span> fungsi-fungsi terukur bernilai real
+yang didefinisikan hampir di mana-mana dalam <span class="math inline" data-source-tex="X">\(X\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="\sequencen{f_n}\to f">\(\sequencen{f_n}\to f\)</span> hampir di mana-mana jika dan hanya jika terdapat
+suatu barisan <span class="math inline" data-source-tex="\sequencen{\epsilon_n}">\(\sequencen{\epsilon_n}\)</span> dari bilangan real yang semuanya
+positif dan konvergen ke <span class="math inline" data-source-tex="0">\(0\)</span>, sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{n\to\infty}\mu^*(\bigcup_{k\ge n}\{x:x\in\dom
+f_k\cap\dom f,\,|f_k(x)-f(x)|\ge\epsilon_n\})=0">\(\lim_{n\to\infty}\mu^*(\bigcup_{k\ge n}\{x:x\in\dom
+f_k\cap\dom f,\,|f_k(x)-f(x)|\ge\epsilon_n\})=0\)</span>.</div>
+</section>
+<section class="source-unit" id="215Yd" data-source-id="215Yd"><h3><span class="source-label">215Yd</span> (d) </h3>
+<p>Temukan bukti langsung untuk
+(v)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(vi) dalam <a class="xref" href="#215B">215B</a>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> untuk <span class="math inline" data-source-tex="\Cal E\subseteq\Sigma">\(\Cal E\subseteq\Sigma\)</span>, gunakan Lema Zorn untuk
+memperoleh suatu <span class="math inline" data-source-tex="\Cal E&#x27;\subseteq\Cal E">\(\Cal E&#x27;\subseteq\Cal E\)</span> yang maksimal dan terurut total
+sedemikian sehingga <span class="math inline" data-source-tex="E\symmdiff F\notin\Cal N">\(E\symmdiff F\notin\Cal N\)</span> untuk setiap
+<span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="F\in\Cal E&#x27;">\(F\in\Cal E&#x27;\)</span> yang berbeda, lalu terapkan (v) pada <span class="math inline" data-source-tex="\Cal E&#x27;">\(\Cal E&#x27;\)</span>.</span></p>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<section class="source-unit" id="215-notes" data-source-id="215-notes"><h2><span class="source-label">215-notes</span> Catatan penutup untuk Bagian 215 </h2>
+<p>Gagasan bersama yang mendasari <a class="xref" href="#215A">215A</a>, <a class="xref" href="#215B">215B</a>(vi), <a class="xref" href="#215C">215C</a>, dan <a class="xref" href="#215Xa">215Xa</a>
+sebenarnya merupakan salah satu gagasan paling mendasar dalam teori
+ukuran. Gagasan ini muncul dalam begitu banyak bentuk sehingga sering
+kali lebih mudah membuktikan suatu penerapan langsung berdasarkan asas-asas dasar
+daripada menjelaskan bagaimana penerapan tersebut dapat direduksi ke
+versi-versi di sini. Namun, mulai sekarang saya akan berusaha menandai
+penerapan semacam itu setiap kali muncul, dengan menyebut metode tersebut
+(bukti 215Aa atau <a class="xref" href="#215Xa">215Xa</a>) sebagai "prinsip penghabisan". Salah satu hal
+yang mungkin patut dicatat di sini ialah konstruksi induktif barisan
+<span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> dalam bukti 215Aa. Setiap <span class="math inline" data-source-tex="F_{n+1}">\(F_{n+1}\)</span> dipilih <em>setelah</em> suku sebelumnya. Inilah yang memungkinkan kita, dalam bukti
+<a class="xref" href="#215B">215B</a>(vii)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(vi), memperoleh langsung suatu barisan yang
+sesuai <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span>. Dalam banyak penerapan (mulai dari penerapan yang
+tentu paling penting dalam teori elementer, yakni Teorema Radon-Nikodým
+dalam §232, ataupun bagian (i) dari bukti 211Ld),
+penghalusan ini tidak diperlukan; kita berhadapan dengan suatu himpunan
+yang terarah ke atas, seperti dalam <a class="xref" href="#215B">215B</a>(v), dan dapat memilih seluruh
+barisan <span class="math inline" data-source-tex="\sequencen{F_n}">\(\sequencen{F_n}\)</span> sekaligus, tanpa interaksi antarsuku, seperti
+dalam <a class="xref" href="#215Xb">215Xb</a>. Aksioma "pilihan bergantung", yang menyatakan bahwa kita
+dapat mengonstruksi barisan suku demi suku, diketahui lebih kuat daripada
+aksioma "pilihan terhitung", yang hanya menyatakan bahwa kita dapat
+memilih objek dalam jumlah terhitung secara serentak.</p>
+<p>Dalam <a class="xref" href="#215B">215B</a> saya berusaha menunjukkan ciri-ciri utama sifat
+<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga; khususnya, sifat-sifat yang membedakan ukuran
+<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga dari ukuran lain yang dapat dilokalkan secara ketat.
+Hasil ini, dalam arti tertentu, lebih abstrak daripada uraian lain dalam
+bagian ini. Perhatikan bahwa hasil ini menggunakan
+aksioma pilihan secara esensial dalam bentuk Lema Zorn. Dalam <a class="xref" href="../134/index.html#134C">134C</a> saya
+menulis satu paragraf untuk mengomentari perbedaan antara "pilihan
+terhitung", yang diperlukan untuk segala sesuatu yang menyerupai teori
+standar ukuran Lebesgue, dan aksioma pilihan penuh, yang relatif jarang
+digunakan dalam teori elementer. Implikasi (ii)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(i) dalam
+<a class="xref" href="#215B">215B</a> merupakan salah satu tempat kita benar-benar memerlukan
+sesuatu yang melampaui pilihan terhitung. (Perlu kiranya saya catat bahwa
+seluruh teori ruang ukur yang bukan <span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga tampak sangat ganjil
+tanpa aksioma pilihan umum.) Perhatikan pula bahwa dalam <a class="xref" href="#215B">215B</a>, bukti
+(i)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(vii) dan (vii)<span class="math inline" data-source-tex="\Rightarrow">\(\Rightarrow\)</span>(vi) merupakan satu-satunya
+bagian yang memunculkan sesuatu yang seremeh bilangan. Syarat (iii), (iv),
+(v), dan (vi) saling terhubung dengan cara yang sama sekali tidak
+berkaitan dengan teori ukuran, dan hanya melibatkan struktur
+<span class="math inline" data-source-tex="(X,\Sigma,\Cal N)">\((X,\Sigma,\Cal N)\)</span>. (Lihat <a class="xref" href="#215Yd">215Yd</a> di sini, dan 316D-316E dalam Volume 3.)
+Terdapat syarat-syarat serupa yang berkaitan dengan fungsi terukur,
+bukan himpunan terukur; untuk suatu contoh yang cukup abstrak, lihat
+241Ye.</p>
+<p>Dalam <a class="xref" href="#215Ya">215Ya</a>-<a class="xref" href="#215Yc">215Yc</a> terdapat tiga teorema standar lain mengenai barisan
+yang konvergen hampir di mana-mana dan bergantung pada sifat
+<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga atau keberhinggaan total.</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 2: Broad Foundations</cite>, Bagian 215.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 25 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-cumulative-html-route-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V2-S215&quot;,
+  &quot;source_member&quot;: &quot;mt2.2016/mt215.tex&quot;,
+  &quot;target_bytes&quot;: 27477,
+  &quot;target_sha256&quot;: &quot;6d7721feaa88b57a130efac839240b2deb8eb60d1522d2937d32a545c8354da6&quot;,
+  &quot;source_ids&quot;: [
+    &quot;215&quot;,
+    &quot;215A&quot;,
+    &quot;215B&quot;,
+    &quot;215C&quot;,
+    &quot;215D&quot;,
+    &quot;215E&quot;,
+    &quot;215X&quot;,
+    &quot;215Xa&quot;,
+    &quot;215Xb&quot;,
+    &quot;215Xc&quot;,
+    &quot;215Xd&quot;,
+    &quot;215Xe&quot;,
+    &quot;215Xf&quot;,
+    &quot;215Y&quot;,
+    &quot;215Ya&quot;,
+    &quot;215Yb&quot;,
+    &quot;215Yc&quot;,
+    &quot;215Yd&quot;
+  ],
+  &quot;corpus_id&quot;: &quot;O007-FREMLIN&quot;,
+  &quot;volume_id&quot;: &quot;O007-FREMLIN-V2&quot;,
+  &quot;volume_source_title&quot;: &quot;Broad Foundations&quot;,
+  &quot;route&quot;: &quot;215&quot;,
+  &quot;official_source_page_start&quot;: 44,
+  &quot;chapter_official_source_pages&quot;: [
+    12,
+    54
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

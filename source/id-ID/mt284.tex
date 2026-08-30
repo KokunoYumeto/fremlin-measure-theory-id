@@ -1,0 +1,1618 @@
+\frfilename{mt284.tex} \versiondate{30.8.13} \copyrightdate{1994}
+
+\def\rdtf{fungsi uji yang menurun cepat} \def\Ft{transformasi Fourier}
+
+\def\chaptername{Analisis Fourier} \def\sectionname{Transformasi Fourier II}
+
+\newsection{284}
+
+Paradoks dasar transformasi Fourier adalah bahwa meskipun untuk fungsi-fungsi
+tertentu (lihat 283J-283K) kita mempunyai $(\varhatf)\varspcheck=f$,
+fungsi terintegralkan `biasa' $f$ (misalnya fungsi indikator interval
+nontrivial) menghasilkan transformasi Fourier $\varhatf$ yang tidak dapat
+diintegralkan. Karena tidak tersedia definisi langsung untuk
+$\varhatf\varcheck{\phantom{f}}$, kita harus menentukan dalam arti apa rumus
+$f=\varhatf\varcheck{\phantom{f}}$ mungkin benar. Penyelesaian yang kini
+tampak paling alami ialah menyatakan transformasi Fourier sebagai operasi pada
+{\it distribusi}, bukan pada {\it fungsi}. Saya tidak akan mencoba menguraikan
+teori ini secara lengkap (hampir setiap buku tentang `Distribusi' akan
+membahas pokok ini lebih baik daripada yang dapat saya lakukan di sini), tetapi
+akan menyampaikan gagasan-gagasan dasarnya sejauh relevan dengan pertanyaan di
+sini, dengan bahasa yang memudahkan peralihan ke pembahasan yang lebih lengkap.
+Pada saat yang sama, metode ini memudahkan pembuktian versi-versi kuat teorema
+`klasik' mengenai transformasi Fourier.
+
+\leader{284A}{Fungsi uji: Definisi} Sepanjang bagian ini, {\bf fungsi uji yang
+menurun cepat} atau {\bf fungsi Schwartz} berarti fungsi $h:\Bbb R\to\Bbb C$
+sedemikian rupa sehingga $h$ {\bf mulus}, yaitu semua turunannya hingga orde
+berapa pun ada di setiap titik, dan selain itu
+
+\Centerline{$\sup_{x\in\Bbb R}|x|^k|h^{(m)}(x)|<\infty$}
+
+\noindent untuk semua $k$, $m\in\Bbb N$, dengan $h^{(m)}$ menyatakan turunan
+ke-$m$ dari $h$.
+
+\leader{284B}{}\cmmnt{ Fakta dasar berikut akan berguna.
+
+\medskip
+
+\noindent}{\bf Lema} (a) Jika $g$ dan $h$ adalah fungsi-fungsi uji yang
+menurun cepat, maka juga $g+h$ dan $ch$, untuk setiap $c\in\Bbb C$.
+
+(b) Jika $h$ adalah fungsi uji yang menurun cepat dan $y\in\Bbb R$, maka
+$x\mapsto h(y-x)$ adalah fungsi uji yang menurun cepat.
+
+(c) Jika $h$ adalah fungsi uji yang menurun cepat, maka $h$ dan $h^2$ adalah
+terintegralkan.
+
+(d) Jika $h$ adalah \rdtf, maka turunannya $h'$ juga demikian.
+
+
+(e) Jika $h$ adalah \rdtf, maka fungsi $x\mapsto xh(x)$ juga demikian.
+
+(f) Untuk setiap $\epsilon>0$, fungsi $x\mapsto e^{-\epsilon x^2}$ adalah
+fungsi uji yang menurun cepat.
+
+\proof{{\bf (a)} Jelas.
+
+\medskip
+
+{\bf (b)} Tulis $g(x)=h(y-x)$ untuk $x\in\Bbb R$. Kemudian
+$g^{(m)}(x)=(-1)^mh^{(m)}(y-x)$ untuk setiap $m$, jadi $g$ halus. Untuk setiap
+$k\in\Bbb N$,
+
+\Centerline{$|x|^k\le 2^k(|y|^k+|y-x|^k)$}
+
+\noindent untuk setiap $x$, jadi
+
+$$\eqalign{\sup_{x\in\Bbb R}|x|^k|g^{(m)}(x)|
+&=\sup_{x\in\Bbb R}|x|^k|h^{(m)}(y-x)|\cr
+&\le 2^k|y|^k\sup_{x\in\Bbb R}|h^{(m)}(y-x)|
+   +2^k\sup_{x\in\Bbb R}|y-x|^k|h^{(m)}(y-x)|\cr
+&=2^k|y|^k\sup_{x\in\Bbb R}|h^{(m)}(x)|
+   +2^k\sup_{x\in\Bbb R}|x|^k|h^{(m)}(x)|
+<\infty.\cr}$$
+
+\medskip
+
+{\bf (c)} Karena
+
+\Centerline{$M=\sup_{x\in\Bbb R}(|h(x)|+x^2|h(x)|)$}
+
+\noindent adalah hingga, kita memiliki
+
+\Centerline{$\int|h|\le\int\Bover{M}{1+x^2}dx<\infty$.}
+
+\noindent Tentu saja sekarang kita mempunyai $|h^2|\le M|h|$, sehingga $h^2$
+juga terintegralkan.
+
+\medskip
+
+{\bf (d)} Ini langsung dari definisi, karena setiap turunan dari $h'$ adalah
+turunan dari $h$.
+
+\medskip
+
+{\bf (e)} Dengan menetapkan $g(x)=xh(x)$, kita memperoleh
+$g^{(m)}(x)=xh^{(m)}(x)+mh^{(m-1)}(x)$ untuk $m\ge 1$, sehingga
+
+\Centerline{$\sup_{x\in\Bbb R}|x^kg^{(m)}(x)| \le\sup_{x\in\Bbb
+R}|x^{k+1}h^{(m)}(x)| +m\sup_{x\in\Bbb R}|x^kh^{(m-1)}(x)|$}
+
+\noindent adalah hingga, untuk semua $k\in\Bbb N$, $m\ge 1$.
+
+\medskip
+
+{\bf (f)} Jika $h(x)=e^{-\epsilon x^2}$, maka untuk setiap $m\in\Bbb N$ kita
+mempunyai $h^{(m)}(x)=p_m(x)h(x)$, dengan $p_0(x)=1$ dan
+$p_{m+1}(x)=p'_m(x)-2\epsilon xp_m(x)$, sehingga $p_m$ adalah polinom. Karena
+$e^{\epsilon x^2}\ge\epsilon^{k+1}x^{2k+2}/(k+1)!$ untuk semua $x$ dan
+$k\ge 0$,
+
+\Centerline{$\lim_{|x|\to\infty}|x|^kh(x) =\lim_{x\to\infty}x^k/e^{\epsilon
+x^2}=0$}
+
+\noindent untuk setiap $k$, dan $\lim_{|x|\to\infty}p(x)h(x)=0$ untuk setiap
+polinomial $p$; karenanya
+
+\Centerline{$\lim_{|x|\to\infty}x^kh^{(m)}(x)
+=\lim_{|x|\to\infty}x^kp_m(x)h(x)=0$}
+
+\noindent untuk semua $k$, $m$. Jadi, $h$ adalah fungsi uji yang menurun cepat. }%end of proof of 284B
+
+
+\leader{284C}{Proposisi} Misalkan $h:\Bbb R\to\Bbb C$ adalah fungsi uji yang
+menurun cepat. Maka $\varhat{h}:\Bbb R\to\Bbb C$ dan $\varcheck{h}:\Bbb
+R\to\Bbb C$ juga merupakan fungsi uji yang menurun cepat, dan
+$\varhat{h}\varcheck{\phantom{h}} = \varcheck{h}\varhat{\phantom{h}} = h$.
+
+\proof{{\bf (a) } Ambil $k$, $m\in\Bbb N$. Maka $\sup_{x\in\Bbb
+R}(|x|^m+|x|^{m+2})|h^{(k)}(x)|<\infty$ dan
+$\int_{-\infty}^{\infty}|x^mh^{(k)}(x)|dx
+\ifdim\pagewidth=390pt\penalty-100\fi <\infty$. Oleh karena itu, menurut
+283Ch-283Ci, $y\mapsto
+i^{k+m}y^k\varhat{h}\vthsp^{(m)}(y)$ adalah transformasi Fourier dari
+$x\mapsto x^mh^{(k)}(x)$. Menurut 283Cg, karena itu
+$\lim_{|y|\to\infty}y^k\varhat{h}\vthsp^{(m)}(y)=0$, sehingga
+(karena $\varhat{h}\vthsp^{(m)}$ adalah kontinu) $\sup_{y\in\Bbb
+R}|y^k\varhat{h}\vthsp^{(m)}(y)|$ adalah hingga. Karena $k$ dan $m$ sebarang,
+$\varhat{h}$ adalah fungsi uji yang menurun cepat.
+
+\medskip
+
+{\bf (b)} Karena $\varcheck{h}(y)=\varhat{h}(-y)$ untuk setiap $y$, langsung
+terlihat bahwa $\varcheck{h}$ adalah fungsi uji yang menurun cepat.
+
+\medskip
+
+{\bf (c)} Menurut 283J, (a) dan (b) memberikan
+$\varhat{h}\varcheck{\phantom{h}}=\varcheck{h}\varhat{\phantom{h}}=h$. }%end of proof of 284C
+
+\leader{284D}{Definisi} Saya akan menggunakan frasa {\bf fungsi tempered} pada
+$\Bbb R$ untuk menyatakan fungsi terukur bernilai kompleks $f$, yang
+terdefinisi hampir di mana-mana dalam $\Bbb R$ dan memenuhi
+
+\Centerline{$\int_{-\infty}^{\infty} \Bover1{1+|x|^k}|f(x)|dx<\infty$}
+
+\noindent untuk beberapa $k\in\Bbb N$.
+
+\leader{284E}{}\cmmnt{ Seperti dalam 284B, berikut beberapa fakta dasar.
+
+\medskip
+
+\noindent}{\bf Lema} (a) Jika $f$ dan $g$ adalah fungsi-fungsi tempered, maka
+juga $|f|$, $f+g$ dan $cf$, untuk setiap $c\in\Bbb C$.
+
+(b) Jika $f$ adalah fungsi tempered, maka fungsi tersebut terintegralkan pada
+setiap interval terbatas.
+
+(c) Jika $f$ adalah fungsi tempered dan $x\in\Bbb R$, maka $t\mapsto f(x+t)$
+dan $t\mapsto f(x-t)$ keduanya merupakan fungsi tempered.
+
+\proof{{\bf (a)} Ini bersifat elementer; jika
+
+\Centerline{$\int_{-\infty}^{\infty} \Bover1{1+|x|^j}|f(x)|dx<\infty$,
+\quad$\int_{-\infty}^{\infty}\Bover1{1+|x|^k}|g(x)|dx<\infty$,}
+
+\noindent maka
+
+\Centerline{$\int_{-\infty}^{\infty}\Bover1{1+|x|^{j+k}} |(f+g)(x)|dx<\infty$}
+
+\noindent karena
+
+\Centerline{$1+|x|^{j+k}\ge\max(1,|x|^{j+k})\ge\max(1,|x|^j,|x|^k)
+\ge\Bover12\max(1+|x|^j,1+|x|^k)$}
+
+\noindent untuk semua $x$.
+
+\medskip
+
+{\bf (b)} Jika
+
+\Centerline{$\int_{-\infty}^{\infty}\Bover1{1+|x|^k}|f(x)|dx =M<\infty$,}
+
+\noindent maka untuk $a\le b$
+
+\Centerline{$\int_a^b|f|\le M(1+|a|^k+|b|^k)(b-a)<\infty$.}
+
+\medskip
+
+{\bf (c)} Gagasannya sama seperti dalam 284Bb. Misalkan $k\in\Bbb N$
+sedemikian sehingga
+
+\Centerline{$\int_{-\infty}^{\infty}\Bover1{1+|t|^k}|f(t)|dt =M<\infty$,}
+
+\noindent maka kita memiliki
+
+\Centerline{$1+|x+t|^k \le 2^k(1+|x|^k)(1+|t|^k)$}
+
+\noindent sehingga
+
+\Centerline{$\Bover1{1+|t|^k} \le 2^k(1+|x|^k)\Bover1{1+|x+t|^k}$}
+
+\noindent untuk setiap $t$, dan
+
+\Centerline{$\int_{-\infty}^{\infty}\Bover{|f(x+t)|}{1+|t|^k}dt \le
+2^k(1+|x|^k)\int_{-\infty}^{\infty} \Bover{|f(x+t)|}{1+|x+t|^k}dt \le
+2^k(1+|x|^k)M<\infty$.}
+
+\noindent Sama halnya,
+
+\Centerline{$\int_{-\infty}^{\infty}\Bover{|f(x-t)|}{1+|t|^k}dt
+\le 2^k(1+|x|^k)M<\infty$.}
+}%end of proof of 284E
+
+\leader{284F}{}\cmmnt{ Dengan menghubungkan kedua konsep tersebut, kita
+memperoleh hasil berikut.
+
+\medskip
+
+\noindent}{\bf Lema} Misalkan $f$ adalah fungsi tempered pada $\Bbb R$ dan
+$h$ adalah fungsi uji yang menurun cepat. Maka $f\times h$ terintegralkan.
+
+\proof{ Tentu saja $f\times h$ terukur. Pilih $k\in\Bbb N$ sedemikian sehingga
+$\int_{-\infty}^{\infty} \bover1{1+|x|^k}|f(x)|dx<\infty$. Ada $M$ sedemikian
+sehingga $(1+|x|^k)|h(x)|\le M$ untuk setiap $x\in\Bbb R$, sehingga
+
+\Centerline{$\int_{-\infty}^{\infty}|f\times h|
+\le M\int_{-\infty}^{\infty}\Bover1{1+|x|^k}|f(x)|dx<\infty$.}
+}%end of proof of 284F
+
+\leader{284G}{Lema} Misalkan $f_1$ dan $f_2$ adalah fungsi-fungsi tempered dan
+$\int f_1\times h=\int f_2\times h$ untuk setiap fungsi uji yang menurun cepat
+$h$. Maka $f_1\eae f_2$.
+
+\proof{{\bf (a)} Tetapkan $g=f_1-f_2$; maka $\int g\times h=0$ untuk setiap
+fungsi uji yang menurun cepat $h$. Tentu saja $g$ adalah fungsi tempered, jadi
+terintegralkan pada setiap interval terbatas. Menurut 222D, cukup ditunjukkan
+bahwa $\int_a^bg=0$ setiap kali $a<b$; dengan demikian $g=0$ a.e.\ pada setiap
+interval terbatas dan $f_1\eae f_2$.
+
+\medskip
+
+{\bf (b)} Perhatikan fungsi $\tilde\phi(x)=e^{-1/x}$ untuk $x>0$. Fungsi
+$\tilde\phi$ dapat diturunkan hingga orde berapa pun di setiap titik dalam
+$\ooint{0,\infty}$, $0<\tilde\phi(x)<1$ untuk setiap $x>0$, dan
+$\lim_{x\to\infty}\tilde\phi(x)=1$. Selain itu, menulis $\tilde\phi^{(m)}$
+untuk turunan ke-$m$ dari $\tilde\phi$,
+
+\Centerline{$\lim_{x\downarrow 0}\tilde\phi^{(m)}(x) =\lim_{x\downarrow
+0}\Bover1x\tilde\phi^{(m)}(x)=0$}
+
+\noindent untuk setiap $m\in\Bbb N$. \Prf\ (Bandingkan 284Bf.) Kita mempunyai
+$\tilde\phi^{(m)}(x)=p_m(\bover1x)\tilde\phi(x)$, di mana $p_0(t)=1$ dan
+$p_{m+1}(t)=t^2(p_m(t)-p_m'(t))$, sehingga $p_m$ adalah polinom untuk setiap
+$m\in\Bbb N$. Sekarang, untuk setiap $k\in\Bbb N$,
+
+\Centerline{$0\le\limsup_{t\to\infty}t^ke^{-t}
+\le\lim_{t\to\infty}\Bover{(k+1)!t^k}{t^{k+1}}=0$,}
+
+\noindent jadi
+
+\Centerline{$\lim_{x\downarrow 0}\tilde\phi^{(m)}(x)
+=\lim_{t\to\infty}p_m(t)e^{-t}=0$,}
+
+\Centerline{$\lim_{x\downarrow 0}\Bover1x\tilde\phi^{(m)}(x)
+=\lim_{t\to\infty}tp_m(t)e^{-t}=0$. \Qed}
+
+\medskip
+
+{\bf (c)} Akibatnya, jika kita menetapkan $\phi(x)=0$ untuk $x\le 0$ dan
+$e^{-1/x}$ untuk $x>0$, maka $\phi$ mulus, dengan turunan ke-$m$
+
+\Centerline{$\phi^{(m)}(x)=0$ untuk $x\le 0$,
+\quad$\phi^{(m)}(x)=\tilde\phi^{(m)}(x)$ untuk $x>0$.}
+
+\noindent (Buktinya merupakan induksi sederhana pada $m$.) Juga
+$0\le\phi(x)\le 1$
+untuk setiap $x\in\Bbb R$, dan $\lim_{x\to\infty}\phi(x)=1$.
+
+\medskip
+
+{\bf (d)} Sekarang ambil $a<b$, dan untuk $n\in\Bbb N$ tetapkan
+
+\Centerline{$\phi_n(x)=\phi(n(x-a))\phi(n(b-x))$.}
+
+\noindent Maka $\phi_n$ akan halus dan $\phi_n(x)=0$ jika
+$x\notin\ooint{a,b}$, jadi pasti $\phi_n$ adalah fungsi uji yang menurun
+cepat, dan
+
+\Centerline{$\int_{-\infty}^{\infty}g\times\phi_n=0$.}
+
+\noindent Selanjutnya, $0\le\phi_n(x)\le 1$ untuk setiap $x$, $n$, dan jika
+$a<x<b$, maka $\lim_{n\to\infty}\phi_n(x)=1$. Jadi
+
+\Centerline{$\int_a^bg=\int g\times\chi(\ooint{a,b}) =\int
+g\times(\lim_{n\to\infty}\phi_n) =\lim_{n\to\infty}\int g\times\phi_n=0$,}
+
+\noindent menurut teorema konvergensi terdominasi Lebesgue. Karena $a$ dan $b$
+sebarang, $g=0$ a.e., sebagaimana diperlukan. }%end of proof of 284G
+
+\leader{284H}{Definisi} Misalkan $f$ dan $g$ adalah fungsi-fungsi
+tempered\cmmnt{ dalam arti 284D}. Kita mengatakan bahwa $g$ {\bf mewakili
+transformasi Fourier dari} $f$ jika
+
+\Centerline{$\int_{-\infty}^{\infty}g\times h
+=\int_{-\infty}^{\infty}f\times\varhat{h}$}
+
+\noindent untuk setiap fungsi uji yang menurun cepat $h$.
+
+\leader{284I}{Catatan (a)}\cmmnt{ Seperti biasa, perubahan sudut pandang dalam
+definisi ini memerlukan beberapa pemeriksaan.} Jika $f$ adalah fungsi
+terintegralkan bernilai kompleks pada $\Bbb R$ dan $\varhatf$ adalah
+transformasi Fouriernya, maka \cmmnt{ $\varhatf$ tentu merupakan fungsi
+tempered, sebab kontinu dan terbatas; dan jika $h$ adalah fungsi uji yang
+menurun cepat, maka $\int\varhatf\times h=\int f\times\varhat{h}$ menurut
+283O. Jadi } $\varhatf$ `mewakili transformasi Fourier dari $f$' \cmmnt{
+dalam arti 284H } di atas.
+
+\header{284Ib}{\bf (b)} Perhatikan juga bahwa \cmmnt{ menurut 284G, } jika
+$g_1$, $g_2$ adalah dua fungsi tempered yang sama-sama mewakili transformasi
+Fourier dari $f$, maka $g_1\eae g_2$\cmmnt{, sebab kita mempunyai
+
+\Centerline{$\int g_1\times h=\int f\times\varhat{h}=\int g_2\times h$}
+
+\noindent untuk setiap fungsi uji yang menurun cepat $h$.}
+
+\spheader 284Ic Jelas bahwa jika $f_1$, $f_2$, $g_1$ dan $g_2$ adalah
+fungsi-fungsi tempered dan $g_i$ mewakili transformasi Fourier dari $f_i$
+untuk kedua nilai $i$, maka $cg_1+g_2$ mewakili transformasi Fourier dari
+$cf_1+f_2$
+untuk setiap $c\in\Bbb C$.
+
+\cmmnt{\spheader 284Id Nilai pendekatan tak langsung ini tentu saja terletak
+pada kemampuannya memberikan transformasi Fourier, dalam suatu arti, kepada
+lebih banyak fungsi. Namun harus segera dicatat bahwa jika $g$ `mewakili
+transformasi Fourier dari $f$', maka setiap fungsi yang setara dengan $g$
+hampir di mana-mana juga demikian; kita tidak lagi dapat berharap berbicara
+tentang `transformasi Fourier' dari $f$ sebagai suatu fungsi tertentu. Kita
+dapat mengatakan bahwa transformasi Fourier dari $f$ adalah fungsional $\phi$
+pada ruang fungsi uji yang menurun cepat, yang didefinisikan dengan
+$\phi(h)=\int f\times\varhat{h}$; atau kita dapat mengatakan bahwa transformasi
+Fourier dari $f$ adalah anggota $L_{\Bbb C}^0$, yaitu ruang kelas ekuivalensi
+fungsi terukur modulo kesamaan hampir di mana-mana (241J). }%end of comment
+
+\spheader 284Ie\cmmnt{ Sekarang wajar untuk mengatakan bahwa } {\bf $g$
+mewakili transformasi Fourier invers dari $f$}\cmmnt{ hanya ketika $f$
+mewakili transformasi Fourier dari $g$; yaitu, } ketika $\int f\times h=\int
+g\times\varhat{h}$ untuk setiap fungsi uji yang menurun cepat $h$.
+\cmmnt{Karena
+$\varhat{h}\varcheck{\phantom{h}}=\varcheck{h}\varhat{\phantom{h}}=h$ untuk
+setiap $h$ (284C), ini adalah hal yang sama dengan mengatakan bahwa $\int
+g\times h=\int f\times\varcheck{h}$ untuk setiap fungsi uji yang menurun cepat
+$h$, yang merupakan ekspresi alami lain dari apa yang mungkin berarti bahwa
+`$g$ mewakili transformasi Fourier invers dari $f$ }.
+
+\spheader 284If Jika $f$, $g$ adalah fungsi-fungsi tempered dan kita menulis
+$\Reverse{g}(x)=g(-x)$ setiap kali ini didefinisikan, maka\cmmnt{
+$\Reverse{g}$ juga merupakan fungsi tempered, dan kita selalu mempunyai
+
+\Centerline{$\int\Reverse{g}\times\varhat{h} =\int g(-x)\varhat{h}(x)dx =\int
+g(x)\varhat{h}(-x)dx =\int g\times\varcheck{h}$,}
+
+\noindent sehingga}
+
+\qquad $g$ mewakili transformasi Fourier dari $f$
+
+\cmmnt{\qquad\qquad$\iff\,\int g\times h=\int f\times\varhat{h}$ untuk setiap
+fungsi uji $h$
+
+\qquad\qquad$\iff\,\int g\times\varcheck{h}=\int
+f\times\varcheck{h}\varhat{\phantom{h}}$ untuk setiap $h$
+
+\qquad\qquad$\iff\,\int\Reverse{g}\times\varhat{h}=\int f\times h$ untuk setiap $h$ }%end of comment
+
+\qquad\qquad$\iff\,\Reverse{g}$ mewakili transformasi Fourier invers dari $f$.
+
+\cmmnt{\noindent Dengan menggabungkan ini dengan (d), kita memperoleh
+
+\qquad $g$ mewakili \Ft\ dari $f$
+
+%\qquad\qquad$\iff\,(\Reverse{f})\ssplrarrow=f$
+%represents the inverse \Ft\ of $g$
+
+\qquad\qquad$\iff\,\Reverse{\Reverse{f}}=f$ mewakili \Ft\ invers dari $g$
+
+\qquad\qquad$\iff\,\Reverse{f}$ mewakili \Ft\  dari $g$. }%end of comment
+
+\cmmnt{\spheader 284Ig Sekali lagi diperlukan pemeriksaan: jika $f$
+terintegralkan dan $\varcheckf$ adalah transformasi Fourier inversnya seperti
+yang didefinisikan dalam 283Ab, maka
+
+\Centerline{$\int\varcheckf\times\varhat{h} =\int
+f\times\varhat{h}\varcheck{\phantom{h}} =\int f\times h$}
+
+\noindent untuk setiap fungsi uji yang menurun cepat $h$, jadi $\varcheckf$ ` mewakili transformasi Fourier invers dari $f$' dalam arti yang diberikan di sini. }%end of comment
+
+\leader{284J}{Lema} Misalkan $f$ adalah fungsi tempered dan $h$ fungsi uji yang
+menurun cepat. Maka $f*h$, yang didefinisikan dengan rumus
+
+\Centerline{$(f*h)(y)=\int_{-\infty}^{\infty}f(t)h(y-t)dt$,}
+
+\noindent terdefinisi di setiap titik.
+
+\proof{ Ambil $y\in\Bbb R$. Menurut 284Bb, $t\mapsto h(y-t)$ adalah fungsi uji
+yang menurun cepat, sehingga menurut 284F integral tersebut selalu terdefinisi
+dalam $\Bbb C$.
+}%end of proof of 284J
+
+\leader{284K}{Proposisi} Misalkan $f$ dan $g$ adalah fungsi-fungsi tempered,
+$g$ mewakili transformasi Fourier dari $f$, dan $h$ adalah fungsi uji yang
+menurun cepat.
+
+(a) Transformasi Fourier dari fungsi terintegralkan $f\times h$ adalah
+$\bover1{\sqrt{2\pi}}g*\varhat{h}$.
+
+(b) Transformasi Fourier dari fungsi kontinu $f*h$ diwakili oleh produk
+$\sqrt{2\pi}g\times\varhat{h}$.
+
+\proof{{\bf (a)} Tentu saja $f\times h$ terintegralkan menurut 284F,
+sementara $g*\varhat{h}$ terdefinisi di setiap titik menurut 284C dan 284J.
+
+Tetapkan $y\in\Bbb R$. Definisikan $h_1(x)=\varhat{h}(y-x)$ untuk $x\in\Bbb R$;
+maka
+$h_1$ adalah fungsi uji yang menurun cepat karena $\varhat{h}$ adalah (284Bb).
+Sekarang
+
+$$\eqalign{\varhat{h}_1(t)
+&=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+  e^{-itx}\varhat{h}(y-x)dx
+=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+  e^{-it(y-x)}\varhat{h}(x)dx\cr
+&=\Bover{1}{\sqrt{2\pi}}e^{-ity}
+   \int_{-\infty}^{\infty}e^{itx}\varhat{h}(x)dx
+=e^{-ity}\varhat{h}\varcheck{\phantom{h}}(t)
+=e^{-ity}h(t),\cr}$$
+
+\noindent menurut 284C. Dengan demikian,
+
+$$\eqalignno{(f\times h)\varsphat(y)
+&=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-ity}f(t)h(t)dt\cr
+&=\Bover1{\sqrt{2\pi}}
+  \int_{-\infty}^{\infty}f(t)\varhat{h}_1(t)dt
+=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}g(t)h_1(t)dt\cr
+\noalign{\noindent (karena $g$ mewakili transformasi Fourier dari $f$)}
+&=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}g(t)\varhat{h}(y-t)dt
+=\Bover1{\sqrt{2\pi}}(g*\varhat{h})(y).\cr}$$
+
+\noindent Karena $y$ sebarang,
+$\Bover1{\sqrt{2\pi}}g*\varhat{h}$ adalah transformasi Fourier dari $f\times
+h$.
+
+
+\medskip
+
+{\bf (b)} Tulis $f_1$ untuk transformasi Fourier dari $g\times\varhat{h}$,
+$\Reverse{f}(x)=f(-x)$ kapan pun ruas ini terdefinisi, dan $\Reverse{h}(x)=h(-x)$
+untuk setiap $x$, sehingga $\Reverse{f}$ mewakili transformasi Fourier dari
+$g$, menurut 284If, dan $\Reverse{h}$ adalah transformasi Fourier dari
+$\varhat{h}$. Dengan (a), kita memiliki
+$f_1=\Bover1{\sqrt{2\pi}}\Reverse{f}*\Reverse{h}$. Ini berarti bahwa
+transformasi Fourier invers dari $\sqrt{2\pi}g\times\varhat{h}$ harus
+$\sqrt{2\pi}\Reverse{f}_1=(\Reverse{f}*\Reverse{h})\ssplrarrow$; dan sebagai
+
+$$\eqalign{(\Reverse{f}*\Reverse{h})\ssplrarrow(y)
+&=(\Reverse{f}*\Reverse{h})(-y)
+=\int_{-\infty}^{\infty}\Reverse{f}(t)\Reverse{h}(-y-t)dt\cr
+&=\int_{-\infty}^{\infty}f(-t)h(y+t)dt
+=\int_{-\infty}^{\infty}f(t)h(y-t)dt
+=(f*h)(y),\cr}$$
+
+\noindent transformasi Fourier invers dari $\sqrt{2\pi}g\times\varhat{h}$ adalah
+$f*h$ (yang karena itu kontinu), dan $\sqrt{2\pi}g\times\varhat{h}$ harus
+mewakili transformasi Fourier dari $f*h$. }%end of proof of 284K
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Bandingkan 283M. Ciri khas teori transformasi Fourier
+adalah adanya rumus-rumus yang berlaku dalam berbagai konteks, yang masing-masing
+memerlukan interpretasi dan bukti berbeda. }%end of comment
+
+\leader{284L}{}\cmmnt{ Kita sekarang siap untuk hasil yang sepadan dengan
+282H. Saya menggunakan metode berbeda, atau setidaknya susunan gagasan yang
+berbeda, melalui fakta berikut, yang juga penting untuk keperluan lain.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $f$ adalah fungsi tempered. Dengan menulis
+$\psi_{\sigma}(x) =\bover1{\sigma\sqrt{2\pi}}e^{-x^2/2\sigma^2}$ untuk
+$x\in\Bbb R$ dan $\sigma>0$, maka
+
+\Centerline{$\lim_{\sigma\downarrow 0}(f*\psi_{\sigma})(x)=c$}
+
+\noindent setiap kali $x\in\Bbb R$ dan $c\in\Bbb C$ sedemikian sehingga
+
+\Centerline{$\lim_{\delta\downarrow 0}
+\Bover1{\delta}\int_{0}^{\delta}|f(x+t)+f(x-t)-2c|dt=0$.}
+
+\proof{{\bf (a) } Menurut 284Bf, setiap $\psi_{\sigma}$ adalah fungsi uji yang
+menurun cepat, sehingga menurut 284J $f*\psi_{\sigma}$ terdefinisi di setiap
+titik. Kita memerlukan fakta bahwa
+$\int_{-\infty}^{\infty}\psi_{\sigma}=1$; dengan substitusi $u=x/\sigma$,
+
+\Centerline{$\int_{-\infty}^{\infty}\psi_{\sigma}
+=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-u^2/2}du=1$,}
+
+\noindent menurut 263G. Argumen selanjutnya mengikuti pola 282H. Tetapkan
+
+\Centerline{$\phi(t)=|f(x+t)+f(x-t)-2c|$}
+
+\noindent kapan pun ruas ini terdefinisi, yaitu hampir di mana-mana, dan
+$\Phi(t)=\int_0^t\phi$, yang terdefinisi untuk semua $t\ge 0$ karena $f$
+terintegralkan pada setiap interval terbatas (284Eb). Kita mempunyai
+
+$$\eqalignno{|(f*\psi_{\sigma})(x)-c|
+&=|\int_{-\infty}^{\infty}f(x-t)\psi_{\sigma}(t)dt
+-c\int_{-\infty}^{\infty}\psi_{\sigma}(t)dt|\cr
+&=|\int_{-\infty}^0(f(x-t)-c)\psi_{\sigma}(t)dt
++\int_{0}^{\infty}(f(x-t)-c)\psi_{\sigma}(t)dt|\cr
+&=|\int_{0}^{\infty}(f(x+t)-c)\psi_{\sigma}(t)dt
++\int_{0}^{\infty}(f(x-t)-c)\psi_{\sigma}(t)dt|\cr
+\noalign{\noindent (karena $\psi_{\sigma}$ adalah fungsi genap)}
+&=|\int_{0}^{\infty}(f(x+t)+f(x-t)-2c)\psi_{\sigma}(t)dt|\cr
+&\le\int_{0}^{\infty}|f(x+t)+f(x-t)-2c|\psi_{\sigma}(t)dt
+=\int_0^{\infty}\phi\times\psi_{\sigma}.\cr}$$
+
+\medskip
+
+{\bf (b)} Kita harus menjelaskan mengapa integral terakhir berhingga. Karena
+$f$ adalah fungsi tempered, demikian pula fungsi $t\mapsto f(x+t)$ dan
+$t\mapsto f(x-t)$ (284Ec). Fungsi konstan tentu saja tempered, sehingga
+$t\mapsto\phi(t)=|f(x+t)+f(x-t)-2c|$ juga tempered. Karena $\psi_{\sigma}$
+adalah fungsi uji yang menurun cepat, 284F menunjukkan bahwa hasil kalinya
+terintegralkan.
+
+\medskip
+
+{\bf (c)} Ambil $\epsilon>0$. Menurut hipotesis,
+$\lim_{t\downarrow 0}\Phi(t)/t=0$; pilih $\delta>0$ sedemikian sehingga
+$\Phi(t)\le\epsilon t$ untuk setiap $t\in[0,\delta]$. Ambil sebarang
+$\sigma\in\ocint{0,\delta}$. Kita pecah integral
+$\int_0^{\infty}\phi\times\psi_{\sigma}$ menjadi tiga bagian.
+
+\medskip
+
+\quad{\bf (i)} Untuk integral dari $0$ sampai $\sigma$, kita mempunyai
+
+$$\int_0^{\sigma}\phi\times\psi_{\sigma}
+\le\int_0^{\sigma}\Bover{1}{\sigma\sqrt{2\pi}}\phi
+=\Bover1{\sigma\sqrt{2\pi}}\Phi(\sigma)
+\le\Bover{\epsilon\sigma}{\sigma\sqrt{2\pi}}\le\epsilon,$$
+
+\noindent karena $\psi_{\sigma}(t)\le\bover1{\sigma\sqrt{2\pi}}$ untuk setiap
+$t$.
+
+\medskip
+
+\quad{\bf (ii)} Untuk integral dari $\sigma$ sampai $\delta$, kita mempunyai
+
+$$\eqalignno{\int_{\sigma}^{\delta}\phi\times\psi_{\sigma}
+&\le\Bover1{\sigma\sqrt{2\pi}}\int_{\sigma}^{\delta}
+  \phi(t)\Bover{2\sigma^2}{t^2}dt\cr
+\noalign{\noindent (karena $e^{-t^2/2\sigma^2}
+=1/e^{t^2/2\sigma^2}\le
+1/(t^2/2\sigma^2)=2\sigma^2/t^2$ untuk setiap $t\ne 0$)}
+&=\sigma\sqrt{\Bover2{\pi}}\int_{\sigma}^{\delta}
+  \Bover{\phi(t)}{t^2}dt
+=\sigma\sqrt{\Bover2{\pi}}\bigl(\Bover{\Phi(\delta)}{\delta^2}
+   -\Bover{\Phi(\sigma)}{\sigma^2}
+   +\int_{\sigma}^{\delta}\Bover{2\Phi(t)}{t^3}dt\bigr)\cr
+\noalign{\noindent (integrasi parsial -- lihat 225F)}
+&\le\sigma\bigl(\Bover{\epsilon}{\delta}
+   +\int_{\sigma}^{\delta}\Bover{2\epsilon}{t^2}dt\bigr)\cr
+\noalign{\noindent (karena $\Phi(t)\le\epsilon t$ untuk $0\le
+t\le\delta$ dan $\sqrt{2/\pi}\le 1$)}
+&\le\sigma\bigl(\Bover{\epsilon}{\delta}
+   +\Bover{2\epsilon}{\sigma}\bigr)
+\le 3\epsilon.\cr}$$
+
+\medskip
+
+\quad{\bf (iii)} Untuk integral dari $\delta$ sampai $\infty$, kita mempunyai
+
+$$\eqalign{\int_{\delta}^{\infty}\phi\times\psi_{\sigma}
+&=\bover1{\sqrt{2\pi}}\int_{\delta}^{\infty}
+  \phi(t)\bover{e^{-t^2/2\sigma^2}}{\sigma}dt.\cr}$$
+
+\noindent Sekarang, untuk setiap $t\ge\delta$,
+
+\Centerline{$\sigma\mapsto\Bover1{\sigma}
+e^{-t^2/2\sigma^2}:\ocint{0,\delta}\to\Bbb R$}
+
+\noindent meningkat secara monoton, karena turunan
+
+\Centerline{$\Bover{d}{d\sigma}\Bover1{\sigma}e^{-t^2/2\sigma^2}
+=\Bover1{\sigma^2}\bigl(\Bover{t^2}{\sigma^2}-1\bigr) e^{-t^2/2\sigma^2}$}
+
+\noindent adalah positif, dan
+
+\Centerline{$\lim_{\sigma\downarrow 0}\Bover1{\sigma} e^{-t^2/2\sigma^2}=
+\lim_{a\to\infty}ae^{-a^2t^2/2}=0$.}
+
+\noindent Jadi kita dapat menerapkan teorema konvergensi terdominasi Lebesgue
+untuk memperoleh
+
+$$\lim_{n\to\infty}\int_{\delta}^{\infty}
+   \phi(t)\bover{e^{-t^2/2\sigma_n^2}}{\sigma_n}dt=0$$
+
+\noindent untuk setiap barisan $\sequencen{\sigma_n}$ dalam
+$\ocint{0,\delta}$ yang konvergen ke $0$, sehingga
+
+$$\lim_{\sigma\downarrow 0}\int_{\delta}^{\infty}
+   \phi(t)\bover{e^{-t^2/2\sigma^2}}{\sigma}dt=0.$$
+
+\noindent Oleh karena itu, ada $\sigma_0\in\ocint{0,\delta}$ sedemikian
+sehingga
+
+\Centerline{$\int_{\delta}^{\infty}\phi\times\psi_{\sigma} \le\epsilon$}
+
+\noindent untuk setiap $\sigma\le \sigma_0$.
+
+\medskip
+
+\quad{\bf (iv)} Dengan menggabungkan ketiga taksiran tersebut, kita memperoleh
+
+\Centerline{$|(f*\psi_{\sigma})(x)-c|
+\le\int_0^{\infty}\phi\times\psi_{\sigma}
+\le\epsilon+3\epsilon+\epsilon=5\epsilon$}
+
+\noindent setiap kali $0<\sigma\le\sigma_0$. Karena $\epsilon$ sebarang,
+$\lim_{\sigma\downarrow 0}(f*\psi_{\sigma})(x)=c$, sebagaimana diklaim. }%end of proof of 284L
+
+\vleader{60pt}{284M}{Teorema} Misalkan $f$ dan $g$ adalah fungsi-fungsi
+tempered sedemikian sehingga $g$ mewakili transformasi Fourier dari $f$. Maka
+
+(a)(i) $g(y) =\lim_{\epsilon\downarrow
+0}\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty} e^{-iyx}e^{-\epsilon x^2}f(x)dx$
+untuk hampir setiap $y\in\Bbb R$.
+
+\quad(ii) Jika $y\in\Bbb R$ sedemikian sehingga $a=\lim_{t\in\dom
+g,t\uparrow y}g(t)$ dan $b=\lim_{t\in\dom g,t\downarrow y}g(t)$ keduanya
+terdefinisi dalam $\Bbb C$, maka
+
+\Centerline{$\lim_{\epsilon\downarrow 0}\Bover1{\sqrt{2\pi}}
+\int_{-\infty}^{\infty} e^{-iyx}e^{-\epsilon x^2}f(x)dx=\Bover12(a+b)$.}
+
+(b)(i) $f(x) =\lim_{\epsilon\downarrow
+0}\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty} e^{ixy}e^{-\epsilon y^2}g(y)dy$
+untuk hampir setiap $x\in\Bbb R$.
+
+\quad(ii) Jika $x\in\Bbb R$ sedemikian sehingga $a=\lim_{t\in\dom
+f,t\uparrow x}f(t)$ dan $b=\lim_{t\in\dom f,t\downarrow x}f(t)$ keduanya
+terdefinisi dalam $\Bbb C$, maka
+
+\Centerline{$\lim_{\epsilon\downarrow 0}\Bover1{\sqrt{2\pi}}
+\int_{-\infty}^{\infty} e^{ixy}e^{-\epsilon y^2}g(y)dy=\Bover12(a+b)$.}
+
+\proof{{\bf (a)(i)} Dengan 223D,
+
+\Centerline{$\lim_{\delta\downarrow 0}\Bover1{2\delta}
+\int_{-\delta}^{\delta}|g(y+t)-g(y)|dt=0$}
+
+\noindent untuk hampir setiap $y\in\Bbb R$, karena $g$ terintegralkan pada
+setiap interval terbatas. Tetapkan suatu $y$ dengan sifat tersebut. Definisikan
+$\phi(t)=|g(y+t)+g(y-t)-2g(y)|$ kapan pun ruas ini terdefinisi. Seperti dalam
+bukti 282Ia,
+
+\Centerline{$\int_0^{\delta}\phi \le\int_{-\delta}^{\delta}|g(y+t)-g(y)|dt$,}
+
+\noindent jadi $\lim_{\delta\downarrow
+0}\bover1{\delta}\int_0^{\delta}\phi=0$. Akibatnya, menurut 284L,
+
+\Centerline{$g(y)=\lim_{\sigma\to\infty}(g*\psi_{1/\sigma})(y)$.}
+
+\noindent Kita tahu dari 283N bahwa transformasi Fourier dari $\psi_{\sigma}$
+adalah $\bover1{\sigma}\psi_{1/\sigma}$ untuk setiap $\sigma>0$. Oleh karena
+itu, menurut 284K, $g*\psi_{1/\sigma}$ adalah transformasi Fourier dari
+$\sigma\sqrt{2\pi} f\times\psi_{\sigma}$, yaitu,
+
+\Centerline{$(g*\psi_{1/\sigma})(y)
+=\int_{-\infty}^{\infty}e^{-iyx}\sigma\psi_{\sigma}(x)f(x)dx$.}
+
+\noindent Jadi,
+
+$$\eqalign{g(y)
+&=\lim_{\sigma\to\infty}
+   \int_{-\infty}^{\infty}e^{-iyx}\sigma\psi_{\sigma}(x)f(x)dx\cr
+&=\lim_{\sigma\to\infty}\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+   e^{-iyx}e^{-x^2/2\sigma^2}f(x)dx\cr
+&=\lim_{\epsilon\downarrow 0}\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+   e^{-iyx}e^{-\epsilon x^2}f(x)dx.\cr}$$
+
+\noindent dan kesamaan ini berlaku untuk hampir setiap $y$.
+
+\medskip
+
+\quad{\bf (ii) } Sekali lagi, tetapkan $c=\bover12(a+b)$,
+$\phi(t)=|g(y+t)+g(y-t)-2c|$ kapan pun ruas ini terdefinisi; kita mempunyai
+$\lim_{t\in\dom\phi,t\downarrow 0}\phi(t)\penalty-100=0$, jadi tentu saja
+$\lim_{\delta\downarrow 0}\bover{1}{\delta}\int_0^{\delta}\phi=0$, dan
+
+$$c
+=\lim_{\sigma\to\infty}(g*\psi_{1/\sigma})(y)
+=\lim_{\epsilon\downarrow 0}\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+   e^{-iyx}e^{-\epsilon x^2}f(x)dx$$
+
+\noindent seperti sebelumnya.
+
+
+\medskip
+
+{\bf (b)} Pernyataan ini dapat dibuktikan dengan argumen serupa; atau dapat
+diturunkan langsung dari (a), dengan mengamati bahwa
+$x\mapsto\Reverse{f}(x)=f(-x)$ mewakili transformasi Fourier dari $g$ (lihat
+284Ie), lalu menerapkan (a) kepada $g$ dan $\Reverse{f}$. }%end of proof of 284M
+
+\leader{284N}{$L^2$ \dvrocolon{ruang}}\cmmnt{ Kita sekarang siap untuk
+hasil-hasil yang sepadan dengan 282J-282K.
+
+\medskip
+
+\noindent}{\bf Lema} Misalkan $\eusm L_{\Bbb C}^2$ adalah ruang fungsi
+bernilai kompleks yang terintegralkan-kuadrat pada $\Bbb R$, dan $\eusm S$
+ruang fungsi uji yang menurun cepat. Maka untuk setiap
+$f\in\eusm L_{\Bbb C}^2$ dan $\epsilon>0$ terdapat $h\in\eusm S$ sedemikian
+sehingga $\|f-h\|_2\le\epsilon$.
+
+\proof{ Tetapkan $\phi(x)=e^{-1/x}$ untuk $x>0$ dan nol untuk $x\le 0$;
+ingat dari bukti 284G bahwa $\phi$ mulus. Untuk setiap $a<b$, fungsi-fungsi
+
+\Centerline{$x\mapsto\phi_n(x)=\phi(n(x-a))\phi(n(b-x))$}
+
+\noindent membentuk barisan fungsi uji yang konvergen naik ke
+$\chi\ooint{a,b}$, sehingga (seperti dalam 284G)
+
+\Centerline{$\inf_{h\in\eusm S}\,\|\chi\ooint{a,b}-h\|^2_2
+\le\lim_{n\to\infty}\int_a^b|1-\phi_n|^2 =0$.}
+
+\noindent Karena $\eusm S$ adalah ruang linear (284Ba), untuk setiap fungsi
+tangga $g$ dengan dukungan terbatas dan setiap $\epsilon>0$ terdapat
+$h\in\eusm S$ sedemikian sehingga $\|g-h\|_2\le\bover12\epsilon$. Namun,
+menurut 244H/244Pb, untuk setiap $f\in\eusm L_{\Bbb C}^2$ dan $\epsilon>0$
+terdapat fungsi tangga $g$ dengan dukungan terbatas sedemikian sehingga
+$\|f-g\|_2\le\bover12\epsilon$; jadi terdapat $h\in\eusm S$ sedemikian sehingga
+
+\Centerline{$\|f-h\|_2\le\|f-g\|_2+\|g-h\|_2\le \epsilon$.}
+
+\noindent Karena $f$ dan $\epsilon$ sebarang, hasilnya terbukti. }%end of proof of 284N
+
+\leader{284O}{Teorema} (a) Misalkan $f$ adalah sebarang fungsi bernilai
+kompleks yang terintegralkan-kuadrat pada $\Bbb R$. Maka $f$ adalah fungsi
+tempered dan transformasi Fouriernya diwakili oleh fungsi
+terintegralkan-kuadrat lain $g$, dengan $\|g\|_2=\|f\|_2$.
+
+(b) Jika $f_1$ dan $f_2$ adalah fungsi bernilai kompleks yang
+terintegralkan-kuadrat pada $\Bbb R$, dan transformasi Fourier mereka diwakili
+oleh fungsi $g_1$, $g_2$, maka
+
+\Centerline{$\int_{-\infty}^{\infty}f_1\times\bar f_2
+=\int_{-\infty}^{\infty}g_1\times\bar g_2$.}
+
+(c) Jika $f_1$ dan $f_2$ adalah fungsi bernilai kompleks yang
+terintegralkan-kuadrat pada $\Bbb R$, dan transformasi Fourier mereka diwakili
+oleh fungsi $g_1$, $g_2$, maka fungsi terintegralkan $f_1\times f_2$ mempunyai
+transformasi Fourier $\bover1{\sqrt{2\pi}}g_1*g_2$.
+
+(d) Jika $f_1$ dan $f_2$ adalah fungsi bernilai kompleks yang
+terintegralkan-kuadrat pada $\Bbb R$, dan transformasi Fourier mereka diwakili
+oleh fungsi $g_1$, $g_2$, maka $\sqrt{2\pi}g_1\times g_2$ mewakili
+transformasi Fourier dari fungsi kontinu $f_1*f_2$.
+
+\proof{{\bf (a)(i)} Pertama, perhatikan kasus ketika $f$ adalah fungsi uji
+yang menurun cepat dan $g$ adalah transformasi Fouriernya. Kita tahu bahwa $g$
+juga merupakan \rdtf, dan $f$ adalah \Ft\ invers dari $g$ (284C). Konjugat
+kompleks $\overline{g}$ dari $g$ diberikan oleh rumus
+
+\Centerline{$\overline{g}(y) =\overline{\Bover1{\sqrt{2\pi}}
+\intop\nolimits_{-\infty}^{\infty}e^{-iyx}f(x)dx}
+=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{iyx}\overline{f}(x)dx$,}
+
+\noindent sehingga $\overline{g}$ adalah transformasi Fourier invers dari
+$\overline{f}$.
+
+\Centerline{$\int f\times\overline{f} =\int\varcheck{g}\times\overline{f}
+=\int g\times\varcheck{\overline{f}} =\int g\times\overline{g}$,}
+
+\noindent dengan menggunakan 283O untuk persamaan tengah.
+
+\medskip
+
+\quad{\bf (ii)} Sekarang misalkan $f\in\eusm L_{\Bbb C}^2$. Tadi telah
+dinyatakan bahwa $f$ adalah fungsi tempered; hal ini semata-mata karena
+
+\Centerline{$\int_{-\infty}^{\infty}
+\bigl(\Bover{1}{1+|x|}\bigr)^2dx<\infty$,}
+
+\noindent jadi
+
+\Centerline{$\int_{-\infty}^{\infty} \Bover{|f(x)|}{1+|x|}dx<\infty$}
+
+\noindent (244Eb). Dengan 284N, ada barisan $\sequencen{f_n}$ dari
+fungsi-fungsi uji yang menurun cepat sedemikian rupa sehingga
+$\lim_{n\to\infty}\|f-f_n\|_2=0$. Dengan (i),
+
+\Centerline{$\lim_{m,n\to\infty}\|\varhatf_m-\varhatf_n\|_2
+=\lim_{m,n\to\infty}\|f_m-f_n\|_2=0$,}
+
+\noindent dan barisan $\sequencen{{\varhatf}\vthsp_n^{\ssbullet}}$ dari
+kelas-kelas ekuivalensi merupakan barisan Cauchy dalam $L_{\Bbb C}^2$. Karena
+$L_{\Bbb C}^2$ lengkap (244G/244Pb),
+$\sequencen{{\varhatf}\vthsp_n^{\ssbullet}}$ memiliki batas dalam $L_{\Bbb
+C}^2$, yang dapat diwakili sebagai $g^{\ssbullet}$ untuk suatu $g\in\eusm
+L_{\Bbb C}^2$. Seperti halnya $f$, $g$ harus merupakan fungsi tempered. Tentu saja
+
+\Centerline{$\|g\|_2=\lim_{n\to\infty}\|\varhatf_n\|_2
+=\lim_{n\to\infty}\|f_n\|_2=\|f\|_2$.}
+
+\noindent Sekarang, jika $h$ adalah sebarang fungsi uji yang menurun cepat,
+$h$ dan $\varhat{h}$ terintegralkan-kuadrat (284Bc, 284C), sehingga
+
+\Centerline{$\int g\times h =\lim_{n\to\infty}\int\varhatf_n\times h
+=\lim_{n\to\infty}\int f_n\times\varhat{h} =\int f\times\varhat{h}$.}
+
+\noindent Jadi $g$ mewakili transformasi Fourier dari $f$.
+
+\medskip
+
+{\bf (b)} Menurut 284Ib, setiap fungsi yang mewakili transformasi Fourier dari
+$f_1$ atau $f_2$ harus sama hampir di mana-mana dengan fungsi
+terintegralkan-kuadrat, sehingga fungsi itu sendiri terintegralkan-kuadrat
+dengan norma yang tepat. Seperti dalam 282K (bagian (d) dari buktinya), jika
+$g_1$, $g_2$ mewakili transformasi Fourier dari $f_1$, $f_2$, maka
+$ag_1+bg_2$ mewakili transformasi Fourier dari $af_1+bf_2$ dan
+$\|ag_1+bg_2\|_2=\|af_1+bf_2\|_2$ untuk semua $a$, $b\in\Bbb C$; oleh karena
+itu,
+
+\Centerline{$\int f_1\times\overline{f}_2=(f_1|f_2) =(g_1|g_2)=\int
+g_1\times\overline{g}_2$.}
+
+\medskip
+
+{\bf (c)} Tentu saja $f_1\times f_2$ terintegralkan karena merupakan hasil
+kali dua fungsi terintegralkan-kuadrat (244E/244Pb).
+
+\medskip
+
+\quad{\bf (i)} Ambil $y\in\Bbb R$ dan tetapkan
+$f(x)=\overline{f_2(x)}e^{iyx}$ untuk $x\in\Bbb R$. Kemudian $f\in\eusm
+L_{\Bbb C}^2$. Kita perlu tahu bahwa transformasi Fourier dari $f$ diwakili
+oleh $g$, dengan $g(u)=\overline{g_2(y-u)}$. \Prf\ Misalkan $h$ adalah fungsi
+uji yang menurun cepat. Maka
+
+$$\eqalign{\int g\times h
+&=\int\overline{g_2(y-u)}h(u)du
+=\int \overline{g_2(u)}h(y-u)du\cr
+&=\overline{\int g_2\times h_1}
+=\overline{\int f_2\times \varhat{h}_1},\cr}$$
+
+\noindent dengan $h_1(u)=\overline{h(y-u)}$. Untuk menghitung $\varhat{h}_1$,
+kita mempunyai
+
+$$\eqalign{\varhat{h}_1(v)
+&=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-ivu}h_1(u)du
+=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+  e^{-ivu}\overline{h(y-u)}du\cr
+&=\overline{\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+  e^{ivu}h(y-u)du}
+=\overline{\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+  e^{iv(y-u)}h(u)du}
+=\overline{e^{ivy}\varhat{h}(v)}.\cr}$$
+
+\noindent Jadi,
+
+\Centerline{$\int g\times h =\overline{\intop f_2\times\varhat{h}_1}
+=\int\overline{f_2(v)\varhat{h}_1(v)}dv
+=\int\overline{f_2(v)}e^{ivy}\varhat{h}(v)dv =\int f\times\varhat{h}$;}
+
+\noindent karena $h$ sebarang, $g$ mewakili transformasi Fourier
+dari $f$. \Qed
+
+\medskip
+
+\quad{\bf (ii)} Sekarang kita punya
+
+$$\eqalignno{(f_1\times f_2)\varsphat(y)
+&=\Bover1{\sqrt{2\pi}}
+  \int_{-\infty}^{\infty}e^{-iyx}f_1(x)f_2(x)dx\cr
+&=\Bover1{\sqrt{2\pi}}
+  \int_{-\infty}^{\infty}f_1\times\bar f
+=\Bover1{\sqrt{2\pi}}
+  \int_{-\infty}^{\infty}g_1\times\bar g\cr
+\noalign{\noindent (menggunakan bagian (b))}
+&=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}g_1(u)g_2(y-u)du
+=\Bover1{\sqrt{2\pi}}(g_1*g_2)(y).\cr}$$
+
+\noindent Karena $y$ sebarang, $(f_1\times
+f_2)\varsphat=\bover1{\sqrt{2\pi}}g_1*g_2$, seperti yang diklaim.
+
+\medskip
+
+{\bf (d)} Menurut (c), transformasi Fourier dari $\sqrt{2\pi}g_1\times g_2$
+adalah $\Reverse{f}_1*\Reverse{f}_2$, dengan
+$\Reverse{f}_1(x)=f_1(-x)$, sebab $\Reverse{f}_1$ mewakili transformasi Fourier
+dari $g_1$. Jadi transformasi Fourier invers dari $\sqrt{2\pi}g_1\times g_2$
+adalah $(\Reverse{f}_1*\Reverse{f}_2)\ssplrarrow$. Namun, seperti dalam bukti
+284Kb, $(\Reverse{f}_1*\Reverse{f}_2)\ssplrarrow=f_1*f_2$, sehingga $f_1*f_2$
+adalah transformasi Fourier invers dari $\sqrt{2\pi}g_1\times g_2$, dan
+$\sqrt{2\pi}g_1\times g_2$ mewakili transformasi Fourier dari $f_1*f_2$,
+sebagaimana diklaim. Selain itu, karena merupakan transformasi Fourier dari
+fungsi terintegralkan, $f_1*f_2$ kontinu (283Cf; lihat juga 255K). } %end of proof of 284O
+
+\leader{284P}{Akibat} Dengan $L_{\Bbb C}^2$ menyatakan ruang Hilbert
+kelas-kelas ekuivalensi fungsi bernilai kompleks yang terintegralkan-kuadrat
+pada $\Bbb R$, terdapat isometri linear $T:L_{\Bbb C}^2\to L_{\Bbb C}^2$
+yang diberikan oleh
+$T(f^{\ssbullet})=g^{\ssbullet}$ setiap kali $f$, $g\in\eusm L_{\Bbb C}^2$ dan
+$g$ mewakili transformasi Fourier dari $f$.
+
+\cmmnt{ \leader{284Q}{Catatan (a)} Hasil 284P tentu sepadan dengan 282K,
+yang menguraikan isometri serupa antara $\ell_{\Bbb C}^2(\Bbb Z)$ dan
+$L_{\Bbb C}^2(\ocint{-\pi,\pi})$. %terms reversed for sake of line break
+Dalam kasus itu terdapat asimetri nyata yang tidak muncul di sini. Ukuran yang
+relevan pada $\Bbb Z$, yaitu ukuran cacah, memberi setiap titik massa tak nol,
+sehingga anggota $\ell_{\Bbb C}^2$ merupakan fungsi sejati; tidak mengherankan
+bahwa tersedia rumus langsung untuk
+$S(f^{\ssbullet})\in\ell_{\Bbb C}^2$ bagi setiap
+$f\in\eusm L_{\Bbb C}^2(\ocint{-\pi,\pi})$. Kesulitan menguraikan
+$S^{-1}:\ell_{\Bbb C}^2(\Bbb Z)\to L_{\Bbb C}^2(\ocint{-\pi,\pi})$ sangat
+mirip dengan kesulitan menguraikan
+$T:L_{\Bbb C}^2(\Bbb R)\to L_{\Bbb C}^2(\Bbb R)$ beserta inversnya. Hasil
+284Yg dan 286U-286V menunjukkan betapa dekat kemiripan ini.
+
+\header{284Qb}{\bf (b)} Saya menguraikan bagian (c) dan (d) dari 284O secara
+rinci, mungkin lebih rinci daripada perlu, karena keduanya memberi kesempatan
+untuk menekankan perbedaan antara `$\sqrt{2\pi}g_1\times g_2$ {\it mewakili}
+transformasi Fourier dari $f_1*f_2$' dan
+`$\bover1{\sqrt{2\pi}}g_1*g_2$ {\it adalah} transformasi Fourier dari
+$f_1\times f_2$'. Fungsi $g_1$ dan $g_2$ sendiri tidak ditentukan secara unik
+oleh hipotesis bahwa keduanya mewakili transformasi Fourier dari $f_1$ dan
+$f_2$, meskipun kelas ekuivalensinya $g_1^{\ssbullet}$,
+$g_2^{\ssbullet}\in L_{\Bbb C}^2$ ditentukan. Jadi hasil kali $g_1\times g_2$
+juga tidak ditentukan secara unik sebagai fungsi, meskipun kelas ekuivalensinya
+$(g_1\times g_2)^{\ssbullet}=g_1^{\ssbullet}\times g_2^{\ssbullet}$ terdefinisi
+dengan baik sebagai anggota $L_{\Bbb C}^1$. Sebaliknya, fungsi kontinu
+$g_1*g_2$ tidak berubah jika $g_1$ dan $g_2$ diubah pada himpunan terabaikan,
+sehingga terdefinisi dengan baik sebagai fungsi. Karena $f_1\times f_2$
+terintegralkan dan mempunyai transformasi Fourier sejati, wajar mengharapkan
+$(f_1\times f_2)\varsphat$ sama persis dengan
+$\bover1{\sqrt{2\pi}}g_1*g_2$.
+
+Perbedaan antara `merupakan' dan `mewakili' transformasi Fourier ini menggemakan
+persoalan dalam 233D mengenai ekspektasi bersyarat. Di sana saya menyebut suatu
+ekspektasi bersyarat pada $\Tau$ dari fungsi $f$ sebagai fungsi
+$\mu\restr\Tau$-terintegralkan $g$ sedemikian sehingga
+$\int_Fg\,d\mu=\int_Ffd\mu$ untuk setiap $F\in\Tau$; intinya, setiap fungsi
+$\mu\restr\Tau$-terintegralkan yang sama dengan $g$ hampir di mana-mana juga
+merupakan ekspektasi bersyarat dari $f$. Demikian pula di sini, jika $g$
+mewakili transformasi Fourier dari $f$, setiap fungsi yang sama dengan $g$
+hampir di mana-mana juga mewakili transformasi Fourier dari $f$. Dalam 242J
+saya menyarankan penyelesaian
+komplikasi tersebut dengan memandang ekspektasi bersyarat sebagai pemetaan
+antara ruang-ruang $L^1$, bukan antara ruang-ruang $\eusm L^1$. Secara serupa,
+transformasi Fourier dalam 284H dapat dipandang sebagai operator linear yang
+terdefinisi pada subruang tertentu dari $L^0(\mu)$.
+
+Untuk ekspektasi bersyarat, saya kira ada alasan kuat untuk mengambil operator
+pada ruang $L^1$ sebagai perwujudan sejati gagasan tersebut; hal ini akan saya
+kembangkan dalam Bab 36 pada jilid berikutnya. Untuk transformasi Fourier,
+argumen itu menurut saya tidak sama kuatnya. Dalam 284R di bawah dan \S285,
+kita akan melihat kasus-kasus penting ketika kita ingin berbicara tentang
+transformasi Fourier yang tidak dapat diwakili oleh anggota $L^0$; jadi sudut
+pandang ini masih baru merupakan tahap perantara.
+
+\spheader 284Qc Tentu saja 284Oc-284Od juga memperlihatkan teknik khas dalam
+argumen transformasi Fourier: memperluas dengan kontinuitas suatu hubungan
+yang berlaku untuk fungsi-fungsi uji.
+
+\spheader 284Qd Hasil 284Oa adalah suatu versi {\bf teorema Plancherel}. Rumus
+$\|f\|_2=\|\varhatf\|_2$ adalah {\bf identitas Parseval}. }%end of comment
+
+\cmmnt{ \leader{284R}{Fungsi delta Dirac} Perhatikan fungsi tempered
+$\chi\Bbb R$ yang bernilai konstan $1$. Dalam arti apa, jika memang ada, kita
+dapat memberikan transformasi Fourier kepada $\chi\Bbb R$?
+
+Jika kita memeriksa $\int\chi\Bbb R\times\varhat{h}$, seperti yang disarankan
+dalam 284H, kita mendapatkan
+
+\Centerline{$\int_{-\infty}^{\infty}\chi\Bbb R\times\varhat{h}
+=\int_{-\infty}^{\infty}\varhat{h}
+=\sqrt{2\pi}\varhat{h}\varcheck{\phantom{h}}(0) =\sqrt{2\pi}h(0)$}
+
+\noindent untuk setiap fungsi uji yang menurun cepat $h$. Tentu saja tidak ada
+{ \it fungsi} $g$ sedemikian sehingga $\int g\times h=\sqrt{2\pi}h(0)$ untuk
+setiap fungsi uji yang menurun cepat $h$, sebab (dengan argumen 284G) kita akan
+mempunyai $\int_{a}^bg=\sqrt{2\pi}$ setiap kali $a<0<b$, sehingga integral tak
+tentu $g$ tidak mungkin kontinu pada $0$. Namun terdapat { \it ukuran} pada
+$\Bbb R$ dengan sifat yang tepat, yaitu ukuran Dirac $\delta_0$ yang
+terkonsentrasi di $0$; ini adalah ukuran probabilitas Radon (257Xa), dan
+$\int h\,d\delta_0=h(0)$ untuk setiap fungsi $h$ yang terdefinisi pada $0$.
+Dengan demikian, kita mempunyai
+
+\Centerline{$\int_{-\infty}^{\infty}\chi\Bbb R\times\varhat{h}
+=\sqrt{2\pi}\int h\,d\delta_0$}
+
+\noindent untuk setiap fungsi uji yang menurun cepat $h$, sehingga wajar
+mengatakan bahwa ukuran $\nu=\sqrt{2\pi}\delta_0$ `mewakili transformasi
+Fourier dari $\chi\Bbb R$'.
+
+Pada titik ini kita dengan senang hati mencatat bahwa
+
+\Centerline{$\Bover1{\sqrt{2\pi}}\int e^{ixy}\nu(dy)=1$}
+
+\noindent untuk setiap $x\in\Bbb R$, sehingga $\chi\Bbb R$ dapat disebut
+transformasi Fourier invers dari $\nu$.
+
+Jika kita menelaah rumus-rumus Teorema 284M, kita memperoleh gagasan yang
+selaras dengan pemasangan $\chi\Bbb R$ dan $\nu$ ini.
+
+\Centerline{ $\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty} e^{-iyx}e^{-\epsilon
+x^2}\chi\Bbb R(x)dx
+=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iyx}e^{-\epsilon x^2}dx
+=\Bover1{\sqrt{2\epsilon}}e^{-y^2/4\epsilon}$}
+
+\noindent untuk setiap $y\in\Bbb R$, menurut 283N dengan
+$\sigma=1/\sqrt{2\epsilon}$. Jadi
+
+\Centerline{$\lim_{\epsilon\downarrow 0}\Bover1{\sqrt{2\pi}}
+\int_{-\infty}^{\infty}e^{-iyx}e^{-\epsilon x^2}\chi\Bbb R(x)dx=0$}
+
+\noindent untuk setiap $y\ne 0$, dan transformasi Fourier dari $\chi\Bbb R$
+seharusnya nol di setiap titik kecuali $0$. Di sisi lain, fungsi $y\mapsto
+\Bover1{\sqrt{2\epsilon}}e^{-y^2/4\epsilon}$ semua memiliki integral
+$\sqrt{2\pi}$, yang makin terkonsentrasi di sekitar $0$ ketika $\epsilon$
+menurun menuju $0$; ini juga mengarahkan kita langsung kepada $\nu$, ukuran
+yang memberi massa $\sqrt{2\pi}$ pada $0$.
+
+Jadi, dengan mengizinkan ukuran selain fungsi, kita dapat memperluas gagasan
+transformasi Fourier. Tentu saja kita dapat melangkah jauh lebih jauh. Jika
+$h$ adalah fungsi uji yang menurun cepat, maka (karena
+$\varcheck{h}\varhat{\phantom{h}}=h$)
+
+\Centerline{$\int_{-\infty}^{\infty}x\varhat{h}(x)dx =-i\sqrt{2\pi}h'(0)$,}
+
+\noindent sehingga fungsi identitas $x\mapsto x$ dapat diberi operator
+$h\mapsto -i\sqrt{2\pi}h'(0)$ sebagai transformasi Fouriernya.
+
+Pada titik ini kita memasuki teori sesungguhnya tentang distribusi
+(Schwartz), atau `fungsi tergeneralisasi', dan sebaiknya saya berhenti. `Fungsi
+delta Dirac' paling alami dipandang sebagai ukuran $\delta_0$ di atas; sebagai
+alternatif, sebagai $\Bover1{\sqrt{2\pi}}\varhat{\chi\Bbb R}$. }%end of comment
+
+\exercises{\leader{284W}{Kasus multidimensi} Seperti dalam \S283, saya
+memberikan latihan-latihan yang dirancang untuk menunjukkan jalan menuju
+generalisasi berdimensi $r$.
+
+\header{284Wa}{\bf (a)} Suatu {\bf fungsi uji yang menurun cepat} pada $\BbbR^r$
+adalah fungsi $h:\BbbR^r\to\Bbb C$ sedemikian sehingga (i) $h$ {\bf
+halus}, yaitu, semua turunan parsial berulang
+
+\Centerline{$\Bover{\partial^m h}{\partial \xi_{j_1}\ldots\partial\xi_{j_m}}$}
+
+\noindent terdefinisi dan kontinu di setiap titik dalam $\BbbR^r$; (ii)
+
+\Centerline{$\sup_{x\in\BbbR^r}\|x\|^k|h(x)|<\infty$, \quad $\sup_{x\in\Bbb
+R^r}\|x\|^k|\Bover{\partial^m h}{\partial
+\xi_{j_1}\ldots\partial\xi_{j_m}}(x)|<\infty$}
+
+\noindent untuk setiap $k\in\Bbb N$, $j_1,\ldots,j_m\le r$. Suatu {\bf fungsi
+tempered} pada $\BbbR^r$ adalah fungsi terukur bernilai kompleks $f$, yang
+terdefinisi hampir di mana-mana dalam $\BbbR^r$ dan, untuk suatu
+$k\in\Bbb N$,
+
+\Centerline{$\int_{\Bbb R^r}\Bover1{1+\|x\|^k}|f(x)|dx<\infty$.}
+
+\noindent Tunjukkan bahwa jika $f$ adalah fungsi tempered pada $\BbbR^r$ dan
+$h$ adalah fungsi uji yang menurun cepat pada $\BbbR^r$, maka $f\times h$
+terintegralkan.
+
+\header{284Wb}{\bf (b)} Tunjukkan bahwa jika $h$ adalah fungsi uji yang
+menurun cepat pada $\BbbR^r$ maka juga $\varhat{h}$, dan bahwa dalam hal ini
+$\varhat{h}\varcheck{\phantom{h}}=h$.
+
+\header{284Wc}{\bf (c)} Tunjukkan bahwa jika $f$ adalah fungsi tempered pada
+$\Bbb R^r$ dan $\int f\times h=0$ untuk setiap fungsi uji yang menurun cepat
+$h$ pada $\BbbR^r$, maka $f=0$ a.e.
+
+\header{284Wd}{\bf (d)} Jika $f$ dan $g$ adalah fungsi-fungsi tempered pada
+$\Bbb R^r$, kita mengatakan bahwa {\bf $g$ mewakili transformasi Fourier dari
+$f$} jika $\int g\times h=\int f\times\varhat{h}$ untuk setiap fungsi uji yang
+menurun cepat $h$ pada $\BbbR^r$. Tunjukkan bahwa jika $f$ terintegralkan,
+maka $\varhatf$ mewakili transformasi Fourier dari $f$ dalam
+arti ini.
+
+\header{284We}{\bf (e)} Misalkan $f$ adalah fungsi tempered pada $\BbbR^r$.
+Dengan menulis
+$\psi_{\sigma}(x)=\bover1{(\sigma\sqrt{2\pi})^r}e^{-x\dotproduct
+x/2\sigma^2}$ untuk $x\in\BbbR^r$, tunjukkan bahwa
+$\lim_{\sigma\downarrow 0}(f*\psi_{\sigma})(x)=c$ setiap kali
+$x\in\BbbR^r$, $c\in\Bbb C$ memenuhi
+$\lim_{\delta\downarrow 0}\bover1{\delta^r}
+\int_{B(x,\delta)}|f(t)-c|dt=0$, dengan
+$B(x,\delta)=\{t:\|t-x\|\le\delta\}$.
+
+\header{284Wf}{\bf (f)} Misalkan $f$ dan $g$ adalah fungsi-fungsi tempered pada
+$\BbbR^r$, $g$ mewakili transformasi Fourier dari $f$, dan $h$ adalah fungsi
+uji yang menurun cepat. Tunjukkan bahwa (i) transformasi Fourier dari
+$f\times h$ adalah $\bover1{(\sqrt{2\pi})^r}g*\varhat{h}$ (ii)
+$(\sqrt{2\pi})^rg\times\varhat{h}$ mewakili transformasi Fourier dari $f*h$.
+
+\header{284Wg}{\bf (g)} Misalkan $f$ dan $g$ adalah fungsi-fungsi tempered pada
+$\BbbR^r$ sedemikian sehingga $g$ mewakili transformasi Fourier dari $f$.
+Tunjukkan bahwa
+
+\Centerline{$g(y) =\lim_{\epsilon\downarrow 0}\Bover1{(\sqrt{2\pi})^r}
+\int_{\Bbb R^r} e^{-iy\dotproduct x}e^{-\epsilon x\dotproduct x}f(x)dx$}
+
+\noindent untuk hampir setiap $y\in\BbbR^r$.
+
+\header{284Wh}{\bf (h)} Tunjukkan bahwa untuk setiap fungsi bernilai kompleks
+$f$ yang terintegralkan-kuadrat pada $\BbbR^r$ dan setiap $\epsilon>0$ terdapat
+\rdtf\ $h$ sedemikian sehingga $\|f-h\|_2\le\epsilon$.
+
+\header{284Wi}{\bf (i)} Misalkan $\eusm L_{\Bbb C}^2$ adalah ruang fungsi
+bernilai kompleks yang terintegralkan-kuadrat pada $\BbbR^r$.
+Tunjukkan bahwa
+
+\quad (i) untuk setiap $f\in\eusm L_{\Bbb C}^2$ ada $g\in\eusm L_{\Bbb C}^2$
+yang mewakili transformasi Fourier dari $f$, dan dalam hal ini
+$\|g\|_2=\|f\|_2$;
+
+\quad (ii) jika $g_1$, $g_2\in\eusm L_{\Bbb C}^2$ mewakili transformasi
+Fourier dari $f_1$, $f_2\in\eusm L_{\Bbb C}^2$, maka
+$\bover1{(\sqrt{2\pi})^r}g_1*g_2$ adalah transformasi Fourier dari $f_1\times
+f_2$, dan $(\sqrt{2\pi})^rg_1\times g_2$ mewakili transformasi Fourier dari
+$f_1*f_2$.
+
+\spheader 284Wj Misalkan $T$ adalah matriks real taksingular berukuran
+$r\times r$, yang dipandang sebagai operator linear dari $\BbbR^r$ ke dirinya
+sendiri. (i) Tunjukkan bahwa $\varhatf=|\det T|(fT)\varsphat T\trs$ untuk setiap
+fungsi bernilai kompleks $f$ yang terintegralkan pada $\BbbR^r$. (ii)
+Tunjukkan bahwa $hT$ adalah \rdtf\ untuk setiap \rdtf\ $h$. (iii) Tunjukkan
+bahwa jika $f$, $g$ adalah fungsi-fungsi tempered dan $g$ mewakili transformasi
+Fourier dari $f$, maka $\Bover1{|\det T|}g(T\trs)^{-1}$ mewakili transformasi
+Fourier dari $fT$; sehingga jika $T$ ortogonal, maka $gT$ mewakili transformasi
+Fourier dari $fT$.
+%mt28bits
+}%end of exercises 284W
+
+\exercises{ \leader{284X}{Latihan dasar (a)} Tunjukkan bahwa jika $g$ dan $h$
+adalah fungsi-fungsi uji yang menurun cepat, maka $g\times h$ juga demikian. %284A
+
+\spheader 284Xb Tunjukkan bahwa ada fungsi kontinu terintegralkan tak nol
+$f$, $g:\Bbb R\to\Bbb C$ sedemikian sehingga $f*g=0$ di setiap titik.
+\Hint{Ambil keduanya sebagai \Ft\ dari fungsi-fungsi uji yang sesuai.}
+%284C
+
+\spheader 284Xc Misalkan $f:\Bbb R\to\Bbb C$ adalah fungsi terdiferensialkan
+sedemikian sehingga turunannya $f'$ adalah fungsi tempered dan, untuk suatu
+$k\in\Bbb N$,
+
+\Centerline{$\lim_{x\to\infty}x^{-k}f(x) =\lim_{x\to-\infty}x^{-k}f(x)=0$.}
+
+\noindent (i) Tunjukkan bahwa $\int f\times h'=-\int f'\times h$ untuk setiap
+fungsi uji yang menurun cepat $h$. (ii) Tunjukkan bahwa jika $g$ adalah fungsi
+tempered yang mewakili transformasi Fourier dari $f$, maka $y\mapsto iyg(y)$
+mewakili transformasi Fourier dari $f'$. %284H
+
+\spheader 284Xd\dvAnew{2013} Untuk fungsi tempered $f$ dan $\alpha\in\Bbb R$,
+tetapkan
+
+\Centerline{$(S_{\alpha}f)(x)=f(x+\alpha)$, \quad$(M_{\alpha}f)(x)=e^{i\alpha
+x}f(x)$, \quad$(D_{\alpha}f)(x)=f(\alpha x)$}
+
+\noindent kapan pun ruas-ruas tersebut terdefinisi. (i) Tunjukkan bahwa
+$S_{\alpha}f$, $M_{\alpha}f$ dan (jika $\alpha\ne 0$) $D_{\alpha}f$ adalah
+fungsi-fungsi tempered. (ii) Tunjukkan bahwa jika $g$ adalah fungsi tempered
+yang mewakili transformasi Fourier dari $f$, maka $M_{-\alpha}g$ mewakili
+transformasi Fourier dari $S_{\alpha}f$, $S_{-\alpha}g$ mewakili transformasi
+Fourier dari $M_{\alpha}f$, $\bar{\Reverse{g}}=\Reverse{\bar g}$ mewakili
+transformasi Fourier dari $\bar f$, dan jika $\alpha\ne 0$, maka
+$\Bover1{|\alpha|}D_{1/\alpha}g$ mewakili transformasi Fourier dari
+$D_{\alpha}f$.
+%284I
+
+\spheader 284Xe Tunjukkan bahwa jika $h$ adalah fungsi uji yang menurun cepat
+dan $f$ adalah fungsi terukur bernilai kompleks, terdefinisi hampir di mana-mana
+dalam $\Bbb R$, sedemikian sehingga
+$\int_{-\infty}^{\infty}|x|^k|f(x)|dx<\infty$ untuk setiap $k\in\Bbb N$, maka
+konvolusi $f*h$ adalah fungsi uji yang menurun cepat.
+\Hint{Tunjukkan bahwa transformasi Fourier dari $f*h$ adalah fungsi uji.}
+%284J
+
+\sqheader 284Xf Misalkan $f$ adalah fungsi tempered sedemikian sehingga
+$\lim_{a\to\infty}\int_{-a}^af$ ada dalam $\Bbb C$. Tunjukkan bahwa batas ini
+juga sama dengan $\lim_{\epsilon\downarrow 0}\int_{-\infty}^{\infty}
+e^{-\epsilon x^2}f(x)dx$. \Hint{Tetapkan $g(x)=f(x)+f(-x)$. Gunakan 224J untuk
+menunjukkan bahwa jika $0\le a\le b$, maka
+$|\int_a^bg(x)e^{-\epsilon x^2}dx|\le\sup_{c\in[a,b]}|\int_a^cg|$, sehingga
+$\lim_{a\to\infty}\int_0^ag(x)e^{-\epsilon x^2}dx$ ada secara seragam terhadap
+$\epsilon$, sementara $\lim_{\epsilon\downarrow 0}\int_0^ag(x)e^{-\epsilon x^2}dx
+=\int_0^ag$ untuk setiap $a\ge 0$.} %284L
+
+\sqheader 284Xg Misalkan $f$ dan $g$ adalah fungsi-fungsi tempered pada
+$\Bbb R$ sedemikian sehingga $g$ mewakili transformasi Fourier dari $f$.
+Tunjukkan bahwa
+
+\Centerline{$g(y)
+=\lim_{a\to\infty}\Bover1{\sqrt{2\pi}}\int_{-a}^ae^{-iyx}f(x)dx$}
+
+\noindent pada hampir semua titik $y$ untuk mana batasnya ada. \Hint{284Xf, 284M.} %284M, 284Xf, 284L
+
+\sqheader 284Xh Misalkan $f$ adalah fungsi bernilai kompleks yang terintegralkan
+pada $\Bbb R$, dan $\varhatf$ juga terintegralkan. Tunjukkan bahwa
+$\varhatf\varcheck{\phantom{f}}=f$ pada setiap titik tempat $f$ kontinu. %284M
+
+\spheader 284Xi Tunjukkan bahwa untuk setiap $p\in\coint{1,\infty}$,
+$f\in\eusm L_{\Bbb C}^p$ dan $\epsilon>0$, terdapat fungsi uji yang menurun
+cepat $h$ sedemikian sehingga $\|f-h\|_p\le\epsilon$.
+%284N
+
+\sqheader 284Xj Misalkan $f$ dan $g$ adalah fungsi-fungsi bernilai kompleks
+yang terintegralkan-kuadrat pada $\Bbb R$, dan $g$ mewakili transformasi
+Fourier dari $f$. Tunjukkan bahwa
+
+\Centerline{$\int_c^df=\Bover{i}{\sqrt{2\pi}}
+\int_{-\infty}^{\infty}\Bover{e^{icy}-e^{idy}}{y}g(y)dy$}
+
+\noindent setiap kali $c<d$ dalam $\Bbb R$. %284O
+
+\spheader 284Xk Misalkan $f$ adalah fungsi terukur bernilai kompleks,
+terdefinisi hampir di mana-mana dalam $\Bbb R$, sedemikian sehingga
+$\int|f|^p<\infty$, dengan $1<p\le 2$. Tunjukkan bahwa $f$ adalah fungsi
+tempered dan ada fungsi tempered $g$ yang mewakili transformasi Fourier dari
+$f$. \Hint{Nyatakan $f$ sebagai $f_1+f_2$, dengan $f_1$ terintegralkan dan
+$f_2$ terintegralkan-kuadrat.} ({\bf Catatan} Dengan mendefinisikan
+$\|f\|_p$, $\|g\|_q$ seperti dalam 244D, dengan $q=p/(p-1)$, kita mempunyai
+$\|g\|_q\le(2\pi)^{(p-2)/2p}\|f\|_p$; lihat {\smc Zygmund 59}, XVI.3.2.)
+%284O
+
+\spheader 284Xl Misalkan $f$, $g$ adalah fungsi-fungsi bernilai kompleks yang
+terintegralkan-kuadrat pada $\Bbb R$, dan $g$ mewakili transformasi Fourier
+dari $f$.
+
+\quad{(i)} Tunjukkan bahwa
+
+\Centerline{$\Bover1{\sqrt{2\pi}}\int_{-a}^ae^{ixy}g(y)dy
+=\Bover1{\pi}\int_{-\infty}^{\infty}\Bover{\sin at}{t}f(x-t)dt$}
+
+\noindent setiap kali $x\in\Bbb R$ dan $a>0$. \Hint{Temukan transformasi
+Fourier invers dari $y\mapsto e^{-ixy}\chi[-a,a](y)$, lalu gunakan 284Ob.}
+
+\quad{(ii)} Tunjukkan bahwa jika $f(x)=0$ untuk $x\in\ooint{c,d}$, maka
+
+\Centerline{$\Bover1{\sqrt{2\pi}}\lim_{a\to\infty}\int_{-a}^a
+e^{ixy}g(y)dy=0$}
+
+\noindent untuk $x\in\ooint{c,d}$.
+
+\quad{(iii)} Tunjukkan bahwa jika $f$ dapat dibedakan pada $x\in\Bbb R$, maka
+
+\Centerline{$\Bover1{\sqrt{2\pi}}\lim_{a\to\infty}\int_{-a}^a
+e^{ixy}g(y)dy=f(x)$.}
+
+\quad{(iv)} Tunjukkan bahwa jika $f$ mempunyai variasi terbatas pada suatu
+interval yang memuat $x$ dalam interiornya, maka
+
+\Centerline{$\Bover1{\sqrt{2\pi}}\lim_{a\to\infty}\int_{-a}^a
+e^{ixy}g(y)dy=\Bover12(\lim_{t\in\dom f,t\uparrow x}f(t)+\lim_{t\in\dom
+f,t\downarrow x}f(t))$.}
+%284O
+
+\spheader 284Xm Misalkan $f$ adalah fungsi kompleks yang terintegralkan pada
+$\Bbb R$. Tunjukkan bahwa jika $\varhatf$ terintegralkan-kuadrat, maka $f$ juga
+terintegralkan-kuadrat. %284O
+
+\spheader 284Xn Misalkan $f_1$, $f_2$ adalah fungsi-fungsi bernilai kompleks
+yang terintegralkan-kuadrat pada $\Bbb R$, dengan \Ft{} masing-masing diwakili
+oleh $g_1$, $g_2$. Tunjukkan bahwa
+$\int_{-\infty}^{\infty}f_1(t)f_2(-t)dt
+=\int_{-\infty}^{\infty}g_1(t)g_2(t)dt$. %284O
+
+\spheader 284Xo Misalkan $x\in\Bbb R$. Tulis $\delta_x$ untuk ukuran Dirac
+pada $\Bbb R$ yang terkonsentrasi di $x$. Jelaskan suatu arti yang memungkinkan
+$\sqrt{2\pi}\delta_x$ dipandang sebagai transformasi Fourier dari fungsi
+$t\mapsto e^{ixt}$.
+%284R
+
+\spheader 284Xp Untuk sebarang fungsi tempered $f$ dan $x\in\Bbb R$, misalkan
+$\delta_x$ adalah ukuran Dirac pada $\Bbb R$ yang terkonsentrasi di $x$, dan
+tetapkan
+
+\Centerline{$(\delta_x*f)(u)=\int f(u-t)\delta_x(dt)=f(u-x)$}
+
+\noindent untuk setiap $u$ sedemikian sehingga $u-x\in\dom f$ (bdk.\ 257Xe).
+Jika $g$ mewakili transformasi Fourier dari $f$, carilah representasi yang
+sesuai bagi transformasi Fourier dari $\delta_x*f$, dan hubungkan representasi
+itu dengan hasil kali $g$ dan transformasi Fourier dari $\delta_x$. %284R, 284Xo
+
+\spheader 284Xq(i) Tunjukkan bahwa
+
+\Centerline{$\lim_{\delta\downarrow 0,a\to\infty}
+\bigl(\int_{-a}^{-\delta}\Bover1x e^{-iyx}dx +\int_{\delta}^a\Bover1x
+e^{-iyx}dx\bigr) =-\pi i\sgn y$}
+
+\noindent untuk setiap $y\in\Bbb R$, dengan $\sgn y=y/|y|$ jika $y\ne 0$ dan
+$\sgn 0=0$. \Hint{283Da.}
+
+\quad{(ii)} Tunjukkan bahwa
+
+\Centerline{$\lim_{c\to\infty}\Bover1c\int_0^c \int_{-a}^ae^{ixy}\sgn
+y\,dy\,da =\Bover{2i}x$}
+
+\noindent untuk setiap $x\ne 0$.
+
+\quad{(iii)} Tunjukkan bahwa untuk setiap fungsi uji yang menurun cepat
+$h$,
+
+$$\eqalign{\int_0^{\infty}\Bover1x(\varhat{h}(x)-\varhat{h}(-x))dx
+&=\lim_{\delta\downarrow 0,a\to\infty}\bigl(\int_{-a}^{-\delta}
+\Bover1x\varhat{h}(x)dx
++\int_{\delta}^{a}\Bover1x\varhat{h}(x)dx\bigr)\cr
+&=-\Bover{i\pi}{\sqrt{2\pi}}\int_{-\infty}^{\infty}h(y)\sgn
+y\,dy.\cr}$$
+
+\quad{(iv)} Tunjukkan bahwa untuk setiap fungsi uji yang menurun cepat $h$,
+
+\Centerline{$\Bover{i\pi}{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+  \varhat{h}(x)\sgn x\,dx
+=\int_0^{\infty}\Bover1y(h(y)-h(-y))dy$.}
+%284notes
+
+\spheader 284Xr Misalkan $\sequencen{h_n}$ adalah barisan fungsi uji yang
+menurun cepat sedemikian sehingga
+$\phi(f)=\lim_{n\to\infty}\int_{-\infty}^{\infty}h_n\times f$ terdefinisi
+untuk setiap fungsi uji yang menurun cepat $f$. Tunjukkan bahwa
+$\lim_{n\to\infty}\int_{-\infty}^{\infty}h'_n\times f$,
+$\lim_{n\to\infty}\int_{-\infty}^{\infty}\varhat{h}_n\times f$ dan
+$\lim_{n\to\infty}\int_{-\infty}^{\infty}(h_n*g)\times f$ terdefinisi untuk
+semua fungsi uji yang menurun cepat $f$ dan $g$, dan bernilai nol jika $\phi$
+identik nol. \Hint{Hasil 255G akan membantu untuk batas terakhir.} %284+
+
+\leader{284Y}{Latihan lanjutan (a)} %\spheader 284Ya
+Misalkan $f$ adalah fungsi bernilai kompleks yang terintegralkan pada
+$\ocint{-\pi,\pi}$, dan $\tilde f$ perluasan periodiknya, seperti dalam 282Ae.
+Tunjukkan bahwa $\tilde f$ adalah fungsi tempered. Tunjukkan bahwa untuk setiap
+fungsi uji yang menurun cepat $h$,
+$\int\tilde f\times\varhat{h}
+=\sqrt{2\pi}\sum_{k=-\infty}^{\infty}c_kh(k)$, dengan
+$\sequence{k}{c_k}$ adalah barisan koefisien Fourier dari $f$. ({\it
+Petunjuk\/}: mulai dengan kasus $f(x)=e^{inx}$. Selanjutnya, tunjukkan bahwa
+
+\Centerline{$M=\sum_{k=-\infty}^{\infty}|h(k)| +\sum_{k=-\infty}^{\infty}
+\sup_{x\in[(2k-1)\pi,(2k+1)\pi]}|\varhat{h}(x)|<\infty$,}
+
+\noindent dan bahwa
+
+\Centerline{$|\int\tilde f\times\varhat{h}
+-\sqrt{2\pi}\sum_{k=-\infty}^{\infty}c_kh(k)| \le M\|f\|_1$.}
+
+\noindent Terakhir, terapkan 282Ib.) %284C
+
+\header{284Yb}{\bf (b)} Misalkan $f$ adalah fungsi bernilai kompleks yang
+terdefinisi hampir di mana-mana dalam $\Bbb R$, sedemikian sehingga $f\times h$
+terintegralkan untuk setiap fungsi uji yang menurun cepat $h$. Tunjukkan bahwa
+$f$ tempered. %284F
+
+\spheader 284Yc Misalkan $f$ dan $g$ adalah fungsi-fungsi tempered pada
+$\Bbb R$, dan $g$ mewakili transformasi Fourier dari $f$. Tunjukkan bahwa
+
+$$\int_c^df
+=\Bover{i}{\sqrt{2\pi}}\lim_{\sigma\to\infty}\int_{-\infty}^{\infty}
+\Bover{e^{icy}-e^{idy}}{y}e^{-y^2/2\sigma^2}g(y)dy$$
+
+\noindent setiap kali $c\le d$ dalam $\Bbb R$. \Hint{Tetapkan
+$\theta=\chi[c,d]$. Tunjukkan bahwa kedua ruas sama dengan
+$\lim_{\sigma\to\infty}\int f\times(\theta*\psi_{1/\sigma})$, dengan
+$\psi_{\sigma}$ didefinisikan seperti dalam 283N dan 284L.} %284H
+
+\spheader 284Yd Tunjukkan bahwa jika $g:\Bbb R\to\Bbb R$ adalah fungsi ganjil
+yang mempunyai variasi terbatas dan
+$\int_1^{\infty}\bover1x g(x)dx=\infty$, maka $g$ tidak mewakili transformasi
+Fourier dari fungsi tempered mana pun. \Hint{283Ye, 284Yc.}
+%284Yc, 284H
+
+\ifdim\pagewidth>467pt\fontdimen3\tenrm=1.84pt
+ \fontdimen4\tenrm=1.22pt\fi
+\spheader 284Ye Misalkan $\eusm S$ adalah ruang fungsi uji yang menurun cepat.
+Untuk $k$, $m\in\Bbb N$, tetapkan
+$\tau_{km}(h)=\sup_{x\in\Bbb R}|x|^k|h^{(m)}(x)|$ untuk setiap $h\in\eusm S$,
+dengan $h^{(m)}$ seperti biasa menyatakan turunan ke-$m$ dari $h$. (i)
+Tunjukkan bahwa setiap $\tau_{km}$ adalah seminorma dan bahwa $\eusm S$
+lengkap serta separabel untuk topologi ruang linear termetrik $\frak T$ yang
+didefinisikan oleh seminorma-seminorma tersebut. (ii) Tunjukkan bahwa
+$h\mapsto\varhat{h}:\eusm S\to\eusm S$ kontinu terhadap $\frak T$. (iii)
+Tunjukkan bahwa jika $f$ adalah sebarang fungsi tempered, maka
+$h\mapsto\int f\times h$ kontinu terhadap $\frak T$. (iv) Tunjukkan bahwa jika
+$f$ adalah fungsi terintegralkan sedemikian sehingga
+$\int|x^kf(x)|dx<\infty$ untuk setiap $k\in\Bbb N$, maka
+$h\mapsto f*h:\eusm S\to\eusm S$ kontinu terhadap $\frak T$. %284J
+\fontdimen3\tenrm=1.67pt\fontdimen4\tenrm=1.22pt
+
+\spheader 284Yf Tunjukkan bahwa jika $f$ adalah fungsi tempered pada $\Bbb R$
+dan
+
+\Centerline{$\gamma =\lim_{c\to\infty}\Bover1c\int_{0}^c\int_{-a}^af(x)dxda$}
+
+\noindent terdefinisi dalam $\Bbb C$, maka $\gamma$ juga sama dengan
+
+\Centerline{$\lim_{\epsilon\downarrow 0}\int_{-\infty}^{\infty}
+f(x)e^{-\epsilon|x|}dx$.}
+%284Xf, 284L
+
+\spheader 284Yg Misalkan $f$, $g$ adalah fungsi-fungsi bernilai kompleks yang
+terintegralkan-kuadrat pada $\Bbb R$, dan $g$ mewakili transformasi Fourier
+dari $f$. Misalkan $m\in\Bbb Z$ dan $(2m-1)\pi<x<(2m+1)\pi$. Tetapkan
+$\tilde f(t)=f(t+2m\pi)$ untuk semua $t\in\ocint{-\pi,\pi}$ sedemikian sehingga
+$t+2m\pi\in\dom f$. Misalkan $\langle c_k\rangle_{k\in\Bbb Z}$ adalah barisan
+koefisien Fourier dari $\tilde f$. Tunjukkan bahwa
+
+\Centerline{$\Bover1{\sqrt{2\pi}}\lim_{a\to\infty}\int_{-a}^a e^{ixy}g(y)dy
+=\lim_{n\to\infty}\sum_{k=-n}^nc_ke^{ikx}$}
+
+\noindent dalam arti bahwa jika salah satu batas ada dalam $\Bbb C$, maka batas
+yang lain juga ada dan keduanya sama. \Hint{284Xl(i), 282Da.} %284O, 284Xl
+
+\spheader 284Yh Tunjukkan bahwa jika $f$ terintegralkan pada $\Bbb R$ dan ada
+$M\ge 0$ sedemikian sehingga $f(x)=\varhatf(x)=0$ untuk $|x|\ge M$, maka
+$f=0$ a.e. \Hint{Reduksikan ke kasus $M=\pi$. Dengan menelaah deret Fourier
+dari $f\restr\ocint{-\pi,\pi}$, tunjukkan bahwa $f$ dapat dinyatakan sebagai
+$f(x)=\sum_{k=-m}^mc_ke^{ikx}$ untuk hampir setiap
+$x\in\ocint{-\pi,\pi}$. Kemudian hitung $\varhatf(2n+\bover12)$ untuk $n$
+besar.}
+
+\spheader 284Yi Misalkan $\nu$ adalah ukuran Radon pada $\Bbb R$ yang
+`tempered', dalam arti bahwa
+$\int_{-\infty}^{\infty}\Bover1{1+|x|^k}\nu(dx)$ berhingga untuk suatu
+$k\in\Bbb N$. (i) Tunjukkan bahwa setiap fungsi uji yang menurun cepat
+$\nu$-terintegralkan. (ii) Tunjukkan bahwa jika $\nu$ mempunyai dukungan
+terbatas (definisi: 256Xf), dan $h$ adalah fungsi uji yang menurun cepat, maka
+$\nu*h$ adalah fungsi uji yang menurun cepat, dengan
+$(\nu*h)(x)=\int_{-\infty}^{\infty}h(x-y)\nu(dy)$ untuk $x\in\Bbb R$. (iii)
+Tunjukkan bahwa terdapat barisan $\sequencen{h_n}$ fungsi uji yang menurun
+cepat sedemikian sehingga
+$\lim_{n\to\infty}\int_{-\infty}^{\infty}h_n\times f
+=\int_{-\infty}^{\infty}fd\nu$ untuk setiap fungsi uji yang menurun cepat
+$f$. %284Xr.
+
+\spheader 284Yj Misalkan $\phi:\eusm S\to\Bbb C$ adalah fungsional yang
+didefinisikan oleh rumus 284Xr. Tunjukkan bahwa $\phi$ kontinu untuk topologi
+dalam 284Ye. ({\it Catatan\/}: akan membantu jika pembaca mengetahui sedikit
+lebih banyak tentang ruang topologis linear termetrik daripada yang dibahas
+dalam \S2A5.) %284Xr
+
+}%end of exercises
+
+\cmmnt{ \Notesheader{284} Sekali lagi saya harus memperingatkan bahwa materi di
+atas hanya memberikan pandangan yang sangat terbatas tentang pokok ini. Saya
+telah mencoba menunjukkan bagaimana teori transformasi Fourier untuk fungsi
+`baik' -- yang di sini berarti fungsi uji yang menurun cepat -- dapat diperluas,
+melalui suatu dualitas, ke kelas fungsi yang jauh lebih luas, yaitu
+`fungsi-fungsi tempered'. Dengan $\eusm S$ menyatakan ruang linear fungsi uji
+yang menurun cepat, kita dapat mencoba menyelidiki transformasi Fourier setiap
+fungsional linear $\phi:\eusm S\to\Bbb C$, dengan menulis
+$\varhat\phi(h)=\phi(\varhat{h})$ untuk setiap $h\in\eusm S$. (Sebenarnya,
+lebih lazim pada tahap ini untuk membatasi perhatian pada fungsional $\phi$
+yang kontinu terhadap topologi standar pada $\eusm S$ yang diuraikan dalam
+284Ye; fungsional tersebut disebut {\bf distribusi tempered (Schwartz)}.)
+Menurut 284F-284G, sebagian fungsional ini dapat diidentifikasi dengan kelas
+ekuivalensi fungsi tempered; kemudian kita dapat menyelidiki fungsi-fungsi
+tempered yang transformasi Fouriernya kembali dapat diwakili oleh fungsi
+tempered.
+
+Struktur teori transformasi Fourier mungkin paling jelas diuraikan melalui
+rumus-rumusnya. Tujuan kita ialah membentuk pasangan
+$(f,g)=(f,\varhatf)=(\varcheck{g},g)$ sedemikian sehingga berlaku
+
+\quad { \it Inversi\/}: $\varhat{h}\varcheck{\phantom{h}}
+=\varcheck{h}\varhat{\phantom{h}}=h$; %284If
+
+\quad { \it Pembalikan\/}: $\varcheck{h}(y)=\varhat{h}(-y)$; %284If
+
+\quad { \it Linearitas\/}: $(h_1+h_2)\varsphat=\varhat{h}_1+\varhat{h}_2$, \quad$(ch)\varsphat=c\varhat{h}$; %284Ic
+
+\quad {\it Diferensiasi\/}: $(h')\varsphat(y)=iy\varhat{h}(y)$;
+
+\quad {\it Pergeseran\/}: jika $h_1(x)=h(x+c)$ maka $\varhat{h}_1(y)=e^{iyc}\varhat{h}(y)$; %284Xd
+
+\quad { \it Modulasi\/}: jika $h_1(x)=e^{icx}h(x)$ maka $\varhat{h}_1(y)=\varhat{h}(y-c)$; %284Xd
+
+\quad {\it Simetri\/}: jika $h_1(x)=h(-x)$ maka $\varhat{h}_1(y)
+=\varhat{h}(-y)$; %284Xd
+
+\quad { \it Konjugasi kompleks\/}: $(\overline{h})\varsphat(y)=\overline{\varhat{h}(-y)}$; %284Xd
+
+\quad {\it Dilasi\/}: jika $h_1(x)=h(cx)$, di mana $c>0$, maka $\varhat{h}_1(y)=\Bover1c\varhat{h}(\Bover{y}{c})$; %284Xd
+
+\quad {\it Konvolusi\/}:
+$(h_1*h_2)\varsphat=\sqrt{2\pi}\varhat{h}_1\times\varhat{h}_2$, %284Kb
+\quad $(h_1\times h_2)\varsphat
+=\Bover1{\sqrt{2\pi}}\varhat{h}_1*\varhat{h}_2$; %284Ka
+
+\quad {\it Dualitas\/}: $\int_{-\infty}^{\infty}h_1\times\varhat{h}_2
+=\int_{-\infty}^{\infty}\varhat{h}_1\times h_2$;
+
+\quad { \it Parseval\/}: $\int_{-\infty}^{\infty}h_1\times\overline{h_2}
+=\int_{-\infty}^{\infty}\varhat{h}_1\times\overline{\varhat{h}_2}$; %284Ob
+
+\noindent Dan, tentu saja,
+
+\Centerline{$\varhat{h}(y)
+=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iyx}h(x)dx$,} %284Xg
+
+\Centerline{$\int_c^d\varhat{h}(y)dy
+=\Bover{i}{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+\Bover{e^{-idy}-e^{-icy}}{y}h(y)dy$.}  %284Xj
+
+\noindent (Saya menggunakan huruf $h$ dalam daftar di atas untuk menandai fakta
+bahwa semua rumus tersebut memang berlaku bagi fungsi uji yang menurun cepat.)
+Selain itu, sering kali penting bahwa operasi $h\mapsto\varhat{h}$ kontinu
+dalam suatu arti.
+
+Tantangan teori transformasi Fourier `murni' ialah menemukan ragam objek $h$
+seluas mungkin yang membuat rumus-rumus di atas berlaku, dengan interpretasi
+yang tepat bagi $\varsphat$, $*$ dan $\int_{-\infty}^{\infty}$. Perlu dicatat
+bahwa sejak awal bidang ini telah diperkaya oleh penerapannya dalam cabang lain
+matematika, ilmu fisika dan ilmu sosial. Berulang kali penerapan tersebut
+menyarankan pasangan baru $(f,\varhatf)$ dan menuntut kemampuan lebih besar
+untuk menafsirkan aturan yang hendak kita ikuti. Bahkan teori distribusi
+tampaknya tidak memberi uraian kanonik lengkap tentang semua yang dapat
+dilakukan. Pertama, terdapat kesulitan besar dalam menafsirkan `hasil kali' dua
+distribusi sebarang, sehingga beberapa rumus di atas bermasalah; kedua, tidak
+jelas bahwa cukup mempertimbangkan satu jenis distribusi saja. Dalam bagian ini
+saya hanya menelaah satu ruang `fungsi uji', yaitu ruang $\eusm S$ dari fungsi
+uji yang menurun cepat; tetapi sedikitnya dua ruang lain juga penting: ruang
+$\eusm D$ dari fungsi mulus dengan dukungan terbatas, dan ruang $\eusm Z$ dari
+transformasi Fourier fungsi-fungsi dalam $\eusm D$. Keuntungan memulai dengan
+$\eusm S$ adalah diperolehnya teori yang simetris, sebab
+$\varhat{h}\in\eusm S$ untuk setiap $h\in\eusm S$. Namun mudah ditemukan objek
+(misalnya fungsi $x\mapsto e^{x^2}$ atau $x\mapsto 1/|x|$) yang tidak dapat
+ditafsirkan sebagai fungsional pada $\eusm S$, sehingga transformasi
+Fouriernya, jika dapat dikaji, harus diselidiki dengan metode lain. Dalam 284Xq
+saya menguraikan beberapa argumen yang membenarkan pernyataan bahwa transformasi
+Fourier fungsi $x\mapsto 1/x$ adalah, atau dapat diwakili oleh, fungsi
+$y\mapsto -i\sqrt{\bover{\pi}2}\sgn y$; asas umumnya di sini adalah mendekati
+$0$ maupun $\infty$ secara simetris. Untuk berbagai pasangan serupa yang
+ditetapkan melalui argumen berdasarkan gagasan 284Xr, lihat {\smc Lighthill
+59}, bab.\ 3.
+
+Karena itu tampaknya, setelah dua abad, % Fourier "Analytic Theory of Heat" 1822
+%    1807 Mémoire sur la propagation de la chaleur dans les corps solides
+% Wikipedia:  "When Fourier submitted a later competition essay in 1811,
+% the committee (which included Lagrange, Laplace, Malus and Legendre,
+% among others) concluded: ...the manner in which the author arrives at
+% these equations is not exempt of difficulties and...his analysis to
+% integrate them still leaves something to be desired on the score of
+% generality and even rigour [citation needed]"
+ kita masih harus melanjutkan dengan memeriksa secara cermat kelas-kelas fungsi
+tertentu dan menguji interpretasi rumus yang sesuai. Dalam pembahasan di atas
+saya berulang kali menggunakan konsep
+
+\Centerline{$\lim_{a\to\infty}\int_{-a}^af$, \quad$\lim_{\epsilon\downarrow
+0}\int_{-\infty}^{\infty} e^{-\epsilon x^2}f(x)dx$}
+
+\noindent sebagai interpretasi alternatif bagi $\int_{-\infty}^{\infty}f$.
+(Tentu saja keduanya berkaitan erat; lihat 284Xf.) Kernel khusus
+$e^{-\epsilon x^2}$ digunakan karena termasuk $\eusm S$, merupakan fungsi
+genap, transformasi Fouriernya dapat dihitung dan mudah dimanipulasi, serta
+berkaitan dengan fungsi densitas probabilitas normal
+$\bover1{\sigma\sqrt{2\pi}}e^{-x^2/2\sigma^2}$. Dengan demikian, fakta-fakta
+yang kita peroleh mungkin berguna di tempat lain. Namun ada penerapan yang
+lebih mudah ditangani dengan kernel lain -- misalnya,
+$e^{-\epsilon|x|}$ (283Xq, 283Yc, 284Yf).)
+
+Salah satu asas penuntun di sini ialah bahwa manipulasi yang murni formal,
+seperti dalam daftar di atas, dan terutama perubahan urutan integrasi beserta
+pertukaran limit lainnya, berulang kali menghasilkan rumus yang sah jika
+ditafsirkan dengan tepat. Kuliah analisis pertama sering menanamkan hambatan:
+mahasiswa diajari mencurigai setiap manipulasi yang belum dapat mereka
+benarkan. Bagi saya, daya tarik pokok ini terutama terletak pada keragaman
+argumen yang dituntut oleh pendekatan ketat, dengan landasan yang terus berubah
+menurut konteks; tetapi optimisme yang ceria sering merupakan panduan terbaik
+untuk memilih manipulasi yang patut dicoba untuk dibenarkan.
+
+Karena buku ini membahas teori ukur, saya tentu sangat tertarik pada kemungkinan
+suatu ukuran muncul sebagai transformasi Fourier. Inilah yang terjadi jika kita
+mencari transformasi Fourier fungsi konstan $\chi\Bbb R$ (284R). Secara lebih
+umum, setiap fungsi tempered periodik $f$ dengan periode $2\pi$ dapat diberi
+transformasi Fourier berupa `ukuran bertanda' (untuk tujuan kita saat ini,
+kombinasi linear kompleks dari ukuran-ukuran) yang terkonsentrasi pada
+$\Bbb Z$. Massa pada setiap $k\in\Bbb Z$ ditentukan oleh koefisien Fourier yang
+bersesuaian dari $f\restr\ocint{-\pi,\pi}$ (284Xo, 284Ya). Dalam bagian
+berikutnya saya akan melangkah lebih jauh ke arah ini, terutama mengenai
+distribusi probabilitas pada $\BbbR^r$. Alasan ukuran {\it positif} belum
+mendesak untuk diperhatikan sejauh ini ialah bahwa kita tidak mengharapkan
+fungsi positif sebagai transformasi Fourier kecuali jika beberapa syarat yang
+sangat khusus dipenuhi, seperti dalam 283Yc.
+
+Seperti dalam \S282, saya menggunakan struktur ruang Hilbert $L_{\Bbb C}^2$
+sebagai dasar pembahasan transformasi Fourier fungsi-fungsi dalam
+$\eusm L_{\Bbb C}^2$ (284O-284P). Namun, seperti untuk deret Fourier, teorema
+Carleson (286U) memberikan uraian yang lebih langsung.
+
+Dalam 284Wj, saya memberikan perhitungan berdasarkan rumus perubahan variabel
+dalam 263A untuk menyajikan versi multidimensi dari pembalikan dan dilasi.
+Namun tujuan sebenarnya ialah menunjukkan bahwa transformasi Fourier pada
+$\BbbR^r$ didasarkan pada geometri hasil kali dalam Euklides, bukan pada sistem
+koordinat Kartesius. }%end of notes
+
+\discrpage

@@ -1,0 +1,729 @@
+\frfilename{mt2a1.tex}
+\versiondate{20.1.13}
+\copyrightdate{1996}
+
+\def\chaptername{Lampiran}
+\def\sectionname{Teori himpunan}
+
+\def\Enderton{{\smc Enderton 77}}
+\def\Halmos{{\smc Halmos 60}}
+\def\Henle{{\smc Henle 86}}
+\def\Krivine{{\smc Krivine 71}}
+\def\Lipschutz{{\smc Lipschutz 64}}
+\def\Roitman{{\smc Roitman 90}}
+
+\newsection{2A1}
+
+Khususnya untuk contoh-contoh dalam Bab 21, kita memerlukan beberapa bagian
+teori himpunan yang tidak trivial, yang paling baik didekati melalui teori
+baku mengenai kardinal dan ordinal; dan di bagian lain jilid ini saya
+menggunakan Lema Zorn.
+Di sini saya memberikan ikhtisar yang sangat singkat mengenai hasil-hasil
+yang terlibat, dengan sebagian besar bukti dihilangkan.
+Kebanyakan materi ini seharusnya terdapat dalam setiap pengantar teori
+himpunan yang baik.
+Rujukan yang saya berikan mengarah ke buku-buku yang kebetulan pernah saya
+temui dan dapat saya anjurkan sebagai bahan yang cukup sesuai bagi pemula.
+
+Saya tidak membahas sistem aksioma ataupun landasan logis. Teori himpunan
+yang saya gunakan bersifat `naif' dalam arti bahwa saya mengandalkan
+pemahaman saya atas pengalaman kolektif seratus tahun terakhir, bukan
+suatu upaya deskripsi formal, untuk membedakan argumen yang sah dari argumen
+yang tidak aman. Namun, ada beberapa bagian dalam Jilid 5 tempat filsafat
+selonggar ini menjadi tidak sesuai, sehingga saya menggunakan argumen yang,
+menurut keyakinan saya, dapat diterjemahkan ke dalam teori himpunan
+Zermelo--Fraenkel baku tanpa memerlukan gagasan baru.
+
+Walaupun dalam jilid ini saya menggunakan aksioma pilihan tanpa ragu kapan
+pun sesuai, saya akan membagi bagian ini menjadi dua bagian, dimulai dengan
+gagasan dan hasil yang tidak bergantung pada aksioma pilihan (2A1A--2A1I),
+lalu dilanjutkan dengan sisanya (2A1J--2A1P). Saya percaya bahwa bahkan pada
+tingkat ini, mempertahankan suatu tingkat pemisahan membantu kita memahami
+sifat argumen-argumennya dengan lebih baik.
+
+\leader{2A1A}{Himpunan terurut (a)} Ingat bahwa suatu {\bf himpunan terurut
+parsial} adalah suatu himpunan $P$ bersama suatu relasi $\le$ pada $P$
+sedemikian sehingga
+
+\inset{jika $p\le q$ dan $q\le r$, maka $p\le r$,
+
+$p\le p$ untuk setiap $p\in P$,
+
+jika $p\le q$ dan $q\le p$, maka $p=q$.}
+
+\noindent Dalam konteks ini, saya akan menuliskan $p\ge q$ untuk menyatakan
+$q\le p$, dan $p<q$ atau $q>p$ untuk menyatakan `$p\le q$ dan $p\ne q$'.
+$\le$ merupakan suatu {\bf urutan parsial} pada $P$.
+
+\header{2A1A}{\bf (b)} Misalkan $(P,\le)$ suatu himpunan terurut parsial,
+dan $A\subseteq P$. Suatu elemen {\bf maksimal} dari $A$ adalah $p\in A$
+sedemikian sehingga $p\not<a$ untuk setiap $a\in A$. Perhatikan bahwa $A$
+dapat mempunyai lebih dari satu elemen maksimal. Suatu {\bf batas atas} bagi
+$A$ adalah $p\in P$ sedemikian sehingga $a\le p$ untuk setiap $a\in A$;
+suatu {\bf supremum} atau {\bf batas atas terkecil} adalah batas atas $p$
+sedemikian sehingga $p\le q$ untuk setiap batas atas $q$ dari $A$. Paling
+banyak hanya ada satu yang demikian\cmmnt{, sebab jika $p$, $p'$ keduanya
+merupakan batas atas terkecil, maka $p\le p'$ dan $p'\le p$}. Karena itu kita
+dapat dengan aman menuliskan $p=\sup A$ jika $p$ adalah batas atas terkecil
+dari $A$.
+
+Demikian pula, suatu elemen {\bf minimal} dari $A$ adalah $p\in A$ sedemikian
+sehingga $p\not>a$ untuk setiap $a\in A$; suatu {\bf batas bawah} dari $A$
+adalah $p\in P$ sedemikian sehingga $p\le a$ untuk setiap $a\in A$; dan
+$\inf A=p$ berarti bahwa
+
+\Centerline{untuk setiap $q\in P$, $p\ge q\iff a\ge q\Forall a\in A$.}
+
+Suatu subhimpunan $A$ dari $P$ disebut {\bf terbatas menurut urutan} jika
+mempunyai batas atas dan batas bawah.
+
+Suatu subhimpunan $A$ dari $P$ disebut {\bf terarah ke atas} jika untuk
+setiap $p$, $p'\in A$ terdapat $q\in A$ sedemikian sehingga $p\le q$ dan
+$p'\le q$\cmmnt{; yaitu, jika setiap subhimpunan berhingga tak kosong dari
+$A$ mempunyai batas atas dalam $A$}. Demikian pula, $A\subseteq P$ disebut
+{\bf terarah ke bawah} jika untuk setiap $p$, $p'\in A$ terdapat $q\in A$
+sedemikian sehingga $q\le p$ dan $q\le p'$\cmmnt{; yaitu, jika setiap
+subhimpunan berhingga tak kosong dari $A$ mempunyai batas bawah dalam $A$}.
+
+\cmmnt{Kadang-kadang lebih mudah jika notasi interval tertutup disesuaikan
+dengan himpunan terurut parsial sebarang:} $[p,q]$ akan berarti
+$\{r:p\le r\le q\}$.
+
+\wheader{2A1A}{0}{0}{0}{24pt}
+
+\header{2A1Ac}{\bf (c)} Suatu {\bf himpunan terurut total} adalah himpunan
+terurut parsial $(P,\le)$ sedemikian sehingga
+
+\inset{untuk setiap $p$, $q\in P$, berlaku $p\le q$ atau $q\le p$.}
+
+\noindent Dalam hal ini, $\le$ merupakan urutan {\bf total} atau {\bf linear}
+pada $P$.
+
+Dalam setiap himpunan terurut total kita mempunyai suatu {\bf fungsi median}:
+untuk $p$, $q$, $r\in P$, tetapkan
+
+$$\eqalign{\med(p,q,r)
+&=\max(\min(p,q),\min(p,r),\min(q,r))\cr
+&=\min(\max(p,q),\max(p,r),\max(q,r))\dvro{.}{,}\cr}$$
+
+\cmmnt{\noindent sehingga $\med(p,q,r)=q$ jika $p\le q\le r$.}
+
+\header{2A1Ad}{\bf (d)} Suatu {\bf kisi} adalah himpunan terurut parsial
+$(P,\le)$ sedemikian sehingga
+
+\inset{untuk setiap $p$, $q\in P$, $p\vee q=\sup\{p,q\}$ dan
+$p\wedge q=\inf\{p,q\}$ terdefinisi dalam $P$.}
+
+\header{2A1Ae}{\bf (e)} Suatu {\bf himpunan terurut baik} adalah himpunan
+terurut total $(P,\le)$ sedemikian sehingga\cmmnt{ $\inf A$ ada dan termasuk
+dalam $A$ untuk setiap himpunan tak kosong $A\subseteq P$; yaitu,} setiap
+subhimpunan tak kosong dari $P$ mempunyai elemen terkecil. Dalam hal ini
+$\le$ merupakan suatu {\bf pengurutan baik} dari $P$.
+
+\leader{2A1B}{Rekursi Transfinit: Teorema} Misalkan $(P,\le)$ suatu himpunan
+terurut baik dan $X$ sebarang kelas. Untuk $p\in P$, tuliskan $L_p$ untuk
+himpunan $\{q:q\in P,\,q<p\}$ dan $X^{L_p}$ untuk kelas semua fungsi dari
+$L_p$ ke $X$. Misalkan $F:\bigcup_{p\in P}X^{L_p}\to X$ sebarang fungsi.
+Maka terdapat tepat satu fungsi $f:P\to X$ sedemikian sehingga
+$f(p)=F(f\restr L_p)$ untuk setiap $p\in P$.
+
+\proof{ Terdapat versi-versi hasil ini dalam \Enderton\ (hlm.\ 175) dan
+\Halmos\ (\S18). Walaupun demikian, saya menuliskan suatu bukti, sebab
+menurut saya kebanyakan buku elementer tentang teori himpunan tidak
+memberinya tempat yang semestinya pada awal sekali teori himpunan terurut
+baik.
+
+\medskip
+
+{\bf (a)} Misalkan $\Phi$ adalah kelas semua fungsi $\phi$ sedemikian sehingga
+
+\quad ($\alpha$) $\dom\phi$ merupakan subhimpunan $P$, dan
+$L_p\subseteq\dom\phi$ untuk setiap $p\in\dom\phi$;
+
+\quad ($\beta$) $\phi(p)\in X$ untuk setiap $p\in\dom\phi$, dan
+$\phi(p)=F(\phi\restr L_p)$ untuk setiap $p\in\dom\phi$.
+
+\medskip
+
+{\bf (b)} Jika $\phi$, $\psi\in\Phi$, maka $\phi$ dan $\psi$ sama pada
+$\dom\phi\cap\dom\psi$. \Prf\Quer\ Jika tidak, maka
+$A=\{q:q\in\dom\phi\cap\dom\psi,\,\phi(q)\ne\psi(q)\}$ tak kosong. Karena
+$P$ terurut baik, $A$ mempunyai elemen terkecil, sebutlah $p$. Sekarang
+$L_p\subseteq\dom\phi\cap\dom\psi$ dan $L_p\cap A=\emptyset$, sehingga
+
+\Centerline{$\phi(p)=F(\phi\restr L_p)=F(\psi\restr L_p)=\psi(p)$,}
+
+\noindent yang mustahil.\ \Bang\Qed
+
+\medskip
+
+{\bf (c)} Akibatnya, $\Phi$ merupakan suatu himpunan, sebab fungsi
+$\phi\mapsto\dom\phi$ adalah fungsi injektif dari $\Phi$ ke $\Cal PP$, dan
+inversnya adalah suatu surjeksi dari subhimpunan $\Cal PP$ ke $\Phi$.
+Karena itu, tanpa ragu-ragu kita dapat mendefinisikan suatu fungsi $f$ dengan
+menuliskan
+
+\Centerline{$\dom f=\bigcup_{\phi\in\Phi}\dom\phi$,
+\quad$f(p)=\phi(p)$ kapan pun $\phi\in\Phi$ dan $p\in\dom\phi$.}
+
+\noindent (Jika Anda menganggap suatu fungsi $\phi$ hanya sebagai himpunan
+pasangan terurut $\{(p,\phi(p)):p\in\dom\phi\}$, maka $f$ menjadi
+$\bigcup\Phi$.) Maka $f\in\Phi$. \Prf\ Tentu saja $f$ adalah suatu fungsi
+dari subhimpunan $P$ ke $X$. Jika $p\in\dom f$, maka terdapat $\phi\in\Phi$
+sedemikian sehingga $p\in\dom\phi$, dan dalam hal ini
+
+\Centerline{$L_p\subseteq\dom\phi\subseteq\dom f$,
+\quad$f(p)=\phi(p)=F(\phi\restr L_p)=F(f\restr L_p)$. \Qed}
+
+\medskip
+
+{\bf (d)} $f$ terdefinisi di seluruh $P$. \Prf\Quer\ Jika tidak,
+$P\setminus\dom f$ tak kosong dan mempunyai elemen terkecil, sebutlah $r$.
+Sekarang $L_r\subseteq\dom f$. Definisikan suatu fungsi $\psi$ dengan
+menyatakan bahwa $\dom\psi=\{r\}\cup\dom f$, $\psi(p)=f(p)$ untuk
+$p\in\dom f$ dan $\psi(r)=F(f\restr L_r)$. Maka $\psi\in\Phi$, sebab jika
+$p\in\dom\psi$
+
+\inset{{\it atau} $p\in\dom f$, sehingga
+$L_p\subseteq\dom f\subseteq\dom\psi$ dan
+
+\Centerline{$\psi(p)=f(p)=F(f\restr L_p)=F(\psi\restr L_p)$}}
+
+\inset{{\it atau} $p=r$, sehingga
+$L_p=L_r\subseteq\dom f\subseteq\dom\psi$ dan
+
+\Centerline{$\psi(p)=F(f\restr L_r)=F(\psi\restr L_r)$.}}
+
+\noindent Karena itu $\psi\in\Phi$ dan
+$r\in\dom\psi\subseteq\dom f$.\ \Bang\Qed
+
+\medskip
+
+{\bf (e)} Jadi $f:P\to X$ adalah suatu fungsi sedemikian sehingga
+$f(p)=F(f\restr L_p)$ untuk setiap $p$. Untuk melihat bahwa $f$ unik,
+perhatikan bahwa setiap fungsi jenis ini harus termasuk dalam $\Phi$, sehingga
+harus sama dengan $f$ pada domain bersama keduanya, yakni seluruh $P$.
+}%end of proof of 2A1B
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Jika Anda telah diajarkan untuk membedakan kata
+`himpunan' dan `kelas', Anda akan melihat bahwa teori himpunan naif saya
+relatif toleran karena bersedia mengizinkan variabel kelas dalam
+teorema-teoremanya.
+}
+
+\vleader{48pt}{2A1C}{Ordinal} Suatu {\bf ordinal} (kadang-kadang disebut
+`ordinal von Neumann') adalah suatu himpunan $\xi$ sedemikian sehingga
+
+\inset{jika $\eta\in\xi$, maka $\eta$ merupakan suatu himpunan dan
+$\eta\not\in\eta$,
+
+jika $\eta\in\zeta\in\xi$, maka $\eta\in\xi$,
+
+dengan menuliskan `$\eta\le\zeta$' untuk menyatakan `$\eta\in\zeta$ atau
+$\eta=\zeta$', $(\xi,\le)$ terurut baik\dvro{.}{}}
+
+\prooflet{
+\noindent(\Enderton, hlm.\ 191; \Halmos, \S19; \Henle, hlm.\ 27; \Krivine,
+hlm.\ 24; \Roitman, 3.2.8.\cmmnt{ Tentu saja banyak teori himpunan tidak
+mengizinkan himpunan menjadi anggota dirinya sendiri, dan/atau menganggap
+begitu saja bahwa setiap objek pembicaraan merupakan suatu himpunan, tetapi
+saya memilih untuk tidak mengambil pendirian mengenai hal-hal semacam itu
+secara umum.})
+}
+
+\leader{2A1D}{Fakta-fakta dasar mengenai ordinal (a)} Jika $\xi$ adalah
+suatu ordinal, maka setiap anggota $\xi$ adalah ordinal. \prooflet{(\Enderton,
+hlm.\ 192; \Henle, 6.4;
+\Krivine, hlm.\ 14; \Roitman, 3.2.10.)}
+
+\header{2A1Db}{\bf (b)} Jika $\xi$, $\eta$ adalah ordinal, maka berlaku
+$\xi\in\eta$ atau $\xi=\eta$ atau $\eta\in\xi$ (dan tidak ada dua dari
+ketiganya yang dapat terjadi bersamaan). \prooflet{(\Enderton,
+hlm.\ 192; \Henle, 6.4; \Krivine, hlm.\ 14; \Lipschutz, 11.12; \Roitman,
+3.2.13.)} Lazimnya\cmmnt{, dalam hal ini,} kita menuliskan $\eta<\xi$ jika
+$\eta\in\xi$ dan $\eta\le\xi$ jika $\eta\in\xi$ atau $\eta=\xi$.
+Perhatikan bahwa $\eta\le\xi$ jika dan hanya jika $\eta\subseteq\xi$.
+
+\header{2A1Dc}{\bf (c)} Jika $A$ sebarang kelas tak kosong dari ordinal,
+maka terdapat $\alpha\in A$ sedemikian sehingga $\alpha\le\xi$ untuk setiap
+$\xi\in A$. \prooflet{(\Henle, 6.7; \Krivine, hlm.\ 15.)}
+
+\header{2A1Dd}{\bf (d)} Jika $\xi$ suatu ordinal, maka $\xi\cup\{\xi\}$
+juga ordinal; sebutlah ` $\xi+1$'. \cmmnt{Jika $\xi<\eta$, maka
+$\xi+1\le\eta$;} $\xi+1$ adalah ordinal terkecil yang lebih besar dari
+$\xi$. \prooflet{(\Enderton, hlm.\ 193; \Henle, 6.3;
+\Krivine, hlm.\ 15.)} Untuk setiap ordinal $\xi$, terdapat ordinal terbesar
+$\eta<\xi$, dan dalam hal ini $\xi=\eta+1$ serta kita menyebut $\xi$ suatu
+{\bf ordinal penerus}, atau $\xi=\bigcup\xi$, dan dalam hal ini kita menyebut
+$\xi$ suatu {\bf ordinal limit}.
+
+\header{2A1De}{\bf (e)} Beberapa ordinal pertama adalah $0=\emptyset$,
+$1=0+1=\{0\}=\{\emptyset\}$,
+$2=1+1=\{0,1\}=\{\emptyset,\{\emptyset\}\}$,
+$3=2+1=\{0,1,2\}$, $\ldots$. Ordinal tak hingga pertama adalah
+$\omega=\{0,1,2,\ldots\}$, yang dapat diidentifikasi dengan $\Bbb N$.
+
+\header{2A1Df}{\bf (f)} Gabungan sebarang himpunan ordinal merupakan suatu
+ordinal. \prooflet{(\Enderton, hlm.\ 193; \Henle, 6.8; \Krivine, hlm.\ 15;
+\Roitman, 3.2.19.)}
+
+\header{2A1Dg}{\bf (g)} Jika $(P,\le)$ sebarang himpunan terurut baik, maka
+terdapat tepat satu ordinal $\xi$ sedemikian sehingga $P$ isomorfik dengan
+$\xi$ sebagai himpunan terurut, dan isomorfisme urutan tersebut unik.
+\prooflet{(\Enderton, hlm.\ 187--189; \Henle, 6.13; \Halmos, \S20.)}
+
+\leader{2A1E}{Ordinal awal} Suatu {\bf ordinal awal} adalah ordinal $\kappa$
+sedemikian sehingga tidak terdapat bijeksi antara $\kappa$ dan sebarang
+anggota $\kappa$. \prooflet{(\Enderton, hlm.\ 197; \Halmos, \S25; \Henle,
+hlm.\ 34; \Krivine, hlm.\ 24; \Roitman, 5.1.10, hlm.\ 79).}
+
+\leader{2A1F}{Fakta-fakta dasar mengenai ordinal awal (a)} Semua ordinal
+berhingga, dan ordinal tak hingga pertama $\omega$, merupakan ordinal awal.
+
+\header{2A1Fb}{\bf (b)} Untuk setiap himpunan terurut baik $P$, terdapat
+tepat satu ordinal awal $\kappa$ sedemikian sehingga terdapat bijeksi antara
+$P$ dan $\kappa$.
+
+\header{2A1Fc}{\bf (c)} Untuk setiap ordinal $\xi$, terdapat ordinal awal
+terkecil yang lebih besar daripada $\xi$. \prooflet{(\Enderton, hlm.\ 195;
+\Henle, 7.2.1.)} Jika $\kappa$ suatu ordinal awal, tuliskan $\kappa^+$ untuk
+ordinal awal terkecil yang lebih besar daripada $\kappa$. Kita menuliskan
+$\omega_1$ untuk $\omega^+$, $\omega_2$ untuk $\omega_1^+$, dan seterusnya.
+
+\header{2A1Fd}{\bf (d)} Untuk setiap ordinal awal $\kappa\ge\omega$ terdapat
+bijeksi antara $\kappa\times\kappa$ dan $\kappa$; akibatnya terdapat bijeksi
+antara $\kappa$ dan $\kappa^r$ untuk setiap $r\ge 1$.
+
+\leader{2A1G}{Teorema Schr\"oder--Bernstein} Saya\cmmnt{ mengingatkan Anda
+akan hasil mendasar berikut: j}ika $X$ dan $Y$ adalah himpunan dan terdapat
+injeksi $f:X\to Y$, $g:Y\to X$, maka terdapat bijeksi $h:X\to Y$.
+\prooflet{(\Enderton, hlm.\ 147; \Halmos, \S22; \Henle, 7.4;
+\Lipschutz, hlm.\ 145; \Roitman, 5.1.2. \cmmnt{Ini juga merupakan kasus
+khusus dari 344D dalam Jilid 3.})}
+
+\leader{2A1H}{Subhimpunan terhitung dari $\Cal P\Bbb N$} \cmmnt{Hasil-hasil
+berikut akan diperlukan di bawah.
+
+\medskip
+
+}{\bf (a)} Terdapat bijeksi antara $\Cal P\Bbb N$ dan $\Bbb R$.
+\cmmnt{(\Enderton, hlm.\ 149; \Lipschutz, hlm.\ 146.)}
+
+\spheader 2A1Hb Andaikan bahwa $X$ sebarang himpunan sedemikian sehingga
+terdapat injeksi dari $X$ ke $\Cal P\Bbb N$. Misalkan $\Cal C$ adalah
+himpunan subhimpunan terhitung dari $X$. Maka terdapat surjeksi dari
+$\Cal P\Bbb N$ ke $\Cal C$. \prooflet{\Prf\ Misalkan
+$f:X\to\Cal P\Bbb N$ suatu injeksi. Tetapkan
+$f_1(x)=\{0\}\cup\{i+1:i\in f(x)\}$; maka $f_1:X\to\Cal P\Bbb N$ injektif
+dan $f_1(x)\ne\emptyset$ untuk setiap $x\in X$. Definisikan
+$g:\Cal P\Bbb N\to\Cal PX$ dengan menetapkan
+
+\Centerline{$g(A)=\{x:\exists\,n\in\Bbb N,\,f_1(x)
+=\{i:2^n(2i+1)\in A\}\}$}
+
+\noindent untuk setiap $A\subseteq\Bbb N$. Maka $g(A)$ terhitung, sebab kita
+mempunyai injeksi
+
+\Centerline{$x\mapsto\min\{n:f_1(x)=\{i:2^n(2i+1)\in A\}\}$}
+
+\noindent dari $g(A)$ ke $\Bbb N$. Jadi $g$ adalah suatu fungsi dari
+$\Cal P\Bbb N$ ke $\Cal C$. Untuk melihat bahwa $g$ surjektif, perhatikan
+bahwa $\emptyset=g(\emptyset)$, sedangkan jika $C\subseteq X$ terhitung dan
+tak kosong, terdapat surjeksi $h:\Bbb N\to C$; sekarang tetapkan
+
+\Centerline{$A=\{2^n(2i+1):n\in\Bbb N,\,i\in f_1(h(n))\}$,}
+
+\noindent dan lihat bahwa $g(A)=C$.\ \Qed}
+
+\spheader 2A1Hc Andaikan lagi bahwa $X$ adalah suatu himpunan sedemikian
+sehingga terdapat injeksi dari $X$ ke $\Cal P\Bbb N$, dan tuliskan $H$ untuk
+himpunan fungsi $h$ sedemikian sehingga $\dom h$ adalah subhimpunan terhitung
+dari $X$ dan $h$ mengambil nilai dalam $\{0,1\}$. Maka terdapat surjeksi dari
+$\Cal P\Bbb N$ ke $H$. \prooflet{\Prf\ Misalkan $\Cal C$ adalah himpunan
+subhimpunan terhitung dari $X$ dan misalkan $g:\Cal P\Bbb N\to\Cal C$ suatu
+surjeksi, seperti dalam (b). Untuk $A\subseteq\Bbb N$, tetapkan
+
+\Centerline{$g_0(A)=g(\{i:2i\in A\})$,\quad$g_1(A)=g(\{i:2i+1\in A\})$,}
+
+\noindent sehingga $g_0(A)$, $g_1(A)$ adalah subhimpunan terhitung dari $X$,
+dan $A\mapsto(g_0(A),g_1(A))$ merupakan surjeksi dari $\Cal P\Bbb N$ ke
+$\Cal C\times\Cal C$. Misalkan $h_A$ adalah fungsi dengan domain
+$g_0(A)\cup g_1(A)$ sedemikian sehingga $h_A(x)=1$ jika $x\in g_1(A)$,
+$0$ jika $x\in g_0(A)\setminus g_1(A)$. Maka $A\mapsto h_A$ adalah surjeksi
+dari $\Cal P\Bbb N$ ke $H$.\ \Qed}
+
+\leader{2A1I}{Filter} \cmmnt{Saya berhenti sejenak untuk membahas suatu
+konstruksi yang sangat berguna dalam menyelidiki ruang topologis, tetapi juga
+mempunyai kegunaan lain, dan menurut sifatnya termasuk dalam teori himpunan
+elementer (bahkan jauh lebih elementer daripada pekerjaan di atas).
+
+\header{2A1Ia}}{\bf (a)} Misalkan $X$ suatu himpunan tak kosong. Suatu
+{\bf filter} pada $X$ adalah keluarga $\Cal F$ dari subhimpunan-subhimpunan
+$X$ sedemikian sehingga
+
+\inset{$X\in\Cal F$,\quad $\emptyset\notin\Cal F$,
+
+$E\cap F\in\Cal F$ kapan pun $E$, $F\in\Cal F$,
+
+$E\in\Cal F$ kapan pun $X\supseteq E\supseteq F\in\Cal F$.}
+
+\noindent Syarat kedua mengakibatkan (dengan induksi pada $n$) bahwa
+$F_0\cap\ldots\cap F_n\in\Cal F$ kapan pun
+$F_0,\ldots,F_n\in\Cal F$.
+
+\header{2A1Ib}{\bf (b)} Misalkan $X$, $Y$ himpunan tak kosong, $\Cal F$
+suatu filter pada $X$ dan $f:D\to Y$ suatu fungsi, dengan $D\in\Cal F$.
+Maka
+
+\Centerline{$\{E:E\subseteq Y,\,f^{-1}[E]\in\Cal F\}$}
+
+\noindent adalah suatu filter pada $Y$\prooflet{ (sebab $f^{-1}[Y]=D$,
+$f^{-1}[\emptyset]=\emptyset$,
+$f^{-1}[E\cap F]=f^{-1}[E]\cap f^{-1}[F]$,
+$X\supseteq f^{-1}[E]\supseteq f^{-1}[F]$ kapan pun
+$Y\supseteq E\supseteq F$)}; saya akan menyebutnya $f[[\Cal F]]$,
+{\bf filter citra} dari $\Cal F$ di bawah $f$.
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Tentu saja terdapat suatu variabel tersembunyi dalam
+notasi ini. Biasanya dalam buku ini saya menganggap suatu fungsi $f$
+didefinisikan oleh domainnya $\dom f$ dan nilai-nilainya pada domain itu;
+yakni, fungsi tersebut ditentukan oleh grafiknya
+$\{(x,f(x)):x\in\dom f\}$, dan memang biasanya saya tidak membedakan suatu
+fungsi dari grafiknya. Ini berarti bahwa ketika saya menuliskan
+`$f:D\to Y$ adalah suatu fungsi', kelas $D=\dom f$ dapat dipulihkan dari
+fungsi tersebut, tetapi kelas $Y$ tidak; yang saya janjikan hanyalah bahwa
+$Y$ memuat kelas nilai $f[D]$ dari $f$. Sekarang, dalam notasi
+$f[[\Cal F]]$ di atas, kita memang perlu mengetahui himpunan $Y$ yang
+menjadi tempat filter itu, walaupun hal ini tidak dapat diketahui dari
+$f$ dan $\Cal F$. Jadi Anda harus selalu menyimpulkannya dari konteks.
+}
+
+\leader{2A1J}{Aksioma Pilihan}\cmmnt{ Sekarang saya sampai pada paruh kedua
+bagian ini, tempat saya membahas konsep dan teorema yang bergantung pada
+Aksioma Pilihan.} Izinkan saya mengingatkan Anda akan pernyataan aksioma ini:
+
+\inset{\hskip-20pt (AC) `setiap kali $I$ merupakan suatu himpunan dan
+$\familyiI{X_i}$ suatu keluarga himpunan tak kosong yang diindeks oleh $I$,
+terdapat suatu fungsi $f$, dengan domain $I$, sedemikian sehingga
+$f(i)\in X_i$ untuk setiap $i\in I$'.}
+
+\noindent Fungsi $f$ adalah suatu {\bf fungsi pilihan}\cmmnt{; fungsi ini
+memilih satu anggota dari setiap anggota keluarga himpunan tak kosong $X_i$
+yang diberikan}.
+
+\cmmnt{Saya percaya bahwa sikap seseorang terhadap prinsip ini merupakan
+perkara pilihan pribadi. Prinsip ini adalah landasan yang mutlak diperlukan
+bagi bagian-bagian sangat besar dari matematika murni abad kedua puluh,
+termasuk bagian yang cukup besar dari jilid ini; tetapi terdapat pula bidang-
+bidang penting tempat prinsip-prinsip yang justru bertentangan dengannya
+dapat digunakan dengan hasil mencolok, dan---menurut pandangan saya---mengarah
+kepada matematika yang sama sahnya. (Saya akan menguraikan salah satunya dalam
+\S567 dari Jilid 5.)
+Saat ini, jika diukur menurut volumenya, lebih banyak kegiatan matematika
+mutakhir bergantung pada penegasan aksioma pilihan daripada pada seluruh
+pesaingnya digabungkan; tetapi tempat ditemukannya gagasan paling penting
+atau menggairahkan merupakan perkara penilaian dan selera. Untuk jilid ini
+saya mengikuti praktik baku dalam analisis abstrak abad kedua puluh, dengan
+menggunakan aksioma pilihan kapan pun diperlukan.}
+
+\vleader{60pt}{2A1K}{Teorema Pengurutan Baik Zermelo (a)} Aksioma Pilihan
+ekuivalen dengan setiap pernyataan
+
+\inset{`untuk setiap himpunan $X$ terdapat suatu pengurutan baik dari $X$',}
+
+\inset{`untuk setiap himpunan $X$ terdapat bijeksi antara $X$ dan suatu
+ordinal',}
+
+\inset{`untuk setiap himpunan $X$ terdapat tepat satu ordinal awal $\kappa$
+sedemikian sehingga terdapat bijeksi antara $X$ dan $\kappa$.'}
+
+\prooflet{\noindent(\Enderton, hlm.\ 196 dan seterusnya; \Halmos, \S17;
+\Henle, 9.1--9.3; \Krivine, hlm.\ 20; \Lipschutz, 12.1; \Roitman, 3.6.38.)}
+
+\header{2A1Kb}{\bf (b)} Dengan mengasumsikan aksioma pilihan,\cmmnt{
+seperti yang saya lakukan hampir di seluruh risalah ini,} saya menuliskan
+$\#(X)$ untuk ordinal awal $\kappa$ sedemikian sehingga terdapat bijeksi
+antara $\kappa$ dan $X$; saya menyebutnya {\bf kardinal} dari $X$.
+
+\leader{2A1L}{Akibat-akibat mendasar Aksioma Pilihan (a)} Untuk setiap dua
+himpunan $X$ dan $Y$, terdapat bijeksi antara $X$ dan $Y$ jika dan hanya jika
+$\#(X)=\#(Y)$. Secara lebih umum, terdapat injeksi dari $X$ ke $Y$ jika dan
+hanya jika $\#(X)\le\#(Y)$, dan terdapat surjeksi dari $X$ ke seluruh $Y$
+jika dan hanya jika $\#(X)\ge\#(Y)>0$ atau $\#(X)=\#(Y)=0$.
+
+\spheader 2A1Lb\cmmnt{ Khususnya,} $\#(\Cal P\Bbb N)=\#(\Bbb R)$;
+tuliskan $\frak c$ untuk nilai bersama ini, yakni {\bf kardinal kontinum}.
+\cmmnt{Teorema Cantor bahwa $\Cal P\Bbb N$ dan $\Bbb R$ tak terhitung
+menjadi hasil $\omega<\frak c$, yaitu,} $\omega_1\le\frak c$.
+
+\header{2A1Lc}{\bf (c)} Jika $X$ sebarang himpunan tak hingga, dan $r\ge 1$,
+maka terdapat bijeksi antara $X^r$ dan $X$. \prooflet{(\Enderton, hlm.\ 162;
+\Halmos, \S24.)} \cmmnt{(Saya mencatat bahwa kita memerlukan suatu bentuk
+aksioma pilihan untuk membuktikan hasil ini pada tingkat keumuman tersebut.
+Namun tentu saja, untuk kebanyakan himpunan tak hingga yang muncul secara
+alami dalam matematika---himpunan seperti $\Bbb N$ dan $\Cal P\Bbb R$---
+hasilnya mudah dibuktikan tanpa mengacu pada aksioma pilihan.)}
+
+\header{2A1Ld}{\bf (d)} Andaikan $\kappa$ suatu kardinal tak hingga. Jika
+$I$ adalah himpunan dengan kardinal paling besar $\kappa$ dan
+$\langle A_i\rangle_{i\in I}$ merupakan suatu keluarga himpunan dengan
+$\#(A_i)\le\kappa$ untuk setiap $i\in I$, maka
+$\#(\bigcup_{i\in I}A_i)\le\kappa$. Akibatnya
+$\#(\bigcup\Cal A)\le\kappa$ kapan pun $\Cal A$ adalah keluarga himpunan
+sedemikian sehingga $\#(\Cal A)\le\kappa$ dan $\#(A)\le\kappa$ untuk setiap
+$A\in\Cal A$. \cmmnt{Khususnya,} $\omega_1$ tidak dapat dinyatakan sebagai
+gabungan terhitung himpunan-himpunan terhitung, dan $\omega_2$ tidak dapat
+dinyatakan sebagai gabungan terhitung himpunan-himpunan dengan kardinal
+paling besar $\omega_1$.
+
+\header{2A1Le}{\bf (e)} Sekarang kita dapat menyatakan ulang 2A1Hc sebagai:
+jika $\#(X)\le\frak c$, maka $\#(H)\le\frak c$, dengan $H$ adalah himpunan
+fungsi dari suatu subhimpunan terhitung dari $X$ ke $\{0,1\}$.
+\prooflet{\Prf\ Sebab kita mempunyai injeksi dari $X$ ke $\Cal P\Bbb N$,
+dan karena itu suatu surjeksi dari $\Cal P\Bbb N$ ke $H$.\ \Qed}
+
+\spheader 2A1Lf Setiap kelas tak kosong dari kardinal mempunyai anggota
+terkecil\cmmnt{ (menurut 2A1Dc)}.
+
+\leader{2A1M}{Lema Zorn}\cmmnt{ Dalam 2A1K saya menguraikan prinsip
+pengurutan baik.} Sekarang saya sampai pada proposisi lain yang ekuivalen
+dengan aksioma pilihan:
+
+\inset{`Misalkan $(P,\le)$ suatu himpunan terurut parsial tak kosong
+sedemikian sehingga setiap subhimpunan terurut total tak kosong dari $P$
+mempunyai batas atas dalam $P$. Maka $P$ mempunyai suatu elemen maksimal.'}
+
+\noindent Inilah {\bf Lema Zorn}. \prooflet{Untuk bukti bahwa aksioma pilihan
+mengakibatkan, dan diakibatkan oleh, Lema Zorn, lihat \Enderton, hlm.\ 151;
+\Halmos, \S16; \Henle, 9.1--9.3; \Roitman, 3.6.38.}
+
+\leader{2A1N}{Ultrafilter} Suatu filter $\Cal F$ pada suatu himpunan $X$
+adalah {\bf ultrafilter} jika untuk setiap $A\subseteq X$ berlaku
+$A\in\Cal F$ atau $X\setminus A\in\Cal F$.
+
+Jika $\Cal F$ adalah ultrafilter pada $X$ dan $f:D\to Y$ suatu fungsi,
+dengan $D\in\Cal F$, maka $f[[\Cal F]]$ adalah ultrafilter pada
+$Y$\prooflet{ (sebab $f^{-1}[Y\setminus A]=D\setminus f^{-1}[A]$ untuk
+setiap $A\subseteq Y$)}.
+
+Satu jenis ultrafilter dapat diuraikan dengan mudah: jika $x$ adalah
+sebarang titik dari suatu himpunan $X$, maka
+$\Cal F=\{F:x\in F\subseteq X\}$ adalah ultrafilter pada $X$.
+(\prooflet{Anda hanya perlu membaca definisi-definisinya. }Ultrafilter jenis
+ini disebut {\bf ultrafilter prinsipal}.)
+\cmmnt{Tetapi tidaklah jelas bahwa ada ultrafilter lain, dan memang tidak
+mungkin membuktikan keberadaannya tanpa menggunakan suatu bentuk kuat dari
+aksioma pilihan, sebagai berikut.}
+
+\leader{2A1O}{Teorema Ultrafilter}\cmmnt{ Sebagai suatu contoh penggunaan
+Lema Zorn yang akan sangat berharga dalam mempelajari ruang topologis kompak
+(2A3N {\it dan seterusnya}, serta \S247), saya memberikan hasil berikut.
+
+\medskip
+
+\noindent{\bf Teorema}} Misalkan $X$ sebarang himpunan tak kosong, dan
+$\Cal F$ suatu filter pada $X$. Maka terdapat suatu ultrafilter $\Cal H$
+pada $X$ sedemikian sehingga $\Cal F\subseteq\Cal H$.
+
+\proof{ (Bandingkan \Henle, 9.4; \Roitman, 3.6.37.) Misalkan $\frak P$
+adalah himpunan semua filter pada $X$ yang memuat $\Cal F$, dan urutkan
+$\frak P$ menurut inklusi, sehingga untuk $\Cal G_1$,
+$\Cal G_2\in\frak P$, berlaku $\Cal G_1\le \Cal G_2$ dalam $\frak P$ jika
+dan hanya jika $\Cal G_1\subseteq\Cal G_2$. Mudah dilihat bahwa $\frak P$
+merupakan himpunan terurut parsial, dan himpunan itu tak kosong karena
+$\Cal F\in\frak P$. Jika $\frak Q$ sebarang subhimpunan terurut total tak
+kosong dari $\frak P$, maka
+$\Cal H_{\frak Q}=\bigcup\frak Q\in\frak P$. \Prf\ Tentu saja
+$\Cal H_{\frak Q}$ merupakan suatu keluarga subhimpunan $X$. (i) Ambil
+sebarang $\Cal G_0\in\frak Q$; maka
+$X\in\Cal G_0\subseteq\Cal H_{\frak Q}$. Jika $\Cal G\in\frak Q$, maka
+$\Cal G$ suatu filter, sehingga $\emptyset\notin\Cal G$; karena itu
+$\emptyset\notin\Cal H_{\frak Q}$. (ii) Jika $E$,
+$F\in\Cal H_{\frak Q}$, maka terdapat $\Cal G_1$, $\Cal G_2\in\frak Q$
+sedemikian sehingga $E\in\Cal G_1$ dan $F\in\Cal G_2$. Karena $\frak Q$
+terurut total, berlaku $\Cal G_1\subseteq\Cal G_2$ atau
+$\Cal G_2\subseteq\Cal G_1$. Dalam kedua kasus,
+$\Cal G=\Cal G_1\cup\Cal G_2\in\frak Q$. Sekarang $\Cal G$ adalah suatu
+filter yang memuat $E$ dan $F$, sehingga memuat $E\cap F$, dan
+$E\cap F\in\Cal H_{\frak Q}$. (iii) Jika
+$X\supseteq E\supseteq F\in\Cal H_{\frak Q}$, terdapat
+$\Cal G\in\frak Q$ sedemikian sehingga $F\in\Cal G$; dan
+$E\in\Cal G\subseteq\Cal H_{\frak Q}$. Ini menunjukkan bahwa
+$\Cal H_{\frak Q}$ adalah suatu filter pada $X$. (iv) Akhirnya,
+$\Cal H_{\frak Q}\supseteq\Cal G_0\supseteq\Cal F$, sehingga
+$\Cal H_{\frak Q}\in\frak P$.\ \QeD\ Sekarang $\Cal H_{\frak Q}$ jelas
+merupakan batas atas bagi $\frak Q$ dalam $\frak P$.
+
+Karena itu kita dapat menerapkan Lema Zorn untuk menemukan suatu elemen
+maksimal $\Cal H$ dari $\frak P$. $\Cal H$ ini tentu merupakan filter pada
+$X$ yang memuat $\Cal F$.
+
+Sekarang misalkan $A\subseteq X$ sedemikian sehingga $A\notin\Cal H$.
+Pertimbangkan
+
+\Centerline{$\Cal H_1=\{E:E\subseteq X,\,E\cup A\in\Cal H\}$.}
+
+\noindent Ini merupakan suatu filter pada $X$. \Prf\ Tentu saja ini adalah
+suatu keluarga subhimpunan $X$. (i) $X\cup A=X\in\Cal H$, sehingga
+$X\in\Cal H_1$. $\emptyset\cup A=A\notin\Cal H$, sehingga
+$\emptyset\notin\Cal H_1$. (ii) Jika $E$, $F\in\Cal H_1$, maka
+
+\Centerline{$(E\cap F)\cup A=(E\cup A)\cap(F\cup A)
+\in\Cal H$,}
+
+\noindent sehingga $E\cap F\in\Cal H_1$. (iii) Jika
+$X\supseteq E\supseteq F\in\Cal H_1$, maka
+$E\cup A\supseteq F\cup A\in\Cal H$, sehingga $E\cup A\in\Cal H$ dan
+$E\in\Cal H_1$.\ \QeD\ Juga $\Cal H_1\supseteq\Cal H$, sehingga
+$\Cal H_1\in\frak P$. Tetapi $\Cal H$ merupakan elemen maksimal dari
+$\frak P$, sehingga $\Cal H_1=\Cal H$. Karena
+$(X\setminus A)\cup A=X\in\Cal H$, maka $X\setminus A\in\Cal H_1$ dan
+$X\setminus A\in\Cal H$.
+
+Karena $A$ sebarang, $\Cal H$ adalah suatu ultrafilter, sebagaimana diminta.
+}%end of proof of 2A1O
+
+
+
+\leader{2A1P}{}\cmmnt{ Sekarang saya sampai pada suatu hasil dari
+kombinatorika infinitari yang saya buktikan secara terperinci, bukan karena
+hasil ini tidak dapat ditemukan dalam banyak buku ajar, melainkan karena
+biasanya hasil tersebut diberikan pada tingkat keumuman yang jauh lebih
+besar, sampai-sampai memahami mengapa teorema yang dinyatakan mencakup hasil
+sekarang mungkin lebih sulit daripada membuktikan hasil terakhir ini dari
+prinsip-prinsip pertama.
+
+\medskip
+
+\noindent}{\bf Teorema} (a) Misalkan
+$\langle K_{\alpha}\rangle_{\alpha\in A}$ suatu keluarga himpunan terhitung,
+dengan $\#(A)$ lebih besar daripada $\frak c$, kardinal kontinum.
+Maka terdapat suatu himpunan $M$, dengan kardinal paling besar $\frak c$,
+dan suatu himpunan $B\subseteq A$, dengan kardinal lebih besar
+daripada $\frak c$, sedemikian sehingga
+$K_{\alpha}\cap K_{\beta}\subseteq M$ kapan pun $\alpha$, $\beta$ adalah
+anggota-anggota berbeda dari $B$.
+
+(b) Misalkan $I$ suatu himpunan, dan
+$\langle f_{\alpha}\rangle_{\alpha\in A}$ suatu keluarga dalam
+$\{0,1\}^I$, yaitu himpunan fungsi dari $I$ ke $\{0,1\}$, dengan
+$\#(A)>\frak c$. Jika $\langle K_{\alpha}\rangle_{\alpha\in A}$ sebarang
+keluarga subhimpunan terhitung dari $I$, maka terdapat suatu himpunan
+$B\subseteq A$, dengan kardinal lebih besar daripada $\frak c$, sedemikian
+sehingga $f_{\alpha}$ dan $f_{\beta}$ sama pada
+$K_{\alpha}\cap K_{\beta}$ untuk semua $\alpha$, $\beta\in B$.
+
+(c) Khususnya, di bawah syarat-syarat (b), terdapat $\alpha$,
+$\beta\in A$ yang berbeda sedemikian sehingga $f_{\alpha}$ dan $f_{\beta}$
+sama pada $K_{\alpha}\cap K_{\beta}$.
+
+\proof{{\bf (a)} Pilih secara induktif suatu keluarga
+$\langle M_{\xi}\rangle_{\xi<\omega_1}$ dari himpunan-himpunan menurut aturan
+
+\inset{jika terdapat suatu himpunan $N$ sedemikian sehingga
+
+\inset{($*$) $N$ saling lepas dari $\bigcup_{\eta<\xi}M_{\eta}$,
+$\#(N)\le\frak c$ dan
+%
+%\qquad\qquad
+$\#(\{\alpha:\alpha\in A,\,K_{\alpha}\cap N=\emptyset\})
+  \le\frak c$,}
+
+\noindent pilihlah himpunan seperti itu sebagai $M_{\xi}$;
+
+jika tidak, tetapkan $M_{\xi}=\emptyset$.}
+
+\noindent Setelah $M_{\xi}$ dipilih untuk setiap $\xi<\omega_1$, tetapkan
+$M=\bigcup_{\xi<\omega_1}M_{\xi}$. Aturan tersebut memastikan bahwa
+$\ofamily{\xi}{\omega_1}{M_{\xi}}$ saling lepas dan bahwa
+$\#(M_{\xi})\le\frak c$ untuk setiap $\xi<\omega_1$, sedangkan
+$\omega_1\le\frak c$, sehingga $\#(M)\le\frak c$.
+
+Misalkan $\frak P$ adalah keluarga himpunan $P\subseteq A$ sedemikian sehingga
+$K_{\alpha}\cap K_{\beta}\subseteq M$ untuk semua $\alpha$, $\beta\in P$
+yang berbeda. Urutkan $\frak P$ menurut inklusi, sehingga himpunan itu
+merupakan himpunan terurut parsial. Jika $\frak Q\subseteq\frak P$ terurut
+total, maka $\bigcup\frak Q\in\frak P$.
+\Prf\ Jika $\alpha$, $\beta$ adalah anggota berbeda dari $\bigcup\frak Q$,
+terdapat $Q_1$, $Q_2\in\frak Q$ sedemikian sehingga $\alpha\in Q_1$,
+$\beta\in Q_2$; sekarang $P=Q_1\cup Q_2$ sama dengan salah satu dari $Q_1$,
+$Q_2$, dan dalam kedua kasus termasuk dalam $\frak P$ serta memuat baik
+$\alpha$ maupun $\beta$, sehingga
+$K_{\alpha}\cap K_{\beta}\subseteq M$.\ \QeD\ Menurut Lema Zorn,
+$\frak P$ mempunyai suatu elemen maksimal $B$, dan tentu saja kita mempunyai
+$K_{\alpha}\cap K_{\beta}\subseteq M$ untuk semua $\alpha$,
+$\beta\in B$ yang berbeda.
+
+\Quer\ Andaikan, jika mungkin, bahwa $\#(B)\le\frak c$. Tetapkan
+$N=\bigcup_{\alpha\in B}K_{\alpha}\setminus M$. Maka $N$ mempunyai kardinal
+paling besar $\frak c$, karena termuat dalam gabungan paling banyak
+$\frak c$ himpunan terhitung. Untuk setiap $\gamma\in A\setminus B$,
+$B\cup\{\gamma\}\notin\frak P$, sehingga harus terdapat suatu $\alpha\in B$
+sedemikian sehingga $K_{\alpha}\cap K_{\gamma}\not\subseteq M$; yaitu,
+$K_{\gamma}\cap N\ne\emptyset$. Jadi
+$\{\gamma:K_{\gamma}\cap N=\emptyset\}\subseteq B$ mempunyai kardinal
+paling besar $\frak c$. Tetapi ini berarti bahwa dalam aturan untuk memilih
+$M_{\xi}$, selalu terdapat suatu $N$ yang memenuhi syarat ($*$), dan karena
+itu $M_{\xi}$ juga memenuhinya. Jadi
+$C_{\xi}=\{\alpha:K_{\alpha}\cap M_{\xi}=\emptyset\}$ mempunyai kardinal
+paling besar $\frak c$ untuk setiap $\xi<\omega_1$. Maka
+$C=\bigcup_{\xi<\omega_1}C_{\xi}$ juga demikian. Tetapi hipotesis semula
+adalah $\#(A)>\frak c$, sehingga terdapat suatu $\alpha\in A\setminus C$.
+Dalam hal ini, $K_{\alpha}\cap M_{\xi}\ne\emptyset$ untuk setiap
+$\xi<\omega_1$. Namun ini berarti bahwa kita mempunyai suatu surjeksi
+$\phi:K_{\alpha}\cap M\to\omega_1$ yang diberikan dengan menetapkan
+
+\Centerline{$\phi(i)=\xi$ jika $i\in K_{\alpha}\cap M_{\xi}$.}
+
+\noindent Karena $\#(K_{\alpha})\le\omega<\omega_1$, ini mustahil.\ \Bang
+
+Karena itu $\#(B)>\frak c$ dan kita telah menemukan pasangan $M$, $B$ yang
+sesuai.
+
+\medskip
+
+{\bf (b)} Menurut (a), kita dapat menemukan suatu himpunan $M$, dengan
+kardinal paling besar $\frak c$, dan suatu himpunan $B_0\subseteq A$, dengan
+kardinal lebih besar daripada $\frak c$, sedemikian sehingga
+$K_{\alpha}\cap K_{\beta}\subseteq M$ untuk semua $\alpha$,
+$\beta\in B_0$ yang berbeda. Misalkan $H$ adalah himpunan fungsi dari
+subhimpunan-subhimpunan terhitung dari $M$ ke $\{0,1\}$; maka
+$f'_{\alpha}=f_{\alpha}\restr(K_{\alpha}\cap M)\in H$ untuk setiap
+$\alpha\in B_0$. Sekarang
+$B_0=\bigcup_{h\in H}\{\alpha:\alpha\in B_0,\,f'_{\alpha}=h\}$ mempunyai
+kardinal lebih besar daripada $\frak c$, sedangkan $\#(H)\le\frak c$
+(2A1Le), sehingga harus terdapat suatu $h\in H$ sedemikian sehingga
+$B=\{\alpha:\alpha\in B_0,\,f'_{\alpha}=h\}$ mempunyai kardinal lebih besar
+daripada $\frak c$.
+
+Jika $\alpha$, $\beta$ adalah anggota berbeda dari $B$, maka
+$K_{\alpha}\cap K_{\beta}\subseteq M$, sebab $\alpha$, $\beta\in B_0$;
+tetapi ini berarti bahwa
+
+\Centerline{$f_{\alpha}\restr K_{\alpha}\cap K_{\beta}
+=h\restr K_{\alpha}\cap K_{\beta}
+=f_{\beta}\restr K_{\alpha}\cap K_{\beta}$.}
+
+\noindent Jadi $B$ mempunyai sifat yang diperlukan. (Tentu saja
+$f_{\alpha}$ dan $f_{\beta}$ sama pada $K_{\alpha}\cap K_{\beta}$ jika
+$\alpha=\beta$.)
+
+\medskip
+
+{\bf (c)} langsung mengikuti.
+}%end of proof of 2A1P
+%elementary submodel argument
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Hasil yang kita perlukan dalam jilid ini (dalam 216E)
+adalah bagian (c) di atas. Ada bukti-bukti lain untuk ini, mungkin sedikit
+lebih sederhana; tetapi hasil yang lebih kuat dalam bagian (b) akan berguna
+dalam Jilid 3.
+}%end of comment
+
+\discrpage

@@ -1,0 +1,451 @@
+\frfilename{mt2a5.tex}
+\versiondate{13.11.07}
+\copyrightdate{1996}
+
+\def\chaptername{Lampiran}
+\def\sectionname{Ruang topologis linear}
+
+\newsection{2A5}
+
+Tujuan utama \S2A3 sesungguhnya adalah mengkaji topologi-topologi
+tertentu pada ruang-ruang linear dalam Bab 24. Di sini saya memberikan
+beberapa bagian dari teori umumnya.
+
+\leader{2A5A}{Topologi \dvrocolon{ruang linear}}\cmmnt{ Salah satu hal
+yang tidak dibahas secara terperinci dalam setiap pengantar analisis
+fungsional adalah konsep umum ruang topologis linear. Gagasan-gagasan
+yang diperlukan untuk pembahasan \S245 dapat dinyatakan dengan cukup
+ringkas.
+
+\medskip
+
+\noindent}{\bf Definisi} Sebuah {\bf ruang topologis linear} atau
+{\bf ruang vektor topologis} atas $\RoverC$ adalah ruang linear $U$
+atas $\RoverC$ yang dilengkapi dengan topologi $\frak T$ sedemikian
+sehingga kedua peta
+
+\Centerline{$(u,v)\mapsto u+v:U\times U\to U$,}
+
+\Centerline{$(\alpha,u)\mapsto \alpha u:\RoverC\times U\to U$}
+
+\noindent kontinu, dengan ruang produk $U\times U$ dan
+$\RoverC\times U$ diberi topologi produknya\cmmnt{ (2A3T)}. Diberikan
+ruang linear $U$, sebuah topologi pada $U$ yang memenuhi syarat-syarat
+di atas disebut {\bf topologi ruang linear}. Perhatikan bahwa
+
+\Centerline{$(u,v)\mapsto u-v=u+(-1)v:U\times U\to U$}
+
+\noindent juga akan kontinu.
+
+\leader{2A5B}{}\cmmnt{ Semua ruang topologis linear yang kita perlukan
+ternyata dapat disajikan dengan mudah melalui rumusan berikut.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $U$ adalah ruang linear atas
+$\RoverC$, dan $\Tau$ adalah keluarga fungsional
+$\tau:U\to\coint{0,\infty}$ sedemikian sehingga
+
+\quad (i) $\tau(u+v)\le\tau(u)+\tau(v)$ untuk semua $u$, $v\in U$,
+$\tau\in\Tau$;
+
+\quad (ii) $\tau(\alpha u)\le\tau(u)$ jika $u\in U$, $|\alpha|\le 1$,
+$\tau\in\Tau$;
+
+\quad (iii) $\lim_{\alpha\to 0}\tau(\alpha u)=0$ untuk setiap $u\in U$,
+$\tau\in \Tau$.
+
+\noindent Untuk $\tau\in\Tau$, definisikan
+$\rho_{\tau}:U\times U\to\coint{0,\infty}$ dengan menetapkan
+$\rho_{\tau}(u,v)=\tau(u-v)$ untuk semua $u$, $v\in U$. Maka setiap
+$\rho_{\tau}$ adalah pseudometrik pada $U$, dan topologi yang
+didefinisikan oleh $\Rho=\{\rho_{\tau}:\tau\in\Tau\}$ menjadikan $U$
+ruang topologis linear.
+
+\proof{{\bf (a)} Patut segera dicatat bahwa
+
+\Centerline{$\tau(0)=\lim_{\alpha\to 0}\tau(\alpha 0)=0$}
+
+\noindent untuk setiap $\tau\in\Tau$.
+
+\medskip
+
+{\bf (b)} Untuk melihat bahwa setiap $\rho_{\tau}$ adalah
+pseudometrik, gunakan argumen berikut.
+
+\medskip
+
+\quad{\bf (i)} $\rho_{\tau}$ mengambil nilai dalam
+$\coint{0,\infty}$ karena $\tau$ juga demikian.
+
+\medskip
+
+\quad{\bf (ii)} Jika $u$, $v$, $w\in U$, maka
+
+$$\eqalign{\rho_{\tau}(u,w)
+&=\tau(u-w)
+=\tau((u-v)+(v-w))\cr
+&\le\tau(u-v)+\tau(v-w)
+=\rho_{\tau}(u,v)+\rho_{\tau}(v,w).\cr}$$
+
+\medskip
+
+\quad{\bf (iii)} Jika $u$, $v\in U$, maka
+
+\Centerline{$\rho_{\tau}(v,u)=\tau(v-u)
+=\tau(-1(u-v))\le\tau(u-v)=\rho_{\tau}(u,v)$,}
+
+\noindent dan secara serupa
+$\rho_{\tau}(u,v)\le\rho_{\tau}(v,u)$, sehingga keduanya sama.
+
+\medskip
+
+\quad{\bf (iv)} Jika $u\in U$, maka
+$\rho_{\tau}(u,u)=\tau(0)=0$.
+
+\medskip
+
+{\bf (c)} Misalkan $\frak T$ adalah topologi pada $U$ yang
+didefinisikan oleh $\{\rho_{\tau}:\tau\in\Tau\}$ (2A3F).
+
+\medskip
+
+\quad{\bf (i)} Penjumlahan kontinu karena, diberikan $\tau\in\Tau$,
+kita mempunyai
+
+$$\eqalign{\rho_{\tau}(u'+v',u+v)
+&=\tau((u'+v')-(u+v))\cr
+&\le\tau(u'-u)+\tau(v'-v)
+\le\rho_{\tau}(u',u)+\rho_{\tau}(v',v)\cr}$$
+
+\noindent untuk semua $u$, $v$, $u'$, $v'\in U$. Ini berarti bahwa,
+diberikan $\epsilon>0$ dan $(u,v)\in U\times U$, kita akan mempunyai
+
+\Centerline{$\rho_{\tau}(u'+v',u+v)\le\epsilon$ apabila
+$(u',v')\in
+U((u,v);\tilde\rho_{\tau},\bar\rho_{\tau};\Bover{\epsilon}2)$,}
+
+\noindent dengan menggunakan bahasa 2A3Tb. Karena
+$\tilde\rho_{\tau}$, $\bar\rho_{\tau}$ adalah dua dari pseudometrik
+yang mendefinisikan topologi produk $U\times U$ (2A3Tb), maka
+$(u,v)\mapsto u+v$ kontinu menurut kriteria 2A3H.
+
+\medskip
+
+\quad{\bf (ii)} Perkalian skalar kontinu karena jika $u\in U$ dan
+$n\in\Bbb N$, maka $\tau(nu)\le n\tau(u)$ untuk setiap
+$\tau\in\Tau$ (gunakan induksi pada $n$). Akibatnya, jika
+$\tau\in\Tau$,
+
+\Centerline{$\tau(\alpha u)\le n\tau(\Bover{\alpha}{n}u)\le n\tau(u)$}
+
+\noindent apabila $|\alpha|<n\in\Bbb N$ dan $\tau\in\Tau$. Sekarang,
+diberikan $(\alpha,u)\in \RoverC\times U$ dan $\epsilon>0$, ambil
+$n>|\alpha|$ dan $\delta>0$ sedemikian sehingga
+$\delta\le\min(n-|\alpha|,\bover{\epsilon}{2n})$ dan
+$\tau(\gamma u)\le\bover{\epsilon}2$ apabila
+$|\gamma|\le\delta$; maka
+
+$$\eqalign{\rho_{\tau}(\alpha'u',\alpha u)
+&=\tau(\alpha'u'-\alpha u)
+\le\tau(\alpha'(u'-u))+\tau((\alpha'-\alpha)u)\cr
+&\le n\tau(u'-u)+\tau((\alpha'-\alpha)u)\cr}$$
+
+\noindent apabila $u'\in U$, $\alpha'\in\RoverC$, dan
+$|\alpha'|<n\in\Bbb N$. Karena itu, dengan menetapkan
+$\theta(\alpha',\alpha)=|\alpha'-\alpha|$ untuk $\alpha'$,
+$\alpha\in\RoverC$,
+
+\Centerline{$\rho_{\tau}(\alpha'u',\alpha u)
+\le n\delta+\Bover{\epsilon}2\le\epsilon$}
+
+\noindent apabila
+
+\Centerline{$(\alpha',u')\in
+U((\alpha,u);\tilde\theta,\bar\rho_{\tau};\delta)$.}
+
+\noindent Karena $\tilde\theta$ dan $\bar\rho_{\tau}$ termasuk di
+antara pseudometrik yang mendefinisikan topologi
+$\RoverC\times U$, peta $(\alpha,u)\mapsto\alpha u$ memenuhi kriteria
+2A3H dan kontinu.
+
+Jadi $\frak T$ adalah topologi ruang linear pada $U$.
+}%end of proof of  2A5B
+
+\medskip
+
+\noindent{\bf Catatan}\dvAnew{2013}
+Fungsional yang memenuhi syarat (i)--(iii) di atas disebut
+{\bf F-seminorma}; sebuah F-seminorma $\tau$ sedemikian sehingga
+$\tau(u)\ne 0$ untuk setiap $u$ tak nol disebut {\bf F-norma}.
+
+\leader{*2A5C}{}\cmmnt{ Kita tidak memerlukannya untuk Bab 24, tetapi
+hasil berikut patut diketahui.
+
+\medskip
+
+\noindent}{\bf Teorema} Misalkan $U$ adalah ruang linear dan
+$\frak T$ topologi ruang linear pada $U$.
+
+(a) Terdapat keluarga F-seminorma $\Tau$ yang mendefinisikan
+$\frak T$ seperti dalam 2A5B.
+
+(b) Jika $\frak T$ dapat dimetrikkan, kita dapat mengambil $\Tau$
+yang hanya terdiri atas satu fungsional.
+
+\proof{{\bf (a)} {\smc Kelley \& Namioka 76}, hlm.\ 50.
+
+\medskip
+
+{\bf (b)} {\smc K\"othe 69}, \S15.11.
+}%end of proof of 2A5C
+
+\vleader{72pt}{2A5D}{Definisi} Misalkan $U$ adalah ruang linear atas
+$\RoverC$. Sebuah {\bf seminorma} pada $U$ adalah fungsional
+$\tau:U\to\coint{0,\infty}$ sedemikian sehingga
+
+\quad (i) $\tau(u+v)\le\tau(u)+\tau(v)$ untuk semua $u$, $v\in U$;
+
+\quad (ii) $\tau(\alpha u)=|\alpha|\tau(u)$ jika $u\in U$,
+$\alpha\in\RoverC$.
+
+\cmmnt{\noindent Perhatikan bahwa norma selalu merupakan seminorma,
+dan seminorma selalu merupakan F-seminorma. Khususnya, pengaitan suatu
+metrik dengan norma (2A4Bb) merupakan kasus khusus dari 2A5B.}
+
+\leader{2A5E}{Himpunan konveks (a)} Misalkan $U$ adalah ruang linear
+atas $\RoverC$. Suatu himpunan bagian $C$ dari $U$ disebut
+{\bf konveks} jika $\alpha u+(1-\alpha)v\in C$ apabila $u$, $v\in C$
+dan $\alpha\in[0,1]$. Irisan sebarang keluarga himpunan konveks adalah
+konveks, sehingga untuk setiap himpunan $A\subseteq U$ terdapat
+himpunan konveks terkecil yang memuat $A$; himpunan ini\cmmnt{ tepat}
+merupakan himpunan vektor yang dapat dinyatakan sebagai
+$\sum_{i=0}^n\alpha_iu_i$, dengan
+$u_0,\ldots,u_n\in A$, $\alpha_0,\ldots,\alpha_n\in[0,1]$, dan
+$\sum_{i=0}^n\alpha_i=1$\prooflet{ ({\smc Bourbaki 87}, II.2.3)};
+himpunan ini disebut {\bf selubung konveks} dari $A$. Jika
+$C$, $C'\subseteq U$ konveks, dan $\alpha\in\RoverC$, maka
+$\alpha C$ dan $C+C'$ konveks\dvAnew{2012}.
+
+\spheader 2A5Eb Jika $U$ adalah ruang topologis linear, penutupan
+sebarang himpunan konveks adalah konveks\prooflet{
+({\smc Bourbaki 87}, II.2.6)}. Akibatnya, untuk setiap $A\subseteq U$,
+penutupan selubung konveks dari $A$ merupakan himpunan konveks tertutup
+terkecil yang memuat $A$; himpunan ini disebut
+{\bf selubung konveks tertutup} dari $A$.
+
+\spheader 2A5Ec Untuk rujukan mendatang, saya mencatat bahwa dalam
+ruang topologis linear, penutupan sebarang subruang linear adalah
+subruang linear.
+\prooflet{({\smc Bourbaki 87}, I.1.3; {\smc K\"othe 69}, \S15.2.
+Bandingkan 2A4Cb.)}
+
+\leader{2A5F}{Kelengkapan dalam ruang topologis
+\dvrocolon{linear}}\cmmnt{ Dalam ruang bernorma, kelengkapan dapat
+diuraikan melalui barisan Cauchy (2A4D). Dalam ruang topologis linear
+umum, hal ini tidak memadai. Teori kelengkapan yang sebenarnya
+memerlukan konsep ruang seragam (lihat \S3A4 dalam jilid berikutnya,
+atau {\smc Kelley 55}, bab 6; {\smc Engelking 89}, \S8.1;
+{\smc Bourbaki 66}, bab II); saya tidak akan menguraikannya di sini,
+tetapi akan memberikan versi yang disesuaikan dengan ruang linear.
+Saya menyebutkan hal ini hanya karena saya berharap suatu hari Anda
+akan sampai pada teori umum (dalam Jilid 3 risalah ini, jika tidak lebih
+awal), dan Anda perlu menyadari bahwa kasus khusus yang diuraikan di
+sini memberikan penekanan yang menyesatkan pada beberapa bagian.
+
+\medskip
+
+\noindent}{\bf Definisi} Misalkan $U$ adalah ruang linear atas
+$\RoverC$, dan $\frak T$ topologi ruang linear pada $U$. Sebuah filter
+$\Cal F$ pada $U$ disebut {\bf Cauchy} jika untuk setiap himpunan
+terbuka $G$ di $U$ yang memuat $0$, terdapat $F\in\Cal F$ sedemikian
+sehingga $F-F=\{u-v:u,\,v\in F\}$ termuat dalam $G$.
+$U$ disebut {\bf lengkap} jika setiap filter Cauchy pada $U$ konvergen.
+
+\leader{2A5G}{}\cmmnt{ Filter Cauchy mempunyai uraian sederhana apabila
+topologi ruang linear didefinisikan dengan metode 2A5B.
+
+\medskip
+
+\noindent}{\bf Lema} Misalkan $U$ adalah ruang linear atas $\RoverC$,
+dan $\Tau$ keluarga F-seminorma yang mendefinisikan topologi ruang
+linear pada $U$, seperti dalam 2A5B. Maka sebuah filter $\Cal F$ pada
+$U$ adalah Cauchy jika dan hanya jika untuk setiap $\tau\in\Tau$ dan
+$\epsilon>0$ terdapat $F\in\Cal F$ sedemikian sehingga
+$\tau(u-v)\le\epsilon$ untuk semua $u$, $v\in F$.
+
+\proof{{\bf (a)} Misalkan $\Cal F$ Cauchy, $\tau\in\Tau$, dan
+$\epsilon>0$. Maka $G=U(0;\rho_{\tau};\epsilon)$ terbuka (dengan
+menggunakan bahasa 2A3F--2A3G), sehingga terdapat $F\in\Cal F$
+sedemikian sehingga $F-F\subseteq G$; tetapi ini tepat berarti bahwa
+$\tau(u-v)<\epsilon$ untuk semua $u$, $v\in F$.
+
+\medskip
+
+{\bf (b)} Misalkan $\Cal F$ memenuhi kriteria tersebut, dan $G$
+merupakan himpunan terbuka yang memuat $0$. Maka terdapat
+$\tau_0,\ldots,\tau_n\in\Tau$ dan $\epsilon>0$ sedemikian sehingga
+$U(0;\rho_{\tau_0},\ldots,\rho_{\tau_n};\epsilon)\subseteq G$.
+Untuk setiap $i\le n$, terdapat $F_i\in\Cal F$ sedemikian sehingga
+$\tau_i(u-v)<\bover{\epsilon}2$ untuk semua $u$, $v\in F_i$; sekarang
+$F=\bigcap_{i\le n}F_i\in\Cal F$ dan $u-v\in G$ untuk semua
+$u$, $v\in F$.
+}%end of proof of 2A5G
+
+\leader{2A5H}{Ruang bernorma dan kelengkapan
+\dvrocolon{sekuensial}}\cmmnt{ Perlu saya tunjukkan bahwa untuk ruang
+bernorma, definisi 2A5F sesuai dengan definisi 2A4D.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $(U,\|\,\|)$ adalah ruang bernorma
+atas $\RoverC$, dan $\frak T$ topologi ruang linear pada $U$ yang
+didefinisikan dengan metode 2A5B dari himpunan
+$\Tau=\{\|\,\|\}$. Maka $U$ lengkap dalam pengertian 2A5F jika dan
+hanya jika lengkap dalam pengertian 2A4D.
+
+\proof{{\bf (a)} Pertama-tama, misalkan $U$ lengkap dalam pengertian
+2A5F. Misalkan $\sequencen{u_n}$ adalah barisan di $U$ yang Cauchy
+dalam pengertian 2A4Da. Tetapkan
+
+\Centerline{$\Cal F
+=\{F:F\subseteq U,\,\{n:u_n\notin F\}\text{ berhingga}\}$.}
+
+\noindent Maka mudah diperiksa bahwa $\Cal F$ adalah filter pada $U$,
+yaitu citra filter Fr\'echet di bawah peta
+$n\mapsto u_n:\Bbb N\to U$. Jika $\epsilon>0$, ambil $m\in\Bbb N$
+sedemikian sehingga $\|u_j-u_k\|\le\epsilon$ apabila $j$, $k\ge m$;
+maka $F=\{u_j:j\ge m\}$ termasuk dalam $\Cal F$, dan
+$\|u-v\|\le\epsilon$ untuk semua $u$, $v\in F$. Jadi $\Cal F$ Cauchy
+dalam pengertian 2A5F, dan mempunyai suatu limit, katakanlah $u$.
+Sekarang, untuk setiap $\epsilon>0$, himpunan
+$\{v:\|v-u\|<\epsilon\}=U(u;\rho_{\|\,\|};\epsilon)$ merupakan
+himpunan terbuka yang memuat $u$, sehingga termasuk dalam $\Cal F$,
+dan $\{n:\|u_n-u\|\ge\epsilon\}$ berhingga, yaitu, terdapat
+$m\in\Bbb N$ sedemikian sehingga $\|u_n-u\|<\epsilon$ apabila
+$n\ge m$. Karena $\epsilon$ sebarang,
+$u=\lim_{n\to\infty}u_n$ dalam pengertian 2A3M. Karena
+$\sequencen{u_n}$ sebarang, $U$ lengkap dalam pengertian 2A4D.
+
+\medskip
+
+{\bf (b)} Sekarang misalkan $U$ lengkap dalam pengertian 2A4D.
+Misalkan $\Cal F$ adalah filter Cauchy pada $U$. Untuk setiap
+$n\in\Bbb N$, pilih himpunan $F_n\in\Cal F$ sedemikian sehingga
+$\|u-v\|\le 2^{-n}$ untuk semua $u$, $v\in F_n$. Untuk setiap
+$n\in\Bbb N$, $F'_n=\bigcap_{i\le n}F_i$ termasuk dalam $\Cal F$,
+sehingga tidak kosong; pilih $u_n\in F'_n$. Jika $m\in\Bbb N$ dan
+$j$, $k\ge m$, maka $u_j$ dan $u_k$ keduanya termasuk dalam $F_m$,
+sehingga $\|u_j-u_k\|\le 2^{-m}$; jadi $\sequencen{u_n}$ merupakan
+barisan Cauchy dalam pengertian 2A4Da, dan mempunyai suatu limit,
+katakanlah $u$. Sekarang ambil sebarang $\epsilon>0$ dan
+$m\in\Bbb N$ sedemikian sehingga $2^{-m+1}\le\epsilon$. Tentu terdapat
+$k\ge m$ sedemikian sehingga $\|u_k-u\|\le 2^{-m}$; sekarang
+$u_k\in F_m$, sehingga
+
+\Centerline{$F_m\subseteq\{v:\|v-u_k\|\le 2^{-m}\}
+\subseteq\{v:\|v-u\|\le 2^{-m+1}\}
+\subseteq\{v:\rho_{\|\,\|}(v,u)\le\epsilon\}$,}
+
+\noindent dan
+$\{v:\rho_{\|\,\|}(v,u)\le\epsilon\}\in\Cal F$.
+Karena $\epsilon$ sebarang, $\Cal F$ konvergen ke $u$, menurut 2A3Sd.
+Karena $\Cal F$ sebarang, $U$ lengkap.
+
+\medskip
+
+{\bf (c)}
+Jadi kedua definisi itu bertepatan, setidaknya dengan syarat kita
+memperbolehkan banyaknya pilihan serentak yang terhitung untuk $u_n$
+dalam bagian (b) pembuktian.
+}%end of proof of 2A5H
+
+\leader{2A5I}{Topologi lemah}\cmmnt{ Sekarang saya beralih ke catatan
+ringkas tentang topologi lemah pada ruang bernorma; dari sudut pandang
+jilid ini, topologi-topologi tersebut sesungguhnya merupakan contoh
+utama topologi ruang linear.}
+Misalkan $U$ adalah ruang linear bernorma atas $\RoverC$.
+
+\spheader 2A5Ia Tuliskan $U^*$ untuk dualnya
+$\eurm B(U;\RoverC)$\cmmnt{ (2A4H)}. \cmmnt{Jika $h\in U^*$, maka
+$|h|:U\to\coint{0,\infty}$ adalah seminorma, sehingga}
+$\Tau=\{|h|:h\in U^*\}$ mendefinisikan topologi ruang linear pada
+$U$\cmmnt{, menurut 2A5B}; topologi ini\cmmnt{ disebut}
+{\bf topologi lemah} dari $U$.
+
+\spheader 2A5Ib Sebuah filter $\Cal F$ pada $U$ konvergen ke $u\in U$
+untuk topologi lemah dari $U$ jika dan hanya jika\cmmnt{
+$\lim_{v\to\Cal F}\rho_{|h|}(v,u)=0$ untuk setiap $h\in U^*$ (2A3Sd),
+yaitu, jika dan hanya jika $\lim_{v\to\Cal F}|h(v-u)|=0$ untuk setiap
+$h\in U^*$, yaitu, jika dan hanya jika}
+$\lim_{v\to\Cal F}h(v)=h(u)$ untuk setiap $h\in U^*$.
+
+\spheader 2A5Ic Sebuah himpunan $C\subseteq U$ disebut
+{\bf kompak lemah} jika kompak untuk topologi lemah dari $U$. Jadi
+\cmmnt{ (dengan tunduk pada aksioma pilihan)} suatu himpunan
+$C\subseteq U$ kompak lemah jika dan hanya jika untuk setiap ultrafilter
+$\Cal F$ pada $U$ yang memuat $C$, terdapat $u\in C$ sedemikian
+sehingga $\lim_{v\to\Cal F}h(v)=h(u)$ untuk setiap
+$h\in U^*$\cmmnt{ (gabungkan 2A3R dengan (b) di atas)}.
+
+\spheader 2A5Id Suatu himpunan bagian $A$ dari $U$ disebut
+{\bf relatif kompak lemah} jika merupakan himpunan bagian dari suatu
+himpunan bagian $U$ yang kompak lemah.
+
+\spheader 2A5Ie Jika $h\in U^*$, maka $h:U\to\RoverC$ kontinu untuk
+topologi lemah pada $U$ dan topologi biasa pada $\RoverC$\cmmnt{;
+hal ini langsung terlihat jika kita menerapkan kriteria 2A3H}. Jadi,
+jika $A\subseteq U$ relatif kompak lemah, $h[A]$ harus terbatas dalam
+$\RoverC$. \prooflet{\Prf\ Misalkan $C\supseteq A$ adalah himpunan
+kompak lemah. Maka $h[C]$ kompak dalam $\RoverC$, menurut 2A3Nb, sehingga
+terbatas, menurut 2A2F (dengan mencatat bahwa jika lapangan dasarnya
+adalah $\Bbb C$, maka lapangan itu dapat diidentifikasi, sebagai ruang
+metrik, dengan $\BbbR^2$). Karena itu $h[A]$ juga terbatas.\ \Qed}
+
+\spheader 2A5If Jika $V$ adalah ruang bernorma lain dan $T:U\to V$
+operator linear terbatas, maka $T$ kontinu untuk masing-masing topologi
+lemah. \prooflet{\Prf\ Jika $h\in V^*$, maka komposisi $hT$ termasuk
+dalam $U^*$. Sekarang, untuk sebarang $u$, $v\in U$,
+
+\Centerline{$\rho_{|h|}(Tu,Tv)=|h(Tu-Tv)|=|hT(u-v)|=\rho_{|hT|}(u,v)$,}
+
+\noindent dengan $\rho_{|h|}$, $\rho_{|hT|}$ masing-masing merupakan
+pseudometrik pada $V$, $U$ yang didefinisikan oleh rumus 2A5B.
+Menurut 2A3H, $T$ kontinu.\ \Qed}
+
+\spheader 2A5Ig Bersesuaian dengan topologi lemah pada ruang bernorma
+$U$, kita mempunyai topologi {\bf lemah*} atau {\bf w*-} pada dualnya
+$U^*$, yang didefinisikan oleh himpunan
+$\Tau=\{|\hat u|:u\in U\}$, dengan saya menuliskan
+$\hat u(f)=f(u)$ untuk setiap $f\in U^*$, $u\in U$. Seperti dalam (a),
+ini adalah topologi ruang linear pada $U^*$. \cmmnt{(Penting untuk
+membedakan topologi lemah* dari topologi lemah pada $U^*$. Yang pertama
+hanya bergantung pada aksi $U$ pada $U^*$, sedangkan yang kedua
+bergantung pada aksi $U^{**}=(U^*)^*$. Anda tidak akan mengalami
+kesulitan untuk memeriksa bahwa $\hat u\in U^{**}$ untuk setiap
+$u\in U$, tetapi pokoknya adalah bahwa mungkin terdapat anggota
+$U^{**}$ yang tidak dapat direpresentasikan dengan cara ini, sehingga
+muncul himpunan terbuka untuk topologi lemah yang tidak terbuka untuk
+topologi lemah*.)}
+
+\leader{*2A5J}{Ruang angelik}\cmmnt{ Saya tidak bergantung pada
+gagasan-gagasan berikut, tetapi gagasan ini dapat memperjelas beberapa
+hasil dalam \S\S246-247.} Pertama, sebuah ruang topologis $X$ disebut
+{\bf reguler} jika apabila $G\subseteq X$ terbuka dan $x\in G$, maka
+terdapat himpunan terbuka $H$ sedemikian sehingga
+$x\in H\subseteq\overline{H}\subseteq G$. Berikutnya, sebuah ruang
+Hausdorff reguler $X$ disebut {\bf angelik} jika apabila $A\subseteq X$
+sedemikian sehingga setiap barisan dalam $A$ mempunyai titik gugus di
+$X$, maka $\overline{A}$ kompak dan setiap titik $\overline{A}$ adalah
+limit dari suatu barisan dalam $A$.\cmmnt{ Artinya, kekompakan dalam
+$X$, serta topologi himpunan bagian kompak dari $X$, dapat diuraikan
+secara efektif melalui barisan.} Sekarang\cmmnt{ teorema (oleh Eberlein
+dan \v Smulian) menyatakan bahwa} setiap ruang bernorma bersifat angelik
+dalam topologi lemahnya.\cmmnt{ (462D dalam Jilid 4;
+{\smc K\"othe 69}, \S24; {\smc Dunford \& Schwartz 57}, V.6.1.)
+Khususnya, hal ini berlaku bagi ruang-ruang $L^1$, sehingga tidak terlalu
+mengejutkan bahwa terdapat kriteria untuk kekompakan lemah dalam ruang
+$L^1$ yang hanya membahas barisan.
+}%end of comment
+
+\discrpage

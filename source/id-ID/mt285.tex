@@ -1,0 +1,1487 @@
+% HP-D10-CH28-C stable-unit-id: D10-FREMLIN-V2-S285
+\frfilename{mt285.tex}
+\versiondate{18.9.14}
+\copyrightdate{1994}
+
+\def\chaptername{Analisis Fourier}
+\def\sectionname{Fungsi karakteristik}
+
+\newsection{285}
+
+Sekarang kita sampai pada salah satu penerapan transformasi Fourier yang paling
+efektif, yakni penggunaan `fungsi karakteristik' untuk menganalisis distribusi
+probabilitas. Ternyata transformasi Fourier suatu distribusi probabilitas bukan
+hanya menentukan distribusi itu (285M), tetapi juga memudahkan perhitungan
+banyak hal yang ingin kita ketahui tentang distribusi tersebut dari
+transformasinya\cmmnt{ (285G, 285Xi)}. Bahkan yang lebih mencolok, konvergensi
+titik demi titik transformasi Fourier bersesuaian (untuk barisan) dengan
+konvergensi dalam topologi samar pada ruang distribusi. Karena itu, fungsi
+karakteristik menyediakan metode baru yang sangat ampuh untuk membuktikan hasil
+seperti Teorema Limit Pusat dan teorema Poisson (285Q).
+
+Karena penerapan gagasan-gagasan di sini terutama termasuk dalam teori
+probabilitas, saya kembali menggunakan istilah para ahli probabilitas, seperti
+dalam Bab 27. Meskipun demikian, pada banyak bagian kita perlu berbicara tentang
+integral, dan sering kali ada lebih dari satu ukuran yang terlibat. Karena itu,
+saya tegaskan bahwa integral $\int f(x)dx$ selalu diambil terhadap ukuran
+Lebesgue (biasanya, tetapi tidak selalu, satu dimensi), seperti pada bagian lain
+bab ini, sedangkan integral terhadap ukuran lain ditulis dalam bentuk
+$\int fd\nu$ atau $\int f(x)\nu(dx)$.
+
+\leader{285A}{Definisi (a)} Misalkan $\nu$ suatu ukuran probabilitas Radon pada
+$\BbbR^r$\cmmnt{ (256A)}. Maka {\bf fungsi karakteristik}
+dari $\nu$ ialah fungsi $\phi_{\nu}:\BbbR^r\to\Bbb C$ yang diberikan oleh rumus
+
+\Centerline{$\phi_{\nu}(y)=\int e^{iy\dotproduct x}\nu(dx)$}
+
+\noindent untuk setiap $y\in\BbbR^r$, dengan menulis
+$y\dotproduct x=\eta_1\xi_1+\ldots+\eta_r\xi_r$ jika
+$y=(\eta_1,\ldots,\eta_r)$ dan $x=(\xi_1,\ldots,\xi_r)$.
+
+\header{285Ab}{\bf (b)} Misalkan $X_1,\ldots,X_r$ variabel-variabel acak
+bernilai real pada ruang probabilitas yang sama. {\bf Fungsi karakteristik}
+dari $\pmb{X}=(X_1,\ldots,X_r)$ ialah fungsi karakteristik
+$\phi_{\pmb{X}}=\phi_{\nu_{\pmb{X}}}$ dari distribusi probabilitas bersamanya
+$\nu_{\pmb{X}}$, sebagaimana didefinisikan dalam 271C.
+
+\cmmnt{
+\leader{285B}{Catatan (a)} Karena salah satu kebetulan sejarah yang lazim,
+definisi `fungsi karakteristik' dan `transformasi Fourier' berkembang secara
+terpisah. Dalam 283Ba saya mencatat bahwa definisi transformasi Fourier belum
+baku, dan bahwa rumus
+
+\Centerline{$\varhatf(y)=\int_{-\infty}^{\infty}e^{iyx}f(x)dx$,}
+
+\Centerline{$\varcheckf(y)
+=\Bover1{2\pi}\int_{-\infty}^{\infty}e^{-iyx}f(x)dx$}
+
+\noindent akan lebih mudah dipadankan dengan definisi fungsi karakteristik.
+Saya tidak mengambil pilihan ini karena ingin menonjolkan simetri antara
+transformasi Fourier dan transformasi Fourier invers, serta korespondensi antara
+transformasi Fourier dan deret Fourier. Keuntungan utama menyamakan kedua
+definisi, yaitu menyamakan konstanta dalam hasil seperti 283F dan 285Xk, akan
+diimbangi oleh keharusan mengingat konstanta yang berbeda untuk $\varhatf$ dan
+$\varcheckf$ dalam hasil seperti 283M.
+
+\header{285Bb}{\bf (b)} Alasan lain untuk tidak memaksakan agar rumus-rumus
+dalam bagian ini langsung bersesuaian dengan rumus-rumus dalam \S\S283-284
+ialah bahwa kasus berdimensi $r$ sangat penting dalam beberapa penerapan fungsi
+karakteristik yang utama, sehingga layak diperkenalkan sejak awal. Akibatnya,
+rumus-rumus dalam bagian ini tetap akan mempunyai unsur baru dibandingkan dengan
+rumus-rumus yang telah muncul sebelumnya.
+}
+
+\leader{285C}{}\cmmnt{ Tentu ada cara langsung untuk menggambarkan fungsi
+karakteristik suatu keluarga $(X_1,\ldots,X_r)$ variabel acak, sebagai berikut.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $X_1,\ldots,X_r$ variabel-variabel acak
+bernilai real pada ruang probabilitas yang sama, dan $\nu_{\pmb{X}}$ distribusi
+bersamanya. Maka fungsi karakteristiknya $\phi_{\nu_{\pmb{X}}}$ diberikan oleh
+
+\Centerline{$\phi_{\nu_{\pmb{X}}}(y)=\Expn(e^{iy\dotproduct \pmb{X}})
+=\Expn(e^{i\eta_1X_1}e^{i\eta_2X_2}\ldots e^{i\eta_rX_r})$}
+
+\noindent untuk setiap $y=(\eta_1,\ldots,\eta_r)\in\BbbR^r$.
+
+\proof{ Terapkan 271E pada fungsi $h_1$, $h_2:\Bbb R^r\to\Bbb R$
+yang didefinisikan oleh
+
+\Centerline{$h_1(x)=\cos(y\dotproduct x)$,\quad
+$h_2(x)=\sin(y\dotproduct x)$,}
+
+\noindent untuk memperoleh
+
+$$\eqalign{\phi_{\nu_{\pmb{X}}}(y)
+&=\int h_1(x)\nu_{\pmb{X}}(dx) + i\int h_2(x)\nu_{\pmb{X}}(dx)\cr
+&=\Expn(h_1(\pmb{X})) + i\Expn(h_2(\pmb{X}))
+=\Expn(e^{iy\dotproduct \pmb{X}}).\cr}$$
+}%end of proof of 285C
+
+\vleader{72pt}{285D}{}\cmmnt{ Saya perlu menjelaskan korespondensi antara
+transformasi Fourier, sebagaimana didefinisikan dalam 283A, dan fungsi
+karakteristik.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $\nu$ suatu ukuran probabilitas Radon pada
+$\Bbb R$. Tuliskan
+
+\Centerline{$\varhat{\nu}(y)
+=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+e^{-iyx}\nu(dx)$}
+
+\noindent untuk setiap $y\in\Bbb R$, dan tuliskan $\phi_{\nu}$ untuk fungsi
+karakteristik dari $\nu$.
+
+
+(a) $\varhat{\nu}(y)=\Bover1{\sqrt{2\pi}}\phi_{\nu}(-y)$ untuk setiap
+$y\in\Bbb R$.
+
+(b) Untuk setiap fungsi Lebesgue terintegralkan bernilai kompleks $h$ pada
+$\Bbb R$,
+
+\Centerline{$\int_{-\infty}^{\infty}\varhat{\nu}(y)h(y)dy
+=\int_{-\infty}^{\infty}\varhat{h}(x)\nu(dx)$.}
+
+(c) Untuk setiap fungsi uji yang menurun cepat $h$ pada $\Bbb R$\cmmnt{ (lihat
+\S284)},
+
+\Centerline{$\int_{-\infty}^{\infty}h(x)\nu(dx)
+=\int_{-\infty}^{\infty}\varcheck{h}(y)\varhat{\nu}(y)dy$.}
+
+(d) Jika $\nu$ merupakan ukuran integral tak tentu terhadap ukuran Lebesgue,
+dengan turunan Radon--Nikod\'ym $f$, maka $\varhat{\nu}$ merupakan transformasi
+Fourier dari $f$.
+
+\proof{{\bf (a)} Ini langsung mengikuti dari definisi
+$\phi_{\nu}$ dan $\varhat{\nu}$.
+
+\medskip
+
+{\bf (b)} Karena
+
+\Centerline{$\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+|h(y)|\nu(dx)dy=\int_{-\infty}^{\infty}|h(y)|dy<\infty$,}
+
+\noindent kita dapat menukar urutan integrasi dan memperoleh
+
+$$\eqalign{\int_{-\infty}^{\infty}\varhat{\nu}(y)h(y)dy
+&=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+e^{-iyx}h(y)\nu(dx)dy\cr
+&=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+e^{-iyx}h(y)dy\,\nu(dx)
+=\int_{-\infty}^{\infty}\varhat{h}(x)\nu(dx).\cr}$$
+
+\medskip
+
+{\bf (c)} Ini langsung mengikuti dari (b), karena $\varcheck{h}$ terintegralkan
+dan $\varcheck{h}\varhat{\phantom{h}}=h$ (284C).
+
+\medskip
+
+{\bf (d)} Intinya adalah bahwa
+
+\Centerline{$\int h\,d\nu=\int h(x)f(x)dx$}
+
+\noindent untuk setiap fungsi Borel terukur terbatas $h:\Bbb R\to\Bbb R$
+(235K), dan karenanya juga untuk fungsi
+$x\mapsto e^{-iyx}:\Bbb R\to\Bbb C$. Dengan demikian
+
+\Centerline{$\varhat{\nu}(y)
+=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iyx}\nu(dx)
+=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iyx}f(x)dx
+=\varhatf(y)$}
+
+\noindent untuk setiap $y$.
+}% end of proof of 285D
+
+\leader{285E}{Lema} Misalkan $X$ suatu variabel acak normal dengan ekspektasi
+$a$ dan varians $\sigma^2$, dengan $\sigma>0$. Maka fungsi karakteristik $X$
+diberikan oleh rumus
+
+\Centerline{$\phi(y)=e^{iya}e^{-\sigma^2y^2/2}$.}
+
+\proof{ Ini hanyalah 283N dengan konstanta yang disesuaikan.
+
+$$\eqalignno{\phi(y)
+&=\Expn(e^{iyX})
+=\Bover1{\sigma\sqrt{2\pi}}\int_{-\infty}^{\infty}
+  e^{iyx}e^{-(x-a)^2/2\sigma^2}dx\cr
+\noalign{\noindent (dengan menggunakan fungsi kepadatan $X$ yang diberikan
+dalam 274Ad dan menerapkan 271Ic)}
+&=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+  e^{iy(\sigma t+a)}e^{-t^2/2}dt\cr
+\noalign{\noindent (dengan menyubstitusikan $x=\sigma t+a$)}
+&=e^{iya}\sqrt{2\pi}\varhat{\psi}_1(-y\sigma)\cr
+\noalign{\noindent (dengan menetapkan
+$\psi_1(x)=\bover1{\sqrt{2\pi}}e^{-x^2/2}$, seperti dalam 283N)}
+&=e^{iya}e^{-\sigma^2y^2/2}.\cr}$$
+}%end of proof of 285E
+
+\leader{285F}{}\cmmnt{ Sekarang saya berikan hasil yang bersesuaian dengan
+sebagian 283C, dengan penyempurnaan tambahan mengenai variabel acak bebas
+(285I).
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $\nu$ suatu ukuran probabilitas Radon pada
+$\BbbR^r$, dan $\phi$ fungsi karakteristiknya.
+
+(a) $\phi(0)=1$.
+
+(b) $\phi:\BbbR^r\to\Bbb C$ kontinu seragam.
+
+(c) $\phi(-y)=\overline{\phi(y)}$, $|\phi(y)|\le 1$ untuk setiap $y\in\Bbb
+R^r$.
+
+(d) Jika $r=1$ dan $\int|x|\nu(dx)<\infty$, maka $\phi'(y)$ ada dan sama dengan $i\int xe^{ixy}\nu(dx)$ untuk setiap $y\in\Bbb R$.
+
+(e) Jika $r=1$ dan $\int x^2\nu(dx)<\infty$, maka $\phi''(y)$ ada dan sama dengan $-\int x^2e^{ixy}\nu(dx)$ untuk setiap $y\in\Bbb R$.
+
+\proof{{\bf (a)} $\phi(0)=\int\chi\BbbR^r\,d\nu=\nu(\BbbR^r)=1$.
+
+\medskip
+
+{\bf (b)} Misalkan $\epsilon>0$. Pilih $M>0$ sedemikian sehingga
+
+\Centerline{$\nu\{x:\|x\|\ge M\}\le\epsilon$,}
+
+\noindent dengan menulis $\|x\|=\sqrt{x\dotproduct x}$ seperti biasa. Pilih
+$\delta>0$ sedemikian sehingga $|e^{ia}-1|\le\epsilon$ bila
+$|a|\le\delta$. Sekarang andaikan $y$, $y'\in\BbbR^r$ memenuhi
+$\|y-y'\|\le\delta/M$. Maka, bila $\|x\|\le M$,
+
+\Centerline{$|e^{iy\dotproduct x}-e^{iy'\dotproduct x}|
+=|e^{iy'\dotproduct x}||e^{i(y-y')\dotproduct x}-1|
+=|e^{i(y-y')\dotproduct x}-1|
+\le\epsilon$}
+
+\noindent karena
+
+\Centerline{$|(y-y')\dotproduct x|\le\|y-y'\|\|x\|\le\delta$.}
+
+\noindent Oleh karena itu, menulis $B$ untuk $\{x:\|x\|\le M\}$,
+
+$$\eqalign{|\phi(y)-\phi(y')|
+&\le\int_B|e^{iy\dotproduct x}-e^{iy'\dotproduct x}|\nu(dx)
+\cr&\qquad\qquad
+  +\int_{\BbbR^r\setminus B}|e^{iy\dotproduct x}|\nu(dx)
+  +\int_{\BbbR^r\setminus B}|e^{iy'\dotproduct x}|\nu(dx)\cr
+&\le\epsilon+\epsilon+\epsilon
+=3\epsilon.\cr}$$
+
+\noindent Karena $\epsilon$ sembarang, $\phi$ kontinu seragam.
+
+
+\medskip
+
+{\bf (c)} Ini langsung;
+
+\Centerline{$\phi(-y)=\int e^{-iy\dotproduct x}\nu(dx)
+=\overline{\intop e^{iy\dotproduct x}\nu(dx)}=\overline{\phi(y)}$,}
+
+\Centerline{$|\phi(y)|=|\int e^{iy\dotproduct x}\nu(dx)|
+\le\int|e^{iy\dotproduct x}|\nu(dx)
+=1$.}
+
+\medskip
+
+{\bf (d)} Intinya adalah bahwa $|\pd{}{y}e^{iyx}|=|x|$ untuk setiap $x$,
+$y\in\Bbb R$. Jadi, menurut 123D (diterapkan, tepatnya, pada bagian real dan
+imajiner fungsi),
+
+\Centerline{$\phi'(y)
+=\Bover{d}{dy}\int e^{iyx}\nu(dx)
+=\int\Pd{}{y}e^{iyx}\nu(dx)
+=\int ixe^{iyx}\nu(dx)$.}
+
+\medskip
+
+{\bf (e)} Karena kini $|\pd{}{y}xe^{iyx}|=x^2$ untuk setiap $x$, $y$, kita
+dapat mengulangi argumen untuk memperoleh
+
+\Centerline{$\phi''(y)
+=i\Bover{d}{dy}
+     \int xe^{iyx}\nu(dx)
+=i\int
+     \Pd{}{y}xe^{iyx}\nu(dx)
+=-\int
+     x^2e^{iyx}\nu(dx)$.}
+}%end of proof of 285F
+
+\vleader{48pt}{285G}{Akibat} (a) Misalkan $X$ variabel acak bernilai real dengan
+ekspektasi berhingga, dan $\phi$ fungsi karakteristiknya.
+$\phi'(0)=i\Expn(X)$.
+
+(b) Misalkan $X$ variabel acak bernilai real dengan varians berhingga, dan
+$\phi$ fungsi karakteristiknya.
+$\phi''(0)=-\Expn(X^2)$.
+
+\proof{ Kita hanya perlu mencocokkan $X$ dengan distribusinya $\nu$, lalu
+mengamati bahwa
+
+\Centerline{`$X$ mempunyai ekspektasi berhingga'}
+
+\noindent bersesuaian dengan
+
+\Centerline{`$\int |x|\nu(dx)=\Expn(|X|)<\infty$',}
+
+\noindent jadi bahwa
+
+\Centerline{$\phi'(0)=i\int x\,\nu(dx)=i\Expn(X)$,}
+
+\noindent dan bahwa
+
+\Centerline{`$X$ mempunyai varians berhingga'}
+
+\noindent bersesuaian dengan
+
+\Centerline{`$\int x^2\nu(dx)=\Expn(X^2)<\infty$',}
+
+\noindent jadi bahwa
+
+\Centerline{$\phi''(0)=-\int x^2\,\nu(dx)=-\Expn(X^2)$,}
+
+\noindent sebagaimana dalam 271E.
+}%end of proof of 285G
+
+\cmmnt{
+\leader{285H}{Catatan} Perhatikan bahwa tidak ada hasil yang bersesuaian dengan
+283Cg (`$\lim_{|y|\to\infty}\varhatf(y)
+\ifdim\pagewidth=390pt\penalty-100\fi
+=0$'). Jika $\nu$ adalah ukuran Dirac pada $\Bbb R$ yang terpusat di $0$,
+yakni distribusi suatu variabel acak yang hampir di mana-mana bernilai nol,
+maka $\phi(y)=1$ untuk setiap $y$.
+}
+
+\leader{285I}{Proposisi} Misalkan $X_1,\ldots,X_n$ variabel-variabel acak
+bernilai real yang bebas, dengan fungsi karakteristik
+$\phi_{1},\ldots,\phi_{n}$. Misalkan $\phi$ fungsi karakteristik dari jumlahnya
+$X=X_1+\ldots+X_n$. Maka
+
+\Centerline{$\phi(y)=\prod_{j=1}^n\phi_j(y)$}
+
+\noindent untuk setiap $y\in\Bbb R$.
+
+\proof{ Misalkan $y\in\Bbb R$. Menurut 272E, variabel-variabel
+
+\Centerline{$Y_j=e^{iyX_j}$}
+
+\noindent saling bebas, sehingga menurut 272R
+
+\Centerline{$\phi(y)=\Expn(e^{iyX})=\Expn(e^{iy(X_1+\ldots+X_n)})
+=\Expn(\prod_{j=1}^nY_j)=\prod_{j=1}^n\Expn(Y_j)
+=\prod_{j=1}^n\phi_j(y)$,}
+
+\noindent sesuai kebutuhan.
+}%end of proof of 285I
+
+\cmmnt{
+\medskip
+
+\noindent{\bf Komentar} Lihat juga 285R di bawah.
+}
+
+\leader{285J}{}\cmmnt{ Ada teorema inversi untuk fungsi karakteristik yang
+bersesuaian dengan 283F. Saya menyajikannya dalam 285Xk, dengan versi
+berdimensi $r$ dalam 285Yb. Namun, hasil ini tampaknya tidak seberguna rangkaian
+hasil berikut.
+
+\medskip
+
+\noindent}{\bf Lema} Misalkan $\nu$ suatu ukuran probabilitas Radon pada
+$\Bbb R^r$, dan $\phi$ fungsi karakteristiknya. Maka untuk $1\le j\le r$ dan
+$a>0$,
+
+\Centerline{$\nu\{x:|\xi_j|\ge a\}
+\le 7a\int_0^{1/a}(1-\Real\phi(te_j))dt$,}
+
+\noindent dengan $e_j\in\BbbR^r$ vektor satuan ke-$j$.
+
+\wheader{285J}{0}{0}{0}{84pt}
+
+\proof{ Kita mempunyai
+
+$$\eqalignno{7a\int_0^{1/a}(1-\Real\phi(te_j))dt
+&=7a\int_0^{1/a}
+   \bigl(1-\Real\int_{\Bbb R^r}e^{it\xi_j}\nu(dx)\bigr)dt\cr
+&=7a\int_0^{1/a}\int_{\Bbb R^r}1-\cos(t\xi_j)\nu(dx)dt\cr
+&=7a\int_{\Bbb R^r}\int_0^{1/a}1-\cos(t\xi_j)dt\,\nu(dx)\cr
+\displaycause{karena $(x,t)\mapsto 1-\cos(t\xi_j)$ terbatas dan
+$\nu\BbbR^r\cdot\Bover1a$ berhingga}
+&=7a\int_{\Bbb R^r}
+  \bigl(\bover1a-\bover1{\xi_j}\sin\bover{\xi_j}a\bigr)\nu(dx)\cr
+&\ge7a\int_{|\xi_j|\ge a}
+\bigl(\bover1a-\bover1{\xi_j}\sin\bover{\xi_j}a\bigr)\nu(dx)\cr
+\noalign{\noindent (karena $\Bover1{\xi}\sin\Bover{\xi}{a}\le\Bover1a$
+untuk setiap $\xi\ne 0$)}
+&\ge\nu\{x:|\xi_j|\ge a\},\cr}$$
+
+\noindent karena
+
+\Centerline{$\Bover{\sin\eta}{\eta}\le\Bover{\sin 1}{1}\le\Bover67$ jika
+$\eta\ge 1$,}
+
+\noindent sehingga
+
+\Centerline{$a(\Bover1a-\Bover1{\xi_j}\sin\Bover{\xi_j}a)\ge\Bover17$}
+
+\noindent jika $|\xi_j|\ge a$.
+}%end of proof of 285J
+
+\cmmnt{
+\leader{285K}{Fungsi karakteristik dan topologi samar}
+Kini saatnya kembali pada gagasan yang disebut secara singkat dalam 274L.
+Tetapkan $r\ge 1$ dan misalkan $P$ himpunan semua ukuran probabilitas Radon
+pada $\BbbR^r$. Untuk setiap fungsi kontinu terbatas
+$h:\BbbR^r\to\Bbb R$, definisikan $\rho_h:P\times P\to\Bbb R$ dengan
+
+\Centerline{$\rho_h(\nu,\nuprime)=|\int h\,d\nu-\int h\,d\nuprime|$}
+
+\noindent untuk $\nu$, $\nuprime\in P$. Maka topologi samar pada $P$ ialah
+topologi yang dibangkitkan oleh pseudometrik-pseudometrik $\rho_h$ (274Ld).
+}
+
+\leader{285L}{Teorema} Misalkan $\nu$, $\sequencen{\nu_n}$ ukuran-ukuran
+probabilitas Radon pada $\BbbR^r$, dengan fungsi karakteristik $\phi$,
+$\sequencen{\phi_n}$. Maka pernyataan-pernyataan berikut ekuivalen:
+
+(i) $\nu=\lim_{n\to\infty}\nu_n$ dalam topologi samar;
+
+(ii) $\int h\,d\nu=\lim_{n\to\infty}\int h\,d\nu_n$ untuk setiap fungsi
+kontinu terbatas $h:\BbbR^r\to\Bbb R$;
+
+(iii) $\lim_{n\to\infty}\phi_n(y)=\phi(y)$ untuk setiap $y\in\BbbR^r$.
+
+\proof{{\bf (a)} Ekuivalensi (i) dan (ii) pada dasarnya merupakan definisi
+topologi samar; kita mempunyai
+
+$$\eqalignno{\lim_{n\to\infty}
+&\nu_n=\nu\text{ dalam topologi samar}\cr
+&\iff\,\lim_{n\to\infty}\rho_h(\nu_n,\nu)=0
+\text{ untuk setiap fungsi kontinu terbatas }h\cr
+\noalign{\noindent (2A3Mc)}
+&\iff\,\lim_{n\to\infty}|\int h\,d\nu_n-\int h\,d\nu|=0
+   \text{ untuk setiap fungsi kontinu terbatas }h.\cr}$$
+
+\medskip
+
+{\bf (b)} Selanjutnya, (ii) jelas mengakibatkan (iii), karena
+
+\Centerline{$\Real\phi(y)
+=\int h_y\,d\nu
+=\lim_{n\to\infty}\int h_y\,d\nu_n
+=\lim_{n\to\infty}\Real\phi_n(y)$,}
+
+\noindent dengan menetapkan $h_y(x)=\cos(x\dotproduct y)$ untuk setiap $x$,
+dan demikian pula
+
+\Centerline{$\Imag\phi(y)=\lim_{n\to\infty}\Imag\phi_n(y)$}
+
+\noindent untuk setiap $y\in\BbbR^r$.
+
+\medskip
+
+{\bf (c)} Jadi tinggal dibuktikan bahwa (iii)$\Rightarrow$(ii). Saya mulai
+dengan menunjukkan bahwa, untuk setiap $\epsilon>0$, ada himpunan tertutup
+terbatas $K$ sedemikian sehingga
+
+\Centerline{$\nu_n(\BbbR^r\setminus K)\le\epsilon$ untuk setiap
+$n\in\Bbb N$.}
+
+\noindent\Prf\ Kita tahu bahwa $\phi(0)=1$ dan $\phi$ kontinu di
+$0$ (285Fb). Pilih $a>0$ cukup besar sehingga bila $j\le r$ dan
+$|t|\le 1/a$, berlaku
+
+\Centerline{$1-\Real\phi(te_j)\le\Bover{\epsilon}{14r}$,}
+
+\noindent dengan menulis $e_j$ untuk vektor satuan ke-$j$, seperti dalam
+285J. Maka
+
+\Centerline{$7a\int_0^{1/a}
+(1-\Real\phi(te_j))dt\le\Bover{\epsilon}{2r}$}
+
+\noindent untuk setiap $j\le r$. Menurut Teorema Konvergensi Terdominasi
+Lebesgue (karena fungsi-fungsi $t\mapsto 1-\Real\phi_n(te_j)$ tentu terbatas
+secara seragam pada $[0,\bover1a]$), ada $n_0\in\Bbb N$ sedemikian sehingga
+
+\Centerline{$7a\int_0^{1/a}
+(1-\Real\phi_n(te_j))dt\le\Bover{\epsilon}{r}$}
+
+\noindent untuk setiap $j\le r$ dan $n\ge n_0$. Namun, 285J sekarang memberi
+
+\Centerline{$\nu_n\{x:|\xi_j|\ge a\}\le\Bover{\epsilon}{r}$}
+
+\noindent untuk setiap $j\le r$, $n\ge n_0$. Di sisi lain, tentu ada $b\ge a$
+sedemikian sehingga
+
+\Centerline{$\nu_n\{x:|\xi_j|\ge b\}\le\Bover{\epsilon}{r}$}
+
+\noindent untuk setiap $j\le r$, $n<n_0$. Jadi, dengan menetapkan
+$K=\{x:|\xi_j|\le b\text{ untuk setiap }j\le r\}$,
+
+\Centerline{$\nu_n(\BbbR^r\setminus K)\le\epsilon$}
+
+\noindent untuk setiap $n\in\Bbb N$, sesuai kebutuhan.  \Qed
+
+\medskip
+
+{\bf (d)} Sekarang ambil sembarang fungsi kontinu terbatas
+$h:\BbbR^r\to\Bbb R$ dan $\epsilon>0$. Tetapkan
+$M=1+\sup_{x\in\BbbR^r}|h(x)|$, dan pilih himpunan tertutup terbatas $K$
+sedemikian sehingga
+
+\Centerline{$\nu_n(\BbbR^r\setminus K)\le\Bover{\epsilon}M$ untuk setiap
+$n\in\Bbb N$, \quad$\nu(\BbbR^r\setminus K)\le\Bover{\epsilon}M$,}
+
+\noindent dengan menggunakan (b) di atas. Menurut teorema Stone--Weierstrass
+(281K), ada $y_0,\ldots,y_m\in\Bbb Q^r$ dan
+$c_0,\ldots,c_m\in\Bbb C$ sedemikian sehingga
+
+\Centerline{$|h(x)-g(x)|\le\epsilon$ untuk setiap $x\in K$,}
+
+\Centerline{$|g(x)|\le M$ untuk setiap $x\in\BbbR^r$,}
+
+\noindent dengan menulis $g(x)=\sum_{k=0}^mc_ke^{iy_k\dotproduct x}$ untuk
+$x\in\BbbR^r$. Sekarang
+
+\Centerline{$\lim_{n\to\infty}\int g\,d\nu_n
+=\lim_{n\to\infty}\sum_{k=0}^mc_k\phi_n(y_k)
+=\sum_{k=0}^mc_k\phi(y_k)
+=\int g\,d\nu$.}
+
+\noindent Di sisi lain, untuk setiap $n\in\Bbb N$,
+
+\Centerline{$|\int g\,d\nu_n-\int h\,d\nu_n|
+\le\int_K|g-h|d\nu_n+2M\nu_n(\BbbR^r\setminus K)
+\le 3\epsilon$,}
+
+\noindent dan dengan cara yang sama
+$|\int g\,d\nu-\int h\,d\nu|\le 3\epsilon$. Oleh karena itu,
+
+\Centerline{$\limsup_{n\to\infty}|\int h\,d\nu_n-\int h\,d\nu|\le
+6\epsilon$.}
+
+\noindent Karena $\epsilon$ sembarang,
+
+\Centerline{$\lim_{n\to\infty}\int h\,d\nu_n=\int h\,d\nu$,}
+
+\noindent dan (ii) benar.
+}%end of proof of 285L
+
+
+\vleader{72pt}{285M}{Akibat} (a) Misalkan $\nu$, $\nuprime$ dua ukuran
+probabilitas Radon pada $\BbbR^r$ dengan fungsi karakteristik yang sama. Maka
+keduanya sama.
+
+(b) Misalkan $(X_1,\ldots,X_r)$ dan $(Y_1,\ldots,Y_r)$ dua keluarga variabel
+acak bernilai real. Jika
+
+\Centerline{$\Expn(e^{i\eta_1X_1+\ldots+i\eta_rX_r})
+=\Expn(e^{i\eta_1Y_1+\ldots+i\eta_rY_r})$}
+
+\noindent untuk semua $\eta_1,\ldots,\eta_r\in\Bbb R$, maka
+$(X_1,\ldots,X_r)$ memiliki distribusi bersama yang sama dengan
+$(Y_1,\ldots,Y_r)$.
+
+\proof{{\bf (a)} Terapkan 285L dengan $\nu_n=\nuprime$ untuk setiap $n$.
+Kita memperoleh $\int h\,d\nuprime=\int h\,d\nu$ untuk setiap fungsi kontinu
+terbatas $h:\BbbR^r\to\Bbb R$. Menurut 256D(iv), $\nu=\nuprime$.
+
+\medskip
+
+{\bf (b)} Terapkan (a) dengan $\nu$, $\nuprime$ sebagai kedua distribusi
+bersama tersebut.
+}%end of proof of 285M
+
+\cmmnt{
+\leader{285N}{Catatan} Penerapan terpenting teorema ini barangkali adalah
+pembuktian baku Teorema Limit Pusat. Saya menguraikan gagasannya dalam 285Xq
+dan 285Yl-285Yo; rinciannya dapat ditemukan dalam kebanyakan buku teori
+probabilitas yang serius. Dua buku di rak saya ialah {\smc Shiryayev 84},
+\S III.4, dan {\smc Feller 66}, \S XV.6. Namun, untuk memperoleh kekuatan penuh
+versi Lindeberg dari Teorema Limit Pusat, kita harus bekerja cukup keras. Karena
+itu, sebagai gantinya saya akan menggambarkan metode tersebut melalui suatu
+versi teorema Poisson (285Q). Saya mulai dengan dua lema yang sangat sering
+digunakan dalam hasil semacam ini.
+}
+
+\leader{285O}{Lema} Misalkan
+$c_0,\ldots,c_n,d_0,\ldots,d_n$ bilangan-bilangan kompleks dengan modulus
+paling besar $1$. Maka
+
+\Centerline{$|\prod_{k=0}^nc_k-\prod_{k=0}^nd_k|
+\le\sum_{k=0}^n|c_k-d_k|$.}
+
+\proof{ Gunakan induksi pada $n$. Kasus $n=0$ langsung. Untuk kasus $n=1$,
+kita mempunyai
+
+$$\eqalign{|c_0c_1-d_0d_1|
+&=|c_0(c_1-d_1)+(c_0-d_0)d_1|\cr
+&\le|c_0||c_1-d_1|+|c_0-d_0||d_1|
+\le|c_1-d_1|+|c_0-d_0|,\cr}$$
+
+\noindent sebagaimana diperlukan. Untuk langkah induksi ke $n+1$, kita
+mempunyai
+
+$$\eqalignno{|\prod_{k=0}^{n+1}c_k-\prod_{k=0}^{n+1}d_k|
+&\le|\prod_{k=0}^nc_k-\prod_{k=0}^nd_k|
++|c_{n+1}-d_{n+1}|\cr
+\noalign{\noindent (menurut kasus yang baru dibuktikan, karena
+$c_{n+1}$, $d_{n+1}$, $\prod_{k=0}^nc_k$, dan $\prod_{k=0}^nd_k$ semuanya
+bermodulus paling besar $1$)}
+&\le\sum_{k=0}^n|c_k-d_k|+|c_{n+1}-d_{n+1}|\cr
+\noalign{\noindent (menurut hipotesis induksi)}
+&=\sum_{k=0}^{n+1}|c_k-d_k|,\cr}$$
+
+\noindent sehingga induksi berlanjut.
+}%end of proof of 285O
+
+\leader{285P}{Lema} Misalkan $M\ge 0$ dan $\epsilon>0$. Maka ada
+$\eta>0$ dan $y_0,\ldots,y_n\in\Bbb R$ sedemikian sehingga, bila $X$, $Z$
+dua variabel acak bernilai real dengan $\Expn(|X|)\le M$,
+$\Expn(|Z|)\le M$ dan
+$|\phi_X(y_j)-\phi_Z(y_j)|\le\eta$ untuk setiap $j\le n$, maka
+$F_X(a)\le F_Z(a+\epsilon)+\epsilon$ untuk setiap $a\in\Bbb R$, dengan
+$\phi_X$ menyatakan fungsi karakteristik $X$ dan $F_X$ menyatakan fungsi
+distribusi $X$.
+
+\proof{ Kasus $M=0$ langsung, sebab ketika itu $X$ dan $Z$ keduanya nol hampir
+di mana-mana. Jadi selanjutnya saya andaikan $M>0$. Tetapkan
+$\delta=\Bover{\epsilon}7>0$, $b=\Bover{M}{\delta}$.
+
+\medskip
+
+{\bf (a)} Definisikan $h_0:\Bbb R\to[0,1]$ dengan
+$h_0(x)=\med(0,1-\Bover{x}{\delta},1)$ untuk $x\in\Bbb R$. Maka $h_0$
+kontinu. Misalkan $m=\lfloor\bover{b}{\delta}\rfloor$ merupakan bagian bulat
+dari $\bover{b}{\delta}$, dan untuk $-m\le k\le m+1$ tetapkan
+$h_k(x)=h_0(x-k\delta)$.
+
+Menurut teorema Stone--Weierstrass (sekali lagi 281K), ada
+$y_0,\ldots,y_n\in\Bbb R$ dan $c_0,\ldots,c_n\in\Bbb C$ sedemikian sehingga,
+dengan menulis $g_0(x)=\sum_{j=0}^nc_je^{iy_jx}$,
+
+\Centerline{$|h_0(x)-g_0(x)|\le\delta$
+  untuk setiap $x\in[-b-(m+1)\delta,b+m\delta]$,}
+
+\Centerline{$|g_0(x)|\le 1$ untuk setiap $x\in\Bbb R$.}
+
+\noindent Untuk $-m\le k\le m+1$, tetapkan
+
+\Centerline{$g_k(x)=g_0(x-k\delta)
+=\sum_{j=0}^nc_je^{-iy_jk\delta}e^{iy_jx}$.}
+
+\noindent Tetapkan $\eta=\delta/(1+\sum_{j=0}^n|c_j|)>0$.
+
+\medskip
+
+{\bf (b)} Sekarang andaikan $X$, $Z$ variabel-variabel acak yang memenuhi
+$\Expn(|X|)\le M$, $\Expn(|Z|)\le M$ dan
+$|\phi_X(y_j)-\phi_Z(y_j)|\le\eta$ untuk setiap $j\le n$. Maka untuk setiap
+$k$ kita mempunyai
+
+\Centerline{$\Expn(g_k(X))
+=\Expn(\sum_{j=0}^nc_je^{-iy_jk\delta}e^{iy_jX})
+=\sum_{j=0}^nc_je^{-iy_jk\delta}\phi_X(y_j)$,}
+
+\noindent dan dengan cara yang sama
+
+\Centerline{$\Expn(g_k(Z))
+=\sum_{j=0}^nc_je^{-iy_jk\delta}\phi_Z(y_j)$,}
+
+\noindent sehingga
+
+\Centerline{$|\Expn(g_k(X))-\Expn(g_k(Z))|
+\le\sum_{j=0}^n|c_j||\phi_X(y_j)-\phi_Z(y_j)|
+\le\sum_{j=0}^n|c_j|\eta\le\delta$.}
+
+\noindent Selanjutnya,
+
+\Centerline{$|h_k(x)-g_k(x)|\le\delta$ untuk setiap
+$x\in[-b-(m+1)\delta+k\delta,b+m\delta+k\delta]\supseteq[-b,b]$,}
+
+\Centerline{$|h_k(x)-g_k(x)|\le 2$ untuk setiap $x$,}
+
+\Centerline{$\Pr(|X|\ge b)\le\Bover{M}{b}=\delta$,}
+
+\noindent sehingga $\Expn(|h_k(X)-g_k(X)|)\le 3\delta$; dan demikian pula
+$\Expn(|h_k(Z)-g_k(Z)|)\le 3\delta$. Dengan menggabungkan keduanya,
+
+\Centerline{$|\Expn(h_k(X))-\Expn(h_k(Z))|\le 7\delta=\epsilon$}
+
+\noindent bila $-m\le k\le m+1$.
+
+\medskip
+
+{\bf (c)} Sekarang andaikan $-b\le a\le b$. Maka ada $k$ sedemikian sehingga
+$-m\le k\le m+1$ dan $a\le k\delta\le a+\delta$. Karena
+
+\Centerline{$\chi\ocint{-\infty,a}
+\le\chi\ocint{-\infty,k\delta}
+\le h_k
+\le\chi\ocint{-\infty,(k+1)\delta}
+\le\chi\ocint{-\infty,a+2\delta}$,}
+
+\noindent kita harus mempunyai
+
+\Centerline{$\Pr(X\le a)\le\Expn(h_k(X))$,}
+
+\Centerline{$\Expn(h_{k}(Z))\le\Pr(Z\le a+2\delta)\le\Pr(Z\le
+a+\epsilon)$.}
+
+\noindent Tetapi ini berarti bahwa
+
+\Centerline{$\Pr(X\le a)\le\Expn(h_k(X))\le\Expn(h_k(Z))+\epsilon
+\le\Pr(Z\le a+\epsilon)+\epsilon$}
+
+\noindent bila $a\in[-b,b]$.
+
+\medskip
+
+{\bf (d)} Untuk kasus $a\ge b$, $a\le -b$, kita tentu mempunyai
+
+\Centerline{$b(1-F_Z(b))=b\Pr(Z>b)\le\Expn(|Z|)\le M$,}
+
+\noindent jadi jika $a\ge b$ maka
+
+\Centerline{$F_X(a)\le 1\le F_Z(a)+1-F_Z(b)\le F_Z(a)+\Bover{M}{b}
+=F_Z(a)+\delta\le F_Z(a+\epsilon)+\epsilon$.}
+
+\noindent Demikian juga,
+
+\Centerline{$bF_X(-b)\le \Expn(|X|)\le M$,}
+
+\noindent Jadi
+
+\Centerline{$F_X(a)\le\delta\le F_Z(a+\epsilon)+\epsilon$}
+
+\noindent untuk setiap $a\le -b$. Ini menyelesaikan pembuktian.
+}%end of proof of 285P
+
+\vleader{72pt}{285Q}{Hukum kejadian langka: Teorema} Untuk setiap $M\ge 0$
+dan $\epsilon>0$, ada $\delta>0$ sedemikian sehingga bila
+$X_0,\ldots,X_n$ variabel-variabel acak bebas bernilai $\{0,1\}$ dengan
+$\Pr(X_k=1)=p_k\le\delta$ untuk setiap $k\le n$ dan
+$\sum_{k=0}^np_k=\lambda\le M$, serta $X=X_0+\ldots+X_n$, maka
+
+\Centerline{$|\Pr(X=m)-\Bover{\lambda^m}{m!}e^{-\lambda}|\le\epsilon$}
+
+\noindent untuk setiap $m\in\Bbb N$.
+
+\proof{{\bf (a)} Kita mulai dengan menghitung beberapa fungsi karakteristik.
+Pertama, fungsi karakteristik $\phi_k$ dari $X_k$ diberikan oleh
+
+\Centerline{$\phi_k(y)=(1-p_k)e^{iy0}+p_ke^{iy1}=1+p_k(e^{iy}-1)$.}
+
+\noindent Selanjutnya, jika $Z$ suatu variabel acak Poisson dengan parameter
+$\lambda$ (yakni jika $\Pr(Z=m)=\lambda^me^{-\lambda}/m!$ untuk setiap
+$m\in\Bbb N$; satu-satunya hal yang perlu diketahui saat ini mengenai
+distribusi Poisson ialah bahwa
+$\sum_{m=0}^{\infty}\lambda^me^{-\lambda}/m!=1$), maka fungsi
+karakteristiknya $\phi_Z$ diberikan oleh
+
+\Centerline{$\phi_Z(y)
+=\sum_{m=0}^{\infty}\Bover{\lambda^m}{m!}e^{-\lambda}e^{iym}
+=e^{-\lambda}\sum_{m=0}^{\infty}\Bover{(\lambda e^{iy})^m}{m!}
+=e^{-\lambda}e^{\lambda e^{iy}}
+=e^{\lambda(e^{iy}-1)}$.}
+
+\medskip
+
+{\bf (b)} Sebelum mengurus nilai $\delta$ dan $\eta$, saya tunjukkan cara
+menaksir $\phi_X(y)-\phi_Z(y)$. Kita tahu bahwa
+
+\Centerline{$\phi_X(y)=\prod_{k=0}^n\phi_k(y)$}
+
+\noindent (menggunakan 285I), sementara
+
+\Centerline{$\phi_Z(y)=\prod_{k=0}^ne^{p_k(e^{iy}-1)}$.}
+
+\noindent Karena $\phi_k(y)$ dan $e^{p_k(e^{iy}-1)}$ semuanya bermodulus
+paling besar $1$ (memang,
+
+\Centerline{$|e^{p_k(e^{iy}-1)}|=e^{-p_k(1-\cos y)}\le 1$,)}
+
+\noindent 285O mengatakan kepada kita bahwa
+
+\Centerline{$|\phi_X(y)-\phi_Z(y)|
+\le\sum_{k=0}^n|\phi_k(y)-e^{p_k(e^{iy}-1)}|
+=\sum_{k=0}^n|e^{p_k(e^{iy}-1)}-1-p_k(e^{iy}-1)|$.}
+
+\medskip
+
+{\bf (c)} Jadi kita perlu melakukan sedikit analisis. Untuk menaksir
+$|e^z-1-z|$ ketika $\Real z\le 0$, tinjau fungsi
+
+\Centerline{$g(t)=\Real(c(e^{tz}-1-tz))$}
+
+\noindent dengan $|c|=1$. Kita mempunyai $g(0)=g'(0)=0$ dan
+
+\Centerline{$|g''(t)|=|\Real(c(z^2e^{tz}))|\le|c||z^2||e^{tz}|\le|z|^2$}
+
+\noindent untuk setiap $t\ge 0$, sehingga
+
+\Centerline{$|g(1)|\le\Bover12|z|^2$}
+
+\noindent menurut teorema Taylor bernilai real dengan suku sisa, atau dengan
+cara lain. Karena $c$ sembarang,
+
+\Centerline{$|e^{z}-1-z|\le\Bover12|z|^2$}
+
+\noindent bila $\Real z\le 0$. Khususnya,
+
+\Centerline{$|e^{p_k(e^{iy}-1)}-1-p_k(e^{iy}-1)|
+\le\Bover12p_k^2|e^{iy}-1|^2\le 2p_k^2$}
+
+\noindent untuk setiap $k$, dan
+
+\Centerline{$|\phi_X(y)-\phi_Z(y)|
+\le\sum_{k=0}^n|e^{p_k(e^{iy}-1)}-1-p_k(e^{iy}-1)|
+\le 2\sum_{k=0}^np_k^2$}
+
+\noindent untuk setiap $y\in\Bbb R$.
+
+\medskip
+
+{\bf (d)} Sekarang untuk taksiran terperinci. Untuk $M\ge 0$ dan
+$\epsilon>0$, pilih $\eta>0$ dan $y_0,\ldots,y_l\in\Bbb R$ sedemikian sehingga
+
+\Centerline{$\Pr(X\le a)\le\Pr(Z\le a+\Bover12)+\Bover{\epsilon}2$}
+
+\noindent bila $X$, $Z$ variabel-variabel acak bernilai real,
+$\Expn(|X|)\le M$, $\Expn(|Z|)\le M$ dan
+$|\phi_X(y_j)-\phi_Z(y_j)|\le\eta$ untuk setiap $j\le l$ (285P). Ambil
+$\delta=\bover{\eta}{2M+1}$
+dan andaikan $X_0,\ldots,X_n$ variabel-variabel acak bebas bernilai
+$\{0,1\}$ dengan $\Pr(X_k=1)=p_k\le\delta$ untuk setiap $k\le n$, dengan
+$\lambda=\sum_{k=0}^np_k$ tidak lebih dari $M$. Tetapkan
+$X=X_0+\ldots+X_n$
+dan misalkan $Z$ variabel acak Poisson dengan parameter $\lambda$. Maka,
+menurut argumen (a)--(c),
+
+\Centerline{$|\phi_X(y)-\phi_Z(y)|\le 2\sum_{k=0}^np_k^2
+\le 2\delta\sum_{k=0}^np_k=2\delta\lambda\le\eta$}
+
+\noindent untuk setiap $y\in\Bbb R$. Selain itu,
+
+\Centerline{$\Expn(|X|)=\Expn(X)=\sum_{k=0}^np_k=\lambda\le M$,}
+
+\Centerline{$\Expn(|Z|)=\Expn(Z)
+=\sum_{m=0}^{\infty}m\Bover{\lambda^m}{m!}e^{-\lambda}
+=e^{-\lambda}\sum_{m=1}^{\infty}\Bover{\lambda^m}{(m-1)!}
+=e^{-\lambda}\sum_{m=0}^{\infty}\Bover{\lambda^{m+1}}{m!}
+=\lambda\le M$.}
+
+\noindent Jadi
+
+\Centerline{$\Pr(X\le a)\le\Pr(Z\le a+\Bover12)+\Bover{\epsilon}2$,}
+
+\Centerline{$\Pr(Z\le a)\le\Pr(X\le a+\Bover12)+\Bover{\epsilon}2$}
+
+\noindent untuk setiap $a$. Tetapi karena $X$ dan $Z$ hanya mengambil nilai
+dalam $\Bbb N$,
+
+\Centerline{$|\Pr(X\le m)-\Pr(Z\le m)|\le\Bover{\epsilon}2$}
+
+\noindent untuk setiap $m\in\Bbb N$, dan
+
+\Centerline{$|\Pr(X=m)-\Bover{\lambda^m}{m!}e^{-\lambda}|
+=|\Pr(X=m)-\Pr(Z=m)|
+\le\epsilon$}
+
+\noindent untuk setiap $m\in\Bbb N$, sesuai kebutuhan.
+}%end of proof of 285Q
+
+\leader{285R}{Konvolusi}\dvro{ Jika}{ Ingat dari 257A bahwa jika}
+$\nu$, $\tilde\nu$ ukuran-ukuran probabilitas Radon pada $\BbbR^r$, maka
+%\tilde\nu  not  \nuprime
+%because we have  \tilde f  for its R-N deriviative
+\dvro{$\phi_{\nu*\tilde\nu}(y)
+=\phi_{\nu}(y)\phi_{\tilde\nu}(y)$
+untuk setiap $y\in\BbbR^r$.}{keduanya mempunyai konvolusi
+$\nu*\tilde\nu$ yang didefinisikan dengan
+
+\Centerline{$(\nu*\tilde\nu)(E)=(\nu\times\tilde\nu)\{(x,y):x+y\in E\}$}
+
+\noindent untuk setiap himpunan Borel $E\subseteq\BbbR^r$; konvolusi ini juga
+merupakan ukuran probabilitas Radon. Menurut 257B, fungsi karakteristik
+$\phi_{\nu*\tilde\nu}$ dapat dihitung langsung: kita mempunyai
+
+$$\eqalign{\phi_{\nu*\tilde\nu}(y)
+&=\int e^{iy\dotproduct x}(\nu*\tilde\nu)(dx)
+=\int e^{iy\dotproduct (x+x')}\nu(dx)\tilde\nu(dx')\cr
+&=\int e^{iy\dotproduct x}e^{iy\dotproduct x'}\nu(dx)\tilde\nu(dx')
+=\int e^{iy\dotproduct x}\nu(dx)
+  \int e^{iy\dotproduct x'}\tilde\nu(dx')
+=\phi_{\nu}(y)\phi_{\tilde\nu}(y)}$$
+
+\noindent untuk setiap $y\in\BbbR^r$. (Jadi konvolusi ukuran bersesuaian
+dengan perkalian titik demi titik fungsi karakteristik, sebagaimana konvolusi
+fungsi bersesuaian dengan perkalian titik demi titik transformasi Fourier.)
+Karena jumlah variabel acak bebas bersesuaian dengan konvolusi distribusinya
+(272T), ini memberi cara lain untuk memandang 285I. Ingat pula bahwa jika
+$\nu$, $\tilde\nu$ mempunyai turunan Radon--Nikod\'ym $f$, $\tilde f$ terhadap
+ukuran Lebesgue, maka $f*\tilde f$ merupakan turunan Radon--Nikod\'ym dari
+$\nu*\tilde\nu$ (257F).
+}%end of dvro
+
+\leader{285S}{Topologi samar dan konvergensi titik demi titik fungsi
+karakteristik}\dvro{ Tuliskan}{ Dalam 285L kita melihat bahwa barisan
+$\sequencen{\nu_n}$ ukuran probabilitas Radon pada $\BbbR^r$
+konvergen dalam topologi samar ke suatu ukuran probabilitas Radon $\nu$ jika
+dan hanya jika
+
+\Centerline{$\lim_{n\to\infty}\int e^{iy\dotproduct
+x}\nu_n(dx)=\int
+e^{iy\dotproduct x}\nu(dx)$}
+
+\noindent untuk setiap $y\in\BbbR^r$; yakni, jika dan hanya jika
+
+\Centerline{$\lim_{n\to\infty}\rho'_y(\nu_n,\nu)=0$ untuk setiap $y\in\Bbb
+R^r$,}
+
+\noindent dengan menulis}
+
+\Centerline{$\rho'_y(\nu,\nuprime)=|\int e^{iy\dotproduct x}\nu(dx)
+-\int e^{iy\dotproduct x}\nuprime(dx)|$}
+
+\noindent untuk ukuran-ukuran probabilitas Radon $\nu$, $\nuprime$ pada
+$\BbbR^r$ dan $y\in\BbbR^r$. \dvro{Tuliskan}{Wajar untuk menanyakan apakah
+pseudometrik-pseudometrik $\rho'_y$ benar-benar mendefinisikan topologi samar.
+Tuliskan} $\frak T$ untuk topologi samar dan $\frak S$ untuk topologi yang
+didefinisikan oleh $\{\rho'_y:y\in\BbbR^r\}$\cmmnt{. Kita tentu mempunyai
+$\frak S\subseteq\frak T$, karena setiap $\rho'_y$ merupakan salah satu
+pseudometrik yang digunakan dalam definisi $\frak T$. Kita juga tahu bahwa
+$\frak S$ dan $\frak T$ mempunyai barisan konvergen yang sama, serta bahwa
+$\frak T$ termetrikkan (lihat 285Xt). Namun, semua ini belum berarti bahwa
+kedua topologi tersebut sama; hasil berikut menunjukkan bahwa keduanya memang
+berbeda.}%end of comment
+
+\leader{285T}{Proposisi} Misalkan $y_0,\ldots,y_n\in\Bbb R$
+dan $\eta>0$. Maka ada tak berhingga banyak $m\in\Bbb N$ sedemikian sehingga
+$|1-e^{iy_km}|\le\eta$ untuk setiap $k\le n$.
+
+\proof{ Pilih $\eta_1,\ldots,\eta_r\in\Bbb R$ sedemikian sehingga
+$1=\eta_0,\eta_1,\ldots,\eta_r$ bebas linear atas $\Bbb Q$ dan setiap
+$y_k/2\pi$ merupakan kombinasi linear dari $\eta_j$ atas $\Bbb Q$; tuliskan
+$y_k=2\pi\sum_{j=0}^rq_{kj}\eta_j$ dengan setiap $q_{kj}\in\Bbb Q$.
+Nyatakan $q_{kj}$ sebagai $p_{kj}/p$, dengan setiap $p_{kj}\in\Bbb Z$
+dan $p\in\Bbb N\setminus\{0\}$. Tetapkan
+$M=\max_{k\le n}\sum_{j=0}^r|p_{kj}|$.
+
+Ambil sembarang $m_0\in\Bbb N$ dan pilih $\delta>0$ sedemikian sehingga
+$|1-e^{2\pi ix}|\le\eta$ bila $|x|\le2\pi M\delta$. Menurut Teorema
+Ekuidistribusi Weyl (281N), ada tak berhingga banyak $m$ sedemikian sehingga
+$\fraction{m\eta_j}\le\delta$ bila $1\le j\le r$; khususnya, ada yang memenuhi
+$m\ge m_0$. Tetapkan $m_j=\lfloor m\eta_j\rfloor$, sehingga
+$|m\eta_j-m_j|\le\delta$ untuk $0\le j\le r$. Maka
+
+\Centerline{$|mpy_k-2\pi\sum_{j=0}^rp_{kj}m_j|
+\le2\pi\sum_{j=0}^r|p_{kj}||m\eta_j-m_j|
+\le 2\pi M\delta$,}
+
+\noindent jadi bahwa
+
+\Centerline{$|1-e^{iy_kmp}|
+=|1-\exp(i(mpy_k-2\pi\sum_{j=0}^rp_{kj}m_j))|
+\le\eta$}
+
+\noindent untuk setiap $k\le n$. Karena $mp\ge m_0$ dan $m_0$ sembarang,
+hasilnya terbukti.
+}%end of proof of 285T
+
+\leader{285U}{Akibat} Topologi $\frak S$ dan $\frak T$ pada ruang ukuran
+probabilitas Radon pada $\Bbb R$, sebagaimana dijelaskan dalam 285S, berbeda.
+
+\proof{ Misalkan $\delta_x$ ukuran Dirac pada $\Bbb R$ yang terpusat di
+$x$. Menurut 285T, setiap anggota $\frak S$ yang memuat $\delta_0$ juga memuat
+$\delta_m$ untuk tak berhingga banyak $m\in\Bbb N$. Di sisi lain, himpunan
+
+\Centerline{$G=\{\nu:\int e^{-x^2}\nu(dx)>\Bover12\}$}
+
+\noindent merupakan anggota $\frak T$ yang memuat $\delta_0$, tetapi tidak
+memuat $\delta_m$ untuk setiap bilangan bulat $m\ne 0$. Jadi
+$G\in\frak T\setminus\frak S$ dan $\frak T\ne\frak S$.
+}%end of proof of 285U
+
+
+\exercises{
+\leader{285X}{Latihan dasar (a)}
+%\spheader 285Xa
+Misalkan $\nu$ suatu ukuran probabilitas Radon pada $\BbbR^r$, dengan
+$r\ge 1$, dan andaikan $\int\|x\|\nu(dx)<\infty$. Tunjukkan bahwa fungsi
+karakteristik $\phi$ dari $\nu$ terdiferensialkan (dalam arti penuh 262Fa) dan
+bahwa $\pd{\phi}{\eta_j}(y)=i\int\xi_je^{iy\dotproduct x}\nu(dx)$ untuk setiap
+$j\le r$ dan $y\in\BbbR^r$, dengan $\xi_j$, $\eta_j$ menyatakan koordinat
+$x$ dan $y$ seperti biasa.
+%285A
+
+\sqheader 285Xb Misalkan $\pmb{X}=(X_1,\ldots,X_r)$ suatu keluarga variabel
+acak bernilai real, dengan fungsi karakteristik $\phi_{\pmb{X}}$. Tunjukkan
+bahwa fungsi karakteristik $\phi_{X_j}$ dari $X_j$ diberikan oleh
+
+\Centerline{$\phi_{X_j}(y)=\phi_{\pmb{X}}(ye_j)$ untuk setiap $y\in\Bbb
+R$,}
+
+\noindent dengan $e_j$ vektor satuan ke-$j$ dari $\BbbR^r$.
+%285A
+
+\sqheader 285Xc Misalkan $X$ variabel acak bernilai real dan $\phi_X$ fungsi
+karakteristiknya. Tunjukkan bahwa
+
+\Centerline{$\phi_{aX+b}(y)=e^{iyb}\phi_X(ay)$}
+
+\noindent untuk setiap $a$, $b$, $y\in\Bbb R$.
+%285A
+
+\spheader 285Xd\dvAnew{2014}
+Misalkan $X$ variabel acak bernilai real yang tidak konstan secara esensial,
+dan $\phi$ fungsi karakteristiknya. Tunjukkan bahwa $|\phi(y)|<1$ untuk semua
+$y\in\Bbb R$, kecuali mungkin sejumlah terhitung banyaknya.
+\Hint{Dukungan (256Xf) distribusi $X$ memuat dua titik berbeda $x$, $x'$;
+jika $e^{iyx}\ne e^{iyx'}$, maka $|\phi(y)|<1$.}
+%285D
+
+\spheader 285Xe Misalkan $X$ variabel acak bernilai real dan
+$\phi$ fungsi karakteristiknya.
+
+\quad{(i)} Tunjukkan bahwa untuk setiap fungsi terintegralkan bernilai kompleks
+$h$ pada $\Bbb R$,
+
+\Centerline{$\Expn(\varhat{h}(X))=\Bover1{\sqrt{2\pi}}
+\int_{-\infty}^{\infty}\phi(-y)h(y)dy$,}
+
+\noindent dengan $\varhat{h}$ menyatakan transformasi Fourier dari $h$.
+
+\quad{(ii)} Tunjukkan bahwa untuk setiap fungsi uji yang menurun cepat $h$,
+
+\Centerline{$\Expn(h(X))
+=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+  \phi(y)\varhat{h}(y)dy$.}
+%285D
+
+\spheader 285Xf Misalkan $\nu$ suatu ukuran probabilitas Radon pada
+$\Bbb R$, dan andaikan fungsi karakteristiknya $\phi$ terintegralkan-kuadrat.
+Tunjukkan bahwa $\nu$ merupakan ukuran integral tak tentu terhadap ukuran
+Lebesgue dan turunan Radon--Nikod\'ym-nya juga terintegralkan-kuadrat.
+\Hint{Gunakan 284O untuk mencari fungsi terintegralkan-kuadrat $f$ sedemikian
+sehingga $\int f\times h=\bover1{\sqrt{2\pi}}\int\phi\times\varhat{h}$ untuk
+setiap fungsi uji yang menurun cepat $h$, serta gagasan dari pembuktian 284G
+untuk menunjukkan bahwa $\int_a^bf=\nu\ooint{a,b}$ bila $a<b$ dalam
+$\Bbb R$.}
+%285D 285Xe
+
+\spheader 285Xg\dvAformerly{2{}85Yp} Misalkan $\nu$ suatu ukuran probabilitas
+Radon pada $\BbbR^r$ dengan dukungan terbatas (definisi: 256Xf). Tunjukkan bahwa
+fungsi karakteristiknya mulus.
+%285D
+
+\spheader 285Xh Misalkan $X$ suatu variabel acak normal dengan ekspektasi $a$
+dan varians $\sigma^2$. Tunjukkan bahwa
+$\Expn(e^X)=\exp(a+\bover12\sigma^2)$.
+%285E
+
+\sqheader 285Xi Misalkan $\pmb{X}=(X_1,\ldots,X_r)$ suatu keluarga variabel
+acak bernilai real dengan fungsi karakteristik $\phi_{\pmb{X}}$. Andaikan
+$\phi_{\pmb{X}}$ dapat dinyatakan dalam bentuk
+
+\Centerline{$\phi_{\pmb{X}}(y)=\prod_{j=1}^r\phi_j(\eta_j)$}
+
+\noindent untuk fungsi-fungsi $\phi_1,\ldots,\phi_r$, dengan menulis
+$y=(\eta_1,\ldots,\eta_r)$ seperti biasa. Tunjukkan bahwa $X_1,\ldots,X_r$
+saling bebas. \Hint{Tunjukkan bahwa $\phi_j$ harus merupakan kelipatan fungsi
+karakteristik $X_j$; kemudian tunjukkan bahwa distribusi $\pmb{X}$ mempunyai
+fungsi karakteristik yang sama dengan produk distribusi $X_j$.}
+%285I
+
+\spheader 285Xj Misalkan $X_1$, $X_2$ variabel acak bernilai real yang bebas
+dengan distribusi yang sama, dan $\phi$ fungsi karakteristik $X_1-X_2$.
+Tunjukkan bahwa $\phi(t)=\phi(-t)\ge 0$ untuk setiap
+$t\in\Bbb R$.
+%285I
+
+\spheader 285Xk Misalkan $\nu$ suatu ukuran probabilitas Radon pada
+$\Bbb R$, dengan fungsi karakteristik $\phi$. Tunjukkan bahwa
+
+\Centerline{$\Bover12(\nu[c,d]+\nu\ooint{c,d})
+=\Bover{i}{2\pi}\lim_{a\to\infty}
+  \int_{-a}^a\Bover{e^{-idy}-e^{-icy}}{y}\phi(y)dy$}
+
+\noindent bila $c<d$ dalam $\Bbb R$.
+\Hint{Gunakan bagian (a) dari pembuktian 283F.}
+%285J
+
+\spheader 285Xl Misalkan $X$ variabel acak bernilai real dan
+$\phi_X$ fungsi karakteristiknya. Tunjukkan bahwa
+
+\Centerline{$\Pr(|X|\ge a)
+\le 7a\int_0^{1/a}(1-\Real(\phi_X(y))dy$}
+
+\noindent untuk setiap $a>0$.
+%285J
+
+\spheader 285Xm Kita mengatakan bahwa suatu himpunan $Q$ ukuran probabilitas
+Radon pada $\Bbb R$ {\bf ketat secara seragam} jika untuk setiap $\epsilon>0$
+ada $M\ge 0$ sedemikian sehingga
+$\nu(\Bbb R\setminus[-M,M])\le\epsilon$ untuk setiap $\nu\in Q$. Tunjukkan
+bahwa jika $Q$ sembarang keluarga ukuran probabilitas Radon pada $\Bbb R$ yang
+ketat secara seragam, dan $\epsilon>0$, maka ada $\eta>0$ dan
+$y_0,\ldots,y_n\in\Bbb R$ sedemikian sehingga
+
+\Centerline{$\nu\ocint{-\infty,a}
+\le\nuprime\ocint{-\infty,a+\epsilon}+\epsilon$}
+
+\noindent bila $\nu$, $\nuprime\in Q$ dan
+$|\phi_{\nu}(y_j)-\phi_{\nuprime}(y_j)|\le\eta$ untuk setiap $j\le n$, dengan
+$\phi_{\nu}$ menyatakan fungsi karakteristik $\nu$.
+%285M
+
+\spheader 285Xn Misalkan $\sequencen{\nu_n}$ suatu barisan ukuran probabilitas
+Radon pada $\Bbb R$, dan andaikan barisan ini konvergen dalam topologi samar ke
+ukuran probabilitas Radon $\nu$. Tunjukkan bahwa
+$\{\nu\}\cup\{\nu_n:n\in\Bbb N\}$ ketat secara seragam dalam arti
+285Xm.
+%285M
+
+\sqheader 285Xo Misalkan $\nu$, $\nuprime$ dua ukuran Radon berhingga total
+pada $\BbbR^r$ yang sama pada semua setengah-ruang tertutup, yakni himpunan
+berbentuk $\{x:x\dotproduct y\ge c\}$ untuk $c\in\Bbb R$, $y\in\BbbR^r$.
+Tunjukkan bahwa $\nu=\nuprime$. \Hint{Reduksikan pada kasus
+$\nu\BbbR^r=\nuprime\Bbb R^r=1$ dan gunakan 285M.}
+%285M
+
+\sqheader 285Xp\dvAformerly{2{}85Xm}
+Untuk $\gamma>0$, {\bf distribusi Cauchy} dengan pusat $0$ dan parameter skala
+$\gamma$ ialah ukuran probabilitas Radon $\nu_{\gamma}$ yang didefinisikan oleh
+rumus
+
+\Centerline{$\nu_{\gamma}(E)
+=\Bover{\gamma}{\pi}\int_E\Bover1{\gamma^2+t^2}dt$.}
+
+\noindent (i) Tunjukkan bahwa jika $X$ variabel acak dengan distribusi
+$\nu_{\gamma}$, maka $\Pr(X\ge 0)=\Pr(|X|\ge\gamma)=\bover12$. (ii) Tunjukkan
+bahwa fungsi karakteristik $\nu_{\gamma}$ ialah
+$y\mapsto e^{-\gamma|y|}$. \Hint{283Xq.} (iii) Tunjukkan bahwa jika $X$ dan
+$Y$ variabel-variabel acak bebas dengan distribusi Cauchy, keduanya berpusat di
+$0$ dan masing-masing mempunyai parameter skala $\gamma$, $\delta$, serta
+$\alpha$, $\beta$ tidak keduanya $0$, maka $\alpha X+\beta Y$ mempunyai
+distribusi Cauchy berpusat di $0$ dengan parameter skala
+$|\alpha|\gamma+|\beta|\delta$. (iv) Tunjukkan bahwa jika $X$ dan $Y$ variabel
+acak bebas berdistribusi normal dengan ekspektasi $0$, maka $X/Y$ mempunyai
+distribusi Cauchy.
+%285M
+
+\sqheader 285Xq Misalkan $X_1,X_2,\ldots$ suatu barisan variabel acak bebas
+dan berdistribusi identik, semuanya dengan ekspektasi nol dan varians $1$;
+misalkan $\phi$ fungsi karakteristik bersamanya. Untuk setiap $n\ge 1$,
+tetapkan $S_n=\bover1{\sqrt{n}}(X_1+\ldots+X_n)$.
+
+\quad{(i)} Tunjukkan bahwa fungsi karakteristik $\phi_n$ dari $S_n$
+diberikan dengan rumus $\phi_n(y)=(\phi(\Bover{y}{\sqrt{n}}))^{n}$
+untuk setiap $n$.
+
+\quad{(ii)} Tunjukkan bahwa
+$|\phi_n(y)-e^{-y^2/2}|\le n|\phi(\Bover{y}{\sqrt{n}})-e^{-y^2/2n}|$
+untuk $n\ge 1$ dan $y\in\Bbb R$.
+
+\ifdim\pagewidth>467pt\fontdimen3\tenrm=3.33pt\fi
+\quad(iii) Dengan menetapkan $h(y)=\phi(y)-e^{-y^2/2}$, tunjukkan bahwa
+$h(0)=h'(0)=h''(0)=0$, dan karena itu
+$\lim_{n\to\infty} nh(y/\sqrt{n})=0$, sehingga
+$\lim_{n\to\infty}\phi_n(y)=e^{-y^2/2}$ untuk setiap $y\in\Bbb R$.
+\fontdimen3\tenrm=1.67pt
+
+\quad{(iv)} Tunjukkan bahwa $\lim_{n\to\infty}\Pr(S_n\le a)
+=\Bover1{\sqrt{2\pi}}\int_{-\infty}^ae^{-x^2/2}dx$ untuk setiap
+$a\in\Bbb R$.
+%285N
+
+\sqheader 285Xr\dvAformerly{2{}85Xm}
+Variabel acak $X$ mempunyai {\bf distribusi Poisson}
+dengan parameter $\lambda>0$ jika $\Pr(X=n)=e^{-\lambda}\lambda^n/n!$ untuk
+setiap $n\in\Bbb N$. (i) Tunjukkan bahwa dalam hal ini
+$\Expn(X)=\Var(X)=\lambda$. (ii) Tunjukkan bahwa jika $X$ dan $Y$ variabel
+acak bebas dengan distribusi Poisson, maka $X+Y$ mempunyai distribusi Poisson.
+(iii) Carilah pembuktian (ii) berdasarkan 285Q.
+%285Q
+
+\sqheader 285Xs Untuk $x\in\BbbR^r$, misalkan $\delta_x$ ukuran Dirac pada
+$\BbbR^r$ yang terpusat di $x$. Tunjukkan bahwa
+$\delta_x*\delta_y=\delta_{x+y}$ untuk semua $x$, $y\in\BbbR^r$.
+%285R
+
+\spheader 285Xt Misalkan $P$ himpunan ukuran probabilitas Radon pada
+$\BbbR^r$. Untuk $y\in\BbbR^r$, tetapkan
+$\rho'_y(\nu,\nuprime)=|\phi_{\nu}(y)-\phi_{\nuprime}(y)|$ untuk semua $\nu$,
+$\nuprime\in P$, menulis $\phi_{\nu}$ untuk fungsi karakteristik dari
+$\nu$. Tetapkan $\psi(x)=\bover1{(\sqrt{2\pi})^r}e^{-x\dotproduct x/2}$ untuk
+$x\in\BbbR^r$. Tunjukkan bahwa topologi samar pada $P$ didefinisikan oleh
+keluarga $\{\rho_{\psi}\}\cup\{\rho'_y:y\in\Bbb Q^r\}$, dengan
+$\rho_{\psi}$ didefinisikan seperti dalam 285K, dan karenanya termetrikkan.
+\Hint{281K; bandingkan 285Xm.}
+%285S
+
+\sqheader 285Xu\dvAformerly{2{}85Xr}
+Misalkan $\phi:\BbbR^r\to\Bbb C$ fungsi karakteristik suatu ukuran
+probabilitas Radon pada $\BbbR^r$. Tunjukkan bahwa $\phi(0)=1$ dan
+$\sum_{j=0}^n\sum_{k=0}^nc_j\bar c_k\phi(a_j-a_k)\ge 0$ bila
+$a_0,\ldots,a_n\in\BbbR^r$ dan $c_0,\ldots,c_n\in\Bbb C$. (`Teorema
+Bochner' menyatakan bahwa syarat-syarat ini tidak hanya perlu, tetapi juga cukup,
+agar $\phi$ menjadi fungsi karakteristik; lihat 445N dalam Jilid 4.)
+%285*
+
+\leader{285Y}{Latihan lebih lanjut (a)}
+%\spheader 285Ya
+Misalkan $\nu$ suatu ukuran probabilitas Radon pada $\BbbR^r$. Tuliskan
+
+\Centerline{$\varhat{\nu}(y)=\Bover1{(\sqrt{2\pi})^r}
+\int e^{-iy\dotproduct x}\nu(dx)$}
+
+\noindent untuk setiap $y\in\BbbR^r$.
+
+\quad{(i)} Dengan $\phi_{\nu}$ menyatakan fungsi karakteristik dari
+$\nu$, tunjukkan bahwa $\varhat{\nu}(y)
+=\Bover1{(\sqrt{2\pi})^r}\phi_{\nu}(-y)$ untuk setiap $y\in\BbbR^r$.
+
+\quad{(ii)} Tunjukkan bahwa
+$\int h(y)\varhat{\nu}(y)dy=\int\varhat h(x)\nu(dx)$
+untuk setiap fungsi Lebesgue terintegralkan bernilai kompleks $h$ pada
+$\BbbR^r$, dengan transformasi Fourier $\varhat{h}$ didefinisikan seperti
+dalam 283Wa.
+
+\quad{(iii)} Tunjukkan bahwa $\int h(x)\nu(dx)
+=\int\varcheck{h}(y)\varhat{\nu}(y)dy$ untuk setiap fungsi uji yang menurun
+cepat $h$ pada $\BbbR^r$.
+
+\quad{(iv)} Tunjukkan bahwa jika $\nu$ merupakan ukuran integral tak tentu
+terhadap ukuran Lebesgue, dengan turunan Radon--Nikod\'ym $f$, maka
+$\varhat{\nu}$ merupakan transformasi Fourier dari $f$.
+%285D
+
+\spheader 285Yb Misalkan $\nu$ suatu ukuran probabilitas Radon pada $\BbbR^r$,
+dengan fungsi karakteristik $\phi$. Tunjukkan bahwa bila $c\le d$ dalam
+$\BbbR^r$, maka
+
+$$\bigl(\bover{i}{2\pi}\bigr)^r\lim_{\alpha_1,\ldots,\alpha_r\to\infty}
+\int_{[-a,a]}\bigl(\prod_{j=1}^r
+\Bover{e^{-i\delta_j\eta_j}-e^{-i\gamma_j\eta_j}}{\eta_j}\bigr)
+\phi(y)dy$$
+
+\noindent ada dan nilainya terletak di antara $\nu\ooint{c,d}$ dan
+$\nu[c,d]$, dengan menulis $a=(\alpha_1,\ldots,\alpha_r)$ dan
+$\ooint{c,d}=\prod_{j\le r}\ooint{\gamma_j,\delta_j}$ jika
+$c=(\gamma_1,\ldots,\gamma_r)$ dan $d=(\delta_1,\ldots,\delta_r)$.
+%285Xk, 285J, 283Wc
+
+\spheader 285Yc Misalkan $\sequencen{X_n}$ suatu barisan variabel acak bebas
+dan berdistribusi identik (yang tidak konstan secara esensial). Tunjukkan bahwa
+$\lim_{n\to\infty}\Pr(|\sum_{k=0}^nX_k|\le\alpha)=0$ untuk setiap
+$\alpha\in\Bbb R$.
+%285Xd, 285Xk, 285J
+
+\spheader 285Yd Untuk ukuran-ukuran probabilitas Radon $\nu$, $\nuprime$ pada
+$\BbbR^r$, tetapkan
+
+$$\eqalign{\rho(\nu,\nuprime)=\inf\{\epsilon:\epsilon\ge 0,\,
+\nu\ocint{-\infty,a}\le\nuprime\ocint{-\infty,a+\epsilon\tbf{1}}+\epsilon
+&\le\nu\ocint{-\infty,a+2\epsilon\tbf{1}}+2\epsilon\cr
+&\text{untuk setiap }a\in\BbbR^r\},\cr}$$
+
+\noindent dengan menulis $\ocint{-\infty,a}
+=\{(\xi_1,\ldots,\xi_r):\xi_j\le\alpha_j$ untuk setiap $j\le r\}$
+bila $a=(\alpha_1,\ldots,\alpha_r)$, dan
+$\tbf{1}=(1,\ldots,1)\in\BbbR^r$. Tunjukkan bahwa $\rho$ merupakan metrik
+pada himpunan ukuran probabilitas Radon pada $\BbbR^r$, dan topologi yang
+didefinisikannya ialah topologi samar. (Bandingkan 274Yc.)
+%285K
+
+\spheader 285Ye Misalkan $r\ge 1$ dan $P$ himpunan ukuran probabilitas Radon
+pada $\BbbR^r$. Untuk $m\in\Bbb N$, misalkan $\rho^*_m$ pseudometrik pada
+$P$ yang didefinisikan dengan
+$\rho^*_m(\nu,\nuprime)=\sup_{\|y\|\le m}|\phi_{\nu}(y)-\phi_{\nuprime}(y)|$
+untuk $\nu$, $\nuprime\in P$, dengan $\phi_{\nu}$ menyatakan fungsi
+karakteristik $\nu$. Tunjukkan bahwa $\{\rho^*_m:m\in\Bbb N\}$ mendefinisikan
+topologi samar pada $P$.
+%285K
+
+\spheader 285Yf Misalkan $r\ge 1$. Kita mengatakan bahwa suatu himpunan $Q$
+ukuran probabilitas Radon pada $\BbbR^r$ {\bf ketat secara seragam} jika untuk
+setiap $\epsilon>0$ ada himpunan kompak $K\subseteq\BbbR^r$ sedemikian sehingga
+$\nu(\BbbR^r\setminus K)\le\epsilon$ untuk setiap $\nu\in Q$. Tunjukkan bahwa
+jika $Q$ sembarang keluarga ukuran probabilitas Radon pada $\BbbR^r$ yang ketat
+secara seragam, dan $\epsilon>0$, maka ada $\eta>0$,
+$y_0,\ldots,y_n\in\BbbR^r$ sedemikian sehingga
+$\nu\ocint{-\infty,a}\le\nuprime\ocint{-\infty,a+\epsilon\tbf{1}}+\epsilon$
+bila $\nu$, $\nuprime\in Q$ dan $a\in\BbbR^r$, serta
+$|\phi_{\nu}(y_j)-\phi_{\nuprime}(y_j)|\le\eta$ untuk setiap $j\le n$, dengan
+$\phi_{\nu}$ menyatakan fungsi karakteristik $\nu$.
+%285M, 285Xm
+
+\spheader 285Yg Tunjukkan bahwa untuk setiap $M\ge 0$, himpunan ukuran
+probabilitas Radon $\nu$ pada $\BbbR^r$ yang memenuhi
+$\int\|x\|\nu(dx)\le M$ ketat secara seragam dalam arti 285Yf.
+%285Yf, 285Xm, 285M
+
+\spheader 285Yh Misalkan $C_b(\BbbR^r)$ ruang Banach fungsi-fungsi kontinu
+terbatas bernilai real pada $\BbbR^r$.
+
+\quad{(i)} Tunjukkan bahwa setiap ukuran probabilitas Radon $\nu$ pada
+$\Bbb R^r$ bersesuaian dengan fungsional linear kontinu
+$h_{\nu}:C_b(\Bbb R^r)\to\Bbb R$, dengan $h_{\nu}(f)=\int fd\nu$ untuk
+$f\in C_b(\Bbb R^r)$.
+
+\quad{(ii)} Tunjukkan bahwa jika $h_{\nu}=h_{\nuprime}$, maka $\nu=\nuprime$.
+
+\quad{(iii)} Tunjukkan bahwa topologi samar pada himpunan ukuran probabilitas
+Radon bersesuaian dengan topologi lemah* pada ruang dual
+$(C_b(\BbbR^r))^*$ dari $C_b(\BbbR^r)$.
+%285M mt28bits
+
+\spheader 285Yi Misalkan $r\ge 1$ dan $P$ himpunan ukuran probabilitas Radon
+pada $\BbbR^r$. Untuk $m\in\Bbb N$, misalkan $\tilde\rho^*_m$ pseudometrik
+pada $P$ yang didefinisikan dengan
+
+\Centerline{$\tilde\rho^*_m(\nu,\nuprime)
+=\int_{\{y:\|y\|\le m\}}|\phi_{\nu}(y)-\phi_{\nuprime}(y)|dy$}
+
+\noindent untuk $\nu$, $\nuprime\in P$, dengan $\phi_{\nu}$ menyatakan fungsi
+karakteristik $\nu$. Tunjukkan bahwa $\{\tilde\rho^*_m:m\in\Bbb N\}$
+mendefinisikan topologi samar pada $P$.
+%285M mt28bits
+
+\spheader 285Yj Misalkan $(\Omega,\Sigma,\mu)$ suatu ruang probabilitas.
+Andaikan $\sequencen{X_n}$ barisan variabel acak bernilai real pada $\Omega$,
+dan $X$ variabel acak bernilai real lainnya pada $\Omega$; misalkan
+$\phi_{X_n}$, $\phi_X$ fungsi karakteristik yang bersesuaian. Tunjukkan bahwa
+pernyataan-pernyataan berikut ekuivalen: (i)
+$\lim_{n\to\infty}\Expn(h(X_n))=\Expn(h(X))$ untuk setiap fungsi kontinu
+terbatas $h:\Bbb R\to\Bbb R$; (ii)
+$\lim_{n\to\infty}\phi_{X_n}(y)=\phi_X(y)$ untuk setiap $y\in\Bbb R$.
+%285Xm 285M
+
+\spheader 285Yk Misalkan $(\Omega,\Sigma,\mu)$ suatu ruang probabilitas, dan
+$P$ himpunan ukuran probabilitas Radon pada $\Bbb R$. (i) Tunjukkan bahwa ada
+fungsi $\psi:L^0(\mu)\to P$ yang didefinisikan dengan menyatakan bahwa
+$\psi(X^{\ssbullet})$ ialah distribusi $X$ bila $X$ variabel acak bernilai real
+pada $\Omega$. (ii) Tunjukkan bahwa $\psi$ kontinu untuk topologi konvergensi
+dalam ukuran pada $L^0(\mu)$ dan topologi samar pada $P$. (Bandingkan 271Yd.)
+%285Yj 285M
+
+\spheader 285Yl Misalkan $X$ variabel acak bernilai real dengan varians
+berhingga. Tunjukkan bahwa untuk setiap $\eta\ge 0$,
+
+\Centerline{$|\phi(y)-1-iy\Expn(X)+\Bover12y^2\Expn(X^2)|
+\le\Bover16\eta|y|^3\Expn(X^2)
++y^2\Expn(\psi_{\eta}(X))$,}
+
+\noindent dengan $\phi$ menyatakan fungsi karakteristik $X$ dan
+$\psi_{\eta}(x)=0$ untuk $|x|\le\eta$, $x^2$ untuk $|x|>\eta$.
+%285N
+
+\spheader 285Ym Misalkan $\epsilon\ge\delta>0$ dan
+$X_0,\ldots,X_n$ variabel-variabel acak bernilai real yang bebas sedemikian
+sehingga
+
+\Centerline{$\Expn(X_k)=0$ untuk setiap $k\le n$,
+\quad$\sum_{k=0}^n\Var(X_k)=1$,
+\quad$\sum_{k=0}^n\Expn(\psi_{\delta}(X_k))\le\delta$}
+
+\noindent (dengan menulis $\psi_{\delta}(x)=0$ jika $|x|\le\delta$, dan $x^2$
+jika $|x|>\delta$). Tetapkan $\gamma=\epsilon/\sqrt{\delta^2+\delta}$, dan
+misalkan $Z$ suatu variabel acak normal standar. Tunjukkan bahwa
+
+\Centerline{$|\phi(y)-e^{-y^2/2}|
+\le\Bover13\epsilon|y|^3+y^2(\delta+\Expn(\psi_{\gamma}(Z)))$}
+
+\noindent untuk setiap $y\in\Bbb R$, dengan $\phi$ menyatakan fungsi
+karakteristik dari $X=\sum_{k=0}^nX_k$.
+% mt28bits 285Yl, 285N
+
+\spheader 285Yn Tunjukkan bahwa untuk setiap $\epsilon>0$ ada
+$\delta>0$ sedemikian sehingga bila $X_0,\ldots,X_n$ variabel-variabel acak
+bernilai real yang bebas dan memenuhi
+
+\Centerline{$\Expn(X_k)=0$ untuk setiap $k\le n$,
+\quad$\sum_{k=0}^n\Var(X_k)=1$,
+\quad$\sum_{k=0}^n\Expn(\psi_{\delta}(X_k))\le\delta$}
+
+\noindent (dengan menulis $\psi_{\delta}(x)=0$ jika $|x|\le\delta$, dan $x^2$
+jika $|x|>\delta$), maka
+$|\phi(y)-e^{-y^2/2}|\le\epsilon(y^2+|y^3|)$ untuk setiap $y\in\Bbb R$,
+dengan $\phi$ menyatakan fungsi karakteristik dari $X=X_0+\ldots+X_n$.
+%285Ym, 285N
+
+\spheader 285Yo Gunakan 285Yn untuk membuktikan teorema Lindeberg (274F).
+%285Yn, 285N
+
+\spheader 285Yp Misalkan $r\ge 1$ dan $P$ himpunan ukuran probabilitas Radon
+pada $\BbbR^r$. Tunjukkan bahwa konvolusi, dipandang sebagai pemetaan dari
+$P\times P$ ke $P$, kontinu bila $P$ diberi topologi samar.
+%285R \Hint{281Xa and 257B will help.}
+
+\spheader 285Yq Misalkan $\frak S$ topologi pada $\Bbb R$ yang didefinisikan
+oleh $\{\rho'_y:y\in\Bbb R\}$, dengan
+$\rho'_y(x,x')=|e^{iyx}-e^{iyx'}|$ (bandingkan 285S). Tunjukkan bahwa
+penjumlahan dan pengurangan kontinu untuk $\frak S$ dalam arti 2A5A.
+%285S
+
+\spheader 285Yr\dvAnew{2014} Misalkan $\nu$ suatu ukuran probabilitas pada
+$\Bbb R$. Tunjukkan bahwa
+$|\phi_{\nu}(y)-\phi_{\nu}(y')|^2\le 2(1-\Real\phi_{\nu}(y-y'))$ untuk setiap
+$y$, $y'\in\Bbb R$.
+%|\phi_{\nu}(y)-\phi_{\nu}(y')|^2\le\int|e^{iyx)-e^{iy'x}|^2\nu(dx)
+%285J
+
+\spheader 285Ys\dvAnew{2014} Misalkan $\sequencen{\nu_n}$ suatu barisan ukuran
+probabilitas pada $\Bbb R$. Tetapkan $E=\{y:y\in\Bbb R$,
+$\lim_{n\to\infty}\phi_{\nu_n}(y)=1\}$. (i) Tunjukkan bahwa $E-E$ dan
+$E+E$ termuat dalam $E$. (ii) Tunjukkan bahwa jika $E$ tidak terabaikan
+terhadap ukuran Lebesgue, maka himpunan itu adalah seluruh $\Bbb R$.
+%285Yr 285J
+
+\spheader 285Yt\dvAformerly{2{}85Xs}
+Misalkan $\sequencen{X_n}$ suatu barisan variabel acak bernilai real yang saling
+bebas, dan tetapkan $S_n=\sum_{j=0}^nX_j$ untuk setiap $n\in\Bbb N$.
+Andaikan barisan distribusi $\sequencen{\nu_{S_n}}$ konvergen dalam topologi
+samar ke suatu distribusi. Tunjukkan bahwa $\sequencen{S_n}$ konvergen dalam
+ukuran, dan karena itu konvergen hampir di mana-mana.
+%\Hint{285J, 273B, 285Ys.}
+%285I  char fns of  X_n  converge
+%  to  1  whenever char fns of  S_n  don't converge to  0
+}%end of exercises
+
+\endnotes{
+\Notesheader{285} Seperti halnya transformasi Fourier, kekuatan metode yang
+menggunakan fungsi karakteristik distribusi bertumpu pada tiga hal: (i) fungsi
+karakteristik suatu distribusi menentukan distribusi itu (285M); (ii) sifat
+distribusi yang kita minati tercermin pada sifat fungsi karakteristiknya yang
+mudah dianalisis (285G, 285I, 285J); (iii) sifat-sifat fungsi karakteristik
+tersebut benar-benar {\it berbeda} dari sifat-sifat yang bersesuaian pada
+distribusi, sehingga dapat ditelaah dengan cara lain. Yang terpenting, fakta
+bahwa (untuk barisan!) konvergensi distribusi dalam topologi samar bersesuaian
+dengan konvergensi titik demi titik fungsi karakteristik (285L) memberi kita
+jalan menuju teorema limit klasik, seperti dalam 285Q dan 285Xq. Dalam
+285S-285U saya menunjukkan bahwa hasil untuk barisan ini tidak langsung
+bersesuaian dengan karakterisasi alternatif topologi samar, meskipun hasil itu
+dapat diadaptasi dengan lebih dari satu cara untuk memberikan karakterisasi
+semacam itu (lihat 285Ye-285Yi).
+
+Mengenai Teorema Limit Pusat, ada satu perbedaan mencolok antara metode yang
+disarankan di sini dan metode dalam \S274. Pendekatan sebelumnya setidaknya
+menawarkan kemungkinan teoretis untuk memberikan rumus eksplisit bagi
+$\delta$ dalam 274F sebagai fungsi dari $\epsilon$, dan dengan demikian
+taksiran laju konvergensi yang dapat diharapkan dalam Teorema Limit Pusat.
+Argumen dalam bab ini melibatkan argumen kekompakan yang sepenuhnya
+nonkonstruktif dalam 281A, sehingga tidak memberi kita cara untuk memperoleh
+taksiran semacam itu. Namun, sebenarnya metode fungsi karakteristik, setelah
+disempurnakan secara tepat, merupakan dasar taksiran terbaik yang diketahui,
+seperti dalam teorema Berry--Ess\'een (274Hc).
+
+Dalam 285D saya mencoba menunjukkan bagaimana fungsi karakteristik
+$\phi_{\nu}$ dari suatu ukuran probabilitas Radon dapat dihubungkan dengan
+`transformasi Fourier' $\varhat{\nu}$ dari $\nu$ yang langsung bersesuaian
+dengan transformasi Fourier fungsi yang dibahas dalam \S\S283-284. Jika $f$
+fungsi Lebesgue terintegralkan tak negatif dan kita mengambil $\nu$ sebagai
+ukuran integral tak tentu yang bersesuaian, maka
+$\varhat{\nu}=\varhatf$. Jadi konsep `transformasi Fourier suatu ukuran'
+merupakan perluasan alami transformasi Fourier fungsi terintegralkan. Dilihat
+dari arah sebaliknya, rumus dalam 285Dc menunjukkan bahwa $\nu$ dapat dipandang
+sebagai representasi transformasi Fourier invers dari $\varhat{\nu}$ dalam
+arti 284H-284I. Dengan mengambil $\nu$ sebagai ukuran yang memberi massa $1$
+pada titik $0$, kita memperoleh fungsi delta Dirac, dengan transformasi Fourier
+berupa fungsi konstan $\chi\Bbb R$. Gagasan-gagasan ini dapat diperluas tanpa
+kesulitan untuk menangani konvolusi ukuran (285R).
+
+Menarik bahwa, meskipun tidak ada karakterisasi memuaskan bagi fungsi-fungsi
+yang merupakan transformasi Fourier dari fungsi terintegralkan, ada
+karakterisasi bagi fungsi karakteristik distribusi probabilitas. Inilah
+`teorema Bochner'. Saya memberikan syaratnya dalam 285Xu dan meminta Anda
+membuktikan keperluannya sebagai latihan; kita sudah mempunyai tiga perempat
+perangkat untuk membuktikan kecukupannya, tetapi langkah terakhir harus
+menunggu Jilid 4.
+}
+
+\discrpage

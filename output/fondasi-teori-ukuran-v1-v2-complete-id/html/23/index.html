@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Bab 23 — Teorema Radon-Nikodým — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        BbbQ: '\\mathbb{Q}', BbbR: '\\mathbb{R}',
+        eightBbb: ['\\mathbb{#1}', 1],
+        DiniD: '\\overline{D}', Dinid: '\\underline{D}',
+        Var: '\\operatorname{Var}',
+        bumpeq: '=_{\\mathrm{approx}}',
+        intstar: '\\operatorname{int}^{*}',
+        family: ['\\langle #3\\rangle_{#1\\in #2}', 3],
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        displaycause: ['\\text{(#1)}', 1],
+        bigcupop: '\\bigcup', biggerint: '\\int',
+        eae: '=_{\\mathrm{a.e.}}', leae: '\\le_{\\mathrm{a.e.}}', geae: '\\ge_{\\mathrm{a.e.}}',
+        restr: '\\mathord{\\upharpoonright}', restrp: '\\mathord{\\upharpoonright}',
+        Real: '\\operatorname{Re}', Imag: '\\operatorname{Im}',
+        tbf: ['\\mathbf{#1}', 1], eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Qed: '\\square',
+        BbbN: '\\mathbb{N}', Expn: '\\mathbb{E}',
+        Cal: ['\\mathcal{#1}', 1], dom: '\\operatorname{dom}',
+        coint: ['\\left[#1\\right[', 1],
+        sequencen: ['\\langle #1_n\\rangle_{n\\in\\mathbb{N}}', 1],
+        imp: '\\mathop{\\text{pelestari ukuran melalui prapeta}}',
+        tildeTau: '\\widetilde{\\mathrm{T}}',
+        LLcorner: '\\mathbin{\\llcorner}',
+        prooflet: ['#1', 1],
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        roibr: '\\mathopen{{[}}',
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1]
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 2 · Bagian 23</p>
+  <h1>Bab 23 — Teorema Radon-Nikodým</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi kumulatif</a></nav>
+<main id="isi">
+<p>© 1995</p>
+<span class="anchor" id="23"></span>
+<p>Dalam Bab <a class="xref" href="../22/index.html#22">22</a>, saya membahas integral tak tentu dari fungsi-fungsi
+terintegralkan pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan memberikan apa yang saya harap Anda anggap
+sebagai uraian yang memuaskan, baik mengenai
+fungsi-fungsi yang merupakan integral tak tentu (fungsi-fungsi kontinu
+mutlak) maupun mengenai cara menemukan fungsi yang diintegralkan untuk
+menghasilkan integral tak tentu tersebut (dengan mendiferensialkannya).
+Untuk ruang ukur umum, tidak tersedia struktur yang dapat menghasilkan
+perumusan sesederhana itu; meskipun demikian, pertanyaan-pertanyaan yang sama
+tetap dapat diajukan dan, sampai taraf tertentu, dijawab.</p>
+<p>Bagian pertama bab ini memperkenalkan perangkat dasar yang diperlukan,
+yaitu konsep fungsional ‘aditif terhitung’ dan penguraiannya menjadi bagian
+positif dan negatif. Teorema utama dibahas dalam bagian kedua: integral tak
+tentu adalah fungsional aditif yang ‘kontinu sejati’; pada ruang
+<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>-hingga, fungsional tersebut adalah fungsional aditif terhitung yang
+‘kontinu mutlak’. Dalam §<a class="xref" href="../233/index.html#233">233</a> saya membahas penerapan tunggal terpenting
+teorema tersebut, yakni penggunaannya untuk menyediakan konsep ‘ekspektasi
+bersyarat’. Ini merupakan salah satu konsep utama teori probabilitas –
+sebagaimana sangat mungkin telah Anda ketahui; tetapi bentuknya di sini
+merupakan perumuman yang jauh menjangkau dari konsep elementer probabilitas
+bersyarat suatu kejadian jika kejadian lain diketahui, dan memerlukan seluruh
+kekuatan teori umum ukuran dan integrasi sebagaimana dikembangkan dalam Jilid
+1 dan bab ini. Saya menyertakan beberapa catatan tentang fungsi cembung,
+hingga dan termasuk versi-versi ketaksamaan Jensen (<a class="xref" href="../233/index.html#233I">233I</a>-<a class="xref" href="../233/index.html#233J">233J</a>).</p>
+<p>Selagi kita berada dalam ranah teori ukuran ‘murni’, saya menggunakan
+kesempatan ini untuk membahas beberapa topik tambahan.
+Saya memulai dengan sejumlah konstruksi yang pada dasarnya elementer,
+yaitu ukuran citra, jumlah ukuran, dan ukuran integral tak tentu;
+menurut saya perinciannya memerlukan sedikit perhatian,
+dan saya menguraikannya dalam §<a class="xref" href="../234/index.html#234">234</a>.
+Gagasan yang agak lebih mendalam diperlukan untuk menangani ‘transformasi
+terukur’. Dalam §<a class="xref" href="../235/index.html#235">235</a> saya memaparkan teknik yang diperlukan untuk menyediakan
+landasan abstrak bagi metode umum integrasi dengan substitusi, disertai
+uraian terperinci mengenai syarat-syarat cukup agar rumus berbentuk</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int g(y)dy=\int g(\phi(x))J(x)dx">\(\int g(y)dy=\int g(\phi(x))J(x)dx\)</span></div>
+<p>berlaku.</p>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 2: Broad Foundations</cite>, Bagian 23.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 25 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-cumulative-html-route-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V2-C23-INTRO&quot;,
+  &quot;source_member&quot;: &quot;mt2.2016/mt23.tex&quot;,
+  &quot;target_bytes&quot;: 2535,
+  &quot;target_sha256&quot;: &quot;e4769b85131439a4da3d6b87ee578e1efcda13eefddf490954e19e19c3416792&quot;,
+  &quot;source_ids&quot;: [
+    &quot;23&quot;
+  ],
+  &quot;corpus_id&quot;: &quot;O007-FREMLIN&quot;,
+  &quot;volume_id&quot;: &quot;O007-FREMLIN-V2&quot;,
+  &quot;volume_source_title&quot;: &quot;Broad Foundations&quot;,
+  &quot;route&quot;: &quot;23&quot;,
+  &quot;official_source_page_start&quot;: 96,
+  &quot;chapter_official_source_pages&quot;: [
+    96,
+    137
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

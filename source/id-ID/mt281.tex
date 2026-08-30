@@ -1,0 +1,1212 @@
+\frfilename{mt281.tex} 
+\versiondate{4.12.12} 
+\copyrightdate{1994} 
+      
+\def\chaptername{Analisis Fourier} 
+\def\sectionname{Teorema Stone-Weierstrass} 
+      
+\newsection{281} 
+      
+Sebelum mulai mengerjakan pokok bahasan sesungguhnya dari bab ini, akan
+bermanfaat untuk memiliki pernyataan yang cukup umum tentang suatu teorema
+mendasar mengenai hampiran fungsi kontinu. Sebenarnya saya memberikan
+berbagai bentuk (281A, 281E, 281F, dan 281G, bersama dengan 281Ya, 281Yd,
+dan 281Yg), yang semuanya kadang-kadang berguna. Saya mengakhiri seksi ini
+dengan suatu versi teorema ekuidistribusi Weyl (281M--281N).
+      
+\leader{281A}{Teorema Stone-Weierstrass: bentuk pertama} Misalkan $X$ adalah
+ruang topologis dan $K$ adalah subhimpunan kompak dari $X$. Tuliskan
+$C_b(X)$ untuk ruang semua fungsi kontinu bernilai real yang terbatas pada
+$X$, sehingga $C_b(X)$ adalah ruang linear atas $\Bbb R$.
+Misalkan $A\subseteq C_b(X)$ sedemikian sehingga
+      
+\inset{$A$ adalah subruang linear dari $C_b(X)$;}
+      
+\inset{$|f|\in A$ untuk setiap $f\in A$;}
+      
+\inset{$\chi X\in A$;}
+      
+\inset{untuk setiap titik berbeda $x$, $y$ dari $K$ terdapat suatu $f\in A$
+sedemikian sehingga $f(x)\ne f(y)$.}
+      
+\noindent Maka untuk setiap $h:K\to\Bbb R$ kontinu dan $\epsilon>0$
+terdapat $f\in A$ sedemikian sehingga
+      
+\inset{$|f(x)-h(x)|\le\epsilon$ untuk setiap $x\in K$,}
+      
+\inset{jika $K\ne\emptyset$, $\inf_{x\in X}f(x)\ge\inf_{x\in K}h(x)$ dan
+$\sup_{x\in X}f(x)\le\sup_{x\in K}h(x)$.}
+      
+\cmmnt{\medskip
+      
+\noindent{\bf Catatan} Saya menyatakan teorema ini dalam konteks alaminya,
+yaitu ruang topologis umum. Namun jika ruang-ruang ini masih asing bagi
+Anda, sebenarnya Anda tidak perlu mengetahui apa itu. Jika Anda membaca
+`misalkan $X$ ruang topologis' sebagai `misalkan $X$ suatu subhimpunan dari
+$\Bbb R^r$' dan `$K$ adalah subhimpunan kompak dari $X$' sebagai `$K$ adalah
+subhimpunan $X$ yang tertutup dan terbatas dalam $\BbbR^r$', hal itu sudah
+cukup untuk semua penerapan dalam bab ini. Tentu saja, untuk mengikuti
+buktinya Anda perlu mengetahui sedikit tentang kekompakan dalam $\BbbR^r$;
+saya telah menuliskan fakta-fakta yang diperlukan dalam \S2A2.
+}
+      
+\proof{{\bf (a)} Jika $K$ kosong, kita dapat mengambil $f=\tbf{0}$ sebagai
+fungsi konstan bernilai $0$. Jadi selanjutnya anggaplah $K\ne\emptyset$.
+      
+\medskip
+      
+{\bf (b)} Hal pertama yang perlu diperhatikan adalah bahwa jika $f$, $g\in A$
+maka $f\wedge g$ dan $f\vee g$ termasuk dalam $A$, dengan
+      
+\Centerline{$(f\wedge g)(x)=\min(f(x),g(x))$,
+\quad $(f\vee g)(x)=\max(f(x),g(x))$}
+      
+\noindent untuk setiap $x\in X$; ini karena
+      
+\Centerline{$f\wedge g=\Bover12(f+g-|f-g|)$,
+\quad $f\vee g=\Bover12(f+g+|f-g|)$.}
+      
+\noindent Dengan induksi pada $n$, diperoleh bahwa $f_0\wedge\ldots\wedge f_n$
+dan $f_0\vee\ldots\vee f_n$ termasuk dalam $A$ untuk semua
+$f_0,\ldots,f_n\in A$.
+      
+\medskip
+      
+{\bf (c)} Jika $x$, $y$ adalah titik berbeda dari $K$, dan $a$, $b\in\Bbb R$,
+terdapat $f\in A$ sedemikian sehingga $f(x)=a$ dan $f(y)=b$.
+\Prf\ Mulailah dengan $g\in A$ sedemikian sehingga $g(x)\ne g(y)$; di sinilah
+kita menggunakan hipotesis terakhir dari empat hipotesis pada $A$. Tetapkan
+      
+\Centerline{$\alpha=\Bover{a-b}{g(x)-g(y)}$,\quad
+$\beta=\Bover{bg(x)-ag(y)}{g(x)-g(y)}$,\quad
+$f=\alpha g+\beta\chi X\in A$.   \Qed}
+      
+\medskip
+      
+{\bf (d)} (Inti bukti terletak pada dua paragraf berikutnya.) Misalkan
+$h:K\to\coint{0,\infty}$ adalah fungsi kontinu dan $x$ sebarang titik dari
+$K$. Untuk setiap $\epsilon>0$, terdapat $f\in A$ sedemikian sehingga
+$f(x)=h(x)$ dan $f(y)\le h(y)+\epsilon$ untuk setiap $y\in K$.
+\Prf\ Misalkan $\Cal G_x$ keluarga semua himpunan terbuka $G\subseteq X$
+yang untuknya terdapat $f\in A$ sedemikian sehingga $f(x)=h(x)$ dan
+$f(w)\le h(w)+\epsilon$ untuk setiap $w\in K\cap G$. Saya mengklaim bahwa
+$K\subseteq\bigcup\Cal G_x$. Untuk melihatnya, ambil sebarang $y\in K$.
+Menurut (c), terdapat $f\in A$ sedemikian sehingga $f(x)=h(x)$ dan
+$f(y)=h(y)$. Kini $h-f\restr K:K\to\Bbb R$ adalah fungsi kontinu yang
+bernilai $0$ di $y$, sehingga terdapat subhimpunan terbuka $G$ dari $X$ yang
+memuat $y$ dan memenuhi $(h-f\restr K)(w)\ge-\epsilon$ untuk setiap
+$w\in G\cap K$, yaitu $f(w)\le h(w)+\epsilon$ untuk setiap $w\in G\cap K$.
+Maka $G\in\Cal G_x$ dan $y\in\bigcup\Cal G_x$, sebagaimana diperlukan.
+      
+Karena $K$ kompak, $\Cal G_x$ memiliki subselimut berhingga, misalnya
+$G_0,\ldots,G_n$. Untuk setiap $i\le n$, ambil $f_i\in A$ sedemikian
+sehingga $f_i(x)=h(x)$ dan $f_i(w)\le h(w)+\epsilon$ untuk setiap
+$w\in G_i\cap K$. Maka
+      
+\Centerline{$f=f_0\wedge f_1\wedge\ldots\wedge f_n\in A$,}
+      
+\noindent menurut (b), dan jelas $f(x)=h(x)$, sedangkan jika $y\in K$ ada
+$i\le n$ sedemikian sehingga $y\in G_i$, sehingga
+      
+\Centerline{$f(y)\le f_i(y)\le h(y)+\epsilon$.   \Qed}
+      
+      
+\medskip
+      
+{\bf (e)} Jika $h:K\to\Bbb R$ adalah fungsi kontinu sebarang dan $\epsilon>0$,
+terdapat $f\in A$ sedemikian sehingga $|f(y)-h(y)|\le\epsilon$ untuk setiap
+$y\in K$. \Prf\ Kali ini, misalkan $\Cal G$ adalah himpunan semua
+subhimpunan terbuka $G$ dari $X$ yang untuknya terdapat $f\in A$ sedemikian
+sehingga $f(y)\le h(y)+\epsilon$ untuk setiap $y\in K$ dan
+$f(x)\ge h(x)-\epsilon$ untuk setiap $x\in G\cap K$. Sekali lagi, $\Cal G$
+adalah selimut terbuka bagi $K$. Untuk melihatnya, ambil sebarang $x\in K$.
+Menurut (d), terdapat $f\in A$ sedemikian sehingga $f(x)=h(x)$ dan
+$f(y)\le h(y)+\epsilon$ untuk setiap $y\in K$. Kini
+$h-f\restr K:K\to\Bbb R$ adalah fungsi kontinu yang bernilai nol di $x$,
+sehingga terdapat subhimpunan terbuka $G$ dari $X$, memuat $x$, sedemikian
+sehingga $(h-f\restr K)(w)\le\epsilon$ untuk setiap $w\in G\cap K$, yaitu
+$f(w)\ge h(w)-\epsilon$ untuk setiap $w\in G\cap K$. Maka $G\in\Cal G$
+dan $x\in\bigcup\Cal G$, sebagaimana diperlukan.
+      
+Karena $K$ kompak, $\Cal G$ memiliki subselimut berhingga, misalnya
+$G_0,\ldots,G_m$. Untuk setiap $j\le m$, ambil $f_j\in A$ sedemikian
+sehingga $f_j(y)\le h(y)+\epsilon$ untuk setiap $y\in K$ dan
+$f_j(w)\ge h(w)-\epsilon$ untuk setiap $w\in G_j\cap K$. Maka
+      
+\Centerline{$f=f_0\vee f_1\vee\ldots\vee f_m\in A$,}
+      
+\noindent menurut (b), dan jelas $f(y)\le h(y)+\epsilon$ untuk setiap
+$y\in K$, sedangkan jika $x\in K$ ada $j\le m$ sedemikian sehingga
+$x\in G_j$, sehingga
+      
+\Centerline{$f(x)\ge f_j(x)\ge h(x)-\epsilon$.}
+      
+\noindent Jadi $|f(x)-h(x)|\le\epsilon$ untuk setiap $x\in K$, sebagaimana
+diperlukan. \Qed
+      
+\medskip
+      
+{\bf (f)} Jadi kita memiliki $f$ yang memenuhi persyaratan pertama dari dua
+persyaratan teorema. Untuk persyaratan kedua, tetapkan
+$M_0=\inf_{x\in K}h(x)$ dan $M_1=\sup_{x\in K}h(x)$, serta
+      
+\Centerline{$f_1=\med(M_0\chi X,f,M_1\chi X)
+=(M_0\chi X)\vee(f\wedge M_1\chi X)$;}
+      
+\noindent $f_1$ juga memenuhi kondisi kedua selain kondisi pertama.
+(Di sini saya diam-diam mengasumsikan sesuatu yang memang benar, bahwa $M_0$
+dan $M_1$ berhingga; ini karena $K$ kompak -- lihat 2A2G atau 2A3N.)
+}%end of proof of 281A
+\leader{281B}{}\cmmnt{ Kita memerlukan beberapa alat sederhana yang termasuk
+dalam teori dasar ruang bernorma; tetapi saya berharap alat-alat ini tetap
+dapat diikuti bahkan jika Anda belum pernah menjumpai `ruang bernorma',
+asalkan Anda menyimpan jari pada awal \S2A4 ketika membaca lemma berikutnya.
+      
+\medskip
+      
+\noindent}{\bf Lemma} Misalkan $X$ sebarang himpunan. Tuliskan
+$\ell^{\infty}(X)$ untuk himpunan fungsi terbatas dari $X$ ke $\Bbb R$. Untuk
+$f\in\ell^{\infty}(X)$, tetapkan
+      
+\Centerline{$\|f\|_{\infty}=\sup_{x\in X}|f(x)|$,}
+      
+\noindent dengan supremum dihitung sebagai $0$ jika $X$ kosong. Maka
+      
+(a) $\ell^{\infty}(X)$ adalah ruang bernorma.
+      
+(b) Misalkan $A\subseteq\ell^{\infty}(X)$ suatu himpunan dan
+$\overline{A}$ penutupannya\cmmnt{ (2A3D)}.
+      
+\quad (i) Jika $A$ adalah subruang linear dari $\ell^{\infty}(X)$, demikian
+juga $\overline{A}$.
+      
+\quad (ii) Jika $f\times g\in A$ setiap kali $f$, $g\in A$, maka
+$f\times g\in\overline{A}$ setiap kali $f$, $g\in\overline{A}$.
+      
+\quad (iii) Jika $|f|\in A$ setiap kali $f\in A$, maka $|f|\in\overline{A}$
+setiap kali $f\in\overline{A}$.
+      
+\proof{{\bf (a)} Ini adalah verifikasi rutin. Untuk memastikan bahwa
+$\ell^{\infty}(X)$ merupakan ruang linear atas $\Bbb R$, kita harus
+memeriksa bahwa $f+g$, $cf$ termasuk dalam $\ell^{\infty}(X)$ setiap kali
+$f$, $g\in\ell^{\infty}(X)$ dan $c\in\Bbb R$; sekaligus kita dapat
+memastikan bahwa $\|\,\|_{\infty}$ merupakan norma pada
+$\ell^{\infty}(X)$ dengan mengamati bahwa
+      
+\Centerline{$|(f+g)(x)|\le|f(x)|+|g(x)|
+\le\|f\|_{\infty}+\|g\|_{\infty}$,}
+      
+\Centerline{$|cf(x)|=|c||f(x)|\le|c|\|f\|_{\infty}$}
+      
+\noindent setiap kali $f$, $g\in\ell^{\infty}(X)$ dan $c\in\Bbb R$.
+Pada saat yang sama patut dicatat bahwa jika $f$, $g\in\ell^{\infty}(X)$,
+maka
+      
+\Centerline{$|(f\times g)(x)|
+=|f(x)||g(x)|\le\|f\|_{\infty}\|g\|_{\infty}$}
+      
+\noindent untuk setiap $x\in X$, sehingga
+$\|f\times g\|_{\infty}\le\|f\|_{\infty}\|g\|_{\infty}$.
+      
+(Tentu saja semua pengamatan ini merupakan kasus khusus yang sangat
+elementer dari beberapa bagian \S243; lihat 243Xl.)
+      
+\medskip
+      
+{\bf (b)} Ingat bahwa
+      
+\Centerline{$\overline{A}=\{f:f\in\ell^{\infty}(X),\Forall
+\epsilon>0\Exists f_1\in A,
+\,\|f-f_1\|_{\infty}\le\epsilon\}$}
+      
+\noindent (2A3Kb). Ambil $f$, $g\in\overline{A}$ dan $c\in\Bbb R$, serta
+misalkan $\epsilon>0$. Tetapkan
+      
+\Centerline{$\eta
+=\min(1,\Bover{\epsilon}{2+|c|+\|f\|_{\infty}+\|g\|_{\infty}})>0$.}
+      
+\noindent Maka terdapat $f_1$, $g_1\in A$ sedemikian sehingga
+$\|f-f_1\|_{\infty}\le\eta$ dan $\|g-g_1\|_{\infty}\le\eta$.
+      
+Sekarang
+      
+$$\eqalignno{\|(f+g)-(f_1+g_1)\|_{\infty}
+&\le\|f-f_1\|_{\infty}+\|g-g_1\|_{\infty}
+\le 2\eta
+\le\epsilon,\cr
+\cr
+\|cf-cf_1\|_{\infty}
+&=|c|\|f-f_1\|_{\infty}
+\le|c|\eta
+\le\epsilon,\cr
+\cr
+\|(f\times g)-(f_1\times g_1)\|_{\infty}
+&=\|(f-f_1)\times g+f\times(g-g_1)-(f-f_1)\times(g-g_1)\|_{\infty}\cr
+&\le\|(f-f_1)\times g\|_{\infty}+\|f\times(g-g_1)\|_{\infty}
+  +\|(f-f_1)\times(g-g_1)\|_{\infty}\cr
+&\le\|f-f_1\|_{\infty}\|g\|_{\infty}+\|f\|_{\infty}\|g-g_1)\|_{\infty}
+  +\|f-f_1\|_{\infty}\|g-g_1\|_{\infty}\cr
+&\le\eta(\|g\|_{\infty}+\|f\|_{\infty}+\eta)
+\le\eta(\|g\|_{\infty}+\|f\|_{\infty}+1)
+\le\epsilon,\cr
+\cr
+\||f|-|f_1|\|_{\infty}
+&\le\|f-f_1\|_{\infty}
+\le\eta
+\le\epsilon.\cr}$$
+      
+\quad{\bf (i)} Jika $A$ adalah subruang linear, maka $f_1+g_1$ dan $cf_1$
+termasuk dalam $A$. Karena $\epsilon$ sebarang, $f+g$ dan $cf$ termasuk
+dalam $\overline{A}$. Karena $f$, $g$, dan $c$ sebarang, $\overline{A}$ adalah
+subruang linear dari $\ell^{\infty}(X)$.
+      
+\quad{\bf (ii)} Jika $A$ tertutup terhadap perkalian, maka $f_1\times g_1\in A$.
+Karena $\epsilon$ sebarang, $f\times g\in\overline{A}$.
+      
+\quad{\bf (iii)} Jika nilai mutlak fungsi-fungsi dalam $A$ termasuk dalam $A$,
+maka $|f_1|\in A$. Karena $\epsilon$ sebarang, $|f|\in\overline{A}$.
+}%end of proof of 281B
+\leader{281C}{Lemma} Terdapat suatu barisan $\sequencen{p_n}$ polinom real
+sedemikian sehingga $\lim_{n\to\infty}p_n(x)
+\ifdim\pagewidth=390pt\break\fi
+=|x|$ secara seragam untuk $x\in[-1,1]$.
+      
+\proof{{\bf (a)} Menurut Teorema Binomial, kita memiliki
+      
+\Centerline{$(1-x)^{1/2}
+=1-\Bover12x-\Bover1{4{\cdot}2!}x^2
+  -\Bover{1{\cdot}3}{2^3{\cdot}3!}x^3-\ldots
+=-\sum_{n=0}^{\infty}\Bover{(2n)!}{(2n-1)(2^nn!)^2}x^n$}
+      
+\noindent setiap kali $|x|<1$, dengan konvergensi seragam pada setiap
+interval $[-a,a]$ dengan $0\le a<1$. (Untuk bukti, lihat hampir semua buku
+analisis real atau kompleks. Jika Anda tidak memiliki teks favorit, Anda
+dapat mencoba menyusun bukti dari fakta-fakta berikut: (i) radius konvergensi
+deret adalah $1$, sehingga pada setiap interval $[-a,a]$, dengan $0\le a<1$,
+deret tersebut dapat dijumlahkan secara mutlak dan seragam (ii) dengan
+menuliskan $f(x)$ untuk jumlah deret ketika $|x|<1$, gunakan Teorema
+Konvergensi Terdominasi Lebesgue untuk mencari bentuk integral tak tentu
+$\int_0^xf$, $-\int_{-x}^0f$ dan tunjukkan bahwa keduanya adalah
+$\bover23(1-(1-x)f(x))$, $\bover23(1-(1+x)f(-x))$ untuk $0\le x<1$
+(iii) gunakan Teorema Dasar Kalkulus untuk menunjukkan bahwa
+$f(x)+2(1-x)f'(x)=0$
+(iv) tunjukkan bahwa $\bover{d}{dx}\bigl(\bover{f(x)^2}{1-x}\bigr)=0$ dan
+karena itu (v) $f(x)^2=1-x$ setiap kali $|x|<1$. Terakhir, tunjukkan bahwa
+karena $f$ kontinu dan tidak nol di $\ooint{-1,1}$, $f(x)$ harus merupakan
+akar kuadrat positif dari $1-x$ di seluruh interval.)
+      
+Kita memiliki potongan informasi tambahan. Jika kita menetapkan
+      
+\Centerline{$q_0(x)=1$, \quad$q_1(x)=1-\Bover12x$,
+\quad$q_n(x)=-\sum_{k=0}^n\Bover{(2k)!}{(2k-1)(2^kk!)^2}x^k$}
+      
+\noindent untuk $n\ge 2$ dan $x\in[0,1]$, sehingga $q_n$ adalah jumlah parsial
+ke-$n$ dari deret binomial untuk $(1-x)^{1/2}$, maka
+$\lim_{n\to\infty}q_n(x)=(1-x)^{1/2}$ untuk setiap $x\in\coint{0,1}$.
+Namun setiap $q_n$ juga tak menaik pada $[0,1]$, dan $\sequencen{q_n(x)}$
+adalah barisan tak menaik untuk setiap $x\in[0,1]$. Jadi kita harus memiliki
+      
+\Centerline{$\sqrt{1-x}\le q_n(x)
+\Forall n\in\Bbb N,\,x\in\coint{0,1}$,}
+      
+\noindent dan karena itu, sebab semua $q_n$ kontinu,
+      
+\Centerline{$\sqrt{1-x}\le q_n(x)
+\Forall n\in\Bbb N,\,x\in[0,1]$.}
+      
+\noindent Lebih lanjut, diberikan $\epsilon>0$, tetapkan
+$a=1-{1\over 4}\epsilon^2$, sehingga $\sqrt{1-a}=\bover{\epsilon}2$.
+Maka terdapat $n_0\in\Bbb N$ sedemikian sehingga
+$q_n(x)-\sqrt{1-x}\le\bover{\epsilon}2$ untuk setiap $x\in[0,a]$ dan
+$n\ge n_0$. Khususnya, $q_n(a)\le\epsilon$, sehingga $q_n(x)\le\epsilon$
+dan $q_n(x)-\sqrt{1-x}\le\epsilon$ jika $x\in[a,1]$ dan $n\ge n_0$.
+Ini berarti bahwa
+      
+\Centerline{$0\le q_n(x)-\sqrt{1-x}\le\epsilon
+\Forall n\ge n_0,\,x\in[0,1]$;}
+      
+\noindent karena $\epsilon$ sebarang,
+$\sequencen{q_n(x)}\to\sqrt{1-x}$ secara seragam pada $[0,1]$.
+      
+\medskip
+      
+{\bf (b)} Sekarang tetapkan $p_n(x)=q_n(1-x^2)$ untuk $x\in\Bbb R$.
+Karena setiap $q_n$ adalah polinom real berderajat $n$, setiap $p_n$ adalah
+polinom real berderajat $2n$. Selanjutnya,
+      
+$$\eqalign{\sup_{|x|\le 1}|p_n(x)-|x||
+&=\sup_{|x|\le 1}|q_n(1-x^2)-\sqrt{1-(1-x^2)}|\cr
+&=\sup_{y\in[0,1]}|q_n(y)-\sqrt{1-y}|
+\to 0\cr}$$
+      
+\noindent ketika $n\to\infty$, sehingga
+$\lim_{n\to\infty}p_n(x)=|x|$ secara seragam untuk $|x|\le 1$,
+sebagaimana diperlukan.
+}%end of proof of 281C
+      
+\leader{281D}{Akibat} Misalkan $X$ suatu himpunan dan $A$ subruang linear
+tertutup dalam norma dari $\ell^{\infty}(X)$ yang memuat $\chi X$ dan memenuhi
+$f\times g\in A$ setiap kali $f$, $g\in A$. Maka $|f|\in A$ untuk setiap
+$f\in A$.
+      
+\proof{ Tetapkan
+      
+\Centerline{$f_1=\Bover1{1+\|f\|_{\infty}}f$,}
+      
+\noindent sehingga $f_1\in A$ dan $\|f_1\|_{\infty}\le 1$. Karena $A$ memuat
+$\chi X$ dan tertutup terhadap perkalian,
+$p\frsmallcirc f_1\in A$ untuk setiap polinom $p$ dengan koefisien real.
+Khususnya, $g_n=p_n\frsmallcirc f_1\in A$ untuk setiap $n$, dengan
+$\sequencen{p_n}$ adalah barisan dari 281C. Kini, karena $|f_1(x)|\le 1$
+untuk setiap $x\in X$,
+      
+\Centerline{$\|g_n-|f_1|\|_{\infty}
+=\sup_{x\in X}|p_n(f_1(x))-|f_1(x)||
+\le\sup_{|y|\le 1}|p_n(y)-|y||
+\to 0$}
+      
+\noindent ketika $n\to\infty$. Karena $A$ tertutup dalam norma
+$\|\,\|_{\infty}$, $|f_1|\in A$; akibatnya $|f|\in A$, sebagaimana diklaim.
+}%end of proof of 281D
+\leader{281E}{Teorema Stone-Weierstrass: bentuk kedua} Misalkan $X$ adalah
+ruang topologis dan $K$ subhimpunan kompak dari $X$. Tuliskan $C_b(X)$ untuk
+ruang semua fungsi kontinu bernilai real yang terbatas pada $X$. Misalkan
+$A\subseteq C_b(X)$ sedemikian sehingga
+      
+\inset{$A$ adalah subruang linear dari $C_b(X)$;}
+      
+\inset{$f\times g\in A$ untuk setiap $f$, $g\in A$;}
+      
+\inset{$\chi X\in A$;}
+      
+\inset{untuk setiap titik berbeda $x$, $y$ dari $K$ terdapat $f\in A$
+sedemikian sehingga $f(x)\ne f(y)$.}
+      
+\noindent Maka untuk setiap $h:K\to\Bbb R$ kontinu dan $\epsilon>0$
+terdapat $f\in A$ sedemikian sehingga
+      
+\inset{$|f(x)-h(x)|\le\epsilon$ untuk setiap $x\in K$,}
+      
+\inset{jika $K\ne\emptyset$, $\inf_{x\in X}f(x)\ge\inf_{x\in K}h(x)$ dan
+$\sup_{x\in X}f(x)\le\sup_{x\in K}h(x)$.}
+      
+\proof{ Misalkan $\overline{A}$ adalah penutupan dalam norma
+$\|\,\|_{\infty}$ dari $A$ di $\ell^{\infty}(X)$. Bermanfaat untuk mengetahui bahwa
+$\overline{A}\subseteq C_b(X)$; ini karena limit seragam fungsi-fungsi kontinu
+adalah kontinu. (Namun jika hal ini baru bagi Anda, atau ingatan Anda telah
+memudar, jangan berhenti untuk mencarinya sekarang; cukup baca
+`$\overline{A}\cap C_b(X)$' menggantikan `$\overline{A}$' dalam sisa argumen
+ini.) Menurut 281B--281D, $\overline{A}$ adalah subruang linear dari $C_b(X)$
+dan $|f|\in\overline{A}$ untuk setiap $f\in\overline{A}$, sehingga kondisi
+281A berlaku untuk $\overline{A}$.
+      
+Ambil fungsi kontinu $h:K\to\Bbb R$ dan $\epsilon>0$. Kasus $K=\emptyset$
+atau $h$ konstan bersifat trivial, karena semua fungsi konstan termasuk dalam
+$A$; jadi anggaplah $M_0=\inf_{x\in K}h(x)$ dan
+$M_1=\sup_{x\in K}h(x)$ terdefinisi dan berbeda. Seperti diamati di akhir
+bukti 281A, $M_0$ dan $M_1$ berhingga. Tetapkan
+      
+\Centerline{$\eta=\min(\bover13\epsilon,\bover12(M_1-M_2))>0$,\quad
+$\tilde h(x)=\med(M_0+\eta,h(x),M_1-\eta)$ untuk $x\in K$}
+      
+\noindent (definisi: 2A1Ac), sehingga $\tilde h:K\to\Bbb R$ kontinu dan
+$M_0+\eta\le\tilde h(x)\le M_1-\eta$ untuk setiap $x\in K$. Menurut 281A,
+terdapat $f_0\in\overline{A}$ sedemikian sehingga
+$|f_0(x)-\tilde h(x)|\le\eta$ untuk setiap $x\in K$ dan
+$M_0+\eta\le f_0(x)\le M_1-\eta$ untuk setiap $x\in X$. Kini terdapat
+$f\in A$ sedemikian sehingga $\|f-f_0\|_{\infty}\le\eta$, sehingga
+      
+\Centerline{$|f(x)-h(x)|\le|f(x)-f_0(x)|+|f_0(x)-\tilde h(x)|
++|\tilde h(x)-h(x)|\le 3\eta\le\epsilon$}
+      
+\noindent untuk setiap $x\in K$, sedangkan
+      
+\Centerline{$M_0\le f_0(x)-\eta\le f(x)\le f_0(x)+\eta\le M_1$}
+      
+\noindent untuk setiap $x\in X$.
+}%end of proof of 281E
+      
+\leader{281F}{Akibat: teorema Weierstrass} Misalkan $K$ sebarang subhimpunan
+tertutup dan terbatas dari $\Bbb R$. Maka setiap $h:K\to\Bbb R$ kontinu dapat
+dihampiri secara seragam pada $K$ oleh polinom.
+      
+\proof{ Terapkan 281E dengan $X=K$ (perhatikan bahwa $K$, karena tertutup
+dan terbatas, adalah kompak), dan $A$ himpunan polinom berkoefisien real,
+yang dipandang sebagai fungsi dari $K$ ke $\Bbb R$.
+}%end of proof of 281F
+      
+\leader{281G}{Teorema Stone-Weierstrass: bentuk ketiga} Misalkan $X$ adalah
+ruang topologis dan $K$ subhimpunan kompak dari $X$. Tuliskan $C_b(X;\Bbb C)$
+untuk ruang semua fungsi kontinu bernilai kompleks yang terbatas pada $X$,
+sehingga $C_b(X;\Bbb C)$ adalah ruang linear atas $\Bbb C$. Misalkan
+$A\subseteq C_b(X;\Bbb C)$ sedemikian sehingga
+      
+\inset{$A$ adalah subruang linear dari $C_b(X;\Bbb C)$;}
+      
+\inset{$f\times g\in A$ untuk setiap $f$, $g\in A$;}
+      
+\inset{$\chi X\in A$;}
+      
+\inset{konjugat kompleks $\bar f$ dari $f$ termasuk dalam $A$ untuk setiap
+$f\in A$;}
+      
+\inset{untuk setiap titik berbeda $x$, $y$ dari $K$ terdapat $f\in A$
+sedemikian sehingga $f(x)\ne f(y)$.}
+      
+\noindent Maka untuk setiap $h:K\to\Bbb C$ kontinu dan $\epsilon>0$
+terdapat $f\in A$ sedemikian sehingga
+      
+\inset{$|f(x)-h(x)|\le\epsilon$ untuk setiap $x\in K$,}
+      
+\inset{jika $K\ne\emptyset$, $\sup_{x\in X}|f(x)|\le\sup_{x\in K}|h(x)|$.}
+      
+\proof{ Jika $K=\emptyset$, atau $h$ identik nol, kita dapat mengambil
+$f=\tbf{0}$. Jadi anggaplah $M=\sup_{x\in K}|h(x)|>0$.
+      
+\medskip
+      
+{\bf (a)} Tetapkan
+      
+\Centerline{$A_{\Bbb R}=\{f:f\in A,\,f(x)$ real untuk setiap $x\in X\}$.}
+      
+\noindent Maka $A_{\Bbb R}$ memenuhi kondisi 281E. \Prf\ (i) Jelas
+$A_{\Bbb R}$ adalah subhimpunan dari $C_b(X)=C_b(X;\Bbb R)$, tertutup
+terhadap penjumlahan, perkalian dengan skalar real, dan perkalian titik demi
+titik fungsi, serta memuat $\chi X$. Jika $x$, $y$ adalah titik berbeda dari
+$K$, terdapat $f\in A$ sedemikian sehingga $f(x)\ne f(y)$. Kini
+      
+\Centerline{$\Real f=\Bover12(f+\bar f)$,
+\quad$\Imag f=\Bover1{2i}(f-\bar f)$}
+      
+\noindent keduanya termasuk dalam $A$ dan bernilai real, sehingga termasuk
+dalam $A_{\Bbb R}$; dan setidaknya salah satunya mengambil nilai berbeda di
+$x$ dan $y$. \Qed
+      
+\medskip
+      
+{\bf (b)} Akibatnya, untuk fungsi kontinu $h:K\to\Bbb C$ dan $\epsilon>0$,
+kita dapat menerapkan 281E dua kali untuk memperoleh $f_1$, $f_2\in A_{\Bbb R}$
+sedemikian sehingga
+      
+\Centerline{$|f_1(x)-\Real(h(x))|\le\eta$,\quad
+$|f_2(x)-\Imag(h(x))|\le\eta$}
+      
+\noindent untuk setiap $x\in K$, dengan
+$\eta=\min(\bover12,M,\bover16\epsilon)>0$. Dengan menetapkan
+$g=f_1+if_2$, kita memiliki $g\in A$ dan
+$|g(x)-h(x)|\le2\eta$ untuk setiap $x\in K$.
+      
+\medskip
+      
+{\bf (c)} Tetapkan $M_1=\|g\|_{\infty}$. Jika $M_1\le M$, kita dapat
+mengambil $f=g$ dan berhenti. Jika tidak, pertimbangkan fungsi
+      
+\Centerline{$\phi(t)=\Bover{M-\eta}{\max(M,\sqrt{t})}$}
+%\eta\le M so \phi\ge 0
+      
+\noindent untuk $t\in [0,M_1^2]$. Menurut teorema Weierstrass (281F),
+terdapat polinom real $p$ sedemikian sehingga
+$|\phi(t)-p(t)|\le\Bover{\eta}{M_1}$ setiap kali $0\le t\le M_1^2$.
+Perhatikan bahwa $|g|^2=g\times\bar g\in A$, sehingga
+      
+\Centerline{$f=g\times p(|g|^2)\in A$.}
+      
+\noindent Sekarang
+      
+\Centerline{$|p(t)|\le\phi(t)+\Bover{\eta}{M_1}
+\le\phi(t)+\Bover{\eta}{\max(M,\sqrt{t})}
+=\Bover{M}{\max(M,\sqrt{t})}$}
+      
+\noindent setiap kali $0\le t\le M_1^2$, sehingga
+      
+\Centerline{$|f(x)|\le|g(x)|\Bover{M}{\max(M,|g(x)|)}\le M$}
+      
+\noindent untuk setiap $x\in X$. Selanjutnya, jika
+$0\le t\le\min(M_1,M+2\eta)^2$,
+      
+\Centerline{$|1-p(t)|\le\Bover{\eta}{M_1}+1-\phi(t)
+\le\Bover{\eta}M+1-\Bover{M-\eta}{M+2\eta}
+\le\Bover{4\eta}M$.}
+      
+\noindent Akibatnya, jika $x\in K$, maka
+      
+\Centerline{$|g(x)|\le\min(M_1,|h(x)|+2\eta)\le
+\min(M_1,M+2\eta)$,}
+      
+\noindent sehingga
+      
+\Centerline{$|1-p(|g(x)|^2)|\le\Bover{4\eta}M$,}
+      
+\noindent dan
+      
+$$\eqalign{|f(x)-h(x)|
+&\le|g(x)-h(x)|+|g(x)||1-p(|g(x)|^2)|\cr
+&\le 2\eta+\Bover{4\eta}M(M+2\eta)
+\le 2\eta+\Bover{4\eta}M(M+1)
+%\eta\le\bover12
+\le\epsilon,\cr}$$
+%\eta\le\bover16\epsilon
+      
+\noindent sebagaimana diperlukan.
+}% end of proof of 281G
+      
+\cmmnt{
+\medskip
+      
+\noindent{\bf Catatan} Tentu saja kita dapat menghemat usaha dengan menerima
+      
+\Centerline{$\sup_{x\in X}|f(x)|\le 2\sup_{x\in K}|h(x)|$,}
+      
+\noindent yang sudah cukup baik untuk penerapan-penerapan di bawah.
+}
+      
+\leader{281H}{Akibat} Misalkan $[a,b]\subseteq\Bbb R$ adalah interval tertutup
+tak kosong yang terbatas dan $h:[a,b]\to\Bbb C$ fungsi kontinu. Maka untuk
+setiap $\epsilon>0$ terdapat $y_0,\ldots,y_n\in\Bbb R$ dan
+$c_0,\ldots,c_n\in\Bbb C$ sedemikian sehingga
+      
+\Centerline{$|h(x)-\sum_{k=0}^nc_ke^{iy_kx}|\le\epsilon$ untuk setiap
+$x\in[a,b]$,}
+      
+\Centerline{$\sup_{x\in\Bbb
+R}|\sum_{k=0}^nc_ke^{iy_kx}|\le\sup_{x\in[a,b]}|h(x)|$.}
+      
+\proof{ Terapkan 281G dengan $X=\Bbb R$, $K=[a,b]$, dan $A$ subruang linear
+yang dibentang oleh fungsi-fungsi $x\mapsto e^{iyx}$ ketika $y$ menjelajahi
+$\Bbb R$.}
+      
+\leader{281I}{Akibat} Misalkan $S^1$ adalah lingkaran satuan
+$\{z:|z|=1\}\subseteq\Bbb C$. Maka untuk setiap fungsi kontinu
+$h:S^1\to\Bbb C$ dan $\epsilon>0$, terdapat $n\in\Bbb N$ dan
+$c_{-n},c_{-n+1},\ldots,c_0,\ldots,c_n\in\Bbb C$ sedemikian sehingga
+$|h(z)-\sum_{k=-n}^nc_kz^k|\le\epsilon$ untuk setiap $z\in S^1$.
+      
+\proof{ Terapkan 281G dengan $X=K=S^1$ dan $A$ subruang linear yang dibentang
+oleh fungsi-fungsi $z\mapsto z^k$ untuk $k\in\Bbb Z$.
+}
+      
+\leader{281J}{Akibat} Misalkan $h:[-\pi,\pi]\to\Bbb C$ adalah fungsi kontinu
+sedemikian sehingga $h(\pi)=h(-\pi)$. Maka untuk setiap $\epsilon>0$
+terdapat $n\in\Bbb N$, $c_{-n},\ldots,c_n\in\Bbb C$ sedemikian sehingga
+$|h(x)-\sum_{k=-n}^nc_ke^{ikx}|\le\epsilon$ untuk setiap
+$x\in[-\pi,\pi]$.
+      
+\proof{ Intinya adalah bahwa $\tilde h:S^1\to\Bbb C$ kontinu pada $S^1$,
+dengan $\tilde h(z)=h(\arg z)$; hal ini karena $\arg$ kontinu di mana-mana
+kecuali di $-1$, dan
+      
+\Centerline{$\lim_{x\downarrow-\pi}h(x)
+=h(-\pi)=h(\pi)=\lim_{x\uparrow\pi}h(x)$,}
+      
+\noindent sehingga
+      
+\Centerline{$\lim_{z\in S^1,z\to-1}\tilde h(z)=h(\pi)=\tilde h(-1)$.}
+      
+\noindent Sekarang menurut 281I terdapat $c_{-n},\ldots,c_n\in\Bbb C$
+sedemikian sehingga $|\tilde h(z)-\sum_{k=-n}^nc_kz^k|\le\epsilon$ untuk
+setiap $z\in S^1$, dan koefisien-koefisien ini juga berlaku untuk $h$.
+}
+\vleader{60pt}{281K}{Akibat} Misalkan $r\ge 1$ dan $K\subseteq\BbbR^r$
+adalah himpunan tertutup terbatas tak kosong. Misalkan $h:K\to\Bbb C$ adalah
+fungsi kontinu dan $\epsilon>0$. Maka terdapat $y_0,\ldots,y_n\in\Bbb Q^r$
+dan $c_0,\ldots,c_n\in\Bbb C$ sedemikian sehingga
+      
+\Centerline{$|h(x)-\sum_{k=0}^nc_ke^{iy_k\dotproduct x}|\le\epsilon$ untuk
+setiap $x\in K$,}
+      
+\Centerline{$\sup_{x\in\Bbb R^r}|\sum_{k=0}^nc_ke^{iy_k\dotproduct x}|
+\le\sup_{x\in K}|h(x)|$,}
+      
+\noindent dengan menuliskan $y\dotproduct x=\sum_{j=1}^r\eta_j\xi_j$ ketika
+$y=(\eta_1,\ldots,\eta_r)$ dan $x=(\xi_1,\ldots,\xi_r)$ termasuk dalam
+$\BbbR^r$.
+      
+      
+\proof{ Terapkan 281G dengan $X=\BbbR^r$ dan $A$ subruang linear yang
+dibentang oleh fungsi-fungsi $x\mapsto e^{iy\dotproduct x}$ ketika $y$
+menjelajahi $\BbbQ^r$.}
+      
+\leader{281L}{Akibat} Misalkan $r\ge 1$ dan $K\subseteq\BbbR^r$ adalah
+himpunan tertutup terbatas tak kosong. Misalkan $h:K\to\Bbb R$ fungsi
+kontinu dan $\epsilon>0$. Maka terdapat $y_0,\ldots,y_n\in\BbbR^r$ dan
+$c_0,\ldots,c_n\in\Bbb C$ sedemikian sehingga, jika
+$g(x)=\sum_{k=0}^nc_ke^{iy_k\dotproduct x}$, maka $g$ bernilai real dan
+      
+\Centerline{$|h(x)-g(x)|\le\epsilon$ untuk setiap $x\in K$,}
+      
+\Centerline{$\inf_{y\in K}h(y)\le g(x)\le\sup_{y\in K}h(y)$ untuk setiap
+$x\in\BbbR^r$.}
+      
+\proof{ Terapkan 281E dengan $X=\BbbR^r$ dan $A$ himpunan fungsi {\it bernilai
+real} pada $\BbbR^r$ yang merupakan kombinasi {\it linear kompleks} dari fungsi-
+fungsi $x\mapsto e^{iy\dotproduct x}$; seperti dicatat pada bagian (a) bukti
+281G, $A$ memenuhi kondisi 281E.}
+      
+\leader{281M}{Teorema ekuidistribusi Weyl}\cmmnt{ Kita kini siap untuk
+salah satu hasil dasar teori bilangan. Sebenarnya saya akan menerapkannya
+untuk memberikan contoh dalam \S285 di bawah, tetapi (setidaknya pada kasus
+satu variabel) teorema ini pasti termasuk dalam daftar (yang agak panjang)
+hal-hal yang patut diketahui setiap matematikawan murni. Demi penerapan yang
+saya maksud, saya memberikan versi lengkap berdimensi $r$, tetapi Anda mungkin
+ingin memahaminya terlebih dahulu dengan $r=1$.
+      
+Akan bermanfaat memiliki notasi untuk `bagian pecahan'.} Untuk setiap bilangan
+real $x$, tuliskan $\fraction{x}$ untuk bilangan dalam $\coint{0,1}$ sedemikian
+sehingga $x-\fraction{x}$ adalah bilangan bulat. \cmmnt{Sekarang untuk
+teoremanya.}
+      
+\leader{281N}{Teorema} Misalkan $\eta_1,\ldots,\eta_r$ bilangan real sedemikian
+sehingga $1,\eta_1,\ldots,\eta_r$ bebas linear atas $\Bbb Q$. Maka setiap kali
+$0\le \alpha_j\le\beta_j\le 1$ untuk setiap $j\le r$,
+      
+\Centerline{$\lim_{n\to\infty}\Bover1{n+1}\#(\{m:m\le
+n,\,\fraction{m\eta_j}\in[\alpha_j,\beta_j]$ untuk setiap $j\le r\})
+=\prod_{j=1}^r(\beta_j-\alpha_j)$.}
+      
+\cmmnt{\medskip
+      
+\noindent{\bf Catatan} Jadi teorema ini menyatakan bahwa proporsi jangka
+panjang $r$-tuple $(\fraction{m\eta_1},
+\ifdim\pagewidth=390pt\break\fi
+\ldots,\fraction{m\eta_r})$ yang termasuk dalam interval
+$[a,b]\subseteq[\tbf{0},\tbf{1}]$ tepat sama dengan ukuran Lebesgue $\mu[a,b]$
+dari interval tersebut. Tentu saja kondisi `$1,\eta_1,\ldots,\eta_r$ bebas
+linear atas $\Bbb Q$' diperlukan sekaligus cukup (281Xg).}
+      
+\proof{{\bf (a)} Tuliskan $y=(\eta_1,\ldots,\eta_r)\in\BbbR^r$,
+      
+\Centerline{$\fraction{my}
+=(\fraction{m\eta_1},\ldots,\fraction{m\eta_r})
+\in\coint{\tbf{0},\tbf{1}}=\coint{0,1}^r$}
+      
+\noindent untuk setiap $m\in\Bbb N$. Tetapkan $I=[\tbf{0},\tbf{1}]=[0,1]^r$,
+dan untuk setiap fungsi $f:I\to\Bbb R$ tuliskan
+      
+\Centerline{$\overline{L}(f)
+=\limsup_{n\to\infty}\Bover1{n+1}\sum_{m=0}^{n}f(\fraction{my})$,}
+      
+\Centerline{$\underline{L}(f)
+=\liminf_{n\to\infty}\Bover1{n+1}\sum_{m=0}^{n}f(\fraction{my})$;}
+      
+\noindent dan untuk $f:I\to\Bbb C$ tuliskan
+      
+\Centerline{$L(f)
+=\lim_{n\to\infty}\Bover1{n+1}\sum_{m=0}^nf(\fraction{my})$}
+      
+\noindent jika limit tersebut ada. Patut dicatat bahwa untuk fungsi-fungsi
+nonnegatif $f$, $g$, $h:I\to\Bbb R$ dengan $h\le f+g$,
+      
+\Centerline{$\overline{L}(h)\le\overline{L}(f)+\overline{L}(g)$,}
+      
+\noindent dan bahwa $L(cf+g)=cL(f)+L(g)$ untuk dua fungsi $f$, $g:I\to\Bbb C$
+dengan $L(f)$ dan $L(g)$ keduanya ada, serta setiap $c\in\Bbb C$.
+      
+\medskip
+      
+{\bf (b)} Saya bermaksud menunjukkan bahwa $L(f)$ ada dan sama dengan
+$\int_{I}f$ untuk (banyak) fungsi kontinu $f$. Langkah kuncinya adalah
+mempertimbangkan fungsi-fungsi berbentuk
+      
+\Centerline{$f(x)=e^{2\pi ik\dotproduct x}$,}
+      
+\noindent dengan $k=(\kappa_1,\ldots,\kappa_r)\in\Bbb Z^r$. Dalam kasus ini,
+jika $k\ne\tbf{0}$,
+      
+\Centerline{$k\dotproduct y=\sum_{j=1}^r\kappa_j\eta_j\notin\Bbb Z$}
+      
+\noindent karena $1,\eta_1,\ldots,\eta_r$ bebas linear atas $\Bbb Q$. Jadi
+      
+$$\eqalignno{L(f)
+&=\lim_{n\to\infty}\Bover1{n+1}
+  \sum_{m=0}^ne^{2\pi ik\dotproduct \fraction{my}}
+=\lim_{n\to\infty}\Bover1{n+1}\sum_{m=0}^ne^{2\pi imk\dotproduct y}\cr
+\noalign{\noindent (karena
+$mk\dotproduct y-k\dotproduct \fraction{my}
+=\sum_{j=1}^r\kappa_j(m\eta_j-\fraction{m\eta_j})$ adalah bilangan bulat)}
+&=\lim_{n\to\infty}
+\bover{1-e^{2\pi i(n+1)k\dotproduct y}}{(n+1)(1-e^{2\pi ik\dotproduct
+y})}\cr
+\noalign{\noindent (karena $e^{2\pi ik\dotproduct y}\ne 1$)}
+&=0,\cr}$$
+      
+\noindent karena $|1-e^{2\pi i(n+1)k\dotproduct y}|\le 2$ untuk setiap $n$.
+Tentu saja kita juga dapat menghitung integral $f$ pada $I$, yaitu
+      
+$$\eqalignno{\int_If(x)dx
+&=\int_Ie^{2\pi ik\dotproduct x}dx
+=\int_I\prod_{j=1}^re^{2\pi i\kappa_j\xi_j}dx\cr
+\noalign{\noindent (dengan menuliskan $x=(\xi_1,\ldots,\xi_r)$)}
+&=\int_{0}^1\ldots\int_0^1\prod_{j=1}^r
+  e^{2\pi i\kappa_j\xi_j}d\xi_r\ldots d\xi_1\cr
+&=\int_{0}^1e^{2\pi i\kappa_r\xi_r}d\xi_r
+  \ldots\int_0^1e^{2\pi i\kappa_1\xi_1}d\xi_1
+=0\cr}$$
+      
+\noindent karena setidaknya satu $\kappa_j$ tidak nol, dan untuk $j$ tersebut
+kita harus memiliki
+      
+\Centerline{$\int_0^1e^{2\pi i\kappa_j\xi_j}d\xi_j
+=\Bover{1}{2\pi i\kappa_j}(e^{2\pi i\kappa_j}-1)=0$.}
+      
+\noindent Jadi $L(f)=\int_If=0$ ketika $k\ne\tbf{0}$. Sebaliknya, jika
+$k=\tbf{0}$, maka $f$ konstan dengan nilai $1$, sehingga
+      
+\Centerline{$L(f)
+=\lim_{n\to\infty}\Bover1{n+1}\sum_{m=0}^nf(\fraction{my})
+=\lim_{n\to\infty}1=1=\int_If(x)dx$.}
+      
+\medskip
+      
+{\bf (c)} Sekarang tuliskan
+$\partial I=[\tbf{0},\tbf{1}]\setminus\ooint{\tbf{0},\tbf{1}}$, yaitu batas
+dari $I$. Jika $f:I\to\Bbb C$ kontinu dan $f(x)=0$ untuk $x\in\partial I$,
+maka $L(f)=\int_If$. \Prf\ Seperti dalam 281I, misalkan $S^1$ adalah
+lingkaran satuan $\{z:z\in\Bbb C,\,|z|=1\}$, dan tetapkan
+$K=(S^1)^r\subseteq\Bbb C^r$. Jika kita memandang $K$ sebagai subhimpunan
+dari $\BbbR^{2r}$, maka himpunan itu tertutup dan terbatas. Misalkan
+$\phi:K\to I$ diberikan oleh
+      
+\Centerline{$\phi(\zeta_1,\ldots,\zeta_r)
+=(\Bover12+\Bover{\arg\zeta_1}{2\pi},\ldots,
+\Bover12+\Bover{\arg\zeta_r}{2\pi})$}
+      
+\noindent untuk $\zeta_1,\ldots,\zeta_r\in S^1$. Maka $h=f\phi:K\to\Bbb
+C$ kontinu, karena $\phi$ kontinu pada $(S^1\setminus\{-1\})^r$ dan
+      
+\Centerline{$\lim_{w\to z}f\phi(w)=f\phi(z)=0$}
+      
+\noindent untuk setiap $z\in K\setminus(S^1\setminus\{-1\})^r$.
+(Bandingkan 281J.) Sekarang terapkan 281G dengan $X=K$ dan $A$ himpunan
+polinom dalam $\zeta_1,\ldots,\zeta_r,\zeta_1^{-1},\ldots,\zeta_r^{-1}$
+untuk melihat bahwa, diberikan $\epsilon>0$, terdapat fungsi berbentuk
+      
+\Centerline{$g(z)=\sum_{k\in
+J}c_k\zeta_1^{\kappa_1}\ldots\zeta_r^{\kappa_r}$,}
+      
+\noindent untuk suatu himpunan berhingga $J\subseteq\Bbb Z^r$ dan konstanta
+$c_k\in\Bbb C$ untuk $k\in J$, sedemikian sehingga
+      
+\Centerline{$|g(z)-h(z)|\le\epsilon$ untuk setiap $z\in K$.}
+      
+\noindent Tetapkan
+      
+\Centerline{$\tilde g(x)
+=g(e^{\pi i(2\xi_1-1)},\ldots,e^{\pi i(2\xi_r-1)})
+=\sum_{k\in J}c_ke^{\pi ik\dotproduct (2x-\tbf{1})}
+=\sum_{k\in J}(-1)^{k\tbf{.1}}c_ke^{2\pi ik\dotproduct x}$,}
+      
+\noindent sehingga $\tilde g\phi=g$, dan perhatikan bahwa
+      
+\Centerline{$\sup_{x\in I}|\tilde g(x)-f(x)|
+=\sup_{z\in K}|g(z)-h(z)|\le\epsilon$.}
+      
+Kini $\tilde g$ berbentuk seperti yang ditangani pada (a), sehingga
+$L(\tilde g)=\int_I\tilde g$. Ambil $n_0$ sedemikian sehingga
+      
+\Centerline{$\bigl|\int_I\tilde g
+  -\Bover1{n+1}\sum_{m=0}^n\tilde g(\fraction{my})\bigr|
+\le\epsilon$}
+      
+\noindent untuk setiap $n\ge n_0$. Maka
+      
+\Centerline{$|\int_If-\int_I\tilde g|\le\int_I|f-\tilde g|\le\epsilon$}
+      
+\noindent dan
+      
+$$\eqalign{|\Bover1{n+1}\sum_{m=0}^{n}\tilde g(\fraction{my})
+ -\Bover1{n+1}\sum_{m=0}^{n}f(\fraction{my})|
+&\le\Bover1{n+1}\sum_{m=0}^{n}
+ |\tilde g(\fraction{my})-f(\fraction{my})|\cr
+&\le\Bover1{n+1}(n+1)\epsilon
+=\epsilon\cr}$$
+      
+\noindent untuk setiap $n\in\Bbb N$. Jadi untuk $n\ge n_0$ kita harus
+memiliki
+      
+\Centerline{$|\Bover1{n+1}\sum_{m=0}^{n}f(\fraction{my})
+ -\int_If|\le3\epsilon$.}
+      
+\noindent Karena $\epsilon$ sebarang, $L(f)=\int_If$, sebagaimana diperlukan.
+\Qed
+      
+\medskip
+      
+{\bf (d)} Perhatikan selanjutnya bahwa jika $a$,
+$b\in\ooint{\tbf{0},\tbf{1}}=\ooint{0,1}^r$, dan $\epsilon>0$, terdapat
+fungsi kontinu $f_1$, $f_2$ sedemikian sehingga
+      
+\Centerline{$f_1\le\chi[a,b]\le f_2\le\chi\ooint{\tbf{0},\tbf{1}}$,
+\quad $\int_If_2-\int_If_1\le\epsilon$.}
+      
+\noindent\Prf\ Ini elementer. Untuk $n\in\Bbb N$, definisikan
+$h_n:\Bbb R\to[0,1]$ dengan menetapkan $h_n(\xi)=0$ jika $\xi\le 0$,
+$2^n\xi$ jika $0\le\xi\le 2^{-n}$, dan $1$ jika $\xi\ge 2^{-n}$.
+Tetapkan
+      
+\Centerline{$f_{1n}(x)
+=\prod_{j=1}^rh_n(\xi_j-\alpha_j)h_n(\beta_j-\xi_j)$,}
+      
+\Centerline{$f_{2n}(x)
+=\prod_{j=1}^r(1-h_n(\alpha_j-\xi_j))(1-h_n(\xi_j-\beta_j))$}
+      
+\noindent untuk $x=(\xi_1,\ldots,\xi_r)\in\BbbR^r$. (Bandingkan bukti
+242Oa.) Maka $f_{1n}\le\chi[a,b]\le f_{2n}$ untuk setiap $n$,
+$f_{2n}\le\chi\ooint{\tbf{0},\tbf{1}}$ untuk semua $n$ yang cukup besar
+sehingga
+      
+\Centerline{$2^{-n}
+\le\min(\min_{j\le r}\alpha_j,\min_{j\le r}(1-\beta_j))$,}
+      
+\noindent dan $\lim_{n\to\infty}f_{2n}(x)-f_{1n}(x)=0$ untuk setiap $x$,
+sehingga
+      
+\Centerline{$\lim_{n\to\infty}\int_If_{2n}-\int_If_{1n}=0$.}
+      
+\noindent Jadi kita dapat mengambil $f_1=f_{1n}$, $f_2=f_{2n}$ untuk setiap
+$n$ yang cukup besar. \Qed
+      
+\medskip
+      
+{\bf (e)} Dari sini, jika $a$, $b\in\ooint{\tbf{0},\tbf{1}}$ dan $a\le b$,
+$L(\chi[a,b])=\mu[a,b]$. \Prf\ Ambil $\epsilon>0$. Ambil $f_1$, $f_2$
+seperti pada (d). Kemudian, menggunakan (c),
+      
+\Centerline{$\overline{L}(\chi[a,b])\le\overline{L}(f_2)
+=L(f_2)=\int_If_2\le\int_If_1+\epsilon\le\mu[a,b]+\epsilon$,}
+      
+\Centerline{$\underline{L}(\chi[a,b])\ge\underline{L}(f_1)
+=L(f_1)=\int_If_1\ge\int_If_2-\epsilon\ge\mu[a,b]-\epsilon$,}
+      
+\noindent sehingga
+      
+\Centerline{$\mu[a,b]-\epsilon\le\underline{L}(\chi[a,b])
+\le\overline{L}(\chi[a,b])\le\mu[a,b]+\epsilon$.}
+      
+\noindent Karena $\epsilon$ sebarang,
+      
+\Centerline{$\mu[a,b]=\overline{L}(\chi[a,b])=\underline{L}(\chi[a,b])
+=L(\chi[a,b])$,}
+      
+\noindent sebagaimana diperlukan.\ \Qed
+      
+\medskip
+      
+{\bf (f)} Untuk menyelesaikan bukti, ambil sebarang $a$, $b\in I$ dengan
+$a\le b$. Untuk $0<\epsilon\le\bover12$, tetapkan
+$I_{\epsilon}=[\epsilon\tbf{1},(1-\epsilon)\tbf{1}]$, sehingga
+$I_{\epsilon}$ adalah interval tertutup yang termasuk dalam
+$\ooint{\tbf{0},\tbf{1}}$ dan $\mu I_{\epsilon}=(1-2\epsilon)^r$. Tentu saja
+$L(\chi I)=\mu I=1$, sehingga
+      
+\Centerline{$L(\chi(I\setminus I_{\epsilon}))
+=L(\chi I)-L(\chi I_{\epsilon})
+=1-\mu I_{\epsilon}$,}
+      
+\noindent dan
+      
+$$\eqalign{\mu[a,b]-1+\mu I_{\epsilon}
+&\le\mu[a,b]+\mu I_{\epsilon}-\mu([a,b]\cup I_{\epsilon})
+=\mu([a,b]\cap I_{\epsilon})\cr
+&=L(\chi([a,b]\cap I_{\epsilon}))
+\le\underline{L}(\chi([a,b]))\cr
+&\le\overline{L}(\chi([a,b]))
+\le\overline{L}(\chi([a,b]\cap I_{\epsilon}))
+  +\overline{L}(\chi(I\setminus I_{\epsilon}))\cr
+&=L(\chi([a,b]\cap I_{\epsilon}))+1-\mu I_{\epsilon}\cr
+&=\mu([a,b]\cap I_{\epsilon})+1-\mu I_{\epsilon}
+\le\mu[a,b]+1-\mu I_{\epsilon}.\cr}$$
+      
+\noindent Karena $\epsilon$ sebarang,
+      
+\Centerline{$\mu[a,b]=\overline{L}(\chi[a,b])=\underline{L}(\chi[a,b])
+=L(\chi[a,b])$,}
+      
+\noindent sebagaimana dinyatakan.
+}%end of proof of 281N
+\exercises{
+\leader{281X}{Latihan dasar (a)}
+%\spheader 281Xa
+Misalkan $A$ adalah himpunan fungsi kontinu terbatas
+$f:\BbbR^r\times\BbbR^r\to\Bbb R$ yang dapat dinyatakan dalam bentuk
+$f(x,y)=\sum_{k=0}^ng_k(x)g'_k(y)$, dengan semua $g_k$, $g'_k$ fungsi kontinu
+dari $\BbbR^r$ ke $\Bbb R$. Tunjukkan bahwa untuk setiap fungsi kontinu
+terbatas $h:\BbbR^r\times\BbbR^r\to\Bbb R$, setiap himpunan terbatas
+$K\subseteq\BbbR^r\times\BbbR^r$, dan setiap $\epsilon>0$, terdapat $f\in A$
+sedemikian sehingga
+$|f(x,y)-h(x,y)|\le\epsilon$ untuk setiap $(x,y)\in K$ dan
+$\sup_{x,y\in\BbbR^r}|f(x,y)|\le\sup_{x,y\in\BbbR^r}|h(x,y)|$.
+%281E
+      
+\spheader 281Xb Misalkan $K$ himpunan tertutup terbatas dalam $\BbbR^r$,
+dengan $r\ge 1$, dan $h:K\to\Bbb R$ fungsi kontinu. Tunjukkan bahwa untuk
+setiap $\epsilon>0$ terdapat polinom $p$ dalam $r$ variabel sedemikian sehingga
+$|h(x)-p(x)|\le\epsilon$ untuk setiap $x\in K$.
+%281F
+      
+\sqheader 281Xc Misalkan $[a,b]$ interval tertutup tak kosong dari $\Bbb R$
+dan $h:[a,b]\to\Bbb R$ fungsi kontinu. Tunjukkan bahwa untuk setiap
+$\epsilon>0$ terdapat
+$y_0,\ldots,y_n,a_0,\ldots,a_n,b_0,\ldots,b_n\in\Bbb R$ sedemikian sehingga
+      
+\Centerline{$|h(x)-\sum_{k=0}^n(a_k\cos y_kx+b_k\sin y_kx)|\le\epsilon$
+untuk setiap $x\in [a,b]$,}
+      
+\Centerline{$\sup_{x\in\Bbb R}|\sum_{k=0}^n(a_k\cos y_kx+b_k\sin
+y_kx)|\le\sup_{x\in [a,b]}|h(x)|$.}
+%281H
+      
+\spheader 281Xd Misalkan $h$ fungsi bernilai kompleks pada $\ocint{-\pi,\pi}$
+sedemikian sehingga $|h|^p$ terintegralkan, dengan $1\le p<\infty$.
+Tunjukkan bahwa untuk setiap $\epsilon>0$ terdapat fungsi berbentuk
+$x\mapsto f(x)=\sum_{k=-n}^nc_ke^{ikx}$, dengan
+$c_{-k},\ldots,c_k\in\Bbb C$, sedemikian sehingga
+$\int_{-\pi}^{\pi}|h-f|^p\le\epsilon$. (Bandingkan 244H.)
+%281H
+      
+\sqheader 281Xe Misalkan $h:[-\pi,\pi]\to\Bbb R$ fungsi kontinu sedemikian
+sehingga $h(\pi)=h(-\pi)$, dan $\epsilon>0$. Tunjukkan bahwa terdapat
+$a_0,\ldots,a_n,b_1,\ldots,b_n\in\Bbb R$ sedemikian sehingga
+      
+\Centerline{$|h(x)-\Bover12a_0-\sum_{k=1}^n(a_k\cos kx+b_k\sin kx)|
+\le\epsilon$}
+      
+\noindent untuk setiap $x\in[-\pi,\pi]$.
+%281J
+      
+\spheader 281Xf Misalkan $K$ himpunan tertutup terbatas tak kosong dalam
+$\BbbR^r$, dengan $r\ge 1$, dan $h:K\to\Bbb R$ fungsi kontinu. Tunjukkan
+bahwa untuk setiap $\epsilon>0$ terdapat $y_0,\ldots,y_n\in\BbbR^r$,
+$a_0,\ldots,a_n,b_0,\ldots,b_n\in\Bbb R$ sedemikian sehingga
+      
+\Centerline{$|h(x)
+  -\sum_{k=0}^n(a_k\cos(y_k\dotproduct x)+b_k\sin(y_k\dotproduct x))|
+\le\epsilon$ untuk setiap $x\in K$,}
+      
+\Centerline{$\sup_{x\in\Bbb R}
+ |\sum_{k=0}^n(a_k\cos(y_k\dotproduct x)+b_k\sin(y_k\dotproduct x))|
+\le\sup_{x\in K}|h(x)|$,}
+      
+\noindent dengan menafsirkan $y\dotproduct x$ seperti dalam 281K.
+%281K
+      
+\spheader 281Xg Misalkan $y_1,\ldots,y_r$ bilangan real sedemikian sehingga
+$1,y_1,\ldots,y_r$ tidak bebas linear atas $\Bbb Q$. Tunjukkan bahwa terdapat
+interval nontrivial $[a,b]\subseteq[\tbf{0},\tbf{1}]\subseteq\BbbR^r$
+sedemikian sehingga $(\fraction{my_1},\ldots,\fraction{my_r})\notin[a,b]$
+untuk setiap $m\in\Bbb Z$.
+%281M
+      
+\spheader 281Xh Misalkan $\eta_1,\ldots,\eta_r$ bilangan real sedemikian
+sehingga $1,\eta_1,\ldots,\eta_r$ bebas linear atas $\Bbb Q$. Misalkan pula
+$0\le\alpha_j\le\beta_j\le 1$ untuk setiap $j\le r$. Tunjukkan bahwa untuk
+setiap $\epsilon>0$ terdapat $n_0\in\Bbb N$ sedemikian sehingga
+      
+\Centerline{$|\prod_{j=1}^r(\beta_j-\alpha_j)
+ -\Bover1{n+1}\#(\{m:k\le m\le k+n,\,\fraction{m\eta_j}
+ \in[\alpha_j,\beta_j]$ untuk setiap $j\le r\})|\le\epsilon$}
+      
+\noindent setiap kali $n\ge n_0$ dan $k\in\Bbb N$. ({\it Petunjuk\/}:
+dalam bukti 281N, tetapkan
+      
+\Centerline{$\overline{L}(f)
+ =\limsup_{n\to\infty}\sup_{k\in\Bbb N}\Bover1{n+1}
+ \sum_{m=k}^{k+n}f(\fraction{my})$.)}
+%281N
+      
+\leader{281Y}{Latihan lanjutan (a)} Tunjukkan bahwa di bawah hipotesis 281A,
+terdapat $f\in\overline{A}$, yang merupakan penutupan dalam norma
+$\|\,\|_{\infty}$ dari $A$ di $C_b(X)$, sedemikian sehingga
+$f\restr K=h$. ({\it Petunjuk\/}: ambil
+$f=\lim_{n\to\infty}f_n$ dengan
+      
+\Centerline{$\|f_{n+1}-f_n\|_{\infty}\le\sup_{x\in K}|f_n(x)-h(x)|
+\le 2^{-n}$}
+      
+\noindent untuk setiap $n\in\Bbb N$.)
+%281A
+      
+\spheader 281Yb Misalkan $X$ ruang topologis dan $K\subseteq X$ subhimpunan
+kompak. Misalkan untuk setiap titik berbeda $x$, $y$ dari $K$ terdapat fungsi
+kontinu $f:X\to\Bbb R$ sedemikian sehingga $f(x)\ne f(y)$. Tunjukkan bahwa
+untuk setiap $r\in\Bbb N$ dan setiap $h:K\to\BbbR^r$ kontinu terdapat
+$f:X\to\BbbR^r$ kontinu yang memperluas $h$.
+\Hint{pertimbangkan $r=1$ terlebih dahulu.}
+%281Ya, 281A
+      
+\spheader 281Yc Misalkan $\langle X_i\rangle_{i\in I}$ keluarga sebarang
+ruang Hausdorff kompak, dan $X$ produk mereka sebagai ruang topologis. Untuk
+setiap $i$, tuliskan $C(X_i)$ untuk himpunan fungsi kontinu dari $X_i$ ke
+$\Bbb R$, dan $\pi_i:X\to X_i$ untuk pemetaan koordinat. Tunjukkan bahwa
+subaljabar $C(X)$ yang dibangkitkan oleh
+$\{f\pi_i:i\in I,\,f\in C(X_i)\}$ rapat menurut norma $\|\,\|_{\infty}$
+dalam $C(X)$. ({\it Catatan\/}: Anda perlu mengetahui bahwa $X$ kompak,
+ dan bahwa jika $Z$ ruang Hausdorff kompak, maka untuk setiap $z$, $w\in Z$ yang berbeda
+terdapat $f\in C(Z)$ dengan $f(z)\ne f(w)$. Untuk rujukan lihat
+3A3J dan 3A3Bf dalam jilid berikutnya.)
+%281A
+      
+\spheader 281Yd Misalkan $X$ ruang topologis dan $K$ subhimpunan kompak dari
+$X$. Misalkan $A$ subruang linear dari ruang $C_b(X)$ fungsi kontinu bernilai
+real yang terbatas pada $X$, sedemikian sehingga $|f|\in A$ untuk setiap
+$f\in A$. Misalkan $h:K\to\Bbb R$ fungsi kontinu sedemikian sehingga untuk
+setiap $x$, $y\in K$ terdapat $f\in A$ dengan $f(x)=h(x)$ dan $f(y)=h(y)$.
+Tunjukkan bahwa untuk setiap $\epsilon>0$ terdapat $f\in A$ sedemikian
+sehingga $|f(x)-h(x)|\le\epsilon$ untuk setiap $x\in K$.
+%281A
+      
+\spheader 281Ye Misalkan $X$ ruang topologis kompak dan tuliskan $C(X)$ untuk
+himpunan fungsi kontinu dari $X$ ke $\Bbb R$. Misalkan $h\in C(X)$, dan
+$A\subseteq C(X)$ sedemikian sehingga
+      
+\inset{$A$ adalah subruang linear dari $C(X)$;}
+      
+\inset{{\it atau} $|f|\in A$ untuk setiap $f\in A$ { \it atau}
+$f\times g\in A$ untuk setiap $f$, $g\in A$
+{ \it atau} $f\times f\in A$ untuk setiap $f\in A$;}
+      
+\inset{untuk setiap $x$, $y\in X$ dan $\delta>0$ terdapat $f\in A$ sedemikian
+sehingga $|f(x)-h(x)|\le\delta$ dan $|f(y)-h(y)|\le\delta$.}
+      
+\noindent Tunjukkan bahwa untuk setiap $\epsilon>0$ terdapat $f\in A$
+sedemikian sehingga $|h(x)-f(x)|\le\epsilon$ untuk setiap $x\in X$.
+%281E
+      
+\spheader 281Yf Misalkan $X$ ruang topologis kompak dan $A$ subruang linear
+tertutup dalam norma $\|\,\|_{\infty}$ dari ruang $C(X)$ fungsi kontinu dari
+$X$ ke $\Bbb R$. Tunjukkan bahwa berikut ini ekuivalen:
+      
+\quad (i) $|f|\in A$ untuk setiap $f\in A$;
+      
+\quad (ii) $f\times f\in A$ untuk setiap $f\in A$;
+      
+\quad (iii) $f\times g\in A$ untuk semua $f$, $g\in A$,
+      
+\noindent dan bahwa dalam kasus ini $A$ tertutup dalam $C(X)$ untuk topologi
+yang ditentukan oleh pseudometrik
+      
+\Centerline{$(f,g)\mapsto|f(x)-g(x)|:
+  C(X)\times C(X)\to\coint{0,\infty}$}
+      
+\noindent ketika $x$ menjelajahi $X$ (yaitu `topologi konvergensi titik demi
+titik' pada $C(X)$).
+%281E
+      
+\spheader 281Yg Tunjukkan bahwa di bawah hipotesis 281G terdapat
+$f\in\overline{A}$, yang merupakan penutupan dalam norma $\|\,\|_{\infty}$
+dari $A$ di $C_b(X;\Bbb C)$, sedemikian sehingga
+$f\restr K=h$ dan (jika
+$K\ne\emptyset$) $\|f\|_{\infty}=\sup_{x\in K}|h(x)|$.
+%281G
+      
+\spheader 281Yh Misalkan $y\in\Bbb R$ irasional. Tunjukkan bahwa untuk setiap
+fungsi Riemann-terintegralkan $f:[0,1]\to\Bbb R$,
+      
+\Centerline{$\int_0^1f(x)dx
+=\lim_{n\to\infty}\Bover1{n+1}\sum_{m=0}^nf(\fraction{my})$,}
+      
+\noindent dengan menuliskan $\fraction{my}$ untuk bagian pecahan dari $my$.
+({\it Petunjuk\/}: ingat {\it kriteria Riemann}: untuk setiap $\epsilon>0$,
+terdapat $a_0,\ldots,a_n$ dengan $0=a_0\le a_1\le\ldots\le a_n=1$ dan
+      
+\Centerline{$\sum\{a_{j}-a_{j-1}:j\le n,\,\sup_{x\in[a_{j-1},a_j]}f(x)
+ -\inf_{x\in[a_{j-1},a_j]}f(x)\ge\epsilon\}\le\epsilon$.)}
+%281N
+      
+\ifdim\pagewidth>467pt\fontdimen3\tenrm=1.84pt
+  \fontdimen4\tenrm=1.22pt\fi
+\spheader 281Yi Misalkan $\sequencen{t_n}$ suatu barisan dalam $[0,1]$.
+Tunjukkan bahwa berikut ini ekuivalen:
+(i) $\lim_{n\to\infty}\bover1{n+1}\sum_{k=0}^nf(t_k)
+\ifdim\pagewidth>467pt\penalty-100\fi
+=\int_0^1f$ untuk setiap fungsi kontinu $f:[0,1]\to\Bbb R$;
+(ii)
+\ifdim\pagewidth=390pt\break\fi
+$\lim_{n\to\infty}\bover1{n+1}\sum_{k=0}^nf(t_k)=\int_0^1f$ untuk
+setiap fungsi Riemann-terintegralkan $f:[0,1]\to\Bbb R$;
+(iii) $\liminf_{n\to\infty}\bover1{n+1}\#(\{k:k\le n,\,t_k\in G\})
+\ge\mu G$ untuk setiap himpunan terbuka $G\subseteq[0,1]$, dengan $\mu$
+ukuran Lebesgue pada $\Bbb R$;
+(iv) $\lim_{n\to\infty}\bover1{n+1}\#(\{k:k\le n,\,t_k\le\alpha\})
+=\alpha$ untuk setiap $\alpha\in[0,1]$;
+(v) $\lim_{n\to\infty}\bover1{n+1}\#(\{k:k\le n,\,t_k\in E\})=\mu E$
+untuk setiap $E\subseteq[0,1]$ sedemikian sehingga
+$\mu(\interior E)=\mu\overline{E}$;
+(vi) $\lim_{n\to\infty}\bover1{n+1}\sum_{k=0}^ne^{2\pi imt_k}=0$ untuk
+setiap $m\ge 1$.
+(Bandingkan 273J. Barisan $\sequencen{t_n}$ semacam ini disebut
+{\bf terdistribusi seragam} atau {\bf tersebar merata}.)
+%281N
+\fontdimen3\tenrm=1.67pt\fontdimen4\tenrm=1.11pt
+      
+\spheader 281Yj Tunjukkan bahwa barisan $\sequencen{\fraction{\ln(n+1)}}$
+tidak terdistribusi seragam.
+%281Yi, 281N
+      
+\spheader 281Yk Berikan $[0,1]^{\Bbb N}$ ukuran produk $\lambda$. Tunjukkan
+bahwa, menurut $\lambda$, hampir setiap barisan
+$\sequencen{t_n}\in[0,1]^{\Bbb N}$ terdistribusi seragam dalam arti 281Yi.
+\Hint{273J.}
+%281Yi, 281N
+      
+\spheader 281Yl Misalkan $f:[0,1]^2\to\Bbb C$ fungsi kontinu. Tunjukkan bahwa
+jika $\gamma\in\Bbb R$ irasional maka
+$\lim_{a\to\infty}\bover1a\int_0^af(\fraction{t},\fraction{\gamma t})dt
+\penalty-100=\int_{[0,1]^2}f$.
+\Hint{mula-mula pertimbangkan fungsi berbentuk
+$x\mapsto e^{2\pi ik\dotproduct x}$.}
+%281N
+ 
+\spheader 281Ym Suatu barisan $\sequencen{t_n}$ dalam $[0,1]$ disebut
+{\bf terdistribusi dengan baik} (terhadap ukuran Lebesgue $\mu$) jika
+      
+\Centerline{$\liminf_{n\to\infty}\inf_{l\in\Bbb N}
+  \Bover1{n+1}\#(\{k:l\le k\le l+n$, 
+  $t_k\in G\})\ge\mu G$}
+      
+\noindent untuk setiap himpunan terbuka $G\subseteq[0,1]$.
+(i) Tunjukkan bahwa $\sequencen{t_n}$ terdistribusi dengan baik jika dan hanya jika
+$\lim_{n\to\infty}\sup_{l\in\Bbb N}
+|\int_0^1f-\bover1{n+1}\sum_{k=l}^{l+n}f(t_k)|=0$ untuk setiap fungsi kontinu
+$f:[0,1]\to\Bbb R$.
+(ii) Tunjukkan bahwa $\sequencen{\fraction{n\alpha}}$ terdistribusi dengan baik
+untuk setiap $\alpha$ irasional.
+%281Xh 281Yi 281N
+}%end of exercises
+      
+\endnotes{\Notesheader{281} Saya telah memberikan tiga pernyataan (281A, 281E,
+dan 281G) dari teorema Stone-Weierstrass, dengan pengakuan (281F) terhadap
+versi Weierstrass sendiri, dan tiga bentuk lain (281Ya, 281Yd, 281Yg) dalam
+latihan. Bentuk lain lagi akan muncul dalam \S4A6 di Jilid 4. Menghadapi
+keragaman ini, Anda mungkin ingin mencoba sendiri menuliskan teorema yang
+mencakup sebagian atau semua versi tersebut. Saya sendiri tidak melihat cara
+melakukannya tanpa menyusun daftar hipotesis dan kesimpulan alternatif yang
+membingungkan. Pada titik itu saya bertanya, `sebenarnya apa itu teorema?',
+dan menjawab: teorema adalah tempat berhenti dalam perjalanan kita; tempat
+untuk beristirahat dan mengucapkan selamat kepada diri sendiri atas pencapaian
+kita; tempat yang dapat kita pelajari untuk kenali dan gunakan sebagai titik
+berangkat bagi petualangan baru; tempat yang dapat kita uraikan dan bagikan
+dengan orang lain. Untuk beberapa teorema, seperti teorema terakhir Fermat,
+ada pernyataan kanonik, suatu titik yang dapat ditemukan tepat. Untuk yang
+lain, seperti teorema Stone-Weierstrass di sini, kita sampai pada kumpulan
+hasil yang sangat berkaitan, semuanya bergantung pada susunan tertentu dari
+argumen yang diuraikan dalam 281A--281G dan 281Ya (yang memperkenalkan
+gagasan baru), dan semuanya berguna dengan cara yang berbeda. Memang saya
+berpendapat bahwa kebanyakan penulis akan lebih menyukai versi 281Ya dan
+281Yg, yang menghilangkan variabel $\epsilon$ yang muncul dalam 281A, 281E,
+dan 281G, dengan mengorbankan pengambilan subruang tertutup $A$. Namun saya
+menemukan bahwa akibat-akibat yang akan berguna kemudian (281H--281L) lebih
+alami dinyatakan dalam istilah subruang linear yang tidak tertutup.
+      
+Penerapan teorema, atau teorema-teorema, atau metode ini -- pilih sendiri
+ungkapan Anda -- sangat banyak; hanya beberapa yang dicantumkan di sini.
+Salah satu yang tampaknya tidak berbahaya terdapat dalam 281Xa dan, dalam
+varian berbeda, dalam 281Yc; keduanya sangat penting dalam ranah masing-masing.
+Dalam jilid ini penerapan utama akan berupa 285L di bawah, yang bergantung pada
+281K, dan mungkin patut dicatat bahwa ada pendekatan alternatif untuk hasil
+khusus ini, berdasarkan gagasan dalam 282G. Namun saya menawarkan teorema
+ekuidistribusi Weyl (281M--281N) sebagai bukti bahwa kita dapat berharap
+menemukan kegunaan gagasan-gagasan ini di hampir setiap cabang matematika.
+}
+      
+\discrpage
+      

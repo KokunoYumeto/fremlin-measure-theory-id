@@ -1,0 +1,1059 @@
+\frfilename{mt2a3.tex}
+\versiondate{25.7.07}
+\copyrightdate{1995}
+
+\def\varBbb#1{\mathchoice{\hbox{$\Bbb#1$\hskip0.02em}}
+  {\hbox{$\Bbb#1$\hskip0.02em}}
+  {\hbox{$\scriptstyle\Bbb#1$\hskip0.04em}}
+  {\hbox{$\scriptscriptstyle\Bbb#1$\hskip0.04em}}}
+
+\def\chaptername{Lampiran}
+\def\sectionname{Topologi umum}
+
+\newsection{2A3}
+
+Pada berbagai bagian -- terutama \S\S245-247, %\S245 \S246 \S247
+tetapi juga untuk gagasan-gagasan tertentu dalam Bab 27 -- kita perlu
+mengetahui sesuatu tentang topologi yang tidak dapat dimetrikkan. Saya
+menyarankan agar Anda meluangkan waktu untuk membaca sebuah buku
+tentang analisis fungsional elementer yang memuat ungkapan `kekompakan lemah'
+atau `kompak secara lemah' dalam indeksnya. Namun, di sini saya dapat
+menyajikan konsep-konsep yang benar-benar digunakan dalam jilid ini dengan
+ruang yang jauh lebih sedikit daripada yang diperlukan oleh uraian lengkap
+yang ortodoks.
+
+\leader{2A3A}{Topologi} \cmmnt{Pertama-tama kita perlu mengetahui apa
+yang dimaksud dengan {\lq topologi'}.} Jika $X$ adalah sebarang himpunan,
+sebuah {\bf topologi} pada $X$ adalah keluarga $\frak T$ dari himpunan bagian
+$X$ sedemikian sehingga (i) $\emptyset$, $X\in\frak T$ (ii) jika $G$,
+$H\in\frak T$ maka $G\cap H\in\frak T$ (iii) jika
+$\Cal G\subseteq\frak T$ maka $\bigcup\Cal G\in\frak T$\cmmnt{
+(bdk.\ 1A2B)}. \cmmnt{Pasangan} $(X,\frak T)$ kini merupakan sebuah
+{\bf ruang topologis}. Dalam konteks ini, anggota-anggota $\frak T$ disebut
+{\bf terbuka}, dan komplemennya\cmmnt{ (dalam $X$)} disebut
+{\bf tertutup}\cmmnt{ (bdk.\ 1A2E-1A2F)}.
+
+\leader{2A3B}{Fungsi kontinu (a)} Jika $(X,\frak T)$ dan $(Y,\frak
+S)$ adalah ruang topologis, sebuah fungsi $\phi:X\to Y$ disebut
+{\bf kontinu} jika $\phi^{-1}[G]\in\frak T$ untuk setiap
+$G\in\frak S$. \cmmnt{(Menurut 2A2Ca di atas, definisi ini konsisten
+dengan definisi kontinuitas $\epsilon$-$\delta$ untuk fungsi dari satu
+ruang Euklides ke ruang Euklides lain. Lihat juga 2A3H di bawah.)}
+
+\header{2A3Bb}{\bf (b)} Jika $(X,\frak T)$, $(Y,\frak S)$ dan
+$(Z,\frak U)$ adalah ruang topologis, sedangkan $\phi:X\to Y$ dan
+$\psi:Y\to Z$ kontinu, maka $\psi\phi:X\to Z$ kontinu.
+\prooflet{\Prf\ Jika $G\in\frak U$ maka $\psi^{-1}[G]\in\frak S$, sehingga
+$(\psi\phi)^{-1}[G]=\phi^{-1}[\psi^{-1}[G]]\in\frak T$.\ \Qed}
+
+\header{2A3Bc}{\bf (c)} Jika $(X,\frak T)$ adalah ruang topologis,
+sebuah fungsi $f:X\to\Bbb R$ kontinu jika dan hanya jika
+$\{x:a<f(x)<b\}$ terbuka setiap kali $a<b$ dalam $\Bbb R$.
+\prooflet{\Prf\ {\bf (i)} Setiap interval $\ooint{a,b}$ terbuka dalam
+$\Bbb R$, sehingga jika $f$ kontinu, prabentuknya
+$\{x:a<f(x)<b\}$ harus terbuka. {\bf (ii)} Misalkan
+$f^{-1}[\,\ooint{a,b}\,]$ terbuka setiap kali $a<b$, dan misalkan
+$H\subseteq\Bbb R$ sebarang himpunan terbuka. Menurut definisi himpunan
+`terbuka' dalam $\Bbb R$\cmmnt{ (1A2A)},
+
+$$\eqalign{H&
+=\bigcup\{\ooint{y-\delta,y+\delta}:y\in\Bbb R,\,\delta>0,\,
+\ooint{y-\delta,y+\delta}\subseteq H\},\cr}$$
+
+\noindent sehingga
+
+\Centerline{$f^{-1}[H]=
+\bigcup\{f^{-1}[\,\ooint{y-\delta,y+\delta}\,]:y\in\Bbb R,\,\delta>0,\,
+\ooint{y-\delta,y+\delta}\subseteq H\}$}
+
+\noindent merupakan gabungan himpunan-himpunan terbuka dalam $X$, sehingga
+terbuka.\ \Qed}
+
+\header{2A3Bd}{\bf (d)} Jika $r\ge 1$, $(X,\frak T)$ adalah ruang
+topologis, dan $\phi:X\to\BbbR^r$ adalah sebuah fungsi, maka $\phi$
+kontinu jika dan hanya jika $\phi_i:X\to\Bbb R$ kontinu untuk setiap
+$i\le r$, dengan $\phi(x)=(\phi_1(x),\ldots,\phi_r(x))$ untuk setiap
+$x\in X$.
+\prooflet{\Prf\ {\bf (i)} Misalkan $\phi$ kontinu.   Untuk $i\le
+r$, $y=(\eta_1,\ldots,\eta_r)\in\BbbR^r$, tetapkan
+$\pi_i(y)=\eta_i$. Maka
+$|\pi_i(y)-\pi_i(z)|\le\|y-z\|$ untuk semua $y$, $z\in\BbbR^r$ sehingga
+$\pi_i:\BbbR^r\to\Bbb R$
+kontinu. Akibatnya $\phi_i=\pi_i\phi$ kontinu menurut (b) di atas.
+{\bf (ii)} Misalkan setiap $\phi_i$ kontinu, dan
+$H\subseteq\BbbR^r$ terbuka. Tetapkan
+
+\Centerline{$\Cal G
+=\{G:G\subseteq X$ terbuka, $G\subseteq\phi^{-1}[H]\}$.}
+
+\noindent Maka $G_0=\bigcup\Cal G$ terbuka, dan
+$G_0\subseteq \phi^{-1}[H]$. Namun, misalkan $x_0$ sebarang titik
+dalam $\phi^{-1}[H]$. Ada $\delta>0$ sedemikian sehingga
+$U(\phi(x_0),\delta)\subseteq H$, karena $H$ terbuka dan berisi
+$\phi(x_0)$.   Untuk $1\le i\le r$ atur
+$V_i=\{x:\phi_i(x_0)-\bover{\delta}{\sqrt{r}}
+<\phi_i(x)<\phi_i(x_0)+\bover{\delta}{\sqrt{r}}\}$;
+maka $V_i$ adalah gambar kebalikan dari himpunan terbuka di bawah peta kontinu
+$\phi_i$, sehingga terbuka. Tetapkan $G=\bigcap_{i\le r}V_i$. Maka $G$
+terbuka (menggunakan (ii) dalam definisi 2A3A), $x_0\in G$, dan
+$\|\phi(x)-\phi(x_0)\|<\delta$ untuk setiap $x\in G$, sehingga
+$G\subseteq\phi^{-1}[H]$, $G\in\Cal G$ dan $x_0\in G_0$. Ini
+menunjukkan bahwa $\phi^{-1}[H]=G_0$ terbuka. Karena $H$ sebarang,
+$\phi$ kontinu.\ \Qed}
+
+\spheader 2A3Be Jika $(X,\frak T)$ adalah ruang topologis,
+$f_1,\ldots,f_r$ adalah fungsi kontinu dari $X$ ke $\Bbb R$, dan
+$h:\BbbR^r\to\Bbb R$ kontinu, maka $h(f_1,\ldots,f_r):X\to\Bbb R$
+kontinu. \prooflet{\Prf\ Tetapkan
+$\phi(x)=(f_1(x),\ldots,f_r(x))\in\BbbR^r$ untuk $x\in X$.   Dengan (d),
+$\phi$ kontinu, jadi 2A3Bb $h(f_1,\ldots,f_r)=h\phi$ adalah
+kontinu.\ \QeD} Secara khusus, $f+g$, $f\times g$ dan $f-g$ kontinu
+untuk semua fungsi kontinu $f$, $g:X\to\Bbb R$.
+
+\spheader 2A3Bf Jika $(X,\frak T)$ dan $(Y,\frak S)$ adalah ruang
+topologis dan $\phi:X\to Y$ adalah fungsi kontinu, maka $\phi^{-1}[F]$
+tertutup dalam $X$ untuk setiap himpunan tertutup $F\subseteq Y$.
+\prooflet{(Sebab
+$X\setminus\phi^{-1}[F]=\phi^{-1}[Y\setminus F]$ terbuka.)}
+
+\leader{2A3C}{Topologi subruang}
+Jika $(X,\frak T)$ adalah ruang topologis dan $D\subseteq X$,
+maka $\frak T_D=\{G\cap D:G\in\frak T\}$ adalah topologi di $D$.
+\prooflet{\Prf\
+(i) $\emptyset=\emptyset\cap D$ dan $D=X\cap D$ milik $\frak T_D$.
+(ii) Jika $G$, $H\in\frak T_D$ ada $G'$, $H'\in\frak T$ sehingga
+$G=G'\cap D$, $H=H'\cap D$;  sekarang $G\cap H=G'\cap H'\cap D\in\frak T_D$.
+(iii) Jika $\Cal G\subseteq\frak T_D$, tetapkan
+$\Cal H=\{H:H\in\frak T,\,H\cap D\in\Cal G\}$; maka
+$\bigcup\Cal G=(\bigcup\Cal H)\cap D\in\frak T_D$.\ \Qed}
+
+$\frak T_D$ disebut {\bf topologi subruang} pada $D$, atau topologi
+pada $D$ yang {\bf diinduksi} oleh $\frak T$. Jika $(Y,\frak S)$ adalah
+ruang topologis lain, dan $\phi:X\to Y$ kontinu terhadap
+$(\frak T,\frak S)$, maka $\phi\restr D:D\to Y$ kontinu terhadap
+$(\frak T_D,\frak S)$. \prooflet{(Sebab jika $H\in\frak S$ maka
+
+\Centerline{$(\phi\restr D)^{-1}[H]=D\cap\phi^{-1}[H]\in\frak T_D$.)}}
+
+\leader{2A3D}{Penutupan dan interior (a)} \cmmnt{Dalam bukti 2A3Bd
+saya telah menggunakan gagasan berikut.} Misalkan $(X,\frak T)$ sebarang
+ruang topologis dan $A$ sebarang himpunan bagian dari $X$. Tuliskan
+
+\Centerline{$\interior A=\bigcup\{G:G\in\frak T,\,G\subseteq A\}$.}
+
+\noindent Maka $\interior A$ adalah\cmmnt{ himpunan terbuka, karena
+merupakan gabungan himpunan-himpunan terbuka, dan tentu saja termuat dalam
+$A$; dengan demikian ia harus merupakan} himpunan terbuka terbesar yang
+termuat dalam $A$, dan disebut {\bf interior} dari $A$.
+
+
+\header{2A3Db}{\bf (b)} Karena suatu himpunan tertutup jika dan hanya jika
+komplemennya terbuka, kita mempunyai gagasan yang saling melengkapi:
+
+\dvro{$$\eqalign{\overline{A}
+&=\bigcap\{F:F\text{ tertutup},\,A\subseteq F\}
+=X\setminus\interior(X\setminus A).\cr}$$}
+{$$\eqalign{\overline{A}
+&=\bigcap\{F:F\text{ tertutup},\,A\subseteq F\}\cr
+&=X\setminus\bigcup\{X\setminus F:F\text{ tertutup},\,A\subseteq F\}\cr
+&=X\setminus\bigcup\{G:G\text{ terbuka},\,A\cap G=\emptyset\}\cr
+&=X\setminus\bigcup\{G:G\text{ terbuka},\,G\subseteq X\setminus A\}
+=X\setminus\interior(X\setminus A).\cr}$$}
+
+\noindent$\overline{A}$ adalah\cmmnt{ tertutup (sebagai komplemen suatu
+himpunan terbuka) dan merupakan} himpunan tertutup terkecil yang memuat
+$A$; himpunan ini disebut {\bf penutupan} dari $A$.
+\cmmnt{(Bandingkan 2A2A.)} \cmmnt{Karena gabungan dua himpunan tertutup
+adalah tertutup (bdk.\ 1A2Fc),}
+$\overline{A\cup B}=\overline{A}\cup\overline{B}$ untuk semua $A$,
+$B\subseteq X$.
+%4{}A2G
+
+\header{2A3Dc}{\bf (c)}\cmmnt{ Ada tak terhitung banyaknya cara untuk
+memandang konsep-konsep ini; satu uraian berguna tentang penutupan suatu
+himpunan adalah}
+
+\dvro{$$\eqalign{x\in\overline A
+&\iff\,\text{setiap himpunan terbuka yang memuat }x
+\text{ beririsan dengan }A.\cr}$$}
+{$$\eqalign{x\in\overline A
+&\iff\,x\notin\interior(X\setminus A)\cr
+&\iff\,\text{tidak ada himpunan terbuka yang memuat }x
+\text{ dan termuat dalam }X\setminus A\cr
+&\iff\,\text{setiap himpunan terbuka yang memuat }x
+\text{ beririsan dengan }A.\cr}$$}
+
+\leader{2A3E}{Topologi Hausdorff (a)}\dvro{ Sebuah}{ Konsep
+`ruang topologis' dirumuskan begitu luas, dan dapat diterapkan begitu luas,
+sehingga sangat banyak jenis ruang topologis yang berbeda telah dipelajari.
+Untuk jilid ini kita tidak memerlukan sebagian besar kosakata (yang sangat
+luas) yang telah dikembangkan untuk menggambarkan keragaman tersebut. Namun,
+satu istilah yang berguna (dan salah satu konsep terpenting) adalah `ruang
+Hausdorff'; sebuah} ruang topologis $X$ disebut {\bf Hausdorff} jika untuk
+setiap $x$, $y\in X$ yang berbeda terdapat himpunan-himpunan terbuka saling
+lepas $G$, $H\subseteq X$ sedemikian sehingga $x\in G$ dan $y\in H$.
+
+\spheader 2A3Eb Dalam ruang Hausdorff $X$, himpunan berhingga adalah
+tertutup. \prooflet{\Prf\ Jika $z\in X$, maka untuk setiap
+$x\in X\setminus\{z\}$ terdapat himpunan terbuka yang memuat $x$ tetapi
+tidak memuat $z$, sehingga $X\setminus\{z\}$ terbuka dan $\{z\}$ tertutup.
+Jadi, suatu himpunan berhingga merupakan gabungan berhingga dari himpunan-
+himpunan tertutup, sehingga tertutup.\ \Qed}
+
+\leader{2A3F}{Pseudometrik}\cmmnt{ Banyak topologi penting (meskipun
+tidak semuanya!) dapat didefinisikan oleh keluarga-keluarga pseudometrik;
+akan berguna untuk memiliki sejumlah keterampilan teknis dalam hal ini.
+
+\medskip
+
+}{\bf (a)} Misalkan $X$ sebuah himpunan. Sebuah {\bf pseudometrik} pada
+$X$ adalah fungsi $\rho:X\times X\to\coint{0,\infty}$ sedemikian sehingga
+
+\inset{$\rho(x,z)\le\rho(x,y)+\rho(y,z)$ untuk setiap $x$, $y$, $z\in X$}
+
+\cmmnt{\noindent (`pertidaksamaan segitiga';)}
+
+\inset{$\rho(x,y)=\rho(y,x)$ untuk setiap $x$, $y\in X$;
+
+$\rho(x,x)=0$ untuk setiap $x\in X$.}
+
+\noindent Sebuah {\bf metrik} adalah pseudometrik $\rho$ yang memenuhi
+syarat tambahan
+
+\inset{jika $\rho(x,y)=0$ maka $x=y$.}
+
+\header{2A3Fb}{\bf (b) Contoh (i)} Untuk $x$, $y\in\Bbb R$, tetapkan
+$\rho(x,y)=|x-y|$\cmmnt{; maka $\rho$ adalah metrik pada $\Bbb R$}
+(`metrik biasa' pada $\Bbb R$).
+
+\medskip
+
+\quad{\bf (ii)} Untuk $x$, $y\in\BbbR^r$, dengan $r\ge 1$, tetapkan
+$\rho(x,y)=\|x-y\|$, mendefinisikan $\|z\|=\sqrt{\sum_{i=1}^r\zeta_i^2}$,
+seperti biasa. Maka $\rho$ adalah\cmmnt{ sebuah metrik,} {\bf metrik
+Euklides} pada $\BbbR^r$. \cmmnt{(Pertidaksamaan segitiga untuk $\rho$
+berasal dari pertidaksamaan
+Cauchy di 1A2C: jika $x$, $y$, $z\in\BbbR^r$, maka
+
+\Centerline{$\rho(x,z)=\|x-z\|=\|(x-y)+(y-z)\|
+\le\|x-y\|+\|y-z\|=\rho(x,y)+\rho(y,z)$.}
+
+\noindent Sifat-sifat lain yang diperlukan dari $\rho$ bersifat elementer.
+Bandingkan 2A4Bb di bawah.)}
+
+\cmmnt{\medskip
+
+\quad{\bf (iii)} Sebagai contoh pseudometrik yang bukan metrik,
+ambil $r\ge 2$ dan definisikan $\rho:\BbbR^r\times\Bbb
+R^r\to\coint{0,\infty}$ dengan menyetel $\rho(x,y)=|\xi_1-\eta_1|$ setiap kali
+$x=(\xi_1,\ldots,\xi_r)$, $y=(\eta_1,\ldots,\eta_r)\in\BbbR^r$.
+}%end of comment
+
+\header{2A3Fc}{\bf (c)} Sekarang misalkan $X$ sebuah himpunan dan
+$\Rho$ sebuah keluarga tak kosong dari pseudometrik pada $X$. Misalkan
+$\frak T$ keluarga himpunan bagian $G$ dari $X$ sedemikian sehingga untuk
+setiap $x\in G$ terdapat
+$\rho_0,\ldots,\rho_n\in\Rho$ dan $\delta>0$ sedemikian rupa sehingga
+
+\Centerline{$U(x;\rho_0,\ldots,\rho_n;\delta)
+=\{y:y\in X,\,\max_{i\le n}\rho_i(y,x)<\delta\}\subseteq G$.}
+
+\noindent Maka $\frak T$ adalah topologi pada $X$.
+
+\prooflet{\Prf\ (Bandingkan 1A2B.) (i)
+$\emptyset\in\frak T$ karena kondisinya terpenuhi secara vakum.
+$X\in\frak T$ karena $U(x;\rho;1)\subseteq X$ untuk $x\in X$,
+$\rho\in\Rho$.   (ii) Jika $G$, $H\in\frak T$ dan $x\in G\cap H$, ambil
+$\rho_0,\ldots,\rho_m,\rho'_0,\ldots,\rho'_n\in\Rho$, $\delta$,
+$\delta'>0$ sehingga $U(x;\rho_0,\ldots,\rho_m;\delta)\subseteq G$,
+$U(x;\rho'_0,\ldots,\rho'_n;\delta')
+\ifdim\pagewidth=390pt\penalty-1000\fi
+\subseteq H$; maka
+
+
+\Centerline{
+$U(x;\rho_0,\ldots,\rho_m,\rho'_0,\ldots,\rho'_n;\min(\delta,\delta'))
+\subseteq G\cap H$.}
+
+\noindent Karena $x$ sebarang, $G\cap H\in\frak T$. (iii)
+Jika $\Cal G\subseteq\frak T$ dan $x\in\bigcup\Cal G$, terdapat
+$G\in\Cal G$ sehingga $x\in G$;  sekarang ada
+$\rho_0,\ldots,\rho_n\in\Rho$ dan $\delta>0$ sedemikian sehingga
+
+
+\Centerline{$U(x;\rho_0,\ldots,\rho_n;\delta)\subseteq
+G\subseteq\bigcup\Cal G$.}
+
+\noindent Karena $x$ sebarang, $\bigcup\Cal G\in\frak T$.
+\Qed}
+
+$\frak T$ adalah topologi {\bf yang didefinisikan oleh}
+$\Rho$.
+
+\header{2A3Fd}{\bf (d)} Kita dapat menggunakan konvensi untuk menangani
+kasus ketika $\Rho$ adalah himpunan kosong; dalam hal ini topologi pada
+$X$ yang didefinisikan oleh $\Rho$
+adalah $\{\emptyset,X\}$.
+
+\cmmnt{\spheader 2A3Fe Dalam banyak kasus penting,
+$\Rho$ terarah ke atas dalam arti bahwa untuk $\rho_1$,
+$\rho_2\in\Rho$ ada
+$\rho\in\Rho$ sehingga $\rho_i(x,y)\le\rho(x,y)$ untuk semua $x$, $y\in X$
+dan kedua nilai $i$. Dalam hal ini, tentu saja, setiap himpunan
+$U(x;\rho_0,\ldots,\rho_n;\delta)$, di mana $\rho_0,\ldots,\rho_n\in\Rho$,
+memuat suatu himpunan berbentuk $U(x;\rho;\delta)$, dengan $\rho\in\Rho$.
+Akibatnya, misalnya, sebuah himpunan $G\subseteq X$ terbuka jika untuk setiap
+$x\in G$ ada $\rho\in\Rho$, $\delta>0$ sehingga
+$U(x;\rho;\delta)\subseteq G$.
+}
+
+\spheader 2A3Ff Topologi $\frak T$ disebut {\bf dapat dimetrikkan} jika
+merupakan topologi yang didefinisikan oleh suatu keluarga $\Rho$ yang
+terdiri dari satu metrik. Jadi topologi {\bf Euklides} pada $\BbbR^r$
+dapat dimetrikkan dan didefinisikan oleh $\{\rho\}$, dengan $\rho$ metrik
+dalam (b-ii) di atas.
+
+\leader{2A3G}{Proposisi} Misalkan $X$ sebuah himpunan dengan topologi
+yang didefinisikan oleh himpunan tak kosong $\Rho$ dari pseudometrik pada
+$X$. Maka $U(x;\rho_0,\ldots,\rho_n;\epsilon)$ terbuka untuk setiap
+$x\in X$, $\rho_0,\ldots,\rho_n\in\Rho$ dan $\epsilon>0$.
+
+\proof{ (Bandingkan 1A2D.) Ambil
+$y\in U(x;\rho_0,\ldots,\rho_n;\epsilon)$. Tetapkan
+
+\Centerline{$\eta=\max_{i\le n}\rho_i(y,x)$,
+\quad $\delta=\epsilon-\eta>0$.}
+
+\noindent    Jika $z\in U(y;\rho_0,\ldots,\rho_n;\delta)$ maka
+
+\Centerline{$\rho_i(z,x)\le\rho_i(z,y)+\rho_i(y,x)<\delta+\eta
+=\epsilon$}
+
+\noindent untuk setiap $i\le n$, sehingga
+$U(y;\rho_0,\ldots,\rho_n;\delta)
+\subseteq U(x;\rho_0,\ldots,\rho_n;\epsilon)$. Karena $y$ sebarang,
+$U(x;\rho_0,\ldots,\rho_n;\epsilon)$ terbuka.
+}%end of proof of 2A3G
+
+\leader{2A3H}{}\cmmnt{ Sekarang kita mempunyai hasil yang bersesuaian
+dengan 2A2Ca, yang menguraikan fungsi kontinu antara ruang topologis yang
+didefinisikan oleh keluarga-keluarga pseudometrik.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $X$ dan $Y$ himpunan; misalkan
+$\Rho$ keluarga tak kosong dari pseudometrik pada $X$, dan $\Theta$
+keluarga tak kosong dari pseudometrik pada $Y$; misalkan $\frak T$ dan
+$\frak S$ topologi-topologi yang bersesuaian. Maka fungsi $\phi:X\to Y$
+kontinu jika dan hanya jika, setiap kali $x\in X$,
+$\theta\in\Theta$ dan $\epsilon>0$, ada
+$\rho_0,\ldots,\rho_n\in\Rho$ dan $\delta>0$ sehingga
+$\theta(\phi(y),\phi(x))\le\epsilon$ setiap kali $y\in X$ dan $\max_{i\le
+n}\rho_i(y,x)\le\delta$.
+
+\proof{{\bf (a)} Misalkan $\phi$ kontinu;  ambil $x\in X$,
+$\theta\in\Theta$ dan $\epsilon>0$.   Oleh 2A3G,
+$U(\phi(x);\theta;\epsilon)\in\frak S$.
+Jadi $G=\phi^{-1}[U(\phi(x);\theta;\epsilon)]\in\frak T$.   Sekarang $x\in G$,
+jadi ada $\rho_0,\ldots,\rho_n\in\Rho$ dan $\delta>0$ seperti itu
+$U(x;\rho_0,\ldots,\rho_n;\delta)\subseteq G$.   Dalam hal ini
+$\theta(\phi(y),\phi(x))\le\epsilon$ setiap kali $y\in X$ dan $\max_{i\le
+n}\rho_i(y,x)\le\bover12\delta$. Karena $x$, $\theta$ dan $\epsilon$
+sebarang, $\phi$ memenuhi syarat tersebut.
+
+\medskip
+
+{\bf (b)} Misalkan $\phi$ memenuhi syarat tersebut. Ambil
+$H\in\frak S$ dan pertimbangkan $G=\phi^{-1}[H]$.   Jika $x\in G$, maka
+$\phi(x)\in H$, jadi ada $\theta_0,\ldots,\theta_n\in\Theta$ dan
+$\epsilon>0$ sehingga
+$U(\phi(x);\theta_0,\ldots,\theta_n;\epsilon)\subseteq H$.   Untuk setiap
+$i\le n$ terdapat $\rho_{i0},\ldots,\rho_{i,m_i}\in\Rho$ dan
+$\delta_i>0$ sehingga $\theta_i(\phi(y),\phi(x))\le\bover12\epsilon$
+setiap kali $y\in X$ dan $\max_{j\le m_i}\rho_{ij}(y,x)\le\delta_i$.   Tetapkan
+$\delta=\min_{i\le n}\delta_i>0$; maka
+
+\Centerline{$U(x;\rho_{00},\ldots,\rho_{0,m_0},\ldots,\rho_{n0},\ldots,
+\rho_{n,m_n};\delta)\subseteq G$.}
+
+\noindent Karena $x$ sebarang, $G\in\frak T$. Karena $H$ sebarang,
+$\phi$ kontinu.
+}%end of proof of 2A3H
+
+\cmmnt{
+\leader{2A3I}{Catatan (a)} Jika $\Rho$ terarah ke atas, syaratnya
+disederhanakan menjadi: untuk setiap $x\in X$,
+$\theta\in\Theta$ dan $\epsilon>0$, terdapat
+$\rho\in\Rho$ dan $\delta>0$ sehingga
+$\theta(\phi(y),\phi(x))\le\epsilon$ setiap kali $y\in X$ dan
+$\rho(y,x)\le\delta$.
+
+
+
+
+\spheader 2A3Ib Misalkan kita mempunyai sebuah himpunan $X$ dan dua
+keluarga tak kosong $\Rho$, $\Theta$ dari pseudometrik pada $X$, yang
+menghasilkan topologi $\frak T$ dan $\frak S$ pada $X$. Maka
+$\frak S\subseteq\frak T$ jika peta identitas $\phi$ dari $X$ ke dirinya
+sendiri kontinu ketika dipandang sebagai peta
+dari $(X,\frak T)$ ke $(X,\frak S)$, karena ini berarti
+$G=\phi^{-1}[G]$ menjadi milik $\frak T$ kapan pun $G\in\frak S$.   Menerapkan
+proposisi di atas ke $\phi$, kita melihat bahwa ini terjadi jika untuk setiap
+$\theta\in\Theta$,
+$x\in X$ dan $\epsilon>0$ ada $\rho_0,\ldots,\rho_n\in\Rho$ dan
+$\delta>0$ sehingga $\theta(y,x)\le\epsilon$ setiap kali $y\in X$ dan
+$\max_{i\le n}\rho_i(y,x)\le\delta$.   Demikian pula, membalikkan peran
+dari $\Rho$ dan $\Theta$, kita mendapatkan kriteria kapan $\frak
+T\subseteq\frak S$, dan menggabungkan keduanya kita mendapatkan kriteria
+untuk menentukan kapan $\frak T=\frak S$.
+}%end of comment
+
+\leader{2A3J}{Subruang: Proposisi} Jika $X$ adalah himpunan, $\Rho$
+keluarga tak kosong dari pseudometrik pada $X$ yang mendefinisikan topologi
+$\frak T$ pada $X$, dan $D\subseteq X$, maka
+
+(a) untuk setiap $\rho\in\Rho$, pembatasan $\rho^{(D)}$ dari $\rho$
+ke $D\times D$ adalah pseudometrik pada $D$;
+
+(b) topologi yang ditentukan oleh $\Rho_D=\{\rho^{(D)}:\rho\in\Rho\}$ pada
+$D$ persis dengan topologi subruang $\frak T_D$ yang dijelaskan dalam 2A3C.
+
+\proof{(a) langsung dari definisi dalam 2A3Fa. Untuk (b), kita perlu
+berpikir sejenak.
+
+\medskip
+
+{\bf (i)} Misalkan $G$ termasuk dalam topologi yang didefinisikan oleh
+$\Rho_D$. Tetapkan
+
+
+\Centerline{$\Cal H=\{H:H\in\frak T,\,H\cap D\subseteq G\}$,}
+
+\Centerline{$H^*=\bigcup\Cal
+H\in\frak T$,\quad $G^*=H^*\cap D\in\frak T_D$;}
+
+\noindent  lalu $G^*\subseteq G$.   Di
+sebaliknya, jika $x\in G$, maka ada
+$\rho_0,\ldots,\rho_n\in\Rho$ dan $\delta>0$ sedemikian rupa sehingga
+
+\Centerline{$U(x;\rho_0^{(D)},\ldots,\rho_n^{(D)};\delta)
+=\{y:y\in D,\,\max_{i\le n}\rho_i^{(D)}(y,x)<\delta\}\subseteq G$.}
+
+\noindent Pertimbangkan
+
+\Centerline{$H=U(x;\rho_0,\ldots,\rho_n;\delta)
+=\{y:y\in X,\,\max_{i\le n}\rho_i(y,x)<\delta\}\subseteq X$.}
+
+\noindent Jelas bahwa
+
+\Centerline{$H\cap D
+=U(x;\rho_0^{(D)},\ldots,\rho_n^{(D)};\delta)\subseteq G$.}
+
+\noindent Selain itu, $H\in\frak T$. Jadi $H\in\Cal H$ dan
+
+\Centerline{$x\in H\cap D\subseteq H^*\cap D=G^*$.}
+
+\noindent Dengan demikian $G=G^*\in\frak T_D$.
+
+\medskip
+
+{\bf (ii)} Sekarang anggaplah $G\in\frak T_D$.   Lalu ada
+$H\in\frak T$ sehingga $G=H\cap D$.
+Pertimbangkan peta identitas $\phi:D\to X$, yang didefinisikan dengan
+$\phi(x)=x$ untuk setiap $x\in D$. Peta $\phi$ jelas memenuhi kriteria
+2A3H jika kita melengkapi $D$ dengan $\Rho_D$
+dan $X$ dengan $\Rho$, karena $\rho(\phi(x),\phi(y))=\rho^{(D)}(x,y)$
+setiap kali $x$, $y\in D$ dan $\rho\in\Rho$; jadi $\phi$ kontinu untuk
+topologi-topologi yang bersesuaian, dan $\phi^{-1}[H]$ termasuk dalam
+topologi yang didefinisikan oleh $\Rho_D$. Tetapi $\phi^{-1}[H]=G$.
+Jadi setiap himpunan dalam $\frak T_D$ termasuk dalam topologi yang
+didefinisikan oleh $\Rho_D$, dan kedua topologi
+adalah sama, seperti yang diklaim.
+}%end of proof of 2A3J
+
+\leader{2A3K}{Penutupan dan interior} Misalkan $X$ sebuah himpunan,
+$\Rho$ keluarga tak kosong dari pseudometrik pada $X$, dan $\frak T$
+topologi yang didefinisikan oleh $\Rho$.
+
+\header{2A3Ka}{\bf (a)} Untuk $A\subseteq X$ dan $x\in X$,
+
+\dvro{$$\eqalign{x\in\interior A
+&\iff\,\text{terdapat }\rho_0,\ldots,\rho_n\in\Rho,\,\delta>0
+\text{ sedemikian sehingga }U(x;\rho_0,\ldots,\rho_n;\delta)\subseteq A.\cr}$$}
+{$$\eqalign{x\in\interior A
+&\iff\,\text{terdapat himpunan terbuka yang termuat dalam }A
+\text{ dan memuat }x\cr
+&\iff\,\text{terdapat }\rho_0,\ldots,\rho_n\in\Rho,\,\delta>0
+\text{ sedemikian sehingga }U(x;\rho_0,\ldots,\rho_n;\delta)\subseteq A.\cr}$$}
+
+\header{2A3Kb}{\bf (b)} Untuk $A\subseteq X$ dan $x\in X$,
+$x\in\overline A$ jika dan hanya jika
+$U(x;\rho_0,\ldots,\rho_n;\delta)\cap A\ne\emptyset$ untuk setiap
+$\rho_0,\ldots,\rho_n\in\Rho$ dan $\delta>0$.
+\cmmnt{(Bandingkan 2A2B(ii), 2A3Dc.)}
+
+\leader{2A3L}{Topologi Hausdorff}\cmmnt{ Ingat bahwa topologi
+$\frak T$ adalah Hausdorff jika setiap dua titik dapat dipisahkan oleh
+himpunan-himpunan terbuka (2A3E).} Topologi pada suatu himpunan $X$ yang
+didefinisikan oleh keluarga tak kosong $\Rho$ dari pseudometrik adalah
+Hausdorff jika dan hanya jika untuk setiap dua titik berbeda $x$, $y$
+dalam $X$ terdapat $\rho\in\Rho$ sedemikian sehingga
+$\rho(x,y)>0$.   \prooflet{\Prf\ {\bf (i)} Misalkan topologinya adalah
+Hausdorff dan $x$, $y$ adalah titik berbeda di $X$.   Lalu ada
+himpunan terbuka $G$ yang memuat $x$ tetapi tidak memuat $y$. Maka terdapat
+$\rho_0,\ldots,\rho_n\in\Rho$ dan $\delta>0$ sedemikian sehingga
+$U(x;\rho_0,\ldots,\rho_n;\delta)\subseteq G$, dalam hal ini
+$\rho_i(y,x)\ge\delta>0$ untuk beberapa $i\le n$.   {\bf (ii)} Jika $\Rho$
+memenuhi kondisi, dan $x$, $y$ adalah titik berbeda dari $X$, ambil
+$\rho\in\Rho$ sehingga $\rho(x,y)>0$, dan atur
+$\delta=\bover12\rho(x,y)$. Maka $U(x;\rho;\delta)$ dan
+$U(y;\rho;\delta)$ saling lepas (sebab jika $z\in X$, maka
+
+\Centerline{$\rho(z,x)+\rho(z,y)\ge\rho(x,y)=2\delta$,}
+
+\noindent sehingga setidaknya salah satu dari $\rho(z,x)$, $\rho(z,y)$
+lebih besar dari atau sama dengan $\delta$), dan keduanya merupakan
+himpunan terbuka yang masing-masing memuat $x$, $y$. Karena $x$ dan $y$
+sebarang, topologinya Hausdorff.
+\Qed}
+
+Secara khusus, setiap topologi yang dapat dimetrikkan adalah Hausdorff.
+
+\leader{2A3M}{Konvergensi barisan (a)} Jika $(X,\frak T)$ adalah
+sebarang ruang topologis, dan $\sequencen{x_n}$ adalah barisan dalam $X$,
+kita mengatakan bahwa $\sequencen{x_n}$ {\bf konvergen} ke $x\in X$,
+atau bahwa $x$ adalah {\bf limit} dari $\sequencen{x_n}$, atau
+$\sequencen{x_n}\to x$, jika untuk setiap himpunan terbuka $G$ yang
+memuat $x$ terdapat $n_0\in\Bbb N$ sehingga
+$x_n\in G$ untuk setiap $n\ge n_0$.
+
+\header{2A3Mb}{\bf (b) Peringatan} Dalam ruang topologis umum,
+sebuah barisan mungkin mempunyai lebih dari satu limit\cmmnt{, sehingga
+kita tidak dapat menuliskan $x=\lim_{n\to\infty}x_n$} dengan aman. Namun,
+dalam ruang Hausdorff hal ini tidak terjadi. \prooflet{\Prf\ Jika
+$\frak T$ Hausdorff, dan $x$,
+$y$ adalah titik berbeda dari $X$, terdapat himpunan terbuka yang terpisah $G$, $H$
+sehingga $x\in G$ dan $y\in H$.   Jika sekarang $\sequencen{x_n}$ menyatu ke
+$x$, terdapat $n_0$ sehingga $x_n\in G$ untuk setiap $n\ge n_0$, sehingga
+$x_n\notin H$ untuk setiap $n\ge n_0$, dan $\sequencen{x_n}$ tidak dapat
+konvergen ke $y$.\ \Qed} Secara khusus, suatu barisan dalam ruang yang
+dapat dimetrikkan mempunyai paling banyak satu limit.
+
+\header{2A3Mc}{\bf (c)} Misalkan $X$ sebuah himpunan dan $\Rho$ keluarga
+tak kosong dari pseudometrik pada $X$, yang menghasilkan topologi
+$\frak T$; misalkan $\sequencen{x_n}$ barisan dalam $X$ dan $x\in X$.
+Maka $\sequencen{x_n}$ konvergen ke $x$ jika dan hanya jika
+$\lim_{n\to\infty}\rho(x_n,x)=0$
+untuk setiap $\rho\in\Rho$.   \prooflet{\Prf\ {\bf (i)} Misalkan
+$\sequencen{x_n}\to x$ dan $\rho\in\Rho$. Maka untuk setiap
+$\epsilon>0$, himpunan $G=U(x;\rho;\epsilon)$ terbuka dan memuat $x$,
+sehingga terdapat $n_0$ dengan $x_n\in G$ untuk setiap $n\ge n_0$,
+yakni $\rho(x_n,x)<\epsilon$ untuk setiap $n\ge n_0$. Karena $\epsilon$
+sebarang, $\lim_{n\to\infty}\rho(x_n,x)=0$. {\bf (ii)} Jika syaratnya
+terpenuhi, ambil himpunan terbuka $G$ yang memuat $x$. Maka
+ada $\rho_0,\ldots,\rho_k\in\Rho$ dan $\delta>0$ sedemikian sehingga
+$U(x;\rho_0,\ldots,\rho_k;\delta)\subseteq G$. Untuk setiap $i\le k$
+terdapat $n_i\in\Bbb N$ sedemikian sehingga $\rho_i(x_n,x)<\delta$ untuk
+setiap $n\ge n_i$. Tetapkan $n^*=\max(n_0,\ldots,n_k)$; maka
+$x_n\in U(x;\rho_0,\ldots,\rho_k;\delta)\subseteq G$ untuk setiap
+$n\ge n^*$. Karena $G$ sebarang, $\sequencen{x_n}\to x$.\ \Qed}
+
+\spheader 2A3Md Misalkan $(X,\rho)$ ruang metrik, $A$ himpunan bagian
+dari $X$, dan $x\in X$. Maka $x\in\overline{A}$ jika dan hanya jika
+terdapat barisan dalam $A$ yang konvergen ke $x$.
+\prooflet{\Prf {\bf (i)} Jika $x\in\overline{A}$,
+maka untuk setiap $n\in\Bbb N$ kita dapat memilih satu titik
+$x_n\in A\cap U(x;\rho;2^{-n})$
+(2A3Kb);  sekarang $\sequencen{x_n}\to x$.   {\bf (ii)} Jika $\sequencen{x_n}$
+adalah barisan dalam $A$ yang konvergen ke $x$, maka untuk setiap himpunan terbuka $G$
+yang berisi $x$ terdapat $n$ sehingga $x_n\in G$, sehingga $A\cap
+G\ne\emptyset$;  oleh 2A3Dc, $x\in\overline{A}$.\ \Qed}
+
+\leader{2A3N}{Kekompakan} \cmmnt{ Konsep berikutnya yang kita perlukan
+adalah gagasan `kekompakan' dalam ruang topologis umum.
+
+\header{2A3Na}}{\bf (a)} Jika $(X,\frak T)$ sebarang ruang topologis,
+sebuah himpunan bagian $K$ dari $X$ disebut {\bf kompak} jika, setiap kali
+$\Cal G$ adalah keluarga dalam $\frak T$ yang menutupi $K$, terdapat
+keluarga berhingga $\Cal G_0\subseteq\Cal G$ yang menutupi $K$.
+\cmmnt{(Bdk.\ 2A2D. Sebuah {\bf peringatan}: banyak penulis mencadangkan
+istilah `kompak' untuk ruang Hausdorff.)} Sebuah himpunan $A\subseteq X$
+disebut {\bf relatif kompak} dalam $X$ jika terdapat himpunan bagian
+kompak dari $X$ yang memuat $A$. \cmmnt{({\bf Peringatan!} Dalam ruang
+non-Hausdorff, ini tidak sama dengan mengatakan bahwa
+$\overline{A}$ kompak.)}
+
+\header{2A3Nb}{\bf (b)}\cmmnt{ Sebagaimana dalam 2A2E-2A2G %2A2E 2A2F 2A2G
+(dan bukti-buktinya sama dalam kasus umum), kita memperoleh hasil-hasil
+berikut.
+
+\medskip
+
+\quad}{\bf (i)} Jika $K$ kompak dan $E$ tertutup, maka $K\cap E$ adalah
+kompak.
+
+\medskip
+
+\quad {\bf (ii)} Jika $K\subseteq X$ kompak dan $\phi:K\to Y$ adalah
+kontinu,
+dengan $(Y,\frak S)$ ruang topologis lain, maka $\phi[K]$ adalah himpunan
+bagian kompak dari $Y$.
+
+\medskip
+
+\quad{\bf (iii)} Jika $K\subseteq X$ kompak dan $\phi:K\to\Bbb R$ adalah
+kontinu, maka $\phi$ terbatas dan mencapai nilai maksimum serta minimumnya.
+
+\leader{2A3O}{Titik gugus (a)} Jika $(X,\frak T)$ adalah ruang
+topologis dan $\sequencen{x_n}$ adalah barisan dalam $X$, maka sebuah
+{\bf titik gugus} dari $\sequencen{x_n}$ adalah titik $x\in X$ sedemikian
+sehingga, setiap kali $G$ merupakan himpunan terbuka yang memuat $x$ dan
+$n\in\Bbb N$, terdapat $k\ge n$ dengan $x_k\in G$.
+
+\header{2A3Ob}{\bf (b)} Jika $(X,\frak T)$ adalah ruang topologis dan
+$A\subseteq X$ relatif kompak, maka setiap barisan $\sequencen{x_n}$
+dalam $A$ mempunyai titik gugus dalam $X$.
+\prooflet{\Prf\
+Misalkan $K$ himpunan bagian kompak dari $X$ yang memuat $A$. Tetapkan
+
+\Centerline{$\Cal G=\{G:G\in\frak T,\,\{n:x_n\in G\}\text{
+berhingga}\}$.}
+
+\noindent\Quer\ Jika $\Cal G$ mencakup $K$, maka ada
+$\Cal G_0\subseteq\Cal G$ berhingga yang mencakup $K$.   Sekarang
+
+\Centerline{$\Bbb N=\{n:x_n\in A\}=\{n:x_n\in\bigcup\Cal G_0\}
+=\bigcup_{G\in\Cal G_0}\{n:x_n\in G\}$}
+
+\noindent merupakan gabungan berhingga dari himpunan-himpunan berhingga,
+suatu kemustahilan. \Bang\ Jadi $\Cal G$ tidak menutupi $K$. Ambil
+sebarang $x\in K\setminus\bigcup\Cal G$. Jika $G\in\frak T$, $x\in G$
+dan $n\in\Bbb N$, maka $G\notin\Cal G$, sehingga $\{k:x_k\in G\}$ tak
+berhingga dan terdapat $k\ge n$ sedemikian sehingga $x_k\in G$. Jadi $x$
+adalah titik gugus dari $\sequencen{x_n}$, sebagaimana diperlukan.\ \Qed}
+
+\cmmnt{
+\leader{2A3P}{Filter} Dalam $\BbbR^r$, dan lebih umum dalam semua ruang
+yang dapat dimetrikkan, gagasan-gagasan topologis dapat dibahas secara
+efektif dengan barisan konvergen. (Memang, hal ini kadang-kadang memerlukan
+suatu bentuk lemah dari aksioma pilihan untuk memilih sebuah barisan; tetapi
+karena teori ukuran tanpa pilihan semacam itu berubah sama sekali -- lihat
+Bab 56 dalam Jilid 5 -- tidak ada gunanya mempermasalahkannya di sini.)
+Namun, untuk ruang topologis secara umum, barisan sama sekali tidak memadai,
+karena alasan-alasan sangat menarik yang tidak akan saya uraikan. Sebagai
+gantinya kita perlu menggunakan `jaring' atau `filter'. Yang terakhir
+memerlukan sedikit usaha lebih besar pada awalnya, tetapi kemudian (menurut
+pendapat saya) jauh lebih mudah digunakan; karena itu saya menguraikan
+metode ini sekarang.
+}%end of comment
+
+\leader{2A3Q}{Filter konvergen (a)} Misalkan $(X,\frak T)$ ruang
+topologis, $\Cal F$ filter pada $X$\cmmnt{ (lihat 2A1I)}, dan $x$ titik
+dalam $X$. Kita mengatakan bahwa $\Cal F$ {\bf konvergen} ke $x$, atau
+bahwa $x$ adalah {\bf limit} dari $\Cal F$, dan menuliskan
+$\Cal F\to x$, jika setiap himpunan terbuka yang memuat $x$ merupakan
+anggota $\Cal F$.
+
+\header{2A3Qb}{\bf (b)} Misalkan $(X,\frak T)$ dan $(Y,\frak S)$ ruang
+topologis, $\phi:X\to Y$ fungsi kontinu, $x\in X$, dan $\Cal F$ filter
+pada $X$ yang konvergen ke $x$. Maka $\phi[[\Cal F]]$\cmmnt{ (sebagaimana
+didefinisikan dalam 2A1Ib)} konvergen ke $\phi(x)$\prooflet{ (sebab
+$\phi^{-1}[G]$ adalah himpunan terbuka yang memuat $x$ setiap kali $G$
+merupakan himpunan terbuka yang memuat $\phi(x)$)}.
+
+\leader{2A3R}{}\cmmnt{ Sekarang kita mempunyai karakterisasi kekompakan
+berikut.
+
+\medskip
+
+\noindent}{\bf Teorema} Misalkan $X$ ruang topologis dan $K$ himpunan
+bagian dari $X$. Maka $K$ kompak jika dan hanya jika setiap ultrafilter
+pada $X$ yang memuat $K$ mempunyai limit dalam $K$.
+
+\proof{{\bf (a)} Misalkan $K$ kompak dan $\Cal F$
+adalah ultrafilter pada $X$ yang berisi $K$.   Tetapkan
+
+\Centerline{$\Cal G=\{G:G\subseteq X$ terbuka,
+$X\setminus G\in\Cal F\}$.}
+
+\noindent Maka gabungan setiap dua anggota $\Cal G$ merupakan anggota
+$\Cal G$, sehingga gabungan sejumlah berhingga anggota $\Cal G$ juga
+merupakan anggota $\Cal G$; selain itu, tidak ada anggota $\Cal G$ yang
+dapat memuat $K$, karena $X\setminus K\notin\Cal F$. Karena $K$ kompak,
+$\Cal G$ tidak dapat menutupi $K$. Misalkan $x$ sebarang titik dalam
+$K\setminus\bigcup\Cal G$. Jika $G$ sebarang himpunan terbuka yang memuat
+$x$, maka $G\notin\Cal G$, sehingga $X\setminus G\notin\Cal F$; tetapi
+ini berarti $G$ harus merupakan anggota $\Cal F$, karena $\Cal F$ adalah
+ultrafilter. Karena $G$ sebarang, $\Cal F\to x$. Jadi setiap ultrafilter
+pada $X$ yang memuat $K$ mempunyai limit dalam $K$.
+
+\medskip
+
+{\bf (b)} Sekarang anggap bahwa setiap ultrafilter pada $X$ yang memuat
+$K$ mempunyai limit dalam $K$. Misalkan $\Cal G$ penutup $K$ oleh
+himpunan-himpunan terbuka dalam $X$. \Quer\ Andaikan, jika mungkin,
+$\Cal G$ tidak mempunyai subpenutup berhingga. Tetapkan
+
+\Centerline{$\Cal F=\{F:$ terdapat keluarga berhingga sedemikian sehingga
+$\Cal G_0\subseteq\Cal G,\,F\cup\bigcup\Cal G_0\supseteq K\}$.}
+
+\noindent Maka $\Cal F$ adalah filter pada $X$. \Prf\ (i)
+$X\cup\bigcup\emptyset\supseteq K$, sehingga $X\in\Cal F$.
+
+
+\Centerline{$\emptyset\cup\bigcup\Cal G_0=\bigcup\Cal G_0\not\supseteq
+K$}
+
+\noindent untuk setiap keluarga berhingga $\Cal G_0\subseteq\Cal G$,
+menurut hipotesis, sehingga
+$\emptyset\notin\Cal F$.
+(ii) Jika $E$, $F\in\Cal F$ terdapat himpunan berhingga $\Cal G_1$,
+$\Cal G_2\subseteq\Cal G$ sehingga $E\cup\bigcup\Cal G_1$ dan
+$F\cup\bigcup\Cal G_2$ keduanya menyertakan $K$;  sekarang
+$(E\cap F)\cup\bigcup(\Cal G_1\cup\Cal G_2)\supseteq K$ jadi
+$E\cap F\in\Cal F$.   (iii) Jika
+$X\supseteq E\supseteq F\in\Cal F$ maka terdapat
+$\Cal G_0\subseteq\Cal G$ berhingga sehingga
+$F\cup\bigcup\Cal G_0\supseteq K$; sekarang
+$E\cup\bigcup\Cal G_0\supseteq K$ dan $E\in\Cal F$.\ \Qed
+
+Menurut Teorema Ultrafilter (2A1O), terdapat ultrafilter $\Cal F^*$ pada
+$X$ yang memuat $\Cal F$. Tentu saja $K$ sendiri merupakan anggota
+$\Cal F$, sehingga $K\in\Cal F^*$. Menurut hipotesis, $\Cal F^*$
+mempunyai limit $x\in K$. Tetapi sekarang terdapat himpunan $G\in\Cal G$
+yang memuat $x$, dan
+$(X\setminus G)\cup G\supseteq K$, jadi
+$X\setminus G\in\Cal F\subseteq\Cal F^*$;  yang berarti
+bahwa $G$ tidak dapat merupakan anggota $\Cal F^*$, dan $x$ tidak dapat
+menjadi limit dari $\Cal F^*$. \Bang
+
+Jadi $\Cal G$ mempunyai subpenutup berhingga. Karena $\Cal G$ sebarang,
+$K$ harus kompak.
+}%end of proof of 2A3R
+
+\cmmnt{
+\medskip
+
+\noindent{\bf Catatan} Perhatikan bahwa bagian (b) dari pembuktian
+teorema ini sangat bergantung pada Teorema Ultrafilter
+dan oleh karena itu pada aksioma pilihan.
+}
+
+\leader{2A3S}{Perhitungan lebih lanjut dengan filter (a)}
+S\cmmnt{ecara umum, s}ebuah filter mungkin mempunyai lebih dari satu
+limit; tetapi dalam ruang Hausdorff hal ini tidak terjadi.
+\prooflet{\Prf\ (Bandingkan 2A3Mb.) Jika
+$(X,\frak T)$ adalah Hausdorff, dan $x$,
+$y$ adalah titik berbeda dalam $X$, terdapat himpunan-himpunan terbuka
+saling lepas $G$, $H$
+sehingga $x\in G$ dan $y\in H$.   Jika sekarang filter $\Cal F$ di $X$
+menyatu ke
+$x$, maka $G\in\Cal F$, sehingga $H\notin\Cal F$ dan $\Cal F$ tidak
+konvergen ke
+$y$.\ \Qed}
+
+Karena itu, kita dapat menuliskan $x=\lim\Cal F$ dengan aman ketika
+$\Cal F\to x$ dalam ruang Hausdorff.
+
+\spheader 2A3Sb Sekarang misalkan $X$ sebuah himpunan, $\Cal F$ filter
+pada $X$, $(Y,\frak S)$ ruang Hausdorff, $D\in\Cal F$, dan
+$\phi:D\to Y$ sebuah fungsi. Kita menuliskan
+$\lim_{x\to\Cal F}\phi(x)$ untuk $\lim\phi[[\Cal F]]$ jika limit ini
+terdefinisi dalam $Y$; yakni $\lim_{x\to\Cal F}\phi(x)=y$ jika dan hanya
+jika $\phi^{-1}[H]\in\Cal F$ untuk setiap himpunan terbuka $H$ yang
+memuat $y$.
+
+\dvAnew{2014}Jika $Z$ adalah himpunan lain, $\Cal G$ filter pada $Z$,
+dan $\psi:Z\to X$ sedemikian sehingga $\Cal F=\psi[[\Cal G]]$, maka
+komposisi $\phi\psi$ terdefinisi pada $\psi^{-1}[D]\in\Cal G$; jika
+salah satu dari limit $\lim_{x\to\Cal F}\phi(x)$ dan
+$\lim_{z\to\Cal G}\phi\psi(z)$ terdefinisi dalam $Y$, maka yang lain juga
+terdefinisi, dan keduanya sama. \prooflet{\Prf\ Misalkan $y\in Y$ dan
+$\Cal U$ keluarga himpunan bagian terbuka dari $Y$ yang memuat $y$. Maka
+
+$$\eqalign{\lim_{x\to\Cal F}\phi(x)=y
+&\iff\phi^{-1}[G]\in\Cal F\text{ untuk setiap }G\in\Cal U
+\cr&\iff\psi^{-1}[\phi^{-1}[G]]\in\Cal G\text{ untuk setiap }G\in\Cal U
+\cr&\iff(\phi\psi)^{-1}[G]\in\Cal G\text{ untuk setiap }G\in\Cal U
+\iff\lim_{z\to\Cal G}\phi\psi(z)=y. \text{ \Qed}\cr}$$}
+
+Dalam kasus khusus $Y=\Bbb R$, $\lim_{x\to\Cal F}\phi(x)=a$ jika dan
+hanya jika
+$\{x:|\phi(x)-a|\le\epsilon\}\in\Cal F$ untuk setiap
+$\epsilon>0$\prooflet{ (karena setiap himpunan terbuka yang memuat $a$
+memuat suatu himpunan berbentuk $[a-\epsilon,a+\epsilon]$, yang pada
+gilirannya memuat himpunan terbuka
+ $\ooint{a-\epsilon,a+\epsilon}$)}.
+
+\spheader 2A3Sc Misalkan $X$ dan $Y$ himpunan, $\Cal F$ filter pada
+$X$, $\Theta$ keluarga tak kosong dari pseudometrik pada $Y$ yang
+mendefinisikan topologi $\frak S$ pada $Y$, dan $\phi:X\to Y$ sebuah
+fungsi. Maka filter citra $\phi[[\Cal F]]$ konvergen ke $y\in Y$ jika dan
+hanya jika $\lim_{x\to\Cal F}\theta(\phi(x),y)=0$ dalam
+$\Bbb R$
+untuk setiap $\theta\in\Theta$.   \prooflet{\Prf\ {\bf (i)} Misalkan
+$\phi[[\Cal F]]\to
+y$.   Untuk setiap $\theta\in\Theta$ dan $\epsilon>0$,
+$U(y;\theta;\epsilon)=\{z:\theta(z,y)<\epsilon\}$ adalah himpunan terbuka
+yang berisi $y$ (2A3G), jadi milik $\phi[[\Cal F]]$, dan gambar
+kebalikannya $\{x:0\le\theta(\phi(x),y)<\epsilon\}$ milik $\Cal F$.
+Karena $\epsilon$ bersifat arbitrer, $\lim_{x\to\Cal F}\theta(\phi(x),y)=0$.
+Karena $\theta$ bersifat sewenang-wenang, $\phi$ memenuhi ketentuan tersebut.   {\bf (ii)}
+Sekarang
+misalkan $\lim_{x\to\Cal F}\theta(\phi(x),y)=0$ untuk setiap
+$\theta\in\Theta$.   Misalkan $G$ menjadi himpunan terbuka apa pun di $Y$ yang berisi $y$.
+Lalu ada $\theta_0,\ldots,\theta_n\in\Theta$ dan $\epsilon>0$ seperti
+yang
+
+\Centerline{$U(y;\theta_0,\ldots,\theta_n;\epsilon)
+=\bigcap_{i\le n}U(y;\theta_i;\epsilon)\subseteq G$.}
+
+\noindent Untuk setiap $i\le n$,
+
+\Centerline{$\phi^{-1}[U(y;\theta_i;\epsilon)]
+=\{x:\theta_i(\phi(x),y)<\epsilon\}$}
+
+\noindent merupakan anggota $\Cal F$; karena $\Cal F$ tertutup terhadap
+irisan berhingga, demikian pula
+$\phi^{-1}[U(y;\theta_0,\ldots,\theta_n;\epsilon)]$ dan superhimpunannya
+$\phi^{-1}[G]$. Jadi $G\in\phi[[\Cal F]]$. Karena $G$ sebarang,
+$\phi[[\Cal F]]\to y$.\ \Qed}
+
+%2A3S
+
+\spheader 2A3Sd Secara khusus,\cmmnt{ dengan mengambil $X=Y$ dan $\phi$
+sebagai peta identitas,} jika $X$ mempunyai topologi $\frak T$ yang
+didefinisikan oleh keluarga tak kosong $\Rho$ dari pseudometrik, maka
+filter $\Cal F$ pada $X$ konvergen ke $x\in X$ jika dan hanya jika
+$\lim_{y\to\Cal F}\rho(y,x)=0$ untuk setiap $\rho\in\Rho$.
+
+\spheader 2A3Se{\bf (i)} Jika $X$ adalah himpunan apa pun, $\Cal F$ adalah ultrafilter
+pada $X$, $(Y,\frak S)$ adalah ruang Hausdorff, dan
+$h:X\to Y$ adalah fungsi sedemikian sehingga $h[F]$ relatif kompak dalam
+$Y$ untuk suatu $F\in\Cal F$, maka $\lim_{x\to\Cal F}h(x)$ terdefinisi
+dalam $Y$. \prooflet{\Prf\ Misalkan $K\subseteq Y$ himpunan kompak yang
+memuat $h[F]$. Maka $K\in h[[\Cal F]]$, yang merupakan ultrafilter
+(2A1N), sehingga $h[[\Cal F]]$ mempunyai limit dalam $Y$ (2A3R), yaitu
+$\lim_{x\to\Cal F}h(x)$.\ \Qed}
+
+\medskip
+
+\quad{\bf (ii)} Jika $X$ adalah himpunan apa pun, $\Cal F$ adalah ultrafilter pada $X$,
+dan $h:X\to\Bbb R$ adalah fungsi sehingga $h[F]$ dibatasi dalam $\Bbb R$
+untuk suatu himpunan $F\in\Cal F$, maka $\lim_{x\to\Cal F}h(x)$ ada dalam
+$\Bbb R$.
+\prooflet{\Prf\ $\overline{h[F]}$ bersifat tertutup dan dibatasi, oleh karena itu
+kompak (2A2F), sehingga $h[F]$ relatif kompak dan kita dapat menggunakan
+(i).\ \Qed}
+
+\spheader 2A3Sf \cmmnt{ Konsep $\limsup$, $\liminf$ dapat diterapkan
+ke filter.}  Misalkan $\Cal F$ adalah filter pada himpunan $X$,
+dan $f:X\to[-\infty,\infty]$ adalah fungsi apa pun.   Kemudian
+
+\dvro{$$\eqalign{\limsup_{x\to\Cal F}f(x)
+&=\inf_{F\in\Cal F}\sup_{x\in F}f(x)
+\in[-\infty,\infty],\cr}$$}
+{$$\eqalign{\limsup_{x\to\Cal F}f(x)
+&=\inf\{u:u\in[-\infty,\infty],\,\{x:f(x)\le u\}\in\Cal F\}\cr
+&=\inf_{F\in\Cal F}\sup_{x\in F}f(x)
+\in[-\infty,\infty],\cr}$$}
+
+\dvro{$$\eqalign{\liminf_{x\to\Cal F}f(x)
+&=\sup_{F\in\Cal F}\inf_{x\in F}f(x).\cr}$$}
+{$$\eqalign{\liminf_{x\to\Cal F}f(x)
+&=\sup\{u:u\in[-\infty,\infty],\,\{x:f(x)\ge u\}\in\Cal F\}\cr
+&=\sup_{F\in\Cal F}\inf_{x\in F}f(x).\cr}$$}
+
+\noindent\dvro{Untuk}{Mudah dilihat bahwa, untuk} sebarang dua fungsi $f$,
+$g:X\to\Bbb R$,
+
+\Centerline{$\lim_{x\to\Cal F}f(x)=a$\quad jika dan hanya jika\quad
+$a=\limsup_{x\to\Cal F}f(x)=\liminf_{x\to\Cal F}f(x)$,}
+
+\noindent dan
+
+\Centerline{$\limsup_{x\to\Cal F}(f(x)+g(x))
+\le\limsup_{x\to\Cal F}f(x)+\limsup_{x\to\Cal F}g(x)$,}
+
+\Centerline{$\liminf_{x\to\Cal F}(f(x)+g(x))
+\ge\liminf_{x\to\Cal F}f(x)+\liminf_{x\to\Cal F}g(x)$,}
+
+\Centerline{$\liminf_{x\to\Cal F}(-f(x))=-\limsup_{x\to\Cal F}f(x)$,
+\quad$\limsup_{x\to\Cal F}(-f(x))=-\liminf_{x\to\Cal F}f(x)$,}
+
+\Centerline{$\liminf_{x\to\Cal F}cf(x)=c\liminf_{x\to\Cal F}f(x)$,
+\quad$\limsup_{x\to\Cal F}cf(x)=c\limsup_{x\to\Cal F}f(x)$}
+
+\noindent setiap kali sisi kanan ditentukan di
+$[-\infty,\infty]$ dan $c\ge 0$.   Jadi jika $a=\lim_{x\to\Cal F}f(x)$ dan
+$b=\lim_{x\to\Cal F}g(x)$ ada dalam $\Bbb R$, maka
+$\lim_{x\to\Cal F}(f(x)+g(x))$ ada dan sama dengan $a+b$, sedangkan
+$\lim_{x\to\Cal F}cf(x)$ ada dan
+sama dengan $c\lim_{x\to\Cal F}f(x)$ untuk setiap $c\in\Bbb R$.
+
+\dvro{Jika}{Kita juga melihat bahwa jika} $f:X\to\Bbb R$ sedemikian sehingga
+
+\Centerline{untuk setiap $\epsilon>0$ terdapat $F\in\Cal F$ sedemikian sehingga
+$\sup_{x\in F}f(x)\le\epsilon+\inf_{x\in F}f(x)$,}
+
+\noindent maka
+\cmmnt{$\limsup_{x\to\Cal F}f(x)\le\epsilon+\liminf_{x\to\Cal F}f(x)$
+untuk setiap $\epsilon>0$, sehingga} $\lim_{x\to\Cal F}f(x)$ didefinisikan dalam
+$[-\infty,\infty]$.
+
+\spheader 2A3Sg \cmmnt{Perhatikan bahwa limit-limit standar dalam analisis
+real dapat dinyatakan dalam bentuk yang diuraikan di sini. Misalnya,}
+$\lim_{n\to\infty}$, $\limsup_{n\to\infty}$, $\liminf_{n\to\infty}$
+berhubungan dengan $\lim_{n\to\CalFr}$, $\limsup_{n\to\CalFr}$,
+$\liminf_{n\to\CalFr}$ di mana $\CalFr$ adalah filter {\bf Fr\'echet}
+pada $\Bbb N$, yakni filter $\{\Bbb N\setminus A:A\subseteq\Bbb N$
+berhingga$\}$ dari himpunan-himpunan bagian $\Bbb N$ yang berkomplemen
+berhingga. Demikian pula,
+$\lim_{\delta\downarrow a}$, $\limsup_{\delta\downarrow a}$,
+$\liminf_{\delta\downarrow a}$ berhubungan dengan $\lim_{\delta\to\Cal F}$,
+$\limsup_{\delta\to\Cal F}$, $\liminf_{\delta\to\Cal F}$ di mana
+
+\Centerline{$\Cal F=\{A:A\subseteq\Bbb R,\,\exists\,h>0$ sedemikian sehingga
+$\ocint{a,a+h}\subseteq A\}$.}
+%2A3S
+
+\leader{2A3T}{Topologi produk}\cmmnt{ Kita memerlukan beberapa catatan singkat
+mengenai topologi pada ruang hasil kali.
+
+\medskip
+
+} {\bf (a)} Misalkan $(X,\frak T)$ dan $(Y,\frak S)$ adalah ruang topologis.
+Misalkan $\frak U$ adalah himpunan semua himpunan bagian $U$ dari $X\times Y$
+sedemikian sehingga untuk setiap $(x,y)\in U$ terdapat $G\in\frak T$ dan
+$H\in\frak S$ dengan
+$(x,y)\in G\times H\subseteq U$.   Maka $\frak U$ merupakan topologi pada
+$X\times Y$.   \prooflet{\Prf\ (i) $\emptyset\in\frak U$ karena syarat
+keanggotaan dalam $\frak U$ terpenuhi secara vakum.   $X\times Y\in\frak U$
+karena $X\in\frak T$, $Y\in\frak S$ dan $(x,y)\in X\times Y\subseteq
+X\times Y$ untuk setiap $(x,y)\in X\times Y$.   (ii) Jika $U$, $V\in\frak U$
+dan $(x,y)\in U\cap V$, maka terdapat $G$, $G'\in\frak T$, $H$,
+$H'\in\frak S$ sehingga
+
+\Centerline{$(x,y)\in G\times H\subseteq U$,
+\quad $(x,y)\in G'\times H'\subseteq V$;}
+
+\noindent sekarang $G\cap G'\in \frak T$, $H\cap H'\in\frak S$ dan
+
+\Centerline{$(x,y)\in(G\cap G')\times(H\cap H')\subseteq U\cap V$.}
+
+\noindent Karena $(x,y)$ sebarang, $U\cap V\in\frak U$.   (iii) Jika
+$\Cal U\subseteq\frak U$ dan $(x,y)\in\bigcup\Cal U$, maka terdapat
+$U\in\Cal U$ sehingga $(x,y)\in U$;  sekarang ada $G\in\frak T$,
+$H\in\frak S$ sedemikian sehingga $(x,y)\in G\times H\subseteq
+U\subseteq\bigcup\Cal U$.   Karena $(x,y)$ bersifat arbitrer, $\bigcup\Cal
+U\in\frak U$.\ \Qed}
+
+$\frak U$ disebut {\bf topologi produk} pada $X\times Y$.
+
+
+\spheader 2A3Tb Misalkan, dalam (a), $\frak T$ dan $\frak S$ ditentukan oleh
+keluarga tak kosong $\Rho$ dan $\Theta$ dari pseudometrik\cmmnt{ dengan cara
+2A3F}.   Maka $\frak U$ ditentukan oleh keluarga
+$\Upsilon=\{\tilde\rho:\rho\in\Rho\}\cup\{\bar\theta:\theta\in\Theta\}$
+pseudometrik pada $X\times Y$, dengan
+
+\Centerline{$\tilde\rho((x,y),(x',y'))=\rho(x,x')$,
+\quad$\bar\theta((x,y),(x',y'))=\theta(y,y')$}
+
+\noindent setiap kali $x$, $x'\in X$, $y$, $y'\in Y$, $\rho\in\Rho$ dan
+$\theta\in\Theta$.
+
+\prooflet{\Prf\ {\bf (i)} Tentu saja kita harus memeriksa bahwa setiap
+$\tilde\rho$, $\bar\theta$ adalah pseudometrik pada $X\times Y$.
+
+\quad{\bf (ii)} Jika $U\in\frak U$ dan $(x,y)\in U$, maka ada
+$G\in\frak T$, $H\in\frak S$ sehingga $(x,y)\in G\times H\subseteq U$.
+Ada $\rho_0,\ldots,\rho_m\in\Rho$,
+$\theta_0,\ldots,\theta_n\in\Theta$, $\delta$, $\delta'>0$ sedemikian sehingga
+(dalam bahasa 2A3Fc) $U(x;\rho_0,\ldots,\rho_m;\delta)\subseteq G$,
+$U(y;\theta_0,\ldots,\theta_n;\delta')\subseteq H$.   Sekarang
+
+\Centerline{$U((x,y);\tilde\rho_0,\ldots,\tilde\rho_m,
+\bar\theta_0,\ldots,\bar\theta_n;\min(\delta,\delta'))\subseteq U$.}
+
+\noindent Karena $(x,y)$ sebarang, $U$ terbuka dalam topologi yang dihasilkan
+oleh $\Upsilon$.
+
+\quad{\bf (iii)} Jika $U\subseteq X\times Y$ terbuka dalam topologi yang
+ditentukan oleh $\Upsilon$, ambil sebarang $(x,y)\in U$.   Maka ada
+$\upsilon_0,\ldots,\upsilon_k\in\Upsilon$ dan $\delta>0$ sehingga
+$U((x,y);\upsilon_0,\ldots,\upsilon_k;\delta)\subseteq U$.   Ambil
+$\rho_0,\ldots,\rho_m\in\Rho$ dan $\theta_0,\ldots,\theta_n\in\Theta$
+sehingga $\{\upsilon_0,\ldots,\upsilon_k\}
+\subseteq\{\tilde\rho_0,\ldots,\tilde\rho_m,
+\bar\theta_0,\ldots,\bar\theta_n\}$;    lalu
+$G=U(x;\rho_0,\ldots,\rho_m;\delta)\in\frak T$ (2A3G),
+$H=U(y;\theta_0,\ldots,\theta_n;\delta)\in\frak S$, dan
+
+\Centerline{$(x,y)\in G\times H
+=U((x,y);\tilde\rho_0,\ldots,\tilde\rho_m,
+\bar\theta_0,\ldots,\bar\theta_n;\delta)
+\subseteq U((x,y);\upsilon_0,\ldots,\upsilon_k;\delta)\subseteq U$.}
+
+\noindent Karena $(x,y)$ sebarang, $U\in\frak U$.   Ini melengkapi bukti bahwa
+$\frak U$ adalah topologi yang ditentukan oleh $\Upsilon$.\ \Qed}
+
+\spheader 2A3Tc Secara khusus, topologi produk pada
+$\BbbR^r\times\BbbR^s$ adalah topologi Euklides jika kita mengidentifikasi
+$\BbbR^r\times\BbbR^s$ dengan $\BbbR^{r+s}$.  \prooflet{\Prf\ Topologi produk
+ditentukan oleh dua pseudometrik $\upsilon_1$ dan $\upsilon_2$; untuk $x$,
+$x'\in \BbbR^r$ dan $y$, $y'\in\BbbR^s$, kita tulis
+
+\Centerline{$\upsilon_1((x,y),(x',y'))=\|x-x'\|$,
+\quad$\upsilon_2((x,y),(x',y'))=\|y-y'\|$}
+
+\noindent (2A3F(b-ii)).   Demikian pula, topologi Euklides pada
+$\BbbR^r\times\BbbR^s\cong\BbbR^{r+s}$ ditentukan oleh metrik $\rho$,
+di mana
+
+\Centerline{$\rho((x,y),(x',y'))=\|(x,y)-(x',y')\|
+=\sqrt{\|x-x'\|^2+\|y-y'\|^2}$.}
+
+\noindent Sekarang jika $(x,y)\in\BbbR^r\times\BbbR^s$ dan $\epsilon>0$, maka
+
+\Centerline{$U((x,y);\rho;\epsilon)
+\subseteq U((x,y);\upsilon_j;\epsilon)$}
+
+\noindent untuk kedua nilai $j$, sedangkan
+
+\Centerline{$U((x,y);\upsilon_1,\upsilon_2;\Bover{\epsilon}{\sqrt2})
+\subseteq U((x,y);\rho;\epsilon)$.}
+
+\noindent Jadi, seperti dikemukakan dalam 2A3Ib, masing-masing topologi
+termuat dalam yang lain, sehingga keduanya sama.\ \Qed}
+
+\leader{2A3U}{Himpunan padat (a)} Jika $X$ adalah ruang topologis, himpunan
+$D\subseteq X$ disebut {\bf padat} dalam $X$ jika $\overline{D}=X$\cmmnt{,
+yaitu jika setiap himpunan terbuka tak kosong beririsan dengan $D$}.   Secara
+lebih umum, jika $D\subseteq A\subseteq X$, maka $D$ padat dalam $A$ jika himpunan itu
+padat untuk topologi subruang pada $A$\cmmnt{ (2A3C), yaitu jika
+$A\subseteq\overline{D}$}.   %for 253
+
+\spheader 2A3Ub Jika $\frak T$ ditentukan oleh keluarga tak kosong $\Rho$ dari
+pseudometrik pada $X$, maka $D\subseteq X$ padat jika dan hanya jika
+\discrcenter{468pt}
+{$U(x;\rho_0,\ldots,\rho_n;\delta)\cap D\ne\emptyset$ }setiap kali
+$x\in X$, $\rho_0,\ldots,\rho_n\in\Rho$ dan $\delta>0$.
+
+\spheader 2A3Uc Jika $(X,\frak T)$ dan $(Y,\frak S)$ adalah ruang topologis,
+dengan $Y$ Hausdorff (khususnya, jika $(X,\rho)$
+dan $(Y,\theta)$ adalah ruang metrik),
+dan $f$, $g:X\to Y$ adalah fungsi kontinu yang sama nilainya pada suatu
+himpunan bagian padat $D$ dari $X$, maka $f=g$.
+\prooflet{\Prf\Quer\ Misalkan, jika memungkinkan, terdapat $x\in X$
+sehingga $f(x)\ne g(x)$.   Maka ada himpunan terbuka $G$, $H\subseteq Y$
+sedemikian sehingga $f(x)\in G$, $g(x)\in H$ dan $G\cap H=\emptyset$.
+Sekarang $f^{-1}[G]\cap g^{-1}[H]$ adalah himpunan terbuka yang memuat $x$
+dan karena itu tak kosong, tetapi tidak beririsan dengan $D$; jadi
+$x\notin\overline{D}$ dan $D$ tidak padat.\ \Bang\QeD}
+
+\spheader 2A3Ud Ruang topologis disebut {\bf separabel} jika memiliki himpunan
+bagian padat yang terhitung.   \cmmnt{Misalnya, $\BbbR^r$ separabel untuk
+setiap $r\ge 1$, karena $\varBbb{Q}^r$ padat.}
+
+\discrpage

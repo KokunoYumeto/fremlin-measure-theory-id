@@ -1,0 +1,1597 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Transformasi Fourier I — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        BbbQ: '\\mathbb{Q}', BbbR: '\\mathbb{R}',
+        eightBbb: ['\\mathbb{#1}', 1],
+        DiniD: '\\overline{D}', Dinid: '\\underline{D}',
+        Var: '\\operatorname{Var}',
+        bumpeq: '=_{\\mathrm{approx}}',
+        intstar: '\\operatorname{int}^{*}',
+        family: ['\\langle #3\\rangle_{#1\\in #2}', 3],
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        displaycause: ['\\text{(#1)}', 1],
+        bigcupop: '\\bigcup', biggerint: '\\int',
+        eae: '=_{\\mathrm{a.e.}}', leae: '\\le_{\\mathrm{a.e.}}', geae: '\\ge_{\\mathrm{a.e.}}',
+        restr: '\\mathord{\\upharpoonright}', restrp: '\\mathord{\\upharpoonright}',
+        Real: '\\operatorname{Re}', Imag: '\\operatorname{Im}',
+        tbf: ['\\mathbf{#1}', 1], eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Qed: '\\square',
+        BbbN: '\\mathbb{N}', Expn: '\\mathbb{E}',
+        Cal: ['\\mathcal{#1}', 1], dom: '\\operatorname{dom}',
+        coint: ['\\left[#1\\right[', 1],
+        sequencen: ['\\langle #1_n\\rangle_{n\\in\\mathbb{N}}', 1],
+        imp: '\\mathop{\\text{pelestari ukuran melalui prapeta}}',
+        tildeTau: '\\widetilde{\\mathrm{T}}',
+        LLcorner: '\\mathbin{\\llcorner}',
+        prooflet: ['#1', 1],
+        halfarrow: '\\rightharpoonup',
+        esssup: '\\mathop{\\text{ess sup}}',
+        ocint: ['\\left]#1\\right]', 1],
+        fraction: ['\\mathord{<}#1\\mathord{>}', 1],
+        energy: '\\mathop{\\text{energi}}\\nolimits', mass: '\\mathop{\\text{massa}}\\nolimits',
+        Innerprod: ['\\bigl(#1\\bigr|#2\\bigr)', 2], vartildef: '\\widetilde{f}',
+        varBbb: ['\\mathbb{#1}', 1],
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        fraction: ['\\mathord{<}#1\\mathord{>}', 1],
+        tbf: ['\\mathbf{#1}', 1],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        BbbN: '\\mathbb{{N}}', BbbQ: '\\mathbb{{Q}}',
+        BbbZ: '\\mathbb{{Z}}',
+        bover: ['\\frac{{#1}}{{#2}}', 2],
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        esssup: '\\mathop{{\\text{{ess sup}}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        family: ['\\langle #3\\rangle_{{#1\\in #2}}', 3],
+        familyi: ['\\langle #2\\rangle_{{i\\in #1}}', 2],
+        familyiI: ['\\langle #1\\rangle_{{i\\in I}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        ocint: ['\\left]#1\\right]', 1],
+        restr: '\\mathord{{\\upharpoonright}}',
+        restrp: '\\mathord{{\\upharpoonright}}',
+        roibr: '\\mathopen{{[}}',
+        sequence: ['\\langle #2\\rangle_{{#1\\in\\mathbb{{N}}}}', 2],
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1],
+        ssbullet: '{{\\scriptscriptstyle\\bullet}}',
+        tensorhat: '\\widehat{{\\otimes}}',
+        Tensorhat: '\\widehat{{\\bigotimes}}'
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 2 · Bagian 283</p>
+  <h1>Transformasi Fourier I</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi kumulatif</a></nav>
+<main id="isi">
+<p>© 1994</p>
+<p>Sekarang saya beralih ke teori transformasi Fourier pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Dalam
+bagian pertama dari dua bagian mengenai topik ini, saya menyajikan bagian teori
+dasar yang dapat ditangani dengan metode dari bagian sebelumnya mengenai deret
+Fourier. Namun, saya tidak menemukan cara untuk memahami teori ini tanpa
+memperkenalkan sebagian teori distribusi L.Schwartz, yang saya sajikan dalam
+§<a class="xref" href="../284/index.html#284">284</a>. Seperti dalam §<a class="xref" href="../282/index.html#282">282</a>, pembahasan ini tentu saja baru merupakan suatu
+permulaan.</p>
+<p>Seluruh teori ini juga dapat dikembangkan pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>. Namun saya
+menyerahkan perluasan tersebut kepada latihan, karena hanya ada sedikit
+gagasan baru, rumus-rumusnya jauh lebih rumit, dan setidaknya dalam jilid ini
+saya tidak memerlukan versi multidimensi dari teorema-teorema tersebut,
+meskipun sebagian gagasan yang sama akan muncul dalam bentuk multidimensi
+dalam §<a class="xref" href="../285/index.html#285">285</a>.</p>
+<section class="source-unit" id="283A" data-source-id="283A"><h2><span class="source-label">283A</span> Definisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> adalah fungsi bernilai kompleks yang
+dapat diintegralkan pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.</p>
+</section>
+<section class="source-unit" id="283Aa" data-source-id="283Aa"><h3><span class="source-label">283Aa</span> (a) </h3>
+<p><strong>Transformasi Fourier</strong> dari <span class="math inline" data-source-tex="f">\(f\)</span> adalah fungsi
+  <span class="math inline" data-source-tex="\varhatf:\Bbb R\to\Bbb C">\(\varhatf:\Bbb R\to\Bbb C\)</span> yang didefinisikan oleh</p>
+<div class="centerline"><span class="math inline" data-source-tex="\varhatf(y)=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+e^{-iyx}f(x)dx">\(\varhatf(y)=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+e^{-iyx}f(x)dx\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="y\in\Bbb R">\(y\in\Bbb R\)</span>.   (Tentu saja integral
+selalu ditentukan karena <span class="math inline" data-source-tex="x\mapsto e^{-iyx}">\(x\mapsto e^{-iyx}\)</span> terbatas dan kontinu,
+oleh karena itu terukur.)</p>
+</section>
+<section class="source-unit" id="283Ab" data-source-id="283Ab"><h3><span class="source-label">283Ab</span> (b) </h3>
+<p><strong>transformasi Fourier invers</strong> dari <span class="math inline" data-source-tex="f">\(f\)</span> adalah
+fungsi <span class="math inline" data-source-tex="\varcheckf:\Bbb R\to\Bbb C">\(\varcheckf:\Bbb R\to\Bbb C\)</span> yang ditentukan oleh</p>
+<div class="centerline"><span class="math inline" data-source-tex="\varcheckf(y)=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+e^{iyx}f(x)dx">\(\varcheckf(y)=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+e^{iyx}f(x)dx\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="y\in\Bbb R">\(y\in\Bbb R\)</span>.</p>
+</section>
+<section class="source-unit" id="283B" data-source-id="283B"><span class="anchor" id="283Ba"></span><h2><span class="source-label">283B</span> Keterangan (a) </h2>
+<p>Ini adalah fitur yang agak menjengkelkan dari teori
+dari transformasi Fourier – menjengkelkan, yaitu,
+untuk orang luar seperti saya – bahwa sebenarnya
+tidak ada definisi standar dari ‘transformasi Fourier’.
+Definisi yang paling umum, menurut saya, adalah,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\varhatf(y)=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+e^{\mp iyx}f(x)dx">\(\varhatf(y)=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+e^{\mp iyx}f(x)dx\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\varhatf(y)=\int_{-\infty}^{\infty}
+e^{\mp iyx}f(x)dx">\(\varhatf(y)=\int_{-\infty}^{\infty}
+e^{\mp iyx}f(x)dx\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\varhatf(y)=\int_{-\infty}^{\infty}
+e^{\mp 2\pi iyx}f(x)dx">\(\varhatf(y)=\int_{-\infty}^{\infty}
+e^{\mp 2\pi iyx}f(x)dx\)</span>,</div>
+<p>sesuai dengan transformasi Fourier invers</p>
+<div class="centerline"><span class="math inline" data-source-tex="\varcheckf(y)=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+e^{\pm iyx}f(x)dx">\(\varcheckf(y)=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+e^{\pm iyx}f(x)dx\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\varcheckf(y)=\Bover1{{2\pi}}\int_{-\infty}^{\infty}
+e^{\pm iyx}f(x)dx">\(\varcheckf(y)=\Bover1{{2\pi}}\int_{-\infty}^{\infty}
+e^{\pm iyx}f(x)dx\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\varcheckf(y)=\int_{-\infty}^{\infty}
+e^{\pm 2\pi iyx}f(x)dx">\(\varcheckf(y)=\int_{-\infty}^{\infty}
+e^{\pm 2\pi iyx}f(x)dx\)</span>.</div>
+<p>Saya serahkan kepada pembaca untuk memeriksa bahwa seluruh teori dapat
+dijalankan dengan sembarang di antara keenam pasangan ini, serta menyelidiki
+kemungkinan-kemungkinan lain (lihat <a class="xref" href="#283Xa">283Xa</a>-<a class="xref" href="#283Xb">283Xb</a> di bawah).</p>
+</section>
+<section class="source-unit" id="283Bb" data-source-id="283Bb"><h3><span class="source-label">283Bb</span> (b) </h3>
+<p>Ungkapan ‘transformasi Fourier’ dan ‘transformasi Fourier
+invers’ menunjukkan bahwa <span class="math inline" data-source-tex="(\varhatf)\varspcheck">\((\varhatf)\varspcheck\)</span> semestinya sama dengan
+<span class="math inline" data-source-tex="f">\(f\)</span>, setidaknya dalam beberapa keadaan. Hal ini memang benar, tetapi kelas
+fungsi <span class="math inline" data-source-tex="f">\(f\)</span> yang memenuhinya secara harfiah agak terbatas; kita masih harus
+menunggu sebelum menyelidikinya.</p>
+</section>
+<section class="source-unit" id="283Bc" data-source-id="283Bc"><h3><span class="source-label">283Bc</span> (c) </h3>
+<p>Betapa pun konstanta-konstanta diatur seperti pada (a),
+kita tidak dapat membuat <span class="math inline" data-source-tex="\varhatf">\(\varhatf\)</span> dan <span class="math inline" data-source-tex="\varcheckf">\(\varcheckf\)</span> benar-benar sama.
+Namun, dengan definisi yang saya pilih, kita mempunyai
+<span class="math inline" data-source-tex="\varcheckf(y)=\varhatf(-y)">\(\varcheckf(y)=\varhatf(-y)\)</span> untuk setiap <span class="math inline" data-source-tex="y">\(y\)</span>, sehingga <span class="math inline" data-source-tex="\varcheckf">\(\varcheckf\)</span> dan
+<span class="math inline" data-source-tex="\varhatf">\(\varhatf\)</span> pada dasarnya memiliki semua sifat yang sama yang kita perlukan
+di sini; khususnya, segala sesuatu dalam proposisi berikutnya akan valid
+dengan <span class="math inline" data-source-tex="\varspcheck">\(\varspcheck\)</span> di tempat <span class="math inline" data-source-tex="\varsphat">\(\varsphat\)</span>, jika Anda mengubah tanda di
+    titik-titik yang sesuai pada bagian (c), (h), dan (i).</p>
+</section>
+<section class="source-unit" id="283C" data-source-id="283C"><h2><span class="source-label">283C</span> Proposisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span> adalah fungsi bernilai kompleks
+yang dapat diintegralkan pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.</p>
+<p>(a) <span class="math inline" data-source-tex="(f+g)\varsphat=\varhatf+\varhat{g}">\((f+g)\varsphat=\varhatf+\varhat{g}\)</span>.</p>
+<p>(b) <span class="math inline" data-source-tex="(cf)\varsphat=c\varhatf">\((cf)\varsphat=c\varhatf\)</span> untuk setiap <span class="math inline" data-source-tex="c\in\Bbb C">\(c\in\Bbb C\)</span>.</p>
+<p>(c) Jika <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span> dan <span class="math inline" data-source-tex="h(x)=f(x+c)">\(h(x)=f(x+c)\)</span> kapan pun ruas ini
+terdefinisi, maka <span class="math inline" data-source-tex="\varhat{h}(y)=e^{icy}\varhatf(y)">\(\varhat{h}(y)=e^{icy}\varhatf(y)\)</span> untuk setiap <span class="math inline" data-source-tex="y\in\Bbb R">\(y\in\Bbb R\)</span>.</p>
+<p>(d) Jika <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span> dan <span class="math inline" data-source-tex="h(x)=e^{icx}f(x)">\(h(x)=e^{icx}f(x)\)</span> untuk setiap
+<span class="math inline" data-source-tex="x\in\dom f">\(x\in\dom f\)</span>, lalu <span class="math inline" data-source-tex="\varhat{h}(y)=\varhatf(y-c)">\(\varhat{h}(y)=\varhatf(y-c)\)</span> untuk setiap
+<span class="math inline" data-source-tex="y\in\Bbb R">\(y\in\Bbb R\)</span>.</p>
+<p>(e) Jika <span class="math inline" data-source-tex="c&gt;0">\(c&gt;0\)</span> dan <span class="math inline" data-source-tex="h(x)=f(cx)">\(h(x)=f(cx)\)</span> kapan pun ruas ini terdefinisi,
+lalu <span class="math inline" data-source-tex="\varhat{h}(y)=\Bover1c\varhatf(\Bover{y}{c})">\(\varhat{h}(y)=\Bover1c\varhatf(\Bover{y}{c})\)</span>
+untuk setiap <span class="math inline" data-source-tex="y\in\Bbb R">\(y\in\Bbb R\)</span>.</p>
+<p>(f) <span class="math inline" data-source-tex="\varhatf:\Bbb R\to\Bbb C">\(\varhatf:\Bbb R\to\Bbb C\)</span> kontinu.</p>
+<p>(g) <span class="math inline" data-source-tex="\lim_{y\to\infty}\varhatf(y)=\lim_{y\to-\infty}\varhatf(y)=0">\(\lim_{y\to\infty}\varhatf(y)=\lim_{y\to-\infty}\varhatf(y)=0\)</span>.</p>
+<p>(h) Jika <span class="math inline" data-source-tex="\int_{-\infty}^{\infty}|xf(x)|dx&lt;\infty">\(\int_{-\infty}^{\infty}|xf(x)|dx&lt;\infty\)</span>, maka <span class="math inline" data-source-tex="\varhatf">\(\varhatf\)</span> adalah
+terdiferensiasi, dan turunannya adalah</p>
+<div class="centerline"><span class="math inline" data-source-tex="\varhatf\vthsp&#x27;(y)=-\Bover{i}{\sqrt{2\pi}}
+\int_{-\infty}^{\infty}e^{-iyx}xf(x)dx">\(\varhatf &#x27;(y)=-\Bover{i}{\sqrt{2\pi}}
+\int_{-\infty}^{\infty}e^{-iyx}xf(x)dx\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="y\in\Bbb R">\(y\in\Bbb R\)</span>.</p>
+<p>(i) Jika <span class="math inline" data-source-tex="f">\(f\)</span> kontinu mutlak pada setiap interval terbatas dan <span class="math inline" data-source-tex="f&#x27;">\(f&#x27;\)</span>
+dapat diintegralkan, maka <span class="math inline" data-source-tex="(f&#x27;)\varsphat(y)=iy\varhatf(y)">\((f&#x27;)\varsphat(y)=iy\varhatf(y)\)</span> untuk setiap <span class="math inline" data-source-tex="y\in\Bbb
+R">\(y\in\Bbb
+R\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> dan <strong>(b)</strong> adalah sepele, dan <strong>(c)</strong>, <strong>(d)</strong> dan
+<strong>(e)</strong> adalah substitusi dasar.</p>
+<p> </p>
+<p><strong>(f)</strong> Jika <span class="math inline" data-source-tex="\sequencen{y_n}">\(\sequencen{y_n}\)</span> adalah sembarang barisan konvergen di <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>
+dengan limit <span class="math inline" data-source-tex="y">\(y\)</span>, maka</p>
+<p><span class="math display" data-source-tex="\eqalign{\varhatf(y)
+&amp;=\Bover1{\sqrt{2\pi}}
+\int_{-\infty}^{\infty}\lim_{n\to\infty}e^{-iy_nx}f(x)dx\cr
+&amp;=\lim_{n\to\infty}\Bover1{\sqrt{2\pi}}
+\int_{-\infty}^{\infty}e^{-iy_nx}f(x)dx
+=\lim_{n\to\infty}\varhatf(y_n)\cr}">\[\begin{aligned}\varhatf(y)
+&amp;=\Bover1{\sqrt{2\pi}}
+\int_{-\infty}^{\infty}\lim_{n\to\infty}e^{-iy_nx}f(x)dx\\
+&amp;=\lim_{n\to\infty}\Bover1{\sqrt{2\pi}}
+\int_{-\infty}^{\infty}e^{-iy_nx}f(x)dx
+=\lim_{n\to\infty}\varhatf(y_n)\\\end{aligned}\]</span></p>
+<p>oleh Teorema Konvergensi Dominasi Lebesgue, karena
+<span class="math inline" data-source-tex="|e^{-iy_nx}f(x)|\le|f(x)|">\(|e^{-iy_nx}f(x)|\le|f(x)|\)</span> untuk setiap <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span> dan <span class="math inline" data-source-tex="x\in\dom f">\(x\in\dom f\)</span>.   Karena
+<span class="math inline" data-source-tex="\sequencen{y_n}">\(\sequencen{y_n}\)</span> bersifat arbitrer, <span class="math inline" data-source-tex="\varhatf">\(\varhatf\)</span> bersifat kontinu.</p>
+<p> </p>
+<p><strong>(g)</strong> Ini hanya lema Riemann–Lebesgue (<a class="xref" href="../282/index.html#282E">282E</a>).</p>
+<p> </p>
+<p><strong>(h)</strong> Intinya <span class="math inline" data-source-tex="|\pd{}{y}e^{-iyx}f(x)|=|xf(x)|">\(|\pd{}{y}e^{-iyx}f(x)|=|xf(x)|\)</span> kapan saja
+<span class="math inline" data-source-tex="x\in\dom f">\(x\in\dom f\)</span> dan <span class="math inline" data-source-tex="y\in\Bbb R">\(y\in\Bbb R\)</span>. Jadi oleh <a class="xref" href="../123/index.html#123D">123D</a></p>
+<p><span class="math display" data-source-tex="\eqalign{\varhatf\vthsp&#x27;(y)
+&amp;=\Bover1{\sqrt{2\pi}}\Bover{d}{dy}
+     \int_{-\infty}^{\infty}e^{-iyx}f(x)dx
+=\Bover1{\sqrt{2\pi}}\Bover{d}{dy}\int_{\dom f}
+     e^{-iyx}f(x)dx\cr
+&amp;=\Bover1{\sqrt{2\pi}}\int_{\dom f}
+     \Bover{\partial}{\partial y}e^{-iyx}f(x)dx
+=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+     -ixe^{-iyx}f(x)dx\cr
+&amp;=-\Bover{i}{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+     xe^{-iyx}f(x)dx.\cr}">\[\begin{aligned}\varhatf &#x27;(y)
+&amp;=\Bover1{\sqrt{2\pi}}\Bover{d}{dy}
+     \int_{-\infty}^{\infty}e^{-iyx}f(x)dx
+=\Bover1{\sqrt{2\pi}}\Bover{d}{dy}\int_{\dom f}
+     e^{-iyx}f(x)dx\\
+&amp;=\Bover1{\sqrt{2\pi}}\int_{\dom f}
+     \Bover{\partial}{\partial y}e^{-iyx}f(x)dx
+=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+     -ixe^{-iyx}f(x)dx\\
+&amp;=-\Bover{i}{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+     xe^{-iyx}f(x)dx.\\\end{aligned}\]</span></p>
+<p> </p>
+<p><strong>(i)</strong> Karena <span class="math inline" data-source-tex="f">\(f\)</span> kontinu mutlak di setiap interval terbatas,</p>
+<div class="centerline"><span class="math inline" data-source-tex="f(x)=f(0)+\int_0^xf&#x27;">\(f(x)=f(0)+\int_0^xf&#x27;\)</span> untuk <span class="math inline" data-source-tex="x\ge 0">\(x\ge 0\)</span>,
+<span class="math inline" data-source-tex="f(x)=f(0)-\int_x^0f&#x27;">\(f(x)=f(0)-\int_x^0f&#x27;\)</span> untuk <span class="math inline" data-source-tex="x\le 0">\(x\le 0\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="f&#x27;">\(f&#x27;\)</span> dapat diintegralkan,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{x\to\infty}f(x)=f(0)+\int_0^{\infty}f&#x27;">\(\lim_{x\to\infty}f(x)=f(0)+\int_0^{\infty}f&#x27;\)</span>,
+<span class="math inline" data-source-tex="\lim_{x\to-\infty}f(x)=f(0)-\int_{-\infty}^0f&#x27;">\(\lim_{x\to-\infty}f(x)=f(0)-\int_{-\infty}^0f&#x27;\)</span></div>
+<p>keduanya ada.   Karena <span class="math inline" data-source-tex="f">\(f\)</span> juga dapat diintegralkan, kedua batas
+harus nol.   Sekarang kita dapat melakukan integrasi parsial (<a class="xref" href="../225/index.html#225F">225F</a>) untuk melihat bahwa</p>
+<p><span class="math display" data-source-tex="\eqalign{(f&#x27;)\varsphat(y)
+&amp;=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iyx}f&#x27;(x)dx
+=\Bover1{\sqrt{2\pi}}\lim_{a\to\infty}\int_{-a}^{a}e^{-iyx}f&#x27;(x)dx\cr
+&amp;=\Bover1{\sqrt{2\pi}}\bigl(\lim_{a\to\infty}e^{-iya}f(a)
+-\lim_{a\to-\infty}e^{-iya}f(a)\bigr)
++\Bover{iy}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iyx}f(x)dx\cr
+&amp;=iy\varhatf(y).\cr}">\[\begin{aligned}(f&#x27;)\varsphat(y)
+&amp;=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iyx}f&#x27;(x)dx
+=\Bover1{\sqrt{2\pi}}\lim_{a\to\infty}\int_{-a}^{a}e^{-iyx}f&#x27;(x)dx\\
+&amp;=\Bover1{\sqrt{2\pi}}\bigl(\lim_{a\to\infty}e^{-iya}f(a)
+-\lim_{a\to-\infty}e^{-iya}f(a)\bigr)
++\Bover{iy}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iyx}f(x)dx\\
+&amp;=iy\varhatf(y).\\\end{aligned}\]</span></p></aside>
+</section>
+<section class="source-unit" id="283D" data-source-id="283D"><h2><span class="source-label">283D</span> Lema </h2>
+<p>(a) <span class="math inline" data-source-tex="\lim_{a\to\infty}\int_{0}^a\bover{\sin
+x}{x}dx=\bover{\pi}2">\(\lim_{a\to\infty}\int_{0}^a\bover{\sin
+x}{x}dx=\bover{\pi}2\)</span>, <span class="math inline" data-source-tex="\lim_{a\to\infty}\int_{-a}^a\bover{\sin
+x}{x}dx=\pi">\(\lim_{a\to\infty}\int_{-a}^a\bover{\sin
+x}{x}dx=\pi\)</span>.</p>
+<p>(b) Terdapat <span class="math inline" data-source-tex="K&lt;\infty">\(K&lt;\infty\)</span> sehingga <span class="math inline" data-source-tex="|\int_a^b\bover{\sin cx}{x}dx|\le
+K">\(|\int_a^b\bover{\sin cx}{x}dx|\le
+K\)</span> kapan pun <span class="math inline" data-source-tex="a\le b">\(a\le b\)</span> dan <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)(i)</strong> Atur</p>
+<div class="centerline"><span class="math inline" data-source-tex="F(a)=\int_0^a\Bover{\sin x}{x}dx">\(F(a)=\int_0^a\Bover{\sin x}{x}dx\)</span> jika <span class="math inline" data-source-tex="a\ge 0">\(a\ge 0\)</span>,
+<span class="math inline" data-source-tex="F(a)=-\int_{-a}^0\Bover{\sin x}{x}dx">\(F(a)=-\int_{-a}^0\Bover{\sin x}{x}dx\)</span> jika <span class="math inline" data-source-tex="a\le 0">\(a\le 0\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="F(a)=-F(-a)">\(F(a)=-F(-a)\)</span> dan
+<span class="math inline" data-source-tex="\int_a^b\bover{\sin x}{x}dx=F(b)-F(a)">\(\int_a^b\bover{\sin x}{x}dx=F(b)-F(a)\)</span> untuk semua <span class="math inline" data-source-tex="a\le b">\(a\le b\)</span>.</p>
+<p>Jika <span class="math inline" data-source-tex="0&lt;a\le b">\(0&lt;a\le b\)</span>, maka menurut <a class="xref" href="../224/index.html#224J">224J</a></p>
+<div class="centerline"><span class="math inline" data-source-tex="|\int_a^b\Bover{\sin x}{x}dx|
+\le(\Bover1b+\Bover1a-\Bover1b)\sup_{c\in[a,b]}
+  |\int_a^c\sin x\,dx|
+\le\Bover1a\sup_{c\in[a,b]}|\cos a-\cos c|
+\le\Bover2a">\(|\int_a^b\Bover{\sin x}{x}dx|
+\le(\Bover1b+\Bover1a-\Bover1b)\sup_{c\in[a,b]}
+  |\int_a^c\sin x\,dx|
+\le\Bover1a\sup_{c\in[a,b]}|\cos a-\cos c|
+\le\Bover2a\)</span>.</div>
+<p>Khususnya, <span class="math inline" data-source-tex="|F(n)-F(m)|\le\bover2{m}">\(|F(n)-F(m)|\le\bover2{m}\)</span> jika <span class="math inline" data-source-tex="0&lt;m\le n">\(0&lt;m\le n\)</span> dalam
+<span class="math inline" data-source-tex="\Bbb N">\(\Bbb N\)</span>, dan <span class="math inline" data-source-tex="\sequencen{F(n)}">\(\sequencen{F(n)}\)</span> adalah urutan Cauchy dengan batas
+<span class="math inline" data-source-tex="\gamma">\(\gamma\)</span> katakan; sekarang</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\gamma - F(a)|
+=\lim_{n\to\infty}|F(n)-F(a)|\le\Bover2a">\(|\gamma - F(a)|
+=\lim_{n\to\infty}|F(n)-F(a)|\le\Bover2a\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="a&gt;0">\(a&gt;0\)</span>, Jadi <span class="math inline" data-source-tex="\lim_{a\to\infty}F(a)=\gamma">\(\lim_{a\to\infty}F(a)=\gamma\)</span>.
+Tentu saja kita juga memiliki</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{a\to\infty}\int_{-a}^a\Bover{\sin x}{x}dx
+=\lim_{a\to\infty}(F(a)-F(-a))
+=\lim_{a\to\infty}2F(a)=2\gamma">\(\lim_{a\to\infty}\int_{-a}^a\Bover{\sin x}{x}dx
+=\lim_{a\to\infty}(F(a)-F(-a))
+=\lim_{a\to\infty}2F(a)=2\gamma\)</span>.</div>
+<p> </p>
+<p>  <strong>(ii)</strong> Jadi sekarang saya harus menghitung <span class="math inline" data-source-tex="\gamma">\(\gamma\)</span>.    Untuk ini,
+amati dulu</p>
+<div class="centerline"><span class="math inline" data-source-tex="2\gamma
+=\lim_{a\to\infty}\int_{-\pi a}^{\pi a}\Bover{\sin x}{x}dx
+=\lim_{a\to\infty}\int_{-\pi}^{\pi}\Bover{\sin at}{t}dt">\(2\gamma
+=\lim_{a\to\infty}\int_{-\pi a}^{\pi a}\Bover{\sin x}{x}dx
+=\lim_{a\to\infty}\int_{-\pi}^{\pi}\Bover{\sin at}{t}dt\)</span></div>
+<p>(dengan mengganti <span class="math inline" data-source-tex="x=at">\(x=at\)</span>).   Berikutnya,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{t\to 0}\Bover1t-\Bover1{2\sin{1\over 2}t}=\lim_{u\to
+0}\Bover{\sin u-u}{2u\sin u}=0">\(\lim_{t\to 0}\Bover1t-\Bover1{2\sin{1\over 2}t}=\lim_{u\to
+0}\Bover{\sin u-u}{2u\sin u}=0\)</span>,</div>
+<p>jadi</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_{-\pi}^{\pi}
+  \bigl|\Bover1t-\Bover1{2\sin{1\over 2}t}\bigr|dt&lt;\infty">\(\int_{-\pi}^{\pi}
+  \bigl|\Bover1t-\Bover1{2\sin{1\over 2}t}\bigr|dt&lt;\infty\)</span>,</div>
+<p>dan oleh lema Riemann-Lebesgue (282Fb)</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{a\to\infty}\int_{-\pi}^{\pi}
+   \bigl(\Bover1t-\Bover1{2\sin{1\over 2}t}\bigr)\sin at\,dt=0">\(\lim_{a\to\infty}\int_{-\pi}^{\pi}
+   \bigl(\Bover1t-\Bover1{2\sin{1\over 2}t}\bigr)\sin at\,dt=0\)</span>.</div>
+<p>Tapi kami tahu itu</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_{-\pi}^{\pi}
+\Bover{\sin(n+{1\over 2})t\pushbottom{3.5pt}}{2\sin{1\over 2}t}dt
+=\pi">\(\int_{-\pi}^{\pi}
+\Bover{\sin(n+{1\over 2})t\pushbottom{3.5pt}}{2\sin{1\over 2}t}dt
+=\pi\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span> (menggunakan 282Dc), jadi kita harus punya</p>
+<p><span class="math display" data-source-tex="\eqalign{\lim_{a\to\infty}\int_{-a}^a\Bover{\sin t}{t}dt
+&amp;=\lim_{a\to\infty}\int_{-\pi}^{\pi}\Bover{\sin at}{t}dt
+=\lim_{a\to\infty}\int_{-\pi}^{\pi}
+      \Bover{\sin at}{2\sin{1\over 2}t}dt\cr
+&amp;=\lim_{n\to\infty}\int_{-\pi}^{\pi}
+    \Bover{\sin(n+{1\over 2})t\pushbottom{3.5pt}}{2\sin{1\over 2}t}dt
+=\pi,\cr}">\[\begin{aligned}\lim_{a\to\infty}\int_{-a}^a\Bover{\sin t}{t}dt
+&amp;=\lim_{a\to\infty}\int_{-\pi}^{\pi}\Bover{\sin at}{t}dt
+=\lim_{a\to\infty}\int_{-\pi}^{\pi}
+      \Bover{\sin at}{2\sin{1\over 2}t}dt\\
+&amp;=\lim_{n\to\infty}\int_{-\pi}^{\pi}
+    \Bover{\sin(n+{1\over 2})t\pushbottom{3.5pt}}{2\sin{1\over 2}t}dt
+=\pi,\\\end{aligned}\]</span></p>
+<p>dan <span class="math inline" data-source-tex="\gamma=\pi/2">\(\gamma=\pi/2\)</span>, seperti yang diklaim.</p>
+<p> </p>
+<p><strong>(b)</strong> Karena <span class="math inline" data-source-tex="F">\(F\)</span> kontinu dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{a\to\infty}F(a)=\gamma=\Bover{\pi}2">\(\lim_{a\to\infty}F(a)=\gamma=\Bover{\pi}2\)</span>,
+<span class="math inline" data-source-tex="\lim_{a\to-\infty}F(a)=-\gamma=-\Bover{\pi}2">\(\lim_{a\to-\infty}F(a)=-\gamma=-\Bover{\pi}2\)</span>,</div>
+<p><span class="math inline" data-source-tex="F">\(F\)</span> terbatas; katakanlah <span class="math inline" data-source-tex="|F(a)|\le K_1">\(|F(a)|\le K_1\)</span> untuk semua <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>.
+Ambil <span class="math inline" data-source-tex="K=2K_1">\(K=2K_1\)</span>. Sekarang misalkan <span class="math inline" data-source-tex="a&lt;b">\(a&lt;b\)</span> dan <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>. Jika <span class="math inline" data-source-tex="c&gt;0">\(c&gt;0\)</span>,
+maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\int_a^b\Bover{\sin cx}{x}dx|
+=|\int_{ac}^{bc}\Bover{\sin t}{t}dt|
+=|F(bc)-F(ac)|\le 2K_1=K">\(|\int_a^b\Bover{\sin cx}{x}dx|
+=|\int_{ac}^{bc}\Bover{\sin t}{t}dt|
+=|F(bc)-F(ac)|\le 2K_1=K\)</span>,</div>
+<p>menggantikan <span class="math inline" data-source-tex="x=t/c">\(x=t/c\)</span>.   Jika <span class="math inline" data-source-tex="c&lt;0">\(c&lt;0\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\int_a^b\Bover{\sin cx}{x}dx|
+=|-\int_a^b\Bover{\sin(-c)x}{x}dx|
+\le K">\(|\int_a^b\Bover{\sin cx}{x}dx|
+=|-\int_a^b\Bover{\sin(-c)x}{x}dx|
+\le K\)</span>;</div>
+<p>sementara jika <span class="math inline" data-source-tex="c=0">\(c=0\)</span> maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\int_a^b\Bover{\sin cx}{x}dx|
+=0\le K">\(|\int_a^b\Bover{\sin cx}{x}dx|
+=0\le K\)</span>.</div></aside>
+</section>
+<section class="source-unit" id="283E" data-source-id="283E"><h2><span class="source-label">283E</span>  </h2>
+<p>Pekerjaan tersulit dari bagian ini terletak pada
+‘teorema inversi titik’ <a class="xref" href="#283I">283I</a> dan <a class="xref" href="#283K">283K</a> di bawah ini.   Namun saya memulai
+dengan hasil yang relatif mudah, dan setidaknya sama pentingnya,
+menunjukkan (antara lain) bahwa fungsi <span class="math inline" data-source-tex="f">\(f\)</span> yang dapat diintegralkan dapat
+(pada dasarnya) dipulihkan dari transformasi Fourier-nya.</p>
+<p> </p>
+<p><strong>Lema</strong> Kapan pun <span class="math inline" data-source-tex="c&lt;d">\(c&lt;d\)</span> di <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>,</p>
+<p><span class="math display" data-source-tex="\eqalign{\lim_{a\to\infty}\int_{-a}^{a}
+     e^{-iyx}\,\Bover{e^{idy}-e^{icy}}{y}dy
+&amp;=2\pi i\text{ jika }c&lt;x&lt;d,\cr
+&amp;=\pi i\text{ jika }x=c\text{ atau }x=d,\cr
+&amp;=0\text{ jika }x&lt;c\text{ atau } x&gt;d.\cr}">\[\begin{aligned}\lim_{a\to\infty}\int_{-a}^{a}
+     e^{-iyx}\,\Bover{e^{idy}-e^{icy}}{y}dy
+&amp;=2\pi i\text{ jika }c&lt;x&lt;d,\\
+&amp;=\pi i\text{ jika }x=c\text{ atau }x=d,\\
+&amp;=0\text{ jika }x&lt;c\text{ atau } x&gt;d.\\\end{aligned}\]</span></p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Kita tahu bahwa untuk setiap <span class="math inline" data-source-tex="b&gt;0">\(b&gt;0\)</span></p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{a\to\infty}\int_{-a}^{a}\Bover{\sin bx}{x}dx
+=\lim_{a\to\infty}\int_{-ab}^{ab}\Bover{\sin t}{t}dt
+=\pi">\(\lim_{a\to\infty}\int_{-a}^{a}\Bover{\sin bx}{x}dx
+=\lim_{a\to\infty}\int_{-ab}^{ab}\Bover{\sin t}{t}dt
+=\pi\)</span></div>
+<p>(dengan mengganti <span class="math inline" data-source-tex="x=t/b">\(x=t/b\)</span>), dan oleh karena itu untuk setiap <span class="math inline" data-source-tex="b&lt;0">\(b&lt;0\)</span></p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{a\to\infty}\int_{-a}^{a}\Bover{\sin bx}{x}dx
+=-\lim_{a\to\infty}\int_{-a}^{a}\Bover{\sin(-b)x}{x}dx
+=-\pi">\(\lim_{a\to\infty}\int_{-a}^{a}\Bover{\sin bx}{x}dx
+=-\lim_{a\to\infty}\int_{-a}^{a}\Bover{\sin(-b)x}{x}dx
+=-\pi\)</span>.</div>
+<p>Sekarang pertimbangkan, untuk <span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{a\to\infty}\int_{-a}^{a}e^{-iyx}
+\,\Bover{e^{idy}-e^{icy}}{y}dy">\(\lim_{a\to\infty}\int_{-a}^{a}e^{-iyx}
+\,\Bover{e^{idy}-e^{icy}}{y}dy\)</span>.</div>
+<p>Pertama, perhatikan bahwa semua integral <span class="math inline" data-source-tex="\int_{-a}^a">\(\int_{-a}^a\)</span> ada, karena</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{y\to 0}\Bover{e^{idy}-e^{icy}}{y}=i(d-c)">\(\lim_{y\to 0}\Bover{e^{idy}-e^{icy}}{y}=i(d-c)\)</span></div>
+<p>terbatas, dan integran tersebut kontinu kecuali di
+ <span class="math inline" data-source-tex="0">\(0\)</span>.   Sekarang kita punya</p>
+<p><span class="math display" data-source-tex="\eqalignno{\int_{-a}^ae^{-iyx}&amp;\Bover{e^{idy}-e^{icy}}{y}dy\cr
+&amp;=\int_{-a}^a\Bover{e^{i(d-x)y}-e^{i(c-x)y}}{y}dy\cr
+&amp;=\int_{-a}^a\Bover{\cos(d-x)y-\cos(c-x)y}{y}dy
+ +i\int_{-a}^a\Bover{\sin(d-x)y-\sin(c-x)y}{y}dy\cr
+&amp;=i\int_{-a}^a\Bover{\sin(d-x)y-\sin(c-x)y}{y}dy\cr}">\[\begin{aligned}\int_{-a}^ae^{-iyx}&amp;\Bover{e^{idy}-e^{icy}}{y}dy\\
+&amp;=\int_{-a}^a\Bover{e^{i(d-x)y}-e^{i(c-x)y}}{y}dy\\
+&amp;=\int_{-a}^a\Bover{\cos(d-x)y-\cos(c-x)y}{y}dy
+ +i\int_{-a}^a\Bover{\sin(d-x)y-\sin(c-x)y}{y}dy\\
+&amp;=i\int_{-a}^a\Bover{\sin(d-x)y-\sin(c-x)y}{y}dy\\\end{aligned}\]</span></p>
+<p>karena <span class="math inline" data-source-tex="\cos">\(\cos\)</span> adalah fungsi genap, jadi</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_{-a}^{a}\Bover{\cos(d-x)y-\cos(c-x)y}{y}dy=0">\(\int_{-a}^{a}\Bover{\cos(d-x)y-\cos(c-x)y}{y}dy=0\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="a\ge 0">\(a\ge 0\)</span>.   (Sekali lagi, integral ini ada
+ karena</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{y\to 0}\Bover{\cos(d-x)y-\cos(c-x)y}{y}=0">\(\lim_{y\to 0}\Bover{\cos(d-x)y-\cos(c-x)y}{y}=0\)</span>.)</div>
+<p>Oleh karena itu</p>
+<p><span class="math display" data-source-tex="\eqalign{\lim_{a\to\infty}\int_{-a}^a
+e^{-iyx}\Bover{e^{idy}-e^{icy}}{y}dy
+&amp;=i\lim_{a\to\infty}\int_{-a}^a\Bover{\sin(d-x)y}{y}dy
+   -i\lim_{a\to\infty}\int_{-a}^a\Bover{\sin(c-x)y}{y}dy\cr
+&amp;=i\pi-i\pi=0\text{ jika }x&lt;c,\cr
+&amp;=i\pi-0=\pi i\text{ jika }x=c,\cr
+&amp;=i\pi+i\pi=2\pi i\text{ jika }c&lt;x&lt;d,\cr
+&amp;=0+i\pi=\pi i\text{ jika }x=d,\cr
+&amp;=-i\pi+i\pi=0\text{ jika }x&gt;d.\cr}">\[\begin{aligned}\lim_{a\to\infty}\int_{-a}^a
+e^{-iyx}\Bover{e^{idy}-e^{icy}}{y}dy
+&amp;=i\lim_{a\to\infty}\int_{-a}^a\Bover{\sin(d-x)y}{y}dy
+   -i\lim_{a\to\infty}\int_{-a}^a\Bover{\sin(c-x)y}{y}dy\\
+&amp;=i\pi-i\pi=0\text{ jika }x&lt;c,\\
+&amp;=i\pi-0=\pi i\text{ jika }x=c,\\
+&amp;=i\pi+i\pi=2\pi i\text{ jika }c&lt;x&lt;d,\\
+&amp;=0+i\pi=\pi i\text{ jika }x=d,\\
+&amp;=-i\pi+i\pi=0\text{ jika }x&gt;d.\\\end{aligned}\]</span></p></aside>
+</section>
+<section class="source-unit" id="283F" data-source-id="283F"><h2><span class="source-label">283F</span> Teorema </h2>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> adalah fungsi bernilai kompleks yang dapat
+diintegralkan pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan <span class="math inline" data-source-tex="\varhatf">\(\varhatf\)</span> transformasi Fourier-nya. Maka
+kapan pun <span class="math inline" data-source-tex="c\le d">\(c\le d\)</span> dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>,</p>
+<p><span class="math display" data-source-tex="\int_c^df=\Bover{i}{\sqrt{2\pi}}\lim_{a\to\infty}
+\int_{-a}^{a}\Bover{e^{icy}-e^{idy}}{y}\varhatf(y)dy.">\[\int_c^df=\Bover{i}{\sqrt{2\pi}}\lim_{a\to\infty}
+\int_{-a}^{a}\Bover{e^{icy}-e^{idy}}{y}\varhatf(y)dy.\]</span></p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Jika <span class="math inline" data-source-tex="c=d">\(c=d\)</span>, hasilnya sepele; kita dapat mengandaikan bahwa <span class="math inline" data-source-tex="c&lt;d">\(c&lt;d\)</span>.</p>
+<p> </p>
+<p><strong>(a)</strong> Dengan menulis</p>
+<p><span class="math display" data-source-tex="\theta_a(x)=\biggerint_{-a}^{a}e^{-iyx}
+\,\Bover{e^{idy}-e^{icy}}{y}dy">\[\theta_a(x)=\biggerint_{-a}^{a}e^{-iyx}
+\,\Bover{e^{idy}-e^{icy}}{y}dy\]</span></p>
+<p>untuk <span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span> dan <span class="math inline" data-source-tex="a\ge 0">\(a\ge 0\)</span>, <a class="xref" href="#283E">283E</a> memberitahu kita bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{a\to\infty}\theta_a(x)=2\pi i\theta(x)">\(\lim_{a\to\infty}\theta_a(x)=2\pi i\theta(x)\)</span></div>
+<p>dengan <span class="math inline" data-source-tex="\theta=\bover12(\chi[c,d]+\chi\ooint{c,d})">\(\theta=\bover12(\chi[c,d]+\chi\ooint{c,d})\)</span> mengambil
+nilai <span class="math inline" data-source-tex="1">\(1\)</span> di dalam interval <span class="math inline" data-source-tex="[c,d]">\([c,d]\)</span>, <span class="math inline" data-source-tex="0">\(0\)</span> luar dan nilai
+<span class="math inline" data-source-tex="\bover12">\(\bover12\)</span> pada titik akhir.</p>
+<p><span class="math display" data-source-tex="\eqalignno{|\theta_a(x)|
+&amp;=|\int_{-a}^a\Bover{\sin(d-x)y-\sin(c-x)y}{y}dy|\cr
+\displaycause{lihat pembuktian 283E}
+&amp;\le|\int_{-a}^a\Bover{\sin(d-x)y}{y}dy|
+  +|\int_{-a}^a\Bover{\sin(c-x)y}{y}dy|
+\le 2K\cr}">\[\begin{aligned}|\theta_a(x)|
+&amp;=|\int_{-a}^a\Bover{\sin(d-x)y-\sin(c-x)y}{y}dy|\\
+&amp;\text{(lihat pembuktian 283E)}\\
+&amp;\le|\int_{-a}^a\Bover{\sin(d-x)y}{y}dy|
+  +|\int_{-a}^a\Bover{\sin(c-x)y}{y}dy|
+\le 2K\\\end{aligned}\]</span></p>
+<p>untuk semua <span class="math inline" data-source-tex="a\ge 0">\(a\ge 0\)</span> dan <span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span>, dengan <span class="math inline" data-source-tex="K">\(K\)</span> konstanta dari
+283Db. Akibatnya <span class="math inline" data-source-tex="|f\times\theta_a|\le 2K|f|">\(|f\times\theta_a|\le 2K|f|\)</span> di seluruh <span class="math inline" data-source-tex="\dom f">\(\dom f\)</span>, untuk
+setiap <span class="math inline" data-source-tex="a\ge 0">\(a\ge 0\)</span>, dan (dengan menerapkan Teorema Konvergensi Terdominasi
+Lebesgue pada barisan <span class="math inline" data-source-tex="\sequencen{f\times\theta_{a_n}}">\(\sequencen{f\times\theta_{a_n}}\)</span>, dengan
+<span class="math inline" data-source-tex="a_n\to\infty">\(a_n\to\infty\)</span>)</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{a\to\infty}
+\int f\times\theta_a=2\pi i\int f\times\theta=2\pi i\int_c^df">\(\lim_{a\to\infty}
+\int f\times\theta_a=2\pi i\int f\times\theta=2\pi i\int_c^df\)</span>.</div>
+<p> </p>
+<p><strong>(b)</strong> Sekarang pertimbangkan batas dalam pernyataan teorema.
+Kita mempunyai</p>
+<p><span class="math display" data-source-tex="\eqalignno{\int_{-a}^a
+\bover{e^{icy}-e^{idy}}{y}\varhatf(y)dy
+&amp;=\bover1{\sqrt{2\pi}}\int_{-a}^a
+\int_{-\infty}^{\infty}
+\bover{e^{icy}-e^{idy}}{y}e^{-iyx}f(x)dxdy\cr
+&amp;=\bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}\int_{-a}^a
+\bover{e^{icy}-e^{idy}}{y}e^{-iyx}f(x)dydx\cr
+&amp;=-\bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}f\times\theta_a\cr}">\[\begin{aligned}\int_{-a}^a
+\bover{e^{icy}-e^{idy}}{y}\varhatf(y)dy
+&amp;=\bover1{\sqrt{2\pi}}\int_{-a}^a
+\int_{-\infty}^{\infty}
+\bover{e^{icy}-e^{idy}}{y}e^{-iyx}f(x)dxdy\\
+&amp;=\bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}\int_{-a}^a
+\bover{e^{icy}-e^{idy}}{y}e^{-iyx}f(x)dydx\\
+&amp;=-\bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}f\times\theta_a\\\end{aligned}\]</span></p>
+<p>oleh teorema Fubini dan Tonelli (<a class="xref" href="../252/index.html#252H">252H</a>), dengan menggunakan fakta bahwa
+<span class="math inline" data-source-tex="(e^{icy}-e^{idy})/y">\((e^{icy}-e^{idy})/y\)</span> terbatas untuk melihat bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_{-\infty}^{\infty}\int_{-a}^{a}
+  \bigl|\bover{e^{icy}-e^{idy}}{y}e^{-iyx}f(x)\bigr|dydx">\(\int_{-\infty}^{\infty}\int_{-a}^{a}
+  \bigl|\bover{e^{icy}-e^{idy}}{y}e^{-iyx}f(x)\bigr|dydx\)</span></div>
+<p>berhingga; oleh karena itu, kita dapat menukar urutan integrasi.</p>
+<p><span class="math display" data-source-tex="\eqalign{\bover{i}{\sqrt{2\pi}}\lim_{a\to\infty}\int_{-a}^a
+\bover{e^{icy}-e^{idy}}{y}\varhatf(y)dy
+&amp;=-\bover{i}{2\pi}\lim_{a\to\infty}
+\int_{-\infty}^{\infty}f\times\theta_a\cr
+&amp;=-\bover{i}{2\pi}2\pi i\int_c^df
+=\int_c^df,\cr}">\[\begin{aligned}\bover{i}{\sqrt{2\pi}}\lim_{a\to\infty}\int_{-a}^a
+\bover{e^{icy}-e^{idy}}{y}\varhatf(y)dy
+&amp;=-\bover{i}{2\pi}\lim_{a\to\infty}
+\int_{-\infty}^{\infty}f\times\theta_a\\
+&amp;=-\bover{i}{2\pi}2\pi i\int_c^df
+=\int_c^df,\\\end{aligned}\]</span></p>
+<p>sesuai kebutuhan.</p></aside>
+</section>
+<section class="source-unit" id="283G" data-source-id="283G"><h2><span class="source-label">283G</span> Akibat </h2>
+<p>Jika <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span> adalah fungsi bernilai kompleks yang
+dapat diintegralkan pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, maka
+<span class="math inline" data-source-tex="\varhatf=\varhat{g}">\(\varhatf=\varhat{g}\)</span> jika <span class="math inline" data-source-tex="f\eae g">\(f\eae g\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Jika <span class="math inline" data-source-tex="f\eae g">\(f\eae g\)</span> maka tentu saja</p>
+<div class="centerline"><span class="math inline" data-source-tex="\varhatf(y)
+=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iyx}f(x)dx
+=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iyx}g(x)dx
+=\varhat{g}(y)">\(\varhatf(y)
+=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iyx}f(x)dx
+=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iyx}g(x)dx
+=\varhat{g}(y)\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="y\in\Bbb R">\(y\in\Bbb R\)</span>. Sebaliknya, jika
+<span class="math inline" data-source-tex="\varhatf=\varhat{g}">\(\varhatf=\varhat{g}\)</span>, maka oleh teorema terakhir</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_c^df=\int_c^dg">\(\int_c^df=\int_c^dg\)</span></div>
+<p>untuk semua <span class="math inline" data-source-tex="c\le d">\(c\le d\)</span>, sehingga <span class="math inline" data-source-tex="f=g">\(f=g\)</span> hampir di mana-mana, menurut <a class="xref" href="../222/index.html#222D">222D</a>.</p></aside>
+</section>
+<section class="source-unit" id="283H" data-source-id="283H"><h2><span class="source-label">283H</span> Lema </h2>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> adalah fungsi bernilai kompleks yang dapat
+diintegralkan pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan <span class="math inline" data-source-tex="\varhatf">\(\varhatf\)</span> transformasi Fourier-nya. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Bover1{\sqrt{2\pi}}\int_{-a}^{a}e^{ixy}\varhatf(y)dy
+=\Bover1{\pi}\int_{-\infty}^{\infty}\Bover{\sin a(x-t)}{x-t}f(t)dt
+=\Bover1{\pi}\int_{-\infty}^{\infty}\Bover{\sin at}{t}f(x-t)dt">\(\Bover1{\sqrt{2\pi}}\int_{-a}^{a}e^{ixy}\varhatf(y)dy
+=\Bover1{\pi}\int_{-\infty}^{\infty}\Bover{\sin a(x-t)}{x-t}f(t)dt
+=\Bover1{\pi}\int_{-\infty}^{\infty}\Bover{\sin at}{t}f(x-t)dt\)</span></div>
+<p>setiap kali <span class="math inline" data-source-tex="a&gt;0">\(a&gt;0\)</span> dan <span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Kita mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_{-a}^a\int_{-\infty}^{\infty}|e^{ixy}e^{-iyt}f(t)|dtdy
+\le 2a\int_{-\infty}^{\infty}|f(t)|dt&lt;\infty">\(\int_{-a}^a\int_{-\infty}^{\infty}|e^{ixy}e^{-iyt}f(t)|dtdy
+\le 2a\int_{-\infty}^{\infty}|f(t)|dt&lt;\infty\)</span>,</div>
+<p>jadi (karena fungsi <span class="math inline" data-source-tex="(t,y)\mapsto e^{ixy}e^{-iyt}f(t)">\((t,y)\mapsto e^{ixy}e^{-iyt}f(t)\)</span> adalah
+pasti terukur bersama-sama) kita dapat membalikkan urutan integrasi, dan
+mendapatkan</p>
+<p><span class="math display" data-source-tex="\eqalign{\Bover1{\sqrt{2\pi}}\int_{-a}^ae^{ixy}\varhatf(y)dy
+&amp;=\Bover1{2\pi}\int_{-a}^a\int_{-\infty}^{\infty}
+   e^{ixy}e^{-iyt}f(t)dt\,dy\cr
+&amp;=\Bover1{2\pi}\int_{-\infty}^{\infty}f(t)\int_{-a}^a
+   e^{i(x-t)y}dy\,dt\cr
+&amp;=\Bover1{2\pi}\int_{-\infty}^{\infty}
+   \Bover{2\sin(x-t)a}{x-t}f(t)dt
+=\Bover1{\pi}\int_{-\infty}^{\infty}
+   \Bover{\sin au}{u}f(x-u)du,\cr}">\[\begin{aligned}\Bover1{\sqrt{2\pi}}\int_{-a}^ae^{ixy}\varhatf(y)dy
+&amp;=\Bover1{2\pi}\int_{-a}^a\int_{-\infty}^{\infty}
+   e^{ixy}e^{-iyt}f(t)dt\,dy\\
+&amp;=\Bover1{2\pi}\int_{-\infty}^{\infty}f(t)\int_{-a}^a
+   e^{i(x-t)y}dy\,dt\\
+&amp;=\Bover1{2\pi}\int_{-\infty}^{\infty}
+   \Bover{2\sin(x-t)a}{x-t}f(t)dt
+=\Bover1{\pi}\int_{-\infty}^{\infty}
+   \Bover{\sin au}{u}f(x-u)du,\\\end{aligned}\]</span></p>
+<p>menggantikan <span class="math inline" data-source-tex="t=x-u">\(t=x-u\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="283I" data-source-id="283I"><h2><span class="source-label">283I</span> Teorema </h2>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> adalah fungsi bernilai kompleks yang
+dapat diintegralkan pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan anggaplah <span class="math inline" data-source-tex="f">\(f\)</span> terdiferensiasi di
+<span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="f(x)
+=\Bover{1}{\sqrt{2\pi}}
+\lim_{a\to\infty}\int_{-a}^ae^{ixy}\varhatf(y)dy
+=\Bover{1}{\sqrt{2\pi}}
+\lim_{a\to\infty}\int_{-a}^ae^{-ixy}\varcheckf(y)dy">\(f(x)
+=\Bover{1}{\sqrt{2\pi}}
+\lim_{a\to\infty}\int_{-a}^ae^{ixy}\varhatf(y)dy
+=\Bover{1}{\sqrt{2\pi}}
+\lim_{a\to\infty}\int_{-a}^ae^{-ixy}\varcheckf(y)dy\)</span>.</div>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Tetapkan <span class="math inline" data-source-tex="g(u)=f(x)">\(g(u)=f(x)\)</span> jika <span class="math inline" data-source-tex="|u|\le 1">\(|u|\le 1\)</span>, dan <span class="math inline" data-source-tex="0">\(0\)</span> jika tidak;
+perhatikan bahwa
+<span class="math inline" data-source-tex="\lim_{u\to 0}\bover1u(f(x-u)-g(u))=-f&#x27;(x)">\(\lim_{u\to 0}\bover1u(f(x-u)-g(u))=-f&#x27;(x)\)</span> terbatas, sehingga ada
+suatu <span class="math inline" data-source-tex="\delta\in\ocint{0,1}">\(\delta\in\ocint{0,1}\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="K
+=\sup_{0&lt;|u|\le\delta}\bigl|\Bover{f(x-u)-g(u)}{u}\bigr|&lt;\infty">\(K
+=\sup_{0&lt;|u|\le\delta}\bigl|\Bover{f(x-u)-g(u)}{u}\bigr|&lt;\infty\)</span>.</div>
+<p>Akibatnya</p>
+<p><span class="math display" data-source-tex="\eqalign{\int_{-\infty}^{\infty}\bigl|\Bover{f(x-u)-g(u)}{u}\bigr|du
+&amp;\le\Bover1{\delta}\int_{-\infty}^{-\delta}|f(x-u)|du
+   +\Bover1{\delta}\int_{-1}^1|g|\cr
+&amp;{\hskip 8em plus 0pt minus 0pt}
+   +\int_{-\delta}^{\delta}K
+   +\Bover1{\delta}\int_{\delta}^{\infty}|f(x-u)|du\cr
+&amp;\le\Bover{1}{\delta}\int_{-\infty}^{\infty}|f|
+   + \Bover2{\delta}|f(x)|+ 2\delta K
+&lt;\infty.\cr}">\[\begin{aligned}\int_{-\infty}^{\infty}\bigl|\Bover{f(x-u)-g(u)}{u}\bigr|du
+&amp;\le\Bover1{\delta}\int_{-\infty}^{-\delta}|f(x-u)|du
+   +\Bover1{\delta}\int_{-1}^1|g|\\
+&amp;{\hskip 8em plus 0pt minus 0pt}
+   +\int_{-\delta}^{\delta}K
+   +\Bover1{\delta}\int_{\delta}^{\infty}|f(x-u)|du\\
+&amp;\le\Bover{1}{\delta}\int_{-\infty}^{\infty}|f|
+   + \Bover2{\delta}|f(x)|+ 2\delta K
+&lt;\infty.\\\end{aligned}\]</span></p>
+<p>Oleh lema Riemann-Lebesgue (282Fb lagi),</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{a\to\infty}\int_{-\infty}^{\infty}
+\Bover{\sin au}{u}(f(x-u)-g(u))du=0">\(\lim_{a\to\infty}\int_{-\infty}^{\infty}
+\Bover{\sin au}{u}(f(x-u)-g(u))du=0\)</span>.</div>
+<p>Jika kita sekarang memeriksa <span class="math inline" data-source-tex="\int\bover{\sin au}{u}g(u)du">\(\int\bover{\sin au}{u}g(u)du\)</span>, kita mendapatkan</p>
+<p><span class="math display" data-source-tex="\eqalign{\int_{-\infty}^{\infty}\Bover{\sin au}{u}g(u)du
+&amp;=\int_{-1}^1\Bover{\sin au}{u}f(x)du
+=f(x)\int_{-a}^a\Bover{\sin v}{v}dv,\cr}">\[\begin{aligned}\int_{-\infty}^{\infty}\Bover{\sin au}{u}g(u)du
+&amp;=\int_{-1}^1\Bover{\sin au}{u}f(x)du
+=f(x)\int_{-a}^a\Bover{\sin v}{v}dv,\\\end{aligned}\]</span></p>
+<p>dengan mengganti <span class="math inline" data-source-tex="u=v/a">\(u=v/a\)</span>.   Jadi kita peroleh</p>
+<p><span class="math display" data-source-tex="\eqalign{\lim_{a\to\infty}\int_{-\infty}^{\infty}\Bover{\sin
+au}{u}f(x-u)du
+&amp;=\lim_{a\to\infty}\int_{-\infty}^{\infty}\Bover{\sin au}{u}g(u)du\cr
+&amp;=\lim_{a\to\infty}f(x)\int_{-a}^a\Bover{\sin v}{v}dv
+=\pi f(x),\cr}">\[\begin{aligned}\lim_{a\to\infty}\int_{-\infty}^{\infty}\Bover{\sin
+au}{u}f(x-u)du
+&amp;=\lim_{a\to\infty}\int_{-\infty}^{\infty}\Bover{\sin au}{u}g(u)du\\
+&amp;=\lim_{a\to\infty}f(x)\int_{-a}^a\Bover{\sin v}{v}dv
+=\pi f(x),\\\end{aligned}\]</span></p>
+<p>oleh 283Da.   Oleh karena itu</p>
+<p><span class="math display" data-source-tex="\Bover{1}{\sqrt{2\pi}}
+\lim_{a\to\infty}\int_{-a}^ae^{ixy}\varhatf(y)dy
+=\Bover{1}{\pi}\lim_{a\to\infty}\int_{-\infty}^{\infty}\Bover{\sin
+au}{u}f(x-u)du
+= f(x),">\[\Bover{1}{\sqrt{2\pi}}
+\lim_{a\to\infty}\int_{-a}^ae^{ixy}\varhatf(y)dy
+=\Bover{1}{\pi}\lim_{a\to\infty}\int_{-\infty}^{\infty}\Bover{\sin
+au}{u}f(x-u)du
+= f(x),\]</span></p>
+<p>menggunakan <a class="xref" href="#283H">283H</a>.    Adapun kesetaraan kedua,</p>
+<p><span class="math display" data-source-tex="\eqalignno{\Bover1{\sqrt{2\pi}}\lim_{a\to\infty}\int_{-a}^a
+e^{-ixy}\varcheckf(y)dy
+&amp;=\Bover1{\sqrt{2\pi}}\lim_{a\to\infty}\int_{-a}^a
+e^{-ixy}\varhatf(-y)dy\cr
+&amp;=\Bover1{\sqrt{2\pi}}\lim_{a\to\infty}\int_{-a}^a
+e^{ixu}\varhatf(u)du
+=f(x)\cr}">\[\begin{aligned}\Bover1{\sqrt{2\pi}}\lim_{a\to\infty}\int_{-a}^a
+e^{-ixy}\varcheckf(y)dy
+&amp;=\Bover1{\sqrt{2\pi}}\lim_{a\to\infty}\int_{-a}^a
+e^{-ixy}\varhatf(-y)dy\\
+&amp;=\Bover1{\sqrt{2\pi}}\lim_{a\to\infty}\int_{-a}^a
+e^{ixu}\varhatf(u)du
+=f(x)\\\end{aligned}\]</span></p>
+<p>(memasukkan <span class="math inline" data-source-tex="y=-u">\(y=-u\)</span>).</p></aside>
+<p> </p>
+<p><strong>Keterangan</strong> Bandingkan <a class="xref" href="../282/index.html#282L">282L</a>.</p>
+</section>
+<section class="source-unit" id="283J" data-source-id="283J"><h2><span class="source-label">283J</span> Akibat </h2>
+<p>Misalkan <span class="math inline" data-source-tex="f:\Bbb R\to\Bbb C">\(f:\Bbb R\to\Bbb C\)</span> adalah fungsi yang dapat
+diintegralkan sedemikian sehingga <span class="math inline" data-source-tex="f">\(f\)</span> terdiferensiasi dan <span class="math inline" data-source-tex="\varhatf">\(\varhatf\)</span> dapat
+diintegralkan. Maka <span class="math inline" data-source-tex="f=(\varhatf)\varspcheck=(\varcheckf)\varsphat">\(f=(\varhatf)\varspcheck=(\varcheckf)\varsphat\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Karena <span class="math inline" data-source-tex="\varhatf">\(\varhatf\)</span> dapat diintegralkan,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\varhatf\varcheck{\phantom{f}}(x)=\lim_{a\to\infty}
+\Bover1{\sqrt{2\pi}}\int_{-a}^ae^{ixy}\varhatf(y)dy = f(x)">\(\varhatf\varcheck{\phantom{f}}(x)=\lim_{a\to\infty}
+\Bover1{\sqrt{2\pi}}\int_{-a}^ae^{ixy}\varhatf(y)dy = f(x)\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span>.  Demikian pula,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\varcheckf\varhat{\phantom{f}}(x)=\lim_{a\to\infty}
+\Bover1{\sqrt{2\pi}}\int_{-a}^ae^{-ixy}\varcheckf(y)dy = f(x).">\(\varcheckf\varhat{\phantom{f}}(x)=\lim_{a\to\infty}
+\Bover1{\sqrt{2\pi}}\int_{-a}^ae^{-ixy}\varcheckf(y)dy = f(x).\)</span></div></aside>
+<p> </p>
+<p><strong>Catatan</strong> Lihat juga <a class="xref" href="#283Wk">283Wk</a> di bawah.</p>
+</section>
+<section class="source-unit" id="283K" data-source-id="283K"><h2><span class="source-label">283K</span>  </h2>
+<p>Proposisi berikutnya memberikan kelas fungsi
+yang padanya akibat terakhir dapat diterapkan.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> adalah fungsi dari <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> ke <span class="math inline" data-source-tex="\Bbb C">\(\Bbb C\)</span>
+yang terdiferensiasi dua kali dan <span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="f&#x27;">\(f&#x27;\)</span>, serta <span class="math inline" data-source-tex="f&#x27;&#x27;">\(f&#x27;&#x27;\)</span> semuanya dapat
+diintegralkan. Maka <span class="math inline" data-source-tex="\varhatf">\(\varhatf\)</span>
+dapat diintegralkan.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Karena <span class="math inline" data-source-tex="f&#x27;">\(f&#x27;\)</span> dan <span class="math inline" data-source-tex="f&#x27;&#x27;">\(f&#x27;&#x27;\)</span> dapat diintegralkan, <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="f&#x27;">\(f&#x27;\)</span>
+kontinu mutlak pada interval terbatas mana pun (<a class="xref" href="../225/index.html#225L">225L</a>).   Jadi dengan 283Ci
+kita punya</p>
+<div class="centerline"><span class="math inline" data-source-tex="(f&#x27;&#x27;)\varsphat(y)=iy(f&#x27;)\varsphat(y)=-y^2\varhatf(y)">\((f&#x27;&#x27;)\varsphat(y)=iy(f&#x27;)\varsphat(y)=-y^2\varhatf(y)\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="y\in\Bbb R">\(y\in\Bbb R\)</span>. Pada saat yang sama, menurut
+283Cf-283Cg, <span class="math inline" data-source-tex="(f&#x27;&#x27;)\varsphat">\((f&#x27;&#x27;)\varsphat\)</span> dan <span class="math inline" data-source-tex="\varhatf">\(\varhatf\)</span> harus terbatas; katakanlah
+<span class="math inline" data-source-tex="|\varhatf(y)|+|(f&#x27;&#x27;)\varsphat(y)|\le K">\(|\varhatf(y)|+|(f&#x27;&#x27;)\varsphat(y)|\le K\)</span> untuk setiap <span class="math inline" data-source-tex="y\in\Bbb R">\(y\in\Bbb R\)</span>.   Sekarang</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\varhatf(y)|\le\Bover{K}{1+y^2}">\(|\varhatf(y)|\le\Bover{K}{1+y^2}\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="y">\(y\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_{-\infty}^{\infty}|\varhatf|
+\le K\int_{-\infty}^{-1}\Bover{1}{y^2}dy
+  +2K+K\int_{1}^{\infty}\Bover{1}{y^2}dy
+=4K&lt;\infty">\(\int_{-\infty}^{\infty}|\varhatf|
+\le K\int_{-\infty}^{-1}\Bover{1}{y^2}dy
+  +2K+K\int_{1}^{\infty}\Bover{1}{y^2}dy
+=4K&lt;\infty\)</span>.</div></aside>
+<p> </p>
+<p><strong>Keterangan</strong> Bandingkan 282Rb.</p>
+</section>
+<section class="source-unit" id="283L" data-source-id="283L"><h2><span class="source-label">283L</span>  </h2>
+<p>Sekarang saya beralih ke hasil yang bersesuaian dengan <a class="xref" href="../282/index.html#282O">282O</a>,
+menggunakan pendekatan yang sedikit berbeda.</p>
+<p> </p>
+<p><strong>Teorema</strong> Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> adalah fungsi bernilai kompleks yang
+dapat diintegralkan pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dengan transformasi Fourier <span class="math inline" data-source-tex="\varhatf">\(\varhatf\)</span> dan
+transformasi Fourier invers <span class="math inline" data-source-tex="\varcheckf">\(\varcheckf\)</span>, dan anggaplah <span class="math inline" data-source-tex="f">\(f\)</span> memiliki variasi
+terbatas pada suatu lingkungan dari <span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span>. Tetapkan
+<span class="math inline" data-source-tex="a=\lim_{t\in\dom f,t\uparrow x}f(t)">\(a=\lim_{t\in\dom f,t\uparrow x}f(t)\)</span>,
+<span class="math inline" data-source-tex="b=\lim_{t\in\dom f,t\downarrow x}f(t)">\(b=\lim_{t\in\dom f,t\downarrow x}f(t)\)</span>. Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Bover1{\sqrt{2\pi}}\lim_{\gamma\to\infty}
+     \int_{-\gamma}^{\gamma}e^{ixy}\varhatf(y)dy
+=\Bover1{\sqrt{2\pi}}\lim_{\gamma\to\infty}
+     \int_{-\gamma}^{\gamma}e^{-ixy}\varcheckf(y)dy
+=\Bover12(a+b)">\(\Bover1{\sqrt{2\pi}}\lim_{\gamma\to\infty}
+     \int_{-\gamma}^{\gamma}e^{ixy}\varhatf(y)dy
+=\Bover1{\sqrt{2\pi}}\lim_{\gamma\to\infty}
+     \int_{-\gamma}^{\gamma}e^{-ixy}\varcheckf(y)dy
+=\Bover12(a+b)\)</span>.</div>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Limit <span class="math inline" data-source-tex="\lim_{t\in\dom f,t\uparrow x}f(t)">\(\lim_{t\in\dom f,t\uparrow x}f(t)\)</span> dan
+<span class="math inline" data-source-tex="\lim_{t\in\dom f,t\downarrow x}f(t)">\(\lim_{t\in\dom f,t\downarrow x}f(t)\)</span> ada karena <span class="math inline" data-source-tex="f">\(f\)</span> memiliki variasi
+terbatas di dekat <span class="math inline" data-source-tex="x">\(x\)</span> (<a class="xref" href="../224/index.html#224F">224F</a>). Ingat dari 283Db bahwa terdapat konstanta
+<span class="math inline" data-source-tex="K&lt;\infty">\(K&lt;\infty\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="|\int_{\gamma}^{\delta}\Bover{\sin cx}{x}dx|\le K">\(|\int_{\gamma}^{\delta}\Bover{\sin cx}{x}dx|\le K\)</span></div>
+<p>setiap kali <span class="math inline" data-source-tex="\gamma\le \delta">\(\gamma\le \delta\)</span> dan <span class="math inline" data-source-tex="c\in\Bbb R">\(c\in\Bbb R\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Misalkan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>.   Hipotesisnya adalah ada beberapa
+<span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sehingga <span class="math inline" data-source-tex="\Var_{[x-\delta,x+\delta]}(f)&lt;\infty">\(\Var_{[x-\delta,x+\delta]}(f)&lt;\infty\)</span>.
+Akibatnya</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{\eta\downarrow 0}\Var_{\ocint{x,x+\eta}}(f)
+=\lim_{\eta\downarrow 0}\Var_{\coint{x-\eta,x}}(f)=0">\(\lim_{\eta\downarrow 0}\Var_{\ocint{x,x+\eta}}(f)
+=\lim_{\eta\downarrow 0}\Var_{\coint{x-\eta,x}}(f)=0\)</span></div>
+<p>(<a class="xref" href="../224/index.html#224E">224E</a>).   Oleh karena itu ada <span class="math inline" data-source-tex="\eta&gt;0">\(\eta&gt;0\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\max(\Var_{\coint{x-\eta,x}}(f),
+               \Var_{\ocint{x,x+\eta}}(f))\le\epsilon">\(\max(\Var_{\coint{x-\eta,x}}(f),
+               \Var_{\ocint{x,x+\eta}}(f))\le\epsilon\)</span>.</div>
+<p>Tentu saja</p>
+<div class="centerline"><span class="math inline" data-source-tex="|f(t)-f(u)|\le\Var_{\coint{x-\eta,x}}(f)\le\epsilon">\(|f(t)-f(u)|\le\Var_{\coint{x-\eta,x}}(f)\le\epsilon\)</span></div>
+<p>kapan pun <span class="math inline" data-source-tex="t">\(t\)</span>, <span class="math inline" data-source-tex="u\in\dom f">\(u\in\dom f\)</span> dan <span class="math inline" data-source-tex="x-\eta\le t\le u&lt;x">\(x-\eta\le t\le u&lt;x\)</span>, sehingga kita
+akan memiliki</p>
+<div class="centerline"><span class="math inline" data-source-tex="|f(t)-a|\le\epsilon">\(|f(t)-a|\le\epsilon\)</span> untuk setiap
+<span class="math inline" data-source-tex="t\in\dom f\cap\coint{x-\eta,x}">\(t\in\dom f\cap\coint{x-\eta,x}\)</span>,</div>
+<p>dan demikian pula</p>
+<div class="centerline"><span class="math inline" data-source-tex="|f(t)-b|\le\epsilon">\(|f(t)-b|\le\epsilon\)</span> setiap kali <span class="math inline" data-source-tex="t\in\dom f
+\cap\ocint{x,x+\eta}">\(t\in\dom f
+\cap\ocint{x,x+\eta}\)</span>.</div>
+<p> </p>
+<p><strong>(c)</strong> Sekarang tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="g_1(t)=f(t)">\(g_1(t)=f(t)\)</span> ketika <span class="math inline" data-source-tex="t\in\dom f">\(t\in\dom f\)</span> dan <span class="math inline" data-source-tex="|x-t|&gt;\eta">\(|x-t|&gt;\eta\)</span>, <span class="math inline" data-source-tex="0">\(0\)</span>
+sebaliknya,</div>
+<div class="centerline"><span class="math inline" data-source-tex="g_2(t)=a">\(g_2(t)=a\)</span> ketika <span class="math inline" data-source-tex="x-\eta\le t&lt;x">\(x-\eta\le t&lt;x\)</span>, <span class="math inline" data-source-tex="b">\(b\)</span> ketika <span class="math inline" data-source-tex="x&lt;t\le x+\eta">\(x&lt;t\le x+\eta\)</span>,
+<span class="math inline" data-source-tex="0">\(0\)</span> sebaliknya,</div>
+<div class="centerline"><span class="math inline" data-source-tex="g_3=f-g_1-g_2">\(g_3=f-g_1-g_2\)</span>.</div>
+<p>Maka <span class="math inline" data-source-tex="f=g_1+g_2+g_3">\(f=g_1+g_2+g_3\)</span>;  setiap <span class="math inline" data-source-tex="g_j">\(g_j\)</span> dapat diintegralkan;  <span class="math inline" data-source-tex="g_1">\(g_1\)</span> adalah
+nol di lingkungan <span class="math inline" data-source-tex="x">\(x\)</span>;</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sup_{t\in\dom g_3,t\ne x}|g_3(t)|\le\epsilon">\(\sup_{t\in\dom g_3,t\ne x}|g_3(t)|\le\epsilon\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="\Var_{\coint{x-\eta,x}}(g_3)\le\epsilon">\(\Var_{\coint{x-\eta,x}}(g_3)\le\epsilon\)</span>,
+   <span class="math inline" data-source-tex="\Var_{\ocint{x,x+\eta}}(g_3)\le\epsilon">\(\Var_{\ocint{x,x+\eta}}(g_3)\le\epsilon\)</span>.</div>
+<p> </p>
+<p><strong>(d)</strong> Pertimbangkan tiga bagian <span class="math inline" data-source-tex="g_1">\(g_1\)</span>, <span class="math inline" data-source-tex="g_2">\(g_2\)</span>, <span class="math inline" data-source-tex="g_3">\(g_3\)</span> secara terpisah.</p>
+<p> </p>
+<p>  <strong>(i)</strong> Untuk yang pertama, kita punya</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{\gamma\to\infty}\Bover1{\sqrt{2\pi}}
+   \int_{-\gamma}^{\gamma}e^{ixy}\varhat{g}_1(y)dy=0">\(\lim_{\gamma\to\infty}\Bover1{\sqrt{2\pi}}
+   \int_{-\gamma}^{\gamma}e^{ixy}\varhat{g}_1(y)dy=0\)</span></div>
+<p>oleh <a class="xref" href="#283I">283I</a>.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Selanjutnya,</p>
+<p><span class="math display" data-source-tex="\eqalignno{\Bover{1}{\sqrt{2\pi}}
+        \int_{-\gamma}^{\gamma}e^{ixy}\varhat{g}_2(y)dy
+&amp;=\Bover1{\pi}\int_{-\infty}^{\infty}
+        \Bover{\sin(x-t)\gamma}{x-t}g_2(t)dt\cr
+\noalign{\noindent (menurut 283H)}
+&amp;=\Bover{a}{\pi}\int_{x-\eta}^{x}\Bover{\sin(x-t)\gamma}{x-t}dt
+   +\Bover{b}{\pi}\int_{x}^{x+\eta}\Bover{\sin(x-t)\gamma}{x-t}dt\cr
+&amp;=\Bover{a}{\pi}\int_0^{\gamma\eta}\Bover{\sin u}{u}du
+   +\Bover{b}{\pi}\int_{0}^{\gamma\eta}\Bover{\sin u}{u}du\cr
+\noalign{\noindent (dengan substitusi $t=x-\bover{1}{\gamma}u$ pada integral pertama,
+$t=x+\bover1{\gamma}u$ pada integral kedua)}
+&amp;\to \Bover{a+b}{2}\text{ ketika }\gamma\to\infty\cr}">\[\begin{aligned}\Bover{1}{\sqrt{2\pi}}
+        \int_{-\gamma}^{\gamma}e^{ixy}\varhat{g}_2(y)dy
+&amp;=\Bover1{\pi}\int_{-\infty}^{\infty}
+        \Bover{\sin(x-t)\gamma}{x-t}g_2(t)dt\\
+&amp;\text{(menurut 283H)}\\
+&amp;=\Bover{a}{\pi}\int_{x-\eta}^{x}\Bover{\sin(x-t)\gamma}{x-t}dt
+   +\Bover{b}{\pi}\int_{x}^{x+\eta}\Bover{\sin(x-t)\gamma}{x-t}dt\\
+&amp;=\Bover{a}{\pi}\int_0^{\gamma\eta}\Bover{\sin u}{u}du
+   +\Bover{b}{\pi}\int_{0}^{\gamma\eta}\Bover{\sin u}{u}du\\
+&amp;\text{(dengan substitusi }t=x-\bover{1}{\gamma}u\text{ pada integral pertama,
+}t=x+\bover1{\gamma}u\text{ pada integral kedua)}\\
+&amp;\to \Bover{a+b}{2}\text{ ketika }\gamma\to\infty\\\end{aligned}\]</span></p>
+<p>oleh 283Da.</p>
+<p> </p>
+<p>  <strong>(iii)</strong> Untuk yang ketiga, kita mempunyai, untuk setiap <span class="math inline" data-source-tex="\gamma&gt;0">\(\gamma&gt;0\)</span>,</p>
+<p><span class="math display" data-source-tex="\eqalignno{\bigl|\Bover1{\sqrt{2\pi}}\int_{-\gamma}^{\gamma}e^{ixy}
+     \varhat{g}_3(y)dy\bigr|
+&amp;=\Bover1{\pi}\bigl|\int_{-\infty}^{\infty}
+     \Bover{\sin(x-t)\gamma}{x-t}g_3(t)dt\bigr|
+=\Bover1{\pi}\bigl|\int_{-\infty}^{\infty}
+     \Bover{\sin t\gamma}{t}g_3(x-t)dt\bigr|\cr
+&amp;\le\Bover1{\pi}\bigl|\int_{-\eta}^0
+     \Bover{\sin t\gamma}{t}g_3(x-t)dt\bigr|
+   +\Bover1{\pi}\bigl|\int_0^{\eta}
+     \Bover{\sin t\gamma}{t}g_3(x-t)dt\bigr|\cr
+&amp;\le \Bover{K}{\pi}\Bigl(\sup_{t\in\dom g_3\cap\ooint{x-\eta,x}}|g_3(t)|
+   +\Var_{\ooint{x-\eta,x}}(g_3)\cr
+  &amp;{\hskip 8em plus 0pt minus 0pt}
+   +\sup_{t\in\dom g_3\cap\ooint{x,x+\eta}}|g_3(t)|
+   +\Var_{\ooint{x,x+\eta}}(g_3)\Bigr)\cr
+&amp;\le 4\epsilon\Bover{K}{\pi},\cr}">\[\begin{aligned}\bigl|\Bover1{\sqrt{2\pi}}\int_{-\gamma}^{\gamma}e^{ixy}
+     \varhat{g}_3(y)dy\bigr|
+&amp;=\Bover1{\pi}\bigl|\int_{-\infty}^{\infty}
+     \Bover{\sin(x-t)\gamma}{x-t}g_3(t)dt\bigr|
+=\Bover1{\pi}\bigl|\int_{-\infty}^{\infty}
+     \Bover{\sin t\gamma}{t}g_3(x-t)dt\bigr|\\
+&amp;\le\Bover1{\pi}\bigl|\int_{-\eta}^0
+     \Bover{\sin t\gamma}{t}g_3(x-t)dt\bigr|
+   +\Bover1{\pi}\bigl|\int_0^{\eta}
+     \Bover{\sin t\gamma}{t}g_3(x-t)dt\bigr|\\
+&amp;\le \Bover{K}{\pi}\Bigl(\sup_{t\in\dom g_3\cap\ooint{x-\eta,x}}|g_3(t)|
+   +\Var_{\ooint{x-\eta,x}}(g_3)\\
+  &amp;{\hskip 8em plus 0pt minus 0pt}
+   +\sup_{t\in\dom g_3\cap\ooint{x,x+\eta}}|g_3(t)|
+   +\Var_{\ooint{x,x+\eta}}(g_3)\Bigr)\\
+&amp;\le 4\epsilon\Bover{K}{\pi},\\\end{aligned}\]</span></p>
+<p>dengan menggunakan <a class="xref" href="../224/index.html#224J">224J</a> lagi untuk memperkirakan integral
+berdasarkan variasi dan supremum <span class="math inline" data-source-tex="g_3">\(g_3\)</span> serta integral
+<span class="math inline" data-source-tex="\bover{\sin\gamma t}{t}">\(\bover{\sin\gamma t}{t}\)</span> pada subinterval.</p>
+<p> </p>
+<p><strong>(e)</strong> Oleh karena itu, kita mempunyai</p>
+<p><span class="math display" data-source-tex="\eqalign{\limsup_{\gamma\to\infty}\bigl|\Bover1{\sqrt{2\pi}}
+        \int_{-\gamma}^{\gamma}
+   &amp;e^{ixy}\varhatf(y)dy-\Bover{a+b}{2}\bigr|\cr
+&amp;\le\limsup_{\gamma\to\infty}\Bover1{\sqrt{2\pi}}
+     \bigl|\int_{-\gamma}^{\gamma}e^{ixy}\varhat{g}_1(y)dy\bigr|\cr
+&amp;{\hskip 6em plus 0pt minus 0pt}
+     +\limsup_{\gamma\to\infty}\bigl|\Bover1{\sqrt{2\pi}}
+     \int_{-\gamma}^{\gamma}e^{ixy}\varhat{g}_2(y)dy
+     -\Bover{a+b}{2}\bigr|\cr
+&amp;{\hskip 6em plus 0pt minus 0pt}
+     +\limsup_{\gamma\to\infty}\Bover1{\sqrt{2\pi}}
+     \bigl|\int_{-\gamma}^{\gamma}e^{ixy}\varhat{g}_3(y)\,dy\bigr|\cr
+&amp;\le 0+0+\Bover{4K}{\pi}\epsilon\cr}">\[\begin{aligned}\limsup_{\gamma\to\infty}\bigl|\Bover1{\sqrt{2\pi}}
+        \int_{-\gamma}^{\gamma}
+   &amp;e^{ixy}\varhatf(y)dy-\Bover{a+b}{2}\bigr|\\
+&amp;\le\limsup_{\gamma\to\infty}\Bover1{\sqrt{2\pi}}
+     \bigl|\int_{-\gamma}^{\gamma}e^{ixy}\varhat{g}_1(y)dy\bigr|\\
+&amp;{\hskip 6em plus 0pt minus 0pt}
+     +\limsup_{\gamma\to\infty}\bigl|\Bover1{\sqrt{2\pi}}
+     \int_{-\gamma}^{\gamma}e^{ixy}\varhat{g}_2(y)dy
+     -\Bover{a+b}{2}\bigr|\\
+&amp;{\hskip 6em plus 0pt minus 0pt}
+     +\limsup_{\gamma\to\infty}\Bover1{\sqrt{2\pi}}
+     \bigl|\int_{-\gamma}^{\gamma}e^{ixy}\varhat{g}_3(y)\,dy\bigr|\\
+&amp;\le 0+0+\Bover{4K}{\pi}\epsilon\\\end{aligned}\]</span></p>
+<p>dengan perhitungan pada (d).   Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> bersifat arbitrer,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{\gamma\to\infty}\Bover1{\sqrt{2\pi}}
+     \int_{-\gamma}^{\gamma}e^{ixy}\varhatf(y)dy-\Bover{a+b}{2}=0">\(\lim_{\gamma\to\infty}\Bover1{\sqrt{2\pi}}
+     \int_{-\gamma}^{\gamma}e^{ixy}\varhatf(y)dy-\Bover{a+b}{2}=0\)</span>.</div>
+<p> </p>
+<p><strong>(f)</strong> Ini adalah paruh pertama teorema.   Namun tentu saja bagian kedua
+segera menyusul, karena</p>
+<p><span class="math display" data-source-tex="\eqalign{\Bover1{\sqrt{2\pi}}\lim_{\gamma\to\infty}
+    \int_{-\gamma}^{\gamma}e^{-ixy}\varcheckf(y)dy
+&amp;=\Bover1{\sqrt{2\pi}}\lim_{\gamma\to\infty}
+    \int_{-\gamma}^{\gamma}e^{-ixy}\varhatf(-y)dy\cr
+&amp;=\Bover1{\sqrt{2\pi}}\lim_{\gamma\to\infty}
+    \int_{-\gamma}^{\gamma}e^{ixy}\varhatf(y)dy
+=\Bover{a+b}2.\cr}">\[\begin{aligned}\Bover1{\sqrt{2\pi}}\lim_{\gamma\to\infty}
+    \int_{-\gamma}^{\gamma}e^{-ixy}\varcheckf(y)dy
+&amp;=\Bover1{\sqrt{2\pi}}\lim_{\gamma\to\infty}
+    \int_{-\gamma}^{\gamma}e^{-ixy}\varhatf(-y)dy\\
+&amp;=\Bover1{\sqrt{2\pi}}\lim_{\gamma\to\infty}
+    \int_{-\gamma}^{\gamma}e^{ixy}\varhatf(y)dy
+=\Bover{a+b}2.\\\end{aligned}\]</span></p></aside>
+<p> </p>
+<p><strong>Catatan</strong> Anda akan melihat bahwa argumen ini menggunakan beberapa ide
+yang sama seperti yang ada di <a class="xref" href="../282/index.html#282O">282O</a>–<a class="xref" href="../282/index.html#282P">282P</a>.   Argumen ini lebih langsung karena
+(i) saya tidak menggunakan konsep apa pun yang bersesuaian dengan jumlah Fejér
+(meskipun ada konsep yang sangat sesuai untuk tujuan ini; lihat <a class="xref" href="#283Xf">283Xf</a>);
+(ii) saya tidak repot-repot memberikan hasil tentang konvergensi seragam
+integral Fejér ketika <span class="math inline" data-source-tex="f">\(f\)</span> kontinu dan mempunyai variasi terbatas (<a class="xref" href="#283Xj">283Xj</a>);
+dan (iii) saya tidak menyinggung pentingnya fakta bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span> mempunyai
+variasi terbatas, maka <span class="math inline" data-source-tex="\sup_{y\in\Bbb R}|y\varhatf(y)|&lt;\infty">\(\sup_{y\in\Bbb R}|y\varhatf(y)|&lt;\infty\)</span> (<a class="xref" href="#283Xk">283Xk</a>).</p>
+</section>
+<section class="source-unit" id="283M" data-source-id="283M"><h2><span class="source-label">283M</span>  </h2>
+<p>Sesuai dengan <a class="xref" href="../282/index.html#282Q">282Q</a>, kami memiliki yang berikut ini.</p>
+<p> </p>
+<p><strong>Teorema</strong> Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span> adalah fungsi bernilai kompleks
+yang dapat diintegralkan pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan <span class="math inline" data-source-tex="f*g">\(f*g\)</span> produk konvolusinya,
+ditentukan dengan menetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="(f*g)(x)=\int_{-\infty}^{\infty}f(t)g(x-t)dt">\((f*g)(x)=\int_{-\infty}^{\infty}f(t)g(x-t)dt\)</span></div>
+<p>setiap kali ini didefinisikan (<a class="xref" href="../255/index.html#255E">255E</a>).   Maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="(f*g)\varsphat(y)
+=\sqrt{2\pi}\varhatf(y)\varhat{g}(y)">\((f*g)\varsphat(y)
+=\sqrt{2\pi}\varhatf(y)\varhat{g}(y)\)</span>,
+<span class="math inline" data-source-tex="(f*g)\varspcheck(y)
+=\sqrt{2\pi}\varcheckf(y)\varcheck{g}(y)">\((f*g)\varspcheck(y)
+=\sqrt{2\pi}\varcheckf(y)\varcheck{g}(y)\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="y\in\Bbb R">\(y\in\Bbb R\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Untuk setiap <span class="math inline" data-source-tex="y">\(y\)</span>,</p>
+<p><span class="math display" data-source-tex="\eqalignno{(f*g)\varsphat(y)
+&amp;=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iyx}(f*g)(x)dx\cr
+&amp;=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+e^{-iy(t+u)}f(t)g(u)dtdu\cr
+\noalign{\noindent (dengan menggunakan 255G)}
+&amp;=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iyt}f(t)dt
+\int_{-\infty}^{\infty}e^{-iyu}g(u)du
+=\sqrt{2\pi}\varhatf(y)\varhat{g}(y).\cr}">\[\begin{aligned}(f*g)\varsphat(y)
+&amp;=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iyx}(f*g)(x)dx\\
+&amp;=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+e^{-iy(t+u)}f(t)g(u)dtdu\\
+&amp;\text{(dengan menggunakan 255G)}\\
+&amp;=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iyt}f(t)dt
+\int_{-\infty}^{\infty}e^{-iyu}g(u)du
+=\sqrt{2\pi}\varhatf(y)\varhat{g}(y).\\\end{aligned}\]</span></p>
+<p>Sekarang, tentu saja,</p>
+<div class="centerline"><span class="math inline" data-source-tex="(f*g)\varspcheck(y)
+=(f*g)\varsphat(-y)
+=\sqrt{2\pi}\varhatf(-y)\varhat{g}(-y)
+=\sqrt{2\pi}\varcheckf(y)\varcheck{g}(y)">\((f*g)\varspcheck(y)
+=(f*g)\varsphat(-y)
+=\sqrt{2\pi}\varhatf(-y)\varhat{g}(-y)
+=\sqrt{2\pi}\varcheckf(y)\varcheck{g}(y)\)</span>.</div></aside>
+</section>
+<section class="source-unit" id="283N" data-source-id="283N"><h2><span class="source-label">283N</span>  </h2>
+<p>Saya menunjukkan cara menghitung transformasi Fourier
+khusus, yang mana
+akan digunakan berulang kali di bagian berikutnya.</p>
+<p> </p>
+<p><strong>Lema</strong> Untuk <span class="math inline" data-source-tex="\sigma&gt;0">\(\sigma&gt;0\)</span>, atur
+<span class="math inline" data-source-tex="\psi_{\sigma}(x)=\bover1{\sigma\sqrt{2\pi}}e^{-x^2/2\sigma^2}">\(\psi_{\sigma}(x)=\bover1{\sigma\sqrt{2\pi}}e^{-x^2/2\sigma^2}\)</span> untuk
+<span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span>.   Maka transformasi Fourier dan transformasi Fourier invers
+adalah</p>
+<div class="centerline"><span class="math inline" data-source-tex="\varhat{\psi}_{\sigma}=\varcheck{\psi}_{\sigma}
+=\Bover1{\sigma}\psi_{1/\sigma}">\(\varhat{\psi}_{\sigma}=\varcheck{\psi}_{\sigma}
+=\Bover1{\sigma}\psi_{1/\sigma}\)</span>.</div>
+<p>Khususnya, <span class="math inline" data-source-tex="\varhat{\psi}_1=\psi_1">\(\varhat{\psi}_1=\psi_1\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Saya memulai dengan kasus khusus <span class="math inline" data-source-tex="\sigma=1">\(\sigma=1\)</span>, menggunakan deret
+Maclaurin</p>
+<div class="centerline"><span class="math inline" data-source-tex="e^{-iyx}=\sum_{k=0}^{\infty}\Bover{(-iyx)^k}{k!}">\(e^{-iyx}=\sum_{k=0}^{\infty}\Bover{(-iyx)^k}{k!}\)</span></div>
+<p>dan ekspresi untuk
+<span class="math inline" data-source-tex="\int_{-\infty}^{\infty}x^ke^{-x^2/2}dx">\(\int_{-\infty}^{\infty}x^ke^{-x^2/2}dx\)</span> dari §<a class="xref" href="../263/index.html#263">263</a>.</p>
+<p>Tetapkan <span class="math inline" data-source-tex="y\in\Bbb R">\(y\in\Bbb R\)</span>.    Menulis</p>
+<div class="centerline"><span class="math inline" data-source-tex="g_k(x)=\Bover{(-iyx)^k}{k!}e^{-x^2/2}">\(g_k(x)=\Bover{(-iyx)^k}{k!}e^{-x^2/2}\)</span>,
+<span class="math inline" data-source-tex="h_n(x)=\sum_{k=0}^ng_k(x)">\(h_n(x)=\sum_{k=0}^ng_k(x)\)</span>,   <span class="math inline" data-source-tex="h(x)=e^{|yx|-x^2/2}">\(h(x)=e^{|yx|-x^2/2}\)</span>,</div>
+<p>kita melihat bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="|g_k(x)|\le \Bover{|yx|^k}{k!}e^{-x^2/2}">\(|g_k(x)|\le \Bover{|yx|^k}{k!}e^{-x^2/2}\)</span>,</div>
+<p>sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="|h_n(x)|\le\sum_{k=0}^{\infty}|g_k(x)|
+\le e^{|yx|}e^{-x^2/2}=h(x)">\(|h_n(x)|\le\sum_{k=0}^{\infty}|g_k(x)|
+\le e^{|yx|}e^{-x^2/2}=h(x)\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>;  terlebih lagi, <span class="math inline" data-source-tex="h">\(h\)</span> dapat diintegralkan, karena
+<span class="math inline" data-source-tex="|h(x)|\le e^{-|x|}">\(|h(x)|\le e^{-|x|}\)</span> setiap kali <span class="math inline" data-source-tex="|x|\ge 2(1+|y|)">\(|x|\ge 2(1+|y|)\)</span>.   Akibatnya, menggunakan
+Teorema Konvergensi Dominasi Lebesgue,</p>
+<p><span class="math display" data-source-tex="\eqalignno{\varhat{\psi}_1(y)
+&amp;=\Bover1{{2\pi}}\int_{-\infty}^{\infty}
+  \lim_{n\to\infty}h_n\
+=\Bover1{{2\pi}}\lim_{n\to\infty}\int_{-\infty}^{\infty}
+  h_n\cr
+&amp;=\Bover1{{2\pi}}\sum_{k=0}^{\infty}
+  \int_{-\infty}^{\infty}g_k
+=\Bover1{{2\pi}}\sum_{k=0}^{\infty}\Bover{(-iy)^k}{k!}
+  \int_{-\infty}^{\infty}x^ke^{-x^2/2}dx\cr
+&amp;=\Bover1{{2\pi}}\sum_{j=0}^{\infty}\Bover{(-iy)^{2j}}{(2j)!}
+  \Bover{(2j)!}{2^jj!}\sqrt{2\pi}\cr
+\noalign{\noindent (menurut 263H)}
+&amp;=\Bover1{\sqrt{2\pi}}\sum_{j=0}^{\infty}\Bover{(-y^2)^j}{2^jj!}
+=\Bover1{\sqrt{2\pi}}e^{-y^2/2}
+=\psi_1(y),\cr}">\[\begin{aligned}\varhat{\psi}_1(y)
+&amp;=\Bover1{{2\pi}}\int_{-\infty}^{\infty}
+  \lim_{n\to\infty}h_n\
+=\Bover1{{2\pi}}\lim_{n\to\infty}\int_{-\infty}^{\infty}
+  h_n\\
+&amp;=\Bover1{{2\pi}}\sum_{k=0}^{\infty}
+  \int_{-\infty}^{\infty}g_k
+=\Bover1{{2\pi}}\sum_{k=0}^{\infty}\Bover{(-iy)^k}{k!}
+  \int_{-\infty}^{\infty}x^ke^{-x^2/2}dx\\
+&amp;=\Bover1{{2\pi}}\sum_{j=0}^{\infty}\Bover{(-iy)^{2j}}{(2j)!}
+  \Bover{(2j)!}{2^jj!}\sqrt{2\pi}\\
+&amp;\text{(menurut 263H)}\\
+&amp;=\Bover1{\sqrt{2\pi}}\sum_{j=0}^{\infty}\Bover{(-y^2)^j}{2^jj!}
+=\Bover1{\sqrt{2\pi}}e^{-y^2/2}
+=\psi_1(y),\\\end{aligned}\]</span></p>
+<p>seperti yang diklaim.</p>
+<p> </p>
+<p><strong>(b)</strong> Untuk kasus umum
+<span class="math inline" data-source-tex="\psi_{\sigma}(x)=\Bover1{\sigma}\psi_1(\Bover{x}{\sigma})">\(\psi_{\sigma}(x)=\Bover1{\sigma}\psi_1(\Bover{x}{\sigma})\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\varhat{\psi}_{\sigma}(y)
+=\Bover1{\sigma}\cdot\sigma\varhat{\psi}_1(\sigma y)
+=\Bover1\sigma\psi_{1/\sigma}(y)">\(\varhat{\psi}_{\sigma}(y)
+=\Bover1{\sigma}\cdot\sigma\varhat{\psi}_1(\sigma y)
+=\Bover1\sigma\psi_{1/\sigma}(y)\)</span></div>
+<p>oleh 283Ce.   Tentu saja sekarang kita punya</p>
+<div class="centerline"><span class="math inline" data-source-tex="\varcheck{\psi}_{\sigma}(y)=\varhat{\psi}_{\sigma}(-y)
+=\Bover1{\sigma}\psi_{1/\sigma}(y)">\(\varcheck{\psi}_{\sigma}(y)=\varhat{\psi}_{\sigma}(-y)
+=\Bover1{\sigma}\psi_{1/\sigma}(y)\)</span></div>
+<p>karena <span class="math inline" data-source-tex="\psi_{1/\sigma}">\(\psi_{1/\sigma}\)</span> merupakan fungsi genap.</p></aside>
+</section>
+<section class="source-unit" id="283O" data-source-id="283O"><h2><span class="source-label">283O</span>  </h2>
+<p>Untuk mengarahkan ide pada bagian selanjutnya, saya
+memberikan fakta yang sangat sederhana berikut.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span> adalah dua fungsi bernilai
+kompleks yang dapat diintegralkan pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Maka
+<span class="math inline" data-source-tex="\int_{-\infty}^{\infty}f\times\varhat{g}
+=\int_{-\infty}^{\infty}\varhatf\times g">\(\int_{-\infty}^{\infty}f\times\varhat{g}
+=\int_{-\infty}^{\infty}\varhatf\times g\)</span> dan
+<span class="math inline" data-source-tex="\int_{-\infty}^{\infty}f\times\varcheck{g}
+  =\int_{-\infty}^{\infty}\varcheckf\times g">\(\int_{-\infty}^{\infty}f\times\varcheck{g}
+  =\int_{-\infty}^{\infty}\varcheckf\times g\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Tentu saja</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+|e^{-ixy}f(x)g(y)|dxdy
+=\int_{-\infty}^{\infty}|f|\int_{-\infty}^{\infty}|g|&lt;\infty">\(\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+|e^{-ixy}f(x)g(y)|dxdy
+=\int_{-\infty}^{\infty}|f|\int_{-\infty}^{\infty}|g|&lt;\infty\)</span>,</div>
+<p>jadi</p>
+<p><span class="math display" data-source-tex="\eqalign{\int_{-\infty}^{\infty}f\times\varhat{g}
+&amp;=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+f(y)e^{-iyx}g(x)dxdy\cr
+&amp;=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+f(y)e^{-ixy}g(x)dydx
+=\int_{-\infty}^{\infty}\varhatf\times g.\cr}">\[\begin{aligned}\int_{-\infty}^{\infty}f\times\varhat{g}
+&amp;=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+f(y)e^{-iyx}g(x)dxdy\\
+&amp;=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+f(y)e^{-ixy}g(x)dydx
+=\int_{-\infty}^{\infty}\varhatf\times g.\\\end{aligned}\]</span></p>
+<p>Untuk separuh proposisi lainnya, ganti setiap
+<span class="math inline" data-source-tex="e^{-ixy}">\(e^{-ixy}\)</span> dalam argumen dengan <span class="math inline" data-source-tex="e^{ixy}">\(e^{ixy}\)</span>.</p></aside>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="283W" data-source-id="283W"><h2><span class="source-label">283W</span> Dimensi yang lebih tinggi </h2>
+<p>Saya menawarkan sebarisan latihan
+yang dirancang untuk memberikan petunjuk tentang bagaimana pekerjaan bagian ini dapat dilakukan
+dalam kasus dimensi
+<span class="math inline" data-source-tex="r">\(r\)</span>, di mana <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span>.</p>
+</section>
+<section class="source-unit" id="283Wa" data-source-id="283Wa"><h3><span class="source-label">283Wa</span> (a) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> adalah fungsi bernilai kompleks yang dapat
+diintegralkan dan terdefinisi hampir di mana-mana pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>.
+<strong>Transformasi Fourier</strong>-nya
+adalah fungsi <span class="math inline" data-source-tex="\varhatf:\BbbR^r\to\Bbb C">\(\varhatf:\BbbR^r\to\Bbb C\)</span> yang ditentukan oleh rumus</p>
+<div class="centerline"><span class="math inline" data-source-tex="\varhatf(y)
+=\Bover1{(\sqrt{2\pi})^r}\int e^{-iy\dotproduct x}f(x)dx">\(\varhatf(y)
+=\Bover1{(\sqrt{2\pi})^r}\int e^{-iy\dotproduct x}f(x)dx\)</span>,</div>
+<p>dengan menulis <span class="math inline" data-source-tex="y\dotproduct x=\eta_1\xi_1+\ldots+\eta_r\xi_r">\(y\dotproduct x=\eta_1\xi_1+\ldots+\eta_r\xi_r\)</span> untuk
+<span class="math inline" data-source-tex="x=(\xi_1,\ldots,\xi_r)">\(x=(\xi_1,\ldots,\xi_r)\)</span> dan <span class="math inline" data-source-tex="y=(\eta_1,\ldots,\eta_r)\in\BbbR^r">\(y=(\eta_1,\ldots,\eta_r)\in\BbbR^r\)</span>, dan
+<span class="math inline" data-source-tex="\int\ldots dx">\(\int\ldots dx\)</span> untuk integrasi sehubungan dengan ukuran Lebesgue di
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>.   Demikian pula, transformasi Fourier <strong>invers</strong> dari <span class="math inline" data-source-tex="f">\(f\)</span> adalah
+fungsi <span class="math inline" data-source-tex="\varcheckf">\(\varcheckf\)</span> yang diberikan oleh</p>
+<div class="centerline"><span class="math inline" data-source-tex="\varcheckf(y)
+=\Bover1{(\sqrt{2\pi})^r}\int e^{iy\dotproduct x}f(x)dx=\varhatf(-y)">\(\varcheckf(y)
+=\Bover1{(\sqrt{2\pi})^r}\int e^{iy\dotproduct x}f(x)dx=\varhatf(-y)\)</span>.</div>
+<p>Tunjukkan bahwa, untuk fungsi bernilai kompleks apa pun yang dapat diintegralkan <span class="math inline" data-source-tex="f">\(f\)</span> pada
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>,</p>
+<p>   (i) <span class="math inline" data-source-tex="\varhatf:\BbbR^r\to\Bbb C">\(\varhatf:\BbbR^r\to\Bbb C\)</span> kontinu;</p>
+<p>   (ii) <span class="math inline" data-source-tex="\lim_{\|y\|\to\infty}\varhatf(y)=0">\(\lim_{\|y\|\to\infty}\varhatf(y)=0\)</span>, menulis
+<span class="math inline" data-source-tex="\|y\|=\sqrt{y\dotproduct y}">\(\|y\|=\sqrt{y\dotproduct y}\)</span> seperti biasa;</p>
+<p>   (iii) jika <span class="math inline" data-source-tex="\int\|x\||f(x)|dx&lt;\infty">\(\int\|x\||f(x)|dx&lt;\infty\)</span>, maka <span class="math inline" data-source-tex="\varhatf">\(\varhatf\)</span> adalah
+terdiferensiasi, dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Pd{}{\eta_j}\varhatf(y)
+=-\Bover{i}{(\sqrt{2\pi})^r}\int e^{-iy\dotproduct x}\xi_jf(x)dx">\(\Pd{}{\eta_j}\varhatf(y)
+=-\Bover{i}{(\sqrt{2\pi})^r}\int e^{-iy\dotproduct x}\xi_jf(x)dx\)</span></div>
+<p>untuk <span class="math inline" data-source-tex="j\le r">\(j\le r\)</span>, <span class="math inline" data-source-tex="y\in\BbbR^r">\(y\in\BbbR^r\)</span>, dengan selalu menganggap <span class="math inline" data-source-tex="\xi_j">\(\xi_j\)</span>
+sebagai koordinat ke-<span class="math inline" data-source-tex="j">\(j\)</span> dari <span class="math inline" data-source-tex="x\in\BbbR^r">\(x\in\BbbR^r\)</span>;</p>
+<p>   (iv) jika <span class="math inline" data-source-tex="j\le r">\(j\le r\)</span> dan <span class="math inline" data-source-tex="\pd{f}{\xi_j}">\(\pd{f}{\xi_j}\)</span> didefinisikan di mana-mana dan
+dapat diintegralkan, maka
+<span class="math inline" data-source-tex="(\pd{f}{\xi_j})\varsphat(y)=i\eta_j\varhatf(y)">\((\pd{f}{\xi_j})\varsphat(y)=i\eta_j\varhatf(y)\)</span>
+untuk setiap <span class="math inline" data-source-tex="y\in\Bbb R^r">\(y\in\Bbb R^r\)</span>.   <span class="proof-fragment">(Gunakan <a class="xref" href="../225/index.html#225L">225L</a> untuk menunjukkan bahwa jika
+<span class="math inline" data-source-tex="e\in\BbbR^r">\(e\in\BbbR^r\)</span> adalah vektor satuan, maka
+<span class="math inline" data-source-tex="\gamma\mapsto f(x+\gamma e)">\(\gamma\mapsto f(x+\gamma e)\)</span> kontinu mutlak pada setiap interval
+yang dibatasi untuk hampir setiap <span class="math inline" data-source-tex="x">\(x\)</span>.)</span></p>
+</section>
+<section class="source-unit" id="283Wb" data-source-id="283Wb"><h3><span class="source-label">283Wb</span> (b) </h3>
+<p>Tunjukkan bahwa jika <span class="math inline" data-source-tex="f_1,\ldots,f_r">\(f_1,\ldots,f_r\)</span> adalah fungsi bernilai kompleks
+yang dapat diintegralkan pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> dengan transformasi Fourier
+<span class="math inline" data-source-tex="g_1,\ldots,g_r">\(g_1,\ldots,g_r\)</span>, dan kita menulis <span class="math inline" data-source-tex="f(x)=f_1(\xi_1)\ldots f_r(\xi_r)">\(f(x)=f_1(\xi_1)\ldots f_r(\xi_r)\)</span> untuk
+<span class="math inline" data-source-tex="x=(\xi_1,\ldots,\xi_r)\in\BbbR^r">\(x=(\xi_1,\ldots,\xi_r)\in\BbbR^r\)</span>, maka transformasi Fourier dari <span class="math inline" data-source-tex="f">\(f\)</span>
+adalah <span class="math inline" data-source-tex="y\mapsto g_1(\eta_1)\ldots g_r(\eta_r)">\(y\mapsto g_1(\eta_1)\ldots g_r(\eta_r)\)</span>.</p>
+</section>
+<section class="source-unit" id="283Wc" data-source-id="283Wc"><h3><span class="source-label">283Wc</span> (c) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> adalah fungsi bernilai kompleks yang dapat diintegralkan
+pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dan <span class="math inline" data-source-tex="\varhatf">\(\varhatf\)</span> merupakan transformasi Fourier-nya.   Jika <span class="math inline" data-source-tex="c\le d">\(c\le d\)</span> di
+<span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, tunjukkan bahwa</p>
+<p><span class="math display" data-source-tex="\int_{[c,d]}f
+=(\bover{i}{\sqrt{2\pi}})^r
+\lim_{\alpha_1,\ldots,\alpha_r\to\infty}
+\int_{[-a,a]}\prod_{j=1}^r
+\bover{e^{i\gamma_j\eta_j}-e^{i\delta_j\eta_j}}{\eta_j}\varhatf(y)dy,">\[\int_{[c,d]}f
+=(\bover{i}{\sqrt{2\pi}})^r
+\lim_{\alpha_1,\ldots,\alpha_r\to\infty}
+\int_{[-a,a]}\prod_{j=1}^r
+\bover{e^{i\gamma_j\eta_j}-e^{i\delta_j\eta_j}}{\eta_j}\varhatf(y)dy,\]</span></p>
+<p>dengan notasi <span class="math inline" data-source-tex="a=(\alpha_1,\ldots)">\(a=(\alpha_1,\ldots)\)</span>, <span class="math inline" data-source-tex="c=(\gamma_1,\ldots)">\(c=(\gamma_1,\ldots)\)</span>,
+<span class="math inline" data-source-tex="d=(\delta_1,\ldots)">\(d=(\delta_1,\ldots)\)</span>.</p>
+</section>
+<section class="source-unit" id="283Wd" data-source-id="283Wd"><h3><span class="source-label">283Wd</span> (d) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> adalah fungsi bernilai kompleks yang dapat diintegralkan pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, dan
+<span class="math inline" data-source-tex="\varhatf">\(\varhatf\)</span> transformasi Fourier-nya.   Tunjukkan bahwa jika kita menulis</p>
+<div class="centerline"><span class="math inline" data-source-tex="B_{\infty}(\tbf{0},a)=\{y:|\eta_j|\le a
+  \text{ untuk setiap }j\le r\}">\(B_{\infty}(\tbf{0},a)=\{y:|\eta_j|\le a
+  \text{ untuk setiap }j\le r\}\)</span>,</div>
+<p>lalu</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Bover1{(\sqrt{2\pi})^r}\int_{B_{\infty}(\tbf{0},a)}
+e^{ix\dotproduct y}\varhatf(y)dy
+=\int \phi_a(t)f(x-t)dt">\(\Bover1{(\sqrt{2\pi})^r}\int_{B_{\infty}(\tbf{0},a)}
+e^{ix\dotproduct y}\varhatf(y)dy
+=\int \phi_a(t)f(x-t)dt\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="a\ge 0">\(a\ge 0\)</span>, di mana</p>
+<div class="centerline"><span class="math inline" data-source-tex="\phi_a(t)
+=\Bover1{\pi^r}\prod_{j=1}^r\Bover{\sin a\tau_j}{\tau_j}">\(\phi_a(t)
+=\Bover1{\pi^r}\prod_{j=1}^r\Bover{\sin a\tau_j}{\tau_j}\)</span></div>
+<p>untuk <span class="math inline" data-source-tex="t=(\tau_1,\ldots,\tau_r)\in\BbbR^r">\(t=(\tau_1,\ldots,\tau_r)\in\BbbR^r\)</span>.</p>
+</section>
+<section class="source-unit" id="283We" data-source-id="283We"><h3><span class="source-label">283We</span> (e) </h3>
+<p>Tunjukkan bahwa
+<span class="math inline" data-source-tex="\biggerint_{\BbbR^r}\Bover{1}{1+\|x\|^{r+1}}dx&lt;\infty">\(\biggerint_{\BbbR^r}\Bover{1}{1+\|x\|^{r+1}}dx&lt;\infty\)</span>.</p>
+</section>
+<section class="source-unit" id="283Wf" data-source-id="283Wf"><h3><span class="source-label">283Wf</span> (f) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f:\BbbR^r\to\Bbb C">\(f:\BbbR^r\to\Bbb C\)</span> adalah fungsi yang dapat diintegralkan.
+Tunjukkan bahwa jika semua turunan parsial
+<span class="math inline" data-source-tex="\Bover{\partial^kf}{\partial\xi_j^k}">\(\Bover{\partial^kf}{\partial\xi_j^k}\)</span>, untuk <span class="math inline" data-source-tex="k\le r+1">\(k\le r+1\)</span> dan
+<span class="math inline" data-source-tex="j\le r">\(j\le r\)</span>, didefinisikan hampir di mana-mana dan dapat diintegralkan,
+maka <span class="math inline" data-source-tex="\varhat{f}">\(\varhat{f}\)</span> dapat diintegralkan.</p>
+</section>
+<section class="source-unit" id="283Wg" data-source-id="283Wg"><h3><span class="source-label">283Wg</span> (g) </h3>
+<p>Tunjukkan bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span> merupakan fungsi bernilai kompleks
+yang dapat diintegralkan pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, maka (mendefinisikan konvolusi seperti pada
+<a class="xref" href="../255/index.html#255L">255L</a>) <span class="math inline" data-source-tex="(f*g)\varsphat=(\sqrt{2\pi})^r\varhatf\times\varhat{g}">\((f*g)\varsphat=(\sqrt{2\pi})^r\varhatf\times\varhat{g}\)</span>.</p>
+</section>
+<section class="source-unit" id="283Wh" data-source-id="283Wh"><h3><span class="source-label">283Wh</span> (h) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span> adalah fungsi bernilai kompleks yang dapat
+diintegralkan pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>. Tunjukkan bahwa
+<span class="math inline" data-source-tex="f*\varcheck{g}=(\sqrt{2\pi})^r(\varhatf\times g)\varspcheck">\(f*\varcheck{g}=(\sqrt{2\pi})^r(\varhatf\times g)\varspcheck\)</span>.</p>
+</section>
+<section class="source-unit" id="283Wi" data-source-id="283Wi"><h3><span class="source-label">283Wi</span> (i) </h3>
+<p>Untuk <span class="math inline" data-source-tex="\sigma&gt;0">\(\sigma&gt;0\)</span>, tentukan
+<span class="math inline" data-source-tex="\psi_{\sigma}:\Bbb R^r\to\Bbb C">\(\psi_{\sigma}:\Bbb R^r\to\Bbb C\)</span> dengan mengatur</p>
+<div class="centerline"><span class="math inline" data-source-tex="\psi_{\sigma}(x)=\Bover1{(\sigma\sqrt{2\pi})^r}
+e^{-x\dotproduct x/2\sigma^2}">\(\psi_{\sigma}(x)=\Bover1{(\sigma\sqrt{2\pi})^r}
+e^{-x\dotproduct x/2\sigma^2}\)</span>,
+  <span class="math inline" data-source-tex="(\varhat{\psi}_{\sigma})\varspcheck=\psi_{\sigma}">\((\varhat{\psi}_{\sigma})\varspcheck=\psi_{\sigma}\)</span>.</div>
+<p>untuk setiap <span class="math inline" data-source-tex="x\in\BbbR^r">\(x\in\BbbR^r\)</span>.   Tunjukkan bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\varhat{\psi}_{\sigma}
+=\varcheck{\psi}_{\sigma}=\Bover1{\sigma^r}\psi_{1/\sigma}">\(\varhat{\psi}_{\sigma}
+=\varcheck{\psi}_{\sigma}=\Bover1{\sigma^r}\psi_{1/\sigma}\)</span>.</div>
+</section>
+<section class="source-unit" id="283Wj" data-source-id="283Wj"><h3><span class="source-label">283Wj</span> (j) </h3>
+<p>Dengan mendefinisikan <span class="math inline" data-source-tex="\psi_{\sigma}">\(\psi_{\sigma}\)</span> seperti pada bagian (i) di atas, tunjukkan bahwa
+<span class="math inline" data-source-tex="\lim_{\sigma\to 0}(f*\psi_{\sigma})(x)=f(x)">\(\lim_{\sigma\to 0}(f*\psi_{\sigma})(x)=f(x)\)</span> setiap kali <span class="math inline" data-source-tex="x\in\BbbR^r">\(x\in\BbbR^r\)</span> dan
+<span class="math inline" data-source-tex="f:\BbbR^r\to\Bbb C">\(f:\BbbR^r\to\Bbb C\)</span> kontinu dan dapat diintegralkan atau terbatas.
+(Lih. <a class="xref" href="../261/index.html#261Ye">261Ye</a>, <a class="xref" href="../262/index.html#262Yi">262Yi</a>.)</p>
+</section>
+<section class="source-unit" id="283Wk" data-source-id="283Wk"><h3><span class="source-label">283Wk</span> (k) </h3>
+<p>Tunjukkan jika <span class="math inline" data-source-tex="f:\BbbR^r\to\Bbb C">\(f:\BbbR^r\to\Bbb C\)</span> kontinu
+dan dapat diintegralkan, dan <span class="math inline" data-source-tex="\varhatf">\(\varhatf\)</span> juga dapat diintegralkan
+<span class="math inline" data-source-tex="f=\varhatf\varcheck{\phantom{f}}">\(f=\varhatf\varcheck{\phantom{f}}\)</span>.
+(<em>Petunjuk</em>: Tunjukkan bahwa keduanya sama di setiap titik
+<span class="math inline" data-source-tex="\lim_{\sigma\to 0}(\sqrt{2\pi})^r
+  (\varhatf\times\varhat{\psi}_{\sigma})\varspcheck">\(\lim_{\sigma\to 0}(\sqrt{2\pi})^r
+  (\varhatf\times\varhat{\psi}_{\sigma})\varspcheck\)</span>.)</p>
+</section>
+<section class="source-unit" id="283Wl" data-source-id="283Wl"><h3><span class="source-label">283Wl</span> (l) </h3>
+<p>Tunjukkan bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span> merupakan fungsi bernilai kompleks
+yang dapat diintegralkan pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, maka <span class="math inline" data-source-tex="\int
+f\times\varhat{g}=\int\varhatf\times g">\(\int
+f\times\varhat{g}=\int\varhatf\times g\)</span>.</p>
+</section>
+<section class="source-unit" id="283Wm" data-source-id="283Wm"><h3><span class="source-label">283Wm</span> (m) </h3>
+<p>(i) Tunjukkan bahwa
+<span class="math inline" data-source-tex="\int_{2k\pi}^{2(k+1)\pi}\bover{\sin t}{t\sqrt{t}}dt&gt;0">\(\int_{2k\pi}^{2(k+1)\pi}\bover{\sin t}{t\sqrt{t}}dt&gt;0\)</span> untuk setiap
+<span class="math inline" data-source-tex="k\in\Bbb N">\(k\in\Bbb N\)</span>, dan karenanya
+<span class="math inline" data-source-tex="\int_0^{\infty}\bover{\sin t}{t\sqrt{t}}dt&gt;0">\(\int_0^{\infty}\bover{\sin t}{t\sqrt{t}}dt&gt;0\)</span>.</p>
+<p>  (ii) Tetapkan <span class="math inline" data-source-tex="f_1(\xi)=1/\sqrt{|\xi|}">\(f_1(\xi)=1/\sqrt{|\xi|}\)</span> untuk <span class="math inline" data-source-tex="0&lt;|\xi|\le 1">\(0&lt;|\xi|\le 1\)</span>, dan <span class="math inline" data-source-tex="0">\(0\)</span> untuk
+ <span class="math inline" data-source-tex="\xi">\(\xi\)</span> lainnya.   Tunjukkan bahwa
+<span class="math inline" data-source-tex="\lim_{a\to\infty}\bover1{\sqrt{a}}\int_{-a}^a\varhatf_1(\eta)d\eta">\(\lim_{a\to\infty}\bover1{\sqrt{a}}\int_{-a}^a\varhatf_1(\eta)d\eta\)</span>
+ada di <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> dan lebih besar dari <span class="math inline" data-source-tex="0">\(0\)</span>.</p>
+<p>  (iii) Buatlah fungsi <span class="math inline" data-source-tex="f_2">\(f_2\)</span> yang dapat diintegralkan, nol pada suatu lingkungan
+di <span class="math inline" data-source-tex="0">\(0\)</span>, sehingga terdapat tak hingga banyak <span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span>
+yang <span class="math inline" data-source-tex="|\int_{-m}^m\varhatf_2(\eta)d\eta|\ge\bover1{\sqrt{m}}">\(|\int_{-m}^m\varhatf_2(\eta)d\eta|\ge\bover1{\sqrt{m}}\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> ambil <span class="math inline" data-source-tex="f_2(\xi)=2^{-k}\sin m_k\xi">\(f_2(\xi)=2^{-k}\sin m_k\xi\)</span> untuk <span class="math inline" data-source-tex="k+1\le\xi&lt;k+2">\(k+1\le\xi&lt;k+2\)</span>, untuk
+barisan <span class="math inline" data-source-tex="\sequence{k}{m_k}">\(\sequence{k}{m_k}\)</span> yang meningkat cukup cepat.</span></p>
+<p>  (iv) Tetapkan <span class="math inline" data-source-tex="f(x)=f_1(\xi_1)f_2(\xi_2)">\(f(x)=f_1(\xi_1)f_2(\xi_2)\)</span> untuk <span class="math inline" data-source-tex="x\in\BbbR^2">\(x\in\BbbR^2\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="f">\(f\)</span> dapat diintegralkan, bahwa <span class="math inline" data-source-tex="f">\(f\)</span> bernilai nol pada suatu
+lingkungan dari <span class="math inline" data-source-tex="\tbf{0}">\(\tbf{0}\)</span>, tetapi bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\limsup_{a\to\infty}\Bover1{2\pi}|\int_{B_{\infty}(\tbf{0},
+a)}\varhatf(y)dy|&gt;0">\(\limsup_{a\to\infty}\Bover1{2\pi}|\int_{B_{\infty}(\tbf{0},
+a)}\varhatf(y)dy|&gt;0\)</span>,</div>
+<p>mendefinisikan <span class="math inline" data-source-tex="B_{\infty}">\(B_{\infty}\)</span> seperti di <a class="xref" href="#283Wd">283Wd</a>.</p>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="283X" data-source-id="283X"><span class="anchor" id="283Xa"></span><h2><span class="source-label">283X</span> Latihan dasar (a) </h2>
+<p>Konfirmasikan bahwa enam alternatif definisi
+dari transformasi <span class="math inline" data-source-tex="\varhatf">\(\varhatf\)</span>, <span class="math inline" data-source-tex="\varcheckf">\(\varcheckf\)</span> yang ditawarkan di <a class="xref" href="#283B">283B</a>
+semuanya mengarah pada teori yang sama;  temukan konstanta yang terlibat dalam versi
+baru dari 283Ch, 283Ci, <a class="xref" href="#283L">283L</a>, <a class="xref" href="#283M">283M</a> dan <a class="xref" href="#283N">283N</a>.</p>
+</section>
+<section class="source-unit" id="283Xb" data-source-id="283Xb"><h3><span class="source-label">283Xb</span> (b) </h3>
+<p>Jika kita mendefinisikan ulang <span class="math inline" data-source-tex="\varhatf(y)">\(\varhatf(y)\)</span> menjadi
+<span class="math inline" data-source-tex="\alpha\int_{-\infty}^{\infty}e^{i\beta xy}f(x)dx">\(\alpha\int_{-\infty}^{\infty}e^{i\beta xy}f(x)dx\)</span>,
+<span class="math inline" data-source-tex="\varcheckf(y)">\(\varcheckf(y)\)</span> jadi apa?</p>
+</section>
+<section class="source-unit" id="283Xc" data-source-id="283Xc"><h3><span class="source-label">283Xc</span> (c) </h3>
+<p>Tunjukkan bahwa hampir semua faktor <span class="math inline" data-source-tex="2\pi">\(2\pi\)</span> akan hilang
+dari teorema-teorema bagian ini jika kita mendefinisikan ukuran <span class="math inline" data-source-tex="\nu">\(\nu\)</span> pada
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> dengan menetapkan <span class="math inline" data-source-tex="\nu E=\bover1{\sqrt{2\pi}}\mu E">\(\nu E=\bover1{\sqrt{2\pi}}\mu E\)</span> untuk setiap
+himpunan Lebesgue terukur <span class="math inline" data-source-tex="E">\(E\)</span>, dengan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> ukuran Lebesgue, dan menulis</p>
+<div class="centerline"><span class="math inline" data-source-tex="\varhatf(y)=\int_{-\infty}^{\infty}e^{-iyx}f(x)\nu(dx)">\(\varhatf(y)=\int_{-\infty}^{\infty}e^{-iyx}f(x)\nu(dx)\)</span>,
+  <span class="math inline" data-source-tex="\varcheckf(y)=\int_{-\infty}^{\infty}e^{iyx}f(x)\nu(dx)">\(\varcheckf(y)=\int_{-\infty}^{\infty}e^{iyx}f(x)\nu(dx)\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="(f*g)(x)=\int_{-\infty}^{\infty}f(t)g(x-t)\nu(dt)">\((f*g)(x)=\int_{-\infty}^{\infty}f(t)g(x-t)\nu(dt)\)</span>.</div>
+<p>Apa itu
+<span class="math inline" data-source-tex="\lim_{a\to\infty}\int_{-a}^a\bover{\sin t}{t}\nu(dt)">\(\lim_{a\to\infty}\int_{-a}^a\bover{\sin t}{t}\nu(dt)\)</span>?</p>
+</section>
+<section class="source-unit" id="283Xd" data-source-id="283Xd"><h3><span class="source-label">283Xd</span> (d) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> adalah fungsi bernilai kompleks yang dapat diintegralkan
+pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dengan transformasi Fourier <span class="math inline" data-source-tex="\varhatf">\(\varhatf\)</span>.   Tunjukkan bahwa
+(i) jika <span class="math inline" data-source-tex="g(x)=f(-x)">\(g(x)=f(-x)\)</span> kapan pun ini
+didefinisikan, lalu <span class="math inline" data-source-tex="\varhat{g}(y)=\varhatf(-y)">\(\varhat{g}(y)=\varhatf(-y)\)</span> untuk
+setiap <span class="math inline" data-source-tex="y\in\Bbb R">\(y\in\Bbb R\)</span>;
+(ii) jika <span class="math inline" data-source-tex="g(x)=\overline{f(x)}">\(g(x)=\overline{f(x)}\)</span> kapan pun ini didefinisikan, maka
+<span class="math inline" data-source-tex="\varhat{g}(y)=\overline{\varhatf(-y)}">\(\varhat{g}(y)=\overline{\varhatf(-y)}\)</span> untuk setiap <span class="math inline" data-source-tex="y">\(y\)</span>.</p>
+</section>
+<section class="source-unit" id="283Xe" data-source-id="283Xe"><h3><span class="source-label">283Xe</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> adalah fungsi bernilai kompleks yang dapat diintegralkan
+pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dengan transformasi Fourier <span class="math inline" data-source-tex="\varhatf">\(\varhatf\)</span>.   Tunjukkan bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_c^d\varhatf(y)dy=\Bover{i}{\sqrt{2\pi}}
+\int_{-\infty}^{\infty}\Bover{e^{-idx}-e^{-icx}}{x}f(x)dx">\(\int_c^d\varhatf(y)dy=\Bover{i}{\sqrt{2\pi}}
+\int_{-\infty}^{\infty}\Bover{e^{-idx}-e^{-icx}}{x}f(x)dx\)</span></div>
+<p>setiap kali <span class="math inline" data-source-tex="c\le d">\(c\le d\)</span> di <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.</p>
+</section>
+<section class="source-unit" id="283Xf" data-source-id="283Xf"><h3><span class="source-label">283Xf</span> (f) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Untuk fungsi bernilai kompleks yang dapat diintegralkan <span class="math inline" data-source-tex="f">\(f\)</span> pada
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, misalkan integral <strong>Fejér</strong> didefinisikan sebagai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sigma_c(x)
+=\Bover1{c\sqrt{2\pi}}\int_0^c
+  \bigl(\int_{-a}^{a}e^{ixy}\varhatf(y)dy\bigr)da">\(\sigma_c(x)
+=\Bover1{c\sqrt{2\pi}}\int_0^c
+  \bigl(\int_{-a}^{a}e^{ixy}\varhatf(y)dy\bigr)da\)</span></div>
+<p>untuk <span class="math inline" data-source-tex="c&gt;0">\(c&gt;0\)</span>.   Tunjukkan bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sigma_c(x)=
+\Bover1{\pi}\int_{-\infty}^{\infty}
+  \Bover{1-\cos ct}{ct^2}f(x-t)dt">\(\sigma_c(x)=
+\Bover1{\pi}\int_{-\infty}^{\infty}
+  \Bover{1-\cos ct}{ct^2}f(x-t)dt\)</span>.</div>
+</section>
+<section class="source-unit" id="283Xg" data-source-id="283Xg"><h3><span class="source-label">283Xg</span> (g) </h3>
+<p>Tunjukkan bahwa
+<span class="math inline" data-source-tex="\biggerint_{-\infty}^{\infty}\Bover{1-\cos at}{at^2}dt=\pi">\(\biggerint_{-\infty}^{\infty}\Bover{1-\cos at}{at^2}dt=\pi\)</span> untuk setiap
+<span class="math inline" data-source-tex="a&gt;0">\(a&gt;0\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> Integrasikan secara parsial dan gunakan 283Da.</span> Tunjukkan bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{a\to\infty}\int_{\delta}^{\infty}
+         \Bover{1-\cos at}{at^2}dt
+=\lim_{a\to\infty}\sup_{t\ge\delta}\Bover{1-\cos at}{at^2}
+=0">\(\lim_{a\to\infty}\int_{\delta}^{\infty}
+         \Bover{1-\cos at}{at^2}dt
+=\lim_{a\to\infty}\sup_{t\ge\delta}\Bover{1-\cos at}{at^2}
+=0\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span>.</p>
+</section>
+<section class="source-unit" id="283Xh" data-source-id="283Xh"><h3><span class="source-label">283Xh</span> (h) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> adalah fungsi bernilai kompleks yang dapat diintegralkan
+pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan tentukan integral Fejér <span class="math inline" data-source-tex="\sigma_a">\(\sigma_a\)</span> seperti pada <a class="xref" href="#283Xf">283Xf</a>
+di atas.   Tunjukkan bahwa jika <span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span>, <span class="math inline" data-source-tex="c\in\Bbb C">\(c\in\Bbb C\)</span> sedemikian sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\lim_{\delta\downarrow 0}\Bover1{\delta}\int_0^{\delta}
+    |f(x+t)+f(x-t)-2c|dt=0">\(\lim_{\delta\downarrow 0}\Bover1{\delta}\int_0^{\delta}
+    |f(x+t)+f(x-t)-2c|dt=0\)</span>,</div>
+<p>lalu <span class="math inline" data-source-tex="\lim_{a\to\infty}\sigma_a(x)=c">\(\lim_{a\to\infty}\sigma_a(x)=c\)</span>.   <span class="hint" role="note"><strong>Petunjuk:</strong> mengadaptasi
+argumen <a class="xref" href="../282/index.html#282H">282H</a>.</span></p>
+</section>
+<section class="source-unit" id="283Xi" data-source-id="283Xi"><h3><span class="source-label">283Xi</span> (i) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> adalah fungsi bernilai kompleks yang dapat diintegralkan
+pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan tentukan integral Fejér <span class="math inline" data-source-tex="\sigma_a">\(\sigma_a\)</span> seperti pada <a class="xref" href="#283Xf">283Xf</a>
+di atas.   Tunjukkan bahwa <span class="math inline" data-source-tex="f(x)=\lim_{a\to\infty}\sigma_a(x)">\(f(x)=\lim_{a\to\infty}\sigma_a(x)\)</span> untuk hampir setiap
+<span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span>.</p>
+</section>
+<section class="source-unit" id="283Xj" data-source-id="283Xj"><h3><span class="source-label">283Xj</span> (j) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f:\Bbb R\to\Bbb C">\(f:\Bbb R\to\Bbb C\)</span> adalah fungsi bernilai kompleks
+yang kontinu, dapat diintegralkan, dan memiliki variasi terbatas; definisikan
+integral Fejér-nya <span class="math inline" data-source-tex="\sigma_a">\(\sigma_a\)</span> seperti pada <a class="xref" href="#283Xf">283Xf</a> di atas. Tunjukkan bahwa
+<span class="math inline" data-source-tex="f(x)=\lim_{a\to\infty}\sigma_a(x)">\(f(x)=\lim_{a\to\infty}\sigma_a(x)\)</span> seragam untuk <span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span>.</p>
+</section>
+<section class="source-unit" id="283Xk" data-source-id="283Xk"><h3><span class="source-label">283Xk</span> (k) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> adalah fungsi bernilai kompleks yang dapat diintegralkan dan
+mempunyai variasi terbatas pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan <span class="math inline" data-source-tex="\varhatf">\(\varhatf\)</span> transformasi Fourier-nya.
+Tunjukkan bahwa <span class="math inline" data-source-tex="\sup_{y\in\Bbb R}|y\varhatf(y)|&lt;\infty">\(\sup_{y\in\Bbb R}|y\varhatf(y)|&lt;\infty\)</span>.</p>
+</section>
+<section class="source-unit" id="283Xl" data-source-id="283Xl"><h3><span class="source-label">283Xl</span> (l) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> dan <span class="math inline" data-source-tex="g">\(g\)</span> adalah fungsi
+bernilai kompleks yang dapat diintegralkan pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.   Tunjukkan bahwa
+<span class="math inline" data-source-tex="f*\varcheck{g}=\sqrt{2\pi}(\varhatf\times g)\varspcheck">\(f*\varcheck{g}=\sqrt{2\pi}(\varhatf\times g)\varspcheck\)</span>.</p>
+</section>
+<section class="source-unit" id="283Xm" data-source-id="283Xm"><h3><span class="source-label">283Xm</span> (m) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> adalah fungsi bernilai kompleks yang dapat diintegralkan
+pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan tetapkan <span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span>.    Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\hat f_x(y)=\int_{-\infty}^{\infty}f(t)\cos y(x-t)dt">\(\hat f_x(y)=\int_{-\infty}^{\infty}f(t)\cos y(x-t)dt\)</span></div>
+<p>untuk <span class="math inline" data-source-tex="y\in\Bbb R">\(y\in\Bbb R\)</span>.   Tunjukkan bahwa</p>
+<p>   (i) jika <span class="math inline" data-source-tex="f">\(f\)</span> terdiferensiasi di <span class="math inline" data-source-tex="x">\(x\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="f(x)
+=\Bover1{\pi}\lim_{a\to\infty}\int_{0}^a\hat f_x(y)dy">\(f(x)
+=\Bover1{\pi}\lim_{a\to\infty}\int_{0}^a\hat f_x(y)dy\)</span>;</div>
+<p>   (ii) jika terdapat lingkungan <span class="math inline" data-source-tex="x">\(x\)</span> di mana <span class="math inline" data-source-tex="f">\(f\)</span> mempunyai variasi terbatas, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Bover1{\pi}\lim_{a\to\infty}\int_{0}^a\hat f_x(y)dy
+=\Bover12(\lim_{t\in\dom f,t\uparrow x}f(t)
+ +\lim_{t\in\dom f,t\downarrow x}f(t))">\(\Bover1{\pi}\lim_{a\to\infty}\int_{0}^a\hat f_x(y)dy
+=\Bover12(\lim_{t\in\dom f,t\uparrow x}f(t)
+ +\lim_{t\in\dom f,t\downarrow x}f(t))\)</span>;</div>
+<p>   (iii) jika <span class="math inline" data-source-tex="f">\(f\)</span> terdiferensiasi dua kali dan <span class="math inline" data-source-tex="f&#x27;">\(f&#x27;\)</span>, <span class="math inline" data-source-tex="f&#x27;&#x27;">\(f&#x27;&#x27;\)</span> dapat diintegralkan
+maka <span class="math inline" data-source-tex="\hat f_x">\(\hat f_x\)</span> dapat diintegralkan dan
+<span class="math inline" data-source-tex="f(x)=\bover1{\pi}\int_0^{\infty}\hat f_x">\(f(x)=\bover1{\pi}\int_0^{\infty}\hat f_x\)</span>.
+(Rumusnya</p>
+<div class="centerline"><span class="math inline" data-source-tex="f(x)=\Bover1{\pi}\int_{0}^{\infty}\bigl(
+\int_{-\infty}^{\infty}f(t)\cos y(x-t)dt\bigr)dy">\(f(x)=\Bover1{\pi}\int_{0}^{\infty}\bigl(
+\int_{-\infty}^{\infty}f(t)\cos y(x-t)dt\bigr)dy\)</span>,</div>
+<p>berlaku untuk fungsi <span class="math inline" data-source-tex="f">\(f\)</span> tersebut; rumus ini disebut rumus integral
+<strong>Fourier</strong>.)</p>
+</section>
+<section class="source-unit" id="283Xn" data-source-id="283Xn"><h3><span class="source-label">283Xn</span> (n) </h3>
+<p>Tunjukkan bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span> adalah fungsi bernilai kompleks
+dengan variasi terbatas, terdefinisi hampir di mana-mana pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan
+konvergen ke <span class="math inline" data-source-tex="0">\(0\)</span> (sepanjang domainnya) pada <span class="math inline" data-source-tex="\pm\infty">\(\pm\infty\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="g(y)
+=\Bover1{\sqrt{2\pi}}\lim_{a\to\infty}\int_{-a}^ae^{-iyx}f(x)dx">\(g(y)
+=\Bover1{\sqrt{2\pi}}\lim_{a\to\infty}\int_{-a}^ae^{-iyx}f(x)dx\)</span></div>
+<p>terdefinisi dalam <span class="math inline" data-source-tex="\Bbb C">\(\Bbb C\)</span> untuk setiap <span class="math inline" data-source-tex="y\ne 0">\(y\ne 0\)</span>, dan limitnya
+seragam pada setiap daerah yang berjarak positif dari <span class="math inline" data-source-tex="0">\(0\)</span>.</p>
+</section>
+<section class="source-unit" id="283Xo" data-source-id="283Xo"><h3><span class="source-label">283Xo</span> (o) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> adalah fungsi bernilai kompleks
+yang dapat diintegralkan pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.   Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\varhatf_c(y)=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+\cos yx\,f(x)dx">\(\varhatf_c(y)=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+\cos yx\,f(x)dx\)</span>,
+<span class="math inline" data-source-tex="\varhatf_s(y)=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+\sin yx\,f(x)dx">\(\varhatf_s(y)=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+\sin yx\,f(x)dx\)</span></div>
+<p>untuk <span class="math inline" data-source-tex="y\in\Bbb R">\(y\in\Bbb R\)</span>.   Tunjukkan bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Bover1{\sqrt{2\pi}}\int_{-a}^ae^{ixy}\varhatf(y)dy
+=\sqrt{\Bover2{\pi}}\int_0^a\cos xy\,\varhatf_c(y)dy
++\sqrt{\Bover2{\pi}}\int_0^a\sin xy\,\varhatf_s(y)dy">\(\Bover1{\sqrt{2\pi}}\int_{-a}^ae^{ixy}\varhatf(y)dy
+=\sqrt{\Bover2{\pi}}\int_0^a\cos xy\,\varhatf_c(y)dy
++\sqrt{\Bover2{\pi}}\int_0^a\sin xy\,\varhatf_s(y)dy\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="x\in\Bbb R">\(x\in\Bbb R\)</span> dan <span class="math inline" data-source-tex="a\ge 0">\(a\ge 0\)</span>.</p>
+</section>
+<section class="source-unit" id="283Xp" data-source-id="283Xp"><h3><span class="source-label">283Xp</span> (p) </h3>
+<p>Gunakan fakta bahwa
+<span class="math inline" data-source-tex="\int_{0}^a\int_{0}^{\infty}e^{-xy}\sin
+y\,dxdy=\int_{0}^{\infty}\int_{0}^ae^{-xy}\sin y\,dydx">\(\int_{0}^a\int_{0}^{\infty}e^{-xy}\sin
+y\,dxdy=\int_{0}^{\infty}\int_{0}^ae^{-xy}\sin y\,dydx\)</span> setiap kali
+<span class="math inline" data-source-tex="a\ge 0">\(a\ge 0\)</span> untuk menunjukkan bahwa
+<span class="math inline" data-source-tex="\int_0^{\infty}\bover1{1+x^2}dx=\lim_{a\to\infty}\int_0^a\bover{\sin y}{y}dy">\(\int_0^{\infty}\bover1{1+x^2}dx=\lim_{a\to\infty}\int_0^a\bover{\sin y}{y}dy\)</span>.</p>
+</section>
+<section class="source-unit" id="283Xq" data-source-id="283Xq"><h3><span class="source-label">283Xq</span> (q) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Tunjukkan bahwa jika <span class="math inline" data-source-tex="f(x)=e^{-\sigma|x|}">\(f(x)=e^{-\sigma|x|}\)</span>, di mana
+<span class="math inline" data-source-tex="\sigma&gt;0">\(\sigma&gt;0\)</span>, maka
+<span class="math inline" data-source-tex="\varhatf(y)=\bover{2\sigma}{\sqrt{2\pi}(\sigma^2+y^2)}">\(\varhatf(y)=\bover{2\sigma}{\sqrt{2\pi}(\sigma^2+y^2)}\)</span>.
+Oleh karena itu, atau sebaliknya, temukan transformasi Fourier dari
+<span class="math inline" data-source-tex="y\mapsto\Bover{1}{1+y^2}">\(y\mapsto\Bover{1}{1+y^2}\)</span>.</p>
+</section>
+<section class="source-unit" id="283Xr" data-source-id="283Xr"><h3><span class="source-label">283Xr</span> (r) </h3>
+<p>Temukan transformasi Fourier invers dari fungsi karakteristik
+dari interval terbatas di <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.   Tunjukkan bahwa
+dalam arti formal <a class="xref" href="#283F">283F</a> dapat dianggap sebagai kasus khusus <a class="xref" href="#283O">283O</a>.</p>
+</section>
+<section class="source-unit" id="283Xs" data-source-id="283Xs"><h3><span class="source-label">283Xs</span> (s) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> adalah fungsi yang dapat diintegralkan nonnegatif pada
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dengan transformasi Fourier <span class="math inline" data-source-tex="\varhatf">\(\varhatf\)</span>.   Tunjukkan bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{j=0}^n\sum_{k=0}^n
+  a_j\bar a_k\varhatf(y_j-y_k)\ge 0">\(\sum_{j=0}^n\sum_{k=0}^n
+  a_j\bar a_k\varhatf(y_j-y_k)\ge 0\)</span> </div>
+<p>setiap kali <span class="math inline" data-source-tex="y_0,\ldots,y_n">\(y_0,\ldots,y_n\)</span> di
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> dan <span class="math inline" data-source-tex="a_0,\ldots,a_n\in\Bbb C">\(a_0,\ldots,a_n\in\Bbb C\)</span>.</p>
+</section>
+<section class="source-unit" id="283Xt" data-source-id="283Xt"><h3><span class="source-label">283Xt</span> (t) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f">\(f\)</span> adalah fungsi bernilai kompleks yang dapat diintegralkan pada
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.   Tunjukkan bahwa <span class="math inline" data-source-tex="\tilde f(x)=\sum_{n=-\infty}^{\infty}f(x+2\pi n)">\(\tilde f(x)=\sum_{n=-\infty}^{\infty}f(x+2\pi n)\)</span>
+didefinisikan dalam <span class="math inline" data-source-tex="\Bbb C">\(\Bbb C\)</span> untuk hampir setiap <span class="math inline" data-source-tex="x">\(x\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> <span class="math inline" data-source-tex="\sum_{n=-\infty}^{\infty}\int_{-\pi}^{\pi}|f(x+2\pi n)|dx
+&lt;\infty">\(\sum_{n=-\infty}^{\infty}\int_{-\pi}^{\pi}|f(x+2\pi n)|dx
+&lt;\infty\)</span>.</span>   Tunjukkan bahwa <span class="math inline" data-source-tex="\tilde f">\(\tilde f\)</span> bersifat periodik.   Tunjukkan bahwa koefisien Fourier
+dari <span class="math inline" data-source-tex="\tilde f\restr\ocint{-\pi,\pi}">\(\tilde f\restr\ocint{-\pi,\pi}\)</span> adalah
+<span class="math inline" data-source-tex="\langle\bover{1}{\sqrt{2\pi}}\varhatf(k)\rangle_{k\in\Bbb Z}">\(\langle\bover{1}{\sqrt{2\pi}}\varhatf(k)\rangle_{k\in\Bbb Z}\)</span>.</p>
+</section>
+<section class="source-unit" id="283Y" data-source-id="283Y"><span class="anchor" id="283Ya"></span><h2><span class="source-label">283Y</span> Latihan lebih lanjut (a) </h2>
+<p>Tunjukkan bahwa jika <span class="math inline" data-source-tex="f:\Bbb R\to\Bbb C">\(f:\Bbb R\to\Bbb C\)</span> adalah
+kontinu mutlak dalam setiap interval berbatas, <span class="math inline" data-source-tex="f&#x27;">\(f&#x27;\)</span> mempunyai variasi
+terbatas pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dan
+<span class="math inline" data-source-tex="\lim_{x\to\infty}f(x)=\lim_{x\to-\infty}f(x)=0">\(\lim_{x\to\infty}f(x)=\lim_{x\to-\infty}f(x)=0\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="g(y)=\Bover1{\sqrt{2\pi}}\lim_{a\to\infty}
+\int_{-a}^ae^{-iyx}f(x)dx
+=-\Bover{i}{y\sqrt{2\pi}}\lim_{a\to\infty}
+\int_{-a}^ae^{-iyx}f&#x27;(x)dx">\(g(y)=\Bover1{\sqrt{2\pi}}\lim_{a\to\infty}
+\int_{-a}^ae^{-iyx}f(x)dx
+=-\Bover{i}{y\sqrt{2\pi}}\lim_{a\to\infty}
+\int_{-a}^ae^{-iyx}f&#x27;(x)dx\)</span></div>
+<p>terdefinisi, dengan</p>
+<div class="centerline"><span class="math inline" data-source-tex="y^2|g(y)|\le\Bover4{\sqrt{2\pi}}\Var_{\Bbb R}(f&#x27;)">\(y^2|g(y)|\le\Bover4{\sqrt{2\pi}}\Var_{\Bbb R}(f&#x27;)\)</span>,</div>
+<p>untuk setiap <span class="math inline" data-source-tex="y\ne 0">\(y\ne 0\)</span>.</p>
+</section>
+<section class="source-unit" id="283Yb" data-source-id="283Yb"><h3><span class="source-label">283Yb</span> (b) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f:\Bbb R\to\Bbb C">\(f:\Bbb R\to\Bbb C\)</span> adalah fungsi
+yang dapat diintegralkan dan kontinu mutlak pada setiap interval berbatas, dan
+anggap bahwa turunannya <span class="math inline" data-source-tex="f&#x27;">\(f&#x27;\)</span> mempunyai variasi terbatas pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="\varhatf">\(\varhatf\)</span> dapat diintegralkan dan
+<span class="math inline" data-source-tex="f=\varhatf\varcheck{\phantom{f}}">\(f=\varhatf\varcheck{\phantom{f}}\)</span>.   <span class="hint" role="note"><strong>Petunjuk:</strong> <a class="xref" href="../225/index.html#225Yd">225Yd</a>, 283Ci, <a class="xref" href="#283Xk">283Xk</a>.</span></p>
+</section>
+<section class="source-unit" id="283Yc" data-source-id="283Yc"><h3><span class="source-label">283Yc</span> (c) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f:\Bbb R\to\coint{0,\infty}">\(f:\Bbb R\to\coint{0,\infty}\)</span> adalah fungsi
+genap sehingga <span class="math inline" data-source-tex="f">\(f\)</span> cembung pada <span class="math inline" data-source-tex="\coint{0,\infty}">\(\coint{0,\infty}\)</span>
+dan <span class="math inline" data-source-tex="\lim_{x\to\infty}f(x)=0">\(\lim_{x\to\infty}f(x)=0\)</span>.</p>
+<p>  (i) Tunjukkan bahwa, untuk <span class="math inline" data-source-tex="y&gt;0">\(y&gt;0\)</span> dan <span class="math inline" data-source-tex="k\in\Bbb N">\(k\in\Bbb N\)</span>,
+<span class="math inline" data-source-tex="\int_{-2k\pi/y}^{2k\pi/y}e^{-iyx}f(x)dx\ge 0">\(\int_{-2k\pi/y}^{2k\pi/y}e^{-iyx}f(x)dx\ge 0\)</span>.</p>
+<p>  (ii) Tunjukkan bahwa
+<span class="math inline" data-source-tex="g(y)=\bover1{\sqrt{2\pi}}\lim_{a\to\infty}\int_{-a}^ae^{-iyx}f(x)dx">\(g(y)=\bover1{\sqrt{2\pi}}\lim_{a\to\infty}\int_{-a}^ae^{-iyx}f(x)dx\)</span>
+ada di <span class="math inline" data-source-tex="\coint{0,\infty}">\(\coint{0,\infty}\)</span> untuk setiap <span class="math inline" data-source-tex="y\ne 0">\(y\ne 0\)</span>.</p>
+<p>  (iii) Untuk <span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, atur <span class="math inline" data-source-tex="f_n(x)
+=e^{-|x|/(n+1)}f(x)">\(f_n(x)
+=e^{-|x|/(n+1)}f(x)\)</span> untuk setiap <span class="math inline" data-source-tex="x">\(x\)</span>.   Tunjukkan bahwa <span class="math inline" data-source-tex="f_n">\(f_n\)</span> dapat diintegralkan dan
+cembung di <span class="math inline" data-source-tex="\coint{0,\infty}">\(\coint{0,\infty}\)</span>.</p>
+<p>  (iv) Tunjukkan <span class="math inline" data-source-tex="g(y)=\lim_{n\to\infty}\varhatf_{n}(y)">\(g(y)=\lim_{n\to\infty}\varhatf_{n}(y)\)</span> untuk
+setiap <span class="math inline" data-source-tex="y\ne 0">\(y\ne 0\)</span>.</p>
+<p>  (v) Tunjukkan bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span> dapat diintegralkan maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_{-a}^a\varhatf
+=\Bover4{\sqrt{2\pi}}\int_{0}^{\infty}\Bover{\sin at}{t}f(t)dt
+\le\Bover{4a}{\sqrt{2\pi}}\int_0^{\pi/a}f
+\le 2\sqrt{2\pi}f(0)
+">\(\int_{-a}^a\varhatf
+=\Bover4{\sqrt{2\pi}}\int_{0}^{\infty}\Bover{\sin at}{t}f(t)dt
+\le\Bover{4a}{\sqrt{2\pi}}\int_0^{\pi/a}f
+\le 2\sqrt{2\pi}f(0)
+\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="a\ge 0">\(a\ge 0\)</span>.   Oleh karena itu, tunjukkan bahwa, baik <span class="math inline" data-source-tex="f">\(f\)</span>
+dapat diintegralkan maupun tidak, <span class="math inline" data-source-tex="g">\(g\)</span> dapat diintegralkan dan
+<span class="math inline" data-source-tex="f_n=(\varhatf_n)\varspcheck">\(f_n=(\varhatf_n)\varspcheck\)</span> untuk setiap <span class="math inline" data-source-tex="n">\(n\)</span>.</p>
+<p>  (vi) Tunjukkan bahwa
+<span class="math inline" data-source-tex="\lim_{a\downarrow 0}\sup_{n\in\Bbb N}\int_{-a}^a\varhatf_n=0">\(\lim_{a\downarrow 0}\sup_{n\in\Bbb N}\int_{-a}^a\varhatf_n=0\)</span>.</p>
+<p>  (vii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="f&#x27;">\(f&#x27;\)</span> dibatasi (pada domainnya) maka
+<span class="math inline" data-source-tex="\{\varhatf_n:n\in\Bbb N\}">\(\{\varhatf_n:n\in\Bbb N\}\)</span> dapat diintegralkan secara seragam (<em>petunjuk</em>: gunakan
+(vi) dan <a class="xref" href="#283Ya">283Ya</a>), sehingga <span class="math inline" data-source-tex="\lim_{n\to\infty}\|\varhat f_n-g\|_1=0">\(\lim_{n\to\infty}\|\varhat f_n-g\|_1=0\)</span> dan
+<span class="math inline" data-source-tex="f=\varcheck{g}">\(f=\varcheck{g}\)</span>.</p>
+<p>  (viii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="f&#x27;">\(f&#x27;\)</span> tidak terikat maka untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> kita
+dapat menemukan <span class="math inline" data-source-tex="h_1">\(h_1\)</span>, <span class="math inline" data-source-tex="h_2:\Bbb R\to\coint{0,\infty}">\(h_2:\Bbb R\to\coint{0,\infty}\)</span>, keduanya genap, cembung dan
+konvergen ke <span class="math inline" data-source-tex="0">\(0\)</span> di <span class="math inline" data-source-tex="\infty">\(\infty\)</span>, sehingga <span class="math inline" data-source-tex="f=h_1+h_2">\(f=h_1+h_2\)</span>, <span class="math inline" data-source-tex="h&#x27;_1">\(h&#x27;_1\)</span> terikat,
+<span class="math inline" data-source-tex="\int h_2\le\epsilon">\(\int h_2\le\epsilon\)</span> dan <span class="math inline" data-source-tex="h_2(0)\le\epsilon">\(h_2(0)\le\epsilon\)</span>.   Oleh karena itu tunjukkan bahwa dalam kasus
+ini juga <span class="math inline" data-source-tex="f=\varcheck{g}">\(f=\varcheck{g}\)</span>.</p>
+</section>
+<section class="source-unit" id="283Yd" data-source-id="283Yd"><h3><span class="source-label">283Yd</span> (d) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="f:\Bbb R\to\Bbb R">\(f:\Bbb R\to\Bbb R\)</span> genap, terdiferensiasi dua
+kali, dan konvergen ke <span class="math inline" data-source-tex="0">\(0\)</span> pada <span class="math inline" data-source-tex="\infty">\(\infty\)</span>; misalkan <span class="math inline" data-source-tex="f&#x27;&#x27;">\(f&#x27;&#x27;\)</span> kontinu dan
+<span class="math inline" data-source-tex="\{x:f&#x27;&#x27;(x)=0\}">\(\{x:f&#x27;&#x27;(x)=0\}\)</span> terbatas dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Tunjukkan bahwa <span class="math inline" data-source-tex="f">\(f\)</span> merupakan
+transformasi Fourier dari suatu fungsi yang dapat diintegralkan.
+<span class="hint" role="note"><strong>Petunjuk:</strong> Gunakan <a class="xref" href="#283Yc">283Yc</a> dan <a class="xref" href="#283Yb">283Yb</a>.</span></p>
+</section>
+<section class="source-unit" id="283Ye" data-source-id="283Ye"><h3><span class="source-label">283Ye</span> (e) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="g:\Bbb R\to\Bbb R">\(g:\Bbb R\to\Bbb R\)</span> adalah fungsi ganjil dari variasi terbatas
+sedemikian rupa sehingga <span class="math inline" data-source-tex="\int_1^{\infty}\bover1xg(x)dx=\infty">\(\int_1^{\infty}\bover1xg(x)dx=\infty\)</span>.
+Tunjukkan bahwa <span class="math inline" data-source-tex="g">\(g\)</span> tidak bisa menjadi transformasi Fourier dari fungsi apa pun yang dapat diintegralkan
+<span class="math inline" data-source-tex="f">\(f\)</span>.   (<em>Petunjuk</em>: tunjukkan jika <span class="math inline" data-source-tex="g=\varhatf">\(g=\varhatf\)</span> maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="-i\int_0^1f
+=\Bover{2}{\sqrt{2\pi}}\lim_{a\to\infty}
+  \int_0^a\Bover{1-\cos x}{x}g(x)dx=\infty">\(-i\int_0^1f
+=\Bover{2}{\sqrt{2\pi}}\lim_{a\to\infty}
+  \int_0^a\Bover{1-\cos x}{x}g(x)dx=\infty\)</span>.)</div>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<section class="source-unit" id="283-notes" data-source-id="283"><span class="anchor" id="283"></span><h2><span class="source-label">283</span> Catatan penutup untuk Bagian 283 </h2>
+<p>Dalam bagian ini saya telah mencoba menyajikan teori dasar transformasi
+Fourier untuk fungsi yang dapat diintegralkan pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, dengan
+mempertimbangkan perluasan konsep yang akan dicoba dalam bagian berikutnya.
+Seperti dalam §<a class="xref" href="../282/index.html#282">282</a>, saya menonjolkan dua teorema (<a class="xref" href="#283I">283I</a> dan <a class="xref" href="#283L">283L</a>) yang
+memberikan syarat agar inversi transformasi Fourier mengembalikan fungsi
+semula; kita berhadapan dengan integral tak wajar
+<span class="math inline" data-source-tex="\lim_{a\to\infty}\int_{-a}^a">\(\lim_{a\to\infty}\int_{-a}^a\)</span>, sebagaimana sebelumnya kita berhadapan dengan
+jumlah simetris <span class="math inline" data-source-tex="\lim_{n\to\infty}\sum_{k=-n}^n">\(\lim_{n\to\infty}\sum_{k=-n}^n\)</span>. Saya tidak melangkah sejauh
+di §<a class="xref" href="../282/index.html#282">282</a>; khususnya, untuk sementara saya menunda pembahasan fungsi
+terintegralkan-kuadrat, karena transformasi Fourier-nya mungkin tidak dapat
+dinyatakan dengan rumus sederhana yang digunakan di sini.</p>
+<p>Salah satu hambatan paling mendasar dalam bidang ini adalah tidak adanya
+kriteria efektif untuk menentukan fungsi mana yang merupakan transformasi
+Fourier dari fungsi yang dapat diintegralkan. (Untungnya, keadaan lebih baik
+untuk fungsi terintegralkan-kuadrat; lihat <a class="xref" href="../284/index.html#284O">284O</a>-<a class="xref" href="../284/index.html#284P">284P</a>.) Dalam <a class="xref" href="#283Yc">283Yc</a>-<a class="xref" href="#283Yd">283Yd</a> saya
+meringkas argumen yang menunjukkan bahwa fungsi <em>genap</em> ‘biasa’ yang tidak
+berosilasi dan konvergen ke <span class="math inline" data-source-tex="0">\(0\)</span> pada <span class="math inline" data-source-tex="\pm\infty">\(\pm\infty\)</span> merupakan transformasi Fourier
+dari fungsi yang dapat diintegralkan. Yang mencolok, hal ini tidak berlaku bagi
+fungsi <em>ganjil</em>; jadi <span class="math inline" data-source-tex="y\mapsto\Bover{1}{\ln(e+y^2)}">\(y\mapsto\Bover{1}{\ln(e+y^2)}\)</span> merupakan transformasi
+Fourier dari suatu fungsi yang dapat diintegralkan, tetapi
+<span class="math inline" data-source-tex="y\mapsto\Bover{\arctan y}{\ln(e+y^2)}">\(y\mapsto\Bover{\arctan y}{\ln(e+y^2)}\)</span> bukan merupakan contoh (<a class="xref" href="#283Ye">283Ye</a>).</p>
+<p>Di <a class="xref" href="#283W">283W</a> saya membuat sketsa teori transformasi Fourier yang sesuai
+<span class="math inline" data-source-tex="\Bbb R^r">\(\Bbb R^r\)</span>.   Ada sedikit kejutan.   Satu hal yang perlu diperhatikan adalah di mana
+dalam kasus satu dimensi kita meminta turunan kedua yang berkelakuan baik,
+dalam kasus dimensi <span class="math inline" data-source-tex="r">\(r\)</span> kita mungkin perlu mendiferensiasikan <span class="math inline" data-source-tex="r+1">\(r+1\)</span> kali
+(<a class="xref" href="#283Wf">283Wf</a>).   Alasan lainnya adalah kita kehilangan ‘prinsip lokalisasi’.   Di dalam
+kasus satu dimensi, jika <span class="math inline" data-source-tex="f">\(f\)</span> dapat diintegralkan dan nol pada suatu interval
+<span class="math inline" data-source-tex="\ooint{c,d}">\(\ooint{c,d}\)</span>, lalu
+<span class="math inline" data-source-tex="\lim_{a\to\infty}\int_{-a}^ae^{ixy}\varhatf(y)dy=0">\(\lim_{a\to\infty}\int_{-a}^ae^{ixy}\varhatf(y)dy=0\)</span> untuk setiap
+<span class="math inline" data-source-tex="x\in\ooint{c,d}">\(x\in\ooint{c,d}\)</span>;  ini langsung dari <a class="xref" href="#283I">283I</a> atau <a class="xref" href="#283L">283L</a>.   Namun dalam
+dimensi yang lebih tinggi formulasi paling alami dari hasil yang sesuai
+tidak berlaku (<a class="xref" href="#283Wm">283Wm</a>).</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 2: Broad Foundations</cite>, Bagian 283.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 30 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-cumulative-html-route-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V2-S283&quot;,
+  &quot;source_member&quot;: &quot;mt2.2016/mt283.tex&quot;,
+  &quot;target_bytes&quot;: 51452,
+  &quot;target_sha256&quot;: &quot;2c494e06bd16d4cb48e8e61265346756c413b729dbe81b8b8c8ae6f3012c5809&quot;,
+  &quot;source_ids&quot;: [
+    &quot;283&quot;,
+    &quot;283A&quot;,
+    &quot;283Aa&quot;,
+    &quot;283Ab&quot;,
+    &quot;283B&quot;,
+    &quot;283Ba&quot;,
+    &quot;283Bb&quot;,
+    &quot;283Bc&quot;,
+    &quot;283C&quot;,
+    &quot;283D&quot;,
+    &quot;283E&quot;,
+    &quot;283F&quot;,
+    &quot;283G&quot;,
+    &quot;283H&quot;,
+    &quot;283I&quot;,
+    &quot;283J&quot;,
+    &quot;283K&quot;,
+    &quot;283L&quot;,
+    &quot;283M&quot;,
+    &quot;283N&quot;,
+    &quot;283O&quot;,
+    &quot;283W&quot;,
+    &quot;283Wa&quot;,
+    &quot;283Wb&quot;,
+    &quot;283Wc&quot;,
+    &quot;283Wd&quot;,
+    &quot;283We&quot;,
+    &quot;283Wf&quot;,
+    &quot;283Wg&quot;,
+    &quot;283Wh&quot;,
+    &quot;283Wi&quot;,
+    &quot;283Wj&quot;,
+    &quot;283Wk&quot;,
+    &quot;283Wl&quot;,
+    &quot;283Wm&quot;,
+    &quot;283X&quot;,
+    &quot;283Xa&quot;,
+    &quot;283Xb&quot;,
+    &quot;283Xc&quot;,
+    &quot;283Xd&quot;,
+    &quot;283Xe&quot;,
+    &quot;283Xf&quot;,
+    &quot;283Xg&quot;,
+    &quot;283Xh&quot;,
+    &quot;283Xi&quot;,
+    &quot;283Xj&quot;,
+    &quot;283Xk&quot;,
+    &quot;283Xl&quot;,
+    &quot;283Xm&quot;,
+    &quot;283Xn&quot;,
+    &quot;283Xo&quot;,
+    &quot;283Xp&quot;,
+    &quot;283Xq&quot;,
+    &quot;283Xr&quot;,
+    &quot;283Xs&quot;,
+    &quot;283Xt&quot;,
+    &quot;283Y&quot;,
+    &quot;283Ya&quot;,
+    &quot;283Yb&quot;,
+    &quot;283Yc&quot;,
+    &quot;283Yd&quot;,
+    &quot;283Ye&quot;
+  ],
+  &quot;corpus_id&quot;: &quot;O007-FREMLIN&quot;,
+  &quot;volume_id&quot;: &quot;O007-FREMLIN-V2&quot;,
+  &quot;volume_source_title&quot;: &quot;Broad Foundations&quot;,
+  &quot;route&quot;: &quot;283&quot;,
+  &quot;official_source_page_start&quot;: 438,
+  &quot;chapter_official_source_pages&quot;: [
+    408,
+    517
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

@@ -1,0 +1,349 @@
+\frfilename{mt2a4.tex}
+\versiondate{4.3.14}
+\copyrightdate{1996}
+
+\def\chaptername{Lampiran}
+\def\sectionname{Ruang bernorma}
+
+\newsection{2A4}
+
+Dalam Bab 24 saya membahas ruang-ruang $L^p$, untuk
+$1\le p\le\infty$, dan menguraikan sifat-sifatnya yang paling mendasar.
+Ruang-ruang ini membentuk sekelompok contoh fundamental bagi teori umum
+ruang bernorma, yang merupakan landasan analisis fungsional. Buku ini
+bukanlah buku yang seharusnya Anda gunakan untuk mempelajari teori
+tersebut, tetapi sekali lagi, mungkin akan memudahkan Anda jika saya
+menguraikan secara ringkas bagian-bagian teori umum yang mutlak diperlukan
+untuk memahami gagasan-gagasan di sini.
+
+\leader{2A4A}{Lapangan real dan kompleks} Meskipun bagian-bagian
+terpenting teori ini, dari sudut pandang teori ukur, paling efektif
+ditangani dalam ruang linear {\it real}, terdapat banyak penerapan yang
+mutlak memerlukan ruang linear {\it kompleks}. Karena itu, saya akan
+menggunakan ungkapan
+
+\Centerline{“$U$ adalah ruang linear atas $\RoverC$”}
+
+\noindent untuk menyatakan bahwa $U$ adalah ruang linear atas lapangan
+$\Bbb R$ atau ruang linear atas lapangan $\Bbb C$; dipahami bahwa dalam
+setiap konteks tertentu, semua ruang linear yang dibahas berada di atas
+lapangan yang sama. Dengan cara serupa, saya akan menulis
+“$\alpha\in\RoverC$” untuk menyatakan bahwa $\alpha$ termasuk dalam
+lapangan dasar yang sedang digunakan.
+
+\leader{2A4B}{Definisi (a)} Sebuah {\bf ruang bernorma} adalah ruang
+linear $U$ atas $\RoverC$ yang dilengkapi dengan sebuah {\bf norma},
+yaitu fungsional $\|\,\|:U\to\coint{0,\infty}$ sedemikian sehingga
+
+\qquad $\|u+v\|\le\|u\|+\|v\|$ untuk semua $u$, $v\in U$,
+
+\qquad $\|\alpha u\|=|\alpha|\|u\|$ untuk $u\in U$,
+$\alpha\in\RoverC$,
+
+\qquad $\|u\|=0$ hanya jika $u=0$, yaitu vektor nol di $U$.
+
+\cmmnt{\noindent (Perhatikan bahwa jika $u=0$ (vektor nol), maka
+$0u=u$ (dengan $0$ yang ini adalah skalar nol), sehingga
+$\|u\|=|0|\|u\|=0$.)
+}
+
+\header{2A4Bb}{\bf (b)} Jika $U$ adalah ruang bernorma, maka kita
+memperoleh metrik $\rho$ pada $U$ dengan menetapkan bahwa
+$\rho(u,v)=\|u-v\|$ untuk $u$, $v\in U$. \prooflet{\Prf\
+$\rho(u,v)\in\coint{0,\infty}$ untuk semua $u$, $v$, karena
+$\|u\|\in\coint{0,\infty}$ untuk setiap $u$.
+$\rho(u,v)=\rho(v,u)$ untuk semua $u$, $v$, karena
+$\|v-u\|=|-1|\|u-v\|=\|u-v\|$ untuk semua $u$, $v$.
+Jika $u$, $v$, $w\in U$, maka
+
+\Centerline{$\rho(u,w)=\|u-w\|=\|(u-v)+(v-w)\|\le\|u-v\|+\|v-w\|
+=\rho(u,v)+\rho(v,w)$.}
+
+\noindent Jika $\rho(u,v)=0$, maka $\|u-v\|=0$, sehingga $u-v=0$ dan
+$u=v$.\ \Qed}
+
+\cmmnt{Dengan demikian, kita memperoleh topologi yang bersesuaian,
+beserta himpunan terbuka dan tertutup, penutupan, barisan konvergen, dan
+sebagainya.}
+
+\spheader 2A4Bc Jika $U$ adalah ruang bernorma, suatu himpunan
+$A\subseteq U$ disebut {\bf terbatas}\cmmnt{ (terhadap normanya)} jika
+$\{\|u\|:u\in A\}$ terbatas di $\Bbb R$\cmmnt{; yaitu, terdapat
+$M\ge 0$ sehingga $\|u\|\le M$ untuk setiap $u\in A$}.
+
+\leader{2A4C}{Subruang linear (a)} Jika $U$ adalah sebarang ruang
+bernorma dan $V$ adalah subruang linear dari $U$, maka $V$ juga
+merupakan ruang bernorma, apabila norma pada $V$ diambil sebagai
+pembatasan pada $V$ dari norma $U$\cmmnt{; verifikasinya langsung}.
+
+\spheader 2A4Cb Jika $V$ adalah subruang linear dari $U$, maka
+penutupannya\cmmnt{ $\overline{V}$} juga demikian.
+\prooflet{\Prf\ Ambil $u$, $u'\in\overline{V}$ dan
+$\alpha\in\RoverC$. Jika $\epsilon>0$, tetapkan
+$\delta=\epsilon/(2+|\alpha|)>0$; maka terdapat $v$, $v'\in V$
+sedemikian sehingga $\|u-v\|\le\delta$ dan
+$\|u'-v'\|\le\delta$. Sekarang $v+v'$, $\alpha v\in V$ dan
+
+\Centerline{$\|(u+u')-(v+v')\|\le\|u-v\|+\|u'-v'\|\le\epsilon$,
+\quad$\|\alpha u-\alpha v\|\le|\alpha|\|u-v\|\le\epsilon$.}
+
+\noindent Karena $\epsilon$ sebarang, $u+u'$ dan $\alpha u$ termasuk
+dalam $\overline{V}$; karena $u$, $u'$, dan $\alpha$ sebarang, dan
+$0$ tentu termasuk dalam $V\subseteq\overline{V}$, maka
+$\overline{V}$ adalah subruang linear dari $U$.\ \Qed}
+
+\leader{2A4D}{Ruang Banach (a)} Jika $U$ adalah ruang bernorma, suatu
+barisan $\sequencen{u_n}$ di $U$ disebut {\bf Cauchy} jika
+$\|u_m-u_n\|\to 0$ ketika $m$, $n\to\infty$\cmmnt{, yaitu, untuk setiap
+$\epsilon>0$ terdapat $n_0\in\Bbb N$ sedemikian sehingga
+$\|u_m-u_n\|\le\epsilon$ untuk semua $m$, $n\ge n_0$}.
+
+\spheader 2A4Db Sebuah ruang bernorma $U$ disebut {\bf lengkap} jika
+setiap barisan Cauchy mempunyai limit; ruang bernorma lengkap disebut
+{\bf ruang Banach}.
+
+\leader{2A4E}{}\cmmnt{ Hasil berikut berguna untuk diketahui.
+
+\medskip
+
+\noindent}{\bf Lema} Misalkan $U$ adalah ruang bernorma sedemikian
+sehingga $\sequencen{u_n}$ konvergen\cmmnt{ (yaitu, mempunyai limit)}
+di $U$ setiap kali $\sequencen{u_n}$ adalah barisan di $U$ yang memenuhi
+$\|u_{n+1}-u_n\|\le 4^{-n}$ untuk setiap $n\in\Bbb N$. Maka $U$
+lengkap.
+
+\proof{ Misalkan $\sequencen{u_n}$ adalah sebarang barisan Cauchy di
+$U$. Untuk setiap $k\in\Bbb N$, ambil $n_k\in\Bbb N$ sedemikian
+sehingga $\|u_{m}-u_n\|\le 4^{-k}$ apabila $m$, $n\ge n_k$. Tetapkan
+$v_k=u_{n_k}$ untuk setiap $k$.
+Maka $\|v_{k+1}-v_k\|\le 4^{-k}$ (baik $n_k\le n_{k+1}$ maupun
+$n_{k+1}\le n_k$). Jadi $\sequence{k}{v_k}$ mempunyai limit $v\in U$.
+Saya akan menunjukkan bahwa $v$ adalah limit yang diperlukan dari
+$\sequencen{u_n}$. Diberikan $\epsilon>0$, ambil $l\in\Bbb N$
+sedemikian sehingga $\|v_k-v\|\le\epsilon$ untuk setiap $k\ge l$;
+ambil $k\ge l$ sedemikian sehingga $4^{-k}\le\epsilon$; maka jika
+$n\ge n_k$,
+
+\Centerline{$\|u_n-v\|=\|(u_n-v_k)+(v_k-v)\|
+\le\|u_n-v_k\|+\|v_k-v\|
+\le\|u_n-u_{n_k}\|+\epsilon
+\le 2\epsilon$.}
+
+\noindent Karena $\epsilon$ sebarang, $v$ adalah limit dari
+$\sequencen{u_n}$. Karena $\sequencen{u_n}$ sebarang, $U$ lengkap.
+}%end of proof of 2A4E
+
+\leader{2A4F}{Operator linear terbatas (a)} Misalkan $U$, $V$ adalah
+dua ruang bernorma. Sebuah operator linear $T:U\to V$ disebut
+{\bf terbatas} jika $\{\|Tu\|:u\in U,\,\|u\|\le 1\}$ terbatas.
+\cmmnt{({\bf Peringatan!} Dalam konteks ini, kita tidak mensyaratkan
+agar seluruh himpunan nilai $T[U]$ terbatas; sebuah “operator linear
+terbatas” tidak harus merupakan apa yang biasanya kita sebut “fungsi
+terbatas”.)}
+Tuliskan $\eurm B(U;V)$ untuk ruang semua operator linear terbatas dari
+$U$ ke $V$, dan untuk $T\in \eurm B(U;V)$ tuliskan
+$\|T\|= \sup\{\|Tu\|:u\in U,\,\|u\|\le 1\}$.
+
+\header{2A4Fb}{\bf (b)}
+\cmmnt{Fakta yang berguna:} $\|Tu\|\le\|T\|\|u\|$ apabila
+$T\in\eurm B(U;V)$ dan $u\in U$. \prooflet{\Prf\ Jika
+$|\alpha|>\|u\|$, maka
+
+\Centerline{$\|\Bover1{\alpha}u\|=\Bover1{|\alpha|}\|u\|\le 1$,}
+
+\noindent sehingga
+
+\Centerline{$\|Tu\|=\|\alpha T(\Bover1{\alpha}u)\|
+=|\alpha|\|T(\Bover1{\alpha}u)\|\le|\alpha|\|T\|$;}
+
+\noindent karena $\alpha$ sebarang, $\|Tu\|\le\|T\|\|u\|$.\ \Qed}
+
+\spheader 2A4Fc Sebuah operator linear $T:U\to V$ terbatas jika dan
+hanya jika operator itu kontinu untuk topologi norma pada $U$ dan $V$.
+\prooflet{\Prf\
+(i) Jika $T$ terbatas, $u_0\in U$, dan $\epsilon>0$, maka
+
+\Centerline{$\|Tu-Tu_0\|=\|T(u-u_0)\|\le\|T\|\|u-u_0\|\le\epsilon$}
+
+\noindent apabila $\|u-u_0\|\le\Bover{\epsilon}{1+\|T\|}$; menurut
+2A3H, $T$ kontinu. (ii) Jika $T$ kontinu, maka terdapat $\delta>0$
+sedemikian sehingga $\|Tu\|=\|Tu-T0\|\le 1$ apabila
+$\|u\|=\|u-0\|\le\delta$. Jika sekarang $\|u\|\le 1$,
+
+\Centerline{$\|Tu\|=\Bover1{\delta}\|T(\delta u)\|\le\Bover1{\delta}$,}
+
+\noindent sehingga $T$ adalah operator terbatas.\ \Qed}
+
+\spheader 2A4Fd\dvAnew{2013} Jika $U$, $V$, dan $W$ adalah ruang
+bernorma, $S\in\eurm B(U;V)$ dan $T\in\eurm B(V;W)$, maka
+$TS\in\eurm B(U;W)$ dan $\|TS\|\le\|T\|\|S\|$.
+\prooflet{\Prf\ Saya mengandaikan bahwa Anda sudah mengetahui, tetapi
+bagaimanapun juga mudah diperiksa, bahwa $TS:U\to W$ adalah operator
+linear. Sekarang, jika $u\in U$ dan $\|u\|\le 1$,
+
+\Centerline{$\|TSu\|=\|T(Su)\|\le\|T\|\|Su\|\le\|T\|\|S\|$}
+
+\noindent (menggunakan (b) untuk pertidaksamaan di tengah), sehingga
+$TS$ terbatas dan $\|TS\|\le\|T\|\|S\|$.\ \Qed}
+
+\leader{2A4G}{Teorema} $\eurm B(U;V)$ adalah ruang linear atas
+$\RoverC$, dan $\|\,\|$ adalah norma pada $\eurm B(U;V)$.
+
+\proof{ Seperti dalam 2A4Fd, mudah diperiksa bahwa jika $S:U\to V$ dan
+$T:U\to V$ adalah operator linear, dan $\alpha\in\RoverC$, maka kita
+memperoleh operator linear $S+T$ dan $\alpha T$ dari $U$ ke $V$ yang
+didefinisikan oleh rumus
+
+\Centerline{$(S+T)(u)=Su+Tu$,\quad$(\alpha T)(u)=\alpha(Tu)$}
+
+\noindent untuk setiap $u\in U$; selain itu, menurut definisi
+penjumlahan dan perkalian skalar ini, ruang semua operator linear dari
+$U$ ke $V$ merupakan ruang linear. Sekarang terlihat bahwa apabila
+$S$, $T\in\eurm B(U;V)$, $\alpha\in\RoverC$, $u\in U$, dan
+$\|u\|\le 1$,
+
+\Centerline{$\|(S+T)(u)\|=\|Su+Tu\|\le\|Su\|+\|Tu\|\le\|S\|+\|T\|$,}
+
+\Centerline{$\|(\alpha
+T)u\|=\|\alpha(Tu)\|=|\alpha|\|Tu\|\le|\alpha|\|T\|$;}
+
+\noindent sehingga $S+T$ dan $\alpha T$ termasuk dalam
+$\eurm B(U;V)$, dengan $\|S+T\|\le\|S\|+\|T\|$ dan
+$\|\alpha T\|\le|\alpha|\|T\|$. Ini menunjukkan bahwa
+$\eurm B(U;V)$ adalah subruang linear dari ruang semua operator linear,
+dan karena itu merupakan ruang linear atas $\RoverC$. Untuk memeriksa
+bahwa rumus yang diberikan untuk $\|T\|$ mendefinisikan norma, sebagian
+besar pekerjaan telah selesai; demi kelengkapan formal, perlu saya
+catat bahwa $\|T\|\in\coint{0,\infty}$ untuk setiap $T$; jika
+$\alpha=0$, maka tentu saja $\|\alpha T\|=0=|\alpha|\|T\|$; untuk
+$\alpha$ lainnya,
+
+\Centerline{$|\alpha|\|T\|=|\alpha|\|\alpha^{-1}\alpha T\|
+\le|\alpha||\alpha^{-1}|\|\alpha T\|=\|\alpha T\|\le|\alpha|\|T\|$,}
+
+\noindent sehingga $\|\alpha T\|=|\alpha|\|T\|$. Akhirnya, jika
+$\|T\|=0$, maka $\|Tu\|\le\|T\|\|u\|=0$ untuk setiap $u\in U$,
+sehingga $Tu=0$ untuk setiap $u$ dan $T$ adalah operator nol (dalam
+ruang semua operator linear, dan dengan demikian juga dalam subruangnya
+$\eurm B(U;V)$).
+}%end of proof of 2A4G
+
+\leader{2A4H}{Ruang dual} Kasus terpenting dari $\eurm B(U;V)$ adalah
+ketika $V$ merupakan lapangan skalar $\RoverC$ itu sendiri\cmmnt{
+(tentu saja kita dapat memandang $\RoverC$ sebagai ruang bernorma atas
+dirinya sendiri, dengan menulis $\|\alpha\|=|\alpha|$ untuk setiap
+skalar $\alpha$)}. Dalam hal ini, $\eurm B(U;\RoverC)$ disebut
+{\bf dual} dari $U$; ruang ini lazim dinotasikan dengan $U'$ atau
+$U^*$; saya menggunakan yang terakhir.
+
+\leader{2A4I}{Perluasan operator terbatas: Teorema} Misalkan $U$
+adalah ruang bernorma dan $V\subseteq U$ subruang linear yang rapat.
+Misalkan $W$ adalah ruang Banach dan $T_0:V\to W$ operator linear
+terbatas; maka terdapat tepat satu operator linear terbatas $T:U\to W$
+yang memperluas $T_0$, dan $\|T\|=\|T_0\|$.
+
+\proof{{\bf (a)} Untuk setiap $u\in U$, terdapat barisan
+$\sequencen{v_n}$ di $V$ yang konvergen ke $u$. Sekarang
+
+\Centerline{$\|T_0v_m-T_0v_n\|=\|T_0(v_m-v_n)\|
+\le\|T_0\|\|v_m-v_n\|\le\|T_0\|(\|v_m-u\|+\|u-v_n\|)
+\to 0$}
+
+\noindent ketika $m$, $n\to\infty$, sehingga
+$\sequencen{T_0v_n}$ adalah barisan Cauchy dan
+$w=\lim_{n\to\infty}T_0v_n$ terdefinisi di $W$. Jika
+$\sequencen{v'_n}$ adalah barisan lain di $V$ yang konvergen ke $u$,
+maka
+
+$$\eqalign{\|w-T_0v'_n\|
+&\le\|w-T_0v_n\|+\|T_0(v_n-v'_n)\|\cr
+&\le\|w-T_0v_n\|+\|T_0\|(\|v_n-u\|+\|u-v'_n\|)\to 0\cr}$$
+
+\noindent ketika $n\to\infty$, sehingga $w$ juga merupakan limit dari
+$\sequencen{T_0v'_n}$.
+
+\medskip
+
+{\bf (b)} Karena itu, kita dapat mendefinisikan $T:U\to W$ dengan
+menetapkan $Tu=\lim_{n\to\infty}T_0v_n$ apabila
+$\sequencen{v_n}$ adalah barisan di $V$ yang konvergen ke $u$. Jika
+$v\in V$, kita dapat menetapkan $v_n=v$ untuk setiap $n$ dan melihat
+bahwa $Tv=T_0v$; jadi $T$ memperluas $T_0$. Jika $u$, $u'\in U$ dan
+$\alpha\in\RoverC$, ambil barisan $\sequencen{v_n}$,
+$\sequencen{v'_n}$ di $V$ yang masing-masing konvergen ke $u$, $u'$;
+dalam hal ini
+
+\Centerline{$\|(u+u')-(v_n+v'_n)\|\le\|u-v_n\|+\|u'-v'_n\|\to 0$,
+\quad$\|\alpha u-\alpha v_n\|=|\alpha|\|u-v_n\|\to 0$}
+
+\noindent ketika $n\to\infty$, sehingga
+$T(u+u')=\lim_{n\to\infty}T_0(v_n+v'_n)$,
+$T(\alpha u)=\lim_{n\to\infty}T_0(\alpha v_n)$, dan
+
+$$\eqalign{\|T(u+u')-Tu-Tu'\|
+&\le\|T(u+u')-T_0(v_n+v'_n)\|+\|T_0v_n-Tu\|+\|T_0v'_n-Tu'\|\cr
+&\to 0,\cr}$$
+
+\Centerline{$\|T(\alpha u)-\alpha Tu\|
+\le\|T(\alpha u)-T_0(\alpha v_n)\|+|\alpha|\|T_0v_n-Tu\|\to 0$}
+
+\noindent ketika $n\to\infty$. Ini berarti
+$\|T(u+u')-Tu-Tu'\|=0$, $\|T(\alpha u)-\alpha Tu\|=0$, sehingga
+$T(u+u')=Tu+Tu'$ dan $T(\alpha u)=\alpha Tu$; karena $u$, $u'$, dan
+$\alpha$ sebarang, $T$ linear.
+
+\medskip
+
+{\bf (c)} Untuk setiap $u\in U$, misalkan $\sequencen{v_n}$ adalah
+barisan di $V$ yang konvergen ke $u$. Maka
+
+$$\eqalign{\|Tu\|
+&\le\|T_0v_n\|+\|Tu-T_0v_n\|
+\le\|T_0\|\|v_n\|+\|Tu-T_0v_n\|\cr
+&\le\|T_0\|(\|u\|+\|v_n-u\|)+\|Tu-T_0v_n\|
+\to\|T_0\|\|u\|\cr}$$
+
+\noindent ketika $n\to\infty$, sehingga
+$\|Tu\|\le\|T_0\|\|u\|$. Karena $u$ sebarang, $T$ terbatas dan
+$\|T\|\le\|T_0\|$. Tentu saja $\|T\|\ge\|T_0\|$ karena $T$
+memperluas $T_0$.
+
+\medskip
+
+{\bf (d)} Akhirnya, misalkan $\tilde T$ adalah operator linear terbatas
+lain dari $U$ ke $W$ yang memperluas $T_0$. Jika $u\in U$, terdapat
+barisan $\sequencen{v_n}$ di $V$ yang konvergen ke $u$; sekarang
+
+\Centerline{$\|\tilde Tu-Tu\|\le\|\tilde T(u-v_n)\|+\|T(v_n-u)\|
+\le(\|\tilde T\|+\|T\|)\|u-v_n\|\to 0$}
+
+\noindent ketika $n\to\infty$, sehingga $\|\tilde Tu-Tu\|=0$ dan
+$\tilde Tu=Tu$. Karena $u$ sebarang, $\tilde T=T$. Jadi $T$ tunggal.
+}%end of proof of 2A4I
+
+\leader{2A4J}{Aljabar bernorma (a)} Sebuah {\bf aljabar bernorma}
+adalah ruang bernorma $(U,\|\,\|)$ yang dilengkapi dengan suatu
+perkalian, yaitu operator biner $\times$ pada $U$, sedemikian sehingga
+
+\Centerline{$u\times(v\times w)=(u\times v)\times w$,}
+
+\Centerline{$u\times(v+w)=(u\times v)+(u\times w)$,
+\quad$(u+v)\times w=(u\times w)+(v\times w)$,}
+
+\Centerline{$(\alpha u)\times v=u\times(\alpha v)=\alpha(u\times v)$,}
+
+\Centerline{$\|u\times v\|\le\|u\|\|v\|$}
+
+\noindent untuk semua $u$, $v$, $w\in U$ dan $\alpha\in\RoverC$.
+
+\spheader 2A4Jb Sebuah {\bf aljabar Banach} adalah aljabar bernorma
+yang merupakan ruang Banach. Sebuah aljabar bernorma\cmmnt{ $U$}
+disebut {\bf komutatif} jika perkaliannya komutatif\cmmnt{, yaitu,
+$u\times v=v\times u$ untuk semua $u$, $v\in U$}.
+
+\leader{*2A4K}{Definisi} Sebuah ruang bernorma $U$ disebut
+{\bf konveks seragam} jika untuk setiap $\epsilon>0$ terdapat
+$\delta>0$ sedemikian sehingga $\|u+v\|\le 2-\delta$ apabila
+$u$, $v\in U$, $\|u\|=\|v\|=1$, dan $\|u-v\|\ge\epsilon$.
+
+\discrpage

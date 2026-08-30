@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Subruang terukur — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        bigcupop: '\\bigcup',
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        ocint: ['\\left]#1\\right]', 1],
+        restr: '\\mathord{\\upharpoonright}',
+        ssptilde: '^{\\scriptscriptstyle\\sim}',
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        roibr: '\\mathopen{{[}}',
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1]
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 1 · Bagian 131</p>
+  <h1>Subruang terukur</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi Volume 1</a></nav>
+<main id="isi">
+<p>Sangat sering kita ingin mengintegralkan suatu fungsi pada sebuah
+subhimpunan dari suatu ruang ukur; misalnya, membentuk integral
+<span class="math inline" data-source-tex="\int_a^bf(x)dx">\(\int_a^bf(x)dx\)</span>, dengan <span class="math inline" data-source-tex="a&lt;b">\(a&lt;b\)</span> dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Sering kali kita ingin
+melakukan ini ketika fungsi tersebut tidak didefinisikan pada sebagian
+atau seluruh bagian di luar subhimpunan itu, seperti dalam ungkapan
+<span class="math inline" data-source-tex="\int_0^1\ln x\,dx">\(\int_0^1\ln x\,dx\)</span>. Kerangka alami untuk melakukan operasi semacam itu
+adalah ‘ukuran subruang’. Jika <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan
+<span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span>, terdapat ukuran subruang alami <span class="math inline" data-source-tex="\mu_H">\(\mu_H\)</span> pada <span class="math inline" data-source-tex="H">\(H\)</span>, yang
+saya uraikan dalam bagian ini.
+Saya mulai dengan definisi ukuran subruang ini (<a class="xref" href="#131A">131A</a>-<a class="xref" href="#131C">131C</a>), disertai
+uraian tentang integrasi terhadapnya (<a class="xref" href="#131E">131E</a>-<a class="xref" href="#131H">131H</a>); ini memberikan
+landasan yang kukuh bagi konsep ‘integrasi pada suatu subhimpunan
+(terukur)’ (<a class="xref" href="#131D">131D</a>).</p>
+<section class="source-unit" id="131A" data-source-id="131A"><h2><span class="source-label">131A</span> Proposisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur, dan
+<span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span>. Tetapkan <span class="math inline" data-source-tex="\Sigma_H=\{E:E\in\Sigma,\,E\subseteq H\}">\(\Sigma_H=\{E:E\in\Sigma,\,E\subseteq H\}\)</span> dan
+misalkan <span class="math inline" data-source-tex="\mu_H">\(\mu_H\)</span> merupakan pembatasan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> pada <span class="math inline" data-source-tex="\Sigma_H">\(\Sigma_H\)</span>. Maka
+<span class="math inline" data-source-tex="(H,\Sigma_H,\mu_H)">\((H,\Sigma_H,\mu_H)\)</span> merupakan suatu ruang ukur.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Tentu saja <span class="math inline" data-source-tex="\Sigma_H">\(\Sigma_H\)</span> tidak lain adalah
+<span class="math inline" data-source-tex="\{E\cap H:E\in\Sigma\}">\(\{E\cap H:E\in\Sigma\}\)</span>, dan telah saya catat (dalam <a class="xref" href="../121/index.html#121A">121A</a>) bahwa ini
+merupakan suatu aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span> atas subhimpunan-subhimpunan <span class="math inline" data-source-tex="H">\(H\)</span>.
+Sekarang jelas bahwa <span class="math inline" data-source-tex="\mu_H">\(\mu_H\)</span> memenuhi (iii) dari <a class="xref" href="../112/index.html#112A">112A</a>, sehingga
+<span class="math inline" data-source-tex="(H,\Sigma_H,\mu_H)">\((H,\Sigma_H,\mu_H)\)</span> merupakan suatu ruang ukur.</p></aside>
+</section>
+<section class="source-unit" id="131B" data-source-id="131B"><h2><span class="source-label">131B</span> Definisi </h2>
+<p>Jika <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> sembarang ruang ukur dan
+<span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span>, maka <span class="math inline" data-source-tex="\mu_H">\(\mu_H\)</span>, sebagaimana didefinisikan dalam <a class="xref" href="#131A">131A</a>,
+adalah <strong>ukuran subruang</strong> pada <span class="math inline" data-source-tex="H">\(H\)</span>.</p>
+<p>Jika <span class="math inline" data-source-tex="X=\BbbR^r">\(X=\BbbR^r\)</span>, dengan <span class="math inline" data-source-tex="r\ge 1">\(r\ge 1\)</span>, dan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> adalah ukuran Lebesgue
+pada <span class="math inline" data-source-tex="\BbbR^r">\(\BbbR^r\)</span>, saya akan menyebut suatu ukuran subruang <span class="math inline" data-source-tex="\mu_H">\(\mu_H\)</span>
+sebagai <strong>ukuran Lebesgue pada</strong> <span class="math inline" data-source-tex="H">\(H\)</span>.</p>
+<p>Fakta-fakta elementer berikut patut dicatat.</p>
+</section>
+<section class="source-unit" id="131C" data-source-id="131C"><span class="anchor" id="131Ca"></span><h2><span class="source-label">131C</span> Lema </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur,
+<span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span>, dan <span class="math inline" data-source-tex="\mu_H">\(\mu_H\)</span> ukuran subruang pada <span class="math inline" data-source-tex="H">\(H\)</span>, dengan domain
+<span class="math inline" data-source-tex="\Sigma_H">\(\Sigma_H\)</span>. Maka</p>
+<p>(a) untuk setiap <span class="math inline" data-source-tex="A\subseteq H">\(A\subseteq H\)</span>, <span class="math inline" data-source-tex="A">\(A\)</span> bersifat <span class="math inline" data-source-tex="\mu_H">\(\mu_H\)</span>-terabaikan jika
+dan hanya jika bersifat <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terabaikan;</p>
+<span class="anchor" id="131Cb"></span>
+<p>(b) jika <span class="math inline" data-source-tex="G\in\Sigma_H">\(G\in\Sigma_H\)</span>, maka <span class="math inline" data-source-tex="(\mu_H)_G">\((\mu_H)_G\)</span>, yaitu ukuran subruang pada
+<span class="math inline" data-source-tex="G">\(G\)</span> ketika <span class="math inline" data-source-tex="G">\(G\)</span> dipandang sebagai subhimpunan terukur dari <span class="math inline" data-source-tex="H">\(H\)</span>, identik
+dengan <span class="math inline" data-source-tex="\mu_G">\(\mu_G\)</span>, yaitu ukuran subruang pada <span class="math inline" data-source-tex="G">\(G\)</span> ketika <span class="math inline" data-source-tex="G">\(G\)</span> dipandang
+sebagai subhimpunan terukur dari <span class="math inline" data-source-tex="X">\(X\)</span>.</p>
+</section>
+<section class="source-unit" id="131D" data-source-id="131D"><h2><span class="source-label">131D</span> Integrasi pada subhimpunan: Definisi </h2>
+<p>Misalkan
+<span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur, <span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span>, dan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi
+bernilai real yang didefinisikan pada suatu subhimpunan dari <span class="math inline" data-source-tex="X">\(X\)</span>. Dengan
+<span class="math inline" data-source-tex="\int_H f">\(\int_H f\)</span> (atau <span class="math inline" data-source-tex="\int_H f(x)\mu(dx)">\(\int_H f(x)\mu(dx)\)</span>, dan sebagainya) saya akan
+memaksudkan <span class="math inline" data-source-tex="\int(f\restr H)d\mu_H">\(\int(f\restr H)d\mu_H\)</span>, jika integral ini ada,
+sesuai dengan definisi-definisi <a class="xref" href="#131A">131A</a>-<a class="xref" href="#131B">131B</a> dan <a class="xref" href="../122/index.html#122M">122M</a>, serta dengan
+menetapkan <span class="math inline" data-source-tex="\dom(f\restr H)=H\cap\dom f">\(\dom(f\restr H)=H\cap\dom f\)</span>,
+<span class="math inline" data-source-tex="(f\restr H)(x)=f(x)">\((f\restr H)(x)=f(x)\)</span> untuk <span class="math inline" data-source-tex="x\in H\cap\dom f">\(x\in H\cap\dom f\)</span>.</p>
+</section>
+<section class="source-unit" id="131E" data-source-id="131E"><h2><span class="source-label">131E</span> Proposisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur,
+<span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span>, dan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real yang didefinisikan
+pada suatu subhimpunan <span class="math inline" data-source-tex="\dom f">\(\dom f\)</span> dari <span class="math inline" data-source-tex="H">\(H\)</span>. Tetapkan <span class="math inline" data-source-tex="\tilde f(x)=f(x)">\(\tilde f(x)=f(x)\)</span>
+jika <span class="math inline" data-source-tex="x\in\dom f">\(x\in\dom f\)</span>, dan <span class="math inline" data-source-tex="0">\(0\)</span> jika <span class="math inline" data-source-tex="x\in X\setminus H">\(x\in X\setminus H\)</span>. Maka, jika salah
+satu ruas dalam <span class="math inline" data-source-tex="\int fd\mu_H=\int \tilde fd\mu">\(\int fd\mu_H=\int \tilde fd\mu\)</span> terdefinisi dalam
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, ruas lainnya juga demikian, dan persamaan tersebut berlaku.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><span class="anchor" id="131E-proof-a"></span><strong>(a)</strong> Jika <span class="math inline" data-source-tex="f">\(f\)</span> merupakan fungsi <span class="math inline" data-source-tex="\mu_H">\(\mu_H\)</span>-sederhana, fungsi
+itu dapat dinyatakan sebagai <span class="math inline" data-source-tex="\sum_{i=0}^na_i\chi E_i">\(\sum_{i=0}^na_i\chi E_i\)</span>, dengan
+<span class="math inline" data-source-tex="E_0,\ldots,E_n\in\Sigma_H">\(E_0,\ldots,E_n\in\Sigma_H\)</span>, <span class="math inline" data-source-tex="a_0,\ldots,a_n\in\Bbb R">\(a_0,\ldots,a_n\in\Bbb R\)</span>, dan
+<span class="math inline" data-source-tex="\mu_H E_i&lt;\infty">\(\mu_H E_i&lt;\infty\)</span> untuk setiap <span class="math inline" data-source-tex="i">\(i\)</span>. Sekarang <span class="math inline" data-source-tex="\tilde f">\(\tilde f\)</span> juga sama
+dengan <span class="math inline" data-source-tex="\sum_{i=0}^na_i\chi E_i">\(\sum_{i=0}^na_i\chi E_i\)</span> jika ungkapan ini ditafsirkan sebagai
+fungsi dari <span class="math inline" data-source-tex="X">\(X\)</span> ke <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>. Jadi</p>
+<div class="centerline"><span class="math inline" data-source-tex="\sum_{i=0}^na_i\mu_HE_i
+=\sum_{i=0}^na_i\mu E_i=\int\tilde fd\mu">\(\sum_{i=0}^na_i\mu_HE_i
+=\sum_{i=0}^na_i\mu E_i=\int\tilde fd\mu\)</span>.</div>
+<p> </p>
+<p><span class="anchor" id="131E-proof-b"></span><strong>(b)</strong> Jika <span class="math inline" data-source-tex="f">\(f\)</span> merupakan fungsi nonnegatif yang
+<span class="math inline" data-source-tex="\mu_H">\(\mu_H\)</span>-terintegralkan, terdapat barisan tak-menurun
+<span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span> dari fungsi-fungsi <span class="math inline" data-source-tex="\mu_H">\(\mu_H\)</span>-sederhana nonnegatif
+yang konvergen ke <span class="math inline" data-source-tex="f\,\,\mu_H">\(f\,\,\mu_H\)</span>-hampir di mana-mana; sekarang
+<span class="math inline" data-source-tex="\sequencen{\tilde f_n}">\(\sequencen{\tilde f_n}\)</span> merupakan barisan tak-menurun dari
+fungsi-fungsi <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-sederhana yang konvergen ke
+<span class="math inline" data-source-tex="\tilde f\,\,\mu">\(\tilde f\,\,\mu\)</span>-hampir di mana-mana (<a class="xref" href="#131Ca">131Ca</a>), dan</p>
+<div class="centerline"><span class="math inline" data-source-tex=" \sup_{n\in\Bbb N}\int \tilde f_nd\mu
+=\sup_{n\in\Bbb N}\int f_nd\mu_H
+=\int fd\mu_H&lt;\infty">\( \sup_{n\in\Bbb N}\int \tilde f_nd\mu
+=\sup_{n\in\Bbb N}\int f_nd\mu_H
+=\int fd\mu_H&lt;\infty\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="\int\tilde fd\mu">\(\int\tilde fd\mu\)</span> ada dan sama dengan
+<span class="math inline" data-source-tex="\int fd\mu_H">\(\int fd\mu_H\)</span>.</p>
+<p> </p>
+<p><span class="anchor" id="131E-proof-c"></span><strong>(c)</strong> Jika <span class="math inline" data-source-tex="f">\(f\)</span> <span class="math inline" data-source-tex="\mu_H">\(\mu_H\)</span>-terintegralkan, fungsi itu dapat dinyatakan
+sebagai <span class="math inline" data-source-tex="f_1-f_2">\(f_1-f_2\)</span>, dengan <span class="math inline" data-source-tex="f_1">\(f_1\)</span> dan <span class="math inline" data-source-tex="f_2">\(f_2\)</span> fungsi-fungsi nonnegatif
+yang <span class="math inline" data-source-tex="\mu_H">\(\mu_H\)</span>-terintegralkan, sehingga
+<span class="math inline" data-source-tex="\tilde f=\tilde f_1-\tilde f_2">\(\tilde f=\tilde f_1-\tilde f_2\)</span> dan</p>
+<div class="centerline"><span class="math inline" data-source-tex=" \int\tilde fd\mu=\int\tilde f_1d\mu-\int\tilde f_2d\mu=\int
+f_1d\mu_H-\int f_2d\mu_H=\int fd\mu_H">\( \int\tilde fd\mu=\int\tilde f_1d\mu-\int\tilde f_2d\mu=\int
+f_1d\mu_H-\int f_2d\mu_H=\int fd\mu_H\)</span>.</div>
+<p> </p>
+<p><span class="anchor" id="131E-proof-d"></span><strong>(d)</strong> Sekarang andaikan bahwa <span class="math inline" data-source-tex="\tilde f">\(\tilde f\)</span> <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan.
+Dalam hal ini terdapat himpunan <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-koterabaikan <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="E\subseteq\dom\tilde f">\(E\subseteq\dom\tilde f\)</span> dan <span class="math inline" data-source-tex="\tilde f\restr E">\(\tilde f\restr E\)</span>
+bersifat <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>-terukur (<a class="xref" href="../122/index.html#122P">122P</a>). Tentu saja <span class="math inline" data-source-tex="\mu(H\setminus E)=0">\(\mu(H\setminus E)=0\)</span>,
+sehingga <span class="math inline" data-source-tex="E\cap H">\(E\cap H\)</span> bersifat <span class="math inline" data-source-tex="\mu_H">\(\mu_H\)</span>-koterabaikan; selain itu, untuk
+setiap <span class="math inline" data-source-tex="a\in\Bbb R">\(a\in\Bbb R\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\{x:x\in E\cap H,\,f(x)\ge a\}
+=H\cap\{x:x\in E,\,\tilde f(x)\ge a\}\in\Sigma_H">\(\{x:x\in E\cap H,\,f(x)\ge a\}
+=H\cap\{x:x\in E,\,\tilde f(x)\ge a\}\in\Sigma_H\)</span>,</div>
+<p>sehingga <span class="math inline" data-source-tex="f\restr(E\cap H)">\(f\restr(E\cap H)\)</span> bersifat <span class="math inline" data-source-tex="\Sigma_H">\(\Sigma_H\)</span>-terukur,
+dan <span class="math inline" data-source-tex="f">\(f\)</span> terukur secara virtual terhadap <span class="math inline" data-source-tex="\mu_H">\(\mu_H\)</span> serta didefinisikan
+<span class="math inline" data-source-tex="\mu_H">\(\mu_H\)</span>-hampir di mana-mana. Selanjutnya, untuk <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\mu_H\{x:x\in E\cap H,\,|f(x)|\ge\epsilon\}
+=\mu\{x:x\in E,\,|\tilde f(x)|\ge\epsilon\}&lt;\infty">\(\mu_H\{x:x\in E\cap H,\,|f(x)|\ge\epsilon\}
+=\mu\{x:x\in E,\,|\tilde f(x)|\ge\epsilon\}&lt;\infty\)</span>,</div>
+<p>sedangkan jika <span class="math inline" data-source-tex="g">\(g\)</span> suatu fungsi <span class="math inline" data-source-tex="\mu_H">\(\mu_H\)</span>-sederhana dan
+<span class="math inline" data-source-tex="g\le|f|\,\,\mu_H">\(g\le|f|\,\,\mu_H\)</span>-hampir di mana-mana, maka
+<span class="math inline" data-source-tex="\tilde g\le|\tilde f|\,\,\mu">\(\tilde g\le|\tilde f|\,\,\mu\)</span>-hampir di mana-mana dan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int g\,d\mu_H=\int\tilde g\,d\mu
+\le\int|\tilde  f|d\mu&lt;\infty">\(\int g\,d\mu_H=\int\tilde g\,d\mu
+\le\int|\tilde  f|d\mu&lt;\infty\)</span>.</div>
+<p>Menurut kriteria dalam <a class="xref" href="../122/index.html#122J">122J</a> dan <a class="xref" href="../122/index.html#122P">122P</a>, <span class="math inline" data-source-tex="f">\(f\)</span>
+<span class="math inline" data-source-tex="\mu_H">\(\mu_H\)</span>-terintegralkan, sehingga sekali lagi kita memperoleh
+<span class="math inline" data-source-tex="\int fd\mu_H=\int\tilde fd\mu">\(\int fd\mu_H=\int\tilde fd\mu\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="131F" data-source-id="131F"><span class="anchor" id="131Fa"></span><h2><span class="source-label">131F</span> Korolari </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan
+<span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi bernilai real yang didefinisikan pada suatu
+subhimpunan <span class="math inline" data-source-tex="\dom f">\(\dom f\)</span> dari <span class="math inline" data-source-tex="X">\(X\)</span>.</p>
+<p>(a) Jika <span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span> dan <span class="math inline" data-source-tex="f">\(f\)</span> didefinisikan hampir di mana-mana dalam
+<span class="math inline" data-source-tex="X">\(X\)</span>, maka <span class="math inline" data-source-tex="f\restr H">\(f\restr H\)</span> <span class="math inline" data-source-tex="\mu_H">\(\mu_H\)</span>-terintegralkan jika dan hanya jika
+<span class="math inline" data-source-tex="f\times\chi H">\(f\times\chi H\)</span> <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan, dan dalam hal ini
+<span class="math inline" data-source-tex="\int_Hf=\int f\times\chi H">\(\int_Hf=\int f\times\chi H\)</span>.</p>
+<span class="anchor" id="131Fb"></span>
+<p>(b) Jika <span class="math inline" data-source-tex="f">\(f\)</span> <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan, maka <span class="math inline" data-source-tex="f\ge 0">\(f\ge 0\)</span> a.e. jika dan hanya
+jika <span class="math inline" data-source-tex="\int_Hf\ge 0">\(\int_Hf\ge 0\)</span> untuk setiap <span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span>.</p>
+<span class="anchor" id="131Fc"></span>
+<p>(c) Jika <span class="math inline" data-source-tex="f">\(f\)</span> <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan, maka <span class="math inline" data-source-tex="f=0">\(f=0\)</span> a.e. jika dan hanya
+jika <span class="math inline" data-source-tex="\int_Hf=0">\(\int_Hf=0\)</span> untuk setiap <span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><span class="anchor" id="131F-proof-a"></span><strong>(a)</strong> Karena <span class="math inline" data-source-tex="\dom f">\(\dom f\)</span> bersifat <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-koterabaikan,
+<span class="math inline" data-source-tex="(f\restr H)\ssptilde">\((f\restr H)\ssptilde\)</span>, sebagaimana didefinisikan dalam <a class="xref" href="#131E">131E</a>, sama
+dengan <span class="math inline" data-source-tex="f\times\chi H\,\,\mu">\(f\times\chi H\,\,\mu\)</span>-hampir di mana-mana, sehingga, menurut
+<a class="xref" href="#131E">131E</a>,</p>
+<div class="centerline"><span class="math inline" data-source-tex=" \int_Hfd\mu
+=\int(f\restr H)\ssptilde d\mu
+=\int(f\times\chi H)d\mu">\( \int_Hfd\mu
+=\int(f\restr H)\ssptilde d\mu
+=\int(f\times\chi H)d\mu\)</span></div>
+<p>jika salah satu integral itu ada; dalam hal ini integral
+lainnya juga ada.</p>
+<p> </p>
+<p><span class="anchor" id="131F-proof-b-i"></span><strong>(b)(i)</strong> Jika <span class="math inline" data-source-tex="f\ge 0\,\,\mu">\(f\ge 0\,\,\mu\)</span>-hampir di mana-mana, maka untuk
+setiap <span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span> kita harus mempunyai
+<span class="math inline" data-source-tex="f\restr H\ge 0\,\,\mu_H">\(f\restr H\ge 0\,\,\mu_H\)</span>-hampir di mana-mana, sehingga
+<span class="math inline" data-source-tex="\int_Hf=\int(f\restr H)d\mu_H\ge 0">\(\int_Hf=\int(f\restr H)d\mu_H\ge 0\)</span>.</p>
+<p> </p>
+<p><span class="anchor" id="131F-proof-b-ii"></span>  <strong>(ii)</strong> Jika <span class="math inline" data-source-tex="\int_Hf\ge 0">\(\int_Hf\ge 0\)</span> untuk setiap <span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span>,
+misalkan <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> suatu subhimpunan koterabaikan dari <span class="math inline" data-source-tex="\dom f">\(\dom f\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="f\restr E">\(f\restr E\)</span> terukur.
+Tetapkan <span class="math inline" data-source-tex="F=\{x:x\in E,\,f(x)&lt;0\}">\(F=\{x:x\in E,\,f(x)&lt;0\}\)</span>. Maka <span class="math inline" data-source-tex="\int_Ff\ge 0">\(\int_Ff\ge 0\)</span>; menurut
+<a class="xref" href="../122/index.html#122Rc">122Rc</a>, diperoleh <span class="math inline" data-source-tex="f\restr F=0\,\,\mu_F">\(f\restr F=0\,\,\mu_F\)</span>-hampir di mana-mana, dan ini
+hanya mungkin jika <span class="math inline" data-source-tex="\mu F=0">\(\mu F=0\)</span>; dalam hal itu
+<span class="math inline" data-source-tex="f\ge 0\,\,\mu">\(f\ge 0\,\,\mu\)</span>-hampir di mana-mana.</p>
+<p> </p>
+<p><span class="anchor" id="131F-proof-c"></span><strong>(c)</strong> Terapkan (b) pada <span class="math inline" data-source-tex="f">\(f\)</span> dan pada <span class="math inline" data-source-tex="-f">\(-f\)</span> untuk melihat bahwa
+<span class="math inline" data-source-tex="f\le 0\le f">\(f\le 0\le f\)</span> hampir di mana-mana.</p></aside>
+</section>
+<section class="source-unit" id="131G" data-source-id="131G"><h2><span class="source-label">131G</span> Korolari </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan
+<span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span> suatu himpunan koterabaikan. Jika <span class="math inline" data-source-tex="f">\(f\)</span> sembarang fungsi
+bernilai real yang didefinisikan pada suatu subhimpunan dari <span class="math inline" data-source-tex="X">\(X\)</span>, maka,
+jika salah satu ruas dalam <span class="math inline" data-source-tex="\int_Hf=\int f">\(\int_Hf=\int f\)</span> terdefinisi, ruas lainnya
+juga demikian dan persamaan tersebut berlaku.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Dalam bahasa <a class="xref" href="#131E">131E</a>, <span class="math inline" data-source-tex="f=(f\restr H)\ssptilde\,\,\mu">\(f=(f\restr H)\ssptilde\,\,\mu\)</span>-hampir di
+mana-mana, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int f=\int(f\restr H)\ssptilde=\int_Hf">\(\int f=\int(f\restr H)\ssptilde=\int_Hf\)</span></div>
+<p>jika salah satu integral itu terdefinisi; dalam hal ini
+integral lainnya juga terdefinisi.</p></aside>
+</section>
+<section class="source-unit" id="131H" data-source-id="131H"><span class="anchor" id="131Ha"></span><h2><span class="source-label">131H</span> Korolari </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan
+<span class="math inline" data-source-tex="f">\(f\)</span>, <span class="math inline" data-source-tex="g">\(g\)</span> dua fungsi bernilai real yang <span class="math inline" data-source-tex="\mu">\(\mu\)</span>-terintegralkan.</p>
+<p>(a) Jika <span class="math inline" data-source-tex="\int_Hf\ge\int_Hg">\(\int_Hf\ge\int_Hg\)</span> untuk setiap <span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span>, maka
+<span class="math inline" data-source-tex="f\ge g">\(f\ge g\)</span> a.e.</p>
+<span class="anchor" id="131Hb"></span>
+<p>(b) Jika <span class="math inline" data-source-tex="\int_Hf=\int_Hg">\(\int_Hf=\int_Hg\)</span> untuk setiap <span class="math inline" data-source-tex="H\in\Sigma">\(H\in\Sigma\)</span>, maka
+<span class="math inline" data-source-tex="f=g">\(f=g\)</span> a.e.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p>Terapkan <a class="xref" href="#131Fb">131Fb</a>-<a class="xref" href="#131Fc">131Fc</a> pada <span class="math inline" data-source-tex="f-g">\(f-g\)</span>.</p></aside>
+</section>
+<h2 class="group-heading exercises">Latihan</h2>
+<section class="source-unit" id="131X" data-source-id="131X"><span class="anchor" id="131Xa"></span><h2><span class="source-label">131X</span> Latihan dasar <span class="math inline" data-source-tex="\pmb{&gt;}">\(\pmb{&gt;}\)</span>(a) <span class="importance" title="Sangat penting">penting</span></h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur, dan <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi
+bernilai real yang terintegralkan pada <span class="math inline" data-source-tex="X">\(X\)</span>. Untuk <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span>
+tetapkan <span class="math inline" data-source-tex="\nu E=\int_Ef">\(\nu E=\int_Ef\)</span>. (i) Tunjukkan bahwa jika <span class="math inline" data-source-tex="E">\(E\)</span>, <span class="math inline" data-source-tex="F">\(F\)</span> merupakan
+anggota-anggota saling lepas dari <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, maka
+<span class="math inline" data-source-tex="\nu(E\cup F)=\nu E+\nu F">\(\nu(E\cup F)=\nu E+\nu F\)</span>. <span class="hint" role="note"><strong>Petunjuk:</strong> <a class="xref" href="#131E">131E</a>.</span>
+(ii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="\sequencen{E_n}">\(\sequencen{E_n}\)</span> suatu barisan saling lepas
+di dalam <span class="math inline" data-source-tex="\Sigma">\(\Sigma\)</span>, maka
+<span class="math inline" data-source-tex="\nu(\bigcup_{n\in\Bbb N}E_n)=\sum_{n=0}^{\infty}\nu E_n">\(\nu(\bigcup_{n\in\Bbb N}E_n)=\sum_{n=0}^{\infty}\nu E_n\)</span>.
+<span class="hint" role="note"><strong>Petunjuk:</strong> <a class="xref" href="../123/index.html#123C">123C</a>.</span> (iii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span> nonnegatif, maka
+<span class="math inline" data-source-tex="(X,\Sigma,\nu)">\((X,\Sigma,\nu)\)</span> merupakan suatu ruang ukur.</p>
+</section>
+<section class="source-unit" id="131Xb" data-source-id="131Xb"><h3><span class="source-label">131Xb</span> (&gt;b) <span class="importance" title="Sangat penting">penting</span></h3>
+<p>Misalkan <span class="math inline" data-source-tex="\mu">\(\mu\)</span> ukuran Lebesgue pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.
+(i) Tunjukkan bahwa setiap kali <span class="math inline" data-source-tex="a\le b">\(a\le b\)</span> dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span> dan <span class="math inline" data-source-tex="f">\(f\)</span> suatu
+fungsi bernilai real dengan <span class="math inline" data-source-tex="\dom f\subseteq\Bbb R">\(\dom f\subseteq\Bbb R\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\int_{\ooint{a,b}}fd\mu=\int_{\coint{a,b}}fd\mu
+=\int_{\ocint{a,b}}fd\mu=\int_{[a,b]}fd\mu">\(\int_{\ooint{a,b}}fd\mu=\int_{\coint{a,b}}fd\mu
+=\int_{\ocint{a,b}}fd\mu=\int_{[a,b]}fd\mu\)</span></div>
+<p>jika salah satunya terdefinisi. <span class="hint" role="note"><strong>Petunjuk:</strong> terapkan <a class="xref" href="#131E">131E</a> pada
+empat versi berbeda dari <span class="math inline" data-source-tex="\tilde f">\(\tilde f\)</span>.</span> Tuliskan <span class="math inline" data-source-tex="\int_a^bfd\mu">\(\int_a^bfd\mu\)</span> untuk
+nilai bersama ini.
+(ii) Tunjukkan bahwa jika <span class="math inline" data-source-tex="a\le b\le c">\(a\le b\le c\)</span> dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, maka, untuk
+setiap fungsi bernilai real <span class="math inline" data-source-tex="f">\(f\)</span>,
+<span class="math inline" data-source-tex="\int_a^cfd\mu=\int_a^bfd\mu+\int_b^cfd\mu">\(\int_a^cfd\mu=\int_a^bfd\mu+\int_b^cfd\mu\)</span> jika salah satu ruas
+terdefinisi; dalam hal ini ruas lainnya juga terdefinisi. (iii)
+Tunjukkan bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span> terintegralkan pada
+<span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, maka <span class="math inline" data-source-tex="(a,b)\mapsto\int_a^bfd\mu">\((a,b)\mapsto\int_a^bfd\mu\)</span> kontinu.
+<span class="hint" role="note"><strong>Petunjuk:</strong> <em>Salah satu\/</em>: tinjau terlebih dahulu fungsi-fungsi
+sederhana <span class="math inline" data-source-tex="f">\(f\)</span>, <em>atau\/</em> tinjau
+<span class="math inline" data-source-tex="\lim_{n\to\infty}\int_{a_n}^bfd\mu">\(\lim_{n\to\infty}\int_{a_n}^bfd\mu\)</span> untuk barisan-barisan monoton
+<span class="math inline" data-source-tex="\sequencen{a_n}">\(\sequencen{a_n}\)</span>.</span></p>
+</section>
+<section class="source-unit" id="131Xc" data-source-id="131Xc"><h3><span class="source-label">131Xc</span> (c) </h3>
+<p>Misalkan <span class="math inline" data-source-tex="g:\Bbb R\to\Bbb R">\(g:\Bbb R\to\Bbb R\)</span> suatu fungsi
+tak-menurun dan <span class="math inline" data-source-tex="\mu_g">\(\mu_g\)</span> ukuran Lebesgue-Stieltjes yang terkait
+(<a class="xref" href="../114/index.html#114Xa">114Xa</a>). (i) Tunjukkan bahwa jika <span class="math inline" data-source-tex="a\le b\le c">\(a\le b\le c\)</span> dalam <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, maka,
+untuk setiap fungsi bernilai real <span class="math inline" data-source-tex="f">\(f\)</span>,
+<span class="math inline" data-source-tex="\int_{\coint{a,c}}fd\mu_g
+=\int_{\coint{a,b}}fd\mu_g+\int_{\coint{b,c}}fd\mu_g">\(\int_{\coint{a,c}}fd\mu_g
+=\int_{\coint{a,b}}fd\mu_g+\int_{\coint{b,c}}fd\mu_g\)</span> jika salah satu
+ruas terdefinisi; dalam hal ini ruas lainnya juga terdefinisi. (ii)
+Tunjukkan bahwa jika <span class="math inline" data-source-tex="f">\(f\)</span> <span class="math inline" data-source-tex="\mu_g">\(\mu_g\)</span>-terintegralkan
+pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>, maka
+<span class="math inline" data-source-tex="(a,b)\mapsto\int_{\coint{a,b}}fd\mu_g">\((a,b)\mapsto\int_{\coint{a,b}}fd\mu_g\)</span> kontinu pada
+<span class="math inline" data-source-tex="\{(a,b):a\le b,\,g">\(\{(a,b):a\le b,\,g\)</span> kontinu di <span class="math inline" data-source-tex="a">\(a\)</span> maupun <span class="math inline" data-source-tex="b\}">\(b\}\)</span>.</p>
+</section>
+<section class="source-unit" id="131Y" data-source-id="131Y"><span class="anchor" id="131Ya"></span><h2><span class="source-label">131Y</span> Latihan lanjutan (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="(X,\Sigma,\mu)">\((X,\Sigma,\mu)\)</span> suatu ruang ukur dan <span class="math inline" data-source-tex="E\in\Sigma">\(E\in\Sigma\)</span> suatu
+himpunan terukur dengan ukuran berhingga. Misalkan <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span>
+suatu barisan fungsi bernilai real yang terukur, dengan domain-domain
+terukur<sup class="footnote-ref" id="fnref-131Y-1"><a href="#fn-131Y-1" aria-label="Catatan kaki 1">1</a></sup>, sedemikian sehingga
+<span class="math inline" data-source-tex="f=\lim_{n\to\infty}f_n">\(f=\lim_{n\to\infty}f_n\)</span> didefinisikan hampir di mana-mana dalam <span class="math inline" data-source-tex="E">\(E\)</span>
+(sesuai dengan kesepakatan-kesepakatan <a class="xref" href="../121/index.html#121Fa">121Fa</a>). Tunjukkan bahwa untuk
+setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat himpunan terukur <span class="math inline" data-source-tex="F\subseteq E">\(F\subseteq E\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\mu(E\setminus F)\le\epsilon">\(\mu(E\setminus F)\le\epsilon\)</span> dan <span class="math inline" data-source-tex="\sequencen{f_n}">\(\sequencen{f_n}\)</span>
+konvergen seragam ke <span class="math inline" data-source-tex="f">\(f\)</span> pada <span class="math inline" data-source-tex="F">\(F\)</span>. (Ini adalah <strong>teorema Egorov</strong>.)</p>
+<aside class="footnote" id="fn-131Y-1" role="note" aria-label="Catatan kaki 1"><p><strong>Catatan kaki 1.</strong> Saya berterima kasih kepada P. Wallace Thompson karena telah menunjukkan bahwa klausa ini, atau sesuatu yang setara dengannya, diperlukan. <a class="footnote-backref" href="#fnref-131Y-1" aria-label="Kembali ke rujukan catatan kaki 1">↩</a></p></aside>
+</section>
+<h2 class="group-heading notes">Catatan dan komentar</h2>
+<section class="source-unit" id="131" data-source-id="131"><h2><span class="source-label">131</span> Catatan penutup untuk Bagian 131 </h2>
+<p>Jika Anda menginginkan definisi singkat bagi
+<span class="math inline" data-source-tex="\int_Hf">\(\int_Hf\)</span> untuk <span class="math inline" data-source-tex="H">\(H\)</span> terukur, definisi dalam <a class="xref" href="#131E">131E</a> tampaknya yang paling
+sederhana, karena memungkinkan Anda menghindari konsep ‘ukuran
+subruang’ sepenuhnya. Namun, menurut saya kita sungguh perlu dapat
+berbicara, misalnya, tentang ‘ukuran Lebesgue pada <span class="math inline" data-source-tex="[0,1]">\([0,1]\)</span>’, dengan
+memaksudkan ukuran subruang <span class="math inline" data-source-tex="\mu_{[0,1]}">\(\mu_{[0,1]}\)</span> ketika <span class="math inline" data-source-tex="\mu">\(\mu\)</span> adalah ukuran
+Lebesgue pada <span class="math inline" data-source-tex="\Bbb R">\(\Bbb R\)</span>.</p>
+<p>Bagian ini memuat cukup banyak analisis teknis yang terperinci.
+Masalahnya ialah bahwa mulai dari <a class="xref" href="#131A">131A</a>, pada umumnya terdapat
+sekurang-kurangnya dua ukuran yang berperan, dan bahasa biasa dalam
+teori ukuran—kata-kata seperti ‘terukur’ dan ‘terintegralkan’—
+menjadi tidak dapat dipercaya dalam konteks semacam itu, karena bahasa
+tersebut menghilangkan keterangan penting mengenai aljabar-<span class="math inline" data-source-tex="\sigma">\(\sigma\)</span>
+atau ukuran mana yang sedang ditinjau. Karena itu saya harus
+menggunakan istilah yang kurang anggun tetapi lebih eksplisit. Namun,
+saya berharap bahwa setelah Anda menelaah dengan saksama hasil-hasil
+seperti <a class="xref" href="#131F">131F</a>, Anda akan merasa bahwa pola yang terbentuk cukup koheren.
+Aturan umumnya ialah bahwa untuk subruang-subruang <em>terukur</em> tidak
+ada kejutan yang serius (<a class="xref" href="#131Cb">131Cb</a>, <a class="xref" href="#131Fa">131Fa</a>).</p>
+<p>Perlu saya catat bahwa terdapat pula definisi standar bagi ukuran
+subruang pada subhimpunan-subhimpunan <em>tak-terukur</em> dari suatu ruang
+ukur. Definisi itu telah saya berikan dalam <a class="xref" href="../113/index.html#113Yb">113Yb</a>; untuk teori
+integrasi yang memperluas hasil-hasil di atas, saya akan menunggu hingga
+§214. Terdapat kesulitan-kesulitan tambahan yang berarti, dan
+keumuman tambahan tersebut tidak sering diperlukan dalam penerapan
+elementer.</p>
+<p>Saya hendak menarik perhatian Anda pada <a class="xref" href="#131Fb">131Fb</a>-<a class="xref" href="#131Fc">131Fc</a> dan <a class="xref" href="#131Xa">131Xa</a>-<a class="xref" href="#131Xc">131Xc</a>;
+semuanya merupakan langkah awal untuk memahami ‘integral tak tentu’,
+yaitu fungsional-fungsional
+<span class="math inline" data-source-tex="E\mapsto\int_Ef:\Sigma\to\Bbb R">\(E\mapsto\int_Ef:\Sigma\to\Bbb R\)</span> ketika <span class="math inline" data-source-tex="f">\(f\)</span> suatu fungsi
+terintegralkan. Saya akan kembali membahasnya dalam Bab 22 dan 23.</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 1: The Irreducible Minimum</cite>, Bagian 131.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 21 Agustus 2026. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-semantic-reader-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V1-S131&quot;,
+  &quot;source_member&quot;: &quot;mt1.2011/mt131.tex&quot;,
+  &quot;target_bytes&quot;: 13512,
+  &quot;target_sha256&quot;: &quot;eb486850c0a7908beaf6954bdc030a654ea2a4a4864411bb15117a2529bff470&quot;,
+  &quot;source_ids&quot;: [
+    &quot;131&quot;,
+    &quot;131A&quot;,
+    &quot;131B&quot;,
+    &quot;131C&quot;,
+    &quot;131Ca&quot;,
+    &quot;131Cb&quot;,
+    &quot;131D&quot;,
+    &quot;131E&quot;,
+    &quot;131E-proof-a&quot;,
+    &quot;131E-proof-b&quot;,
+    &quot;131E-proof-c&quot;,
+    &quot;131E-proof-d&quot;,
+    &quot;131F&quot;,
+    &quot;131F-proof-a&quot;,
+    &quot;131F-proof-b-i&quot;,
+    &quot;131F-proof-b-ii&quot;,
+    &quot;131F-proof-c&quot;,
+    &quot;131Fa&quot;,
+    &quot;131Fb&quot;,
+    &quot;131Fc&quot;,
+    &quot;131G&quot;,
+    &quot;131H&quot;,
+    &quot;131Ha&quot;,
+    &quot;131Hb&quot;,
+    &quot;131X&quot;,
+    &quot;131Xa&quot;,
+    &quot;131Xb&quot;,
+    &quot;131Xc&quot;,
+    &quot;131Y&quot;,
+    &quot;131Ya&quot;
+  ]
+}</pre></details>
+</footer>
+</body>
+</html>

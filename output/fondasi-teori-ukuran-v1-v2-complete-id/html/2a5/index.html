@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="O007 source-preserving reader v1">
+  <title>Ruang topologis linear — Fondasi Teori Ukuran</title>
+  <link rel="stylesheet" href="../_static/reader-v4.css">
+  <script>
+  window.MathJax = {
+    loader: {load: ['a11y/assistive-mml']},
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['ams']},
+      macros: {
+        Bang: '\\mathbf{X\\!X\\!X}',
+        BbbQ: '\\mathbb{Q}', BbbZ: '\\mathbb{Z}',
+        bover: ['\\frac{#1}{#2}', 2],
+        ocint: ['\\left]#1\\right]', 1],
+        biggerint: '\\int', Rint: '\\mathop{\\mathrm{R}\\!\\int}',
+        Imag: '\\operatorname{Im}', Real: '\\operatorname{Re}',
+        pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        Pd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+        dotproduct: '\\mathbin{\\cdot}',
+        overlineint: '\\overline{\\int}', underlineint: '\\underline{\\int}',
+        varhat: ['\\widehat{#1}', 1], varhatf: '\\widehat{f}',
+        vthsp: '\\,', sequence: ['\\langle #2\\rangle_{#1\\in\\mathbb{N}}', 2],
+        tbf: ['\\mathbf{#1}', 1], smc: '',
+        ssptilde: '^{\\scriptscriptstyle\\sim}', diam: '\\operatorname{diam}',
+        cmmnt: ['#1', 1], restr: '\\mathord{\\upharpoonright}',
+        restrp: '\\mathord{\\upharpoonright}',
+        BbbQ: '\\mathbb{Q}', BbbR: '\\mathbb{R}',
+        eightBbb: ['\\mathbb{#1}', 1],
+        DiniD: '\\overline{D}', Dinid: '\\underline{D}',
+        Var: '\\operatorname{Var}',
+        bumpeq: '=_{\\mathrm{approx}}',
+        intstar: '\\operatorname{int}^{*}',
+        family: ['\\langle #3\\rangle_{#1\\in #2}', 3],
+        familyiI: ['\\langle #1\\rangle_{i\\in I}', 1],
+        displaycause: ['\\text{(#1)}', 1],
+        bigcupop: '\\bigcup', biggerint: '\\int',
+        eae: '=_{\\mathrm{a.e.}}', leae: '\\le_{\\mathrm{a.e.}}', geae: '\\ge_{\\mathrm{a.e.}}',
+        restr: '\\mathord{\\upharpoonright}', restrp: '\\mathord{\\upharpoonright}',
+        Real: '\\operatorname{Re}', Imag: '\\operatorname{Im}',
+        tbf: ['\\mathbf{#1}', 1], eusm: ['\\underline{\\mathcal{#1}}', 1],
+        Qed: '\\square',
+        BbbN: '\\mathbb{N}', Expn: '\\mathbb{E}',
+        Cal: ['\\mathcal{#1}', 1], dom: '\\operatorname{dom}',
+        coint: ['\\left[#1\\right[', 1],
+        sequencen: ['\\langle #1_n\\rangle_{n\\in\\mathbb{N}}', 1],
+        imp: '\\mathop{\\text{pelestari ukuran melalui prapeta}}',
+        tildeTau: '\\widetilde{\\mathrm{T}}',
+        LLcorner: '\\mathbin{\\llcorner}',
+        prooflet: ['#1', 1],
+        halfarrow: '\\rightharpoonup',
+        esssup: '\\mathop{\\text{ess sup}}',
+        ocint: ['\\left]#1\\right]', 1],
+        fraction: ['\\mathord{<}#1\\mathord{>}', 1],
+        energy: '\\mathop{\\text{energi}}\\nolimits', mass: '\\mathop{\\text{massa}}\\nolimits',
+        Innerprod: ['\\bigl(#1\\bigr|#2\\bigr)', 2], vartildef: '\\widetilde{f}',
+        varBbb: ['\\mathbb{#1}', 1],
+        Bbb: ['\\mathbb{#1}', 1], BbbR: '\\mathbb{R}',
+        Cal: ['\\mathcal{#1}', 1], frak: ['\\mathfrak{#1}', 1],
+        Forall: '\\;\\forall\\;', Bover: ['\\frac{#1}{#2}', 2],
+        fraction: ['\\mathord{<}#1\\mathord{>}', 1],
+        tbf: ['\\mathbf{#1}', 1],
+        enskip: '\\;', Tau: '\\mathrm{T}',
+        ooint: ['\\left]#1\\right[', 1],
+        symmdiff: '\\mathbin{\\triangle}',
+        BbbN: '\\mathbb{{N}}', BbbQ: '\\mathbb{{Q}}',
+        BbbZ: '\\mathbb{{Z}}',
+        bover: ['\\frac{{#1}}{{#2}}', 2],
+        coint: ['\\left[#1\\right[', 1],
+        dom: '\\operatorname{{dom}}',
+        eae: '=_{\\text{{a.e.}}}',
+        esssup: '\\mathop{{\\text{{ess sup}}}}',
+        eusm: ['\\underline{{\\mathcal{{#1}}}}', 1],
+        family: ['\\langle #3\\rangle_{{#1\\in #2}}', 3],
+        familyi: ['\\langle #2\\rangle_{{i\\in #1}}', 2],
+        familyiI: ['\\langle #1\\rangle_{{i\\in I}}', 1],
+        geae: '\\ge_{{\\text{{a.e.}}}}',
+        leae: '\\le_{{\\text{{a.e.}}}}',
+        Nu: '\\mathrm{{N}}',
+        nuprime: '\\nu^{{\\prime}}',
+        ocint: ['\\left]#1\\right]', 1],
+        restr: '\\mathord{{\\upharpoonright}}',
+        restrp: '\\mathord{{\\upharpoonright}}',
+        roibr: '\\mathopen{{[}}',
+        sequence: ['\\langle #2\\rangle_{{#1\\in\\mathbb{{N}}}}', 2],
+        sequencen: ['\\langle #1\\rangle_{{n\\in\\mathbb{{N}}}}', 1],
+        ssbullet: '{{\\scriptscriptstyle\\bullet}}',
+        tensorhat: '\\widehat{{\\otimes}}',
+        Tensorhat: '\\widehat{{\\bigotimes}}',
+        med: '\\operatorname{med}', ofamily: ['\\langle #3\\rangle_{#1<#2}', 3],
+        CalFr: '\\mathcal{F}_{\\mathrm{Fr}}', Rho: '\\mathrm{P}',
+        interior: '\\operatorname{int}', RoverC: '\\genfrac{}{}{0pt}{}{\\mathbb{R}}{\\mathbb{C}}',
+        eurm: ['\\underline{\\mathcal{#1}}', 1], trs: '^{\\top}\\!',
+        Reverse: ['\\overset{\\scriptscriptstyle\\leftrightarrow}{#1}', 1],
+        varcheckf: '\\check{f}', varspcheck: '^{\\scriptscriptstyle\\vee}', varsphat: '^{\\scriptscriptstyle\\wedge}',
+      }
+    },
+    options: {enableAssistiveMml: true}
+  };
+  </script>
+  <script defer src="../_static/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#isi">Lewati ke isi utama</a>
+<header class="book-header">
+  <p class="eyebrow">O007 · Volume 2 · Bagian 2A5</p>
+  <h1>Ruang topologis linear</h1>
+  <p><em>Fondasi Teori Ukuran — Adaptasi Bahasa Indonesia dari <span lang="en">Measure Theory</span> karya D. H. Fremlin</em></p>
+</header>
+<nav class="reader-nav" aria-label="Navigasi buku"><a href="../index.html">← Daftar isi kumulatif</a></nav>
+<main id="isi">
+<p>© 1996</p>
+<span class="anchor" id="2A5"></span>
+<p>Tujuan utama §<a class="xref" href="../2a3/index.html#2A3">2A3</a> sesungguhnya adalah mengkaji topologi-topologi
+tertentu pada ruang-ruang linear dalam Bab <a class="xref" href="../24/index.html#24">24</a>. Di sini saya memberikan
+beberapa bagian dari teori umumnya.</p>
+<section class="source-unit" id="2A5A" data-source-id="2A5A"><h2><span class="source-label">2A5A</span> Topologi ruang linear </h2>
+<p>Salah satu hal
+yang tidak dibahas secara terperinci dalam setiap pengantar analisis
+fungsional adalah konsep umum ruang topologis linear. Gagasan-gagasan
+yang diperlukan untuk pembahasan §<a class="xref" href="../245/index.html#245">245</a> dapat dinyatakan dengan cukup
+ringkas.</p>
+<p> </p>
+<p><strong>Definisi</strong> Sebuah <strong>ruang topologis linear</strong> atau
+<strong>ruang vektor topologis</strong> atas <span class="math inline" data-source-tex="\RoverC">\(\RoverC\)</span> adalah ruang linear <span class="math inline" data-source-tex="U">\(U\)</span>
+atas <span class="math inline" data-source-tex="\RoverC">\(\RoverC\)</span> yang dilengkapi dengan topologi <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> sedemikian
+sehingga kedua peta</p>
+<div class="centerline"><span class="math inline" data-source-tex="(u,v)\mapsto u+v:U\times U\to U">\((u,v)\mapsto u+v:U\times U\to U\)</span>,</div>
+<div class="centerline"><span class="math inline" data-source-tex="(\alpha,u)\mapsto \alpha u:\RoverC\times U\to U">\((\alpha,u)\mapsto \alpha u:\RoverC\times U\to U\)</span></div>
+<p>kontinu, dengan ruang produk <span class="math inline" data-source-tex="U\times U">\(U\times U\)</span> dan
+<span class="math inline" data-source-tex="\RoverC\times U">\(\RoverC\times U\)</span> diberi topologi produknya (<a class="xref" href="../2a3/index.html#2A3T">2A3T</a>). Diberikan
+ruang linear <span class="math inline" data-source-tex="U">\(U\)</span>, sebuah topologi pada <span class="math inline" data-source-tex="U">\(U\)</span> yang memenuhi syarat-syarat
+di atas disebut <strong>topologi ruang linear</strong>. Perhatikan bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="(u,v)\mapsto u-v=u+(-1)v:U\times U\to U">\((u,v)\mapsto u-v=u+(-1)v:U\times U\to U\)</span></div>
+<p>juga akan kontinu.</p>
+</section>
+<section class="source-unit" id="2A5B" data-source-id="2A5B"><h2><span class="source-label">2A5B</span>  </h2>
+<p>Semua ruang topologis linear yang kita perlukan
+ternyata dapat disajikan dengan mudah melalui rumusan berikut.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Misalkan <span class="math inline" data-source-tex="U">\(U\)</span> adalah ruang linear atas
+<span class="math inline" data-source-tex="\RoverC">\(\RoverC\)</span>, dan <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> adalah keluarga fungsional
+<span class="math inline" data-source-tex="\tau:U\to\coint{0,\infty}">\(\tau:U\to\coint{0,\infty}\)</span> sedemikian sehingga</p>
+<p>   (i) <span class="math inline" data-source-tex="\tau(u+v)\le\tau(u)+\tau(v)">\(\tau(u+v)\le\tau(u)+\tau(v)\)</span> untuk semua <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in U">\(v\in U\)</span>,
+<span class="math inline" data-source-tex="\tau\in\Tau">\(\tau\in\Tau\)</span>;</p>
+<p>   (ii) <span class="math inline" data-source-tex="\tau(\alpha u)\le\tau(u)">\(\tau(\alpha u)\le\tau(u)\)</span> jika <span class="math inline" data-source-tex="u\in U">\(u\in U\)</span>, <span class="math inline" data-source-tex="|\alpha|\le 1">\(|\alpha|\le 1\)</span>,
+<span class="math inline" data-source-tex="\tau\in\Tau">\(\tau\in\Tau\)</span>;</p>
+<p>   (iii) <span class="math inline" data-source-tex="\lim_{\alpha\to 0}\tau(\alpha u)=0">\(\lim_{\alpha\to 0}\tau(\alpha u)=0\)</span> untuk setiap <span class="math inline" data-source-tex="u\in U">\(u\in U\)</span>,
+<span class="math inline" data-source-tex="\tau\in \Tau">\(\tau\in \Tau\)</span>.</p>
+<p>Untuk <span class="math inline" data-source-tex="\tau\in\Tau">\(\tau\in\Tau\)</span>, definisikan
+<span class="math inline" data-source-tex="\rho_{\tau}:U\times U\to\coint{0,\infty}">\(\rho_{\tau}:U\times U\to\coint{0,\infty}\)</span> dengan menetapkan
+<span class="math inline" data-source-tex="\rho_{\tau}(u,v)=\tau(u-v)">\(\rho_{\tau}(u,v)=\tau(u-v)\)</span> untuk semua <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in U">\(v\in U\)</span>. Maka setiap
+<span class="math inline" data-source-tex="\rho_{\tau}">\(\rho_{\tau}\)</span> adalah pseudometrik pada <span class="math inline" data-source-tex="U">\(U\)</span>, dan topologi yang
+didefinisikan oleh <span class="math inline" data-source-tex="\Rho=\{\rho_{\tau}:\tau\in\Tau\}">\(\Rho=\{\rho_{\tau}:\tau\in\Tau\}\)</span> menjadikan <span class="math inline" data-source-tex="U">\(U\)</span>
+ruang topologis linear.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Patut segera dicatat bahwa</p>
+<div class="centerline"><span class="math inline" data-source-tex="\tau(0)=\lim_{\alpha\to 0}\tau(\alpha 0)=0">\(\tau(0)=\lim_{\alpha\to 0}\tau(\alpha 0)=0\)</span></div>
+<p>untuk setiap <span class="math inline" data-source-tex="\tau\in\Tau">\(\tau\in\Tau\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Untuk melihat bahwa setiap <span class="math inline" data-source-tex="\rho_{\tau}">\(\rho_{\tau}\)</span> adalah
+pseudometrik, gunakan argumen berikut.</p>
+<p> </p>
+<p>  <strong>(i)</strong> <span class="math inline" data-source-tex="\rho_{\tau}">\(\rho_{\tau}\)</span> mengambil nilai dalam
+<span class="math inline" data-source-tex="\coint{0,\infty}">\(\coint{0,\infty}\)</span> karena <span class="math inline" data-source-tex="\tau">\(\tau\)</span> juga demikian.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Jika <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v">\(v\)</span>, <span class="math inline" data-source-tex="w\in U">\(w\in U\)</span>, maka</p>
+<p><span class="math display" data-source-tex="\eqalign{\rho_{\tau}(u,w)
+&amp;=\tau(u-w)
+=\tau((u-v)+(v-w))\cr
+&amp;\le\tau(u-v)+\tau(v-w)
+=\rho_{\tau}(u,v)+\rho_{\tau}(v,w).\cr}">\[\begin{aligned}\rho_{\tau}(u,w)
+&amp;=\tau(u-w)
+=\tau((u-v)+(v-w))\\
+&amp;\le\tau(u-v)+\tau(v-w)
+=\rho_{\tau}(u,v)+\rho_{\tau}(v,w).\\\end{aligned}\]</span></p>
+<p> </p>
+<p>  <strong>(iii)</strong> Jika <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in U">\(v\in U\)</span>, maka</p>
+<div class="centerline"><span class="math inline" data-source-tex="\rho_{\tau}(v,u)=\tau(v-u)
+=\tau(-1(u-v))\le\tau(u-v)=\rho_{\tau}(u,v)">\(\rho_{\tau}(v,u)=\tau(v-u)
+=\tau(-1(u-v))\le\tau(u-v)=\rho_{\tau}(u,v)\)</span>,</div>
+<p>dan secara serupa
+<span class="math inline" data-source-tex="\rho_{\tau}(u,v)\le\rho_{\tau}(v,u)">\(\rho_{\tau}(u,v)\le\rho_{\tau}(v,u)\)</span>, sehingga keduanya sama.</p>
+<p> </p>
+<p>  <strong>(iv)</strong> Jika <span class="math inline" data-source-tex="u\in U">\(u\in U\)</span>, maka
+<span class="math inline" data-source-tex="\rho_{\tau}(u,u)=\tau(0)=0">\(\rho_{\tau}(u,u)=\tau(0)=0\)</span>.</p>
+<p> </p>
+<p><strong>(c)</strong> Misalkan <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> adalah topologi pada <span class="math inline" data-source-tex="U">\(U\)</span> yang
+didefinisikan oleh <span class="math inline" data-source-tex="\{\rho_{\tau}:\tau\in\Tau\}">\(\{\rho_{\tau}:\tau\in\Tau\}\)</span> (<a class="xref" href="../2a3/index.html#2A3F">2A3F</a>).</p>
+<p> </p>
+<p>  <strong>(i)</strong> Penjumlahan kontinu karena, diberikan <span class="math inline" data-source-tex="\tau\in\Tau">\(\tau\in\Tau\)</span>,
+kita mempunyai</p>
+<p><span class="math display" data-source-tex="\eqalign{\rho_{\tau}(u&#x27;+v&#x27;,u+v)
+&amp;=\tau((u&#x27;+v&#x27;)-(u+v))\cr
+&amp;\le\tau(u&#x27;-u)+\tau(v&#x27;-v)
+\le\rho_{\tau}(u&#x27;,u)+\rho_{\tau}(v&#x27;,v)\cr}">\[\begin{aligned}\rho_{\tau}(u&#x27;+v&#x27;,u+v)
+&amp;=\tau((u&#x27;+v&#x27;)-(u+v))\\
+&amp;\le\tau(u&#x27;-u)+\tau(v&#x27;-v)
+\le\rho_{\tau}(u&#x27;,u)+\rho_{\tau}(v&#x27;,v)\\\end{aligned}\]</span></p>
+<p>untuk semua <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v">\(v\)</span>, <span class="math inline" data-source-tex="u&#x27;">\(u&#x27;\)</span>, <span class="math inline" data-source-tex="v&#x27;\in U">\(v&#x27;\in U\)</span>. Ini berarti bahwa,
+diberikan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> dan <span class="math inline" data-source-tex="(u,v)\in U\times U">\((u,v)\in U\times U\)</span>, kita akan mempunyai</p>
+<div class="centerline"><span class="math inline" data-source-tex="\rho_{\tau}(u&#x27;+v&#x27;,u+v)\le\epsilon">\(\rho_{\tau}(u&#x27;+v&#x27;,u+v)\le\epsilon\)</span> apabila
+<span class="math inline" data-source-tex="(u&#x27;,v&#x27;)\in
+U((u,v);\tilde\rho_{\tau},\bar\rho_{\tau};\Bover{\epsilon}2)">\((u&#x27;,v&#x27;)\in
+U((u,v);\tilde\rho_{\tau},\bar\rho_{\tau};\Bover{\epsilon}2)\)</span>,</div>
+<p>dengan menggunakan bahasa <a class="xref" href="../2a3/index.html#2A3Tb">2A3Tb</a>. Karena
+<span class="math inline" data-source-tex="\tilde\rho_{\tau}">\(\tilde\rho_{\tau}\)</span>, <span class="math inline" data-source-tex="\bar\rho_{\tau}">\(\bar\rho_{\tau}\)</span> adalah dua dari pseudometrik
+yang mendefinisikan topologi produk <span class="math inline" data-source-tex="U\times U">\(U\times U\)</span> (<a class="xref" href="../2a3/index.html#2A3Tb">2A3Tb</a>), maka
+<span class="math inline" data-source-tex="(u,v)\mapsto u+v">\((u,v)\mapsto u+v\)</span> kontinu menurut kriteria <a class="xref" href="../2a3/index.html#2A3H">2A3H</a>.</p>
+<p> </p>
+<p>  <strong>(ii)</strong> Perkalian skalar kontinu karena jika <span class="math inline" data-source-tex="u\in U">\(u\in U\)</span> dan
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, maka <span class="math inline" data-source-tex="\tau(nu)\le n\tau(u)">\(\tau(nu)\le n\tau(u)\)</span> untuk setiap
+<span class="math inline" data-source-tex="\tau\in\Tau">\(\tau\in\Tau\)</span> (gunakan induksi pada <span class="math inline" data-source-tex="n">\(n\)</span>). Akibatnya, jika
+<span class="math inline" data-source-tex="\tau\in\Tau">\(\tau\in\Tau\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\tau(\alpha u)\le n\tau(\Bover{\alpha}{n}u)\le n\tau(u)">\(\tau(\alpha u)\le n\tau(\Bover{\alpha}{n}u)\le n\tau(u)\)</span></div>
+<p>apabila <span class="math inline" data-source-tex="|\alpha|&lt;n\in\Bbb N">\(|\alpha|&lt;n\in\Bbb N\)</span> dan <span class="math inline" data-source-tex="\tau\in\Tau">\(\tau\in\Tau\)</span>. Sekarang,
+diberikan <span class="math inline" data-source-tex="(\alpha,u)\in \RoverC\times U">\((\alpha,u)\in \RoverC\times U\)</span> dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, ambil
+<span class="math inline" data-source-tex="n&gt;|\alpha|">\(n&gt;|\alpha|\)</span> dan <span class="math inline" data-source-tex="\delta&gt;0">\(\delta&gt;0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\delta\le\min(n-|\alpha|,\bover{\epsilon}{2n})">\(\delta\le\min(n-|\alpha|,\bover{\epsilon}{2n})\)</span> dan
+<span class="math inline" data-source-tex="\tau(\gamma u)\le\bover{\epsilon}2">\(\tau(\gamma u)\le\bover{\epsilon}2\)</span> apabila
+<span class="math inline" data-source-tex="|\gamma|\le\delta">\(|\gamma|\le\delta\)</span>; maka</p>
+<p><span class="math display" data-source-tex="\eqalign{\rho_{\tau}(\alpha&#x27;u&#x27;,\alpha u)
+&amp;=\tau(\alpha&#x27;u&#x27;-\alpha u)
+\le\tau(\alpha&#x27;(u&#x27;-u))+\tau((\alpha&#x27;-\alpha)u)\cr
+&amp;\le n\tau(u&#x27;-u)+\tau((\alpha&#x27;-\alpha)u)\cr}">\[\begin{aligned}\rho_{\tau}(\alpha&#x27;u&#x27;,\alpha u)
+&amp;=\tau(\alpha&#x27;u&#x27;-\alpha u)
+\le\tau(\alpha&#x27;(u&#x27;-u))+\tau((\alpha&#x27;-\alpha)u)\\
+&amp;\le n\tau(u&#x27;-u)+\tau((\alpha&#x27;-\alpha)u)\\\end{aligned}\]</span></p>
+<p>apabila <span class="math inline" data-source-tex="u&#x27;\in U">\(u&#x27;\in U\)</span>, <span class="math inline" data-source-tex="\alpha&#x27;\in\RoverC">\(\alpha&#x27;\in\RoverC\)</span>, dan
+<span class="math inline" data-source-tex="|\alpha&#x27;|&lt;n\in\Bbb N">\(|\alpha&#x27;|&lt;n\in\Bbb N\)</span>. Karena itu, dengan menetapkan
+<span class="math inline" data-source-tex="\theta(\alpha&#x27;,\alpha)=|\alpha&#x27;-\alpha|">\(\theta(\alpha&#x27;,\alpha)=|\alpha&#x27;-\alpha|\)</span> untuk <span class="math inline" data-source-tex="\alpha&#x27;">\(\alpha&#x27;\)</span>,
+<span class="math inline" data-source-tex="\alpha\in\RoverC">\(\alpha\in\RoverC\)</span>,</p>
+<div class="centerline"><span class="math inline" data-source-tex="\rho_{\tau}(\alpha&#x27;u&#x27;,\alpha u)
+\le n\delta+\Bover{\epsilon}2\le\epsilon">\(\rho_{\tau}(\alpha&#x27;u&#x27;,\alpha u)
+\le n\delta+\Bover{\epsilon}2\le\epsilon\)</span></div>
+<p>apabila</p>
+<div class="centerline"><span class="math inline" data-source-tex="(\alpha&#x27;,u&#x27;)\in
+U((\alpha,u);\tilde\theta,\bar\rho_{\tau};\delta)">\((\alpha&#x27;,u&#x27;)\in
+U((\alpha,u);\tilde\theta,\bar\rho_{\tau};\delta)\)</span>.</div>
+<p>Karena <span class="math inline" data-source-tex="\tilde\theta">\(\tilde\theta\)</span> dan <span class="math inline" data-source-tex="\bar\rho_{\tau}">\(\bar\rho_{\tau}\)</span> termasuk di
+antara pseudometrik yang mendefinisikan topologi
+<span class="math inline" data-source-tex="\RoverC\times U">\(\RoverC\times U\)</span>, peta <span class="math inline" data-source-tex="(\alpha,u)\mapsto\alpha u">\((\alpha,u)\mapsto\alpha u\)</span> memenuhi kriteria
+<a class="xref" href="../2a3/index.html#2A3H">2A3H</a> dan kontinu.</p>
+<p>Jadi <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> adalah topologi ruang linear pada <span class="math inline" data-source-tex="U">\(U\)</span>.</p></aside>
+<p> </p>
+<p><strong>Catatan</strong>
+Fungsional yang memenuhi syarat (i)–(iii) di atas disebut
+<strong>F-seminorma</strong>; sebuah F-seminorma <span class="math inline" data-source-tex="\tau">\(\tau\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\tau(u)\ne 0">\(\tau(u)\ne 0\)</span> untuk setiap <span class="math inline" data-source-tex="u">\(u\)</span> tak nol disebut <strong>F-norma</strong>.</p>
+</section>
+<section class="source-unit" id="2A5C" data-source-id="2A5C"><h2><span class="source-label">2A5C</span>  </h2>
+<p>Kita tidak memerlukannya untuk Bab <a class="xref" href="../24/index.html#24">24</a>, tetapi
+hasil berikut patut diketahui.</p>
+<p> </p>
+<p><strong>Teorema</strong> Misalkan <span class="math inline" data-source-tex="U">\(U\)</span> adalah ruang linear dan
+<span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> topologi ruang linear pada <span class="math inline" data-source-tex="U">\(U\)</span>.</p>
+<p>(a) Terdapat keluarga F-seminorma <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> yang mendefinisikan
+<span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> seperti dalam <a class="xref" href="#2A5B">2A5B</a>.</p>
+<p>(b) Jika <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> dapat dimetrikkan, kita dapat mengambil <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span>
+yang hanya terdiri atas satu fungsional.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Kelley &amp; Namioka 76, hlm. 50.</p>
+<p> </p>
+<p><strong>(b)</strong> Köthe 69, §15.<a class="xref" href="../11/index.html#11">11</a>.</p></aside>
+</section>
+<section class="source-unit" id="2A5D" data-source-id="2A5D"><h2><span class="source-label">2A5D</span> Definisi </h2>
+<p>Misalkan <span class="math inline" data-source-tex="U">\(U\)</span> adalah ruang linear atas
+<span class="math inline" data-source-tex="\RoverC">\(\RoverC\)</span>. Sebuah <strong>seminorma</strong> pada <span class="math inline" data-source-tex="U">\(U\)</span> adalah fungsional
+<span class="math inline" data-source-tex="\tau:U\to\coint{0,\infty}">\(\tau:U\to\coint{0,\infty}\)</span> sedemikian sehingga</p>
+<p>   (i) <span class="math inline" data-source-tex="\tau(u+v)\le\tau(u)+\tau(v)">\(\tau(u+v)\le\tau(u)+\tau(v)\)</span> untuk semua <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in U">\(v\in U\)</span>;</p>
+<p>   (ii) <span class="math inline" data-source-tex="\tau(\alpha u)=|\alpha|\tau(u)">\(\tau(\alpha u)=|\alpha|\tau(u)\)</span> jika <span class="math inline" data-source-tex="u\in U">\(u\in U\)</span>,
+<span class="math inline" data-source-tex="\alpha\in\RoverC">\(\alpha\in\RoverC\)</span>.</p>
+<p>Perhatikan bahwa norma selalu merupakan seminorma,
+dan seminorma selalu merupakan F-seminorma. Khususnya, pengaitan suatu
+metrik dengan norma (<a class="xref" href="../2a4/index.html#2A4Bb">2A4Bb</a>) merupakan kasus khusus dari <a class="xref" href="#2A5B">2A5B</a>.</p>
+</section>
+<section class="source-unit" id="2A5E" data-source-id="2A5E"><span class="anchor" id="2A5Ea"></span><h2><span class="source-label">2A5E</span> Himpunan konveks (a) </h2>
+<p>Misalkan <span class="math inline" data-source-tex="U">\(U\)</span> adalah ruang linear
+atas <span class="math inline" data-source-tex="\RoverC">\(\RoverC\)</span>. Suatu himpunan bagian <span class="math inline" data-source-tex="C">\(C\)</span> dari <span class="math inline" data-source-tex="U">\(U\)</span> disebut
+<strong>konveks</strong> jika <span class="math inline" data-source-tex="\alpha u+(1-\alpha)v\in C">\(\alpha u+(1-\alpha)v\in C\)</span> apabila <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in C">\(v\in C\)</span>
+dan <span class="math inline" data-source-tex="\alpha\in[0,1]">\(\alpha\in[0,1]\)</span>. Irisan sebarang keluarga himpunan konveks adalah
+konveks, sehingga untuk setiap himpunan <span class="math inline" data-source-tex="A\subseteq U">\(A\subseteq U\)</span> terdapat
+himpunan konveks terkecil yang memuat <span class="math inline" data-source-tex="A">\(A\)</span>; himpunan ini tepat
+merupakan himpunan vektor yang dapat dinyatakan sebagai
+<span class="math inline" data-source-tex="\sum_{i=0}^n\alpha_iu_i">\(\sum_{i=0}^n\alpha_iu_i\)</span>, dengan
+<span class="math inline" data-source-tex="u_0,\ldots,u_n\in A">\(u_0,\ldots,u_n\in A\)</span>, <span class="math inline" data-source-tex="\alpha_0,\ldots,\alpha_n\in[0,1]">\(\alpha_0,\ldots,\alpha_n\in[0,1]\)</span>, dan
+<span class="math inline" data-source-tex="\sum_{i=0}^n\alpha_i=1">\(\sum_{i=0}^n\alpha_i=1\)</span><span class="proof-fragment"> (Bourbaki 87, II.<a class="xref" href="../2/index.html#2">2</a>.3)</span>;
+himpunan ini disebut <strong>selubung konveks</strong> dari <span class="math inline" data-source-tex="A">\(A\)</span>. Jika
+<span class="math inline" data-source-tex="C">\(C\)</span>, <span class="math inline" data-source-tex="C&#x27;\subseteq U">\(C&#x27;\subseteq U\)</span> konveks, dan <span class="math inline" data-source-tex="\alpha\in\RoverC">\(\alpha\in\RoverC\)</span>, maka
+<span class="math inline" data-source-tex="\alpha C">\(\alpha C\)</span> dan <span class="math inline" data-source-tex="C+C&#x27;">\(C+C&#x27;\)</span> konveks.</p>
+</section>
+<section class="source-unit" id="2A5Eb" data-source-id="2A5Eb"><h3><span class="source-label">2A5Eb</span> (b) </h3>
+<p>Jika <span class="math inline" data-source-tex="U">\(U\)</span> adalah ruang topologis linear, penutupan
+sebarang himpunan konveks adalah konveks<span class="proof-fragment">
+(Bourbaki 87, II.<a class="xref" href="../2/index.html#2">2</a>.6)</span>. Akibatnya, untuk setiap <span class="math inline" data-source-tex="A\subseteq U">\(A\subseteq U\)</span>,
+penutupan selubung konveks dari <span class="math inline" data-source-tex="A">\(A\)</span> merupakan himpunan konveks tertutup
+terkecil yang memuat <span class="math inline" data-source-tex="A">\(A\)</span>; himpunan ini disebut
+<strong>selubung konveks tertutup</strong> dari <span class="math inline" data-source-tex="A">\(A\)</span>.</p>
+</section>
+<section class="source-unit" id="2A5Ec" data-source-id="2A5Ec"><h3><span class="source-label">2A5Ec</span> (c) </h3>
+<p>Untuk rujukan mendatang, saya mencatat bahwa dalam
+ruang topologis linear, penutupan sebarang subruang linear adalah
+subruang linear.
+<span class="proof-fragment">(Bourbaki 87, I.1.3; Köthe 69, §15.<a class="xref" href="../2/index.html#2">2</a>.
+Bandingkan <a class="xref" href="../2a4/index.html#2A4Cb">2A4Cb</a>.)</span></p>
+</section>
+<section class="source-unit" id="2A5F" data-source-id="2A5F"><h2><span class="source-label">2A5F</span> Kelengkapan dalam ruang topologis
+linear </h2>
+<p>Dalam ruang bernorma, kelengkapan dapat
+diuraikan melalui barisan Cauchy (<a class="xref" href="../2a4/index.html#2A4D">2A4D</a>). Dalam ruang topologis linear
+umum, hal ini tidak memadai. Teori kelengkapan yang sebenarnya
+memerlukan konsep ruang seragam (lihat §3A4 dalam jilid berikutnya,
+atau Kelley 55, bab 6; Engelking 89, §8.1;
+Bourbaki 66, bab II); saya tidak akan menguraikannya di sini,
+tetapi akan memberikan versi yang disesuaikan dengan ruang linear.
+Saya menyebutkan hal ini hanya karena saya berharap suatu hari Anda
+akan sampai pada teori umum (dalam Jilid 3 risalah ini, jika tidak lebih
+awal), dan Anda perlu menyadari bahwa kasus khusus yang diuraikan di
+sini memberikan penekanan yang menyesatkan pada beberapa bagian.</p>
+<p> </p>
+<p><strong>Definisi</strong> Misalkan <span class="math inline" data-source-tex="U">\(U\)</span> adalah ruang linear atas
+<span class="math inline" data-source-tex="\RoverC">\(\RoverC\)</span>, dan <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> topologi ruang linear pada <span class="math inline" data-source-tex="U">\(U\)</span>. Sebuah filter
+<span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> pada <span class="math inline" data-source-tex="U">\(U\)</span> disebut <strong>Cauchy</strong> jika untuk setiap himpunan
+terbuka <span class="math inline" data-source-tex="G">\(G\)</span> di <span class="math inline" data-source-tex="U">\(U\)</span> yang memuat <span class="math inline" data-source-tex="0">\(0\)</span>, terdapat <span class="math inline" data-source-tex="F\in\Cal F">\(F\in\Cal F\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="F-F=\{u-v:u,\,v\in F\}">\(F-F=\{u-v:u,\,v\in F\}\)</span> termuat dalam <span class="math inline" data-source-tex="G">\(G\)</span>.
+<span class="math inline" data-source-tex="U">\(U\)</span> disebut <strong>lengkap</strong> jika setiap filter Cauchy pada <span class="math inline" data-source-tex="U">\(U\)</span> konvergen.</p>
+</section>
+<section class="source-unit" id="2A5G" data-source-id="2A5G"><h2><span class="source-label">2A5G</span>  </h2>
+<p>Filter Cauchy mempunyai uraian sederhana apabila
+topologi ruang linear didefinisikan dengan metode <a class="xref" href="#2A5B">2A5B</a>.</p>
+<p> </p>
+<p><strong>Lema</strong> Misalkan <span class="math inline" data-source-tex="U">\(U\)</span> adalah ruang linear atas <span class="math inline" data-source-tex="\RoverC">\(\RoverC\)</span>,
+dan <span class="math inline" data-source-tex="\Tau">\(\Tau\)</span> keluarga F-seminorma yang mendefinisikan topologi ruang
+linear pada <span class="math inline" data-source-tex="U">\(U\)</span>, seperti dalam <a class="xref" href="#2A5B">2A5B</a>. Maka sebuah filter <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> pada
+<span class="math inline" data-source-tex="U">\(U\)</span> adalah Cauchy jika dan hanya jika untuk setiap <span class="math inline" data-source-tex="\tau\in\Tau">\(\tau\in\Tau\)</span> dan
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> terdapat <span class="math inline" data-source-tex="F\in\Cal F">\(F\in\Cal F\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\tau(u-v)\le\epsilon">\(\tau(u-v)\le\epsilon\)</span> untuk semua <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in F">\(v\in F\)</span>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Misalkan <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> Cauchy, <span class="math inline" data-source-tex="\tau\in\Tau">\(\tau\in\Tau\)</span>, dan
+<span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>. Maka <span class="math inline" data-source-tex="G=U(0;\rho_{\tau};\epsilon)">\(G=U(0;\rho_{\tau};\epsilon)\)</span> terbuka (dengan
+menggunakan bahasa <a class="xref" href="../2a3/index.html#2A3F">2A3F</a>–<a class="xref" href="../2a3/index.html#2A3G">2A3G</a>), sehingga terdapat <span class="math inline" data-source-tex="F\in\Cal F">\(F\in\Cal F\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="F-F\subseteq G">\(F-F\subseteq G\)</span>; tetapi ini tepat berarti bahwa
+<span class="math inline" data-source-tex="\tau(u-v)&lt;\epsilon">\(\tau(u-v)&lt;\epsilon\)</span> untuk semua <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in F">\(v\in F\)</span>.</p>
+<p> </p>
+<p><strong>(b)</strong> Misalkan <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> memenuhi kriteria tersebut, dan <span class="math inline" data-source-tex="G">\(G\)</span>
+merupakan himpunan terbuka yang memuat <span class="math inline" data-source-tex="0">\(0\)</span>. Maka terdapat
+<span class="math inline" data-source-tex="\tau_0,\ldots,\tau_n\in\Tau">\(\tau_0,\ldots,\tau_n\in\Tau\)</span> dan <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="U(0;\rho_{\tau_0},\ldots,\rho_{\tau_n};\epsilon)\subseteq G">\(U(0;\rho_{\tau_0},\ldots,\rho_{\tau_n};\epsilon)\subseteq G\)</span>.
+Untuk setiap <span class="math inline" data-source-tex="i\le n">\(i\le n\)</span>, terdapat <span class="math inline" data-source-tex="F_i\in\Cal F">\(F_i\in\Cal F\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\tau_i(u-v)&lt;\bover{\epsilon}2">\(\tau_i(u-v)&lt;\bover{\epsilon}2\)</span> untuk semua <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in F_i">\(v\in F_i\)</span>; sekarang
+<span class="math inline" data-source-tex="F=\bigcap_{i\le n}F_i\in\Cal F">\(F=\bigcap_{i\le n}F_i\in\Cal F\)</span> dan <span class="math inline" data-source-tex="u-v\in G">\(u-v\in G\)</span> untuk semua
+<span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in F">\(v\in F\)</span>.</p></aside>
+</section>
+<section class="source-unit" id="2A5H" data-source-id="2A5H"><h2><span class="source-label">2A5H</span> Ruang bernorma dan kelengkapan
+sekuensial </h2>
+<p>Perlu saya tunjukkan bahwa untuk ruang
+bernorma, definisi <a class="xref" href="#2A5F">2A5F</a> sesuai dengan definisi <a class="xref" href="../2a4/index.html#2A4D">2A4D</a>.</p>
+<p> </p>
+<p><strong>Proposisi</strong> Misalkan <span class="math inline" data-source-tex="(U,\|\,\|)">\((U,\|\,\|)\)</span> adalah ruang bernorma
+atas <span class="math inline" data-source-tex="\RoverC">\(\RoverC\)</span>, dan <span class="math inline" data-source-tex="\frak T">\(\frak T\)</span> topologi ruang linear pada <span class="math inline" data-source-tex="U">\(U\)</span> yang
+didefinisikan dengan metode <a class="xref" href="#2A5B">2A5B</a> dari himpunan
+<span class="math inline" data-source-tex="\Tau=\{\|\,\|\}">\(\Tau=\{\|\,\|\}\)</span>. Maka <span class="math inline" data-source-tex="U">\(U\)</span> lengkap dalam pengertian <a class="xref" href="#2A5F">2A5F</a> jika dan
+hanya jika lengkap dalam pengertian <a class="xref" href="../2a4/index.html#2A4D">2A4D</a>.</p>
+<aside class="proof-block" aria-label="Bukti"><h3 class="proof-heading">Bukti</h3><p><strong>(a)</strong> Pertama-tama, misalkan <span class="math inline" data-source-tex="U">\(U\)</span> lengkap dalam pengertian
+<a class="xref" href="#2A5F">2A5F</a>. Misalkan <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> adalah barisan di <span class="math inline" data-source-tex="U">\(U\)</span> yang Cauchy
+dalam pengertian <a class="xref" href="../2a4/index.html#2A4Da">2A4Da</a>. Tetapkan</p>
+<div class="centerline"><span class="math inline" data-source-tex="\Cal F
+=\{F:F\subseteq U,\,\{n:u_n\notin F\}\text{ berhingga}\}">\(\Cal F
+=\{F:F\subseteq U,\,\{n:u_n\notin F\}\text{ berhingga}\}\)</span>.</div>
+<p>Maka mudah diperiksa bahwa <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> adalah filter pada <span class="math inline" data-source-tex="U">\(U\)</span>,
+yaitu citra filter Fréchet di bawah peta
+<span class="math inline" data-source-tex="n\mapsto u_n:\Bbb N\to U">\(n\mapsto u_n:\Bbb N\to U\)</span>. Jika <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, ambil <span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span>
+sedemikian sehingga <span class="math inline" data-source-tex="\|u_j-u_k\|\le\epsilon">\(\|u_j-u_k\|\le\epsilon\)</span> apabila <span class="math inline" data-source-tex="j">\(j\)</span>, <span class="math inline" data-source-tex="k\ge m">\(k\ge m\)</span>;
+maka <span class="math inline" data-source-tex="F=\{u_j:j\ge m\}">\(F=\{u_j:j\ge m\}\)</span> termasuk dalam <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span>, dan
+<span class="math inline" data-source-tex="\|u-v\|\le\epsilon">\(\|u-v\|\le\epsilon\)</span> untuk semua <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in F">\(v\in F\)</span>. Jadi <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> Cauchy
+dalam pengertian <a class="xref" href="#2A5F">2A5F</a>, dan mempunyai suatu limit, katakanlah <span class="math inline" data-source-tex="u">\(u\)</span>.
+Sekarang, untuk setiap <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span>, himpunan
+<span class="math inline" data-source-tex="\{v:\|v-u\|&lt;\epsilon\}=U(u;\rho_{\|\,\|};\epsilon)">\(\{v:\|v-u\|&lt;\epsilon\}=U(u;\rho_{\|\,\|};\epsilon)\)</span> merupakan
+himpunan terbuka yang memuat <span class="math inline" data-source-tex="u">\(u\)</span>, sehingga termasuk dalam <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span>,
+dan <span class="math inline" data-source-tex="\{n:\|u_n-u\|\ge\epsilon\}">\(\{n:\|u_n-u\|\ge\epsilon\}\)</span> berhingga, yaitu, terdapat
+<span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\|u_n-u\|&lt;\epsilon">\(\|u_n-u\|&lt;\epsilon\)</span> apabila
+<span class="math inline" data-source-tex="n\ge m">\(n\ge m\)</span>. Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang,
+<span class="math inline" data-source-tex="u=\lim_{n\to\infty}u_n">\(u=\lim_{n\to\infty}u_n\)</span> dalam pengertian <a class="xref" href="../2a3/index.html#2A3M">2A3M</a>. Karena
+<span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> sebarang, <span class="math inline" data-source-tex="U">\(U\)</span> lengkap dalam pengertian <a class="xref" href="../2a4/index.html#2A4D">2A4D</a>.</p>
+<p> </p>
+<p><strong>(b)</strong> Sekarang misalkan <span class="math inline" data-source-tex="U">\(U\)</span> lengkap dalam pengertian <a class="xref" href="../2a4/index.html#2A4D">2A4D</a>.
+Misalkan <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> adalah filter Cauchy pada <span class="math inline" data-source-tex="U">\(U\)</span>. Untuk setiap
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, pilih himpunan <span class="math inline" data-source-tex="F_n\in\Cal F">\(F_n\in\Cal F\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="\|u-v\|\le 2^{-n}">\(\|u-v\|\le 2^{-n}\)</span> untuk semua <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in F_n">\(v\in F_n\)</span>. Untuk setiap
+<span class="math inline" data-source-tex="n\in\Bbb N">\(n\in\Bbb N\)</span>, <span class="math inline" data-source-tex="F&#x27;_n=\bigcap_{i\le n}F_i">\(F&#x27;_n=\bigcap_{i\le n}F_i\)</span> termasuk dalam <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span>,
+sehingga tidak kosong; pilih <span class="math inline" data-source-tex="u_n\in F&#x27;_n">\(u_n\in F&#x27;_n\)</span>. Jika <span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span> dan
+<span class="math inline" data-source-tex="j">\(j\)</span>, <span class="math inline" data-source-tex="k\ge m">\(k\ge m\)</span>, maka <span class="math inline" data-source-tex="u_j">\(u_j\)</span> dan <span class="math inline" data-source-tex="u_k">\(u_k\)</span> keduanya termasuk dalam <span class="math inline" data-source-tex="F_m">\(F_m\)</span>,
+sehingga <span class="math inline" data-source-tex="\|u_j-u_k\|\le 2^{-m}">\(\|u_j-u_k\|\le 2^{-m}\)</span>; jadi <span class="math inline" data-source-tex="\sequencen{u_n}">\(\sequencen{u_n}\)</span> merupakan
+barisan Cauchy dalam pengertian <a class="xref" href="../2a4/index.html#2A4Da">2A4Da</a>, dan mempunyai suatu limit,
+katakanlah <span class="math inline" data-source-tex="u">\(u\)</span>. Sekarang ambil sebarang <span class="math inline" data-source-tex="\epsilon&gt;0">\(\epsilon&gt;0\)</span> dan
+<span class="math inline" data-source-tex="m\in\Bbb N">\(m\in\Bbb N\)</span> sedemikian sehingga <span class="math inline" data-source-tex="2^{-m+1}\le\epsilon">\(2^{-m+1}\le\epsilon\)</span>. Tentu terdapat
+<span class="math inline" data-source-tex="k\ge m">\(k\ge m\)</span> sedemikian sehingga <span class="math inline" data-source-tex="\|u_k-u\|\le 2^{-m}">\(\|u_k-u\|\le 2^{-m}\)</span>; sekarang
+<span class="math inline" data-source-tex="u_k\in F_m">\(u_k\in F_m\)</span>, sehingga</p>
+<div class="centerline"><span class="math inline" data-source-tex="F_m\subseteq\{v:\|v-u_k\|\le 2^{-m}\}
+\subseteq\{v:\|v-u\|\le 2^{-m+1}\}
+\subseteq\{v:\rho_{\|\,\|}(v,u)\le\epsilon\}">\(F_m\subseteq\{v:\|v-u_k\|\le 2^{-m}\}
+\subseteq\{v:\|v-u\|\le 2^{-m+1}\}
+\subseteq\{v:\rho_{\|\,\|}(v,u)\le\epsilon\}\)</span>,</div>
+<p>dan
+<span class="math inline" data-source-tex="\{v:\rho_{\|\,\|}(v,u)\le\epsilon\}\in\Cal F">\(\{v:\rho_{\|\,\|}(v,u)\le\epsilon\}\in\Cal F\)</span>.
+Karena <span class="math inline" data-source-tex="\epsilon">\(\epsilon\)</span> sebarang, <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> konvergen ke <span class="math inline" data-source-tex="u">\(u\)</span>, menurut <a class="xref" href="../2a3/index.html#2A3Sd">2A3Sd</a>.
+Karena <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> sebarang, <span class="math inline" data-source-tex="U">\(U\)</span> lengkap.</p>
+<p> </p>
+<p><strong>(c)</strong>
+Jadi kedua definisi itu bertepatan, setidaknya dengan syarat kita
+memperbolehkan banyaknya pilihan serentak yang terhitung untuk <span class="math inline" data-source-tex="u_n">\(u_n\)</span>
+dalam bagian (b) pembuktian.</p></aside>
+</section>
+<section class="source-unit" id="2A5I" data-source-id="2A5I"><h2><span class="source-label">2A5I</span> Topologi lemah </h2>
+<p>Sekarang saya beralih ke catatan
+ringkas tentang topologi lemah pada ruang bernorma; dari sudut pandang
+jilid ini, topologi-topologi tersebut sesungguhnya merupakan contoh
+utama topologi ruang linear.
+Misalkan <span class="math inline" data-source-tex="U">\(U\)</span> adalah ruang linear bernorma atas <span class="math inline" data-source-tex="\RoverC">\(\RoverC\)</span>.</p>
+</section>
+<section class="source-unit" id="2A5Ia" data-source-id="2A5Ia"><h3><span class="source-label">2A5Ia</span> (a) </h3>
+<p>Tuliskan <span class="math inline" data-source-tex="U^*">\(U^*\)</span> untuk dualnya
+<span class="math inline" data-source-tex="\eurm B(U;\RoverC)">\(\eurm B(U;\RoverC)\)</span> (<a class="xref" href="../2a4/index.html#2A4H">2A4H</a>). Jika <span class="math inline" data-source-tex="h\in U^*">\(h\in U^*\)</span>, maka
+<span class="math inline" data-source-tex="|h|:U\to\coint{0,\infty}">\(|h|:U\to\coint{0,\infty}\)</span> adalah seminorma, sehingga
+<span class="math inline" data-source-tex="\Tau=\{|h|:h\in U^*\}">\(\Tau=\{|h|:h\in U^*\}\)</span> mendefinisikan topologi ruang linear pada
+<span class="math inline" data-source-tex="U">\(U\)</span>, menurut <a class="xref" href="#2A5B">2A5B</a>; topologi ini disebut
+<strong>topologi lemah</strong> dari <span class="math inline" data-source-tex="U">\(U\)</span>.</p>
+</section>
+<section class="source-unit" id="2A5Ib" data-source-id="2A5Ib"><h3><span class="source-label">2A5Ib</span> (b) </h3>
+<p>Sebuah filter <span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> pada <span class="math inline" data-source-tex="U">\(U\)</span> konvergen ke <span class="math inline" data-source-tex="u\in U">\(u\in U\)</span>
+untuk topologi lemah dari <span class="math inline" data-source-tex="U">\(U\)</span> jika dan hanya jika
+<span class="math inline" data-source-tex="\lim_{v\to\Cal F}\rho_{|h|}(v,u)=0">\(\lim_{v\to\Cal F}\rho_{|h|}(v,u)=0\)</span> untuk setiap <span class="math inline" data-source-tex="h\in U^*">\(h\in U^*\)</span> (<a class="xref" href="../2a3/index.html#2A3Sd">2A3Sd</a>),
+yaitu, jika dan hanya jika <span class="math inline" data-source-tex="\lim_{v\to\Cal F}|h(v-u)|=0">\(\lim_{v\to\Cal F}|h(v-u)|=0\)</span> untuk setiap
+<span class="math inline" data-source-tex="h\in U^*">\(h\in U^*\)</span>, yaitu, jika dan hanya jika
+<span class="math inline" data-source-tex="\lim_{v\to\Cal F}h(v)=h(u)">\(\lim_{v\to\Cal F}h(v)=h(u)\)</span> untuk setiap <span class="math inline" data-source-tex="h\in U^*">\(h\in U^*\)</span>.</p>
+</section>
+<section class="source-unit" id="2A5Ic" data-source-id="2A5Ic"><h3><span class="source-label">2A5Ic</span> (c) </h3>
+<p>Sebuah himpunan <span class="math inline" data-source-tex="C\subseteq U">\(C\subseteq U\)</span> disebut
+<strong>kompak lemah</strong> jika kompak untuk topologi lemah dari <span class="math inline" data-source-tex="U">\(U\)</span>. Jadi
+ (dengan tunduk pada aksioma pilihan) suatu himpunan
+<span class="math inline" data-source-tex="C\subseteq U">\(C\subseteq U\)</span> kompak lemah jika dan hanya jika untuk setiap ultrafilter
+<span class="math inline" data-source-tex="\Cal F">\(\Cal F\)</span> pada <span class="math inline" data-source-tex="U">\(U\)</span> yang memuat <span class="math inline" data-source-tex="C">\(C\)</span>, terdapat <span class="math inline" data-source-tex="u\in C">\(u\in C\)</span> sedemikian
+sehingga <span class="math inline" data-source-tex="\lim_{v\to\Cal F}h(v)=h(u)">\(\lim_{v\to\Cal F}h(v)=h(u)\)</span> untuk setiap
+<span class="math inline" data-source-tex="h\in U^*">\(h\in U^*\)</span> (gabungkan <a class="xref" href="../2a3/index.html#2A3R">2A3R</a> dengan (b) di atas).</p>
+</section>
+<section class="source-unit" id="2A5Id" data-source-id="2A5Id"><h3><span class="source-label">2A5Id</span> (d) </h3>
+<p>Suatu himpunan bagian <span class="math inline" data-source-tex="A">\(A\)</span> dari <span class="math inline" data-source-tex="U">\(U\)</span> disebut
+<strong>relatif kompak lemah</strong> jika merupakan himpunan bagian dari suatu
+himpunan bagian <span class="math inline" data-source-tex="U">\(U\)</span> yang kompak lemah.</p>
+</section>
+<section class="source-unit" id="2A5Ie" data-source-id="2A5Ie"><h3><span class="source-label">2A5Ie</span> (e) </h3>
+<p>Jika <span class="math inline" data-source-tex="h\in U^*">\(h\in U^*\)</span>, maka <span class="math inline" data-source-tex="h:U\to\RoverC">\(h:U\to\RoverC\)</span> kontinu untuk
+topologi lemah pada <span class="math inline" data-source-tex="U">\(U\)</span> dan topologi biasa pada <span class="math inline" data-source-tex="\RoverC">\(\RoverC\)</span>;
+hal ini langsung terlihat jika kita menerapkan kriteria <a class="xref" href="../2a3/index.html#2A3H">2A3H</a>. Jadi,
+jika <span class="math inline" data-source-tex="A\subseteq U">\(A\subseteq U\)</span> relatif kompak lemah, <span class="math inline" data-source-tex="h[A]">\(h[A]\)</span> harus terbatas dalam
+<span class="math inline" data-source-tex="\RoverC">\(\RoverC\)</span>. <span class="proof-fragment">Bukti. Misalkan <span class="math inline" data-source-tex="C\supseteq A">\(C\supseteq A\)</span> adalah himpunan
+kompak lemah. Maka <span class="math inline" data-source-tex="h[C]">\(h[C]\)</span> kompak dalam <span class="math inline" data-source-tex="\RoverC">\(\RoverC\)</span>, menurut <a class="xref" href="../2a3/index.html#2A3Nb">2A3Nb</a>, sehingga
+terbatas, menurut <a class="xref" href="../2a2/index.html#2A2F">2A2F</a> (dengan mencatat bahwa jika lapangan dasarnya
+adalah <span class="math inline" data-source-tex="\Bbb C">\(\Bbb C\)</span>, maka lapangan itu dapat diidentifikasi, sebagai ruang
+metrik, dengan <span class="math inline" data-source-tex="\BbbR^2">\(\BbbR^2\)</span>). Karena itu <span class="math inline" data-source-tex="h[A]">\(h[A]\)</span> juga terbatas. ∎</span></p>
+</section>
+<section class="source-unit" id="2A5If" data-source-id="2A5If"><h3><span class="source-label">2A5If</span> (f) </h3>
+<p>Jika <span class="math inline" data-source-tex="V">\(V\)</span> adalah ruang bernorma lain dan <span class="math inline" data-source-tex="T:U\to V">\(T:U\to V\)</span>
+operator linear terbatas, maka <span class="math inline" data-source-tex="T">\(T\)</span> kontinu untuk masing-masing topologi
+lemah. <span class="proof-fragment">Bukti. Jika <span class="math inline" data-source-tex="h\in V^*">\(h\in V^*\)</span>, maka komposisi <span class="math inline" data-source-tex="hT">\(hT\)</span> termasuk
+dalam <span class="math inline" data-source-tex="U^*">\(U^*\)</span>. Sekarang, untuk sebarang <span class="math inline" data-source-tex="u">\(u\)</span>, <span class="math inline" data-source-tex="v\in U">\(v\in U\)</span>,
+
+
+
+<span class="centerline nested-center"><span class="math inline" data-source-tex="\rho_{|h|}(Tu,Tv)=|h(Tu-Tv)|=|hT(u-v)|=\rho_{|hT|}(u,v)">\(\rho_{|h|}(Tu,Tv)=|h(Tu-Tv)|=|hT(u-v)|=\rho_{|hT|}(u,v)\)</span>,</span>
+
+
+
+  dengan <span class="math inline" data-source-tex="\rho_{|h|}">\(\rho_{|h|}\)</span>, <span class="math inline" data-source-tex="\rho_{|hT|}">\(\rho_{|hT|}\)</span> masing-masing merupakan
+pseudometrik pada <span class="math inline" data-source-tex="V">\(V\)</span>, <span class="math inline" data-source-tex="U">\(U\)</span> yang didefinisikan oleh rumus <a class="xref" href="#2A5B">2A5B</a>.
+Menurut <a class="xref" href="../2a3/index.html#2A3H">2A3H</a>, <span class="math inline" data-source-tex="T">\(T\)</span> kontinu. ∎</span></p>
+</section>
+<section class="source-unit" id="2A5Ig" data-source-id="2A5Ig"><h3><span class="source-label">2A5Ig</span> (g) </h3>
+<p>Bersesuaian dengan topologi lemah pada ruang bernorma
+<span class="math inline" data-source-tex="U">\(U\)</span>, kita mempunyai topologi <strong>lemah*</strong> atau <strong>w*-</strong> pada dualnya
+<span class="math inline" data-source-tex="U^*">\(U^*\)</span>, yang didefinisikan oleh himpunan
+<span class="math inline" data-source-tex="\Tau=\{|\hat u|:u\in U\}">\(\Tau=\{|\hat u|:u\in U\}\)</span>, dengan saya menuliskan
+<span class="math inline" data-source-tex="\hat u(f)=f(u)">\(\hat u(f)=f(u)\)</span> untuk setiap <span class="math inline" data-source-tex="f\in U^*">\(f\in U^*\)</span>, <span class="math inline" data-source-tex="u\in U">\(u\in U\)</span>. Seperti dalam (a),
+ini adalah topologi ruang linear pada <span class="math inline" data-source-tex="U^*">\(U^*\)</span>. (Penting untuk
+membedakan topologi lemah* dari topologi lemah pada <span class="math inline" data-source-tex="U^*">\(U^*\)</span>. Yang pertama
+hanya bergantung pada aksi <span class="math inline" data-source-tex="U">\(U\)</span> pada <span class="math inline" data-source-tex="U^*">\(U^*\)</span>, sedangkan yang kedua
+bergantung pada aksi <span class="math inline" data-source-tex="U^{**}=(U^*)^*">\(U^{**}=(U^*)^*\)</span>. Anda tidak akan mengalami
+kesulitan untuk memeriksa bahwa <span class="math inline" data-source-tex="\hat u\in U^{**}">\(\hat u\in U^{**}\)</span> untuk setiap
+<span class="math inline" data-source-tex="u\in U">\(u\in U\)</span>, tetapi pokoknya adalah bahwa mungkin terdapat anggota
+<span class="math inline" data-source-tex="U^{**}">\(U^{**}\)</span> yang tidak dapat direpresentasikan dengan cara ini, sehingga
+muncul himpunan terbuka untuk topologi lemah yang tidak terbuka untuk
+topologi lemah*.)</p>
+</section>
+<section class="source-unit" id="2A5J" data-source-id="2A5J"><h2><span class="source-label">2A5J</span> Ruang angelik </h2>
+<p>Saya tidak bergantung pada
+gagasan-gagasan berikut, tetapi gagasan ini dapat memperjelas beberapa
+hasil dalam §§<a class="xref" href="../246/index.html#246">246</a>-<a class="xref" href="../247/index.html#247">247</a>. Pertama, sebuah ruang topologis <span class="math inline" data-source-tex="X">\(X\)</span> disebut
+<strong>reguler</strong> jika apabila <span class="math inline" data-source-tex="G\subseteq X">\(G\subseteq X\)</span> terbuka dan <span class="math inline" data-source-tex="x\in G">\(x\in G\)</span>, maka
+terdapat himpunan terbuka <span class="math inline" data-source-tex="H">\(H\)</span> sedemikian sehingga
+<span class="math inline" data-source-tex="x\in H\subseteq\overline{H}\subseteq G">\(x\in H\subseteq\overline{H}\subseteq G\)</span>. Berikutnya, sebuah ruang
+Hausdorff reguler <span class="math inline" data-source-tex="X">\(X\)</span> disebut <strong>angelik</strong> jika apabila <span class="math inline" data-source-tex="A\subseteq X">\(A\subseteq X\)</span>
+sedemikian sehingga setiap barisan dalam <span class="math inline" data-source-tex="A">\(A\)</span> mempunyai titik gugus di
+<span class="math inline" data-source-tex="X">\(X\)</span>, maka <span class="math inline" data-source-tex="\overline{A}">\(\overline{A}\)</span> kompak dan setiap titik <span class="math inline" data-source-tex="\overline{A}">\(\overline{A}\)</span> adalah
+limit dari suatu barisan dalam <span class="math inline" data-source-tex="A">\(A\)</span>. Artinya, kekompakan dalam
+<span class="math inline" data-source-tex="X">\(X\)</span>, serta topologi himpunan bagian kompak dari <span class="math inline" data-source-tex="X">\(X\)</span>, dapat diuraikan
+secara efektif melalui barisan. Sekarang teorema (oleh Eberlein
+dan Šmulian) menyatakan bahwa setiap ruang bernorma bersifat angelik
+dalam topologi lemahnya. (462D dalam Jilid 4;
+Köthe 69, §<a class="xref" href="../24/index.html#24">24</a>; Dunford &amp; Schwartz 57, V.6.1.)
+Khususnya, hal ini berlaku bagi ruang-ruang <span class="math inline" data-source-tex="L^1">\(L^1\)</span>, sehingga tidak terlalu
+mengejutkan bahwa terdapat kriteria untuk kekompakan lemah dalam ruang
+<span class="math inline" data-source-tex="L^1">\(L^1\)</span> yang hanya membahas barisan.</p>
+</section>
+</main>
+<footer>
+  <p>Sumber: D. H. Fremlin, <cite>Measure Theory, Volume 2: Broad Foundations</cite>, Bagian 2A5.</p>
+  <p>Terjemahan dan modernisasi pembaca Bahasa Indonesia, 30 Agustus 2026. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra. Materi turunan Fremlin tetap berada di bawah Design Science License; lihat berkas lisensi dan catatan atribusi yang disertakan.</p>
+  <details><summary>Metadata mesin untuk unit ini</summary><pre>{
+  &quot;schema&quot;: &quot;o007-cumulative-html-route-v1&quot;,
+  &quot;unit_id&quot;: &quot;O007-FREMLIN-V2-APP-2A5&quot;,
+  &quot;source_member&quot;: &quot;mt2.2016/mt2a5.tex&quot;,
+  &quot;target_bytes&quot;: 18232,
+  &quot;target_sha256&quot;: &quot;f2c2d94ab3a1733fda6c9f5cc301ffb21a49f0118b4c5754cb8384aafa3abb8f&quot;,
+  &quot;source_ids&quot;: [
+    &quot;2A5&quot;,
+    &quot;2A5A&quot;,
+    &quot;2A5B&quot;,
+    &quot;2A5C&quot;,
+    &quot;2A5D&quot;,
+    &quot;2A5E&quot;,
+    &quot;2A5Ea&quot;,
+    &quot;2A5Eb&quot;,
+    &quot;2A5Ec&quot;,
+    &quot;2A5F&quot;,
+    &quot;2A5G&quot;,
+    &quot;2A5H&quot;,
+    &quot;2A5I&quot;,
+    &quot;2A5Ia&quot;,
+    &quot;2A5Ib&quot;,
+    &quot;2A5Ic&quot;,
+    &quot;2A5Id&quot;,
+    &quot;2A5Ie&quot;,
+    &quot;2A5If&quot;,
+    &quot;2A5Ig&quot;,
+    &quot;2A5J&quot;
+  ],
+  &quot;corpus_id&quot;: &quot;O007-FREMLIN&quot;,
+  &quot;volume_id&quot;: &quot;O007-FREMLIN-V2&quot;,
+  &quot;volume_source_title&quot;: &quot;Broad Foundations&quot;,
+  &quot;route&quot;: &quot;2a5&quot;,
+  &quot;official_source_page_start&quot;: 539,
+  &quot;chapter_official_source_pages&quot;: [
+    518,
+    570
+  ],
+  &quot;production_model&quot;: &quot;OpenAI Codex gpt-5.6-sol, Ultra&quot;
+}</pre></details>
+</footer>
+</body>
+</html>

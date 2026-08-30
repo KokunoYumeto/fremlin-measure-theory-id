@@ -289,3 +289,67 @@ continues from Chapters 21–26. Symbolic sigma variables, `\sigma`-finite
 compounds, formulas, stable identifiers, exercise/hint relations, and source
 order remain unchanged except for separately ledgered high-confidence source
 corrections.
+
+### Chapter 28 — Fourier analysis (2026-08-29)
+
+Use the following reader-facing forms throughout `mt28.tex` and
+`mt281.tex`–`mt286.tex`, consistent with the already localized Volume II
+contents surface in `mt02.tex` and the admitted glossary:
+
+| Concept or construction | Preferred O007 form | Decision and boundary |
+|---|---|---|
+| Fourier analysis / Fourier series | `analisis Fourier`; `deret Fourier` | Retain the proper name and distinguish the whole field from a particular trigonometric series. |
+| Fourier coefficient / Fourier sum | `koefisien Fourier`; `jumlah Fourier` | Use `jumlah` for partial/summability expressions and `koefisien` for the indexed scalar data. |
+| Fourier transform / inverse Fourier transform | `transformasi Fourier`; `transformasi Fourier invers` | Continue the existing `mt02.tex` forms; preserve hats, checks, normalizations, and domains exactly. |
+| Stone--Weierstrass theorem | `teorema Stone--Weierstrass` | Use the proper-name compound in headings and prose; use `hampiran`/`menghampiri` for the associated approximation statements. |
+| Weyl equidistribution theorem | `teorema ekuidistribusi Weyl` | Continue the contents wording and avoid alternating with the less established literal phrase `ketersebaran seragam`. |
+| Dirichlet / Fejér kernel | `kernel Dirichlet`; `kernel Fejér` | Retain both proper names and the conventional technical noun `kernel`. |
+| rapidly decreasing test function / tempered function | `fungsi uji yang menurun cepat`; `fungsi tempered` | Keep the test-function property explicit; retain the established borrowed adjective `tempered` used in `mt02.tex`. |
+| characteristic function of a distribution | `fungsi karakteristik suatu distribusi` | In probability contexts this is a Fourier transform of a law, not the indicator `\chi E`; keep the argument and normalization visible. |
+| random variable / joint distribution | `variabel acak`; `distribusi bersama` | Continue the admitted Chapter 27 forms even where the older contents surface says `peubah acak`. |
+| vague topology | `topologi samar` | Continue the admitted Chapter 27/contents term for weak convergence of probability distributions. |
+| Carleson's theorem / Hardy--Littlewood maximal theorem | `teorema Carleson`; `teorema maksimal Hardy--Littlewood` | Preserve the named results and every stated function-space/domain qualifier. |
+
+These terminology choices do not authorize changes to formulas, TeX controls,
+stable IDs, cross-references, exercises, hints, source order, or component
+rights. Any authority defect remains a separate, evidence-bound correction.
+
+### Volume II appendix — functional-analysis foundations (2026-08-29)
+
+Use the following forms in mt2a4.tex–mt2a5.tex and in the cumulative index
+surface:
+
+| Source concept | Preferred O007 form | Decision and boundary |
+|---|---|---|
+| normed space / Banach space | ruang bernorma; ruang Banach | Continue the admitted Chapter 24 forms and retain Banach as a proper name. |
+| linear topological space / topological vector space | ruang topologis linear; ruang vektor topologis | Match the localized Volume II contents surface while keeping the two synonymous source labels distinct. |
+| F-seminorm / F-norm | F-seminorma; F-norma | Put the F qualifier first and localize seminorm consistently with seminorma. |
+| convex hull / closed convex hull | selubung konveks; selubung konveks tertutup | Continue the established Chapter 25 term selubung, not the geometric-body term lambung. |
+| weak topology / weak* topology | topologi lemah; topologi lemah* | Preserve the star as part of the technical label and do not conflate the actions of U* and U**. |
+| Cauchy filter / angelic space | filter Cauchy; ruang angelik | Retain Cauchy as a proper name; use the compact established adaptation angelik for the sequential-compactness property. |
+
+These choices preserve the exact mathematical objects and do not turn
+reader-facing terminology changes into formula or source corrections.
+
+### Chapter 28 B — Sections 282–283 (2026-08-29)
+
+The owner reread of the two newly integrated sections fixes the following
+reader-facing forms:
+
+| Source concept | Preferred O007 form | Decision and boundary |
+|---|---|---|
+| absolutely summable sequence | `barisan yang terjumlah mutlak` | Use `terjumlah mutlak` rather than a literal `benar-benar dapat dijumlahkan`; this is a terminology-only repair. |
+| absolute continuity | `kontinu mutlak` | Continue the established measure-theory term; do not use `benar-benar kontinu`. |
+| inverse Fourier transform | `transformasi Fourier invers` | Keep the proper-name order used throughout the chapter and contents surface. |
+| integration by parts | `integrasi parsial` | Use the standard Indonesian calculus term in proofs and hints. |
+| Fubini/Tonelli theorem | `teorema Fubini dan Tonelli` | Preserve both named theorems and their joint role in the proof. |
+| Fourier kernel | `kernel Dirichlet` / `kernel Fejér` | Retain the proper names and distinguish the modified kernel explicitly. |
+
+The either/or exercise wording in 282Xq was rewritten for natural Indonesian
+while retaining both hypotheses, italic TeX atoms, formulas, and exercise ID.
+The source-stable `283Wj` label is intentionally preserved; its visible text
+refers to the preceding Gaussian item, while the source's trailing percent
+comment is treated as index metadata. These choices do not authorize changes
+to formulas, stable IDs, references, exercises, hints, or source order; the
+17 mathematical/source decisions are recorded separately in the packet's
+hash-bound anomaly receipt.

@@ -4,6 +4,70 @@ Updated: 2026-08-29 (Europe/Berlin)
 Task: `01a01f45-9d00-7f42-9071-4f932b45512a`  
 Status: active until all 672 official pages are publicly verified
 
+> **Current executable owner state (2026-08-29):** the contiguous local
+> candidate is **554/672 official pages (82.4%)**, through Volume II official
+> page 452.  The public, anonymously verified boundary remains **509/672
+> (75.7%)** at the existing v0.20 GitHub/Zenodo lineages.  Chapter 28 B
+> (`mt282.tex` and `mt283.tex`) is integrated and unit-QA passing; the next
+> source cursor is `authority/fremlin/source/mt2.2016/mt284.tex` at page 453.
+>
+> The finite workflow is: (1) after any compaction, read only this goal,
+> `CURRENT_CURSOR.md`, `CURRENT_STATE.md`, `DECISION_LOG.md`, and the exact
+> packet/source receipts named there; treat conversational summaries as
+> untrusted; (2) reserve a disjoint source-order range and verify the frozen
+> authority member/hash; (3) translate the complete range into natural
+> `id-ID`, preserving every formula, TeX/control atom, hierarchy, identifier,
+> proof, example, note, exercise, hint, asset, and cross-reference; (4) record
+> only evidence-backed source corrections in `SOURCE_CORRECTIONS.csv`, with
+> terminology decisions in `TERMINOLOGY_DECISIONS.md`; (5) run bounded unit
+> conservation QA plus an independent semantic/anomaly reread, then bind the
+> exact bytes and receipts; (6) integrate only clean stable units into
+> `source/id-ID` and rerun QA against canonical paths; (7) at substantial
+> chapter/page boundaries regenerate the locale-neutral backend, cumulative
+> PDF/offline reader, manifests, checksums, and desktop/mobile/all-page QA;
+> (8) when deterministic gates pass, publish immediately in the existing
+> GitHub release lineage and the single existing Zenodo concept, then
+> anonymously read back every public asset and hash; (9) persist the sanitized
+> publication receipt and advance the cursor.  Translation remains the
+> dominant activity; support/QA must not become an endless loop.  No broad
+> workspace scans, no cross-lane edits, no upstream contact during production,
+> and no duplicate DOI/repository.  Continue `mt284`–`mt286`, then the
+> remaining appendix/concordance/reference/index surfaces, until all 672
+> official pages are translated, backend-indexed, reproducibly built,
+> publicly released, and anonymously verified.
+
+> **Superseding owner checkpoint and remaining workflow (2026-08-29):**
+> complete Volume I and contiguous Volume II pages 1–407 through Chapter 27
+> are admitted, public, and anonymously byte-verified at **509/672 official
+> pages (75.7%)**. GitHub tag `v0.20.0-v2-through-ch27` binds boundary commit
+> `a97eb373b3a7465326b82f811e6e277d73aad4f1`; Zenodo record `22163307`, DOI
+> `10.5281/zenodo.22163307`, extends concept DOI
+> `10.5281/zenodo.22059798`. The exact public PDF, deterministic ZIP, and
+> checksum hashes are recorded in `CURRENT_STATE.md` and the two v0.20
+> publication receipts under `qa/`.
+>
+> Exactly **163 official pages remain**. They comprise Chapter 28, official
+> Volume II pages 408–517 (`mt28.tex`, `mt281.tex`–`mt286.tex`), followed by
+> the Volume II appendix, concordance, references, and the Volume-I/II index,
+> official pages 518–570 (`mt2a.tex`, `mt2a1.tex`–`mt2a6.tex`, `mt2conc.tex`,
+> `mt2r.tex`, and the Volume-I/II-visible surface of `mti.tex`). Chapter 28 is
+> therefore not the terminal corpus boundary by itself. The source driver
+> `authority/fremlin/source/mt2.2016/vol2.tex` is the exact source-order
+> witness and records official last page 570.
+>
+> Current production is a disjoint packet batch for all seven Chapter 28
+> units. Raw helper drafts are never admitted: the owner requires balanced
+> TeX, exact normalized math, control topology, stable IDs, protected
+> references, exercises/hints, natural Indonesian, sealed hashes, and an
+> independent replay. Rejected raw drafts with dropped braces or references
+> are repaired rather than counted. After Chapter 28 passes, continue without
+> reopening selection through the appendix/concordance/references/index in
+> the source order above. Only then regenerate the final locale-neutral
+> backend, complete Volume-I/II PDF and offline reader, deterministic package,
+> all-page visual/browser QA, GitHub release, and next version in the existing
+> Zenodo concept. Completion remains exactly 672/672 public and anonymously
+> verified; no partial draft or Chapter-28-only build satisfies the goal.
+
 > **Superseding public checkpoint (2026-08-29):** complete Chapter 26 is
 > admitted, published, and publicly byte-verified at **444/672 official pages
 > (66.1%)**. GitHub tag `v0.19.0-v2-through-ch26` is at boundary

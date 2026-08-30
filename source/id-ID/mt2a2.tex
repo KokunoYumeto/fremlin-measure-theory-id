@@ -1,0 +1,413 @@
+\frfilename{mt2a2.tex}
+\versiondate{30.11.09}
+\copyrightdate{2000}
+
+\def\chaptername{Lampiran}
+\def\sectionname{Topologi ruang Euklides}
+
+\newsection{2A2}
+
+Dalam lampiran Jilid 1\cmmnt{ (\S1A2)} saya membahas himpunan terbuka dan
+tertutup dalam $\BbbR^r$; tujuan utama di sana adalah menopang gagasan
+`himpunan Borel', yang sangat penting dalam teori ukuran Lebesgue, tetapi
+tentu saja himpunan-himpunan itu juga mendasar bagi kajian fungsi kontinu,
+dan bahkan bagi semua aspek analisis real.
+Di sini saya memberikan pengantar yang sangat singkat mengenai fakta-fakta
+elementer lebih lanjut tentang himpunan tertutup dan kompak serta fungsi
+kontinu yang kita perlukan untuk jilid ini. Sebagian besar materi ini dapat
+diturunkan dari perumuman dalam \S2A3, tetapi saya tetap menguraikan garis
+besar buktinya, sebab untuk sebagian besar jilid ini (kebanyakan
+pengecualiannya berada dalam Bab 24) ruang Euklides sudah memadai bagi
+keperluan kita.
+
+\leader{2A2A}{Penutupan: Definisi} Untuk setiap $r\ge 1$ dan setiap
+$A\subseteq\BbbR^r$, {\bf penutupan} $A$, $\overline{A}$, adalah irisan
+semua subhimpunan tertutup dari $\BbbR^r$ yang memuat $A$.
+Ini adalah\cmmnt{ himpunan tertutup (karena merupakan irisan suatu keluarga
+tak kosong dari himpunan-himpunan tertutup, lihat 1A2Fd), sehingga merupakan}
+himpunan tertutup terkecil yang memuat $A$. \cmmnt{Khususnya, }$A$ tertutup
+jika dan hanya jika $\overline{A}=A$.
+
+\leader{2A2B}{Lema} Misalkan $A\subseteq\BbbR^r$ sebarang himpunan. Maka,
+untuk $x\in\BbbR^r$, pernyataan-pernyataan berikut ekuivalen:
+
+(i) $x\in\overline{A}$\cmmnt{, penutupan $A$};
+
+(ii) $B(x,\delta)\cap A\ne\emptyset$ untuk setiap $\delta>0$, dengan
+$B(x,\delta)=\{y:\|y-x\|\le\delta\}$;
+
+(iii) terdapat suatu barisan $\sequencen{x_n}$ dalam $A$ sedemikian sehingga
+$\lim_{n\to\infty}\|x_n-x\|=0$.
+
+\proof{{\bf (a)(i)$\Rightarrow$(ii)} Andaikan $x\in\overline{A}$ dan
+$\delta>0$. Maka $U(x,\delta)=\{y:\|y-x\|<\delta\}$ adalah himpunan terbuka
+(1A2D), sehingga $F=\BbbR^r\setminus U(x,\delta)$ tertutup, sedangkan
+$x\notin F$. Sekarang
+
+\Centerline{$x\in\overline{A}\setminus F
+\Longrightarrow\overline{A}\not\subseteq F
+\Longrightarrow A\not\subseteq F
+\Longrightarrow A\cap U(x,\delta)\ne\emptyset
+\Longrightarrow A\cap B(x,\delta)\ne\emptyset$.}
+
+\noindent Karena $\delta$ sebarang, (ii) benar.
+
+\medskip
+
+{\bf (b)(ii)$\Rightarrow$(iii)} Jika (ii) benar, maka untuk setiap $n\in\Bbb
+N$ kita dapat menemukan $x_n\in A$ sedemikian sehingga
+$\|x_n-x\|\le 2^{-n}$, dan sekarang $\lim_{n\to\infty}\|x_n-x\|=0$.
+
+\medskip
+
+{\bf (c)(iii)$\Rightarrow$(i)} Andaikan (iii). \Quer\ Andaikan, jika
+mungkin, bahwa $x\notin\overline{A}$. Maka $x$ termasuk dalam himpunan terbuka
+$\BbbR^r\setminus\overline{A}$ dan terdapat $\delta>0$ sedemikian sehingga
+$U(x,\delta)\subseteq\BbbR^r\setminus\overline{A}$. Tetapi sekarang terdapat
+$n$ sedemikian sehingga $\|x_n-x\|<\delta$, dan dalam hal ini
+$x_n\in U(x,\delta)\cap A\subseteq U(x,\delta)\cap\overline{A}$. \Bang
+}%end of proof of 2A2B
+
+\leader{2A2C}{Fungsi kontinu (a)} \cmmnt{Saya mulai dengan suatu
+karakterisasi fungsi kontinu dalam istilah himpunan terbuka.} Jika $r$,
+$s\ge 1$, $D\subseteq\BbbR^r$ dan $\phi:D\to\BbbR^s$ adalah suatu fungsi,
+kita katakan bahwa $\phi$ {\bf kontinu} jika untuk setiap $x\in D$ dan
+$\epsilon>0$ terdapat $\delta>0$ sedemikian sehingga
+$\|\phi(y)-\phi(x)\|\le\epsilon$ kapan pun $y\in D$ dan
+$\|y-x\|\le\delta$. \cmmnt{Sekarang }$\phi$ kontinu jika dan hanya jika
+untuk setiap himpunan terbuka $G\subseteq\BbbR^s$ terdapat suatu himpunan
+terbuka $H\subseteq\BbbR^r$ sedemikian sehingga
+$\phi^{-1}[G]=D\cap H$.
+
+\prooflet{\Prf\ {\bf (i)} Andaikan $\phi$ kontinu dan
+$G\subseteq\BbbR^s$ terbuka. Tetapkan
+
+\Centerline{$H=\bigcup\{U:U\subseteq\BbbR^r\text{ terbuka},\,\phi[U\cap
+D]\subseteq G\}$.}
+
+\noindent Maka $H$ merupakan gabungan himpunan-himpunan terbuka, sehingga
+terbuka (1A2Bd), dan $H\cap D\subseteq\phi^{-1}[G]$. Jika
+$x\in\phi^{-1}[G]$, maka $\phi(x)\in G$, sehingga terdapat $\epsilon>0$
+sedemikian sehingga $U(\phi(x),\epsilon)\subseteq G$; sekarang terdapat
+$\delta>0$ sedemikian sehingga
+$\|\phi(y)-\phi(x)\|\le\bover12\epsilon$ kapan pun $y\in D$ dan
+$\|y-x\|\le\delta$, sehingga
+
+\Centerline{$\phi[U(x,\delta)\cap D]
+\subseteq U(\phi(x),\epsilon)\subseteq G$}
+
+\noindent dan
+
+\Centerline{$x\in U(x,\delta)\subseteq H$.}
+
+\noindent Karena $x$ sebarang, $\phi^{-1}[G]=H\cap D$. Karena $G$
+sebarang, $\phi$ memenuhi syarat tersebut.
+
+\quad{\bf (ii)} Sekarang andaikan bahwa $\phi$ memenuhi syarat tersebut.
+Ambil $x\in D$ dan $\epsilon>0$. Maka $U(\phi(x),\epsilon)$ terbuka,
+sehingga terdapat himpunan terbuka $H\subseteq\BbbR^r$ sedemikian sehingga
+$H\cap D=\phi^{-1}[U(\phi(x),\epsilon)]$; kita melihat bahwa $x\in H$,
+sehingga terdapat $\delta>0$ sedemikian sehingga
+$U(x,\delta)\subseteq H$; sekarang jika $y\in D$ dan
+$\|y-x\|\le\bover12\delta$, maka $y\in D\cap H$,
+$\phi(y)\in U(\phi(x),\epsilon)$ dan
+$\|\phi(y)-\phi(x)\|\le\epsilon$. Karena $x$ dan $\epsilon$ sebarang,
+$\phi$ kontinu. \Qed}
+
+\header{2A2Cb}{\bf (b)} Dengan menggunakan definisi kontinuitas
+$\epsilon$-$\delta$, mudah dilihat bahwa suatu fungsi $\phi$ dari
+subhimpunan $D$ dari $\BbbR^r$ ke $\BbbR^s$ kontinu jika dan hanya jika semua
+komponennya $\phi_i$ kontinu, dengan menuliskan
+$\phi(x)=(\phi_1(x),\ldots,\phi_s(x))$ untuk $x\in D$.
+\prooflet{\Prf\
+{\bf (i)} Jika $\phi$ kontinu, $i\le s$, $x\in D$ dan $\epsilon>0$, maka
+terdapat $\delta>0$ sedemikian sehingga
+
+\Centerline{$|\phi_i(y)-\phi_i(x)|\le\|\phi(y)-\phi(x)\|\le\epsilon$}
+
+\noindent kapan pun $y\in D$ dan $\|y-x\|\le\delta$. {\bf (ii)} Jika
+setiap $\phi_i$ kontinu, $x\in D$ dan $\epsilon>0$, maka terdapat
+$\delta_i>0$ sedemikian sehingga
+$|\phi_i(y)-\phi_i(x)|\le\epsilon/\sqrt{s}$ kapan pun $y\in D$ dan
+$\|y-x\|\le\delta_i$; dengan menetapkan
+$\delta=\min_{1\le i\le s}\delta_i>0$, kita memperoleh
+$\|\phi(y)-\phi(x)\|\le\epsilon$ kapan pun $y\in D$ dan
+$\|y-x\|\le\delta$. \Qed}
+
+\spheader 2A2Cc\dvAnew{2015}\cmmnt{ Pada satu atau dua tempat, kita akan
+menjumpai penguatan berikut dari gagasan `fungsi kontinu'.}
+Jika $r$, $s\ge 1$, $D\subseteq\BbbR^r$ dan
+$\phi:D\to\BbbR^s$ adalah suatu fungsi, kita katakan bahwa $\phi$
+{\bf kontinu seragam} jika untuk setiap $\epsilon>0$ terdapat $\delta>0$
+sedemikian sehingga $\|\phi(y)-\phi(x)\|\le\epsilon$ kapan pun $x$,
+$y\in D$ dan $\|y-x\|\le\delta$. Suatu fungsi kontinu seragam
+\cmmnt{tentu saja }kontinu.
+
+\leader{2A2D}{Kekompakan dalam $\BbbR^r$: Definisi} Suatu subhimpunan $F$
+dari $\BbbR^r$ disebut {\bf kompak} jika, setiap kali $\Cal G$ merupakan
+suatu keluarga himpunan terbuka yang menutupi $F$, terdapat subhimpunan
+berhingga $\Cal G_0$ dari $\Cal G$ yang masih menutupi $F$.
+
+\leader{2A2E}{Sifat-sifat elementer himpunan kompak} Ambil sebarang
+$r\ge 1$, serta subhimpunan-subhimpunan $D$, $F$, $G$ dan $K$ dari
+$\BbbR^r$.
+
+\header{2A2Ea}{\bf (a)} Jika $K$ kompak dan $F$ tertutup, maka $K\cap F$
+kompak. \prooflet{\Prf\ Misalkan $\Cal G$ suatu selimut terbuka dari
+$F\cap K$. Maka $\Cal G\cup\{\BbbR^r\setminus F\}$ merupakan selimut
+terbuka dari $K$, sehingga mempunyai subselimut berhingga, sebutlah
+$\Cal G_0$. Sekarang $\Cal G_0\setminus\{\BbbR^r\setminus F\}$ adalah
+subhimpunan berhingga dari $\Cal G$ yang menutupi $K\cap F$. Karena
+$\Cal G$ sebarang, $K\cap F$ kompak. \Qed}
+
+\header{2A2Eb}{\bf (b)} Jika $s\ge 1$, $\phi:D\to\BbbR^s$ adalah fungsi
+kontinu, $K$ kompak dan $K\subseteq D$, maka $\phi[K]$ kompak.
+\prooflet{\Prf\ Misalkan $\Cal V$ suatu selimut terbuka dari $\phi[K]$.
+Misalkan $\Cal H$ adalah
+
+\Centerline{$\{H:H\subseteq\BbbR^r\text{ terbuka},\,\exists\enskip
+V\in\Cal V,\,\phi^{-1}[V]=D\cap H\}$.}
+
+\noindent Jika $x\in K$, maka $\phi(x)\in\phi[K]$, sehingga terdapat
+$V\in\Cal V$ sedemikian sehingga $\phi(x)\in V$; sekarang terdapat
+$H\in\Cal H$ sedemikian sehingga $D\cap H=\phi^{-1}[V]$ memuat $x$ (2A2Ca);
+karena $x$ sebarang, $K\subseteq\bigcup\Cal H$. Misalkan $\Cal H_0$
+subhimpunan berhingga dari $\Cal H$ yang menutupi $K$. Untuk setiap
+$H\in\Cal H_0$, misalkan $V_H\in\Cal V$ sedemikian sehingga
+$\phi^{-1}[V_H]=D\cap H$; maka $\{V_H:H\in\Cal H_0\}$ adalah subhimpunan
+berhingga dari $\Cal V$ yang menutupi $\phi[K]$. Karena $\Cal V$ sebarang,
+$\phi[K]$ kompak. \Qed}
+
+\spheader 2A2Ec Jika $K$ kompak, maka himpunan itu tertutup.
+\prooflet{\Prf\ Tuliskan $H=\BbbR^r\setminus K$. Ambil sebarang $x\in H$.
+Maka $G_n=\BbbR^r\setminus B(x,2^{-n})$ terbuka untuk setiap $n\in\Bbb N$
+(1A2G). Juga
+
+\Centerline{$\bigcup_{n\in\Bbb N}G_n=\{y:y\in\BbbR^r,\,\|y-x\|>0\}
+=\Bbb R^r\setminus\{x\}\supseteq K$.}
+
+\noindent Jadi terdapat suatu himpunan berhingga
+$\Cal G_0\subseteq\{G_n:n\in\Bbb N\}$ yang menutupi $K$.
+Harus terdapat $n$ sedemikian sehingga
+$\Cal G_0\subseteq\{G_i:i\le n\}$, sehingga
+
+\Centerline{$K\subseteq\bigcup\Cal G_0\subseteq\bigcup_{i\le n}G_i=G_n$,}
+
+\noindent dan $B(x,2^{-n})\subseteq H$. Karena $x$ sebarang, $H$ terbuka
+dan $K$ tertutup. \Qed}
+
+\spheader 2A2Ed Jika $K$ kompak dan $G$ terbuka serta $K\subseteq G$, maka
+terdapat $\delta>0$ sedemikian sehingga
+$K+B(\tbf{0},\delta)\subseteq G$.
+\prooflet{\Prf\ Jika $K=\emptyset$, pernyataan ini trivial, sebab dalam
+hal ini
+
+\Centerline{$K+B(\tbf{0},1)=\{x+y:x\in K,\,y\in B(\tbf{0},1)\}=\emptyset$.}
+
+\noindent Jika tidak, tetapkan
+
+\Centerline{$\Cal G
+=\{U(x,\delta):x\in \Bbb R^r,\,\delta>0,\,U(x,2\delta)\subseteq G\}$.}
+
+\noindent Maka $\Cal G$ adalah suatu keluarga himpunan terbuka dan
+$\bigcup\Cal G=G$ (karena $G$ terbuka), sehingga $\Cal G$ merupakan
+selimut terbuka dari $K$ dan mempunyai subselimut berhingga $\Cal G_0$.
+Nyatakan $\Cal G_0$ sebagai
+$\{U(x_0,\delta_0),\ldots,U(x_n,\delta_n)\}$, dengan
+$U(x_i,2\delta_i)\subseteq G$ untuk setiap $i$. Tetapkan
+$\delta=\min_{i\le n}\delta_i>0$. Jika $x\in K$ dan
+$y\in B(\tbf{0},\delta)$, maka terdapat $i\le n$ sedemikian sehingga
+$x\in U(x_i,\delta_i)$; sekarang
+
+\Centerline{$\|(x+y)-x_i\|\le\|x-x_i\|+\|y\|<\delta_i+\delta
+\le 2\delta_i$,}
+
+\noindent sehingga $x+y\in U(x_i,2\delta_i)\subseteq G$. Karena $x$ dan
+$y$ sebarang, $K+B(\tbf{0},\delta)\subseteq G$. \Qed}
+
+\cmmnt{
+\medskip
+
+\noindent{\bf Catatan} Hasil ini merupakan bentuk sederhana dari
+{\bf lema selimut Lebesgue}.
+}
+
+\leader{2A2F}{}\cmmnt{ Nilai gagasan `kekompakan' sangat bertambah oleh
+kenyataan bahwa terdapat karakterisasi efektif bagi subhimpunan-subhimpunan
+kompak dari $\BbbR^r$.
+
+\medskip
+
+\noindent}{\bf Teorema} Untuk setiap $r\ge 1$, suatu subhimpunan $K$ dari
+$\BbbR^r$ kompak jika dan hanya jika tertutup dan terbatas.
+
+\proof{{\bf (a)} Andaikan $K$ kompak. Menurut 2A2Ec, himpunan itu tertutup.
+Untuk melihat bahwa himpunan itu terbatas, pertimbangkan
+$\Cal G=\{U(\tbf{0},n):n\in\Bbb N\}$. $\Cal G$ seluruhnya terdiri atas
+himpunan terbuka, dan $\bigcup\Cal G=\Bbb R^r\supseteq K$, sehingga
+terdapat suatu $\Cal G_0\subseteq\Cal G$ berhingga yang menutupi $K$.
+Harus terdapat $n$ sedemikian sehingga
+$\Cal G_0\subseteq\{U(\tbf{0},i):i\le n\}$, sehingga
+
+\Centerline{$K\subseteq\bigcup\Cal G_0\subseteq\bigcup_{i\le
+n}U(\tbf{0},i)=U(\tbf{0},n)$,}
+
+\noindent dan $K$ terbatas.
+
+\medskip
+
+{\bf (b)} Jadi tersisa konversnya; saya harus menunjukkan bahwa suatu
+himpunan tertutup terbatas bersifat kompak. Bagian utama argumen ini adalah
+bukti dengan induksi pada $r$ bahwa interval tertutup
+$[-\tbf{n},\tbf{n}]$ kompak untuk setiap $n\in\Bbb N$, dengan menuliskan
+$\tbf{n}=(n,\ldots,n)\in\Bbb R^r$.
+
+\medskip
+
+\quad{\bf (i)} Jika $r=1$ dan $n\in\Bbb N$, serta $\Cal G$ adalah suatu
+keluarga himpunan terbuka dalam $\Bbb R$ yang menutupi $[-n,n]$, tetapkan
+
+\Centerline{$A=\{x:x\in[-n,n],\text{ terdapat suatu }\Cal
+G_0\subseteq\Cal G\text{ berhingga sedemikian sehingga }
+[-n,x]\subseteq\bigcup\Cal G_0\}$.}
+
+\noindent Maka $-n\in A$, sebab jika $-n\in G\in\Cal G$, maka
+$[-n,-n]\subseteq\bigcup\{G\}$, dan $A$ terbatas di atas oleh $n$, sehingga
+$c=\sup A$ ada dan termasuk dalam $[-n,n]$.
+
+Selanjutnya, $c\in[-n,n]\subseteq\bigcup\Cal G$, sehingga terdapat
+$G\in\Cal G$ yang memuat $c$. Misalkan $\delta>0$ sedemikian sehingga
+$U(c,\delta)\subseteq G$.
+Terdapat $x\in A$ sedemikian sehingga $x\ge c-\delta$. Misalkan $\Cal G_0$
+suatu subhimpunan berhingga dari $\Cal G$ yang menutupi $[-n,x]$. Maka
+$\Cal G_1=\Cal G_0\cup\{G\}$ adalah subhimpunan berhingga dari $\Cal G$
+yang menutupi $[-n,c+{1\over2}\delta]$.
+Tetapi $c+{1\over2}\delta\notin A$, sehingga
+$c+{1\over2}\delta>n$, dan $\Cal G_1$ adalah subhimpunan berhingga dari
+$\Cal G$ yang menutupi $[-n,n]$. Karena $\Cal G$ sebarang, $[-n,n]$
+kompak dan induksi pun dimulai.
+
+\medskip
+
+\quad{\bf (ii)} Untuk langkah induksi menuju $r+1$, pandang interval
+tertutup $F=[-\tbf{n},\tbf{n}]$, diambil dalam $\BbbR^{r+1}$, sebagai
+produk interval tertutup $E=[-\tbf{n},\tbf{n}]$, diambil dalam
+$\BbbR^r$, dengan interval tertutup $[-n,n]\subseteq\Bbb R$; menurut
+hipotesis induksi, baik $E$ maupun $[-n,n]$ kompak. Misalkan $\Cal G$ suatu
+keluarga subhimpunan terbuka dari $\BbbR^{r+1}$ yang menutupi $F$. Tuliskan
+$\Cal H$ untuk keluarga subhimpunan terbuka $H$ dari $\BbbR^r$ sedemikian
+sehingga $H\times[-n,n]$ ditutupi oleh suatu subkeluarga berhingga dari
+$\Cal G$. Maka $E\subseteq\bigcup\Cal H$. \Prf\ Ambil $x\in E$. Tetapkan
+
+\Centerline{$\Cal U_x=\{U:U\subseteq\Bbb R\text{ terbuka},\,\exists\enskip
+G\in\Cal G,\text{ terbuka }H\subseteq\BbbR^r,\,
+x\in H\text{ dan }H\times U\subseteq G\}$.}
+
+\noindent Maka $\Cal U_x$ adalah suatu keluarga subhimpunan terbuka dari
+$\Bbb R$. Jika $\xi\in[-n,n]$, terdapat $G\in\Cal G$ yang memuat
+$(x,\xi)$; terdapat $\delta>0$ sedemikian sehingga
+$U((x,\xi),\delta)\subseteq G$; sekarang $U(x,\bover12\delta)$ dan
+$U(\xi,\bover12\delta)$ masing-masing merupakan himpunan terbuka dalam
+$\BbbR^r$, $\Bbb R$, serta
+
+\Centerline{$U(x,\bover12\delta)\times U(\xi,\bover12\delta)
+\subseteq U((x,\xi),\delta)\subseteq G$,}
+
+\noindent sehingga $U(\xi,\bover12\delta)\in\Cal U_x$. Karena $\xi$
+sebarang, $\Cal U_x$ merupakan selimut terbuka dari $[-n,n]$ dalam
+$\Bbb R$. Menurut (i), selimut ini mempunyai subselimut berhingga, sebutlah
+$U_0,\ldots,U_k$. Untuk setiap $j\le k$ kita dapat menemukan $H_j$, $G_j$
+sedemikian sehingga $H_j$ merupakan subhimpunan terbuka dari $\BbbR^r$ yang
+memuat $x$ dan $H_j\times U_j\subseteq G_j\in\Cal G$. Sekarang tetapkan
+$H=\bigcap_{j\le k}H_j$. Ini merupakan subhimpunan terbuka dari $\BbbR^r$
+yang memuat $x$, dan $H\times[-n,n]\subseteq\bigcup_{j\le k}G_j$ ditutupi
+oleh suatu subkeluarga berhingga dari $\Cal G$. Jadi $x\in H\in\Cal H$.
+Karena $x$ sebarang, $\Cal H$ menutupi $E$. \Qed
+
+\medskip
+
+\quad{\bf (iii)} Sekarang hipotesis induksi menyatakan bahwa $E$ kompak,
+sehingga terdapat suatu subkeluarga berhingga $\Cal H_0$ dari $\Cal H$ yang
+menutupi $E$. Untuk setiap $H\in\Cal H_0$, misalkan $\Cal G_H$ suatu
+subkeluarga berhingga dari $\Cal G$ yang menutupi $H\times[-n,n]$. Maka
+$\bigcup_{H\in\Cal H_0}\Cal G_H$ adalah subkeluarga berhingga dari $\Cal G$
+yang menutupi $E\times[-n,n]=F$. Karena $\Cal G$ sebarang, $F$ kompak dan
+induksi pun berlanjut.
+
+\medskip
+
+\quad{\bf (iv)} Jadi interval $[-\tbf{n},\tbf{n}]$ kompak dalam
+$\BbbR^r$ untuk setiap $r$, $n$. Sekarang andaikan $K$ suatu himpunan
+tertutup terbatas dalam $\BbbR^r$. Maka terdapat $n\in\Bbb N$ sedemikian
+sehingga $K\subseteq[-\tbf{n},\tbf{n}]$, yaitu,
+$K=K\cap[-\tbf{n},\tbf{n}]$. Karena $K$ tertutup dan
+$[-\tbf{n},\tbf{n}]$ kompak, $K$ kompak menurut 2A2Ea.
+
+Ini menyelesaikan bukti.
+}%end of proof of 2A2F
+
+\leader{2A2G}{Akibat} Jika $\phi:D\to\Bbb R$ kontinu, dengan
+$D\subseteq\BbbR^r$, dan $K\subseteq D$ merupakan himpunan kompak tak kosong,
+maka $\phi$ terbatas dan mencapai batas-batasnya pada $K$.
+
+\proof{ Menurut 2A2Eb, $\phi[K]$ kompak; menurut 2A2F, himpunan itu tertutup
+dan terbatas. Mengatakan bahwa $\phi[K]$ terbatas tepat berarti bahwa $\phi$
+terbatas pada $K$. Karena $\phi[K]$ merupakan himpunan tak kosong dan terbatas,
+himpunan itu mempunyai infimum $a$ dan supremum $b$; sekarang keduanya
+termasuk dalam $\overline{\phi[K]}$ (menurut kriteria 2A2B(ii), atau dengan
+cara lain); karena $\phi[K]$ tertutup, keduanya termasuk dalam $\phi[K]$,
+yakni $\phi$ mencapai batas-batasnya.
+}%end of proof of 2A2G
+
+\leader{2A2H}{Meninjau kembali lim sup dan lim inf} Dalam \S1A3 saya
+membahas secara singkat $\limsup_{n\to\infty}a_n$,
+$\liminf_{n\to\infty}a_n$ untuk barisan real $\sequencen{a_n}$. Dalam
+jilid ini kita memerlukan gagasan $\limsup_{\delta\downarrow 0}f(\delta)$,
+$\liminf_{\delta\downarrow 0}f(\delta)$ untuk fungsi real $f$. Saya katakan
+bahwa $\limsup_{\delta\downarrow 0}f(\delta)=u\in[-\infty,\infty]$ jika
+(i) untuk setiap $v>u$ terdapat $\eta>0$ sedemikian sehingga $f(\delta)$
+terdefinisi dan kurang dari atau sama dengan $v$ untuk setiap
+$\delta\in\ocint{0,\eta}$ (ii) untuk setiap $v<u$ dan $\eta>0$ terdapat
+$\delta\in\ocint{0,\eta}$ sedemikian sehingga $f(\delta)$ terdefinisi dan
+lebih besar dari atau sama dengan $v$. Demikian pula,
+$\liminf_{\delta\downarrow 0}f(\delta)=u\in[-\infty,\infty]$ jika (i) untuk
+setiap $v<u$ terdapat $\eta>0$ sedemikian sehingga $f(\delta)$ terdefinisi
+dan lebih besar dari atau sama dengan $v$ untuk setiap
+$\delta\in\ocint{0,\eta}$ (ii) untuk setiap $v>u$ dan $\eta>0$ terdapat
+$\delta\in\ocint{0,\eta}$ sedemikian sehingga $f(\delta)$ terdefinisi dan
+kurang dari atau sama dengan $v$.
+
+\leader{2A2I}{}\cmmnt{ Dalam kasus satu dimensi, kita mempunyai deskripsi
+yang sangat sederhana bagi himpunan-himpunan terbuka.
+
+\medskip
+
+\noindent}{\bf Proposisi} Jika $G\subseteq\Bbb R$ sebarang himpunan terbuka,
+maka himpunan itu dapat dinyatakan sebagai gabungan suatu keluarga terhitung dari
+interval-interval terbuka yang saling lepas.
+
+\proof{ Untuk $x$, $y\in G$, tuliskan $x\sim y$ jika $x\le y$ dan
+$[x,y]\subseteq G$, atau $y\le x$ dan $[y,x]\subseteq G$. Mudah diperiksa
+bahwa $\sim$ merupakan relasi ekuivalensi pada $G$. Misalkan $\Cal C$ adalah
+himpunan kelas-kelas ekuivalensi terhadap $\sim$. Maka $\Cal C$ adalah suatu
+partisi dari $G$. Sekarang setiap $C\in\Cal C$ adalah interval terbuka.
+\Prf\ Tetapkan $a=\inf C$, $b=\sup C$ (dengan mengizinkan $a=-\infty$
+dan/atau $b=\infty$ jika $C$ tak terbatas). Jika $a<x<b$, terdapat $y$,
+$z\in C$ sedemikian sehingga $y\le x\le z$, sehingga
+$[y,x]\subseteq[y,z]\subseteq G$ dan $y\sim x$ serta $x\in C$; jadi
+$\ooint{a,b}\subseteq C$. Jika $x\in C$, terdapat interval terbuka $I$ yang
+memuat $x$ dan termuat dalam $G$; karena $x\sim y$ untuk setiap $y\in I$,
+$I\subseteq C$; jadi
+
+\Centerline{$a\le\inf I<x<\sup I\le b$}
+
+\noindent dan $x\in\ooint{a,b}$. Jadi $C=\ooint{a,b}$ adalah interval
+terbuka.\ \Qed
+
+Untuk melihat bahwa $\Cal C$ terhitung, perhatikan bahwa setiap anggota
+$\Cal C$ memuat suatu anggota $\Bbb Q$, sehingga kita mempunyai suatu fungsi
+surjektif dari subhimpunan $\Bbb Q$ ke $\Cal C$, dan $\Cal C$ terhitung
+(1A1E).
+}%end of proof of 2A2I
+
+\discrpage

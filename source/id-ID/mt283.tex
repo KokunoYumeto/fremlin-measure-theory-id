@@ -1,0 +1,1434 @@
+\frfilename{mt283.tex}
+\versiondate{31.3.13}
+
+\def\chaptername{Analisis Fourier}
+\def\sectionname{Transformasi Fourier I}
+\copyrightdate{1994}
+
+\newsection{283}
+
+Sekarang saya beralih ke teori transformasi Fourier pada $\Bbb R$. Dalam
+bagian pertama dari dua bagian mengenai topik ini, saya menyajikan bagian teori
+dasar yang dapat ditangani dengan metode dari bagian sebelumnya mengenai deret
+Fourier. Namun, saya tidak menemukan cara untuk memahami teori ini tanpa
+memperkenalkan sebagian teori distribusi L.Schwartz, yang saya sajikan dalam
+\S284. Seperti dalam \S282, pembahasan ini tentu saja baru merupakan suatu
+permulaan.
+
+Seluruh teori ini juga dapat dikembangkan pada $\BbbR^r$. Namun saya
+menyerahkan perluasan tersebut kepada latihan, karena hanya ada sedikit
+gagasan baru, rumus-rumusnya jauh lebih rumit, dan setidaknya dalam jilid ini
+saya tidak memerlukan versi multidimensi dari teorema-teorema tersebut,
+meskipun sebagian gagasan yang sama akan muncul dalam bentuk multidimensi
+dalam \S285.
+
+\leader{283A}{Definisi} Misalkan $f$ adalah fungsi bernilai kompleks yang
+dapat diintegralkan pada $\Bbb R$.
+
+
+\spheader 283Aa {\bf Transformasi Fourier} dari $f$ adalah fungsi
+  $\varhatf:\Bbb R\to\Bbb C$ yang didefinisikan oleh
+
+\Centerline{$\varhatf(y)=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+e^{-iyx}f(x)dx$}
+
+\noindent untuk setiap $y\in\Bbb R$.   \cmmnt{(Tentu saja integral
+selalu ditentukan karena $x\mapsto e^{-iyx}$ terbatas dan kontinu,
+oleh karena itu terukur.)}
+
+\spheader 283Ab  {\bf transformasi Fourier invers} dari $f$ adalah
+fungsi $\varcheckf:\Bbb R\to\Bbb C$ yang ditentukan oleh
+
+\Centerline{$\varcheckf(y)=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+e^{iyx}f(x)dx$}
+
+\noindent untuk setiap $y\in\Bbb R$.
+
+\cmmnt{
+\leader{283B}{Keterangan (a)} Ini adalah fitur yang agak menjengkelkan dari teori
+dari transformasi Fourier -- menjengkelkan, yaitu,
+untuk orang luar seperti saya -- bahwa sebenarnya
+tidak ada definisi standar dari `transformasi Fourier'.
+Definisi yang paling umum, menurut saya, adalah,
+
+\Centerline{$\varhatf(y)=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+e^{\mp iyx}f(x)dx$,}
+
+\Centerline{$\varhatf(y)=\int_{-\infty}^{\infty}
+e^{\mp iyx}f(x)dx$,}
+
+\Centerline{$\varhatf(y)=\int_{-\infty}^{\infty}
+e^{\mp 2\pi iyx}f(x)dx$,}
+
+\noindent sesuai dengan transformasi Fourier invers
+
+\Centerline{$\varcheckf(y)=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+e^{\pm iyx}f(x)dx$,}
+
+\Centerline{$\varcheckf(y)=\Bover1{{2\pi}}\int_{-\infty}^{\infty}
+e^{\pm iyx}f(x)dx$,}
+
+\Centerline{$\varcheckf(y)=\int_{-\infty}^{\infty}
+e^{\pm 2\pi iyx}f(x)dx$.}
+
+\noindent Saya serahkan kepada pembaca untuk memeriksa bahwa seluruh teori dapat
+dijalankan dengan sembarang di antara keenam pasangan ini, serta menyelidiki
+kemungkinan-kemungkinan lain (lihat 283Xa-283Xb di bawah).
+
+\spheader 283Bb Ungkapan `transformasi Fourier' dan `transformasi Fourier
+invers' menunjukkan bahwa $(\varhatf)\varspcheck$ semestinya sama dengan
+$f$, setidaknya dalam beberapa keadaan. Hal ini memang benar, tetapi kelas
+fungsi $f$ yang memenuhinya secara harfiah agak terbatas; kita masih harus
+menunggu sebelum menyelidikinya.
+
+\spheader 283Bc Betapa pun konstanta-konstanta diatur seperti pada (a),
+kita tidak dapat membuat $\varhatf$ dan $\varcheckf$ benar-benar sama.
+Namun, dengan definisi yang saya pilih, kita mempunyai
+$\varcheckf(y)=\varhatf(-y)$ untuk setiap $y$, sehingga $\varcheckf$ dan
+$\varhatf$ pada dasarnya memiliki semua sifat yang sama yang kita perlukan
+di sini; khususnya, segala sesuatu dalam proposisi berikutnya akan valid
+dengan $\varspcheck$ di tempat $\varsphat$, jika Anda mengubah tanda di
+    titik-titik yang sesuai pada bagian (c), (h), dan (i).
+}%end of comment
+
+\leader{283C}{Proposisi} Misalkan $f$ dan $g$ adalah fungsi bernilai kompleks
+yang dapat diintegralkan pada $\Bbb R$.
+
+(a) $(f+g)\varsphat=\varhatf+\varhat{g}$.
+
+(b) $(cf)\varsphat=c\varhatf$ untuk setiap $c\in\Bbb C$.
+
+(c) Jika $c\in\Bbb R$ dan $h(x)=f(x+c)$ kapan pun ruas ini
+terdefinisi, maka $\varhat{h}(y)=e^{icy}\varhatf(y)$ untuk setiap $y\in\Bbb R$.
+
+(d) Jika $c\in\Bbb R$ dan $h(x)=e^{icx}f(x)$ untuk setiap
+$x\in\dom f$, lalu $\varhat{h}(y)=\varhatf(y-c)$ untuk setiap
+$y\in\Bbb R$.
+
+(e) Jika $c>0$ dan $h(x)=f(cx)$ kapan pun ruas ini terdefinisi,
+lalu $\varhat{h}(y)=\Bover1c\varhatf(\Bover{y}{c})$
+untuk setiap $y\in\Bbb R$.
+
+(f) $\varhatf:\Bbb R\to\Bbb C$ kontinu.
+
+(g) $\lim_{y\to\infty}\varhatf(y)=\lim_{y\to-\infty}\varhatf(y)=0$.
+
+(h) Jika $\int_{-\infty}^{\infty}|xf(x)|dx<\infty$, maka $\varhatf$ adalah
+terdiferensiasi, dan turunannya adalah
+
+\Centerline{$\varhatf\vthsp'(y)=-\Bover{i}{\sqrt{2\pi}}
+\int_{-\infty}^{\infty}e^{-iyx}xf(x)dx$}
+
+\noindent untuk setiap $y\in\Bbb R$.
+
+(i) Jika $f$ kontinu mutlak pada setiap interval terbatas dan $f'$
+dapat diintegralkan, maka $(f')\varsphat(y)=iy\varhatf(y)$ untuk setiap $y\in\Bbb
+R$.
+
+\proof{{\bf (a)} dan {\bf (b)} adalah sepele, dan {\bf (c)}, {\bf (d)} dan
+{\bf (e)} adalah substitusi dasar.
+
+\medskip
+
+{\bf (f)} Jika $\sequencen{y_n}$ adalah sembarang barisan konvergen di $\Bbb R$
+dengan limit $y$, maka
+
+$$\eqalign{\varhatf(y)
+&=\Bover1{\sqrt{2\pi}}
+\int_{-\infty}^{\infty}\lim_{n\to\infty}e^{-iy_nx}f(x)dx\cr
+&=\lim_{n\to\infty}\Bover1{\sqrt{2\pi}}
+\int_{-\infty}^{\infty}e^{-iy_nx}f(x)dx
+=\lim_{n\to\infty}\varhatf(y_n)\cr}$$
+
+\noindent oleh Teorema Konvergensi Dominasi Lebesgue, karena
+$|e^{-iy_nx}f(x)|\le|f(x)|$ untuk setiap $n\in\Bbb N$ dan $x\in\dom f$.   Karena
+$\sequencen{y_n}$ bersifat arbitrer, $\varhatf$ bersifat kontinu.
+
+\medskip
+
+{\bf (g)} Ini hanya lema Riemann--Lebesgue (282E).
+
+\medskip
+
+{\bf (h)} Intinya $|\pd{}{y}e^{-iyx}f(x)|=|xf(x)|$ kapan saja
+$x\in\dom f$ dan $y\in\Bbb R$. Jadi oleh 123D
+
+$$\eqalign{\varhatf\vthsp'(y)
+&=\Bover1{\sqrt{2\pi}}\Bover{d}{dy}
+     \int_{-\infty}^{\infty}e^{-iyx}f(x)dx
+=\Bover1{\sqrt{2\pi}}\Bover{d}{dy}\int_{\dom f}
+     e^{-iyx}f(x)dx\cr
+&=\Bover1{\sqrt{2\pi}}\int_{\dom f}
+     \Bover{\partial}{\partial y}e^{-iyx}f(x)dx
+=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+     -ixe^{-iyx}f(x)dx\cr
+&=-\Bover{i}{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+     xe^{-iyx}f(x)dx.\cr}$$
+
+\medskip
+
+{\bf (i)} Karena $f$ kontinu mutlak di setiap interval terbatas,
+
+\Centerline{$f(x)=f(0)+\int_0^xf'$ untuk $x\ge 0$,\quad
+$f(x)=f(0)-\int_x^0f'$ untuk $x\le 0$.}
+
+\noindent Karena $f'$ dapat diintegralkan,
+
+\Centerline{$\lim_{x\to\infty}f(x)=f(0)+\int_0^{\infty}f'$,\quad
+$\lim_{x\to-\infty}f(x)=f(0)-\int_{-\infty}^0f'$}
+
+\noindent keduanya ada.   Karena $f$ juga dapat diintegralkan, kedua batas
+harus nol.   Sekarang kita dapat melakukan integrasi parsial (225F) untuk melihat bahwa
+
+$$\eqalign{(f')\varsphat(y)
+&=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iyx}f'(x)dx
+=\Bover1{\sqrt{2\pi}}\lim_{a\to\infty}\int_{-a}^{a}e^{-iyx}f'(x)dx\cr
+&=\Bover1{\sqrt{2\pi}}\bigl(\lim_{a\to\infty}e^{-iya}f(a)
+-\lim_{a\to-\infty}e^{-iya}f(a)\bigr)
++\Bover{iy}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iyx}f(x)dx\cr
+&=iy\varhatf(y).\cr}$$
+}%end of proof of 283C
+
+\leader{283D}{Lema} (a) $\lim_{a\to\infty}\int_{0}^a\bover{\sin
+x}{x}dx=\bover{\pi}2$, $\lim_{a\to\infty}\int_{-a}^a\bover{\sin
+x}{x}dx=\pi$.
+
+(b) Terdapat $K<\infty$ sehingga $|\int_a^b\bover{\sin cx}{x}dx|\le
+K$ kapan pun $a\le b$ dan $c\in\Bbb R$.
+
+\proof{{\bf (a)(i)} Atur
+
+\Centerline{$F(a)=\int_0^a\Bover{\sin x}{x}dx$ jika $a\ge 0$,\quad
+$F(a)=-\int_{-a}^0\Bover{\sin x}{x}dx$ jika $a\le 0$,}
+
+\noindent sehingga $F(a)=-F(-a)$ dan
+$\int_a^b\bover{\sin x}{x}dx=F(b)-F(a)$ untuk semua $a\le b$.
+
+Jika $0<a\le b$, maka menurut 224J
+
+\Centerline{$|\int_a^b\Bover{\sin x}{x}dx|
+\le(\Bover1b+\Bover1a-\Bover1b)\sup_{c\in[a,b]}
+  |\int_a^c\sin x\,dx|
+\le\Bover1a\sup_{c\in[a,b]}|\cos a-\cos c|
+\le\Bover2a$.}
+
+\noindent Khususnya, $|F(n)-F(m)|\le\bover2{m}$ jika $0<m\le n$ dalam
+$\Bbb N$, dan $\sequencen{F(n)}$ adalah urutan Cauchy dengan batas
+$\gamma$ katakan; sekarang
+
+\Centerline{$|\gamma - F(a)|
+=\lim_{n\to\infty}|F(n)-F(a)|\le\Bover2a$}
+
+\noindent untuk setiap $a>0$, Jadi $\lim_{a\to\infty}F(a)=\gamma$.
+Tentu saja kita juga memiliki
+
+\Centerline{$\lim_{a\to\infty}\int_{-a}^a\Bover{\sin x}{x}dx
+=\lim_{a\to\infty}(F(a)-F(-a))
+=\lim_{a\to\infty}2F(a)=2\gamma$.}
+
+\medskip
+
+\quad{\bf (ii)} Jadi sekarang saya harus menghitung $\gamma$.    Untuk ini,
+amati dulu
+
+\Centerline{$2\gamma
+=\lim_{a\to\infty}\int_{-\pi a}^{\pi a}\Bover{\sin x}{x}dx
+=\lim_{a\to\infty}\int_{-\pi}^{\pi}\Bover{\sin at}{t}dt$}
+
+\noindent (dengan mengganti $x=at$).   Berikutnya,
+
+\Centerline{$\lim_{t\to 0}\Bover1t-\Bover1{2\sin{1\over 2}t}=\lim_{u\to
+0}\Bover{\sin u-u}{2u\sin u}=0$,}
+
+\noindent jadi
+
+\Centerline{$\int_{-\pi}^{\pi}
+  \bigl|\Bover1t-\Bover1{2\sin{1\over 2}t}\bigr|dt<\infty$,}
+
+\noindent dan oleh lema Riemann-Lebesgue (282Fb)
+
+\Centerline{$\lim_{a\to\infty}\int_{-\pi}^{\pi}
+   \bigl(\Bover1t-\Bover1{2\sin{1\over 2}t}\bigr)\sin at\,dt=0$.}
+
+\noindent Tapi kami tahu itu
+
+\Centerline{$\int_{-\pi}^{\pi}
+\Bover{\sin(n+{1\over 2})t\pushbottom{3.5pt}}{2\sin{1\over 2}t}dt
+=\pi$}
+
+\noindent untuk setiap $n$ (menggunakan 282Dc), jadi kita harus punya
+
+$$\eqalign{\lim_{a\to\infty}\int_{-a}^a\Bover{\sin t}{t}dt
+&=\lim_{a\to\infty}\int_{-\pi}^{\pi}\Bover{\sin at}{t}dt
+=\lim_{a\to\infty}\int_{-\pi}^{\pi}
+      \Bover{\sin at}{2\sin{1\over 2}t}dt\cr
+&=\lim_{n\to\infty}\int_{-\pi}^{\pi}
+    \Bover{\sin(n+{1\over 2})t\pushbottom{3.5pt}}{2\sin{1\over 2}t}dt
+=\pi,\cr}$$
+
+\noindent dan $\gamma=\pi/2$, seperti yang diklaim.
+
+\medskip
+
+{\bf (b)} Karena $F$ kontinu dan
+
+\Centerline{$\lim_{a\to\infty}F(a)=\gamma=\Bover{\pi}2$, \quad
+$\lim_{a\to-\infty}F(a)=-\gamma=-\Bover{\pi}2$,}
+
+\noindent $F$ terbatas; katakanlah $|F(a)|\le K_1$ untuk semua $a\in\Bbb R$.
+Ambil $K=2K_1$. Sekarang misalkan $a<b$ dan $c\in\Bbb R$. Jika $c>0$,
+maka
+
+\Centerline{$|\int_a^b\Bover{\sin cx}{x}dx|
+=|\int_{ac}^{bc}\Bover{\sin t}{t}dt|
+=|F(bc)-F(ac)|\le 2K_1=K$,}
+
+\noindent menggantikan $x=t/c$.   Jika $c<0$, maka
+
+\Centerline{$|\int_a^b\Bover{\sin cx}{x}dx|
+=|-\int_a^b\Bover{\sin(-c)x}{x}dx|
+\le K$;}
+
+\noindent sementara jika $c=0$ maka
+
+\Centerline{$|\int_a^b\Bover{\sin cx}{x}dx|
+=0\le K$.}
+}%end of proof of 283D
+
+\leader{283E}{}\cmmnt{ Pekerjaan tersulit dari bagian ini terletak pada
+`teorema inversi titik' 283I dan 283K di bawah ini.   Namun saya memulai
+dengan hasil yang relatif mudah, dan setidaknya sama pentingnya,
+menunjukkan (antara lain) bahwa fungsi $f$ yang dapat diintegralkan dapat
+(pada dasarnya) dipulihkan dari transformasi Fourier-nya.
+
+\medskip
+
+\noindent}{\bf Lema} Kapan pun $c<d$ di $\Bbb R$,
+
+$$\eqalign{\lim_{a\to\infty}\int_{-a}^{a}
+     e^{-iyx}\,\Bover{e^{idy}-e^{icy}}{y}dy
+&=2\pi i\text{ jika }c<x<d,\cr
+&=\pi i\text{ jika }x=c\text{ atau }x=d,\cr
+&=0\text{ jika }x<c\text{ atau } x>d.\cr}$$
+
+\proof{ Kita tahu bahwa untuk setiap $b>0$
+
+\Centerline{$\lim_{a\to\infty}\int_{-a}^{a}\Bover{\sin bx}{x}dx
+=\lim_{a\to\infty}\int_{-ab}^{ab}\Bover{\sin t}{t}dt
+=\pi$}
+
+\noindent (dengan mengganti $x=t/b$), dan oleh karena itu untuk setiap $b<0$
+
+\Centerline{$\lim_{a\to\infty}\int_{-a}^{a}\Bover{\sin bx}{x}dx
+=-\lim_{a\to\infty}\int_{-a}^{a}\Bover{\sin(-b)x}{x}dx
+=-\pi$.}
+
+\noindent Sekarang pertimbangkan, untuk $x\in\Bbb R$,
+
+\Centerline{$\lim_{a\to\infty}\int_{-a}^{a}e^{-iyx}
+\,\Bover{e^{idy}-e^{icy}}{y}dy$.}
+
+\noindent Pertama, perhatikan bahwa semua integral $\int_{-a}^a$ ada, karena
+
+\Centerline{$\lim_{y\to 0}\Bover{e^{idy}-e^{icy}}{y}=i(d-c)$}
+
+\noindent terbatas, dan integran tersebut kontinu kecuali di
+ $0$.   Sekarang kita punya
+
+$$\eqalignno{\int_{-a}^ae^{-iyx}&\Bover{e^{idy}-e^{icy}}{y}dy\cr
+&=\int_{-a}^a\Bover{e^{i(d-x)y}-e^{i(c-x)y}}{y}dy\cr
+&=\int_{-a}^a\Bover{\cos(d-x)y-\cos(c-x)y}{y}dy
+ +i\int_{-a}^a\Bover{\sin(d-x)y-\sin(c-x)y}{y}dy\cr
+&=i\int_{-a}^a\Bover{\sin(d-x)y-\sin(c-x)y}{y}dy\cr}$$
+
+\noindent karena $\cos$ adalah fungsi genap, jadi
+
+\Centerline{$\int_{-a}^{a}\Bover{\cos(d-x)y-\cos(c-x)y}{y}dy=0$}
+
+\noindent untuk setiap $a\ge 0$.   (Sekali lagi, integral ini ada
+ karena
+
+\Centerline{$\lim_{y\to 0}\Bover{\cos(d-x)y-\cos(c-x)y}{y}=0$.)}
+
+\noindent   Oleh karena itu
+
+$$\eqalign{\lim_{a\to\infty}\int_{-a}^a
+e^{-iyx}\Bover{e^{idy}-e^{icy}}{y}dy
+&=i\lim_{a\to\infty}\int_{-a}^a\Bover{\sin(d-x)y}{y}dy
+   -i\lim_{a\to\infty}\int_{-a}^a\Bover{\sin(c-x)y}{y}dy\cr
+&=i\pi-i\pi=0\text{ jika }x<c,\cr
+&=i\pi-0=\pi i\text{ jika }x=c,\cr
+&=i\pi+i\pi=2\pi i\text{ jika }c<x<d,\cr
+&=0+i\pi=\pi i\text{ jika }x=d,\cr
+&=-i\pi+i\pi=0\text{ jika }x>d.\cr}$$
+}%end of proof of 283E
+
+\leader{283F}{Teorema} Misalkan $f$ adalah fungsi bernilai kompleks yang dapat
+diintegralkan pada $\Bbb R$, dan $\varhatf$ transformasi Fourier-nya. Maka
+kapan pun $c\le d$ dalam $\Bbb R$,
+
+$$\int_c^df=\Bover{i}{\sqrt{2\pi}}\lim_{a\to\infty}
+\int_{-a}^{a}\Bover{e^{icy}-e^{idy}}{y}\varhatf(y)dy.$$
+
+\proof{ Jika $c=d$, hasilnya sepele; kita dapat mengandaikan bahwa $c<d$.
+
+\medskip
+
+{\bf (a)} Dengan menulis
+
+$$\theta_a(x)=\biggerint_{-a}^{a}e^{-iyx}
+\,\Bover{e^{idy}-e^{icy}}{y}dy$$
+
+\noindent untuk $x\in\Bbb R$ dan $a\ge 0$, 283E memberitahu kita bahwa
+
+\Centerline{$\lim_{a\to\infty}\theta_a(x)=2\pi i\theta(x)$}
+
+\noindent dengan $\theta=\bover12(\chi[c,d]+\chi\ooint{c,d})$ mengambil
+nilai $1$ di dalam interval $[c,d]$, $0$ luar dan nilai
+$\bover12$ pada titik akhir.
+
+$$\eqalignno{|\theta_a(x)|
+&=|\int_{-a}^a\Bover{\sin(d-x)y-\sin(c-x)y}{y}dy|\cr
+\displaycause{lihat pembuktian 283E}
+&\le|\int_{-a}^a\Bover{\sin(d-x)y}{y}dy|
+  +|\int_{-a}^a\Bover{\sin(c-x)y}{y}dy|
+\le 2K\cr}$$
+
+\noindent untuk semua $a\ge 0$ dan $x\in\Bbb R$, dengan $K$ konstanta dari
+283Db. Akibatnya $|f\times\theta_a|\le 2K|f|$ di seluruh $\dom f$, untuk
+setiap $a\ge 0$, dan (dengan menerapkan Teorema Konvergensi Terdominasi
+Lebesgue pada barisan $\sequencen{f\times\theta_{a_n}}$, dengan
+$a_n\to\infty$)
+
+\Centerline{$\lim_{a\to\infty}
+\int f\times\theta_a=2\pi i\int f\times\theta=2\pi i\int_c^df$.}
+
+\medskip
+
+{\bf (b)} Sekarang pertimbangkan batas dalam pernyataan teorema.
+Kita mempunyai
+
+$$\eqalignno{\int_{-a}^a
+\bover{e^{icy}-e^{idy}}{y}\varhatf(y)dy
+&=\bover1{\sqrt{2\pi}}\int_{-a}^a
+\int_{-\infty}^{\infty}
+\bover{e^{icy}-e^{idy}}{y}e^{-iyx}f(x)dxdy\cr
+&=\bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}\int_{-a}^a
+\bover{e^{icy}-e^{idy}}{y}e^{-iyx}f(x)dydx\cr
+&=-\bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}f\times\theta_a\cr}$$
+
+\noindent oleh teorema Fubini dan Tonelli (252H), dengan menggunakan fakta bahwa
+$(e^{icy}-e^{idy})/y$ terbatas untuk melihat bahwa
+
+\Centerline{$\int_{-\infty}^{\infty}\int_{-a}^{a}
+  \bigl|\bover{e^{icy}-e^{idy}}{y}e^{-iyx}f(x)\bigr|dydx$}
+
+\noindent berhingga; oleh karena itu, kita dapat menukar urutan integrasi.
+
+$$\eqalign{\bover{i}{\sqrt{2\pi}}\lim_{a\to\infty}\int_{-a}^a
+\bover{e^{icy}-e^{idy}}{y}\varhatf(y)dy
+&=-\bover{i}{2\pi}\lim_{a\to\infty}
+\int_{-\infty}^{\infty}f\times\theta_a\cr
+&=-\bover{i}{2\pi}2\pi i\int_c^df
+=\int_c^df,\cr}$$
+
+\noindent sesuai kebutuhan.
+}%end of proof of 283F
+
+\leader{283G}{Akibat} Jika $f$ dan $g$ adalah fungsi bernilai kompleks yang
+dapat diintegralkan pada $\Bbb R$, maka
+$\varhatf=\varhat{g}$ jika $f\eae g$.
+
+\proof{ Jika $f\eae g$ maka tentu saja
+
+\Centerline{$\varhatf(y)
+=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iyx}f(x)dx
+=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iyx}g(x)dx
+=\varhat{g}(y)$}
+
+\noindent untuk setiap $y\in\Bbb R$. Sebaliknya, jika
+$\varhatf=\varhat{g}$, maka oleh teorema terakhir
+
+\Centerline{$\int_c^df=\int_c^dg$}
+
+\noindent untuk semua $c\le d$, sehingga $f=g$ hampir di mana-mana, menurut 222D.
+}%end of proof of 283G
+
+\leader{283H}{Lema} Misalkan $f$ adalah fungsi bernilai kompleks yang dapat
+diintegralkan pada $\Bbb R$, dan $\varhatf$ transformasi Fourier-nya. Maka
+
+\Centerline{$\Bover1{\sqrt{2\pi}}\int_{-a}^{a}e^{ixy}\varhatf(y)dy
+=\Bover1{\pi}\int_{-\infty}^{\infty}\Bover{\sin a(x-t)}{x-t}f(t)dt
+=\Bover1{\pi}\int_{-\infty}^{\infty}\Bover{\sin at}{t}f(x-t)dt$}
+
+\noindent setiap kali $a>0$ dan $x\in\Bbb R$.
+
+\proof{ Kita mempunyai
+
+\Centerline{$\int_{-a}^a\int_{-\infty}^{\infty}|e^{ixy}e^{-iyt}f(t)|dtdy
+\le 2a\int_{-\infty}^{\infty}|f(t)|dt<\infty$,}
+
+\noindent jadi (karena fungsi $(t,y)\mapsto e^{ixy}e^{-iyt}f(t)$ adalah
+pasti terukur bersama-sama) kita dapat membalikkan urutan integrasi, dan
+mendapatkan
+
+$$\eqalign{\Bover1{\sqrt{2\pi}}\int_{-a}^ae^{ixy}\varhatf(y)dy
+&=\Bover1{2\pi}\int_{-a}^a\int_{-\infty}^{\infty}
+   e^{ixy}e^{-iyt}f(t)dt\,dy\cr
+&=\Bover1{2\pi}\int_{-\infty}^{\infty}f(t)\int_{-a}^a
+   e^{i(x-t)y}dy\,dt\cr
+&=\Bover1{2\pi}\int_{-\infty}^{\infty}
+   \Bover{2\sin(x-t)a}{x-t}f(t)dt
+=\Bover1{\pi}\int_{-\infty}^{\infty}
+   \Bover{\sin au}{u}f(x-u)du,\cr}$$
+
+\noindent menggantikan $t=x-u$.
+}%end of proof of 283H
+
+\leader{283I}{Teorema} Misalkan $f$ adalah fungsi bernilai kompleks yang
+dapat diintegralkan pada $\Bbb R$, dan anggaplah $f$ terdiferensiasi di
+$x\in\Bbb R$. Maka
+
+\Centerline{$f(x)
+=\Bover{1}{\sqrt{2\pi}}
+\lim_{a\to\infty}\int_{-a}^ae^{ixy}\varhatf(y)dy
+=\Bover{1}{\sqrt{2\pi}}
+\lim_{a\to\infty}\int_{-a}^ae^{-ixy}\varcheckf(y)dy$.}
+
+\proof{ Tetapkan $g(u)=f(x)$ jika $|u|\le 1$, dan $0$ jika tidak;
+perhatikan bahwa
+$\lim_{u\to 0}\bover1u(f(x-u)-g(u))=-f'(x)$ terbatas, sehingga ada
+suatu $\delta\in\ocint{0,1}$ sedemikian sehingga
+
+\Centerline{$K
+=\sup_{0<|u|\le\delta}\bigl|\Bover{f(x-u)-g(u)}{u}\bigr|<\infty$.}
+
+\noindent Akibatnya
+
+$$\eqalign{\int_{-\infty}^{\infty}\bigl|\Bover{f(x-u)-g(u)}{u}\bigr|du
+&\le\Bover1{\delta}\int_{-\infty}^{-\delta}|f(x-u)|du
+   +\Bover1{\delta}\int_{-1}^1|g|\cr
+&{\hskip 8em plus 0pt minus 0pt}
+   +\int_{-\delta}^{\delta}K
+   +\Bover1{\delta}\int_{\delta}^{\infty}|f(x-u)|du\cr
+&\le\Bover{1}{\delta}\int_{-\infty}^{\infty}|f|
+   + \Bover2{\delta}|f(x)|+ 2\delta K
+<\infty.\cr}$$
+
+\noindent Oleh lema Riemann-Lebesgue (282Fb lagi),
+
+\Centerline{$\lim_{a\to\infty}\int_{-\infty}^{\infty}
+\Bover{\sin au}{u}(f(x-u)-g(u))du=0$.}
+
+\noindent Jika kita sekarang memeriksa $\int\bover{\sin au}{u}g(u)du$, kita mendapatkan
+
+$$\eqalign{\int_{-\infty}^{\infty}\Bover{\sin au}{u}g(u)du
+&=\int_{-1}^1\Bover{\sin au}{u}f(x)du
+=f(x)\int_{-a}^a\Bover{\sin v}{v}dv,\cr}$$
+
+\noindent dengan mengganti $u=v/a$.   Jadi kita peroleh
+
+$$\eqalign{\lim_{a\to\infty}\int_{-\infty}^{\infty}\Bover{\sin
+au}{u}f(x-u)du
+&=\lim_{a\to\infty}\int_{-\infty}^{\infty}\Bover{\sin au}{u}g(u)du\cr
+&=\lim_{a\to\infty}f(x)\int_{-a}^a\Bover{\sin v}{v}dv
+=\pi f(x),\cr}$$
+
+\noindent oleh 283Da.   Oleh karena itu
+
+$$\Bover{1}{\sqrt{2\pi}}
+\lim_{a\to\infty}\int_{-a}^ae^{ixy}\varhatf(y)dy
+=\Bover{1}{\pi}\lim_{a\to\infty}\int_{-\infty}^{\infty}\Bover{\sin
+au}{u}f(x-u)du
+= f(x),$$
+
+\noindent menggunakan 283H.    Adapun kesetaraan kedua,
+
+$$\eqalignno{\Bover1{\sqrt{2\pi}}\lim_{a\to\infty}\int_{-a}^a
+e^{-ixy}\varcheckf(y)dy
+&=\Bover1{\sqrt{2\pi}}\lim_{a\to\infty}\int_{-a}^a
+e^{-ixy}\varhatf(-y)dy\cr
+&=\Bover1{\sqrt{2\pi}}\lim_{a\to\infty}\int_{-a}^a
+e^{ixu}\varhatf(u)du
+=f(x)\cr}$$
+
+\noindent (memasukkan $y=-u$).
+}%end of proof of 283I
+
+\cmmnt{\medskip
+
+\noindent{\bf Keterangan} Bandingkan 282L.}%end of comment
+
+\leader{283J}{Akibat} Misalkan $f:\Bbb R\to\Bbb C$ adalah fungsi yang dapat
+diintegralkan sedemikian sehingga $f$ terdiferensiasi dan $\varhatf$ dapat
+diintegralkan. Maka $f=(\varhatf)\varspcheck=(\varcheckf)\varsphat$.
+
+\proof{ Karena $\varhatf$ dapat diintegralkan,
+
+\Centerline{$\varhatf\varcheck{\phantom{f}}(x)=\lim_{a\to\infty}
+\Bover1{\sqrt{2\pi}}\int_{-a}^ae^{ixy}\varhatf(y)dy = f(x)$}
+
+\noindent untuk setiap $x\in\Bbb R$.  Demikian pula,
+
+\Centerline{$\varcheckf\varhat{\phantom{f}}(x)=\lim_{a\to\infty}
+\Bover1{\sqrt{2\pi}}\int_{-a}^ae^{-ixy}\varcheckf(y)dy = f(x).$}
+}%end of proof of 283J
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Lihat juga 283Wk di bawah.
+}
+
+\leader{283K}{}\cmmnt{ Proposisi berikutnya memberikan kelas fungsi
+yang padanya akibat terakhir dapat diterapkan.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $f$ adalah fungsi dari $\Bbb R$ ke $\Bbb C$
+yang terdiferensiasi dua kali dan $f$, $f'$, serta $f''$ semuanya dapat
+diintegralkan. Maka $\varhatf$
+dapat diintegralkan.
+
+\proof{ Karena $f'$ dan $f''$ dapat diintegralkan, $f$ dan $f'$
+kontinu mutlak pada interval terbatas mana pun (225L).   Jadi dengan 283Ci
+kita punya
+
+\Centerline{$(f'')\varsphat(y)=iy(f')\varsphat(y)=-y^2\varhatf(y)$}
+
+\noindent untuk setiap $y\in\Bbb R$. Pada saat yang sama, menurut
+283Cf-283Cg, $(f'')\varsphat$ dan $\varhatf$ harus terbatas; katakanlah
+$|\varhatf(y)|+|(f'')\varsphat(y)|\le K$ untuk setiap $y\in\Bbb R$.   Sekarang
+
+\Centerline{$|\varhatf(y)|\le\Bover{K}{1+y^2}$}
+
+\noindent untuk setiap $y$, sehingga
+
+\Centerline{$\int_{-\infty}^{\infty}|\varhatf|
+\le K\int_{-\infty}^{-1}\Bover{1}{y^2}dy
+  +2K+K\int_{1}^{\infty}\Bover{1}{y^2}dy
+=4K<\infty$.}
+}%end of proof of 283K
+
+\cmmnt{\medskip
+
+\noindent{\bf Keterangan} Bandingkan 282Rb.}
+
+\leader{283L}{}\cmmnt{ Sekarang saya beralih ke hasil yang bersesuaian dengan 282O,
+menggunakan pendekatan yang sedikit berbeda.
+
+\medskip
+
+\noindent}{\bf Teorema} Misalkan $f$ adalah fungsi bernilai kompleks yang
+dapat diintegralkan pada $\Bbb R$, dengan transformasi Fourier $\varhatf$ dan
+transformasi Fourier invers $\varcheckf$, dan anggaplah $f$ memiliki variasi
+terbatas pada suatu lingkungan dari $x\in\Bbb R$. Tetapkan
+$a=\lim_{t\in\dom f,t\uparrow x}f(t)$,
+$b=\lim_{t\in\dom f,t\downarrow x}f(t)$. Maka
+
+\Centerline{$\Bover1{\sqrt{2\pi}}\lim_{\gamma\to\infty}
+     \int_{-\gamma}^{\gamma}e^{ixy}\varhatf(y)dy
+=\Bover1{\sqrt{2\pi}}\lim_{\gamma\to\infty}
+     \int_{-\gamma}^{\gamma}e^{-ixy}\varcheckf(y)dy
+=\Bover12(a+b)$.}
+
+\proof{{\bf (a)} Limit $\lim_{t\in\dom f,t\uparrow x}f(t)$ dan
+$\lim_{t\in\dom f,t\downarrow x}f(t)$ ada karena $f$ memiliki variasi
+terbatas di dekat $x$ (224F). Ingat dari 283Db bahwa terdapat konstanta
+$K<\infty$ sedemikian sehingga
+
+\Centerline{$|\int_{\gamma}^{\delta}\Bover{\sin cx}{x}dx|\le K$}
+
+\noindent setiap kali $\gamma\le \delta$ dan $c\in\Bbb R$.
+
+\medskip
+
+{\bf (b)} Misalkan $\epsilon>0$.   Hipotesisnya adalah ada beberapa
+$\delta>0$ sehingga $\Var_{[x-\delta,x+\delta]}(f)<\infty$.
+Akibatnya
+
+\Centerline{$\lim_{\eta\downarrow 0}\Var_{\ocint{x,x+\eta}}(f)
+=\lim_{\eta\downarrow 0}\Var_{\coint{x-\eta,x}}(f)=0$}
+
+\noindent (224E).   Oleh karena itu ada $\eta>0$ sedemikian sehingga
+
+\Centerline{$\max(\Var_{\coint{x-\eta,x}}(f),
+               \Var_{\ocint{x,x+\eta}}(f))\le\epsilon$.}
+
+\noindent Tentu saja
+
+\Centerline{$|f(t)-f(u)|\le\Var_{\coint{x-\eta,x}}(f)\le\epsilon$}
+
+\noindent kapan pun $t$, $u\in\dom f$ dan $x-\eta\le t\le u<x$, sehingga kita
+akan memiliki
+
+\Centerline{$|f(t)-a|\le\epsilon$ untuk setiap
+$t\in\dom f\cap\coint{x-\eta,x}$,}
+
+\noindent dan demikian pula
+
+\Centerline{$|f(t)-b|\le\epsilon$ setiap kali $t\in\dom f
+\cap\ocint{x,x+\eta}$.}
+
+\medskip
+
+{\bf (c)} Sekarang tetapkan
+
+\Centerline{$g_1(t)=f(t)$ ketika $t\in\dom f$ dan $|x-t|>\eta$, $0$
+sebaliknya,}
+
+\Centerline{$g_2(t)=a$ ketika $x-\eta\le t<x$, $b$ ketika $x<t\le x+\eta$,
+$0$ sebaliknya,}
+
+\Centerline{$g_3=f-g_1-g_2$.}
+
+\noindent Maka $f=g_1+g_2+g_3$;  setiap $g_j$ dapat diintegralkan;  $g_1$ adalah
+nol di lingkungan $x$;
+
+\Centerline{$\sup_{t\in\dom g_3,t\ne x}|g_3(t)|\le\epsilon$,}
+
+\Centerline{$\Var_{\coint{x-\eta,x}}(g_3)\le\epsilon$,
+\quad $\Var_{\ocint{x,x+\eta}}(g_3)\le\epsilon$.}
+
+\medskip
+
+{\bf (d)} Pertimbangkan tiga bagian $g_1$, $g_2$, $g_3$ secara terpisah.
+
+\medskip
+
+\quad{\bf (i)} Untuk yang pertama, kita punya
+
+\Centerline{$\lim_{\gamma\to\infty}\Bover1{\sqrt{2\pi}}
+   \int_{-\gamma}^{\gamma}e^{ixy}\varhat{g}_1(y)dy=0$}
+
+\noindent oleh 283I.
+
+\medskip
+
+\quad{\bf (ii)} Selanjutnya,
+
+$$\eqalignno{\Bover{1}{\sqrt{2\pi}}
+        \int_{-\gamma}^{\gamma}e^{ixy}\varhat{g}_2(y)dy
+&=\Bover1{\pi}\int_{-\infty}^{\infty}
+        \Bover{\sin(x-t)\gamma}{x-t}g_2(t)dt\cr
+\noalign{\noindent (menurut 283H)}
+&=\Bover{a}{\pi}\int_{x-\eta}^{x}\Bover{\sin(x-t)\gamma}{x-t}dt
+   +\Bover{b}{\pi}\int_{x}^{x+\eta}\Bover{\sin(x-t)\gamma}{x-t}dt\cr
+&=\Bover{a}{\pi}\int_0^{\gamma\eta}\Bover{\sin u}{u}du
+   +\Bover{b}{\pi}\int_{0}^{\gamma\eta}\Bover{\sin u}{u}du\cr
+\noalign{\noindent (dengan substitusi $t=x-\bover{1}{\gamma}u$ pada integral pertama,
+$t=x+\bover1{\gamma}u$ pada integral kedua)}
+&\to \Bover{a+b}{2}\text{ ketika }\gamma\to\infty\cr}$$
+
+\noindent oleh 283Da.
+
+\medskip
+
+\quad{\bf (iii)} Untuk yang ketiga, kita mempunyai, untuk setiap $\gamma>0$,
+
+$$\eqalignno{\bigl|\Bover1{\sqrt{2\pi}}\int_{-\gamma}^{\gamma}e^{ixy}
+     \varhat{g}_3(y)dy\bigr|
+&=\Bover1{\pi}\bigl|\int_{-\infty}^{\infty}
+     \Bover{\sin(x-t)\gamma}{x-t}g_3(t)dt\bigr|
+=\Bover1{\pi}\bigl|\int_{-\infty}^{\infty}
+     \Bover{\sin t\gamma}{t}g_3(x-t)dt\bigr|\cr
+&\le\Bover1{\pi}\bigl|\int_{-\eta}^0
+     \Bover{\sin t\gamma}{t}g_3(x-t)dt\bigr|
+   +\Bover1{\pi}\bigl|\int_0^{\eta}
+     \Bover{\sin t\gamma}{t}g_3(x-t)dt\bigr|\cr
+&\le \Bover{K}{\pi}\Bigl(\sup_{t\in\dom g_3\cap\ooint{x-\eta,x}}|g_3(t)|
+   +\Var_{\ooint{x-\eta,x}}(g_3)\cr
+  &{\hskip 8em plus 0pt minus 0pt}
+   +\sup_{t\in\dom g_3\cap\ooint{x,x+\eta}}|g_3(t)|
+   +\Var_{\ooint{x,x+\eta}}(g_3)\Bigr)\cr
+&\le 4\epsilon\Bover{K}{\pi},\cr}$$
+
+\noindent dengan menggunakan 224J lagi untuk memperkirakan integral
+berdasarkan variasi dan supremum $g_3$ serta integral
+$\bover{\sin\gamma t}{t}$ pada subinterval.
+
+\medskip
+
+{\bf (e)} Oleh karena itu, kita mempunyai
+
+$$\eqalign{\limsup_{\gamma\to\infty}\bigl|\Bover1{\sqrt{2\pi}}
+        \int_{-\gamma}^{\gamma}
+   &e^{ixy}\varhatf(y)dy-\Bover{a+b}{2}\bigr|\cr
+&\le\limsup_{\gamma\to\infty}\Bover1{\sqrt{2\pi}}
+     \bigl|\int_{-\gamma}^{\gamma}e^{ixy}\varhat{g}_1(y)dy\bigr|\cr
+&{\hskip 6em plus 0pt minus 0pt}
+     +\limsup_{\gamma\to\infty}\bigl|\Bover1{\sqrt{2\pi}}
+     \int_{-\gamma}^{\gamma}e^{ixy}\varhat{g}_2(y)dy
+     -\Bover{a+b}{2}\bigr|\cr
+&{\hskip 6em plus 0pt minus 0pt}
+     +\limsup_{\gamma\to\infty}\Bover1{\sqrt{2\pi}}
+     \bigl|\int_{-\gamma}^{\gamma}e^{ixy}\varhat{g}_3(y)\,dy\bigr|\cr
+&\le 0+0+\Bover{4K}{\pi}\epsilon\cr}$$
+
+\noindent dengan perhitungan pada (d).   Karena $\epsilon$ bersifat arbitrer,
+
+\Centerline{$\lim_{\gamma\to\infty}\Bover1{\sqrt{2\pi}}
+     \int_{-\gamma}^{\gamma}e^{ixy}\varhatf(y)dy-\Bover{a+b}{2}=0$.}
+
+\medskip
+
+{\bf (f)} Ini adalah paruh pertama teorema.   Namun tentu saja bagian kedua
+segera menyusul, karena
+
+$$\eqalign{\Bover1{\sqrt{2\pi}}\lim_{\gamma\to\infty}
+    \int_{-\gamma}^{\gamma}e^{-ixy}\varcheckf(y)dy
+&=\Bover1{\sqrt{2\pi}}\lim_{\gamma\to\infty}
+    \int_{-\gamma}^{\gamma}e^{-ixy}\varhatf(-y)dy\cr
+&=\Bover1{\sqrt{2\pi}}\lim_{\gamma\to\infty}
+    \int_{-\gamma}^{\gamma}e^{ixy}\varhatf(y)dy
+=\Bover{a+b}2.\cr}$$
+}%end of proof of 283L
+
+\cmmnt{\medskip
+
+\noindent{\bf Catatan} Anda akan melihat bahwa argumen ini menggunakan beberapa ide
+yang sama seperti yang ada di 282O--282P.   Argumen ini lebih langsung karena
+(i) saya tidak menggunakan konsep apa pun yang bersesuaian dengan jumlah Fej\'er
+(meskipun ada konsep yang sangat sesuai untuk tujuan ini; lihat 283Xf);
+(ii) saya tidak repot-repot memberikan hasil tentang konvergensi seragam
+integral Fej\'er ketika $f$ kontinu dan mempunyai variasi terbatas (283Xj);
+dan (iii) saya tidak menyinggung pentingnya fakta bahwa jika $f$ mempunyai
+variasi terbatas, maka $\sup_{y\in\Bbb R}|y\varhatf(y)|<\infty$ (283Xk).
+}%end of comment
+
+\leader{283M}{}\cmmnt{ Sesuai dengan 282Q, kami memiliki yang berikut ini.
+
+\medskip
+
+\noindent}{\bf Teorema} Misalkan $f$ dan $g$ adalah fungsi bernilai kompleks
+yang dapat diintegralkan pada $\Bbb R$, dan $f*g$ produk konvolusinya,
+ditentukan dengan menetapkan
+
+\Centerline{$(f*g)(x)=\int_{-\infty}^{\infty}f(t)g(x-t)dt$}
+
+\noindent setiap kali ini didefinisikan\cmmnt{ (255E)}.   Maka
+
+\Centerline{$(f*g)\varsphat(y)
+=\sqrt{2\pi}\varhatf(y)\varhat{g}(y)$,\quad
+$(f*g)\varspcheck(y)
+=\sqrt{2\pi}\varcheckf(y)\varcheck{g}(y)$}
+
+\noindent untuk setiap $y\in\Bbb R$.
+
+\proof{ Untuk setiap $y$,
+
+$$\eqalignno{(f*g)\varsphat(y)
+&=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iyx}(f*g)(x)dx\cr
+&=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+e^{-iy(t+u)}f(t)g(u)dtdu\cr
+\noalign{\noindent (dengan menggunakan 255G)}
+&=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iyt}f(t)dt
+\int_{-\infty}^{\infty}e^{-iyu}g(u)du
+=\sqrt{2\pi}\varhatf(y)\varhat{g}(y).\cr}$$
+
+\noindent Sekarang, tentu saja,
+
+\Centerline{$(f*g)\varspcheck(y)
+=(f*g)\varsphat(-y)
+=\sqrt{2\pi}\varhatf(-y)\varhat{g}(-y)
+=\sqrt{2\pi}\varcheckf(y)\varcheck{g}(y)$.}
+}%end of proof of 283M
+
+\leader{283N}{}\cmmnt{ Saya menunjukkan cara menghitung transformasi Fourier
+khusus, yang mana
+akan digunakan berulang kali di bagian berikutnya.
+
+\medskip
+
+\noindent}{\bf Lema} Untuk $\sigma>0$, atur
+$\psi_{\sigma}(x)=\bover1{\sigma\sqrt{2\pi}}e^{-x^2/2\sigma^2}$ untuk
+$x\in\Bbb R$.   Maka transformasi Fourier dan transformasi Fourier invers
+adalah
+
+\Centerline{$\varhat{\psi}_{\sigma}=\varcheck{\psi}_{\sigma}
+=\Bover1{\sigma}\psi_{1/\sigma}$.}
+
+\noindent Khususnya, $\varhat{\psi}_1=\psi_1$.
+
+\proof{{\bf (a)} Saya memulai dengan kasus khusus $\sigma=1$, menggunakan deret
+Maclaurin
+
+\Centerline{$e^{-iyx}=\sum_{k=0}^{\infty}\Bover{(-iyx)^k}{k!}$}
+
+\noindent dan ekspresi untuk
+$\int_{-\infty}^{\infty}x^ke^{-x^2/2}dx$ dari \S263.
+
+Tetapkan $y\in\Bbb R$.    Menulis
+
+\Centerline{$g_k(x)=\Bover{(-iyx)^k}{k!}e^{-x^2/2}$,\quad
+$h_n(x)=\sum_{k=0}^ng_k(x)$, \quad$h(x)=e^{|yx|-x^2/2}$,}
+
+\noindent kita melihat bahwa
+
+\Centerline{$|g_k(x)|\le \Bover{|yx|^k}{k!}e^{-x^2/2}$,}
+
+\noindent sehingga
+
+\Centerline{$|h_n(x)|\le\sum_{k=0}^{\infty}|g_k(x)|
+\le e^{|yx|}e^{-x^2/2}=h(x)$}
+
+\noindent untuk setiap $n$;  terlebih lagi, $h$ dapat diintegralkan, karena
+$|h(x)|\le e^{-|x|}$ setiap kali $|x|\ge 2(1+|y|)$.   Akibatnya, menggunakan
+Teorema Konvergensi Dominasi Lebesgue,
+
+$$\eqalignno{\varhat{\psi}_1(y)
+&=\Bover1{{2\pi}}\int_{-\infty}^{\infty}
+  \lim_{n\to\infty}h_n\
+=\Bover1{{2\pi}}\lim_{n\to\infty}\int_{-\infty}^{\infty}
+  h_n\cr
+&=\Bover1{{2\pi}}\sum_{k=0}^{\infty}
+  \int_{-\infty}^{\infty}g_k
+=\Bover1{{2\pi}}\sum_{k=0}^{\infty}\Bover{(-iy)^k}{k!}
+  \int_{-\infty}^{\infty}x^ke^{-x^2/2}dx\cr
+&=\Bover1{{2\pi}}\sum_{j=0}^{\infty}\Bover{(-iy)^{2j}}{(2j)!}
+  \Bover{(2j)!}{2^jj!}\sqrt{2\pi}\cr
+\noalign{\noindent (menurut 263H)}
+&=\Bover1{\sqrt{2\pi}}\sum_{j=0}^{\infty}\Bover{(-y^2)^j}{2^jj!}
+=\Bover1{\sqrt{2\pi}}e^{-y^2/2}
+=\psi_1(y),\cr}$$
+
+\noindent seperti yang diklaim.
+
+\medskip
+
+{\bf (b)} Untuk kasus umum
+$\psi_{\sigma}(x)=\Bover1{\sigma}\psi_1(\Bover{x}{\sigma})$, sehingga
+
+\Centerline{$\varhat{\psi}_{\sigma}(y)
+=\Bover1{\sigma}\cdot\sigma\varhat{\psi}_1(\sigma y)
+=\Bover1\sigma\psi_{1/\sigma}(y)$}
+
+\noindent oleh 283Ce.   Tentu saja sekarang kita punya
+
+\Centerline{$\varcheck{\psi}_{\sigma}(y)=\varhat{\psi}_{\sigma}(-y)
+=\Bover1{\sigma}\psi_{1/\sigma}(y)$}
+
+\noindent karena $\psi_{1/\sigma}$ merupakan fungsi genap.
+}%end of proof of 283N
+
+
+\leader{283O}{}\cmmnt{ Untuk mengarahkan ide pada bagian selanjutnya, saya
+memberikan fakta yang sangat sederhana berikut.
+
+\medskip
+
+\noindent}{\bf Proposisi} Misalkan $f$ dan $g$ adalah dua fungsi bernilai
+kompleks yang dapat diintegralkan pada $\Bbb R$. Maka
+$\int_{-\infty}^{\infty}f\times\varhat{g}
+=\int_{-\infty}^{\infty}\varhatf\times g$ dan
+$\int_{-\infty}^{\infty}f\times\varcheck{g}
+  =\int_{-\infty}^{\infty}\varcheckf\times g$.
+
+\proof{  Tentu saja
+
+\Centerline{$\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+|e^{-ixy}f(x)g(y)|dxdy
+=\int_{-\infty}^{\infty}|f|\int_{-\infty}^{\infty}|g|<\infty$,}
+
+\noindent jadi
+
+$$\eqalign{\int_{-\infty}^{\infty}f\times\varhat{g}
+&=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+f(y)e^{-iyx}g(x)dxdy\cr
+&=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+f(y)e^{-ixy}g(x)dydx
+=\int_{-\infty}^{\infty}\varhatf\times g.\cr}$$
+
+\noindent Untuk separuh proposisi lainnya, ganti setiap
+$e^{-ixy}$ dalam argumen dengan $e^{ixy}$.
+}%end of proof of 283O
+
+\exercises{\leader{283W}{Dimensi yang lebih tinggi} Saya menawarkan sebarisan latihan
+yang dirancang untuk memberikan petunjuk tentang bagaimana pekerjaan bagian ini dapat dilakukan
+dalam kasus dimensi
+$r$, di mana $r\ge 1$.
+
+\spheader 283Wa Misalkan $f$ adalah fungsi bernilai kompleks yang dapat
+diintegralkan dan terdefinisi hampir di mana-mana pada $\BbbR^r$.
+{\bf Transformasi Fourier}-nya
+adalah fungsi $\varhatf:\BbbR^r\to\Bbb C$ yang ditentukan oleh rumus
+
+\Centerline{$\varhatf(y)
+=\Bover1{(\sqrt{2\pi})^r}\int e^{-iy\dotproduct x}f(x)dx$,}
+
+\noindent dengan menulis $y\dotproduct x=\eta_1\xi_1+\ldots+\eta_r\xi_r$ untuk
+$x=(\xi_1,\ldots,\xi_r)$ dan $y=(\eta_1,\ldots,\eta_r)\in\BbbR^r$, dan
+$\int\ldots dx$ untuk integrasi sehubungan dengan ukuran Lebesgue di
+$\BbbR^r$.   Demikian pula, transformasi Fourier {\bf invers} dari $f$ adalah
+fungsi $\varcheckf$ yang diberikan oleh
+
+\Centerline{$\varcheckf(y)
+=\Bover1{(\sqrt{2\pi})^r}\int e^{iy\dotproduct x}f(x)dx=\varhatf(-y)$.}
+
+\noindent Tunjukkan bahwa, untuk fungsi bernilai kompleks apa pun yang dapat diintegralkan $f$ pada
+$\BbbR^r$,
+
+\quad (i) $\varhatf:\BbbR^r\to\Bbb C$ kontinu;
+
+\quad (ii) $\lim_{\|y\|\to\infty}\varhatf(y)=0$, menulis
+$\|y\|=\sqrt{y\dotproduct y}$ seperti biasa;
+
+\quad (iii) jika $\int\|x\||f(x)|dx<\infty$, maka $\varhatf$ adalah
+terdiferensiasi, dan
+
+\Centerline{$\Pd{}{\eta_j}\varhatf(y)
+=-\Bover{i}{(\sqrt{2\pi})^r}\int e^{-iy\dotproduct x}\xi_jf(x)dx$}
+
+\noindent untuk $j\le r$, $y\in\BbbR^r$, dengan selalu menganggap $\xi_j$
+sebagai koordinat ke-$j$ dari $x\in\BbbR^r$;
+
+\quad (iv) jika $j\le r$ dan $\pd{f}{\xi_j}$ didefinisikan di mana-mana dan
+dapat diintegralkan, maka
+$(\pd{f}{\xi_j})\varsphat(y)=i\eta_j\varhatf(y)$
+untuk setiap $y\in\Bbb R^r$.   \prooflet{(Gunakan 225L untuk menunjukkan bahwa jika
+$e\in\BbbR^r$ adalah vektor satuan, maka
+$\gamma\mapsto f(x+\gamma e)$ kontinu mutlak pada setiap interval
+yang dibatasi untuk hampir setiap $x$.)}
+%283C
+
+\spheader 283Wb Tunjukkan bahwa jika $f_1,\ldots,f_r$ adalah fungsi bernilai kompleks
+yang dapat diintegralkan pada $\Bbb R$ dengan transformasi Fourier
+$g_1,\ldots,g_r$, dan kita menulis $f(x)=f_1(\xi_1)\ldots f_r(\xi_r)$ untuk
+$x=(\xi_1,\ldots,\xi_r)\in\BbbR^r$, maka transformasi Fourier dari $f$
+adalah $y\mapsto g_1(\eta_1)\ldots g_r(\eta_r)$.
+
+\spheader 283Wc Misalkan $f$ adalah fungsi bernilai kompleks yang dapat diintegralkan
+pada $\BbbR^r$, dan $\varhatf$ merupakan transformasi Fourier-nya.   Jika $c\le d$ di
+$\BbbR^r$, tunjukkan bahwa
+
+$$\int_{[c,d]}f
+=(\bover{i}{\sqrt{2\pi}})^r
+\lim_{\alpha_1,\ldots,\alpha_r\to\infty}
+\int_{[-a,a]}\prod_{j=1}^r
+\bover{e^{i\gamma_j\eta_j}-e^{i\delta_j\eta_j}}{\eta_j}\varhatf(y)dy,$$
+
+\noindent dengan notasi $a=(\alpha_1,\ldots)$, $c=(\gamma_1,\ldots)$,
+$d=(\delta_1,\ldots)$.
+%283F
+
+\spheader 283Wd
+Misalkan $f$ adalah fungsi bernilai kompleks yang dapat diintegralkan pada $\BbbR^r$, dan
+$\varhatf$ transformasi Fourier-nya.   Tunjukkan bahwa jika kita menulis
+
+\Centerline{$B_{\infty}(\tbf{0},a)=\{y:|\eta_j|\le a
+  \text{ untuk setiap }j\le r\}$,}
+
+\noindent lalu
+
+\Centerline{$\Bover1{(\sqrt{2\pi})^r}\int_{B_{\infty}(\tbf{0},a)}
+e^{ix\dotproduct y}\varhatf(y)dy
+=\int \phi_a(t)f(x-t)dt$}
+
+\noindent untuk setiap $a\ge 0$, di mana
+
+\Centerline{$\phi_a(t)
+=\Bover1{\pi^r}\prod_{j=1}^r\Bover{\sin a\tau_j}{\tau_j}$}
+
+\noindent untuk $t=(\tau_1,\ldots,\tau_r)\in\BbbR^r$.
+%283H
+
+\spheader 283We Tunjukkan bahwa
+$\biggerint_{\BbbR^r}\Bover{1}{1+\|x\|^{r+1}}dx<\infty$.
+
+\spheader 283Wf Misalkan $f:\BbbR^r\to\Bbb C$ adalah fungsi yang dapat diintegralkan.
+Tunjukkan bahwa jika semua turunan parsial
+$\Bover{\partial^kf}{\partial\xi_j^k}$, untuk $k\le r+1$ dan
+$j\le r$, didefinisikan hampir di mana-mana dan dapat diintegralkan,
+maka $\varhat{f}$ dapat diintegralkan.
+%283Wa(iii) 283We 283K
+
+\spheader 283Wg\dvAformerly{2{}83Wj}
+Tunjukkan bahwa jika $f$ dan $g$ merupakan fungsi bernilai kompleks
+yang dapat diintegralkan pada $\BbbR^r$, maka (mendefinisikan konvolusi seperti pada
+255L) $(f*g)\varsphat=(\sqrt{2\pi})^r\varhatf\times\varhat{g}$.
+%283M
+
+\spheader 283Wh Misalkan $f$ dan $g$ adalah fungsi bernilai kompleks yang dapat
+diintegralkan pada $\BbbR^r$. Tunjukkan bahwa
+$f*\varcheck{g}=(\sqrt{2\pi})^r(\varhatf\times g)\varspcheck$.
+%283M 283Wg
+
+\spheader 283Wi\dvAformerly{2{}83We} Untuk $\sigma>0$, tentukan
+$\psi_{\sigma}:\Bbb R^r\to\Bbb C$ dengan mengatur
+
+\Centerline{$\psi_{\sigma}(x)=\Bover1{(\sigma\sqrt{2\pi})^r}
+e^{-x\dotproduct x/2\sigma^2}$,
+\quad$(\varhat{\psi}_{\sigma})\varspcheck=\psi_{\sigma}$.}
+
+\noindent untuk setiap $x\in\BbbR^r$.   Tunjukkan bahwa
+
+\Centerline{$\varhat{\psi}_{\sigma}
+=\varcheck{\psi}_{\sigma}=\Bover1{\sigma^r}\psi_{1/\sigma}$.}
+%283N
+
+\spheader 283Wj Dengan mendefinisikan $\psi_{\sigma}$ seperti pada bagian (i) di atas, tunjukkan bahwa
+$\lim_{\sigma\to 0}(f*\psi_{\sigma})(x)=f(x)$ setiap kali $x\in\BbbR^r$ dan
+$f:\BbbR^r\to\Bbb C$ kontinu dan dapat diintegralkan atau terbatas.
+(Lih.\ 261Ye, 262Yi.)
+%283Wi
+
+\spheader 283Wk Tunjukkan jika $f:\BbbR^r\to\Bbb C$ kontinu
+dan dapat diintegralkan, dan $\varhatf$ juga dapat diintegralkan
+$f=\varhatf\varcheck{\phantom{f}}$.
+({\it Petunjuk\/}: Tunjukkan bahwa keduanya sama di setiap titik
+$\lim_{\sigma\to 0}(\sqrt{2\pi})^r
+  (\varhatf\times\varhat{\psi}_{\sigma})\varspcheck$.)
+%283Wj 283Wh 283J
+
+\spheader 283Wl Tunjukkan bahwa jika $f$ dan $g$ merupakan fungsi bernilai kompleks
+yang dapat diintegralkan pada $\BbbR^r$, maka $\int
+f\times\varhat{g}=\int\varhatf\times g$.
+
+\spheader 283Wm(i) Tunjukkan bahwa
+$\int_{2k\pi}^{2(k+1)\pi}\bover{\sin t}{t\sqrt{t}}dt>0$ untuk setiap
+$k\in\Bbb N$, dan karenanya
+$\int_0^{\infty}\bover{\sin t}{t\sqrt{t}}dt>0$.
+
+\quad{(ii)} Tetapkan $f_1(\xi)=1/\sqrt{|\xi|}$ untuk $0<|\xi|\le 1$, dan $0$ untuk
+ $\xi$ lainnya.   Tunjukkan bahwa
+$\lim_{a\to\infty}\bover1{\sqrt{a}}\int_{-a}^a\varhatf_1(\eta)d\eta$
+ada di $\Bbb R$ dan lebih besar dari $0$.
+
+\quad{(iii)} Buatlah fungsi $f_2$ yang dapat diintegralkan, nol pada suatu lingkungan
+di $0$, sehingga terdapat tak hingga banyak $m\in\Bbb N$
+yang $|\int_{-m}^m\varhatf_2(\eta)d\eta|\ge\bover1{\sqrt{m}}$.
+\Hint{ambil $f_2(\xi)=2^{-k}\sin m_k\xi$ untuk $k+1\le\xi<k+2$, untuk
+barisan $\sequence{k}{m_k}$ yang meningkat cukup cepat.}
+
+\quad{(iv)} Tetapkan $f(x)=f_1(\xi_1)f_2(\xi_2)$ untuk $x\in\BbbR^2$.
+Tunjukkan bahwa $f$ dapat diintegralkan, bahwa $f$ bernilai nol pada suatu
+lingkungan dari $\tbf{0}$, tetapi bahwa
+
+\Centerline{$\limsup_{a\to\infty}\Bover1{2\pi}|\int_{B_{\infty}(\tbf{0},
+a)}\varhatf(y)dy|>0$,}
+
+\noindent mendefinisikan $B_{\infty}$ seperti di 283Wd.
+}%end of 283W
+
+\exercises{
+\leader{283X}{Latihan dasar (a)}
+%\spheader 283Xa
+Konfirmasikan bahwa enam alternatif definisi
+dari transformasi $\varhatf$, $\varcheckf$ yang ditawarkan di 283B
+semuanya mengarah pada teori yang sama;  temukan konstanta yang terlibat dalam versi
+baru dari 283Ch, 283Ci, 283L, 283M dan 283N.
+%283B
+
+\spheader 283Xb Jika kita mendefinisikan ulang $\varhatf(y)$ menjadi
+$\alpha\int_{-\infty}^{\infty}e^{i\beta xy}f(x)dx$,
+$\varcheckf(y)$ jadi apa?
+%283B
+
+\spheader 283Xc Tunjukkan bahwa hampir semua faktor $2\pi$ akan hilang
+dari teorema-teorema bagian ini jika kita mendefinisikan ukuran $\nu$ pada
+$\Bbb R$ dengan menetapkan $\nu E=\bover1{\sqrt{2\pi}}\mu E$ untuk setiap
+himpunan Lebesgue terukur $E$, dengan $\mu$ ukuran Lebesgue, dan menulis
+
+\Centerline{$\varhatf(y)=\int_{-\infty}^{\infty}e^{-iyx}f(x)\nu(dx)$,
+\quad$\varcheckf(y)=\int_{-\infty}^{\infty}e^{iyx}f(x)\nu(dx)$,}
+
+\Centerline{$(f*g)(x)=\int_{-\infty}^{\infty}f(t)g(x-t)\nu(dt)$.}
+
+\noindent Apa itu
+$\lim_{a\to\infty}\int_{-a}^a\bover{\sin t}{t}\nu(dt)$?
+%283B+
+
+\sqheader 283Xd Misalkan $f$ adalah fungsi bernilai kompleks yang dapat diintegralkan
+pada $\Bbb R$, dengan transformasi Fourier $\varhatf$.   Tunjukkan bahwa
+(i) jika $g(x)=f(-x)$ kapan pun ini
+didefinisikan, lalu $\varhat{g}(y)=\varhatf(-y)$ untuk
+setiap $y\in\Bbb R$;
+(ii) jika $g(x)=\overline{f(x)}$ kapan pun ini didefinisikan, maka
+$\varhat{g}(y)=\overline{\varhatf(-y)}$ untuk setiap $y$.
+%283C
+
+\spheader 283Xe Misalkan $f$ adalah fungsi bernilai kompleks yang dapat diintegralkan
+pada $\Bbb R$, dengan transformasi Fourier $\varhatf$.   Tunjukkan bahwa
+
+\Centerline{$\int_c^d\varhatf(y)dy=\Bover{i}{\sqrt{2\pi}}
+\int_{-\infty}^{\infty}\Bover{e^{-idx}-e^{-icx}}{x}f(x)dx$}
+
+\noindent setiap kali $c\le d$ di $\Bbb R$.
+%283F
+
+\sqheader 283Xf Untuk fungsi bernilai kompleks yang dapat diintegralkan $f$ pada
+$\Bbb R$, misalkan integral {\bf Fej\'er} didefinisikan sebagai
+
+\Centerline{$\sigma_c(x)
+=\Bover1{c\sqrt{2\pi}}\int_0^c
+  \bigl(\int_{-a}^{a}e^{ixy}\varhatf(y)dy\bigr)da$}
+
+\noindent untuk $c>0$.   Tunjukkan bahwa
+
+\Centerline{$\sigma_c(x)=
+\Bover1{\pi}\int_{-\infty}^{\infty}
+  \Bover{1-\cos ct}{ct^2}f(x-t)dt$.}
+%283F
+
+\spheader 283Xg Tunjukkan bahwa
+$\biggerint_{-\infty}^{\infty}\Bover{1-\cos at}{at^2}dt=\pi$ untuk setiap
+$a>0$. \Hint{Integrasikan secara parsial dan gunakan 283Da.} Tunjukkan bahwa
+
+\Centerline{$\lim_{a\to\infty}\int_{\delta}^{\infty}
+         \Bover{1-\cos at}{at^2}dt
+=\lim_{a\to\infty}\sup_{t\ge\delta}\Bover{1-\cos at}{at^2}
+=0$}
+
+\noindent untuk setiap $\delta>0$.
+%283Xf, 283D, 283F
+
+\wheader{283Xh}{0}{0}{0}{72pt}
+
+\spheader 283Xh Misalkan $f$ adalah fungsi bernilai kompleks yang dapat diintegralkan
+pada $\Bbb R$, dan tentukan integral Fej\'er $\sigma_a$ seperti pada 283Xf
+di atas.   Tunjukkan bahwa jika $x\in\Bbb R$, $c\in\Bbb C$ sedemikian sehingga
+
+\Centerline{$\lim_{\delta\downarrow 0}\Bover1{\delta}\int_0^{\delta}
+    |f(x+t)+f(x-t)-2c|dt=0$,}
+
+\noindent lalu $\lim_{a\to\infty}\sigma_a(x)=c$.   \Hint{mengadaptasi
+argumen 282H.}
+%283Xf, 283Xg
+
+\sqheader 283Xi Misalkan $f$ adalah fungsi bernilai kompleks yang dapat diintegralkan
+pada $\Bbb R$, dan tentukan integral Fej\'er $\sigma_a$ seperti pada 283Xf
+di atas.   Tunjukkan bahwa $f(x)=\lim_{a\to\infty}\sigma_a(x)$ untuk hampir setiap
+$x\in\Bbb R$.
+%283Xf, 283Xh
+
+\spheader 283Xj Misalkan $f:\Bbb R\to\Bbb C$ adalah fungsi bernilai kompleks
+yang kontinu, dapat diintegralkan, dan memiliki variasi terbatas; definisikan
+integral Fej\'er-nya $\sigma_a$ seperti pada 283Xf di atas. Tunjukkan bahwa
+$f(x)=\lim_{a\to\infty}\sigma_a(x)$ seragam untuk $x\in\Bbb R$.
+%283Xf, 283Xi
+
+\sqheader 283Xk Misalkan $f$ adalah fungsi bernilai kompleks yang dapat diintegralkan dan
+mempunyai variasi terbatas pada $\Bbb R$, dan $\varhatf$ transformasi Fourier-nya.
+Tunjukkan bahwa $\sup_{y\in\Bbb R}|y\varhatf(y)|<\infty$.
+%283F
+
+\spheader 283Xl Misalkan $f$ dan $g$ adalah fungsi
+bernilai kompleks yang dapat diintegralkan pada $\Bbb R$.   Tunjukkan bahwa
+$f*\varcheck{g}=\sqrt{2\pi}(\varhatf\times g)\varspcheck$.
+%283M
+
+\spheader 283Xm Misalkan $f$ adalah fungsi bernilai kompleks yang dapat diintegralkan
+pada $\Bbb R$, dan tetapkan $x\in\Bbb R$.    Tetapkan
+
+\Centerline{$\hat f_x(y)=\int_{-\infty}^{\infty}f(t)\cos y(x-t)dt$}
+
+\noindent untuk $y\in\Bbb R$.   Tunjukkan bahwa
+
+\quad (i) jika $f$ terdiferensiasi di $x$,
+
+\Centerline{$f(x)
+=\Bover1{\pi}\lim_{a\to\infty}\int_{0}^a\hat f_x(y)dy$;}
+
+\quad (ii) jika terdapat lingkungan $x$ di mana $f$ mempunyai variasi terbatas, maka
+
+\Centerline{$\Bover1{\pi}\lim_{a\to\infty}\int_{0}^a\hat f_x(y)dy
+=\Bover12(\lim_{t\in\dom f,t\uparrow x}f(t)
+ +\lim_{t\in\dom f,t\downarrow x}f(t))$;}
+
+\quad (iii) jika $f$ terdiferensiasi dua kali dan $f'$, $f''$ dapat diintegralkan
+maka $\hat f_x$ dapat diintegralkan dan
+$f(x)=\bover1{\pi}\int_0^{\infty}\hat f_x$.
+(Rumusnya
+
+\Centerline{$f(x)=\Bover1{\pi}\int_{0}^{\infty}\bigl(
+\int_{-\infty}^{\infty}f(t)\cos y(x-t)dt\bigr)dy$,}
+
+\noindent berlaku untuk fungsi $f$ tersebut; rumus ini disebut rumus integral
+{\bf Fourier}.)
+
+\spheader 283Xn Tunjukkan bahwa jika $f$ adalah fungsi bernilai kompleks
+dengan variasi terbatas, terdefinisi hampir di mana-mana pada $\Bbb R$, dan
+konvergen ke $0$ (sepanjang domainnya) pada $\pm\infty$, maka
+
+\Centerline{$g(y)
+=\Bover1{\sqrt{2\pi}}\lim_{a\to\infty}\int_{-a}^ae^{-iyx}f(x)dx$}
+
+\noindent terdefinisi dalam $\Bbb C$ untuk setiap $y\ne 0$, dan limitnya
+seragam pada setiap daerah yang berjarak positif dari $0$.
+
+\spheader 283Xo Misalkan $f$ adalah fungsi bernilai kompleks
+yang dapat diintegralkan pada $\Bbb R$.   Tetapkan
+
+\Centerline{$\varhatf_c(y)=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+\cos yx\,f(x)dx$,\quad
+$\varhatf_s(y)=\Bover1{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+\sin yx\,f(x)dx$}
+
+\noindent untuk $y\in\Bbb R$.   Tunjukkan bahwa
+
+\Centerline{$\Bover1{\sqrt{2\pi}}\int_{-a}^ae^{ixy}\varhatf(y)dy
+=\sqrt{\Bover2{\pi}}\int_0^a\cos xy\,\varhatf_c(y)dy
++\sqrt{\Bover2{\pi}}\int_0^a\sin xy\,\varhatf_s(y)dy$}
+
+\noindent untuk setiap $x\in\Bbb R$ dan $a\ge 0$.
+
+\spheader 283Xp Gunakan fakta bahwa
+$\int_{0}^a\int_{0}^{\infty}e^{-xy}\sin
+y\,dxdy=\int_{0}^{\infty}\int_{0}^ae^{-xy}\sin y\,dydx$ setiap kali
+$a\ge 0$ untuk menunjukkan bahwa 
+$\int_0^{\infty}\bover1{1+x^2}dx=\lim_{a\to\infty}\int_0^a\bover{\sin y}{y}dy$.
+
+\sqheader 283Xq Tunjukkan bahwa jika $f(x)=e^{-\sigma|x|}$, di mana
+$\sigma>0$, maka
+$\varhatf(y)=\bover{2\sigma}{\sqrt{2\pi}(\sigma^2+y^2)}$.
+Oleh karena itu, atau sebaliknya, temukan transformasi Fourier dari
+$y\mapsto\Bover{1}{1+y^2}$.
+
+\spheader 283Xr Temukan transformasi Fourier invers dari fungsi karakteristik
+dari interval terbatas di $\Bbb R$.   Tunjukkan bahwa
+dalam arti formal 283F dapat dianggap sebagai kasus khusus 283O.
+
+\spheader 283Xs Misalkan $f$ adalah fungsi yang dapat diintegralkan nonnegatif pada
+$\Bbb R$, dengan transformasi Fourier $\varhatf$.   Tunjukkan bahwa
+\discrcenter{468pt}{$\sum_{j=0}^n\sum_{k=0}^n
+  a_j\bar a_k\varhatf(y_j-y_k)\ge 0$ }setiap kali $y_0,\ldots,y_n$ di
+$\Bbb R$ dan $a_0,\ldots,a_n\in\Bbb C$.
+
+\spheader 283Xt Misalkan $f$ adalah fungsi bernilai kompleks yang dapat diintegralkan pada
+$\Bbb R$.   Tunjukkan bahwa $\tilde f(x)=\sum_{n=-\infty}^{\infty}f(x+2\pi n)$
+didefinisikan dalam $\Bbb C$ untuk hampir setiap $x$.
+\Hint{$\sum_{n=-\infty}^{\infty}\int_{-\pi}^{\pi}|f(x+2\pi n)|dx
+<\infty$.}   Tunjukkan bahwa $\tilde f$ bersifat periodik.   Tunjukkan bahwa koefisien Fourier
+dari $\tilde f\restr\ocint{-\pi,\pi}$ adalah
+$\langle\bover{1}{\sqrt{2\pi}}\varhatf(k)\rangle_{k\in\Bbb Z}$.
+
+\leader{283Y}{Latihan lebih lanjut (a)}
+%\spheader 283Ya
+Tunjukkan bahwa jika $f:\Bbb R\to\Bbb C$ adalah
+kontinu mutlak dalam setiap interval berbatas, $f'$ mempunyai variasi
+terbatas pada $\Bbb R$, dan
+$\lim_{x\to\infty}f(x)=\lim_{x\to-\infty}f(x)=0$, maka
+
+\Centerline{$g(y)=\Bover1{\sqrt{2\pi}}\lim_{a\to\infty}
+\int_{-a}^ae^{-iyx}f(x)dx
+=-\Bover{i}{y\sqrt{2\pi}}\lim_{a\to\infty}
+\int_{-a}^ae^{-iyx}f'(x)dx$}
+
+\noindent terdefinisi, dengan
+
+\Centerline{$y^2|g(y)|\le\Bover4{\sqrt{2\pi}}\Var_{\Bbb R}(f')$,}
+
+\noindent untuk setiap $y\ne 0$.
+%283C
+
+\spheader 283Yb Misalkan $f:\Bbb R\to\Bbb C$ adalah fungsi
+yang dapat diintegralkan dan kontinu mutlak pada setiap interval berbatas, dan
+anggap bahwa turunannya $f'$ mempunyai variasi terbatas pada $\Bbb R$.
+Tunjukkan bahwa $\varhatf$ dapat diintegralkan dan
+$f=\varhatf\varcheck{\phantom{f}}$.   \Hint{225Yd, 283Ci, 283Xk.}
+%283Xk 283K
+
+\spheader 283Yc Misalkan $f:\Bbb R\to\coint{0,\infty}$ adalah fungsi
+genap sehingga $f$ cembung pada $\coint{0,\infty}$
+dan $\lim_{x\to\infty}f(x)=0$.
+
+\quad{(i)} Tunjukkan bahwa, untuk $y>0$ dan $k\in\Bbb N$,
+$\int_{-2k\pi/y}^{2k\pi/y}e^{-iyx}f(x)dx\ge 0$.
+
+\quad{(ii)} Tunjukkan bahwa
+$g(y)=\bover1{\sqrt{2\pi}}\lim_{a\to\infty}\int_{-a}^ae^{-iyx}f(x)dx$
+ada di $\coint{0,\infty}$ untuk setiap $y\ne 0$.
+
+\quad{(iii)} Untuk $n\in\Bbb N$, atur $f_n(x)
+=e^{-|x|/(n+1)}f(x)$ untuk setiap $x$.   Tunjukkan bahwa $f_n$ dapat diintegralkan dan
+cembung di $\coint{0,\infty}$.
+
+\quad{(iv)} Tunjukkan $g(y)=\lim_{n\to\infty}\varhatf_{n}(y)$ untuk
+setiap $y\ne 0$.
+
+\quad{(v)} Tunjukkan bahwa jika $f$ dapat diintegralkan maka
+
+\Centerline{$\int_{-a}^a\varhatf
+=\Bover4{\sqrt{2\pi}}\int_{0}^{\infty}\Bover{\sin at}{t}f(t)dt
+\le\Bover{4a}{\sqrt{2\pi}}\int_0^{\pi/a}f
+\le 2\sqrt{2\pi}f(0)
+$}
+
+\noindent untuk setiap $a\ge 0$.   Oleh karena itu, tunjukkan bahwa, baik $f$
+dapat diintegralkan maupun tidak, $g$ dapat diintegralkan dan
+$f_n=(\varhatf_n)\varspcheck$ untuk setiap $n$.
+
+\quad{(vi)} Tunjukkan bahwa
+$\lim_{a\downarrow 0}\sup_{n\in\Bbb N}\int_{-a}^a\varhatf_n=0$.
+
+\quad(vii) Tunjukkan bahwa jika $f'$ dibatasi (pada domainnya) maka
+$\{\varhatf_n:n\in\Bbb N\}$ dapat diintegralkan secara seragam ({\it petunjuk\/}: gunakan
+(vi) dan 283Ya), sehingga $\lim_{n\to\infty}\|\varhat f_n-g\|_1=0$ dan
+$f=\varcheck{g}$.
+
+\quad(viii) Tunjukkan bahwa jika $f'$ tidak terikat maka untuk setiap $\epsilon>0$ kita
+dapat menemukan $h_1$, $h_2:\Bbb R\to\coint{0,\infty}$, keduanya genap, cembung dan
+konvergen ke $0$ di $\infty$, sehingga $f=h_1+h_2$, $h'_1$ terikat,
+$\int h_2\le\epsilon$ dan $h_2(0)\le\epsilon$.   Oleh karena itu tunjukkan bahwa dalam kasus
+ini juga $f=\varcheck{g}$.
+
+\spheader 283Yd Misalkan $f:\Bbb R\to\Bbb R$ genap, terdiferensiasi dua
+kali, dan konvergen ke $0$ pada $\infty$; misalkan $f''$ kontinu dan
+$\{x:f''(x)=0\}$ terbatas dalam $\Bbb R$. Tunjukkan bahwa $f$ merupakan
+transformasi Fourier dari suatu fungsi yang dapat diintegralkan.
+\Hint{Gunakan 283Yc dan 283Yb.}
+%283 notes
+
+\spheader 283Ye Misalkan $g:\Bbb R\to\Bbb R$ adalah fungsi ganjil dari variasi terbatas
+sedemikian rupa sehingga $\int_1^{\infty}\bover1xg(x)dx=\infty$.
+Tunjukkan bahwa $g$ tidak bisa menjadi transformasi Fourier dari fungsi apa pun yang dapat diintegralkan
+$f$.   ({\it Petunjuk\/}: tunjukkan jika $g=\varhatf$ maka
+%283Yd
+
+\Centerline{$-i\int_0^1f
+=\Bover{2}{\sqrt{2\pi}}\lim_{a\to\infty}
+  \int_0^a\Bover{1-\cos x}{x}g(x)dx=\infty$.)}
+}%end of exercises
+
+\endnotes{
+\Notesheader{283}
+Dalam bagian ini saya telah mencoba menyajikan teori dasar transformasi
+Fourier untuk fungsi yang dapat diintegralkan pada $\Bbb R$, dengan
+mempertimbangkan perluasan konsep yang akan dicoba dalam bagian berikutnya.
+Seperti dalam \S282, saya menonjolkan dua teorema (283I dan 283L) yang
+memberikan syarat agar inversi transformasi Fourier mengembalikan fungsi
+semula; kita berhadapan dengan integral tak wajar
+$\lim_{a\to\infty}\int_{-a}^a$, sebagaimana sebelumnya kita berhadapan dengan
+jumlah simetris $\lim_{n\to\infty}\sum_{k=-n}^n$. Saya tidak melangkah sejauh
+di \S282; khususnya, untuk sementara saya menunda pembahasan fungsi
+terintegralkan-kuadrat, karena transformasi Fourier-nya mungkin tidak dapat
+dinyatakan dengan rumus sederhana yang digunakan di sini.
+
+Salah satu hambatan paling mendasar dalam bidang ini adalah tidak adanya
+kriteria efektif untuk menentukan fungsi mana yang merupakan transformasi
+Fourier dari fungsi yang dapat diintegralkan. (Untungnya, keadaan lebih baik
+untuk fungsi terintegralkan-kuadrat; lihat 284O-284P.) Dalam 283Yc-283Yd saya
+meringkas argumen yang menunjukkan bahwa fungsi {\it genap} `biasa' yang tidak
+berosilasi dan konvergen ke $0$ pada $\pm\infty$ merupakan transformasi Fourier
+dari fungsi yang dapat diintegralkan. Yang mencolok, hal ini tidak berlaku bagi
+fungsi {\it ganjil}; jadi $y\mapsto\Bover{1}{\ln(e+y^2)}$ merupakan transformasi
+Fourier dari suatu fungsi yang dapat diintegralkan, tetapi
+$y\mapsto\Bover{\arctan y}{\ln(e+y^2)}$ bukan merupakan contoh (283Ye).
+
+Di 283W saya membuat sketsa teori transformasi Fourier yang sesuai
+$\Bbb R^r$.   Ada sedikit kejutan.   Satu hal yang perlu diperhatikan adalah di mana
+dalam kasus satu dimensi kita meminta turunan kedua yang berkelakuan baik,
+dalam kasus dimensi $r$ kita mungkin perlu mendiferensiasikan $r+1$ kali
+(283Wf).   Alasan lainnya adalah kita kehilangan `prinsip lokalisasi'.   Di dalam
+kasus satu dimensi, jika $f$ dapat diintegralkan dan nol pada suatu interval
+$\ooint{c,d}$, lalu
+$\lim_{a\to\infty}\int_{-a}^ae^{ixy}\varhatf(y)dy=0$ untuk setiap
+$x\in\ooint{c,d}$;  ini langsung dari 283I atau 283L.   Namun dalam
+dimensi yang lebih tinggi formulasi paling alami dari hasil yang sesuai
+tidak berlaku (283Wm).
+
+
+
+
+}%end of notes
+
+\discrpage
