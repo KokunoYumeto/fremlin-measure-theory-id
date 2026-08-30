@@ -76,7 +76,11 @@ Korpus lengkap telah di-admit melalui `CP0021`: catatan admission berukuran
 dan receipt mesin berukuran 21.597 byte dengan SHA-256
 `0bb4cec0ba42403a74af9b77237910d2c8360dfe00013bf78e0823498326973c`.
 Receipt paket, publikasi, dan pembacaan balik byte publik tetap menjadi sumber
-kebenaran untuk transaksi rilis.
+kebenaran untuk transaksi rilis. Paket sumber/backend deterministik berukuran
+15.167.715 byte dengan SHA-256
+`a0333dca723085e93d472b945a03758b133b05cbe5be3022133088e5c1f5ab00`;
+receipt paket berukuran 67.607 byte dengan SHA-256
+`7ef7eaff6428b2bfac4d0c27a6068a88a835b8fab4ae373006d628a9c844cebb`.
 
 ## Reproduksi dan gate rilis
 
@@ -105,12 +109,19 @@ keturunan yang sama:
 
 - [Repositori GitHub](https://github.com/KokunoYumeto/fremlin-measure-theory-id)
 - [GitHub release v1.0.0](https://github.com/KokunoYumeto/fremlin-measure-theory-id/releases/tag/v1.0.0)
+- [Zenodo record v1.0.0](https://doi.org/10.5281/zenodo.22181780)
 - [Zenodo concept untuk seluruh riwayat versi](https://doi.org/10.5281/zenodo.22059798)
 
-Record Zenodo versi lengkap mempunyai DOI versi tersendiri setelah transaksi;
-concept DOI di atas merupakan pengenal stabil untuk seluruh riwayat. Checkpoint
-Bab 27 tetap dipertahankan sebagai versi pendahulu, bukan sebagai batas korpus
-lengkap.
+Record Zenodo versi lengkap mempunyai DOI `10.5281/zenodo.22181780`; concept
+DOI di atas merupakan pengenal stabil untuk seluruh riwayat. GitHub mengikat
+tag `v1.0.0` ke commit batas
+`49ed814fc02283df826c4c6c3a9d860888bfec29` dan tree
+`334f7902af37d331387041b186b4e1470cd60e7e`. Receipt publikasi GitHub berada
+di `qa/PUBLICATION_RECEIPT_V100_COMPLETE_CORPUS.json`; receipt Zenodo berada
+di `qa/ZENODO_PUBLICATION_RECEIPT_V100_COMPLETE_CORPUS.json`. Kedua tujuan
+telah mengembalikan tiga aset publik yang sama secara anonim dengan byte dan
+SHA-256 tepat. Checkpoint Bab 27 tetap dipertahankan sebagai versi pendahulu,
+bukan sebagai batas korpus lengkap.
 
 ## Hak, atribusi, dan provenans
 
